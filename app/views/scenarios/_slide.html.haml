@@ -5,12 +5,12 @@
       'data-default_chart' => slide.output_element_key,
       'data-alt_chart'     => slide.alt_output_element_key,
       'style'              => @interface.slides.size == 1 ? 'display:none;' : ''}
-    = link_to t("slides.#{slide.key}").html_safe, slide.url
+    = link_to t("slides.#{slide.key}.title").html_safe, slide.url
   .slide
     .description
       %p
         = image_tag(slide.image_path) if slide.image.present?
-        = raw format_description(I18n.t("descriptions_slides.#{slide.key}.content"))
+        = raw format_description(I18n.t("slides.#{slide.key}.description"))
 
     .items
       - unless slide.general_sub_header.blank?

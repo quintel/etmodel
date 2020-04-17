@@ -1,220 +1,1876 @@
+---
 nl:
   slides:
-    costs_bio_fuel: "Biobrandstoffen"
-    costs_co2_ccs: "CCS in de energie sector"
-    costs_co2_ccs_industry: "CCS in de industrie"
-    costs_co2_prices: "Prijzen"
-    costs_electric_car_investment: "Investeringen elektrische auto's"
-    costs_combustion_fuel: "Fossiele brandstoffen"
-    costs_combustion_investment: "Investeringen"
-    costs_combustion_operational_and_maintenance: "Onderhoud en beheer"
-    costs_earth_investment: "Investeringen"
-    costs_earth_operational_and_maintenance: "Onderhoud en beheer"
-    costs_employment: "Binnenlands"
-    costs_flexibility_conversion: "Investeringskosten conversie elektriciteit"
-    costs_flexibility_storage: "Investeringskosten opslag elektriciteit"
-    costs_heat_network: "Warmtenetinfrastructuur"
-    costs_heatpumps: "Warmtepompen"
-    costs_geothermal: "Geothermie"
-    costs_solar_thermal: "Zonthermie"
-    costs_hydrogen_import: "Waterstofimport"
-    costs_hydrogen_storage: "Waterstofopslag"
-    costs_hydrogen_transport: "Waterstoftransport"
-    costs_infrastructure_electricity: "Kosten elektriciteitsinfrastructuur"
-    costs_infrastructure_electricity_investement_regime: "Benuttingsgraad netwerken"
-    costs_imported_electricity: "Kosten van geïmporteerde elektriciteit"
-    costs_imported_hydrogen: "Kosten van geïmporteerde waterstof"
-    costs_nuclear_fuel: "Kernbrandstoffen"
-    costs_nuclear_investment: "Investeringen"
-    costs_nuclear_operational_and_maintenance: "Onderhoud en beheer"
-    costs_residual_heat: "Restwarmte"
-    costs_solar_investment: "Investeringen"
-    costs_water_investment: "Investeringen"
-    costs_water_operational_and_maintenance: "Onderhoud en beheer"
-    costs_wind_investment: "Investeringen"
-    costs_wind_operational_and_maintenance: "Onderhoud en beheer"
-    costs_batteries_investment: "Investeringen batterijen"
-    costs_power_to_gas_investment: "Investeringen power-to-gas"
-    costs_power_to_kerosene_investment: "Investeringen power-to-kerosene"
-    costs_electric_boilers_investment: "Investeringen elektrische boilers"
-    costs_wacc: "Gewogen kapitaalskosten (WACC)"
-    data_export_application_demands: "Jaarlijkse energievraag per toepassing"
-    data_export_energy_flows: "Energiestromen"
-    data_export_heat_network: "Uurlijkse profielen voor warmtenetten"
-    data_export_household_heat: "Uurlijkse profielen voor warmte in huishoudens"
-    data_export_production: "Specificaties warmte- en elektriciteitsproductie"
-    data_export_hydrogen: "Uurlijkse profielen voor waterstof"
-    data_export_network_gas: "Uurlijkse profielen voor gas"
-    data_visuals_factsheet: "Energie-mix infographic"
-    data_visuals_graph: "Energiegraaf/stromendiagram"
-    data_visuals_scenario_report: "Scenarioverslag"
-    data_visuals_co2_sheet: "CO<sub>2</sub>-voetafdruk"
-    demand_agriculture_combined_heat_power: "Warmtenet"
-    demand_agriculture_demand_growth: "Groei van de vraag"
-    demand_agriculture_heat: "Warmte"
-    demand_buildings_appliances: "Apparaten"
-    demand_buildings_cooling: "Koeling"
-    demand_buildings_demand_growth: "Groei van de vraag"
-    demand_buildings_heating: "Ruimteverwarming"
-    demand_buildings_insulation: "Isolatie"
-    demand_buildings_lighting: "Verlichting"
-    demand_buildings_solar_panels: "Zonnepanelen"
-    demand_bunkers_international_aviation: "Internationale luchtvaart"
-    demand_bunkers_international_shipping: "Internationale scheepvaart"
-    demand_households_appliances: "Apparaten"
-    demand_households_behaviour: "Gedrag"
-    demand_households_climate: "Klimaat"
-    demand_households_cooking: "Koken"
-    demand_households_cooling: "Koeling"
-    demand_households_demand_growth: "Welvaart"
-    demand_households_heating: "Ruimteverwarming & warm water"
-    demand_households_insulation: "Isolatie"
-    demand_households_lighting: "Verlichting"
-    demand_households_population: "Bevolking & huizenvoorraad"
-    demand_households_solar_panels: "Zonnepanelen"
-    demand_industry: "Energievraag in de industrie"
-    demand_industry_aluminium: "Aluminium"
-    demand_industry_ccs: "CO<sub>2</sub>-afvang en -opslag"
-    demand_industry_chemical_refineries: "Raffinaderijen"
-    demand_industry_chemical_fertilizers: "Kunstmest"
-    demand_industry_chemical_other: "Chemie"
-    demand_industry_aggregated_chemical_other: "Chemie"
-    demand_industry_other_food: "Voedsel"
-    demand_industry_other_ict: "Centrale ICT"
-    demand_industry_other_paper: "Papier"
-    demand_industry_aggregated_other: "Overig"
-    demand_industry_combined_heat_power: "Warmtenet"
-    demand_industry_other_metals: "Overige metalen"
-    demand_industry_steel: "Staal"
-    demand_other_combined_heat_power: "Warmte-krachtkoppeling"
-    demand_other_demand_growth: "Groei van de vraag"
-    demand_transport_bus_technology: "Technologie bussen"
-    demand_transport_bicycle_technology: "Technologie fietsen"
-    demand_transport_car_technology: "Technologie auto's"
-    demand_transport_efficiency_improvement: "Efficiëntieverbeteringen"
-    demand_transport_international_transport: "Internationaal transport"
-    demand_transport_international_transport_mobility_growth: "Mobiliteitsgroei"
-    demand_transport_international_navigation_technology: "Technologie internationale scheepvaart"
-    demand_transport_international_aviation_technology: "Technologie internationale luchtvaart"
-    demand_transport_mobility_growth: "Mobiliteitsgroei"
-    demand_transport_train_technology: "Technologie treinen"
-    demand_transport_freight_train_technology: "Technologie goederentreinen"
-    demand_transport_freight_transport: "Applicaties"
-    demand_transport_motorcycle_technology: "Technologie motorfietsen"
-    demand_transport_overview: "Overzicht"
-    demand_transport_passenger_transport: "Applicaties"
-    demand_transport_passenger_train_technology: "Technologie passagierstreinen"
-    demand_transport_plane_technology: "Technologie binnenlandse luchtvaart"
-    demand_transport_tram_technology: "Technologie tram/metro"
-    demand_transport_truck_technology: "Technologie vrachtwagens"
-    demand_transport_domestic_aviation_technology: "Technologie binnenlandse luchtvaart"
-    demand_transport_domestic_navigation_technology: "Technologie binnenvaartschepen"
-    fce_biomass: "Houtpellets"
-    fce_coal: "Kolen"
-    fce_gas: "Aardgas"
-    fce_greengas: "Groengas"
-    fce_settings: "FCE Opties"
-    fce_oil: "Aardolie"
-    fce_uranium: "Uranium"
-    fce_liquid_biofuels: "Vloeibare biobrandstoffen"
-    flexibility_electricity_import_export_edp: "Naar een Europese 'Merit Order'"
-    flexibility_electricity_import_export_interconnectivity: "Interconnectiecapaciteit"
-    flexibility_electricity_import_export_interconnectors: "Effecten van extra interconnectiecapaciteit"
-    flexibility_electricity_import_export_markets: "Koppeling van de elektriciteitsmarkt"
-    flexibility_electricity_import_export_properties: "CO<sub>2</sub>-emissies van geïmporteerde elektriciteit"
-    flexibility_electricity_import_export_renewables: "Effecten van toenemende hernieuwbare opwek"
-    flexibility_flexibility_cold_snap: "Koude winter"
-    flexibility_flexibility_net_load: "Piekbelasting en bruikbare capaciteit"
-    flexibility_flexibility_demand_response_ev: "Vraagsturing - laadgedrag elektrische auto's"
-    flexibility_flexibility_demand_response_hp: "Vraagsturing - buffers voor warmtepompen"
-    flexibility_flexibility_demand_response_hhp: "Vraagsturing - gedrag van hybride warmtepompen"
-    flexibility_flexibility_excess: "Elektriciteitsoverschot"
-    flexibility_flexibility_excess_electricity: "Elektriciteitsoverschotten"
-    flexibility_flexibility_flexibility_order: "Volgorde flexibiliteitsopties"
-    flexibility_flexibility_power_storage: "Opslag elektriciteit"
-    flexibility_flexibility_power_to_heat: "Conversie naar warmte voor huishoudens"
-    flexibility_flexibility_power_to_heat_for_district_heating: "Conversie naar warmte voor warmtenetten"
-    flexibility_flexibility_power_to_heat_for_industry: "Conversie naar warmte voor industrie"
-    flexibility_flexibility_power_to_gas: "Conversie naar waterstof"
-    flexibility_flexibility_power_to_kerosene: "Conversie naar kerosine voor luchtvaart"
-    flexibility_flexibility_power_to_methane: "Conversie naar methaan voor gasnetwerk"
-    flexibility_flexibility_solar_pv_curtailment: "Productiebeperking - zon-PV"
-    flexibility_flexibility_wind_cost: "Kosten van windenergie"
-    flexibility_merit_order_merit_order: "Merit order"
-    flexibility_merit_order_merit_order_positions: "Merit order - posities"
-    flexibility_merit_order_merit_order_price: "Uurlijkse profielen voor elektriciteit"
-    flexibility_security_of_supply_electricity: "Elektriciteit"
-    flexibility_security_of_supply_heat: "Warmte"
-    flexibility_weather_conditions_and_flh: "Extreme weersomstandigheden"
-    hidden_infrastructure_gas_network: "Gasnetwerk"
-    introduction_to_etm: "Hoe werkt het Energietransitiemodel?"
-    overview_co2_emissions: "Totale CO<sub>2</sub>-uitstoot"
-    overview_final_demand: "Totaal energiegebruik"
-    policy_area_biomass: "Biomassa"
-    policy_area_solar_power: "Zonne-energie"
-    policy_area_wind_turbines: "Windmolens"
-    policy_cost_electricity: "Elektriciteit"
-    policy_cost_energy: "Energie"
-    policy_dependence_foreign_dependence: "Energie-import uit het buitenland"
-    policy_grid_grid_and_interconnectivity: "Netwerk en interconnectiviteit"
-    policy_sustainability_co2_emission_compared_to_1990: "CO<sub>2</sub>-uitstoot, vergeleken met 1990"
-    policy_sustainability_renewables: "Hernieuwbaarheid"
-    supply_biomass_overview: "Overzicht"
-    supply_biomass_bio_coal_bio_oil: "Biokolen en bio-olie in energiecentrales"
-    supply_biomass_greengas_production: "Groengasproductie"
-    supply_biomass_bio_footprint: "Bio-voetafdruk"
-    supply_biomass_potential: "Potentie van biomassa"
-    supply_bunker_fuels_international_aviation: "Internationale luchtvaart"
-    supply_bunker_fuels_international_shipping: "Internationale verzending"
-    supply_co2_emissions_biomass: "CO<sub>2</sub>-uitstoot van biomassa"
-    supply_electricity_coal_plants: "Kolencentrales"
-    supply_electricity_gas_plants: "Gascentrales"
-    supply_electricity_nuclear_plant: "Kerncentrale"
-    supply_electricity_oil_plants: "Oliecentrales"
-    supply_electricity_backup_security_of_supply: "Leveringszekerheid"
-    supply_electricity_backup_backup_options: "Backup"
-    supply_electricity_renewable_biomass_plants: "Biomassacentrales"
-    supply_electricity_renewable_gas: "(Groen)gas in gasnetwerk"
-    supply_electricity_biomass_plants: "Biomassacentrales"
-    supply_electricity_renewable_geothermal: "Geothermisch"
-    supply_electricity_renewable_hydro_electric: "Waterkracht"
-    supply_electricity_renewable_solar_power: "Zonne-energie"
-    supply_electricity_renewable_wind_turbines: "Windmolens"
-    supply_electricity_renewable_hydrogen_plants: "Waterstofcentrales"
-    supply_electricity_renewable_waste_power: "Afvalverbrandingscentrales"
-    supply_fossil_heat_fossil_fired_heaters: "Fossiele brandstofketels"
-    supply_fuel_mix_fuel_for_coal_plants: "Brandstofmix kolencentrales"
-    supply_fuel_mix_fuel_for_industry_chp: "Brandstofmix gasgestookte WKK"
-    supply_heat_sources: "Warmtebronnen"
-    supply_heat_network_industry: "Bronnen warmtenet"
-    supply_heat_network_losses: "Transport- en distributieverliezen"
-    supply_heat_combined_heat_power: "Warmte-krachtkoppeling"
-    supply_heat_network_order: "Inzetvolgorde van regelbare warmtebronnen"
-    supply_heat_network_storage_toggle: "(Seizoens)opslag van warmte"
-    supply_hydrogen_demand: "Waterstofvraag"
-    supply_hydrogen_production: "Waterstofproductie"
-    supply_hydrogen_transport: "Waterstoftransport"
-    supply_hydrogen_storage: "Waterstofopslag"
-    supply_hydrogen_co2_import: "CO<sub>2</sub>-emissies van geïmporteerde waterstof"
-    supply_infrastructure_high_voltage_network: "Hoogspanningsnetwerk"
-    supply_infrastructure_low_medium_voltage_network: "Laag- & middenspanningsnetwerk"
-    supply_primary_production: "Extractie van primaire energiedragers in het ETM"
-    supply_primary_production_coal: "Kolen en bruinkool"
-    supply_primary_production_oil: "Aardolie"
-    supply_primary_production_biomass: "Houtige biomassa"
-    supply_primary_production_natural_gas: "Aardgas"
-    supply_primary_production_uranium: "Uranium"
-    supply_renewable_heat_biomass: "Biomassa"
-    supply_renewable_heat_waste: "Afval"
-    supply_renewable_heat_geothermal_and_ambient: "Geothermische en omgevingswarmte"
-    supply_renewable_heat_solar: "Zonnewarmte"
-    supply_transport_compressed_gas: "Gas onder druk voor wegtransport"
-    supply_transport_diesel: "Diesel voor wegtransport"
-    supply_transport_international_aviation: "Internationale luchtvaart"
-    supply_transport_international_shipping: "Internationale scheepvaart"
-    supply_transport_useful_demand_trains: "Treinen"
-    supply_transport_gasoline: "Benzine voor wegtransport"
-    supply_transport_marine_fuels: "Binnenlandse scheepvaart"
-    supply_transport_public_transport_technologies: "Energiedragers openbaar vervoer"
-    supply_transport_road_transport: "Wegverkeer"
-    supply_transport_trains: "Treinverkeer"
+    costs_bio_fuel:
+      title: Biobrandstoffen
+      short_description: 
+      description: 'Wat zullen biobrandstoffen volgens jou kosten in de toekomst?
+        Let op: onderstaande brandstofprijzen hebben invloed op de merit order van
+        elektriciteit.'
+    costs_co2_ccs:
+      title: CCS in de energie sector
+      short_description: ''
+      description: Zal het afvangen en ondergronds opslaan van CO<sub>2</sub> echt
+        goedkoper worden? Weet jij ook hoeveel?
+    costs_co2_ccs_industry:
+      title: CCS in de industrie
+      short_description: 
+      description: 'Wat zullen de gemiddelde kosten van CCS in de industrie zijn?
+        NB: dit is een expert functie die op korte termijn vervangen zal worden door
+        meer gedetailleerde modellering.'
+    costs_co2_prices:
+      title: Prijzen
+      short_description: ''
+      description: De uitstoot van CO<sub>2</sub> is niet gratis meer voor Europese
+        stroomproducenten. Hoeveel goedkoper of duurder vergeleken met de prijs van
+        vandaag zal CO<sub>2</sub> in de toekomst zijn?
+    costs_electric_car_investment:
+      title: Investeringen elektrische auto's
+      short_description: 
+      description: Hier kun je aangeven hoeveel hoger de gemiddelde aanschafkosten
+        van elektrische auto's (excl. belastingen) zullen liggen dan die van auto's
+        met verbrandingsmotoren. Vergeet niet dat waterstofauto's ook elektrisch zijn!
+    costs_combustion_fuel:
+      title: Fossiele brandstoffen
+      short_description: ''
+      description: Niemand kan voorspellen hoeveel brandstoffen in de toekomst zullen
+        kosten. Dat maakt het moeilijk om elektriciteitskosten te voorspellen. Wat
+        gaan brandstoffen volgens jou kosten in de toekomst?
+    costs_combustion_investment:
+      title: Investeringen
+      short_description: ''
+      description: 'Hoe zullen de investeringskosten voor het bouwen van dit soort
+        centrales veranderen? Veel dingen spelen mee: staalprijzen, milieuwetgeving,
+        technologische doorbraken, enz.'
+    costs_combustion_operational_and_maintenance:
+      title: Onderhoud en beheer
+      short_description: ''
+      description: De kosten om centrales te laten draaien veranderen met de tijd.
+        Hoe hoog denk je dat ze in de toekomst zullen zijn?
+    costs_earth_investment:
+      title: Investeringen
+      short_description: 
+      description: 
+    costs_earth_operational_and_maintenance:
+      title: Onderhoud en beheer
+      short_description: 
+      description: 
+    costs_employment:
+      title: Binnenlands
+      short_description: 
+      description: "Het ETM berekent werkgelegenheidseffecten voor de technologieën
+        waarmee warmte en elektriciteit worden gemaakt.\r\n"
+    costs_flexibility_conversion:
+      title: Investeringskosten conversie elektriciteit
+      short_description: 
+      description: "(Overtollige) elektriciteit kan worden geconverteerd naar andere
+        energiedragers, zoals waterstof of warmte. Hieronder kun je aangeven hoeveel
+        de investeringskosten van deze conversie-apparaten (zoals boilers en elektrolysers)
+        in de toekomst zullen veranderen."
+    costs_flexibility_storage:
+      title: Investeringskosten opslag elektriciteit
+      short_description: 
+      description: Overschotten aan elektriciteit kunnen tijdelijk worden opgeslagen
+        in bijvoorbeeld batterijen in huizen. Hieronder kun je aangeven hoeveel de
+        investeringskosten van deze technologie in de toekomst zullen veranderen.
+    costs_heat_network:
+      title: Warmtenetinfrastructuur
+      short_description: 
+      description: Wat denk je dat de kosten van warmtenetinfrastructuur zullen zijn
+        in de toekomst? Zie <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
+        target ="_blank">onze documentatie</a> voor informatie over de kostenberekening.
+    costs_heatpumps:
+      title: Warmtepompen
+      short_description: 
+      description: Hieronder kun je de investeringskosten aanpassen voor warmtepompen
+        (zowel individuele als collectieve systemen) en de kosten voor warmtebuffers
+        in individuele huishoudens.
+    costs_geothermal:
+      title: Geothermie
+      short_description: ''
+      description: Er is veel aandacht voor aardwarmte tegenwoordig. Hoe veranderen
+        de investeringskosten en onderhoudskosten van deze technologie in de toekomst?
+    costs_solar_thermal:
+      title: Zonthermie
+      short_description: 
+      description: Zonthermie is een interessante duurzame bron voor warmte, zowel
+        via individuele zonneboilers als collectieve systemen. Hoe veranderen de investeringskosten
+        en onderhoudskosten van deze technologie in de toekomst?
+    costs_hydrogen_import:
+      title: Waterstofimport
+      short_description: 
+      description: Wat gaat geïmporteerde waterstof volgens jou kosten in de toekomst?
+    costs_hydrogen_storage:
+      title: Waterstofopslag
+      short_description: 
+      description: Wat denk je dat de kosten van waterstofopslag zullen zijn in de
+        toekomst?
+    costs_hydrogen_transport:
+      title: Waterstoftransport
+      short_description: 
+      description: Wat zullen de kosten voor de verschillende waterstof transporttechnologieën
+        zijn in de toekomst?
+    costs_infrastructure_electricity:
+      title: Kosten elektriciteitsinfrastructuur
+      short_description: 
+      description: 
+    costs_infrastructure_electricity_investement_regime:
+      title: Benuttingsgraad netwerken
+      short_description: 
+      description: ''
+    costs_imported_electricity:
+      title: Kosten van geïmporteerde elektriciteit
+      short_description: 
+      description: Wat zijn volgens jou de kosten van geïmporteerde elektriciteit
+        in de toekomst?
+    costs_imported_hydrogen:
+      title: Kosten van geïmporteerde waterstof
+      short_description: 
+      description: 
+    costs_nuclear_fuel:
+      title: Kernbrandstoffen
+      short_description: ''
+      description: Hoeveel kost kernbrandstof in de toekomst in vergelijking met de
+        prijzen van vandaag? In de kostengrafiek zie je dat kernenergie niet zo gevoelig
+        is voor de prijzen van uranium.
+    costs_nuclear_investment:
+      title: Investeringen
+      short_description: ''
+      description: 'Hoe zullen de investeringskosten voor het bouwen van nucleaire
+        centrales in de toekomst veranderen? Veel dingen spelen een rol: staalprijzen,
+        milieuwetgeving, technologische doorbraken, voldoende technisch geschoolde
+        mensen, enz.'
+    costs_nuclear_operational_and_maintenance:
+      title: Onderhoud en beheer
+      short_description: ''
+      description: De kosten om kerncentrales te laten draaien zullen in de toekomst
+        anders zijn, maar zijn slechts een klein onderdeel van de totale kosten. Hoe
+        hoog denk jij dat ze zullen zijn?
+    costs_residual_heat:
+      title: Restwarmte
+      short_description: 
+      description: Wat zijn volgens jou de toekomstige kosten van industriële restwarmte
+        en geïmporteerde warmte? Zie <a href="https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md"
+        target ="_blank">onze documentatie</a> voor informatie over industriële restwarmte.
+    costs_solar_investment:
+      title: Investeringen
+      short_description: ''
+      description: Hoe zullen de investeringen die zijn nodig voor zonnestroom veranderen
+        in de toekomst? De kosten namen de afgelopen jaren zeer snel af, terwijl de
+        efficiëntie toenam.
+    costs_water_investment:
+      title: Investeringen
+      short_description: ''
+      description: Hoe zullen de investeringskosten voor het bouwen van waterkracht
+        veranderen? Is er in de wereld genoeg ruimte voor grote dammen? Zullen ze
+        toegestaan zijn door strengere milieuwetten?
+    costs_water_operational_and_maintenance:
+      title: Onderhoud en beheer
+      short_description: ''
+      description: De kosten om waterkrachtcentrales te laten draaien zijn maar een
+        klein deel van het totaal. Hoe denk je dat deze zullen veranderen?
+    costs_wind_investment:
+      title: Investeringen
+      short_description: ''
+      description: 'Hoe zullen de investeringskosten voor het bouwen van windturbines
+        in de toekomst veranderen? Veel dingen spelen mee: staalprijzen, milieuwetgeving,
+        technologische doorbraken, enz.'
+    costs_wind_operational_and_maintenance:
+      title: Onderhoud en beheer
+      short_description: ''
+      description: De kosten om windmolens te laten draaien zullen veranderen met
+        de tijd. Hoe hoog denk je dat ze in de toekomst zullen zijn?
+    costs_batteries_investment:
+      title: Investeringen batterijen
+      short_description: 
+      description: 
+    costs_power_to_gas_investment:
+      title: Investeringen power-to-gas
+      short_description: 
+      description: 
+    costs_power_to_kerosene_investment:
+      title: Investeringen power-to-kerosene
+      short_description: 
+      description: 
+    costs_electric_boilers_investment:
+      title: Investeringen elektrische boilers
+      short_description: 
+      description: 
+    costs_wacc:
+      title: Gewogen kapitaalskosten (WACC)
+      short_description: 
+      description: 'Met onderstaande sliders kun je de toekomstige WACC (gewogen kapitaalskosten)
+        voor verschillende categorieën aanpassen. Let op: het gaat hier om de reële
+        WACC, dus exclusief inflatie. Het ETM rekent namelijk niet met inflatie. De
+        bronnen die gebruikt zijn voor de huidige percentages zijn te vinden op onze
+        <a href="https://github.com/quintel/documentation/blob/master/general/cost_calculations.md"
+        target ="_blank">documentatie</a>.'
+    data_export_application_demands:
+      title: Jaarlijkse energievraag per toepassing
+      short_description: 
+      description: |
+        Download informatie over de primaire en finale vraag – en de primaire CO<sub>2</sub>-uitstoot – van toepassingen van energie (zoals koken, apparaten, ruimterverwarming en transport).
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
+        </ul>
+    data_export_energy_flows:
+      title: Energiestromen
+      short_description: 
+      description: "Het Energietransitiemodel beschrijft het energiesysteem als een
+        verzameling van honderden energie-omzetters (nodes) die verbonden zijn met
+        energiestromen (edges). \r\nDeze CSV geeft een lijst van alle energie-omzetters
+        en de energiestromen die daar ingaan en uitkomen (uitgesplitst naar drager).\r\n<ul
+        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
+        <span class=\"name\">Energiestromen</span> <span class=\"filetype\">375KB
+        CSV</span></a></li>\r\n</ul>\r\n"
+    data_export_heat_network:
+      title: Uurlijkse profielen voor warmtenetten
+      short_description: 
+      description: |
+        Download informatie over de uurlijkse vraag en productie van collectieve
+        warmte voor warmtenetten in huishoudens, gebouwen en landbouw.
+
+        <ul class="data-download">
+          <li>
+            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
+              <span class="name">Warmtenetvraag, -productie en -opslag per uur</span>
+              <span class="filetype">1.5MB CSV</span>
+            </a>
+          </li>
+        </ul>
+    data_export_household_heat:
+      title: Uurlijkse profielen voor warmte in huishoudens
+      short_description: 
+      description: "Download informatie over de individuele warmtevraag en -productie
+        van huishoudens (ruimteverwarming en warm water). Het bestand laat op uurbasis
+        zien hoeveel warmte er gevraagd wordt, hoeveel warmte de geïnstalleerde technieken
+        leveren en of er sprake is van warmtebuffering, uitstel van warmtelevering
+        of tekorten. Dit kan het geval zijn als de gekozen verwarmingstechnieken onvoldoende
+        capaciteit hebben om op bepaalde momenten aan de vraag te voldoen.\r\n\r\n<ul
+        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\">
+        <span class=\"name\">Warmteprofiel huishoudens <span class=\"filetype\">400KB
+        CSV</span></a></li>\r\n</ul>\r\n"
+    data_export_production:
+      title: Specificaties warmte- en elektriciteitsproductie
+      short_description: 
+      description: |
+        Download details over de technologieën die elektriciteit en warmte produceren. Bevat informatie over de elektrische en warmtecapaciteit, het aantal opgestelde eenheden en de kosten.
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="name">Capaciteiten en kosten</span> <span class="filetype">15KB CSV</span></a></li>
+        </ul>
+    data_export_hydrogen:
+      title: Uurlijkse profielen voor waterstof
+      short_description: 
+      description: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
+        en opslag van waterstof uit. Hieronder kun je deze gegevens downloaden als
+        CSV-bestand, uitgesplitst naar technologie/sector.\r\n\r\n\r\n<ul class=\"data-download\">\r\n
+        \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
+        \     <span class=\"name\">Waterstofvraag, -productie en -opslag per uur</span>\r\n
+        \     <span class=\"filetype\">750KB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
+    data_export_network_gas:
+      title: Uurlijkse profielen voor gas
+      short_description: 
+      description: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
+        en opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als
+        CSV-bestand, uitgesplitst naar technologie/sector.\r\n\r\n<ul class=\"data-download\">\r\n
+        \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
+        \     <span class=\"name\">Netwerkgasvraag, -productie en -opslag per uur</span>\r\n
+        \     <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
+    data_visuals_factsheet:
+      title: Energie-mix infographic
+      short_description: 
+      description: |
+        Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag als
+        aanbod wordt samengevat voor je scenario.
+        <br /><br />
+        <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
+          <span class="fa fa-book"></span> Bekijk de factsheet →
+        </a>
+    data_visuals_graph:
+      title: Energiegraaf/stromendiagram
+      short_description: 
+      description: |
+        Gedetailleerde en interactieve weergave van de energiestromen en
+        energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde
+        gebruikers.
+        <br /><br />
+        <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button" target="_blank" rel="noopener nofollow">
+          <span class="fa fa-book"></span> Bekijk de energiegraaf →
+        </a>
+    data_visuals_scenario_report:
+      title: Scenarioverslag
+      short_description: 
+      description: |
+        Het scenarioverslag beschrijft je scenario in woord en beeld. Het bevat
+        informatie over de behaalde doelen, toont uitsplitsingen van
+        energiegebruik en elektriciteitsproductie, wijst je op mogelijke
+        inconsistenties en nog veel meer.
+        <br /><br />
+        <a href="/scenario/reports/auto" class="simple-button">
+          <span class="fa fa-book"></span> Bekijk het verslag →
+        </a>
+    data_visuals_co2_sheet:
+      title: CO<sub>2</sub>-voetafdruk
+      short_description: 
+      description: |
+        Een printklare sheet met een visuele samenvatting van de
+        CO<sub>2</sub>-voetafdruk voor jouw scenario.
+        <br /><br />
+        <a
+          href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+          target="_blank"
+          class="simple-button"
+        >
+          <span class="fa fa-newspaper-o"></span> Bekijk de sheet →
+        </a>
+    demand_agriculture_combined_heat_power:
+      title: Warmtenet
+      short_description: 
+      description: 
+    demand_agriculture_demand_growth:
+      title: Groei van de vraag
+      short_description: ''
+      description: De groei die je hier aangeeft is het gevolg van economische en
+        bevolkingsgroei. Dit is <strong>inclusief</strong> efficiëntieverbeteringen,
+        maar <strong>exclusief</strong> andere technologieën die je in de gedeeltes
+        hieronder kunt aangeven.
+    demand_agriculture_heat:
+      title: Warmte
+      short_description: ''
+      description: Hoe wordt de warmte die gebruikt wordt in de landbouw geproduceerd?
+        Een andere mix van warmtetechnologieën heeft impact op energie-efficiëntie,
+        duurzaamheid en CO<sub>2</sub>-uitstoot in de landbouw.
+    demand_buildings_appliances:
+      title: Apparaten
+      short_description: ''
+      description: Er kan nog veel verbeterd worden aan apparaten in kantoren. Computers,
+        monitoren en dergelijke worden steeds zuiniger. Weet jij hoeveel?
+    demand_buildings_cooling:
+      title: Koeling
+      short_description: ''
+      description: 'Hoe worden kantoren en andere gebouwen in de toekomst gekoeld? '
+    demand_buildings_demand_growth:
+      title: Groei van de vraag
+      short_description: ''
+      description: De veranderingen in energiegebruik per gebouw die je hier aangeeft
+        zijn het gevolg van welvaartsgroei. Dit is dus <strong>exclusief</strong>
+        efficiëntieverbeteringen en andere technologieën die je in de gedeeltes hieronder
+        kunt aangeven.
+    demand_buildings_heating:
+      title: Ruimteverwarming
+      short_description: ''
+      description: Hoe zullen kantoren en overige gebouwen verwarmd worden? In de
+        meeste Europese landen kan veel energie bespaard worden door gebouwen op een
+        slimmere manier te verwarmen.
+    demand_buildings_insulation:
+      title: Isolatie
+      short_description: ''
+      description: De isolatie van gebouwen zoals kantoren, scholen, winkels, ziekenhuizen
+        en horeca verschilt sterk. Wat is de gemiddelde warmtevraag-reductie voor
+        deze gebouwen in de toekomst?
+    demand_buildings_lighting:
+      title: Verlichting
+      short_description: ''
+      description: Hoewel maar een klein deel van het energiegebruik van huishoudens
+        naar verlichting gaat, is het een flink deel van het gebruik in kantoren en
+        overige gebouwen.
+    demand_buildings_solar_panels:
+      title: Zonnepanelen
+      short_description: ''
+      description: Het lokaal opwekken van stroom bespaart energie en in de toekomst
+        mogelijk ook geld.
+    demand_bunkers_international_aviation:
+      title: Internationale luchtvaart
+      short_description: 
+      description: 
+    demand_bunkers_international_shipping:
+      title: Internationale scheepvaart
+      short_description: 
+      description: 
+    demand_households_appliances:
+      title: Apparaten
+      short_description: ''
+      description: 'Er kan nog veel verbeterd worden aan huishoudelijke apparaten.
+        Hoeveel efficiënter denk jij dat ze zullen worden? '
+    demand_households_behaviour:
+      title: Gedrag
+      short_description: ''
+      description: 'Hoeveel verandert de huishoudelijke energievraag als we ons gedrag
+        aanpassen?  '
+    demand_households_climate:
+      title: Klimaat
+      short_description: 
+      description: 
+    demand_households_cooking:
+      title: Koken
+      short_description: ''
+      description: Zal de energievraag veel veranderen als huishoudens anders gaan
+        koken?
+    demand_households_cooling:
+      title: Koeling
+      short_description: ''
+      description: Hoe worden woningen gekoeld? Hiervoor kunnen voor een deel dezelfde
+        apparaten worden gebruikt als voor verwarming.
+    demand_households_demand_growth:
+      title: Welvaart
+      short_description: ''
+      description: Veranderingen in persoonlijke welvaart beïnvloeden het energiegebruik
+        van een huishouden. Sommige van deze veranderingen schalen met de bevolking,
+        terwijl anderen met het aantal huishoudens schalen. Dit is <strong>exclusief</strong>
+        efficiëntieverbeteringen en andere technologieën die je in de gedeeltes hieronder
+        kunt aangeven.
+    demand_households_heating:
+      title: Ruimteverwarming & warm water
+      short_description: ''
+      description: "Hoe zullen huishoudens verwarmd worden en hun warm water maken?
+        \r\n"
+    demand_households_insulation:
+      title: Isolatie
+      short_description: ''
+      description: De vraag naar warmte is afhankelijk van de mate van isolatie. Hieronder
+        kan je de warmtevraag-reductie per huistype instellen vergeleken met een huis
+        met energielabel G.
+    demand_households_lighting:
+      title: Verlichting
+      short_description: ''
+      description: Verlichting is een klein maar zichtbaar deel van het energiegebruik
+        van een huishouden.
+    demand_households_population:
+      title: Bevolking & huizenvoorraad
+      short_description: 
+      description: De energievraag voor alle huishoudens samen is afhankelijk van
+        het aantal inwoners en het aantal huizen, welke je beide hier kunt instellen.
+    demand_households_solar_panels:
+      title: Zonnepanelen
+      short_description: ''
+      description: Het lokaal opwekken van stroom bespaart energie en in de toekomst
+        mogelijk ook geld.
+    demand_industry:
+      title: Energievraag in de industrie
+      short_description: 
+      description: "In de meeste landen is de industrie verantwoordelijk voor het
+        grootste deel van het energiegebruik. Omdat de industrie heel divers is, hebben
+        we deze onderverdeeld in verschillende subsectoren. Hierbij wordt zoveel mogelijk
+        de indeling uit de energiestatistiek van het Internationaal Energieagentschap
+        (IEA) gevolgd. De grafiek hiernaast laat het energiegebruik voor elk van deze
+        sectoren zien. In de slides hieronder kun je de omvang en efficiëntieverbeteringen
+        van elke sector instellen. Een aantal kleine sectoren zijn gegroepeerd onder
+        <a href=\"/scenario/demand/industry/other\" > Overige industrie</a>.\r\n<br/><br/>\r\nEnkele
+        van de grootste sectoren zijn in meer detail gemodelleerd. Hierdoor is het
+        mogelijk of eventuele structuurveranderingen in deze sectoren als gevolg van
+        de energietransitie te verkennen. Zie voor inspiratie het rapport <a href=\"http://refman.energytransitionmodel.com/publications/2037\"
+        target =\"_blank\">Industrie in transitie</a>."
+    demand_industry_aluminium:
+      title: Aluminium
+      short_description: 
+      description: "Aluminiumproductie is de meeste energie-intensieve metaalsector
+        na staal. Je kunt kiezen uit drie maatregelen om dit verbruik terug te dringen.
+        Let op: bij smeltoven komt er geen nieuw aluminium bij, dit is recycling van
+        bestaand aluminium. Geef aan hoe jij denkt dat de verdeling gaat worden.\r\n"
+    demand_industry_ccs:
+      title: CO<sub>2</sub>-afvang en -opslag
+      short_description: 
+      description: 'Welk percentage van de directe CO2 emissies van de industrie zal
+        worden afgevangen en opgeslagen? N.b.: dit is een expert functie die op korte
+        termijn vervangen zal worden door meer gedetailleerde modellering.'
+    demand_industry_chemical_refineries:
+      title: Raffinaderijen
+      short_description: 
+      description: "Raffinaderijen maken van ruwe olie olieproducten. Deze olieproducten
+        worden ingezet als brandstof in de transportsector of als grondstof in de
+        chemische industrie. Raffinaderijen verdienen het meeste geld aan de transportbrandstoffen.
+        Als gevolg van veranderende technologieën in de transportsector zal de vraag
+        naar deze brandstoffen veranderen. Deze technologieën zijn in te stellen in
+        <a href=\"/scenario/demand/transport\" > de transportsector van het ETM</a>.\r\n<br/><br/>\r\nDe
+        productie van de raffinaderijen is in het ETM niet direct gekoppeld aan de
+        binnenlandse vraag naar transportbrandstoffen. Eventuele tekorten worden geïmporteerd
+        en eventuele overschotten worden geëxporteerd. Dit geldt ook voor de olieproducten
+        die worden ingezet als grondstof in de chemische industrie. Hieronder kun
+        je het productievolume en de efficiëntieverbeteringen van de raffinaderijen
+        afzonderlijk instellen. Let hierbij op dat de vraag naar raffinageproducten
+        wordt bepaald door de wereldwijde markt. "
+    demand_industry_chemical_fertilizers:
+      title: Kunstmest
+      short_description: 
+      description: Ammoniak (NH<sub>3</sub>) vormt de basis voor alle op stikstof
+        gebaseerde kunstmest. De belangrijkste stap in het produceren van ammoniak
+        is het reageren van waterstof met stikstof. Op dit moment wordt de benodigde
+        waterstof lokaal gemaakt door aardgas om te zetten in een stoomreformingproces
+        (SMR), waarbij CO<sub>2</sub> vrijkomt. Het is in de toekomst wellicht ook
+        mogelijk om de waterstof te gebruiken van een centraal waterstofnetwerk. Dit
+        netwerk bevat waterstof van verschillende productieprocessen die te kiezen
+        zijn in de slide <a href="/scenario/supply/hydrogen/hydrogen-production" >'waterstofproductie'</a>.
+    demand_industry_chemical_other:
+      title: Chemie
+      short_description: 
+      description: "Binnen deze sector vallen de productie van chemicaliën. De productie
+        van kunstmest is hiervan afgesplitst en is als <a href=\"/scenario/demand/industry/fertilizers\"
+        > aparte sector</a> opgenomen in het model.\r\n<br></br>\r\nDe groei die je
+        hier aangeeft is het gevolg van economische groei en bevolkingsgroei. Dit
+        is dus <strong>exclusief</strong> efficiëntieverbeteringen en andere technologieën
+        die je in de gedeeltes hieronder kunt aangeven.\r\n<br></br>\r\nLet op: de
+        warmtetechnologieën zijn niet allemaal geschikt om de volledige warmtevraag
+        in te vullen. Meer informatie hierover is te vinden bij het \"?\" naast de
+        schuifjes."
+    demand_industry_aggregated_chemical_other:
+      title: Chemie
+      short_description: 
+      description: Binnen deze sector vallen de productie van chemicaliën en chemische
+        producten, inclusief kunstmest.
+    demand_industry_other_food:
+      title: Voedsel
+      short_description: 
+      description: Deze sector omvat de productie van voedselproducten, drank en tabaksproducten.
+        Hieronder kun je de groei en efficiëntieverbeteringen van deze sector afzonderlijk
+        instellen.
+    demand_industry_other_ict:
+      title: Centrale ICT
+      short_description: 
+      description: Deze sector omvat alle gecentraliseerde ICT services. De voornaamste
+        onderdelen hiervan zijn datacenters en telecom. Hieronder kun je de groei
+        en efficiëntieverbeteringen van deze sector afzonderlijk instellen.
+    demand_industry_other_paper:
+      title: Papier
+      short_description: 
+      description: In deze sector vind je het energiegebruik voor zowel het maken
+        van papier en papierproducten als voor het drukken en printen van boeken,
+        kranten en tijdschriften. Hieronder kun je de groei en efficiëntieverbeteringen
+        van deze sector afzonderlijk instellen.
+    demand_industry_aggregated_other:
+      title: Overig
+      short_description: 
+      description: De overige industrie beslaat de sectoren die hierboven niet expliciet
+        zijn vermeld. Omdat de specifieke technologieën niet bekend zijn voor deze
+        sector, kan je hieronder direct de verdeling van energiedragers instellen.
+    demand_industry_combined_heat_power:
+      title: Warmtenet
+      short_description: 
+      description: 
+    demand_industry_other_metals:
+      title: Overige metalen
+      short_description: 
+      description: In deze sector valt de productie van lood, zink, koper, zilver
+        of goud en de nabewerking van geproduceerd staal en aluminium. Hier kun je
+        de efficiëntieverbeteringen aangeven van elektrische en van warmteprocessen
+        voor deze sector.
+    demand_industry_steel:
+      title: Staal
+      short_description: 
+      description: "Voor staalverwerking zijn energie-intensieve ovens nodig. Hiervoor
+        zijn verschillende alternatieven mogelijk. Het percentage gerecycled staal
+        dat als input kan dienen, verschilt per technologie: bij hoogovens en cycloonovens
+        kan tot 20% hergebruikt worden en de elektrische oven dient alleen voor recycling.
+        Alleen de cycloonoven kan volledig op biogrondstof overschakelen.\r\n"
+    demand_other_combined_heat_power:
+      title: Warmte-krachtkoppeling
+      short_description: 
+      description: 
+    demand_other_demand_growth:
+      title: Groei van de vraag
+      short_description: ''
+      description: De groei die je hier aangeeft is het gevolg van economische en
+        bevolkingsgroei. Dit is dus <strong>exclusief</strong> efficiëntieverbeteringen
+        en andere technologieën.
+    demand_transport_bus_technology:
+      title: Technologie bussen
+      short_description: 
+      description: 'Veruit de meeste bussen rijden vandaag de dag op diesel of gas.
+        Hoe zal dit veranderen in de toekomst? In de <a href="/scenario/supply/transport_fuels/road-transport"
+        >sectie wegverkeer brandstoffen</a> kun je bepalen op welke brandstofmix bussen
+        zullen rijden. '
+    demand_transport_bicycle_technology:
+      title: Technologie fietsen
+      short_description: 
+      description: E-bikes worden steeds meer gebruikt; zet deze trend door?
+    demand_transport_car_technology:
+      title: Technologie auto's
+      short_description: ''
+      description: Gaan we massaal over op auto's die geen fossiele brandstoffen gebruiken?
+        Wat gebeurt er als we allemaal overstappen op elektrische auto's? Hier kun
+        je aangeven in wat voor auto's we in de toekomst rijden. In de <a href="/scenario/supply/transport_fuels/road-transport"
+        >sectie brandstoffen wegverkeer </a> kun je bepalen op welke brandstofmix
+        auto's zullen rijden en in de <a href="/scenario/flexibility/flexibility_demand/demand-response-electric-vehicles"
+        >sectie vraagsturing - elektrische auto's</a> kun je aangeven waar auto's
+        zullen opladen.
+    demand_transport_efficiency_improvement:
+      title: Efficiëntieverbeteringen
+      short_description: ''
+      description: Vervoersmiddelen worden met de jaren efficiënter, maar hoeveel
+        eigenlijk? Met de onderstaande sliders kan je de efficiëntieverbetering per
+        type vervoersmiddel in procenten per jaar bepalen.
+    demand_transport_international_transport:
+      title: Internationaal transport
+      short_description: 
+      description: Internationaal transport is op dit moment geen onderdeel van nationale
+        energiestatistieken, omdat het complex is om emissies hiervan toe te wijzen
+        aan een specifiek land. Internationale lucht- en scheepvaart zijn echter wel
+        verantwoordelijk voor meer dan 4.5% van de wereldwijde uitstoot van broeikasgassen
+        (<a href="https://ec.europa.eu/clima/policies/transport_en">EC Climate Action</a>).
+        Om emissiereductiemaatregelen te kunnen nemen is inzicht nodig in dit energiegebruik.
+        Daarom kun je hier kiezen welk percentage van de internationale lucht- en
+        scheepvaart je mee wilt laten tellen.
+    demand_transport_international_transport_mobility_growth:
+      title: Mobiliteitsgroei
+      short_description: 
+      description: Internationaal transport is gegroeid als gevolg van globalisering.
+        Zal deze trend zich doorzetten? Het groeitempo dat je hier invult gaat over
+        de hele sector en hangt niet af van de bevolkingsgroei.
+    demand_transport_international_navigation_technology:
+      title: Technologie internationale scheepvaart
+      short_description: 
+      description: Zullen schepen blijven varen op zware stookolie (heavy fuel oil
+        = HFO) of zullen ze overstappen op vloeibaar aardgas (LNG) voor internationaal
+        transport?
+    demand_transport_international_aviation_technology:
+      title: Technologie internationale luchtvaart
+      short_description: 
+      description: Voor internationaal vliegverkeer worden vooral grote vliegtuigen
+        ingezet die kerosine gebruiken. Het is daarom niet mogelijk om hier alternatieve
+        technologieën te kiezen, maar je kunt wel het kerosinemengsel kiezen in de
+        <a href="/scenario/supply/transport_fuels/international-aviation" >brandstoffen
+        </a>sectie.
+    demand_transport_mobility_growth:
+      title: Mobiliteitsgroei
+      short_description: 
+      description: 
+    demand_transport_train_technology:
+      title: Technologie treinen
+      short_description: 
+      description: 
+    demand_transport_freight_train_technology:
+      title: Technologie goederentreinen
+      short_description: 
+      description: Welke trein-technologiën zullen voornamelijk gebruikt worden? Elektrische
+        treinen zijn schoner en efficiënter dan dieseltreinen, maar hebben wel meer
+        infrastructuur nodig om te kunnen rijden. In de <a href="/scenario/supply/transport_fuels/rail-transport"
+        > brandstoffensectie van treinen</a> kun je aangeven welke brandstoffen dieseltreinen
+        zullen gebruiken.
+    demand_transport_freight_transport:
+      title: Applicaties
+      short_description: 
+      description: "Zal vrachtvervoer toenemen of afnemen in de toekomst? De groeifactor
+        die je hier invoert, bepaalt onze toekomstige vraag naar 'ladingtonkilometers',
+        het totaal aantal transportkilometers van vracht per jaar. Dit getal omvat
+        alle vrachtvervoersmiddelen (vrachtwagens, goederentreinen en binnenvaartsschepen).\r\n\r\n<br
+        /> <br />\r\nNaast de groeifactor kun je hier de verdeling van vrachtvervoersmiddelen
+        bepalen. Hoeveel procent van de ladingtonkilometers wordt afgelegd door vrachtwagens,
+        hoeveel door goederentreinen en hoeveel door binnenvaartsschepen?\r\n\r\n<br
+        /> <br />\r\nLet op: containerschepen vallen onder de categorie <a href=\"/scenario/demand/transport_international_transport/international-transport\">'internationaal
+        transport'</a>."
+    demand_transport_motorcycle_technology:
+      title: Technologie motorfietsen
+      short_description: 
+      description: Wat zal het aandeel van elektrische en benzinemotorfietsen zijn
+        in de toekomst? Ook scooters vallen onder deze categorie.
+    demand_transport_overview:
+      title: Overzicht
+      short_description: 
+      description: In de zijbalk links kun je klikken op <a href="/scenario/demand/transport_passenger_transport/applications">'Passagiersvervoer'</a>,
+        <a href="/scenario/demand/transport_freight_transport/applications">'Vrachtvervoer'</a>
+        en <a href="/scenario/demand/transport_international_transport/international-transport">'Internationaal
+        transport'</a>. Daar kun je aangeven hoe onze transportvraag zal veranderen
+        in de toekomst, welke vervoersmiddelen we gaan gebruiken en welke aandrijftechnologieën
+        zullen domineren.
+    demand_transport_passenger_transport:
+      title: Applicaties
+      short_description: ''
+      description: "Onze mobiliteit is gegroeid als gevolg van een groeiende economie.
+        Zet deze trend zich voort in de toekomst? De groeifactor die je hier invoert,
+        bepaalt onze toekomstige vraag naar 'passagierskilometers', het totaal aantal
+        kilometers dat we afleggen in een jaar. Dit getal omvat alle passagiersvervoersmiddelen
+        (auto, bus, fiets, etc.) en wordt niet beïnvloed door (de groei van) het aantal
+        inwoners. \r\n<br /> <br />\r\nNaast de groeifactor kun je hier de verdeling
+        van vervoermiddelen bepalen. Hoeveel procent van de kilometers die we reizen,
+        leggen we af met de auto, bus, fiets, etc.?\r\n<br /> <br />\r\nLet op: internationaal
+        vliegverkeer valt onder de <a href=\"/scenario/demand/transport_international_transport/international-transport\">sectie
+        'internationaal transport'</a>."
+    demand_transport_passenger_train_technology:
+      title: Technologie passagierstreinen
+      short_description: ''
+      description: Welke trein-technologiën zullen voornamelijk gebruikt worden? Elektrische
+        treinen zijn schoner en efficiënter dan kolen- of dieseltreinen, maar hebben
+        wel meer infrastructuur nodig om te kunnen rijden. In de <a href="/scenario/supply/transport_fuels/rail-transport"
+        > brandstoffensectie van treinen</a> kun je aangeven welke brandstoffen dieseltreinen
+        zullen gebruiken.
+    demand_transport_plane_technology:
+      title: Technologie binnenlandse luchtvaart
+      short_description: 
+      description: 
+    demand_transport_tram_technology:
+      title: Technologie tram/metro
+      short_description: 
+      description: Het ETM modelleert alleen elektrische trams en metro's.
+    demand_transport_truck_technology:
+      title: Technologie vrachtwagens
+      short_description: ''
+      description: Komen er meer trucks die geen fossiele brandstoffen gebruiken?
+        Wat gebeurt er dan met het energiegebruik? In de <a href="/scenario/supply/transport_fuels/road-transport"
+        >brandstoffensectie van wegverkeer</a> kun je bepalen op welke brandstoffen
+        vrachtwagens zullen rijden.
+    demand_transport_domestic_aviation_technology:
+      title: Technologie binnenlandse luchtvaart
+      short_description: ''
+      description: 'Hoeveel van het gebruikte vliegtuigbrandstof komt van hernieuwbare
+        bronnen? Vergeet niet dat het telen van gewassen hiervoor deels ten koste
+        gaat van voedselproductie. '
+    demand_transport_domestic_navigation_technology:
+      title: Technologie binnenvaartschepen
+      short_description: 
+      description: Blijft de binnenvaart conventionele dieselmotoren gebruiken, of
+        maakt men de overstap naar schepen met LNG-motoren? In de <a href="/scenario/supply/transport_fuels/domestic-navigation"
+        >brandstoffensectie van binnenvaartschepen</a> kun je instellen door welke
+        brandstofmix deze motoren aangedreven worden.
+    fce_biomass:
+      title: Houtpellets
+      short_description: ''
+      description: Houtpellets kunnen worden bijgestookt in kolencentrales.  Hoewel
+        er bij de omzetting naar elektriciteit geen fossiele CO<sub>2</sub> vrijkomt,
+        worden er in eerdere stappen in de brandstofketen wel broeikasgassen uitgestoten,
+        vooral bij de teelt en het transport van hout. Merk op dat het gebruik van
+        houtpellets niet moet leiden tot ontbossing of degradatie van natuurlijke
+        gebieden, wil bijstook überhaupt een positieve impact op het klimaat hebben.
+        <a href="/texts/fce_biomass" class="fancybox">lees verder</a>
+    fce_coal:
+      title: Kolen
+      short_description: ''
+      description: Kolen worden overal in de wereld gebruikt en zijn ruim voorradig.
+        Ze zijn dus een veilige en goedkope bron van energie voor de komende generaties.
+        Er komt wel meer CO<sub>2</sub> vrij bij het verbranden van kolen dan bij  alle
+        andere brandstoffen. Daarnaast is er bij kolen, bij gebrek aan zorgvuldig
+        beleid voor productie en gebruik, een risico op verdere negatieve gevolgen
+        voor het milieu en de volksgezondheid, wat bij andere fossiele brandstoffen
+        niet speelt. <a href="/texts/fce_coal" class="fancybox">lees verder</a>
+    fce_gas:
+      title: Aardgas
+      short_description: ''
+      description: "Aardgas is een fossiele brandstof waarvan steeds meer reserves
+        beschikbaar komen. Doordat aardgas relatief weinig koolstof bevat en de productie
+        efficiënt is, stoten gascentrales half zoveel CO<sub>2</sub> uit per kWhe
+        als kolencentrales. Bij het zuiveren van ruw aardgas treedt lokaal wel milieuvervuiling
+        op in enkele producerende landen. Aardgas bestaat voornamelijk uit methaan,
+        wat zelf een sterk broeikasgas is. Na extractie kan aardgas getransporteerd
+        worden via pijpleidingen of door schepen, in het laatste geval in vloeibare
+        vorm. Merk op dat tijdens het vloeibaar maken van aardgas de samenstelling
+        ervan verandert en daardoor de eigenschappen, omdat sommige componenten verwijderd
+        worden. <a href=\"/texts/fce_naturalgas\" class=\"fancybox\">lees verder</a>\r\n<br/>
+        \r\n\r\n"
+    fce_greengas:
+      title: Groengas
+      short_description: ''
+      description: Groengas is behandeld biogas, wat wordt geproduceerd uit biomassa.
+        Het biogas is gezuiverd en verrijkt om dezelfde kwaliteiten als aardgas te
+        hebben. Het kan dan toegevoegd worden aan het gasnetwerk. Voor het ETM wordt
+        uitgegaan van groengasproductie op basis van co-vergisting van snijmaïs en
+        mest. Groengas heeft veel lagere ketenemissies dan fossiele brandstoffen,
+        maar is niet compleet klimaatneutraal. Broeikasgasemissies vinden plaats bij
+        het telen van snijmaïs en tijdens het produceren en behandelen van biogas.
+        <a href="/texts/fce_greengas" class="fancybox">lees verder</a>
+    fce_settings:
+      title: FCE Opties
+      short_description: 
+      description: "<p>Broeikasgassen worden uitgestoten bij het gebruik van brandstoffen,
+        maar ook bij de extractie, bewerking en transport ervan. Deze ketenemissies
+        gebeuren vaak buiten de grenzen van het land dat de brandstoffen gebruikt.
+        In dit gedeelte van het model kun je kiezen of je wilt dat het model in de
+        CO<sub>2</sub> berekeningen ook de ketenemissies meeneemt.</p>\r\n<p>Hieronder
+        kun je per brandstofsoort de herkomstmix kiezen. Je zult zien dat de ketenemissies
+        per herkomstregio sterk kunnen veranderen. Ook de CO<sub>2</sub> emissies
+        door directe verbranding veranderen als je de mix aanpast, omdat bijvoorbeeld
+        kolen uit Oost Europa een andere samenstelling hebben dan die uit Noord-Amerika.
+        De herkomstmix heeft dus invloed op de CO<sub>2</sub> uitstoot, ongeacht of
+        de ketenemissies 'AAN' of 'UIT' staan.</p>\r\n\r\n<div class=\"fce-toggle\"></div>"
+    fce_oil:
+      title: Aardolie
+      short_description: 
+      description: "Aardolie is de bron van veel verschillende energiedragers, chemicaliën,
+        plastics, kunstmest, etc. De getallen die hier zijn opgenomen gaan over het
+        gebruik van aardolie zelf. Uitstoot door raffinage of verwerking tot chemicaliën
+        is niet meegenomen. <br/>\r\nDe oliemarkt is dynamischer dan bijvoorbeeld
+        de gasmarkt. De herkomst ligt daardoor over minder lange periodes vast dan
+        voor aardgas en kan meer variëren. Daarom zijn hier geen schuifjes opgenomen.
+        <a href=\"/texts/fce_oil\" class=\"fancybox\">lees verder</a>"
+    fce_uranium:
+      title: Uranium
+      short_description: ''
+      description: 'Kernenergie levert weinig CO<sub>2</sub> uitstoot op. Bij het
+        winnen, verwerken en transporteren van uranium wordt wel wat CO<sub>2</sub>
+        uitgestoten. Er wordt wel een prijs betaald voor deze lage uitstoot: de kans
+        op ernstige ongelukken - ook al is die klein - en het ontbreken van een langetermijnoplossing
+        voor het hoogradioactieve afval. <a href="/texts/fce_uranium" class="fancybox">lees
+        verder</a>'
+    fce_liquid_biofuels:
+      title: Vloeibare biobrandstoffen
+      short_description: 
+      description: "De EU heeft bepaald dat een minimum percentage vloeibare biobrandstoffen
+        worden bijgemengd in de brandstoffen voor wegtransport. Zulke brandstoffen
+        kunnen vaak efficiënter gemaakt worden in tropische landen. Is de hele keten
+        ook efficiënter vanuit het oogpunt van broeikasgasemissies? Onder het kopje
+        <a href=\"/scenario/supply/biomass/supply_biomass_biofuels_production\">'Biomassa'</a>
+        kun je kiezen van welke biomassa de biobrandstoffen gemaakt worden en dit
+        heeft invloed op de ketenemissies. Hoeveel biobrandstoffen worden ingezet
+        kies je onder 'Transport brandstoffen'\r\n\r\n<a href=\"/texts/fce_liquid_biofuels\"
+        class=\"fancybox\">lees verder</a>"
+    flexibility_electricity_import_export_edp:
+      title: Naar een Europese 'Merit Order'
+      short_description: 
+      description: "De <strong>merit order</strong>  bepaalt de volgorde waarin elektriciteitsproducenten
+        aan de vraag voldoen (zie ook <a href=\"/scenario/costs/merit_order/merit-order\"
+        >Merit Order</a>). De producenten met de laagste marginale kosten hebben voorrang.
+        \r\n<br/><br/>\r\nDit betekent dat landen met goedkopere stroomproductie exporteren
+        naar landen met duurdere opwek, totdat de prijzen in beide landen gelijk zijn
+        of de interconnectoren 'vol zitten'. \r\n<br/><br/>\r\nOm fysieke marktkoppeling
+        te bevorderen, wordt de interconnectiecapaciteit tussen landen uitgebreid
+        en het gebruik ervan geoptimaliseerd."
+    flexibility_electricity_import_export_interconnectivity:
+      title: Interconnectiecapaciteit
+      short_description: 
+      description: Het verschil tussen de vraag en het aanbod van elektriciteit op
+        uurbasis kan worden geïmporteerd of geëxporteerd. De interconnectiecapaciteit
+        tussen landen is echter beperkt; het is hierdoor maar beperkt mogelijk om
+        elektriciteit te exporteren. Hieronder kun je de totale capaciteit van alle
+        interconnectoren instellen. Het is echter mogelijk dat niet al deze capaciteit
+        beschikbaar is voor export, bijvoorbeeld omdat de omringende landen op hetzelfde
+        moment met elektriciteitsoverschotten kampen. Het is daarom mogelijk om het
+        percentage van de interconnectiecapaciteit dat beschikbaar is voor export
+        te beperken. Lees meer over import/export <a href="https://github.com/quintel/documentation/blob/master/general/import_export.md">hier</a>.
+    flexibility_electricity_import_export_interconnectors:
+      title: Effecten van extra interconnectiecapaciteit
+      short_description: 
+      description: "De lidstaten van de EU zijn van plan om meer interconnectiecapaciteit
+        te realiseren (zie <a href=\"http://refman.et-model.com/publications/1829\"
+        target=\"_blank\">10-Year Network Development Plan (ENTSO-E)</a>). In de figuur
+        rechts kun je zien hoe de stroomprijzen in twee fictieve landen veranderen
+        als de interconnectiecapaceit verdubbelt. \r\n<br/><br/>\r\nDe blauwe lijnen
+        zijn de stroomprijzen per uur voor de landen A en B in het referentiejaar
+        (2010). Als de lijnen bij elkaar komen (bijv. uur 1-5) hebben beide landen
+        dezelfde stroomprijs (convergentie). Dit komt doordat ze beide stroom geleverd
+        krijgen door de goedkoopste producent (het goedkoopste land exporteert naar
+        het andere land). \r\n<br/><br/>\r\nVaak komen de lijnen niet samen. Dat komt
+        doordat de interconnector maximaal benut is (congestie), ook al heeft één
+        van de landen nog goedkope productiecapaciteit over. Het land dat de stroom
+        niet kan importeren zal deze van een duurdere locale producent moeten afnemen.\r\n<br/><br/>\r\nDe
+        rode en oranje lijnen zijn de stroomprijzen als de interconnectiecapaciteit
+        verdubbeld wordt. Doordat deze hoger is, komt het minder vaak voor dat de
+        interconnector maximaal benut is en convergeren de prijzen vaker.  "
+    flexibility_electricity_import_export_markets:
+      title: Koppeling van de elektriciteitsmarkt
+      short_description: 
+      description: "De elektriciteitsmarkt is één van de laatste markten in de EU
+        die nog niet geïntegreerd is. De meeste bedrijven in de EU concurreren al
+        met elkaar op de gemeenschappelijke Europese markt. De Europese Commissie
+        heeft voorgesteld om een  gemeenschappelijk Europees energiebeleid op te stellen.
+        Dit was een belangrijke stap  om nationale markten te harmoniseren naar regionale
+        markten en uiteindelijk één gemeenschappelijke markt.  \r\n<br/><br/>\r\nHiervoor
+        wordt zowel fysieke interconnectiecapaciteit als een administratieve marktkoppeling
+        gerealiseerd. Dit hinkt op de gedachte dat markten de meest efficiënte manier
+        zijn om te zorgen dat tegen de laagste kosten aan de vraag naar stroom wordt
+        voldaan. De verwachte voordelen zijn:<br/><br/>\r\n\t• Lagere stroomkosten
+        <br/>\r\n\t• Meer prijsconvergentie tussen landen<br/><br/>\r\n\r\nIn de praktijk
+        kan het zo zijn dat de marktwerking verstoord wordt door (een mismatch van)
+        het energiebeleid van verschillende lidstaten.  \r\n\r\n \r\n"
+    flexibility_electricity_import_export_properties:
+      title: CO<sub>2</sub>-emissies van geïmporteerde elektriciteit
+      short_description: 
+      description: "In sommige scenario's is het nodig om elektriciteit te importeren
+        van buiten jouw gebied. De productie en distributie van deze elektriciteit
+        kan CO<sub>2</sub>-emissies hebben veroorzaakt. Hoeveel van deze emissies
+        wil je toekennen aan jouw gebied? Op dit moment is de gemiddelde elektriciteitsmix
+        van Nederland genomen als startwaarde. Je kunt dit zelf hieronder aanpassen.
+        Voor meer informatie klik op de '?' achter de slider.\r\n\r\n<br/><br/>\r\nDe
+        kosten voor geïmporteerde elektriciteit kunnen in de<a href=\"/scenario/costs/electricity_import_costs/costs-of-imported-electricity\">
+        sectie kosten</a> worden gezet."
+    flexibility_electricity_import_export_renewables:
+      title: Effecten van toenemende hernieuwbare opwek
+      short_description: 
+      description: "De EU heeft als doel om meer hernieuwbaar productievermogen te
+        realiseren in 2020 (zie <a href=\"http://refman.et-model.com/publications/1830\"
+        target=\"_blank\">Scenario Outlook and System Adequacy Forecast 2011-2025
+        (ENTSO-E)</a>). De toekomstsituatie die we in het figuur hiernaast tonen,
+        gaat uit van zon- en windvermogens volgens de 2020 doelen. <br/><br/>\r\nWe
+        zien het kwalitatieve effect op de marginale stroomproductiekosten vergeleken
+        met de huidige situatie.<br/><br/>\r\nDe blauwe lijn toont de huidige kosten
+        van stroomproductie op uurbasis en de oranje lijn die bij toenemend hernieuwbaar
+        vermogen. De kostenafname is het gevolg van een groter aandeel van stroomproductie
+        met nul marginale kosten (see <a href=\"/scenario/costs/merit_order/merit-order\"
+        >Merit Order</a>). De gemiddelde kosten dalen daardoor.\r\n<br/><br/>\r\nDe
+        investerings- en installatiekosten van hernieuwbaar vermogen is hierbij niet
+        meegenomen. Deze zijn typisch veel hoger dan voor niet duurzame stroomproductie.
+        De <em>integrale productiekosten</em> zullen daardoor waarschijnlijk eerder
+        stijgen dan dalen bij toenemende hernieuwbare productie."
+    flexibility_flexibility_cold_snap:
+      title: Koude winter
+      short_description: 
+      description: 
+    flexibility_flexibility_net_load:
+      title: Piekbelasting en bruikbare capaciteit
+      short_description: 
+      description: "De energietransitie heeft gevolgen voor het elektriciteitsnet.
+        In de tabel rechts kan je de piekbelasting en bruikbare capaciteit zien op
+        de verschillende netniveau's. Als je klikt op het 'Jaarlijkse'-schuifje krijg
+        je de grafiek te zien die de nettobelasting op het elektriciteitsnetwerk per
+        uur laat zien. Wanneer je geïnteresseerd bent in uurlijkse piekbelasting-curves
+        of vraagcurves per netniveau, kan je deze vinden in de lijst met alle grafieken
+        (klik op  'Meer grafieken bekijken' en ga naar 'Netwerk').\r\n</br></br>\r\nDe
+        totale investering die nodig is wanneer het elektriciteitsnetwerk moet worden
+        uitgebreid is afhankelijk van de investeringskosten per netniveau. Deze kunnen
+        onder het <a href=\"/scenario/costs/infrastructure/electricity-infrastructure-costs\"
+        >Kosten</a> kopje worden ingesteld."
+    flexibility_flexibility_demand_response_ev:
+      title: Vraagsturing - laadgedrag elektrische auto's
+      short_description: 
+      description: "Vraagsturing is een vorm van flexibiliteit waarbij de energievraag
+        wordt aangepast of verschoven in de tijd. Vaak is het doel hierbij om pieken
+        in de energievraag te voorkomen. Met de schuifjes in deze sectie kun je het
+        laadgedrag van elektrische auto's aanpassen. De grafiek toont de impact hiervan
+        op de vorm van de totale elektriciteitsvraag.\r\n<p>\r\nHet totale aandeel
+        van elektrische auto's is in te stellen in de <a href=\"/scenario/demand/transport_passenger_transport/car-technology\"
+        >technologie auto's sectie</a>."
+    flexibility_flexibility_demand_response_hp:
+      title: Vraagsturing - buffers voor warmtepompen
+      short_description: 
+      description: "In het ETM hebben alle warmtepompen een optie voor een buffer
+        voor ruimteverwarming en een buffer voor warm water. Deze buffers zijn gemodelleerd
+        met een standaard warmtepompopstelling in huishoudens. Buffers kunnen in de
+        toekomst wellicht ook gebruikt worden om grotere hoeveelheden warmte op te
+        slaan. \r\n<br></br>\r\nMet de schuifjes hieronder kun je de buffergrootte
+        voor verschillende warmtepompen instellen."
+    flexibility_flexibility_demand_response_hhp:
+      title: Vraagsturing - gedrag van hybride warmtepompen
+      short_description: 
+      description: "De efficiëntie van (hybride) warmtepompen is afhankelijk van de
+        buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
+        (COP). De COP wordt lager als de buitentemperatuur afneemt. Hieronder kan
+        je de zogenaamde 'omslag-COP' instellen: wanneer de COP van de warmtepomp
+        onder de omslag-COP ligt dan schakelt de hybride warmtepomp van elektriciteit
+        naar gas. Je kan deze instellen op de financieel meest aantrekkelijke voor
+        de consument, maar kan ook een instelling kiezen die minder netwerkimpact
+        oplevert. \r\n</br></br>\r\n Bekijk de grafiek aan de rechterkant voor advies
+        bij het kiezen van de kostenoptimale omslag-COP instelling vanuit een consumentenperspectief.
+        Deze laat zien hoeveel het kost om een eenheid warmte te maken met de HWP
+        voor ruimteverwarming. Voor gas zijn die kosten onafhankelijk van de COP (en
+        dus de buitentemperatuur). Voor elektriciteit nemen de kosten af met toenemende
+        COP (en toenemende buitentemperatuur). Het kruispunt van de twee curves is
+        de kosten-optimale COP-instelling voor de gegeven kostprijs van gas en elektriciteit.
+        Deze kostprijs van gas en elektriciteit is hieronder in te stellen. De startwaarde
+        van het omslag-COP schuifje staat gelijk aan de kostenoptimale omslag-COP
+        bij de ingestelde kosten. \r\n</br></br>\r\n Als je geïnteresseerd bent in
+        de impact van HWP's op het elektriciteitsnet, kijk dan naar de grafiek die
+        wordt weergegeven wanneer je op de 'Jaarlijkse'-knop in de rechterhoek van
+        de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag per uur
+        van HHP's. Als je geïnteresseerd bent in het aandeel gas en elektriciteit
+        dat de HHP's gebruiken, kijk dan naar de table 'Hybride warmtepomp: aandeel
+        elektrisch en gas' in de grafiekenlijst (Vraag -> Huishoudens)"
+    flexibility_flexibility_excess:
+      title: Elektriciteitsoverschot
+      short_description: 
+      description: "Deze pagina gaat over de mogelijke maatregelen voor het omgaan
+        met een elektriciteitsoverschot. Elektriciteitsproductie van windturbines
+        en zonnepanelen is onderhevig aan natuurlijke fluctuaties. Aanbod en vraag
+        van elektriciteit komen niet met elkaar overeen en grote hoeveelheden volatiele
+        productiecapaciteit kunnen daarom leiden tot elektriciteitsoverschotten.\r\n<br/><br/>\r\nIn
+        het ETM wordt een overschot aan elektriciteit geëxporteerd. Dit kan echter
+        onmogelijk zijn als buurlanden geconfronteerd worden met vergelijkbare en
+        gelijktijdige pieken in het elektriciteitsaanbod. Vandaag de dag is het afsluiten
+        of beperken van wind- en zonvermogen de enige optie voor het omgaan met grote
+        hoeveelheden overtollig aanbod. Dit verhoogt echter de effectieve productiekosten
+        waardoor het economisch aantrekkelijker kan zijn om de overtollige elektriciteit
+        op te slaan of om te zetten in een andere, bruikbare energiesoort.\r\n<br/><br/>\r\nDe
+        grafiek rechts geeft een indicatie hoe de stijging van productiekosten als
+        gevolg van het beperken van capaciteit zich verhoudt tot de kosten van opslag-
+        en conversietechnologieën.\r\nMeer informatie kunt u vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
+        documentatie =\"_blank\">documentatie</a>. "
+    flexibility_flexibility_excess_electricity:
+      title: Elektriciteitsoverschotten
+      short_description: 
+      description: 
+    flexibility_flexibility_flexibility_order:
+      title: Volgorde flexibiliteitsopties
+      short_description: 
+      description: "Windmolens en zonnepanelen hebben van nature een grillig productiepatroon.
+        De elektriciteit die ze produceren kan daarom niet altijd worden gebruikt
+        om elektriciteitsvraag in te vullen. Dit kan leiden tot overproductie van
+        elektriciteit. Om te voorkomen dat deze elektriciteitsproductie moet worden
+        beperkt, kent het ETM een aantal flexibiliteitstechnologieën die de overschotten
+        kunnen opslaan of omzetten in andere energiedragers. Je kan die technologieën
+        inzetten in de <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\">'Opslag'</a>
+        en <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households\">'Conversie'</a>
+        tabs.\r\n<br/><br/>\r\nDoor middel van de lijst hieronder kun je de volgorde
+        bepalen waarin de technologieën worden ingezet. Het ETM stuurt elektriciteitsoverschotten
+        naar de technologie die als eerste op de lijst staat zolang de capaciteit
+        dit toelaat; verdere overschotten worden naar de tweede technologie op de
+        lijst gestuurd en zo verder. Enige overgebleven elektriciteit wordt gecurtailed.
+        Je kunt de technologieën in de gewenste volgorde verslepen."
+    flexibility_flexibility_power_storage:
+      title: Opslag elektriciteit
+      short_description: 
+      description: Met de volgende sliders kun je aangeven welke elektriciteitsopslag
+        technologieën je inzet in de verschillende netvlakken. Elektriciteitsoverschotten
+        worden opgeslagen en ingezet zodra er geen overproductie meer is.
+    flexibility_flexibility_power_to_heat:
+      title: Conversie naar warmte voor huishoudens
+      short_description: 
+      description: 
+    flexibility_flexibility_power_to_heat_for_district_heating:
+      title: Conversie naar warmte voor warmtenetten
+      short_description: 
+      description: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische
+        boilers of warmtepompen deze overschotten omzetten in warmte voor warmtenetten.
+        Overige warmtebronnen voor warmtenetten kunnen bij <a href=\"/scenario/supply/heat/heat-sources\"
+        >Aanbod > Warmtenetten</a> worden ingesteld. \r\n</br></br>\r\n Houd er rekening
+        mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
+        power-to-heat warmtepomp. Ze produceren natuurlijk wel dezelfde hoeveelheid
+        warmte."
+    flexibility_flexibility_power_to_heat_for_industry:
+      title: Conversie naar warmte voor industrie
+      short_description: 
+      description: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische
+        boilers in de industrie deze overschotten omzetten in warmte. Dit heeft als
+        gevolg dat de vraag naar gas en waterstof wordt verlaagd (indien aanwezig).
+        Deze hybride warmte opties kunnen in de vraag-sectie van volgende industriële
+        sectoren worden ingesteld:\r\n<ul>\r\n  <li><a href=\"/scenario/demand/industry/refineries\"
+        >raffinaderijen</a></li>\r\n  <li><a href=\"/scenario/demand/industry/chemicals\">chemische
+        industrie</a></li>\r\n  <li><a href=\"/scenario/demand/industry/food\">voedingsmiddelenindustrie</a></li>\r\n
+        \ <li><a href=\"/scenario/demand/industry/paper\">papierindustrie</a></li></ul>"
+    flexibility_flexibility_power_to_gas:
+      title: Conversie naar waterstof
+      short_description: 
+      description: Overtollige elektriciteit kan worden gebruikt om waterstof te produceren
+        door elektrolyse. Deze waterstof wordt in het ETM gevoed in het centrale waterstofnetwerk.
+        Andere waterstofproducerende technologieën kunnen ingesteld worden in de <a
+        href="/scenario/supply/hydrogen/hydrogen-production">waterstofproductieslide</a>.
+        Overtollige waterstof wordt geëxporteerd.
+    flexibility_flexibility_power_to_kerosene:
+      title: Conversie naar kerosine voor luchtvaart
+      short_description: 
+      description: "Overschotten aan elektriciteit kunnen gebruikt worden om synthetische
+        kerosine te produceren voor de luchtvaart. Voor dit proces is koolstof nodig
+        wat kan worden hergebruikt, bijvoorbeeld uit rookgassen van industriën of
+        direct uit de lucht. Daardoor bewerkstelligt de productie van synthetische
+        kerosene een CO<sub>2</sub>-reductie voor het gehele land. Echter blijft het
+        discutabel aan welke sector binnen een land deze CO<sub>2</sub>-reductie moet
+        worden toegeschreven wanneer CO of CO<sub>2</sub> uit rookgassen wordt gebruikt:
+        aan de industrie of de internationale luchtvaart?\r\n<br/><br/>\r\nMet de
+        onderstaande sliders kan je aangeven hoeveel synthetische kerosine er moet
+        worden geproduceerd. Overtollige kerosine wordt geëxporteerd. Verder kun je
+        ook kiezen welke koolstofbron je nodig hebt en aan welke sector de CO<sub>2</sub>-reductie
+        moet worden toegeschreven.\r\n<br/><br/>"
+    flexibility_flexibility_power_to_methane:
+      title: Conversie naar methaan voor gasnetwerk
+      short_description: 
+      description: 
+    flexibility_flexibility_solar_pv_curtailment:
+      title: Productiebeperking - zon-PV
+      short_description: 
+      description: "Als veel zon-PV geïnstalleerd is, kan dit zorgen voor hoge pieken
+        op het elektriciteitsnetwerk. Daarom is het wenselijk de productie te kunnen
+        verlagen. In sommige gevallen is het slim om zonneparken aan te sluiten op
+        slechts een bepaald percentage van het piekvermogen. Met onderstaande schuifjes
+        is het mogelijk de productiebeperking in te stellen als percentage van het
+        piekvermogen. \r\n</br></br>\r\n In de grafiek rechts zie je het effect van
+        productiebeperking op de productiepieken én op de jaarlijkse elektriciteitsproductie.
+        Als je geïnteresseerd bent in het effect van productiebeperking op de jaarlijkse
+        elektriciteitsproductie, kijk dan in de tabel 'Productiebeperking van zonnepanelen'.
+        Deze vind je als je klikt op 'meer grafieken bekijken' (rechtsboven) en kijkt
+        bij 'Elektriciteitsbalans > Flexibiliteit'."
+    flexibility_flexibility_wind_cost:
+      title: Kosten van windenergie
+      short_description: 
+      description: "Waarom stijgen de productiekosten van windenergie als gevolg van
+        een bepaald marktaandeel?\r\n<br/><br/>\r\nWanneer we aannemen dat het overschot
+        aan geproduceerde windenergie niet kan worden geëxporteerd, opgeslagen of
+        omgezet in iets economisch nuttigs, dan is de resterende optie om de elektriciteitsproductie
+        te beperken. Als de geïnstalleerde capaciteit toeneemt, zal een groter aandeel
+        van de energieproductie beperkt moeten worden. Naarmate het aandeel ongebruikte
+        capaciteit toeneemt, zullen de totale productiekosten van elektriciteit (€/MWh)
+        ook toenemen. Hetzelfde geldt voor zon-PV.\r\n<br/><br/>\r\nDe grafiek rechts
+        geeft een indicatie hoe de totale productiekosten van elektriciteit van windturbines
+        kan toenemen als gevolg van beperking van productie. Deze kostenindicatie
+        kan helpen bij het evalueren van opslag- en conversietechnologieën. In plaats
+        van het bouwen van meer windturbines, kan het economisch interessant worden
+        om opslag- en conversietechnologieën te introduceren om bruikbaar vermogen
+        te vergroten."
+    flexibility_merit_order_merit_order:
+      title: Merit order
+      short_description: 
+      description: "Over het algemeen volgt de elektriciteitsproductie de vraag naar
+        elektriciteit. De volgorde waarin elektriciteitscentrales worden ingeschakeld
+        wordt bepaald door de 'merit order'. De merit order rangschikt de elektriciteitscentrales
+        naar draaikosten (ook wel 'marginale kosten'). De centrales met de laagste
+        draaikosten zet men het eerste in om de vraag in te vullen; de centrales met
+        hogere kosten pas als de vraag hoog genoeg is. Centrales met relatief lage
+        draaikosten maken dan ook veel draaiuren, terwijl duurdere centrales misschien
+        maar een paar honderd uur aan staan. Dit kan veel verschil maken voor de CO<sub>2</sub>
+        uitstoot in jouw scenario. \r\n<br/><br/>\r\nStandaard rekent het ETM op uurbasis
+        uit welke elektriciteitscentrales moeten worden ingeschakeld. De berekening
+        wordt elke keer dat je je scenario aanpast opnieuw uitgevoerd. Je kunt er
+        voor kiezen om de merit order berekening uit te zetten. Als je de berekening
+        hebt uitgezet, zullen alle elektriciteitscentrales dezelfde draaiuren hebben
+        als in het startjaar van je scenario en niet reageren op jouw aannames over
+        brandstof- of andere kosten.\r\n<br/><br/>\r\nHet ETM voert een versimpelde
+        merit order berekening uit, aangezien deze geen individuele centrales onderscheidt,
+        maar alleen <strong>soorten</strong> centrales.\r\n<br/><br/>\r\nBekijk voor
+        meer informatie <a href=\"https://github.com/quintel/documentation/blob/master/general/merit_order.md\"
+        target =\"_blank\">onze documentatie</a>."
+    flexibility_merit_order_merit_order_positions:
+      title: Merit order - posities
+      short_description: 
+      description: |
+        De merit order rangschikt de elektriciteitscentrales naar marginale
+        kosten. Niet alle soorten stroomopwek doen mee in de merit order.
+        Hernieuwbare stroom van wind en zon heeft marginale kosten van 0 EUR/MWh
+        en krijgt voorrang op het net, dus als je hier meer van bouwt, zakt het
+        aantal draaiuren van fossiele centrales. Aangezien alleen op draaikosten
+        gerangschikt wordt, kan dit betekenen dat efficiënte maar dure fossiele
+        centrales uit de mix worden geduwd.
+
+        <br/><br/>
+
+        Ook 'must run' technologieën doen niet mee in de merit order. Dit zijn
+        bijvoorbeeld WKK's die warmte leveren en niet primair draaien vanwege de
+        stroom die ze maken. Toch hebben ze invloed op de draaiuren van andere
+        centrales.
+
+        <br/><br/>
+
+        Het ETM berekent op uurbasis welke centrales zijn ingeschakeld. De
+        berekening wordt elke keer dat je je scenario aanpast opnieuw uitgevoerd
+        en de resultaten worden weergegeven in diverse grafieken. Je kunt ook de
+        draaiprofielen van de verschillende soorten centrales en de resulterende
+        stroomprijscurve voor jouw scenario downloaden via onderstaande knoppen.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
+        </ul>
+    flexibility_merit_order_merit_order_price:
+      title: Uurlijkse profielen voor elektriciteit
+      short_description: 
+      description: |
+        De merit order rangschikt de elektriciteitscentrales naar marginale
+        kosten. In combinatie met de elektriciteitsvraag op uurbasis, berekent
+        het ETM welke centrales zijn ingeschakeld. In combinatie met de
+        draaikosten van deze centrales kan het ETM de prijs op uurbasis
+        uitrekenen. Het ETM neemt aan dat deze prijs gelijk is aan de kosten
+        van de duurste centrale die op dat moment is ingeschakeld.
+
+        <br/><br/>
+
+        De uurlijkse profielen voor elektriciteitsvraag en -aanbod en de prijscurve voor jouw scenario zijn te downloaden via de links
+        hieronder.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
+        </ul>
+    flexibility_security_of_supply_electricity:
+      title: Elektriciteit
+      short_description: 
+      description: "Is er in de toekomst op ieder moment voldoende elektriciteit om
+        aan de vraag te voldoen? Hoe zit het met momenten waarop de vraag piekt en
+        er weinig productie uit zon en wind is? Elektriciteitsproductie zonder CO<sub>2</sub>-uitstoot
+        levert uitdagingen op voor de voorzieningszekerheid.\r\n<br /><br />\r\nIn
+        de grafiek zie je hoe betrouwbaar de stroomproductie is in jouw scenario.
+        In het dashboard rechtsonderaan zie je hoeveel uur stroomuitval er te verwachten
+        is door een tekort aan productievermogen.\r\n<br /><br />\r\nNiet alle leveringsopties
+        zijn even goed geschikt om de piekvraag in te vullen. Batterijen en andere
+        vormen van opslag kunnen snel reageren, maar moeten wel volgeladen zijn en
+        kunnen geen lange periodes zonder zon en wind overbruggen. Schakelbare elektriciteitscentrales
+        kunnen ieder moment leveren, maar sommigen moeten veel vollasturen draaien
+        om winstgevend te zijn of maken te hoge kosten als ze vaak aan- of uitschakelen.\r\n<br
+        /><br />\r\nVooral gasturbines en gasmotoren voor de productie van stroom
+        (en eventueel ook warmte) op groengas of waterstof zijn een voor de hand liggende
+        duurzame optie als back-up voor wind- en zonnestroom.\r\n<br /><br />\r\n<strong>Tip:</strong>
+        Op de pagina\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weersomstandigheden</a>
+        kun je verschillende weerjaren inladen, om te zien hoe je scenario verandert.
+        Is jouw scenario bestand tegen extreme weersomstandigheden? Gaat het licht
+        uit als het een paar weken niet waait?"
+    flexibility_security_of_supply_heat:
+      title: Warmte
+      short_description: 
+      description: "Is er in de toekomst op ieder moment voldoende warmte om aan de
+        vraag op de warmtenetten te voldoen? Dat hangt natuurlijk af van welke warmtebronnen
+        zijn aangesloten op het warmtenet. We onderscheiden bronnen die (bijna) altijd
+        warmte leveren en bronnen die vooral bij pieken in de vraag ingezet worden.
+        Als geen van deze bronnen voldoende kunnen leveren, gaat de noodvoorziening
+        aan. \r\n<br /><br />\r\n<b>Noodvoorziening</b><br />\r\nDe ideale noodvoorziening
+        kan snel starten, heeft lage installatie- en onderhoudskosten en gebruikt
+        brandstof die makkelijk op te slaan is of beschikbaar gemaakt kan worden.
+        Warmtenetten hebben daarom vaak een gasketel als noodvoorziening voor als
+        (een deel van de) warmtebronnen wegvallen. Hoe kleinschaliger het warmtenet,
+        hoe kleiner het aantal aangesloten bronnen en hoe belangrijker een noodvoorziening
+        wordt.\r\n<br /><br />\r\n<b>Piekvraag</b><br />\r\nNiet alle bronnen zijn
+        even goed geschikt om de piekvraag in te vullen. Een warmteopslag kan snel
+        reageren, maar moet wel groot genoeg en gevuld zijn. Een geothermiebron is
+        duur om te boren, dus die kan het beste non-stop warmte leveren. Ketels op
+        (groen) gas of waterstof kunnen ieder moment leveren en zijn daarom een voor
+        de hand liggende optie voor pieken.\r\n<br /><br />\r\n<strong>Tip:</strong>
+        Op de pagina\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weersomstandigheden</a>
+        kun je verschillende weerjaren inladen, om te zien hoe de warmtevraagpieken
+        in je scenario afhangen van het weer.\r\n"
+    flexibility_weather_conditions_and_flh:
+      title: Extreme weersomstandigheden
+      short_description: 
+      description: "Buitentemperatuur en technische ontwikkelingen van zon en wind
+        technologie hebben effect op (uurlijkse) vraag en aanbod. Stel hier gemiddelde
+        temperatuur en vollasturen van windturbines en zonnepanelen in.\r\n<p>\r\nDaarnaast
+        zijn er in het verleden uitzonderlijk koude periodes of periodes met uitzonderlijk
+        weinig wind en zon voorgekomen. Zulke periodes met extreme weersomstandigheden
+        kunnen in de toekomst weer voorkomen. De vraag is of de opgestelde warmte-
+        en elektriciteitstechnologieën dan voldoende vermogen zullen hebben om in
+        de warmte- en elektriciteitsvraag te voorzien. Om dat te verkennen kan voor
+        een scenario voor (een regio binnen) Nederland een jaar met extreme weersomstandigheden
+        worden geselecteerd.\r\n</p>\r\nKijk voor meer informatie over weeromstandigheden
+        in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/weather_conditions.md\"
+        target =\"_blank\">documentatie</a>.\r\n</p>\r\nProductiecurves kunnen worden
+        gedownload in de <a href=\"/scenario/data/data_export/merit-order-prices\">resultaten
+        sectie</a>.\r\n\r\n\r\n"
+    hidden_infrastructure_gas_network:
+      title: Gasnetwerk
+      short_description: 
+      description: 
+    introduction_to_etm:
+      title: Hoe werkt het Energietransitiemodel?
+      short_description: 
+      description: "Het Energietransitiemodel (ETM) biedt ondersteuning in het verkennen
+        van de (on)mogelijkheden voor een regio van jouw keuze. Het model werkt eenvoudig.
+        Onderstaande stappen helpen je bij het opstellen van een scenario:\r\n<ol>\r\n<li>Bedenk
+        voordat je start wat het doel is van jouw scenario, zodat je weet wat je te
+        doen staat.</li>\r\n<li>In het menu aan de linkerkant staan alle sectoren
+        waar energie wordt gebruikt (<a href=\"/scenario/demand/households/population-housing-stock\"
+        >Vraag</a>) en geproduceerd (<a href=\"/scenario/supply/electricity/coal-plants\"
+        >Aanbod</a>). Per sector kun je met schuifjes aangeven hoe je denkt dat de
+        toekomst eruit gaat zien. Een verandering kan altijd weer ongedaan gemaakt
+        worden door het schuifje te resetten, dus probeer vooral uit! Begin bijvoorbeeld
+        eens met de <a href=\"/scenario/demand/households/space-heating-hot-water\"
+        >warmtevoorziening in huishoudens</a> of de impact van <a href=\"/scenario/demand/transport/overview\"
+        >vervoer</a>.</li>\r\n<li>Optioneel: gevorderde gebruikers kunnen aanpassingen
+        doen in <a href=\"/scenario/flexibility/excess_electricity/order-of-flexibility-options\"
+        >flexibiliteit</a> (matchen van vraag en aanbod van uur tot uur) en <a href=\"/scenario/costs/merit_order/merit-order\"
+        >kostenontwikkelingen</a>.</li>\r\n<li>Je kunt jouw ideeën toetsen door het
+        scenario rapport te bekijken onder het kopje <a href=\"/scenario/data/data_visuals/scenario-report\"
+        >Resultaten</a>. Je kunt vervolgens altijd terugkeren naar een bepaald onderdeel
+        om nog aanpassingen te doen.</li>\r\n<li>Deel je scenario vooral ook met anderen
+        door hem op te slaan onder 'Opties -> Scenario opslaan als' (rechtsboven)
+        en de link de delen.<br /><i>Let op: Het ETM wordt periodiek bijgewerkt en
+        verbeterd. Sla je scenario op om ervoor te zorgen dat de uitkomsten stabiel
+        blijven!</i></li>\r\n</ol>\r\n</br>\r\nHet model laat direct zien wat de impact
+        van nieuwe instellingen is: aan de rechterkant zie je grafieken met specifieke
+        informatie over het onderdeel waar je je bevindt, onderaan tonen tellertjes
+        de veranderingen voor het hele systeem (CO<sub>2</sub>-reductie, energiebesparing,
+        kosten etc.). Als je de grafiek in beeld wilt houden terwijl je door het model
+        beweegt, kan je deze vastzetten met het slotje. Klik op \"meer grafieken bekijken\"
+        (rechtsboven) om extra grafieken toe te voegen. \r\n</br></br>\r\nIn het model
+        zitten geen verborgen aannames, zoals ontwikkelcurves van prijzen en technologieën.
+        De gebruiker zit helemaal zelf achter het stuur: je kan (vrijwel) alles instellen
+        en als je geen schuifje aanraakt, ziet de toekomst er net zo uit als het heden.\r\n</br></br>\r\nHeb
+        je vragen of hulp nodig? Neem dan contact op met <a href=\"https://quintel.com/contact\"
+        >Quintel</a>, de makers van het Energietransitiemodel."
+    overview_co2_emissions:
+      title: Totale CO<sub>2</sub>-uitstoot
+      short_description: 
+      description: "Hoeveel CO<sub>2</sub> wordt er op dit moment uitgestoten door
+        de verschillende sectoren in jouw regio en wat is de impact van aanpassingen
+        aan het energiesysteem? \r\n</br></br>\r\nIn de grafiek rechts zie je de totale
+        <em>energetische</em> CO<sub>2</sub>-uitstoot voor drie verschillende jaren:
+        het referentiejaar 1990, het jaar waar we nu gegevens over hebben en het toekomstjaar
+        van jouw scenario. Zie je de waardes van de grafiek liever in een tabel? Klik
+        dan rechtsbovenaan in de grafiek op het tabel-icoontje.\r\n</br></br>\r\nHet
+        percentage CO<sub>2</sub>-reductie ten opzichte van 1990 blijft zichtbaar
+        in de balk onderaan terwijl je door het ETM navigeert. Je kunt de grafiek
+        rechts altijd oproepen door op dit getal onderaan te klikken."
+    overview_final_demand:
+      title: Totaal energiegebruik
+      short_description: 
+      description: "Hoeveel energie wordt er gebruikt door de verschillende sectoren
+        in jouw regio  en wat is de impact van aanpassingen aan het energiesysteem?
+        \r\n</br></br>\r\nDe grafiek rechts geeft je een overzicht van de totale <em>energetische</em>
+        energievraag per sector (excl. grondstoffen). Welke sector gebruikt het meeste
+        energie? Wellicht is dat de sector waar je zou willen starten met verkennen
+        in de 'Vraag'-sectie.\r\n</br></br>\r\nAls je nog geen schuifje hebt aangeraakt,
+        zie je dat de energievraag nagenoeg gelijkt blijft, omdat er nog geen aannames
+        zijn gedaan over de toekomst. Dat er ook zonder aanpassingen een gering verschil
+        is in energiegebruik tussen toekomst en heden is toe te schrijven aan het
+        gebruik van de elektriciteitsmarktsmodule: deze wordt namelijk niet gebruikt
+        in het huidige jaar en wel in het toekomstige jaar (de <a href=\"/scenario/costs/merit_order/merit-order\"
+        >merit order pagina</a> bevat meer informatie over de elektriciteitsmarkt)."
+    policy_area_biomass:
+      title: Biomassa
+      short_description: 
+      description: 
+    policy_area_solar_power:
+      title: Zonne-energie
+      short_description: 
+      description: 
+    policy_area_wind_turbines:
+      title: Windmolens
+      short_description: ''
+      description: "'Not in my backyard' is hoe de meeste mensen over grote windmolens
+        denken. Hoeveel land en zeeoppervlak stelt de overheid beschikbaar voor windstroom?"
+    policy_cost_electricity:
+      title: Elektriciteit
+      short_description: ''
+      description: 'Hoeveel mogen de kosten voor elektriciteit veranderen in de toekomst? '
+    policy_cost_energy:
+      title: Energie
+      short_description: ''
+      description: Hoeveel mogen de kosten voor energie veranderen in de toekomst?
+    policy_dependence_foreign_dependence:
+      title: Energie-import uit het buitenland
+      short_description: ''
+      description: "Import en export leveren een positieve bijdrage aan de economische
+        activiteit van een land. Wederzijdse afhankelijkheid versterkt de handelsrelaties
+        en creëert stabiliteit tussen landen. Voor energiehandel geldt dat leveringszekerheid
+        van groot belang is, omdat economische activiteit niet mogelijk is zonder
+        energie. Daarom moeten we ons een genuanceerd beeld vormen over de import
+        en export van energie. Want niet alle energie ‘reist makkelijk’, en niet alle
+        energiestromen zijn op de lange termijn even ‘zeker’. In welke mate vind je
+        dat jouw land buitenlandse energie mag importeren?\r\n<DE><br/><br/><a href=\"/scenario/supply/fuel_production/\">Open
+        de brandstofproductie sectie.</a></DE>"
+    policy_grid_grid_and_interconnectivity:
+      title: Netwerk en interconnectiviteit
+      short_description: 
+      description: 
+    policy_sustainability_co2_emission_compared_to_1990:
+      title: CO<sub>2</sub>-uitstoot, vergeleken met 1990
+      short_description: ''
+      description: Overheden maken CO<sub>2</sub> reductiedoelstellingen. Wat denk
+        jij dat de doelstelling moet zijn?
+    policy_sustainability_renewables:
+      title: Hernieuwbaarheid
+      short_description: ''
+      description: Overheden maken doelstellingen voor hoeveel energiegebruik hernieuwbaar
+        moet zijn. Wat moet dat percentage zijn volgens jou?
+    supply_biomass_overview:
+      title: Overzicht
+      short_description: 
+      description: "Biomassa kan op verschillende plekken in het model worden ingezet:\r\n<ul>\r\n
+        \ <li>als <a href=\"/scenario/supply/biomass/green-gas-in-gas-network\">groengas</a>
+        in het gas netwerk</li>\r\n  <li>in biomassaketels voor <a href=\"/scenario/supply/renewable_heat/biomass\">(lokale)
+        warmtenetten</a></li>\r\n  <li>als <a href=\"/scenario/supply/transport_fuels/road-transport\">transportbrandstof</a>:
+        bio-ethanol, biodiesel, bio-LNG and biokerosine</li>\r\n  <li>als meestook
+        in <a href=\"/scenario/supply/electricity/coal-plants\" >kolencentrales</a></li>\r\n
+        \ <li>als <a href=\"/scenario/supply/biomass/biocoal-en-bio-oil-in-energy-plants\">biokolen
+        of bio-olie</a> in energiecentrales</li>\r\n  <li>voor <a href=\"/scenario/supply/hydrogen/hydrogen-production\">waterstofproductie</a>
+        d.m.v. vergassing</li>\r\n</ul>\r\n</br>\r\nDe inzet van biomassa kan ten
+        koste gaan van de productie van voedsel of bossen. Zorgvuldigheid bij de inzet
+        van grote hoeveelheden biomassa is noodzakelijk. De data achter de biomassa-modellering
+        in het ETM vind je in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/biomass.md\"
+        target=\"_blank\">documentatie</a>."
+    supply_biomass_bio_coal_bio_oil:
+      title: Biokolen en bio-olie in energiecentrales
+      short_description: ''
+      description: "De brandstofmix van kolencentrales kan groener door biomassa in
+        te zetten.\r\nHier kun je de verhouding van kolen en biokolen kiezen. Vooralsnog
+        kunnen alleen de poederkolen centrale en de kolencentrale met warmtelevering
+        houtpellets gebruiken. In de \r\n<a href=\"/scenario/supply/electricity/coal-plants\"
+        >kolencentrale sectie</a> van het model kun je meestook varianten van deze
+        centrales inzetten.\r\n<br><br>  \r\nDaarbij kan de brandstofmix van industriële
+        gasgestookte WKK's (m.n. bij raffinaderijen) groener gemaakt worden door bio-olie
+        bij te stoken."
+    supply_biomass_greengas_production:
+      title: Groengasproductie
+      short_description: 
+      description: "Op dit moment wordt in Nederland nagenoeg al het groengas geproduceerd
+        middels vergisting. Welke rol zal vergassing spelen in de toekomst? Hieronder
+        kun je de productiemix van groengas aanpassen.\r\n<br /><br />\r\nLet op:
+        De kosten van groengas veranderen niet automatisch mee als je de productiemix
+        aanpast. Dit is omdat de prijs van groengas niet alleen bepaald wordt door
+        de productiekosten. Groengas is een schaars goed waardoor de prijs (flink)
+        hoger kan liggen. In de kostensectie kun je de <a href=\"/scenario/costs/fuel_costs/biofuels\">prijs
+        van groengas</a> aanpassen en zien hoe deze prijs zich verhoudt tot de gemiddelde
+        productiekosten. Let er ook op dat de productiekosten van groengas nog niet
+        geoptimaliseerd zijn, met name voor de vergassingstechnologieën. Deze technologieën
+        zijn namelijk redelijk nieuw, dus er zijn minder praktische voorbeelden om
+        de kosten op te baseren.\r\n<br /><br />"
+    supply_biomass_bio_footprint:
+      title: Bio-voetafdruk
+      short_description: 
+      description: Wat is de 'biomassavoetafdruk' van deze regio? De grafiek hiernaast
+        toont het landoppervlakte die je nodig zou hebben voor het biomassagebruik
+        in jouw scenario.
+    supply_biomass_potential:
+      title: Potentie van biomassa
+      short_description: 
+      description: 'Het ETM maakt onderscheid tussen vier grondstofcategorieën: natte,
+        droge, oliehoudende biomassa en biogeen afval. Hoeveel grondstoffen zullen
+        er in de toekomst beschikbaar zijn binnen jouw regio? Wij hebben inschattingen
+        gemaakt o.b.v. nationale potenties, zie hiervoor onze <a href="https://github.com/quintel/documentation/blob/master/general/biomass.md"
+        target="_blank">documentatie</a>. Indien je de potenties wil aanpassen, kan
+        je dat hier doen.'
+    supply_bunker_fuels_international_aviation:
+      title: Internationale luchtvaart
+      short_description: 
+      description: 
+    supply_bunker_fuels_international_shipping:
+      title: Internationale verzending
+      short_description: 
+      description: 
+    supply_co2_emissions_biomass:
+      title: CO<sub>2</sub>-uitstoot van biomassa
+      short_description: 
+      description: "Er wordt doorgaans geen CO<sub>2</sub>-uitstoot aan biomassa toegekend
+        omdat biomassa (over de hele levenscyclus) evenveel CO<sub>2</sub> opneemt
+        als wordt uitgestoten bij verbranding. Echter wordt de uitgestoten CO<sub>2</sub>
+        niet per se weer opgenomen binnen een voor de klimaatverandering relevante
+        termijn (de levenscyclus van biomassa is enkele maanden tot meer dan honderd
+        jaar). Daarom is het hier mogelijk om te weten te komen wat de directe CO<sub>2</sub>-uitstoot
+        van biomassa is door de uitstoot toe te voegen aan de grafiek hier rechts.
+        <a href=\"https://github.com/quintel/documentation/blob/master/general/co2_biomass.md\"
+        target =\"_blank\">lees verder</a> \r\n</br></br>\r\n<strong>LET OP: de CO<sub>2</sub>-uitstoot
+        die je hier instelt wordt enkel in de grafiek weergegeven en wordt op geen
+        enkele manier meegenomen in jouw scenario.</strong>"
+    supply_electricity_coal_plants:
+      title: Kolencentrales
+      short_description: ''
+      description: Kolencentrales draaien als het even kan meer dan 80% van de tijd
+        op vol vermogen. Ze zijn dus niet zo flexibel qua productie. Kolencentrales
+        produceren grofweg twee keer zoveel CO<sub>2</sub> als gascentrales.
+    supply_electricity_gas_plants:
+      title: Gascentrales
+      short_description: ''
+      description: Gascentrales produceren grofweg de helft van de CO<sub>2</sub>
+        van een kolencentrale. Ze zijn erg flexibel qua productie en worden daarom
+        vaak gebruikt om de pieken in de vraag op te vangen.
+    supply_electricity_nuclear_plant:
+      title: Kerncentrale
+      short_description: ''
+      description: Hier kan je het geïnstalleerd vermogen van conventionele en 3e
+        generatie kerncentrales instellen. Het ETM neemt voor kerncentrales geen CO<sub>2</sub>
+        uitstoot mee. Standaard worden kerncentrales als regelbare centrales gemodelleerd.
+        Met de knop onder de schuifjes kan je dit aanpassen naar een niet-regelbare
+        centrale (onafhankelijk van de elektriciteitsvraag) met een vlak profiel.
+        Deze functionaliteit is toegevoegd, omdat kerncentrales zoveel mogelijk op
+        vol vermogen draaien. Ze hebben namelijk lage draaikosten en hoge kapitaalkosten.
+    supply_electricity_oil_plants:
+      title: Oliecentrales
+      short_description: ''
+      description: "Oliecentrales komen weinig voor in Europa. Deze centrales produceren
+        veel CO<sub>2</sub>, maar minder dan kolencentrales. \r\n<br/>\r\nDieselmotoren
+        worden vaak gebruik op plaatsen zonder stroomaansluiting, als noodaggregaten
+        of stabilisatie van het stroomnet."
+    supply_electricity_backup_security_of_supply:
+      title: Leveringszekerheid
+      short_description: 
+      description: 
+    supply_electricity_backup_backup_options:
+      title: Backup
+      short_description: 
+      description: 
+    supply_electricity_renewable_biomass_plants:
+      title: Biomassacentrales
+      short_description: 
+      description: Hoeveel warmte wordt er d.m.v. biomassa geproduceerd?
+    supply_electricity_renewable_gas:
+      title: "(Groen)gas in gasnetwerk"
+      short_description: ''
+      description: 'Aardgas in het gasnetwerk kan worden bijgemengd met groengas om
+        het gasverbruik te verduurzamen. Daarnaast kan vloeibaar aardgas (LNG), een
+        brandstof die enkel in de transport sector in vloeibare vorm gebruikt wordt,
+        ook weer omgezet worden naar gas en in het gasnetwerk ingevoerd worden. '
+    supply_electricity_biomass_plants:
+      title: Biomassacentrales
+      short_description: 
+      description: 
+    supply_electricity_renewable_geothermal:
+      title: Geothermisch
+      short_description: ''
+      description: Het potentieel van stroom uit aardwarmte is nog niet voor alle
+        landen bekend. Hoeveel denk jij dat er gemaakt zou kunnen worden?
+    supply_electricity_renewable_hydro_electric:
+      title: Waterkracht
+      short_description: ''
+      description: Waterkracht is officieel hernieuwbaar, maar het bouwen van grote
+        stuwdammen brengt vaak enorme milieuschade met zich mee. Hoeveel waterkracht
+        wil je inzetten? Wat is het potentieel?
+    supply_electricity_renewable_solar_power:
+      title: Zonne-energie
+      short_description: ''
+      description: "Is zonnestroom de energie van de toekomst? Hoeveel wil jij produceren?\r\n<br><br>\r\nDe
+        keuzes die je bij \"Vraag\" hebt gemaakt bepalen de hoeveelheid de-centrale
+        zonnestroom die er op daken van woningen en gebouwen komt te liggen. Je kunt
+        zonnepanelen bouwen in de <a href=\"/scenario/demand/households/solar-panels\">'zonnepanelen'
+        sectie van huishoudens</a> en de <a href=\"/scenario/demand/buildings/solar-panels\">'zonnepanelen'
+        sectie van gebouwen</a>.\r\n<br><br>\r\nHier kun je centrale zonneparken bouwen,
+        bijvoorbeeld op vuilnisbelten en terreinen die niet gebruikt hoeven te worden
+        voor andere doeleinden."
+    supply_electricity_renewable_wind_turbines:
+      title: Windmolens
+      short_description: ''
+      description: "<p>\r\nGebruik de PICO kaartlaag voor windenergie om de potentie
+        voor windmolens op land en aan de kust te verkennen. <a href=\"/embeds/pico\"
+        data-remote=\"true\">Verken de potentie van wind op land en aan de kust.</a>\r\n</p>\r\n<p>\r\nDe
+        vollasturen voor wind en zon kunnen worden ingesteld in bij <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">'Weersomstandigheden'</a>.\r\n</p>"
+    supply_electricity_renewable_hydrogen_plants:
+      title: Waterstofcentrales
+      short_description: 
+      description: Waterstofcentrales produceren elektriciteit uit waterstof. Bij
+        een stijgend martkaandeel van volatiele productietechnieken zoals zon en wind
+        neemt ook het belang toe van energiecentrales die stroom kunnen leveren op
+        momenten dat er weinig wind en zon is. Waterstofcentrales zijn flexibel inzetbaar
+        en kunnen daarmee een rol spelen in het balanceren van het duurzame energiesysteem
+        van de toekomst.
+    supply_electricity_renewable_waste_power:
+      title: Afvalverbrandingscentrales
+      short_description: ''
+      description: Het verbranden van afval om elektriciteit op te wekken gaat ten
+        koste van andere toepassingen van afval. Hoeveel stroom kan er gemaakt worden
+        met afval?
+    supply_fossil_heat_fossil_fired_heaters:
+      title: Fossiele brandstofketels
+      short_description: 
+      description: 
+    supply_fuel_mix_fuel_for_coal_plants:
+      title: Brandstofmix kolencentrales
+      short_description: 
+      description: 
+    supply_fuel_mix_fuel_for_industry_chp:
+      title: Brandstofmix gasgestookte WKK
+      short_description: 
+      description: 
+    supply_heat_sources:
+      title: Warmtebronnen
+      short_description: 
+      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
+        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
+        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
+        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
+        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
+        niet-regelbare warmtebronnen het warmtenet beleveren ongeacht de warmtevraag.
+        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
+        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
+        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
+        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
+        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteitsoverschotten
+        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
+        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in
+        onze <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_networks.md\"
+        target =\"_blank\">documentatie</a>."
+    supply_heat_network_industry:
+      title: Bronnen warmtenet
+      short_description: ''
+      description: 'Hieronder kun je het aantal warmte-krachtkoppelingsinstallaties
+        (WKKs) bepalen dat warmte levert voor het warmtenet in de industrie. Als de
+        geproduceerde warmte van lokale WKKs lager is dan de warmtevraag van de industrie,
+        kunnen <a href="/scenario/supply/heat/large-scale-heat-and-residual-heat">grootschalige
+        warmte en restwarmte bronnen</a> bijspringen. '
+    supply_heat_network_losses:
+      title: Transport- en distributieverliezen
+      short_description: 
+      description: "Bij warmtenetten wordt warmte op een centrale locatie geproduceerd
+        en vervolgens via een netwerk van geïsoleerde pijpleidingen getransporteerd
+        naar huizen en bedrijven. Dit transport van warmte leidt tot energieverliezen,
+        die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
+        naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
+        kun je de distributieverliezen in jouw scenario instellen."
+    supply_heat_combined_heat_power:
+      title: Warmte-krachtkoppeling
+      short_description: 
+      description: 
+    supply_heat_network_order:
+      title: Inzetvolgorde van regelbare warmtebronnen
+      short_description: 
+      description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele warmtebronnen
+        (zoals geothermie, zonthermie en industriële restwarmte) en regelbare warmtebronnen.
+        De warmteproductie van de eerste categorie bronnen is moeilijk regelbaar,
+        zonthermieproductie is bijvoorbeeld afhankelijk van het weer. Regelbare bronnen
+        daarentegen kunnen aan- en uitgeschakeld worden op momenten dat dat nodig
+        is. Het ETM kijkt voor elk uur per jaar hoeveel warmte er uit 'must-run' en
+        volatiele bronnen beschikbaar is. Als de vraag in een bepaald uur hoger is
+        dan deze productie, wordt er een regelbare bron ingeschakeld om te zorgen
+        dat er voldoende warmte is.\r\n<br /><br />\r\nHieronder is het mogelijk om
+        de inzetvolgorde van de regelbare warmtebronnen in te stellen: welke bron
+        springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
+        kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare
+        bronnen."
+    supply_heat_network_storage_toggle:
+      title: "(Seizoens)opslag van warmte"
+      short_description: 
+      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+        zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
+        in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
+        om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
+        er minder regelbaar vermogen nodig, zoals back-up ketels, om in de vraag te
+        voorzien. \r\n</br></br>\r\nAls je ervoor kiest om de knop hieronder op 'Aan'
+        te zetten, plaatst het ETM automatisch voldoende opslagvolume in jouw scenario
+        om voor elk uur per jaar de overschotten aan warmte op te kunnen slaan. Deze
+        warmte wordt weer uit de opslag gehaald op momenten dat de vraag hoger is
+        dan de (niet-regelbare) productie. De grafiek hiernaast laat het verloop van
+        de opslag zien.\r\n<br /><br />Let op: Als je teveel \"must-run\" of volatiel
+        vermogen in je scenario hebt, kan het voorkomen dat er aan het einde van het
+        'warmtejaar' (dat loopt van 1 april tot 31 maart) een warmteoverschot in de
+        opslag achterblijft. Om te voorkomen dat deze warmte verloren gaat, kun je
+        proberen om <a href=\"/scenario/supply/heat/heat-sources\" >het geïnstalleerd
+        vermogen van niet-regelbare / volatiele warmtebronnen</a> te verlagen, de
+        warmtevraag in je scenario te verhogen of de positie van warmteopslag in <a
+        href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >de inzetvolgorde van regelbare warmtebronnen</a> te veranderen.\r\n<br><br
+        />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
+        De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
+        >kosten</a>.\r\n"
+    supply_hydrogen_demand:
+      title: Waterstofvraag
+      short_description: 
+      description: "Er is een groeiende interesse in het gebruik van waterstof als
+        energiedrager, bijvoorbeeld voor warmteproductie, elektriciteitsproductie,
+        transportbrandstof of als grondstof in de chemie. In het ETM kun je een toekomstige
+        waterstofeconomie verkennen door waterstof in te zetten voor:\r\n\r\n<ul>\r\n
+        \ <li><a href=\"/scenario/supply/electricity_renewable/hydrogen-plants\" >elektricititeitsproductie</a></li>\r\n
+        \ <li>warmtenetten voor <a href=\"/scenario/demand/households/district-heating\">huishoudens</a>
+        en <a href=\"/scenario/demand/buildings/district-heating\">gebouwen</a></li>\r\n
+        \ <li>warmteproductie in <a href=\"/scenario/demand/industry/refineries\">industrie</a>
+        en <a href=\"/scenario/demand/agriculture/heat\">landbouw</a></li>\r\n  <li><a
+        href=\"/scenario/demand/industry/fertilizers\" >kunstmestproductie</a> (als
+        grondstof)</li>\r\n  <li>transport (<a href=\"/scenario/demand/transport_passenger_transport/car-technology\">auto's</a>,
+        <a href=\"/scenario/demand/transport_passenger_transport/bus-technology\">bussen</a>
+        en <a href=\"/scenario/demand/transport_freight_transport/truck-technology\">vrachtwagens</a>)</li></ul>"
+    supply_hydrogen_production:
+      title: Waterstofproductie
+      short_description: 
+      description: "In dit gedeelte kun je selecteren hoe de waterstof geproduceerd
+        wordt in de toekomst. Het ETM biedt de volgende opties: elektrolyse van wind-
+        en zonnestroom van wind/zonneparken ; stoomreforming van aardgas (met of zonder
+        CCS); vergassing van biomassa; import uit het buitenland.\r\n<br /><br />\r\nJe
+        kunt er ook voor kiezen om overschotten elektriciteit om te zetten in waterstof
+        (zie de sectie <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
+        >power-to-gas</a>). Dit kan alleen als er in jouw scenario momenten in het
+        jaar zijn waarop de elektriciteitsproductie hoger is dan de vraag. Daarnaast
+        is het in de kunstmestindustrie mogelijk om lokaal waterstof te produceren.
+        Deze industrie beschikt op dit moment al over waterstoffabrieken (zie <a href=\"/scenario/demand/industry/fertilizers\"
+        >kunstmestindustrie</a>).\r\n<br> <br/>\r\nMeer informatie is te vinden in
+        de <a href=\"https://github.com/quintel/documentation/blob/master/general/Hydrogen.md\"
+        >documentatie</a>."
+    supply_hydrogen_transport:
+      title: Waterstoftransport
+      short_description: 
+      description: "Hoe zal waterstof getransporteerd worden in de toekomst? Op dit
+        moment lijken twee distributiemethodes het meest voor de hand te liggen: waterstof-onder-druk
+        via pijpleidingen en met vrachtwagens.\r\n<br/><br/>\r\nTransport via pijpleidingen
+        is relatief goedkoop, vooral als de distributie-afstanden langer zijn, het
+        volume van waterstof in je scenario groot is en als de vraag naar waterstof
+        zich op een geconcentreerd gebied bevindt (bijvoorbeeld een industrieterrein).
+        Transport via vrachtwagens is meer flexibel. Het gebruik van vrachtwagens
+        ligt meer voor de hand voor distributie van kleinere hoeveelheden waterstof
+        of als de afnemers over een groter gebied verspreid zijn. \r\n<br/><br/>\r\nHieronder
+        kun je aangeven hoeveel van het totale waterstofaanbod in je scenario via
+        pijpleidingen getransporteerd wordt en hoeveel via vrachtwagens. De kosten
+        van beide technologieën kunnen aangepast worden bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
+        >kosten</a>."
+    supply_hydrogen_storage:
+      title: Waterstofopslag
+      short_description: 
+      description: "Het ETM modelleert waterstofvraag en -aanbod op uurbasis. Het
+        ETM zorgt ervoor dat waterstofvraag en -aanbod met elkaar in balans zijn voor
+        ieder uur per jaar in jouw scenario. Het ETM slaat productieoverschotten automatisch
+        op in een buffer, gebruikt waterstof uit deze buffer tijdens vraagpieken en
+        importeert/exporteert eventuele tekorten/overschotten. \r\n<br><br />\r\nHet
+        opslagvolume dat daarvoor nodig is, is te zien in de grafiek hiernaast. De
+        opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
+        >kosten</a>."
+    supply_hydrogen_co2_import:
+      title: CO<sub>2</sub>-emissies van geïmporteerde waterstof
+      short_description: 
+      description: "In sommige scenario's wordt er waterstof geïmporteerd van buiten
+        jouw gebied. Hoeveel waterstof er geïmporteerd wordt, hangt af van jouw keuzes
+        in het tabblad <a href=\"/scenario/supply/hydrogen/hydrogen-production\">'Waterstofproductie'</a>.
+        De productie en distributie van geïmporteerde waterstof kan CO<sub>2</sub>-emissies
+        hebben veroorzaakt. Hoeveel van deze emissies wil je toekennen aan jouw gebied?
+        De standaardwaarde (in kg CO<sub>2</sub> per MWh waterstof) staat op de hoeveelheid
+        emissies die vrijkomt bij waterstofproductie met Steam Methane Reforming (SMR),
+        omdat op dit moment meer dan 90% van de waterstof met deze methode wordt geproduceerd.
+        Je kunt dit zelf hieronder aanpassen. Klik op het vraagteken voor referentiewaarden.\r\n\r\n<br/><br/>\r\nDe
+        kosten voor geïmporteerde waterstof kunnen worden aangepast in de <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">kostensectie</a>."
+    supply_infrastructure_high_voltage_network:
+      title: Hoogspanningsnetwerk
+      short_description: ''
+      description: "Het hoogspanningsnet (HS-net) wordt gebruik om elektriciteit over
+        lange afstanden te transporteren, zowel binnen Nederland als voor import en
+        export. Grote centrales en grote industriële gebruikers zijn aangesloten op
+        het HS-net.\r\n\r\n<br/><br/>\r\n\r\nBij het bouwen van nieuwe centrales zijn
+        ook investeringen in het elektriciteitsnetwerk nodig. Deze kosten zijn onvermijdelijk
+        en zijn afhankelijk van de productiecapaciteit die je bouwt.\r\n\r\n<br/><br/>\r\n\r\nEr
+        is geen verschil tussen de nodige investering voor verschillende soorten centrales,
+        omdat deze enkel van de productiecapaciteit afhangen. De enige uitzondering
+        zijn windturbines op zee.  Daarvoor zijn extra investeringen nodig voor het
+        ‘stopcontact op zee.’\r\n\r\n<br/><br/>\r\n\r\nBij grote hoeveelheden import
+        of export brengt het ETM ook investeringen in rekening voor extra interconnectie
+        met het buitenland.\r\n\r\n<br/><br/>\r\n\r\nIn de grafiek zie je de benodigde
+        meerinvestering in de elektriciteitsinfrastructuur als gevolg van jouw keuzes
+        bij ‘Aanbod’."
+    supply_infrastructure_low_medium_voltage_network:
+      title: Laag- & middenspanningsnetwerk
+      short_description: ''
+      description: "Huishoudens, gebouwen, tuinbouw, en kleine industriële gebruikers
+        zijn aangesloten op het laag- en middenspanningsnetwerk (LS en MS).\r\n\r\n<br/><br/>\r\n\r\nDeze
+        elektriciteitsnetwerken bestaan uit kabels (om elektriciteit te distribueren
+        over de gebruikers) en transformatoren (om van hoog- naar laagspanning te
+        gaan). Zowel de kabels als de transformatoren hebben een beperkte capaciteit.\r\n\r\n<br/><br/>\r\n\r\nDe
+        nodige netwerkcapaciteit wordt bepaald door het aantal aangesloten gebruikers
+        en de aangesloten apparaten. Technologieën als elektrische voertuigen, elektrische
+        kachels, en warmtepompen in het bijzonder hebben veel capaciteit nodig.\r\n\r\n<br/><br/>\r\n\r\nAls
+        de nodige capaciteit hoger uitkomt dan de beschikbare capaciteit, zijn investeringen
+        nodig. Het is wenselijk om investeringen in het LS netwerk te vermijden omdat
+        deze het duurst zijn. Hiervoor moeten namelijk de straten worden opengebroken.\r\n\r\n<br/><br/>\r\n\r\nIn
+        de grafiek zie je de benodigde meerinvestering in de elektriciteitsinfrastructuur
+        als gevolg van jouw keuzes bij ‘Vraag’. "
+    supply_primary_production:
+      title: Extractie van primaire energiedragers in het ETM
+      short_description: 
+      description: "De energie die we dagelijks gebruiken komt altijd in de vorm van
+        een energiedrager zoals stroom, kolen of gas. Sommige energiedragers kunnen
+        direct worden gewonnen (denk aan olie, kolen en gas). Die noemen we primaire
+        energiedragers. Ze worden vaak omgezet in andere, meer bruikbare energievormen
+        zoals stroom, warmte of benzine.\r\n<br/><br/>\r\nIn het ETM is de winning
+        van primaire energiedragers (nog) niet het gevolg van binnen- of buitenlandse
+        vraag ernaar. In plaats daarvan wordt de binnenlandse productie bepaald door
+        curves met geschatte jaarlijkse productiecijfers.\r\n<br/><br/>\r\nDit is
+        niet ideaal natuurlijk, maar bespaart de gebruiker de nodige hoofdbrekens.
+        Vragen zoals:\r\n<ul>\r\n<li>Wat zijn de binnenlandse voorraden en hoe (snel)
+        worden die opgemaakt tussen nu en het toekomstjaar?</li>\r\n<li>Wat is de
+        maximale jaarlijkse productiecapaciteit?</li>\r\n<li>Hoe reageert de jaarlijkse
+        productie op de verschillende marktomstandigheden?</li>\r\n</ul>\r\nDit zijn
+        lastig te beantwoorden vragen voor de meeste gebruikers en zouden veel extra
+        input (schuifjes) vergen."
+    supply_primary_production_coal:
+      title: Kolen en bruinkool
+      short_description: 
+      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
+        productie van kolen en kolenproducten per jaar weergegeven. De gebruiker kan
+        deze curve momenteel nog niet aanpassen en deze reageert niet op marktomstandigheden
+        (bijvoorbeeld hoe concurrerend de winning van kolen is). \r\n<br/>\r\nLet
+        op dat deze hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt
+        in het model. Als er geen binnenlandse toepassing voor is in de toekomst leidt
+        dit automatisch tot export van gewonnen kolen. \r\n<br/><br/>\r\nMeer informatie
+        over de milieueffecten van kolenmijnen is te vinden in  \r\n<a href=\"/texts/fce_coal\"
+        class=\"fancybox\">deze tekst</a> uit het gedeelte over <a href=\"/scenario/supply/fce/coal\">ketenemissies.</a>"
+    supply_primary_production_oil:
+      title: Aardolie
+      short_description: 
+      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
+        productie van aardolie per jaar weergegeven. De gebruiker kan deze curve momenteel
+        nog niet aanpassen en deze reageert niet op marktomstandigheden (bijvoorbeeld
+        hoe concurrerend de productie van olie is). \r\n<br/>\r\nLet op dat deze hoeveelheden
+        geproduceerd worden, ongeacht of ze ook worden gebruikt in het model. Als
+        er geen binnenlandse toepassing voor is in de toekomst leidt dit automatisch
+        tot export van de gewonnen olie. \r\n<br/><br/>\r\nMeer informatie over de
+        milieueffecten van oliewinning is te vinden in  \r\n<a href=\"/texts/fce_oil\"
+        class=\"fancybox\">in this text</a> uit het gedeelte over <a href=\"/scenario/supply/fce/mineral-oil\">ketenemissies.</a>"
+    supply_primary_production_biomass:
+      title: Houtige biomassa
+      short_description: 
+      description: 
+    supply_primary_production_natural_gas:
+      title: Aardgas
+      short_description: 
+      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
+        productie van aardgas per jaar weergegeven. De gebruiker kan deze curve momenteel
+        nog niet aanpassen en deze reageert niet op marktomstandigheden (bijvoorbeeld
+        hoe concurrerend de winning van aardgas is). \r\n<br/>\r\nLet op dat deze
+        hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt in het
+        model. Als er geen binnenlandse toepassing voor is in de toekomst leidt dit
+        automatisch tot export van gewonnen aardgas. \r\n<br/><br/>\r\nMeer informatie
+        over de milieueffecten van aardgaswinning is te vinden in  \r\n<a href=\"/texts/fce_naturalgas\"
+        class=\"fancybox\">deze tekst</a> uit het gedeelte over <a href=\"/scenario/supply/fce/natural-gas\">ketenemissies.</a>"
+    supply_primary_production_uranium:
+      title: Uranium
+      short_description: 
+      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
+        productie van uraniumoxide per jaar weergegeven. De gebruiker kan deze curve
+        momenteel nog niet aanpassen en deze reageert niet op marktomstandigheden
+        (bijvoorbeeld hoe concurrerend de winning van uranium is). \r\n<br/>\r\nLet
+        op dat deze hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt
+        in het model. Als er geen binnenlandse toepassing voor is in de toekomst leidt
+        dit automatisch tot export van gewonnen uranium. \r\n<br/><br/>\r\nMeer informatie
+        over de milieueffecten van uraniumproductie is te vinden in  \r\n<a href=\"/texts/fce_uranium\"
+        class=\"fancybox\">deze tekst</a> uit het gedeelte over <a href=\"/scenario/supply/fce/uranium\">ketenemissies.</a>"
+    supply_renewable_heat_biomass:
+      title: Biomassa
+      short_description: 
+      description: 
+    supply_renewable_heat_waste:
+      title: Afval
+      short_description: 
+      description: 
+    supply_renewable_heat_geothermal_and_ambient:
+      title: Geothermische en omgevingswarmte
+      short_description: 
+      description: 
+    supply_renewable_heat_solar:
+      title: Zonnewarmte
+      short_description: ''
+      description: Zonneboilers zijn een relatief goedkope en betrouwbare bron van
+        warmte. De hoeveelheid zonnewarmte in jouw scenario hangt af van je keuzes
+        in de <a href="/scenario/demand/households/solar-panels">zonnepanelensectie
+        van huishoudens</a> ('zonthermische collectoren') en de <a href="/scenario/demand/buildings/space-heating">ruimteverwarmingssectie
+        van gebouwen</a>.
+    supply_transport_compressed_gas:
+      title: Gas onder druk voor wegtransport
+      short_description: 
+      description: 
+    supply_transport_diesel:
+      title: Diesel voor wegtransport
+      short_description: 
+      description: 
+    supply_transport_international_aviation:
+      title: Internationale luchtvaart
+      short_description: 
+      description: "Hoeveel zal bio-kerosene gebruikt worden in de toekomstige internationale
+        luchtvaart? Hier kan je het aandeel bepalen.\r\n</br></br>\r\nAls er in jouw
+        scenario elektriciteitsoverschotten zijn door de inzet van wind en/of zonne-energie,
+        dan kun je deze overschotten gebruiken om synthetische kerosine te produceren.
+        Dit kun je kiezen in <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation\"
+        > de flexibiliteitssectie</a>. "
+    supply_transport_international_shipping:
+      title: Internationale scheepvaart
+      short_description: 
+      description: 'De brandstoffen voor internationale scheepvaart hangen direct
+        af van het type motor wat je voor deze schepen hebt gekozen. In de <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
+        >internationale scheepvaart</a> kan je het type motor (HFO of LNG) kiezen.
+        Merk op dat het nog niet mogelijk is om biobrandstoffen in te zetten in deze
+        sector. '
+    supply_transport_useful_demand_trains:
+      title: Treinen
+      short_description: 
+      description: 
+    supply_transport_gasoline:
+      title: Benzine voor wegtransport
+      short_description: 
+      description: 
+    supply_transport_marine_fuels:
+      title: Binnenlandse scheepvaart
+      short_description: ''
+      description: Welke brandstoffen zullen jouw binnenvaartschepen gebruiken? Vergeet
+        niet dat schepen met diesel / dual fuel motoren op verschillende brandstoffen
+        kunnen varen, en dat jouw keuze hier de gemiddelde brandstofmix voor een schip
+        met deze motor weerspiegelt. In de <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
+        >binnenvaartsectie</a> kun je kiezen met welke motoren jouw binnenvaartschepen
+        uitgerust zijn.
+    supply_transport_public_transport_technologies:
+      title: Energiedragers openbaar vervoer
+      short_description: 
+      description: 
+    supply_transport_road_transport:
+      title: Wegverkeer
+      short_description: ''
+      description: 'Hoeveel van de gebruikte brandstof voor het wegverkeer komt van
+        hernieuwbare bronnen? Houd rekening met de impact op landgebruik (of zeegebruik)
+        als hiervoor gewassen geteeld moeten worden. In de <a href="/scenario/demand/transport_passenger_transport/car-technology"
+        >autotechnologie-</a> en de <a href="/scenario/demand/transport_freight_transport/truck-technology"
+        >vrachtwagentechnologiesectie</a> kun je bepalen welk type motor auto''s en
+        vrachtwagens hebben. N.B.: vloeibaar aardgas wordt door vrachtwagens gebruikt,
+        maar niet door auto''s.'
+    supply_transport_trains:
+      title: Treinverkeer
+      short_description: ''
+      description: Hoeveel van de gebruikte brandstof voor dieseltreinen komt van
+        hernieuwbare bronnen? Vergeet niet dat het telen van gewassen hiervoor deels
+        ten koste gaat van voedselproductie. In de <a href="/scenario/demand/transport_passenger_transport/train-technology"
+        >technologie passagierstreinen</a> and <a href="/scenario/demand/transport_freight_transport/train-technology"
+        >technologie goederentreinen</a> kun je de treintechnologie specificeren.

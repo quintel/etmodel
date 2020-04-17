@@ -1,179 +1,553 @@
+---
 en:
   sidebar_items:
+    alt: Share of total final energy demand
     agriculture:
-      short_name: "Agriculture"
-      long_name: "Agriculture energy demand"
-    alt:
-      short_name: "Share of total final energy demand"
-      long_name: ""
+      short_title: Agriculture
+      title: Agriculture energy demand
+      short_description: "How much energy will your country use for agriculture in
+        the future? The answer depends ...\r\n"
+      description: "In general, agriculture is not very energy intensive, with the
+        exception of greenhouses. How much energy will your country use for agriculture
+        in the future?\r\n<br/>\r\n<br/>\r\n\t\r\nThe answer depends on your assumptions
+        about the adoption of new technologies, mostly for heating. You can fill in
+        these assumptions and the graphs will show how things change.\r\n<br/>\r\n<br/>\r\nIn
+        the Netherlands, more than 80% of the energy used in this sector is for greenhouses.\r\n"
     area:
-      short_name: "Area use"
-      long_name: "Area use policies"
+      short_title: Area use
+      title: Area use policies
+      short_description: 'Sustainable energy takes a lot of space. How much land,
+        sea or coast will be allocated to energy production by the government? '
+      description: "How much land, sea or coast will the government allocate to energy
+        production? \r\n<br/><br/>\r\nRenewable energy production takes a lot of space,
+        whether it is wind power, solar power or biomass production. Governments (national,
+        regional or local) need to set aside land for this purpose. Here you can fill
+        in how much land is set aside. \r\n<br/>\r\n<br/>\r\nNote that setting aside
+        land does not mean the wind turbines will also be built. You can do that in
+        the Supply section.\r\n "
     biomass:
-      short_name: "Biomass"
-      long_name: "Biomass"
+      short_title: Biomass
+      title: Biomass
+      short_description: "Which part of the CO<sub>2</sub> emissions from biomass
+        is relevant to the environment is uncertain and speculative. \r\n<p>\r\nHere
+        you can explore the potential amount of climate-relevant CO<sub>2</sub> emissions
+        that are caused by combustion of biomass.?\r\n"
+      description: "Which part of the CO<sub>2</sub> emissions from biomass is relevant
+        to the environment is uncertain and speculative. \r\n<p>\r\nHere you can explore
+        the potential amount of climate-relevant CO<sub>2</sub> emissions that are
+        caused by combustion of biomass."
     buildings:
-      short_name: "Buildings"
-      long_name: "Energy demand non-residential buildings"
+      short_title: Buildings
+      title: Energy demand non-residential buildings
+      short_description: "How much energy will offices, schools and other buildings
+        need in the future?\r\n"
+      description: "How much energy will offices, schools, hospitals and other buildings
+        need in the future?\r\n<br/>\r\n<br/>\r\n\r\nThe answer depends on your assumptions
+        about the adoption of new technologies and economic or population growth,
+        for example. You can fill in these assumptions and the graphs will show how
+        things change. \r\n<br/>\r\n<br/>\r\nNon-residential buildings mostly need
+        heat, cooling and electricity for appliances. Electricity and cooling demand
+        have been increasing for a while now. Both are the result of ever more electrical
+        appliances being used.\r\n\r\n"
     bunkers:
-      short_name: "Bunkers"
-      long_name: "Energy demand for bunkers"
+      short_title: Bunkers
+      title: Energy demand for bunkers
+      short_description:
+      description:
     bunker_fuels:
-      short_name: "Bunker fuels"
-      long_name: "Bunker fuels"
+      short_title: Bunker fuels
+      title: Bunker fuels
+      short_description:
+      description:
     co2:
-      short_name: "CO<sub>2</sub> emissions"
-      long_name: "CO<sub>2</sub> emissions costs"
+      short_title: CO<sub>2</sub> emissions
+      title: CO<sub>2</sub> emissions costs
+      short_description: 'Will CO<sub>2</sub> emission costs make the difference between
+        renewable and fossil-fueled power? In Europe, emitting CO<sub>2</sub> when
+        generating power is no longer free. '
+      description: "Will CO<sub>2</sub> emission costs make the difference between
+        renewable and fossil-fuelled power?\r\n<br/>\r\n<br/>\r\nIn Europe, emitting
+        CO<sub>2</sub> is no longer free for energy intensive companies. A decreasing
+        number of emission certificates is awarded to them every year, forcing them
+        (in theory at least) to become more efficient. In reality, this depends on
+        whether politicians will compromise climate legislation for economic gains.
+        \r\n<br/>\r\n<br/>\r\nLike fuel costs, therefore, emission costs make up part
+        of the costs of fossil-fuelled power. These costs may be (mostly) avoided
+        by Carbon Capture and Storage (CCS). Of course, it is only profitable to do
+        so if emitting CO<sub>2</sub> costs more than capturing and storing it. \r\n"
     combustion:
-      short_name: "Combustion plants"
-      long_name: "Combustion plants costs"
+      short_title: Combustion plants
+      title: Combustion plants costs
+      short_description: "Combustion power plants burn fuels to make electricity.\r\nHow
+        will costs for electricity production change in the future?"
+      description: "How will the costs of fuel, the costs of building power plants
+        and even the costs of CO<sub>2</sub> emissions change in the future? \r\n<br/>\r\nCombustion
+        power plants burn fuels to make electricity. To compare their costs to different
+        technologies, you can fill in your assumptions for these technologies. \r\n<br/><br/>\r\nHere
+        you will find an overview of all types of electricity production used in the
+        model. Of each type we use the most modern, commercially available technology.
+        \r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime of the power
+        plant. The chart on the right shows how costs compare."
     cost:
-      short_name: "Cost"
-      long_name: "Cost policies"
+      short_title: Cost
+      title: Cost policies
+      short_description: Everyone needs energy. By how much may energy costs increase
+        or decrease?
+      description: By how much may energy costs increase or decrease? Everyone needs
+        energy. If it becomes more expensive, that means people will have less money
+        to spend on other things.
     costs_flexibility:
-      short_name: "Flexibility"
-      long_name: "Flexibility costs"
+      short_title: Flexibility
+      title: Flexibility costs
+      short_description: ''
+      description: ''
     costs_heat:
-      short_name: "Heat"
-      long_name: "Heat"
+      short_title: Heat
+      title: Heat
+      short_description: ''
+      description: "Heating devices in both residential and non-residential buildings
+        tend to become cheaper as they become more common, due to economies of scale.
+        This is illustrated in the fictional learning curve below.\r\n<br/><br/>\r\nIf
+        you believe certain space or water heating technologies will be widely used
+        in the future, you may also want to think about how much cheaper they will
+        become. \r\n<br/><br/>\r\n<img src=\"/assets/popups/learning_curve_600px.png\"
+        style=\"float:left;margin-right:20px\"/>"
     costs_hydrogen:
-      short_name: "Hydrogen"
-      long_name: "Hydrogen costs"
+      short_title: Hydrogen
+      title: Hydrogen costs
+      short_description: ''
+      description: ''
     data_export:
-      short_name: "Data export"
-      long_name: "Data export"
+      short_title: Data export
+      title: Data export
+      short_description: Download information about your scenario
+      description: Download information about your scenario, such as merit order price
+        and load curves, and application demands.
     data_visuals:
-      short_name: "Visuals"
-      long_name: "Visuals"
+      short_title: Visuals
+      title: Visuals
+      short_description:
+      description:
     dependence:
-      short_name: "Dependence"
-      long_name: "Import policies"
+      short_title: Dependence
+      title: Import policies
+      short_description: How much energy do you want to import from other countries?
+        Will your country import all energy?
+      description: "How much energy do you want to import from other countries? Since
+        energy is of crucial importance to any economy, security of supply is a major
+        concern of all governments. \r\n<br/>\r\n<br/>\r\nFood for thought:<br/>\r\nImporting
+        energy is not necessarily a bad thing. Most Europeans will probably feel different
+        about importing wood chips from Canada or even uranium from Australia, than
+        they do about imports of oil from Saudi Arabia or natural gas from Russia.
+        Most countries have learned to live with some form of dependence on imports. "
     earth:
-      short_name: "Geothermal"
-      long_name: "Geothermal costs"
+      short_title: Geothermal
+      title: Geothermal costs
+      short_description:
+      description:
     electricity:
-      short_name: "Electricity"
-      long_name: "Electricity"
+      short_title: Electricity
+      title: Electricity
+      short_description: "How many power plants for  'non-renewable' electricity do
+        you think should be built?\r\nHow will you generate the electricity you need?"
+      description: "How many power plants for  'non-renewable' electricity do you
+        think should be built?\r\nHere, you can choose how you want to generate the
+        electricity you need. \r\n<br/>\r\n<br/>\r\nKeep in mind what you may have
+        already filled in for the sections 'Demand', 'Costs' and 'Targets'. At the
+        bottom of the screen ('Targets'), you can see how many of your own policy
+        targets you meet with the current electricity production mix. If you move
+        your cursor over this indicator, you will see a table with more details.\r\n"
     electricity_import_costs:
-      short_name: "Imported electricity"
-      long_name: "Costs of imported electricity"
+      short_title: Imported electricity
+      title: Costs of imported electricity
+      short_description: ''
+      description: ''
     electricity_import_export:
-      short_name: "Import/Export"
-      long_name: "Import and export of electricity"
+      short_title: Import/Export
+      title: Import and export of electricity
+      short_description: ''
+      description: "The European Union mandates energy market integration. For electricity
+        this has meant first the creation of regional European markets - clusters
+        of countries with coupled markets - to be followed by complete integration
+        of all European regional markets. In practice, European markets are already
+        heavily interconnected and integrated with their neighbors'. This means increasing
+        flows of imported and exported electricity. \r\n<br/><br/>\r\nAt the same
+        time, national governments are stimulating the generation of renewable electricity.
+        As a result, volatile production (solar and wind) is growing rapidly every
+        year. Because electricity is difficult to store, countries with large volatile
+        production such as Germany, regularly export excess electricity to neighboring
+        countries at low prices.\r\n<br/><br/>\r\nThese two effects, larger volumes
+        of import and export and tighter coupling of the markets, need to be taken
+        into account when planning for the future. How can we make the markets perform
+        well? What is the influence of renewables on the electricity price? These
+        are the type of questions that we address in this section.\r\n<br><br>\r\nWe
+        note that the impact of import and export of electricity are included in the
+        ETM in a simplified way. The content of this section is derived using separate
+        research and is not dynamic. "
     electricity_renewable:
-      short_name: "Renewable electricity"
-      long_name: "Renewable electricity"
+      short_title: Renewable electricity
+      title: Renewable electricity
+      short_description: "How much renewable electricity do you think should be generated?\r\nHow
+        will you generate the electricity you need?"
+      description: "How much renewable electricity do you think should be generated?\r\nHow
+        will you generate the electricity you need?\r\n<br/>\r\n<br/>\r\nKeep in mind
+        what you have already filled in for the sections 'Demand', 'Costs' and 'Targets'.
+        At the bottom of the screen ('Targets'), you can see how many of your own
+        policy targets you meet with the current electricity production mix. If you
+        move your cursor over this indicator, you will see a table with more details."
     excess_electricity:
-      short_name: "Excess electricity"
-      long_name: "Excess electricity"
+      short_title: Excess electricity
+      title: Excess electricity
+      short_description: ''
+      description: "This page addresses the biggest obstacle facing integration of
+        large amounts of wind or solar power: generation does not necessarily coincide
+        with demand. This can lead to both shortage and excess. Large amounts of excess
+        electricity cannot always be reliably exported to neighboring countries, especially
+        if volatile renewable power takes up an increasing share of production there
+        too. \r\n\r\n<br/><br/>\r\n\r\nIn the absence of storage options, the only
+        way to maintain grid stability is 'curtailment' or discarding free and renewable
+        electricity by turning off wind or solar power generation. \r\nAt present,
+        wasting their output increases production cost for wind turbines and solar
+        panels and results in increased costs for the whole system. Whether this effect
+        will occur in the future is uncertain, since nobody can predict how the market
+        will react to scenarios that temporarily produce too much electricity on a
+        regular basis. If excess production occurs frequently enough, it might become
+        economically attractive to start converting electricity into another useful
+        form of energy and integrate it into the energy system. \r\n\r\n<br/><br/>\r\n\r\nThe
+        chart gives an impression of how the costs for several conversion technologies
+        compare and at what point it might become economically interesting to build
+        the first conversion units. "
     employment:
-      short_name: "Employment"
-      long_name: "Employment"
+      short_title: Employment
+      title: Employment
+      short_description: ''
+      description: "Increased employment might be good reason to make the transition
+        to more sustainable energy production technologies. But how large are the
+        effects?\r\n<br/><br/>\r\nThe employment calculation for the ETM is currently
+        limited in scope; the 'Agriculture' and 'Industry' sectors are not taken into
+        account. More details can be found on our <a href=\"https://github.com/quintel/documentation/blob/master/general/employment.md\"
+        target=\"_blank\">documentation</a> page."
     fce:
-      short_name: "Fuel chain emissions"
-      long_name: "Fuel chain emissions"
+      short_title: Fuel chain emissions
+      title: Fuel chain emissions
+      short_description: "Greenhouse gases are emitted when fuels are used, but also
+        when they are extracted, treated and transported to their final destination.
+        <br/>\r\n<a href=\"http://www.cedelft.eu/\" target=\"_blank\"><img alt=\"Powered_by_cedelft_bis\"
+        src=\"/assets/layout/powered_by_cedelft_bis.png?1313676637\" style=\"float:right\"></a>\r\n"
+      description: "Greenhouse gases are emitted when fuels are used, but also when
+        they are extracted, treated and transported to their final destination. In
+        this section, you can see how these 'fuel chain emissions' change for different
+        geographic origins of some of the fuels.\r\n<br/><br/>\r\nUnder 'Settings'
+        you can choose to include fuel chain emissions in the CO<sub>2</sub> calculations.
+        \r\n<br/><br/>\r\nFor each fuel you can click on '<u>read more</u>' to see
+        more information about the fuel chain and what pollution plays a role. When
+        you click on the question mark <img src='/assets/slider/slider-down-button.png'
+        /> after each slider you can read more about the specific characteristics
+        of the fuel from that region.\r\n<br/>\r\n<a href=\"http://www.cedelft.eu/\"
+        target=\"_blank\"><img alt=\"Powered_by_cedelft_bis\" src=\"/assets/layout/powered_by_cedelft_bis.png?1313676637\"
+        style=\"float:right\">\r\n</a>"
     flexibility_conversion:
-      short_name: "Conversion"
-      long_name: "Electricity conversion"
+      short_title: Conversion
+      title: Electricity conversion
+      short_description: ''
+      description: ''
     flexibility_net_load:
-      short_name: "Net load"
-      long_name: "Load on electricity network"
+      short_title: Net load
+      title: Load on electricity network
+      short_description: ''
+      description: ''
     flexibility_storage:
-      short_name: "Storage"
-      long_name: "Electricity storage"
+      short_title: Storage
+      title: Electricity storage
+      short_description: ''
+      description: ''
     flexibility_weather:
-      short_name: "Weather conditions"
-      long_name: "Weather conditions"
+      short_title: Weather conditions
+      title: Weather conditions
+      short_description: ''
+      description: ''
     heat:
-      short_name: "District heating"
-      long_name: "District heating"
+      short_title: District heating
+      title: District heating
+      short_description: How much of the heat needed should be produced by burning
+        fossil fuels?
+      description: "How much of the heat needed should be produced by burning fossil
+        fuels?\r\n<br/><br/>\r\nKeep in mind what you have already filled in for the
+        sections 'Demand', 'Costs' and 'Targets'. At the bottom of the screen ('Targets'),
+        you can see how many of your own policy targets you meet with the current
+        heat production mix. If you move your cursor over this indicator, you will
+        see a table with more details."
     fuels:
-      short_name: "Fuels"
-      long_name: "Fuels"
+      short_title: Fuels
+      title: Fuels
+      short_description:
+      description:
     fuel_costs:
-      short_name: "Fuel prices"
-      long_name: "Fuel prices"
+      short_title: Fuel prices
+      title: Fuel prices
+      short_description: ''
+      description: "It is difficult to predict the future price of fuel commodities.
+        Yet fuel is currently the largest contribution to the total cost of energy
+        supply. In this section you can set the price of fuel that you think is realistic.
+        The ETM will use this fuel price in all cost calculations. By varying the
+        fuel price you can see how robust your scenario is as far as uncertain future
+        fuel prices are concerned.\r\n<br/><br/>\r\nThe chart below shows the historic
+        oil price (orange) and the forecasts that the International Energy Agency,
+        has made of the oil price in various years. If even the IEA cannot accurately
+        predict the future oil price, who can?\r\n<br/>\r\n<img src=\"/assets/layout/forecast_iea_2008_and_2009_added.png\"
+        style=\"float:left;margin-right:20px\"/>"
     fuel_production:
-      short_name: "Fuel production"
-      long_name: "Fuel production"
+      short_title: Fuel production
+      title: Fuel production
+      short_description: Primary production of energy carriers.
+      description: ''
     households:
-      short_name: "Households"
-      long_name: "Household energy demand"
+      short_title: Households
+      title: Household energy demand
+      short_description: "How much energy will households need in the future?\r\nThe
+        answer depends ..."
+      description: "How much energy will households need in the future?\r\n<br/>\r\n<br/>\r\n\r\nThe
+        answer depends on your assumptions about the adoption of new technologies
+        and economic or population growth, for example. You can fill in these assumptions
+        and the graphs will show how things change. \r\n<br/>\r\n<br/>\r\nHouseholds
+        mostly need heat and electricity. Heat use has been steadily decreasing the
+        past years, because of better insulation in houses. Electricity demand has
+        kept increasing. As people get richer, they use ever more electrical appliances.\r\n\r\n\r\n"
     heat_merit:
-      short_name: "Merit order"
-      long_name: "Merit order dispatchable heat sources"
+      short_title: Merit order
+      title: Merit order dispatchable heat sources
+      short_description: ''
+      description: ''
     hydrogen:
-      short_name: "Hydrogen"
-      long_name: "Hydrogen"
+      short_title: Hydrogen
+      title: Hydrogen
+      short_description: How will your hydrogen be produced?
+      description: 'How will your hydrogen be produced? '
     hydrogen_costs:
-      short_name: "Hydrogen"
-      long_name: "Hydrogen"
+      short_title: Hydrogen
+      title: Hydrogen
+      short_description:
+      description:
     industry:
-      short_name: "Industry"
-      long_name: "Industry energy demand"
+      short_title: Industry
+      title: Industry energy demand
+      short_description: Industrial use is often a large chunk of a country's total.
+        How much energy will industry need in the future? The answer depends...
+      description: "Industry often represents a large part of a country's energy use.
+        How much energy will industry need in the future?\r\nThe answer depends on
+        your assumptions about the adoption of new technologies and economic or population
+        growth, for example. You can fill in these assumptions and the graphs will
+        show how things change.\r\n<br/><br/>\r\nThe industry sector is divided into
+        10 sub-sectors and CHPs. Assumptions about the energy consumption in the industry
+        can be set in those sub-sectors. Only the heat production by CHPs is covered
+        for the industry as a whole.\r\n<br/><br/>\r\nBecause industry uses so much
+        energy, it is the only sector that has steadily improved its energy efficiency
+        over the past decades, as energy has become more expensive. In many developed
+        countries, industrial energy use has hardly increased since the early 1990's."
     industry_chemical:
-      short_name: "Chemical industry"
-      long_name: "Chemical industry energy demand"
+      short_title: Chemical industry
+      title: Chemical industry energy demand
+      short_description: ''
+      description: "The chemical sector represents a large part of the industrial
+        energy use, partly as result of the use of energy carriers as feedstock for
+        products. How much will it use in the future? The answer depends on your assumptions
+        about the adoption of new technologies and economic or population growth,
+        for example. You can fill in these assumptions and the graphs will show how
+        things change. <br /><br />\r\nThe chemical sector is part of industry, so
+        changes made here will show up in the charts for industry as a whole.\r\n"
     industry_metal:
-      short_name: "Metal industry"
-      long_name: "Metal industry energy demand"
+      short_title: Metal industry
+      title: Metal industry energy demand
+      short_description: ''
+      description: "Metal processing represents a large part of industrial energy
+        use. How much will it use in the future?<br/><br/>\r\nThe answer depends on
+        your assumptions about the adoption of new technologies and economic or population
+        growth, for example. You can fill in these assumptions and the graphs will
+        show how things change.\r\n<br/><br/>\r\nThis sector is part of industry,
+        so changes made here will show up in the charts for industry as a whole."
     industry_other:
-      short_name: "Other industry"
-      long_name: "Other industry energy demand"
+      short_title: Other industry
+      title: Other industry energy demand
+      short_description: ''
+      description: "The other industry sector includes the energy consumption that
+        is not covered by the chemical industry and the metal industrie. How much
+        energy will the other industry use in the future? The answer depends on your
+        assumptions about the adoption of new technologies and economic or population
+        growth, for example. You can fill in these assumptions and the graphs will
+        show how things change. \r\n<br /><br />\r\nThe other industry sector is part
+        of industry, so changes made here will show up in the charts for industry
+        as a whole."
     infrastructure:
-      short_name: "Infrastructure"
-      long_name: "Infrastructure costs"
+      short_title: Infrastructure
+      title: Infrastructure costs
+      short_description: This page explains additional costs for the electricity and
+        gas networks, as a result of your choices.
+      description: 'Additional electricity generation capacity and extra electricity
+        use by new technologies may require improvements or enhancements to the electricity
+        grid. This page explains additional costs for the electricity and gas networks,
+        as a result of your choices. '
     introduction:
-      short_name: "Introduction"
-      long_name: "Welcome!"
+      short_title: Introduction
+      title: Welcome!
+      short_description: ''
+      description: ''
     merit_order:
-      short_name: "Merit order"
-      long_name: "Merit order"
+      short_title: Merit order
+      title: Merit order
+      short_description: 'This page shows the merit order of power producing technologies
+        that you have chosen in your scenario. '
+      description: This page shows the 'merit order' of power producing technologies
+        that you have chosen in your scenario. The merit order compares the running
+        costs, which include  fuel costs, CO<sub>2</sub> costs, and variable operation
+        and maintenance costs.
     nuclear:
-      short_name: "Nuclear plants"
-      long_name: "Nuclear plants costs"
+      short_title: Nuclear plants
+      title: Nuclear plants costs
+      short_description: "How will the costs of nuclear power change in the future?
+        \r\nComparing nuclear power to other technologies on a factual - and neutral
+        - basis is useful."
+      description: "How will the costs of nuclear power change in the future?\r\n<br/><br/>\r\nNuclear
+        power will probably always stir debates about its safety. Comparing it to
+        other technologies on a factual - and neutral - basis may contribute to this
+        debate.\r\n<br/><br/>\r\nHere you will find an overview of all types of electricity
+        production used in the model. The graph on the right shows how costs compare.
+        Of each type we use the most modern, commercially available technology.\r\n<br/><br/>\r\nThe
+        model takes the lifetime of a power plant into account when calculating costs. "
     other:
-      short_name: "Other"
-      long_name: "Energy demand other users"
+      short_title: Other
+      title: Energy demand other users
+      short_description: How much energy will the energy consumers use that are not
+        included in the categories above? The answer depends ...
+      description: "How much energy will the energy consumers use that are not included
+        in the categories above? These remaining energy consumers include the construction
+        sector, hydrological sector (dams, levies etc), the military etc.\r\n<br/>\r\n<br/>\r\nThe
+        answer depends on your assumptions about the adoption of new technologies
+        and economic or population growth, for example. You can fill in these assumptions
+        and the graphs will show how things change.\r\n"
     other_fuels:
-      short_name: "Alternative fuels"
-      long_name: "Alternative fuels"
+      short_title: Alternative fuels
+      title: Alternative fuels
+      short_description:
+      description:
     primary_production:
-      short_name: "Extraction"
-      long_name: "Extraction of energy carriers"
+      short_title: Extraction
+      title: Extraction of energy carriers
+      short_description:
+      description:
     security_of_supply:
-      short_name: "Security of supply"
-      long_name: "Security of supply"
+      short_title: Security of supply
+      title: Security of supply
+      short_description: This page compares the available technologies that can serve
+        as backup for volatile renewable source like wind or solar power.
+      description: "Volatile energy production from wind turbines and solar panels
+        cannot always be relied upon. They need some form of backup. In absence of
+        storage options, such backup will be provided by fossil power plants. This
+        means extra CO<sub>2</sub> emissions and costs for electricity produced by
+        volatile techniques.  \r\n<br/>\r\n<br/>\r\nThis page compares the available
+        technologies that can serve as backup for volatile wind or solar power."
     solar:
-      short_name: "Solar power"
-      long_name: "Solar power costs"
+      short_title: Solar power
+      title: Solar power costs
+      short_description: "How will the costs of solar power change for your country?
+        \r\nSolar power is developing fast. Comparing it on a factual - and neutral
+        - basis to the costs of other technologies can be useful. "
+      description: "How will the costs of solar power change for your country? \r\n<br/><br/>\r\nSolar
+        power is developing fast. Technologies are available for hot, sunny climates,
+        but also for more temperate climates. That is why some people believe it is
+        the energy source of the future. Comparing it on a factual - and neutral -
+        basis to the costs of other technologies can be useful. \r\n<br/><br/>\r\nHere
+        you will find an overview of all types of electricity production used in the
+        model. Of each type we use the most modern, commercially available technology.
+        \r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime of the solar
+        panels and how much solar energy is available in your country. The graph on
+        the right shows how costs compare. "
     sustainability:
-      short_name: "Renewability"
-      long_name: "Renewability target policies"
+      short_title: Renewability
+      title: Renewability target policies
+      short_description: "By how much will the government want to cut CO<sub>2</sub>
+        emissions compared to 1990 levels? How about sustainable energy quotas?\r\n"
+      description: "By how much will the government want to cut CO<sub>2</sub> emissions
+        compared to 1990 levels? What percentage of all energy use do you think should
+        be renewable in the future?\r\n<br/>\r\n<br/>\r\nHere you may set the national
+        renewability targets. At 'Targets' at the bottom of each page, you can see
+        whether you have managed to meet your own policy targets after you have filled
+        out the 'Supply' section. "
     transport:
-      short_name: "Transport"
-      long_name: "Transport"
+      short_title: Transport
+      title: Transport
+      short_description: Will we need more or less energy for transporting people
+        and goods in the future? The answer depends ...
+      description: "Will we need more or less energy for transporting people and goods
+        in the future?\r\n<br/>\r\n<br/>\r\n\r\nThe answer depends on your assumptions
+        about the adoption of new technologies, economic growth and efficiency improvements,
+        for example. You can fill in these assumptions and the graphs will show how
+        things change.\r\n<br/>\r\n<br/>\r\nAlmost all modes of transport have been
+        steadily increasing in volume over the last decades.\r\n\r\n"
     transport_costs:
-      short_name: "Transport"
-      long_name: "Transport"
+      short_title: Transport
+      title: Transport
+      short_description: How expensive will transport be in the future? Will investment
+        costs for new technologies even out or will we (still) be paying more?
+      description: ''
     transport_freight_transport:
-      short_name: "Freight transport"
-      long_name: "Freight transport"
+      short_title: Freight transport
+      title: Freight transport
+      short_description: ''
+      description: ''
     transport_fuels:
-      short_name: "Transport fuels"
-      long_name: "Transport fuels"
+      short_title: Transport fuels
+      title: Transport fuels
+      short_description: What mix of transport fuels will you use? What part will
+        be renewable?
+      description: "What mix of transport fuels will you use? What part will be renewable?\r\n<br/><br/>\r\nKeep
+        in mind what you have already filled in for the sections 'Demand', 'Costs'
+        and 'Targets'. At the bottom of the screen ('Targets'), you can see how many
+        of your own policy targets you meet with the current transport fuel mix. If
+        you click on it, you will see a table with more details."
     transport_international_transport:
-      short_name: "International transport"
-      long_name: "International transport"
+      short_title: International transport
+      title: International transport
+      short_description: Will we need more or less energy for bunkering in the future?
+        Will people depend more on local products in the future so international trade
+        decreases or globalization will keep increasing?
+      description: The answer depends on your estimation about the number of international
+        travel and international shipping. You can fill in your assumptions and the
+        graphs will show how things change.
     transport_passenger_transport:
-      short_name: "Passenger transport"
-      long_name: "Passenger transport"
+      short_title: Passenger transport
+      title: Passenger transport
+      short_description: ''
+      description: ''
     wacc:
-      short_name: "WACC"
-      long_name: "Weighted average cost of capital (WACC)"
+      short_title: WACC
+      title: Weighted average cost of capital (WACC)
+      short_description: ''
+      description: ''
     water:
-      short_name: "Hydro electric"
-      long_name: "Water power costs"
+      short_title: Hydro electric
+      title: Water power costs
+      short_description: "How will the costs of hydro-electricity change in the future?
+        \r\nHydro-electricity's technology is quite mature, but changing rainfall
+        patterns make it hard to predict how plants will perform.  "
+      description: "How will the costs of hydro-electricity change in the future?\r\n<br/>\r\n<br/>\r\nHydro-electricity's
+        technology is quite mature, but changing rainfall patterns make it hard to
+        predict how plants will perform. \r\n<br/><br/>\r\nHere you will find an overview
+        of all types of electricity production used in the model. Of each type we
+        use the most modern, commercially available technology. The graph on the right
+        shows how costs compare.\r\n<br/>\r\n<br/>\r\nThe model takes into account
+        the lifetime of the power plants when calculating costs."
     wind:
-      short_name: "Wind turbines"
-      long_name: "Wind power costs"
+      short_title: Wind turbines
+      title: Wind power costs
+      short_description: How will the costs of wind power change in the future? Onshore
+        and offshore wind are technologically quite different, so they may develop
+        separately.
+      description: "How will the costs of wind power change in the future? \r\n<br/><br/>\r\nOnshore
+        and offshore wind are technologically quite different, so they may develop
+        separately. To compare their costs of making electricity with different technologies,
+        you can fill in your assumptions relevant for these technologies.\r\n<br/><br/>\r\nHere
+        you will find an overview of all types of electricity production used in the
+        model. Of each type we use the most modern, commercially available technology.
+        \r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime of the wind
+        turbine and how much wind energy is available in your country. The graph on
+        the right shows how costs compare. "

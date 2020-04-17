@@ -47,7 +47,7 @@ class SidebarItem < YModel::Base
   end
 
   def description
-    I18n.t("descriptions_sidebar_items.#{key}.content")
+    I18n.t("descriptions_sidebar_items.#{key}.description")
   end
 
   def root?

@@ -94,7 +94,9 @@ nl:
         en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
         worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
         zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen. \r\n<br/>\r\n"
+        instellen. \r\n<br/><br/>\r\n
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\" >hier</a> aanpassen<br
+        />"
     households_heater_electricity_share:
       short_content: ''
       content: "Electrische kachels zetten elektriciteit direct om in warmte. Op zich
@@ -180,6 +182,17 @@ nl:
         aanpast voor zowel zon op dak als grootschalige zonneparken. De onderstaande
         link laat de kosten van zon op dak zien. Let op: de installatiekosten van
         zon op dak (500 kEUR/MW) worden niet aangepast met deze schuif.\r\n<br/>"
+    technical_solar_pv_efficiency:
+      content: "Zonnepanelen worden steeds efficiënter in het omzetten van zonnestralen in elektriciteit.
+        Met deze schuif stel je de toekomstige efficiëntie van zonnepanelen in. <br /><br />
+        Voor een standaardpaneel van 1.6m2 hangen vermogens en efficiënties als volgt met elkaar samen: <br /><br />
+        17% efficiëntie: 272 Wp <br/>
+        18% efficiëntie: 288 Wp <br/>
+        19% efficiëntie: 304 Wp <br/>
+        20% efficiëntie: 320 Wp <br/>
+        21% efficiëntie: 336 Wp <br/>
+        22% efficiëntie: 352 Wp <br/><br />
+        Let op: Dit schuifje heeft geen invloed op de efficiëntie van zonthermie en CSP"
     investment_costs_nuclear_nuclear_plant:
       short_content: ''
       content: "Deze schuif stelt je de toe-of afname in die je verwacht voor de investeringskosten
@@ -864,7 +877,9 @@ nl:
         het nodig zijn om oplossingen te vinden voor onbalans op het laagspanningsnet.
         In sommige gevallen is het slim om zonneparken aan te sluiten op slechts een
         bepaald percentage van het piekvermogen, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen.\r\n<br/>\r\n"
+        instellen.\r\n<br/><br />\r\n
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\" >hier</a> aanpassen<br
+        />"
     capacity_of_energy_power_solar_csp_solar_radiation:
       short_content: ''
       content: "Hiermee bouw je 50 MWe geconcentreerde zonnewarmte centrales (Concentrated
@@ -1377,7 +1392,9 @@ nl:
         en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
         worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
         zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen. \r\n<br/>\r\n"
+        instellen. \r\n<br/><br/>\r\n
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\" >hier</a> aanpassen<br
+        />"
     buildings_space_heater_wood_pellets_share:
       short_content: ''
       content: "Welk percentage van de warmtevraag in kantoren en andere gebouwen
@@ -3230,9 +3247,7 @@ nl:
         ten opzichte van het vermogen van de zonneparken is afhankelijk van het aantal
         zonuren en het zonprofiel van een land. Meer informatie hierover staat in
         de <a href=\"https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx\"
-        >documentatie op Github</a>.\r\n</br></br>\r\nIn het ETM heeft een zonnepaneel
-        standaard 867 vollasturen. Het is aannemelijk dat toekomstige zonnepanelen
-        meer elektriciteit zullen produceren per geïnstalleerd vermogen dan nu. Je
+        >documentatie op Github</a>.\r\n</br></br>\r\nJe
         kunt het aantal vollasturen voor zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\"
         >hier</a> aanpassen.\r\n<br /><br />\r\n\r\nOpmerking: De technische en financiële
         specificaties hieronder zijn alleen voor de elektrolyser, niet voor de zonneparken.
@@ -3430,60 +3445,55 @@ nl:
         wordt alleen financieel meegenomen, niet energetisch.'
     flh_of_energy_power_wind_turbine_coastal:
       short_content:
-      content: In het ETM wordt een windmolen aan de kust standaard gemodelleerd met
-        2550 vollasturen. Het is aannemelijk dat toekomstige windmolens meer elektriciteit
-        zullen produceren per geïnstalleerd vermogen dan nu. Door de vollasturen te
+      content: Door de vollasturen te
         verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
-        met hetzelfde aantal windmolens en dezelfde belasting op het elektriciteitsnetwerk.
+        met hetzelfde aantal windmolens.
         Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met
         dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur
         voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
-        breder en platter worden doordat de windmolen vaker draait op hogere capaciteit.
+        breder worden doordat de windmolen vaker draait op hogere capaciteit.
         Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
         in het effect van het aantal vollasturen op het windprofiel.
     flh_of_energy_power_wind_turbine_inland:
       short_content:
-      content: In het ETM wordt een windmolen op land standaard gemodelleerd met 1920
-        vollasturen. Het is aannemelijk dat toekomstige windmolens meer elektriciteit
-        zullen produceren per geïnstalleerd vermogen dan nu. Door de vollasturen te
+      content: Door de vollasturen te
         verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
-        met hetzelfde aantal windmolens en dezelfde belasting op het elektriciteitsnetwerk.
+        met hetzelfde aantal windmolens.
         Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met
         dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur
         voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
-        breder en platter worden doordat de windmolen vaker draait op hogere capaciteit.
+        breder worden doordat de windmolen vaker draait op hogere capaciteit.
         Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
-        in het effect van het aantal vollasturen op het windprofiel op land.
+        in het effect van het aantal vollasturen op het windprofiel.
     flh_of_energy_power_wind_turbine_offshore:
       short_content:
-      content: In het ETM wordt een windmolen op zee standaard gemodelleerd met 3500
-        vollasturen. Het is aannemelijk dat toekomstige windmolens meer elektriciteit
-        zullen produceren per geïnstalleerd vermogen dan nu. Door de vollasturen te
+      content: Door de vollasturen te
         verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
-        met hetzelfde aantal windmolens en dezelfde belasting op het elektriciteitsnetwerk.
+        met hetzelfde aantal windmolens.
         Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met
         dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur
         voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
-        breder en platter worden doordat de windmolen vaker draait op hogere capaciteit.
+        breder worden doordat de windmolen vaker draait op hogere capaciteit.
         Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
-        in het effect van het aantal vollasturen op het windprofiel op zee.
+        in het effect van het aantal vollasturen op het windprofiel.
     flh_of_energy_hydrogen_wind_turbine_offshore:
       short_content:
-      content: 'In het ETM wordt een windmolen op zee standaard gemodelleerd met 3500
-        vollasturen. Het is aannemelijk dat toekomstige windmolens meer elektriciteit
-        zullen produceren per geïnstalleerd vermogen dan nu. Door de vollasturen te
+      content: Door de vollasturen te
         verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
-        met hetzelfde aantal windmolens. '
+        met hetzelfde aantal windmolens.
+        Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met
+        dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur
+        voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
+        breder worden doordat de windmolen vaker draait op hogere capaciteit.
+        Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
+        in het effect van het aantal vollasturen op het windprofiel.
     flh_of_solar_pv_solar_radiation:
       short_content:
-      content: "In het ETM heeft een zonnepaneel standaard 867 vollasturen. Het is
-        aannemelijk dat toekomstige zonnepanelen meer elektriciteit zullen produceren
-        per geïnstalleerd vermogen dan nu. Door de vollasturen te verhogen voor zonnepanelen
-        zal er meer elektriciteit geproduceerd worden met hetzelfde aantal panelen
-        en dezelfde belasting op het elektriciteitsnetwerk. Om dit mogelijk te maken
-        neemt niet alleen het aantal vollasturen toe met dit schuifje, maar verandert
-        tegelijkertijd ook het productieprofiel per uur voor de zonneparken. Bij een
-        toenemend aantal vollasturen zullen de pieken breder en platter worden doordat
+      content: "Hier kun je aannames maken over hoe zonnig het is in jouw scenario. Door de vollasturen te verhogen voor zonnepanelen
+        zal er meer elektriciteit geproduceerd worden met hetzelfde aantal panelen.
+        Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met dit schuifje,
+        maar verandert tegelijkertijd ook het productieprofiel per uur voor zon. Bij een
+        toenemend aantal vollasturen zullen de pieken breder worden doordat
         het paneel langer op hogere capaciteit elektriciteit produceert. Bekijk de
         'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht in het effect
         van het aantal vollasturen op het zonneprofiel.\r\n</br></br>\r\n "
@@ -3716,8 +3726,7 @@ nl:
       short_content:
       content: Met deze schuif stel je de toe- of afname in die je verwacht voor de
         investeringskosten en onderhouds- en beheerkosten van leidingen en onderstations
-        voor warmtenetten. Zie <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
-        >onze documentatie</a> voor meer info.
+        voor warmtenetten. Zie <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md">onze documentatie</a> voor meer info.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       short_content:
       content: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp

@@ -92,7 +92,10 @@ en:
         the local power grid requires a higher capacity or smarter local grid, to
         prevent it from overloading. It may be desirable to curtail the power peaks
         in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
-        \r\n<br/>\r\n"
+        \r\n<br/><br />\r\n
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        />"
     households_heater_electricity_share:
       short_content: ''
       content: "Electric heaters directly convert electricity back to heat.\r\n<br/>\r\nSome
@@ -840,7 +843,10 @@ en:
         can be large, because electricity is fed back into the local grid. This may
         require balancing solutions at the local level for the grid. In some cases
         it is smart to connect solar parks to only a certain percentage of the peak
-        power, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.\r\n<br/>\r\n"
+        power, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.\r\n<br/><br />\r\n
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        />"
     capacity_of_energy_power_solar_csp_solar_radiation:
       short_content: ''
       content: "This builds a 50 MWe concentrated solar power (CSP) plant with heat
@@ -1337,7 +1343,10 @@ en:
         the local power grid requires a higher capacity or smarter local grid, to
         prevent it from overloading. It may be desirable to curtail the power peaks
         in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
-        \r\n<br/>\r\n"
+        \r\n<br/><br />\r\n
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        />"
     buildings_space_heater_wood_pellets_share:
       short_content: ''
       content: "What percentage of heat demand in offices and other buildings is met
@@ -3130,10 +3139,7 @@ en:
         hydrogen. The capacity of the electrolysers relative to the capacity of the
         solar PV plants depends on the hours of sunshine in a country. More information
         about this can be found in our <a href=\"https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx\"
-        >documentation on Github</a>.\r\n</br></br>\r\nIn the ETM solar PV panels
-        have 867 full load hours by default. Because of technological developments
-        it is likely that future solar PV panels may produce more electricity per
-        installed capacity than today. You can adjust the full load hours of solar
+        >documentation on Github</a>.\r\n</br></br>\r\nYou can adjust the full load hours of solar
         panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
         /><br />\r\n\r\nNote: The technical and financial specifications below are
         only the specifications of the electrolyser, not the solar panels. The specifications
@@ -3334,60 +3340,51 @@ en:
         been taken into account financially, not energetically.
     flh_of_energy_power_wind_turbine_coastal:
       short_content:
-      content: In the ETM coastal wind turbines have 2550 full load hours by default.
-        Because of technological developments it is likely that future wind turbines
-        may produce more electricity per installed capacity than today. By increasing
+      content: By increasing
         the full load hours for this type of wind turbine, more electricity will be
-        produced with the same number of turbines and the same load on the electricity
-        infrastructure. To make this happen, the slider not only increases the number
+        produced with the same number of turbines. The slider not only increases the number
         of full load hours but also changes the shape of the hourly production profile
-        for this type of wind turbine. Typically, the peaks will become broader and
-        flatter with increasing full load hours as the turbine spends more time running
+        for this type of wind turbine. Typically, the peaks will become broader
+        with increasing full load hours as the turbine spends more time running
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the coastal wind profile.
     flh_of_energy_power_wind_turbine_inland:
       short_content:
-      content: In the ETM inland wind turbines have 1920 full load hours by default.
-        Because of technological developments it is likely that future wind turbines
-        may produce more electricity per installed capacity than today. By increasing
+      content: By increasing
         the full load hours for this type of wind turbine, more electricity will be
-        produced with the same number of turbines and the same load on the electricity
-        infrastructure. To make this happen, the slider not only increases the number
+        produced with the same number of turbines. The slider not only increases the number
         of full load hours but also changes the shape of the hourly production profile
-        for this type of wind turbine. Typically, the peaks will become broader and
-        flatter with increasing full load hours as the turbine spends more time running
+        for this type of wind turbine. Typically, the peaks will become broader
+        with increasing full load hours as the turbine spends more time running
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the inland wind profile.
     flh_of_energy_power_wind_turbine_offshore:
       short_content:
-      content: In the ETM offshore wind turbines have 3500 full load hours by default.
-        Because of technological developments it is likely that future wind turbines
-        may produce more electricity per installed capacity than today. By increasing
+      content: By increasing
         the full load hours for this type of wind turbine, more electricity will be
-        produced with the same number of turbines and the same load on the electricity
-        infrastructure. To make this happen, the slider not only increases the number
+        produced. The slider not only increases the number
         of full load hours but also changes the shape of the hourly production profile
-        for this type of wind turbine. Typically, the peaks will become broader and
-        flatter with increasing full load hours as the turbine spends more time running
+        for this type of wind turbine. Typically, the peaks will become broader
+        with increasing full load hours as the turbine spends more time running
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the offshore wind profile.
     flh_of_energy_hydrogen_wind_turbine_offshore:
       short_content:
-      content: In the ETM offshore wind turbines have 3500 full load hours by default.
-        Because of technological developments it is likely that future wind turbines
-        may produce more electricity per installed capacity than today. By increasing
+      content: By increasing
         the full load hours for this type of wind turbine, more electricity will be
-        produced with the same number of turbines.
+        produced with the same number of turbines. The slider not only increases the number
+        of full load hours but also changes the shape of the hourly production profile
+        for this type of wind turbine. Typically, the peaks will become broader
+        with increasing full load hours as the turbine spends more time running
+        at higher capacity.
     flh_of_solar_pv_solar_radiation:
       short_content:
-      content: "In the ETM solar PV panels have 867 full load hours by default. Because
-        of technological developments it is likely that future solar PV panels may
-        produce more electricity per installed capacity than today. By increasing
-        the full load hours for these panels, more electricity will be produced with
-        the same number of panels and the same load on the electricity infrastructure.
-        To make this happen, the slider not only increases the number of full load
+      content: "With this slider you can make assumptions about the amount of sunshine in
+        your scenario. By increasing the full load hours for solar panels, more electricity will
+        be produced with the same number of panels.
+        The slider not only increases the number of full load
         hours but also changes the shape of the hourly production profile for solar
-        PV plants. Typically, the peaks will become broader and flatter with increasing
+        PV. Typically, the peaks will become broader with increasing
         full load hours as the solar PV panels spend more time at higher capacity.
         Take a look at the ‘Electricity production per hour’-chart to see the effect
         of your changes on the solar PV production profile.\r\n</br></br>\r\n"
@@ -3620,8 +3617,7 @@ en:
       short_content:
       content: This slider sets the change in future investment and O&M costs for
         outdoor heating infrastructure. This includes district heating pipelines and
-        exchanger stations. See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
-        >our documentation</a> for more info.
+        exchanger stations. See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md">our documentation</a> for more info.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       short_content:
       content: "This heater is a combination of an electric heat pump that draws its

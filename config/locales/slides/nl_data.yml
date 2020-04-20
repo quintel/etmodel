@@ -1,0 +1,120 @@
+nl:
+  slides:
+    data_export_application_demands:
+      title: Jaarlijkse energievraag per toepassing
+      short_description:
+      description: |
+        Download informatie over de primaire en finale vraag – en de primaire CO<sub>2</sub>-uitstoot – van toepassingen van energie (zoals koken, apparaten, ruimterverwarming en transport).
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
+        </ul>
+    data_export_energy_flows:
+      title: Energiestromen
+      short_description:
+      description: "Het Energietransitiemodel beschrijft het energiesysteem als een
+        verzameling van honderden energie-omzetters (nodes) die verbonden zijn met
+        energiestromen (edges). \r\nDeze CSV geeft een lijst van alle energie-omzetters
+        en de energiestromen die daar ingaan en uitkomen (uitgesplitst naar drager).\r\n<ul
+        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
+        <span class=\"name\">Energiestromen</span> <span class=\"filetype\">375KB
+        CSV</span></a></li>\r\n</ul>\r\n"
+    data_export_heat_network:
+      title: Uurlijkse profielen voor warmtenetten
+      short_description:
+      description: |
+        Download informatie over de uurlijkse vraag en productie van collectieve
+        warmte voor warmtenetten in huishoudens, gebouwen en landbouw.
+
+        <ul class="data-download">
+          <li>
+            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
+              <span class="name">Warmtenetvraag, -productie en -opslag per uur</span>
+              <span class="filetype">1.5MB CSV</span>
+            </a>
+          </li>
+        </ul>
+    data_export_household_heat:
+      title: Uurlijkse profielen voor warmte in huishoudens
+      short_description:
+      description: "Download informatie over de individuele warmtevraag en -productie
+        van huishoudens (ruimteverwarming en warm water). Het bestand laat op uurbasis
+        zien hoeveel warmte er gevraagd wordt, hoeveel warmte de geïnstalleerde technieken
+        leveren en of er sprake is van warmtebuffering, uitstel van warmtelevering
+        of tekorten. Dit kan het geval zijn als de gekozen verwarmingstechnieken onvoldoende
+        capaciteit hebben om op bepaalde momenten aan de vraag te voldoen.\r\n\r\n<ul
+        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\">
+        <span class=\"name\">Warmteprofiel huishoudens <span class=\"filetype\">400KB
+        CSV</span></a></li>\r\n</ul>\r\n"
+    data_export_production:
+      title: Specificaties warmte- en elektriciteitsproductie
+      short_description:
+      description: |
+        Download details over de technologieën die elektriciteit en warmte produceren. Bevat informatie over de elektrische en warmtecapaciteit, het aantal opgestelde eenheden en de kosten.
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="name">Capaciteiten en kosten</span> <span class="filetype">15KB CSV</span></a></li>
+        </ul>
+    data_export_hydrogen:
+      title: Uurlijkse profielen voor waterstof
+      short_description:
+      description: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
+        en opslag van waterstof uit. Hieronder kun je deze gegevens downloaden als
+        CSV-bestand, uitgesplitst naar technologie/sector.\r\n\r\n\r\n<ul class=\"data-download\">\r\n
+        \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
+        \     <span class=\"name\">Waterstofvraag, -productie en -opslag per uur</span>\r\n
+        \     <span class=\"filetype\">750KB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
+    data_export_network_gas:
+      title: Uurlijkse profielen voor gas
+      short_description:
+      description: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
+        en opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als
+        CSV-bestand, uitgesplitst naar technologie/sector.\r\n\r\n<ul class=\"data-download\">\r\n
+        \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
+        \     <span class=\"name\">Netwerkgasvraag, -productie en -opslag per uur</span>\r\n
+        \     <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
+    data_visuals_factsheet:
+      title: Energie-mix infographic
+      short_description:
+      description: |
+        Een printklare A3 'factsheet' waarin de energie-mix voor zowel vraag als
+        aanbod wordt samengevat voor je scenario.
+        <br /><br />
+        <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
+          <span class="fa fa-book"></span> Bekijk de factsheet →
+        </a>
+    data_visuals_graph:
+      title: Energiegraaf/stromendiagram
+      short_description:
+      description: |
+        Gedetailleerde en interactieve weergave van de energiestromen en
+        energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde
+        gebruikers.
+        <br /><br />
+        <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button" target="_blank" rel="noopener nofollow">
+          <span class="fa fa-book"></span> Bekijk de energiegraaf →
+        </a>
+    data_visuals_scenario_report:
+      title: Scenarioverslag
+      short_description:
+      description: |
+        Het scenarioverslag beschrijft je scenario in woord en beeld. Het bevat
+        informatie over de behaalde doelen, toont uitsplitsingen van
+        energiegebruik en elektriciteitsproductie, wijst je op mogelijke
+        inconsistenties en nog veel meer.
+        <br /><br />
+        <a href="/scenario/reports/auto" class="simple-button">
+          <span class="fa fa-book"></span> Bekijk het verslag →
+        </a>
+    data_visuals_co2_sheet:
+      title: CO<sub>2</sub>-voetafdruk
+      short_description:
+      description: |
+        Een printklare sheet met een visuele samenvatting van de
+        CO<sub>2</sub>-voetafdruk voor jouw scenario.
+        <br /><br />
+        <a
+          href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+          target="_blank"
+          class="simple-button"
+        >
+          <span class="fa fa-newspaper-o"></span> Bekijk de sheet →
+        </a>

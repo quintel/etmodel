@@ -1,0 +1,211 @@
+---
+nl:
+  output_elements:
+    security_of_supply:
+      title: Leveringszekerheid
+      short_description: ''
+      description: Deze grafiek toont de piekvraag naar elektriciteit en ook het beschikbare
+        stroomproductievermogen. Je kunt zien welk deel hiervan altijd beschikbaar
+        is en welk niet. Windmolens en zonnepanelen zijn alleen beschikbaar als het
+        weer dat toelaat en daarom niet helemaal betrouwbaar. As de piekvraag hoger
+        is dan het betrouwbare vermogen, neemt de kans op onvermogen toe.
+    co2_of_electricity_production:
+      title: CO<sub>2</sub>-uitstoot van elektriciteitsproductie
+      short_description: ''
+      description: ''
+    renewable_electricity:
+      title: Hernieuwbare elektriciteit
+      short_description: ''
+      description: Deze grafiek toont het aandeel van verschillende hernieuwbare elektriciteitsbronnen
+        in de huidige en toekomstige scenario's.
+    use_of_transport_fuels:
+      title: Brandstofgebruik in transport
+      short_description: ''
+      description: 'Deze grafiek geeft de brandstofmix voor wegtransport als gevolg
+        van jouw instellingen in de onderdelen ''Vraag'' en ''Aanbod'', vergeleken
+        met de mix van nu. '
+    refinery:
+      title: Netto stroom van raffinageproducten
+      short_description: ''
+      description: ''
+    kerosene_production_in_bunkers:
+      title: Kerosineproductie voor internationaal transport
+      short_description: ''
+      description: ''
+    gas_network_mix:
+      title: Groengas in gasnet
+      short_description: ''
+      description: Deze grafiek toont de mix van aardgas and groengas in het gasnet.
+    mekko_of_primary_demand_of_biomass:
+      title: Primair gebruik van biogene brandstoffen
+      short_description: ''
+      description: Deze 'Mekko' grafiek toont het gebruik van primaire biobrandstoffen
+        voor de sectoren van het ETM.
+    mekko_of_bio_footprint:
+      title: Biovoetafdruk van primair gebruik
+      short_description: ''
+      description: ''
+    co2_emissions_biomass:
+      title: CO<sub>2</sub>-uitstoot biomassa
+      short_description: CO2 biomassa
+      description: "Welk deel van de CO<sub>2</sub>-uitstoot van biomassa relevant
+        is voor het klimaat is in grote mate onzeker en speculatief. Deze grafiek
+        dient om te verkennen hoe groot deze uitstoot (potentieel) is.\r\n<p>\r\nDeze
+        grafiek toont naast de volgens officiële UNFCCC administratie uitgestoten
+        CO<sub>2</sub> ook het deel van de CO<sub>2</sub>-uitstoot veroorzaakt door
+        verbranding van biomassa dat relevant is voor klimaatverandering. Met behulp
+        van de sliders in de \"CO<sub>2</sub> biomass\" sectie kan ingesteld worden
+        welk deel van de CO<sub>2</sub>-uitstoot van biomassa wordt weergegeven.\r\n<p>\r\nDeze
+        grafiek toont alleen binnenlandse, energetische CO<sub>2</sub>-uitstoot. Niet-energetische
+        emissies van CO<sub>2</sub> zijn niet meegenomen. Deze emissies zijn gerelateerd
+        aan processen waarbij het eindproduct geen bruikbare energie (zoals elektriciteit
+        of warmte) oplevert. Een voorbeeld van niet-energetische uitstoot van CO<sub>2</sub>
+        is de CO<sub>2</sub> die opgesloten zit in cement en vrijkomt bij het maken
+        ervan. De emissies die vrijkomen bij het produceren van de energie die nodig
+        is om cement te maken tellen overigens wel mee als energetische CO<sub>2</sub>
+        emissies.\r\n<br/><br/>\r\nLet op: Als de Ketenanalyse-module is ingeschakeld
+        toont deze grafiek ook andere broeikasgassen als methaan (CH<sub>4</sub>)
+        of lachgas (N<sub>2</sub>O) die gerelateerd zijn aan de brandstofproductieketen.
+        Niet-energetische emissies en broeikasgassen die ongerelateerd zijn aan de
+        brandstofproductieketen worden niet getoond."
+    mekko_demand_bio_resource:
+      title: Grondstofgebruik voor biogene brandstoffen
+      short_description: 
+      description: 
+    biomass_sankey:
+      title: Toekomstige biomassastromen
+      short_description: ''
+      description: "Deze flowchart laat de biomassastromen zien in dit gebied. Aan
+        de linkerkant zijn de primaire biomassabronnen te zien en hun herkomst (lokaal
+        of import). In het midden van de grafiek zie je de omzetting van deze biomassabronnen
+        in andere energiedragers, zoals groengas, biobrandstoffen, elektriciteit en
+        warmte. Aan de rechterkant zie je ten slotte in welke sectoren de energie
+        gebruikt wordt. \r\n<br/>\r\nAls je met je muis over de grafiek gaat, zie
+        je verschillende onderdelen oplichten en kun je meer informatie krijgen."
+    biomass_demand_by_category:
+      title: Biomassavraag en -potentie
+      short_description: 
+      description: 
+    flexibility_of_backup_scatter_plot:
+      title: Vergelijking van backup opties
+      short_description: ''
+      description: "Deze grafiek toont de extra kosten en CO<sub>2</sub> uitstoot
+        voor backup opties voor volatiele stroomopwek.\r\nJe kunt niet altijd rekenen
+        op stroom van volatiele technologieën als wind en zon. Dat is jammer, want
+        de meeste backup opties gebruiken fossiele brandstoffen. Daardoor zijn en
+        wind en zon niet zo schoon en gratis als men zou willen of denken. De keuze
+        voor backup is dan ook zeer belangrijk, omdat hierdoor de effectieve kosten
+        en uitstoot van volatiele stroom bepaald worden. \r\n<br/><br/>\r\nDe extra
+        kosten en uitstoot zijn uitgedrukt per MWh<sub>e</sub> van de volatiele stroomproductie
+        in jouw scenario. "
+    co2_sankey:
+      title: Directe energetische CO<sub>2</sub> uitstoot (flowchart)
+      short_description: ''
+      description: ''
+    hydrogen_production_for_fertilizers:
+      title: Waterstofproductie voor de kunstmestindustrie
+      short_description: ''
+      description: Deze grafiek geeft de waterstofproductie voor de kunstmestsector
+        als gevolg van jouw instellingen in de onderdelen 'Vraag' (omvang van de kunstmestindustrie)
+        en 'Flexibiliteit' (conversie naar gas).
+    network_gas_demand:
+      title: Gasvraag
+      short_description: ''
+      description: ''
+    network_gas_production:
+      title: Gasproductie
+      short_description: ''
+      description: ''
+    network_gas_storage:
+      title: Gasberging
+      short_description: ''
+      description: ''
+    source_of_heat_production:
+      title: Warmte en koude productie
+      short_description: ''
+      description: "Deze grafiek toont hoe de totale warmteproductie tot stand komt.\r\n<br/><br/>\r\nJe
+        kunt met de schuifjes het aandeel van iedere technologie instellen. Hierdoor
+        zal de warmtemix veranderen."
+    chp_properties:
+      title: Eigenschappen van warmte-krachtkoppeling (WKK)
+      short_description: ''
+      description: "Deze tabel geeft een overzicht van alle geïnstalleerde WKK in
+        je toekomstscenario. De kolommen bevatten (van links naar rechts) de naam,
+        het aantal, de productie van elektriciteit, de productie van warmte en het
+        geïnstalleerde (elektrische) vermogen van WKK.\r\n"
+    collective_heat_mekko:
+      title: Totale vraag en aanbod op het collectieve warmtenet
+      short_description: ''
+      description: ''
+    heat_network_demand:
+      title: Uurlijkse warmtevraag in warmtenetten
+      short_description: ''
+      description: ''
+    heat_network_production:
+      title: Uurlijkse warmteproductie in warmtenetten
+      short_description: ''
+      description: ''
+    industrial_heat_mekko:
+      title: Vraag en aanbod van industriële stoomnetten
+      short_description: 
+      description: 
+    heat_network_storage:
+      title: "(Seizoens)opslag van warmte"
+      short_description: ''
+      description: ''
+    heat_cost_capacity:
+      title: 'Warmtenetbronnen: vermogens en marginale kosten'
+      short_description: ''
+      description: ''
+    mekko_of_hydrogen_network:
+      title: Vraag en aanbod van het centrale waterstofnet
+      short_description: ''
+      description: ''
+    hydrogen_production:
+      title: Waterstofproductie
+      short_description: 
+      description: 
+    hydrogen_demand:
+      title: Waterstofvraag
+      short_description: 
+      description: 
+    hydrogen_storage:
+      title: Waterstofopslag
+      short_description: ''
+      description: ''
+    hydrogen_cost_capacity:
+      title: Productiecapaciteiten en kosten van waterstof
+      short_description: 
+      description: 
+    present_energy_imports:
+      title: Huidige energie-import
+      short_description: Startjaar
+      description: "Deze grafiek vergelijkt de netto afhankelijkheid van buitenlandse
+        energie in het heden en in de toekomst. Dit is het gevolg van jouw keuzes
+        in het model. Netto afhankelijkheid betekent dat we de energie-export aftrekken
+        van de energie-import en het resultaat delen door de totale primaire energievraag.
+        \r\n<br/><br/> Zie voor meer informatie het onderdeel 'Doelen'."
+    future_energy_imports:
+      title: Toekomstige energie-import
+      short_description: Toekomst jaar
+      description: "Deze grafiek toont de energie die in de toekomst geïmporteerd
+        wordt vanuit andere landen uitgesplitst naar de verschillende energiebronnen.
+        Elk staafje in de grafiek telt op tot de totale import in het eindjaar (het
+        zwarte staafje helemaal rechts).\r\n<br/><br/>\r\nOver het algemeen geldt
+        dat des te minder geïmporteerd wordt, des te beter het is."
+    production_curve_coal:
+      title: Productie curve voor kolen
+      short_description: ''
+      description: ''
+    production_curve_crude_oil:
+      title: Productie curve voor aardolie
+      short_description: ''
+      description: ''
+    production_curve_natural_gas:
+      title: Productie curve voor aardgas
+      short_description: ''
+      description: ''
+    production_curve_uranium:
+      title: Productie curve voor uranium
+      short_description: ''
+      description: ''

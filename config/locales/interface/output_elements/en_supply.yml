@@ -1,0 +1,210 @@
+---
+en:
+  output_elements:
+    security_of_supply:
+      title: Security of supply
+      short_description: ''
+      description: 'This chart shows the peak power demand as well as available production
+        capacity. It shows what shares of available production capacity are reliable
+        and unreliable. Things such as wind turbines and solar PV panels are examples
+        of unreliable power production. If the peak power demand is higher than the
+        reliable capacity the loss of load probability will increase. '
+    co2_of_electricity_production:
+      title: CO<sub>2</sub> emissions of electricity production
+      short_description: ''
+      description: ''
+    renewable_electricity:
+      title: Renewable electricity
+      short_description: This chart shows the share of renewable electricity sources
+        in the current and future scenarios.
+      description: This chart shows the share of different renewable electricity sources
+        in the current and future scenarios.
+    use_of_transport_fuels:
+      title: Transport fuel mix
+      short_description: ''
+      description: This graph shows the road transport fuel mix in the present and
+        future. The latter is the result of your settings in sections 'Demand' and
+        'Supply'.
+    refinery:
+      title: Net flow of refinery products
+      short_description: ''
+      description: ''
+    kerosene_production_in_bunkers:
+      title: Kerosene production for international transport
+      short_description: ''
+      description: ''
+    gas_network_mix:
+      title: Green gas in gas network
+      short_description: ''
+      description: This chart shows the mix of natural- and green gas in the gas network.
+    mekko_of_primary_demand_of_biomass:
+      title: Primary demand of biogenic energy carriers
+      short_description: ''
+      description: 'This ''Mekko'' chart shows the use of primary biofuel for the
+        sectors of the ETM. '
+    mekko_of_bio_footprint:
+      title: Bio-footprint of primary demand
+      short_description: ''
+      description: ''
+    co2_emissions_biomass:
+      title: CO<sub>2</sub> emissions biomass
+      short_description: CO2 biomass
+      description: "Which part of the CO<sub>2</sub> emissions from biomass is relevant
+        to the environment is uncertain and speculative. This chart serves to explore
+        the (potential) amount of these emissions.\r\n<br/><br/>\r\nBesides the official
+        UNFCCC accounted  CO<sub>2</sub> emission this graph also shows the CO<sub>2</sub>
+        which is emitted due the use of biomass and is (potentially) relevant for
+        climate change. Which part of the biomass CO<sub>2</sub> emissions should
+        be shown can be set with the sliders in the CO<sub>2</sub> biomass section.\r\n<br/><br/>\r\nThe
+        graph only displays energetic CO<sub>2</sub> emissions, which are emitted
+        in domestic energy use and production. Non-energetic emissions are not included.
+        Non-energetic emissions are related to processes other than the production
+        of usable energy like electricity or heat. An example of such emissions are
+        the CO<sub>2</sub> emissions that are released from cement during its making.
+        The CO<sub>2</sub> emissions related to the needed energy for cement production
+        <em>do</em> count as energetic emissions.\r\n<br/><br/>\L\r\nNote: When the
+        Fuel Chain Emissions module is turned on, the graph also includes CO<sub>2</sub>
+        equivalents of other greenhouse gas emissions, like methane (CH<sub>4</sub>)
+        or nitrous oxide (N<sub>2</sub>O) related to the fuel chain in this graph.
+        Non-energetic emissions and greenhouse gas emissions not related to the fuel
+        chain are not included."
+    mekko_demand_bio_resource:
+      title: Feedstock for biogenic energy carriers
+      short_description: 
+      description: 
+    biomass_sankey:
+      title: Future biomass flows
+      short_description: ''
+      description: "This chart shows the biomass flows in this area. On the left primary
+        biomass resources are shown and the origin of these sources (locally sourced
+        or imported). The middle of the chart shows the conversion of biomass resources
+        into other energy carriers (like greengas, bio fuels, electricity and heat).
+        On the right side you can see the sectors in which the energy is ultimately
+        used. <br/>\r\nFloating over the chart with you mouse will highlight different
+        parts and reveal more information."
+    biomass_demand_by_category:
+      title: Biomass demand and potential
+      short_description: 
+      description: 
+    flexibility_of_backup_scatter_plot:
+      title: Comparison of electricity backup options
+      short_description: ''
+      description: "This chart shows the additional costs and CO<sub>2</sub> emissions
+        for different backup options for volatile power. Volatile technologies like
+        wind or solar cannot always be relied upon to produce power. This is unfortunate,
+        because most backup plants use fossil fuels, making volatile electricity less
+        free and clean than many people claim or expect it to be. The choice of a
+        backup technology is therefore an important one, as this will determine the
+        effective emissions and costs of electricity for volatile electricity production.\r\n<br/><br/>\r\nThe
+        additional costs and emissions are both expressed per MWh<sub>e</sub> of the
+        volatile electricity production in your scenario."
+    co2_sankey:
+      title: Energetic on-the-spot CO<sub>2</sub> emissions (flowchart)
+      short_description: ''
+      description: ''
+    hydrogen_production_for_fertilizers:
+      title: Hydrogen production for the fertilizer industry
+      short_description: ''
+      description: This graph shows the hydrogen production for use in the fertilizer
+        industry in the present and future. The latter is the result of your settings
+        in sections 'Demand' (size of the fertilizers industry) and 'Flexibility'
+        (conversion to gas).
+    network_gas_demand:
+      title: Network gas demand
+      short_description: ''
+      description: ''
+    network_gas_production:
+      title: Network gas production
+      short_description: ''
+      description: ''
+    network_gas_storage:
+      title: Network gas storage
+      short_description: ''
+      description: ''
+    source_of_heat_production:
+      title: Heat and cold production
+      short_description: ''
+      description: "This graph shows the composition of the total heat production.
+        \r\n<br/><br/>\r\nYou can use the sliders to change the extent to which a
+        technology is used. This will result in heat mix shift."
+    chp_properties:
+      title: Properties of combined heat and power (CHP) plants
+      short_description: ''
+      description: "This table shows an overview of all CHP plants installed in your
+        scenario. The columns contain (from left to right) name, number of units,
+        electricity production, heat production and installed capacity of CHP plants.\r\n"
+    collective_heat_mekko:
+      title: Demand and supply of district heating
+      short_description: ''
+      description: ''
+    heat_network_demand:
+      title: Hourly heat demand for district heating
+      short_description: ''
+      description: ''
+    heat_network_production:
+      title: Hourly heat production for district heating
+      short_description: ''
+      description: ''
+    industrial_heat_mekko:
+      title: Demand and supply of collective heat in industry
+      short_description: 
+      description: 
+    heat_network_storage:
+      title: "(Seasonal) storage of heat"
+      short_description: ''
+      description: ''
+    heat_cost_capacity:
+      title: 'District heating sources: capacities and marginal costs'
+      short_description: ''
+      description: ''
+    mekko_of_hydrogen_network:
+      title: Demand and supply of the central hydrogen network
+      short_description: ''
+      description: ''
+    hydrogen_production:
+      title: Hydrogen production
+      short_description: 
+      description: 
+    hydrogen_demand:
+      title: Hydrogen demand
+      short_description: 
+      description: 
+    hydrogen_storage:
+      title: Hydrogen storage
+      short_description: ''
+      description: ''
+    hydrogen_cost_capacity:
+      title: Production capacities and costs of hydrogen
+      short_description: 
+      description: 
+    present_energy_imports:
+      title: Present energy imports
+      short_description: Present year
+      description: "This graph compares the net foreign energy dependence in the present
+        and future years as a result of your choices. Net energy dependence means
+        that we subtract all energy exports from energy imports and divide the result
+        by the total primary energy use.\r\n<br/><br/> For more information see the
+        'Goals' section."
+    future_energy_imports:
+      title: Future energy imports
+      short_description: Future year
+      description: "This graph shows a breakdown of the energy that we import from
+        other countries in the future by energy source. Each of the bars add up to
+        the end result in the end year (the black bar to the far right of the graph).\r\n<br/><br/>\r\nOverall,
+        the lower the dependence on foreign energy the better it is."
+    production_curve_coal:
+      title: Production curve for coal
+      short_description: ''
+      description: ''
+    production_curve_crude_oil:
+      title: Production curve for crude oil
+      short_description: ''
+      description: ''
+    production_curve_natural_gas:
+      title: Production curve for natural gas
+      short_description: ''
+      description: ''
+    production_curve_uranium:
+      title: Production curve for uranium
+      short_description: ''
+      description: ''

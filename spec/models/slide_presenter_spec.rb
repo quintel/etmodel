@@ -66,7 +66,9 @@ describe SlidePresenter do
       end
 
       it { is_expected.to include translator.call('tabs', t1.key) }
-      it { is_expected.to include translator.call('slides', "#{sl1.key}.title") }
+      it {
+        is_expected.to include translator.call('slides', "#{sl1.key}.title")
+      }
     end
   end
 end

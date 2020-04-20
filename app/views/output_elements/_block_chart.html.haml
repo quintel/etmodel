@@ -27,7 +27,7 @@
           .block{:id => "block_#{block.key}",
               'data-title' => t("output_element_series.labels.#{block.label}"),
               'data-description' => block.short_description}
-            .header{:class => block.group.downcase}= t("output_element_series.labels.#{block.label}")
+            .header{ :class => block.group.downcase }= t("output_element_series.labels.#{block.label}")
           .balloon-tip
 
 %ul#block_list

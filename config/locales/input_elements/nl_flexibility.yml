@@ -1,0 +1,423 @@
+---
+nl:
+  input_elements:
+    settings_enable_merit_order: 
+    households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity:
+      title: Luchtwarmtepomp
+      short_description: 
+      description: "In de huidige situatie worden de meeste luchtwarmtepompen zonder
+        buffer voor ruimteverwarming geïnstalleerd.  \r\n</p>\r\nDe meeste luchtwarmtepompen
+        hebben een buffer nodig om te voorkomen dat de compressor gaat \"pendelen\".
+        In de standaardinstelling van het ETM voorziet de buffer voor warm water hierin.\r\n</p>\r\nEen
+        buffer kan echter ook gebruikt worden om grotere hoeveelheden warmte op te
+        slaan. Bijvoorbeeld via een <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>.
+        \r\n</p>\r\nGeef hier aan hoe groot de buffer voor warm water is per luchtwarmtepomp."
+    households_flexibility_water_heating_buffer_size_heatpump_air_water_electricity:
+      title: Luchtwarmtepomp
+      short_description: 
+      description: "De standaard buffergrootte representeert een watertank van 100
+        liter. Dit is de typische grootte van een tank voor een Nederlands gezin.\r\n</p>\r\nEen
+        buffer kan echter ook gebruikt worden om grotere hoeveelheden warmte op te
+        slaan. \r\n</p>\r\nGeef hier aan hoe groot de buffer voor ruimteverwarming
+        is per luchtwarmtepomp."
+    households_flexibility_space_heating_buffer_size_heatpump_ground_water_electricity:
+      title: Bodemwarmtepomp
+      short_description: 
+      description: "In de huidige situatie worden de meeste bodemwarmtepompen zonder
+        buffer voor ruimteverwarming geïnstalleerd.  \r\n</p>\r\nDe meeste bodemwarmtepompen
+        hebben een buffer nodig om te voorkomen dat de compressor gaat \"pendelen\".
+        In de standaardinstelling van het ETM voorziet de buffer voor warm water hierin.\r\n</p>\r\nEen
+        buffer kan echter ook gebruikt worden om grotere hoeveelheden warmte op te
+        slaan. Bijvoorbeeld via een <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>.
+        \r\n</p>\r\nGeef hier aan hoe groot de buffer voor warm water is per bodemwarmtepomp."
+    households_flexibility_space_heating_buffer_size_hybrid_heatpump_air_water_electricity:
+      title: Hybride warmtepomp
+      short_description: 
+      description: "Omdat de meeste hybride warmtepompen modulerend zijn hebben ze
+        geen buffer nodig om te compressor the beschermen.\r\n</p>\r\nEen buffer kan
+        echter ook gebruikt worden om grotere hoeveelheden warmte op te slaan. Bijvoorbeeld
+        via een <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>. \r\n</p>\r\nGeef
+        hier aan hoe groot de buffer voor warm water is per hybride warmtepomp."
+    households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity:
+      title: Bodemwarmtepomp
+      short_description: 
+      description: "De standaard buffergrootte representeert een watertank van 100
+        liter. Dit is de typische grootte van een tank voor een Nederlands gezin.\r\n</p>\r\nEen
+        buffer kan echter ook gebruikt worden om grotere hoeveelheden warmte op te
+        slaan. \r\n</p>\r\nGeef hier aan hoe groot de buffer voor ruimteverwarming
+        is per bodemwarmtepomp."
+    households_flexibility_water_heating_buffer_size_hybrid_heatpump_air_water_electricity:
+      title: Hybride warmtepomp
+      short_description: 
+      description: "Met de standaardinstelling levert het gasdeel van de hybride warmtepomp
+        direct warm water. Er is dan geen buffer nodig voor warm water.\r\n</p>\r\nDoor
+        de omslag-COP te verlagen kan het elektrische deel van de hybride warmtepomp
+        ook warm water leveren. Dit gebeurt over het algemeen via een buffervat.\r\n</p>\r\nVoor
+        een standaard Nederlands huishouden is een buffervat van 100 liter (5 kWh)
+        voldoende. Een buffer kan echter ook gebruikt worden om grotere hoeveelheden
+        warmte op te slaan. \r\n</p>\r\nGeef hier aan hoe groot de buffer voor ruimteverwarming
+        is per hybride warmtepomp."
+    transport_car_using_electricity_fast_charging_share:
+      title: Snelladen
+      short_description: 
+      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
+        wordt door 'snelladen' voldaan? Snelladen gebeurt typisch met laadcapaciteiten
+        tussen de 11 en 22 kW.\r\n<br>\r\n<br>\r\nHet profiel dat dit type laadgedrag
+        beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+    transport_car_using_electricity_hybrid_charging_share:
+      title: Overal laden
+      short_description: 
+      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
+        wordt voldaan door zowel op het werk als thuis te laden?\r\n<br>\r\n<br>\r\nHet
+        profiel dat dit type laadgedrag beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+    transport_car_using_electricity_home_charging_share:
+      title: Thuisladen
+      short_description: 
+      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
+        wordt voldaan door uitsluitend thuis te laden? Thuisladen gebeurt veelal met
+        een laadcapaciteit van 3.7 kW.\r\n<br>\r\n<br>\r\nHet profiel dat dit type
+        laadgedrag beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+    transport_car_using_electricity_regular_charging_share:
+      title: Regulier laden (Elaad)
+      short_description: 
+      description: Dit profiel is het profiel dat bij type laadsessie Regulier van
+        de studie <a href="https://refman.energytransitionmodel.com/publications/2099"
+        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
+        from Real Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert
+        10.000 laadsessies van 140 automobilisten.
+    transport_car_using_electricity_smart_charging_share:
+      title: Slim laden (Elaad)
+      short_description: 
+      description: Dit profiel is het profiel dat bij type laadsessie Slim van de
+        studie <a href="https://refman.energytransitionmodel.com/publications/2099"
+        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
+        from Real Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert
+        10.000 laadsessies van 140 automobilisten.
+    flexibility_outdoor_temperature:
+      title: Buitentemperatuur
+      short_description: 
+      description: "Hoeveel denk je dat de buitentemperatuur zal veranderen in de
+        toekomst?\r\n<br/><br/>\r\nJe keuze heeft invloed op de warmte- en koudevraag
+        van huishoudens en gebouwen. Om de vertaalslag van temperatuur naar nuttig
+        gebruik te maken is aangenomen dat mensen hun huis verwarmen als de buitentemperatuur
+        onder de 18 &degC daalt en gaan koelen als ze boven de 23 &degC stijgt.\r\n<br/><br/>\r\nKijk
+        voor meer informatie over de klimaatberekening in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/climate.md\"
+        target =\"_blank\">documentatie</a>."
+    settings_weather_curve_set: 
+    flh_of_energy_power_wind_turbine_coastal:
+      title: Aan kust
+      short_description: 
+      description: In het ETM wordt een windmolen aan de kust standaard gemodelleerd
+        met 2550 vollasturen. Het is aannemelijk dat toekomstige windmolens meer elektriciteit
+        zullen produceren per geïnstalleerd vermogen dan nu. Door de vollasturen te
+        verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
+        met hetzelfde aantal windmolens en dezelfde belasting op het elektriciteitsnetwerk.
+        Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met
+        dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur
+        voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
+        breder en platter worden doordat de windmolen vaker draait op hogere capaciteit.
+        Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
+        in het effect van het aantal vollasturen op het windprofiel.
+    flh_of_energy_power_wind_turbine_inland:
+      title: Op land
+      short_description: 
+      description: In het ETM wordt een windmolen op land standaard gemodelleerd met
+        1920 vollasturen. Het is aannemelijk dat toekomstige windmolens meer elektriciteit
+        zullen produceren per geïnstalleerd vermogen dan nu. Door de vollasturen te
+        verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
+        met hetzelfde aantal windmolens en dezelfde belasting op het elektriciteitsnetwerk.
+        Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met
+        dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur
+        voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
+        breder en platter worden doordat de windmolen vaker draait op hogere capaciteit.
+        Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
+        in het effect van het aantal vollasturen op het windprofiel op land.
+    flh_of_energy_power_wind_turbine_offshore:
+      title: Op zee
+      short_description: 
+      description: In het ETM wordt een windmolen op zee standaard gemodelleerd met
+        3500 vollasturen. Het is aannemelijk dat toekomstige windmolens meer elektriciteit
+        zullen produceren per geïnstalleerd vermogen dan nu. Door de vollasturen te
+        verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
+        met hetzelfde aantal windmolens en dezelfde belasting op het elektriciteitsnetwerk.
+        Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met
+        dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur
+        voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
+        breder en platter worden doordat de windmolen vaker draait op hogere capaciteit.
+        Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
+        in het effect van het aantal vollasturen op het windprofiel op zee.
+    flh_of_energy_hydrogen_wind_turbine_offshore:
+      title: Windmolen op zee voor H<sub>2</sub>
+      short_description: 
+      description: 'In het ETM wordt een windmolen op zee standaard gemodelleerd met
+        3500 vollasturen. Het is aannemelijk dat toekomstige windmolens meer elektriciteit
+        zullen produceren per geïnstalleerd vermogen dan nu. Door de vollasturen te
+        verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
+        met hetzelfde aantal windmolens. '
+    flh_of_solar_pv_solar_radiation:
+      title: Zonnecentrales PV
+      short_description: 
+      description: "In het ETM heeft een zonnepaneel standaard 867 vollasturen. Het
+        is aannemelijk dat toekomstige zonnepanelen meer elektriciteit zullen produceren
+        per geïnstalleerd vermogen dan nu. Door de vollasturen te verhogen voor zonnepanelen
+        zal er meer elektriciteit geproduceerd worden met hetzelfde aantal panelen
+        en dezelfde belasting op het elektriciteitsnetwerk. Om dit mogelijk te maken
+        neemt niet alleen het aantal vollasturen toe met dit schuifje, maar verandert
+        tegelijkertijd ook het productieprofiel per uur voor de zonneparken. Bij een
+        toenemend aantal vollasturen zullen de pieken breder en platter worden doordat
+        het paneel langer op hogere capaciteit elektriciteit produceert. Bekijk de
+        'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht in het effect
+        van het aantal vollasturen op het zonneprofiel.\r\n</br></br>\r\n "
+    capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
+      title: Power-to-heat boiler
+      short_description: 
+      description: Power-to-heat boilers produceren warmte met elektriciteitsoverschotten.
+        Dit schuifje zorgt ervoor dat deze warmte wordt ingezet in het <a href="/scenario/supply/heat/heat-sources">residentiële
+        warmtenet</a>.
+    capacity_of_energy_heat_flexibility_p2h_heatpump_electricity:
+      title: Power-to-heat warmtepomp
+      short_description: 
+      description: Power-to-heat warmtepompen produceren warmte met elektriciteitsoverschotten.
+        Dit schuifje zorgt ervoor dat deze warmte wordt ingezet in het <a href="/scenario/supply/heat/heat-sources">residentiële
+        warmtenet</a>.
+    households_flexibility_space_heating_cop_cutoff:
+      title: Ruimteverwarming
+      short_description: 
+      description: "Geef hier aan wat de omslag-COP van het hybride warmtepompen is
+        voor ruimteverwarming.\r\n<p>\r\nMet de standaardinstelling voor de omslag-COP
+        wordt het elektrische deel van de hybride warmtepomp maximal gebruikt voor
+        ruimteverwarming. Met de huidige gas- en elektriciteitsprijs wordt financiële
+        optimalisatie voor de gebruiker bereikt met een omslag-COP van 2.6, dit is
+        te zien in de grafiek rechts weergegeven. Voor meer informatie over (hybride)
+        warmtepompen zie onze <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentatie</a>."
+    households_flexibility_water_heating_cop_cutoff:
+      title: Warm water
+      short_description: 
+      description: "Geef hier aan wat de omslag-COP van het hybride warmtepompen is
+        voor warm water.\r\n<p>\r\nMet de standaardinstelling voor de omslag-COP wordt
+        het gasdeel van de hybride warmtepomp maximal gebruikt voor verwarmen van
+        tapwater.\r\n<p>\r\nMet de huidige gas- en elektriciteitsprijs wordt financiële
+        optimalisatie voor de gebruiker bereikt met een omslag-COP van 3.1. Voor meer
+        informatie zie: <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentatie</a>"
+    households_flexibility_consumer_gas_price:
+      title: Gasprijs
+      short_description: 
+      description: |-
+        Het tarief van een m3 gas is in 2020 gemiddeld 81,4 eurocent in Nederland. Daarvan is 32 cent voor het gas zelf (de marktprijs) en 50 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
+        Deze slider heeft enkel invloed op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen.
+    households_flexibility_consumer_electricity_price:
+      title: Elektriciteitsprijs
+      short_description: 
+      description: |-
+        Het tarief van een kWh stroom is in 2020 gemiddeld 22,5 cent in Nederland. Daarvan is 7,5 cent voor de elektriciteit zelf (de marktprijs) en 15 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
+        Deze slider heeft enkel invloed op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen
+    interconnectors_availability_for_export:
+      title: Beschikbaar voor export
+      short_description: 
+      description: Het is erg waarschijnlijk dat niet alle fysieke interconnectiecapaciteit
+        kan worden gebruikt wanneer er elektriciteitsoverschotten zijn als gevolg
+        van de overproductie door windmolens en zonnepanelen omdat de omringende landen
+        hier op dat moment ook last van zullen hebben. Met deze slider kun je daarom
+        instellen welk deel van de interconnectiecapaciteit je verwacht te kunnen
+        gebruiken voor export.
+    interconnectors_availability_for_import:
+      title: Beschikbaar voor import
+      short_description: 
+      description: Het is erg waarschijnlijk dat niet alle fysieke interconnectiecapaciteit
+        kan worden gebruikt wanneer er elektriciteitsoverschotten zijn als gevolg
+        van de overproductie door windmolens en zonnepanelen omdat de omringende landen
+        hier op dat moment ook last van zullen hebben. Met deze slider kun je daarom
+        instellen welk deel van de interconnectiecapaciteit je verwacht te kunnen
+        gebruiken voor import.
+    interconnectors_interconnector_capacity:
+      title: Interconnectiecapaciteit
+      short_description: 
+      description: De interconnectiecapaciteit met de omringende landen is beperkt.
+        Met deze slider kun je de toekomstige interconnectiecapaciteit instellen.
+    curtailment_of_households_solar_pv_solar_radiation:
+      title: Zon op dak huishoudens
+      short_description: 
+      description: Met dit schuifje stel je de productiebeperking in als percentage
+        van het piekvermogen. Zonnepanelen op huizen zijn verbonden aan het laagspanningsnet
+        in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/demand/households/solar-panels">hier</a>
+        aan te passen.
+    curtailment_of_buildings_solar_pv_solar_radiation:
+      title: Zon op dak gebouwen
+      short_description: 
+      description: Met dit schuifje stel je de productiebeperking in als percentage
+        van het piekvermogen. Zonnepanelen op gebouwen zijn verbonden aan het laagspanningsnet
+        in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/demand/buildings/solar-panels">hier</a>
+        aan te passen.
+    curtailment_of_energy_power_solar_pv_solar_radiation:
+      title: Zonneparken
+      short_description: 
+      description: Met dit schuifje stel je de productiebeperking in als percentage
+        van het piekvermogen. Zonneparken zijn verbonden aan het hoogspanningsnet
+        in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/supply/electricity_renewable/solar-power">hier</a>
+        aan te passen.
+    households_flexibility_p2p_electricity_market_penetration:
+      title: Batterijen in huishoudens
+      short_description: 
+      description: 'Thuisbatterijen worden vaak genoemd als oplossing voor het opvangen
+        van elektriciteitsoverschotten. Met de volgende slider kun je aangeven welk
+        percentage van de huishoudens is uitgerust met batterijopslag. De batterijen
+        in het ETM hebben een batterijvolume van 19.8 kWh en kunnen worden opgeladen
+        met netstroom of stroom uit zonnepanelen. '
+    transport_car_using_electricity_availability:
+      title: Batterijen in elektrische auto's
+      short_description: 
+      description: "Elektrische auto's zijn een kosteneffectieve manier om elektriciteit
+        op te slaan omdat ze een relatief grote batterij bevatten. Met de volgende
+        slider kun je daarom aangeven welk percentage van de batterij in alle elektrische
+        auto's kan worden gebruikt voor flexibiliteitsdoeleinden. Je kunt het percentage
+        elektrische auto's instellen in <a href=\"/scenario/demand/transport_passenger_transport/car-technology\">autotechnologie
+        slide</a>.\r\n<br/><br/>\r\nElektrische auto's in het ETM hebben een batterijvolume
+        van 100 kWh. Niet dit hele volume kan worden ingezet voor flexibiliteitsdoeleinden.
+        Een deel van het volume is immers ook nodig om mee te rijden. Met deze slider
+        kun je aangeven welk percentage van de batterij kan worden gebruikt voor om
+        elektriciteitsoverschotten op te vangen."
+    capacity_of_energy_flexibility_pumped_storage_electricity:
+      title: Stuwmeren
+      short_description: 
+      description: "Stuwmeren zijn een goedkope, grootschalige manier om elektriciteit
+        op te slaan. Elektriciteit wordt gebruikt om water omhoog te pompen van een
+        lager gelegen naar een hoger gelegen stuwmeer. Als de elektriciteitsvraag
+        hoog is kan het opgeslagen water via turbines ontsnappen waarmee elektriciteit
+        wordt opgewekt.\r\n<br/><br/>\r\nStuwmeren zijn er in verschillende formaten.
+        Het ETM bevat een 500 MW faciliteit als typische centrale. Je kunt echter
+        ook een fractie van een centrale neerzetten. Het opslagvolume van de typische
+        faciliteit is 3 GWh.\r\n<br/><br/>\r\nDe schuifjesinstelling wordt omgezet
+        naar (deel)aantallen van de centrale zoals hierboven omschreven."
+    capacity_of_energy_flexibility_hv_opac_electricity:
+      title: OPAC
+      short_description: 
+      description: "De Ondergrondse Pomp Accumulatie Centrale (OPAC) is een grootschalige
+        elektriciteitsopslag met een opslagvolume van 8400 MWh. Het werkt door water
+        naar een hoger gelegen reservoir te pompen en dat water op een later moment
+        terug te laten stromen langs elektriciteitsturbines.\r\nStroom-overschotten
+        van must-run en volatiele opwek kunnen worden opgeslagen met een vermogen
+        van 1400 MW. Dus de opslag kan in zes uur volledig worden gevuld.\r\nAls de
+        overproductie voorbij is wordt de opgeslagen elektriciteit teruggeleverd aan
+        het hoogspanningsnet."
+    capacity_of_energy_flexibility_mv_batteries_electricity:
+      title: Grootschalige batterijopslag
+      short_description: 
+      description: "Deze grootschalige (129 MWh) batterij kan worden gebruikt om stroom-overschotten
+        van must-run en volatiele opwek op te slaan. Als de overproductie voorbij
+        is wordt de opgeslagen elektriciteit teruggeleverd aan het elektriciteitsnet.\r\nHoewel
+        de batterij niet reageert op netwerkcongestie kan haar gedrag wel helpen om
+        capaciteitsproblemen op het middenspanningsnet te voorkomen. \r\n"
+    co2_emissions_of_imported_electricity_present:
+      title: Huidige import
+      short_description: 
+      description: "De gemiddelde emissie van de Nederlandse elektriciteitsmix is
+        527 gram CO<sub>2</sub> per kWh  <a href=\"https://www.cbs.nl/nl-nl/achtergrond/2017/06/rendementen-en-co2-emissie-elektriciteitsproductie-2015\"
+        target =\"_blank\">(CBS, 2015)</a>.\r\n\r\n</p>\r\n\r\nDe Europese elektriciteitsmix
+        heeft een gemiddelde emissie van 275.9 gram CO<sub>2</sub> per kWh <a href=\"https://www.eea.europa.eu/data-and-maps/daviz/co2-emission-intensity-3#tab-googlechartid_chart_11_filters=%7B%22rowFilters%22%3A%7B%7D%3B%22columnFilters%22%3A%7B%22pre_config_ugeo%22%3A%5B%22European%20Union%20(28%20countries)%22%5D%7D%7D\"
+        target =\"_blank\">(EEA, 2014)</a>. \r\n\r\n</p>\r\n\r\nJe kan meer emissies
+        in gram CO<sub>2</sub> per kWh vinden per type drager, technologie en land
+        in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        target =\"_blank\">documentation</a>. "
+    co2_emissions_of_imported_electricity_future:
+      title: Toekomstige import
+      short_description: 
+      description: "Wat zijn de emissies voor geïmporteerde elektriciteit in de toekomst?
+        \r\n\r\n</p>\r\nKomt dit met name van hernieuwbaar zon of wind, dan gaan de
+        emissies richting de 0 gram CO<sub>2</sub>/kWh.   \r\n\r\n</p>\r\n\r\nOf moet
+        er tijdens de piekvraag met weinig zon en wind juist elektriciteit van bijvoorbeeld
+        van gas (380 -1000 gCO<sub>2</sub>/kWh), kolen (660 -1050 gCO<sub>2</sub>/kWh),
+        of bruinkolen (800 -1300 gCO<sub>2</sub>/kWh) geïmporteerd worden. <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        target =\"_blank\">(Turconi et al, 2013)</a>. \r\n\r\n\r\n</p>\r\n\r\nJe kan
+        meer emissies in gram CO<sub>2</sub> per kWh vinden per type drager, technologie
+        en land in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        target =\"_blank\">documentation</a>. "
+    capacity_of_energy_hydrogen_flexibility_p2g_electricity:
+      title: Power-to-hydrogen
+      short_description: 
+      description: Power-to-gas installaties produceren waterstof met elektriciteitsoverschotten.
+        Dit schuifje zorgt ervoor dat deze waterstof wordt ingezet in het centrale
+        waterstofnetwerk. Overtollig waterstof wordt geëxporteerd. De power-to-gas
+        installaties hebben een inputcapaciteit van 10 MWe.
+    capacity_of_flexibility_p2l_electricity:
+      title: Power-to-kerosene
+      short_description: 
+      description: "Hoeveel synthetische kerosine wil je produceren?\r\n<br/><br/>\r\nDe
+        productie van synthetische kerosine wordt nog niet op grote schaal toegepast,
+        dit omdat fossiele kerosine nog beschikbaar en betaalbaar is. Echter zijn
+        er internationale regelgevingen die luchvaartmaatschappijen ertoe verplichten
+        om de toename van hun emissies te compenseren na 2020. Dit zal waarschijnlijk
+        de interesse in synthetische kerosine vergroten. \r\n<br/><br/>\r\nMet deze
+        schuif kan je bepalen hoeveel waterstofcentrales er moeten worden gebouwd
+        voor de synthetische kerosine productie. Het proces werkt als volgt: eerst
+        wordt er waterstof geproduceerd d.m.v. electrolyse and vervolgens wordt er
+        kerosine gemaakt in het Fischer-Tropsch (FT) proces door CO toe te voegen.
+        Merk op dat alleen de waterstof productie op elektriciteitsoverschotten draait
+        en het FT proces op baseload elektriciteit.\r\n<br/><br/>\r\nDe schuifjesinstelling
+        wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
+    flexibility_p2l_direct_air_capture:
+      title: Direct Air Capture (DAC)
+      short_description: 
+      description: "Welk percentage van de benodigde koolstof komt van Direct Air
+        Capture (DAC)?\r\n<br/><br/> \r\nMet DAC kan CO<sub>2</sub> oneindig worden
+        hergebruikt en kunnen negatieve emissies bewerkstelligd worden doordat CO<sub>2</sub>
+        uit de atmosfeer wordt afgevangen. Vervolgens zorgt de kerosine productie
+        en verbranding voor positieve emissies, maar de netto CO<sub>2</sub> toevoeging
+        aan de atmosfeer blijft dichtbij nul met de aanname dat hernieuwbare elektriciteit
+        wordt gebruikt voor het proces. Hoewel DAC al lange tijd wordt onderzocht,
+        werden de eerste bedrijven die DAC commercieel ging uitvoeren pas na 2000
+        opgericht. DAC is daarbij een relatief dure techniek. Merk op dat voor DAC
+        ook CO<sub>2</sub> naar CO moet worden omgezet, netals bij de CO<sub>2</sub>
+        puntbron. \r\n<br/><br/>\r\nIn dit model wordt de CO<sub>2</sub> reductie
+        door het gebruik van DAC in zijn geheel toegeschreven aan de internationale
+        luchtvaart sector. \r\n<br/>"
+    flexibility_p2l_point_source_CO:
+      title: Puntbron CO
+      short_description: 
+      description: "Welk percentage of de benodigde koolstof komt van CO puntbronnen?\r\n<br/><br/>
+        \r\nVergeleken met het gebruik van CO<sub>2</sub> bronnen voor het produceren
+        van kerosine, hebben CO puntbronnen het voordeel dat er geen conversie meer
+        plaats hoeft te vinden van CO<sub>2</sub> naar CO. Echter zijn CO puntbronnen
+        niet volop beschikbaar; ze zijn voornamelijk in staalfabrieken te vinden.
+        Een ander nadeel is dat CO beschouwd wordt als een waardevoller molecuul dan
+        CO<sub>2</sub>, waardoor het meestal al gebruikt wordt, echter is dit meestal
+        voor warmte of elektriciteitsopwekking. Ook is de scheiding van CO van rookgassen
+        lastiger dan het scheiden van CO<sub>2</sub> doordat CO een klein molecuul
+        is (net zo klein als N<sub>2</sub>), maar zeker niet onmogelijk\r\n<br/><br/>
+        \r\nIn dit model wordt alleen CO van de staalindustrie meegenomen.\r\n<br/>"
+    flexibility_p2l_point_source_CO2:
+      title: Puntbron CO<sub>2</sub>
+      short_description: 
+      description: "Welk percentage van de koolstof komt van een CO<sub>2</sub> puntbron?\r\n<br/><br/>
+        \r\nVeel fabrieken en energiecentrales stoten restgassen uit die voornamelijk
+        uit CO<sub>2</sub> bestaan. Er zijn verschillende CO<sub>2</sub> scheidingstechnieken,
+        waarvan adsorptie m.b.v. een oplosmiddel de meest gebruikelijke is en dus
+        gebruikt is in dit model. Merk op dat het starten met CO<sub>2</sub> als koolstofbron
+        niet optimaal is, omdat het eerst nog moet worden omgezet in CO voordat het
+        kan worden gebruikt in het Fischer-Tropsch proces. In dit model hebben we
+        gekozen om dit te bewerkstelligen door CO<sub>2</sub> elektrochemisch te reduceren
+        tot CO, ookwel bekend als de proton-exchange membrane (PEM) technologie.\r\n<br/><br/>\r\nDeze
+        route is tot nu toe vergeleken met DAC een relatief goedkope manier om CO<sub>2</sub>
+        af te vangen. Het zou een aantrekkelijke technologie zijn om de productie
+        van synthetische kerosine op te starten en emissies te reduceren tot wel 50%.
+        In dit model wordt alleen de staalindustrie als puntbron CO<sub>2</sub> beschouwd,
+        ookal zijn er meer veel industriën die CO<sub>2</sub> uitstoten.\r\n<br/>"
+    flexibility_p2l_co2_reduction_industry:
+      title: Industrie
+      short_description: 
+      description: "Welke sector zal moeten profiteren van de CO<sub>2</sub> reductie
+        als CO/CO<sub>2</sub> van industriële rookgassen zal worden gebruikt?\r\n<br/><br/>
+        \r\nDe staalindustrie levert de CO/CO<sub>2</sub> voor de synthetische kerosine
+        productie. Welk percentage van de CO<sub>2</sub> reductie moet als gevolg
+        hiervan worden toegekend aan hun?"
+    flexibility_p2l_co2_reduction_bunkers:
+      title: Internationaal transport
+      short_description: 
+      description: "Welke sector zal moeten profiteren van de CO<sub>2</sub> reductie
+        als CO/CO<sub>2</sub> van industriële rookgassen zal worden gebruikt?\r\n<br/><br/>
+        \r\nDe internationale luchtvaart sector kiest ervoor om synthetische kerosine
+        te gebruiken in plaats van fossiele kerosine of bio-kerosine. Welk percentage
+        van de CO<sub>2</sub> reductie moet als gevolg hiervan worden toegekend aan
+        hun?"

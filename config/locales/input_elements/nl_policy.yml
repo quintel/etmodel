@@ -1,0 +1,88 @@
+---
+nl:
+  input_elements:
+    policy_dependence_max_dependence:
+      title: Max import energie
+      short_description: ''
+      description: "Deze schuif stelt in hoeveel buitenlandse energie je netto maximaal
+        wilt importeren. Netto import is alle import minus alle export van energie.<br
+        />\r\nLet op: het gaat hier om alle vormen van energie en niet alleen elektriciteit.
+        Voor elektriciteit is er een aparte schuif."
+    policy_dependence_max_electricity_dependence:
+      title: Max import elektriciteit
+      short_description: ''
+      description: Met deze schuif stel je de maximale netto import van elektriciteit
+        in. Voor het netwerk is het wellicht nog belangrijker hoeveel import capaciteit
+        bestaat.
+    policy_cost_electricity_cost:
+      title: Kosten elektriciteit
+      short_description: ''
+      description: Met dit schuifje stel je het percentage in waarmee de kosten van
+        elektriciteit mogen toe- of afnemen. Deze kosten hangen af van je aannames
+        in het onderdeel <a href="/scenario/costs">Kosten</a> en hoe elektriciteit
+        en warmte worden gemaakt in het onderdeel <a href="/scenario/supply">Aanbod</a>.
+    policy_area_onshore_land:
+      title: Wind op land
+      short_description: ''
+      description: "Windmolens hebben nogal wat ruimte nodig. Je kunt ze niet zomaar
+        naast elkaar zetten, omdat iedere windmolen een 'windschaduw' heeft. Binnen
+        die windschaduw is er veel minder windenergie beschikbaar voor de volgende
+        windmolen. Hoe ver windmolens uit elkaar moeten staan is afhankelijk van de
+        ashoogte en rotordiameter. Meestal staan windmolens ten minste 5 rotordiameters
+        uit elkaar in de meest voorkomende windrichting.\r\n<br/><br/>\r\nDeze schuif
+        stelt het totale landoppervlak in dat bestemd wordt voor het bouwen van windmolens.
+        In de grafiek rechts is te zien welk percentage van het totale oppervlak van
+        jouw land dat is. De startwaarde is het huidige landoppervlak dat voor windparken
+        in gebruik is.\r\n"
+    policy_area_onshore_coast:
+      title: Wind aan kust
+      short_description: ''
+      description: "Deze schuif stelt de totale lengte van de kust in die bestemd
+        wordt voor het bouwen van windmolens. In de grafiek rechts is te zien welk
+        percentage van de totale kustlijn van jouw land dat is. De startwaarde is
+        het de lengte die nu voor windparken in gebruik is.\r\n\r\n<br/><br/>\r\nWindmolens
+        hebben nogal wat ruimte nodig. Je kunt ze niet zomaar naast elkaar zetten,
+        omdat iedere windmolen een 'windschaduw' heeft. Binnen die windschaduw is
+        er veel minder windenergie beschikbaar voor de volgende windmolen. Hoe ver
+        windmolens uit elkaar moeten staan is afhankelijk van de ashoogte en rotordiameter.
+        Meestal staan windmolens ten minste 5 rotordiameters uit elkaar in de meest
+        voorkomende windrichting.\r\n"
+    policy_area_offshore:
+      title: Wind op zee
+      short_description: ''
+      description: "Deze schuif stelt het totale zeeoppervlak in dat bestemd wordt
+        voor het bouwen van windmolens. In de grafiek rechts is te zien welk percentage
+        van de territoriale wateren van jouw land dat is. De startwaarde is het huidige
+        zeeoppervlak dat voor windparken in gebruik is.\r\n\r\n<br/><br/>\r\n\r\nWindmolens
+        hebben nogal wat ruimte nodig. Je kunt ze niet zomaar naast elkaar zetten,
+        omdat iedere windmolen een 'windschaduw' heeft. Binnen die windschaduw is
+        er veel minder windenergie beschikbaar voor de volgende windmolen. Hoe ver
+        windmolens uit elkaar moeten staan is afhankelijk van de ashoogte en rotordiameter.
+        Meestal staan windmolens ten minste 5 rotordiameters uit elkaar in de meest
+        voorkomende windrichting.\r\n"
+    policy_sustainability_renewable_percentage:
+      title: Percentage hernieuwbaar
+      short_description: ''
+      description: "Deze schuif stelt de hernieuwbare energiedoelstelling in, uitgedrukt
+        als percentage van het totale finale energiegebruik.\r\n<br/><br/>\r\nDe EU
+        heeft bindende wetgeving aangenomen dat in 2020 20% van al het energiegebruik
+        hernieuwbaar moet zijn. \r\n<br/><br/>\r\nOpmerking: De waarde die het ETM
+        uitrekent voor het huidige jaar kan afwijken van het getal in officiële statistieken
+        (CBS) vanwege een verschillende definitie. Dit is ook de oorzaak van een (mogelijk)
+        gat tussen historische gegevens en de waarde voor het huidige jaar. Meer informatie
+        is beschikbaar in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/renewability.md\"
+        target=\"blank\">documentatie</a>."
+    policy_cost_total_energy_cost:
+      title: Totale energie kosten
+      short_description: ''
+      description: 'Deze schuif stelt het percentage in waarmee de kosten van energie
+        mogen toe- of afnemen. Deze kosten hangen af van je aannames in het onderdeel
+        <a href="/scenario/costs">Kosten</a> en hoe elektriciteit en warmte worden
+        gemaakt in het onderdeel <a href="/scenario/supply">Aanbod</a>. '
+    policy_sustainability_co2_emissions:
+      title: CO<sub>2</sub>-uitstoot
+      short_description: ''
+      description: "Deze schuif stelt de doelstelling in voor totale CO<sub>2</sub>
+        emissiereductie. Het percentage is in vergelijking met 1990. \r\n<br/>\r\nDe
+        EU will de uitstoot met 80% gereduceerd hebben in 2050. Dit is nog geen wettelijk
+        bindende doelstelling.\r\n"

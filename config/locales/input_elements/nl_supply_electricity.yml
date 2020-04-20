@@ -1,0 +1,491 @@
+---
+nl:
+  input_elements:
+    capacity_of_energy_chp_local_engine_biogas:
+      title: Biogas WKK
+      short_description: 
+      description: "Een WKK produceert zowel warmte als elektriciteit. Stel hier het
+        vermogen aan biogas-WKKs in dat warmte levert aan warmtenetten.\r\n</br>"
+    capacity_of_energy_chp_local_wood_pellets:
+      title: Biomassa WKK
+      short_description: 
+      description: "Een WKK produceert zowel warmte als elektriciteit. Stel hier het
+        vermogen aan biomassa-WKKs in dat warmte levert aan warmtenetten.\r\n</br>"
+    capacity_of_energy_power_turbine_hydrogen:
+      title: Waterstofturbine
+      short_description: 
+      description: "Met deze schuif kun je waterstofturbines bouwen die elektriciteit
+        produceren met waterstof. Omdat waterstofturbines op dit moment (nog) niet
+        op grote schaal gebruikt worden, veronderstellen we dat de specificaties gelijk
+        zijn aan die van gasturbines. De technologie van waterstof- en gasturbines
+        lijkt namelijk sterk op elkaar. <br /><br />\r\n\r\nEen waterstofturbine is
+        niet zo efficiënt als een twee-staps Stoom- en Gascentrale (STEG), maar heeft
+        als voordeel dat een turbine zeer snel op- en af kan schakelen. Daarom zijn
+        deze centrales geschikt voor het leveren van stroom bij zogenaamde piekvraag.
+        Hoewel het aantal draaiuren en de jaarproductie van deze centrales dus vaak
+        beperkt is, kunnen ze een belangrijke rol spelen in het balanceren van het
+        elektriciteitsnet. <br />"
+    capacity_of_energy_power_combined_cycle_hydrogen:
+      title: Waterstofcentrale (STEG)
+      short_description: 
+      description: 'Met deze schuif kun je capaciteit van STEG-waterstofcentrales
+        opstellen die elektriciteit produceren met waterstof. Omdat STEG-waterstofcentrales
+        op dit moment (nog) niet op grote schaal gebruikt worden, veronderstellen
+        we dat de specificaties gelijk zijn aan die van STEG-gascentrales. De technologie
+        van STEG-waterstof- en -gascentrales lijkt namelijk sterk op elkaar. '
+    capacity_of_energy_power_geothermal:
+      title: Geothermisch elektrisch
+      short_description: ''
+      description: "Hiermee bouw elektriciteitscentrales op aardwarmte. Met warmte
+        van meer dan 3 km diep wordt stroom opgewekt.\r\n<br/><br/>\r\nHet opwekken
+        van stroom vereist hogere temperaturen dan het verwarmen van gebouwen en broeikassen.
+        Of het nu een aantrekkelijke optie is, wordt deels bepaald door hoe diep ondergronds
+        het water zich bevindt, met temperaturen die hoog genoeg zijn."
+    capacity_of_energy_power_solar_pv_solar_radiation:
+      title: Zonnecentrales PV
+      short_description: ''
+      description: "Met dit schuifje bouw je een grootschalig zonnepark.<br/>\r\nNet
+        als windstroom, is zonnestroom fluctuerend. Toch is de variatie van zonnestroom
+        beter te voorspellen. Als zeer veel zonnepanelen geïnstalleerd worden, kan
+        het nodig zijn om oplossingen te vinden voor onbalans op het laagspanningsnet.
+        In sommige gevallen is het slim om zonneparken aan te sluiten op slechts een
+        bepaald percentage van het piekvermogen, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen.\r\n<br/>\r\n"
+    capacity_of_energy_power_solar_csp_solar_radiation:
+      title: Geconcentreerde zonnestroom
+      short_description: ''
+      description: "Hiermee bouw je 50 MWe geconcentreerde zonnewarmte centrales (Concentrated
+        Solar Power, oftewel CSP). \r\nCSP centrales maken elektriciteit door de warmte
+        van de zon te focusseren met holle spiegels. Zonnige, woestijnachtige delen
+        van de wereld zijn dus bij uitstek geschikt, maar Noordwest Europa absoluut
+        niet. Er bestaat een plan (genaamd Desertec) om CSP centrales te bouwen in
+        Noord Afrika en het Midden Oosten, om een deel van de stroom van daar naar
+        Europa te transporteren. Hiervoor zijn gigantische investeringen nodig in
+        infrastructuur, maar het potentieel is ook zeer groot.<br/><br/>\r\n\r\nZonnewarmte
+        kan worden opgeslagen (door zout te smelten bijvoorbeeld) en dus kunnen deze
+        centrales zonodig ook een deel van de nacht nog stroom maken.\r\n\r\n<br/><br/>\r\n<a
+        href=\"/units\">Meer informatie over eenheden...</a>\r\n\r\n<br/><br/>\r\n<object
+        style=\"height: 344px; width: 425px\"><param name=\"movie\" value=\"http://www.youtube.com/v/QXURvISjh2A\"><param
+        name=\"allowFullScreen\" value=\"true\"><param name=\"allowScriptAccess\"
+        value=\"always\"><embed src=\"http://www.youtube.com/v/QXURvISjh2A\" type=\"application/x-shockwave-flash\"
+        allowfullscreen=\"true\" allowScriptAccess=\"always\" width=\"425\" height=\"300\"></object>"
+    capacity_of_energy_power_ultra_supercritical_crude_oil:
+      title: Oliecentrale
+      short_description: ''
+      description: "Hier bouw je (delen van) 800 MWe oliegestookte centrales. Vaak
+        is het ook mogelijk om gas te verbranden in deze centrales.\r\n<br/><br/>\r\nHet
+        levert meer geld op om olie te raffineren, of als transportbrandstof te gebruiken,
+        dan om het voor elektriciteitsproductie te verbranden. Bovendien zijn fossiele
+        brandstoffen als kolen goedkoper. Daarom zijn dit soort centrales nogal zeldzaam
+        in Europa.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt omgezet naar
+        (deel)aantallen van de centrale zoals hierboven omschreven."
+    capacity_of_energy_power_engine_diesel:
+      title: Dieselgenerator
+      short_description: 
+      description: "Dit is een dieselgenerator van 2 MWe <br/>\r\nEen dieselgenerator
+        is de combinatie van een dieselmotor en een generator om stroom te produceren.
+        Hoewel deze machines vrij duur zijn in het gebruik, zijn vanwege hun relatieve
+        eenvoud, betrouwbaarheid en veiligheid aantrekkelijk om gebruikt te worden
+        op plaatsen waar geen stroomnet is, als noodaggregaten of voor ingewikkelder
+        toepassingen om het stroomnet te stabiliseren.\r\n<br/>\r\nDe technische gegevens
+        voor het model, zijn gebaseerd op de aanname dat deze generator niet voor
+        basislast gebruikt wordt, maar om het stroomnet te stabiliseren of als noodaggregaat
+        en dus weinig draait. \r\n<br/><br/>\r\nDe schuifjesinstelling wordt omgezet
+        naar (deel)aantallen van de centrale zoals hierboven omschreven."
+    capacity_of_energy_power_hydro_river:
+      title: Rivier
+      short_description: ''
+      description: "Met deze schuif bouw je een kleine waterkrachtcentrale in een
+        grote rivier. \r\nDe instelling wordt omgezet in centrales met een relatief
+        klein vermogen (~10 MWe). Dit vermogen is laag door het geringe verval in
+        een rivier. Het totale productiepotentieel is dan ook beperkt. Toch zijn deze
+        centrales niet onaantrekkelijk vanwege hun relatief lange levensduur en de
+        betrouwbaarheid. "
+    capacity_of_energy_power_hydro_mountain:
+      title: Bergen
+      short_description: ''
+      description: 'Hiermee bouw je grote waterkrachtcentrales met een stuwmeer in
+        de bergen. De instelling wordt omgezet in (delen van) centrales van 500 MWe.
+        Deze centrales vergen grote investeringen en het onder water zetten van dalen
+        kan een zeer negatieve uitwerking hebben op het milieu. Vaak zijn dit soort
+        centrales groter dan 500 MWe en worden ze zo gebouwd dat overtollige elektriciteit
+        kan worden opgeslagen door water naar het stuwmeer toe te pompen. Omdat deze
+        centrales relatief lang leven en ideaal zijn om pieken en dalen in de stroomvraag
+        te volgen, kunnen deze centrales erg aantrekkelijk zijn. '
+    capacity_of_energy_power_supercritical_waste_mix:
+      title: Afvalverbranding
+      short_description: ''
+      description: "Hiermee bouw je hoogrendment afvalverbrandingscentrale. De instelling
+        wordt omgezet in (delen van) centrales van 55 MWe. Brandbaar afval (huishoudelijk-
+        en sloop-afval) wordt gebruikt om elektriciteit op te wekken. Door het onder
+        de juiste omstandigheden te verbranden, kan afval op een relatief schone manier
+        verwerkt worden. Rottend afval produceert methaan, een sterker broeikasgas
+        dan CO<sub>2</sub>, daarom is verbranden vaak beter. <br/><br/>\r\nHet model
+        importeert geen afval, dus de beschikbare hoeveelheid afval bepaalt het potentieel
+        voor deze technologie."
+    capacity_of_energy_chp_supercritical_waste_mix:
+      title: Afval-WKK
+      short_description: 
+      description: "Hiermee bouw je een hoogrendment afvalverbrandingscentrale die
+        warmte levert aan een warmtenet (60 MWe, 33 MWth). Brandbaar afval (huishoudelijk-
+        en sloop-afval) wordt gebruikt om elektriciteit en warmte op te wekken. Door
+        het onder de juiste omstandigheden te verbranden, kan afval op een relatief
+        schone manier verwerkt worden. Rottend afval produceert methaan, een sterker
+        broeikasgas dan CO<sub>2</sub>, daarom is verbranden vaak beter. <br/><br/>\r\nHet
+        model importeert geen afval, dus de beschikbare hoeveelheid afval bepaalt
+        het potentieel voor deze technologie.\r\n<br/><br/>\r\nDe schuifjesinstelling
+        wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
+    capacity_of_energy_power_nuclear_gen3_uranium_oxide:
+      title: Kern 3e Gen
+      short_description: ''
+      description: "Hier bouw je kerncentrales van het meest moderne type (EPR, 3e
+        generatie). <br/>\r\nVan alle centrales, duurt het bouwen en verkrijgen van
+        alle vergunningen voor een kerncentrale het langst (gemiddeld 11-12 jaar).
+        het is dan ook de vraag of het mogelijk is om per land meer dan een paar extra
+        kerncentrales te bouwen de komende drie decennia. Vooral als je de publieke
+        opinie, een gebrek aan geschoolde technici en tekort aan productiecapaciteit
+        van centrale-onderdelen meeneemt.\r\n<br/><br/>\r\nDe bouw van kerncentrales
+        zorgt voor CO<sub>2</sub> emissies. Datzelfde geldt voor windmolens en kolencentrales.
+        Daarom neemt het model voorlopig geen CO<sub>2</sub> uitstoot mee voor centrales
+        die geen fossiele brandstoffen verbranden.\r\n<br/><br/>\r\nDe schuifjesinstelling
+        wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n<br/><br/>\r\nKerncentrales
+        zijn duur om te bouwen en goedkoop om te laten draaien. Daarom draaien ze
+        zoveel mogelijk op vol vermogen (meer dan 80% van de tijd). "
+    capacity_of_energy_power_nuclear_gen2_uranium_oxide:
+      title: Kern conventioneel
+      short_description: ''
+      description: "Hiermee bouw je kerncentrales van een ouder type. Deze zullen
+        in de praktijk niet meer gebouwd worden en staan hier vooral om het verschil
+        te tonen met de moderne 3e generatie centrales. <br/>\r\nAls je kerncentrales
+        wilt bouwen, bouw dan een moderne 3e generatie kerncentrale. De capaciteit
+        wordt omgezet in centrales van 1.650 MWe.\r\n<br/><br/>\r\n"
+    merit_order_subtype_of_energy_power_nuclear_uranium_oxide: 
+    capacity_of_energy_power_ultra_supercritical_coal:
+      title: Poederkolen
+      short_description: ''
+      description: "Ultra-superkritische poederkolencentrale van 800 megawatt elektrisch
+        (MWe). Dit is de meest voorkomende kolencentrale in landen met relatief strenge
+        milieuwetgeving. Van alle typen elektriciteitsopwek geven kolen- en bruinkoolcentrales
+        wel de grootste luchtvervuiling. De CO<sub>2</sub> uitstoot van een kolencentrale
+        is ongeveer 2x zo groot als die van een gascentrale per opgewekte megawattuur
+        (MWh). Zie verder ook de informatie bij onderdeel 'Kosten'. \r\n\r\n<br/><br/>\r\nEen
+        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
+        van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
+        omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
+    capacity_of_energy_power_ultra_supercritical_ccs_coal:
+      title: Poederkolen CCS
+      short_description: ''
+      description: "Dezelfde soort kolencentrale als hierboven (Poederkolencentrale).
+        Deze past daarnaast ook afvang en opslag van de meeste geproduceerde CO<sub>2</sub>
+        toe. Deze technologie wordt 'Carbon Capture and Storage' (CCS) genoemd. Deze
+        centrale heeft niet hetzelfde productievermogen als een gewone poederkolencentrale,
+        omdat CCS energie kost. Er worden dus meer kolen verbrand om dezelfde hoeveelheid
+        stroom te maken. <br/>\r\nDe CCS centrale is minder vervuilend voor de lucht
+        dan de gewone centrale. Zie ook informatie onder 'Kosten'.  \r\n<br/><br/>\r\nEen
+        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
+        van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
+        omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n\r\n"
+    capacity_of_energy_power_combined_cycle_coal:
+      title: Kolenvergassing
+      short_description: ''
+      description: "Een 800 MWe kolenvergassingscentrale. In theorie kan deze centrale
+        ook allerlei soorten biogas en sommige vormen van afval vergassen. Deze centrales
+        vervuilen minder dan poederkolencentrales en zijn bijna even efficiënt. De
+        techniek is in een vroeg commercieel stadium. <br> Zie ook informatie onder
+        'Kosten'.  \r\n<br/><br/>\r\nEen kolencentrale is een basislast-centrale,
+        en daarom draait hij meer dan 75% van de tijd op vol vermogen. Kolenvergassing
+        maakt deze centrale flexibeler dan de gewone kolencentrales. \r\n\r\n\r\n<br/><br/>\r\nDe
+        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
+        hierboven omschreven.\r\n"
+    capacity_of_energy_power_combined_cycle_ccs_coal:
+      title: Kolenvergassing CCS
+      short_description: ''
+      description: "Dit is dezelfde kolenvergassingscentrale als hierboven. Deze past
+        daarnaast ook afvang en opslag van de meeste geproduceerde CO<sub>2</sub>
+        toe. Deze technologie wordt 'Carbon Capture and Storage' (CCS) genoemd. Deze
+        centrale heeft niet hetzelfde productievermogen als een gewone kolenvergassingscentrale,
+        omdat CCS energie kost. Er worden dus meer kolen verbrand om dezelfde hoeveelheid
+        stroom te maken. <br/>\r\nDe CCS centrale is minder vervuilend voor de lucht
+        dan de gewone centrale. Zie ook informatie onder 'Kosten'. \r\n<br/><br/>\r\nEen
+        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
+        van de tijd op vol vermogen. \r\n\r\n<br/><br/>\r\nDe schuifjesinstelling
+        wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n"
+    capacity_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
+      title: Bruinkolen 'oxyfuel' CCS
+      short_description: ''
+      description: "800 MWe kolen- of bruinkolencentrale die daarnaast ook afvang
+        en opslag van de meeste geproduceerde CO<sub>2</sub> toepast. Deze technologie
+        wordt 'Carbon Capture and Storage' (CCS) genoemd. De centrale verbrandt kolen
+        onder 100% zuurstof en daardoor wordt het goedkoper om CO<sub>2</sub> af te
+        vangen. Deze techniek heet 'Oxyfuel Carbon Capture and Storage (CCS)'. Deze
+        centrale heeft niet hetzelfde productievermogen als een gewone kolencentrale,
+        omdat CCS energie kost. Er worden dus meer kolen verbrand om dezelfde hoeveelheid
+        stroom te maken. <br/>\r\nDe CCS centrale is minder vervuilend voor de lucht
+        dan de gewone centrale. Zie ook informatie onder 'Kosten'. \r\n<br/><br/>\r\nEen
+        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
+        van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
+        omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n\r\n<br/><br/>\r\n<a
+        href=\"/units\">Meer informatie over eenheden...</a>\r\n\r\n"
+    capacity_of_energy_power_supercritical_coal:
+      title: Kolen conventioneel
+      short_description: ''
+      description: "Hier kun je ouderwetse kolencentrales bouwen van 800 MWe. Deze
+        centrales worden in rijke landen niet meer gebouwd, vanwege milieuwetgeving.
+        De stroom die wordt opgewekt staat in de grafiek rechts als kolenstroom.\r\n<br/><br/>\r\nEen
+        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
+        van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
+        omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n\r\n "
+    capacity_of_energy_power_ultra_supercritical_lignite:
+      title: Bruinkolen
+      short_description: ''
+      description: "Hier kun je bruinkoolcentrales bouwen van 800 MWe. Deze centrales
+        kunnen alleen gebouwd worden als er een lokale bruinkoolvoorraad beschikbaar
+        is. Dit is de meest vervuilende soort van elektriciteitscentrale. De stroom
+        die wordt opgewekt staat in de grafiek als kolenstroom. \r\n<br/><br/>\r\nEen
+        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
+        van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
+        omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
+    capacity_of_energy_chp_ultra_supercritical_lignite:
+      title: Bruinkoolcentrale met warmtelevering (WKK)
+      short_description: ''
+      description: 'Hier stel je in je hoeveel grote bruinkoolcentrales warmte leveren
+        aan stadsverwarming en andere ''laagwaardige warmte'' netwerken. De stroom
+        die wordt opgewekt zie je op de grafiek terug als kolenstroom. '
+    capacity_of_energy_chp_ultra_supercritical_coal:
+      title: Kolencentrale met warmtelevering (WKK)
+      short_description: ''
+      description: "Grote ultra-superkritische poederkolen WKK centrale. Deze centrale
+        is hetzelfde als de elektriciteitscentrale, behalve dat bij deze ook warmte
+        wordt afgetapt voor het centrale warmtenet. \r\n<br/><br/> \r\nDe Amercentrale
+        in Geertruidenberg bijvoorbeeld voedt het warmtenet voor Tilburg en Breda.
+        Warmtelevering in een dergelijke centrale gaat iets ten koste van de elektriciteitsproductie.
+        Afgezet tegen de totale kosten van een kolencentrale zijn de extra investeringen
+        in warmteuitkoppeling beperkt."
+    capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
+      title: Bijstookkolencentrale met warmtelevering (WKK)
+      short_description: 
+      description: "Grote ultra-superkritische poederkolen WKK centrale. Deze centrale
+        is hetzelfde als de elektriciteitscentrale, behalve dat bij deze ook warmte
+        wordt afgetapt voor het centrale warmtenet. Daarnaast verstookt deze WKK centrale
+        naast kolen ook wood-pellets met een bijstook percentage van 50%. Door het
+        combineren van het opgesteld vermogen van centrales met en zonder bijstook
+        kan een bijstookpercentage tussen 0% en 50% gerealiseerd worden.\r\n<br/><br/>
+        \r\nDe Amercentrale in Geertruidenberg bijvoorbeeld voedt het warmtenet voor
+        Tilburg en Breda. Warmtelevering in een dergelijke centrale gaat iets ten
+        koste van de elektriciteitsproductie. Afgezet tegen de totale kosten van een
+        kolencentrale zijn de extra investeringen in warmteuitkoppeling beperkt."
+    capacity_of_energy_power_ultra_supercritical_cofiring_coal:
+      title: Poederkolen met bijstook
+      short_description: 
+      description: "Ultra-superkritische poederkolencentrale van 730 megawatt elektrisch
+        (MWe) met bijstook van biomassa van 50%. Dit is de meest voorkomende kolencentrale
+        in landen met relatief strenge milieuwetgeving. Van alle typen elektriciteitsopwek
+        geven kolen- en bruinkoolcentrales wel de grootste luchtvervuiling. Door de
+        bijstook van biomassa wordt deze uitstoot een stuk teruggebracht. De CO<sub>2</sub>
+        uitstoot van een kolencentrale is ongeveer 2x zo groot als die van een gascentrale
+        per opgewekte megawattuur (MWh). Zie verder ook de informatie bij onderdeel
+        'Kosten'. \r\n\r\n<br/><br/>\r\nEen kolencentrale is een basislast-centrale,
+        en daarom draait hij meer dan 75% van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nOmdat
+        het model een standaard centralegrootte hanteert, en er in werkelijkheid kleinere
+        en grotere centrales bestaan, is het mogelijk dat het opgestelde aantal centrales
+        geen geheel getal is.\r\n<br/><br/>\r\nDoor het aantal centrales met en zonder
+        bijstook te wijzigen kan een overkoepelend bijstookpercentage tussen 0% en
+        50% gerealiseerd worden. Voorbeeld: 1 centrale zonder bijstook en 1 centrale
+        met bijstook levert een gezamenlijk bijstookpercentage van 25% op.\r\n<br/><br/>\r\nDe
+        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
+        hierboven omschreven."
+    capacity_of_energy_power_wind_turbine_inland:
+      title: Op land
+      short_description: ''
+      description: "Met deze schuif bouw je op land. De ingevulde waarde wordt omgezet
+        in windmolens van 3 MWe.</br>Windmolens produceren minder stroom per MWe vermogen
+        dan kolencentrales, omdat het niet altijd even hard waait. Windmolens op land
+        produceren ~25% van de tijd op maximaal vermogen.\r\n<br/><br/>\r\nSpanningsfluctuaties
+        die veroorzaakt worden door veranderende windcondities, kunnen het elektriciteitsnet
+        instabiel maken als windmolens een substantieel deel van het productiepark
+        vormen. Wind heeft daarnaast back-up vermogen nodig voor als het niet waait.
+        Gascentrales kunnen deze rol vervullen, maar opslag van elektriciteit in de
+        accu's van elektrische auto's wordt ook als mogelijkheid genoemd. Een meer
+        flexibele vraag naar stroom is een alternatief voor back-up vermogen. Flexibele
+        vraag en opslag komen ook mooi van pas in periodes met veel wind en weinig
+        vraag naar stroom. \r\n\r\n<br/><br/>\r\n<object width=\"640\" height=\"385\"><param
+        name=\"movie\" value=\"http://www.youtube.com/v/kmLVmhpSiTA?fs=1&amp;hl=en_US&amp;rel=0\"></param><param
+        name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\"
+        value=\"always\"></param><embed src=\"http://www.youtube.com/v/kmLVmhpSiTA?fs=1&amp;hl=en_US&amp;rel=0\"
+        type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+        \ width=\"425\" height=\"300\"></embed></object>\r\n<br/><br/>\r\nHet geïnstalleerde
+        vermogen in het startscenario kan afwijken van het daadwerkelijk geïnstalleerd
+        vermogen in de regio waarvoor u het model invult. Dit heeft twee redenen.
+        Allereerst groeit de markt voor windturbines vrij snel. Hierdoor is er altijd
+        een deel van de windturbines pas dit jaar geïnstalleerd. Deze windturbines
+        kunnen niet het hele jaar meetellen. Daarnaast rekenen we in dit schuifje
+        met de meest moderne windturbines. Deze zijn veel groter en efficiënter dan
+        sommige van de oude windturbines die bij het geïnstalleerd vermogen zitten.
+        Hierdoor kan het aantal windturbines in het startscenario lager uitvallen.
+        Het scenario rekent wel met de elektriciteitsproductie zoals die in de nationale
+        statistieken wordt gerapporteerd.\r\n<br/><br/>"
+    capacity_of_energy_power_wind_turbine_coastal:
+      title: Aan kust
+      short_description: ''
+      description: "Met deze schuif bouw je windmolens aan de kust. De ingevulde waarde
+        wordt omgezet in windmolens van 3 MWe.<br/>\r\nDeze windmolens worden op dijken
+        of net in het water neergezet. Windmolens produceren minder stroom per MWe
+        vermogen dan kolencentrales, omdat het niet altijd even hard waait. Windmolens
+        op land produceren ~27% van de tijd op maximaal vermogen.\r\n<br/><br/>\r\nSpanningsfluctuaties
+        die veroorzaakt worden door veranderende windcondities, kunnen het elektriciteitsnet
+        instabiel maken als windmolens een substantieel deel van het productiepark
+        vormen. Wind heeft daarnaast back-up vermogen nodig voor als het niet waait.
+        Gascentrales kunnen deze rol vervullen, maar opslag van elektriciteit in de
+        accu's van elektrische auto's wordt ook als mogelijkheid genoemd. Een meer
+        flexibele vraag naar stroom is een alternatief voor back-up vermogen. Flexibele
+        vraag en opslag komen ook mooi van pas in periodes met veel wind en weinig
+        vraag naar stroom. \r\n<br/><br/>\r\nHet geïnstalleerde vermogen in het startscenario
+        kan afwijken van het daadwerkelijk geïnstalleerd vermogen in de regio waarvoor
+        u het model invult. Dit heeft twee redenen. Allereerst groeit de markt voor
+        windturbines vrij snel. Hierdoor is er altijd een deel van de windturbines
+        pas dit jaar geïnstalleerd. Deze windturbines kunnen niet het hele jaar meetellen.
+        Daarnaast rekenen we in dit schuifje met de meest moderne windturbines. Deze
+        zijn veel groter en efficiënter dan sommige van de oude windturbines die bij
+        het geïnstalleerd vermogen zitten. Hierdoor kan het aantal windturbines in
+        het startscenario lager uitvallen. Het scenario rekent wel met de elektriciteitsproductie
+        zoals die in de nationale statistieken wordt gerapporteerd.\r\n <br/><br/>"
+    capacity_of_energy_power_wind_turbine_offshore:
+      title: Op zee
+      short_description: ''
+      description: "Met deze schuif bouw je windmolens op zee. De ingevulde waarde
+        wordt omgezet in windmolens van 3 MWe. Windmolens produceren minder stroom
+        per MWe vermogen dan kolencentrales, omdat het niet altijd even hard waait.
+        Windmolens op land produceren ~40% van de tijd op maximaal vermogen, als er
+        tenminste niet teveel onderhoud nodig is.\r\n<br/><br/>\r\nSpanningsfluctuaties
+        die veroorzaakt worden door veranderende windcondities, kunnen het elektriciteitsnet
+        instabiel maken als windmolens een substantieel deel van het productiepark
+        vormen. Wind heeft daarnaast back-up vermogen nodig voor als het niet waait.
+        Gascentrales kunnen deze rol vervullen, maar opslag van elektriciteit in de
+        accu's van elektrische auto's wordt ook als mogelijkheid genoemd. Een meer
+        flexibele vraag naar stroom is een alternatief voor back-up vermogen. Flexibele
+        vraag en opslag komen ook mooi van pas in periodes met veel wind en weinig
+        vraag naar stroom. \r\n<br/><br/>\r\nHet geïnstalleerde vermogen in het startscenario
+        kan afwijken van het daadwerkelijk geïnstalleerd vermogen in de regio waarvoor
+        u het model invult. Dit heeft twee redenen. Allereerst groeit de markt voor
+        windturbines vrij snel. Hierdoor is er altijd een deel van de windturbines
+        pas dit jaar geïnstalleerd. Deze windturbines kunnen niet het hele jaar meetellen.
+        Daarnaast rekenen we in dit schuifje met de meest moderne windturbines. Deze
+        zijn veel groter en efficiënter dan sommige van de oude windturbines die bij
+        het geïnstalleerd vermogen zitten. Hierdoor kan het aantal windturbines in
+        het startscenario lager uitvallen. Het scenario rekent wel met de elektriciteitsproductie
+        zoals die in de nationale statistieken wordt gerapporteerd.\r\n<br/><br/>"
+    capacity_of_energy_power_ultra_supercritical_network_gas:
+      title: Gas conventioneel
+      short_description: ''
+      description: "Hier bouw je een conventionele stoomturbine gascentrale van 800
+        MWe.\r\n<br/> <br/> \r\nDe meeste nieuwe gascentrales zijn STEG-centrales,
+        aangezien die efficiënter zijn.\r\n\r\n<br/><br/>\r\nGascentrales zijn flexibel
+        en worden daarom vaak ingezet om dagelijkse pieken in de elektriciteitsvraag
+        op te vangen (vooral gasturbines) en daarom produceren ze minder stroom per
+        jaar dan kolencentrales met een vergelijkbaar vermogen.\r\n\r\n<br/><br/>\r\nDe
+        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
+        hierboven omschreven.\r\n"
+    capacity_of_energy_power_combined_cycle_network_gas:
+      title: Gas STEG
+      short_description: ''
+      description: "Hier kun je Stoom en Gas (STEG) gascentrales bouwen van 800 MWe.
+        Voor meer informatie, zie het onderdeel 'Kosten'. <br/><br/>\r\n\r\nGascentrales
+        zijn flexibel en worden daarom vaak ingezet om dagelijkse pieken in de elektriciteitsvraag
+        op te vangen (vooral gasturbines) en daarom produceren ze minder stroom per
+        jaar dan kolencentrales met een vergelijkbaar vermogen. \r\n\r\n<br/><br/>\r\nDe
+        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
+        hierboven omschreven."
+    capacity_of_energy_chp_combined_cycle_network_gas:
+      title: Grootschalige gascentrale met warmtelevering (WKK)
+      short_description: ''
+      description: "Hiermee bouw je een grote warmte-kracht koppeling (WKK's) (~120
+        MWe and ~120 MWth) op gas. De stroom die de grote WKK's produceren staat in
+        de grafiek hiernaast als stroom uit 'Gas'. \r\n<br/><br/>\r\nDeze grote WKK
+        levert typisch aan een groot stadswarmtenet en bestaat uit een gasturbine
+        met afgasketel en stoomturbine. De WKK zal deels ingezet worden voor warmteproductie
+        aan het stadswarmtenet (4500 uren/jaar) en deels gestuurd worden door de elektriciteitsprijs
+        (6000 uren/jaar e-productie). Een installatie van vergelijkbare grootte staat
+        bijvoorbeeld in Rotterdam (RoCa)."
+    capacity_of_energy_power_combined_cycle_ccs_network_gas:
+      title: Gas STEG CCS
+      short_description: ''
+      description: "Dezelfde soort gascentrale als hierboven (STEG). Deze past daarnaast
+        ook afvang en opslag van de meeste geproduceerde CO<sub>2</sub> toe. Deze
+        technologie wordt 'Carbon Capture and Storage' (CCS) genoemd. Deze centrale
+        heeft niet hetzelfde productievermogen als een gewone STEG centrale, omdat
+        CCS energie kost. Er wordt dus meer gas verbrand om dezelfde hoeveelheid stroom
+        te maken.\r\n\r\n<br/><br/>\r\n\r\nGascentrales zijn flexibel en worden daarom
+        vaak ingezet om dagelijkse pieken in de elektriciteitsvraag op te vangen (vooral
+        gasturbines) en daarom produceren ze minder stroom per jaar dan kolencentrales
+        met een vergelijkbaar vermogen. CCS centrales zijn minder flexibel dan hun
+        niet-CCS 'soortgenoten'."
+    capacity_of_energy_power_turbine_network_gas:
+      title: Gasturbine
+      short_description: 
+      description: "Hier kun je opgesteld vermogen van gasturbine centrales instellen.
+        Deze zijn niet zo efficiënt als de twee-staps Stoom en Gas (STEG) centrales,
+        maar hebben als voordeel dat ze er goed tegen kunnen om vaak aan- en uitgezet
+        te worden. Daarom leveren deze centrales alleen stroom bij zogenaamde piekvraag.
+        <br/><br/>\r\nHoewel het aantal draaiuren en de jaarproductie van deze centrales
+        dus beperkt is, zijn ze zeer nuttig om te hebben."
+    capacity_of_energy_power_engine_network_gas:
+      title: Gasmotor
+      short_description: 
+      description: "Deze centrale bestaat uit 22 motor-generator eenheden van ieder
+        18 MWe en heeft dus een vermogen van 400 MWe. De motoren zijn flexibel wat
+        de brandstofvraag betreft, maar in het ETM draaien ze op gas.\r\n<br/><br/>\r\nHoewel
+        deze centrales vrij hoge draaikosten hebben, zijn de totaalkosten erg laag
+        in vergelijking met andere grote gascentrales. Vooral dat maakt ze uiteindelijk
+        aantrekkelijk als back up voor veel wind en zon. Dat leggen we hieronder uit.\r\n<br/><br/>\r\nDeze
+        centrales worden soms opgevoerd als een uitstekende oplossing voor het probleem
+        van sterk variërende stroomproductie in scenario's met veel opgesteld wind-
+        en zonvermogen. Gasmotorcentrales bieden voordelen boven traditionele gascentrales.
+        De belangrijkste zijn de flexibiliteit en snelheid waarmee ze hun stroomproductie
+        kunnen variëren. \r\n<br/><br/>\r\nElke eenheid kan tussen <1 en 100% van
+        zijn vermogen leveren, zonder dat de efficiëntie afneemt. Iedere unit kan
+        ook van 0 naar 100% vermogen in ~2 minuten en binnen 30 seconden na de start
+        stroom op het net leveren, ongeacht hoe lang hij uit heeft gestaan. Aangezien
+        iedere <em>centrale</em> uit 22 eenhede bestaat kan hij tussen de ~1 en 400
+        MWe aan het net leveren binnen minuten, volledig uitgeschakeld worden binnen
+        1 minuut en vervolgens weer binnen 2 minuten op vol vermogen leveren <em>zonder
+        efficiëntieverlies</em>. Hierdoor wordt het mogelijk om om grote fluctuaties
+        in windstroomproductie op te vangen en het net stabiel te houden. Centrales
+        met een stoomcyclus of zelfs gasturbines verliezen vaak tientallen procentpunten
+        efficiëntie als hun belastig onder de 60 - 70% komt. Daardoor zijn ze veel
+        minder efficiënt in te zetten voor de balancering van windstroom. \r\n<br/><br/>\r\nDe
+        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
+        hierboven omschreven."
+    capacity_of_energy_chp_local_engine_network_gas:
+      title: Kleinschalige gascentrale met warmtelevering (WKK)
+      short_description: 
+      description: "Een WKK produceert zowel warmte als elektriciteit. Stel hier het
+        vermogen aan gas WKKs in dat warmte levert aan warmtenetten.\r\n</br>"
+    green_gas_total_share:
+      title: Groengas
+      short_description: ''
+      description: Dit schuifje stelt in hoeveel van het totale gasgebruik groen is.
+        Groengas wordt gewoonlijk gemaakt door bacterieën die biologisch materiaal
+        verteren met daarna een opwerkingsstap tot aardgaskwaliteit. In de toekomst
+        wordt groengas mogelijk ook gemaakt door biomassa te vergassen, deze technologie
+        is in te stellen bij <a href="/scenario/supply/biomass/greengas-production">groengasproductie</a>.
+    natural_gas_total_share:
+      title: Aardgas
+      short_description: ''
+      description: "Dit schuifje stelt in welk percentage van alle gasgebruik aardgas
+        is. Aardgas is een relatief schone fossiele brandstof die vooral wordt gebruikt
+        om warmte en elektriciteit te maken. Het wordt nog maar weinig voor transport
+        ingezet.\r\n<br/>Naast CO<sub>2</sub> leidt de verbranding van gas ook vaak
+        tot uitstoot van NO<sub>x</sub>."
+    energy_treatment_natural_gas_share:
+      title: Aardgas
+      short_description: 
+      description: Welk percentage van het aardgas in het nationale gas netwerk is
+        aardgas?
+    energy_regasification_lng_share:
+      title: Hervergast LNG
+      short_description: 
+      description: Welk percentage van het gas in het nationale gasnetwerk is hervergast  LNG?
+        Vloeibaar aardgas wordt geïmporteerd vanuit met name Noorwegen en het Midden-Oosten,
+        dan hervergast tot aardgas bij import terminals en tot slot het gas netwerk
+        ingevoerd.  In vloeibare vorm (dus als LNG) wordt het enkel in de transport
+        sector gebruikt.

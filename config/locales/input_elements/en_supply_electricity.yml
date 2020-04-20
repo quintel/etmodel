@@ -1,0 +1,476 @@
+---
+en:
+  input_elements:
+    capacity_of_energy_chp_local_engine_biogas:
+      title: Biogas CHP
+      short_description: 
+      description: "A CHP produces both heat and electricity. Here you can set the
+        capacity of biogas CHPs that supply heat for district heating.\r\n</br>"
+    capacity_of_energy_chp_local_wood_pellets:
+      title: Biomass CHP
+      short_description: 
+      description: "A CHP produces both heat and electricity. Here you can set the
+        capacity of biomass CHPs that supply heat for district heating.\r\n</br>"
+    capacity_of_energy_power_turbine_hydrogen:
+      title: Hydrogen turbine
+      short_description: 
+      description: "Here you can build hydrogen turbine power plants. At the moment,
+        these turbines are not used (yet) on a large scale. Because hydrogen turbine
+        technology is very similar to natural gas turbines, we assume that both plants
+        have the same specifications. <br /><br />\r\n\r\nHydrogen turbines are less
+        efficient than combined cycle gas turbines (CCGT), but have the advantage
+        that their production can be scaled up or down very quickly. These turbines
+        are therefore very suitable for providing power during demand peaks. Although
+        the number of operating hours and total electricity production of these plants
+        is typically limited, they can play an important role in balancing the energy
+        system. <br />"
+    capacity_of_energy_power_combined_cycle_hydrogen:
+      title: Hydrogen plant (CCGT)
+      short_description: 
+      description: 'Here you can build capacity of combined cycle hydrogen plants.
+        At the moment, these turbines are not used (yet) on a large scale. Because
+        combined cycle hydrogen plant technology is very similar to combined cycle
+        gas plants, we assume that both plants have the same specifications. '
+    capacity_of_energy_power_geothermal:
+      title: Geothermal electric
+      short_description: ''
+      description: "This builds electric power plants. Electricity is generated using
+        heat from more than 3 km underground. \r\n<br/><br/>\r\nGenerating electricity
+        requires much higher temperatures than geothermal heat for used in buildings
+        or greenhouses. Whether it is an attractive option is partly determined by
+        how far underground these high temperatures are found."
+    capacity_of_energy_power_solar_pv_solar_radiation:
+      title: Solar PV plants
+      short_description: ''
+      description: "With this slider you build centralized plants of photovoltaic
+        solar power panels. These are not mounted on roofs, but are usually placed
+        in a field.<br/><br/>\r\n Like wind power, solar power output fluctuates over
+        time, but in a more predictable way, making it easier to keep the electricity
+        grid in balance. Still, the impact of installing large numbers of solar panels
+        can be large, because electricity is fed back into the local grid. This may
+        require balancing solutions at the local level for the grid. In some cases
+        it is smart to connect solar parks to only a certain percentage of the peak
+        power, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.\r\n<br/>\r\n"
+    capacity_of_energy_power_solar_csp_solar_radiation:
+      title: Concentrated solar power
+      short_description: ''
+      description: "This builds a 50 MWe concentrated solar power (CSP) plant with
+        heat storage. Such a plant is very attractive in sunny desert-like areas,
+        but less so in Northern Europe. It needs direct sunlight, which is concentrated
+        by concave mirrors to produce heat and generate electricity. A plan called
+        'Desertec' has been launched to build a huge number of CSP plants in northern
+        Africa and the Middle East, which are to export a lot of their power to Europe.
+        This requires vast investments in infrastructure, but could potentially supply
+        a huge amount of power. \r\n\r\n<br/><br/>\r\nThis type of plant stores the
+        heat, allowing it to keep on producing electricity until several hours after
+        sundown.\r\n\r\n<br/><br/> \r\n<a href=\"/units\">More information on units...</a>\r\n\r\n<br/><br/>
+        \r\n<object style=\"height: 344px; width: 425px\"><param name=\"movie\" value=\"http://www.youtube.com/v/QXURvISjh2A\"><param
+        name=\"allowFullScreen\" value=\"true\"><param name=\"allowScriptAccess\"
+        value=\"always\"><embed src=\"http://www.youtube.com/v/QXURvISjh2A\" type=\"application/x-shockwave-flash\"
+        allowfullscreen=\"true\" allowScriptAccess=\"always\" width=\"425\" height=\"300\"></object>"
+    capacity_of_energy_power_ultra_supercritical_crude_oil:
+      title: Oil-fired
+      short_description: ''
+      description: "Here you can build oil plants. It is often possible to burn natural
+        gas in these plants as well. \r\n<br/><br/>\r\nIt is more profitable to refine
+        crude oil into many different products than it is to burn it directly, especially
+        since cheaper fossil fuels exist (e.g. coal). For that reason these plants
+        are relatively rare.\r\n<br/><br/> \r\nThe input of the slider (in MW) is
+        converted to a (partial) number of the plant described above.\r\n"
+    capacity_of_energy_power_engine_diesel:
+      title: Diesel generator
+      short_description: 
+      description: "This is a small diesel generator of 2 MWe. <br/>\r\nA diesel generator
+        is the combination of a diesel engine with an electric generator to generate
+        electrical energy. Although they are expensive to run, their relative simplicity,
+        reliability and safety make them attractive for use in places without connection
+        to the power grid, as emergency power supply if the grid fails, as well as
+        for more complex applications to stabilize the power grid. \r\n<br/>\r\nThe
+        technical parameters used are based on the assumption that the diesel generator
+        does not run at base load, but rather to stabilize the grid or as backup power
+        supply, meaning it only runs occasionally.\r\n<br/><br/>\r\nThe input of the
+        slider (in MW) is converted to a (partial) number of the plant described above."
+    capacity_of_energy_power_hydro_river:
+      title: River
+      short_description: ''
+      description: This builds capacity of small run-of-the-river hydro-electric plant
+        in a large river. The slidersetting is converted to relatively small plants
+        (with production capacity ~10 MWe). The limited slope causes the small capacity.
+        The total production potential for any country tends to be limited, therefore.
+        Still, because of their relatively long life and reliability, these plants
+        are an interesting option.
+    capacity_of_energy_power_hydro_mountain:
+      title: Mountain
+      short_description: ''
+      description: This builds large hydro-electric power plants in mountain reservoir.
+        The slidersetting is converted to (parts of) plants of 500 MWe. These plants
+        require huge investments and flooding valleys can have a strongly negative
+        environmental impact. These plants can often be significantly bigger than
+        500 MWe and they can be built as pumped-storage plants, using surplus electricity
+        to pump water from a lower reservoir to a higher one. Because of their relatively
+        long life and their ability to follow electricity demand, these plants are
+        an interesting option.
+    capacity_of_energy_power_supercritical_waste_mix:
+      title: Waste incinerator
+      short_description: ''
+      description: "This builds high energy yield waste-incineration plants. The slidersetting
+        is converted to (a part of) of 55 MWe plants. Waste that can be safely burnt
+        is used to generate electricity. By incinerating waste under the right conditions,
+        it can be processed in a relatively clean way. Rotting or decomposing waste
+        produces strong greenhouse gasses, so incineration is often preferable from
+        an environmental point of view.<br/><br/>\r\nThe maximum potential for these
+        power plants is limited by available domestic waste. We assume no waste will
+        be imported."
+    capacity_of_energy_chp_supercritical_waste_mix:
+      title: Waste CHP
+      short_description: 
+      description: "This builds a high energy yield waste-incineration plant that
+        delivers heat to a central heating grid (60 MWe and 33 MWth). Waste that can
+        be safely burnt is used to generate electricity and heat. By incinerating
+        waste under the right conditions, it can be processed in a relatively clean
+        way. Rotting or decomposing waste produces strong greenhouse gasses, so incineration
+        is often preferable from an environmental point of view.<br/><br/>\r\nThe
+        maximum potential for these power plants is limited by available domestic
+        waste. We assume no waste will be imported.\r\n<br/><br/>\r\nThe input of
+        the slider (in MW) is converted to a (partial) number of the plant described
+        above."
+    capacity_of_energy_power_nuclear_gen3_uranium_oxide:
+      title: Nuclear 3rd Gen
+      short_description: ''
+      description: "This builds nuclear power plants of the latest type (3rd generation,
+        EPR). <br/>\r\nOf all power plants, obtaining the necessary permits and building
+        a nuclear power plant takes the longest (11-12 years on average). It is questionable
+        if it is possible to build more than a few nuclear power plants per country
+        in the coming three decades. This becomes even more evident when you factor
+        in public opinion, an imminent shortage of technicians with the required expertise
+        and a shortage of production capacity for nuclear reactor vessels on a mid-term
+        basis. <br/><br/>\r\n\r\nEnvironmental groups argue that producing nuclear
+        fuel (enriched uranium) results in CO<sub>2</sub> emissions. This is true,
+        of course, but the same can be said of coal mining and the production of steel
+        and concrete for wind turbines. For now, CO<sub>2</sub> emissions from such
+        activities are not consided.\r\n\r\n<br/><br/> \r\nThe input of the slider
+        (in MW) is converted to a (partial) number of the plant described above.\r\n<br/><br/>
+        \r\nNuclear plants are expensive to build and relatively cheap to run, so
+        they tend to run at maximum capacity as much as possible (more than 80% of
+        the time).\r\n"
+    capacity_of_energy_power_nuclear_gen2_uranium_oxide:
+      title: Nuclear conventional
+      short_description: ''
+      description: "This builds nuclear power plants of an older type of nuclear power
+        plant. In reality, these plants will not be built anymore and are included
+        mainly to show the difference between modern nuclear plants and older types.<br/>\r\nIf
+        you want to build nuclear power plants, please build the modern type of plant.
+        The capacity is converted to plants of 1,650 MWe.\r\n<br/><br/> \r\n"
+    merit_order_subtype_of_energy_power_nuclear_uranium_oxide: 
+    capacity_of_energy_power_ultra_supercritical_coal:
+      title: Pulverized coal
+      short_description: ''
+      description: "800 megawatt electric (MWe) ultra-supercritical pulverized coal-fired
+        plant. Of all types of power plants, coal and lignite-fired ones contribute
+        most to pollution of the environment. This is the most common type of modern
+        coal-fired power plant in rich countries with relatively strict regulations
+        for air pollution. Also see information in section \"Costs\". \r\n\r\n<br/><br/>\r\nA
+        coal-fired power plant is a baseload power plant, meaning it is producing
+        at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/>\r\nThe input
+        of the slider (in MW) is converted to a (partial) number of the plant described
+        above."
+    capacity_of_energy_power_ultra_supercritical_ccs_coal:
+      title: Pulverized coal CCS
+      short_description: ''
+      description: "The same pulverized coal-fired plant as above. This one uses capture
+        and storage of most of the produced CO<sub>2</sub>. This technology is called
+        'Carbon Capture and Storage' (CCS). Because CCS costs energy, this power plant
+        has a lower effective production capacity than a standard coal-fired power
+        plant. To make the same amount of electricity, more fuel is burnt. <br/>\r\nThe
+        CCS plant contributes less to air pollution by CO<sub>2</sub> and other materials
+        than its non-CCS counterpart. Also see information in section 'Costs'. \r\n<br/><br/>\r\nA
+        coal-fired power plant is a baseload power plant, meaning it is producing
+        at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/> \r\nThe input
+        of the slider (in MW) is converted to a (partial) number of the plant described
+        above."
+    capacity_of_energy_power_combined_cycle_coal:
+      title: Coal IGCC
+      short_description: ''
+      description: "Integrated Gasification Combined Cycle (IGCC) plant. This is an
+        800 MWe coal gasification plant. In theory, this type of plant can also burn
+        gasified biomass and even some forms of waste. These plants are less polluting
+        than pulverized coal-fired ones. <br/>Also see information in section 'Costs'.\r\n\r\n<br/><br/>\r\nA
+        coal-fired power plant is a baseload power plant, meaning it is producing
+        at maximum capacity more than 75% of the time. Coal-gasification does make
+        this plant more flexible than its solid coal-fired counterparts.\r\n\r\n<br/><br/>
+        \r\nThe input of the slider (in MW) is converted to a (partial) number of
+        the plant described above.\r\n "
+    capacity_of_energy_power_combined_cycle_ccs_coal:
+      title: Coal IGCC CCS
+      short_description: ''
+      description: "This is the same IGCC plant as above, except that it captures
+        and stores most of the produced CO<sub>2</sub>. This is called Carbon Capture
+        and Storage (CCS). Because CCS costs energy, this power plant has a lower
+        effective production capacity than a standard IGCC power plant. To make the
+        same amount of electricity, more fuel is burnt. \r\n<br/> Also see information
+        in section 'Costs'. \r\n\r\n<br/><br/> \r\n\r\nThe input of the slider (in
+        MW) is converted to a (partial) number of the plant described above."
+    capacity_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
+      title: Lignite oxyfuel CCS
+      short_description: ''
+      description: "800 MWe coal or lignite power plant using capture and underground
+        storage of CO<sub>2</sub>. This plant burns fuel in the presence of 100% oxygen,
+        making the fuel burn better. The exhaust fumes therefore contain higher concentrations
+        of CO<sub>2</sub>, making it cheaper to capture and store it underground.
+        \r\nThis experimental technology is called oxyfuel 'Carbon Capture and Storage'
+        (CCS). Because CCS costs energy, this power plant has a lower effective production
+        capacity than a standard coal-fired power plant. To make the same amount of
+        electricity, more fuel is burnt.\r\n<br/> Also see information in section
+        'Costs'. \r\n\r\n<br/><br/> \r\nThe input of the slider (in MW) is converted
+        to a (partial) number of the plant described above."
+    capacity_of_energy_power_supercritical_coal:
+      title: Coal conventional
+      short_description: ''
+      description: "Here you can build conventional coal-fired plants of 800 MWe.
+        These plants are not built anymore in rich countries, due to environmental
+        restrictions. The power generated is shown in the graph on the right as coal-fired
+        electricity production.\r\n<br/><br/>\r\nA coal-fired power plant is a baseload
+        power plant, meaning it is producing at maximum capacity more than 75% of
+        the time.\r\n\r\n<br/><br/> \r\nThe input of the slider (in MW) is converted
+        to a (partial) number of the plant described above."
+    capacity_of_energy_power_ultra_supercritical_lignite:
+      title: Coal Lignite
+      short_description: ''
+      description: "Here you can build coal lignite-fired plants of 800 MWe. These
+        plants can only be built if there is a local supply of lignite (brown coal).
+        This is the most polluting kind of power plant.The power generated is shown
+        in the graph on the right as coal-fired electricity production.\r\n<br/><br/>\r\nA
+        coal-fired power plant is a baseload power plant, meaning it is producing
+        at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/> \r\nThe input
+        of the slider (in MW) is converted to a (partial) number of the plant described
+        above."
+    capacity_of_energy_chp_ultra_supercritical_lignite:
+      title: Lignite plant for district heat (CHP)
+      short_description: ''
+      description: "This indicates the capacity of large central lignite-fired power
+        plants are used to supply heat to district heating grids. The power generated
+        is shown in the graph on the right as coal-fired electricity production.\r\n<br/><br/> "
+    capacity_of_energy_chp_ultra_supercritical_coal:
+      title: Coal plant for district heat (CHP)
+      short_description: ''
+      description: "Large ultra-supercritical pulverized coal-fired CHP plant. \r\nSuch
+        plants are identical to a common coal plant, except that it also supplies
+        heat to large heating grids. This comes at the expense of some power production.
+        \r\n \r\n\r\n\r\n"
+    capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
+      title: Co-firing coal plant for district heat (CHP)
+      short_description: 
+      description: "Large ultra-supercritical pulverized coal-fired CHP plant. \r\nSuch
+        plants are identical to a common coal plant, except that it also supplies
+        heat to large heating grids. This comes at the expense of some power production.
+        Additionally, this plant co-fires 50% wood-pellets in addition to coal. By
+        changing the capacity of plants with and without co-firing an overall percentage
+        of co-firing can be established between 0% and 50%."
+    capacity_of_energy_power_ultra_supercritical_cofiring_coal:
+      title: Pulverized coal with co-firing
+      short_description: 
+      description: "730 megawatt electric (MWe) ultra-supercritical pulverized coal-fired
+        plant with 50% co-firing of biomass. Of all types of power plants, coal and
+        lignite-fired ones contribute most to pollution of the environment. By co-firing
+        biomass the emission of pollution is reduced. This is the most common type
+        of modern coal-fired power plant in rich countries with relatively strict
+        regulations for air pollution. Also see information in section \"Costs\".
+        \r\n\r\n<br/><br/>\r\nA coal-fired power plant is a baseload power plant,
+        meaning it is producing at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/>
+        \r\nBecause the model uses standard size plants, and in reality both smaller
+        and larger plants may exist, the number of plants installed may not be a whole
+        number.\r\n<br/><br/> \r\nBy changing the amount of plants with and without
+        co-firing an overall percentage of co-firing can be set between 0% and 50%.
+        For example: 1 plant without co-firing and 1 plant with co-firing leads to
+        25% co-firing in total.\r\n<br/><br/>\r\nThe input of the slider (in MW) is
+        converted to a (partial) number of the plant described above."
+    capacity_of_energy_power_wind_turbine_inland:
+      title: Onshore inland
+      short_description: ''
+      description: "This slider builds wind turbines on land. The capacity you set
+        is converted to a number of 3 MWe wind turbines.</br>\r\nWind turbines produce
+        less electricity per MWe than fossil fired plants do, because of varying wind
+        conditions (so called intermitency). Inland wind turbines produce at maximum
+        capacity around 25% of the time. \r\n<br/><br/>\r\nPower fluctuations caused
+        by varying wind conditions can destabilize the electricity grid, if wind power
+        is a substantial part of your production park. Wind also requires back-up
+        or import capacity, for windless periods. Gas-fired power plants may serve
+        this purpose, although storage in electric car batteries may also be an option.
+        An alternative for back-up capacity is making demand for power more flexible.
+        Flexible demand and storage capacity also come in handy when wind production
+        peaks in periods of low demand.\r\n<br/><br/>\r\nPlease note that the installed
+        capacity in the starting scenario may be lower than the actual installed capacity.
+        This is due to two reasons. First, the wind market is growing quite rapidly,
+        which means that a number of turbines came online somewhere during the start
+        year of the scenario, these turbines can only count for the time that they
+        were actually producing electricity. The second reason is that this slider
+        concerns state-of-the-art wind turbines, which are a lot larger and more efficient
+        than the older wind parks that are included in the actual installed capacity.
+        Even though the installed capacity may not be exactly as expected, the actual
+        electricity production from wind turbines in the start scenario is equal to
+        that reported in the country's energy statistics.\r\n<br/><br/>"
+    capacity_of_energy_power_wind_turbine_coastal:
+      title: Onshore coast
+      short_description: ''
+      description: "Here you choose how mucht capacity of wind turbines to build on
+        land at the coastline. The capacity you set is converted to a number of 3
+        MWe wind turbines.\r\n<br/><br/>\r\nThese wind turbines are built on dikes
+        or just next to them in the water. Wind turbines produce less electricity
+        per MWe than fossil-fired or nuclear plants do, because of varying wind conditions.
+        \r\nCoastal wind turbines produce at maximum capacity ~27% of the time.\r\n<br/><br/>\r\nIf
+        wind power is a substantial part of your production park, power fluctuations
+        caused by varying wind conditions can destabilize the electricity grid. Wind
+        also requires back-up or import capacity, for windless periods. Gas-fired
+        power plants may serve this purpose, although storage in electric car batteries
+        may also be an option. An alternative for back-up capacity is making demand
+        for power more flexible. Flexible demand and storage capacity also come in
+        handy when wind production peaks in periods of low demand.\r\n<br/><br/>\r\nPlease
+        note that the installed capacity in the starting scenario may be lower than
+        the actual installed capacity. This is due to two reasons. First, the wind
+        market is growing quite rapidly, which means that a number of turbines came
+        online somewhere during the start year of the scenario, these turbines can
+        only count for the time that they were actually producing electricity. The
+        second reason is that this slider concerns state-of-the-art wind turbines,
+        which are a lot larger and more efficient than the older wind parks that are
+        included in the actual installed capacity. Even though the installed capacity
+        may not be exactly as expected, the actual electricity production from wind
+        turbines in the start scenario is equal to that reported in the country's
+        energy statistics.\r\n<br/><br/>"
+    capacity_of_energy_power_wind_turbine_offshore:
+      title: Offshore
+      short_description: ''
+      description: "Here you choose how much capacity of wind turbines to build at
+        sea.\r\nThe capacity you set is converted to a number of 3 MWe wind turbines.\r\n<br/><br/>\r\nWind
+        turbines produce less electricity per MWe than fossil-fired or nuclear plants
+        do because of varying wind conditions. Offshore wind turbines produce at maximum
+        capacity ~40% of the time, if there is not too much need for maintenance.
+        \r\n<br/><br/>\r\nIf wind power is a substantial part of your production park,
+        power fluctuations caused by varying wind conditions can destabilize the electricity
+        grid. Wind also requires back-up or import capacity, for windless periods.
+        Gas-fired power plants may serve this purpose, although storage in electric
+        car batteries may also be an option. An alternative for back-up capacity is
+        making demand for power more flexible. Flexible demand and storage capacity
+        also come in handy when wind production peaks in periods of low demand.\r\n<br/><br/>\r\nPlease
+        note that the installed capacity in the starting scenario may be lower than
+        the actual installed capacity. This is due to two reasons. First, the wind
+        market is growing quite rapidly, which means that a number of turbines came
+        online somewhere during the start year of the scenario, these turbines can
+        only count for the time that they were actually producing electricity. The
+        second reason is that this slider concerns state-of-the-art wind turbines,
+        which are a lot larger and more efficient than the older wind parks that are
+        included in the actual installed capacity. Even though the installed capacity
+        may not be exactly as expected, the actual electricity production from wind
+        turbines in the start scenario is equal to that reported in the country's
+        energy statistics.\r\n<br/><br/>"
+    capacity_of_energy_power_ultra_supercritical_network_gas:
+      title: Gas conventional
+      short_description: ''
+      description: "A conventional steam turbine gas-fired power plant. \r\n<br/>
+        <br/> \r\nNote: Most new gas-fired plants are combined cycle units (see below)
+        as these are more efficient.\r\n<br/> <br/> \r\nFlexible gas-fired plants
+        are often used for meeting daily electricity demand peaks and therefore produce
+        less electricity per year than coal-fired plants of the same production capacity.\r\n\r\n<br/><br/>
+        \r\nThe input of the slider (in MW) is converted to a (partial) number of
+        the plant described above."
+    capacity_of_energy_power_combined_cycle_network_gas:
+      title: Gas CCGT
+      short_description: ''
+      description: "Here you can build Combined Cycle Gas Turbine (CCGT) power plants
+        consisting of 800 MWe. For more information, see the 'Costs' section.<br/>
+        <br/> \r\nFlexible gas-fired plants are often used for meeting daily electricity
+        demand peaks and therefore produce less electricity per year than coal-fired
+        plants of the same production capacity.\r\n\r\n<br/><br/> \r\nThe input of
+        the slider (in MW) is converted to a (partial) number of the plant described
+        above."
+    capacity_of_energy_chp_combined_cycle_network_gas:
+      title: Large-scale gas plant for district heat (CHP)
+      short_description: ''
+      description: "This builds a Combined Heat and Power (CHP) unit (~120 MWe and
+        ~120 MWth) that runs on gas. The power generated is shown in the graph on
+        the right as 'gas-fired' power production. The heat produced is supplied to
+        the central heating grid.\r\n<br/><br/>\r\nThis large facility typically supplies
+        a large city heating grid and combines a gas turbine with a steam turbine.
+        The CHP is partly used to supply heat to the grid and partly driven by electricity
+        prices. It supplies electricity for ~6000 hours per year and heat for ~4500
+        hours per year."
+    capacity_of_energy_power_combined_cycle_ccs_network_gas:
+      title: Gas CCGT CCS
+      short_description: ''
+      description: "The same gas-fired plant as above. This one uses capture and storage
+        of most of the produced CO<sub>2</sub>. This technology is called 'Carbon
+        Capture and Storage' (CCS). Because CCS costs energy, this power plant has
+        a lower effective production capacity than a standard CCGT power plant. To
+        make the same amount of electricity, more fuel is burnt.\r\n<br/><br/>\r\nFlexible
+        gas-fired plants are often used for meeting daily electricity demand peaks
+        and therefore produce less electricity per year than coal-fired plants of
+        the same production capacity. A CCS plant is less flexible than its non-CCS
+        counterpart."
+    capacity_of_energy_power_turbine_network_gas:
+      title: Gas turbine
+      short_description: 
+      description: "Here you can set capacity of gas turbine power plants. These are
+        less efficient than the combined-cycle gas turbines (CCGT), but have the advantage
+        that they can handle being turned on and off within minutes. \r\nThese turbines
+        are therefore most often used to provide power during demand peaks. \r\n<br/><br/>\r\nAlthough
+        the number of operating hours per year and total electricity production of
+        these plants are quite limited, they are extremely useful to have in your
+        power mix."
+    capacity_of_energy_power_engine_network_gas:
+      title: Gas combustion engine
+      short_description: 
+      description: "This is a power plant made up of 22 reciprocating combustion engine
+        units (18 MWe each), which makes for a 400 MWe power plant. The engines are
+        flexible in terms of what fuel they can use, but in the ETM they are gas-fired.\r\n<br/><br/>\r\nAlthough
+        marginal costs are a bit high for these plants, their total costs are quite
+        low compared to other gas-fired plants, making them an attractive back up
+        option in high wind and solar scenarios.\r\n<br/><br/>\r\nThese power plants
+        are sometimes touted as an excellent solution to the problem of highly variable
+        power production in scenarios that have a lot of installed wind and solar
+        power. Reciprocating engines offer several advantages over traditional power
+        plants. Most important are their flexibility and the speed at which they can
+        vary their power output. \r\n<br/><br/>\r\nEach unit can operate at any load
+        between <1% and 100% without loss of output efficiency. Each unit can also
+        increase its output from 0 to 100% in ~2 minutes, and start delivering power
+        to the grid within 30 seconds of being started, regardless of its off time.
+        Since each <em>plant</em> contains 22 units, the plant can provide anywhere
+        between ~1 MWe and 400 MWe of power to the grid within minutes at most, shut
+        down completely within 1 minute and be back at full power 2 minutes later
+        <em>without any loss of efficiency</em>. This makes it possible to balance
+        large fluctuations in wind power production and maintain grid stability. Power
+        plants with a steam cycle or even gas turbines often lose tens of percents
+        in efficiency when their load drops to below 60 - 70%, making them much less
+        efficient in balancing wind power. \r\n<br/><br/>\r\nThe input of the slider
+        (in MW) is converted to a (partial) number of the plant described above."
+    capacity_of_energy_chp_local_engine_network_gas:
+      title: Small-scale gas plant for district heat (CHP)
+      short_description: 
+      description: "A CHP produces both heat and electricity. Here you can set the
+        capacity of gas CHPs that supply heat for district heating.\r\n</br>"
+    green_gas_total_share:
+      title: Green gas
+      short_description: ''
+      description: This slider sets the percentage of green gas in the gas network.
+        Green gas is conventionally produced by bacteria that digest biological material
+        with an upgrading step to natural gas quality. In the future green gas can
+        also be produced through gasification, which can be chosen in <a href="/scenario/supply/biomass/greengas-production">green
+        gas production</a>.
+    natural_gas_total_share:
+      title: Natural gas
+      short_description: ''
+      description: "This slider sets the percentage of all gas used is natural gas.
+        Natural gas is a relatively clean fossil fuel that is mostly used to generate
+        heat and electricity. It is hardly used as a transport fuel yet.\r\n\r\n<br/>Apart
+        from CO<sub>2</sub> emissions gas combustion also tends to produce NO<sub>x</sub>."
+    energy_treatment_natural_gas_share:
+      title: Natural gas
+      short_description: 
+      description: Which percentage of the natural gas in the national gas network
+        is natural gas?
+    energy_regasification_lng_share:
+      title: Regasified LNG
+      short_description: 
+      description: Which percentage of the natural gas in the national gas network
+        is regasified LNG? LNG is mainly imported from Norway and the Middle East,
+        then regasified to natural gas at import terminals and fed into the national
+        gas network. In liquid form (hence, as LNG) it is only used in the transport
+        sector.

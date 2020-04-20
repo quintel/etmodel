@@ -1,0 +1,290 @@
+---
+nl:
+  input_elements:
+    number_of_buildings:
+      title: Aantal gebouwen
+      short_description: ''
+      description: 'Hoe verwacht je dat het aantal gebouwen zich gaat ontwikkelen?
+        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
+        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
+        van de belangrijkste factoren die de energievraag beïnvloeden. '
+    buildings_useful_demand_electricity:
+      title: Elektriciteit per gebouw
+      short_description: ''
+      description: "Let op: deze verandering van energiegebruik is <strong>exclusief</strong>
+        de efficiëntere technologieën die je in dit gedeelte kunt kiezen (Apparaten,
+        Verlichting, Verwarming & Koeling).\r\n<br/><br/>\r\nHier kun je aangeven
+        hoe jij denkt dat de elektriciteitsvraag per gebouw zich gaat ontwikkelen.
+        Dit hangt vooral af van de welvaartsgroei. Als mensen rijker worden, raken
+        ze gewend aan steeds meer gemak van ICT apparatuur en overige apparaten op
+        hun werk of opleiding.\r\n"
+    buildings_useful_demand_for_space_heating:
+      title: Warmte per gebouw
+      short_description: ''
+      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je in hieronder kunt kiezen (Verwarming & Koeling).\r\n<br/>\r\n<br/>\r\nHier
+        kun je aangeven hoe jij denkt dat de warmtevraag per gebouw zich gaat ontwikkelen.
+        Dit verandert onder meer doordat gebouwen steeds voller komen te staan met
+        elektrische apparaten die warmte produceren. Het is zelfs zo dat gebouwen
+        steeds meer uren per jaar gekoeld moeten worden dan voordat iedereen ging
+        werken met computers, faxen, kopieerapparaten en printers."
+    buildings_useful_demand_cooling:
+      title: Koeling per gebouw
+      short_description: ''
+      description: "Let op: deze verandering van energiegebruik is <strong>exclusief</strong>
+        de efficiëntere technologieën die je in dit gedeelte kunt kiezen (Verwarming
+        & Koeling).\r\n<br/>\r\n<br/>\r\nHier kun je aangeven hoe jij denkt dat de
+        vraag naar koeling per gebouw zich gaat ontwikkelen. Dit verandert onder meer
+        doordat gebouwen steeds voller komen te staan met elektrische apparaten die
+        warmte produceren. Het is zelfs zo dat gebouwen steeds meer uren per jaar
+        gekoeld moeten worden dan voordat iedereen ging werken met computers, faxen,
+        kopieerapparaten en printers."
+    buildings_space_heater_network_gas_share:
+      title: Gasketel
+      short_description: ''
+      description: Deze ketels zijn gasgestookte HR-ketels. Dit zijn zeer efficiënte
+        systemen, maar ze stoten wel CO<sub>2</sub> uit.
+    buildings_space_heater_electricity_share:
+      title: Elektrische kachel/bijstook
+      short_description: ''
+      description: "Electrische kachels zetten elektriciteit direct om in warmte.
+        Op zich is dat een zeer efficiënt proces.\r\n<br/>\r\nToch denken veel mensen
+        dat dit energieverspilling is. Elektriciteit kun je op veel verschillende
+        manieren nuttig inzetten en laagwaardige warmte kun je alleen gebruiken om
+        warm water te maken, of huizen te verwarmen. Uiteraard is de verspilling nog
+        groter als je de  stroom opwekt door kostbare fossiele brandstoffen te verbranden.\r\n<br/><br/>\r\nElektrische
+        kachels of bijstook moeten snel veel warmte kunnen leveren en hebben daarom
+        een groot vermogen. Dit betekent dat ze het elektriciteitsnet sterk belasten.
+        \ Als je wilt zien wat de impact van elektrische bijstook bij warmtepompen
+        is, kun je deze schuif op hetzelfde percentage zetten als de elektrische warmtepomp
+        (bodem) schuif."
+    buildings_space_heater_heatpump_air_water_network_gas_share:
+      title: Gaswarmtepomp
+      short_description: ''
+      description: "Een gaswarmtepomp lijkt op een elektrische warmtepomp, behalve
+        dat de energie voor het proces komt van gas en niet van elektriciteit. Deze
+        warmtepomp gebruikt als bron warmte uit de buitenlucht en niet uit de bodem
+        of het grondwater. Uiteindelijk is deze gaswarmtepomp ongeveer even efficiënt
+        als een warmtepomp op (centraal opgewekte) electriciteit.\r\n<br/><br/>\r\nOp
+        koude winterdagen, als er weinig omgevingswarmte uit de lucht te halen is,
+        kunnen gaswarmtepompen alleen met gas het gebouw verwarmen. Dat is een groot
+        voordeel ten opzichte van elektrische warmtepompen die hun warmte uit de lucht
+        halen (zitten niet in dit model). De laatste hebben extra elektrische bijstook
+        nodig om voldoende warmte te maken en dat zou sterke verzwaring van het elektriciteitsnet
+        nodig maken.\r\n<br/><br/>\r\n<object width=\"640\" height=\"385\"><param
+        name=\"movie\" value=\"http://www.youtube.com/v/L2EA69MTNU4?fs=1&amp;hl=en_US&amp;rel=0\"></param><param
+        name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\"
+        value=\"always\"></param><embed src=\"http://www.youtube.com/v/L2EA69MTNU4?fs=1&amp;hl=en_US&amp;rel=0\"
+        type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\"
+        width=\"425\" height=\"300\"></embed></object>"
+    buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
+      title: El. warmtepomp WKO
+      short_description: ''
+      description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
+        opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
+        bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
+        het huis mee te verwarmen. Als alternatief kan ook de natuurlijke warmte of
+        koude van oppervlaktewater of wegen gebruikt worden.\r\n<br/><br/>\r\nWarmtepompen
+        zijn zeer efficiënt als ze met WKO gecombineerd worden, omdat minder energie
+        hoeft te worden toegevoegd om een gebouw te koelen of te verwarmen. Het is
+        helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
+        (bijvoorbeeld in stedelijk gebied). Daarom is WKO alleen lucratief op grote
+        schaal, zoals voor grote kantoorpanden bijvoorbeeld."
+    buildings_space_heater_wood_pellets_share:
+      title: Biomassaketel
+      short_description: ''
+      description: "Welk percentage van de warmtevraag in kantoren en andere gebouwen
+        wordt ingevuld door biomassa? Biomassaketels zijn goed geschikt voor relatief
+        grotere bedrijfscomplexen met grote warmtevraag, omdat op die manier het transport
+        geconcentreerd kan worden en dat spaart weer transportbrandstoffen. <br/><br/>\r\nDe
+        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
+        je verwachtingen voor brandstofprijzen. Zie ook het onder deel 'Kosten'. Andere
+        relevante invloeden zijn milieuwetten. "
+    buildings_space_heater_crude_oil_share:
+      title: Olieketel
+      short_description: ''
+      description: Hier zie je welk deel van de verwarming door oliegestookte ketels
+        wordt ingevuld. Deze hebben als voordeel dat onder normale omstandigheden
+        de stookolie langzaam en volledig verbrandt, waardoor geen luchtvervuiling
+        wordt geproduceerd (behalve CO<sub>2</sub>). Een groot nadeel is dat de olietanks
+        na een paar decennia in de grond vaak gaan lekken en daarbij behoorlijke schade
+        kunnen doen aan het milieu of de kwaliteit van het drinkwater.
+    buildings_space_heater_district_heating_steam_hot_water_share:
+      title: Warmtenet
+      short_description: 
+      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
+        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
+        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
+        <a href="/scenario/supply/heat" >"Warmtenetten"</a>.
+    buildings_space_heater_coal_share:
+      title: Kolenketel
+      short_description: 
+      description: Hier zie je welk deel van de verwarming door kolengestookte ketels
+        wordt ingevuld.
+    buildings_insulation_level:
+      title: Isolatie
+      short_description: ''
+      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
+        lager is ten opzichte van een slecht geïsoleerd  gebouw (met label E). Oftewel:
+        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
+        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
+        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">Basisregistratie
+        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
+        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentatie</a>.
+        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
+        omdat er geen direct verband is tussen energielabels en isolatie van de schil
+        van een gebouw.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen isolatiekosten,
+        deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten komen uit
+        het energiemodel <a href=\"https://www.pbl.nl/vesta\">Vesta</a>, zie de <a
+        href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentatie</a>
+        voor de precieze berekening. De isolatiekosten voor gebouwen zijn gemodelleerd
+        als een vast bedrag per % warmtevraag-reductie: € 606 per % voor bestaande
+        gebouwen en € 479 per % voor nieuwe gebouwen. "
+    buildings_lighting_standard_fluorescent_electricity_share:
+      title: Conventionele TL-buis
+      short_description: ''
+      description: "Welk deel van verlichting in gebouwen komt van TL-buizen? Het
+        gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren, ziekenhuizen,
+        zwembaden, restaurants, etc. \r\n<br/><br/>\r\nTL-buizen produceren licht
+        doordat een elektrische lading door een gas wordt gestuurd dat in de buis
+        zit. Het gas gaat hierdoor licht geven. Een gemiddelde TL-buis zet elektriciteit
+        10 keer zo efficiënt om in zichtbaar licht dan de traditionele gloeilamp die
+        nog veel in woonhuizen wordt gebruikt. TL-buizen zijn vaak ook duurder dan
+        gloeilampen, maar de aanschafkosten kunnen snel terugverdiend worden door
+        de veel langere levensduur en het verminderde elektriciteitsgebruik.\r\n<br/><br/>\r\nJe
+        kunt een TL-buis niet altijd weggooien zonder het milieu te vervuilen, omdat
+        er vaak kwik en andere schadelijke stoffen zoals kwik in zitten. LED-buizen
+        hebben dit probleem niet. Verder kunnen TL-buizen er niet goed tegen als ze
+        heel vaak aan en uitgezet worden."
+    buildings_lighting_efficient_fluorescent_electricity_share:
+      title: Hoge opbrengst TL-buis
+      short_description: ''
+      description: "Welk deel van verlichting in gebouwen komt van hoge opbrengst
+        TL-buizen?\r\n<br/><br/>\r\nEr zijn veel verschillende soorten hoge opbrengst
+        TL-buizen op de markt. Sommigen hiervan zijn kleiner en dunner dan een conventionele
+        TL-buis. Belangrijker is dat ze tot de helft minder elektriciteit gebruiken
+        dan traditionele TL-buizen. De TL-buizen gaan ook veel langer mee en het licht
+        is beter, waardoor het prettiger is om eronder te werken.\r\n<br/><br/>\r\nTL-buizen
+        produceren licht doordat een elektrische lading door een gas wordt gestuurd
+        dat in de buis zit. Het gas gaat hierdoor licht geven. Een gemiddelde TL-buis
+        zet elektriciteit 10 keer zo efficiënt om in zichtbaar licht dan de traditionele
+        gloeilamp die nog veel in woonhuizen wordt gebruikt. TL-buizen zijn vaak ook
+        duurder dan gloeilampen, maar de aanschafkosten kunnen snel terugverdiend
+        worden door de veel langere levensduur en het verminderde elektriciteitsgebruik.\r\n<br/><br/>\r\nJe
+        kunt een TL-buis niet altijd weggooien zonder het milieu te vervuilen, omdat
+        er vaak kwik en andere schadelijke stoffen in zitten. LED-buizen hebben dit
+        probleem niet. Verder kunnen TL-buizen er niet goed tegen als ze heel vaak
+        aan en uitgezet worden."
+    buildings_lighting_led_electricity_share:
+      title: LED-buis
+      short_description: ''
+      description: "Welk deel van de verlichting in gebouwen komt van LED buizen?\r\n<br/><br/>\r\nLED
+        buizen bestaan uit een aantal licht-emitterende diodes (LEDs, Engels: Light
+        Emitting Diode) die zo gemaakt zijn dat ze gebruikt kunnen worden in standaardarmaturen
+        voor TL-buizen.\r\n<br/><br/>\r\nLED buizen besparen circa 50% elektriciteit
+        ten opzichte van de traditionele TL-buizen. Anders dan bij TL-buizen kunnen
+        LED buizen zonder problemen aan en uitgezet zonder levensduurverlies. Investeringskosten
+        voor LED verlichting is 5 tot 50 keer hoger dan voor TL-buizen. Aan de andere
+        kant maakt hun langere levensduur en lagere elektriciteitsgebruik de LED buis
+        uiteindelijke goedkoper. Hun grootste nadeel op dit moment is dat ze (nog)
+        niet geschikt zijn om een ruimte egaal te verlichten of om genoeg licht te
+        produceren voor een kantooromgeving."
+    buildings_lighting_savings_from_motion_detection_light:
+      title: Bewegingsdetectie
+      short_description: ''
+      description: "Hoe veel gebouwen gebruiken bewegingsdetectie?\r\n<br/><br/>\r\nBewegingsdetectie
+        is een technologie dit 'ziet' of er iemand in een ruimte is. Zodra iemand
+        de ruimte binnenkomt gaat het licht aan en zodra iedereen weer weg is gaat
+        het licht automatisch weer uit.\r\n<br/><br/>\r\nOp deze manier wordt dus
+        de tijd dat een licht aanstaat verminderd tot het minimum. Het zorgt er bijvoorbeeld
+        voor dat lichten niet 's nachts of tijdens de lunch voor niets aan staan."
+    buildings_lighting_savings_from_daylight_control_light:
+      title: Daglicht afhankelijke regeling
+      short_description: ''
+      description: "In hoeveel gebouwen wordt daglicht afhankelijke regeling toegepast?\r\n<br/><br/>\r\nDaglicht
+        afhankelijke regeling is een technologie die aan de hand van de hoeveelheid
+        (dag)licht in een ruimte de lichtsterkte van de verlichting aanpast. Als de
+        zon schijnt en het is licht genoeg in een ruimte staat het licht niet aan,
+        of gedimd. Maar als het donker is of bewolkt past het systeem de verlichting
+        zo aan dat er toch genoeg licht is om te werken.\r\n<br/><br/>\r\nDeze technologie
+        zorgt er dus voor dat lichten niet nutteloos aanstaan omdat er al genoeg licht
+        van buiten komt. In combinatie met bewegingsdetectie kan er voor gezorgd worden
+        dat de lichten alleen aan staan als er mensen binnen in de ruimte zijn en
+        er niet al genoeg licht van buiten is."
+    buildings_space_heater_solar_thermal_share:
+      title: Zonthermische panelen
+      short_description: ''
+      description: Een zonneboiler maakt warm water via zonthermische panelen op je
+        dak. Deze warmte kan gebruikt worden om een gebouw te verwarmen. Zonneboilers
+        worden vaak op daken of in het asfalt van parkeerterreinen geplaatst. Een
+        zonneboiler wordt vaak met een gas CV-ketel gecombineerd om het water (in
+        de winter) verder op te warmen. Ook met een warmtepomp gaat het goed samen.
+    buildings_solar_pv_solar_radiation_market_penetration:
+      title: Zonnepanelen
+      short_description: ''
+      description: "Met dit schuifje stel je het percentage van het potentiële dakoppervlak
+        in waar je zonnepanelen wil installeren. Wil je weten hoeveel vermogen dit
+        is? Kijk dan in de 'Merit order tabel', deze is te vinden in de grafiekenlijst
+        (hier kom je door rechtsbovenaan op 'Meer grafieken bekijken' te klikken).
+        \r\n<br/><br/>\r\n Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
+        gebruikt wordt (in huis) en dus is het niet altijd nodig om de elektriciteit
+        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
+        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
+        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
+        zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen. \r\n<br/>\r\n"
+    buildings_useful_demand_for_appliances:
+      title: Apparaten efficiëntie
+      short_description: ''
+      description: "Hoeveel efficiënter zullen apparaten in de utiliteitsbouw in de
+        toekomst zijn? Geef met de schuif een inschatting van de jaarlijkse toename
+        van de energie-efficiëntie. \r\n<br/><br/>\r\nApparaten in kantoren, hotels,
+        restaurants, ziekenhuizen en zwembaden zorgen voor een flink deel van het
+        energiegebruik. Typische apparaten voor kantoren zijn natuurlijk computers
+        en schermen, printers, faxen, kopieermachines, etc. In hotels, restaurants,
+        zwembaden en met name ziekenhuizen staat meer gespecialiseerde apparatuur,
+        waarvan de betrouwbaarheid mogelijk belangrijker is dan het energiegebruik.
+        \r\n<br/><br/>\r\nNieuwe technologieën reduceren vaak de energieconsumptie.
+        Als apparaten steeds groter worden helpt dat niet altijd. Computerschermen
+        zijn een stuk efficiënter geworden, maar ook een stuk groter en daardoor gebruiken
+        ze niet altijd minder energie dan de kleinere schermen van vroeger."
+    buildings_cooling_heatpump_air_water_network_gas_share:
+      title: Gaswarmtepomp
+      short_description: ''
+      description: Een gaswarmtepomp lijkt op een elektrische warmtepomp, behalve
+        dat de energie voor het proces komt van gas en niet van elektriciteit. Deze
+        warmtepomp gebruikt als bron warmte uit de buitenlucht en niet uit de bodem
+        of het grondwater. Uiteindelijk is hij voor verwarmen ongeveer even efficiënt
+        als je de stroom opwekt met het centrale park van vandaag de dag. Voor koelen
+        is hij minder efficiënt.
+    buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
+      title: El. warmtepomp WKO
+      short_description: ''
+      description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
+        opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
+        bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
+        het huis mee te verwarmen. Als alternatief kan ook de natuurlijke warmte of
+        koude van oppervlaktewater of wegen gebruikt worden.\r\n<br/><br/>\r\nWarmtepompen
+        zijn zeer efficiënt als ze met WKO gecombineerd worden, omdat minder energie
+        hoeft te worden toegevoegd om een gebouw te koelen of te verwarmen. Het is
+        helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
+        (bijvoorbeeld in stedelijk gebied). Daarom is WKO alleen lucratief op grote
+        schaal, zoals voor grote kantoorpanden bijvoorbeeld."
+    buildings_cooling_airconditioning_share:
+      title: Airconditioning
+      short_description: ''
+      description: Hier staat aangegeven hoeveel van de koeling van kantoren, ziekenhuizen,
+        hotels, restaurants, enz door airconditioners gebeurt. Op dit moment gebeurt
+        de meeste koeling in de meeste landen nog met airconditioners.
+    buildings_cooling_collective_cooling_network_electricity_share:
+      title: Koudenetwerk
+      short_description: ''
+      description: 'Een koudenetwerk kan gebruik maken van verschillende bronnen zoals
+        Warmte-koude opslag en diepe meren. In het ETM wordt met het koudenetwerk
+        het gebruik van koude uit diepe meren voor ruimtekoeling in gebouwen bedoeld.
+        Meren van 25 meter diepte of meer kunnen hiervoor gebruikt worden. Water wordt
+        rondgepompd en met behulp van een warmtewisselaar wordt de koude uit het water
+        onttrokken en in het koelingssysteem van een aantal gebouwen ingevoerd. Omdat
+        ''s zomers de hoeveelheid koude opgeslagen in een meer significant afneemt
+        hebben meren slechts een beperkte capaciteit over het jaar genomen. '

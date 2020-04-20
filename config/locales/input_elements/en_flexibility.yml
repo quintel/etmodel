@@ -1,0 +1,416 @@
+---
+en:
+  input_elements:
+    settings_enable_merit_order: 
+    households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity:
+      title: Heat pump (air)
+      short_description: 
+      description: "Currently most heat pumps (air) are installed without a buffer
+        for space heating. \r\n</p>\r\nMost heat pumps (air) require a buffer to prevent
+        unnecessarily\r\nfrequent on and off switching of the compressors. In the
+        default settings of the ETM the buffer for hot water takes care of this.\r\n</p>\r\nIn
+        the future buffers can also be used to store larger amounts of heat. For example
+        through an <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>\r\n</p>\r\nHere
+        you can indicate the buffer size you expect in the future per heat pumps (air)."
+    households_flexibility_water_heating_buffer_size_heatpump_air_water_electricity:
+      title: Heat pump (air)
+      short_description: 
+      description: "In the current situation this buffer represents a tank of 100
+        liter, the typical tank size for a Dutch household.\r\n</p>\r\nIn the future
+        buffers can also be used to store larger amounts of heat.\r\n</p>\r\nHere
+        you can indicate the buffer size you expect in the future per heat pump (air)."
+    households_flexibility_space_heating_buffer_size_heatpump_ground_water_electricity:
+      title: Heat pump ground
+      short_description: 
+      description: "Currently most ground heat pumps are installed without a buffer
+        for space heating. \r\n</p>\r\nMost ground heat pumps require a buffer to
+        prevent unnecessarily\r\nfrequent on and off switching of the compressors.
+        In the default settings of the ETM the buffer for hot water takes care of
+        this.\r\n</p>\r\nIn the future buffers can also be used to store larger amounts
+        of heat. For example through an <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>\r\n</p>\r\nHere
+        you can indicate the buffer size you expect in the future per ground heat
+        pump."
+    households_flexibility_space_heating_buffer_size_hybrid_heatpump_air_water_electricity:
+      title: Hybrid heat pump
+      short_description: 
+      description: "Most hybrid heat pumps are self-regulating. They don't need a
+        buffer to protect the compressor.\r\n</p>\r\nIn the future buffers can also
+        be used to store larger amounts of heat. For example through an <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>\r\n</p>\r\nHere
+        you can indicate the buffer size you expect in the future per hybrid heat
+        pump."
+    households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity:
+      title: Heat pump ground
+      short_description: 
+      description: "In the current situation this buffer represents a tank of 100
+        liter, the typical tank size for a Dutch household.\r\n</p>\r\nIn the future
+        buffers can also be used to store larger amounts of heat.\r\n</p>\r\nHere
+        you can indicate the buffer size you expect in the future per heat pump ground."
+    households_flexibility_water_heating_buffer_size_hybrid_heatpump_air_water_electricity:
+      title: Hybrid heat pump
+      short_description: 
+      description: "With the default settings the hybrid heat pump supplies hot water
+        with gas. In that case a buffer for hot water is not needed.\r\n</p>\r\nBy
+        lowering the threshold COP the electric part of the hybrid heat pump can also
+        supply hot water. This is generally done through a buffer vessel.\r\n</p>\r\nFor
+        a normal Dutch household a buffer of 100 liter (5 kWh) is sufficient. In the
+        future buffers can also be used to store larger amounts of heat.\r\n</p>\r\nHere
+        you can indicate the buffer size you expect in the future per heat pump (air)."
+    transport_car_using_electricity_fast_charging_share:
+      title: Fast charging
+      short_description: 
+      description: "Which fraction of electricity used by electric vehicles is supplied
+        by so-called 'fast charging'? This type of charging typically happens at charging
+        capacities between 11 to 22 kW.\r\n<br>\r\n<br>\r\nThe profile used to describe
+        this type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+    transport_car_using_electricity_hybrid_charging_share:
+      title: Charging everywhere
+      short_description: 
+      description: "Which fraction of electricity used by electric vehicles is supplied
+        by a charging profile which describes people charging at the office as well
+        as at home?\r\n<br>\r\n<br>\r\nThe profile used to describe this type of charging
+        behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+    transport_car_using_electricity_home_charging_share:
+      title: Charging at home
+      short_description: 
+      description: "Which fraction of electricity used by electric vehicles is supplied
+        by people charging exclusively at home? Charging at home typically happens
+        at a capacity of 3.7 kW.\r\n<br>\r\n<br>\r\nThe profile used to describe this
+        type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+    transport_car_using_electricity_regular_charging_share:
+      title: Charging regular (Elaad)
+      short_description: 
+      description: This curve is the regular charging curve from the study <a href="https://refman.energytransitionmodel.com/publications/2099"
+        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
+        from Real Charging Events</a> by ELaad and Jedlix. This study analyses data
+        from 10,000 charging sessions of 140 cars.
+    transport_car_using_electricity_smart_charging_share:
+      title: Charging smart (Elaad)
+      short_description: 
+      description: This curve is the smart charging curve from the study <a href="https://refman.energytransitionmodel.com/publications/2099"
+        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
+        from Real Charging Events</a> by ELaad and Jedlix. This study analyses data
+        from 10,000 charging sessions of 140 cars.
+    flexibility_outdoor_temperature:
+      title: Outdoor temperature
+      short_description: 
+      description: "By how much do you think the outdoor temperature will change in
+        the future?\r\n<br/><br/>\r\nYour choice will affect the useful demand for
+        heating and cooling in households and buildings. To translate a temperature
+        change into a change in useful demand, it is assumed that people will start
+        heating their homes when the outside temperature drops beneath 18 &degC and
+        will cool their homes when it rises above 23 &degC.\r\n<br/><br/>\r\nFor more
+        information about the climate change calculation consult our <a href=\"https://github.com/quintel/documentation/blob/master/general/climate.md\"
+        target =\"_blank\">documentation</a>."
+    settings_weather_curve_set: 
+    flh_of_energy_power_wind_turbine_coastal:
+      title: Onshore coastal
+      short_description: 
+      description: In the ETM coastal wind turbines have 2550 full load hours by default.
+        Because of technological developments it is likely that future wind turbines
+        may produce more electricity per installed capacity than today. By increasing
+        the full load hours for this type of wind turbine, more electricity will be
+        produced with the same number of turbines and the same load on the electricity
+        infrastructure. To make this happen, the slider not only increases the number
+        of full load hours but also changes the shape of the hourly production profile
+        for this type of wind turbine. Typically, the peaks will become broader and
+        flatter with increasing full load hours as the turbine spends more time running
+        at higher capacity. Take a look at the ‘Electricity production per hour’-chart
+        to see the effect of your changes on the coastal wind profile.
+    flh_of_energy_power_wind_turbine_inland:
+      title: Onshore inland
+      short_description: 
+      description: In the ETM inland wind turbines have 1920 full load hours by default.
+        Because of technological developments it is likely that future wind turbines
+        may produce more electricity per installed capacity than today. By increasing
+        the full load hours for this type of wind turbine, more electricity will be
+        produced with the same number of turbines and the same load on the electricity
+        infrastructure. To make this happen, the slider not only increases the number
+        of full load hours but also changes the shape of the hourly production profile
+        for this type of wind turbine. Typically, the peaks will become broader and
+        flatter with increasing full load hours as the turbine spends more time running
+        at higher capacity. Take a look at the ‘Electricity production per hour’-chart
+        to see the effect of your changes on the inland wind profile.
+    flh_of_energy_power_wind_turbine_offshore:
+      title: Offshore
+      short_description: 
+      description: In the ETM offshore wind turbines have 3500 full load hours by
+        default. Because of technological developments it is likely that future wind
+        turbines may produce more electricity per installed capacity than today. By
+        increasing the full load hours for this type of wind turbine, more electricity
+        will be produced with the same number of turbines and the same load on the
+        electricity infrastructure. To make this happen, the slider not only increases
+        the number of full load hours but also changes the shape of the hourly production
+        profile for this type of wind turbine. Typically, the peaks will become broader
+        and flatter with increasing full load hours as the turbine spends more time
+        running at higher capacity. Take a look at the ‘Electricity production per
+        hour’-chart to see the effect of your changes on the offshore wind profile.
+    flh_of_energy_hydrogen_wind_turbine_offshore:
+      title: Offshore wind turbine for H<sub>2</sub>
+      short_description: 
+      description: In the ETM offshore wind turbines have 3500 full load hours by
+        default. Because of technological developments it is likely that future wind
+        turbines may produce more electricity per installed capacity than today. By
+        increasing the full load hours for this type of wind turbine, more electricity
+        will be produced with the same number of turbines.
+    flh_of_solar_pv_solar_radiation:
+      title: Solar PV plants
+      short_description: 
+      description: "In the ETM solar PV panels have 867 full load hours by default.
+        Because of technological developments it is likely that future solar PV panels
+        may produce more electricity per installed capacity than today. By increasing
+        the full load hours for these panels, more electricity will be produced with
+        the same number of panels and the same load on the electricity infrastructure.
+        To make this happen, the slider not only increases the number of full load
+        hours but also changes the shape of the hourly production profile for solar
+        PV plants. Typically, the peaks will become broader and flatter with increasing
+        full load hours as the solar PV panels spend more time at higher capacity.
+        Take a look at the ‘Electricity production per hour’-chart to see the effect
+        of your changes on the solar PV production profile.\r\n</br></br>\r\n"
+    capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
+      title: Power-to-heat boiler
+      short_description: 
+      description: Power-to-heat boilers convert <strong>excess</strong> electricity
+        to heat. This slider allows this heat to be used in the <a href="/scenario/supply/heat/heat-sources">residential
+        district heating network</a>.
+    capacity_of_energy_heat_flexibility_p2h_heatpump_electricity:
+      title: Power-to-heat heat pump
+      short_description: 
+      description: Power-to-heat heat pumps convert <strong>excess</strong> electricity
+        to heat. This slider allows this heat to be used in the <a href="/scenario/supply/heat/heat-sources">residential
+        district heating network</a>.
+    households_flexibility_space_heating_cop_cutoff:
+      title: Space heating
+      short_description: 
+      description: "Here you indicate the threshold COP of hybrid heat pumps for space
+        heating. \r\n<p>\r\nThe default setting is that the electric part of the HHP
+        is used maximally for space heating. With the current gas and electricity
+        price financial optimization for the user is achieved with a threshold COP
+        of  2.6, this can be concluded from the chart on the right.\r\nFor more information
+        about (hybrid) heat pumps see our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentation</a>."
+    households_flexibility_water_heating_cop_cutoff:
+      title: Hot water
+      short_description: 
+      description: "Here you indicate the threshold COP of hybrid heat pumps for hot
+        water.\r\n<p>\r\nThe default setting is that the gas part of the HHP is used
+        for hot water.\r\n<p>\r\nWith the current gas and electricity price financial
+        optimization for the user is achieved with a threshold COP of  3.1.\r\nFor
+        calculations see <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentation</a>"
+    households_flexibility_consumer_gas_price:
+      title: Gas price
+      short_description: 
+      description: |-
+        The rate of a m3 gas in 2020 is on average 81.4 cents in the Netherlands. Of this, 32 cents is for the gas itself (the market price) and 50 cents for the energy tax and the 'opslag duurzame energie' (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br> </br>
+        This slider only has influence on the recommended treshold COP in the chart on the right and not on other ETM calculations.
+    households_flexibility_consumer_electricity_price:
+      title: Electricity price
+      short_description: 
+      description: |-
+        The rate of a kWh power in 2020 is on average 22.5 in the Netherlands. Of this, 7.5 cents is for the electricity itself (the market price) and 15 cents for energy tax and renewable energy storage (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
+        This slider only has influence on the recommended treshold COP in the chart on the right and not on other ETM calculations.
+    interconnectors_availability_for_export:
+      title: Availability for export
+      short_description: 
+      description: It is very likely that not all of the physical interconnector capacity
+        can be used during times of excess electricity production. When there is to
+        much electricity production by wind turbines and solar panels, this is probably
+        also true for the neighbouring countries. Using this slider you can set the
+        percentage of the interconnector capacity that is available for export.
+    interconnectors_availability_for_import:
+      title: Availability for import
+      short_description: 
+      description: It is very likely that not all of the physical interconnector capacity
+        can be used during times of excess electricity production. When there is to
+        much electricity production by wind turbines and solar panels, this is probably
+        also true for the neighbouring countries. Using this slider you can set the
+        percentage of the interconnector capacity that is available for import.
+    interconnectors_interconnector_capacity:
+      title: Interconnector capacity
+      short_description: 
+      description: The interconnectors with neighbouring countries have limited capacity.
+        Using this slider you can change the interconnector capacity from its present
+        value.
+    curtailment_of_households_solar_pv_solar_radiation:
+      title: Solar PV households
+      short_description: 
+      description: With this slider you set the curtailment as a percentage of the
+        peak power. Solar panels on houses are connected to the LV-net in the ETM.
+        The installed capacity can be adjusted <a href="/scenario/demand/households/solar-panels">here</a>.
+    curtailment_of_buildings_solar_pv_solar_radiation:
+      title: Solar PV buildings
+      short_description: 
+      description: With this slider you set the curtailment as a percentage of the
+        peak power. Solar panels on buildings are connected to the LV-net in the ETM.
+        The installed capacity can be adjusted <a href="/scenario/demand/buildings/solar-panels">here</a>.
+    curtailment_of_energy_power_solar_pv_solar_radiation:
+      title: Solar PV plants
+      short_description: 
+      description: With this slider you set the curtailment as a percentage of the
+        peak power. Solar PV plants are connected to the HV-net in the ETM. The installed
+        capacity can be adjusted <a href="/scenario/supply/electricity_renewable/solar-power">here</a>.
+    households_flexibility_p2p_electricity_market_penetration:
+      title: Batteries in households
+      short_description: 
+      description: 'Household batteries are often mentioned as a convenient way to
+        store excess electricity such that you can use it at a later time. Using this
+        slider you can set the percentage of households that is equipped with a household
+        battery. Households batteries in the ETM have a battery volume of 19.8 kWh
+        and can be charged using grid power or solar panels. '
+    transport_car_using_electricity_availability:
+      title: Batteries in electric vehicles
+      short_description: 
+      description: "Electric vehicles could provide a cost-effective way of storing
+        electricity as they contain a relatively large battery. With this slider,
+        you can set which percentage of the electric vehicles' battery is reserved
+        for flexibility purposes. You can set the percentage of electric vehicles
+        in the <a href=\"/scenario/demand/transport_passenger_transport/car-technology\">car
+        technology section of transport</a>.\r\n</br></br>\r\nElectric vehicles in
+        the ETM have a battery volume of 100 kWh. Not all of this volume can be used
+        for flexibility purposes as some of the electricity is needed to fuel the
+        next ride. With this slider you can set the percentage of the battery volume
+        that can be used for flexibility purposes."
+    capacity_of_energy_flexibility_pumped_storage_electricity:
+      title: Reservoirs
+      short_description: 
+      description: "Pumped storage provides a cheap way for large-scale storage of
+        electricity. Electricity can be used to pump water from the lower reservoir
+        to a higher reservoir. At times of high electricity demand electricity is
+        generated by realising the stored water through turbines.\r\n<br/><br/>\r\nPumped
+        storage facilities come in many different sizes. The ETM contains a 500 MW
+        facility as a typical plant. You can set fractional plants to include the
+        desired total capacity of pumped storage. The storage volume of the typical
+        facility is 3 GWh.\r\n<br/><br/>\r\nThe input of the slider (in MW) is converted
+        to a (partial) number of the plant described above."
+    capacity_of_energy_flexibility_hv_opac_electricity:
+      title: Underground pumped hydro storage
+      short_description: 
+      description: The underground pumped hydro storage (UPHS) allows for large-scale
+        storage of electricity. It uses the height difference between two water-reservoirs
+        to store electricity as potential energy. If must-run and volatile electricity
+        production exceeds demand, the excess electricity can be used to pump water
+        to the top reservoir. At a later time, when overproduction has ended, the
+        top reservoir is emptied and the flow of water is used to generate electricity
+        which is returned to the high voltage network. This UPHS has a storage volume
+        of 8400 MWh and can be completely filled in 6 hours.
+    capacity_of_energy_flexibility_mv_batteries_electricity:
+      title: Large-scale batteries
+      short_description: 
+      description: "This large-scale (129 MWh) battery can be used to store excess
+        electricity from must-run and volatile electricity production. At a later
+        time, when overproduction has ended, the stored electricity is returned to
+        the medium voltage network. \r\nAlthough the battery does not react to congestion
+        events, its behavior can help prevent capacity issues in the electricity network.\r\n"
+    co2_emissions_of_imported_electricity_present:
+      title: Present import
+      short_description: 
+      description: "The average emission in gram CO<sub>2</sub> emissions per kWh
+        of the Dutch electricity grid is 527 gram  <a href=\"https://www.cbs.nl/nl-nl/achtergrond/2017/06/rendementen-en-co2-emissie-elektriciteitsproductie-2015\"
+        target =\"_blank\">(CBS, 2015)</a>.\r\n\r\n</p>\r\n\r\nThe European electricity
+        mix has an average of 275.9  gram CO<sub>2</sub> emissions per kWh <a href=\"https://www.eea.europa.eu/data-and-maps/daviz/co2-emission-intensity-3#tab-googlechartid_chart_11_filters=%7B%22rowFilters%22%3A%7B%7D%3B%22columnFilters%22%3A%7B%22pre_config_ugeo%22%3A%5B%22European%20Union%20(28%20countries)%22%5D%7D%7D\"
+        target =\"_blank\">(EEA, 2014)</a>. \r\n\r\n</p>\r\n\r\nYou can find more
+        information about carrier, technology, and country specific emissions per
+        kWh in our <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        target =\"_blank\">documentation</a>. "
+    co2_emissions_of_imported_electricity_future:
+      title: Future import
+      short_description: 
+      description: "What will be the related emissions of imported electricity in
+        the future? \r\n\r\n</p>\r\nThis electricity could come from renewable sources
+        like sun and wind, with an emission close to 0 gram CO<sub>2</sub>/kWh. \r\n\r\n</p>\r\n\r\nOn
+        the other hand, this imported electricity could also be a peek demand just
+        when there is not much wind and sun available. In this case this electricity
+        could come from gas (380 -1000 gCO<sub>2</sub>/kWh), coal (660 -1050 gCO<sub>2</sub>/kWh),
+        or even lignite (800 -1300 gCO<sub>2</sub>/kWh) with quite high CO<sub>2</sub>
+        emissions per kWh. <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        target =\"_blank\">(Turconi et al, 2013)</a>. \r\n\r\n\r\n</p>\r\n\r\nYou
+        can find more information about carrier, technology, and country specific
+        emissions per kWh in our <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        target =\"_blank\">documentation</a>. "
+    capacity_of_energy_hydrogen_flexibility_p2g_electricity:
+      title: Power-to-hydrogen
+      short_description: 
+      description: Power-to-gas plants convert <strong>excess</strong> electricity
+        to hydrogen. This slider allows this hydrogen to be used in the central hydrogen
+        network. Any excess hydrogen is exported. The power-to-gas plants have an
+        input capacity of 10 MWe.
+    capacity_of_flexibility_p2l_electricity:
+      title: Power-to-kerosene
+      short_description: 
+      description: "How much synthetic kerosene do you want to produce?\r\n<br/><br/>\r\nThe
+        production of synthetic kerosene is not yet applied on a commercial scale,
+        mostly because fossil kerosene is still available and affordable. However,
+        global regulations for aviation are in place requiring airlines to offset
+        the growth of their emissions after 2020. This makes it interesting for airlines
+        to consider synthetic kerosene. \r\n<br/><br/>\r\nWith this slider you decide
+        how many 1.9 MWe hydrogen plants should be built for synthetic kerosene production.
+        This hydrogen is produced through electrolysis and to produce kerosene CO
+        is added in the Fischer-Tropsch (FT) synthesis. Note that only the hydrogen
+        production runs on excess electricity and the FT process runs on base load
+        electricity.\r\n<br/><br/>\r\nThe input of the slider (in MW) is converted
+        to a (partial) number of the plant described above."
+    flexibility_p2l_direct_air_capture:
+      title: Direct Air Capture (DAC)
+      short_description: 
+      description: "What percentage of the carbon comes from Direct Air Capture (DAC)?\r\n<br/><br/>
+        \r\nDAC allows us to recycle CO<sub>2</sub> indefinitely and yields negative
+        emissions as we remove CO<sub>2</sub> from the atmosphere. After that, kerosene
+        synthesis and utilisation results in positive emissions, but the net CO<sub>2</sub>
+        addition to the atmosphere is close to zero under the assumption that the
+        process is powered by solar and wind electricity. In fact, we are creating
+        a short-term carbon-cycle. Although research on DAC goes back a long time,
+        including missions to outer space, the first companies aiming to build commercial
+        DAC units and plants were formed in the 2000s. Currently, DAC is a relatively
+        expensive technology. Note that this technology also requires the conversion
+        of CO<sub>2</sub> into CO just like when using a CO<sub>2</sub> point source
+        and therefor also the PEM technology is assumed.\r\n<br/><br/>\r\nIn this
+        model the CO<sub>2</sub> reduction caused by DAC will solely benefit the international
+        aviation sector. \r\n<br/>"
+    flexibility_p2l_point_source_CO:
+      title: Point source CO
+      short_description: 
+      description: "What percentage of the carbon comes from point sources of CO?\r\n<br/><br/>
+        \r\nCompared to using sources of CO<sub>2</sub> for kerosene synthesis, point
+        sources of CO have the advantage that no conversion to CO is needed anymore.
+        However, CO point sources are not abundant, but can be found, especially in
+        steel plants. Another downside is that CO is considered a more useful molecule
+        than CO<sub>2</sub>, so it typically already serves some purpose, although
+        this is usually combustion for heat or electricity generation. Since it can
+        have a higher value, academics and engineers alike have looked into separating
+        CO (from flue gases) for synthesis purposes. This is considered more difficult
+        than CO<sub>2</sub> capture, as CO molecule size is similar to N<sub>2</sub>,
+        but attempts have been successful.\r\n<br/><br/> \r\nIn this model only CO
+        from the steel industry is taken into account.\r\n<br/>"
+    flexibility_p2l_point_source_CO2:
+      title: Point source CO<sub>2</sub>
+      short_description: 
+      description: "What percentage of the carbon comes from point sources of CO<sub>2</sub>?\r\n<br/><br/>
+        \r\nMany industrial and power plants emit waste gasses containing mainly CO<sub>2</sub>.
+        There exist various CO<sub>2</sub> separation techniques, of which adsorption
+        onto a solvent is most common and thus modelled here. Note that starting kerosene
+        synthesis with CO<sub>2</sub> is not optimal; it has to be converted to CO
+        before going into the Fischer-Tropsch process. In this model we have chosen
+        to use electrochemical reduction for this step, also known as the proton-exchange
+        membrane (PEM) technology. \r\n<br/><br/> \r\nThis route is for now a relatively
+        cheap way to capture CO<sub>2</sub> in comparison to DAC. It could be an economic
+        way of starting up production of synthetic kerosene and start reducing emissions
+        by close to 50%. In this model only the steel industry is considered as CO<sub>2</sub>
+        point source, although point sources of CO<sub>2</sub> are readily available
+        in many more industries.\r\n<br/>"
+    flexibility_p2l_co2_reduction_industry:
+      title: Industry
+      short_description: 
+      description: "Which sector should benefit from the CO<sub>2</sub> reduction
+        when CO/CO<sub>2</sub> from industrial flue gasses are used?\r\n<br/><br/>
+        \r\nThe steel industry delivers the CO/CO<sub>2</sub> for the synthetic kerosene
+        production. What percentage of the CO<sub>2</sub> reduction is therefor appropriate
+        to allocate to them?"
+    flexibility_p2l_co2_reduction_bunkers:
+      title: International transport
+      short_description: 
+      description: "Which sector should benefit from the CO<sub>2</sub> reduction
+        when CO/CO<sub>2</sub> from industrial flue gasses are used?\r\n<br/><br/>
+        \r\nThe international aviation sector has chosen to use synthetic kerosene
+        instead of fossil kerosene or bio-kerosene. What percentage of the CO<sub>2</sub>
+        reduction is therefor appropriate to allocate to them?"

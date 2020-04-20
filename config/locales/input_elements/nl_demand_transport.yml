@@ -1,0 +1,544 @@
+---
+nl:
+  input_elements:
+    bunkers_allocated_percentage_aviation:
+      title: Internationale luchtvaart
+      short_description: 
+      description: "Welke percentage van het energiegebruik van internationale luchtvaart
+        moet meegenomen worden in jouw scenario? Het totale energiegebruik omvat alle
+        vliegtuigbrandstoffen die zijn getankt voor internationale luchtvaart en dus
+        niet de brandstoffen die gebruikt zijn door luchtvaartmaatschappijen voor
+        hun wegtransport. De verdeling nationaal/internationaal wordt bepaald op basis
+        van de vertrek- en landingslocaties en niet op basis van de nationaliteit
+        van de luchtvaartmaatschappij.\r\n<br/><br/>\r\nInternationale luchtvaart
+        is niet opgenomen in het Parijse Klimaatakkoord.  Ondertussen is internationale
+        luchtvaart verantwoordelijk voor 3% van de broeikasgassen die Europa uitstoot
+        en meer dan 2% van de wereldwijde broeikasgassen. Sommige mensen beschouwen
+        internationale luchtvaart als een land op zich, als dat het geval zou zijn,
+        dan zou het in de top 10 grootste uitstoters vallen. (<a href=\"https://ec.europa.eu/clima/policies/transport/aviation_en\">EC
+        Climate Action</a>)\r\n<br/><br/>\r\nMerk op dat deze slider een percentage
+        neemt van de totale nationale energievraag van internationale luchtvaart.
+        Dit maakt het mogelijk om bijvoorbeeld de totale nationale energievraag van
+        internationale luchtvaart toe te kennen aan de gemeente waar het internationale
+        vliegveld zich bevindt."
+    bunkers_allocated_percentage_shipping:
+      title: Internationale scheepvaart
+      short_description: 
+      description: "Welke percentage van het energiegebruik van internationale scheepvaart
+        moet meegenomen worden in jouw scenario? Het totale energieverbruik omvat
+        alle brandstoffen die getankt worden voor internationale scheepvaart. De verdeling
+        nationaal/internationaal wordt bepaald op basis van de aankomsthaven en vertrekhaven
+        en niet door de herkomst van het schip.\r\n<br/><br/>\r\nInternationale scheepvaart
+        is ontzettend belangrijk voor het transporteren van goederen over de hele
+        wereld. Deze sector is dan ook verantwoordelijk voor ongeveer 2.5% van de
+        GHG emissions wereldwijd. Vanaf 2018 moeten grote schepen die gebruikmaken
+        van Europese havens hun jaarlijkse emissies rapporteren; dit is de eerste
+        stap in de aanpak om hun uitstoot te reduceren. \r\n(<a href=\"https://ec.europa.eu/clima/policies/transport/shipping_en\">EC
+        Climate Action</a>)\r\n<br/><br/>\r\nMerk op dat deze slider een percentage
+        neemt van de totale nationale energievraag van internationale scheepvaart.
+        Dit maakt het mogelijk om bijvoorbeeld de totale nationale energievraag van
+        internationale luchtvaart toe te kennen aan de gemeente waar de internationale
+        haven zich bevindt."
+    transport_plane_using_kerosene_share:
+      title: Kerosine
+      short_description: ''
+      description: 'Er zijn verschillende fossiele brandstoffen om op te vliegen,
+        maar verreweg het grootste volume bestaat uit kerosine. Alle grote vliegtuigen
+        vliegen op kerosine. '
+    transport_plane_using_bio_ethanol_share:
+      title: Bio-ethanol
+      short_description: ''
+      description: "Biobrandstoffen voor vliegtuigen bevinden zich nog in een experimenteel
+        stadium. Er zijn transatlantische vluchten uitgevoerd, waarbij één van de
+        vier motoren van het vliegtuig op biodiesel draaide. Aangezien vliegtuigen
+        zeer veel hoog-energetische brandstof nodig hebben, is het de vraag of biobrandstoffen
+        ooit significant zullen bijdragen.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen."
+    transport_plane_using_gasoline_share:
+      title: Benzine
+      short_description: 
+      description: Momenteel gebruiken vooral kleinere privé vliegtuigjes benzine.
+        Grotere vliegtuigen hebben over het algemeen een energierijkere brandstof
+        nodig om ver genoeg te kunnen vliegen.
+    transport_bicycle_using_human_power_share:
+      title: Fiets
+      short_description: 
+      description: "Welk percentage van de fietsen zullen nog klassieke door de mens
+        aangedreven fietsen zijn in de toekomst?\r\n<br/><br/>\r\nFietsen is ouderwetse
+        maar nog steeds erg populaire vorm van transport en komt misschien zelfs meer
+        in trek door zijn gezonde en milieuvriendelijke karakter."
+    transport_bicycle_using_electricity_share:
+      title: E-bike
+      short_description: 
+      description: "Zal het aandeel van elektrische bikes (e-bikes) toenemen in de
+        toekomst?\r\n<br/><br/>\r\nElektrische fietsen spelen een belangrijk rol in
+        het uitbreiden van de markt voor fietsen, omdat ze twee voordelen hebben t.o.v.
+        de traditionele fiets: meer snelheid met minder moeite. Hierdoor fietsen op
+        dit moment o.a. veel oudere mensen op e-bikes. Maar ook bedrijven die bijv.
+        eten bezorgen investeren in e-bikes vanwege de financiële voordelen maar ook
+        voor het vergroten van hun groene imago.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_car_using_electricity_share:
+      title: Elektrisch
+      short_description: ''
+      description: "Welk deel van de auto's rijdt in de toekomst volledig op elektriciteit?
+        \r\n<br/><br/>\r\nElektrische auto's gebruiken minder dan de helft van de
+        energie van een dieselauto, van de bron naar de wielen gemeten. De technologie
+        voor de auto's is beschikbaar, maar de benodigde infrastructuur (om op te
+        kunnen laden of accu's te wisselen) is er nog niet. Een typische elektrische
+        sedan heeft een bereik van ~150 - 250 km met een volle accu. Zo'n auto is
+        dus geschikt voor kleine en dichtbevolkte landen. Bovendien zijn elektrische
+        auto's ook ideaal voor elektriciteitsopslag 's nachts als ze staan te laden.
+        Dan moet het laden wel van een afstand gecontroleerd kunnen worden.\r\n<br/><br/>\r\nJe
+        zou kunnen zeggen dat één elektrische auto gelijk is aan 3 plug-in hybride
+        auto's met 'range extender'. Dit zijn elektrische auto's die aan het net opgeladen
+        kunnen worden, maar met een kleine batterij. Een 'range extender' is een kleine
+        benzine motor, die het bereik vergroot door de batterij weer op te laden na
+        50 - 60 km. \r\n<br/><br/>\r\nVergeet niet dat de elektricteit voor de auto
+        nog wel moet worden opgewekt. Als dat met hernieuwbare stroom gebeurt, kunnen
+        elektrische auto's sterk bijdragen aan een hernieuwbare samenleving. Als kolenstroom
+        wordt gebruikt is dat minder het geval. \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen.\r\n"
+    transport_car_using_diesel_mix_share:
+      title: Diesel
+      short_description: ''
+      description: "Welk percentage van alle auto's zal op diesel blijven rijden in
+        de toekomst? \r\n<br/><br/>\r\nHet is mogelijk dat de efficiëntie van deze
+        auto's sneller zal verbeteren als de concurrentie van elektrische auto's sterker
+        wordt. \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_car_using_gasoline_mix_share:
+      title: Benzine
+      short_description: ''
+      description: "Welk percentage van alle auto's zal op benzine blijven rijden
+        in de toekomst? <br/><br/> \r\nHet is mogelijk dat de efficiëntie van deze
+        auto's sneller zal verbeteren als de concurrentie van elektrische auto's sterker
+        wordt. \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_car_using_lpg_share:
+      title: LPG
+      short_description: ''
+      description: "Welk percentage van alle auto's zal op LPG rijden in de toekomst?\r\nDeze
+        auto's rijden ook op benzine als 'back up' brandstof. \r\n<br/><br/>\r\nZie
+        onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_car_using_compressed_natural_gas_share:
+      title: Gas onder druk (CNG)
+      short_description: ''
+      description: "Welk percentage van alle auto's zal op aardgas onder druk rijden
+        in de toekomst? \r\n<br/><br/>\r\nAardgasauto's zijn schoner dan benzine of
+        dieselauto's. Wat energie-efficiëntie betreft, zou je kunnen zeggen dat gas
+        het best kan worden gebruikt om warmte en elektriciteit te maken (WKK) op
+        de plaats waar het gebruikt wordt, dan voor auto's. Verbrandingsmotoren zullen
+        nog wel wat efficiënter worden, maar kunnen nooit zo efficiënt worden als
+        WKK's. Wat vervuiling betreft, zou je kunnen zeggen dat gas het beste gebruikt
+        kan worden om centraal elektriciteit te maken, zodat verbrandingsgassen kunnen
+        worden gezuiverd of zelf afgevangen. De geproduceerde elektriciteit kan dan
+        gebruikt worden om auto's aan te drijven.\r\n<br/><br/>\r\nAardgas onder druk
+        komt van het gasnetwerk. Als in dit scenario groengas wordt bijgemengd in
+        het gasnetwerk dan zullen deze voertuigen ook deels op groengas rijden.\r\n<br/><br/>\r\nZie
+        onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_car_using_hydrogen_share:
+      title: Waterstof
+      short_description: 
+      description: "Welk percentage van alle auto's zal op waterstof rijden in de
+        toekomst? Waterstofauto's worden aan de ene kant veel geprezen, maar aan de
+        andere kant ook stevig bekritiseerd. Zoals voor veel keuzes, hangt de waarde
+        van een waterstofauto af van andere keuzes die je maakt. Waterstof is een
+        energiedrager - geen energiebron -,  dus het zal eerst geproduceerd moeten
+        worden. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\" >waterstofproductiesectie</a>
+        kun je bepalen hoe dat gedaan wordt - door het reformen van methaan (een krachtig
+        broeikasgas) of door groene elektrolyse.\r\n<br/><br/>\r\nWaterstofauto's
+        (in het ETM) zijn Fuel Cell Electric Vehicles (FCEVs), ofwel elektrische auto's
+        met een brandstofcel. Waterstof wordt onder een hele hoge druk van 700 bar
+        opgeslagen in personenauto's om een grote actieradius (van ongeveer 500 km)
+        te garanderen. Waterstof wordt gevoed aan geschakelde groep brandstofcellen,
+        waar het een chemische (redox) reactie ondergaat met zuurstof, elektriciteit
+        genereert en water uitstoot. Op deze manier produceert de brandstofcel de
+        elektriciteit die de (elektro)motor aandrijft. Waterstofauto's zijn daarom
+        ook elektrische auto's, maar zij verschillen van elektrische auto's in de
+        zin dat de elektriciteit niet aan boord in een accu opgeslagen is, maar tijdens
+        het gebruik in de auto gegenereerd wordt.\r\n<br/><br/>\r\nIn combinatie met
+        slimme stroomnetten en energie opslag technologie, kunnen elektrische auto's
+        en waterstofauto's niet alleen mogelijk onze afhankelijkheid van fossiele
+        brandstoffen flink verlagen, maar zelfs functioneren als energie opslag medium
+        of productie technologie. <a href=\"https://www.thegreenvillage.org/projects/hydrolectric\"a>The
+        Green Village</a>, een initiatief van de Technische Universiteit Delft, doet
+        onderzoek naar hoe elektrische auto's gebruikt kunnen worden als meer dan
+        enkel een vervoersmiddel - bijvoorbeeld als minicentrale en voor energie opslag.\r\n<br/><br/>\r\nZie
+        onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_truck_using_gasoline_mix_share:
+      title: Benzine
+      short_description: ''
+      description: "Welk percentage van alle vrachtwagens zal op benzine rijden in
+        de toekomst? \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_truck_using_diesel_mix_share:
+      title: Diesel
+      short_description: ''
+      description: "Welk percentage van alle vrachtwagens zal op diesel blijven rijden
+        in de toekomst? \r\n<br/><br/> \r\nVeel mensen denken dat dit type vrachtwagens
+        nog wel een tijdje gebruikt zullen worden, doordat elektrische vrachtwagens
+        met een goed bereik moeilijker te realiseren zijn dan elektrische auto's.
+        \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_truck_using_electricity_share:
+      title: Elektrisch
+      short_description: ''
+      description: "Welk percentage van alle vrachtwagens zal volledig elektrisch
+        aangedreven zijn in de toekomst?\r\n<br/><br/>\r\nVeel mensen denken dat dieselvrachtwagens
+        nog wel een tijdje gebruikt zullen worden, doordat elektrische vrachtwagens
+        met een goed bereik moeilijker te realiseren zijn dan elektrische auto's.
+        \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_truck_using_compressed_natural_gas_share:
+      title: Gas onder druk (CNG)
+      short_description: ''
+      description: "Welk percentage van alle vrachtwagens zal op aardgas onder druk
+        rijden in de toekomst? Op dit moment rijden in deze categorie vooral bussen
+        voor openbaar vervoer op deze brandstof.\r\n<br/><br/>\r\nAardgas onder druk
+        komt van het gasnetwerk. Als in dit scenario groengas wordt bijgemengd in
+        het gasnetwerk dan zullen deze voertuigen ook deels op groengas rijden.\r\n<br/><br/>\r\nZie
+        onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_truck_using_lng_mix_share:
+      title: Vloeibaar aardgas (LNG)
+      short_description: 
+      description: "Welk percentage van alle vrachtwagen zal op vloeibaar aardgas
+        (LNG) rijden in de toekomst? LNG vrachtwagens kunnen verder rijden op een
+        tanklading dan vrachtwagens op gas onder druk, omdat de energie inhoud van
+        LNG hoger is. LNG vrachtwagens hebben daarentegen wel dure, goed isolerende
+        tanks nodig.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_truck_using_hydrogen_share:
+      title: Waterstof
+      short_description: 
+      description: "Welk percentage van alle vrachtwagens zal op waterstof rijden
+        in de toekomst? <br/><br/>\r\nWaterstof is een energiedrager - geen energiebron
+        -,  dus het zal eerst geproduceerd moeten worden. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
+        >waterstofproductiesectie</a> kun je bepalen hoe dat gedaan wordt - door het
+        reformen van methaan (een krachtig broeikasgas) of door groene elektrolyse.\r\n
+        <br/><br/>\r\nWaterstofvrachtwagens (in het ETM) zijn Fuel Cell Electric Vehicles
+        (FCEVs), ofwel elektrische vrachtwagens met een brandstofcel. Waterstof wordt
+        onder een hele hoge druk van 350 bar opgeslagen in vrachtwagens. Waterstofvoertuigen
+        zijn daarom elektrische voertuigen, maar zij verschillen van elektrische voertuigen
+        in de zin dat de elektriciteit niet aan boord in een accu opgeslagen is, maar
+        tijdens het gebruik gegenereerd wordt.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_bus_using_electricity_share:
+      title: Elektrisch
+      short_description: 
+      description: "Welke percentage bussen zal volledig elektrisch worden in de toekomst?\r\n<br/><br/>\r\nElektrische
+        bussen worden vanuit verschillende landelijke overheden gestimuleerd om één
+        van de primaire vervoersmiddelen te worden. Daarbij worden elektrische bussen
+        ook betaalbaarder doordat de prijs van lithium-ion batterijen blijft afnemen.
+        \r\n<br/><br/>\r\nDeze beide factoren spelen een rol bij het bepalen van het
+        aantal elektrische bussen in de toekomst. Hoe verwacht jij dat het huidige
+        aandeel van elektrische bussen zal veranderen?\r\n<br/><br/>\r\nZie onze <a
+        href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_bus_using_hydrogen_share:
+      title: Waterstof
+      short_description: 
+      description: "Welk percentage van alle bussen zal op waterstof rijden in de
+        toekomst? \r\n<br/><br/>\r\nHet gebruik van waterstof voor transport wordt
+        aan de ene kant veel geprezen, maar aan de andere kant ook stevig bekritiseerd.
+        Zoals voor veel keuzes, hangt de waarde van een waterstofbus af van andere
+        keuzes die je maakt. Waterstof is een energiedrager - geen energiebron -,
+        \ dus het zal eerst geproduceerd moeten worden. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
+        >waterstofproductiesectie</a> kun je bepalen hoe dat gedaan wordt - door het
+        reformen van methaan (een krachtig broeikasgas) of door groene elektrolyse.\r\n<br/><br/>\r\nWaterstofbussen
+        (in het ETM) zijn Fuel Cell Electric Vehicles (FCEVs), ofwel elektrische voertuigen
+        met een brandstofcel. Waterstof wordt gevoed aan geschakelde groep brandstofcellen,
+        waar het een chemische (redox) reactie ondergaat met zuurstof, elektriciteit
+        genereert en water uitstoot. Op deze manier produceert de brandstofcel de
+        elektriciteit die de (elektro)motor aandrijft. Waterstofbussen zijn daarom
+        ook elektrische bussen, maar zij verschillen van elektrische bussen in de
+        zin dat de elektriciteit niet aan boord in een accu opgeslagen is, maar tijdens
+        het gebruik gegenereerd wordt.\r\n<br/><br/>\r\nIn combinatie met slimme stroomnetten
+        en energieopslag-technologiën, kunnen elektrische bussen en waterstofbussen
+        niet alleen mogelijk onze afhankelijkheid van fossiele brandstoffen flink
+        verlagen, maar zelfs functioneren als energieopslag medium of productie technologie.\r\n<br/><br/>\r\nZie
+        onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_bus_using_diesel_mix_share:
+      title: Diesel
+      short_description: 
+      description: "Welk percentage van alle bussen zal op diesel blijven rijden in
+        de toekomst? \r\n<br/><br/>\r\nOp dit moment rijden bijna alle bussen op diesel,
+        maar wellicht heeft de concurrentie van alternatieve aandrijvingstechnologiën
+        invloed op het aantal dieselbussen.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_bus_using_gasoline_mix_share:
+      title: Benzine
+      short_description: 
+      description: "Welk percentage van alle bussen zal op benzine blijven rijden
+        in de toekomst? <br/><br/> \r\nHet is mogelijk dat de efficiëntie van deze
+        bussen sneller zal verbeteren als de concurrentie van elektrische bussen sterker
+        wordt. \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_bus_using_lng_share:
+      title: Vloeibaar aardgas (LNG)
+      short_description: 
+      description: "Welke percentage van alle bussen zullen rijden op vloeibaar aardgas
+        (liquefied natural gas = LNG)?\r\n<br/><br/>\r\nNaarmate de milieuaspecten
+        steeds zwaarder zullen wegen in de transportsector, kan het zo zijn dat LNG
+        meer gebruikt gaat worden omdat het een hogere energiedichtheid heeft vergeleken
+        met diesel. Daarbij is het zo dat LNG een relatief stabielere prijscurve heeft
+        dan andere (fossiele) brandstoffen.  \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_bus_using_compressed_natural_gas_share:
+      title: Gas onder druk (CNG)
+      short_description: 
+      description: "Welk percentage van alle bussen zal op aardgas onder druk rijden
+        in de toekomst? \r\n<br/><br/>\r\nAardgasbussen zijn schoner dan benzine of
+        dieselbussen, die momenteel het meest gebruikt worden. Wat energie-efficiëntie
+        betreft, zou je kunnen zeggen dat gas het best kan worden gebruikt om warmte
+        en elektriciteit te maken (WKK) op de plaats waar het gebruikt wordt, dan
+        voor transport. Verbrandingsmotoren zullen nog wel wat efficiënter worden,
+        maar kunnen nooit zo efficiënt worden als WKK's. Wat vervuiling betreft, zou
+        je kunnen zeggen dat gas het beste gebruikt kan worden om centraal elektriciteit
+        te maken, zodat verbrandingsgassen kunnen worden gezuiverd of zelf afgevangen.
+        De geproduceerde elektriciteit kan dan gebruikt worden om bijvoorbeeld bussen
+        aan te drijven.\r\n<br/><br/>\r\nAardgas onder druk komt van het gasnetwerk.
+        Als in dit scenario groengas wordt bijgemengd in het gasnetwerk dan zullen
+        deze voertuigen ook deels op groengas rijden.\r\n<br/><br/>\r\nZie onze <a
+        href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    bunkers_ship_using_heavy_fuel_oil_share:
+      title: HFO
+      short_description: 
+      description: 'Grote internationale vrachtschepen verbruiken over het algemeen
+        zware stookolie, wat de zwaarste brandstof is dat van ruwe olie verkregen
+        kan worden. '
+    bunkers_ship_using_lng_share:
+      title: LNG
+      short_description: 
+      description: "Vloeibaar aardgas (LNG) is een opkomende brandstof in de scheepvaart.
+        Internationale schepen transporteren zware ladingen over grote afstanden en
+        hebben daarom zeer krachtige motoren en energierijke brandstoffen nodig. Aardgas
+        is een ongeschikte brandstof voor de scheepvaart doordat de energetische dichtheid
+        erg laag is, maar door het vloeibaar te maken wordt deze dichtheid met een
+        factor 600 vergroot - meer dan genoeg om te concurreren met HFO. \r\n</br></br>\r\nVergeleken
+        met HFO, stoot LNG 20% minder broeikasgassen uit door de lagere koolstofinhoud.
+        Daarbij veroorzaakt LNG minder luchtvervuiling; er komt bijvoorbeeld minder
+        NO<sub>x</sub>, SO<sub>x</sub> en fijnstof vrij bij de verbranding. Kortom,
+        LNG is een interessant alternatief voor conventionele brandstoffen."
+    transport_passenger_train_using_coal_share:
+      title: Kolen
+      short_description: ''
+      description: "Kolentreinen zijn nogal ouderwets, maar in minder ontwikkelde
+        delen van de wereld komen ze nog veel voor. Bijna overal is het aantrekkelijk
+        om deze te vervangen door dieseltreinen, omdat die minder energie gebruiken
+        en schoner zijn.\r\n<br/>\r\n<br/>\r\nMinder ontwikkelde landen met grote
+        kolenvoorraden zouden kunnen kiezen om treinen op kolen te laten rijden om
+        zo hun afhankelijkheid van buitenlandse energiebronnen te verlagen."
+    transport_passenger_train_using_diesel_mix_share:
+      title: Diesel
+      short_description: ''
+      description: Dieseltreinen komen nog redelijk veel voor, omdat ze niet afhankelijk
+        zijn van een dure elektrische infrastructuur. Ze zijn zeer geschikt voor afgelegen
+        en dunbevolkte gebieden. Omdat Europa nog een lappendeken van standaarden
+        is voor elektrische bovenleidingen, kunnen elektrische treinen vaak niet probleemloos
+        nationale grenzen passeren.
+    transport_passenger_train_using_electricity_share:
+      title: Elektrisch
+      short_description: ''
+      description: Elektrische treinen zijn de standaard in alle ontwikkelde gebieden
+        in de wereld. Ze zijn zeer energie-efficiënt en schoon, maar niet erg flexibel.
+        Bovendien zijn ze afhankelijk van dure elektrische infrastructuur en daarom
+        zullen ze nooit volledig de dieseltrein vervangen.
+    transport_cars_share:
+      title: Auto's
+      short_description: ''
+      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
+        afgelegd wordt met de auto.
+    transport_passenger_trains_share:
+      title: Treinen
+      short_description: ''
+      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
+        afgelegd wordt met de trein.
+    transport_planes_share:
+      title: Binnenlandse vliegtuigen
+      short_description: ''
+      description: 'Hier kun je aangeven hoeveel procent van de kilometers die we
+        reizen afgelegd wordt met het vliegtuig. Let op: het gaat hier om binnenlandse
+        vluchten. Voor internationaal vliegverkeer, zie <a href="/scenario/demand/transport_international_transport/international-transport">internationaal
+        transport</a>.'
+    transport_useful_demand_passenger_kms:
+      title: Passagiersvervoer
+      short_description: 
+      description: Denk jij dat mensen meer of minder zullen gaan reizen in de toekomst?
+        Hier geef je aan met hoeveel procent per jaar het aantal reizigerskilometers
+        zal veranderen.
+    transport_busses_share:
+      title: Bussen
+      short_description: 
+      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
+        afgelegd wordt met de bus.
+    transport_trams_share:
+      title: Trams/metro's
+      short_description: 
+      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
+        afgelegd wordt met tram en metro.
+    transport_bicycles_share:
+      title: Fietsen
+      short_description: 
+      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
+        afgelegd wordt met de fiets.
+    transport_motorcycles_share:
+      title: Motorfietsen
+      short_description: 
+      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
+        afgelegd wordt met motors en scooters.
+    transport_motorcycle_using_gasoline_mix_share:
+      title: Benzine
+      short_description: 
+      description: "Welk percentage van alle motorfietsen zal benzine gebruiken in
+        de toekomst?\r\n<br/><br/>\r\nHet overgrote deel van alle motorfietsen gebruikt
+        benzine als brandstof. Met name in ontwikkelende steden neemt het aantal benzinemotorfietsen
+        toe, omdat ze gemakkelijk te gebruiken zijn op plekken waar auto's vaak teveel
+        ruimte in nemen. Maar tegelijkertijd komt er ook steeds strengere wetgeving
+        voor benzinemotorfietsen in steden, omdat ze een bijdragen aan luchtvervuiling.
+        Er wordt bijvoorbeeld per 2018 in Amsterdam een milieuzone voor brom- en snorfietsen
+        uit 2010 en ouder ingevoerd.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_motorcycle_using_electricity_share:
+      title: Elektrisch
+      short_description: 
+      description: "Welk percentage van alle motorfietsen zal elektrisch zijn in de
+        toekomst?\r\n<br/><br/>\r\nOp dit moment is het aantal elektrische motorfietsen
+        nog niet zo hoog. De competitie met auto's bij oplaadstations en ook de relatief
+        kleine afzetmarkt zouden redenen hiervoor kunnen zijn. Tegelijkertijd komen
+        er nieuwe innovatieve motorfietsen op de markt, die wellicht populair kunnen
+        worden. Met name in dichtbevolkte steden hebben elektrische motorfietsen veel
+        potentie.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    bunkers_useful_demand_planes:
+      title: Internationale luchtvaart
+      short_description: 
+      description: 'Geef hier aan hoe je verwacht dat het aantal internationale vluchten
+        per jaar zal gaan veranderen in de toekomst. '
+    bunkers_useful_demand_ships:
+      title: Internationale scheepvaart
+      short_description: 
+      description: Geef hier aan hoe je verwacht dat de internationale scheepvaart
+        per jaar zal gaan veranderen in de toekomst.
+    transport_ship_using_diesel_mix_share:
+      title: Diesel / dual fuel
+      short_description: 
+      description: "Schepen voor de binnenvaart worden doorgaans aangedreven door
+        dieselmotoren. Deze motoren kunnen volgens diverse processen en onder hoge
+        en lage druk werken. Afhankelijk van de precieze motor configuratie, kunnen
+        dieselmotoren ook in een zogeheten dual fuel modus opereren waarbij zij zowel
+        diesel als vloeibaar aardgas (LNG) kunnen gebruiken. In deze dual fuel modus,
+        kan het daadwerkelijke brandstofgebruik variëren van 100% diesel tot 1% diesel
+        / 99% LNG. In de <a href=\"/scenario/supply/transport_fuels/domestic-navigation\"
+        >transport brandstoffen sectie</a> kun je de brandstofmix voor schepen met
+        diesel / dual fuel-motoren instellen.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_ship_using_lng_mix_share:
+      title: Vloeibaar aardgas (LNG)
+      short_description: 
+      description: "(Vloeibaar) aardgas-motoren zijn een relatief nieuwe motortechnologie.
+        Dit zijn Ottomotoren die op lage druk werken en geoptimaliseerd zijn voor
+        vloeibaar aardgas (LNG). Hierdoor werken zij enkel op LNG, maar zijn de prestaties
+        wel beter dan die van dual fuel-motoren. Aan de andere kant zorgen dual fuel-motoren
+        wel voor meer flexibiliteit, omdat schepen dan minder afhankelijk zijn van
+        de beschikbaarheid van brandstoffen.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_trucks_share:
+      title: Vrachtwagens
+      short_description: ''
+      description: "Zal het goederenvervoer per vrachtwagen toenemen? In vergelijking
+        met de binnenvaart en het spoor zijn vrachtwagens relatief inefficiënt en
+        vervuilend. Ze zijn wel erg praktisch om goederen precies op hun bestemming
+        te krijgen. Ze zijn dan ook het best geschikt voor transport over korte afstanden.\r\n<br/><br/>\r\nMerk
+        op dat bestelbusjes ook vallen onder vrachtwagens. "
+    transport_ships_share:
+      title: Binnenvaartschepen
+      short_description: ''
+      description: Gaat goederenvervoer met de binnenvaart toenemen of afnemen? Schepen
+        zijn zeer efficiënt, maar afhankelijk van een goede infrastructuur. Daarnaast
+        zijn ze nogal langzaam. Ze zijn dan ook niet geschikt voor vervoer over korte
+        afstanden.
+    transport_useful_demand_freight_tonne_kms:
+      title: Vrachtvervoer
+      short_description: 
+      description: Denk jij dat er meer of minder goederen zullen worden getransporteerd?
+        Hier kan je aangeven met hoeveel procent per jaar het aantal 'ladingtonkilometers'
+        zal veranderen.
+    transport_freight_trains_share:
+      title: Treinen
+      short_description: 
+      description: Denk jij dat het vrachtvervoer per trein gaat toenemen of afnemen?
+        Treinen zijn erg efficiënt, maar afhankelijk van goede infrastructuur.
+    transport_freight_train_using_electricity_share:
+      title: Elektrisch
+      short_description: 
+      description: "Elektrische treinen zijn de standaard in alle ontwikkelde gebieden
+        in de wereld. Ze zijn zeer energie-efficiënt en schoon, maar niet erg flexibel.
+        Bovendien zijn ze afhankelijk van dure elektrische infrastructuur en daarom
+        zullen ze nooit volledig de dieseltrein vervangen.\r\n<br/><br/>\r\nZie onze
+        <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_freight_train_using_diesel_mix_share:
+      title: Diesel
+      short_description: 
+      description: "Dieseltreinen komen nog redelijk veel voor, omdat ze niet afhankelijk
+        zijn van een dure elektrische infrastructuur. Ze zijn zeer geschikt voor afgelegen
+        en dunbevolkte gebieden, of voor internationaal goederentransport. Omdat Europa
+        nog een lappendeken van standaarden is voor elektrische bovenleidingen, kunnen
+        elektrische treinen vaak niet probleemloos nationale grenzen passeren.\r\n<br/><br/>\r\nZie
+        onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_vehicle_using_electricity_efficiency:
+      title: Elektrische voertuigen
+      short_description: ''
+      description: "Hier kun je aangeven hoeveel efficiënter jij denkt dat elektrische
+        voertuigen ieder jaar zullen worden. Elektrische voertuigen zijn alle voertuigen
+        die geëlektrificeerd kunnen worden: auto's, treinen, vrachtwagens, trams,
+        metro's, bussen, motorfietsen en e-bikes.\r\n<br/><br/>\r\nDe grootste efficiëntieverbeteringen
+        verwacht men voor de accu's, aangezien elektromotoren al heel efficiënt zijn
+        van nature. De meeste verliezen vinden dan ook plaats bij het laden en ontladen.\r\n<br/><br/>\r\nZie
+        onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."
+    transport_vehicle_combustion_engine_efficiency:
+      title: Brandstofvoertuigen
+      short_description: ''
+      description: "Hier kun je aangeven hoeveel efficiënter jij denkt dat voertuigen
+        die op fossiele brandstoffen rijden ieder jaar worden. Bijvoorbeeld: nieuwe
+        auto's worden elk jaar ongeveer 2% efficiënter. \r\n<br/><br/>\r\nSommige
+        mensen geloven dat deze voertuigen nog veel zuiniger gaan worden als de concurrentie
+        van elektrische voertuigen toeneemt.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen.\r\n"
+    transport_ships_efficiency:
+      title: Schepen
+      short_description: ''
+      description: "Geef hier aan hoeveel efficiënter schepen volgens jou ieder jaar
+        zullen worden. <br/><br/>\r\nSchepen zijn al een behoorlijk efficiënte vorm
+        van vervoer, maar er is nog ruimte voor verbetering. "
+    transport_planes_efficiency:
+      title: Vliegtuigen
+      short_description: ''
+      description: "Geef hier aan hoeveel efficienter jij denkt dat vliegtuigen ieder
+        jaar zullen worden. \r\n<br/> <br/>\r\nHier bestaat nog ruimte voor verbetering,
+        maar niet heel veel."
+    transport_trains_efficiency:
+      title: Treinen
+      short_description: ''
+      description: Hier kun je aangeven hoeveel efficiënter treinen in de toekomst
+        volgens jou zullen zijn. Treinen hebben nu al een zeer goede energie-efficiëntie.
+    transport_vehicle_using_hydrogen_efficiency:
+      title: Waterstofvoertuigen
+      short_description: 
+      description: "Hier kun je aangeven hoeveel efficiënter jij denkt dat voertuigen
+        die op waterstof rijden ieder jaar worden. Waterstofvoertuigen zijn alle voertuigen
+        die op waterstof kunnen rijden: auto's, bussen and vrachtwagens. \r\n<br/><br/>\r\nAangezien
+        waterstofvoertuigen een vrij nieuwe technologie zijn, is er nog relatief veel
+        ruimte voor verbeteringen. De elektrische motor is al zeer efficiënt, maar
+        de waterstofcellen (het onderdeel van de elektrische auto dat elektriciteit
+        genereert) kunnen beter presteren.\r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentatie
+        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen."

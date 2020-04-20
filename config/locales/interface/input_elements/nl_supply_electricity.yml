@@ -3,17 +3,17 @@ nl:
   input_elements:
     capacity_of_energy_chp_local_engine_biogas:
       title: Biogas WKK
-      short_description: 
+      short_description:
       description: "Een WKK produceert zowel warmte als elektriciteit. Stel hier het
         vermogen aan biogas-WKKs in dat warmte levert aan warmtenetten.\r\n</br>"
     capacity_of_energy_chp_local_wood_pellets:
       title: Biomassa WKK
-      short_description: 
+      short_description:
       description: "Een WKK produceert zowel warmte als elektriciteit. Stel hier het
         vermogen aan biomassa-WKKs in dat warmte levert aan warmtenetten.\r\n</br>"
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
-      short_description: 
+      short_description:
       description: "Met deze schuif kun je waterstofturbines bouwen die elektriciteit
         produceren met waterstof. Omdat waterstofturbines op dit moment (nog) niet
         op grote schaal gebruikt worden, veronderstellen we dat de specificaties gelijk
@@ -27,7 +27,7 @@ nl:
         elektriciteitsnet. <br />"
     capacity_of_energy_power_combined_cycle_hydrogen:
       title: Waterstofcentrale (STEG)
-      short_description: 
+      short_description:
       description: 'Met deze schuif kun je capaciteit van STEG-waterstofcentrales
         opstellen die elektriciteit produceren met waterstof. Omdat STEG-waterstofcentrales
         op dit moment (nog) niet op grote schaal gebruikt worden, veronderstellen
@@ -44,13 +44,15 @@ nl:
     capacity_of_energy_power_solar_pv_solar_radiation:
       title: Zonnecentrales PV
       short_description: ''
-      description: "Met dit schuifje bouw je een grootschalig zonnepark.<br/>\r\nNet
-        als windstroom, is zonnestroom fluctuerend. Toch is de variatie van zonnestroom
+      description: "Met dit schuifje bouw je een grootschalig zonnepark.<br/>\r\nNet als
+        windstroom, is zonnestroom fluctuerend. Toch is de variatie van zonnestroom
         beter te voorspellen. Als zeer veel zonnepanelen geïnstalleerd worden, kan
         het nodig zijn om oplossingen te vinden voor onbalans op het laagspanningsnet.
         In sommige gevallen is het slim om zonneparken aan te sluiten op slechts een
         bepaald percentage van het piekvermogen, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen.\r\n<br/>\r\n"
+        instellen.\r\n<br/><br />\r\n
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\" >hier</a> aanpassen<br
+        />"
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Geconcentreerde zonnestroom
       short_description: ''
@@ -81,7 +83,7 @@ nl:
         (deel)aantallen van de centrale zoals hierboven omschreven."
     capacity_of_energy_power_engine_diesel:
       title: Dieselgenerator
-      short_description: 
+      short_description:
       description: "Dit is een dieselgenerator van 2 MWe <br/>\r\nEen dieselgenerator
         is de combinatie van een dieselmotor en een generator om stroom te produceren.
         Hoewel deze machines vrij duur zijn in het gebruik, zijn vanwege hun relatieve
@@ -125,7 +127,7 @@ nl:
         voor deze technologie."
     capacity_of_energy_chp_supercritical_waste_mix:
       title: Afval-WKK
-      short_description: 
+      short_description:
       description: "Hiermee bouw je een hoogrendment afvalverbrandingscentrale die
         warmte levert aan een warmtenet (60 MWe, 33 MWth). Brandbaar afval (huishoudelijk-
         en sloop-afval) wordt gebruikt om elektriciteit en warmte op te wekken. Door
@@ -159,7 +161,7 @@ nl:
         te tonen met de moderne 3e generatie centrales. <br/>\r\nAls je kerncentrales
         wilt bouwen, bouw dan een moderne 3e generatie kerncentrale. De capaciteit
         wordt omgezet in centrales van 1.650 MWe.\r\n<br/><br/>\r\n"
-    merit_order_subtype_of_energy_power_nuclear_uranium_oxide: 
+    merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
     capacity_of_energy_power_ultra_supercritical_coal:
       title: Poederkolen
       short_description: ''
@@ -263,7 +265,7 @@ nl:
         in warmteuitkoppeling beperkt."
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
       title: Bijstookkolencentrale met warmtelevering (WKK)
-      short_description: 
+      short_description:
       description: "Grote ultra-superkritische poederkolen WKK centrale. Deze centrale
         is hetzelfde als de elektriciteitscentrale, behalve dat bij deze ook warmte
         wordt afgetapt voor het centrale warmtenet. Daarnaast verstookt deze WKK centrale
@@ -276,7 +278,7 @@ nl:
         kolencentrale zijn de extra investeringen in warmteuitkoppeling beperkt."
     capacity_of_energy_power_ultra_supercritical_cofiring_coal:
       title: Poederkolen met bijstook
-      short_description: 
+      short_description:
       description: "Ultra-superkritische poederkolencentrale van 730 megawatt elektrisch
         (MWe) met bijstook van biomassa van 50%. Dit is de meest voorkomende kolencentrale
         in landen met relatief strenge milieuwetgeving. Van alle typen elektriciteitsopwek
@@ -421,7 +423,7 @@ nl:
         niet-CCS 'soortgenoten'."
     capacity_of_energy_power_turbine_network_gas:
       title: Gasturbine
-      short_description: 
+      short_description:
       description: "Hier kun je opgesteld vermogen van gasturbine centrales instellen.
         Deze zijn niet zo efficiënt als de twee-staps Stoom en Gas (STEG) centrales,
         maar hebben als voordeel dat ze er goed tegen kunnen om vaak aan- en uitgezet
@@ -430,7 +432,7 @@ nl:
         dus beperkt is, zijn ze zeer nuttig om te hebben."
     capacity_of_energy_power_engine_network_gas:
       title: Gasmotor
-      short_description: 
+      short_description:
       description: "Deze centrale bestaat uit 22 motor-generator eenheden van ieder
         18 MWe en heeft dus een vermogen van 400 MWe. De motoren zijn flexibel wat
         de brandstofvraag betreft, maar in het ETM draaien ze op gas.\r\n<br/><br/>\r\nHoewel
@@ -457,7 +459,7 @@ nl:
         hierboven omschreven."
     capacity_of_energy_chp_local_engine_network_gas:
       title: Kleinschalige gascentrale met warmtelevering (WKK)
-      short_description: 
+      short_description:
       description: "Een WKK produceert zowel warmte als elektriciteit. Stel hier het
         vermogen aan gas WKKs in dat warmte levert aan warmtenetten.\r\n</br>"
     green_gas_total_share:
@@ -478,12 +480,12 @@ nl:
         tot uitstoot van NO<sub>x</sub>."
     energy_treatment_natural_gas_share:
       title: Aardgas
-      short_description: 
+      short_description:
       description: Welk percentage van het aardgas in het nationale gas netwerk is
         aardgas?
     energy_regasification_lng_share:
       title: Hervergast LNG
-      short_description: 
+      short_description:
       description: Welk percentage van het gas in het nationale gasnetwerk is hervergast  LNG?
         Vloeibaar aardgas wordt geïmporteerd vanuit met name Noorwegen en het Midden-Oosten,
         dan hervergast tot aardgas bij import terminals en tot slot het gas netwerk

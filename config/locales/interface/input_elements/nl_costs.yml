@@ -12,7 +12,7 @@ nl:
         kerncentrale."
     costs_hydrogen:
       title: Waterstof (import)
-      short_description: 
+      short_description:
       description: "Deze schuif stelt de toekomstige groothandelsprijs voor waterstof
         in, uitgedrukt in €/MWh. De schuif bepaalt de kosten voor geïmporteerde waterstof
         en heeft invloed op de positie van waterstofturbines in de 'merit order' van
@@ -83,13 +83,13 @@ nl:
         De kosten worden vergeleken met de kosten van vandaag de dag. '
     costs_wacc_households:
       title: Huishoudens
-      short_description: 
+      short_description:
       description: 'Binnen deze categorie vallen alle technologieën in huishoudens,
         inclusief zonnepanelen en zonneboilers. NB: warmtenetten en warmtenetketels
         vallen onder ''commerciële / bewezen technologieën''.'
     costs_wacc_public_infrastructure:
       title: Publieke fysieke infrastructuur
-      short_description: 
+      short_description:
       description: In deze categorie valt de publieke infrastructuur. Voor het ETM
         betekent dit op dit moment enkel het elektriciteitsnetwerk. Waterstofinfrastructuur
         valt onder de categorie 'nieuwe technologieën'. Warmtenetten vallen onder
@@ -97,13 +97,13 @@ nl:
         vaste jaarlijkse kosten die niet beïnvloed worden door de WACC.
     costs_wacc_proven_technologies:
       title: Commerciële / bewezen technologieën
-      short_description: 
+      short_description:
       description: In deze categorie vallen alle commercieel verkrijgbare en bewezen
         technologieën. Deze categorie omvat de meeste technologieën die in het ETM
         inzetbaar zijn.
     costs_wacc_unproven_technologies:
       title: Nieuwe / onvolwassen technologieën
-      short_description: 
+      short_description:
       description: 'Deze categorie omvat alle onvolwassen / onbewezen / risicovolle
         technologieën. Op dit moment worden deze technologieën meegenomen: waterstoftechnologieën
         (electrolyzers, power plants, infrastructuur, opslag), synthetische kerosine,
@@ -111,14 +111,14 @@ nl:
         (SCWG) en Ondergrondse Pomp Accumulatie Centrale (OPAC).'
     costs_ccs_per_ton_in_industry:
       title: CCS-kosten
-      short_description: 
+      short_description:
       description: 'CCS kosten zijn afhankelijk van veel factoren, waaronder: het
         proces waarvan CCS afgevangen wordt, hoe CO2 afgevangen wordt, hoe het wordt
         getransporteerd, over welke afstand het wordt getransporteerd en hoe het wordt
         opgeslagen.'
     investment_costs_flexibility_p2h_electricity:
       title: Elektrische boilers
-      short_description: 
+      short_description:
       description: Power-to-heat-installaties produceren warmte met elektriciteitsoverschotten.
         In het ETM kan power-to-heat worden ingezet bij <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households">huishoudens</a>
         en in de <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">industrie</a>.
@@ -126,7 +126,7 @@ nl:
         in de toekomst gaan veranderen. <br />
     investment_costs_hydrogen_electrolysis:
       title: Power-to-gas
-      short_description: 
+      short_description:
       description: Power-to-gas-installaties gebruiken elektriciteit voor het produceren
         gas (zoals waterstof of methaan). Dit gebeurt door middel van elektrolyse.
         Dit schuifje bepaalt de verandering in investeringskosten voor elektrolyse-apparaten.
@@ -156,41 +156,40 @@ nl:
         nemen.
     costs_biogas:
       title: Biogas
-      short_description: 
+      short_description:
       description: Hoeveel zal biogas kosten in de toekomst?
     costs_greengas:
       title: Groengas
-      short_description: 
+      short_description:
       description: Hoeveel zal groengas kosten in de toekomst?
     costs_wood:
       title: Hout
-      short_description: 
+      short_description:
       description: Hoeveel zal hout kosten in de toekomst?
     costs_biodiesel:
       title: Biodiesel
-      short_description: 
+      short_description:
       description: Hoeveel zal biodiesel kosten in de toekomst?
     costs_bio_ethanol:
       title: Bio-ethanol
-      short_description: 
+      short_description:
       description: Hoeveel zal bio-ethanol kosten in de toekomst?
     costs_heat_infra_indoors:
       title: Inpandige kosten
-      short_description: 
+      short_description:
       description: Met deze schuif stel je de toe- of afname in die je verwacht voor
         de investeringskosten en onderhouds- en beheerkosten van inpandige warmte-infrastructuur.
         Hieronder vallen inpandige leidingen en warmtemeters. Zie <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
         target ="_blank">onze documentatie</a> voor meer info.
     costs_heat_infra_outdoors:
       title: Leidingen en onderstations
-      short_description: 
-      description: Met deze schuif stel je de toe- of afname in die je verwacht voor
-        de investeringskosten en onderhouds- en beheerkosten van leidingen en onderstations
-        voor warmtenetten. Zie <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
-        >onze documentatie</a> voor meer info.
+      short_description:
+      description: Met deze schuif stel je de toe- of afname in die je verwacht voor de
+        investeringskosten en onderhouds- en beheerkosten van leidingen en onderstations
+        voor warmtenetten. Zie <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md">onze documentatie</a> voor meer info.
     costs_heat_network_storage:
       title: Seizoensopslag
-      short_description: 
+      short_description:
       description: "Scenario's met een grote hoeveelheid 'must run' en volatiele warmteproductie
         zoals zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
         in uren met geen of weinig vraag. (Seizoens)opslag stelt je in staat om deze
@@ -293,7 +292,7 @@ nl:
         vaak ingezet voor de productie van zowel warmte als elektriciteit."
     investment_costs_households_flexibility_p2p_electricity:
       title: Batterijen in huishoudens
-      short_description: 
+      short_description:
       description: "Batterijen in huishouden worden vaak genoemd als oplossing voor
         het opvangen van elektriciteitsoverschotten. Met <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
         >deze slider</a> kun je aangeven welk percentage van de huishoudens is uitgerust
@@ -301,21 +300,21 @@ nl:
         de investeringskosten zullen veranderen voor deze batterijen.\r\n</br>"
     investment_costs_energy_flexibility_hv_opac_electricity:
       title: OPAC
-      short_description: 
+      short_description:
       description: Deze slider bepaalt de toekomstige verandering in investeringskosten
         van Ondergrondse Pomp Accumulatie Centrale (OPAC).
     investment_costs_energy_flexibility_mv_batteries_electricity:
       title: Grootschalige batterijopslag
-      short_description: 
+      short_description:
       description: Deze slider bepaalt de toekomstige verandering in investeringskosten
         van grootschalige batterijopslag.
     costs_infrastructure_useable_spare_capacity:
       title: Gebruik technische capaciteitsruimte
-      short_description: 
+      short_description:
       description: ''
     costs_imported_electricity:
       title: Kosten van geïmporteerde elektriciteit
-      short_description: 
+      short_description:
       description: "Denk jij dat de geïmporteerde elektriciteit gemiddeld goedkoop
         is door overschotten in de productie, of denk jij dat het juist duur is doordat
         de import vooral is tijdens de piekvraag? \r\n</p>\r\n\r\nDe gemiddelde kosten
@@ -349,15 +348,21 @@ nl:
         aanpast voor zowel zon op dak als grootschalige zonneparken. De onderstaande
         link laat de kosten van zon op dak zien. Let op: de installatiekosten van
         zon op dak (500 kEUR/MW) worden niet aangepast met deze schuif.\r\n<br/>"
+    technology_solar_panels:
+      title: Technologie zon-PV
+      description: "Hoe ontwikkelt zon-PV zich in de toekomst?
+        Hieronder kun je de efficiëntie van zonnepanelen instellen. Een hogere
+        efficiëntie betekent dat een zonnepaneel meer stroom opwekt en een
+        hoger piekvermogen heeft. Klik op '?' voor meer informatie."
     investment_costs_solar_concentrated_solar_power:
       title: Geconcentreerde zonnestroom
-      short_description: 
+      short_description:
       description: 'Deze schuif stelt je de toe-of afname in die je verwacht voor
         de investeringskosten voor ''concentrated solar power'' (CSP). De kosten worden
         vergeleken met de kosten van vandaag de dag. '
     costs_hydrogen_storage:
       title: Waterstofopslagkosten
-      short_description: 
+      short_description:
       description: "De startwaarde van deze schuif is gebaseerd op waterstofopslag
         in zoutcavernes. Waterstofopslag in zoutcavernes is een goedkope manier of
         grote hoeveelheden waterstof over lange periodes op te slaan. De total kosten
@@ -369,13 +374,13 @@ nl:
         gas"
     om_costs_solar_thermal:
       title: Onderhoudskosten zonthermie
-      short_description: 
+      short_description:
       description: Met deze schuif stel je de toe-of afname in die je verwacht voor
         de onderhouds- en beheerkosten van zonthermie. De kosten worden vergeleken
         met de kosten van vandaag de dag.
     investment_costs_solar_thermal:
       title: Investeringskosten zonthermie
-      short_description: 
+      short_description:
       description: Met deze schuif stel je de toe-of afname in die je verwacht voor
         de investeringskosten van zonthermie. De kosten worden vergeleken met de kosten
         van vandaag de dag.
@@ -389,7 +394,7 @@ nl:
         oude kernkoppen gebruikt werden voor brandstof.
     costs_hydrogen_transport_compressed_trucks:
       title: Totale kosten H<sub>2</sub> onder druk in vrachtwagens
-      short_description: 
+      short_description:
       description: "De kosten van waterstoftransport met vrachtwagens is voornamelijk
         afhankelijk van arbeidskosten, welke bijna de helft van de totale kosten zijn.
         Dus technologische vooruitgang (grotere vrachtwagens/hogere druk) zal slechts
@@ -397,7 +402,7 @@ nl:
         is een gemiddelde transport afstand van 100 km aangenomen."
     costs_hydrogen_transport_pipelines:
       title: Totale kosten H<sub>2</sub> leidingen
-      short_description: 
+      short_description:
       description: "De kosten van waterstoftransport door leidingen zijn afhankelijk
         van of bestaande gasleidingen worden hergebruikt of nieuwe leidingen worden
         aangelegd. Bestaande leidingen kunnen op twee manieren worden hergebrukt,
@@ -410,7 +415,7 @@ nl:
         De beginwaarde van deze schuif is gebaseerd op het plaatsing van nieuwe waterstofleidingen."
     investment_costs_micro_chp:
       title: Micro-WKK
-      short_description: 
+      short_description:
       description: "Naarmate er meer micro-WKKs (HRe ketels) geïnstalleerd worden,
         zullen de kosten ook afnemen. Als je gelooft dat deze technologie in de toekomst
         succesvol zal zijn, kun je hier invullen hoeveel goedkoper de HRe ketel wordt.
@@ -419,7 +424,7 @@ nl:
         ruimteverwarming en warm water. "
     investment_costs_fuel_cell:
       title: Brandstofcel
-      short_description: 
+      short_description:
       description: "Naarmate er meer brandstofcellen geïnstalleerd worden, zullen
         de kosten ook afnemen. Als je gelooft dat deze technologie in de toekomst
         succesvol zal zijn, kun je hier invullen hoeveel goedkoper de brandstofcel
@@ -428,7 +433,7 @@ nl:
         van warm water. "
     investment_costs_electric_heat_pumps:
       title: Elektrische warmtepompen
-      short_description: 
+      short_description:
       description: "Naarmate er meer elektrische warmtepompen geïnstalleerd worden,
         zullen de kosten ook afnemen. Als je gelooft dat deze technologie in de toekomst
         succesvol zal zijn, kun je hier invullen hoeveel goedkoper ze worden. \r\n<br/><br/>\r\nIn
@@ -441,7 +446,7 @@ nl:
         een zo'n warmtepomp kun je zien als je op de link hieronder klikt. "
     investment_costs_gas_heat_pumps:
       title: Gaswarmtepompen
-      short_description: 
+      short_description:
       description: "Naarmate er meer gaswarmtepompen geïnstalleerd worden, zullen
         de kosten ook afnemen. Als je gelooft dat deze technologie in de toekomst
         succesvol zal zijn, kun je hier invullen hoeveel goedkoper ze worden. \r\n<br/>\r\nIn
@@ -452,12 +457,12 @@ nl:
         klikt. "
     investment_costs_households_storage_space_heating:
       title: Bufferkosten ruimteverwarming
-      short_description: 
-      description: 
+      short_description:
+      description:
     investment_costs_households_storage_water_heating:
       title: Boilerkosten tapwater
-      short_description: 
-      description: 
+      short_description:
+      description:
     investment_costs_water_river:
       title: Rivier
       short_description: ''
@@ -472,7 +477,7 @@ nl:
         soort centrales zijn zeer grote investeringen nodig."
     investment_costs_electric_cars:
       title: Extra investering per elektrische auto
-      short_description: 
+      short_description:
       description: "Met dit schuifje stel je in hoeveel hoger de gemiddelde aanschafprijs
         van een elektrische auto (zonder belastingen) is dan die van een auto met
         een verbrandingsmotor. Je geeft daarom dus het prijs <i>verschil</i> aan.
@@ -484,13 +489,13 @@ nl:
         door deze kosten."
     costs_imported_heat:
       title: Geïmporteerde (rest)warmte
-      short_description: 
+      short_description:
       description: "Hoeveel zal geïmporteerde (rest)warmte kosten?\r\n</br></br>\r\nDe
         startwaarde van 11,60 €/GJ is een schatting gebaseerd op de gemiddelde kosten
         van warmte-uitkoppeling van verschillende industriële processen."
     costs_industry_residual_heat:
       title: Industriële restwarmte
-      short_description: 
+      short_description:
       description: Met deze schuif stel je de toe- of afname in die je verwacht voor
         de investeringskosten en onderhouds- en beheerkosten van het uitkoppelen van
         industriële restwarmte. De kosten worden vergeleken met de kosten van vandaag
@@ -499,43 +504,43 @@ nl:
         Voor lage temperatuur restwarmte uit datacenters rekenen we met andere kosten.
     costs_infrastructure_electricity_lv_net:
       title: Investering laagspanningsnet
-      short_description: 
+      short_description:
       description: Met deze schuifjes kun je de gemiddelde kosten voor netuitbreiding
         instellen voor elk spanningsniveau. De standaardinstellingen voor Nederland
         zijn gebaseerd op de studie 'Net voor de Toekomst', CE Delft (2017).
     costs_infrastructure_electricity_lv_mv_trafo:
       title: Investering ls-ms-transformator
-      short_description: 
+      short_description:
       description: Met deze schuifjes kun je de gemiddelde kosten voor netuitbreiding
         instellen voor elk spanningsniveau. De standaardinstellingen voor Nederland
         zijn gebaseerd op de studie 'Net voor de Toekomst', CE Delft (2017).
     costs_infrastructure_electricity_mv_net:
       title: Investering middenspanningsnet
-      short_description: 
+      short_description:
       description: Met deze schuifjes kun je de gemiddelde kosten voor netuitbreiding
         instellen voor elk spanningsniveau. De standaardinstellingen voor Nederland
         zijn gebaseerd op de studie 'Net voor de Toekomst', CE Delft (2017).
     costs_infrastructure_electricity_mv_hv_trafo:
       title: Investering ms-hs-transformator
-      short_description: 
+      short_description:
       description: Met deze schuifjes kun je de gemiddelde kosten voor netuitbreiding
         instellen voor elk spanningsniveau. De standaardinstellingen voor Nederland
         zijn gebaseerd op de studie 'Net voor de Toekomst', CE Delft (2017).
     costs_infrastructure_electricity_hv_net:
       title: Investering hoogspanningsnet
-      short_description: 
+      short_description:
       description: Met deze schuifjes kun je de gemiddelde kosten voor netuitbreiding
         instellen voor elk spanningsniveau. De standaardinstellingen voor Nederland
         zijn gebaseerd op de studie 'Net voor de Toekomst', CE Delft (2017).
     costs_infrastructure_electricity_interconnector_net:
       title: Investering in interconnectienet
-      short_description: 
+      short_description:
       description: Met deze schuifjes kun je de gemiddelde kosten voor netuitbreiding
         instellen voor elk spanningsniveau. De standaardinstellingen voor Nederland
         zijn gebaseerd op de studie 'Net voor de Toekomst', CE Delft (2017).
     costs_infrastructure_electricity_offshore_net:
       title: Investering in net wind op zee
-      short_description: 
+      short_description:
       description: Met deze schuifjes kun je de gemiddelde kosten voor netuitbreiding
         instellen voor elk spanningsniveau. De standaardinstellingen voor Nederland
         zijn gebaseerd op de studie 'Net voor de Toekomst', CE Delft (2017).
@@ -570,7 +575,7 @@ nl:
         je je afvragen of er nog aardgasvoorraden zijn en hoelang nog."
     employment_local_fraction:
       title: Binnenlandse arbeid (productiefase)
-      short_description: 
+      short_description:
       description: "Welk deel van het werk voor de productie van onderdelen gebeurt
         in eigen land?\r\n<br/><br/>\r\nOm te weten hoeveel binnenlandse werkgelegenheid
         het inzetten van een technologie oplevert, moeten we weten welke fractie van
@@ -578,14 +583,14 @@ nl:
         moeren) worden voornamelijk in het buitenland geproduceerd."
     employment_economic_multiplier:
       title: Economische 'multiplier'
-      short_description: 
+      short_description:
       description: "Werkgelegenheid heeft een zelfversterkend effect. Een toename
         van werkgelegenheid heeft een positief effect op de koopkracht. Toenemende
         koopkracht stimuleert op haar beurt de werkgelegenheid weer.\r\nHoe sterk
         denkt u dat dit effect zal zijn voor 'energiebanen'?"
     employment_fraction_production:
       title: Productie-aandeel
-      short_description: 
+      short_description:
       description: "Welke bijdrage levert de productiefase volgens u aan de totale
         werkgelegenheid?\r\n</br></br>\r\nDe productie van onderdelen voor verwarmingsapparaten
         en elektriciteit-centrales  levert mogelijk een grote hoeveelheid werkgelegenheid

@@ -11,7 +11,7 @@ en:
         plant."
     costs_hydrogen:
       title: Hydrogen (import)
-      short_description: 
+      short_description:
       description: "This slider sets the future wholesale price of hydrogen (in €/MWh).
         This slider affects the costs of imported hydrogen and influences the position
         of hydrogen fired gas turbines in the merit order of the electricity market.
@@ -80,13 +80,13 @@ en:
         Costs are compared to current costs.
     costs_wacc_households:
       title: Households
-      short_description: 
+      short_description:
       description: 'This category comprises all technologies used in households, including
         solar panels and solar thermal collectors. Note: heat network infrastructure
         and heaters belong to ''commercial / proven technologies''.'
     costs_wacc_public_infrastructure:
       title: Public infrastructure
-      short_description: 
+      short_description:
       description: This category comprises the costs of public infrastructure. For
         the ETM this currently means the power grid costs. Costs for the hydrogen
         network are part of the 'new technologies' category. Costs for heat networks
@@ -94,12 +94,12 @@ en:
         the ETM currently uses a fixed annual sum that is unaffected by the WACC.
     costs_wacc_proven_technologies:
       title: Commercial / proven technologies
-      short_description: 
+      short_description:
       description: This category comprises all commercial and proven technologies.
         This is by far the largest category.
     costs_wacc_unproven_technologies:
       title: New / immature technologies
-      short_description: 
+      short_description:
       description: 'This category comprises all immature / unproven / risky technologies.
         Currently these technologies are included: hydrogen technologies (electrolyzers,
         power plants, infrastructure, storage), synthetic kerosene technologies, nuclear
@@ -107,13 +107,13 @@ en:
         (SCWG) and underground pumped hydro storage.'
     costs_ccs_per_ton_in_industry:
       title: CCS cost
-      short_description: 
+      short_description:
       description: 'The costs of CCS depend on many factors, including but not limited
         to: the process CO2 is captured from, how it is captured, how it is transported,
         over what distance it is transported and how it is stored.'
     investment_costs_flexibility_p2h_electricity:
       title: Power-to-heat electric boilers
-      short_description: 
+      short_description:
       description: Power-to-heat plants convert excess electricity to heat. In the
         ETM power-to-heat can be used in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households">households</a>
         and in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">industry</a>.
@@ -121,7 +121,7 @@ en:
         />
     investment_costs_hydrogen_electrolysis:
       title: Power-to-gas
-      short_description: 
+      short_description:
       description: Power-to-gas plants use electricity to produce gas (like hydrogen
         or methane). This is called electrolysis. This slider determines the change
         in investment costs of power-to-gas plants. This affects the costs of hydrogen
@@ -147,41 +147,40 @@ en:
         expected that costs will decrease in the future.\r\n<br/>"
     costs_biogas:
       title: Biogas
-      short_description: 
+      short_description:
       description: How much will biogas cost in the future?
     costs_greengas:
       title: Green gas
-      short_description: 
+      short_description:
       description: How much will green gas cost in the future?
     costs_wood:
       title: Wood
-      short_description: 
+      short_description:
       description: How much will wood cost in the future?
     costs_biodiesel:
       title: Biodiesel
-      short_description: 
+      short_description:
       description: How much will biodiesel cost in the future?
     costs_bio_ethanol:
       title: Bio-ethanol
-      short_description: 
+      short_description:
       description: How much will bioethanol cost in the future?
     costs_heat_infra_indoors:
       title: Indoor costs
-      short_description: 
+      short_description:
       description: This slider sets the change in future investment and O&M costs
         for indoor heating infrastructure. This includes indoor pipelines and heat
         meters. See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
         target ="_blank">our documentation</a> for more info.
     costs_heat_infra_outdoors:
       title: Pipelines and exchanger stations
-      short_description: 
-      description: This slider sets the change in future investment and O&M costs
-        for outdoor heating infrastructure. This includes district heating pipelines
-        and exchanger stations. See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
-        >our documentation</a> for more info.
+      short_description:
+      description: This slider sets the change in future investment and O&M costs for
+        outdoor heating infrastructure. This includes district heating pipelines and
+        exchanger stations. See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md">our documentation</a> for more info.
     costs_heat_network_storage:
       title: Seasonal storage
-      short_description: 
+      short_description:
       description: "Scenarios with large amounts of \"must-run\" heat production will
         often have considerable excesses of heat. Storage allows you to preserve this
         heat for later use. Seasonal storage can be switched on/off <a href=\"scenario/supply/heat/seasonal-storage-of-heat\"
@@ -274,7 +273,7 @@ en:
         are often used to generate both heat and electricity."
     investment_costs_households_flexibility_p2p_electricity:
       title: Household batteries
-      short_description: 
+      short_description:
       description: "Household batteries are often mentioned as a convenient way to
         store excess electricity such that you can use it at a later time. With <a
         href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
@@ -283,21 +282,21 @@ en:
         for the future change in investment costs of households batteries.\r\n</br>"
     investment_costs_energy_flexibility_hv_opac_electricity:
       title: Underground pumped hydro storage
-      short_description: 
+      short_description:
       description: This slider determines the future change in investment costs of
         underground hydro pumped storage.
     investment_costs_energy_flexibility_mv_batteries_electricity:
       title: Large-scale batteries
-      short_description: 
+      short_description:
       description: This slider determines the future change in investment costs large-scale
         battery storage.
     costs_infrastructure_useable_spare_capacity:
       title: Use of technical spare capacity
-      short_description: 
+      short_description:
       description: ''
     costs_imported_electricity:
       title: Costs of imported electricity
-      short_description: 
+      short_description:
       description: "Do you think that when you have to import electricity that on
         average it will be cheap because of peak production, or will it be expensive
         because of peak demand?\r\n</p>\r\n\r\nThe average costs of electricity at
@@ -331,12 +330,12 @@ en:
         with this slider (500 kEUR/MW).\r\n<br/>"
     investment_costs_solar_concentrated_solar_power:
       title: Concentrated solar power
-      short_description: 
+      short_description:
       description: This slider sets the height of the assumed costs for concentrated
         solar power (CSP). Costs are compared to current costs.
     costs_hydrogen_storage:
       title: Hydrogen storage costs
-      short_description: 
+      short_description:
       description: "The default setting of the slider is based hydrogen storage in
         salt caverns. Hydrogen storage in salt caverns is a cheap way to store large
         quantities of hydrogen over a long period of time. The total costs of hydrogen
@@ -348,12 +347,12 @@ en:
         hydrogen production from gas"
     om_costs_solar_thermal:
       title: O&M costs solar thermal energy
-      short_description: 
+      short_description:
       description: This slider sets the future change in operational and maintenance
         costs for solar thermal energy. Costs are compared to current costs.
     investment_costs_solar_thermal:
       title: Investment costs solar thermal energy
-      short_description: 
+      short_description:
       description: This slider sets the change in future investment costs for solar
         thermal energy. Costs are compared to current costs.
     costs_uranium:
@@ -366,7 +365,7 @@ en:
         and plutonium of decommissioned nuclear warheads.
     costs_hydrogen_transport_compressed_trucks:
       title: Total costs H<sub>2</sub> compressed trucks
-      short_description: 
+      short_description:
       description: "The costs of hydrogen transport with trucks is mostly depended
         on labour costs, which is almost half of the total costs. So technology improvement
         (bigger trucks/higher pressure) will only have little influence on the total
@@ -374,7 +373,7 @@ en:
         of 100km is assumed."
     costs_hydrogen_transport_pipelines:
       title: Total costs H<sub>2</sub> pipelines
-      short_description: 
+      short_description:
       description: "The costs for hydrogen transport through pipelines depend on whether
         already existing gas pipelines will be reused or whether new pipelines will
         be constructed. Existing pipelines could be reused in two ways; the hydrogen
@@ -387,7 +386,7 @@ en:
         pipelines."
     investment_costs_micro_chp:
       title: Micro-CHP
-      short_description: 
+      short_description:
       description: "As more micro-CHPs are installed their costs are likely to decrease.
         If you believe this technology will be successful in the future, you can indicate
         how much cheaper you think they may become.\r\n<br/>\r\nMicro-CHPs can be
@@ -395,7 +394,7 @@ en:
         section<a/>. \r\n"
     investment_costs_fuel_cell:
       title: Fuel cell
-      short_description: 
+      short_description:
       description: "As more fuel cells are installed their costs are likely to decrease.
         If you believe this technology will be successful in the future, you can indicate
         how much cheaper you think they may become. <br/>\r\nFuel cells can be chosen
@@ -403,7 +402,7 @@ en:
         section<a/>. \r\n"
     investment_costs_electric_heat_pumps:
       title: Electric heat pumps
-      short_description: 
+      short_description:
       description: "As more electric heat pumps are installed their costs are likely
         to decrease. If you believe this technology will be successful in the future,
         you can indicate how much cheaper you think they may become.\r\n<br/><br/>\r\nVarious
@@ -416,7 +415,7 @@ en:
         one kind of heat pump can be seen by clicking the link below."
     investment_costs_gas_heat_pumps:
       title: Gas-fired heat pumps
-      short_description: 
+      short_description:
       description: "As more gas-fired heat pumps are installed their costs are likely
         to decrease. If you believe this technology will be successful in the future,
         you can indicate how much cheaper you think they may become.\r\n<br/>\r\nGas-fired
@@ -425,12 +424,12 @@ en:
         gas-fired heat pump can be seen by clicking the link below."
     investment_costs_households_storage_space_heating:
       title: Space heater buffers
-      short_description: 
-      description: 
+      short_description:
+      description:
     investment_costs_households_storage_water_heating:
       title: Water heater buffers
-      short_description: 
-      description: 
+      short_description:
+      description:
     investment_costs_water_river:
       title: River
       short_description: ''
@@ -445,7 +444,7 @@ en:
         plants require huge investments.
     investment_costs_electric_cars:
       title: Extra investment per electric car
-      short_description: 
+      short_description:
       description: "With this slider you can determine how much higher the average
         purchase price (excluding taxes) of an electric car is compared to that of
         a combustion engine car. You therefore set the price <i>difference</i> between
@@ -457,13 +456,13 @@ en:
         would otherwise be dominated by the resulting costs."
     costs_imported_heat:
       title: Imported (residual) heat
-      short_description: 
+      short_description:
       description: "How much would imported (residual) heat cost?\r\n</br></br>\r\nThe
         start value of 11.6 €/GJ is an estimate based on the average costs for heat
         extraction from different industrial processes. "
     costs_industry_residual_heat:
       title: Industrial residual heat
-      short_description: 
+      short_description:
       description: This slider sets the change in future investment and O&M costs
         for residual heat from all industrial sectors. Costs are compared to current
         costs. The costs in the link below depict the costs that are used for residual
@@ -471,49 +470,49 @@ en:
         temperature heat from datacenters we use different costs.
     costs_infrastructure_electricity_lv_net:
       title: Costs new low voltage net
-      short_description: 
+      short_description:
       description: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_lv_mv_trafo:
       title: Costs new lv-mv transformator
-      short_description: 
+      short_description:
       description: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_mv_net:
       title: Costs new medium voltage net
-      short_description: 
+      short_description:
       description: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_mv_hv_trafo:
       title: Costs new low mv-hv transformator
-      short_description: 
+      short_description:
       description: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_hv_net:
       title: Costs new high voltage net
-      short_description: 
+      short_description:
       description: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_interconnector_net:
       title: Costs new interconnector net
-      short_description: 
+      short_description:
       description: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
         for the Future', CE Delft (2017).
     costs_infrastructure_electricity_offshore_net:
       title: Costs new offshore net
-      short_description: 
+      short_description:
       description: These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
@@ -545,7 +544,7 @@ en:
         important to know whether it still has its own supplies of natural gas."
     employment_local_fraction:
       title: Local production labor
-      short_description: 
+      short_description:
       description: "What fraction of total labor for the production of parts do you
         think is done locally?\r\n<br/><br/>\r\n\r\nHow much local employment results
         from the use of a technology, depends on how much of the labor is done abroad.
@@ -553,13 +552,13 @@ en:
         done abroad."
     employment_economic_multiplier:
       title: Economic multiplier
-      short_description: 
+      short_description:
       description: "Employment has a positive feedback effect. If employment increases,
         consumption increases accordingly, allowing employment to grow even more.\r\nHow
         strong do you think this effect is for energy-related jobs?"
     employment_fraction_production:
       title: Production share
-      short_description: 
+      short_description:
       description: "What contribution do you think the production phase makes to employment?\r\n</br></br>\r\nAlthough
         the production of parts for heaters, plants and other energy related appliances
         represents a significant part of the total employment, the share of this phase

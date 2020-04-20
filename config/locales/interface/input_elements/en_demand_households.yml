@@ -3,7 +3,7 @@ en:
   input_elements:
     households_insulation_level_apartments:
       title: Apartment
-      short_description: 
+      short_description:
       description: "The heat demand reduction is the percentage by which the heat
         demand is reduced compared to a badly insulated house (characterised by label
         G), i.e. the slider indicates how much of the potential savings has been achieved.
@@ -25,7 +25,7 @@ en:
         0 to 30% is cheaper than going from 30% to 60% insulation."
     households_insulation_level_corner_houses:
       title: Corner house
-      short_description: 
+      short_description:
       description: "The heat demand reduction is the percentage by which the heat
         demand is reduced compared to a badly insulated house (characterised by label
         G), i.e. the slider indicates how much of the potential savings has been achieved.
@@ -47,7 +47,7 @@ en:
         0 to 30% is cheaper than going from 30% to 60% insulation."
     households_insulation_level_detached_houses:
       title: Detached house
-      short_description: 
+      short_description:
       description: "The heat demand reduction is the percentage by which the heat
         demand is reduced compared to a badly insulated house (characterised by label
         G), i.e. the slider indicates how much of the potential savings has been achieved.
@@ -69,7 +69,7 @@ en:
         0 to 30% is cheaper than going from 30% to 60% insulation."
     households_insulation_level_semi_detached_houses:
       title: Semi-detached house
-      short_description: 
+      short_description:
       description: "The heat demand reduction is the percentage by which the heat
         demand is reduced compared to a badly insulated house (characterised by label
         G), i.e. the slider indicates how much of the potential savings has been achieved.
@@ -91,7 +91,7 @@ en:
         0 to 30% is cheaper than going from 30% to 60% insulation."
     households_insulation_level_terraced_houses:
       title: Terraced house
-      short_description: 
+      short_description:
       description: "The heat demand reduction is the percentage by which the heat
         demand is reduced compared to a badly insulated house (characterised by label
         G), i.e. the slider indicates how much of the potential savings has been achieved.
@@ -137,7 +137,7 @@ en:
         is mainly determined by growth in prosperity."
     households_useful_demand_cooking_per_person:
       title: Cooking
-      short_description: 
+      short_description:
       description: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below (Cooking slide). \r\n<br/>\r\n<br/>\r\nHere
         you can indicate how you expect the demand for cooking per person to change.
@@ -145,7 +145,7 @@ en:
         often, resulting in a lower demand for cooking at home."
     households_useful_demand_electric_appliances:
       title: Electric appliances
-      short_description: 
+      short_description:
       description: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below (Appliances slide). \r\n<br/>\r\n<br/>\r\nHere
         you indicate how you expect demand for appliances per person to change. This
@@ -153,7 +153,7 @@ en:
         tend to possess more electric appliances."
     households_useful_demand_lighting:
       title: Lighting
-      short_description: 
+      short_description:
       description: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below (Lighting slide). \r\n<br/>\r\n<br/>\r\nHere
         you indicate how you expect demand for lighting per person to change. This
@@ -339,7 +339,10 @@ en:
         the local power grid requires a higher capacity or smarter local grid, to
         prevent it from overloading. It may be desirable to curtail the power peaks
         in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
-        \r\n<br/>\r\n"
+        \r\n<br/><br />\r\n
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        />"
     households_water_heater_solar_thermal_share:
       title: Solar thermal collectors
       short_description: ''
@@ -357,27 +360,27 @@ en:
         growth.
     households_apartments_share:
       title: Apartment
-      short_description: 
+      short_description:
       description: How many apartments will there be in the future?
     households_corner_houses_share:
       title: Corner house
-      short_description: 
+      short_description:
       description: How many corner houses will there be in the future?
     households_detached_houses_share:
       title: Detached house
-      short_description: 
+      short_description:
       description: How many detached houses will there be in the future?
     households_semi_detached_houses_share:
       title: Semi-detached house
-      short_description: 
+      short_description:
       description: How many semi-detached houses will there be in the future?
     households_terraced_houses_share:
       title: Terraced house
-      short_description: 
+      short_description:
       description: How many terraced houses will there be in the future?
     households_number_of_residences:
       title: Residences
-      short_description: 
+      short_description:
       description: How do you expect the number of residences to develop over time?
     households_lighting_efficient_fluorescent_electricity_share:
       title: Low-energy light bulb
@@ -492,14 +495,14 @@ en:
         This makes them on average a little more efficient than their 'combi' counterparts.
     households_heater_district_heating_steam_hot_water_share:
       title: District heating
-      short_description: 
+      short_description:
       description: District heating is heat supplied by a heat network. The heat can
         be produced by local heat plants / large-scale burners or the heat can be
         imported from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
     households_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybrid heat pump (gas)
-      short_description: 
+      short_description:
       description: "This heater is a combination of an electric heat pump that draws
         its heat from the outside air and an efficient conventional gas-fired boiler.
         Essentially, the hybrid heat pump offers a way to strongly reduce natural
@@ -525,7 +528,7 @@ en:
         >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       title: Hybrid heat pump (hydrogen)
-      short_description: 
+      short_description:
       description: "This heater is a combination of an electric heat pump that draws
         its heat from the outside air and an efficient conventional hydrogen-fired
         boiler.\r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe hydrogen-fired

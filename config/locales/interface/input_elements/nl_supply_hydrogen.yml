@@ -3,7 +3,7 @@ nl:
   input_elements:
     co2_emissions_of_imported_hydrogen_present:
       title: Huidige import
-      short_description: 
+      short_description:
       description: "Hieronder vind je referentiewaarden voor de CO<sub>2</sub>-uitstoot
         van enkele waterstofproductietechnieken (in kg CO<sub>2</sub> per MWh waterstof):
         <br /><br />\r\n<ul>\r\n<li>Steam Methane Reforming (SMR): 281 kg</li>\r\n<li>Autothermal
@@ -18,7 +18,7 @@ nl:
         coal, biomass and other solid fuels. In: Biofuels (8), pp.725-745"
     co2_emissions_of_imported_hydrogen_future:
       title: Toekomstige import
-      short_description: 
+      short_description:
       description: "Hieronder vind je referentiewaarden voor de CO<sub>2</sub>-uitstoot
         van enkele waterstofproductietechnieken (in kg CO<sub>2</sub> per MWh waterstof):
         <br /><br />\r\n<ul>\r\n<li>Steam Methane Reforming (SMR): 281 kg</li>\r\n<li>Autothermal
@@ -33,7 +33,7 @@ nl:
         coal, biomass and other solid fuels. In: Biofuels (8), pp.725-745"
     capacity_of_energy_hydrogen_steam_methane_reformer_ccs:
       title: Stoomreforming met aardgas + CCS
-      short_description: 
+      short_description:
       description: "Aardgas-reforming (of beter: methaan-reforming) is een ver ontwikkeld
         waterstofproductieproces. Het werkt als volgt: methaan reageert in de aanwezigheid
         van een katalysator met stoom met een hoge temperatuur en geeft een mengsel
@@ -56,7 +56,7 @@ nl:
         wel een significante beperking in broeikasgasuitstoot op.<br/>"
     capacity_of_energy_hydrogen_steam_methane_reformer:
       title: Stoomreforming met aardgas
-      short_description: 
+      short_description:
       description: "Aardgas-reforming (of beter, methaan-reforming) is een ver ontwikkeld
         waterstofproductie proces. Het werkt als volgt: methaan reageert in de aanwezigheid
         van een katalysator met stoom met een hoge temperatuur en geeft een mengsel
@@ -72,7 +72,7 @@ nl:
         staat om de toenemende vraag naar waterstof te faciliteren.<br/>"
     energy_local_electrolysis_hydrogen_share:
       title: Lokale elektrolyse
-      short_description: 
+      short_description:
       description: "Elektrolyse is een waterstofproductie proces dat al vele jaren
         bekend is. Door een stroom te laten lopen door een volume water, worden water
         moleculen gesplitst in waterstof en zuurstof. Dit is een energie-intensief
@@ -92,18 +92,18 @@ nl:
         zijn."
     capacity_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing CCS
-      short_description: 
+      short_description:
       description: 'Biomassavergassing met koolstofdioxide opvang en opslag is een
         manier om waterstof te produceren die nog niet volledig op grote schaal beschikbaar
         is. '
     capacity_of_energy_hydrogen_biomass_gasification:
       title: Biomassavergassing
-      short_description: 
+      short_description:
       description: Biomassavergassing is een volwassen technologie voor de productie
         van waterstof uit biomassa. <br />
     capacity_of_energy_hydrogen_wind_turbine_offshore:
       title: Windmolen op zee voor H<sub>2</sub>
-      short_description: 
+      short_description:
       description: "Hoeveel windmolens zullen elektriciteit produceren dat direct
         zal worden omgezet in waterstof met electrolysers?\r\n</br></br>\r\nEr bestaan
         verschillende plannen voor windparken ver op zee. Voor deze windparken zal
@@ -119,18 +119,16 @@ nl:
         elektriciteit</a>.<br />"
     capacity_of_energy_hydrogen_solar_pv_solar_radiation:
       title: Zonnecentrale PV voor H<sub>2</sub>
-      short_description: 
-      description: "Hoeveel zonneparken zullen er in de toekomst gebouwd worden voor
-        de productie van waterstof met behulp van electrolysers?\r\n<br/><br/>\r\nDeze
+      short_description:
+      description: "Hoeveel zonneparken zullen er in de toekomst gebouwd worden voor de
+        productie van waterstof met behulp van electrolysers?\r\n<br/><br/>\r\nDeze
         schuif zet het vermogen van zonneparken dat ingezet wordt voor waterstofproductie
         en het benodigde vermogen van elektrolyse-installaties om de geproduceerde
         elektriciteit om te zetten in waterstof. Het vermogen van de elektrolyse-installaties
         ten opzichte van het vermogen van de zonneparken is afhankelijk van het aantal
         zonuren en het zonprofiel van een land. Meer informatie hierover staat in
         de <a href=\"https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx\"
-        >documentatie op Github</a>.\r\n</br></br>\r\nIn het ETM heeft een zonnepaneel
-        standaard 867 vollasturen. Het is aannemelijk dat toekomstige zonnepanelen
-        meer elektriciteit zullen produceren per geïnstalleerd vermogen dan nu. Je
+        >documentatie op Github</a>.\r\n</br></br>\r\nJe
         kunt het aantal vollasturen voor zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\"
         >hier</a> aanpassen.\r\n<br /><br />\r\n\r\nOpmerking: De technische en financiële
         specificaties hieronder zijn alleen voor de elektrolyser, niet voor de zonneparken.
@@ -138,7 +136,7 @@ nl:
         elektriciteit</a>.<br />"
     capacity_of_energy_imported_hydrogen_baseload:
       title: H<sub>2</sub> import
-      short_description: 
+      short_description:
       description: "Hoeveel waterstof zal er in de toekomst wordem geïmporteerd?\r\n<br><br>\r\nDe
         schuif bepaalt de hoeveelheid geïmporteerde waterstof van buiten jouw gebied.
         Deze waterstof kan uit verschillende landen komen en met verschillende technologieën
@@ -150,7 +148,7 @@ nl:
         >kosten</a>."
     energy_transport_hydrogen_compressed_trucks_share:
       title: H<sub>2</sub> onder druk in vrachtwagens
-      short_description: 
+      short_description:
       description: Welk percentage van de centraal geproduceerde waterstof in je scenario
         wordt vervoerd met vrachtwagens? Vragenwachtentransport is flexibel en kan
         gemakkelijk af- en opgeschaald worden. Het is daarmee een geschikte optie
@@ -159,7 +157,7 @@ nl:
         van tankstations.
     energy_transport_hydrogen_pipelines_share:
       title: H<sub>2</sub> leidingen
-      short_description: 
+      short_description:
       description: Welk percentage van de centraal geproduceerde waterstof in je scenario
         wordt vervoerd via pijpleidingen? Pijpleidingtransport kan een relatief goedkope
         manier zijn om waterstof te vervoeren, maar vraagt wel om grote investeringen

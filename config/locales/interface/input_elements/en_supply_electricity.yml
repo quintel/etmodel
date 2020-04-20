@@ -3,17 +3,17 @@ en:
   input_elements:
     capacity_of_energy_chp_local_engine_biogas:
       title: Biogas CHP
-      short_description: 
+      short_description:
       description: "A CHP produces both heat and electricity. Here you can set the
         capacity of biogas CHPs that supply heat for district heating.\r\n</br>"
     capacity_of_energy_chp_local_wood_pellets:
       title: Biomass CHP
-      short_description: 
+      short_description:
       description: "A CHP produces both heat and electricity. Here you can set the
         capacity of biomass CHPs that supply heat for district heating.\r\n</br>"
     capacity_of_energy_power_turbine_hydrogen:
       title: Hydrogen turbine
-      short_description: 
+      short_description:
       description: "Here you can build hydrogen turbine power plants. At the moment,
         these turbines are not used (yet) on a large scale. Because hydrogen turbine
         technology is very similar to natural gas turbines, we assume that both plants
@@ -26,7 +26,7 @@ en:
         system. <br />"
     capacity_of_energy_power_combined_cycle_hydrogen:
       title: Hydrogen plant (CCGT)
-      short_description: 
+      short_description:
       description: 'Here you can build capacity of combined cycle hydrogen plants.
         At the moment, these turbines are not used (yet) on a large scale. Because
         combined cycle hydrogen plant technology is very similar to combined cycle
@@ -50,7 +50,10 @@ en:
         can be large, because electricity is fed back into the local grid. This may
         require balancing solutions at the local level for the grid. In some cases
         it is smart to connect solar parks to only a certain percentage of the peak
-        power, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.\r\n<br/>\r\n"
+        power, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.\r\n<br/><br />\r\n
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        />"
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Concentrated solar power
       short_description: ''
@@ -79,7 +82,7 @@ en:
         converted to a (partial) number of the plant described above.\r\n"
     capacity_of_energy_power_engine_diesel:
       title: Diesel generator
-      short_description: 
+      short_description:
       description: "This is a small diesel generator of 2 MWe. <br/>\r\nA diesel generator
         is the combination of a diesel engine with an electric generator to generate
         electrical energy. Although they are expensive to run, their relative simplicity,
@@ -123,7 +126,7 @@ en:
         be imported."
     capacity_of_energy_chp_supercritical_waste_mix:
       title: Waste CHP
-      short_description: 
+      short_description:
       description: "This builds a high energy yield waste-incineration plant that
         delivers heat to a central heating grid (60 MWe and 33 MWth). Waste that can
         be safely burnt is used to generate electricity and heat. By incinerating
@@ -161,7 +164,7 @@ en:
         mainly to show the difference between modern nuclear plants and older types.<br/>\r\nIf
         you want to build nuclear power plants, please build the modern type of plant.
         The capacity is converted to plants of 1,650 MWe.\r\n<br/><br/> \r\n"
-    merit_order_subtype_of_energy_power_nuclear_uranium_oxide: 
+    merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
     capacity_of_energy_power_ultra_supercritical_coal:
       title: Pulverized coal
       short_description: ''
@@ -259,7 +262,7 @@ en:
         \r\n \r\n\r\n\r\n"
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
       title: Co-firing coal plant for district heat (CHP)
-      short_description: 
+      short_description:
       description: "Large ultra-supercritical pulverized coal-fired CHP plant. \r\nSuch
         plants are identical to a common coal plant, except that it also supplies
         heat to large heating grids. This comes at the expense of some power production.
@@ -268,7 +271,7 @@ en:
         of co-firing can be established between 0% and 50%."
     capacity_of_energy_power_ultra_supercritical_cofiring_coal:
       title: Pulverized coal with co-firing
-      short_description: 
+      short_description:
       description: "730 megawatt electric (MWe) ultra-supercritical pulverized coal-fired
         plant with 50% co-firing of biomass. Of all types of power plants, coal and
         lignite-fired ones contribute most to pollution of the environment. By co-firing
@@ -407,7 +410,7 @@ en:
         counterpart."
     capacity_of_energy_power_turbine_network_gas:
       title: Gas turbine
-      short_description: 
+      short_description:
       description: "Here you can set capacity of gas turbine power plants. These are
         less efficient than the combined-cycle gas turbines (CCGT), but have the advantage
         that they can handle being turned on and off within minutes. \r\nThese turbines
@@ -417,7 +420,7 @@ en:
         power mix."
     capacity_of_energy_power_engine_network_gas:
       title: Gas combustion engine
-      short_description: 
+      short_description:
       description: "This is a power plant made up of 22 reciprocating combustion engine
         units (18 MWe each), which makes for a 400 MWe power plant. The engines are
         flexible in terms of what fuel they can use, but in the ETM they are gas-fired.\r\n<br/><br/>\r\nAlthough
@@ -443,7 +446,7 @@ en:
         (in MW) is converted to a (partial) number of the plant described above."
     capacity_of_energy_chp_local_engine_network_gas:
       title: Small-scale gas plant for district heat (CHP)
-      short_description: 
+      short_description:
       description: "A CHP produces both heat and electricity. Here you can set the
         capacity of gas CHPs that supply heat for district heating.\r\n</br>"
     green_gas_total_share:
@@ -463,12 +466,12 @@ en:
         from CO<sub>2</sub> emissions gas combustion also tends to produce NO<sub>x</sub>."
     energy_treatment_natural_gas_share:
       title: Natural gas
-      short_description: 
+      short_description:
       description: Which percentage of the natural gas in the national gas network
         is natural gas?
     energy_regasification_lng_share:
       title: Regasified LNG
-      short_description: 
+      short_description:
       description: Which percentage of the natural gas in the national gas network
         is regasified LNG? LNG is mainly imported from Norway and the Middle East,
         then regasified to natural gas at import terminals and fed into the national

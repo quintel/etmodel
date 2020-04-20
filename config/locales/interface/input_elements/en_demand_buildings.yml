@@ -101,14 +101,14 @@ en:
         significant pollution of soil and drinking water.
     buildings_space_heater_district_heating_steam_hot_water_share:
       title: District heating
-      short_description: 
+      short_description:
       description: District heating is heat supplied by a heat network. The heat can
         be produced by local heat plants / large-scale burners or the heat can be
         imported from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
     buildings_space_heater_coal_share:
       title: Coal-fired heater
-      short_description: 
+      short_description:
       description: This shows what part of heating is produced by coal-fired heaters.
     buildings_insulation_level:
       title: Insulation
@@ -224,7 +224,10 @@ en:
         the local power grid requires a higher capacity or smarter local grid, to
         prevent it from overloading. It may be desirable to curtail the power peaks
         in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
-        \r\n<br/>\r\n"
+        \r\n<br/><br />\r\n
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        />"
     buildings_useful_demand_for_appliances:
       title: Appliances efficiency
       short_description: ''

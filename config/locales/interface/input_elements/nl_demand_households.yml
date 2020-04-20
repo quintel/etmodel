@@ -3,7 +3,7 @@ nl:
   input_elements:
     households_insulation_level_apartments:
       title: Appartement
-      short_description: 
+      short_description:
       description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
         lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
         welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
@@ -25,7 +25,7 @@ nl:
         isolatie."
     households_insulation_level_corner_houses:
       title: Hoekhuis
-      short_description: 
+      short_description:
       description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
         lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
         welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
@@ -47,7 +47,7 @@ nl:
         isolatie."
     households_insulation_level_detached_houses:
       title: Vrijstaand huis
-      short_description: 
+      short_description:
       description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
         lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
         welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
@@ -69,7 +69,7 @@ nl:
         isolatie."
     households_insulation_level_semi_detached_houses:
       title: Twee-onder-een-kapwoning
-      short_description: 
+      short_description:
       description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
         lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
         welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
@@ -91,7 +91,7 @@ nl:
         isolatie."
     households_insulation_level_terraced_houses:
       title: Rijtjeshuis
-      short_description: 
+      short_description:
       description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
         lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
         welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
@@ -137,7 +137,7 @@ nl:
         ontwikkelen."
     households_useful_demand_cooking_per_person:
       title: Koken
-      short_description: 
+      short_description:
       description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
         van de technologieën die je hieronder kunt kiezen (Koken slide).\r\n<br>\r\n<br>\r\nHier
         kun je aangeven hoe jij denkt dat de energievraag voor koken per persoon zich
@@ -145,7 +145,7 @@ nl:
         afhalen. Dit heeft tot gevolg dat de energievraag voor koken lager wordt."
     households_useful_demand_electric_appliances:
       title: Apparaten
-      short_description: 
+      short_description:
       description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
         van de technologieën die je hieronder kunt kiezen (Apparaten slide).\r\n<br>\r\n<br>\r\nHier
         kun je aangeven hoe jij denkt dat de energievraag voor apparaten per persoon
@@ -153,7 +153,7 @@ nl:
         mensen zijn, des te meer apparaten ze bezitten."
     households_useful_demand_lighting:
       title: Verlichting
-      short_description: 
+      short_description:
       description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
         van de technologieën die je hieronder kunt kiezen (Verlichting slide).\r\n<br>\r\n<br>\r\nHier
         kun je aangeven hoe jij denkt dat de energievraag voor verlichting per persoon
@@ -346,7 +346,9 @@ nl:
         en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
         worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
         zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen. \r\n<br/>\r\n"
+        instellen. \r\n<br/><br/>\r\n
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\" >hier</a> aanpassen<br
+        />"
     households_water_heater_solar_thermal_share:
       title: Zonthermische collectoren
       short_description: ''
@@ -366,27 +368,27 @@ nl:
         een afname in."
     households_apartments_share:
       title: Appartement
-      short_description: 
+      short_description:
       description: 'Hoeveel appartementen zullen er in de toekomst zijn? '
     households_corner_houses_share:
       title: Hoekhuis
-      short_description: 
+      short_description:
       description: Hoeveel hoekhuizen zullen er zijn in de toekomst?
     households_detached_houses_share:
       title: Vrijstaand huis
-      short_description: 
+      short_description:
       description: Hoeveel vrijstaande huizen zullen er zijn in de toekomst?
     households_semi_detached_houses_share:
       title: Twee-onder-een-kapwoning
-      short_description: 
+      short_description:
       description: Hoeveel twee-onder-één-kap-woningen zullen er zijn in de toekomst?
     households_terraced_houses_share:
       title: Rijtjeshuis
-      short_description: 
+      short_description:
       description: Hoeveel rijtjeshuizen zullen er zijn in de toekomst?
     households_number_of_residences:
       title: Aantal huizen
-      short_description: 
+      short_description:
       description: 'Hoe verwacht je dat het aantal huizen zich gaat ontwikkelen in
         de toekomst? '
     households_lighting_efficient_fluorescent_electricity_share:
@@ -504,14 +506,14 @@ nl:
         Hierdoor zijn deze apparaten een beetje efficiënter dan de combiketels. '
     households_heater_district_heating_steam_hot_water_share:
       title: Warmtenet
-      short_description: 
+      short_description:
       description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
         / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
         jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
         <a href="/scenario/supply/heat" >"Warmtenetten"</a>.
     households_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybride warmtepomp (gas)
-      short_description: 
+      short_description:
       description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
         met een gasgestookte HR-ketel. Een hybride warmtepomp maakt het mogelijk om
         snel veel gas voor verwarming te besparen en geeft netbeheerders bovendien
@@ -536,7 +538,7 @@ nl:
         >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       title: Hybride warmtepomp (waterstof)
-      short_description: 
+      short_description:
       description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
         met een waterstofgestookte HR-ketel.\r\n<br/><br/>\r\nHet werkt zo:<br/>\r\nDe
         waterstofketel verwarmt het huis op koude dagen, als de warmtevraag het hoogst

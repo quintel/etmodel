@@ -285,6 +285,12 @@
               self.render();
             },
             error: function(xhr) {
+              if (xhr.status === 404) {
+                self.curveData = {};
+                self.render();
+                return;
+              }
+
               var errors = ['An error occurred.'];
 
               if (xhr.responseJSON) {

@@ -1,5 +1,5 @@
 ---
-- label: groups.industry
+- label: industry
   color: "#A9A9A9"
   order_by: 1
   group: ''
@@ -7,11 +7,11 @@
   is_target_line: false
   target_line_position: ''
   gquery: primary_co2_of_industry
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: co2_emissions
-  key: groups.industry_co2_emissions
-- label: groups.transport
+  key: industry_co2_emissions
+- label: transport
   color: "#8B0000"
   order_by: 2
   group: ''
@@ -19,11 +19,11 @@
   is_target_line: false
   target_line_position: ''
   gquery: primary_co2_of_transport
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: co2_emissions
-  key: groups.transport_co2_emissions
-- label: groups.households
+  key: transport_co2_emissions
+- label: households
   color: "#4169E1"
   order_by: 3
   group: ''
@@ -31,11 +31,11 @@
   is_target_line: false
   target_line_position: ''
   gquery: primary_co2_of_households
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: co2_emissions
-  key: groups.households_co2_emissions
-- label: groups.buildings
+  key: households_co2_emissions
+- label: buildings
   color: "#ADD8E6"
   order_by: 4
   group: ''
@@ -43,11 +43,11 @@
   is_target_line: false
   target_line_position: ''
   gquery: primary_co2_of_buildings
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: co2_emissions
-  key: groups.buildings_co2_emissions
-- label: groups.agriculture
+  key: buildings_co2_emissions
+- label: agriculture
   color: "#FFD700"
   order_by: 5
   group: ''
@@ -55,11 +55,11 @@
   is_target_line: false
   target_line_position: ''
   gquery: primary_co2_of_agriculture
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: co2_emissions
-  key: groups.agriculture_co2_emissions
-- label: groups.other
+  key: agriculture_co2_emissions
+- label: other
   color: "#E07033"
   order_by: 6
   group: ''
@@ -67,11 +67,11 @@
   is_target_line: false
   target_line_position: ''
   gquery: primary_co2_of_other
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: co2_emissions
-  key: groups.other_co2_emissions
-- label: groups.energy
+  key: other_co2_emissions
+- label: energy
   color: "#416B86"
   order_by: 7
   group: ''
@@ -79,10 +79,10 @@
   is_target_line: false
   target_line_position: ''
   gquery: primary_co2_of_energy
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: co2_emissions
-  key: groups.energy_co2_emissions
+  key: energy_co2_emissions
 - label: co2_emissions_1990
   color: "#696969"
   order_by: 10
@@ -92,10 +92,10 @@
   target_line_position: ''
   gquery: 1990_in_co2_emissions
   is_1990: true
-  dependent_on: 
+  dependent_on:
   output_element_key: co2_emissions
   key: co2_emissions_1990_co2_emissions
-- label: groups.bunkers
+- label: bunkers
   color: "#8B4513"
   order_by: 9
   group: ''
@@ -104,9 +104,9 @@
   target_line_position: ''
   gquery: primary_co2_of_bunkers
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: co2_emissions
-  key: groups.bunkers_co2_emissions
+  key: bunkers_co2_emissions
 - label: international_transportation_1990
   color: "#333333"
   order_by: 11
@@ -116,6 +116,6 @@
   target_line_position: ''
   gquery: 1990_in_co2_emissions_bunkers
   is_1990: true
-  dependent_on: 
+  dependent_on:
   output_element_key: co2_emissions
   key: international_transportation_1990_co2_emissions

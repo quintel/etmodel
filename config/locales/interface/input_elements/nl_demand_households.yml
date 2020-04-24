@@ -1,0 +1,617 @@
+---
+nl:
+  input_elements:
+    households_insulation_level_apartments:
+      title: Appartement
+      short_description:
+      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
+        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
+        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
+        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
+        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">Basisregistratie
+        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
+        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentatie</a>.
+        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
+        omdat er geen direct verband is tussen energielabels en isolatie van de schil
+        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
+        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
+        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
+        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
+        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
+        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
+        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
+        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
+        isolatie."
+    households_insulation_level_corner_houses:
+      title: Hoekhuis
+      short_description:
+      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
+        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
+        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
+        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
+        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">Basisregistratie
+        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
+        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentatie</a>.
+        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
+        omdat er geen direct verband is tussen energielabels en isolatie van de schil
+        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
+        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
+        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
+        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
+        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
+        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
+        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
+        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
+        isolatie."
+    households_insulation_level_detached_houses:
+      title: Vrijstaand huis
+      short_description:
+      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
+        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
+        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
+        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
+        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">Basisregistratie
+        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
+        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentatie</a>.
+        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
+        omdat er geen direct verband is tussen energielabels en isolatie van de schil
+        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
+        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
+        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
+        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
+        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
+        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
+        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
+        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
+        isolatie."
+    households_insulation_level_semi_detached_houses:
+      title: Twee-onder-een-kapwoning
+      short_description:
+      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
+        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
+        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
+        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
+        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">Basisregistratie
+        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
+        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentatie</a>.
+        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
+        omdat er geen direct verband is tussen energielabels en isolatie van de schil
+        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
+        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
+        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
+        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
+        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
+        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
+        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
+        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
+        isolatie."
+    households_insulation_level_terraced_houses:
+      title: Rijtjeshuis
+      short_description:
+      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
+        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
+        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
+        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
+        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">Basisregistratie
+        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
+        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentatie</a>.
+        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
+        omdat er geen direct verband is tussen energielabels en isolatie van de schil
+        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
+        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
+        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
+        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
+        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
+        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
+        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
+        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
+        isolatie."
+    households_useful_demand_for_cooling:
+      title: Koudevraag
+      short_description: ''
+      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je hieronder kunt kiezen (Koeling). \r\n<br/><br/>\r\nHoe
+        denk jij dat de koudevraag per huishouden zich gaat ontwikkelen? Dit hangt
+        vooral af van de welvaartsgroei. Als mensen rijker worden, gaat hun energiegebruik
+        onvermijdelijk omhoog, doordat ze in steeds grotere huizen wonen, airconditioning
+        aanschaffen, etc."
+    households_useful_demand_heat_per_person:
+      title: Warmtevraag
+      short_description: ''
+      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je in hieronder kunt kiezen (Ruimteverwarming slide).\r\n<br/>\r\n<br/>\r\nHier
+        kun je aangeven hoe jij denkt dat de warmtevraag per huishouden zich gaat
+        ontwikkelen. Als mensen rijker worden, gaan ze in grotere huizen wonen waardoor
+        de energievraag voor ruimteverwarming toeneemt."
+    households_useful_demand_hot_water_share:
+      title: Warmwatervraag
+      short_description: ''
+      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je hieronder kunt kiezen (Warmwaterslide).\r\n<br/>\r\n<br/>\r\nHier
+        kun je aangeven hoe jij denkt dat de warmwatervraag per persoon zich gaat
+        ontwikkelen."
+    households_useful_demand_cooking_per_person:
+      title: Koken
+      short_description:
+      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je hieronder kunt kiezen (Koken slide).\r\n<br>\r\n<br>\r\nHier
+        kun je aangeven hoe jij denkt dat de energievraag voor koken per persoon zich
+        gaat ontwikkelen. Als mensen rijker worden gaan ze vaker uit eten of eten
+        afhalen. Dit heeft tot gevolg dat de energievraag voor koken lager wordt."
+    households_useful_demand_electric_appliances:
+      title: Apparaten
+      short_description:
+      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je hieronder kunt kiezen (Apparaten slide).\r\n<br>\r\n<br>\r\nHier
+        kun je aangeven hoe jij denkt dat de energievraag voor apparaten per persoon
+        zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Hoe rijker
+        mensen zijn, des te meer apparaten ze bezitten."
+    households_useful_demand_lighting:
+      title: Verlichting
+      short_description:
+      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je hieronder kunt kiezen (Verlichting slide).\r\n<br>\r\n<br>\r\nHier
+        kun je aangeven hoe jij denkt dat de energievraag voor verlichting per persoon
+        zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Als mensen
+        rijker worden, gaan ze in grotere huizen wonen waarvoor meer verlichting nodig
+        is."
+    households_cooling_heatpump_ground_water_electricity_share:
+      title: Bodemwarmtepomp
+      short_description: ''
+      description: "Een warmtepomp is een apparaat dat warmte verplaatst. De meest
+        bekende toepassing is een koelkast, maar in een gebouw kan een warmtepomp
+        ook zorgen voor verwarming en koeling. Het werkt vaak alleen als vloer- en
+        muurverwarming worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen
+        daarom vooral nog ingezet bij nieuwbouw van huizen. Europese wetgeving schrijft
+        namelijk voor dat het energiegebruik van huizen per 2020 tot nul moet zijn
+        toegebracht (gemeten over een heel jaar). \r\n<br/><br/>\r\nDeze warmtepomp
+        gebruikt een grondbron aan de ene kant en muur- of vloer- verwarming/koeling
+        aan de andere. Omdat dit niet in alle huizen te realiseren is tegen acceptabele
+        investeringskosten, is een realistische schatting van het aantal huizen waarin
+        een warmtepomp kan worden geïnstalleerd 20%. In de overige 80% wegen de kosten
+        waarschijnlijk niet op tegen de baten.\r\n<br><br/>\r\nLet er op dat het ETM
+        de investeringskosten significant onderschat voor een aandeel van warmtepompen
+        van boven de 20%. Dit komt omdat de extra investeringskosten voor huizen die
+        eigenlijk niet geschikt zijn voor installatie van een warmtepomp, niet bekend
+        zijn."
+    households_cooling_airconditioning_electricity_share:
+      title: Airconditioning
+      short_description: ''
+      description: "Hier staat aangegeven hoeveel van de koeling van huizen en appartementen
+        met airconditioners gebeurd. In de meeste landen gebeurt de meeste koeling
+        op dit moment gebeurt nog met airconditioners.\r\n"
+    households_cooling_heatpump_air_water_electricity_share:
+      title: Luchtwarmtepomp
+      short_description: ''
+      description: "Een warmtepomp is een apparaat dat warmte verplaatst. De meest
+        bekende toepassing is een koelkast, maar in een gebouw kan een warmtepomp
+        ook zorgen voor verwarming en koeling. Het werkt vaak alleen als vloer- en
+        muurverwarming worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen
+        vooral nog ingezet bij nieuwbouw van huizen. Europese wetgeving schrijft namelijk
+        voor dat het energiegebruik van huizen per 2020 tot nul moet zijn toegebracht
+        (gemeten over een heel jaar). \r\n<br/><br/>\r\nDeze warmtepomp gebruikt elektriciteit,
+        haalt de omgevingskoude uit de buitenlucht en geeft het af aan de vloer- en
+        muurverwarming. Omdat dit niet in alle huizen te realiseren is tegen acceptabele
+        investeringskosten, is een realistische schatting van het aantal huizen waarin
+        een warmtepomp kan worden geïnstalleerd 20%. In de overige 80% wegen de kosten
+        waarschijnlijk niet op tegen de baten.\r\n<br><br/>\r\nLet er op dat het ETM
+        de investeringskosten significant onderschat voor een aandeel van warmtepompen
+        van boven de 20%. Dit komt omdat de extra investeringskosten voor huizen die
+        eigenlijk niet geschikt zijn voor installatie van een warmtepomp, niet bekend
+        zijn."
+    households_appliances_fridge_freezer_electricity_efficiency:
+      title: Koelkast / Vriezer
+      short_description: ''
+      description: "Hoeveel efficiënter zullen koelkasten en vriezers in de toekomst
+        zijn? \r\n<br/><br/>\r\nNationale en Europese wetgeving dwingt producenten
+        om huishoudelijke apparaten ieder jaar zuiniger te maken. De energielabels
+        die tegenwoordig in alle Europese landen verplicht zijn geven een goede indicatie
+        van de efficiëntie van huishoudelijke apparaten.\r\n<br/><br/>\r\nDe startwaarde
+        van dit schuifje is het gemiddelde label van koel-en-vrieskasten die nu geïnstalleerd
+        zijn. Zet het schuifje op het label dat jij denkt dat de gemiddelde koel-en-vrieskasten
+        hebben in de toekomst. Het A+++ label komt overeen met een besparing van 66%
+        ten opzichte van vandaag."
+    households_appliances_dishwasher_electricity_efficiency:
+      title: Vaatwasser
+      short_description: ''
+      description: "Hoeveel efficiënter zullen afwasmachines in de toekomst zijn?
+        \r\n<br/><br/>\r\nNationale en Europese wetgeving dwingt producenten om huishoudelijke
+        apparaten ieder jaar zuiniger te maken. De energielabels die tegenwoordig
+        in alle Europese landen verplicht zijn geven een goede indicatie van de efficiëntie
+        van huishoudelijke apparaten.\r\n<br/><br/>\r\nDe startwaarde van dit schuifje
+        is het gemiddelde label van afwasmachines die nu geïnstalleerd zijn. Zet het
+        schuifje op het label dat jij denkt dat de gemiddelde afwasmachine heeft in
+        de toekomst. Het A+++ label komt overeen met een besparing van 35% ten opzichte
+        van vandaag."
+    households_appliances_vacuum_cleaner_electricity_efficiency:
+      title: Stofzuiger
+      short_description: ''
+      description: "Hoeveel efficiënter zullen stofzuigers in de toekomst zijn? \r\n<br/><br/>\r\nNationale
+        en Europese wetgeving dwingt producenten om huishoudelijke apparaten ieder
+        jaar zuiniger te maken. De energielabels die tegenwoordig in alle Europese
+        landen verplicht zijn geven een goede indicatie van de efficiëntie van huishoudelijke
+        apparaten.\r\n<br/><br/>\r\nDe startwaarde van dit schuifje is het gemiddelde
+        label van stofzuigers die nu geïnstalleerd zijn. Zet het schuifje op het label
+        dat jij denkt dat de gemiddelde stofzuigers hebben in de toekomst. Het A+++
+        label komt overeen met een besparing van 75% ten opzichte van vandaag.\r\n"
+    households_appliances_washing_machine_electricity_efficiency:
+      title: Wasmachine
+      short_description: ''
+      description: "Hoeveel efficiënter zullen wasmachines in de toekomst zijn? \r\n<br/><br/>\r\nNationale
+        en Europese wetgeving dwingt producenten om wasmachines ieder jaar zuiniger
+        te maken. De energielabels die tegenwoordig in alle Europese landen verplicht
+        zijn geven een goede indicatie van de efficiëntie van huishoudelijke apparaten.\r\n<br/><br/>\r\nDe
+        startwaarde van dit schuifje is het gemiddelde label van wasmachines die nu
+        geïnstalleerd zijn. Zet het schuifje op het label dat jij denkt dat de gemiddelde
+        wasmachine heeft in de toekomst. Het A+++ label komt overeen met een besparing
+        van 28% ten opzichte van vandaag.\r\n"
+    households_appliances_clothes_dryer_electricity_efficiency:
+      title: Droger
+      short_description: ''
+      description: "Hoeveel efficiënter zullen wasdrogers in de toekomst zijn? \r\n<br/><br/>\r\nNationale
+        en Europese wetgeving dwingt producenten om huishoudelijke apparaten ieder
+        jaar zuiniger te maken. De energielabels die tegenwoordig in alle Europese
+        landen verplicht zijn geven een goede indicatie van de efficiëntie van huishoudelijke
+        apparaten.\r\n<br/><br/>\r\nDe startwaarde van dit schuifje is het gemiddelde
+        label van wasdrogers die nu geïnstalleerd zijn. Zet het schuifje op het label
+        dat jij denkt dat de gemiddelde wasdroger heeft in de toekomst. Het A+++ label
+        komt overeen met een besparing van 69% ten opzichte van vandaag.\r\n"
+    households_appliances_television_electricity_efficiency:
+      title: Televisie
+      short_description: ''
+      description: "Hoeveel efficiënter zullen televisies in de toekomst zijn? \r\n<br/><br/>\r\nNieuwe
+        technologieën zoals LED televisies reduceren de energie consumptie. Maar vergeet
+        niet dat grotere televisies natuurlijk meer energie verbruiken dan kleinere
+        met dezelfde technologie. Daardoor gebruikt één televisie nu meer energie
+        dan enkele jaren geleden.\r\n<br/><br/>\r\nDe startwaarde van dit schuifje
+        is het gemiddelde label van televisies die nu geïnstalleerd zijn. Zet het
+        schuifje op het label dat jij denkt dat de gemiddelde televisies hebben in
+        de toekomst. Het A+++ label komt overeen met een besparing van 92% ten opzichte
+        van vandaag."
+    households_appliances_computer_media_electricity_efficiency:
+      title: Computer / Media
+      short_description: ''
+      description: 'Hoeveel efficiënter zullen computers en andere audio/video apparatuur
+        (exclusief televisies) in de toekomst zijn? '
+    households_appliances_other_electricity_efficiency:
+      title: Overig
+      short_description: ''
+      description: "Hoeveel efficiënter zullen andere huishoudelijke apparaten in
+        de toekomst zijn? \r\n<br/><br/>\r\nDeze categorie omvat:<br/>\r\nPersoonlijke
+        verzorging <br/>\r\nVrije tijd (klus gereedschap, naaimachine, elektrisch
+        speelgoed, etc.) <br/>\r\nKeukenapparatuur (exclusief koken) <br/>\r\nVentilatie"
+    households_behavior_standby_killer_turn_off_appliances:
+      title: Apparaten uitzetten
+      short_description: ''
+      description: "Hoeveel mensen zullen hun gedrag veranderen om energie te besparen?\r\n<br/><br/>\r\nVeel
+        elektrische apparaten gebruiken nog steeds elektriciteit als ze uitstaan.
+        In \"standby\" modus gebruiken apparaten gemiddeld nog 10 tot 15 W aan elektriciteit.
+        Een computer kan zelfs tot 60 W gebruiken terwijl hij \"uit\" staat. De stekker
+        uit het stopcontact trekken en een standby killer of aan/uit-schakelaar op
+        het stopcontact installeren kunnen ervoor zorgen dat deze stroom niet meer
+        verloren gaat.\r\n<br/><br/>\r\nEr zijn verschillende schattingen over de
+        totale impact van deze \"standby stroom\", maar het kan tot 20% zijn van het
+        totale stroomgebruik van dit soort apparaten. Het is daarbij wel belangrijk
+        om te bedenken dat het elektriciteitsgebruik van deze apparaten erg klein
+        is vergeleken met de totale vraag naar elektriciteit en warmte in huishoudens.
+        Daarom toont dit schuifje bij het aanpassen ook geen groot verschil, zelfs
+        als 100% van de bevolking een standby killer installeert. Aan de andere kant,
+        kan een gedragsverandering hier ook leiden tot veranderd gedrag op andere
+        punten waar het wel uitmaakt. Als mensen bijvoorbeeld in plaats van de auto,
+        de trein of de fiets naar het werk nemen zet dit wel zoden aan de dijk."
+    households_behavior_turn_off_the_light:
+      title: Lichten uitzetten
+      short_description: ''
+      description: "Hoeveel mensen zullen hun gedrag veranderen om energie te sparen?\r\n<br/><br/>\r\nVeel
+        mensen hebben thuis lampen aan staan die niet gebruikt worden. Deze lichten
+        uitzetten kan wat elektriciteit besparen. Denkt u dat meer of minder mensen
+        zich bewust zullen zijn van de lichten die nog aan staan in hun huis?\r\n<br/><br/>\r\nHet
+        totale gebruik van elektriciteit voor verlichting is huishoudens is niet zo
+        groot vergeleken met de totale vraag naar elektriciteit en warmte in huishoudens.
+        Daarom laat deze verandering in gedrag niet zo'n heel groot verschil zijn.
+        In gebouwen is het bijvoorbeeld wel heel nuttig om minder verlichting te gebruiken,
+        omdat daar de vraag naar verlichting een groot deel van de totale vraag naar
+        energie is."
+    households_behavior_close_windows_turn_off_heating:
+      title: Verwarming uitzetten
+      short_description: ''
+      description: "Hoeveel mensen zullen hun gedrag veranderen om energie te besparen?\r\n<br/><br/>\r\nDe
+        verwarming van je huis een graadje lager zetten (en een trui aantrekken) of
+        de verwarming uitzetten in kamers die niet gebruikt worden kan een hoop energie
+        besparen.\r\n<br/><br/>\r\nWelk percentage van de bevolking gaat zijn huis
+        minder warm stoken?"
+    households_behavior_low_temperature_washing:
+      title: Wassen op lage temperatuur
+      short_description: ''
+      description: "Hoeveel mensen zullen hun gedrag veranderen om energie te besparen?\r\n<br/><br/>\r\nKleding
+        wassen op 40 graden Celcius kan 50% elektriciteit besparen ten opzichte van
+        wassen op 60 graden.\r\n<br/><br/>\r\nWelk percentage van de bevolking gaat
+        wassen met lagere temperaturen?"
+    households_solar_pv_solar_radiation_market_penetration:
+      title: PV zonnepanelen
+      short_description: ''
+      description: "Met dit schuifje stel je het percentage van het potentiële dakoppervlak
+        in waar je zonnepanelen wil installeren. Wil je weten hoeveel vermogen dit
+        is? Kijk dan in de 'Merit order tabel', deze is te vinden in de grafiekenlijst
+        (hier kom je door rechtsbovenaan op 'Meer grafieken bekijken' te klikken).
+        \r\n<br/><br/>\r\n Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
+        gebruikt wordt (in huis) en dus is het niet altijd nodig om de elektriciteit
+        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
+        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
+        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
+        zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen. \r\n<br/><br/>\r\n
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/supply/electricity_renewable/solar-power\" >hier</a> aanpassen<br
+        />"
+    households_water_heater_solar_thermal_share:
+      title: Zonthermische collectoren
+      short_description: ''
+      description: "Een zonneboiler maakt warm water via zonthermische panelen. Deze
+        warmte kan gebruikt worden om te douchen, af te wassen enz. Zonneboilers worden
+        vaak op daken of in het asfalt van parkeerterreinen geplaatst. Een zonneboiler
+        wordt vaak met een gas CV-ketel gecombineerd om het water (in de winter) verder
+        op te warmen. Ook met een warmtepomp gaat het goed samen.\r\n"
+    households_number_of_inhabitants:
+      title: Aantal inwoners
+      short_description: ''
+      description: "Hoe verwacht je dat de bevolking zich gaat ontwikkelen? Naast
+        welvaartsgroei is dit een van de belangrijkste factoren die de energievraag
+        beïnvloeden.\r\n\r\n<br/><br/>\r\n\r\nNederland telt bijvoorbeeld circa 16.5
+        miljoen inwoners. Het bevolkingsaantal zal volgens het Centraal Bureau voor
+        de Statistiek (CBS) toenemen tot 17.7 miljoen in het jaar 2040. Daarna zet
+        een afname in."
+    households_apartments_share:
+      title: Appartement
+      short_description:
+      description: 'Hoeveel appartementen zullen er in de toekomst zijn? '
+    households_corner_houses_share:
+      title: Hoekhuis
+      short_description:
+      description: Hoeveel hoekhuizen zullen er zijn in de toekomst?
+    households_detached_houses_share:
+      title: Vrijstaand huis
+      short_description:
+      description: Hoeveel vrijstaande huizen zullen er zijn in de toekomst?
+    households_semi_detached_houses_share:
+      title: Twee-onder-een-kapwoning
+      short_description:
+      description: Hoeveel twee-onder-één-kap-woningen zullen er zijn in de toekomst?
+    households_terraced_houses_share:
+      title: Rijtjeshuis
+      short_description:
+      description: Hoeveel rijtjeshuizen zullen er zijn in de toekomst?
+    households_number_of_residences:
+      title: Aantal huizen
+      short_description:
+      description: 'Hoe verwacht je dat het aantal huizen zich gaat ontwikkelen in
+        de toekomst? '
+    households_lighting_efficient_fluorescent_electricity_share:
+      title: Spaarlamp
+      short_description: ''
+      description: "Welk deel van de verlichting komt van spaarlampen?\r\n<br/><br/>\r\nVeel
+        EU landen gaan de gloeilamp verbieden in de toekomst. Spaarlampen gebruiken
+        ~75% minder energie dan gloeilampen, maar nog twee keer zoveel als LED lampen.
+        Je kunt een spaarlamp niet altijd weggooien zonder het milieu te vervuilen,
+        omdat er vaak kwik in zit. Gloeilampen en LED lampen niet. Spaarlampen kunnen
+        er niet goed tegen als ze vaak aan en uitgezet worden.\r\n<br/><br/>\r\nVergelijking
+        levensduren:\r\n<br/>• LED-lamp:      ~50.000 uur\r\n<br/>• Spaarlamp:             ~7.500
+        uur\r\n<br/>• Gloeilamp:  ~1.000 uur"
+    households_lighting_led_electricity_share:
+      title: LED-lamp
+      short_description: ''
+      description: "Welk deel van de verlichting komt van LED lampen?\r\n<br/><br/>\r\nVeel
+        EU landen gaan de gloeilamp verbieden in de toekomst. LED-lampen gebruiken
+        ~10% van de energie van een gloeilamp, en de helft van een spaarlamp. LED-lampen
+        kunnen er goed tegen als ze vaak aan en uitgezet worden. Hun kleuren worden
+        nog als kil ervaren en ze zijn niet zeer geschikt om de hele kamer te verlichten.\r\n<br/><br/>\r\nVergelijking
+        levensduren:\r\n<br/>• LED-lamp: ~50.000 uur\r\n<br/>• Spaarlamp: ~7.500 uur\r\n<br/>•
+        Gloeilamp: ~1.000 uur"
+    households_lighting_incandescent_electricity_share:
+      title: Gloeilamp
+      short_description: ''
+      description: "Veel EU landen gaan de gloeilamp verbieden in de toekomst. Ze
+        zetten maar 2-3% van de energie die ze gebruiken om in licht. De rest wordt
+        als warmte afgegeven. Hoewel ze mooi warm licht geven leven ze minder lang
+        dan hun concurrenten de LED en spaarlampen.\r\n<br/><br/>\r\nVergelijking
+        levensduren:\r\n<br/>• LED-lamp: ~50.000 uur\r\n<br/>• Spaarlamp: ~7.500 uur\r\n<br/>•
+        Gloeilamp: ~1.000 uur"
+    households_heater_electricity_share:
+      title: Elektrische kachel/bijstook
+      short_description: ''
+      description: "Electrische kachels zetten elektriciteit direct om in warmte.
+        Op zich is dat een zeer efficiënt proces.\r\n<br/>\r\nToch denken veel mensen
+        dat dit energieverspilling is. Elektriciteit kun je op veel verschillende
+        manieren nuttig inzetten en laagwaardige warmte kun je alleen gebruiken om
+        warm water te maken, of huizen te verwarmen. Uiteraard is de verspilling nog
+        groter als je de stroom opwekt door kostbare fossiele brandstoffen te verbranden.\r\n<br/><br/>\r\nElektrische
+        kachels of bijstook moeten snel veel warmte kunnen leveren en hebben daarom
+        een groot vermogen. Dit betekent dat ze het elektriciteitsnet sterk belasten.
+        \ Als je wilt zien wat de impact van elektrische bijstook bij warmtepompen
+        is, kun je deze schuif op hetzelfde percentage zetten als de elektrische warmtepomp
+        (bodem) schuif."
+    households_heater_crude_oil_share:
+      title: Olieketel
+      short_description: ''
+      description: Hier zie je welk deel van de verwarming door oliegestookte ketels
+        wordt ingevuld. Deze hebben als voordeel dat onder normale omstandigheden
+        de stookolie langzaam en volledig verbrandt, waardoor geen luchtvervuiling
+        wordt geproduceerd (behalve CO<sub>2</sub>). Een groot nadeel is dat de olietanks
+        na een paar decennia in de grond vaak gaan lekken en daarbij behoorlijke schade
+        kunnen doen aan het milieu of de kwaliteit van het drinkwater.
+    households_heater_combined_network_gas_share:
+      title: HR combiketel
+      short_description: ''
+      description: "Dit zijn gasgestookte HR-ketels. Dit zijn zeer efficiënte systemen,
+        maar er zijn efficiëntere manieren om met  gas te verwarmen. Om te zien welke
+        systemen efficiënter zijn, kun je enkele schuifjes hieronder instellen. \r\n<br/>\r\nHR
+        combiketels maken ook warm water om te douchen enz. Warmwaterproductie is
+        iets minder efficiënt dan de productie van warmte voor het CV-systeem.<br/>\r\nDeze
+        ketels stoten CO<sub>2</sub> uit. Dat kan een probleem zijn als je hele grote
+        reducties van broeikasgasemissies wilt halen."
+    households_heater_heatpump_ground_water_electricity_share:
+      title: Bodemwarmtepomp
+      short_description: ''
+      description: "Een warmtepomp is een apparaat dat warmte verplaatst. De meest
+        bekende toepassing is een koelkast, maar in een gebouw kan een warmtepomp
+        ook zorgen voor verwarming en koeling. Dat kost minder energie dan gasverwarming
+        met een HR CV-ketel, maar het werkt vaak alleen als vloer- en muurverwarming
+        worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen daarom
+        vooral nog ingezet bij nieuwbouw van huizen. Europese wetgeving schrijft namelijk
+        voor dat het energiegebruik van huizen per 2020 tot nul moet zijn toegebracht
+        (gemeten over een heel jaar). \r\n<br/><br/>\r\nJe spaart energie, maar er
+        is wel extra elektriciteit of gas nodig voor de warmtepomp. Deze warmtepomp
+        gebruikt elektriciteit, omdat de warmte uit de grond gehaald wordt. Een gaswarmtepomp
+        wordt vaker toegepast als warmte uit de lucht wordt gehaald. <br/>"
+    households_heater_wood_pellets_share:
+      title: Houtpelletkachel
+      short_description: ''
+      description: "Dit is een kachel die kleine houtpellets verbrandt. Deze ketels
+        zijn vrij efficiënt en geheel geautomatiseerd. De pellets worden automatisch
+        uit een silo gehaald. \r\n<br/><br/>\r\nHier is aangenomen dat de pellets
+        hernieuwbaar zijn geproduceerd. Het transport van biomassa kost brandstof
+        en hoe kleiner de schaal waarop het wordt toegepast, hoe minder 'groen' het
+        wordt.\r\n<br/><br/>\r\nOuderwetse houtkachels en open haarden zijn niet als
+        aparte opties in het model opgenomen."
+    households_heater_heatpump_air_water_electricity_share:
+      title: Luchtwarmtepomp
+      short_description: ''
+      description: "Een warmtepomp kan op elektriciteit of gas werken. Deze warmtepomp
+        gebruikt elektriciteit, haalt de omgevingswarmte uit de buitenlucht en maakt
+        gebruik van vloer- en muurverwarming.\r\n<br/><br/>\r\nEen warmtepomp is een
+        apparaat dat warmte verplaatst. De meest bekende toepassing is een koelkast,
+        maar in een gebouw kan een warmtepomp ook zorgen voor verwarming en koeling.
+        Dat kost minder energie dan gasverwarming met een HR CV-ketel, maar het kan
+        niet zomaar in ieder huis. Nu worden warmtepompen daarom vooral nog ingezet
+        bij nieuwbouw van huizen. Europese wetgeving schrijft namelijk voor dat het
+        energiegebruik van huizen per 2020 tot nul moet zijn toegebracht (gemeten
+        over een heel jaar). \r\n"
+    households_heater_coal_share:
+      title: Kolenketel
+      short_description: ''
+      description: "Welk percentage van de huishoudelijke warmtevraag wordt ingevuld
+        door kolen? \r\n<br/><br/>\r\nDe brandstofmix die je hier invult zal waarschijnlijk
+        het meest afhangen van je verwachtingen voor brandstofprijzen. Zie ook het
+        onder deel 'Kosten'. Andere relevante invloeden zijn milieuwetten."
+    households_heater_network_gas_share:
+      title: Gasketel
+      short_description: ''
+      description: 'Dit zijn dezelfde ketels als de "HR combiketels", behalve dat
+        ze geen warm water maken, maar alleen warmte voor de centrale verwarming.
+        Hierdoor zijn deze apparaten een beetje efficiënter dan de combiketels. '
+    households_heater_district_heating_steam_hot_water_share:
+      title: Warmtenet
+      short_description:
+      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
+        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
+        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
+        <a href="/scenario/supply/heat" >"Warmtenetten"</a>.
+    households_heater_hybrid_heatpump_air_water_electricity_share:
+      title: Hybride warmtepomp (gas)
+      short_description:
+      description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
+        met een gasgestookte HR-ketel. Een hybride warmtepomp maakt het mogelijk om
+        snel veel gas voor verwarming te besparen en geeft netbeheerders bovendien
+        meer tijd om stroomnetten te verzwaren.\r\n<br/><br/>\r\nHet werkt zo:<br/>\r\nDe
+        gasketel verwarmt het huis op koude dagen, als de warmtevraag het hoogst is.
+        Deze slimme truc zorgt ervoor dat een hybride warmtepomp het stroomnet minder
+        belast dan een elektrische warmtepomp alleen. Door slim gebruik te maken van
+        zulke hybride warmtepompen kan de noodzaak om stroomnetten te verzwaren vermeden
+        worden. \r\n<br/><br/>\r\nWarmtepompen verplaatsen warmte van de ene plek
+        naar de andere. Koelkasten gebruiken bijvoorbeeld warmtepompen, maar huizen
+        kunnen dat ook doen voor verwarming of koelen. Dit werkt het eigenlijk alleen
+        als gebouwen goed geïsoleerd zijn en als ze vloer- en muurverwarming hebben
+        in plaats van radiatoren. Hybride warmtepompen zijn een uitzondering op deze
+        regel doordat de gasketel ingezet kan worden. Ze kunnen slim kiezen welk deel
+        (de warmtepomp of de gasketel) het meest efficiënt of kosteneffectief is om
+        aan te zetten, afhankelijk van het weer en hoe goed een huis geïsoleerd is.
+        Minder geïsoleerde huizen zullen de gasketel vaker nodig hebben, beter geïsoleerde
+        huizen gebruiken vooral de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische
+        deel van de hybride warmtepomp is afhankelijk van de buitentemperatuur. Als
+        de COP onder de drempelwaarde zakt schakelt de hybride warmtepomp volledig
+        over op gas. De omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
+    households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
+      title: Hybride warmtepomp (waterstof)
+      short_description:
+      description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
+        met een waterstofgestookte HR-ketel.\r\n<br/><br/>\r\nHet werkt zo:<br/>\r\nDe
+        waterstofketel verwarmt het huis op koude dagen, als de warmtevraag het hoogst
+        is. Deze slimme truc zorgt ervoor dat een hybride waterstofwarmtepomp het
+        stroomnet minder belast dan een elektrische warmtepomp alleen. Door slim gebruik
+        te maken van zulke hybride waterstofwarmtepompen kan de noodzaak om stroomnetten
+        te verzwaren vermeden worden. \r\n<br/><br/>\r\nWarmtepompen verplaatsen warmte
+        van de ene plek naar de andere. Koelkasten gebruiken bijvoorbeeld warmtepompen,
+        maar huizen kunnen dat ook doen voor verwarming of koelen. Dit werkt het eigenlijk
+        alleen als gebouwen goed geïsoleerd zijn en als ze bijvoorbeeld vloer- en
+        muurverwarming hebben in plaats van radiatoren. Hybride waterstofwarmtepompen
+        zijn een uitzondering op deze regel doordat de waterstofketel ingezet kan
+        worden. Ze kunnen slim kiezen welk deel (de warmtepomp of de waterstofketel)
+        het meest efficiënt of kosteneffectief is om aan te zetten, afhankelijk van
+        het weer en hoe goed een huis geïsoleerd is. Minder geïsoleerde huizen zullen
+        de waterstofketel vaker nodig hebben, beter geïsoleerde huizen gebruiken vooral
+        de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische deel van de hybride
+        waterstofwarmtepomp is afhankelijk van de buitentemperatuur. Als de COP onder
+        de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op gas.
+        Deze omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
+    households_cooker_network_gas_share:
+      title: Gas
+      short_description: ''
+      description: "Koken op gas is populair in landen waar er een overvloed van aardgas
+        is en een gasdistributienet aanwezig is. De efficiëntie van een gasfornuis
+        is 40%. Omdat veel warmte naar de omgeving verloren gaat, zijn gasfornuizen
+        minder efficiënt dan elektrische uitvoeringen. Hoewel elektrisch koken dus
+        efficiënter lijkt, is dit niet altijd het geval omdat de hele keten meegenomen
+        moet worden.  Door verliezen in elektriciteitsproductie en -transport kan
+        het zijn dat gaskoken uiteindelijk voordeliger is.\r\n<br/><br/>\r\nUitsluitend
+        de kosten door het verschil in energievraag worden meegenomen. De kosten van
+        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+    households_cooker_resistive_electricity_share:
+      title: Elektrisch
+      short_description: ''
+      description: "Elektrische fornuizen zijn populair in dichtbevolkte regio's en
+        waar er geen toegang is tot een aardgasnetwerk. Een elektrisch fornuis zet
+        elektriciteit om in warmte. En elektrisch fornuis is ongeveer 55% efficiënt
+        (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/>\r\nHet
+        nadeel van een elektrisch fornuis is dat het tijd nodig heeft om op te warmen
+        en het is onmogelijk om snel de temperatuur te veranderen.\r\n<br/><br/>\r\nUitsluitend
+        de kosten door het verschil in energievraag worden meegenomen. De kosten van
+        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel."
+    households_cooker_halogen_electricity_share:
+      title: Halogeen
+      short_description: ''
+      description: "Halogeen fornuizen produceren infraroodstraling en rood licht
+        om eten te verwarmen. Halogeen fornuizen zijn herkendbaar aan de speciale
+        keramische glasplaat. Deze fornuizen kunnen sneller opwarmen en afkoelen dan
+        elektrische fornuizen. De efficiëntie van een halogeen fornuis is ongeveer
+        60% (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/><br/>\r\nUitsluitend
+        de kosten door het verschil in energievraag worden meegenomen. De kosten van
+        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+    households_cooker_induction_electricity_share:
+      title: Inductie
+      short_description: ''
+      description: "Een inductiekookplaat is een type kookplaat dat gebruikmaakt van
+        het principe van inductieverhitting. In tegenstelling tot andere kookplaten,
+        wordt warmte gecreëerd in de pan zelf en wordt het niet overgebracht van het
+        fornuis via een kookplaat of brandend gas. Voor inductiekoken zijn wel speciale
+        inductiepannen nodig. De efficiëntie van een inductiekookplaat is hoog, ongeveer
+        83-90% (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/><br/>\r\nUitsluitend
+        de kosten door het verschil in energievraag worden meegenomen. De kosten van
+        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+    households_cooker_wood_pellets_share:
+      title: Biomassa
+      short_description: ''
+      description: "Onder koken op biomassa vallen verschillende brandstoffen en technologiën
+        zoals hout, hout pallets, bio-gas en bio-olie. Ouderwetse hout fornuizen hebben
+        een lage efficiëntie voor koken. De efficiëntie van het biomassa fornuis in
+        het Energietransitiemodel is 30%. Dat is lager dan de efficiëntie van aardgas
+        en electrische alternatieven omdat veel warmte verloren gaat naar de omgeving.
+        \r\n<br/><br/>\r\nUitsluitend de kosten door het verschil in energievraag
+        worden meegenomen. De kosten van het kooktoestel zelf worden niet meegenomen
+        in het Energietransitiemodel.\r\n \r\n"

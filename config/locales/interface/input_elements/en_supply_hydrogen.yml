@@ -1,0 +1,159 @@
+---
+en:
+  input_elements:
+    co2_emissions_of_imported_hydrogen_present:
+      title: Present import
+      short_description:
+      description: "Below you can find reference values for the CO<sub>2</sub> emissions
+        of some common hydrogen production technologies (kg CO<sub>2</sub> per MWh
+        H2): <br /><br />\r\n<ul>\r\n<li>Steam Methane Reforming (SMR): 281 kg</li>\r\n<li>Autothermal
+        Reforming (ATR): 281 kg</li>\r\n<li>Coal gasification: 540 kg</li>\r\n<li>Electrolysis
+        (coal): 1320 kg</li>\r\n<li>Electrolysis (nuclear): 30 kg</li>\r\n<li>Electrolysis
+        (solar/wind): 0 kg</li>\r\n</ul> <br />\r\nNote that these numbers do not
+        take into account any CO<sub>2</sub> emissions that result from transporting
+        hydrogen to your area. Supply chain emissions, such as the emissions resulting
+        from building the hydrogen production plants or mining the required natural
+        resources, are also not taken into account. <br /> <br />\r\n\r\nSource: Gnanapragasam,
+        N.V. & M.A. Rosen (2017). A review of hydrogen production using coal, biomass
+        and other solid fuels. In: Biofuels (8), pp.725-745\r\n"
+    co2_emissions_of_imported_hydrogen_future:
+      title: Future import
+      short_description:
+      description: "Below you can find reference values for the CO<sub>2</sub> emissions
+        of some common hydrogen production technologies (kg CO<sub>2</sub> per MWh
+        H2): <br /><br />\r\n<ul>\r\n<li>Steam Methane Reforming (SMR): 281 kg</li>\r\n<li>Autothermal
+        Reforming (ATR): 281 kg</li>\r\n<li>Coal gasification: 540 kg</li>\r\n<li>Electrolysis
+        (coal): 1320 kg</li>\r\n<li>Electrolysis (nuclear): 30 kg</li>\r\n<li>Electrolysis
+        (solar/wind): 0 kg</li>\r\n</ul> <br />\r\nNote that these numbers do not
+        take into account any CO<sub>2</sub> emissions that result from transporting
+        hydrogen to your area. Supply chain emissions, such as the emissions resulting
+        from building the hydrogen production plants or mining the required natural
+        resources, are also not taken into account. <br /> <br />\r\n\r\nSource: Gnanapragasam,
+        N.V. & M.A. Rosen (2017). A review of hydrogen production using coal, biomass
+        and other solid fuels. In: Biofuels (8), pp.725-745"
+    capacity_of_energy_hydrogen_steam_methane_reformer_ccs:
+      title: Steam methane reforming + CCS
+      short_description:
+      description: "Steam methane reforming is a very mature hydrogen production process.
+        It works like this: methane reacts in the presence of a catalyst with high
+        temperature steam and gives a mixture of hydrogen and other gases. The unwanted
+        gases (including CO<sub>2</sub>) are then separated through further reactions
+        and the resulting hydrogen is purified to meet industrial standards. \r\n<br/><br/>\r\nSteam
+        methane reforming is already widely employed, but mostly for industry use.
+        This plant's input is network gas, so by changing the network gas composition
+        <a href=\"/scenario/supply/other_fuels/gas-from-gas-network\" >here</a>, you
+        can change how green the hydrogen you produce is. Steam methane reforming
+        is often thought of an important transitional hydrogen production process:
+        far from the cleanest and greenest, but able to facilitate upcoming hydrogen
+        demand.\r\n<br/><br/>\r\nTo reduce its CO<sub>2</sub>-emissions, this plant
+        has received a CCS (CO<sub>2</sub> Capture and Storage) extension. In short,
+        this means that carbon dioxide is separated, captured and then stored in nearby
+        depleted gas or oil fields, or geological formations like salt caverns. This
+        of course requires higher investments and maintenance costs, but in return
+        significantly cuts GHG emissions.<br/>"
+    capacity_of_energy_hydrogen_steam_methane_reformer:
+      title: Steam methane reforming
+      short_description:
+      description: "Steam methane reforming is a very mature hydrogen production process.
+        It works like this: methane reacts in the presence of a catalyst with high
+        temperature steam and gives a mixture of hydrogen and other gases. The unwanted
+        gases (including CO<sub>2</sub>) are then separated through further reactions
+        and the resulting hydrogen is purified to meet industrial standards. \r\n<br/><br/>\r\nSteam
+        methane reforming is already widely employed, but mostly for industry use.
+        This plant's input is network gas, so by changing the network gas composition
+        <a href=\"/scenario/supply/other_fuels/gas-from-gas-network\" >here</a>, you
+        can change how green the hydrogen you produce is. Steam methane reforming
+        is often thought of an important transitional hydrogen production process:
+        far from the cleanest and greenest, but able to facilitate upcoming hydrogen
+        demand.<br />"
+    energy_local_electrolysis_hydrogen_share:
+      title: Local electrolysis
+      short_description:
+      description: "Electrolysis is a hydrogen production process known for many,
+        many years. Put simply, by adding to electrodes and applying a current to
+        a container filled with water, water molecules are forced to split into hydrogen
+        and oxygen. This is an energy intensive process, since current does not travel
+        through water easily. Water is made more conductive by using an electrolyte,
+        i.e. a substance that when dissolved has a charge and conducts electricity.\r\n<br/><br/>\r\nThe
+        various main types of electrolysis differ in electrolyte, temperature and
+        pressure of operation. This is a small local electrolysis plant of 0.5MW installed
+        at a retail station that produces hydrogen through alkaline electrolysis (based
+        on the Hamburg Vattenfall station). Larger, central electrolysis units exist,
+        but as of now have only slightly higher efficiencies.\r\n<br/><br/>\r\nThe
+        most promising technique with a significantly higher efficiency, nowadays
+        still in R&D phase and coping with a short lifetime and limited capacity,
+        is high temperature solid oxide electrolysis. Generally expected to be commercially
+        available between 2020 and 2025, it would be a large scale highly efficient
+        process that, especially when coupled with renewably produced electricity,
+        can be a major leap in greening our fuels."
+    capacity_of_energy_hydrogen_biomass_gasification_ccs:
+      title: Biomass gasification CCS
+      short_description:
+      description: 'Biomass gasification with carbon capture and storage is a hydrogen
+        production technique that is not yet available for large scale production. '
+    capacity_of_energy_hydrogen_biomass_gasification:
+      title: Biomass gasification
+      short_description:
+      description: Biomass gasification is a mature technology in which biomass is
+        converted into hydrogen. <br />
+    capacity_of_energy_hydrogen_wind_turbine_offshore:
+      title: Offshore wind turbine for H<sub>2</sub>
+      short_description:
+      description: "How many wind turbines will produce electricity that will directly
+        be converted into hydrogen with electrolysers?\r\n</br></br>\r\nThere are
+        a number of plans for building wind parks far out on sea. For these parks
+        it will probably be economically more viable to convert the electricity directly
+        into hydrogen instead of transporting the electricity to land first. This
+        has to do with the high electricity cabling costs relative to the low gas
+        piping costs. \r\n</br></br>\r\nThis slider sets the installed capacity of
+        offshore wind turbines dedicated to hydrogen production and a corresponding
+        amount of electrolysis capacity to convert the produced electricity into hydrogen.
+        <br /><br />\r\nNote: The technical and financial specifications below are
+        only the specifications of the electrolyser, not the wind turbines. The specifications
+        of the wind turbines can be found in the <a href=\"/scenario/supply/electricity_renewable/wind-turbines\">Renewable
+        electricity section</a>.<br />"
+    capacity_of_energy_hydrogen_solar_pv_solar_radiation:
+      title: Solar PV plant for H<sub>2</sub>
+      short_description:
+      description: "How many solar pv plants will be build in the future for hydrogen
+        production using electrolysers?\r\n<br/><br/>\r\nThis slider sets installed
+        solar PV capacity and the installed capacity of electrolysis plants to produce
+        hydrogen. The capacity of the electrolysers relative to the capacity of the
+        solar PV plants depends on the hours of sunshine in a country. More information
+        about this can be found in our <a href=\"https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx\"
+        >documentation on Github</a>.\r\n</br></br>\r\nYou can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        /><br />\r\n\r\nNote: The technical and financial specifications below are
+        only the specifications of the electrolyser, not the solar panels. The specifications
+        of the solar panels can be found in the <a href=\"/scenario/supply/electricity_renewable/solar-power\">Renewable
+        electricity section</a>.<br />"
+    capacity_of_energy_imported_hydrogen_baseload:
+      title: H<sub>2</sub> import
+      short_description:
+      description: "How much hydrogen will be imported in the future?\r\n<br><br>\r\nThis
+        slider sets the amount of hydrogen that is imported from outside your area.
+        The hydrogen can originate from different countries and can be produced with
+        different technologies, which both influence the accompanied CO<sub>2</sub>-emissions.
+        Therefore, it is possible to adjust the CO<sub>2</sub>-emissions of imported
+        hydrogen in the <a href=\"/scenario/supply/hydrogen/co-sub-2-sub-emissions-of-imported-hydrogen\"
+        >slide below</a>. Additionally, it is possible to set the costs of imported
+        hydrogen in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-import\"
+        >costs section</a>."
+    energy_transport_hydrogen_compressed_trucks_share:
+      title: Compressed H<sub>2</sub> in trucks
+      short_description:
+      description: What percentage of the total central hydrogen production in your
+        scenario is transported via trucks? Truck transport is flexible and can be
+        scaled up or down relatively easily. As such, it is a suitable option when
+        hydrogen demand is more dispersed and when volumes are lower. This may for
+        example be the case for hydrogen delivery to refuelling stations.
+    energy_transport_hydrogen_pipelines_share:
+      title: H<sub>2</sub> pipelines
+      short_description:
+      description: What percentage of the total central hydrogen production in your
+        scenario is transported via pipelines? Pipeline transport can be relatively
+        cheap but requires large investments up-front. As such, this option seems
+        to be the most viable when hydrogen demand is concentrated and hydrogen volumes
+        are large. This may for example be the case if large industrial sites switch
+        to hydrogen. In the future it may be possible to repurpose (parts of) the
+        existing gas networks, which can reduce investment costs.

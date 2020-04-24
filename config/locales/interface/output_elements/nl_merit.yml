@@ -1,0 +1,162 @@
+---
+nl:
+  output_elements:
+    import_export_capacity:
+      title: Effect van interconnectiecapaciteit op elektriciteitsprijs
+      short_description: ''
+      description: ''
+    import_export_renewables:
+      title: Extra hernieuwbare opwek vs marginale elektriciteitskosten
+      short_description: ''
+      description: ''
+    import_export_flows:
+      title: Interconnectiecapaciteit
+      short_description: ''
+      description: "Deze grafiek toont de interconnectie capaciteit tussen Nederland,
+        Duitsland, Frankrijk en België.\r\nHoge pieken in import en export van elektriciteit
+        kunnen beter worden opgevangen als de interconnectie capaciteit groot is,
+        wat een positief effect heeft op de prijsconvergentie in de verbonden landen.\r\n<br><br>\r\nNB:
+        de interconnector tussen België en Frankrijk is asymmetrisch."
+    import_export_cwe:
+      title: CWE 'day ahead' elektriciteitsprijs
+      short_description: ''
+      description: "Deze grafiek toont de 'day-ahead' prijs van elektriciteit voor
+        de Centraal West Europese (CWE) landen (BE, DE, FR, LU en NL) voor de maand
+        januari in 2014 zoals gepubliceerd op <a href=\"http://www.apxgroup.com/market-results/cwe/\"
+        target=\"_blank\">http://www.apxgroup.com/market-results/cwe</a>.\r\n<br/><br/>\r\nDe
+        prijsconvergentie (hoe vaak prijzen gelijk zijn) is een maat voor het succes
+        van de marktkoppeling. De koppeling wordt geholpen door meer interconnectiecapaciteit
+        tussen landen en door slimmere marktmechanismen in te zetten.\r\n"
+    energy_storage:
+      title: Energieopslag
+      short_description: Deze grafiek geeft een impressie hoe de kosten van conversietechnologieën
+        zich tot elkaar verhouden en op welk moment het economisch rendabel wordt
+        om de eerste conversie-eenheden te bouwen.
+      description: "Deze grafiek geeft een indicatie van hoe de kosten van een aantal
+        conversie technologieën zich tot elkaar verhouden en vanaf welk punt het economisch
+        interessant zou kunnnen worden om conversie eenheden te bouwen.\r\n\r\n<br/><br/>\r\n\r\nDe
+        <b>x-as</b> van de grafiek toont het totaal geïnstalleerd vermogen van wind-
+        en zonne-energie. Als dit vermogen hoger komt te liggen dan ~15GW, zullen
+        in Nederland de eerste momenten met een overschot aan elektriciteit zich voordoen.
+        De <b>y-as</b> heeft als eenheid € / MWh. In het geval van windturbines verwijst
+        dit naar de <i>huidige</i> kosten van de totale elektriciteit productie van
+        wind turbines op land, zoals te zien in <a href=\"/scenario/costs/wind/investment\">'Windmolens'
+        sectie van Kosten</a>. \r\n\r\nIn het geval van opslag en conversie technologie
+        geeft de y-as een indicatie van de kosten om bruikbare energie te leveren
+        door de conversie van overtollige elektriciteit.\r\n\r\n<br/><br/>\r\n\r\nDe
+        stippellijn laat zien hoeveel volatiel vermogen jij in jouw scenario hebt
+        opgesteld (als je geen lijn ziet heb je meer dan 120GW opgesteld). Deze lijn
+        is het enige dat beïnvloed wordt door jouw slider instellingen.\r\n\r\n<br/><br/>\r\n\r\nOm
+        de curves in deze grafiek te genereren hebben wij een heel aantal aannames
+        gedaan, de belangrijkste zijn:\r\n\r\n<ul style=\"overflow: hidden\">\r\n\r\n<li>Overtollige
+        elektriciteit wordt niet geëxporteerd, maar opgeslagen, omgezet of vermeden
+        door het uitschakelen van wind- en/of zonne-energie. </li>\r\n<li>De verhouding
+        van het geïnstalleerde wind en zon vermogen is vastgezet op de verhouding
+        in 2010. </li>\r\n<li>Al het andere blijft hetzelfde; de grafiek reageert
+        niet op je slider instellingen. </li>\r\n<li>Slechts de marginale kosten worden
+        weergegeven; in andere woorden de curves representeren de kosten om een eerste
+        conversie eenheid of een extra wind turbine te plaatsen.</li>\r\n<li>Toekomstige
+        kostendalingen van de verschillende technologieën worden niet in ogenschouw
+        genomen (leereffecten en schaalvoordelen).</li>\r\n</ul> \r\n\r\nVoor een
+        gedetailleerde uitleg en een complete lijst van aannames, kunt u onze <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
+        target =\"_blank\">documentatie</a> bekijken. "
+    use_of_excess_electricity:
+      title: Gebruik van elektriciteitsoverschotten
+      short_description: ''
+      description: Het ETM kent een aantal flexibiliteitstechnologieën die goed kunnen
+        omgaan met elektriciteitsoverschotten uit windmolens en zonnepanelen. Deze
+        grafiek toont hoeveel elektriciteit door de verschillende opties wordt gebruikt
+        in jouw scenario. Via het Flexibiliteit menu kun je bepalen hoeveel van elke
+        technologie je in jouw scenario wilt inzetten.
+    storage_options:
+      title: Flexibiliteitsopties
+      short_description: ''
+      description: "Het ETM kent een aantal flexibiliteitstechnologieën die goed kunnen
+        omgaan met elektriciteitsoverschotten uit windmolens en zonnepanelen. Deze
+        tabel toont het totale geïnstalleerde vermogen van elk van deze technologieën
+        in jouw scenario; dit bepaald hoeveel elektriciteit je op elk moment kunt
+        opslaan of omzetten. Verder toont de tabel het totale volume dat beschikbaar
+        is voor opslag en conversie. Tenslotte toont de tabel hoeveel elektriciteit
+        op jaarbasis wordt gebruikt door de verschillende opties; zowel in PJ als
+        in TWh.\r\n</br></br>\r\nVia het Flexibiliteit menu kun je bepalen hoeveel
+        van elke technologie je in jouw scenario wilt inzetten."
+    merit_order_hourly_flexibility:
+      title: Inzet van flexibiliteitsopties op uurbasis
+      short_description: ''
+      description: Het ETM houdt op uurbasis bij of er elektriciteitsoverschotten
+        zijn en hoe deze worden ingezet.
+    carbon_balance:
+      title: CO/CO<sub>2</sub> beschikbaar en gebruikt voor power-to-kerosene
+      short_description: ''
+      description: ''
+    solar_pv_curtailment:
+      title: Productiebeperking van zonnepanelen
+      short_description: 
+      description: 
+    hourly_solar_pv_curtailment:
+      title: Uurlijkse productie van zonnepanelen
+      short_description: 
+      description: 
+    merit_order_table:
+      title: Merit order tabel
+      short_description: ''
+      description: "Deze tabel toont de 'merit order' van jouw scenario. Gebaseerd
+        op je aannames over de kosten voor onderhoud en beheer, brandstof en CO<sub>2</sub>
+        van de gebouwde  elektriciteitscentrales, berekent het ETM de volgorde waarmee
+        centrales de stroomvraag invullen. \r\n<br/><br/>\r\nIn de tabel kun je zien
+        welke plek iedere technologie in de rangschikking heeft, gebaseerd op de bijbehorende
+        draaikosten. Ook zie je het beschikbare vermogen en het aantal vollast draaiuren."
+    merit_order:
+      title: Merit order capaciteiten en marginale kosten
+      short_description: ''
+      description: "Deze grafiek toont de 'merit order' van jouw scenario. Gebaseerd
+        op je aannames over de kosten voor onderhoud en beheer, brandstof en CO<sub>2</sub>
+        van de gebouwde  elektriciteitscentrales, berekent het ETM de volgorde waarmee
+        centrales de stroomvraag invullen. \r\n<br/><br/>\r\nIn de grafiek kun je
+        zien welke plek iedere technologie in de rangschikking heeft, gebaseerd op
+        de bijbehorende draaikosten."
+    plant_profitability:
+      title: Winstgevendheid van centrales
+      short_description: ''
+      description: ''
+    merit_order_price_curve:
+      title: Elektriciteitsprijs op uurbasis
+      short_description: ''
+      description: Het ETM berekent de elektriciteitsmix op uurbasis afhankelijk van
+        de elektriciteitsvraag en de geïnstalleerde vermogens van alle elektriciteitsproducerende
+        technologieën. De merit order bepaalt de volgorde waarin deze technologieën
+        worden ingeschakeld. De prijs op uurbasis is gelijk aan de draaikosten van
+        de duurste centrale die op dat moment draait.
+    merit_order_hourly_supply:
+      title: Elektriciteitsproductie op uurbasis
+      short_description: ''
+      description: Het ETM berekent de elektriciteitsmix op uurbasis afhankelijk van
+        de elektriciteitsvraag en de geïnstalleerde vermogens van alle elektriciteitsproducerende
+        technologieën. De merit order bepaalt de volgorde waarin deze technologieën
+        worden ingeschakeld. Volatiele bronnen van elektriciteit en must-run technologieën
+        worden niet meegenomen in de merit order. Deze grafiek toont de elektriciteitsmix
+        op uurbasis.
+    merit_order_excess_events:
+      title: Duur van elektriciteitsoverschotten
+      short_description: ''
+      description: Als gevolg van de grote inzet van volatiele vormen van elektriciteitsproductie
+        kan het aanbod van elektriciteit de vraag overstijgen. Het ETM houdt het aantal
+        opeenvolgende uren bij waarop dit het geval is in jouw scenario. Wanneer je
+        flexibiliteitsopties inzet in je scenario zal het aantal uren met elektriciteitsoverschotten
+        afnemen.
+    dynamic_demand_curve:
+      title: Elektriciteitsvraag op uurbasis
+      short_description: ''
+      description: "Deze grafiek toont de impact van keuzes over vraag en inzet van
+        technologieën op de hoogte en vorm van de totale elektriciteitsvraag op hoogspanningsniveau
+        (rode lijn).\r\n<br>\r\n<br>\r\nVoor de volgende technologieën en keuzes wordt
+        de impact op de vraagcurve expliciet getoond:\r\n<ul>\r\n<li>elektrische ruimteverwarmingstechnologieën
+        zoals warmtepompen</li>\r\n<li>woningisolatie en warmtevraag (als elektrische
+        ruimteverwarmingstechnologieën worden ingezet)</li>\r\n<li>elektrische warm
+        watertechnologieën zoals warmtepompen</li>\r\n<li>warm watervraag (als elektrische
+        warm watertechnologieën worden ingezet)</li>\r\n<li>inzet van power-to-heat
+        (als elektrische warm watertechnologieën worden ingezet)</li>\r\n<li>marktaandeel
+        en laadstrategieën van elektrische auto's</li>\r\n</ul>\r\nVoor het overige
+        elektriciteitsgebruik van technologieën en toepassingen in het ETM word de
+        statische TenneT vraagcurve aangenomen. Dit deel wordt getoond als het witte
+        gedeelte onder de rode lijn."

@@ -1,0 +1,68 @@
+---
+nl:
+  input_elements:
+    agriculture_burner_crude_oil_share:
+      title: Olieketel
+      short_description: ''
+      description: "Welk percentage van de warmtevraag in de landbouw (broeikassen)
+        wordt ingevuld door oliegestookte ketels?\r\n<br/><br/>\r\nVoor kassen is
+        gas interessanter dan sterk vervuilende vloeibare of vaste brandstoffen, anders
+        dan in de industrie. De mate waarin men zulke brandstoffen relatief schoon
+        kan gebruiken hangt namelijk mede af van de schaalgrootte. "
+    agriculture_burner_wood_pellets_share:
+      title: Biomassaketel
+      short_description: ''
+      description: 'Welk percentage van de warmte die nodig is in de land- en tuinbouw
+        komt van het verbranden van biomassa? Het verbranden van lokaal beschikbare
+        biomassa is energetisch vrij efficiënt. '
+    agriculture_heatpump_water_water_ts_electricity_share:
+      title: El. warmtepomp WKO
+      short_description: ''
+      description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
+        opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
+        bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
+        het huis mee te verwarmen. Als alternatief kan ook de natuurlijke warmte of
+        koude van oppervlaktewater of wegen gebruikt worden.\r\n<br/><br/>\r\nWarmtepompen
+        zijn zeer efficiënt als ze met WKO gecombineerd worden, omdat minder energie
+        hoeft te worden toegevoegd om een gebouw te koelen of te verwarmen. Het is
+        helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
+        (bijvoorbeeld in stedelijk gebied)."
+    agriculture_geothermal_share:
+      title: Geothermisch
+      short_description: ''
+      description: Het warmtepotentieel  van aardwarmte is in theorie gigantisch.
+        Deze schuif geeft aan hoeveel lage temperatuurswarmte (< 100 &#176;C) van
+        enkele kilometers diepte je wilt inzetten.
+    agriculture_burner_network_gas_share:
+      title: Gasketel
+      short_description: ''
+      description: Dit zijn gasgestookte ketels. Dit zijn behoorlijk efficiënte systemen,
+        maar ze stoten wel CO<sub>2</sub> uit.
+    agriculture_final_demand_steam_hot_water_share:
+      title: Warmtenet
+      short_description: ''
+      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
+        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
+        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
+        <a href="/scenario/supply/heat" >"Warmtenetten"</a>.
+    agriculture_burner_hydrogen_share:
+      title: Waterstofketel
+      short_description: 
+      description: Welk percentage van de warmte die nodig is in de land- en tuinbouw
+        komt van het verbranden van waterstof? <br />
+    agriculture_useful_demand_electricity:
+      title: Elektriciteit
+      short_description: ''
+      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je hieronder kunt kiezen.\r\n<br/><br/>\r\nHoe denk
+        jij dat de elektriciteitsvraag in de land- en tuinbouw zich gaat ontwikkelen?
+        Dat hangt vooral af van de groei van het aantal broeikassen, dus zijn economische
+        groeiverwachtingen en investeringscondities van belang. "
+    agriculture_useful_demand_useable_heat:
+      title: Warmte
+      short_description: ''
+      description: "Let op: deze verandering van energiegebruik is onafhankelijk van
+        de technologieën die je hieronder kunt kiezen.\r\n<br/><br/>\r\nHoe denk jij
+        dat de warmtevraag in de land- en tuinbouw zich gaat ontwikkelen? Dat hangt
+        vooral af van de groei van het aantal broeikassen en dus van economische groei
+        en inversteringscondities. "

@@ -1,0 +1,314 @@
+---
+en:
+  output_element_series:
+    gas_ccgt_overview_costs_of_electricity_production:
+      short_description: Gas-fired power plant with both gas and steam turbine
+      description: "Gas-fired power plant. Combustion of natural gas drives a gas turbine
+        connected to an electric generator. The residual heat is used to generate
+        steam to drive a steam turbine. This '2-step' technology (combined cycle)
+        is significantly more efficient than a conventional gas-fired plant that generates
+        heat only to produce steam. Gas-fired plants produce only half the CO<sub>2</sub>
+        per MWh of a coal-fired power plant. The model uses a technical lifetime of
+        30 years.\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_ccgt.jpg\" />"
+    gas_conventional_overview_costs_of_electricity_production:
+      short_description: Old fashioned gas-fired power plant
+      description: Electricity generated in conventional steam turbine gas-fired power
+        plant. These plants still exist, but are no longer being built, as they are
+        less efficient than CCGT power plants.
+    coal_powder_overview_costs_of_electricity_production:
+      short_description: Modern pulverized coal power plant
+      description: "Electricity generated in an ultra-supercritical pulverized coal power
+        plant. In these type of plants pulverized coal is burnt to generate high pressure
+        steam. The steam drives a turbine connected to a generator to generate electricity.
+        <br/>\r\nIt is possible to co-fire biomass with the coal (max. 30% of energy-input).
+        The model uses a technical lifetime of 30 years. Also see 'Co-firing (Coal)'.\r\n<br/><br/>\r\n<img
+        src=\"/assets/popups/img_coal_pwd.jpg\" />"
+    biomass_chp_overview_costs_of_electricity_production:
+      short_description: Small biomass-fired CHP of 20 MWe
+      description: "Small local biomass-fired (wood chips or wood pellets) power plant
+        of 20 MWe. The heat produced is used in industrial processes or for heating
+        nearby city blocks. Because of this, less energy is lost. The model uses a
+        technical lifetime of 25 years.\r\n<br/><br/> \r\n<a href=\"/units\">More
+        information on units...</a>\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_cofiring_coal.jpg\"/>\r\n"
+    coal_ccs_overview_costs_of_electricity_production:
+      short_description: Modern pulverized coal power plant with CO<sub>2</sub> storage
+      description: "Pulverized coal power plant, but using capture and underground storage
+        of carbon dioxide (CO<sub>2</sub>). Several technologies exist to capture
+        CO<sub>2</sub>. All of these cost energy and so this power plant uses nearly
+        30% more coal to produce the same amount of electricity as a conventional
+        pulverized coal power plant. The CCS power plant emits ~15% of the CO<sub>2</sub>
+        per MWh produced.<br/>\r\nThe costs for pressurization, transport and underground
+        storage of CO2 have also been included. The model uses a technical lifetime
+        of 30 years.\r\n<br/><br/> \r\n<a href=\"/units\">More information on units...</a>\r\n<br/><br/>\r\n<img
+        SRC=\"/assets/popups/img_coal_pwd_ccs.jpg\" />"
+    gas_chp_large_overview_costs_of_electricity_production:
+      short_description: A large Combined Heat and Power (CHP) unit
+      description: "A large Combined Heat and Power (CHP) unit of 20 MWe (50 MWth). This
+        is a gas-fired engine or turbine whose heat is used for industrial processes
+        for example. The electricity that is not used is delivered back to the power
+        grid for a fee paid by the local utility. The model uses a technical lifetime
+        of 25 years.\r\n<br/><br/> \r\n<a href=\"/units\">More information on units...</a>"
+    gas_chp_small_overview_costs_of_electricity_production:
+      short_description: A small Combined Heat and Power (CHP) unit
+      description: "A small local Combined Heat and Power (CHP) unit of ~1 MWe (~1 MWth).
+        This is a gas-fired engine whose heat is used to heat greenhouses, for example.
+        The electricity the owner doesn't use is delivered back to the power grid
+        for a fee paid by the local utility. The model uses a technical lifetime of
+        15 years.\r\n<br/><br/> \r\n<a href=\"/units\">More information on units...</a>\r\n\r\n<br/><br/>\r\n<img
+        SRC=\"/assets/popups/img_small_chp.png\" />"
+    coal_chp_overview_costs_of_electricity_production:
+      short_description: A small coal power plant contributing heat to city heating
+      description: "A small coal-fired power plant that contributes some of its heat to
+        city heating or industrial processes. Because not all heat is used to make
+        electricity, the electric yield is lower. If all heat is used, the total energetic
+        efficiency is higher, though.\r\n"
+    oil_plant_overview_costs_of_electricity_production:
+      short_description: 'Power from an oil-fired power plant '
+      description: "Electricity generation in an oil-fired power plant (800 MWe). These
+        plants are not common in Europe. In these type of plants crude and fuel oil
+        is burnt to generate high pressure steam. The steam drives a turbine connected
+        to a generator to generate electricity. It is often possible to burn natural
+        gas in these plants. The model uses a technical lifetime of 30 years. \r\n<br/><br/>
+        \r\n<a href=\"/units\">More information on units...</a>\r\n\r\n"
+    coal_conventional_overview_costs_of_electricity_production:
+      short_description: Old-fashioned coal-fired power plant
+      description: "Conventional coal-fired power plant of 800 MWe. This is not a modern
+        ultra-supercritical plant, and has lower efficiency and higher pollution than
+        modern plants. They can no longer be built in most rich countries, but still
+        exist here and there.\r\n<br/><br/> \r\n<a href=\"/units\">More information
+        on units...</a>\r\n\r\n<br/><br/>\r\n<img SRC=\"/assets/popups/img_coal_pwd.jpg\"
+        />"
+    coal_igcc_ccs_overview_costs_of_electricity_production:
+      short_description: Gasified coal power plant with CO<sub>2</sub> storage
+      description: "Gasified coal power plant (800 MWe), but using capture and underground
+        storage of CO<sub>2</sub>. Several technologies exist to capture CO<sub>2</sub>.
+        All of these cost energy and so this power plant uses nearly 20% more coal
+        to produce the same amount of electricity as a conventional gasified coal
+        power plant. The CCS power plant emits ~15% of the CO<sub>2</sub> per MWh
+        produced.<br/>\r\nThe costs for pressurization, transport and underground
+        storage of CO<sub>2</sub> have also been included. The model uses a technical
+        lifetime of 30 years.\r\n<br/><br/> \r\n<a href=\"/units\">More information
+        on units...</a>\r\n<br/><br/><img SRC=\"/assets/popups/img_coal_pwd_ccs.jpg\"
+        />\r\n\r\n"
+    coal_oxyfuel_ccs_overview_costs_of_electricity_production:
+      short_description: Coal plant using 100% oxygen and CO<sub>2</sub> storage.
+      description: "Coal power plant using capture and underground storage of CO<sub>2</sub>.
+        This plant burns fuel in the presence of 100% oxygen (instead of ~20% oxygen
+        present in air), making the fuel burn better. This produces less polluting
+        gases than other coal-fired technologies. This plant is particularly suited
+        for burning 'wetter' and lower grade coal such as lignite. \r\nSeveral technologies
+        exist to capture CO<sub>2</sub>. All of these cost energy and so this power
+        plant uses nearly 30% more coal to produce the same amount of electricity
+        as a conventional pulverized coal power plant. The CCS power plant emits ~10-15%
+        of the CO<sub>2</sub> per MWh produced.<br/>\r\nThe costs for pressurization,
+        transport and underground storage of CO<sub>2</sub> have also been included.
+        The model uses a technical lifetime of 30 years.\r\n<br/><br/> \r\n<a href=\"/units\">More
+        information on units...</a>\r\n"
+    coal_lignite_overview_costs_of_electricity_production:
+      short_description: Brown coal-fired power plant
+      description: "Note: these plants are only built in the vicinity of lignite mines.
+        Countries without lignite supply do not have them.\r\n<br/><br/> \r\nElectricity
+        generation in a lignite or brown coal-fired power plant (800 MWe). In these
+        type of plants brown coal is burnt to generate high pressure steam. The steam
+        drives a turbine connected to a generator to generate electricity. The model
+        uses a technical lifetime of 30 years. <br/>\r\nBrown coal has a higher moisture
+        and lower energy description than regular 'steam' coal. It is also cheaper. Without
+        added measures this plant is more polluting than other coal-fired plants.\r\n<br/><br/>\r\n\r\n<a
+        href=\"/units\">More information on units...</a>\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_lignite.jpg\"
+        />\r\n"
+    coal_igcc_overview_costs_of_electricity_production:
+      short_description: Gasified coal power plant
+      description: "Plant of 800 MWe powered by gasified coal. This type of power plant
+        can also gasify biomass or even waste in principle. Gas combustion drives
+        a gas turbine connected to an electric generator. The residual heat is used
+        to generate steam to drive a steam turbine. This '2-step' technology (combined
+        cycle) is as efficient as a pulverized coal plant. This plant type is easier
+        to shut down than a pulverized coal-fired plant. The model uses a technical
+        lifetime of 30 years.\r\n<br/><br/> \r\n<a href=\"/units\">More information
+        on units...</a>\r\n\r\n<br/><br/>\r\n<img SRC=\"/assets/popups/img_coal_pwd.jpg\"
+        />"
+    wind_inland_overview_costs_of_electricity_production:
+      short_description: Power from Inland wind turbine
+      description: "Inland wind turbine. This is a fairly mature technology for generating
+        electricity. Because it is less windy on land this wind turbine produces less
+        current than those at the coast or offshore. The model uses a 3 MWe wind turbine
+        that produces at full capacity ~25% of the time, due to wind conditions (compare:
+        coal-fired plant max 85% of the time). The model uses a technical lifetime
+        of 20 years.\r\n\r\n<br/><br/> \r\n<a href=\"/units\">More information on
+        units...</a>\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_wind_inland.jpg\"
+        />\r\n\r\n"
+    wind_coastal_overview_costs_of_electricity_production:
+      short_description: Power from coastal wind turbines
+      description: "Coastal wind turbine on sea dikes or in very shallow water. This is
+        a fairly mature technology for generating electricity. Because maintenance
+        is cheaper on land than at sea, this is the cheapest form of wind power. Due
+        to more favorable wind conditions at sea than at the coast, this wind turbine
+        produces less electricity than one at sea. The model uses a 3 MWe wind turbine
+        that produces at full capacity ~27% of the time, due to wind conditions (compare:
+        coal-fired plant 85% of the time). The model uses a technical lifetime of
+        18 years.\r\n\r\n<br/><br/> \r\n<a href=\"/units\">More information on units...</a>\r\n\r\n<br/><br/><img
+        SRC=\"/assets/popups/img_wind_coastal.jpg\" />"
+    wind_offshore_overview_costs_of_electricity_production:
+      short_description: Power from offshore wind turbines
+      description: "Wind turbine at sea (more than 12 miles out). This technology is still
+        being developed. Wind turbines are getting ever bigger and more powerful,
+        while producers try to make their maintenance as simple (cheap) as possible.
+        What maintenance costs will be in a few years is not quite clear yet. Due
+        to most favorable wind conditions at sea, this wind turbine produces more
+        electricity than those on land or at the coast. The model uses a 3 MWe wind
+        turbine that produces at full capacity ~38% of the time, due to wind conditions
+        (compare: coal-fired plant 85% of the time). Larger (5 to 10 MWe) wind turbines
+        exist, but the maintenance costs of those are too unclear for them to be used
+        in the model. The model uses a technical lifetime of 15 years.\r\n\r\n\r\n<br/><br/>
+        \r\n<a href=\"/units\">More information on units...</a>\r\n\r\n<br/><br/><img
+        SRC=\"/assets/popups/img_wind_offshore.jpg\" />\r\n"
+    hydro_river_overview_costs_of_electricity_production:
+      short_description: Small run-of-the-river hydro-electric plant
+      description: "Small hydro-electric power plant (10 MWe) in large rivers. The water
+        flows through a turbine in a dam, generating electricity. Due to the limited
+        slope there is little energy available for these plants. The model uses a
+        technical lifetime of 45 years.\r\n<br/><br/> \r\n<a href=\"/units\">More
+        information on units...</a>\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_hydro_conv.jpg\"
+        />"
+    geothermal_well_overview_costs_of_electricity_production:
+      short_description: Geothermal electric power plant
+      description: "7 MWe geothermal electric power plant. Electricity is generated using
+        heat from over 4 km deep underground. Water is pumped deep underground into
+        drilled holes, where the earth's heat turns it to steam. The pressurized steam
+        is then returned to the surface, where it drives a steam turbine to create
+        electricity.<br/><br/>\r\n\r\nNote that this requires water of much higher
+        temperatures (100s &#176;C) than geothermal plants that are only used for
+        heating purposes. How viable this option is, depends on how deep underground
+        the heat can be found.<br/><br/>\r\n\r\nThe costs of geo-electricity are mostly
+        investment costs. Whether these are earned back depends mostly on the number
+        of operating hours of the plant, the lifetime of the well and how fast the
+        water can 'run' from the cold well to the hot one.\r\n\r\n<br/><br/> \r\n<a
+        href=\"/units\">More information on units...</a>\r\n<br/><br/><img SRC=\"/assets/popups/img_geothermal_elec.jpg\"
+        />\r\n"
+    local_solar_pv_households_overview_costs_of_electricity_production:
+      short_description: Power from roof-mounted solar cells at your home
+      description: "Panel of roof-mounted solar cells that transform sunlight into electricity,
+        known as photo-voltaic solar cells. This technology is developing rapidly
+        and solar panels are becoming ever more efficient and cheaper. Solar panels
+        are expected to become much cheaper in the coming 40 years. <br/><br/>\r\n\r\nThe
+        model uses a technical lifetime of 25 years. Contrary to what many people
+        believe, solar panels easily earn back the energy used to produce them. In
+        2009, this happens within 1.5 years if panels are installed in southern Europe.
+        In northwestern Europe, it takes 2.5 years to generate the energy used to
+        produce the whole solar panel system.\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_local_solar_pv.jpg\"
+        />"
+    solar_pv_overview_costs_of_electricity_production:
+      short_description: A plant of solar power panels
+      description: "A plant of 20 MWe of photovoltaic solar power panels. These are not
+        mounted on roofs, but placed in a field, for example. <br/>\r\nSince Northern
+        Europe receives relatively little sun, solar power is still much more expensive
+        than other renewable technologies. \r\n<br/><br/> \r\n<a href=\"/units\">More
+        information on units...</a>\r\n<br/><br/><img SRC=\"/assets/popups/img_solar_power_plant.jpg\"
+        />"
+    solar_csp_overview_costs_of_electricity_production:
+      short_description: Electricity from concentrated solar power (CSP) plants
+      description: "This indicates the costs of Concentrated Solar Power (CSP) in your
+        country.<br/><br/>\r\n\r\nCSP plants produce electricity by concentrating
+        the sun's heat using curved mirrors. This technology uses direct sunlight
+        (while solar PV also uses indirect sunlight) and is therefore only effective
+        if the sun actually shines. These plants are therefore very attractive in
+        sunny, desert-like areas, but at a disadvantage in Northern Europe. Plans
+        exist to build these plants in the Middle East and North Africa and to transport
+        part of the produced electricity to Europe from there.<br/><br/>\r\n\r\nIf
+        the sun is strong enough, enough heat is generated to produce steam, which
+        drives a steam turbine to make electricity. These plants often store their
+        heat (in molten salt for example) so they can even produce electricity during
+        hours when the sun does not shine for a while. \r\n<br/><br/><img SRC=\"/assets/popups/img_appropriate_csp_regions.jpg\"
+        />\r\n\r\n"
+    nuclear_overview_costs_of_electricity_production:
+      short_description: A nuclear power plant of the most modern type
+      description: "A nuclear power plant of the newest type. These European Pressurized
+        Reactors (EPR) are currently being built for the first time in Finland and
+        France. This power plant uses enriched uranium or recycled nuclear fuel. A
+        single power plant has the combined power of two 800 MWe power plants, so
+        1,600 MWe. The model uses a technical lifetime of 50 years.\r\n<br/><br/>
+        \r\n<a href=\"/units\">More information on units...</a>\r\n<br/><br/><img
+        SRC=\"/assets/popups/img_nuclear3.jpg\" />\r\n\r\n"
+    waste_incinerator_overview_costs_of_electricity_production:
+      short_description: High energy yield waste incineration plant
+      description: "High energy yield waste incineration plant. Waste that can be burned
+        is used to generate electricity. The heat produced can also be used, but the
+        income from selling heat is not included in this graph. The model uses a technical
+        lifetime of 20 years.\r\n<br/><br/><img SRC=\"/assets/popups/img_avi.jpg\"
+        />"
+    hydro_mountain_overview_costs_of_electricity_production:
+      short_description: Large hydro-electric power plant
+      description: "Large hydro-electric power plant (500 MWe) in mountain reservoir.
+        These plants require huge investments and flooding valleys can have a strongly
+        negative environmental impact. These plants can often be significantly bigger
+        than 500 MWe and they can be built as pumped-storage plants, using surplus
+        electricity to pump water from a lower reservoir to a higher one. Because
+        of their relatively long life and their ability to follow electricity demand,
+        these plants are an interesting option.\r\n<br/><br/> \r\n<a href=\"/units\">More
+        information on units...</a>\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_hydromountain.jpg\"/>\r\n"
+    nuclear_conventional_overview_costs_of_electricity_production:
+      short_description: Generation I or II nuclear power plant
+      description: "An older type of nuclear power plant. This is included mainly to show
+        the difference between modern nuclear plants and older types. A single power
+        plant has the combined power of two 800 MWe power plants, so 1,600 MWe. The
+        model uses a technical lifetime of 50 years.\r\n<br/><br/> \r\n<a href=\"/units\">More
+        information on units...</a>\r\n<br/><br/><img SRC=\"/assets/popups/img_nuclear3.jpg\"
+        />\r\n\r\n"
+    gas_ccgt_ccs_overview_costs_of_electricity_production:
+      short_description: CCGT power plant with Capture and Storage of CO<sub>2</sub>
+      description: "The same as a normal CCGT power plant, but using capture and underground
+        storage of carbon dioxide (CO<sub>2</sub>). Several technologies exist to
+        capture CO<sub>2</sub>. All of these cost energy and so this power plant uses
+        nearly 30% more gas to produce the same amount of electricity as a conventional
+        CCGT power plant. The CCS power plant emits ~15% of the CO<sub>2</sub> per
+        MWh produced.<br/> The costs for pressurization, transport and underground
+        storage of CO2 have also been included. The model uses a technical lifetime
+        of 30 years.\r\n<br/><br/> \r\n<a href=\"/units\">More information on units...</a>\r\n\r\n<br/><br/><img
+        SRC=\"/assets/popups/img_ccgt.jpg\" />"
+    gas_turbine_overview_costs_of_electricity_production:
+      short_description: Peaking power plant consisting of a single gas turbine
+      description: "Gas turbines are relatively cheap to build, but have high fuel costs
+        (compared to coal). This makes them ideal to provide power during demand peaks.
+        Especially since these plants can handle being turned on and off on a timescale
+        of minutes.\r\n</br>\r\nThese plants only need to run often enough to earn
+        back fixed costs (like connection to gas mains, etc).\r\n</br></br>\r\nFor
+        scenarios with lots of wind power, gas turbines would be excellent candidates
+        for providing back up when wind power output (un)expectedly drops, due to
+        a lack of wind.\r\n<br/><br/><img SRC=\"/assets/popups/img_ccgt.jpg\" />"
+    local_solar_pv_buildings_overview_costs_of_electricity_production:
+      short_description: Power from roof-mounted solar cells on non-residential buildings
+      description: "Panel of roof-mounted solar cells that transform sunlight into electricity,
+        known as photo-voltaic solar cells. This technology is developing rapidly
+        and solar panels are becoming ever more efficient and cheaper. Solar panels
+        are expected to become much cheaper in the coming 40 years. <br/><br/>\r\n\r\nThe
+        model uses a technical lifetime of 25 years. Contrary to what many people
+        believe, solar panels easily earn back the energy used to produce them. In
+        2009, this happens within 1.5 years if panels are installed in southern Europe.
+        In northwestern Europe, it takes 2.5 to generate the energy used to produce
+        the whole solar panel system.\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_local_solar_pv.jpg\"
+        />"
+    flexibility_breakdown_of_total_costs:
+      short_description: Cost of flexibility
+      description: ''
+    hydrogen_turbine_overview_costs_of_electricity_production:
+      short_description: Hydrogen turbine
+      description: "Gas turbines are relatively cheap to build, but have high fuel costs
+        because they are not very efficient. This makes them ideal to provide power
+        during demand peaks. Especially since these plants can handle being turned
+        on and off on a timescale of minutes.\r\n</br>\r\nThese plants only need to
+        run often enough to earn back fixed costs.\r\n</br></br>\r\nFor scenarios
+        with lots of wind power, hydrogen gas turbines would be excellent candidates
+        for providing back up when wind power output (un)expectedly drops, due to
+        a lack of wind.\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_ccgt.jpg\"
+        />"
+    hydrogen_ccgt_overview_costs_of_electricity_production:
+      short_description: Hydrogen CCGT
+      description: "Hydrogen-fired power plant. Combustion of hydrogen gas drives a gas
+        turbine connected to an electric generator. The residual heat is used to generate
+        steam to drive a steam turbine. This '2-step' technology (combined cycle)
+        is significantly more efficient than a conventional gas-fired plant that generates
+        heat only to produce steam.\r\n\r\n<br/><br/><img SRC=\"/assets/popups/img_ccgt.jpg\"
+        />"
+    central_biogas_chp_overview_costs_of_electricity_production:
+      short_description: Power from biogas CHPs
+      description: Power from biogas CHPs

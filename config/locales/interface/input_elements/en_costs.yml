@@ -1,0 +1,582 @@
+---
+en:
+  input_elements:
+    om_costs_nuclear_nuclear_plant:
+      title: Nuclear plant
+      short_description: ''
+      description: "This slider sets the height of your assumed operational and maintenance
+        costs for a nuclear power plant. <br/>\r\n<br/>Operational and maintenance
+        costs are a minor part of total costs for nuclear energy.\r\n<br/><br/> \r\nThe
+        specifications below are for a super modern third generation nuclear power
+        plant."
+    costs_hydrogen:
+      title: Hydrogen (import)
+      short_description:
+      description: "This slider sets the future wholesale price of hydrogen (in €/MWh).
+        This slider affects the costs of imported hydrogen and influences the position
+        of hydrogen fired gas turbines in the merit order of the electricity market.
+        The costs of domestically produced hydrogen are determined by your choices
+        in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">'hydrogen
+        production'</a> section.<br /><br />\r\n\r\nBelow you can find reference values
+        for the current costs of some common hydrogen production technologies (in
+        €/MWh hydrogen): <br /><br />\r\n<ul>\r\n<li>Steam Methane Reforming (SMR):
+        € 40.5 <sup>1</sup></li>\r\n<li>Steam Methane Reforming (SMR) + CCS: € 46.9
+        <sup>2</sup></li>\r\n<li>Autothermal Reforming (ATR): € 109.6 <sup>1</sup></li>\r\n<li>Coal
+        gasification: € 45.0 <sup>1</sup></li>\r\n<li>Electrolysis (wind): € 273.3
+        <sup>1</sup></li>\r\n<li>Electrolysis (solar): € 747.7 <sup>1</sup></li>\r\n<li>Combined
+        wind and sun (North sea): € 157.4 <sup>2</sup></li>\r\n<li>Combined wind and
+        sun (Morocco): € 124.0 <sup>2</sup></li>\r\n</ul> <br />\r\nNote that the
+        above numbers are production costs only. To determine the wholesale price
+        additional costs have to be taken into account such as transporting hydrogen
+        to your area. For tanker ship transport these costs are roughly € 21.0 per
+        MWh. <br /> <br />\r\nSources:<br />   \r\n1. Gnanapragasam, N.V. & Rosen
+        M.A. (2017). A review of hydrogen production using coal, biomass and other
+        solid fuels. In: Biofuels (8), pp.725-745 <br />\r\n2. CE Delft (2018). Waterstofroutes
+        Nederland\r\n"
+    investment_costs_wind_onshore:
+      title: Onshore
+      short_description: ''
+      description: "This slider sets the height of the assumed investment costs for
+        onshore wind-generated power. Costs are compared to current costs.\r\n<br/><br/>\r\nThe
+        specifications below are for an inland wind turbine:"
+    investment_costs_wind_offshore:
+      title: Offshore
+      short_description: ''
+      description: "This slider sets the height of the assumed investment costs for
+        offshore wind-generated power. Costs are compared to current costs.\r\n<br/>\r\nInvestment
+        costs for offshore wind turbines are essentially different from those on land.
+        This is a result of the need to rent boats and crew to build at sea.\r\n"
+    om_costs_combustion_gas_plant:
+      title: Gas plant
+      short_description: ''
+      description: "This slider sets the expected change in operational and maintenance
+        costs for a gas-fired power plant (excluding fuel). Costs are compared to
+        current costs.<br/><br/>\r\nThe specification below are for a CCGT plant: "
+    om_costs_combustion_oil_plant:
+      title: Oil plant
+      short_description: ''
+      description: This slider sets the expected change in operational and maintenance
+        costs for an oil-fired power plant (excluding fuel). Costs are compared to
+        current costs.
+    om_costs_combustion_coal_plant:
+      title: Coal plant
+      short_description: ''
+      description: "This slider sets the expected change in operational and maintenance
+        costs for a coal-fired power plant (excluding fuel). Costs are compared to
+        current costs.<br/><br/>\r\nThe specifications below are for an ultra-supercritical
+        coal power plant:"
+    om_costs_combustion_biomass_plant:
+      title: Biomass plant
+      short_description: ''
+      description: This slider sets the expected change in operational and maintenance
+        costs for a biomass-fired power plant (excluding fuel). Costs are compared
+        to current costs. These costs are likely to follow developments for coal-fired
+        power plants.
+    om_costs_combustion_waste_incinerator:
+      title: Waste incinerator
+      short_description: ''
+      description: This slider sets the expected change in operational and maintenance
+        costs for a waste incinerator that generates electricity (excluding fuel).
+        Costs are compared to current costs.
+    costs_wacc_households:
+      title: Households
+      short_description:
+      description: 'This category comprises all technologies used in households, including
+        solar panels and solar thermal collectors. Note: heat network infrastructure
+        and heaters belong to ''commercial / proven technologies''.'
+    costs_wacc_public_infrastructure:
+      title: Public infrastructure
+      short_description:
+      description: This category comprises the costs of public infrastructure. For
+        the ETM this currently means the power grid costs. Costs for the hydrogen
+        network are part of the 'new technologies' category. Costs for heat networks
+        are part of the commercial technologies section. For natural gas infrastructure
+        the ETM currently uses a fixed annual sum that is unaffected by the WACC.
+    costs_wacc_proven_technologies:
+      title: Commercial / proven technologies
+      short_description:
+      description: This category comprises all commercial and proven technologies.
+        This is by far the largest category.
+    costs_wacc_unproven_technologies:
+      title: New / immature technologies
+      short_description:
+      description: 'This category comprises all immature / unproven / risky technologies.
+        Currently these technologies are included: hydrogen technologies (electrolyzers,
+        power plants, infrastructure, storage), synthetic kerosene technologies, nuclear
+        plants, carbon capture and storage (CCS), supercritical water gasification
+        (SCWG) and underground pumped hydro storage.'
+    costs_ccs_per_ton_in_industry:
+      title: CCS cost
+      short_description:
+      description: 'The costs of CCS depend on many factors, including but not limited
+        to: the process CO2 is captured from, how it is captured, how it is transported,
+        over what distance it is transported and how it is stored.'
+    investment_costs_flexibility_p2h_electricity:
+      title: Power-to-heat electric boilers
+      short_description:
+      description: Power-to-heat plants convert excess electricity to heat. In the
+        ETM power-to-heat can be used in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households">households</a>
+        and in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">industry</a>.
+        This slider determines the future change in investment costs of electric boilers.<br
+        />
+    investment_costs_hydrogen_electrolysis:
+      title: Power-to-gas
+      short_description:
+      description: Power-to-gas plants use electricity to produce gas (like hydrogen
+        or methane). This is called electrolysis. This slider determines the change
+        in investment costs of power-to-gas plants. This affects the costs of hydrogen
+        production using <a href="/scenario/supply/hydrogen/hydrogen-production">wind
+        and solar power</a>, the costs of hydrogen production using <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">excess
+        electricity</a> and the costs of <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation">synthetic
+        kerosene production</a> for aviation.<br />
+    om_costs_co2_ccs:
+      title: CCS Operational & Maintenance
+      short_description: ''
+      description: "This slider sets the height of your assumed operational and maintenance
+        (O&M) costs for 'Carbon Capture and Storage' (CCS). This technology can be
+        applied with any combustion power plant, but is most efficient with coal as
+        that produces most CO<sub>2</sub>. \r\nCosts are compared to current costs.\r\n
+        <br/><br/>\r\nCurrently, this technology has only been applied experimentally
+        at power plants. It is expected that costs will decrease in the future.\r\n"
+    investment_costs_co2_ccs:
+      title: CCS Investment
+      short_description: ''
+      description: "This slider sets the height of your assumed investment costs for
+        ‘Carbon Capture and Storage’ (CCS). Costs are compared to current costs. Currently,
+        this technology has only been applied experimentally at power plants. It is
+        expected that costs will decrease in the future.\r\n<br/>"
+    costs_biogas:
+      title: Biogas
+      short_description:
+      description: How much will biogas cost in the future?
+    costs_greengas:
+      title: Green gas
+      short_description:
+      description: How much will green gas cost in the future?
+    costs_wood:
+      title: Wood
+      short_description:
+      description: How much will wood cost in the future?
+    costs_biodiesel:
+      title: Biodiesel
+      short_description:
+      description: How much will biodiesel cost in the future?
+    costs_bio_ethanol:
+      title: Bio-ethanol
+      short_description:
+      description: How much will bioethanol cost in the future?
+    costs_heat_infra_indoors:
+      title: Indoor costs
+      short_description:
+      description: This slider sets the change in future investment and O&M costs
+        for indoor heating infrastructure. This includes indoor pipelines and heat
+        meters. See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md"
+        target ="_blank">our documentation</a> for more info.
+    costs_heat_infra_outdoors:
+      title: Pipelines and exchanger stations
+      short_description:
+      description: This slider sets the change in future investment and O&M costs for
+        outdoor heating infrastructure. This includes district heating pipelines and
+        exchanger stations. See <a href="https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md">our documentation</a> for more info.
+    costs_heat_network_storage:
+      title: Seasonal storage
+      short_description:
+      description: "Scenarios with large amounts of \"must-run\" heat production will
+        often have considerable excesses of heat. Storage allows you to preserve this
+        heat for later use. Seasonal storage can be switched on/off <a href=\"scenario/supply/heat/seasonal-storage-of-heat\"
+        >here</a>.\r\n</br></br>\r\nThe start value (20 €/MWh) is based on the potential
+        costs of large-scale HT ATES (High Temperature Aquifer Thermal Energy Storage).
+        HT ATES is the underground storage of warm water (60-90 degrees Celsius) in
+        aquifers. The costs strongly depend on the size of the aquifer and the depth.
+        In Denmark, PTES (Pit Thermal Energy Storage) is often used: large insulated
+        water basins. However, this is more difficult to apply in the Netherlands
+        due to the higher groundwater level."
+    investment_costs_nuclear_nuclear_plant:
+      title: Nuclear plant
+      short_description: ''
+      description: "This slider sets the height of your assumed investment costs for
+        a nuclear power plant, including the costs for decommissioning the plant at
+        the end of its lifetime. External costs for society, such as that people do
+        not like to live close to a nuclear power plant, have not been included. The
+        costs for permanent storage of nuclear waste have also not been included,
+        as it is unclear how much this would cost. External costs have also not been
+        included for other types of power plants. \r\n<br/><br/>\r\nCurrently, production
+        capacity for nuclear reactors is considerably short of what would be required
+        to meet (expected) investment plans around the world. In many countries there
+        will most likely be a shortage of trained technicians in this part of the
+        energy sector.\r\n<br/><br/> \r\nThe specifications below are for a super
+        modern third generation nuclear power plant."
+    om_costs_geothermal:
+      title: O&M costs geothermal energy
+      short_description: ''
+      description: "This slider sets the future change in operational and maintenance
+        costs for geothermal energy. Costs are compared to current costs. \r\n<br/>The
+        O&M costs for these plants are a lesser part of energy costs. Investments
+        tend be a bigger part."
+    investment_costs_geothermal:
+      title: Investment costs geothermal energy
+      short_description: ''
+      description: "This slider sets the change in future investment costs for geothermal
+        energy. Costs are compared to current costs.\r\n<br/>\r\n<br/>\r\nThese plants
+        require rather large investments for drilling deep wells as water of a high
+        enough temperature tends to be found at depths greater than 3 km in most non-volcanic
+        countries."
+    om_costs_wind_onshore:
+      title: Onshore
+      short_description: ''
+      description: "This slider sets the height of the assumed operational and maintenance
+        costs for onshore wind-generated power. Costs are compared to current costs.<br/><br/>\r\nThe
+        specifications below are for an inland wind turbine:"
+    om_costs_wind_offshore:
+      title: Offshore
+      short_description: ''
+      description: "This slider sets the height of the assumed operational and maintenance
+        costs for offshore wind-generated power. Costs are compared to current costs.\r\n<br/>\r\nMaintenance
+        costs for offshore wind turbines are essentially different from those on land.
+        This is a result of harsher conditions like stronger winds and salt water
+        induced corrosion, for example."
+    investment_costs_combustion_gas_plant:
+      title: Gas and hydrogen plants
+      short_description: ''
+      description: "This slider sets the expected change in investment costs for a
+        gas-fired power plant. Costs are compared to current costs. \r\n<br/><br/>\r\nThe
+        past years, many companies around the world have announced plans to build
+        gas-fired power generation capacity.\r\n<br/><br/>\r\nThe specification below
+        are for a CCGT plant: "
+    investment_costs_combustion_oil_plant:
+      title: Oil plant
+      short_description: ''
+      description: "This slider sets the expected change in investment costs for a
+        power plant that burns oil or an oil-derivative like diesel. Costs are compared
+        to current costs.\r\n<br/>\r\nOil-fired plants are hardly being built anymore.
+        Smaller diesel-fired generators are."
+    investment_costs_combustion_coal_plant:
+      title: Coal plant
+      short_description: ''
+      description: "This slider sets the expected change in investment costs for a
+        coal-fired power plant. Costs are compared to current costs.\r\n<br/><br/>\r\nThe
+        past years, many companies around the world have announced plans to build
+        coal-fired power generation capacity. Also, environmental rules increasingly
+        require these plants to be outfitted with technology to reduce harmful emissions.\r\n<br/><br/>\r\nThe
+        specifications below are for an ultra-supercritical coal power plant:"
+    investment_costs_combustion_biomass_plants:
+      title: Biomass plant
+      short_description: ''
+      description: This slider sets the expected change in investment costs for a
+        biomass-fired CHPs. Costs are compared to current costs. These costs will
+        be similar to investment costs for coal-fired power plants.
+    investment_costs_combustion_waste_incinerator:
+      title: Waste incinerator
+      short_description: ''
+      description: "This slider sets the expected change in investment costs for a
+        waste-incinerator plant. Costs are compared to current costs.\r\n<br/>\r\n<br/>\r\nWaste-incinerators
+        are often used to generate both heat and electricity."
+    investment_costs_households_flexibility_p2p_electricity:
+      title: Household batteries
+      short_description:
+      description: "Household batteries are often mentioned as a convenient way to
+        store excess electricity such that you can use it at a later time. With <a
+        href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
+        >this slider</a> you can choose what percentage of all households should have
+        such a battery and with the above slider you can presumably set your assumption
+        for the future change in investment costs of households batteries.\r\n</br>"
+    investment_costs_energy_flexibility_hv_opac_electricity:
+      title: Underground pumped hydro storage
+      short_description:
+      description: This slider determines the future change in investment costs of
+        underground hydro pumped storage.
+    investment_costs_energy_flexibility_mv_batteries_electricity:
+      title: Large-scale batteries
+      short_description:
+      description: This slider determines the future change in investment costs large-scale
+        battery storage.
+    costs_infrastructure_useable_spare_capacity:
+      title: Use of technical spare capacity
+      short_description:
+      description: ''
+    costs_imported_electricity:
+      title: Costs of imported electricity
+      short_description:
+      description: "Do you think that when you have to import electricity that on
+        average it will be cheap because of peak production, or will it be expensive
+        because of peak demand?\r\n</p>\r\n\r\nThe average costs of electricity at
+        the Central West European market was around 35 €/MWh in 2015. However this
+        fluctuates a lot. <a href=\"https://github.com/quintel/documentation/general/costs_imported_electricity.md\"
+        target =\"_blank\">(European Commission, 2015)</a>. \r\n\r\n\r\n</p>\r\n\r\nFor
+        more information about the fluctuating prices see the <a href=\"https://github.com/quintel/documentation/blob/master/general/costs_imported_electricity.md\"
+        target =\"_blank\">documentation</a>. "
+    om_costs_water_river:
+      title: River
+      short_description: ''
+      description: This slider sets the height of your assumed operational and maintenance
+        costs for a run-of-the-river hydro-electric power plant. Costs are compared
+        to current costs.
+    om_costs_water_mountains:
+      title: Mountains
+      short_description: ''
+      description: "This slider sets the height of your assumed operations and maintenance
+        costs for a large hydro-electric power plant (500 MWe) in a mountain reservoir.
+        \r\n<br/>\r\n<br/>\r\nO&amp;M costs are only a small part of total electricity
+        costs for this plant type."
+    investment_costs_solar_solar_panels:
+      title: Solar panels
+      short_description: ''
+      description: "This slider sets the change in investment costs for solar power
+        compared to current costs. It is expected that solar pv panels will become
+        much cheaper in the coming 40 years. Note that this slider changes the investment
+        costs for all solar panels that are modeled in the ETM: solar panels on roofs
+        and solar PV plants. With the link below you can see the costs of solar panels
+        on roofs. BTW: the cost of installing for solar panels on roofs do not change
+        with this slider (500 kEUR/MW).\r\n<br/>"
+    investment_costs_solar_concentrated_solar_power:
+      title: Concentrated solar power
+      short_description:
+      description: This slider sets the height of the assumed costs for concentrated
+        solar power (CSP). Costs are compared to current costs.
+    costs_hydrogen_storage:
+      title: Hydrogen storage costs
+      short_description:
+      description: "The default setting of the slider is based hydrogen storage in
+        salt caverns. Hydrogen storage in salt caverns is a cheap way to store large
+        quantities of hydrogen over a long period of time. The total costs of hydrogen
+        storage in salt caverns ranges between 2.5 and 3.4 euro/MWh, while the total
+        costs of hydrogen storage in pressurized tanks for example are typically four
+        times higher.<sup>1</sup> However, for small energy-storage capacities storage
+        in salt caverns is not cost-efficient due to the fixed construction costs.
+        \r\n<br><br>\r\nSources:<br />   \r\n1. Berenschot (2017). CO<sub>2</sub>-free
+        hydrogen production from gas"
+    om_costs_solar_thermal:
+      title: O&M costs solar thermal energy
+      short_description:
+      description: This slider sets the future change in operational and maintenance
+        costs for solar thermal energy. Costs are compared to current costs.
+    investment_costs_solar_thermal:
+      title: Investment costs solar thermal energy
+      short_description:
+      description: This slider sets the change in future investment costs for solar
+        thermal energy. Costs are compared to current costs.
+    costs_uranium:
+      title: Uranium
+      short_description: ''
+      description: This slider sets the height of your assumed future uranium price.
+        Costs are compared to current costs. The price you set is displayed next to
+        the slider. There is a global market for uranium, although demand for mined
+        uranium has slumped in the past decades, as power plants consumed the uranium
+        and plutonium of decommissioned nuclear warheads.
+    costs_hydrogen_transport_compressed_trucks:
+      title: Total costs H<sub>2</sub> compressed trucks
+      short_description:
+      description: "The costs of hydrogen transport with trucks is mostly depended
+        on labour costs, which is almost half of the total costs. So technology improvement
+        (bigger trucks/higher pressure) will only have little influence on the total
+        costs. \r\n<br><br>\r\nFor the costs calculation an average transport distance
+        of 100km is assumed."
+    costs_hydrogen_transport_pipelines:
+      title: Total costs H<sub>2</sub> pipelines
+      short_description:
+      description: "The costs for hydrogen transport through pipelines depend on whether
+        already existing gas pipelines will be reused or whether new pipelines will
+        be constructed. Existing pipelines could be reused in two ways; the hydrogen
+        could flow directly through the pipeline with extra sealings or a new pipeline
+        is pushed into the existing gas pipeline, so-called pipe in pipe. This last
+        option is about 10x cheaper than constructing a new pipeline and has the advantage
+        that material is being reused instead of discarded.\r\n<br><br>\r\nFor the
+        costs calculation an average transport distance of 100km is assumed. The default
+        setting of the slider is based on the construction of new dedicated hydrogen
+        pipelines."
+    investment_costs_micro_chp:
+      title: Micro-CHP
+      short_description:
+      description: "As more micro-CHPs are installed their costs are likely to decrease.
+        If you believe this technology will be successful in the future, you can indicate
+        how much cheaper you think they may become.\r\n<br/>\r\nMicro-CHPs can be
+        chosen as heating technology in the <a href=\"/scenario/demand/households/space-heating\"a>households
+        section<a/>. \r\n"
+    investment_costs_fuel_cell:
+      title: Fuel cell
+      short_description:
+      description: "As more fuel cells are installed their costs are likely to decrease.
+        If you believe this technology will be successful in the future, you can indicate
+        how much cheaper you think they may become. <br/>\r\nFuel cells can be chosen
+        as water heating technology in the <a href=\"/scenario/demand/households/space-heating\"a>households
+        section<a/>. \r\n"
+    investment_costs_electric_heat_pumps:
+      title: Electric heat pumps
+      short_description:
+      description: "As more electric heat pumps are installed their costs are likely
+        to decrease. If you believe this technology will be successful in the future,
+        you can indicate how much cheaper you think they may become.\r\n<br/><br/>\r\nVarious
+        kinds of electric heat pumps can be chosen as heating technology in <a href=\"/scenario/demand/households/space-heating\">households
+        space heating<a/>, <a href=\"/scenario/demand/households/district-heating\">households
+        district heating<a/>, <a href=\"/scenario/demand/buildings/space-heating\">buildings
+        space heating<a/>, <a href=\"/scenario/demand/buildings/district-heating\">buildings
+        district heating<a/> and <a href=\"/scenario/demand/industry/chemicals\">chemical
+        industry<a/>. \r\n<br/><br/>\r\nThe technical and financial parameters of
+        one kind of heat pump can be seen by clicking the link below."
+    investment_costs_gas_heat_pumps:
+      title: Gas-fired heat pumps
+      short_description:
+      description: "As more gas-fired heat pumps are installed their costs are likely
+        to decrease. If you believe this technology will be successful in the future,
+        you can indicate how much cheaper you think they may become.\r\n<br/>\r\nGas-fired
+        heat pumps can be chosen as heating technology in the <a href=\"/scenario/demand/households/space-heating\"a>households
+        section<a/>. <br/>\r\nThe technical and financial parameters of one kind of
+        gas-fired heat pump can be seen by clicking the link below."
+    investment_costs_households_storage_space_heating:
+      title: Space heater buffers
+      short_description:
+      description:
+    investment_costs_households_storage_water_heating:
+      title: Water heater buffers
+      short_description:
+      description:
+    investment_costs_water_river:
+      title: River
+      short_description: ''
+      description: "This slider sets the height of your assumed investment costs for
+        a run-of-the-river hydro-electric power plant (10 MWe). Costs are compared
+        to current costs.\r\n"
+    investment_costs_water_mountains:
+      title: Mountains
+      short_description: ''
+      description: This slider sets the height of your assumed investment costs for
+        a large hydro-electric power plant (500 MWe) in a mountain reservoir. These
+        plants require huge investments.
+    investment_costs_electric_cars:
+      title: Extra investment per electric car
+      short_description:
+      description: "With this slider you can determine how much higher the average
+        purchase price (excluding taxes) of an electric car is compared to that of
+        a combustion engine car. You therefore set the price <i>difference</i> between
+        the two. The chart on the right shows the initial investment of a reference
+        petrol car as a grey bar and the initial investment of an electric car as
+        a blue bar.\r\n<br/>\r\n<br/>\r\nPlease note that, in this version, the ETM
+        does not take into account investment costs for cars except for the price
+        difference you specify here. This is because the total costs in the dashboard
+        would otherwise be dominated by the resulting costs."
+    costs_imported_heat:
+      title: Imported (residual) heat
+      short_description:
+      description: "How much would imported (residual) heat cost?\r\n</br></br>\r\nThe
+        start value of 11.6 €/GJ is an estimate based on the average costs for heat
+        extraction from different industrial processes. "
+    costs_industry_residual_heat:
+      title: Industrial residual heat
+      short_description:
+      description: This slider sets the change in future investment and O&M costs
+        for residual heat from all industrial sectors. Costs are compared to current
+        costs. The costs in the link below depict the costs that are used for residual
+        heat from the chemical industry, refineries and fertilizer industry. For low
+        temperature heat from datacenters we use different costs.
+    costs_infrastructure_electricity_lv_net:
+      title: Costs new low voltage net
+      short_description:
+      description: These sliders allow you to change the future (average) grid expansion
+        costs for each voltage level. The default settings for the Netherlands are
+        based on the current average expansion costs as reported in the study 'Grid
+        for the Future', CE Delft (2017).
+    costs_infrastructure_electricity_lv_mv_trafo:
+      title: Costs new lv-mv transformator
+      short_description:
+      description: These sliders allow you to change the future (average) grid expansion
+        costs for each voltage level. The default settings for the Netherlands are
+        based on the current average expansion costs as reported in the study 'Grid
+        for the Future', CE Delft (2017).
+    costs_infrastructure_electricity_mv_net:
+      title: Costs new medium voltage net
+      short_description:
+      description: These sliders allow you to change the future (average) grid expansion
+        costs for each voltage level. The default settings for the Netherlands are
+        based on the current average expansion costs as reported in the study 'Grid
+        for the Future', CE Delft (2017).
+    costs_infrastructure_electricity_mv_hv_trafo:
+      title: Costs new low mv-hv transformator
+      short_description:
+      description: These sliders allow you to change the future (average) grid expansion
+        costs for each voltage level. The default settings for the Netherlands are
+        based on the current average expansion costs as reported in the study 'Grid
+        for the Future', CE Delft (2017).
+    costs_infrastructure_electricity_hv_net:
+      title: Costs new high voltage net
+      short_description:
+      description: These sliders allow you to change the future (average) grid expansion
+        costs for each voltage level. The default settings for the Netherlands are
+        based on the current average expansion costs as reported in the study 'Grid
+        for the Future', CE Delft (2017).
+    costs_infrastructure_electricity_interconnector_net:
+      title: Costs new interconnector net
+      short_description:
+      description: These sliders allow you to change the future (average) grid expansion
+        costs for each voltage level. The default settings for the Netherlands are
+        based on the current average expansion costs as reported in the study 'Grid
+        for the Future', CE Delft (2017).
+    costs_infrastructure_electricity_offshore_net:
+      title: Costs new offshore net
+      short_description:
+      description: These sliders allow you to change the future (average) grid expansion
+        costs for each voltage level. The default settings for the Netherlands are
+        based on the current average expansion costs as reported in the study 'Grid
+        for the Future', CE Delft (2017).
+    costs_oil:
+      title: Oil
+      short_description: ''
+      description: "This slider sets the future oil price (in $/barrel) which is displayed
+        next to the slider. There is a well-developed global market for oil. Now that
+        easily accessible oil appears to become more scarce, however, it is increasingly
+        traded bilaterally.\r\n<br/><br/>\r\nThe graph below shows how the oil price
+        has varied over the past decades in terms of 2008 dollars per barrel.\r\n<br/><br/>\r\n<img
+        src=\"/assets/popups/crude_oil_price.png\"  style=\"width:440px;height:307px\"/>"
+    costs_coal:
+      title: Coal
+      short_description: ''
+      description: 'This slider sets the future coal price (in $/tonne), which is
+        displayed next to the slider. There is a global market for coal, but contracts
+        often cover longer periods than oil contracts.  '
+    costs_gas:
+      title: Natural gas
+      short_description: ''
+      description: "This slider sets the future natural gas price (in €/MWh), which
+        is displayed next to the slider. Gas is mostly traded bilaterally (between
+        two countries or parties) and there is no truly global market. As transport
+        of liquefied gas (LNG) by tankers increases, the gas market will become ever
+        more global. The price of gas currently follows oil prices, but this may well
+        change in future global markets. \r\n<br/><br/>\r\nFor your country it is
+        important to know whether it still has its own supplies of natural gas."
+    employment_local_fraction:
+      title: Local production labor
+      short_description:
+      description: "What fraction of total labor for the production of parts do you
+        think is done locally?\r\n<br/><br/>\r\n\r\nHow much local employment results
+        from the use of a technology, depends on how much of the labor is done abroad.
+        Especially the production of parts (such as piping, bolts and screws) is chiefly
+        done abroad."
+    employment_economic_multiplier:
+      title: Economic multiplier
+      short_description:
+      description: "Employment has a positive feedback effect. If employment increases,
+        consumption increases accordingly, allowing employment to grow even more.\r\nHow
+        strong do you think this effect is for energy-related jobs?"
+    employment_fraction_production:
+      title: Production share
+      short_description:
+      description: "What contribution do you think the production phase makes to employment?\r\n</br></br>\r\nAlthough
+        the production of parts for heaters, plants and other energy related appliances
+        represents a significant part of the total employment, the share of this phase
+        is uncertain."
+    costs_co2:
+      title: CO<sub>2</sub> price
+      short_description: ''
+      description: This slider sets the future price (in €/tonne) of CO<sub>2</sub>
+        emission rights for companies covered by the European Emission Trading Scheme,
+        such as power companies. These rights can be traded in the form of certificates.
+        The certificates are auctioned to companies (among others) by national governments.
+    costs_co2_free_allocation:
+      title: Free allocation
+      short_description: ''
+      description: This slider sets the percentage of CO<sub>2</sub> emission rights
+        that electricity production companies receive for free. With the start of
+        the third trading period of the Emissions Trading Scheme (ETC) in 2013 it
+        is likely that 50% of all emission permits will be auctioned. For the trading
+        period starting in 2020 it is uncertain what percentage of permits will be
+        auctioned, but the European Commission is aiming for 70%. In 2027 the goal
+        is to auction 100% of all the emission permits.

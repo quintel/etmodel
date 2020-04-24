@@ -51,11 +51,11 @@ class Slide < YModel::Base
   end
 
   def title_for_description
-    "slides.#{key}"
+    "slides.#{key}.title"
   end
 
   def short_name
-    I18n.t("slides.#{key}", locale: :en).parameterize
+    I18n.t(title_for_description, locale: :en).parameterize
   end
 
   # See Current.view

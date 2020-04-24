@@ -1,0 +1,416 @@
+nl:
+  slides:
+    flexibility_electricity_import_export_edp:
+      title: Naar een Europese 'Merit Order'
+      short_description:
+      description: "De <strong>merit order</strong>  bepaalt de volgorde waarin elektriciteitsproducenten
+        aan de vraag voldoen (zie ook <a href=\"/scenario/costs/merit_order/merit-order\"
+        >Merit Order</a>). De producenten met de laagste marginale kosten hebben voorrang.
+        \r\n<br/><br/>\r\nDit betekent dat landen met goedkopere stroomproductie exporteren
+        naar landen met duurdere opwek, totdat de prijzen in beide landen gelijk zijn
+        of de interconnectoren 'vol zitten'. \r\n<br/><br/>\r\nOm fysieke marktkoppeling
+        te bevorderen, wordt de interconnectiecapaciteit tussen landen uitgebreid
+        en het gebruik ervan geoptimaliseerd."
+    flexibility_electricity_import_export_interconnectivity:
+      title: Interconnectiecapaciteit
+      short_description:
+      description: Het verschil tussen de vraag en het aanbod van elektriciteit op
+        uurbasis kan worden geïmporteerd of geëxporteerd. De interconnectiecapaciteit
+        tussen landen is echter beperkt; het is hierdoor maar beperkt mogelijk om
+        elektriciteit te exporteren. Hieronder kun je de totale capaciteit van alle
+        interconnectoren instellen. Het is echter mogelijk dat niet al deze capaciteit
+        beschikbaar is voor export, bijvoorbeeld omdat de omringende landen op hetzelfde
+        moment met elektriciteitsoverschotten kampen. Het is daarom mogelijk om het
+        percentage van de interconnectiecapaciteit dat beschikbaar is voor export
+        te beperken. Lees meer over import/export <a href="https://github.com/quintel/documentation/blob/master/general/import_export.md">hier</a>.
+    flexibility_electricity_import_export_interconnectors:
+      title: Effecten van extra interconnectiecapaciteit
+      short_description:
+      description: "De lidstaten van de EU zijn van plan om meer interconnectiecapaciteit
+        te realiseren (zie <a href=\"http://refman.et-model.com/publications/1829\"
+        target=\"_blank\">10-Year Network Development Plan (ENTSO-E)</a>). In de figuur
+        rechts kun je zien hoe de stroomprijzen in twee fictieve landen veranderen
+        als de interconnectiecapaceit verdubbelt. \r\n<br/><br/>\r\nDe blauwe lijnen
+        zijn de stroomprijzen per uur voor de landen A en B in het referentiejaar
+        (2010). Als de lijnen bij elkaar komen (bijv. uur 1-5) hebben beide landen
+        dezelfde stroomprijs (convergentie). Dit komt doordat ze beide stroom geleverd
+        krijgen door de goedkoopste producent (het goedkoopste land exporteert naar
+        het andere land). \r\n<br/><br/>\r\nVaak komen de lijnen niet samen. Dat komt
+        doordat de interconnector maximaal benut is (congestie), ook al heeft één
+        van de landen nog goedkope productiecapaciteit over. Het land dat de stroom
+        niet kan importeren zal deze van een duurdere locale producent moeten afnemen.\r\n<br/><br/>\r\nDe
+        rode en oranje lijnen zijn de stroomprijzen als de interconnectiecapaciteit
+        verdubbeld wordt. Doordat deze hoger is, komt het minder vaak voor dat de
+        interconnector maximaal benut is en convergeren de prijzen vaker.  "
+    flexibility_electricity_import_export_markets:
+      title: Koppeling van de elektriciteitsmarkt
+      short_description:
+      description: "De elektriciteitsmarkt is één van de laatste markten in de EU
+        die nog niet geïntegreerd is. De meeste bedrijven in de EU concurreren al
+        met elkaar op de gemeenschappelijke Europese markt. De Europese Commissie
+        heeft voorgesteld om een  gemeenschappelijk Europees energiebeleid op te stellen.
+        Dit was een belangrijke stap  om nationale markten te harmoniseren naar regionale
+        markten en uiteindelijk één gemeenschappelijke markt.  \r\n<br/><br/>\r\nHiervoor
+        wordt zowel fysieke interconnectiecapaciteit als een administratieve marktkoppeling
+        gerealiseerd. Dit hinkt op de gedachte dat markten de meest efficiënte manier
+        zijn om te zorgen dat tegen de laagste kosten aan de vraag naar stroom wordt
+        voldaan. De verwachte voordelen zijn:<br/><br/>\r\n\t• Lagere stroomkosten
+        <br/>\r\n\t• Meer prijsconvergentie tussen landen<br/><br/>\r\n\r\nIn de praktijk
+        kan het zo zijn dat de marktwerking verstoord wordt door (een mismatch van)
+        het energiebeleid van verschillende lidstaten.  \r\n\r\n \r\n"
+    flexibility_electricity_import_export_properties:
+      title: CO<sub>2</sub>-emissies van geïmporteerde elektriciteit
+      short_description:
+      description: "In sommige scenario's is het nodig om elektriciteit te importeren
+        van buiten jouw gebied. De productie en distributie van deze elektriciteit
+        kan CO<sub>2</sub>-emissies hebben veroorzaakt. Hoeveel van deze emissies
+        wil je toekennen aan jouw gebied? Op dit moment is de gemiddelde elektriciteitsmix
+        van Nederland genomen als startwaarde. Je kunt dit zelf hieronder aanpassen.
+        Voor meer informatie klik op de '?' achter de slider.\r\n\r\n<br/><br/>\r\nDe
+        kosten voor geïmporteerde elektriciteit kunnen in de<a href=\"/scenario/costs/electricity_import_costs/costs-of-imported-electricity\">
+        sectie kosten</a> worden gezet."
+    flexibility_electricity_import_export_renewables:
+      title: Effecten van toenemende hernieuwbare opwek
+      short_description:
+      description: "De EU heeft als doel om meer hernieuwbaar productievermogen te
+        realiseren in 2020 (zie <a href=\"http://refman.et-model.com/publications/1830\"
+        target=\"_blank\">Scenario Outlook and System Adequacy Forecast 2011-2025
+        (ENTSO-E)</a>). De toekomstsituatie die we in het figuur hiernaast tonen,
+        gaat uit van zon- en windvermogens volgens de 2020 doelen. <br/><br/>\r\nWe
+        zien het kwalitatieve effect op de marginale stroomproductiekosten vergeleken
+        met de huidige situatie.<br/><br/>\r\nDe blauwe lijn toont de huidige kosten
+        van stroomproductie op uurbasis en de oranje lijn die bij toenemend hernieuwbaar
+        vermogen. De kostenafname is het gevolg van een groter aandeel van stroomproductie
+        met nul marginale kosten (see <a href=\"/scenario/costs/merit_order/merit-order\"
+        >Merit Order</a>). De gemiddelde kosten dalen daardoor.\r\n<br/><br/>\r\nDe
+        investerings- en installatiekosten van hernieuwbaar vermogen is hierbij niet
+        meegenomen. Deze zijn typisch veel hoger dan voor niet duurzame stroomproductie.
+        De <em>integrale productiekosten</em> zullen daardoor waarschijnlijk eerder
+        stijgen dan dalen bij toenemende hernieuwbare productie."
+    flexibility_flexibility_cold_snap:
+      title: Koude winter
+      short_description:
+      description:
+    flexibility_flexibility_net_load:
+      title: Piekbelasting en bruikbare capaciteit
+      short_description:
+      description: "De energietransitie heeft gevolgen voor het elektriciteitsnet.
+        In de tabel rechts kan je de piekbelasting en bruikbare capaciteit zien op
+        de verschillende netniveau's. Als je klikt op het 'Jaarlijkse'-schuifje krijg
+        je de grafiek te zien die de nettobelasting op het elektriciteitsnetwerk per
+        uur laat zien. Wanneer je geïnteresseerd bent in uurlijkse piekbelasting-curves
+        of vraagcurves per netniveau, kan je deze vinden in de lijst met alle grafieken
+        (klik op  'Meer grafieken bekijken' en ga naar 'Netwerk').\r\n</br></br>\r\nDe
+        totale investering die nodig is wanneer het elektriciteitsnetwerk moet worden
+        uitgebreid is afhankelijk van de investeringskosten per netniveau. Deze kunnen
+        onder het <a href=\"/scenario/costs/infrastructure/electricity-infrastructure-costs\"
+        >Kosten</a> kopje worden ingesteld."
+    flexibility_flexibility_demand_response_ev:
+      title: Vraagsturing - laadgedrag elektrische auto's
+      short_description:
+      description: "Vraagsturing is een vorm van flexibiliteit waarbij de energievraag
+        wordt aangepast of verschoven in de tijd. Vaak is het doel hierbij om pieken
+        in de energievraag te voorkomen. Met de schuifjes in deze sectie kun je het
+        laadgedrag van elektrische auto's aanpassen. De grafiek toont de impact hiervan
+        op de vorm van de totale elektriciteitsvraag.\r\n<p>\r\nHet totale aandeel
+        van elektrische auto's is in te stellen in de <a href=\"/scenario/demand/transport_passenger_transport/car-technology\"
+        >technologie auto's sectie</a>."
+    flexibility_flexibility_demand_response_hp:
+      title: Vraagsturing - buffers voor warmtepompen
+      short_description:
+      description: "In het ETM hebben alle warmtepompen een optie voor een buffer
+        voor ruimteverwarming en een buffer voor warm water. Deze buffers zijn gemodelleerd
+        met een standaard warmtepompopstelling in huishoudens. Buffers kunnen in de
+        toekomst wellicht ook gebruikt worden om grotere hoeveelheden warmte op te
+        slaan. \r\n<br></br>\r\nMet de schuifjes hieronder kun je de buffergrootte
+        voor verschillende warmtepompen instellen."
+    flexibility_flexibility_demand_response_hhp:
+      title: Vraagsturing - gedrag van hybride warmtepompen
+      short_description:
+      description: "De efficiëntie van (hybride) warmtepompen is afhankelijk van de
+        buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
+        (COP). De COP wordt lager als de buitentemperatuur afneemt. Hieronder kan
+        je de zogenaamde 'omslag-COP' instellen: wanneer de COP van de warmtepomp
+        onder de omslag-COP ligt dan schakelt de hybride warmtepomp van elektriciteit
+        naar gas. Je kan deze instellen op de financieel meest aantrekkelijke voor
+        de consument, maar kan ook een instelling kiezen die minder netwerkimpact
+        oplevert. \r\n</br></br>\r\n Bekijk de grafiek aan de rechterkant voor advies
+        bij het kiezen van de kostenoptimale omslag-COP instelling vanuit een consumentenperspectief.
+        Deze laat zien hoeveel het kost om een eenheid warmte te maken met de HWP
+        voor ruimteverwarming. Voor gas zijn die kosten onafhankelijk van de COP (en
+        dus de buitentemperatuur). Voor elektriciteit nemen de kosten af met toenemende
+        COP (en toenemende buitentemperatuur). Het kruispunt van de twee curves is
+        de kosten-optimale COP-instelling voor de gegeven kostprijs van gas en elektriciteit.
+        Deze kostprijs van gas en elektriciteit is hieronder in te stellen. De startwaarde
+        van het omslag-COP schuifje staat gelijk aan de kostenoptimale omslag-COP
+        bij de ingestelde kosten. \r\n</br></br>\r\n Als je geïnteresseerd bent in
+        de impact van HWP's op het elektriciteitsnet, kijk dan naar de grafiek die
+        wordt weergegeven wanneer je op de 'Jaarlijkse'-knop in de rechterhoek van
+        de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag per uur
+        van HHP's. Als je geïnteresseerd bent in het aandeel gas en elektriciteit
+        dat de HHP's gebruiken, kijk dan naar de table 'Hybride warmtepomp: aandeel
+        elektrisch en gas' in de grafiekenlijst (Vraag -> Huishoudens)"
+    flexibility_flexibility_excess:
+      title: Elektriciteitsoverschot
+      short_description:
+      description: "Deze pagina gaat over de mogelijke maatregelen voor het omgaan
+        met een elektriciteitsoverschot. Elektriciteitsproductie van windturbines
+        en zonnepanelen is onderhevig aan natuurlijke fluctuaties. Aanbod en vraag
+        van elektriciteit komen niet met elkaar overeen en grote hoeveelheden volatiele
+        productiecapaciteit kunnen daarom leiden tot elektriciteitsoverschotten.\r\n<br/><br/>\r\nIn
+        het ETM wordt een overschot aan elektriciteit geëxporteerd. Dit kan echter
+        onmogelijk zijn als buurlanden geconfronteerd worden met vergelijkbare en
+        gelijktijdige pieken in het elektriciteitsaanbod. Vandaag de dag is het afsluiten
+        of beperken van wind- en zonvermogen de enige optie voor het omgaan met grote
+        hoeveelheden overtollig aanbod. Dit verhoogt echter de effectieve productiekosten
+        waardoor het economisch aantrekkelijker kan zijn om de overtollige elektriciteit
+        op te slaan of om te zetten in een andere, bruikbare energiesoort.\r\n<br/><br/>\r\nDe
+        grafiek rechts geeft een indicatie hoe de stijging van productiekosten als
+        gevolg van het beperken van capaciteit zich verhoudt tot de kosten van opslag-
+        en conversietechnologieën.\r\nMeer informatie kunt u vinden in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
+        documentatie =\"_blank\">documentatie</a>. "
+    flexibility_flexibility_excess_electricity:
+      title: Elektriciteitsoverschotten
+      short_description:
+      description:
+    flexibility_flexibility_flexibility_order:
+      title: Volgorde flexibiliteitsopties
+      short_description:
+      description: "Windmolens en zonnepanelen hebben van nature een grillig productiepatroon.
+        De elektriciteit die ze produceren kan daarom niet altijd worden gebruikt
+        om elektriciteitsvraag in te vullen. Dit kan leiden tot overproductie van
+        elektriciteit. Om te voorkomen dat deze elektriciteitsproductie moet worden
+        beperkt, kent het ETM een aantal flexibiliteitstechnologieën die de overschotten
+        kunnen opslaan of omzetten in andere energiedragers. Je kan die technologieën
+        inzetten in de <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\">'Opslag'</a>
+        en <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households\">'Conversie'</a>
+        tabs.\r\n<br/><br/>\r\nDoor middel van de lijst hieronder kun je de volgorde
+        bepalen waarin de technologieën worden ingezet. Het ETM stuurt elektriciteitsoverschotten
+        naar de technologie die als eerste op de lijst staat zolang de capaciteit
+        dit toelaat; verdere overschotten worden naar de tweede technologie op de
+        lijst gestuurd en zo verder. Enige overgebleven elektriciteit wordt gecurtailed.
+        Je kunt de technologieën in de gewenste volgorde verslepen."
+    flexibility_flexibility_power_storage:
+      title: Opslag elektriciteit
+      short_description:
+      description: Met de volgende sliders kun je aangeven welke elektriciteitsopslag
+        technologieën je inzet in de verschillende netvlakken. Elektriciteitsoverschotten
+        worden opgeslagen en ingezet zodra er geen overproductie meer is.
+    flexibility_flexibility_power_to_heat:
+      title: Conversie naar warmte voor huishoudens
+      short_description:
+      description:
+    flexibility_flexibility_power_to_heat_for_district_heating:
+      title: Conversie naar warmte voor warmtenetten
+      short_description:
+      description: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische
+        boilers of warmtepompen deze overschotten omzetten in warmte voor warmtenetten.
+        Overige warmtebronnen voor warmtenetten kunnen bij <a href=\"/scenario/supply/heat/heat-sources\"
+        >Aanbod > Warmtenetten</a> worden ingesteld. \r\n</br></br>\r\n Houd er rekening
+        mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
+        power-to-heat warmtepomp. Ze produceren natuurlijk wel dezelfde hoeveelheid
+        warmte."
+    flexibility_flexibility_power_to_heat_for_industry:
+      title: Conversie naar warmte voor industrie
+      short_description:
+      description: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische
+        boilers in de industrie deze overschotten omzetten in warmte. Dit heeft als
+        gevolg dat de vraag naar gas en waterstof wordt verlaagd (indien aanwezig).
+        Deze hybride warmte opties kunnen in de vraag-sectie van volgende industriële
+        sectoren worden ingesteld:\r\n<ul>\r\n  <li><a href=\"/scenario/demand/industry/refineries\"
+        >raffinaderijen</a></li>\r\n  <li><a href=\"/scenario/demand/industry/chemicals\">chemische
+        industrie</a></li>\r\n  <li><a href=\"/scenario/demand/industry/food\">voedingsmiddelenindustrie</a></li>\r\n
+        \ <li><a href=\"/scenario/demand/industry/paper\">papierindustrie</a></li></ul>"
+    flexibility_flexibility_power_to_gas:
+      title: Conversie naar waterstof
+      short_description:
+      description: Overtollige elektriciteit kan worden gebruikt om waterstof te produceren
+        door elektrolyse. Deze waterstof wordt in het ETM gevoed in het centrale waterstofnetwerk.
+        Andere waterstofproducerende technologieën kunnen ingesteld worden in de <a
+        href="/scenario/supply/hydrogen/hydrogen-production">waterstofproductieslide</a>.
+        Overtollige waterstof wordt geëxporteerd.
+    flexibility_flexibility_power_to_kerosene:
+      title: Conversie naar kerosine voor luchtvaart
+      short_description:
+      description: "Overschotten aan elektriciteit kunnen gebruikt worden om synthetische
+        kerosine te produceren voor de luchtvaart. Voor dit proces is koolstof nodig
+        wat kan worden hergebruikt, bijvoorbeeld uit rookgassen van industriën of
+        direct uit de lucht. Daardoor bewerkstelligt de productie van synthetische
+        kerosene een CO<sub>2</sub>-reductie voor het gehele land. Echter blijft het
+        discutabel aan welke sector binnen een land deze CO<sub>2</sub>-reductie moet
+        worden toegeschreven wanneer CO of CO<sub>2</sub> uit rookgassen wordt gebruikt:
+        aan de industrie of de internationale luchtvaart?\r\n<br/><br/>\r\nMet de
+        onderstaande sliders kan je aangeven hoeveel synthetische kerosine er moet
+        worden geproduceerd. Overtollige kerosine wordt geëxporteerd. Verder kun je
+        ook kiezen welke koolstofbron je nodig hebt en aan welke sector de CO<sub>2</sub>-reductie
+        moet worden toegeschreven.\r\n<br/><br/>"
+    flexibility_flexibility_power_to_methane:
+      title: Conversie naar methaan voor gasnetwerk
+      short_description:
+      description:
+    flexibility_flexibility_solar_pv_curtailment:
+      title: Productiebeperking - zon-PV
+      short_description:
+      description: "Als veel zon-PV geïnstalleerd is, kan dit zorgen voor hoge pieken
+        op het elektriciteitsnetwerk. Daarom is het wenselijk de productie te kunnen
+        verlagen. In sommige gevallen is het slim om zonneparken aan te sluiten op
+        slechts een bepaald percentage van het piekvermogen. Met onderstaande schuifjes
+        is het mogelijk de productiebeperking in te stellen als percentage van het
+        piekvermogen. \r\n</br></br>\r\n In de grafiek rechts zie je het effect van
+        productiebeperking op de productiepieken én op de jaarlijkse elektriciteitsproductie.
+        Als je geïnteresseerd bent in het effect van productiebeperking op de jaarlijkse
+        elektriciteitsproductie, kijk dan in de tabel 'Productiebeperking van zonnepanelen'.
+        Deze vind je als je klikt op 'meer grafieken bekijken' (rechtsboven) en kijkt
+        bij 'Elektriciteitsbalans > Flexibiliteit'."
+    flexibility_flexibility_wind_cost:
+      title: Kosten van windenergie
+      short_description:
+      description: "Waarom stijgen de productiekosten van windenergie als gevolg van
+        een bepaald marktaandeel?\r\n<br/><br/>\r\nWanneer we aannemen dat het overschot
+        aan geproduceerde windenergie niet kan worden geëxporteerd, opgeslagen of
+        omgezet in iets economisch nuttigs, dan is de resterende optie om de elektriciteitsproductie
+        te beperken. Als de geïnstalleerde capaciteit toeneemt, zal een groter aandeel
+        van de energieproductie beperkt moeten worden. Naarmate het aandeel ongebruikte
+        capaciteit toeneemt, zullen de totale productiekosten van elektriciteit (€/MWh)
+        ook toenemen. Hetzelfde geldt voor zon-PV.\r\n<br/><br/>\r\nDe grafiek rechts
+        geeft een indicatie hoe de totale productiekosten van elektriciteit van windturbines
+        kan toenemen als gevolg van beperking van productie. Deze kostenindicatie
+        kan helpen bij het evalueren van opslag- en conversietechnologieën. In plaats
+        van het bouwen van meer windturbines, kan het economisch interessant worden
+        om opslag- en conversietechnologieën te introduceren om bruikbaar vermogen
+        te vergroten."
+    flexibility_merit_order_merit_order:
+      title: Merit order
+      short_description:
+      description: "Over het algemeen volgt de elektriciteitsproductie de vraag naar
+        elektriciteit. De volgorde waarin elektriciteitscentrales worden ingeschakeld
+        wordt bepaald door de 'merit order'. De merit order rangschikt de elektriciteitscentrales
+        naar draaikosten (ook wel 'marginale kosten'). De centrales met de laagste
+        draaikosten zet men het eerste in om de vraag in te vullen; de centrales met
+        hogere kosten pas als de vraag hoog genoeg is. Centrales met relatief lage
+        draaikosten maken dan ook veel draaiuren, terwijl duurdere centrales misschien
+        maar een paar honderd uur aan staan. Dit kan veel verschil maken voor de CO<sub>2</sub>
+        uitstoot in jouw scenario. \r\n<br/><br/>\r\nStandaard rekent het ETM op uurbasis
+        uit welke elektriciteitscentrales moeten worden ingeschakeld. De berekening
+        wordt elke keer dat je je scenario aanpast opnieuw uitgevoerd. Je kunt er
+        voor kiezen om de merit order berekening uit te zetten. Als je de berekening
+        hebt uitgezet, zullen alle elektriciteitscentrales dezelfde draaiuren hebben
+        als in het startjaar van je scenario en niet reageren op jouw aannames over
+        brandstof- of andere kosten.\r\n<br/><br/>\r\nHet ETM voert een versimpelde
+        merit order berekening uit, aangezien deze geen individuele centrales onderscheidt,
+        maar alleen <strong>soorten</strong> centrales.\r\n<br/><br/>\r\nBekijk voor
+        meer informatie <a href=\"https://github.com/quintel/documentation/blob/master/general/merit_order.md\"
+        target =\"_blank\">onze documentatie</a>."
+    flexibility_merit_order_merit_order_positions:
+      title: Merit order - posities
+      short_description:
+      description: |
+        De merit order rangschikt de elektriciteitscentrales naar marginale
+        kosten. Niet alle soorten stroomopwek doen mee in de merit order.
+        Hernieuwbare stroom van wind en zon heeft marginale kosten van 0 EUR/MWh
+        en krijgt voorrang op het net, dus als je hier meer van bouwt, zakt het
+        aantal draaiuren van fossiele centrales. Aangezien alleen op draaikosten
+        gerangschikt wordt, kan dit betekenen dat efficiënte maar dure fossiele
+        centrales uit de mix worden geduwd.
+
+        <br/><br/>
+
+        Ook 'must run' technologieën doen niet mee in de merit order. Dit zijn
+        bijvoorbeeld WKK's die warmte leveren en niet primair draaien vanwege de
+        stroom die ze maken. Toch hebben ze invloed op de draaiuren van andere
+        centrales.
+
+        <br/><br/>
+
+        Het ETM berekent op uurbasis welke centrales zijn ingeschakeld. De
+        berekening wordt elke keer dat je je scenario aanpast opnieuw uitgevoerd
+        en de resultaten worden weergegeven in diverse grafieken. Je kunt ook de
+        draaiprofielen van de verschillende soorten centrales en de resulterende
+        stroomprijscurve voor jouw scenario downloaden via onderstaande knoppen.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
+        </ul>
+    flexibility_merit_order_merit_order_price:
+      title: Uurlijkse profielen voor elektriciteit
+      short_description:
+      description: |
+        De merit order rangschikt de elektriciteitscentrales naar marginale
+        kosten. In combinatie met de elektriciteitsvraag op uurbasis, berekent
+        het ETM welke centrales zijn ingeschakeld. In combinatie met de
+        draaikosten van deze centrales kan het ETM de prijs op uurbasis
+        uitrekenen. Het ETM neemt aan dat deze prijs gelijk is aan de kosten
+        van de duurste centrale die op dat moment is ingeschakeld.
+
+        <br/><br/>
+
+        De uurlijkse profielen voor elektriciteitsvraag en -aanbod en de prijscurve voor jouw scenario zijn te downloaden via de links
+        hieronder.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
+        </ul>
+    flexibility_security_of_supply_electricity:
+      title: Elektriciteit
+      short_description:
+      description: "Is er in de toekomst op ieder moment voldoende elektriciteit om
+        aan de vraag te voldoen? Hoe zit het met momenten waarop de vraag piekt en
+        er weinig productie uit zon en wind is? Elektriciteitsproductie zonder CO<sub>2</sub>-uitstoot
+        levert uitdagingen op voor de voorzieningszekerheid.\r\n<br /><br />\r\nIn
+        de grafiek zie je hoe betrouwbaar de stroomproductie is in jouw scenario.
+        In het dashboard rechtsonderaan zie je hoeveel uur stroomuitval er te verwachten
+        is door een tekort aan productievermogen.\r\n<br /><br />\r\nNiet alle leveringsopties
+        zijn even goed geschikt om de piekvraag in te vullen. Batterijen en andere
+        vormen van opslag kunnen snel reageren, maar moeten wel volgeladen zijn en
+        kunnen geen lange periodes zonder zon en wind overbruggen. Schakelbare elektriciteitscentrales
+        kunnen ieder moment leveren, maar sommigen moeten veel vollasturen draaien
+        om winstgevend te zijn of maken te hoge kosten als ze vaak aan- of uitschakelen.\r\n<br
+        /><br />\r\nVooral gasturbines en gasmotoren voor de productie van stroom
+        (en eventueel ook warmte) op groengas of waterstof zijn een voor de hand liggende
+        duurzame optie als back-up voor wind- en zonnestroom.\r\n<br /><br />\r\n<strong>Tip:</strong>
+        Op de pagina\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weersomstandigheden</a>
+        kun je verschillende weerjaren inladen, om te zien hoe je scenario verandert.
+        Is jouw scenario bestand tegen extreme weersomstandigheden? Gaat het licht
+        uit als het een paar weken niet waait?"
+    flexibility_security_of_supply_heat:
+      title: Warmte
+      short_description:
+      description: "Is er in de toekomst op ieder moment voldoende warmte om aan de
+        vraag op de warmtenetten te voldoen? Dat hangt natuurlijk af van welke warmtebronnen
+        zijn aangesloten op het warmtenet. We onderscheiden bronnen die (bijna) altijd
+        warmte leveren en bronnen die vooral bij pieken in de vraag ingezet worden.
+        Als geen van deze bronnen voldoende kunnen leveren, gaat de noodvoorziening
+        aan. \r\n<br /><br />\r\n<b>Noodvoorziening</b><br />\r\nDe ideale noodvoorziening
+        kan snel starten, heeft lage installatie- en onderhoudskosten en gebruikt
+        brandstof die makkelijk op te slaan is of beschikbaar gemaakt kan worden.
+        Warmtenetten hebben daarom vaak een gasketel als noodvoorziening voor als
+        (een deel van de) warmtebronnen wegvallen. Hoe kleinschaliger het warmtenet,
+        hoe kleiner het aantal aangesloten bronnen en hoe belangrijker een noodvoorziening
+        wordt.\r\n<br /><br />\r\n<b>Piekvraag</b><br />\r\nNiet alle bronnen zijn
+        even goed geschikt om de piekvraag in te vullen. Een warmteopslag kan snel
+        reageren, maar moet wel groot genoeg en gevuld zijn. Een geothermiebron is
+        duur om te boren, dus die kan het beste non-stop warmte leveren. Ketels op
+        (groen) gas of waterstof kunnen ieder moment leveren en zijn daarom een voor
+        de hand liggende optie voor pieken.\r\n<br /><br />\r\n<strong>Tip:</strong>
+        Op de pagina\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weersomstandigheden</a>
+        kun je verschillende weerjaren inladen, om te zien hoe de warmtevraagpieken
+        in je scenario afhangen van het weer.\r\n"
+    flexibility_weather_conditions_and_flh:
+      title: Extreme weersomstandigheden
+      short_description:
+      description: "Buitentemperatuur en technische ontwikkelingen van zon en wind
+        technologie hebben effect op (uurlijkse) vraag en aanbod. Stel hier gemiddelde
+        temperatuur en vollasturen van windturbines en zonnepanelen in.\r\n<p>\r\nDaarnaast
+        zijn er in het verleden uitzonderlijk koude periodes of periodes met uitzonderlijk
+        weinig wind en zon voorgekomen. Zulke periodes met extreme weersomstandigheden
+        kunnen in de toekomst weer voorkomen. De vraag is of de opgestelde warmte-
+        en elektriciteitstechnologieën dan voldoende vermogen zullen hebben om in
+        de warmte- en elektriciteitsvraag te voorzien. Om dat te verkennen kan voor
+        een scenario voor (een regio binnen) Nederland een jaar met extreme weersomstandigheden
+        worden geselecteerd.\r\n</p>\r\nKijk voor meer informatie over weeromstandigheden
+        in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/weather_conditions.md\"
+        target =\"_blank\">documentatie</a>.\r\n</p>\r\nProductiecurves kunnen worden
+        gedownload in de <a href=\"/scenario/data/data_export/merit-order-prices\">resultaten
+        sectie</a>.\r\n\r\n\r\n"

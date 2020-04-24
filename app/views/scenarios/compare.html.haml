@@ -34,7 +34,7 @@
           - tab.sidebar_items.each do |sidebar|
             - next if sidebar.key == 'merit_order'
             %tr
-              %th.sidebar_item= t "sidebar_items.#{sidebar.key}.short_name"
+              %th.sidebar_item= t "sidebar_items.#{sidebar.key}.short_title"
               %td.cell
               %td.cell
               %td.cell
@@ -44,7 +44,7 @@
                 %td.cell
             - sidebar.slides.each do |slide|
               %tr
-                %th.slide= raw t "slides.#{slide.key}"
+                %th.slide= raw t "slides.#{slide.key}.title"
                 %td.cell
                 %td.cell
                 %td.cell
@@ -56,7 +56,7 @@
 
               - slide.sliders.each do |slider|
                 %tr
-                  %th.slider= raw t "input_elements.#{slider.key}"
+                  %th.slider= raw t "input_elements.#{slider.key}.title"
                   - if slider.enum?
                     %td{ colspan: 6 }
 

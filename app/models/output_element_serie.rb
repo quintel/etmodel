@@ -50,7 +50,7 @@ class OutputElementSerie < YModel::Base
   end
 
   def title_translated
-    I18n.t("output_element_series.#{label}") unless label.blank?
+    I18n.t("output_element_series.labels.#{label}") unless label.blank?
   end
 
   def group_translated
@@ -59,14 +59,14 @@ class OutputElementSerie < YModel::Base
 
   def short_description
     I18n.t(
-      "descriptions_output_element_series.#{key}.short_content",
+      "output_element_series.#{key}.short_description",
       default: ''
     )
   end
 
   #  Descriptions are optional for output element series
   def description
-    I18n.t("descriptions_output_element_series.#{key}.content", default: '')
+    I18n.t("output_element_series.#{key}.description", default: '')
   end
 
   # rubocop:disable Metrics/LineLength

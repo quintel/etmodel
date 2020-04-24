@@ -15,7 +15,7 @@
               :data => {:nav => true, :key => "#{tab.key}/#{item.key}/#{slide_key}" } do
               %p
                 %span.title
-                  = raw t("sidebar_items.#{item.key}.short_name")
+                  = raw t("sidebar_items.#{item.key}.short_title")
                 - if item.percentage_bar_query.present?
                   %span.bar{:alt => t('sidebar_items.alt'), :style => "width: 0px"}
                   %span.value
@@ -33,5 +33,5 @@
                 %p
                   %span.bullet.fa.fa-chevron-right
                   %span.title
-                    = raw t("sidebar_items.#{child.key}.short_name")
+                    = raw t("sidebar_items.#{child.key}.short_title")
     .sep

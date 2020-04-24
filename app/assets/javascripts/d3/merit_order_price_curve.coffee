@@ -13,7 +13,7 @@ D3.merit_order_price_curve =
     draw: ->
       @average = new ChartSerie(
         color: "#CC0000",
-        label: I18n.t("output_element_series.merit_price_average")
+        label: I18n.t("output_element_series.labels.merit_price_average")
       )
 
       @legendSeries = @model.series.slice()

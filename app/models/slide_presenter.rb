@@ -49,9 +49,13 @@ class SlidePresenter
   # item, and tab names.
   #
   # Returns the name of the item. If the translation contains both a long
-  # and short name, the short version is returned.
+  # and short title, the short version is returned.
   def translate_item(namespace, item)
     name = I18n.t("#{namespace}.#{item.key}")
-    name.is_a?(Hash) ? name[:short_name] : name
+    if name.is_a?(Hash)
+      name[:short_title] || name[:title]
+    else
+      name
+    end
   end
 end

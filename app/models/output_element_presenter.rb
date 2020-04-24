@@ -9,7 +9,7 @@ class OutputElementPresenter
     percentage: ->(oe) { oe.percentage == true },
     unit: true,
     group: true,
-    name: ->(oe) { I18n.t("output_elements.#{ oe.key }").html_safe },
+    name: ->(oe) { I18n.t("output_elements.#{oe.key}.title").html_safe },
     show_point_label: true,
     max_axis_value: true,
     min_axis_value: true,

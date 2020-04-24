@@ -39,7 +39,7 @@ D3.heat_demand_and_production =
 
       data.unshift({
         color: '#FF8C8C',
-        label: I18n.t("output_element_series.#{ @deficitKey }")
+        label: I18n.t("output_element_series.labels.#{ @deficitKey }")
         key: @deficitKey,
         skip: false,
         values: deficitVals
@@ -47,7 +47,7 @@ D3.heat_demand_and_production =
 
       data.unshift({
         color: '#A2D679',
-        label: I18n.t("output_element_series.#{ @surplusKey }")
+        label: I18n.t("output_element_series.labels.#{ @surplusKey }")
         key: @surplusKey,
         skip: false,
         values: surplusVals

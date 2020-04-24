@@ -1,0 +1,608 @@
+---
+en:
+  input_elements:
+    households_insulation_level_apartments:
+      title: Apartment
+      short_description:
+      description: "The heat demand reduction is the percentage by which the heat
+        demand is reduced compared to a badly insulated house (characterised by label
+        G), i.e. the slider indicates how much of the potential savings has been achieved.
+        The current settings are based on the energy labels that are present within
+        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">\"Basisregistratie
+        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
+        demand reduction percentages. The relationship between heat demand reduction
+        and energy labels per housing type can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentation</a>.
+        However, the mapping is ambiguous since there is no direct relationship between
+        energy labels and the insulation level. Please note that the label image above
+        the household insulation sliders shows the <i>average</i> label vs. heat demand
+        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
+        no insulation costs are taken into account, only when insulation measures
+        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
+        distinction between costs for existing and newly built houses. The insulation
+        costs for houses are not fixed per % heat demand reduction, but instead the
+        costs depend on the level of insulation in the present year: e.g. going from
+        0 to 30% is cheaper than going from 30% to 60% insulation."
+    households_insulation_level_corner_houses:
+      title: Corner house
+      short_description:
+      description: "The heat demand reduction is the percentage by which the heat
+        demand is reduced compared to a badly insulated house (characterised by label
+        G), i.e. the slider indicates how much of the potential savings has been achieved.
+        The current settings are based on the energy labels that are present within
+        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">\"Basisregistratie
+        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
+        demand reduction percentages. The relationship between heat demand reduction
+        and energy labels per housing type can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentation</a>.
+        However, the mapping is ambiguous since there is no direct relationship between
+        energy labels and the insulation level. Please note that the label image above
+        the household insulation sliders shows the <i>average</i> label vs. heat demand
+        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
+        no insulation costs are taken into account, only when insulation measures
+        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
+        distinction between costs for existing and newly built houses. The insulation
+        costs for houses are not fixed per % heat demand reduction, but instead the
+        costs depend on the level of insulation in the present year: e.g. going from
+        0 to 30% is cheaper than going from 30% to 60% insulation."
+    households_insulation_level_detached_houses:
+      title: Detached house
+      short_description:
+      description: "The heat demand reduction is the percentage by which the heat
+        demand is reduced compared to a badly insulated house (characterised by label
+        G), i.e. the slider indicates how much of the potential savings has been achieved.
+        The current settings are based on the energy labels that are present within
+        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">\"Basisregistratie
+        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
+        demand reduction percentages. The relationship between heat demand reduction
+        and energy labels per housing type can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentation</a>.
+        However, the mapping is ambiguous since there is no direct relationship between
+        energy labels and the insulation level. Please note that the label image above
+        the household insulation sliders shows the <i>average</i> label vs. heat demand
+        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
+        no insulation costs are taken into account, only when insulation measures
+        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
+        distinction between costs for existing and newly built houses. The insulation
+        costs for houses are not fixed per % heat demand reduction, but instead the
+        costs depend on the level of insulation in the present year: e.g. going from
+        0 to 30% is cheaper than going from 30% to 60% insulation."
+    households_insulation_level_semi_detached_houses:
+      title: Semi-detached house
+      short_description:
+      description: "The heat demand reduction is the percentage by which the heat
+        demand is reduced compared to a badly insulated house (characterised by label
+        G), i.e. the slider indicates how much of the potential savings has been achieved.
+        The current settings are based on the energy labels that are present within
+        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">\"Basisregistratie
+        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
+        demand reduction percentages. The relationship between heat demand reduction
+        and energy labels per housing type can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentation</a>.
+        However, the mapping is ambiguous since there is no direct relationship between
+        energy labels and the insulation level. Please note that the label image above
+        the household insulation sliders shows the <i>average</i> label vs. heat demand
+        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
+        no insulation costs are taken into account, only when insulation measures
+        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
+        distinction between costs for existing and newly built houses. The insulation
+        costs for houses are not fixed per % heat demand reduction, but instead the
+        costs depend on the level of insulation in the present year: e.g. going from
+        0 to 30% is cheaper than going from 30% to 60% insulation."
+    households_insulation_level_terraced_houses:
+      title: Terraced house
+      short_description:
+      description: "The heat demand reduction is the percentage by which the heat
+        demand is reduced compared to a badly insulated house (characterised by label
+        G), i.e. the slider indicates how much of the potential savings has been achieved.
+        The current settings are based on the energy labels that are present within
+        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">\"Basisregistratie
+        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
+        demand reduction percentages. The relationship between heat demand reduction
+        and energy labels per housing type can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentation</a>.
+        However, the mapping is ambiguous since there is no direct relationship between
+        energy labels and the insulation level. Please note that the label image above
+        the household insulation sliders shows the <i>average</i> label vs. heat demand
+        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
+        no insulation costs are taken into account, only when insulation measures
+        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\">'De
+        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
+        distinction between costs for existing and newly built houses. The insulation
+        costs for houses are not fixed per % heat demand reduction, but instead the
+        costs depend on the level of insulation in the present year: e.g. going from
+        0 to 30% is cheaper than going from 30% to 60% insulation."
+    households_useful_demand_for_cooling:
+      title: Cooling demand
+      short_description: ''
+      description: "Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen below (Cooling).\r\n<br/><br/>\r\n\r\nPlease indicate
+        how you expect the demand for cooling per residence to change. This is mainly
+        determined by growth in prosperity. As people become richer, their energy
+        consumption inevitably increases as they live in larger houses, install airconditioning,
+        etc.\r\n"
+    households_useful_demand_heat_per_person:
+      title: Heating demand
+      short_description: ''
+      description: "Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen below (Space heating slide). \r\n<br/>\r\n<br/>\r\nHere
+        you indicate how you expect heat demand per residence to change. As people
+        become wealthier, they start living in larger houses which increases the energy
+        demand for space heating. "
+    households_useful_demand_hot_water_share:
+      title: Hot water
+      short_description: ''
+      description: "Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen below (Hot water slide). \r\n<br/>\r\n<br/>\r\nHere
+        you indicate how you expect demand for hot water per person to change. This
+        is mainly determined by growth in prosperity."
+    households_useful_demand_cooking_per_person:
+      title: Cooking
+      short_description:
+      description: "Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen below (Cooking slide). \r\n<br/>\r\n<br/>\r\nHere
+        you can indicate how you expect the demand for cooking per person to change.
+        As people become wealthier, they go out for dinner or take away food more
+        often, resulting in a lower demand for cooking at home."
+    households_useful_demand_electric_appliances:
+      title: Electric appliances
+      short_description:
+      description: "Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen below (Appliances slide). \r\n<br/>\r\n<br/>\r\nHere
+        you indicate how you expect demand for appliances per person to change. This
+        is mainly determined by growth in prosperity. As people become richer, they
+        tend to possess more electric appliances."
+    households_useful_demand_lighting:
+      title: Lighting
+      short_description:
+      description: "Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen below (Lighting slide). \r\n<br/>\r\n<br/>\r\nHere
+        you indicate how you expect demand for lighting per person to change. This
+        is mainly determined by growth in prosperity. As people become richer, they
+        start living in larger houses that require more lighting."
+    households_cooling_heatpump_ground_water_electricity_share:
+      title: Heat pump (ground)
+      short_description: ''
+      description: "A heat pump moves heat from one place to another. Heat pumps are
+        used in refrigerators, but buildings can use them for heating and cooling.
+        For optimal application, it does often require installation of under-floor
+        and wall heating instead of radiators. Currently, their use in newly constructed
+        houses is becoming quite popular, since European legislation dictates that
+        domestic energy consumption must decrease.\r\n<br/><br/>\r\nThis heat pump
+        uses a ground source on one side and a wall or floor delivery system on the
+        other. Not all residences are suitable for using a heat pump as they cannot
+        all be fitted with wall or floor delivery systems at acceptable costs. Considering
+        the high investment costs for such delivery systems, it is realistic to assume
+        that no more than ~20% of all residences could be equipped with such a heat
+        pump. For the other 80%, the costs would probably outweigh the benefits.\r\n<br/><br/>\r\nNote
+        that for heat pump shares above 20%, the ETM will considerably underestimate
+        the associated investment costs. This is caused by the fact that the additional
+        investment costs are unknown for installation in residences that would normally
+        not qualify."
+    households_cooling_airconditioning_electricity_share:
+      title: Airconditioning
+      short_description: ''
+      description: This indicates the extent to which air conditioning is used to
+        cool houses and apartments. Currently, in most countries cooling is provided
+        mainly by air conditioning.
+    households_cooling_heatpump_air_water_electricity_share:
+      title: Heat pump (air)
+      short_description: ''
+      description: "A heat pump moves heat from one place to another. Buildings can
+        use them for heating and cooling, but they are also used in refrigerators.
+        Currently, their use in newly constructed houses is becoming quite popular,
+        since European legislation dictates that domestic energy consumption must
+        decrease.\r\n<br/><br/>\r\nThis is an electric heat pump that draws cold/heat
+        from the air outside and uses a wall or floor delivery system. Not all residences
+        are suitable for using a heat pump as they cannot all be fitted with wall
+        or floor delivery systems at acceptable costs. Considering the high investment
+        costs for such delivery systems, it is realistic to assume that no more than
+        ~20% of all residences could be equipped with such a heat pump. For the other
+        80%, the costs would probably outweigh the benefits.\r\n<br/><br/>\r\nNote
+        that for heat pump shares above 20%, the ETM will considerably underestimate
+        the associated investment costs. This is caused by the fact that the additional
+        investment costs are unknown for installation in residences that would normally
+        not qualify.  "
+    households_appliances_fridge_freezer_electricity_efficiency:
+      title: Fridge / Freezer
+      short_description: ''
+      description: "How much more efficient do you think fridges and freezers will
+        be in the future?\r\n<br/><br/>\r\nNational and European legislation is forcing
+        household appliances to use ever less energy. The energy labels that are mandatory
+        nowadays in all European countries give a good indication of the energy efficiency
+        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
+        is the current average label of fridges and freezers. Use the slider to give
+        an estimation of the average label of fridges and freezers in the future.
+        The A+++ label corresponds to an energy reduction of 66% compared to today.
+        \r\n\r\n"
+    households_appliances_dishwasher_electricity_efficiency:
+      title: Dish washer
+      short_description: ''
+      description: "How much more efficient do you think dish washers will be in the
+        future?\r\n<br/><br/>\r\nNational and European legislation is forcing household
+        appliances to use ever less energy. The energy labels that are mandatory nowadays
+        in all European countries give a good indication of the energy efficiency
+        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
+        is the current average label of dish washers. Use the slider to give an estimation
+        of the average label of dish washers in the future. The A+++ label corresponds
+        to an energy reduction of 35% compared to today. "
+    households_appliances_vacuum_cleaner_electricity_efficiency:
+      title: Vacuum cleaner
+      short_description: ''
+      description: "How much more efficient do you think vacuum cleaners will be in
+        the future?\r\n<br/><br/>\r\nNational and European legislation is forcing
+        household appliances to use ever less energy. The energy labels that are mandatory
+        nowadays in all European countries give a good indication of the energy efficiency
+        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
+        is the current average label of vacuum cleaners. Use the slider to give an
+        estimation of the average label of vacuum cleaners in the future. The A+++
+        label corresponds to an energy reduction of 75% compared to today. "
+    households_appliances_washing_machine_electricity_efficiency:
+      title: Washing machine
+      short_description: ''
+      description: "How much more efficient do you think washing machines will be
+        in the future?\r\n<br/><br/>\r\nNational and European legislation is forcing
+        household appliances to use ever less energy. The energy labels that are mandatory
+        nowadays in all European countries give a good indication of the energy efficiency
+        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
+        is the current average label of washing machines. Use the slider to give an
+        estimation of the average label of washing machines in the future. The A+++
+        label corresponds to an energy reduction of 28% compared to today. \r\n"
+    households_appliances_clothes_dryer_electricity_efficiency:
+      title: Dryer
+      short_description: ''
+      description: "How much more efficient do you think wash dryers will be in the
+        future?\r\n<br/><br/>\r\nNational and European legislation is forcing household
+        appliances to use ever less energy. The energy labels that are mandatory nowadays
+        in all European countries give a good indication of the energy efficiency
+        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
+        is the current average label of dryers. Use the slider to give an estimation
+        of the average label of dryers in the future. The A+++ label corresponds to
+        an energy reduction of 69% compared to today."
+    households_appliances_television_electricity_efficiency:
+      title: Television
+      short_description: ''
+      description: "How much more efficient do you think televisions will be in the
+        future?\r\n<br/><br/>\r\nNew technologies such as LED displays reduce energy
+        consumption. But keep in mind that large televisions of course consume more
+        energy than small ones using the same technology. As a result, each television
+        uses more energy today than it did several years ago.\r\n<br/><br/>\r\nThe
+        starting value of this slider is the current average label of televisions.
+        Use the slider to give an estimation of the average label of televisions in
+        the future. The A+++ label corresponds to an energy reduction of 92% compared
+        to today. "
+    households_appliances_computer_media_electricity_efficiency:
+      title: Computer / Media
+      short_description: ''
+      description: How much more efficient do you think computers and other audio/video
+        appliances (excluding television) will be in the future?
+    households_appliances_other_electricity_efficiency:
+      title: Other
+      short_description: ''
+      description: "How much more efficient do you think other appliances will be
+        in the future?\r\n<br/><br/>\r\nThis category includes: <br/>\r\nPersonal
+        care <br/>\r\nLeisure <br/>\r\nKitchenware (exclusive of cooking) <br/>\r\nVentilation"
+    households_behavior_standby_killer_turn_off_appliances:
+      title: Turn off appliances
+      short_description: ''
+      description: "How many people will change their behavior to save energy?\r\n<br/><br/>\r\nMany
+        electric appliances use electricity even if they are switched off. In this
+        \"standby\" mode appliances like televisions can still use between 10 to 15
+        W of electricity. Computers can even use up to 60 W when they are \"switched
+        off\". Physically unplugging the device from the socket, or installing a standby
+        killer or on/off switch on the wall socket can eliminate this <em>\"phantom
+        load\"</em>.\r\n<br/><br/>\r\nEstimates vary on the total impact of this type
+        of energy leaking, but it can be up to 20% of total power used for these kind
+        of appliances. It is important to note that the total electricity use of these
+        media appliances is very small compared to the total demand of power and heat
+        in households. That is why this slider does not show a big decrease in the
+        graph, even if 100% of the population changes their behavior in this way.
+        On the other hand, a behavioral change in this area might also lead to behavioral
+        changes that do matter, like taking the bicycle or public transport to work
+        instead of the car."
+    households_behavior_turn_off_the_light:
+      title: Turn off the light
+      short_description: ''
+      description: "How many people will change their behavior to save energy?\r\n<br/><br/>\r\nMany
+        lights in the house are still switched on even if no one is there in the house,
+        or when it is light outside. Switching of these lights can save some energy.\r\n<br/><br/>\r\nThe
+        total amount of electricity used for lighting in households is small compared
+        to the total demand for electricity and heat in households, so the effects
+        of this behavioral change are not that high. In the buildings sector however,
+        lighting makes up a significant portion of the total elektricity demand. Here
+        making sure less light is used can lead to significant savings."
+    households_behavior_close_windows_turn_off_heating:
+      title: Turn down heating
+      short_description: ''
+      description: "How many people will change their behavior to save energy?\r\n<br/><br/>\r\nHeating
+        your home to a lower temperature (and wearing a sweater) or turning off the
+        heating in rooms which are not currently being used can save a lot of energy
+        used for heating.\r\n<br/><br/>\r\nWhat percentage of the people do you think
+        will turn down the heating of their home?"
+    households_behavior_low_temperature_washing:
+      title: Low-temperature washing
+      short_description: ''
+      description: "How many people will change their behavior to save energy?\r\n<br/><br/>\r\nWashing
+        your laundry at 40 degrees Celcius instead of 60 degrees can save up to 50%
+        of the electricity.\r\n<br/><br/>\r\nWhat percentage of the people do you
+        think will start washing their laundry at lower temperatures?"
+    households_solar_pv_solar_radiation_market_penetration:
+      title: PV panels
+      short_description: ''
+      description: "With this slider you set the percentage of the potential roof
+        area where you want to install solar panels. Do you want to know the installed
+        capacity? Then look in the 'Merit order table', which can be found in the
+        chart list (you can get here by clicking 'See more charts' at the top right).
+        \r\n<br/><br/>\r\n This technology is developing rapidly and solar panels
+        are becoming ever more efficient and cheaper. Solar panels produce electricity
+        on site, so transport of electricity is not always required. This avoids losses
+        on the grid and that saves energy. Feeding locally produced power back into
+        the local power grid requires a higher capacity or smarter local grid, to
+        prevent it from overloading. It may be desirable to curtail the power peaks
+        in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
+        \r\n<br/><br />\r\n
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        />"
+    households_water_heater_solar_thermal_share:
+      title: Solar thermal collectors
+      short_description: ''
+      description: 'Solar water heaters (SWH) use solar thermal panels to produce
+        warm water using heat from the sun. This heat can be used to heat shower or
+        do the dishes, for example. SWHs are installed on rooftops or in asphalt for
+        parking lots, for example. A SWH is often combined with a gas-fired central
+        heating boiler that heats water further if necessary (especially in winter).
+        It can also be combined with a heat pump. '
+    households_number_of_inhabitants:
+      title: Population
+      short_description: ''
+      description: How do you expect the population to grow? Apart from increasing
+        prosperity, this is one of the most important drivers for the energy demand
+        growth.
+    households_apartments_share:
+      title: Apartment
+      short_description:
+      description: How many apartments will there be in the future?
+    households_corner_houses_share:
+      title: Corner house
+      short_description:
+      description: How many corner houses will there be in the future?
+    households_detached_houses_share:
+      title: Detached house
+      short_description:
+      description: How many detached houses will there be in the future?
+    households_semi_detached_houses_share:
+      title: Semi-detached house
+      short_description:
+      description: How many semi-detached houses will there be in the future?
+    households_terraced_houses_share:
+      title: Terraced house
+      short_description:
+      description: How many terraced houses will there be in the future?
+    households_number_of_residences:
+      title: Residences
+      short_description:
+      description: How do you expect the number of residences to develop over time?
+    households_lighting_efficient_fluorescent_electricity_share:
+      title: Low-energy light bulb
+      short_description: ''
+      description: "What share of lighting comes from Energy-saving light bulbs (ESLB)?\r\n<br/><br/>\r\nMany
+        EU countries will ban the incandescent light bulb in the future. ESLBs use
+        ~75% less energy than incandescent light bulbs, but about twice as much as
+        LED-lights. Not all ESLBs can be thrown away without danger of polluting the
+        environment, as they contain toxic substances. Incandescent light bulbs or
+        LED-lights do not. ESLB's lifetime is shortened when they are often rapidly
+        switched on and off. \r\n<br/><br/>\r\nLifetime comparison:\r\n<br/>• LED-light:
+        \     ~50.000 hours\r\n<br/>• ESLB:             ~7.500 hours\r\n<br/>• Incandescent:
+        \ ~1.000 hours"
+    households_lighting_led_electricity_share:
+      title: LED
+      short_description: ''
+      description: "What share of lighting comes from Light Emitting Diodes?\r\n<br/><br/>\r\nMany
+        EU countries will ban the incandescent light bulb in the future. LEDs use
+        only 10% of the energy of a normal light bulb and about half of an energy
+        saving light bulb (ESLB). Unlike ESLB’s LEDs can be switched on and off rapidly
+        without decreasing their lifetime. LED-lights cost 5 to 50 times more than
+        the alternatives. Their chief disadvantage is that they are not (yet) optimally
+        suited for evenly lighting up a room.\r\n<br/><br/>\r\nLifetime comparison:\r\n<br/>•
+        LED-light:      ~50.000 hours\r\n<br/>• ESLB:             ~7.500 hours\r\n<br/>•
+        Incandescent:  ~1.000 hours"
+    households_lighting_incandescent_electricity_share:
+      title: Incandescent
+      short_description: ''
+      description: "Many EU countries will ban the incandescent light bulb in the
+        future. They only convert about 2-3% of the energy used into visible light.
+        The rest is radiated as heat. They also do not live very long compared to
+        newer technologies. An advantage is that they tend to give off a 'warm' light.
+        \r\n<br/><br/>\r\nLifetime comparison:\r\n<br/>• LED-light:      ~50.000 hours\r\n<br/>•
+        ESLB:             ~7.500 hours\r\n<br/>• Incandescent:  ~1.000 hours"
+    households_heater_electricity_share:
+      title: Electric heater
+      short_description: ''
+      description: "Electric heaters directly convert electricity back to heat.\r\n<br/>\r\nSome
+        people believe this is a waste of energy. Electricity is a very versatile
+        form of energy and low-grade heat can only be used to heat buildings or make
+        hot water. The waste is even bigger if the electricity is generated using
+        fossil fuels.\r\n<br/><br/>\r\nElectric heaters need to be able to produce
+        a lot of heat quickly, so they can have a large impact on the energy grid.
+        Especially if they are added to electric heat pumps as extra heating capacity
+        during cold days, impact on the local electricity grid can be extreme. If
+        you want to see what will happen to the grid you can set the electric heater
+        slider to the same percentage as electric heat pumps (ground). "
+    households_heater_crude_oil_share:
+      title: Oil-fired heater
+      short_description: ''
+      description: This shows what part of heating is produced by oil-fired heaters.
+        These are still quite common in many countries. Their advantage is that under
+        normal circumstances fuel oil burns slowly and completely, producing no air
+        pollutants other than CO<sub>2</sub>. A considerable disadvantage is the fact
+        that oil tanks tend to start leaking after a few decades and this can cause
+        significant pollution of soil and drinking water.
+    households_heater_combined_network_gas_share:
+      title: Condensing combi boiler
+      short_description: ''
+      description: "This is a condensing gas-fired heater for a central heating system.
+        These systems are quite energy efficient, but not the most efficient heaters
+        use gas. To see which are more efficient, try some sliders below.<br/>\r\nThese
+        boilers also produce hot water for showering and other uses. Hot water production
+        is slightly less efficient than producing heat for the central heating system.<br/>\r\nThese
+        boilers emit CO<sub>2</sub>. The latter is a problem if you wish to reduce
+        emissions significantly."
+    households_heater_heatpump_ground_water_electricity_share:
+      title: Heat pump (ground)
+      short_description: ''
+      description: "A heat pump moves heat from one place to another. Heat pumps are
+        used in refrigerators, but buildings can use them for heating and cooling.
+        This saves energy compared to a gas-fired central heating boiler, for example.
+        For optimal application, it does often require installation of under-floor
+        and wall heating instead of radiators. Currently, their use in newly constructed
+        houses is becoming quite popular, since European legislation dictates that
+        domestic energy consumption must decrease.\r\n<br/><br/>\r\nHeat pumps can
+        run on gas or electricity. This is an electric heat pump, as it draws its
+        heat from the ground. Gas-fired heat pumps are more often used to draw their
+        heat from the air.\r\n<br/>"
+    households_heater_wood_pellets_share:
+      title: Wood pellet stove
+      short_description: ''
+      description: "This is a wood pellet-fired stove. These are quite efficient and
+        fully automated in that they draw their fuel from an attached silo. \r\n<br/><br/>\r\nIt
+        is assumed the biomass used has been produced sustainably. Still, transporting
+        biomass consumes fuel and the smaller the scale at which it is used, the less
+        'green' this option becomes.\r\n<br/><br/>\r\nConventional stoves or fireplaces
+        have not been included separately."
+    households_heater_heatpump_air_water_electricity_share:
+      title: Heat pump (air)
+      short_description: ''
+      description: "Heat pumps can run on gas or electricity. This is an electric
+        heat pump, draws its heat from the outside air and uses under-floor heating.
+        \r\n<br/><br/>\r\nA heat pump moves heat from one place to another. Heat pumps
+        are used in refrigerators, but buildings can use them for heating and cooling.
+        This saves energy compared to a gas-fired central heating boiler, for example.
+        For optimal application, it does often require installation of under-floor
+        and wall heating instead of radiators. Currently, their use in newly constructed
+        houses is becoming quite popular, since European legislation dictates that
+        domestic energy consumption must decrease. "
+    households_heater_coal_share:
+      title: Coal-fired heater
+      short_description: ''
+      description: "What percentage of heating demand in households is met by coal-firing?
+        \r\n<br/><br/>The mix you fill in here is probably mostly determined by fuel
+        prices and environmental legislation."
+    households_heater_network_gas_share:
+      title: Gas-fired heater
+      short_description: ''
+      description: These are the same heaters as the "Condensing combi boiler", except
+        that they do not produce hot water, but only heat for a central heating systems.
+        This makes them on average a little more efficient than their 'combi' counterparts.
+    households_heater_district_heating_steam_hot_water_share:
+      title: District heating
+      short_description:
+      description: District heating is heat supplied by a heat network. The heat can
+        be produced by local heat plants / large-scale burners or the heat can be
+        imported from outside your region. You can set the heat sources in the Supply-section
+        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+    households_heater_hybrid_heatpump_air_water_electricity_share:
+      title: Hybrid heat pump (gas)
+      short_description:
+      description: "This heater is a combination of an electric heat pump that draws
+        its heat from the outside air and an efficient conventional gas-fired boiler.
+        Essentially, the hybrid heat pump offers a way to strongly reduce natural
+        gas demand for heating, while buying time for grid management companies to
+        reinforce grids. \r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe gas-fired
+        part takes over all of the heating of the building on cold winter days, when
+        heat demand peaks. Because of this clever trick, the heat pump has less impact
+        on the electricity grid than an all-electric heat pump does. Smart use of
+        hybrid heat pumps may therefore avoid the need to reinforce local power grids.
+        \r\n<br/><br/>\r\nHeat pumps move heat from one place to another. Refrigerators
+        use heat pumps, for example, but buildings can use them for heating and cooling
+        too. For optimal results with <em>most</em> types of heat pump, installation
+        of under-floor and wall heating instead of radiators is often required, as
+        well as good levels of insulation. The <em>hybrid</em> heat pump is an exception,
+        because of its gas-fired heater as a fall-back option. Hybrid heat pumps can
+        intelligently use whichever part (heat pump or gas-fired heater) is the most
+        efficient or cost-effective given the weather conditions and insulation level.
+        Houses with limited insulation will rely on the gas-fired part more, better
+        insulated ones will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP
+        of the electric part of the hybrid heat pump depends on ambient temperature.
+        When the COP drops below the threshold value the hybrid heat pump switches
+        to gas. The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+        >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
+    households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
+      title: Hybrid heat pump (hydrogen)
+      short_description:
+      description: "This heater is a combination of an electric heat pump that draws
+        its heat from the outside air and an efficient conventional hydrogen-fired
+        boiler.\r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe hydrogen-fired
+        part takes over all of the heating of the building on cold winter days, when
+        heat demand peaks. Because of this clever trick, the heat pump has less impact
+        on the electricity grid than an all-electric heat pump does. Smart use of
+        hybrid hydrogen heat pumps may therefore avoid the need to reinforce local
+        power grids. \r\n<br/><br/>\r\nHeat pumps move heat from one place to another.
+        Refrigerators use heat pumps, for example, but buildings can use them for
+        heating and cooling too. For optimal results with <em>most</em> types of heat
+        pump, installation of under-floor and wall heating instead of radiators is
+        often required, as well as good levels of insulation. The <em>hybrid</em>
+        hydrogen heat pump is an exception, because of its hydrogen-fired heater as
+        a fall-back option. Hybrid hydrogen heat pumps can intelligently use whichever
+        part (heat pump or hydrogen-fired heater) is the most efficient or cost-effective
+        given the weather conditions and insulation level. Houses with limited insulation
+        will rely on the hydrogen-fired part more, better insulated ones will make
+        more use of the heat pump.\r\n<br/><br/>\r\nThe COP of the electric part of
+        the hybrid hydrogen heat pump depends on ambient temperature. When the COP
+        drops below the threshold value the hybrid heat pump switches to hydrogen.
+        The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
+        >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
+    households_cooker_network_gas_share:
+      title: Gas
+      short_description: ''
+      description: "Gas cooking is popular in countries where there is an abundance
+        of natural gas and a gas distribution network. The efficiency of a gas stove
+        is 40% and is lower than the electric alternatives since a lot of heat is
+        lost to the environment. Although electric cooking may therefore appear more
+        efficient, it is important to take the entire 'well-to-potato' chain into
+        account, meaning that in some cases gas cooking might be advantageous. Electricity
+        production in power plants also leads to losses.\r\n<br/><br/>\r\nOnly the
+        costs due to the difference in energy demand are considered. The costs of
+        the stove are not taken into account in the Energy Transition Model."
+    households_cooker_resistive_electricity_share:
+      title: Electric
+      short_description: ''
+      description: "Electric cookers are a popular in urban and suburban areas where
+        there is no access to a natural gas network. Electric stoves use resistive
+        heating coils to produce heat and have an efficiency of approximately 55%
+        (excluding electricity production and transport losses). \r\n<br/>\r\nThe
+        disadvantage of electric stoves is the time required to warm the stove and
+        the inability to quickly change the cooking temperature.\r\n<br/><br/>\r\nOnly
+        the costs due to the difference in energy demand are considered. The costs
+        of the stove are not taken into account in the Energy Transition Model."
+    households_cooker_halogen_electricity_share:
+      title: Halogen
+      short_description: ''
+      description: "Halogen stoves use electricity to produce infrared radiation and
+        red light to heat food. Halogen stoves can be identified by the special toughened
+        ceramic glass stove tops. Compared to electric stoves, halogen stoves heat
+        up and cool down quicker offering more flexibility during cooking and improved
+        efficiency. The efficiency of a halogen stove is approximately 60% (excluding
+        losses that occur when electricity is produced).\r\n<br/><br/>\r\nOnly the
+        costs due to the difference in energy demand are considered. The costs of
+        the stove are not taken into account in the Energy Transition Model."
+    households_cooker_induction_electricity_share:
+      title: Induction
+      short_description: ''
+      description: "An induction cooker uses a type of induction heating for cooking.
+        What sets it apart from other common forms of stovetop cooking, is the fact
+        that the heat is generated directly in the cooking vessel, as opposed to being
+        transferred from the stovetop to the pan by electrical coils or burning gas.
+        Because of this, special pans are required for induction cookers. The efficiency
+        of an induction stove is very high, approximately 83-90%. \r\n<br/><br/>\r\nOnly
+        the costs due to the difference in energy demand are considered. The costs
+        of the stove are not taken into account in the Energy Transition Model."
+    households_cooker_wood_pellets_share:
+      title: Biomass
+      short_description: ''
+      description: "Cooking on biomass includes different fuels and technologies,
+        among which wood, wood pallets, bio-gas and bio-oil. Old fashioned wood stoves
+        have a very low efficiency for cooking. The efficiency of the biomass stove
+        in the Energy Transition Model is 30% and is lower than the natural gas and
+        electric alternatives since a lot of heat is lost to the environment. \r\n<br/><br/>\r\nOnly
+        the costs due to the difference in energy demand are considered. The costs
+        of the stove are not taken into account in the Energy Transition Model."

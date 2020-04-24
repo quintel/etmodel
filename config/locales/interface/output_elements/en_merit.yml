@@ -1,0 +1,183 @@
+---
+en:
+  output_elements:
+    import_export_capacity:
+      title: Effect of interconnector capacity on electricity price
+      short_description: ''
+      description: "The data in this chart is based on a relatively simple four country
+        model (including NL, DE, BE and FR). The model optimises the production of
+        electricity of the whole system taking interconnector capacities as boundary
+        conditions.\r\n<br><br>\r\nThe main assumptions / simplifications used in
+        the model are:\r\n<br>\r\n<ul>\r\n<li>The Merit Order can be represented as
+        a polynomial of second degree. A smooth function is needed for the optimisation
+        to reach a unique solution.</li>\r\n<li>Ramping speeds are not modeled: plants
+        can switch on and off instantaneously.</li>\r\n<li>Loop flows are excluded
+        (it is not possible for a country to receive its own exported electricity).</li>\r\n</ul>\r\nIn
+        this research, each country is represented as one single price\r\nzone comprising
+        generation and load with interconnection to neighbouring countries. And only
+        cross-border transmission capacities are taken into account. This means that
+        constraints within each country are not considered. (see Chapter 4.3.2 of
+        <a href=\"http://refman.et-model.com/publications/820\" target=\"_blank\">Wind
+        Integration</a>)"
+    import_export_renewables:
+      title: Additional renewables vs. marginal electricity costs
+      short_description: ''
+      description: "This chart illustrates the effect that increased renewables have
+        on wholesale electricity prices.<br><br>\r\nBecause the Merit Order prioritises
+        the production by cheap producers, the increase of Renewable capacity translates
+        in lower electricity prices for the country with the capacity. (see <a href=\"/scenario/costs/merit_order/merit-order\"
+        >Merit Order</a>)\r\n<br><br>\r\nRenewable production is not dispatchable,
+        so whenever there is a surplus of production it will be exported to other
+        price-zones (countries in the model), respecting interconnection constraints.\r\nThis
+        translates in lower prices also for the importer country because part of its
+        demand is met by 'zero-cost' (and possibly negatively priced) supply. "
+    import_export_flows:
+      title: Interconnection capacity
+      short_description: ''
+      description: "This chart shows the interconnection capacity between the Netherlands,
+        Germany, France and Belgium. \r\nLarger capacity allows for higher electricity
+        import and export spikes, resulting in better convergence of electricity prices
+        across countries.\r\n<br><br>\r\nNOTE: the interconnector between Belgium
+        and France is asymmetrical."
+    import_export_cwe:
+      title: CWE 'day ahead' electricity price
+      short_description: ''
+      description: "This chart shows the 'day-ahead' price of electricity for the
+        Central Western European (CWE) countries (BE, DE, FR, LU and NL) for the month
+        of January 2014 as published on <a href=\"http://www.apxgroup.com/market-results/cwe/\"
+        target=\"_blank\">http://www.apxgroup.com/market-results/cwe</a>.\r\n<br/><br/>\r\nThe
+        extent of price 'convergence' (how often prices are equal) is a measure for
+        the success of market coupling. Coupling can be improved by increasing interconnector
+        capacity between countries or by employing smarter market mechanisms."
+    energy_storage:
+      title: Energy Storage
+      short_description: This chart gives an impression of how the costs of conversion
+        technologies compare and at what point it might become economically interesting
+        to build first conversion units.
+      description: "This chart gives an impression of how the costs of conversion
+        technologies compare and at what point it might become economically interesting
+        to build first conversion units.\r\n\r\n<br/><br/>\r\n\r\nThe <b>x-axis</b>
+        of the chart displays the total installed generation capacity of wind and
+        solar. If values of ~15 GW of wind and solar capacity are exceeded, the first
+        occurrences of excess power are observed in The Netherlands. The <b>y-axis</b>
+        has the unit € / MWh. In case of wind turbines, it refers to the <i>present</i>
+        costs of total electricity production of inland wind turbines, as shown in
+        \r\n<a href=\"/scenario/costs/wind/investment\">'wind turbines' section of
+        Costs</a> \r\n\r\nIn case of the storage and conversion technology, the y-axis
+        indicates the cost for delivering useful energy via the conversion of excess.
+        \r\n\r\n<br/><br/>\r\n\r\nThe indicator line shows how much volatile capacity
+        you have installed (if you do not see a line, you installed more than 120
+        GW). It is the only thing in the chart that responds to your slider settings.
+        \r\n\r\n<br/><br/>\r\n\r\nTo generate the curves in this chart we made quite
+        a few assumptions, most importantly: \r\n\r\n<ul style=\"overflow: hidden\">\r\n\r\n<li>Excess
+        electricity is not exported, but curtailed, stored or converted.</li> \r\n<li>The
+        ratio of installed wind and solar capacities (x-axis) is fixed to the ratio
+        installed in 2010.</li> \r\n<li>Everything else stays the same; the chart
+        does not react to your slider settings.</li> \r\n<li>Only marginal cost are
+        displayed; in other words, the curves represent the cost for installing a
+        first conversion unit or one more wind turbine. </li> \r\n<li>Future cost
+        reductions of technologies are not taken into account (learning effects and
+        economy of scale).</li> \r\n</ul> \r\n\r\nFor a detailed explanation and a
+        complete list of assumptions, have a look at our <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
+        target =\"_blank\">documentation</a>. "
+    use_of_excess_electricity:
+      title: Use of excess electricity
+      short_description: ''
+      description: The ETM contains several flexibility technologies that are able
+        to deal with excess electricity from wind turbines and solar panels. This
+        chart shows the amount of electricity that is used by the different technologies
+        in your scenario. You can set how much of each of these technologies you would
+        like to install in your scenario in the Flexibility menu.
+    storage_options:
+      title: Flexibility options
+      short_description: ''
+      description: "The ETM contains several flexibility technologies that are able
+        to deal with excess electricity from wind turbines and solar panels. For each
+        of these technologies, this table shows the installed capacity, which determines
+        how much electricity you can store or convert at any time. The table also
+        shows the storage volume, indicating the maximum volume available for storage
+        or conversion. Finally, the last columns show the annual usage of the flexibility
+        technologies in your scenario, both in PJ and TWh.\r\n</br></br>\r\nYou can
+        set how much of each of these technologies you would like to install in your
+        scenario in the Flexibility menu."
+    merit_order_hourly_flexibility:
+      title: Use of flexibility options per hour
+      short_description: ''
+      description: The ETM determines on an hourly basis if there is excess electricity
+        and how this electricity is used.
+    carbon_balance:
+      title: CO/CO<sub>2</sub> available and used for power-to-kerosene
+      short_description: ''
+      description: ''
+    solar_pv_curtailment:
+      title: Curtailment of solar PV
+      short_description: 
+      description: 
+    hourly_solar_pv_curtailment:
+      title: Hourly production of solar PV
+      short_description: 
+      description: 
+    merit_order_table:
+      title: Merit order table
+      short_description: ''
+      description: "This table shows the merit order of your scenario. Based on your
+        assumptions concerning available electricity production technologies, fuel
+        prices, CO<sub>2</sub> emissions costs, and operating and maintenance costs
+        the model calculates the order in which power plants are used to meet the
+        demand.\r\n<br/><br/>\r\nThe table shows what place in the merit order each
+        technology has, which is based on the operating costs. Also the table shows
+        the available capacity of each technology as well as the full load hours."
+    merit_order:
+      title: Merit order capacities and marginal costs
+      short_description: ''
+      description: "This chart shows the merit order of your scenario. Based on your
+        assumptions concerning available electricity production technologies, fuel
+        prices, CO<sub>2</sub> emissions costs, and operating and maintenance costs
+        the model calculates the order in which power plants are used to meet the
+        demand.\r\n<br/><br/>\r\nThe chart shows what place in the merit order each
+        technology has, which is based on the operating costs. Also the table shows
+        the available capacity of each technology as well as the full load hours."
+    plant_profitability:
+      title: Plant profitability
+      short_description: ''
+      description: ''
+    merit_order_price_curve:
+      title: Electricity price per hour
+      short_description: ''
+      description: The ETM calculates the hourly supply of electricity from the hourly
+        demand and the installed capacities of all electricity producers. The order
+        in which the producers are dispatched is determined by the merit order. The
+        hourly merit order price is equal to the marginal costs of the most expensive
+        plant running at that hour.
+    merit_order_hourly_supply:
+      title: Electricity production per hour
+      short_description: ''
+      description: The ETM calculates the hourly supply of electricity from the hourly
+        demand and the installed capacities of all electricity producers. The order
+        in which the producers are dispatched is determined by the merit order. Volatile
+        electricity producers as well as must-run technologies are not included in
+        the merit order calculation. This chart shows the hourly production of electricity
+        and gives a visual clue of the electricity generation mix.
+    merit_order_excess_events:
+      title: Duration of excess electricity events
+      short_description: ''
+      description: As a result of large numbers of wind turbines and solar panels
+        installed, the supply of electricity can be larger than the demand. The ETM
+        keeps track of the number of consecutive hours in which this is the case for
+        you scenario. If you include flexibility options in your scenario, the number
+        of excess events decreases.
+    dynamic_demand_curve:
+      title: Electricity demand per hour
+      short_description: ''
+      description: "This chart shows the impact of technology choices and demand growth
+        on the hight and shape of the total electricity demand profile at high voltage
+        level (red line).\r\n<br>\r\n<br>\r\nFor the following technologies and choices
+        the impact on the profile is explicitly shown:\r\n<ul>\r\n<li>electric space
+        heating technologies such as heat pumps</li>\r\n<li>insulation levels and
+        heating demand (if electric space heating technologies are used)</li>\r\n<li>hot
+        water technologies such as heat pumps</li>\r\n<li>hot water demand (if electric
+        hot water technologies are used)</li>\r\n<li>use of power-to-heat (if electric
+        hot water technologies are used)</li>\r\n<li>market share and charging strategies
+        of electric vehicles</li>\r\n</ul>\r\nFor the electricity demand of other
+        technologies and applications in the ETM, the fixed TenneT curve is assumed.
+        This part is shown as the white region under the red line.\r\n"

@@ -1,0 +1,283 @@
+---
+en:
+  input_elements:
+    number_of_buildings:
+      title: Number of buildings
+      short_description: ''
+      description: How do you expect the number of non-residential buildings to grow?
+        This concerns all buildings that fall into categories like offices, hospitals,
+        swimming pools, restaurants, etc. Apart from increasing prosperity, this is
+        one of the most important drivers for the energy demand growth.
+    buildings_useful_demand_electricity:
+      title: Electricity per building
+      short_description: ''
+      description: "Note: these changes in energy use <strong>exclude</strong> the
+        use of the efficient technologies that you can choose below (Appliances, Lighting,
+        Heating & Cooling). \r\n<br/>\r\n<br/>\r\nHere you indicate how you expect
+        demand for electricity per building to change. This is mainly determined by
+        growth in prosperity. As people become richer, they become accustomed to ever
+        more convenience from ICT and other other office or school appliances."
+    buildings_useful_demand_for_space_heating:
+      title: Heat per building
+      short_description: ''
+      description: "Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen below (Heating & Cooling). \r\n<br/>\r\n<br/>\r\nHere
+        you indicate how you expect heat demand per building to change. This is likely
+        to change as buildings become ever more filled with electric appliances producing
+        heat. In fact, especially offices need cooling for more hours per year than
+        before everyone started using computers, copiers, faxes and printers. "
+    buildings_useful_demand_cooling:
+      title: Cooling per building
+      short_description: ''
+      description: "Note: these changes in energy use <strong>exclude</strong> the
+        use of the efficient technologies that you can choose below (Heating & Cooling).
+        \r\n<br/>\r\n<br/>\r\nHere you indicate how you expect cooling demand per
+        building to change. This is likely to change as buildings become ever more
+        filled with electric appliances producing heat. In fact, especially offices
+        need cooling for more hours per year than before everyone started using computers,
+        copiers, faxes and printers. "
+    buildings_space_heater_network_gas_share:
+      title: Gas-fired heater
+      short_description: ''
+      description: These heaters are part of a gas-fired high efficiency central heating
+        system running on natural gas. These systems are quite energy efficient, but
+        emit CO<sub>2</sub>.
+    buildings_space_heater_electricity_share:
+      title: Electric heater
+      short_description: ''
+      description: "Electric heaters directly convert electricity back to heat.\r\n<br/>\r\nSome
+        people believe this is a waste of energy. Electricity is a very versatile
+        form of energy and low-grade heat can only be used to heat buildings or make
+        hot water. The waste is even bigger if the electricity is generated using
+        fossil fuels.\r\n<br/><br/>\r\nElectric heaters need to be able to produce
+        a lot of heat quickly, so they can have a large impact on the energy grid.
+        Especially if they are added to electric heat pumps as extra heating capacity
+        during cold days, impact on the local electricity grid can be extreme. If
+        you want to see what will happen to the grid you can set the electric heater
+        slider to the same percentage as electric heat pumps (ground). "
+    buildings_space_heater_heatpump_air_water_network_gas_share:
+      title: Gas-fired heat pump
+      short_description: ''
+      description: "A gas-fired heat pump is similar to an electric heat pump except
+        that the energy driving the process comes from gas, not electricity. This
+        heat pump takes its heat from the outside air, which makes it easier and cheaper
+        to install than the heat pump that takes its heat from the ground or underground
+        water. Depending on how the electricity for electric heat pumps is produced,
+        gas-fired heat pumps are roughly as efficient as electric ones.\r\n<br/><br/>\r\nOn
+        cold winter days, gas-fired heat pumps in effect turn into gas-fired heaters,
+        since little ambient heat is available. This is vastly preferable to electric
+        heat pumps that draw their heat from the outside air (not found in this model)
+        and require additional electric heating capacity for cold days. The latter
+        will require large investments to reinforce electricity grids."
+    buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
+      title: Heat pump with TS
+      short_description: ''
+      description: "Thermal storage works by storing a building's heat underground
+        by cooling it with water from a water basin or aquifer in summer. This heat
+        can be used again in winter for heating the building. Alternatively the natural
+        heat of cold of ground water or roads, for example, can be used.\r\n<br/><br/>\r\nHeat
+        pumps are more efficient when used in combination with thermal storage, because
+        less energy has to be added to cool or heat water to the right temperature.
+        It is difficult to realize underground thermal storage in densely populated
+        areas so this is only lucrative for large projects supplying heat and cold
+        to larger office buildings, for example. "
+    buildings_space_heater_wood_pellets_share:
+      title: Biomass-fired heater
+      short_description: ''
+      description: "What percentage of heat demand in offices and other buildings
+        is met by biomass-firing? Biomass heaters are especially suited for larger
+        office parks with large heat demands, as this allows transport of biomass
+        to be concentrated. That way (fossil) transport fuel use can be minimalized.\r\n<br/><br/>\r\nThe
+        mix you fill in here is probably mostly determined by fuel prices and environmental
+        legislation. "
+    buildings_space_heater_crude_oil_share:
+      title: Oil-fired heater
+      short_description: ''
+      description: This shows what part of heating is produced by oil-fired heaters.
+        These are still quite common in many countries. Their advantage is that under
+        normal circumstances fuel oil burns slowly and completely, producing no air
+        pollutants other than CO<sub>2</sub>. A considerable disadvantage is the fact
+        that oil tanks tend to start leaking after a few decades and this can cause
+        significant pollution of soil and drinking water.
+    buildings_space_heater_district_heating_steam_hot_water_share:
+      title: District heating
+      short_description:
+      description: District heating is heat supplied by a heat network. The heat can
+        be produced by local heat plants / large-scale burners or the heat can be
+        imported from outside your region. You can set the heat sources in the Supply-section
+        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+    buildings_space_heater_coal_share:
+      title: Coal-fired heater
+      short_description:
+      description: This shows what part of heating is produced by coal-fired heaters.
+    buildings_insulation_level:
+      title: Insulation
+      short_description: ''
+      description: "The heat demand reduction is the percentage by which the heat
+        demand is reduced compared to a badly insulated building (characterised by
+        label E), i.e. the slider indicates how much of the potential savings has
+        been achieved. The current settings are based on the energy labels that are
+        present within your region, for the Netherlands this data is derived from
+        <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">\"Basisregistratie
+        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
+        demand reduction percentages. The relationship between heat demand reduction
+        and energy labels can be found in our <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentation</a>.
+        However, the mapping is ambiguous since there is no direct relationship between
+        energy labels and the insulation level.  \r\n<br><br>\r\nFor the current situation
+        no insulation costs are taken into account, only when insulation measures
+        are taken. The insulation costs are based on the energy model <a href=\"https://www.pbl.nl/vesta\">Vesta</a>,
+        see the <a href=\"https://github.com/quintel/documentation/blob/master/general/insulation.md\">documentation</a>
+        for the exact modelling. The insulation costs for buildings are modelled as
+        a fixed amount per % heat demand reduction: € 606 per % for existing buildings
+        and € 479 per % for new buildings."
+    buildings_lighting_standard_fluorescent_electricity_share:
+      title: Fluorescent tube
+      short_description: ''
+      description: "What share of lighting in buildings comes from conventional fluorescent
+        tubes? This concerns all buildings that fall into categories like offices,
+        hospitals, swimming pools, restaurants, etc. \r\n<br/><br/>\r\nFluorescent
+        tubes produce light by sending an electric charge through a gas that is contained
+        in the tube. A typical fluorescent tube converts electricity into visible
+        light 10 times more efficiently than the traditional incandescent lamp still
+        used in many homes. The tubes are usually also more expensive, but the initial
+        higher investment costs are offset by its much longer lifetime and lower electricity
+        use.\r\n<br/><br/>\r\nNot all fluorescent tubes can be thrown away without
+        danger of polluting the environment, as they contain toxic substances such
+        as mercury. LED-tubes do not. A fluorescent tube's lifetime is shortened when
+        its switched on and off very often."
+    buildings_lighting_efficient_fluorescent_electricity_share:
+      title: High-performance fluorescent tube
+      short_description: ''
+      description: "What share of lighting in buildings comes from high performance
+        fluorescent tubes?\r\n<br/><br/>\r\nThere are many types of high performance
+        fluorescent tubes on the market. They sometimes are smaller and thinner than
+        conventional fluorescent tubes. More importantly they can be up to 50% more
+        energy efficient, have a longer lifetime and produce a better, more constant
+        light that is easier to work with compared to conventional fluorescent tubes
+        that are still used in most offices today.\r\n<br/><br/>\r\nFluorescent tubes
+        produce light by sending an electric charge through a gas that is contained
+        in the tube. A typical fluorescent tube converts electricity into visible
+        light 10 times more efficiently than the traditional incandescent lamp still
+        used in many homes. The tubes are usually also more expensive, but the initial
+        higher investment costs are offset by its much longer lifetime and lower electricity
+        use.\r\n<br/><br/>\r\nNot all fluorescent tubes can be thrown away without
+        danger of polluting the environment, as they contain toxic substances. LED-tubes
+        do not. A Fluorescent tube's lifetime is shortened when its switched on and
+        off very often."
+    buildings_lighting_led_electricity_share:
+      title: LED-tube
+      short_description: ''
+      description: "What share of lighting comes from LED tubes?\r\n<br/><br/>\r\nLED
+        tubes are a number of Light Emitting Diodes (LEDs) combined into a form that
+        can be easily installed in standard lighting armatures currently used in offices,
+        schools and government buildings.\r\n<br/><br/>\r\nLED tubes are 50% more
+        efficient than conventional fluorescent tubes. Unlike fluorescent tubes, LED
+        tubes can be switched on and off often without decreasing their lifetime.
+        Investment costs for LED lighting are 5 to 50 times higher than for fluorescent
+        tubes. However, their longer life and lower elektricity use will in the end
+        make the LED tube cheaper. Their chief disadvantage at this moment is that
+        they are not (yet) optimally suited for evenly lighting up a room and producing
+        enough light for an office enviroment.\r\n"
+    buildings_lighting_savings_from_motion_detection_light:
+      title: Motion detection
+      short_description: ''
+      description: "How many buildings will employ motion detection?\r\n<br/><br/>\r\nMotion
+        detection is a mechanism that 'sees' whether someone is in the room. As soon
+        as someone enters the room the light switches on automatically and once nobody
+        is left in the room the light will turn off automatically.\r\n<br/><br/>\r\nThis
+        type of energy saving measure limits the amount of time a light is on to the
+        minimum required. It prevents lights from being switched on uselessly at night
+        or during lunch breaks for example."
+    buildings_lighting_savings_from_daylight_control_light:
+      title: Daylight-dependent control
+      short_description: ''
+      description: "How many buildings use daylight-dependent control?\r\n<br/><br/>\r\nDaylight-dependent
+        control is a mechanism that varies the amount of light from lamps in a room
+        by the light that comes from outside. If the sun is shining and it is already
+        light in the room it will switch off or dim the lights automatically. But
+        if it is dark or cloudy the system will make sure that the lamps in the room
+        give of enough light to work.\r\n<br/><br/>\r\nThis technology ensures that
+        lights are not on needlessly if there is already enough light coming from
+        outside. In combination with a motion detection system the lights will only
+        be on when someone is in the office and there is not enough light coming in
+        from outside."
+    buildings_space_heater_solar_thermal_share:
+      title: Solar thermal panels
+      short_description: ''
+      description: "Solar water heaters (SWH) use solar thermal panels to produce
+        warm water using heat from the sun. This heat can be used to heat a building.
+        SWHs are installed on rooftops or in asphalt for parking lots, for example.
+        A SWH is often combined with a gas-fired central heating boiler that heats
+        water further if necessary (especially in winter). It can also be combined
+        with a heat pump. \r\n<br/>"
+    buildings_solar_pv_solar_radiation_market_penetration:
+      title: Solar panels
+      short_description: ''
+      description: "With this slider you set the percentage of the potential roof
+        area where you want to install solar panels. Do you want to know the installed
+        capacity? Then look in the 'Merit order table', which can be found in the
+        chart list (you can get here by clicking 'See more charts' at the top right).
+        \r\n<br/><br/>\r\n This technology is developing rapidly and solar panels
+        are becoming ever more efficient and cheaper. Solar panels produce electricity
+        on site, so transport of electricity is not always required. This avoids losses
+        on the grid and that saves energy. Feeding locally produced power back into
+        the local power grid requires a higher capacity or smarter local grid, to
+        prevent it from overloading. It may be desirable to curtail the power peaks
+        in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
+        \r\n<br/><br />\r\n
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/supply/electricity_renewable/solar-power\" >here</a><br
+        />"
+    buildings_useful_demand_for_appliances:
+      title: Appliances efficiency
+      short_description: ''
+      description: "How much more efficient do you think appliances in non-residential
+        buildings will be in the future? Use the slider to give an estimation of yearly
+        increase in the overall efficiency of appliances.\r\n<br/><br/>\r\nAppliances
+        in offices, hotels, restaurants, hospitals and swimming pools account for
+        a considerable share of energy use. Typical office appliances are computers
+        and screens, printers, faxes, photocopiers etc. Hotels, restaurants, swimming
+        pools and especially hospitals use more specialized equipment, of course,
+        for which reliability may be more important than energy consumption. \r\n<br/><br/>\r\nNew
+        technologies often reduce energy consumption per individual device, but not
+        if devices simply become bigger. Computer screens have become much more efficient,
+        for example, but also larger. This means they do not always use less energy
+        than the smaller screens used before.  \r\n"
+    buildings_cooling_heatpump_air_water_network_gas_share:
+      title: Gas-fired heat pump
+      short_description: ''
+      description: A gas-fired heat pump is similar to an electric heat pump except
+        that the energy driving the process comes from gas, not electricity. This
+        heat pump takes its heat from the outside air, which makes it easier and cheaper
+        to install than the heat pump that takes its heat from the ground or underground
+        water. Depending on how the electricity for electric heat pumps is produced,
+        gas-fired heat pumps are roughly as efficient as electric ones for heating,
+        and less efficient for cooling.
+    buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
+      title: Heat pump with TS
+      short_description: ''
+      description: "Thermal storage works by storing a building's heat underground
+        by cooling it with water from a water basin or aquifer in summer. This heat
+        can be used again in winter for heating the building. Alternatively the natural
+        heat of cold of ground water or roads, for example, can be used.\r\n<br/><br/>\r\nHeat
+        pumps are more efficient when used in combination with thermal storage, because
+        less energy has to be added to cool or heat water to the right temperature.
+        It is difficult to realize underground thermal storage in densely populated
+        areas so this is only lucrative for large projects supplying heat and cold
+        to larger office buildings, for example. "
+    buildings_cooling_airconditioning_share:
+      title: Airconditioning
+      short_description: ''
+      description: This indicates the extent to which air conditioning is used to
+        cool buildings like offices, schools, hostpitals, hotels, restaurants etc.
+        Currently, most cooling is provided by air conditioning in most countries.
+    buildings_cooling_collective_cooling_network_electricity_share:
+      title: Cooling network
+      short_description: ''
+      description: A cooling network can use different sources of cold, like thermal
+        storage and deep lakes. In the ETM cold from deep lakes is used in the cooling
+        network to cool buildings. Lakes of 25 meters depth or deeper can be used
+        for this type of cooling. Water from the lake is pumped through a heat exchanger,
+        taking the cold from the water and using it to cool one or more buildings.
+        Because the cold stored in a lake goes down drastically during summer the
+        year round capacity of deep lakes is small.

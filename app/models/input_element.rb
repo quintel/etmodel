@@ -45,7 +45,7 @@ class InputElement < YModel::Base
   end
 
   def title_for_description
-    "input_elements.#{key}"
+    "input_elements.#{key}.title"
   end
 
   def translated_name
@@ -53,7 +53,7 @@ class InputElement < YModel::Base
   end
 
   def description
-    I18n.t("descriptions_input_elements.#{key}.content")
+    I18n.t("input_elements.#{key}.description")
   end
 
   def belongs_to_a_group?

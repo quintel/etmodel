@@ -15,6 +15,12 @@ module YModel
       define_readers self
     end
 
+    # With is used as the default value of the attribute
+    def default_attribute(attr_name, with: nil)
+      @schema << attr_name
+      define_reader attr_name, default: with
+    end
+
     def schema
       @schema ||= YModel::Schema.new(records)
     rescue Errno::ENOENT
@@ -47,9 +53,14 @@ module YModel
       end
     end
 
+    def define_reader(attribute, default: nil)
+      define_method(attribute.to_sym) do
+        instance_variable_get("@#{attribute}") || default
+      end
+    end
+
     protected
 
-    # I dislike the format of this method a lot. Rubocop made me do it..
     def records
       @records ||= source_files.flat_map { |name| YAML.load_file(name) }
         .map(&:symbolize_keys)

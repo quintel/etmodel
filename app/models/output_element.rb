@@ -65,12 +65,12 @@ class OutputElement < YModel::Base
   end
 
   def title_for_description
-    "output_elements.#{key}"
+    "output_elements.#{key}.title"
   end
 
   # Descriptions are optional for output elements
   def description
-    I18n.t("descriptions_output_elements.#{key}.content", default: '')
+    I18n.t("output_elements.#{key}.description", default: '')
   end
 
   def description_embeds_player?

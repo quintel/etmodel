@@ -1,0 +1,415 @@
+en:
+  slides:
+    flexibility_electricity_import_export_edp:
+      title: Towards a European 'Merit Order'
+      short_description:
+      description: "The so-called <strong>merit order</strong> (also see <a href=\"/scenario/costs/merit_order/merit-order\"
+        >Merit Order</a>) determines the order in which producers of electricity meet
+        demand. Producers with the lowest marginal costs have priority.\r\n<br/><br/>\r\nThis
+        means that, in general, countries with cheaper electricity production will
+        export to countries with more expensive production. They will do this until
+        prices in both countries converge or the interconnectors work at maximum capacity.\r\n<br/><br/>\r\nIn
+        order to achieve the coupling of electricity markets on a physical level,
+        interconnections between countries are being increased and their utilization
+        optimized. "
+    flexibility_electricity_import_export_interconnectivity:
+      title: Interconnector capacity
+      short_description:
+      description: The difference between the hourly electricity supply and demand
+        can be imported or exported. The interconnector capacity between countries
+        is, however, limited, restricting the amount of electricity that can be imported
+        or exported at any time. Below you can set the technical capacity of all interconnectors
+        combined. It might be that not all of this capacity is available for export,
+        e.g. because you expect that neighbouring countries will have excess electricity
+        at the same time as your country does. You can set which percentage of the
+        physical interconnector capacity is available for export using the sliders
+        below. Read more about import/export <a href="https://github.com/quintel/documentation/blob/master/general/import_export.md">here</a>.
+    flexibility_electricity_import_export_interconnectors:
+      title: Effects of increasing interconnector capacity
+      short_description:
+      description: "Countries in the EU are planning to invest in increasing interconnection
+        capacity (see <a href=\"http://refman.et-model.com/publications/1829\" target=\"_blank\">10-Year
+        Network Development Plan (ENTSO-E)</a>). In the chart on the right, we qualitatively
+        show how the electricity prices of two countries change if the interconnection
+        capacity between them is doubled. \r\n<br/><br/>\r\nThe blue lines show the
+        hourly electricity prices for countries A and B in the reference year (2010).
+        When the blue lines meet (e.g. hours 1-5) the price of electricity is the
+        same for the two countries (convergence). This happens because they both use
+        electricity from the cheapest producer available (electricity is being exported
+        from the country with cheapest production to the other country).\r\n<br/><br/>\r\nAt
+        all other times the blue lines do not match. This happens because, even if
+        one of the countries has cheap production capacity available, the interconnector
+        is already working at maximum capacity (is congested). The country that cannot
+        import the cheap electricity will have to get it from a more expensive local
+        producer. \r\n<br/><br/>\r\nThe red lines show the prices of electricity when
+        the interconnection capacity is doubled. Because the capacity is higher, the
+        interconnector is congested less often and the price of electricity converges
+        more frequently."
+    flexibility_electricity_import_export_properties:
+      title: CO<sub>2</sub> emissions of imported electricity
+      short_description:
+      description: "In some scenarios you will import electricity from outside your
+        area. The production and distribution of this electricity could have caused
+        CO<sub>2</sub> emissions elsewhere. How much of these emissions do you want
+        to attribute to your region? As a default, gram CO<sub>2</sub> per kWh of
+        imported electricity is set equal to the Dutch electricity mix, but you can
+        change it yourself below. For more information checkout the '?'.<br/><br/>\r\n\r\nThe
+        costs related to this imported electricity can be set in the <a href=\"/scenario/costs/electricity_import_costs/costs-of-imported-electricity\">
+        section of costs</a>."
+    flexibility_electricity_import_export_markets:
+      title: Integration of the electricity markets
+      short_description:
+      description: "The electricity market is one of the last markets in the EU facing
+        cross-border integration. Most industries are already competing in the EU
+        Single Market. The proposal of the European Commission to create a common
+        European energy policy was an important step towards harmonising national
+        markets into working regional markets and finally a pan-European market.<br/><br/>\r\n\r\nIn
+        order to achieve this, both physical interconnection capacity and administrative
+        market coupling are being realized. \r\n \r\nThe thinking is that markets
+        are the most efficient means to assure demand is met by supply at the lowest
+        costs. Overall expected benefits are: <br/><br/>\r\n\r\n\t• Lower electricity
+        costs <br/>\r\n\t• More equal electricity prices between countries<br/><br/>\r\n\r\nIn
+        practice, market distortions by (the mismatch of) individual member states'
+        policies may result in less than perfect market coupling."
+    flexibility_electricity_import_export_renewables:
+      title: Effects of additional renewable generation
+      short_description:
+      description: "The EU has the goal to increase the available capacity of renewable
+        energy sources (RES) for 2020 (<a href=\"http://refman.et-model.com/publications/1830\"
+        target=\"_blank\">Scenario Outlook and System Adequacy Forecast 2011-2025
+        (ENTSO-E)</a>). The future situation that we consider here features installed
+        capacities of wind and solar up to 2020 targets. <br/><br/>\r\nIn the chart
+        on the right, we can (qualitatively) see what the effect on the  <em>marginal
+        electricity production costs</em> would be compared to the present situation.\r\n<br/><br/>\r\nThe
+        blue line shows the hourly costs of producing electricity in the present and
+        the orange line when increasing the capacity of RES. The decrease in the costs
+        results from the larger share of RES capacity, which has zero marginal electricity
+        production costs (see <a href=\"/scenario/costs/merit_order/merit-order\"
+        >Merit Order</a>). The average costs of producing electricity are therefore
+        lower. \r\n<br/><br/>\r\nNote that the costs for investments and installation
+        of renewable generating capacity have not been included here. These are typically
+        much higher than for non-renewable capacity. The <em>integral production costs</em>
+        are therefore likely to increase with more renewable capacity."
+    flexibility_flexibility_cold_snap:
+      title: Cold snap
+      short_description:
+      description:
+    flexibility_flexibility_net_load:
+      title: Peak load and usable capacity
+      short_description:
+      description: "The energy transition affects the electricity network. In the
+        table on the right you can see the peak load and usable capacity for the different
+        grid levels. When you click on the 'Annual'-toggle in the top bar, you will
+        be directed to the hourly chart that shows the net load on all electricity
+        levels over time. Are you interested in the hourly peak load curves and demand
+        curves for each grid level? These can be found in the list with all charts
+        (click on 'see more charts' and go to 'Network')\r\n</br></br> \r\nThe total
+        investment needed when the electricity network should be reinforced is depended
+        on the investments costs per grid level. These can be set in the <a href=\"/scenario/costs/infrastructure/electricity-infrastructure-costs\"
+        >Costs</a> section."
+    flexibility_flexibility_demand_response_ev:
+      title: Demand response - electric vehicles
+      short_description:
+      description: "Demand response is a form of flexibility where energy demand is
+        adjusted or shifted in time. The goal is to reduce peaks in energy demand.
+        With the sliders in this section, you can adjust the charging behaviour of
+        electric vehicles. The chart shows the impact this has on the shape of the
+        electricity demand curve. \r\n<p>\r\nThe total set of electric vehicles can
+        be set in the <a href=\"/scenario/demand/transport_passenger_transport/car-technology\"
+        >car technology section</a>."
+    flexibility_flexibility_demand_response_hp:
+      title: Demand response - buffers for heat pumps
+      short_description:
+      description: "In the ETM all heat pumps have the option to install a buffer
+        for space heating and a buffer for hot water. The default settings of these
+        buffers represent a common setup of heat pumps in households. However, in
+        the future these buffers might also be used to store larger amounts of heat.
+        \r\n<br></br>\r\n The sliders below allow you to indicate the buffer size
+        for different heat pumps."
+    flexibility_flexibility_demand_response_hhp:
+      title: Demand response - behavior of hybrid heat pumps
+      short_description:
+      description: "The efficiency of hybrid heat pumps (HHP) is dependent on the
+        ambient temperature and is depicted by the coefficient of performance (COP).
+        The COP becomes lower as the outside temperature decreases. Below you can
+        set the so-called 'threshold COP': if the COP of the heat pump is below this
+        threshold then the HHP switches from electricity to gas. You can choose a
+        setting that is most financially attractive for the consumer, but you can
+        also choose a setting that produces less impact on the electricity network.
+        \r\n</br></br>\r\n To help you decide the cost-optimal threshold COP setting
+        from a consumer perspective, have a look at the chart on the right. It shows
+        how much it costs to make a unit of heat with the HHP for space heating. For
+        the gas part, these costs are independent of the COP (and therefore the outside
+        temperature). The costs for the electrical part are decreasing with increasing
+        COP (and increasing outside temperature). The intersection of the two curves
+        is the cost-optimal COP setting for the given cost price gas and electricity.
+        This cost price of gas and electricity can be adjusted below. The start value
+        of the treshold COP slider matches the calculated cost-optimal threshold COP
+        for space heating. \r\n</br></br>\r\n If you're interested in the impact of
+        HHPs on the electricity grid, have a look at the chart that is shown when
+        clicking on the 'Annual'-button in the right corner of the chart. This chart
+        shows the hourly gas and electricity demand of HHPs. If you're interested
+        in the share of gas and electricity used by HHPs, have a look at the table
+        'Hybrid heat pump gas and electricity shares' in the chart list (Demand ->
+        Households)."
+    flexibility_flexibility_excess:
+      title: Excess electricity
+      short_description:
+      description: "This page is about excess electricity and what to do with it.
+        Wind turbines and solar panels are subject to volatile natural patterns. Their
+        electricity supply does not match  demand and large amounts of volatile production
+        capacity will therefore lead to excess electricity. \r\n<br/><br/>\r\nThe
+        ETM exports this excess, but this may not be an option, since our neighbors
+        will likely face similar weather conditions and simultaneously peaking supply
+        from wind and solar. Today, the only practical option for dealing with large
+        amounts of excess is to shut down or 'curtail' production from wind and solar
+        facilities. This effectively increases their production costs. It may therefore
+        be economically attractive to store or convert the excess electricity into
+        a useful form of energy. \r\n<br/><br/>\r\nThe chart gives an indication of
+        how the increase of production costs due to curtailment compares to storage
+        or conversion technologies.\r\nMore detailed information can be found in our
+        <a href=\"https://github.com/quintel/documentation/blob/master/general/storage.md\"
+        target =\"_blank\">documentation</a>. "
+    flexibility_flexibility_excess_electricity:
+      title: Excess electricity
+      short_description:
+      description:
+    flexibility_flexibility_flexibility_order:
+      title: Order of flexibility options
+      short_description:
+      description: "Wind turbines and solar panels are subject to volatile natural
+        patterns. The electricity that they produce might therefore not always be
+        used to match demand directly and consequently lead to excess electricity.
+        To prevent curtailment of excess electricity production, the ETM contains
+        several flexibility technologies that can either store or convert the excess
+        electricity. You can include these technologies in the <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\">'Storage'</a>
+        and <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households\">'Conversion'</a>
+        tab. \r\n<br/><br/>\r\nUsing the list below, you can decide on the order in
+        which the flexibility technologies have to be applied. The ETM will send excess
+        electricity to the first technology on your list until its maximum capacity
+        is reached; the remaining excess electricity is send to the second technology
+        on your list and so on. Finally, any remaining excess electricity is curtailed.
+        You can drag and drop the technologies in the desired order."
+    flexibility_flexibility_power_storage:
+      title: Electricity storage
+      short_description:
+      description: Using the sliders below you can set the electricity storage options
+        for the different network levels. Excess electricity is stored and supplied
+        to the grid later, once the "excess event" has passed.
+    flexibility_flexibility_power_to_heat:
+      title: Conversion to heat for households
+      short_description:
+      description:
+    flexibility_flexibility_power_to_heat_for_district_heating:
+      title: Conversion to heat for district heating
+      short_description:
+      description: "At times of excess electricity supply, an electric boiler or heat
+        pump could convert excess electricity into heat for district heating. Other
+        heat sources for district heating can be set in <a href=\"/scenario/supply/heat/heat-sources\"
+        >Supply > District Heating</a>. \r\n</br></br>\r\n Please note that 1 MWth
+        of power-to-heat boiler uses more electricity than 1 MWth of power-to-heat
+        pump. They produce the same amount of heat per hour, of course."
+    flexibility_flexibility_power_to_heat_for_industry:
+      title: Conversion to heat for industry
+      short_description:
+      description: "At times of excess electricity supply, an electric boiler in industry
+        could convert excess electricity into heat. This in turn lowers the gas and
+        hydrogen demands (if present). This hybrid heating option can be used in these
+        industry sub sectors: \r\n<ul>\r\n  <li><a href=\"/scenario/demand/industry/refineries\"
+        >refineries</a></li>\r\n  <li><a href=\"/scenario/demand/industry/chemicals\">chemical
+        industry</a></li>\r\n  <li><a href=\"/scenario/demand/industry/food\">food
+        industry</a></li>\r\n  <li><a href=\"/scenario/demand/industry/paper\">paper
+        industry</a></li></ul>"
+    flexibility_flexibility_power_to_gas:
+      title: Conversion to hydrogen
+      short_description:
+      description: Excess electricity can be used to produce hydrogen in an electrolysis
+        process. In the ETM, the hydrogen produced by using excess power will be fed
+        into the central hydrogen network. In addition to this hydrogen producing
+        technology, you can choose to produce hydrogen through other processes in
+        <a href="/scenario/supply/hydrogen/hydrogen-production" >hydrogen production
+        slide</a>. Any excess hydrogen will be exported.
+    flexibility_flexibility_power_to_kerosene:
+      title: Conversion to kerosene for aviation
+      short_description:
+      description: "Excess electricity can be used to produce synthetic kerosene for
+        aviation. For this process carbon is needed which can be recycled, for example
+        from flue gasses from industries or directly from the air. Hence the production
+        of synthetic kerosene brings about CO<sub>2</sub> reduction for the country
+        as a whole. However, it remains questionable to which sector within one country
+        this CO<sub>2</sub> reduction should be allocated in case CO or CO<sub>2</sub>
+        from flue gasses is used; to the industry or to the international transportation
+        sector?  \r\n<br/><br/> \r\nThe sliders below allow you to decide how much
+        synthetic kerosene should be produced. Any excess kerosene will be exported.
+        Furthermore, it is possible to choose the carbon source for the kerosene and
+        allocate the CO<sub>2</sub> reduction to either the industry or international
+        transport sector.\r\n<br/><br/>"
+    flexibility_flexibility_power_to_methane:
+      title: Conversion to methane for gas network
+      short_description:
+      description:
+    flexibility_flexibility_solar_pv_curtailment:
+      title: Curtailment - solar PV
+      short_description:
+      description: "If a lot of solar PV is installed, this can cause high peaks on
+        the electricity network. It is therefore desirable to be able to curtail these
+        peaks. In some cases it is smart to connect solar parks to only a certain
+        percentage of the peak power. With the sliders below it is possible to set
+        the curtailment as a percentage of the peak power. \r\n</br></br>\r\n In the
+        chart on the right you can see the effect of curtailment on the peaks of the
+        production curves and the yearly electricity production. If you are interested
+        in the effect of curtailment on the annual electricity production, have a
+        look at the table 'Curtailment of solar PV'. Click on 'see more charts' and
+        you'll find the table in the section 'Electricity balance > Flexibility'."
+    flexibility_security_of_supply_electricity:
+      title: Electricity
+      short_description:
+      description: "Will there be sufficient power supply in the future to meet demand
+        at any moment? For example, is your scenario robust for extended periods of
+        low wind and solar generation combined with demand peaks? Renewable power
+        production presents challenges for the security of supply.\r\n<br /><br />\r\nThe
+        chart to the right shows how reliable power supply is for every hour per year
+        in your scenario. In the dashboard below you can see the number of (expected)
+        blackout hours due to a lack of power supply.\r\n<br /><br />\r\nProduction
+        technologies vary in their ability to supply electricity during demand peaks.
+        Batteries and other forms of storage have fast reaction times but require
+        charging and are less suited to bridge long gaps in solar and wind production.
+        Dispatchable power plants can supply power at any time but some of them require
+        many operating hours per year to cover their costs or are too expensive to
+        turn on and off repeatedly.\r\n<br /><br />\r\n(Renewable) gas turbines and
+        engines using green gas or hydrogen are promising technologies to provide
+        back-up capacity for a future energy system relying on wind and solar power.
+        This is due to their fast ramping speeds and relatively low investment costs.\r\n<br
+        /><br />\r\n<strong>Tip:</strong> Take a look at the <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weather
+        conditions</a> section to explore how variations in outdoor temperature, wind
+        speeds and solar radiation impact your scenario. Is your scenario able to
+        cope with extreme weather conditions? Will people be left in the dark during
+        periods of very low wind and solar generation?"
+    flexibility_security_of_supply_heat:
+      title: Heat
+      short_description:
+      description: "Will the future supply of heat be sufficient during every hour
+        per year to meet demand of district heating networks? This depends of course
+        on the heat sources connected to the network. We distinguish between 'must-run'
+        sources have a constant production of heat and 'dispatchable' sources that
+        can be switched on during demand peaks. If none of these sources can supply
+        sufficient heat, emergency supply is activated to prevent shortages.\r\n<br
+        /><br />\r\n<b>Emergency supply</b><br />\r\nAn ideal back-up supply can be
+        turned on quickly, has low installation and maintenance costs and uses a fuel
+        that is easy to store or transport. For this reason, district heating networks
+        often use gas burners as emergency supply in case (part of) the baseload heat
+        sources fail. Smaller heating networks are typically connected to a smaller
+        number of heat sources which increases the importance of a proper back-up
+        system.\r\n<br /><br />\r\n<b>Peak demand</b><br />\r\nSome heat sources are
+        better suited for supplying demand peaks than others. A heat buffer is able
+        to respond quickly to changes in demand, but has to be big enough and needs
+        to be filled first. A geothermal heat well is expensive and is therefore best
+        used to produce heat non-stop. Burners using (green) gas or hydrogen can supply
+        heat at any moment and are therefore a logical choice for meeting demand peaks.\r\n<br
+        /><br />\r\n<strong>Tip:</strong> Take a look at the\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weather
+        Conditions</a> slide to explore how variations in outdoor temperature affect
+        heat demand peaks in your scenario.\r\n"
+    flexibility_flexibility_wind_cost:
+      title: Wind power production cost
+      short_description:
+      description: "Why should wind power production costs increase from a certain
+        level of penetration? \r\n<br/><br/>\r\nIf we assume wind power that exceeds
+        demand cannot be exported, stored or converted into something economically
+        useful, the remaining option is to curtail electricity production. If the
+        installed capacity increases, the share of the electricity production that
+        needs to be curtailed increases. As the share of curtailment increases, the
+        total cost per unit of energy produced (€/MWh) will also increase. The same
+        logic applies to solar PV.\r\n<br/><br/>\r\nThe chart on the right indicates
+        how the total production cost of wind turbines may increase due to curtailment.
+        These costs can help in evaluating storage and conversion technologies. Instead
+        of building more wind turbines, it might become economically interesting to
+        introduce storage and conversion technologies in order to have more useful
+        power available."
+    flexibility_merit_order_merit_order:
+      title: Merit order
+      short_description:
+      description: "Generally speaking, electricity generation follows electricity
+        demand. The order in which power plants are dispatched is determined by the
+        merit order. The merit order ranks power plants according to their marginal
+        costs. Those with the lowest marginal costs are dispatched first to meet demand;
+        those with higher costs only when demand is high enough. Power plants with
+        low operating costs therefore have a high number of operating hours while
+        expensive ones may operate as little as a few hundred hours per year. This
+        can play a large role in the total CO<sub>2</sub> emissions of your scenario.\r\n<br/><br/>\r\nBy
+        default the ETM calculates which power plants have to be dispatched for each
+        hour in the year. This calculation is performed every time you make changes
+        to your scenario. You can choose to switch the merit order calculation off;
+        when switched off, all power plants will have the same full load hours in
+        the future as in the present year of your scenario and these will not respond
+        to your assumptions on fuel or other costs. \r\n<br/><br/>\r\nThe merit order
+        calculation in the ETM is simplified as it does not distinguish or rank individual
+        plants, but only <strong>types</strong> of plants. For more information about
+        the merit order calculation <a href=\"https://github.com/quintel/documentation/blob/master/general/merit_order.md\"
+        target =\"_blank\">consult our documentation</a>."
+    flexibility_merit_order_merit_order_positions:
+      title: Merit order positions
+      short_description:
+      description: |
+        The merit order ranks power plants according to their marginal costs. Not
+        all electricity production technologies participate in the merit order.
+        Renewable power from wind and solar has priority, for example, and so
+        increasing the share of such technologies in your scenario will decrease
+        the operating hours of the remaining plants. Since the merit order is
+        determined solely by marginal costs, it is possible that more efficient
+        technologies are 'pushed' out of the electricity generation mix this way
+
+        <br/><br/>
+
+        Furthermore, certain technologies are considered 'must-run'. These are
+        mainly CHPs that satisfy a certain heat demand and do not primarily run to
+        sell power. These must-runplants are therefore not included in the merit
+        order. They do influence the operating hours of other plants of course.
+
+        <br/><br/>
+
+        The ETM calculates which power plants are dispatched at each hour in the
+        year. The results areupdated every time you make changes to your scenario
+        and communicated through various charts. You can download the resulting
+        hourly load curves for each type of power plant as well as the power price
+        curve for your scenario using the download buttons below.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
+        </ul
+    flexibility_merit_order_merit_order_price:
+      title: Hourly curves for electricity
+      short_description:
+      description: |
+        The merit order ranks power plants according to their marginal costs.
+        Based on the hourly demand, the ETM calculates which power plants are
+        dispatched each hour. Combined with the marginal costs of these
+        plants, the ETM calculates the hourly electricity price. The ETM
+        assumes that this price is equal to the marginal costs of the most
+        expensive plant running.
+
+        <br/><br/>
+
+        The hourly load curves for all electricity production and consumption for your scenario, as well as the price curve, can be downloaded following the links below.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
+        </ul>
+    flexibility_weather_conditions_and_flh:
+      title: Extreme weather conditions
+      short_description:
+      description: "Outdoor temperature and technical developments of wind and solar
+        technologies and have an effect on (hourly) demand and supply. Here you can
+        set the average temperature and full load hours of wind turbines and solar
+        pv.\r\n<p>\r\nFurthermore, the Netherlands have experienced extreme cold periods
+        in the past, as well as periods with little wind and sun. This may happen
+        again in the future, and low temperatures may negatively affect the ability
+        for air and hybrid heat pumps to satisfy demand. Besides that, a lack of wind
+        and sun may negatively affect the electricity production from wind and solar
+        power. To explore these effects for a scenario for (a region within) the Netherlands
+        a year with extreme weather conditions can be selected.\r\n</p>\r\nFor more
+        information about weather conditions consult our <a href=\"https://github.com/quintel/documentation/blob/master/general/weather_conditions.md\"
+        target =\"_blank\">documentation</a>.\r\n</p>\r\nDemand and production curves
+        can be downloaded in the <a href=\"/scenario/data/data_export/merit-order-prices\">results
+        section</a>."

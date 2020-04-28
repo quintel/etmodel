@@ -28,6 +28,7 @@ module Etm
     config.encoding = 'utf-8'
 
     config.i18n.available_locales = %i[en nl]
+    config.i18n.load_path += Dir[Rails.root.join('config','locales','**/*.yml')]
 
     config.generators do |g|
       g.template_engine :haml

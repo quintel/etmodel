@@ -1,0 +1,542 @@
+---
+en:
+  input_elements:
+    bunkers_allocated_percentage_aviation:
+      title: International aviation
+      short_description: 
+      description: "What percentage of the energy demand for international aviation
+        should be included in your scenario? The total energy demand includes deliveries
+        of aviation fuels to aircraft for international aviation. Fuels used by airlines
+        for their road vehicles are excluded. The domestic/international split should
+        be determined on the basis of departure and landing locations and not by the
+        nationality of the airline. \r\n<br/><br/>\r\nInternational aviation is not
+        included in the Paris Agreement. Meanwhile, the direct emissions from aviation
+        represent 3% of EU’s GHG emissions and more than 2% of emissions worldwide.
+        Some people see the international aviation as a country on its own, if that
+        would be the case, then it would rank in the top 10 emitters. (<a href=\"https://ec.europa.eu/clima/policies/transport/aviation_en\">EC
+        Climate Action</a>)\r\n<br/><br/>\r\nNote that this slider takes a percentage
+        of the total national energy demand of international aviation. This makes
+        it possible to for example allocated the total national energy demand for
+        international aviation to the specific region where the international airport
+        is located. "
+    bunkers_allocated_percentage_shipping:
+      title: International navigation
+      short_description: 
+      description: "What percentage of the energy demand for international navigation
+        should be included in your scenario? The total energy demand covers those
+        quantities delivered to ships of all flags that are engaged in international
+        navigation. The domestic/international split is determined on the basis of
+        port of departure and port of arrival, and not by the flag or nationality
+        of the ship.\r\n<br/><br/>\r\nInternational shipping is a very important method
+        for transporting goods all around the world. This sector accounts for about
+        2.5% of global GHG emissions. From 2018 large ships that use EU ports have
+        to report their annual verified emissions, which is the first step in the
+        global approach to reduce their emissions. (<a href=\"https://ec.europa.eu/clima/policies/transport/shipping_en\">EC
+        Climate Action</a>)\r\n<br/><br/>\r\nNote that this slider takes a percentage
+        of the total national energy demand of international navigation. This makes
+        it possible to for example allocated the total national energy demand for
+        international navigation to the specific region where the international seaport
+        is located. "
+    transport_plane_using_kerosene_share:
+      title: Kerosene
+      short_description: ''
+      description: 'Fossil fuels for aviation can be several, but the bulk of it is
+        kerosene, which is used for all large aircraft. '
+    transport_plane_using_bio_ethanol_share:
+      title: Bio-ethanol
+      short_description: ''
+      description: "Bio-based aviation fuels are still in an experimental stage. Transatlantic
+        flights have been completed successfully, during which one of four (or more)
+        engines used a bio-diesel. Since airplanes need so much high-energy fuel,
+        it remains to be seen whether such bio-fuels can ever make a large dent in
+        the fossil fuel use. \r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses\">documentation
+        on GitHub</a> for more information on the numbers used."
+    transport_plane_using_gasoline_share:
+      title: Gasoline
+      short_description: 
+      description: 'Not a large percentage of airplanes use gasoline as fuel. Its
+        use is mostly limited to smaller private planes, since larger planes need
+        higher energy content fuels to get far enough. '
+    transport_bicycle_using_human_power_share:
+      title: Bike
+      short_description: 
+      description: "How do you suppose the demand for bicycles will change in the
+        future? Will it increase or decrease?\r\n<br/><br/>\r\nBicycles are one of
+        the most traditional forms of transport and are rapidly coming back into style
+        as people become more aware of the environmental as well as health benefits.\r\n"
+    transport_bicycle_using_electricity_share:
+      title: E-bike
+      short_description: 
+      description: "Will the share of electric bikes (e-bikes) expand in the future?\r\n<br/><br/>\r\nElectric
+        bikes play a big role in expanding the existing market for bicycles as they
+        provide speed and reduced effort which stretches the market to include parts
+        of the market, such as the elderly, who benefit greatly from these benefits.
+        Several food delivery companies are also investing in electric bikes not only
+        due to the economic benefits but also as a part of green marketing.\r\n<br/><br/>\r\nSee
+        the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_car_using_electricity_share:
+      title: Electric
+      short_description: ''
+      description: "What percentage of all cars will be fully electric cars in the
+        future? \r\n<br/><br/>\r\nThese cars use less than half the energy from “well
+        to wheels” of good diesel cars and are even more efficient compared to gasoline
+        engines. The technology for electric cars is available, but the required infrastructure
+        (sufficient opportunities for charging or exchanging batteries) is not. A
+        typical electric family car has a range of 150 – 250 km on a full set of batteries,
+        which makes them quite suited for small and densely populated countries. Furthermore,
+        electric cars are the ideal mobile electricity storage at night, if they are
+        plugged in and the charge they hold is remote controlled.\r\n<br/><br/>\r\nIf
+        you want to include hybrid cars in your scenario, you could assume that one
+        fully electric car is equivalent to three plug-in hybrid cars with range extenders.
+        These are electric cars that can be charged from the grid, but have limited
+        battery capacity. A range extender is a small gasoline engine that re-charges
+        the battery after about 50 - 60 km. \r\n<br/><br/>\r\nDo not forget that the
+        electricity still needs to be generated. If this is done with wind power,
+        electric cars contribute strongly to a more sustainable society, but less
+        so when coal power is used. \r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used.\r\n"
+    transport_car_using_diesel_mix_share:
+      title: Diesel
+      short_description: ''
+      description: "What percentage of all cars will use conventional diesel fueled
+        internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nSome people
+        believe these cars will become much more efficient once competition from electric
+        vehicles becomes fiercer.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_car_using_gasoline_mix_share:
+      title: Gasoline
+      short_description: ''
+      description: "What percentage of all cars will be use gasoline fuelled internal
+        combustion engine (ICE) technology? \r\n<br/><br/> \r\nTheir efficiency may
+        start improving faster once competition from electric cars is felt more keenly.
+        \r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_car_using_lpg_share:
+      title: LPG
+      short_description: ''
+      description: "What percentage of all cars will be use LPG fueled internal combustion
+        engine (ICE) technology? These cars also use gasoline as a back up fuel.\r\n<br/><br/>\r\nSee
+        the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_car_using_compressed_natural_gas_share:
+      title: Compressed gas
+      short_description: ''
+      description: "What percentage of all cars will use compressed gas fueled internal
+        combustion engine (ICE) technology? \r\n<br/><br/>\r\nGas-fueled cars are
+        relatively clean compared to gasoline or diesel fueled ones. In terms of efficiency,
+        one might say that gas is better used for generating heat and electricity
+        (co-generation) at the location it is needed. ICE technology is likely to
+        progress, but will never rival the efficiency of such a process. In terms
+        of pollution, one might say that it is better to use gas to generate electricity
+        at a central location (where exhaust gases can be cleaned or even captured
+        and stored) and to use the electricity to power electric cars.\r\n<br/><br/>\r\nCompressed
+        natural gas in these cars comes from the gas network. This means it can contain
+        green gas if in the current scenario this is mixed in with natural gas on
+        the gas network.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_car_using_hydrogen_share:
+      title: Hydrogen
+      short_description: 
+      description: "What percentage of all cars will be hydrogen fuelled vehicles
+        in the future? Hydrogen cars have been hyped as well as criticised a lot,
+        and as with many choices, their value depends on other choices you make. Hydrogen
+        is an energy carrier - not an energy source -, so it has to be produced first.
+        In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\" >hydrogen
+        production section</a> you can determine how this is done - through steam
+        reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
+        cars (in the ETM) are fuel cell electric vehicles (FCEVs). Hydrogen in consumer
+        vehicles is stored at a very high pressure of 700 bar in order to ensure a
+        long driving range (of typically 500 km). Hydrogen is fed to a stack of fuel
+        cells, where it undergoes a chemical (redox) reaction with oxygen,  generates
+        a current and releases water. It thus produces electricity that drives the
+        (electric) engine. FCEVs are therefore electric vehicles, but they differ
+        from electric vehicles in the sense that the electricity is not stored on
+        board in a battery, but instead generated in the car itself. \r\n<br/><br/>\r\nCombined
+        with smart grid systems and energy storage technologies, electric vehicles
+        could not only potentially reduce our dependence on fossil fuels but even
+        function as a storage medium or production technology. <a href=\"https://www.thegreenvillage.org/projects/hydrolectric\"a>The
+        Green Village</a>, an initiative of Delft University of Technology, is doing
+        research on how electric cars can be used as more than just an end - for example,
+        as power plants and storage devices.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_truck_using_gasoline_mix_share:
+      title: Gasoline
+      short_description: ''
+      description: "What percentage of all trucks will use gasoline fueled internal
+        combustion engine (ICE) technology? \r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_truck_using_diesel_mix_share:
+      title: Diesel
+      short_description: ''
+      description: "What percentage of all trucks will use conventional diesel fueled
+        internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nSome people
+        believe trucks will use ICE technology for quite a while longer, as electric
+        trucks are a technological challenge.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_truck_using_electricity_share:
+      title: Electric
+      short_description: ''
+      description: "What percentage of all trucks will be fully electric in the future
+        (not counting hybrids)? \r\n<br/><br/>\r\nSome people believe trucks will
+        use ICE technology for quite a while longer, as electric trucks are a technological
+        challenge.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_truck_using_compressed_natural_gas_share:
+      title: Compressed gas
+      short_description: ''
+      description: "What percentage of all trucks will use compressed natural gas
+        fueled internal combustion engine (ICE) technology?\r\nNatural gas fueled
+        engines already exist and are currently mostly used for public transport buses.
+        \r\n<br/><br/>\r\nCompressed natural gas in these trucks comes from the gas
+        network. This means it can contain green gas if in the current scenario this
+        is mixed in with natural gas on the gas network.\r\n<br/><br/>\r\nSee the
+        <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_truck_using_lng_mix_share:
+      title: LNG
+      short_description: 
+      description: "What percentage of all trucks will use liquefied natural gas (LNG)
+        fueled internal combustion engine (ICE) technology? LNG trucks have a longer
+        driving range than compressed network gas (CNG) trucks, because the energy
+        content of LNG is higher. However, LNG trucks also need expensive, highly
+        insulated tanks.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_truck_using_hydrogen_share:
+      title: Hydrogen
+      short_description: 
+      description: "What percentage of all trucks will be hydrogen fuelled vehicles
+        in the future?<br/><br/>\r\nHydrogen is an energy carrier - not an energy
+        source -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
+        >hydrogen production section</a> you can determine how this is done - through
+        steam reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
+        trucks (in the ETM) are fuel cell electric vehicles (FCEVs). Hydrogen in consumer
+        vehicles is stored at a very high pressure of 350 bar in order to ensure a
+        long driving range (of typically 500 km). FCEVs are electric vehicles, but
+        they differ from electric vehicles in the sense that the electricity is not
+        stored on board in a battery, but instead generated in the car itself. \r\n<br/><br/>\r\nSee
+        the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_bus_using_electricity_share:
+      title: Electric
+      short_description: 
+      description: "What percentage of all busses will be fully electric in the future?
+        \r\n<br/><br/>\r\nGovernments and other regulatory boards in many countries
+        are now trying to push electric busses as one of the primary modes of public
+        transport as part of new energy targets and policies. Electric busses are
+        also becoming more affordable as the prices for lithium-ion batteries continue
+        to drop. \r\n<br/><br/>\r\nFactors such as these will play in a role in determining
+        the growth in demand for electric busses, how do you expect the current share
+        of electric busses to change?\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_bus_using_hydrogen_share:
+      title: Hydrogen
+      short_description: 
+      description: "What percentage of all busses will be hydrogen fuelled vehicles
+        in the future? \r\n<br/><br/>\r\nThe use of hydrogen for transport has been
+        hyped as well as criticised a lot, and as with many choices, their value depends
+        on other choices you make. Hydrogen is an energy carrier - not an energy source
+        -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
+        >hydrogen production section</a> you can determine how this is done - through
+        steam reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
+        busses (in the ETM) are fuel cell electric vehicles (FCEVs). Hydrogen is fed
+        to a stack of fuel cells, where it undergoes a chemical (redox) reaction with
+        oxygen,  generates a current and releases water. It thus produces electricity
+        that drives the (electric) engine. FCEVs are therefore electric vehicles,
+        but they differ from electric vehicles in the sense that the electricity is
+        not stored on board in a battery, but instead generated in the bus itself.
+        \r\n<br/><br/>\r\nCombined with smart grid systems and energy storage technologies,
+        electric vehicles could not only potentially reduce our dependence on fossil
+        fuels but even function as a storage medium or production technology. \r\n<br/><br/>\r\nSee
+        the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_bus_using_diesel_mix_share:
+      title: Diesel
+      short_description: 
+      description: "What percentage of all cars will use conventional diesel fueled
+        internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nToday, nearly
+        all of the busses use diesel as the primary source of fuel; however, competition
+        with alternative technologies will most likely induce a change in the demand
+        share for diesel powered busses. \r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_bus_using_gasoline_mix_share:
+      title: Gasoline
+      short_description: 
+      description: "What percentage of all busses will be using gasoline fuelled internal
+        combustion engine (ICE) technology in the future?  \r\n<br/><br/>\r\nCompetition
+        from zero-emissions technologies, like electric and hydrogen vehicles is pushing
+        innovation in the field of efficiency improvement in gasoline powered transport.
+        \r\n<br/><br/>\r\nThis and other such factors will play a role in shaping
+        the demand for gasoline fuelled busses in the future, how do you suppose the
+        demand will change?"
+    transport_bus_using_lng_share:
+      title: LNG
+      short_description: 
+      description: "What percentage of all busses will be using liquefied natural
+        gas (LNG) technology in the future?\r\n<br/><br/>\r\nAs environmental concerns
+        become a prime factor in shaping the demand for fuels in the transport sector,
+        LNG can be expected to increase its demand share with respect to other fuels
+        that are currently dominating the fuel-mix in the transport sector. LNG's
+        higher energy density as compared to diesel and relatively stable projected
+        prices will also play a hand in determining its share in the fuel-mix in the
+        near future.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_bus_using_compressed_natural_gas_share:
+      title: Compressed gas
+      short_description: 
+      description: "What percentage of all busses will use compressed natural gas
+        fueled internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nGas
+        fueled busses are relatively clean compared to gasoline or diesel fueled ones.
+        In terms of efficiency, one might say that gas is better used for generating
+        heat and electricity (co-generation) at the location it is needed. ICE technology
+        is likely to progress, but will never rival the efficiency of such a process.
+        In terms of pollution, one might say that it is better to use gas to generate
+        electricity at a central location (where exhaust gases can be cleaned or even
+        captured and stored) and to use the electricity to power electric busses.\r\n<br/><br/>\r\nCompressed
+        natural gas in these busses comes from the gas network. This means it can
+        contain green gas if in the current scenario this is mixed in with natural
+        gas on the gas network.\r\n<br/><br/>\r\nIn the Middle East, for example,
+        transport authorities are also promoting CNG by setting up conversion centers
+        which enable cars and busses to switch from gasoline or diesel powered engines
+        to CNG powered ones.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used.\r\nNatural
+        gas fueled engines are already commercially available. "
+    bunkers_ship_using_heavy_fuel_oil_share:
+      title: HFO
+      short_description: 
+      description: 'Large international cargo ships generally operate on HFO, which
+        is the heaviest commercial fuel that can be obtained from crude oil. '
+    bunkers_ship_using_lng_share:
+      title: LNG
+      short_description: 
+      description: "Ships transporting large cargo over long distances require very
+        powerful engines and energy-rich fuels. Natural gas is an unsuitable shipping
+        fuel as its energetic density is very low, but through liquefaction it increases
+        by a factor 600 - more than enough to compete with HFO. LNG engines are a
+        rather novel ship engine technology. These ships carry spark-ignited engines
+        which operate at low pressures and are optimized for LNG. As a result, these
+        engines can only run on LNG.\r\n</br></br>\r\nCompared to HFO, LNG generates
+        20% less GHG emissions due to its lower carbon content. Additionally, LNG
+        emits significantly less air pollutants than HFO, like NO<sub>x</sub>, SO<sub>x</sub>
+        and particulate matter. Therefore, it is an alternative shipping fuel worth
+        considering. "
+    transport_passenger_train_using_coal_share:
+      title: Coal
+      short_description: ''
+      description: "Coal-powered trains are a bit of a relic, but still common in
+        some less developed regions of the world. Almost everywhere, coal-powered
+        trains can be replaced by diesel-powered ones, as these are more fuel-efficient
+        and much cleaner. \r\n\r\n<br/>\r\n<br/>\r\nLess developed countries with
+        abundant coal supplies may choose to use coal-powered trains to reduce their
+        dependence on foreign energy sources."
+    transport_passenger_train_using_diesel_mix_share:
+      title: Diesel
+      short_description: ''
+      description: 'Diesel-powered trains are not uncommon as they do not rely on
+        expensive electricity infrastructure. They are ideal for very remote and sparsely
+        populated regions. Because Europe is a patchwork of differing standards for
+        powerlines, electric trains often cannot cross borders in Europe. '
+    transport_passenger_train_using_electricity_share:
+      title: Electric
+      short_description: ''
+      description: Electric trains are the standard in all developed regions of the
+        world. They are a very energy efficient and rather clean form of transport.
+        They are not particularly flexible of course, and rely on expensive electric
+        infrastructure, so they will never fully replace diesel trains.
+    transport_cars_share:
+      title: Cars
+      short_description: ''
+      description: Please indicate what percentage of the kilometres we travel is
+        covered by cars.
+    transport_passenger_trains_share:
+      title: Trains
+      short_description: ''
+      description: Please indicate what percentage of the kilometres we travel is
+        covered by trains.
+    transport_planes_share:
+      title: Domestic planes
+      short_description: ''
+      description: Please indicate what percentage of the kilometres we travel is
+        covered by planes. Please note that this slider is about domestic flights
+        only. For international aviation, see <a href="/scenario/demand/transport_international_transport/international-transport">international
+        transport</a>.
+    transport_useful_demand_passenger_kms:
+      title: Passenger transport
+      short_description: 
+      description: Do you believe people will travel more or less in the future? Please
+        indicate here by what percentage you think the number of 'passenger kilometres'
+        will change each year.
+    transport_busses_share:
+      title: Busses
+      short_description: 
+      description: Please indicate what percentage of the kilometres we travel is
+        covered by busses.
+    transport_trams_share:
+      title: Trams/metros
+      short_description: 
+      description: Please indicate what percentage of the kilometres we travel is
+        covered by trams and metros.
+    transport_bicycles_share:
+      title: Bicycles
+      short_description: 
+      description: Please indicate what percentage of the kilometres we travel is
+        covered by bicycles.
+    transport_motorcycles_share:
+      title: Motorcycles
+      short_description: 
+      description: Please indicate what percentage of the kilometres we travel is
+        covered by motorcycles and mopeds
+    transport_motorcycle_using_gasoline_mix_share:
+      title: Gasoline
+      short_description: 
+      description: "What percentage of all motorcycles will be using gasoline fuelled
+        technology in the future?\r\n<br/><br/>\r\nMany areas of the world are experiencing
+        a rapid demand in motorcycle usage as this form of personal transport provides
+        ease and convenience especially in developing countries where the transport
+        infrastructure is not very suitable to cars and other larger vehicles. Currently,
+        almost all of the motorcycles run on gasoline, however as zero-emissions technologies
+        and priorities on environmental effects of such fuels are being placed higher
+        up, one can expect a change in this share in the future.\r\n<br/><br/>\r\nSee
+        the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used.\r\nNatural
+        gas fueled engines are already commercially available. "
+    transport_motorcycle_using_electricity_share:
+      title: Electric
+      short_description: 
+      description: "How do you think the demand for electric motorcycles will change
+        in the future?\r\n<br/><br/>\r\nAs of today, electric motorcycles aren't yet
+        used very often. Competition with cars at charging stations as well as a smaller
+        market audience as compared to cars may be some among the reasons which is
+        holding back the number of electric motorcycles on the road. However, new
+        innovative electric motorcycles are entering the market, which could potentially
+        be a hype. Especially areas with high population densities could benefit from
+        an increase in electric motorcycles, as motorcycles in such areas comprise
+        quite a significant share of the road transport. \r\n<br/><br/>\r\nSee the
+        <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used.\r\nNatural
+        gas fueled engines are already commercially available. "
+    bunkers_useful_demand_planes:
+      title: International aviation
+      short_description: 
+      description: Please indicate how the number of international flights will change
+        every year in the future.
+    bunkers_useful_demand_ships:
+      title: International navigation
+      short_description: 
+      description: Please indicate how the number of international shipping trades
+        will change every year in the future.
+    transport_ship_using_diesel_mix_share:
+      title: Diesel / dual fuel
+      short_description: 
+      description: "The vast majority of ships for inland waterway transport are powered
+        by diesel engines. These engines can run in several cycles and at high and
+        low pressures. Depending on the exact engine configuration, diesel engines
+        can also run in a dual fuel mode in which they use both diesel and LNG. In
+        this dual fuel mode, the actual fuel usage can vary from 100% diesel to 1%
+        diesel / 99% LNG. In the <a href=\"/scenario/supply/transport_fuels/domestic-navigation\"
+        >transport fuels section</a> , you can determine the exact fuel mix of ships
+        with diesel / dual fuel engines.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_ship_using_lng_mix_share:
+      title: LNG
+      short_description: 
+      description: "(Liquefied) natural gas engines are a rather novel ship engine
+        technology. They are spark-ignited engines which operate at low pressures
+        and are optimized for liquefied natural gas (LNG). As a result, these engines
+        can only run on LNG but have superior performance to dual fuel engines. On
+        the other hand, dual fuel engines allow for more flexibility, being less dependent
+        on the availability of shipping fuels.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_trucks_share:
+      title: Trucks
+      short_description: ''
+      description: "Will transport by truck increase? Compared to rail or inland navigation,
+        truck transportation is relatively inefficient and polluting. Trucks are practical,
+        however, in that they can reach nearly any destination. They are most suited
+        for transporting goods over relatively short distances.\r\n<br/><br/>\r\nNote
+        that trucks also include the small vans used for delivery. "
+    transport_ships_share:
+      title: Domestic navigation
+      short_description: ''
+      description: What do you think will happen to transport by ship? Will this decrease
+        or increase? Ships are by far the most energy efficient mode of transport,
+        but they depend on high quality infrastructure for inland navigation and they
+        are relatively slow. They are ill-suited for transportation over short distances.
+    transport_useful_demand_freight_tonne_kms:
+      title: Freight transport
+      short_description: 
+      description: Do you believe that more or less freight will be transported in
+        the future? Please indicate by what percentage per year you think the number
+        of 'freight tonne kilometres' will change.
+    transport_freight_trains_share:
+      title: Trains
+      short_description: 
+      description: What do you think will happen to freight transport by rail? Trains
+        are relatively energy-efficient, but depend on the presence of high-quality
+        infrastructure.
+    transport_freight_train_using_electricity_share:
+      title: Electric
+      short_description: 
+      description: "Electric trains are the standard in all developed regions of the
+        world. They are a very energy efficient and rather clean form of transport.
+        They are not particularly flexible of course, and rely on expensive electric
+        infrastructure, so they will never fully replace diesel trains.\r\n<br/><br/>\r\nSee
+        the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_freight_train_using_diesel_mix_share:
+      title: Diesel
+      short_description: 
+      description: "Diesel-powered trains are not uncommon as they do not rely on
+        expensive electricity infrastructure. They are ideal for very remote and sparsely
+        populated regions, or for international transport of goods. Because Europe
+        is a patchwork of differing standards for powerlines, electric trains often
+        cannot cross borders in Europe. \r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_vehicle_using_electricity_efficiency:
+      title: Electric vehicles
+      short_description: ''
+      description: "Here you can indicate how much more efficient future electric
+        vehicles will become every year. Electric vehicles include all vehicles that
+        can possibly run on electricity: cars, trains, trucks, trams, metros, busses,
+        motorcycles, bicycles.\r\n<br/><br/>\r\nMost efficiency improvement is expected
+        to come from battery improvements, since electric engines are inherently very
+        efficient already. Most losses occur in charge/discharge cycles.\r\n<br/><br/>\r\nSee
+        the <a href=\\\"https://github.com/quintel/etdataset-public/tree/mast\r\ner/nodes_source_analyses/transport\\\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_vehicle_combustion_engine_efficiency:
+      title: Combustion engine vehicles
+      short_description: ''
+      description: "Here you can indicate how much more efficient future fossil-fuelled
+        vehicles will become every year. For example: new cars become almost 2% more
+        efficient every year. \r\n<br/><br/>\r\nSome people believe these vehicles
+        will become much more efficient once competition from electric vehicles becomes
+        fiercer.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
+    transport_ships_efficiency:
+      title: Ships
+      short_description: ''
+      description: Here you can indicate how much more efficient future ships will
+        become every year. <br/><br/>Ships are already quite energy efficient, but
+        there is some room for improvement.
+    transport_planes_efficiency:
+      title: Airplanes
+      short_description: ''
+      description: "Here you can indicate how much more efficient future airplanes
+        will become every year. <br/> <br/>\r\nThere is some room for improvement,
+        but not much."
+    transport_trains_efficiency:
+      title: Trains
+      short_description: ''
+      description: Here you can indicate how much more efficient future trains will
+        become every year. Trains are already quite energy efficient.
+    transport_vehicle_using_hydrogen_efficiency:
+      title: Hydrogen vehicles
+      short_description: 
+      description: "Here you can indicate how much more efficient future hydrogen
+        vehicles will become every year. Hydrogen vehicles include all vehicles that
+        can run on hydrogen: cars, busses and trucks.\r\n<br/><br/>\r\nSince hydrogen
+        vehicles are a rather novel technology, there is still quite some room for
+        improvement. The electric engine is very efficient already, but the hydrogen
+        fuel cell stack (the part that generates electricity) can perform better.\r\n<br/><br/>\r\nSee
+        the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."

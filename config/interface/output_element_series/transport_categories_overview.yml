@@ -8,7 +8,7 @@
   target_line_position: ''
   gquery: final_demand_freight_transport
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: transport_categories_overview
   key: freight_transport_transport_categories_overview
 - label: passenger_transport
@@ -20,10 +20,10 @@
   target_line_position: ''
   gquery: final_demand_passenger_transport
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: transport_categories_overview
   key: passenger_transport_transport_categories_overview
-- label: groups.bunkers
+- label: bunkers
   color: "#696969"
   order_by: 1
   group: ''
@@ -32,6 +32,6 @@
   target_line_position: ''
   gquery: final_demand_international_transport
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: transport_categories_overview
-  key: groups.bunkers_transport_categories_overview
+  key: bunkers_transport_categories_overview

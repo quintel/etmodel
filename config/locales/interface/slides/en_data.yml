@@ -1,0 +1,114 @@
+en:
+  slides:
+    data_export_application_demands:
+      title: Yearly energy demand per application
+      short_description:
+      description: |
+        Download information about the primary and final demands, and also the primary CO<sub>2</sub> emissions of applications (such as cooking, appliances, heating, transport, etc).
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv"><span class="name">Application primary and final demands</span> <span class="filetype">40KB CSV</span></a></li>
+        </ul>
+    data_export_energy_flows:
+      title: Energy flows
+      short_description:
+      description: "The Energy Transition Model describes the energy flows through
+        several\r\nhundred uses and conversions; this CSV provides a list of each
+        of\r\nthese flows (inputs and outputs).\r\n<ul class=\"data-download\">\r\n
+        \ <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
+        <span class=\"name\">Energy flows</span> <span class=\"filetype\">375KB CSV</span></a></li>\r\n</ul>\r\n"
+    data_export_heat_network:
+      title: Hourly curves for heat networks
+      short_description:
+      description: |
+        Download information about the hourly demands and supplies of heat
+        through the central heat network for households, buildings and agriculture.
+
+        <ul class="data-download">
+          <li>
+            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv">
+              <span class="name">Heat network demand, production and storage per hour</span>
+              <span class="filetype">1.5MB CSV</span>
+            </a>
+          </li>
+        </ul>
+    data_export_household_heat:
+      title: Hourly curves for household heat
+      short_description:
+      description: "Download information about demand and supply of (individual) heat
+        in households per hour (space heating and tap water); including deficits,
+        buffering, and time-shifting.\r\n<ul class=\"data-download\">\r\n  <li><a
+        href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\">
+        <span class=\"name\">Household heat curves</span> <span class=\"filetype\">400KB
+        CSV</span></a></li>\r\n</ul>\r\n"
+    data_export_production:
+      title: Specifications heat and electricity production
+      short_description:
+      description: |
+        Download details of heat and electricity producers. Includes information about the electrical and heat capacities, number of units, and costs.
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv"><span class="name">Production capacity and costs</span> <span class="filetype">15KB CSV</span></a></li>
+        </ul>
+    data_export_hydrogen:
+      title: Hourly curves for hydrogen
+      short_description:
+      description: "Below you can download information about hydrogen demand, supply
+        and storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
+        \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
+        \     <span class=\"name\">Hydrogen demand, production and storage per hour</span>\r\n
+        \     <span class=\"filetype\">750KB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
+    data_export_network_gas:
+      title: Hourly curves for gas
+      short_description:
+      description: "Below you can download information about network gas demand, supply
+        and storage per hour in your scenario.\r\n\r\n<ul class=\"data-download\">\r\n
+        \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
+        \     <span class=\"name\">Network gas demand, production and storage per
+        hour</span>\r\n      <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n
+        \ </li>\r\n</ul>"
+    data_visuals_factsheet:
+      title: Energy mix infographic
+      short_description:
+      description: |
+        A printable A3 or A4 factsheet describing how energy is produced and
+        consumed in your scenario. Unfortunately, the factsheet is currently
+        available in Dutch only.
+        <br /><br />
+        <a href="/scenarios/%{scenario_id}/factsheet" class="simple-button">
+          <span class="fa fa-book"></span> View the factsheet →
+        </a>
+    data_visuals_graph:
+      title: Graph and energy flows
+      short_description:
+      description: |
+        A detailed breakdown of energy flows throughout the Energy Transition
+        Model for your scenario. Recommended only for advanced users.
+        <br /><br />
+        <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button" target="_blank" rel="noopener nofollow">
+          <span class="fa fa-book"></span> View the graph →
+        </a>
+    data_visuals_scenario_report:
+      title: Scenario report
+      short_description:
+      description: |
+        The scenario report is a printable description of the decisions you
+        made in your current scenario, progress made towards important goals, and
+        includes charts showing breakdowns of energy use, electricity production,
+        and much more.
+        <br /><br />
+        <a href="/scenario/reports/auto" class="simple-button">
+          <span class="fa fa-book"></span> View the report →
+        </a>
+    data_visuals_co2_sheet:
+      title: CO<sub>2</sub> footprint
+      short_description:
+      description: |
+        A printable sheet depicting the CO<sub>2</sub> footprint for your
+        scenario.
+        <br /><br />
+        <a
+          href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+          target="_blank"
+          class="simple-button"
+        >
+          <span class="fa fa-newspaper-o"></span> View the sheet →
+        </a>

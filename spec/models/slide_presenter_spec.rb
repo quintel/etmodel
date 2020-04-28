@@ -62,11 +62,13 @@ describe SlidePresenter do
 
       it 'has the expected short name' do
         expect(subject)
-          .to include translator.call('sidebar_items', si1.key)[:short_name]
+          .to include translator.call('sidebar_items', "#{si1.key}.short_title")
       end
 
       it { is_expected.to include translator.call('tabs', t1.key) }
-      it { is_expected.to include translator.call('slides', sl1.key) }
+      it {
+        is_expected.to include translator.call('slides', "#{sl1.key}.title")
+      }
     end
   end
 end

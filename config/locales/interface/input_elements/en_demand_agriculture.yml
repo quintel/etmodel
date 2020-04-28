@@ -1,0 +1,66 @@
+---
+en:
+  input_elements:
+    agriculture_burner_crude_oil_share:
+      title: Oil-fired heater
+      short_description: ''
+      description: "What percentage of heat demand in agriculture (greenhouses) is
+        met by oil-fired heaters? \r\n<br/><br/>\r\nFor agricultural heating needs,
+        gas is more attractive than the strongly polluting solid and liquid fuels,
+        more than in industry. How cleanly such fuels can be applied is a mostly matter
+        of scale."
+    agriculture_burner_wood_pellets_share:
+      title: Biomass-fired heater
+      short_description: ''
+      description: What percentage of heat demand in agriculture (greenhouses) is
+        met by biomass-fired heaters? <br><br>Burning locally available biomass is
+        usually quite efficient.
+    agriculture_heatpump_water_water_ts_electricity_share:
+      title: Heat pump with TS
+      short_description: ''
+      description: "Thermal storage works by storing a building's heat underground
+        by cooling it with water from a water basin or aquifer in summer and using
+        that heat in winter for heating the building. Alternatively the natural heat
+        of cold of ground water or roads, for example, can be used.\r\n<br/><br/>\r\nHeat
+        pumps are more efficient when used in combination with thermal storage, because
+        less energy has to be added to cool or heat water to the right temperature.
+        It is difficult to realize underground thermal storage in densely populated
+        areas."
+    agriculture_geothermal_share:
+      title: Geothermal
+      short_description: ''
+      description: "Geothermal heat’s potential is theoretically huge. This slider
+        provides low grade heat (< 100 &#176;C) from several kilometers underground.\r\n"
+    agriculture_burner_network_gas_share:
+      title: Gas-fired heater
+      short_description: ''
+      description: These are gas-fired central heating systems. These systems are
+        quite energy efficient, but emit CO<sub>2</sub>.
+    agriculture_final_demand_steam_hot_water_share:
+      title: District heating
+      short_description: ''
+      description: District heating is heat supplied by a heat network. The heat can
+        be produced by local heat plants / large-scale burners or the heat can be
+        imported from outside your region. You can set the heat sources in the Supply-section
+        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+    agriculture_burner_hydrogen_share:
+      title: H<sub>2</sub>-fired heater
+      short_description: 
+      description: What percentage of heat demand in agriculture (greenhouses) is
+        met by hydrogen heaters? <br />
+    agriculture_useful_demand_electricity:
+      title: Electricity
+      short_description: ''
+      description: "Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen below.\r\n<br/><br/>\r\nWhat do you expect the
+        development of agricultural electricity demand will be like? This depends
+        primarily on the growth of the number of greenhouses (determined by economic
+        growth, but also conditions for investment etc.)."
+    agriculture_useful_demand_useable_heat:
+      title: Heat
+      short_description: ''
+      description: "Note:these changes in energy demand do not depend on the technologies
+        chosen below.\r\n<br/> <br/>\r\nWhat do you expect the development of agricultural
+        heat demand will be like? This parameter depends primarily on the number of
+        greenhouses (determined by economic growth, but also conditions for investment
+        etc.). "

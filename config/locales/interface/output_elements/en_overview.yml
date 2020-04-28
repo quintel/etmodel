@@ -1,0 +1,104 @@
+---
+en:
+  output_elements:
+    use_of_primary_energy:
+      title: Primary energy use
+      short_description: ''
+      description: "This graph shows total primary energy use for your country in
+        the present and future years.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about energy demand."
+    co2_emissions:
+      title: CO<sub>2</sub> emissions
+      short_description: ''
+      description: "This graph compares energetic CO<sub>2</sub> emissions between
+        1990, the present and the future. The year 1990 is often used as a reference
+        year for CO<sub>2</sub> emissions targets. The red line indicates the target
+        you have set under 'Goals'. \r\n<br/><br/>\r\nThe graph only displays energetic
+        CO<sub>2</sub> emissions, which are emitted in domestic energy use and production.
+        Non-energetic emissions are not included. Non-energetic emissions are related
+        to processes other than the production of usable energy like electricity or
+        heat. An example of such emissions are the CO<sub>2</sub> emissions that are
+        released from cement during its making. The CO<sub>2</sub> emissions related
+        to the needed energy for cement production <em>do</em> count as energetic
+        emissions.\r\n<br/><br/>\r\n\L\LNote: When the Fuel Chain Emissions module
+        is turned on, the graph also includes CO<sub>2</sub> equivalents of other
+        greenhouse gas emissions, like methane (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O)
+        related to the fuel chain in this graph. Non-energetic emissions and greenhouse
+        gas emissions not related to the fuel chain are not included.`"
+    renewability:
+      title: Renewability of final demand
+      short_description: ''
+      description: "This graph shows how the percentage of sustainable final energy
+        use changes between now and the future year. This is the result of your choices.\r\n<br/><br/>\r\nFinal
+        energy use means that losses during conversions of energy carriers to electricity
+        or heat are not taken into account."
+    mekko_of_primary_demand:
+      title: Primary energy use
+      short_description: ''
+      description: "This graph compares primary energy consumption in your country
+        (horizontal axis) by various segments of society and energy sources (vertical
+        axis). Primary use means we are looking at the origins of derived energy carriers
+        like heat, electricity and transport fuels. We also take into consideration
+        the losses that occur when these energy carriers are made.  \r\n<br/><br/>\r\nThe
+        graph for the future is the result of your choices in determining the future
+        energy demand and the future energy generation. The efficiencies for making
+        heat and power are higher in the future than in the present.\r\n<br/><br/>\r\nExample:
+        Economic growth leads to increased energy demand. Energy saving and modern
+        technologies lead to lower energy demand. Choices for heat pumps and electric
+        transport lead to lower total energy demand, but an increase in demand for
+        electricity. How electricity, heat and fuels are generated determines the
+        primary energy demand.\r\n\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
+        above the graph, to select different graphs about energy demand."
+    source_of_electricity_production:
+      title: Electricity production
+      short_description: ''
+      description: "This graph gives a breakdown of current and future electricity
+        production into types of power plants. By default, the future electricity
+        mix is the same as the present one. You can choose how to meet future energy
+        demand with the sliders to the left of the graph. <br/><br/>\r\nDemand for
+        electricity is indicated by the horizontal line. If the resulting electricity
+        production is higher than demand, the model will automatically start exporting
+        this electricity. If you do not build enough production capacity, the model
+        will import electricity. "
+    sankey:
+      title: Future energy flows
+      short_description: ''
+      description: "Sankey diagrams show how, where and how much energy is used. At
+        the left this diagram starts with primary energy forms. The energy that is
+        used to generate electricity and heat is shown in the middle. On the right
+        you can see where the energy is used. <br/>\r\nFloating over the chart with
+        you mouse will highlight different parts and reveal more information.\r\n<br><br>\r\nNote
+        that losses due to distribution and refinement are not taking into account.\r\n\r\n"
+    sankey_2010:
+      title: Present energy flows
+      short_description: ''
+      description: ''
+    mekko_of_primary_co2:
+      title: Primary CO<sub>2</sub> emissions of final demand
+      short_description: ''
+      description: "This 'Mekko' chart shows the CO<sub>2</sub> emissions for the
+        sectors of the ETM subdivided by final demand carriers. For each final demand
+        carrier, transformation and transportation losses have been taken into account.
+        \r\n<br><br>\r\nFor example, the CO<sub>2</sub> emissions associated with
+        electricity in the household sector is calculated by tracing back all transformations
+        until we arrive at the primary carriers such as natural oil and coal."
+    relative_primary_co2:
+      title: Relative CO<sub>2</sub> emissions of primary energy use
+      short_description: ''
+      description: ''
+    relative_primary_demand_of_coal_oil_and_gas:
+      title: Relative primary use of coal, oil and gas
+      short_description: ''
+      description: ''
+    final_demand_mekko_energetic_mece:
+      title: Final energy demand (energetic)
+      short_description: ''
+      description: ''
+    final_energy_demand_per_sector_joule:
+      title: Final energy demand per sector (energetic)
+      short_description: ''
+      description: ''
+    workflow:
+      title: Workflow
+      short_description: 
+      description: 

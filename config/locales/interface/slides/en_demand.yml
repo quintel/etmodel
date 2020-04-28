@@ -1,0 +1,381 @@
+en:
+  slides:
+    demand_agriculture_combined_heat_power:
+      title: District heating
+      short_description:
+      description:
+    demand_agriculture_demand_growth:
+      title: Demand growth
+      short_description: ''
+      description: 'The growth you indicate here is due to economic and population
+        growth. This growth is <strong>including</strong> efficiency improvements,
+        but <strong>excluding</strong> technological changes you can indicate in the
+        subsections below.  '
+    demand_agriculture_heat:
+      title: Heat
+      short_description: ''
+      description: How is heat produced in agriculture? A different mix of heat generating
+        technologies can strongly affect energy efficiency, sustainability and CO<sub>2</sub>
+        emissions.
+    demand_buildings_appliances:
+      title: Appliances
+      short_description: ''
+      description: There is ample room for improvement of appliances. Computers, monitors
+        and the like are becoming more efficient. Do you know by how much?
+    demand_buildings_cooling:
+      title: Cooling
+      short_description: ''
+      description: How will offices and other buildings be cooled in the future?
+    demand_buildings_demand_growth:
+      title: Demand growth
+      short_description: ''
+      description: 'The changes in energy use per building you indicate here are due
+        to changes in prosperity. This is <strong>excluding</strong> efficiencies
+        and technological changes you can indicate in the subsections below.  '
+    demand_buildings_heating:
+      title: Space heating
+      short_description: ''
+      description: How will offices and other buildings be heated? European countries
+        can save a lot of energy by being smarter about how buildings are heated.
+    demand_buildings_insulation:
+      title: Insulation
+      short_description: ''
+      description: The insulation of buildings such as offices, schools, shops, hospitals,
+        and hotels tends to be quite different. What is the average heat demand reduction
+        for these buildings in the future?
+    demand_buildings_lighting:
+      title: Lighting
+      short_description: ''
+      description: 'Whereas lighting is a small part of household energy consumption,
+        in offices and other buildings it is quite significant. '
+    demand_buildings_solar_panels:
+      title: Solar panels
+      short_description: ''
+      description: Generating electricity locally saves energy and maybe also money
+        in the future.
+    demand_households_appliances:
+      title: Appliances
+      short_description: ''
+      description: 'There is ample room for improvement of household appliances. How
+        much more energy efficient do you think they will become? '
+    demand_households_behaviour:
+      title: Behavior
+      short_description: ''
+      description: Will changing our behavior make a big difference for household
+        energy consumption?
+    demand_households_climate:
+      title: Climate
+      short_description:
+      description:
+    demand_households_cooking:
+      title: Cooking
+      short_description: ''
+      description: 'Will energy use change much if households change the way they
+        cook? '
+    demand_households_cooling:
+      title: Cooling
+      short_description: ''
+      description: 'How will households be cooled? Some of the same technologies as
+        listed under ''Space Heating'' can be used here. '
+    demand_households_demand_growth:
+      title: Prosperity
+      short_description: ''
+      description: Changes in personal prosperity influence the household energy demand.
+        Some of these changes scale with population, whereas others scale with the
+        number of residences. These changes do <strong>not</strong> include efficiency
+        improvements and technological changes. These you can indicate in the slides
+        below.
+    demand_households_heating:
+      title: Space heating & hot water
+      short_description: ''
+      description: "How will households be heated and generate hot water? \r\n"
+    demand_households_insulation:
+      title: Insulation
+      short_description: ''
+      description: 'The demand for heating depends on the level of insulation. Below
+        you can set for each housing type you the heat demand reduction compared to
+        a house with energy label G. '
+    demand_households_lighting:
+      title: Lighting
+      short_description: ''
+      description: Lighting is a small but obvious part of a household's need for
+        energy.
+    demand_households_population:
+      title: Population & housing stock
+      short_description:
+      description: 'The energy demand for all residences combined depends on the size
+        of the population and the number of residences, which both can be set here. '
+    demand_households_solar_panels:
+      title: Solar panels
+      short_description: ''
+      description: Generating electricity locally saves energy and maybe also money
+        in the future.
+    demand_industry:
+      title: Energy demand in the industry
+      short_description:
+      description: "In most countries industry is responsible for the largest part
+        of the energy use. Because this industry is very diverse, we split it up in
+        different sectors. We follow the division of the industry into subsectors
+        as used by the International Energy Agency (IEA) as much as possible. The
+        chart on the right shows the energy use of each of these sectors. In the slides
+        below you can set the growth and efficiency improvements of each sector. A
+        number of smaller sectors have been grouped in <a href=\"/scenario/demand/industry/other\"
+        > Other industry</a>.\r\n<br/><br/>\r\nSome sectors have been modelled in
+        more detail. This makes it possible to explore potential structural changes
+        to these sectors as a result of the energy transition. You can draw inspiration
+        for this from the report <a href=\"http://refman.energytransitionmodel.com/publications/2037\"
+        target =\"_blank\">Industrie in transitie (in Dutch)</a>."
+    demand_industry_aluminium:
+      title: Aluminium
+      short_description:
+      description: After steel production, aluminium production is the most energy
+        intensive. You can choose from three measures to reduce energy consumption.
+        Note that the smelt oven only recycles used aluminium. Here you can indicate
+        what you think will happen.
+    demand_industry_ccs:
+      title: Carbon capture and storage (CCS)
+      short_description:
+      description: 'What percentage of direct CO2 emissions in industry will be captured
+        and stored? Note: this is an expert function which will be superseded by more
+        detailed modelling soon.'
+    demand_industry_chemical_refineries:
+      title: Refineries
+      short_description:
+      description: "Refineries turn crude oil into oil products. These oil products
+        are used as fuel in the transport sector or feedstock in the chemical industry.
+        Refineries make most of their money by selling transport fuels. The demand
+        for these fuels will most probably change as transport technologies change.
+        You can set these technologies in <a href=\"/scenario/demand/transport\" >
+        the transport sector</a>.\r\n<br/><br/>\r\nIn the ETM the output of the refineries
+        is not directly coupled to domestic demand for transport fuels. Potential
+        shortages can be imported and excess production can be exported. This also
+        holds for oil products that are used as feedstock in the chemical industry.
+        Below you can set the growth and efficiency improvements of the refineries
+        separately. Note that the demand for refinery products is set by global markets. "
+    demand_industry_chemical_fertilizers:
+      title: Fertilizers
+      short_description:
+      description: "Ammonia (NH<sub>3</sub>) constitutes the basis of all nitrogen-based
+        fertilizers. The most important step in producing ammonia is reacting hydrogen
+        with nitrogen. At the moment the required hydrogen is produced locally by
+        stripping natural gas in a steam methane reforming (SMR) plant, which produces
+        CO<sub>2</sub> as a side product. In the future, it may become possible to
+        use hydrogen from a central hydrogen network. This network delivers hydrogen
+        originating from different processes that can be chosen in the \r\n<a href=\"/scenario/supply/hydrogen/hydrogen-production\"
+        >hydrogen production slide</a>."
+    demand_industry_chemical_other:
+      title: Chemicals
+      short_description:
+      description: "This sector includes the production of chemicals. Fertilizer production
+        has been excluded from this sector and is represented as a <a href=\"/scenario/demand/industry/fertilizers\"
+        > separate sector</a>. \r\n<br><br/>\r\nThe growth you indicate here is due
+        to economic and population growth. This growth is excluding efficiencies and
+        technological changes you can indicate in the subsections below.\r\n<br></br>\r\nCaution:
+        not all heat production technologies are suited to supply the full heat demand.
+        More information on this can be found in the \"?\" next to the slider."
+    demand_industry_aggregated_chemical_other:
+      title: Chemicals
+      short_description:
+      description: The growth you indicate here is due to economic and population
+        growth. This growth is excluding efficiencies and technological changes you
+        can indicate in the subsections below.
+    demand_industry_other_food:
+      title: Food
+      short_description:
+      description: This sector includes the manufacturing of food products, beverages
+        and tobacco. Below you can set the growth and efficiency improvements of this
+        sector separately.
+    demand_industry_other_ict:
+      title: Central ICT
+      short_description:
+      description: This sector encompasses all centralized ICT services. Its most
+        notable components are datacenters and telecom. Below you can set the growth
+        and efficiency improvements of this sector separately.
+    demand_industry_other_paper:
+      title: Paper
+      short_description:
+      description: This sector includes the manufacturing of paper and paper products
+        as well as printing and reproduction of recorded media. Below you can set
+        the growth and efficiency improvements of this sector separately.
+    demand_industry_aggregated_other:
+      title: Other
+      short_description:
+      description: The other industry comprises all sectors that are not shown explicitly
+        above. Since the specific technologies used in this sector are not known,
+        you can directly set the shares of energy carriers below.
+    demand_industry_combined_heat_power:
+      title: District heating
+      short_description:
+      description:
+    demand_industry_other_metals:
+      title: Other metals
+      short_description:
+      description: This sector includes the production of lead, zinc, copper, silver
+        or gold and post-processing of produced steel and aluminium. You can indicate
+        efficiency changes for electric and heat processes in this sector.
+    demand_industry_steel:
+      title: Steel
+      short_description:
+      description: 'Steel processing requires energy-intensive furnaces. Several alternatives
+        are possible. The percentage of recycled steel that can be used as input varies
+        per technology: blast furnaces and cyclone furnaces use up to 20% recycled
+        steel and electric ovens are used for recycling only. The cyclone furnaces
+        are unique in the sense that they can run on 100% bio-fuel.'
+    demand_other_combined_heat_power:
+      title: Combined heat & power
+      short_description:
+      description:
+    demand_other_demand_growth:
+      title: Demand growth
+      short_description: ''
+      description: 'The growth you indicate here is due to economic and population
+        growth. This growth is <strong>excluding</strong> efficiencies and technological
+        changes. '
+    demand_transport_bus_technology:
+      title: Bus technology
+      short_description:
+      description:  Will there be a shift away from cars that run on fossil fuels? How
+        will a massive roll-out of electric cars affect energy use? Please indicate
+        what cars we drive in the future. In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine which fuel blends cars will use
+        and in the <a href="/scenario/flexibility/flexibility_demand/demand-response-electric-vehicles">demand response ev section</a> you can determine where electric cars will
+        charge.
+    demand_transport_bicycle_technology:
+      title: Bicycle technology
+      short_description:
+      description: E-bikes are upcoming; will this trend continue?
+    demand_transport_car_technology:
+      title: Car technology
+      short_description: ''
+      description: Will there be a shift away from cars that run on fossil fuels?
+        How will a massive roll-out of electric cars affect energy use? Please indicate
+        what cars we drive in the future. In the <a href="/scenario/supply/transport_fuels/road-transport"
+        >road fuels section</a> you can determine which fuel blends cars will use
+        and in the <a href="/scenario/flexibility/flexibility_demand/demand-response-electric-vehicles"
+        >demand response ev section</a> you can determine where electric cars will
+        charge.
+    demand_transport_domestic_aviation_technology:
+      title: Domestic aviation technology
+      short_description: ''
+      description: How much of the aviation fuel used will come from renewable sources?
+        Do not forget that currently, growing the required crops competes with food
+        production for arable land.
+    demand_transport_domestic_navigation_technology:
+      title: Domestic navigation technology
+      short_description:
+      description: "Will ships owners hold on to conventional diesel engine ships,
+        or will they make a transition to Liquefied Natural Gas (LNG) engine ships?
+        In the <a href=\"/scenario/supply/transport_fuels/domestic-navigation\" >domestic
+        navigation fuels section</a> you can set the fuel mix these engines run on.\r\n"
+    demand_transport_efficiency_improvement:
+      title: Efficiency improvement
+      short_description: ''
+      description: Transport vehicles tend to become more energy efficient over time,
+        but by how much? The sliders below allow you to indicate the efficiency improvement
+        per vehicle type in percentage per year.
+    demand_transport_international_transport:
+      title: International transport
+      short_description:
+      description: Currently emissions from international transport are not included
+        in national energy statistics, since it is complex to decide to which country
+        they should be allocated. However, international aviation and navigation are
+        responsible for more than 4.5% of the global GHG emissions (<a href="https://ec.europa.eu/clima/policies/transport_en">EC
+        Climate Action</a>). Insight in the energy demand is needed in this sector
+        in order to take measures reducing their emissions. Therefore, in this model
+        it is possible to include international aviation and navigation to a desired
+        percentage by using the sliders below.
+    demand_transport_international_transport_mobility_growth:
+      title: Mobility growth
+      short_description:
+      description: International transportation has grown as a result of increasing
+        globalisation. Will this trend continue in the future? The growth rates that
+        you indicate here apply to the sector as a whole and are not influenced by
+        the population growth.
+    demand_transport_international_navigation_technology:
+      title: International navigation technology
+      short_description:
+      description: Will ships owners hold on to conventional ships running on heavy
+        fuel oil (HFO) or will they make a transition to liquefied natural gas-fired
+        (LNG) ships for international navigation?
+    demand_transport_international_aviation_technology:
+      title: International aviation technology
+      short_description:
+      description: 'For international aviation primarily large aircrafts are used
+        that consume kerosene. Therefore, different aviation technologies cannot be
+        chosen here, but in the <a href="/scenario/supply/transport_fuels/international-aviation"
+        >fuels</a> section it is possible to choose the blend of kerosene for your
+        planes. '
+    demand_transport_mobility_growth:
+      title: Mobility growth
+      short_description:
+      description:
+    demand_transport_train_technology:
+      title: Train technology
+      short_description:
+      description:
+    demand_transport_freight_train_technology:
+      title: Train technology
+      short_description:
+      description: Which train technologies will be mostly used? Electric trains are
+        cleaner and more efficient than diesel trains, but require more infrastructure
+        to run. In the <a href="/scenario/supply/transport_fuels/rail-transport" >train
+        fuels section</a> you can determine which fuels diesel trains will use.
+    demand_transport_freight_transport:
+      title: Applications
+      short_description:
+      description: "Will freight transport increase or decrease in the future? The
+        growth rate that you indicate here determines the future demand for 'freight
+        tonne kilometres', the total number of kilometres freight is shipped per year.
+        This number includes all freight transport applications (trucks, trains and
+        ships).\r\n<br /> <br />\r\nBesides growth rate you can choose the division
+        of transport applications here. What percentage of freight tonne kilometres
+        is covered by trucks, by trains and by inland ships?\r\n<br /> <br /> \r\nNote
+        that international container ships are part of the <a href=\"/scenario/demand/transport_international_transport/international-transport\">international
+        transport section</a>."
+    demand_transport_motorcycle_technology:
+      title: Motorcycle technology
+      short_description:
+      description: What will the share of gasoline and electric motorcycles and scooters
+        be in the future?
+    demand_transport_overview:
+      title: Overview
+      short_description:
+      description: In the side bar on the left you can click on <a href="/scenario/demand/transport_passenger_transport/applications">'Passenger
+        transport'</a>, <a href="/scenario/demand/transport_freight_transport/applications">'Freight
+        transport'</a> and <a href="/scenario/demand/transport_international_transport/international-transport">'International
+        transport'</a>. There you can specify how our transport demand will change
+        in the future, which means of transport we will use and which drive technologies
+        will prevail.
+    demand_transport_passenger_transport:
+      title: Applications
+      short_description: ''
+      description: "Our mobility has grown as a result of a growing economy. Will
+        this trend continue in the future? The growth rate that you indicate here
+        determines the future demand for 'passenger kilometres', the total number
+        of kilometres people travel per year. This number includes all passenger transport
+        applications (car, bus, bike, etc.) and is not influenced by the population
+        size. \r\n<br /> <br />\r\nBesides the growth rate, you can choose the division
+        of transport applications here. What percentage of the kilometres we travel
+        is covered by cars, busses, bikes, etc.?\r\n\r\n<br /> <br />\r\nPlease note
+        that international aviation is part of the <a href=\"/scenario/demand/transport_international_transport/international-transport\">international
+        transport section</a>."
+    demand_transport_passenger_train_technology:
+      title: Train technology
+      short_description: ''
+      description: Which train technologies will be mostly used? Electric trains are
+        cleaner and more efficient than diesel or coal-powered ones, but require more
+        infrastructure to run. In the <a href="/scenario/supply/transport_fuels/rail-transport"
+        >train fuels section</a> you can determine which fuels diesel trains will
+        use.
+    demand_transport_plane_technology:
+      title: Domestic aviation technology
+      short_description:
+      description:
+    demand_transport_tram_technology:
+      title: Tram/metro technology
+      short_description:
+      description: 'The ETM only models electric trams and metros. '
+    demand_transport_truck_technology:
+      title: Truck technology
+      short_description: ''
+      description: Will there be a shift away from trucks that run on fossil fuels? How
+        does this affect energy use? In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine which fuels trucks will use.

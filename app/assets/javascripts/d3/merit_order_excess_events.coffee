@@ -90,7 +90,9 @@ D3.merit_order_excess_events =
         .on("mouseout", (e) =>
           d3.select(d3.event.target).attr("fill", @data.color)
         )
-        .attr('data-tooltip-title', (d) => I18n.t "output_element_series.#{ @data.key }")
+        .attr('data-tooltip-title', (d) =>
+          I18n.t "output_element_series.labels.#{ @data.key }"
+        )
 
       $("#{@container_selector()} rect.merit_excess_node").qtip
         content:

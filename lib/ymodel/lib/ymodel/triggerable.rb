@@ -2,7 +2,7 @@
 
 module YModel
   # Handles events that decorate the instances with methods.
-  module Trigger
+  module Triggerable
     protected
 
     def define_readers(model)

@@ -103,7 +103,7 @@ en:
         change into a change in useful demand, it is assumed that people will start
         heating their homes when the outside temperature drops beneath 18 &degC and
         will cool their homes when it rises above 23 &degC.\r\n<br/><br/>\r\nFor more
-        information about the climate change calculation consult our <a href=\"https://github.com/quintel/documentation/blob/master/general/climate.md\"
+        information about the climate change calculation consult our <a href=\"https://docs.energytransitionmodel.com/main/climate\"
         target =\"_blank\">documentation</a>."
     settings_weather_curve_set:
     flh_of_energy_power_wind_turbine_coastal:
@@ -181,7 +181,7 @@ en:
         is used maximally for space heating. With the current gas and electricity
         price financial optimization for the user is achieved with a threshold COP
         of  2.6, this can be concluded from the chart on the right.\r\nFor more information
-        about (hybrid) heat pumps see our <a href=\"https://github.com/quintel/documentation/blob/master/general/heat_pumps.md\">documentation</a>."
+        about (hybrid) heat pumps see our <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\">documentation</a>."
     households_flexibility_water_heating_cop_cutoff:
       title: Hot water
       short_description:
@@ -189,7 +189,7 @@ en:
         water.\r\n<p>\r\nThe default setting is that the gas part of the HHP is used
         for hot water.\r\n<p>\r\nWith the current gas and electricity price financial
         optimization for the user is achieved with a threshold COP of  3.1.\r\nFor
-        calculations see <a href=\"https://github.com/quintel/documentation/blob/bd77c99e145958613a8c2e45116e887a1d01a39a/general/heat_pumps.md\">Documentation</a>"
+        calculations see <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\">Documentation</a>"
     households_flexibility_consumer_gas_price:
       title: Gas price
       short_description:
@@ -303,7 +303,7 @@ en:
         mix has an average of 275.9  gram CO<sub>2</sub> emissions per kWh <a href=\"https://www.eea.europa.eu/data-and-maps/daviz/co2-emission-intensity-3#tab-googlechartid_chart_11_filters=%7B%22rowFilters%22%3A%7B%7D%3B%22columnFilters%22%3A%7B%22pre_config_ugeo%22%3A%5B%22European%20Union%20(28%20countries)%22%5D%7D%7D\"
         target =\"_blank\">(EEA, 2014)</a>. \r\n\r\n</p>\r\n\r\nYou can find more
         information about carrier, technology, and country specific emissions per
-        kWh in our <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        kWh in our <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">documentation</a>. "
     co2_emissions_of_imported_electricity_future:
       title: Future import
@@ -315,10 +315,10 @@ en:
         when there is not much wind and sun available. In this case this electricity
         could come from gas (380 -1000 gCO<sub>2</sub>/kWh), coal (660 -1050 gCO<sub>2</sub>/kWh),
         or even lignite (800 -1300 gCO<sub>2</sub>/kWh) with quite high CO<sub>2</sub>
-        emissions per kWh. <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        emissions per kWh. <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">(Turconi et al, 2013)</a>. \r\n\r\n\r\n</p>\r\n\r\nYou
         can find more information about carrier, technology, and country specific
-        emissions per kWh in our <a href=\"https://github.com/quintel/documentation/blob/master/general/CO2_emissions_of_imported_electricity.md\"
+        emissions per kWh in our <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">documentation</a>. "
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
       title: Power-to-hydrogen

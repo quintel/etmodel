@@ -104,10 +104,10 @@ De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is ve
 
 [weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
 
-[heat-infra costs documentation]: https://github.com/quintel/documentation/blob/master/general/heat_infrastructure_costs.md
+[heat-infra costs documentation]: https://docs.energytransitionmodel.com/main/heat-infrastructure-costs
 
-[heat network documentation]: https://github.com/quintel/documentation/blob/master/general/heat_networks.md
+[heat network documentation]: https://docs.energytransitionmodel.com/main/heat-networks
 
-[residual heat documentation]: https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md
+[residual heat documentation]: https://docs.energytransitionmodel.com/main/residual-heat-industry
 
 [wind curves documentation]: https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind

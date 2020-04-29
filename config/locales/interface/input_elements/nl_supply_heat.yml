@@ -3,7 +3,7 @@ nl:
   input_elements:
     volume_of_imported_heat:
       title: Geïmporteerde warmte
-      short_description: 
+      short_description:
       description: "Hoeveel (rest)warmte kan er geïmporteerd worden van buiten jouw
         regio? Met deze slider kan jij bepalen hoeveel dat zal zijn.\r\n</br></br>\r\nDaarbij
         kan je met het schuifje hieronder de CO<sub>2</sub>-uitstoot van geïmporteerde
@@ -11,7 +11,7 @@ nl:
         >'Kosten'</a> de kosten voor geïmporteerde warmte bepalen."
     co2_emissions_of_imported_heat:
       title: CO<sub>2</sub>-uitstoot van geïmporteerde (rest)warmte
-      short_description: 
+      short_description:
       description: "Hoeveel CO<sub>2</sub>-uitstoot hoort er bij de geïmporteerde
         warmte? \r\n</br></br>\r\nDit afhankelijk van de warmtebron. Ter referentie:
         wanneer de warmte van een STEG gascentrale komt, hoort hier een CO<sub>2</sub>-uitstoot
@@ -19,7 +19,7 @@ nl:
         >deze bron</a>)"
     capacity_of_energy_heat_well_geothermal:
       title: Geothermie
-      short_description: 
+      short_description:
       description: 'Aardwarmte dieper dan 500 meter wordt geothermie genoemd. Deze
         warmte kan gebruikt worden om gebouwen mee te verwarmen. Hoeveel warmte haal
         jij in je scenario uit geothermie? Let op: geothermieputten schakelen niet
@@ -28,45 +28,45 @@ nl:
         zomer in de winter in te kunnen zetten.'
     capacity_of_energy_heat_solar_thermal:
       title: Zonthermie
-      short_description: 
+      short_description:
       description: Bij zonthermie wordt de warmte van de zon omgezet in warm water.
         Deze warmteproductie is vooral groot in de zomer, terwijl de vraag naar warmte
         hoog is in de winter. Maak gebruik van seizoensopslag voor een effectieve
         inzet.
     capacity_of_energy_heat_heatpump_water_water_electricity:
       title: Collectieve warmtepomp
-      short_description: 
+      short_description:
       description: Een warmtepomp produceert warmte uit elektriciteit en omgevingswarmte.
         Stel hier het vermogen aan collectieve warmtepompen in dat warmte levert aan
         warmtenetten.
     capacity_of_energy_heat_burner_network_gas:
       title: Gasketel (netwerk gas)
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. Stel hier het vermogen aan gasketels
         in dat warmte levert aan warmtenetten.
     capacity_of_energy_heat_burner_hydrogen:
       title: Waterstofketel
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. Stel hier het vermogen aan waterstofketels
         in dat warmte levert aan warmtenetten.
     capacity_of_energy_heat_burner_wood_pellets:
       title: Biomassaketel
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. Stel hier het vermogen aan biomassaketels
         in dat warmte levert aan warmtenetten.
     capacity_of_energy_heat_burner_waste_mix:
       title: Afvalketel
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. Stel hier het vermogen aan afvalverbranders
         in dat warmte levert aan warmtenetten.
     capacity_of_energy_heat_burner_crude_oil:
       title: Olieketel
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. Stel hier het vermogen aan olieketels
         in dat warmte levert aan warmtenetten.
     share_of_industry_chemicals_other_reused_residual_heat:
       title: Chemische industrie
-      short_description: 
+      short_description:
       description: "Hoeveel procent van de beschikbare restwarmte uit de chemische
         industrie wil je uitkoppelen? Hoe de restwarmte potentie is bepaald, is te
         lezen in onze <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -77,7 +77,7 @@ nl:
         worden.\r\n</br>"
     share_of_industry_chemicals_fertilizers_reused_residual_heat:
       title: Kunstmestindustrie
-      short_description: 
+      short_description:
       description: "Hoeveel procent van de beschikbare restwarmte uit de kunstmestindustrie
         wil je uitkoppelen? Hoe de restwarmte potentie is bepaald, is te lezen in
         onze <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -88,7 +88,7 @@ nl:
         worden.\r\n</br>"
     share_of_industry_chemicals_refineries_reused_residual_heat:
       title: Raffinaderijen
-      short_description: 
+      short_description:
       description: "Hoeveel procent van de beschikbare restwarmte uit raffinaderijen
         wil je uitkoppelen? Hoe de restwarmte potentie is bepaald, is te lezen in
         onze <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -99,7 +99,7 @@ nl:
         worden.\r\n</br>"
     share_of_industry_other_ict_reused_residual_heat:
       title: Centrale ICT
-      short_description: 
+      short_description:
       description: "Hoeveel procent van de beschikbare restwarmte uit datacenters
         wil je uitkoppelen? Hoe de restwarmtepotentie is bepaald, is te lezen in onze
         <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -127,7 +127,7 @@ nl:
         per jaar, waarvan 6000 vollasturen warmte (stoomlevering).\r\n"
     capacity_of_industry_chp_turbine_gas_power_fuelmix:
       title: Gasturbine-WKK
-      short_description: 
+      short_description:
       description: "Deze gasturbine WKK staat typisch op een middelgroot industrieel
         bedrijf en produceert elektriciteit en stoom. Soms staan er verschillende
         units naast elkaar en wordt er ook stoom geleverd aan naburige bedrijven.\r\n<br/><br/>\r\nIn
@@ -137,7 +137,7 @@ nl:
         zijn er 6000 vollasturen warmte (stoomlevering)."
     capacity_of_industry_chp_engine_gas_power_fuelmix:
       title: Gasmotor-WKK
-      short_description: 
+      short_description:
       description: "Deze gasmotor WKK staat bijvoorbeeld in de voedingsindustrie en
         maakt stroom en warmte voor lokaal gebruik. \r\nStel er wordt gedraaid in
         een drieploegendienst. Het aantal draaiuren komt uit op 6000 per jaar.\r\n<br/><br/>\r\nHet
@@ -145,7 +145,7 @@ nl:
         dan de stroom van het net te kopen en warmte met een ketel te maken. "
     capacity_of_industry_chp_ultra_supercritical_coal:
       title: Kolen-WKK
-      short_description: 
+      short_description:
       description: "Warmtekrachtkoppelingen (WKK’s) produceren warmte en elektriciteit.
         Deze combinatie maakt WKK's vrij energie-efficiënt. Lokaal produceren en gebruiken
         van warmte en elektriciteit vermijdt transportverliezen en dat bespaart weer
@@ -155,54 +155,71 @@ nl:
         kolen WKK's worden gebouwd."
     capacity_of_industry_chp_wood_pellets:
       title: Biomassa WKK
-      short_description: 
+      short_description:
       description: Een WKK produceert zowel warmte als elektriciteit. In de industrie
         is deze warmte vaak in de vorm van stoom. Kies hier het vermogen aan biomassa-WKKs
         dat levert aan het industriële stoomnetwerk.
     capacity_of_industry_heat_burner_coal:
       title: Kolenketel
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. In de industrie is deze warmte vaak
         in de vorm van stoom. Kies hier het vermogen aan kolenketels dat levert aan
         het industriële stoomnetwerk.
     capacity_of_industry_heat_burner_crude_oil:
       title: Olieketel
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. In de industrie is deze warmte vaak
         in de vorm van stoom. Kies hier het vermogen aan olieketels dat levert aan
         het industriële stoomnetwerk.
     capacity_of_industry_heat_burner_lignite:
       title: Bruinkoolketel
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. In de industrie is deze warmte vaak
         in de vorm van stoom. Kies hier het vermogen aan bruinkoolketels dat levert
         aan het industriële stoomnetwerk.
     capacity_of_industry_heat_well_geothermal:
       title: Geothermie
-      short_description: 
+      short_description:
       description: Geothermie maakt gebruik van warmte uit de bodem. Voor de industrie
         is deze warmte vaak een té lage temperatuur. Toch is het in sommige sectoren
         inzetbaar, zoals de papier- en voedselindustrie. Kies hier het vermogen aan
         geothermieputten dat warmte levert aan de industrie.
     capacity_of_energy_heat_burner_coal:
       title: Kolenketel
-      short_description: 
+      short_description:
       description: Een ketel produceert warmte. Stel hier het vermogen aan kolenketels
         in dat warmte levert aan warmtenetten.
     heat_storage_enabled:
       description: ''
     energy_heat_network_storage_loss_share:
       title: Jaarlijkse verliezen
-      short_description: 
+      short_description:
       description: 'De startwaarde (15%) is gebaseerd op de jaarlijkse verliezen van
         een Evocat systeem (link: https://www.ecovat.eu/): een groot ondergronds buffervat
         gevuld met water. Opslagverliezen zijn afhankelijk van het type systeem. Bij
         grotere opslagsystemen verminderen bijvoorbeeld het verliespercentage. Daarentegen
         nemen de verliezen juist toe wanneer een open systeem wordt gebruikt (bijv.
         WKO) in plaats van een gesloten systeem zoals Ecovat.'
+    energy_heat_network_storage_output_capacity_share:
+      title: Levercapaciteit (als % van gemiddelde uurvraag)
+      short_description:
+      description: 'Met deze schuif stel je de uurlijkse warmtelevercapaciteit (outputcapaciteit)
+        van warmteopslag in. Standaard is deze capaciteit onbeperkt. Dit houdt in dat er
+        geen limiet is aan de hoeveelheid warmte die in een uur uit de opslag gehaald
+        kan worden (gegeven dat er voldoende warmte in de opslag aanwezig is). Met deze
+        schuif kun je dit beperken. Hierdoor wordt de opslag gedurende het jaar langzamer
+        leeggehaald. Een gevolg is dat andere regelbare warmtebronnen (zoals piekketels)
+        mogelijk eerder moeten bijspringen.<br/><br/>
+        De schuif is een percentage van de gemiddelde uurlijkse warmtevraag. Bijvoorbeeld:
+        een waarde van 200% betekent dat de hoeveelheid warmte die in een uur uit de opslag
+        gehaald kan worden maximaal 2 keer de gemiddelde uurlijkse vraag is.
+        Bekijk de grafiek "Warmtenetbronnen: vermogens en marginale kosten" om het resulterende
+        vermogen in MW zien.<br/><br/>
+        Deze schuif is bedoeld voor expertgebruikers. In veel gevallen hoeft de standaardinstelling
+        niet aangepast te worden.'
     energy_heat_distribution_loss_share:
       title: Transport- en distributieverliezen
-      short_description: 
+      short_description:
       description: De standaardwaarde van de verliesschuif is erg laag of zelfs nul
         voor veel landen en regio's in het ETM. Dit komt omdat er vaak geen betrouwbare
         data over warmteverliezen beschikbaar is. Zorg ervoor dat de schuif hieronder

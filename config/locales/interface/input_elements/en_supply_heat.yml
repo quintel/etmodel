@@ -3,7 +3,7 @@ en:
   input_elements:
     volume_of_imported_heat:
       title: Imported heat
-      short_description: 
+      short_description:
       description: "How much (residual) heat can be imported from outside your region?
         With this slider you can set the amount. \r\n</br></br>\r\nAdditionally, with
         the slider below you can set the CO<sub>2</sub>-emissions of imported heat
@@ -11,7 +11,7 @@ en:
         you can set the costs for imported heat."
     co2_emissions_of_imported_heat:
       title: CO2 emissions of imported heat
-      short_description: 
+      short_description:
       description: "How much CO<sub>2</sub>-emissions are associated with the imported
         heat? \r\n</br></br>\r\nThis strongly depends on the heat source. For reference:
         when heat originates from a gas CCGT plant, the emissions are around 36,0
@@ -19,7 +19,7 @@ en:
         >source</a>(in Dutch!))"
     capacity_of_energy_heat_well_geothermal:
       title: Geothermal
-      short_description: 
+      short_description:
       description: 'Thermal energy from below 500 meters depth is called geothermal
         energy. This heat can be used to heat buildings. How much heat in your scenario
         comes from geothermal heat pumps? Caution: geothermal heat pumps typically
@@ -28,45 +28,45 @@ en:
         that heat produced in summer can be utilised in winter'
     capacity_of_energy_heat_solar_thermal:
       title: Solar thermal
-      short_description: 
+      short_description:
       description: Solar thermal collectors generate heat from the sun and use this
         to heat water. This heat production is especially high in the summer. Heat
         demand, on the other hand, peaks in the winter. Use seasonal heat storage
         for effective deployment.
     capacity_of_energy_heat_heatpump_water_water_electricity:
       title: Collective heat pump
-      short_description: 
+      short_description:
       description: A heat pump produces heat with electricity and ambient heat. Specify
         here the capacity of collective heat pumps that supplies heat for district
         heating
     capacity_of_energy_heat_burner_network_gas:
       title: Gas heater (network gas)
-      short_description: 
+      short_description:
       description: A burner produces heat. Specify here the capacity of gas heaters
         that supplies heat for district heating.
     capacity_of_energy_heat_burner_hydrogen:
       title: Hydrogen heater
-      short_description: 
+      short_description:
       description: A burner produces heat. Specify here the capacity of hydrogen heaters
         that supplies heat for district heating.
     capacity_of_energy_heat_burner_wood_pellets:
       title: Biomass heater
-      short_description: 
+      short_description:
       description: A burner produces heat. Specify here the capacity of biomass heaters
         that supplies heat for district heating.
     capacity_of_energy_heat_burner_waste_mix:
       title: Waste heater
-      short_description: 
+      short_description:
       description: A burner produces heat. Specify here the capacity of waste heaters
         that supplies heat for district heating.
     capacity_of_energy_heat_burner_crude_oil:
       title: Oil heater
-      short_description: 
+      short_description:
       description: A boiler produces heat. Specify here the capacity of oil heaters
         that supplies heat for district heating.
     share_of_industry_chemicals_other_reused_residual_heat:
       title: Chemical industry
-      short_description: 
+      short_description:
       description: "What percentage of the available residual heat from the chemical
         industry do you want to use in heat networks? How the residual heat potential
         is determined can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -75,7 +75,7 @@ en:
         The costs of using residual heat can be adjusted <a href=\"/scenario/costs/costs_heat/residual-heat\">here</a>.\r\n</br>"
     share_of_industry_chemicals_fertilizers_reused_residual_heat:
       title: Fertilizer industry
-      short_description: 
+      short_description:
       description: "What percentage of the available residual heat from the fertilizer
         industry do you want to use in heat networks? How the residual heat potential
         is determined can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -84,7 +84,7 @@ en:
         The costs of using residual heat can be adjusted <a href=\"/scenario/costs/costs_heat/residual-heat\">here</a>.\r\n</br>"
     share_of_industry_chemicals_refineries_reused_residual_heat:
       title: Refineries
-      short_description: 
+      short_description:
       description: "What percentage of the available residual heat from refineries
         do you want to use in heat networks? How the residual heat potential is determined
         can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -93,7 +93,7 @@ en:
         The costs of using residual heat can be adjusted <a href=\"/scenario/costs/costs_heat/residual-heat\">here</a>.\r\n</br>"
     share_of_industry_other_ict_reused_residual_heat:
       title: Central ICT
-      short_description: 
+      short_description:
       description: "What percentage of the available residual heat from data centers
         do you want to use in heat networks? How the residual heat potential is determined
         can be read in our <a href=\"https://github.com/quintel/documentation/blob/master/general/residual_heat_industry.md\"
@@ -120,7 +120,7 @@ en:
         which 6000 hours to supply heat as steam.  "
     capacity_of_industry_chp_turbine_gas_power_fuelmix:
       title: Gas turbine CHP
-      short_description: 
+      short_description:
       description: "This gas turbine CHP is typically found at a medium-sized industrial
         firm to deliver power and steam. Several units are sometimes found on one
         site in order to deliver steam to neighboring firms.\r\n<br/><br/>\r\nFirms
@@ -130,7 +130,7 @@ en:
         are lower at 6000 hours per year. "
     capacity_of_industry_chp_engine_gas_power_fuelmix:
       title: Gas motor CHP
-      short_description: 
+      short_description:
       description: "This gas-powered engine may well produce heat and power for local
         use in the food industry.\r\nFor a three-shift work rotation common in the
         food industry, the number of full load hours would be ~6000 hours per year.\r\n<br/><br/>\r\nGenerating
@@ -138,7 +138,7 @@ en:
         power from the grid and generating heat with a burner. "
     capacity_of_industry_chp_ultra_supercritical_coal:
       title: Coal CHP
-      short_description: 
+      short_description:
       description: "Combined heat and power (CHP) plants generate both heat and electricity.
         The combination of heat and electricity makes this option quite energy efficient.
         Also, locally producing and using heat and electricity reduces transportation
@@ -148,31 +148,31 @@ en:
         CHP plants can be installed as well."
     capacity_of_industry_chp_wood_pellets:
       title: Biomass CHP
-      short_description: 
+      short_description:
       description: A CHP produces electricity and heat. In the industry sector this
         heat is very often stored in steam. Here you can choose the capacity of wood
         pellet CHPs delivering to the industrial steam network.
     capacity_of_industry_heat_burner_coal:
       title: Coal heater
-      short_description: 
+      short_description:
       description: A burner produces heat. In the industry sector this heat is very
         often stored in steam. Here you can choose the capacity of coal burner delivering
         to the industrial steam network.”
     capacity_of_industry_heat_burner_crude_oil:
       title: Oil heater
-      short_description: 
+      short_description:
       description: A burner produces heat. In the industry sector this heat is very
         often stored in steam. Here you can choose the capacity of oil burners delivering
         to the industrial steam network.”
     capacity_of_industry_heat_burner_lignite:
       title: Lignite heater
-      short_description: 
+      short_description:
       description: A burner produces heat. In the industry sector this heat is very
         often stored in steam. Here you can choose the capacity of lignite burners
         delivering to the industrial steam network.”
     capacity_of_industry_heat_well_geothermal:
       title: Geothermal heat
-      short_description: 
+      short_description:
       description: Geothermal heat wells extract heat from the earth. In many cases
         the temperature of this heat is too low for industrial processes. However,
         in some sectors like Food and Paper geothermal heat could be an interesting
@@ -180,23 +180,37 @@ en:
         heat to the industry sector.”
     capacity_of_energy_heat_burner_coal:
       title: Coal heater
-      short_description: 
+      short_description:
       description: A burner produces heat. Specify here the capacity of coal heaters
         that supplies heat for district heating.
     heat_storage_enabled:
       description: ''
     energy_heat_network_storage_loss_share:
       title: Yearly losses
-      short_description: 
+      short_description:
       description: 'The start value (15%) is based on the yearly losses of an ''Ecovat''
         system (link: https://www.ecovat.eu/): a large underground buffer tank filled
         with water. Storage losses are highly dependent on the type of system. For
         larger storage systems, for example, the percentage of losses decrease. On
         the other hand, the losses increase when an open system is used (eg WKO) instead
         of a closed system such as Ecovat.'
+    energy_heat_network_storage_output_capacity_share:
+      title: Output capacity (as % of average hourly load)
+      short_description:
+      description: 'Here you can specify the heat output capacity per hour of heat storage.
+        By default, this capacity is unlimited, meaning that there is no limit to the amount
+        of heat that can be drawn from heat storage in one hour (given that enough heat is
+        available in the storage). With this slider you can limit this. This can result
+        in a slower depletion of heat storage. A consequence of this could be that other
+        dispatchable heat sources (such as gas heaters) need to be switched on earlier.<br/><br/>
+        The slider is a percentage of the average heat demand per hour. E.g. a slider value of
+        200% means that, in a given hour, up to 2 times the average heat demand per hour can
+        be drawn from the storage. To see the resulting capacity in MW, please open the chart
+        "District heating sources: capacities and marginal costs".<br/><br/>
+        This slider is aimed at expert users. In many cases the default setting will suffice.'
     energy_heat_distribution_loss_share:
       title: Transport and distribution losses
-      short_description: 
+      short_description:
       description: The default value for the distribution losses slider is typically
         low or even zero for many regions modelled in the ETM. This is mainly due
         to a lack of reliable data for the present year. Please make sure to change

@@ -14555,7 +14555,7 @@
   command_type: ''
   related_converter: ''
   slide_id: 278
-  position: 5
+  position: 2
   dependent_on: ''
   description:
     content_en: 'The start value (15%) is based on the yearly losses of an ''Ecovat''
@@ -14570,6 +14570,48 @@
       grotere opslagsystemen verminderen bijvoorbeeld het verliespercentage. Daarentegen
       nemen de verliezen juist toe wanneer een open systeem wordt gebruikt (bijv.
       WKO) in plaats van een gesloten systeem zoals Ecovat.'
+    short_content_en:
+    short_content_nl:
+- id: 1687
+  key: energy_heat_network_storage_output_capacity_share
+  share_group: ''
+  step_value: 0.1
+  draw_to_min:
+  draw_to_max:
+  unit: "%"
+  fixed: false
+  interface_group: heat_storage_capacity
+  command_type: ''
+  related_converter: ''
+  slide_id: 278
+  position: 3
+  dependent_on: ''
+  description:
+    content_en: 'Here you can specify the heat output capacity per hour of heat storage.
+        By default, this capacity is unlimited, meaning that there is no limit to the amount
+        of heat that can be drawn from heat storage in one hour (given that enough heat is
+        available in the storage). With this slider you can limit this. This can result
+        in a slower depletion of heat storage. A consequence of this could be that other
+        dispatchable heat sources (such as gas heaters) need to be switched on earlier.<br/><br/>
+        The slider is a percentage of the average heat demand per hour. E.g. a slider value of
+        200% means that, in a given hour, up to 2 times the average heat demand per hour can
+        be drawn from the storage. To see the resulting capacity in MW, please open the chart
+        "District heating sources: capacities and marginal costs".<br/><br/>
+        This slider is aimed at expert users. In many cases the default setting will suffice.'
+    content_nl: 'Met deze schuif stel je de uurlijkse warmtelevercapaciteit (outputcapaciteit)
+        van warmteopslag in. Standaard is deze capaciteit onbeperkt. Dit houdt in dat er
+        geen limiet is aan de hoeveelheid warmte die in een uur uit de opslag gehaald
+        kan worden (gegeven dat er voldoende warmte in de opslag aanwezig is). Met deze
+        schuif kun je dit beperken. Hierdoor wordt de opslag gedurende het jaar langzamer
+        leeggehaald. Een gevolg is dat andere regelbare warmtebronnen (zoals piekketels)
+        mogelijk eerder moeten bijspringen.<br/><br/>
+        De schuif is een percentage van de gemiddelde uurlijkse warmtevraag. Bijvoorbeeld:
+        een waarde van 200% betekent dat de hoeveelheid warmte die in een uur uit de opslag
+        gehaald kan worden maximaal 2 keer de gemiddelde uurlijkse vraag is.
+        Bekijk de grafiek "Warmtenetbronnen: vermogens en marginale kosten" om het resulterende
+        vermogen in MW zien.<br/><br/>
+        Deze schuif is bedoeld voor expertgebruikers. In veel gevallen hoeft de standaardinstelling
+        niet aangepast te worden.'
     short_content_en:
     short_content_nl:
 - id: 996

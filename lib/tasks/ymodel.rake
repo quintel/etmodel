@@ -97,7 +97,7 @@ namespace :ymodel do
   # This task is quite the mess. My guess that we wont need it often if at all.
   # Just keeping it here in case its handy to have in the future.
   # I write the command like this in  zsh:
-  # $ rake "ymodel:sort_yaml_files[input_elements]"
+  # $ rake "ymodel:sort_yaml[InputElement]"
   desc 'Sort yaml files alphabetically but keep key name on top.'
   task :sort_yaml, [:model] => [:environment] do |_t, args|
     Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
@@ -152,7 +152,7 @@ namespace :ymodel do
   end
 
   # I write the command like this in  zsh:
-  # $ rake "ymodel:remove_empty_values[input_elements]"
+  # $ rake "ymodel:remove_empty_values[InputElement]"
   desc 'Remove empty values from all yaml files that belong to a model.'
   task :remove_empty_values, [:model] => [:environment] do |_t, args|
     Kernel.const_get(args.model.camelcase).source_files.each do |file_path|
@@ -166,7 +166,7 @@ namespace :ymodel do
   end
 
   # I write the command like this in  zsh:
-  # $ rake "ymodel:remove_ids[input_elements]"
+  # $ rake "ymodel:remove_ids[InputElement]"
   desc 'Remove ids from all yaml files that belong to a model.'
   task :remove_ids, [:model] => [:environment] do |_t, args|
     Kernel.const_get(args.model.camelcase).source_files.each do |file_path|

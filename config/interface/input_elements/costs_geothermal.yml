@@ -1,27 +1,13 @@
 ---
 - key: om_costs_geothermal
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: energy_heat_well_geothermal
   position: 2
-  dependent_on: ''
   slide_key: costs_geothermal
 - key: investment_costs_geothermal
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: energy_heat_well_geothermal
   position: 1
-  dependent_on: ''
   slide_key: costs_geothermal

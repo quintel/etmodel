@@ -1,14 +1,7 @@
 ---
 - key: costs_ccs_per_ton_in_industry
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: euro/tonne
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 1
   dependent_on: has_detailed_chemical_industry
   slide_key: costs_co2_ccs_industry

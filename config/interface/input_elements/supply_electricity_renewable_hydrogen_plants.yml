@@ -1,27 +1,15 @@
 ---
 - key: capacity_of_energy_power_turbine_hydrogen
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
-  interface_group: ''
   command_type: value
   related_converter: energy_power_turbine_hydrogen
   position: 1
-  dependent_on: ''
   slide_key: supply_electricity_renewable_hydrogen_plants
 - key: capacity_of_energy_power_combined_cycle_hydrogen
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
-  interface_group: ''
   command_type: value
   related_converter: energy_power_combined_cycle_hydrogen
   position: 2
-  dependent_on: ''
   slide_key: supply_electricity_renewable_hydrogen_plants

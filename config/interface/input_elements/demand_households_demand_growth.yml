@@ -1,79 +1,37 @@
 ---
 - key: households_useful_demand_for_cooling
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: per household
-  command_type: ''
-  related_converter: ''
   position: 6
-  dependent_on: ''
   slide_key: demand_households_demand_growth
 - key: households_useful_demand_heat_per_person
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: per household
-  command_type: ''
-  related_converter: ''
   position: 5
-  dependent_on: ''
   slide_key: demand_households_demand_growth
 - key: households_useful_demand_hot_water_share
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: per person
-  command_type: ''
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: demand_households_demand_growth
 - key: households_useful_demand_cooking_per_person
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: per person
-  command_type: ''
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: demand_households_demand_growth
 - key: households_useful_demand_electric_appliances
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: per person
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: demand_households_demand_growth
 - key: households_useful_demand_lighting
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: per person
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: demand_households_demand_growth

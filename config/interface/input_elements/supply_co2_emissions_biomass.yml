@@ -1,79 +1,42 @@
 ---
 - key: climate_relevant_co2_biomass_gas_present
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: present
   command_type: value
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: supply_co2_emissions_biomass
 - key: climate_relevant_co2_biomass_liquid_present
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: present
   command_type: value
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: supply_co2_emissions_biomass
 - key: climate_relevant_co2_biomass_solid_present
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: present
   command_type: value
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: supply_co2_emissions_biomass
 - key: climate_relevant_co2_biomass_gas_future
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: future
   command_type: value
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: supply_co2_emissions_biomass
 - key: climate_relevant_co2_biomass_liquid_future
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: future
-  command_type: ''
-  related_converter: ''
   position: 5
-  dependent_on: ''
   slide_key: supply_co2_emissions_biomass
 - key: climate_relevant_co2_biomass_solid_future
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: future
   command_type: value
-  related_converter: ''
   position: 6
-  dependent_on: ''
   slide_key: supply_co2_emissions_biomass

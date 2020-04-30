@@ -1,118 +1,56 @@
 ---
 - key: capacity_of_industry_chp_combined_cycle_gas_power_fuelmix
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: industry_chp_combined_cycle_gas_power_fuelmix
   position: 1
-  dependent_on: ''
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_chp_turbine_gas_power_fuelmix
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: industry_chp_turbine_gas_power_fuelmix
   position: 2
-  dependent_on: ''
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_chp_engine_gas_power_fuelmix
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: industry_chp_engine_gas_power_fuelmix
   position: 4
-  dependent_on: ''
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_chp_ultra_supercritical_coal
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: industry_chp_ultra_supercritical_coal
   position: 4
-  dependent_on: ''
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_chp_wood_pellets
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
-  interface_group:
-  command_type:
   related_converter: industry_chp_wood_pellets
   position: 5
-  dependent_on:
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_heat_burner_coal
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
-  interface_group:
-  command_type:
   related_converter: industry_heat_burner_coal
   position: 6
-  dependent_on:
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_heat_burner_crude_oil
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
-  interface_group:
-  command_type:
   related_converter: industry_heat_burner_crude_oil
   position: 7
-  dependent_on:
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_heat_burner_lignite
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: industry_heat_burner_lignite
   position: 8
   dependent_on: has_lignite
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_heat_well_geothermal
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
-  interface_group:
-  command_type:
   related_converter: industry_heat_well_geothermal
   position: 9
-  dependent_on:
   slide_key: supply_heat_network_industry

@@ -1,26 +1,13 @@
 ---
 - key: investment_costs_water_river
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: energy_power_hydro_river
   position: 1
-  dependent_on:
   slide_key: costs_water_investment
 - key: investment_costs_water_mountains
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: energy_power_hydro_mountain
   position: 2
   dependent_on: has_mountains

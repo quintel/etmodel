@@ -1,66 +1,30 @@
 ---
 - key: investment_costs_combustion_gas_plant
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
   command_type: value
   related_converter: energy_power_combined_cycle_network_gas
   position: 1
-  dependent_on: ''
   slide_key: costs_combustion_investment
 - key: investment_costs_combustion_oil_plant
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: energy_power_ultra_supercritical_crude_oil
   position: 2
-  dependent_on:
   slide_key: costs_combustion_investment
 - key: investment_costs_combustion_coal_plant
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: energy_power_ultra_supercritical_coal
   position: 3
-  dependent_on:
   slide_key: costs_combustion_investment
 - key: investment_costs_combustion_biomass_plants
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: costs_combustion_investment
 - key: investment_costs_combustion_waste_incinerator
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group:
-  command_type:
-  related_converter:
   position: 5
-  dependent_on:
   slide_key: costs_combustion_investment

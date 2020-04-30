@@ -1,79 +1,39 @@
 ---
 - key: investment_costs_micro_chp
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_micro_chp_network_gas
   position: 1
   dependent_on: _always_hidden
   slide_key: costs_heatpumps
 - key: investment_costs_fuel_cell
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_water_heater_fuel_cell_chp_network_gas
   position: 2
   dependent_on: _always_hidden
   slide_key: costs_heatpumps
 - key: investment_costs_electric_heat_pumps
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_heatpump_ground_water_electricity
   position: 3
-  dependent_on: ''
   slide_key: costs_heatpumps
 - key: investment_costs_gas_heat_pumps
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: buildings_space_heater_heatpump_air_water_network_gas
   position: 4
-  dependent_on: ''
   slide_key: costs_heatpumps
 - key: investment_costs_households_storage_space_heating
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "€/kWh"
-  fixed:
   interface_group: heat_buffer_costs
-  command_type:
-  related_converter:
   position: 1
-  dependent_on:
   slide_key: costs_heatpumps
 - key: investment_costs_households_storage_water_heating
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "€/kWh"
-  fixed:
   interface_group: heat_buffer_costs
-  command_type:
-  related_converter:
   position: 2
-  dependent_on:
   slide_key: costs_heatpumps

@@ -2,78 +2,37 @@
 - key: transport_truck_using_gasoline_mix_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: demand_transport_truck_technology
 - key: transport_truck_using_diesel_mix_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: demand_transport_truck_technology
 - key: transport_truck_using_electricity_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: demand_transport_truck_technology
 - key: transport_truck_using_compressed_natural_gas_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
   command_type: value
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: demand_transport_truck_technology
 - key: transport_truck_using_lng_mix_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 5
-  dependent_on: ''
   slide_key: demand_transport_truck_technology
 - key: transport_truck_using_hydrogen_share
   share_group: transport_truck_tech
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: demand_transport_truck_technology

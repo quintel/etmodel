@@ -23,6 +23,8 @@
 class InputElement < YModel::Base
   include AreaDependent::YModel
   source_file 'config/interface/input_elements'
+  default_attribute :draw_to_max, with: nil
+  default_attribute :fixed, with: false
   index_on :key
 
   ENUM_UNITS = %w[radio weather-curves].freeze

@@ -1,92 +1,46 @@
 ---
 - key: households_number_of_inhabitants
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: mln
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 0
-  dependent_on: ''
   slide_key: demand_households_population
 - key: households_apartments_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: housing_stock
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: demand_households_population
 - key: households_corner_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: housing_stock
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: demand_households_population
 - key: households_detached_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: housing_stock
-  command_type: ''
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: demand_households_population
 - key: households_semi_detached_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: housing_stock
-  command_type: ''
-  related_converter: ''
   position: 5
-  dependent_on: ''
   slide_key: demand_households_population
 - key: households_terraced_houses_share
   share_group: housing_stock
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: housing_stock
-  command_type: ''
-  related_converter: ''
   position: 6
-  dependent_on: ''
   slide_key: demand_households_population
 - key: households_number_of_residences
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "#"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: demand_households_population

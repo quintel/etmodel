@@ -1,183 +1,94 @@
 ---
 - key: volume_of_imported_heat
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: PJ
-  fixed: false
   interface_group: residual_heat
-  command_type: ''
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: supply_heat_sources
 - key: co2_emissions_of_imported_heat
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: kg/GJ
-  fixed: false
   interface_group: residual_heat
-  command_type: ''
-  related_converter: ''
   position: 5
-  dependent_on: ''
   slide_key: supply_heat_sources
 - key: capacity_of_energy_heat_well_geothermal
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
   interface_group: non_dispatchable_heat
-  command_type:
   related_converter: energy_heat_well_geothermal
   position: 1
-  dependent_on:
   slide_key: supply_heat_sources
 - key: capacity_of_energy_heat_solar_thermal
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
   interface_group: non_dispatchable_heat
-  command_type:
   related_converter: energy_heat_solar_thermal
   position: 2
-  dependent_on:
   slide_key: supply_heat_sources
 - key: capacity_of_energy_heat_heatpump_water_water_electricity
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
   interface_group: dispatchable_heat
-  command_type:
   related_converter: energy_heat_heatpump_water_water_electricity
   position: 6
-  dependent_on:
   slide_key: supply_heat_sources
 - key: capacity_of_energy_heat_burner_network_gas
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
   interface_group: dispatchable_heat
-  command_type:
   related_converter: energy_heat_burner_network_gas
   position: 7
-  dependent_on:
   slide_key: supply_heat_sources
 - key: capacity_of_energy_heat_burner_hydrogen
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
   interface_group: dispatchable_heat
-  command_type:
   related_converter: energy_heat_burner_hydrogen
   position: 8
-  dependent_on:
   slide_key: supply_heat_sources
 - key: capacity_of_energy_heat_burner_wood_pellets
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
   interface_group: dispatchable_heat
-  command_type:
   related_converter: energy_heat_burner_wood_pellets
   position: 9
-  dependent_on:
   slide_key: supply_heat_sources
 - key: capacity_of_energy_heat_burner_waste_mix
-  share_group:
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed:
   interface_group: dispatchable_heat
-  command_type:
   related_converter: energy_heat_burner_waste_mix
   position: 10
-  dependent_on:
   slide_key: supply_heat_sources
 - key: capacity_of_energy_heat_burner_crude_oil
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
   interface_group: dispatchable_heat
-  command_type: ''
   related_converter: energy_heat_burner_crude_oil
   position: 12
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: supply_heat_sources
 - key: share_of_industry_chemicals_other_reused_residual_heat
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: residual_heat
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: supply_heat_sources
 - key: share_of_industry_chemicals_fertilizers_reused_residual_heat
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: residual_heat
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: supply_heat_sources
 - key: share_of_industry_chemicals_refineries_reused_residual_heat
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: residual_heat
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: supply_heat_sources
 - key: share_of_industry_other_ict_reused_residual_heat
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: residual_heat
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: supply_heat_sources

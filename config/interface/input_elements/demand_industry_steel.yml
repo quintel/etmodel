@@ -1,79 +1,40 @@
 ---
 - key: industry_steel_production
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: demand_industry_steel
 - key: industry_steel_blastfurnace_bat_consumption_useable_heat_share
   share_group: steel_production
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: production_technology
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: demand_industry_steel
 - key: industry_steel_blastfurnace_current_consumption_useable_heat_share
   share_group: steel_production
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: production_technology
-  command_type: ''
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: demand_industry_steel
 - key: industry_steel_hisarna_consumption_useable_heat_share
   share_group: steel_production
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: production_technology
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: demand_industry_steel
 - key: industry_steel_electricfurnace_electricity_share
   share_group: steel_production
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: production_technology
-  command_type: ''
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: demand_industry_steel
 - key: energy_steel_hisarna_transformation_coal_woodpellets_share
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: bio_feedstock
-  command_type: ''
-  related_converter: ''
   position: 5
-  dependent_on: ''
   slide_key: demand_industry_steel

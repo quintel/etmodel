@@ -1,92 +1,45 @@
 ---
 - key: flexibility_outdoor_temperature
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: degC
-  fixed: false
   interface_group: temperature
   command_type: value
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh
 - key: settings_weather_curve_set
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: weather-curves
-  fixed: false
   interface_group: weather_years
-  command_type: ''
-  related_converter: ''
   position: 7
   dependent_on: has_weather_curves
   slide_key: flexibility_weather_conditions_and_flh
 - key: flh_of_energy_power_wind_turbine_coastal
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "#"
-  fixed: false
   interface_group: full_load_hours
-  command_type: ''
-  related_converter: ''
   position: 3
   dependent_on: has_coastline
   slide_key: flexibility_weather_conditions_and_flh
 - key: flh_of_energy_power_wind_turbine_inland
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "#"
-  fixed: false
   interface_group: full_load_hours
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh
 - key: flh_of_energy_power_wind_turbine_offshore
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "#"
-  fixed: false
   interface_group: full_load_hours
-  command_type: ''
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh
 - key: flh_of_energy_hydrogen_wind_turbine_offshore
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: "#"
-  fixed: false
   interface_group: full_load_hours
-  command_type: ''
-  related_converter: ''
   position: 5
-  dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh
 - key: flh_of_solar_pv_solar_radiation
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
-  unit: ''
-  fixed: false
   interface_group: full_load_hours
-  command_type: ''
-  related_converter: ''
   position: 6
-  dependent_on: ''
   slide_key: flexibility_weather_conditions_and_flh

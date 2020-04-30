@@ -2,11 +2,13 @@
 
 module YModel
   # Handles events that decorate the instances with methods.
-  module Trigger
+  module Triggerable
     protected
 
     def define_readers(model)
-      model.instance_eval { attr_reader(*schema.attributes) }
+      model.instance_eval do
+        schema.attributes.each { |attribute| define_reader(attribute) }
+      end
     end
 
     private

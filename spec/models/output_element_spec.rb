@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe OutputElement do
@@ -26,5 +28,25 @@ describe OutputElement do
     it 'has an association between relatee and output element' do
       expect(relatee.related_output_element).to eq(output_element)
     end
+  end
+
+  it '#max_axis_value has a default value' do
+    expect(subject.max_axis_value).to eq nil
+  end
+
+  it '#show_point_label has a default value' do
+    expect(subject.show_point_label).to eq false
+  end
+
+  it '#requires_merit_order has a default value' do
+    expect(subject.requires_merit_order).to eq false
+  end
+
+  it '#under_construction has a default value' do
+    expect(subject.under_construction).to eq false
+  end
+
+  it '#growth_chart has a default value' do
+    expect(subject.growth_chart).to eq false
   end
 end

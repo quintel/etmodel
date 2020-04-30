@@ -12,7 +12,6 @@ module YModel
 
     def belongs_to(model, options = {})
       define_method(model) do
-        # We might want to create a mechanism to memoize this.
         related_class =
           YModel::Helper.model_class(options[:class_name] || model)
         key =
@@ -25,7 +24,6 @@ module YModel
       end
     end
 
-    # These cop is disabled because its  a copy of ActiveRecords interface
     # rubocop:disable Naming/PredicateName
     # rubocop:disable Naming/UncommunicativeMethodParamName
     def has_many(model, class_name: nil, as: nil, foreign_key: nil)

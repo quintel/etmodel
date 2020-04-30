@@ -2,104 +2,55 @@
 - key: transport_cars_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: empty
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: demand_transport_passenger_transport
 - key: transport_passenger_trains_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: empty
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: demand_transport_passenger_transport
 - key: transport_planes_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: empty
-  command_type: ''
-  related_converter: ''
   position: 8
   dependent_on: is_national_scenario
   slide_key: demand_transport_passenger_transport
 - key: transport_useful_demand_passenger_kms
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: demand_transport_passenger_transport
 - key: transport_busses_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: empty
-  command_type: ''
-  related_converter: ''
   position: 5
-  dependent_on: ''
   slide_key: demand_transport_passenger_transport
 - key: transport_trams_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: empty
-  command_type: ''
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: demand_transport_passenger_transport
 - key: transport_bicycles_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: empty
-  command_type: ''
-  related_converter: ''
   position: 7
-  dependent_on: ''
   slide_key: demand_transport_passenger_transport
 - key: transport_motorcycles_share
   share_group: passenger_transport
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: empty
-  command_type: ''
-  related_converter: ''
   position: 6
-  dependent_on: ''
   slide_key: demand_transport_passenger_transport

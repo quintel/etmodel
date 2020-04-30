@@ -12,12 +12,16 @@ module YModel
 
     def initialize(source)
       @attributes = source.flat_map(&:keys)
-        .uniq
         .map(&:to_sym)
+        .to_set
     end
 
     def include?(key)
       attributes.include?(key.to_sym)
+    end
+
+    def <<(attribute)
+      @attributes << attribute.to_sym
     end
   end
 end

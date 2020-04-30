@@ -52,6 +52,12 @@ class YModel::InvalidCompiled < YModel::Base
   source_file 'spec/fixtures/ymodel/invalid_compiled'
   index_on :key
 end
+
+class YModel::WithAttribute < YModel::Base
+  source_file 'spec/fixtures/ymodel/concrete.yml'
+  default_attribute "test_attribute", with: true
+  default_attribute "position", with: 42
+end
 # rubocop:enable Style/ClassAndModuleChildren
 
 # rubocop:disable RSpec/MultipleDescribes
@@ -271,6 +277,13 @@ describe YModel::Schema do
       expect(subject.count).to eq(3)
     end
   end
+
+  describe '#<<' do
+    it "adds an attribute" do
+      expect { schema << "foo" }
+        .to change { schema.attributes.count }.by 1
+    end
+  end
 end
 
 describe YModel::Dump do
@@ -303,6 +316,39 @@ describe YModel::InvalidCompiled do
   it 'raises duplicate index error' do
     expect { described_class.all }
       .to raise_error(YModel::DuplicateIndexError)
+  end
+end
+
+describe YModel::WithAttribute do
+  subject { described_class.new }
+
+  it { is_expected.to respond_to :test_attribute }
+
+  context "when adding a attribute that doesn't occur" do
+    subject { described_class.new.test_attribute }
+
+    it { is_expected.to eq true }
+
+    it 'can be overloaded' do
+      record = described_class.new test_attribute: 'foo'
+      expect(record.test_attribute).to eq 'foo'
+    end
+  end
+
+  context 'when adding an attribute that does occur' do
+    describe 'it uses the value in the yaml file if available' do
+      subject { described_class.find(1).position }
+
+      it { is_expected.to eq(1) }
+    end
+
+    describe "it used the default if not available in the yaml" do
+      subject { described_class.find(4) }
+
+      it 'falls back to the default' do
+        expect(subject.position).to eq(42)
+      end
+    end
   end
 end
 

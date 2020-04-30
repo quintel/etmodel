@@ -1,53 +1,21 @@
 ---
 - key: costs_wacc_households
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: costs_wacc
 - key: costs_wacc_public_infrastructure
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: costs_wacc
 - key: costs_wacc_proven_technologies
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: costs_wacc
 - key: costs_wacc_unproven_technologies
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 4
-  dependent_on: ''
   slide_key: costs_wacc

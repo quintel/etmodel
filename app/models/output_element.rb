@@ -49,6 +49,13 @@ class OutputElement < YModel::Base
   index_on :key
   source_file 'config/interface/output_elements'
 
+  default_attribute :max_axis_value, with: nil
+  default_attribute :fixed, with: false
+  default_attribute :show_point_label, with: false
+  default_attribute :requires_merit_order, with: false
+  default_attribute :under_construction, with: false
+  default_attribute :growth_chart, with: false
+
   has_many :output_element_series
   belongs_to :output_element_type
   has_many :slides
@@ -151,10 +158,8 @@ class OutputElement < YModel::Base
   def template
     return nil if jqplot_based? || d3_chart?
 
-    if html_table?
-      "output_elements/tables/#{key}"
-    else
-      'output_elements/block_chart'
-    end
+    return "output_elements/tables/#{key}" if html_table?
+
+    'output_elements/block_chart'
   end
 end

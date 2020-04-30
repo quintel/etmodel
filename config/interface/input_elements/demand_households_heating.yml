@@ -2,25 +2,14 @@
 - key: households_heater_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_electricity
   position: 9
-  dependent_on: ''
   slide_key: demand_households_heating
 - key: households_heater_crude_oil_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_crude_oil
   position: 11
   dependent_on: has_coal_oil_for_heating_built_environment
@@ -28,64 +17,35 @@
 - key: households_heater_combined_network_gas_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_combined_network_gas
   position: 1
-  dependent_on: ''
   slide_key: demand_households_heating
 - key: households_heater_heatpump_ground_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_heatpump_ground_water_electricity
   position: 4
-  dependent_on: ''
   slide_key: demand_households_heating
 - key: households_heater_wood_pellets_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_wood_pellets
   position: 8
-  dependent_on: ''
   slide_key: demand_households_heating
 - key: households_heater_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_heatpump_air_water_electricity
   position: 3
-  dependent_on: ''
   slide_key: demand_households_heating
 - key: households_heater_coal_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_coal
   position: 12
   dependent_on: has_coal_oil_for_heating_built_environment
@@ -93,52 +53,27 @@
 - key: households_heater_network_gas_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_network_gas
   position: 10
-  dependent_on: ''
   slide_key: demand_households_heating
 - key: households_heater_district_heating_steam_hot_water_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: demand_households_heating
 - key: households_heater_hybrid_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_hybrid_heatpump_air_water_electricity
   position: 5
-  dependent_on: ''
   slide_key: demand_households_heating
 - key: households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share
   share_group: heating_households
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   position: 6
-  dependent_on: ''
   slide_key: demand_households_heating

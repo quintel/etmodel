@@ -2,65 +2,31 @@
 - key: households_cooker_network_gas_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group:
-  command_type:
-  related_converter:
   position: 1
-  dependent_on:
   slide_key: demand_households_cooking
 - key: households_cooker_resistive_electricity_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group:
-  command_type:
-  related_converter:
   position: 2
-  dependent_on:
   slide_key: demand_households_cooking
 - key: households_cooker_halogen_electricity_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group:
-  command_type:
-  related_converter:
   position: 3
-  dependent_on:
   slide_key: demand_households_cooking
 - key: households_cooker_induction_electricity_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group:
-  command_type:
-  related_converter:
   position: 4
-  dependent_on:
   slide_key: demand_households_cooking
 - key: households_cooker_wood_pellets_share
   share_group: cooking
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: households_cooker_wood_pellets
   position: 5
-  dependent_on: ''
   slide_key: demand_households_cooking

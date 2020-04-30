@@ -2,51 +2,28 @@
 - key: buildings_cooling_heatpump_air_water_network_gas_share
   share_group: cooling_buildings
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: buildings_cooling_heatpump_air_water_network_gas
   position: 2
-  dependent_on: ''
   slide_key: demand_buildings_cooling
 - key: buildings_cooling_collective_heatpump_water_water_ts_electricity_share
   share_group: cooling_buildings
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: buildings_cooling_collective_heatpump_water_water_ts_electricity
   position: 1
-  dependent_on: ''
   slide_key: demand_buildings_cooling
 - key: buildings_cooling_airconditioning_share
   share_group: cooling_buildings
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: buildings_cooling_airconditioning_electricity
   position: 3
-  dependent_on: ''
   slide_key: demand_buildings_cooling
 - key: buildings_cooling_collective_cooling_network_electricity_share
   share_group: cooling_buildings
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
   related_converter: buildings_cooling_collective_cooling_network_electricity
   position: 4
   dependent_on: has_cold_network

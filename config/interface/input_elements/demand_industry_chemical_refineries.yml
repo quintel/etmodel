@@ -1,131 +1,72 @@
 ---
 - key: industry_useful_demand_for_chemical_refineries
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
-  interface_group: ''
-  command_type: ''
-  related_converter: ''
   position: 1
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: industry_useful_demand_for_chemical_refineries_electricity_efficiency
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: efficiency
-  command_type: ''
-  related_converter: ''
   position: 2
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: industry_useful_demand_for_chemical_refineries_useable_heat_efficiency
-  share_group: ''
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: efficiency
-  command_type: ''
-  related_converter: ''
   position: 3
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: industry_chemicals_refineries_burner_network_gas_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: heat production
-  command_type: ''
   related_converter: industry_chemicals_refineries_burner_network_gas
   position: 4
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: industry_chemicals_refineries_burner_crude_oil_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: heat production
-  command_type: ''
   related_converter: industry_chemicals_refineries_burner_crude_oil
   position: 5
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: industry_chemicals_refineries_burner_wood_pellets_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: heat production
-  command_type: ''
   related_converter: industry_chemicals_refineries_burner_wood_pellets
   position: 6
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: industry_chemicals_refineries_burner_coal_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: heat production
-  command_type: ''
   related_converter: industry_chemicals_refineries_burner_coal
   position: 7
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: industry_final_demand_for_chemical_refineries_steam_hot_water_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: heat production
-  command_type: ''
-  related_converter: ''
   position: 8
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity
-  share_group: ''
   step_value: 1.0
-  draw_to_min:
-  draw_to_max:
   unit: MW
-  fixed: false
   interface_group: hybrid_heating
-  command_type: ''
   related_converter: industry_chemicals_refineries_flexibility_p2h_network_gas_electricity
   position: 10
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries
 - key: industry_chemicals_refineries_burner_hydrogen_share
   share_group: chemical_refineries_heat
   step_value: 0.1
-  draw_to_min:
-  draw_to_max:
   unit: "%"
-  fixed: false
   interface_group: heat production
-  command_type: ''
   related_converter: industry_chemicals_refineries_burner_hydrogen
   position: 8
-  dependent_on: ''
   slide_key: demand_industry_chemical_refineries

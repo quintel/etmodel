@@ -1,6 +1,6 @@
 # The Energy Transition Model (ETM) Professional
 
-![](https://github.com/quintel/documentation/blob/master/images/20181031_etmodel_screenshot.png)
+![](https://docs.energytransitionmodel.com/img/docs/20181031_etmodel_screenshot.png)
 
 This is the source code of the [ETM Pro](http://pro.et-model.com):
 an online web app that let you create a future energy scenario for various countries, municipalities, neighbourhoods and more.
@@ -43,15 +43,15 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
   cp -vn config/config.sample.yml config/config.yml
   cp -vn config/email.sample.yml config/email.yml
   ```
-  
+
   for the lazy:
-  
+
   ```bash
   cd config
   for i in *.sample.yml; do; j="$(echo $i | sed 's/.sample//g')"; cp -vn $i $j; done;
   ```
-  
-  
+
+
   * Probably set "standalone" to `true` in "config/config.yml"
 
 * Run `bundle install` to install all the dependencies

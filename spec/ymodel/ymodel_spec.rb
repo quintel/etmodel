@@ -280,8 +280,8 @@ describe YModel::Schema do
 
   describe '#<<' do
     it "adds an attribute" do
-      expect{ schema << "foo" }
-        .to change{ schema.attributes.count }.by 1
+      expect { schema << "foo" }
+        .to change { schema.attributes.count }.by 1
     end
   end
 end
@@ -326,21 +326,23 @@ describe YModel::WithAttribute do
 
   context "when adding a attribute that doesn't occur" do
     subject { described_class.new.test_attribute }
+
     it { is_expected.to eq true }
 
     it 'can be overloaded' do
-      record =  described_class.new test_attribute: 'foo'
+      record = described_class.new test_attribute: 'foo'
       expect(record.test_attribute).to eq 'foo'
     end
   end
 
   context 'when adding an attribute that does occur' do
-    describe 'with a record that has the attribute' do
+    describe 'it uses the value in the yaml file if available' do
       subject { described_class.find(1).position }
+
       it { is_expected.to eq(1) }
     end
 
-    describe "with a record that doesn't have the attribute" do
+    describe "it used the default if not available in the yaml" do
       subject { described_class.find(4) }
 
       it 'falls back to the default' do

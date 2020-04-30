@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module YModel
   # This mixin holds the query methods.
   module Queryable
-
     def find(index)
       all.find { |record| record.index == index }
     end

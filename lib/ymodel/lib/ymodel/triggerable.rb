@@ -7,7 +7,7 @@ module YModel
 
     def define_readers(model)
       model.instance_eval do
-        schema.attributes.each{ |attribute| define_reader(attribute ) }
+        schema.attributes.each { |attribute| define_reader(attribute) }
       end
     end
 

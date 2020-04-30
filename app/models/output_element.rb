@@ -158,10 +158,8 @@ class OutputElement < YModel::Base
   def template
     return nil if jqplot_based? || d3_chart?
 
-    if html_table?
-      "output_elements/tables/#{key}"
-    else
-      'output_elements/block_chart'
-    end
+    return "output_elements/tables/#{key}" if html_table?
+
+    'output_elements/block_chart'
   end
 end

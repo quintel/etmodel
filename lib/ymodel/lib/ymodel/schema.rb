@@ -20,7 +20,7 @@ module YModel
       attributes.include?(key.to_sym)
     end
 
-    def << attribute
+    def <<(attribute)
       @attributes << attribute.to_sym
     end
   end

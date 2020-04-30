@@ -16,7 +16,7 @@ module YModel
 
     def initialize(record = {})
       record.each do |k, v|
-        instance_variable_set "@#{k}".to_s, v if attribute?(k)
+        instance_variable_set "@#{k}", v if attribute?(k)
       end
     end
 

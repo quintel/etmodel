@@ -247,7 +247,8 @@ describe YModel::Base do
                             en_vimeo_id: '',
                             position: 1,
                             nillable: nil,
-                            concrete_relation_id: 2)
+                            concrete_relation_id: 2,
+                            test_attribute: nil)
     end
   end
 
@@ -340,6 +341,13 @@ describe YModel::WithAttribute do
       subject { described_class.find(1).position }
 
       it { is_expected.to eq(1) }
+    end
+
+    describe 'it uses the value in the yaml file when `false`' do
+      subject { described_class.find(4).test_attribute }
+
+      it { is_expected.to eq(false) }
+      it { is_expected.not_to be_nil }
     end
 
     describe "it used the default if not available in the yaml" do

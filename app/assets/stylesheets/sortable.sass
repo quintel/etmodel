@@ -14,7 +14,7 @@ ul.sortable li, .sortable-container .fixed
   list-style-type: none
   margin-bottom: -1px
   overflow: hidden
-  padding: 10px 14px 10px 53px
+  padding: 10px 14px 9px 53px
   position: relative
 
   &:before
@@ -35,10 +35,10 @@ ul.sortable li, .sortable-container .fixed
 
   span.fa
     color: #BBB
-    float: right
-    line-height: 18px
-    margin-top: 2px
-    margin-left: 10px
+    margin-left: 0.75rem
+    position: absolute
+    right: 14px
+    top: 14px
 
 ul.sortable li
   cursor: grab
@@ -51,6 +51,9 @@ ul.sortable li
   &:last-child
     border-bottom-left-radius: 3px
     border-bottom-right-radius: 3px
+
+  &.not-installed
+    color: #999
 
   .fa
     -webkit-transform: scale(1.5, 1.0)
@@ -90,9 +93,10 @@ ul.sortable li
     margin-top: 4px
     margin-bottom: 0
 
-    .fa
+    span.fa
       color: #ccc
       font-size: 17px
+      top: 12px
 
   .fixed, .sortable li:last-child
     border-bottom-color: #ccc

@@ -2,12 +2,20 @@
 
 (function(window) {
   var optionTemplate = _.template(
-    '<li data-id="<%= id %>">' +
+    '<li data-id="<%= id %>"' +
+      '<% if (!isInstalled) { %>' +
+      ' class="not-installed"' +
+      '<% } %>' +
+      '>' +
       '  <%- name %>' +
       '  <span class="fa fa-bars"></span>' +
       '  <% if (capacity) { %>' +
       '    <div class="flexibility-options__capacity">' +
-      '      <%- capacity %> <%- installed %>' +
+      '      <% if (isInstalled) { %>' +
+      '        <%- capacity %> <%- installed %>' +
+      '      <% } else { %>' +
+      '        <%- notInstalled %>' +
+      '      <% } %> ' +
       '    </div>' +
       '  <% } %>' +
       '</li>'
@@ -19,16 +27,18 @@
    */
   function renderOptions(element, options, capacities, i18nKey) {
     options.forEach(function(optionKey) {
-      if (capacities && capacities[optionKey].value === 0) {
-        return;
-      }
+      var capacity = capacities && capacities[optionKey];
 
       element.append(
         optionTemplate({
           id: optionKey,
           name: I18n.t('output_elements.' + i18nKey + '.' + optionKey),
-          capacity: capacities && capacities[optionKey].smartScale().toString(),
-          installed: I18n.t('output_elements.flexibility_order.installed')
+          isInstalled: capacity == undefined || capacity.value !== 0,
+          capacity: capacity && capacity.smartScale().toString(),
+          installed: I18n.t('output_elements.flexibility_order.installed'),
+          notInstalled: I18n.t(
+            'output_elements.flexibility_order.not_installed'
+          )
         })
       );
     });

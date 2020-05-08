@@ -21,7 +21,7 @@ D3.merit_order_price_curve =
 
       super
 
-      @drawLegend(@legendSeries, 1)
+      @drawLegend(@legendSeries, 2)
 
     averageData: (data) ->
       mean = d3.mean(data.find((series) => series.is_target).values)

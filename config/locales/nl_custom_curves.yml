@@ -17,7 +17,7 @@ nl:
       illegal_value: "Profiel mag alleen numerieke waarden bevatten"
       not_a_curve: "Profiel moet een CSV file zijn met 8760 getallen (één getal voor elk uur in een jaar)"
       wrong_length: "Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)"
-    imported_electricity_price:
+    interconnector_1_price: &interconnector_price
       default: "Default prijsprofiel"
       default_description: "Constante prijs gedurende het jaar"
       description_html: |
@@ -26,3 +26,8 @@ nl:
         import-stroom (in €/MWh). Voor meer uitleg over hoe dit werkt en voorbeelden van compatibele profielen
         kun je <a href="%{docs_path}">onze documentatie bekijken.</a>.
       value: "€%{value}/MWh"
+    interconnector_2_price: *interconnector_price
+    interconnector_3_price: *interconnector_price
+    interconnector_4_price: *interconnector_price
+    interconnector_5_price: *interconnector_price
+    interconnector_6_price: *interconnector_price

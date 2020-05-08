@@ -60,7 +60,8 @@ class @AppView extends Backbone.View
       new UserSortable(heat_order, 'heat_network_order', true).render()
 
     if (curve_upload = wrapper.find('.curve-upload')).length
-      CustomCurveChooserView.setupWithWrapper(curve_upload).render();
+      curve_upload.each (_index, element) ->
+        CustomCurveChooserView.setupWithWrapper($(element)).render();
 
     deferred
 

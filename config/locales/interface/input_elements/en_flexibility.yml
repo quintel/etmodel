@@ -199,7 +199,7 @@ en:
       description: |-
         The rate of a kWh power in 2020 is on average 22.5 in the Netherlands. Of this, 7.5 cents is for the electricity itself (the market price) and 15 cents for energy tax and renewable energy storage (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
         This slider only has influence on the recommended treshold COP in the chart on the right and not on other ETM calculations.
-    interconnectors_availability_for_export:
+    electricity_interconnector_1_export_availability: &interconnector_export_availability
       title: Availability for export
       short_description:
       description: It is very likely that not all of the physical interconnector capacity
@@ -207,7 +207,12 @@ en:
         much electricity production by wind turbines and solar panels, this is probably
         also true for the neighbouring countries. Using this slider you can set the
         percentage of the interconnector capacity that is available for export.
-    interconnectors_availability_for_import:
+    electricity_interconnector_2_export_availability: *interconnector_export_availability
+    electricity_interconnector_3_export_availability: *interconnector_export_availability
+    electricity_interconnector_4_export_availability: *interconnector_export_availability
+    electricity_interconnector_5_export_availability: *interconnector_export_availability
+    electricity_interconnector_6_export_availability: *interconnector_export_availability
+    electricity_interconnector_1_import_availability: &interconnector_import_availability
       title: Availability for import
       short_description:
       description: It is very likely that not all of the physical interconnector capacity
@@ -215,12 +220,38 @@ en:
         much electricity production by wind turbines and solar panels, this is probably
         also true for the neighbouring countries. Using this slider you can set the
         percentage of the interconnector capacity that is available for import.
-    interconnectors_interconnector_capacity:
+    electricity_interconnector_2_import_availability: *interconnector_import_availability
+    electricity_interconnector_3_import_availability: *interconnector_import_availability
+    electricity_interconnector_4_import_availability: *interconnector_import_availability
+    electricity_interconnector_5_import_availability: *interconnector_import_availability
+    electricity_interconnector_6_import_availability: *interconnector_import_availability
+    electricity_interconnector_1_capacity: &interconnector_capacity
       title: Interconnector capacity
       short_description:
       description: The interconnectors with neighbouring countries have limited capacity.
         Using this slider you can change the interconnector capacity from its present
         value.
+    electricity_interconnector_2_capacity: *interconnector_capacity
+    electricity_interconnector_3_capacity: *interconnector_capacity
+    electricity_interconnector_4_capacity: *interconnector_capacity
+    electricity_interconnector_5_capacity: *interconnector_capacity
+    electricity_interconnector_6_capacity: *interconnector_capacity
+    electricity_interconnector_1_marginal_costs: &interconnector_marginal_costs
+      title: Costs of imported electricity
+      short_description:
+      description: "Do you think that when you have to import electricity that on
+        average it will be cheap because of peak production, or will it be expensive
+        because of peak demand?\r\n</p>\r\n\r\nThe average costs of electricity at
+        the Central West European market was around 35 €/MWh in 2015. However this
+        fluctuates a lot. <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
+        target =\"_blank\">(European Commission, 2015)</a>. \r\n\r\n\r\n</p>\r\n\r\nFor
+        more information about the fluctuating prices see the <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
+        target =\"_blank\">documentation</a>. "
+    electricity_interconnector_2_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_3_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_4_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_5_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_6_marginal_costs: *interconnector_marginal_costs
     curtailment_of_households_solar_pv_solar_radiation:
       title: Solar PV households
       short_description:

@@ -208,7 +208,7 @@ nl:
       description: |-
         Het tarief van een kWh stroom is in 2020 gemiddeld 22,5 cent in Nederland. Daarvan is 7,5 cent voor de elektriciteit zelf (de marktprijs) en 15 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
         Deze slider heeft enkel invloed op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen
-    interconnectors_availability_for_export:
+    electricity_interconnector_1_export_availability: &interconnector_export_availability
       title: Beschikbaar voor export
       short_description:
       description: Het is erg waarschijnlijk dat niet alle fysieke interconnectiecapaciteit
@@ -217,7 +217,12 @@ nl:
         hier op dat moment ook last van zullen hebben. Met deze slider kun je daarom
         instellen welk deel van de interconnectiecapaciteit je verwacht te kunnen
         gebruiken voor export.
-    interconnectors_availability_for_import:
+    electricity_interconnector_2_export_availability: *interconnector_export_availability
+    electricity_interconnector_3_export_availability: *interconnector_export_availability
+    electricity_interconnector_4_export_availability: *interconnector_export_availability
+    electricity_interconnector_5_export_availability: *interconnector_export_availability
+    electricity_interconnector_6_export_availability: *interconnector_export_availability
+    electricity_interconnector_1_import_availability: &interconnector_import_availability
       title: Beschikbaar voor import
       short_description:
       description: Het is erg waarschijnlijk dat niet alle fysieke interconnectiecapaciteit
@@ -226,11 +231,39 @@ nl:
         hier op dat moment ook last van zullen hebben. Met deze slider kun je daarom
         instellen welk deel van de interconnectiecapaciteit je verwacht te kunnen
         gebruiken voor import.
-    interconnectors_interconnector_capacity:
+    electricity_interconnector_2_import_availability: *interconnector_import_availability
+    electricity_interconnector_3_import_availability: *interconnector_import_availability
+    electricity_interconnector_4_import_availability: *interconnector_import_availability
+    electricity_interconnector_5_import_availability: *interconnector_import_availability
+    electricity_interconnector_6_import_availability: *interconnector_import_availability
+    electricity_interconnector_1_capacity: &interconnector_capacity
       title: Interconnectiecapaciteit
       short_description:
       description: De interconnectiecapaciteit met de omringende landen is beperkt.
         Met deze slider kun je de toekomstige interconnectiecapaciteit instellen.
+    electricity_interconnector_2_capacity: *interconnector_capacity
+    electricity_interconnector_3_capacity: *interconnector_capacity
+    electricity_interconnector_4_capacity: *interconnector_capacity
+    electricity_interconnector_5_capacity: *interconnector_capacity
+    electricity_interconnector_6_capacity: *interconnector_capacity
+    electricity_interconnector_1_marginal_costs: &interconnector_marginal_costs
+      title: Kosten van geïmporteerde elektriciteit
+      short_description:
+      description: "Denk jij dat de geïmporteerde elektriciteit gemiddeld goedkoop
+        is door overschotten in de productie, of denk jij dat het juist duur is doordat
+        de import vooral is tijdens de piekvraag? \r\n</p>\r\n\r\nDe gemiddelde kosten
+        van elektriciteit op de Centraal West Europese markt waren rond de 35 €/MWh
+        in 2015. Alhoewel dit enorm kan verschillen per maand, dag, of zelfs uur.
+        <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
+        target =\"_blank\">(European Commission, 2015)</a>. \r\n\r\n</p>\r\n\r\n\r\nJe
+        kunt een beter beeld krijgen van de fluctuerende prijs door te kijken in de
+        <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
+        target =\"_blank\">documentatie</a>. "
+    electricity_interconnector_2_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_3_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_4_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_5_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_6_marginal_costs: *interconnector_marginal_costs
     curtailment_of_households_solar_pv_solar_radiation:
       title: Zon op dak huishoudens
       short_description:

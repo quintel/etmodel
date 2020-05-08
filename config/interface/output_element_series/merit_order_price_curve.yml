@@ -1,25 +1,85 @@
 ---
 - label: merit_price
   color: "#5D7929"
-  order_by: 2
-  group: 
-  show_at_first: 
+  order_by: 7
+  group:
+  show_at_first:
   is_target_line: true
-  target_line_position: 
+  target_line_position:
   gquery: merit_order_price_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: merit_order_price_curve
   key: merit_price_merit_order_price_curve
-- label: imported_electricity_price_curve
-  color: "#a9a9a9"
-  order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
-  gquery: imported_electricity_price_curve
-  is_1990: 
-  dependent_on: 
+- label: interconnector_1_marginal_cost_curve
+  color: "#A1A1A1"
+  order_by: 6
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: interconnector_1_marginal_cost_curve
+  is_1990:
+  dependent_on:
   output_element_key: merit_order_price_curve
-  key: imported_electricity_price_curve_merit_order_price_curve
+  key: interconnector_1_marginal_cost_curve
+- label: interconnector_2_marginal_cost_curve
+  color: "#969696"
+  order_by: 5
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: interconnector_2_marginal_cost_curve
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_price_curve
+  key: interconnector_2_marginal_cost_curve
+- label: interconnector_3_marginal_cost_curve
+  color: "#8C8C8C"
+  order_by: 4
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: interconnector_3_marginal_cost_curve
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_price_curve
+  key: interconnector_3_marginal_cost_curve
+- label: interconnector_4_marginal_cost_curve
+  color: "#777777"
+  order_by: 3
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: interconnector_4_marginal_cost_curve
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_price_curve
+  key: interconnector_4_marginal_cost_curve
+- label: interconnector_5_marginal_cost_curve
+  color: "#626262"
+  order_by: 2
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: interconnector_5_marginal_cost_curve
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_price_curve
+  key: interconnector_5_marginal_cost_curve
+- label: interconnector_6_marginal_cost_curve
+  color: "#4D4D4D"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: interconnector_6_marginal_cost_curve
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_price_curve
+  key: interconnector_6_marginal_cost_curve

@@ -1,16 +1,156 @@
 ---
-- key: interconnectors_availability_for_export
-  step_value: 0.1
-  unit: "%"
-  position: 3
-  slide_key: flexibility_electricity_import_export_interconnectivity
-- key: interconnectors_availability_for_import
-  step_value: 0.1
-  unit: "%"
-  position: 2
-  slide_key: flexibility_electricity_import_export_interconnectivity
-- key: interconnectors_interconnector_capacity
+# Interconnector #1
+- key: electricity_interconnector_1_capacity
   step_value: 0.1
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity
+  interface_group: capacity
+- key: electricity_interconnector_1_import_availability
+  step_value: 0.1
+  unit: "%"
+  position: 2
+  slide_key: flexibility_electricity_import_export_interconnectivity
+  interface_group: capacity
+- key: electricity_interconnector_1_export_availability
+  step_value: 0.1
+  unit: "%"
+  position: 3
+  slide_key: flexibility_electricity_import_export_interconnectivity
+  interface_group: capacity
+- key: electricity_interconnector_1_marginal_costs
+  step_value: 0.1
+  unit: "€/MWh"
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity
+  interface_group: costs
+
+# Interconnector #2
+- key: electricity_interconnector_2_capacity
+  step_value: 0.1
+  unit: MW
+  position: 1
+  slide_key: flexibility_electricity_import_export_interconnectivity_2
+  interface_group: capacity
+- key: electricity_interconnector_2_import_availability
+  step_value: 0.1
+  unit: "%"
+  position: 2
+  slide_key: flexibility_electricity_import_export_interconnectivity_2
+  interface_group: capacity
+# - key: electricity_interconnector_2_export_availability
+#   step_value: 0.1
+#   unit: "%"
+#   position: 3
+#   slide_key: flexibility_electricity_import_export_interconnectivity_2
+#   interface_group: capacity
+- key: electricity_interconnector_2_marginal_costs
+  step_value: 0.1
+  unit: "€/MWh"
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_2
+  interface_group: costs
+
+# Interconnector #3
+- key: electricity_interconnector_3_capacity
+  step_value: 0.1
+  unit: MW
+  position: 1
+  slide_key: flexibility_electricity_import_export_interconnectivity_3
+  interface_group: capacity
+- key: electricity_interconnector_3_import_availability
+  step_value: 0.1
+  unit: "%"
+  position: 2
+  slide_key: flexibility_electricity_import_export_interconnectivity_3
+  interface_group: capacity
+# - key: electricity_interconnector_3_export_availability
+#   step_value: 0.1
+#   unit: "%"
+#   position: 3
+#   slide_key: flexibility_electricity_import_export_interconnectivity_3
+#   interface_group: capacity
+- key: electricity_interconnector_3_marginal_costs
+  step_value: 0.1
+  unit: "€/MWh"
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_3
+  interface_group: costs
+
+# Interconnector #4
+- key: electricity_interconnector_4_capacity
+  step_value: 0.1
+  unit: MW
+  position: 1
+  slide_key: flexibility_electricity_import_export_interconnectivity_4
+  interface_group: capacity
+- key: electricity_interconnector_4_import_availability
+  step_value: 0.1
+  unit: "%"
+  position: 2
+  slide_key: flexibility_electricity_import_export_interconnectivity_4
+  interface_group: capacity
+# - key: electricity_interconnector_4_export_availability
+#   step_value: 0.1
+#   unit: "%"
+#   position: 3
+#   slide_key: flexibility_electricity_import_export_interconnectivity_4
+#   interface_group: capacity
+- key: electricity_interconnector_4_marginal_costs
+  step_value: 0.1
+  unit: "€/MWh"
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_4
+  interface_group: costs
+
+# Interconnector #5
+- key: electricity_interconnector_5_capacity
+  step_value: 0.1
+  unit: MW
+  position: 1
+  slide_key: flexibility_electricity_import_export_interconnectivity_5
+  interface_group: capacity
+- key: electricity_interconnector_5_import_availability
+  step_value: 0.1
+  unit: "%"
+  position: 2
+  slide_key: flexibility_electricity_import_export_interconnectivity_5
+  interface_group: capacity
+# - key: electricity_interconnector_5_export_availability
+#   step_value: 0.1
+#   unit: "%"
+#   position: 3
+#   slide_key: flexibility_electricity_import_export_interconnectivity_5
+#   interface_group: capacity
+- key: electricity_interconnector_5_marginal_costs
+  step_value: 0.1
+  unit: "€/MWh"
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_5
+  interface_group: costs
+
+# Interconnector #6
+- key: electricity_interconnector_6_capacity
+  step_value: 0.1
+  unit: MW
+  position: 1
+  slide_key: flexibility_electricity_import_export_interconnectivity_6
+  interface_group: capacity
+- key: electricity_interconnector_6_import_availability
+  step_value: 0.1
+  unit: "%"
+  position: 2
+  slide_key: flexibility_electricity_import_export_interconnectivity_6
+  interface_group: capacity
+# - key: electricity_interconnector_6_export_availability
+#   step_value: 0.1
+#   unit: "%"
+#   position: 3
+#   slide_key: flexibility_electricity_import_export_interconnectivity_6
+#   interface_group: capacity
+- key: electricity_interconnector_6_marginal_costs
+  step_value: 0.1
+  unit: "€/MWh"
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_6
+  interface_group: costs

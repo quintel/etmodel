@@ -34,4 +34,4 @@
         - sliders.each do |input_element|
           = render :partial => 'input_elements/slider', :object => input_element
 
-    = render "scenarios/slides/#{ slide.key }" rescue nil
+    = render "scenarios/slides/#{slide.key}" rescue nil

@@ -183,11 +183,13 @@
       'change form input[type=file]': 'fileDidChange'
     },
 
-    initialize: function() {
+    initialize: function(options) {
+      Backbone.View.prototype.initialize.apply(this, arguments);
+
       this.curveData = null;
 
       this.apiURL =
-        App.scenario.url_path() + '/custom_curves/imported_electricity_price';
+        App.scenario.url_path() + '/custom_curves/' + options.curveName;
 
       // Allow this.t to be passed into other functions while retaining scope.
       this.t = _.bind(this.t, this);

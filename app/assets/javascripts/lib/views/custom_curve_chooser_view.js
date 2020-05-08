@@ -410,7 +410,11 @@
     // is set, listen to the view events...
     if (disableInputKey) {
       view.on('curveIsSet', function(isSet) {
-        App.input_elements.find_by_key(disableInputKey).set('disabled', isSet);
+        var ie = App.input_elements.find_by_key(disableInputKey);
+
+        if (ie && !!ie.get('disabled') !== isSet) {
+          ie.set('disabled', isSet);
+        }
       });
     }
 

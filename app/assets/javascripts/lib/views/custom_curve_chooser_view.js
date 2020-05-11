@@ -1,8 +1,9 @@
-/* globals $ _ App Backbone I18n */
+/* globals $ _ App Backbone CustomCurve I18n */
 (function(window) {
   'use strict';
 
   var CustomCurveChooserView;
+  var CustomCurveLoadingView;
 
   /**
    * Creates HTML with the actions which may be taken by a user based on the
@@ -172,6 +173,21 @@
   }
 
   /**
+   * Shown when data about a curve is currently loading.
+   */
+  CustomCurveLoadingView = Backbone.View.extend({
+    render: function() {
+      this.$el.empty();
+
+      this.$el.append(
+        renderCSVInfo({ name: I18n.t('custom_curves.loading') }, null, {
+          icon: 'loading'
+        })
+      );
+    }
+  });
+
+  /**
    * Backbone view which shows the CSV information, with options to upload a new
    * curve or revert to the default. Handles loading the curve information from
    * ETEngine when rendered.
@@ -186,28 +202,21 @@
     initialize: function(options) {
       Backbone.View.prototype.initialize.apply(this, arguments);
 
-      this.curveData = null;
+      // this.curveData = null;
 
       this.apiURL =
-        App.scenario.url_path() + '/custom_curves/' + options.curveName;
+        App.scenario.url_path() + '/custom_curves/' + options.model.get('type');
 
       // Allow this.t to be passed into other functions while retaining scope.
       this.t = _.bind(this.t, this);
     },
 
     render: function() {
-      if (!this.curveData) {
-        this.sendRequest('GET');
-        this.renderLoading();
-
-        return this;
-      }
-
       this.$el.empty();
 
-      if (this.curveData.name) {
+      if (this.model.isAttached()) {
         this.$el.append(
-          renderCSVInfo(this.curveData, this.t, {
+          renderCSVInfo(this.model.attributes, this.t, {
             showUpload: true,
             showRemove: true
           })
@@ -225,7 +234,7 @@
       }
 
       // Notify listeners whether a custom curve is present.
-      this.trigger('curveIsSet', !!this.curveData.name);
+      this.trigger('curveIsSet', this.model.isAttached());
 
       this.$el.append(renderUploadForm(this.apiURL));
 
@@ -257,10 +266,7 @@
 
       this.$el.empty();
 
-      if (this.previousCurveData) {
-        this.curveData = this.previousCurveData;
-        this.render();
-      }
+      this.render();
 
       errors.forEach(function(message) {
         errorsList.append($('<li />').text(message));
@@ -274,8 +280,6 @@
     sendRequest: function(method, options) {
       var self = this;
 
-      this.previousCurveData = this.curveData;
-
       return $.ajax(
         $.extend(
           {},
@@ -283,16 +287,16 @@
             url: this.apiURL,
             method: method,
             success: function(data) {
-              self.curveData = data;
+              if (data == undefined) {
+                // Curve was unattached.
+                self.model.purge();
+              } else {
+                self.model.set(data, { silent: true });
+              }
+
               self.render();
             },
             error: function(xhr) {
-              if (xhr.status === 404) {
-                self.curveData = {};
-                self.render();
-                return;
-              }
-
               var errors = ['An error occurred.'];
 
               if (xhr.responseJSON) {
@@ -320,13 +324,13 @@
       var defaultKey = 'custom_curves.' + id;
       var defaultScope = [{ scope: defaultKey }];
 
-      if (this.options.curveName) {
+      if (this.model.get('type')) {
         if (data && data.defaults) {
           defaultScope = defaultScope.concat(data.defaults);
         }
 
         return I18n.t(
-          'custom_curves.' + this.options.curveName + '.' + id,
+          'custom_curves.' + this.model.get('type') + '.' + id,
           $.extend({}, data, {
             defaults: defaultScope
           })
@@ -400,27 +404,31 @@
     }
   });
 
-  CustomCurveChooserView.setupWithWrapper = function(wrapper) {
+  CustomCurveChooserView.setupWithWrapper = function(wrapper, collectionDef) {
     var disableInputKey = wrapper.data('curve-disable-input');
 
-    var view = new CustomCurveChooserView({
-      el: wrapper,
-      curveName: wrapper.data('curve-name')
-    });
+    new CustomCurveLoadingView();
 
-    // If the el data specifies to enable/disable a slider when a custom curve
-    // is set, listen to the view events...
-    if (disableInputKey) {
-      view.on('curveIsSet', function(isSet) {
-        var ie = App.input_elements.find_by_key(disableInputKey);
-
-        if (ie && !!ie.get('disabled') !== isSet) {
-          ie.set('disabled', isSet);
-        }
+    collectionDef.done(function(collection) {
+      var view = new CustomCurveChooserView({
+        el: wrapper,
+        model: collection.getOrBuild(wrapper.data('curve-name'))
       });
-    }
 
-    return view;
+      view.render();
+
+      // If the el data specifies to enable/disable a slider when a custom curve
+      // is set, listen to the view events...
+      if (disableInputKey) {
+        view.on('curveIsSet', function(isSet) {
+          var ie = App.input_elements.find_by_key(disableInputKey);
+
+          if (ie && !!ie.get('disabled') !== isSet) {
+            ie.set('disabled', isSet);
+          }
+        });
+      }
+    });
   };
 
   window.CustomCurveChooserView = CustomCurveChooserView;

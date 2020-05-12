@@ -111,8 +111,6 @@ Etm::Application.routes.draw do
   match '/ete_proxy(/*url)', to: 'api_proxy#default', via: :all
 
   get '/units'                        => 'pages#units'
-  get '/feedback'                     => 'pages#feedback', as: :feedback
-  post '/feedback'                    => 'pages#feedback'
   get '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', as: :tutorial
   get '/disclaimer'                   => 'pages#disclaimer'
   get '/privacy_statement'            => 'pages#privacy_statement'

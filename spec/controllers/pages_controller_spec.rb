@@ -169,34 +169,6 @@ describe PagesController, vcr: true do
     end
   end
 
-  describe '#feedback' do
-    subject do
-      get :feedback, xhr: true
-      response
-    end
-
-    it { is_expected.to be_successful }
-    it { is_expected.to render_template(:feedback) }
-
-    # rubocop:disable  RSpec/MultipleExpectations
-    it 'lets the user post some feedback and send an email' do
-      ActionMailer::Base.deliveries = []
-      post :feedback, xhr: true, params: { feedback: {
-        name: 'Schwarzenegger',
-        email: 'arnold@quintel.com',
-        msg: "I'll be back"
-      }, format: :js }
-
-      expect(response).to be_successful
-      expect(response).to render_template(:feedback)
-      emails = ActionMailer::Base.deliveries
-      expect(emails.size).to be(1)
-      quintel = emails.first
-      expect(quintel.to[0]).to eql('info@quintel.com')
-    end
-    # rubocop:enable  RSpec/MultipleExpectations
-  end
-
   describe 'whats new' do
     it 'renders an h1' do
       # Assert markdown rendering works

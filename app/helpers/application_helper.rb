@@ -70,6 +70,9 @@ module ApplicationHelper
       .gsub(/\Abeta-pro\./, '')
   end
 
+  # DEBT: These information links are no longer rendered anywhere. Most of them
+  #       (privacy statement, etc) are currently on etcentral. These links below
+  #       should be removed together with their views and controllers
   def information_links
     links = []
     links.push text: t("header.partners") ,           url: "http://#{ "beta." if is_beta? }#{ domain }/partners?locale=#{ I18n.locale }", target: "_new"
@@ -84,7 +87,6 @@ module ApplicationHelper
     unless APP_CONFIG[:standalone]
       links.push text: t("header.documentation") ,    url: "https://docs.energytransitionmodel.com", target: "_blank"
       links.push text: t("header.publications") ,     url: "http://refman.et-model.com", target: "_blank"
-      links.push text: t("header.feedback") ,         url: feedback_path, class: "fancybox"
     end
     links.sort! {|x,y| x[:text] <=> y[:text] }
   end

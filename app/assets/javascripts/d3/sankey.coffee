@@ -1,5 +1,67 @@
 D3.sankey =
   charts:
+    sankey_electrical_interconnection:
+      data:
+        nodes: [
+          {id: 'solar',                        column: 0, label: 'solar',                  color: '#ffcc00'},
+          {id: 'wind',                         column: 0, label: 'wind',                   color: '#63A1C9'},
+          {id: 'biomass_waste',                column: 0, label: 'biomass_waste',          color: '#2ca02c'},
+          {id: 'other_renewables',             column: 0, label: 'other_renewables',       color: '#4465c6'},
+          {id: 'hydrogen',                     column: 0, label: 'hydrogen',               color: '#27d3d3'},
+          {id: 'fossil',                       column: 0, label: 'fossil',                 color: '#252525'},
+          {id: 'nuclear',                      column: 0, label: 'uranium',                color: '#ff7f0e'},
+          {id: 'import1',                      column: 0, label: 'import1',                color: '#b71540'},
+          {id: 'import2',                      column: 0, label: 'import2',                color: '#b71540'},
+          {id: 'import3',                      column: 0, label: 'import3',                color: '#b71540'},
+          {id: 'import4',                      column: 0, label: 'import4',                color: '#b71540'},
+          {id: 'import5',                      column: 0, label: 'import5',                color: '#b71540'},
+          {id: 'import6',                      column: 0, label: 'import6',                color: '#b71540'},
+          {id: 'network',                      column: 1, label: 'network',                color: '#006266'},
+          {id: 'households',                   column: 2, label: 'households',             color: '#4169E1'},
+          {id: 'buildings',                    column: 2, label: 'buildings',              color: '#ADD8E6'},
+          {id: 'transport',                    column: 2, label: 'transport',              color: '#8B0000'},
+          {id: 'industry',                     column: 2, label: 'industry',               color: '#A9A9A9'},
+          {id: 'agriculture',                  column: 2, label: 'agriculture',            color: '#FFD700'},
+          {id: 'flexibility',                  column: 2, label: 'flexibility',            color: '#013220'},
+          {id: 'other',                        column: 2, label: 'other',                  color: '#E07033'},
+          {id: 'transport_losses',             column: 2, label: 'transport_losses',       color: '#DCDCDC'},
+          {id: 'export1',                      column: 2, label: 'export1',                color: '#43464B'},
+          {id: 'export2',                      column: 2, label: 'export2',                color: '#43464B'},
+          {id: 'export3',                      column: 2, label: 'export3',                color: '#43464B'},
+          {id: 'export4',                      column: 2, label: 'export4',                color: '#43464B'},
+          {id: 'export5',                      column: 2, label: 'export5',                color: '#43464B'},
+          {id: 'export5',                      column: 2, label: 'export6',                color: '#43464B'}
+        ]
+        links: [
+          {left: 'solar',                      right: 'network',          gquery: 'solar_to_network_in_sankey', color: '#ffcc00'},
+          {left: 'wind',                       right: 'network',          gquery: 'wind_to_network_in_sankey', color: '#63A1C9'},
+          {left: 'biomass_waste',              right: 'network',          gquery: 'biomass_waste_to_network_in_sankey', color: '#2ca02c'},
+          {left: 'other_renewables',           right: 'network',          gquery: 'other_renewables_to_network_in_sankey', color: '#4465c6'},
+          {left: 'hydrogen',                   right: 'network',          gquery: 'hydrogen_to_network_in_sankey', color: '#27d3d3'},
+          {left: 'fossil',                     right: 'network',          gquery: 'fossil_to_network_in_sankey', color: '#252525'},
+          {left: 'nuclear',                    right: 'network',          gquery: 'nuclear_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import1',                    right: 'network',          gquery: 'import1_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import2',                    right: 'network',          gquery: 'import2_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import3',                    right: 'network',          gquery: 'import3_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import4',                    right: 'network',          gquery: 'import4_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import5',                    right: 'network',          gquery: 'import5_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import6',                    right: 'network',          gquery: 'import6_to_network_in_sankey', color: '#ff7f0e'},
+
+          {left: 'network',                    right: 'households',       gquery: 'network_to_households_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'buildings',        gquery: 'network_to_buildings_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'transport',        gquery: 'network_to_transport_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'industry',         gquery: 'network_to_industry_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'agriculture',      gquery: 'network_to_agriculture_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'other',            gquery: 'network_to_other_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'transport_losses', gquery: 'network_to_transport_losses_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'flexibility',      gquery: 'network_to_flexibility_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export1',          gquery: 'network_to_export1_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export2',          gquery: 'network_to_export2_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export3',          gquery: 'network_to_export3_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export4',          gquery: 'network_to_export4_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export5',          gquery: 'network_to_export5_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export6',          gquery: 'network_to_export6_in_sankey', color: '#1f77b4'},
+        ]
     biomass_sankey:
       data:
         nodes: [

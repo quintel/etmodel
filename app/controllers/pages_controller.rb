@@ -67,20 +67,6 @@ public
     @quality = Text.where(key: :quality_control).first
   end
 
-  def feedback
-    if params[:feedback]
-      if /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i.match(params[:feedback][:email])
-        request.format = 'js' # to render the js.erb template
-        @options = params[:feedback]
-        Notifier.feedback_mail(@options).deliver
-      else
-        @errors = true
-      end
-    else
-      render layout: false
-    end
-  end
-
   def tutorial
     loc = I18n.locale
     @tab = params[:tab]

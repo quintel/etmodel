@@ -18,10 +18,24 @@
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity
   interface_group: capacity
+
+- key: electricity_interconnector_1_co2_emissions_present
+  step_value: 1.0
+  unit: g/kWh
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity
+  interface_group: co2_emissions
+- key: electricity_interconnector_1_co2_emissions_future
+  step_value: 1.0
+  unit: g/kWh
+  position: 5
+  slide_key: flexibility_electricity_import_export_interconnectivity
+  interface_group: co2_emissions
+
 - key: electricity_interconnector_1_marginal_costs
   step_value: 0.1
   unit: "€/MWh"
-  position: 4
+  position: 6
   slide_key: flexibility_electricity_import_export_interconnectivity
   interface_group: costs
 
@@ -44,10 +58,24 @@
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_2
   interface_group: capacity
+
+- key: electricity_interconnector_2_co2_emissions_present
+  step_value: 1.0
+  unit: g/kWh
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_2
+  interface_group: co2_emissions
+- key: electricity_interconnector_2_co2_emissions_future
+  step_value: 1.0
+  unit: g/kWh
+  position: 5
+  slide_key: flexibility_electricity_import_export_interconnectivity_2
+  interface_group: co2_emissions
+
 - key: electricity_interconnector_2_marginal_costs
   step_value: 0.1
   unit: "€/MWh"
-  position: 4
+  position: 6
   slide_key: flexibility_electricity_import_export_interconnectivity_2
   interface_group: costs
 
@@ -70,10 +98,24 @@
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_3
   interface_group: capacity
+
+- key: electricity_interconnector_3_co2_emissions_present
+  step_value: 1.0
+  unit: g/kWh
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_3
+  interface_group: co2_emissions
+- key: electricity_interconnector_3_co2_emissions_future
+  step_value: 1.0
+  unit: g/kWh
+  position: 5
+  slide_key: flexibility_electricity_import_export_interconnectivity_3
+  interface_group: co2_emissions
+
 - key: electricity_interconnector_3_marginal_costs
   step_value: 0.1
   unit: "€/MWh"
-  position: 4
+  position: 6
   slide_key: flexibility_electricity_import_export_interconnectivity_3
   interface_group: costs
 
@@ -96,10 +138,24 @@
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_4
   interface_group: capacity
+
+- key: electricity_interconnector_4_co2_emissions_present
+  step_value: 1.0
+  unit: g/kWh
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_4
+  interface_group: co2_emissions
+- key: electricity_interconnector_4_co2_emissions_future
+  step_value: 1.0
+  unit: g/kWh
+  position: 5
+  slide_key: flexibility_electricity_import_export_interconnectivity_4
+  interface_group: co2_emissions
+
 - key: electricity_interconnector_4_marginal_costs
   step_value: 0.1
   unit: "€/MWh"
-  position: 4
+  position: 5
   slide_key: flexibility_electricity_import_export_interconnectivity_4
   interface_group: costs
 
@@ -122,10 +178,24 @@
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_5
   interface_group: capacity
+
+- key: electricity_interconnector_5_co2_emissions_present
+  step_value: 1.0
+  unit: g/kWh
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_5
+  interface_group: co2_emissions
+- key: electricity_interconnector_5_co2_emissions_future
+  step_value: 1.0
+  unit: g/kWh
+  position: 5
+  slide_key: flexibility_electricity_import_export_interconnectivity_5
+  interface_group: co2_emissions
+
 - key: electricity_interconnector_5_marginal_costs
   step_value: 0.1
   unit: "€/MWh"
-  position: 4
+  position: 6
   slide_key: flexibility_electricity_import_export_interconnectivity_5
   interface_group: costs
 
@@ -148,9 +218,23 @@
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_6
   interface_group: capacity
+
+- key: electricity_interconnector_6_co2_emissions_present
+  step_value: 1.0
+  unit: g/kWh
+  position: 4
+  slide_key: flexibility_electricity_import_export_interconnectivity_6
+  interface_group: co2_emissions
+- key: electricity_interconnector_6_co2_emissions_future
+  step_value: 1.0
+  unit: g/kWh
+  position: 5
+  slide_key: flexibility_electricity_import_export_interconnectivity_6
+  interface_group: co2_emissions
+
 - key: electricity_interconnector_6_marginal_costs
   step_value: 0.1
   unit: "€/MWh"
-  position: 4
+  position: 6
   slide_key: flexibility_electricity_import_export_interconnectivity_6
   interface_group: costs

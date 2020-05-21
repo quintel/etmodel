@@ -2,7 +2,7 @@
   color: #333
 
   hr
-    background: #ccc
+    background: #ddd
     border: none
     height: 1px
 
@@ -112,27 +112,44 @@
             height: 40px
           div.sub_header
             text-align: right
-            color: #aaa
+            color: #999
             overflow: auto
             background: #fff
           div.interface_group
-            width: 100%
-            text-align: left
             color: #999
-            border-top: 1px solid #ccc
-            margin: 5px 0
+            margin: 12px 0 0
             overflow: hidden
-            padding-top: 5px
-          span.sub_header_arrow
+            padding: 10px 0 0
+            text-align: left
+            width: 100%
+            hr
+              margin: 0
+            .label
+              background: white
+              display: inline-block
+              margin-top: -12px
+              padding-right: 10px
+              vertical-align: top
+            .sub_header_arrow
+              margin: -8px 12px 0 0
+              padding-left: 10px
+              padding-right: 10px
+              background-position: center bottom
+          .sub_header_arrow
+            background: #fff image-url('slides/grey_triangle_down.png') no-repeat right bottom
+            display: inline-block
             float: right
-            margin-right: 4px
-            height: 26px
-            width: 128px
-            text-align: right
-            background: #fff image-url('slides/grey_triangle_down.gif') no-repeat scroll right bottom
+            font-size: 11px
+            line-height: 1.3
+            margin-bottom: 5px
+            max-width: 128px
+            padding-bottom: 7px
+            text-transform: uppercase
             @include hidpi
               background-image: url(/assets/slides/grey_triangle_down-hidpi.png)
-              background-size: 30px 6px
+              background-size: 49px 6px
+          .sub_header + .interface_group
+            margin-top: 0
       @include hidpi
         a.slide_header
           background-image: url(/assets/accordion/triangle-hidpi.png)

@@ -337,7 +337,7 @@ nl:
         is wordt de opgeslagen elektriciteit teruggeleverd aan het elektriciteitsnet.\r\nHoewel
         de batterij niet reageert op netwerkcongestie kan haar gedrag wel helpen om
         capaciteitsproblemen op het middenspanningsnet te voorkomen. \r\n"
-    co2_emissions_of_imported_electricity_present:
+    electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Huidige import
       short_description:
       description: "De gemiddelde emissie van de Nederlandse elektriciteitsmix is
@@ -348,7 +348,12 @@ nl:
         in gram CO<sub>2</sub> per kWh vinden per type drager, technologie en land
         in onze <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">documentation</a>. "
-    co2_emissions_of_imported_electricity_future:
+    electricity_interconnector_2_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_3_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_4_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_5_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_6_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Toekomstige import
       short_description:
       description: "Wat zijn de emissies voor geïmporteerde elektriciteit in de toekomst?
@@ -361,6 +366,11 @@ nl:
         meer emissies in gram CO<sub>2</sub> per kWh vinden per type drager, technologie
         en land in onze <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">documentation</a>. "
+    electricity_interconnector_2_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_3_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_4_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_5_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_6_co2_emissions_future: *interconnector_co2_future
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
       title: Power-to-hydrogen
       short_description:

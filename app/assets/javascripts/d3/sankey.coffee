@@ -497,7 +497,7 @@ D3.sankey =
       margin = @view.y.invert(@vertical_margin)
       for n in @siblings()
         break if n == this
-        offset += n.value() + margin
+        offset += n.value() + (if n.should_show() then margin else 0)
       offset
 
     x_offset: => @get('column') * (@width + @horizontal_spacing())
@@ -514,10 +514,14 @@ D3.sankey =
         d3.sum(@right_links, (d) -> d.value())
       )
 
+    should_show: =>
+      _.any(@left_links, (link) -> link.should_show()) ||
+        _.any(@right_links, (link) -> link.should_show())
+
     # returns an array of the other nodes that belong to the same column. This
     # is used by the +y_offset+ method to calculate the right node position
     siblings: =>
-      items = _.groupBy(@view.node_list, (node) -> node.get('column'))
+      items = _.groupBy(@view.nodes_excluding_loss, (node) -> node.get('column'))
       items[@get 'column']
 
     label: => @get('label') || @get('id')
@@ -589,6 +593,9 @@ D3.sankey =
         else
           @gquery.future_value()
       if _.isNumber(x) then x else 0.0
+
+    should_show: =>
+      !!@value()
 
     color: => @get('color') || "steelblue"
 
@@ -774,6 +781,7 @@ D3.sankey =
 
       # update the node label
       @nodes.data(@nodes_excluding_loss, (d) -> d.get('id'))
+        .style('opacity', (d) -> if d.should_show() then 1 else 0)
         .attr("data-tooltip", (d) =>
           h = ""
           for l in d.left_links
@@ -800,7 +808,7 @@ D3.sankey =
         .attr("d", (link) => @link_line link.path_points())
         .style("stroke-width", (link) => @y(link.value()))
         .attr("display", (link) ->
-          if link.value() == 0.0 then 'none' else 'inline'
+          if link.should_show() then 'inline' else 'none'
         )
         .attr("data-tooltip", (d) => @value_formatter d.value())
 

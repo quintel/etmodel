@@ -97,14 +97,11 @@ en:
     flexibility_outdoor_temperature:
       title: Outdoor temperature
       short_description:
-      description: "By how much do you think the outdoor temperature will change in
-        the future?\r\n<br/><br/>\r\nYour choice will affect the useful demand for
-        heating and cooling in households and buildings. To translate a temperature
-        change into a change in useful demand, it is assumed that people will start
-        heating their homes when the outside temperature drops beneath 18 &degC and
-        will cool their homes when it rises above 23 &degC.\r\n<br/><br/>\r\nFor more
-        information about the climate change calculation consult our <a href=\"https://docs.energytransitionmodel.com/main/climate\"
-        target =\"_blank\">documentation</a>."
+      description: "By how much do you think the outdoor temperature will change in the
+      future?<br/><br/>
+      Your choice will affect the useful demand for heating and cooling in households, buildings and agriculture.
+      <br/><br/>For more information consult our <a href=\"https://docs.energytransitionmodel.com/main/outdoor_temperature\"
+      target =\"_blank\">documentation</a>."
     settings_weather_curve_set:
     flh_of_energy_power_wind_turbine_coastal:
       title: Onshore coastal

@@ -5,7 +5,7 @@ $ ->
       return state.text
 
     root  = $("<span/>")
-    flag  = $(".flags img.#{ state.id }").clone()
+    flag  = $(".flags img.#{state.id.toLowerCase()}").clone()
     inner = $("<span/>").text(state.text)
 
     if flag.length > 0

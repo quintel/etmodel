@@ -14,11 +14,14 @@
    *   indicating whether those actions should be visible.
    * @param {Function} t
    *   A function which will provide translations.
+   * @param {array} userScenarios
+   *   An array containing objects that represent the users saved scenarios. Is
+   *   empty when a user is not logged in or has no scenarios.
    *
    * @return {Element | null}
    *   Returns the rendered elements, or null if no options are to be rendered.
    */
-  function renderCSVActions(opts, t) {
+  function renderCSVActions(opts, t, userScenarios) {
     var actions = $('<div class="actions" />');
     var actionsList = $('<ul />');
 
@@ -36,7 +39,48 @@
 
     actions.append(actionsList);
 
+    if (userScenarios.length > 0) {
+      actions.append(renderSelectScenario(t, userScenarios));
+    }
+
     return actions;
+  }
+
+  /**
+   * Renders the selection form for when a user wants to import the price curve
+   * from one of their other scenarios.
+   *
+   * @param {Function} t
+   *   A function which will provide translations.
+   * @param {array} userScenarios
+   *   An array containing objects that represent the users saved scenarios
+   *
+   * @return {Element}
+   *   Returns the rendered elements.
+   */
+  function renderSelectScenario(t, userScenarios) {
+    var useScenario = $('<span class="scenario"/>');
+    var select = $('<select />')
+    select.append('<option value="">' + t('select_scenario') +'</option>');
+
+    userScenarios.forEach( function (scenario) {
+      $('<option/>', {
+        value: scenario.scenario_id,
+        text: scenario.title + ', ' + t('areas.' + scenario.dataset) + ' ' + scenario.end_year,
+        data: {
+          other_saved_scenario_id: scenario.saved_scenario_id,
+          other_dataset_key: scenario.dataset,
+          other_scenario_title: scenario.title,
+          other_end_year: scenario.end_year
+        }
+      }).appendTo(select);
+    });
+
+    useScenario.append($('<label>'+ t('upload_from_scenario') + '</label>'));
+    useScenario.append(select);
+    useScenario.append($('<button class="use-scenario"/>').text(t('use')));
+
+    return useScenario
   }
 
   /**
@@ -73,6 +117,17 @@
     return info;
   }
 
+  function formatCurveScenarioInfo(scenario, t) {
+    var info = $('<dl />');
+    info.append('<dt>' + t('imported_from') + '</dt>');
+    info.append('<dd>' + scenario.other_scenario_title + '<br/>' +
+      t('areas.' + scenario.other_dataset_key) + ' ' +
+      scenario.other_end_year + '</dd>'
+    );
+
+    return info;
+  }
+
   /**
    * Renders the box containing the CSV name and size, and buttons to upload a
    * new curve or revert to default.
@@ -88,15 +143,22 @@
    *
    * @return {Element}
    */
-  function renderCSVInfo(curveData, t, options) {
+  function renderCSVInfo(curveData, userScenarios, t, options) {
     var opts = options || {};
 
     var el = $('<div class="custom-curve" />');
     var main = $('<div class="main" />');
     var details = $('<div class="details" />');
 
-    details.append($('<span class="name" />').text(curveData.name));
+    var name = curveData.name;
+    if (options.isFromScenario) { name = t('curve_from_scenario') }
+
+    details.append($('<span class="name" />').text(name));
     details.append(formatCurveStats(curveData.stats, t));
+
+    if (options.isFromScenario) {
+      details.append(formatCurveScenarioInfo(curveData.other_scenario, t));
+    }
 
     if (options.description) {
       details.append(
@@ -108,7 +170,7 @@
     main.append(details);
 
     el.append(main);
-    el.append(renderCSVActions(opts, t));
+    el.append(renderCSVActions(opts, t, userScenarios));
 
     return el;
   }
@@ -180,7 +242,7 @@
       this.$el.empty();
 
       this.$el.append(
-        renderCSVInfo({ name: I18n.t('custom_curves.loading') }, null, {
+        renderCSVInfo({ name: I18n.t('custom_curves.loading') }, null, null, {
           icon: 'loading'
         })
       );
@@ -196,6 +258,7 @@
     events: {
       'click .remove': 'removeCurve',
       'click .upload': 'selectCurve',
+      'click .use-scenario': 'useScenarioCurve',
       'change form input[type=file]': 'fileDidChange'
     },
 
@@ -203,6 +266,7 @@
       Backbone.View.prototype.initialize.apply(this, arguments);
 
       // this.curveData = null;
+      this.userScenarios = this.options.scenarios;
 
       this.apiURL =
         App.scenario.url_path() + '/custom_curves/' + options.model.get('type');
@@ -216,14 +280,15 @@
 
       if (this.model.isAttached()) {
         this.$el.append(
-          renderCSVInfo(this.model.attributes, this.t, {
+          renderCSVInfo(this.model.attributes, this.userScenarios, this.t, {
             showUpload: true,
-            showRemove: true
+            showRemove: true,
+            isFromScenario: this.model.isFromScenario()
           })
         );
       } else {
         this.$el.append(
-          renderCSVInfo({ name: this.t('default') }, this.t, {
+          renderCSVInfo({ name: this.t('default') }, this.userScenarios, this.t, {
             showUpload: true,
             icon: 'csv-light',
             description: this.t('default_description', {
@@ -245,7 +310,7 @@
       this.$el.empty();
 
       this.$el.append(
-        renderCSVInfo({ name: this.t('loading') }, this.t, { icon: 'loading' })
+        renderCSVInfo({ name: this.t('loading') }, null, this.t, { icon: 'loading' })
       );
     },
 
@@ -253,7 +318,7 @@
       this.$el.empty();
 
       this.$el.append(
-        renderCSVInfo({ name: this.t('uploading') + '...' }, this.t, {
+        renderCSVInfo({ name: this.t('uploading') + '...' }, null, this.t, {
           icon: 'loading'
         })
       );
@@ -324,6 +389,8 @@
       var defaultKey = 'custom_curves.' + id;
       var defaultScope = [{ scope: defaultKey }];
 
+      if (id.startsWith('areas')) { return I18n.t(id) }
+
       if (this.model.get('type')) {
         if (data && data.defaults) {
           defaultScope = defaultScope.concat(data.defaults);
@@ -360,17 +427,52 @@
         .click();
     },
 
-    fileDidChange: function() {
+    useScenarioCurve: function() {
       var self = this;
+      var selected = this.$('select option:selected')[0]
+      var scenarioID = selected.value
+
+      if (scenarioID == "") { return }
+
+      // Fetch curve as string from other scenario (currently wrapped in json)
+      var scenarioApiURL =
+        App.api.path( '/scenarios/' + scenarioID +
+        '/curves/electricity_price.json' );
+
+      var req = $.ajax({
+        url: scenarioApiURL,
+        method: 'GET'
+      });
+
+      // Upload for current scenario
+      req.success( function(data) {
+        var metadata = $(selected).data()
+        const formData = new FormData();
+
+        formData.append('file', new Blob([data.curve]), scenarioID + ".csv");
+        formData.append('metadata[other_scenario_id]', scenarioID);
+        for (var key in metadata) {
+          formData.append('metadata[' + key + ']', metadata[key]);
+        }
+        self.upload(formData);
+      });
+    },
+
+    fileDidChange: function() {
       var fileEl = this.$(':file');
 
       if (!fileEl.val() || !fileEl.val().length) {
         return;
       }
 
-      this.sendRequest('PUT', {
-        data: new FormData(this.$('form')[0]),
+      this.upload(new FormData(this.$('form')[0]))
+    },
 
+    upload: function(data) {
+      var self = this;
+
+      this.sendRequest('PUT', {
+        data: data,
         cache: false,
         contentType: false,
         processData: false,
@@ -404,31 +506,35 @@
     }
   });
 
-  CustomCurveChooserView.setupWithWrapper = function(wrapper, collectionDef) {
+  CustomCurveChooserView.setupWithWrapper = function(wrapper, collectionDef, userScenarios) {
     var disableInputKey = wrapper.data('curve-disable-input');
 
     new CustomCurveLoadingView();
 
-    collectionDef.done(function(collection) {
-      var view = new CustomCurveChooserView({
-        el: wrapper,
-        model: collection.getOrBuild(wrapper.data('curve-name'))
-      });
-
-      view.render();
-
-      // If the el data specifies to enable/disable a slider when a custom curve
-      // is set, listen to the view events...
-      if (disableInputKey) {
-        view.on('curveIsSet', function(isSet) {
-          var ie = App.input_elements.find_by_key(disableInputKey);
-
-          if (ie && !!ie.get('disabled') !== isSet) {
-            ie.set('disabled', isSet);
-          }
+    userScenarios.done(function (scenarios) {
+      collectionDef.done(function(collection) {
+        var view = new CustomCurveChooserView({
+          el: wrapper,
+          model: collection.getOrBuild(wrapper.data('curve-name')),
+          scenarios: scenarios
         });
-      }
+
+        view.render();
+
+        // If the el data specifies to enable/disable a slider when a custom curve
+        // is set, listen to the view events...
+        if (disableInputKey) {
+          view.on('curveIsSet', function(isSet) {
+            var ie = App.input_elements.find_by_key(disableInputKey);
+
+            if (ie && !!ie.get('disabled') !== isSet) {
+              ie.set('disabled', isSet);
+            }
+          });
+        }
+      })
     });
+
   };
 
   window.CustomCurveChooserView = CustomCurveChooserView;

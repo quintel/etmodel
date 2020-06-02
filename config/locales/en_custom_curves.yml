@@ -12,6 +12,9 @@ en:
     upload: "Upload a custom curve"
     uploading: "Uploading curve"
     value: "%{value}"
+    upload_from_scenario: "Or from a scenario"
+    select_scenario: 'Select a scenario...'
+    use: 'Use'
     errors:
       file_too_large: "Curve must not be larger than 1MB"
       illegal_value: "Curve must only contain numeric values"
@@ -27,6 +30,8 @@ en:
         how this works, and examples of compatible CSV files, please
         <a href="%{docs_path}">see our documentation</a>.
       value: "€%{value}/MWh"
+      curve_from_scenario: "Curve from scenario"
+      imported_from: 'From scenario'
     interconnector_2_price: *interconnector_price
     interconnector_3_price: *interconnector_price
     interconnector_4_price: *interconnector_price

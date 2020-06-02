@@ -5,6 +5,21 @@ class SavedScenariosController < ApplicationController
   before_action :ensure_valid_browser
   before_action :assign_scenario, only: %i[show load]
 
+  def index
+    respond_to do |format|
+      format.json do
+        if current_user
+          render json:
+            SavedScenarioPresenter.new(
+              current_user.saved_scenarios.order('created_at DESC')
+            )
+        else
+          render json: []
+        end
+      end
+    end
+  end
+
   def show
     if @scenario.created_at && @scenario.days_old > 180
       warning_type =

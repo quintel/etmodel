@@ -170,13 +170,16 @@ class @D3YearlyChartView extends D3ChartView
       .tickValues(@dateSelect.tickValues()).tickFormat(formatter)
 
   visibleData: =>
-    @rawChartData
-      .filter (serie) ->
-        serie.values.length
-      .map (serie) =>
-        $.extend({}, serie, values: MeritTransformator.transform(
-          serie.values, this.dateSelect.val(), @downsampleWith
-        ))
+    availableSeries = @rawChartData.filter((serie) -> serie.values.length)
+
+    sampledData = MeritTransformator.transformMany(
+      availableSeries.map((serie) -> serie.values),
+      this.dateSelect.val(),
+      @downsampleWith
+    )
+
+    availableSeries.map (serie, index) ->
+      $.extend({}, serie, values: sampledData[index])
 
   convertData: =>
     @convertToXY(@visibleData())

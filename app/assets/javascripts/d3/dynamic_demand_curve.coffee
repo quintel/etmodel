@@ -45,6 +45,8 @@ seriesOpacity = (visibleSeries) ->
 
 D3.dynamic_demand_curve =
   View: class extends D3YearlyChartView
+    downsampleWith: 'max'
+
     initialize: ->
       D3YearlyChartView.prototype.initialize.call(this)
 

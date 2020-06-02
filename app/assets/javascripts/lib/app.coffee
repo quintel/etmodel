@@ -63,9 +63,14 @@ class @AppView extends Backbone.View
 
     if (curve_upload = wrapper.find('.curve-upload')).length
       curveCollectionDef = @customCurves()
+      userScenariosArray = @userScenarios()
 
       curve_upload.each (_index, element) =>
-        CustomCurveChooserView.setupWithWrapper($(element), curveCollectionDef);
+        CustomCurveChooserView.setupWithWrapper(
+          $(element),
+          curveCollectionDef,
+          userScenariosArray
+        );
 
     deferred
 
@@ -255,4 +260,21 @@ class @AppView extends Backbone.View
         deferred.resolve(@customCurvesCollection)
       )
 
+    return deferred.promise()
+
+  userScenarios: =>
+    deferred = $.Deferred()
+
+    if @userScenariosArray
+      deferred.resolve(@userScenarios)
+    else
+      req = $.ajax({
+        url: '/saved_scenarios',
+        method: 'GET'
+      })
+
+      req.done((data) =>
+        @userScenariosArray = data
+        deferred.resolve(@userScenariosArray)
+      )
     return deferred.promise()

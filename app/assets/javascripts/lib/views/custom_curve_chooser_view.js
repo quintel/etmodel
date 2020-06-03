@@ -59,7 +59,7 @@
    *   Returns the rendered elements.
    */
   function renderSelectScenario(t, userScenarios) {
-    var useScenario = $('<span class="scenario"/>');
+    var useScenario = $('<div class="scenario"/>');
     var select = $('<select />');
     select.append('<option value="">' + t('select_scenario') + '</option>');
 

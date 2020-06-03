@@ -509,7 +509,7 @@
   CustomCurveChooserView.setupWithWrapper = function(wrapper, collectionDef, userScenarios) {
     var disableInputKey = wrapper.data('curve-disable-input');
 
-    new CustomCurveLoadingView();
+    new CustomCurveLoadingView({ el: wrapper }).render();
 
     userScenarios.done(function (scenarios) {
       collectionDef.done(function(collection) {

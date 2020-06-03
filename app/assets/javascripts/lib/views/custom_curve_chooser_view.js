@@ -60,13 +60,18 @@
    */
   function renderSelectScenario(t, userScenarios) {
     var useScenario = $('<span class="scenario"/>');
-    var select = $('<select />')
-    select.append('<option value="">' + t('select_scenario') +'</option>');
+    var select = $('<select />');
+    select.append('<option value="">' + t('select_scenario') + '</option>');
 
-    userScenarios.forEach( function (scenario) {
+    userScenarios.forEach(function(scenario) {
       $('<option/>', {
         value: scenario.scenario_id,
-        text: scenario.title + ', ' + t('areas.' + scenario.dataset) + ' ' + scenario.end_year,
+        text:
+          scenario.title +
+          ', ' +
+          t('areas.' + scenario.dataset) +
+          ' ' +
+          scenario.end_year,
         data: {
           other_saved_scenario_id: scenario.saved_scenario_id,
           other_dataset_key: scenario.dataset,
@@ -76,11 +81,11 @@
       }).appendTo(select);
     });
 
-    useScenario.append($('<label>'+ t('upload_from_scenario') + '</label>'));
+    useScenario.append($('<label>' + t('upload_from_scenario') + '</label>'));
     useScenario.append(select);
     useScenario.append($('<button class="use-scenario"/>').text(t('use')));
 
-    return useScenario
+    return useScenario;
   }
 
   /**
@@ -120,9 +125,14 @@
   function formatCurveScenarioInfo(scenario, t) {
     var info = $('<dl />');
     info.append('<dt>' + t('imported_from') + '</dt>');
-    info.append('<dd>' + scenario.other_scenario_title + '<br/>' +
-      t('areas.' + scenario.other_dataset_key) + ' ' +
-      scenario.other_end_year + '</dd>'
+    info.append(
+      '<dd>' +
+        scenario.other_scenario_title +
+        '<br/>' +
+        t('areas.' + scenario.other_dataset_key) +
+        ' ' +
+        scenario.other_end_year +
+        '</dd>'
     );
 
     return info;
@@ -151,7 +161,9 @@
     var details = $('<div class="details" />');
 
     var name = curveData.name;
-    if (options.isFromScenario) { name = t('curve_from_scenario') }
+    if (options.isFromScenario) {
+      name = t('curve_from_scenario');
+    }
 
     details.append($('<span class="name" />').text(name));
     details.append(formatCurveStats(curveData.stats, t));
@@ -288,13 +300,18 @@
         );
       } else {
         this.$el.append(
-          renderCSVInfo({ name: this.t('default') }, this.userScenarios, this.t, {
-            showUpload: true,
-            icon: 'csv-light',
-            description: this.t('default_description', {
-              defaults: [{ message: false }]
-            })
-          })
+          renderCSVInfo(
+            { name: this.t('default') },
+            this.userScenarios,
+            this.t,
+            {
+              showUpload: true,
+              icon: 'csv-light',
+              description: this.t('default_description', {
+                defaults: [{ message: false }]
+              })
+            }
+          )
         );
       }
 
@@ -310,7 +327,9 @@
       this.$el.empty();
 
       this.$el.append(
-        renderCSVInfo({ name: this.t('loading') }, null, this.t, { icon: 'loading' })
+        renderCSVInfo({ name: this.t('loading') }, null, this.t, {
+          icon: 'loading'
+        })
       );
     },
 
@@ -389,7 +408,9 @@
       var defaultKey = 'custom_curves.' + id;
       var defaultScope = [{ scope: defaultKey }];
 
-      if (id.startsWith('areas')) { return I18n.t(id) }
+      if (id.startsWith('areas')) {
+        return I18n.t(id);
+      }
 
       if (this.model.get('type')) {
         if (data && data.defaults) {
@@ -429,15 +450,17 @@
 
     useScenarioCurve: function() {
       var self = this;
-      var selected = this.$('select option:selected')[0]
-      var scenarioID = selected.value
+      var selected = this.$('select option:selected')[0];
+      var scenarioID = selected.value;
 
-      if (scenarioID == "") { return }
+      if (scenarioID == '') {
+        return;
+      }
 
       // Fetch curve as string from other scenario (currently wrapped in json)
-      var scenarioApiURL =
-        App.api.path( '/scenarios/' + scenarioID +
-        '/curves/electricity_price.json' );
+      var scenarioApiURL = App.api.path(
+        '/scenarios/' + scenarioID + '/curves/electricity_price.json'
+      );
 
       var req = $.ajax({
         url: scenarioApiURL,
@@ -445,11 +468,11 @@
       });
 
       // Upload for current scenario
-      req.success( function(data) {
-        var metadata = $(selected).data()
+      req.success(function(data) {
+        var metadata = $(selected).data();
         const formData = new FormData();
 
-        formData.append('file', new Blob([data.curve]), scenarioID + ".csv");
+        formData.append('file', new Blob([data.curve]), scenarioID + '.csv');
         formData.append('metadata[other_scenario_id]', scenarioID);
         for (var key in metadata) {
           formData.append('metadata[' + key + ']', metadata[key]);
@@ -465,7 +488,7 @@
         return;
       }
 
-      this.upload(new FormData(this.$('form')[0]))
+      this.upload(new FormData(this.$('form')[0]));
     },
 
     upload: function(data) {
@@ -506,7 +529,11 @@
     }
   });
 
-  CustomCurveChooserView.setupWithWrapper = function(wrapper, collectionDef, userScenarios) {
+  CustomCurveChooserView.setupWithWrapper = function(
+    wrapper,
+    collectionDef,
+    userScenarios
+  ) {
     var disableInputKey = wrapper.data('curve-disable-input');
 
     new CustomCurveLoadingView({ el: wrapper }).render();
@@ -531,7 +558,7 @@
           }
         });
       }
-    })
+    });
   };
 
   window.CustomCurveChooserView = CustomCurveChooserView;

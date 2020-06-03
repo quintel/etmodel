@@ -511,30 +511,27 @@
 
     new CustomCurveLoadingView({ el: wrapper }).render();
 
-    userScenarios.done(function (scenarios) {
-      collectionDef.done(function(collection) {
-        var view = new CustomCurveChooserView({
-          el: wrapper,
-          model: collection.getOrBuild(wrapper.data('curve-name')),
-          scenarios: scenarios
+    $.when(collectionDef, userScenarios).done(function(collection, scenarios) {
+      var view = new CustomCurveChooserView({
+        el: wrapper,
+        model: collection.getOrBuild(wrapper.data('curve-name')),
+        scenarios: scenarios
+      });
+
+      view.render();
+
+      // If the el data specifies to enable/disable a slider when a custom curve
+      // is set, listen to the view events...
+      if (disableInputKey) {
+        view.on('curveIsSet', function(isSet) {
+          var ie = App.input_elements.find_by_key(disableInputKey);
+
+          if (ie && !!ie.get('disabled') !== isSet) {
+            ie.set('disabled', isSet);
+          }
         });
-
-        view.render();
-
-        // If the el data specifies to enable/disable a slider when a custom curve
-        // is set, listen to the view events...
-        if (disableInputKey) {
-          view.on('curveIsSet', function(isSet) {
-            var ie = App.input_elements.find_by_key(disableInputKey);
-
-            if (ie && !!ie.get('disabled') !== isSet) {
-              ie.set('disabled', isSet);
-            }
-          });
-        }
-      })
-    });
-
+      }
+    })
   };
 
   window.CustomCurveChooserView = CustomCurveChooserView;

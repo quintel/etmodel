@@ -17,7 +17,7 @@
      * Returns true if the curve was imported from another scenario.
      */
     isFromScenario: function() {
-      return !$.isEmptyObject(this.get('other_scenario'))
+      return !$.isEmptyObject(this.get('source_scenario'))
     },
 
     /**

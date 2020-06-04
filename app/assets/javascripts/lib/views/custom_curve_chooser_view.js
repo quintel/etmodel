@@ -73,10 +73,10 @@
           ' ' +
           scenario.end_year,
         data: {
-          other_saved_scenario_id: scenario.saved_scenario_id,
-          other_dataset_key: scenario.dataset,
-          other_scenario_title: scenario.title,
-          other_end_year: scenario.end_year
+          source_saved_scenario_id: scenario.saved_scenario_id,
+          source_dataset_key: scenario.dataset,
+          source_scenario_title: scenario.title,
+          source_end_year: scenario.end_year
         }
       }).appendTo(select);
     });
@@ -127,11 +127,11 @@
     info.append('<dt>' + t('imported_from') + '</dt>');
     info.append(
       '<dd>' +
-        scenario.other_scenario_title +
+        scenario.source_scenario_title +
         '<br/>' +
-        t('areas.' + scenario.other_dataset_key) +
+        t('areas.' + scenario.source_dataset_key) +
         ' ' +
-        scenario.other_end_year +
+        scenario.source_end_year +
         '</dd>'
     );
 
@@ -169,7 +169,7 @@
     details.append(formatCurveStats(curveData.stats, t));
 
     if (options.isFromScenario) {
-      details.append(formatCurveScenarioInfo(curveData.other_scenario, t));
+      details.append(formatCurveScenarioInfo(curveData.source_scenario, t));
     }
 
     if (options.description) {
@@ -473,7 +473,7 @@
         const formData = new FormData();
 
         formData.append('file', new Blob([data.curve]), scenarioID + '.csv');
-        formData.append('metadata[other_scenario_id]', scenarioID);
+        formData.append('metadata[source_scenario_id]', scenarioID);
         for (var key in metadata) {
           formData.append('metadata[' + key + ']', metadata[key]);
         }

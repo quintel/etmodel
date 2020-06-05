@@ -457,6 +457,10 @@
         return;
       }
 
+      var metadata = $(selected).data();
+
+      this.renderUploading();
+
       // Fetch curve as string from other scenario (currently wrapped in json)
       var scenarioApiURL = App.api.path(
         '/scenarios/' + scenarioID + '/curves/electricity_price.json'
@@ -469,7 +473,6 @@
 
       // Upload for current scenario
       req.success(function(data) {
-        var metadata = $(selected).data();
         const formData = new FormData();
 
         formData.append('file', new Blob([data.curve]), scenarioID + '.csv');

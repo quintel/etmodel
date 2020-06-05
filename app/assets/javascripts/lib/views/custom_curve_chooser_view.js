@@ -473,7 +473,7 @@
 
       // Upload for current scenario
       req.success(function(data) {
-        const formData = new FormData();
+        var formData = new FormData();
 
         formData.append('file', new Blob([data.curve]), scenarioID + '.csv');
         formData.append('metadata[source_scenario_id]', scenarioID);

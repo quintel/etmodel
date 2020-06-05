@@ -65,12 +65,12 @@ class @AppView extends Backbone.View
       curveCollectionDef = @customCurves()
       userScenariosArray = @userScenarios()
 
-      curve_upload.each (_index, element) =>
+      curve_upload.each (_index, element) ->
         CustomCurveChooserView.setupWithWrapper(
           $(element),
           curveCollectionDef,
           userScenariosArray
-        );
+        )
 
     deferred
 

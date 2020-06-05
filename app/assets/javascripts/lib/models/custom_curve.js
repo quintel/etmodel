@@ -1,4 +1,4 @@
-/* globals Backbone */
+/* globals $ Backbone */
 
 (function(window) {
   'use strict';
@@ -17,7 +17,7 @@
      * Returns true if the curve was imported from another scenario.
      */
     isFromScenario: function() {
-      return !$.isEmptyObject(this.get('source_scenario'))
+      return !$.isEmptyObject(this.get('source_scenario'));
     },
 
     /**
@@ -43,8 +43,6 @@
       if (!this.get(id)) {
         this.add(new CustomCurve({ type: id }));
       }
-
-      console.log(id, this);
 
       return this.get(id);
     }

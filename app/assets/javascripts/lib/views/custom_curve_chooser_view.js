@@ -1,4 +1,4 @@
-/* globals $ _ App Backbone CustomCurve I18n */
+/* globals $ _ App Backbone I18n */
 (function(window) {
   'use strict';
 

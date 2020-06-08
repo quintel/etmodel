@@ -408,7 +408,7 @@
       var defaultKey = 'custom_curves.' + id;
       var defaultScope = [{ scope: defaultKey }];
 
-      if (id.startsWith('areas')) {
+      if (id.slice(0, 5) === 'areas') {
         return I18n.t(id);
       }
 

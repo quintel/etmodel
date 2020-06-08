@@ -2,8 +2,20 @@ input.button, input.btn
   cursor: pointer
 
 input, textarea, select
-  font: 100% arial,sans-serif
+  font-size: 100%
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
   vertical-align: middle
+
+input, textarea, select
+  border: 1px solid #bbb
+  border-radius: 3px
+  padding: 2px
+  transition: border-color .1s, box-shadow .1s
+
+  &:focus
+    border-color: #4b8ac2
+    box-shadow: 0 0 7px #73abd9
+    outline: none
 
 form, fieldset
   margin: 0

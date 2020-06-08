@@ -997,7 +997,13 @@
       ACTIVE_VALUE_SELECTOR = this.uid;
       this.selectedConversion = this.view.conversion;
 
-      this.inputEl.val(this.selectedConversion.format(this.model.value, true));
+      this.inputEl.val(
+        I18n.toNumber(this.model.value, {
+          precision: this.selectedConversion.precision,
+          delimiter: ''
+        })
+      );
+
       this.unitEl.val(this.selectedConversion.uid);
       this.unitNameEl.text(this.selectedConversion.unit);
 

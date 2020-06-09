@@ -1,3 +1,5 @@
+- content_for(:page_title) { "#{@scenario.title} - #{t('meta.name')}" }
+
 .scenario_wrapper#show_scenario
 
   - if @warning

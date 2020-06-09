@@ -7,21 +7,25 @@ AllCops:
   NewCops: enable
   Exclude:
   - 'bin/**/*'
+  - 'config/application.rb'
   - 'config/routes.rb'
   - 'db/migrate/**/*'
   - 'db/schema.rb'
   - 'db/seeds.rb'
   - 'vendor/**/*'
-  - 'config/application.rb'
 
-Bundler/OrderedGems:
-  Enabled: false
-Gemspec/OrderedDependencies:
-  Enabled: false
-
-Layout/MultilineAssignmentLayout:
-  Enabled: true
-  EnforcedStyle: new_line
+# Align "end" with variable.
+#
+#   # Bad
+#   variable = if thing
+#              end
+#
+#   # Good
+#   variable = if thing
+#   end
+#
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
 
 # Indent parameters with two spaces only.
 #
@@ -82,6 +86,8 @@ Layout/LineLength:
   Exclude:
   - config/deploy.rb
   - config/deploy/*.rb
+  IgnoredPatterns:
+  - '(context|context|it|shared_examples_for)'
 
 # Multi-line method calls are indented by two spaces only.
 #
@@ -100,6 +106,7 @@ Layout/LineLength:
 #     .limit(5)
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
+
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
@@ -130,6 +137,22 @@ Style/Alias:
 Style/GuardClause:
   MinBodyLength: 3 # Default is 1.
 
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  IgnoreMacros: true
+  IgnoredMethods:
+  - describe
+  - not_to
+  - puts
+  - raise
+  - require
+  - require_dependency
+  - require_relative
+  - to
+  - yield
+  Exclude:
+  - Gemfile
+
 Metrics/AbcSize:
   Enabled: false
 
@@ -141,6 +164,11 @@ Metrics/BlockLength:
 # Limiting methods to 10 lines is a bit excessive; increase to 20.
 Metrics/MethodLength:
   Max: 20 # Default is 10.
+
+# GQL functions are all uppercase.
+Naming/MethodName:
+  Exclude:
+    - 'app/models/gql/runtime/functions/*'
 
 # Don't require methods to be in separate spec files.
 RSpec/FilePath:

@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
 
   after_action  :teardown_current
 
+  rescue_from YModel::RecordNotFound do
+    render_not_found
+  end
+
   def assign_locale
     # update session if passed
     if params[:locale].present? &&

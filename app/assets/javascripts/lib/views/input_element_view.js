@@ -1,23 +1,31 @@
-(function (window) {
+/* globals $ _ App Backbone flowplayer globals I18n InputElement Metric */
+(function(window) {
   'use strict';
 
-  var BODY_HIDE_EVENT, ACTIVE_VALUE_SELECTOR,
-      INPUT_ELEMENT_T, VALUE_SELECTOR_T, CONVERTER_INFO_T,
-      HOLD_DELAY, HOLD_DURATION, HOLD_FPS,
-      IS_IE_LTE_EIGHT, ACTIVE_INFO_BOX,
-
-      floatPrecision, conversionsFromModel,
-      abortValueSelection, bindValueSelectorBodyEvents,
-
-      InputElementView, ValueSelector;
+  var BODY_HIDE_EVENT,
+    ACTIVE_VALUE_SELECTOR,
+    INPUT_ELEMENT_T,
+    VALUE_SELECTOR_T,
+    CONVERTER_INFO_T,
+    HOLD_DELAY,
+    HOLD_DURATION,
+    HOLD_FPS,
+    IS_IE_LTE_EIGHT,
+    ACTIVE_INFO_BOX,
+    floatPrecision,
+    conversionsFromModel,
+    abortValueSelection,
+    bindValueSelectorBodyEvents,
+    InputElementView,
+    ValueSelector;
 
   // # Constants -------------------------------------------------------------
 
   // The number of milliseconds which pass before stepping up and down values
   // should begin being repeated.
-  HOLD_DELAY    = 500;
+  HOLD_DELAY = 500;
   HOLD_DURATION = 2000;
-  HOLD_FPS      = 60;
+  HOLD_FPS = 60;
 
   // Tracks whether the body has been assigned an event to hide input
   // selection boxes when the user clicks outside them.
@@ -29,12 +37,12 @@
 
   // Detect IE8 so that we can use the custom PNG when disabled, since it
   // managed to screw up opacity so spectacularly.
-  IS_IE_LTE_EIGHT = ($.browser.msie && $.browser.version <= 8);
+  IS_IE_LTE_EIGHT = $.browser.msie && $.browser.version <= 8;
 
   // Templates.
-  $(function () {
+  $(function() {
     if (document.getElementById('input-element-template')) {
-      INPUT_ELEMENT_T  = _.template($('#input-element-template').html());
+      INPUT_ELEMENT_T = _.template($('#input-element-template').html());
       VALUE_SELECTOR_T = _.template($('#value-selector-template').html());
     }
     if (document.getElementById('converter-details-template')) {
@@ -47,14 +55,15 @@
    * so that other numbers can be displayed with the same precisioin with
    * toFixed().
    */
-  floatPrecision = function (value, delta) {
-    var precision = 0, asString;
+  floatPrecision = function(value, delta) {
+    var precision = 0,
+      asString;
 
     if (_.isNumber(value)) {
-      asString  = value.toString();
+      asString = value.toString();
 
       if (asString.match(/e/)) {
-        precision = parseInt(asString.split(/e[-+]/)[1] , 10);
+        precision = parseInt(asString.split(/e[-+]/)[1], 10);
       } else {
         precision = value.toString().split('.');
         precision = precision[1] ? precision[1].length : 0;
@@ -77,53 +86,71 @@
    * Conversions come from the application as a hash where each key is an I18n
    * key, and each value an array in the format [ unit, multiplier ].
    */
-  conversionsFromModel = function (model) {
-    var conversions   = [],
-        modelConvs    = model.conversions(),
-        mPrecision    = floatPrecision(
-          model.get('step_value'),
-          model.get('max_value') - model.get('min_value')
-        ),
-        customDefault = false,
-        i;
+  conversionsFromModel = function(model) {
+    var conversions = [],
+      modelConvs = model.conversions(),
+      mPrecision = floatPrecision(
+        model.get('step_value'),
+        model.get('max_value') - model.get('min_value')
+      ),
+      customDefault = false,
+      i;
 
-    conversions.push(new UnitConversion({
-      name:       I18n.t('unit_conversions.default'),
-      unit:       model.get('unit'),
-      multiplier: 1
-    }, mPrecision));
+    conversions.push(
+      new UnitConversion(
+        {
+          name: I18n.t('unit_conversions.default'),
+          unit: model.get('unit'),
+          multiplier: 1
+        },
+        mPrecision
+      )
+    );
 
     for (i = 0; i < modelConvs.length; i++) {
-      conversions.push(new UnitConversion({
-        name:       modelConvs[i].unit,
-        unit:       modelConvs[i].unit,
-        multiplier: modelConvs[i].multiplier,
-        default:    modelConvs[i].default
-      }, mPrecision));
+      conversions.push(
+        new UnitConversion(
+          {
+            name: modelConvs[i].unit,
+            unit: modelConvs[i].unit,
+            multiplier: modelConvs[i].multiplier,
+            default: modelConvs[i].default
+          },
+          mPrecision
+        )
+      );
 
       if (modelConvs[i].default) {
-          customDefault = true;
+        customDefault = true;
       }
     }
 
-    conversions[0].default = ! customDefault;
+    conversions[0].default = !customDefault;
 
-    return _.sortBy(conversions, function (c) { return c.name; });
+    return _.sortBy(conversions, function(c) {
+      return c.name;
+    });
   };
 
   /**
    * Closes the currently open value selector without changing the value.
    */
-  abortValueSelection = function (event) {
-    if (! ACTIVE_VALUE_SELECTOR) {
+  abortValueSelection = function(event) {
+    if (!ACTIVE_VALUE_SELECTOR) {
       return true;
     }
 
     // Hide if the element clicked was not the value selection elemnt, or a
     // child of the selection element.
-    if (! $(event.target).closest('#' + ACTIVE_VALUE_SELECTOR).get(0)) {
-      $('#' + ACTIVE_VALUE_SELECTOR).fadeOut('fast').
-        parent('.new-input-slider').css('z-index', 10);
+    if (
+      !$(event.target)
+        .closest('#' + ACTIVE_VALUE_SELECTOR)
+        .get(0)
+    ) {
+      $('#' + ACTIVE_VALUE_SELECTOR)
+        .fadeOut('fast')
+        .parent('.new-input-slider')
+        .css('z-index', 10);
 
       ACTIVE_VALUE_SELECTOR = null;
     }
@@ -136,16 +163,18 @@
    *  - binds a click event such that clicking outside the selector closes it,
    *  - binds a keyup so that hitting [Escape] closes the selector.
    */
-  bindValueSelectorBodyEvents = function () {
+  bindValueSelectorBodyEvents = function() {
     if (BODY_HIDE_EVENT) {
       return true;
     }
 
     var $body = $('body');
 
-    $body
-      .click(abortValueSelection)
-      .keyup(function (event) { if (event.which === 27) { $body.click(); } });
+    $body.click(abortValueSelection).keyup(function(event) {
+      if (event.which === 27) {
+        $body.click();
+      }
+    });
 
     BODY_HIDE_EVENT = true;
   };
@@ -159,21 +188,21 @@
    */
   function smartStep(model) {
     var min = model.get('min_value'),
-        max = model.get('max_value'),
-        step = model.get('step_value'),
-        perPixel = (max - min) / 100;
+      max = model.get('max_value'),
+      step = model.get('step_value'),
+      perPixel = (max - min) / 100;
 
-    return (perPixel > (step * 1.5)) ? perPixel : step;
+    return perPixel > step * 1.5 ? perPixel : step;
   }
 
   // # UnitConversion --------------------------------------------------------
 
-  function UnitConversion (data, originalPrecision) {
-    this.name       = data.name;
+  function UnitConversion(data, originalPrecision) {
+    this.name = data.name;
     this.multiplier = data.multiplier == null ? 1 : data.multiplier;
-    this.unit       = data.unit;
-    this.uid        = _.uniqueId('uconv_');
-    this.default    = data.default;
+    this.unit = data.unit;
+    this.uid = _.uniqueId('uconv_');
+    this.default = data.default;
 
     if (data.precision == undefined) {
       this.precision = originalPrecision - floatPrecision(1 / this.multiplier);
@@ -182,7 +211,7 @@
     }
 
     if (this.precision < 0) {
-        this.precision = 0;
+      this.precision = 0;
     }
   }
 
@@ -196,23 +225,23 @@
    *
    *    u.format(2) # => "4.2"
    */
-  UnitConversion.prototype.format = function (value, noDelimiter) {
+  UnitConversion.prototype.format = function(value, noDelimiter) {
     var multiplied = value * this.multiplier,
-        precision  = this.precision,
-        power      = Metric.power_of_thousand(multiplied),
-        scale      = '',
-        formatted;
+      precision = this.precision,
+      power = Metric.power_of_thousand(multiplied),
+      scale = '',
+      formatted;
 
     if (power == 1) {
       // Don't show decimal places for numbers over 1000.
-      precision  = 0;
+      precision = 0;
     } else if (power >= 2) {
       // Numbers over a million are shown as a power of 1000 with two decimal
       // places, otherwise they won't fit. For example, 22,512,188 becomes
       // "22.51 M".
       multiplied = multiplied / Math.pow(1000, power);
-      precision  = 2;
-      scale      = Metric.power_symbols[power];
+      precision = 2;
+      scale = Metric.power_symbols[power];
     }
 
     formatted = I18n.toNumber(multiplied, {
@@ -225,7 +254,7 @@
       return (0.0).toFixed(this.precision);
     }
 
-    return (scale ? formatted + ' ' + scale : formatted);
+    return scale ? formatted + ' ' + scale : formatted;
   };
 
   /**
@@ -237,7 +266,7 @@
    *
    *    u.formatWithUnit(2) # => "4.2 GW"
    */
-  UnitConversion.prototype.formatWithUnit = function (value) {
+  UnitConversion.prototype.formatWithUnit = function(value) {
     if (this.unit && this.unit.length > 0) {
       return this.format(value) + ' ' + this.unit;
     }
@@ -254,35 +283,37 @@
    *
    *    u.toInternal(4.2) # => 2.0
    */
-  UnitConversion.prototype.toInternal = function (formatted) {
+  UnitConversion.prototype.toInternal = function(formatted) {
     return formatted * (1 / this.multiplier);
   };
 
   /**
    * Creates an <option> element which represents the unit conversion.
    */
-  UnitConversion.prototype.toOptionEl = function () {
-    return $('<option></option>').val(this.uid).
-        text(this.name).attr('selected', this.default);
+  UnitConversion.prototype.toOptionEl = function() {
+    return $('<option></option>')
+      .val(this.uid)
+      .text(this.name)
+      .attr('selected', this.default);
   };
 
   // # InputElementView ------------------------------------------------------
 
   InputElementView = Backbone.View.extend({
     events: {
-      'touchend  .reset':      'resetValue',
-      'click     .reset':      'resetValue',
-      'mousedown .decrease':   'beginStepDown',
-      'mousedown .increase':   'beginStepUp',
-      'touchend  .show-info':  'toggleInfoBox',
-      'click     .show-info':  'toggleInfoBox',
-      'touchend  .output':     'showValueSelector',
-      'click     .output':     'showValueSelector',
+      'touchend  .reset': 'resetValue',
+      'click     .reset': 'resetValue',
+      'mousedown .decrease': 'beginStepDown',
+      'mousedown .increase': 'beginStepUp',
+      'touchend  .show-info': 'toggleInfoBox',
+      'click     .show-info': 'toggleInfoBox',
+      'touchend  .output': 'showValueSelector',
+      'click     .output': 'showValueSelector',
       'touchend  a.converter_detail': 'showConverterDetail',
       'click     a.converter_detail': 'showConverterDetail'
     },
 
-    initialize: function (options) {
+    initialize: function() {
       _.bindAll(
         this,
         'updateFromModel',
@@ -291,12 +322,13 @@
         'quinnOnCommit'
       );
 
-      this.conversions   = conversionsFromModel(this.model);
-      this.conversion    = _.find(this.conversions,
-                                  function(c) { return c.default });
+      this.conversions = conversionsFromModel(this.model);
+      this.conversion = _.find(this.conversions, function(c) {
+        return c.default;
+      });
 
       this.valueSelector = new ValueSelector({ view: this });
-      this.initialValue  = this.model.get('start_value');
+      this.initialValue = this.model.get('start_value');
 
       if (this.initialValue == null) {
         this.initialValue = this.model.get('min_value');
@@ -316,27 +348,34 @@
       // we delay setting the value on the model until we think they have
       // finished. This holds the timeout ID.
       this.resolveTimeout = null;
-      this.lastStepClick  = null;
+      this.lastStepClick = null;
 
       this.model.bind('change', this.updateFromModel);
 
-      this.model.bind('change:user_value', _.bind(function () {
-        this.setTransientValue(this.model.get('user_value'));
-      }, this));
+      this.model.bind(
+        'change:user_value',
+        _.bind(function() {
+          this.setTransientValue(this.model.get('user_value'));
+        }, this)
+      );
 
       this.model.bind('change:disabled', this.updateIsDisabled);
 
       // Hold off rendering until the document is ready (and the templates
       // have been parsed).
-      $(_.bind(function () { this.render(); }, this));
+      $(
+        _.bind(function() {
+          this.render();
+        }, this)
+      );
     },
 
-    // ## Rendering ----------------------------------------------------------
+    // Rendering ---------------------------------------------------------------
 
     /**
      * Creates the HTML elements used to display the slider.
      */
-    render: function () {
+    render: function() {
       var quinnStep = this.model.get('step_value');
 
       if (this.model.get('share_group')) {
@@ -350,67 +389,68 @@
 
       this.$el.addClass('new-input-slider').html(
         INPUT_ELEMENT_T({
-          name:             this.model.get('translated_name'),
-          info:             this.model.get('sanitized_description'),
-          sublabel:         this.model.get('label'),
-          converter:        this.model.get('related_converter'),
+          name: this.model.get('translated_name'),
+          info: this.model.get('sanitized_description'),
+          sublabel: this.model.get('label'),
+          converter: this.model.get('related_converter'),
           converter_source: this.model.get('converter_source_url'),
-          input_element_key:this.model.get('key'),
-          end_year:         App.settings.get("end_year"),
-          info_link:        I18n.t('input_elements.common.info_link')
+          input_element_key: this.model.get('key'),
+          end_year: App.settings.get('end_year'),
+          info_link: I18n.t('input_elements.common.info_link')
         })
       );
 
-      this.resetElement    = this.$('.reset');
+      this.resetElement = this.$('.reset');
       this.decreaseElement = this.$('.decrease');
       this.increaseElement = this.$('.increase');
-      this.valueElement    = this.$('.output');
+      this.valueElement = this.$('.output');
 
       // INITIALIZATION.
 
       // new $.Quinn is an alternative to $(...).quinn(), and allows us to
       // easily keep hold of the Quinn instance.
       this.quinn = new $.Quinn(this.$('.quinn'), {
-        min:        this.model.get('min_value'),
-        max:        this.model.get('max_value'),
+        min: this.model.get('min_value'),
+        max: this.model.get('max_value'),
 
-        value:      this.model.get('user_value'),
-        step:       quinnStep,
-        disable:    this.model.get('disabled'),
+        value: this.model.get('user_value'),
+        step: quinnStep,
+        disable: this.model.get('disabled'),
 
-        drawTo:     {
+        drawTo: {
           left: this.model.drawToMin(),
           right: this.model.drawToMax()
         },
 
         // Don't round initial values which don't fit the step.
-        strict:     false,
+        strict: false,
 
         // Disable effects on sliders which are part of a group, since the
         // animation can look a little jarring.
-        effects:  ! this.model.get('share_group'),
+        effects: !this.model.get('share_group'),
 
         // Keyboard events have a 300ms delay so that repeat keypresses don't
         // flood ETengine.
         keyFloodWait: 300,
 
         // No opacity for IE <= 8.
-        disabledOpacity: (IS_IE_LTE_EIGHT ? 1.0 : 0.5)
+        disabledOpacity: IS_IE_LTE_EIGHT ? 1.0 : 0.5
       });
 
-      this.steppedInitialValue =
-        this.quinn.model.sanitizeValue(this.initialValue);
+      this.steppedInitialValue = this.quinn.model.sanitizeValue(
+        this.initialValue
+      );
 
       // The group onChange needs to be bound before the InputElementView
       // onChange, or the displayed value may be updated even though the
       // actual value doesn't change.
       if (this.model.get('share_group')) {
-        InputElement.Balancer.
-          get(this.model.get('share_group'), { max: 100 }).
-          add(this);
+        InputElement.Balancer.get(this.model.get('share_group'), {
+          max: 100
+        }).add(this);
       }
 
-      this.quinn.on('drag',   this.quinnOnChange);
+      this.quinn.on('drag', this.quinnOnChange);
       this.quinn.on('change', this.quinnOnCommit);
 
       // Need to do this manually, since it needs this.quinn to be set.
@@ -427,7 +467,7 @@
      * permitted value, and the reset button if the current slider value is
      * the original value.
      */
-    refreshButtons: function () {
+    refreshButtons: function() {
       var value = this.quinn.model.value;
 
       if (this.model.get('disabled')) {
@@ -456,7 +496,7 @@
       }
     },
 
-    // ## Instance Methods ---------------------------------------------------
+    // Instance Methods --------------------------------------------------------
 
     /**
      * Disables a slider button.
@@ -466,7 +506,7 @@
      * does is add a disabled class to the button, since the Quinn instance
      * will enforce that the value cannot be changed.
      */
-    disableButton: function (buttonName) {
+    disableButton: function(buttonName) {
       var buttonElement = this[buttonName + 'Element'];
       buttonElement && buttonElement.addClass('disabled');
     },
@@ -477,7 +517,7 @@
      * The sole argument should be the string "reset", "decrease", or
      * "increase" depending on which button you want to be enabled.
      */
-    enableButton: function (buttonName) {
+    enableButton: function(buttonName) {
       var buttonElement = this[buttonName + 'Element'];
       buttonElement && buttonElement.removeClass('disabled');
     },
@@ -485,8 +525,8 @@
     /**
      * Is called when something in the constraint model changed.
      */
-    updateFromModel: function () {
-      if (! this.disableUpdate) {
+    updateFromModel: function() {
+      if (!this.disableUpdate) {
         return;
       }
 
@@ -498,7 +538,7 @@
     /**
      * Is called when the models "disabled" attribute is changed.
      */
-    updateIsDisabled: function (_model, isDisabled) {
+    updateIsDisabled: function(_model, isDisabled) {
       if (isDisabled) {
         this.$el.addClass('disabled');
         this.valueElement.html('&mdash;');
@@ -512,7 +552,7 @@
       this.refreshButtons();
     },
 
-    // ## Event Handlers -----------------------------------------------------
+    // Event Handlers ----------------------------------------------------------
 
     /**
      * Updates elements of the UI to show the new slider value, but does _not_
@@ -523,8 +563,8 @@
      * the Quinn slider, in which case we can trust the value to fit the step,
      * min, and max values, and do not need to run the Quinn callbacks.
      */
-    setTransientValue: function (newValue, fromSlider) {
-      if (! fromSlider) {
+    setTransientValue: function(newValue, fromSlider) {
+      if (!fromSlider) {
         newValue = this.quinn.setValue(newValue);
       }
 
@@ -537,32 +577,31 @@
      * Updates the value in the sublabel element to reflect changes made to the
      * input value by the user.
      */
-    updateSublabel: function (value) {
+    updateSublabel: function(value) {
       if (this.model.get('unit') !== '%') {
         // Can't change label values for other units without more radical
         // changes in ETengine.
         return true;
       }
 
-      var label = this.model.get('label'), conversion;
+      var label = this.model.get('label'),
+        conversion;
 
       if (label) {
         conversion = new UnitConversion({
           multiplier: value / 100.0 + 1.0,
-          unit:       label.suffix,
-          precision:  2
+          unit: label.suffix,
+          precision: 2
         });
 
-        this.$el.find('.sublabel').html(
-          conversion.formatWithUnit(label.value)
-        );
+        this.$el.find('.sublabel').html(conversion.formatWithUnit(label.value));
       }
     },
 
     /**
      * Resets the value of the slider to it's original value.
      */
-    resetValue: function (event) {
+    resetValue: function(event) {
       // Sliders which are part of a balancer should reset the whole group.
       // event will be false when the balancer calls resetValue so that
       // resetValue can easily be called to reset each slider in turn.
@@ -587,7 +626,7 @@
      * decreased until either the minimum value is reached, or the user lifts
      * the button.
      */
-    beginStepDown: function () {
+    beginStepDown: function() {
       this.performStepping(this.quinn.model.minimum);
     },
 
@@ -598,7 +637,7 @@
      * decreased until either the minimum value is reached, or the user lifts
      * the button.
      */
-    beginStepUp: function () {
+    beginStepUp: function() {
       this.performStepping(this.quinn.model.maximum);
     },
 
@@ -607,22 +646,23 @@
      * increase or decrease buttons, such that the value continues to be
      * adjusted so long as they hold the mouse button.
      */
-    performStepping: function (targetValue) {
-      var self           = this,
-          initialValue   = this.quinn.model.value,
-          duration       = HOLD_DURATION / (1000 / HOLD_FPS),
-          isIncreasing   = (targetValue > initialValue),
-          stepIterations = 0,
-          wasHeld        = false,
-
-          delta          = this.quinn.model.maximum -
-                           this.quinn.model.minimum,
-
-          progress, timeoutId, intervalId, intervalFunc, onFinish;
+    performStepping: function(targetValue) {
+      var self = this,
+        initialValue = this.quinn.model.value,
+        duration = HOLD_DURATION / (1000 / HOLD_FPS),
+        isIncreasing = targetValue > initialValue,
+        stepIterations = 0,
+        wasHeld = false,
+        delta = this.quinn.model.maximum - this.quinn.model.minimum,
+        progress,
+        timeoutId,
+        intervalId,
+        intervalFunc,
+        onFinish;
 
       // --
 
-      if (targetValue === initialValue || ! this.quinn.start()) {
+      if (targetValue === initialValue || !this.quinn.start()) {
         return false;
       }
 
@@ -646,16 +686,18 @@
 
       // Interval function is what happens every 10 ms, where the slider value
       // is changed while the user continues to hold their mouse-button.
-      intervalFunc = function () {
+      intervalFunc = function() {
         progress = $.easing.easeInCubic(
           null,
           stepIterations++, // current time
-          0, 1,             // start / finish value
-          duration          // total number of iterations
+          0,
+          1, // start / finish value
+          duration // total number of iterations
         );
 
         self.quinn.setTentativeValue(
-          initialValue + ((targetValue - initialValue) * progress));
+          initialValue + (targetValue - initialValue) * progress
+        );
 
         if (self.quinn.model.value === targetValue) {
           // We've reached the target value, so stop trying to move further.
@@ -665,14 +707,14 @@
 
       // Set a timeout so that after HOLD_DELAY seconds, the slider value will
       // continue to be changed so long as the user holds the mouse button.
-      timeoutId = window.setTimeout(function () {
+      timeoutId = window.setTimeout(function() {
         intervalId = window.setInterval(intervalFunc, 1000 / HOLD_FPS);
-        wasHeld    = true;
+        wasHeld = true;
       }, HOLD_DELAY);
 
       // Executed when the user lifts the mouse button; commits the new value.
-      onFinish = function () {
-        var exec = function () {
+      onFinish = function() {
+        var exec = function() {
           self.quinn.resolve();
           wasHeld = self.resolveTimeout = null;
         };
@@ -682,11 +724,14 @@
         window.clearTimeout(timeoutId);
         window.clearInterval(intervalId);
 
-        timeoutId  = null;
+        timeoutId = null;
         intervalId = null;
 
-        if (wasHeld === true || ! self.lastStepClick ||
-              (new Date() - self.lastStepClick) > 1000) {
+        if (
+          wasHeld === true ||
+          !self.lastStepClick ||
+          new Date() - self.lastStepClick > 1000
+        ) {
           exec();
         } else {
           // When the user quickly clicked the button, we wait a bit just in
@@ -697,7 +742,7 @@
         // Log when the user lifted their mouse button; used so that single
         // clicks immediately update ETengine, while subsequent clicks will
         // wait until the user has finished.
-        self.lastStepClick = new Date;
+        self.lastStepClick = new Date();
       };
 
       $('body').on('mouseup.stepaccel', onFinish);
@@ -706,9 +751,9 @@
     /**
      * Toggles display of the slider information box.
      */
-    toggleInfoBox: function () {
-      var active  = ACTIVE_INFO_BOX,
-          infoBox = this.$('.info-wrap');
+    toggleInfoBox: function() {
+      var active = ACTIVE_INFO_BOX,
+        infoBox = this.$('.info-wrap');
 
       if (infoBox.is(':visible')) {
         // Info box already open; user is closing it.
@@ -723,10 +768,13 @@
       }
 
       this.$el.toggleClass('info-box-visible');
-      infoBox.animate({
-        height:  ['toggle', 'easeOutCubic'],
-        opacity: ['toggle', 'easeOutQuad']
-      }, 'fast');
+      infoBox.animate(
+        {
+          height: ['toggle', 'easeOutCubic'],
+          opacity: ['toggle', 'easeOutQuad']
+        },
+        'fast'
+      );
 
       this.initFlowplayer();
       return false;
@@ -741,29 +789,39 @@
       if (infoBox.is(':visible')) {
         ACTIVE_INFO_BOX = null;
         this.$el.toggleClass('info-box-visible');
-        infoBox.animate({
-          height:  ['toggle', 'easeOutCubic'],
-          opacity: ['toggle', 'easeOutQuad']
-        }, 'fast');
+        infoBox.animate(
+          {
+            height: ['toggle', 'easeOutCubic'],
+            opacity: ['toggle', 'easeOutQuad']
+          },
+          'fast'
+        );
       }
       return false;
     },
 
     /**
-    * Loads the flowplayer when the description of the input element contains a flash movie
-    * The global standalone parameter disables this embedded player.
-    */
-    initFlowplayer : function() {
-      if(!this.model.get('has_flash_movie')) return;
+     * Loads the flowplayer when the description of the input element contains a
+     * flash movie. The global standalone parameter disables this embedded
+     * player.
+     */
+    initFlowplayer: function() {
+      if (!this.model.get('has_flash_movie')) {
+        return;
+      }
       if (globals.standalone) {
-        $("a.player").hide();
+        $('a.player').hide();
       } else {
-        flowplayer('a.player', {
-          src: '/flash/flowplayer-3.2.6.swf',
-          wmode: 'opaque'
-        },{
-          clip: {autoPlay: false}
-        });
+        flowplayer(
+          'a.player',
+          {
+            src: '/flash/flowplayer-3.2.6.swf',
+            wmode: 'opaque'
+          },
+          {
+            clip: { autoPlay: false }
+          }
+        );
       }
     },
 
@@ -771,7 +829,7 @@
      * Shows the overlay which allows the user to enter a custom value, and
      * swap between different unit conversions supported by the model.
      */
-    showValueSelector: function (event) {
+    showValueSelector: function() {
       if (this.model.get('disabled')) {
         return false;
       }
@@ -783,32 +841,31 @@
     /**
      * Loads the converter details in a fancybox popup
      */
-     showConverterDetail: function (e) {
-        e.preventDefault();
-        var title = $(e.target).data('title');
-        var converter = $(e.target).data('converter');
-        var converter_source_url = $(e.target).data('converter_source_url');
-        var url = App.scenario.url_path() + "/converters/" + converter;
+    showConverterDetail: function(e) {
+      e.preventDefault();
+      var title = $(e.target).data('title');
+      var converter = $(e.target).data('converter');
+      var converter_source_url = $(e.target).data('converter_source_url');
+      var url = App.scenario.url_path() + '/converters/' + converter;
 
-        $.ajax({
-          url: url,
-          dataType: 'json',
-          success: function(data) {
-            var content = CONVERTER_INFO_T({
-              title: title,
-              data: data.data,
-              converter_source_url: converter_source_url,
-              uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
-            });
-            $.fancybox({
-              type: 'html',
-              content: content,
-              width: 770
-            });
-          }
-        });
-
-     },
+      $.ajax({
+        url: url,
+        dataType: 'json',
+        success: function(data) {
+          var content = CONVERTER_INFO_T({
+            title: title,
+            data: data.data,
+            converter_source_url: converter_source_url,
+            uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
+          });
+          $.fancybox({
+            type: 'html',
+            content: content,
+            width: 770
+          });
+        }
+      });
+    },
 
     /**
      * Used as the Quinn onCommit callback. Updates the UI.
@@ -818,7 +875,7 @@
      * onChange is for updating the UI only, onCommit is where persistance
      * should be. onChange is also fired once when the is initialized.
      */
-    quinnOnChange: function (newValue, quinn) {
+    quinnOnChange: function(newValue, quinn) {
       // Note that we use quinn.model.value, AND NOT newValue. Grouped inputs
       // may have their values changed during balancing, and this change isn't
       // reflected in the newValue parameter.
@@ -829,8 +886,8 @@
      * Used as the Quinn onCommit callback. Takes care of setting the value
      * back to the model.
      */
-    quinnOnCommit: function (newValue, quinn) {
-      if (! this.model.get('disabled')) {
+    quinnOnCommit: function(newValue) {
+      if (!this.model.get('disabled')) {
         this.refreshButtons();
       }
 
@@ -848,36 +905,36 @@
 
     events: {
       'click  button': 'commit',
-      'submit form':   'commit',
+      'submit form': 'commit',
       'change select': 'changeConversion',
       'keydown input': 'inputKeypress'
     },
 
-    initialize: function (options) {
+    initialize: function(options) {
       this.view = options.view;
-      this.uid  = _.uniqueId('vse_');
+      this.uid = _.uniqueId('vse_');
 
-      this.conversions        = this.view.conversions;
+      this.conversions = this.view.conversions;
       this.selectedConversion = this.view.conversion;
-      this.lastVisChange      = new Date();
+      this.lastVisChange = new Date();
     },
 
-    // ## Rendering ----------------------------------------------------------
+    // Rendering ---------------------------------------------------------------
 
     /**
      * Creates the HTML elements for the value selector, and adds them to the
      * parent element.
      */
-    render: function () {
+    render: function() {
       var $el = this.$el;
 
       this.model = this.view.quinn.model;
 
-      $el.append( VALUE_SELECTOR_T({ conversions: this.conversions }) );
+      $el.append(VALUE_SELECTOR_T({ conversions: this.conversions }));
       $el.attr('id', this.uid);
 
-      this.inputEl    = this.$('input');
-      this.unitEl     = this.$('select');
+      this.inputEl = this.$('input');
+      this.unitEl = this.$('select');
       this.unitNameEl = this.$('.unit');
 
       this.view.$el.append($el);
@@ -895,15 +952,16 @@
      * Returns the current value of the input field, converted to the internal
      * representation used by Quinn.
      */
-    inputValue: function () {
+    inputValue: function() {
       var newValue = '' + this.inputEl.val();
 
       // Some users may enter a comma for decimal places.
       newValue = newValue.replace(/,/, '.');
 
-      if (newValue.length > 0 &&
-              ((newValue = parseFloat(newValue)) || newValue === 0)) {
-
+      if (
+        newValue.length > 0 &&
+        ((newValue = parseFloat(newValue)) || newValue === 0)
+      ) {
         return this.selectedConversion.toInternal(parseFloat(newValue));
       }
 
@@ -916,7 +974,7 @@
      * Triggered when the user clicks the input element <output/> element;
      * sets the selector values only when shown.
      */
-    show: function () {
+    show: function() {
       // Don't show the selector if it was hidden less than 500ms ago (user
       // probably accidentally double-clicked).
       if (new Date() - this.lastVisChange < 500) {
@@ -927,7 +985,7 @@
 
       // If this is the first time the selector is being shown, it needs to be
       // rendered first.
-      if (! this.inputEl) {
+      if (!this.inputEl) {
         this.render();
       }
 
@@ -936,16 +994,22 @@
         $('body').click();
       }
 
-      ACTIVE_VALUE_SELECTOR   = this.uid;
+      ACTIVE_VALUE_SELECTOR = this.uid;
       this.selectedConversion = this.view.conversion;
 
-      this.inputEl.val(this.selectedConversion.format(this.model.value, true));
+      this.inputEl.val(
+        I18n.toNumber(this.model.value, {
+          precision: this.selectedConversion.precision,
+          delimiter: ''
+        })
+      );
+
       this.unitEl.val(this.selectedConversion.uid);
       this.unitNameEl.text(this.selectedConversion.unit);
 
       this.$el.fadeIn('fast');
 
-      if (! this.inputEl.attr('disabled')) {
+      if (!this.inputEl.attr('disabled')) {
         this.inputEl.focus().select();
       }
 
@@ -959,7 +1023,7 @@
      * When the selector is closes, commits the changes back to the view so
      * that it may be updated with the new value and unit conversion.
      */
-    commit: function () {
+    commit: function() {
       // Don't do anything if the selector was shown less than 500ms ago (user
       // probably accidentally double-clicked the slider value).
       if (new Date() - this.lastVisChange < 500) {
@@ -986,17 +1050,17 @@
      * selector without clicking "update", the changed unit conversion will
      * not be kept).
      */
-    changeConversion: function () {
+    changeConversion: function() {
       var uid = this.unitEl.val();
 
-      this.selectedConversion = _.detect(this.conversions, function (conv) {
+      this.selectedConversion = _.detect(this.conversions, function(conv) {
         return conv.uid === uid;
       });
 
       this.inputEl.val(this.selectedConversion.format(this.model.value));
       this.unitNameEl.text(this.selectedConversion.unit);
 
-      if (! this.inputEl.attr('disabled')) {
+      if (!this.inputEl.attr('disabled')) {
         this.inputEl.focus().select();
       }
 
@@ -1008,24 +1072,24 @@
      * This allows us to track when they press the up or down cursor keys, and
      * step up and down the slider values.
      */
-    inputKeypress: function (event) {
+    inputKeypress: function(event) {
       var step = this.model.step,
-          newValue;
+        newValue;
 
       // Don't change value if shift is held (commonly used on OS X to select
       // a field value).
-      if (! event.shiftKey) {
-        if (event.which === 38) { // Up key
+      if (!event.shiftKey) {
+        if (event.which === 38) {
+          // Up key
           newValue = this.inputValue() + step;
-        } else if (event.which === 40) { // Down key
+        } else if (event.which === 40) {
+          // Down key
           newValue = this.inputValue() - step;
         }
       }
 
       // If an acceptable new value was calculated, set it.
-      if (newValue <= this.model.maximum &&
-          newValue >= this.model.minimum) {
-
+      if (newValue <= this.model.maximum && newValue >= this.model.minimum) {
         this.inputEl.val(this.selectedConversion.format(newValue)).select();
         return false;
       }
@@ -1037,5 +1101,4 @@
   // Globals -----------------------------------------------------------------
 
   window.InputElementView = InputElementView;
-
 })(window);

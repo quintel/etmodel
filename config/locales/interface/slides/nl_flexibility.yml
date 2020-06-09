@@ -3,7 +3,7 @@ nl:
     flexibility_electricity_import_export_edp:
       title: Naar een Europese 'Merit Order'
       short_description:
-      description: "De <strong>merit order</strong>  bepaalt de volgorde waarin elektriciteitsproducenten
+      description: "De <strong>merit order</strong> bepaalt de volgorde waarin elektriciteitsproducenten
         aan de vraag voldoen (zie ook <a href=\"/scenario/costs/merit_order/merit-order\"
         >Merit Order</a>). De producenten met de laagste marginale kosten hebben voorrang.
         \r\n<br/><br/>\r\nDit betekent dat landen met goedkopere stroomproductie exporteren
@@ -12,17 +12,44 @@ nl:
         te bevorderen, wordt de interconnectiecapaciteit tussen landen uitgebreid
         en het gebruik ervan geoptimaliseerd."
     flexibility_electricity_import_export_interconnectivity:
-      title: Interconnectiecapaciteit
+      title: "Elektrische interconnector 1"
       short_description:
-      description: Het verschil tussen de vraag en het aanbod van elektriciteit op
-        uurbasis kan worden geïmporteerd of geëxporteerd. De interconnectiecapaciteit
-        tussen landen is echter beperkt; het is hierdoor maar beperkt mogelijk om
-        elektriciteit te exporteren. Hieronder kun je de totale capaciteit van alle
-        interconnectoren instellen. Het is echter mogelijk dat niet al deze capaciteit
-        beschikbaar is voor export, bijvoorbeeld omdat de omringende landen op hetzelfde
-        moment met elektriciteitsoverschotten kampen. Het is daarom mogelijk om het
+      description: "Het verschil tussen vraag en aanbod van elektriciteit op
+        uurbasis kan worden geïmporteerd of geëxporteerd. Veel landen importeren en
+        exporteren elektriciteit met hun buurlanden via verschillende
+        interconnectoren. In het ETM is het mogelijk om tot wel zes verschillende elektrische
+        interconnectoren te modelleren tussen landen. Je voegt een interconnector toe
+        door interconnectiecapaciteit in te stellen voor die interconector. Als je liever
+        alle interconnectoren gezamenlijk wil modelleren, dan stel je alleen interconnectorcapaciteit
+        in voor interconnector 1.
+        \r\n<br/><br/>\r\n
+        Per interconnector kan je de capaciteit instellen. Het is echter mogelijk dat niet al deze capaciteit
+        beschikbaar is voor export, bijvoorbeeld omdat het naburige land op hetzelfde
+        moment met elektriciteitsoverschotten kampt. Het is daarom mogelijk om het
         percentage van de interconnectiecapaciteit dat beschikbaar is voor export
-        te beperken. Lees meer over import/export <a href="https://docs.energytransitionmodel.com/main/import-export">hier</a>.
+        te beperken. Naast capaciteit is het ook mogelijk de bijbehorende CO<sub>2</sub>
+        uitstoot en prijs in te stellen. De prijs bepaalt de inzetvolgorde
+        van interconnectoren voor import en export."
+    flexibility_electricity_import_export_interconnectivity_2:
+      title: "Elektrische interconnector 2"
+      description: |
+        Hieronder kan je capaciteit, CO<sub>2</sub> uitstoot en prijs instellen voor interconnector 2.
+    flexibility_electricity_import_export_interconnectivity_3:
+      title: "Elektrische interconnector 3"
+      description: |
+        Hieronder kan je capaciteit, CO<sub>2</sub> uitstoot en prijs instellen voor interconnector 3.
+    flexibility_electricity_import_export_interconnectivity_4:
+      title: "Elektrische interconnector 4"
+      description: |
+        Hieronder kan je capaciteit, CO<sub>2</sub> uitstoot en prijs instellen voor interconnector 4.
+    flexibility_electricity_import_export_interconnectivity_5:
+      title: "Elektrische interconnector 5"
+      description: |
+        Hieronder kan je capaciteit, CO<sub>2</sub> uitstoot en prijs instellen voor interconnector 5.
+    flexibility_electricity_import_export_interconnectivity_6:
+      title: "Elektrische interconnector 6"
+      description: |
+        Hieronder kan je capaciteit, CO<sub>2</sub> uitstoot en prijs instellen voor interconnector 6.
     flexibility_electricity_import_export_interconnectors:
       title: Effecten van extra interconnectiecapaciteit
       short_description:
@@ -342,6 +369,13 @@ nl:
         draaikosten van deze centrales kan het ETM de prijs op uurbasis
         uitrekenen. Het ETM neemt aan dat deze prijs gelijk is aan de kosten
         van de duurste centrale die op dat moment is ingeschakeld.
+
+        <br/><br/>
+
+        Let op: een uurlijkse onbalans tussen elektriciteitsvraag en -aanbod
+        is te wijten aan onvoldoende productiecapaciteit in het scenario. Deze
+        onbalans (resulterend in stroomuitval) is in de data-export van de
+        elektriciteitsprofielen terug te vinden in de 'deficit' kolom.
 
         <br/><br/>
 

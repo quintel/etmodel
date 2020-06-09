@@ -100,12 +100,10 @@ nl:
     flexibility_outdoor_temperature:
       title: Buitentemperatuur
       short_description:
-      description: "Hoeveel denk je dat de buitentemperatuur zal veranderen in de
+      description: "Hoeveel denk je dat de gemiddelde buitentemperatuur zal veranderen in de
         toekomst?\r\n<br/><br/>\r\nJe keuze heeft invloed op de warmte- en koudevraag
-        van huishoudens en gebouwen. Om de vertaalslag van temperatuur naar nuttig
-        gebruik te maken is aangenomen dat mensen hun huis verwarmen als de buitentemperatuur
-        onder de 18 &degC daalt en gaan koelen als ze boven de 23 &degC stijgt.\r\n<br/><br/>\r\nKijk
-        voor meer informatie over de klimaatberekening in onze <a href=\"https://docs.energytransitionmodel.com/main/climate\"
+        van huishoudens, gebouwen en landbouw. Kijk voor meer informatie in onze
+        <a href=\"https://docs.energytransitionmodel.com/main/outdoor-temperature\"
         target =\"_blank\">documentatie</a>."
     settings_weather_curve_set:
     flh_of_energy_power_wind_turbine_coastal:
@@ -210,7 +208,7 @@ nl:
       description: |-
         Het tarief van een kWh stroom is in 2020 gemiddeld 22,5 cent in Nederland. Daarvan is 7,5 cent voor de elektriciteit zelf (de marktprijs) en 15 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
         Deze slider heeft enkel invloed op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen
-    interconnectors_availability_for_export:
+    electricity_interconnector_1_export_availability: &interconnector_export_availability
       title: Beschikbaar voor export
       short_description:
       description: Het is erg waarschijnlijk dat niet alle fysieke interconnectiecapaciteit
@@ -219,7 +217,12 @@ nl:
         hier op dat moment ook last van zullen hebben. Met deze slider kun je daarom
         instellen welk deel van de interconnectiecapaciteit je verwacht te kunnen
         gebruiken voor export.
-    interconnectors_availability_for_import:
+    electricity_interconnector_2_export_availability: *interconnector_export_availability
+    electricity_interconnector_3_export_availability: *interconnector_export_availability
+    electricity_interconnector_4_export_availability: *interconnector_export_availability
+    electricity_interconnector_5_export_availability: *interconnector_export_availability
+    electricity_interconnector_6_export_availability: *interconnector_export_availability
+    electricity_interconnector_1_import_availability: &interconnector_import_availability
       title: Beschikbaar voor import
       short_description:
       description: Het is erg waarschijnlijk dat niet alle fysieke interconnectiecapaciteit
@@ -228,11 +231,39 @@ nl:
         hier op dat moment ook last van zullen hebben. Met deze slider kun je daarom
         instellen welk deel van de interconnectiecapaciteit je verwacht te kunnen
         gebruiken voor import.
-    interconnectors_interconnector_capacity:
+    electricity_interconnector_2_import_availability: *interconnector_import_availability
+    electricity_interconnector_3_import_availability: *interconnector_import_availability
+    electricity_interconnector_4_import_availability: *interconnector_import_availability
+    electricity_interconnector_5_import_availability: *interconnector_import_availability
+    electricity_interconnector_6_import_availability: *interconnector_import_availability
+    electricity_interconnector_1_capacity: &interconnector_capacity
       title: Interconnectiecapaciteit
       short_description:
       description: De interconnectiecapaciteit met de omringende landen is beperkt.
         Met deze slider kun je de toekomstige interconnectiecapaciteit instellen.
+    electricity_interconnector_2_capacity: *interconnector_capacity
+    electricity_interconnector_3_capacity: *interconnector_capacity
+    electricity_interconnector_4_capacity: *interconnector_capacity
+    electricity_interconnector_5_capacity: *interconnector_capacity
+    electricity_interconnector_6_capacity: *interconnector_capacity
+    electricity_interconnector_1_marginal_costs: &interconnector_marginal_costs
+      title: Kosten van geïmporteerde elektriciteit
+      short_description:
+      description: "Denk jij dat de geïmporteerde elektriciteit gemiddeld goedkoop
+        is door overschotten in de productie, of denk jij dat het juist duur is doordat
+        de import vooral is tijdens de piekvraag? \r\n</p>\r\n\r\nDe gemiddelde kosten
+        van elektriciteit op de Centraal West Europese markt waren rond de 35 €/MWh
+        in 2015. Alhoewel dit enorm kan verschillen per maand, dag, of zelfs uur.
+        <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
+        target =\"_blank\">(European Commission, 2015)</a>. \r\n\r\n</p>\r\n\r\n\r\nJe
+        kunt een beter beeld krijgen van de fluctuerende prijs door te kijken in de
+        <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
+        target =\"_blank\">documentatie</a>. "
+    electricity_interconnector_2_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_3_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_4_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_5_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_6_marginal_costs: *interconnector_marginal_costs
     curtailment_of_households_solar_pv_solar_radiation:
       title: Zon op dak huishoudens
       short_description:
@@ -306,7 +337,7 @@ nl:
         is wordt de opgeslagen elektriciteit teruggeleverd aan het elektriciteitsnet.\r\nHoewel
         de batterij niet reageert op netwerkcongestie kan haar gedrag wel helpen om
         capaciteitsproblemen op het middenspanningsnet te voorkomen. \r\n"
-    co2_emissions_of_imported_electricity_present:
+    electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Huidige import
       short_description:
       description: "De gemiddelde emissie van de Nederlandse elektriciteitsmix is
@@ -317,7 +348,12 @@ nl:
         in gram CO<sub>2</sub> per kWh vinden per type drager, technologie en land
         in onze <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">documentation</a>. "
-    co2_emissions_of_imported_electricity_future:
+    electricity_interconnector_2_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_3_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_4_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_5_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_6_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Toekomstige import
       short_description:
       description: "Wat zijn de emissies voor geïmporteerde elektriciteit in de toekomst?
@@ -330,6 +366,11 @@ nl:
         meer emissies in gram CO<sub>2</sub> per kWh vinden per type drager, technologie
         en land in onze <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">documentation</a>. "
+    electricity_interconnector_2_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_3_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_4_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_5_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_6_co2_emissions_future: *interconnector_co2_future
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
       title: Power-to-hydrogen
       short_description:

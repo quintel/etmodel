@@ -13,6 +13,8 @@ class @AppView extends Backbone.View
     @router      = new Router()
     @analytics   = new Analytics(window.ga);
 
+    @customCurvesCollection = null
+
     @api = new ApiGateway
       api_path:           globals.api_url
       api_proxy_path:     globals.api_proxy_url
@@ -60,7 +62,15 @@ class @AppView extends Backbone.View
       new UserSortable(heat_order, 'heat_network_order', true).render()
 
     if (curve_upload = wrapper.find('.curve-upload')).length
-      CustomCurveChooserView.setupWithWrapper(curve_upload).render();
+      curveCollectionDef = @customCurves()
+      userScenariosArray = @userScenarios()
+
+      curve_upload.each (_index, element) ->
+        CustomCurveChooserView.setupWithWrapper(
+          $(element),
+          curveCollectionDef,
+          userScenariosArray
+        )
 
     deferred
 
@@ -228,3 +238,43 @@ class @AppView extends Backbone.View
   update_merit_order_checkbox: =>
     $(".merit-data-downloads").toggle(@settings.merit_order_enabled())
     $("#settings_use_merit_order").attr('checked', @settings.merit_order_enabled())
+
+  # Gets the collection of custom curves. Returns a deferred as the collection
+  # will not yet be initialized the first time `customCurves` is invoked. The
+  # deferred will resolve with the collection once the data is available, or
+  # immediately if it has eben initialized previously.
+  customCurves: =>
+    deferred = $.Deferred()
+
+    if @customCurvesCollection
+      deferred.resolve(@customCurvesCollection)
+    else
+      # Ajax request.
+      req = $.ajax(
+        url: App.scenario.url_path() + '/custom_curves'
+        method: 'GET'
+      )
+
+      req.success((data) =>
+        @customCurvesCollection = new CustomCurveCollection(data)
+        deferred.resolve(@customCurvesCollection)
+      )
+
+    return deferred.promise()
+
+  userScenarios: =>
+    deferred = $.Deferred()
+
+    if @userScenariosArray
+      deferred.resolve(@userScenarios)
+    else
+      req = $.ajax({
+        url: '/saved_scenarios',
+        method: 'GET'
+      })
+
+      req.done((data) =>
+        @userScenariosArray = data
+        deferred.resolve(@userScenariosArray)
+      )
+    return deferred.promise()

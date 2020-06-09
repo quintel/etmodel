@@ -97,14 +97,11 @@ en:
     flexibility_outdoor_temperature:
       title: Outdoor temperature
       short_description:
-      description: "By how much do you think the outdoor temperature will change in
-        the future?\r\n<br/><br/>\r\nYour choice will affect the useful demand for
-        heating and cooling in households and buildings. To translate a temperature
-        change into a change in useful demand, it is assumed that people will start
-        heating their homes when the outside temperature drops beneath 18 &degC and
-        will cool their homes when it rises above 23 &degC.\r\n<br/><br/>\r\nFor more
-        information about the climate change calculation consult our <a href=\"https://docs.energytransitionmodel.com/main/climate\"
-        target =\"_blank\">documentation</a>."
+      description: "By how much do you think the outdoor temperature will change in the
+      future?<br/><br/>
+      Your choice will affect the useful demand for heating and cooling in households, buildings and agriculture.
+      <br/><br/>For more information consult our <a href=\"https://docs.energytransitionmodel.com/main/outdoor-temperature\"
+      target =\"_blank\">documentation</a>."
     settings_weather_curve_set:
     flh_of_energy_power_wind_turbine_coastal:
       title: Onshore coastal
@@ -202,7 +199,7 @@ en:
       description: |-
         The rate of a kWh power in 2020 is on average 22.5 in the Netherlands. Of this, 7.5 cents is for the electricity itself (the market price) and 15 cents for energy tax and renewable energy storage (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
         This slider only has influence on the recommended treshold COP in the chart on the right and not on other ETM calculations.
-    interconnectors_availability_for_export:
+    electricity_interconnector_1_export_availability: &interconnector_export_availability
       title: Availability for export
       short_description:
       description: It is very likely that not all of the physical interconnector capacity
@@ -210,7 +207,12 @@ en:
         much electricity production by wind turbines and solar panels, this is probably
         also true for the neighbouring countries. Using this slider you can set the
         percentage of the interconnector capacity that is available for export.
-    interconnectors_availability_for_import:
+    electricity_interconnector_2_export_availability: *interconnector_export_availability
+    electricity_interconnector_3_export_availability: *interconnector_export_availability
+    electricity_interconnector_4_export_availability: *interconnector_export_availability
+    electricity_interconnector_5_export_availability: *interconnector_export_availability
+    electricity_interconnector_6_export_availability: *interconnector_export_availability
+    electricity_interconnector_1_import_availability: &interconnector_import_availability
       title: Availability for import
       short_description:
       description: It is very likely that not all of the physical interconnector capacity
@@ -218,12 +220,38 @@ en:
         much electricity production by wind turbines and solar panels, this is probably
         also true for the neighbouring countries. Using this slider you can set the
         percentage of the interconnector capacity that is available for import.
-    interconnectors_interconnector_capacity:
+    electricity_interconnector_2_import_availability: *interconnector_import_availability
+    electricity_interconnector_3_import_availability: *interconnector_import_availability
+    electricity_interconnector_4_import_availability: *interconnector_import_availability
+    electricity_interconnector_5_import_availability: *interconnector_import_availability
+    electricity_interconnector_6_import_availability: *interconnector_import_availability
+    electricity_interconnector_1_capacity: &interconnector_capacity
       title: Interconnector capacity
       short_description:
       description: The interconnectors with neighbouring countries have limited capacity.
         Using this slider you can change the interconnector capacity from its present
         value.
+    electricity_interconnector_2_capacity: *interconnector_capacity
+    electricity_interconnector_3_capacity: *interconnector_capacity
+    electricity_interconnector_4_capacity: *interconnector_capacity
+    electricity_interconnector_5_capacity: *interconnector_capacity
+    electricity_interconnector_6_capacity: *interconnector_capacity
+    electricity_interconnector_1_marginal_costs: &interconnector_marginal_costs
+      title: Costs of imported electricity
+      short_description:
+      description: "Do you think that when you have to import electricity that on
+        average it will be cheap because of peak production, or will it be expensive
+        because of peak demand?\r\n</p>\r\n\r\nThe average costs of electricity at
+        the Central West European market was around 35 €/MWh in 2015. However this
+        fluctuates a lot. <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
+        target =\"_blank\">(European Commission, 2015)</a>. \r\n\r\n\r\n</p>\r\n\r\nFor
+        more information about the fluctuating prices see the <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
+        target =\"_blank\">documentation</a>. "
+    electricity_interconnector_2_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_3_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_4_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_5_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_6_marginal_costs: *interconnector_marginal_costs
     curtailment_of_households_solar_pv_solar_radiation:
       title: Solar PV households
       short_description:
@@ -294,7 +322,7 @@ en:
         time, when overproduction has ended, the stored electricity is returned to
         the medium voltage network. \r\nAlthough the battery does not react to congestion
         events, its behavior can help prevent capacity issues in the electricity network.\r\n"
-    co2_emissions_of_imported_electricity_present:
+    electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Present import
       short_description:
       description: "The average emission in gram CO<sub>2</sub> emissions per kWh
@@ -305,7 +333,12 @@ en:
         information about carrier, technology, and country specific emissions per
         kWh in our <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">documentation</a>. "
-    co2_emissions_of_imported_electricity_future:
+    electricity_interconnector_2_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_3_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_4_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_5_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_6_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Future import
       short_description:
       description: "What will be the related emissions of imported electricity in
@@ -320,6 +353,11 @@ en:
         can find more information about carrier, technology, and country specific
         emissions per kWh in our <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-of-imported-electricity\"
         target =\"_blank\">documentation</a>. "
+    electricity_interconnector_2_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_3_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_4_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_5_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_6_co2_emissions_future: *interconnector_co2_future
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
       title: Power-to-hydrogen
       short_description:

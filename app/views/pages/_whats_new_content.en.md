@@ -26,7 +26,7 @@ Get insight in the impact of the weather year selection on demand curves in the 
 
 ## Impact of outdoor temperature on yearly energy demand
 
-The impact of a higher or lower average outdoor temperature has been revised. Iin addition to heating and cooling demand in households and buildings, changing outdoor temperature now also affects heating demand in the agriculture sector. Heating demand in all three sectors now is more sensitive to temperature changes; the impact of temperature on heat demand is based on research by the Dutch gas TSO. See our [documentation page](https://docs.energytransitionmodel.com/main/outdoor-temperature) for more info. This improvement is relevant for both the temperature slider and the weather year selection.
+The impact of a higher or lower average outdoor temperature has been revised. In addition to heating and cooling demand in households and buildings, changing outdoor temperature now also affects heating demand in the agriculture sector. Heating demand in all three sectors now is more sensitive to temperature changes; the impact of temperature on heat demand is based on research by the Dutch gas TSO. See our [documentation page](https://docs.energytransitionmodel.com/main/outdoor-temperature) for more info. This improvement is relevant for both the temperature slider and the weather year selection.
 
 Check out this improvement in the **[Flexibility → Weather conditions][weather years slide]** section!
 

@@ -91,7 +91,12 @@ class @BooleanElementView extends ToggleView
     @renderWidget($('<div class="toggle-view"></div>').appendTo(@$el))
 
     if @model.get('sanitized_description').length
-      @$el.prepend($('<p></p>').html(@model.get('sanitized_description')))
+      @$el.prepend($('<p class="toggle-description"></p>')
+        .html(@model.get('sanitized_description')))
+
+    if @model.get('translated_name').length
+      @$el.prepend($('<p class="toggle-title"></p>')
+        .html(@model.get('translated_name')))
 
     this
 

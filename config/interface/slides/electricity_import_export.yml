@@ -25,39 +25,45 @@
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
   output_element_key: import_export_renewables
-- id: 187
-  key: flexibility_electricity_import_export_interconnectivity
+- id: 1501
+  key: flexibility_electricity_import_export_interconnectivity_intro
   position: 1
   sidebar_item_key: electricity_import_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
-- key: flexibility_electricity_import_export_interconnectivity_2
+- id: 187
+  key: flexibility_electricity_import_export_interconnectivity
   position: 2
   sidebar_item_key: electricity_import_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
-- key: flexibility_electricity_import_export_interconnectivity_3
+- key: flexibility_electricity_import_export_interconnectivity_2
   position: 3
   sidebar_item_key: electricity_import_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
-- key: flexibility_electricity_import_export_interconnectivity_4
+- key: flexibility_electricity_import_export_interconnectivity_3
   position: 4
   sidebar_item_key: electricity_import_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
-- key: flexibility_electricity_import_export_interconnectivity_5
+- key: flexibility_electricity_import_export_interconnectivity_4
   position: 5
   sidebar_item_key: electricity_import_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
-- key: flexibility_electricity_import_export_interconnectivity_6
+- key: flexibility_electricity_import_export_interconnectivity_5
   position: 6
+  sidebar_item_key: electricity_import_export
+  alt_output_element_key: merit_order_price_curve
+  output_element_key: merit_order_price_curve
+- key: flexibility_electricity_import_export_interconnectivity_6
+  position: 7
   sidebar_item_key: electricity_import_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
 - id: 236
   key: flexibility_electricity_import_export_properties
-  position: 7
+  position: 8
   sidebar_item_key: electricity_import_export
   output_element_key: co2_emissions

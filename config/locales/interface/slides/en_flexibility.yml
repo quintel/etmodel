@@ -12,6 +12,27 @@ en:
         order to achieve the coupling of electricity markets on a physical level,
         interconnections between countries are being increased and their utilization
         optimized. "
+    flexibility_electricity_import_export_interconnectivity_intro:
+      title: Electricity interconnectors
+      short_description:
+      description: |
+        The <strong>domestic electricity market</strong> in your scenario is
+        connected to one or more <strong>external markets</strong> via
+        interconnectors. These interconnectors allow for importing and exporting
+        electricity.</p>
+
+        <p>Import occurs whenever doing so is cheaper than using domestic
+        electricity generation options. By default, electricity is exported only
+        when there is a surplus from
+        <a
+          href="https://docs.energytransitionmodel.com/main/merit-order/#participants"
+          target="_blank"
+        >volatile and must-run sources</a>.</p>
+
+        <p>In real-world markets, electricity may be exported from dispatchable
+        sources whenever their price is lower than that of the external market.
+        Enabling this feature may significantly increase the amount of
+        electricity generated in your scenario.
     flexibility_electricity_import_export_interconnectivity:
       title: Electricity interconnector 1
       short_description:

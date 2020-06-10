@@ -11,6 +11,27 @@ nl:
         of de interconnectoren 'vol zitten'. \r\n<br/><br/>\r\nOm fysieke marktkoppeling
         te bevorderen, wordt de interconnectiecapaciteit tussen landen uitgebreid
         en het gebruik ervan geoptimaliseerd."
+    flexibility_electricity_import_export_interconnectivity_intro:
+      title: Electricity interconnectors
+      short_description:
+      description: |
+        The <strong>domestic electricity market</strong> in your scenario is
+        connected to one or more <strong>external markets</strong> via
+        interconnectors. These interconnectors allow for importing and exporting
+        electricity.</p>
+
+        <p>Import occurs whenever doing so is cheaper than using domestic
+        electricity generation options. By default, electricity is exported only
+        when there is a surplus from
+        <a
+          href="https://docs.energytransitionmodel.com/main/merit-order/#participants"
+          target="_blank"
+        >volatile and must-run sources</a>.</p>
+
+        <p>In real-world markets, electricity may be exported from dispatchable
+        sources whenever their price is lower than that of the external market.
+        Enabling this feature may significantly increase the amount of
+        electricity generated in your scenario.
     flexibility_electricity_import_export_interconnectivity:
       title: "Elektrische interconnector 1"
       short_description:

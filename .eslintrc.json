@@ -13,8 +13,8 @@
   },
   "rules":  {
     "curly": ["error", "all"],
-    "max-len": ["error", {"code": 80, "ignoreUrls": true}],
-    "prettier/prettier": ["error", {"singleQuote": true}],
+    "max-len": ["error", {"code": 100, "ignoreUrls": true}],
+    "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}],
     "space-before-function-paren": ["error", "never"]
   }
 }

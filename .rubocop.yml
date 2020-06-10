@@ -1,43 +1,31 @@
 require:
   - rubocop-performance
+  - rubocop-rails
   - rubocop-rspec
 
 AllCops:
+  NewCops: enable
   Exclude:
   - 'bin/**/*'
+  - 'config/application.rb'
   - 'config/routes.rb'
   - 'db/migrate/**/*'
   - 'db/schema.rb'
   - 'db/seeds.rb'
   - 'vendor/**/*'
-  - 'config/application.rb'
 
-Bundler/OrderedGems:
-  Enabled: false
-Gemspec/OrderedDependencies:
-  Enabled: false
-# Multi-line parameters should be indented by two spaces only.
+# Align "end" with variable.
 #
 #   # Bad
-#   call_something(param_one,
-#                  param_two,
-#                  param_three)
+#   variable = if thing
+#              end
 #
 #   # Good
-#   call_something(
-#     param_one, param_two, param_three
-#   )
+#   variable = if thing
+#   end
 #
-#   # Acceptable, but not as readable
-#   call_something(param_one
-#     param_two, param_three)
-#
-Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
-
-Layout/MultilineAssignmentLayout:
-  Enabled: true
-  EnforcedStyle: new_line
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
 
 # Indent parameters with two spaces only.
 #
@@ -53,7 +41,7 @@ Layout/MultilineAssignmentLayout:
 #     my_parameters
 #   ))
 #
-Layout/IndentFirstArgument:
+Layout/FirstArgumentIndentation:
   EnforcedStyle: consistent
 
 # Indent array values with two spaces only.
@@ -69,7 +57,7 @@ Layout/IndentFirstArgument:
 #     3
 #   ]
 #
-Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
 # Indent hash keys with two spaces only.
@@ -86,8 +74,20 @@ Layout/IndentFirstArrayElement:
 #     "three" => 3
 #   }
 #
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
+
+# Max line length is 100 characters. The RuboCop default is 120; the Ruby Style Guide makes a good
+# argument (https://rubystyle.guide/#max-line-length) for  keeping this at 80, but to do so is a
+# little limiting when there are multiple nested modules. We compromise at 100.
+Layout/LineLength:
+  Max: 100
+  # Ignore long comments in deploy configs.
+  Exclude:
+  - config/deploy.rb
+  - config/deploy/*.rb
+  IgnoredPatterns:
+  - '(context|context|it|shared_examples_for)'
 
 # Multi-line method calls are indented by two spaces only.
 #
@@ -106,8 +106,28 @@ Layout/IndentFirstHashElement:
 #     .limit(5)
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
+
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
+
+# Multi-line parameters should be indented by two spaces only.
+#
+#   # Bad
+#   call_something(param_one,
+#                  param_two,
+#                  param_three)
+#
+#   # Good
+#   call_something(
+#     param_one, param_two, param_three
+#   )
+#
+#   # Acceptable, but not as readable
+#   call_something(param_one
+#     param_two, param_three)
+#
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
 
 # Prefer alias_method over alias
 Style/Alias:
@@ -117,6 +137,22 @@ Style/Alias:
 Style/GuardClause:
   MinBodyLength: 3 # Default is 1.
 
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  IgnoreMacros: true
+  IgnoredMethods:
+  - describe
+  - not_to
+  - puts
+  - raise
+  - require
+  - require_dependency
+  - require_relative
+  - to
+  - yield
+  Exclude:
+  - Gemfile
+
 Metrics/AbcSize:
   Enabled: false
 
@@ -125,15 +161,14 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
 
-# Ignore long comments in deploy configs.
-Metrics/LineLength:
-  Exclude:
-  - config/deploy.rb
-  - config/deploy/*.rb
-
 # Limiting methods to 10 lines is a bit excessive; increase to 20.
 Metrics/MethodLength:
   Max: 20 # Default is 10.
+
+# GQL functions are all uppercase.
+Naming/MethodName:
+  Exclude:
+    - 'app/models/gql/runtime/functions/*'
 
 # Don't require methods to be in separate spec files.
 RSpec/FilePath:
@@ -143,8 +178,4 @@ RSpec/ExampleLength:
   Enabled: false
 
 RSpec/NamedSubject:
-  Enabled: false
-
-# Disabled because it fails on rails/ruby generated hashed and code.
-Style/StringLiterals:
   Enabled: false

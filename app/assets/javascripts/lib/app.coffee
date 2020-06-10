@@ -126,7 +126,7 @@ class @AppView extends Backbone.View
 
   # Used on the console for debugging
   scenario_url: =>
-    "#{globals.api_url}/inspect/#{@scenario.api_session_id()}"
+    "#{globals.api_url}/inspect/#{@api.scenario_id}"
 
   # Prepares the Merit Order abd FCE checkboxes
   setup_checkboxes: =>
@@ -223,7 +223,8 @@ class @AppView extends Backbone.View
 
   disabledSettings: ->
     '#settings_menu a.save,
-     #settings_menu a#reset_scenario'
+     #settings_menu a#reset_scenario,
+     #settings_menu a.engine'
 
   disableIdDependantSettings: =>
     $(@disabledSettings()).
@@ -232,6 +233,8 @@ class @AppView extends Backbone.View
   enableIdDependantSettings: (args...) =>
     $(@disabledSettings())
       .removeClass('wait').off('click', disabledSetting)
+
+    $('#settings_menu a.engine').attr('href', @scenario_url())
 
   # TODO: Move this interface methods to a separate Interface class
   #

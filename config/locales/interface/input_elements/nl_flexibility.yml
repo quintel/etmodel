@@ -5,7 +5,7 @@ nl:
       title: ''
       description: ''
     settings_satisfy_export_with_dispatchables:
-      title: 'Use dispatchables for exported electricity?'
+      title: 'Dispatchable centrales gebruiken voor export?'
       description: ''
     households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity:
       title: Luchtwarmtepomp
@@ -251,11 +251,9 @@ nl:
     electricity_interconnector_5_capacity: *interconnector_capacity
     electricity_interconnector_6_capacity: *interconnector_capacity
     electricity_interconnector_1_marginal_costs: &interconnector_marginal_costs
-      title: Cost of electricity in external market
+      title: Elektriciteitsprijs in externe markt
       short_description:
-      description: "Denk jij dat de geïmporteerde elektriciteit gemiddeld goedkoop
-        is door overschotten in de productie, of denk jij dat het juist duur is doordat
-        de import vooral is tijdens de piekvraag? \r\n</p>\r\n\r\nDe gemiddelde kosten
+      description: "De gemiddelde kosten
         van elektriciteit op de Centraal West Europese markt waren rond de 35 €/MWh
         in 2015. Alhoewel dit enorm kan verschillen per maand, dag, of zelfs uur.
         <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
@@ -360,7 +358,11 @@ nl:
     electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Toekomstige import
       short_description:
-      description: "Wat zijn de emissies voor geïmporteerde elektriciteit in de toekomst?
+      description: "In sommige scenario's is het nodig om elektriciteit te importeren
+        van buiten jouw gebied. De productie en distributie van deze elektriciteit
+        kan CO<sub>2</sub>-emissies hebben veroorzaakt. Hoeveel van deze emissies
+        wil je toekennen aan jouw gebied? Op dit moment is de gemiddelde elektriciteitsmix
+        van Nederland genomen als startwaarde.
         \r\n\r\n</p>\r\nKomt dit met name van hernieuwbaar zon of wind, dan gaan de
         emissies richting de 0 gram CO<sub>2</sub>/kWh.   \r\n\r\n</p>\r\n\r\nOf moet
         er tijdens de piekvraag met weinig zon en wind juist elektriciteit van bijvoorbeeld

@@ -12,26 +12,26 @@ nl:
         te bevorderen, wordt de interconnectiecapaciteit tussen landen uitgebreid
         en het gebruik ervan geoptimaliseerd."
     flexibility_electricity_import_export_interconnectivity_intro:
-      title: Electricity interconnectors
+      title: Elektrische interconnectoren
       short_description:
       description: |
-        The <strong>domestic electricity market</strong> in your scenario is
-        connected to one or more <strong>external markets</strong> via
-        interconnectors. These interconnectors allow for importing and exporting
-        electricity.</p>
+        De <strong>binnenlandse elektriciteitsmarkt</strong> in jouw scenario is
+        verbonden met één of meerdere <strong>externe markten</strong> via
+        interconnectoren. Deze interconnectoren importeren en exporteren
+        elektriciteit.</p>
 
-        <p>Import occurs whenever doing so is cheaper than using domestic
-        electricity generation options. By default, electricity is exported only
-        when there is a surplus from
-        <a
+        Elektriciteit wordt geïmporteerd als het goedkoper is dan de binnenlandse
+        productie van elektriciteit. In het ETM vindt elektriciteitsexport
+        standaard enkel plaats als er overschotten aanwezig zijn van <a
           href="https://docs.energytransitionmodel.com/main/merit-order/#participants"
           target="_blank"
-        >volatile and must-run sources</a>.</p>
+        >volatiele en must-run centrales</a>.</p>
 
-        <p>In real-world markets, electricity may be exported from dispatchable
-        sources whenever their price is lower than that of the external market.
-        Enabling this feature may significantly increase the amount of
-        electricity generated in your scenario.
+        <p>In echte markten kan het zijn dat elektriciteit van dispatchable
+        centrales wordt geëxporteerd als de productieprijs lager ligt dan de
+        prijs van de externe markt. Door deze functionaliteit met onderstaande
+        knop aan te zetten kan het zijn dat de elektriciteitsproductie in jouw
+        scenario sterk toeneemt.
     flexibility_electricity_import_export_interconnectivity:
       title: "Interconnector 1"
       short_description:
@@ -40,7 +40,7 @@ nl:
         exporteren elektriciteit met hun buurlanden via verschillende
         interconnectoren. In het ETM is het mogelijk om tot wel zes verschillende elektrische
         interconnectoren te modelleren tussen landen. Je voegt een interconnector toe
-        door interconnectiecapaciteit in te stellen voor die interconector. Als je liever
+        door interconnectiecapaciteit in te stellen voor die interconnector. Als je liever
         alle interconnectoren gezamenlijk wil modelleren, dan stel je alleen interconnectorcapaciteit
         in voor interconnector 1.
         \r\n<br/><br/>\r\n
@@ -106,17 +106,6 @@ nl:
         <br/>\r\n\t• Meer prijsconvergentie tussen landen<br/><br/>\r\n\r\nIn de praktijk
         kan het zo zijn dat de marktwerking verstoord wordt door (een mismatch van)
         het energiebeleid van verschillende lidstaten.  \r\n\r\n \r\n"
-    flexibility_electricity_import_export_properties:
-      title: CO<sub>2</sub>-emissies van geïmporteerde elektriciteit
-      short_description:
-      description: "In sommige scenario's is het nodig om elektriciteit te importeren
-        van buiten jouw gebied. De productie en distributie van deze elektriciteit
-        kan CO<sub>2</sub>-emissies hebben veroorzaakt. Hoeveel van deze emissies
-        wil je toekennen aan jouw gebied? Op dit moment is de gemiddelde elektriciteitsmix
-        van Nederland genomen als startwaarde. Je kunt dit zelf hieronder aanpassen.
-        Voor meer informatie klik op de '?' achter de slider.\r\n\r\n<br/><br/>\r\nDe
-        kosten voor geïmporteerde elektriciteit kunnen in de<a href=\"/scenario/costs/electricity_import_costs/costs-of-imported-electricity\">
-        sectie kosten</a> worden gezet."
     flexibility_electricity_import_export_renewables:
       title: Effecten van toenemende hernieuwbare opwek
       short_description:

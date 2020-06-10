@@ -32,8 +32,7 @@ describe OutputElementsController, vcr: true do
 
     context 'with an invalid key' do
       it 'responds 404 Not Found' do
-        expect { get(:show, params: { key: 'nope' }) }
-          .to raise_error(YModel::RecordNotFound)
+        expect(get(:show, params: { key: 'nope' }).status).to eq(404)
       end
     end
   end # #show

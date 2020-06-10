@@ -108,10 +108,10 @@
         color: darken(#c3685e, 20%)
 
     .scenario
-      margin-top: 0.5rem
+      margin-top: 0.4rem
 
       select
-        margin-left: 10px
+        margin: -3px 0 0 0.5rem
         max-width: 150px
 
     .use-scenario
@@ -120,9 +120,12 @@
       border: none
       color: #fff
       cursor: pointer
-      font-weight: bold
+      font-size: 12px
       margin-left: 0.5rem
-      padding: 3px
+      padding: 4px 6px
+      &:focus, &:active
+        outline: none
+        background: darken(#4ea96a, 10%)
 
 .curve-upload
   .errors

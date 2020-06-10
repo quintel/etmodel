@@ -24,7 +24,7 @@ D3.merit_order_price_curve =
       @drawLegend(@legendSeries, 2)
 
     averageData: (data) ->
-      mean = d3.mean(data.find((series) => series.is_target).values)
+      mean = d3.mean(_.find(data, (series) => series.is_target).values)
 
       color:  @average.attributes.color,
       label:  @average.attributes.label,

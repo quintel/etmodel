@@ -6,18 +6,27 @@
 
 ## Multiple electrical interconnectors
 
-The difference between supply and demand of electricity on an hourly basis can be imported or exported. Many countries import and export electricity with their neighboring countries through different interconnectors. In the ETM it is now possible to model up to six different electrical interconnectors between countries. For each interconnector you can set the capacity, CO2 emissions and (hourly) price. This way you can realistically model all electricity flows across the border of your country. Besides, a new flow chart has been added for electricity.
+The difference between supply and demand of electricity can be imported or exported. Many countries import and export electricity with their neighboring countries through different interconnectors. In the ETM it is now possible to model up to six different electrical interconnectors between countries. For each interconnector you can set the capacity, CO2 emissions and (hourly) price. The user can decide with a toggle if only excess electricity can be exported or if also dispatchable plants can produce electricity for export. This way you can realistically model all electricity flows across the borders of your country. You can get an overview of all these electricity flows in a new flow chart.
 
-Discover this new functionaltiy in the **[Flexibility → Import/Export][solar pv curtailment slide]** section! 
+Discover this new functionaltiy in the **[Flexibility → Import/Export][import export]** section! 
 
+![](/assets/pages/whats_new/electricity_sankey_en.png)
 
 ## Heat demand curves for buildings and agriculture
 
-The hourly heat demand curves in the buildings and agriculture sector are now temperature dependent. This means that the shape of the demand curves change depending on the selected weather year. Previously, the ETM used static demand profiles for the buildings sector and a flat profile for agriculture. Both sectors now use the same profile, based on data about large gas consumers. This profile is generated dynamically using weather data. As a result, this profile is now also available for the weather years 1987, 1997 and 2004. Heat demand in buildings and agriculture thus now responds to outdoor temperature fluctuations, just like households heating demand.
+The hourly heat demand curves in the buildings and agriculture sector are now temperature dependent. This means that the shape of the demand curves changes depending on the selected weather year. Previously, the ETM used static demand profiles for the buildings sector and a flat profile for agriculture. Both sectors now use the same profile, based on data about large gas consumers. This profile is generated dynamically using weather data. As a result, this profile is now also available for the weather years 1987, 1997 and 2004. Heat demand in buildings and agriculture thus now responds to outdoor temperature fluctuations, just like households heating demand.
+
+Get insight in the impact of the weather year selection on demand curves in the **[Flexibility → Weather conditions][weather years slide]** section!
+
+![](/assets/pages/whats_new/weather_years_buildings_heating_en.png)
 
 ## Impact of outdoor temperature on yearly energy demand
 
-The impact of a higher or lower average outdoor temperature has been revised. Changing outdoor temperature now also affects heating demand in the agriculture sector, next to heating and cooling demand in households and buildings. In addition, heating demand in all three sectors now is more sensitive to temperature changes. This is relevant for both the temperature slider and the weather year selection ([link](https://pro.energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions)). The impact of temperature on heat demand is based on research by the Dutch gas TSO. See our [documentation page](https://docs.energytransitionmodel.com/main/outdoor-temperature) for more info.
+The impact of a higher or lower average outdoor temperature has been revised. Changing outdoor temperature now also affects heating demand in the agriculture sector, next to heating and cooling demand in households and buildings. In addition, heating demand in all three sectors now is more sensitive to temperature changes. The impact of temperature on heat demand is based on research by the Dutch gas TSO. See our [documentation page](https://docs.energytransitionmodel.com/main/outdoor-temperature) for more info. This improvement is relevant for both the temperature slider and the weather year selection.
+
+Check out this improvement in the **[Flexibility → Weather conditions][weather years slide]** section!
+
+![](/assets/pages/whats_new/outdoor_temperature_en.png)
 
 ---
 
@@ -112,6 +121,8 @@ For saved scenarios it is possible to download the values ​​of your sliders 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
 
 You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
+
+[weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
 
 [import export]: /scenario/flexibility/electricity_import_export/electricity-interconnector-1
 

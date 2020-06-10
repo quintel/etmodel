@@ -345,8 +345,12 @@ en:
     electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Future import
       short_description:
-      description: "What will be the related emissions of imported electricity in
-        the future? \r\n\r\n</p>\r\nThis electricity could come from renewable sources
+      description: "In some scenarios you will import electricity from outside your
+        area. The production and distribution of this electricity could have caused
+        CO<sub>2</sub> emissions elsewhere. How much of these emissions do you want
+        to attribute to your region? As a default, gram CO<sub>2</sub> per kWh of
+        imported electricity is set equal to the Dutch electricity mix.
+        \r\n\r\n</p>\r\nThis electricity could come from renewable sources
         like sun and wind, with an emission close to 0 gram CO<sub>2</sub>/kWh. \r\n\r\n</p>\r\n\r\nOn
         the other hand, this imported electricity could also be a peek demand just
         when there is not much wind and sun available. In this case this electricity

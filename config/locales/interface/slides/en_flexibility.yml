@@ -403,32 +403,6 @@ en:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul
-    flexibility_merit_order_merit_order_price:
-      title: Hourly curves for electricity
-      short_description:
-      description: |
-        The merit order ranks power plants according to their marginal costs.
-        Based on the hourly demand, the ETM calculates which power plants are
-        dispatched each hour. Combined with the marginal costs of these
-        plants, the ETM calculates the hourly electricity price. The ETM
-        assumes that this price is equal to the marginal costs of the most
-        expensive plant running.
-
-        <br/><br/>
-
-        Note that any mismatches between hourly supply and demand are due to
-        insufficient production capacity in the scenario. These mismatches
-        (resulting in blackhout hours) are represented in the 'deficit' column
-        in the electricity load curves data export.
-
-        <br/><br/>
-
-        The hourly load curves for all electricity production and consumption for your scenario, as well as the price curve, can be downloaded following the links below.
-
-        <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
-        </ul>
     flexibility_weather_conditions_and_flh:
       title: Extreme weather conditions
       short_description:

@@ -369,33 +369,6 @@ nl:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
-    flexibility_merit_order_merit_order_price:
-      title: Uurlijkse profielen voor elektriciteit
-      short_description:
-      description: |
-        De merit order rangschikt de elektriciteitscentrales naar marginale
-        kosten. In combinatie met de elektriciteitsvraag op uurbasis, berekent
-        het ETM welke centrales zijn ingeschakeld. In combinatie met de
-        draaikosten van deze centrales kan het ETM de prijs op uurbasis
-        uitrekenen. Het ETM neemt aan dat deze prijs gelijk is aan de kosten
-        van de duurste centrale die op dat moment is ingeschakeld.
-
-        <br/><br/>
-
-        Let op: een uurlijkse onbalans tussen elektriciteitsvraag en -aanbod
-        is te wijten aan onvoldoende productiecapaciteit in het scenario. Deze
-        onbalans (resulterend in stroomuitval) is in de data-export van de
-        elektriciteitsprofielen terug te vinden in de 'deficit' kolom.
-
-        <br/><br/>
-
-        De uurlijkse profielen voor elektriciteitsvraag en -aanbod en de prijscurve voor jouw scenario zijn te downloaden via de links
-        hieronder.
-
-        <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
-        </ul>
     flexibility_security_of_supply_electricity:
       title: Elektriciteit
       short_description:

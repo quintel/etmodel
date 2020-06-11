@@ -25,19 +25,19 @@ module ApplicationHelper
     end
   end
 
-  # Returns the constraints which belong to the given `group`.
+  # Returns the dashboard_items which belong to the given `group`.
   #
-  # This method will actually fetch and cache all constraints, assuming that
-  # you will eventually want the constraints for all the other groups anyway.
+  # This method will actually fetch and cache all dashboard_items, assuming that
+  # you will eventually want the dashboard_items for all the other groups anyway.
   #
-  # Used in views/constraints/_changer.html
+  # Used in views/dashboard_items/_changer.html
   #
   # @param  [String] group The name of the group.
-  # @return [Array(Constraint)]
+  # @return [Array(DashboardItem)]
   #
-  def constraints_for_group(group)
-    @_grouped_constraints ||= Constraint.enabled.group_by(&:group)
-    @_grouped_constraints[group]
+  def dashboard_items_for_group(group)
+    @_grouped_dashboard_items ||= DashboardItem.enabled.group_by(&:group)
+    @_grouped_dashboard_items[group]
   end
 
   # Used to show a notice in the admin section

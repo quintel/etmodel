@@ -1,14 +1,12 @@
-# DashboardItem would be a better name
-#
-class Constraint extends Backbone.Model
+class DashboardItem extends Backbone.Model
   initialize: ->
     @gquery = gqueries.find_or_create_by_key @get('gquery_key')
-    # let gquery notify the constraint, when it has changed.
+    # let gquery notify the dashboard item, when it has changed.
     @gquery.bind('change', @update_values )
     # @update_values() will change attributes previous_result and result
     # => this will trigger a 'change' event on this object
-    # ==> as ConstraintView binds the 'change' event, it will update itself.
-    new ConstraintView({model : this})
+    # ==> as DashboardItemView binds the 'change' event, it will update itself.
+    new DashboardItemView({model : this})
 
   calculate_diff : (new_result, previous_result) ->
     if previous_result != undefined
@@ -52,7 +50,7 @@ class Constraint extends Backbone.Model
     x == 'debug' || x == 'airbrake' || _.isNaN(x)
 
 class Dashboard extends Backbone.Collection
-  model : Constraint
+  model : DashboardItem
 
   find_by_key: (key) => @find (g) -> g.get('key') == key
 

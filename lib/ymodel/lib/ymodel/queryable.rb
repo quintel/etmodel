@@ -16,7 +16,12 @@ module YModel
       all.each do |record|
         return record if sanitized.all? { |k, v| record.send(k) == v }
       end
-      raise_record_not_found_exception!(attributes)
+
+      nil
+    end
+
+    def find_by!(attributes)
+      find_by(attributes) || raise_record_not_found_exception!(attributes)
     end
 
     def find_by_key(key)
@@ -66,8 +71,8 @@ module YModel
 
     def raise_record_not_found_exception!(attributes = nil)
       if attributes.is_a?(Hash)
-        message = "Couldn't find #{name} with"
-        attributes.each { |a| message << "#{a.key}: #{a.value}" }
+        message = "Couldn't find #{name} with "
+        attributes.each { |k, v| message += "#{k}: #{v}" }
       else
         message = "Couldn't find #{name} #{attributes}"
       end

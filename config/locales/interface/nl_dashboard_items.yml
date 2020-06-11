@@ -1,0 +1,132 @@
+---
+nl:
+  dashboard_items:
+    total_primary_energy:
+      label: Energiegebruik
+      title: Primair energieverbruik
+      description: Ga je meer of minder energie gebruiken in de toekomst? (Figuur
+        toont primair energieverbruik)
+    biomass_final_demand:
+      label: Biomassagebruik (finaal)
+      title: Finaal biomassagebruik
+      description: Deze grafiek toont de totale biomassavraag in jouw regio en laat
+        ook de potentie zien voor elke biogrondstof-categorie. Alles boven de '"potentie-lijn"
+        zal van buiten jouw gebied moeten komen. De potentie kan je aanpassen met
+        <a href="/scenario/supply/biomass/potential-of-biomass" >deze schuifjes</a>.
+    biomass_primary_demand:
+      label: Biomassagebruik (primair)
+      title: Primair biomassagebruik
+      description: Deze grafiek toont de totale biomassavraag in jouw regio en laat
+        ook de potentie zien voor elke biogrondstof-categorie. Alles boven de '"potentie-lijn"
+        zal van buiten jouw gebied moeten komen. De potentie kan je aanpassen met
+        <a href="/scenario/supply/biomass/potential-of-biomass" >deze schuifjes</a>.
+    biomass_import_share:
+      label: Biomassa import
+      title: Totaal aandeel biomassa import
+      description: Deze grafiek toont all biomassastromen in jouw scenario. Links
+        kan je zien hoeveel biomassa van buiten jouw regio komt en hoeveel potentieel
+        binnen jouw regio geproduceerd kan worden. De potentie van biomassa in jouw
+        regio kan je aanpassen met <a href="/scenario/supply/biomass/potential-of-biomass">deze schuifjes</a>.
+    blackout_hours:
+      label: Stroomuitval
+      title: Aantal uren met stroomuitval
+      description: Stroomuitval ontstaat wanneer de productiecapaciteit voor elektriciteit
+        niet voldoende is om aan de vraag te voldoen en het niet mogelijk is om het
+        tekort op te vangen met import, bijvoorbeeld omdat de interconnectorcapaciteit
+        beperkt is, of met elektriciteit die is opgeslagen in batterijen. Het ETM
+        rekent de elektriciteitsproductie op uurbasis uit en bepaalt het aantal uren
+        per jaar dat er stroomuitval optreedt.
+    co2_reduction:
+      label: CO<sub>2</sub> t.o.v. 1990
+      title: CO<sub>2</sub>-uitstoot t.o.v. 1990
+      description: "Het jaar 1990 wordt als referentiejaar gebruikt voor de verandering
+        in CO<sub>2</sub> uitstoot getoond in het dashboard. Hoe verandert de CO<sub>2</sub>-uitstoot,
+        als resultaat van je aannames? De getoonde waarden zijn voor het binnenlands
+        finaal energetisch gebruik. Wanneer je ketenemissies gebruikt, bevatten deze
+        waarden ook andere broeikasgassen. \r\n\r\nDeze emissies worden <a\r\n  href=\"#\"
+        class=\"open_chart\"\r\n  data-chart-key=\"mekko_of_primary_co2\"\r\n>hier</a>
+        verder gespecificeerd.\r\n\r\nZie ook de <a\r\n  href=\"#\" class=\"open_chart\"\r\n
+        \ data-chart-key=\"co2_sankey\"\r\n>sankey grafiek van CO<sub>2</sub> emissies</a>."
+    local_co2_reduction:
+      label: Binnenlandse CO<sub>2</sub>-uitstoot
+      title: Binnenlandse CO<sub>2</sub>-uitstoot
+      description: Het jaar 1990 wordt als referentiejaar gebruikt voor de verandering
+        in CO<sub>2</sub> uitstoot getoond in het dashboard
+    co2_reduction_relative_to_start_year:
+      label: CO<sub>2</sub> t.o.v. startjaar
+      title: CO<sub>2</sub>-uitstoot ten opzichte van het startjaar
+      description: ''
+    costs_fte:
+      label: FTE delta analyse
+      title: FTE delta analyse
+      description:
+    greenhouse_gas:
+      label: Broeikasemissies
+      title: Broeikasemissies
+      description:
+    net_energy_import:
+      label: Energie-import
+      title: Netto import uit het buitenland
+      description: Is jouw land meer of minder afhankelijk geworden van energie-import?
+        De grafiek laat alle grensoverschrijdende import en export zien. Het percentage
+        is berekend door de totale netto import (rechter staaf in de grafiek) te delen
+        door de primaire energie consumptie. Bekijk onze <a href="https://github.com/quintel/documentation/blob/master/general/import_calculations.md"
+        target="_blank">documentatie</a> voor meer details.
+    total_energy_cost:
+      label: Kosten
+      title: Jaarlijkse energiekosten
+      description: Met hoeveel zijn de toekomstige energiekosten veranderd, als gevolg
+        van jouw aannames?
+    renewable_percentage:
+      label: Hernieuwbaarheid
+      title: Totaal aandeel hernieuwbare energie
+      description: Welk percentage van de gebruikte energie is hernieuwbaar? (Getal
+        kan afwijken van nationale statistieken vanwege verschillen in definities.
+        Bekijk onze <a href="https://github.com/quintel/documentation/blob/master/general/renewability.md"
+        target="_blank">documentatie</a> voor meer details)
+    renewable_percentage_households:
+      label: Hernieuwbaar huishoudens
+      title: Aandeel hernieuwbare energie in huishoudens
+    renewable_electricity_percentage:
+      label: Hernieuwbare el.
+      title: Totaal aandeel hernieuwbare elektriciteit
+      description: Welk percentage van gebruikte stroom is hernieuwbaar opgewekt?
+        (Getal kan afwijken van nationale statistieken vanwege verschillen in definities.
+        Bekijk onze <a href="https://github.com/quintel/documentation/blob/master/general/renewability.md"
+        target="_blank">documentatie</a> voor meer details)
+    household_energy_cost:
+      label: Kosten per HH
+      title: De jaarlijkse energiekosten per huishouden
+      description: De grafiek toont de totale jaarlijkse energiekosten gedeeld door
+        het aantal huishoudens.
+    loss_of_load:
+      label: Onvermogen
+      title: Verwachte onvermogen
+      description: Het verwachte onvermogen (LOLE) is het aantal uur per jaar dat
+        de elektriciteitsproductie niet kan voldoen aan de vraag. Een LOLE van meer
+        dan nul resulteert niet altijd in stroomuitval, omdat elektriciteit kan worden
+        geïmporteerd of beschikbaar kan zijn in batterijen; Nederland staat een LOLE
+        van 4 u/jr toe. We onderscheiden (on)betrouwbare stroomproductie omdat windmolens
+        en zonnecellen niet altijd stroom leveren. <a href="https://github.com/quintel/documentation/blob/master/general/loss_of_load_expectation.md"
+        target ="_blank"> Lees meer</a>.
+    employment:
+      label: Werkgelegenheid
+      title: Werkgelegenheid
+      description:
+    profitability:
+      label: Rendabele centrales
+      title: Winstgevendheid van centrales
+      description: Het dashboard toont welk percentage van het beschikbare 'dispatchable'
+        stroomvermogen winstgevend is. Deze tabel toont welke centrales winst- of
+        verliesmakend zijn en welke wel hun operationele kosten (OPEX) terugverdienen,
+        maar niet de nodige investeringen (CAPEX). Verliesgevende centrales worden
+        in de praktijk verwijderd. Je kunt dit zelf doen bij het onderdeel 'Aanbod>>
+        Elektriciteit'.
+    total_number_of_excess_events:
+      label: Elektriciteitsoverschotten
+      title: Aantal uren met elektriciteitsoverschotten
+      description: Als gevolg van de grote inzet van volatiele vormen van elektriciteitsproductie
+        kan het aanbod van elektriciteit de vraag overstijgen. Het ETM houdt het aantal
+        opeenvolgende uren bij waarop dit het geval is in jouw scenario. Wanneer je
+        flexibiliteitsopties inzet in je scenario zal het aantal uren met elektriciteitsoverschotten
+        afnemen.

@@ -31,18 +31,17 @@ describe SettingsController do
   end
 
   describe 'on PUT /settings/dashboard' do
-    let(:constraints) do
-      Constraint::GROUPS.each_with_object([]) do |group, c|
-        c.push FactoryBot.create(:constraint, group: group)
+    let(:dashboard_items) do
+      DashboardItem::GROUPS.each_with_object([]) do |group, d|
+        d.push(DashboardItem.where(group: group)[0])
       end
     end
 
     let(:dash_settings) do
-      enum = Constraint::GROUPS.to_enum
-
-      enum.with_index.each_with_object({}) do |(group, index), c|
-        c[ group ] = constraints[ index ].key
-      end
+      DashboardItem::GROUPS
+        .map
+        .with_index { |value, index| [value, dashboard_items[index].key] }
+        .to_h
     end
 
     # ------------------------------------------------------------------------
@@ -53,12 +52,11 @@ describe SettingsController do
         expect(response.code).to eql('200')
       end
 
-      it 'should return the constraints as JSON' do
+      it 'returns the dashboard items as JSON' do
         put :update_dashboard, params: { dash: dash_settings }
 
         parsed = JSON.parse(response.body)
-        expect(parsed).to have_key('constraints')
-        expect(parsed['constraints']).to eql(constraints.map(&:as_json))
+        expect(parsed['dashboard_items']).to eql(dashboard_items.map(&:as_json))
       end
 
       it 'should return HTML with which to replace the dashboard' do
@@ -95,7 +93,7 @@ describe SettingsController do
     context 'when given extra options' do
       it 'should not set extra keys on the session' do
         put :update_dashboard, params: {
-          dash: dash_settings.merge(another: constraints[0].key)
+          dash: dash_settings.merge(another: dashboard_items[0].key)
         }
 
         expect(session[:dashboard]).to eql(dash_settings.values)
@@ -107,8 +105,8 @@ describe SettingsController do
     context 'when given only a subset of options' do
       it 'should not accept partial assignment' do
         put :update_dashboard, params: { dash: {
-          Constraint::GROUPS[0] => constraints[0].key,
-          Constraint::GROUPS[1] => constraints[1].key
+          DashboardItem::GROUPS[0] => dashboard_items[0].key,
+          DashboardItem::GROUPS[1] => dashboard_items[1].key
         } }
 
         expect(response.status).to eql(400)
@@ -117,10 +115,10 @@ describe SettingsController do
 
     # ------------------------------------------------------------------------
 
-    context 'when given an invalid constraint ID' do
+    context 'when given an invalid dashboard item ID' do
       it 'should return a 400 Bad Request' do
         put :update_dashboard, params: {
-          dash: dash_settings.merge(Constraint::GROUPS[0] => 0)
+          dash: dash_settings.merge(DashboardItem::GROUPS[0] => 0)
         }
 
         expect(response.status).to eql(400)

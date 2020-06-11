@@ -1,0 +1,132 @@
+---
+en:
+  dashboard_items:
+    total_primary_energy:
+      label: Energy use
+      title: Primary energy use
+      description: Will you use more or less energy in the future? (Figure depicts
+        primary energy demand)
+    biomass_final_demand:
+      label: Biomass use (final)
+      title: Final biomass use
+      description: This chart shows the total bio resource demand within your region
+        and relates the demand to the potential of each bio resource category. Everything
+        above the "potential line" will come from outside your region. The potential
+        could be adjusted with <a href="/scenario/supply/biomass/potential-of-biomass">these sliders</a>.
+    biomass_primary_demand:
+      label: Biomass use (primary)
+      title: Primary biomass use
+      description: This chart shows the total bio resource demand within your region
+        and relates the demand to the potential of each bio resource category. Everything
+        above the "potential line" will come from outside your region. The potential
+        could be adjusted with <a href="/scenario/supply/biomass/potential-of-biomass">these sliders</a>.
+    biomass_import_share:
+      label: Biomass import
+      title: Share of biomass import
+      description: This chart shows all biomass flows in your scenario. Left you can
+        see how much biomass originates from outside your region and how much could
+        be locally produced. The potential of biomass in your region could be adjusted
+        with <a href="/scenario/supply/biomass/potential-of-biomass" >these sliders</a>.
+    blackout_hours:
+      label: Blackouts
+      title: Number of blackout hours
+      description: Blackouts occur when the electricity supply cannot meet the demand
+        and it is not possible to fill this gap by importing electricity, because
+        of limited interconnector capacity, or by using electricity that is stored
+        in batteries. The ETM calculates the hourly electricity supply and determines
+        the number of blackout hours from this.
+    co2_reduction:
+      label: CO<sub>2</sub> relative to 1990
+      title: CO<sub>2</sub> emissions relative to 1990
+      description: "The year 1990 is used as reference year for the change in CO<sub>2</sub>
+        emissions shown in the dashboard. The chart below shows the CO<sub>2</sub>
+        emissions that result from the inland final consumption of energy. If you
+        have chosen to use Fuel Chain Emissions, these values will also include other
+        greenhouse gases. \r\n\r\nA breakdown of these emissions can be found <a\r\n
+        \ href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"mekko_of_primary_co2\"\r\n>here.</a>\r\n
+        \r\nAlso see the <a\r\n  href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"co2_sankey\"\r\n>sankey
+        chart of CO<sub>2</sub> emissions</a>."
+    local_co2_reduction:
+      label: Domestic CO<sub>2</sub> emissions
+      title: Domestic CO<sub>2</sub> emissions
+      description: 'The year 1990 is used as reference year for the change in CO<sub>2</sub>
+        emissions shown in the dashboard. '
+    co2_reduction_relative_to_start_year:
+      label: CO<sub>2</sub> relative to start year
+      title: CO<sub>2</sub> emissions relative to start year
+      description: ''
+    costs_fte:
+      label: FTE delta analysis
+      title: FTE delta analysis
+      description:
+    greenhouse_gas:
+      label: Greenhouse gas
+      title: Greenhouse gas
+      description:
+    net_energy_import:
+      label: Energy imports
+      title: Net foreign energy imports
+      description: How much energy does your country import or export? The chart shows
+        all cross-border imports and exports. The percentage is calculated as the
+        total net import (last bar in the chart) divided by the primary energy consumption.
+        See our <a href="https://github.com/quintel/documentation/blob/master/general/import_calculations.md"
+        target="_blank">documentation</a> for more details.
+    total_energy_cost:
+      label: Costs
+      title: Annual energy costs
+      description: By how much have future energy costs changed, as a result of your
+        input?
+    renewable_percentage:
+      label: Renewables
+      title: Total share of renewable energy
+      description: What percentage of all final energy use is renewable? (Number may
+        deviate from national statistics due to different definitions. See our <a
+        href="https://github.com/quintel/documentation/blob/master/general/renewability.md"
+        target="_blank">documentation</a> for more details)
+    renewable_percentage_households:
+      label: Household renewables
+      title: Share of renewable energy in households
+      description:
+    renewable_electricity_percentage:
+      label: Renewable el.
+      title: Total share of renewable electricity
+      description: What percentage of all electricity used is renewable? (Number may
+        deviate from national statistics due to different definitions. See our <a
+        href="https://github.com/quintel/documentation/blob/master/general/renewability.md"
+        target="_blank">documentation</a> for more details)
+    household_energy_cost:
+      label: Cost per home
+      title: Annual energy cost per household
+      description: "This chart shows the total energy costs per year divided by the
+        number of households.\r\n"
+    loss_of_load:
+      label: Loss of load
+      title: Loss of load expectation
+      description: The loss of load expectation (LOLE) is the expected number of hours
+        per year that the electricity supply cannot meet its demand. A nonzero LOLE
+        does not necessarily result in blackouts as electricity can be imported or
+        can be available in batteries. The Netherlands accepts a LOLE of 4 h/yr. We
+        distinguish (un)reliable electricity production as volatile electricity producers
+        cannot be relied on at all times. <a href="https://github.com/quintel/documentation/blob/master/general/loss_of_load_expectation.md"
+        target ="_blank">Read more</a>.
+    employment:
+      label: Employment
+      title: Employment
+      description:
+    profitability:
+      label: Profitable plants
+      title: Profitability of power plants
+      description: 'The number on the dashboard shows which part of the available
+        dispatchable power production capacity is profitable. This table shows what
+        plants are profitable or unprofitable and what plants earn back their operating
+        costs (OPEX), but not the required investments (CAPEX). In reality, unprofitable
+        plants will be shut down. You can do so too in section ''Supply >> Electricity'',
+        but may lose too much reliable capacity. '
+    total_number_of_excess_events:
+      label: Excess electricity
+      title: Number of hours with excess electricity
+      description: As a result of large numbers of wind turbines and solar panels
+        installed, the supply of electricity can be larger than the demand. The ETM
+        keeps track of the number of consecutive hours in which this is the case for
+        you scenario. If you include flexibility options in your scenario, the number
+        of excess events decreases.

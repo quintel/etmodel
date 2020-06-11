@@ -1,19 +1,18 @@
-- constraints.each do |constraint|
+- dashboard_items.each do |dashboard_item|
   :ruby
     opts = {
-      :id    => "constraint_#{constraint.id}",
-      :class => (constraint.id == 1) ? 'first' : nil,
-      :href  => "/constraints/#{constraint.id}"
+      :id    => "dashboard_item_#{dashboard_item.key}",
+      :href  => "/dashboard_items/#{dashboard_item.key}"
     }
-    key = if constraint.key == 'co2_reduction' or constraint.key == 'local_co2_reduction'
-      Current.setting.use_fce ? 'greenhouse_gas' : constraint.key
+    key = if dashboard_item.key == 'co2_reduction' or dashboard_item.key == 'local_co2_reduction'
+      Current.setting.use_fce ? 'greenhouse_gas' : dashboard_item.key
     else
-      constraint.key
+      dashboard_item.key
     end
 
-  .constraint{opts}
+  .dashboard_item{ opts }
     .header
-      = raw I18n.t("constraints.#{key}.label")
+      = raw I18n.t("dashboard_items.#{key}.label")
       %span.sub_header
     .arrow
     %strong &nbsp;

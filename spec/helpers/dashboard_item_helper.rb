@@ -10,7 +10,7 @@ require 'rails_helper'
 #     end
 #   end
 # end
-describe ConstraintHelper do
+describe DashboardItemHelper do
   describe 'area_map_path' do
     let(:area) { double(area: area_code, base_dataset: base_dataset) }
     let(:area_code) { nil }

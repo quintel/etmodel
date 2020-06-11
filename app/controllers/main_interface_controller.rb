@@ -11,7 +11,7 @@ module MainInterfaceController
       include Common
 
       included do
-        before_action(:load_interface, :load_constraints, only: action_names)
+        before_action(:load_interface, :load_dashboard_items, only: action_names)
         layout('etm', only: action_names)
       end
     end
@@ -34,8 +34,8 @@ module MainInterfaceController
       @active_scenario = true
     end
 
-    def load_constraints
-      @constraints = Constraint.for_dashboard(session[:dashboard])
+    def load_dashboard_items
+      @dashboard_items = DashboardItem.for_dashboard(session[:dashboard])
     end
   end
 end # MainInterfaceController

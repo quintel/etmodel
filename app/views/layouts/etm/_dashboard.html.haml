@@ -1,10 +1,10 @@
 #dashboard_container
   #dashboard
     .loading
-    = render 'layouts/etm/dashboard_items', :constraints => @constraints
+    = render 'layouts/etm/dashboard_items', :dashboard_items => @dashboard_items
     = link_to 'Change', '#', :id => 'dashboard_change'
     .clear
 
     %script
-      - @constraints.each do |c|
-        dashboard.add(#{ c.to_json.html_safe });
+      - @dashboard_items.each do |d|
+        dashboard.add(#{ d.to_json.html_safe });

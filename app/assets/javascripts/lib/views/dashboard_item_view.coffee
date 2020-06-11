@@ -1,6 +1,6 @@
-class @ConstraintView extends Backbone.View
+class @DashboardItemView extends Backbone.View
   initialize: () =>
-    @id = "constraint_#{@model.get('id')}"
+    @id = "dashboard_item_#{@model.get('key')}"
     @dom_id = "##{@id}"
     @element = $(@dom_id)
     @arrow_element = $('.arrow', @dom_id)
@@ -118,7 +118,7 @@ class @ConstraintView extends Backbone.View
     arrow_element.css('opacity', 1.0)
 
     # make sure the arrows take their original form after 30 seconds
-    Util.cancelableAction("updateArrows #{@model.get('id')}",
+    Util.cancelableAction("updateArrows #{@model.get('key')}",
       => arrow_element.animate({opacity: 0.0}, 1000),
       {'sleepTime': 30000}
     )

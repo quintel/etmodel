@@ -2,6 +2,38 @@
 
 ---
 
+# Juni 2020
+
+Deze veranderingen zullen dinsdag 16 juni online staan.
+
+## Meerdere elektrische interconnectoren
+
+Veel landen importeren en exporteren elektriciteit met hun buren via verschillende interconnectoren, en het ETM modelleerde dit eerst met een enkele interconnector. Landen hebben echter vaak meerdere interconnectoren met verschillende buren, elk met hun eigen capaciteit, prijs en beschikbaarheid.
+
+In het ETM is het nu mogelijk om tot wel zes verschillende elektrische interconnectoren te modelleren tussen landen. Per interconnector kan je de capaciteit, CO2 uitstoot en (uurlijkse) prijs instellen. De gebruiker kan met een knop beslissen of er alleen overschotten kunnen worden geëxporteerd of dat ook dispatchable centrales elektriciteit kunnen produceren voor export. Op deze manier kan je all elektriciteitsstromen tussen landen realistisch modelleren. Een overzicht van al deze stromen is te zien in een nieuwe grafiek.
+
+Ontdek deze nieuwe functionaliteit bij **[Flexibiliteit → Import/Export][import export]**!
+
+![](/assets/pages/whats_new/electricity_sankey_nl.png)
+
+## Warmtevraagprofielen voor gebouwen en landbouw temperatuursafhankelijk
+
+De uurlijkse vraagcurves in de gebouwensector en landbouw zijn temperatuursafhankelijk gemaakt. Hierdoor veranderen de curves mee als de gebruiker een ander weerjaar selecteert. Voorheen gebruikte het ETM een statisch grootverbruikersprofiel voor de gebouwensector en een vlak profiel voor de landbouw. Nu gebruiken beide sectoren hetzelfde grootverbruikersprofiel, dat dynamisch is gegenereerd aan de hand van weerdata. Dit profiel is hierdoor ook beschikbaar voor de historische weerjaren 1987, 1997 en 2004, waardoor de warmtevraag in gebouwen en landbouw, net als bij huishoudens, meebeweegt met de buitentemperatuur.
+
+Bekijk de impact van het weerjaar op de vraagprofielen bij **[Flexibiliteit → Weersomstandigheden][weather years slide]**!
+
+![](/assets/pages/whats_new/weather_years_buildings_heating_nl.png)
+
+## Impact van buitentemperatuur op energievraag
+
+De impact van een hogere of lagere gemiddelde buitentemperatuur is tegen het licht gehouden. Het veranderen van de buitentemperatuur heeft nu, naast huishoudens en gebouwen, ook invloed op de warmtevraag van landbouw. Daarnaast is de impact op de warmtevraag in deze drie sectoren een stuk groter dan voorheen. De impact van temperatuur op warmtevraag is afgeleid uit de ‘graaddagenformule’ die gehanteerd wordt door GTS. Bekijk onze [documentatiepagina](https://docs.energytransitionmodel.com/main/outdoor-temperature) voor meer informatie. Deze verbetering is relevant voor zowel de temperatuurschuif in de weerjarensectie van het ETM als het selecteren van een specifiek weerjaar.
+
+Ga naar **[Flexibiliteit → Weersomstandigheden][weather years slide]** om de verbetering te bekijken!
+
+![](/assets/pages/whats_new/outdoor_temperature_nl.png)
+
+___
+
 # Maart 2020
 
 ## Beperk de productie van zonnepanelen
@@ -91,6 +123,10 @@ Voor opgeslagen scenarios is het vanaf nu mogelijk om de waardes van je gezette 
 De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is veranderd. Per kolom uit de data-export wordt nu met "input" of "output" aangegeven of het om vraag of aanbod van elektriciteit gaat. Flexibiliteitsoplossingen hebben nu dus ook zowel een input als output kolom. Hiermee is de vorm van de data-export voor elektriciteit consistenter met de data-exports voor netwerkgas en waterstof.
 
 [Hier vind je de aangepaste data-export voor elektriciteit!][data export slide]
+
+[weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
+
+[import export]: /scenario/flexibility/electricity_import_export/electricity-interconnector-1
 
 [solar pv curtailment slide]: /scenario/flexibility/flexibility_net_load/curtailment-solar-pv
 

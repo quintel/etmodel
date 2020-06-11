@@ -1,3 +1,4 @@
+---
 nl:
   slides:
     data_export_application_demands:
@@ -11,13 +12,21 @@ nl:
     data_export_energy_flows:
       title: Energiestromen
       short_description:
-      description: "Het Energietransitiemodel beschrijft het energiesysteem als een
-        verzameling van honderden energie-omzetters (nodes) die verbonden zijn met
-        energiestromen (edges). \r\nDeze CSV geeft een lijst van alle energie-omzetters
-        en de energiestromen die daar ingaan en uitkomen (uitgesplitst naar drager).\r\n<ul
-        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv\">
-        <span class=\"name\">Energiestromen</span> <span class=\"filetype\">375KB
-        CSV</span></a></li>\r\n</ul>\r\n"
+      description:  |
+        Het Energietransitiemodel beschrijft het energiesysteem als een
+        verzameling van honderden energie-omzetters (nodes) die verbonden zijn
+        met energiestromen (edges). Deze CSV geeft een lijst van alle
+        energie-omzetters en de energiestromen die daar ingaan en uitkomen
+        (uitgesplitst naar drager).
+
+        <ul class="data-download">
+          <li>
+            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv">
+              <span class="name">Energiestromen</span>
+              <span class="filetype">375KBCSV</span>
+            </a>
+          </li>
+        </ul>
     data_export_heat_network:
       title: Uurlijkse profielen voor warmtenetten
       short_description:
@@ -36,15 +45,12 @@ nl:
     data_export_household_heat:
       title: Uurlijkse profielen voor warmte in huishoudens
       short_description:
-      description: "Download informatie over de individuele warmtevraag en -productie
-        van huishoudens (ruimteverwarming en warm water). Het bestand laat op uurbasis
-        zien hoeveel warmte er gevraagd wordt, hoeveel warmte de geïnstalleerde technieken
-        leveren en of er sprake is van warmtebuffering, uitstel van warmtelevering
-        of tekorten. Dit kan het geval zijn als de gekozen verwarmingstechnieken onvoldoende
-        capaciteit hebben om op bepaalde momenten aan de vraag te voldoen.\r\n\r\n<ul
-        class=\"data-download\">\r\n  <li><a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv\">
-        <span class=\"name\">Warmteprofiel huishoudens <span class=\"filetype\">400KB
-        CSV</span></a></li>\r\n</ul>\r\n"
+      description: |
+        Download informatie over de individuele warmtevraag en -productie van huishoudens (ruimteverwarming en warm water). Het bestand laat op uurbasis zien hoeveel warmte er gevraagd wordt, hoeveel warmte de geïnstalleerde technieken leveren en of er sprake is van warmtebuffering, uitstel van warmtelevering of tekorten. Dit kan het geval zijn als de gekozen verwarmingstechnieken onvoldoende capaciteit hebben om op bepaalde momenten aan de vraag te voldoen.
+
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv"> <span class="name">Warmteprofiel huishoudens <span class="filetype">400KB CSV</span></a></li>
+        </ul>
     data_export_production:
       title: Specificaties warmte- en elektriciteitsproductie
       short_description:
@@ -56,21 +62,32 @@ nl:
     data_export_hydrogen:
       title: Uurlijkse profielen voor waterstof
       short_description:
-      description: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
-        en opslag van waterstof uit. Hieronder kun je deze gegevens downloaden als
-        CSV-bestand, uitgesplitst naar technologie/sector.\r\n\r\n\r\n<ul class=\"data-download\">\r\n
-        \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv\">\r\n
-        \     <span class=\"name\">Waterstofvraag, -productie en -opslag per uur</span>\r\n
-        \     <span class=\"filetype\">750KB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
+      description: |-
+        Het Energietransitiemodel rekent op uurbasis de vraag, productie en opslag van waterstof uit. Hieronder kun je deze gegevens downloaden als CSV-bestand, uitgesplitst naar technologie/sector.
+
+
+        <ul class="data-download">
+          <li>
+            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv">
+              <span class="name">Waterstofvraag, -productie en -opslag per uur</span>
+              <span class="filetype">750KB CSV</span>
+            </a>
+          </li>
+        </ul>
     data_export_network_gas:
       title: Uurlijkse profielen voor gas
       short_description:
-      description: "Het Energietransitiemodel rekent op uurbasis de vraag, productie
-        en opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als
-        CSV-bestand, uitgesplitst naar technologie/sector.\r\n\r\n<ul class=\"data-download\">\r\n
-        \ <li>\r\n    <a href=\"%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv\">\r\n
-        \     <span class=\"name\">Netwerkgasvraag, -productie en -opslag per uur</span>\r\n
-        \     <span class=\"filetype\">3MB CSV</span>\r\n    </a>\r\n  </li>\r\n</ul>"
+      description: |-
+        Het Energietransitiemodel rekent op uurbasis de vraag, productie en opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als CSV-bestand, uitgesplitst naar technologie/sector.
+
+        <ul class="data-download">
+          <li>
+            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv">
+              <span class="name">Netwerkgasvraag, -productie en -opslag per uur</span>
+              <span class="filetype">3MB CSV</span>
+            </a>
+          </li>
+        </ul>
     data_visuals_factsheet:
       title: Energie-mix infographic
       short_description:

@@ -4,9 +4,13 @@
 
 # Juni 2020
 
+Deze veranderingen zullen dinsdag 16 juni online staan.
+
 ## Meerdere elektrische interconnectoren
 
-Het verschil tussen vraag en aanbod van elektriciteit kan worden geïmporteerd of geëxporteerd. Veel landen importeren en exporteren elektriciteit met hun buurlanden via verschillende interconnectoren. In het ETM is het mogelijk om tot wel zes verschillende elektrische interconnectoren te modelleren tussen landen. Per interconnector kan je de capaciteit, CO2 uitstoot en (uurlijkse) prijs instellen. De gebruiker kan met een knop beslissen of er alleen overschotten kunnen worden geëxporteerd of dat ook dispatchable centrales elektriciteit kunnen produceren voor export. Op deze manier kan je all elektriciteitsstromen tussen landen realistisch modelleren. Een overzicht van al deze stromen is te zien in een nieuwe grafiek.
+Veel landen importeren en exporteren elektriciteit met hun buren via verschillende interconnectoren, en het ETM modelleerde dit eerst met een enkele interconnector. Landen hebben echter vaak meerdere interconnectoren met verschillende buren, elk met hun eigen capaciteit, prijs en beschikbaarheid.
+
+In het ETM is het nu mogelijk om tot wel zes verschillende elektrische interconnectoren te modelleren tussen landen. Per interconnector kan je de capaciteit, CO2 uitstoot en (uurlijkse) prijs instellen. De gebruiker kan met een knop beslissen of er alleen overschotten kunnen worden geëxporteerd of dat ook dispatchable centrales elektriciteit kunnen produceren voor export. Op deze manier kan je all elektriciteitsstromen tussen landen realistisch modelleren. Een overzicht van al deze stromen is te zien in een nieuwe grafiek.
 
 Ontdek deze nieuwe functionaliteit bij **[Flexibiliteit → Import/Export][import export]**!
 

@@ -40,26 +40,11 @@ Etm::Application.routes.draw do
     get 'map', to: 'pages#map', as: :map
     post 'clear_cache' => 'pages#clear_cache', as: :clear_cache
 
-    resources :output_elements,
-              :output_element_series,
-              :general_user_notifications,
+    resources :general_user_notifications,
               :constraints,
               :users
 
     resources :texts, except: [:show]
-    resources :areas, only: %i[index show]
-
-    resources :slides, except: :show do
-      resources :input_elements
-    end
-
-    resources :gql do
-      collection do
-        get :search
-      end
-    end
-
-    resources :input_elements, except: :show
   end
 
   resources :scenarios, except: [:edit] do

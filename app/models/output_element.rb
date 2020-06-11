@@ -59,6 +59,7 @@ class OutputElement < YModel::Base
   has_many :output_element_series
   belongs_to :output_element_type
   has_many :slides
+  has_many :dashboard_items
 
   # Charts may link to other charts to provide a user with additional insight.
   belongs_to :related_output_element, class_name: 'OutputElement'

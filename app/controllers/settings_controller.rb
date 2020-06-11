@@ -44,13 +44,13 @@ class SettingsController < ApplicationController
   def dashboard
     dash = session[:dashboard]
 
-    constraints = if dash and dash.any?
-      Constraint.for_dashboard(dash)
+    dashboard_items = if dash&.any?
+      DashboardItem.for_dashboard(dash)
     else
-      Constraint.enabled.default.ordered
+      DashboardItem.ordered_default
     end.reject(&:not_allowed_in_this_area)
 
-    @checked = constraints.map(&:key)
+    @checked = dashboard_items.map(&:key)
 
     render layout: false
   end
@@ -65,28 +65,31 @@ class SettingsController < ApplicationController
   #
   def update_dashboard
     unless params[:dash]&.respond_to?(:to_h)
-      render json: { error: 'Invalid constraints hash' }, status: :bad_request
+      render(
+        json: { error: 'Invalid dashboard_items hash' },
+        status: :bad_request
+      )
       return
     end
 
-    keys = Constraint::GROUPS.map { |key| params[:dash][key] }
+    keys = DashboardItem::GROUPS.map { |key| params[:dash][key] }
 
     # Assert that the keys are valid; exceptions are raised (and caught
     # below) otherwise.
-    constraints = Constraint
+    dashboard_items = DashboardItem
       .for_dashboard!(keys)
       .reject(&:not_allowed_in_this_area)
 
     session[:dashboard] = keys
 
     render status: :ok, json: {
-      constraints: constraints,
-      html: constraint_html_as_json(constraints)
+      dashboard_items: dashboard_items,
+      html: dashboard_item_html_as_json(dashboard_items)
     }
-  rescue Constraint::IllegalConstraintKey
-    render json: { error: 'Invalid constraints' }, status: :bad_request
-  rescue Constraint::NoSuchConstraint => e
-    render json: { error: e.message }, status: :bad_request
+  rescue DashboardItem::IllegalDashboardItemKey
+    render(json: { error: 'Invalid dashboard items' }, status: :bad_request)
+  rescue DashboardItem::NoSuchDashboardItem => e
+    render(json: { error: e.message }, status: :bad_request)
   end
 
 
@@ -120,12 +123,15 @@ class SettingsController < ApplicationController
   private
   #######
 
-  # Renders the constraint items partial based on the newly selected
-  # constraints so that the Backbone View may re-render the dashboard.
+  # Renders the dashboard item items partial based on the newly selected
+  # dashboard items so that the Backbone View may re-render the dashboard.
   #
-  def constraint_html_as_json(constraints)
-    render_to_string 'layouts/etm/_dashboard_items',
-      layout: false, locals: { constraints: constraints }
+  def dashboard_item_html_as_json(dashboard_items)
+    render_to_string(
+      'layouts/etm/_dashboard_items',
+      layout: false,
+      locals: { dashboard_items: dashboard_items }
+    )
   end
 
 end

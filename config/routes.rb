@@ -27,7 +27,7 @@ Etm::Application.routes.draw do
   get '/partners/:id', to: redirect("#{Partner::REMOTE_URL}/partners/%{id}")
   get '/partners',     to: redirect("#{Partner::REMOTE_URL}/partners")
 
-  resources :constraints, only: :show
+  resources :dashboard_items, only: :show
 
   resource :settings, only: %i[edit update]
 
@@ -41,7 +41,6 @@ Etm::Application.routes.draw do
     post 'clear_cache' => 'pages#clear_cache', as: :clear_cache
 
     resources :general_user_notifications,
-              :constraints,
               :users
 
     resources :texts, except: [:show]

@@ -28,9 +28,9 @@ class @Setting extends Backbone.Model
       if item = dashboard.find_by_key(key)
         item.view.update_header(
           if use_fce
-            I18n.t 'constraints.greenhouse_gas.label'
+            I18n.t 'dashboard_items.greenhouse_gas.label'
           else
-            I18n.t "constraints.#{ key }.label" )
+            I18n.t "dashboard_items.#{ key }.label" )
 
   # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]

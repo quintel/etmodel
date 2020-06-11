@@ -1,0 +1,28 @@
+#dashboard_popup{ class: @dashboard_item.key }
+  %h2
+    - if @dashboard_item.output_element
+      = t("output_elements.#{@dashboard_item.output_element.key}.title").html_safe
+    - else
+      = t("dashboard_items.#{@dashboard_item.key}.title").html_safe
+
+    - if @dashboard_item.output_element_key
+      %span.popup-actions
+        %a.chart_format.tooltip.button{ href: "#", title: t('output_elements.tooltips.chart') }
+          %span.fa.fa-bar-chart-o
+          Chart View
+        %a.table_format.tooltip.button{ href: "#", title: t('output_elements.tooltips.table') }
+          %span.fa.fa-table
+          Table View
+
+  - if @dashboard_item.description
+    .description= raw @dashboard_item.description
+
+  - if @dashboard_item.output_element
+    #charts
+      .chart{ :'data-chart_id' => @dashboard_item.output_element.key }
+
+  = render partial: @dashboard_item.key rescue nil
+
+  = render 'output_elements/chart_template'
+  :javascript
+    #{render 'js_init.js'}

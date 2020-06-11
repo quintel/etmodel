@@ -5,7 +5,7 @@ require 'yaml'
 module YModel
   # This service can be used for dumping models to YAML files.
   module Dump
-    DEFAULT_PATH = File.join('config', 'ymodel')
+    DEFAULT_PATH = File.join('config', 'interface')
 
     def self.call(model, storage_path: DEFAULT_PATH, namespace: Object)
       model       = model.to_s.singularize.camelcase

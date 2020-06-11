@@ -13,7 +13,7 @@
       width: 100%
       @include opacity(0.8)
       z-index: 2000
-    .constraint
+    .dashboard_item
       float: left
       cursor: pointer
       border-top: 1px dashed #d7e3ef
@@ -89,7 +89,7 @@
       background-size: 28px 45px
 
 @media screen and (max-width: 960px)
-  #dashboard_container #dashboard .constraint
+  #dashboard_container #dashboard .dashboard_item
     .header
       font-family: $body_font_family
       font-size: 12px
@@ -114,11 +114,11 @@
       background-position: 0 -500px
 
 @media screen and (max-width: 840px)
-  #dashboard_container #dashboard .constraint .header
+  #dashboard_container #dashboard .dashboard_item .header
     font-size: 10px
 
 @media screen and (min-width: 1600px)
-  #dashboard_container #dashboard .constraint .arrow
+  #dashboard_container #dashboard .dashboard_item .arrow
     left: 130px
 
 #dashboard-changer

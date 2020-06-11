@@ -1,4 +1,8 @@
-module ConstraintHelper
+# frozen_string_literal: true
+
+# Helper for DashboardItems. Mostly contains methods for displaying a map behind
+# the (currently disabled) bio-footprint DashboardItem
+module DashboardItemHelper
   # Public: The path to a map image representing the region. Derived datasets
   # fall back to the NL image.
   def area_map_path(suffix = nil)

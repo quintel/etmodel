@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_150238) do
+ActiveRecord::Schema.define(version: 2020_06_15_080501) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -18,20 +18,6 @@ ActiveRecord::Schema.define(version: 2020_03_31_150238) do
     t.integer "dependable_id"
     t.string "dependable_type", limit: 191
     t.index ["dependable_id", "dependable_type"], name: "index_area_dependencies_on_dependable_id_and_dependable_type"
-  end
-
-  create_table "constraints", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "key", limit: 191
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "gquery_key"
-    t.string "group", limit: 25, null: false
-    t.integer "position"
-    t.boolean "disabled", default: false
-    t.integer "output_element_id"
-    t.index ["disabled"], name: "index_constraints_on_disabled"
-    t.index ["key"], name: "index_constraints_on_key"
-    t.index ["position"], name: "index_constraints_on_position"
   end
 
   create_table "descriptions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|

@@ -1,0 +1,118 @@
+---
+- key: total_primary_energy
+  gquery_key: dashboard_energy_demand_primary_of_final_plus_export_losses
+  group: energy_use
+  position: 2
+  disabled: false
+  output_element_key: use_of_primary_energy
+  dependent_on: ''
+- key: co2_reduction
+  gquery_key: dashboard_reduction_of_co2_emissions_versus_1990
+  group: co2
+  position: 1
+  disabled: false
+  output_element_key: co2_emissions
+  dependent_on: ''
+- key: net_energy_import
+  gquery_key: dashboard_energy_import_netto
+  group: import
+  position: 5
+  disabled: false
+  output_element_dependent_on: ''
+- key: total_energy_cost
+  gquery_key: dashboard_total_costs
+  group: costs
+  position: 3
+  disabled: false
+  output_element_dependent_on:
+- key: renewable_percentage
+  gquery_key: dashboard_renewability
+  group: renewable
+  position: 4
+  disabled: false
+  output_element_key: renewability
+  dependent_on: ''
+- key: household_energy_cost
+  gquery_key: dashboard_total_costs_per_household
+  group: costs
+  position:
+  disabled: false
+  output_element_key: breakdown_of_total_cost_per_household
+  dependent_on:
+- key: loss_of_load
+  gquery_key: dashboard_security_of_supply
+  group: summary
+  position:
+  disabled: false
+  output_element_key: security_of_supply
+  dependent_on: ''
+- key: renewable_electricity_percentage
+  gquery_key: dashboard_share_of_renewable_electricity
+  group: renewable
+  position:
+  disabled: false
+  output_element_key: renewable_electricity
+  dependent_on: ''
+- key: profitability
+  gquery_key: dashboard_profitability
+  group: costs
+  position:
+  disabled: false
+  output_element_key: plant_profitability
+  dependent_on: has_merit_order
+- key: local_co2_reduction
+  gquery_key: dashboard_reduction_of_local_co2_emissions_versus_1990
+  group: co2
+  position:
+  disabled: false
+  output_element_key: co2_emissions
+  dependent_on: ''
+- key: blackout_hours
+  gquery_key: dashboard_blackout_hours
+  group: summary
+  position: 6
+  disabled: false
+  output_element_key: merit_order_hourly_supply
+  dependent_on: ''
+- key: total_number_of_excess_events
+  gquery_key: dashboard_total_number_of_excess_events
+  group: summary
+  position:
+  disabled: false
+  output_element_key: merit_order_excess_events
+  dependent_on: ''
+- key: co2_reduction_relative_to_start_year
+  gquery_key: dashboard_co2_emissions_versus_start_year
+  group: co2
+  position:
+  disabled: false
+  output_element_key: co2_emissions
+  dependent_on: ''
+- key: renewable_percentage_households
+  gquery_key: dashboard_renewability_households
+  group: renewable
+  position:
+  disabled: false
+  output_element_key: renewability
+  dependent_on:
+- key: biomass_primary_demand
+  gquery_key: dashboard_biomass_primary_demand
+  group: footprint
+  position:
+  disabled: false
+  output_element_key: biomass_demand_by_category
+  dependent_on: ''
+- key: biomass_final_demand
+  gquery_key: dashboard_biomass_final_demand
+  group: footprint
+  position:
+  disabled: false
+  output_element_key: biomass_demand_by_category
+  dependent_on: ''
+- key: biomass_import_share
+  gquery_key: dashboard_biomass_import_share
+  group: footprint
+  position: 7
+  disabled: false
+  output_element_key: biomass_sankey
+  dependent_on: ''

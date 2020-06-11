@@ -3,14 +3,14 @@
     %h1= t(:'dashboard.changer.header')
 
     %dl
-      - Constraint::GROUPS.each do |group|
-        %dt= t(:"constraint_groups.#{group}").html_safe
+      - DashboardItem::GROUPS.each do |group|
+        %dt= t(:"dashboard_item_groups.#{group}").html_safe
 
-        - constraints_for_group(group).reject(&:not_allowed_in_this_area).each do |constraint|
+        - dashboard_items_for_group(group).reject(&:not_allowed_in_this_area).each do |dashboard_item|
           %dd
             %label
-              = constraint_radio_tag constraint, @checked.include?(constraint.key)
-              = t(:"constraints.#{constraint.key}.title").html_safe
+              = dashboard_item_radio_tag dashboard_item, @checked.include?(dashboard_item.key)
+              = t(:"dashboard_items.#{dashboard_item.key}.title").html_safe
 
     .commit
       .indicator

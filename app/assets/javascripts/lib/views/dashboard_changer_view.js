@@ -1,10 +1,12 @@
+/* globals $ _ App */
+
 (function (window) {
   'use strict';
 
   /**
    * DashboardChangerView intercepts clicks on +el+ (the "change" button on
    * the right of the dashboard) and shows the user a pop-up which allows them
-   * to change the constraints shown on the dash.
+   * to change the dashboard items shown on the dash.
    *
    * Not a Backbone view since we don't benefit from using a full view.
    */
@@ -103,18 +105,18 @@
    * Called upon successful completion of the XHR request.
    */
   DashboardChangerView.prototype.onDone = function (data, status, jqXHR) {
-    var constraintsEl  = $('#dashboard');
+    var dashboardItemsEl  = $('#dashboard');
 
     $.fancybox.close();
 
-    // Get rid of the existing constraint elements.
-    constraintsEl.find('.constraint').remove();
-    constraintsEl.prepend(data.html);
+    // Get rid of the existing dashboard item elements.
+    dashboardItemsEl.find('.dashboard_item').remove();
+    dashboardItemsEl.prepend(data.html);
 
-    window.dashboard.reset(data.constraints);
+    window.dashboard.reset(data.dashboard_items);
 
-    window.dashboard.each(function (constraint) {
-      constraint.update_values();
+    window.dashboard.each(function(dashboardItem) {
+      dashboardItem.update_values();
     });
 
     App.call_api();

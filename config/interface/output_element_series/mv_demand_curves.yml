@@ -2,72 +2,84 @@
 - label: network_lv
   color: "#629DF9"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: network_lv_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: mv_demand_curves
   key: network_lv_mv_demand_curves
 - label: mv_industry_metals
   color: "#CE7013"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: mv_industry_metals_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: mv_demand_curves
   key: mv_industry_metals_mv_demand_curves
 - label: mv_other
   color: "#DC1912"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: mv_other_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: mv_demand_curves
   key: mv_other_mv_demand_curves
 - label: mv_transport
   color: "#4A3609"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: mv_transport_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: mv_demand_curves
   key: mv_transport_mv_demand_curves
 - label: flexibility
   color: "#94F95C"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: mv_flexibility_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: mv_demand_curves
   key: flexibility_mv_demand_curves
 - label: mv_energy_heat_load_curve
   color: "#FDE97B"
   order_by: 2
   group: ''
-  show_at_first: 
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: mv_energy_heat_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: mv_demand_curves
   key: mv_energy_heat_load_curve_mv_demand_curves
+- label: mv_agriculture
+  color: "#DC1912"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: mv_agriculture_load_curve
+  is_1990:
+  dependent_on:
+  output_element_key: mv_demand_curves
+  key: mv_agriculture_mv_demand_curves

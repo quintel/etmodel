@@ -2,96 +2,96 @@
 - label: network_mv
   color: "#629DF9"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: network_mv_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: hv_demand_curves
   key: network_mv_hv_demand_curves
-- label: hv_agriculture
-  color: "#DC1912"
-  order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
-  gquery: hv_agriculture_load_curve
-  is_1990: 
-  dependent_on: 
-  output_element_key: hv_demand_curves
-  key: hv_agriculture_hv_demand_curves
 - label: hv_industry_chemical
   color: "#4A3609"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: hv_industry_chemical_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: hv_demand_curves
   key: hv_industry_chemical_hv_demand_curves
 - label: hv_industry_metals
   color: "#3BFAEB"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: hv_industry_metals_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: hv_demand_curves
   key: hv_industry_metals_hv_demand_curves
 - label: hv_industry_other
   color: "#B895F6"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: hv_industry_other_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: hv_demand_curves
   key: hv_industry_other_hv_demand_curves
 - label: hv_loss
   color: "#F76814"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: hv_loss_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: hv_demand_curves
   key: hv_loss_hv_demand_curves
 - label: hv_other
   color: "#9DD5FA"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: hv_other_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: hv_demand_curves
   key: hv_other_hv_demand_curves
 - label: flexibility
   color: "#94F95C"
   order_by: 1
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: hv_flexibility_load_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: hv_demand_curves
   key: flexibility_hv_demand_curves
+- label: export
+  color: "#63A1C9"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hv_energy_export_load_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hv_demand_curves
+  key: export_hv_demand_curves

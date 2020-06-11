@@ -31,8 +31,8 @@ class ToggleView extends Backbone.View
 
     @setLabelActiveStates(@model.get(@attr))
 
-    @onEl.on  'click', => @setValue(@onValue)
-    @offEl.on 'click', => @setValue(@offValue)
+    @onEl.on  'click', => @quinn.setValue(@quinn.model.maximum)
+    @offEl.on 'click', => @quinn.setValue(@quinn.model.minimum)
 
     # Changes elsewhere should update the toggle switch.
     @model.on "change:#{ @attr }", (model, status) =>

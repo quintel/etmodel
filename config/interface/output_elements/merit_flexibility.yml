@@ -1,6 +1,5 @@
 ---
-- id: 143
-  under_construction: false
+- under_construction: false
   unit: ''
   percentage: false
   group: Merit
@@ -8,14 +7,13 @@
   show_point_label: false
   growth_chart: false
   key: energy_storage
-  max_axis_value:
-  min_axis_value:
+  max_axis_value: 
+  min_axis_value: 
   hidden: true
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: storage
-- id: 163
-  under_construction: false
+- under_construction: false
   unit: PJ
   percentage: false
   group: Merit
@@ -23,15 +21,14 @@
   show_point_label: false
   growth_chart: false
   key: use_of_excess_electricity
-  max_axis_value:
-  min_axis_value:
+  max_axis_value: 
+  min_axis_value: 
   hidden: false
   requires_merit_order: true
   dependent_on: has_electricity_storage
   output_element_type_name: vertical_stacked_bar
   related_output_element_key: merit_order_hourly_flexibility
-- id: 164
-  under_construction: false
+- under_construction: false
   unit: ''
   percentage: false
   group: Merit
@@ -39,15 +36,14 @@
   show_point_label: false
   growth_chart: false
   key: storage_options
-  max_axis_value:
-  min_axis_value:
+  max_axis_value: 
+  min_axis_value: 
   hidden: false
   requires_merit_order: true
   dependent_on: ''
   output_element_type_name: html_table
   related_output_element_key: merit_order_hourly_flexibility
-- id: 173
-  under_construction: false
+- under_construction: false
   unit: MW
   percentage: false
   group: Merit
@@ -55,14 +51,13 @@
   show_point_label: false
   growth_chart: false
   key: merit_order_hourly_flexibility
-  max_axis_value:
-  min_axis_value:
+  max_axis_value: 
+  min_axis_value: 
   hidden: false
   requires_merit_order: true
   dependent_on: ''
   output_element_type_name: d3
-- id: 211
-  under_construction: false
+- under_construction: false
   unit: MT
   percentage: false
   group: Merit
@@ -70,30 +65,28 @@
   show_point_label: false
   growth_chart: false
   key: carbon_balance
-  max_axis_value:
-  min_axis_value:
+  max_axis_value: 
+  min_axis_value: 
   hidden: true
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: html_table
-- id: 256
-  under_construction: false
-  unit:
+- under_construction: false
+  unit: 
   percentage: false
   group: Merit
   sub_group: flexibility
   show_point_label: false
   growth_chart: false
   key: solar_pv_curtailment
-  max_axis_value:
-  min_axis_value:
+  max_axis_value: 
+  min_axis_value: 
   hidden: false
   requires_merit_order: false
-  dependent_on:
-  description:
+  dependent_on: 
+  description: 
   output_element_type_name: html_table
-- id: 257
-  under_construction: false
+- under_construction: false
   unit: MW
   percentage: false
   group: Merit
@@ -101,15 +94,14 @@
   show_point_label: false
   growth_chart: false
   key: hourly_solar_pv_curtailment
-  max_axis_value:
-  min_axis_value:
+  max_axis_value: 
+  min_axis_value: 
   hidden: false
   requires_merit_order: false
-  dependent_on:
-  description:
+  dependent_on: 
+  description: 
   output_element_type_name: solar_curtailment
-- id: 260
-  under_construction: false
+- under_construction: false
   unit: PJ
   percentage: false
   group: Merit
@@ -117,10 +109,10 @@
   show_point_label: false
   growth_chart: false
   key: sankey_electrical_interconnection
-  max_axis_value:
-  min_axis_value:
+  max_axis_value: 
+  min_axis_value: 
   hidden: false
   requires_merit_order: false
-  dependent_on:
-  description:
+  dependent_on: 
+  description: 
   output_element_type_name: sankey

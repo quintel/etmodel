@@ -234,7 +234,7 @@
 
       if (value > 0) {
         left = 85;
-        width = Math.max(Math.min(value / 100 * 85, 85), 2);
+        width = Math.max(Math.min((value / 100) * 85, 85), 2);
       } else if (value < 0) {
         width = Math.max(Math.min(85 * Math.abs(value / 100), 85), 2);
         left = 85 - width;
@@ -310,15 +310,12 @@
 
       var elements = _.map(this.options.data, function(element) {
         var segment = $('<div class="segment" />').css({
-          width: element.value / total * 100 + '%'
+          width: (element.value / total) * 100 + '%'
         });
 
         segment
           .attr('data-tooltip-title', areaName(element.scenario.areaCode))
-          .attr(
-            'data-tooltip-text',
-            element.value.toFixed(2) + ' ' + element.unit
-          );
+          .attr('data-tooltip-text', element.value.toFixed(2) + ' ' + element.unit);
 
         segment.css('background-color', element.scenario.color);
 
@@ -383,7 +380,7 @@
           _.extend(
             {
               data: barData,
-              width: value / widest * 100 + '%'
+              width: (value / widest) * 100 + '%'
             },
             this.barOptions()
           )
@@ -501,11 +498,7 @@
     },
 
     subViewOpts: function(custom) {
-      return _.extend(
-        {},
-        { model: this.regionModel(), key: this.model.get('key') },
-        custom || {}
-      );
+      return _.extend({}, { model: this.regionModel(), key: this.model.get('key') }, custom || {});
     },
 
     render: function() {
@@ -572,9 +565,7 @@
 
       this.$el.html(METRIC_VIEW_T({ title: name }));
 
-      this.$el
-        .find('.delta')
-        .append(new DeltaView({ model: this.model, key: key }).render());
+      this.$el.find('.delta').append(new DeltaView({ model: this.model, key: key }).render());
 
       this.$el.find('.present').append(
         new PeriodView({
@@ -642,12 +633,8 @@
         $('<section class="header">')
           .append($('<div class="title" />').html('&nbsp;'))
           .append($('<div class="delta" />').html('&nbsp;'))
-          .append(
-            $('<div class="present" />').text(I18n.t('local_global.present'))
-          )
-          .append(
-            $('<div class="future" />').text(I18n.t('local_global.future'))
-          )
+          .append($('<div class="present" />').text(I18n.t('local_global.present')))
+          .append($('<div class="future" />').text(I18n.t('local_global.future')))
       );
 
       // Dashboard metrics.
@@ -746,10 +733,7 @@
           container
             .find('form.prompt')
             .append(
-              $('<div class="errors" />').append(
-                '<h4>Oops!</h4>',
-                $('<ul />').append(messages)
-              )
+              $('<div class="errors" />').append('<h4>Oops!</h4>', $('<ul />').append(messages))
             );
 
           container.find('.loading').hide();

@@ -548,8 +548,6 @@
         scenarios: scenarios
       });
 
-      view.render();
-
       // If the el data specifies to enable/disable a slider when a custom curve
       // is set, listen to the view events...
       if (disableInputKey) {
@@ -561,6 +559,8 @@
           }
         });
       }
+
+      view.render();
     });
   };
 

@@ -132,13 +132,11 @@
     index: function() {
       var selectedCount = 0;
 
-      $('form.select-scenarios').on('change', 'input[type=checkbox]', function(
-        event
-      ) {
+      $('form.select-scenarios').on('change', 'input[type=checkbox]', function(event) {
         var checkboxEl = $(event.target);
         var wrapperEl = checkboxEl.parents('li');
 
-        if (checkboxEl.is(':checked')) {
+        if (checkboxEl.prop('checked')) {
           wrapperEl.addClass('selected');
           selectedCount += 1;
         } else {
@@ -153,9 +151,12 @@
 
       $('#commit input').attr('disabled', true);
 
-      // Run the change handlers in case the visitor pressed their browser back
-      // button, in which case some inputs will be checked.
-      $('form.select-scenarios input[type=checkbox]').change();
+      // Run the change handlers in case the visitor pressed their browser back button, in which
+      // case some inputs will be checked. Running immediately doesn't seem to work (though it once
+      // did) and a short timeout seems to sort the issue.
+      window.setTimeout(function() {
+        $('form.select-scenarios input[type=checkbox]').change();
+      }, 5);
 
       // Settings menu example for users with no scenarios.
       $('#settings-menu-example').qtip({

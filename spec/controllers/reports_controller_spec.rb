@@ -39,15 +39,6 @@ describe ReportsController, vcr: true do
           .to raise_error(ActiveRecord::RecordNotFound)
       end
     end
-
-    context 'with a specified scenario' do
-      before { session[:setting] = Setting.new(api_session_id: 648_695) }
-
-      it 'starts a new scenario with the specified ID' do
-        get :show, params: { id: 'sample', scenario_id: 648_695 }
-        expect(response.body).to include('"api_session_id":655091')
-      end
-    end
   end
 
   describe '#auto' do

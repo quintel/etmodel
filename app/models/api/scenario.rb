@@ -16,7 +16,15 @@ class Api::Scenario < ActiveResource::Base
   def self.batch_load(ids)
     return [] if ids.empty?
 
-    HTTParty.get(url_to("#{ ids.uniq.join(',') }/batch")).map { |scn| new(scn) }
+    url = url_to("#{ids.uniq.join(',')}/batch")
+    res = HTTParty.get(url)
+
+    if res.code == 200
+      res.map { |scn| new(scn) }
+    else
+      Raven.capture_message('Scenario batch load failed', level: :error, extra: { url: url })
+      []
+    end
   end
 
   def self.find_with_queries(id, queries)

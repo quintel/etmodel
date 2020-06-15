@@ -1,41 +1,34 @@
 ---
-- id: 49
-  general_sub_header: share
+- general_sub_header: share
   key: supply_electricity_renewable_gas
   position: 3
   sidebar_item_key: biomass
   alt_output_element_key: gas_network_mix
   output_element_key: gas_network_mix
-- id: 140
-  general_sub_header: share
+- general_sub_header: share
   key: supply_biomass_bio_coal_bio_oil
   position: 5
   sidebar_item_key: biomass
   alt_output_element_key: source_of_electricity_production
   output_element_key: biomass_sankey
-- id: 208
-  key: supply_co2_emissions_biomass
+- key: supply_co2_emissions_biomass
   position: 6
   sidebar_item_key: biomass
   output_element_key: co2_emissions_biomass
-- id: 259
-  key: supply_biomass_overview
+- key: supply_biomass_overview
   position: 1
   sidebar_item_key: biomass
   output_element_key: biomass_sankey
-- id: 260
-  key: supply_biomass_bio_footprint
+- key: supply_biomass_bio_footprint
   position: 6
   dependent_on: _always_hidden
   sidebar_item_key: biomass
   output_element_key: mekko_of_bio_footprint
-- id: 268
-  key: supply_biomass_greengas_production
+- key: supply_biomass_greengas_production
   position: 4
   sidebar_item_key: biomass
   output_element_key: biomass_sankey
-- id: 270
-  key: supply_biomass_potential
+- key: supply_biomass_potential
   position: 2
   sidebar_item_key: biomass
   output_element_key: biomass_demand_by_category

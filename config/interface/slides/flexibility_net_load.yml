@@ -1,27 +1,22 @@
 ---
-- id: 170
-  key: flexibility_flexibility_net_load
+- key: flexibility_flexibility_net_load
   position: 1
   sidebar_item_key: flexibility_net_load
   alt_output_element_key: electricity_network_load
   output_element_key: electricity_network_capacity_and_peaks
-- id: 212
-  key: flexibility_flexibility_demand_response_ev
+- key: flexibility_flexibility_demand_response_ev
   position: 10
   sidebar_item_key: flexibility_net_load
   output_element_key: dynamic_demand_curve
-- id: 216
-  key: flexibility_flexibility_demand_response_hp
+- key: flexibility_flexibility_demand_response_hp
   position: 12
   sidebar_item_key: flexibility_net_load
   output_element_key: dynamic_demand_curve
-- id: 283
-  key: flexibility_flexibility_demand_response_hhp
+- key: flexibility_flexibility_demand_response_hhp
   position: 11
   sidebar_item_key: flexibility_net_load
   output_element_key: household_network_gas_hhp_cop_cost
-- id: 284
-  key: flexibility_flexibility_solar_pv_curtailment
+- key: flexibility_flexibility_solar_pv_curtailment
   position: 2
   sidebar_item_key: flexibility_net_load
   output_element_key: hourly_solar_pv_curtailment

@@ -1,14 +1,12 @@
 ---
-- id: 44
-  image: industry_solarpanels.gif
+- image: industry_solarpanels.gif
   general_sub_header: heat output
   key: supply_heat_network_industry
   position: 13
   sidebar_item_key: industry
   alt_output_element_key: source_of_heat_and_electricity_in_industry
   output_element_key: industrial_heat_mekko
-- id: 160
-  image: industry.gif
+- image: industry.gif
   group_sub_header: share
   key: demand_industry_aluminium
   position: 3
@@ -16,16 +14,14 @@
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_aluminium
   output_element_key: use_of_final_demand_in_industry_aluminium
-- id: 161
-  image: industry.gif
+- image: industry.gif
   group_sub_header: "%/year"
   key: demand_industry_other_metals
   position: 4
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other_metals
   output_element_key: use_of_final_demand_in_industry_other_metals
-- id: 162
-  image: industry.gif
+- image: industry.gif
   group_sub_header: share
   key: demand_industry_steel
   position: 2
@@ -33,72 +29,62 @@
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_steel
   output_element_key: use_of_final_demand_in_industry_steel
-- id: 179
-  image: industry.gif
+- image: industry.gif
   key: demand_industry
   position: 1
   sidebar_item_key: industry
   alt_output_element_key: mekko_of_detailed_final_demand_in_industry
   output_element_key: mekko_of_detailed_final_demand_in_industry_energetic
-- id: 199
-  group_sub_header: share
+- group_sub_header: share
   key: demand_industry_chemical_refineries
   position: 5
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_chemical_refineries
   output_element_key: refinery
-- id: 201
-  group_sub_header: share
+- group_sub_header: share
   key: demand_industry_chemical_fertilizers
   position: 6
   dependent_on: has_detailed_chemical_industry
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
   output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
-- id: 202
-  group_sub_header: share
+- group_sub_header: share
   key: demand_industry_chemical_other
   position: 7
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_chemical_other
   output_element_key: use_of_final_demand_in_industry_chemical_other
-- id: 203
-  group_sub_header: share
+- group_sub_header: share
   key: demand_industry_other_food
   position: 9
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other_food
   output_element_key: use_of_final_demand_in_industry_other_food
-- id: 204
-  key: demand_industry_other_paper
+- key: demand_industry_other_paper
   position: 10
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other_paper
   output_element_key: use_of_final_demand_in_industry_other_paper
-- id: 205
-  group_sub_header: share
+- group_sub_header: share
   key: demand_industry_aggregated_other
   position: 11
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other
   output_element_key: use_of_final_demand_in_industry_other
-- id: 207
-  group_sub_header: share
+- group_sub_header: share
   key: demand_industry_aggregated_chemical_other
   position: 7
   dependent_on: _always_hidden
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_chemical_other
   output_element_key: use_of_final_demand_in_industry_chemical_other
-- id: 211
-  group_sub_header: "%/year"
+- group_sub_header: "%/year"
   key: demand_industry_other_ict
   position: 8
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other_ict
   output_element_key: use_of_final_demand_in_industry_other_ict
-- id: 246
-  key: demand_industry_ccs
+- key: demand_industry_ccs
   position: 2
   dependent_on: has_detailed_chemical_industry
   sidebar_item_key: industry

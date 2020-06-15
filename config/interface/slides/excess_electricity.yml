@@ -1,20 +1,17 @@
 ---
-- id: 165
-  key: flexibility_flexibility_excess
+- key: flexibility_flexibility_excess
   position: 11
   dependent_on: _always_hidden
   sidebar_item_key: excess_electricity
   alt_output_element_key: energy_storage
   output_element_key: energy_storage
-- id: 169
-  key: flexibility_flexibility_wind_cost
+- key: flexibility_flexibility_wind_cost
   position: 12
   dependent_on: _always_hidden
   sidebar_item_key: excess_electricity
   alt_output_element_key: energy_storage
   output_element_key: energy_storage
-- id: 194
-  key: flexibility_flexibility_flexibility_order
+- key: flexibility_flexibility_flexibility_order
   position: 1
   sidebar_item_key: excess_electricity
   alt_output_element_key: storage_options

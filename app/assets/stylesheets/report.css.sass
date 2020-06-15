@@ -1,4 +1,4 @@
-$font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 $body_font_family: $font-family
 
 $font-color: #333
@@ -32,7 +32,7 @@ html.report
   background: white
   font-size: 100%
   font-family: $font-family
-  line-height: 150%
+  line-height: 160%
 
   body
     margin: 0
@@ -83,6 +83,11 @@ blockquote
   p:last-child
     margin-bottom: 0
 
+li
+  margin-bottom: 0.5rem
+  &:last-child
+    margin-bottom: 0
+
 .missing-translation
   background: red
   color: white
@@ -95,7 +100,7 @@ blockquote
   background: white
   background: rgba(254, 254, 254, 0.95)
   border-bottom: 1px solid #ddd
-  font-size: 0.9375rem
+  font-size: 0.875rem
   line-height: 100%
   position: fixed
   padding: 1rem 20px
@@ -418,6 +423,7 @@ blockquote
       li
         background-size: 22px 22px
         background-position: 0px 2px
+        margin-bottom: 0.5rem
         padding-left: 32px
   a.learn-more
     font-size: 15px

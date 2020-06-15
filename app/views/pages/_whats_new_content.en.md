@@ -126,13 +126,10 @@ The format of the load and price curves of electricity has recently changed. For
 
 You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
 
-<<<<<<< HEAD
-=======
 [weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
 
 [import export]: /scenario/flexibility/electricity_import_export/electricity-interconnector-1
 
->>>>>>> a5da5ddd... Update whats new page deploy #3 2020
 [solar pv curtailment slide]: /scenario/flexibility/flexibility_net_load/curtailment-solar-pv
 
 [p2h district heating slide]: /scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating

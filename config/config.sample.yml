@@ -39,13 +39,6 @@ development: &DEV
     # Sentry DSN:
     sentry_dsn: false
 
-    # Creating PDF versions of reports requires an external request back to the
-    # app. This may not work in the development environments which run only a
-    # single server process. Run a second instance of the app to prevent a
-    # deadlock while fetching the HTML for the report.
-    #
-    # report_pdf_host: http://localhost:3000
-
     # Shows the "What's new?" banner on the home page, with a short description
     # of recent changes in the ETM and a link to the "whats new?" page. Once the
     # cutoff date is reached the banner will be hidden.

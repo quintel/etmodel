@@ -166,7 +166,7 @@ D3.waterfall =
       if @model.get('key') == 'future_energy_imports'
         App.settings.get("end_year")
       else
-       "#{I18n.t('output_element_series.total')}"
+       "#{I18n.t('output_element_series.labels.total')}"
 
     prepare_data: =>
       out = []

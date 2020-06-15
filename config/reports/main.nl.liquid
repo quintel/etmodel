@@ -293,7 +293,7 @@
 	            Dit betekent dat ze hun investeringen (CAPEX) niet terugverdienen (oranje in onderstaande tabel)
 	            of zelfs hundraaikosten (OPEX) niet dekken (rood).
 	            	{% chart plant_profitability %}
-	              	Winstgevendheid van elektriciteitscentrales in { settings.end_year }}.
+	              	Winstgevendheid van elektriciteitscentrales in {{ settings.end_year }}.
 	            	{% endchart %}
 
 	            Het is niet te verwachten dat verliesgevende centrales lang open zullen blijven, tenzij de elektriciteitsmarkt
@@ -514,8 +514,7 @@
 	<h1>5. Kosten </h1>
 		<p>
         De kosten van het toekomstige energiesysteem zijn ruwweg
-        {{ future.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar. In {{ settings.start_year}} waren
-		de kosten nog {{ present.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar.
+        {{ future.dashboard_total_costs | autoscale: 'euro' }} mld EUR per jaar.
 
         De kosten in {{ settings.end_year }} zijn opgebouwd uit:
 

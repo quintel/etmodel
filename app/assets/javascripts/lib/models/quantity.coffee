@@ -187,6 +187,10 @@ class @Quantity
 
   toString: -> @format()
 
+  # Returns the raw number with `digits` decimal places.
+  toFixed: (digits) ->
+    @value.toFixed(digits
+
   # Used to coerce Quantity into numbers so that it may be used in expressions.
   #
   # For example:

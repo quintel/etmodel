@@ -289,7 +289,7 @@
 	        	{% if future.profitability_percentage < 100 %}
 
 	            <p>
-	            In dit scenario is {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de centrales verliesgevend.
+	            In dit scenario is <strong> {{ 100 | minus: future.profitability_percentage | round: 1 }}% </strong> van de centrales verliesgevend.
 	            Dit betekent dat ze hun investeringen (CAPEX) niet terugverdienen (oranje in onderstaande tabel)
 	            of zelfs hundraaikosten (OPEX) niet dekken (rood).
 	            	{% chart plant_profitability %}
@@ -321,7 +321,7 @@
         	</p>
 
         	<p>
-          	In jouw scenario staat {{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }}
+          	In jouw scenario staat <strong>{{ future.dispatchable_electricity_production_capacity | autoscale: 'MW' }}</strong>
           	betrouwbaar (dispatchable) productievermogen opgesteld. Dit resulteert in
           	{{ future.dashboard_security_of_supply | without_unit }} uur 'loss of load' per jaar.
         	</p>
@@ -382,8 +382,8 @@
 
   	{% if future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko > 0.0 %}
         <p>
-          Er wordt
-          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'MJ'}}
+          Er wordt <strong>
+          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'MJ'}} </strong>
           aan restwarmte uit het netwerk niet gebruikt!
         </p>
 
@@ -488,7 +488,7 @@
       <!-- If net import -->
       {% if future.total_net_energy_import > 0.0 %}
         <p>
-          Je scenario heeft {{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} netto import van energie
+          Je scenario heeft <strong>{{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} </strong> netto import van energie
           in het eindjaar.
         </p>
 

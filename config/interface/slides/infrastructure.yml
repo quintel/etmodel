@@ -1,23 +1,19 @@
 ---
-- id: 103
-  key: supply_infrastructure_high_voltage_network
+- key: supply_infrastructure_high_voltage_network
   position: 1
   sidebar_item_key: infrastructure
   alt_output_element_key: additional_infrastructure_investments
   output_element_key: additional_infrastructure_investments
-- id: 104
-  key: supply_infrastructure_low_medium_voltage_network
+- key: supply_infrastructure_low_medium_voltage_network
   position: 2
   sidebar_item_key: infrastructure
   alt_output_element_key: additional_infrastructure_investments
   output_element_key: additional_infrastructure_investments
-- id: 243
-  key: costs_infrastructure_electricity
+- key: costs_infrastructure_electricity
   position: 3
   sidebar_item_key: infrastructure
   output_element_key: additional_infrastructure_investments
-- id: 244
-  key: costs_infrastructure_electricity_investement_regime
+- key: costs_infrastructure_electricity_investement_regime
   position: 4
   dependent_on: _always_hidden
   sidebar_item_key: infrastructure

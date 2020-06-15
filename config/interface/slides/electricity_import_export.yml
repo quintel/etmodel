@@ -1,38 +1,32 @@
 ---
-- id: 172
-  key: flexibility_electricity_import_export_markets
+- key: flexibility_electricity_import_export_markets
   position: 2
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
   output_element_key: import_export_cwe
-- id: 173
-  key: flexibility_electricity_import_export_edp
+- key: flexibility_electricity_import_export_edp
   position: 3
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
   alt_output_element_key: import_export_flows
   output_element_key: import_export_flows
-- id: 174
-  key: flexibility_electricity_import_export_interconnectors
+- key: flexibility_electricity_import_export_interconnectors
   position: 4
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
   alt_output_element_key: import_export_capacity
   output_element_key: source_of_electricity_production
-- id: 175
-  key: flexibility_electricity_import_export_renewables
+- key: flexibility_electricity_import_export_renewables
   position: 5
   dependent_on: _always_hidden
   sidebar_item_key: electricity_import_export
   output_element_key: import_export_renewables
-- id: 1501
-  key: flexibility_electricity_import_export_interconnectivity_intro
+- key: flexibility_electricity_import_export_interconnectivity_intro
   position: 1
   sidebar_item_key: electricity_import_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: sankey_electrical_interconnection
-- id: 187
-  key: flexibility_electricity_import_export_interconnectivity
+- key: flexibility_electricity_import_export_interconnectivity
   position: 2
   sidebar_item_key: electricity_import_export
   alt_output_element_key: merit_order_price_curve

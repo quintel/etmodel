@@ -1,20 +1,17 @@
 ---
-- id: 22
-  general_sub_header: change
+- general_sub_header: change
   key: costs_co2_prices
   position: 1
   sidebar_item_key: co2
   alt_output_element_key: overview_costs_of_electricity_production
   output_element_key: overview_costs_of_electricity_production
-- id: 23
-  general_sub_header: change
+- general_sub_header: change
   key: costs_co2_ccs
   position: 2
   sidebar_item_key: co2
   alt_output_element_key: overview_costs_of_electricity_production
   output_element_key: overview_costs_of_electricity_production
-- id: 245
-  key: costs_co2_ccs_industry
+- key: costs_co2_ccs_industry
   position: 3
   dependent_on: has_detailed_chemical_industry
   sidebar_item_key: co2

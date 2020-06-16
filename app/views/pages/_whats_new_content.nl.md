@@ -4,8 +4,6 @@
 
 # Juni 2020
 
-Deze veranderingen zullen dinsdag 16 juni online staan.
-
 ## Meerdere elektrische interconnectoren
 
 Veel landen importeren en exporteren elektriciteit met hun buren via verschillende interconnectoren, en het ETM modelleerde dit eerst met een enkele interconnector. Landen hebben echter vaak meerdere interconnectoren met verschillende buren, elk met hun eigen capaciteit, prijs en beschikbaarheid.

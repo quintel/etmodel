@@ -123,16 +123,25 @@ describe Setting do
   end
 
   describe ".load_from_scenario" do
+    let(:setting) do
+      described_class.load_from_scenario(
+        ete_scenario_mock,
+        active_saved_scenario: { id: 1234, title: 'test' }
+      )
+    end
+
     it "returns a scenario" do
       expect( Setting.load_from_scenario ete_scenario_mock ).to be_a Setting
     end
 
-    it "takes an optional saved_scenario id" do
-      setting = Setting.load_from_scenario ete_scenario_mock,
-                                           active_saved_scenario_id: 1234
-
+    it 'takes an optional saved_scenario id' do
       expect(setting.active_saved_scenario_id)
         .to eq(1234)
+    end
+
+    it 'takes an optional saved_scenario title' do
+      expect(setting.active_scenario_title)
+        .to eq('test')
     end
   end
 

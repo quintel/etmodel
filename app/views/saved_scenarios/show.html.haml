@@ -1,4 +1,4 @@
-- content_for(:page_title) { "#{@scenario.title} - #{t('meta.name')}" }
+- content_for(:page_title) { "#{@saved_scenario.title} - #{t('meta.name')}" }
 
 .scenario_wrapper#show_scenario
 
@@ -6,7 +6,7 @@
     .warning
       = @warning
 
-  %h1= (@scenario.title or t 'scenario.no_title' ).truncate(40, separator: ' ')
+  %h1= (@saved_scenario.title or t 'scenario.no_title' ).truncate(40, separator: ' ')
 
   = link_to t("scenario.load"),
             load_saved_scenario_path(@saved_scenario),
@@ -16,14 +16,14 @@
             factsheet_scenario_path(@saved_scenario.scenario_id),
             class: "button"
 
-  - if @scenario.description
-    %em= formatted_scenario_description(@scenario.description)
+  - if @saved_scenario.description
+    %em= formatted_scenario_description(@saved_scenario.description)
 
   %ul
-    - if @scenario.created_at
+    - if @saved_scenario.updated_at
       %li
-        %strong #{t('scenario.created')}:
-        = I18n.localize(@scenario.parsed_created_at, :format => :long)
+        %strong #{t('scenario.updated')}:
+        = I18n.localize(@saved_scenario.updated_at, :format => :long)
     %li
       %strong #{t('scenario.area_code')}:
       = t "areas.#{@scenario.area_code}"
@@ -31,7 +31,7 @@
       %strong #{t('scenario.end_year')}:
       = @scenario.end_year
 
-  = render partial: 'scenarios/share_links', locals: { scenario: @scenario }
+  = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }
 
   %p
     %small{:style => "font-size: 12px; font-weight: normal"}

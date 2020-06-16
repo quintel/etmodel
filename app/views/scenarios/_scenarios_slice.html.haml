@@ -2,7 +2,7 @@
   - if ss.scenario&.loadable?
     %tr{class: cycle('even', 'odd') + (' highlight' if @student_ids.include?(ss.user_id)).to_s}
       %td= check_box_tag 'scenario_ids[]', ss.scenario.id
-      %td= link_to ss.scenario.title, ss
+      %td= link_to ss.title, ss
       %td= ss.scenario.end_year
       %td= ss.scenario.parsed_created_at&.to_formatted_s(:long)
       %td= ss.user.name
@@ -11,7 +11,7 @@
       -# DEBT: use I18n here.
       %td= check_box_tag 'scenario_ids[]', -1, false, disabled: true
       %td
-        = ss.scenario&.title
+        = ss.title
         == (#{ss.scenario_id})
         &ndash;
         - if ss.scenario

@@ -20,7 +20,7 @@
             %th Values Max
             %th #
             - @scenarios.each do |s|
-              %th{:width => '90'} #{s.title} (#{s.area_code} - #{s.end_year})
+              %th{:width => '90'} #{s.area_code} - #{s.end_year}
           %tr
             %th.tab= t "tabs.#{tab.key}"
             %td.cell

@@ -42,12 +42,16 @@ class SavedScenariosController < ApplicationController
   def load
     scenario_attrs = { scenario_id: @saved_scenario.scenario_id }
 
-    # Setting an active_saved_scenario_id enables saving a scenario. We only
+    # Setting an active_saved_scenario enables saving a scenario. We only
     # do this for the owner of a scenario.
     if @saved_scenario.user_id == current_user&.id
-      Current.setting = Setting
-        .load_from_scenario(@scenario,
-                            active_saved_scenario_id: @saved_scenario.id)
+      Current.setting = Setting.load_from_scenario(
+        @scenario,
+        active_saved_scenario: {
+          id: @saved_scenario.id,
+          title: @saved_scenario.title
+        }
+      )
     else
       Current.setting = Setting.load_from_scenario @scenario
     end

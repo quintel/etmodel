@@ -8,7 +8,7 @@ class AddTitleAndDescriptionToSavedScenarios < ActiveRecord::Migration[5.2]
     total = saved_scenarios.size
     done = 0
     failed = 0
-    puts "Updating #{total} saved scenarios"
+    puts "Updating #{total} saved scenarios by extracting details from ETEngine"
 
     # ETEngine only allows batches of maximum length 2048
     saved_scenarios.in_groups_of(2048, false) do |chunked_saved_scenarios|

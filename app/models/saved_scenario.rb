@@ -59,7 +59,9 @@ class SavedScenario < ActiveRecord::Base
 
   def build_setting(user: nil)
     if user && (user.id == self.user_id)
-      Setting.load_from_scenario(scenario, active_saved_scenario_id: id)
+      Setting.load_from_scenario(
+        scenario, active_saved_scenario: { id: id, title: title }
+      )
     else
       Setting.load_from_scenario(scenario)
     end

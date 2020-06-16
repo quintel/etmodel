@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_080501) do
+ActiveRecord::Schema.define(version: 2020_06_15_134519) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 2020_06_15_080501) do
     t.text "settings"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "title"
+    t.text "description"
     t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
     t.index ["user_id"], name: "index_saved_scenarios_on_user_id"
   end

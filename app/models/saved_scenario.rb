@@ -5,6 +5,8 @@
 #  id          :integer          not null, primary key
 #  user_id     :integer          not null
 #  scenario_id :integer          not null
+#  title       :string
+#  description :string
 #  settings    :text
 #  created_at  :datetime
 #  updated_at  :datetime
@@ -13,7 +15,7 @@
 class SavedScenario < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessor :title, :description, :api_session_id
+  attr_accessor :api_session_id
 
   validates :user_id,     presence: true
   validates :scenario_id, presence: true
@@ -21,10 +23,10 @@ class SavedScenario < ActiveRecord::Base
 
   serialize :scenario_id_history, Array
 
-  def self.batch_load(saved_scenarios)
+  def self.batch_load(saved_scenarios, options = {})
     saved_scenarios = saved_scenarios.to_a
     ids = saved_scenarios.map(&:scenario_id)
-    loaded = Api::Scenario.batch_load(ids).index_by(&:id)
+    loaded = Api::Scenario.batch_load(ids, options).index_by(&:id)
 
     saved_scenarios.each do |saved|
       saved.scenario = loaded[saved.scenario_id]

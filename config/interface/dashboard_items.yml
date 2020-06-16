@@ -18,13 +18,15 @@
   group: import
   position: 5
   disabled: false
-  output_element_dependent_on: ''
+  output_element_key:
+  dependent_on: ''
 - key: total_energy_cost
   gquery_key: dashboard_total_costs
   group: costs
   position: 3
   disabled: false
-  output_element_dependent_on:
+  output_element_key: breakdown_of_total_costs
+  dependent_on:
 - key: renewable_percentage
   gquery_key: dashboard_renewability
   group: renewable

@@ -23,7 +23,7 @@ module Etm
     config.autoload_paths += Dir["#{Rails.root}/lib"]
 
     config.active_support.deprecation = :log
-    config.time_zone = 'Amsterdam'
+    config.time_zone = 'Etc/UTC'
 
     config.encoding = 'utf-8'
 

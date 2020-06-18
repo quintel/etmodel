@@ -4,8 +4,6 @@
 
 # June 2020
 
-These changes will be released on Tuesday, 16th of June.
-
 ## Multiple electrical interconnectors
 
 Many countries import and export electricity with their neighbors through different interconnectors, and the ETM used to model this with a single electricity interconnector. However, in the real-world countries often have multiple interconnectors with different neighbours, each with their own capacity, price, and availability.

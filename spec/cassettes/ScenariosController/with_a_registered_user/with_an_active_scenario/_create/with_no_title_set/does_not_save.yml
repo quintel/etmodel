@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios.json
+    body:
+      encoding: UTF-8
+      string: '{"scenario":{"scenario_id":"12345","protected":true,"source":"ETM"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Thu, 18 Jun 2020 11:17:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"4f74133258d6a53392c01bcd51a11521"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 07a959b9-dafa-4c79-bc92-910b7445e3bf
+      X-Runtime:
+      - '0.048773'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":1317774,"title":"API","area_code":"nl","start_year":2015,"end_year":2050,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/1317774","ordering":null,"display_group":null,"scaling":null,"source":"ETM","template":null,"created_at":"2020-06-18T11:17:42.000Z","protected":true}'
+    http_version: 
+  recorded_at: Thu, 18 Jun 2020 11:17:42 GMT
+- request:
+    method: post
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios.json
+    body:
+      encoding: UTF-8
+      string: '{"scenario":{"scenario_id":"12345","protected":true,"source":"ETM"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Thu, 18 Jun 2020 11:18:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"a154482bb35ac5ad495545dea798d539"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 11d9d955-9f8c-4594-baa0-2c6ecb56ff43
+      X-Runtime:
+      - '0.045682'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":1317776,"title":"API","area_code":"nl","start_year":2015,"end_year":2050,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/1317776","ordering":null,"display_group":null,"scaling":null,"source":"ETM","template":null,"created_at":"2020-06-18T11:18:54.000Z","protected":true}'
+    http_version: 
+  recorded_at: Thu, 18 Jun 2020 11:18:54 GMT
+recorded_with: VCR 3.0.3

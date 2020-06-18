@@ -5,6 +5,8 @@ def ete_scenario_mock
   mock = double('api_scenario')
 
   allow(mock).to receive(:id).and_return('123')
+  allow(mock).to receive(:title).and_return('title')
+  allow(mock).to receive(:description).and_return('description')
   allow(mock).to receive(:end_year).and_return('2050')
   allow(mock).to receive(:area_code).and_return('nl')
   allow(mock).to receive(:parsed_created_at) { Time.now }

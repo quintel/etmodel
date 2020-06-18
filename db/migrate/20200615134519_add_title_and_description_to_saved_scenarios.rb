@@ -1,7 +1,7 @@
 class AddTitleAndDescriptionToSavedScenarios < ActiveRecord::Migration[5.2]
   def up
-    add_column :saved_scenarios, :title, :string
-    add_column :saved_scenarios, :description, :text
+    add_column :saved_scenarios, :title, :string, null: false, after: :scenario_id_history
+    add_column :saved_scenarios, :description, :text, after: :title
 
     # Get current titles and descriptions from ETEngine
     saved_scenarios = SavedScenario.all
@@ -10,11 +10,11 @@ class AddTitleAndDescriptionToSavedScenarios < ActiveRecord::Migration[5.2]
     failed = 0
     puts "Updating #{total} saved scenarios by extracting details from ETEngine"
 
-    # ETEngine only allows batches of maximum length 2048
-    saved_scenarios.in_groups_of(2048, false) do |chunked_saved_scenarios|
+    # Load batches of 100 at the time
+    saved_scenarios.in_groups_of(100, false) do |chunked_saved_scenarios|
       SavedScenario.batch_load(
         chunked_saved_scenarios,
-        params: { detailed: true }
+        query: { detailed: true }
       )
 
       chunked_saved_scenarios.each do |saved_scenario|

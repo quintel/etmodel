@@ -13,11 +13,11 @@ class Api::Scenario < ActiveResource::Base
     "#{ APP_CONFIG[:api_url] }/api/v3/scenarios/#{ path }"
   end
 
-  def self.batch_load(ids)
+  def self.batch_load(ids, options = {})
     return [] if ids.empty?
 
     url = url_to("#{ids.uniq.join(',')}/batch")
-    res = HTTParty.get(url)
+    res = HTTParty.get(url, options)
 
     if res.code == 200
       res.map { |scn| new(scn) }

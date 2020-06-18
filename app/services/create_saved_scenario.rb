@@ -7,14 +7,13 @@
 # scenario_id - The ID of the scenario to be saved.
 # user        - User to which the saved scenario will belong.
 # settings    - Optional extra scenario data to be sent to ETEngine when
-#               creating the new API scenario.
-# details     - Details for the creation of the saved scenarion, like the
-#               title and description
+#               creating the new API scenario. Also contains details for the
+#               creation of the saved scenario, like the title and description
 #
 # Returns a ServiceResult with the resulting SavedScenario.
-CreateSavedScenario = lambda do |scenario_id, user, settings = {}, details = {}|
+CreateSavedScenario = lambda do |scenario_id, user, settings = {}|
   api_res = CreateAPIScenario.call(
-    settings.merge(scenario_id: scenario_id)
+    settings.except(:description, :title).merge(scenario_id: scenario_id)
   )
 
   return api_res if api_res.failure?
@@ -22,8 +21,8 @@ CreateSavedScenario = lambda do |scenario_id, user, settings = {}, details = {}|
   api_scenario = api_res.value
 
   saved_scenario = SavedScenario.new(
-    title: details[:title].presence || '_',
-    description: details[:description],
+    title: settings[:title],
+    description: settings[:description],
     user: user,
     scenario_id: api_scenario.id
   )

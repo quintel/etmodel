@@ -10,10 +10,10 @@ class SavedScenarioPresenter
     @saved_scenarios.map do |saved_scenario|
       {
         saved_scenario_id: saved_scenario.id,
-        scenario_id:       saved_scenario.scenario_id,
-        title:             saved_scenario.title,
-        dataset:           saved_scenario.area_code,
-        end_year:          saved_scenario.end_year
+        scenario_id: saved_scenario.scenario_id,
+        title: saved_scenario.title,
+        dataset: saved_scenario.area_code,
+        end_year: saved_scenario.end_year
       }
     end
   end

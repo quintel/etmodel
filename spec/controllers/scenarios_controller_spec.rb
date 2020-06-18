@@ -111,7 +111,9 @@ describe ScenariosController, vcr: true do
             allow(Api::Scenario).to receive(:create).and_return scenario_mock
             post :create, params: { saved_scenario: {
               api_session_id: 12_345,
-              title: 'title'
+              title: 'title',
+              area_code: 'nl',
+              end_year: 2050
             } }
             response
           end

@@ -23,6 +23,8 @@ CreateSavedScenario = lambda do |scenario_id, user, settings = {}|
   saved_scenario = SavedScenario.new(
     title: settings[:title],
     description: settings[:description],
+    area_code: settings[:area_code],
+    end_year: settings[:end_year],
     user: user,
     scenario_id: api_scenario.id
   )

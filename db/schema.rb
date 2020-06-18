@@ -67,11 +67,13 @@ ActiveRecord::Schema.define(version: 2020_06_15_134519) do
     t.integer "user_id", null: false
     t.integer "scenario_id", null: false
     t.string "scenario_id_history"
+    t.string "title", null: false
+    t.text "description"
+    t.string "area_code", null: false
+    t.integer "end_year", null: false
     t.text "settings"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "title"
-    t.text "description"
     t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
     t.index ["user_id"], name: "index_saved_scenarios_on_user_id"
   end

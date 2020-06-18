@@ -1,7 +1,9 @@
-class AddTitleAndDescriptionToSavedScenarios < ActiveRecord::Migration[5.2]
+class AddTitleDescriptionAreaAndEndYearToSavedScenarios < ActiveRecord::Migration[5.2]
   def up
     add_column :saved_scenarios, :title, :string, null: false, after: :scenario_id_history
     add_column :saved_scenarios, :description, :text, after: :title
+    add_column :saved_scenarios, :area_code, :string, null: false, after: :description
+    add_column :saved_scenarios, :end_year, :integer, null: false, after: :area_code
 
     # Get current titles and descriptions from ETEngine
     saved_scenarios = SavedScenario.all
@@ -10,7 +12,7 @@ class AddTitleAndDescriptionToSavedScenarios < ActiveRecord::Migration[5.2]
     failed = 0
     puts "Updating #{total} saved scenarios by extracting details from ETEngine"
 
-    # Load batches of 100 at the time
+    # Load batches of 100 at a time
     saved_scenarios.in_groups_of(100, false) do |chunked_saved_scenarios|
       SavedScenario.batch_load(
         chunked_saved_scenarios,
@@ -24,7 +26,9 @@ class AddTitleAndDescriptionToSavedScenarios < ActiveRecord::Migration[5.2]
         if scenario
           saved_scenario.update_columns(
             title: scenario.title,
-            description: scenario.description
+            description: scenario.description,
+            area_code: scenario.area_code,
+            end_year: scenario.end_year
           )
         else
           failed += 1
@@ -41,5 +45,7 @@ class AddTitleAndDescriptionToSavedScenarios < ActiveRecord::Migration[5.2]
   def down
     remove_column :saved_scenarios, :title
     remove_column :saved_scenarios, :description
+    remove_column :saved_scenarios, :area_code
+    remove_column :saved_scenarios, :end_year
   end
 end

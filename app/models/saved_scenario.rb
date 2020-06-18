@@ -2,14 +2,17 @@
 #
 # Table name: saved_scenarios
 #
-#  id          :integer          not null, primary key
-#  user_id     :integer          not null
-#  scenario_id :integer          not null
-#  title       :string
-#  description :string
-#  settings    :text
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id                  :integer          not null, primary key
+#  user_id             :integer          not null
+#  scenario_id         :integer          not null
+#  scenario_id_history :string
+#  title               :string           not null
+#  description         :string
+#  area_code           :string           not null
+#  end_year            :integer          not null
+#  settings            :text
+#  created_at          :datetime
+#  updated_at          :datetime
 #
 
 class SavedScenario < ActiveRecord::Base
@@ -20,6 +23,8 @@ class SavedScenario < ActiveRecord::Base
   validates :user_id,     presence: true
   validates :scenario_id, presence: true
   validates :title,       presence: true
+  validates :end_year,    presence: true
+  validates :area_code,   presence: true
 
   serialize :scenario_id_history, Array
 

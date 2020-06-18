@@ -11,9 +11,7 @@ class SavedScenariosController < ApplicationController
         if current_user
           render json:
             SavedScenarioPresenter.new(
-              SavedScenario.batch_load(
-                current_user.saved_scenarios.order('created_at DESC')
-              )
+              current_user.saved_scenarios.order('created_at DESC')
             )
         else
           render json: []

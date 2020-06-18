@@ -26,10 +26,10 @@
         = I18n.localize(@saved_scenario.updated_at, :format => :long)
     %li
       %strong #{t('scenario.area_code')}:
-      = t "areas.#{@scenario.area_code}"
+      = t "areas.#{@saved_scenario.area_code}"
     %li
       %strong #{t('scenario.end_year')}:
-      = @scenario.end_year
+      = @saved_scenario.end_year
 
   = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }
 

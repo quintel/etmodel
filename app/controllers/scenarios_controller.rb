@@ -60,7 +60,10 @@ class ScenariosController < ApplicationController
       return
     end
 
-    @saved_scenario = SavedScenario.new
+    @saved_scenario = SavedScenario.new(
+      area_code: Current.setting.area_code,
+      end_year: Current.setting.end_year
+    )
     @saved_scenario.api_session_id = Current.setting.api_session_id
   end
 
@@ -81,7 +84,7 @@ class ScenariosController < ApplicationController
   def create
     ss_settings = params
       .require(:saved_scenario)
-      .permit(:api_session_id, :title, :description)
+      .permit(:api_session_id, :title, :description, :area_code, :end_year)
 
     raise NoScenarioIdError, self if ss_settings[:api_session_id].blank?
 

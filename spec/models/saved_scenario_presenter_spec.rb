@@ -5,8 +5,12 @@ require 'rails_helper'
 describe SavedScenarioPresenter, vcr: true do
   let(:scenario_mock) { ete_scenario_mock }
   let(:api_scenario) { FactoryBot.create(:api_scenario) }
-  let(:saved_scenario_one) { SavedScenario.new(scenario: api_scenario) }
-  let(:saved_scenario_two) { SavedScenario.new(scenario: api_scenario) }
+  let(:saved_scenario_one) do
+    FactoryBot.create(:saved_scenario, scenario: api_scenario)
+  end
+  let(:saved_scenario_two) do
+    FactoryBot.create(:saved_scenario, scenario: api_scenario)
+  end
 
   before do
     allow(Api::Scenario).to receive(:find).and_return scenario_mock

@@ -46,22 +46,20 @@ class Setting
   # ETengine session, based on the loaded scenario.
   #
   # scenario                 - The Api::Scenario being loaded.
-  # active_saved_scenario_id - Optional ID of the currently-active saved
-  #                            scenario.
+  # active_saved_scenario    - Optional hash containing the ID and title of the
+  #                            currently-active saved scenario.
   #
   # Returns the Setting object loaded with the country, end year, etc, from the
   # scenario.
-  def self.load_from_scenario(scenario, active_saved_scenario_id: nil)
+  def self.load_from_scenario(scenario, active_saved_scenario: {})
     new(
       preset_scenario_id: scenario.id,
       use_fce: scenario.use_fce,
       end_year: scenario.end_year,
       area_code: scenario.area_code,
       scaling: scenario.scaling&.attributes,
-      active_saved_scenario_id: active_saved_scenario_id,
-      # Only set the title when the user is resuming a saved scenario: prevents
-      # setting the title when the user opens a preset.
-      active_scenario_title: active_saved_scenario_id && scenario.title
+      active_saved_scenario_id: active_saved_scenario[:id],
+      active_scenario_title: active_saved_scenario[:title]
     )
   end
 

@@ -23,14 +23,11 @@ class UpdateSavedScenario
   end
 
   def call
-    @old_scenario = saved_scenario.scenario(detailed: true)
     return api_response if failure?
 
     saved_scenario.tap do |ss|
       ss.add_id_to_history(ss.scenario_id)
       ss.scenario_id = api_scenario.id
-      ss.title = @old_scenario.title
-      ss.description = @old_scenario.description
       unprotect and return failure unless saved_scenario.valid?
       ss.save
       saved_scenario.scenario = api_scenario
@@ -58,8 +55,6 @@ class UpdateSavedScenario
       CreateAPIScenario.call(
         settings.merge(
           scenario_id: scenario_id,
-          title: @old_scenario.title,
-          description: @old_scenario.description
         )
       )
   end

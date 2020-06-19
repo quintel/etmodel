@@ -109,7 +109,12 @@ describe ScenariosController, vcr: true do
         context 'with a current scenario' do
           subject do
             allow(Api::Scenario).to receive(:create).and_return scenario_mock
-            post :create, params: { saved_scenario: { api_session_id: 12_345 } }
+            post :create, params: { saved_scenario: {
+              api_session_id: 12_345,
+              title: 'title',
+              area_code: 'nl',
+              end_year: 2050
+            } }
             response
           end
 
@@ -132,6 +137,21 @@ describe ScenariosController, vcr: true do
             subject
             expect(Api::Scenario).not_to have_received(:create)
           end
+          it 'does not save' do
+            expect { subject }.not_to change(SavedScenario, :count)
+          end
+        end
+
+        context 'with no title set' do
+          subject do
+            allow(Api::Scenario).to(receive(:create).and_return(scenario_mock))
+            allow(UnprotectAPIScenario).to receive(:call)
+            post :create, params: { saved_scenario: { api_session_id: 12_345 } }
+            response
+          end
+
+          it { is_expected.not_to be_successful }
+
           it 'does not save' do
             expect { subject }.not_to change(SavedScenario, :count)
           end

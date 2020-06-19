@@ -18,8 +18,6 @@ describe UpdateSavedScenario, type: :service do
       .and_return(api_result)
     allow(saved_scenario).to receive(:scenario)
       .and_return(ete_scenario_mock)
-
-    saved_scenario.title = nil
   end
 
   context 'when the API response is successful' do
@@ -43,22 +41,6 @@ describe UpdateSavedScenario, type: :service do
         change(saved_scenario, :scenario_id)
           .from(648_695)
           .to(11)
-      )
-    end
-
-    it 'sets the title saved scenario to the one of old scenario' do
-      expect { result }.to(
-        change(saved_scenario, :title)
-          .from(nil)
-          .to('title')
-      )
-    end
-
-    it 'sets the saved scenario description to the one of old scenario' do
-      expect { result }.to(
-        change(saved_scenario, :description)
-          .from(nil)
-          .to('description')
       )
     end
 

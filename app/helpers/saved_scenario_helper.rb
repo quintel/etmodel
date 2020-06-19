@@ -3,7 +3,8 @@
 # Helper methods for saved scenario page
 module SavedScenarioHelper
   def share_by_mail_link(scenario = nil)
-    "mailto:?subject=#{t('scenario.share.email_subject')} #{scenario&.title}
+    "mailto:
+      ?subject=#{t('scenario.share.email_subject')} #{scenario&.title}
       &body=#{t('scenario.share.message')} #{request.original_url}"
   end
 

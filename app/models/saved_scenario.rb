@@ -2,29 +2,36 @@
 #
 # Table name: saved_scenarios
 #
-#  id          :integer          not null, primary key
-#  user_id     :integer          not null
-#  scenario_id :integer          not null
-#  settings    :text
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id                  :integer          not null, primary key
+#  user_id             :integer          not null
+#  scenario_id         :integer          not null
+#  scenario_id_history :string
+#  title               :string           not null
+#  description         :string
+#  area_code           :string           not null
+#  end_year            :integer          not null
+#  settings            :text
+#  created_at          :datetime
+#  updated_at          :datetime
 #
 
 class SavedScenario < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessor :title, :description, :api_session_id
+  attr_accessor :api_session_id
 
   validates :user_id,     presence: true
   validates :scenario_id, presence: true
   validates :title,       presence: true
+  validates :end_year,    presence: true
+  validates :area_code,   presence: true
 
   serialize :scenario_id_history, Array
 
-  def self.batch_load(saved_scenarios)
+  def self.batch_load(saved_scenarios, options = {})
     saved_scenarios = saved_scenarios.to_a
     ids = saved_scenarios.map(&:scenario_id)
-    loaded = Api::Scenario.batch_load(ids).index_by(&:id)
+    loaded = Api::Scenario.batch_load(ids, options).index_by(&:id)
 
     saved_scenarios.each do |saved|
       saved.scenario = loaded[saved.scenario_id]
@@ -57,7 +64,9 @@ class SavedScenario < ActiveRecord::Base
 
   def build_setting(user: nil)
     if user && (user.id == self.user_id)
-      Setting.load_from_scenario(scenario, active_saved_scenario_id: id)
+      Setting.load_from_scenario(
+        scenario, active_saved_scenario: { id: id, title: title }
+      )
     else
       Setting.load_from_scenario(scenario)
     end

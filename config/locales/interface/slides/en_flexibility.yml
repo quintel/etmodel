@@ -29,9 +29,10 @@ en:
           target="_blank"
         >volatile and must-run sources</a>.</p>
 
-        <p>In real-world markets, electricity may be exported from dispatchable
-        sources whenever their price is lower than that of the external market.
-        Enabling this feature may significantly increase the amount of
+        <p>In real-world markets, electricity may be exported whenever the
+        production price is lower than that of the external market. Dispatchable
+        plants can then also be used for export. Enabling this feature with the
+        toggle below may significantly increase the amount of
         electricity generated in your scenario.
     flexibility_electricity_import_export_interconnectivity:
       title: Interconnector 1

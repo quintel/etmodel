@@ -3,7 +3,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: lv_network
-  related_converter: households_flexibility_p2p_electricity
+  related_node: households_flexibility_p2p_electricity
   position: 1
   slide_key: flexibility_flexibility_power_storage
 - key: transport_car_using_electricity_availability
@@ -23,13 +23,13 @@
   step_value: 1.0
   unit: MW
   interface_group: hv_network
-  related_converter: energy_flexibility_hv_opac_electricity
+  related_node: energy_flexibility_hv_opac_electricity
   position: 31
   slide_key: flexibility_flexibility_power_storage
 - key: capacity_of_energy_flexibility_mv_batteries_electricity
   step_value: 1.0
   unit: MW
   interface_group: mv_network
-  related_converter: energy_flexibility_mv_batteries_electricity
+  related_node: energy_flexibility_mv_batteries_electricity
   position: 20
   slide_key: flexibility_flexibility_power_storage

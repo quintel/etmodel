@@ -1,10 +1,10 @@
-<script id="converter-details-template" type="text/template">
-  <div class="popup_converter_details">
+<script id="node-details-template" type="text/template">
+  <div class="popup_node_details">
     <h3><%= title %></h3>
-    <table class="converter-detail">
+    <table class="node-detail">
       <tbody>
         <% _.each( data, function(items, group) { %>
-          <tr class="popup_converter_details__subheader">
+          <tr class="popup_node_details__subheader">
             <th><%= group %></th>
             <th colspan=2>Future Value</th>
           </tr>
@@ -16,7 +16,7 @@
                 <% if (data.future && _.isString(data.future)) { %>
                   <%= data.future %>
                 <% } else { %>
-                  <%= Metric.converter_detail_format(data.future, data.unit) %>
+                  <%= Metric.node_detail_format(data.future, data.unit) %>
                 <% } %>
               </td>
               <td><%= data.unit %></td>
@@ -26,12 +26,12 @@
         <% }) %>
       </tbody>
     </table>
-    <% if(converter_source_url) { %>
-      <a class="button" href=<%=converter_source_url%> >
+    <% if(node_source_url) { %>
+      <a class="button" href=<%=node_source_url%> >
           Download source .xls
       </a>
       <% } %>
-    <div class="popup_converter_details__stars">
+    <div class="popup_node_details__stars">
       <% if(uses_coal_and_wood_pellets) { %>
         * The fuel input mix of this plant can be changed by your slider
         settings. Doing so changes both technical and cost parameters in

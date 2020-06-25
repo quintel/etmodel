@@ -3,20 +3,20 @@
   share_group: greengas
   step_value: 0.1
   unit: "%"
-  related_converter: energy_biogas_fermentation_wet_biomass
+  related_node: energy_biogas_fermentation_wet_biomass
   position: 0
   slide_key: supply_biomass_greengas_production
 - key: energy_greengas_gasification_dry_biomass_share
   share_group: greengas
   step_value: 0.1
   unit: "%"
-  related_converter: energy_greengas_gasification_dry_biomass
+  related_node: energy_greengas_gasification_dry_biomass
   position: 1
   slide_key: supply_biomass_greengas_production
 - key: energy_greengas_gasification_wet_biomass_share
   share_group: greengas
   step_value: 0.1
   unit: "%"
-  related_converter: energy_greengas_gasification_wet_biomass
+  related_node: energy_greengas_gasification_wet_biomass
   position: 2
   slide_key: supply_biomass_greengas_production

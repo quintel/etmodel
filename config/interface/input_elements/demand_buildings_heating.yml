@@ -3,14 +3,14 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_space_heater_network_gas
+  related_node: buildings_space_heater_network_gas
   position: 1
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_electricity_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_space_heater_electricity
+  related_node: buildings_space_heater_electricity
   position: 4
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_heatpump_air_water_network_gas_share
@@ -18,28 +18,28 @@
   step_value: 0.1
   unit: "%"
   command_type: value
-  related_converter: buildings_space_heater_heatpump_air_water_network_gas
+  related_node: buildings_space_heater_heatpump_air_water_network_gas
   position: 3
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_collective_heatpump_water_water_ts_electricity_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_space_heater_collective_heatpump_water_water_ts_electricity
+  related_node: buildings_space_heater_collective_heatpump_water_water_ts_electricity
   position: 2
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_wood_pellets_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_space_heater_wood_pellets
+  related_node: buildings_space_heater_wood_pellets
   position: 8
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_crude_oil_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_space_heater_crude_oil
+  related_node: buildings_space_heater_crude_oil
   position: 7
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_buildings_heating

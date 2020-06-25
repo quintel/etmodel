@@ -15,7 +15,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  related_converter: industry_other_paper_burner_network_gas
+  related_node: industry_other_paper_burner_network_gas
   position: 3
   slide_key: demand_industry_other_paper
 - key: industry_other_paper_burner_crude_oil_share
@@ -23,7 +23,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  related_converter: industry_other_paper_burner_crude_oil
+  related_node: industry_other_paper_burner_crude_oil
   position: 4
   slide_key: demand_industry_other_paper
 - key: industry_other_paper_burner_wood_pellets_share
@@ -31,7 +31,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  related_converter: industry_other_paper_burner_wood_pellets
+  related_node: industry_other_paper_burner_wood_pellets
   position: 6
   slide_key: demand_industry_other_paper
 - key: industry_other_paper_burner_coal_share
@@ -39,7 +39,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  related_converter: industry_other_paper_burner_coal
+  related_node: industry_other_paper_burner_coal
   position: 5
   slide_key: demand_industry_other_paper
 - key: industry_final_demand_for_other_paper_steam_hot_water_share
@@ -54,14 +54,14 @@
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  related_converter: industry_other_paper_heater_electricity
+  related_node: industry_other_paper_heater_electricity
   position: 8
   slide_key: demand_industry_other_paper
 - key: capacity_of_industry_other_paper_flexibility_p2h_electricity
   step_value: 1.0
   unit: MW
   interface_group: hybrid_heating
-  related_converter: industry_other_paper_flexibility_p2h_network_gas_electricity
+  related_node: industry_other_paper_flexibility_p2h_network_gas_electricity
   position: 10
   slide_key: demand_industry_other_paper
 - key: industry_other_paper_burner_hydrogen_share
@@ -69,6 +69,6 @@
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  related_converter: industry_other_paper_burner_hydrogen
+  related_node: industry_other_paper_burner_hydrogen
   position: 7
   slide_key: demand_industry_other_paper

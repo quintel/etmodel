@@ -45,8 +45,8 @@
       INPUT_ELEMENT_T = _.template($('#input-element-template').html());
       VALUE_SELECTOR_T = _.template($('#value-selector-template').html());
     }
-    if (document.getElementById('converter-details-template')) {
-      CONVERTER_INFO_T = _.template($('#converter-details-template').html());
+    if (document.getElementById('node-details-template')) {
+      CONVERTER_INFO_T = _.template($('#node-details-template').html());
     }
   });
 
@@ -309,8 +309,8 @@
       'click     .show-info': 'toggleInfoBox',
       'touchend  .output': 'showValueSelector',
       'click     .output': 'showValueSelector',
-      'touchend  a.converter_detail': 'showConverterDetail',
-      'click     a.converter_detail': 'showConverterDetail'
+      'touchend  a.node_detail': 'showNodeDetail',
+      'click     a.node_detail': 'showNodeDetail'
     },
 
     initialize: function() {
@@ -392,8 +392,8 @@
           name: this.model.get('translated_name'),
           info: this.model.get('sanitized_description'),
           sublabel: this.model.get('label'),
-          converter: this.model.get('related_converter'),
-          converter_source: this.model.get('converter_source_url'),
+          node: this.model.get('related_node'),
+          node_source: this.model.get('node_source_url'),
           input_element_key: this.model.get('key'),
           end_year: App.settings.get('end_year'),
           info_link: I18n.t('input_elements.common.info_link')
@@ -839,14 +839,14 @@
     },
 
     /**
-     * Loads the converter details in a fancybox popup
+     * Loads the node details in a fancybox popup
      */
-    showConverterDetail: function(e) {
+    showNodeDetail: function(e) {
       e.preventDefault();
       var title = $(e.target).data('title');
-      var converter = $(e.target).data('converter');
-      var converter_source_url = $(e.target).data('converter_source_url');
-      var url = App.scenario.url_path() + '/converters/' + converter;
+      var node = $(e.target).data('node');
+      var node_source_url = $(e.target).data('node_source_url');
+      var url = App.scenario.url_path() + '/nodes/' + node;
 
       $.ajax({
         url: url,
@@ -855,7 +855,7 @@
           var content = CONVERTER_INFO_T({
             title: title,
             data: data.data,
-            converter_source_url: converter_source_url,
+            node_source_url: node_source_url,
             uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
           });
           $.fancybox({

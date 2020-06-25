@@ -2,12 +2,12 @@
 - key: investment_costs_flexibility_p2h_electricity
   step_value: 1.0
   unit: "%"
-  related_converter: industry_other_food_flexibility_p2h_electricity
+  related_node: industry_other_food_flexibility_p2h_electricity
   position: 1
   slide_key: costs_flexibility_conversion
 - key: investment_costs_hydrogen_electrolysis
   step_value: 1.0
   unit: "%"
-  related_converter: energy_hydrogen_flexibility_p2g_electricity
+  related_node: energy_hydrogen_flexibility_p2g_electricity
   position: 1
   slide_key: costs_flexibility_conversion

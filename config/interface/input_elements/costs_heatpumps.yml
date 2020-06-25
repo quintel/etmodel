@@ -2,27 +2,27 @@
 - key: investment_costs_micro_chp
   step_value: 1.0
   unit: "%"
-  related_converter: households_space_heater_micro_chp_network_gas
+  related_node: households_space_heater_micro_chp_network_gas
   position: 1
   dependent_on: _always_hidden
   slide_key: costs_heatpumps
 - key: investment_costs_fuel_cell
   step_value: 1.0
   unit: "%"
-  related_converter: households_water_heater_fuel_cell_chp_network_gas
+  related_node: households_water_heater_fuel_cell_chp_network_gas
   position: 2
   dependent_on: _always_hidden
   slide_key: costs_heatpumps
 - key: investment_costs_electric_heat_pumps
   step_value: 1.0
   unit: "%"
-  related_converter: households_space_heater_heatpump_ground_water_electricity
+  related_node: households_space_heater_heatpump_ground_water_electricity
   position: 3
   slide_key: costs_heatpumps
 - key: investment_costs_gas_heat_pumps
   step_value: 1.0
   unit: "%"
-  related_converter: buildings_space_heater_heatpump_air_water_network_gas
+  related_node: buildings_space_heater_heatpump_air_water_network_gas
   position: 4
   slide_key: costs_heatpumps
 - key: investment_costs_households_storage_space_heating

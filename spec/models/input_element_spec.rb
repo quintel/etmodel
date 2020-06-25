@@ -25,7 +25,7 @@ describe InputElement do
     it { is_expected.to respond_to(:fixed) }
     it { is_expected.to respond_to(:interface_group) }
     it { is_expected.to respond_to(:command_type) }
-    it { is_expected.to respond_to(:related_converter) }
+    it { is_expected.to respond_to(:related_node) }
     it { is_expected.to respond_to(:position) }
 
     # Methods
@@ -43,12 +43,12 @@ describe InputElement do
     it { is_expected.to respond_to(:enum?) }
   end
 
-  describe '.with_related_converter_like' do
-    subject { described_class.with_related_converter_like('households') }
+  describe '.with_related_node_like' do
+    subject { described_class.with_related_node_like('households') }
 
     let(:ie) do
       described_class
-        .where(related_converter: 'households_solar_pv_solar_radiation')[0]
+        .where(related_node: 'households_solar_pv_solar_radiation')[0]
     end
 
     it { is_expected.to include ie }

@@ -1,10 +1,10 @@
-class RemoveConverterFromCarBatteriesFlexibility < ActiveRecord::Migration[5.2]
+class RemoveNodeFromCarBatteriesFlexibility < ActiveRecord::Migration[5.2]
   def up
-    slider.update!(related_converter: '')
+    slider.update!(related_node: '')
   end
 
   def down
-    slider.update!(related_converter: 'transport_car_flexibility_p2p_electricity')
+    slider.update!(related_node: 'transport_car_flexibility_p2p_electricity')
   end
 
   private

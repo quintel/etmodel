@@ -31,6 +31,9 @@ class SavedScenariosController < ApplicationController
       @warning = t("scenario.#{warning_type}")
     end
 
+    # Details are only editable by owner
+    @editable = owned_saved_scenario?(@saved_scenario)
+
     respond_to do |format|
       format.html
       format.csv
@@ -42,8 +45,8 @@ class SavedScenariosController < ApplicationController
 
     # Setting an active_saved_scenario enables saving a scenario. We only
     # do this for the owner of a scenario.
-    if @saved_scenario.user_id == current_user&.id
-      Current.setting = Setting.load_from_scenario(
+    Current.setting = if owned_saved_scenario?(@saved_scenario)
+      Setting.load_from_scenario(
         @scenario,
         active_saved_scenario: {
           id: @saved_scenario.id,
@@ -51,7 +54,7 @@ class SavedScenariosController < ApplicationController
         }
       )
     else
-      Current.setting = Setting.load_from_scenario @scenario
+      Setting.load_from_scenario(@scenario)
     end
 
     scenario_attrs[:scale] = Current.setting.scaling if Current.setting.scaling
@@ -60,7 +63,22 @@ class SavedScenariosController < ApplicationController
     redirect_to play_path
   end
 
+  def update
+    saved_scenario = SavedScenario.find(params[:id])
+
+    if owned_saved_scenario?(saved_scenario)
+      saved_scenario.update(saved_scenario_parameters)
+      reload_current_title(saved_scenario)
+    end
+
+    # render head :no_content
+  end
+
   private
+
+  def owned_saved_scenario?(saved_scenario)
+    saved_scenario.user_id == current_user&.id
+  end
 
   def scenario_by_current_user?(scenario)
     SavedScenario.where(user: current_user, scenario_id: scenario.id).exists?
@@ -75,5 +93,15 @@ class SavedScenariosController < ApplicationController
     end
   rescue ActiveResource::ResourceNotFound
     redirect_to root_path, notice: 'Scenario not found'
+  end
+
+  def saved_scenario_parameters
+    params.require(:saved_scenario).permit(:title, :description)
+  end
+
+  def reload_current_title(saved_scenario)
+    if Current.setting.active_saved_scenario_id == saved_scenario.id
+      Current.setting.active_scenario_title = saved_scenario.title
+    end
   end
 end

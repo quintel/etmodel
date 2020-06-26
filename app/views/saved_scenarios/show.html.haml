@@ -1,4 +1,6 @@
 - content_for(:page_title) { "#{@saved_scenario.title} - #{t('meta.name')}" }
+- content_for :head do
+  = javascript_include_tag 'saved_scenario'
 
 .scenario_wrapper#show_scenario
 
@@ -6,30 +8,38 @@
     .warning
       = @warning
 
-  %h1= (@saved_scenario.title or t 'scenario.no_title' ).truncate(40, separator: ' ')
+  = form_with model: @saved_scenario, html: { data: { editable: @editable.to_s } } do |f|
+    = f.hidden_field :id
 
-  = link_to t("scenario.load"),
-            load_saved_scenario_path(@saved_scenario),
-            class: "button primary"
+    // Could also be a text_field instead of a text_area, but then I dont get it to
+    // span two lines when a title is long. Now there's a weird gap when a title is short...
+    // Or should I just give up on the read-only method? Either reload the page with an
+    // edit-parameter, or fully render the title (as a form or as text) with js?
+    .title
+      = f.text_area :title, readonly: true
 
-  = link_to t("scenario.load_factsheet"),
-            factsheet_scenario_path(@saved_scenario.scenario_id),
-            class: "button"
-
-  - if @saved_scenario.description
-    %em= formatted_scenario_description(@saved_scenario.description)
-
-  %ul
-    - if @saved_scenario.updated_at
+    %ul.details
+      - if @saved_scenario.updated_at
+        %li
+          %strong #{t('scenario.updated')}
+          = I18n.localize(@saved_scenario.updated_at, :format => :long)
       %li
-        %strong #{t('scenario.updated')}:
-        = I18n.localize(@saved_scenario.updated_at, :format => :long)
-    %li
-      %strong #{t('scenario.area_code')}:
-      = t "areas.#{@saved_scenario.area_code}"
-    %li
-      %strong #{t('scenario.end_year')}:
-      = @saved_scenario.end_year
+        %strong #{t('scenario.area_code')}
+        = t "areas.#{@saved_scenario.area_code}"
+      %li
+        %strong #{t('scenario.end_year')}
+        = @saved_scenario.end_year
+
+    = link_to t("scenario.load"),
+              load_saved_scenario_path(@saved_scenario),
+              class: "button primary"
+
+    = link_to t("scenario.load_factsheet"),
+              factsheet_scenario_path(@saved_scenario.scenario_id),
+              class: "button"
+
+    .description
+      = f.text_area :description, readonly: true
 
   = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }
 

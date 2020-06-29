@@ -3,7 +3,7 @@
 function addFormListeners() {
   $('.scenario').hide();
   resizeTextarea();
-  $('.cancel').click(restore)
+  $('.cancel').click(restore);
 }
 
 function resizeTextarea() {
@@ -13,5 +13,5 @@ function resizeTextarea() {
 
 function restore() {
   $('form').remove();
-  $('.scenario').show()
+  $('.scenario').show();
 }

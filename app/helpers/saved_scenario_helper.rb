@@ -24,4 +24,8 @@ module SavedScenarioHelper
     { rel: 'noopener noreferrer',
       target: '_blank' }
   end
+
+  def owned_saved_scenario?(saved_scenario)
+    saved_scenario.user_id == current_user&.id
+  end
 end

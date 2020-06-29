@@ -32,119 +32,113 @@ table.default
     margin-left: 25%
     padding-top: 30px
 
-  .warning
-    margin-top: 10px
-    padding: 5px 10px
-    background-color: rgba(255,0,0,0.1)
-    border: 1px solid #f00
-    border-radius: 5px
+    .warning
+      margin-top: 10px
+      padding: 5px 10px
+      background-color: rgba(255,0,0,0.1)
+      border: 1px solid #f00
+      border-radius: 5px
 
-  h1
-    display: inline-block
-    vertical-align: middle
+    h1
+      display: inline-block
+      vertical-align: middle
 
+    .actions
+      display: flex
+      .button
+        background: #f6f6f6
+        border: none
+        border-radius: 3px
+        color: #999
+        cursor: pointer
+        font-size: 1rem
+        font-weight: bold
+        text-align: center
+        text-shadow: none
+        padding: 10px 15px
+        margin: 0.5rem 0.5rem 1rem 0
+        &.save
+          background: #4ea96a
+          color: white
 
-  .actions
-    display: flex
-
-    div
-      background: #f6f6f6
-      border: none
-      border-radius: 3px
-      color: #999
-      cursor: pointer
-      font-size: 1rem
-      font-weight: bold
-      text-align: center
-      padding: 10px 15px
-      margin: 0.5rem 0.5rem 1rem 0
-      width: 60px
-      &.save
-        background: #4ea96a
-        color: white
-
-  .title
-    font-size: 30px
-    width: 100%
-    textarea
+    .title
+      font-size: 30px
       width: 100%
-      padding: 5px
-      resize: none
-      font-weight: bold
+      input
+        width: 100%
+        padding: 5px
+        resize: none
+        font-weight: bold
 
-  .description
-    margin-bottom: 15px
-    textarea
-      width: 100%
-      min-height: 100px
-      padding: 5px
-      resize: none
+    .description
+      margin-bottom: 15px
       font-size: 14px
       line-height: 1.5em
+      textarea
+        width: 100%
+        min-height: 100px
+        padding: 5px
+        resize: none
+        font-size: 14px
+        line-height: 1.5em
 
-  input[readonly], textarea[readonly]
-    border: none
-    &:focus
-      outline: none
-      box-shadow: none
+    a.button
+      display: inline-block
+      margin: 5px 15px 20px 0
 
-  a.button
-    display: inline-block
-    margin: 10px 15px 15px 0
+    ul.details
+      display: flex
+      padding-left: 0
+      margin-top: 0
+      li
+        list-style: none
+        padding-right: 10px
+        color: #999
 
-  ul.details
-    display: flex
-    padding-left: 5px
-    margin-top: 0
-    li
-      list-style: none
-      padding-right: 10px
-      color: #999
+    .sharing-links
+      display: flex
 
-  .sharing-links
-    display: flex
+      a
+        text-decoration: none
+        font-weight: bold
+        color: #999
+        &:hover
+          cursor: pointer
+        .icon
+          font-size: 20px
+          margin-left: 15px
 
-    a
-      text-decoration: none
-      font-weight: bold
-      color: #999
-      &:hover
-        cursor: pointer
-      .icon
-        font-size: 20px
-        margin-left: 15px
-
-  .copy-box
-    display: none
-    position: absolute
-    border: 1px solid rgba(0, 0, 0, 0.2)
-    border-radius: 5px
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
-    background-color: white
-    color: #999
-    padding: 0 5px 5px
-    .arrow
-      height: 0
+    .copy-box
+      display: none
       position: absolute
-      top: -22px
-      width: 0
-      border: 11px solid transparent
-      border-bottom-color: rgba(0, 0, 0, 0.2)
-      &:before
-        border: 10px solid transparent
-        border-bottom-color: #fff
-        content: ''
+      border: 1px solid rgba(0, 0, 0, 0.2)
+      border-radius: 5px
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+      background-color: white
+      color: #999
+      padding: 0 5px 5px
+      .arrow
+        height: 0
         position: absolute
-        top: -8.5px
-        left: -10px
-    .cross
-      float: right
-      margin: 2px 0 2px
-      &:hover
-        cursor: pointer
-    .url input
-      width: 350px
-      color: #333
+        top: -22px
+        width: 0
+        border: 11px solid transparent
+        border-bottom-color: rgba(0, 0, 0, 0.2)
+        &:before
+          border: 10px solid transparent
+          border-bottom-color: #fff
+          content: ''
+          position: absolute
+          top: -8.5px
+          left: -10px
+      .cross
+        float: right
+        margin: 2px 0 2px
+        &:hover
+          cursor: pointer
+      .url input
+        width: 350px
+        color: #333
 
   hr
     border: none

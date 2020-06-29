@@ -71,4 +71,8 @@ class SavedScenario < ActiveRecord::Base
       Setting.load_from_scenario(scenario)
     end
   end
+
+  def formatted_description
+    description&.gsub(/\n/, '<br/>')
+  end
 end

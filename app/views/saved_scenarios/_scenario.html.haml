@@ -1,0 +1,14 @@
+%h1= saved_scenario.title
+
+= render partial: 'info', locals: { scenario: saved_scenario }
+
+- if saved_scenario.description.presence
+  .description
+    = saved_scenario.formatted_description.html_safe
+
+- if owned_saved_scenario?(saved_scenario)
+  .actions
+    = link_to t("scenario.edit_text"),
+        edit_saved_scenario_path(saved_scenario.id),
+        remote: true,
+        class: "edit button"

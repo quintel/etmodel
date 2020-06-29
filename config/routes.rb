@@ -62,7 +62,7 @@ Etm::Application.routes.draw do
     end
   end
 
-  resources :saved_scenarios, only: %i[index show update] do
+  resources :saved_scenarios, only: %i[index show update edit] do
     member { get :load }
     get '/report/:report_name' => 'saved_scenario_reports#show'
   end

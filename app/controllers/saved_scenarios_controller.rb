@@ -3,6 +3,7 @@
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
   before_action :ensure_valid_browser
+  before_action :assign_saved_scenario, only: %i[show load edit update]
   before_action :assign_scenario, only: %i[show load]
 
   def index
@@ -31,9 +32,6 @@ class SavedScenariosController < ApplicationController
       @warning = t("scenario.#{warning_type}")
     end
 
-    # Details are only editable by owner
-    @editable = owned_saved_scenario?(@saved_scenario)
-
     respond_to do |format|
       format.html
       format.csv
@@ -45,7 +43,7 @@ class SavedScenariosController < ApplicationController
 
     # Setting an active_saved_scenario enables saving a scenario. We only
     # do this for the owner of a scenario.
-    Current.setting = if owned_saved_scenario?(@saved_scenario)
+    Current.setting = if owned_saved_scenario?
       Setting.load_from_scenario(
         @scenario,
         active_saved_scenario: {
@@ -63,29 +61,38 @@ class SavedScenariosController < ApplicationController
     redirect_to play_path
   end
 
-  def update
-    saved_scenario = SavedScenario.find(params[:id])
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
 
-    if owned_saved_scenario?(saved_scenario)
-      saved_scenario.update(saved_scenario_parameters)
-      reload_current_title(saved_scenario)
+  def update
+    if owned_saved_scenario?
+      @saved_scenario.update(saved_scenario_parameters)
+      reload_current_title(@saved_scenario)
     end
 
-    # render head :no_content
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
 
-  def owned_saved_scenario?(saved_scenario)
-    saved_scenario.user_id == current_user&.id
+  def owned_saved_scenario?
+    @saved_scenario.user_id == current_user&.id
   end
 
   def scenario_by_current_user?(scenario)
     SavedScenario.where(user: current_user, scenario_id: scenario.id).exists?
   end
 
-  def assign_scenario
+  def assign_saved_scenario
     @saved_scenario = SavedScenario.find(params[:id])
+  end
+
+  def assign_scenario
     @scenario = @saved_scenario.scenario(detailed: true)
 
     unless @scenario&.loadable?

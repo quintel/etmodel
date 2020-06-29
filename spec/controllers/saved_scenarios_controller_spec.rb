@@ -86,7 +86,7 @@ describe SavedScenariosController, vcr: true do
 
   describe 'PUT update' do
     let(:update) do
-      put :update, params: {
+      put :update, format: :js, params: {
         id: user_scenario.id,
         saved_scenario: params
       }

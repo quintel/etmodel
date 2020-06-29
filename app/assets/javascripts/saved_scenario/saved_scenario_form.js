@@ -7,8 +7,8 @@ function addFormListeners() {
 }
 
 function resizeTextarea() {
-  $("textarea").height('auto');
-  $("textarea").height($("textarea").prop('scrollHeight'));
+  $('textarea').height('auto');
+  $('textarea').height($('textarea').prop('scrollHeight'));
 }
 
 function restore() {

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe DescriptionsController do
@@ -7,13 +9,19 @@ describe DescriptionsController do
   let(:description) { chart.description }
 
   describe "#charts" do
-    it "should return the chart description" do
-      get :charts, params: { id: chart.key }
+    context 'when the chart exists' do
+      before { get :charts, params: { id: chart.key } }
 
-      expect(response).to be_successful
-      expect(response).to render_template(:show)
+      it { expect(response).to be_successful }
+      it { expect(response).to render_template(:show) }
+      it { expect(response.body).not_to be_empty }
+    end
 
-      expect(response.body).to_not be_empty
+    context 'when the chart does not exist' do
+      before { get :charts, params: { id: 'four_oh_four' } }
+
+      it { expect(response).not_to be_successful }
+      it { expect(response.code).to eq('404') }
     end
   end
 end

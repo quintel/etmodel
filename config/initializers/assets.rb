@@ -25,7 +25,6 @@ Rails.application.config.assets.precompile += %w(
   report.css
   pico.css
   pico.js
-  saved_scenario.js
 )
 
 # Compile images in vendor/assets/images

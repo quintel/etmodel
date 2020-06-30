@@ -5,6 +5,8 @@ class SavedScenariosController < ApplicationController
   before_action :ensure_valid_browser
   before_action :assign_saved_scenario, only: %i[show load edit update]
   before_action :assign_scenario, only: %i[show load]
+  before_action :ensure_owner, only: %i[edit update]
+  helper_method :owned_saved_scenario?
 
   def index
     respond_to do |format|
@@ -68,10 +70,8 @@ class SavedScenariosController < ApplicationController
   end
 
   def update
-    if owned_saved_scenario?
-      @saved_scenario.update(saved_scenario_parameters)
-      reload_current_title(@saved_scenario)
-    end
+    @saved_scenario.update(saved_scenario_parameters)
+    reload_current_title(@saved_scenario)
 
     respond_to do |format|
       format.js
@@ -80,8 +80,13 @@ class SavedScenariosController < ApplicationController
 
   private
 
-  def owned_saved_scenario?
-    @saved_scenario.user_id == current_user&.id
+  def ensure_owner
+    head(:forbidden) unless owned_saved_scenario?
+  end
+
+  def owned_saved_scenario?(saved_scenario = nil)
+    saved_scenario ||= @saved_scenario
+    saved_scenario.user_id == current_user&.id
   end
 
   def scenario_by_current_user?(scenario)

@@ -1,20 +1,19 @@
 - content_for(:page_title) { "#{@saved_scenario.title} - #{t('meta.name')}" }
-- content_for :head do
-  = javascript_include_tag 'saved_scenario'
 
-.scenario_wrapper#show_scenario
+.background#saved_scenario
+  .scenario_wrapper#show_scenario
 
-  - if @warning
-    .warning
-      = @warning
+    - if @warning
+      .warning
+        = @warning
 
-  .scenario
-    = render partial: 'scenario', locals: { saved_scenario: @saved_scenario }
+    .scenario
+      = render partial: 'scenario', locals: { saved_scenario: @saved_scenario }
 
-  #edit_scenario
+    #edit_scenario
 
-  = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }
+    = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }
 
-  %p
-    %small{:style => "font-size: 12px; font-weight: normal"}
-      = t("scenario.overwritten")
+    %p
+      %small{:style => "font-size: 10px; font-weight: normal"}
+        = t("scenario.overwritten")

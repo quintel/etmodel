@@ -36,6 +36,5 @@
 
       = render partial: 'share_links', locals: { scenario: @scenario }
 
-    %p
-      %small{:style => "font-size: 10px; font-weight: normal"}
-        = t("scenario.overwritten")
+    %p.note
+      = t("scenario.overwritten")

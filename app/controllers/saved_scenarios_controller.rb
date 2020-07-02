@@ -4,7 +4,7 @@
 class SavedScenariosController < ApplicationController
   before_action :ensure_valid_browser
   before_action :assign_saved_scenario, only: %i[show load edit update]
-  before_action :assign_scenario, only: %i[show load]
+  before_action :assign_scenario, only: :load
   before_action :ensure_owner, only: %i[edit update]
   helper_method :owned_saved_scenario?
 
@@ -24,12 +24,12 @@ class SavedScenariosController < ApplicationController
   end
 
   def show
-    if @scenario.created_at && @scenario.days_old > 180
+    if @saved_scenario.days_until_last_update > 180
       warning_type =
-        if scenario_by_current_user?(@scenario)
-          'preset_warning'
-        else
+        if owned_saved_scenario?
           'warning'
+        else
+          'preset_warning'
         end
       @warning = t("scenario.#{warning_type}")
     end
@@ -101,10 +101,10 @@ class SavedScenariosController < ApplicationController
     @scenario = @saved_scenario.scenario(detailed: true)
 
     unless @scenario&.loadable?
-      redirect_to root_path, notice: 'Sorry, this scenario cannot be loaded'
+      redirect_to @saved_scenario, notice: 'Sorry, this scenario cannot be loaded'
     end
   rescue ActiveResource::ResourceNotFound
-    redirect_to root_path, notice: 'Scenario not found'
+    redirect_to @saved_scenario, notice: 'Scenario not found'
   end
 
   def saved_scenario_parameters

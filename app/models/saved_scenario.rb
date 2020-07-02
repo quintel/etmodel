@@ -71,4 +71,13 @@ class SavedScenario < ActiveRecord::Base
       Setting.load_from_scenario(scenario)
     end
   end
+
+  # Public: Determines if this scenario can be loaded.
+  def loadable?
+    Api::Area.code_exists?(area_code)
+  end
+
+  def days_until_last_update
+    (Time.current - updated_at) / 60 / 60 / 24
+  end
 end

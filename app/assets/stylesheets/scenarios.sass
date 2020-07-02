@@ -24,73 +24,173 @@ table.default
     color: #aaa
 
 // Used on scenario index/new/show pages
+.background_wrapper#saved_scenario
+  background: $landing-background-color
+  padding: 40px 0 110px 0
+  min-height: 100%
+  height: max-content
+
 .scenario_wrapper
-  padding: 5px 20px 110px 20px
+  &#index
+    padding: 5px 20px 110px 20px
 
   &#show_scenario
-    margin-right: 25%
-    margin-left: 25%
+    width: $landing-width
+    margin: 0 auto
+    background: white
+    border: 1px solid $landing-border-color
+    border-bottom-color: darken($landing-border-color, 5%)
+    border-top-color: $landing-gold
+    border-top-width: 2px
+    box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
+    border-radius: 4px
+    padding: 15px 40px
 
-  .warning
-    margin-top: 10px
-    padding: 5px 10px
-    background-color: rgba(255,0,0,0.1)
-    border: 1px solid #f00
-    border-radius: 5px
+    .warning
+      margin-top: 10px
+      padding: 5px 10px
+      background-color: rgba(255,0,0,0.1)
+      border: 1px solid #f00
+      border-radius: 5px
 
-  h1
-    display: inline-block
-    vertical-align: middle
+    h1
+      margin-bottom: 0.5em
 
-  a.button
-    display: inline-block
-    margin: 15px 0 15px 15px
-    float: right
+    .actions
+      display: flex
+      a
+        text-decoration: none
+        margin: 0.5rem 0.5rem 1rem 0
+        &:hover
+          color: darken(#63A0C9, 20%)
+      .dot
+        margin: 1rem 0.5rem 1rem 0
+        font-size: 6px
+        color: #63A0C9
 
-  .sharing-links
-    display: flex
-
-    a
-      text-decoration: none
+    .button
+      background: #eee
+      background: linear-gradient(lighten(#eee, 7%), #eee)
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
+      border: none
+      border-radius: 3px
+      cursor: pointer
+      font-size: 1rem
       font-weight: bold
-      color: #999
-      &:hover
-        cursor: pointer
-      .icon
-        font-size: 20px
-        margin-left: 15px
+      text-align: center
+      text-shadow: none
+      padding: 10px 15px
+      margin: 0.5rem 0.5rem 1rem 0
+      &.save
+        background: $landing-green
+        background: linear-gradient(lighten($landing-green, 10%), $landing-green)
+        color: white
+        &:hover
+          background: linear-gradient(lighten($landing-green, 14%), lighten($landing-green, 7%))
+        &:active
+          background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))
+      &.load
+        background-color: $landing-blue
+        background: linear-gradient(lighten($landing-blue, 10%), $landing-blue)
+        color: white
+        &:hover
+          background: linear-gradient(lighten($landing-blue, 13%), lighten($landing-blue, 6%))
+        &:active
+          background: linear-gradient(darken($landing-blue, 1%), darken($landing-blue, 7%))
+        &.dim
+          background: linear-gradient(lighten($landing-blue, 25%), lighten($landing-blue, 18%))
+      &.cancel
+        &:hover
+          color: lighten(black, 15%)
+          background: linear-gradient(lighten(#eee, 9%), lighten(#eee, 2%))
+        &:active
+          background: linear-gradient(#eee, darken(#eee, 7%))
 
-  .copy-box
-    display: none
-    position: absolute
-    border: 1px solid rgba(0, 0, 0, 0.2)
-    border-radius: 5px
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
-    background-color: white
-    color: #999
-    padding: 0 5px 5px
-    .arrow
-      height: 0
+    .title
+      font-size: 30px
+      width: 100%
+      input
+        width: 100%
+        padding: 5px
+        resize: none
+        font-weight: bold
+        margin: 5px 0 10px 0
+
+    .description
+      margin-bottom: 10px
+      font-size: 14px
+      line-height: 1.5em
+      textarea
+        width: 100%
+        min-height: 100px
+        padding: 5px
+        resize: none
+        font-size: 14px
+        line-height: 1.5em
+
+    ul.details
+      display: flex
+      padding-left: 0
+      margin-top: 0
+      li
+        list-style: none
+        padding-right: 8px
+        color: #999
+        strong
+          color: initial
+
+    .bar
+      border-top: 1px solid #eee
+      width: 100%
+      margin-bottom: 10px
+
+    .sharing-links
+      display: flex
+      color: #999
+      a
+        text-decoration: none
+        font-weight: bold
+        color: #999
+        &:hover
+          cursor: pointer
+        .icon
+          font-size: 20px
+          margin-left: 15px
+
+    .copy-box
+      display: none
       position: absolute
-      top: -22px
-      width: 0
-      border: 11px solid transparent
-      border-bottom-color: rgba(0, 0, 0, 0.2)
-      &:before
-        border: 10px solid transparent
-        border-bottom-color: #fff
-        content: ''
+      border: 1px solid rgba(0, 0, 0, 0.2)
+      border-radius: 5px
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+      background-color: white
+      color: #999
+      padding: 0 5px 5px
+      .arrow
+        height: 0
         position: absolute
-        top: -8.5px
-        left: -10px
-    .cross
-      float: right
-      margin: 2px 0 2px
-      &:hover
-        cursor: pointer
-    .url input
-      width: 350px
-      color: #333
+        top: -22px
+        width: 0
+        border: 11px solid transparent
+        border-bottom-color: rgba(0, 0, 0, 0.2)
+        &:before
+          border: 10px solid transparent
+          border-bottom-color: #fff
+          content: ''
+          position: absolute
+          top: -8.5px
+          left: -10px
+      .cross
+        float: right
+        margin: 2px 0 2px
+        &:hover
+          cursor: pointer
+      .url input
+        width: 350px
+        color: #333
+
+    .note
+      font-size: 10px
 
   hr
     border: none

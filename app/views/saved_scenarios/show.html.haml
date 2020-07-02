@@ -1,38 +1,18 @@
 - content_for(:page_title) { "#{@saved_scenario.title} - #{t('meta.name')}" }
 
-.scenario_wrapper#show_scenario
+.background_wrapper#saved_scenario
+  .scenario_wrapper#show_scenario
 
-  - if @warning
-    .warning
-      = @warning
+    - if @warning
+      .warning
+        = @warning
 
-  %h1= (@saved_scenario.title or t 'scenario.no_title' ).truncate(40, separator: ' ')
+    .scenario
+      = render partial: 'scenario', locals: { saved_scenario: @saved_scenario }
 
-  = link_to t("scenario.load"),
-            load_saved_scenario_path(@saved_scenario),
-            class: "button primary"
+    #edit_scenario
 
-  = link_to t("scenario.load_factsheet"),
-            factsheet_scenario_path(@saved_scenario.scenario_id),
-            class: "button"
+    = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }
 
-  - if @saved_scenario.description
-    %em= formatted_scenario_description(@saved_scenario.description)
-
-  %ul
-    - if @saved_scenario.updated_at
-      %li
-        %strong #{t('scenario.updated')}:
-        = I18n.localize(@saved_scenario.updated_at, :format => :long)
-    %li
-      %strong #{t('scenario.area_code')}:
-      = t "areas.#{@saved_scenario.area_code}"
-    %li
-      %strong #{t('scenario.end_year')}:
-      = @saved_scenario.end_year
-
-  = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }
-
-  %p
-    %small{:style => "font-size: 12px; font-weight: normal"}
+    %p.note
       = t("scenario.overwritten")

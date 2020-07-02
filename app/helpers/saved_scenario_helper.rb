@@ -24,4 +24,17 @@ module SavedScenarioHelper
     { rel: 'noopener noreferrer',
       target: '_blank' }
   end
+
+  def area_flag(area_code)
+    return unless Api::Area.find_by_country_memoized(area_code).country?
+
+    capture_haml do
+      haml_tag(
+        'img',
+        src: icon_for_area_code(area_code),
+        title: I18n.t("areas.#{area_code}"),
+        width: 16
+      )
+    end
+  end
 end

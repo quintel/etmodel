@@ -1,0 +1,15 @@
+%ul.details
+  %li
+    = area_flag(scenario.area_code)
+    %strong
+      = t "areas.#{scenario.area_code}"
+      = scenario.end_year
+  %li
+    = t('scenario.updated')
+    = I18n.localize(scenario.updated_at, :format => :long)
+
+.bar
+
+= link_to t("scenario.load"),
+    load_saved_scenario_path(scenario),
+    class: "button load"

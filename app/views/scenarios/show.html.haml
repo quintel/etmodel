@@ -1,38 +1,40 @@
 - content_for(:page_title) { "#{@scenario.title} - #{t('meta.name')}" }
 
-.scenario_wrapper#show_scenario
+.background_wrapper#saved_scenario
+  .scenario_wrapper#show_scenario
 
-  - if @warning
-    .warning
-      = @warning
+    - if @warning
+      .warning
+        = @warning
 
-  %h1= @scenario.title ? @scenario.title : @scenario.id
+    %h1= @scenario.title ? @scenario.title : @scenario.id
 
-  = link_to t("scenario.load"), load_scenario_path(@scenario), class: "button primary"
-
-  - if @scenario.protected?
-    = link_to t("scenario.load_factsheet"),
-              factsheet_scenario_path(@scenario.id),
-              class: "button"
-
-  - if @scenario.description
-    %em= formatted_scenario_description(@scenario.description)
-
-  %ul
-    - if @scenario.created_at
+    %ul.details
       %li
-        %strong #{t('scenario.created')}:
-        = I18n.localize(@scenario.parsed_created_at, :format => :long)
-    %li
-      %strong #{t('scenario.area_code')}:
-      = t "areas.#{@scenario.area_code}"
-    %li
-      %strong #{t('scenario.end_year')}:
-      = @scenario.end_year
+        = area_flag(@scenario.area_code)
+        %strong
+          = t "areas.#{@scenario.area_code}"
+          = @scenario.end_year
+      - if @scenario.created_at
+        %li
+          = t('scenario.created')
+          = I18n.localize(@scenario.parsed_created_at, :format => :long)
 
-  - if @scenario.protected?
-    = render partial: 'share_links', locals: { scenario: @scenario }
+    .bar
 
-  %p
-    %small{:style => "font-size: 12px; font-weight: normal"}
+    = link_to t("scenario.load"),
+        load_scenario_path(@scenario),
+        class: "button load"
+
+    - if @scenario.description
+      = formatted_scenario_description(@scenario.description)
+
+    - if @scenario.protected?
+      .actions
+        = link_to t("scenario.load_factsheet"),
+          factsheet_scenario_path(@scenario.id)
+
+      = render partial: 'share_links', locals: { scenario: @scenario }
+
+    %p.note
       = t("scenario.overwritten")

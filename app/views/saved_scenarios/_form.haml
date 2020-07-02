@@ -1,0 +1,14 @@
+= form_with model: saved_scenario, local: false do |f|
+  = f.hidden_field :id
+
+  .title
+    = f.text_field :title
+
+  = render partial: 'info', locals: { scenario: saved_scenario }
+
+  .description
+    = f.text_area :description, placeholder: t('scenario.add_description')
+
+  .actions
+    = f.submit t('scenario.save_text'), class: 'save button'
+    .cancel.button= t('scenario.cancel_text')

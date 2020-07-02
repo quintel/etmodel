@@ -83,4 +83,70 @@ describe SavedScenariosController, vcr: true do
       expect(response.content_type).to eq('text/csv')
     end
   end
+
+  describe 'PUT update' do
+    let(:update) do
+      put :update, format: :js, params: {
+        id: user_scenario.id,
+        saved_scenario: params
+      }
+      user_scenario.reload
+    end
+
+    context 'with an owned saved_scenario and an empty title' do
+      before do
+        login_as user
+        session[:setting] = Setting.new
+        update
+      end
+
+      let(:params) do
+        {
+          title: '',
+          description: ''
+        }
+      end
+
+      it 'does not update the title' do
+        expect(user_scenario.title).not_to eq(params[:title])
+      end
+    end
+
+    context 'with an owned saved_scenario and a new title and description' do
+      before do
+        login_as user
+        session[:setting] = Setting.new
+        update
+      end
+
+      let(:params) do
+        {
+          title: 'New title',
+          description: 'New description'
+        }
+      end
+
+      it 'updates the title' do
+        expect(user_scenario.title).to eq(params[:title])
+      end
+
+      it 'updates the description' do
+        expect(user_scenario.description).to eq(params[:description])
+      end
+    end
+
+    context 'with an unowned saved_scenario' do
+      let(:params) do
+        {
+          title: 'New title',
+          description: 'New description'
+        }
+      end
+
+      it 'does not update the scenario' do
+        update
+        expect(user_scenario.title).not_to eq(params[:title])
+      end
+    end
+  end
 end

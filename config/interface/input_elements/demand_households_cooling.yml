@@ -3,20 +3,20 @@
   share_group: cooling_households
   step_value: 0.1
   unit: "%"
-  related_converter: households_cooling_heatpump_ground_water_electricity
+  related_node: households_cooling_heatpump_ground_water_electricity
   position: 1
   slide_key: demand_households_cooling
 - key: households_cooling_airconditioning_electricity_share
   share_group: cooling_households
   step_value: 0.1
   unit: "%"
-  related_converter: households_cooling_airconditioning_electricity
+  related_node: households_cooling_airconditioning_electricity
   position: 4
   slide_key: demand_households_cooling
 - key: households_cooling_heatpump_air_water_electricity_share
   share_group: cooling_households
   step_value: 0.1
   unit: "%"
-  related_converter: households_cooling_heatpump_air_water_electricity
+  related_node: households_cooling_heatpump_air_water_electricity
   position: 2
   slide_key: demand_households_cooling

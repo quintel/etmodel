@@ -1,11 +1,11 @@
-class AddConverterToHouseholdBatteriesFlexibility < ActiveRecord::Migration[5.2]
+class AddNodeToHouseholdBatteriesFlexibility < ActiveRecord::Migration[5.2]
 
   def up
-    slider.update!(related_converter: 'households_flexibility_p2p_electricity')
+    slider.update!(related_node: 'households_flexibility_p2p_electricity')
   end
 
   def down
-    slider.update!(related_converter: '')
+    slider.update!(related_node: '')
   end
 
   private

@@ -3,20 +3,20 @@
   share_group: transport_passenger_train_tech
   step_value: 0.1
   unit: "%"
-  related_converter: transport_passenger_train_using_coal
+  related_node: transport_passenger_train_using_coal
   position: 3
   slide_key: demand_transport_passenger_train_technology
 - key: transport_passenger_train_using_diesel_mix_share
   share_group: transport_passenger_train_tech
   step_value: 0.1
   unit: "%"
-  related_converter: transport_passenger_train_using_diesel_mix
+  related_node: transport_passenger_train_using_diesel_mix
   position: 2
   slide_key: demand_transport_passenger_train_technology
 - key: transport_passenger_train_using_electricity_share
   share_group: transport_passenger_train_tech
   step_value: 0.1
   unit: "%"
-  related_converter: transport_passenger_train_using_electricity
+  related_node: transport_passenger_train_using_electricity
   position: 1
   slide_key: demand_transport_passenger_train_technology

@@ -3,28 +3,28 @@
   share_group: cooling_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_cooling_heatpump_air_water_network_gas
+  related_node: buildings_cooling_heatpump_air_water_network_gas
   position: 2
   slide_key: demand_buildings_cooling
 - key: buildings_cooling_collective_heatpump_water_water_ts_electricity_share
   share_group: cooling_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_cooling_collective_heatpump_water_water_ts_electricity
+  related_node: buildings_cooling_collective_heatpump_water_water_ts_electricity
   position: 1
   slide_key: demand_buildings_cooling
 - key: buildings_cooling_airconditioning_share
   share_group: cooling_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_cooling_airconditioning_electricity
+  related_node: buildings_cooling_airconditioning_electricity
   position: 3
   slide_key: demand_buildings_cooling
 - key: buildings_cooling_collective_cooling_network_electricity_share
   share_group: cooling_buildings
   step_value: 0.1
   unit: "%"
-  related_converter: buildings_cooling_collective_cooling_network_electricity
+  related_node: buildings_cooling_collective_cooling_network_electricity
   position: 4
   dependent_on: has_cold_network
   slide_key: demand_buildings_cooling

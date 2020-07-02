@@ -4,19 +4,19 @@
 #
 # Table name: input_elements
 #
-#  id                :integer          not null, primary key
-#  key               :string(255)
-#  share_group       :string(255)
-#  step_value        :float
-#  created_at        :datetime
-#  updated_at        :datetime
-#  unit              :string(255)
-#  fixed             :boolean
-#  comments          :text
-#  interface_group   :string(255)
-#  command_type      :string(255)
-#  related_converter :string(255)
-#  position          :integer
+#  id              :integer          not null, primary key
+#  key             :string(255)
+#  share_group     :string(255)
+#  step_value      :float
+#  created_at      :datetime
+#  updated_at      :datetime
+#  unit            :string(255)
+#  fixed           :boolean
+#  comments        :text
+#  interface_group :string(255)
+#  command_type    :string(255)
+#  related_node    :string(255)
+#  position        :integer
 #
 
 # Model representing a slider in the front-end. Settings get stored in scenarios
@@ -40,9 +40,9 @@ class InputElement < YModel::Base
       all.sort_by(&:position)
     end
 
-    def with_related_converter_like(converter_name)
-      all.reject { |ie| ie.related_converter.nil? }
-        .select { |ie| ie.related_converter.include?(converter_name || '') }
+    def with_related_node_like(node_name)
+      all.reject { |ie| ie.related_node.nil? }
+        .select { |ie| ie.related_node.include?(node_name || '') }
     end
   end
 
@@ -70,16 +70,16 @@ class InputElement < YModel::Base
   def json_attributes
     Jbuilder.encode do |json|
       json.call(
-        self, :unit, :share_group, :key, :related_converter,
-        :converter_source_url, :step_value, :draw_to_min, :draw_to_max,
+        self, :unit, :share_group, :key, :related_node,
+        :node_source_url, :step_value, :draw_to_min, :draw_to_max,
         :disabled, :translated_name, :sanitized_description, :fixed,
         :has_flash_movie
       )
     end
   end
 
-  def converter_source_url
-    return Converter.find related_converter if related_converter.present?
+  def node_source_url
+    return Node.find related_node if related_node.present?
 
     nil
   end

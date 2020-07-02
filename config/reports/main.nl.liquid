@@ -53,7 +53,7 @@
     <li><!-- class="target-met"> -->
       <p>
         <strong>Duurzaamheid</strong><br />
-        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 0 | autoscale: 'MT'}}</strong>, dat is <strong> {{future.dashboard_co2_emissions_versus_start_year |  round: 0 | times: 100 }}% </strong> ten opzichte van de uitstoot in {{ settings.start_year }} van <strong>{{present.policy_goal_co2_emissions_value | round: 3 | autoscale: 'MT'}}</strong> en <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in 1990.
+        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 0 | autoscale: 'MT'}}</strong>, dat is <strong> {{future.dashboard_co2_emissions_versus_start_year |  times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in {{ settings.start_year }} van <strong>{{present.policy_goal_co2_emissions_value | round: 3 | autoscale: 'MT'}}</strong> en <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in 1990.
       </p>
     </li>
 

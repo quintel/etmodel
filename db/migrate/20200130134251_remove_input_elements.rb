@@ -20,7 +20,7 @@ class RemoveInputElements < ActiveRecord::Migration[5.2]
       t.text 'comments'
       t.string 'interface_group'
       t.string 'command_type', limit: 191
-      t.string 'related_converter'
+      t.string 'related_node'
       t.integer 'slide_id'
       t.integer 'position'
       t.index ['command_type'], name: 'index_input_elements_on_command_type'

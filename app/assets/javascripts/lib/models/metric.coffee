@@ -212,8 +212,8 @@
     return false unless value?
     value.toFixed(precision)
 
-  # This is used only in the converter info popup
-  converter_detail_format: (x, unit) ->
+  # This is used only in the node info popup
+  node_detail_format: (x, unit) ->
     x *= 100.0 if unit == '%'
     if _.isNumber(x)
       @format_number x, 2

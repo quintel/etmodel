@@ -19,7 +19,7 @@ body#root
     display: none
 
   a
-    color: $landing-blue
+    color: darken($landing-blue, 4%)
     text-decoration: none
 
     &:hover
@@ -371,6 +371,9 @@ li.select2-results__option > span > .present
 
 .select2-container--default .select2-results__option--highlighted[aria-selected]
   background-color: $landing-blue
+
+.select2-container--default .select2-search--dropdown .select2-search__field:focus
+  border-color: #6ca1d0
 
 li.select2-results__option--highlighted > span > .present
   color: white

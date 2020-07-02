@@ -29,12 +29,12 @@
     <div class="info-wrap">
         <div class="info">
             <%= info %>
-            <% if (converter) { %>
+            <% if (node) { %>
               <br/>
-              <a href="#" class="converter_detail"
-                 data-converter="<%= converter %>"
+              <a href="#" class="node_detail"
+                 data-node="<%= node %>"
                  data-title="<%= name %>"
-                 data-converter_source_url="<%= converter_source %>"><%= info_link %></a>
+                 data-node_source_url="<%= node_source %>"><%= info_link %></a>
             <% } %>
         </div>
     </div>

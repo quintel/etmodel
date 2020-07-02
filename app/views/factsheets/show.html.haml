@@ -9,6 +9,9 @@
       %h1
         Energiemix
         %strong= t("areas.#{@scenario.area_code}")
+      - if @saved_scenario
+        %h2
+          = @saved_scenario.title
     %dl.detail-list
       %dt Inwoners
       %dd(data-query="households_number_of_inhabitants" data-period="future") &mdash;

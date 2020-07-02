@@ -122,34 +122,6 @@ module LayoutHelper
     number_to_percentage(percent, precision: precision)
   end
 
-  # Public: Creates a drop-down of preset and user-saved scenarios.
-  def presets_select
-    grouped = Api::Scenario.in_groups(Api::Scenario.all(from: :templates))
-
-    # Global presets.
-    grouped_options = grouped.map do |group|
-      options   = group[:scenarios].map { |s| [s.title, s.id] }
-      group_key = group[:name].to_s.downcase.gsub(/\s+/, '_').presence
-
-      [t("scenario.#{ group_key }", default: group[:name]), options]
-    end
-
-    # Logged-in user's saved scenarios.
-    if current_user
-      available_scenarios = current_user.saved_scenarios.select(&:scenario)
-
-      if available_scenarios.any?
-        user_scenarios = available_scenarios.reverse.map do |ss|
-          [ss.scenario.title, ss.scenario.id]
-        end
-
-        grouped_options.unshift([t('scenario.saved'), user_scenarios])
-      end
-    end
-
-    select_tag 'id', grouped_options_for_select(grouped_options), id: :preset_id
-  end
-
   def flags
     @flags ||= Dir.chdir(Rails.root.join('app/assets/images')) do
       Dir.glob("flags-24/*.png")

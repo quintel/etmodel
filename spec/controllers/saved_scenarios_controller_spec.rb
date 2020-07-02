@@ -52,6 +52,20 @@ describe SavedScenariosController, vcr: true do
           expect(response).to redirect_to play_path
         end
       end
+
+      it 'with a not-loadable scenario redirects to #show' do
+        allow(user_scenario.scenario).to receive(:loadable?).and_return(false)
+        get :load, params: { id: user_scenario.id }
+        expect(response).to be_redirect
+      end
+
+      it 'with a non-existent scenario redirects to #show' do
+        allow(Api::Scenario)
+          .to receive(:find)
+          .and_raise(ActiveResource::ResourceNotFound.new(nil))
+        get :load, params: { id: user_scenario.id }
+        expect(response).to be_redirect
+      end
     end
   end
 
@@ -59,23 +73,6 @@ describe SavedScenariosController, vcr: true do
     it 'has an ok status' do
       get :show, params: { id: user_scenario.id }
       expect(response).to be_successful
-    end
-
-    it 'with a not-loadable scenario' do
-      expect(user_scenario.scenario).to receive(:loadable?).and_return(false)
-
-      get :show, params: { id: user_scenario.id }
-
-      expect(response).to be_redirect
-    end
-
-
-    it 'with a non-existent scenario' do
-      allow(Api::Scenario)
-        .to receive(:find)
-        .and_raise(ActiveResource::ResourceNotFound.new(nil))
-      get :show, params: { id: user_scenario.id }
-      expect(response).to be_redirect
     end
 
     it 'responds to the .csv format' do

@@ -1,10 +1,10 @@
 - @saved_scenarios.each do |ss|
-  - if ss.scenario&.loadable?
+  - if ss.loadable?
     %tr{class: cycle('even', 'odd') + (' highlight' if @student_ids.include?(ss.user_id)).to_s}
-      %td= check_box_tag 'scenario_ids[]', ss.scenario.id
+      %td= check_box_tag 'scenario_ids[]', ss.scenario_id
       %td= link_to ss.title, ss
-      %td= ss.scenario.end_year
-      %td= ss.scenario.parsed_created_at&.to_formatted_s(:long)
+      %td= ss.end_year
+      %td= ss.updated_at.to_formatted_s(:long)
       %td= ss.user.name
   - elsif current_user.admin?
     %tr{class: "unavailable #{cycle('even', 'odd')}" }
@@ -14,12 +14,10 @@
         = ss.title
         == (#{ss.scenario_id})
         &ndash;
-        - if ss.scenario
-          cannot be loaded
-        - else
-          does not exist
+        = t('scenario.area_not_exists')
+        (#{ss.area_code})
       %td= ""
-      %td= ss.created_at.to_datetime&.to_formatted_s(:long)
+      %td= ss.updated_at.to_datetime&.to_formatted_s(:long)
       %td= ss.user.email
 %tr#scenario_paginator
   %td{colspan: 5}= link_to_next_page @saved_scenarios, 'More...', remote: true

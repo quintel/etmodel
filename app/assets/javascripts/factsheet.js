@@ -84,10 +84,6 @@ jQuery(function() {
     var units = preferredUnits(response.gqueries);
     var gqueries = transformGqueries(response.gqueries, units);
 
-    if (response.scenario.title && response.scenario.title !== 'API') {
-      $('#title').append($('<h2/>').text(response.scenario.title));
-    }
-
     assignQueryValues(document, gqueries);
 
     // Must show the factsheet prior to rendering the charts to get accurate

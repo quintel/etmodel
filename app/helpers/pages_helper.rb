@@ -25,6 +25,8 @@ module PagesHelper
   #
   # Returns true or false.
   def area_css_class(area)
+    return '' if area.area == 'UKNI01_northern_ireland'
+
     area ? area.top_level_area.area : ''
   end
 

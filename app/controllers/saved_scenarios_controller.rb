@@ -14,7 +14,10 @@ class SavedScenariosController < ApplicationController
         if current_user
           render json:
             SavedScenarioPresenter.new(
-              current_user.saved_scenarios.order('created_at DESC')
+              current_user
+                .saved_scenarios
+                .where(end_year: Current.setting.end_year)
+                .order('created_at DESC')
             )
         else
           render json: []

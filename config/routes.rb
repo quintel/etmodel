@@ -127,6 +127,9 @@ Etm::Application.routes.draw do
 
   resources :multi_year_charts, only: %i[index create destroy]
 
+  get '/import_esdl' => 'import_esdl#index'
+  post '/import_esdl/create' => 'import_esdl#create'
+
   namespace :embeds do
     resource :pico, only: [:show]
   end

@@ -73,9 +73,12 @@ body#root
       width: 216px
       &.multi-year-charts
         background-image: asset-url("pages/home/multi_year_charts.svg")
+      &.esdl
+        background-image: asset-url("pages/home/esdl.png")
       &.quintel
         background-image: asset-url("pages/home/quintel.png")
-      &.multi-year-charts + .quintel
+        width: 562px
+      &.multi-year-charts + .esdl
         width: 562px
     h4
       font-size: 14px

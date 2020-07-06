@@ -1,0 +1,13 @@
+- content_for(:page_title) { "Import ESDL - #{t('meta.name')}" }
+
+#esdl
+  %h1= t('esdl.title')
+
+  .description
+    %p= t('esdl.description')
+    %strong= t('esdl.upload')
+
+  = form_with url: import_esdl_create_path do |f|
+
+    = f.file_field :esdl_file, required: true, accept: '.esdl'
+    = f.submit t('esdl.start'), class: 'button'

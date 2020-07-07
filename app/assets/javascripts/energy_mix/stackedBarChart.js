@@ -105,7 +105,7 @@
       svg
         .append('g')
         .append('svg:text')
-        .text(I18n.t('factsheet.series.' + data.key))
+        .text(I18n.t('energy_mix.series.' + data.key))
         .style('fill', data.color)
         .attr(
           'transform',

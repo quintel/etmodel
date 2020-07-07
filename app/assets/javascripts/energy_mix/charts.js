@@ -6,37 +6,37 @@
       {
         key: 'factsheet_energetic_final_demand_electricity',
         color: '#ffce05',
-        icon: '/assets/factsheet/electricity.svg'
+        icon: '/assets/energy_mix/electricity.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_renewable_heat',
         color: '#eb5a3c',
-        icon: '/assets/factsheet/renewable-heat.svg'
+        icon: '/assets/energy_mix/renewable-heat.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_collective_heat',
         color: '#e7332a',
-        icon: '/assets/factsheet/collective-heat.svg'
+        icon: '/assets/energy_mix/collective-heat.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_bio_fuels',
         color: '#a55513',
-        icon: '/assets/factsheet/wood.svg'
+        icon: '/assets/energy_mix/wood.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_gas_households_buildings',
         color: '#36a9e1',
-        icon: '/assets/factsheet/gas.svg'
+        icon: '/assets/energy_mix/gas.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_gas_other',
         color: '#3b73bf',
-        icon: '/assets/factsheet/gas-other.svg'
+        icon: '/assets/energy_mix/gas-other.svg'
       },
       {
         key: 'factsheet_energetic_final_demand_oil_and_coal_products',
         color: '#95c11f',
-        icon: '/assets/factsheet/transport.svg'
+        icon: '/assets/energy_mix/transport.svg'
       }
     ],
     breakdown: [

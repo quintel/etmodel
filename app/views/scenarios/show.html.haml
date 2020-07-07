@@ -33,7 +33,7 @@
     - if @scenario.protected?
       .actions
         = link_to t("scenario.load_factsheet"),
-          factsheet_scenario_path(@scenario.id)
+          energy_mix_scenario_path(@scenario.id)
 
       = render partial: 'share_links', locals: { scenario: @scenario }
 

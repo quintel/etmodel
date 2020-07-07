@@ -76,4 +76,29 @@ describe SavedScenario do
         .not_to change{subject.scenario_id_history.count}
     end
   end
+
+  describe '.custom_curves_order' do
+    subject { described_class.custom_curves_order(2050, 'nl') }
+
+    let(:scenario_nl_2030) { FactoryBot.create(:saved_scenario, end_year: 2030) }
+    let(:scenario_nl_2050) { FactoryBot.create(:saved_scenario, end_year: 2050) }
+    let(:scenario_de_2030) { FactoryBot.create(:saved_scenario, end_year: 2030, area_code: 'de') }
+    let(:scenario_de_2050) { FactoryBot.create(:saved_scenario, end_year: 2050, area_code: 'de') }
+    let(:scenario_be_2030) { FactoryBot.create(:saved_scenario, end_year: 2030, area_code: 'be') }
+
+    before do
+      scenario_nl_2030
+      scenario_nl_2050
+      scenario_de_2030
+      scenario_de_2050
+      scenario_be_2030
+    end
+
+    it { is_expected.to include(scenario_de_2030, scenario_de_2050, scenario_be_2030) }
+    it { is_expected.not_to include(scenario_nl_2030, scenario_nl_2050) }
+
+    it 'puts the 2050 scenario first' do
+      expect(subject.first).to eq(scenario_de_2050)
+    end
+  end
 end

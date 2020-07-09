@@ -173,7 +173,8 @@ en:
         threshold then the HHP switches from electricity to gas. You can choose a
         setting that is most financially attractive for the consumer, but you can
         also choose a setting that produces less impact on the electricity network.
-        \r\n</br></br>\r\n To help you decide the cost-optimal threshold COP setting
+        </br></br>
+        To help you decide the cost-optimal threshold COP setting
         from a consumer perspective, have a look at the chart on the right. It shows
         how much it costs to make a unit of heat with the HHP for space heating. For
         the gas part, these costs are independent of the COP (and therefore the outside
@@ -182,13 +183,21 @@ en:
         is the cost-optimal COP setting for the given cost price gas and electricity.
         This cost price of gas and electricity can be adjusted below. The start value
         of the treshold COP slider matches the calculated cost-optimal threshold COP
-        for space heating. \r\n</br></br>\r\n If you're interested in the impact of
-        HHPs on the electricity grid, have a look at the chart that is shown when
-        clicking on the 'Annual'-button in the right corner of the chart. This chart
-        shows the hourly gas and electricity demand of HHPs. If you're interested
-        in the share of gas and electricity used by HHPs, have a look at the table
-        'Hybrid heat pump gas and electricity shares' in the chart list (Demand ->
-        Households)."
+        for space heating.
+        </br></br>
+        The
+        <a
+          href=\"#\" class=\"open_chart\"
+          \ data-chart-key=\"household_space_heater_hhp_hourly_demand\"
+        >hybrid heat pump demand chart</a>
+        shows the hourly gas and electricity demand and is useful for determining
+        the impact of HHPs on infrastructure.
+        The
+        <a
+          href=\"#\" class=\"open_chart\"
+          \ data-chart-key=\"hybrid_heat_pump\"
+        >electricity and gas share table</a>
+        will show a breakdown of how hybrid heat pumps use energy in households."
     flexibility_flexibility_excess:
       title: Excess electricity
       short_description:
@@ -294,10 +303,12 @@ en:
         percentage of the peak power. With the sliders below it is possible to set
         the curtailment as a percentage of the peak power. \r\n</br></br>\r\n In the
         chart on the right you can see the effect of curtailment on the peaks of the
-        production curves and the yearly electricity production. If you are interested
-        in the effect of curtailment on the annual electricity production, have a
-        look at the table 'Curtailment of solar PV'. Click on 'see more charts' and
-        you'll find the table in the section 'Electricity balance > Flexibility'."
+        production curves and the yearly electricity production. The
+        <a
+          href=\"#\" class=\"open_chart\"
+          \ data-chart-key=\"solar_pv_curtailment\"
+        >solar pv curtailment table</a>
+        shows the effect of curtailment on the annual electricity production."
     flexibility_security_of_supply_electricity:
       title: Electricity
       short_description:
@@ -426,7 +437,7 @@ en:
         for air and hybrid heat pumps to satisfy demand. Besides that, a lack of wind
         and sun may negatively affect the electricity production from wind and solar
         power. To explore these effects for a scenario for (a region within) the Netherlands
-        a year with extreme weather conditions can be selected.\r\n</p>\r\nFor more
+        three different extreme weather conditions can be selected below.\r\n</p>\r\nFor more
         information about weather conditions consult our <a href=\"https://docs.energytransitionmodel.com/main/weather-conditions\"
         target =\"_blank\">documentation</a>.\r\n</p>\r\nDemand and production curves
         can be downloaded in the <a href=\"/scenario/data/data_export/merit-order-prices\">results

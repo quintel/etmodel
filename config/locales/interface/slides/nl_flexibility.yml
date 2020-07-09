@@ -180,13 +180,21 @@ nl:
         de kosten-optimale COP-instelling voor de gegeven kostprijs van gas en elektriciteit.
         Deze kostprijs van gas en elektriciteit is hieronder in te stellen. De startwaarde
         van het omslag-COP schuifje staat gelijk aan de kostenoptimale omslag-COP
-        bij de ingestelde kosten. \r\n</br></br>\r\n Als je geïnteresseerd bent in
-        de impact van HWP's op het elektriciteitsnet, kijk dan naar de grafiek die
-        wordt weergegeven wanneer je op de 'Jaarlijkse'-knop in de rechterhoek van
-        de grafiek klikt. Deze grafiek toont de gas- en elektriciteitsvraag per uur
-        van HHP's. Als je geïnteresseerd bent in het aandeel gas en elektriciteit
-        dat de HHP's gebruiken, kijk dan naar de table 'Hybride warmtepomp: aandeel
-        elektrisch en gas' in de grafiekenlijst (Vraag -> Huishoudens)"
+        bij de ingestelde kosten.
+        </br></br>
+        De
+        <a
+          href=\"#\" class=\"open_chart\"
+          \ data-chart-key=\"household_space_heater_hhp_hourly_demand\"
+        >hybride warmtepomp vraag grafiek</a>
+        laat de gas- en elektriciteitsvraag per uur zien en is handig voor het
+        bepalen van de impact van HWP's op de infrastructuur.
+        De
+        <a
+          href=\"#\" class=\"open_chart\"
+          \ data-chart-key=\"hybrid_heat_pump\"
+        >hybride warmtepomp tabel</a>
+        laat de jaarlijkse verdeling van gas en elektriciteit zien."
     flexibility_flexibility_excess:
       title: Elektriciteitsoverschot
       short_description:
@@ -295,10 +303,12 @@ nl:
         is het mogelijk de productiebeperking in te stellen als percentage van het
         piekvermogen. \r\n</br></br>\r\n In de grafiek rechts zie je het effect van
         productiebeperking op de productiepieken én op de jaarlijkse elektriciteitsproductie.
-        Als je geïnteresseerd bent in het effect van productiebeperking op de jaarlijkse
-        elektriciteitsproductie, kijk dan in de tabel 'Productiebeperking van zonnepanelen'.
-        Deze vind je als je klikt op 'meer grafieken bekijken' (rechtsboven) en kijkt
-        bij 'Elektriciteitsbalans > Flexibiliteit'."
+        De
+        <a
+          href=\"#\" class=\"open_chart\"
+          \ data-chart-key=\"solar_pv_curtailment\"
+        >productiebeperking van zonnepanelen tabel</a>
+        laat het effect van productiebeperking op de jaarlijkse elektriciteitsproductie zien."
     flexibility_flexibility_wind_cost:
       title: Kosten van windenergie
       short_description:

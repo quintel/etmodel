@@ -1,6 +1,6 @@
 ---
 - label: electricity_stored_in_household_batteries
-  color: "#63A1C9"
+  color: "#dd33cc"
   order_by: 1
   group: ''
   show_at_first: false
@@ -8,11 +8,11 @@
   target_line_position: ''
   gquery: electricity_stored_in_household_batteries
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_stored_in_household_batteries_use_of_excess_electricity
 - label: electricity_stored_in_EV
-  color: "#00008B"
+  color: "#dd77bb"
   order_by: 2
   group: ''
   show_at_first: false
@@ -20,47 +20,47 @@
   target_line_position: ''
   gquery: electricity_stored_in_ev
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_stored_in_EV_use_of_excess_electricity
 - label: electricity_exported
-  color: "#CCCCCC"
-  order_by: 8
+  color: "#77dd99"
+  order_by: 20
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: electricity_exported
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_exported_use_of_excess_electricity
 - label: electricity_curtailed
-  color: "#696969"
-  order_by: 9
+  color: "#77bbdd"
+  order_by: 21
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: electricity_curtailed
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_curtailed_use_of_excess_electricity
 - label: losses_in_storage
   color: "#A9A9A9"
-  order_by: 10
+  order_by: 19
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: losses_in_storage
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: losses_in_storage_use_of_excess_electricity
 - label: electricity_converted_to_hydrogen
-  color: "#B3CF7B"
+  color: "#dd9977"
   order_by: 6
   group: ''
   show_at_first: false
@@ -68,7 +68,7 @@
   target_line_position: ''
   gquery: electricity_converted_to_hydrogen
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_converted_to_hydrogen_use_of_excess_electricity
 - label: electricity_converted_to_heat_industry
@@ -80,7 +80,7 @@
   target_line_position: ''
   gquery: electricity_converted_to_heat_industry
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_converted_to_heat_industry_use_of_excess_electricity
 - label: electricity_converted_to_kerosene
@@ -92,7 +92,7 @@
   target_line_position: ''
   gquery: electricity_converted_to_kerosene
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_converted_to_kerosene_use_of_excess_electricity
 - label: energy_flexibility_pumped_storage_electricity
@@ -104,7 +104,7 @@
   target_line_position: ''
   gquery: electricity_stored_in_pumped_storage
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: energy_flexibility_pumped_storage_electricity_use_of_excess_electricity
 - label: electricity_stored_in_mv_batteries
@@ -116,7 +116,7 @@
   target_line_position: ''
   gquery: electricity_stored_in_mv_batteries
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_stored_in_mv_batteries_use_of_excess_electricity
 - label: electricity_stored_in_opac
@@ -128,6 +128,42 @@
   target_line_position: ''
   gquery: electricity_stored_in_opac
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_stored_in_opac_use_of_excess_electricity
+- label: electricity_converted_to_heat_district_heating_heatpump
+  color: "#F6E58D"
+  order_by: 9
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_converted_to_heat_district_heating_heatpump
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_converted_to_heat_district_heating_heatpump_use_of_excess_electricity
+- label: electricity_converted_to_heat_district_heating_boiler
+  color: "#FFA502"
+  order_by: 10
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_converted_to_heat_district_heating_boiler
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_converted_to_heat_district_heating_boiler_use_of_excess_electricity
+- label: electricity_curtailed_solar_pv
+  color: "blue"
+  order_by: 22
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_curtailed_solar_pv
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_curtailed_solar_pv_use_of_excess_electricity

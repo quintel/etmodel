@@ -7,8 +7,8 @@
   show_point_label: false
   growth_chart: false
   key: use_of_final_electricity_demand_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -21,8 +21,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_electricity_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -35,8 +35,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_used_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -50,8 +50,8 @@
   show_point_label: true
   growth_chart: true
   key: useful_demand_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -64,8 +64,8 @@
   show_point_label: false
   growth_chart: true
   key: effect_of_insulation_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -79,8 +79,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_hot_water_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: _always_hidden
@@ -93,8 +93,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_cooling_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -107,8 +107,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_cooking_in_households
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -121,8 +121,8 @@
   show_point_label: false
   growth_chart: false
   key: impact_of_climate_on_heat_and_cooling_demand_households_and_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -135,8 +135,8 @@
   show_point_label: false
   growth_chart: false
   key: population_residences_overview
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -149,8 +149,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_deficit
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -163,8 +163,8 @@
   show_point_label: false
   growth_chart: false
   key: household_heat_demand_and_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -177,8 +177,8 @@
   show_point_label: false
   growth_chart: false
   key: households_final_demand_per_application
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -191,10 +191,24 @@
   show_point_label: false
   growth_chart: false
   key: household_space_heater_hhp_hourly_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: demand_curve
+- under_construction: false
+  unit: ''
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: hybrid_heat_pump
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: html_table

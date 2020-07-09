@@ -8,67 +8,67 @@
   target_line_position: ''
   gquery: households_flexibility_p2p_electricity
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: households_flexibility_p2p_electricity_flex_merit_order_hourly_flexibility
 - label: transport_car_using_electricity
   color: "#dd77bb"
   order_by: 3
   group: flex
-  show_at_first: 
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: transport_car_using_electricity
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: transport_car_using_electricity_flex_merit_order_hourly_flexibility
 - label: energy_hydrogen_flexibility_p2g_electricity
   color: "#dd9977"
   order_by: 6
   group: flex
-  show_at_first: 
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: energy_hydrogen_flexibility_p2g_electricity
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_hydrogen_flexibility_p2g_electricity_flex_merit_order_hourly_flexibility
 - label: energy_export_electricity
   color: "#77dd99"
-  order_by: 9
+  order_by: 20
   group: flex
-  show_at_first: 
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: energy_export_electricity
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_export_electricity_flex_merit_order_hourly_flexibility
 - label: energy_flexibility_curtailment_electricity
   color: "#77bbdd"
-  order_by: 10
+  order_by: 21
   group: flex
-  show_at_first: 
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: energy_flexibility_curtailment_electricity
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_flexibility_curtailment_electricity_flex_merit_order_hourly_flexibility
 - label: total_demand
   color: "#CC0000"
   order_by: 1
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: true
-  target_line_position: 
+  target_line_position:
   gquery: total_demand
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: total_demand_merit_order_hourly_flexibility
 - label: industry_flexibility_p2h_electricity
@@ -80,7 +80,7 @@
   target_line_position: ''
   gquery: industry_flexibility_p2h_electricity
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: industry_flexibility_p2h_electricity_flex_merit_order_hourly_flexibility
 - label: bunkers_flexibility_p2g_electricity
@@ -92,7 +92,7 @@
   target_line_position: ''
   gquery: bunkers_flexibility_p2g_electricity
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: bunkers_flexibility_p2g_electricity_flex_merit_order_hourly_flexibility
 - label: energy_flexibility_pumped_storage_electricity
@@ -104,7 +104,7 @@
   target_line_position: ''
   gquery: energy_flexibility_pumped_storage_electricity
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_flexibility_pumped_storage_electricity_flex_merit_order_hourly_flexibility
 - label: energy_flexibility_mv_batteries_electricity
@@ -116,7 +116,7 @@
   target_line_position: ''
   gquery: energy_flexibility_mv_batteries_electricity
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_flexibility_mv_batteries_electricity_flex_merit_order_hourly_flexibility
 - label: energy_flexibility_opac_electricity
@@ -128,6 +128,42 @@
   target_line_position: ''
   gquery: energy_flexibility_opac_electricity
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_flexibility_opac_electricity_flex_merit_order_hourly_flexibility
+- label: energy_heat_flexibility_p2h_heatpump_electricity
+  color: "#F6E58D"
+  order_by: 9
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_heat_flexibility_p2h_heatpump_electricity
+  is_1990: false
+  dependent_on:
+  output_element_key: merit_order_hourly_flexibility
+  key: energy_heat_flexibility_p2h_heatpump_electricity_flex_merit_order_hourly_flexibility
+- label: energy_heat_flexibility_p2h_boiler_electricity
+  color: "#FFA502"
+  order_by: 10
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_heat_flexibility_p2h_boiler_electricity
+  is_1990: false
+  dependent_on:
+  output_element_key: merit_order_hourly_flexibility
+  key: energy_heat_flexibility_p2h_boiler_electricity_flex_merit_order_hourly_flexibility
+- label: solar_pv_total_curtailed_electricity_curve
+  color: "blue"
+  order_by: 22
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solar_pv_total_curtailed_electricity_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: merit_order_hourly_flexibility
+  key: solar_pv_total_curtailed_electricity_curve_flex_merit_order_hourly_flexibility

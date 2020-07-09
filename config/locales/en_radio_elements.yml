@@ -3,15 +3,15 @@ en:
   radio_elements:
     settings_weather_curve_set:
       default:
-        title: Default (2015)
+        title: Default
         description: |
-          2015 is the start year of the ETM. The wind and solar curves for 2015
+          The wind and solar curves for the start year
           are based on actual production curves of ENTSO-e. The temperature
           curve is based on KNMI-data.
           (Full load hours: wind onshore = 1920, wind coastal = 2550, wind offshore = 3500,
           solar = 867)
       '1987':
-        title: '1987: "Dunkelflaute" during extreme cold winter period'
+        title: '"Dunkelflaute" during extreme cold winter period'
         description: |
           In 1987 the Netherlands faced an extreme cold period from 6 to 21 January:
           the average temperature was -6.5 degrees Celsius. This resulted in a
@@ -21,7 +21,7 @@ en:
           solar pv = 853, solar thermal = 510. Average temperature difference compared to 2015 = -2.0 degrees
           Celsius)
       '1997':
-        title: '1997: Lack of sustainable energy (incl. "Dunkelflaute") and extreme cold days'
+        title: 'Lack of sustainable energy (incl. "Dunkelflaute") and extreme cold days'
         description: |
           In 1997 the last "Elfstedentocht" took place in the Netherlands. There
           were several extreme cold days with high peak heating
@@ -33,7 +33,7 @@ en:
           solar pv = 915, solar thermal = 585. Average temperature difference compared to 2015 = -0.6 degrees
           Celsius)
       '2004':
-        title: '2004: Excessive and scarce sustainable energy'
+        title: 'Excessive and scarce sustainable energy'
         description: |
           In 2004 the Netherlands had several periods with scarce sustainable energy generation
           and in September periods with excess sustainable electricity.

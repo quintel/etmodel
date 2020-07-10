@@ -79,6 +79,15 @@ module ScenarioHelper
     link_stripper.inner_html
   end
 
+  # Public: Given a string, converts CO2 to have a subscript 2.
+  #
+  # Returns an HTML-safe string.
+  def format_subscripts(string)
+    # rubocop:disable Rails/OutputSafety
+    h(string).gsub(/\bCO2\b/, 'CO<sub>2</sub>').html_safe if string.present?
+    # rubocop:enable Rails/OutputSafety
+  end
+
   # Public: Renders the HTML needed to show a price curve upload form.
   #
   # curve_name - The name/type of the curve.

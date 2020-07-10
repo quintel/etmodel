@@ -28,6 +28,15 @@ class SavedScenario < ActiveRecord::Base
 
   serialize :scenario_id_history, Array
 
+  # Order as to be provided to the custom curves chooser. Scenarios with the given
+  # end_year go on top, scenarios with the given area_code are not included.
+  def self.custom_curves_order(end_year, area_code)
+    scenarios = all.where.not(area_code: area_code)
+    top = scenarios.where(end_year: end_year).order(updated_at: :desc)
+    bottom = scenarios.where.not(end_year: end_year).order(end_year: :desc, updated_at: :desc)
+    top + bottom
+  end
+
   def self.batch_load(saved_scenarios, options = {})
     saved_scenarios = saved_scenarios.to_a
     ids = saved_scenarios.map(&:scenario_id)

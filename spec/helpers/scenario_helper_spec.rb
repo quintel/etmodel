@@ -198,4 +198,38 @@ describe ScenarioHelper do
     #   ).to eq('')
     # end
   end
+
+  describe '.format_subscripts' do
+    context 'with "My CO2 scenario"' do
+      it 'returns "My CO<sub>2</sub> scenario' do
+        expect(helper.format_subscripts('My CO2 scenario')).to eq('My CO<sub>2</sub> scenario')
+      end
+    end
+
+    context 'with "My CO2A scenario"' do
+      it 'returns "My CO2A scenario' do
+        expect(helper.format_subscripts('My CO2A scenario')).to eq('My CO2A scenario')
+      end
+    end
+
+    context 'with "My CO2-sturing scenario"' do
+      it 'returns "My CO<sub>2</sub>-sturing scenario' do
+        expect(helper.format_subscripts('My CO2-sturing scenario'))
+          .to eq('My CO<sub>2</sub>-sturing scenario')
+      end
+    end
+
+    context 'with "My <strong>scenario</strong>' do
+      it 'returns "My &lt;strong&gt;scenario&lt;/strong&gt;' do
+        expect(helper.format_subscripts('My <strong>scenario</strong>'))
+          .to eq('My &lt;strong&gt;scenario&lt;/strong&gt;')
+      end
+    end
+
+    context 'with nil' do
+      it 'returns nil' do
+        expect(helper.format_subscripts(nil)).to be_nil
+      end
+    end
+  end
 end

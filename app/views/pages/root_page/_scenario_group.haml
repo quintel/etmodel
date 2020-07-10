@@ -8,9 +8,9 @@
       = link_to scenario_path(scenario) do
         - title, org = scenario.title.split(' - ', 2)
 
-        %span.who= title.html_safe
+        %span.who= format_subscripts(title)
         %span.org= org.html_safe
   - else
     %li
       = link_to scenario_path(scenario) do
-        = scenario.title.html_safe
+        = format_subscripts(scenario.title)

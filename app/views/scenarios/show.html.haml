@@ -7,7 +7,8 @@
       .warning
         = @warning
 
-    %h1= @scenario.title ? @scenario.title : @scenario.id
+    %h1
+      = @scenario.title ? format_subscripts(@scenario.title) : @scenario.id
 
     %ul.details
       %li

@@ -183,12 +183,12 @@
       <li>
         The bio-footprint of your scenario is
     {% endif %}
-      {{ future.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }},
+      {{ future.bio_footprint | round: 1 }}x{{ settings.area_name | upcase }},
       {% if present.bio_footprint.value == future.bio_footprint.value %}
         which is unchanged from {{ settings.start_year }}.
       {% else %}
         compared with
-        {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}
+        {{ present.bio_footprint | round: 1 }}x{{ settings.area_name | upcase }}
         in the present day.
       {% endif %}
       <a href="#bio-footprint" class="learn-more">Learn more &raquo;</a>

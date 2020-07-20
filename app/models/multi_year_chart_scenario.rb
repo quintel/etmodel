@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
-class MultiYearChartScenario < ActiveRecord::Base
+# A scenario used by a MultiYearChart.
+class MultiYearChartScenario < ApplicationRecord
   belongs_to :multi_year_chart
 end

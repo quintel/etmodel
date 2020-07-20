@@ -13,7 +13,8 @@
 #  short_content_nl :text
 #
 
-class Description < ActiveRecord::Base
+# Contains description texts for UI models. Deprecated.
+class Description < ApplicationRecord
   belongs_to :describable, polymorphic: true
 
   # REFACTOR: Validators

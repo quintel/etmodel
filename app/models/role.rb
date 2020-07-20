@@ -8,6 +8,7 @@
 #  updated_at :datetime
 #
 
+# Describes the role and responsibilities of a user.
 class Role < ActiveRecord::Base
   has_many :users
 end

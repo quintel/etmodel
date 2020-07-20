@@ -14,7 +14,8 @@
 #  short_content_nl :text
 #
 
-class Text < ActiveRecord::Base
+# Localized text used by UI models. Deprecated.
+class Text < ApplicationRecord
   validates :key, presence: true
 
   def title

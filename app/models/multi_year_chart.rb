@@ -2,7 +2,7 @@
 
 # Represents a saved multi-year charts session. Contains one or more scenario
 # which will be loaded in the MYC interface.
-class MultiYearChart < ActiveRecord::Base
+class MultiYearChart < ApplicationRecord
   belongs_to :user
 
   has_many :scenarios,

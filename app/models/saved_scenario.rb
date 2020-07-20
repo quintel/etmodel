@@ -15,7 +15,10 @@
 #  updated_at          :datetime
 #
 
-class SavedScenario < ActiveRecord::Base
+# A scenario saved by a user for safe-keeping.
+#
+# Contains a record of all the scenario IDs for previous versions of the scenario.
+class SavedScenario < ApplicationRecord
   belongs_to :user
 
   attr_accessor :api_session_id

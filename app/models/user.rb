@@ -26,7 +26,8 @@
 #  group              :string(255)
 #
 
-class User < ActiveRecord::Base
+# A registered user.
+class User < ApplicationRecord
   has_many   :saved_scenarios, dependent: :destroy
   belongs_to :role
 

@@ -11,7 +11,8 @@
 #  updated_at      :datetime
 #
 
-class GeneralUserNotification < ActiveRecord::Base
+# Deprecated.
+class GeneralUserNotification < ApplicationRecord
   scope :active, -> { where(active: true) }
 
   def text

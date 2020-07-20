@@ -9,6 +9,8 @@
 #  dependable_type :string(255)
 #
 
-class AreaDependency < ActiveRecord::Base
+# Polymorphic record which allows some UI components to be hidden depending on the current region.
+# Deprecated.
+class AreaDependency < ApplicationRecord
   belongs_to :dependable, polymorphic: true
 end

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Helper methods for the energy mix infographic
 module EnergyMixHelper
   def energy_mix_client_settings
     url = [APP_CONFIG[:api_url], 'api/v3/scenarios', params[:id]]

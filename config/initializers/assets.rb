@@ -15,7 +15,7 @@ Rails.application.config.assets.precompile += %w(
   establishment_shot.js
   establishment_shot_print.css
   etm.js
-  factsheet.js
+  energy_mix.js
   form_only.css
   i18n.js
   i18n/en.js

@@ -1,5 +1,8 @@
-class FactsheetsController < ApplicationController
-  layout 'factsheet'
+# frozen_string_literal: true
+
+# Controller for Over Morgens fabulous Energy Mix infographic
+class EnergyMixController < ApplicationController
+  layout 'energy_mix'
 
   def show
     @scenario = Api::Scenario.find(params[:id])

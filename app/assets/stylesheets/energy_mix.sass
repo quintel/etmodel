@@ -11,7 +11,7 @@ $green-font-color: #3aaa35
   font-size: $tiny-font-size
   line-height: 1.3
 
-body#factsheet
+body#energy-mix
   font-family: $font-family
   height: auto
   margin: 0
@@ -19,7 +19,7 @@ body#factsheet
   *
     -webkit-print-color-adjust: exact
 
-  #factsheet-content, #factsheet-reverse
+  #energy-mix-content, #energy-mix-reverse
     background: #deecf2
     color: $text-color
     margin: 3rem
@@ -195,19 +195,19 @@ body#factsheet
           .legend-item
             display: none
         .factsheet-energetic-final-demand-gas-households-buildings .key
-          background-image: asset-url('factsheet/gas.svg')
+          background-image: asset-url('energy_mix/gas.svg')
         .factsheet-energetic-final-demand-gas-other .key
-          background-image: asset-url('factsheet/gas-other.svg')
+          background-image: asset-url('energy_mix/gas-other.svg')
         .factsheet-energetic-final-demand-oil-and-coal-products .key
-          background-image: asset-url('factsheet/transport.svg')
+          background-image: asset-url('energy_mix/transport.svg')
         .factsheet-energetic-final-demand-bio-fuels .key
-          background-image: asset-url('factsheet/wood.svg')
+          background-image: asset-url('energy_mix/wood.svg')
         .factsheet-energetic-final-demand-collective-heat .key
-          background-image: asset-url('factsheet/collective-heat.svg')
+          background-image: asset-url('energy_mix/collective-heat.svg')
         .factsheet-energetic-final-demand-renewable-heat .key
-          background-image: asset-url('factsheet/renewable-heat.svg')
+          background-image: asset-url('energy_mix/renewable-heat.svg')
         .factsheet-energetic-final-demand-electricity .key
-          background-image: asset-url('factsheet/electricity.svg')
+          background-image: asset-url('energy_mix/electricity.svg')
 
     #carrier-use .content
       display: flex
@@ -237,7 +237,7 @@ body#factsheet
           margin-bottom: 0
 
       .panel
-        background-image: asset-url('factsheet/placeholder.svg')
+        background-image: asset-url('energy_mix/placeholder.svg')
         background-size: 45%
         background-repeat: no-repeat
         background-position: top right
@@ -285,20 +285,20 @@ body#factsheet
         font-weight: 600
 
       .wind
-        background-image: asset-url('factsheet/wind.png')
+        background-image: asset-url('energy_mix/wind.png')
       .solar
-        background-image: asset-url('factsheet/solar.png')
+        background-image: asset-url('energy_mix/solar.png')
         background-size: 35%
         .icon
           float: right
           margin-top: -0.25rem
       .collective-heat
-        background-image: asset-url('factsheet/collective-heat.png')
+        background-image: asset-url('energy_mix/collective-heat.png')
       .heat
-        background-image: asset-url('factsheet/individual-heat.png')
+        background-image: asset-url('energy_mix/individual-heat.png')
         position: relative
         .solar-arrow, .biomass-arrow
-          background: asset-url('factsheet/arrow-down.png') center bottom no-repeat
+          background: asset-url('energy_mix/arrow-down.png') center bottom no-repeat
           position: absolute
           width: 15px
           z-index: 1
@@ -324,7 +324,7 @@ body#factsheet
           .quantity
             top: 119px
         .biomass-arrow
-          background: asset-url('factsheet/arrow-up.png') center top no-repeat
+          background: asset-url('energy_mix/arrow-up.png') center top no-repeat
           bottom: -124px
           height: 200px
           right: 0px
@@ -335,7 +335,7 @@ body#factsheet
         h3
           max-width: 92%
       .biomass
-        background-image: asset-url('factsheet/biomass.png')
+        background-image: asset-url('energy_mix/biomass.png')
         background-position: 82% top
         background-size: 43%
       .renewable-gas
@@ -349,7 +349,7 @@ body#factsheet
         background-position: right 1em
         background-size: 50%
       .icon
-        background-image: asset-url('factsheet/biomass-heat.png')
+        background-image: asset-url('energy_mix/biomass-heat.png')
         background-repeat: no-repeat
         background-size: contain
         display: inline-block
@@ -358,14 +358,14 @@ body#factsheet
         vertical-align: middle
         width: 50px
         &.solar-pv
-          background-image: asset-url('factsheet/solar-pv.png')
+          background-image: asset-url('energy_mix/solar-pv.png')
           width: 87px
         &.solar-thermal
-          background-image: asset-url('factsheet/solar-thermal.png')
+          background-image: asset-url('energy_mix/solar-thermal.png')
         &.natural-gas
-          background-image: asset-url('factsheet/gas.svg')
+          background-image: asset-url('energy_mix/gas.svg')
         &.biomass-heat
-          background-image: asset-url('factsheet/biomass-heat.png')
+          background-image: asset-url('energy_mix/biomass-heat.png')
           box-sizing: border-box
           color: #fff
           font-weight: normal
@@ -375,7 +375,7 @@ body#factsheet
           text-align: center
           width: 108px
         &.biomass-transport
-          background-image: asset-url('factsheet/biomass-transport.png')
+          background-image: asset-url('energy_mix/biomass-transport.png')
           box-sizing: border-box
           color: #fff
           font-size: 0.6875rem
@@ -385,9 +385,9 @@ body#factsheet
           text-align: center
           width: 59px
         &.biogas
-          background-image: asset-url('factsheet/biogas.png')
+          background-image: asset-url('energy_mix/biogas.png')
         &.power-to-gas
-          background-image: asset-url('factsheet/power-to-gas.png')
+          background-image: asset-url('energy_mix/power-to-gas.png')
   .chart
     svg
       margin-bottom: -6px
@@ -408,7 +408,7 @@ body#factsheet
     .x.axis .tick
       stroke: transparent
 
-  #factsheet-pending
+  #energy-mix-pending
     .loading, .errors
       color: #555
       font-size: 1rem
@@ -422,7 +422,7 @@ body#factsheet
       h4
         margin-top: 0
 
-  #factsheet-reverse
+  #energy-mix-reverse
     align-items: center
     display: flex
     font-size: 0.625rem
@@ -434,7 +434,7 @@ body#factsheet
 
     .columns
       // Print layout doesn't work correctly if the column rules are applied
-      // directly to #factsheet-reverse.
+      // directly to #energy-mix-reverse.
       column-count: 3
       column-gap: 2rem
       column-rule: 2px solid white
@@ -473,7 +473,7 @@ body#factsheet
         th, td
           padding-top: 0.625rem
     #disclaimer
-      background-image: asset-url('factsheet/warning.svg')
+      background-image: asset-url('energy_mix/warning.svg')
       background-repeat: no-repeat
       background-size: 28px
       background-position: right 0.75rem
@@ -499,8 +499,8 @@ body#factsheet
 
 
 @media print
-  body#factsheet
-    #factsheet-content, #factsheet-reverse
+  body#energy-mix
+    #energy-mix-content, #energy-mix-reverse
       margin: 0
       page-break-after: always
     main
@@ -509,7 +509,7 @@ body#factsheet
           // Tiny reduction (~3px) over the standard 20rem prevents an extra
           // blank page between the front and back pages.
           min-height: 19.875rem
-    #factsheet-reverse
+    #energy-mix-reverse
       a
         color: inherit
         text-decoration: none

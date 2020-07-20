@@ -1,14 +1,16 @@
-/* globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries drawLegend I18n */
+/*
+ globals formatQueryResult preferredUnits stackedBarChart d3 transformGqueries drawLegend I18n $
+ */
 
 //= require d3.v2
 //= require lib/models/metric
 //= require lib/models/quantity
-//= require factsheet/preferredUnits
-//= require factsheet/transformGqueries
-//= require factsheet/formatValue
-//= require factsheet/stackedBarChart
-//= require factsheet/charts
-//= require factsheet/drawLegend
+//= require energy_mix/preferredUnits
+//= require energy_mix/transformGqueries
+//= require energy_mix/formatValue
+//= require energy_mix/stackedBarChart
+//= require energy_mix/charts
+//= require energy_mix/drawLegend
 
 /**
  * Given the full list of charts which will be displayed, extracts the queries
@@ -55,7 +57,7 @@ jQuery(function() {
   var request;
   var queries = ['graph_year'];
 
-  var url = window.factsheetSettings.endpoint;
+  var url = window.energyMixSettings.endpoint;
 
   I18n.translations[I18n.currentLocale()].number = {
     format: { separator: ',', delimiter: '.' }
@@ -86,10 +88,10 @@ jQuery(function() {
 
     assignQueryValues(document, gqueries);
 
-    // Must show the factsheet prior to rendering the charts to get accurate
+    // Must show the energy-mix prior to rendering the charts to get accurate
     // element sizes for the charts.
-    $('#factsheet-pending').remove();
-    $('#factsheet-content, #factsheet-reverse').show();
+    $('#energy-mix-pending').remove();
+    $('#energy-mix-content, #energy-mix-reverse').show();
 
     stackedBarChart(
       '#summary .chart.present',
@@ -114,11 +116,11 @@ jQuery(function() {
       return $('<li/>').text(message);
     });
 
-    $('#factsheet-pending .loading').remove();
+    $('#energy-mix-pending .loading').remove();
 
     $('<div class="errors" />')
       .append('<h4>Oops!</h4>', $('<ul />').append(messages))
-      .appendTo($('#factsheet-pending'));
+      .appendTo($('#energy-mix-pending'));
   });
 
   $('#disclaimer button').on('click', function() {

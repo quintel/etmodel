@@ -1,5 +1,5 @@
 !!! 5
-%html.factsheet
+%html.energy-mix
   %head
     %title= t("meta.title")
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
@@ -13,14 +13,14 @@
       I18n.defaultLocale = "#{I18n.default_locale}";
       I18n.locale = "#{I18n.locale}";
 
-      window.factsheetSettings = #{factsheet_client_settings.to_json.html_safe}
+      window.energyMixSettings = #{energy_mix_client_settings.to_json.html_safe}
 
-    = javascript_include_tag 'factsheet'
+    = javascript_include_tag 'energy_mix'
 
     %style(media="print")
       @page { margin: 1.4cm 1cm 1cm; }
 
     = yield :head
 
-  %body#factsheet{ class: I18n.locale }
+  %body#energy-mix{ class: I18n.locale }
     = yield

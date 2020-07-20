@@ -19,7 +19,7 @@ function drawLegend(definition, periods) {
             series.color
           ),
           ' ',
-          I18n.t('factsheet.series.' + series.key)
+          I18n.t('energy_mix.series.' + series.key)
         ),
         showPeriods.map(function(period) {
           return $('<span class="value" />')

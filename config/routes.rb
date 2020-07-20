@@ -58,7 +58,7 @@ Etm::Application.routes.draw do
 
     member do
       get :load
-      get 'factsheet' => 'factsheets#show'
+      get 'energy_mix' => 'energy_mix#show'
     end
   end
 

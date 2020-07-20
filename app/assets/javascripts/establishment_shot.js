@@ -6,7 +6,7 @@
 //= require establishment_shot/error_handler
 //= require establishment_shot/scenario_creator
 //= require establishment_shot/scenario_updater
-//= require factsheet/stackedBarChart
+//= require energy_mix/stackedBarChart
 //= require establishment_shot/charts/bar_chart
 //= require establishment_shot/charts
 //= require establishment_shot/text_updater

@@ -1,9 +1,8 @@
 #preset-scenario
   %h4== #{t('intro.load_a_scenario')}&hellip;
 
-  - cache "scenario_select_#{I18n.locale}" do
-    - grouped = Api::Scenario.in_groups(Api::Scenario.all(:from => :templates))
+  - grouped = FeaturedScenario.in_groups(FeaturedScenario.all)
 
-    %ul.scenario-list
-      - grouped.each do |data|
-        = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }
+  %ul.scenario-list
+    - grouped.each do |data|
+      = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }

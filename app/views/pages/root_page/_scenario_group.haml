@@ -1,16 +1,17 @@
 %li.title
-  - group_key = group.is_a?(String) ? group.downcase.gsub(/\s+/, '_') : nil
-  %strong= t("scenario.#{ group_key }", default: group)
+  - if group
+    - group_key = group.is_a?(String) ? group.downcase.gsub(/\s+/, '_') : nil
+    %strong= t("scenario.#{ group_key }", default: group)
 
 - scenarios.each do |scenario|
   - if scenario.title.to_s.include?(' - ')
     %li.with_org
-      = link_to scenario_path(scenario) do
-        - title, org = scenario.title.split(' - ', 2)
+      = link_to saved_scenario_path(scenario.saved_scenario) do
+        - main_title, org = scenario.title.split(' - ', 2)
 
-        %span.who= format_subscripts(title)
+        %span.who= format_subscripts(main_title)
         %span.org= org.html_safe
   - else
     %li
-      = link_to scenario_path(scenario) do
+      = link_to saved_scenario_path(scenario.saved_scenario) do
         = format_subscripts(scenario.title)

@@ -20,6 +20,7 @@
 # Contains a record of all the scenario IDs for previous versions of the scenario.
 class SavedScenario < ApplicationRecord
   belongs_to :user
+  has_one :featured_scenario, dependent: :destroy
 
   attr_accessor :api_session_id
 

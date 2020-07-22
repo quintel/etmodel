@@ -40,4 +40,11 @@ class ServiceResult
   def failure?
     !successful?
   end
+
+  # Public: Returns the value if the result is successful, otherwise raises an error with the
+  # given message.
+  def unwrap(error_msg = nil)
+    error_msg ||= 'Cannot unwrap failed ServiceResult'
+    failure? ? raise("#{error_msg}: #{Array(@errors).join(', ')}") : @value
+  end
 end

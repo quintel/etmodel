@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_134519) do
+ActiveRecord::Schema.define(version: 2020_07_20_152551) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 2020_06_15_134519) do
     t.text "content_nl", limit: 16777215
     t.text "short_content_nl"
     t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type"
+  end
+
+  create_table "featured_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "saved_scenario_id", null: false
+    t.string "group"
+    t.index ["saved_scenario_id"], name: "index_featured_scenarios_on_saved_scenario_id", unique: true
   end
 
   create_table "general_user_notifications", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
@@ -128,4 +134,5 @@ ActiveRecord::Schema.define(version: 2020_06_15_134519) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "featured_scenarios", "saved_scenarios"
 end

@@ -14,3 +14,10 @@
     .dot{ class: 'fa fa-circle' }
   = link_to t("scenario.load_energy_mix"),
     energy_mix_scenario_path(saved_scenario.scenario_id)
+
+  - if current_user&.admin?
+    .dot{ class: 'fa fa-circle' }
+    - if saved_scenario.featured_scenario
+      = link_to t('scenario.unfeature_scenario'), feature_saved_scenario_path(saved_scenario), method: :delete
+    - else
+      = link_to t('scenario.feature_scenario'), feature_saved_scenario_path(saved_scenario)

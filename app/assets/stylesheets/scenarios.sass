@@ -34,7 +34,7 @@ table.default
   &#index
     padding: 5px 20px 110px 20px
 
-  &#show_scenario
+  &#show_scenario, &#feature_scenario
     width: $landing-width
     margin: 0 auto
     background: white
@@ -108,6 +108,7 @@ table.default
         &:active
           background: linear-gradient(#eee, darken(#eee, 7%))
 
+  &#show_scenario
     .title
       font-size: 30px
       width: 100%
@@ -193,6 +194,18 @@ table.default
 
     .note
       font-size: 10px
+
+  &#feature_scenario
+    h2
+      font-weight: normal
+      color: #666
+    .field
+      margin-bottom: 0.5rem
+      label
+        display: block
+        margin-bottom: 0.25rem
+      select
+        min-width: 400px
 
   hr
     border: none

@@ -209,9 +209,8 @@ nl:
     edit_text: 'Pas titel en beschrijving aan'
     save_text: 'Sla veranderingen op'
     cancel_text: 'Annuleren'
+    edit_featured_scenario: 'Edit featured scenario settings'
     feature_scenario: 'Feature this scenario'
-    unfeature_scenario: 'Unfeature this scenario'
-    group: 'Group'
     share:
       by: 'Delen via'
       copy: 'Kopieer link'
@@ -220,6 +219,17 @@ nl:
         %0D%0A
         Ik heb een scenario gemaakt met het Energietransitiemodel, en zou het graag met je delen.%0D%0A
         Klik op de volgende link om het te bekijken:"
+  featured_scenario:
+    unfeature: 'Unfeature'
+    unfeature_title: 'Unfeature this scenario'
+    unfeature_info: 'Unfeaturing the scenario will remove it from the list of scenarios on the front page.'
+    unfeature_warning_html: |
+      <strong>The custom English and Dutch titles and descriptions will be removed.</strong>
+      Prior to unfeaturing the scenario, you may wish to edit its title and description by
+      returning to the scenario page and choosing "Edit title and description".
+    unfeature_button: 'Unfeature scenario'
+    unfeature_description_revert: 'The description will be reverted to'
+    unfeature_title_revert: 'The title will be reverted to'
   flash:
     edit_profile: "Profiel succesvol aangepast"
     end_year: "Eindjaar is ingesteld op"

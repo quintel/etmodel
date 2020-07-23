@@ -5,6 +5,12 @@ nl:
     save_scenario: "Scenario toevoegen"
     optional: "Onverplicht"
     labels:
+      featured_scenario:
+        group: "Group"
+        description_en: "English description"
+        description_nl: "Dutch description"
+        title_en: "English title"
+        title_nl: "Dutch title"
       user:
         username: "Naam"
         name: "Naam"
@@ -31,3 +37,8 @@ nl:
         company_school: "Als je werkzaam bent bij een bedrijf, organisatie of overheid: laat het ons weten!"
         school: "Laat ons weten bij welke opleiding je hoort. We willen graag weten hoe docenten het ETM gebruiken."
         teacher_email: "Als je hier het emailadres van je docent invult, kan hij/zij de scenario's bekijken die jij opslaat."
+  helpers:
+    submit:
+      featured_scenario:
+        create: 'Feature scenario'
+        update: 'Save changes'

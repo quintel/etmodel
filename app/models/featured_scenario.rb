@@ -2,14 +2,19 @@
 
 # Features a scenario such that it appears on the front page.
 class FeaturedScenario < ApplicationRecord
-  # The groups to which a featured scenario may be assigned. Each group is shown on the front page
-  # in the same order as defined in this array.
-  GROUPS = ['national', 'regional', 'municipal', :rest, nil].freeze
+  # The groups to which a featured scenario may be assigned.
+  GROUPS = %w[national regional municipal].freeze
+
+  # Groups as they are sorted on the front page. Scenarios in a group which isn't explicitly named
+  # are sorted in `:rest`, while those with no group come last.
+  SORTABLE_GROUPS = [*GROUPS, :rest, nil].freeze
 
   belongs_to :saved_scenario
   validates :saved_scenario_id, presence: true, uniqueness: true
+  validates :description_en, :description_nl, :title_en, :title_nl, presence: true
+  validates :group, inclusion: GROUPS
 
-  delegate :area_code, :description, :end_year, :scenario_id, :title, to: :saved_scenario
+  delegate :area_code, :end_year, :scenario_id, to: :saved_scenario
 
   # Public: Given an array of scenarios, an array of display groups, groups the
   # scenarios according to their display_group, in the order specified in the
@@ -26,7 +31,7 @@ class FeaturedScenario < ApplicationRecord
   #
   # Returns an array of hashes. Each hash has a :name key with the groups name,
   # and a :scenarios key containing all the matching scenarios.
-  def self.in_groups(featured_scenarios, groups = GROUPS)
+  def self.in_groups(featured_scenarios, groups = SORTABLE_GROUPS)
     grouped   = Hash.new { |hash, key| hash[key] = [] }
     scenarios = featured_scenarios.sort_by { |fs| fs.saved_scenario.title }
 
@@ -53,5 +58,13 @@ class FeaturedScenario < ApplicationRecord
         group_for.call(group)
       end
     end.flatten.compact
+  end
+
+  def localized_title(locale)
+    locale == :nl ? title_nl : title_en
+  end
+
+  def localized_description(locale)
+    locale == :nl ? description_nl : description_en
   end
 end

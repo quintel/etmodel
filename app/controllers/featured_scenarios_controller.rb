@@ -3,17 +3,30 @@
 # Allows featuring and unfeaturing saved scenarios.
 class FeaturedScenariosController < ApplicationController
   before_action :ensure_admin
-
-  def new
-    @featured_scenario = FeaturedScenario.new(saved_scenario: saved_scenario)
-  end
+  helper_method :featured_scenario
 
   def create
-    unless featured_scenario
-      FeaturedScenario.create(featured_scenario_params.merge(saved_scenario: saved_scenario))
-    end
+    featured_scenario = FeaturedScenario.new(
+      featured_scenario_params.merge(saved_scenario: saved_scenario)
+    )
 
-    redirect_to saved_scenario_url(saved_scenario)
+    if featured_scenario.save
+      redirect_to saved_scenario_url(saved_scenario)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    render :edit
+  end
+
+  def update
+    if featured_scenario.update(featured_scenario_params)
+      redirect_to saved_scenario_url(saved_scenario)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -24,15 +37,23 @@ class FeaturedScenariosController < ApplicationController
   private
 
   def featured_scenario_params
-    params.require(:featured_scenario).permit(:group)
+    params.require(:featured_scenario)
+      .permit(:description_en, :description_nl, :group, :title_en, :title_nl)
   end
 
   def saved_scenario
-    SavedScenario.find(params[:id])
+    SavedScenario.find(params[:saved_scenario_id])
   end
 
   def featured_scenario
-    saved_scenario.featured_scenario
+    @featured_scenario ||=
+      saved_scenario.featured_scenario || FeaturedScenario.new(
+        saved_scenario: saved_scenario,
+        title_en: saved_scenario.title,
+        title_nl: saved_scenario.title,
+        description_en: saved_scenario.description,
+        description_nl: saved_scenario.description
+      )
   end
 
   def ensure_admin

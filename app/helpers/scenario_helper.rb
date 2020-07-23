@@ -41,7 +41,7 @@ module ScenarioHelper
     localized = Loofah.fragment(description).css(".#{I18n.locale}")
 
     rendered = RDiscount.new(
-      localized.inner_html.presence || description,
+      localized.inner_html.presence || description || '',
       :no_image, :smart
     ).to_html
 

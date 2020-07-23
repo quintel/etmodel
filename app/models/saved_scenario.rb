@@ -93,4 +93,12 @@ class SavedScenario < ApplicationRecord
   def days_until_last_update
     (Time.current - updated_at) / 60 / 60 / 24
   end
+
+  def localized_title(locale)
+    featured_scenario ? featured_scenario.localized_title(locale) : title
+  end
+
+  def localized_description(locale)
+    featured_scenario ? featured_scenario.localized_description(locale) : description
+  end
 end

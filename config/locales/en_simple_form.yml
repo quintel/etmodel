@@ -6,6 +6,12 @@ en:
       description: "Description"
       save_scenario: "Save scenario"
     labels:
+      featured_scenario:
+        group: "Group"
+        description_en: "English description"
+        description_nl: "Dutch description"
+        title_en: "English title"
+        title_nl: "Dutch title"
       user:
         username: "Name"
         email: "E-mail"
@@ -32,3 +38,8 @@ en:
         company_school: "If you're a member of an energy-related company, trade-group, or government agency, please let us know!"
         school: "Please let us know which school, college, or university you represent. We love hearing how educators use our model; please don't hesitate to contact us to let us know how you get on!"
         teacher_email: "Your teacher should provide you with the e-mail address of their ETM account. This will allow them to view the scenarios you create."
+  helpers:
+    submit:
+      featured_scenario:
+        create: 'Feature scenario'
+        update: 'Save changes'

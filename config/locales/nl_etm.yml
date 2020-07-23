@@ -209,8 +209,8 @@ nl:
     edit_text: 'Pas titel en beschrijving aan'
     save_text: 'Sla veranderingen op'
     cancel_text: 'Annuleren'
-    edit_featured_scenario: 'Edit featured scenario settings'
-    feature_scenario: 'Feature this scenario'
+    edit_featured_scenario: 'Instellingen voor uitgelicht scenario'
+    feature_scenario: 'Maak dit een uitgelicht scenario'
     share:
       by: 'Delen via'
       copy: 'Kopieer link'
@@ -220,16 +220,17 @@ nl:
         Ik heb een scenario gemaakt met het Energietransitiemodel, en zou het graag met je delen.%0D%0A
         Klik op de volgende link om het te bekijken:"
   featured_scenario:
-    unfeature: 'Unfeature'
-    unfeature_title: 'Unfeature this scenario'
-    unfeature_info: 'Unfeaturing the scenario will remove it from the list of scenarios on the front page.'
+    unfeature: 'Stop met uitlichten'
+    unfeature_title: 'Stop met uitlichten van dit scenario'
+    unfeature_info: 'Het scenario zal van de landingspagina verdwijnen als je stopt met het uitlichten
+      van het scenario.'
     unfeature_warning_html: |
-      <strong>The custom English and Dutch titles and descriptions will be removed.</strong>
-      Prior to unfeaturing the scenario, you may wish to edit its title and description by
-      returning to the scenario page and choosing "Edit title and description".
-    unfeature_button: 'Unfeature scenario'
-    unfeature_description_revert: 'The description will be reverted to'
-    unfeature_title_revert: 'The title will be reverted to'
+      <strong> De aparte Engelse en Nederlandse vertalingen zullen verwijderd worden.</strong>
+      Voordat je stopt met dit scenario uitlichten, wil je wellicht de standaard titel en
+      beschrijving aanpassen. Ga terug naar de scenario pagina en kies "pas titel en beschrijving aan".
+    unfeature_button: 'Stop met uitlichten'
+    unfeature_description_revert: 'De beschrijving zal worden teruggezet naar'
+    unfeature_title_revert: 'De titel zal worden teruggezet naar'
   flash:
     edit_profile: "Profiel succesvol aangepast"
     end_year: "Eindjaar is ingesteld op"

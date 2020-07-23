@@ -2,9 +2,10 @@
 
 .background_wrapper#saved_scenario
   .scenario_wrapper#feature_scenario
-    %a.unfeature-link{ href: '#unfeature' }
-      ↓
-      = t('featured_scenario.unfeature')
+    - if featured_scenario.persisted?
+      %a.unfeature-link{ href: '#unfeature' }
+        ↓
+        = t('featured_scenario.unfeature')
     %h1= t('scenario.feature_scenario')
 
     %h2
@@ -30,7 +31,7 @@
         = f.submit class: 'save button'
         = link_to t('scenario.cancel_text'), saved_scenario_path(featured_scenario.saved_scenario), class: 'cancel button'
 
-    - unless featured_scenario.new_record?
+    - if featured_scenario.persisted?
       #unfeature
         %h2= t('featured_scenario.unfeature_title')
         %p= t('featured_scenario.unfeature_info')

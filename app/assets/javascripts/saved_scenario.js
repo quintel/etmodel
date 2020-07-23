@@ -18,3 +18,17 @@ function restore() {
   $('.scenario').show();
   $('.load').removeClass('dim');
 }
+
+$(function() {
+  if (!document.getElementById('unfeature')) {
+    return;
+  }
+
+  $('#unfeature .check .save').on('click', function(event) {
+    event.stopPropagation();
+    $('#unfeature .check').hide();
+    $('#unfeature .confirm').show();
+  });
+
+  resizeTextarea();
+});

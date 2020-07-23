@@ -63,12 +63,15 @@ Etm::Application.routes.draw do
   end
 
   resources :saved_scenarios, only: %i[index show update edit] do
+    resource :feature, only: %i[show create update destroy], controller: 'featured_scenarios'
+
     member do
       get :load
 
-      get    'feature' => 'featured_scenarios#new'
-      post   'feature' => 'featured_scenarios#create'
-      delete 'feature' => 'featured_scenarios#destroy'
+      # get    'feature' => 'featured_scenarios#edit'
+      # post   'feature' => 'featured_scenarios#create'
+      # put    'feature' => 'featured_scenarios#update'
+      # delete 'feature' => 'featured_scenarios#destroy'
     end
 
     get '/report/:report_name' => 'saved_scenario_reports#show'

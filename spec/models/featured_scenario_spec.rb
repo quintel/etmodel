@@ -3,55 +3,73 @@
 require 'rails_helper'
 
 describe FeaturedScenario do
-  let(:defaults) { { group: nil, title: nil } }
-
-  let(:group_one) do
-    [
-      FactoryBot.build(
-        :featured_scenario,
-        group: 'one',
-        saved_scenario: FactoryBot.build(:saved_scenario, title: 'A')
-      ),
-      FactoryBot.build(
-        :featured_scenario,
-        group: 'one',
-        saved_scenario: FactoryBot.build(:saved_scenario, title: 'B')
-      ),
-      FactoryBot.build(
-        :featured_scenario,
-        group: 'one',
-        saved_scenario: FactoryBot.build(:saved_scenario, title: 'Z')
-      )
-    ]
+  describe 'associations' do
+    it { is_expected.to belong_to(:saved_scenario) }
   end
 
-  let(:group_two) do
-    [
-      FactoryBot.build(:featured_scenario, group: 'two'),
-      FactoryBot.build(:featured_scenario, group: 'two')
-    ]
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:saved_scenario_id) }
+    it { is_expected.to validate_presence_of(:description_en) }
+    it { is_expected.to validate_presence_of(:description_nl) }
+    it { is_expected.to validate_presence_of(:title_en) }
+    it { is_expected.to validate_presence_of(:title_nl) }
+    it { is_expected.to validate_inclusion_of(:group).in_array(FeaturedScenario::GROUPS) }
+
+    it 'validates that the saved_scenario_id is unique' do
+      fs = FactoryBot.create(:featured_scenario)
+      expect(fs).to validate_uniqueness_of(:saved_scenario_id)
+    end
   end
 
-  let(:group_three) { [FactoryBot.build(:featured_scenario, group: 'three')] }
-  let(:group_four) { [FactoryBot.build(:featured_scenario, group: 'four')] }
-  let(:group_five) { [FactoryBot.build(:featured_scenario, group: 'five')] }
-  let(:group_nil) { [FactoryBot.build(:featured_scenario, group: nil)] }
+  describe '.in_groups with order one, two, three, :rest, nil' do
+    let(:defaults) { { group: nil, title: nil } }
 
-  let(:unsorted) do
-    [
-      group_one[2],
-      group_three[0],
-      group_five[0],
-      group_two[0],
-      group_nil[0],
-      group_two[1],
-      group_one[0],
-      group_four[0],
-      group_one[1]
-    ]
-  end
+    let(:group_one) do
+      [
+        FactoryBot.build(
+          :featured_scenario,
+          group: 'one',
+          saved_scenario: FactoryBot.build(:saved_scenario, title: 'A')
+        ),
+        FactoryBot.build(
+          :featured_scenario,
+          group: 'one',
+          saved_scenario: FactoryBot.build(:saved_scenario, title: 'B')
+        ),
+        FactoryBot.build(
+          :featured_scenario,
+          group: 'one',
+          saved_scenario: FactoryBot.build(:saved_scenario, title: 'Z')
+        )
+      ]
+    end
 
-  describe 'with order one, two, three, :rest, nil' do
+    let(:group_two) do
+      [
+        FactoryBot.build(:featured_scenario, group: 'two'),
+        FactoryBot.build(:featured_scenario, group: 'two')
+      ]
+    end
+
+    let(:group_three) { [FactoryBot.build(:featured_scenario, group: 'three')] }
+    let(:group_four) { [FactoryBot.build(:featured_scenario, group: 'four')] }
+    let(:group_five) { [FactoryBot.build(:featured_scenario, group: 'five')] }
+    let(:group_nil) { [FactoryBot.build(:featured_scenario, group: nil)] }
+
+    let(:unsorted) do
+      [
+        group_one[2],
+        group_three[0],
+        group_five[0],
+        group_two[0],
+        group_nil[0],
+        group_two[1],
+        group_one[0],
+        group_four[0],
+        group_one[1]
+      ]
+    end
+
     let(:order) { ['one', 'two', 'three', :rest, nil] }
 
     let(:ordered) { described_class.in_groups(unsorted, order) }
@@ -93,19 +111,6 @@ describe FeaturedScenario do
 
     it 'places ungrouped scenarios last' do
       expect(ordered[5][:scenarios]).to eq(group_nil)
-    end
-  end
-
-  describe 'associations' do
-    it { is_expected.to belong_to(:saved_scenario) }
-  end
-
-  describe 'validations' do
-    it { is_expected.to validate_presence_of(:saved_scenario_id) }
-
-    it 'validates that the saved_scenario_id is unique' do
-      fs = FactoryBot.create(:featured_scenario)
-      expect(fs).to validate_uniqueness_of(:saved_scenario_id)
     end
   end
 end

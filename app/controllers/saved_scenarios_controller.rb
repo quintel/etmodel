@@ -53,7 +53,7 @@ class SavedScenariosController < ApplicationController
         @scenario,
         active_saved_scenario: {
           id: @saved_scenario.id,
-          title: @saved_scenario.title
+          title: @saved_scenario.localized_title(I18n.locale)
         }
       )
     else

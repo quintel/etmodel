@@ -7,10 +7,10 @@ class CreateFeaturedScenarios < ActiveRecord::Migration[5.2]
       create_table :featured_scenarios do |t|
         t.integer :saved_scenario_id, null: false
         t.string :group
-        # t.string :en_title, null: false
-        # t.string :nl_title, null: false
-        # t.text :en_description
-        # t.text :nl_description
+        t.string :title_en, null: false
+        t.string :title_nl, null: false
+        t.text :description_en
+        t.text :description_nl
         t.index :saved_scenario_id, unique: true
       end
 
@@ -36,7 +36,7 @@ class CreateFeaturedScenarios < ActiveRecord::Migration[5.2]
     user = User.find_by_email('info@energytransitionmodel.com')
     return user if user.present?
 
-    password = SecureRandom.hex
+    password = SecureRandom.alphanumeric
     role = Role.find_by_name('admin')
 
     user = User.create!(
@@ -68,9 +68,17 @@ class CreateFeaturedScenarios < ActiveRecord::Migration[5.2]
     # Prevents the ETEngine scenarios from referencing presets which will soon no longer exist.
     saved_scenario.scenario.update_attributes(preset_scenario_id: nil)
 
+    document = Nokogiri::HTML.parse(preset.description)
+    en_desc = document.at('.en')&.inner_html&.strip || preset.description.strip
+    nl_desc = document.at('.nl')&.inner_html&.strip || preset.description.strip
+
     FeaturedScenario.create!(
       saved_scenario: saved_scenario,
-      group: etengine_to_etmodel_group(preset.display_group)
+      group: etengine_to_etmodel_group(preset.display_group),
+      title_en: preset.title,
+      title_nl: preset.title,
+      description_en: en_desc,
+      description_nl: nl_desc
     )
   end
 

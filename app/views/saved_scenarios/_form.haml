@@ -1,4 +1,9 @@
 = form_with model: saved_scenario, local: false do |f|
+  .warning
+    This is a featured scenario. The title and description in this form will not be shown to
+    visitors viewing the scenario. Please choose "Edit featured scenario settings" from the scenario
+    page.
+
   = f.hidden_field :id
 
   .title

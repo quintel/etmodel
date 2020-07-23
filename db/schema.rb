@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(version: 2020_07_20_152551) do
   create_table "featured_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "saved_scenario_id", null: false
     t.string "group"
+    t.string "title_en", null: false
+    t.string "title_nl", null: false
+    t.text "description_en"
+    t.text "description_nl"
     t.index ["saved_scenario_id"], name: "index_featured_scenarios_on_saved_scenario_id", unique: true
   end
 

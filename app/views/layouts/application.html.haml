@@ -11,6 +11,12 @@
       = stylesheet_link_tag 'ie'
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
+
+    :javascript
+      I18n.defaultLocale = "#{I18n.default_locale}";
+      I18n.locale = "#{I18n.locale}";
+      LocalTime.config.locale = I18n.locale;
+
     = yield :head
     - if ipad?
       %meta{:name=>"viewport", :content=>"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"}
@@ -25,9 +31,6 @@
       %footer.fixed
         = yield :footer
         = render "layouts/etm/footer"
-    :javascript
-      I18n.defaultLocale = "#{I18n.default_locale}";
-      I18n.locale = "#{I18n.locale}";
     = yield :scripts
     - if (Rails.env.production? || Rails.env.staging?) && !APP_CONFIG[:standalone]
       = render "layouts/etm/ga"

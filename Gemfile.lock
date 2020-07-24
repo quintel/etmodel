@@ -210,6 +210,7 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    local_time (2.1.0)
     loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -453,6 +454,7 @@ DEPENDENCIES
   launchy
   libv8 (~> 3.16.14.3)
   listen (~> 3.0.5)
+  local_time
   loofah
   mysql2
   newrelic_rpm

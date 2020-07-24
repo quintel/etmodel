@@ -6,7 +6,7 @@
       = scenario.end_year
   %li
     = t('scenario.updated')
-    = I18n.localize(scenario.updated_at, :format => :long)
+    = local_time(scenario.updated_at, :long)
 
 .bar
 

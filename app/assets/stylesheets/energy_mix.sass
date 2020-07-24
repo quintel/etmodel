@@ -294,6 +294,27 @@ body#energy-mix
           margin-top: -0.25rem
       .collective-heat
         background-image: asset-url('energy_mix/collective-heat.png')
+        .solar-arrow
+          background: asset-url('energy_mix/arrow-down.png') center bottom no-repeat
+          position: absolute
+          width: 15px
+          z-index: 1
+          height: 35px
+          right: -4px
+          top: -27px
+          .tail, .sideways
+            background: #eb1c30
+            bottom: 0px
+            left: 7px
+            position: absolute
+            top: 0px
+            width: 1px
+          .sideways
+            width: 263px
+            height: 1px
+          .quantity
+            position: relative
+            top: 38px
       .heat
         background-image: asset-url('energy_mix/individual-heat.png')
         position: relative

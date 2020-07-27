@@ -31,10 +31,7 @@ table.default
   height: max-content
 
 .scenario_wrapper
-  &#index
-    padding: 5px 20px 110px 20px
-
-  &#show_scenario, &#feature_scenario
+  &#show_scenario, &#feature_scenario, &#index
     width: $landing-width
     margin: 0 auto 3rem
     background: white
@@ -105,12 +102,38 @@ table.default
           background: linear-gradient(darken($landing-blue, 1%), darken($landing-blue, 7%))
         &.dim
           background: linear-gradient(lighten($landing-blue, 25%), lighten($landing-blue, 18%))
-      &.cancel
+      &.cancel, &.compare
         &:hover
           color: lighten(black, 15%)
           background: linear-gradient(lighten(#eee, 9%), lighten(#eee, 2%))
         &:active
           background: linear-gradient(#eee, darken(#eee, 7%))
+      &.compare
+        font-size: 0.7rem
+        padding: 5px 8px
+
+  &#index
+    table
+      width: 100%
+      margin: 10px 0
+      .box
+        border-right: none
+      .info
+        border-left: none
+        padding: 5px 4px
+        a
+          font-weight: bold
+          text-decoration: none
+          margin-right: 4px
+          &:hover
+            color: darken($landing-blue, 4%)
+            text-decoration: underline
+        .by
+          font-size: 0.7rem
+          color: $landing-grey
+
+      #scenario_paginator td
+        border: none
 
   &#show_scenario
     .title

@@ -1,23 +1,29 @@
 - @saved_scenarios.each do |ss|
   - if ss.loadable?
-    %tr{class: cycle('even', 'odd') + (' highlight' if @student_ids.include?(ss.user_id)).to_s}
-      %td= check_box_tag 'scenario_ids[]', ss.scenario_id
-      %td= link_to ss.title, ss
-      %td= ss.end_year
-      %td= ss.updated_at.to_formatted_s(:long)
-      %td= ss.user.name
+    %tr
+      %td.box= check_box_tag 'scenario_ids[]', ss.scenario_id
+      %td.info
+        = link_to ss.title, ss
+        = t('areas.' + ss.area_code)
+        = ss.end_year
+        .by
+          #{ss.user.name},
+          = t('scenario.updated')
+          = I18n.localize(ss.updated_at, :format => :long)
+
   - elsif current_user.admin?
-    %tr{class: "unavailable #{cycle('even', 'odd')}" }
-      -# DEBT: use I18n here.
-      %td= check_box_tag 'scenario_ids[]', -1, false, disabled: true
-      %td
+    %tr.unavailable
+      %td.box= check_box_tag 'scenario_ids[]', -1, false, disabled: true
+      %td.info
         = ss.title
         == (#{ss.scenario_id})
         &ndash;
         = t('scenario.area_not_exists')
         (#{ss.area_code})
-      %td= ""
-      %td= ss.updated_at.to_datetime&.to_formatted_s(:long)
-      %td= ss.user.email
+        .by
+          = ss.user.email
+          = t('scenario.updated')
+          = I18n.localize(ss.updated_at, :format => :long)
 %tr#scenario_paginator
-  %td{colspan: 5}= link_to_next_page @saved_scenarios, 'More...', remote: true
+  %td
+  %td= link_to_next_page @saved_scenarios, 'More...', remote: true

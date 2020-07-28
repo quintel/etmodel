@@ -142,14 +142,13 @@ table.default
           font-size: 1rem
           display: inline-block
           width: 100%
-
-          &:hover
-            color: darken($landing-blue, 4%)
-            text-decoration: underline
         .info
           color: black
         .author
           color: $landing-grey
+        &:hover .title
+          color: darken($landing-blue, 4%)
+          text-decoration: underline
 
       #scenario_paginator td
         border: none

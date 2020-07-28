@@ -39,6 +39,14 @@ describe ReportsController, vcr: true do
           .to raise_error(ActiveRecord::RecordNotFound)
       end
     end
+
+    context 'requesting a PDF' do
+      let(:request) { get(:show, params: { id: 'sample', format: 'pdf' }) }
+
+      it 'returns 406' do
+        expect(request.status).to eq(406)
+      end
+    end
   end
 
   describe '#auto' do

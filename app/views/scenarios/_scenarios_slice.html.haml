@@ -11,6 +11,8 @@
           %span.author
             = t('scenario.by')
             = ss.user.name
+          - if ss.featured?
+            %span.featured.tooltip{ title: t('scenario.featured_scenario')} &#9733;
 
   - elsif current_user.admin?
     %tr.unavailable
@@ -26,6 +28,8 @@
           %span.author
             = t('scenario.by')
             = ss.user.name
+          - if ss.featured?
+            %span.featured{ title: t('scenario.featured_scenario')} &#9733;
 %tr#scenario_paginator
   %td
   %td= link_to_next_page @saved_scenarios, 'More...', remote: true

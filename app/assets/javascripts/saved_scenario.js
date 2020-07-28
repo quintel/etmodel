@@ -20,6 +20,8 @@ function restore() {
 }
 
 $(function() {
+  $('.featured.tooltip').qtip();
+
   if (!document.getElementById('unfeature')) {
     return;
   }

@@ -4,7 +4,7 @@
       %td.box= check_box_tag 'scenario_ids[]', ss.scenario_id
       %td
         %a{ href:"/saved_scenarios/#{ss.id}" }
-          %span.title= ss.title
+          %span.title= ss.localized_title(I18n.locale)
           %span.info
             = t('areas.' + ss.area_code)
             = ss.end_year

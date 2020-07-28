@@ -2,28 +2,34 @@
   - if ss.loadable?
     %tr
       %td.box= check_box_tag 'scenario_ids[]', ss.scenario_id
-      %td.info
-        = link_to ss.title, ss
-        = t('areas.' + ss.area_code)
-        = ss.end_year
-        .by
-          #{ss.user.name},
-          = t('scenario.updated')
-          = I18n.localize(ss.updated_at, :format => :long)
+      %td
+        %a{ href:"/saved_scenarios/#{ss.id}" }
+          %span.title= ss.title
+          %span.info
+            = t('areas.' + ss.area_code)
+            = ss.end_year
+          %span.author
+            = t('scenario.by')
+            = ss.user.name
 
   - elsif current_user.admin?
     %tr.unavailable
       %td.box= check_box_tag 'scenario_ids[]', -1, false, disabled: true
-      %td.info
-        = ss.title
-        == (#{ss.scenario_id})
-        &ndash;
-        = t('scenario.area_not_exists')
-        (#{ss.area_code})
-        .by
-          = ss.user.email
-          = t('scenario.updated')
-          = I18n.localize(ss.updated_at, :format => :long)
+      %td
+        %a
+          %span.title
+            = ss.title
+            (#{ss.scenario_id}) &ndash;
+            %em
+              = t('scenario.area_not_exists')
+          %span.info
+            = ss.area_code
+          %span.author
+            = t('scenario.by')
+            = ss.user.email
+            &ndash;
+            = t('scenario.updated')
+            = I18n.localize(ss.updated_at, :format => :long)
 %tr#scenario_paginator
   %td
   %td= link_to_next_page @saved_scenarios, 'More...', remote: true

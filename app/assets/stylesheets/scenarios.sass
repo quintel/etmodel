@@ -84,14 +84,6 @@ table.default
       padding: 10px 15px
       margin: 0.5rem 0.5rem 1rem 0
       -webkit-font-smoothing: antialiased
-      &.save
-        background: $landing-green
-        background: linear-gradient(lighten($landing-green, 10%), $landing-green)
-        color: white
-        &:hover
-          background: linear-gradient(lighten($landing-green, 14%), lighten($landing-green, 7%))
-        &:active
-          background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))
       &.load
         background-color: $landing-blue
         background: linear-gradient(lighten($landing-blue, 10%), $landing-blue)
@@ -108,28 +100,55 @@ table.default
           background: linear-gradient(lighten(#eee, 9%), lighten(#eee, 2%))
         &:active
           background: linear-gradient(#eee, darken(#eee, 7%))
+      &.save
+        background: $landing-green
+        background: linear-gradient(lighten($landing-green, 10%), $landing-green)
+        color: white
+        &:hover
+          color: white
+          background: linear-gradient(lighten($landing-green, 14%), lighten($landing-green, 7%))
+        &:active
+          background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))
       &.compare
-        font-size: 0.7rem
+        font-size: 0.75rem
+        font-weight: normal
         padding: 5px 8px
 
   &#index
+    .vertical-bar
+      width: 0
+      height: 30px
+      border: 0.5px solid #ddd
+      display: inline-block
+      margin: 0 8px -7px 0
+    a
+      color: #3c8ee1
+
     table
       width: 100%
       margin: 10px 0
-      .box
-        border-right: none
-      .info
-        border-left: none
-        padding: 5px 4px
-        a
+      td
+        border: none
+        padding: 8px 10px
+      input
+        height: 16px
+        width: 16px
+      a
+        display: block
+        text-decoration: none
+        cursor: pointer
+        .title
           font-weight: bold
-          text-decoration: none
-          margin-right: 4px
+          font-size: 1rem
+          display: inline-block
+          width: 100%
+
           &:hover
             color: darken($landing-blue, 4%)
             text-decoration: underline
-        .by
-          font-size: 0.7rem
+        .info
+          color: black
+        .author
           color: $landing-grey
 
       #scenario_paginator td

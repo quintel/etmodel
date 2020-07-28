@@ -8,7 +8,7 @@
 
 .actions
   - if current_user&.admin?
-    - if saved_scenario.featured_scenario
+    - if saved_scenario.featured?
       = link_to t('scenario.edit_featured_scenario'), saved_scenario_feature_path(saved_scenario)
     - else
       = link_to t('scenario.feature_scenario'), saved_scenario_feature_path(saved_scenario)

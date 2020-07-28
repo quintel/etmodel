@@ -101,4 +101,17 @@ describe SavedScenario do
       expect(subject.first).to eq(scenario_de_2050)
     end
   end
+
+  describe 'when the scenario has no FeaturedScenario' do
+    it 'is not featured' do
+      expect(FactoryBot.create(:saved_scenario)).not_to be_featured
+    end
+  end
+
+  describe 'when the scenario has a FeaturedScenario' do
+    it 'is not featured' do
+      featured = FactoryBot.create(:featured_scenario)
+      expect(featured.saved_scenario).to be_featured
+    end
+  end
 end

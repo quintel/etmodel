@@ -94,11 +94,15 @@ class SavedScenario < ApplicationRecord
     (Time.current - updated_at) / 60 / 60 / 24
   end
 
+  def featured?
+    featured_scenario.present?
+  end
+
   def localized_title(locale)
-    featured_scenario ? featured_scenario.localized_title(locale) : title
+    featured? ? featured_scenario.localized_title(locale) : title
   end
 
   def localized_description(locale)
-    featured_scenario ? featured_scenario.localized_description(locale) : description
+    featured? ? featured_scenario.localized_description(locale) : description
   end
 end

@@ -73,8 +73,8 @@
               %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
               windturbines op land
               (
-              %span(data-query="factsheet_capacity_of_wind_turbine_inland" data-as="MW")<> &mdash;
-              )
+              %span(data-query="energy_mix_capacity_per_unit_wind_turbine_inland" data-as="MW")<> &mdash;
+              MW)
             %li.spacer
               %span(data-query="factsheet_number_of_wind_turbines_offshore")> &mdash;
               &nbsp;windturbines op zee (10 MW) / innovatie
@@ -84,8 +84,12 @@
           .value(data-query="factsheet_supply_of_solar_total") &mdash;
           %ul
             %li
-              %span(data-query="factsheet_number_of_solar_pv" data-precision="-3") &mdash;
-              PV-panelen op daken
+              %span(data-query="factsheet_number_of_roof_solar_pv" data-precision="-3") &mdash;
+              PV-panelen op dak
+              (
+              // DEZE QUERY NOG AANPASSEN NAAR PIEK
+              %span(data-query="factsheet_supply_electricity_from_roof_solar") <> &mdash;
+              kWp)
             %li(data-query="factsheet_supply_electricity_from_roof_solar") &mdash;
             %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
@@ -95,7 +99,7 @@
               %span(data-query="factsheet_supply_from_solar_pv_plants") &mdash;
             %li
               %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
-              vermogen PV panelen
+              vermogen PV panelen totaal
             %li.spacer
             %li
               %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;

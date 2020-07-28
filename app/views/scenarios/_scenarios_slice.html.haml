@@ -19,17 +19,13 @@
         %a
           %span.title
             = ss.title
-            (#{ss.scenario_id}) &ndash;
-            %em
-              = t('scenario.area_not_exists')
+            (#{ss.scenario_id})
           %span.info
-            = ss.area_code
+            %code= ss.area_code
+            (#{t('scenario.area_not_exists')})
           %span.author
             = t('scenario.by')
-            = ss.user.email
-            &ndash;
-            = t('scenario.updated')
-            = I18n.localize(ss.updated_at, :format => :long)
+            = ss.user.name
 %tr#scenario_paginator
   %td
   %td= link_to_next_page @saved_scenarios, 'More...', remote: true

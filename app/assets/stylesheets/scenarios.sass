@@ -1,3 +1,5 @@
+$error-red: #d81616
+
 table.compare_scenarios
   border-collapse: collapse
   tr.header th
@@ -20,8 +22,6 @@ table.default
     td
       background: rgb(255, 204, 51) // The Fallback for IE < 9
       background-color: rgba(255,204,51, 0.4)
-  tr.unavailable
-    color: #aaa
 
 // Used on scenario index/new/show pages
 .background_wrapper#saved_scenario
@@ -157,6 +157,9 @@ table.default
         &:hover .title
           color: darken($landing-blue, 25%)
           text-decoration: underline
+      .unavailable
+        .info
+          color: $error-red
 
       #scenario_paginator td
         border: none
@@ -269,7 +272,7 @@ table.default
       margin-right: -40px
       padding: 1rem 40px
       .error
-        color: #d81616
+        color: $error-red
         margin-left: 0
     h2
       font-weight: normal

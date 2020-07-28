@@ -110,17 +110,20 @@ table.default
         &:active
           background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))
       &.compare
-        font-size: 0.75rem
+        font-size: 0.8125rem
         font-weight: normal
+        margin-bottom: 0.5rem
         padding: 5px 8px
+        -webkit-font-smoothing: auto
 
   &#index
     .vertical-bar
       width: 0
-      height: 30px
-      border: 0.5px solid #ddd
+      height: 26px
+      border-left: 1px solid #ddd
       display: inline-block
-      margin: 0 8px -7px 0
+      margin: 0 0.5rem 0 0
+      vertical-align: middle
     a
       color: #3c8ee1
 
@@ -130,6 +133,11 @@ table.default
       td
         border: none
         padding: 8px 10px
+        &.box
+          padding-left: 0
+          padding-right: 0
+          input
+            margin: 0
       input
         height: 16px
         width: 16px
@@ -147,11 +155,20 @@ table.default
         .author
           color: $landing-grey
         &:hover .title
-          color: darken($landing-blue, 4%)
+          color: darken($landing-blue, 25%)
           text-decoration: underline
 
       #scenario_paginator td
         border: none
+        a
+          border-top: 1px solid #ddd
+          color: #56b351
+          font-size: 1rem
+          font-weight: bold
+          padding-top: 1rem
+          &:hover
+            color: darken(#56b351, 20%)
+            text-decoration: underline
 
   &#show_scenario
     .title

@@ -2,7 +2,7 @@
 
 = render partial: 'info', locals: { scenario: saved_scenario }
 
-- if saved_scenario.description.presence
+- if saved_scenario.localized_description(I18n.locale).presence
   .description
     = formatted_scenario_description(saved_scenario.localized_description(I18n.locale))
 

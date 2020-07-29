@@ -114,6 +114,38 @@ describe Setting do
         expect(setting.to_hash[:locked_charts]).to eq(%w[d e f])
       end
     end
+
+    context 'when the scenario ID is set and the scenario is active' do
+      let(:setting) { described_class.new(api_session_id: 1) }
+      let(:hash) { setting.to_hash }
+
+      before { allow(setting).to receive(:active_scenario?).and_return(true) }
+
+      it 'includes the scenario ID' do
+        expect(hash[:api_session_id]).to eq(1)
+      end
+
+      it 'asks if the scenario is active' do
+        hash
+        expect(setting).to have_received(:active_scenario?)
+      end
+    end
+
+    context 'when the scenario ID is set and the scenario is not active' do
+      let(:setting) { described_class.new(api_session_id: 1) }
+      let(:hash) { setting.to_hash }
+
+      before { allow(setting).to receive(:active_scenario?).and_return(false) }
+
+      it 'includes the scenario ID' do
+        expect(hash[:api_session_id]).to eq(nil)
+      end
+
+      it 'asks if the scenario is active' do
+        hash
+        expect(setting).to have_received(:active_scenario?)
+      end
+    end
   end
 
   describe "#reset!", vcr: true do

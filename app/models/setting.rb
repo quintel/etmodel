@@ -155,8 +155,11 @@ class Setting
   # Returns the Setting as a Hash (which can then be converted to JSON in a
   # view).
   def to_hash
-    self.class.default_attributes.keys.each_with_object({}) do |key, data|
+    hash = self.class.default_attributes.keys.each_with_object({}) do |key, data|
       data[key] = public_send(key)
     end
+
+    hash[:api_session_id] = nil unless active_scenario?
+    hash
   end
 end

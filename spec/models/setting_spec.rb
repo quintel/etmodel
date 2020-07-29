@@ -34,6 +34,58 @@ describe Setting do
     end
   end
 
+  describe '#active_scenario?' do
+    context 'when the setting has no scenario ID' do
+      let(:setting) { described_class.new(api_session_id: nil) }
+
+      it 'returns false' do
+        expect(setting.active_scenario?).to be(false)
+      end
+    end
+
+    context 'when the setting has a scenario ID, but no area' do
+      let(:setting) { described_class.new(api_session_id: 1, area_code: nil) }
+
+      it 'returns false' do
+        expect(setting.active_scenario?).to be(false)
+      end
+    end
+
+    context 'when the setting has a scenario ID, but an invalid area' do
+      let(:setting) { described_class.new(api_session_id: 1, area_code: 'invalid') }
+
+      before do
+        allow(Api::Area).to receive(:find_by_country_memoized).and_return(nil)
+      end
+
+      it 'returns false' do
+        expect(setting.active_scenario?).to be(false)
+      end
+
+      it 'will have checked for a valid area' do
+        setting.active_scenario?
+        expect(Api::Area).to have_received(:find_by_country_memoized).with('invalid')
+      end
+    end
+
+    context 'when the setting has a scenario ID and an area' do
+      let(:setting) { described_class.new(api_session_id: 1, area_code: 'nl') }
+
+      before do
+        allow(Api::Area).to receive(:find_by_country_memoized).with('nl').and_return(Object.new)
+      end
+
+      it 'returns true' do
+        expect(setting.active_scenario?).to be(true)
+      end
+
+      it 'will have checked for a valid area' do
+        setting.active_scenario?
+        expect(Api::Area).to have_received(:find_by_country_memoized).with('nl')
+      end
+    end
+  end
+
   describe "Setting.default", vcr: true do
     it "should return a new Setting with default_values" do
       # twice: once in default and once in initialize

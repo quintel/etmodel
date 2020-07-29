@@ -128,6 +128,14 @@ class Setting
     area&.derived?
   end
 
+  def active_scenario?
+    # rubocop:disable Rails/DynamicFindBy
+    api_session_id.present? &&
+      area_code.present? &&
+      Api::Area.find_by_country_memoized(area_code).present?
+    # rubocop:enable Rails/DynamicFindBy
+  end
+
   # Returns the ActiveResource object
   def area
     if scaling.present?

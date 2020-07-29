@@ -87,7 +87,9 @@ class Api::Area < ActiveResource::Base
   # Returns an Api::Area.
   def top_level_area
     if try(:base_dataset).present?
-      self.class.find_by_country_memoized(base_dataset).top_level_area
+      # rubocop:disable Rails/DynamicFindBy
+      self.class.find_by_country_memoized(base_dataset)&.top_level_area || self
+      # rubocop:enable Rails/DynamicFindBy
     else
       self
     end

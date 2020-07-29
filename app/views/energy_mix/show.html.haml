@@ -87,9 +87,8 @@
               %span(data-query="factsheet_number_of_roof_solar_pv" data-precision="-3") &mdash;
               PV-panelen op dak
               (
-              // DEZE QUERY NOG AANPASSEN NAAR PIEK
-              %span(data-query="factsheet_supply_electricity_from_roof_solar") <> &mdash;
-              kWp)
+              %span(data-query="energy_mix_capacity_per_panel_solar_pv" data-precision="0")<> &mdash;
+              kW)
             %li(data-query="factsheet_supply_electricity_from_roof_solar") &mdash;
             %li
               %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
@@ -99,7 +98,7 @@
               %span(data-query="factsheet_supply_from_solar_pv_plants") &mdash;
             %li
               %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
-              vermogen PV panelen totaal
+              PV-panelen totaal
             %li.spacer
             %li
               %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
@@ -143,7 +142,7 @@
             .sideways
             .tail
             .head
-            .quantity(data-query="factsheet_share_solar_thermal_in_collective_heat" data-precision="0") &mdash;
+            .quantity(data-query="factsheet_share_of_solar_thermal_in_collective_heat_sources" data-precision="0") &mdash;
         .panel.heat
           %h3 Individuele Warmte
           .value(data-query="factsheet_supply_of_individual_heat_total") &mdash;

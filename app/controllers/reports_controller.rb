@@ -8,6 +8,13 @@ class ReportsController < ApplicationController
   #
   # GET /scenario/reports/:id
   def show
+    if request.format.pdf?
+      return render(
+        file: Rails.root.join('public/406.html'), layout: false, format: :html,
+        content_type: 'text/html', status: :not_acceptable
+      )
+    end
+
     @report = Report.find(params[:id].to_s.tr('-', '_'), I18n.locale)
   end
 

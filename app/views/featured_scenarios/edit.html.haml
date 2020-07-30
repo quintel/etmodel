@@ -2,7 +2,7 @@
 
 .background_wrapper#saved_scenario
   .scenario_wrapper#feature_scenario
-    - if featured_scenario.persisted?
+    - if @featured_scenario.persisted?
       %a.unfeature-link{ href: '#unfeature' }
         ↓
         = t('featured_scenario.unfeature')
@@ -10,17 +10,11 @@
 
     %h2
       - if I18n.locale == :nl
-        = featured_scenario.title_nl_was
+        = @featured_scenario.title_nl_was
       - else
-        = featured_scenario.title_en_was
+        = @featured_scenario.title_en_was
 
-    - if featured_scenario.errors.any?
-      .warning
-        %ul
-          - featured_scenario.errors.full_messages.each do |msg|
-            %li= msg
-
-    = simple_form_for featured_scenario, url: saved_scenario_feature_path(featured_scenario.saved_scenario) do |f|
+    = simple_form_for @featured_scenario, url: saved_scenario_feature_path(@featured_scenario.saved_scenario) do |f|
       = f.input :group, collection: featured_scenario_groups_collection, include_blank: false
       = f.input :title_en
       = f.input :description_en
@@ -29,9 +23,9 @@
 
       .actions
         = f.submit class: 'save button'
-        = link_to t('scenario.cancel_text'), saved_scenario_path(featured_scenario.saved_scenario), class: 'cancel button'
+        = link_to t('scenario.cancel_text'), saved_scenario_path(@featured_scenario.saved_scenario), class: 'cancel button'
 
-    - if featured_scenario.persisted?
+    - if @featured_scenario.persisted?
       #unfeature
         %h2= t('featured_scenario.unfeature_title')
         %p= t('featured_scenario.unfeature_info')
@@ -41,12 +35,12 @@
           %p= t('featured_scenario.unfeature_warning_html').html_safe
           %dl
             %dt== #{t('featured_scenario.unfeature_title_revert')}&hellip;
-            %dd= featured_scenario.saved_scenario.title
+            %dd= @featured_scenario.saved_scenario.title
             %dt== #{t('featured_scenario.unfeature_description_revert')}&hellip;
-            %dd= formatted_scenario_description(featured_scenario.saved_scenario.description)
+            %dd= formatted_scenario_description(@featured_scenario.saved_scenario.description)
 
           .actions
             = link_to t('featured_scenario.unfeature_button'),
-                      saved_scenario_feature_path(featured_scenario.saved_scenario),
+                      saved_scenario_feature_path(@featured_scenario.saved_scenario),
                       class: 'save button', method: :delete
-            = link_to t('cancel'), saved_scenario_path(featured_scenario.saved_scenario), class: 'cancel button'
+            = link_to t('cancel'), saved_scenario_path(@featured_scenario.saved_scenario), class: 'cancel button'

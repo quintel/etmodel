@@ -3,14 +3,14 @@
 # Allows featuring and unfeaturing saved scenarios.
 class FeaturedScenariosController < ApplicationController
   before_action :ensure_admin
-  helper_method :featured_scenario
+  before_action :set_featured_scenario, only: %i[show update destroy]
 
   def create
-    featured_scenario = FeaturedScenario.new(
+    @featured_scenario = FeaturedScenario.new(
       featured_scenario_params.merge(saved_scenario: saved_scenario)
     )
 
-    if featured_scenario.save
+    if @featured_scenario.save
       redirect_to saved_scenario_url(saved_scenario)
     else
       render :edit, status: :unprocessable_entity
@@ -22,7 +22,7 @@ class FeaturedScenariosController < ApplicationController
   end
 
   def update
-    if featured_scenario.update(featured_scenario_params)
+    if @featured_scenario.update(featured_scenario_params)
       redirect_to saved_scenario_url(saved_scenario)
     else
       render :edit, status: :unprocessable_entity
@@ -30,7 +30,7 @@ class FeaturedScenariosController < ApplicationController
   end
 
   def destroy
-    featured_scenario.destroy
+    @featured_scenario.destroy
     redirect_to saved_scenario_url(saved_scenario)
   end
 
@@ -45,7 +45,7 @@ class FeaturedScenariosController < ApplicationController
     SavedScenario.find(params[:saved_scenario_id])
   end
 
-  def featured_scenario
+  def set_featured_scenario
     @featured_scenario ||=
       saved_scenario.featured_scenario || FeaturedScenario.new(
         saved_scenario: saved_scenario,

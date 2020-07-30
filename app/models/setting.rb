@@ -128,6 +128,14 @@ class Setting
     area&.derived?
   end
 
+  def active_scenario?
+    # rubocop:disable Rails/DynamicFindBy
+    api_session_id.present? &&
+      area_code.present? &&
+      Api::Area.find_by_country_memoized(area_code).present?
+    # rubocop:enable Rails/DynamicFindBy
+  end
+
   # Returns the ActiveResource object
   def area
     if scaling.present?
@@ -147,8 +155,11 @@ class Setting
   # Returns the Setting as a Hash (which can then be converted to JSON in a
   # view).
   def to_hash
-    self.class.default_attributes.keys.each_with_object({}) do |key, data|
+    hash = self.class.default_attributes.keys.each_with_object({}) do |key, data|
       data[key] = public_send(key)
     end
+
+    hash[:api_session_id] = nil unless active_scenario?
+    hash
   end
 end

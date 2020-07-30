@@ -34,6 +34,58 @@ describe Setting do
     end
   end
 
+  describe '#active_scenario?' do
+    context 'when the setting has no scenario ID' do
+      let(:setting) { described_class.new(api_session_id: nil) }
+
+      it 'returns false' do
+        expect(setting.active_scenario?).to be(false)
+      end
+    end
+
+    context 'when the setting has a scenario ID, but no area' do
+      let(:setting) { described_class.new(api_session_id: 1, area_code: nil) }
+
+      it 'returns false' do
+        expect(setting.active_scenario?).to be(false)
+      end
+    end
+
+    context 'when the setting has a scenario ID, but an invalid area' do
+      let(:setting) { described_class.new(api_session_id: 1, area_code: 'invalid') }
+
+      before do
+        allow(Api::Area).to receive(:find_by_country_memoized).and_return(nil)
+      end
+
+      it 'returns false' do
+        expect(setting.active_scenario?).to be(false)
+      end
+
+      it 'will have checked for a valid area' do
+        setting.active_scenario?
+        expect(Api::Area).to have_received(:find_by_country_memoized).with('invalid')
+      end
+    end
+
+    context 'when the setting has a scenario ID and an area' do
+      let(:setting) { described_class.new(api_session_id: 1, area_code: 'nl') }
+
+      before do
+        allow(Api::Area).to receive(:find_by_country_memoized).with('nl').and_return(Object.new)
+      end
+
+      it 'returns true' do
+        expect(setting.active_scenario?).to be(true)
+      end
+
+      it 'will have checked for a valid area' do
+        setting.active_scenario?
+        expect(Api::Area).to have_received(:find_by_country_memoized).with('nl')
+      end
+    end
+  end
+
   describe "Setting.default", vcr: true do
     it "should return a new Setting with default_values" do
       # twice: once in default and once in initialize
@@ -60,6 +112,38 @@ describe Setting do
 
       it 'does no alter the charts' do
         expect(setting.to_hash[:locked_charts]).to eq(%w[d e f])
+      end
+    end
+
+    context 'when the scenario ID is set and the scenario is active' do
+      let(:setting) { described_class.new(api_session_id: 1) }
+      let(:hash) { setting.to_hash }
+
+      before { allow(setting).to receive(:active_scenario?).and_return(true) }
+
+      it 'includes the scenario ID' do
+        expect(hash[:api_session_id]).to eq(1)
+      end
+
+      it 'asks if the scenario is active' do
+        hash
+        expect(setting).to have_received(:active_scenario?)
+      end
+    end
+
+    context 'when the scenario ID is set and the scenario is not active' do
+      let(:setting) { described_class.new(api_session_id: 1) }
+      let(:hash) { setting.to_hash }
+
+      before { allow(setting).to receive(:active_scenario?).and_return(false) }
+
+      it 'includes the scenario ID' do
+        expect(hash[:api_session_id]).to eq(nil)
+      end
+
+      it 'asks if the scenario is active' do
+        hash
+        expect(setting).to have_received(:active_scenario?)
       end
     end
   end

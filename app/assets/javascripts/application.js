@@ -9,6 +9,9 @@
 //= require backbone-min
 //= require modernizr.custom
 //= require select2.min
+//= require i18n
+//= require i18n/translations
+//= require local-time
 //
 //= require_tree ./lib/util
 //= require flowplayer-3.2.6.min
@@ -18,8 +21,6 @@
 //= require admin
 //= require common_interface
 //= require fancybox
-//= require i18n
-//= require i18n/translations
 //= require sortable.min
 //= require sign_up_form
 //= require save_indicator

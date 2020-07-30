@@ -14,6 +14,7 @@ gem 'activerecord-session_store'
 gem 'activeresource', '~> 5.1'
 
 gem 'jquery-rails', '~> 4.2.2'
+gem 'local_time'
 gem 'haml', '~> 5.0'
 gem 'authlogic'
 gem 'bcrypt'

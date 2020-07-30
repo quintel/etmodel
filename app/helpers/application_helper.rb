@@ -1,6 +1,6 @@
 module ApplicationHelper
   def has_active_scenario?
-    Current.setting.api_session_id.present? || @active_scenario
+    Current.setting.active_scenario? || @active_scenario
   end
 
   def flash_message(type = nil)

@@ -2,13 +2,13 @@
 
 = render partial: 'info', locals: { scenario: saved_scenario }
 
-- if saved_scenario.description.presence
+- if saved_scenario.localized_description(I18n.locale).presence
   .description
     = formatted_scenario_description(saved_scenario.localized_description(I18n.locale))
 
 .actions
   - if current_user&.admin?
-    - if saved_scenario.featured_scenario
+    - if saved_scenario.featured?
       = link_to t('scenario.edit_featured_scenario'), saved_scenario_feature_path(saved_scenario)
     - else
       = link_to t('scenario.feature_scenario'), saved_scenario_feature_path(saved_scenario)

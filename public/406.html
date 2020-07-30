@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>The page you wanted isn't available in that format (406)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   body {
@@ -22,7 +22,7 @@
     border: 1px solid #bbb;
     border-top: #B00100 solid 4px;
     background-color: white;
-    padding: 2em 4em;
+    padding: 2em;
   }
 
   h1 {
@@ -33,6 +33,7 @@
 
   p {
     line-height: 1.5;
+    padding: 0 2rem;
   }
 
   p.back {
@@ -62,17 +63,19 @@
 </head>
 
 <body>
-  <!-- This file lives in public/500.html -->
+  <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <h1>Sorry, the format you wanted isn't available.</h1>
       <p>
-        The page you requested can't be shown at the moment. That is our
-        fault and we have been notified of the error. Please check back again
-        later. If you continue to experience this message, please feel free to
+        You requested a page in a format which isn't available. If the address was typed in
+        manually, please check that it was entered correctly. If you continue to experience this
+        message, or followed a link on our site to reach this page, please feel free to
         <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#101;&#110;&#101;&#114;&#103;&#121;&#116;&#114;&#097;&#110;&#115;&#105;&#116;&#105;&#111;&#110;&#109;&#111;&#100;&#101;&#108;&#046;&#099;&#111;&#109;">contact us</a>.
       </p>
-      <p class="back"><a href="/" title="Home page">&larr; Back to the home page</a></p>
+      <p class="back">
+        <a href="/" title="Home page">&larr; Back to the home page</a>
+      </p>
     </div>
   </div>
 </body>

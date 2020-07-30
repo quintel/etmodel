@@ -2,7 +2,6 @@
   var globals = <%= Jbuilder.encode do |json|
         json.api_url          APP_CONFIG[:api_url]
         json.api_proxy_url    APP_CONFIG[:api_proxy_url]
-        json.api_session_id   Current.setting.api_session_id
         json.disable_cors     APP_CONFIG[:disable_cors]
         json.standalone       APP_CONFIG[:standalone]
         json.settings         settings_as_json(Current.setting)
@@ -10,5 +9,11 @@
         json.env              Rails.env
         json.show_results_tip @interface && @interface.variant.results_tip? && show_results_tip?
         json.charts_enabled   @interface && @interface.variant.charts?
+
+        if Current.setting.active_scenario?
+          json.api_session_id Current.setting.api_session_id
+        else
+          json.api_session_id nil
+        end
       end.html_safe %>;
 </script>

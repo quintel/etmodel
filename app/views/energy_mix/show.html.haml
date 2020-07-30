@@ -14,11 +14,11 @@
           = @saved_scenario.title
     %dl.detail-list
       %dt Inwoners
-      %dd(data-query="households_number_of_inhabitants" data-period="future") &mdash;
+      %dd{ data: { query: "households_number_of_inhabitants", period: "future" } } &mdash;
       %dt Woningen
-      %dd(data-query="households_number_of_residences" data-period="future") &mdash;
+      %dd{ data: { query: "households_number_of_residences", period: "future" } } &mdash;
       %dt Energiegebruik gebouwde omgeving
-      %dd(data-query="factsheet_share_households_buildings_in_total_demand" data-period="future") &mdash;
+      %dd{ data: { query: "factsheet_share_households_buildings_in_total_demand", period: "future" } } &mdash;
     .logos
       = image_tag('energy_mix/quintel.png', style: 'margin-right: 1rem; width: 8.25rem')
       = image_tag('energy_mix/over-morgen.png', style: 'width: 6rem')
@@ -31,9 +31,9 @@
         %h2
           %span.note
             Besparing
-            %span(data-query="factsheet_total_demand_relative_change" data-as="%") &mdash;
+            %span{ data: { query: "factsheet_total_demand_relative_change", as: "%" } } &mdash;
             %br<>
-            %span.small(data-query="factsheet_total_demand_absolute_change") &mdash;
+            %span.small{ data: { query: "factsheet_total_demand_absolute_change" } } &mdash;
           1. Energievraag eindgebruik
         .content
           .charts.column
@@ -42,161 +42,161 @@
           .legend.column
             .legend-row.header
               %span.key
-              %span.value(data-query="graph_year" data-period="present") &mdash;
-              %span.value(data-query="graph_year" data-period="future") &mdash;
+              %span.value{ data: { query: "graph_year", period: "present" } } &mdash;
+              %span.value{ data: { query: "graph_year", period: "future" } } &mdash;
             .items
             .total.legend-row
               %span.key
-              %span.value(data-query="factsheet_total_demand" data-period="present") &mdash;
-              %span.value(data-query="factsheet_total_demand" data-period="future") &mdash;
+              %span.value{ data: { query: "factsheet_total_demand", period: "present" } } &mdash;
+              %span.value{ data: { query: "factsheet_total_demand", period: "future" } } &mdash;
       #carrier-use.panel
         %h2
           2. Energiebronnen
-          %span(data-query="graph_year" data-as="#")< &mdash;
+          %span{ data: { query: "graph_year", as: "#" } }< &mdash;
         .content
           .chart
           .legend
             .items
             .total
               %span.key Totaal
-              %span.value(data-query="factsheet_total_supply") &mdash;
+              %span.value{ data: { query: "factsheet_total_supply" } } &mdash;
     %section.breakdown
       %h2
         3. Opgave per thema
-        %span(data-query="graph_year" data-as="#")< &mdash;
+        %span{ data: { query: "graph_year", as: "#" } }< &mdash;
       .row.larger
         .panel.wind
           %h3 Wind
-          .value(data-query="factsheet_supply_from_wind_and_other_electricity") &mdash;
+          .value{ data: { query: "factsheet_supply_from_wind_and_other_electricity" } } &mdash;
           %ul
             %li
-              %span(data-query="factsheet_number_of_wind_turbine_inland_coastal") &mdash;
+              %span{ data: { query: "factsheet_number_of_wind_turbine_inland_coastal" } } &mdash;
               windturbines op land
               (
-              %span(data-query="energy_mix_capacity_per_unit_wind_turbine_inland" data-precision="1" data-as="MW")<> &mdash;
+              %span{ data: { query: "energy_mix_capacity_per_unit_wind_turbine_inland", precision: "1", as: "MW" } }<> &mdash;
               )
             %li.spacer
-              %span(data-query="factsheet_number_of_wind_turbines_offshore")> &mdash;
+              %span{ data: { query: "factsheet_number_of_wind_turbines_offshore" } }> &mdash;
               &nbsp;windturbines op zee (10 MW) en/of innovatie
 
         .panel.solar
           %h3 Zon
-          .value(data-query="factsheet_supply_of_solar_total") &mdash;
+          .value{ data: { query: "factsheet_supply_of_solar_total" } } &mdash;
           %ul
             %li
-              %span(data-query="factsheet_number_of_roof_solar_pv" data-precision="-3") &mdash;
+              %span{ data: { query: "factsheet_number_of_roof_solar_pv", precision: "-3" } } &mdash;
               PV-panelen op dak
               (
-              %span(data-query="energy_mix_capacity_per_panel_solar_pv")<> &mdash;
+              %span{ data: { query: "energy_mix_capacity_per_panel_solar_pv" } }<> &mdash;
               \ kWp)
-            %li(data-query="factsheet_supply_electricity_from_roof_solar") &mdash;
+            %li{ data: { query: "factsheet_supply_electricity_from_roof_solar" } } &mdash;
             %li
-              %span(data-query="factsheet_solar_pv_plants_land_use") &mdash;
+              %span{ data: { query: "factsheet_solar_pv_plants_land_use" } } &mdash;
               ha zonneveld
               %span.icon.solar-pv
             %li
-              %span(data-query="factsheet_supply_from_solar_pv_plants") &mdash;
+              %span{ data: { query: "factsheet_supply_from_solar_pv_plants" } } &mdash;
             %li
-              %span(data-query="factsheet_installed_capacity_of_solar_pv" data-as="MW") &mdash;
+              %span{ data: { query: "factsheet_installed_capacity_of_solar_pv", as: "MW" } } &mdash;
               PV-panelen totaal
             %li.spacer
             %li
-              %span(data-query="factsheet_number_of_water_heater_solar_thermal" data-precision="-3") &mdash;
+              %span{ data: { query: "factsheet_number_of_water_heater_solar_thermal", precision: "-3" } } &mdash;
               zonnecollectoren
-            %li(data-query="factsheet_supply_heat_from_solar_thermal") &mdash;
+            %li{ data: { query: "factsheet_supply_heat_from_solar_thermal" } } &mdash;
             %li
-              %span(data-query="factsheet_installed_capacity_of_solar_thermal" data-as="MW") &mdash;
+              %span{ data: { query: "factsheet_installed_capacity_of_solar_thermal", as: "MW" } } &mdash;
               %span.icon.solar-thermal
       .row
         .panel.collective-heat
           %h3 Collectieve Warmte
-          .value(data-query="factsheet_supply_heat_collective") &mdash;
+          .value{ data: { query: "factsheet_supply_heat_collective" } } &mdash;
           %ul
             %li.spacer
               Vermogen bronnen:
-              %span(data-query="factsheet_installed_capacity_of_collective_heat_sources" data-as="MW")
+              %span{ data: { query: "factsheet_installed_capacity_of_collective_heat_sources", as: "MW" } }
               %br
-              %span(data-query="factsheet_supply_of_collective_heat_per_residence" data-precision="-3" data-no-unit)
+              %span{ data: { query: "factsheet_supply_of_collective_heat_per_residence", precision: "-3", "no-unit" => true } }
               woningequivalenten
             %li
               Geothermie
               (
-              %span(data-query="factsheet_share_of_geothermal_in_collective_heat_sources")<> &mdash;
+              %span{ data: { query: "factsheet_share_of_geothermal_in_collective_heat_sources" } }<> &mdash;
               )
             %li
               Restwarmte
               (
-              %span(data-query="factsheet_share_of_waste_heat_in_collective_heat_sources")<> &mdash;
+              %span{ data: { query: "factsheet_share_of_waste_heat_in_collective_heat_sources" } }<> &mdash;
               )
             %li
               Warmtepompen
               (
-              %span(data-query="factsheet_share_of_heatpump_in_collective_heat_sources")<> &mdash;
+              %span{ data: { query: "factsheet_share_of_heatpump_in_collective_heat_sources" } }<> &mdash;
               )
             %li
               Overig
               (
-              %span(data-query="factsheet_share_of_other_in_collective_heat_sources")<> &mdash;
+              %span{ data: { query: "factsheet_share_of_other_in_collective_heat_sources" } }<> &mdash;
               )
           .solar-arrow
             .sideways
             .tail
             .head
-            .quantity(data-query="factsheet_share_of_solar_thermal_in_collective_heat_sources" data-precision="0") &mdash;
+            .quantity{ data: { query: "factsheet_share_of_solar_thermal_in_collective_heat_sources", precision: "0" } } &mdash;
         .panel.heat
           %h3 Individuele Warmte
-          .value(data-query="factsheet_supply_of_individual_heat_total") &mdash;
+          .value{ data: { query: "factsheet_supply_of_individual_heat_total" } } &mdash;
           %ul
             %li
               Warmtepompen
-              %span(data-query="factsheet_share_of_heatpump_in_individual_heat") &mdash;
+              %span{ data: { query: "factsheet_share_of_heatpump_in_individual_heat" } } &mdash;
             %li
               Overig
-              %span(data-query="factsheet_share_other_in_individual_heat") &mdash;
+              %span{ data: { query: "factsheet_share_other_in_individual_heat" } } &mdash;
           .solar-arrow
             .tail
             .head
-            .quantity(data-query="factsheet_share_solar_thermal_in_individual_heat" data-precision="0") &mdash;
+            .quantity{ data: { query: "factsheet_share_solar_thermal_in_individual_heat", precision: "0" } } &mdash;
           .biomass-arrow
-            .quantity(data-query="factsheet_share_biomass_in_individual_heat" data-precision="0") &mdash;
+            .quantity{ data: { query: "factsheet_share_biomass_in_individual_heat", precision: "0" } } &mdash;
             .heat
             .tail
       .row
         .panel.renewable-gas
           %h3 (Hernieuwbaar) Gas
-          .value(data-query="factsheet_supply_of_gas_total") &mdash;
+          .value{ data: { query: "factsheet_supply_of_gas_total" } } &mdash;
           %ul.has-icons
             %li
               Aardgas
               (
-              %span(data-query="factsheet_share_natural_gas_in_total_gas")<> &mdash;
+              %span{ data: { query: "factsheet_share_natural_gas_in_total_gas" } }<> &mdash;
               )
               %span.icon.natural-gas
             %li
               Biogas
               (
-              %span(data-query="factsheet_share_greengas_in_total_gas")<> &mdash;
+              %span{ data: { query: "factsheet_share_greengas_in_total_gas" } }<> &mdash;
               )
               %span.icon.biogas
             %li
               Waterstof
               (
-              %span(data-query="factsheet_share_hydrogen_in_total_gas")<> &mdash;
+              %span{ data: { query: "factsheet_share_hydrogen_in_total_gas" } }<> &mdash;
               )
               %span.icon.power-to-gas
         .panel.biomass
           %h3 Biomassa
-          .value(data-query="factsheet_demand_of_biomass_total") &mdash;
+          .value{ data: { query: "factsheet_demand_of_biomass_total" } } &mdash;
           %ul.has-icons
             %li
               Bijstook biomassa
-              %span.icon.biomass-heat(data-query="factsheet_demand_of_biomass_in_individual_heat_production") &mdash;
+              %span.icon.biomass-heat{ data: { query: "factsheet_demand_of_biomass_in_individual_heat_production" } } &mdash;
             %li
               Transport
-              %span.icon.biomass-transport(data-query="factsheet_demand_of_biomass_transport") &mdash;
+              %span.icon.biomass-transport{ data: { query: "factsheet_demand_of_biomass_transport" } } &mdash;
             %li
               Overig
-              %span(data-query="factsheet_demand_of_biomass_other") &mdash;
+              %span{ data: { query: "factsheet_demand_of_biomass_other" } } &mdash;
 
   %footer
     Deze infographic is gegenereerd door het Energietransitiemodel

@@ -64,6 +64,15 @@ en:
             </a>
           </li>
         </ul>
+    data_export_molecule_flows:
+      title: Molecule flows
+      short_description:
+      description: |
+        The Energy Transition Model models the flow of molecules through many different uses and
+        conversions. This CSV provides a list of these flows (inputs and outputs).
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
+        </ul>
     data_export_network_gas:
       title: Hourly curves for gas
       short_description:

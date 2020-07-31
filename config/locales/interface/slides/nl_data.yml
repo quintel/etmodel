@@ -83,6 +83,16 @@ nl:
         <ul class="data-download">
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
         </ul>
+    data_export_molecule_graph:
+      title: Molecule graph
+      short_description:
+      description: |
+        A detailed breakdown of molecule flows throughout the Energy Transition
+        Model is available for advanced users.
+        <br /><br />
+        <a href="%{etengine_url}/data/%{scenario_id}/layouts/molecules" class="simple-button" target="_blank" rel="noopener nofollow">
+          <span class="fa fa-book"></span> View the graph →
+        </a>
     data_export_network_gas:
       title: Uurlijkse profielen voor gas
       short_description:
@@ -115,7 +125,7 @@ nl:
         energie-omzetters van het Energietransitiemodel. Bedoeld voor gevorderde
         gebruikers.
         <br /><br />
-        <a href="%{etengine_url}/data/%{scenario_id}/layout" class="simple-button" target="_blank" rel="noopener nofollow">
+        <a href="%{etengine_url}/data/%{scenario_id}/layouts/energy" class="simple-button" target="_blank" rel="noopener nofollow">
           <span class="fa fa-book"></span> Bekijk de energiegraaf →
         </a>
     data_visuals_scenario_report:

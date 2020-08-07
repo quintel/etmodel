@@ -179,20 +179,6 @@ en:
         at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/>\r\nThe input
         of the slider (in MW) is converted to a (partial) number of the plant described
         above."
-    capacity_of_energy_power_ultra_supercritical_ccs_coal:
-      title: Pulverized coal CCS
-      short_description: ''
-      description: "The same pulverized coal-fired plant as above. This one uses capture
-        and storage of most of the produced CO<sub>2</sub>. This technology is called
-        'Carbon Capture and Storage' (CCS). Because CCS costs energy, this power plant
-        has a lower effective production capacity than a standard coal-fired power
-        plant. To make the same amount of electricity, more fuel is burnt. <br/>\r\nThe
-        CCS plant contributes less to air pollution by CO<sub>2</sub> and other materials
-        than its non-CCS counterpart. Also see information in section 'Costs'. \r\n<br/><br/>\r\nA
-        coal-fired power plant is a baseload power plant, meaning it is producing
-        at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/> \r\nThe input
-        of the slider (in MW) is converted to a (partial) number of the plant described
-        above."
     capacity_of_energy_power_combined_cycle_coal:
       title: Coal IGCC
       short_description: ''
@@ -205,29 +191,6 @@ en:
         this plant more flexible than its solid coal-fired counterparts.\r\n\r\n<br/><br/>
         \r\nThe input of the slider (in MW) is converted to a (partial) number of
         the plant described above.\r\n "
-    capacity_of_energy_power_combined_cycle_ccs_coal:
-      title: Coal IGCC CCS
-      short_description: ''
-      description: "This is the same IGCC plant as above, except that it captures
-        and stores most of the produced CO<sub>2</sub>. This is called Carbon Capture
-        and Storage (CCS). Because CCS costs energy, this power plant has a lower
-        effective production capacity than a standard IGCC power plant. To make the
-        same amount of electricity, more fuel is burnt. \r\n<br/> Also see information
-        in section 'Costs'. \r\n\r\n<br/><br/> \r\n\r\nThe input of the slider (in
-        MW) is converted to a (partial) number of the plant described above."
-    capacity_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
-      title: Lignite oxyfuel CCS
-      short_description: ''
-      description: "800 MWe coal or lignite power plant using capture and underground
-        storage of CO<sub>2</sub>. This plant burns fuel in the presence of 100% oxygen,
-        making the fuel burn better. The exhaust fumes therefore contain higher concentrations
-        of CO<sub>2</sub>, making it cheaper to capture and store it underground.
-        \r\nThis experimental technology is called oxyfuel 'Carbon Capture and Storage'
-        (CCS). Because CCS costs energy, this power plant has a lower effective production
-        capacity than a standard coal-fired power plant. To make the same amount of
-        electricity, more fuel is burnt.\r\n<br/> Also see information in section
-        'Costs'. \r\n\r\n<br/><br/> \r\nThe input of the slider (in MW) is converted
-        to a (partial) number of the plant described above."
     capacity_of_energy_power_supercritical_coal:
       title: Coal conventional
       short_description: ''
@@ -398,18 +361,6 @@ en:
         The CHP is partly used to supply heat to the grid and partly driven by electricity
         prices. It supplies electricity for ~6000 hours per year and heat for ~4500
         hours per year."
-    capacity_of_energy_power_combined_cycle_ccs_network_gas:
-      title: Gas CCGT CCS
-      short_description: ''
-      description: "The same gas-fired plant as above. This one uses capture and storage
-        of most of the produced CO<sub>2</sub>. This technology is called 'Carbon
-        Capture and Storage' (CCS). Because CCS costs energy, this power plant has
-        a lower effective production capacity than a standard CCGT power plant. To
-        make the same amount of electricity, more fuel is burnt.\r\n<br/><br/>\r\nFlexible
-        gas-fired plants are often used for meeting daily electricity demand peaks
-        and therefore produce less electricity per year than coal-fired plants of
-        the same production capacity. A CCS plant is less flexible than its non-CCS
-        counterpart."
     capacity_of_energy_power_turbine_network_gas:
       title: Gas turbine
       short_description:

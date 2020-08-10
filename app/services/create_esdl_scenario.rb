@@ -19,7 +19,11 @@ class CreateEsdlScenario
   private
 
   def send_request
-    HTTParty.public_send(:post, api_url, { body: { energysystem: @esdl_file } })
+    HTTParty.public_send(
+      :post,
+      api_url,
+      { body: { energysystem: @esdl_file, environment: environment } }
+    )
   end
 
   def handle_response(response)
@@ -31,6 +35,12 @@ class CreateEsdlScenario
       # Malformed request
       ServiceResult.failure(response)
     end
+  end
+
+  def environment
+    return 'pro' if Rails.env == 'production'
+
+    'beta'
   end
 
   def api_url

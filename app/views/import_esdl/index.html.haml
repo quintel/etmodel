@@ -5,9 +5,9 @@
 
   .description
     %p= t('esdl.description')
-    %strong= t('esdl.upload')
+
 
   = form_with url: import_esdl_create_path do |f|
-
+    %strong= t('esdl.upload')
     = f.file_field :esdl_file, required: true, accept: '.esdl'
     = f.submit t('esdl.start'), class: 'button'

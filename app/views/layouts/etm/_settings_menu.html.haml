@@ -34,7 +34,9 @@
     - if controller_name != 'pages' && has_active_scenario?
       %li.sep
       %li.scenario_option
-        = link_to t('header.scale_scenario'), scaled_path, class: 'disabled'
+        = link_to t('header.scale_scenario'), '#',
+          data: { path: scale_scenario_path(scenario_id: ':scenario_id') },
+          class: 'scale-scenario disabled'
       - if params[:debug]
         %li.sep
         %li

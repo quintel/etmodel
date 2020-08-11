@@ -6,8 +6,6 @@ Etm::Application.routes.draw do
 
   get 'gql/search'
 
-  get '/scaled', to: 'pages#scaled'
-
   get '/texts/:id' => 'texts#show'
 
   get 'login'  => 'user_sessions#new', as: :login
@@ -80,6 +78,7 @@ Etm::Application.routes.draw do
   end
 
   get '/scenarios/:scenario_id/save', to: 'saved_scenarios#new', as: :new_saved_scenario
+  get '/scenarios/scale/:scenario_id', to: 'pages#scaled', as: :scale_scenario
 
   get '/scenario/new' => 'scenarios#new'
   get '/scenario/reset' => 'scenarios#reset'

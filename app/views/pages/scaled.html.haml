@@ -1,6 +1,6 @@
 #scaled_scenario_setup
   = form_tag load_scenarios_path, id: 'new_scaled_scenario' do
-    = hidden_field_tag 'id', Current.setting.api_session_id
+    = hidden_field_tag 'id', params[:scenario_id]
 
     = render partial: 'scaled_common'
 

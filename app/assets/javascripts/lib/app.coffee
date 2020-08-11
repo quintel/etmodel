@@ -234,6 +234,11 @@ class @AppView extends Backbone.View
     $(@disabledSettings())
       .removeClass('wait').off('click', disabledSetting)
 
+    new SettingsMenuView(
+      el: $('#settings_menu')[0],
+      scenario: @scenario
+    ).render()
+
     $('#settings_menu a.engine').attr('href', @scenario_url())
 
   # TODO: Move this interface methods to a separate Interface class

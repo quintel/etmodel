@@ -1,5 +1,13 @@
 $body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 $blueprint-button-font-family: $body-font-family
+$link-color: #63A0C9
+
+@mixin etm-link
+  color: $link-color
+  text-decoration: none
+  &:hover
+    color: darken($link-color, 23%)
+    text-decoration: underline
 
 body
   font-family: $body-font-family
@@ -12,7 +20,7 @@ h1
 img
   border-style: none
 a
-  color: #63A0C9
+  @include etm-link
 
 sub, sup
   line-height: 1

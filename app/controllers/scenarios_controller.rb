@@ -122,24 +122,19 @@ class ScenariosController < ApplicationController
     redirect_to play_path
   end
 
+  # Public: Updates a saved scenario by assigning the `scenario_id` param. JSON only.
+  #
+  # PUT /scenarios/:id
   def update
-    if Current.setting.api_session_id.blank?
-      redirect_to root_path
-      return
-    end
+    scenario_id = params.require(:scenario_id).to_i
+
     @saved_scenario = SavedScenario.find(params[:id])
-    update = UpdateSavedScenario.(@saved_scenario,
-                                  Current.setting.api_session_id)
-    respond_to do |format|
-      format.js {}
-      format.html do
-        if update.successful?
-          flash[:message] = t("flash.scenario_saved")
-        else
-          flash[:error] = update.errors
-        end
-        redirect_to scenarios_path
-      end
+    update = UpdateSavedScenario.call(@saved_scenario, scenario_id)
+
+    if update.successful?
+      render json: @saved_scenario
+    else
+      render json: { errors: update.errors }
     end
   end
 

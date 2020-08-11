@@ -28,9 +28,9 @@ class ScenariosController < ApplicationController
   def index
     @student_ids = current_user.students.pluck(:id)
     items = if current_user.admin?
-      SavedScenario.all.includes(:user)
+      SavedScenario.all.includes(:featured_scenario, :user)
     elsif current_user.students.present?
-      SavedScenario.includes(:user)
+      SavedScenario.includes(:featured_scenario, :user)
         .where(user_id: @student_ids + [current_user.id])
     else
       current_user.saved_scenarios

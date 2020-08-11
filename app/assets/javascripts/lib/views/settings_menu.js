@@ -30,11 +30,17 @@
       this.$el.find('.disabled').removeClass('disabled');
 
       // Update the ref for the "Save scenario as" link.
-      var saveAs = this.$el.find('.save-as');
-      saveAs.attr(
-        'href',
-        saveAs.data('path').replace(/:scenario_id/, this.options.scenario.get('id'))
-      );
+      var replaceLinks = this.$el.find('.save-as, .scale-scenario');
+      var self = this;
+
+      replaceLinks.each(function(_index, element) {
+        var anchor = $(element);
+
+        anchor.attr(
+          'href',
+          anchor.data('path').replace(/:scenario_id/, self.options.scenario.get('id'))
+        );
+      });
     }
   });
 

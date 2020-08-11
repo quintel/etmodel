@@ -53,51 +53,9 @@ class ScenariosController < ApplicationController
     end
   end
 
-  def new
-    if Current.setting.api_session_id.blank?
-      redirect_to root_path
-      return
-    end
-
-    @saved_scenario = SavedScenario.new(
-      area_code: Current.setting.area_code,
-      end_year: Current.setting.end_year
-    )
-    @saved_scenario.api_session_id = Current.setting.api_session_id
-  end
-
   def reset
     Current.setting.reset_scenario
     redirect_to_back
-  end
-
-  # Saves a scenario. This implies two db records: a saved_scenario in the ETM
-  # and a proper scenario in the ETE. The ETM just stores the user_id,
-  # scenario_id, title and description.
-  #
-  # POST /scenarios/
-  #
-  # Set the protected flag to true. The scenario_id parameter is critical: it
-  # tells ETE to create a *copy* of the current scenario. Check in the engine
-  # the Scenario#scenario_id= method to see what's going on.
-  def create
-    ss_settings = params
-      .require(:saved_scenario)
-      .permit(:api_session_id, :title, :description, :area_code, :end_year)
-
-    raise NoScenarioIdError, self if ss_settings[:api_session_id].blank?
-
-    begin
-      CreateSavedScenario.call(
-        ss_settings[:api_session_id],
-        current_user,
-        ss_settings
-      )
-
-      Current.setting.active_scenario_title = ss_settings[:title]
-
-      redirect_to scenarios_path
-    end
   end
 
   # Loads a scenario from a id.

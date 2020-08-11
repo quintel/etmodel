@@ -22,8 +22,6 @@ class SavedScenario < ApplicationRecord
   belongs_to :user
   has_one :featured_scenario, dependent: :destroy
 
-  attr_accessor :api_session_id
-
   validates :user_id,     presence: true
   validates :scenario_id, presence: true
   validates :title,       presence: true

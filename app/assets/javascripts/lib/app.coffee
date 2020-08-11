@@ -32,6 +32,7 @@ class @AppView extends Backbone.View
     @api.ensure_id().done (id) =>
       if id != globals.api_session_id
         @settings.save({ api_session_id: id })
+      @scenario.set(id: id)
       @enableIdDependantSettings()
 
   # (Re)builds the list of sliders and renders them. This is usually called by

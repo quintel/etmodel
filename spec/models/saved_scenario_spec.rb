@@ -114,4 +114,45 @@ describe SavedScenario do
       expect(featured.saved_scenario).to be_featured
     end
   end
+
+  describe '#as_json' do
+    let(:scenario) { FactoryBot.create(:saved_scenario) }
+    let(:json) { scenario.as_json }
+
+    it 'includes the scenario_id attribute' do
+      expect(json).to include('scenario_id' => scenario.scenario_id)
+    end
+
+    it 'includes the scenario_id_history attribute' do
+      expect(json).to include('scenario_id_history' => scenario.scenario_id_history)
+    end
+
+    it 'omits the user_id attribute' do
+      expect(json.keys).not_to include('user_id')
+    end
+
+    it 'omits the settings attribute' do
+      expect(json.keys).not_to include('settings')
+    end
+
+    context 'with { except: :scenario_id }' do
+      let(:json) { scenario.as_json(except: [:scenario_id]) }
+
+      it 'omits the scenario_id attribute' do
+        expect(json.keys).not_to include('scenario_id')
+      end
+
+      it 'includes the scenario_id_history attribute' do
+        expect(json).to include('scenario_id_history' => scenario.scenario_id_history)
+      end
+
+      it 'omits the user_id attribute' do
+        expect(json.keys).not_to include('user_id')
+      end
+
+      it 'omits the settings attribute' do
+        expect(json.keys).not_to include('settings')
+      end
+    end
+  end
 end

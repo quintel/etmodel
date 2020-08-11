@@ -22,11 +22,8 @@
     %li
       - if has_active_scenario?
         - if save_scenario_enabled?
-          =link_to t('header.save_scenario'),
-                   scenario_path(active_saved_scenario_id),
-                   method: :put,
-                   class: 'save save-scenario',
-                   remote: true
+          %button.save-scenario.as-link{ data: { path: scenario_path(active_saved_scenario_id) } }
+            = t('header.save_scenario')
 
         %a.save_as{:href => new_scenario_path}= t("header.save_scenario_as")
 

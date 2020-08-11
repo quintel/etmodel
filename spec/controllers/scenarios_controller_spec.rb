@@ -426,21 +426,30 @@ describe ScenariosController, vcr: true do
   end
 
   describe 'PUT update' do
-    # rubocop:disable RSpec/MessageSpies
-    context 'with valid params' do
+    context 'with a scenario ID' do
+      let(:request) { put(:update, params: { id: user_scenario.id, scenario_id: 99 }) }
+
+      before do
+        allow(UpdateSavedScenario).to receive(:call).and_return(ServiceResult.success('123'))
+      end
+
       it 'changes the scenario_id of the saved scenario' do
-        session[:setting] = Setting.new(area_code: 'nl', api_session_id: 12_345)
-        expect(UpdateSavedScenario).to receive(:call)
-          .with(user_scenario, 12_345)
-          .and_return(ServiceResult.success('123'))
-        put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
+        request
+        expect(UpdateSavedScenario).to have_received(:call).with(user_scenario, 99)
+      end
+
+      it 'returns the saved scenario JSON' do
+        request
+        expect(JSON.parse(response.body)).to eq(JSON.parse(user_scenario.to_json))
       end
     end
-    # rubocop:enable RSpec/MessageSpies
 
-    it 'redirects to root when no api_session_id exists in the session' do
-      put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
-      expect(response).to be_redirect
+    context 'with the scenario ID missing' do
+      let(:request) { put(:update, params: { id: user_scenario.id }) }
+
+      it 'raises an error' do
+        expect { request }.to raise_error(ActionController::ParameterMissing)
+      end
     end
   end
 end

@@ -23,7 +23,6 @@
 //= require fancybox
 //= require sortable.min
 //= require sign_up_form
-//= require save_indicator
 //= require saved_scenario
 //= require embeds
 //= require load_pico_embed

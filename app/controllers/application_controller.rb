@@ -97,7 +97,9 @@ private
 
   def current_user
     return @current_user if defined?(@current_user)
-    @current_user = current_user_session && current_user_session.user
+
+    # Re-find the user, to avoid AssociationMismatch errors or stale objects.
+    @current_user = current_user_session&.user && User.find(current_user_session.user.id)
   end
 
   # Internal: Renders a 404 page.

@@ -81,6 +81,66 @@ describe SavedScenariosController, vcr: true do
     end
   end
 
+  describe 'GET new' do
+    it 'renders the new saved scenario form' do
+      get :new, params: { scenario_id: user_scenario.id }
+      expect(response).to be_ok
+    end
+  end
+
+  describe 'POST create' do
+    before do
+      login_as(user)
+
+      allow(CreateAPIScenario).to receive(:call).and_return(
+        ServiceResult.success(Api::Scenario.new(
+          id: 999, area_code: 'nl', end_year: 2050
+        ))
+      )
+    end
+
+    context 'with valid attributes' do
+      let(:request) do
+        post :create, params: {
+          saved_scenario: { title: 'My first scenario', scenario_id: user_scenario.id }
+        }
+      end
+
+      it 'creates a new SavedScenario' do
+        expect { request }.to change(SavedScenario, :count).by(1)
+      end
+
+      it 'sets the scenario ID' do
+        request
+        expect(SavedScenario.last.scenario_id).to eq(999)
+      end
+
+      it 'redirect to the scenarios list' do
+        expect(request).to redirect_to(scenarios_path)
+      end
+    end
+
+    context 'with invalid attributes' do
+      before do
+        allow(UnprotectAPIScenario).to receive(:call).and_return(ServiceResult.success)
+      end
+
+      let(:request) do
+        post :create, params: {
+          saved_scenario: { scenario_id: user_scenario.id }
+        }
+      end
+
+      it 'does not create a new SavedScenario' do
+        expect { request }.not_to change(SavedScenario, :count)
+      end
+
+      it 'renders the form' do
+        expect(request).to render_template(:new)
+      end
+    end
+  end
+
   describe 'PUT update' do
     let(:update) do
       put :update, format: :js, params: {

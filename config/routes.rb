@@ -46,7 +46,7 @@ Etm::Application.routes.draw do
     resources :texts, except: [:show]
   end
 
-  resources :scenarios, except: [:edit] do
+  resources :scenarios, except: [:new, :edit] do
     collection do
       post :load
       get :compare
@@ -64,7 +64,7 @@ Etm::Application.routes.draw do
     end
   end
 
-  resources :saved_scenarios, only: %i[index show update edit] do
+  resources :saved_scenarios, except: %i[new destroy] do
     resource :feature, only: %i[show create update destroy], controller: 'featured_scenarios'
 
     member do
@@ -78,6 +78,8 @@ Etm::Application.routes.draw do
 
     get '/report/:report_name' => 'saved_scenario_reports#show'
   end
+
+  get '/scenarios/:scenario_id/save', to: 'saved_scenarios#new', as: :new_saved_scenario
 
   get '/scenario/new' => 'scenarios#new'
   get '/scenario/reset' => 'scenarios#reset'

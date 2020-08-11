@@ -15,7 +15,7 @@
       var request = $.ajax({
         url: event.target.dataset.path,
         data: {
-          scenario_id: this.options.scenario.api_session_id()
+          scenario_id: this.options.scenario.get('id')
         },
         dataType: 'json',
         method: 'put'
@@ -24,6 +24,17 @@
       request.always(function() {
         $('body').removeClass('is-saving');
       });
+    },
+
+    render: function() {
+      this.$el.find('.disabled').removeClass('disabled');
+
+      // Update the ref for the "Save scenario as" link.
+      var saveAs = this.$el.find('.save-as');
+      saveAs.attr(
+        'href',
+        saveAs.data('path').replace(/:scenario_id/, this.options.scenario.get('id'))
+      );
     }
   });
 

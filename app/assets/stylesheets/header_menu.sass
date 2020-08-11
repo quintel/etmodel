@@ -110,6 +110,12 @@ a.signin, a.settings, a.information
     &:focus
       outline: none
 
+  a.disabled, button.disabled
+    color: #999
+    pointer-events: none
+    &:hover
+      cursor: default
+
   .scenario_option
     input
       font-size: 16px

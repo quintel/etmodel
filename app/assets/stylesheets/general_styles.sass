@@ -15,6 +15,36 @@ body
   line-height: 20px
   margin: 0
 
+#toast-notification
+  background: white
+  border-radius: 5px
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.06)
+  box-sizing: border-box
+  color: #444
+  cursor: pointer
+  font-size: 14px
+  left: 50%
+  margin-left: -125px
+  overflow: hidden
+  padding: 10px
+  position: fixed
+  text-align: center
+  top: 18px
+  width: 250px
+  z-index: 999
+  .bar, .progress
+    background: #dfe8f3
+    height: 4px
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
+  .progress
+    background: #a0d229
+    width: 0px
+  &.success
+    color: #4c804c
+
 h1
   line-height: 1em
 img

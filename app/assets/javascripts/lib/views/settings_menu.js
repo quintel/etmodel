@@ -1,4 +1,4 @@
-/* globals $ Backbone */
+/* globals $ Backbone I18n Interface ToastView */
 
 (function(window) {
   'use strict';
@@ -9,8 +9,7 @@
     },
 
     saveScenario: function(event) {
-      $('body').addClass('is-saving');
-      window.Interface.close_all_menus();
+      event.target.classList.add('disabled');
 
       var request = $.ajax({
         url: event.target.dataset.path,
@@ -22,7 +21,18 @@
       });
 
       request.always(function() {
-        $('body').removeClass('is-saving');
+        event.target.classList.remove('disabled');
+        Interface.close_all_menus();
+      });
+
+      request.success(function() {
+        ToastView.create('<span class="fa fa-check"></span> ' + I18n.t('toast.scenario_saved'), {
+          className: 'success'
+        }).start();
+      });
+
+      request.error(function() {
+        ToastView.destroyAll();
       });
     },
 

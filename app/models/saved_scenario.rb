@@ -22,8 +22,6 @@ class SavedScenario < ApplicationRecord
   belongs_to :user
   has_one :featured_scenario, dependent: :destroy
 
-  attr_accessor :api_session_id
-
   validates :user_id,     presence: true
   validates :scenario_id, presence: true
   validates :title,       presence: true
@@ -51,6 +49,19 @@ class SavedScenario < ApplicationRecord
     end
 
     saved_scenarios
+  end
+
+  # Public: Cutomizes the attributes returned by `as_json` and `to_xml`. Omits the deprecated
+  # `settings` attribute, and `user_id`.
+  #
+  # Returns a hash.
+  def serializable_hash(options = {})
+    # Options is sometimes explictly nil.
+    options ||= {}
+
+    super(options.merge(
+      except: (options[:except] || []) + %i[settings user_id]
+    ))
   end
 
   def scenario(detailed: false)

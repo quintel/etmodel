@@ -88,76 +88,6 @@ describe ScenariosController, vcr: true do
         session[:setting] = Setting.new(api_session_id: 12_345)
       end
 
-      describe '#new' do
-        subject do
-          get :new
-          response
-        end
-
-        it { is_expected.to be_successful }
-        it 'shows a form to save the scenario' do
-          subject
-          expect(assigns(:saved_scenario).api_session_id).to eq(12_345)
-        end
-        it 'redirects to root' do
-          session[:setting] = Setting.default
-          expect(subject).to be_redirect
-        end
-      end
-
-      describe '#create' do
-        context 'with a current scenario' do
-          subject do
-            allow(Api::Scenario).to receive(:create).and_return scenario_mock
-            post :create, params: { saved_scenario: {
-              api_session_id: 12_345,
-              title: 'title',
-              area_code: 'nl',
-              end_year: 2050
-            } }
-            response
-          end
-
-          it { is_expected.to redirect_to(scenarios_path) }
-          it 'saves a scenario' do
-            expect { subject }.to change(SavedScenario, :count)
-          end
-        end
-
-        context 'with no current scenario' do
-          subject do
-            allow(Api::Scenario).to receive(:create)
-            post :create, params: { saved_scenario: { api_session_id: '' } }
-            response
-          end
-
-          it { is_expected.not_to be_successful }
-          it { is_expected.to render_template(:cannot_save_without_id) }
-          it 'does not call create' do
-            subject
-            expect(Api::Scenario).not_to have_received(:create)
-          end
-          it 'does not save' do
-            expect { subject }.not_to change(SavedScenario, :count)
-          end
-        end
-
-        context 'with no title set' do
-          subject do
-            allow(Api::Scenario).to(receive(:create).and_return(scenario_mock))
-            allow(UnprotectAPIScenario).to receive(:call)
-            post :create, params: { saved_scenario: { api_session_id: 12_345 } }
-            response
-          end
-
-          it { is_expected.not_to be_successful }
-
-          it 'does not save' do
-            expect { subject }.not_to change(SavedScenario, :count)
-          end
-        end
-      end
-
       describe '#show' do
         context 'with a loadable scenario' do
           subject do
@@ -426,21 +356,30 @@ describe ScenariosController, vcr: true do
   end
 
   describe 'PUT update' do
-    # rubocop:disable RSpec/MessageSpies
-    context 'with valid params' do
+    context 'with a scenario ID' do
+      let(:request) { put(:update, params: { id: user_scenario.id, scenario_id: 99 }) }
+
+      before do
+        allow(UpdateSavedScenario).to receive(:call).and_return(ServiceResult.success('123'))
+      end
+
       it 'changes the scenario_id of the saved scenario' do
-        session[:setting] = Setting.new(area_code: 'nl', api_session_id: 12_345)
-        expect(UpdateSavedScenario).to receive(:call)
-          .with(user_scenario, 12_345)
-          .and_return(ServiceResult.success('123'))
-        put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
+        request
+        expect(UpdateSavedScenario).to have_received(:call).with(user_scenario, 99)
+      end
+
+      it 'returns the saved scenario JSON' do
+        request
+        expect(JSON.parse(response.body)).to eq(JSON.parse(user_scenario.to_json))
       end
     end
-    # rubocop:enable RSpec/MessageSpies
 
-    it 'redirects to root when no api_session_id exists in the session' do
-      put :update, params: { id: user_scenario.id, scenario_id: 12_345 }
-      expect(response).to be_redirect
+    context 'with the scenario ID missing' do
+      let(:request) { put(:update, params: { id: user_scenario.id }) }
+
+      it 'raises an error' do
+        expect { request }.to raise_error(ActionController::ParameterMissing)
+      end
     end
   end
 end

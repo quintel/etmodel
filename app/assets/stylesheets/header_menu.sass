@@ -95,6 +95,27 @@ a.signin, a.settings, a.information
     margin: 5px 0 0
     padding-top: 8px
 
+  button.as-link
+    @include etm-link
+    background: none
+    border: none
+    font-size: 13px
+    margin: -3px
+    padding: 0
+    padding: 3px
+    text-align: left
+    width: 100%
+    &:hover
+      cursor: pointer
+    &:focus
+      outline: none
+
+  a.disabled, button.disabled
+    color: #999
+    pointer-events: none
+    &:hover
+      cursor: default
+
   .scenario_option
     input
       font-size: 16px

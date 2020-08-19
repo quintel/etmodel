@@ -22,20 +22,21 @@
     %li
       - if has_active_scenario?
         - if save_scenario_enabled?
-          =link_to t('header.save_scenario'),
-                   scenario_path(active_saved_scenario_id),
-                   method: :put,
-                   class: 'save save-scenario',
-                   remote: true
+          %button.save-scenario.as-link.disabled{ data: { path: scenario_path(active_saved_scenario_id) } }
+            = t('header.save_scenario')
 
-        %a.save_as{:href => new_scenario_path}= t("header.save_scenario_as")
+        %a.save-as.disabled{ href: '#', data: { path: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+          = t("header.save_scenario_as")
 
-        %a#reset_scenario{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }= t("header.reset_scenario")
+        %a#reset_scenario.disabled{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }
+          = t("header.reset_scenario")
 
     - if controller_name != 'pages' && has_active_scenario?
       %li.sep
       %li.scenario_option
-        = link_to t('header.scale_scenario'), scaled_path
+        = link_to t('header.scale_scenario'), '#',
+          data: { path: scale_scenario_path(scenario_id: ':scenario_id') },
+          class: 'scale-scenario disabled'
       - if params[:debug]
         %li.sep
         %li

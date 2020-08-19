@@ -31,7 +31,11 @@ CreateSavedScenario = lambda do |scenario_id, user, settings = {}|
 
   unless saved_scenario.valid?
     UnprotectAPIScenario.call(api_scenario.id)
-    return ServiceResult.failure(saved_scenario.errors.full_messages)
+
+    # Set the scenario ID back to the original, rather than the cloned scenario created by
+    # CreateApiScenario.
+    saved_scenario.scenario_id = scenario_id
+    return ServiceResult.failure(saved_scenario.errors.full_messages, saved_scenario)
   end
 
   saved_scenario.save

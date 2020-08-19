@@ -43,6 +43,38 @@ class SavedScenariosController < ApplicationController
     end
   end
 
+  # Shows a form for creating a new saved scenario.
+  #
+  # GET /scenarios/:scenario_id/save
+  def new
+    @saved_scenario = SavedScenario.new(scenario_id: params.require(:scenario_id))
+  end
+
+  # Saves a scenario by creating a SavedScenario.
+  #
+  # This implies two DB records: a SavedSenario in the ETM and a Scenario in ETEngine. ETModel
+  # stores the user_id,  scenario_id, and some other useful scenario metadata..
+  #
+  # POST /saved_scenarios
+  def create
+    ss_params = params.require(:saved_scenario).permit(:description, :title, :scenario_id)
+
+    # Re-find the user, due to AssociationMismatch errors in development.
+    result = CreateSavedScenario.call(ss_params[:scenario_id], current_user, ss_params)
+
+    if result.failure?
+      @saved_scenario = result.value || SavedScenario.new(ss_params)
+      render :new, status: :unprocessable_entity
+      return
+    end
+
+    if Current.setting.api_session_id == ss_params[:scenario_id].to_i
+      Current.setting.active_scenario_title = ss_params[:title]
+    end
+
+    redirect_to scenarios_path
+  end
+
   def load
     scenario_attrs = { scenario_id: @saved_scenario.scenario_id }
 

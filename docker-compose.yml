@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        RUBY_VERSION: '2.6.6'
+    ports:
+      - "3001:3000"
+    volumes:
+      - .:/usr/src/app:cached
+      - bundle:/usr/local/bundle
+      - node_modules:/usr/src/app/node_modules
+      - packs:/usr/src/app/public/packs
+      - rails_cache:/usr/src/app/tmp/cache
+      - storage:/usr/src/app/storage
+    env_file:
+      - .env/development/database
+      - .env/development/web
+    tmpfs:
+      - /tmp
+    depends_on:
+      - database
+
+  database:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    env_file:
+      - .env/development/database
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  bundle:
+  db_data:
+  node_modules:
+  packs:
+  rails_cache:
+  storage:

@@ -1,12 +1,8 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ymodel/version'
-
 Gem::Specification.new do |spec|
   spec.name          = 'ymodel'
-  spec.version       = YModel::VERSION
+  spec.version       = '0.1.0'
   spec.authors       = ['Steven Kemp']
   spec.email         = ['steven.kemp@quintel.com']
 

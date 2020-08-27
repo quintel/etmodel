@@ -103,8 +103,7 @@ group :production, :staging do
   gem 'newrelic_rpm'
 end
 
-gem 'therubyracer', '~> 0.12.0'
-gem 'libv8', '~> 3.16.14.3'
+gem 'mini_racer'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'

@@ -206,7 +206,7 @@ GEM
     kaminari-core (1.2.1)
     launchy (2.4.3)
       addressable (~> 2.3)
-    libv8 (3.16.14.19)
+    libv8 (8.4.255.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -225,6 +225,8 @@ GEM
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
+    mini_racer (0.3.1)
+      libv8 (~> 8.4.255)
     minitest (5.14.1)
     multi_json (1.13.1)
     multi_xml (0.6.0)
@@ -300,7 +302,6 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdiscount (2.2.0.1)
-    ref (2.0.0)
     regexp_parser (1.7.1)
     request_store (1.4.1)
       rack (>= 1.4)
@@ -388,9 +389,6 @@ GEM
       net-ssh (>= 2.8.0)
     tabs_on_rails (3.0.0)
     temple (0.8.0)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -452,10 +450,10 @@ DEPENDENCIES
   jquery-rails (~> 4.2.2)
   kaminari (~> 1.2.1)
   launchy
-  libv8 (~> 3.16.14.3)
   listen (~> 3.0.5)
   local_time
   loofah
+  mini_racer
   mysql2
   newrelic_rpm
   nokogiri (~> 1.10)
@@ -485,7 +483,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tabs_on_rails (~> 3.0)
-  therubyracer (~> 0.12.0)
   tomdoc
   uglifier
   vcr (~> 3.0.3)

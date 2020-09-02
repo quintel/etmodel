@@ -88,24 +88,26 @@
               PV-panelen op dak
               (
               %span{ data: { query: "energy_mix_capacity_per_panel_solar_pv" } }<> &mdash;
-              \ kWp)
-            %li{ data: { query: "factsheet_supply_electricity_from_roof_solar" } } &mdash;
+              \ kWp) ->
+              %span{ data: { query: "factsheet_supply_electricity_from_roof_solar" } } &mdash;
             %li
               %span{ data: { query: "factsheet_solar_pv_plants_land_use" } } &mdash;
-              ha zonneveld
-              %span.icon.solar-pv
-            %li
+              ha zonnevelden PV ->
               %span{ data: { query: "factsheet_supply_from_solar_pv_plants" } } &mdash;
             %li
               %span{ data: { query: "factsheet_installed_capacity_of_solar_pv", as: "MW" } } &mdash;
               zon PV totaal
             %li.spacer
             %li
-              %span{ data: { query: "factsheet_number_of_water_heater_solar_thermal", precision: "-3" } } &mdash;
-              zonnecollectoren
+              %span{ data: { query: "factsheet_number_of_roof_water_heater_solar_thermal", precision: "-3" } } &mdash;
+              zonnecollectoren op dak
+            %li
+              %span{ data: { query: "factsheet_solar_thermal_plants_land_use", precision: "-3" } } &mdash;
+              ha zonthermieparken
             %li{ data: { query: "factsheet_supply_heat_from_solar_thermal" } } &mdash;
             %li
               %span{ data: { query: "factsheet_installed_capacity_of_solar_thermal", as: "MW" } } &mdash;
+              zonthermie totaal
               %span.icon.solar-thermal
       .row
         .panel.collective-heat

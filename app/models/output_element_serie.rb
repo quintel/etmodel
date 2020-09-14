@@ -34,6 +34,7 @@ class OutputElementSerie < YModel::Base
   index_on :key
   source_file 'config/interface/output_element_series'
   belongs_to :output_element
+  default_attribute :order_by, with: Float::INFINITY
 
   class << self
     def contains(search)

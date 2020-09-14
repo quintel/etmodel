@@ -1,3 +1,43 @@
+# A custom column stack method.
+#
+# Determines the y and y0 value for each series within a column. This allows us to stack series on
+# top of one another. Series which positive values are positioned above the zero axis, while those
+# with a negative value are positioned below.
+#
+# The series "y" value corresponds with its value; the "y0" is the sum of the
+# series which appear below. For example with three series:
+#
+#   * a: 10
+#   * b: 20
+#   * c: 10
+#
+# The values assigned will be:
+#
+#   * a - y: 10, y0: 0
+#   * b - y: 20, y0: 10
+#   * c - y: 10, y0: 30
+#
+# D3.js v2 does not support negative values in stacks. Newer versions (v6+) do support a "diverging"
+# stack methods which appears to support this.
+stackColumn = (series, zeroOffset) ->
+  positiveY = zeroOffset
+  negativeY = zeroOffset
+
+  series.map (serie) ->
+    if serie.y >= 0
+      serie.y0 = positiveY
+      positiveY += serie.y
+    else
+      negativeY -= Math.abs(serie.y)
+      serie.y0 = negativeY
+      serie.y = Math.abs(serie.y)
+
+    serie
+
+stacker = (data, zeroOffset) ->
+  _.flatten data.map (series) ->
+    stackColumn(series, zeroOffset)
+
 D3.stacked_bar =
   View: class extends D3ChartView
     initialize: ->
@@ -5,9 +45,8 @@ D3.stacked_bar =
       @series = @model.series.models
       # the stack method will filter the data and calculate the offset
       # for every item
-      @stack_method = (columns) ->
-        _.flatten(columns.map (column) ->
-          d3.layout.stack().offset('zero')(column.map (item) -> [item]))
+      @stack_method = (columns) =>
+        stacker(columns, Math.abs(@inverted_y.domain()[0]))
 
     can_be_shown_as_table: -> true
 
@@ -56,6 +95,11 @@ D3.stacked_bar =
 
       @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
       @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 7])
+
+      @svg.selectAll('rect.negative-region')
+        .data([0])
+        .enter().append('svg:rect')
+        .attr('class', 'negative-region')
 
       # there we go
       rect = @svg.selectAll('rect.serie')
@@ -110,23 +154,37 @@ D3.stacked_bar =
         .attr('y', 0)
 
     refresh: =>
-      # calculate tallest column
       tallest = (@model.max_series_value() || 0) * 1.05
+      smallest = Math.min(@model.min_series_value(), 0)
+
       # update the scales as needed
-      @y = @y.domain([0, tallest]).nice()
-      @inverted_y = @inverted_y.domain([0, tallest]).nice()
+      @y = @y.domain([0, Math.abs(smallest) + tallest])
+      @inverted_y = @inverted_y.domain([smallest, tallest])
 
       @y_axis.tickFormat(@main_formatter())
 
       # animate the y-axis
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
+      # If the chart has negative values, make the tick line corresponding with value 0 fully
+      # black.
+      @svg.selectAll('.y_axis .tick')
+        .attr('class', (d) -> if smallest < 0 && d == 0 then 'tick bold' else 'tick')
+
+      @svg.selectAll('rect.negative-region')
+        .data([Math.abs(smallest)])
+        .transition()
+        .attr('height', (d) => @y(d))
+        .attr('width', @width)
+        .attr('x', 0 - @margins.left + 5)
+        .attr('y', (d) => @series_height - @y(d))
+
       @svg.selectAll('rect.serie')
         .data(@stack_method(@prepare_data()), (s) -> s.id)
         .transition()
         .attr('y', (d) => @series_height - @y(d.y0 + d.y))
-        .attr('height', (d) => @y(d.y))
-        .attr("data-tooltip-text", (d) => @main_formatter()(d.y))
+        .attr('height', (d) => @y(Math.abs(d.y)))
+        .attr("data-tooltip-text", (d) => @main_formatter()(d.value))
 
       # move the target lines
       @svg.selectAll('rect.target_line')
@@ -141,9 +199,9 @@ D3.stacked_bar =
         .transition()
         .attr 'y', (d) =>
           value = if d.get('target_line_position') is '1'
-            d.safe_present_value()
+            Math.abs(smallest) + d.safe_present_value()
           else
-            d.safe_future_value()
+            Math.abs(smallest) + d.safe_future_value()
 
           @series_height - @y(value)
 
@@ -205,7 +263,8 @@ D3.stacked_bar =
         year_1990.push(
           {
             x: 1990
-            y: s.safe_present_value()
+            y: Math.abs(s.safe_present_value()),
+            value: s.safe_present_value()
             id: "#{s.get 'gquery_key'}_1990"
             color: s.get('color')
             label: s.get('label')
@@ -217,7 +276,8 @@ D3.stacked_bar =
         present.push(
           {
             x: App.settings.get('start_year')
-            y: s.safe_present_value()
+            y: Math.abs(s.safe_present_value())
+            value: s.safe_present_value()
             id: "#{s.get 'gquery_key'}_present"
             color: s.get('color')
             label: s.get('label')
@@ -226,6 +286,7 @@ D3.stacked_bar =
           {
             x: App.settings.get('end_year')
             y: s.safe_future_value()
+            value: s.safe_future_value()
             id: "#{s.get 'gquery_key'}_future"
             color: s.get('color')
             label: s.get('label')

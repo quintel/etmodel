@@ -3,7 +3,7 @@ class @Gquery extends Backbone.Model
     window.gqueries.add(this)
     @references = 1
 
-  future_value: -> @get 'future'
+  future_value: -> @get('future')
   present_value: -> @get 'present'
 
   safe_present_value: =>

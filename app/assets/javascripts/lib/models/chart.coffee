@@ -8,15 +8,40 @@ chart_values = (model) ->
     model.values_targets()...
   ]
 
-# Given a chart model, returns an array of values which may be used to compute
-# the minimum or maximum values shown in the chart.
-series_values = (model) ->
+# Given a chart model, returns an array of values which may be used to compute the maximum value
+# shown in the chart.
+series_upper_bounds = (model) ->
   [
-    _.sum(model.values_1990()),
-    _.sum(model.values_present()),
-    _.sum(model.values_future()),
+    serie_upper_bound(model.values_1990()),
+    serie_upper_bound(model.values_present()),
+    serie_upper_bound(model.values_future()),
     model.values_targets()...
   ]
+
+# Given a chart model, returns an array of values which may be used to compute the minimum value
+# shown in the chart.
+series_lower_bounds = (model) ->
+  [
+    serie_lower_bound(model.values_1990()),
+    serie_lower_bound(model.values_present()),
+    serie_lower_bound(model.values_future()),
+    model.values_targets()...
+  ]
+
+serie_upper_bound = (values) ->
+  _.sum(values.filter((val) -> val > 0))
+
+# Returns the lower bound of the values given. If all the values are positive, the sum of all the
+# values will be returned.
+#
+# If there are any negative values, the sum of all the negative values are returned instead.
+serie_lower_bound = (values) ->
+  negatives = values.filter((val) -> val < 0)
+
+  if negatives.length
+    _.sum(negatives)
+  else
+    _.sum(values)
 
 # The big picture: the chart object renders a chart that can be based on
 # jqPlot (IE<9) or D3 (newer browsers). The chart will be rendered inside a
@@ -181,10 +206,10 @@ class @Chart extends Backbone.Model
     _.max(chart_values(this))
 
   min_series_value: ->
-    _.min(series_values(this))
+    _.min(series_lower_bounds(this))
 
   max_series_value: ->
-    _.max(series_values(this))
+    _.max(series_upper_bounds(this))
 
   # @return [[Float,Float]] Array of present/future values [Float,Float]
   value_pairs: ->

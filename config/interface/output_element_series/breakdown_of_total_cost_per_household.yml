@@ -8,7 +8,7 @@
   target_line_position: ''
   gquery: heat_in_breakdown_of_total_costs_per_household
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: breakdown_of_total_cost_per_household
   key: heat_breakdown_of_total_cost_per_household
 - label: electricity
@@ -20,7 +20,7 @@
   target_line_position: ''
   gquery: electricity_in_breakdown_of_total_costs_per_household
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: breakdown_of_total_cost_per_household
   key: electricity_breakdown_of_total_cost_per_household
 - label: fuels
@@ -32,7 +32,7 @@
   target_line_position: ''
   gquery: fuels_in_breakdown_of_total_costs_per_household
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: breakdown_of_total_cost_per_household
   key: fuels_breakdown_of_total_cost_per_household
 - label: non_energetic_fuels
@@ -44,7 +44,7 @@
   target_line_position: ''
   gquery: non_energetic_fuels_in_breakdown_of_total_costs_per_household
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: breakdown_of_total_cost_per_household
   key: non_energetic_fuels_breakdown_of_total_cost_per_household
 - label: network
@@ -56,7 +56,7 @@
   target_line_position: ''
   gquery: network_in_breakdown_of_total_costs_per_household
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: breakdown_of_total_cost_per_household
   key: network_breakdown_of_total_cost_per_household
 - label: vehicles
@@ -68,7 +68,7 @@
   target_line_position: ''
   gquery: vehicles_in_breakdown_of_total_costs_per_household
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: breakdown_of_total_cost_per_household
   key: vehicles_breakdown_of_total_cost_per_household
 - label: hydrogen
@@ -80,7 +80,7 @@
   target_line_position: ''
   gquery: hydrogen_in_breakdown_of_total_costs_per_household
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: breakdown_of_total_cost_per_household
   key: hydrogen_breakdown_of_total_cost_per_household
 - label: flexibility
@@ -92,6 +92,30 @@
   target_line_position: ''
   gquery: flexibility_in_breakdown_of_total_costs_per_household
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: breakdown_of_total_cost_per_household
   key: flexibility_breakdown_of_total_cost_per_household
+- label: ccus
+  color: "#000000"
+  order_by: 9
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ccus_in_breakdown_of_total_costs_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: breakdown_of_total_cost_per_household
+  key: ccus_breakdown_of_total_costs_per_household
+- label: insulation
+  color: "#8B0000"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: insulation_in_breakdown_of_total_costs_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: breakdown_of_total_cost_per_household
+  key: insulation_breakdown_of_total_costs_per_household

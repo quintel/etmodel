@@ -195,12 +195,21 @@ nl:
     energy_heat_network_storage_loss_share:
       title: Jaarlijkse verliezen
       short_description:
-      description: 'De startwaarde (15%) is gebaseerd op de jaarlijkse verliezen van
-        een Evocat systeem (link: https://www.ecovat.eu/): een groot ondergronds buffervat
-        gevuld met water. Opslagverliezen zijn afhankelijk van het type systeem. Bij
-        grotere opslagsystemen verminderen bijvoorbeeld het verliespercentage. Daarentegen
+      description: "De startwaarde (30%) is gebaseerd op de jaarlijkse verliezen van
+        een ATES (Aquifer thermal energy storage) systeem. Opslagverliezen zijn afhankelijk van het type systeem. Bij
+        grotere opslagsystemen vermindert bijvoorbeeld het verliespercentage. Daarentegen
         nemen de verliezen juist toe wanneer een open systeem wordt gebruikt (bijv.
-        WKO) in plaats van een gesloten systeem zoals Ecovat.'
+        WKO) in plaats van een gesloten systeem (zoals Ecovat). Hieronder vind je de
+        verliezen en kosten per opslagsysteem volgens <a href=\"https://refman.energytransitionmodel.com/publications/2125\"
+        target =\"_blank\">dit rapport</a>:
+        <ul>
+        <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% verlies </li>
+        <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% verlies </li>
+        <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% verlies </li>
+        <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% verlies </li>
+        <li> Ecovat: 86 €/MWh, 10% verlies </li>
+        </ul>
+        De kosten van warmteopslag zijn <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\" >hier</a> in te stellen."
     energy_heat_network_storage_output_capacity_share:
       title: Levercapaciteit (als % van gemiddelde uurvraag)
       short_description:

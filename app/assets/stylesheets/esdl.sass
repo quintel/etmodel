@@ -17,21 +17,30 @@
       display: inline-block
       margin: 0 0 0 10px
 
-    .button
-      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
-      border: none
+    .button, .wait
       border-radius: 3px
-      cursor: pointer
       font-size: 1rem
       font-weight: bold
-      text-align: center
-      text-shadow: none
-      padding: 10px 15px
       margin-top: 40px
+      padding: 10px 15px
+      text-align: center
+
+    .wait
+      display: none
+      img
+        margin: -3px 0.25rem -2px 0
+        vertical-align: text-top
+
+    .button
       background: $landing-green
       background: linear-gradient(lighten($landing-green, 10%), $landing-green)
+      border: none
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
       color: white
+      cursor: pointer
+      text-shadow: none
       &:hover
         background: linear-gradient(lighten($landing-green, 14%), lighten($landing-green, 7%))
       &:active
         background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))
+

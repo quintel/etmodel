@@ -15,7 +15,7 @@
       %th= t 'output_elements.tables.investments.investment'
       %th= t 'output_elements.tables.investments.investment'
       %th= t 'output_elements.tables.investments.difference'
-
+  
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.households'
   %tr.even
@@ -774,6 +774,64 @@
     %td.border-rgt{:data => {:gquery => "other_burner_wood_pellets_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "other_burner_wood_pellets_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "other_burner_wood_pellets_delta_in_investment_cost_table"}}
+
+  %thead.subhead
+    %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.ccus'
+  %tr.odd
+    %th= t("input_elements.investment_table_industry_chemicals_fertilizers_captured_combustion_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "industry_chemicals_fertilizers_captured_combustion_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_chemicals_fertilizers_captured_combustion_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_chemicals_fertilizers_captured_combustion_co2_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t("input_elements.investment_table_industry_chemicals_fertilizers_captured_processes_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "industry_chemicals_fertilizers_captured_processes_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_chemicals_fertilizers_captured_processes_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_chemicals_fertilizers_captured_processes_co2_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t("input_elements.investment_table_industry_other_food_captured_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "industry_other_food_captured_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_other_food_captured_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_other_food_captured_co2_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t("input_elements.investment_table_industry_other_paper_captured_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "industry_other_paper_captured_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_other_paper_captured_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_other_paper_captured_co2_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t("input_elements.investment_table_industry_steel_blastfurnace_captured_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "industry_steel_blastfurnace_captured_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_steel_blastfurnace_captured_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_steel_blastfurnace_captured_co2_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t("input_elements.investment_table_industry_steel_electricfurnace_captured_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "industry_steel_electricfurnace_captured_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_steel_electricfurnace_captured_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_steel_electricfurnace_captured_co2_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t("input_elements.investment_table_industry_steel_hisarna_captured_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "industry_steel_hisarna_captured_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "industry_steel_hisarna_captured_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "industry_steel_hisarna_captured_co2_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t("input_elements.investment_table_molecules_direct_air_capture_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "molecules_direct_air_capture_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "molecules_direct_air_capture_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "molecules_direct_air_capture_co2_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t("input_elements.investment_table_molecules_offshore_sequestration_co2.title").html_safe
+    %td.border-rgt{:data => {:gquery => "molecules_offshore_sequestration_co2_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "molecules_offshore_sequestration_co2_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "molecules_offshore_sequestration_co2_delta_in_investment_cost_table"}}
+  %tr.even
+    %th= t("input_elements.investment_table_energy_production_synthetic_methanol.title").html_safe
+    %td.border-rgt{:data => {:gquery => "energy_production_synthetic_methanol_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_production_synthetic_methanol_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_production_synthetic_methanol_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t("input_elements.investment_table_energy_production_synthetic_kerosene.title").html_safe
+    %td.border-rgt{:data => {:gquery => "energy_production_synthetic_kerosene_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_production_synthetic_kerosene_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_production_synthetic_kerosene_delta_in_investment_cost_table"}}
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.total'
   %tfoot

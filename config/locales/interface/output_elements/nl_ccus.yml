@@ -1,7 +1,16 @@
 ---
-en:
+nl:
   output_elements:
     mekko_of_co2_demand_supply:
       title: Vraag en aanbod van afgevangen CO<sub>2</sub>
       short_description: ''
-      description: 'Deze grafiek laat de hoeveelheid afgevangen CO<sub>2</sub> zien en wat er met deze CO<sub>2</sub> gebeurt (ondergrondse opslag, hergebruik, export)'
+      description: 'Deze grafiek laat de hoeveelheid afgevangen CO<sub>2</sub> zien (aanbod) en de vraag naar CO<sub>2</sub> (ondergrondse opslag, hergebruik, export)'
+    ccus_sankey:
+      title: "Afgevangen CO<sub>2</sub>-stromen"
+      short_description: ''
+      description: 'Deze grafiek laat de bronnen van afgevangen CO<sub>2</sub> zien en wat er met deze CO<sub>2</sub> gebeurt (hergebruik, opslag en export)'
+    energy_use_of_ccus:
+      title: "Energiegebruik van CCUS"
+      short_description: ''
+      description: 'Deze grafiek laat het energiegebruik zien voor de afvang, het hergebruik en de opslag van CO<sub>2</sub>'
+

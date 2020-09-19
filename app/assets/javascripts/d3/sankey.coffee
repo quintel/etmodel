@@ -148,7 +148,6 @@ D3.sankey =
           {left: 'dry',                             right: 'losses',                      gquery: 'dry_biomass_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'}
         ]
-
     co2_sankey:
       data:
         nodes: [
@@ -202,6 +201,39 @@ D3.sankey =
           {left: 'energy',                        right: 'emitted',                  gquery: 'energy_emitted_in_co2_sankey', color: '#8B0000'},
           {left: 'energy',                        right: 'captured',                 gquery: 'energy_captured_in_co2_sankey', color: '#2ca02c'}
         ]
+    ccus_sankey:
+      data:
+        nodes: [
+          {id: 'dac',                            column: 0, label: 'dac',                    color: '#b71540'},
+          {id: 'power_production',               column: 0, label: 'power_production',       color: '#786FA6'},
+          {id: 'hydrogen_production',            column: 0, label: 'hydrogen_production',    color: '#A4B0BE'},
+          {id: 'industry_fertilizers',           column: 0, label: 'industry_fertilizers',   color: '#63A1C9'},
+          {id: 'industry_steel',                 column: 0, label: 'industry_steel',         color: '#485460'},
+          {id: 'industry_food',                  column: 0, label: 'industry_food',          color: '#A2D679'},
+          {id: 'industry_paper',                 column: 0, label: 'industry_paper',         color: '#394C19'},
+          {id: 'import',                         column: 0, label: 'import',                 color: '#FDE97B'},
+          {id: 'captured_co2',                   column: 1, label: 'captured_co2',           color: '#1f77b4'},
+          {id: 'offshore_sequestration',         column: 2, label: 'offshore_sequestration', color: '#416B86'},
+          {id: 'synthetic_methanol',             column: 2, label: 'synthetic_methanol',     color: '#FF8C8C'},
+          {id: 'synthetic_kerosene',             column: 2, label: 'synthetic_kerosene',     color: '#74B9FF'},
+          {id: 'other_utilisation',              column: 2, label: 'other_utilisation',      color: '#A7A1C5'},
+          {id: 'export',                         column: 2, label: 'export',                 color: '#6AB04C'}
+        ]
+        links: [
+          {left: 'dac',                          right: 'captured_co2',               gquery: 'dac_captured_co2_total_in_ccus_sankey', color: '#b71540'},
+          {left: 'power_production',             right: 'captured_co2',               gquery: 'power_production_captured_co2_total_in_ccus_sankey', color: '#786FA6'},
+          {left: 'hydrogen_production',          right: 'captured_co2',               gquery: 'hydrogen_production_captured_co2_total_in_ccus_sankey', color: '#A4B0BE'},
+          {left: 'industry_fertilizers',         right: 'captured_co2',               gquery: 'industry_fertilizers_captured_co2_total_in_ccus_sankey', color: '#63A1C9'},
+          {left: 'industry_steel',               right: 'captured_co2',               gquery: 'industry_steel_captured_co2_total_in_ccus_sankey', color: '#485460'},
+          {left: 'industry_food',                right: 'captured_co2',               gquery: 'industry_food_captured_co2_total_in_ccus_sankey', color: '#A2D679'},
+          {left: 'industry_paper',               right: 'captured_co2',               gquery: 'industry_paper_captured_co2_total_in_ccus_sankey', color: '#394C19'},
+          {left: 'import',                       right: 'captured_co2',               gquery: 'import_captured_co2_total_in_ccus_sankey', color: '#FDE97B'},
+          {left: 'captured_co2',                 right: 'offshore_sequestration',     gquery: 'captured_co2_offshore_sequestration_total_in_ccus_sankey', color: '#1f77b4'},
+          {left: 'captured_co2',                 right: 'synthetic_methanol',         gquery: 'captured_co2_synthetic_methanol_total_in_ccus_sankey', color: '#1f77b4'},
+          {left: 'captured_co2',                 right: 'synthetic_kerosene',         gquery: 'captured_co2_synthetic_kerosene_total_in_ccus_sankey', color: '#1f77b4'},
+          {left: 'captured_co2',                 right: 'other_utilisation',          gquery: 'captured_co2_other_utilisation_total_in_ccus_sankey', color: '#1f77b4'},
+          {left: 'captured_co2',                 right: 'export',                     gquery: 'captured_co2_export_total_in_ccus_sankey', color: '#1f77b4'},
+       ]
     sankey:
       data:
         nodes: [

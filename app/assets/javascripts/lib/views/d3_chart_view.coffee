@@ -149,7 +149,7 @@ class @D3ChartView extends BaseChartView
         .style("background-color", (d) => d.get 'color')
 
       scope.append("span")
-        .text((d) ->
+        .html((d) ->
           d.get('label') ||
            I18n.t("output_element_series.labels.#{d.get('key')}")
         )

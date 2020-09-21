@@ -55,7 +55,9 @@ class Slide < YModel::Base
   end
 
   def short_name
-    I18n.t(title_for_description, locale: :en).parameterize
+    Rails::Html::FullSanitizer.new.sanitize(
+      I18n.t(title_for_description, locale: :en)
+    ).parameterize
   end
 
   # See Current.view

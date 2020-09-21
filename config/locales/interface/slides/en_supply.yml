@@ -59,14 +59,36 @@ en:
         target="_blank">documentation</a>). When you would like to adjust the potential,
         you can do that here.'
     supply_ccus_capture:
+      title:
+      description: ''
+    supply_ccus_capture:
       title: Capture of CO<sub>2</sub>
-      description: ''
-    supply_ccus_transport:
-      title: Transport of CO<sub>2</sub>
-      description: ''
+      description: "Carbon Capture, Utilisation and Sequestration (CCUS) is a technology to capture
+        the CO<sub>2</sub> that is emitted in (e.g.) industrial processes and subsequently to store
+        or 'recycle' thse emissions. In this section you can explore the role CCUS could play in the
+        future energy system. CO<sub>2</sub> emissions can be captured in industrial processes, the
+        energy sector or can be captured directly from the ambient air. Below, you can make assumptions
+        about the capture of CO<sub>2</sub> per technology. <br/><br/>
+        The chart to the right shows the amount of captured CO<sub>2</sub> ('supply of CO<sub>2</sub>')
+        in your scenario and what happens with this CO<sub>2</sub> (storage, utilisation). If more CO<sub>2</sub>
+        is captured than used, the chart shows a 'surplus' of CO<sub>2</sub>. Vice versa, the chart shows a
+        'deficit' if less is captured.<br/><br/>
+        More information about the energy use of CCUS in your scenario can be found in
+        <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"energy_use_of_ccus\"\r\n>this</a> chart.<br /><br/>
+        More information on CCUS in the ETM can be found in the documentation(LINK)."
     supply_ccus_utilisation_storage:
       title: Utilisation and storage of CO<sub>2</sub>
-      description: ''
+      description: "Captured CO<sub>2</sub> can be stored under the ground or re-used to produce fuels or (basic) chemicals.
+        Below you can specify how the captured CO<sub>2</sub> in your scenario is used. If more CO<sub>2</sub> is stored or
+        utilised (CO<sub>2</sub> demand) than captured (CO<sub>2</sub> supply), the ETM shows a CO<sub>2</sub> 'deficit'.
+        If more is captured than used, the ETM shows a CO<sub>2</sub> surplus."
+    supply_ccus_transport:
+      title: Transport of CO<sub>2</sub>
+      description: "Below you can specify how captured CO<sub>2</sub> will be transported in the future.
+        This can be done via ships or pipelines. The first option is well suited for scenarios with
+        relatively small CO<sub>2</sub> volumes or when CO<sub>2</sub> sources are located in more remote areas.
+        Pipelines, on the other hand, are useful in scenarios with higher volumes of captured CO<sub>2</sub> or
+        when CCUS activities are concentrated in the same location."
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub> emissions of biomass
       short_description:

@@ -68,13 +68,32 @@ nl:
       description:
     supply_ccus_capture:
       title: Afvang van CO<sub>2</sub>
-      description: ''
-    supply_ccus_transport:
-      title: Transport van CO<sub>2</sub>
-      description: ''
+      description: "Carbon Capture, Utilisation and Sequestration (CCUS) is een technologie
+        waarbij CO<sub>2</sub> uit bedrijfsprocessen wordt afgevangen en vervolgens wordt
+        opgeslagen onder de grond of hergebruikt. In deze sectie kun je verkennen welke rol
+        CCUS kan spelen in het toekomstige energiesysteem. CO<sub>2</sub> kan worden afgevangen bij
+        productieprocessen in de industrie en energiesector óf kan direct uit de lucht gehaald worden
+        via Direct Air Capture. Hieronder
+        kun je per technologie aannames doen over de afvang van CO<sub>2</sub>. <br/><br/>
+        De grafiek hiernaast laat zien hoeveel CO<sub>2</sub> er is afgevangen ('aanbod' van CO<sub>2</sub>) en wat er met
+        deze CO<sub>2</sub> gebeurt (opslag, hergebruik). Als je meer CO<sub>2</sub>
+        afvangt dan je opslaat of hergebruikt, laat de grafiek een 'overschot' aan CO<sub>2</sub> zien.
+        Andersom laat de grafiek een 'tekort' zien als je minder afvangt.<br/><br/>
+        Meer informatie over het energiegebruik van CCUS in jouw scenario zie je
+        in <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"energy_use_of_ccus\"\r\n>deze</a> grafiek.<br /><br/>
+        Meer informatie over CCUS in het ETM lees je in de documentatie(LINK)."
     supply_ccus_utilisation_storage:
       title: Gebruik en opslag van CO<sub>2</sub>
-      description: ''
+      description: "Afgevangen CO<sub>2</sub> kan worden opgeslagen onder de grond of kan worden hergebruikt
+        voor de productie van brandstoffen of chemische (basis)producten. Hieronder kun je aangeven wat er
+        gebeurt met de afgevangen CO<sub>2</sub> in jouw scenario. Als je meer CO<sub>2</sub> afvangt of hergebruikt
+        dan er is afgevangen, laat het ETM een 'tekort' aan CO<sub>2</sub> zien."
+    supply_ccus_transport:
+      title: Transport van CO<sub>2</sub>
+      description: "Hieronder kun je aangeven op welke manier de afgevangen CO<sub>2</sub> wordt getransporteerd.
+        Dit kan via schip of via pijpleidingen. De eerste optie ligt meer voor de hand bij afvang, hergebruik of
+        opslag van kleinere volumes CO<sub>2</sub> of op minder centraal gelegen plekken. Pijpleidingen zijn juist
+        een voordehandliggende keuze bij grotere volumes en als afvang, hergebruik en opslag sterk gecentreerd is."
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot van biomassa
       short_description:

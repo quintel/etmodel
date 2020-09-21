@@ -1,7 +1,7 @@
 ---
 - key: demand_of_molecules_offshore_sequestration_co2
   step_value: 1.0
-  unit: "MT"
+  unit: "Mton"
   interface_group: sequestration
   position: 1
   slide_key: supply_ccus_utilisation_storage
@@ -17,3 +17,10 @@
   interface_group: utilisation
   position: 3
   slide_key: supply_ccus_utilisation_storage
+- key: demand_of_molecules_other_utilisation_co2
+  step_value: 1.0
+  unit: "Mton"
+  interface_group: utilisation
+  position: 4
+  slide_key: supply_ccus_utilisation_storage
+

@@ -3,19 +3,62 @@ nl:
   input_elements:
     share_of_industry_steel_captured_co2:
       title: Staalindustrie
-      description: ""
+      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+        CO<sub>2</sub>-emissies in de staalsector worden afgevangen in jouw scenario.
+        Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de staalsector
+        en de gebruikte productietechnologie in jouw scenario. Aannames hierover kun je
+        aanpassen op de <a href='/scenario/demand/industry/steel'>pagina voor de staalsector</a>.
+        <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
+        het energiegebruik en de kosten."
     share_of_industry_chemicals_fertilizers_captured_processes_co2:
       title: Kunstmestindustrie (procesemissies)
-      description: ""
+      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+        procesemissies in de kunstmestsector worden afgevangen in jouw scenario.
+        Het productieproces van kunstmest geeft een zuivere stroom van
+        procesemissies, die relatief eenvoudig af te vangen zijn. De kosten en het energiegebruik
+        van afvang zijn daarom laag, vergeleken met afvang van verbrandingsemissies.<br/><br/>
+        Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de kunstmestsector
+        in jouw scenario en of er waterstof 'on-site' gemaakt wordt of wordt aangevoerd van
+        buitenaf. Aannames hierover kun je aanpassen op de
+        <a href='/scenario/demand/industry/fertilizers'>pagina voor de kunstmestsector</a>.
+        <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
+        het energiegebruik en de kosten."
     share_of_industry_chemicals_fertilizers_captured_combustion_co2:
       title: Kunstmestindustrie (verbrandingsemissies)
-      description: ""
+      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+        verbrandingsemissies in de kunstmestsector worden afgevangen in jouw scenario.
+        Het afvangen van verbrandingsemissies is relatief duur en energie-intensief,
+        omdat de CO<sub>2</sub> die uit de schoorsteen komt vermengd is met andere gassen.
+        <br/><br/>
+        Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de kunstmestsector
+        in jouw scenario en van de efficiëntie van de sector. Aannames hierover kun je aanpassen op de
+        <a href='/scenario/demand/industry/fertilizers'>pagina voor de kunstmestsector</a>.
+        <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
+        het energiegebruik en de kosten."
     share_of_industry_other_paper_captured_co2:
       title: Papierindustrie
-      description: ""
+      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+        verbrandingsemissies in de papiersector worden afgevangen in jouw scenario.
+        Het afvangen van verbrandingsemissies is relatief duur en energie-intensief,
+        omdat de CO<sub>2</sub> die uit de schoorsteen komt vermengd is met andere gassen.
+        <br/><br/>
+        Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de papiersector
+        in jouw scenario en van de efficiëntie van de sector. Aannames hierover kun je aanpassen op de
+        <a href='/scenario/demand/industry/paper'>pagina voor de papiersector</a>.
+        <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
+        het energiegebruik en de kosten."
     share_of_industry_other_food_captured_co2:
       title: Voedselindustrie
-      description: ""
+      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+        verbrandingsemissies in de voedselsector worden afgevangen in jouw scenario.
+        Het afvangen van verbrandingsemissies is relatief duur en energie-intensief,
+        omdat de CO<sub>2</sub> die uit de schoorsteen komt vermengd is met andere gassen.
+        <br/><br/>
+        Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de voedselsector
+        in jouw scenario en van de efficiëntie van de sector. Aannames hierover kun je aanpassen op de
+        <a href='/scenario/demand/industry/food'>pagina voor de voedselsector</a>.
+        <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
+        het energiegebruik en de kosten."
     share_of_energy_power_ultra_supercritical_ccs_coal:
       title: Poederkolen
       description: ""
@@ -23,7 +66,7 @@ nl:
       title: Kolenvergassing
       description: ""
     share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
-      title: Bruinkolen 'oxyfuel'
+      title: Bruinkolen
       description: ""
     share_of_energy_power_combined_cycle_ccs_network_gas:
       title: Gas STEG

@@ -75,23 +75,23 @@ nl:
           </li>
         </ul>
     data_export_molecule_flows:
-      title: Molecule flows
+      title: CCUS</sub>-stromen
       short_description:
       description: |
-        The Energy Transition Model models the flow of molecules through many different uses and
-        conversions. This CSV provides a list of these flows (inputs and outputs).
+        Het ETM modelleert de afvang, het hergebruik en de opslag van CO<sub>2</sub> (CCUS) in detail.
+        Deze CSV geeft een overzicht van de CO<sub>2</sub>-stromen gerelateerd aan CCUS (inputs en outputs).
         <ul class="data-download">
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
         </ul>
     data_export_molecule_graph:
-      title: Molecule graph
+      title: CCUS-graaf
       short_description:
       description: |
-        A detailed breakdown of molecule flows throughout the Energy Transition
-        Model is available for advanced users.
+        Een gedetailleerd overzicht van de CO<sub>2</sub>-stromen gerelateerd aan de afvang, het hergebruik en de opslag van CO<sub>2</sub> (CCUS)
+        is beschikbaar voor gevorderde gebruikers.
         <br /><br />
         <a href="%{etengine_url}/data/%{scenario_id}/layouts/molecules" class="simple-button" target="_blank" rel="noopener nofollow">
-          <span class="fa fa-book"></span> View the graph →
+          <span class="fa fa-book"></span> Bekijk de graaf →
         </a>
     data_export_network_gas:
       title: Uurlijkse profielen voor gas

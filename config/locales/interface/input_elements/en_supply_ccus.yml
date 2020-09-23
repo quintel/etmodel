@@ -3,55 +3,191 @@ en:
   input_elements:
     share_of_industry_steel_captured_co2:
       title: Steel industry
-      description: ""
+      description: "What share of capturable CO<sub>2</sub> emissions in the
+        steel industry will be captured in your scenario? The amount of CO<sub>2</sub>
+        that can be captured depends on the size of the steel industry and the chosen
+        steel production technology in your scenario. You can change this
+        <a href='/scenario/demand/industry/steel'>here</a>.
+        <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
+        emissions, energy use and costs."
     share_of_industry_chemicals_fertilizers_captured_processes_co2:
       title: Fertilizer industry (process)
-      description: ""
+      description: "What share of capturable process emissions in the
+        fertilizers industry will be captured in your scenario?
+        The steam methane reforming process yields high purity CO<sub>2</sub>
+        streams that are relatively simple to capture. The costs and energy
+        use of capture are low compared to capture of combustion emissions.<br/<br/>
+        The amount of CO<sub>2</sub> that can be captured depends on the size of the
+        fertilizers industry in your scenario and whether hydrogen is produced 'on-site'
+        or imported directly. You can change this
+        <a href='/scenario/demand/industry/fertilizers'>here</a>.
+        <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
+        emissions, energy use and costs."
     share_of_industry_chemicals_fertilizers_captured_combustion_co2:
       title: Fertilizer industry (combustion)
-      description: ""
+      description: "What share of capturable combustion emissions in the
+        fertilizers industry will be captured in your scenario? Capture of
+        combustion emissions is relatively expensive and energy intensive
+        because the CO<sub>2</sub> has to be separated from other molecules
+        found in the flue gas.<br/><br/>
+        The amount of CO<sub>2</sub> that can be captured depends on the size
+        and efficiency of the fertilizers industry in your scenario. You can change this
+        <a href='/scenario/demand/industry/fertilizers'>here</a>.
+        <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
+        emissions, energy use and costs."
     share_of_industry_other_paper_captured_co2:
       title: Paper industry
-      description: ""
+      description: "What share of capturable combustion emissions in the
+        paper industry will be captured in your scenario? Capture of
+        combustion emissions is relatively expensive and energy intensive
+        because the CO<sub>2</sub> has to be separated from other molecules
+        found in the flue gas.<br/><br/>
+        The amount of CO<sub>2</sub> that can be captured depends on the size
+        and efficiency of the paper industry in your scenario. You can change this
+        <a href='/scenario/demand/industry/paper'>here</a>.
+        <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
+        emissions, energy use and costs."
     share_of_industry_other_food_captured_co2:
       title: Food industry
-      description: ""
+      description: "What share of capturable combustion emissions in the
+        food industry will be captured in your scenario? Capture of
+        combustion emissions is relatively expensive and energy intensive
+        because the CO<sub>2</sub> has to be separated from other molecules
+        found in the flue gas.<br/><br/>
+        The amount of CO<sub>2</sub> that can be captured depends on the size
+        and efficiency of the food industry in your scenario. You can change this
+        <a href='/scenario/demand/industry/food'>here</a>.
+        <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
+        emissions, energy use and costs."
     share_of_energy_power_ultra_supercritical_ccs_coal:
-      title: Pulverized coal
-      description: ""
+      title: Pulverised coal
+      description: "What share of installed pulverised coal
+        capacity will be equipped with a CO<sub>2</sub> capture unit? How much
+        CO<sub>2</sub> is captured depends on the number of full load hours of
+        these power plants in your scenario. This is influenced by electricity
+        demand, other installed power generation technologies and commodity
+        prices.<br/><br/>
+        The amount of installed pulverised coal capacity can be set
+        <a href='/scenario/supply/electricity/coal-plants'>here</a>.<br/><br/>
+        If <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>bio coal</a>
+        is used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions.
+        You can find more information on this in the
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentation</a>
+        of the ETM."
     share_of_energy_power_combined_cycle_ccs_coal:
       title: Coal IGCC
-      description: ""
+      description: "What share of installed coal IGCC
+        capacity will be equipped with a CO<sub>2</sub> capture unit? How much
+        CO<sub>2</sub> is captured depends on the number of full load hours of
+        these power plants in your scenario. This is influenced by electricity
+        demand, other installed power generation technologies and commodity
+        prices.<br/><br/>
+        The amount of installed IGCC coal capacity can be set
+        <a href='/scenario/supply/electricity/coal-plants'>here</a>.<br/><br/>
+        If <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>bio coal</a>
+        is used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions.
+        You can find more information on this in the
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentation</a>
+        of the ETM."
     share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
       title: Lignite oxyfuel
-      description: ""
+      description: "What share of installed coal lignite oxyfuel
+        capacity will be equipped with a CO<sub>2</sub> capture unit? How much
+        CO<sub>2</sub> is captured depends on the number of full load hours of
+        these power plants in your scenario. This is influenced by electricity
+        demand, other installed power generation technologies and commodity
+        prices.<br/><br/>
+        The amount of installed lignite oxyfuel capacity can be set
+        <a href='/scenario/supply/electricity/coal-plants'>here</a>."
     share_of_energy_power_combined_cycle_ccs_network_gas:
       title: Gas CCGT
-      description: ""
+      description: "What share of installed gas CCGT
+        capacity will be equipped with a CO<sub>2</sub> capture unit? How much
+        CO<sub>2</sub> is captured depends on the number of full load hours of
+        these power plants in your scenario. This is influenced by electricity
+        demand, other installed power generation technologies and commodity
+        prices.<br/><br/>
+        The amount of installed gas CCGT capacity can be set
+        <a href='/scenario/supply/electricity/gas-plants'>here</a>.<br/><br/>
+        If <a href='/scenario/supply/biomass/green-gas-in-gas-network'>green gas</a>
+        is used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions.
+        You can find more information on this in the
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentation</a>
+        of the ETM."
     share_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomass gasification
-      description: ""
+      description: "What share of installed biomass gasification
+        capacity for hydrogen production will be equipped with a CO<sub>2</sub> capture unit?
+        Because biomass emissions are considered to be 'short cycle' emissions, capturing
+        these emissions could lead to so-called 'negative' emissions.
+        You can find more information on this in the
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentation</a>
+        of the ETM.<br/><br/>
+        The amount of installed biomass gasification plants can be set
+        <a href='/scenario/supply/hydrogen/hydrogen-production'>here</a>."
     share_of_energy_hydrogen_steam_methane_reformer_ccs:
       title: Steam methane reforming
-      description: ""
+      description: "What share of installed steam methane reforming
+        capacity for hydrogen production will be equipped with a CO<sub>2</sub> capture unit?
+        The amount of installed steam methane reforming plants can be set
+        <a href='/scenario/supply/hydrogen/hydrogen-production'>here</a>.<br/><br/>
+        If <a href='/scenario/supply/biomass/green-gas-in-gas-network'>green gas</a>
+        is used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions.
+        You can find more information on this in the
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentation</a>
+        of the ETM."
     demand_of_molecules_direct_air_capture_co2:
-      title: Direct air capture (DAC)
-      description: ""
+      title: Direct Air Capture (DAC)
+      description: "This slider sets the installed capacity of Direct Air Capture plants.
+        Direct Air Capture is a process of capturing CO<sub>2</sub> directly from the ambient
+        air using electricity. If the electricity used is renewable, storing the captured CO<sub>2</sub>
+        can lead to a net decrease in atmospheric CO<sub>2</sub> levels ('negative emissions'). The
+        captured CO<sub>2</sub> can also be used for the production of carbon neutral fuels.<br/><br/>
+        You can explore these options
+        <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>here</a>."
     demand_of_molecules_offshore_sequestration_co2:
       title: Offshore storage
-      description: ""
+      description: "This slider sets the amount of CO<sub>2</sub> that is used for
+        long-term storage offshore. For example saline acquifers and aging oil or gas fields can
+        be used for this purpose.<br/><br/>The ETM calculates the impact of CO<sub>2</sub>
+        storage on total emissions, energy use and costs."
     output_of_energy_production_synthetic_kerosene:
       title: Synthetic kerosene
-      description: ""
+      description: "This slider set the amount of synthetic kerosene produced in your scenario.
+        Synthetic kerosene is made from captured CO<sub>2</sub>, hydrogen and electricity.
+        If renewable electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture)
+        is used in this process, it is possible to produce carbon neutral fuels for (e.g.) aviation.
+        <br/><br/>Please note: This slider does not automatically reduce the production of fossil-based
+        kerosene in the refineries sector. If you would like to replace fossil kerosene with
+        synthetic kerosene in your scenario, you can reduce the market share of refineries
+        <a href='/scenario/demand/industry/refineries'>here</a>."
     output_of_energy_production_synthetic_methanol:
       title: Synthetic methanol
-      description: ""
+      description: "Methanol is one of the most widely used chemicals in the chemical industry sector.
+        For example, it is used for the production of plastics and polyester. In addition, methanol
+        can be used as a fuel. Currently, methanol is mainly produced using natural gas. However,
+        it is possible to make synthetic methanol using CO<sub>2</sub>, hydrogen and electricity.
+        If renewable electricity, green hydrogen and green CO<sub>2</sub>
+        (e.g. Direct Air Capture) is used, this production process can be fully carbon neutral.<br/><br/>
+        This slider allows you to set the amount of synthetic methanol produced in your scenario. This
+        slider does not affect the production of methanol and other chemical products in the
+        conventional chemical industry sector. You can change this
+        <a href='/scenario/demand/industry/chemicals'>here</a>."
     demand_of_molecules_other_utilisation_co2:
       title: Other use of CO<sub>2</sub>
-      description: ""
+      description: "This slider sets the amount of CO<sub>2</sub>  used for 'other' purposes. This
+        encompasses all utilisation of CO<sub>2</sub> that is not modelled separately in the ETM.
+        Examples include utilisation of CO<sub>2</sub> as a propellant gas for beer and soda or
+        for the cultivation of crops in greenhouses. CO<sub>2</sub> emitted by the
+        fertilizers industry sector can also be captured and used to produce urea, which is used as
+        an animal feed additive and fertilizer.<br/><br/>
+        In many cases, utilising CO<sub>2</sub> does not reduce emission but only delays it. Therefore,
+        the amount of CO<sub>2</sub> set with this slider is included in the total emissions of
+        your scenario."
     share_of_molecules_transport_pipelines_co2:
       title: Pipelines
-      description: ""
+      description: "What share of total captured CO<sub>2</sub> in your scenario is transported via pipelines?"
     share_of_molecules_transport_ships_co2:
       title: Liquefied in ships
-      description: ""
+      description: "What share of total captured CO<sub>2</sub> in your scenario is transported via ships?
+        CO<sub>2</sub> is liquefied before transportation."

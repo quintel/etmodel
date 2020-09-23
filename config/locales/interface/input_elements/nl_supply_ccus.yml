@@ -154,19 +154,48 @@ nl:
         <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>hier</a>."
     demand_of_molecules_offshore_sequestration_co2:
       title: "Opslag van CO<sub>2</sub> onder de zeebodem"
-      description: ""
+      description: "Met deze schuif geef je aan hoeveel CO<sub>2</sub> er jaarlijks wordt
+        opgeslagen onder de zeebodem. Dit kan bijvoorbeeld in lege gasvelden of zoutcavernes.
+        <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-opslag op de uitstoot,
+        het energiegebruik en de kosten."
     output_of_energy_production_synthetic_kerosene:
       title: Synthetische kerosine
-      description: ""
+      description: "Met deze schuif geef je aan hoeveel synthetische kerosine er wordt
+        geproduceerd in jouw scenario. Synthetische kerosine wordt gemaakt uit
+        CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
+        elektriciteit wordt gebruikt, groene waterstof en groene CO<sub>2</sub>
+        (bijvoorbeeld via Direct Air Capture) is het mogelijk om een CO<sub>2</sub>-neutrale
+        brandstof te maken voor vliegtuigen.<br/><br/>
+        Let op: Deze schuif vermindert niet automatisch de productie van fossiele kerosine door
+        raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
+        kerosine, verklein dan de <a href='/scenario/demand/industry/refineries'>omvang van raffinaderijen</a>."
     output_of_energy_production_synthetic_methanol:
       title: Synthetische methanol
-      description: ""
+      description: "Methanol is een van de meest gebruikte grondstoffen in de chemische industrie,
+        bijvoorbeeld voor de productie van plastics en polyester. Daarnaast kan methanol ook
+        als brandstof gebruikt worden. Op dit moment wordt methanol voornamelijk geproduceerd
+        uit aardgas. Het is echter ook mogelijk om synthetische methanol te maken uit
+        CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
+        elektriciteit wordt gebruikt, groene waterstof en groene CO<sub>2</sub>
+        (bijvoorbeeld via Direct Air Capture) kan dit productieproces volledig CO<sub>2</sub>-neutraal
+        zijn.<br/><br/>
+        Met deze schuif geef je aan hoeveel synthetische methanol er wordt
+        geproduceerd in jouw scenario. Deze schuif heeft geen invloed op de productie van
+        methanol en andere producten in de conventionele chemiesector. Aannames hierover kun je
+        doen op de <a href='/scenario/demand/industry/chemicals'>chemiepagina</a>."
     demand_of_molecules_other_utilisation_co2:
       title: Overig hergebruik van CO<sub>2</sub>
-      description: ""
+      description: "Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er wordt gebruikt voor
+        'overige' toepassingen. Hieronder vallen alle toepassingen die niet apart gemodelleerd zijn in
+        het ETM. Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor frisdrank, bier of kassen. Ook wordt
+        in sommige gevallen CO<sub>2</sub> uit de kunstmestsector afgevangen voor de productie van ureum.<br/><br/>
+        Omdat deze categorie in veel gevallen om uitgestelde emissies gaat, rekent het ETM deze CO<sub>2</sub> mee
+        in de totale uitstoot in jouw scenario."
     share_of_molecules_transport_pipelines_co2:
       title: Leidingen
-      description: ""
+      description: "Met deze schuif geef je aan hoeveel procent van de afgevangen CO<sub>2</sub> in jouw scenario wordt
+        getransporteerd via pijpleidingen."
     share_of_molecules_transport_ships_co2:
       title: Vloeibaar in schepen
-      description: ""
+      description: "Met deze schuif geef je aan hoeveel procent van de afgevangen CO<sub>2</sub> in jouw scenario wordt
+        getransporteerd via schepen. De CO<sub>2</sub> moet hiervoor eerst vloeibaar gemaakt worden."

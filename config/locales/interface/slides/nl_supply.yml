@@ -113,13 +113,25 @@ nl:
       short_description: ''
       description: Kolencentrales draaien als het even kan meer dan 80% van de tijd
         op vol vermogen. Ze zijn dus niet zo flexibel qua productie. Kolencentrales
-        produceren grofweg twee keer zoveel CO<sub>2</sub> als gascentrales.
+        produceren grofweg twee keer zoveel CO<sub>2</sub> als gascentrales.<br/><br/>
+        Hieronder kun je aangeven hoeveel vermogen er geïnstalleerd is van verschillende
+        typen kolencentrales. In de <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a>
+        sectie kun je aangeven of deze centrales zijn uitgerust met een CO<sub>2</sub>-afvanginstallatie
+        om de emissies omlaag te brengen. Op de
+        <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassapagina</a>
+        kun je aannames doen over de bijstook van biomassa.
     supply_electricity_gas_plants:
       title: Gascentrales
       short_description: ''
       description: Gascentrales produceren grofweg de helft van de CO<sub>2</sub>
         van een kolencentrale. Ze zijn erg flexibel qua productie en worden daarom
-        vaak gebruikt om de pieken in de vraag op te vangen.
+        vaak gebruikt om de pieken in de vraag op te vangen.<br/><br/>
+        Hieronder kun je aangeven hoeveel vermogen er geïnstalleerd is van verschillende
+        typen gascentrales. In de <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a>
+        sectie kun je aangeven of deze centrales zijn uitgerust met een CO<sub>2</sub>-afvanginstallatie
+        om de emissies omlaag te brengen. Op de
+        <a href='/scenario/supply/biomass/green-gas-in-gas-network'>groengas</a>pagina
+        kun je aannames doen over de hoeveelheid groengas in het gasnet.
     supply_electricity_nuclear_plant:
       title: Kerncentrale
       short_description: ''
@@ -326,7 +338,10 @@ nl:
       description: "In dit gedeelte kun je selecteren hoe de waterstof geproduceerd
         wordt in de toekomst. Het ETM biedt de volgende opties: elektrolyse van wind-
         en zonnestroom van wind/zonneparken ; stoomreforming van aardgas (met of zonder
-        CCS); vergassing van biomassa; import uit het buitenland.\r\n<br /><br />\r\nJe
+        <a href='/scenario/supply/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
+        vergassing van biomassa (met of zonder
+        <a href='/scenario/supply/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
+        import uit het buitenland.\r\n<br /><br />\r\nJe
         kunt er ook voor kiezen om overschotten elektriciteit om te zetten in waterstof
         (zie de sectie <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
         >power-to-gas</a>). Dit kan alleen als er in jouw scenario momenten in het

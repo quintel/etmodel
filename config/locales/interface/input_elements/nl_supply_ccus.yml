@@ -61,27 +61,99 @@ nl:
         het energiegebruik en de kosten."
     share_of_energy_power_ultra_supercritical_ccs_coal:
       title: Poederkolen
-      description: ""
+      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+        vermogen aan (poeder)kolencentrales is uitgerust met een
+        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
+        onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
+        prijsontwikkelingen.<br/><br/>
+        Het opgestelde vermogen aan poederkolencentrales is in te stellen op de
+        <a href='/scenario/supply/electricity/coal-plants'>elektriciteitspagina</a>.<br/><br/>
+        Als er <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassa</a> wordt
+        bijgestookt in deze centrales voor het produceren van elektriciteit, ontstaan er
+        (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
+        wordt afgevangen. Meer hierover lees je in de
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        van het ETM.<br/><br/>"
     share_of_energy_power_combined_cycle_ccs_coal:
       title: Kolenvergassing
-      description: ""
+      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+        vermogen aan kolen(vergassings)centrales is uitgerust met een
+        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
+        onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
+        prijsontwikkelingen.<br/><br/>
+        Het opgestelde vermogen aan kolenvergassingscentrales is in te stellen op de
+        <a href='/scenario/supply/electricity/coal-plants'>elektriciteitspagina</a>.<br/><br/>
+        Als er <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassa</a> wordt
+        bijgestookt in deze centrales voor het produceren van elektriciteit, ontstaan er
+        (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
+        wordt afgevangen. Meer hierover lees je in de
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        van het ETM."
     share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
       title: Bruinkolen
-      description: ""
+      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+        vermogen aan bruinkoolcentrales is uitgerust met een
+        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
+        onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
+        prijsontwikkelingen.<br/><br/>
+        Het opgestelde vermogen aan bruinkoolcentrales is in te stellen op de
+        <a href='/scenario/supply/electricity/coal-plants'>elektriciteitspagina</a>."
     share_of_energy_power_combined_cycle_ccs_network_gas:
       title: Gas STEG
-      description: ""
+      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+        vermogen aan STEG gascentrales is uitgerust met een
+        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
+        onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
+        prijsontwikkelingen.<br/><br/>
+        Het opgestelde vermogen aan STEG gascentrales is in te stellen op de
+        <a href='/scenario/supply/electricity/gas-plants'>elektriciteitspagina</a>.<br/><br/>
+        Als er <a href='/scenario/supply/biomass/green-gas-in-gas-network'>groengas</a> wordt
+        gebruikt in deze centrales voor het produceren van elektriciteit, ontstaan er
+        (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
+        wordt afgevangen. Meer hierover lees je in de
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        van het ETM."
     share_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing
-      description: ""
+      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+        vermogen aan biomassavergassingsfabrieken voor de productie van waterstof
+        is uitgerust met een CO<sub>2</sub>afvanginstallatie. Omdat emissies van biomassa
+        als 'kortcyclisch' worden gerekend, ontstaan er (boekhoudkundig) 'negatieve'
+        emissies in jouw scenario als deze CO<sub>2</sub> wordt afgevangen.
+        Meer hierover lees je in de
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        van het ETM.<br/><br/>
+        Het opgestelde vermogen aan biomassavergassingsfabrieken is in te stellen op de
+        <a href='/scenario/supply/hydrogen/hydrogen-production'>waterstofpagina</a>."
     share_of_energy_hydrogen_steam_methane_reformer_ccs:
       title: Stoomreforming met aardgas
-      description: ""
+      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+        vermogen aan stoomreformingsfabrieken voor de productie van waterstof
+        is uitgerust met een CO<sub>2</sub>afvanginstallatie. Het opgestelde vermogen aan
+        stoomreformingsfabrieken is in te stellen op de
+        <a href='/scenario/supply/hydrogen/hydrogen-production'>waterstofpagina</a>.<br/><br/>
+        Als er <a href='/scenario/supply/biomass/green-gas-in-gas-network'>groengas</a> wordt
+        gebruikt in deze centrales voor het produceren van waterstof, ontstaan er
+        (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
+        wordt afgevangen. Meer hierover lees je in de
+        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        van het ETM."
     demand_of_molecules_direct_air_capture_co2:
       title: Direct air capture (DAC)
-      description: ""
+      description: "Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er uit de lucht
+        gehaald wordt via 'direct air capture'. Direct air capture is een technologie waarbij
+        CO<sub>2</sub> met behulp van elektriciteit direct uit de buitenlucht gehaald wordt.
+        Als hiervoor hernieuwbare stroom wordt gebruikt, neemt de CO<sub>2</sub>-concentratie
+        in de atmosfeer af ('negatieve' emissies) als de afgevangen CO<sub>2</sub> wordt
+        opgeslagen onder de grond. De CO<sub>2</sub> kan ook worden gebruikt voor de productie
+        van CO<sub>2</sub>-neutrale brandstoffen. Meer hierover vind je
+        <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>hier</a>."
     demand_of_molecules_offshore_sequestration_co2:
-      title: "Opslag van CO<sub>2</sub> op zee"
+      title: "Opslag van CO<sub>2</sub> onder de zeebodem"
       description: ""
     output_of_energy_production_synthetic_kerosene:
       title: Synthetische kerosine

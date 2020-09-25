@@ -47,3 +47,15 @@
   dependent_on:
   output_element_key: kerosene_production_in_bunkers
   key: bio_kerosene_kerosene_production_in_bunkers
+- label: power_to_kerosene
+  color: "#ADD8E6"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: p2l_in_kerosene_production
+  is_1990: false
+  dependent_on:
+  output_element_key: kerosene_production_in_bunkers
+  key: power_to_kerosene_kerosene_production_in_bunkers

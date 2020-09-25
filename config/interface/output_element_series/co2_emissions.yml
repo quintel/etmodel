@@ -1,7 +1,19 @@
 ---
+- label: total_net_co2_emissions
+  color: "#FF0000"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: ''
+  gquery: total_net_co2_emissions
+  is_1990: false
+  dependent_on:
+  output_element_key: co2_emissions
+  key: total_net_co2_emissions_co2_emissions
 - label: industry
   color: "#A9A9A9"
-  order_by: 1
+  order_by: 2
   group: ''
   show_at_first: false
   is_target_line: false

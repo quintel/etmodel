@@ -254,7 +254,6 @@ D3.sankey =
           {id: 'p2p',                          column: 2, label: 'p2p',                    color: '#a29bfe'},
           {id: 'p2h',                          column: 2, label: 'p2h',                    color: '#6c5ce7'},
           {id: 'p2g',                          column: 2, label: 'p2g',                    color: '#6c5ce7'},
-          {id: 'p2l',                          column: 2, label: 'p2l',                    color: '#e84393'},
           {id: 'central_heat_prod',            column: 1, label: 'central_heat_production', color: '#9467bd'},
           {id: 'households',                   column: 3, label: 'households',             color: '#4169E1'},
           {id: 'buildings',                    column: 3, label: 'buildings',              color: '#ADD8E6'},
@@ -323,7 +322,6 @@ D3.sankey =
           {left: 'electricity_prod',              right: 'p2p',              gquery: 'electricity_prod_to_p2p_in_sankey', color: '#1f77b4'},
           {left: 'electricity_prod',              right: 'p2h',              gquery: 'electricity_prod_to_p2h_in_sankey', color: '#1f77b4'},
           {left: 'electricity_prod',              right: 'p2g',              gquery: 'electricity_prod_to_p2g_in_sankey', color: '#1f77b4'},
-          {left: 'electricity_prod',              right: 'p2l',              gquery: 'electricity_prod_to_p2l_in_sankey', color: '#1f77b4'},
 
           {left: 'electricity_prod',              right: 'households',       gquery: 'chp_heat_prod_to_households_in_sankey', color: '#d62728'},
           {left: 'electricity_prod',              right: 'buildings',        gquery: 'chp_heat_prod_to_buildings_in_sankey', color: '#d62728'},
@@ -366,11 +364,7 @@ D3.sankey =
           {left: 'p2h',                           right: 'industry',         gquery: 'p2h_to_industry_in_sankey',         color: '#d62728'},
           {left: 'p2h',                           right: 'conversion_losses', gquery: 'p2h_to_conversion_loss_in_sankey', color: '#DCDCDC'},
           {left: 'p2g',                           right: 'hydrogen_prod',     gquery: 'p2g_to_hydrogen_prod_in_sankey',   color: '#27d3d3'},
-          {left: 'p2g',                           right: 'p2l',               gquery: 'p2g_to_p2l_in_sankey',             color: '#27d3d3'},
           {left: 'p2g',                           right: 'conversion_losses', gquery: 'p2g_to_conversion_loss_in_sankey', color: '#DCDCDC'},
-          {left: 'p2l',                           right: 'bunkers',          gquery: 'p2l_to_bunkers_in_sankey',          color: '#8c564b'},
-          {left: 'p2l',                           right: 'export',           gquery: 'p2l_to_export_in_sankey',           color: '#8c564b'},
-          {left: 'p2l',                           right: 'conversion_losses', gquery: 'p2l_to_conversion_loss_in_sankey', color: '#DCDCDC'},
 
           {left: 'coal_and_derivatives',          right: 'households',       gquery: 'coal_and_derivatives_to_households_in_sankey', color: '#252525'},
           {left: 'coal_and_derivatives',          right: 'buildings',        gquery: 'coal_and_derivatives_to_buildings_in_sankey', color: '#252525'},
@@ -404,7 +398,6 @@ D3.sankey =
           {left: 'natural_gas',                   right: 'energy',           gquery: 'natural_gas_to_energy_in_sankey', color: '#7f7f7f'},
           {left: 'natural_gas',                   right: 'other',            gquery: 'natural_gas_to_other_in_sankey', color: '#7f7f7f'},
           {left: 'natural_gas',                   right: 'export',           gquery: 'natural_gas_to_export_in_sankey', color: '#7f7f7f'},
-          {left: 'natural_gas',                   right: 'p2l',              gquery: 'natural_gas_to_p2l_in_sankey', color: '#7f7f7f'},
           {left: 'natural_gas',                   right: 'transport_losses', gquery: 'natural_gas_to_transport_losses_in_sankey', color: '#7f7f7f'},
 
           {left: 'solar',                         right: 'households',       gquery: 'solar_to_households_in_sankey', color: '#ffcc00'},

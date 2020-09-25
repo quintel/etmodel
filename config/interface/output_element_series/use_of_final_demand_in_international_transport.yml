@@ -8,7 +8,7 @@
   target_line_position: ''
   gquery: kerosene_demand_international_aviation
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
   key: kerosene_planes_use_of_final_demand_in_international_transport
 - label: bio_kerosene_planes
@@ -20,7 +20,7 @@
   target_line_position: ''
   gquery: bio_kerosene_demand_international_aviation
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
   key: bio_kerosene_planes_use_of_final_demand_in_international_transport
 - label: heavy_fuel_oil_for_ships
@@ -32,7 +32,7 @@
   target_line_position: ''
   gquery: heavy_fuel_oil_demand_international_shipping
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
   key: heavy_fuel_oil_for_ships_use_of_final_demand_in_international_transport
 - label: lng_ships
@@ -44,18 +44,6 @@
   target_line_position: ''
   gquery: lng_demand_international_shipping
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
   key: lng_ships_use_of_final_demand_in_international_transport
-- label: power_to_kerosene_planes
-  color: "#ADD8E6"
-  order_by: 3
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: p2l_demand_international_aviation
-  is_1990: false
-  dependent_on: 
-  output_element_key: use_of_final_demand_in_international_transport
-  key: power_to_kerosene_planes_use_of_final_demand_in_international_transport

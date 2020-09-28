@@ -1,16 +1,4 @@
 ---
-- label: total_net_co2_emissions
-  color: "#FF0000"
-  order_by: 1
-  group: ''
-  show_at_first: false
-  is_target_line: true
-  target_line_position: ''
-  gquery: total_net_co2_emissions
-  is_1990: false
-  dependent_on:
-  output_element_key: co2_emissions
-  key: total_net_co2_emissions_co2_emissions
 - label: industry
   color: "#A9A9A9"
   order_by: 2
@@ -95,21 +83,21 @@
   dependent_on:
   output_element_key: co2_emissions
   key: energy_co2_emissions
-- label: co2_emissions_1990
-  color: "#696969"
-  order_by: 10
+- label: non_energetic_and_delayed
+  color: "#2ecc71"
+  order_by: 9
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: 1990_in_co2_emissions
-  is_1990: true
+  gquery: primary_co2_of_non_energetic_and_delayed_emissions
+  is_1990: false
   dependent_on:
   output_element_key: co2_emissions
-  key: co2_emissions_1990_co2_emissions
+  key: non_energetic_and_delayed_co2_emissions
 - label: bunkers
-  color: "#8B4513"
-  order_by: 9
+  color: "#82589F"
+  order_by: 10
   group: ''
   show_at_first: false
   is_target_line: false
@@ -119,9 +107,21 @@
   dependent_on:
   output_element_key: co2_emissions
   key: bunkers_co2_emissions
-- label: international_transportation_1990
-  color: "#333333"
+- label: co2_emissions_1990
+  color: "#696969"
   order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: 1990_in_co2_emissions
+  is_1990: true
+  dependent_on:
+  output_element_key: co2_emissions
+  key: co2_emissions_1990_co2_emissions
+- label: international_transportation_1990
+  color: "#82589F"
+  order_by: 12
   group: ''
   show_at_first: false
   is_target_line: false
@@ -131,3 +131,27 @@
   dependent_on:
   output_element_key: co2_emissions
   key: international_transportation_1990_co2_emissions
+- label: total_net_co2_emissions
+  color: "#FF0000"
+  order_by: 13
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '1'
+  gquery: present_total_net_co2_emissions
+  is_1990: false
+  dependent_on:
+  output_element_key: co2_emissions
+  key: present_total_net_co2_emissions_co2_emissions
+- label: total_net_co2_emissions
+  color: "#FF0000"
+  order_by: 14
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '2'
+  gquery: future_total_net_co2_emissions
+  is_1990: false
+  dependent_on:
+  output_element_key: co2_emissions
+  key: future_total_net_co2_emissions_co2_emissions

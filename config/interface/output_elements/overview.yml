@@ -7,8 +7,8 @@
   show_point_label: true
   growth_chart: false
   key: use_of_primary_energy
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
@@ -21,8 +21,8 @@
   show_point_label: false
   growth_chart: false
   key: co2_emissions
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -31,29 +31,29 @@
   unit: "%"
   percentage: false
   group: Overview
-  sub_group: 
+  sub_group:
   show_point_label: true
-  growth_chart: 
+  growth_chart:
   key: renewability
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
+  dependent_on:
   output_element_type_name: vertical_stacked_bar
 - under_construction: false
   unit: PJ
   percentage: false
   group: Overview
-  sub_group: 
-  show_point_label: 
-  growth_chart: 
+  sub_group:
+  show_point_label:
+  growth_chart:
   key: mekko_of_primary_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
+  dependent_on:
   output_element_type_name: mekko
 - under_construction: false
   unit: PJ
@@ -63,8 +63,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_electricity_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -78,8 +78,8 @@
   show_point_label: false
   growth_chart: false
   key: sankey
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -92,26 +92,12 @@
   show_point_label: false
   growth_chart: false
   key: sankey_2010
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: sankey
-- under_construction: false
-  unit: T
-  percentage: false
-  group: Overview
-  sub_group: ''
-  show_point_label: false
-  growth_chart: false
-  key: mekko_of_primary_co2
-  max_axis_value: 
-  min_axis_value: 
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: mekko
 - under_construction: false
   unit: "%"
   percentage: false
@@ -120,8 +106,8 @@
   show_point_label: false
   growth_chart: false
   key: relative_primary_co2
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
@@ -134,8 +120,8 @@
   show_point_label: false
   growth_chart: false
   key: relative_primary_demand_of_coal_oil_and_gas
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
@@ -148,8 +134,8 @@
   show_point_label: false
   growth_chart: false
   key: final_demand_mekko_energetic_mece
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -163,24 +149,24 @@
   show_point_label: false
   growth_chart: false
   key: final_energy_demand_per_sector_joule
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: bezier
 - under_construction: false
-  unit: 
+  unit:
   percentage: false
   group: Overview
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: workflow
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: html_table

@@ -5,16 +5,27 @@ en:
       short_description:
       description: 'What do you think these biofuels will cost in the future? Note:
         choices made here may impact the electricity merit order. '
-    costs_co2_ccs:
-      title: CCS in energy sector
+    costs_co2_capture_energy:
+      title: CO<sub>2</sub> capture in energy sector
       short_description: ''
-      description: Will CO<sub>2</sub> capture and storage really become cheaper than
+      description: Will CO<sub>2</sub> capture really become cheaper than
         it is today? Do you know how much?
-    costs_co2_ccs_industry:
-      title: CCS in industry
-      short_description:
-      description: 'What will CCS in industry cost on average? Note: this is an expert
-        function which shall be superseded by more detailed modelling soon.'
+    costs_co2_capture_industry:
+      title: CO<sub>2</sub> capture in industry
+      short_description: ''
+      description: What will CO<sub>2</sub> capture in industry cost on average?
+    costs_co2_storage:
+      title: CO<sub>2</sub> storage
+      short_description: ''
+      description: What will CO<sub>2</sub> storage cost on average?
+    costs_co2_utilisation:
+      title: CO<sub>2</sub> utilisation
+      short_description: ''
+      description: What will CO<sub>2</sub> utilisation cost on average?
+    costs_co2_transport:
+      title: CO<sub>2</sub> transport
+      short_description: ''
+      description: What will CO<sub>2</sub> transport cost on average?
     costs_co2_prices:
       title: Prices
       short_description: ''

@@ -109,13 +109,6 @@ nl:
         (electrolyzers, power plants, infrastructuur, opslag), synthetische kerosine,
         kernenergie, carbon capture and storage (CCS), supercritical water gasification
         (SCWG) en Ondergrondse Pomp Accumulatie Centrale (OPAC).'
-    costs_ccs_per_ton_in_industry:
-      title: CCS-kosten
-      short_description:
-      description: 'CCS kosten zijn afhankelijk van veel factoren, waaronder: het
-        proces waarvan CCS afgevangen wordt, hoe CO2 afgevangen wordt, hoe het wordt
-        getransporteerd, over welke afstand het wordt getransporteerd en hoe het wordt
-        opgeslagen.'
     investment_costs_flexibility_p2h_electricity:
       title: Elektrische boilers
       short_description:
@@ -135,25 +128,55 @@ nl:
         en de kosten voor <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation">synthetische
         kerosineproductie</a> voor de luchtvaart.<br />
     om_costs_co2_ccs:
-      title: CCS Onderhoud & Beheer
+      title: Onderhoud & Beheer
       short_description: ''
       description: "Deze schuif stelt je de toe-of afname in die je verwacht voor
-        de onderhouds- en beheerkosten voor 'Carbon Capture and Storage' (CCS, het
-        afvangen en ondergronds opslaan van CO<sub>2</sub>). De kosten worden vergeleken
+        de onderhouds- en beheerkosten voor CO<sub>2</sub> afvang. De kosten worden vergeleken
         met de kosten van vandaag de dag. Deze technologie kan in combinatie met elke
         verbrandingscentrale gebruikt worden, maar is het meest effectief met een
         kolencentrale, omdat die het meest uitstoot.\r\n<br/><br/>\r\nOp dit moment
         is deze technologie alleen nog maar in experimentele centrales toegepast,
         maar men verwacht dat de kosten af zullen nemen."
     investment_costs_co2_ccs:
-      title: Investeringskosten CCS
+      title: Investeringskosten
       short_description: ''
-      description: Deze schuif stelt je de toe-of afname in die je verwacht voor de
-        investeringskosten voor 'Carbon Capture and Storage' (CCS, het afvangen en
-        ondergronds opslaan van CO<sub>2</sub>). De kosten worden vergeleken met de
+      description: Deze schuif stelt je de toe- of afname in die je verwacht voor de
+        investeringskosten voor CO<sub>2</sub> afvang. De kosten worden vergeleken met de
         kosten van vandaag de dag. Op dit moment is deze technologie alleen nog maar
         in experimentele centrales toegepast, maar men verwacht dat de kosten af zullen
         nemen.
+    om_costs_co2_capture_industry:
+      title: Onderhoud & Beheer
+      short_description: ''
+      description: ''
+    investment_costs_co2_capture_industry:
+      title: Investeringskosten
+      short_description: ''
+      description: ''
+    om_costs_co2_storage:
+      title: Onderhoud & Beheer
+      short_description: ''
+      description: ''
+    investment_costs_co2_storage:
+      title: Investeringskosten
+      short_description: ''
+      description: ''
+    om_costs_co2_utilisation:
+      title: Onderhoud & Beheer
+      short_description: ''
+      description: ''
+    investment_costs_co2_utilisation:
+      title: Investeringskosten
+      short_description: ''
+      description: ''
+    om_costs_co2_transport:
+      title: Onderhoud & Beheer
+      short_description: ''
+      description: ''
+    investment_costs_co2_transport:
+      title: Investeringskosten
+      short_description: ''
+      description: ''
     costs_biogas:
       title: Biogas
       short_description:

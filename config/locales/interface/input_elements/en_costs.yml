@@ -105,12 +105,6 @@ en:
         power plants, infrastructure, storage), synthetic kerosene technologies, nuclear
         plants, carbon capture and storage (CCS), supercritical water gasification
         (SCWG) and underground pumped hydro storage.'
-    costs_ccs_per_ton_in_industry:
-      title: CCS cost
-      short_description:
-      description: 'The costs of CCS depend on many factors, including but not limited
-        to: the process CO2 is captured from, how it is captured, how it is transported,
-        over what distance it is transported and how it is stored.'
     investment_costs_flexibility_p2h_electricity:
       title: Power-to-heat electric boilers
       short_description:
@@ -130,21 +124,53 @@ en:
         electricity</a> and the costs of <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation">synthetic
         kerosene production</a> for aviation.<br />
     om_costs_co2_ccs:
-      title: CCS Operational & Maintenance
+      title: Operational & Maintenance
       short_description: ''
       description: "This slider sets the height of your assumed operational and maintenance
-        (O&M) costs for 'Carbon Capture and Storage' (CCS). This technology can be
+        (O&M) costs for CO<sub>2</sub> capture. This technology can be
         applied with any combustion power plant, but is most efficient with coal as
         that produces most CO<sub>2</sub>. \r\nCosts are compared to current costs.\r\n
         <br/><br/>\r\nCurrently, this technology has only been applied experimentally
         at power plants. It is expected that costs will decrease in the future.\r\n"
     investment_costs_co2_ccs:
-      title: CCS Investment
+      title: Investment CO<sub>2</sub>
       short_description: ''
       description: "This slider sets the height of your assumed investment costs for
-        ‘Carbon Capture and Storage’ (CCS). Costs are compared to current costs. Currently,
+        CO<sub>2</sub> capture. Costs are compared to current costs. Currently,
         this technology has only been applied experimentally at power plants. It is
         expected that costs will decrease in the future.\r\n<br/>"
+    om_costs_co2_capture_industry:
+      title: Operational & Maintenance
+      short_description: ''
+      description: ''
+    investment_costs_co2_capture_industry:
+      title: Investment
+      short_description: ''
+      description: ''
+    om_costs_co2_storage:
+      title: Operational & Maintenance
+      short_description: ''
+      description: ''
+    investment_costs_co2_storage:
+      title: Investment
+      short_description: ''
+      description: ''
+    om_costs_co2_utilisation:
+      title: Operational & Maintenance
+      short_description: ''
+      description: ''
+    investment_costs_co2_utilisation:
+      title: Investment
+      short_description: ''
+      description: ''
+    om_costs_co2_transport:
+      title: Operational & Maintenance
+      short_description: ''
+      description: ''
+    investment_costs_co2_transport:
+      title: Investment
+      short_description: ''
+      description: ''
     costs_biogas:
       title: Biogas
       short_description:

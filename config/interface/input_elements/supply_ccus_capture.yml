@@ -2,30 +2,35 @@
 - key: share_of_industry_steel_captured_co2
   step_value: 1.0
   unit: "%"
+  related_node: industry_steel_blastfurnace_captured_co2
   interface_group: industry
   position: 2
   slide_key: supply_ccus_capture
 - key: share_of_industry_chemicals_fertilizers_captured_processes_co2
   step_value: 1.0
   unit: "%"
+  related_node: industry_chemicals_fertilizers_captured_processes_co2
   interface_group: industry
   position: 2
   slide_key: supply_ccus_capture
 - key: share_of_industry_chemicals_fertilizers_captured_combustion_co2
   step_value: 1.0
   unit: "%"
+  related_node: industry_chemicals_fertilizers_captured_combustion_co2
   interface_group: industry
   position: 2
   slide_key: supply_ccus_capture
 - key: share_of_industry_other_paper_captured_co2
   step_value: 1.0
   unit: "%"
+  related_node: industry_other_paper_captured_co2
   interface_group: industry
   position: 4
   slide_key: supply_ccus_capture
 - key: share_of_industry_other_food_captured_co2
   step_value: 1.0
   unit: "%"
+  related_node: industry_other_food_captured_co2
   interface_group: industry
   position: 5
   slide_key: supply_ccus_capture
@@ -33,28 +38,28 @@
   step_value: 1.0
   unit: "%"
   interface_group: power_plants
-  related_converter: energy_power_ultra_supercritical_ccs_coal
+  related_node: energy_power_ultra_supercritical_ccs_coal
   position: 10
   slide_key: supply_ccus_capture
 - key: share_of_energy_power_combined_cycle_ccs_coal
   step_value: 1.0
   unit: "%"
   interface_group: power_plants
-  related_converter: energy_power_combined_cycle_ccs_coal
+  related_node: energy_power_combined_cycle_ccs_coal
   position: 11
   slide_key: supply_ccus_capture
 - key: share_of_energy_power_combined_cycle_ccs_network_gas
   step_value: 1.0
   unit: "%"
   interface_group: power_plants
-  related_converter: energy_power_combined_cycle_ccs_network_gas
+  related_node: energy_power_combined_cycle_ccs_network_gas
   position: 12
   slide_key: supply_ccus_capture
 - key: share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite
   step_value: 1.0
   unit: "%"
   interface_group: power_plants
-  related_converter: energy_power_ultra_supercritical_oxyfuel_ccs_lignite
+  related_node: energy_power_ultra_supercritical_oxyfuel_ccs_lignite
   position: 13
   dependent_on: has_lignite
   slide_key: supply_ccus_capture
@@ -62,19 +67,20 @@
   step_value: 1.0
   unit: "%"
   interface_group: hydrogen_plants
-  related_converter: energy_hydrogen_steam_methane_reformer_ccs
+  related_node: energy_hydrogen_steam_methane_reformer_ccs
   position: 20
   slide_key: supply_ccus_capture
 - key: share_of_energy_hydrogen_biomass_gasification_ccs
   step_value: 1.0
   unit: "%"
   interface_group: hydrogen_plants
-  related_converter: energy_hydrogen_biomass_gasification_ccs
+  related_node: energy_hydrogen_biomass_gasification_ccs
   position: 21
   slide_key: supply_ccus_capture
 - key: demand_of_molecules_direct_air_capture_co2
   step_value: 1.0
   unit: "Mton"
+  related_node: molecules_direct_air_capture_co2
   interface_group: direct_air_capture
   position: 30
   slide_key: supply_ccus_capture

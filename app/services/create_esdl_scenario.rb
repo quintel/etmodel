@@ -39,9 +39,7 @@ class CreateEsdlScenario
   end
 
   def environment
-    return 'pro' if Rails.env == 'production'
-
-    'beta'
+    Rails.env.production? ? 'pro' : 'beta'
   end
 
   def api_url

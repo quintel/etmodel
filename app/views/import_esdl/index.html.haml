@@ -4,7 +4,7 @@
   %h1= t('esdl.title')
 
   .description
-    %p= t('esdl.description').html_safe
+    = t('esdl.description').html_safe
 
   = form_with url: import_esdl_create_path, id: 'import_esdl' do |f|
     %strong= t('esdl.upload')

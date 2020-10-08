@@ -1,22 +1,30 @@
 en:
   esdl:
     title: "Coupling energy models with the Mondaine Suite"
-    description: "The energy transition is a complex challenge. Multiple
-      energy models are used to explore different parts of this challenge.
-      A collaboration between these models makes it possible to exploit the
-      strengths of each individual model. In the context of the Mondaine project
-      the Energy System Description Language (ESDL) has been developed to support
-      the communication between the different models - it allows the models to
-      ‘speak’ the same language. ESDL can be used to describe information
-      about spatial, technical, economical, social and temporal aspects of the
-      energy transition, all in relation to each other. This makes it possible
-      for a model to build further upon information from another model.
-      <a href=\"https://www.mondaine-suite.nl\" target=\"_blank\">Here</a> you
-      can find more information about Mondaine and ESDL.\r\n<br/>\r\n<br/>\r\n
-      The ETM is compatible with most energy systems defined in ESDL. The ESDL
-      file will be converted into slider settings - this makes it possible to
-      explore the future energy system in the ETM and allows you to continue
-      working on the scenario."
-    upload: "Upload a .esdl file"
+    description: |
+      <p>
+        The energy transition is a complex challenge. Multiple energy models are used to explore
+        different parts of this challenge. A collaboration between these models makes it possible to
+        exploit the strengths of each individual model.
+      </p>
+      <p>
+        In the context of the Mondaine project, the Energy System Description Language (ESDL) has
+        been developed to support the communication between the different models - it allows the
+        models to ‘speak’ the same language. ESDL can be used to describe information about spatial,
+        technical, economical, social and temporal aspects of the energy transition, all in relation
+        to each other. This makes it possible for a model to build further upon information from
+        another model.
+      </p>
+      <p>
+        The ETM is compatible with most energy systems defined in ESDL. The ESDL file will be
+        converted into slider settings - this makes it possible to explore the future energy system
+        in the ETM and allows you to continue working on the scenario.
+      </p>
+      <p>
+        <a href="https://www.mondaine-suite.nl" target="_blank">
+          More information about Mondaine and ESDL&hellip;
+        </a>
+      </p>
+    upload: "Upload an .esdl file"
     start: "Start your scenario"
     creating: "Creating scenario"

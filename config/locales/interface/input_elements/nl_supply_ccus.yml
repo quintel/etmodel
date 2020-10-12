@@ -74,7 +74,7 @@ nl:
         bijgestookt in deze centrales voor het produceren van elektriciteit, ontstaan er
         (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
         wordt afgevangen. Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions'>documentatie</a>
         van het ETM.<br/>"
     share_of_energy_power_combined_cycle_ccs_coal:
       title: Kolenvergassing
@@ -90,7 +90,7 @@ nl:
         bijgestookt in deze centrales voor het produceren van elektriciteit, ontstaan er
         (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
         wordt afgevangen. Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions'>documentatie</a>
         van het ETM.<br/>"
     share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
       title: Bruinkolen
@@ -116,7 +116,7 @@ nl:
         gebruikt in deze centrales voor het produceren van elektriciteit, ontstaan er
         (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
         wordt afgevangen. Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions'>documentatie</a>
         van het ETM.<br/>"
     share_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing
@@ -126,7 +126,7 @@ nl:
         als 'kortcyclisch' worden gerekend, ontstaan er (boekhoudkundig) 'negatieve'
         emissies in jouw scenario als deze CO<sub>2</sub> wordt afgevangen.
         Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions'>documentatie</a>
         van het ETM.<br/><br/>
         Het opgestelde vermogen aan biomassavergassingsfabrieken is in te stellen op de
         <a href='/scenario/supply/hydrogen/hydrogen-production'>waterstofpagina</a>.<br/>"
@@ -141,7 +141,7 @@ nl:
         gebruikt in deze centrales voor het produceren van waterstof, ontstaan er
         (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
         wordt afgevangen. Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-biomass'>documentatie</a>
+        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions'>documentatie</a>
         van het ETM.<br/>"
     demand_of_molecules_direct_air_capture_co2:
       title: Direct air capture (DAC)
@@ -152,7 +152,12 @@ nl:
         in de atmosfeer af ('negatieve' emissies) als de afgevangen CO<sub>2</sub> wordt
         opgeslagen onder de grond. De CO<sub>2</sub> kan ook worden gebruikt voor de productie
         van CO<sub>2</sub>-neutrale brandstoffen. Meer hierover vind je
-        <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>hier</a>.<br/>"
+        <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>hier</a>.<br/><br/>
+        Direct Air Capture is een veelbelovende technologie om de CO<sub>2</sub>-concentratie
+        in de lucht omlaag te brengen. Tegelijkertijd is het proces energie-intensief. Aangezien
+        CO<sub>2</sub> over de hele wereld beschikbaar is, ligt het voor de hand om DAC
+        met name toe te passen in gebieden waar de prijs van (hernieuwbare) stroom zo laag
+        mogelijk is.<br/>"
     demand_of_molecules_offshore_sequestration_co2:
       title: "Opslag van CO<sub>2</sub> onder de zeebodem"
       description: "Met deze schuif geef je aan hoeveel CO<sub>2</sub> er jaarlijks wordt

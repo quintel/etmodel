@@ -1,9 +1,12 @@
 class @Scenario extends Backbone.Model
-  api_session_id: =>
+  apiSessionID: ->
     key = App.settings.get('api_session_id')
     return if key? then key else null
 
-  api_attributes: =>
+  api_session_id: ->
+    @apiSessionID()
+
+  apiAttributes: ->
     s = App.settings
     data =
       area_code: s.get('area_code')
@@ -12,7 +15,15 @@ class @Scenario extends Backbone.Model
       use_fce: s.get('use_fce')
       source: 'ETM'
 
+  api_attributes: ->
+    @apiAttributes()
+
   # Returns the base scenario URL, taking into account CORS support
-  url_path: => App.api.path "scenarios/#{@api_session_id()}"
+  urlPath: -> App.api.path "scenarios/#{@api_session_id()}"
+
+  url_path: -> @urlPath()
+
+  etenginePath: ->
+    App.scenario_url()
 
   reset: => App.reset_scenario()

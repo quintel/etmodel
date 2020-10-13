@@ -171,3 +171,109 @@ header#top
         color: #cbe2f3
       &:-moz-placeholder
         color: #cbe2f3
+
+// Scenario Sub-Nav
+//
+// This gray bar sits below the main header, with information about the active scenario and options
+// for saving the scenario.
+
+#scenario-nav
+  background: #eee
+  border-bottom: 1px solid #ccc
+  display: flex
+  font-size: 0.875rem
+  justify-content: space-between
+
+  .scenario-info, .save-scenario, .save-scenario-as, .scenario-actions
+    color: #444
+    line-height: 20px
+    padding: 0.75rem 1rem 0.625rem
+
+  .scenario-info
+    .region
+      color: black
+      font-weight: bold
+    .year
+      color: black
+    .region-flag
+      background-position: 0 1px
+    .name
+      color: #666
+      display: inline-block
+      max-width: 500px
+      overflow: hidden
+      text-overflow: ellipsis
+      vertical-align: top
+      white-space: nowrap
+    .name:before
+      content: "– "
+  .dropdown
+    display: inline-block
+    position: relative
+  .save-scenario, .save-scenario-as, .scenario-actions
+    border: none
+    border-left: 1px solid #ccc
+    box-sizing: content-box
+    color: #444
+    display: inline-block
+    text-align: center
+    transition: background 0.15s ease-in-out
+    &.active, &.active:hover
+      background: #ddd
+    &:hover
+      background: #f9f9f9
+      cursor: pointer
+      text-decoration: none
+    &:focus:not(:focus-visible)
+      outline: 0
+    &:disabled, .disabled
+      color: #999
+      pointer-events: none
+      &:hover
+        background: none
+        cursor: default
+  ul.dropdown-menu
+    right: 0.5rem
+  a.dropdown-item
+    color: #444
+    min-width: 11rem
+
+// Header drop-down menus. Inspired by Bootstrap.
+
+ul.dropdown-menu
+  background: white
+  border-radius: 4px
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  border-bottom-color: rgba(0, 0, 0, 0.2)
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.1)
+  display: none
+  list-style: none
+  padding: 0.5rem 0
+  position: absolute
+  top: 1.5rem
+  z-index: 100
+
+  &.show
+    display: block
+
+  li
+    margin: 0
+    padding: 0
+
+  // Items which will have a divider above them.
+  li.sep-above
+    border-top: 1px solid rgba(0, 0, 0, 0.15)
+    margin-top: 0.5rem
+    padding-top: 0.5rem
+
+a.dropdown-item
+  color: black
+  display: block
+  padding: 0.25rem 1rem
+  white-space: nowrap
+  &:hover
+    background-color: #eee
+    background-color: #4287c4
+    color: white !important
+    text-decoration: none
+

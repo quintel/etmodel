@@ -10,6 +10,7 @@ class @AppView extends Backbone.View
     @settings    = new Setting({api_session_id: globals.api_session_id})
     @sidebar     = new SidebarView()
     @scenario    = new Scenario()
+    @scenarioNav = new ScenarioNavView(model: @scenario, el: $('#scenario-nav'))
     @router      = new Router()
     @analytics   = new Analytics(window.ga);
 
@@ -102,6 +103,8 @@ class @AppView extends Backbone.View
     window.charts = @charts = new ChartList()
     @accordion = new Accordion()
     @accordion.setup()
+
+    @scenarioNav.render()
 
     if Backbone.history.getFragment().match(/^reports\//)
       @handle_ajax_error = ReportView.onLoadingError

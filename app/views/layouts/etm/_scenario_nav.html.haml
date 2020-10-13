@@ -1,0 +1,41 @@
+#scenario-nav
+  .scenario-info
+    - if Current.setting.active_scenario?
+      %span.region.region-flag{ class: Current.setting.area_code }
+        = current_area_name
+      %span.year
+        = Current.setting.end_year
+      - if Current.setting.active_scenario_title.present?
+        %span.name
+          = Current.setting.active_scenario_title
+    - else
+      %span.region.region-flag== #{t('scenario_nav.loading')}&hellip;
+      %span.year
+  %div
+    - if save_scenario_enabled?
+      %button.save-scenario{ data: { path: scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
+        = t('header.save_scenario')
+    - else
+      %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+        == #{t("header.save_scenario")}
+    .dropdown<>
+      %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, disabled: true, type: 'button' }
+        Actions
+        %span.fa.fa-caret-down
+      %ul.dropdown-menu{ 'aria-labelledby': 'scenario-actions-button' }
+        %li
+          %a.dropdown-item{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+            == #{t("header.save_scenario_as")}&hellip;
+        %li
+          %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }
+            = t("header.reset_scenario")
+        %li.sep-above
+          %a.dropdown-item{ href: '#', data: { dylink: scale_scenario_path(scenario_id: ':scenario_id') } }
+            = t('header.scale_scenario')
+
+        - if current_user&.admin?
+          %li.sep-above
+            %a.dropdown-item(href="/admin") Admin
+          %li
+            %a.dropdown-item{ href: "#", target: "_blank", data: { dylink: ':etengine' } } Open in ETEngine
+

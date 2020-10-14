@@ -35,13 +35,14 @@
             = link_to(multi_year_charts_path) do
               = t('intro.multi_year_charts.try_it')
               →
-      %li.esdl
-        %h4= t('intro.esdl.title')
-        %p= t('intro.esdl.description')
-        %p
-          = link_to(import_esdl_path) do
-            = t('intro.esdl.try_it')
-            →
+      - if APP_CONFIG[:esdl_api_url]
+        %li.esdl
+          %h4= t('intro.esdl.title')
+          %p= t('intro.esdl.description')
+          %p
+            = link_to(import_esdl_path) do
+              = t('intro.esdl.try_it')
+              →
       %li.quintel
         %h4= t('intro.about_us.title')
         %p= t('intro.about_us.description')

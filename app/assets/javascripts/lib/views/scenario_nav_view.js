@@ -1,4 +1,4 @@
-/* globals $ Backbone I18n ToastView */
+/* globals $ Backbone DropdownView I18n ToastView */
 (function(window) {
   /**
    * Saves an already-saved scenario.
@@ -31,8 +31,7 @@
 
   var ScenarioNavView = Backbone.View.extend({
     events: {
-      'click .save-scenario': 'saveScenario',
-      'click .scenario-actions': 'toggleScenarioActions'
+      'click .save-scenario': 'saveScenario'
     },
 
     /**
@@ -65,6 +64,8 @@
           .replace(/:etengine/, model.etenginePath());
       });
 
+      new DropdownView({ el: this.el.querySelector('.dropdown') }).render();
+
       return this;
     },
 
@@ -83,42 +84,6 @@
           .html(origHTML)
           .width('auto');
       });
-    },
-
-    /**
-     * Event triggered when the user clicks the "Actions" button.
-     *
-     * @param {MouseEvent} event
-     */
-    toggleScenarioActions: function() {
-      var target = this.el.querySelector('.scenario-actions');
-      var menu = target.closest('.dropdown').querySelector('.dropdown-menu');
-
-      if (menu.classList.contains('show')) {
-        menu.classList.remove('show');
-        target.classList.remove('active');
-        target.ariaExpanded = false;
-
-        document.removeEventListener('click', this.dismissEvent);
-        this.dismissEvent = null;
-      } else {
-        menu.classList.add('show');
-        target.classList.add('active');
-        target.ariaExpanded = true;
-
-        this.dismissEvent = this.dismissScenarioActions.bind(this);
-        document.addEventListener('click', this.dismissEvent);
-      }
-    },
-
-    /**
-     * Event added to the document whenever the scenario actions dropdown is open. If a click occurs
-     * outside of the dropdown, the dropdown is closed.
-     */
-    dismissScenarioActions: function(event) {
-      if (!event.target.closest('.dropdown')) {
-        this.toggleScenarioActions();
-      }
     }
   });
 

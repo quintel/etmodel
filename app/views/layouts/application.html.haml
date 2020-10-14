@@ -23,8 +23,7 @@
   %body{ id: defined?(body_id) ? body_id : 'outside-model', class: defined?(body_class) ? body_class : '' }
 
     #wrapper
-      %header#top
-        = render "layouts/etm/header"
+      = render "layouts/etm/header"
       #content
         - flash_message
         = content_for?(:content) ? yield(:content) : yield

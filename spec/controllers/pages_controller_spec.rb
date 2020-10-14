@@ -59,7 +59,7 @@ describe PagesController, vcr: true do
     end
 
     it 'does not have a link to the admin section' do
-      expect(response.body).not_to have_css('#settings_menu li.admin')
+      expect(response.body).not_to have_css('.my-account li.admin')
     end
   end
 
@@ -70,7 +70,7 @@ describe PagesController, vcr: true do
     end
 
     it 'has a link to the admin section' do
-      expect(response.body).to have_css('#settings_menu li.admin')
+      expect(response.body).to have_css('.my-account li.admin')
     end
   end
 

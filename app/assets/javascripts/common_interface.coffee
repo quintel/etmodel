@@ -41,6 +41,7 @@ class @CommonInterface
           parseInt(timeout,10)
 
   setup_menus: =>
+    return
     # Expand menus
     #
     $("a.menu_toggler").on 'click', (e) =>
@@ -52,14 +53,6 @@ class @CommonInterface
         $t.parent().find('.header_menu').show()
       e.preventDefault()
 
-    # Close menus when clicking outside them
-    #
-    $('body').mouseup (e) =>
-      $t = $(e.target)
-      if $t.closest(".header_menu").length == 0 &&
-         !$t.is('a.menu_toggler')
-        @close_all_menus()
-
     $("select#locale").change ->
       $.ajax
         url: "/set_locale"
@@ -67,11 +60,6 @@ class @CommonInterface
         data:
           locale: $(this).val()
         success: -> window.location.reload()
-
-
-  close_all_menus: ->
-    $('a.menu_toggler').removeClass('menu-open')
-    $('.header_menu').hide()
 
   # Tooltips. Works with AJAX-injected content, too
   #

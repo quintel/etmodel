@@ -5,8 +5,6 @@ disabledSetting = (event) -> false
 
 class @AppView extends Backbone.View
   initialize: ->
-    @disableIdDependantSettings()
-
     @settings    = new Setting({api_session_id: globals.api_session_id})
     @sidebar     = new SidebarView()
     @scenario    = new Scenario()
@@ -34,7 +32,6 @@ class @AppView extends Backbone.View
       if id != globals.api_session_id
         @settings.save({ api_session_id: id })
       @scenario.set(id: id)
-      @enableIdDependantSettings()
 
   # (Re)builds the list of sliders and renders them. This is usually called by
   # play.js.erb
@@ -224,26 +221,6 @@ class @AppView extends Backbone.View
 
   debug: (t) ->
     console.log(t) if globals.debug_js
-
-  disabledSettings: ->
-    '#settings_menu a.save,
-     #settings_menu a#reset_scenario,
-     #settings_menu a.engine'
-
-  disableIdDependantSettings: =>
-    $(@disabledSettings()).
-      addClass('wait').on('click', disabledSetting)
-
-  enableIdDependantSettings: (args...) =>
-    $(@disabledSettings())
-      .removeClass('wait').off('click', disabledSetting)
-
-    new SettingsMenuView(
-      el: $('#settings_menu')[0],
-      scenario: @scenario
-    ).render()
-
-    $('#settings_menu a.engine').attr('href', @scenario_url())
 
   # TODO: Move this interface methods to a separate Interface class
   #

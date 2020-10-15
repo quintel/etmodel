@@ -14,10 +14,10 @@
   %div
     - if save_scenario_enabled?
       %button.save-scenario{ data: { path: scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
-        = t('header.save_scenario')
+        = t('header.save_scenario').titleize
     - else
       %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
-        == #{t("header.save_scenario")}
+        = t('header.save_scenario').titleize
     .dropdown<>
       %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, disabled: true, type: 'button' }
         Actions

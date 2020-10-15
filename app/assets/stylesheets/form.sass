@@ -9,14 +9,16 @@ input, textarea, select, button
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 
 input, textarea, select
-  border: 1px solid #bbb
   border-radius: 3px
+  border: 1px solid #bbb
+  box-shadow: 0 0 0 0 transparent
   padding: 2px
-  transition: border-color .1s, box-shadow .1s
+  transition: border-color .15s, box-shadow .15s
+  will-change: border-color, box-shadow
 
   &:focus
-    border-color: #4b8ac2
-    box-shadow: 0 0 7px #73abd9
+    border-color: #8ebeea
+    box-shadow: 0 0 0 3px #cfe5f7
     outline: none
 
 form, fieldset
@@ -62,16 +64,18 @@ form, fieldset
     width: 28px
 
   input.string, input.password, input.numeric, input[type=text], textarea
-    border: 1px solid #bbb
     border-radius: 3px
-    padding: 7px
+    border: 1px solid #bbb
+    box-shadow: 0 0 0 0 transparent
     font-family: $body-font-family
+    padding: 7px
+    transition: border-color .15s, box-shadow .15s
     width: 300px
-    transition: border-color .1s, box-shadow .1s
+    will-change: border-color, box-shadow
 
     &:focus
-      border-color: #4b8ac2
-      box-shadow: 0 0 7px #73abd9
+      border-color: #8ebeea
+      box-shadow: 0 0 0 3px #cfe5f7
       outline: none
 
   textarea

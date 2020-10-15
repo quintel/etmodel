@@ -3,7 +3,8 @@ html
 
 body
   background: none
-  font: 14px "Helvetica Neue", Arial, sans-serif
+  color: #333
+  font-size: 0.875rem
   height: auto
   padding-bottom: 50px
 
@@ -112,9 +113,9 @@ body
 
   .main
     background: white
-    border: 1px solid #ccc
-    border-bottom-color: #bbb
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+    border: 1px solid #cfd3d8
+    border-bottom-color: #c7ccd2
+    box-shadow: rgba(109, 114, 119, 0.08) 0px 5px 12px, rgba(0, 0, 0, 0.05) 0px 2px 5px
     border-radius: 5px
     padding: 35px 50px
 
@@ -128,7 +129,7 @@ body
           margin-top: 0
       h1
         border-bottom: none
-        font-size: 18px
+        font-size: 1.25rem
         font-weight: normal
         margin-bottom: 0
         padding-bottom: 0
@@ -138,8 +139,10 @@ body
         border-bottom: 1px solid #ddd
         margin: -50px -50px 2em -50px
         overflow: hidden
-        padding: 50px 50px 1em
+        padding: 50px 50px 35px
         position: relative
+        p
+          margin-bottom: 0
       .simple_form .error
         margin-left: 0
 
@@ -147,14 +150,48 @@ body
     transition: opacity .2s
     width: auto
 
-    &#password_reset.simple_form
+    .row
+      overflow: hidden
+      padding: 0 0 0 50px
+      margin: 0 -25px 0 -50px
+
+  .main.small
+    padding: 50px
+    position: relative
+    overflow: hidden
+
+    .lower-section
+      background: #f6f8fb
+      border-top: 1px solid #d9e1ec
+      margin: 50px -50px -50px
+      padding: 50px
+      a
+        border-radius: 3px
+        margin: 0
+      p:last-child
+        margin-bottom: 0
+
+    h1
+      margin-bottom: 1rem
+
+    .fa.bg
+      bottom: -50px
+      color: #f9f9f9
+      color: rgba(0, 0, 0, 0.03)
+      font-size: 205px
+      position: absolute
+      right: -5px
+      z-index: 1
+
+    form
       .row
         margin: -5px
-        padding: 5px
+        padding: 5px 5px 10px
         span.error
           color: #c55
         label
-          margin-top: 10px
+          font-weight: 500
+          margin: 10px 0
         .input
           margin-bottom: 0 !important
           width: auto
@@ -177,24 +214,31 @@ body
           color: #777
           margin: 2px 7px 0 2px
           vertical-align: middle
-
-    .row
-      overflow: hidden
-      padding: 0 0 0 50px
-      margin: 0 -25px 0 -50px
-
-  .small
-    position: relative
-    overflow: hidden
-
-    .fa.bg
-      bottom: -50px
-      color: #f9f9f9
-      color: rgba(0, 0, 0, 0.03)
-      font-size: 205px
-      position: absolute
-      right: -5px
-      z-index: 1
+        div.boolean
+          margin-left: 0
+          label
+            font-weight: normal
+          input
+            height: 1rem
+            margin: -3px 0.35rem 0 0
+            vertical-align: middle
+            width: 1rem
+      &.new_user_session
+        .password
+          label
+            width: 125px
+          .forgot-pw
+            float: right
+            font-size: 0.75rem
+            margin-top: 12px
+      .form-errors
+        background: #f5e0e0
+        border-radius: 3px
+        border: 1px solid #dcabab
+        color: #bd2424
+        margin: 20px 0 10px
+        padding: 12px 5px
+        text-align: center
 
   header#top
     background: none
@@ -219,6 +263,9 @@ body
     margin: 20px 0
     padding-bottom: 15px
 
+    &:last-child
+      margin-bottom: 0
+
   .highlight
     background: #f9f9f9
     border-top: 1px solid #eee
@@ -234,14 +281,15 @@ body
       width: 349px
 
     input.string, input.password
+      border-color: #ccc
+      padding: 10px
       width: 308px
 
     label
       cursor: pointer
       display: block
-      font-weight: bold
-      margin: 0 0 5px 0
-      margin-bottom: 5px !important
+      font-weight: 500
+      margin: 10px 0
       text-align: left
       width: 310px
 
@@ -278,7 +326,8 @@ body
         width: auto
 
     input.btn, a.btn
-      font: bold 16px "Helvetica Neue", Arial, sans-serif
+      font-weight: bold
+      font-size: 1rem
       outline: none
       padding: 10px 16px
       -webkit-font-smoothing: antialiased
@@ -287,9 +336,19 @@ body
       background: none
 
       .error
-        color: #c32626
-        font-size: 12px
+        color: #d23232
+        font-size: 13px
         margin: 3px 0 0 0
+
+  .return-to-model
+    font-size: 0.75rem
+    margin-top: 25px
+    text-align: center
+    &, a
+      color: #888
+    a:hover
+      color: #222
+      text-decoration: none
 
 // Small typography tweaks for the NL signup page.
 

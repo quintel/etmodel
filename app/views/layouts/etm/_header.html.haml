@@ -1,6 +1,6 @@
 %header#top.main-header
   %a.logo{ href: root_path }
-    %img(src="/assets/header/logo300@2x.png" width="300" height="37" alt="")
+    %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
   .user-settings
     .dropdown
       %button.locale#locale-button{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
@@ -31,10 +31,5 @@
             %li.sep-above.admin
               %a.dropdown-item(href="/admin") Admin
     - else
-      .dropdown
-        %button.sign-in#sign-in-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown'}, type: 'button' }
-          = t('header.sign_in')
-          %span.fa.fa-caret-down
-        .dropdown-menu.dropdown-menu-right
-          .dropdown-content
-            = render partial: 'layouts/etm/signin_menu'
+      %a.sign-in{ href: new_user_session_path }
+        = t('header.sign_in')

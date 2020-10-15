@@ -29,9 +29,42 @@
     return request;
   }
 
+  function loadSaveScenarioForm(event) {
+    $.fancybox.open({
+      autoSize: false,
+      href: event.target.href + '?inline=true',
+      type: 'ajax',
+      height: 480,
+      width: 530,
+      padding: 0,
+      afterShow: function() {
+        var form = document.querySelector('form#new_saved_scenario');
+        var titleField = form.querySelector('#saved_scenario_title');
+        titleField.focus();
+
+        form.addEventListener('submit', function(event) {
+          if (titleField.value.trim().length === 0) {
+            titleField.classList.add('has-error');
+            titleField.focus();
+
+            titleField.addEventListener('keydown', function() {
+              titleField.classList.remove('has-error');
+            });
+
+            event.preventDefault();
+
+            return;
+          }
+        });
+      }
+    });
+  }
+
   var ScenarioNavView = Backbone.View.extend({
     events: {
-      'click .save-scenario': 'saveScenario'
+      'click .save-scenario': 'saveScenario',
+      'click .save-scenario-as': 'showSaveAsModal',
+      'click .save-scenario-as-inline': 'showSaveAsModal'
     },
 
     /**
@@ -84,6 +117,11 @@
           .html(origHTML)
           .width('auto');
       });
+    },
+
+    showSaveAsModal: function(event) {
+      event && event.preventDefault();
+      loadSaveScenarioForm(event);
     }
   });
 

@@ -3,13 +3,12 @@ $header-item-padding: 0.75rem 1rem 0.625rem
 $header-item-line-height: 20px
 
 header.main-header
+  align-items: center
   background: linear-gradient(to bottom, #5194d0, #2c75b5)
   display: flex
   font-size: $header-font-size
+  height: 57px
   justify-content: space-between
-
-  .logo, .user-settings
-    line-height: $header-item-line-height
 
   .logo
     display: block
@@ -17,26 +16,63 @@ header.main-header
     padding-bottom: 0
 
   .user-settings
-    align-items: center
     display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    list-style: none
+    margin: 0
+    padding: 0
 
-    & > :first-child
+    li.nav-item
       margin-left: 0.5rem
-    & > :last-child
-      margin-right: 0.5rem
+
+      &:first-child
+        margin-left: 1rem
+      &:last-child
+        margin-right: 1rem
 
   .logo
     align-items: center
     display: flex
     padding: 0 1rem
 
-  .locale, .my-scenarios, .my-account, .sign-in
+  // Links and buttons in the main navbar.
+  .nav-link
     background: none
     border: none
     color: rgba(255, 255, 255, 0.8)
     cursor: pointer
-    font-weight: 600
-    padding: 1.25rem 0.5rem
+    display: block
+    font-size: 0.875rem
+    font-weight: 500
+    line-height: 20px
+    padding: 0.35rem 0.5rem
+    &:hover
+      color: rgba(255, 255, 255, 0.9)
+      text-decoration: none
+    &:focus:not(:focus-visible)
+      outline: 0
+
+  // Special styles for the rounded pills used for "My Scenarios" and "My Account"
+  .my-scenarios
+    padding-right: 0
+    a
+      border-top-left-radius: 50rem
+      border-bottom-left-radius: 50rem
+  .my-account
+    margin-left: 1px !important
+    padding-left: 0
+    button
+      border-top-right-radius: 50rem
+      border-bottom-right-radius: 50rem
+  .sign-in a
+    border-radius: 50rem
+
+  .my-scenarios a, .my-account button, .sign-in a
+    background: rgba(255, 255, 255, 0.1)
+    padding: 0.35rem 0.9rem
+    &:hover
+      background: rgba(255, 255, 255, 0.15)
 
   .logo, .locale, .my-scenarios, .my-account, .sign-in
     &:hover
@@ -57,7 +93,7 @@ header.main-header
     padding-left: 1rem
     padding-right: 1rem
 
-  .locale, .my-account, .sign-in
+  .locale, .my-account
     height: 100%
 
   .user-settings .dropdown-menu img
@@ -85,6 +121,7 @@ header.main-header
 
   .scenario-info, .save-scenario, .save-scenario-as, .scenario-actions
     color: #444
+    font-size: 0.875rem
     line-height: $header-item-line-height
     padding: $header-item-padding
 
@@ -162,12 +199,12 @@ header.main-header
     box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.1)
     content: " "
     display: block
-    height: 12px
-    left: 10px
+    height: 0.625rem
+    left: 0.625rem
     position: absolute
-    top: -5px
+    top: -0.3125rem
     transform: rotate(45deg)
-    width: 12px
+    width: 0.625rem
 
   &.show
     display: block
@@ -202,4 +239,3 @@ a.dropdown-item
     background-color: #4287c4
     color: white !important
     text-decoration: none
-

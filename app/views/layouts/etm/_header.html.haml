@@ -1,35 +1,39 @@
 %header#top.main-header
   %a.logo{ href: root_path }
     %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
-  .user-settings
-    .dropdown
-      %button.locale#locale-button{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
-        %span.fa.fa-comment
-        = t('header.current_language')
-        %span.fa.fa-caret-down
-      %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'locale-button' }
-        %li
-          %a.dropdown-item{ href: url_for(locale: 'en') }
-            = image_tag 'flags-24/uk.png'
-            English
-        %li
-          %a.dropdown-item{ href: url_for(locale: 'nl') }
-            = image_tag 'flags-24/nl.png'
-            Nederlands
+  %ul.user-settings
+    %li.locale.nav-item
+      .dropdown
+        %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
+          %span.fa.fa-comment
+          = t('header.current_language')
+          %span.fa.fa-caret-down
+        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'locale-button' }
+          %li
+            %a.dropdown-item{ href: url_for(locale: 'en') }
+              = image_tag 'flags-24/uk.png'
+              English
+          %li
+            %a.dropdown-item{ href: url_for(locale: 'nl') }
+              = image_tag 'flags-24/nl.png'
+              Nederlands
 
     - if current_user
-      %a.my-scenarios{ href: scenarios_path }
-        = t('header.load_scenario')
-      .dropdown<>
-        %button.my-account#my-account-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
-          %span= current_user.name.presence || t('header.my_profile')
-          %span.fa.fa-caret-down
-        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'my-account-button' }
-          %li= link_to t('header.my_profile'), edit_user_path, class: 'dropdown-item'
-          %li= link_to t('header.sign_out'), logout_path, class: 'dropdown-item'
-          - if current_user.admin?
-            %li.sep-above.admin
-              %a.dropdown-item(href="/admin") Admin
+      %li.my-scenarios.nav-item
+        %a.nav-link{ href: scenarios_path }
+          = t('header.load_scenario')
+      %li.my-account.nav-item
+        .dropdown
+          %button#my-account-button.nav-link{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+            %span= current_user.name.presence || t('header.my_profile')
+            %span.fa.fa-caret-down
+          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'my-account-button' }
+            %li= link_to t('header.my_profile'), edit_user_path, class: 'dropdown-item'
+            %li= link_to t('header.sign_out'), logout_path, class: 'dropdown-item'
+            - if current_user.admin?
+              %li.sep-above.admin
+                %a.dropdown-item{ href: '/admin' } Admin
     - else
-      %a.sign-in{ href: new_user_session_path }
-        = t('header.sign_in')
+      %li.sign-in.nav-item
+        %a.nav-link{ href: new_user_session_path }
+          = t('header.sign_in')

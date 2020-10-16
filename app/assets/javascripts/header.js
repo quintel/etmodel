@@ -1,7 +1,10 @@
 /* globals $ Backbone */
 (function(window) {
   var DropdownView = Backbone.View.extend({
-    events: { 'click [data-toggle="dropdown"]': 'toggle' },
+    events: {
+      'click [data-toggle="dropdown"]': 'toggle',
+      'click a.dropdown-item': 'onClickItem'
+    },
 
     constructor: function() {
       Backbone.View.apply(this, arguments);
@@ -32,6 +35,16 @@
 
         document.addEventListener('click', this.dismissEvent);
       }
+    },
+
+    /**
+     * When clicking a link in the dropdown, dismiss the dropdown but don't prevent the default
+     * event from firing.
+     *
+     * This ensures the dropdown is hidden when clicking a link which is intercepted by JS.
+     */
+    onClickItem: function() {
+      this.toggle();
     },
 
     /**

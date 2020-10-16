@@ -33,10 +33,12 @@
         - if current_user
           %li
             %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
-              == #{t("header.save_scenario_as")}&hellip;
+              = succeed '&hellip;'.html_safe do
+                = t("header.save_scenario_as")
         - else
           %a.dropdown-item.disabled{ href: login_path }
-            == #{t("header.save_scenario_as")}&hellip;
+            = succeed '&hellip;'.html_safe do
+              = t("header.save_scenario_as")
         %li
           %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }
             = t("header.reset_scenario")

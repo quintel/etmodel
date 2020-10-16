@@ -26,4 +26,10 @@ class @Scenario extends Backbone.Model
   etenginePath: ->
     App.scenario_url()
 
+  countryCode: ->
+    if App.settings.get('area_code').match(/^UKNI/)
+      App.settings.get('area_code')
+    else
+      App.settings.get('country_code')
+
   reset: => App.reset_scenario()

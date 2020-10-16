@@ -83,7 +83,7 @@
       this.$el
         .find('.region')
         .text(I18n.t('areas.' + attrs.area_code))
-        .addClass(attrs.area_code);
+        .addClass(this.model.countryCode());
 
       this.$el.find('.year').text(attrs.end_year);
       this.$el.find('button').attr('disabled', false);

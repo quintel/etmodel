@@ -121,6 +121,7 @@ module ApplicationHelper
   def settings_as_json(setting)
     setting.to_hash.merge(
       area_name: current_area_name,
+      country_code: setting.area.top_level_area.area,
       area_scaling: setting.area.try(:scaling)
     )
   end

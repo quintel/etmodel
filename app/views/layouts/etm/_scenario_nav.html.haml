@@ -23,7 +23,7 @@
         = t('header.save_scenario').titleize
     .dropdown<>
       %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, disabled: true, type: 'button' }
-        Actions
+        = t('header.actions')
         %span.fa.fa-caret-down
       %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
         %li
@@ -38,5 +38,5 @@
 
         - if current_user&.admin?
           %li.sep-above
-            %a.dropdown-item{ href: "#", target: "_blank", data: { dylink: ':etengine' } } Open in ETEngine
-
+            %a.dropdown-item{ href: "#", target: "_blank", data: { dylink: ':etengine' } }
+              = t('header.open_in_etengine')

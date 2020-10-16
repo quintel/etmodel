@@ -172,6 +172,23 @@ header.main-header
     color: #444
     min-width: 11rem
 
+  // "Saving..." and "Saved" labels in the "Save Scenario" button
+  .save-scenario
+    position: relative
+    .label
+      opacity: 0
+      transition: opacity 0.25s ease-in-out
+      will-change: opacity
+    .saved
+      color: #35a047
+      left: 50%
+      margin-left: -50px
+      position: absolute
+      top: 12px
+      width: 100px
+    .label.show, .saved.show
+      opacity: 1
+
 // Header drop-down menus. Inspired by Bootstrap.
 
 .dropdown

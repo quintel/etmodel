@@ -14,7 +14,10 @@
   %div
     - if save_scenario_enabled?
       %button.save-scenario{ data: { path: scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
-        = t('header.save_scenario').titleize
+        %span.main.label.show= t('header.save_scenario').titleize
+        %span.saved.label.abs-label
+          %span.fa.fa-check
+          = t('header.saved')
     - else
       %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
         = t('header.save_scenario').titleize

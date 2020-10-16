@@ -1,4 +1,4 @@
-/* globals $ Backbone DropdownView I18n ToastView */
+/* globals $ Backbone DropdownView I18n */
 (function(window) {
   /**
    * Saves an already-saved scenario.
@@ -9,24 +9,12 @@
    * @return {Promise} The promise returned by the request.
    */
   function saveScenario(path, scenarioID) {
-    var request = $.ajax({
+    return $.ajax({
       url: path,
       data: { scenario_id: scenarioID },
       dataType: 'json',
       method: 'put'
     });
-
-    request.success(function() {
-      ToastView.create('<span class="fa fa-check"></span> ' + I18n.t('toast.scenario_saved'), {
-        className: 'success'
-      }).start();
-    });
-
-    request.error(function() {
-      ToastView.destroyAll();
-    });
-
-    return request;
   }
 
   function loadSaveScenarioForm(event) {
@@ -105,19 +93,18 @@
     },
 
     saveScenario: function() {
-      var button = this.$el.find('.save-scenario');
-      var origHTML = button.html();
+      var button = this.el.querySelector('.save-scenario');
+      button.disabled = true;
 
-      button
-        .attr('disabled', true)
-        .width(button.width())
-        .html(I18n.t('scenario_nav.saving') + '&hellip;');
+      saveScenario(button.dataset.path, this.model.get('id')).always(function() {
+        button.querySelector('.label').classList.remove('show');
+        button.querySelector('.saved').classList.add('show');
 
-      saveScenario(button.data('path'), this.model.get('id')).always(function() {
-        button
-          .attr('disabled', false)
-          .html(origHTML)
-          .width('auto');
+        window.setTimeout(function() {
+          button.disabled = false;
+          button.querySelector('.saved').classList.remove('show');
+          button.querySelector('.main').classList.add('show');
+        }, 3000);
       });
     },
 

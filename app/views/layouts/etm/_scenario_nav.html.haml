@@ -12,22 +12,30 @@
       %span.region.region-flag== #{t('scenario_nav.loading')}&hellip;
       %span.year
   %div
-    - if save_scenario_enabled?
-      %button.save-scenario{ data: { path: scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
-        %span.main.label.show= t('header.save_scenario').titleize
-        %span.saved.label.abs-label
-          %span.fa.fa-check
-          = t('header.saved')
+    - if current_user
+      - if save_scenario_enabled?
+        %button.save-scenario{ data: { path: scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
+          %span.main.label.show= t('header.save_scenario').titleize
+          %span.saved.label.abs-label
+            %span.fa.fa-check
+            = t('header.saved')
+      - else
+        %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+          = t('header.save_scenario').titleize
     - else
-      %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+      %a.sign-in-to-save.disabled{ href: new_user_session_path }
         = t('header.save_scenario').titleize
     .dropdown<>
       %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, disabled: true, type: 'button' }
         = t('header.actions')
         %span.fa.fa-caret-down
       %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
-        %li
-          %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+        - if current_user
+          %li
+            %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+              == #{t("header.save_scenario_as")}&hellip;
+        - else
+          %a.dropdown-item.disabled{ href: new_user_session_path }
             == #{t("header.save_scenario_as")}&hellip;
         %li
           %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }

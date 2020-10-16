@@ -23,7 +23,7 @@
         %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
           = t('header.save_scenario').titleize
     - else
-      %a.sign-in-to-save.disabled{ href: new_user_session_path }
+      %a.sign-in-to-save.disabled{ href: login_path }
         = t('header.save_scenario').titleize
     .dropdown<>
       %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, disabled: true, type: 'button' }
@@ -35,7 +35,7 @@
             %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
               == #{t("header.save_scenario_as")}&hellip;
         - else
-          %a.dropdown-item.disabled{ href: new_user_session_path }
+          %a.dropdown-item.disabled{ href: login_path }
             == #{t("header.save_scenario_as")}&hellip;
         %li
           %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }

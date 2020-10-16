@@ -24,7 +24,7 @@
               = t('user.sign_in.invalid_login')
     .row= f.input :remember_me, as: :boolean, input_html: { checked: true, tabindex: 3 }
 
-    = submit_tag 'Sign in', class: 'primary btn btn-block', tabindex: 4
+    %div= submit_tag 'Sign in', class: 'primary btn btn-block', tabindex: 4
 
   .lower-section
     %h1= t('user.sign_in.no_account_header')

@@ -373,7 +373,9 @@ table.default
       font-weight: 500
       margin: 10px 0
       text-align: left
+      transition: color 0.15s ease-in-out
       width: 100%
+      will-change: color
 
       abbr
         display: none
@@ -394,12 +396,15 @@ table.default
       font-size: 1rem
       margin-bottom: 0.5rem
 
-      &.has-error
-        border-color: #e65a5a
-        box-shadow: 0 0 0 3px #f9c6c6
-
     textarea
       font-size: 0.875rem
+
+    .input.has-error
+      label
+        color: #a93434
+      input
+        border-color: #e65a5a
+        box-shadow: 0 0 0 3px #f9c6c6
 
     .btn
       font-size: 1rem

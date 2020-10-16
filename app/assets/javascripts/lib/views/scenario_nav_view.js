@@ -40,15 +40,17 @@
       afterShow: function() {
         var form = document.querySelector('form#new_saved_scenario');
         var titleField = form.querySelector('#saved_scenario_title');
+        var wrapperEl = titleField.closest('div.input');
+
         titleField.focus();
 
         form.addEventListener('submit', function(event) {
           if (titleField.value.trim().length === 0) {
-            titleField.classList.add('has-error');
+            wrapperEl.classList.add('has-error');
             titleField.focus();
 
-            titleField.addEventListener('keydown', function() {
-              titleField.classList.remove('has-error');
+            titleField.addEventListener('keyup', function() {
+              wrapperEl.classList.remove('has-error');
             });
 
             event.preventDefault();

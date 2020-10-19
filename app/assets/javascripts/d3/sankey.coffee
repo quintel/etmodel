@@ -154,7 +154,8 @@ D3.sankey =
           {id: 'coal',                            column: 0, label: 'coal',                    color: '#252525'},
           {id: 'network_gas',                     column: 0, label: 'network_gas',             color: '#7f7f7f'},
           {id: 'oil',                             column: 0, label: 'oil',                     color: '#854321'},
-          {id: 'biomass_products',                column: 0, label: 'biogenic_fuels',          color: '#2ca02c'},
+          {id: 'non_biogenic_waste',              column: 0, label: 'non_biogenic_waste',      color: '#BA7D40'},
+          {id: 'biomass_products',                column: 0, label: 'biomass',                 color: '#2ca02c'},
           {id: 'dac',                             column: 0, label: 'dac',                     color: '#b71540'},
           {id: 'households',                      column: 1, label: 'households'},
           {id: 'buildings',                       column: 1, label: 'buildings'},
@@ -165,7 +166,7 @@ D3.sankey =
           {id: 'energy',                          column: 1, label: 'energy',                  color: '#73264d'},
           {id: 'other',                           column: 1, label: 'other'},
           {id: 'emitted',                         column: 2, label: 'emitted',                 color: '#d62728'},
-          {id: 'captured',                        column: 2, label: 'captured',                color: '#1f77b4'}
+          {id: 'captured',                        column: 2, label: 'captured_co2',            color: '#1f77b4'}
         ]
         links: [
           {left: 'coal',                          right: 'households',               gquery: 'households_coal_total_in_co2_sankey', color: '#252525'},
@@ -197,6 +198,7 @@ D3.sankey =
           {left: 'coal',                          right: 'energy',                   gquery: 'energy_coal_total_in_co2_sankey', color: '#252525'},
           {left: 'network_gas',                   right: 'energy',                   gquery: 'energy_network_gas_total_in_co2_sankey', color: '#7f7f7f'},
           {left: 'oil',                           right: 'energy',                   gquery: 'energy_oil_total_in_co2_sankey', color: '#854321'},
+          {left: 'non_biogenic_waste',            right: 'energy',                   gquery: 'energy_non_biogenic_waste_total_in_co2_sankey', color: '#BA7D40'},
           {left: 'biomass_products',              right: 'energy',                   gquery: 'energy_biomass_total_in_co2_sankey', color: '#2ca02c'},
           {left: 'dac',                           right: 'energy',                   gquery: 'energy_dac_total_in_co2_sankey', color: '#b71540'},
           {left: 'households',                    right: 'emitted',                  gquery: 'households_emitted_in_co2_sankey', color: '#8B0000'},

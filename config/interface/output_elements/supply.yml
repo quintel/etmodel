@@ -3,30 +3,16 @@
   unit: Additional emissions (kgCO2/MWhe volatile) ; Additional costs (EUR/MWhe volatile)
   percentage: false
   group: Supply
-  sub_group: 
+  sub_group:
   show_point_label: false
   growth_chart: false
   key: flexibility_of_backup_scatter_plot
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: scatter
-- under_construction: false
-  unit: T
-  percentage: false
-  group: Supply
-  sub_group: ''
-  show_point_label: false
-  growth_chart: false
-  key: co2_sankey
-  max_axis_value: 
-  min_axis_value: 
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: sankey
 - under_construction: false
   unit: PJ
   percentage: false
@@ -35,8 +21,8 @@
   show_point_label: false
   growth_chart: false
   key: hydrogen_production_for_fertilizers
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
   requires_merit_order: false
   dependent_on: ''

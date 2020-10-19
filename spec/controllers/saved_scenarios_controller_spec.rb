@@ -77,7 +77,7 @@ describe SavedScenariosController, vcr: true do
 
     it 'responds to the .csv format' do
       get :show, params: { id: user_scenario.id }, format: :csv
-      expect(response.content_type).to eq('text/csv')
+      expect(response.media_type).to eq('text/csv')
     end
   end
 

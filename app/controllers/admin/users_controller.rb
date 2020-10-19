@@ -12,7 +12,7 @@ module Admin
     end
 
     def update
-      if @user.update_attributes(user_parameters)
+      if @user.update(user_parameters)
         redirect_to [:admin, @user], notice: 'User updated'
       else
         render :edit

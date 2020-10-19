@@ -23,7 +23,6 @@ $link-color: #63a0c9
     opacity: 0
     width: 100%
 
-@import compass/utilities/general/clearfix
 @import reset
 @import chart
 @import blockchart
@@ -314,16 +313,14 @@ li
 
   div.chart
     border: 1px solid #ddd
-    +pie-clearfix
     font-family: $font-family
     margin: 1em 0
-    overflow: visible
+    overflow: hidden
     padding-bottom: 5px
     padding: 10px
 
     .chart_inner
-      +pie-clearfix
-      overflow: visible
+      overflow: hidden
 
     .chart_holder
       float: none

@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
 
-    if @user.update_attributes(users_parameters)
+    if @user.update(users_parameters)
       update_newsletter_subscription(@user)
       redirect_to edit_user_path, notice: user_update_notice(@user)
     else

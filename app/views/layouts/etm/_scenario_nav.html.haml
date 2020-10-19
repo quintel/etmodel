@@ -1,0 +1,52 @@
+#scenario-nav
+  .scenario-info
+    - if Current.setting.active_scenario?
+      %span.region.region-flag{ class: Current.setting.area_code }
+        = current_area_name
+      %span.year
+        = Current.setting.end_year
+      - if Current.setting.active_scenario_title.present?
+        %span.name
+          = Current.setting.active_scenario_title
+    - else
+      %span.region.region-flag== #{t('scenario_nav.loading')}&hellip;
+      %span.year
+  %div
+    - if current_user
+      - if save_scenario_enabled?
+        %button.save-scenario{ data: { path: scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
+          %span.main.label.show= t('header.save_scenario').titleize
+          %span.saved.label.abs-label
+            %span.fa.fa-check
+            = t('header.saved')
+      - else
+        %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+          = t('header.save_scenario').titleize
+    - else
+      %a.sign-in-to-save.disabled{ href: login_path }
+        = t('header.save_scenario').titleize
+    .dropdown<>
+      %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, disabled: true, type: 'button' }
+        = t('header.actions')
+        %span.fa.fa-caret-down
+      %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
+        - if current_user
+          %li
+            %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id') } }
+              = succeed '&hellip;'.html_safe do
+                = t("header.save_scenario_as")
+        - else
+          %a.dropdown-item.disabled{ href: login_path }
+            = succeed '&hellip;'.html_safe do
+              = t("header.save_scenario_as")
+        %li
+          %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }
+            = t("header.reset_scenario")
+        %li.sep-above
+          %a.dropdown-item{ href: '#', data: { dylink: scale_scenario_path(scenario_id: ':scenario_id') } }
+            = t('header.scale_scenario')
+
+        - if current_user&.admin?
+          %li.sep-above
+            %a.dropdown-item{ href: "#", target: "_blank", data: { dylink: ':etengine' } }
+              = t('header.open_in_etengine')

@@ -1,173 +1,266 @@
-header#top
-  padding: 11px 0 8px
-  background-color: #66A2CA
-  border-top: 1px solid #89b2d3
-  border-bottom: 1px solid #416d96
-  @include background(linear-gradient(top, #77add6, #4e8bbe))
-  @include box-shadow(0 1px 2px rgba(10, 10, 10, 0.25))
-  min-width: 960px
-  position: relative
+$header-font-size: 0.875rem
+$header-item-padding: 0.75rem 1rem 0.625rem
+$header-item-line-height: 19px
 
-  #header_inside
-    margin: 0 auto
-    padding: 0 10px
-    height: 54px
-    position: relative
+header.main-header
+  align-items: center
+  background: linear-gradient(to bottom, #5194d0, #2c75b5)
+  display: flex
+  font-size: $header-font-size
+  height: 57px
+  justify-content: space-between
 
-    .root_link
-      display: block
-      margin: 0 0 0 10px
-      width: 500px
+  .logo
+    display: block
+    padding-top: 0
+    padding-bottom: 0
 
-      img
-        top: 0px
-        left: 15px
-        position: absolute
-
-    nav#language
-      position: absolute
-      right: 210px
-      top: 27px
-      z-index: 21
-      a
-        padding-left: 20px
-      a.en
-        background: url("/assets/icons/gb.png") left center no-repeat
-      a.nl
-        background: url("/assets/icons/nl.png") left center no-repeat
-
-  #notice_bar
-    position: absolute
-    z-index: 103
-    top: 0
-    left: 0
-    color: white
-    font-size: 14px
-    background: #CC0000
-    width: 100%
-    text-align: center
-    .hidden
-      display: none
-    div
-      height: 20px
-      &.fce_notice
-        background-color: #CC3333
-        a
-          color: #fff
-          text-decoration: underline
-          &:hover
-            text-decoration: none
-
-  .sub-nav
-    float: right
+  .user-settings
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
     list-style: none
-    margin: 14px 0 0 0
+    margin: 0
     padding: 0
-    > li
-      float: left
-      font-size: 13px
+
+    li.nav-item
+      margin-left: 0.5rem
+
+      &:first-child
+        margin-left: 1rem
+      &:last-child
+        margin-right: 1rem
+
+  .logo
+    align-items: center
+    display: flex
+    padding: 0 1rem
+
+  // Links and buttons in the main navbar.
+  .nav-link
+    background: none
+    border: none
+    color: rgba(255, 255, 255, 0.8)
+    cursor: pointer
+    display: block
+    font-size: 0.875rem
+    font-weight: 500
+    line-height: 20px
+    padding: 0.35rem 0.5rem
+    &:hover
+      color: rgba(255, 255, 255, 0.9)
+      text-decoration: none
+    &:focus:not(:focus-visible)
+      outline: 0
+
+  // Special styles for the rounded pills used for "My Scenarios" and "My Account"
+  .my-scenarios
+    padding-right: 0
+    a
+      border-top-left-radius: 50rem
+      border-bottom-left-radius: 50rem
+  .my-account
+    margin-left: 1px !important
+    padding-left: 0
+    button
+      border-top-right-radius: 50rem
+      border-bottom-right-radius: 50rem
+  .sign-in a
+    border-radius: 50rem
+
+  .my-scenarios a, .my-account button, .sign-in a
+    background: rgba(255, 255, 255, 0.1)
+    padding: 0.35rem 0.9rem
+    &:hover
+      background: rgba(255, 255, 255, 0.15)
+
+  .logo, .locale, .my-scenarios, .my-account, .sign-in
+    &:hover
+      color: white
+      text-decoration: none
+
+    &:focus:not(:focus-visible)
+      outline: 0
+
+    &.locale
       font-weight: normal
-      padding: 0
-      margin: 0 0 0 -2px
-      position: relative
-      > a
-        display: block
-        color: #dbe9f3
-        text-decoration: none
-        font-weight: bold
-        text-shadow: 0 1px 0 #2d6aac
-        margin-right: 5px
-        &:hover
-          color: white
-      a.menu_toggler
-        background: url("/assets/header/toggle_down.png") right 6px no-repeat
-        padding-right: 18px
-        &:hover
-          background-position: right -44px
-        &.menu-open
-          background-position: right -94px
-          color: white
-        @include hidpi
-          background-size: 12px 139px
-          background-position: right -69px
-          &:hover
-            background-position: right -94px
-          &.menu-open
-            background-position: right -119px
 
-  .scenario_info
-    font-size: 11px
-    font-weight: normal
-    &:before
-      content: "("
-      color: #aacfea
-      margin-right: -0.1em
-    &:after
-      content: ")"
-      color: #aacfea
-      margin-left: -0.2em
-    img
-      margin-bottom: -1px
+      .fa
+        vertical-align: middle
+        margin: -4px 1px 0 0
 
-    .scenario_title
+  .logo
+    padding-left: 1rem
+    padding-right: 1rem
+
+  .locale, .my-account
+    height: 100%
+
+  .user-settings .dropdown-menu img
+    margin: -4px 0 0
+    vertical-align: middle
+
+  .dropdown-menu
+    top: 3rem
+
+  a.dropdown-item
+    color: #444
+    min-width: 9rem
+
+// Scenario Sub-Nav
+//
+// This gray bar sits below the main header, with information about the active scenario and options
+// for saving the scenario.
+
+#scenario-nav
+  background: #eee
+  border-bottom: 1px solid #ccc
+  display: flex
+  font-size: $header-font-size
+  justify-content: space-between
+
+  .scenario-info, .save-scenario, .save-scenario-as, .scenario-actions, .sign-in-to-save
+    color: #444
+    font-size: 0.875rem
+    line-height: $header-item-line-height
+    padding: $header-item-padding
+
+  .scenario-info
+    .region
+      color: black
+      font-weight: bold
+    .year
+      color: black
+    .region-flag
+      background-position: 0 1px
+    .name
+      color: #666
       display: inline-block
-      line-height: 13px
-      max-width: 225px
+      max-width: 500px
       overflow: hidden
       text-overflow: ellipsis
-      vertical-align: text-top
+      vertical-align: top
       white-space: nowrap
-
-      &:before
-        content: " - "
-
-  .header_logo
-    overflow: hidden
-    float: left
-    margin-top: 7px
-    margin-left: 20px
-
-#searchform
-  float: right
-  margin: 0
-  padding: 0 10px 0 0
-  display: inline
-  font-size: 12px
-
-  fieldset
-    display: inline
-
-  .btn-search
-    border-radius: 0
-    float: left
-    background: url(/assets/header/search.png) no-repeat
-    width: 19px
-    height: 25px
+    .name:before
+      content: "– "
+  .dropdown
+    display: inline-block
+    position: relative
+  .save-scenario, .save-scenario-as, .scenario-actions, .sign-in-to-save
     border: none
+    border-left: 1px solid #ccc
+    box-sizing: content-box
+    color: #444
+    display: inline-block
+    text-align: center
+    transition: background 0.15s ease-in-out
+    &.active, &.active:hover
+      background: #ddd
+    &:hover
+      background: #f9f9f9
+      cursor: pointer
+      text-decoration: none
+    &:focus:not(:focus-visible)
+      outline: 0
+    &:disabled, .disabled
+      color: #999
+      pointer-events: none
+      &:hover
+        background: none
+        cursor: default
+  .scenario-actions .fa
+    margin-left: 0.25rem
+  a.dropdown-item
+    color: #444
+    min-width: 11rem
+
+  // "Saving..." and "Saved" labels in the "Save Scenario" button
+  .save-scenario
+    position: relative
+    .label
+      opacity: 0
+      transition: opacity 0.25s ease-in-out
+      will-change: opacity
+    .saved
+      color: #35a047
+      left: 50%
+      margin-left: -50px
+      position: absolute
+      top: 12px
+      width: 100px
+    .label.show, .saved.show
+      opacity: 1
+
+// Header drop-down menus. Inspired by Bootstrap.
+
+.dropdown
+  position: relative
+
+.dropdown-menu
+  background: white
+  border-bottom-color: rgba(0, 0, 0, 0.2)
+  border-radius: 4px
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.1)
+  display: block
+  left: 0.5em
+  list-style: none
+  margin: 0
+  opacity: 0
+  padding: 0.5rem 0
+  pointer-events: none
+  position: absolute
+  top: 2.5rem
+  transform: scale(0.9) translateY(-10px)
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out
+  will-change: opacity, transform
+  z-index: 100
+
+  &:before
+    background: white
+    border-radius: 2px
+    box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.1)
+    content: " "
+    height: 0.625rem
+    left: 0.625rem
+    position: absolute
+    top: -0.3125rem
+    transform: rotate(45deg)
+    width: 0.625rem
+
+  &.show
+    display: block
+    opacity: 1
+    pointer-events: initial
+    transform: scale(1) translateY(0px)
+
+  li
+    margin: 0
     padding: 0
 
-  .text
-    float: left
-    background: url(/assets/header/search.png) no-repeat right
-    width: 131px
-    height: 25px
-    @include hidpi
-      background-image: url(/assets/header/search-hidpi.png)
-      background-size: 300px 25px
+  // Items which will have a divider above them.
+  li.sep-above
+    border-top: 1px solid rgba(0, 0, 0, 0.15)
+    margin-top: 0.5rem
+    padding-top: 0.5rem
 
-    input
-      background: none
-      border: none
-      color: #cbe2f3
-      line-height: 16px
-      padding: 3px 4px
-      float: left
-      text-shadow: 0 1px 0 #255e9d
-      width: 123px
-      outline: 0
-      height: 19px
+  .dropdown-content
+    padding: 0.5rem 1rem
 
-      &::-webkit-input-placeholder
-        color: #cbe2f3
-      &:-moz-placeholder
-        color: #cbe2f3
+.dropdown-menu-right
+  left: initial
+  right: 1rem
+  &:before
+    left: initial
+    right: 0.5rem
+
+a.dropdown-item
+  color: black
+  display: block
+  padding: 0.25rem 1rem
+  white-space: nowrap
+  &:hover
+    background-color: #eee
+    background-color: #4287c4
+    color: white !important
+    text-decoration: none

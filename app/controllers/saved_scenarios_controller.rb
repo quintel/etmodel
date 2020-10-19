@@ -48,6 +48,12 @@ class SavedScenariosController < ApplicationController
   # GET /scenarios/:scenario_id/save
   def new
     @saved_scenario = SavedScenario.new(scenario_id: params.require(:scenario_id))
+
+    if params[:inline]
+      render 'new', layout: false
+    else
+      render 'new'
+    end
   end
 
   # Saves a scenario by creating a SavedScenario.
@@ -61,18 +67,22 @@ class SavedScenariosController < ApplicationController
 
     # Re-find the user, due to AssociationMismatch errors in development.
     result = CreateSavedScenario.call(ss_params[:scenario_id], current_user, ss_params)
+    @saved_scenario = result.value
 
     if result.failure?
-      @saved_scenario = result.value || SavedScenario.new(ss_params)
+      @saved_scenario ||= SavedScenario.new(ss_params)
       render :new, status: :unprocessable_entity
       return
     end
 
-    if Current.setting.api_session_id == ss_params[:scenario_id].to_i
-      Current.setting.active_scenario_title = ss_params[:title]
+    setting = Current.setting
+
+    if setting.api_session_id == ss_params[:scenario_id].to_i
+      setting.active_scenario_title = @saved_scenario.title
+      setting.active_saved_scenario_id = @saved_scenario.id
     end
 
-    redirect_to scenarios_path
+    redirect_to(setting.last_etm_page.presence || play_path)
   end
 
   def load

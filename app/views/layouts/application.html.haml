@@ -23,14 +23,13 @@
   %body{ id: defined?(body_id) ? body_id : 'outside-model', class: defined?(body_class) ? body_class : '' }
 
     #wrapper
-      %header#top
-        = render "layouts/etm/header"
+      = render "layouts/etm/header"
       #content
         - flash_message
         = content_for?(:content) ? yield(:content) : yield
-      %footer.fixed
-        = yield :footer
-        = render "layouts/etm/footer"
+      - if content_for?(:footer)
+        %footer.fixed
+          = yield :footer
     = yield :scripts
     - if (Rails.env.production? || Rails.env.staging?) && !APP_CONFIG[:standalone]
       = render "layouts/etm/ga"

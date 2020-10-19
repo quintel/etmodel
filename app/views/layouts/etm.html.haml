@@ -3,6 +3,7 @@
   = javascript_include_tag 'etm'
 
 - content_for :content do
+  = render partial: 'layouts/etm/scenario_nav'
   = render "layouts/etm/sidebar" if @interface.try :current_sidebar_item
   = yield
 

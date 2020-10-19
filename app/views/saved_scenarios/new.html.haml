@@ -6,8 +6,12 @@
 
   = simple_form_for @saved_scenario, :url => saved_scenarios_path do |f|
     = f.input :title, required: true
-    = f.input :description, :as => :text
+
+    .input.text.optional.saved_scenario_description
+      = f.label :description, class: 'text optional control-label' do
+        = t('simple_form.labels.saved_scenario.description')
+        %span.optional{ style: 'display: none' }= t('simple_form.optional')
+      = f.text_area :description
+
     = f.hidden_field :scenario_id
-    -# = f.hidden_field :area_code
-    -# = f.hidden_field :end_year
-    = f.button :submit
+    = f.button :submit, class: 'btn primary', data: { disable_with: false }

@@ -121,6 +121,7 @@ module ApplicationHelper
   def settings_as_json(setting)
     setting.to_hash.merge(
       area_name: current_area_name,
+      country_code: setting.area.top_level_area.area,
       area_scaling: setting.area.try(:scaling)
     )
   end
@@ -131,5 +132,9 @@ module ApplicationHelper
 
   def save_scenario_enabled?
     Current.setting.active_saved_scenario_id.present?
+  end
+
+  def back_url_or_root
+    controller.request.env['HTTP_REFERER'].present? ? url_for(:back) : root_url
   end
 end

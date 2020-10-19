@@ -1,17 +1,17 @@
 class UserSessionsController < ApplicationController
-  layout 'static_page'
+  layout 'form_only'
 
   def index
     @user_session = UserSession.new
     render action: "new"
   end
+
   # GET /user_sessions/new
   # GET /user_sessions/new.xml
   def new
     @user_session = UserSession.new
-    @redirect_to = params[:return_to]
 
-    redirect_to @redirect_to and return if current_user && !@redirect_to.blank?
+    redirect_signed_in && return if current_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -28,14 +28,7 @@ class UserSessionsController < ApplicationController
 
     @user_session.save do |result|
       if result
-        flash[:notice] = I18n.t('flash.login')
-
-        if url = session[:return_to]
-          session[:return_to] = nil
-          redirect_to url
-        else
-          redirect_to_back(root_path)
-        end
+        redirect_signed_in
       else
         respond_to do |format|
           format.html { render action: "new"}
@@ -53,9 +46,16 @@ class UserSessionsController < ApplicationController
     reset_session
 
     respond_to do |format|
-      flash[:notice] = I18n.t("flash.logout")
       format.html { redirect_to(root_path) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+
+  def redirect_signed_in
+    return_to = session[:return_to] || root_path
+    session[:return_to] = nil
+    redirect_to(return_to)
   end
 end

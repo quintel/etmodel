@@ -44,10 +44,23 @@ nl:
         phone_number: "Telefoonnummer"
         name: "Naam"
       user_session:
+        email: "E-mailadres"
         password: "Wachtwoord"
+        remember: "Onthoud me"
 
   user:
     delete_me: Verwijder me
+
+    sign_in:
+      header: Inloggen
+      invalid_login: E-mail of wachtwoord is incorrect
+      no_account_header: Geen account?
+      no_account_description: |
+        Het Energietransitiemodel is volledig gratis te gebruiken. Met een account kun je
+        de scenario's die je maakt opslaan en delen met anderen.
+      sign_up: Account aanmaken
+      return_to_model: Terug naar het model
+
     forgot_password:
       account_not_found: "Het spijt ons maar je account is niet bij ons bekend!"
 

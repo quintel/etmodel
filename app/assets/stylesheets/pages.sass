@@ -112,7 +112,7 @@
   button.button[type], a.button, input.btn[type]
     font-size: 13px
     line-height: 15px
-    padding: 10px 13px
+    padding: 9px 13px 8px
     &:active
       outline: none
 
@@ -163,8 +163,10 @@
     border: 1px solid #caaa51
     border-bottom-color: #c7a444
     text-shadow: 0 1px 0 #ffef8c
+    &:hover
+      background-image: linear-gradient(darken(#fff492, 8%), darken(#fbd565, 8%))
+    &:active
+      background-image: linear-gradient(darken(#fff492, 18%), darken(#fbd565, 18%))
+      box-shadow: none
     .fa
       margin-right: 0.25rem
-  button.button:active
-    box-shadow: inset 0 1px 3px #c7a360
-    border-top-color: #c7a444

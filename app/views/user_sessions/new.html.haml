@@ -1,27 +1,35 @@
-- if current_user
-  = link_to t("header.sign_out"), "/logout"
-  = link_to I18n.t('home'), root_path
+.main.small
+  %h1= t('user.sign_in.header')
 
-- else
-  %h1 Login
-  = form_for(@user_session) do |f|
-    = error_messages_for @user_session, :header_message => t("user.error_header")
-    %p
-      = f.label :email, t("user.email")
-      %br/
-      = f.text_field :email
-    %p
-      = f.label :password, t("user.password")
-      %br/
-      = f.password_field :password
-      %br/
-      = link_to t("header.password_reset"), new_password_reset_path
-    %p
-      = f.label :remember_me, t("user.remember")
-      %br/
-      = f.check_box :remember_me, :checked => "checked"
-    %p
-      = hidden_field_tag 'redirect_to', @redirect_to
-      = f.submit 'Login', class: 'primary button'
-      %span.or= t('or')
-      = link_to t("header.create_account"), new_user_path, class: 'button'
+  .form-flash
+    - flash_message
+
+  = simple_form_for(@user_session || UserSession.new) do |f|
+    - if f.object.errors[:base]&.any?
+      .form-errors
+        = @user_session.errors[:base].join(', ')
+    .row
+      = f.label :email
+      = f.email_field :email, tabindex: 1, autofocus: true, class: 'string email required', autocomplete: 'off'
+    .row
+      .input.password.required
+        .forgot-pw
+          = link_to t("header.password_reset"), new_password_reset_path
+        = f.label :password
+        = f.password_field :password, tabindex: 2, class: 'string password required'
+        - if f.object.errors[:email]&.any? || f.object.errors[:password]&.any?
+          .field_with_errors
+            .error
+              %span.fa.fa-exclamation-triangle
+              = t('user.sign_in.invalid_login')
+    .row= f.input :remember_me, as: :boolean, input_html: { checked: true, tabindex: 3 }
+
+    %div= submit_tag 'Sign in', class: 'primary btn btn-block', tabindex: 4
+
+  .lower-section
+    %h1= t('user.sign_in.no_account_header')
+    %p= t('user.sign_in.no_account_description')
+    %p= link_to t('user.sign_in.sign_up'), new_user_path, class: 'btn primary'
+
+.return-to-model
+  = link_to "← #{t('user.sign_in.return_to_model')}", back_url_or_root

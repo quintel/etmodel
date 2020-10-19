@@ -44,7 +44,11 @@
     - if MailchimpService.configured?
       = f.input :allow_news
 
-    = f.button :submit, I18n.t('simple_form.labels.user.submit'), class: 'primary'
+    .section
+      = f.button :submit, I18n.t('simple_form.labels.user.submit'), class: 'primary'
+
+.return-to-model
+  = link_to "← #{t('user.sign_in.return_to_model')}", back_url_or_root
 
 :javascript
   $(function() { new SignUpForm({ el: $('.main') }); });

@@ -355,3 +355,60 @@ table.default
     border: none
     border-bottom: 1px solid #ddd
     height: 1px
+
+
+// "Save scenario" form when loaded in a Fancybox instance.
+.fancybox-inner .scenario_wrapper
+  padding: 20px 50px
+
+  p
+    color: #666
+    font-size: 0.875rem
+
+  form.simple_form.new_saved_scenario
+    label
+      display: block
+      float: none
+      font-size: 0.875rem
+      font-weight: 500
+      margin: 10px 0
+      text-align: left
+      transition: color 0.15s ease-in-out
+      width: 100%
+      will-change: color
+
+      abbr
+        display: none
+
+      .optional
+        color: #666
+        display: inline !important
+        font-size: 0.75rem
+        font-weight: normal
+        margin-left: 0.25rem
+
+    input[type=text], textarea
+      box-sizing: border-box
+      padding: 10px
+      width: 100%
+
+    input.string
+      font-size: 1rem
+      margin-bottom: 0.5rem
+
+    textarea
+      font-size: 0.875rem
+
+    .input.has-error
+      label
+        color: #a93434
+      input
+        border-color: #e65a5a
+        box-shadow: 0 0 0 3px #f9c6c6
+
+    .btn
+      font-size: 1rem
+      font-weight: 500
+      padding: 0.6rem
+      width: 100%
+

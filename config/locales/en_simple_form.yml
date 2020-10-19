@@ -12,9 +12,12 @@ en:
         description_nl: "Dutch description"
         title_en: "English title"
         title_nl: "Dutch title"
+      saved_scenario:
+        title: "Title"
+        description: "Description"
       user:
         username: "Name"
-        email: "E-mail"
+        email: "E-mail address"
         heared_first_at: "How did you hear about us?"
         allow_news: "Do you want to recieve occasional information about the ETM?"
         password: "Password"
@@ -33,6 +36,10 @@ en:
         teacher_email:  "Your teacher's e-mail address"
         submit:         "Create my account!"
         update:         "Save changes"
+      user_session:
+        email: "E-mail address"
+        password: "Password"
+        remember_me: "Remember me"
     hints:
       user:
         company_school: "If you're a member of an energy-related company, trade-group, or government agency, please let us know!"
@@ -43,3 +50,6 @@ en:
       featured_scenario:
         create: 'Feature scenario'
         update: 'Save changes'
+      saved_scenario:
+        create: "Save scenario"
+        update: "Save scenario"

@@ -115,8 +115,8 @@ describe SavedScenariosController, vcr: true do
         expect(SavedScenario.last.scenario_id).to eq(999)
       end
 
-      it 'redirect to the scenarios list' do
-        expect(request).to redirect_to(scenarios_path)
+      it 'redirect to the scenario' do
+        expect(request).to redirect_to(play_path)
       end
     end
 

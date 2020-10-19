@@ -9,7 +9,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.0'
 gem 'activerecord-session_store'
 gem 'activeresource', '~> 5.1'
 
@@ -75,7 +75,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 4.0'
   gem 'watchr'
 
   gem 'rubocop', '~> 0.85.0', require: false
@@ -107,6 +107,4 @@ gem 'mini_racer'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
-gem 'compass-rails'
-gem 'compass-blueprint'
 gem 'oily_png' # Faster sprite compilation.

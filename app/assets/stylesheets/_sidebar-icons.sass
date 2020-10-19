@@ -1,10 +1,6 @@
-$sidebar-spacing: 20px
-
-@import "sidebar/*.png"
-
 @mixin sidebar-icon($name, $v-offset: 0px)
   span.title
-    @include sidebar-sprite($name, false, 0px, $v-offset)
+    background: asset-url("sidebar/#{$name}") 0px $v-offset no-repeat
 
 #sidebar
 

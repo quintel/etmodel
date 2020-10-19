@@ -29,16 +29,26 @@
 # A registered user.
 class User < ApplicationRecord
   has_many   :saved_scenarios, dependent: :destroy
-  belongs_to :role
+  belongs_to :role, optional: true
 
-  belongs_to :teacher,  class_name: 'User'
+  belongs_to :teacher,  class_name: 'User', optional: true
   has_many   :students, class_name: 'User', foreign_key: 'teacher_id'
 
   has_many   :multi_year_charts, dependent: :destroy
 
+  validates :email, uniqueness: { case_sensitive: false }
+
+  validates :password,
+    confirmation: { if: :require_password? },
+    length: { minimum: 8, if: :require_password? }
+
+  validates :password_confirmation,
+    length: { minimum: 8, if: :require_password? }
+
   validates_presence_of :name
 
   attr_accessor :teacher_email
+  attr_accessor :password_confirmation
 
   validate :teacher_email_exists
 

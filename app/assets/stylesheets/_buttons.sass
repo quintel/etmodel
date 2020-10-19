@@ -1,32 +1,30 @@
-@import "blueprint/buttons"
-@import "icons/*.png"
-
 // Sizing --------------------------------------------------------------------
-
-a.button, a.btn
-  @include anchor-button
-  padding: 6px 11px
 
 // Fix Firefox inserting extra padding.
 button.button::-moz-focus-inner
   border: 0
   padding: 0
 
-input.button, button.button, input.btn
-  @include button-button
-  padding: 6px 11px
+input.button, button.button, input.btn, a.button, a.btn
+  cursor: pointer
+  display: inline-block
+  font-weight: 500
+  padding: 8px 11px
+  vertical-align: middle
+  &:hover
+    text-decoration: none
 
   &[type]
     // <input type="button" ... />
-    padding: 6px 11px 4px
+    padding: 6px 11px
     line-height: 16px
   *:first-child + html &[type]
     // IE
     padding: 9px 11px 6px
 
 a.button, input.button, button.button, input.btn
-  @include border-radius(3px)
-  font-size: 12px
+  border-radius: 3px
+  font-size: 14px
   line-height: 15px
 
   span
@@ -72,23 +70,6 @@ h2 a.button, h2 input.button, h2 button.button
   margin: 0 10px 0 0
   vertical-align: text-top
 
-// Info / Tutorial Buttons
-
-.button, .btn
-  span.right-icon
-    display: inline-block
-    height: 11px
-    width: 16px
-    @include icons-sprite('arrow-right-primary', 1px)
-    margin-left: 1px
-    margin-right: 0px
-    @include hidpi
-      background: image-url('layout/button-icons-hidpi.png') no-repeat
-      background-size: 15px 66px
-      background-position: 0 -52px
-      height: 11px
-      width: 16px
-
 // Colours -------------------------------------------------------------------
 
 a.button, input.button, button.button, input.btn
@@ -123,7 +104,7 @@ a.button, input.button, button.button, input.btn
     border-bottom-color: #3f7ab7
     box-shadow: 0 0 0 transparent
     color: white
-    font-weight:  bold
+    font-weight: 600
     text-shadow: 0 1px 1px #3f7ab7
 
     &:hover

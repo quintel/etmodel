@@ -2,9 +2,9 @@
 
 # Renders .md view files using Markdown.
 module MarkdownHandler
-  def self.call(template)
+  def self.call(template, source)
     RDiscount.new(
-      template.source,
+      source,
       :autolink,
       :footnotes,
       :smart
@@ -12,4 +12,4 @@ module MarkdownHandler
   end
 end
 
-ActionView::Template.register_template_handler :md, MarkdownHandler
+ActionView::Template.register_template_handler(:md, MarkdownHandler)

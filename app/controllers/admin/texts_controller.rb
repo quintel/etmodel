@@ -9,7 +9,7 @@ module Admin
     end
 
     def update
-      if @text.update_attributes(text_parameters)
+      if @text.update(text_parameters)
         flash[:notice] = "Successfully updated text."
         redirect_to admin_texts_path
       else

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Etm::Application.routes.draw do
+Rails.application.routes.draw do
   root to: 'pages#root'
   post '/' => 'pages#root'
 

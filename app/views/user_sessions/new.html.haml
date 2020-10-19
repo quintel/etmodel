@@ -29,7 +29,7 @@
   .lower-section
     %h1= t('user.sign_in.no_account_header')
     %p= t('user.sign_in.no_account_description')
-    %p= link_to t('user.sign_in.sign_up'), new_user_path, class: 'btn primary'
+    %p= link_to t('user.sign_in.sign_up'), new_user_path, class: 'button'
 
 .return-to-model
   = link_to "← #{t('user.sign_in.return_to_model')}", back_url_or_root

@@ -1,3 +1,10 @@
 //= link_tree ../images
 //= link_directory ../javascripts .js
-//= link_directory ../stylesheets .css
+//= link admin.css
+//= link application.css
+//= link establishment_shot_print.css
+//= link form_only.css
+//= link ie.css
+//= link multi_year_charts.css
+//= link report.css
+//= link pico.css

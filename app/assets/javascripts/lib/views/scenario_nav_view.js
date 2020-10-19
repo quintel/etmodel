@@ -61,6 +61,10 @@
      * Renders the navigation
      */
     render: function() {
+      if (!this.el) {
+        return;
+      }
+
       if (!this.model.get('id')) {
         // If the scenario is being created, leave the "Loading" scenario nav and re-render when
         // data is available.

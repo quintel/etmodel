@@ -1,12 +1,15 @@
 {
   "name": "etmodel",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@rails/webpacker": "5.2.1"
+  },
   "devDependencies": {
     "babel-eslint": "^10.0.0",
     "eslint": "^6.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "webpack-dev-server": "^3.11.0"
   }
 }

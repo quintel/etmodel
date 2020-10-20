@@ -31,6 +31,7 @@ gem 'non-stupid-digest-assets'
 gem 'http_accept_language'
 
 # javascript
+gem 'webpacker'
 gem 'rails-i18n'
 gem 'i18n-js', '~> 3'
 gem 'jbuilder'

@@ -6,8 +6,8 @@ en:
       description: "What share of capturable CO<sub>2</sub> emissions in the
         steel industry will be captured in your scenario? The amount of CO<sub>2</sub>
         that can be captured depends on the size of the steel industry and the chosen
-        steel production technology in your scenario. You can change this
-        <a href='/scenario/demand/industry/steel'>here</a>.
+        steel production technology in your scenario. You can change this in
+        <a href='/scenario/demand/industry/steel'>the Demand → Industry → Steel section</a>.
         <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
         emissions, energy use and costs.<br/> In the link below, the specs for
         blastfurnace capture are displayed.<br/>"
@@ -20,8 +20,8 @@ en:
         use of capture are low compared to capture of combustion emissions.<br/<br/>
         The amount of CO<sub>2</sub> that can be captured depends on the size of the
         fertilizers industry in your scenario and whether hydrogen is produced 'on-site'
-        or imported directly. You can change this
-        <a href='/scenario/demand/industry/fertilizers'>here</a>.
+        or imported directly. You can change this in
+        <a href='/scenario/demand/industry/fertilizers'>the Demand → Industry → Fertlilizers section</a>.
         <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
         emissions, energy use and costs.<br/>"
     share_of_industry_chemicals_fertilizers_captured_combustion_co2:
@@ -32,8 +32,8 @@ en:
         because the CO<sub>2</sub> has to be separated from other molecules
         found in the flue gas.<br/><br/>
         The amount of CO<sub>2</sub> that can be captured depends on the size
-        and efficiency of the fertilizers industry in your scenario. You can change this
-        <a href='/scenario/demand/industry/fertilizers'>here</a>.
+        and efficiency of the fertilizers industry in your scenario. You can change this in
+        <a href='/scenario/demand/industry/fertilizers'>the Demand → Industry → Fertlilizers section</a>.
         <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
         emissions, energy use and costs.<br/>"
     share_of_industry_other_paper_captured_co2:
@@ -44,8 +44,8 @@ en:
         because the CO<sub>2</sub> has to be separated from other molecules
         found in the flue gas.<br/><br/>
         The amount of CO<sub>2</sub> that can be captured depends on the size
-        and efficiency of the paper industry in your scenario. You can change this
-        <a href='/scenario/demand/industry/paper'>here</a>.
+        and efficiency of the paper industry in your scenario. You can change this in
+        <a href='/scenario/demand/industry/paper'>the Demand → Industry → Paper section</a>.
         <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
         emissions, energy use and costs.<br/>"
     share_of_industry_other_food_captured_co2:
@@ -56,8 +56,8 @@ en:
         because the CO<sub>2</sub> has to be separated from other molecules
         found in the flue gas.<br/><br/>
         The amount of CO<sub>2</sub> that can be captured depends on the size
-        and efficiency of the food industry in your scenario. You can change this
-        <a href='/scenario/demand/industry/food'>here</a>.
+        and efficiency of the food industry in your scenario. You can change this in
+        <a href='/scenario/demand/industry/food'>the Demand → Industry → Food section</a>.
         <br/><br/>The ETM calculates the impact of CO<sub>2</sub> capture on total
         emissions, energy use and costs.<br/>"
     share_of_energy_power_ultra_supercritical_ccs_coal:
@@ -68,8 +68,8 @@ en:
         these power plants in your scenario. This is influenced by electricity
         demand, other installed power generation technologies and commodity
         prices.<br/><br/>
-        The amount of installed pulverised coal capacity can be set
-        <a href='/scenario/supply/electricity/coal-plants'>here</a>.<br/><br/>
+        The amount of installed pulverised coal capacity can be set in
+        <a href='/scenario/supply/electricity/coal-plants'>the Supply → Electricity → Coal plants section</a>.<br/><br/>
         If <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>bio coal</a>
         is used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions.
         You can find more information on this in the
@@ -83,8 +83,8 @@ en:
         these power plants in your scenario. This is influenced by electricity
         demand, other installed power generation technologies and commodity
         prices.<br/><br/>
-        The amount of installed IGCC coal capacity can be set
-        <a href='/scenario/supply/electricity/coal-plants'>here</a>.<br/><br/>
+        The amount of installed IGCC coal capacity can be set in
+        <a href='/scenario/supply/electricity/coal-plants'>the Supply → Electricity → Coal plants section</a>.<br/><br/>
         If <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>bio coal</a>
         is used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions.
         You can find more information on this in the
@@ -98,8 +98,8 @@ en:
         these power plants in your scenario. This is influenced by electricity
         demand, other installed power generation technologies and commodity
         prices.<br/><br/>
-        The amount of installed lignite oxyfuel capacity can be set
-        <a href='/scenario/supply/electricity/coal-plants'>here</a>.<br/>"
+        The amount of installed lignite oxyfuel capacity can be set in
+        <a href='/scenario/supply/electricity/coal-plants'>the Supply → Electricity → Coal plants section</a>.<br/>"
     share_of_energy_power_combined_cycle_ccs_network_gas:
       title: Gas CCGT
       description: "What share of installed gas CCGT
@@ -108,8 +108,8 @@ en:
         these power plants in your scenario. This is influenced by electricity
         demand, other installed power generation technologies and commodity
         prices.<br/><br/>
-        The amount of installed gas CCGT capacity can be set
-        <a href='/scenario/supply/electricity/gas-plants'>here</a>.<br/><br/>
+        The amount of installed gas CCGT capacity can be set in
+        <a href='/scenario/supply/electricity/gas-plants'>the Supply → Electricity → Gas plants section</a>.<br/><br/>
         If <a href='/scenario/supply/biomass/green-gas-in-gas-network'>green gas</a>
         is used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions.
         You can find more information on this in the
@@ -124,14 +124,14 @@ en:
         You can find more information on this in the
         <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions'>documentation</a>
         of the ETM.<br/><br/>
-        The amount of installed biomass gasification plants can be set
-        <a href='/scenario/supply/hydrogen/hydrogen-production'>here</a>.<br/>"
+        The amount of installed biomass gasification plants can be set in
+        <a href='/scenario/supply/hydrogen/hydrogen-production'>the Supply → Hydrogen → Hydrogen production section</a>.<br/>"
     share_of_energy_hydrogen_steam_methane_reformer_ccs:
       title: Steam methane reforming
       description: "What share of installed steam methane reforming
         capacity for hydrogen production will be equipped with a CO<sub>2</sub> capture unit?
-        The amount of installed steam methane reforming plants can be set
-        <a href='/scenario/supply/hydrogen/hydrogen-production'>here</a>.<br/><br/>
+        The amount of installed steam methane reforming plants can be set in
+        <a href='/scenario/supply/hydrogen/hydrogen-production'>the Supply → Hydrogen → Hydrogen production section</a>.<br/><br/>
         If <a href='/scenario/supply/biomass/green-gas-in-gas-network'>green gas</a>
         is used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions.
         You can find more information on this in the
@@ -144,8 +144,8 @@ en:
         air using electricity. If the electricity used is renewable, storing the captured CO<sub>2</sub>
         can lead to a net decrease in atmospheric CO<sub>2</sub> levels ('negative emissions'). The
         captured CO<sub>2</sub> can also be used for the production of carbon neutral fuels.<br/><br/>
-        You can explore these options
-        <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>here</a>.<br/><br/>
+        You can explore these options in
+        <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>the Supply → CCUS → Utilisation and Storage section</a>.<br/><br/>
         Direct Air Capture is a promising technology to bring down global CO<sub>2</sub> levels
         in the atmosphere. However, it is also an energy intensive process. Since CO<sub>2</sub>
         in the ambient air is 'available' everywhere in the world, DAC capacity is likely to be
@@ -167,8 +167,8 @@ en:
         <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"mekko_of_kerosene_demand_supply\"\r\n>this</a> chart.
         <br/><br/>Please note: This slider does not automatically reduce the production of fossil-based
         kerosene in the refineries sector. If you would like to replace fossil kerosene with
-        synthetic kerosene in your scenario, you can reduce the market share of refineries
-        <a href='/scenario/demand/industry/refineries'>here</a>.<br/>"
+        synthetic kerosene in your scenario, you can reduce the market share of refineries in
+        <a href='/scenario/demand/industry/refineries'>the Demand → Industry → Refineries section</a>.<br/>"
     output_of_energy_production_synthetic_methanol:
       title: Synthetic methanol
       description: "Methanol is one of the most widely used chemicals in the chemical industry sector.
@@ -179,8 +179,8 @@ en:
         (e.g. Direct Air Capture) is used, this production process can be fully carbon neutral.<br/><br/>
         This slider allows you to set the amount of synthetic methanol produced in your scenario. This
         slider does not affect the production of methanol and other chemical products in the
-        conventional chemical industry sector. You can change this
-        <a href='/scenario/demand/industry/chemicals'>here</a>.<br/>"
+        conventional chemical industry sector. You can change this in
+        <a href='/scenario/demand/industry/chemicals'>the Demand → Industry → Chemicals section</a>.<br/>"
     demand_of_molecules_other_utilisation_co2:
       title: Other use of CO<sub>2</sub>
       description: "This slider sets the amount of CO<sub>2</sub>  used for 'other' purposes. This

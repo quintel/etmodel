@@ -45,4 +45,9 @@ public/javascripts/all.js
 public/javascripts/i18n/translations.js
 *.sublime-project
 *.sublime-workspace
-node_modules/*
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

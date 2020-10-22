@@ -2,16 +2,20 @@
 - key: data_visuals_scenario_report
   position: 1
   sidebar_item_key: data_visuals
-  output_element_key: households_final_demand_per_application
+  output_element_key: final_demand_mekko_energetic_mece
 - key: data_visuals_energy_mix
   position: 2
   sidebar_item_key: data_visuals
-  output_element_key: households_final_demand_per_application
-- key: data_visuals_graph
-  position: 4
-  sidebar_item_key: data_visuals
-  output_element_key: households_final_demand_per_application
+  output_element_key: final_demand_mekko_energetic_mece
 - key: data_visuals_co2_sheet
   position: 3
   sidebar_item_key: data_visuals
-  output_element_key: households_final_demand_per_application
+  output_element_key: co2_emissions
+- key: data_visuals_graph
+  position: 4
+  sidebar_item_key: data_visuals
+  output_element_key: sankey
+- key: data_visuals_molecule_graph
+  position: 5
+  sidebar_item_key: data_visuals
+  output_element_key: mekko_of_co2_demand_supply

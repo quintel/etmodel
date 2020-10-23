@@ -154,16 +154,27 @@ nl:
         van CO<sub>2</sub>-neutrale brandstoffen. Meer hierover vind je
         <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>hier</a>.<br/><br/>
         Direct Air Capture is een veelbelovende technologie om de CO<sub>2</sub>-concentratie
-        in de lucht omlaag te brengen. Tegelijkertijd is het proces energie-intensief. Aangezien
+        in de lucht omlaag te brengen. Tegelijkertijd is het proces energie-intensief en
+        (op dit moment) prijzig. Aangezien
         CO<sub>2</sub> over de hele wereld beschikbaar is, ligt het voor de hand om DAC
         met name toe te passen in gebieden waar de prijs van (hernieuwbare) stroom zo laag
         mogelijk is.<br/>"
     demand_of_molecules_offshore_sequestration_co2:
-      title: "Opslag van CO<sub>2</sub> onder de zeebodem"
-      description: "Met deze schuif geef je aan hoeveel CO<sub>2</sub> er jaarlijks wordt
+      title: Opslag van CO<sub>2</sub> onder de zeebodem"
+      description: |
+        Met deze schuif geef je aan hoeveel CO<sub>2</sub> er jaarlijks wordt
         opgeslagen onder de zeebodem. Dit kan bijvoorbeeld in lege gasvelden of zoutcavernes.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-opslag op de uitstoot,
-        het energiegebruik en de kosten.<br/>"
+        het energiegebruik en de kosten.<br/><br/>
+        De maximale waarde van deze schuif verschilt per regio in het ETM en is gebaseerd op
+        publiek-toegankelijk onderzoek. Aangenomen is dat de maximale opslag per jaar 40 jaar
+        lang 'vol te houden' moet zijn. Bijvoorbeeld: Voor Nederland wordt de totale potentie
+        voor CO<sub>2</sub>-opslag op zee geschat op 1680 Mt. Dit betekent dat er over een periode
+        van 40 jaar elk jaar 42 Mt (de maximumwaarde in het ETM) kan worden opgeslagen.<br/>
+        Let op: Voor sommige regio's was geen data beschikbaar over de potentie voor ondergrondse opslag.
+        Een overzicht van de gebruikte data staat op
+        <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
+        ETDataset</a>.
     output_of_energy_production_synthetic_kerosene:
       title: Synthetische kerosine
       description: "Met deze schuif geef je aan hoeveel synthetische kerosine er wordt
@@ -175,6 +186,12 @@ nl:
         <br/><br/>Voor het instellen van deze schuif is het handig om te weten wat de totale
         vraag en aanbod van kerosine in jouw scenario is. Bekijk hiervoor
         <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"mekko_of_kerosene_demand_supply\"\r\n>deze</a> grafiek.
+        Een overschot aan kerosineproductie wordt door het ETM automatisch geëxporteerd. Bij een tekort
+        wordt kerosine uit het buitenland gehaald.
+        <br/><br/>
+        De energievraag van internationale luchtvaart wordt standaard niet meegenomen in het ETM.
+        Deze aanname kun je veranderen bij <a href='/scenario/demand/transport_international_transport/international-transport'>
+        Vraag → Transport → Internationaal transport</a>.
         <br/><br/>Let op: Deze schuif vermindert niet automatisch de productie van fossiele kerosine door
         raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
         kerosine, verklein dan de <a href='/scenario/demand/industry/refineries'>omvang van raffinaderijen</a>.<br/>"

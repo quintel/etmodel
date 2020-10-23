@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "extends":  [
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
+ "parserOptions":  {
+    "ecmaVersion": 5,
+    "sourceType": "script"
+  },
+  "rules":  {
+    "curly": ["error", "all"],
+    "max-len": ["error", {"code": 100, "ignoreUrls": true}],
+    "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}],
+    "space-before-function-paren": ["error", "never"]
+  }
+}

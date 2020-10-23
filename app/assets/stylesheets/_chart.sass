@@ -303,7 +303,7 @@ div.d3_container
       fill: none
       stroke: #333
     path.domain
-      shape-rendering: crispEdges
+      display: none
     .minor
       stroke-opacity: 0.5
   .y_axis.inner_grid, .x_axis.inner_grid
@@ -335,6 +335,12 @@ div.d3_container
 
   &.category_bar .serie.present
     opacity: 0.7
+  &.bezier
+    .y_axis .tick:first-of-type line
+      opacity: 0.75
+    .y_axis .tick:not(:first-of-type) line
+      stroke-dasharray: 2, 2
+      opacity: 0.2
 
   .subzero
     fill: black

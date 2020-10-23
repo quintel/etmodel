@@ -14,6 +14,6 @@ class @ChartSeries extends Backbone.Collection
   model : ChartSerie
 
   with_gquery: (gquery) ->
-    @find (s) -> s.get('gquery').get('key') == gquery
+    @find (s) -> s.get('gquery_key') == gquery
 
   gqueries: => @map (s) -> s.get('gquery')

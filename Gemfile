@@ -32,6 +32,7 @@ gem 'http_accept_language'
 
 # javascript
 gem 'webpacker'
+gem 'babel-transpiler'
 gem 'rails-i18n'
 gem 'i18n-js', '~> 3'
 gem 'jbuilder'

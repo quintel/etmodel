@@ -1,6 +1,7 @@
 - content_for :head do
   = render "layouts/etm/javascript_globals"
   = javascript_include_tag 'etm'
+  = javascript_pack_tag 'app'
 
 - content_for :content do
   = render partial: 'layouts/etm/scenario_nav'

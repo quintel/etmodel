@@ -93,6 +93,10 @@ GEM
       activerecord (>= 5.2, < 6.1)
       activesupport (>= 5.2, < 6.1)
       request_store (~> 1.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.16)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
@@ -423,6 +427,7 @@ DEPENDENCIES
   activerecord-session_store
   activeresource (~> 5.1)
   authlogic
+  babel-transpiler
   bcrypt
   better_errors
   capistrano (~> 3.9)

@@ -104,7 +104,6 @@ class @D3ChartView extends BaseChartView
       .append("svg:g")
       .attr("transform", "translate(#{margins.left}, #{margins.top})")
 
-
   legend_click: (d) => d
 
   # Builds a standard legend. Options hash:

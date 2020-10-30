@@ -1,16 +1,8 @@
 /* globals $ */
 
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * DS206: Consider reworking classes to avoid initClass
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-
 import * as d3 from 'd3';
-import { transition } from 'd3';
 import D3Chart from './D3Chart';
+import stackData from './utils/stackData';
 
 /**
  * Determines the opacity with which a target line should be drawn.
@@ -48,57 +40,6 @@ class StackedBar extends D3Chart {
     // this.prepare_data = this.prepare_data.bind(this);
 
     this.series = this.model.series.models;
-  }
-
-  // the stack method will filter the data and calculate the offset
-  // for every item
-  stackMethod(data) {
-    // Group the data based on the year ("x") and then key the values by the gquery key ("id").
-    //
-    // Produces a Map like:
-    //
-    //    Map {
-    //      2015 => Map { gquery_one => SerieData, gquery_two => SerieData },
-    //      2050 => Map { gquery_one => SerieData, gquery_two => SerieData },
-    //    }
-    //
-    // ... where `SerieData` is data about a series returned by `prepareData`.
-    const grouped = d3.group(
-      data,
-      d => d.x,
-      d => d.id
-    );
-
-    const keys = Array.from(new Set(data.map(d => d.id)));
-
-    // Transform the grouped values into an array of objects, where each object describes the data
-    // for each column, without extra maps and arrays around values. g[0] is the x value (year),
-    // and g[1] contains the map of each gquery key and value.
-    const table = Array.from(grouped.entries()).map(g => {
-      // g[0] is the x value (year) and g[1] contains the map of each gquery key and [SerieData].
-      const column = { x: g[0] };
-
-      for (let serieKey of keys) {
-        if (g[1].has(serieKey)) {
-          column[serieKey] = g[1].get(serieKey)[0].y;
-        } else {
-          column[serieKey] = 0;
-        }
-      }
-
-      return column;
-    });
-
-    // Stack values. This produces an array containing values for each series, in each column.
-    const stacked = d3.stack().keys(keys)(table);
-
-    // Add some useful inforamtion about the series to each value.
-    const mapped = stacked.map(d => {
-      d.forEach(v => (v.key = d.key));
-      return d;
-    });
-
-    return mapped;
   }
 
   margins = {
@@ -169,7 +110,7 @@ class StackedBar extends D3Chart {
     this.svg
       .append('g')
       .selectAll('g')
-      .data(this.stackMethod(this.prepareData()), d => d.key)
+      .data(stackData(this.prepareData()), d => d.key)
       .join('g')
       .attr('class', 'serie-group')
       .attr('fill', d => this.serieValue(d.key, 'color'))
@@ -253,7 +194,7 @@ class StackedBar extends D3Chart {
 
     this.svg
       .selectAll('g.serie-group')
-      .data(this.stackMethod(this.prepareData()), d => d.key)
+      .data(stackData(this.prepareData()), d => d.key)
       .selectAll('rect.serie')
       .data(d => d, serieKey)
       .transition(transition)
@@ -318,7 +259,7 @@ class StackedBar extends D3Chart {
     const targetLines = [];
     const seriesForLegend = [];
 
-    for (let s of Array.from(this.series)) {
+    for (let s of this.series) {
       const label = s.get('label');
       const total = Math.abs(s.safe_future_value()) + Math.abs(s.safe_present_value());
 

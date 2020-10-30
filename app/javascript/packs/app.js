@@ -14,7 +14,7 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import backwardsCompat from '../charts/backwardsCompat';
+import backwardsCompat from '../charts/utils/backwardsCompat';
 import Bezier from '../charts/Bezier';
 import StackedBar from '../charts/StackedBar';
 

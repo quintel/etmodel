@@ -28,20 +28,6 @@ const serieKey = serie => {
 };
 
 class StackedBar extends D3Chart {
-  constructor(...args) {
-    super(...args);
-
-    // this.is_empty = this.is_empty.bind(this);
-    // this.draw = this.draw.bind(this);
-    // this.refresh = this.refresh.bind(this);
-    // this.get_columns = this.get_columns.bind(this);
-    // this.display_legend = this.display_legend.bind(this);
-    // this.prepare_legend_items = this.prepare_legend_items.bind(this);
-    // this.prepare_data = this.prepare_data.bind(this);
-
-    this.series = this.model.series.models;
-  }
-
   margins = {
     top: 20,
     bottom: 20,
@@ -57,18 +43,6 @@ class StackedBar extends D3Chart {
 
   isEmpty() {
     return d3.sum(this.prepareData(), d => d.y) <= 0;
-  }
-
-  /**
-   * Looks up a series in the model by key, and returns an attribute.
-   *
-   * @param {string} serieKey
-   *   The key identifying the serie to be queried.
-   * @param {string} attribute
-   *   The name of the attribute on the serie to be retrieved.
-   */
-  serieValue(serieKey, attribute) {
-    return super.serieValue(serieKey.replace(/_future$|_present|_1990$/, ''), attribute);
   }
 
   draw() {
@@ -179,14 +153,9 @@ class StackedBar extends D3Chart {
 
     const transition = d3.transition().duration(animate ? 250 : 0);
 
-    // calculate tallest column
-    const tallest = (this.model.max_series_value() || 0) * 1.05;
-    // update the scales as needed
-    this.y = this.y.domain([0, tallest]).nice();
+    this.y = this.y.domain([0, (this.model.max_series_value() || 0) * 1.05]).nice();
 
-    this.yAxis.tickFormat(this.formatValue);
-
-    // animate the y-axis
+    // Animate the y-axis
     this.svg
       .selectAll('.y_axis')
       .transition(transition)
@@ -202,7 +171,7 @@ class StackedBar extends D3Chart {
       .attr('y', d => this.y(d[1]))
       .attr('data-tooltip-text', d => this.formatValue(d[1]));
 
-    // move the target lines
+    // Move the target lines
     this.svg
       .selectAll('rect.target_line')
       .data(
@@ -221,14 +190,14 @@ class StackedBar extends D3Chart {
     return this.displayLegend();
   }
 
-  // draw grid
-
   getColumns() {
-    const result = [this.startYear, this.endYear];
+    const years = [this.startYear, this.endYear];
+
     if (this.model.year_1990_series().length) {
-      result.unshift(1990);
+      return [1990, ...years];
     }
-    return result;
+
+    return years;
   }
 
   displayLegend() {
@@ -259,18 +228,18 @@ class StackedBar extends D3Chart {
     const targetLines = [];
     const seriesForLegend = [];
 
-    for (let s of this.series) {
-      const label = s.get('label');
-      const total = Math.abs(s.safe_future_value()) + Math.abs(s.safe_present_value());
+    for (let series of this.model.series.models) {
+      const label = series.get('label');
+      const total = Math.abs(series.safe_future_value()) + Math.abs(series.safe_present_value());
 
-      if (s.get('is_target_line')) {
+      if (series.get('is_target_line')) {
         if (targetLines.indexOf(label) === -1) {
           targetLines.push(label);
-          seriesForLegend.push(s);
+          seriesForLegend.push(series);
         }
         // otherwise the target line has already been added
       } else if (total > 1e-7) {
-        seriesForLegend.push(s);
+        seriesForLegend.push(series);
       }
     }
 

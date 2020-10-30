@@ -177,9 +177,11 @@ class Bezier extends D3Chart {
       .transition()
       .call(this.y_axis.scale(this.y));
 
+    // Make the tick line corresponding with value 0 darker.
+    this.svg.selectAll('.y_axis .tick').attr('class', d => (d === 0 ? 'tick bold' : 'tick'));
+
     // See above for explanation of this method chain
     const stacked_data = stackSeries(this.prepareData(), d => d.id);
-    console.log(stacked_data);
 
     this.displayLegend();
 

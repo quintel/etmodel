@@ -4,6 +4,8 @@ import * as d3 from 'd3';
 import D3Chart from './D3Chart';
 import stackData from './utils/stackData';
 
+const stack = d3.stack().offset(d3.stackOffsetDiverging);
+
 /**
  * Determines the opacity with which a target line should be drawn.
  */
@@ -63,6 +65,13 @@ class StackedBar extends D3Chart {
 
     this.barWidth = this.x.bandwidth();
 
+    this.svg
+      .selectAll('rect.negative-region')
+      .data([0])
+      .enter()
+      .append('svg:rect')
+      .attr('class', 'negative-region');
+
     // show years
     this.svg
       .selectAll('text.year')
@@ -84,7 +93,7 @@ class StackedBar extends D3Chart {
     this.svg
       .append('g')
       .selectAll('g')
-      .data(stackData(this.prepareData()), d => d.key)
+      .data(stackData(this.prepareData(), stack), d => d.key)
       .join('g')
       .attr('class', 'serie-group')
       .attr('fill', d => this.serieValue(d.key, 'color'))
@@ -153,7 +162,11 @@ class StackedBar extends D3Chart {
 
     const transition = d3.transition().duration(animate ? 250 : 0);
 
-    this.y = this.y.domain([0, (this.model.max_series_value() || 0) * 1.05]).nice();
+    const tallest = (this.model.max_series_value() || 0) * 1.05;
+    const smallest = Math.min(this.model.min_series_value(), 0);
+
+    this.stackData = stackData;
+    this.y = this.y.domain([smallest, tallest]).nice();
 
     // Animate the y-axis
     this.svg
@@ -161,15 +174,28 @@ class StackedBar extends D3Chart {
       .transition(transition)
       .call(this.yAxis.scale(this.y));
 
+    // Make the tick line corresponding with value 0 darker.
+    this.svg.selectAll('.y_axis .tick').attr('class', d => (d === 0 ? 'tick bold' : 'tick'));
+
+    // If the chart extends below zero, slightly shade the negative region.
+    this.svg
+      .selectAll('rect.negative-region')
+      .data([smallest])
+      .transition(transition)
+      .attr('height', d => this.y(d) - this.y(0))
+      .attr('width', this.width - 5)
+      .attr('x', 0 - this.margins.left)
+      .attr('y', this.y(0));
+
     this.svg
       .selectAll('g.serie-group')
-      .data(stackData(this.prepareData()), d => d.key)
+      .data(stackData(this.prepareData(), stack), d => d.key)
       .selectAll('rect.serie')
       .data(d => d, serieKey)
       .transition(transition)
-      .attr('height', d => this.seriesHeight - this.y(d[1] - d[0]))
+      .attr('height', d => this.y(d[0]) - this.y(d[1]))
       .attr('y', d => this.y(d[1]))
-      .attr('data-tooltip-text', d => this.formatValue(d[1]));
+      .attr('data-tooltip-text', d => this.formatValue(Math.abs(d[1]) - Math.abs(d[0])));
 
     // Move the target lines
     this.svg

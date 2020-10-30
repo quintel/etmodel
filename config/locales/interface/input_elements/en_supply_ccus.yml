@@ -153,18 +153,28 @@ en:
         <a href="/scenario/supply/ccus/utilisation-and-storage-of-co2">the Supply → CCUS → Utilisation and Storage section</a>.
         <br/><br/>
         Direct Air Capture is a promising technology to bring down global CO<sub>2</sub> levels in
-        the atmosphere. However, it is also an energy intensive process. Since CO<sub>2</sub> in the
+        the atmosphere. However, it is also an energy intensive and (at this moment) expensive process.
+        Since CO<sub>2</sub> in the
         ambient air is 'available' everywhere in the world, DAC capacity is likely to be installed
         in areas that will have very low (renewable) power costs.
     demand_of_molecules_offshore_sequestration_co2:
       title: Offshore storage
       description: |
-        This slider sets the amount of CO<sub>2</sub> that is used for long-term storage offshore.
+        This slider sets the amount of CO<sub>2</sub> <i>per year</i> that is used for long-term storage offshore.
         For example saline acquifers and aging oil or gas fields can be used for this
         purpose.
         <br/><br/>
         The ETM calculates the impact of CO<sub>2</sub> storage on total
         emissions, energy use and costs.
+        <br /><br />
+        The maximum of this slider varies per region in the ETM and is based on public research.
+        It is assumed that the maximum storage value per year can be sustained for a period of 40 years.
+        For example, research for the Netherlands indicates that a total of 1680 Mt CO<sub>2</sub> can
+        be stored offshore. This comes down to 42 Mt (the slider max) per year over a period of 40 years.<br/>
+        Please note: For some regions, no data could be found on storage potentials. An overview of the
+        research used can be found on
+        <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
+        ETDataset</a><br/>.
     output_of_energy_production_synthetic_kerosene:
       title: Synthetic kerosene
       description: |
@@ -176,7 +186,12 @@ en:
         If you would like to know the total demand and supply of kerosene in your
         scenario, have a look at the
         <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply">demand and supply of kerosene</a>
-        chart.
+        chart. Any excess production is automatically exported, any deficit is imported.
+        <br/><br/>
+        Energy demand of international aviation is not taken into account in the ETM by default.
+        You can change this assumption
+        in the <a href="/scenario/demand/transport_international_transport/international-transport">
+        the Demand → Transport → International transport section</a>.
         <br/><br/>
         Please note: This slider does not automatically reduce the production of fossil-based
         kerosene in the refineries sector. If you would like to replace fossil kerosene with

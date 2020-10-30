@@ -74,15 +74,6 @@ nl:
             </a>
           </li>
         </ul>
-    data_export_molecule_flows:
-      title: CCUS</sub>-stromen
-      short_description:
-      description: |
-        Het ETM modelleert de afvang, het hergebruik en de opslag van CO<sub>2</sub> (CCUS) in detail.
-        Deze CSV geeft een overzicht van de CO<sub>2</sub>-stromen gerelateerd aan CCUS (inputs en outputs).
-        <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
-        </ul>
     data_export_molecule_graph:
       title: CCUS-graaf
       short_description:
@@ -128,6 +119,15 @@ nl:
         <a href="%{etengine_url}/data/%{scenario_id}/layouts/energy" class="simple-button" target="_blank" rel="noopener nofollow">
           <span class="fa fa-book"></span> Bekijk de energiegraaf →
         </a>
+    data_visuals_molecule_flows:
+      title: CCUS</sub>-stromen
+      short_description:
+      description: |
+        Het ETM modelleert de afvang, het hergebruik en de opslag van CO<sub>2</sub> (CCUS) in detail.
+        Deze CSV geeft een overzicht van de CO<sub>2</sub>-stromen gerelateerd aan CCUS (inputs en outputs).
+        <ul class="data-download">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
+        </ul>
     data_visuals_scenario_report:
       title: Scenarioverslag
       short_description:

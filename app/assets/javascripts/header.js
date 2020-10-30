@@ -61,9 +61,26 @@
   });
 
   var HeaderView = Backbone.View.extend({
+    events: {
+      'click #locale-button': 'updateLocaleLinks'
+    },
+
     render: function() {
       this.el.querySelectorAll('.dropdown').forEach(function(element) {
         new DropdownView({ el: element }).render();
+      });
+    },
+
+    updateLocaleLinks: function(event) {
+      var links = event.target.closest('.dropdown').querySelectorAll('.dropdown-menu a');
+      var path = window.location.pathname;
+
+      links.forEach(function(linkEl) {
+        var locale = linkEl.href.match(/locale=(\w+)/);
+
+        if (locale && locale[1]) {
+          linkEl.href = path + '?locale=' + locale[1];
+        }
       });
     }
   });

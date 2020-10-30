@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     # update session if passed
     if params[:locale].present? &&
         I18n.available_locales.include?(params[:locale].to_sym)
-      redirect_params = params.permit(:controller, :action)
+      redirect_params = params.permit(:controller, :action, :tab, :sidebar, :slide)
       session[:locale] = params[:locale]
       redirect_to(redirect_params) if request.get?
     end

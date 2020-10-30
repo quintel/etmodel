@@ -1,7 +1,9 @@
 /* globals App EmptyChartMessage I18n */
 
 import * as d3 from 'd3';
+
 import Base from './Base';
+import tooltips from './utils/tooltips';
 
 // This is mostly an abstract class
 //
@@ -86,6 +88,7 @@ export default class extends Base {
 
     this.refresh(!firstRender);
     this.displayEmptyMessage();
+    tooltips(this.containerSelector());
   }
 
   /**

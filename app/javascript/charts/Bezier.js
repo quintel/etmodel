@@ -141,23 +141,6 @@ class Bezier extends D3Chart {
       .attr('class', 'y_axis inner_grid')
       .attr('transform', `translate(${this.seriesWidth}, 0)`)
       .call(this.y_axis);
-
-    // series tooltips
-    return $(`${this.containerSelector()} path.serie`).qtip({
-      content: {
-        title() {
-          return $(this).attr('data-tooltip-title');
-        },
-        text() {
-          return $(this).attr('data-tooltip-text');
-        }
-      },
-      position: {
-        target: 'mouse',
-        my: 'bottom right',
-        at: 'top center'
-      }
-    });
   }
 
   refresh() {

@@ -107,22 +107,6 @@ class StackedBar extends D3Chart {
       .attr('height', 0)
       .attr('data-tooltip-title', d => this.serieValue(d.key, 'label'));
 
-    $(`${this.container_selector()} rect.serie`).qtip({
-      content: {
-        title() {
-          return $(this).attr('data-tooltip-title');
-        },
-        text() {
-          return $(this).attr('data-tooltip-text');
-        }
-      },
-      position: {
-        target: 'mouse',
-        my: 'bottom center',
-        at: 'top center'
-      }
-    });
-
     // draw a nice axis
     this.yAxis = d3
       .axisRight()
@@ -227,7 +211,7 @@ class StackedBar extends D3Chart {
   }
 
   displayLegend() {
-    $(this.container_selector())
+    $(this.containerSelector())
       .find('.legend')
       .remove();
 

@@ -23,7 +23,9 @@ import D3Chart from './D3Chart';
  *     .stack()
  *     .keys(this.model.non_target_series.map(serie => serie.get('gquery')))
  */
-const stackSeries = ({ keys, data }) => d3.stack().keys(keys)(data);
+const stackSeries = ({ keys, data }) => {
+  return d3.stack().keys(keys)(data);
+};
 
 class Bezier extends D3Chart {
   tableOptions = {
@@ -43,18 +45,6 @@ class Bezier extends D3Chart {
 
   canRenderAsTable() {
     return true;
-  }
-
-  /**
-   * Looks up a series in the model by key, and returns an attribute.
-   *
-   * @param {string} serieKey
-   *   The key identifying the serie to be queried.
-   * @param {string} attribute
-   *   The name of the attribute on the serie to be retrieved.
-   */
-  serieValue(serieKey, attribute) {
-    return this.model.series.with_gquery(serieKey).get(attribute);
   }
 
   /**
@@ -144,11 +134,7 @@ class Bezier extends D3Chart {
       .attr('d', d => this.area(d))
       .style('fill', d => this.serieValue(d.key, 'color'))
       .style('opacity', 0.8)
-      .attr('data-tooltip-title', d => this.serieValue(d.key, 'label'))
-      .attr('data-tooltip-text', d => {
-        return `${this.startYear}: ${this.formatValue(d[0].data[d.key])}</br> \
-          ${this.endYear}: ${this.formatValue(d[2].data[d.key])}`;
-      });
+      .attr('data-tooltip-title', d => this.serieValue(d.key, 'label'));
 
     this.svg
       .append('svg:g')
@@ -193,6 +179,7 @@ class Bezier extends D3Chart {
 
     // See above for explanation of this method chain
     const stacked_data = stackSeries(this.prepareData(), d => d.id);
+    console.log(stacked_data);
 
     this.displayLegend();
 

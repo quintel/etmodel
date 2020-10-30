@@ -3,7 +3,7 @@ class @Scenario extends Backbone.Model
     key = App.settings.get('api_session_id')
     return if key? then key else null
 
-  api_session_id: ->
+  api_session_id: =>
     @apiSessionID()
 
   apiAttributes: ->

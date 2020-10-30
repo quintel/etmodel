@@ -10,6 +10,7 @@ export default klass => {
   klass.prototype.main_formatter = klass.prototype.createValueFormatter;
   klass.prototype.toggle_format = klass.prototype.toggleFormat;
   klass.prototype.update_lock_icon = klass.prototype.updateLockIcon;
+  klass.prototype.is_empty = klass.prototype.isEmpty;
 
   return klass;
 };

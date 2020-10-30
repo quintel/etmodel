@@ -33,6 +33,7 @@ export default class extends Base {
     this.startYear = App.settings.get('start_year');
     this.endYear = App.settings.get('end_year');
     this.init_margins && this.init_margins();
+    this.valueFormatter = value => value.toString();
   }
 
   // Update margins to reflect font-size
@@ -55,24 +56,64 @@ export default class extends Base {
     this.init_margins = () => {};
   }
 
+  /**
+   * Looks up a series in the model by key, and returns an attribute.
+   *
+   * @param {string} serieKey
+   *   The key identifying the serie to be queried.
+   * @param {string} attribute
+   *   The name of the attribute on the serie to be retrieved.
+   */
+  serieValue(serieKey, attribute) {
+    const serie = this.model.series.with_gquery(serieKey);
+
+    if (!serie) {
+      throw new Error(`No series matching query: ${serieKey}`);
+    }
+
+    return serie.get(attribute);
+  }
+
   render(force_redraw) {
-    if (force_redraw || !this.drawn) {
+    const firstRender = !this.drawn;
+
+    if (force_redraw || firstRender) {
       this.clearContainer();
       this.containerNode().html(this.html());
-      this.formatValue = value => value;
       this.draw();
       this.drawn = true;
     }
 
-    this.refresh();
+    this.refresh(!firstRender);
     this.displayEmptyMessage();
   }
 
+  /**
+   * Formats a value using the current valueFormatter.
+   *
+   * Prefer this over calling `valueFormatter` directly, as the `valueFormatter` may change
+   * depending on the values shown in the chart (for example, a chart may initially be shown with
+   * values in MJ and then be updated with values where GJ is more appropriate). Using the direct
+   * reference to `valueFormatter` may result in a stale formatter.
+   *
+   * @param {number} value
+   *   The value to be formatted.
+   *
+   * @return {string}
+   */
+  formatValue = value => this.valueFormatter(value);
+
+  /**
+   * Updates the chart with new data.
+   *
+   * @param {boolean} animate
+   *   Sets whether to animate changes in the data from the current state to the new state.
+   */
   refresh() {
-    this.formatValue = this.createValueFormatter();
+    this.valueFormatter = this.createValueFormatter();
   }
 
-  is_empty() {
+  isEmpty() {
     return false;
   }
 
@@ -165,9 +206,9 @@ export default class extends Base {
       .attr('class', 'legend-column')
       .style('width', `${legendItemWidth}px`);
 
-    d3.selectAll('.legend-column').each(function(items) {
+    d3.selectAll('.legend-column').each((items, index, nodes) => {
       const scope = d3
-        .select(this)
+        .select(nodes[index])
         .selectAll('.legend-item')
         .data(items)
         .enter()

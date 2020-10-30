@@ -335,12 +335,14 @@ div.d3_container
 
   &.category_bar .serie.present
     opacity: 0.7
-  &.bezier
+  &.bezier, &.vertical_stacked_bar
+    .tick
+      // Prevent tooltips from disappearing when the mouse moves over a tick.
+      pointer-events: none
     .y_axis .tick:first-of-type line
-      opacity: 0.75
+      opacity: 0.3
     .y_axis .tick:not(:first-of-type) line
-      stroke-dasharray: 2, 2
-      opacity: 0.2
+      opacity: 0.15
 
   .subzero
     fill: black

@@ -16,5 +16,7 @@
 
 import backwardsCompat from '../charts/backwardsCompat';
 import Bezier from '../charts/Bezier';
+import StackedBar from '../charts/StackedBar';
 
 window.D3.bezier = { View: backwardsCompat(Bezier) };
+window.D3.stacked_bar = { View: backwardsCompat(StackedBar) };

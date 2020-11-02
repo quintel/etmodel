@@ -72,6 +72,19 @@ describe Slide do
     end
   end
 
+  describe '#short_name' do
+    context 'when the name contains "&"' do
+      it 'replaces the ampersand with "and"' do
+        slide = described_class.new(key: 'hello')
+
+        allow(I18n).to receive(:t).and_call_original
+        allow(I18n).to receive(:t).with('slides.hello.title', locale: :en).and_return('one & two')
+
+        expect(slide.short_name).to eq('one-and-two')
+      end
+    end
+  end
+
   describe '#input_elements' do
     it 'is an alias of #sliders' do
       expect(subject.input_elements).to eq(subject.sliders)

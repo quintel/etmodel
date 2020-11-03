@@ -1,14 +1,8 @@
 /* globals $ _ */
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * DS206: Consider reworking classes to avoid initClass
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 
 import * as d3 from 'd3';
 import D3Chart from './D3Chart';
+import stackData from './utils/stackData';
 
 /**
  * Stacks the data provided.
@@ -71,20 +65,11 @@ class Bezier extends D3Chart {
 
     this.displayLegend();
 
-    // the stack method will filter the data and calculate the offset for every
-    // item. The values function tells this method that the values it will
-    // operate on are an array held inside the values member. This member will
-    // be filled automatically by the nesting method
-    this.stack_method = d3
-      .stack()
-      .offset(d3.stackOffsetNone)
-      .value(d => d.values);
-
     // This method groups the series by key, creating an array of objects
     // this.nest = d3.nest().key(d => d.id);
 
     // Run the stack method on the nested entries
-    const stacked_data = stackSeries(this.prepareData());
+    const stacked_data = stackData(this.prepareData());
 
     this.x = d3
       .scaleLinear()
@@ -164,19 +149,22 @@ class Bezier extends D3Chart {
     this.svg.selectAll('.y_axis .tick').attr('class', d => (d === 0 ? 'tick bold' : 'tick'));
 
     // See above for explanation of this method chain
-    const stacked_data = stackSeries(this.prepareData(), d => d.id);
+    const stacked_data = stackData(this.prepareData());
 
     this.displayLegend();
 
     return this.svg
       .selectAll('path.serie')
-      .data(stacked_data, s => s.key)
-      .transition()
-      .attr('d', d => this.area(d))
+      .data(stacked_data, d => d.key)
       .attr('data-tooltip-text', d => {
-        return `${this.startYear}: ${this.formatValue(d[0].data[d.key])}</br> \
-          ${this.endYear}: ${this.formatValue(d[2].data[d.key])}`;
-      });
+        const present = Math.abs(d[0][1]) - Math.abs(d[0][0]);
+        const future = Math.abs(d[1][1]) - Math.abs(d[1][0]);
+
+        return `${this.startYear}: ${this.formatValue(present)}</br> \
+          ${this.endYear}: ${this.formatValue(future)}`;
+      })
+      .transition()
+      .attr('d', d => this.area(d));
   }
 
   displayLegend() {
@@ -202,53 +190,45 @@ class Bezier extends D3Chart {
   // this let's format the data as an array. An interpolated mid-point is added to generate a
   // S-curve.
   prepareData() {
-    let left_stack = 0;
-    let mid_stack = 0;
-    let right_stack = 0;
+    let leftStack = 0;
+    let midStack = 0;
+    let rightStack = 0;
 
-    const keys = [];
-    const leftStackValues = {};
-    const midStackValues = {};
-    const rightStackValues = {};
+    const values = [];
 
     // The mid point should be between the left and side value, which are stacked.
     this.model.non_target_series().forEach(s => {
       // Calculate the mid point boundaries
-      const min_value = Math.min(left_stack + s.present_value(), right_stack + s.future_value());
-      const max_value = Math.max(left_stack + s.present_value(), right_stack + s.future_value());
+      const minValue = Math.min(leftStack + s.present_value(), rightStack + s.future_value());
+      const maxValue = Math.max(leftStack + s.present_value(), rightStack + s.future_value());
 
-      let mid_point =
+      let midPoint =
         s.safe_future_value() > s.safe_present_value()
           ? s.safe_present_value()
           : s.safe_future_value();
 
-      mid_point += mid_stack;
+      midPoint += midStack;
 
-      mid_point = mid_point < min_value ? min_value : mid_point > max_value ? max_value : mid_point;
-      // the stacking function wants the non-stacked values
-      mid_point -= mid_stack;
+      // This ensures that if the chart shows an overall increasing trend that we do not plot a
+      // value which appears to show a decrease in the midYear, and vice-versa.
+      midPoint = midPoint < minValue ? minValue : midPoint > maxValue ? maxValue : midPoint;
 
-      mid_stack += mid_point;
-      left_stack += s.safe_present_value();
-      right_stack += s.safe_future_value();
+      // The stacking function wants the non-stacked values
+      midPoint -= midStack;
 
-      const gquery = s.get('gquery_key');
+      midStack += midPoint;
+      leftStack += s.safe_present_value();
+      rightStack += s.safe_future_value();
 
-      const mid_year = (this.startYear + this.endYear) / 2;
+      const id = s.get('gquery_key');
+      const midYear = (this.startYear + this.endYear) / 2;
 
-      leftStackValues.x = this.startYear;
-      leftStackValues[gquery] = s.safe_present_value();
-
-      midStackValues.x = mid_year;
-      midStackValues[gquery] = mid_point;
-
-      rightStackValues.x = this.endYear;
-      rightStackValues[gquery] = s.safe_future_value();
-
-      keys.push(gquery);
+      values.push({ id, x: this.startYear, y: s.safe_present_value() });
+      values.push({ id, x: midYear, y: midPoint });
+      values.push({ id, x: this.endYear, y: s.safe_future_value() });
     });
 
-    return { keys, data: [leftStackValues, midStackValues, rightStackValues] };
+    return values;
   }
 }
 

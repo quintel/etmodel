@@ -28,3 +28,11 @@ Rails.application.config.assets.precompile += %w[
 
 # Compile images in vendor/assets/images
 Rails.application.config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
+
+# Fix segfault with Sprockets/Sass
+# https://github.com/rails/sprockets/issues/581#issuecomment-486984663
+if Rails.env.test?
+  Rails.application.config.assets.configure do |env|
+    env.export_concurrent = false
+  end
+end

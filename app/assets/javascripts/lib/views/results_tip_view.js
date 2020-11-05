@@ -1,27 +1,28 @@
+/* globals $ _ Backbone I18n */
 (function() {
+  var LOCAL_STORAGE_KEY = 'never-show-results-tip';
+
   var closeButton = _.template(
     '<li>' +
       '<button class="<%= cssClass %>">' +
-        '<% if (showIcon) { %>' +
-          '<span class="fa fa-times"></span> ' +
-        '<% } %>' +
-        '<%- message %>' +
+      '<% if (showIcon) { %>' +
+      '<span class="fa fa-times"></span> ' +
+      '<% } %>' +
+      '<%- message %>' +
       '</button>' +
-    '</li>'
+      '</li>'
   );
 
   var ResultsTipView = Backbone.View.extend({
     id: 'results-tip',
 
     events: {
-      'click .controls .close':         'close',
-      'click .controls .close-forever': 'closeForever',
+      'click .controls .close': 'close',
+      'click .controls .close-forever': 'closeForever'
     },
 
     render: function() {
-      this.$el
-        .append(this.t('message'))
-        .append(this.renderControls());
+      this.$el.append(this.t('message')).append(this.renderControls());
 
       return this.$el;
     },
@@ -32,17 +33,21 @@
     renderControls: function() {
       var controls = $('<ol/>').addClass('controls');
 
-      controls.append(closeButton({
-        cssClass: 'close',
-        message: this.t('hide'),
-        showIcon: true
-      }));
+      controls.append(
+        closeButton({
+          cssClass: 'close',
+          message: this.t('hide'),
+          showIcon: true
+        })
+      );
 
-      controls.append(closeButton({
-        cssClass: 'close-forever',
-        message: this.t('hide_forever'),
-        showIcon: false
-      }));
+      controls.append(
+        closeButton({
+          cssClass: 'close-forever',
+          message: this.t('hide_forever'),
+          showIcon: false
+        })
+      );
 
       return controls;
     },
@@ -61,7 +66,7 @@
         data: { scenario_id: this.scenarioID(scenarioID) }
       });
 
-      this.$el.fadeOut()
+      this.$el.fadeOut();
     },
 
     /**
@@ -69,30 +74,29 @@
      * back to using the getScenarioID option.
      */
     scenarioID: function(id) {
-      return id ||
-        (this.options.getScenarioID && this.options.getScenarioID()) ||
-        'all';
+      return id || (this.options.getScenarioID && this.options.getScenarioID()) || 'all';
     },
 
     closeForever: function(event) {
+      window.localStorage.setItem(LOCAL_STORAGE_KEY, true);
       this.close(event, 'all');
     },
 
     /**
      * Returns a translated string.
      */
-    t: function (key) {
-      return I18n.t('results_tip.' + key)
-    },
+    t: function(key) {
+      return I18n.t('results_tip.' + key);
+    }
   });
 
   /**
    * Returns if the results tip view should be shown to the user. If the user
    * has previously dismissed the tip, it will not be shown again.
    */
-  ResultsTipView.shouldShow = function () {
-    return window.globals.show_results_tip;
-  }
+  ResultsTipView.shouldShow = function() {
+    return window.globals.show_results_tip && !window.localStorage.getItem(LOCAL_STORAGE_KEY);
+  };
 
   window.ResultsTipView = ResultsTipView;
 })(window);

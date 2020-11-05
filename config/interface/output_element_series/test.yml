@@ -1,0 +1,68 @@
+---
+- color: "gold"
+  dependent_on:
+  gquery: electricity_hourly_summarized_supply
+  group: supply
+  key: electricity_hourly_summarized_supply
+  label: electricity
+  order_by: 1
+  output_element_key: test
+- color: "gold"
+  dependent_on:
+  gquery: electricity_hourly_summarized_demand
+  group: demand
+  key: electricity_hourly_summarized_demand
+  label: electricity
+  order_by: 2
+  output_element_key: test
+
+- color: "orange"
+  dependent_on:
+  gquery: heat_hourly_summarized_supply
+  group: supply
+  key: heat_hourly_summarized_supply
+  label: heat
+  order_by: 3
+  output_element_key: test
+- color: "orange"
+  dependent_on:
+  gquery: heat_hourly_summarized_demand
+  group: demand
+  key: heat_hourly_summarized_demand
+  label: heat
+  order_by: 4
+  output_element_key: test
+
+- color: "darkgray"
+  dependent_on:
+  gquery: gas_hourly_summarized_supply
+  group: supply
+  key: gas_hourly_summarized_supply
+  label: gas
+  order_by: 5
+  output_element_key: test
+- color: "darkgray"
+  dependent_on:
+  gquery: gas_hourly_summarized_demand
+  group: demand
+  key: gas_hourly_summarized_demand
+  label: gas
+  order_by: 6
+  output_element_key: test
+
+- color: "slateblue"
+  dependent_on:
+  gquery: hydrogen_hourly_summarized_supply
+  group: supply
+  key: hydrogen_hourly_summarized_supply
+  label: hydrogen
+  order_by: 7
+  output_element_key: test
+- color: "slateblue"
+  dependent_on:
+  gquery: hydrogen_hourly_summarized_demand
+  group: demand
+  key: hydrogen_hourly_summarized_demand
+  label: hydrogen
+  order_by: 8
+  output_element_key: test

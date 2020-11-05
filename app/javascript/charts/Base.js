@@ -229,6 +229,8 @@ export default class extends Backbone.View {
       }
     })();
 
+    console.log(maxValue);
+
     return this.createScaler(maxValue, this.model.get('unit'), opts);
   }
 

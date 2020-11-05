@@ -286,7 +286,7 @@ table
 // =========  D3 charts ======================================================
 
 div.d3_container
-  &.vertical_stacked_bar, &.waterfall, &.target_bar, &.co2_emissions, &.merit_order, &.cost_capacity_bar, &.category_bar
+  &.vertical_stacked_bar, &.waterfall, &.target_bar, &.co2_emissions, &.merit_order, &.cost_capacity_bar, &.category_bar, &.hourly_summarized
     svg
       shape-rendering: crispEdges
   text
@@ -335,14 +335,25 @@ div.d3_container
 
   &.category_bar .serie.present
     opacity: 0.7
-  &.bezier, &.vertical_stacked_bar
-    .tick
+  &.bezier, &.vertical_stacked_bar, &.hourly_summarized
+    .tick line
       // Prevent tooltips from disappearing when the mouse moves over a tick.
       pointer-events: none
     .y_axis .tick.bold line
       opacity: 0.3
     .y_axis line
       opacity: 0.15
+
+  &.hourly_summarized
+    .stack-axis .tick text
+      color: #777
+
+    .date-group .date-group-bg
+      fill: transparent
+    .date-group:hover
+      cursor: pointer
+      .date-group-bg
+        fill: #eee
 
   .subzero
     fill: black

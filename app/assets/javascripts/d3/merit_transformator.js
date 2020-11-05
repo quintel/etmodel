@@ -1,6 +1,6 @@
 /* globals d3 */
 
-var MeritTransformator = (function () {
+var MeritTransformator = (function() {
   'use strict';
 
   function downsampleFunc(name) {
@@ -33,10 +33,7 @@ var MeritTransformator = (function () {
 
       for (day = 0; day < 365; day += 1) {
         result.push(
-          downsampleFunc(downsampleWith).call(
-            null,
-            values.slice(day * 24, (day + 1) * 24)
-          )
+          downsampleFunc(downsampleWith).call(null, values.slice(day * 24, (day + 1) * 24))
         );
       }
 
@@ -56,4 +53,4 @@ var MeritTransformator = (function () {
       return values.slice((weekNum - 1) * weekLen, weekNum * weekLen);
     }
   };
-}());
+})();

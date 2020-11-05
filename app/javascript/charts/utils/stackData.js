@@ -1,4 +1,4 @@
-import { group, stack } from 'd3';
+import { group, groups, stack } from 'd3';
 
 /**
  * Receives the data from `stackData` and returns an array containing all the unique id values.
@@ -38,6 +38,7 @@ const toTable = (grouped, keys) => {
     // g[0] is the x value (year) and g[1] contains a map of each gquery key and serie data wrapped
     // in an array.
     const column = { x: g[0] };
+    // console.log(g);
 
     for (let serieKey of keys) {
       if (g[1].has(serieKey)) {
@@ -65,11 +66,11 @@ const toTable = (grouped, keys) => {
  *
  * @example
  *   stackData(
- *     [{ x: 0, y: 10, id: 'a' }, { x: 0, y: 3, id: 'b'}, { x: 1, y: 5, id: 'a'}],
+ *     [{ x: 0, y: 10, id: 'a' }, { x: 0, y: 3, id: 'b' }, { x: 1, y: 5, id: 'a' }],
  *     d3.stack.offset(d3.stackOffsetDiverging)
  *   );
  */
-export default (data, stackFunc = stack()) => {
+const stackData = (data, stackFunc = stack()) => {
   // Group the data based on the year ("x") and then key the values by the gquery key ("id").
   //
   // Produces a Map like:
@@ -97,3 +98,34 @@ export default (data, stackFunc = stack()) => {
     return d;
   });
 };
+
+/**
+ * Receives an array of objects, describing individual values to be shown on a chart, groups them
+ * according to their "groupKey" value, and then passes each group separately to `stackData` to be
+ * stacked.
+ *
+ * @param {array} data
+ *   An array of data points; each one an object containing `x`, `y`, and `id`. `x` and `y` are
+ *   their x and y values respectively, while `id` is a string representing the series name. The
+ *   same `id` may be used multiple times (typically with a different `x`).
+ * @param {function} stackFunc
+ *   A function used to stack values. This defaults to `d3.stack()`. Customise the stack options by
+ *   padding a custom function.
+ *
+ * @example
+ *   stackData(
+ *     [
+ *       { x: 0, y: 6, id: 'a', stackKey: 'jan' },
+ *       { x: 0, y: 3, id: 'b', stackKey: 'jan' },
+ *       { x: 1, y: 5, id: 'a', stackKey: 'feb' }
+ *     ],
+ *     d3.stack.offset(d3.stackOffsetDiverging)
+ *   );
+ */
+export const groupedStack = (data, stackFunc = undefined) => {
+  return groups(data, d => d.groupKey).map(([, groupData]) => {
+    return stackData(groupData, stackFunc);
+  });
+};
+
+export default stackData;

@@ -415,12 +415,12 @@ en:
       short_description:
       description: "<b>Temperature and full load hours</b>\r\n<br/>\r\n
         Outdoor temperature and technical developments of wind and solar
-        technologies and have an effect on (hourly) demand and supply. Here you can
+        technologies have an effect on (hourly) demand and supply. Here you can
         set the average temperature and full load hours of wind turbines and solar
         pv.\r\n<p>\r\n<b>Weather years (only available for Dutch regions)</b></b>\r\n<br/>\r\n
-        By default weather conditions that correspond to the start year are used.
-        However, weather conditions can vary considerably. To explore the impact 
-        of weather conditions, it is possible to select a different weather year. 
+        By default, weather conditions are used that correspond to the start year.
+        However, weather conditions can vary considerably. To explore the impact
+        of weather conditions, it is possible to select a different weather year.
         Selecting a different weather year affects:
         <ul>
         <li>solar-PV en solar thermal, affects: production curve and full load hours,</li>
@@ -428,10 +428,10 @@ en:
         <li>average temperature, affects: annual heat demand,</li>
         <li>temperature curve, affects: hourly heat demand of households, buildings and agriculture.</li>
         </ul>\r\n</p>\r\n
-        Note: Selecting a weather year other than Default will overwrite previous assumptions 
-        about changes in full load hours and temperature. The description of the weather year 
+        Note: Selecting a weather year other than Default will overwrite previous assumptions
+        about changes in full load hours and temperature. The description of the weather year
         contains the corresponding full load hours and temperature.
-        \r\n</p>\r\nFor more information about weather conditions consult our 
+        \r\n</p>\r\nFor more information about weather conditions consult our
         <a href=\"https://docs.energytransitionmodel.com/main/weather-conditions\"
         target =\"_blank\">documentation</a>.\r\n</p>\r\nDemand and production curves
         can be downloaded in the <a href=\"/scenario/data/data_export/merit-order-prices\">results

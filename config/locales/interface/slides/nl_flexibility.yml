@@ -412,16 +412,25 @@ nl:
     flexibility_weather_conditions_and_flh:
       title: Extreme weersomstandigheden
       short_description:
-      description: "Buitentemperatuur en technische ontwikkelingen van zon en wind
-        technologie hebben effect op (uurlijkse) vraag en aanbod. Stel hier gemiddelde
-        temperatuur en vollasturen van windturbines en zonnepanelen in.\r\n<p>\r\nDaarnaast
-        zijn er in het verleden uitzonderlijk koude periodes of periodes met uitzonderlijk
-        weinig wind en zon voorgekomen. Zulke periodes met extreme weersomstandigheden
-        kunnen in de toekomst weer voorkomen. De vraag is of de opgestelde warmte-
-        en elektriciteitstechnologieën dan voldoende vermogen zullen hebben om in
-        de warmte- en elektriciteitsvraag te voorzien. Om dat te verkennen kan voor
-        een scenario voor (een regio binnen) Nederland een jaar met extreme weersomstandigheden
-        worden geselecteerd.\r\n</p>\r\nKijk voor meer informatie over weeromstandigheden
+      description: "<b>Temperatuur en vollasturen</b>\r\n<br/>\r\n
+        Buitentemperatuur en technische ontwikkelingen van zon- en windtechnologie hebben 
+        effect op (jaarlijkse en uurlijkse) vraag en aanbod. Stel hier gemiddelde
+        temperatuur en vollasturen van windturbines en zonnepanelen in.
+        \r\n<p>\r\n<b>Weerjaren (alleen beschikbaar voor Nederlandse regio's)</b>\r\n<br/>\r\n
+        Standaard worden weersomstandigheden gebruikt die passen bij het startjaar.
+        Echter, weersomstandigheden kunnen flink variëren. Om de impact van weersomstandigheden 
+        te verkennen is het mogelijk om een ander weerjaar te selecteren. Het selecteren van een ander
+        weerjaar beïnvloedt: 
+        <ul>
+        <li>zon-PV en zonthermie - effect op: productieprofiel en vollasturen,</li>
+        <li>windturbines - effect op: productieprofiel en vollasturen,</li>
+        <li>gemiddelde temperatuur - effect op: jaarlijkse warmtevraag,</li>
+        <li>temperatuurprofiel - effect op: uurlijkse vraag naar warmte in huishoudens, gebouwen en landbouw.</li>
+        </ul>\r\n</p>\r\n
+        Let op: met het selecteren van een ander weerjaar dan Default worden eerdere aannames 
+        over verandering van vollasturen en temperatuur overschreven. 
+        In de omschrijving van het weerjaar staan de bijpassende vollasturen en temperatuur.
+        \r\n</p>\r\nKijk voor meer informatie over weeromstandigheden
         in onze <a href=\"https://docs.energytransitionmodel.com/main/weather-conditions\"
         target =\"_blank\">documentatie</a>.\r\n</p>\r\nProductiecurves kunnen worden
         gedownload in de <a href=\"/scenario/data/data_export/merit-order-prices\">resultaten

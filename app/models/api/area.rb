@@ -38,6 +38,12 @@ class Api::Area < ActiveResource::Base
     :has_coal_oil_for_heating_built_environment
   ]
 
+  # Represents an optional nested "scaling" attribute within an Api::Area
+  class Scaling < ActiveResource::Base
+    self.prefix = Api::Area.prefix
+    self.site = Api::Area.site
+  end
+
   def self.grouped
     all_by_area_code
       .values

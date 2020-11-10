@@ -3,12 +3,42 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 14px;
+        line-height: 20px;
+      }
+
       h1 {
-        color: red;
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      h2 {
+        font-size: 16px;
+        font-weight: normal;
+        margin-top: 0;
+      }
+
+      a.big-button {
+        -webkit-font-smoothing: antialiased;
+        background: #4e98e4;
+        border-radius: 5px;
+        color: white;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        height: 38px;
+        line-height: 24px;
+        text-shadow: 0 1px 1px #3f7ab7;
       }
     </style>
   </head>
   <body>
-    <%= yield %>
+    <table cellpadding="0" cellspacing="0" width="500">
+      <tr>
+        <td><%= yield %></td>
+      </tr>
+    </table>
   </body>
 </html>

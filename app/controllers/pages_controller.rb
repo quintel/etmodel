@@ -14,10 +14,6 @@ class PagesController < ApplicationController
     end
   end
 
-  def scaled
-    setup_countries_and_regions
-  end
-
   def dataset
     @area = Api::Area.find_by_country_memoized(params[:dataset_locale])
     raise ActiveRecord::RecordNotFound unless @area

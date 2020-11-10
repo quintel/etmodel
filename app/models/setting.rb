@@ -30,7 +30,6 @@ class Setting
       use_merit_order:          true,
       locked_charts:            [],
       last_etm_page:            nil,
-      scaling:                  nil,
       preset_scenario_id:       nil,
       api_session_id:           nil,
       active_saved_scenario_id: nil,
@@ -57,7 +56,6 @@ class Setting
       use_fce: scenario.use_fce,
       end_year: scenario.end_year,
       area_code: scenario.area_code,
-      scaling: scenario.scaling&.attributes,
       active_saved_scenario_id: active_saved_scenario[:id],
       active_scenario_title: active_saved_scenario[:title]
     )
@@ -138,11 +136,7 @@ class Setting
 
   # Returns the ActiveResource object
   def area
-    if scaling.present?
-      Api::ScaledArea.new(Api::Area.find_by_country_memoized(area_code))
-    else
-      Api::Area.find_by_country_memoized(area_code)
-    end
+    Api::Area.find_by_country_memoized(area_code)
   end
 
   # returns the country part of the area_code

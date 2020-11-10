@@ -68,12 +68,6 @@ class ScenariosController < ApplicationController
 
     Current.setting = Setting.load_from_scenario(@scenario)
 
-    if params[:scaling_attribute]
-      Current.setting.scaling = Api::Scenario.scaling_from_params(params)
-    end
-
-    scenario_attrs[:scale] = Current.setting.scaling if Current.setting.scaling
-
     new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })
     Current.setting.api_session_id = new_scenario.id
 

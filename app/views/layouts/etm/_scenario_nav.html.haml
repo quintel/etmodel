@@ -42,9 +42,6 @@
         %li
           %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }
             = t("header.reset_scenario")
-        %li.sep-above
-          %a.dropdown-item{ href: '#', data: { dylink: scale_scenario_path(scenario_id: ':scenario_id') } }
-            = t('header.scale_scenario')
 
         - if current_user&.admin?
           %li.sep-above

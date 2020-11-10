@@ -98,30 +98,6 @@ module LayoutHelper
     I18n.locale.to_s == 'en'
   end
 
-  def scaling_summary
-    attribute = Current.setting.scaling[:area_attribute]
-    value     = Current.setting.scaling[:value].to_i
-
-    I18n.t(:'local_scenario.summary_html', {
-      value:     number_with_delimiter(value),
-      attribute: t(:"local_scenario.attributes.#{ attribute }.short"),
-      reduction: scaling_reduction
-    }).html_safe
-  end
-
-  def scaling_reduction
-    region  = Current.setting.area
-    value   = Current.setting.scaling[:value]
-    default =
-      Current.setting.scaling[:base_value] ||
-      region.public_send(Current.setting.scaling[:area_attribute])
-
-    percent   = (value.to_f / default) * 100
-    precision = (percent > 10 ? 0 : (percent < 1 ? 2 : 1))
-
-    number_to_percentage(percent, precision: precision)
-  end
-
   def flags
     @flags ||= Dir.chdir(Rails.root.join('app/assets/images')) do
       Dir.glob("flags-24/*.png")

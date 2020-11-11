@@ -2,6 +2,60 @@
 
 ---
 
+# November 2020
+
+## Carbon capture, utilisation and storage (CCUS)
+
+Carbon capture, utilisation and storage (CCUS) is a group of emissions reduction technologies that can be applied across the energy system. The ETM now takes into account CCUS applications in much more detail than before.
+
+The ETM models four types of carbon capture:
+
+ * Capture in industry. A distinction is now made between various sub sectors and production technologies and their respective capture potentials, costs and energy requirements.
+ * Capture in the power sector
+ * Capture for hydrogen production
+ * Direct Air Capture, a process of capturing CO2 directly from the ambient air using electricity.
+
+![](/assets/pages/whats_new/ccus_supply_demand_mekko.png)
+
+The ETM models four types of carbon usage:
+
+ * Offshore storage
+ * Utilisation of CO<sub>2</sub> as feedstock for synthetic kerosene production
+ * Utilisation of CO<sub>2</sub> as feedstock for synthetic methanol production
+ * Other utilisation, such as propellant gas for beer and soda or for the cultivation of crops in greenhouses.
+
+![](/assets/pages/whats_new/co2-sankey-en.png)
+
+The ETM models two types of carbon transportation:
+
+  * Via pipelines
+  * Liquefied transport in ships
+
+
+Discover these new features in the **[Supply → CCUS][ccus slide]** section! A detailed explanation can be found in our [documentation](https://docs.energytransitionmodel.com/main/co2-ccus).
+
+## Negative emissions
+The ETM can now deal with so-called 'negative' CO<sub>2</sub> emissions. Such emissions may arise when applying carbon capture to processes using biomass or when CO<sub>2</sub> is captured directly from the ambient air using Direct Air Capture technology. See our [documentation](https://docs.energytransitionmodel.com/main/co2-negative-emissions) for more.
+
+![](/assets/pages/whats_new/co2-negative-emissions.png)
+
+## Scenario Navigation bar
+
+A new scenario navigation bar has been added which shows the region and end year for your scenario; when you open one of your saved scenarios, the scenario name is also shown making it easier to have multiple scenarios open in different browser tabs. Quickly save your scenario with the "Save scenario" button on the right. It's now easier to access all of your saved scenarios by visiting "My scenarios".
+
+![](/assets/pages/whats_new/scenario_navigation_bar_eng.png)
+
+
+## Interaction possible with other models from the Mondaine Suite
+
+Multiple energy models are used to explore different parts of the complex challenge of the energy transition. A collaboration between these models makes it possible to exploit the strengths of each individual model. In the context of the [Mondaine](https://www.mondaine-suite.nl) project, the Energy System Description Language ([ESDL](https://energytransition.github.io/)) has been developed to support the communication between the different models - it allows the models to ‘speak’ the same language. ESDL can be used to describe information about spatial, technical, economical, social and temporal aspects of the energy transition, all in relation to each other. This makes it possible for a model to build further upon information from another model. The energy system defined in an ESDL file will be converted into slider settings - this makes it possible to explore the future energy system in the ETM and allows you to continue working on the scenario.
+
+Check out the ESDL import functionality [here][esdl]!
+
+![](/assets/pages/whats_new/mondaine.jpg)
+
+---
+
 # June 2020
 
 ## Multiple electrical interconnectors
@@ -123,6 +177,10 @@ For saved scenarios it is possible to download the values ​​of your sliders 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
 
 You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
+
+[ccus slide]: scenario/supply/ccus/capture-of-co2
+
+[esdl]: /import_esdl
 
 [weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
 

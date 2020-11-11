@@ -46,7 +46,6 @@ nl:
     feedback: "Feedback"
     information: "Informatie"
     load_scenario: "Mijn Scenario's"
-    scale_scenario: 'Schaal dit scenario'
     merit_order_check: "Gebruik uurlijkse berekeningen"
     overview: "Overview"
     partners: "Partners"
@@ -116,25 +115,6 @@ nl:
     footprint:           "Biomassa"
     renewable:           "Hernieuwbaar"
     summary:             "Samenvattend"
-
-  local_scenario:
-    include_agriculture: Neem landbouwsector mee
-    include_energy: Neem energiesector mee
-    include_industry: Neem industrie mee
-    scaling_attribute: Schalingsparameter
-    scale_to: Schaal naar
-    start_new: "Schaal <strong>huidig scenario</strong>"
-    based_on_preset: "Schaal <strong>opgeslagen scenario</strong>"
-    summary_html: >
-      Je hebt het scenario tot <strong>%{value} %{attribute}</strong> teruggeschaald
-      (%{reduction} van de oorspronkelijke grootte).
-    attributes:
-      number_of_residences:
-        long: Aantal woningen
-        short: woningen
-      number_of_inhabitants:
-        long: Aantal inwoners
-        short: inwoners
 
   updated:
     name: "Laatste updates"

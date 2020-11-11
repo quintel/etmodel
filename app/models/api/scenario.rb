@@ -26,18 +26,6 @@ class Api::Scenario < ActiveResource::Base
     )
   end
 
-  def self.scaling_from_params(params)
-    if params[:scaling_attribute]
-      { area_attribute:  params[:scaling_attribute],
-        value:           params[:scaling_value],
-        has_agriculture: params[:has_agriculture] == '1',
-        has_energy:      params[:has_energy] == '1',
-        has_industry:    params[:has_industry] == '1' }
-    else
-      {}
-    end
-  end
-
   # Public: Determines if this scenario can be loaded.
   def loadable?
     Api::Area.code_exists?(area_code)

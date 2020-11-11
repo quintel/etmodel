@@ -71,6 +71,7 @@ header.main-header
   .my-scenarios a, .my-account button, .sign-in a
     background: rgba(255, 255, 255, 0.1)
     padding: 0.35rem 0.9rem
+    margin: 0
     &:hover
       background: rgba(255, 255, 255, 0.15)
 
@@ -120,9 +121,11 @@ header.main-header
   justify-content: space-between
 
   .scenario-info, .save-scenario, .save-scenario-as, .scenario-actions, .sign-in-to-save
+    background: transparent
     color: #444
     font-size: 0.875rem
     line-height: $header-item-line-height
+    margin: 0
     padding: $header-item-padding
 
   .scenario-info
@@ -231,7 +234,7 @@ header.main-header
   &.show
     display: block
     opacity: 1
-    pointer-events: initial
+    pointer-events: auto
     transform: scale(1) translateY(0px)
 
   li
@@ -248,10 +251,10 @@ header.main-header
     padding: 0.5rem 1rem
 
 .dropdown-menu-right
-  left: initial
+  left: auto
   right: 1rem
   &:before
-    left: initial
+    left: auto
     right: 0.5rem
 
 a.dropdown-item

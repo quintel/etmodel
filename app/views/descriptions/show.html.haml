@@ -1,11 +1,3 @@
 #overlay_container
-  %h1= I18n.t(@chart.title_for_description)
-
-  %p
-    = raw @chart.description
-    %div{:style => 'clear:both'} &nbsp;
-
-- if @chart.description_embeds_player?
-  %script flowplayer("player", "/flash/flowplayer-3.2.6.swf");
-
-
+  %h1= I18n.t(@chart.title_for_description).html_safe
+  %p= @chart.description.html_safe

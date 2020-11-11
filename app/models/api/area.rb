@@ -10,14 +10,6 @@ class Api::Area < ActiveResource::Base
 
   self.site = "#{APP_CONFIG[:api_url]}/api/v3"
 
-  # Represents an optional nested "scaling" attribute within an Api::Area
-  class Scaling < ActiveResource::Base
-    self.prefix = Api::Area.prefix
-    self.site = Api::Area.site
-  end
-
-  include Api::CommonArea
-
   # This list of attributes is used in the forms where you can set the
   # area dependencies for an object, such as the input_elements
   #
@@ -41,12 +33,16 @@ class Api::Area < ActiveResource::Base
     :use_network_calculations,
     :has_electricity_storage,
     :has_weather_curves,
-    :is_national_scenario,
-    :is_local_scenario,
     :has_detailed_chemical_industry,
     :has_aggregated_chemical_industry,
     :has_coal_oil_for_heating_built_environment
   ]
+
+  # Represents an optional nested "scaling" attribute within an Api::Area
+  class Scaling < ActiveResource::Base
+    self.prefix = Api::Area.prefix
+    self.site = Api::Area.site
+  end
 
   def self.grouped
     all_by_area_code

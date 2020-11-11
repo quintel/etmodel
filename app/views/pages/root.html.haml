@@ -2,8 +2,8 @@
   #whats-new
     .content
       %p
-        %strong= t('updated.title')
-        = t('updated.description')
+        %strong= t('updated.title').html_safe
+        = t('updated.description').html_safe
       %p
         %strong= link_to "#{t('more_information')} →", whats_new_path
 

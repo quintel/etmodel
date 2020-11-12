@@ -7,59 +7,6 @@ en:
     settings_satisfy_export_with_dispatchables:
       title: 'Use dispatchables for exported electricity?'
       description: ''
-    households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity:
-      title: Heat pump (air)
-      short_description:
-      description: "Currently most heat pumps (air) are installed without a buffer
-        for space heating. \r\n</p>\r\nMost heat pumps (air) require a buffer to prevent
-        unnecessarily\r\nfrequent on and off switching of the compressors. In the
-        default settings of the ETM the buffer for hot water takes care of this.\r\n</p>\r\nIn
-        the future buffers can also be used to store larger amounts of heat. For example
-        through an <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>\r\n</p>\r\nHere
-        you can indicate the buffer size you expect in the future per heat pumps (air)."
-    households_flexibility_water_heating_buffer_size_heatpump_air_water_electricity:
-      title: Heat pump (air)
-      short_description:
-      description: "In the current situation this buffer represents a tank of 100
-        liter, the typical tank size for a Dutch household.\r\n</p>\r\nIn the future
-        buffers can also be used to store larger amounts of heat.\r\n</p>\r\nHere
-        you can indicate the buffer size you expect in the future per heat pump (air)."
-    households_flexibility_space_heating_buffer_size_heatpump_ground_water_electricity:
-      title: Heat pump ground
-      short_description:
-      description: "Currently most ground heat pumps are installed without a buffer
-        for space heating. \r\n</p>\r\nMost ground heat pumps require a buffer to
-        prevent unnecessarily\r\nfrequent on and off switching of the compressors.
-        In the default settings of the ETM the buffer for hot water takes care of
-        this.\r\n</p>\r\nIn the future buffers can also be used to store larger amounts
-        of heat. For example through an <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>\r\n</p>\r\nHere
-        you can indicate the buffer size you expect in the future per ground heat
-        pump."
-    households_flexibility_space_heating_buffer_size_hybrid_heatpump_air_water_electricity:
-      title: Hybrid heat pump
-      short_description:
-      description: "Most hybrid heat pumps are self-regulating. They don't need a
-        buffer to protect the compressor.\r\n</p>\r\nIn the future buffers can also
-        be used to store larger amounts of heat. For example through an <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>\r\n</p>\r\nHere
-        you can indicate the buffer size you expect in the future per hybrid heat
-        pump."
-    households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity:
-      title: Heat pump ground
-      short_description:
-      description: "In the current situation this buffer represents a tank of 100
-        liter, the typical tank size for a Dutch household.\r\n</p>\r\nIn the future
-        buffers can also be used to store larger amounts of heat.\r\n</p>\r\nHere
-        you can indicate the buffer size you expect in the future per heat pump ground."
-    households_flexibility_water_heating_buffer_size_hybrid_heatpump_air_water_electricity:
-      title: Hybrid heat pump
-      short_description:
-      description: "With the default settings the hybrid heat pump supplies hot water
-        with gas. In that case a buffer for hot water is not needed.\r\n</p>\r\nBy
-        lowering the threshold COP the electric part of the hybrid heat pump can also
-        supply hot water. This is generally done through a buffer vessel.\r\n</p>\r\nFor
-        a normal Dutch household a buffer of 100 liter (5 kWh) is sufficient. In the
-        future buffers can also be used to store larger amounts of heat.\r\n</p>\r\nHere
-        you can indicate the buffer size you expect in the future per heat pump (air)."
     transport_car_using_electricity_fast_charging_share:
       title: Fast charging
       short_description:

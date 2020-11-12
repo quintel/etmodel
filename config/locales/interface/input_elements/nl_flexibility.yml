@@ -7,61 +7,6 @@ nl:
     settings_satisfy_export_with_dispatchables:
       title: 'Dispatchable centrales gebruiken voor export?'
       description: ''
-    households_flexibility_space_heating_buffer_size_heatpump_air_water_electricity:
-      title: Luchtwarmtepomp
-      short_description:
-      description: "In de huidige situatie worden de meeste luchtwarmtepompen zonder
-        buffer voor ruimteverwarming geïnstalleerd.  \r\n</p>\r\nDe meeste luchtwarmtepompen
-        hebben een buffer nodig om te voorkomen dat de compressor gaat \"pendelen\".
-        In de standaardinstelling van het ETM voorziet de buffer voor warm water hierin.\r\n</p>\r\nEen
-        buffer kan echter ook gebruikt worden om grotere hoeveelheden warmte op te
-        slaan. Bijvoorbeeld via een <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>.
-        \r\n</p>\r\nGeef hier aan hoe groot de buffer voor warm water is per luchtwarmtepomp."
-    households_flexibility_water_heating_buffer_size_heatpump_air_water_electricity:
-      title: Luchtwarmtepomp
-      short_description:
-      description: "De standaard buffergrootte representeert een watertank van 100
-        liter. Dit is de typische grootte van een tank voor een Nederlands gezin.\r\n</p>\r\nEen
-        buffer kan echter ook gebruikt worden om grotere hoeveelheden warmte op te
-        slaan. \r\n</p>\r\nGeef hier aan hoe groot de buffer voor ruimteverwarming
-        is per luchtwarmtepomp."
-    households_flexibility_space_heating_buffer_size_heatpump_ground_water_electricity:
-      title: Bodemwarmtepomp
-      short_description:
-      description: "In de huidige situatie worden de meeste bodemwarmtepompen zonder
-        buffer voor ruimteverwarming geïnstalleerd.  \r\n</p>\r\nDe meeste bodemwarmtepompen
-        hebben een buffer nodig om te voorkomen dat de compressor gaat \"pendelen\".
-        In de standaardinstelling van het ETM voorziet de buffer voor warm water hierin.\r\n</p>\r\nEen
-        buffer kan echter ook gebruikt worden om grotere hoeveelheden warmte op te
-        slaan. Bijvoorbeeld via een <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>.
-        \r\n</p>\r\nGeef hier aan hoe groot de buffer voor warm water is per bodemwarmtepomp."
-    households_flexibility_space_heating_buffer_size_hybrid_heatpump_air_water_electricity:
-      title: Hybride warmtepomp
-      short_description:
-      description: "Omdat de meeste hybride warmtepompen modulerend zijn hebben ze
-        geen buffer nodig om te compressor the beschermen.\r\n</p>\r\nEen buffer kan
-        echter ook gebruikt worden om grotere hoeveelheden warmte op te slaan. Bijvoorbeeld
-        via een <a href=\"http://www.ecovat.eu/?lang=en\">Ecovat</a>. \r\n</p>\r\nGeef
-        hier aan hoe groot de buffer voor warm water is per hybride warmtepomp."
-    households_flexibility_water_heating_buffer_size_heatpump_ground_water_electricity:
-      title: Bodemwarmtepomp
-      short_description:
-      description: "De standaard buffergrootte representeert een watertank van 100
-        liter. Dit is de typische grootte van een tank voor een Nederlands gezin.\r\n</p>\r\nEen
-        buffer kan echter ook gebruikt worden om grotere hoeveelheden warmte op te
-        slaan. \r\n</p>\r\nGeef hier aan hoe groot de buffer voor ruimteverwarming
-        is per bodemwarmtepomp."
-    households_flexibility_water_heating_buffer_size_hybrid_heatpump_air_water_electricity:
-      title: Hybride warmtepomp
-      short_description:
-      description: "Met de standaardinstelling levert het gasdeel van de hybride warmtepomp
-        direct warm water. Er is dan geen buffer nodig voor warm water.\r\n</p>\r\nDoor
-        de omslag-COP te verlagen kan het elektrische deel van de hybride warmtepomp
-        ook warm water leveren. Dit gebeurt over het algemeen via een buffervat.\r\n</p>\r\nVoor
-        een standaard Nederlands huishouden is een buffervat van 100 liter (5 kWh)
-        voldoende. Een buffer kan echter ook gebruikt worden om grotere hoeveelheden
-        warmte op te slaan. \r\n</p>\r\nGeef hier aan hoe groot de buffer voor ruimteverwarming
-        is per hybride warmtepomp."
     transport_car_using_electricity_fast_charging_share:
       title: Snelladen
       short_description:

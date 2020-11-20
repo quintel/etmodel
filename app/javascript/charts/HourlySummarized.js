@@ -3,6 +3,7 @@
 import * as d3 from 'd3';
 import D3Chart from './D3Chart';
 import { groupedStack } from './utils/stackData';
+import memoized from './utils/memoized';
 
 const stack = d3.stack().offset(d3.stackOffsetDiverging);
 
@@ -69,6 +70,8 @@ class HourlySummarized extends D3Chart {
       this.seriesHeight + this.stackLabelHeight,
       this.margins
     );
+
+    window.m = memoized;
 
     this.groupScale = d3
       .scaleBand()

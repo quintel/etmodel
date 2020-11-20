@@ -70,22 +70,32 @@ export default class extends Backbone.View {
   };
 
   // Separate chart and table rendering
+
   /**
    * A controller method which determines how to render the contents of the chart and then triggers
    * the appropriate action.
    *
    * This is called when the chart first loads, and again whenever the underlying data is updated.
    */
-  renderContent = () => {
-    if (this.requiresHourlyData() && !App.settings.merit_order_enabled()) {
-      this.containerNode().html(
-        $('<div>')
-          .html(I18n.t('wells.warning.merit'))
-          .addClass('well')
-      );
+  renderContent = (skipMeritCheck = false) => {
+    if (!skipMeritCheck && this.requiresHourlyData()) {
+      // Check if Merit is enabled, waiting for the value if necessary.
+      App.settings.merit_order_enabled_promise().done(meritIsEnabled => {
+        if (!meritIsEnabled) {
+          this.containerNode().html(
+            $('<div>')
+              .html(I18n.t('wells.warning.merit'))
+              .addClass('well')
+          );
 
-      this.drawn = false;
-      return;
+          this.drawn = false;
+          return;
+        }
+
+        this.renderContent(true);
+      });
+
+      return false;
     }
 
     this.updateHeaderButtons();
@@ -228,8 +238,6 @@ export default class extends Backbone.View {
         }
       }
     })();
-
-    console.log(maxValue);
 
     return this.createScaler(maxValue, this.model.get('unit'), opts);
   }

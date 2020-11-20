@@ -1,19 +1,24 @@
 /* globals $ */
 
 export default selector => {
-  $(`${selector} [data-tooltip-title]`).qtip({
-    content: {
-      title() {
-        return $(this).attr('data-tooltip-title');
-      },
+  $(`${selector} [data-tooltip-title], ${selector} [data-tooltip-textonly]`).each((i, el) => {
+    const content = {
       text() {
-        return $(this).attr('data-tooltip-text');
+        return el.dataset.tooltipText;
       }
-    },
-    position: {
-      target: 'mouse',
-      my: 'bottom center',
-      at: 'top center'
+    };
+
+    if (!el.dataset.tooltipTextonly) {
+      content.title = () => el.dataset.tooltipTitle;
     }
+
+    $(el).qtip({
+      content,
+      position: {
+        target: 'mouse',
+        my: 'bottom center',
+        at: 'top center'
+      }
+    });
   });
 };

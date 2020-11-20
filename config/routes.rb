@@ -126,8 +126,9 @@ Rails.application.routes.draw do
 
   resources :multi_year_charts, only: %i[index create destroy]
 
-  get '/import_esdl' => 'import_esdl#index'
-  post '/import_esdl' => 'import_esdl#create', as: :import_esdl_create
+  get '/import_esdl'  => 'import_esdl#index'
+  post '/import_esdl/create' => 'import_esdl#create', as: :import_esdl_create
+  post '/import_esdl/login' => 'import_esdl#browse_mondaine_drive', as: :import_esdl_browse_mondaine_drive
 
   namespace :embeds do
     resource :pico, only: [:show]

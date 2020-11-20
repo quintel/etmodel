@@ -1,16 +1,35 @@
 - content_for(:page_title) { "Import ESDL - #{t('meta.name')}" }
+.background_wrapper
+  #esdl
+    .half_page.with_bar
+      %h1= t('esdl.title')
 
-#esdl
-  %h1= t('esdl.title')
+      .description
+        = t('esdl.description').html_safe
+    .half_page.two_parts
+      #mondaine_drive
+        .login_to_drive
+          %h2 Log in to the Mondaine Drive
+          = form_with url: import_esdl_browse_mondaine_drive_path, local: false, id: 'login_to_drive' do |f|
+            .field
+              = f.label :username, 'Username'
+              = f.text_field :username, required: true
+            .field
+              = f.label :password, 'Password'
+              = f.text_field :password, required: true
 
-  .description
-    = t('esdl.description').html_safe
-
-  = form_with url: import_esdl_create_path, id: 'import_esdl' do |f|
-    %strong= t('esdl.upload')
-    = f.file_field :esdl_file, required: true, accept: '.esdl'
-    = f.submit t('esdl.start'), class: 'button'
-    .wait
-      = image_tag 'layout/ajax-loader-small.gif'
-      = t('esdl.creating')
-      &hellip;
+            = f.submit 'Log in', class: 'button login'
+            -#   .dot{ class: 'fa fa-circle' }
+        %a{href: 'mondaine_drive.nl'} What is this?
+        .dot{ class: 'fa fa-circle' }
+        %a{href: 'mondaine_drive.nl'} Create a Mondaine Drive account
+      -# .horizontal_bar
+      = form_with url: import_esdl_create_path, id: 'import_esdl' do |f|
+        .upload_file
+          %h2 Or #{t('esdl.upload')}
+          = f.file_field :esdl_file, required: true, accept: '.esdl'
+        = f.submit t('esdl.start'), class: 'button'
+        .wait
+          = image_tag 'layout/ajax-loader-small.gif'
+          = t('esdl.creating')
+          &hellip;

@@ -12,3 +12,9 @@ $(function() {
     });
   }
 });
+
+function startBrowsingMondaineDrive() {
+  console.log($('.login_to_drive'));
+  console.log('bleh');
+  $('.login_to_drive').hide();
+}

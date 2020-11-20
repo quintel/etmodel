@@ -54,6 +54,23 @@ class @Setting extends Backbone.Model
       # TODO: use deferred object
       false
 
+  # Returns a promise which resolves to whether the merit order is enabled. The promise will resolve
+  # immediately if the value is known, otherwise it will resolve when data is available.
+  merit_order_enabled_promise: ->
+    def = new $.Deferred
+
+    try
+      values = App.input_elements.user_values.settings_enable_merit_order
+      def.resolve(values? && (if values.user? then values.user else values.default) == 1)
+    catch error
+      App.input_elements.on 'change', (model) =>
+        if App.input_elements.user_values &&
+            App.input_elements.user_values.hasOwnProperty('settings_enable_merit_order')
+          values = App.input_elements.user_values.settings_enable_merit_order
+          def.resolve(values? && (if values.user? then values.user else values.default) == 1)
+
+    def.promise()
+
   toggle_merit_order: =>
     new_value = if @merit_order_enabled() then 0 else 1
     # if the slider is already on screen

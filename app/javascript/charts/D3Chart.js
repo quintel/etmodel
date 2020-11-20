@@ -196,7 +196,8 @@ export default class extends Base {
     opts.leftMargin = opts.leftMargin || 10;
     const legendItemWidth = (opts.width - opts.leftMargin) / opts.columns;
 
-    const series = opts.series.reverse().chunk(opts.columns);
+    let series = [...opts.series];
+    series = series.reverse().chunk(opts.columns);
 
     d3.select(this.containerSelector())
       .append('div')

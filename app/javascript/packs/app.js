@@ -14,11 +14,16 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+import 'core-js/features/array/fill';
+
 import Bezier from '../charts/Bezier';
 import HourlySummarized from '../charts/HourlySummarized';
+import MeritOrderHourlyFlexibility from '../charts/MeritOrderHourlyFlexibility';
 import StackedBar from '../charts/StackedBar';
+
 import backwardsCompat from '../charts/utils/backwardsCompat';
 
 window.D3.bezier = { View: backwardsCompat(Bezier) };
 window.D3.hourly_summarized = { View: backwardsCompat(HourlySummarized) };
+window.D3.merit_order_hourly_flexibility = { View: backwardsCompat(MeritOrderHourlyFlexibility) };
 window.D3.stacked_bar = { View: backwardsCompat(StackedBar) };

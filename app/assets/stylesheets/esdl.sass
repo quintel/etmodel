@@ -14,9 +14,9 @@
       flex-direction: column
       justify-content: space-between
 
-    .horizontal_bar
-      border-bottom: 1px solid #d0d5d8
-      width: 100%
+    .or
+      margin-bottom: 0
+      padding-left: 40px
 
   h1
     line-height: 1.3
@@ -26,7 +26,7 @@
 
   #mondaine_drive, .upload_file
     width: 100%
-    margin: 0 auto 1rem
+    margin: 0 auto 0.5rem
     background: white
     border: 1px solid $landing-border-color
     border-bottom-color: darken($landing-border-color, 5%)
@@ -35,6 +35,19 @@
     box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
     border-radius: 4px
     padding: 15px 40px
+
+    &.soften
+      border-top-color: $landing-grey
+      background: darken(#fff, 3%)
+      color: #666
+      a, .dot
+        color: #666
+      .button
+        color: darken(#fff, 3%)
+        background-color: #888
+        background: linear-gradient(lighten(#888, 10%), #888)
+      input
+        background: darken(#fff, 3%)
 
     .dot
       font-size: 6px
@@ -47,6 +60,9 @@
     margin-top: 30px
     border-top-color: $landing-gold
 
+    .button
+      background: linear-gradient(lighten($landing-gold, 10%), $landing-gold)
+
     .browsing
       padding: 10px
       border-radius: 4px
@@ -55,7 +71,7 @@
 
   form
     // text-align: center
-    margin-top: 20px
+    // margin-top: 20px
     display: flex
     flex-direction: column
 
@@ -72,9 +88,7 @@
 
     input[type="file"]
       display: inline-block
-      background-color: #fff
       width: 100%
-      // margin: 0 0 0 10px
 
     .button, .wait
       border-radius: 3px
@@ -90,6 +104,10 @@
         font-size: 0.875rem
         padding: 8px 4px
         margin-bottom: 20px
+      &.start_esdl
+        align-self: flex-end
+        margin-right: -81px
+
 
     .wait
       display: none

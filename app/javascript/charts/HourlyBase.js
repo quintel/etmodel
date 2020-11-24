@@ -1,19 +1,22 @@
-/* globals $ _ D3ChartDateSelect I18n MeritTransformator */
+/* globals $ _ I18n */
 
-import * as d3 from 'd3';
+import * as d3 from './d3';
 import D3Chart from './D3Chart';
+
+import DateSelect from './HourlyBase/DateSelect.ts';
+import sampleCurves from './HourlyBase/sampleCurves.ts';
 
 /**
  * Receives a serie and creates an object with the data needed to show the data in the chart.
  *
  * If the query does not have a value, the values are initialised to an array of 8760 zeros.
  */
-const serieToData = serie => {
+const serieToData = (serie) => {
   let values = serie.future_value();
 
-  if (!values || !values.length) {
+  if (!values || values.length === 0) {
     // Series with no values are treated as all-zeros.
-    values = Array.apply(null, Array(8760)).map(() => 0);
+    values = Array.apply(undefined, new Array(8760)).map(() => 0);
   }
 
   return {
@@ -22,14 +25,14 @@ const serieToData = serie => {
     key: serie.get('gquery').get('key'),
     skip: serie.get('skip'),
     is_target: serie.get('is_target_line'),
-    values
+    values,
   };
 };
 
 /**
  * Converts an array of SeriesData values into an array of "tables"; one element per time point.
  */
-const toTable = series => {
+const toTable = (series) => {
   const length = series[0].values.length;
   const data = [];
 
@@ -55,7 +58,7 @@ class HourlyBase extends D3Chart {
     bottom: 20,
     left: 65,
     right: 2,
-    labelLeft: 30
+    labelLeft: 30,
   };
 
   /**
@@ -64,11 +67,6 @@ class HourlyBase extends D3Chart {
    * day, or the "max" value within the 24-hour period.
    */
   downsampleWith = 'mean';
-
-  // constructor(...args) {
-  //   this.convertToXY = this.convertToXY.bind(this);
-  //   super(...args);
-  // }
 
   /**
    * Performs the initial draw of the chart and axes. Data is not drawn.
@@ -91,7 +89,7 @@ class HourlyBase extends D3Chart {
    * Draws or updates data.
    */
   refresh() {
-    this._visibleData = null;
+    this._visibleData = undefined;
     super.refresh();
   }
 
@@ -113,7 +111,7 @@ class HourlyBase extends D3Chart {
       d3
         .stack()
         .offset(this.stackOffset())
-        .keys(this.model.non_target_series().map(s => s.get('gquery_key')))
+        .keys(this.model.non_target_series().map((s) => s.get('gquery_key')))
     );
 
     this.stackedData = stackedData.stacked;
@@ -125,19 +123,17 @@ class HourlyBase extends D3Chart {
 
     return {
       stacked: stack(toTable(this.chartData.slice(0, lastId))),
-      total: [this.chartData[lastId]]
+      total: [this.chartData[lastId]],
     };
   }
 
   drawLegend(series, columns = 2) {
-    $(this.container_selector())
-      .find('div.legend')
-      .remove();
+    $(this.container_selector()).find('div.legend').remove();
 
     return super.drawLegend({
       series,
       width: this.width,
-      columns
+      columns,
     });
   }
 
@@ -185,21 +181,21 @@ class HourlyBase extends D3Chart {
   }
 
   maxYValue() {
-    const targetKeys = this.model.target_series().map(s => s.get('gquery_key'));
-    const grouped = _.groupBy(this.visibleData(), d => _.contains(targetKeys, d.key));
+    const targetKeys = this.model.target_series().map((s) => s.get('gquery_key'));
+    const grouped = _.groupBy(this.visibleData(), (d) => _.contains(targetKeys, d.key));
 
     const targets = _.pluck(grouped[true], 'values');
     const series = _.pluck(grouped[false], 'values');
 
     // Negatives, typically caused by storage charting, cause incorrect calculation of the max value
     // and result in incorrect vertical scaling.
-    const nonNegative = val => (val < 0 ? 0 : val);
+    const nonNegative = (val) => (val < 0 ? 0 : val);
 
-    let max = 0.0;
+    let max = 0;
 
     for (var index = 0; index < series[0].length; index++) {
-      const aggregateLoad = d3.sum(series, s => nonNegative(s[index]));
-      const targetLoad = d3.max(targets, s => nonNegative(s[index]));
+      const aggregateLoad = d3.sum(series, (s) => nonNegative(s[index]));
+      const targetLoad = d3.max(targets, (s) => nonNegative(s[index]));
 
       if (aggregateLoad > max) {
         max = aggregateLoad;

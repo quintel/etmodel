@@ -23,7 +23,7 @@ export default class extends Base {
     top: 20,
     bottom: 20,
     left: 20,
-    right: 30
+    right: 30,
   };
 
   // height of the legend item
@@ -35,7 +35,7 @@ export default class extends Base {
     this.startYear = App.settings.get('start_year');
     this.endYear = App.settings.get('end_year');
     this.init_margins && this.init_margins();
-    this.valueFormatter = value => value.toString();
+    this.valueFormatter = (value) => value.toString();
   }
 
   // Update margins to reflect font-size
@@ -104,7 +104,7 @@ export default class extends Base {
    *
    * @return {string}
    */
-  formatValue = value => this.valueFormatter(value);
+  formatValue = (value) => this.valueFormatter(value);
 
   /**
    * Updates the chart with new data.
@@ -166,7 +166,7 @@ export default class extends Base {
   dimensions() {
     return [
       this.availableWidth() - (this.margins.left + this.margins.right),
-      this.availableHeight() - (this.margins.top + this.margins.bottom)
+      this.availableHeight() - (this.margins.top + this.margins.bottom),
     ];
   }
 
@@ -222,18 +222,18 @@ export default class extends Base {
         .enter()
         .append('div')
         .attr('class', 'legend-item')
-        .classed('hidden', d => d.get('skip'))
-        .classed('target_line', d => d.get('is_target_line'))
-        .on('click', d => this.legendClick(d));
+        .classed('hidden', (d) => d.get('skip'))
+        .classed('target_line', (d) => d.get('is_target_line'))
+        .on('click', (d) => this.legendClick(d));
 
       scope
         .append('span')
         .attr('class', 'rect')
-        .style('background-color', d => d.get('color'));
+        .style('background-color', (d) => d.get('color'));
 
       scope
         .append('span')
-        .text(d => d.get('label') || I18n.t(`output_element_series.labels.${d.get('key')}`));
+        .text((d) => d.get('label') || I18n.t(`output_element_series.labels.${d.get('key')}`));
     });
   }
 }

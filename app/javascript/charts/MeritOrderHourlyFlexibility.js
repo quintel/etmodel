@@ -23,10 +23,10 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
       .attr('class', 'serie')
       .append('path')
       .attr('class', 'area')
-      .attr('d', data => area(data))
-      .attr('fill', data => this.serieValue(data.key, 'color'))
+      .attr('d', (data) => area(data))
+      .attr('fill', (data) => this.serieValue(data.key, 'color'))
       .attr('data-tooltip-textonly', true)
-      .attr('data-tooltip-text', data => this.serieValue(data.key, 'label'));
+      .attr('data-tooltip-text', (data) => this.serieValue(data.key, 'label'));
 
     this.svg
       .selectAll('path.serie')
@@ -38,8 +38,8 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
       .attr('class', 'serie-line')
       .append('path')
       .attr('class', 'line')
-      .attr('d', data => line(data.values))
-      .attr('stroke', data => data.color)
+      .attr('d', (data) => line(data.values))
+      .attr('stroke', (data) => data.color)
       .attr('stroke-width', 2)
       .attr('fill', 'none');
   }
@@ -80,14 +80,14 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
         .selectAll('g.serie')
         .data(this.stackedData)
         .select('path.area')
-        .attr('fill', data => this.serieValue(data.key, 'color'))
-        .attr('d', data => area(data));
+        .attr('fill', (data) => this.serieValue(data.key, 'color'))
+        .attr('d', (data) => area(data));
 
       return this.svg
         .selectAll('g.serie-line')
         .data(this.totalDemand)
         .select('path.line')
-        .attr('d', data => line(data.values));
+        .attr('d', (data) => line(data.values));
     } else {
       return this.drawData(xScale, yScale, area, line);
     }
@@ -97,33 +97,33 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
     return d3
       .area()
       .curve(d3.curveMonotoneX)
-      .x(data => xScale(data.data.x))
-      .y0(data => yScale(data[0]))
-      .y1(data => yScale(data[1]));
+      .x((data) => xScale(data.data.x))
+      .y0((data) => yScale(data[0]))
+      .y1((data) => yScale(data[1]));
   }
 
   line(xScale, yScale) {
     return d3
       .line()
       .curve(d3.curveMonotoneX)
-      .x(data => xScale(data.x))
-      .y(data => yScale(data.y));
+      .x((data) => xScale(data.x))
+      .y((data) => yScale(data.y));
   }
 
   maxYValue() {
-    const targetKeys = this.model.target_series().map(s => s.get('gquery_key'));
-    const grouped = _.groupBy(this.visibleData(), d => _.contains(targetKeys, d.key));
+    const targetKeys = this.model.target_series().map((s) => s.get('gquery_key'));
+    const grouped = _.groupBy(this.visibleData(), (d) => _.contains(targetKeys, d.key));
 
     const targets = _.pluck(grouped[true], 'values');
     const series = _.pluck(grouped[false], 'values');
 
-    const filter = val => (val >= 0 ? 0 : -val);
+    const filter = (val) => (val >= 0 ? 0 : -val);
 
-    let max = 0.0;
+    let max = 0;
 
     for (var index = 0; index < series[0].length; index++) {
-      const targetLoad = d3.max(targets, s => s[index]);
-      const aggregateLoad = d3.sum(series, s => filter(s[index])) + targetLoad;
+      const targetLoad = d3.max(targets, (s) => s[index]);
+      const aggregateLoad = d3.sum(series, (s) => filter(s[index])) + targetLoad;
 
       if (aggregateLoad > max) {
         max = aggregateLoad;

@@ -1,6 +1,6 @@
 /* globals I18n */
 
-import * as d3 from 'd3';
+import * as d3 from './d3';
 import D3Chart from './D3Chart';
 import { groupedStack } from './utils/stackData';
 import memoized from './utils/memoized';

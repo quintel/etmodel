@@ -17,8 +17,7 @@ class @D3YearlyChartView extends D3ChartView
     @rawChartData = @dataForChart()
 
     @dateSelect = new D3ChartDateSelect(
-      @container_selector(),
-      @rawChartData[0].values.length,
+      document.querySelector(@container_selector()),
       @downsampleWith
     )
 
@@ -163,7 +162,7 @@ class @D3YearlyChartView extends D3ChartView
     d3.time.scale.utc().range([0, @width]).domain(domain)
 
   createTimeAxis: (scale) ->
-    formatStr = if @dateSelect.isWeekly() then '%-d %b' else '%b'
+    formatStr = if @dateSelect.isAll() then '%b' else '%-d %b'
     formatter = (val) -> I18n.strftime(val, formatStr)
 
     d3.svg.axis().scale(scale).orient('bottom')
@@ -175,20 +174,19 @@ class @D3YearlyChartView extends D3ChartView
         serie.values.length
       .map (serie) =>
         $.extend({}, serie, values: MeritTransformator.transform(
-          serie.values, this.dateSelect.val(), @downsampleWith
+          serie.values, this.dateSelect.toTransformOptions()
         ))
 
   convertData: =>
     @convertToXY(@visibleData())
 
   convertToXY: (data) =>
-    dateVal = @dateSelect.val()
-    seconds = if dateVal < 1 then 86400000 else 3600000
-    offset  = if dateVal < 1 then 0 else 168 * (dateVal - 1)
+    seconds = @dateSelect.secondsPerSample() * 1000
+    offset = @dateSelect.startDate()
 
     data.map((chart) =>
-      chart.values = chart.values.map((value, hour) =>
-        x: new Date((hour + offset) * seconds),
+      chart.values = chart.values.map((value, i) =>
+        x: new Date(offset.getTime() + i * seconds),
         y: @filterYValue.call(chart, value)
       )
       chart

@@ -1,6 +1,6 @@
 /* globals App EmptyChartMessage I18n */
 
-import * as d3 from 'd3';
+import * as d3 from './d3';
 
 import Base from './Base';
 import tooltips from './utils/tooltips';
@@ -140,6 +140,10 @@ export default class extends Base {
 
   containerSelector() {
     return `#${this.chartContainerId()}`;
+  }
+
+  d3ContainerNode() {
+    return document.querySelector(this.containerSelector());
   }
 
   canRenderAsTable() {

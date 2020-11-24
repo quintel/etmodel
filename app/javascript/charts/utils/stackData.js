@@ -1,4 +1,4 @@
-import { group, groups, stack } from 'd3';
+import { group, groups, stack } from '../d3';
 
 /**
  * Receives the data from `stackData` and returns an array containing all the unique id values.

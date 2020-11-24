@@ -70,7 +70,7 @@ D3.merit_order_price_curve =
 
       @chartData = @convertData()
 
-      xScale = @createTimeScale(@dateSelect.getCurrentRange())
+      xScale = @createTimeScale(@dateSelect.currentRange())
       yScale = @createLinearScale()
       line   = @line(xScale, yScale)
 

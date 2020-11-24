@@ -1,6 +1,6 @@
 /* globals _ */
 
-import * as d3 from 'd3';
+import * as d3 from './d3';
 import HourlyBase from './HourlyBase';
 
 class MeritOrderHourlyFlexibility extends HourlyBase {
@@ -67,7 +67,7 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
     this.setStackedData();
     this.drawLegend(this.series);
 
-    const xScale = this.createTimeScale(this.dateSelect.getCurrentRange());
+    const xScale = this.createTimeScale(this.dateSelect.currentRange());
     const yScale = this.createLinearScale();
     const area = this.area(xScale, yScale);
     const line = this.line(xScale, yScale);

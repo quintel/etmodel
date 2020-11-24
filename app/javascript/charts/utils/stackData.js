@@ -3,7 +3,7 @@ import { group, groups, stack } from '../d3';
 /**
  * Receives the data from `stackData` and returns an array containing all the unique id values.
  */
-const idsFromData = data => Array.from(new Set(data.map(d => d.id)));
+const idsFromData = (data) => [...new Set(data.map((d) => d.id))];
 
 // Transform the grouped values into an array of objects, where each object describes the data
 // for each column, without extra maps and arrays around values. g[0] is the x value (year),
@@ -34,7 +34,7 @@ const idsFromData = data => Array.from(new Set(data.map(d => d.id)));
  *   // ]
  */
 const toTable = (grouped, keys) => {
-  return Array.from(grouped.entries()).map(g => {
+  return [...grouped.entries()].map((g) => {
     // g[0] is the x value (year) and g[1] contains a map of each gquery key and serie data wrapped
     // in an array.
     const column = { x: g[0] };
@@ -83,8 +83,8 @@ const stackData = (data, stackFunc = stack()) => {
   // ... where `SerieData` is data about a series returned by `prepareData`.
   const grouped = group(
     data,
-    d => d.x,
-    d => d.id
+    (d) => d.x,
+    (d) => d.id
   );
 
   const keys = idsFromData(data);
@@ -93,8 +93,8 @@ const stackData = (data, stackFunc = stack()) => {
   const stacked = stackFunc.keys(keys)(toTable(grouped, keys));
 
   // Add some useful inforamtion about the series to each value.
-  return stacked.map(d => {
-    d.forEach(v => (v.key = d.key));
+  return stacked.map((d) => {
+    d.forEach((v) => (v.key = d.key));
     return d;
   });
 };
@@ -122,8 +122,8 @@ const stackData = (data, stackFunc = stack()) => {
  *     d3.stack.offset(d3.stackOffsetDiverging)
  *   );
  */
-export const groupedStack = (data, stackFunc = undefined) => {
-  return groups(data, d => d.groupKey).map(([, groupData]) => {
+export const groupedStack = (data, stackFunc) => {
+  return groups(data, (d) => d.groupKey).map(([, groupData]) => {
     return stackData(groupData, stackFunc);
   });
 };

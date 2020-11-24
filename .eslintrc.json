@@ -16,6 +16,11 @@
     "prettier",
     "unicorn"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+    }
+  },
   "rules":  {
     "max-len": ["error", {"code": 100, "ignoreUrls": true}],
     "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}],

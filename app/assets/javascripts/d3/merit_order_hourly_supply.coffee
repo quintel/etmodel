@@ -27,10 +27,15 @@ D3.merit_order_hourly_supply =
       @series.filter (serie) -> _.some(serie.future_value())
 
     getSeries: ->
-      weekNum = this.dateSelect && this.dateSelect.val() || 0
+      transformOpts =
+        this.dateSelect && this.dateSelect.toTransformOptions() ||
+          { downsampleMethod: this.downsampleWith }
 
       _.sortBy @model.non_target_series(), (serie) =>
-        values = MeritTransformator.transform(serie.future_value(), weekNum)
+        values = MeritTransformator.transform(
+          serie.future_value(),
+          transformOpts
+        )
 
         min = max = sum = 0
 
@@ -85,7 +90,7 @@ D3.merit_order_hourly_supply =
       @setStackedData()
       @drawLegend(@getLegendSeries())
 
-      xScale = @createTimeScale(@dateSelect.getCurrentRange())
+      xScale = @createTimeScale(@dateSelect.currentRange())
       yScale = @createLinearScale()
       area   = @area(xScale, yScale)
       line   = @line(xScale, yScale)

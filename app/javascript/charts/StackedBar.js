@@ -1,6 +1,6 @@
 /* globals $ */
 
-import * as d3 from 'd3';
+import * as d3 from './d3';
 import D3Chart from './D3Chart';
 import stackData from './utils/stackData';
 

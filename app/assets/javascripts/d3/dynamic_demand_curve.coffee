@@ -160,7 +160,7 @@ D3.dynamic_demand_curve =
       @setStackedData()
       @drawLegend(legendSeries)
 
-      xScale = @createTimeScale(@dateSelect.getCurrentRange())
+      xScale = @createTimeScale(@dateSelect.currentRange())
       yScale = @createLinearScale()
       area   = @area(xScale, yScale)
       line   = @line(xScale, yScale)

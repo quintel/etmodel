@@ -14,7 +14,13 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// Polyfills
+// ---------
+
 import 'core-js/features/array/fill';
+
+// Charts
+// ------
 
 import Bezier from '../charts/Bezier';
 import HourlySummarized from '../charts/HourlySummarized';
@@ -23,7 +29,22 @@ import StackedBar from '../charts/StackedBar';
 
 import backwardsCompat from '../charts/utils/backwardsCompat';
 
+window.D3 ||= {};
 window.D3.bezier = { View: backwardsCompat(Bezier) };
 window.D3.hourly_summarized = { View: backwardsCompat(HourlySummarized) };
 window.D3.merit_order_hourly_flexibility = { View: backwardsCompat(MeritOrderHourlyFlexibility) };
 window.D3.stacked_bar = { View: backwardsCompat(StackedBar) };
+
+// Curve sampling
+// --------------
+
+import sampleCurves, { sliceValues } from '../charts/HourlyBase/sampleCurves';
+
+// Backwards compatibility for older hourly charts.
+window.MeritTransformator = {
+  sliceValues,
+  transform: sampleCurves,
+};
+
+import DateSelect from '../charts/HourlyBase/DateSelect';
+window.D3ChartDateSelect = DateSelect;

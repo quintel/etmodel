@@ -135,7 +135,7 @@ D3.heat_demand_and_production =
       @setStackedData()
       @drawLegend(@getLegendSeries())
 
-      xScale = @createTimeScale(@dateSelect.getCurrentRange())
+      xScale = @createTimeScale(@dateSelect.currentRange())
       yScale = @createLinearScale()
       area   = @area(xScale, yScale)
       line   = @line(xScale, yScale)

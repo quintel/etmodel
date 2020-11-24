@@ -80,7 +80,7 @@ class HourlyBase extends D3Chart {
 
     this.svg = this.createSVGContainer(this.width, this.height, this.margins);
 
-    this.dateSelect = new D3ChartDateSelect(this.containerSelector(), 8760, this.downsampleWith);
+    this.dateSelect = new DateSelect(this.d3ContainerNode(), this.downsampleWith);
     this.dateSelect.draw(this.refresh.bind(this));
 
     this.xScale = this.drawXAxis();
@@ -145,7 +145,7 @@ class HourlyBase extends D3Chart {
    * Draws the X axis onto the charts, configuring the scaling and grey grid
    */
   drawXAxis() {
-    const scale = this.createTimeScale([new Date(1970, 0, 0), new Date(1970, 11, 30)]);
+    const scale = this.createTimeScale(this.dateSelect.currentRange());
     const axis = this.createTimeAxis(scale);
 
     this.svg
@@ -227,19 +227,16 @@ class HourlyBase extends D3Chart {
       .scale(scale)
       .ticks(7)
       .tickSize(-this.width, 0)
-      .tickFormat(v => this.formatValue(v).split(' ')[0]);
+      .tickFormat((v) => this.formatValue(v).split(' ')[0]);
   }
 
   createTimeScale(domain) {
-    return d3
-      .scaleUtc()
-      .range([0, this.width])
-      .domain(domain);
+    return d3.scaleUtc().range([0, this.width]).domain(domain);
   }
 
   createTimeAxis(scale) {
-    const formatStr = this.dateSelect.isWeekly() ? '%-d %b' : '%b';
-    const formatter = val => I18n.strftime(val, formatStr);
+    const formatStr = this.dateSelect.isAll() ? '%b' : '%-d %b';
+    const formatter = (val) => I18n.strftime(val, formatStr);
 
     return d3
       .axisBottom()
@@ -253,17 +250,13 @@ class HourlyBase extends D3Chart {
       return this._visibleData;
     }
 
-    const rawData = this.series.map(serieToData);
+    const rawData = this.series.map((s) => serieToData(s));
 
     this._visibleData = rawData
-      .filter(serie => serie.values.length)
-      .map(serie => {
+      .filter((serie) => serie.values.length)
+      .map((serie) => {
         return $.extend({}, serie, {
-          values: MeritTransformator.transform(
-            serie.values,
-            this.dateSelect.val(),
-            this.downsampleWith
-          )
+          values: sampleCurves(serie.values, this.dateSelect.toTransformOptions()),
         });
       });
 
@@ -273,16 +266,15 @@ class HourlyBase extends D3Chart {
   convertData = () => this.convertToXY(this.visibleData());
 
   convertToXY(data) {
-    const dateVal = this.dateSelect.val();
-    const seconds = dateVal < 1 ? 86400000 : 3600000;
-    const offset = dateVal < 1 ? 0 : 168 * (dateVal - 1);
+    const seconds = this.dateSelect.secondsPerSample() * 1000;
+    const offset = this.dateSelect.startDate();
 
-    return data.map(chart => ({
+    return data.map((chart) => ({
       ...chart,
-      values: chart.values.map((value, hour) => ({
-        x: new Date((hour + offset) * seconds),
-        y: this.filterYValue(chart, value)
-      }))
+      values: chart.values.map((value, i) => ({
+        x: new Date(offset.getTime() + i * seconds),
+        y: this.filterYValue(chart, value),
+      })),
     }));
   }
 }

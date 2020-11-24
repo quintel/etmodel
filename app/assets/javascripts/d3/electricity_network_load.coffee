@@ -51,7 +51,7 @@ D3.electricity_hv_network_load =
 
       data = @convertToXY(@visibleData())
 
-      xScale = @createTimeScale(@dateSelect.getCurrentRange())
+      xScale = @createTimeScale(@dateSelect.currentRange())
       yScale = @createLinearScale()
 
       @svg.select(".x_axis").call(@createTimeAxis(xScale))

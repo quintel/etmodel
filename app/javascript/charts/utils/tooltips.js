@@ -1,11 +1,11 @@
 /* globals $ */
 
-export default selector => {
+export default (selector) => {
   $(`${selector} [data-tooltip-title], ${selector} [data-tooltip-textonly]`).each((i, el) => {
     const content = {
       text() {
         return el.dataset.tooltipText;
-      }
+      },
     };
 
     if (!el.dataset.tooltipTextonly) {
@@ -17,8 +17,8 @@ export default selector => {
       position: {
         target: 'mouse',
         my: 'bottom center',
-        at: 'top center'
-      }
+        at: 'top center',
+      },
     });
   });
 };

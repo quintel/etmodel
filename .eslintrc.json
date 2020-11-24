@@ -1,15 +1,48 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
     "es6": true
   },
   "extends":  [
     "eslint:recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
+    "prettier/unicorn",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": [
+    "prettier",
+    "unicorn"
   ],
   "rules":  {
     "max-len": ["error", {"code": 100, "ignoreUrls": true}],
-    "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}]
-  }
+    "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}],
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/filename-case": "off",
+    "import/namespace": "off"
+  },
+  "overrides": [
+    {
+      // Enable TypeScript rules for .ts files.
+      "files": ["*.ts", "*.tsx"],
+      "extends":  [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:prettier/recommended",
+        "prettier/@typescript-eslint",
+        "prettier/unicorn",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript"
+      ],
+      "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "unicorn"
+      ]
+    }
+  ]
 }

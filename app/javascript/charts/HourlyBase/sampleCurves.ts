@@ -1,4 +1,4 @@
-import { max, mean } from '../d3';
+import { max, mean } from 'd3-array';
 
 type DownsampleFunc = (values: number[]) => number;
 

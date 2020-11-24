@@ -1,10 +1,10 @@
 /* globals $ _ I18n */
 
-import * as d3 from './d3';
-import D3Chart from './D3Chart';
+import * as d3 from '../d3';
+import D3Chart from '../D3Chart';
 
-import DateSelect from './HourlyBase/DateSelect.ts';
-import sampleCurves from './HourlyBase/sampleCurves.ts';
+import DateSelect from './DateSelect.ts';
+import sampleCurves from './sampleCurves.ts';
 
 // Used to filter values in maxYValue.
 //

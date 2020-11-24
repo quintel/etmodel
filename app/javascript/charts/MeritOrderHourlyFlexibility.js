@@ -117,13 +117,14 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
     const targets = _.pluck(grouped[true], 'values');
     const series = _.pluck(grouped[false], 'values');
 
-    const filter = (val) => (val >= 0 ? 0 : -val);
-
     let max = 0;
 
     for (var index = 0; index < series[0].length; index++) {
       const targetLoad = d3.max(targets, (s) => s[index]);
-      const aggregateLoad = d3.sum(series, (s) => filter(s[index])) + targetLoad;
+
+      // Values above zero are ignored as values in the charts are inverted from the original
+      // (negative values [discharging] become positive, positive [charging] become negative).
+      const aggregateLoad = d3.sum(series, (s) => (s[index] >= 0 ? 0 : s[index])) + targetLoad;
 
       if (aggregateLoad > max) {
         max = aggregateLoad;

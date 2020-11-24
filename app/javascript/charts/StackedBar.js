@@ -9,14 +9,9 @@ const stack = d3.stack().offset(d3.stackOffsetDiverging);
 /**
  * Determines the opacity with which a target line should be drawn.
  */
-const targetLineOpacity = serie => {
-  let value;
-
-  if (serie.get('target_line_position') === '1') {
-    value = serie.present_value();
-  } else {
-    value = serie.future_value();
-  }
+const targetLineOpacity = (serie) => {
+  const value =
+    serie.get('target_line_position') === '1' ? serie.present_value() : serie.future_value();
 
   return value === null ? 0 : 1;
 };
@@ -25,7 +20,7 @@ const targetLineOpacity = serie => {
  * Creates a unique key for a serie to be used in D3 to link the serie data to the elements rendered
  * in the SVG.
  */
-const serieKey = serie => {
+const serieKey = (serie) => {
   return `${serie.key}-${serie.data.x}`;
 };
 
@@ -34,7 +29,7 @@ class StackedBar extends D3Chart {
     top: 20,
     bottom: 20,
     left: 20,
-    right: 40
+    right: 40,
   };
 
   legendMargin = 20;
@@ -44,7 +39,7 @@ class StackedBar extends D3Chart {
   }
 
   isEmpty() {
-    return d3.sum(this.prepareData(), d => d.y) <= 0;
+    return d3.sum(this.prepareData(), (d) => d.y) <= 0;
   }
 
   draw() {
@@ -79,33 +74,30 @@ class StackedBar extends D3Chart {
       .enter()
       .append('svg:text')
       .attr('class', 'year')
-      .text(d => d)
-      .attr('x', d => this.x(d))
+      .text((d) => d)
+      .attr('x', (d) => this.x(d))
       .attr('dx', this.barWidth / 2)
       .attr('y', this.seriesHeight + 15)
       .attr('text-anchor', 'middle');
 
-    this.y = d3
-      .scaleLinear()
-      .range([this.seriesHeight, 0])
-      .domain([0, 7]);
+    this.y = d3.scaleLinear().range([this.seriesHeight, 0]).domain([0, 7]);
 
     this.svg
       .append('g')
       .selectAll('g')
-      .data(stackData(this.prepareData(), stack), d => d.key)
+      .data(stackData(this.prepareData(), stack), (d) => d.key)
       .join('g')
       .attr('class', 'serie-group')
-      .attr('fill', d => this.serieValue(d.key, 'color'))
+      .attr('fill', (d) => this.serieValue(d.key, 'color'))
       .selectAll('rect')
-      .data(d => d, serieKey)
+      .data((d) => d, serieKey)
       .join('rect')
       .attr('class', 'serie')
-      .attr('x', d => this.x(d.data.x))
+      .attr('x', (d) => this.x(d.data.x))
       .attr('y', this.seriesHeight)
       .attr('width', this.barWidth)
       .attr('height', 0)
-      .attr('data-tooltip-title', d => this.serieValue(d.key, 'label'));
+      .attr('data-tooltip-title', (d) => this.serieValue(d.key, 'label'));
 
     // draw a nice axis
     this.yAxis = d3
@@ -127,14 +119,14 @@ class StackedBar extends D3Chart {
 
     return this.svg
       .selectAll('rect.target_line')
-      .data(this.model.target_series(), d => d.get('gquery_key'))
+      .data(this.model.target_series(), (d) => d.get('gquery_key'))
       .enter()
       .append('svg:rect')
       .attr('class', 'target_line')
-      .style('fill', d => d.get('color'))
+      .style('fill', (d) => d.get('color'))
       .attr('height', 2)
       .attr('width', () => this.x.bandwidth() * 1.2)
-      .attr('x', s => {
+      .attr('x', (s) => {
         const year = s.get('target_line_position') === '1' ? this.startYear : this.endYear;
         return this.x(year) - this.x.bandwidth() * 0.1;
       })
@@ -153,44 +145,41 @@ class StackedBar extends D3Chart {
     this.y = this.y.domain([smallest, tallest]).nice();
 
     // Animate the y-axis
-    this.svg
-      .selectAll('.y_axis')
-      .transition(transition)
-      .call(this.yAxis.scale(this.y));
+    this.svg.selectAll('.y_axis').transition(transition).call(this.yAxis.scale(this.y));
 
     // Make the tick line corresponding with value 0 darker.
-    this.svg.selectAll('.y_axis .tick').attr('class', d => (d === 0 ? 'tick bold' : 'tick'));
+    this.svg.selectAll('.y_axis .tick').attr('class', (d) => (d === 0 ? 'tick bold' : 'tick'));
 
     // If the chart extends below zero, slightly shade the negative region.
     this.svg
       .selectAll('rect.negative-region')
       .data([smallest])
       .transition(transition)
-      .attr('height', d => this.y(d) - this.y(0))
+      .attr('height', (d) => this.y(d) - this.y(0))
       .attr('width', this.width - 5)
       .attr('x', 0 - this.margins.left)
       .attr('y', this.y(0));
 
     this.svg
       .selectAll('g.serie-group')
-      .data(stackData(this.prepareData(), stack), d => d.key)
+      .data(stackData(this.prepareData(), stack), (d) => d.key)
       .selectAll('rect.serie')
-      .data(d => d, serieKey)
+      .data((d) => d, serieKey)
       .transition(transition)
-      .attr('height', d => this.y(d[0]) - this.y(d[1]))
-      .attr('y', d => this.y(d[1]))
-      .attr('data-tooltip-text', d => this.formatValue(Math.abs(d[1]) - Math.abs(d[0])));
+      .attr('height', (d) => this.y(d[0]) - this.y(d[1]))
+      .attr('y', (d) => this.y(d[1]))
+      .attr('data-tooltip-text', (d) => this.formatValue(Math.abs(d[1]) - Math.abs(d[0])));
 
     // Move the target lines
     this.svg
       .selectAll('rect.target_line')
       .data(
         this.model.target_series(),
-        d => `${d.get('gquery_key')}-${d.get('target_line_position')}`
+        (d) => `${d.get('gquery_key')}-${d.get('target_line_position')}`
       )
       .style('opacity', targetLineOpacity)
       .transition(transition)
-      .attr('y', d => {
+      .attr('y', (d) => {
         const value =
           d.get('target_line_position') === '1' ? d.safe_present_value() : d.safe_future_value();
 
@@ -203,7 +192,7 @@ class StackedBar extends D3Chart {
   getColumns() {
     const years = [this.startYear, this.endYear];
 
-    if (this.model.year_1990_series().length) {
+    if (this.model.year_1990_series().length > 0) {
       return [1990, ...years];
     }
 
@@ -211,9 +200,7 @@ class StackedBar extends D3Chart {
   }
 
   displayLegend() {
-    $(this.containerSelector())
-      .find('.legend')
-      .remove();
+    $(this.containerSelector()).find('.legend').remove();
 
     const seriesForLegend = this.prepareLegendItems();
     const legendColumns = seriesForLegend.length > 6 ? 2 : 1;
@@ -223,7 +210,7 @@ class StackedBar extends D3Chart {
       series: seriesForLegend,
       width: this.width,
       vertical_offset: this.seriesHeight + this.legendMargin,
-      columns: legendColumns
+      columns: legendColumns,
     });
   }
 
@@ -243,7 +230,7 @@ class StackedBar extends D3Chart {
       const total = Math.abs(series.safe_future_value()) + Math.abs(series.safe_present_value());
 
       if (series.get('is_target_line')) {
-        if (targetLines.indexOf(label) === -1) {
+        if (!targetLines.includes(label)) {
           targetLines.push(label);
           seriesForLegend.push(series);
         }
@@ -261,25 +248,25 @@ class StackedBar extends D3Chart {
   prepareData() {
     const series = [];
 
-    this.model.year_1990_series().forEach(s =>
+    this.model.year_1990_series().forEach((s) =>
       series.push({
         x: 1990,
         y: s.safe_present_value(),
-        id: s.get('gquery_key')
+        id: s.get('gquery_key'),
       })
     );
 
-    this.model.non_target_series().forEach(s => {
+    this.model.non_target_series().forEach((s) => {
       series.push({
         x: this.startYear,
         y: s.safe_present_value(),
-        id: s.get('gquery_key')
+        id: s.get('gquery_key'),
       });
 
       series.push({
         x: this.endYear,
         y: s.safe_future_value(),
-        id: s.get('gquery_key')
+        id: s.get('gquery_key'),
       });
     });
 

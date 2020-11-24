@@ -6,6 +6,12 @@ import D3Chart from './D3Chart';
 import DateSelect from './HourlyBase/DateSelect.ts';
 import sampleCurves from './HourlyBase/sampleCurves.ts';
 
+// Used to filter values in maxYValue.
+//
+// Negatives, typically caused by storage charting, cause incorrect calculation of the max value
+// and result in incorrect vertical scaling.
+const nonNegative = (val) => (val < 0 ? 0 : val);
+
 /**
  * Receives a serie and creates an object with the data needed to show the data in the chart.
  *
@@ -186,10 +192,6 @@ class HourlyBase extends D3Chart {
 
     const targets = _.pluck(grouped[true], 'values');
     const series = _.pluck(grouped[false], 'values');
-
-    // Negatives, typically caused by storage charting, cause incorrect calculation of the max value
-    // and result in incorrect vertical scaling.
-    const nonNegative = (val) => (val < 0 ? 0 : val);
 
     let max = 0;
 

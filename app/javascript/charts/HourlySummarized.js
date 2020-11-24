@@ -53,7 +53,7 @@ class HourlySummarized extends D3Chart {
   onMonthSelect = ({ currentTarget }) => {
     const monthNum = Number.parseInt(currentTarget.dataset.month, 10);
 
-    if (isNaN(monthNum)) {
+    if (Number.isNaN(monthNum)) {
       return;
     }
 

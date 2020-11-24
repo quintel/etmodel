@@ -45,14 +45,15 @@ export default class extends Base {
       return;
     }
 
-    const multiplier = parseInt(fontSize, 10) / 13;
+    const multiplier = Number.parseInt(fontSize, 10) / 13;
+
     if (multiplier === 1) {
       return;
     }
 
-    this.margins = Object.keys(this.margins).reduce((memo, key) => {
-      memo[key] = Math.ceil(this.margins[key] * multiplier);
-    }, {});
+    for (let [key, value] of Object.entries(this.margins)) {
+      this.margins[key] = value * multiplier;
+    }
 
     // Self-destruct.
     this.init_margins = () => {};

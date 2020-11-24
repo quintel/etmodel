@@ -80,12 +80,10 @@ export default class extends Backbone.View {
   renderContent = (skipMeritCheck = false) => {
     if (!skipMeritCheck && this.requiresHourlyData()) {
       // Check if Merit is enabled, waiting for the value if necessary.
-      App.settings.merit_order_enabled_promise().done(meritIsEnabled => {
+      App.settings.merit_order_enabled_promise().done((meritIsEnabled) => {
         if (!meritIsEnabled) {
           this.containerNode().html(
-            $('<div>')
-              .html(I18n.t('wells.warning.merit'))
-              .addClass('well')
+            $('<div>').html(I18n.t('wells.warning.merit')).addClass('well')
           );
 
           this.drawn = false;
@@ -104,9 +102,7 @@ export default class extends Backbone.View {
       (this.model.get('as_table') && this.canRenderAsTable()) ||
       this.model.get('type') === 'html_table';
 
-    this.containerNode()
-      .toggleClass('chart_canvas', !isTable)
-      .toggleClass('table_canvas', isTable);
+    this.containerNode().toggleClass('chart_canvas', !isTable).toggleClass('table_canvas', isTable);
 
     if (isTable) {
       // TODO "html_table" should alias render() as renderAsTable()
@@ -212,11 +208,9 @@ export default class extends Backbone.View {
   createScaler(max_value, unit, opts) {
     opts = opts || {};
 
-    if (Quantity.isSupported(unit)) {
-      return Quantity.scaleAndFormatBy(max_value, unit, opts);
-    } else {
-      return value => Metric.autoscale_value(value, unit, opts.precision, opts.scaledown);
-    }
+    return Quantity.isSupported(unit)
+      ? Quantity.scaleAndFormatBy(max_value, unit, opts)
+      : (value) => Metric.autoscale_value(value, unit, opts.precision, opts.scaledown);
   }
 
   // Internal: Returns a function which will format values for the "main" axis
@@ -231,11 +225,7 @@ export default class extends Backbone.View {
         const max = this.model.max_series_value();
         const min = Math.abs(this.model.min_series_value());
 
-        if (max > min) {
-          return max;
-        } else {
-          return min;
-        }
+        return max > min ? max : min;
       }
     })();
 

@@ -15,8 +15,8 @@
  *    remember.clear() // clears memozied value
  *    remember()       // computes and memoizes value
  */
-export default func => {
-  let value = null;
+export default (func) => {
+  let value;
 
   let callable = () => {
     if (!value) {
@@ -26,7 +26,7 @@ export default func => {
     return value;
   };
 
-  callable.clear = () => (value = null);
+  callable.clear = () => (value = undefined);
 
   return callable;
 };

@@ -108,7 +108,7 @@ class Line extends HourlyBase {
   }
 
   createLinearScale() {
-    return d3.scaleLinear().domain(this.yDomain()).range([this.height, 0]).nice();
+    return d3.scaleLinear().domain(this.yDomain()).range([this.height, 0]).nice(7);
   }
 }
 

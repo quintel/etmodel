@@ -207,7 +207,6 @@ class HourlySummarized extends D3Chart {
 
     this.drawLegend({
       series: this.legendSeries(),
-      width: this.width,
       columns: 2,
     });
   }

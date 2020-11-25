@@ -171,7 +171,7 @@ export default class extends Base {
     ];
   }
 
-  // Returns a D3-selected SVG container
+  // Returns a D3-selected aVG container
   //
   createSVGContainer(width, height, margins, className) {
     return d3
@@ -199,7 +199,7 @@ export default class extends Base {
 
     opts.columns = opts.columns || 1;
     opts.leftMargin = opts.leftMargin || 10;
-    const legendItemWidth = (opts.width - opts.leftMargin) / opts.columns;
+    const legendItemWidth = (this.availableWidth() - opts.leftMargin) / opts.columns;
 
     let series = [...opts.series];
     series = series.reverse().chunk(opts.columns);

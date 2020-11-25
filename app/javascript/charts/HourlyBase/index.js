@@ -219,7 +219,7 @@ class HourlyBase extends D3Chart {
       .scaleLinear()
       .domain([0, this.maxYValue() * 1.05])
       .range([this.height, 0])
-      .nice();
+      .nice(7);
   }
 
   createLinearAxis(scale) {

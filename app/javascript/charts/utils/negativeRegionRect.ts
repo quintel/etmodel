@@ -1,6 +1,9 @@
 import type { ScaleLinear } from 'd3-scale';
+import type { Transition } from 'd3-transition';
+import { select } from 'd3-selection';
 
 type ScaleFunc = ScaleLinear<number, number, never>;
+type TransitionFunc = Transition<SVGRectElement, unknown, null, undefined>;
 type Return = [SVGRectElement, (scale: ScaleFunc) => SVGRectElement];
 
 /**
@@ -13,9 +16,12 @@ type Return = [SVGRectElement, (scale: ScaleFunc) => SVGRectElement];
 export default (width: number, yScale: ScaleFunc, attributes = {}): Return => {
   const el = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 
-  const update = (yScale: ScaleFunc): SVGRectElement => {
-    el.setAttribute('height', (yScale(yScale.domain()[0]) - yScale(0)).toString());
-    el.setAttribute('y', yScale(0).toString());
+  const update = (yScale: ScaleFunc, transition?: TransitionFunc): SVGRectElement => {
+    const d3el = select(el);
+
+    d3el.transition(transition);
+    d3el.attr('height', (yScale(yScale.domain()[0]) - yScale(0)).toString());
+    d3el.attr('y', yScale(0).toString());
 
     return el;
   };

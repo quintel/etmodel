@@ -3,7 +3,6 @@
 import * as d3 from './d3';
 import D3Chart from './D3Chart';
 import { groupedStack } from './utils/stackData';
-import memoized from './utils/memoized';
 
 const stack = d3.stack().offset(d3.stackOffsetDiverging);
 
@@ -56,8 +55,6 @@ class HourlySummarized extends D3Chart {
     if (Number.isNaN(monthNum)) {
       return;
     }
-
-    console.log(`Clicked month: ${monthNum}`);
   };
 
   draw() {
@@ -70,8 +67,6 @@ class HourlySummarized extends D3Chart {
       this.seriesHeight + this.stackLabelHeight,
       this.margins
     );
-
-    window.m = memoized;
 
     this.groupScale = d3
       .scaleBand()
@@ -209,6 +204,12 @@ class HourlySummarized extends D3Chart {
 
     // Make the tick line corresponding with value 0 darker.
     this.svg.selectAll('.y_axis .tick').attr('class', (d) => (d === 0 ? 'tick bold' : 'tick'));
+
+    this.drawLegend({
+      series: this.legendSeries(),
+      width: this.width,
+      columns: 2,
+    });
   }
 
   refresh(animate = true) {
@@ -297,6 +298,17 @@ class HourlySummarized extends D3Chart {
     });
 
     return this.createScaler(maxValue, this.model.get('unit'), {});
+  }
+
+  legendSeries() {
+    const byLabel = new Map();
+
+    for (const serie of this.model.series.models) {
+      byLabel.set(serie.get('label'), serie);
+    }
+
+    // eslint-disable-next-line unicorn/prefer-spread
+    return Array.from(byLabel.values());
   }
 }
 

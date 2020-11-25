@@ -97,6 +97,8 @@ class HourlyBase extends D3Chart {
   refresh() {
     this._visibleData = undefined;
     super.refresh();
+
+    this.svg.select('g.y_axis text.unit').text(this.formatValue(1).split(' ')[1]);
   }
 
   /**
@@ -177,6 +179,7 @@ class HourlyBase extends D3Chart {
       .attr('x', (this.height / 2) * -1 + 12)
       .attr('dy', '.71em')
       .attr('font-weight', 'bold')
+      .style('fill', 'black')
       .style('text-anchor', 'end');
 
     return scale;

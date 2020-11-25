@@ -206,10 +206,7 @@ class StackedBar extends D3Chart {
     const legendColumns = seriesForLegend.length > 6 ? 2 : 1;
 
     return this.drawLegend({
-      svg: this.svg,
       series: seriesForLegend,
-      width: this.width,
-      vertical_offset: this.seriesHeight + this.legendMargin,
       columns: legendColumns,
     });
   }

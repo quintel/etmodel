@@ -1,5 +1,7 @@
 /* globals _ */
 
+import { interpolatePath } from 'd3-interpolate-path';
+
 import * as d3 from './d3';
 import HourlyBase from './HourlyBase';
 import negativeRegionRect from './utils/negativeRegionRect';
@@ -27,13 +29,15 @@ class Line extends HourlyBase {
   refresh(animate = true) {
     super.refresh(animate);
 
+    const transition = d3.transition().duration(animate ? 250 : 0);
+
     const data = this.convertToXY(this.visibleData());
 
     const xScale = this.createTimeScale(this.dateSelect.currentRange());
     const yScale = this.createLinearScale();
 
     this.svg.select('.x_axis').call(this.createTimeAxis(xScale));
-    this.svg.select('.y_axis').call(this.createLinearAxis(yScale));
+    this.svg.select('.y_axis').transition(transition).call(this.createLinearAxis(yScale));
 
     if (this.containerNode().find('g.serie').length > 0) {
       const lineFunction = this.line(xScale, yScale);
@@ -42,7 +46,13 @@ class Line extends HourlyBase {
         .selectAll('g.serie')
         .data(data, (d) => d.key)
         .select('path')
-        .attr('d', (d) => lineFunction(d.values));
+        .transition(transition)
+        .attrTween('d', function (d) {
+          const prev = this.getAttribute('d');
+          const current = lineFunction(d.values);
+
+          return interpolatePath(prev, current);
+        });
     } else {
       this.drawData(data, xScale, yScale);
     }

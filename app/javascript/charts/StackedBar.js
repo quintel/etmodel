@@ -59,14 +59,17 @@ class StackedBar extends D3Chart {
       .rangeRound([0, this.width - this.margins.left * 2])
       .domain(columns);
 
+    this.y = d3.scaleLinear().range([this.seriesHeight, 0]).domain([0, 7]);
+
     this.barWidth = this.x.bandwidth();
 
-    this.svg
-      .selectAll('rect.negative-region')
-      .data([0])
-      .enter()
-      .append('svg:rect')
-      .attr('class', 'negative-region');
+    // Add a "negative region" which shades area of the chart representing values below zero.
+    const [negativeRect, updateNegativeRect] = negativeRegionRect(this.width - 5, this.y, {
+      x: -this.margins.left,
+    });
+
+    this.updateNegativeRegion = updateNegativeRect;
+    this.svg.node().append(negativeRect);
 
     // show years
     this.svg
@@ -80,8 +83,6 @@ class StackedBar extends D3Chart {
       .attr('dx', this.barWidth / 2)
       .attr('y', this.seriesHeight + 15)
       .attr('text-anchor', 'middle');
-
-    this.y = d3.scaleLinear().range([this.seriesHeight, 0]).domain([0, 7]);
 
     this.svg
       .append('g')
@@ -118,7 +119,7 @@ class StackedBar extends D3Chart {
     // line position". If set to 1 then the target line must be shown on the
     // first column only, if 2 only on the 2nd. The CO2 chart is different, too
 
-    return this.svg
+    this.svg
       .selectAll('rect.target_line')
       .data(this.model.target_series(), (d) => d.get('gquery_key'))
       .enter()
@@ -152,14 +153,7 @@ class StackedBar extends D3Chart {
     this.svg.selectAll('.y_axis .tick').attr('class', (d) => (d === 0 ? 'tick bold' : 'tick'));
 
     // If the chart extends below zero, slightly shade the negative region.
-    this.svg
-      .selectAll('rect.negative-region')
-      .data([smallest])
-      .transition(transition)
-      .attr('height', (d) => this.y(d) - this.y(0))
-      .attr('width', this.width - 5)
-      .attr('x', 0 - this.margins.left)
-      .attr('y', this.y(0));
+    this.updateNegativeRegion(this.y);
 
     this.svg
       .selectAll('g.serie-group')

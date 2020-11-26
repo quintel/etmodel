@@ -212,6 +212,14 @@ class DateSelect {
     this.updateChart && this.updateChart();
   };
 
+  /**
+   * Removes bound events ready for the component to be removed.
+   */
+  remove = (): void => {
+    App.settings.off('change:merit_charts_date', this.updateDate);
+    this.selectEl.remove();
+  };
+
   triggerUpdate = (): void => {
     App.settings.set('merit_charts_date', this.selectEl.value);
     this?.updateChart();

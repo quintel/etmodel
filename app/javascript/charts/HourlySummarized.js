@@ -38,6 +38,7 @@ const groupKeys = (series) => [...new Set(series.map((s) => s.get('group')))];
  */
 class HourlySummarized extends D3Chart {
   legendMargin = 20;
+  tickCount = 5;
 
   margins = {
     top: 20,
@@ -59,7 +60,10 @@ class HourlySummarized extends D3Chart {
 
   draw() {
     [this.width, this.height] = this.dimensions();
-    this.stackLabelHeight = 60;
+
+    const groupNames = groupKeys(this.model.non_target_series());
+
+    this.stackLabelHeight = groupNames.length > 1 ? 60 : 0;
     this.seriesHeight = this.height - this.legendMargin - this.stackLabelHeight;
 
     this.svg = this.createSVGContainer(
@@ -79,7 +83,7 @@ class HourlySummarized extends D3Chart {
       .padding(0.05)
       .paddingOuter(0.1)
       .rangeRound([0, this.groupScale.bandwidth()])
-      .domain(groupKeys(this.model.non_target_series()));
+      .domain(groupNames);
 
     this.yScale = d3.scaleLinear().range([this.seriesHeight, 0]).domain([0, 1]);
 
@@ -106,7 +110,6 @@ class HourlySummarized extends D3Chart {
       })
       .attr('data-month', (d, i) => i)
       .on('click', this.onMonthSelect);
-    // this.onGroupSelect);
 
     // Add a transparent rect to each group, used to capture click events which may trigger actions
     // in other charts.
@@ -164,35 +167,37 @@ class HourlySummarized extends D3Chart {
 
     // Add an axis for each stack.
 
-    this.stackAxis = d3
-      .axisBottom()
-      .scale(this.stackScale)
-      .tickSize(0)
-      .ticks(this.groupScale.domain().length)
-      .tickFormat((d) => I18n.t(`output_element_series.groups.${d}`));
+    if (groupNames.length > 1) {
+      this.stackAxis = d3
+        .axisBottom()
+        .scale(this.stackScale)
+        .tickSize(0)
+        .ticks(this.groupScale.domain().length)
+        .tickFormat((d) => I18n.t(`output_element_series.groups.${d}`));
 
-    this.svg
-      .append('g')
-      .selectAll('g')
-      .data(groupedStack(this.prepareData(), stack)) /* TODO: Add key. */
-      .join('g')
-      .attr('class', 'x_axis stack-axis')
-      .attr('transform', (d, i) => {
-        return `translate(${
-          this.groupScale(i) - this.stackScale.bandwidth() * this.stackScale.paddingOuter() * 3
-        }, ${this.seriesHeight})`;
-      })
-      .call(this.stackAxis)
-      .selectAll('text')
-      .style('text-anchor', 'end')
-      .attr('dx', '-6px')
-      .attr('transform', 'rotate(-90)');
+      this.svg
+        .append('g')
+        .selectAll('g')
+        .data(groupedStack(this.prepareData(), stack)) /* TODO: Add key. */
+        .join('g')
+        .attr('class', 'x_axis stack-axis')
+        .attr('transform', (d, i) => {
+          return `translate(${
+            this.groupScale(i) - this.stackScale.bandwidth() * this.stackScale.paddingOuter() * 3
+          }, ${this.seriesHeight})`;
+        })
+        .call(this.stackAxis)
+        .selectAll('text')
+        .style('text-anchor', 'end')
+        .attr('dx', '-6px')
+        .attr('transform', 'rotate(-90)');
+    }
 
     // Draw the Y axis.
     this.yAxis = d3
       .axisRight()
       .scale(this.yScale)
-      .ticks(5)
+      .ticks(this.tickCount)
       .tickSize(-this.width, 10, 0)
       .tickFormat(this.formatValue);
 
@@ -223,24 +228,26 @@ class HourlySummarized extends D3Chart {
 
     data.forEach((groupedData) => {
       groupedData.forEach((serieData) => {
-        const start = serieData[0][0];
-        const end = serieData[serieData.length - 1][1];
+        serieData.forEach(([lower, upper]) => {
+          if (upper < lower && upper - lower < min) {
+            min = upper - lower;
+          } else if (lower < min) {
+            min = lower;
+          }
 
-        if (end < start && end - start < min) {
-          min = end - start;
-        } else if (start < min) {
-          min = start;
-        }
-
-        if (end > max) {
-          max = end;
-        }
+          if (upper > max) {
+            max = upper;
+          }
+        });
       });
     });
 
     this.yScale.domain([min, max]);
 
-    this.svg.selectAll('.y_axis').transition(transition).call(this.yAxis.scale(this.yScale));
+    this.svg
+      .selectAll('.y_axis')
+      .transition(transition)
+      .call(this.yAxis.scale(this.yScale.nice(this.tickCount)));
 
     const groups = this.svg.selectAll('g.date-group').data(data, (d, i) => `month-${i}`);
 
@@ -258,8 +265,8 @@ class HourlySummarized extends D3Chart {
         (d) => d,
         (d, i) => `${d.key}-${i}`
       )
-      .attr('y', (d) => this.yScale(d[1]))
-      .attr('height', (d) => this.yScale(d[0]) - this.yScale(d[1]))
+      .attr('y', (d) => (d[0] > d[1] ? this.yScale(d[0]) : this.yScale(d[1])))
+      .attr('height', (d) => Math.abs(this.yScale(d[0]) - this.yScale(d[1])))
       .attr('data-tooltip-text', (d) => this.formatValue(Math.abs(d[1]) - Math.abs(d[0])));
   }
 
@@ -292,7 +299,7 @@ class HourlySummarized extends D3Chart {
 
     groupedStack(this.prepareData()).forEach((monthData) => {
       monthData.forEach((datum) => {
-        maxValue = Math.max(maxValue, datum[0][1], datum[1][1]);
+        maxValue = Math.max(maxValue, ...datum.map(([, upper]) => upper));
       });
     });
 

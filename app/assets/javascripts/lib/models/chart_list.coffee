@@ -287,7 +287,7 @@ class @ChartList extends Backbone.Collection
   #
   chart_already_on_screen: (chart_id) =>
     for holder, chart of @chart_holders
-      return chart if chart.id == chart_id
+      return chart if chart.get('key') == chart_id
     false
 
   # This stuff could be handled by a Backbone view, but a document-scoped
@@ -338,6 +338,7 @@ class @ChartList extends Backbone.Collection
       if chart = @chart_in_holder holder_id
         chart.delete()
         @remove chart
+        delete @chart_holders[holder_id]
 
     $(document).on 'touchend click', 'a.show_related', (e) =>
       e.preventDefault()

@@ -87,6 +87,8 @@ class HourlyBase extends D3Chart {
     this.dateSelect = new DateSelect(this.d3ContainerNode(), this.downsampleWith);
     this.dateSelect.draw(this.refresh.bind(this));
 
+    this.model.once('remove', this.dateSelect.remove);
+
     this.xScale = this.drawXAxis();
     this.yScale = this.drawYAxis();
   }

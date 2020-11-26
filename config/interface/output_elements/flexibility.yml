@@ -5,4 +5,6 @@
   output_element_type_name: hourly_summarized
   requires_merit_order: true
   sub_group: flexibility
-  unit: 'MW'
+  unit: MW
+  config:
+    linked_chart: electricity_hv_network_load

@@ -55,6 +55,7 @@ class OutputElement < YModel::Base
   default_attribute :requires_merit_order, with: false
   default_attribute :under_construction, with: false
   default_attribute :growth_chart, with: false
+  default_attribute :config, with: -> { {} }
 
   has_many :output_element_series
   belongs_to :output_element_type

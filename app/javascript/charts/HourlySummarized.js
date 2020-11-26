@@ -1,4 +1,4 @@
-/* globals I18n */
+/* globals App I18n */
 
 import * as d3 from './d3';
 import D3Chart from './D3Chart';
@@ -43,19 +43,31 @@ class HourlySummarized extends D3Chart {
 
   margins = {
     top: 20,
-    right: 50,
+    right: 0,
     bottom: 20,
-    left: 0,
+    left: 50,
   };
 
   /**
    * Event triggered whenever the group which wraps the data for a group (a month).
    */
   onMonthSelect = ({ currentTarget }) => {
+    const linkedChart = this.model.get('config').linked_chart;
+
+    if (!linkedChart) {
+      return false;
+    }
+
     const monthNum = Number.parseInt(currentTarget.dataset.month, 10);
 
     if (Number.isNaN(monthNum)) {
-      return;
+      return false;
+    }
+
+    App.settings.set('merit_charts_date', `month,${monthNum + 1}`);
+
+    if (!App.charts.chart_already_on_screen(linkedChart)) {
+      App.charts.load(linkedChart);
     }
   };
 
@@ -65,6 +77,7 @@ class HourlySummarized extends D3Chart {
     const groupNames = groupKeys(this.model.non_target_series());
 
     this.stackLabelHeight = groupNames.length > 1 ? 60 : 0;
+    this.height += this.stackLabelHeight;
     this.seriesHeight = this.height - this.legendMargin - this.stackLabelHeight;
 
     this.svg = this.createSVGContainer(
@@ -111,7 +124,7 @@ class HourlySummarized extends D3Chart {
       .selectAll('g')
       .data(groupedStack(this.prepareData(), stack), (d, i) => `month-${i}`)
       .join('g')
-      .attr('class', 'date-group')
+      .attr('class', `date-group ${this.model.get('config').linked_chart ? 'linked' : ''}`)
       .attr('transform', (d, i) => {
         return `translate(${this.groupScale(i)},0)`;
       })
@@ -202,17 +215,13 @@ class HourlySummarized extends D3Chart {
 
     // Draw the Y axis.
     this.yAxis = d3
-      .axisRight()
+      .axisLeft()
       .scale(this.yScale)
       .ticks(this.tickCount)
       .tickSize(-this.width, 10, 0)
       .tickFormat(this.formatValue);
 
-    this.svg
-      .append('svg:g')
-      .attr('class', 'y_axis inner_grid')
-      .attr('transform', `translate(${this.width}, 0)`)
-      .call(this.yAxis);
+    this.svg.append('svg:g').attr('class', 'y_axis inner_grid').call(this.yAxis);
 
     // Make the tick line corresponding with value 0 darker.
     this.svg.selectAll('.y_axis .tick').attr('class', (d) => (d === 0 ? 'tick bold' : 'tick'));

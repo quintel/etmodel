@@ -195,11 +195,11 @@ export default class extends Base {
   // - leftMargin: (default: 10)
   //
   drawLegend(opts) {
-    opts = Object.assign({ columns: 1, leftMargin: 10 }, opts);
+    opts = Object.assign({ columns: 1, leftMargin: 0 }, opts);
 
-    opts.columns = opts.columns || 1;
-    opts.leftMargin = opts.leftMargin || 10;
-    const legendItemWidth = (this.availableWidth() - opts.leftMargin) / opts.columns;
+    const legendItemWidth = Math.floor(
+      (this.availableWidth() - this.margins.left - opts.leftMargin) / opts.columns
+    );
 
     let series = [...opts.series];
     series = series.reverse().chunk(opts.columns);

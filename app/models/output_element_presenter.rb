@@ -5,20 +5,21 @@ class OutputElementPresenter
   # which case the appropriate method is called on the element, or a block which
   # into which the element will be passed.
   ATTRIBUTES = {
-    type: ->(oe) { oe.output_element_type.name },
-    percentage: ->(oe) { oe.percentage == true },
-    unit: true,
+    config: ->(oe) { oe.config || {} },
     group: true,
-    name: ->(oe) { I18n.t("output_elements.#{oe.key}.title").html_safe },
-    show_point_label: true,
+    growth_chart: true,
+    has_description: ->(oe) { oe.has_description? },
+    key: true,
     max_axis_value: true,
     min_axis_value: true,
-    growth_chart: true,
-    key: true,
-    under_construction: true,
+    name: ->(oe) { I18n.t("output_elements.#{oe.key}.title").html_safe },
+    percentage: ->(oe) { oe.percentage == true },
     related_id: ->(oe) { oe.related_output_element&.key },
-    has_description: ->(oe) { oe.has_description? },
-    requires_merit_order: ->(oe) { oe.requires_merit_order }
+    requires_merit_order: ->(oe) { oe.requires_merit_order },
+    show_point_label: true,
+    type: ->(oe) { oe.output_element_type.name },
+    under_construction: true,
+    unit: true
   }.freeze
 
   # Public: Presents a single element as a JSON-compatible Hash.

@@ -3,6 +3,7 @@
 import * as d3 from './d3';
 import D3Chart from './D3Chart';
 import stackData from './utils/stackData';
+import negativeRegionRect from './utils/negativeRegionRect';
 
 const stack = d3.stack().offset(d3.stackOffsetDiverging);
 

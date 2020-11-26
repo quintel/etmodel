@@ -3,6 +3,7 @@
 import * as d3 from './d3';
 import D3Chart from './D3Chart';
 import { groupedStack } from './utils/stackData';
+import negativeRegionRect from './utils/negativeRegionRect';
 
 const stack = d3.stack().offset(d3.stackOffsetDiverging);
 
@@ -86,6 +87,12 @@ class HourlySummarized extends D3Chart {
       .domain(groupNames);
 
     this.yScale = d3.scaleLinear().range([this.seriesHeight, 0]).domain([0, 1]);
+
+    // Add a "negative region" which shades area of the chart representing values below zero.
+    const [negativeRect, updateNegativeRect] = negativeRegionRect(this.width, this.yScale);
+
+    this.updateNegativeRegion = updateNegativeRect;
+    this.svg.node().append(negativeRect);
 
     // The stacked data consists of an array containing the data for each group, inside of which is
     // an array containing data for each series:
@@ -268,6 +275,8 @@ class HourlySummarized extends D3Chart {
       .attr('y', (d) => (d[0] > d[1] ? this.yScale(d[0]) : this.yScale(d[1])))
       .attr('height', (d) => Math.abs(this.yScale(d[0]) - this.yScale(d[1])))
       .attr('data-tooltip-text', (d) => this.formatValue(Math.abs(d[1]) - Math.abs(d[0])));
+
+    this.updateNegativeRegion(this.yScale, transition);
   }
 
   prepareData() {

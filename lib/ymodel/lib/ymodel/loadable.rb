@@ -56,7 +56,15 @@ module YModel
     def define_reader(attribute, default: nil)
       define_method(attribute.to_sym) do
         value = instance_variable_get("@#{attribute}")
-        value.nil? ? default : value
+
+        if value.nil? && default
+          value = instance_variable_set(
+            "@#{attribute}",
+            default.respond_to?(:call) ? default.call : default
+          )
+        end
+
+        value
       end
     end
 

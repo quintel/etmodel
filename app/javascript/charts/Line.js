@@ -1,5 +1,3 @@
-/* globals _ */
-
 import { interpolatePath } from 'd3-interpolate-path';
 
 import * as d3 from './d3';
@@ -100,7 +98,9 @@ class Line extends HourlyBase {
    */
   yDomain() {
     let [min, max] = d3.extent(
-      _.flatten(this.visibleData().map((serie) => d3.extent(serie.values)))
+      this.visibleData()
+        .map((serie) => d3.extent(serie.values))
+        .flat()
     );
 
     min = Math.min(min, 0);

@@ -124,7 +124,7 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
 
       // Values above zero are ignored as values in the charts are inverted from the original
       // (negative values [discharging] become positive, positive [charging] become negative).
-      const aggregateLoad = d3.sum(series, (s) => (s[index] >= 0 ? 0 : s[index])) + targetLoad;
+      const aggregateLoad = d3.sum(series, (s) => (s[index] >= 0 ? 0 : -s[index])) + targetLoad;
 
       if (aggregateLoad > max) {
         max = aggregateLoad;

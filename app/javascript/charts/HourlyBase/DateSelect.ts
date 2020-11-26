@@ -208,8 +208,10 @@ class DateSelect {
   }
 
   updateDate = (_settings: unknown, value: string): void => {
-    this.selectEl.value = value;
-    this.updateChart && this.updateChart();
+    if (this.selectEl.value !== value) {
+      this.selectEl.value = value;
+      this.updateChart && this.updateChart();
+    }
   };
 
   /**

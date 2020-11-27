@@ -90,11 +90,6 @@ class Line extends HourlyBase {
 
   /**
    * Computes the minimum and maximum values to be used for the Y axis.
-   *
-   * When all values are positive, the domain will be from zero to the largest value. When there are
-   * both positive and negative values, the domain will be from the negative absolute largest to the
-   * positive absolute largest (i.e. if the min is -10 and the max is 5, the domain will be -10 to
-   * 10).
    */
   yDomain() {
     let [min, max] = d3.extent(
@@ -105,10 +100,6 @@ class Line extends HourlyBase {
 
     min = Math.min(min, 0);
     max = Math.max(max, 0);
-
-    if (min < 0 && max > 0) {
-      return Math.abs(min) > max ? [min, -min] : [-max, max];
-    }
 
     return [min, max];
   }

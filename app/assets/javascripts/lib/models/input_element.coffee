@@ -90,6 +90,22 @@ class @InputElement extends Backbone.Model
     if @get('key') == 'settings_enable_merit_order'
       App.update_merit_order_checkbox()
 
+  # Returns the step value of the input, except in cases where the step would
+  # be too small to be meaningful (e.g. in small datasets), in which case the
+  # step will be scaled down to ensure roughly 100 steps between the min and
+  # max values.
+  smartStep: ->
+    if @smartStepValue
+      return @smartStepValue
+
+    step = @get('step_value')
+    delta = @get('max_value') - @get('min_value')
+
+    while (step * 20) > delta
+      step /= 10
+
+    @smartStepValue = step
+
 class @InputElementList extends Backbone.Collection
   model: InputElement
 

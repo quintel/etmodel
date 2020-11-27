@@ -84,7 +84,7 @@
     var conversions = [],
       modelConvs = model.conversions(),
       mPrecision = floatPrecision(
-        model.get('step_value'),
+        model.smartStep(),
         model.get('max_value') - model.get('min_value')
       ),
       customDefault = false,
@@ -354,7 +354,7 @@
      * Creates the HTML elements used to display the slider.
      */
     render: function() {
-      var quinnStep = this.model.get('step_value');
+      var quinnStep = this.model.smartStep();
 
       if (this.model.get('share_group')) {
         // Inputs in groups may have rounding errors (etmodel#1023) if
@@ -649,9 +649,9 @@
       }
 
       if (isIncreasing) {
-        this.quinn.setTentativeValue(initialValue + this.model.get('step_value'));
+        this.quinn.setTentativeValue(initialValue + this.model.smartStep());
       } else {
-        this.quinn.setTentativeValue(initialValue - this.model.get('step_value'));
+        this.quinn.setTentativeValue(initialValue + this.model.smartStep());
       }
 
       initialValue = this.quinn.model.value;

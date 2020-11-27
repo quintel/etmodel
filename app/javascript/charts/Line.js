@@ -55,7 +55,7 @@ class Line extends HourlyBase {
       this.drawData(data, xScale, yScale);
     }
 
-    this.updateNegativeRegion(yScale);
+    this.updateNegativeRegion(yScale, transition);
   }
 
   drawData(data, xScale, yScale) {

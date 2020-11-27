@@ -651,7 +651,7 @@
       if (isIncreasing) {
         this.quinn.setTentativeValue(initialValue + this.model.smartStep());
       } else {
-        this.quinn.setTentativeValue(initialValue + this.model.smartStep());
+        this.quinn.setTentativeValue(initialValue - this.model.smartStep());
       }
 
       initialValue = this.quinn.model.value;

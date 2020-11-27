@@ -57,7 +57,7 @@ module YModel
       define_method(attribute.to_sym) do
         value = instance_variable_get("@#{attribute}")
 
-        if value.nil? && default
+        if value.nil? && !default.nil?
           value = instance_variable_set(
             "@#{attribute}",
             default.respond_to?(:call) ? default.call : default

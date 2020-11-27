@@ -193,13 +193,14 @@ export default class extends Base {
   // - columns: number of columns (default: 1)
   // - leftMargin: (default: 10)
   //
-  drawLegend({ columns, series }) {
+  drawLegend({ clickable, columns, series }) {
     let reversedSeries = [...series];
     reversedSeries.reverse();
 
     this._legend?.remove();
 
     this._legend = new Legend({
+      clickable,
       columns,
       items: reversedSeries,
       marginLeft: this.margins.left,

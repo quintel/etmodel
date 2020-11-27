@@ -139,7 +139,7 @@ class HourlyBase extends D3Chart {
   }
 
   drawLegend(series, columns = 1) {
-    return super.drawLegend({ columns, series });
+    return super.drawLegend({ clickable: true, columns, series });
   }
 
   /**

@@ -19,9 +19,10 @@ export default (width: number, yScale: ScaleFunc, attributes = {}): Return => {
   const update = (yScale: ScaleFunc, transition?: TransitionFunc): SVGRectElement => {
     const d3el = select(el);
 
-    d3el.transition(transition);
-    d3el.attr('height', (yScale(yScale.domain()[0]) - yScale(0)).toString());
-    d3el.attr('y', yScale(0).toString());
+    d3el
+      .transition(transition)
+      .attr('height', (yScale(yScale.domain()[0]) - yScale(0)).toString())
+      .attr('y', yScale(0).toString());
 
     return el;
   };

@@ -3,6 +3,7 @@
 import * as d3 from './d3';
 
 import Base from './Base';
+import Legend from './Legend';
 import tooltips from './utils/tooltips';
 
 // This is mostly an abstract class
@@ -184,9 +185,7 @@ export default class extends Base {
       .attr('transform', `translate(${margins.left}, ${margins.top})`);
   }
 
-  legendClick(d) {
-    return d;
-  }
+  legendClick = () => {};
 
   // Builds a standard legend. Options hash:
   // - series: array of series. The label might be its 'label' attribute or its
@@ -194,47 +193,19 @@ export default class extends Base {
   // - columns: number of columns (default: 1)
   // - leftMargin: (default: 10)
   //
-  drawLegend(opts) {
-    opts = Object.assign({ columns: 1, leftMargin: 0 }, opts);
+  drawLegend({ columns, series }) {
+    let reversedSeries = [...series];
+    reversedSeries.reverse();
 
-    const legendItemWidth = Math.floor(
-      (this.availableWidth() - this.margins.left - opts.leftMargin) / opts.columns
-    );
+    this._legend?.remove();
 
-    let series = [...opts.series];
-    series = series.reverse().chunk(opts.columns);
-
-    d3.select(this.containerSelector())
-      .append('div')
-      .attr('class', 'legend')
-      .style('margin-left', `${opts.leftMargin + this.margins.left}px`)
-      .selectAll('.legend-column')
-      .data(series)
-      .enter()
-      .append('div')
-      .attr('class', 'legend-column')
-      .style('width', `${legendItemWidth}px`);
-
-    d3.selectAll('.legend-column').each((items, index, nodes) => {
-      const scope = d3
-        .select(nodes[index])
-        .selectAll('.legend-item')
-        .data(items)
-        .enter()
-        .append('div')
-        .attr('class', 'legend-item')
-        .classed('hidden', (d) => d.get('skip'))
-        .classed('target_line', (d) => d.get('is_target_line'))
-        .on('click', (d) => this.legendClick(d));
-
-      scope
-        .append('span')
-        .attr('class', 'rect')
-        .style('background-color', (d) => d.get('color'));
-
-      scope
-        .append('span')
-        .text((d) => d.get('label') || I18n.t(`output_element_series.labels.${d.get('key')}`));
+    this._legend = new Legend({
+      columns,
+      items: reversedSeries,
+      marginLeft: this.margins.left,
+      onClickItem: this.legendClick,
     });
+
+    document.querySelector(this.containerSelector()).append(this._legend.render());
   }
 }

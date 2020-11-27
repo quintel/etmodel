@@ -5,6 +5,7 @@ import D3Chart from '../D3Chart';
 
 import DateSelect from './DateSelect';
 import sampleCurves from './sampleCurves';
+import { zeroInvisibleSerie } from '../utils/zeroInvisibles';
 
 // Used to filter values in maxYValue.
 //
@@ -137,14 +138,8 @@ class HourlyBase extends D3Chart {
     };
   }
 
-  drawLegend(series, columns = 2) {
-    $(this.container_selector()).find('div.legend').remove();
-
-    return super.drawLegend({
-      series,
-      width: this.width,
-      columns,
-    });
+  drawLegend(series, columns = 1) {
+    return super.drawLegend({ columns, series });
   }
 
   /**
@@ -248,6 +243,14 @@ class HourlyBase extends D3Chart {
       .tickFormat(formatter);
   }
 
+  legendClick = (event, item) => {
+    for (const serie of this.series.filter((s) => s.get('label') == item.label)) {
+      serie.set('skip', !item.active);
+    }
+
+    this.refresh();
+  };
+
   visibleData() {
     if (this._visibleData) {
       return this._visibleData;
@@ -258,9 +261,11 @@ class HourlyBase extends D3Chart {
     this._visibleData = rawData
       .filter((serie) => serie.values.length)
       .map((serie) => {
-        return $.extend({}, serie, {
-          values: sampleCurves(serie.values, this.dateSelect.toTransformOptions()),
-        });
+        return zeroInvisibleSerie(
+          $.extend({}, serie, {
+            values: sampleCurves(serie.values, this.dateSelect.toTransformOptions()),
+          })
+        );
       });
 
     return this._visibleData;

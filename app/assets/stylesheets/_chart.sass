@@ -485,12 +485,9 @@ div.d3_container
 // Legend
 
 .legend
-  margin-left: 10px
   clear: both
-
-  .legend-column
-    display: inline-block
-    vertical-align: top
+  display: flex
+  flex-wrap: wrap
 
   .legend-item
     line-height: 20px
@@ -505,10 +502,25 @@ div.d3_container
       vertical-align: middle
       width: 11px
 
-    &.target_line span.rect
+    &.target_line span.rect, &.target-line span.rect
       border-radius: 0
       box-shadow: none
       height: 2px
+
+    &.clickable
+      cursor: pointer
+      opacity: 0.5
+      transition: opacity 200ms
+      will-change: opacity
+      &.active
+        opacity: 1
+
+      .click-wrapper
+        border-radius: 3px
+        margin: -0.25rem -0.35rem
+        padding: 0.25rem 0.35rem
+        &:hover
+          background: #eee
 
 // Clickable legends in the dynamic demand curve chart.
 .dynamic_demand_curve

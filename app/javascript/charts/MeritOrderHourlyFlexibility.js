@@ -65,7 +65,6 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
     super.refresh(...args);
 
     this.setStackedData();
-    this.drawLegend(this.series);
 
     const xScale = this.createTimeScale(this.dateSelect.currentRange());
     const yScale = this.createLinearScale();

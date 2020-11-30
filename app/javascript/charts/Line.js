@@ -11,10 +11,9 @@ import negativeRegionRect from './utils/negativeRegionRect';
 class Line extends HourlyBase {
   margins = {
     top: 20,
-    right: 20,
+    right: 0,
     bottom: 20,
-    left: 75,
-    labelLeft: 20,
+    left: 60,
   };
 
   downsampleWith = 'max';

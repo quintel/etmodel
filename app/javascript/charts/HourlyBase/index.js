@@ -64,7 +64,7 @@ class HourlyBase extends D3Chart {
     top: 20,
     bottom: 20,
     left: 65,
-    right: 2,
+    right: 0,
     labelLeft: 30,
   };
 
@@ -105,15 +105,13 @@ class HourlyBase extends D3Chart {
   refresh() {
     this._visibleData = undefined;
     super.refresh();
-
-    this.svg.select('g.y_axis text.unit').text(this.formatValue(1).split(' ')[1]);
   }
 
   /**
    * Creates the formatter for values, using the largest hourly value.
    */
   createValueFormatter(opts = {}) {
-    return this.createScaler(this.maxYValue() / 100, this.model.get('unit'), opts);
+    return this.createScaler(this.maxYValue(), this.model.get('unit'), opts);
   }
 
   stackOffset() {
@@ -170,19 +168,7 @@ class HourlyBase extends D3Chart {
     const scale = this.createLinearScale();
     const axis = this.createLinearAxis(scale);
 
-    this.svg
-      .append('g')
-      .attr('class', 'y_axis inner_grid')
-      .call(axis)
-      .append('text')
-      .attr('transform', 'rotate(-90)')
-      .attr('class', 'unit')
-      .attr('y', (this.margins.left / 2) * -1 - this.margins.labelLeft)
-      .attr('x', (this.height / 2) * -1 + 12)
-      .attr('dy', '.71em')
-      .attr('font-weight', 'bold')
-      .style('fill', 'black')
-      .style('text-anchor', 'end');
+    this.svg.append('g').attr('class', 'y_axis inner_grid').call(axis);
 
     return scale;
   }
@@ -230,7 +216,7 @@ class HourlyBase extends D3Chart {
       .scale(scale)
       .ticks(7)
       .tickSize(-this.width, 0)
-      .tickFormat((v) => this.formatValue(v).split(' ')[0]);
+      .tickFormat((v) => this.formatValue(v * 10));
   }
 
   createTimeScale(domain) {

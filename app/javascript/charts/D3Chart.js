@@ -30,6 +30,11 @@ export default class extends Base {
   // height of the legend item
   legend_cell_height = 15;
 
+  /**
+   * Controls whether series in the legend can be clicked to hide the series in the chart.
+   */
+  clickableLegend = false;
+
   constructor(...args) {
     super(...args);
 
@@ -185,7 +190,22 @@ export default class extends Base {
       .attr('transform', `translate(${margins.left}, ${margins.top})`);
   }
 
-  legendClick = () => {};
+  /**
+   * Triggered when a legend item is clicked.
+   */
+  legendClick = (event, item) => {
+    if (!this.clickableLegend) {
+      return;
+    }
+
+    const series = this.model.series.filter((s) => s.get('label') == item.label);
+
+    for (const serie of series) {
+      serie.set('hidden', !item.active);
+    }
+
+    this.refresh();
+  };
 
   // Builds a standard legend. Options hash:
   // - series: array of series. The label might be its 'label' attribute or its
@@ -193,14 +213,14 @@ export default class extends Base {
   // - columns: number of columns (default: 1)
   // - leftMargin: (default: 10)
   //
-  drawLegend({ clickable, columns, series }) {
+  drawLegend({ columns, series }) {
     let reversedSeries = [...series];
     reversedSeries.reverse();
 
     this._legend?.remove();
 
     this._legend = new Legend({
-      clickable,
+      clickable: this.clickableLegend,
       columns,
       items: reversedSeries,
       marginLeft: this.margins.left,

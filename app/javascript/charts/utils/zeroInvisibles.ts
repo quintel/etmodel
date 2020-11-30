@@ -1,10 +1,10 @@
 interface ZeroableSeries {
-  skip: boolean;
+  hidden: boolean;
   values: number[];
 }
 
 export const zeroInvisibleSerie = (data: ZeroableSeries): ZeroableSeries => {
-  if (data.skip) {
+  if (data.hidden) {
     data.values = data.values.map(() => 0);
   }
 
@@ -12,8 +12,8 @@ export const zeroInvisibleSerie = (data: ZeroableSeries): ZeroableSeries => {
 };
 
 /**
- * Takes an array of series data and zeros its values when the "skip" property is set. Modifies the
- * original values in place.
+ * Takes an array of series data and zeros its values when the "hidden" property is set. Modifies
+ * the original values in place.
  */
 export default (series: ZeroableSeries[]): ZeroableSeries[] => {
   return series.map((data) => zeroInvisibleSerie(data));

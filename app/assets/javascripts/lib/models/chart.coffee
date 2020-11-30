@@ -131,6 +131,7 @@ class @Chart extends Backbone.Model
       when 'hhp_cop_cost'               then D3.hhp_cop_cost.View
       when 'solar_curtailment'          then D3.solar_curtailment_curve.View
       when 'hourly_summarized'          then D3.hourly_summarized.View
+      when 'line'                       then D3.line.View
       else throw "Chart type not available"
 
   # D3 charts have their own class. Let's make an instance of the right one

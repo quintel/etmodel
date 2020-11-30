@@ -67,6 +67,10 @@ class Api::Area < ActiveResource::Base
     end
   end
 
+  def self.keys
+    all_by_area_code.keys
+  end
+
   def use_network_calculations?
     !!attributes[:use_network_calculations]
   end

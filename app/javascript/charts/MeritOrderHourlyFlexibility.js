@@ -80,13 +80,15 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
         .data(this.stackedData)
         .select('path.area')
         .attr('fill', (data) => this.serieValue(data.key, 'color'))
+        .attr('opacity', (data) => (this.serieValue(data.key, 'hidden') ? 0 : 1))
         .attr('d', (data) => area(data));
 
       return this.svg
         .selectAll('g.serie-line')
         .data(this.totalDemand)
         .select('path.line')
-        .attr('d', (data) => line(data.values));
+        .attr('d', (data) => line(data.values))
+        .attr('opacity', (data) => (this.serieValue(data.key, 'hidden') ? 0 : 1));
     } else {
       return this.drawData(xScale, yScale, area, line);
     }

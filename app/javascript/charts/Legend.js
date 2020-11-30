@@ -17,7 +17,7 @@ class LegendItem extends Backbone.View {
   };
 
   isClickable() {
-    return this.options.clickable && !this.options.isLine;
+    return this.options.clickable;
   }
 
   render() {
@@ -40,7 +40,9 @@ class LegendItem extends Backbone.View {
 
     if (this.options.isLine) {
       this.$el.addClass('target-line');
-    } else if (this.options.clickable) {
+    }
+
+    if (this.options.clickable) {
       this.$el.addClass('clickable');
 
       if (this.options.active) {

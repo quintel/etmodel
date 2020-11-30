@@ -285,6 +285,7 @@ class HourlySummarized extends D3Chart {
         (d) => d,
         (d, i) => `${d.key}-${i}`
       )
+      .transition(transition)
       .attr('y', (d) => (d[0] > d[1] ? this.yScale(d[0]) : this.yScale(d[1])))
       .attr('height', (d) => Math.abs(this.yScale(d[0]) - this.yScale(d[1])))
       .attr('data-tooltip-text', (d) => this.formatValue(Math.abs(d[1]) - Math.abs(d[0])));

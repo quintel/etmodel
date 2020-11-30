@@ -82,7 +82,7 @@ class Legend extends Backbone.View {
       this.el.append(
         new LegendItem({
           clickable,
-          active: !series.get('skip'),
+          active: !series.get('hidden'),
           color: series.get('color'),
           isLine: series.get('is_target_line'),
           key: series.get('id'),

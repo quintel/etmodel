@@ -45,7 +45,7 @@ class Line extends HourlyBase {
         .data(data, (d) => d.key)
         .select('path')
         .transition(transition)
-        .style('opacity', (d) => (this.serieValue(d.key, 'skip') ? 0 : 1))
+        .style('opacity', (d) => (this.serieValue(d.key, 'hidden') ? 0 : 1))
         .attrTween('d', function (d) {
           const prev = this.getAttribute('d');
           const current = lineFunction(d.values);

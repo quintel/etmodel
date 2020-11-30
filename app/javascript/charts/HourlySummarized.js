@@ -38,7 +38,6 @@ const groupKeys = (series) => [...new Set(series.map((s) => s.get('group')))];
  *                for each month), groupX defines each column.
  */
 class HourlySummarized extends D3Chart {
-  legendMargin = 20;
   tickCount = 5;
 
   margins = {
@@ -47,6 +46,11 @@ class HourlySummarized extends D3Chart {
     bottom: 20,
     left: 50,
   };
+
+  /**
+   * Items in the legend may be clicked to hide the series.
+   */
+  clickableLegend = true;
 
   /**
    * Event triggered whenever the group which wraps the data for a group (a month).
@@ -78,7 +82,7 @@ class HourlySummarized extends D3Chart {
 
     this.stackLabelHeight = groupNames.length > 1 ? 60 : 0;
     this.height += this.stackLabelHeight;
-    this.seriesHeight = this.height - this.legendMargin - this.stackLabelHeight;
+    this.seriesHeight = this.height - this.stackLabelHeight;
 
     this.svg = this.createSVGContainer(
       this.width,
@@ -300,7 +304,7 @@ class HourlySummarized extends D3Chart {
 
       values.push(
         ...sliceToMonth(serie.safe_future_value()).map((monthVals, groupKey) =>
-          Object.assign({}, base, { groupKey, y: d3.sum(monthVals) })
+          Object.assign({}, base, { groupKey, y: serie.get('hidden') ? 0 : d3.sum(monthVals) })
         )
       );
     });

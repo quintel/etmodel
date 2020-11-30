@@ -30,7 +30,7 @@ const serieToData = (serie) => {
     color: serie.get('color'),
     label: serie.get('label'),
     key: serie.get('gquery').get('key'),
-    skip: serie.get('skip'),
+    hidden: serie.get('hidden'),
     is_target: serie.get('is_target_line'),
     values,
   };
@@ -74,6 +74,11 @@ class HourlyBase extends D3Chart {
    * day, or the "max" value within the 24-hour period.
    */
   downsampleWith = 'mean';
+
+  /**
+   * Items in the legend may be clicked to hide the series.
+   */
+  clickableLegend = true;
 
   /**
    * Performs the initial draw of the chart and axes. Data is not drawn.
@@ -139,7 +144,7 @@ class HourlyBase extends D3Chart {
   }
 
   drawLegend(series, columns = 1) {
-    return super.drawLegend({ clickable: true, columns, series });
+    return super.drawLegend({ columns, series });
   }
 
   /**
@@ -242,14 +247,6 @@ class HourlyBase extends D3Chart {
       .tickValues(this.dateSelect.tickValues())
       .tickFormat(formatter);
   }
-
-  legendClick = (event, item) => {
-    for (const serie of this.series.filter((s) => s.get('label') == item.label)) {
-      serie.set('skip', !item.active);
-    }
-
-    this.refresh();
-  };
 
   visibleData() {
     if (this._visibleData) {

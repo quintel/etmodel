@@ -30,7 +30,7 @@ class LegendItem extends Backbone.View {
     this.$el.append(
       $('<span class="click-wrapper" />').append(
         $('<span class="rect" />').css('background-color', this.options.color),
-        $('<span />').text(this.options.label)
+        $('<span />').html(this.options.label)
       )
     );
 

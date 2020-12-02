@@ -16,7 +16,7 @@ class Bezier extends D3Chart {
   margins = {
     top: 20,
     bottom: 20,
-    left: 20,
+    left: 0,
     right: 30,
   };
 

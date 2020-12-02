@@ -1,5 +1,7 @@
 /* globals $ App Backbone I18n MeritOrderExcessTableView Metric Quantity TableView */
 
+import { onClick as saveAsPNG } from './utils/saveAsPNG';
+
 /**
  * Contains share functionality for charts. All charts inherit from this base class.
  *
@@ -34,6 +36,12 @@ export default class extends Backbone.View {
    * The name of the table view to be used when showing the chart as a table.
    */
   tableView = 'default';
+
+  /**
+   * Sets whether the chart may be downloaded as an image. May be overridden in subclasses, or
+   * per-chart by setting `config.supports_to_image` to false.
+   */
+  supportsToImage = true;
 
   constructor(...args) {
     super(...args);
@@ -174,8 +182,28 @@ export default class extends Backbone.View {
     this.$el.find('a.show_related').toggle(this.model.wants_related_button());
     this.$el.find('a.show_previous').toggle(this.model.wants_previous_button());
 
+    const saveImage = this.$el.find('.actions a.chart_to_image');
+
+    if (this.canDownloadImage()) {
+      // Unbind any previously assigned saveAs event to prevent it being triggered multiple times.
+      saveImage.show().off('click').on('click', saveAsPNG);
+    } else {
+      saveImage.hide();
+    }
+
     this.updateLockIcon();
     this.$el.find('.actions').show();
+  }
+
+  /**
+   * Returns whether the chart may be downloaded as an image.
+   */
+  canDownloadImage() {
+    return (
+      typeof Promise !== 'undefined' &&
+      this.supportsToImage !== false &&
+      this.model.get('config').supports_to_image !== false
+    );
   }
 
   /**

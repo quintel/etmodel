@@ -19,6 +19,10 @@
              href="#"
              title="<%= t 'output_elements.tooltips.lock' %>"></a>
 
+          <a class="chart_to_image tooltip fa fa-download"
+             href="#"
+             title="<%= t 'output_elements.tooltips.save_as_image' %>"></a>
+
           <a class="chart_format tooltip fa fa-bar-chart-o"
              href="#"
              title="<%= t 'output_elements.tooltips.chart' %>"></a>
@@ -64,5 +68,10 @@
          <div class="loading"></div>
       </div>
     </div>
+    <div class="watermark">
+      <%%= I18n.t('scenario.created_with') %>
+      <br />
+      energytransitionmodel.com
+   </div>
   </div>
 </script>

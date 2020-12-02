@@ -99,6 +99,18 @@ class @BaseChartView extends Backbone.View
     @$el.find(".actions a.chart_info").attr "href", "/descriptions/charts/#{id}"
     @$el.find(".actions a.zoom_chart").attr "href", "/output_elements/#{id}/zoom"
 
+    if @canDownloadImage()
+      # saveAsPNG is exposed by app/javascripts/packs/app.ts
+      #
+      # Unbind any previously assigned saveAs event to prevent it being
+      # triggered multiple times.
+      @$el.find(".actions a.chart_to_image")
+        .show()
+        .off('click')
+        .on('click', BaseChartView.saveAsPNG)
+    else
+      @$el.find(".actions a.chart_to_image").hide()
+
     @$el.find('.actions a').removeClass('loading')
 
     @format_wrapper = if @$el.parents(".fancybox-inner").length > 0
@@ -122,6 +134,13 @@ class @BaseChartView extends Backbone.View
     @$el.find('.actions').show()
 
     this
+
+  canDownloadImage: ->
+    if typeof Promise == 'undefined' then return false
+    if this.supportsToImage == false then return false
+    if this.model.get('config').supports_to_image == false then return false
+
+    true
 
   update_lock_icon: =>
     icon = @$el.find('a.lock_chart')

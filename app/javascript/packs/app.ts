@@ -58,3 +58,10 @@ window.MeritTransformator = {
 
 import DateSelect from '../charts/HourlyBase/DateSelect';
 window.D3ChartDateSelect = DateSelect;
+
+// Extensions to legacy classes
+// ----------------------------
+
+import { onClick as saveAsPNGClick } from '../charts/utils/saveAsPNG';
+
+window.BaseChartView.saveAsPNG = saveAsPNGClick;

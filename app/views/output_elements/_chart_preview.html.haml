@@ -1,5 +1,4 @@
 - i18n_sorted_output_elements(charts).each do |chart|
-  .pick_chart{ 'data-chart_id' => chart.key, 'data-chart_holder' => @chart_holder }
-    %a
-      = image_tag "output_elements/#{chart.icon}", :size => "50x30"
-      %h2= t("output_elements.#{chart.key}.title").html_safe
+  .select-chart{ 'data-chart_id' => chart.key, 'data-chart_holder' => @chart_holder }
+    = image_tag "output_elements/#{chart.icon}", :size => "50x30"
+    %span.chart-name= t("output_elements.#{chart.key}.title").html_safe

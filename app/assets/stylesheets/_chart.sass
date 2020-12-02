@@ -454,35 +454,58 @@ div.d3_container
 
 #select_charts
   height: 100%
-  h1, > h2
-    clear: both
-    font-size: 18px
-    padding-left: 10px
+  display: flex
+  flex-wrap: wrap
+  padding: 10px
+  h1, h2
     background-color: $chart-header-background-color
+    border-bottom: 1px solid #bdcbdc
+    border-top: 1px solid #bdcbdc
+    clear: both
     color: #224368
-    padding: 10px
-    margin-top: 0
-  > h2
-    font-size: 13px
-    padding: 5px 10px
-    margin-top: -12px
-    background-color: #F2FAFF
-  div
+    font-size: 18px
+    font-weight: 600
+    line-height: 1
+    margin: 10px -10px 10px
+    padding-left: 10px
+    padding: 13px 20px 12px
+    width: 100%
+  h2
+    background: none
+    border: none
+    color: #333
+    font-size: 1rem
+    padding: 10px 20px 0
+  h1 + h2
+    margin-top: 0px
+  h1:first-child
+    border-top-left-radius: 4px
+    margin-top: -10px
+  .select-chart
+    align-items: center
     cursor: pointer
-    padding: 5px
-    float: left
-    width: 280px
-    height: 40px
-    margin-left: 10px
-    margin-bottom: 10px
-    &:hover
-      background: $chart-header-background-color
-    a
-      img
-        float: left
-      h2
-        font-size: 13px
-        margin: 0 0 0 60px
+    display: flex
+    height: 45px
+    padding: 10px
+    width: 33%
+    box-sizing: border-box
+    border-radius: 4px
+    will-change: background-color
+    transition: background-color 0.15s
+    &:hover, &:focus
+      background-color: $chart-header-background-color
+    &:active
+      background-color: darken($chart-header-background-color, 5%)
+    img
+      border-radius: 3px
+    .chart-name
+      color: #333
+      display: block
+      font-size: 13px
+      line-height: 1.3
+      margin: 0 0 0 10px
+      sub
+        line-height: 0
 
 // Legend
 

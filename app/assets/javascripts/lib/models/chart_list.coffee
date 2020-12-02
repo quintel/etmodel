@@ -306,14 +306,13 @@ class @ChartList extends Backbone.Collection
         href: url
         type: 'ajax'
         width: 930
-        height: 700
+        height: window.innerHeight - 100
         padding: 0
         afterShow: ->
           # Pick a chart from the chart picker popup
           #
-          # $('body').on "click touchdown", "div.pick_chart", (e) =>
-          $('#select_charts .pick_chart').on 'touchend click', (e) =>
-            data_holder = $(e.target).closest('div.pick_chart')
+          $('#select_charts .select-chart').on 'touchend click', (e) =>
+            data_holder = $(e.target).closest('div.select-chart')
             holder_id = data_holder.data('chart_holder')
             chart_id  = data_holder.data('chart_id')
             load_chart chart_id, holder_id, force: true

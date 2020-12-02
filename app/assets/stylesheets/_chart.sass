@@ -517,16 +517,15 @@ div.d3_container
     padding: 13px 20px 12px
     width: 100%
   h2
-    background: none
+    background: linear-gradient(lighten($chart-header-background-color, 5%), transparent)
     border: none
-    border-top: 1px solid #eee
+    border-top: 1px solid $chart-header-background-color
     color: #333
     font-size: 1rem
-    padding: 15px 20px 0
+    padding: 20px 20px 5px
   h1 + h2
     border-top: none
-    margin-top: 0px
-    padding-top: 10px
+    margin-top: -10px
   h1:first-child
     border-top-left-radius: 4px
     margin-top: -10px
@@ -534,7 +533,7 @@ div.d3_container
     align-items: center
     cursor: pointer
     display: flex
-    height: 45px
+    height: 50px
     padding: 10px
     width: 33%
     box-sizing: border-box
@@ -542,9 +541,9 @@ div.d3_container
     will-change: background-color
     transition: background-color 0.15s
     &:hover, &:focus
-      background-color: $chart-header-background-color
+      background-color: lighten($chart-header-background-color, 3%)
     &:active
-      background-color: darken($chart-header-background-color, 5%)
+      background-color: darken($chart-header-background-color, 1%)
     img
       border-radius: 3px
     .chart-name

@@ -1,7 +1,7 @@
 /* globals $ Backbone */
 
 class LegendItem extends Backbone.View {
-  events = { click: 'onClick' };
+  events = { 'click .click-wrapper': 'onClick' };
 
   onClick = (event) => {
     if (!this.isClickable()) {

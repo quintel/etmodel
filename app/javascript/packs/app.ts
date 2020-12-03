@@ -44,7 +44,7 @@ window.D3.stacked_bar = { View: backwardsCompat(StackedBar) };
 window.D3.electricity_lv_network_load = window.D3.electricity_network_load;
 window.D3.electricity_mv_network_load = window.D3.electricity_network_load;
 window.D3.electricity_hv_network_load = window.D3.electricity_network_load;
-window.D3.flexibility_hourly_suppply_demand_all_carriers = window.d3.merit_order_hourly_flexibility;
+window.D3.hourly_balance = window.D3.merit_order_hourly_flexibility;
 
 // Curve sampling
 // --------------

@@ -237,7 +237,11 @@ class HourlySummarized extends D3Chart {
       .attr('height', 0)
       .attr('y', (d) => this.yScale(d[1]))
       .attr('height', (d) => this.yScale(d[0]) - this.yScale(d[1]))
-      .attr('data-tooltip-title', (d) => this.serieValue(d.key, 'label'));
+      .attr('data-tooltip-title', (d) => {
+        const groupKey = this.serieValue(d.key, 'group');
+        const groupName = I18n.t(`output_element_series.groups.${groupKey}`);
+        return `${this.serieValue(d.key, 'label')} - ${groupName}`;
+      });
 
     // An axis which shows each group ("Jan", "Feb", etc).
     this.groupAxis = d3

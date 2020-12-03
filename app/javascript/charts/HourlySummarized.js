@@ -73,6 +73,32 @@ const groupKeys = (series) => [...new Set(series.map((s) => s.get('group')))];
  *                months within a year, or all weeks within a month).
  * * stackScale - When multiple bars are present for each time period (e.g., supply and demand bars
  *                for each month), groupX defines each column.
+ *
+ * The chart may be customised to display either the sum of values for a month, or the peak value.
+ * It also allows converting values to W to J and Wh to J.
+ *
+ * ### Converting from W to J
+ *
+ * The chart config must contain a "unit" and "config.original_unit":
+ *
+ *   - key: my_chart_key
+ *     output_element_type_name: hourly_summarized
+ *     unit: MJ
+ *     config:
+ *       original_unit: MW
+ *
+ * Both the "unit" and "config.original_unit" must have the same order of magnitude (W and J, MW and
+ * MJ, etc).
+ *
+ * ### Selecting the peak monthly value
+ *
+ * While the chart defaults to showing the sum of all hourly values for a month, you may instead opt
+ * to show the peak value for each month by setting "config.reduce_with" to "max".
+ *
+ *     - key: my_chart_key
+ *       output_element_type_name: hourly_summarized
+ *       config:
+ *         reduce_with: max
  */
 class HourlySummarized extends D3Chart {
   tickCount = 5;

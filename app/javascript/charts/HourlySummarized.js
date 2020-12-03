@@ -8,6 +8,43 @@ import negativeRegionRect from './utils/negativeRegionRect';
 const stack = d3.stack().offset(d3.stackOffsetDiverging);
 
 /**
+ * Values shown in the chart must be converted from the individual hourly values, to a summary shown
+ * for each month. Contributors may choose whether to show the sum of all values in the month, or
+ * the peak, and may opt for the value to be transformed (for example from MW to MJ).
+ *
+ * Receives a configuration, and returns a function which will reduce slices of hourly values to a
+ * single value.
+ *
+ * @return {function}
+ */
+const buildSliceReducer = ({ unit, originalUnit = '', reduceWith = 'sum' }) => {
+  let divideBy = 1;
+  const reducer = reduceWith === 'max' ? d3.max : d3.sum;
+
+  if (originalUnit && originalUnit !== unit) {
+    const mwMatch = originalUnit.toString().match(/^(\w)Wh?$/);
+
+    if (mwMatch && unit === `${mwMatch[1]}J`) {
+      divideBy = 3600;
+    } else {
+      throw new Error(`HourlySummarized cannot convert from ${originalUnit} to ${unit}`);
+    }
+  }
+
+  return (values) => reducer(values) / divideBy;
+};
+
+/**
+ * Receives a Chart model and creates a slice reducer from its config. See buildSliceReducer.
+ */
+const buildSliceReducerFromModel = (model) => {
+  const { original_unit: originalUnit, reduce_with: reduceWith } = model.get('config');
+  const unit = model.get('unit');
+
+  return buildSliceReducer({ originalUnit, reduceWith, unit });
+};
+
+/**
  * Slices data about a year to 12 individual months.
  */
 const sliceToMonth = (data) => {
@@ -295,6 +332,7 @@ class HourlySummarized extends D3Chart {
 
   prepareData() {
     const values = [];
+    const reducer = buildSliceReducerFromModel(this.model);
 
     this.model.non_target_series().forEach((serie) => {
       const base = {
@@ -305,7 +343,7 @@ class HourlySummarized extends D3Chart {
 
       values.push(
         ...sliceToMonth(serie.safe_future_value()).map((monthVals, groupKey) =>
-          Object.assign({}, base, { groupKey, y: serie.get('hidden') ? 0 : d3.sum(monthVals) })
+          Object.assign({}, base, { groupKey, y: serie.get('hidden') ? 0 : reducer(monthVals) })
         )
       );
     });

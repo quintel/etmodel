@@ -312,7 +312,7 @@ class HourlySummarized extends D3Chart {
     super.refresh();
 
     const transition = d3.transition().duration(animate ? 250 : 0);
-    const data = groupedStack(this.prepareData());
+    const data = groupedStack(this.prepareData(), stack);
 
     // Min value.
     let min = 0;

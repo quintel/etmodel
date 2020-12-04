@@ -1,0 +1,25 @@
+---
+- label: electricity_demand_inflexible_curve
+  color: "blue"
+  order_by: 1
+  group: flex
+  show_at_first: false
+  is_target_line: true
+  target_line_position: ''
+  gquery: electricity_demand_inflexible_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_supply_demand_all_carriers
+  key: electricity_demand_inflexible_curve_flexibility_hourly_supply_demand_all_carriers
+- label: electricity_supply_inflexible_curve
+  color: "red"
+  order_by: 2
+  group: flex
+  show_at_first: false
+  is_target_line: true
+  target_line_position: ''
+  gquery: electricity_supply_inflexible_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_supply_demand_all_carriers
+  key: electricity_supply_inflexible_curve_flexibility_hourly_supply_demand_all_carriers

@@ -298,26 +298,22 @@ class @ChartList extends Backbone.Collection
 
     # Launch the chart picker popup
     #
-    $(document).on "touchend click", "a.select_chart, a.add_chart", (e) ->
+    $(document).on "touchend click", "a.select_chart, a.add_chart", (e) =>
       e.preventDefault()
-      url = $(this).attr('href')
-      $.fancybox.open
-        autoSize: false
-        href: url
-        type: 'ajax'
-        width: 930
-        height: window.innerHeight - 100
-        padding: 0
-        afterShow: ->
-          # Pick a chart from the chart picker popup
-          #
-          $('#select_charts .select-chart').on 'touchend click', (e) =>
-            data_holder = $(e.target).closest('div.select-chart')
-            holder_id = data_holder.data('chart_holder')
-            chart_id  = data_holder.data('chart_id')
-            load_chart chart_id, holder_id, force: true
-            close_fancybox()
-            e.preventDefault()
+
+      holderId = $(e.target).closest('.chart_holder').data('holder_id')
+      isDisabled = @chart_already_on_screen
+
+      ChartListView.fetchData().then((data) ->
+        new ChartListView(data: data).render(
+          (chartId) -> load_chart(chartId, holderId, force: true),
+          (chartId) -> isDisabled(chartId)
+        )
+      )
+
+    # Prefetch chart data when hovering chart selection buttons.
+    $(document).on "mouseover", "a.select_chart, a.add_chart", (e) =>
+      ChartListView.fetchData();
 
     # Toggle chart lock
     #

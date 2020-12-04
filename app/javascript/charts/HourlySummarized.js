@@ -377,9 +377,18 @@ class HourlySummarized extends D3Chart {
       };
 
       values.push(
-        ...sliceToMonth(serie.safe_future_value()).map((monthVals, groupKey) =>
-          Object.assign({}, base, { groupKey, y: serie.get('hidden') ? 0 : reducer(monthVals) })
-        )
+        ...sliceToMonth(serie.safe_future_value()).map((monthVals, groupKey) => {
+          let reduced = reducer(monthVals);
+
+          if (serie.get('hidden')) {
+            // A hidden series which would be below zero is given a tiny value to prevent D3 from
+            // animating a transition to a non-negative value (0). Without this the chart serie
+            // appear to fly upwards towards zero.
+            reduced *= 1e-30;
+          }
+
+          return Object.assign({}, base, { groupKey, y: reduced });
+        })
       );
     });
 

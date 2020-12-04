@@ -119,7 +119,7 @@ class OutputElement < YModel::Base
   def self.select_by_group
     Hash[whitelisted.group_by(&:group).each.map do |group, elements|
       if elements.map(&:sub_group).compact.any?
-        elements = elements.group_by(&:sub_group)
+        elements = elements.group_by { |e| e.sub_group.presence }
       end
 
       [group, elements]

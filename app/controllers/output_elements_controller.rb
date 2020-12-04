@@ -29,8 +29,12 @@ class OutputElementsController < ApplicationController
   def index
     # id of the element the chart will be placed in
     @chart_holder = params[:holder]
-
     @groups = OutputElement.select_by_group
+
+    respond_to do |wants|
+      wants.html {}
+      wants.json { render(json: GroupedOutputElementPresenter.new(@groups)) }
+    end
   end
 
   def zoom

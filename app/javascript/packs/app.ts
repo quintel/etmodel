@@ -61,6 +61,13 @@ window.MeritTransformator = {
 import DateSelect from '../charts/HourlyBase/DateSelect';
 window.D3ChartDateSelect = DateSelect;
 
+// Other Backbone classes
+// ----------------------
+
+import ChartListView from '../views/ChartListView';
+
+window.ChartListView = ChartListView;
+
 // Extensions to legacy classes
 // ----------------------------
 

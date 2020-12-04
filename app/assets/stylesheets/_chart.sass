@@ -501,11 +501,79 @@ div.d3_container
 
 // ------ chart selector -----------------------------------------------------
 
-#select_charts
-  height: 100%
-  display: flex
-  flex-wrap: wrap
-  padding: 10px
+#select-charts-dialog
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  overflow: hidden
+  .search
+    background: #eee
+    border-bottom: 1px solid #bfbfbf
+    border-top-left-radius: 4px
+    border-top-right-radius: 4px
+    margin-bottom: -1px
+    position: relative
+    z-index: 3
+    .fa-search
+      color: #777
+      font-size: 17px
+      left: 20px
+      position: absolute
+      top: 14px
+    input
+      border-radius: 4px 4px 0 0
+      border: none
+      font-size: 16px
+      padding: 14px 20px 13px 42px
+      width: 100%
+      &:focus
+        box-shadow: none
+  .no-matches
+    border-top: 1px solid #ccc
+    color: #555
+    font-size: 16px
+    margin-top: -30px
+    padding: 150px 0 0
+    position: relative
+    text-align: center
+    z-index: 2
+    span.wrap
+      background: #eee
+      border-radius: 4px
+      padding: 10px 15px
+    button
+      background: none
+      border-radius: 5px
+      border: none
+      color: #555
+      font-size: 16px
+      margin: -2px
+      padding: 2px
+      transition: box-shadow 0.15s
+      will-change: box-shadow
+      &:hover
+        color: #222
+        cursor: pointer
+        text-decoration: underline
+      &:focus
+        box-shadow: 0 0 0 3px #cfe5f7
+        outline: none
+.chart-selection
+  bottom: 0
+  box-sizing: border-box
+  overflow-y: scroll
+  padding: 10px 20px 0
+  position: absolute
+  top: 45px
+  width: 100%
+  z-index: 1
+  .chart-list-item, .charts
+    display: flex
+    flex-wrap: wrap
+    &.group
+      width: 100%
   h1, h2
     background-color: $chart-header-background-color
     border-bottom: 1px solid #bdcbdc
@@ -515,38 +583,51 @@ div.d3_container
     font-size: 18px
     font-weight: 600
     line-height: 1
-    margin: 10px -10px 10px
-    padding-left: 10px
+    margin: -10px -20px 10px
     padding: 13px 20px 12px
+    position: relative
     width: 100%
+    z-index: 2
   h2
-    background: linear-gradient(lighten($chart-header-background-color, 5%), transparent)
+    background: none
     border: none
     border-top: 1px solid $chart-header-background-color
     color: #333
     font-size: 1rem
-    padding: 20px 20px 5px
-  h1 + h2
-    border-top: none
-    margin-top: -10px
-  h1:first-child
-    border-top-left-radius: 4px
-    margin-top: -10px
-  .select-chart
+    padding: 20px 0 0
+    position: relative
+    margin: -11px 0 10px
+    z-index: 1
+    &.empty
+      padding: 0
+  .charts
+    // Wrapper which contains multiple charts.
+    padding-bottom: 20px
+    margin: 0 -10px
+    width: 100%
+    width: calc(100% + 20px)
+  .chart
     align-items: center
+    border-radius: 4px
+    box-sizing: border-box
     cursor: pointer
     display: flex
+    flex-wrap: nowrap
     height: 50px
+    overflow: hidden
     padding: 10px
-    width: 33%
-    box-sizing: border-box
-    border-radius: 4px
-    will-change: background-color
     transition: background-color 0.15s
+    width: 33.3%
+    will-change: background-color
     &:hover, &:focus
       background-color: lighten($chart-header-background-color, 3%)
     &:active
       background-color: darken($chart-header-background-color, 1%)
+    &.disabled
+      opacity: 0.25
+      &:hover, &:focus, &:active
+        cursor: default
+        background-color: transparent
     img
       border-radius: 3px
     .chart-name

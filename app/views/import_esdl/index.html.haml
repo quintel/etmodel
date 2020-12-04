@@ -10,7 +10,7 @@
       #mondaine_drive
         .login_to_drive
           %h2 Log in to the Mondaine Drive
-          = form_with url: import_esdl_browse_mondaine_drive_path, local: false, id: 'login_to_drive' do |f|
+          = form_with url: esdl_suite_login_path, id: 'login_to_drive' do |f|
             .field
               = f.label :username, 'Username'
               = f.text_field :username, required: true
@@ -18,8 +18,7 @@
               = f.label :password, 'Password'
               = f.text_field :password, required: true
 
-            = f.submit 'Log in', class: 'button login'
-            -#   .dot{ class: 'fa fa-circle' }
+            = f.submit 'Log in', class: 'button login', id: 'login-to-esdl-drive'
         %a{href: 'mondaine_drive.nl'} What is this?
         .dot{ class: 'fa fa-circle' }
         %a{href: 'mondaine_drive.nl'} Create a Mondaine Drive account

@@ -143,7 +143,6 @@ class StackedBar extends D3Chart {
     const tallest = (this.model.max_series_value() || 0) * 1.05;
     const smallest = Math.min(this.model.min_series_value(), 0);
 
-    this.stackData = stackData;
     this.y = this.y.domain([smallest, tallest]).nice();
 
     // Animate the y-axis

@@ -13,12 +13,12 @@ jobs:
     - uses: actions/stale@v3
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: |
+        stale-issue-message: >
           This issue has had no activity for 60 days and will be closed in 7 days. Removing the
           "Stale" label or posting a comment will prevent it from being closed automatically. You
           can also add the "Pinned" label to ensure it isn't marked as stale in the future.
         exempt-issue-labels: 'Pinned, Priority'
-        stale-pr-message: |
+        stale-pr-message: >
           This pull request has had no activity for 60 days and will be closed in 7 days. Removing
           the "Stale" label or posting a comment will prevent it from being closed automatically.
           You can also add the "Pinned" label to ensure it isn't marked as stale in the future.

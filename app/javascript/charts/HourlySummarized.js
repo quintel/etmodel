@@ -395,7 +395,9 @@ class HourlySummarized extends D3Chart {
 
     groupedStack(this.prepareData()).forEach((monthData) => {
       monthData.forEach((datum) => {
-        maxValue = Math.max(maxValue, ...datum.map(([, upper]) => upper));
+        datum.forEach(([lower, upper]) => {
+          maxValue = Math.max(maxValue, Math.abs(lower), upper);
+        });
       });
     });
 

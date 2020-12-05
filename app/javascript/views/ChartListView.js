@@ -1,6 +1,46 @@
 /* globals $ Backbone I18n */
 
 /**
+ * A simple fuzzy text matcher, inspired by bevacqua/fuzzysearch (MIT License).
+ *
+ * Whereas fuzzysearch.js matches one string against another, where each character may appear
+ * anywhere, this version matches tokens where each searchToken must be a substring of a textToken.
+ *
+ * @example
+ *   // Matches
+ *   search(['fi', 'd'], ['final', 'energy', 'demand'])
+ *
+ *   // Does not match, because "fi" is not a substring of any of the second argument tokens.
+ *   // fuzzystring.js would match this: the "f" from "four" and the "e" from "candles".
+ *   search(['fe'], ['four', 'candles'])
+ *
+ *   // Tokens may match in any order.
+ *   search(['de', 'fi'], ['final', 'energy', 'demand']) // => true
+ */
+const search = (searchTokens, textTokens) => {
+  let sLength = searchTokens.length;
+  let tLength = textTokens.length;
+
+  if (sLength > tLength) {
+    return false;
+  }
+
+  outer: for (let sIndex = 0; sIndex < sLength; sIndex++) {
+    for (let tIndex = 0; tIndex < tLength; tIndex++) {
+      if (textTokens[tIndex].includes(searchTokens[sIndex])) {
+        // Matches search token, move to the next one.
+        continue outer;
+      }
+    }
+
+    // No more text tokens to to match against the search token.
+    return false;
+  }
+
+  return true;
+};
+
+/**
  * Given data for a list item, the onSelectChart and isElementDisabled callbacks (see
  * ChartListView#render) returns the element as a ListItem.
  */
@@ -44,7 +84,7 @@ class ListItem extends Backbone.View {
     // Create search text which omits any HTML.
     const stripEl = document.createElement('DIV');
     stripEl.innerHTML = this.options.name;
-    this.searchText = stripEl.textContent.toLowerCase();
+    this.nameTokens = stripEl.textContent.toLowerCase().split(' ');
   }
 
   /**
@@ -53,8 +93,8 @@ class ListItem extends Backbone.View {
    *
    * Returns true if the text matched, false otherwise.
    */
-  performSearch(text) {
-    if (text.length === 0 || this.searchText.includes(text)) {
+  performSearch(searchTokens) {
+    if (searchTokens.length === 0 || search(searchTokens, this.nameTokens)) {
       this.show(true);
       return true;
     }
@@ -62,7 +102,7 @@ class ListItem extends Backbone.View {
     // If the item doesn't match, test the children. If any of those match
     let childShown = false;
 
-    this.children.forEach((el) => (childShown = el.performSearch(text) || childShown));
+    this.children.forEach((el) => (childShown = el.performSearch(searchTokens) || childShown));
 
     if (childShown) {
       this.show();
@@ -331,10 +371,9 @@ export default class ChartListView extends Backbone.View {
    */
   performSearch(text) {
     let anyMatches = false;
+    const searchTokens = text.toLowerCase().trim().split(' ');
 
-    this.elements.forEach(
-      (el) => (anyMatches = el.performSearch(text.toLowerCase().trim()) || anyMatches)
-    );
+    this.elements.forEach((el) => (anyMatches = el.performSearch(searchTokens) || anyMatches));
 
     if (anyMatches) {
       this.noMatches.hide();

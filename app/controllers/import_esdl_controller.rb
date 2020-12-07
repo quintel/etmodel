@@ -4,11 +4,12 @@
 # specified ESDL file. The service returns the scenario_id when (fully) succesful.
 class ImportEsdlController < ApplicationController
   before_action :ensure_esdl_enabled
-
   # layout 'landing'
 
   # what if user is already logged in?
-  def index; end
+  def index
+    @user_info = session[:esdl_user_info]&.raw_attributes
+  end
 
   def create
     result = CreateEsdlScenario.call(params[:esdl_file])

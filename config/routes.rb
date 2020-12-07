@@ -128,6 +128,7 @@ Rails.application.routes.draw do
 
   get '/import_esdl'  => 'import_esdl#index'
   post '/import_esdl/create' => 'import_esdl#create', as: :import_esdl_create
+  get '/import_esdl/browse_mondaine_drive' => 'import_esdl#browse_mondaine_drive'
   post '/esdl_suite/login' => 'esdl_suite#login'
   get '/esdl_suite/redirect' => 'esdl_suite#redirect'
 

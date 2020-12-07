@@ -16,8 +16,9 @@ class EsdlSuiteController < ApplicationController
   def redirect
     @user_info = esdl_suite_service.redirect(params[:code], session[:nonce])
 
-    puts @user_info.raw_attributes
-    # redirect_to browse_mondaine_drive, format: :js
+    # Store in session for now
+    session[:esdl_user_info] = @user_info
+    redirect_to import_esdl_path
   end
 
   private
@@ -25,15 +26,15 @@ class EsdlSuiteController < ApplicationController
   # Set up a new EsdlSuiteService to handle all OpenIDConnect communications
   def esdl_suite_service
     @esdl_suite_service ||= EsdlSuiteService.new(
-      APP_CONFIG[:esdl_suite_discover_url], APP_CONFIG[:esdl_suite_client_id],
+      APP_CONFIG[:esdl_suite_url], APP_CONFIG[:esdl_suite_client_id],
       APP_CONFIG[:esdl_suite_client_secret], redirect_url
     )
   end
 
   def ensure_esdl_suite_configured
-    APP_CONFIG[:esdl_suite_client_id].present? &&
+    redirect_to import_esdl_path unless APP_CONFIG[:esdl_suite_client_id].present? &&
       APP_CONFIG[:esdl_suite_client_secret].present? &&
-      APP_CONFIG[:esdl_suite_discover_url].present?
+      APP_CONFIG[:esdl_suite_url].present?
   end
 
   # TODO: generate a unique value. Nonce is used to validate the request at

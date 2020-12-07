@@ -1,7 +1,7 @@
 ---
 - label: electricity_inflexible_demand
   color: "orange"
-  order_by: 1
+  order_by: 2
   group: flex
   show_at_first: false
   is_target_line: false
@@ -14,7 +14,7 @@
 
 - label: total_demand
   color: "red"
-  order_by: 3
+  order_by: 4
   group: flex
   show_at_first: false
   is_target_line: false
@@ -26,8 +26,8 @@
   key: electricity_demand_total_curve_flexibility_hourly_supply_demand_all_carriers
 
 - label: electricity_inflexible_supply
-  color: "blue"
-  order_by: 2
+  color: "#87CEEB"
+  order_by: 1
   group: flex
   show_at_first: false
   is_target_line: false
@@ -37,3 +37,16 @@
   dependent_on:
   output_element_key: flexibility_hourly_supply_demand_all_carriers
   key: electricity_supply_inflexible_curve_flexibility_hourly_supply_demand_all_carriers
+
+- label: total_production
+  color: "blue"
+  order_by: 3
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_production_total_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_supply_demand_all_carriers
+  key: electricity_production_total_curve_flexibility_hourly_supply_demand_all_carriers

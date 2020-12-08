@@ -7,7 +7,7 @@
   sub_group: flexibility
   unit: MJ
   config:
-    linked_chart: electricity_hv_network_load
+    linked_chart: flexibility_hourly_supply_demand_all_carriers
     original_unit: 'MW'
 - group: Merit
   hidden: false
@@ -17,5 +17,5 @@
   sub_group: flexibility
   unit: MJ
   config:
-    linked_chart: electricity_hv_network_load
+    linked_chart: flexibility_hourly_carriers_inflexible_imbalance
     original_unit: 'MW'

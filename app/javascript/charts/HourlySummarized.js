@@ -435,7 +435,7 @@ class HourlySummarized extends D3Chart {
 
     this.model.non_target_series().forEach((serie) => {
       const base = {
-        id: serie.get('id'),
+        id: serie.get('gquery').get('key'),
         stackKey: serie.get('group'),
         x: serie.get('group'),
       };

@@ -63,6 +63,39 @@ const sliceToMonth = (data) => {
 const groupKeys = (series) => [...new Set(series.map((s) => s.get('group')))];
 
 /**
+ * Given a linked chart and month number (zero indexed), loads the chart at the chosen month.
+ */
+const loadLinkedChart = (key, month) => {
+  App.settings.set('merit_charts_date', `month,${month + 1}`);
+
+  if (!App.charts.chart_already_on_screen(key)) {
+    App.charts.load(key);
+  }
+};
+
+/**
+ * Return a function which may be used to check if a serie (the data returned by the D3 selection)
+ * linked to another chart.
+ *
+ * @param {Chart} chart
+ *   The chart model.
+ * @param {(serieKey: string, attribute: string) => string}
+ *   A function which receives a serie key and attribute to be looked up, and returns the attribute.
+ *   Typically the view's serieValue method.
+ *
+ * @return {(legendKey: string) => boolean}
+ */
+const buildIsLinkedSerie = (chart, lookup) => {
+  let set = new Set();
+
+  if (typeof chart.get('config').linked_chart === 'object') {
+    set = new Set(Object.keys(chart.get('config').linked_chart));
+  }
+
+  return (d) => set.has(lookup(d.key, 'label_key'));
+};
+
+/**
  * The hourly summarized chart receives curves describing load for each hour in the year (8760 data
  * points per series). It presents this data summarised as a bar chart - one per month in the year.
  *
@@ -116,12 +149,12 @@ class HourlySummarized extends D3Chart {
   clickableLegend = true;
 
   /**
-   * Event triggered whenever the group which wraps the data for a group (a month).
+   * Event triggered whenever the user clicks a month group.
    */
   onMonthSelect = ({ currentTarget }) => {
     const linkedChart = this.model.get('config').linked_chart;
 
-    if (!linkedChart) {
+    if (typeof linkedChart !== 'string') {
       return false;
     }
 
@@ -131,10 +164,32 @@ class HourlySummarized extends D3Chart {
       return false;
     }
 
-    App.settings.set('merit_charts_date', `month,${monthNum + 1}`);
+    loadLinkedChart(linkedChart, monthNum);
+  };
 
-    if (!App.charts.chart_already_on_screen(linkedChart)) {
-      App.charts.load(linkedChart);
+  /**
+   * Event triggered whenever the user clicks a serie <rect>. Does nothing if the chart does not
+   * have per-serie linked_chart config.
+   */
+  onSerieSelect = ({ currentTarget }, { key }) => {
+    const linkedChartConf = this.model.get('config').linked_chart;
+
+    if (typeof linkedChartConf !== 'object') {
+      return false;
+    }
+
+    const group = currentTarget.closest('.date-group');
+    const monthNum = Number.parseInt(group.dataset.month, 10);
+    const labelKey = this.serieValue(key, 'label_key');
+
+    if (Number.isNaN(monthNum)) {
+      return false;
+    }
+
+    const linkedChart = linkedChartConf[labelKey];
+
+    if (linkedChart) {
+      loadLinkedChart(linkedChart, monthNum);
     }
   };
 
@@ -191,7 +246,10 @@ class HourlySummarized extends D3Chart {
       .selectAll('g')
       .data(groupedStack(this.prepareData(), stack), (d, i) => `month-${i}`)
       .join('g')
-      .attr('class', `date-group ${this.model.get('config').linked_chart ? 'linked' : ''}`)
+      .attr(
+        'class',
+        `date-group ${typeof this.model.get('config').linked_chart === 'string' ? 'linked' : ''}`
+      )
       .attr('transform', (d, i) => {
         return `translate(${this.groupScale(i)},0)`;
       })
@@ -220,7 +278,11 @@ class HourlySummarized extends D3Chart {
       .attr('class', 'serie-group')
       .attr('fill', (d) => {
         return this.serieValue(d.key, 'color');
-      });
+      })
+      .on('click', this.onSerieSelect);
+
+    // Contains legend keys which are linked to another chart.
+    let isLinkedSerie = buildIsLinkedSerie(this.model, this.serieValue);
 
     // Finally join each datapoint for a series (the seriesKey, typically present and future years).
     series
@@ -230,7 +292,9 @@ class HourlySummarized extends D3Chart {
         (d, i) => `${d.key}-${i}`
       )
       .join('rect')
-      .attr('class', 'serie')
+      .attr('class', (d) => {
+        return isLinkedSerie(d) ? 'serie linked' : 'serie';
+      })
       .attr('x', (d) => this.stackScale(d.data.x))
       .attr('y', this.seriesHeight)
       .attr('width', this.stackScale.bandwidth())
@@ -242,7 +306,7 @@ class HourlySummarized extends D3Chart {
 
         if (groupKey) {
           const groupName = ` - ${I18n.t(`output_element_series.groups.${groupKey}`)}`;
-          return `${this.serieValue(d.key, 'label')} - ${groupName}`;
+          return `${this.serieValue(d.key, 'label')}${groupName}`;
         } else {
           return `${this.serieValue(d.key, 'label')}`;
         }

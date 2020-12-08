@@ -73,7 +73,7 @@ export default class extends Base {
    * @param {string} attribute
    *   The name of the attribute on the serie to be retrieved.
    */
-  serieValue(serieKey, attribute) {
+  serieValue = (serieKey, attribute) => {
     const serie = this.model.series.with_gquery(serieKey);
 
     if (!serie) {
@@ -81,7 +81,7 @@ export default class extends Base {
     }
 
     return serie.get(attribute);
-  }
+  };
 
   render(force_redraw) {
     const firstRender = !this.drawn;

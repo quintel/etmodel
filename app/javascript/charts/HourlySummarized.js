@@ -18,20 +18,20 @@ const stack = d3.stack().offset(d3.stackOffsetDiverging);
  * @return {function}
  */
 const buildSliceReducer = ({ unit, originalUnit = '', reduceWith = 'sum' }) => {
-  let divideBy = 1;
+  let multiplier = 1;
   const reducer = reduceWith === 'max' ? d3.max : d3.sum;
 
   if (originalUnit && originalUnit !== unit) {
     const mwMatch = originalUnit.toString().match(/^(\w)Wh?$/);
 
     if (mwMatch && unit === `${mwMatch[1]}J`) {
-      divideBy = 3600;
+      multiplier = 3600;
     } else {
       throw new Error(`HourlySummarized cannot convert from ${originalUnit} to ${unit}`);
     }
   }
 
-  return (values) => reducer(values) / divideBy;
+  return (values) => reducer(values) * multiplier;
 };
 
 /**

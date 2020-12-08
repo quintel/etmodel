@@ -8,6 +8,19 @@ import negativeRegionRect from './utils/negativeRegionRect';
 const stack = d3.stack().offset(d3.stackOffsetDiverging);
 
 /**
+ * Options for reducing monthly values to a single value.
+ */
+const reducerFunctions = {
+  first: (values) => values[0],
+  last: (values) => values[values.length - 1],
+  max: d3.max,
+  mean: d3.mean,
+  median: d3.mean,
+  min: d3.min,
+  sum: d3.sum,
+};
+
+/**
  * Values shown in the chart must be converted from the individual hourly values, to a summary shown
  * for each month. Contributors may choose whether to show the sum of all values in the month, or
  * the peak, and may opt for the value to be transformed (for example from MW to MJ).
@@ -19,7 +32,11 @@ const stack = d3.stack().offset(d3.stackOffsetDiverging);
  */
 const buildSliceReducer = ({ unit, originalUnit = '', reduceWith = 'sum' }) => {
   let multiplier = 1;
-  const reducer = reduceWith === 'max' ? d3.max : d3.sum;
+  const reducer = reducerFunctions[reduceWith];
+
+  if (!reducer) {
+    throw new Error(`No such reduceWith option: ${reduceWith}`);
+  }
 
   if (originalUnit && originalUnit !== unit) {
     const mwMatch = originalUnit.toString().match(/^(\w)Wh?$/);

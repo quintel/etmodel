@@ -9,7 +9,7 @@
 
 - color: "#B22222"
   dependent_on:
-  gquery: heat_network_imbalance_inflexible_curve
+  gquery: heat_network_imbalance_cumulative_curve
   key: heat_network_imbalance_inflexible_curve_flexiblity_monthly_carriers_cumulative_imbalance
   label: heat
   order_by: 2
@@ -17,7 +17,7 @@
 
 - color: "#CCCCCC"
   dependent_on:
-  gquery: network_gas_imbalance_inflexible_curve
+  gquery: network_gas_imbalance_cumulative_curve
   key: network_gas_imbalance_inflexible_curve_flexiblity_monthly_carriers_cumulative_imbalance
   label: gas
   order_by: 3
@@ -25,7 +25,7 @@
 
 - color: "#87CEEB"
   dependent_on:
-  gquery: hydrogen_imbalance_inflexible_curve
+  gquery: hydrogen_imbalance_cumulative_curve
   key: hydrogen_imbalance_inflexible_curve_flexiblity_monthly_carriers_cumulative_imbalance
   label: hydrogen
   order_by: 4

@@ -216,7 +216,7 @@ class HourlyBase extends D3Chart {
       .scale(scale)
       .ticks(7)
       .tickSize(-this.width, 0)
-      .tickFormat((v) => this.formatValue(v * 10));
+      .tickFormat((v) => this.formatValue(v));
   }
 
   createTimeScale(domain) {

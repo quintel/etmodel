@@ -62,6 +62,17 @@
 
     .button
       background: linear-gradient(lighten($landing-gold, 10%), $landing-gold)
+      color: white
+      &.login
+        width: 250px
+        font-size: 0.875rem
+        padding: 8px 4px
+        margin-bottom: 20px
+      &:hover
+        text-decoration: none !important
+        background: linear-gradient(lighten($landing-gold, 15%), lighten($landing-gold, 10%))
+      &:active
+        background: linear-gradient(darken($landing-gold, 1%), darken($landing-gold, 10%))
 
     .browsing
       padding: 10px
@@ -91,19 +102,11 @@
       width: 100%
 
     .button, .wait
-      border-radius: 3px
-      font-size: 1rem
-      font-weight: bold
       margin-top: 20px
       margin-right: 0
       padding: 10px 15px
-      text-align: center
+
       width: 200px
-      &.login
-        width: 70px
-        font-size: 0.875rem
-        padding: 8px 4px
-        margin-bottom: 20px
       &.start_esdl
         align-self: flex-end
         margin-right: -81px
@@ -115,16 +118,19 @@
         margin: -3px 0.25rem -2px 0
         vertical-align: text-top
 
-    .button
-      background: $landing-green
-      background: linear-gradient(lighten($landing-green, 10%), $landing-green)
-      border: none
-      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
-      color: white
-      cursor: pointer
-      text-shadow: none
-      &:hover
-        background: linear-gradient(lighten($landing-green, 14%), lighten($landing-green, 7%))
-      &:active
-        background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))
-
+  .button
+    background: $landing-green
+    background: linear-gradient(lighten($landing-green, 10%), $landing-green)
+    border: none
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
+    color: white
+    cursor: pointer
+    text-shadow: none
+    text-align: center
+    font-size: 1rem
+    font-weight: bold
+    border-radius: 3px
+    &:hover
+      background: linear-gradient(lighten($landing-green, 14%), lighten($landing-green, 7%))
+    &:active
+      background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))

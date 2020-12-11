@@ -8,25 +8,17 @@
         = t('esdl.description').html_safe
     .half_page.two_parts
       #mondaine_drive
-        - if @user_info
+        - if @user_info and false
           %h2 Mondaine Drive van #{@user_info['name']}
         - else
           .login_to_drive
-            %h2 Log in to the Mondaine Drive
-            = form_with url: esdl_suite_login_path, id: 'login_to_drive' do |f|
-              .field
-                = f.label :username, 'Username'
-                = f.text_field :username, required: true
-              .field
-                = f.label :password, 'Password'
-                = f.text_field :password, required: true
-
-              = f.submit 'Log in', class: 'button login', id: 'login-to-esdl-drive'
-          %a{href: 'mondaine_drive.nl'} What is this?
+            %h2= t('esdl.mondaine_drive.use')
+            %a.button.login{href: esdl_suite_login_path}
+              = t('esdl.mondaine_drive.sign_in')
+          %a{href: 'https://www.mondaine-suite.nl/library/'}= t('esdl.mondaine_drive.about')
           .dot{ class: 'fa fa-circle' }
-          %a{href: 'mondaine_drive.nl'} Create a Mondaine Drive account
-      .or
-        %h2 Or...
+          %a{href: 'mondaine_drive.nl'}= t('esdl.mondaine_drive.sign_up')
+      %h2= t('esdl.or')
       = form_with url: import_esdl_create_path, id: 'import_esdl' do |f|
         .upload_file
           %h2 #{t('esdl.upload')}

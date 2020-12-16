@@ -3,18 +3,18 @@
 # Only login and redirect. Uses a service that helps with logging in a user
 # through OpenIDConnect
 class EsdlSuiteController < ApplicationController
+  before_action :require_user
   before_action :ensure_esdl_suite_configured
-  before_action :generate_nonce
 
   # Redirects the user to the login page of the ESDL Suite
   def login
-    redirect_to esdl_suite_service.auth_uri(session[:nonce])
+    redirect_to esdl_suite_service.auth_uri(new_nonce)
   end
 
   # Route where the ESDL Suite redirects the user to after a succesfull login
   # Extracts the users info through the EsdlSuiteService
   def redirect
-    @user_info = esdl_suite_service.redirect(params[:code], session[:nonce])
+    @user_info = esdl_suite_service.redirect(params[:code], stored_nonce)
 
     # Store in session for now
     session[:esdl_user_info] = @user_info
@@ -37,12 +37,15 @@ class EsdlSuiteController < ApplicationController
       APP_CONFIG[:esdl_suite_url].present?
   end
 
-  # TODO: generate a unique value. Nonce is used to validate the request at
+  # Generates a unique value. Nonce is used to validate the request at
   # our side.
-  def generate_nonce
-    return if session[:nonce]
+  def new_nonce
+    session[:esdl_nonce] = SecureRandom.hex(16)
+  end
 
-    session[:nonce] = 'xxx'
+  # Delete nonce after single use
+  def stored_nonce
+    session.delete(:esdl_nonce)
   end
 
   # The url the ESDL Suite should redirect to after a successfull user login

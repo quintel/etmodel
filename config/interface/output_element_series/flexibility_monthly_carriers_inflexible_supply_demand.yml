@@ -22,7 +22,7 @@
   group: supply
   key: heat_network_production_inflexible_curve
   label: heat
-  order_by: 3
+  order_by: 5
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
 - color: "#B22222"
   dependent_on:
@@ -30,7 +30,7 @@
   group: demand
   key: heat_network_demand_inflexible_curve
   label: heat
-  order_by: 4
+  order_by: 6
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
 
 - color: "#CCCCCC"
@@ -39,7 +39,7 @@
   group: supply
   key: network_gas_production_inflexible_curve
   label: gas
-  order_by: 5
+  order_by: 3
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
 - color: "#CCCCCC"
   dependent_on:
@@ -47,7 +47,7 @@
   group: demand
   key: network_gas_demand_inflexible_curve
   label: gas
-  order_by: 6
+  order_by: 4
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
 
 - color: "#87CEEB"

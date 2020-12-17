@@ -29,3 +29,32 @@
   config:
     original_unit: 'MW'
     reduce_with: last
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Merit
+  sub_group: flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_supply_demand_all_carriers
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Merit
+  sub_group: flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_carriers_inflexible_imbalance
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+  

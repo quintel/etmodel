@@ -7,7 +7,7 @@
   sub_group: flexibility
   unit: MJ
   config:
-    linked_chart: flexibility_hourly_supply_demand_all_carriers
+    linked_chart: flexibility_hourly_electricity_supply_demand
     original_unit: 'MW'
 - group: Merit
   hidden: false
@@ -36,7 +36,7 @@
   sub_group: flexibility
   show_point_label: false
   growth_chart: false
-  key: flexibility_hourly_supply_demand_all_carriers
+  key: flexibility_hourly_electricity_supply_demand
   max_axis_value:
   min_axis_value:
   hidden: false
@@ -57,4 +57,3 @@
   requires_merit_order: true
   dependent_on: ''
   output_element_type_name: line
-  

@@ -9,7 +9,7 @@
 class EsdlSuiteService
   include Service
 
-  # Most of the methods below are based on https://docs.openathens.net/display/public/OAAccess/Ruby+OpenID+Connect+example
+  # Arguments:
   # provider_uri                URI, when extended with /.well-known/openid-configuration
   #                             acts as a discovery url pointing to a JSON file
   #                             containing all OpenID settings for the ESDL Suite
@@ -29,7 +29,7 @@ class EsdlSuiteService
 
   # Returns the authentication URL, where the user should be redirected to to log in.
   # nonce                       Unique value associated with the request. Same
-  #                             value needs to be passed to the #redirect method
+  #                             value needs to be passed to the #authenticate method
   #                             (this value is stored in the user session)
   #
   def auth_uri(nonce)
@@ -41,26 +41,34 @@ class EsdlSuiteService
   end
 
   # Checks the validity of the redirect after a user has logged in at the ESDL Suite,
-  # and returns the user info
+  # and creates an EsdlSuiteId on the user
   # code                      The code returned from the OP (ESDL Suite) after
   #                           successful user authentication.
   # nonce                     The unique value associated with the request that
   #                           was saved in the user session
-  def redirect(code, nonce)
+  # user                      The User the tokens should be saved for
+  def authenticate(code, nonce, user)
     # Get code from query string.
     client.authorization_code = code
     access_token = client.access_token!
+    refresh_token = access_token.refresh_token
 
     # Validate the access token.
     id_token = decode_id_token(access_token.id_token)
-
     expected = { client_id: @client_id, issuer: discovery.issuer, nonce: nonce, audience: @audience}
     id_token.verify!(expected)
+    ## happy or sad service result! verify can fail:
+    # ExpiredToken
+    # InvalidIssuer
+    # InvalidNonce
+    # InvalidAudience
 
-    ##TODO: HERE WE SHOULD SAVE ALL INFO - access, refresh, id tokens
-    # Store in user session? or in database?
-
-    access_token.userinfo!
+    EsdlSuiteId.create!(
+      user: user,
+      id_token: id_token,
+      access_token: access_token,
+      refresh_token: refresh_token
+    )
   end
 
   private

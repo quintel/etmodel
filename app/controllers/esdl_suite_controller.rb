@@ -12,12 +12,10 @@ class EsdlSuiteController < ApplicationController
   end
 
   # Route where the ESDL Suite redirects the user to after a succesfull login
-  # Extracts the users info through the EsdlSuiteService
+  # Authenticates and creates an EsdlSuiteId for the user through the EsdlSuiteService
   def redirect
-    @user_info = esdl_suite_service.redirect(params[:code], stored_nonce)
+    esdl_suite_service.authenticate(params[:code], stored_nonce, current_user)
 
-    # Store in session for now
-    session[:esdl_user_info] = @user_info
     redirect_to import_esdl_path
   end
 

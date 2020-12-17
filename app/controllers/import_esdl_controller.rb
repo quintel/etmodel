@@ -4,11 +4,13 @@
 # specified ESDL file. The service returns the scenario_id when (fully) succesful.
 class ImportEsdlController < ApplicationController
   before_action :ensure_esdl_enabled
-  # layout 'landing'
 
-  # what if user is already logged in?
   def index
-    @user_info = session[:esdl_user_info]&.raw_attributes
+    @has_account = current_user&.esdl_suite_id.present? || false
+
+    if @has_account
+      ## check stale!
+    end
   end
 
   def create
@@ -22,9 +24,6 @@ class ImportEsdlController < ApplicationController
   end
 
   def browse_mondaine_drive
-    # result = MondaineDriveService.get_access_token(username, password)
-    # return unless result.success?
-
     respond_to do |format|
       format.js
     end

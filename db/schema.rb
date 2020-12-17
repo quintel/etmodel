@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_131435) do
+ActiveRecord::Schema.define(version: 2020_12_17_090701) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2020_12_11_131435) do
     t.text "content_nl", size: :medium
     t.text "short_content_nl"
     t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type"
+  end
+
+  create_table "esdl_suite_ids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "access_token", limit: 2048
+    t.string "id_token", limit: 2048
+    t.string "refresh_token", limit: 2048
+    t.datetime "expires_at"
+    t.index ["user_id"], name: "index_esdl_suite_ids_on_user_id"
   end
 
   create_table "featured_scenarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|

@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 describe EsdlSuiteController do
+  include EsdlSuiteHelper
+
   let(:user) { FactoryBot.create(:user) }
   let(:nonce) { '123456abcd' }
   let(:esdl_auth_url) { 'localhost:3000/auth' }
@@ -71,10 +73,26 @@ describe EsdlSuiteController do
   end
 
   describe 'GET redirect' do
-    before do
-      login_as user
+    subject do
+      get :redirect, params: { code: 'abcd', nonce: nonce }
+      response
     end
 
-    ## sets the stuff in the usersession
+    before do
+      login_as user
+      session[:esdl_nonce] = nonce
+      stub_esdl_suite_open_id_methods
+    end
+
+    it { is_expected.to be_redirect }
+
+    it 'creates a new EsdlSuiteId in the database' do
+      expect { subject }.to change { EsdlSuiteId.count }.by(1)
+    end
+
+    it 'creates a new EsdlSuiteId on the user' do
+      subject
+      expect(user.esdl_suite_id).to be_present
+    end
   end
 end

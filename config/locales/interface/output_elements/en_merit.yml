@@ -124,19 +124,29 @@ en:
         technology has, which is based on the operating costs. Also the table shows
         the available capacity of each technology as well as the full load hours."
     flexibility_monthly_carriers_inflexible_supply_demand:
-      title: Energy carriers inflexible supply and demand per month
+      title: Supply and demand per month for E, G, H<sub>2</sub> en H
       description: ''
     flexibility_monthly_carriers_inflexible_imbalance:
-      title: Energy carriers inflexible imbalance per month
+      title: Imbalance per month for E, G, H<sub>2</sub> en H
       description: ''
     flexibility_hourly_electricity_supply_demand:
+<<<<<<< Updated upstream
       title: Electricity flexibility supply and demand per hour
     flexibility_hourly_heat_network_supply_demand:
       title: Heat network flexibility supply and demand per hour
+=======
+      title: Hourly electricity supply and demand
+    flexibility_hourly_heat_network_supply_demand:
+      title: Hourly heat supply and demand for district heating
+    flexibility_hourly_network_gas_supply_demand:
+      title: Hourly gas supply and demand
+    flexibility_hourly_hydrogen_supply_demand:
+      title: Hourly hydrogen supply and demand
+>>>>>>> Stashed changes
     flexibility_hourly_carriers_inflexible_imbalance:
-      title: Energy carriers inflexible imbalance per hour
+      title: Imbalance / residual load per hour for E, G, H<sub>2</sub> en H
     flexibility_monthly_carriers_cumulative_imbalance:
-      title: Energy carriers cumulative inflexible imbalance per month
+      title: Cumulative imbalance per month for E, G, H<sub>2</sub> en H
     merit_order:
       title: Merit order capacities and marginal costs
       short_description: ''

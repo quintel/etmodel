@@ -1,0 +1,26 @@
+---
+- label: heat_network_inflexible_demand
+  color: "red"
+  order_by: 2
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heat_network_demand_inflexible_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_heat_network_supply_demand
+  key: heat_network_demand_inflexible_curve_flexibility_hourly_heat_network_supply_demand
+
+- label: heat_network_inflexible_supply
+  color: "blue"
+  order_by: 1
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heat_network_production_inflexible_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_heat_network_supply_demand
+  key: heat_network_supply_inflexible_curve_flexibility_hourly_heat_network_supply_demand

@@ -7,7 +7,11 @@
   sub_group: flexibility
   unit: MJ
   config:
-    linked_chart: flexibility_hourly_electricity_supply_demand
+    linked_chart: 
+      electricity: flexibility_hourly_electricity_supply_demand
+      heat: flexibility_hourly_heat_network_supply_demand
+      hydrogen: flexibility_hourly_hydrogen_supply_demand
+      gas: flexibility_hourly_network_gas_supply_demand
     original_unit: 'MW'
 - group: Merit
   hidden: false
@@ -37,6 +41,48 @@
   show_point_label: false
   growth_chart: false
   key: flexibility_hourly_electricity_supply_demand
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Merit
+  sub_group: flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_heat_network_supply_demand
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Merit
+  sub_group: flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_hydrogen_supply_demand
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Merit
+  sub_group: flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_network_gas_supply_demand
   max_axis_value:
   min_axis_value:
   hidden: false

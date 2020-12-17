@@ -9,8 +9,8 @@
   gquery: electricity_demand_inflexible_curve
   is_1990: false
   dependent_on:
-  output_element_key: flexibility_hourly_supply_demand_all_carriers
-  key: electricity_demand_inflexible_curve_flexibility_hourly_supply_demand_all_carriers
+  output_element_key: flexibility_hourly_electricity_supply_demand
+  key: electricity_demand_inflexible_curve_flexibility_hourly_electricity_supply_demand
 
 - label: total_demand
   color: "red"
@@ -22,8 +22,8 @@
   gquery: electricity_demand_total_curve
   is_1990: false
   dependent_on:
-  output_element_key: flexibility_hourly_supply_demand_all_carriers
-  key: electricity_demand_total_curve_flexibility_hourly_supply_demand_all_carriers
+  output_element_key: flexibility_hourly_electricity_supply_demand
+  key: electricity_demand_total_curve_flexibility_hourly_electricity_supply_demand
 
 - label: electricity_inflexible_supply
   color: "#87CEEB"
@@ -35,8 +35,8 @@
   gquery: electricity_production_inflexible_curve
   is_1990: false
   dependent_on:
-  output_element_key: flexibility_hourly_supply_demand_all_carriers
-  key: electricity_supply_inflexible_curve_flexibility_hourly_supply_demand_all_carriers
+  output_element_key: flexibility_hourly_electricity_supply_demand
+  key: electricity_supply_inflexible_curve_flexibility_hourly_electricity_supply_demand
 
 - label: total_production
   color: "blue"
@@ -48,5 +48,5 @@
   gquery: electricity_production_total_curve
   is_1990: false
   dependent_on:
-  output_element_key: flexibility_hourly_supply_demand_all_carriers
-  key: electricity_production_total_curve_flexibility_hourly_supply_demand_all_carriers
+  output_element_key: flexibility_hourly_electricity_supply_demand
+  key: electricity_production_total_curve_flexibility_hourly_electricity_supply_demand

@@ -66,6 +66,16 @@ development: &DEV
     # incoming_webhook_keys:
     #   mailchimp:
 
+    # When starting communication with the ESDL Suite (to connect to the
+    # Mondaine Drive), the client data and following url's should be configured
+    # The redirect_url should be set to 'https://ETMODEL/esdl-suite/redirect'
+    # where ETMODEL is the apps root url (e.g. beta.energytransitionmodel.com)
+    #
+    # esdl_suite_url: 'https://idm.hesi.energy/auth/realms/esdl-mapeditor'
+    # esdl_suite_client_id:
+    # esdl_suite_client_secret:
+    # esdl_suite_redirect_url:
+
 production: &PRODUCTION
     <<: *DEV
 test:

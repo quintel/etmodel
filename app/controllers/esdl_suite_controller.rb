@@ -23,16 +23,14 @@ class EsdlSuiteController < ApplicationController
 
   # Set up a new EsdlSuiteService to handle all OpenIDConnect communications
   def esdl_suite_service
-    @esdl_suite_service ||= EsdlSuiteService.new(
-      APP_CONFIG[:esdl_suite_url], APP_CONFIG[:esdl_suite_client_id],
-      APP_CONFIG[:esdl_suite_client_secret], redirect_url
-    )
+    @esdl_suite_service ||= EsdlSuiteService.setup
   end
 
   def ensure_esdl_suite_configured
     redirect_to import_esdl_path unless APP_CONFIG[:esdl_suite_client_id].present? &&
       APP_CONFIG[:esdl_suite_client_secret].present? &&
-      APP_CONFIG[:esdl_suite_url].present?
+      APP_CONFIG[:esdl_suite_url].present? &&
+      APP_CONFIG[:esdl_suite_redirect_url].present?
   end
 
   # Generates a unique value. Nonce is used to validate the request at
@@ -44,10 +42,5 @@ class EsdlSuiteController < ApplicationController
   # Delete nonce after single use
   def stored_nonce
     session.delete(:esdl_nonce)
-  end
-
-  # The url the ESDL Suite should redirect to after a successfull user login
-  def redirect_url
-    URI.join(root_url, esdl_suite_redirect_path).to_s
   end
 end

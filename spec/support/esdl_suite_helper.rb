@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module EsdlSuiteHelper
-  def stub_esdl_suite_open_id_methods(valid_nonce: true)
+  def stub_esdl_suite_open_id_methods(valid_nonce: true, valid_code: true)
     stub_discovery
-    stub_access_token
+    stub_access_token(valid_code)
     stub_id_token(valid_nonce)
   end
 
@@ -45,12 +45,24 @@ module EsdlSuiteHelper
 
   def invalid_id_token_double
     id_token = double('id_token')
-    allow(id_token).to receive(:verify!).and_raise(OpenIDConnect::ResponseObject::IdToken::InvalidNonce.new('Invalid ID Token: Nonce does not match'))
+    allow(id_token)
+      .to receive(:verify!)
+      .and_raise(
+        OpenIDConnect::ResponseObject::IdToken::InvalidNonce.new(
+          'Invalid ID Token: Nonce does not match'
+        )
+      )
 
     id_token
   end
 
-  def stub_access_token
+  def stub_access_token(valid_code = true)
+    return stub_valid_code_access_token if valid_code
+
+    stub_invalid_code_access_token
+  end
+
+  def stub_valid_code_access_token
     allow_any_instance_of(OpenIDConnect::Client)
       .to receive(:access_token!)
       .and_return(
@@ -60,6 +72,14 @@ module EsdlSuiteHelper
           id_token: 'hi',
           refresh_token: '6789'
         )
+      )
+  end
+
+  def stub_invalid_code_access_token
+    allow_any_instance_of(OpenIDConnect::Client)
+      .to receive(:access_token!)
+      .and_raise(
+        Rack::OAuth2::Client::Error.new(400, { error_message: 'Invalid grant' })
       )
   end
 

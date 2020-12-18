@@ -9,6 +9,17 @@
 class EsdlSuiteService
   include Service
 
+  # Setup a new EsdlSuitService
+  def self.setup
+    new(
+      APP_CONFIG[:esdl_suite_url],
+      APP_CONFIG[:esdl_suite_client_id],
+      APP_CONFIG[:esdl_suite_client_secret],
+      APP_CONFIG[:esdl_suite_redirect_url]
+    )
+  end
+
+
   # Arguments:
   # provider_uri                URI, when extended with /.well-known/openid-configuration
   #                             acts as a discovery url pointing to a JSON file
@@ -53,25 +64,27 @@ class EsdlSuiteService
     access_token = client.access_token!
     refresh_token = access_token.refresh_token
 
-    # Validate the access token.
+    # Validation.
     id_token = decode_id_token(access_token.id_token)
-    expected = { client_id: @client_id, issuer: discovery.issuer, nonce: nonce, audience: @audience}
+    expected = { client_id: @client_id, issuer: discovery.issuer, nonce: nonce, audience: @audience }
     id_token.verify!(expected)
-    ## happy or sad service result! verify can fail:
-    # ExpiredToken
-    # InvalidIssuer
-    # InvalidNonce
-    # InvalidAudience
 
     EsdlSuiteId.create!(
       user: user,
       id_token: id_token,
-      access_token: access_token,
+      access_token: access_token.access_token,
       refresh_token: refresh_token
     )
-  end
 
-  private
+    ServiceResult.success
+
+  rescue Rack::OAuth2::Client::Error
+    ServiceResult.failure(['Auth code has expired'])
+  rescue OpenIDConnect::ResponseObject::IdToken::ExpiredToken
+    ServiceResult.failure(['Token was expired'])
+  rescue OpenIDConnect::ResponseObject::IdToken::InvalidNonce, OpenIDConnect::ResponseObject::IdToken::InvalidIssuer, OpenIDConnect::ResponseObject::IdToken::InvalidAudience
+    ServiceResult.failure(['Scary spooky! Either Nonce, Aud or Issuer was invalid!'])
+  end
 
   # Returns a OpenIDConnect::Client with the correct settings
   def client
@@ -86,6 +99,8 @@ class EsdlSuiteService
       userinfo_endpoint: discovery.userinfo_endpoint
     )
   end
+
+  private
 
   def discovery
     @discovery ||= OpenIDConnect::Discovery::Provider::Config.discover!(@provider_uri)

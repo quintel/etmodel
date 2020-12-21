@@ -4,16 +4,17 @@ en:
     use_of_primary_energy:
       title: Primary energy use
       short_description: ''
-      description: "This graph shows total primary energy use for your country in
-        the present and future years.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-        above the graph, to select different graphs about energy demand."
+      description: |
+        This graph shows total primary energy use for your country in
+        the present and future years.<br/><br/>You can click <u>Change chart</u>
+        above the graph, to select different graphs about energy demand.
     co2_emissions:
       title: CO<sub>2</sub> emissions
       short_description: ''
       description: |
        This graph compares CO<sub>2</sub> emissions between
         1990, the present and the future. The year 1990 is often used as a reference
-        year for CO<sub>2</sub> emissions targets.\r\n<br/><br/>The ETM takes into account energetic
+        year for CO<sub>2</sub> emissions targets.<br/><br/>The ETM takes into account energetic
         CO<sub>2</sub> emissions, which are emitted in domestic energy use and production, as well as 
         non-energetic CO<sub>2</sub> emissions in the Fertilizers sector. Non-energetic CO<sub>2</sub>
         emissions in other sectors and other green house gases (e.g. methane) are not included. You can find
@@ -23,47 +24,51 @@ en:
     renewability:
       title: Renewability of final demand
       short_description: ''
-      description: "This graph shows how the percentage of sustainable final energy
-        use changes between now and the future year. This is the result of your choices.\r\n<br/><br/>\r\nFinal
+      description: |
+        This graph shows how the percentage of sustainable final energy
+        use changes between now and the future year. This is the result of your choices.<br/><br/>Final
         energy use means that losses during conversions of energy carriers to electricity
-        or heat are not taken into account."
+        or heat are not taken into account.
     mekko_of_primary_demand:
       title: Primary energy use
       short_description: ''
-      description: "This graph compares primary energy consumption in your country
+      description: |
+        This graph compares primary energy consumption in your country
         (horizontal axis) by various segments of society and energy sources (vertical
         axis). Primary use means we are looking at the origins of derived energy carriers
         like heat, electricity and transport fuels. We also take into consideration
-        the losses that occur when these energy carriers are made.  \r\n<br/><br/>\r\nThe
+        the losses that occur when these energy carriers are made.  <br/><br/>The
         graph for the future is the result of your choices in determining the future
         energy demand and the future energy generation. The efficiencies for making
-        heat and power are higher in the future than in the present.\r\n<br/><br/>\r\nExample:
+        heat and power are higher in the future than in the present.<br/><br/>Example:
         Economic growth leads to increased energy demand. Energy saving and modern
         technologies lead to lower energy demand. Choices for heat pumps and electric
         transport lead to lower total energy demand, but an increase in demand for
         electricity. How electricity, heat and fuels are generated determines the
-        primary energy demand.\r\n\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-        above the graph, to select different graphs about energy demand."
+        primary energy demand.<br/><br/>You can click <u>Change chart</u>
+        above the graph, to select different graphs about energy demand.
     source_of_electricity_production:
       title: Electricity production
       short_description: ''
-      description: "This graph gives a breakdown of current and future electricity
+      description: |
+        This graph gives a breakdown of current and future electricity
         production into types of power plants. By default, the future electricity
         mix is the same as the present one. You can choose how to meet future energy
-        demand with the sliders to the left of the graph. <br/><br/>\r\nDemand for
+        demand with the sliders to the left of the graph. <br/><br/>Demand for
         electricity is indicated by the horizontal line. If the resulting electricity
         production is higher than demand, the model will automatically start exporting
         this electricity. If you do not build enough production capacity, the model
-        will import electricity. "
+        will import electricity.
     sankey:
       title: Future energy flows
       short_description: ''
-      description: "Sankey diagrams show how, where and how much energy is used. At
+      description: |
+        Sankey diagrams show how, where and how much energy is used. At
         the left this diagram starts with primary energy forms. The energy that is
         used to generate electricity and heat is shown in the middle. On the right
-        you can see where the energy is used. <br/>\r\nFloating over the chart with
-        you mouse will highlight different parts and reveal more information.\r\n<br><br>\r\nNote
-        that losses due to distribution and refinement are not taking into account.\r\n\r\n"
+        you can see where the energy is used. <br/>Floating over the chart with
+        you mouse will highlight different parts and reveal more information.<br><br>Note
+        that losses due to distribution and refinement are not taking into account.
     sankey_2010:
       title: Present energy flows
       short_description: ''

@@ -10,21 +10,16 @@ en:
     co2_emissions:
       title: CO<sub>2</sub> emissions
       short_description: ''
-      description: "This graph compares energetic CO<sub>2</sub> emissions between
+      description: |
+       This graph compares CO<sub>2</sub> emissions between
         1990, the present and the future. The year 1990 is often used as a reference
-        year for CO<sub>2</sub> emissions targets. The red line indicates the target
-        you have set under 'Goals'. \r\n<br/><br/>\r\nThe graph only displays energetic
-        CO<sub>2</sub> emissions, which are emitted in domestic energy use and production.
-        Non-energetic emissions are not included. Non-energetic emissions are related
-        to processes other than the production of usable energy like electricity or
-        heat. An example of such emissions are the CO<sub>2</sub> emissions that are
-        released from cement during its making. The CO<sub>2</sub> emissions related
-        to the needed energy for cement production <em>do</em> count as energetic
-        emissions.\r\n<br/><br/>\r\n\L\LNote: When the Fuel Chain Emissions module
-        is turned on, the graph also includes CO<sub>2</sub> equivalents of other
-        greenhouse gas emissions, like methane (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O)
-        related to the fuel chain in this graph. Non-energetic emissions and greenhouse
-        gas emissions not related to the fuel chain are not included.`"
+        year for CO<sub>2</sub> emissions targets.\r\n<br/><br/>\r\nThe ETM takes into account energetic
+        CO<sub>2</sub> emissions, which are emitted in domestic energy use and production, as well as 
+        non-energetic CO<sub>2</sub> emissions in the Fertilizers sector. Non-energetic CO<sub>2</sub>
+        emissions in other sectors and other green house gases (e.g. methane) are not included. You can find
+        more information in the 
+        <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector"
+        target="_blank">documentation</a>.
     renewability:
       title: Renewability of final demand
       short_description: ''

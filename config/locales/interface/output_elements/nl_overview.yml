@@ -10,22 +10,15 @@ nl:
     co2_emissions:
       title: CO<sub>2</sub>-emissies
       short_description: ''
-      description: "Deze grafiek vergelijkt de uitstoot van energetische CO<sub>2</sub>
+      description: |
+        Deze grafiek vergelijkt de uitstoot van CO<sub>2</sub>
         in 1990, het heden en de toekomst. Het jaar 1990 wordt vaak als referentiejaar
-        genoemd in CO<sub>2</sub> doelstellingen. De lijn is de doelstelling die is
-        ingesteld in het onderdeel 'Doelen'. \r\n<br/><br/>\r\nDeze grafiek toont
-        alleen binnenlandse, energetische CO<sub>2</sub>-uitstoot. Niet-energetische
-        emissies van CO<sub>2</sub> zijn niet meegenomen. Deze emissies zijn gerelateerd
-        aan processen waarbij het eindproduct geen bruikbare energie (zoals elektriciteit
-        of warmte) oplevert. Een voorbeeld van niet-energetische uitstoot van CO<sub>2</sub>
-        is de CO<sub>2</sub> die opgesloten zit in cement en vrijkomt bij het maken
-        ervan. De emissies die vrijkomen bij het produceren van de energie die nodig
-        is om cement te maken tellen overigens wel mee als energetische CO<sub>2</sub>
-        emissies.\r\n<br/><br/>\r\nLet op: Als de Ketenanalyse-module is ingeschakeld
-        toont deze grafiek ook andere broeikasgassen als methaan (CH<sub>4</sub>)
-        of lachgas (N<sub>2</sub>O) die gerelateerd zijn aan de brandstofproductieketen.
-        Niet-energetische emissies en broeikasgassen die ongerelateerd zijn aan de
-        brandstofproductieketen worden niet getoond."
+        gebruikt in CO<sub>2</sub> doelstellingen. \r\n<br/><br/>\r\nHet ETM neemt alleen
+        de binnenlandse, energetische CO<sub>2</sub>-uitstoot mee en de niet-energetische 
+        uitstoot van de kunstmestsector. Niet-energetische uitstoot in andere sectoren en 
+        overige broeikasgassen (zoals methaan) zijn niet meegenomen. In de
+        <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector"
+        target="_blank">documentatie</a> kun je meer informatie vinden.
     renewability:
       title: Hernieuwbaarheid van eindgebruik
       short_description: ''

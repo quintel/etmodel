@@ -4,6 +4,7 @@ nl:
     attributes:
       ccs_investment_per_mw_electricity: Additional initial investment for CCS
       ccs_investment_per_plant: Additional initial investment for CCS
+      coal_input_conversion: Coal input conversion
       coefficient_of_performance: Coefficient of Performance
       construction_time: Construction time
       cost_of_installing_per_plant: Cost of installing
@@ -27,6 +28,7 @@ nl:
       storage_volume: Storage capacity per unit
       takes_part_in_ets: Do emissions have to be paid through the ETS?
       technical_lifetime: Technical lifetime
+      torrefied_biomass_pellets_input_conversion: Torrefied biomass pellts input conversion
       total_initial_investment_per_mw_electricity: Initial investment (excl CCS)
       total_initial_investment_per_mw_typical_input_capacity: Initial investment
       total_initial_investment_per_plant: Initial purchase price
@@ -35,8 +37,10 @@ nl:
       variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Additional variable operation and maintenance costs for CCS
       variable_operation_and_maintenance_costs_per_full_load_hour: Variable operation and maintenance costs
       wacc: Weighted average cost of capital
+      wood_pellets_input_conversion: Wood pellets input conversion
     groups:
       cost: Costs
+      current_fuel_input_mix: Current fuel input mix
       other: Other
       technical: Technical
     texts:

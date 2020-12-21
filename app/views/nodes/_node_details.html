@@ -19,12 +19,6 @@
       </table>
     <% }) %>
 
-    <% if(node_source_url) { %>
-      <a class="button" href=<%=node_source_url%> >
-        Download source .xls
-      </a>
-    <% } %>
-
     <div class="popup_node_details__stars">
       <% if(uses_coal_and_wood_pellets) { %>
         * The fuel input mix of this plant can be changed by your slider
@@ -32,5 +26,11 @@
         this table.
       <% } %>
     </div>
+
+    <% if(node_source_url) { %>
+      <a class="download" href=<%=node_source_url%> >
+        Download source analysis (XLSX)
+      </a>
+    <% } %>
   <div>
 </script>

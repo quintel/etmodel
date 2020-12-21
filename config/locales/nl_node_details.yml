@@ -38,11 +38,15 @@ nl:
       variable_operation_and_maintenance_costs_per_full_load_hour: Variable operation and maintenance costs
       wacc: Weighted average cost of capital
       wood_pellets_input_conversion: Wood pellets input conversion
+    download_analysis: Download source analysis
     groups:
       cost: Costs
       current_fuel_input_mix: Current fuel input mix
       other: Other
       technical: Technical
+    input_mix_notice: >
+      The fuel input mix of this plant can be changed by your slider settings. Doing so changes both
+      technical and cost parameters in this table.
     texts:
       'yes': 'Ja'
       'no': 'Nee'

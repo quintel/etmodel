@@ -19,17 +19,15 @@
       </table>
     <% }) %>
 
-    <div class="popup_node_details__stars">
-      <% if(uses_coal_and_wood_pellets) { %>
-        * The fuel input mix of this plant can be changed by your slider
-        settings. Doing so changes both technical and cost parameters in
-        this table.
-      <% } %>
-    </div>
+    <% if(uses_coal_and_wood_pellets) { %>
+      <div class="popup_node_details__stars">
+        <%= I18n.t('node_details.input_mix_notice') %>
+      </div>
+    <% } %>
 
     <% if(node_source_url) { %>
       <a class="download" href=<%=node_source_url%> >
-        Download source analysis (XLSX)
+        <%= I18n.t('node_details.download_analysis') %> (Excel .xlsx)
       </a>
     <% } %>
   <div>

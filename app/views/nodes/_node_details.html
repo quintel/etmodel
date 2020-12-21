@@ -3,34 +3,26 @@
     <h3><%= title %></h3>
     <table class="node-detail">
       <tbody>
-        <% _.each( data, function(items, group) { %>
+        <% _.each(data, function(group) { %>
           <tr class="popup_node_details__subheader">
-            <th><%= group %></th>
-            <th colspan=2>Future Value</th>
+            <th><%= group[0] %></th>
+            <th><%= end_year %></th>
           </tr>
 
-          <% _.each( items, function(data, attr) { %>
+          <% _.each(group[1], function(data, attr) { %>
             <tr>
-              <td><%= data.desc %></td>
-              <td>
-                <% if (data.future && _.isString(data.future)) { %>
-                  <%= data.future %>
-                <% } else { %>
-                  <%= Metric.node_detail_format(data.future, data.unit) %>
-                <% } %>
-              </td>
-              <td><%= data.unit %></td>
+              <td><%= data.name %></td>
+              <td><%= Metric.node_detail_format(data.future, data.unit) %></td>
             </tr>
           <% }) %>
-
         <% }) %>
       </tbody>
     </table>
     <% if(node_source_url) { %>
       <a class="button" href=<%=node_source_url%> >
-          Download source .xls
+        Download source .xls
       </a>
-      <% } %>
+    <% } %>
     <div class="popup_node_details__stars">
       <% if(uses_coal_and_wood_pellets) { %>
         * The fuel input mix of this plant can be changed by your slider

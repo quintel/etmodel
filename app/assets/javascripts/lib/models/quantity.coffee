@@ -18,6 +18,7 @@ BASE_UNITS = [
   { name: 'm3', i18n: 'm3' }
   { name: 'T' }
   { name: 'W' }
+  { name: 'We' }
   { name: 'Wh' }
   { name: 'ln' }
 ]

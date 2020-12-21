@@ -25,6 +25,7 @@ class InputElement < YModel::Base
   source_file 'config/interface/input_elements'
   default_attribute :draw_to_max, with: nil
   default_attribute :fixed, with: false
+  default_attribute :additional_specs, with: -> { {} }
   index_on :key
 
   ENUM_UNITS = %w[radio weather-curves].freeze
@@ -73,7 +74,7 @@ class InputElement < YModel::Base
         self, :unit, :share_group, :key, :related_node,
         :node_source_url, :step_value, :draw_to_min, :draw_to_max,
         :disabled, :translated_name, :sanitized_description, :fixed,
-        :has_flash_movie
+        :has_flash_movie, :additional_specs
       )
     end
   end

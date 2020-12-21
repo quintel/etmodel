@@ -12,6 +12,7 @@
     HOLD_FPS,
     IS_IE_LTE_EIGHT,
     ACTIVE_INFO_BOX,
+    buildAdditionalSpecs,
     floatPrecision,
     conversionsFromModel,
     abortValueSelection,
@@ -171,6 +172,59 @@
     });
 
     BODY_HIDE_EVENT = true;
+  };
+
+  /**
+   * Receives an object containing additional data to be shown in the
+   * technical stats table and formats it to match the structure of that
+   * returned by ETEngine.
+   */
+  buildAdditionalSpecs = function(data) {
+    var newData = {};
+
+    if (!data) {
+      return newData;
+    }
+
+    for (var groupData of Object.entries(data)) {
+      var groupName = groupData[0];
+      var attrs = groupData[1];
+      var newGroupData = {};
+
+      newData[groupName] = newGroupData;
+
+      for (var entry of Object.entries(attrs)) {
+        newGroupData[entry[0]] = {
+          future: entry[1],
+          desc: entry[0],
+          present: entry[1],
+        };
+      }
+    }
+
+    return newData;
+  };
+
+  /**
+   * Converts an object containing technical specification for a node to a
+   * sorted array of spec groups and attributes.
+   */
+  var specsToList = function(data) {
+    var groups = Object.entries(data).map(function(entry) {
+      return [I18n.t('node_details.groups.' + entry[0]), entry[1]];
+    });
+
+    return groups.map(function(group) {
+      var attrs = Object.entries(group[1]).map(function(entry) {
+        return $.extend({ name: I18n.t('node_details.attributes.' + entry[0]) }, entry[1]);
+      });
+
+      attrs.sort(function(a, b) {
+        return a.name.localeCompare(b.name);
+      });
+
+      return [group[0], attrs];
+    });
   };
 
   // # UnitConversion --------------------------------------------------------
@@ -825,16 +879,22 @@
       var node = $(e.target).data('node');
       var node_source_url = $(e.target).data('node_source_url');
       var url = App.scenario.url_path() + '/nodes/' + node;
+      var additionalSpecs = buildAdditionalSpecs(this.model.get('additional_specs'));
 
       $.ajax({
         url: url,
         dataType: 'json',
         success: function(data) {
+          if (additionalSpecs) {
+            data.data = $.extend(true, {}, additionalSpecs, data.data);
+          }
+
           var content = CONVERTER_INFO_T({
             title: title,
-            data: data.data,
+            data: specsToList(data.data),
             node_source_url: node_source_url,
-            uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets
+            uses_coal_and_wood_pellets: data.uses_coal_and_wood_pellets,
+            end_year: App.settings.get('end_year'),
           });
           $.fancybox({
             type: 'html',

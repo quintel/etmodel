@@ -1,0 +1,47 @@
+---
+en:
+  node_details:
+    attributes:
+      ccs_investment_per_mw_electricity: Additional initial investment for CCS
+      ccs_investment_per_plant: Additional initial investment for CCS
+      coefficient_of_performance: Coefficient of Performance
+      construction_time: Construction time
+      cost_of_installing_per_plant: Cost of installing
+      decommissioning_costs_per_mw_electricity: Decommissioning costs
+      decommissioning_costs_per_mw_typical_input_capacity: Decommissioning costs
+      decommissioning_costs_per_plant: Decommissioning costs
+      efficiency: Efficiency
+      electricity_output_capacity: Electrical capacity per unit
+      electricity_output_conversion: Electrical efficiency
+      fixed_operation_and_maintenance_costs_per_mw_electricity: Fixed operation and maintenance costs
+      fixed_operation_and_maintenance_costs_per_mw_typical_input_capacity: Fixed operation and maintenance costs
+      fixed_operation_and_maintenance_costs_per_plant: Fixed operation and maintenance costs
+      free_co2_factor: CCS capture rate
+      full_load_hours: Full load hours
+      heat_and_cold_output_conversion: Efficiency (after COP)
+      heat_output_capacity: Heat capacity per unit
+      heat_output_conversion: Heat efficiency
+      hydrogen_output_conversion: Hydrogen output efficiency
+      land_use_per_unit: Land use per unit
+      round_trip_efficiency: Round trip efficiency
+      storage_volume: Storage capacity per unit
+      takes_part_in_ets: Do emissions have to be paid through the ETS?
+      technical_lifetime: Technical lifetime
+      total_initial_investment_per_mw_electricity: Initial investment (excl CCS)
+      total_initial_investment_per_mw_typical_input_capacity: Initial investment
+      total_initial_investment_per_plant: Initial purchase price
+      typical_input_capacity: Capacity per unit
+      useable_heat_output_conversion: Heat efficiency
+      variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Additional variable operation and maintenance costs for CCS
+      variable_operation_and_maintenance_costs_per_full_load_hour: Variable operation and maintenance costs
+      wacc: Weighted average cost of capital
+    groups:
+      cost: Costs
+      other: Other
+      technical: Technical
+    texts:
+      'yes': 'Yes'
+      'no': 'No'
+    units:
+      full load hour: full load hour
+      year: 'year'

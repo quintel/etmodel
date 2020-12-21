@@ -9,15 +9,18 @@ div.popup_node_details
   table
     width: 100%
     border-collapse: collapse
-    margin: -1rem 0 1rem
+    margin: 0 0 1rem
     td, th
       border-bottom: 1px solid #eee
-      padding: 0.3125rem 0
+      padding: 0.375rem
+      &:first-child
+        width: 60%
+    tr:last-child td
+      border-bottom-color: #ddd
     th
-      border-bottom-color: #ccc
+      border-bottom-color: #ddd
       color: #999
       font-weight: normal
-      padding-top: 1rem
       text-align: left
       &:first-child
         color: #333

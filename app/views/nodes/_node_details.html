@@ -1,9 +1,9 @@
 <script id="node-details-template" type="text/template">
   <div class="popup_node_details">
     <h3><%= title %></h3>
-    <table class="node-detail">
-      <tbody>
-        <% _.each(data, function(group) { %>
+    <% _.each(data, function(group) { %>
+      <table class="node-detail">
+        <tbody>
           <tr class="popup_node_details__subheader">
             <th><%= group[0] %></th>
             <th><%= end_year %></th>
@@ -15,14 +15,16 @@
               <td><%= Metric.node_detail_format(data.future, data.unit) %></td>
             </tr>
           <% }) %>
-        <% }) %>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    <% }) %>
+
     <% if(node_source_url) { %>
       <a class="button" href=<%=node_source_url%> >
         Download source .xls
       </a>
     <% } %>
+
     <div class="popup_node_details__stars">
       <% if(uses_coal_and_wood_pellets) { %>
         * The fuel input mix of this plant can be changed by your slider

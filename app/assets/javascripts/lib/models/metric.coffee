@@ -1,3 +1,73 @@
+# Given a number, determines an appropriate precision to use when formatting
+# the number.
+#
+# max - An maximum precision for the number. Defaults to 2.
+#
+# Returns a number.
+calculate_precision = (number, max = 2) ->
+  # Automatically determine how many significant decimal places are present in
+  # the number.
+  #
+  # .split('.')[1] => the decimal places
+  #
+  str_value = number.toFixed(20)
+
+  precision = _.min([
+    str_value.split('.', 2)[1]?.replace(/0+$/).length || 0, max
+  ])
+
+  # Chop off any trailing zeros. This will be the case if the original number
+  # was something like 1.000002.
+  if precision > 0
+    pvalue = Metric.round_number(number, precision)
+    pvalue = pvalue.split('').reverse().join('')
+
+    if match = pvalue.match(/^0+/)
+      precision = Math.min(precision - match.length, 0)
+
+  precision
+
+# Given the name of a unit used in the node details table, attempts to
+# translate it, but returns the unit as-given if no translation was found.
+translate_node_details_unit = (unit) ->
+  I18n.t(
+    "node_details.units.#{unit.trim()}",
+    defaults: [{ message: unit }]
+  )
+
+# Formats a value (with unit) shown in the node details table.
+format_node_detail_value = (value, unit) ->
+  num = Number.parseFloat(value)
+
+  if !isNaN(num)
+    if unit.slice(0, 3) == 'EUR'
+      formatted = I18n.toCurrency(num, precision: 0, unit: '€')
+
+      if unit.indexOf('/') != -1
+        sub_units = unit
+          .split('/')
+          .slice(1)
+          .map((sub_unit) -> translate_node_details_unit(sub_unit))
+
+        formatted = "#{formatted} / #{sub_units.join(' / ')}"
+
+      formatted
+    else
+      Metric.autoscale_value(
+        num,
+        unit,
+        if unit.slice(0, 4) == 'hour' then 0 else 'auto'
+      )
+  else if unit == 'boolean'
+    I18n.t("node_details.texts.#{if value then 'yes' else 'no'}")
+  else if unit
+    "#{value} #{translate_node_details_unit(unit)}"
+  else
+    I18n.t(
+      "node_details.texts.#{value.toString()}",
+      defaults: [{ message: value }]
+    )
+
 @Metric =
   # returns the appropriate unit
   scale_unit : (value, unit) ->
@@ -67,16 +137,7 @@
         value *= 1000
 
       if precision is 'auto'
-        # Automatically determine how many significant decimal places are
-        # present in the number.
-        #
-        # .split('.')[1] => the decimal places
-        #
-        str_value = value.toFixed(20)
-
-        precision = _.min([
-          str_value.split('.', 2)[1]?.replace(/0+$/).length || 0, 2
-        ])
+        precision = calculate_precision(value)
 
       value = @round_number(value, precision)
 
@@ -116,6 +177,12 @@
         "#{@round_number x, 2} M€/MWe"
       when '#'
         "#{value} #{@scaling_in_words(pow, 'nounit')}"
+      when 'years'
+        "#{value} #{@scaling_in_words(0, 'years')}"
+      when 'hours'
+        "#{value} #{@scaling_in_words(0, 'hours')}"
+      when 'hour / year'
+        "#{value} #{@scaling_in_words(0, 'hours_per_year')}"
       else
         value
 
@@ -214,11 +281,7 @@
 
   # This is used only in the node info popup
   node_detail_format: (x, unit) ->
-    x *= 100.0 if unit == '%'
-    if _.isNumber(x)
-      @format_number x, 2
-    else
-      x
+    format_node_detail_value(x, unit)
 
   # sets the right number of decimal digits
   format_number: (x) ->

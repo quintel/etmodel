@@ -30,11 +30,16 @@
         <div class="info">
             <%= info %>
             <% if (node) { %>
-              <br/>
-              <a href="#" class="node_detail"
-                 data-node="<%= node %>"
-                 data-title="<%= name %>"
-                 data-node_source_url="<%= node_source %>"><%= info_link %></a>
+              <div class="node-detail-wrapper">
+                <a href="#" class="node_detail"
+                    data-node="<%= node %>"
+                    data-title="<%= name %>"
+                    data-node_source_url="<%= node_source %>"
+                >
+                    <span class="fa fa-book"></span>
+                    <%= info_link %>
+                </a>
+              </div>
             <% } %>
         </div>
     </div>

@@ -122,6 +122,19 @@ $slider-box-height: 22px
         display: block
         margin: 0 0 -0.75rem
         padding: 0.75rem 0
+        .loader
+          background: asset-url("icons/specs-loader.gif") no-repeat
+          display: none
+          height: 6px
+          width: 22px
+        &.loading
+          color: #777 !important
+          cursor: default
+          pointer-events: none
+          .text
+            display: none
+          .loader
+            display: inline-block
 
   &.info-box-visible
     .show-info

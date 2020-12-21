@@ -875,16 +875,22 @@
      */
     showNodeDetail: function(e) {
       e.preventDefault();
-      var title = $(e.target).data('title');
-      var node = $(e.target).data('node');
-      var node_source_url = $(e.target).data('node_source_url');
+
+      var link = e.target.closest('a');
+      var title = $(link).data('title');
+      var node = $(link).data('node');
+      var node_source_url = $(link).data('node_source_url');
       var url = App.scenario.url_path() + '/nodes/' + node;
       var additionalSpecs = buildAdditionalSpecs(this.model.get('additional_specs'));
+
+      link.classList.add('loading');
 
       $.ajax({
         url: url,
         dataType: 'json',
         success: function(data) {
+          link.classList.remove('loading');
+
           if (additionalSpecs) {
             data.data = $.extend(true, {}, additionalSpecs, data.data);
           }
@@ -899,9 +905,12 @@
           $.fancybox({
             type: 'html',
             content: content,
-            width: 770
+            width: 770,
           });
-        }
+        },
+        error: function() {
+          link.classList.remove('loading');
+        },
       });
     },
 

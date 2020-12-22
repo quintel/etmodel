@@ -1,20 +1,51 @@
 {
   "parser": "babel-eslint",
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "extends":  [
     "eslint:recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
+    "prettier/unicorn",
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
- "parserOptions":  {
-    "ecmaVersion": 5,
-    "sourceType": "script"
-  },
+  "plugins": [
+    "prettier",
+    "unicorn"
+  ],
   "rules":  {
-    "curly": ["error", "all"],
     "max-len": ["error", {"code": 100, "ignoreUrls": true}],
     "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}],
-    "space-before-function-paren": ["error", "never"]
-  }
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/filename-case": "off",
+    "import/namespace": "off"
+  },
+  "overrides": [
+    {
+      // Enable different rules for old JS files.
+      "files": ["app/assets/javascripts/*.js"],
+      "parser": "babel-eslint",
+      "env": {
+        "browser": true,
+        "es6": false
+      },
+      "extends":  [
+        "eslint:recommended",
+        "plugin:prettier/recommended"
+      ],
+    "parserOptions":  {
+        "ecmaVersion": 5,
+        "sourceType": "script"
+      },
+      "rules":  {
+        "curly": ["error", "all"],
+        "max-len": ["error", {"code": 100, "ignoreUrls": true}],
+        "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}],
+        "space-before-function-paren": ["error", "never"]
+      }
+    }
+  ]
 }

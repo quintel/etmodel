@@ -1,10 +1,9 @@
 ---
-- group: Merit
+- group: Flexibility
   hidden: false
   key: flexibility_monthly_carriers_inflexible_supply_demand
   output_element_type_name: hourly_summarized
   requires_merit_order: true
-  sub_group: flexibility
   unit: MJ
   config:
     linked_chart: 
@@ -13,22 +12,20 @@
       hydrogen: flexibility_hourly_hydrogen_supply_demand
       gas: flexibility_hourly_network_gas_supply_demand
     original_unit: 'MW'
-- group: Merit
+- group: Flexibility
   hidden: false
   key: flexibility_monthly_carriers_inflexible_imbalance
   output_element_type_name: hourly_summarized
   requires_merit_order: true
-  sub_group: flexibility
   unit: MJ
   config:
     linked_chart: flexibility_hourly_carriers_inflexible_imbalance
     original_unit: 'MW'
-- group: Merit
+- group: Flexibility
   hidden: false
   key: flexibility_monthly_carriers_cumulative_imbalance
   output_element_type_name: hourly_summarized
   requires_merit_order: true
-  sub_group: flexibility
   unit: MJ
   config:
     original_unit: 'MW'
@@ -36,64 +33,7 @@
 - under_construction: false
   unit: MW
   percentage: false
-  group: Merit
-  sub_group: flexibility
-  show_point_label: false
-  growth_chart: false
-  key: flexibility_hourly_electricity_supply_demand
-  max_axis_value:
-  min_axis_value:
-  hidden: false
-  requires_merit_order: true
-  dependent_on: ''
-  output_element_type_name: line
-- under_construction: false
-  unit: MW
-  percentage: false
-  group: Merit
-  sub_group: flexibility
-  show_point_label: false
-  growth_chart: false
-  key: flexibility_hourly_heat_network_supply_demand
-  max_axis_value:
-  min_axis_value:
-  hidden: false
-  requires_merit_order: true
-  dependent_on: ''
-  output_element_type_name: line
-- under_construction: false
-  unit: MW
-  percentage: false
-  group: Merit
-  sub_group: flexibility
-  show_point_label: false
-  growth_chart: false
-  key: flexibility_hourly_hydrogen_supply_demand
-  max_axis_value:
-  min_axis_value:
-  hidden: false
-  requires_merit_order: true
-  dependent_on: ''
-  output_element_type_name: line
-- under_construction: false
-  unit: MW
-  percentage: false
-  group: Merit
-  sub_group: flexibility
-  show_point_label: false
-  growth_chart: false
-  key: flexibility_hourly_network_gas_supply_demand
-  max_axis_value:
-  min_axis_value:
-  hidden: false
-  requires_merit_order: true
-  dependent_on: ''
-  output_element_type_name: line
-- under_construction: false
-  unit: MW
-  percentage: false
-  group: Merit
-  sub_group: flexibility
+  group: Flexibility
   show_point_label: false
   growth_chart: false
   key: flexibility_hourly_carriers_inflexible_imbalance
@@ -103,3 +43,99 @@
   requires_merit_order: true
   dependent_on: ''
   output_element_type_name: line
+- under_construction: false
+  unit: MWh
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_all_carriers_cumulative_imbalance
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+- under_construction: false
+  unit: ''
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: energy_storage
+  max_axis_value:
+  min_axis_value:
+  hidden: true
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: storage
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: use_of_excess_electricity
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: has_electricity_storage
+  output_element_type_name: vertical_stacked_bar
+  related_output_element_key: merit_order_hourly_flexibility
+- under_construction: false
+  unit: ''
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: storage_options
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: html_table
+  related_output_element_key: merit_order_hourly_flexibility
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: merit_order_hourly_flexibility
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: d3
+- under_construction: false
+  unit:
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: solar_pv_curtailment
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: html_table
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: hourly_solar_pv_curtailment
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: solar_curtailment
+

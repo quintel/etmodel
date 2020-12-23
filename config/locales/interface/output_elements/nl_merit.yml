@@ -104,7 +104,8 @@ nl:
         draaikosten. Ook zie je het beschikbare vermogen en het aantal vollast draaiuren."
     flexibility_monthly_carriers_inflexible_supply_demand:
       title: Vraag en aanbod per maand voor E, G, H<sub>2</sub> en W
-      description: 'Deze grafiek laat per maand de vraag en het aanbod zien
+      description: |
+        Deze grafiek laat per maand de vraag en het aanbod zien
         van elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
         de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
         onbalans op? Welke dragers zijn niet in balans?
@@ -121,10 +122,11 @@ nl:
         Hierin wordt het aanbod van flex-technologieën NIET meegenomen, zoals
         warmte-/elektriciteitsproductie door dispatchable centrales, elektriciteit
         uit batterijen of gas/waterstof uit opslag. Daarbij wordt de
-        import van een energiedrager NIET meegenomen.'
+        import van een energiedrager NIET meegenomen.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Onbalans per maand voor E, G, H<sub>2</sub> en W
-      description: 'Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
+      description: |
+        Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
         voor elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
         de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
         onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
@@ -142,17 +144,10 @@ nl:
         Hierin wordt het aanbod van flex-technologieën NIET meegenomen, zoals
         warmte-/elektriciteitsproductie door dispatchable centrales, elektriciteit
         uit batterijen of gas/waterstof uit opslag. Daarbij wordt de
-        import van een energiedrager NIET meegenomen.'
-    flexibility_hourly_electricity_supply_demand:
-      title: Vraag en aanbod van elektriciteit per uur
-    flexibility_hourly_heat_network_supply_demand:
-      title: Vraag en aanbod van warmte voor warmtenetten per uur
-    flexibility_hourly_network_gas_supply_demand:
-      title: Vraag en aanbod van gas per uur
-    flexibility_hourly_hydrogen_supply_demand:
-      title: Vraag en aanbod van waterstof per uur
-    flexibility_hourly_carriers_inflexible_imbalance:
-      title: Onbalans / "residual load" per maand voor E, G, H<sub>2</sub> en W
+        import van een energiedrager NIET meegenomen.
+    flexibility_hourly_all_carriers_cumulative_imbalance:
+      title: Behoefte aan seizoensflexibiliteit voor E, G, H<sub>2</sub> en W
+      description: 
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulatieve onbalans per maand voor E, G, H<sub>2</sub> en W
     merit_order:

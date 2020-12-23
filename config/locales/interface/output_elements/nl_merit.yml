@@ -107,52 +107,88 @@ nl:
       description: |
         Deze grafiek laat per maand de vraag en het aanbod zien
         van elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
-        de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
-        onbalans op? Welke dragers zijn niet in balans?
+        in de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
+        onbalans op? Welke dragers zijn niet in balans? Als je benieuwd bent naar de
+        balans binnen een maand, is er de mogelijkheid om in te zoomen. Door te klikken op een drager in 
+        specifieke maand opent er een nieuwe grafiek die inzoomt op de uurwaarden
+        van die drager in die maand. </br></br>
         Om deze (on)balans goed in beeld te krijgen, is ervoor gekozen om in deze grafiek
         alleen de base-load energievraag en de must-run en volatiele productie te tonen.
-        Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het systeem.
+        Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het systeem.</br></br>
         Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
-        - Vraag is de finale vraag uit de verschillende sectoren. Hierin wordt
-        de energievraag van flex-technologieën die het systeem balanceren NIET
+        <ul><li>Vraag is de finale vraag van de verschillende sectoren. Hierin wordt
+        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor dispatchable centrales, elektriciteit die
         batterijen ingaat of gas/waterstof naar opslag. Ook valt export
-        en curtailment NIET onder de vraag.
-        - Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
-        Hierin wordt het aanbod van flex-technologieën NIET meegenomen, zoals
+        en curtailment <b>niet</b> onder de vraag.</li>
+        <li>Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
+        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door dispatchable centrales, elektriciteit
         uit batterijen of gas/waterstof uit opslag. Daarbij wordt de
-        import van een energiedrager NIET meegenomen.
+        import van een energiedrager <b>niet</b> meegenomen.</li>
     flexibility_monthly_carriers_inflexible_imbalance:
       title: 2a. Onbalans per maand voor E, G, H<sub>2</sub> en W
       description: |
-        Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
-        voor elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
-        de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
-        onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
-        aan energie?
-        De onbalans is berekend door de vraag af te trekken van het aanbod, dit heet
+        Deze grafiek is een vervolg op flexibiliteitsgrafiek 1a. Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
+        voor elektriciteit, gas, waterstof en warmte. De onbalans is berekend door de vraag af te trekken van het aanbod, dit heet
         de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
-        "tekorten".
+        "tekorten". Je zult inzicht krijgen in de balans van jouw energiesysteem door het jaar heen: in welke maanden treedt er
+        onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
+        aan energie? Als je benieuwd bent naar de onbalans binnen een maand, kan je klikken
+        op die specifieke baent en zal er een grafiek openen met "residual load" profielen voor die maand.</br></br>
+        </br></br>
         Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
-        - Vraag is de finale vraag uit de verschillende sectoren. Hierin wordt
-        de energievraag van flex-technologieën die het systeem balanceren NIET
+        <ul><li>Vraag is de finale vraag uit de verschillende sectoren. Hierin wordt
+        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor dispatchable centrales, elektriciteit die
         batterijen ingaat of gas/waterstof naar opslag. Ook valt export
-        en curtailment NIET onder de vraag.
-        - Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
-        Hierin wordt het aanbod van flex-technologieën NIET meegenomen, zoals
+        en curtailment <b>niet</b> onder de vraag.</li>
+        <li>Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
+        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door dispatchable centrales, elektriciteit
         uit batterijen of gas/waterstof uit opslag. Daarbij wordt de
-        import van een energiedrager NIET meegenomen.
+        import van een energiedrager <b>niet</b> meegenomen.</li>
     flexibility_hourly_carriers_inflexible_imbalance:
       title: 2b. Onbalans / "residual load" per uur voor E, G, H<sub>2</sub> en W
-      description: ''
+      description: |
+        Deze grafiek is een vervolg op flexibiliteitsgrafiek 1a. Deze grafiek laat per uur de onbalans tussen vraag en aanbod zien
+        voor elektriciteit, gas, waterstof en warmte. De onbalans is berekend door de vraag af te trekken van het aanbod, dit heet
+        de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
+        "tekorten". Je zult inzicht krijgen in de balans van jouw energiesysteem door het jaar heen: in welke maanden treedt er
+        onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
+        aan energie? Als je benieuwd bent naar de onbalans binnen een maand, kan je klikken
+        op die specifieke baent en zal er een grafiek openen met "residual load" profielen voor die maand.</br></br>
+        Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
+        <ul><li>Vraag is de finale vraag uit de verschillende sectoren. Hierin wordt
+        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
+        meegenomen, zoals gas/waterstof voor dispatchable centrales, elektriciteit die
+        batterijen ingaat of gas/waterstof naar opslag. Ook valt export
+        en curtailment <b>niet</b> onder de vraag.</li>
+        <li>Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
+        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
+        warmte-/elektriciteitsproductie door dispatchable centrales, elektriciteit
+        uit batterijen of gas/waterstof uit opslag. Daarbij wordt de
+        import van een energiedrager <b>niet</b> meegenomen.</li>
     flexibility_hourly_all_carriers_cumulative_imbalance:
-      title: 3a. Behoefte aan seizoensflexibiliteit voor E, G, H<sub>2</sub> en W
-      description: 
+      title: 3. Behoefte aan seizoensflexibiliteit voor E, G, H<sub>2</sub> en W
+      description: |
+        Deze grafiek is een vervolg op flexibiliteitsgrafiek 2a, het is aan te raden eerst die grafiek
+        te bekijken. Hieronder volgt een uitleg over de getoonde lijnen:
+        <ul><li>De blauwe lijn in de grafiek toont de optelling van alle tekorten en overschotten van E, G, H<sub>2</sub> 
+        en W door het jaar heen. Wanneer de lijn stijgt betekent dit dat er netto overschotten
+        waren in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
+        waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit 
+        dat er in het jaar meer energie is opgewekt dan gevraagd en vice versa. Het verschil tussen 
+        start en eindpunt van de blauwe lijn geeft aan hoeveel ‘speelruimte’ je hebt om met de
+        overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt 
+        permitteren om toch in balans te zijn.</li>
+        <li>De rode lijn is een gecorrigeerde versie van de blauwe lijn. In deze lijn is aangenomen dat
+        het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
+        gevraagde energie ergens vandaan komt. Hierdoor geeft een globale inschatting van je totale 
+        benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden. 
+        Deze totale benodigde opslagcapaciteit is af te lezen uit de uiterste waarde van deze grafiek.</li>
     flexibility_monthly_carriers_cumulative_imbalance:
-      title: 3b. Cumulatieve onbalans per maand voor E, G, H<sub>2</sub> en W
+      title: 3. Cumulatieve onbalans per maand voor E, G, H<sub>2</sub> en W
     merit_order:
       title: Merit order capaciteiten en marginale kosten
       short_description: ''

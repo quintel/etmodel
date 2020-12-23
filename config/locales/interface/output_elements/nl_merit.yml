@@ -103,7 +103,7 @@ nl:
         welke plek iedere technologie in de rangschikking heeft, gebaseerd op de bijbehorende
         draaikosten. Ook zie je het beschikbare vermogen en het aantal vollast draaiuren."
     flexibility_monthly_carriers_inflexible_supply_demand:
-      title: Vraag en aanbod per maand voor E, G, H<sub>2</sub> en W
+      title: 1. Vraag en aanbod per maand voor E, G, H<sub>2</sub> en W
       description: |
         Deze grafiek laat per maand de vraag en het aanbod zien
         van elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
@@ -124,7 +124,7 @@ nl:
         uit batterijen of gas/waterstof uit opslag. Daarbij wordt de
         import van een energiedrager NIET meegenomen.
     flexibility_monthly_carriers_inflexible_imbalance:
-      title: Onbalans per maand voor E, G, H<sub>2</sub> en W
+      title: 2a. Onbalans per maand voor E, G, H<sub>2</sub> en W
       description: |
         Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
         voor elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
@@ -145,11 +145,14 @@ nl:
         warmte-/elektriciteitsproductie door dispatchable centrales, elektriciteit
         uit batterijen of gas/waterstof uit opslag. Daarbij wordt de
         import van een energiedrager NIET meegenomen.
+    flexibility_hourly_carriers_inflexible_imbalance:
+      title: 2b. Onbalans / "residual load" per uur voor E, G, H<sub>2</sub> en W
+      description: ''
     flexibility_hourly_all_carriers_cumulative_imbalance:
-      title: Behoefte aan seizoensflexibiliteit voor E, G, H<sub>2</sub> en W
+      title: 3a. Behoefte aan seizoensflexibiliteit voor E, G, H<sub>2</sub> en W
       description: 
     flexibility_monthly_carriers_cumulative_imbalance:
-      title: Cumulatieve onbalans per maand voor E, G, H<sub>2</sub> en W
+      title: 3b. Cumulatieve onbalans per maand voor E, G, H<sub>2</sub> en W
     merit_order:
       title: Merit order capaciteiten en marginale kosten
       short_description: ''

@@ -213,3 +213,23 @@ nl:
       title: Vraag en aanbod van kerosine
       short_description: ''
       description: ''
+    flexibility_hourly_electricity_supply_demand:
+      title: Vraag en aanbod van elektriciteit per uur
+      description: |
+        Deze grafiek laat per uur vraag en aanbod van elektriciteit zien. Wat er precies 
+        onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
+        - Vraag is de finale vraag uit de verschillende sectoren. Hierin wordt
+        de energievraag van flex-technologieën die het systeem balanceren NIET
+        meegenomen, zoals elektriciteitsoverschotten voor power-to-gas elektrolysers, 
+        hybride warmte in de industrie of batterijen. Ook valt export
+        en curtailment NIET onder de vraag.
+        - Aanbod is de must-run en volatiele productie, zoals windmolens en zon PV.
+        Hierin wordt het aanbod van flex-technologieën NIET meegenomen, zoals
+        elektriciteitsproductie door dispatchable centrales of elektriciteit
+        uit batterijen. Daarbij wordt de import NIET meegenomen.
+    flexibility_hourly_heat_network_supply_demand:
+      title: Vraag en aanbod van warmte voor warmtenetten per uur
+    flexibility_hourly_network_gas_supply_demand:
+      title: Vraag en aanbod van gas per uur
+    flexibility_hourly_hydrogen_supply_demand:
+      title: Vraag en aanbod van waterstof per uur

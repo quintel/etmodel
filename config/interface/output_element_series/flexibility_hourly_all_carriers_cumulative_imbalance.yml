@@ -1,0 +1,25 @@
+---
+- label: all_time_resolved_carriers_cumulative_incl_correction_incl_offset_curve
+  color: "red"
+  order_by: 2
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: all_time_resolved_carriers_cumulative_incl_correction_incl_offset_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_all_carriers_cumulative_imbalance
+  key: flexibility_hourly_all_carriers_cumulative_imbalance_incl_correction
+- label: all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve
+  color: "blue"
+  order_by: 1
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_all_carriers_cumulative_imbalance
+  key: flexibility_hourly_all_carriers_cumulative_imbalance_excl_correction

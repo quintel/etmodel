@@ -1,5 +1,5 @@
 /* globals $ _ App Backbone I18n */
-(function(window) {
+(function (window) {
   'use strict';
 
   var CustomCurveChooserView;
@@ -26,7 +26,7 @@
     var actionsList = $('<ul />');
 
     if (!opts.showUpload && !opts.showRemove) {
-      return null;
+      return;
     }
 
     if (opts.showUpload) {
@@ -63,21 +63,16 @@
     var select = $('<select />');
     select.append('<option value="">' + t('select_scenario') + '</option>');
 
-    userScenarios.forEach(function(scenario) {
+    userScenarios.forEach(function (scenario) {
       $('<option/>', {
         value: scenario.scenario_id,
-        text:
-          scenario.title +
-          ', ' +
-          t('areas.' + scenario.dataset) +
-          ' ' +
-          scenario.end_year,
+        text: scenario.title + ', ' + t('areas.' + scenario.dataset) + ' ' + scenario.end_year,
         data: {
           source_saved_scenario_id: scenario.saved_scenario_id,
           source_dataset_key: scenario.dataset,
           source_scenario_title: scenario.title,
-          source_end_year: scenario.end_year
-        }
+          source_end_year: scenario.end_year,
+        },
       }).appendTo(select);
     });
 
@@ -103,21 +98,17 @@
     var info = $('<dl />');
 
     if (!stats) {
-      return null;
+      return;
     }
 
     info.append('<dt>' + t('mean') + '</dt>');
     info.append('<dd>' + formatValue(stats.mean, t) + '</dd>');
 
     info.append('<dt>' + t('min') + '</dt>');
-    info.append(
-      '<dd>' + formatTemporalValue(stats.min, stats.min_at, t) + '</dd>'
-    );
+    info.append('<dd>' + formatTemporalValue(stats.min, stats.min_at, t) + '</dd>');
 
     info.append('<dt>' + t('max') + '</dt>');
-    info.append(
-      '<dd>' + formatTemporalValue(stats.max, stats.max_at, t) + '</dd>'
-    );
+    info.append('<dd>' + formatTemporalValue(stats.max, stats.max_at, t) + '</dd>');
 
     return info;
   }
@@ -173,9 +164,7 @@
     }
 
     if (options.description) {
-      details.append(
-        $('<span class="description" />').text(options.description)
-      );
+      details.append($('<span class="description" />').text(options.description));
     }
 
     main.append($('<div class="file ' + (opts.icon || 'csv') + '" />'));
@@ -215,11 +204,7 @@
     // new Date() starts at 1AM; subtract an hour to start at midnight.
     var date = new Date(-msInHour + at * msInHour);
 
-    return (
-      formatValue(value, t) +
-      ' ' +
-      t('on_date', { date: I18n.strftime(date, '%-d %B') })
-    );
+    return formatValue(value, t) + ' ' + t('on_date', { date: I18n.strftime(date, '%-d %B') });
   }
 
   /**
@@ -237,10 +222,7 @@
       .css('display', 'none');
 
     form.append(
-      $('<input />')
-        .attr('type', 'file')
-        .attr('accept', '.csv,text/csv')
-        .attr('name', 'file')
+      $('<input />').attr('type', 'file').attr('accept', '.csv,text/csv').attr('name', 'file')
     );
 
     return form;
@@ -250,15 +232,15 @@
    * Shown when data about a curve is currently loading.
    */
   CustomCurveLoadingView = Backbone.View.extend({
-    render: function() {
+    render: function () {
       this.$el.empty();
 
       this.$el.append(
-        renderCSVInfo({ name: I18n.t('custom_curves.loading') }, null, null, {
-          icon: 'loading'
+        renderCSVInfo({ name: I18n.t('custom_curves.loading') }, undefined, undefined, {
+          icon: 'loading',
         })
       );
-    }
+    },
   });
 
   /**
@@ -271,23 +253,22 @@
       'click .remove': 'removeCurve',
       'click .upload': 'selectCurve',
       'click .use-scenario': 'useScenarioCurve',
-      'change form input[type=file]': 'fileDidChange'
+      'change form input[type=file]': 'fileDidChange',
     },
 
-    initialize: function(options) {
-      Backbone.View.prototype.initialize.apply(this, arguments);
+    initialize: function (options) {
+      Reflect.apply(Backbone.View.prototype.initialize, this, arguments);
 
       // this.curveData = null;
       this.userScenarios = this.options.scenarios;
 
-      this.apiURL =
-        App.scenario.url_path() + '/custom_curves/' + options.model.get('type');
+      this.apiURL = App.scenario.url_path() + '/custom_curves/' + options.model.get('type');
 
       // Allow this.t to be passed into other functions while retaining scope.
       this.t = _.bind(this.t, this);
     },
 
-    render: function() {
+    render: function () {
       this.$el.empty();
 
       if (this.model.isAttached()) {
@@ -295,23 +276,18 @@
           renderCSVInfo(this.model.attributes, this.userScenarios, this.t, {
             showUpload: true,
             showRemove: true,
-            isFromScenario: this.model.isFromScenario()
+            isFromScenario: this.model.isFromScenario(),
           })
         );
       } else {
         this.$el.append(
-          renderCSVInfo(
-            { name: this.t('default') },
-            this.userScenarios,
-            this.t,
-            {
-              showUpload: true,
-              icon: 'csv-light',
-              description: this.t('default_description', {
-                defaults: [{ message: false }]
-              })
-            }
-          )
+          renderCSVInfo({ name: this.t('default') }, this.userScenarios, this.t, {
+            showUpload: true,
+            icon: 'csv-light',
+            description: this.t('default_description', {
+              defaults: [{ message: false }],
+            }),
+          })
         );
       }
 
@@ -323,36 +299,36 @@
       return this;
     },
 
-    renderLoading: function() {
+    renderLoading: function () {
       this.$el.empty();
 
       this.$el.append(
-        renderCSVInfo({ name: this.t('loading') }, null, this.t, {
-          icon: 'loading'
+        renderCSVInfo({ name: this.t('loading') }, undefined, this.t, {
+          icon: 'loading',
         })
       );
     },
 
-    renderUploading: function() {
+    renderUploading: function () {
       this.$el.empty();
 
       this.$el.append(
-        renderCSVInfo({ name: this.t('uploading') + '...' }, null, this.t, {
-          icon: 'loading'
+        renderCSVInfo({ name: this.t('uploading') + '...' }, undefined, this.t, {
+          icon: 'loading',
         })
       );
 
       this.$('.details').append($('<progress value="0" max="100" />'));
     },
 
-    renderError: function(errors) {
+    renderError: function (errors) {
       var errorsList = $('<ul />');
 
       this.$el.empty();
 
       this.render();
 
-      errors.forEach(function(message) {
+      errors.forEach(function (message) {
         errorsList.append($('<li />').text(message));
       });
 
@@ -361,7 +337,7 @@
 
     // Data
 
-    sendRequest: function(method, options) {
+    sendRequest: function (method, options) {
       var self = this;
 
       return $.ajax(
@@ -370,7 +346,7 @@
           {
             url: this.apiURL,
             method: method,
-            success: function(data) {
+            success: function (data) {
               if (data == undefined) {
                 // Curve was unattached.
                 self.model.purge();
@@ -380,12 +356,12 @@
 
               self.render();
             },
-            error: function(xhr) {
+            error: function (xhr) {
               var errors = ['An error occurred.'];
 
               if (xhr.responseJSON) {
                 if (xhr.responseJSON.error_keys) {
-                  errors = xhr.responseJSON.error_keys.map(function(key) {
+                  errors = xhr.responseJSON.error_keys.map(function (key) {
                     return self.t('errors.' + key);
                   });
                 } else if (xhr.responseJSON.errors) {
@@ -394,7 +370,7 @@
               }
 
               self.renderError(errors);
-            }
+            },
           },
           options || {}
         )
@@ -404,7 +380,7 @@
     /**
      * Returns a translation.
      */
-    t: function(id, data) {
+    t: function (id, data) {
       var defaultKey = 'custom_curves.' + id;
       var defaultScope = [{ scope: defaultKey }];
 
@@ -420,7 +396,7 @@
         return I18n.t(
           'custom_curves.' + this.model.get('type') + '.' + id,
           $.extend({}, data, {
-            defaults: defaultScope
+            defaults: defaultScope,
           })
         );
       }
@@ -430,25 +406,22 @@
 
     // Events
 
-    removeCurve: function() {
+    removeCurve: function () {
       if (confirm(this.t('confirm_remove'))) {
-        this.curveData = null;
+        this.curveData = undefined;
         this.renderLoading();
 
-        this.sendRequest('DELETE').success(function() {
+        this.sendRequest('DELETE').success(function () {
           App.call_api();
         });
       }
     },
 
-    selectCurve: function() {
-      this.$el
-        .find('form')
-        .find(':file')
-        .click();
+    selectCurve: function () {
+      this.$el.find('form').find(':file').click();
     },
 
-    useScenarioCurve: function() {
+    useScenarioCurve: function () {
       var self = this;
       var selected = this.$('select option:selected')[0];
       var scenarioID = selected.value;
@@ -468,11 +441,11 @@
 
       var req = $.ajax({
         url: scenarioApiURL,
-        method: 'GET'
+        method: 'GET',
       });
 
       // Upload for current scenario
-      req.success(function(data) {
+      req.success(function (data) {
         var formData = new FormData();
 
         formData.append('file', new Blob([data.curve]), scenarioID + '.csv');
@@ -484,17 +457,17 @@
       });
     },
 
-    fileDidChange: function() {
+    fileDidChange: function () {
       var fileEl = this.$(':file');
 
-      if (!fileEl.val() || !fileEl.val().length) {
+      if (!fileEl.val() || fileEl.val().length === 0) {
         return;
       }
 
       this.upload(new FormData(this.$('form')[0]));
     },
 
-    upload: function(data) {
+    upload: function (data) {
       var self = this;
 
       this.sendRequest('PUT', {
@@ -504,17 +477,17 @@
         processData: false,
 
         // Custom XMLHttpRequest
-        xhr: function() {
+        xhr: function () {
           var myXhr = $.ajaxSettings.xhr();
           if (myXhr.upload) {
             // For handling the progress of the upload
             myXhr.upload.addEventListener(
               'progress',
-              function(e) {
+              function (e) {
                 if (e.lengthComputable) {
                   self.$('progress').attr({
                     value: e.loaded,
-                    max: e.total
+                    max: e.total,
                   });
                 }
               },
@@ -522,36 +495,32 @@
             );
           }
           return myXhr;
-        }
-      }).success(function() {
+        },
+      }).success(function () {
         App.call_api();
       });
 
-      this.curveData = null;
+      this.curveData = undefined;
       this.renderUploading();
-    }
+    },
   });
 
-  CustomCurveChooserView.setupWithWrapper = function(
-    wrapper,
-    collectionDef,
-    userScenarios
-  ) {
+  CustomCurveChooserView.setupWithWrapper = function (wrapper, collectionDef, userScenarios) {
     var disableInputKey = wrapper.data('curve-disable-input');
 
     new CustomCurveLoadingView({ el: wrapper }).render();
 
-    $.when(collectionDef, userScenarios).done(function(collection, scenarios) {
+    $.when(collectionDef, userScenarios).done(function (collection, scenarios) {
       var view = new CustomCurveChooserView({
         el: wrapper,
         model: collection.getOrBuild(wrapper.data('curve-name')),
-        scenarios: scenarios
+        scenarios: scenarios,
       });
 
       // If the el data specifies to enable/disable a slider when a custom curve
       // is set, listen to the view events...
       if (disableInputKey) {
-        view.on('curveIsSet', function(isSet) {
+        view.on('curveIsSet', function (isSet) {
           var ie = App.input_elements.find_by_key(disableInputKey);
 
           if (ie && !!ie.get('disabled') !== isSet) {

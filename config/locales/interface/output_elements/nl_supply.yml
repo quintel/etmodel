@@ -244,23 +244,24 @@ nl:
       description: |
         Deze grafiek laat per uur vraag en aanbod van netwerkgas zien. Netwerkgas is de mix van aardgas en groengas in 
         de gasnetwerken. Wat er precies onder vraag en aanbod valt, wordt hieronder uitgelegd:
-        <ul><li>De vraaglijn toont de finale gasvraag van alle sectoren. Hierin wordt
-        de vraag van flex-technologieën die het systeem balanceren <b>niet</b> 
-        meegenomen, zoals gas dat gebruikt wordt in regelbare elektriciteitscentrales of warmteketels 
+        <ul><li>De vraaglijn toont de finale gasvraag van alle sectoren en de eventuele constante export van gas om het 
+        jaarvolume te balanceren. De vraag van flex-technologieën die het systeem balanceren valt <b>niet</b> 
+        in deze categorie, zoals gas dat gebruikt wordt in regelbare elektriciteitscentrales of warmteketels 
         voor warmtenetten. In het ETM wordt gas automatisch gebufferd door het jaar heen. Het gas dat deze
         opslag ingaat valt <b>niet</b> onder de vraag, evenals de export van gas.</li>
-        <li>De aanbodlijn toont de gasproductie, hiervoor neemt het ETM een vlakprofiel aan.
-        Hierin wordt het gas dat uit de opslag komt en import van gas <b>niet</b> meegenomen.</li>
+        <li>De aanbodlijn toont de gasproductie, hiervoor neemt het ETM een vlakprofiel aan. Ook valt de constante import van 
+        gas om het jaarvolume te balanceren in deze categorie. Gas uit gasbergingen valt <b>niet</b> onder deze aanbodlijn.</li>
     flexibility_hourly_hydrogen_supply_demand:
       title: Vraag en aanbod van waterstof per uur
       description: |
         Deze grafiek laat per uur vraag en aanbod van waterstof zien. Wat er precies onder vraag en aanbod valt, wordt hieronder uitgelegd:
-        <ul><li>De vraaglijn toont de finale waterstofvraag van alle sectoren. Hierin wordt
-        de vraag van flex-technologieën die het systeem balanceren <b>niet</b> 
-        meegenomen, zoals waterstof dat gebruikt wordt in regelbare elektriciteitscentrales of warmteketels 
+        <ul><li>De vraaglijn toont de finale waterstofvraag van alle sectoren en de constante export van waterstof om het 
+        jaarvolume te balanceren. De vraag van flex-technologieën die het systeem balanceren valt <b>niet</b> 
+        in deze categorie, zoals waterstof dat gebruikt wordt in regelbare elektriciteitscentrales of warmteketels 
         voor warmtenetten. In het ETM wordt waterstof automatisch gebufferd door het jaar heen. Het waterstof dat deze
-        opslag ingaat valt <b>niet</b> onder de vraag.</li>
+        berging ingaat valt <b>niet</b> onder de vraag.</li>
         <li>De aanbodlijn toont de niet-regelbare / volatiele productie, zoals bijvoorbeeld windmolenparken
-        die de geproduceerde elektriciteit direct omzetten in waterstof of een SMR productie plant. De waterstofproductie
+        die de geproduceerde elektriciteit direct omzetten in waterstof of een SMR productie plant. Ook valt de constante import van 
+        waterstof om het jaarvolume te balanceren in deze categorie. De waterstofproductie
         door power-to-gas elektrolyzers die elektriciteitsoverschotten omzetten in waterstof vallen <b>niet</b> in
         deze categorie. Ook wordt het waterstof dat uit de opslag komt <b>niet</b> meegenomen.</li>

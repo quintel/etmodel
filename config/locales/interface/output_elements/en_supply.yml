@@ -22,7 +22,7 @@ en:
     use_of_transport_fuels:
       title: Transport fuel mix
       short_description: ''
-      description: This graph shows the road transport fuel mix in the present and
+      description: This chart shows the road transport fuel mix in the present and
         future. The latter is the result of your settings in sections 'Demand' and
         'Supply'.
     refinery:
@@ -52,20 +52,20 @@ en:
       description: "Which part of the CO<sub>2</sub> emissions from biomass is relevant
         to the environment is uncertain and speculative. This chart serves to explore
         the (potential) amount of these emissions.\r\n<br/><br/>\r\nBesides the official
-        UNFCCC accounted  CO<sub>2</sub> emission this graph also shows the CO<sub>2</sub>
+        UNFCCC accounted  CO<sub>2</sub> emission this chart also shows the CO<sub>2</sub>
         which is emitted due the use of biomass and is (potentially) relevant for
         climate change. Which part of the biomass CO<sub>2</sub> emissions should
         be shown can be set with the sliders in the CO<sub>2</sub> biomass section.\r\n<br/><br/>\r\nThe
-        graph only displays energetic CO<sub>2</sub> emissions, which are emitted
+        chart only displays energetic CO<sub>2</sub> emissions, which are emitted
         in domestic energy use and production. Non-energetic emissions are not included.
         Non-energetic emissions are related to processes other than the production
         of usable energy like electricity or heat. An example of such emissions are
         the CO<sub>2</sub> emissions that are released from cement during its making.
         The CO<sub>2</sub> emissions related to the needed energy for cement production
         <em>do</em> count as energetic emissions.\r\n<br/><br/>\L\r\nNote: When the
-        Fuel Chain Emissions module is turned on, the graph also includes CO<sub>2</sub>
+        Fuel Chain Emissions module is turned on, the chart also includes CO<sub>2</sub>
         equivalents of other greenhouse gas emissions, like methane (CH<sub>4</sub>)
-        or nitrous oxide (N<sub>2</sub>O) related to the fuel chain in this graph.
+        or nitrous oxide (N<sub>2</sub>O) related to the fuel chain in this chart.
         Non-energetic emissions and greenhouse gas emissions not related to the fuel
         chain are not included."
     mekko_demand_bio_resource:
@@ -105,7 +105,7 @@ en:
     hydrogen_production_for_fertilizers:
       title: Hydrogen production for the fertilizer industry
       short_description: ''
-      description: This graph shows the hydrogen production for use in the fertilizer
+      description: This chart shows the hydrogen production for use in the fertilizer
         industry in the present and future. The latter is the result of your settings
         in sections 'Demand' (size of the fertilizers industry) and 'Flexibility'
         (conversion to gas).
@@ -124,7 +124,7 @@ en:
     source_of_heat_production:
       title: Heat and cold production
       short_description: ''
-      description: "This graph shows the composition of the total heat production.
+      description: "This chart shows the composition of the total heat production.
         \r\n<br/><br/>\r\nYou can use the sliders to change the extent to which a
         technology is used. This will result in heat mix shift."
     chp_properties:
@@ -180,7 +180,7 @@ en:
     present_energy_imports:
       title: Present energy imports
       short_description: Present year
-      description: "This graph compares the net foreign energy dependence in the present
+      description: "This chart compares the net foreign energy dependence in the present
         and future years as a result of your choices. Net energy dependence means
         that we subtract all energy exports from energy imports and divide the result
         by the total primary energy use.\r\n<br/><br/> For more information see the
@@ -188,9 +188,9 @@ en:
     future_energy_imports:
       title: Future energy imports
       short_description: Future year
-      description: "This graph shows a breakdown of the energy that we import from
+      description: "This chart shows a breakdown of the energy that we import from
         other countries in the future by energy source. Each of the bars add up to
-        the end result in the end year (the black bar to the far right of the graph).\r\n<br/><br/>\r\nOverall,
+        the end result in the end year (the black bar to the far right of the chart).\r\n<br/><br/>\r\nOverall,
         the lower the dependence on foreign energy the better it is."
     production_curve_coal:
       title: Production curve for coal
@@ -214,9 +214,50 @@ en:
       description: ''
     flexibility_hourly_electricity_supply_demand:
       title: Hourly electricity supply and demand
+      description: |
+        This chart shows the supply and demand of electricity per hour. What exactly is meant by 
+        base load demand and inflexible supply is explained below:
+        <ul> <li> The demand line shows the end use of the sectors. 
+        This does <b> not </b> include the demand for flex technologies that balance the system, 
+        such as excess electricity for power-to-gas electrolysers, hybrid heat in industry 
+        or batteries. Also, exports of electricity and curtailment are <b> not </b> included in demand. </li>
+        <li> The supply line shows the must-run and volatile production, such as wind 
+        turbines and solar PV. This does <b> not </b> include the production by flex technologies, 
+        such as electricity production by dispatchable gas / hydrogen power plants or electricity 
+        from batteries. Also, imports of electricity are <b> not </b> included. </li>
     flexibility_hourly_heat_network_supply_demand:
       title: Hourly heat supply and demand for district heating
+      description: |
+        This graph shows the hourly supply and demand of district heating for the built environment 
+        and agriculture. What exactly is meant by base load demand and inflexible production is explained below:
+        <ul> <li> The demand line shows the total heat demand of the built environment and agriculture. 
+        If you have installed (seasonal) heat storage in your scenario, the heat entering the storage will 
+        <b> not </b> be included in this demand line. </li>
+        <li> The supply line shows the must-run / volatile production, such as geothermal and solar 
+        thermal. This does not include the supply of dispatchable heat sources, such as heat production by 
+        dispatchable gas boilers or heat pumps. Also, heat from (seasonal) storage is <b> not </b> included. </li>
     flexibility_hourly_network_gas_supply_demand:
       title: Hourly gas supply and demand
+      description: | 
+        This graph shows supply and demand of network gas per hour. Network gas is the mix of natural gas 
+        and green gas in the gas networks. What exactly is meant by base load demand and inflexible supply 
+        is explained below. 
+        <ul> <li> The demand line shows the end use of all sectors. This does <b> not </b> include the demand for 
+        flex technologies that balance the system, such as gas used in dispatchable power plants or boilers 
+        for heat networks. In the ETM, gas is automatically buffered throughout the year. The gas entering 
+        this storage is <b> not </b> included in demand, as is the export of gas. </li>
+        <li> The supply line shows the gas production, for this the ETM assumes a flat profile. This does <b> not </b> 
+        include the gas from gas storage facilities and import of gas. </li>
     flexibility_hourly_hydrogen_supply_demand:
       title: Hourly hydrogen supply and demand
+      description: | 
+        This graph shows supply and demand of hydrogen per hour. What exactly is meant by base load demand and inflexible supply 
+        is explained below. 
+        <ul> <li> The demand line shows the end use of all sectors. This does <b> not </b> include the demand for 
+        flex technologies that balance the system, such as hydrogen used in dispatchable power plants or boilers 
+        for heat networks. In the ETM, hydrogen is automatically buffered throughout the year. The hydrogen entering 
+        this storage is <b> not </b> included in demand.</li>
+        <li>The supply line shows the must-run / volatile production, such as wind farms that convert the electricity 
+        produced directly into hydrogen or an SMR production plant. Hydrogen production by power-to-gas electrolyzers 
+        that convert excess electricity into hydrogen does <b> not </b> fall into this category. Also, the hydrogen 
+        from gas storage facilities is <b> not </b> included. </li>

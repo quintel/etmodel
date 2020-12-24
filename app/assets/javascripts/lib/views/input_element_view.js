@@ -196,10 +196,10 @@
       var newGroupData = {};
 
       newData[groupName] = newGroupData;
-      var entries = Object.entries(attrs);
+      var groupEntries = Object.entries(attrs);
 
-      for (var i = 0; i < entries.length; i++) {
-        var entry = entries[i];
+      for (var j = 0; j < entries.length; j++) {
+        var entry = groupEntries[i];
 
         newGroupData[entry[0]] = {
           future: entry[1],

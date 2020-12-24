@@ -189,17 +189,16 @@ en:
       title: Need for seasonal storage
       description: |
         This chart is a continuation of the flexibility chart "Imbalance per month". It is 
-        advisable to look at that chart first. Below is an explanation of the lines shown:
-        <ul> <li> The blue line in the chart shows the sum of all shortages and surpluses of 
+        advisable to look at that chart first. An explanation of the lines is shown below:
+        <ul> <li> The line excluding correction in the chart shows the sum of all shortages and surpluses of 
         electricity, gas, hydrogen and heat throughout the year. When the line is rising, it means 
         there were net surpluses in that hour and when the line is falling, it means there 
         were net shortages. If the end point of the chart is higher than the starting point, 
         this means that more energy was generated in the year than required and vice versa. 
-        The difference between the start and end point of the blue line indicates how much 
+        The difference between the start and end point of the line excluding correction indicates how much 
         "leeway" you have to use the surpluses in your scenario to make up for the shortages. 
         So how much conversion / storage loss you can afford to eventually balance the system.</li>
-        <li> The red line is a corrected version of the blue line. In this line it is assumed 
-        that the energy system is already in balance at an annual level: that all generated 
+        <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated 
         energy goes somewhere and all required energy comes from somewhere. This gives a rough 
         estimate of your total required storage capacity to ensure that carriers can be used 
         at the right time. This total required storage capacity can be read from the highest 

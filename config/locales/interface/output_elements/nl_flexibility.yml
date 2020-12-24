@@ -166,16 +166,15 @@ nl:
       description: |
         Deze grafiek is een vervolg op de flexibiliteitsgrafiek "Onbalans per maand". Het is aan te raden eerst die grafiek
         te bekijken. Hieronder volgt een uitleg over de getoonde lijnen:
-        <ul><li>De blauwe lijn in de grafiek toont de optelling van alle tekorten en overschotten van elektriciteit, 
+        <ul><li>De lijn exclusief correctie in de grafiek toont de optelling van alle tekorten en overschotten van elektriciteit, 
         gas, waterstof en warmte door het jaar heen. Wanneer de lijn stijgt, betekent dit dat er netto overschotten
         waren in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
         waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit 
         dat er in het jaar meer energie is opgewekt dan gevraagd en vice versa. Het verschil tussen 
-        start en eindpunt van de blauwe lijn geeft aan hoeveel ‘speelruimte’ je hebt om met de
+        start en eindpunt van de lijn exclusief correctie geeft aan hoeveel ‘speelruimte’ je hebt om met de
         overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt 
         permitteren om uiteindelijk het systeem in balans te krijgen.</li>
-        <li>De rode lijn is een gecorrigeerde versie van de blauwe lijn. In deze lijn is aangenomen dat
-        het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
+        <li>Voor de gecorrigeerde lijn is aangenomen dat het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
         gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale 
         benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden. 
         Deze totale benodigde opslagcapaciteit is af te lezen aan de hoogste waarde van deze lijn.</li>

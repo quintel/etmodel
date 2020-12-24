@@ -8,6 +8,8 @@ interface BackwardsCompatChartView {
     main_formatter(): (value: number) => string;
     toggleFormat(): void;
     toggle_format(): void;
+    updateHeaderButtons(): void;
+    update_header(): void;
     updateLockIcon(): void;
     update_lock_icon(): void;
   };
@@ -22,10 +24,11 @@ interface BackwardsCompatChartView {
  */
 export default (klass: BackwardsCompatChartView): BackwardsCompatChartView => {
   klass.prototype.container_selector = klass.prototype.containerSelector;
+  klass.prototype.is_empty = klass.prototype.isEmpty;
   klass.prototype.main_formatter = klass.prototype.createValueFormatter;
   klass.prototype.toggle_format = klass.prototype.toggleFormat;
+  klass.prototype.update_header = klass.prototype.updateHeaderButtons;
   klass.prototype.update_lock_icon = klass.prototype.updateLockIcon;
-  klass.prototype.is_empty = klass.prototype.isEmpty;
 
   return klass;
 };

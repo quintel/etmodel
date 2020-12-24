@@ -4,13 +4,14 @@
   unit: "%"
   related_node: industry_steel_blastfurnace_captured_co2
   interface_group: industry
-  position: 2
+  position: 1
   slide_key: supply_ccus_capture
 - key: share_of_industry_chemicals_fertilizers_captured_processes_co2
   step_value: 1.0
   unit: "%"
   related_node: industry_chemicals_fertilizers_captured_processes_co2
   interface_group: industry
+  dependent_on: has_detailed_chemical_industry
   position: 2
   slide_key: supply_ccus_capture
 - key: share_of_industry_chemicals_fertilizers_captured_combustion_co2
@@ -18,7 +19,8 @@
   unit: "%"
   related_node: industry_chemicals_fertilizers_captured_combustion_co2
   interface_group: industry
-  position: 2
+  dependent_on: has_detailed_chemical_industry
+  position: 3
   slide_key: supply_ccus_capture
 - key: share_of_industry_other_paper_captured_co2
   step_value: 1.0

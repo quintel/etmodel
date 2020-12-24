@@ -4,72 +4,70 @@ nl:
     use_of_primary_energy:
       title: Primair energieverbruik
       short_description: ''
-      description: "De grafiek toont de totale primaire energievraag in jouw land
-        voor nu en in de toekomst.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven
-        de grafiek om andere grafieken te tonen over energiegebruik."
+      description: |
+        De grafiek toont de totale primaire energievraag in jouw land
+        voor nu en in de toekomst.<br/><br/>Kies <u>Wijzig grafiek</u> boven
+        de grafiek om andere grafieken te tonen over energiegebruik.
     co2_emissions:
       title: CO<sub>2</sub>-emissies
       short_description: ''
-      description: "Deze grafiek vergelijkt de uitstoot van energetische CO<sub>2</sub>
+      description: |
+        Deze grafiek vergelijkt de uitstoot van CO<sub>2</sub>
         in 1990, het heden en de toekomst. Het jaar 1990 wordt vaak als referentiejaar
-        genoemd in CO<sub>2</sub> doelstellingen. De lijn is de doelstelling die is
-        ingesteld in het onderdeel 'Doelen'. \r\n<br/><br/>\r\nDeze grafiek toont
-        alleen binnenlandse, energetische CO<sub>2</sub>-uitstoot. Niet-energetische
-        emissies van CO<sub>2</sub> zijn niet meegenomen. Deze emissies zijn gerelateerd
-        aan processen waarbij het eindproduct geen bruikbare energie (zoals elektriciteit
-        of warmte) oplevert. Een voorbeeld van niet-energetische uitstoot van CO<sub>2</sub>
-        is de CO<sub>2</sub> die opgesloten zit in cement en vrijkomt bij het maken
-        ervan. De emissies die vrijkomen bij het produceren van de energie die nodig
-        is om cement te maken tellen overigens wel mee als energetische CO<sub>2</sub>
-        emissies.\r\n<br/><br/>\r\nLet op: Als de Ketenanalyse-module is ingeschakeld
-        toont deze grafiek ook andere broeikasgassen als methaan (CH<sub>4</sub>)
-        of lachgas (N<sub>2</sub>O) die gerelateerd zijn aan de brandstofproductieketen.
-        Niet-energetische emissies en broeikasgassen die ongerelateerd zijn aan de
-        brandstofproductieketen worden niet getoond."
+        gebruikt in CO<sub>2</sub> doelstellingen.<br/><br/>Het ETM neemt alleen
+        de binnenlandse, energetische CO<sub>2</sub>-uitstoot mee en de niet-energetische 
+        uitstoot van de kunstmestsector. Niet-energetische uitstoot in andere sectoren en 
+        overige broeikasgassen (zoals methaan) zijn niet meegenomen. In de
+        <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector"
+        target="_blank">documentatie</a> kun je meer informatie vinden.
     renewability:
       title: Hernieuwbaarheid van eindgebruik
       short_description: ''
-      description: "Deze grafiek laat zien hoe het percentage hernieuwbaar eindgebruik
-        van energie toeneemt in de toekomst, als gevolg van jouw keuzes en instellingen.\r\n<br/><br/>\r\nEindgebruik
+      description: |
+        Deze grafiek laat zien hoe het percentage hernieuwbaar eindgebruik
+        van energie toeneemt in de toekomst, als gevolg van jouw keuzes en instellingen.<br/><br/>Eindgebruik
         van energie betekent dat verliezen bij omzetting van energiedragers naar elektriciteit
-        of warmte niet zijn meegenomen."
+        of warmte niet zijn meegenomen.
     mekko_of_primary_demand:
       title: Primair energieverbruik
       short_description: ''
-      description: "Dit plaatje vergelijkt het primaire energiegebruik in jouw land
+      description: |
+        Dit plaatje vergelijkt het primaire energiegebruik in jouw land
         (horizontale as) voor nu en in de toekomst, opgesplitst naar sector en energiebron
         (verticale as). Primair gebruik betekent dat we kijken naar de oorsprong van
         alle energiedragers als warmte, elektriciteit en transportbrandstoffen. We
         rekenen dus ook de verliezen mee die optreden als een energiedrager wordt
-        gemaakt. \r\n<br/><br/>\r\nDe toekomstgrafiek is het resultaat van jouw keuzes
+        gemaakt. <br/><br/>De toekomstgrafiek is het resultaat van jouw keuzes
         bij het vaststellen van de toekomstige vraag en opwekking van energie en van
-        de toekomstige rendementen van centrales.\r\n<br/><br/>\r\nVoorbeeld: Groei
+        de toekomstige rendementen van centrales.<br/><br/>Voorbeeld: Groei
         van de economie geeft een hoger energieverbruik. Besparingen en moderne technieken
         geven een lager verbruik. Keuzes voor warmtepompen en elektrisch vervoer geven
         een lager totaal energieverbruik maar een hoger aandeel elektriciteit daarbinnen.
         Hoe jij de elektriciteit, warmte en brandstoffen maakt, bepaalt uiteindelijk
-        de primaire energievraag.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven
-        de grafiek om andere grafieken te tonen over energiegebruik.\r\n\r\n"
+        de primaire energievraag.<br/><br/>Kies <u>Wijzig grafiek</u> boven
+        de grafiek om andere grafieken te tonen over energiegebruik.
     source_of_electricity_production:
       title: Elektriciteitsproductie
       short_description: ''
-      description: "Deze grafiek toont welke technologieën gebruikt worden voor de
+      description: |
+        Deze grafiek toont welke technologieën gebruikt worden voor de
         huidige en toekomstige elektriciteitsproductie. De toekomstige samenstelling
         van het productiepark is standaard hetzelfde als de huidige. Je kunt kiezen
-        hoe je de toekomstige vraag wilt invullen met de schuifjes links van de grafiek.\r\n<br/><br/>\r\nDe
+        hoe je de toekomstige vraag wilt invullen met de schuifjes links van de grafiek.<br/><br/>De
         vraag naar elektriciteit wordt aangegeven met de horizontale lijn. Als de
         productie hoger is dan de vraag, zal het model automatisch stroom exporteren.
-        Als je te weinig productiecapaciteit bouwt, zal het model stroom importeren.\r\n"
+        Als je te weinig productiecapaciteit bouwt, zal het model stroom importeren.
     sankey:
       title: Toekomstige energiestromen
       short_description: ''
-      description: "Sankey diagrammen tonen hoe, waar en hoeveel energie wordt gebruikt.
+      description: |
+        Sankey diagrammen tonen hoe, waar en hoeveel energie wordt gebruikt.
         Aan de linkerkant zijn de primaire energievormen te zien. Het energiegebruik
         voor de productie van elektriciteit en warmte is in het midden te zien. Aan
-        de rechterkant is te zien waar de energie gebruikt wordt. <br/>\r\nAls je
+        de rechterkant is te zien waar de energie gebruikt wordt. <br/>Als je
         met je muis over de grafiek gaat, zie je verschillende onderdelen oplichten
-        en kun je meer informatie krijgen.\r\n<br><br>\r\nNB: verliezen tengevolge
-        van transport en raffinage van energiedragers zijn buiten beschouwing gelaten.\r\n\r\n"
+        en kun je meer informatie krijgen.<br><br>NB: verliezen tengevolge
+        van transport en raffinage van energiedragers zijn buiten beschouwing gelaten.
     sankey_2010:
       title: Huidige energiestromen
       short_description: ''

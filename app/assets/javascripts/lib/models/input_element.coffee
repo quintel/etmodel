@@ -16,18 +16,20 @@ class @InputElement extends Backbone.Model
   conversions: ->
     conversions = @get('conversions') or []
 
-    if App.settings.get_scaling() and Quantity.isSupported(@get('unit'))
+    if Quantity.isSupported(@get('unit'))
       base = new Quantity(
-        # If start value is zero, we can't scale down to a different unit, as it
-        # will always default to the smallest possible. In these cases, try the
-        # maximum.
-        @get('start_value') || @get('max_value'),
+        # Use the value of the slider when it is exactly half way between the
+        # min and max to determine how to scale the unit. Using the start
+        # value is no good, as a slider whose start value is zero would always
+        # scale to the smallest SI unit.
+        (@get('start_value') + @get('max_value')) / 2,
         @get('unit')
       )
 
       scaled = base.smartScale()
 
-      if scaled.unit.power.multiple < base.unit.power.multiple
+      if scaled.unit.power.multiple < base.unit.power.multiple &&
+          scaled.unit != base.unit
         conversions = conversions.slice()
 
         conversions.push({

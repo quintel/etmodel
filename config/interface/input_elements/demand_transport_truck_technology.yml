@@ -1,27 +1,26 @@
 ---
-- key: transport_truck_using_gasoline_mix_share
-  share_group: transport_truck_tech
-  step_value: 0.1
-  unit: "%"
-  position: 3
-  slide_key: demand_transport_truck_technology
-- key: transport_truck_using_diesel_mix_share
-  share_group: transport_truck_tech
-  step_value: 0.1
-  unit: "%"
-  position: 2
-  slide_key: demand_transport_truck_technology
 - key: transport_truck_using_electricity_share
   share_group: transport_truck_tech
   step_value: 0.1
   unit: "%"
   position: 1
   slide_key: demand_transport_truck_technology
-- key: transport_truck_using_compressed_natural_gas_share
+- key: transport_truck_using_hydrogen_share
   share_group: transport_truck_tech
   step_value: 0.1
   unit: "%"
-  command_type: value
+  position: 2
+  slide_key: demand_transport_truck_technology
+- key: transport_truck_using_diesel_mix_share
+  share_group: transport_truck_tech
+  step_value: 0.1
+  unit: "%"
+  position: 3
+  slide_key: demand_transport_truck_technology
+- key: transport_truck_using_gasoline_mix_share
+  share_group: transport_truck_tech
+  step_value: 0.1
+  unit: "%"
   position: 4
   slide_key: demand_transport_truck_technology
 - key: transport_truck_using_lng_mix_share
@@ -30,9 +29,10 @@
   unit: "%"
   position: 5
   slide_key: demand_transport_truck_technology
-- key: transport_truck_using_hydrogen_share
+- key: transport_truck_using_compressed_natural_gas_share
   share_group: transport_truck_tech
   step_value: 0.1
   unit: "%"
-  position: 2
+  command_type: value
+  position: 6
   slide_key: demand_transport_truck_technology

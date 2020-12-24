@@ -320,7 +320,7 @@ en:
       description: |
         This chart shows the imbalance between supply and demand for electricity, gas, 
         hydrogen and heat per month. The imbalance is calculated by subtracting the demand 
-        from the supply, this is called the "residual load". Negative values mean "surpluses" 
+        from the supply, this is called the "residual load". <br /><br />Negative values mean "surpluses" 
         of energy and positive values "shortages". This way you can gain insight into the 
         balance of your energy system throughout the year: in which months does an imbalance occur? 
         Which carriers are not in balance? Are these shortages or surpluses of energy? If you are 
@@ -339,7 +339,7 @@ en:
         Surpluses at one point in time can be used to resolve deficits at a later point, either by 
         storing the surpluses or by converting one carrier into another. By comparing the start and end point of this line, you can see how much 
         "leeway" you have to use these surpluses in your scenario to make up for the shortages. 
-        So how much conversion / storage losses you can afford to eventually balance the system.</li>
+        So how much conversion / storage losses you can afford to eventually balance the system.</li><br /><br />
         <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated 
         energy goes somewhere and all required energy comes from somewhere. This gives a rough 
         estimate of your total required storage capacity to ensure that carriers can be used 

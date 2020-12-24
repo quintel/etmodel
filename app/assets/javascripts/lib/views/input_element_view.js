@@ -186,7 +186,11 @@
       return newData;
     }
 
-    for (var groupData of Object.entries(data)) {
+    var entries = Object.entries(data);
+
+    for (var i = 0; i < entries.length; i++) {
+      var groupData = entries[i];
+
       var groupName = groupData[0];
       var attrs = groupData[1];
       var newGroupData = {};

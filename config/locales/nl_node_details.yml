@@ -2,54 +2,54 @@
 nl:
   node_details:
     attributes:
-      ccs_investment_per_mw_electricity: Additional initial investment for CCS
-      ccs_investment_per_plant: Additional initial investment for CCS
-      coal_input_conversion: Coal input conversion
-      coefficient_of_performance: Coefficient of Performance
-      construction_time: Construction time
-      cost_of_installing_per_plant: Cost of installing
-      decommissioning_costs_per_mw_electricity: Decommissioning costs
-      decommissioning_costs_per_mw_typical_input_capacity: Decommissioning costs
-      decommissioning_costs_per_plant: Decommissioning costs
-      efficiency: Efficiency
-      electricity_output_capacity: Electrical capacity per unit
-      electricity_output_conversion: Electrical efficiency
-      fixed_operation_and_maintenance_costs_per_mw_electricity: Fixed operation and maintenance costs
-      fixed_operation_and_maintenance_costs_per_mw_typical_input_capacity: Fixed operation and maintenance costs
-      fixed_operation_and_maintenance_costs_per_plant: Fixed operation and maintenance costs
-      free_co2_factor: CCS capture rate
-      full_load_hours: Full load hours
-      heat_and_cold_output_conversion: Efficiency (after COP)
-      heat_output_capacity: Heat capacity per unit
-      heat_output_conversion: Heat efficiency
-      hydrogen_output_conversion: Hydrogen output efficiency
-      land_use_per_unit: Land use per unit
+      ccs_investment_per_mw_electricity: Investeringen voor CCS
+      ccs_investment_per_plant: Investeringen voor CCS
+      coal_input_conversion: Inputconversie kolen
+      coefficient_of_performance: COP (Coefficient of Performance)
+      construction_time: Bouwtijd
+      cost_of_installing_per_plant: Installatiekosten
+      decommissioning_costs_per_mw_electricity: Ontmantelingskosten
+      decommissioning_costs_per_mw_typical_input_capacity: Ontmantelingskosten
+      decommissioning_costs_per_plant: Ontmantelingskosten
+      efficiency: Efficiëntie
+      electricity_output_capacity: Elektrische capaciteit per installatie
+      electricity_output_conversion: Efficiëntie (elektriciteit)
+      fixed_operation_and_maintenance_costs_per_mw_electricity: Vaste exploitatie- en onderhoudskosten (O&M)
+      fixed_operation_and_maintenance_costs_per_mw_typical_input_capacity: Vaste exploitatie- en onderhoudskosten (O&M)
+      fixed_operation_and_maintenance_costs_per_plant: Vaste exploitatie- en onderhoudskosten (O&M)
+      free_co2_factor: Afvangpercentage CCS
+      full_load_hours: Vollasturen
+      heat_and_cold_output_conversion: Efficiëntie (na COP)
+      heat_output_capacity: Warmtecapaciteit per installatie
+      heat_output_conversion: Efficiëntie (warmte)
+      hydrogen_output_conversion: Efficiëntie (waterstof)
+      land_use_per_unit: Landgebruik per installatie
       round_trip_efficiency: Round trip efficiency
-      storage_volume: Storage capacity per unit
-      takes_part_in_ets: Do emissions have to be paid through the ETS?
-      technical_lifetime: Technical lifetime
-      torrefied_biomass_pellets_input_conversion: Torrefied biomass pellts input conversion
-      total_initial_investment_per_mw_electricity: Initial investment (excl CCS)
-      total_initial_investment_per_mw_typical_input_capacity: Initial investment
-      total_initial_investment_per_plant: Initial purchase price
-      typical_input_capacity: Capacity per unit
-      useable_heat_output_conversion: Heat efficiency
-      variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Additional variable operation and maintenance costs for CCS
-      variable_operation_and_maintenance_costs_per_full_load_hour: Variable operation and maintenance costs
-      wacc: Weighted average cost of capital
-      wood_pellets_input_conversion: Wood pellets input conversion
-    download_analysis: Download source analysis
+      storage_volume: Opslagcapaciteit per installatie
+      takes_part_in_ets: Valt onder ETS (EU Emissions Trading System)?
+      technical_lifetime: Technische levensduur
+      torrefied_biomass_pellets_input_conversion: Inputconversie getorrificeerde biomassa
+      total_initial_investment_per_mw_electricity: Investeringskosten (excl CCS)
+      total_initial_investment_per_mw_typical_input_capacity: Investeringskosten
+      total_initial_investment_per_plant: Investeringskosten
+      typical_input_capacity: Capaciteit per installatie
+      useable_heat_output_conversion: Efficiëntie (warmte)
+      variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten voor CCS
+      variable_operation_and_maintenance_costs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten (O&M)
+      wacc: Kapitaalskosten (WACC)
+      wood_pellets_input_conversion: Inputconversie vaste biomassa
+    download_analysis: Download brondata
     groups:
-      cost: Costs
-      current_fuel_input_mix: Current fuel input mix
-      other: Other
-      technical: Technical
+      cost: Kosten
+      current_fuel_input_mix: Brandstofmix
+      other: Overig
+      technical: Technisch
     input_mix_notice: >
-      The fuel input mix of this plant can be changed by your slider settings. Doing so changes both
-      technical and cost parameters in this table.
+      De brandstofmix van deze centrale kan aangepast worden via schuifjes.
+      Dit heeft impact op de technische en financiële parameters in deze tabel.
     texts:
       'yes': 'Ja'
       'no': 'Nee'
     units:
-      full load hour: full load hour
+      full load hour: vollastuur
       year: 'jaar'

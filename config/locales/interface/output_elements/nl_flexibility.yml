@@ -112,8 +112,8 @@ nl:
         balans binnen een maand, is er de mogelijkheid om in te zoomen. Door te klikken op een drager in 
         specifieke maand opent er een nieuwe grafiek die inzoomt op de uurwaarden
         van die drager in die maand. </br></br>
-        Om deze (on)balans goed in beeld te krijgen, is ervoor gekozen om in deze grafiek
-        alleen de basislast (base load) energievraag en de must-run en volatiele productie te tonen.
+        Om deze (on)balans goed in beeld te krijgen, worden alleen de basislast (baseload) 
+        energievraag en de must-run en volatiele productie getoond in deze grafiek.
         Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het systeem.</br></br>
         Wat er precies onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
         <ul><li>Vraag is het eindgebruik van de verschillende sectoren. Hierin wordt
@@ -170,9 +170,10 @@ nl:
         gas, waterstof en warmte door het jaar heen. Wanneer de lijn stijgt, betekent dit dat er netto overschotten
         waren in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
         waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit 
-        dat er in het jaar meer energie is opgewekt dan gevraagd en vice versa. Het verschil tussen 
-        start en eindpunt van de lijn exclusief correctie geeft aan hoeveel ‘speelruimte’ je hebt om met de
-        overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt 
+        dat de energie overschotten groter zijn dan de tekorten. Overschotten op een bepaald moment kunnen worden 
+        gebruikt om tekorten op een later moment op te lossen, ofwel door de overschotten op te slaan, ofwel door ze 
+        om te zetten in een andere drager. Door het start- en eidnpunt van deze lijn te vergelijken, kan je zien hoeveel 
+        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt 
         permitteren om uiteindelijk het systeem in balans te krijgen.</li>
         <li>Voor de gecorrigeerde lijn is aangenomen dat het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
         gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale 

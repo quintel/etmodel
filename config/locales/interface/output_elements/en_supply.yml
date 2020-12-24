@@ -242,22 +242,24 @@ en:
         This graph shows supply and demand of network gas per hour. Network gas is the mix of natural gas 
         and green gas in the gas networks. What exactly is meant by base load demand and inflexible supply 
         is explained below. 
-        <ul> <li> The demand line shows the end use of all sectors. This does <b> not </b> include the demand for 
-        flex technologies that balance the system, such as gas used in dispatchable power plants or boilers 
+        <ul> <li> The demand line shows the end use of all sectors and the possible constant export of gas to balance yearly production of 
+        gas. The demand for flex technologies that balance the system are <b> not </b> included in the demand line, such as gas used in dispatchable power plants or boilers 
         for heat networks. In the ETM, gas is automatically buffered throughout the year. The gas entering 
         this storage is <b> not </b> included in demand, as is the export of gas. </li>
-        <li> The supply line shows the gas production, for this the ETM assumes a flat profile. This does <b> not </b> 
-        include the gas from gas storage facilities and import of gas. </li>
+        <li> The supply line shows the gas production, for this the ETM assumes a flat profile. Also, the possible constant import of gas to balance yearly demand of 
+        gas is included in the supply line. The supply line does <b> not </b> 
+        include the gas from gas storage facilities. </li>
     flexibility_hourly_hydrogen_supply_demand:
       title: Hourly hydrogen supply and demand
       description: | 
         This graph shows supply and demand of hydrogen per hour. What exactly is meant by base load demand and inflexible supply 
         is explained below. 
-        <ul> <li> The demand line shows the end use of all sectors. This does <b> not </b> include the demand for 
-        flex technologies that balance the system, such as hydrogen used in dispatchable power plants or boilers 
+        <ul> <li> The demand line shows the end use of all sectors and the possible constant export of hydrogen to balance yearly production of 
+        hydrogen. The demand for flex technologies that balance the system are <b> not </b> included in the demand line, such as hydrogen used in dispatchable power plants or boilers 
         for heat networks. In the ETM, hydrogen is automatically buffered throughout the year. The hydrogen entering 
         this storage is <b> not </b> included in demand.</li>
         <li>The supply line shows the must-run / volatile production, such as wind farms that convert the electricity 
-        produced directly into hydrogen or an SMR production plant. Hydrogen production by power-to-gas electrolyzers 
+        produced directly into hydrogen or an SMR production plant. Also, the possible constant import of hydrogen to balance yearly demand of 
+        hydrogen is included in the supply line. Hydrogen production by power-to-gas electrolyzers 
         that convert excess electricity into hydrogen does <b> not </b> fall into this category. Also, the hydrogen 
-        from gas storage facilities is <b> not </b> included. </li>
+        from hydrogen storage facilities is <b> not </b> included. </li>

@@ -40,4 +40,42 @@ describe EsdlSuiteId do
       expect { esdl_suite_id.fresh }.not_to(change { esdl_suite_id })
     end
   end
+
+  describe '.create_or_update' do
+    subject { described_class.create_or_update(some_attributes) }
+
+    let(:some_attributes) do
+      {
+        user: user,
+        expires_at: 10.minutes.from_now,
+        access_token: '012',
+        refresh_token: '345',
+        id_token: '678'
+      }
+    end
+
+    context 'with existing id on user' do
+      before { esdl_suite_id }
+
+      it 'updates the esdl_suite_id' do
+        subject
+        expect(user.esdl_suite_id.access_token).to eq('012')
+      end
+
+      it 'does not change db count' do
+        expect { subject }.not_to(change(described_class, :count))
+      end
+    end
+
+    context 'with no existing id on user' do
+      it 'creates the esdl_suite_id' do
+        subject
+        expect(user.esdl_suite_id.access_token).to eq('012')
+      end
+
+      it 'changes the db count' do
+        expect { subject }.to(change(described_class, :count))
+      end
+    end
+  end
 end

@@ -22,14 +22,25 @@ class EsdlSuiteId < ApplicationRecord
     to_access_token.userinfo!
   end
 
+  # Refreshes the EsdlSuiteId OpenId tokens if possible, else removes this EsdlSuiteId
   def refresh
-    update(EsdlSuiteService.setup.refresh(to_access_token))
+    new_token = EsdlSuiteService.setup.refresh(to_access_token)
+    return delete unless new_token
+
+    update(new_token)
   end
 
   def fresh
     refresh if expired?
 
     self
+  end
+
+  def self.create_or_update(attributes)
+    existing_id = attributes[:user].esdl_suite_id
+    return existing_id.update(attributes) if existing_id
+
+    create(attributes)
   end
 
   private

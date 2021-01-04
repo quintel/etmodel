@@ -67,11 +67,12 @@ class EsdlSuiteService
     expected = { client_id: @client_id, issuer: discovery.issuer, nonce: nonce, audience: @audience }
     id_token.verify!(expected)
 
-    EsdlSuiteId.create!(
+    EsdlSuiteId.create_or_update(
       user: user,
       id_token: access_token.id_token,
       access_token: access_token.access_token,
-      refresh_token: access_token.refresh_token
+      refresh_token: access_token.refresh_token,
+      expires_at: Time.zone.at(id_token.exp).to_datetime
     )
 
     ServiceResult.success
@@ -84,6 +85,8 @@ class EsdlSuiteService
     ServiceResult.failure(['Scary spooky! Either Nonce, Aud or Issuer was invalid!'])
   end
 
+  # Refreshes an expired OpenIDConnect::AccessToken access_token
+  # and returns the updated values
   def refresh(access_token)
     new_access_token = access_token.client.access_token!
     expires = Time.zone.at(decode_id_token(new_access_token.id_token).exp).to_datetime
@@ -93,6 +96,8 @@ class EsdlSuiteService
       id_token: new_access_token.id_token,
       expires_at: expires
     }
+  rescue Rack::OAuth2::Client::Error
+    {}
   end
 
   # Returns a OpenIDConnect::Client with the correct settings

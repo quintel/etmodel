@@ -6,11 +6,7 @@ class ImportEsdlController < ApplicationController
   before_action :ensure_esdl_enabled
 
   def index
-    @has_account = current_user&.esdl_suite_id.present? || false
-
-    if @has_account
-      ## check stale!
-    end
+    @esdl_account = current_user&.esdl_suite_id
   end
 
   def create

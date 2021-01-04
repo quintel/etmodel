@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Represents a Users OpenId for the ESDL Suite
 class EsdlSuiteId < ApplicationRecord
   belongs_to  :user
 
@@ -6,21 +9,42 @@ class EsdlSuiteId < ApplicationRecord
   validates   :refresh_token, presence: true
 
   def expired?
-    # TODO
+    return true unless expires_at
+
+    expires_at < Time.zone.now
   end
 
+  # Retrieves the userinfo from the tokens. The userinfo contains the name,
+  # email adress and other details of the User that is known at the ESDL Suite
   def userinfo
+    refresh if expired?
+
     to_access_token.userinfo!
-  rescue OpenIDConnect::Unauthorized
-    # TODO: create refresh
+  end
+
+  def refresh
+    update(EsdlSuiteService.setup.refresh(to_access_token))
+  end
+
+  def fresh
+    refresh if expired?
+
+    self
+  end
+
+  private
+
+  def client
+    basic_client = EsdlSuiteService.setup.client
+    basic_client.refresh_token = refresh_token
+
+    basic_client
   end
 
   def to_access_token
     OpenIDConnect::AccessToken.new(
       access_token: access_token,
-      refresh_token: refresh_token,
-      id_token: id_token,
-      client: EsdlSuiteService.setup.client
+      client: client
     )
   end
 end

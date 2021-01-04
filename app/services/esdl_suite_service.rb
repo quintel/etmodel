@@ -19,7 +19,6 @@ class EsdlSuiteService
     )
   end
 
-
   # Arguments:
   # provider_uri                URI, when extended with /.well-known/openid-configuration
   #                             acts as a discovery url pointing to a JSON file
@@ -62,7 +61,6 @@ class EsdlSuiteService
     # Get code from query string.
     client.authorization_code = code
     access_token = client.access_token!
-    refresh_token = access_token.refresh_token
 
     # Validation.
     id_token = decode_id_token(access_token.id_token)
@@ -71,9 +69,9 @@ class EsdlSuiteService
 
     EsdlSuiteId.create!(
       user: user,
-      id_token: id_token,
+      id_token: access_token.id_token,
       access_token: access_token.access_token,
-      refresh_token: refresh_token
+      refresh_token: access_token.refresh_token
     )
 
     ServiceResult.success
@@ -84,6 +82,17 @@ class EsdlSuiteService
     ServiceResult.failure(['Token was expired'])
   rescue OpenIDConnect::ResponseObject::IdToken::InvalidNonce, OpenIDConnect::ResponseObject::IdToken::InvalidIssuer, OpenIDConnect::ResponseObject::IdToken::InvalidAudience
     ServiceResult.failure(['Scary spooky! Either Nonce, Aud or Issuer was invalid!'])
+  end
+
+  def refresh(access_token)
+    new_access_token = access_token.client.access_token!
+    expires = Time.zone.at(decode_id_token(new_access_token.id_token).exp).to_datetime
+
+    {
+      access_token: new_access_token.access_token,
+      id_token: new_access_token.id_token,
+      expires_at: expires
+    }
   end
 
   # Returns a OpenIDConnect::Client with the correct settings

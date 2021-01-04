@@ -39,6 +39,7 @@ module EsdlSuiteHelper
   def id_token_double
     id_token = double('id_token')
     allow(id_token).to receive(:verify!).and_return(true)
+    allow(id_token).to receive(:exp).and_return(10.minutes.from_now)
 
     id_token
   end

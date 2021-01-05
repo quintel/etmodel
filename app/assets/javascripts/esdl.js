@@ -44,6 +44,7 @@ $(function() {
   }
 });
 
+// Browsing the Mondaine Drive
 $(function() {
   var folders = $('.folder__true');
 
@@ -53,6 +54,9 @@ $(function() {
     });
   }
 
+  // When a folder is clicked, check if we have already collected its children.
+  // If so, we can show/hide them. If not, we have to collect the folders children
+  // from the server and create them in the DOM
   function expandFolder() {
     var folder = $(this);
     swapIcon(folder.find('span'));
@@ -74,18 +78,26 @@ $(function() {
     }
   }
 
+  // When a file is clicked (selected), add a 'selected' class, and remove the
+  // 'required' property from the 'Browse my computer' input. Vice-versa
+  // when the file is de-selected.
   function selectFile() {
     var file = $(this);
+    var myComputerFile = $('form#import_esdl').find('input[type=file]');
+
     if (file.hasClass('selected')) {
       file.removeClass('selected');
+      myComputerFile.prop('required', true);
     } else {
       $.each($('.selected'), function() {
         $(this).removeClass('selected');
       });
       file.addClass('selected');
+      myComputerFile.removeAttr('required');
     }
   }
 
+  // Swaps open and closed folder icons
   function swapIcon(icon) {
     if (icon.hasClass('fa-folder')) {
       icon.addClass('fa-folder-open').removeClass('fa-folder');
@@ -94,6 +106,8 @@ $(function() {
     }
   }
 
+  // Create a div.children containing new files and folders to be
+  // inserted in the DOM after its parent folder
   function createChildrenNode(children) {
     var childrenNode = $('<div></div>').addClass('children');
 

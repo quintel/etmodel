@@ -14,9 +14,15 @@ describe EsdlSuiteId do
     )
   end
 
+  def stub_refresh(updated_attributes)
+    allow_any_instance_of(EsdlSuiteService)
+      .to receive(:refresh)
+      .and_return(updated_attributes)
+  end
+
   it { is_expected.to belong_to(:user) }
 
-  context 'when expired' do
+  context 'when access_token is expired' do
     before do
       stub_esdl_suite_open_id_methods
       esdl_suite_id.update(expires_at: 10.minutes.ago)
@@ -31,13 +37,56 @@ describe EsdlSuiteId do
     end
   end
 
-  context 'when not expired' do
+  context 'when access_token is not expired' do
     it 'is not expired' do
       expect(esdl_suite_id).not_to be_expired
     end
 
     it '#fresh does not update the token ' do
       expect { esdl_suite_id.fresh }.not_to(change { esdl_suite_id })
+    end
+  end
+
+  context 'when refresh_token is expired' do
+    subject { esdl_suite_id.refresh }
+
+    before do
+      stub_esdl_suite_open_id_methods
+      stub_refresh({})
+      esdl_suite_id
+    end
+
+    it '#refresh removes the esdl_suite_id' do
+      expect { subject }.to change { described_class.count }.by(-1)
+    end
+
+    it '#refresh does not persist the esdl_suite_id' do
+      subject
+      expect(esdl_suite_id).not_to be_persisted
+    end
+  end
+
+  context 'when refresh_token is not expired' do
+    subject { esdl_suite_id.refresh }
+
+    before do
+      stub_esdl_suite_open_id_methods
+      stub_refresh({ access_token: '012' })
+      esdl_suite_id
+    end
+
+    it '#refresh updates the esdl_suite_id' do
+      expect { subject }.not_to(change { described_class.count })
+    end
+
+    it '#refresh updates the esdl_suite_ids access_token' do
+      subject
+      expect(esdl_suite_id.access_token).to eq('012')
+    end
+
+    it '#refresh persists the esdl_suite_id' do
+      subject
+      expect(esdl_suite_id).to be_persisted
     end
   end
 

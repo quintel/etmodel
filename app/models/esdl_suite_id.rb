@@ -25,7 +25,7 @@ class EsdlSuiteId < ApplicationRecord
   # Refreshes the EsdlSuiteId OpenId tokens if possible, else removes this EsdlSuiteId
   def refresh
     new_token = EsdlSuiteService.setup.refresh(to_access_token)
-    return delete unless new_token
+    return delete if new_token.empty?
 
     update(new_token)
   end

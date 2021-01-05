@@ -27,6 +27,7 @@ en:
       storage_volume: Storage capacity per unit
       takes_part_in_ets: Do emissions have to be paid through the ETS?
       technical_lifetime: Technical lifetime
+      timeframe: Timeframes in which this technology typically operates
       total_initial_investment_per_mw_electricity: Initial investment (excl CCS)
       total_initial_investment_per_mw_typical_input_capacity: Initial investment
       total_initial_investment_per_plant: Initial purchase price
@@ -50,6 +51,10 @@ en:
     texts:
       'yes': 'Yes'
       'no': 'No'
+      d_w_s: day / week / season
+      i_h_d: immediate / hour / day 
+      i_h_d_w: immediate / hour / day / week
+      i_h_d_w_s: immediate / hour / day / week / season
     units:
       full load hour: full load hour
       year: 'year'

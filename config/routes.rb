@@ -131,6 +131,7 @@ Rails.application.routes.draw do
   get '/import_esdl/browse_mondaine_drive' => 'import_esdl#browse_mondaine_drive'
   get '/esdl_suite/login' => 'esdl_suite#login'
   get '/esdl_suite/redirect' => 'esdl_suite#redirect'
+  get '/esdl_suite/tree' => 'esdl_suite#tree'
 
   namespace :embeds do
     resource :pico, only: [:show]

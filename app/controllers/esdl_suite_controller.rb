@@ -19,6 +19,19 @@ class EsdlSuiteController < ApplicationController
     redirect_to import_esdl_path
   end
 
+  # Only json -- should think about what happens if this fails, or when
+  # resfresh runs out midway
+  def tree
+    esdl_id = current_user&.esdl_suite_id
+    return unless esdl_id
+
+    tree_result = EsdlSuiteService.setup.get_tree(esdl_id, new_nonce, params[:path])
+    # TODO: better handle tree result failure
+    return unless tree_result.successful?
+
+    render json: tree_result.value
+  end
+
   private
 
   # Set up a new EsdlSuiteService to handle all OpenIDConnect communications

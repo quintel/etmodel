@@ -2,6 +2,7 @@
 
 .browsing
   - @esdl_tree.each do |item|
-    %div{class: "#{item['type']}__#{item['children']}" }
-      %span.fa{ class: "fa-#{item['type']}"}
-      = item['text']
+    .base
+      %div{class: "#{item['type']}__#{item['children']}", data: item}
+        %span.fa{ class: "fa-#{item['type']}"}
+        = item['text']

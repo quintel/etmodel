@@ -21,7 +21,7 @@ class EsdlSuiteController < ApplicationController
 
   # Only json -- should think about what happens if this fails, or when
   # resfresh runs out midway
-  def tree
+  def browse
     esdl_id = current_user&.esdl_suite_id
     return unless esdl_id
 

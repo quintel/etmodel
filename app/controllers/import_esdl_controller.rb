@@ -25,12 +25,6 @@ class ImportEsdlController < ApplicationController
     end
   end
 
-  def browse_mondaine_drive
-    respond_to do |format|
-      format.js
-    end
-  end
-
   private
 
   def ensure_esdl_enabled

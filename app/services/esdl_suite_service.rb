@@ -100,6 +100,20 @@ class EsdlSuiteService
     {}
   end
 
+  # Gets the browse-tree for an esdl_suite_id
+  def get_tree(esdl_suite_id, nonce)
+    return unless esdl_suite_id.fresh && esdl_suite_id
+
+    headers = { 'Authorization' => "Bearer #{esdl_suite_id.access_token}" }
+    query = { 'operation' => 'get_node', 'id' => '/' } #TODO add nonce
+    handle_tree_response(HTTParty.get(
+      'https://drive.esdl.hesi.energy/store/browse',
+      query: query,
+      headers: headers,
+      format: :json
+    ))
+  end
+
   # Returns a OpenIDConnect::Client with the correct settings
   def client
     @client ||= OpenIDConnect::Client.new(
@@ -142,5 +156,14 @@ class EsdlSuiteService
 
   def decode_id_token(id_token)
     OpenIDConnect::ResponseObject::IdToken.decode(id_token, jwks_key)
+  end
+
+  def handle_tree_response(response)
+    # if response.ok?
+    ServiceResult.success(response.parsed_response)
+    # else
+    #   puts response.content_type
+    #   ServiceResult.failure('Please log in again!')
+    # end
   end
 end

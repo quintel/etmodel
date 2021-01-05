@@ -11,8 +11,7 @@
         - unless current_user
           %h2.please_log_in= t('esdl.please_log_in')
 
-        - if @esdl_account
-          -# %h2 Mondaine Drive van #{@esdl_account.userinfo.name}
+        - if @esdl_tree
           = render partial: 'browse'
         - else
           .login_to_drive

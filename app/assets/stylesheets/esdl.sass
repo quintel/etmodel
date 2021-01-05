@@ -8,7 +8,7 @@
     width: 500px
     padding: 0  30px
     &.with_bar
-      border-right: 1px solid #d0d5d8
+      border-right: 1px solid $landing-border-color
     &.two_parts
       display: flex
       flex-direction: column
@@ -36,7 +36,7 @@
     border-radius: 4px
     padding: 15px 40px
 
-    &.soften
+    &.soften, &.disabled
       border-top-color: $landing-grey
       background: darken(#fff, 3%)
       color: #666
@@ -77,8 +77,39 @@
     .browsing
       padding: 10px
       border-radius: 4px
-      border: 1px solid #d0d5d8
+      border: 1px solid $landing-border-color
       margin-bottom: 30px
+      .folder
+        &__true
+          cursor: pointer
+          &:hover
+            color: $link-color
+
+    &.disabled
+      position: relative
+      color: #aaa
+      .button
+        color: darken(#fff, 3%)
+        background-color: #aaa
+        background: linear-gradient(lighten(#aaa, 10%), #aaa) !important
+        &:hover, &:active
+          background-color: #aaa
+          background: linear-gradient(lighten(#aaa, 10%), #aaa) !important
+      a, .dot
+        cursor: default
+        color: #aaa
+        &:hover
+          text-decoration: none
+      .please_log_in
+        z-index: 2
+        position: absolute
+        margin-top: 0
+        top: 40%
+        width: 100%
+        text-align: center
+        text-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
+        right: 0
+        color: #000
 
   form
     // text-align: center
@@ -110,7 +141,6 @@
       &.start_esdl
         align-self: flex-end
         margin-right: -81px
-
 
     .wait
       display: none

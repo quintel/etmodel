@@ -6,7 +6,13 @@ class ImportEsdlController < ApplicationController
   before_action :ensure_esdl_enabled
 
   def index
-    @esdl_account = current_user&.esdl_suite_id
+    esdl_id = current_user&.esdl_suite_id
+    return unless esdl_id
+
+    tree_result = EsdlSuiteService.setup.get_tree(esdl_id, 'aaa')
+    return unless tree_result.successful?
+
+    @esdl_tree = tree_result.value
   end
 
   def create

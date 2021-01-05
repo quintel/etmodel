@@ -1,10 +1,7 @@
 %h2 Browse my Mondaine Drive
 
 .browsing
-  dhaudha
-  %br
-  dasdhud
-  %br
-  duaidah
-  %br
-  asdauisd
+  - @esdl_tree.each do |item|
+    %div{class: "#{item['type']}__#{item['children']}" }
+      %span.fa{ class: "fa-#{item['type']}"}
+      = item['text']

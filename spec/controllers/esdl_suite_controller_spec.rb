@@ -8,11 +8,27 @@ describe EsdlSuiteController do
   let(:user) { FactoryBot.create(:user) }
   let(:nonce) { '123456abcd' }
   let(:esdl_auth_url) { 'localhost:3000/auth' }
+  let(:esdl_suite_id) do
+    EsdlSuiteId.create!(
+      user: user,
+      expires_at: 10.minutes.from_now,
+      access_token: '123',
+      refresh_token: '456',
+      id_token: '789'
+    )
+  end
 
   def stub_login_redirect_auth_uri
     allow_any_instance_of(EsdlSuiteService)
       .to receive(:auth_uri)
       .and_return(esdl_auth_url)
+  end
+
+  def stub_browse_tree(successful)
+    result = successful ? ServiceResult.success([{ key: 'val' }]) : ServiceResult.failure
+    allow_any_instance_of(EsdlSuiteService)
+      .to receive(:get_tree)
+      .and_return(result)
   end
 
   describe 'GET login' do
@@ -93,6 +109,47 @@ describe EsdlSuiteController do
     it 'creates a new EsdlSuiteId on the user' do
       subject
       expect(user.esdl_suite_id).to be_present
+    end
+  end
+
+  describe 'GET browse' do
+    subject do
+      get :browse, params: { path: 'some_path' }, format: :json
+      response
+    end
+
+    before do
+      login_as user
+      stub_esdl_suite_open_id_methods
+    end
+
+    context 'when not logged in to drive' do
+      it { is_expected.to be_redirect }
+    end
+
+    context 'with valid browse path' do
+      before do
+        stub_browse_tree(true)
+        esdl_suite_id
+      end
+      it { is_expected.to have_http_status(:ok) }
+
+      it 'returns a json with tree nodes' do
+        expect(JSON.parse(subject.body)).to eq([{ 'key' => 'val' }])
+      end
+    end
+
+    context 'with invalid browse path' do
+      before do
+        stub_browse_tree(false)
+        esdl_suite_id
+      end
+
+      it { is_expected.to have_http_status(:not_found) }
+
+      it 'returns an empty json' do
+        expect(JSON.parse(subject.body)).to eq([])
+      end
     end
   end
 end

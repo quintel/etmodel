@@ -5,6 +5,7 @@
 class EsdlSuiteController < ApplicationController
   before_action :require_user
   before_action :ensure_esdl_suite_configured
+  before_action :require_esdl_suite_id, only: :browse
 
   # Redirects the user to the login page of the ESDL Suite
   def login
@@ -19,17 +20,21 @@ class EsdlSuiteController < ApplicationController
     redirect_to import_esdl_path
   end
 
-  # Only json -- should think about what happens if this fails, or when
-  # resfresh runs out midway
+  # Browse the Mondaine Drive with an EsdlSuiteId
+  # Returns a json containing a list of file/folder nodes that are children
+  # of the folder requested in the param 'path'
+  # TODO: should think about what happens when refresh_token gets rejected
+  # midway browsing
   def browse
-    esdl_id = current_user&.esdl_suite_id
-    return unless esdl_id
+    tree_result = esdl_suite_service.get_tree(
+      current_user.esdl_suite_id,
+      new_nonce,
+      params[:path]
+    )
 
-    tree_result = EsdlSuiteService.setup.get_tree(esdl_id, new_nonce, params[:path])
-    # TODO: better handle tree result failure
-    return unless tree_result.successful?
+    render json: tree_result.value and return if tree_result.successful?
 
-    render json: tree_result.value
+    render json: [], status: :not_found
   end
 
   private
@@ -55,5 +60,9 @@ class EsdlSuiteController < ApplicationController
   # Delete nonce after single use
   def stored_nonce
     session.delete(:esdl_nonce)
+  end
+
+  def require_esdl_suite_id
+    redirect_to import_esdl_path if current_user.esdl_suite_id.blank?
   end
 end

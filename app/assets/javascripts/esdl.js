@@ -5,7 +5,6 @@ $(function() {
 
   if (esdlForm.length) {
     esdlForm.submit(function(e) {
-      //also check for mondaine drive
       var form = $(e.target);
 
       form.find('input[type=submit]').remove();
@@ -73,6 +72,12 @@ $(function() {
         success: function(children) {
           folder.after(createChildrenNode(children));
           folder.data('pending', false);
+        },
+        error: function() {
+          folder.unbind('click', false);
+          folder.addClass('folder__false').removeClass('folder__true');
+          swapIcon(folder.find('span'));
+          folder.data('pending', false);
         }
       });
     }
@@ -83,17 +88,19 @@ $(function() {
   // when the file is de-selected.
   function selectFile() {
     var file = $(this);
-    var myComputerFile = $('form#import_esdl').find('input[type=file]');
+    var esdlForm = $('form#import_esdl');
 
     if (file.hasClass('selected')) {
       file.removeClass('selected');
-      myComputerFile.prop('required', true);
+      esdlForm.find('input[type=file]').prop('required', true);
+      esdlForm.find('input[name=mondaine_drive_path]').val('');
     } else {
       $.each($('.selected'), function() {
         $(this).removeClass('selected');
       });
       file.addClass('selected');
-      myComputerFile.removeAttr('required');
+      esdlForm.find('input[type=file]').removeAttr('required');
+      esdlForm.find('input[name=mondaine_drive_path]').val(file.data('id'));
     }
   }
 

@@ -6,7 +6,6 @@ class ImportEsdlController < ApplicationController
   before_action :ensure_esdl_enabled
 
   def index
-    esdl_id = current_user&.esdl_suite_id
     return unless esdl_id
 
     tree_result = EsdlSuiteService.setup.get_tree(esdl_id, 'aaa')
@@ -16,7 +15,9 @@ class ImportEsdlController < ApplicationController
   end
 
   def create
-    result = CreateEsdlScenario.call(params[:esdl_file])
+    redirect_to import_esdl_path if esdl_file.blank?
+
+    result = CreateEsdlScenario.call(esdl_file)
 
     if result.failure?
       redirect_to import_esdl_path, notice: result.errors.join(', ')
@@ -29,5 +30,22 @@ class ImportEsdlController < ApplicationController
 
   def ensure_esdl_enabled
     redirect_to(root_url) unless APP_CONFIG[:esdl_api_url]
+  end
+
+  def esdl_id
+    @esdl_id ||= current_user&.esdl_suite_id
+  end
+
+  def esdl_file
+    @esdl_file ||=
+      if params[:mondaine_drive_path]
+        ''
+        # TODO: implement line below
+        # EsdlSuiteService.setup.download(esdl_id, params[:mondaine_drive_path])
+      elsif params[:esdl_file]
+        params[:esdl_file]
+      else
+        ''
+      end
   end
 end

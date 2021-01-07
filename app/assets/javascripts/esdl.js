@@ -69,15 +69,19 @@ $(function() {
         type: 'GET',
         url: '/esdl_suite/browse',
         data: { path: folder.data('id') },
+        dataType: 'json',
         success: function(children) {
           folder.after(createChildrenNode(children));
           folder.data('pending', false);
         },
         error: function() {
+          // Error mostly occurs when a users esdl suite credentials are expired
+          // Refresh page to have them log in again
           folder.unbind('click', false);
           folder.addClass('folder__false').removeClass('folder__true');
           swapIcon(folder.find('span'));
           folder.data('pending', false);
+          window.location.reload();
         }
       });
     }

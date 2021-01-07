@@ -23,8 +23,6 @@ class EsdlSuiteController < ApplicationController
   # Browse the Mondaine Drive with an EsdlSuiteId
   # Returns a json containing a list of file/folder nodes that are children
   # of the folder requested in the param 'path'
-  # TODO: should think about what happens when refresh_token gets rejected
-  # midway browsing
   def browse
     tree_result = esdl_suite_service.get_tree(
       current_user.esdl_suite_id,

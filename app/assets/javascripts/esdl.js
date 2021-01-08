@@ -19,6 +19,10 @@ $(function() {
         $('#mondaine_drive').removeClass('soften');
       }
     )
+
+    esdlForm.find('span').on('click', function(){
+      esdlForm.find('input[type=file]').val('');
+    })
   }
 });
 

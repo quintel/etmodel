@@ -130,25 +130,20 @@
         color: #000
 
   form
-    // text-align: center
-    // margin-top: 20px
     display: flex
     flex-direction: column
-
-    .field
-      margin-top: 10px
-      display: flex
-      justify-content: space-between
-      padding-right: 18em
-
-      input[type='text']
-        margin: 0 4px 0 0
-        max-width: 100%
-
 
     input[type="file"]
       display: inline-block
       width: 100%
+
+    span
+      position: relative
+      top: -21px
+      float: right
+      cursor: pointer
+      &:hover
+        color: #666
 
     .button, .wait
       margin-top: 20px

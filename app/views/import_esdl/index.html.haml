@@ -29,6 +29,7 @@
         .upload_file
           %h2 #{t('esdl.upload')}
           = f.file_field :esdl_file, required: true, accept: '.esdl'
+          %span{ class: 'fa fa-times' }
         = f.submit t('esdl.start'), class: 'button start_esdl'
         .wait.start_esdl
           = image_tag 'layout/ajax-loader-small.gif'

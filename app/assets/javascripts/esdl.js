@@ -66,6 +66,8 @@ $(function() {
 
     if (folder.next('.children').length) {
       folder.next().toggle(30);
+      // When imploding a folder, 'deselect' the 'selected' file within
+      folder.next().find('.selected').removeClass('selected');
     } else if (!folder.data('pending')) {
       folder.data('pending', true);
 

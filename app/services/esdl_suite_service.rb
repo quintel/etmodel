@@ -147,4 +147,8 @@ class EsdlSuiteService
   def decode_id_token(id_token)
     OpenIDConnect::ResponseObject::IdToken.decode(id_token, jwks_key)
   end
+
+  def headers_for(esdl_suite_id)
+    { 'Authorization' => "Bearer #{esdl_suite_id.access_token}" }
+  end
 end

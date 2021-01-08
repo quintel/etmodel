@@ -15,7 +15,7 @@ class ImportEsdlController < ApplicationController
   end
 
   def create
-    redirect_to import_esdl_path if esdl_file.blank?
+    redirect_to import_esdl_path and return if esdl_file.blank?
 
     result = CreateEsdlScenario.call(esdl_file)
 
@@ -38,12 +38,11 @@ class ImportEsdlController < ApplicationController
 
   def esdl_file
     @esdl_file ||=
-      if params[:mondaine_drive_path]
-        ''
-        # TODO: implement line below
-        # EsdlSuiteService.setup.download(esdl_id, params[:mondaine_drive_path])
-      elsif params[:esdl_file]
-        params[:esdl_file]
+      if params[:mondaine_drive_path].present?
+        result = FetchFromEsdlSuite.call(esdl_id, params[:mondaine_drive_path])
+        result.successful? ? result.value : ''
+      elsif params[:esdl_file].present?
+        params[:esdl_file].read
       else
         ''
       end

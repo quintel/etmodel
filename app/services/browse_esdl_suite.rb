@@ -7,13 +7,12 @@ class BrowseEsdlSuite < EsdlSuiteService
   def call(esdl_suite_id, _nonce, path = '/')
     return ServiceResult.failure unless esdl_suite_id.fresh && esdl_suite_id.persisted?
 
-    headers = { 'Authorization' => "Bearer #{esdl_suite_id.access_token}" }
     # TODO: add nonce
     query = { 'operation' => 'get_node', 'id' => path }
     handle_tree_response(HTTParty.get(
       'https://drive.esdl.hesi.energy/store/browse',
       query: query,
-      headers: headers,
+      headers: headers_for(esdl_suite_id),
       format: :json
     ))
   end

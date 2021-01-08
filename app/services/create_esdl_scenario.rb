@@ -7,7 +7,7 @@ class CreateEsdlScenario
   include Service
 
   def initialize(esdl_file)
-    @esdl_file = esdl_file.read
+    @esdl_file = esdl_file
   end
 
   def call

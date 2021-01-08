@@ -7,6 +7,12 @@ module EsdlSuiteHelper
     stub_id_token(valid_nonce)
   end
 
+  def stub_access_token_refresh(updated_attributes)
+    allow_any_instance_of(EsdlSuiteService)
+      .to receive(:refresh)
+      .and_return(updated_attributes)
+  end
+
   def provider_url
     'https://idm.hesi.energy/auth/realms/esdl-mapeditor'
   end

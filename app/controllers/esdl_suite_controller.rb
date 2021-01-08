@@ -24,7 +24,7 @@ class EsdlSuiteController < ApplicationController
   # Returns a json containing a list of file/folder nodes that are children
   # of the folder requested in the param 'path'
   def browse
-    tree_result = esdl_suite_service.get_tree(
+    tree_result = BrowseEsdlSuite.call(
       current_user.esdl_suite_id,
       new_nonce,
       params[:path]

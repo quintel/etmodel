@@ -26,8 +26,8 @@ describe EsdlSuiteController do
 
   def stub_browse_tree(successful)
     result = successful ? ServiceResult.success([{ key: 'val' }]) : ServiceResult.failure
-    allow_any_instance_of(EsdlSuiteService)
-      .to receive(:get_tree)
+    allow(BrowseEsdlSuite)
+      .to receive(:call)
       .and_return(result)
   end
 

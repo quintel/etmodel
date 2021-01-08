@@ -14,12 +14,6 @@ describe EsdlSuiteId do
     )
   end
 
-  def stub_refresh(updated_attributes)
-    allow_any_instance_of(EsdlSuiteService)
-      .to receive(:refresh)
-      .and_return(updated_attributes)
-  end
-
   it { is_expected.to belong_to(:user) }
 
   context 'when access_token is expired' do
@@ -52,7 +46,7 @@ describe EsdlSuiteId do
 
     before do
       stub_esdl_suite_open_id_methods
-      stub_refresh({})
+      stub_access_token_refresh({})
       esdl_suite_id
     end
 
@@ -71,7 +65,7 @@ describe EsdlSuiteId do
 
     before do
       stub_esdl_suite_open_id_methods
-      stub_refresh({ access_token: '012' })
+      stub_access_token_refresh({ access_token: '012' })
       esdl_suite_id
     end
 

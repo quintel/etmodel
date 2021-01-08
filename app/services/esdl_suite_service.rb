@@ -19,6 +19,10 @@ class EsdlSuiteService
     )
   end
 
+  def self.call(*args)
+    setup.call(*args)
+  end
+
   # Arguments:
   # provider_uri                URI, when extended with /.well-known/openid-configuration
   #                             acts as a discovery url pointing to a JSON file
@@ -100,21 +104,6 @@ class EsdlSuiteService
     {}
   end
 
-  # Gets the browse-tree for a path for an esdl_suite_id,
-  # The default path is the root of the Mondaine Drive '/'
-  def get_tree(esdl_suite_id, _nonce, path = '/')
-    return ServiceResult.failure unless esdl_suite_id.fresh && esdl_suite_id.persisted?
-
-    headers = { 'Authorization' => "Bearer #{esdl_suite_id.access_token}" }
-    query = { 'operation' => 'get_node', 'id' => path } # TODO: add nonce
-    handle_tree_response(HTTParty.get(
-      'https://drive.esdl.hesi.energy/store/browse',
-      query: query,
-      headers: headers,
-      format: :json
-    ))
-  end
-
   # Returns a OpenIDConnect::Client with the correct settings
   def client
     @client ||= OpenIDConnect::Client.new(
@@ -157,15 +146,5 @@ class EsdlSuiteService
 
   def decode_id_token(id_token)
     OpenIDConnect::ResponseObject::IdToken.decode(id_token, jwks_key)
-  end
-
-  # TODO: Better handle this one!
-  def handle_tree_response(response)
-    # if response.ok?
-    ServiceResult.success(response.parsed_response)
-    # else
-    #   puts response.content_type
-    #   ServiceResult.failure('Please log in again!')
-    # end
   end
 end

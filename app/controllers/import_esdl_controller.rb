@@ -8,7 +8,7 @@ class ImportEsdlController < ApplicationController
   def index
     return unless esdl_id
 
-    tree_result = EsdlSuiteService.setup.get_tree(esdl_id, 'aaa')
+    tree_result = BrowseEsdlSuite.call(esdl_id, 'aaa')
     return unless tree_result.successful?
 
     @esdl_tree = tree_result.value

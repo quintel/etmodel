@@ -4,21 +4,21 @@ $(function() {
   var esdlForm = $('form#import_esdl');
 
   if (esdlForm.length) {
-    esdlForm.submit(function(e) {
+    esdlForm.on('submit', function(e) {
       var form = $(e.target);
 
       form.find('input[type=submit]').remove();
       form.find('.wait').show();
     });
 
-    esdlForm.find('.upload_file').hover(
+    esdlForm.find('.upload_file').on("mouseenter",
       function() {
         $('#mondaine_drive').addClass('soften');
-      },
+      }).on("mouseleave",
       function() {
         $('#mondaine_drive').removeClass('soften');
       }
-    );
+    )
   }
 });
 
@@ -27,14 +27,14 @@ $(function() {
 
   if (mondaineDrive.length) {
     if (mondaineDrive.hasClass('disabled')) {
-      mondaineDrive.find('a').bind('click', false);
+      mondaineDrive.find('a').on('click', false);
     } else {
-      mondaineDrive.find('a').unbind('click', false);
+      mondaineDrive.find('a').off('click', false);
 
-      mondaineDrive.hover(
+      mondaineDrive.on("mouseenter",
         function() {
           $('#import_esdl .upload_file').addClass('soften');
-        },
+        }).on("mouseleave",
         function() {
           $('#import_esdl .upload_file').removeClass('soften');
         }
@@ -49,7 +49,7 @@ $(function() {
 
   if (folders.length) {
     $.each(folders, function(_index, folder) {
-      $(folder).bind('click', expandFolder);
+      $(folder).on('click', expandFolder);
     });
   }
 
@@ -77,7 +77,7 @@ $(function() {
         error: function() {
           // Error mostly occurs when a users esdl suite credentials are expired
           // Refresh page to have them log in again
-          folder.unbind('click', false);
+          folder.off('click', false);
           folder.addClass('folder__false').removeClass('folder__true');
           swapIcon(folder.find('span'));
           folder.data('pending', false);
@@ -132,9 +132,9 @@ $(function() {
       childNode.data(child);
 
       if (child['type'] == 'folder' && child['children'] == true) {
-        childNode.bind('click', expandFolder);
+        childNode.on('click', expandFolder);
       } else if (child['type'] == 'file-esdl') {
-        childNode.bind('click', selectFile);
+        childNode.on('click', selectFile);
       }
       childrenNode.append(childNode);
     });

@@ -139,6 +139,8 @@ $(function() {
         childNode.on('click', expandFolder);
       } else if (child['type'] == 'file-esdl') {
         childNode.on('click', selectFile);
+      } else {
+        childNode.append(' (empty)')
       }
       childrenNode.append(childNode);
     });

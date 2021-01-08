@@ -13,7 +13,6 @@
       display: flex
       flex-direction: column
       justify-content: space-between
-
     .or
       margin-bottom: 0
       padding-left: 40px
@@ -25,7 +24,7 @@
     font-size: 0.875rem
 
   #mondaine_drive, .upload_file
-    width: 100%
+    width: 418px
     margin: 0 auto 0.5rem
     background: white
     border: 1px solid $landing-border-color
@@ -60,14 +59,12 @@
     margin-top: 30px
     border-top-color: $landing-gold
 
-    .button
+    .button.login
       background: linear-gradient(lighten($landing-gold, 10%), $landing-gold)
-      color: white
-      &.login
-        width: 250px
-        font-size: 0.875rem
-        padding: 8px 4px
-        margin-bottom: 20px
+      width: 250px
+      font-size: 0.875rem
+      padding: 8px 4px
+      margin-bottom: 20px
       &:hover
         text-decoration: none !important
         background: linear-gradient(lighten($landing-gold, 15%), lighten($landing-gold, 10%))
@@ -122,8 +119,9 @@
         z-index: 2
         position: absolute
         margin-top: 0
+        padding: 0 10px
         top: 40%
-        width: 100%
+        line-height: 1.5rem
         text-align: center
         text-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
         right: 0
@@ -149,11 +147,8 @@
       margin-top: 20px
       margin-right: 0
       padding: 10px 15px
-
       width: 200px
-      &.start_esdl
-        align-self: flex-end
-        margin-right: -81px
+      align-self: flex-end
 
     .wait
       display: none

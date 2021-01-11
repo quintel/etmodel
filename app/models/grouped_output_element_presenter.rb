@@ -34,7 +34,9 @@ class GroupedOutputElementPresenter
   # are output elements.
   def group_as_json(name, elements)
     {
-      elements: elements.map { |element| output_element_as_json(element) },
+      elements: elements
+        .map { |element| output_element_as_json(element) }
+        .sort_by { |el| el[:name] },
       key: name&.downcase&.presence
     }
   end

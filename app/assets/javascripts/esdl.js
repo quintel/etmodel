@@ -22,6 +22,15 @@ $(function () {
 
     esdlForm.find('span').on('click', function () {
       esdlForm.find('input[type=file]').val('');
+      $(this).hide();
+    });
+
+    // if file selected: show little x
+    if (esdlForm.find('input[type=file]').val()) {
+      esdlForm.find('span').show();
+    }
+    esdlForm.find('input[type=file]').on('input', function () {
+      esdlForm.find('span').show();
     });
   }
 });

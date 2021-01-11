@@ -1,58 +1,57 @@
 /* globals $*/
 
-$(function() {
+$(function () {
   var esdlForm = $('form#import_esdl');
 
-  if (esdlForm.length) {
-    esdlForm.on('submit', function(e) {
+  if (esdlForm.length > 0) {
+    esdlForm.on('submit', function (e) {
       var form = $(e.target);
 
       form.find('input[type=submit]').remove();
       form.find('.wait').show();
     });
 
-    esdlForm.find('.upload_file').on("mouseenter",
-      function() {
+    esdlForm
+      .find('.upload_file')
+      .on('mouseenter', function () {
         $('#mondaine_drive').addClass('soften');
-      }).on("mouseleave",
-      function() {
+      })
+      .on('mouseleave', function () {
         $('#mondaine_drive').removeClass('soften');
-      }
-    )
+      });
 
-    esdlForm.find('span').on('click', function(){
+    esdlForm.find('span').on('click', function () {
       esdlForm.find('input[type=file]').val('');
-    })
+    });
   }
 });
 
-$(function() {
+$(function () {
   var mondaineDrive = $('#mondaine_drive');
 
-  if (mondaineDrive.length) {
+  if (mondaineDrive.length > 0) {
     if (mondaineDrive.hasClass('disabled')) {
       mondaineDrive.find('a').on('click', false);
     } else {
       mondaineDrive.find('a').off('click', false);
 
-      mondaineDrive.on("mouseenter",
-        function() {
+      mondaineDrive
+        .on('mouseenter', function () {
           $('#import_esdl .upload_file').addClass('soften');
-        }).on("mouseleave",
-        function() {
+        })
+        .on('mouseleave', function () {
           $('#import_esdl .upload_file').removeClass('soften');
-        }
-      );
+        });
     }
   }
 });
 
 // Browsing the Mondaine Drive
-$(function() {
+$(function () {
   var folders = $('.folder__true');
 
-  if (folders.length) {
-    $.each(folders, function(_index, folder) {
+  if (folders.length > 0) {
+    $.each(folders, function (_index, folder) {
       $(folder).on('click', expandFolder);
     });
   }
@@ -64,7 +63,7 @@ $(function() {
     var folder = $(this);
     swapIcon(folder.find('span'));
 
-    if (folder.next('.children').length) {
+    if (folder.next('.children').length > 0) {
       folder.next().toggle(30);
       // When imploding a folder, 'deselect' the 'selected' file within
       folder.next().find('.selected').removeClass('selected');
@@ -76,11 +75,11 @@ $(function() {
         url: '/esdl_suite/browse',
         data: { path: folder.data('id') },
         dataType: 'json',
-        success: function(children) {
+        success: function (children) {
           folder.after(createChildrenNode(children));
           folder.data('pending', false);
         },
-        error: function() {
+        error: function () {
           // Error mostly occurs when a users esdl suite credentials are expired
           // Refresh page to have them log in again
           folder.off('click', false);
@@ -88,7 +87,7 @@ $(function() {
           swapIcon(folder.find('span'));
           folder.data('pending', false);
           window.location.reload();
-        }
+        },
       });
     }
   }
@@ -105,7 +104,7 @@ $(function() {
       esdlForm.find('input[type=file]').prop('required', true);
       esdlForm.find('input[name=mondaine_drive_path]').val('');
     } else {
-      $.each($('.selected'), function() {
+      $.each($('.selected'), function () {
         $(this).removeClass('selected');
       });
       file.addClass('selected');
@@ -114,25 +113,14 @@ $(function() {
     }
   }
 
-  // Swaps open and closed folder icons
-  function swapIcon(icon) {
-    if (icon.hasClass('fa-folder')) {
-      icon.addClass('fa-folder-open').removeClass('fa-folder');
-    } else {
-      icon.addClass('fa-folder').removeClass('fa-folder-open');
-    }
-  }
-
   // Create a div.children containing new files and folders to be
   // inserted in the DOM after its parent folder
   function createChildrenNode(children) {
     var childrenNode = $('<div></div>').addClass('children');
 
-    $.each(children, function(_index, child) {
+    $.each(children, function (_index, child) {
       var icon = $('<span></span>').addClass('fa fa-' + child['type'].split('-')[0]);
-      var childNode = $('<div></div>')
-        .append(icon)
-        .append(child['text']);
+      var childNode = $('<div></div>').append(icon).append(child['text']);
 
       childNode.addClass(child['type'] + '__' + child['children']);
       childNode.data(child);
@@ -142,7 +130,7 @@ $(function() {
       } else if (child['type'] == 'file-esdl') {
         childNode.on('click', selectFile);
       } else {
-        childNode.append(' (empty)')
+        childNode.append(' (empty)');
       }
       childrenNode.append(childNode);
     });
@@ -150,3 +138,12 @@ $(function() {
     return childrenNode;
   }
 });
+
+// Swaps open and closed folder icons
+function swapIcon(icon) {
+  if (icon.hasClass('fa-folder')) {
+    icon.addClass('fa-folder-open').removeClass('fa-folder');
+  } else {
+    icon.addClass('fa-folder').removeClass('fa-folder-open');
+  }
+}

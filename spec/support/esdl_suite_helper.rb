@@ -2,7 +2,7 @@
 
 module EsdlSuiteHelper
   def stub_esdl_suite_open_id_methods(valid_nonce: true, valid_code: true)
-    setup_app_config
+    setup_esdl_suite_app_config
 
     stub_discovery
     stub_access_token(valid_code)
@@ -27,14 +27,14 @@ module EsdlSuiteHelper
     'etm'
   end
 
-  private
-
-  def setup_app_config
+  def setup_esdl_suite_app_config
     allow(APP_CONFIG).to receive(:[]).with(:esdl_suite_url).and_return(provider_url)
     allow(APP_CONFIG).to receive(:[]).with(:esdl_suite_client_id).and_return(client_id)
     allow(APP_CONFIG).to receive(:[]).with(:esdl_suite_client_secret).and_return('secret')
     allow(APP_CONFIG).to receive(:[]).with(:esdl_suite_redirect_url).and_return(redirect_url)
   end
+
+  private
 
   def stub_discovery
     allow(OpenIDConnect::Discovery::Provider::Config)

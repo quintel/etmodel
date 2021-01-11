@@ -31,6 +31,8 @@ describe EsdlSuiteController do
       .and_return(result)
   end
 
+  before { setup_esdl_suite_app_config }
+
   describe 'GET login' do
     subject do
       get :login
@@ -132,6 +134,7 @@ describe EsdlSuiteController do
         stub_browse_tree(true)
         esdl_suite_id
       end
+
       it { is_expected.to have_http_status(:ok) }
 
       it 'returns a json with tree nodes' do

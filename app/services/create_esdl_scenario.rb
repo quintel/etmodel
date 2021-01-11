@@ -30,8 +30,10 @@ class CreateEsdlScenario
     if response.ok?
       ServiceResult.success(response)
     elsif response.code == 404
-      # TODO: add better error handling to esdl app
       ServiceResult.failure(['This ESDL file cannot be converted into a scenario'])
+    elsif response.code == 422
+      # ESDL file was correct but could not be created into a scenario
+      ServiceResult.failure('Creating scenario failed: ' + response['message'])
     else
       # Malformed request
       ServiceResult.failure(['Something went wrong'])

@@ -190,7 +190,7 @@ class GroupListItem extends ListItem {
     this.delegateEvents(this.events);
 
     const innerEl = document.createElement(this.innerTagName());
-    innerEl.textContent = this.options.name;
+    innerEl.innerHTML = this.options.name;
 
     this.el.append(innerEl);
 

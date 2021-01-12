@@ -43,7 +43,7 @@
       display: block
     .name
       font-size: 14px
-      font-weight: bold
+      font-weight: 600
       overflow: hidden
       text-overflow: ellipsis
       white-space: nowrap
@@ -164,3 +164,60 @@
       top: -16px
       border: 8px solid transparent
       border-bottom-color: #fbe5e2
+
+.multi-curve-upload
+  .loading
+    background-size: 28px
+    background: asset-url("charts/loading.gif") center center no-repeat
+    height: 58px
+  .select-curve
+    background: white
+    border-bottom-color: #bec8d4
+    border-radius: 5px
+    border: 1px solid #c5ced8
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07)
+    margin: -1px
+    position: relative
+    transition: border-color 0.15s, box-shadow 0.15s
+    will-change: border-color, box-shadow
+    &:hover
+      border-color: #8ebeea
+      box-shadow: 0 0 0 3px #cfe5f7
+    select
+      background: white
+      border: none
+      box-shadow: none
+      box-sizing: border-box
+      cursor: pointer
+      font-size: 0.875rem
+      opacity: 0
+      padding: 10px 0
+      position: relative
+      width: 100%
+      z-index: 2
+    .title-wrapper
+      align-items: center
+      box-sizing: border-box
+      color: #222
+      display: flex
+      font-size: 0.875rem
+      font-weight: 600
+      justify-content: space-between
+      left: 0
+      padding: 10px 15px
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: 1
+      .fa
+        color: #444
+        display: inline-block
+        font-size: 0.75rem
+
+  .curve-info
+    margin: 15px
+  .custom-curve
+    border: none
+    margin: -15px
+  .error
+    margin: 15px -16px -16px

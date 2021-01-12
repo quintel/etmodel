@@ -59,7 +59,7 @@ class @AppView extends Backbone.View
     if (heat_order = wrapper.find('#heat-network-options')).length
       new UserSortable(heat_order, 'heat_network_order', true).render()
 
-    if (curve_upload = wrapper.find('.curve-upload')).length
+    if (curve_upload = wrapper.find('.single-curve-upload')).length
       curveCollectionDef = @customCurves()
       userScenariosArray = @userScenarios()
 
@@ -69,6 +69,12 @@ class @AppView extends Backbone.View
           curveCollectionDef,
           userScenariosArray
         )
+
+    if (curve_upload = wrapper.find('.multi-curve-upload')).length > 0
+      curveCollectionDef = @customCurves()
+
+      curve_upload.each (_index, element) ->
+        MultiCurveChooserView.setupWithWrapper(element, curveCollectionDef)
 
     deferred
 
@@ -239,7 +245,7 @@ class @AppView extends Backbone.View
     else
       # Ajax request.
       req = $.ajax(
-        url: App.scenario.url_path() + '/custom_curves'
+        url: App.scenario.url_path() + '/custom_curves?show_unattached=true'
         method: 'GET'
       )
 

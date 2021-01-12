@@ -290,22 +290,6 @@ class DateSelect {
    * on the currently-selected week.
    */
   tickValues(): Date[] {
-    // const values = [];
-
-    // if (this.isWeekly()) {
-    //   const startDate = this.weeks[this.val()][0];
-    //   const msPerDay = 1000 * 60 * 60 * 24;
-
-    //   for (const i = 0; i < 7; i++) {
-    //     values.push(new Date(startDate.getTime() + msPerDay * i));
-    //   }
-    // } else {
-    //   for (const j = 0; j < 12; j++) {
-    //     values.push(new Date(Date.UTC(1970, j, 1)));
-    //   }
-    // }
-
-    // return values;
     const values = [];
 
     if (this.isWeekly()) {
@@ -333,72 +317,3 @@ class DateSelect {
 }
 
 export default DateSelect;
-
-// const D3ChartDateSelect = (function() {
-//   'use strict';
-
-//   function buildSelectEl(downsampleMethod) {
-//     return $('<select/>')
-//       .addClass('d3-chart-date-select')
-//       .append(createOptions.call(this, downsampleMethod))
-//       .val(App.settings.get('merit_charts_date') || '0')
-//       .on('change', setMeritChartsDate);
-//   }
-
-//   D3ChartDateSelect.prototype = {
-//     selectEl: undefined,
-//     weeks: [[epoch, new Date(1970, 11, 31, 1)]],
-
-//     draw: function(updateChart) {
-//       this.updateChart = updateChart;
-//       this.selectEl = buildSelectEl.call(this, this.downsampleMethod);
-
-//       this.scope.append(this.selectEl);
-
-//       App.settings.on('change:merit_charts_date', updateMeritChartsDate.bind(this));
-//     },
-
-//     getCurrentRange: function() {
-//       return this.weeks[this.val()];
-//     },
-
-//     /**
-//      * Returns an array of dates which should be shown in the time axis, based
-//      * on the currently-selected week.
-//      */
-//     tickValues: function() {
-//       const values = [];
-
-//       if (this.isWeekly()) {
-//         const startDate = this.weeks[this.val()][0];
-//         const msPerDay = 1000 * 60 * 60 * 24;
-
-//         for (const i = 0; i < 7; i++) {
-//           values.push(new Date(startDate.getTime() + msPerDay * i));
-//         }
-//       } else {
-//         for (const j = 0; j < 12; j++) {
-//           values.push(new Date(Date.UTC(1970, j, 1)));
-//         }
-//       }
-
-//       return values;
-//     },
-
-//     val: function() {
-//       return parseInt(this.selectEl.val(), 10);
-//     },
-
-//     isWeekly: function() {
-//       return this.val() > 0;
-//     }
-//   };
-
-//   function D3ChartDateSelect(scope, range, downsampleMethod) {
-//     this.scope = $(scope);
-//     this.range = range;
-//     this.downsampleMethod = downsampleMethod;
-//   }
-
-//   return D3ChartDateSelect;
-// })();

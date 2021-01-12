@@ -394,6 +394,14 @@
         }, this)
       );
 
+      if (this.model.get('key') === 'flexibility_outdoor_temperature') {
+        console.log(this.model.get('disabled'));
+      }
+
+      if (this.model.get('disabled')) {
+        this.updateIsDisabled();
+      }
+
       this.model.bind('change:disabled', this.updateIsDisabled);
 
       // Hold off rendering until the document is ready (and the templates

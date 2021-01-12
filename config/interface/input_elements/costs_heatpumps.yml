@@ -1,18 +1,4 @@
 ---
-- key: investment_costs_micro_chp
-  step_value: 1.0
-  unit: "%"
-  related_node: households_space_heater_micro_chp_network_gas
-  position: 1
-  dependent_on: _always_hidden
-  slide_key: costs_heatpumps
-- key: investment_costs_fuel_cell
-  step_value: 1.0
-  unit: "%"
-  related_node: households_water_heater_fuel_cell_chp_network_gas
-  position: 2
-  dependent_on: _always_hidden
-  slide_key: costs_heatpumps
 - key: investment_costs_electric_heat_pumps
   step_value: 1.0
   unit: "%"

@@ -57,21 +57,6 @@
   section: costs
   tab_key: costs
   position: 9
-- key: sustainability
-  section: targets
-  tab_key: targets
-  position: 1
-  dependent_on: _always_hidden
-- key: dependence
-  section: targets
-  tab_key: targets
-  position: 2
-  dependent_on: _always_hidden
-- key: cost
-  section: targets
-  tab_key: targets
-  position: 3
-  dependent_on: _always_hidden
 - key: electricity
   section: supply
   tab_key: supply
@@ -84,11 +69,6 @@
   section: supply
   tab_key: supply
   position: 3
-- key: renewable_heat
-  section: supply
-  tab_key: supply
-  position: 4
-  dependent_on: _always_hidden
 - key: transport_fuels
   section: supply
   tab_key: supply
@@ -98,11 +78,6 @@
   tab_key: costs
   position: 8
   dependent_on: use_network_calculations
-- key: area
-  section: overview
-  tab_key: targets
-  position: 4
-  dependent_on: _always_hidden
 - key: security_of_supply
   section: flexibility
   tab_key: flexibility
@@ -112,11 +87,6 @@
   tab_key: costs
   position: 1
   dependent_on: has_merit_order
-- key: employment
-  section: costs
-  tab_key: costs
-  position: 11
-  dependent_on: _always_hidden
 - key: costs_heat
   section: costs
   tab_key: costs
@@ -125,12 +95,6 @@
   section: costs
   tab_key: costs
   position: 1
-- key: industry_metal
-  section: demand
-  tab_key: demand
-  position: 2
-  dependent_on: _always_hidden
-  parent_key: industry
 - key: flexibility_overview
   section: flexibility
   tab_key: flexibility
@@ -144,18 +108,6 @@
   section: flexibility
   tab_key: flexibility
   position: 4
-- key: industry_chemical
-  section: demand
-  tab_key: demand
-  position: 1
-  dependent_on: _always_hidden
-  parent_key: industry
-- key: industry_other
-  section: demand
-  tab_key: demand
-  position: 3
-  dependent_on: _always_hidden
-  parent_key: industry
 - key: fuel_production
   section: supply
   tab_key: supply

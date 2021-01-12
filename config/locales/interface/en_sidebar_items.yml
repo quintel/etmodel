@@ -133,18 +133,6 @@ en:
       title: Visuals
       short_description:
       description:
-    dependence:
-      short_title: Dependence
-      title: Import policies
-      short_description: How much energy do you want to import from other countries?
-        Will your country import all energy?
-      description: "How much energy do you want to import from other countries? Since
-        energy is of crucial importance to any economy, security of supply is a major
-        concern of all governments. \r\n<br/>\r\n<br/>\r\nFood for thought:<br/>\r\nImporting
-        energy is not necessarily a bad thing. Most Europeans will probably feel different
-        about importing wood chips from Canada or even uranium from Australia, than
-        they do about imports of oil from Saudi Arabia or natural gas from Russia.
-        Most countries have learned to live with some form of dependence on imports. "
     earth:
       short_title: Geothermal
       title: Geothermal costs
@@ -222,16 +210,6 @@ en:
         chart gives an impression of how the costs for several conversion technologies
         compare and at what point it might become economically interesting to build
         the first conversion units. "
-    employment:
-      short_title: Employment
-      title: Employment
-      short_description: ''
-      description: "Increased employment might be good reason to make the transition
-        to more sustainable energy production technologies. But how large are the
-        effects?\r\n<br/><br/>\r\nThe employment calculation for the ETM is currently
-        limited in scope; the 'Agriculture' and 'Industry' sectors are not taken into
-        account. More details can be found on our <a href=\"https://docs.energytransitionmodel.com/main/employment\"
-        target=\"_blank\">documentation</a> page."
     flexibility_conversion:
       short_title: Conversion
       title: Electricity conversion
@@ -335,39 +313,6 @@ en:
         energy, it is the only sector that has steadily improved its energy efficiency
         over the past decades, as energy has become more expensive. In many developed
         countries, industrial energy use has hardly increased since the early 1990's."
-    industry_chemical:
-      short_title: Chemical industry
-      title: Chemical industry energy demand
-      short_description: ''
-      description: "The chemical sector represents a large part of the industrial
-        energy use, partly as result of the use of energy carriers as feedstock for
-        products. How much will it use in the future? The answer depends on your assumptions
-        about the adoption of new technologies and economic or population growth,
-        for example. You can fill in these assumptions and the graphs will show how
-        things change. <br /><br />\r\nThe chemical sector is part of industry, so
-        changes made here will show up in the charts for industry as a whole.\r\n"
-    industry_metal:
-      short_title: Metal industry
-      title: Metal industry energy demand
-      short_description: ''
-      description: "Metal processing represents a large part of industrial energy
-        use. How much will it use in the future?<br/><br/>\r\nThe answer depends on
-        your assumptions about the adoption of new technologies and economic or population
-        growth, for example. You can fill in these assumptions and the graphs will
-        show how things change.\r\n<br/><br/>\r\nThis sector is part of industry,
-        so changes made here will show up in the charts for industry as a whole."
-    industry_other:
-      short_title: Other industry
-      title: Other industry energy demand
-      short_description: ''
-      description: "The other industry sector includes the energy consumption that
-        is not covered by the chemical industry and the metal industrie. How much
-        energy will the other industry use in the future? The answer depends on your
-        assumptions about the adoption of new technologies and economic or population
-        growth, for example. You can fill in these assumptions and the graphs will
-        show how things change. \r\n<br /><br />\r\nThe other industry sector is part
-        of industry, so changes made here will show up in the charts for industry
-        as a whole."
     infrastructure:
       short_title: Infrastructure
       title: Infrastructure costs
@@ -452,17 +397,6 @@ en:
         \r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime of the solar
         panels and how much solar energy is available in your country. The graph on
         the right shows how costs compare. "
-    sustainability:
-      short_title: Renewability
-      title: Renewability target policies
-      short_description: "By how much will the government want to cut CO<sub>2</sub>
-        emissions compared to 1990 levels? How about sustainable energy quotas?\r\n"
-      description: "By how much will the government want to cut CO<sub>2</sub> emissions
-        compared to 1990 levels? What percentage of all energy use do you think should
-        be renewable in the future?\r\n<br/>\r\n<br/>\r\nHere you may set the national
-        renewability targets. At 'Targets' at the bottom of each page, you can see
-        whether you have managed to meet your own policy targets after you have filled
-        out the 'Supply' section. "
     transport:
       short_title: Transport
       title: Transport

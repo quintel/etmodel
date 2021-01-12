@@ -37,11 +37,6 @@ en:
       title: Green gas in gas network
       short_description: ''
       description: This chart shows the mix of natural- and green gas in the gas network.
-    mekko_of_primary_demand_of_biomass:
-      title: Primary demand of biogenic energy carriers
-      short_description: ''
-      description: 'This ''Mekko'' chart shows the use of primary biofuel for the
-        sectors of the ETM. '
     mekko_of_bio_footprint:
       title: Bio-footprint of primary demand
       short_description: ''
@@ -215,51 +210,51 @@ en:
     flexibility_hourly_electricity_supply_demand:
       title: Hourly electricity supply and demand
       description: |
-        This chart shows the supply and demand of electricity per hour. What exactly is meant by 
+        This chart shows the supply and demand of electricity per hour. What exactly is meant by
         base load demand and inflexible supply is explained below:
-        <ul> <li> The demand line shows the end use of the sectors. 
-        This does <b> not </b> include the demand for flex technologies that balance the system, 
-        such as excess electricity for power-to-gas electrolysers, hybrid heat in industry 
+        <ul> <li> The demand line shows the end use of the sectors.
+        This does <b> not </b> include the demand for flex technologies that balance the system,
+        such as excess electricity for power-to-gas electrolysers, hybrid heat in industry
         or batteries. Also, exports of electricity and curtailment are <b> not </b> included in demand. </li>
-        <li> The supply line shows the must-run and volatile production, such as wind 
-        turbines and solar PV. This does <b> not </b> include the production by flex technologies, 
-        such as electricity production by dispatchable gas / hydrogen power plants or electricity 
+        <li> The supply line shows the must-run and volatile production, such as wind
+        turbines and solar PV. This does <b> not </b> include the production by flex technologies,
+        such as electricity production by dispatchable gas / hydrogen power plants or electricity
         from batteries. Also, imports of electricity are <b> not </b> included. </li>
     flexibility_hourly_heat_network_supply_demand:
       title: Hourly heat supply and demand for district heating
       description: |
-        This graph shows the hourly supply and demand of district heating for the built environment 
+        This graph shows the hourly supply and demand of district heating for the built environment
         and agriculture. What exactly is meant by base load demand and inflexible production is explained below:
-        <ul> <li> The demand line shows the total heat demand of the built environment and agriculture. 
-        If you have installed (seasonal) heat storage in your scenario, the heat entering the storage will 
+        <ul> <li> The demand line shows the total heat demand of the built environment and agriculture.
+        If you have installed (seasonal) heat storage in your scenario, the heat entering the storage will
         <b> not </b> be included in this demand line. </li>
-        <li> The supply line shows the must-run / volatile production, such as geothermal and solar 
-        thermal. This does not include the supply of dispatchable heat sources, such as heat production by 
+        <li> The supply line shows the must-run / volatile production, such as geothermal and solar
+        thermal. This does not include the supply of dispatchable heat sources, such as heat production by
         dispatchable gas boilers or heat pumps. Also, heat from (seasonal) storage is <b> not </b> included. </li>
     flexibility_hourly_network_gas_supply_demand:
       title: Hourly gas supply and demand
-      description: | 
-        This graph shows supply and demand of network gas per hour. Network gas is the mix of natural gas 
-        and green gas in the gas networks. What exactly is meant by base load demand and inflexible supply 
-        is explained below. 
-        <ul> <li> The demand line shows the end use of all sectors and the possible constant export of gas to balance yearly production of 
-        gas. The demand for flex technologies that balance the system are <b> not </b> included in the demand line, such as gas used in dispatchable power plants or boilers 
-        for heat networks. In the ETM, gas is automatically buffered throughout the year. The gas entering 
+      description: |
+        This graph shows supply and demand of network gas per hour. Network gas is the mix of natural gas
+        and green gas in the gas networks. What exactly is meant by base load demand and inflexible supply
+        is explained below.
+        <ul> <li> The demand line shows the end use of all sectors and the possible constant export of gas to balance yearly production of
+        gas. The demand for flex technologies that balance the system are <b> not </b> included in the demand line, such as gas used in dispatchable power plants or boilers
+        for heat networks. In the ETM, gas is automatically buffered throughout the year. The gas entering
         this storage is <b> not </b> included in demand, as is the export of gas. </li>
-        <li> The supply line shows the gas production, for this the ETM assumes a flat profile. Also, the possible constant import of gas to balance yearly demand of 
-        gas is included in the supply line. The supply line does <b> not </b> 
+        <li> The supply line shows the gas production, for this the ETM assumes a flat profile. Also, the possible constant import of gas to balance yearly demand of
+        gas is included in the supply line. The supply line does <b> not </b>
         include the gas from gas storage facilities. </li>
     flexibility_hourly_hydrogen_supply_demand:
       title: Hourly hydrogen supply and demand
-      description: | 
-        This graph shows supply and demand of hydrogen per hour. What exactly is meant by base load demand and inflexible supply 
-        is explained below. 
-        <ul> <li> The demand line shows the end use of all sectors and the possible constant export of hydrogen to balance yearly production of 
-        hydrogen. The demand for flex technologies that balance the system are <b> not </b> included in the demand line, such as hydrogen used in dispatchable power plants or boilers 
-        for heat networks. In the ETM, hydrogen is automatically buffered throughout the year. The hydrogen entering 
+      description: |
+        This graph shows supply and demand of hydrogen per hour. What exactly is meant by base load demand and inflexible supply
+        is explained below.
+        <ul> <li> The demand line shows the end use of all sectors and the possible constant export of hydrogen to balance yearly production of
+        hydrogen. The demand for flex technologies that balance the system are <b> not </b> included in the demand line, such as hydrogen used in dispatchable power plants or boilers
+        for heat networks. In the ETM, hydrogen is automatically buffered throughout the year. The hydrogen entering
         this storage is <b> not </b> included in demand.</li>
-        <li>The supply line shows the must-run / volatile production, such as wind farms that convert the electricity 
-        produced directly into hydrogen or an SMR production plant. Also, the possible constant import of hydrogen to balance yearly demand of 
-        hydrogen is included in the supply line. Hydrogen production by power-to-gas electrolyzers 
-        that convert excess electricity into hydrogen does <b> not </b> fall into this category. Also, the hydrogen 
+        <li>The supply line shows the must-run / volatile production, such as wind farms that convert the electricity
+        produced directly into hydrogen or an SMR production plant. Also, the possible constant import of hydrogen to balance yearly demand of
+        hydrogen is included in the supply line. Hydrogen production by power-to-gas electrolyzers
+        that convert excess electricity into hydrogen does <b> not </b> fall into this category. Also, the hydrogen
         from hydrogen storage facilities is <b> not </b> included. </li>

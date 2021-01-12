@@ -4,7 +4,6 @@ class CreateEsdlSuiteId < ActiveRecord::Migration[5.2]
       t.belongs_to  :user, null: false
 
       t.string      :access_token,      limit: 2048
-      t.string      :id_token,          limit: 2048
       t.string      :refresh_token,     limit: 2048
 
       t.datetime    :expires_at

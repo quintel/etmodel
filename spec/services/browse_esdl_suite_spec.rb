@@ -17,8 +17,7 @@ describe BrowseEsdlSuite, type: :service do
       user: user,
       expires_at: expires,
       access_token: access_token,
-      refresh_token: '456',
-      id_token: '789'
+      refresh_token: '456'
     )
   end
 

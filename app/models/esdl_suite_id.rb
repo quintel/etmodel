@@ -4,7 +4,6 @@
 class EsdlSuiteId < ApplicationRecord
   belongs_to  :user
 
-  validates   :id_token, presence: true
   validates   :access_token, presence: true
   validates   :refresh_token, presence: true
 

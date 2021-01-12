@@ -79,7 +79,6 @@ class EsdlSuiteService
 
     EsdlSuiteId.create_or_update(
       user: user,
-      id_token: access_token.id_token,
       access_token: access_token.access_token,
       refresh_token: access_token.refresh_token,
       expires_at: Time.zone.at(id_token.exp).to_datetime
@@ -102,7 +101,6 @@ class EsdlSuiteService
 
     {
       access_token: new_access_token.access_token,
-      id_token: new_access_token.id_token,
       expires_at: expires
     }
   rescue Rack::OAuth2::Client::Error

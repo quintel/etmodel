@@ -9,8 +9,7 @@ describe EsdlSuiteId do
       user: user,
       expires_at: 10.minutes.from_now,
       access_token: '123',
-      refresh_token: '456',
-      id_token: '789'
+      refresh_token: '456'
     )
   end
 
@@ -92,8 +91,7 @@ describe EsdlSuiteId do
         user: user,
         expires_at: 10.minutes.from_now,
         access_token: '012',
-        refresh_token: '345',
-        id_token: '678'
+        refresh_token: '345'
       }
     end
 

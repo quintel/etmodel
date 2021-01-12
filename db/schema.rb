@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2020_12_17_090701) do
   create_table "esdl_suite_ids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "access_token", limit: 2048
-    t.string "id_token", limit: 2048
     t.string "refresh_token", limit: 2048
     t.datetime "expires_at"
     t.index ["user_id"], name: "index_esdl_suite_ids_on_user_id"

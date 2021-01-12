@@ -4,7 +4,7 @@
 class FetchFromEsdlSuite < EsdlSuiteService
   # Fetch a .esdl file from the Mondaine Drive with an esdl_suite_id
   def call(esdl_suite_id, path)
-    return ServiceResult.failure unless esdl_suite_id.fresh && esdl_suite_id.persisted?
+    return ServiceResult.failure unless esdl_suite_id.fresh?
 
     encoded_path = CGI.escape(path).gsub('+', '%20')
     handle_fetch_response(HTTParty.get(

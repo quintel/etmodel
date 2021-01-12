@@ -26,8 +26,8 @@ describe EsdlSuiteId do
       expect(esdl_suite_id).to be_expired
     end
 
-    it '#fresh updates the token ' do
-      expect { esdl_suite_id.fresh }.to(change { esdl_suite_id.expires_at })
+    it '#fresh? updates the token ' do
+      expect { esdl_suite_id.fresh? }.to(change(esdl_suite_id, :expires_at))
     end
   end
 
@@ -36,8 +36,8 @@ describe EsdlSuiteId do
       expect(esdl_suite_id).not_to be_expired
     end
 
-    it '#fresh does not update the token ' do
-      expect { esdl_suite_id.fresh }.not_to(change { esdl_suite_id })
+    it '#fresh? does not update the token ' do
+      expect { esdl_suite_id.fresh? }.not_to(change { esdl_suite_id })
     end
   end
 
@@ -51,7 +51,7 @@ describe EsdlSuiteId do
     end
 
     it '#refresh removes the esdl_suite_id' do
-      expect { subject }.to change { described_class.count }.by(-1)
+      expect { subject }.to change(described_class, :count).by(-1)
     end
 
     it '#refresh does not persist the esdl_suite_id' do
@@ -70,7 +70,7 @@ describe EsdlSuiteId do
     end
 
     it '#refresh updates the esdl_suite_id' do
-      expect { subject }.not_to(change { described_class.count })
+      expect { subject }.not_to(change(described_class, :count))
     end
 
     it '#refresh updates the esdl_suite_ids access_token' do

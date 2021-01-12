@@ -14,14 +14,6 @@ class EsdlSuiteId < ApplicationRecord
     expires_at < Time.zone.now
   end
 
-  # Retrieves the userinfo from the tokens. The userinfo contains the name,
-  # email adress and other details of the User that is known at the ESDL Suite
-  def userinfo
-    refresh if expired?
-
-    to_access_token.userinfo!
-  end
-
   # Refreshes the EsdlSuiteId OpenId tokens if possible, else removes this EsdlSuiteId
   def refresh
     new_token = EsdlSuiteService.setup.refresh(to_access_token)
@@ -30,10 +22,12 @@ class EsdlSuiteId < ApplicationRecord
     update(new_token)
   end
 
-  def fresh
+  # Returns true if the EsdlSuiteId can be used for communication
+  # Returns false if the EsdlSuiteId has expired and is unable to refresh
+  def fresh?
     refresh if expired?
 
-    self
+    persisted?
   end
 
   def self.create_or_update(attributes)

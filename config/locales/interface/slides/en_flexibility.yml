@@ -1,17 +1,5 @@
 en:
   slides:
-    flexibility_electricity_import_export_edp:
-      title: Towards a European 'Merit Order'
-      short_description:
-      description: "The so-called <strong>merit order</strong> (also see <a href=\"/scenario/costs/merit_order/merit-order\"
-        >Merit Order</a>) determines the order in which producers of electricity meet
-        demand. Producers with the lowest marginal costs have priority.\r\n<br/><br/>\r\nThis
-        means that, in general, countries with cheaper electricity production will
-        export to countries with more expensive production. They will do this until
-        prices in both countries converge or the interconnectors work at maximum capacity.\r\n<br/><br/>\r\nIn
-        order to achieve the coupling of electricity markets on a physical level,
-        interconnections between countries are being increased and their utilisation
-        optimized. "
     flexibility_electricity_import_export_interconnectivity_intro:
       title: Electricity interconnectors
       short_description:
@@ -72,61 +60,6 @@ en:
       title: "Interconnector 6"
       description: |
         Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 6.
-    flexibility_electricity_import_export_interconnectors:
-      title: Effects of increasing interconnector capacity
-      short_description:
-      description: "Countries in the EU are planning to invest in increasing interconnection
-        capacity (see <a href=\"http://refman.et-model.com/publications/1829\" target=\"_blank\">10-Year
-        Network Development Plan (ENTSO-E)</a>). In the chart on the right, we qualitatively
-        show how the electricity prices of two countries change if the interconnection
-        capacity between them is doubled. \r\n<br/><br/>\r\nThe blue lines show the
-        hourly electricity prices for countries A and B in the reference year (2010).
-        When the blue lines meet (e.g. hours 1-5) the price of electricity is the
-        same for the two countries (convergence). This happens because they both use
-        electricity from the cheapest producer available (electricity is being exported
-        from the country with cheapest production to the other country).\r\n<br/><br/>\r\nAt
-        all other times the blue lines do not match. This happens because, even if
-        one of the countries has cheap production capacity available, the interconnector
-        is already working at maximum capacity (is congested). The country that cannot
-        import the cheap electricity will have to get it from a more expensive local
-        producer. \r\n<br/><br/>\r\nThe red lines show the prices of electricity when
-        the interconnection capacity is doubled. Because the capacity is higher, the
-        interconnector is congested less often and the price of electricity converges
-        more frequently."
-    flexibility_electricity_import_export_markets:
-      title: Integration of the electricity markets
-      short_description:
-      description: "The electricity market is one of the last markets in the EU facing
-        cross-border integration. Most industries are already competing in the EU
-        Single Market. The proposal of the European Commission to create a common
-        European energy policy was an important step towards harmonising national
-        markets into working regional markets and finally a pan-European market.<br/><br/>\r\n\r\nIn
-        order to achieve this, both physical interconnection capacity and administrative
-        market coupling are being realized. \r\n \r\nThe thinking is that markets
-        are the most efficient means to assure demand is met by supply at the lowest
-        costs. Overall expected benefits are: <br/><br/>\r\n\r\n\t• Lower electricity
-        costs <br/>\r\n\t• More equal electricity prices between countries<br/><br/>\r\n\r\nIn
-        practice, market distortions by (the mismatch of) individual member states'
-        policies may result in less than perfect market coupling."
-    flexibility_electricity_import_export_renewables:
-      title: Effects of additional renewable generation
-      short_description:
-      description: "The EU has the goal to increase the available capacity of renewable
-        energy sources (RES) for 2020 (<a href=\"http://refman.et-model.com/publications/1830\"
-        target=\"_blank\">Scenario Outlook and System Adequacy Forecast 2011-2025
-        (ENTSO-E)</a>). The future situation that we consider here features installed
-        capacities of wind and solar up to 2020 targets. <br/><br/>\r\nIn the chart
-        on the right, we can (qualitatively) see what the effect on the  <em>marginal
-        electricity production costs</em> would be compared to the present situation.\r\n<br/><br/>\r\nThe
-        blue line shows the hourly costs of producing electricity in the present and
-        the orange line when increasing the capacity of RES. The decrease in the costs
-        results from the larger share of RES capacity, which has zero marginal electricity
-        production costs (see <a href=\"/scenario/costs/merit_order/merit-order\"
-        >Merit Order</a>). The average costs of producing electricity are therefore
-        lower. \r\n<br/><br/>\r\nNote that the costs for investments and installation
-        of renewable generating capacity have not been included here. These are typically
-        much higher than for non-renewable capacity. The <em>integral production costs</em>
-        are therefore likely to increase with more renewable capacity."
     flexibility_flexibility_cold_snap:
       title: Cold snap
       short_description:
@@ -189,28 +122,6 @@ en:
           \ data-chart-key=\"hybrid_heat_pump\"
         >electricity and gas share table</a>
         will show a breakdown of how hybrid heat pumps use energy in households."
-    flexibility_flexibility_excess:
-      title: Excess electricity
-      short_description:
-      description: "This page is about excess electricity and what to do with it.
-        Wind turbines and solar panels are subject to volatile natural patterns. Their
-        electricity supply does not match  demand and large amounts of volatile production
-        capacity will therefore lead to excess electricity. \r\n<br/><br/>\r\nThe
-        ETM exports this excess, but this may not be an option, since our neighbors
-        will likely face similar weather conditions and simultaneously peaking supply
-        from wind and solar. Today, the only practical option for dealing with large
-        amounts of excess is to shut down or 'curtail' production from wind and solar
-        facilities. This effectively increases their production costs. It may therefore
-        be economically attractive to store or convert the excess electricity into
-        a useful form of energy. \r\n<br/><br/>\r\nThe chart gives an indication of
-        how the increase of production costs due to curtailment compares to storage
-        or conversion technologies.\r\nMore detailed information can be found in our
-        <a href=\"https://docs.energytransitionmodel.com/main/storage\"
-        target =\"_blank\">documentation</a>. "
-    flexibility_flexibility_excess_electricity:
-      title: Excess electricity
-      short_description:
-      description:
     flexibility_flexibility_flexibility_order:
       title: Order of flexibility options
       short_description:
@@ -290,60 +201,60 @@ en:
       short_description:
       description: |
         In order to balance demand and supply <i>within a year</i>, flexible technologies are required.
-        The charts in this section provide insight into the extent to which flexibility 
-        is needed in your scenario. You can then provide this flexibility need by setting flexible 
+        The charts in this section provide insight into the extent to which flexibility
+        is needed in your scenario. You can then provide this flexibility need by setting flexible
         technologies in the <a href="/scenario/flexibility/excess_electricity/order-of-flexibility-options">Excess electricity</a>
-        section, or by changing your dispatchable technologies in the 
+        section, or by changing your dispatchable technologies in the
         <a href="/scenario/supply/electricity/coal-plants">Supply</a>
         section. </br></br>
-        The first chart shows the demand and supply of electricity, gas, hydrogen and heat 
-        per month. This gives you insight into the balance of your energy system throughout 
-        the year: when does imbalance occur? Which carriers are not in balance? If you are 
-        curious about the balance within a month, there is an option to zoom in. By clicking 
+        The first chart shows the demand and supply of electricity, gas, hydrogen and heat
+        per month. This gives you insight into the balance of your energy system throughout
+        the year: when does imbalance occur? Which carriers are not in balance? If you are
+        curious about the balance within a month, there is an option to zoom in. By clicking
         on a carrier in a specific month, a new chart opens that zooms in on the hourly values ​​
         of that carrier in that month. </br> </br>
-        To get a good picture of this (im)balance, only the baseload energy demand and the must-run and 
-        volatile production are shown in this chart. This allows 
+        To get a good picture of this (im)balance, only the baseload energy demand and the must-run and
+        volatile production are shown in this chart. This allows
         you to clearly see the "need for flexibility" of the system. </br></br>
         What exactly is meant by baseload demand and inflexible supply is explained below:
-        <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the 
-        energy demand of flex technologies that balance the system, such as gas / hydrogen 
-        for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
+        <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the
+        energy demand of flex technologies that balance the system, such as gas / hydrogen
+        for dispatchable power plants, electricity that enters batteries or gas / hydrogen
         in gas storage facilities.</li>
-        <li> Supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
-        / electricity production by dispatchable sources, electricity from batteries or 
+        <li> Supply is the must-run and volatile production, such as wind turbines and solar
+        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat
+        / electricity production by dispatchable sources, electricity from batteries or
         gas / hydrogen from gas storage facilities.</li>
     flexibility_overview_inflexible_imbalance:
       title: Imbalance of the energy system
       short_description:
       description: |
-        This chart shows the imbalance between supply and demand for electricity, gas, 
-        hydrogen and heat per month. The imbalance is calculated by subtracting the demand 
-        from the supply, this is called the "residual load". <br /><br />Negative values mean "surpluses" 
-        of energy and positive values "shortages". This way you can gain insight into the 
-        balance of your energy system throughout the year: in which months does an imbalance occur? 
-        Which carriers are not in balance? Are these shortages or surpluses of energy? If you are 
-        curious about the imbalance within a month, you can click on that specific month and a chart 
+        This chart shows the imbalance between supply and demand for electricity, gas,
+        hydrogen and heat per month. The imbalance is calculated by subtracting the demand
+        from the supply, this is called the "residual load". <br /><br />Negative values mean "surpluses"
+        of energy and positive values "shortages". This way you can gain insight into the
+        balance of your energy system throughout the year: in which months does an imbalance occur?
+        Which carriers are not in balance? Are these shortages or surpluses of energy? If you are
+        curious about the imbalance within a month, you can click on that specific month and a chart
         will open with "residual load" profiles for that month.</br></br>
     flexibility_overview_cumulative_imbalance:
       title: Seasonal balance of the energy system
       short_description:
       description: |
         This chart shows the following two lines:
-        <ul> <li> The line exluding correction in the chart shows the sum of all shortages and surpluses of 
-        electricity, gas, hydrogen and heat throughout the year. When the line is rising, it means 
-        there were net surpluses in that hour and when the line is falling, it means there 
-        were net shortages. If the end point of the chart is higher than the starting point, 
+        <ul> <li> The line exluding correction in the chart shows the sum of all shortages and surpluses of
+        electricity, gas, hydrogen and heat throughout the year. When the line is rising, it means
+        there were net surpluses in that hour and when the line is falling, it means there
+        were net shortages. If the end point of the chart is higher than the starting point,
         this means that energy surpluses outweigh deficits.<br /><br />
-        Surpluses at one point in time can be used to resolve deficits at a later point, either by 
-        storing the surpluses or by converting one carrier into another. By comparing the start and end point of this line, you can see how much 
-        "leeway" you have to use these surpluses in your scenario to make up for the shortages. 
+        Surpluses at one point in time can be used to resolve deficits at a later point, either by
+        storing the surpluses or by converting one carrier into another. By comparing the start and end point of this line, you can see how much
+        "leeway" you have to use these surpluses in your scenario to make up for the shortages.
         So how much conversion / storage losses you can afford to eventually balance the system.</li><br /><br />
-        <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated 
-        energy goes somewhere and all required energy comes from somewhere. This gives a rough 
-        estimate of your total required storage capacity to ensure that carriers can be used 
-        at the right time. This total required storage capacity can be read from the highest 
+        <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated
+        energy goes somewhere and all required energy comes from somewhere. This gives a rough
+        estimate of your total required storage capacity to ensure that carriers can be used
+        at the right time. This total required storage capacity can be read from the highest
         value of this line. </li>
     flexibility_security_of_supply_electricity:
       title: Electricity
@@ -393,22 +304,6 @@ en:
         /><br />\r\n<strong>Tip:</strong> Take a look at the\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weather
         Conditions</a> slide to explore how variations in outdoor temperature affect
         heat demand peaks in your scenario.\r\n"
-    flexibility_flexibility_wind_cost:
-      title: Wind power production cost
-      short_description:
-      description: "Why should wind power production costs increase from a certain
-        level of penetration? \r\n<br/><br/>\r\nIf we assume wind power that exceeds
-        demand cannot be exported, stored or converted into something economically
-        useful, the remaining option is to curtail electricity production. If the
-        installed capacity increases, the share of the electricity production that
-        needs to be curtailed increases. As the share of curtailment increases, the
-        total cost per unit of energy produced (€/MWh) will also increase. The same
-        logic applies to solar PV.\r\n<br/><br/>\r\nThe chart on the right indicates
-        how the total production cost of wind turbines may increase due to curtailment.
-        These costs can help in evaluating storage and conversion technologies. Instead
-        of building more wind turbines, it might become economically interesting to
-        introduce storage and conversion technologies in order to have more useful
-        power available."
     flexibility_merit_order_merit_order:
       title: Merit order
       short_description:

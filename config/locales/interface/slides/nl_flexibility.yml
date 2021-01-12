@@ -1,16 +1,5 @@
 nl:
   slides:
-    flexibility_electricity_import_export_edp:
-      title: Naar een Europese 'Merit Order'
-      short_description:
-      description: "De <strong>merit order</strong> bepaalt de volgorde waarin elektriciteitsproducenten
-        aan de vraag voldoen (zie ook <a href=\"/scenario/costs/merit_order/merit-order\"
-        >Merit Order</a>). De producenten met de laagste marginale kosten hebben voorrang.
-        \r\n<br/><br/>\r\nDit betekent dat landen met goedkopere stroomproductie exporteren
-        naar landen met duurdere opwek, totdat de prijzen in beide landen gelijk zijn
-        of de interconnectoren 'vol zitten'. \r\n<br/><br/>\r\nOm fysieke marktkoppeling
-        te bevorderen, wordt de interconnectiecapaciteit tussen landen uitgebreid
-        en het gebruik ervan geoptimaliseerd."
     flexibility_electricity_import_export_interconnectivity_intro:
       title: Elektrische interconnectoren
       short_description:
@@ -71,59 +60,6 @@ nl:
       title: "Interconnector 6"
       description: |
         Hieronder kan je capaciteit, CO<sub>2</sub> uitstoot en prijs instellen voor interconnector 6.
-    flexibility_electricity_import_export_interconnectors:
-      title: Effecten van extra interconnectiecapaciteit
-      short_description:
-      description: "De lidstaten van de EU zijn van plan om meer interconnectiecapaciteit
-        te realiseren (zie <a href=\"http://refman.et-model.com/publications/1829\"
-        target=\"_blank\">10-Year Network Development Plan (ENTSO-E)</a>). In de figuur
-        rechts kun je zien hoe de stroomprijzen in twee fictieve landen veranderen
-        als de interconnectiecapaceit verdubbelt. \r\n<br/><br/>\r\nDe blauwe lijnen
-        zijn de stroomprijzen per uur voor de landen A en B in het referentiejaar
-        (2010). Als de lijnen bij elkaar komen (bijv. uur 1-5) hebben beide landen
-        dezelfde stroomprijs (convergentie). Dit komt doordat ze beide stroom geleverd
-        krijgen door de goedkoopste producent (het goedkoopste land exporteert naar
-        het andere land). \r\n<br/><br/>\r\nVaak komen de lijnen niet samen. Dat komt
-        doordat de interconnector maximaal benut is (congestie), ook al heeft één
-        van de landen nog goedkope productiecapaciteit over. Het land dat de stroom
-        niet kan importeren zal deze van een duurdere locale producent moeten afnemen.\r\n<br/><br/>\r\nDe
-        rode en oranje lijnen zijn de stroomprijzen als de interconnectiecapaciteit
-        verdubbeld wordt. Doordat deze hoger is, komt het minder vaak voor dat de
-        interconnector maximaal benut is en convergeren de prijzen vaker.  "
-    flexibility_electricity_import_export_markets:
-      title: Koppeling van de elektriciteitsmarkt
-      short_description:
-      description: "De elektriciteitsmarkt is één van de laatste markten in de EU
-        die nog niet geïntegreerd is. De meeste bedrijven in de EU concurreren al
-        met elkaar op de gemeenschappelijke Europese markt. De Europese Commissie
-        heeft voorgesteld om een  gemeenschappelijk Europees energiebeleid op te stellen.
-        Dit was een belangrijke stap  om nationale markten te harmoniseren naar regionale
-        markten en uiteindelijk één gemeenschappelijke markt.  \r\n<br/><br/>\r\nHiervoor
-        wordt zowel fysieke interconnectiecapaciteit als een administratieve marktkoppeling
-        gerealiseerd. Dit hinkt op de gedachte dat markten de meest efficiënte manier
-        zijn om te zorgen dat tegen de laagste kosten aan de vraag naar stroom wordt
-        voldaan. De verwachte voordelen zijn:<br/><br/>\r\n\t• Lagere stroomkosten
-        <br/>\r\n\t• Meer prijsconvergentie tussen landen<br/><br/>\r\n\r\nIn de praktijk
-        kan het zo zijn dat de marktwerking verstoord wordt door (een mismatch van)
-        het energiebeleid van verschillende lidstaten.  \r\n\r\n \r\n"
-    flexibility_electricity_import_export_renewables:
-      title: Effecten van toenemende hernieuwbare opwek
-      short_description:
-      description: "De EU heeft als doel om meer hernieuwbaar productievermogen te
-        realiseren in 2020 (zie <a href=\"http://refman.et-model.com/publications/1830\"
-        target=\"_blank\">Scenario Outlook and System Adequacy Forecast 2011-2025
-        (ENTSO-E)</a>). De toekomstsituatie die we in het figuur hiernaast tonen,
-        gaat uit van zon- en windvermogens volgens de 2020 doelen. <br/><br/>\r\nWe
-        zien het kwalitatieve effect op de marginale stroomproductiekosten vergeleken
-        met de huidige situatie.<br/><br/>\r\nDe blauwe lijn toont de huidige kosten
-        van stroomproductie op uurbasis en de oranje lijn die bij toenemend hernieuwbaar
-        vermogen. De kostenafname is het gevolg van een groter aandeel van stroomproductie
-        met nul marginale kosten (see <a href=\"/scenario/costs/merit_order/merit-order\"
-        >Merit Order</a>). De gemiddelde kosten dalen daardoor.\r\n<br/><br/>\r\nDe
-        investerings- en installatiekosten van hernieuwbaar vermogen is hierbij niet
-        meegenomen. Deze zijn typisch veel hoger dan voor niet duurzame stroomproductie.
-        De <em>integrale productiekosten</em> zullen daardoor waarschijnlijk eerder
-        stijgen dan dalen bij toenemende hernieuwbare productie."
     flexibility_flexibility_cold_snap:
       title: Koude winter
       short_description:
@@ -186,29 +122,6 @@ nl:
           \ data-chart-key=\"hybrid_heat_pump\"
         >hybride warmtepomp tabel</a>
         laat de jaarlijkse verdeling van gas en elektriciteit zien."
-    flexibility_flexibility_excess:
-      title: Elektriciteitsoverschot
-      short_description:
-      description: "Deze pagina gaat over de mogelijke maatregelen voor het omgaan
-        met een elektriciteitsoverschot. Elektriciteitsproductie van windturbines
-        en zonnepanelen is onderhevig aan natuurlijke fluctuaties. Aanbod en vraag
-        van elektriciteit komen niet met elkaar overeen en grote hoeveelheden volatiele
-        productiecapaciteit kunnen daarom leiden tot elektriciteitsoverschotten.\r\n<br/><br/>\r\nIn
-        het ETM wordt een overschot aan elektriciteit geëxporteerd. Dit kan echter
-        onmogelijk zijn als buurlanden geconfronteerd worden met vergelijkbare en
-        gelijktijdige pieken in het elektriciteitsaanbod. Vandaag de dag is het afsluiten
-        of beperken van wind- en zonvermogen de enige optie voor het omgaan met grote
-        hoeveelheden overtollig aanbod. Dit verhoogt echter de effectieve productiekosten
-        waardoor het economisch aantrekkelijker kan zijn om de overtollige elektriciteit
-        op te slaan of om te zetten in een andere, bruikbare energiesoort.\r\n<br/><br/>\r\nDe
-        grafiek rechts geeft een indicatie hoe de stijging van productiekosten als
-        gevolg van het beperken van capaciteit zich verhoudt tot de kosten van opslag-
-        en conversietechnologieën.\r\nMeer informatie kunt u vinden in onze <a href=\"https://docs.energytransitionmodel.com/main/storage\"
-        documentatie =\"_blank\">documentatie</a>. "
-    flexibility_flexibility_excess_electricity:
-      title: Elektriciteitsoverschotten
-      short_description:
-      description:
     flexibility_flexibility_flexibility_order:
       title: Volgorde flexibiliteitsopties
       short_description:
@@ -285,23 +198,6 @@ nl:
           \ data-chart-key=\"solar_pv_curtailment\"
         >productiebeperking van zonnepanelen tabel</a>
         laat het effect van productiebeperking op de jaarlijkse elektriciteitsproductie zien."
-    flexibility_flexibility_wind_cost:
-      title: Kosten van windenergie
-      short_description:
-      description: "Waarom stijgen de productiekosten van windenergie als gevolg van
-        een bepaald marktaandeel?\r\n<br/><br/>\r\nWanneer we aannemen dat het overschot
-        aan geproduceerde windenergie niet kan worden geëxporteerd, opgeslagen of
-        omgezet in iets economisch nuttigs, dan is de resterende optie om de elektriciteitsproductie
-        te beperken. Als de geïnstalleerde capaciteit toeneemt, zal een groter aandeel
-        van de energieproductie beperkt moeten worden. Naarmate het aandeel ongebruikte
-        capaciteit toeneemt, zullen de totale productiekosten van elektriciteit (€/MWh)
-        ook toenemen. Hetzelfde geldt voor zon-PV.\r\n<br/><br/>\r\nDe grafiek rechts
-        geeft een indicatie hoe de totale productiekosten van elektriciteit van windturbines
-        kan toenemen als gevolg van beperking van productie. Deze kostenindicatie
-        kan helpen bij het evalueren van opslag- en conversietechnologieën. In plaats
-        van het bouwen van meer windturbines, kan het economisch interessant worden
-        om opslag- en conversietechnologieën te introduceren om bruikbaar vermogen
-        te vergroten."
     flexibility_merit_order_merit_order:
       title: Merit order
       short_description:
@@ -363,16 +259,16 @@ nl:
         De grafieken in deze sectie geven inzicht in de mate waarin flexibiliteit nodig is in jouw scenario.
         Je kunt vervolgens in deze flexibiliteitsbehoefte voorzien door flexibele technologieën in te zetten
         in de <a href="/scenario/flexibility/excess_electricity/order-of-flexibility-options">Elektriciteitsoverschotten</a>
-        sectie, of door je dispatchable centrales te veranderen in de <a href="/scenario/supply/electricity/coal-plants">Aanbod</a> 
+        sectie, of door je dispatchable centrales te veranderen in de <a href="/scenario/supply/electricity/coal-plants">Aanbod</a>
         sectie. </br></br>
         De eerste grafiek laat per maand de vraag en het aanbod zien
         van elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
         in de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
         onbalans op? Welke dragers zijn niet in balans? Als je benieuwd bent naar de
-        balans binnen een maand, is er de mogelijkheid om in te zoomen. Door te klikken op een drager in 
+        balans binnen een maand, is er de mogelijkheid om in te zoomen. Door te klikken op een drager in
         specifieke maand opent er een nieuwe grafiek die inzoomt op de uurwaarden
         van die drager in die maand. </br></br>
-        Om deze (on)balans goed in beeld te krijgen, worden alleen de basislast (baseload) 
+        Om deze (on)balans goed in beeld te krijgen, worden alleen de basislast (baseload)
         energievraag en de must-run en volatiele productie getoond in deze grafiek.
         Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het systeem.</br></br>
         Wat er precies onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
@@ -401,18 +297,18 @@ nl:
       short_description:
       description: |
         Deze grafiek laat de volgende twee lijnen zien:
-        <ul><li>De lijn exclusief correctie in de grafiek toont de optelling van alle tekorten en overschotten van elektriciteit, 
+        <ul><li>De lijn exclusief correctie in de grafiek toont de optelling van alle tekorten en overschotten van elektriciteit,
         gas, waterstof en warmte door het jaar heen. Wanneer de lijn stijgt, betekent dit dat er netto overschotten
         waren in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
-        waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit 
-        dat de energie overschotten groter zijn dan de tekorten. Overschotten op een bepaald moment kunnen worden 
-        gebruikt om tekorten op een later moment op te lossen, ofwel door de overschotten op te slaan, ofwel door ze 
-        om te zetten in een andere drager. Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel 
-        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt 
+        waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit
+        dat de energie overschotten groter zijn dan de tekorten. Overschotten op een bepaald moment kunnen worden
+        gebruikt om tekorten op een later moment op te lossen, ofwel door de overschotten op te slaan, ofwel door ze
+        om te zetten in een andere drager. Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel
+        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt
         permitteren om uiteindelijk het systeem in balans te krijgen.</li><br/><br/>
         <li>Voor de gecorrigeerde lijn is aangenomen dat het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
-        gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale 
-        benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden. 
+        gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale
+        benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden.
         Deze totale benodigde opslagcapaciteit is af te lezen aan de hoogste waarde van deze lijn.</li>
     flexibility_security_of_supply_electricity:
       title: Elektriciteit
@@ -463,22 +359,22 @@ nl:
       title: Extreme weersomstandigheden
       short_description:
       description: "<b>Temperatuur en vollasturen</b>\r\n<br/>\r\n
-        Buitentemperatuur en technische ontwikkelingen van zon- en windtechnologie hebben 
+        Buitentemperatuur en technische ontwikkelingen van zon- en windtechnologie hebben
         effect op (jaarlijkse en uurlijkse) vraag en aanbod. Stel hier gemiddelde
         temperatuur en vollasturen van windturbines en zonnepanelen in.
         \r\n<p>\r\n<b>Weerjaren (alleen beschikbaar voor Nederlandse regio's)</b>\r\n<br/>\r\n
         Standaard worden weersomstandigheden gebruikt die passen bij het startjaar.
-        Echter, weersomstandigheden kunnen flink variëren. Om de impact van weersomstandigheden 
+        Echter, weersomstandigheden kunnen flink variëren. Om de impact van weersomstandigheden
         te verkennen is het mogelijk om een ander weerjaar te selecteren. Het selecteren van een ander
-        weerjaar beïnvloedt: 
+        weerjaar beïnvloedt:
         <ul>
         <li>zon-PV en zonthermie - effect op: productieprofiel en vollasturen,</li>
         <li>windturbines - effect op: productieprofiel en vollasturen,</li>
         <li>gemiddelde temperatuur - effect op: jaarlijkse warmtevraag,</li>
         <li>temperatuurprofiel - effect op: uurlijkse vraag naar warmte in huishoudens, gebouwen en landbouw.</li>
         </ul>\r\n</p>\r\n
-        Let op: met het selecteren van een ander weerjaar dan Default worden eerdere aannames 
-        over verandering van vollasturen en temperatuur overschreven. 
+        Let op: met het selecteren van een ander weerjaar dan Default worden eerdere aannames
+        over verandering van vollasturen en temperatuur overschreven.
         In de omschrijving van het weerjaar staan de bijpassende vollasturen en temperatuur.
         \r\n</p>\r\nKijk voor meer informatie over weeromstandigheden
         in onze <a href=\"https://docs.energytransitionmodel.com/main/weather-conditions\"

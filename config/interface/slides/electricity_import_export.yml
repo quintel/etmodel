@@ -1,26 +1,4 @@
 ---
-- key: flexibility_electricity_import_export_markets
-  position: 2
-  dependent_on: _always_hidden
-  sidebar_item_key: electricity_import_export
-  output_element_key: import_export_cwe
-- key: flexibility_electricity_import_export_edp
-  position: 3
-  dependent_on: _always_hidden
-  sidebar_item_key: electricity_import_export
-  alt_output_element_key: import_export_flows
-  output_element_key: import_export_flows
-- key: flexibility_electricity_import_export_interconnectors
-  position: 4
-  dependent_on: _always_hidden
-  sidebar_item_key: electricity_import_export
-  alt_output_element_key: import_export_capacity
-  output_element_key: source_of_electricity_production
-- key: flexibility_electricity_import_export_renewables
-  position: 5
-  dependent_on: _always_hidden
-  sidebar_item_key: electricity_import_export
-  output_element_key: import_export_renewables
 - key: flexibility_electricity_import_export_interconnectivity_intro
   position: 1
   sidebar_item_key: electricity_import_export

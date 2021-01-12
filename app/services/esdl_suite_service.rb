@@ -9,6 +9,12 @@
 class EsdlSuiteService
   include Service
 
+  ID_TOKEN_VALIDATION_ERRORS = [
+    OpenIDConnect::ResponseObject::IdToken::InvalidNonce,
+    OpenIDConnect::ResponseObject::IdToken::InvalidIssuer,
+    OpenIDConnect::ResponseObject::IdToken::InvalidAudience
+  ].freeze
+
   # Setup a new EsdlSuitService
   def self.setup
     new(
@@ -80,13 +86,12 @@ class EsdlSuiteService
     )
 
     ServiceResult.success
-
   rescue Rack::OAuth2::Client::Error
     ServiceResult.failure(['Auth code has expired'])
   rescue OpenIDConnect::ResponseObject::IdToken::ExpiredToken
     ServiceResult.failure(['Token was expired'])
-  rescue OpenIDConnect::ResponseObject::IdToken::InvalidNonce, OpenIDConnect::ResponseObject::IdToken::InvalidIssuer, OpenIDConnect::ResponseObject::IdToken::InvalidAudience
-    ServiceResult.failure(['Scary spooky! Either Nonce, Aud or Issuer was invalid!'])
+  rescue *ID_TOKEN_VALIDATION_ERRORS
+    ServiceResult.failure(['ID Token could not be validated'])
   end
 
   # Refreshes an expired OpenIDConnect::AccessToken access_token
@@ -101,6 +106,7 @@ class EsdlSuiteService
       expires_at: expires
     }
   rescue Rack::OAuth2::Client::Error
+    # Refresh token was expired
     {}
   end
 

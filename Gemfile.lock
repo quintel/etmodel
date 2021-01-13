@@ -217,7 +217,7 @@ GEM
     mime-types-data (3.2020.1104)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.5.0)
     mini_racer (0.3.1)
       libv8 (~> 8.4.255)
     minitest (5.14.2)
@@ -230,8 +230,9 @@ GEM
     net-ssh (6.1.0)
     newrelic_rpm (6.14.0)
     nio4r (2.5.4)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.0)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
     oily_png (1.2.1)
@@ -255,6 +256,7 @@ GEM
       pry (~> 0.13)
     public_suffix (4.0.6)
     puma (3.12.6)
+    racc (1.5.2)
     rack (2.2.3)
     rack-proxy (0.6.5)
       rack
@@ -458,7 +460,7 @@ DEPENDENCIES
   mini_racer
   mysql2
   newrelic_rpm
-  nokogiri (~> 1.10)
+  nokogiri (~> 1.11)
   non-stupid-digest-assets
   oily_png
   pry-byebug

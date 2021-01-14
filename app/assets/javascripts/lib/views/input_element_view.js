@@ -226,10 +226,6 @@
         return $.extend({ name: I18n.t('node_details.attributes.' + entry[0]) }, entry[1]);
       });
 
-      attrs.sort(function(a, b) {
-        return a.name.localeCompare(b.name);
-      });
-
       return [group[0], attrs];
     });
   };

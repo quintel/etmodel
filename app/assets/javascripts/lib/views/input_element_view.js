@@ -394,16 +394,6 @@
         }, this)
       );
 
-      if (this.model.get('key') === 'flexibility_outdoor_temperature') {
-        console.log(this.model.get('disabled'));
-      }
-
-      if (this.model.get('disabled')) {
-        this.updateIsDisabled();
-      }
-
-      this.model.bind('change:disabled', this.updateIsDisabled);
-
       // Hold off rendering until the document is ready (and the templates
       // have been parsed).
       $(
@@ -499,6 +489,12 @@
       // Need to do this manually, since it needs this.quinn to be set.
       this.quinnOnChange(this.quinn.model.value, this.quinn);
       this.updateSublabel(this.quinn.model.value);
+
+      if (this.model.get('disabled')) {
+        this.updateIsDisabled(this.model, true);
+      }
+
+      this.model.bind('change:disabled', this.updateIsDisabled);
 
       this.refreshButtons();
 

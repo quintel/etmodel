@@ -265,8 +265,6 @@ class CustomCurveChooserView extends Backbone.View {
   }
 
   static setupWithWrapper(wrapper, collectionDef, userScenarios) {
-    var disableInputKey = wrapper.data('curve-disable-input');
-
     new CustomCurveLoadingView({ el: wrapper }).render();
 
     $.when(collectionDef, userScenarios).done(function (collection, scenarios) {
@@ -275,18 +273,6 @@ class CustomCurveChooserView extends Backbone.View {
         model: collection.getOrBuild(wrapper.data('curve-name')),
         scenarios: scenarios,
       });
-
-      // If the el data specifies to enable/disable a slider when a custom curve
-      // is set, listen to the view events...
-      if (disableInputKey) {
-        view.on('curveIsSet', function (isSet) {
-          var ie = App.input_elements.find_by_key(disableInputKey);
-
-          if (ie && !!ie.get('disabled') !== isSet) {
-            ie.set('disabled', isSet);
-          }
-        });
-      }
 
       view.render();
     });
@@ -322,8 +308,7 @@ class CustomCurveChooserView extends Backbone.View {
       );
     }
 
-    // Notify listeners whether a custom curve is present.
-    this.trigger('curveIsSet', this.model.isAttached());
+    this.model.refreshInputState();
 
     this.$el.append(renderUploadForm(this.apiURL));
 

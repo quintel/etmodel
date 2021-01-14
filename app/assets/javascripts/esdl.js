@@ -32,6 +32,10 @@ $(function () {
     esdlForm.find('input[type=file]').on('input', function () {
       esdlForm.find('span').show();
     });
+
+    // When the page is reloaded, make sure we don't have a now-hidden file
+    // selected in the browse Mondaine Drive option
+    esdlForm.find('input[name=mondaine_drive_path]').val('');
   }
 });
 

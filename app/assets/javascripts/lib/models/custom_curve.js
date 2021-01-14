@@ -1,4 +1,4 @@
-/* globals $ Backbone I18n */
+/* globals $ App Backbone I18n */
 
 (function (window) {
   'use strict';
@@ -30,8 +30,7 @@
     },
 
     /**
-     * Removes all attributes and returns the CustomCurve to an unattached
-     * state.
+     * Removes all attributes and returns the CustomCurve to an unattached state.
      */
     purge: function () {
       for (var key in this.attributes) {
@@ -42,6 +41,22 @@
             this.unset(key);
           }
         }
+      }
+    },
+
+    /**
+     * Sets any related inputs to be enabled or disabled depending on whether a file is attached.
+     */
+    refreshInputState: function () {
+      const overrides = this.get('overrides');
+      const isAttached = this.isAttached();
+
+      if (!overrides || overrides.length === 0) {
+        return;
+      }
+
+      for (var i = 0; i < overrides.length; i++) {
+        App.input_elements.markInputDisabled(overrides[i], 'custom-curve', isAttached);
       }
     },
   });

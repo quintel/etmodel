@@ -1,9 +1,12 @@
+# disabledInputs is a map of input keys to Sets, where the set contains keys describing a feture
+# which requires that the input be disabled. Only if the set is empty is the input enabled.
+disabledInputs = {}
+
 class @InputElement extends Backbone.Model
   initialize: ->
     @dirty = false
     @on_screen = false
-    @ui_options =
-      element: $("#input_element_#{@get('key')}")
+    @ui_options = element: $("#input_element_#{@get('key')}")
     @bind('change:user_value', @markDirty)
     @bind('change:user_value', @logUpdate)
     @bind('change:user_value', @update_collection)
@@ -147,7 +150,7 @@ class @InputElementList extends Backbone.Collection
       i.set({
         user_value: def
         # Disable if ET-Model *or* ET-Engine disable the input.
-        disabled: i.get('disabled') || values.disabled
+        disabled: this.isDisabled(i.get('key')) || i.get('disabled') || values.disabled
       }, { silent: true })
 
       @addInputElement(i)
@@ -205,3 +208,26 @@ class @InputElementList extends Backbone.Collection
 
   find_by_key: (k) =>
     @find (i) -> i.get('key') == k
+
+  # Flags an input as disabled (or not disabled) by a front-end feature. A feature key is required
+  # as more than one front-end feature may require that an input be disabled. For example, removing
+  # a custom curve should not cause an input to become disabled when a custom weather year also
+  # requires that the input be disabled.
+  #
+  # key      - The input key.
+  # feature  - A key identifying the feature disabling or un-disabling the input.
+  # disabled - Boolean indicating if the input is disabled (true) or enabled (false).
+  markInputDisabled: (key, feature, disabled = true) ->
+    inputStatus = (disabledInputs[key] ||= new Set())
+
+    if disabled
+      inputStatus.add(feature)
+    else
+      inputStatus.delete(feature)
+
+    if @find_by_key(key)
+      @find_by_key(key).set({ disabled: this.isDisabled(key) })
+
+  # Returns if one or more features require the input to be disabled.
+  isDisabled: (key) ->
+    disabledInputs[key] && disabledInputs[key].size > 0

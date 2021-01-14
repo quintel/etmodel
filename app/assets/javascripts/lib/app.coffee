@@ -42,6 +42,7 @@ class @AppView extends Backbone.View
       InputElement.Balancer.balancers = {}
     @input_elements = new InputElementList()
     @input_elements.on "change", @handleInputElementsUpdate
+    @loadCustomCurveStates()
 
     deferred = @user_values()
       .done (args...) =>
@@ -272,3 +273,13 @@ class @AppView extends Backbone.View
         deferred.resolve(@userScenariosArray)
       )
     return deferred.promise()
+
+  # Triggered exactly once. Loads custom curve states and disables and sliders which are overridden
+  # by the curves.
+  loadCustomCurveStates: =>
+    @customCurves().then((collection) ->
+      collection.models.forEach((model) -> model.refreshInputState())
+    )
+
+    # Self destruct.
+    @loadCustomCurveStates = () =>

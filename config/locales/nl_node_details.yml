@@ -3,6 +3,7 @@ nl:
   node_details:
     attributes:
       ccs_investment_per_mw_electricity: Investeringen voor CCS
+      ccs_investment_per_mw_typical_input_capacity: Investeringen voor CCS
       ccs_investment_per_plant: Investeringen voor CCS
       coal_input_conversion: Inputconversie kolen
       coefficient_of_performance: COP (Coefficient of Performance)
@@ -21,10 +22,11 @@ nl:
       full_load_hours: Vollasturen
       heat_and_cold_output_conversion: Efficiëntie (na COP)
       heat_output_capacity: Warmtecapaciteit per installatie
-      heat_output_conversion: Efficiëntie (warmte)
+      heat_output_conversion: Efficiëntie (warmte, LHV)
       hydrogen_output_conversion: Efficiëntie (waterstof)
       kerosene_output_conversion: Efficiëntie (kerosine)
-      land_use_per_unit_electricity_output_capacity: Land use per capacity
+      land_use_per_unit: Landgebruik per installatie
+      land_use_per_unit_electricity_output_capacity: Landgebruik per MW
       round_trip_efficiency: Round trip efficiency
       storage_volume: Opslagcapaciteit per installatie
       takes_part_in_ets: Valt onder ETS (EU Emissions Trading System)?
@@ -36,6 +38,7 @@ nl:
       total_initial_investment_per_plant: Investeringskosten
       total_installed_capacity: Opgesteld vermogen
       total_installed_electricity_capacity: Opgesteld elektrisch vermogen
+      total_installed_input_capacity: Opgesteld input vermogen
       total_storage_capacity: Opgesteld opslagvolume
       typical_input_capacity: Capaciteit per installatie
       useable_heat_output_conversion: Efficiëntie (warmte)

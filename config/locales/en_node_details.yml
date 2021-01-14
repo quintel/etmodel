@@ -3,6 +3,7 @@ en:
   node_details:
     attributes:
       ccs_investment_per_mw_electricity: Additional initial investment for CCS
+      ccs_investment_per_mw_typical_input_capacity: Additional initial investment for CCS
       ccs_investment_per_plant: Additional initial investment for CCS
       coefficient_of_performance: Coefficient of Performance
       construction_time: Construction time
@@ -20,21 +21,23 @@ en:
       full_load_hours: Full load hours
       heat_and_cold_output_conversion: Efficiency (after COP)
       heat_output_capacity: Heat capacity per unit
-      heat_output_conversion: Heat efficiency
+      heat_output_conversion: Heat efficiency (LHV)
       hydrogen_output_conversion: Hydrogen efficiency
       kerosene_output_conversion: Kerosene efficiency
-      land_use_per_unit_electricity_output_capacity: Land use per capacity
+      land_use_per_unit: Land use per unit
+      land_use_per_unit_electricity_output_capacity: Land use
       round_trip_efficiency: Round trip efficiency
       storage_volume: Storage capacity per unit
       takes_part_in_ets: Do emissions have to be paid through the ETS?
       technical_lifetime: Technical lifetime
       timeframe: Timeframes in which this technology typically operates
-      total_initial_investment_per_mw_electricity: Initial investment (excl CCS)
+      total_initial_investment_per_mw_electricity: Initial investment
       total_initial_investment_per_mw_typical_input_capacity: Initial investment
       total_initial_investment_per_plant: Initial purchase price
-      total_installed_capacity: Installed capacity
-      total_installed_electricity_capacity: Installed electrical capacity
-      total_storage_capacity: Installed storage volume
+      total_installed_capacity: Total installed capacity
+      total_installed_electricity_capacity: Total installed electrical capacity
+      total_installed_input_capacity: Total installed input capacity
+      total_storage_capacity: Total installed storage volume
       typical_input_capacity: Capacity per unit
       useable_heat_output_conversion: Heat efficiency
       variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Additional variable operation and maintenance costs for CCS
@@ -43,7 +46,7 @@ en:
       coal_input_conversion: Coal input conversion
       torrefied_biomass_pellets_input_conversion: Torrefied biomass pellets input conversion
       wood_pellets_input_conversion: Wood pellets input conversion
-    download_analysis: Download source analysis
+    download_analysis: Download source data
     groups:
       cost: Costs
       current_fuel_input_mix: Current fuel input mix

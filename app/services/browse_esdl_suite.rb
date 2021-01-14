@@ -4,10 +4,9 @@
 class BrowseEsdlSuite < EsdlSuiteService
   # Gets the browse-tree for a path for an esdl_suite_id,
   # The default path is the root of the Mondaine Drive '/'
-  def call(esdl_suite_id, _nonce, path = '/')
+  def call(esdl_suite_id, path = '/')
     return ServiceResult.failure unless esdl_suite_id.fresh?
 
-    # TODO: add nonce
     query = { 'operation' => 'get_node', 'id' => path }
     handle_tree_response(HTTParty.get(
       'https://drive.esdl.hesi.energy/store/browse',

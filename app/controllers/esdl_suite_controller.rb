@@ -26,7 +26,6 @@ class EsdlSuiteController < ApplicationController
   def browse
     tree_result = BrowseEsdlSuite.call(
       current_user.esdl_suite_id,
-      new_nonce,
       params[:path]
     )
 

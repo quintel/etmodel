@@ -35,7 +35,7 @@ describe BrowseEsdlSuite, type: :service do
   end
 
   context 'with unfresh esdl_suite_id' do
-    subject { described_class.call(esdl_suite_id(false), 'xxx', browse_path) }
+    subject { described_class.call(esdl_suite_id(false), browse_path) }
 
     before { stub_access_token_refresh({}) }
 
@@ -48,7 +48,7 @@ describe BrowseEsdlSuite, type: :service do
 
   context 'with fresh esdl_suite_id' do
     context 'with invalid browse_path' do
-      subject { described_class.call(esdl_suite_id, 'xxx', browse_path) }
+      subject { described_class.call(esdl_suite_id, browse_path) }
 
       before { stub_browse_response(500, []) }
 
@@ -60,7 +60,7 @@ describe BrowseEsdlSuite, type: :service do
     end
 
     context 'with valid browse_path' do
-      subject { described_class.call(esdl_suite_id, 'xxx', browse_path) }
+      subject { described_class.call(esdl_suite_id, browse_path) }
 
       before { stub_browse_response(202, '[{0: 1234}]') }
 

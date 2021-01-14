@@ -4,6 +4,7 @@ $(function () {
   var esdlForm = $('form#import_esdl');
 
   if (esdlForm.length > 0) {
+    // Show loading wheel when starting a scenario
     esdlForm.on('submit', function (e) {
       var form = $(e.target);
 
@@ -11,6 +12,7 @@ $(function () {
       form.find('.wait').show();
     });
 
+    // Soften browse-my-mondaine-drive part when busy with browsing my computer
     esdlForm
       .find('.upload_file')
       .on('mouseenter', function () {
@@ -20,15 +22,15 @@ $(function () {
         $('#mondaine_drive').removeClass('soften');
       });
 
+    // Add the ability to clear the uploaded file field by showing a small
+    // x ('span') when the upload-file field is filled.
+    if (esdlForm.find('input[type=file]').val()) {
+      esdlForm.find('span').show();
+    }
     esdlForm.find('span').on('click', function () {
       esdlForm.find('input[type=file]').val('');
       $(this).hide();
     });
-
-    // if file selected: show little x
-    if (esdlForm.find('input[type=file]').val()) {
-      esdlForm.find('span').show();
-    }
     esdlForm.find('input[type=file]').on('input', function () {
       esdlForm.find('span').show();
     });
@@ -48,6 +50,8 @@ $(function () {
     } else {
       mondaineDrive.find('a').off('click', false);
 
+      // Soften the browse-my-computer part when user is busy with
+      // browsing the Mondaine Drive
       mondaineDrive
         .on('mouseenter', function () {
           $('#import_esdl .upload_file').addClass('soften');

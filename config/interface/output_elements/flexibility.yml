@@ -134,7 +134,21 @@
   max_axis_value:
   min_axis_value:
   hidden: false
-  requires_merit_order: false
+  requires_merit_order: true
+  dependent_on:
+  description:
+  output_element_type_name: solar_curtailment
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: profile_per_sector
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
   dependent_on:
   description:
   output_element_type_name: solar_curtailment

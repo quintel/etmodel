@@ -135,6 +135,7 @@ nl:
         blue_energy: Blue Energy
         buildings_cooling_demand: "Koeling gebouwen"
         buildings_heating_demand: "Verwarming gebouwen"
+        buildings_heating: "Verwarming gebouwen"
         buildings_solar_pv: 'Gebouwen'
         buildings_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging gebouwen'
         buildings_solar_pv_electricity_output_curve: 'Opwek gebouwen'
@@ -386,6 +387,7 @@ nl:
         geothermal: "Geothermisch"
         geothermal_heating: "Geothermie (voor verwarming)"
         geothermal_hot_water: "Geothermie (voor warm water)"
+        geothermal_heat_production: "Geothermische warmteproductie"
         geothermal_well: "Aardwarmtebron"
         greengas: "Groen gas"
         greengas_biogas: "Groen gas / biogas"
@@ -490,6 +492,7 @@ nl:
         hydro: "Water"
         hydro_mountain: "Water stuwmeer"
         hydro_river: "Water rivier"
+        hydro_power_river: "Waterkracht productie (rivier)"
         hydrogen: "Waterstof"
         hydrogen_energetic: "Waterstof (energetisch)"
         hydrogen_non_energetic: "Waterstof (grondstof)"
@@ -511,6 +514,8 @@ nl:
         hydrogen_demand: "Waterstofvraag"
         hydrogen_inflexible_demand: "Basislastvraag (excl. H2 voor regelbare centrales)"
         hydrogen_inflexible_supply: "Must-run / volatiele productie"
+        hydrogen_import: "Waterstof import"
+        hydrogen_export: "Waterstof export"
         hydrogen_production: "Waterstofproductie"
         hydrogen_storage: "Waterstofopslag"
         hydrogen_storage_input: "Waterstof naar opslag"
@@ -553,11 +558,20 @@ nl:
         industry_chp_engine_gas_power_fuelmix: 'Gasmotor WKK - industrie'
         industry_chp_turbine_gas_power_fuelmix: 'Gasturbine WKK - industrie'
         industry_chp_ultra_supercritical_coal: 'Kolen WKK - industrie'
-        industry_chp_wood_pellets: 'Biomassa-WKK - industrie'
+        industry_chp_wood_pellets: 'Biomassa-WKK - industrie' 
         energy_chp_local_wood_pellets: 'Biomassa-WKK - kleinschalig'
         energy_chp_local_engine_network_gas: 'Gasmotor-WKK - kleinschalig'
         energy_chp_local_engine_biogas: 'Biogasmotor-WKK - kleinschalig'
         industry_flexibility_p2h_electricity: "Omgezet naar warmte voor industrie"
+        industry_ict_electricity: "ICT industrie elektriciteitsvraag"
+        industry_metals_electricity: "Metaal industrie elektriciteitsvraag"
+        industry_metals_heat: "Metaal industrie warmtevraag"
+        industry_chemicals_electricity: "Chemische industrie elektriciteitsvraag"
+        industry_chemicals_heat: "Chemische industrie warmtevraag"
+        industry_refineries_electricity: "Raffinaderijen elektriciteitsvraag"
+        industry_refineries_heat: "Raffinaderijen warmtevraag"
+        industry_other_electricity: "Overige industrie elektriciteitsvraag"
+        industry_other_heat: "Overige industrie warmtevraag"
         inland: "Op land"
         insulation: "Isolatie gebouwde omgeving"
         insulation_savings_buildings: "Isolatiebesparingen"
@@ -654,6 +668,8 @@ nl:
         merit_price: "Prijs op uurbasis"
         merit_price_average: "Jaargemiddelde prijs"
         merit_transport_other: "Transport - Overig"
+        methane_import: "Methaan import"
+        methane_export: "Methaan export"
         motorcycles: "Motorfietsen"
         must_run: "Must-run WKK"
         mv_buildings_space_heating: "Warmte in gebouwen"
@@ -765,10 +781,12 @@ nl:
         solar_csp: "Zon CSP"
         solar_panels: "Zonnepanelen"
         solar_pv: "Zon PV"
+        solar_pv_production: "Zon PV productie"
         solar_pv_total_curtailed_electricity_curve: "Productiebeperking zon PV"
         solar_thermal: "Zonthermie"
         solar_thermal_hot_water: "Zonthermie (voor warm water)"
         solar_thermal_heating: "Zonthermie (voor verwarming)"
+        solar_termal_heat_production: "Zonthermie warmteproductie"
         solid_biomass: "Vaste biomassa"
         steam_methane_reforming: "Aardgas reforming"
         steam_methane_reforming_ccs: "Aardgas reforming CCS"
@@ -794,6 +812,9 @@ nl:
         trains: "Treinen"
         trams: "Trams/metro's"
         transport_car_using_electricity: "Opgeslagen in elektrische auto's"
+        transport_e_cars: "Elektrische auto's"
+        transport_e_buses: "Elektrische bussen"
+        transport_e_trucks: "Elektrische vrachtwagens"
         transport_losses: "Distributieverliezen"
         trucks: "Vrachtwagens"
         uranium: "Uranium"
@@ -815,6 +836,8 @@ nl:
         wind_farms_prod: "Wind park (prod.)"
         wind_inland: "Wind op land"
         wind_offshore: "Wind op zee"
+        wind_offshore_production: "Wind op zee productie"
+        wind_onshore_production: "Wind op land productie"
         wind_turbines: "Wind"
         with_im_export_1990: "Met im- en export 1990"
         with_im_export_2010: "Met im- en export 2010"

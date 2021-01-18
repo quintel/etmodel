@@ -42,22 +42,23 @@ format_node_detail_value = (value, unit) ->
   if !isNaN(num)
     if unit.slice(0, 3) == 'EUR'
       formatted = I18n.toCurrency(num, precision: 0, unit: '€')
-
-      if unit.indexOf('/') != -1
-        sub_units = unit
-          .split('/')
-          .slice(1)
-          .map((sub_unit) -> translate_node_details_unit(sub_unit))
-
-        formatted = "#{formatted} / #{sub_units.join(' / ')}"
-
-      formatted
     else
-      Metric.autoscale_value(
+      formatted = Metric.autoscale_value(
         num,
-        unit,
+        unit.split('/')[0].trim(),
         if unit.slice(0, 4) == 'hour' then 0 else 'auto'
       )
+
+    if unit.indexOf('/') != -1
+      sub_units = unit
+        .split('/')
+        .slice(1)
+        .map((sub_unit) -> translate_node_details_unit(sub_unit))
+
+      formatted = "#{formatted} / #{sub_units.join(' / ')}"
+
+    formatted
+
   else if unit == 'boolean'
     I18n.t("node_details.texts.#{if value then 'yes' else 'no'}")
   else if unit

@@ -236,23 +236,19 @@ nl:
       title: Batterijen in huishoudens
       short_description:
       description: 'Thuisbatterijen worden vaak genoemd als oplossing voor het opvangen
-        van elektriciteitsoverschotten. Met de volgende slider kun je aangeven welk
+        van elektriciteitsoverschotten. Met deze slider kun je aangeven welk
         percentage van de huishoudens is uitgerust met batterijopslag. De batterijen
-        in het ETM hebben een batterijvolume van 19.8 kWh en kunnen worden opgeladen
-        met netstroom of stroom uit zonnepanelen. '
+        kunnen worden opgeladen met netstroom of stroom uit zonnepanelen.'
     transport_car_using_electricity_availability:
       title: Batterijen in elektrische auto's
       short_description:
       description: "Elektrische auto's zijn een kosteneffectieve manier om elektriciteit
-        op te slaan omdat ze een relatief grote batterij bevatten. Met de volgende
+        op te slaan omdat ze een relatief grote batterij bevatten. Niet al het opslagvolume kan worden ingezet voor flexibiliteitsdoeleinden.
+        Een deel van het volume is immers ook nodig om mee te rijden. Met deze
         slider kun je daarom aangeven welk percentage van de batterij in alle elektrische
         auto's kan worden gebruikt voor flexibiliteitsdoeleinden. Je kunt het percentage
         elektrische auto's instellen in <a href=\"/scenario/demand/transport_passenger_transport/car-technology\">autotechnologie
-        slide</a>.\r\n<br/><br/>\r\nElektrische auto's in het ETM hebben een batterijvolume
-        van 100 kWh. Niet dit hele volume kan worden ingezet voor flexibiliteitsdoeleinden.
-        Een deel van het volume is immers ook nodig om mee te rijden. Met deze slider
-        kun je aangeven welk percentage van de batterij kan worden gebruikt voor om
-        elektriciteitsoverschotten op te vangen."
+        slide</a>."
     capacity_of_energy_flexibility_pumped_storage_electricity:
       title: Stuwmeren
       short_description:
@@ -260,26 +256,20 @@ nl:
         op te slaan. Elektriciteit wordt gebruikt om water omhoog te pompen van een
         lager gelegen naar een hoger gelegen stuwmeer. Als de elektriciteitsvraag
         hoog is kan het opgeslagen water via turbines ontsnappen waarmee elektriciteit
-        wordt opgewekt.\r\n<br/><br/>\r\nStuwmeren zijn er in verschillende formaten.
-        Het ETM bevat een 500 MW faciliteit als typische centrale. Je kunt echter
-        ook een fractie van een centrale neerzetten. Het opslagvolume van de typische
-        faciliteit is 3 GWh.\r\n<br/><br/>\r\nDe schuifjesinstelling wordt omgezet
-        naar (deel)aantallen van de centrale zoals hierboven omschreven."
+        wordt opgewekt."
     capacity_of_energy_flexibility_hv_opac_electricity:
       title: OPAC
       short_description:
-      description: "De Ondergrondse Pomp Accumulatie Centrale (OPAC) is een grootschalige
-        elektriciteitsopslag met een opslagvolume van 8400 MWh. Het werkt door water
-        naar een hoger gelegen reservoir te pompen en dat water op een later moment
-        terug te laten stromen langs elektriciteitsturbines.\r\nStroom-overschotten
-        van must-run en volatiele opwek kunnen worden opgeslagen met een vermogen
-        van 1400 MW. Dus de opslag kan in zes uur volledig worden gevuld.\r\nAls de
-        overproductie voorbij is wordt de opgeslagen elektriciteit teruggeleverd aan
-        het hoogspanningsnet."
+      description: "De Ondergrondse Pomp Accumulatie Centrale (OPAC) is een vorm grootschalige
+        elektriciteitsopslag. Door gebruik te maken van het hoogteverschil tussen twee waterreservoirs 
+        kan elektriciteit worden opgeslagen als potentiële energie. Wanneer er elektriciteitsoverschotten 
+        zijn, kunnen deze worden gebruikt om water naar het hoger gelegen reservoir te pompen. Op een 
+        later moment, als er geen overschotten meer zijn, loopt het hoger gelegen reservoir weer leeg langs 
+        turbines. Hiermee wordt elektriciteit opgewekt wat vervolgens weer wordt teruggeleverd aan het hoogspanningsnet."
     capacity_of_energy_flexibility_mv_batteries_electricity:
       title: Grootschalige batterijopslag
       short_description:
-      description: "Deze grootschalige (129 MWh) batterij kan worden gebruikt om stroom-overschotten
+      description: "Deze grootschalige batterij kan worden gebruikt om stroom-overschotten
         van must-run en volatiele opwek op te slaan. Als de overproductie voorbij
         is wordt de opgeslagen elektriciteit teruggeleverd aan het elektriciteitsnet.\r\nHoewel
         de batterij niet reageert op netwerkcongestie kan haar gedrag wel helpen om

@@ -14,7 +14,9 @@ class EsdlSuiteId < ApplicationRecord
     expires_at < Time.zone.now
   end
 
-  # Refreshes the EsdlSuiteId OpenId tokens if possible, else removes this EsdlSuiteId
+  # Internal: Refreshes the EsdlSuiteId OpenId tokens if possible, else removes this EsdlSuiteId.
+  # When the refresh token expires, we cannot refresh the access token anymore and the EsdlSuiteId
+  # becomes unusable. Hence we delete the instance.
   def refresh
     new_token = EsdlSuiteService.setup.refresh(to_access_token)
     return delete if new_token.empty?
@@ -22,9 +24,12 @@ class EsdlSuiteId < ApplicationRecord
     update(new_token)
   end
 
+  # Public: Evaluates if the EsdlSuiteId can still be used for communication. Has a side-effect of
+  # deleting the instance when refreshing is impossible
+  #
   # Returns true if the EsdlSuiteId can be used for communication
   # Returns false if the EsdlSuiteId has expired and is unable to refresh
-  def fresh?
+  def try_viable
     refresh if expired?
 
     persisted?

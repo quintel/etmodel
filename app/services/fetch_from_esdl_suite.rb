@@ -6,11 +6,11 @@ class FetchFromEsdlSuite < EsdlSuiteService
   #
   # esdl_suite_id - An EsdlSuiteId with which we can communicate with the Drive on the users behalf
   # path          - The path on the Drive to where the desired file is stored, e.g.
-  #                 'Projects/Mondaine/myfile.esdl'
+  #                 '/Projects/Mondaine/myfile.esdl'
   #
   # Returns a ServiceResult
   def call(esdl_suite_id, path)
-    return ServiceResult.failure unless esdl_suite_id.fresh?
+    return ServiceResult.failure unless esdl_suite_id.try_viable
 
     encoded_path = CGI.escape(path).gsub('+', '%20')
     handle_fetch_response(HTTParty.get(

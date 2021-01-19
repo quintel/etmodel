@@ -25,8 +25,8 @@ describe EsdlSuiteId do
       expect(esdl_suite_id).to be_expired
     end
 
-    it '#fresh? updates the token ' do
-      expect { esdl_suite_id.fresh? }.to(change(esdl_suite_id, :expires_at))
+    it '#try_viable updates the token ' do
+      expect { esdl_suite_id.try_viable }.to(change(esdl_suite_id, :expires_at))
     end
   end
 
@@ -35,8 +35,8 @@ describe EsdlSuiteId do
       expect(esdl_suite_id).not_to be_expired
     end
 
-    it '#fresh? does not update the token ' do
-      expect { esdl_suite_id.fresh? }.not_to(change { esdl_suite_id })
+    it '#try_viable does not update the token ' do
+      expect { esdl_suite_id.try_viable }.not_to(change { esdl_suite_id })
     end
   end
 

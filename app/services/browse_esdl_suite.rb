@@ -5,12 +5,12 @@ class BrowseEsdlSuite < EsdlSuiteService
   # Public: Gets the child nodes (files and directories) for a directory in the Mondaine Drive
   #
   # esdl_suite_id - An EsdlSuiteId with which we can communicate with the Drive on the users behalf
-  # path          - The path on the Drive to the directory, e.g. 'Projects/Mondaine/'. The default
+  # path          - The path on the Drive to the directory, e.g. '/Projects/Mondaine/'. The default
   #                 path is the root of the Mondaine Drive '/'
   #
   # Returns a ServiceResult
   def call(esdl_suite_id, path = '/')
-    return ServiceResult.failure unless esdl_suite_id.fresh?
+    return ServiceResult.failure unless esdl_suite_id.try_viable
 
     query = { 'operation' => 'get_node', 'id' => path }
     handle_tree_response(HTTParty.get(

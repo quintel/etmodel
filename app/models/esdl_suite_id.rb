@@ -6,6 +6,7 @@ class EsdlSuiteId < ApplicationRecord
 
   validates   :access_token, presence: true
   validates   :refresh_token, presence: true
+  validates   :user_id, uniqueness: true
 
   def expired?
     return true unless expires_at

@@ -48,9 +48,7 @@ $(function () {
   var folders = $('.folder__true');
 
   if (folders.length > 0) {
-    $.each(folders, function (_index, folder) {
-      $(folder).on('click', expandFolder);
-    });
+    folders.on('click', expandFolder);
   }
 
   // When a folder is clicked, check if we have already collected its children.
@@ -101,9 +99,7 @@ $(function () {
       esdlForm.find('input[type=file]').prop('required', true);
       esdlForm.find('input[name=mondaine_drive_path]').val('');
     } else {
-      $.each($('.selected'), function () {
-        $(this).removeClass('selected');
-      });
+      $('.selected').removeClass('selected');
       file.addClass('selected');
       esdlForm.find('input[type=file]').removeAttr('required');
       esdlForm.find('input[name=mondaine_drive_path]').val(file.data('id'));

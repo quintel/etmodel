@@ -34,16 +34,19 @@
     box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
     border-radius: 4px
     padding: 15px 40px
+
+  .upload_file
+    padding-bottom: 35px
+
+  #mondaine_drive
+    margin-top: 30px
+    border-top-color: $landing-gold
+
     .dot
       font-size: 6px
       color: $link-color
       margin: 0 6px
       vertical-align: middle
-
-
-  #mondaine_drive
-    margin-top: 30px
-    border-top-color: $landing-gold
 
     .button.login
       background: linear-gradient(lighten($landing-gold, 10%), $landing-gold)
@@ -74,16 +77,17 @@
           &:hover
             color: $link-color
       .file-esdl__false
+        padding-bottom: 0.5px
         &:hover
           cursor: pointer
           color: $link-color
         &.selected
           cursor: pointer
-          color: $link-color
-          background-color: #eee
+          color: #fff
+          background-color: $link-color
           border-radius: 10px
           width: max-content
-          padding: 0 7px
+          padding: 0 7px 0.5px 7px
           margin-left: -7px
 
     &.disabled

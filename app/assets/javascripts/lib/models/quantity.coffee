@@ -16,7 +16,8 @@ BASE_UNITS = [
   { name: 'J' }
   { name: 'm' }
   { name: 'm3', i18n: 'm3' }
-  { name: 'T' }
+  { name: 'T', i18n: 'T' }
+  { name: 'T_CO2', i18n: 'T_CO2' }
   { name: 'W' }
   { name: 'We' }
   { name: 'Wh' }
@@ -79,8 +80,6 @@ compiledUnits['km2'] = {
   base: m2Base,
   power: { prefix: 'k', multiple: 1e6, i18n: 'thousands' }
 }
-
-compiledUnits['tonne'] = { name: 'tonne', base: { name: 'tonne', i18n: 'tonne' }, power: POWERS[8] }
 
 # ------------------------------------------------------------------------------
 

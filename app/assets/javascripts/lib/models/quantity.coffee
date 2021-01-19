@@ -172,7 +172,7 @@ class @Quantity
       opts.strip_insignificant_zeros = true
 
     if opts.precision is 'auto' or not opts.precision?
-      maxPrecision = opts.maxPrecision || 2
+      maxPrecision = opts.maxPrecision || (if Math.abs(@value) < 1 then 3 else 2)
 
       # Automatically determine how many significant decimal places are
       # present in the number.

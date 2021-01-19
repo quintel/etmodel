@@ -185,7 +185,9 @@ format_node_detail_value = (value, unit) ->
       when 'hour / year'
         "#{value} #{@scaling_in_words(0, 'hours_per_year')}"
       else
-        value
+        # Return the original value, rather than a scaled value without the
+        # context of a unit.
+        I18n.toNumber(x, { precision: calculate_precision(x), strip_insignificant_zeros: true })
 
   # formatters
 

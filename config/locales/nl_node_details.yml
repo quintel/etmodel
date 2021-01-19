@@ -41,6 +41,9 @@ nl:
       total_installed_input_capacity: Opgesteld input vermogen
       total_storage_capacity: Opgesteld opslagvolume
       typical_input_capacity: Capaciteit per installatie
+      typical_input_capacity_co2_capture: Jaarlijkse afvangcapaciteit
+      typical_input_capacity_co2_storage: Jaarlijkse opslagcapaciteit
+      typical_input_capacity_co2_transport: Jaarlijkse transportcapaciteit
       useable_heat_output_conversion: Efficiëntie (warmte)
       variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten voor CCS
       variable_operation_and_maintenance_costs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten (O&M)
@@ -58,10 +61,10 @@ nl:
     texts:
       'yes': 'Ja'
       'no': 'Nee'
-      d_w_s: dag / week / seizoen
-      i_h_d: direct / uur / dag
-      i_h_d_w: direct / uur / dag / week
-      i_h_d_w_s: direct / uur / dag / week / seizoen
+      d_w_s: dag, week of seizoen
+      i_h_d: direct, uur of dag
+      i_h_d_w: direct, uur, dag of week
+      i_h_d_w_s: direct, uur, dag, week of seizoen
 
     units:
       full load hour: vollastuur

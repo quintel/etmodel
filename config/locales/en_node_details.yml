@@ -39,6 +39,9 @@ en:
       total_installed_input_capacity: Total installed input capacity
       total_storage_capacity: Total installed storage volume
       typical_input_capacity: Capacity per unit
+      typical_input_capacity_co2_capture: Yearly capture capacity
+      typical_input_capacity_co2_storage: Yearly storage capacity
+      typical_input_capacity_co2_transport: Yearly transport capacity
       useable_heat_output_conversion: Heat efficiency
       variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Additional variable operation and maintenance costs for CCS
       variable_operation_and_maintenance_costs_per_full_load_hour: Variable operation and maintenance costs
@@ -58,10 +61,10 @@ en:
     texts:
       'yes': 'Yes'
       'no': 'No'
-      d_w_s: day / week / season
-      i_h_d: immediate / hour / day 
-      i_h_d_w: immediate / hour / day / week
-      i_h_d_w_s: immediate / hour / day / week / season
+      d_w_s: daily, weekly or seasonally
+      i_h_d: immediately, hourly or daily
+      i_h_d_w: immediately, hourly, daily or weekly
+      i_h_d_w_s: immediately, hourly, daily, weekly or seasonally
     units:
       full load hour: full load hour
       year: 'year'

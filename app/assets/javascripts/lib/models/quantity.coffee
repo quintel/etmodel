@@ -73,7 +73,14 @@ compiledUnits['#'] = {
 m2Base = { name: 'm2', i18n: 'm2' }
 
 compiledUnits['m2'] = { name: 'm2', base: m2Base, power: POWERS[8] }
-compiledUnits['km2'] = { name: 'km2', base: m2Base, power: POWERS[7] }
+
+compiledUnits['km2'] = {
+  name: 'km2',
+  base: m2Base,
+  power: { prefix: 'k', multiple: 1e6, i18n: 'thousands' }
+}
+
+compiledUnits['tonne'] = { name: 'tonne', base: { name: 'tonne', i18n: 'tonne' }, power: POWERS[8] }
 
 # ------------------------------------------------------------------------------
 

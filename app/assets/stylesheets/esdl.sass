@@ -34,20 +34,6 @@
     box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
     border-radius: 4px
     padding: 15px 40px
-
-    &.soften, &.disabled
-      border-top-color: $landing-grey
-      background: darken(#fff, 3%)
-      color: #666
-      a, .dot
-        color: #666
-      .button, .button.login
-        color: darken(#fff, 3%)
-        background-color: #888
-        background: linear-gradient(lighten(#888, 10%), #888)
-      input
-        background: darken(#fff, 3%)
-
     .dot
       font-size: 6px
       color: $link-color
@@ -103,6 +89,8 @@
     &.disabled
       position: relative
       color: #ddd
+      border-top-color: $landing-grey
+      background: darken(#fff, 3%)
       .button.login
         color: darken(#fff, 3%)
         background-color: #ddd

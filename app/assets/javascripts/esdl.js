@@ -12,16 +12,6 @@ $(function () {
       form.find('.wait').show();
     });
 
-    // Soften browse-my-mondaine-drive part when busy with browsing my computer
-    esdlForm
-      .find('.upload_file')
-      .on('mouseenter', function () {
-        $('#mondaine_drive').addClass('soften');
-      })
-      .on('mouseleave', function () {
-        $('#mondaine_drive').removeClass('soften');
-      });
-
     // Add the ability to clear the uploaded file field by showing a small
     // x ('span') when the upload-file field is filled.
     if (esdlForm.find('input[type=file]').val()) {
@@ -49,16 +39,6 @@ $(function () {
       mondaineDrive.find('a').on('click', false);
     } else {
       mondaineDrive.find('a').off('click', false);
-
-      // Soften the browse-my-computer part when user is busy with
-      // browsing the Mondaine Drive
-      mondaineDrive
-        .on('mouseenter', function () {
-          $('#import_esdl .upload_file').addClass('soften');
-        })
-        .on('mouseleave', function () {
-          $('#import_esdl .upload_file').removeClass('soften');
-        });
     }
   }
 });

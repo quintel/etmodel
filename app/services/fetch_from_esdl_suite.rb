@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 
-# Fetch an .esdl file from the Mondaine Drive with an EsdlSuiteId
+# Fetch an ESDL file from the Mondaine Drive using an EsdlSuiteId
 class FetchFromEsdlSuite < EsdlSuiteService
-  # Fetch a .esdl file from the Mondaine Drive with an esdl_suite_id
+  # Fetches a .esdl file from the Mondaine Drive
+  #
+  # esdl_suite_id - An EsdlSuiteId with which we can communicate with the Drive on the users behalf
+  # path          - The path on the Drive to where the desired file is stored, e.g.
+  #                 'Projects/Mondaine/myfile.esdl'
+  #
+  # Returns a ServiceResult
   def call(esdl_suite_id, path)
     return ServiceResult.failure unless esdl_suite_id.fresh?
 

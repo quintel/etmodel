@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 # Base class for communications with the ESDL Suite
-# Retrieves access tokens for making download, upload
-# and browse requests possible
 #
-# The application config must have the esdl suite client, secret and
-# url set in order to send requests to ESDL Suite.
+# Retrieves access tokens and sets up ESDLSuiteIds for making download, upload  and browse requests
+# possible. The application config must have the esdl suite client, secret and url set in order to
+# send requests to ESDL Suite.
 class EsdlSuiteService
   include Service
 
@@ -15,7 +14,7 @@ class EsdlSuiteService
     OpenIDConnect::ResponseObject::IdToken::InvalidAudience
   ].freeze
 
-  # Setup a new EsdlSuitService
+  # Public: Setup a new EsdlSuitService with the configuration specified in the app config
   def self.setup
     new(
       APP_CONFIG[:esdl_suite_url],
@@ -29,16 +28,16 @@ class EsdlSuiteService
     setup.call(*args)
   end
 
-  # Arguments:
-  # provider_uri                URI, when extended with /.well-known/openid-configuration
-  #                             acts as a discovery url pointing to a JSON file
-  #                             containing all OpenID settings for the ESDL Suite
-  # client_id                   Our client_id
-  # secret                      Our client_secret
-  # redirect_uri                The uri we want the ESDL Suite to redirect to and
-  #                             send the authorization code to after the user has
-  #                             logged into the Suite
+  # Public: Creates an instance of EsdlSuiteService
   #
+  # provider_uri - URI, when extended with /.well-known/openid-configuration acts as a discovery url
+  #                pointing to a JSON file containing all OpenID settings for the ESDL Suite
+  # client_id    - Our client_id
+  # secret       - Our client_secret
+  # redirect_uri - The uri we want the ESDL Suite to redirect to and send the authorization code to
+  #                after the user has logged into the Suite
+  #
+  # Returns the EsdlSuiteService instance
   def initialize(provider_uri, client_id, secret, redirect_url)
     @provider_uri = provider_uri
     @client_id = client_id
@@ -47,11 +46,12 @@ class EsdlSuiteService
     @audience = 'esdl-mapeditor'
   end
 
-  # Returns the authentication URL, where the user should be redirected to to log in.
-  # nonce                       Unique value associated with the request. Same
-  #                             value needs to be passed to the #authenticate method
-  #                             (this value is stored in the user session)
+  # Public: Composes the authentication URL, where the user should be redirected to to log in.
   #
+  # nonce - Unique value associated with the request. Same value needs to be passed to the
+  #         #authenticate method (this value is stored in the user session)
+  #
+  # Returns the authentication URL
   def auth_uri(nonce)
     client.authorization_uri(
       scope: %i[user_group_path email profile esdl-mapeditor microprofile-jwt user_group],
@@ -60,13 +60,14 @@ class EsdlSuiteService
     )
   end
 
-  # Checks the validity of the redirect after a user has logged in at the ESDL Suite,
+  # Public: Checks the validity of the redirect after a user has logged in at the ESDL Suite,
   # and creates an EsdlSuiteId on the user
-  # code                      The code returned from the OP (ESDL Suite) after
-  #                           successful user authentication.
-  # nonce                     The unique value associated with the request that
-  #                           was saved in the user session
-  # user                      The User the tokens should be saved for
+  #
+  # code  - The code returned from the OP (ESDL Suite) after successful user authentication.
+  # nonce - The unique value associated with the request that was saved in the user session
+  # user  - The User the tokens should be saved for
+  #
+  # Returns a ServiceResult
   def authenticate(code, nonce, user)
     # Get code from query string.
     client.authorization_code = code
@@ -93,8 +94,11 @@ class EsdlSuiteService
     ServiceResult.failure(['ID Token could not be validated'])
   end
 
-  # Refreshes an expired OpenIDConnect::AccessToken access_token
-  # and returns the updated values
+  # Public: Refreshes an expired access token
+  #
+  # access_token - An expired OpenIDConnect::AccessToken
+  #
+  # Returns the updated values in a hash (String access_token, DateTime expires_at)
   def refresh(access_token)
     new_access_token = access_token.client.access_token!
     expires = Time.zone.at(decode_id_token(new_access_token.id_token).exp).to_datetime
@@ -108,7 +112,9 @@ class EsdlSuiteService
     {}
   end
 
-  # Returns a OpenIDConnect::Client with the correct settings
+  # Public: Sets up an OpenIDConnect::Client with the correct settings
+  #
+  # Returns an instance of OpenIDConnect::Client
   def client
     @client ||= OpenIDConnect::Client.new(
       identifier: @client_id,
@@ -132,8 +138,9 @@ class EsdlSuiteService
     @jwks_key ||= retrieve_jwks_key
   end
 
-  # Retrieves the jwks key to decrypt the id_token from the
-  # discovered jwks_uri. Returns a JSON::JWK instance
+  # Internal: Retrieves the jwks key to decrypt the id_token from the discovered jwks_uri.
+  #
+  # Returns a JSON::JWK instance
   def retrieve_jwks_key
     response = HTTParty.public_send(:get, discovery.jwks_uri)
 

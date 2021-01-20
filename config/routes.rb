@@ -121,6 +121,8 @@ Rails.application.routes.draw do
   get '/update_footer'                => 'pages#update_footer'
   get '/regions/:dataset_locale'      => 'pages#dataset', as: :region
 
+  post '/feedback' => 'feedback#send_message', as: :feedback
+
   get '/local-global' => 'compare#index', as: :local_global
   get '/local-global/:ids' => 'compare#show', as: :local_global_scenarios
 

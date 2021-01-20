@@ -101,12 +101,12 @@ header.main-header
     margin: -4px 0 0
     vertical-align: middle
 
-  .dropdown-menu
-    top: 3rem
-
   a.dropdown-item
     color: #444
     min-width: 9rem
+
+  .fa
+    font-size: 15px
 
 // Scenario Sub-Nav
 //
@@ -203,8 +203,7 @@ header.main-header
   background: white
   border-bottom-color: rgba(0, 0, 0, 0.2)
   border-radius: 4px
-  border: 1px solid rgba(0, 0, 0, 0.15)
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.1)
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0,0,0, 0.1)
   display: block
   left: 0.5em
   list-style: none
@@ -222,7 +221,7 @@ header.main-header
   &:before
     background: white
     border-radius: 2px
-    box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.1)
+    box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.15)
     content: " "
     height: 0.625rem
     left: 0.625rem
@@ -267,3 +266,92 @@ a.dropdown-item
     background-color: #4287c4
     color: white !important
     text-decoration: none
+
+.feedback-menu
+  padding: 0
+  width: 22rem
+  form
+    position: relative
+    .success
+      box-sizing: border-box
+      color: #46a541
+      display: none
+      height: 8rem
+      left: 0
+      padding: 0.875rem;
+      position: absolute
+      text-align: center
+      top: 1rem
+      width: 100%
+      .fa
+        font-size: 48px
+      .msg
+        font-size: 0.876rem
+        padding-top: 0.5rem
+      strong
+        display: block
+        font-size: 1rem
+        font-weight: 600
+
+  input.do-not-fill
+    display: none
+  textarea, .commit
+    box-sizing: border-box
+    padding: 0.875rem
+    width: 100%
+  textarea
+    border: none
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+    line-height: 1.4
+    min-width: 20rem
+    min-height: 10rem
+    resize: none
+    &:focus
+      box-shadow: none
+    &[disabled]
+      background: none
+  .commit
+    background: #f5f5f5
+    border-top: 1px solid #ddd
+    border-radius: 0 0 4px 4px
+    .buttons
+      align-content: center
+      display: flex
+      justify-content: space-between
+    button
+      font-size: 0.8125rem
+      padding: 7px 10px 6px
+      &.primary
+        box-sizing: border-box
+        font-weight: 500
+        &.loading
+          .spinner
+            display: inline-block
+          .text
+            display: none
+          &[disabled]
+            opacity: 1
+    .spinner
+      background: image-url("icons/primary-button-loader.gif") center left no-repeat;
+      display: none
+      margin-top: -1px
+      min-height: 6px
+      vertical-align: middle
+      width: 22px;
+    .docs, .failure
+      font-size: 0.75rem
+      line-height: 1.4
+    .docs
+      color: #555
+      margin-top: 0.75rem
+      a
+        white-space: nowrap
+    .failure
+      color: #a71919
+      display: none
+      margin-bottom: 0.7rem
+      a
+        color: #a71919
+        text-decoration: underline
+

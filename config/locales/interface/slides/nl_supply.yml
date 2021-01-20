@@ -5,7 +5,7 @@ nl:
       title: Overzicht
       short_description:
       description: "Biomassa kan op verschillende plekken in het model worden ingezet:\r\n<ul>\r\n
-        \ <li>als <a href=\"/scenario/supply/biomass/green-gas-in-gas-network\">groengas</a>
+        \ <li>als <a href=\"/scenario/supply/biomass/green-gas-in-gas-network\">groen gas</a>
         in het gas netwerk</li>\r\n  <li>in biomassaketels voor <a href=\"/scenario/supply/renewable_heat/biomass\">(lokale)
         warmtenetten</a></li>\r\n  <li>als <a href=\"/scenario/supply/transport_fuels/road-transport\">transportbrandstof</a>:
         bio-ethanol, biodiesel, bio-LNG and biokerosine</li>\r\n  <li>als meestook
@@ -31,15 +31,15 @@ nl:
     supply_biomass_greengas_production:
       title: Groengasproductie
       short_description:
-      description: "Op dit moment wordt in Nederland nagenoeg al het groengas geproduceerd
+      description: "Op dit moment wordt in Nederland nagenoeg al het groen gas geproduceerd
         middels vergisting. Welke rol zal vergassing spelen in de toekomst? Hieronder
-        kun je de productiemix van groengas aanpassen.\r\n<br /><br />\r\nLet op:
-        De kosten van groengas veranderen niet automatisch mee als je de productiemix
-        aanpast. Dit is omdat de prijs van groengas niet alleen bepaald wordt door
-        de productiekosten. Groengas is een schaars goed waardoor de prijs (flink)
+        kun je de productiemix van groen gas aanpassen.\r\n<br /><br />\r\nLet op:
+        De kosten van groen gas veranderen niet automatisch mee als je de productiemix
+        aanpast. Dit is omdat de prijs van groen gas niet alleen bepaald wordt door
+        de productiekosten. Groen gas is een schaars goed waardoor de prijs (flink)
         hoger kan liggen. In de kostensectie kun je de <a href=\"/scenario/costs/fuel_costs/biofuels\">prijs
-        van groengas</a> aanpassen en zien hoe deze prijs zich verhoudt tot de gemiddelde
-        productiekosten. Let er ook op dat de productiekosten van groengas nog niet
+        van groen gas</a> aanpassen en zien hoe deze prijs zich verhoudt tot de gemiddelde
+        productiekosten. Let er ook op dat de productiekosten van groen gas nog niet
         geoptimaliseerd zijn, met name voor de vergassingstechnologieën. Deze technologieën
         zijn namelijk redelijk nieuw, dus er zijn minder praktische voorbeelden om
         de kosten op te baseren.\r\n<br /><br />"
@@ -125,8 +125,8 @@ nl:
         typen gascentrales. In de <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a>
         sectie kun je aangeven of deze centrales zijn uitgerust met een CO<sub>2</sub>-afvanginstallatie
         om de emissies omlaag te brengen. Op de
-        <a href='/scenario/supply/biomass/green-gas-in-gas-network'>groengas</a>pagina
-        kun je aannames doen over de hoeveelheid groengas in het gasnet.
+        <a href='/scenario/supply/biomass/green-gas-in-gas-network'>groen gas</a>pagina
+        kun je aannames doen over de hoeveelheid groen gas in het gasnet.
     supply_electricity_nuclear_plant:
       title: Kerncentrale
       short_description: ''
@@ -157,9 +157,9 @@ nl:
       short_description:
       description: Hoeveel warmte wordt er d.m.v. biomassa geproduceerd?
     supply_electricity_renewable_gas:
-      title: "(Groen)gas in gasnetwerk"
+      title: "(Groen) gas in gasnetwerk"
       short_description: ''
-      description: 'Aardgas in het gasnetwerk kan worden bijgemengd met groengas om
+      description: 'Aardgas in het gasnetwerk kan worden bijgemengd met groen gas om
         het gasverbruik te verduurzamen. Daarnaast kan vloeibaar aardgas (LNG), een
         brandstof die enkel in de transport sector in vloeibare vorm gebruikt wordt,
         ook weer omgezet worden naar gas en in het gasnetwerk ingevoerd worden. '

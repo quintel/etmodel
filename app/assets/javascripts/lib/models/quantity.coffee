@@ -16,7 +16,8 @@ BASE_UNITS = [
   { name: 'J' }
   { name: 'm' }
   { name: 'm3', i18n: 'm3' }
-  { name: 'T' }
+  { name: 'T', i18n: 'T' }
+  { name: 'T_CO2', i18n: 'T_CO2' }
   { name: 'W' }
   { name: 'We' }
   { name: 'Wh' }
@@ -73,7 +74,12 @@ compiledUnits['#'] = {
 m2Base = { name: 'm2', i18n: 'm2' }
 
 compiledUnits['m2'] = { name: 'm2', base: m2Base, power: POWERS[8] }
-compiledUnits['km2'] = { name: 'km2', base: m2Base, power: POWERS[7] }
+
+compiledUnits['km2'] = {
+  name: 'km2',
+  base: m2Base,
+  power: { prefix: 'k', multiple: 1e6, i18n: 'thousands' }
+}
 
 # ------------------------------------------------------------------------------
 
@@ -165,7 +171,7 @@ class @Quantity
       opts.strip_insignificant_zeros = true
 
     if opts.precision is 'auto' or not opts.precision?
-      maxPrecision = opts.maxPrecision || 2
+      maxPrecision = opts.maxPrecision || (if Math.abs(@value) < 1 then 3 else 2)
 
       # Automatically determine how many significant decimal places are
       # present in the number.

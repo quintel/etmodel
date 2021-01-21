@@ -118,7 +118,7 @@ format_node_detail_value = (value, unit) ->
       pow = 0
       value = 0
       precision = 0
-    else if ! scaleDown or unit is 'hours' or unit is 'year'
+    else if ! scaleDown or unit.indexOf('hour') != -1 or unit.indexOf('year') != -1
       pow = 0
       value = @round_number(x, precision)
     else
@@ -185,7 +185,9 @@ format_node_detail_value = (value, unit) ->
       when 'hour / year'
         "#{value} #{@scaling_in_words(0, 'hours_per_year')}"
       else
-        value
+        # Return the original value, rather than a scaled value without the
+        # context of a unit.
+        I18n.toNumber(x, { precision: calculate_precision(x), strip_insignificant_zeros: true })
 
   # formatters
 

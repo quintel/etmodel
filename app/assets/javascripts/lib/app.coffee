@@ -17,7 +17,6 @@ class @AppView extends Backbone.View
     @api = new ApiGateway
       api_path:           globals.api_url
       api_proxy_path:     globals.api_proxy_url
-      offline:            globals.standalone
       scenario_id:        globals.api_session_id
       beforeLoading:      @showLoading
       afterLoading:       @hideLoading

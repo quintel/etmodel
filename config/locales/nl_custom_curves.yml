@@ -1,40 +1,44 @@
 ---
 nl:
   custom_curves:
-    confirm_remove: Weet je zeker dat je dit profiel wilt verwijderen en de default wilt gebruiken?
-    default: Default profiel
-    full_load_hours: Full load hours
+    confirm_remove: Weet je zeker dat je dit profiel wilt verwijderen en het standaardprofiel wilt gebruiken?
+    default: Standaardprofiel
+    full_load_hours: Vollasturen
     loading: Laden...
     max: Maximum
     mean: Gemiddelde
     min: Minimum
     on_date: "op %{date}"
-    remove: Zet het default-profiel terug
+    remove: Zet het standaardprofiel terug
     select_scenario: Selecteer scenario...
     upload: Een eigen profiel uploaden
     upload_from_scenario: Of gebruik een scenario
     uploaded: geüpload
     uploading: Uploaden profiel
-    use: Gebruik'
+    use: Gebruik
     value: "%{value}"
     errors:
       file_too_large: Profiel mag niet meer dan 1MB groot zijn
       illegal_value: Profiel mag alleen numerieke waarden bevatten
-      not_a_curve: Profiel moet een CSV file zijn met 8760 getallen (één getal voor elk uur in een jaar)
+      not_a_curve: Profiel moet een CSV-bestand zijn met 8760 getallen (één getal voor elk uur in een jaar)
       wrong_length: Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)
     names:
-      households_hot_water: Household hot water demand
-      interconnector_1_price: Interconnector 1 price
-      interconnector_2_price: Interconnector 2 price
-      interconnector_3_price: Interconnector 3 price
-      interconnector_4_price: Interconnector 4 price
-      interconnector_5_price: Interconnector 5 price
-      interconnector_6_price: Interconnector 6 price
-      weather/air_temperature: Air temperature
+      interconnector_1_price: Interconnector 1 prijscurve
+      interconnector_2_price: Interconnector 2 prijscurve
+      interconnector_3_price: Interconnector 3 prijscurve
+      interconnector_4_price: Interconnector 4 prijscurve
+      interconnector_5_price: Interconnector 5 prijscurve
+      interconnector_6_price: Interconnector 6 prijscurve
+      weather/air_temperature: Buitentemperatuur
     types:
       price:
-        default: Default prijsprofiel
-        default_description: Constante prijs gedurende het jaar
+        default: Standaard prijsprofiel
+        default_description: |
+          Standaard wordt een constante prijs verondersteld gedurende het jaar.
+          Je kunt dit aanpassen door een CSV-bestand te importeren met daarin voor elk uur
+          van het jaar een prijs voor import-stroom.
+          Dit bestand moet uit 8760 rijen bestaan (één voor elk uur per jaar) met
+          per rij de gewenste prijs (in €/MWh).
         description_html: |
           Het ETM veronderstelt standaard dat de prijs van geïmporteerde stroom constant is gedurende het jaar. Deze prijs kun je instellen met de slider hierboven. Je kunt afwijken van deze aanname door hieronder een
           CSV-bestand te importeren met daarin voor elk uur van het jaar een prijs voor
@@ -44,6 +48,19 @@ nl:
         curve_from_scenario: Profiel vanuit scenario
         imported_from: Vanuit scenario
       temperature:
-        default: Default temperature curve
-        default_description: A temperature curve based on KNMI-data.
+        default: Standaard temperatuurcurve
+        default_description: |
+          De standaard temperatuurcurve is gebaseerd op weerdata uit het startjaar van jouw regio.
+          Je kunt deze curve aanpassen door een CSV-bestand te importeren met daarin voor elk uur
+          van het jaar de temperatuur. Dit bestand moet uit 8760 rijen bestaan
+          (één voor elk uur per jaar) met per rij de gewenste temperatuur (in °C).
         value: "%{value}°C"
+      profile:
+        default: Standaard profiel
+        default_description: |
+          Het ETM bevat vraag- en aanbodcurves voor alle gas-, warmte, elektriciteits- en
+          waterstoftechnologieën. Voor de geselecteerde categorie kun je een CSV-bestand
+          met een eigen profiel uploaden. Dit bestand moet uit 8760 rijen bestaan
+          (één voor elk uur per jaar) met daarin de relatieve vraag per uur of een fractie die
+          aangeeft hoeveel van het piekvermogen gebruikt wordt (afhankelijk van de gekozen categorie).
+          In de beschrijving hierboven vind je meer informatie.

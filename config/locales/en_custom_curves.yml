@@ -23,7 +23,6 @@ en:
       not_a_curve: Curve must be a CSV file containing 8760 numeric values, one for each hour in a typical year
       wrong_length: Curve must have 8760 numeric values, one for each hour in a typical year
     names:
-      households_hot_water: Household hot water demand
       interconnector_1_price: Interconnector 1 price
       interconnector_2_price: Interconnector 2 price
       interconnector_3_price: Interconnector 3 price
@@ -34,7 +33,11 @@ en:
     types:
       price:
         default: Default price curve
-        default_description: Constant price throughout the year
+        default_description: |
+          By default, it is assumed that the price is constant throughout the year.
+          You can change this by uploading a CSV file, specifying the price of imported
+          electricity for every hour of the year. This file should contain 8760 rows
+          (one for each hour per year) with a price in €/MWh.
         description_html: |
           It is assumed that the price of imported electricity is constant, set
           using the slider above. You may override this assumption by uploading a
@@ -46,6 +49,18 @@ en:
         imported_from: From scenario
       temperature:
         default: Default temperature curve
-        default_description: A temperature curve based on KNMI-data.
+        default_description: |
+          The default temperature curve is based on weather data in the base year of your region.
+          You can change this by uploading a CSV file, specifying the outdoor air temperature for
+          every hour of the year. This file should contain 8760 rows (one for each hour per year)
+          with a temperature in °C.
         value: "%{value}°C"
+      profile:
+        default: Default profile
+        default_description: |
+          The ETM contains demand and supply curves for all gas, heat, electricity and hydrogen
+          technologies. You can upload a CSV file with your own curve for the selected category.
+          This file should contain 8760 rows (one for each hour per year) specifying the
+          relative demand per hour or the fraction of peak capacity utilised (depending on the
+          chosen category). More information can be found in the description above.
 

@@ -12,8 +12,6 @@ class @AppView extends Backbone.View
     @router      = new Router()
     @analytics   = new Analytics(window.ga);
 
-    @customCurvesCollection = null
-
     @api = new ApiGateway
       api_path:           globals.api_url
       api_proxy_path:     globals.api_proxy_url
@@ -241,9 +239,11 @@ class @AppView extends Backbone.View
   customCurves: =>
     deferred = $.Deferred()
 
-    if @customCurvesCollection
-      deferred.resolve(@customCurvesCollection)
+    if @customCurvesDeferred
+      return @customCurvesDeferred
     else
+      @customCurvesDeferred = deferred
+
       # Ajax request.
       req = $.ajax(
         url: App.scenario.url_path() + '/custom_curves?show_unattached=true'
@@ -251,8 +251,7 @@ class @AppView extends Backbone.View
       )
 
       req.success((data) =>
-        @customCurvesCollection = new CustomCurveCollection(data)
-        deferred.resolve(@customCurvesCollection)
+        deferred.resolve(new CustomCurveCollection(data))
       )
 
     return deferred.promise()

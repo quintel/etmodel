@@ -35,6 +35,7 @@ class User < ApplicationRecord
   has_many   :students, class_name: 'User', foreign_key: 'teacher_id'
 
   has_many   :multi_year_charts, dependent: :destroy
+  has_one    :esdl_suite_id, dependent: :destroy
 
   validates :email, uniqueness: { case_sensitive: false }
 

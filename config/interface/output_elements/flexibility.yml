@@ -14,6 +14,19 @@
     original_unit: 'MW'
 - group: Flexibility
   hidden: false
+  key: flexibility_monthly_carriers_inflexible_supply_demand_max
+  output_element_type_name: hourly_summarized
+  requires_merit_order: true
+  unit: MW
+  config:
+    linked_chart: 
+      electricity: flexibility_hourly_electricity_supply_demand
+      heat: flexibility_hourly_heat_network_supply_demand
+      hydrogen: flexibility_hourly_hydrogen_supply_demand
+      gas: flexibility_hourly_network_gas_supply_demand
+    reduce_with: max
+- group: Flexibility
+  hidden: false
   key: flexibility_monthly_carriers_inflexible_imbalance
   output_element_type_name: hourly_summarized
   requires_merit_order: true

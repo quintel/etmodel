@@ -275,3 +275,15 @@
   dependent_on:
   output_element_key: profile_per_sector
   key: wind_onshore_production_profile_per_sector
+- label: wind_coastal_production
+  color: lightgreen
+  order_by: 66
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: wind_coastal_curve
+  is_1990:
+  dependent_on:
+  output_element_key: profile_per_sector
+  key: wind_coastal_production_profile_per_sector

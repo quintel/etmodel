@@ -17,12 +17,20 @@ module ServicesHelper
       (200..299).cover?(code)
     end
 
+    def success?
+      (200..299).cover?(code)
+    end
+
     def [](key)
       body[key]
     end
 
     def request
       Struct.new(:raw_body).new('{}')
+    end
+
+    def parsed_response
+      body
     end
   end
 end

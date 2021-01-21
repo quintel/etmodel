@@ -7,7 +7,7 @@ class CreateEsdlScenario
   include Service
 
   def initialize(esdl_file)
-    @esdl_file = esdl_file.read
+    @esdl_file = esdl_file
   end
 
   def call
@@ -32,7 +32,7 @@ class CreateEsdlScenario
     elsif response.code == 404
       ServiceResult.failure(['This ESDL file cannot be converted into a scenario'])
     elsif response.code == 422
-      # ESDL file was correct but could not be created into a scenario
+      # ESDL file has correct format but could not be created into a scenario
       ServiceResult.failure('Creating scenario failed: ' + response['message'])
     else
       # Malformed request

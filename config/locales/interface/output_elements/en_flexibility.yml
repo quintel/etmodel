@@ -162,13 +162,9 @@ en:
       description: |
         This chart is a continuation of the flexibility chart "Supply and demand per month". 
         This chart shows the imbalance between supply and demand for electricity, gas, 
-        hydrogen and heat per month. The imbalance is calculated by subtracting the demand 
-        from the supply, this is called the "residual load". Negative values mean "surpluses" 
-        of energy and positive values "shortages". This way you can gain insight into the 
-        balance of your energy system throughout the year: in which months does an imbalance occur? 
-        Which carriers are not in balance? Are these shortages or surpluses of energy? If you are 
-        curious about the imbalance within a month, you can click on that specific month and a chart 
-        will open with "residual load" profiles for that month.</br></br>
+        hydrogen and heat per month. The imbalance is calculated by subtracting the baseload demand 
+        from the inflexible supply, this is called the "residual load". Negative values mean "surpluses" 
+        of energy and positive values "shortages".
         What exactly is meant by base load demand and inflexible supply is explained below:
         <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the 
         energy demand of flex technologies that balance the system, such as gas / hydrogen 
@@ -177,7 +173,10 @@ en:
         <li> Supply is the must-run and volatile production, such as wind turbines and solar 
         thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
         / electricity production by dispatchable sources, electricity from batteries or 
-        gas / hydrogen from gas storage facilities.</li>
+        gas / hydrogen from gas storage facilities.</li> </ul>
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
+        If you want a more detailed view, you can also zoom in by clicking on a specific month. 
+        This will open a new chart showing the "residual load" profiles for the selected month.
     flexibility_hourly_carriers_inflexible_imbalance:
       title: Imbalance ("residual load") load per hour
       description: |

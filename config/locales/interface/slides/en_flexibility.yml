@@ -220,7 +220,7 @@ en:
       title: Peak load in the energy system
       short_description:
       description: |
-        This chart shows the maximum value for baseload demand and inflexible supply of electricity, gas, hydrogen and heat in each month. 
+        This chart shows the maximum value for inflexible supply and baseload demand of electricity, gas, hydrogen and heat in each month. 
         This means that this chart gives you insight into the amount of flexible capacity that is needed to balance the energy 
         system in your scenario. If you want to know more about the
         about the definitions of inflexible supply and baseload demand, you can click on the chart info. </br> </br>
@@ -235,13 +235,14 @@ en:
       short_description:
       description: |
         This chart shows the imbalance between supply and demand for electricity, gas,
-        hydrogen and heat per month. The imbalance is calculated by subtracting the demand
-        from the supply, this is called the "residual load". <br /><br />Negative values mean "surpluses"
+        hydrogen and heat per month. The imbalance is calculated by subtracting the baseload demand
+        from the inflexible supply, this is called the "residual load". <br /><br />Negative values mean "surpluses"
         of energy and positive values "shortages". This way you can gain insight into the
         balance of your energy system throughout the year: in which months does an imbalance occur?
-        Which carriers are not in balance? Are these shortages or surpluses of energy? If you are
-        curious about the imbalance within a month, you can click on that specific month and a chart
-        will open with "residual load" profiles for that month.</br></br>
+        Which carriers are not in balance? Are these shortages or surpluses of energy? </br> </br>
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
+        If you want a more detailed view, you can also zoom in by clicking on a specific month. 
+        This will open a new chart showing the "residual load" profiles for the selected month.
     flexibility_overview_cumulative_imbalance:
       title: Seasonal balance of the energy system
       short_description:
@@ -255,7 +256,7 @@ en:
         Surpluses at one point in time can be used to resolve deficits at a later point, either by
         storing the surpluses or by converting one carrier into another. By comparing the start and end point of this line, you can see how much
         "leeway" you have to use these surpluses in your scenario to make up for the shortages.
-        So how much conversion / storage losses you can afford to eventually balance the system.</li><br /><br />
+        So how much conversion / storage losses you can afford to eventually balance the system.</li><br/>
         <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated
         energy goes somewhere and all required energy comes from somewhere. This gives a rough
         estimate of your total required storage capacity to ensure that carriers can be used

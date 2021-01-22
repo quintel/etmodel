@@ -383,6 +383,15 @@ en:
         can be downloaded in the <a href=\"/scenario/data/data_export/merit-order-prices\">results
         section</a>."
     multi_curve_upload:
-      title: Curve upload
-      description:
-        SLIDE DESCRIPTION
+      title: Curve upload 
+      short_description:
+      description: "The ETM calculates the hourly production and demand of energy carriers 
+        (such as gas, electricity or hydrogen). On this page you can choose to upload and use your 
+        own hourly profiles in the ETM. You can upload three types of profiles:
+        \r\n<br /><br />\r\n<b>1. Demand profiles</b><br />\r\n You can define the percentage of total 
+        demand per hour and upload this in the ETM. The ETM will check and correct if the sum of all 
+        percentages is 100%. 
+        \r\n<br /><br />\r\n<b>2. Production profiles</b><br />\r\n You can define the percentage of 
+        power per hour and upload this in the ETM. This will define the total amount of full load hours.
+        \r\n<br /><br />\r\n<b>3. Temperature profiles</b><br />\r\n You can define the average temperature 
+        per hour and upload this in the ETM."

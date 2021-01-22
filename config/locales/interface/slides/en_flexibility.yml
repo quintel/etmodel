@@ -383,15 +383,12 @@ en:
         can be downloaded in the <a href=\"/scenario/data/data_export/merit-order-prices\">results
         section</a>."
     multi_curve_upload:
-      title: Curve upload 
+      title: Upload curves
       short_description:
-      description: "The ETM calculates the hourly production and demand of energy carriers 
-        (such as gas, electricity or hydrogen). On this page you can choose to upload and use your 
-        own hourly profiles in the ETM. You can upload three types of profiles:
-        \r\n<br /><br />\r\n<b>1. Demand profiles</b><br />\r\n You can define the percentage of total 
-        demand per hour and upload this in the ETM. The ETM will check and correct if the sum of all 
-        percentages is 100%. 
-        \r\n<br /><br />\r\n<b>2. Production profiles</b><br />\r\n You can define the percentage of 
-        power per hour and upload this in the ETM. This will define the total amount of full load hours.
-        \r\n<br /><br />\r\n<b>3. Temperature profiles</b><br />\r\n You can define the average temperature 
-        per hour and upload this in the ETM."
+      description: "The ETM calculates the hourly production and demand of gas, electricity, heat and hydrogen.
+        On this page you can upload your own hourly profiles to overwrite the default profiles used in the ETM.
+        You can upload four types of profiles:
+        \r\n<br /><br />\r\n<b>1. Demand profiles</b><br />\r\n These profiles specify for each hour per year (8760 hours) the fraction of annual demand used in that hour. The sum of all hours should be 1. The ETM will check this and normalise the profile to 1 if necessary. Examples: electric buses, industry heating.
+        \r\n<br /><br />\r\n<b>2. Production profiles</b><br />\r\n These profiles specify for each hour per year the fraction of installed capacity used in that hour. The sum of all hours should equal the total annual full load hours of that technology. Examples: solar PV, wind offshore.
+        \r\n<br /><br />\r\n<b>3. Temperature profile</b><br />\r\n This profile specifies the outdoor temperature for each hour per year. The unit is °C.
+        \r\n<br /><br />\r\n<b>4. Price curves</b><br />\r\n These profiles specify a price for each hour per year. The unit is €/MWh. Example: imported electricity."

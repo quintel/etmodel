@@ -383,16 +383,37 @@ nl:
         sectie</a>.\r\n\r\n\r\n"
     multi_curve_upload:
       title: Curve upload
-      description: "Het ETM rekent vraag en aanbod van gas, elekriciteit, warmte
-        en waterstof uit op uurbasis. Op deze pagina kun je je eigen
-        uurprofielen in het ETM laden om de standaardprofielen te overschrijven. Er zijn vier typen uurprofielen die je kunt uploaden:
-        \r\n<br /><br />\r\n<b>1. Vraagprofielen</b><br />\r\n Deze profielen specificeren voor elk uur per jaar (8760 uur)
-        welke fractie van de totale jaarvraag in dat uur gebruikt wordt. De som van alle uren moet gelijk zijn aan 1. Het ETM
-        checkt dit en normaliseert het ingeladen profiel indien nodig. Voorbeelden: elektrische buses, warmte in industrie.
-        \r\n<br /><br />\r\n<b>2. Aanbodprofielen</b><br />\r\n Deze profielen specificeren voor elk uur
-        welke fractie van het opgestelde vermogen in dat uur benut wordt. De som van alle uren moet optellen tot het aantal
-        vollasturen van de gekozen technologie. Voorbeelden: zon PV, wind op zee.
-        \r\n<br /><br />\r\n<b>3. Temperatuurprofiel</b><br />\r\n Dit profiel geeft voor elk uur de buitentemperatuur
-        in °C.
-        \r\n<br /><br />\r\n<b>4. Prijscurves</b><br />\r\n Deze profielen specificeren een prijs voor elk uur per jaar. De eenheid is geven €/MWh.
-        Voorbeeld: geïmporteerde elektriciteit."
+      description: |
+        Het ETM rekent vraag en aanbod van gas, elekriciteit, warmte en waterstof uit op uurbasis.
+        Op deze pagina kun je je eigen uurprofielen in het ETM laden om de standaardprofielen te
+        overschrijven. Er zijn vier typen uurprofielen die je kunt uploaden:
+
+        <br /><br />
+
+        <b>1. Vraagprofielen</b>
+        <br />
+        Deze profielen specificeren voor elk uur per jaar (8760 uur) welke fractie van de totale
+        jaarvraag in dat uur gebruikt wordt. De som van alle uren moet gelijk zijn aan 1. Het ETM
+        checkt dit en normaliseert het ingeladen profiel indien nodig. Voorbeelden: elektrische
+        buses, warmte in industrie.
+
+        <br /><br />
+
+        <b>2. Aanbodprofielen</b>
+        <br />
+        Deze profielen specificeren voor elk uur welke fractie van het opgestelde vermogen in dat
+        uur benut wordt. De som van alle uren moet optellen tot het aantal vollasturen van de
+        gekozen technologie. Voorbeelden: zon PV, wind op zee.
+
+        <br /><br />
+
+        <b>3. Temperatuurprofiel</b>
+        <br />
+        Dit profiel geeft voor elk uur de buitentemperatuur in °C.
+
+        <br /><br />
+
+        <b>4. Prijscurves</b><br />
+
+        Deze profielen specificeren een prijs voor elk uur per jaar. De eenheid is geven €/MWh.
+        Voorbeeld: geïmporteerde elektriciteit.

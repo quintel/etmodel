@@ -16,27 +16,27 @@ en:
         would be the case, then it would rank in the top 10 emitters. (<a href=\"https://ec.europa.eu/clima/policies/transport/aviation_en\">EC
         Climate Action</a>)\r\n<br/><br/>\r\nNote that this slider takes a percentage
         of the total national energy demand of international aviation. This makes
-        it possible to for example allocated the total national energy demand for
+        it possible to for example allocate the total national energy demand for
         international aviation to the specific region where the international airport
-        is located. "
+        is located."
     bunkers_allocated_percentage_shipping:
-      title: International navigation
+      title: Maritime shipping
       short_description: 
-      description: "What percentage of the energy demand for international navigation
+      description: "What percentage of the energy demand for maritime shipping 
         should be included in your scenario? The total energy demand covers those
-        quantities delivered to ships of all flags that are engaged in international
-        navigation. The domestic/international split is determined on the basis of
+        quantities delivered to ships of all flags that are engaged in maritime
+        shipping. The domestic/international split is determined on the basis of
         port of departure and port of arrival, and not by the flag or nationality
-        of the ship.\r\n<br/><br/>\r\nInternational shipping is a very important method
+        of the ship.\r\n<br/><br/>\r\nMaritime shipping is a very important method
         for transporting goods all around the world. This sector accounts for about
         2.5% of global GHG emissions. From 2018 large ships that use EU ports have
         to report their annual verified emissions, which is the first step in the
         global approach to reduce their emissions. (<a href=\"https://ec.europa.eu/clima/policies/transport/shipping_en\">EC
         Climate Action</a>)\r\n<br/><br/>\r\nNote that this slider takes a percentage
-        of the total national energy demand of international navigation. This makes
-        it possible to for example allocated the total national energy demand for
-        international navigation to the specific region where the international seaport
-        is located. "
+        of the total national energy demand of maritime shipping. This makes
+        it possible to for example allocate the total national energy demand for
+        maritime shipping to the specific region where the international seaport
+        is located."
     transport_plane_using_kerosene_share:
       title: Kerosene
       short_description: ''
@@ -421,9 +421,9 @@ en:
       description: Please indicate how the number of international flights will change
         every year in the future.
     bunkers_useful_demand_ships:
-      title: International navigation
+      title: Maritime shipping
       short_description: 
-      description: Please indicate how the number of international shipping trades
+      description: Please indicate how the number of maritime shipping trades
         will change every year in the future.
     transport_ship_using_diesel_mix_share:
       title: Diesel / dual fuel
@@ -433,8 +433,8 @@ en:
         low pressures. Depending on the exact engine configuration, diesel engines
         can also run in a dual fuel mode in which they use both diesel and LNG. In
         this dual fuel mode, the actual fuel usage can vary from 100% diesel to 1%
-        diesel / 99% LNG. In the <a href=\"/scenario/supply/transport_fuels/domestic-navigation\"
-        >transport fuels section</a> , you can determine the exact fuel mix of ships
+        diesel / 99% LNG. In the <a href=\"/scenario/supply/transport_fuels/inland-waterway-shipping\"
+        >inland waterway shipping fuels section</a>, you can determine the exact fuel mix of ships
         with diesel / dual fuel engines.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/energy/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_ship_using_lng_mix_share:
@@ -456,7 +456,7 @@ en:
         for transporting goods over relatively short distances.\r\n<br/><br/>\r\nNote
         that trucks also include the small vans used for delivery. "
     transport_ships_share:
-      title: Domestic navigation
+      title: Inland waterway shipping
       short_description: ''
       description: What do you think will happen to transport by ship? Will this decrease
         or increase? Ships are by far the most energy efficient mode of transport,

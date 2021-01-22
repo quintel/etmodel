@@ -2,8 +2,6 @@ D3.solar_curtailment_curve =
   View: class extends D3.dynamic_demand_curve.View
     downsampleWith: 'max'
 
-    can_be_shown_as_table: -> true
-
     draw: ->
       super
 

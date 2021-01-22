@@ -3,66 +3,66 @@
   dependent_on:
   gquery: electricity_production_inflexible_curve
   group: supply
-  key: electricity_production_inflexible_curve
+  key: electricity_production_inflexible_curve_sum
   label: electricity
   order_by: 1
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
 - color: "#4169E1"
   dependent_on:
   gquery: electricity_demand_inflexible_curve
   group: demand
-  key: electricity_demand_inflexible_curve
+  key: electricity_demand_inflexible_curve_sum
   label: electricity
   order_by: 2
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
 
 - color: "#B22222"
   dependent_on:
   gquery: heat_network_production_inflexible_curve
   group: supply
-  key: heat_network_production_inflexible_curve
+  key: heat_network_production_inflexible_curve_sum
   label: heat
   order_by: 5
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
 - color: "#B22222"
   dependent_on:
   gquery: heat_network_demand_inflexible_curve
   group: demand
-  key: heat_network_demand_inflexible_curve
+  key: heat_network_demand_inflexible_curve_sum
   label: heat
   order_by: 6
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
 
 - color: "#CCCCCC"
   dependent_on:
   gquery: network_gas_production_inflexible_curve
   group: supply
-  key: network_gas_production_inflexible_curve
+  key: network_gas_production_inflexible_curve_sum
   label: gas
   order_by: 3
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
 - color: "#CCCCCC"
   dependent_on:
   gquery: network_gas_demand_inflexible_curve
   group: demand
-  key: network_gas_demand_inflexible_curve
+  key: network_gas_demand_inflexible_curve_sum
   label: gas
   order_by: 4
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
 
 - color: "#87CEEB"
   dependent_on:
   gquery: hydrogen_production_inflexible_curve
   group: supply
-  key: hydrogen_production_inflexible_curve
+  key: hydrogen_production_inflexible_curve_sum
   label: hydrogen
   order_by: 7
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
 - color: "#87CEEB"
   dependent_on:
   gquery: hydrogen_demand_inflexible_curve
   group: demand
-  key: hydrogen_demand_inflexible_curve
+  key: hydrogen_demand_inflexible_curve_sum
   label: hydrogen
   order_by: 8
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum

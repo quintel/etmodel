@@ -123,8 +123,8 @@ en:
         demand.\r\n<br/><br/>\r\nThe table shows what place in the merit order each
         technology has, which is based on the operating costs. Also the table shows
         the available capacity of each technology as well as the full load hours."
-    flexibility_monthly_carriers_inflexible_supply_demand:
-      title: Supply and demand per month
+    flexibility_monthly_carriers_inflexible_supply_demand_sum:
+      title: Total supply and demand per month
       description: |
         This chart shows the demand and supply of electricity, gas, hydrogen and heat 
         per month. This gives you insight into the balance of your energy system throughout 
@@ -144,6 +144,9 @@ en:
         thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
         / electricity production by dispatchable sources, electricity from batteries or 
         gas / hydrogen from gas storage facilities.</li>
+    flexibility_monthly_carriers_inflexible_supply_demand_max:
+      title: Maximum supply and demand per month
+      description:
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Imbalance ("residual load") per month
       description: |

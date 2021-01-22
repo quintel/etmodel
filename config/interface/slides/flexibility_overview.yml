@@ -1,13 +1,17 @@
 ---
-- key: flexibility_overview_inflexible_demand_supply
+- key: flexibility_overview_inflexible_demand_supply_sum
   position: 1
   sidebar_item_key: flexibility_overview
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
-- key: flexibility_overview_inflexible_imbalance
+- key: flexibility_overview_inflexible_demand_supply_max
   position: 2
+  sidebar_item_key: flexibility_overview
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_max
+- key: flexibility_overview_inflexible_imbalance
+  position: 3
   sidebar_item_key: flexibility_overview
   output_element_key: flexibility_monthly_carriers_inflexible_imbalance
 - key: flexibility_overview_cumulative_imbalance
-  position: 3
+  position: 4
   sidebar_item_key: flexibility_overview
   output_element_key: flexibility_hourly_all_carriers_cumulative_imbalance

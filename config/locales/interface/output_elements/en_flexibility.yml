@@ -126,16 +126,9 @@ en:
     flexibility_monthly_carriers_inflexible_supply_demand_sum:
       title: Total supply and demand per month
       description: |
-        This chart shows the demand and supply of electricity, gas, hydrogen and heat 
-        per month. This gives you insight into the balance of your energy system throughout 
-        the year: when does imbalance occur? Which carriers are not in balance? If you are 
-        curious about the balance within a month, there is an option to zoom in. By clicking 
-        on a carrier in a specific month, a new chart opens that zooms in on the hourly values ​​
-        of that carrier in that month. </br> </br>
-        To get a good picture of this (im)balance, only the baseload energy demand and the must-run 
-        and volatile production are shown in this chart. This allows 
-        you to clearly see the "need for flexibility" of the system. </br></br>
-        What exactly is meant by baseload demand and inflexible supply is explained below:
+        This chart shows the total supply and demand of electricity, gas, hydrogen and heat
+        per month. Only the inflexible supply and the baseload demand are shown. 
+        What is meant by this inflexible supply and baseload demand is explained below:
         <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the 
         energy demand of flex technologies that balance the system, such as gas / hydrogen 
         for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
@@ -143,10 +136,27 @@ en:
         <li> Supply is the must-run and volatile production, such as wind turbines and solar 
         thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
         / electricity production by dispatchable sources, electricity from batteries or 
-        gas / hydrogen from gas storage facilities.</li>
+        gas / hydrogen from gas storage facilities.</li> </ul>
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
+        If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
+        This will open a new chart showing the hourly values for that carrier in the selected month.
     flexibility_monthly_carriers_inflexible_supply_demand_max:
       title: Maximum supply and demand per month
-      description:
+      description: |
+        This chart shows the maximum value for supply and demand of electricity, gas, hydrogen and heat
+        in each month. Only the inflexible supply and the baseload demand are shown. 
+        What is meant by this inflexible supply and baseload demand is explained below:
+        <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the 
+        energy demand of flex technologies that balance the system, such as gas / hydrogen 
+        for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
+        in gas storage facilities.</li>
+        <li> Supply is the must-run and volatile production, such as wind turbines and solar 
+        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
+        / electricity production by dispatchable sources, electricity from batteries or 
+        gas / hydrogen from gas storage facilities.</li> </ul>
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
+        If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
+        This will open a new chart showing the hourly values for that carrier in the selected month.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Imbalance ("residual load") per month
       description: |

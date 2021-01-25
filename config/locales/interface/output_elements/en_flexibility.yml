@@ -130,13 +130,13 @@ en:
         per month. Only the inflexible supply and the baseload demand are shown. 
         What is meant by this inflexible supply and baseload demand is explained below:
         <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
-        energy demand of flex technologies that balance the system, such as gas / hydrogen 
-        for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
+        energy demand of flex technologies that balance the system, such as gas/hydrogen 
+        for dispatchable power plants, electricity that enters batteries or gas/hydrogen 
         in gas storage facilities.</li>
         <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
-        / electricity production by dispatchable sources, electricity from batteries or 
-        gas / hydrogen from gas storage facilities.</li> </ul>
+        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat /electricity 
+        production by dispatchable sources, electricity from batteries or 
+        gas/hydrogen from gas storage facilities.</li> </ul>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
         If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
         This will open a new chart showing the hourly values for that carrier in the selected month.
@@ -147,13 +147,13 @@ en:
         in each month. Only the inflexible supply and the baseload demand are shown. 
         What is meant by inflexible supply and baseload demand is explained below:
         <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
-        energy demand of flex technologies that balance the system, such as gas / hydrogen 
-        for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
+        energy demand of flex technologies that balance the system, such as gas/hydrogen 
+        for dispatchable power plants, electricity that enters batteries or gas/hydrogen 
         in gas storage facilities.</li>
         <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
-        / electricity production by dispatchable sources. Neither does it include electricity from batteries or 
-        extraction of gas / hydrogen from gas storage facilities.</li> </ul>
+        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat/electricity 
+        production by dispatchable sources. Neither does it include electricity from batteries or 
+        extraction of gas/hydrogen from gas storage facilities.</li> </ul>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
         If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
         This will open a new chart showing the hourly values for that carrier in the selected month.
@@ -167,13 +167,13 @@ en:
         of energy and positive values "shortages".
         What exactly is meant by base load demand and inflexible supply is explained below:
         <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
-        energy demand of flex technologies that balance the system, such as gas / hydrogen 
-        for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
+        energy demand of flex technologies that balance the system, such as gas/hydrogen 
+        for dispatchable power plants, electricity that enters batteries or gas/hydrogen 
         in gas storage facilities. </li>
         <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
-        / electricity production by dispatchable sources. Neither does it include electricity from batteries or 
-        extraction of gas / hydrogen from gas storage facilities.</li> </ul>
+        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat/electricity 
+        production by dispatchable sources. Neither does it include electricity from batteries or 
+        extraction of gas/hydrogen from gas storage facilities.</li> </ul>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
         If you want a more detailed view, you can also zoom in by clicking on a specific month. 
         This will open a new chart showing the "residual load" profiles for the selected month.
@@ -189,14 +189,14 @@ en:
         Which carriers are not in balance?</br></br>
         What exactly is meant by base load demand and inflexible supply is explained below:
         <ul> <li> Baseload demand is the end use of the different sectors. This does <b> not </b> include the 
-        energy demand of flex technologies that balance the system, such as gas / hydrogen 
+        energy demand of flex technologies that balance the system, such as gas/hydrogen 
         for dispatchable power plants. Neither does it include electricity that enters batteries or 
-        gas / hydrogen in gas storage facilities. Also, export and curtailment are <b> not </b> covered by 
+        gas/hydrogen in gas storage facilities. Also, export and curtailment are <b> not </b> covered by 
         the demand. </li>
         <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b> not </b> include the production by flex technologies, such as heat 
-        / electricity production by dispatchable sources. Neither does it include electricity from batteries or 
-        extraction of gas / hydrogen from gas storage facilities.</li>
+        thermal plants. This does <b> not </b> include the production by flex technologies, such as heat/electricity 
+        production by dispatchable sources. Neither does it include electricity from batteries or 
+        extraction of gas/hydrogen from gas storage facilities.</li>
     flexibility_hourly_all_carriers_cumulative_imbalance:
       title: Need for seasonal storage
       description: |
@@ -210,7 +210,7 @@ en:
         Surpluses at one point in time can be used to resolve deficits at a later point, either by 
         storing the surpluses or by converting one carrier into another. By comparing the start and end point of this line, you can see how much 
         "leeway" you have to use these surpluses in your scenario to make up for the shortages. 
-        So how much conversion / storage losses you can afford to eventually balance the system.</li><br/ ><br/ >
+        So how much conversion/storage losses you can afford to eventually balance the system.</li><br/ >
         <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated 
         energy goes somewhere and all required energy comes from somewhere. This gives a rough 
         estimate of your total required storage capacity to ensure that carriers can be used 

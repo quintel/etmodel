@@ -106,16 +106,9 @@ nl:
       title: Totale vraag en aanbod per maand
       description: |
         Deze grafiek laat per maand de vraag en het aanbod zien
-        van elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
-        in de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
-        onbalans op? Welke dragers zijn niet in balans? Als je benieuwd bent naar de
-        balans binnen een maand, is er de mogelijkheid om in te zoomen. Door te klikken op een drager in 
-        specifieke maand opent er een nieuwe grafiek die inzoomt op de uurwaarden
-        van die drager in die maand. </br></br>
-        Om deze (on)balans goed in beeld te krijgen, worden alleen de basislast (baseload) 
-        energievraag en de must-run en volatiele productie getoond in deze grafiek.
-        Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het systeem.</br></br>
-        Wat er precies onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
+        van elektriciteit, gas, waterstof en warmte. Alleen de basislast (baseload) 
+        energievraag en de must-run en inflexibele aanbod worden getoond. Wat er precies 
+        onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
         <ul><li>Basislastvraag is het eindgebruik van de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
@@ -123,13 +116,17 @@ nl:
         <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
         Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
-        uit batterijen of gas/waterstof uit gasbergingen.</li>
+        uit batterijen of gas/waterstof uit gasbergingen.</li></ul>
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. Als je benieuwd bent naar de
+        balans binnen een maand, kun je kikken op een drager in die
+        specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
+        van die drager in die maand. 
     flexibility_monthly_carriers_inflexible_supply_demand_max:
       title: Piekbelasting vraag en aanbod per maand
       description: |
         Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte. 
-        Alleen het inflexibele aanbod en de basislastvraag worden getoond. </br> </br>
-        Wat er precies onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
+        Alleen het inflexibele aanbod en de basislastvraag worden getoond. Wat er precies onder basislastvraag 
+        en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
         <ul><li>Basislastvraag is het eindgebruik van de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
@@ -137,18 +134,18 @@ nl:
         <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
         Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
-        uit batterijen of gas/waterstof uit gasbergingen.</li>
+        uit batterijen of gas/waterstof uit gasbergingen.</li></ul>
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. 
+        Als je wilt weten waar in de maand de pieken plaatsvinden, kun je kikken op een drager in die
+        specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
+        van die drager in die maand.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Onbalans ("residual load") per maand
       description: |
         Deze grafiek is een vervolg op flexibiliteitsgrafiek "Vraag en aanbod per maand". Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
         voor elektriciteit, gas, waterstof en warmte. De onbalans is berekend door de vraag af te trekken van het aanbod, dit heet
         de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
-        "tekorten". Je kunt zo inzicht krijgen in de balans van jouw energiesysteem door het jaar heen: in welke maanden treedt er
-        onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
-        aan energie? Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken
-        op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.</br></br>
-        Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
+        "tekorten".Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
         <ul><li>Basislastraag is het eindgebruik van de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
@@ -156,18 +153,19 @@ nl:
         <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
         Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
-        uit batterijen of gas/waterstof uit opslag.</li>
+        uit batterijen of gas/waterstof uit opslag.</li></ul>
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. 
+        Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken
+        op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.
     flexibility_hourly_carriers_inflexible_imbalance:
       title: Onbalans ("residual load") per uur
       description: |
         Deze grafiek is een vervolg op de flexibiliteitsgrafiek "Onbalans per maand". Deze grafiek laat per uur de onbalans tussen vraag en aanbod zien
         voor elektriciteit, gas, waterstof en warmte. De onbalans is berekend door de vraag af te trekken van het aanbod, dit heet
         de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
-        "tekorten". Je kunt zo inzicht krijgen in de balans van jouw energiesysteem door het jaar heen: in welke maanden treedt er
-        onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
-        aan energie? </br></br>
+        "tekorten".</br></br>
         Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><liBasislastraag is het eindgebruik uit de verschillende sectoren. Hierin wordt
+        <ul><li>Basislastvraag is het eindgebruik uit de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
         batterijen ingaat of gas/waterstof in gasbergingen.</li>
@@ -184,11 +182,12 @@ nl:
         gas, waterstof en warmte door het jaar heen. Wanneer de lijn stijgt, betekent dit dat er netto overschotten
         waren in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
         waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit 
-        dat de energie overschotten groter zijn dan de tekorten. Overschotten op een bepaald moment kunnen worden 
+        dat de energie overschotten groter zijn dan de tekorten. <br/><br/>
+        Overschotten op een bepaald moment kunnen worden 
         gebruikt om tekorten op een later moment op te lossen, ofwel door de overschotten op te slaan, ofwel door ze 
         om te zetten in een andere drager. Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel 
         ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt 
-        permitteren om uiteindelijk het systeem in balans te krijgen.</li><br/><br/>
+        permitteren om uiteindelijk het systeem in balans te krijgen.</li><br/>
         <li>Voor de gecorrigeerde lijn is aangenomen dat het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
         gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale 
         benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden. 

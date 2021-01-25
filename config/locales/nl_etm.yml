@@ -237,7 +237,6 @@ nl:
     scenario_load: "Scenario geladen"
     scenario_saved: "Scenario opgeslagen"
     succesfully_saved: "Het scenario is succesvol opgeslagen."
-    unsupported_browser: "Je browser wordt niet volledig ondersteund. <small><a href='/browser_support'>Meer informatie</a></small>"
     account_deleted: "Uw account is verwijderd"
     newsletter_subscribe: "You have subscribed to our newsletter. Please check your e-mail inbox to confirm."
     newsletter_unsubscribe: "You have been unsubscribed from our newsletter."
@@ -359,3 +358,15 @@ nl:
     unsupported_area:
       title: Dit gebied wordt niet ondersteund door PICO
       back: terug
+
+  unsupported_browser:
+    title: Your browser is not supported
+    call_to_action: |
+      Improve your experience of the Energy Transition Model with an up-to-date version of one of
+      these modern browsers:
+    continue: Continue anyway
+    why_header: Why am I seeing this?
+    why_info: |
+      Microsoft replaced Internet Explorer with Edge in 2015, and since then it has received only
+      minor maintenance updates. Internet Explorer lacks support for many modern web standards, and
+      limits the Energy Transition Model's ability to deliver innovative new features.

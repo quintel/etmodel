@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   include ApplicationHelper
-  before_action :ensure_valid_browser, except: [:browser_support]
-  layout 'static_page', only: [:about, :units, :browser_support, :bugs,
-    :disclaimer, :privacy_statement, :quality, :dataset]
 
+  skip_before_action :ensure_modern_browser, only: [:unsupported_browser]
+
+  layout 'static_page', only: %i[about units bugs disclaimer privacy_statement quality dataset]
   layout 'landing', only: :root
 
   def root
@@ -25,6 +25,10 @@ class PagesController < ApplicationController
   end
 
   def whats_new
+  end
+
+  def unsupported_browser
+    render layout: 'form_only'
   end
 
 protected

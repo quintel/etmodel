@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   include LayoutHelper
-  include Browser
 
   protect_from_forgery with: :exception
 
@@ -9,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   before_action :initialize_current
   before_action :assign_locale
+  before_action :ensure_modern_browser
 
   after_action  :teardown_current
 
@@ -31,10 +31,14 @@ class ApplicationController < ActionController::Base
       I18n.default_locale
   end
 
-  def ensure_valid_browser
-    # check lib/browser.rb
-    return if supported_browser?
-    flash[:notice] = I18n.t('flash.unsupported_browser').html_safe
+  def ensure_modern_browser
+    return unless request.get?
+
+    session[:allow_unsupported_browser] = true if params[:allow_unsupported_browser]
+
+    if Browser.new(request.env['HTTP_USER_AGENT']).ie? && !session[:allow_unsupported_browser]
+      redirect_to(unsupported_browser_path(location: request.url[request.base_url.length..]))
+    end
   end
 
 protected

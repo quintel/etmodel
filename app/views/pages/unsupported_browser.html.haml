@@ -1,0 +1,26 @@
+#unsupported-browser.main
+  %h1= t('unsupported_browser.title')
+  %p= t('unsupported_browser.call_to_action')
+
+  .browser-list
+    %a.browser.chrome{ href: 'https://google.com/chrome' }
+      Google Chrome
+    %a.browser.firefox{ href: 'https://mozilla.org/firefox/new' }
+      Mozilla Firefox
+    %a.browser.edge{ href: 'https://support.apple.com/downloads/safari' }
+      Microsoft Edge
+    %a.browser.safari{ href: 'https://microsoft.com/edge' }
+      Apple Safari
+
+  %p
+    %a.continue{ href: allow_unsupported_browser_path }
+      = t('unsupported_browser.continue')
+      →
+
+  .why
+    %h3= t('unsupported_browser.why_header')
+    %p= t('unsupported_browser.why_info')
+
+
+.return-to-model
+  &copy; Energy Transition Model

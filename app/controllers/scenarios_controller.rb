@@ -1,7 +1,6 @@
 class ScenariosController < ApplicationController
   include MainInterfaceController.new(:play, :play_multi_year_charts)
 
-  before_action :ensure_valid_browser
   before_action :find_scenario, only: %i[show load play_multi_year_charts]
   before_action :require_user, only: %i[index new merge]
   before_action :redirect_compare, only: :compare

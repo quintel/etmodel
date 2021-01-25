@@ -5,6 +5,35 @@ require 'rails_helper'
 describe PagesController, vcr: true do
   render_views
 
+  context 'with an IE11 user agent' do
+    before do
+      request.env['HTTP_USER_AGENT'] =
+        'Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko'
+      get :root
+    end
+
+    it 'redirects to the unsupported browser page' do
+      expect(response).to redirect_to(unsupported_browser_path(location: '/'))
+    end
+  end
+
+  context 'with an IE11 user agent with the allow_unsupported_browser param set' do
+    before do
+      request.env['HTTP_USER_AGENT'] =
+        'Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko'
+    end
+
+    let(:req) { get(:root, params: { allow_unsupported_browser: true }) }
+
+    it 'renders the page' do
+      expect(req).to be_successful
+    end
+
+    it 'sets the "allow_unsupported_browser" session variable' do
+      expect { req }.to change { session[:allow_unsupported_browser] }.from(nil).to(true)
+    end
+  end
+
   context 'with the preferred language "nl"' do
     before do
       request.env['HTTP_ACCEPT_LANGUAGE'] = 'nl'
@@ -119,8 +148,7 @@ describe PagesController, vcr: true do
   end
 
   context 'when visiting static pages' do
-    %i[bugs units browser_support disclaimer
-       privacy_statement].each do |page|
+    %i[bugs units disclaimer privacy_statement].each do |page|
       describe "#{page} page" do
         # rubocop:disable RSpec/MultipleExpectations
         it 'works' do

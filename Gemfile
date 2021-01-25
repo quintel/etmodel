@@ -30,6 +30,7 @@ gem 'rails-html-sanitizer', '~> 1.3.0'
 gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
 gem 'http_accept_language'
+gem 'browser'
 
 # javascript
 gem 'webpacker'

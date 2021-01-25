@@ -48,8 +48,8 @@
      * Sets any related inputs to be enabled or disabled depending on whether a file is attached.
      */
     refreshInputState: function () {
-      const overrides = this.get('overrides');
-      const isAttached = this.isAttached();
+      var overrides = this.get('overrides');
+      var isAttached = this.isAttached();
 
       if (!overrides || overrides.length === 0) {
         return;

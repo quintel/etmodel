@@ -3,7 +3,7 @@
 (function (window) {
   'use strict';
 
-  var preservedAttrs = new Set(['key', 'overrides', 'type']);
+  var preservedAttrs = new Set(['key', 'display_group', 'overrides', 'type']);
 
   var CustomCurve = Backbone.Model.extend({
     idAttribute: 'key',
@@ -27,6 +27,18 @@
      */
     translatedName: function () {
       return I18n.t('custom_curves.names.' + this.id);
+    },
+
+    /**
+     * The translated, human-readable name for the group to which the curve belongs or an empty
+     * string if the curve does not belong to a group.
+     */
+    translatedGroup: function () {
+      if (!this.get('display_group')) {
+        return '';
+      }
+
+      return I18n.t('custom_curves.groups.' + this.get('display_group'));
     },
 
     /**
@@ -63,6 +75,11 @@
 
   var CustomCurveCollection = Backbone.Collection.extend({
     model: CustomCurve,
+
+    /** Sorts curves by their translated name. */
+    comparator(a, b) {
+      return a.translatedName().localeCompare(b.translatedName());
+    },
 
     getOrBuild: function (id) {
       if (!this.get(id)) {

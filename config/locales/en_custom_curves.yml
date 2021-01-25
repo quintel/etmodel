@@ -22,6 +22,11 @@ en:
       illegal_value: Curve must only contain numeric values
       not_a_curve: Curve must be a CSV file containing 8760 numeric values, one for each hour in a typical year
       wrong_length: Curve must have 8760 numeric values, one for each hour in a typical year
+    groups:
+      electricity_production: Electricity production
+      industry: Industry
+      interconnectors: Interconnectors
+      transport: Transport
     names:
       interconnector_1_price: Interconnector 1 price
       interconnector_2_price: Interconnector 2 price

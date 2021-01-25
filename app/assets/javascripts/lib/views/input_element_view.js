@@ -217,8 +217,8 @@
    * sorted array of spec groups and attributes.
    */
   var specsToList = function (data) {
-    var groups = _.sortBy(Object.entries(data), ([key], index) => {
-      switch (key) {
+    var groups = _.sortBy(Object.entries(data), function (group, index) {
+      switch (group.key) {
         case 'technical':
           return 0;
         case 'cost':

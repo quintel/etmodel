@@ -394,9 +394,10 @@ en:
 
         <b>1. Demand profiles</b>
         <br />
-        These profiles specify for each hour per year (8760 hours) the fraction of annual demand
-        used in that hour. The sum of all hours should be 1. The ETM will check this and normalise
-        the profile to 1 if necessary. Examples: electric buses, industry heating.
+        These profiles specify the fraction of annual demand used in each hour of the year (8760
+        hours). The values in your uploaded curve do not matter: the ETM will convert your file to
+        a new curve which respects the shape of your original. Examples: electric buses, industry
+        heating.
 
         <br /><br />
 

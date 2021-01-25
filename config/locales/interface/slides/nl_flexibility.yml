@@ -393,9 +393,9 @@ nl:
         <b>1. Vraagprofielen</b>
         <br />
         Deze profielen specificeren voor elk uur per jaar (8760 uur) welke fractie van de totale
-        jaarvraag in dat uur gebruikt wordt. De som van alle uren moet gelijk zijn aan 1. Het ETM
-        checkt dit en normaliseert het ingeladen profiel indien nodig. Voorbeelden: elektrische
-        buses, warmte in industrie.
+        jaarvraag in dat uur gebruikt wordt. De gebruikte eenheid in het profiel dat je uploadt
+        maakt niet uit: het ETM gebruikt de <u>vorm</u> van jouw profiel (relatieve verdeling over de tijd)
+        om de jaarvraag om de uurlijkse belasting uit te rekenen. Voorbeelden: elektrische buses, warmte in industrie.
 
         <br /><br />
 

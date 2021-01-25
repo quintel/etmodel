@@ -96,19 +96,29 @@ export function formatCurveStats(stats, t) {
     return;
   }
 
-  if (stats.mean) {
+  if (stats.mean != undefined) {
     info.append('<dt>' + t('mean') + '</dt>');
     info.append('<dd>' + formatValue(stats.mean, t) + '</dd>');
   }
 
-  if (stats.min) {
+  if (stats.min_at != undefined) {
     info.append('<dt>' + t('min') + '</dt>');
-    info.append('<dd>' + formatTemporalValue(stats.min, stats.min_at, t) + '</dd>');
+
+    if (stats.min != undefined) {
+      info.append('<dd>' + formatTemporalValue(stats.min, stats.min_at, t) + '</dd>');
+    } else {
+      info.append('<dd>' + formatTimeWithIndex(stats.min_at) + '</dd>');
+    }
   }
 
-  if (stats.max) {
+  if (stats.max_at != undefined) {
     info.append('<dt>' + t('max') + '</dt>');
-    info.append('<dd>' + formatTemporalValue(stats.max, stats.max_at, t) + '</dd>');
+
+    if (stats.max != undefined) {
+      info.append('<dd>' + formatTemporalValue(stats.max, stats.max_at, t) + '</dd>');
+    } else {
+      info.append('<dd>' + formatTimeWithIndex(stats.max_at) + '</dd>');
+    }
   }
 
   if (stats.full_load_hours != undefined) {
@@ -205,12 +215,23 @@ function formatValue(value, t) {
  * @return {string}
  */
 function formatTemporalValue(value, at, t) {
+  return formatValue(value, t) + ' ' + t('on_date', { date: formatTimeWithIndex(at) });
+}
+
+/**
+ * Converts an index on which an event occurs to a nicely localized time.
+ *
+ * @param {number} at    The index in which the value occurs.
+ *
+ * @return {string}
+ */
+function formatTimeWithIndex(time) {
   var msInHour = 1000 * 60 * 60;
 
   // new Date() starts at 1AM; subtract an hour to start at midnight.
-  var date = new Date(-msInHour + at * msInHour);
+  var date = new Date(-msInHour + time * msInHour);
 
-  return formatValue(value, t) + ' ' + t('on_date', { date: I18n.strftime(date, '%-d %B') });
+  return I18n.strftime(date, '%-d %B');
 }
 
 /**

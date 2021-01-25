@@ -2,7 +2,6 @@
 
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
-  before_action :ensure_valid_browser
   before_action :assign_saved_scenario, only: %i[show load edit update]
   before_action :assign_scenario, only: :load
   before_action :ensure_owner, only: %i[edit update]

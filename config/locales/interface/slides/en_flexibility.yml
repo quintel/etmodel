@@ -196,49 +196,56 @@ en:
           \ data-chart-key=\"solar_pv_curtailment\"
         >solar pv curtailment table</a>
         shows the effect of curtailment on the annual electricity production."
-    flexibility_overview_inflexible_demand_supply:
-      title: Balance of the energy system
+    flexibility_overview_inflexible_demand_supply_sum:
+      title: Balance of energy volumes
       short_description:
       description: |
-        In order to balance demand and supply <i>within a year</i>, flexible technologies are required.
+        When balancing supply and demand, it is important to not only look at the annual level, but 
+        also to check whether every hour of the year is balanced. Flexible technologies are required for this hourly balancing.
         The charts in this section provide insight into the extent to which flexibility
         is needed in your scenario. You can then provide this flexibility need by setting flexible
         technologies in the <a href="/scenario/flexibility/excess_electricity/order-of-flexibility-options">Excess electricity</a>
         section, or by changing your dispatchable technologies in the
         <a href="/scenario/supply/electricity/coal-plants">Supply</a>
         section. </br></br>
-        The first chart shows the demand and supply of electricity, gas, hydrogen and heat
+        The first chart shows the total supply and demand of electricity, gas, hydrogen and heat
         per month. This gives you insight into the balance of your energy system throughout
-        the year: when does imbalance occur? Which carriers are not in balance? If you are
-        curious about the balance within a month, there is an option to zoom in. By clicking
-        on a carrier in a specific month, a new chart opens that zooms in on the hourly values ​​
-        of that carrier in that month. </br> </br>
-        To get a good picture of this (im)balance, only the baseload energy demand and the must-run and
-        volatile production are shown in this chart. This allows
-        you to clearly see the "need for flexibility" of the system. </br></br>
-        What exactly is meant by baseload demand and inflexible supply is explained below:
-        <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the
-        energy demand of flex technologies that balance the system, such as gas / hydrogen
-        for dispatchable power plants, electricity that enters batteries or gas / hydrogen
-        in gas storage facilities.</li>
-        <li> Supply is the must-run and volatile production, such as wind turbines and solar
-        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat
-        / electricity production by dispatchable sources, electricity from batteries or
-        gas / hydrogen from gas storage facilities.</li>
+        the year: when does imbalance occur? Which carriers are not in balance? To get a good picture of this (im)balance, 
+        only the inflexible supply and the baseload demand are shown in this chart. 
+        This allows you to clearly see the "need for flexibility" of the system. If you want to know more about the
+        about the definitions of inflexible supply and baseload demand, you can click on the chart info. </br> </br>
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
+        If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
+        This will open a new chart showing the hourly values for that carrier in the selected month.
+    flexibility_overview_inflexible_demand_supply_max:
+      title: Peak capacities throughout the year
+      short_description:
+      description: | 
+        This chart shows the maximum value for supply and demand of electricity, gas, hydrogen and heat in each month. 
+        Only the inflexible supply and the baseload demand are shown. </br> </br>
+        This chart gives you insight into the amount of flexible capacity that is needed to balance the energy 
+        system in your scenario. If you want to know more about the definitions of inflexible supply and baseload demand, you can click on the chart info. 
+        At the same time, these maxima give an indication of the network capacity needed for 
+        each energy carrier. You can explore this in more detail for the electricity network in the <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">
+        Net load</a> section. </br> </br>
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
+        If you want to view when peaks occur within a month, you can also zoom in on an energy carrier by clicking 
+        on that carrier in a specific month. This will open a new chart showing the hourly values for that carrier in the selected month.
     flexibility_overview_inflexible_imbalance:
-      title: Imbalance of the energy system
+      title: Imbalance of energy volumes
       short_description:
       description: |
         This chart shows the imbalance between supply and demand for electricity, gas,
-        hydrogen and heat per month. The imbalance is calculated by subtracting the demand
-        from the supply, this is called the "residual load". <br /><br />Negative values mean "surpluses"
-        of energy and positive values "shortages". This way you can gain insight into the
+        hydrogen and heat per month. The imbalance is calculated by subtracting the baseload demand
+        from the inflexible supply, this is called the "residual load". Negative values mean "surpluses"
+        of energy and positive values "shortages". <br /><br />This way you can gain insight into the
         balance of your energy system throughout the year: in which months does an imbalance occur?
-        Which carriers are not in balance? Are these shortages or surpluses of energy? If you are
-        curious about the imbalance within a month, you can click on that specific month and a chart
-        will open with "residual load" profiles for that month.</br></br>
+        Which carriers are not in balance? Are these shortages or surpluses of energy? </br> </br>
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
+        If you want a more detailed view, you can also zoom in by clicking on a specific month. 
+        This will open a new chart showing the "residual load" profiles for the selected month.
     flexibility_overview_cumulative_imbalance:
-      title: Seasonal balance of the energy system
+      title: Seasonal balance of energy volumes
       short_description:
       description: |
         This chart shows the following two lines:
@@ -248,9 +255,10 @@ en:
         were net shortages. If the end point of the chart is higher than the starting point,
         this means that energy surpluses outweigh deficits.<br /><br />
         Surpluses at one point in time can be used to resolve deficits at a later point, either by
-        storing the surpluses or by converting one carrier into another. By comparing the start and end point of this line, you can see how much
+        storing the surpluses or by converting one carrier into another. 
+        By comparing the start and end point of this line, you can see how much
         "leeway" you have to use these surpluses in your scenario to make up for the shortages.
-        So how much conversion / storage losses you can afford to eventually balance the system.</li><br /><br />
+        So how much conversion/storage losses you can afford to eventually balance the system.</li><br/>
         <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated
         energy goes somewhere and all required energy comes from somewhere. This gives a rough
         estimate of your total required storage capacity to ensure that carriers can be used

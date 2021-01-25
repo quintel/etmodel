@@ -80,7 +80,8 @@ module ScenarioHelper
   def price_curve_upload(curve_name, input_key)
     render partial: 'scenarios/slides/price_curve_upload', locals: {
       associated_input: input_key,
-      curve_name: curve_name
+      curve_name: curve_name,
+      curve_type: :price
     }
   end
 

@@ -12,12 +12,9 @@ class @AppView extends Backbone.View
     @router      = new Router()
     @analytics   = new Analytics(window.ga);
 
-    @customCurvesCollection = null
-
     @api = new ApiGateway
       api_path:           globals.api_url
       api_proxy_path:     globals.api_proxy_url
-      offline:            globals.standalone
       scenario_id:        globals.api_session_id
       beforeLoading:      @showLoading
       afterLoading:       @hideLoading
@@ -43,6 +40,7 @@ class @AppView extends Backbone.View
       InputElement.Balancer.balancers = {}
     @input_elements = new InputElementList()
     @input_elements.on "change", @handleInputElementsUpdate
+    @loadCustomCurveStates()
 
     deferred = @user_values()
       .done (args...) =>
@@ -60,7 +58,7 @@ class @AppView extends Backbone.View
     if (heat_order = wrapper.find('#heat-network-options')).length
       new UserSortable(heat_order, 'heat_network_order', true).render()
 
-    if (curve_upload = wrapper.find('.curve-upload')).length
+    if (curve_upload = wrapper.find('.single-curve-upload')).length
       curveCollectionDef = @customCurves()
       userScenariosArray = @userScenarios()
 
@@ -70,6 +68,12 @@ class @AppView extends Backbone.View
           curveCollectionDef,
           userScenariosArray
         )
+
+    if (curve_upload = wrapper.find('.multi-curve-upload')).length > 0
+      curveCollectionDef = @customCurves()
+
+      curve_upload.each (_index, element) ->
+        MultiCurveChooserView.setupWithWrapper(element, curveCollectionDef)
 
     deferred
 
@@ -235,18 +239,19 @@ class @AppView extends Backbone.View
   customCurves: =>
     deferred = $.Deferred()
 
-    if @customCurvesCollection
-      deferred.resolve(@customCurvesCollection)
+    if @customCurvesDeferred
+      return @customCurvesDeferred
     else
+      @customCurvesDeferred = deferred
+
       # Ajax request.
       req = $.ajax(
-        url: App.scenario.url_path() + '/custom_curves'
+        url: App.scenario.url_path() + '/custom_curves?show_unattached=true'
         method: 'GET'
       )
 
       req.success((data) =>
-        @customCurvesCollection = new CustomCurveCollection(data)
-        deferred.resolve(@customCurvesCollection)
+        deferred.resolve(new CustomCurveCollection(data))
       )
 
     return deferred.promise()
@@ -267,3 +272,13 @@ class @AppView extends Backbone.View
         deferred.resolve(@userScenariosArray)
       )
     return deferred.promise()
+
+  # Triggered exactly once. Loads custom curve states and disables and sliders which are overridden
+  # by the curves.
+  loadCustomCurveStates: =>
+    @customCurves().then((collection) ->
+      collection.models.forEach((model) -> model.refreshInputState())
+    )
+
+    # Self destruct.
+    @loadCustomCurveStates = () =>

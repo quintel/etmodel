@@ -390,3 +390,40 @@ en:
         target =\"_blank\">documentation</a>.\r\n</p>\r\nDemand and production curves
         can be downloaded in the <a href=\"/scenario/data/data_export/merit-order-prices\">results
         section</a>."
+    multi_curve_upload:
+      title: Upload curves
+      short_description:
+      description: |
+        The ETM calculates the hourly production and demand of gas, electricity, heat and hydrogen.
+        On this page you can upload your own hourly profiles to overwrite the default profiles used
+        in the ETM. You can upload four types of profiles:
+
+        <br /><br />
+
+        <b>1. Demand profiles</b>
+        <br />
+        These profiles specify the fraction of annual demand used in each hour of the year (8760
+        hours). The values in your uploaded curve do not matter: the ETM will convert your file to
+        a new curve which respects the shape of your original. Examples: electric buses, industry
+        heating.
+
+        <br /><br />
+
+        <b>2. Production profiles</b>
+        <br />
+        These profiles specify for each hour per year the fraction of installed capacity used in
+        that hour. The sum of all hours should equal the total annual full load hours of that
+        technology. Examples: solar PV, wind offshore.
+
+        <br /><br />
+
+        <b>3. Temperature profile</b>
+        <br />
+        This profile specifies the outdoor temperature for each hour per year. The unit is °C.
+
+        <br /><br />
+
+        <b>4. Price curves</b>
+        <br />
+        These profiles specify a price for each hour per year. The unit is €/MWh. Example: imported
+        electricity.

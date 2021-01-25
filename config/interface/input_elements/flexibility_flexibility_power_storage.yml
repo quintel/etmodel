@@ -6,12 +6,19 @@
   related_node: households_flexibility_p2p_electricity
   position: 1
   slide_key: flexibility_flexibility_power_storage
+  additional_specs:
+    technical:
+      timeframe: i_h_d_w
 - key: transport_car_using_electricity_availability
   step_value: 0.1
   unit: "%"
   interface_group: lv_network
+  related_node: transport_car_flexibility_p2p_electricity
   position: 2
   slide_key: flexibility_flexibility_power_storage
+  additional_specs:
+    technical:
+      timeframe: i_h_d_w
 - key: capacity_of_energy_flexibility_pumped_storage_electricity
   step_value: 1.0
   unit: MW
@@ -20,6 +27,9 @@
   position: 30
   dependent_on: has_mountains
   slide_key: flexibility_flexibility_power_storage
+  additional_specs:
+    technical:
+      timeframe: i_h_d_w_s
 - key: capacity_of_energy_flexibility_hv_opac_electricity
   step_value: 1.0
   unit: MW
@@ -34,3 +44,6 @@
   related_node: energy_flexibility_mv_batteries_electricity
   position: 20
   slide_key: flexibility_flexibility_power_storage
+  additional_specs:
+    technical:
+      timeframe: i_h_d

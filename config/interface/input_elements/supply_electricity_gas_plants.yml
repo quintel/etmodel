@@ -11,6 +11,9 @@
   related_node: energy_power_combined_cycle_network_gas
   position: 1
   slide_key: supply_electricity_gas_plants
+  additional_specs:
+    technical:
+      timeframe: i_h_d_w_s
 - key: capacity_of_energy_chp_combined_cycle_network_gas
   step_value: 1.0
   unit: MW
@@ -29,6 +32,9 @@
   related_node: energy_power_engine_network_gas
   position: 4
   slide_key: supply_electricity_gas_plants
+  additional_specs:
+    technical:
+      timeframe: i_h_d
 - key: capacity_of_energy_chp_local_engine_network_gas
   step_value: 0.1
   unit: MW

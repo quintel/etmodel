@@ -165,7 +165,7 @@
         if (!dependent) {
           App.debug('No such input to enable/disable: ' + dependentKey);
         } else {
-          dependent.set('disabled', shouldDisable);
+          App.input_elements.markInputDisabled(dependent.get('key'), 'weather-set', shouldDisable)
         }
       });
     }

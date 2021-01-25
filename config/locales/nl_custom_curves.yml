@@ -1,38 +1,94 @@
 ---
 nl:
   custom_curves:
-    confirm_remove: "Weet je zeker dat je dit profiel wilt verwijderen en de default wilt gebruiken?"
-    default: "Default profiel"
-    loading: "Laden..."
-    max: "Maximum"
-    mean: "Gemiddelde"
-    min: "Minimum"
+    confirm_remove: Weet je zeker dat je dit profiel wilt verwijderen en het standaardprofiel wilt gebruiken?
+    default: Standaardprofiel
+    full_load_hours: Vollasturen
+    loading: Laden...
+    max: Maximum
+    mean: Gemiddelde
+    min: Minimum
     on_date: "op %{date}"
-    remove: "Zet het default-profiel terug"
-    upload: "Een eigen profiel uploaden"
-    uploading: "Uploaden profiel"
+    remove: Zet het standaardprofiel terug
+    select_scenario: Selecteer scenario...
+    upload: Een eigen profiel uploaden
+    upload_from_scenario: Of gebruik een scenario
+    uploaded: geüpload
+    uploading: Uploaden profiel
+    use: Gebruik
     value: "%{value}"
-    upload_from_scenario: "Of gebruik een scenario"
-    select_scenario: 'Selecteer scenario...'
-    use: 'Gebruik'
     errors:
-      file_too_large: "Profiel mag niet meer dan 1MB groot zijn"
-      illegal_value: "Profiel mag alleen numerieke waarden bevatten"
-      not_a_curve: "Profiel moet een CSV file zijn met 8760 getallen (één getal voor elk uur in een jaar)"
-      wrong_length: "Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)"
-    interconnector_1_price: &interconnector_price
-      default: "Default prijsprofiel"
-      default_description: "Constante prijs gedurende het jaar"
-      description_html: |
-        Het ETM veronderstelt standaard dat de prijs van geïmporteerde stroom constant is gedurende het jaar. Deze prijs kun je instellen met de slider hierboven. Je kunt afwijken van deze aanname door hieronder een
-        CSV-bestand te importeren met daarin voor elk uur van het jaar een prijs voor
-        import-stroom (in €/MWh). Voor meer uitleg over hoe dit werkt en voorbeelden van compatibele profielen
-        kun je <a href="%{docs_path}">onze documentatie bekijken.</a>.
-      value: "€%{value}/MWh"
-      curve_from_scenario: "Profiel vanuit scenario"
-      imported_from: 'Vanuit scenario'
-    interconnector_2_price: *interconnector_price
-    interconnector_3_price: *interconnector_price
-    interconnector_4_price: *interconnector_price
-    interconnector_5_price: *interconnector_price
-    interconnector_6_price: *interconnector_price
+      file_too_large: Profiel mag niet meer dan 1MB groot zijn
+      illegal_value: Profiel mag alleen numerieke waarden bevatten
+      not_a_curve: Profiel moet een CSV-bestand zijn met 8760 getallen (één getal voor elk uur in een jaar)
+      wrong_length: Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)
+    names:
+      interconnector_1_price: Interconnector 1 prijscurve
+      interconnector_2_price: Interconnector 2 prijscurve
+      interconnector_3_price: Interconnector 3 prijscurve
+      interconnector_4_price: Interconnector 4 prijscurve
+      interconnector_5_price: Interconnector 5 prijscurve
+      interconnector_6_price: Interconnector 6 prijscurve
+      weather/air_temperature: Buitentemperatuur
+      weather/buildings_heating: Verwarming gebouwen
+      electric_buses: Elektrische bussen
+      electric_trucks: Elektrische vrachtwagens
+      electric_vehicle_profile_1: Elektrische auto's profiel 1
+      electric_vehicle_profile_2: Elektrische auto's profiel 2
+      electric_vehicle_profile_3: Elektrische auto's profiel 3
+      electric_vehicle_profile_4: Elektrische auto's profiel 4
+      electric_vehicle_profile_5: Elektrische auto's profiel 5
+      industry_chemicals_electricity: Chemie elektriciteitsvraag
+      industry_chemicals_heat: Chemie warmtevraag
+      industry_ict: ICT elektriciteitsvraag
+      industry_metals_electricity: Metaal elektriciteitsvraag
+      industry_metals_heat: Metaal warmtevraag
+      industry_other_electricity: Overig industrie elektriciteitsvraag
+      industry_other_heat: Overig industrie warmtevraag
+      industry_refineries_electricity: Raffinaderijen elektriciteitsvraag
+      industry_refineries_heat: Raffinaderijen warmtevraag
+      hydrogen_export: Waterstof export
+      hydrogen_import: Waterstof import
+      network_gas_export: Gas export
+      network_gas_import: Gas import
+      solar_pv: Zon PV
+      weather/solar_thermal: Zonthermie
+      geothermal_heat: Geothermie (warmte)
+      river: Waterkracht (rivier)
+      wind_offshore: Wind op zee
+      wind_coastal: Wind aan de kust
+      wind_inland: Wind op land
+    types:
+      price:
+        default: Standaard prijsprofiel
+        default_description: |
+          Standaard wordt een constante prijs verondersteld gedurende het jaar.
+          Je kunt dit aanpassen door een CSV-bestand te importeren met daarin voor elk uur
+          van het jaar een prijs voor import-stroom.
+          Dit bestand moet uit 8760 rijen bestaan (één voor elk uur per jaar) met
+          per rij de gewenste prijs (in €/MWh).
+        description_html: |
+          Het ETM veronderstelt standaard dat de prijs van geïmporteerde stroom constant is gedurende het jaar. Deze prijs kun je instellen met de slider hierboven. Je kunt afwijken van deze aanname door hieronder een
+          CSV-bestand te importeren met daarin voor elk uur van het jaar een prijs voor
+          import-stroom (in €/MWh). Voor meer uitleg over hoe dit werkt en voorbeelden van compatibele profielen
+          kun je <a href=%{docs_path}>onze documentatie bekijken.</a>.
+        value: "€%{value}/MWh"
+        curve_from_scenario: Profiel vanuit scenario
+        imported_from: Vanuit scenario
+      temperature:
+        default: Standaard temperatuurcurve
+        default_description: |
+          De standaard temperatuurcurve is gebaseerd op weerdata uit het startjaar van jouw regio.
+          Je kunt deze curve aanpassen door een CSV-bestand te importeren met daarin voor elk uur
+          van het jaar de temperatuur. Dit bestand moet uit 8760 rijen bestaan
+          (één voor elk uur per jaar) met per rij de gewenste temperatuur (in °C).
+        value: "%{value}°C"
+      profile:
+        default: Standaard profiel
+        default_description: |
+          Het ETM bevat vraag- en aanbodcurves voor alle gas-, warmte, elektriciteits- en
+          waterstoftechnologieën. Voor de geselecteerde categorie kun je een CSV-bestand
+          met een eigen profiel uploaden. Dit bestand moet uit 8760 rijen bestaan
+          (één voor elk uur per jaar) met daarin de relatieve vraag per uur of een fractie die
+          aangeeft hoeveel van het piekvermogen gebruikt wordt (afhankelijk van de gekozen categorie).
+          In de beschrijving hierboven vind je meer informatie.

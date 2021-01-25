@@ -3,6 +3,7 @@ nl:
   node_details:
     attributes:
       ccs_investment_per_mw_electricity: Investeringen voor CCS
+      ccs_investment_per_mw_typical_input_capacity: Investeringen voor CCS
       ccs_investment_per_plant: Investeringen voor CCS
       coal_input_conversion: Inputconversie kolen
       coefficient_of_performance: COP (Coefficient of Performance)
@@ -21,18 +22,34 @@ nl:
       full_load_hours: Vollasturen
       heat_and_cold_output_conversion: Efficiëntie (na COP)
       heat_output_capacity: Warmtecapaciteit per installatie
-      heat_output_conversion: Efficiëntie (warmte)
+      heat_output_conversion: Efficiëntie (warmte, LHV)
       hydrogen_output_conversion: Efficiëntie (waterstof)
+      kerosene_output_conversion: Efficiëntie (kerosine)
       land_use_per_unit: Landgebruik per installatie
+      land_use_per_unit_electricity_output_capacity: Landgebruik per MW
       round_trip_efficiency: Round trip efficiency
       storage_volume: Opslagcapaciteit per installatie
       takes_part_in_ets: Valt onder ETS (EU Emissions Trading System)?
       technical_lifetime: Technische levensduur
+      timeframe: Tijdschalen waar deze technologie typisch wordt ingezet
       torrefied_biomass_pellets_input_conversion: Inputconversie getorrificeerde biomassa
       total_initial_investment_per_mw_electricity: Investeringskosten (excl CCS)
       total_initial_investment_per_mw_typical_input_capacity: Investeringskosten
       total_initial_investment_per_plant: Investeringskosten
+      total_installed_capacity: Opgesteld vermogen
+      total_installed_capture_capacity: Opgestelde afvangcapaciteit
+      total_installed_electricity_capacity: Opgesteld elektrisch vermogen
+      total_installed_input_capacity: Opgesteld input vermogen
+      total_installed_storage_capacity: Opgestelde opslagcapaciteit
+      total_installed_transport_capacity: Opgestelde transportcapaciteit
+      total_investment_over_lifetime_per_mw_electricity: Investeringskosten
+      total_investment_over_lifetime_per_mw_typical_input_capacity: Investeringskosten
+      total_investment_over_lifetime_per_plant: Investeringskosten
+      total_storage_capacity: Opgesteld opslagvolume
       typical_input_capacity: Capaciteit per installatie
+      typical_input_capacity_co2_capture: Afvangcapaciteit per installatie
+      typical_input_capacity_co2_storage: Opslagcapaciteit per installatie
+      typical_input_capacity_co2_transport: Transportcapaciteit per installatie
       useable_heat_output_conversion: Efficiëntie (warmte)
       variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten voor CCS
       variable_operation_and_maintenance_costs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten (O&M)
@@ -50,6 +67,12 @@ nl:
     texts:
       'yes': 'Ja'
       'no': 'Nee'
+      d_w_s: dag, week of seizoen
+      i_h_d: direct, uur of dag
+      i_h_d_w: direct, uur, dag of week
+      i_h_d_w_s: direct, uur, dag, week of seizoen
+
     units:
       full load hour: vollastuur
       year: 'jaar'
+      e: 'elektrisch'

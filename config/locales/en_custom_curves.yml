@@ -1,39 +1,94 @@
 ---
 en:
   custom_curves:
-    confirm_remove: "Are you sure you wish to remove this curve and revert to the default?"
-    default: "Default curve"
-    loading: "Loading..."
-    max: "Maximum"
-    mean: "Mean"
-    min: "Minimum"
+    confirm_remove: Are you sure you wish to remove this curve and revert to the default?
+    default: Default curve
+    full_load_hours: Full load hours
+    loading: Loading...
+    max: Maximum
+    mean: Mean
+    min: Minimum
     on_date: "on %{date}"
-    remove: "Revert to default curve"
-    upload: "Upload a custom curve"
-    uploading: "Uploading curve"
+    remove: Revert to default curve
+    select_scenario: Select a scenario...
+    upload: Upload a custom curve
+    upload_from_scenario: Or from a scenario
+    uploaded: uploaded
+    uploading: Uploading curve
+    use: Use curve
     value: "%{value}"
-    upload_from_scenario: "Or from a scenario"
-    select_scenario: 'Select a scenario...'
-    use: 'Use curve'
     errors:
-      file_too_large: "Curve must not be larger than 1MB"
-      illegal_value: "Curve must only contain numeric values"
-      not_a_curve: "Curve must be a CSV file containing 8760 numeric values, one for each hour in a typical year"
-      wrong_length: "Curve must have 8760 numeric values, one for each hour in a typical year"
-    interconnector_1_price: &interconnector_price
-      default: "Default price curve"
-      default_description: "Constant price throughout the year"
-      description_html: |
-        It is assumed that the price of imported electricity is constant, set
-        using the slider above. You may override this assumption by uploading a
-        CSV file detailing the hourly price of imports. For more information on
-        how this works, and examples of compatible CSV files, please
-        <a href="%{docs_path}">see our documentation</a>.
-      value: "€%{value}/MWh"
-      curve_from_scenario: "Curve from scenario"
-      imported_from: 'From scenario'
-    interconnector_2_price: *interconnector_price
-    interconnector_3_price: *interconnector_price
-    interconnector_4_price: *interconnector_price
-    interconnector_5_price: *interconnector_price
-    interconnector_6_price: *interconnector_price
+      file_too_large: Curve must not be larger than 1MB
+      illegal_value: Curve must only contain numeric values
+      not_a_curve: Curve must be a CSV file containing 8760 numeric values, one for each hour in a typical year
+      wrong_length: Curve must have 8760 numeric values, one for each hour in a typical year
+    names:
+      interconnector_1_price: Interconnector 1 price
+      interconnector_2_price: Interconnector 2 price
+      interconnector_3_price: Interconnector 3 price
+      interconnector_4_price: Interconnector 4 price
+      interconnector_5_price: Interconnector 5 price
+      interconnector_6_price: Interconnector 6 price
+      weather/air_temperature: Air temperature
+      weather/buildings_heating: Buildings heating
+      electric_buses: Electric buses
+      electric_trucks: Electric trucks
+      electric_vehicle_profile_1: Electric car profile 1
+      electric_vehicle_profile_2: Electric car profile 2
+      electric_vehicle_profile_3: Electric car profile 3
+      electric_vehicle_profile_4: Electric car profile 4
+      electric_vehicle_profile_5: Electric car profile 5
+      industry_chemicals_electricity: Chemicals electricity demand
+      industry_chemicals_heat: Chemicals heat demand
+      industry_ict: ICT electricity demand
+      industry_metals_electricity: Metal electricity demand
+      industry_metals_heat: Metal heat demand
+      industry_other_electricity: Other industry electricity demand
+      industry_other_heat: Other industry heat demand
+      industry_refineries_electricity: Refineries electricity demand
+      industry_refineries_heat: Refineries heat demand
+      hydrogen_export: Hydrogen export
+      hydrogen_import: Hydrogen import
+      network_gas_export: Gas export
+      network_gas_import: Gas import
+      solar_pv: Solar PV
+      weather/solar_thermal: Solar thermal
+      geothermal_heat: Geothermal heat
+      river: Hydropower (river)
+      wind_offshore: Wind offshore
+      wind_coastal: Wind coastal
+      wind_inland: Wind inland
+    types:
+      price:
+        default: Default price curve
+        default_description: |
+          By default, it is assumed that the price is constant throughout the year.
+          You can change this by uploading a CSV file, specifying the price of imported
+          electricity for every hour of the year. This file should contain 8760 rows
+          (one for each hour per year) with a price in €/MWh.
+        description_html: |
+          It is assumed that the price of imported electricity is constant, set
+          using the slider above. You may override this assumption by uploading a
+          CSV file detailing the hourly price of imports. For more information on
+          how this works, and examples of compatible CSV files, please
+          <a href=%{docs_path}>see our documentation</a>.
+        value: "€%{value}/MWh"
+        curve_from_scenario: Curve from scenario
+        imported_from: From scenario
+      temperature:
+        default: Default temperature curve
+        default_description: |
+          The default temperature curve is based on weather data in the base year of your region.
+          You can change this by uploading a CSV file, specifying the outdoor air temperature for
+          every hour of the year. This file should contain 8760 rows (one for each hour per year)
+          with a temperature in °C.
+        value: "%{value}°C"
+      profile:
+        default: Default profile
+        default_description: |
+          The ETM contains demand and supply curves for all gas, heat, electricity and hydrogen
+          technologies. You can upload a CSV file with your own curve for the selected category.
+          This file should contain 8760 rows (one for each hour per year) specifying the
+          relative demand per hour or the fraction of peak capacity utilised (depending on the
+          chosen category). More information can be found in the description above.
+

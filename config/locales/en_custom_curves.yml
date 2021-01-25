@@ -66,7 +66,7 @@ en:
     types:
       price:
         default: Default price curve
-        default_description: |
+        help: |
           By default, it is assumed that the price is constant throughout the year.
           You can change this by uploading a CSV file, specifying the price of imported
           electricity for every hour of the year. This file should contain 8760 rows
@@ -82,7 +82,7 @@ en:
         imported_from: From scenario
       temperature:
         default: Default temperature curve
-        default_description: |
+        help: |
           The default temperature curve is based on weather data in the base year of your region.
           You can change this by uploading a CSV file, specifying the outdoor air temperature for
           every hour of the year. This file should contain 8760 rows (one for each hour per year)
@@ -90,7 +90,7 @@ en:
         value: "%{value}°C"
       profile:
         default: Default profile
-        default_description: |
+        help: |
           The ETM contains demand and supply curves for all gas, heat, electricity and hydrogen
           technologies. You can upload a CSV file with your own curve for the selected category.
           This file should contain 8760 rows (one for each hour per year) specifying the

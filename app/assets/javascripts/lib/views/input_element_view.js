@@ -217,7 +217,18 @@
    * sorted array of spec groups and attributes.
    */
   var specsToList = function (data) {
-    var groups = Object.entries(data).map(function (entry) {
+    var groups = _.sortBy(Object.entries(data), ([key], index) => {
+      switch (key) {
+        case 'technical':
+          return 0;
+        case 'cost':
+          return 1;
+        case 'other':
+          return Infinity;
+        default:
+          return index + 2; // ensure placement after technical and costs
+      }
+    }).map(function (entry) {
       return [I18n.t('node_details.groups.' + entry[0]), entry[1]];
     });
 

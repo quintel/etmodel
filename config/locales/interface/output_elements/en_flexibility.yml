@@ -129,11 +129,11 @@ en:
         This chart shows the total supply and demand of electricity, gas, hydrogen and heat
         per month. Only the inflexible supply and the baseload demand are shown. 
         What is meant by this inflexible supply and baseload demand is explained below:
-        <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the 
+        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
         energy demand of flex technologies that balance the system, such as gas / hydrogen 
         for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
         in gas storage facilities.</li>
-        <li> Supply is the must-run and volatile production, such as wind turbines and solar 
+        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
         thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
         / electricity production by dispatchable sources, electricity from batteries or 
         gas / hydrogen from gas storage facilities.</li> </ul>
@@ -141,19 +141,19 @@ en:
         If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
         This will open a new chart showing the hourly values for that carrier in the selected month.
     flexibility_monthly_carriers_inflexible_supply_demand_max:
-      title: Maximum supply and demand per month
+      title: Supply and demand peaks per month
       description: |
         This chart shows the maximum value for supply and demand of electricity, gas, hydrogen and heat
         in each month. Only the inflexible supply and the baseload demand are shown. 
-        What is meant by this inflexible supply and baseload demand is explained below:
-        <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the 
+        What is meant by inflexible supply and baseload demand is explained below:
+        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
         energy demand of flex technologies that balance the system, such as gas / hydrogen 
         for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
         in gas storage facilities.</li>
-        <li> Supply is the must-run and volatile production, such as wind turbines and solar 
+        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
         thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
-        / electricity production by dispatchable sources, electricity from batteries or 
-        gas / hydrogen from gas storage facilities.</li> </ul>
+        / electricity production by dispatchable sources. Neither does it include electricity from batteries or 
+        extraction of gas / hydrogen from gas storage facilities.</li> </ul>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
         If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
         This will open a new chart showing the hourly values for that carrier in the selected month.
@@ -166,14 +166,14 @@ en:
         from the inflexible supply, this is called the "residual load". Negative values mean "surpluses" 
         of energy and positive values "shortages".
         What exactly is meant by base load demand and inflexible supply is explained below:
-        <ul> <li> Demand is the end use of the different sectors. This does <b>not</b> include the 
+        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
         energy demand of flex technologies that balance the system, such as gas / hydrogen 
         for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
         in gas storage facilities. </li>
-        <li> Supply is the must-run and volatile production, such as wind turbines and solar 
+        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
         thermal plants. This does <b>not</b> include the production by flex technologies, such as heat 
-        / electricity production by dispatchable sources, electricity from batteries or 
-        gas / hydrogen from gas storage facilities.</li> </ul>
+        / electricity production by dispatchable sources. Neither does it include electricity from batteries or 
+        extraction of gas / hydrogen from gas storage facilities.</li> </ul>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
         If you want a more detailed view, you can also zoom in by clicking on a specific month. 
         This will open a new chart showing the "residual load" profiles for the selected month.
@@ -188,15 +188,15 @@ en:
         balance of your energy system throughout the year: in which months does an imbalance occur? 
         Which carriers are not in balance?</br></br>
         What exactly is meant by base load demand and inflexible supply is explained below:
-        <ul> <li> Demand is the end use of the different sectors. This does <b> not </b> include the 
+        <ul> <li> Baseload demand is the end use of the different sectors. This does <b> not </b> include the 
         energy demand of flex technologies that balance the system, such as gas / hydrogen 
-        for dispatchable power plants, electricity that enters batteries or gas / hydrogen 
-        in gas storage facilities. Also, export and curtailment are <b> not </b> covered by 
+        for dispatchable power plants. Neither does it include electricity that enters batteries or 
+        gas / hydrogen in gas storage facilities. Also, export and curtailment are <b> not </b> covered by 
         the demand. </li>
-        <li> Supply is the must-run and volatile production, such as wind turbines and solar 
+        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
         thermal plants. This does <b> not </b> include the production by flex technologies, such as heat 
-        / electricity production by dispatchable sources, electricity from batteries or 
-        gas / hydrogen from gas storage facilities.</li>
+        / electricity production by dispatchable sources. Neither does it include electricity from batteries or 
+        extraction of gas / hydrogen from gas storage facilities.</li>
     flexibility_hourly_all_carriers_cumulative_imbalance:
       title: Need for seasonal storage
       description: |

@@ -252,10 +252,11 @@ nl:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
     flexibility_overview_inflexible_demand_supply_sum:
-      title: Balans van het energiesysteem
+      title: Balans van energievolumes
       short_description:
       description: |
-        Om vraag en aanbod <i>binnen een jaar</i> in balans te brengen zijn flexibele technologieën nodig.
+        Bij het balanceren van vraag en aanbod is het belangrijk om niet alleen op jaarniveau te kijken,
+        maar ook te kijken of elk uur van het jaar in het balans is. Voor deze uurlijkse balancering zijn flexibele technologieën nodig.
         De grafieken in deze sectie geven inzicht in de mate waarin flexibiliteit nodig is in jouw scenario.
         Je kunt vervolgens in deze flexibiliteitsbehoefte voorzien door flexibele technologieën in te zetten
         in de <a href="/scenario/flexibility/excess_electricity/order-of-flexibility-options">Elektriciteitsoverschotten</a>
@@ -264,52 +265,55 @@ nl:
         De eerste grafiek laat per maand de vraag en het aanbod zien
         van elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
         in de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
-        onbalans op? Welke dragers zijn niet in balans? Als je benieuwd bent naar de
+        onbalans op? Welke dragers zijn niet in balans? 
+        Om deze (on)balans goed in beeld te krijgen, worden alleen de inflexibele must-run en volatiele productie en 
+        de basislast (baseload) energievraag getoond in deze grafiek. Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het 
+        systeem. Als je meer wilt weten over de definities van inflexibel aanbod en basislastvraag, klik dan op de grafiek info.</br></br>
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. Als je benieuwd bent naar de
         balans binnen een maand, is er de mogelijkheid om in te zoomen. Door te klikken op een drager in
         specifieke maand opent er een nieuwe grafiek die inzoomt op de uurwaarden
-        van die drager in die maand. </br></br>
-        Om deze (on)balans goed in beeld te krijgen, worden alleen de basislast (baseload)
-        energievraag en de must-run en volatiele productie getoond in deze grafiek.
-        Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het systeem.</br></br>
-        Wat er precies onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><li>Vraag is het eindgebruik van de verschillende sectoren. Hierin wordt
-        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
-        meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
-        batterijen ingaat of gas/waterstof in gasbergingen.</li>
-        <li>Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
-        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
-        warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
-        uit batterijen of gas/waterstof uit gasbergingen.</li>
+        van die drager in die maand. 
     flexibility_overview_inflexible_demand_supply_max:
-      title: Piekbelasting in het energiesysteem
+      title: Piekbelasting door het jaar heen
       short_description:
-      description:
+      description: |
+        Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte. 
+        Alleen het inflexibele aanbod en de basislastvraag worden getoond. </br> </br>
+        Deze grafiek geeft je inzicht in de hoeveelheid flexibele capaciteit die nodig is om het energiesysteem in jouw scenario in 
+        balans te brengen. Als je meer wilt weten over de definities van inflexibel aanbod en basislastvraag, klik dan op de grafiekinfo.
+        Tegelijkertijd geven deze maxima een indicatie van de benodigde netwerkcapaciteit per energiedrager. Je kunt dit in meer detail onderzoeken 
+        voor het elektriciteitsnetwerk in de <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">Netbelasting</a> sectie.</br> </br>
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. Wil je zien waar en wanneer er pieken 
+        optreden binnen een maand, dan kun je ook inzoomen op een energiedrager door op die drager in een bepaalde maand te klikken. Hierdoor wordt een 
+        nieuwe grafiek geopend met de uurwaarden voor die energiedrager in de geselecteerde maand.
     flexibility_overview_inflexible_imbalance:
-      title: Onbalans van het energiesysteem
+      title: Onbalans van energievolumes
       short_description:
       description: |
         Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
         voor elektriciteit, gas, waterstof en warmte. De onbalans is berekend door de vraag af te trekken van het aanbod, dit heet
-        de "residual load".<br/><br/>
-        Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
-        "tekorten". Je kunt zo inzicht krijgen in de balans van jouw energiesysteem door het jaar heen: in welke maanden treedt er
+        de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
+        "tekorten".<br/><br/>
+        Je kunt zo inzicht krijgen in de balans van jouw energiesysteem door het jaar heen: in welke maanden treedt er
         onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
         aan energie? Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken
-        op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.</br></br>
+        op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.
     flexibility_overview_cumulative_imbalance:
-      title: Seizoensbalans van het energiesysteem
+      title: Seizoensbalans van energievolumes
       short_description:
       description: |
         Deze grafiek laat de volgende twee lijnen zien:
         <ul><li>De lijn exclusief correctie in de grafiek toont de optelling van alle tekorten en overschotten van elektriciteit,
         gas, waterstof en warmte door het jaar heen. Wanneer de lijn stijgt, betekent dit dat er netto overschotten
-        waren in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
-        waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit
-        dat de energie overschotten groter zijn dan de tekorten. Overschotten op een bepaald moment kunnen worden
-        gebruikt om tekorten op een later moment op te lossen, ofwel door de overschotten op te slaan, ofwel door ze
-        om te zetten in een andere drager. Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel
-        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt
-        permitteren om uiteindelijk het systeem in balans te krijgen.</li><br/><br/>
+        zijn in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
+        zijn. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit
+        dat de energie overschotten groter zijn dan de tekorten.<br/><br/>
+        Overschotten op een bepaald moment kunnen worden gebruikt om tekorten op een later moment op te lossen, 
+        ofwel door de overschotten op te slaan, ofwel door ze om te zetten in een andere drager. 
+        Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel
+        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. 
+        Dus hoeveel conversie/opslagverlies je je kunt permitteren om uiteindelijk het systeem 
+        in balans te krijgen.</li><br/>
         <li>Voor de gecorrigeerde lijn is aangenomen dat het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
         gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale
         benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden.

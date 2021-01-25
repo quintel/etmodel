@@ -116,17 +116,28 @@ nl:
         energievraag en de must-run en volatiele productie getoond in deze grafiek.
         Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het systeem.</br></br>
         Wat er precies onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><li>Vraag is het eindgebruik van de verschillende sectoren. Hierin wordt
+        <ul><li>Basislastvraag is het eindgebruik van de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
         batterijen ingaat of gas/waterstof in gasbergingen.</li>
-        <li>Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
+        <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
         Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
         uit batterijen of gas/waterstof uit gasbergingen.</li>
     flexibility_monthly_carriers_inflexible_supply_demand_max:
-      title: Maximale vraag en aanbod per maand
-      description: 
+      title: Piekbelasting vraag en aanbod per maand
+      description: |
+        Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte. 
+        Alleen het inflexibele aanbod en de basislastvraag worden getoond. </br> </br>
+        Wat er precies onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
+        <ul><li>Basislastvraag is het eindgebruik van de verschillende sectoren. Hierin wordt
+        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
+        meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
+        batterijen ingaat of gas/waterstof in gasbergingen.</li>
+        <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
+        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
+        warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
+        uit batterijen of gas/waterstof uit gasbergingen.</li>
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Onbalans ("residual load") per maand
       description: |
@@ -138,11 +149,11 @@ nl:
         aan energie? Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken
         op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.</br></br>
         Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><li>Vraag is het eindgebruik van de verschillende sectoren. Hierin wordt
+        <ul><li>Basislastraag is het eindgebruik van de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
         batterijen ingaat of gas/waterstof in gasbergingen.</li>
-        <li>Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
+        <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
         Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
         uit batterijen of gas/waterstof uit opslag.</li>
@@ -156,11 +167,11 @@ nl:
         onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
         aan energie? </br></br>
         Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><li>Vraag is het eindgebruik uit de verschillende sectoren. Hierin wordt
+        <ul><liBasislastraag is het eindgebruik uit de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
         meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
         batterijen ingaat of gas/waterstof in gasbergingen.</li>
-        <li>Aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
+        <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
         Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
         uit batterijen of gas/waterstof uit opslag.</li>

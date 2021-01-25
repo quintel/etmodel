@@ -3,6 +3,31 @@
 import CustomCurveChooserView from './CustomCurveChooserView';
 
 /**
+ * Takes an array of CustomCurve models and partitions them into two arrays.
+ *
+ * The first array contains the sorted collection of all curves which do not belong to a group. The
+ * second contains two-element tuples, the first element being the localized group name, and the
+ * second the sorted list of models belonging to that group.
+ */
+const partitionCurvesByGroup = (models) => {
+  const grouped = [];
+  const ungrouped = [];
+
+  for (const model of models) {
+    if (model.get('display_group')) {
+      grouped.push(model);
+    } else {
+      ungrouped.push(model);
+    }
+  }
+
+  let groupedCollection = Object.entries(_.groupBy(grouped, (model) => model.translatedGroup()));
+  groupedCollection.sort(([aName], [bName]) => aName.localeCompare(bName));
+
+  return [ungrouped, groupedCollection];
+};
+
+/**
  * Renders the select which allows the user to choose which curve to view. Updates the titles
  * whenever a curve is added or removed.
  */
@@ -36,11 +61,22 @@ class CurveSelectView extends Backbone.View {
   }
 
   render() {
-    const sorted = _.sortBy(this.options.curves.models, (model) => model.translatedName());
+    const [ungrouped, groups] = partitionCurvesByGroup(this.options.curves.models);
     const select = $('<select />');
 
-    for (const curve of sorted) {
+    // Add ungrouped curves first.
+    for (const curve of ungrouped) {
       select.append($('<option />').val(curve.get('key')).text(this.curveName(curve)));
+    }
+
+    for (const [groupName, curves] of groups) {
+      const optgroup = $('<optgroup />').attr('label', groupName);
+
+      for (const curve of curves) {
+        optgroup.append($('<option />').val(curve.get('key')).text(this.curveName(curve)));
+      }
+
+      select.append(optgroup);
     }
 
     this.$el.append(select);

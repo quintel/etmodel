@@ -25,11 +25,25 @@ export function renderCSVActions(opts, t, userScenarios) {
   }
 
   if (opts.showUpload) {
-    actionsList.append($('<li class="upload"/>').text(t('upload')));
+    actionsList.append(
+      $('<li class="upload" />')
+        .append($('<button class="trigger" />').text(t('upload')))
+        .append(
+          opts.help
+            ? $('<button class="help-button" />').append(
+                $('<span class="fa fa-question-circle" />')
+              )
+            : undefined
+        )
+    );
   }
 
   if (opts.showRemove) {
-    actionsList.append($('<li class="remove"/>').text(t('remove')));
+    actionsList.append(
+      $('<li class="remove" />').append(
+        $('<button class="trigger" />').addClass('trigger').text(t('remove'))
+      )
+    );
   }
 
   actions.append(actionsList);
@@ -179,15 +193,15 @@ export function renderCSVInfo(curveData, userScenarios, t, options) {
     details.append(formatCurveScenarioInfo(curveData.source_scenario, t));
   }
 
-  if (options.description) {
-    details.append($('<span class="description" />').text(options.description));
-  }
-
   main.append($('<div class="file ' + (opts.icon || 'csv') + '" />'));
   main.append(details);
 
   el.append(main);
   el.append(renderCSVActions(opts, t, userScenarios));
+
+  if (options.help) {
+    el.append($('<div class="help" />').append($('<div class="inner" />').text(options.help)));
+  }
 
   return el;
 }
@@ -278,8 +292,9 @@ class CustomCurveLoadingView extends Backbone.View {
 class CustomCurveChooserView extends Backbone.View {
   get events() {
     return {
-      'click .remove': 'removeCurve',
-      'click .upload': 'selectCurve',
+      'click .remove .trigger': 'removeCurve',
+      'click .upload .trigger': 'selectCurve',
+      'click .upload .help-button': 'showHideHelp',
       'click .use-scenario': 'useScenarioCurve',
       'change form input[type=file]': 'fileDidChange',
     };
@@ -315,6 +330,7 @@ class CustomCurveChooserView extends Backbone.View {
           showUpload: true,
           showRemove: true,
           isFromScenario: this.model.isFromScenario(),
+          help: this.t('help', { defaults: [{ message: false }] }),
         })
       );
     } else {
@@ -322,9 +338,7 @@ class CustomCurveChooserView extends Backbone.View {
         renderCSVInfo({ name: this.t('default') }, this.userScenarios, this.t, {
           showUpload: true,
           icon: 'csv-light',
-          description: this.t('default_description', {
-            defaults: [{ message: false }],
-          }),
+          help: this.t('help', { defaults: [{ message: false }] }),
         })
       );
     }
@@ -412,6 +426,11 @@ class CustomCurveChooserView extends Backbone.View {
         options || {}
       )
     );
+  }
+
+  showHideHelp(event) {
+    event.preventDefault();
+    this.$el.find('.help').slideToggle(150);
   }
 
   /**

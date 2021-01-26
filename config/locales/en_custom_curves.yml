@@ -23,10 +23,15 @@ en:
       not_a_curve: Curve must be a CSV file containing 8760 numeric values, one for each hour in a typical year
       wrong_length: Curve must have 8760 numeric values, one for each hour in a typical year
     groups:
+      heat_production: Heat production
       electricity_production: Electricity production
-      industry: Industry
+      buildings: Buildings
+      industry_electricity: Industry electricity
+      industry_heat: Industry heat
       interconnectors: Interconnectors
       transport: Transport
+      gas_import_export: Import/export gases
+      weather: Weather data
     names:
       interconnector_1_price: Interconnector 1 price
       interconnector_2_price: Interconnector 2 price
@@ -83,17 +88,18 @@ en:
       temperature:
         default: Default temperature curve
         help: |
-          The default temperature curve is based on weather data in the base year of your region.
-          You can change this by uploading a CSV file, specifying the outdoor air temperature for
+          You can change the temperature curve by uploading a CSV file, specifying the outdoor air temperature for
           every hour of the year. This file should contain 8760 rows (one for each hour per year)
           with a temperature in °C.
         value: "%{value}°C"
       profile:
         default: Default profile
         help: |
-          The ETM contains demand and supply curves for all gas, heat, electricity and hydrogen
-          technologies. You can upload a CSV file with your own curve for the selected category.
-          This file should contain 8760 rows (one for each hour per year) specifying the
-          relative demand per hour or the fraction of peak capacity utilised (depending on the
-          chosen category). More information can be found in the description above.
+          You can use your own demand and supply profiles by uploading a CSV file.
+          This file should contain 8760 rows (one for each hour per year). For demand profiles
+          the unit used in the CSV file does not matter: the ETM will use the <u>shape</i> of
+          your profile (the relative distribution of demand over time). For supply profiles the sum of
+          the profile should equal the total annual number of full load hours of the technology. This means that
+          for each hour the profile should contain a value between 0 and 1 specifying the fraction of peak capacity
+          used in that hour.
 

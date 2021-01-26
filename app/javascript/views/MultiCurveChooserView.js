@@ -120,7 +120,7 @@ class MultiCurveChooserView extends Backbone.View {
     this.activeSubview = new CustomCurveChooserView({
       el: container,
       model: this.currentCurve(),
-      scenarios: [],
+      scenarios: this.currentCurve().get('type') === 'price' ? this.options.scenarios : [],
     });
 
     this.activeSubview.render();
@@ -139,10 +139,10 @@ class MultiCurveChooserView extends Backbone.View {
     return this.el;
   }
 
-  static setupWithWrapper(el, curveCollectionDef) {
-    curveCollectionDef.then((data) => {
+  static setupWithWrapper(el, curvesPromise, scenariosPromise) {
+    $.when(curvesPromise, scenariosPromise).done(function (curves, scenarios) {
       el.querySelector('.loading').remove();
-      new MultiCurveChooserView({ el, curves: data }).render();
+      new MultiCurveChooserView({ el, curves, scenarios }).render();
     });
   }
 }

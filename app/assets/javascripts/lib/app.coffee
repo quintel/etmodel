@@ -71,9 +71,10 @@ class @AppView extends Backbone.View
 
     if (curve_upload = wrapper.find('.multi-curve-upload')).length > 0
       curveCollectionDef = @customCurves()
+      userScenariosDef = @userScenarios()
 
       curve_upload.each (_index, element) ->
-        MultiCurveChooserView.setupWithWrapper(element, curveCollectionDef)
+        MultiCurveChooserView.setupWithWrapper(element, curveCollectionDef, userScenariosDef)
 
     deferred
 

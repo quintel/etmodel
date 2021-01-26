@@ -23,10 +23,15 @@ nl:
       not_a_curve: Profiel moet een CSV-bestand zijn met 8760 getallen (één getal voor elk uur in een jaar)
       wrong_length: Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)
     groups:
+      heat_production: Warmteproductie
       electricity_production: Elektriciteitsproductie
-      industry: Industrie
-      interconnectors: Interconnectie
+      buildings: Gebouwen
+      industry_electricity: Industrie elektriciteit
+      industry_heat: Industrie warmte
+      interconnectors: Interconnectoren
       transport: Transport
+      gas_import_export: Import/export gassen
+      weather: Weerdata
     names:
       interconnector_1_price: Interconnector 1 prijscurve
       interconnector_2_price: Interconnector 2 prijscurve
@@ -83,17 +88,17 @@ nl:
       temperature:
         default: Standaard temperatuurcurve
         default_description: |
-          De standaard temperatuurcurve is gebaseerd op weerdata uit het startjaar van jouw regio.
-          Je kunt deze curve aanpassen door een CSV-bestand te importeren met daarin voor elk uur
+          Je kunt de temperatuurcurve aanpassen door een CSV-bestand te importeren met daarin voor elk uur
           van het jaar de temperatuur. Dit bestand moet uit 8760 rijen bestaan
           (één voor elk uur per jaar) met per rij de gewenste temperatuur (in °C).
         value: "%{value}°C"
       profile:
         default: Standaard profiel
         default_description: |
-          Het ETM bevat vraag- en aanbodcurves voor alle gas-, warmte, elektriciteits- en
-          waterstoftechnologieën. Voor de geselecteerde categorie kun je een CSV-bestand
-          met een eigen profiel uploaden. Dit bestand moet uit 8760 rijen bestaan
-          (één voor elk uur per jaar) met daarin de relatieve vraag per uur of een fractie die
-          aangeeft hoeveel van het piekvermogen gebruikt wordt (afhankelijk van de gekozen categorie).
-          In de beschrijving hierboven vind je meer informatie.
+          Je kunt vraag- en aanbodprofielen aanpassen door een CSV-bestand
+          met een eigen profiel te uploaden. Dit bestand moet uit 8760 rijen bestaan
+          (één voor elk uur per jaar). Voor vraagprofielen maakt de gebruikte eenheid niet uit:
+          het ETM gebruikt alleen de <u>vorm</u> van het profiel (de relatieve verdeling van de vraag over de tijd).
+          Voor productieprofielen moet het profiel optellen tot het gewenste jaarlijkse aantal vollasturen van de
+          productietechnologie. Dit betekent dat het profiel voor elk uur een waarde tussen de 0 en 1 bevat die
+          aangeeft welke fractie van het piekvermogen in dat uur gebruikt wordt.

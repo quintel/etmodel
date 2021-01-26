@@ -69,6 +69,14 @@ en:
       weather/wind_coastal_baseline: Wind coastal
       weather/wind_inland_baseline: Wind inland
     types:
+      capacity_profile:
+        default: Default profile
+        help: |
+          You can use your own supply profiles by uploading a CSV file. This file should contain
+          8760 rows (one for each hour per year). The sum of the profile should equal the total
+          annual number of full load hours of the technology. This means that for each hour the
+          profile should contain a value between 0 and 1 specifying the fraction of peak capacity
+          used in that hour.
       price:
         default: Default price curve
         help: |
@@ -95,11 +103,6 @@ en:
       profile:
         default: Default profile
         help: |
-          You can use your own demand and supply profiles by uploading a CSV file.
-          This file should contain 8760 rows (one for each hour per year). For demand profiles
-          the unit used in the CSV file does not matter: the ETM will use the shape of
-          your profile (the relative distribution of demand over time). For supply profiles the sum of
-          the profile should equal the total annual number of full load hours of the technology. This means that
-          for each hour the profile should contain a value between 0 and 1 specifying the fraction of peak capacity
-          used in that hour.
-
+          You can use your own demand profiles by uploading a CSV file. This file should contain
+          8760 rows (one for each hour per year). The unit used in the CSV file does not matter: the
+          ETM will use the shape of your profile (the relative distribution of demand over time).

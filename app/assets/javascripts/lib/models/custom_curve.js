@@ -77,7 +77,7 @@
     model: CustomCurve,
 
     /** Sorts curves by their translated name. */
-    comparator(a, b) {
+    comparator: function (a, b) {
       return a.translatedName().localeCompare(b.translatedName());
     },
 

@@ -11,6 +11,7 @@ nl:
     on_date: "op %{date}"
     remove: Zet het standaardprofiel terug
     select_scenario: Selecteer scenario...
+    type: Curve
     upload: Een eigen profiel uploaden
     upload_from_scenario: Of gebruik een scenario
     uploaded: geüpload
@@ -71,6 +72,7 @@ nl:
     types:
       capacity_profile:
         default: Standaard profiel
+        type: Capaciteitsprofiel
         help: |
           Je kunt aanbodprofielen aanpassen door een CSV-bestand met een eigen profiel te uploaden.
           Dit bestand moet uit 8760 rijen bestaan (één voor elk uur per jaar). Het profiel optellen
@@ -78,7 +80,8 @@ nl:
           dat het profiel voor elk uur een waarde tussen de 0 en 1 bevat die aangeeft welke fractie
           van het piekvermogen in dat uur gebruikt wordt.
       price:
-        default: Standaard prijsprofiel
+        default: Standaard prijscurve
+        type: Prijsprofiel
         help: |
           Standaard wordt een constante prijs verondersteld gedurende het jaar.
           Je kunt dit aanpassen door een CSV-bestand te importeren met daarin voor elk uur
@@ -95,6 +98,7 @@ nl:
         imported_from: Vanuit scenario
       temperature:
         default: Standaard temperatuurcurve
+        type: Temperatuurcurve
         help: |
           Je kunt de temperatuurcurve aanpassen door een CSV-bestand te importeren met daarin voor elk uur
           van het jaar de temperatuur. Dit bestand moet uit 8760 rijen bestaan
@@ -102,8 +106,9 @@ nl:
         value: "%{value}°C"
       profile:
         default: Standaard profiel
+        type: Profiel
         help: |
-          Je kunt vraagprofielen aanpassen door een CSV-bestand met een eigen profiel te uploaden.
-          Dit bestand moet uit 8760 rijen bestaan (één voor elk uur per jaar). Maakt de gebruikte
+          Je kunt profielen aanpassen door een CSV-bestand met een eigen profiel te uploaden. Dit
+          bestand moet uit 8760 rijen bestaan (één voor elk uur per jaar). Maakt de gebruikte
           eenheid niet uit: het ETM gebruikt alleen de vorm van het profiel (de relatieve verdeling
           van de vraag over de tijd).

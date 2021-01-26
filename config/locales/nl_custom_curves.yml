@@ -71,7 +71,7 @@ nl:
     types:
       price:
         default: Standaard prijsprofiel
-        default_description: |
+        help: |
           Standaard wordt een constante prijs verondersteld gedurende het jaar.
           Je kunt dit aanpassen door een CSV-bestand te importeren met daarin voor elk uur
           van het jaar een prijs voor import-stroom.
@@ -87,14 +87,14 @@ nl:
         imported_from: Vanuit scenario
       temperature:
         default: Standaard temperatuurcurve
-        default_description: |
+        help: |
           Je kunt de temperatuurcurve aanpassen door een CSV-bestand te importeren met daarin voor elk uur
           van het jaar de temperatuur. Dit bestand moet uit 8760 rijen bestaan
           (één voor elk uur per jaar) met per rij de gewenste temperatuur (in °C).
         value: "%{value}°C"
       profile:
         default: Standaard profiel
-        default_description: |
+        help: |
           Je kunt vraag- en aanbodprofielen aanpassen door een CSV-bestand
           met een eigen profiel te uploaden. Dit bestand moet uit 8760 rijen bestaan
           (één voor elk uur per jaar). Voor vraagprofielen maakt de gebruikte eenheid niet uit:

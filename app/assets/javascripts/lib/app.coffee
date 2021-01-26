@@ -237,12 +237,10 @@ class @AppView extends Backbone.View
   # deferred will resolve with the collection once the data is available, or
   # immediately if it has eben initialized previously.
   customCurves: =>
-    deferred = $.Deferred()
-
     if @customCurvesDeferred
-      return @customCurvesDeferred
+      return @customCurvesDeferred.promise()
     else
-      @customCurvesDeferred = deferred
+      @customCurvesDeferred = $.Deferred()
 
       # Ajax request.
       req = $.ajax(
@@ -251,27 +249,27 @@ class @AppView extends Backbone.View
       )
 
       req.success((data) =>
-        deferred.resolve(new CustomCurveCollection(data))
+        @customCurvesDeferred.resolve(new CustomCurveCollection(data))
       )
 
-    return deferred.promise()
+    return @customCurvesDeferred.promise()
 
   userScenarios: =>
-    deferred = $.Deferred()
-
-    if @userScenariosArray
-      deferred.resolve(@userScenarios)
+    if @userScenariosDeferred
+      return @userScenariosDeferred.promise()
     else
+      @userScenariosDeferred = $.Deferred()
+
       req = $.ajax({
         url: '/saved_scenarios',
         method: 'GET'
       })
 
       req.done((data) =>
-        @userScenariosArray = data
-        deferred.resolve(@userScenariosArray)
+        @userScenariosDeferred.resolve(data)
       )
-    return deferred.promise()
+
+    return @userScenariosDeferred.promise()
 
   # Triggered exactly once. Loads custom curve states and disables and sliders which are overridden
   # by the curves.

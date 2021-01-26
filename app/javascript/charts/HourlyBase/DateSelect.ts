@@ -143,9 +143,10 @@ const buildOptions = (downsampleMethod: string) => {
 const buildSelectElement = (downsampleMethod: string) => {
   const select = document.createElement('select');
 
+  select.classList.add('d3-chart-select');
   select.classList.add('d3-chart-date-select');
   select.append(...buildOptions(downsampleMethod));
-  select.value = App.settings.get('merit_charts_date') || 'all';
+  select.value = (App.settings.get('merit_charts_date') || 'all') as string;
 
   return select;
 };

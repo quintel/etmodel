@@ -6,7 +6,7 @@
   requires_merit_order: true
   unit: MJ
   config:
-    linked_chart: 
+    linked_chart:
       electricity: flexibility_hourly_electricity_supply_demand
       heat: flexibility_hourly_heat_network_supply_demand
       hydrogen: flexibility_hourly_hydrogen_supply_demand
@@ -19,7 +19,7 @@
   requires_merit_order: true
   unit: MW
   config:
-    linked_chart: 
+    linked_chart:
       electricity: flexibility_hourly_electricity_supply_demand
       heat: flexibility_hourly_heat_network_supply_demand
       hydrogen: flexibility_hourly_hydrogen_supply_demand
@@ -151,6 +151,12 @@
   dependent_on:
   description:
   output_element_type_name: solar_curtailment
+  config:
+    serie_selections:
+      - solar_pv
+      - buildings_solar_pv
+      - households_solar_pv
+      - energy_power_solar_pv
 - under_construction: false
   unit: MW
   percentage: false

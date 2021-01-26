@@ -148,12 +148,13 @@ $chart-header-icon-color: #8895b2
     background-color: #fff
 
     .empty
-      svg, .legend, .d3-chart-date-select
+      svg, .legend, .d3-chart-select
         display: none
 
-    select.d3-chart-date-select
+    select.d3-chart-select
       float: right
       margin: 10px 0 10px 10px
+      max-width: 250px
 
   .loading, .empty-wrapper
     background: lighten($chart-header-background-color, 6%)

@@ -218,7 +218,7 @@
    */
   var specsToList = function (data) {
     var groups = _.sortBy(Object.entries(data), function (group, index) {
-      switch (group.key) {
+      switch (group[0]) {
         case 'technical':
           return 0;
         case 'cost':

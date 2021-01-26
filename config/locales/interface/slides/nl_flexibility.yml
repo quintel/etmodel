@@ -265,28 +265,28 @@ nl:
         De eerste grafiek laat per maand de vraag en het aanbod zien
         van elektriciteit, gas, waterstof en warmte. Hierdoor krijg je inzicht
         in de balans van jouw energiesysteem door het jaar heen: wanneer treedt er
-        onbalans op? Welke dragers zijn niet in balans? 
-        Om deze (on)balans goed in beeld te krijgen, worden alleen de inflexibele productie en 
-        de basislast (baseload) energievraag getoond in deze grafiek. Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het 
+        onbalans op? Welke dragers zijn niet in balans?
+        Om deze (on)balans goed in beeld te krijgen, worden alleen de inflexibele productie en
+        de basislast (baseload) energievraag getoond in deze grafiek. Hierdoor zie je duidelijk de "flexibiliteitsbehoefte" van het
         systeem. Als je meer wilt weten over de definities van inflexibel aanbod en basislastvraag, klik dan op de grafiek info.</br></br>
         Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. Als je benieuwd bent naar de
         balans binnen een maand, kun je kikken op een drager in die
         specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
-        van die drager in die maand. 
+        van die drager in die maand.
     flexibility_overview_inflexible_demand_supply_max:
       title: Piekbelasting door het jaar heen
       short_description:
       description: |
-        Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte. 
+        Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte.
         Alleen het inflexibele aanbod en de basislastvraag worden getoond. </br> </br>
-        Deze grafiek geeft je inzicht in de hoeveelheid flexibele capaciteit die nodig is om het energiesysteem in jouw scenario in 
+        Deze grafiek geeft je inzicht in de hoeveelheid flexibele capaciteit die nodig is om het energiesysteem in jouw scenario in
         balans te brengen. Als je meer wilt weten over de definities van inflexibel aanbod en basislastvraag, klik dan op de grafiekinfo.
-        Tegelijkertijd geven deze maxima een indicatie van de benodigde netwerkcapaciteit per energiedrager. Je kunt dit in meer detail onderzoeken 
+        Tegelijkertijd geven deze maxima een indicatie van de benodigde netwerkcapaciteit per energiedrager. Je kunt dit in meer detail onderzoeken
         voor het elektriciteitsnetwerk in de <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">Netbelasting</a> sectie.</br> </br>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. 
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen.
         Als je wilt weten waar in de maand de pieken plaatsvinden, kun je kikken op een drager in die
         specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
-        van die drager in die maand. 
+        van die drager in die maand.
     flexibility_overview_inflexible_imbalance:
       title: Onbalans van energievolumes
       short_description:
@@ -298,7 +298,7 @@ nl:
         Je kunt zo inzicht krijgen in de balans van jouw energiesysteem door het jaar heen: in welke maanden treedt er
         onbalans op? Welke dragers zijn niet in balans? Zijn dit tekorten of overschotten
         aan energie?<br/><br/>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. 
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen.
         Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken
         op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.
     flexibility_overview_cumulative_imbalance:
@@ -311,11 +311,11 @@ nl:
         zijn in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
         zijn. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit
         dat de energie overschotten groter zijn dan de tekorten.<br/><br/>
-        Overschotten op een bepaald moment kunnen worden gebruikt om tekorten op een later moment op te lossen, 
-        ofwel door de overschotten op te slaan, ofwel door ze om te zetten in een andere drager. 
+        Overschotten op een bepaald moment kunnen worden gebruikt om tekorten op een later moment op te lossen,
+        ofwel door de overschotten op te slaan, ofwel door ze om te zetten in een andere drager.
         Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel
-        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. 
-        Dus hoeveel conversie/opslagverlies je je kunt permitteren om uiteindelijk het systeem 
+        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken.
+        Dus hoeveel conversie/opslagverlies je je kunt permitteren om uiteindelijk het systeem
         in balans te krijgen.</li><br/>
         <li>Voor de gecorrigeerde lijn is aangenomen dat het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
         gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale
@@ -405,7 +405,7 @@ nl:
         <br />
         Deze profielen specificeren voor elk uur per jaar (8760 uur) welke fractie van de totale
         jaarvraag in dat uur gebruikt wordt. De gebruikte eenheid in het profiel dat je uploadt
-        maakt niet uit: het ETM gebruikt de <u>vorm</u> van jouw profiel (relatieve verdeling over de tijd)
+        maakt niet uit: het ETM gebruikt de <i>vorm</i> van jouw profiel (relatieve verdeling over de tijd)
         om de jaarvraag om de uurlijkse belasting uit te rekenen. Voorbeelden: elektrische buses, warmte in industrie.
 
         <br /><br />
@@ -426,5 +426,5 @@ nl:
 
         <b>4. Prijscurves</b><br />
 
-        Deze profielen specificeren een prijs voor elk uur per jaar. De eenheid is geven €/MWh.
+        Deze profielen specificeren een prijs voor elk uur per jaar. De eenheid is €/MWh.
         Voorbeeld: geïmporteerde elektriciteit.

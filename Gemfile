@@ -48,10 +48,7 @@ gem 'dalli'
 
 gem 'dynamic_form'
 
-# jquery-etmodel-rails contains the jquery.etmodel.js plugin
-# When working on the plugin, use :path => '/path/to/etplugin'
-# gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
-gem 'jquery-etmodel-rails', ref: 'c668ad4', github: 'quintel/etplugin'
+gem 'jquery-etmodel-rails', ref: '8a64146', github: 'quintel/etplugin'
 
 gem 'ymodel', path: 'lib/ymodel/'
 

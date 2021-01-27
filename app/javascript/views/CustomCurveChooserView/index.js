@@ -26,23 +26,13 @@ export function renderCSVActions(opts, t, userScenarios) {
 
   if (opts.showUpload) {
     actionsList.append(
-      $('<li class="upload" />')
-        .append($('<button class="trigger" />').text(t('upload')))
-        .append(
-          opts.help
-            ? $('<button class="help-button" />').append(
-                $('<span class="fa fa-question-circle" />')
-              )
-            : undefined
-        )
+      $('<li class="upload" />').append($('<button class="trigger" />').text(t('upload')))
     );
   }
 
   if (opts.showRemove) {
     actionsList.append(
-      $('<li class="remove" />').append(
-        $('<button class="trigger" />').addClass('trigger').text(t('remove'))
-      )
+      $('<li class="remove" />').append($('<button class="trigger" />').text(t('remove')))
     );
   }
 
@@ -187,7 +177,15 @@ export function renderCSVInfo(curveData, userScenarios, t, options) {
   }
 
   details.append($('<span class="name" />').text(name));
-  details.append(formatCurveStats(curveData.stats, t));
+  details.append(
+    t
+      ? $('<span class="type" />').append(
+          $('<button class="trigger-help" />')
+            .text(t('type'))
+            .append($('<span class="fa fa-question-circle" />'))
+        )
+      : undefined
+  );
 
   if (options.isFromScenario) {
     details.append(formatCurveScenarioInfo(curveData.source_scenario, t));
@@ -197,11 +195,13 @@ export function renderCSVInfo(curveData, userScenarios, t, options) {
   main.append(details);
 
   el.append(main);
-  el.append(renderCSVActions(opts, t, userScenarios));
 
   if (options.help) {
     el.append($('<div class="help" />').append($('<div class="inner" />').text(options.help)));
   }
+
+  el.append(formatCurveStats(curveData.stats, t));
+  el.append(renderCSVActions(opts, t, userScenarios));
 
   return el;
 }
@@ -294,7 +294,7 @@ class CustomCurveChooserView extends Backbone.View {
     return {
       'click .remove .trigger': 'removeCurve',
       'click .upload .trigger': 'selectCurve',
-      'click .upload .help-button': 'showHideHelp',
+      'click .trigger-help': 'showHideHelp',
       'click .use-scenario': 'useScenarioCurve',
       'change form input[type=file]': 'fileDidChange',
     };

@@ -33,6 +33,12 @@ class @D3ChartView extends BaseChartView
   render: (force_redraw) =>
     return false unless @model.supported_by_current_browser()
 
+    if @model.series.find((s) -> !s.isReady())
+      # If query data has not been received, wait to render. This may be
+      # because of a prior API request being received while the request for
+      # the chart data is still ongoing.
+      return
+
     if @model.get('requires_merit_order')
       @check_merit_enabled()
 

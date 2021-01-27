@@ -458,7 +458,7 @@ class HourlySummarized extends D3Chart {
       };
 
       values.push(
-        ...sliceToMonth(serie.safe_future_curve_value()).map((monthVals, groupKey) => {
+        ...sliceToMonth(serie.safe_future_value()).map((monthVals, groupKey) => {
           let reduced = reducer(monthVals);
 
           if (serie.get('hidden')) {

@@ -16,7 +16,7 @@ var D3ChartSerieSelect = (function () {
       (option.group ? grouped : ungrouped).push(option);
     });
 
-    let groupedCollection = Object.entries(
+    var groupedCollection = Object.entries(
       _.groupBy(grouped, function (option) {
         return I18n.t('output_element_series.groups.' + option.group);
       })

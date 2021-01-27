@@ -369,7 +369,7 @@ class CustomCurveChooserView extends Backbone.View {
       })
     );
 
-    this.$('.details').append($('<progress value="0" max="100" />'));
+    this.$el.find('.details .name').append($('<span class="progress" />').text('0%'));
   }
 
   renderError(errors) {
@@ -535,24 +535,25 @@ class CustomCurveChooserView extends Backbone.View {
       // Custom XMLHttpRequest
       xhr: function () {
         var myXhr = $.ajaxSettings.xhr();
+
         if (myXhr.upload) {
           // For handling the progress of the upload
           myXhr.upload.addEventListener(
             'progress',
             function (e) {
               if (e.lengthComputable) {
-                self.$('progress').attr({
-                  value: e.loaded,
-                  max: e.total,
-                });
+                self.$el
+                  .find('.details .progress')
+                  .text(`${Math.round((e.loaded / e.total) * 100)}%`);
               }
             },
             false
           );
         }
+
         return myXhr;
       },
-    }).success(function (data) {
+    }).success(function () {
       App.call_api();
     });
 

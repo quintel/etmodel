@@ -9,8 +9,8 @@ var D3ChartSerieSelect = (function () {
    * second the sorted list of options belonging to that group.
    */
   function partitionOptionsByGroup(options) {
-    const grouped = [];
-    const ungrouped = [];
+    var grouped = [];
+    var ungrouped = [];
 
     options.forEach(function (option) {
       (option.group ? grouped : ungrouped).push(option);

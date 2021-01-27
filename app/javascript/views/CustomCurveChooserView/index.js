@@ -318,6 +318,7 @@ class CustomCurveChooserView extends Backbone.View {
     super(options);
 
     this.userScenarios = this.options.scenarios;
+    this.showHelp = !!this.options.showHelp;
     this.apiURL = App.scenario.url_path() + '/custom_curves/' + options.model.get('key');
   }
 
@@ -347,6 +348,9 @@ class CustomCurveChooserView extends Backbone.View {
 
     this.$el.append(renderUploadForm(this.apiURL));
 
+    // Show or hide the help box depending on state.
+    this.$el.find('.help').toggle(this.showHelp);
+
     return this.el;
   }
 
@@ -354,9 +358,7 @@ class CustomCurveChooserView extends Backbone.View {
     this.$el.empty();
 
     this.$el.append(
-      renderCSVInfo({ name: this.t('loading') }, undefined, this.t, {
-        icon: 'loading',
-      })
+      renderCSVInfo({ name: this.t('loading') }, undefined, this.t, { icon: 'loading' })
     );
   }
 
@@ -366,10 +368,12 @@ class CustomCurveChooserView extends Backbone.View {
     this.$el.append(
       renderCSVInfo({ name: this.t('uploading') + '...' }, undefined, this.t, {
         icon: 'loading',
+        help: this.t('help', { defaults: [{ message: false }] }),
       })
     );
 
     this.$el.find('.details .name').append($('<span class="progress" />').text('0%'));
+    this.$el.find('.help').toggle(this.showHelp);
   }
 
   renderError(errors) {
@@ -430,6 +434,8 @@ class CustomCurveChooserView extends Backbone.View {
 
   showHideHelp(event) {
     event.preventDefault();
+
+    this.showHelp = !this.showHelp;
     this.$el.find('.help').slideToggle(150);
   }
 

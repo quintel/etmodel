@@ -61,13 +61,13 @@ nl:
       hydrogen_import: Waterstof import
       network_gas_export: Gas export
       network_gas_import: Gas import
-      solar_pv: Zon PV
+      weather/solar_pv_profile_1: Zon PV
       weather/solar_thermal: Zonthermie
       geothermal_heat: Geothermie (warmte)
       river: Waterkracht (rivier)
-      wind_offshore: Wind op zee
-      wind_coastal: Wind aan de kust
-      wind_inland: Wind op land
+      weather/wind_offshore_baseline: Wind op zee
+      weather/wind_coastal_baseline: Wind aan de kust
+      weather/wind_inland_baseline: Wind op land
     types:
       price:
         default: Standaard prijsprofiel

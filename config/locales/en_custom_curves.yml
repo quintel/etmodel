@@ -61,13 +61,13 @@ en:
       hydrogen_import: Hydrogen import
       network_gas_export: Gas export
       network_gas_import: Gas import
-      solar_pv: Solar PV
+      weather/solar_pv_profile_1: Solar PV
       weather/solar_thermal: Solar thermal
       geothermal_heat: Geothermal heat
       river: Hydropower (river)
-      wind_offshore: Wind offshore
-      wind_coastal: Wind coastal
-      wind_inland: Wind inland
+      weather/wind_offshore_baseline: Wind offshore
+      weather/wind_coastal_baseline: Wind coastal
+      weather/wind_inland_baseline: Wind inland
     types:
       price:
         default: Default price curve

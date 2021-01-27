@@ -106,8 +106,8 @@ nl:
       title: Totale vraag en aanbod per maand
       description: |
         Deze grafiek laat per maand de vraag en het aanbod zien
-        van elektriciteit, gas, waterstof en warmte. Alleen de basislast (baseload) 
-        energievraag en de must-run en inflexibele aanbod worden getoond. Wat er precies 
+        van elektriciteit, gas, waterstof en warmte. Alleen de basislast (baseload)
+        energievraag en de must-run en inflexibele aanbod worden getoond. Wat er precies
         onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
         <ul><li>Basislastvraag is het eindgebruik van de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
@@ -120,12 +120,12 @@ nl:
         Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. Als je benieuwd bent naar de
         balans binnen een maand, kun je kikken op een drager in die
         specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
-        van die drager in die maand. 
+        van die drager in die maand.
     flexibility_monthly_carriers_inflexible_supply_demand_max:
       title: Piekbelasting vraag en aanbod per maand
       description: |
-        Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte. 
-        Alleen het inflexibele aanbod en de basislastvraag worden getoond. Wat er precies onder basislastvraag 
+        Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte.
+        Alleen het inflexibele aanbod en de basislastvraag worden getoond. Wat er precies onder basislastvraag
         en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
         <ul><li>Basislastvraag is het eindgebruik van de verschillende sectoren. Hierin wordt
         de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
@@ -135,7 +135,7 @@ nl:
         Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
         uit batterijen of gas/waterstof uit gasbergingen.</li></ul>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. 
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen.
         Als je wilt weten waar in de maand de pieken plaatsvinden, kun je kikken op een drager in die
         specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
         van die drager in die maand.
@@ -154,7 +154,7 @@ nl:
         Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
         warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
         uit batterijen of gas/waterstof uit opslag.</li></ul>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. 
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen.
         Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken
         op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.
     flexibility_hourly_carriers_inflexible_imbalance:
@@ -178,19 +178,19 @@ nl:
       description: |
         Deze grafiek is een vervolg op de flexibiliteitsgrafiek "Onbalans per maand". Het is aan te raden eerst die grafiek
         te bekijken. Hieronder volgt een uitleg over de getoonde lijnen:
-        <ul><li>De lijn exclusief correctie in de grafiek toont de optelling van alle tekorten en overschotten van elektriciteit, 
+        <ul><li>De lijn exclusief correctie in de grafiek toont de optelling van alle tekorten en overschotten van elektriciteit,
         gas, waterstof en warmte door het jaar heen. Wanneer de lijn stijgt, betekent dit dat er netto overschotten
         waren in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
-        waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit 
+        waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit
         dat de energie overschotten groter zijn dan de tekorten. <br/><br/>
-        Overschotten op een bepaald moment kunnen worden 
-        gebruikt om tekorten op een later moment op te lossen, ofwel door de overschotten op te slaan, ofwel door ze 
-        om te zetten in een andere drager. Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel 
-        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt 
+        Overschotten op een bepaald moment kunnen worden
+        gebruikt om tekorten op een later moment op te lossen, ofwel door de overschotten op te slaan, ofwel door ze
+        om te zetten in een andere drager. Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel
+        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt
         permitteren om uiteindelijk het systeem in balans te krijgen.</li><br/>
         <li>Voor de gecorrigeerde lijn is aangenomen dat het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
-        gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale 
-        benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden. 
+        gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale
+        benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden.
         Deze totale benodigde opslagcapaciteit is af te lezen aan de hoogste waarde van deze lijn.</li>
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulatieve onbalans per maand
@@ -252,9 +252,11 @@ nl:
       title: Vraag en aanbod van elektriciteit
       short_description: ''
       description: ''
-    profile_per_sector:
-      title: Uurlijkse vraag en aanbod per sector 
-      description: "Deze grafiek toont de vraag of aanbod profielen van verschillende sectoren per uur. 
-      In het drop-down menu kunt u een sector kiezen waarna het uurlijkse profiel verschijnt. 
-      Het is ook mogelijk om zelf vraag of aanbod profielen te laden in het ETM. 
-      Voor meer informatie over deze optie kunt u bij de desbetreffende ETM documentatie pagina kijken."
+    user_profiles:
+      title: Aanpasbare profielen
+      description: |
+        Deze grafiek laat de uurlijkse vraag- en aanbodprofielen zien die je kunt aanpassen in
+        de <a href="/scenario/flexibility/curve_upload/upload-curves">
+        Flexibiliteit → Profielen aanpassen</a>-sectie. In het dropdown-menu kun je een profiel selecteren.
+        Als je geen profielen hebt geüpload, laadt deze grafiek de standaardprofielen zien die
+        het ETM gebruikt.

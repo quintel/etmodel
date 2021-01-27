@@ -9,8 +9,8 @@
   gquery: buildings_heating_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: buildings_heating_profile_per_sector
+  output_element_key: user_profiles
+  key: buildings_heating_user_profiles
 - label: transport_e_cars
   color: lightgreen
   order_by: 5
@@ -21,8 +21,8 @@
   gquery: transport_e_cars_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: transport_e_cars_profile_per_sector
+  output_element_key: user_profiles
+  key: transport_e_cars_user_profiles
 - label: transport_e_buses
   color: lightgreen
   order_by: 6
@@ -33,8 +33,8 @@
   gquery: transport_e_buses_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: transport_e_buses_profile_per_sector
+  output_element_key: user_profiles
+  key: transport_e_buses_user_profiles
 - label: transport_e_trucks
   color: lightgreen
   order_by: 7
@@ -45,8 +45,8 @@
   gquery: transport_e_trucks_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: transport_e_trucks_profile_per_sector
+  output_element_key: user_profiles
+  key: transport_e_trucks_user_profiles
 - label: industry_ict_electricity
   color: lightgreen
   order_by: 17
@@ -57,8 +57,8 @@
   gquery: industry_ict_electricity_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_ict_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_ict_user_profiles
 - label: industry_metals_electricity
   color: lightgreen
   order_by: 18
@@ -69,8 +69,8 @@
   gquery: industry_metals_electricity_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_metals_electricity_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_metals_electricity_user_profiles
 - label: industry_metals_heat
   color: lightgreen
   order_by: 19
@@ -81,8 +81,8 @@
   gquery: industry_metals_heat_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_metals_heat_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_metals_heat_user_profiles
 - label: industry_chemicals_electricity
   color: lightgreen
   order_by: 20
@@ -93,8 +93,8 @@
   gquery: industry_chemicals_electricity_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_chemicals_electricity_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_chemicals_electricity_user_profiles
 - label: industry_chemicals_heat
   color: lightgreen
   order_by: 21
@@ -105,8 +105,8 @@
   gquery: industry_chemicals_heat_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_chemicals_heat_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_chemicals_heat_user_profiles
 - label: industry_refineries_electricity
   color: lightgreen
   order_by: 22
@@ -117,8 +117,8 @@
   gquery: industry_refineries_electricity_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_refineries_electricity_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_refineries_electricity_user_profiles
 - label: industry_refineries_heat
   color: lightgreen
   order_by: 23
@@ -129,8 +129,8 @@
   gquery: industry_refineries_heat_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_refineries_heat_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_refineries_heat_user_profiles
 - label: industry_other_electricity
   color: lightgreen
   order_by: 24
@@ -141,8 +141,8 @@
   gquery: industry_other_electricity_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_other_electricity_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_other_electricity_user_profiles
 - label: industry_other_heat
   color: lightgreen
   order_by: 25
@@ -153,8 +153,8 @@
   gquery: industry_other_heat_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: industry_other_heat_profile_per_sector
+  output_element_key: user_profiles
+  key: industry_other_heat_user_profiles
 - label: hydro_power_river
   color: lightgreen
   order_by: 35
@@ -165,8 +165,8 @@
   gquery: hydro_power_river_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: hydro_power_river_profile_per_sector
+  output_element_key: user_profiles
+  key: hydro_power_river_user_profiles
 - label: geothermal_heat_production
   color: lightgreen
   order_by: 40
@@ -177,8 +177,8 @@
   gquery: geothermal_heat_production_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: geothermal_heat_production_profile_per_sector
+  output_element_key: user_profiles
+  key: geothermal_heat_production_user_profiles
 - label: solar_thermal_heat_production
   color: lightgreen
   order_by: 41
@@ -189,8 +189,8 @@
   gquery: solar_thermal_heat_production_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: solar_thermal_heat_production_profile_per_sector
+  output_element_key: user_profiles
+  key: solar_thermal_heat_production_user_profiles
 - label: hydrogen_import
   color: lightgreen
   order_by: 51
@@ -201,8 +201,8 @@
   gquery: hydrogen_import_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: hydrogen_import_profile_per_sector
+  output_element_key: user_profiles
+  key: hydrogen_import_user_profiles
 - label: hydrogen_export
   color: lightgreen
   order_by: 52
@@ -213,8 +213,8 @@
   gquery: hydrogen_export_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: hydrogen_export_profile_per_sector
+  output_element_key: user_profiles
+  key: hydrogen_export_user_profiles
 - label: methane_import
   color: lightgreen
   order_by: 53
@@ -225,8 +225,8 @@
   gquery: methane_import_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: methane_import_profile_per_sector
+  output_element_key: user_profiles
+  key: methane_import_user_profiles
 - label: methane_export
   color: lightgreen
   order_by: 54
@@ -237,8 +237,8 @@
   gquery: methane_export_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: methane_export_profile_per_sector
+  output_element_key: user_profiles
+  key: methane_export_user_profiles
 - label: solar_pv_production
   color: lightgreen
   order_by: 64
@@ -249,8 +249,8 @@
   gquery: solar_pv_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: solar_pv_production_profile_per_sector
+  output_element_key: user_profiles
+  key: solar_pv_production_user_profiles
 - label: wind_offshore_production
   color: lightgreen
   order_by: 65
@@ -261,8 +261,8 @@
   gquery: wind_offshore_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: wind_offshore_production_profile_per_sector
+  output_element_key: user_profiles
+  key: wind_offshore_production_user_profiles
 - label: wind_onshore_production
   color: lightgreen
   order_by: 66
@@ -273,8 +273,8 @@
   gquery: wind_onshore_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: wind_onshore_production_profile_per_sector
+  output_element_key: user_profiles
+  key: wind_onshore_production_user_profiles
 - label: wind_coastal_production
   color: lightgreen
   order_by: 66
@@ -285,5 +285,5 @@
   gquery: wind_coastal_curve
   is_1990:
   dependent_on:
-  output_element_key: profile_per_sector
-  key: wind_coastal_production_profile_per_sector
+  output_element_key: user_profiles
+  key: wind_coastal_production_user_profiles

@@ -377,7 +377,7 @@ en:
         of weather conditions, it is possible to select a different weather year.
         Selecting a different weather year affects:
         <ul>
-        <li>solar-PV en solar thermal, affects: production curve and full load hours,</li>
+        <li>solar-PV and solar thermal, affects: production curve and full load hours,</li>
         <li>wind turbines, affects: production curve and full load hours,</li>
         <li>average temperature, affects: annual heat demand,</li>
         <li>temperature curve, affects: hourly heat demand of households, buildings and agriculture.</li>
@@ -396,7 +396,7 @@ en:
       description: |
         The ETM calculates the hourly production and demand of gas, electricity, heat and hydrogen.
         On this page you can upload your own hourly profiles to overwrite the default profiles used
-        in the ETM. You can upload four types of profiles:
+        in the ETM. You can upload three types of profiles:
 
         <br /><br />
 
@@ -417,13 +417,9 @@ en:
 
         <br /><br />
 
-        <b>3. Temperature profile</b>
-        <br />
-        This profile specifies the outdoor temperature for each hour per year. The unit is °C.
-
-        <br /><br />
-
-        <b>4. Price curves</b>
+        <b>3. Price curves</b>
         <br />
         These profiles specify a price for each hour per year. The unit is €/MWh. Example: imported
         electricity.
+
+        <br /><br />

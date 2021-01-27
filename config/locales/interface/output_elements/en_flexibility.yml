@@ -127,94 +127,94 @@ en:
       title: Total supply and demand per month
       description: |
         This chart shows the total supply and demand of electricity, gas, hydrogen and heat
-        per month. Only the inflexible supply and the baseload demand are shown. 
+        per month. Only the inflexible supply and the baseload demand are shown.
         What is meant by this inflexible supply and baseload demand is explained below:
-        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
-        energy demand of flex technologies that balance the system, such as gas/hydrogen 
-        for dispatchable power plants, electricity that enters batteries or gas/hydrogen 
+        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the
+        energy demand of flex technologies that balance the system, such as gas/hydrogen
+        for dispatchable power plants, electricity that enters batteries or gas/hydrogen
         in gas storage facilities.</li>
-        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat /electricity 
-        production by dispatchable sources, electricity from batteries or 
+        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar
+        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat /electricity
+        production by dispatchable sources, electricity from batteries or
         gas/hydrogen from gas storage facilities.</li> </ul>
-        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
-        If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
+        If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month.
         This will open a new chart showing the hourly values for that carrier in the selected month.
     flexibility_monthly_carriers_inflexible_supply_demand_max:
       title: Supply and demand peaks per month
       description: |
         This chart shows the maximum value for supply and demand of electricity, gas, hydrogen and heat
-        in each month. Only the inflexible supply and the baseload demand are shown. 
+        in each month. Only the inflexible supply and the baseload demand are shown.
         What is meant by inflexible supply and baseload demand is explained below:
-        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
-        energy demand of flex technologies that balance the system, such as gas/hydrogen 
-        for dispatchable power plants, electricity that enters batteries or gas/hydrogen 
+        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the
+        energy demand of flex technologies that balance the system, such as gas/hydrogen
+        for dispatchable power plants, electricity that enters batteries or gas/hydrogen
         in gas storage facilities.</li>
-        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat/electricity 
-        production by dispatchable sources. Neither does it include electricity from batteries or 
+        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar
+        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat/electricity
+        production by dispatchable sources. Neither does it include electricity from batteries or
         extraction of gas/hydrogen from gas storage facilities.</li> </ul>
-        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
-        If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month. 
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
+        If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month.
         This will open a new chart showing the hourly values for that carrier in the selected month.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Imbalance ("residual load") per month
       description: |
-        This chart is a continuation of the flexibility chart "Supply and demand per month". 
-        This chart shows the imbalance between supply and demand for electricity, gas, 
-        hydrogen and heat per month. The imbalance is calculated by subtracting the baseload demand 
-        from the inflexible supply, this is called the "residual load". Negative values mean "surpluses" 
+        This chart is a continuation of the flexibility chart "Supply and demand per month".
+        This chart shows the imbalance between supply and demand for electricity, gas,
+        hydrogen and heat per month. The imbalance is calculated by subtracting the baseload demand
+        from the inflexible supply, this is called the "residual load". Negative values mean "surpluses"
         of energy and positive values "shortages".
         What exactly is meant by base load demand and inflexible supply is explained below:
-        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the 
-        energy demand of flex technologies that balance the system, such as gas/hydrogen 
-        for dispatchable power plants, electricity that enters batteries or gas/hydrogen 
+        <ul> <li> Baseload demand is the end use of the different sectors. This does <b>not</b> include the
+        energy demand of flex technologies that balance the system, such as gas/hydrogen
+        for dispatchable power plants, electricity that enters batteries or gas/hydrogen
         in gas storage facilities. </li>
-        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat/electricity 
-        production by dispatchable sources. Neither does it include electricity from batteries or 
+        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar
+        thermal plants. This does <b>not</b> include the production by flex technologies, such as heat/electricity
+        production by dispatchable sources. Neither does it include electricity from batteries or
         extraction of gas/hydrogen from gas storage facilities.</li> </ul>
-        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
-        If you want a more detailed view, you can also zoom in by clicking on a specific month. 
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
+        If you want a more detailed view, you can also zoom in by clicking on a specific month.
         This will open a new chart showing the "residual load" profiles for the selected month.
     flexibility_hourly_carriers_inflexible_imbalance:
       title: Imbalance ("residual load") load per hour
       description: |
-        This chart is a continuation of the flexibility chart "Imbalance per month". This chart 
+        This chart is a continuation of the flexibility chart "Imbalance per month". This chart
         shows the imbalance between supply and demand for electricity, gas, hydrogen and heat per hour.
-        The imbalance is calculated by subtracting the demand 
-        from the supply, this is called the "residual load". Negative values mean "surpluses" 
-        of energy and positive values "shortages". This way you can gain insight into the 
-        balance of your energy system throughout the year: in which months does an imbalance occur? 
+        The imbalance is calculated by subtracting the demand
+        from the supply, this is called the "residual load". Negative values mean "surpluses"
+        of energy and positive values "shortages". This way you can gain insight into the
+        balance of your energy system throughout the year: in which months does an imbalance occur?
         Which carriers are not in balance?</br></br>
         What exactly is meant by base load demand and inflexible supply is explained below:
-        <ul> <li> Baseload demand is the end use of the different sectors. This does <b> not </b> include the 
-        energy demand of flex technologies that balance the system, such as gas/hydrogen 
-        for dispatchable power plants. Neither does it include electricity that enters batteries or 
-        gas/hydrogen in gas storage facilities. Also, export and curtailment are <b> not </b> covered by 
+        <ul> <li> Baseload demand is the end use of the different sectors. This does <b> not </b> include the
+        energy demand of flex technologies that balance the system, such as gas/hydrogen
+        for dispatchable power plants. Neither does it include electricity that enters batteries or
+        gas/hydrogen in gas storage facilities. Also, export and curtailment are <b> not </b> covered by
         the demand. </li>
-        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar 
-        thermal plants. This does <b> not </b> include the production by flex technologies, such as heat/electricity 
-        production by dispatchable sources. Neither does it include electricity from batteries or 
+        <li> Inflexible supply is the must-run and volatile production, such as wind turbines and solar
+        thermal plants. This does <b> not </b> include the production by flex technologies, such as heat/electricity
+        production by dispatchable sources. Neither does it include electricity from batteries or
         extraction of gas/hydrogen from gas storage facilities.</li>
     flexibility_hourly_all_carriers_cumulative_imbalance:
       title: Need for seasonal storage
       description: |
-        This chart is a continuation of the flexibility chart "Imbalance per month". It is 
+        This chart is a continuation of the flexibility chart "Imbalance per month". It is
         advisable to look at that chart first. An explanation of the lines is shown below:
-        <ul> <li> The line excluding correction in the chart shows the sum of all shortages and surpluses of 
-        electricity, gas, hydrogen and heat throughout the year. When the line is rising, it means 
-        there were net surpluses in that hour and when the line is falling, it means there 
-        were net shortages. If the end point of the chart is higher than the starting point, 
+        <ul> <li> The line excluding correction in the chart shows the sum of all shortages and surpluses of
+        electricity, gas, hydrogen and heat throughout the year. When the line is rising, it means
+        there were net surpluses in that hour and when the line is falling, it means there
+        were net shortages. If the end point of the chart is higher than the starting point,
         this means that energy surpluses outweigh deficits.<br /><br />
-        Surpluses at one point in time can be used to resolve deficits at a later point, either by 
-        storing the surpluses or by converting one carrier into another. By comparing the start and end point of this line, you can see how much 
-        "leeway" you have to use these surpluses in your scenario to make up for the shortages. 
+        Surpluses at one point in time can be used to resolve deficits at a later point, either by
+        storing the surpluses or by converting one carrier into another. By comparing the start and end point of this line, you can see how much
+        "leeway" you have to use these surpluses in your scenario to make up for the shortages.
         So how much conversion/storage losses you can afford to eventually balance the system.</li><br/ >
-        <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated 
-        energy goes somewhere and all required energy comes from somewhere. This gives a rough 
-        estimate of your total required storage capacity to ensure that carriers can be used 
-        at the right time. This total required storage capacity can be read from the highest 
+        <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated
+        energy goes somewhere and all required energy comes from somewhere. This gives a rough
+        estimate of your total required storage capacity to ensure that carriers can be used
+        at the right time. This total required storage capacity can be read from the highest
         value of this line. </li>
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulative imbalance per month
@@ -276,10 +276,11 @@ en:
       title: Electricity supply and demand
       short_description: ''
       description: ''
-    profile_per_sector:
-      title: Hourly demand and production per sector
-      description: "This chart shows the hourly demand or production profiles 
-      for different sectors. You can use the dropdown menu and choose a sector to view 
-      that particular profile. It is also possible to overwrite a profile using your 
-      own hourly demand or production curves. For more information on this you can go to 
-      the ETM documentation"
+    user_profiles:
+      title: Modifiable profiles
+      description: |
+        This chart shows the hourly demand and production profiles
+        that you can modify in the <a href="/scenario/flexibility/curve_upload/upload-curves">
+        Flexibility → Modify profiles</a> section. You can use the dropdown menu
+        to select a particular profile. If no custom profiles have been uploaded, the chart
+        shows the default profiles used by the ETM.

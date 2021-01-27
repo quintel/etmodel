@@ -75,7 +75,7 @@ nl:
         type: Capaciteitsprofiel
         help: |
           Je kunt aanbodprofielen aanpassen door een CSV-bestand met een eigen profiel te uploaden.
-          Dit bestand moet uit 8760 rijen bestaan (één voor elk uur per jaar). Het profiel optellen
+          Dit bestand moet uit 8760 rijen bestaan (één voor elk uur per jaar). Het profiel moet optellen
           tot het gewenste jaarlijkse aantal vollasturen van de productietechnologie. Dit betekent
           dat het profiel voor elk uur een waarde tussen de 0 en 1 bevat die aangeeft welke fractie
           van het piekvermogen in dat uur gebruikt wordt.

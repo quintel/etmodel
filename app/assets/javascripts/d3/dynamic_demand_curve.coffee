@@ -108,14 +108,6 @@ D3.dynamic_demand_curve =
 
       legendSeries
 
-    legend_click: (e) ->
-      serie = @series.find((a) -> (a.id == e.attributes.id))
-
-      if serie.attributes.is_target_line
-        serie.set('skip', !serie.get('skip'))
-
-        @refresh()
-
     initialDraw: (xScale, yScale, area, line) ->
       @svg.selectAll('g.serie')
         .data(@stackedData)

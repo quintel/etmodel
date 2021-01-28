@@ -50,9 +50,14 @@ gem 'dynamic_form'
 
 gem 'jquery-etmodel-rails', ref: '8a64146', github: 'quintel/etplugin'
 
+gem 'inky-rb', require: 'inky'
+gem 'premailer-rails'
+
 gem 'ymodel', path: 'lib/ymodel/'
 
 group :development do
+  gem 'letter_opener'
+
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

@@ -14,6 +14,7 @@
   "rules":  {
     "curly": ["error", "all"],
     "max-len": ["error", {"code": 100, "ignoreUrls": true}],
-    "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}]
+    "prettier/prettier": ["error", {"printWidth": 100, "singleQuote": true}],
+    "unicorn/prefer-reflect-apply": 0
   }
 }

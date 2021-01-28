@@ -37,6 +37,29 @@ describe CreateAPIScenario, type: :service do
     end
   end
 
+  context 'when creating an unprotected scenario' do
+    let(:scenario) { FactoryBot.build(:api_scenario, attributes) }
+
+    let(:attributes) do
+      super().merge(protected: false)
+    end
+
+    it 'returns a ServiceResult' do
+      expect(result).to be_a(ServiceResult)
+    end
+
+    it 'is successful' do
+      expect(result).to be_successful
+    end
+
+    it 'creates an unprotected scenario' do
+      result
+
+      expect(Api::Scenario).to have_received(:create)
+        .with(scenario: { scenario: hash_including(protected: false) })
+    end
+  end
+
   context 'when the response is unsuccessful' do
     let(:scenario) do
       FactoryBot.build(:api_scenario, attributes).tap do |scen|

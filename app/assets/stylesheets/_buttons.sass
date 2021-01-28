@@ -27,11 +27,6 @@ a.button, input.button, button.button, input.btn
   font-size: 14px
   line-height: 15px
 
-  span
-    font-size: 16px
-    line-height: 13px
-    margin: -1px 2px 0px 0
-    vertical-align: middle
   .fa
     font-size: 14px
   .fa-signal
@@ -41,6 +36,10 @@ a.button, input.button, button.button, input.btn
     box-sizing: border-box
     display: block
     width: 100%
+
+  &[disabled]
+    cursor: default
+    opacity: 0.6
 
 // Small buttons.
 
@@ -60,10 +59,6 @@ input.button.small, button.button.small, input.btn.small
 a.button.small, input.button.small, button.button.small, input.btn.small
   font-size: 11px
 
-  span
-    // display: none
-    margin: -3px 2px -1px 0
-
 // Buttons in page headers.
 
 h2 a.button, h2 input.button, h2 button.button
@@ -74,8 +69,8 @@ h2 a.button, h2 input.button, h2 button.button
 
 a.button, input.button, button.button, input.btn
   background: #fafafa
-  border-bottom-color: rgba(0, 0, 0, 0.18)
-  border: 1px solid rgba(0, 0, 0, 0.15)
+  border-bottom-color: rgba(0, 0, 0, 0.28)
+  border: 1px solid rgba(0, 0, 0, 0.2)
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05)
   color: #444
   transition: all 0.15s ease-in-out
@@ -93,6 +88,9 @@ a.button, input.button, button.button, input.btn
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05)
     border-color: rgba(0, 0, 0, 0.18)
 
+  &:not(:focus-visible)
+    outline: none
+
   &:focus:focus-visible
     box-shadow: 0 0 0 3px #e8e8e8
     border-color: #8ebeea
@@ -106,6 +104,9 @@ a.button, input.button, button.button, input.btn
     color: white
     font-weight: 600
     text-shadow: 0 1px 1px #3f7ab7
+
+    &[disabled]
+      background: linear-gradient(#7ab2eb, #4e98e4) !important
 
     &:hover
       background: linear-gradient(#72a9de, #4b90d8)

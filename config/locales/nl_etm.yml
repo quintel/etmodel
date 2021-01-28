@@ -185,8 +185,12 @@ nl:
     save_first: "Wil je je huidige scenario eerst opslaan?"
     saved: "Opgeslagen Scenario's"
     title: "Titel"
-    warning: "WAARSCHUWING: Dit scenario is gecreëerd in een oudere versie van het ETM. Hierdoor kunnen sommige slider-instellingen afwijken van hun oorspronkelijke waarden. Verzeker u ervan dat het scenario nog steeds voldoet aan de doelstellingen."
-    preset_warning: "WAARSCHUWING: Dit scenario is gecreëerd in een oudere versie van het ETM. Hierdoor kunnen sommige slider-instellingen afwijken van hun oorspronkelijke waarden. Quintel heeft getracht te verzekeren dat het scenario nog steeds voldoet aan de intenties van de auteur."
+    warning:
+      message: |
+        This scenario was last updated on %{last_updated}, in an earlier version of the model. The
+        most recent release of the model was on %{release_date}. Some of the slider settings and
+        outcomes may therefore deviate from their original values.
+      view_updates: View recent model updates
     created_by: "Gemaakt door"
     other: "Overig&hellip;"
     actueel: "Actueel"

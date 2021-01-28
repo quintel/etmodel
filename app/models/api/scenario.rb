@@ -32,12 +32,16 @@ class Api::Scenario < ActiveResource::Base
   end
 
   # The JSON request returns a string. Let's make it a DateTime object
-  def parsed_created_at
-    DateTime.parse(created_at) if created_at
+  def created_at
+    Time.utc(attributes[:created_at]) if attributes[:created_at]
+  end
+
+  def updated_at
+    Time.utc(attributes[:updated_at])
   end
 
   def days_old
-    (Time.now - parsed_created_at) / 60 / 60 / 24
+    (Time.now.utc - updated_at) / 60 / 60 / 24
   end
 
   # Returns an HTTParty::Reponse object with a hash of the scenario user_values

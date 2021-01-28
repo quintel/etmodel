@@ -38,7 +38,12 @@ const saveAsPNG = (holder: HTMLDivElement): Promise<HTMLCanvasElement> => {
 
   clone.querySelector('header').append(buildScenarioInfo());
 
-  const promise = html2canvas(clone, { scale: 2, scrollX: 0, scrollY: -window.scrollY });
+  const promise = html2canvas(clone, {
+    scale: 2,
+    scrollX: 0,
+    scrollX: -window.scrollX,
+    scrollY: -window.scrollY,
+  });
 
   promise.then((canvas) => {
     clone.remove();

@@ -40,7 +40,6 @@ const saveAsPNG = (holder: HTMLDivElement): Promise<HTMLCanvasElement> => {
 
   const promise = html2canvas(clone, {
     scale: 2,
-    scrollX: 0,
     scrollX: -window.scrollX,
     scrollY: -window.scrollY,
   });

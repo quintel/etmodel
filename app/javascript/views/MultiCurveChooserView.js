@@ -121,6 +121,7 @@ class MultiCurveChooserView extends Backbone.View {
       el: container,
       model: this.currentCurve(),
       scenarios: this.currentCurve().get('type') === 'price' ? this.options.scenarios : [],
+      showHelp: this.activeSubview && this.activeSubview.showHelp,
     });
 
     this.activeSubview.render();

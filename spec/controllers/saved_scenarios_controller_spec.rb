@@ -47,6 +47,12 @@ describe SavedScenariosController, vcr: true do
           end.not_to change{ session[:setting].active_saved_scenario_id }
         end
 
+        it 'sets the scenario title in the settings' do
+          expect { get(:load, params: { id: admin_scenario.id }) }
+            .to change { session[:setting].active_scenario_title }
+            .from(nil).to(admin_scenario.title)
+        end
+
         it "redirects to play path" do
           get :load, params: { id: admin_scenario.id }
           expect(response).to redirect_to play_path

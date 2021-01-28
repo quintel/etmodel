@@ -18,9 +18,12 @@
   }
 
   function loadSaveScenarioForm(event) {
+    var url = event.target.href;
+    var paramSep = url.includes('?') ? '&' : '?';
+
     $.fancybox.open({
       autoSize: false,
-      href: event.target.href + '?inline=true',
+      href: url + paramSep + 'inline=true',
       type: 'ajax',
       height: 480,
       width: 530,
@@ -31,6 +34,7 @@
         var wrapperEl = titleField.closest('div.input');
 
         titleField.focus();
+        titleField.select();
 
         form.addEventListener('submit', function (event) {
           if (titleField.value.trim().length === 0) {

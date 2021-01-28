@@ -46,7 +46,10 @@ class SavedScenariosController < ApplicationController
   #
   # GET /scenarios/:scenario_id/save
   def new
-    @saved_scenario = SavedScenario.new(scenario_id: params.require(:scenario_id))
+    @saved_scenario = SavedScenario.new(
+      scenario_id: params.require(:scenario_id),
+      title: params[:title].presence
+    )
 
     if params[:inline]
       render 'new', layout: false

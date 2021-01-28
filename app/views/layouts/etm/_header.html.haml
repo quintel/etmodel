@@ -2,10 +2,13 @@
   %a.logo{ href: root_path }
     %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
   %ul.user-settings
+    - if APP_CONFIG[:feedback_email]
+      = render partial: 'layouts/etm/feedback_nav_item'
+
     %li.locale.nav-item
       .dropdown
         %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
-          %span.fa.fa-comment
+          %span.fa.fa-globe
           = t('header.current_language')
           %span.fa.fa-caret-down
         %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'locale-button' }

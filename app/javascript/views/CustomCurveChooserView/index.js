@@ -26,23 +26,13 @@ export function renderCSVActions(opts, t, userScenarios) {
 
   if (opts.showUpload) {
     actionsList.append(
-      $('<li class="upload" />')
-        .append($('<button class="trigger" />').text(t('upload')))
-        .append(
-          opts.help
-            ? $('<button class="help-button" />').append(
-                $('<span class="fa fa-question-circle" />')
-              )
-            : undefined
-        )
+      $('<li class="upload" />').append($('<button class="trigger" />').text(t('upload')))
     );
   }
 
   if (opts.showRemove) {
     actionsList.append(
-      $('<li class="remove" />').append(
-        $('<button class="trigger" />').addClass('trigger').text(t('remove'))
-      )
+      $('<li class="remove" />').append($('<button class="trigger" />').text(t('remove')))
     );
   }
 
@@ -187,7 +177,15 @@ export function renderCSVInfo(curveData, userScenarios, t, options) {
   }
 
   details.append($('<span class="name" />').text(name));
-  details.append(formatCurveStats(curveData.stats, t));
+  details.append(
+    t
+      ? $('<span class="type" />').append(
+          $('<button class="trigger-help" />')
+            .text(t('type'))
+            .append($('<span class="fa fa-question-circle" />'))
+        )
+      : undefined
+  );
 
   if (options.isFromScenario) {
     details.append(formatCurveScenarioInfo(curveData.source_scenario, t));
@@ -197,11 +195,13 @@ export function renderCSVInfo(curveData, userScenarios, t, options) {
   main.append(details);
 
   el.append(main);
-  el.append(renderCSVActions(opts, t, userScenarios));
 
   if (options.help) {
     el.append($('<div class="help" />').append($('<div class="inner" />').text(options.help)));
   }
+
+  el.append(formatCurveStats(curveData.stats, t));
+  el.append(renderCSVActions(opts, t, userScenarios));
 
   return el;
 }
@@ -294,7 +294,7 @@ class CustomCurveChooserView extends Backbone.View {
     return {
       'click .remove .trigger': 'removeCurve',
       'click .upload .trigger': 'selectCurve',
-      'click .upload .help-button': 'showHideHelp',
+      'click .trigger-help': 'showHideHelp',
       'click .use-scenario': 'useScenarioCurve',
       'change form input[type=file]': 'fileDidChange',
     };
@@ -318,6 +318,7 @@ class CustomCurveChooserView extends Backbone.View {
     super(options);
 
     this.userScenarios = this.options.scenarios;
+    this.showHelp = !!this.options.showHelp;
     this.apiURL = App.scenario.url_path() + '/custom_curves/' + options.model.get('key');
   }
 
@@ -347,6 +348,9 @@ class CustomCurveChooserView extends Backbone.View {
 
     this.$el.append(renderUploadForm(this.apiURL));
 
+    // Show or hide the help box depending on state.
+    this.$el.find('.help').toggle(this.showHelp);
+
     return this.el;
   }
 
@@ -354,9 +358,7 @@ class CustomCurveChooserView extends Backbone.View {
     this.$el.empty();
 
     this.$el.append(
-      renderCSVInfo({ name: this.t('loading') }, undefined, this.t, {
-        icon: 'loading',
-      })
+      renderCSVInfo({ name: this.t('loading') }, undefined, this.t, { icon: 'loading' })
     );
   }
 
@@ -366,10 +368,12 @@ class CustomCurveChooserView extends Backbone.View {
     this.$el.append(
       renderCSVInfo({ name: this.t('uploading') + '...' }, undefined, this.t, {
         icon: 'loading',
+        help: this.t('help', { defaults: [{ message: false }] }),
       })
     );
 
-    this.$('.details').append($('<progress value="0" max="100" />'));
+    this.$el.find('.details .name').append($('<span class="progress" />').text('0%'));
+    this.$el.find('.help').toggle(this.showHelp);
   }
 
   renderError(errors) {
@@ -430,6 +434,8 @@ class CustomCurveChooserView extends Backbone.View {
 
   showHideHelp(event) {
     event.preventDefault();
+
+    this.showHelp = !this.showHelp;
     this.$el.find('.help').slideToggle(150);
   }
 
@@ -535,24 +541,25 @@ class CustomCurveChooserView extends Backbone.View {
       // Custom XMLHttpRequest
       xhr: function () {
         var myXhr = $.ajaxSettings.xhr();
+
         if (myXhr.upload) {
           // For handling the progress of the upload
           myXhr.upload.addEventListener(
             'progress',
             function (e) {
               if (e.lengthComputable) {
-                self.$('progress').attr({
-                  value: e.loaded,
-                  max: e.total,
-                });
+                self.$el
+                  .find('.details .progress')
+                  .text(`${Math.round((e.loaded / e.total) * 100)}%`);
               }
             },
             false
           );
         }
+
         return myXhr;
       },
-    }).success(function (data) {
+    }).success(function () {
       App.call_api();
     });
 

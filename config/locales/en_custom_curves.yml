@@ -11,6 +11,7 @@ en:
     on_date: "on %{date}"
     remove: Revert to default curve
     select_scenario: Select a scenario...
+    type: Curve
     upload: Upload a custom curve
     upload_from_scenario: Or from a scenario
     uploaded: uploaded
@@ -71,6 +72,7 @@ en:
     types:
       capacity_profile:
         default: Default profile
+        type: Capacity profile
         help: |
           You can use your own supply profiles by uploading a CSV file. This file should contain
           8760 rows (one for each hour per year). The sum of the profile should equal the total
@@ -79,6 +81,7 @@ en:
           used in that hour.
       price:
         default: Default price curve
+        type: Price curve
         help: |
           By default, it is assumed that the price is constant throughout the year.
           You can change this by uploading a CSV file, specifying the price of imported
@@ -95,6 +98,7 @@ en:
         imported_from: From scenario
       temperature:
         default: Default temperature curve
+        type: Temperature curve
         help: |
           You can change the temperature curve by uploading a CSV file, specifying the outdoor air temperature for
           every hour of the year. This file should contain 8760 rows (one for each hour per year)
@@ -102,7 +106,8 @@ en:
         value: "%{value}°C"
       profile:
         default: Default profile
+        type: Profile
         help: |
-          You can use your own demand profiles by uploading a CSV file. This file should contain
-          8760 rows (one for each hour per year). The unit used in the CSV file does not matter: the
-          ETM will use the shape of your profile (the relative distribution of demand over time).
+          You can use your own profiles by uploading a CSV file. This file should contain 8760 rows
+          (one for each hour per year). The unit used in the CSV file does not matter: the ETM will
+          use the shape of your profile (the relative distribution of demand over time).

@@ -48,14 +48,16 @@ gem 'dalli'
 
 gem 'dynamic_form'
 
-# jquery-etmodel-rails contains the jquery.etmodel.js plugin
-# When working on the plugin, use :path => '/path/to/etplugin'
-# gem "jquery-etmodel-rails", :path => "~/Sites/etplugin"
-gem 'jquery-etmodel-rails', ref: 'c668ad4', github: 'quintel/etplugin'
+gem 'jquery-etmodel-rails', ref: '8a64146', github: 'quintel/etplugin'
+
+gem 'inky-rb', require: 'inky'
+gem 'premailer-rails'
 
 gem 'ymodel', path: 'lib/ymodel/'
 
 group :development do
+  gem 'letter_opener'
+
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

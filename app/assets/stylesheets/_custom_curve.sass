@@ -1,13 +1,27 @@
+$curve-upload-color: #7d8698
+
 .custom-curve
   background: #f4f8fb
   border: 1px solid #d5dce4
   border-radius: 5px
   margin-bottom: 1em
 
+  button
+    background: none
+    border: none
+    color: #1982d1
+    cursor: pointer
+    font-size: 12px
+    padding: 0.25rem 0.5rem
+    margin: -0.25rem -0.5rem
+    &:focus:not(:focus-visible)
+      outline: none
+    &:hover
+      color: darken(#1982d1, 23%)
+
   .main
     display: flex
     align-items: center
-    justify-content: center
 
   .file, .details, .actions
     display: block
@@ -17,8 +31,9 @@
     background-size: 32px
     background-repeat: no-repeat
     background-position: 15px 15px
-    padding: 15px
     min-height: 30px
+    min-width: 30px
+    padding: 15px
     width: 30px
 
     &.csv, &.csv-light
@@ -34,63 +49,89 @@
       background-image: asset-url("charts/loading.gif")
 
   .details
-    flex: 1
-    padding: 15px 0
+    display: flex
+    flex-grow: 1
+    justify-content: space-between
     margin-right: 15px
-    overflow: hidden
+    padding: 15px 0
 
-    .name, dl
+    .name
       display: block
     .name
       font-size: 14px
       font-weight: 600
-      overflow: hidden
-      text-overflow: ellipsis
-      white-space: nowrap
-    .help, dl
-      color: #7d8698
+    .help, .type, dl
+      color: $curve-upload-color
       font-size: 12px
-      margin: 5px 0 0
-    .help
-      display: block
-    dl
-      overflow: hidden
-    dt, dd
-      display: block
-      float: left
-      margin: 0
-    dt
-      width: 30%
-    dd
-      width: 70%
+    .type
+      margin-left: 0.5rem
+      white-space: nowrap
+      button
+        color: $curve-upload-color
+        &:hover
+          color: darken($curve-upload-color, 20%)
+      .fa
+        font-size: 15px
+        margin: -2px 0 0 3px
+        vertical-align: middle
+    .progress
+      margin-left: 0.25rem
 
-    progress
-      display: block
-      margin-top: 3px
-      width: 100%
+  dl
+    margin: -10px 15px 20px 60px
+    overflow: hidden
+  dt, dd
+    display: block
+    float: left
+    margin: 0
+  dt
+    width: 30%
+  dd
+    width: 70%
 
   .help
     display: none
+    transform: translate(30px, -17px)
+    margin: 0 15px 0 30px
+
     .inner
-      background-size: 32px
       background: #fffdf1 image-url("icons/idea.svg") 15px 20px no-repeat
-      background-size: 32px
-      border-radius: 0 0 5px 5px
-      border-top: 1px solid #d5dce4
+      background-size: 24px
+      border-bottom-color: #d2d0c2
+      border-radius: 5px
+      border: 1px solid #d6d3c3
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06)
       color: #86857b
-      padding-top: 1rem
-      padding: 1rem 30px 15px 60px
+      // A margin of 7px is required so the :before arrow is not cut off when animating. The extra
+      // margin is removed by the .help transform.
+      margin: 7px 0 3px 0
+      padding: 1rem 30px 15px 50px
+      position: relative
+
+      &:before
+        background: #fffdf1
+        box-shadow: -1px -1px 0 #d2ceb8
+        content: " "
+        display: block
+        height: 10px
+        position: absolute
+        right: 31px
+        top: -4px
+        transform: rotate(45deg)
+        width: 10px
+
+  .actions, dl
+    color: $curve-upload-color
+    font-size: 12px
 
   .actions
     border-top: 1px solid #d5dce4
-    color: #7d8698
-    font-size: 12px
-    margin: -7px 15px 0 60px
+    margin: -10px 15px 0 60px
     padding: 10px 0 15px
     ul
       line-height: 1.3
       list-style: none
-      margin: 0
+      margin: 0.25rem 0 0
       overflow: hidden
       padding: 0
 
@@ -103,30 +144,15 @@
       li + li
         border-left: 1px solid #d5dce4
 
-    .upload button, .remove button
-      background: none
-      border: none
-      cursor: pointer
-      font-size: 12px
-      padding: 0.25rem 0.5rem
-      margin: -0.25rem -0.5rem
-      &:focus:not(:focus-visible)
-        outline: none
-
-    .upload button.trigger
-      color: #1982d1
-      &:hover
-        color: darken(#1982d1, 23%)
-
     .upload button.help-button
-      color: #7d8698
+      color: $curve-upload-color
       font-size: 15px
       margin-left: -0.25rem
       .fa
         margin-top: -2px
         vertical-align: middle
       &:hover
-        color: darken(#7d8698, 20%)
+        color: darken($curve-upload-color, 20%)
 
     .remove button.trigger
       color: #c3685e
@@ -195,7 +221,6 @@
   .loading
     background-size: 28px
     background: asset-url("charts/loading.gif") center center no-repeat
-    height: 58px
   .select-curve
     background: white
     border-bottom-color: #bec8d4

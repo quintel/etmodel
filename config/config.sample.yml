@@ -48,6 +48,10 @@ development: &DEV
     # cutoff date is reached the banner will be hidden.
     whats_new_cutoff: 2019-10-07
 
+    # E-mail address to which feedback should be sent. No value results in the
+    # feature being disabled.
+    # feedback_email:
+
     # When integrating with Mailchimp to send newsletters to users, the API key
     # and URL of the list must be configured. Check the Mailchimp documentation
     # for information on how to get an API key.

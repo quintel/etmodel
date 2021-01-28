@@ -4,8 +4,8 @@
 # protected.
 CreateAPIScenario = lambda do |attributes = {}|
   attributes = attributes
-    .slice(:area_code, :end_year, :scenario_id)
-    .merge(protected: true, source: 'ETM')
+    .slice(:area_code, :end_year, :scenario_id, :protected)
+    .reverse_merge(protected: true, source: 'ETM')
 
   scenario = Api::Scenario.create(scenario: { scenario: attributes })
 

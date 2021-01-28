@@ -161,13 +161,6 @@ class @AppView extends Backbone.View
   handle_ajax_error: (jqXHR, textStatus, error) ->
     console.log("Something went wrong: " + textStatus)
 
-    if textStatus == 'timeout'
-      r = confirm "Your internet connection seems to be slow. The ETM is
-      still waiting to receive an update from the server. Press OK to reload
-      the page"
-      location.reload(true) if (r)
-      return
-
     if globals.env == 'development' ||
         (globals.env == 'staging' && globals.debug_js)
       body = $('body')

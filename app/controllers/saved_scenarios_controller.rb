@@ -89,17 +89,14 @@ class SavedScenariosController < ApplicationController
 
     # Setting an active_saved_scenario enables saving a scenario. We only
     # do this for the owner of a scenario.
-    Current.setting = if owned_saved_scenario?
+    Current.setting =
       Setting.load_from_scenario(
         @scenario,
         active_saved_scenario: {
-          id: @saved_scenario.id,
+          id: owned_saved_scenario? ? @saved_scenario.id : nil,
           title: @saved_scenario.localized_title(I18n.locale)
         }
       )
-    else
-      Setting.load_from_scenario(@scenario)
-    end
 
     new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })
     Current.setting.api_session_id = new_scenario.id

@@ -8,9 +8,15 @@ nl:
 
   time:
     formats:
+      short: "%-d %b %H:%M"
+      long: "%B %-d %Y, %H:%M"
       time: "%H:%M"
       only_second: "%S"
       date_only: "%d-%m-%Y"
+  date:
+    formats:
+      short: "%-d %b %H:%M"
+      long: "%B %-d %Y, %H:%M"
 
   errors:
     format: "%{attribute} %{message}"

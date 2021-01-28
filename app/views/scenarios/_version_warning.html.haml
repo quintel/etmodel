@@ -1,0 +1,5 @@
+- if !ETModel::Version.prerelease? && scenario.updated_at && scenario.updated_at < ETModel::Version::DATE
+  .warning
+    = previous_version_scenario_warning(scenario, ETModel::Version::DATE)
+    .links
+      = link_to('View recent model updates →', whats_new_path)

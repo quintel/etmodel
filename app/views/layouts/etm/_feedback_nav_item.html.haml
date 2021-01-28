@@ -10,7 +10,7 @@
     %div.dropdown-menu.dropdown-menu-right.feedback-menu{ 'aria-labelledby': 'locale-button' }
       %form{ action: feedback_path, method: 'post' }
         %input.do-not-fill{ name: 'name', type: 'text' }
-        %textarea{ name: 'text', placeholder: 'Help us improve this page' }
+        %textarea{ name: 'text', placeholder: t('feedback.placeholder') }
         .commit
           .failure
             = t('feedback.failure', contact_us: contact_us).html_safe

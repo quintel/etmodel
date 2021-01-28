@@ -196,8 +196,44 @@ en:
           \ data-chart-key=\"solar_pv_curtailment\"
         >solar pv curtailment table</a>
         shows the effect of curtailment on the annual electricity production."
+    flexibility_overview_introduction:
+      title: What is flexibility?
+      short_descriptioN:
+      description: |
+        Natural patterns like seasons (yearly), the variations in weather (weekly), day 
+        and night and our rhythm of waking up, going to work, coming home, etc. cause 
+        both the need for energy and the availability of energy to fluctuate. Flexibility 
+        is about balancing energy supply and demand on all these timescales. </br></br>
+        For longer timescales, the amount or <i>volume</i> of energy supplied or used is more 
+        interesting. For shorter timescales, the ability to produce or use a certain amount 
+        of energy is more interesting. This is called <i>capacity</i>. </br></br>
+        Some forms of flexibility are more suite to process large (fluctuations in) volumes 
+        of energy, others are more suitable large fluctuations in capacity. Only some are 
+        suited to both. Some examples are: </br>
+        <ul> <i>Suitable for large (fluctuations in) volume </i>
+        <ul><li> Import/export of gas/hydrogen </li>
+        <li> Power-to-gas: hydrogen production from excess electricity </li>
+        <li> Storage of gas/hydrogen </li>
+        <li> Seasonal storage of heat </li>
+        <li> ... </li>
+        </li>
+        </ul>
+        <i>Suitable for large (fluctuations in) capacity </i>
+        <ul><li> Storage in lithium-ion batteries </li>
+        <li> ... </li>
+        </ul>
+        <i>Suitable for both volume and capacity </i>
+        <ul><li> Import/export of electricity </li>
+        <li> Power-to-heat: heat production from excess electricity (with heat storage) </li>
+        <li> Curtailment of renewable electricity production </li>
+        <li> ... </li>
+        </ul> </ul> </br>
+        In this section, you can see how supply and demand compare on various timescales. 
+        For these comparisons we deliberately do not show the contributions of flexibility 
+        technologies such as those mentioned above. This way, you can see how large the 
+        mismatch between supply and demand, and therefore, the need for flexibility is.
     flexibility_overview_inflexible_demand_supply_sum:
-      title: Balance of energy volumes
+      title: Monthly supply and demand of energy
       short_description:
       description: |
         When balancing supply and demand, it is important to not only look at the annual level, but
@@ -218,21 +254,26 @@ en:
         If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month.
         This will open a new chart showing the hourly values for that carrier in the selected month.
     flexibility_overview_inflexible_demand_supply_max:
-      title: Peak capacities throughout the year
+      title: "The need for flexibility: capacity"
       short_description:
       description: |
-        This chart shows the maximum value for supply and demand of electricity, gas, hydrogen and heat in each month.
-        Only the inflexible supply and the baseload demand are shown. </br> </br>
-        This chart gives you insight into the amount of flexible capacity that is needed to balance the energy
-        system in your scenario. If you want to know more about the definitions of inflexible supply and baseload demand, you can click on the chart info.
-        At the same time, these maxima give an indication of the network capacity needed for
-        each energy carrier. You can explore this in more detail for the electricity network in the <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">
-        Net load</a> section. </br> </br>
-        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
-        If you want to view when peaks occur within a month, you can also zoom in on an energy carrier by clicking
-        on that carrier in a specific month. This will open a new chart showing the hourly values for that carrier in the selected month.
+        This chart shows the monthly maximum capacity for supply and demand of electricity, 
+        gas, hydrogen and heat. As with the above charts that focus on volume, only the 
+        inflexible supply and the baseload demand are shown. </br></br>
+        By clicking on the labels of the chart you can determine which energy carriers you 
+        want to show or hide. </br></br>
+        This chart gives an indication of the capacity needed to deal with imbalance for 
+        each energy carrier. This capacity can be realized in the form of transport 
+        infrastructure or other flexibility options. If you want to view when peaks occur 
+        within a month, you can also zoom in on an energy carrier by clicking on that carrier 
+        in a specific month. This will open a new chart showing the hourly values for that 
+        carrier in the selected month. You can explore the impact on the electricity in the 
+        <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">
+        Net load</a> section. More information about the definitions of inflexible supply 
+        and baseload demand, can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility/">
+        documentation</a>.
     flexibility_overview_inflexible_imbalance:
-      title: Imbalance of energy volumes
+      title: Imbalance of supply and demand
       short_description:
       description: |
         This chart shows the imbalance between supply and demand for electricity, gas,
@@ -245,25 +286,31 @@ en:
         If you want a more detailed view, you can also zoom in by clicking on a specific month.
         This will open a new chart showing the "residual load" profiles for the selected month.
     flexibility_overview_cumulative_imbalance:
-      title: Seasonal balance of energy volumes
+      title: "The need for flexibility: volume"
       short_description:
       description: |
-        This chart shows the following two lines:
-        <ul> <li> The line exluding correction in the chart shows the sum of all shortages and surpluses of
-        electricity, gas, hydrogen and heat throughout the year. When the line is rising, it means
-        there were net surpluses in that hour and when the line is falling, it means there
-        were net shortages. If the end point of the chart is higher than the starting point,
-        this means that energy surpluses outweigh deficits.<br /><br />
-        Surpluses at one point in time can be used to resolve deficits at a later point, either by
-        storing the surpluses or by converting one carrier into another.
-        By comparing the start and end point of this line, you can see how much
-        "leeway" you have to use these surpluses in your scenario to make up for the shortages.
-        So how much conversion/storage losses you can afford to eventually balance the system.</li><br/>
-        <li> For the corrected line it is assumed that the energy system is already in balance at an annual level: that all generated
-        energy goes somewhere and all required energy comes from somewhere. This gives a rough
-        estimate of your total required storage capacity to ensure that carriers can be used
-        at the right time. This total required storage capacity can be read from the highest
-        value of this line. </li>
+        The chart gives a rough estimate for how much long-term flexibility (storage volume) 
+        is needed in your scenario. The blue (“uncorrected”) line in the chart is created by 
+        summing up the hourly imbalance for all relevant carriers at each hour. This curve is 
+        indicative because we do not take any losses of storage or conversion into account. </br></br>
+        This curve gives a general impression of the extent to which the energy system is in 
+        balance over the year. In periods where demand exceeds supply (cold periods with no 
+        wind and little sunshine), the resulting curve dips as ‘storage’ gets depleted. In 
+        periods where supply is generally higher than demand (like sunny summer months), the 
+        curve rises again. </br></br>
+        By comparing the start and end point of this line, you can see whether the system is 
+        in surplus or deficit on an annual basis. The absolute difference shows how much room 
+        there is for surplus storage or surplus conversion losses to make up for any shortages, 
+        or how large the shortage is that needs to be filled with additional energy production 
+        or imports. </br></br>
+        The red (“corrected”) line shows the fluctuations in required storage volume if supply 
+        and demand would balance out over the year. This gives a rough estimate of your total 
+        required storage capacity to ensure that carriers can be used at the right time. This 
+        total required storage capacity can be read from the highest value of this line. </br></br>
+        This line is obtained by subtracting the annual surplus/deficit from the blue line. 
+        Because the cumulative nature of the curve, the correction of first hour is added to 
+        the correction of the second hour etc. until the last hour is corrected to coincide 
+        with the level of the first hour.
     flexibility_security_of_supply_electricity:
       title: Electricity
       short_description:

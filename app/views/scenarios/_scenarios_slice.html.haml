@@ -10,7 +10,7 @@
             = ss.end_year
           %span.author
             = t('scenario.by')
-            = ss.user.name
+            = ss.user&.name
           - if ss.featured?
             %span.featured.tooltip{ title: t('scenario.featured_scenario')} &#9733;
 
@@ -27,7 +27,7 @@
             (#{t('scenario.area_not_exists')})
           %span.author
             = t('scenario.by')
-            = ss.user.name
+            = ss.user&.name
           - if ss.featured?
             %span.featured{ title: t('scenario.featured_scenario')} &#9733;
 %tr#scenario_paginator

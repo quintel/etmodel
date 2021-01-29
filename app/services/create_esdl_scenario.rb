@@ -6,8 +6,9 @@
 class CreateEsdlScenario
   include Service
 
-  def initialize(esdl_file)
+  def initialize(esdl_file, filename)
     @esdl_file = esdl_file
+    @filename = filename
   end
 
   def call
@@ -22,7 +23,11 @@ class CreateEsdlScenario
     HTTParty.public_send(
       :post,
       api_url,
-      { body: { energysystem: @esdl_file, environment: environment } }
+      { body: {
+        energy_system: @esdl_file,
+        energy_system_title: @filename,
+        environment: environment
+      } }
     )
   end
 
@@ -45,6 +50,6 @@ class CreateEsdlScenario
   end
 
   def api_url
-    APP_CONFIG[:esdl_api_url]
+    APP_CONFIG[:esdl_api_url] + 'ImportESDL/'
   end
 end

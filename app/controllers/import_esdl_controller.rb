@@ -17,12 +17,13 @@ class ImportEsdlController < ApplicationController
   def create
     redirect_to import_esdl_path and return if esdl_file.blank?
 
-    result = CreateEsdlScenario.call(esdl_file)
+    # TODO: Should set filename as scenario title?
+    result = CreateEsdlScenario.call(esdl_file, @filename)
 
     if result.failure?
       redirect_to import_esdl_path, notice: result.errors.join(', ')
     else
-      redirect_to load_scenario_path(id: result.value['scenario_id'])
+      redirect_to load_scenario_path(id: result.value)
     end
   end
 
@@ -36,12 +37,15 @@ class ImportEsdlController < ApplicationController
     @esdl_id ||= current_user&.esdl_suite_id
   end
 
+  # TODO: This @filename stuff is very ugly
   def esdl_file
     @esdl_file ||=
       if params[:mondaine_drive_path].present?
+        @filename = params[:mondaine_drive_path].split('/').last
         result = FetchFromEsdlSuite.call(esdl_id, params[:mondaine_drive_path])
         result.successful? ? result.value : ''
       elsif params[:esdl_file].present?
+        @filename = params[:esdl_file].original_filename
         params[:esdl_file].read
       else
         ''

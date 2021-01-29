@@ -2,4 +2,4 @@
   .warning
     = previous_version_scenario_warning(scenario, ETModel::Version::DATE)
     .links
-      = link_to('View recent model updates →', whats_new_path)
+      = link_to("#{t('scenario.warning.view_updates')} →", whats_new_path)

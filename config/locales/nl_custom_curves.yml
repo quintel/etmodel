@@ -24,14 +24,14 @@ nl:
       not_a_curve: Profiel moet een CSV-bestand zijn met 8760 getallen (één getal voor elk uur in een jaar)
       wrong_length: Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)
     groups:
-      heat_production: Warmteproductie
-      electricity_production: Elektriciteitsproductie
-      buildings: Gebouwen
-      industry_electricity: Industrie elektriciteit
-      industry_heat: Industrie warmte
-      interconnectors: Interconnectoren
-      transport: Transport
-      gas_import_export: Import/export gassen
+      heat_production: "Aanbod: Warmte"
+      electricity_production: "Aanbod: Elektriciteit"
+      buildings: "Vraag: Gebouwen"
+      industry_electricity: "Vraag: Industrie elektriciteit"
+      industry_heat: "Vraag: Industrie warmte"
+      interconnectors: "Import/export: Interconnectoren"
+      transport: "Vraag: Transport"
+      gas_import_export: "Import/export: Gassen"
       weather: Weerdata
     names:
       interconnector_1_price: Interconnector 1 prijscurve

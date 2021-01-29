@@ -22,6 +22,7 @@ nl:
       file_too_large: Profiel mag niet meer dan 1MB groot zijn
       illegal_value: Profiel mag alleen numerieke waarden bevatten
       not_a_curve: Profiel moet een CSV-bestand zijn met 8760 getallen (één getal voor elk uur in een jaar)
+      too_many_columns: Curve must contain only a single numeric value on each line; multiple values separated by commas are not permitted
       wrong_length: Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)
     groups:
       heat_production: "Aanbod: Warmte"

@@ -22,6 +22,7 @@ en:
       file_too_large: Curve must not be larger than 1MB
       illegal_value: Curve must only contain numeric values
       not_a_curve: Curve must be a CSV file containing 8760 numeric values, one for each hour in a typical year
+      too_many_columns: Curve must contain only a single numeric value on each line; multiple values separated by commas are not permitted
       wrong_length: Curve must have 8760 numeric values, one for each hour in a typical year
     groups:
       heat_production: "Supply: Heat"

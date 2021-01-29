@@ -71,6 +71,8 @@ body#root
 
       padding-left: 68px
       width: 216px
+      &.whats-new
+        background-image: asset-url("pages/home/whats-new.svg")
       &.multi-year-charts
         background-image: asset-url("pages/home/multi_year_charts.svg")
       &.esdl
@@ -78,7 +80,7 @@ body#root
       &.quintel
         background-image: asset-url("pages/home/quintel.png")
         width: 562px
-      &.multi-year-charts + .esdl
+      &.whats-new, &.multi-year-charts + .esdl
         width: 562px
     h4
       font-size: 14px

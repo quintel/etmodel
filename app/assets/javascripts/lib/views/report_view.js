@@ -142,8 +142,13 @@
         var fDefault;
 
         if (values && values.user !== undefined) {
-          fUser = Metric.autoscale_value(values.user, values.unit);
-          fDefault = Metric.autoscale_value(values.default, values.unit);
+          if (values.unit === 'enum') {
+            fUser = values.user;
+            fDefault = values.default;
+          } else {
+            fUser = Metric.autoscale_value(values.user, values.unit);
+            fDefault = Metric.autoscale_value(values.default, values.unit);
+          }
 
           // Omit any inputs which would not show a significant change.
           // e.g. "2.0% -> 2.0%" is meaningless to the visitor.
@@ -575,6 +580,10 @@
     },
 
     autoscale: function (value, unit) {
+      if (unit === 'enum' || unit === 'weather-curves') {
+        return value;
+      }
+
       var split = Metric.autoscale_value(value, unit).split(' ');
 
       if (split.length === 1) {

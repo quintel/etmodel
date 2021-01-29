@@ -9,9 +9,10 @@ def ete_scenario_mock
   allow(mock).to receive(:description).and_return('description')
   allow(mock).to receive(:end_year).and_return('2050')
   allow(mock).to receive(:area_code).and_return('nl')
-  allow(mock).to receive(:parsed_created_at) { Time.now }
+  allow(mock).to receive(:created_at) { Time.now.utc }
+  allow(mock).to receive(:updated_at) { Time.now.utc }
   allow(mock).to receive(:loadable?).and_return(true)
-  allow(mock).to receive(:created_at) { Time.now }
+  allow(mock).to receive(:created_at) { Time.now.utc }
   allow(mock).to receive(:all_inputs).and_return({})
   allow(mock).to receive(:days_old).and_return(1)
   allow(mock).to receive(:errors).and_return([])

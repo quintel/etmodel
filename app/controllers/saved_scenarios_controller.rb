@@ -26,16 +26,6 @@ class SavedScenariosController < ApplicationController
   end
 
   def show
-    if @saved_scenario.days_until_last_update > 180
-      warning_type =
-        if owned_saved_scenario?
-          'warning'
-        else
-          'preset_warning'
-        end
-      @warning = t("scenario.#{warning_type}")
-    end
-
     respond_to do |format|
       format.html
       format.csv

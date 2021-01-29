@@ -12,4 +12,5 @@
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular('serie', 'series')
+  inflect.acronym('ETModel')
 end

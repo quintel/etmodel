@@ -236,7 +236,7 @@ en:
         to address this need by tuning the amount of flexible technologies you have installed in 
         your scenario, for example in the 
         <a href="/scenario/flexibility/excess_electricity/order-of-flexibility-options">Excess electricity</a>
-        section. More information about flexiblity can be found on our
+        section. More information about flexibility can be found on our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_overview_inflexible_demand_supply_sum:
       title: Monthly supply and demand volumes
@@ -256,7 +256,7 @@ en:
       title: "The need for flexibility: capacity"
       short_description:
       description: |
-        This chart shows the monthly maximum capacity for supply and demand of electricity, 
+        This chart shows the monthly maximum <i>capacity</i> for supply and demand of electricity, 
         gas, hydrogen and heat. This gives an indication of the capacity needed to deal 
         with imbalance for each energy carrier. This capacity can be realized in the form of transport 
         infrastructure or other flexibility options. For the electricity network the relation between
@@ -289,7 +289,7 @@ en:
       title: "The need for flexibility: volume"
       short_description:
       description: |
-        The chart gives a rough estimate for how much long-term flexibility (storage volume) 
+        This chart gives a rough estimate for how much long-term flexibility (storage volume) 
         is needed in your scenario. The blue (“uncorrected”) line in the chart is created by 
         summing up the hourly imbalance for all relevant carriers at each hour. This curve is 
         indicative because we do not take any losses of storage or conversion into account. </br></br>

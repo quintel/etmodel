@@ -28,6 +28,7 @@ class Setting
       end_year:                 2050,
       use_fce:                  false,
       use_merit_order:          true,
+      esdl_exportable:          false,
       locked_charts:            [],
       last_etm_page:            nil,
       preset_scenario_id:       nil,
@@ -54,6 +55,7 @@ class Setting
     new(
       preset_scenario_id: scenario.id,
       use_fce: scenario.use_fce,
+      esdl_exportable: scenario.esdl_exportable,
       end_year: scenario.end_year,
       area_code: scenario.area_code,
       active_saved_scenario_id: active_saved_scenario[:id],

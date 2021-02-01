@@ -42,6 +42,10 @@
         %li
           %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }
             = t("header.reset_scenario")
+        - if export_scenario_enabled?
+          %li
+            %a.dropdown-item{ href: export_scenario_path(Current.setting.api_session_id) }
+              = t('header.export_scenario')
 
         - if current_user&.admin?
           %li.sep-above

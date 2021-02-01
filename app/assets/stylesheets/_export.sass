@@ -1,0 +1,34 @@
+#export
+  margin: 0 auto
+  width: $landing-width
+  text-align: center
+
+  .exportbox
+    // text-align: left
+    background-color: #fff
+    border: 1px solid $landing-border-color
+    border-bottom-color: darken($landing-border-color, 5%)
+    border-top-color: $landing-gold
+    border-top-width: 2px
+    box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
+    border-radius: 4px
+    padding: 15px 40px
+    margin-top: 30px
+
+    .option
+      text-align: left
+      border: 0.25px solid #aaa
+      border-radius: 15px
+      padding: 3px 10px
+      margin: 20px auto
+      width: 350px
+      cursor: pointer
+      display: block
+      color: #333
+      box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.1)
+      span
+        float: right
+        font-weight: bolder
+        font-size: 15pt
+      &:hover
+        text-decoration: none

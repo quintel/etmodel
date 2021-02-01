@@ -12,6 +12,11 @@ D3.solar_curtailment_curve =
     refresh: ->
       super()
 
+      if _.all(@visibleData(), (s) -> _.all(s.values, (v) -> v == 0))
+        @svg.selectAll('g.no-data').style('display', 'inline')
+      else
+        @svg.selectAll('g.no-data').style('display', 'none')
+
       # Update each series tooltip and fill since the paths are re-used when a
       # new series is selected.
       @svg.selectAll('g.serie')
@@ -29,6 +34,19 @@ D3.solar_curtailment_curve =
       @svg.selectAll('g.serie').remove()
 
       super(xScale, yScale, area, line)
+
+      @svg.append('g')
+        .attr('class', 'no-data')
+        .append('text')
+        .attr('x',@width / 2)
+        .attr('y', (@height - @margins.bottom - 10) / 2)
+        .attr('text-anchor', 'middle')
+        .text(
+          I18n.t(
+            'output_elements.empty.' + this.model.get('key'),
+            { defaults: [{ scope: 'output_elements.common.empty' }] }
+          )
+        )
 
     visibleData: ->
       val = @serieSelect?.selectBox.val() || @serieSelectOptions()[0].match

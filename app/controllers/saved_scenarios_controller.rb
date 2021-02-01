@@ -9,6 +9,9 @@ class SavedScenariosController < ApplicationController
 
   def index
     respond_to do |format|
+      format.html do
+        redirect_to scenarios_url
+      end
       format.json do
         if current_user
           render json:

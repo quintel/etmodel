@@ -400,35 +400,27 @@ en:
 
         <br /><br />
 
-        <b>1. Demand profiles</b>
+        1. <b>Demand</b> profiles (e.g. electric buses, industry heating)
+
         <br />
-        These profiles specify the fraction of annual demand used in each hour of the year (8760
-        hours). The values in your uploaded curve do not matter: the ETM will convert your file to
-        a new curve which respects the <i>shape</i> of your original. Example of profiles: electric buses, industry
-        heating.
+
+        2. <b>Production</b> profiles (e.g. solar PV, wind offshore)
+        <br />
+
+        3. <b>Price</b> curves (e.g. for power interconnectors)
 
         <br /><br />
-
-        <b>2. Production profiles</b>
-        <br />
-        These profiles specify for each hour per year the fraction of installed capacity used in
-        that hour. The sum of all hours should equal the total annual full load hours of that
-        technology. Example of profiles: solar PV, wind offshore.
-
-        <br /><br />
-
-        <b>3. Price curves</b>
-        <br />
-        These profiles specify a price for each hour per year. The unit is €/MWh. Example of profile: imported
-        electricity.
-
-        <br /><br />
-        Click on the question mark in the form below for more information about the file requirements.
-        You can download the hourly demand and supply curves in your scenario in the
-        <a href="/scenario/data/data_export/energy-flows">Results → Data export</a> section.
+        In the form below, you can select a category and upload a CSV file with your own profile.
+        More information about the file requirements for each type of profile can be found on the
+        <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles">documentation page</a>
+        and by clicking on the question mark ('?') in the form below.
 
         <br /><br />
         The chart on the right shows the profiles of all categories that can be modified. If you upload a custom profile,
         this is reflected in the chart. Note that if a technology is not present in your scenario, the chart series will be empty.
         By default, the chart shows the <i>daily</i> peak capacity of the profile for the whole year. Select a month or week in
         the dropdown menu to see the <i>hourly</i> values.
+        <br /><br />
+        You can download the hourly demand and supply curves in your scenario in the
+        <a href="/scenario/data/data_export/energy-flows">Results → Data export</a> section.
+        <br /><br />

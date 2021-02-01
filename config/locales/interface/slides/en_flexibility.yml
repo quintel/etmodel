@@ -231,9 +231,15 @@ en:
         In this section, you can see how supply and demand compare on various timescales. 
         For these comparisons we deliberately do not show the contributions of flexibility 
         technologies such as those mentioned above. This way, you can see how large the 
-        mismatch between supply and demand, and therefore, the need for flexibility is.
+        mismatch between supply and demand, and therefore, the need for flexibility is. </br></br>
+        Once you have evaluated the need for flexibility in your scenario, we invite you 
+        to address this need by tuning the amount of flexible technologies you have installed in 
+        your scenario, for example in the 
+        <a href="/scenario/flexibility/excess_electricity/order-of-flexibility-options">Excess electricity</a>
+        section. More information about flexiblity can be found on our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_overview_inflexible_demand_supply_sum:
-      title: Monthly supply and demand of energy
+      title: Monthly supply and demand volumes
       short_description:
       description: |
         This chart shows the monthly total <i>volumes</i> for supply and demand of electricity, 
@@ -253,7 +259,9 @@ en:
         This chart shows the monthly maximum capacity for supply and demand of electricity, 
         gas, hydrogen and heat. This gives an indication of the capacity needed to deal 
         with imbalance for each energy carrier. This capacity can be realized in the form of transport 
-        infrastructure or other flexibility options. </br></br>
+        infrastructure or other flexibility options. For the electricity network the relation between
+        transport infrastructure and flexibility options can be explored in more detail in the 
+        <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">Net load</a> section. </br></br>
         As with the above charts that focus on volume, only the inflexible supply and the baseload 
         demand are shown. More information about the definitions of inflexible supply and baseload 
         demand can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility/">
@@ -261,18 +269,19 @@ en:
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
         If you want to view when peaks occur within a month, you can also zoom in on an energy carrier by clicking 
         on that carrier in a specific month. This will open a new chart showing the hourly values for that 
-        carrier in the selected month. You can explore the impact on the electricity network in the 
-        <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">Net load</a> section. 
+        carrier in the selected month.
     flexibility_overview_inflexible_imbalance:
-      title: Imbalance of supply and demand
+      title: Imbalance of monthly supply and demand volumes
       short_description:
       description: |
         This chart shows the monthly imbalance between supply and demand <i>volumes</i> for electricity, gas,
-        hydrogen and heat. The imbalance is calculated by subtracting the baseload demand
-        from the inflexible supply, this is called the "residual load". Negative values mean "surpluses"
-        of energy and positive values "shortages". </br/></br>
-        This chart gives insight into the balance of your energy system throughout the year: in which 
+        hydrogen and heat. This gives you insight into the balance of your energy system throughout the year: in which 
         months does an imbalance occur? Which carriers are not in balance? Are these shortages or surpluses of energy? </br></br>
+        The imbalance is calculated by subtracting the baseload demand from the inflexible supply, 
+        this is called the "residual load". Negative values mean "surpluses" of energy and positive 
+        values "shortages". More information about the definitions of inflexible supply and baseload 
+        demand can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility/">
+        documentation</a>. </br/></br>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
         If you want a more detailed view, you can also zoom in by clicking on a specific month.
         This will open a new chart showing the "residual load" profiles for the selected month.

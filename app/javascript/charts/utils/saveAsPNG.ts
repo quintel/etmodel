@@ -1,27 +1,6 @@
 import html2canvas from 'html2canvas';
 
 /**
- * Builds a subheader to be shown below the chart title, containing the scenario dataset, end year,
- * and title.
- */
-const buildScenarioInfo = (): HTMLHeadingElement => {
-  const header = document.createElement('h4');
-  header.textContent = `${App.settings.get('area_name')} ${App.settings.get('end_year')}`;
-
-  const scenarioName = App.settings.get('active_scenario_title') as string | null;
-
-  if (scenarioName) {
-    const title = document.createElement('span');
-    title.classList.add('scenario-title');
-    title.textContent = scenarioName;
-
-    header.append(title);
-  }
-
-  return header;
-};
-
-/**
  * Saves an HTMLDivElement - which contains a chart - as a PNG.
  */
 const saveAsPNG = (holder: HTMLDivElement): Promise<HTMLCanvasElement> => {
@@ -35,8 +14,6 @@ const saveAsPNG = (holder: HTMLDivElement): Promise<HTMLCanvasElement> => {
   clone.classList.add('html2canvas');
 
   holder.parentNode.insertBefore(clone, holder.nextSibling);
-
-  clone.querySelector('header').append(buildScenarioInfo());
 
   const promise = html2canvas(clone, {
     scale: 2,

@@ -128,27 +128,35 @@ en:
       description: |
         This chart shows the total volume of inflexible supply and the total volume 
         of baseload demand for electricity, gas, hydrogen and heat per month. The volume is obtained 
-        by taking the sum of the hourly values for each carrier per month.
+        by taking the sum of the hourly values for each carrier per month. <br/><br/>
+        More information about flexibility can be found on our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_monthly_carriers_inflexible_supply_demand_max:
       title: Supply and demand peaks per month
       description: |
         This chart shows the maximum value for inflexible supply and the maximum 
         value for baseload demand for electricity, gas, hydrogen and heat in each month. 
-        The maximum is obtained by taking the highest hourly value for each carrier in each month.
+        The maximum is obtained by taking the highest hourly value for each carrier in each month. <br/><br/>
+        More information about flexibility can be found on our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Imbalance ("residual load") per month
       description: |
         This chart shows the imbalance in the total volume of inflexible supply and the total volume of 
         baseload demand for electricity, gas, hydrogen and heat per month. The imbalance is calculated 
         by subtracting the baseload demand from the inflexible supply, and is also known as the "residual 
-        load". Negative values mean "surpluses" of energy and positive values "shortages".
+        load". Negative values mean "surpluses" of energy and positive values "shortages". <br/><br/>
+        More information about flexibility can be found on our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_hourly_carriers_inflexible_imbalance:
       title: Imbalance ("residual load") load per hour
       description: |
         This chart shows the hourly imbalance in inflexible supply and baseload demand for electricity, 
         gas, hydrogen and heat. The imbalance is calculated by subtracting the baseload demand from 
         the inflexible supply, and is also known as the "residual load". Negative values mean "surpluses" 
-        of energy and positive values "shortages".
+        of energy and positive values "shortages". <br/><br/>
+        More information about flexibility can be found on our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_hourly_all_carriers_cumulative_imbalance:
       title: Need for seasonal storage
       description: |
@@ -160,7 +168,9 @@ en:
         and demand would balance out over the year. This line is obtained by subtracting the 
         annual surplus/deficit from the blue line. Because the cumulative nature of the curve, 
         the correction of first hour is added to the correction of the second hour etc. until 
-        the last hour is corrected to coincide with the level of the first hour.
+        the last hour is corrected to coincide with the level of the first hour. <br/><br/>
+        More information about flexibility can be found on our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulative imbalance per month
     merit_order:

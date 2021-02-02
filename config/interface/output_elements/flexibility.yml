@@ -1,4 +1,20 @@
 ---
+- under_construction: false
+  unit:
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_workflow
+  max_axis_value:
+  min_axis_value:
+  hidden: true
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: html_table
+  config:
+    supports_to_image: false
 - group: Flexibility
   hidden: false
   key: flexibility_monthly_carriers_inflexible_supply_demand_sum

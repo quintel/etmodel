@@ -3,7 +3,7 @@ import html2canvas from 'html2canvas';
 /**
  * Saves an HTMLDivElement - which contains a chart - as a PNG.
  */
-const saveAsPNG = (holder: HTMLDivElement): Promise<HTMLCanvasElement> => {
+const saveAsPNG = (holder: HTMLDivElement, scenarioID: number): Promise<HTMLCanvasElement> => {
   const title = holder.querySelector('header h3').textContent;
 
   // Clone the chart - rather than operating directly on the visible chart - as this allows us to
@@ -26,7 +26,7 @@ const saveAsPNG = (holder: HTMLDivElement): Promise<HTMLCanvasElement> => {
 
     const link = document.createElement('a');
 
-    link.download = title;
+    link.download = `${title}.${scenarioID}.png`;
     link.href = canvas.toDataURL();
     link.click();
   });
@@ -37,11 +37,11 @@ const saveAsPNG = (holder: HTMLDivElement): Promise<HTMLCanvasElement> => {
 /**
  * Event which may be attached to a button or anchor to trigger downloading a chart.
  */
-export const onClick = (event: MouseEvent): void => {
+export const onClick = (event: MouseEvent, scenarioID: number): void => {
   event.preventDefault();
 
   const target = event.target as HTMLAnchorElement;
-  saveAsPNG(target.closest('.chart_holder') as HTMLDivElement);
+  saveAsPNG(target.closest('.chart_holder') as HTMLDivElement, scenarioID);
 };
 
 export default saveAsPNG;

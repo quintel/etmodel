@@ -251,8 +251,12 @@ nl:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
+    flexibility_overview_introduction:
+      title: Wat is flexibiliteit?
+      short_descriptioN:
+      description: 
     flexibility_overview_inflexible_demand_supply_sum:
-      title: Balans van energievolumes
+      title: Maandelijkse volumes van vraag en aanbod
       short_description:
       description: |
         Bij het balanceren van vraag en aanbod is het belangrijk om niet alleen op jaarniveau te kijken,
@@ -274,7 +278,7 @@ nl:
         specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
         van die drager in die maand.
     flexibility_overview_inflexible_demand_supply_max:
-      title: Piekbelasting door het jaar heen
+      title: "Flexibiliteitsbehoefte: capaciteit"
       short_description:
       description: |
         Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte.
@@ -288,7 +292,7 @@ nl:
         specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
         van die drager in die maand.
     flexibility_overview_inflexible_imbalance:
-      title: Onbalans van energievolumes
+      title: Onbalans in maandelijkse volumes van vraag en aanbod
       short_description:
       description: |
         Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
@@ -302,7 +306,7 @@ nl:
         Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken
         op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.
     flexibility_overview_cumulative_imbalance:
-      title: Seizoensbalans van energievolumes
+      title: "Flexibiliteitsbehoefte: volume"
       short_description:
       description: |
         Deze grafiek laat de volgende twee lijnen zien:

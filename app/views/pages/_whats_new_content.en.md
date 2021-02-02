@@ -2,6 +2,45 @@
 
 ---
 
+# February 2021
+
+## New charts showing the need for flexibility
+
+Natural patterns like seasons (yearly), the variations in weather (weekly), day and night and our rhythm of waking up, going to work, coming home, etc. cause both the need for energy and the availability of energy to fluctuate. Flexibility is about balancing energy supply and demand on all these timescales.
+
+We have added the section **[Flexibility → Overview][flexibility]** to the ETM with four interactive charts in which you can see how supply and demand compare on various timescales. These charts show:
+
+* Monthly supply and demand volumes
+* Imbalance of monthly supply and demand volumes
+* The need for flexibility: volume
+* The need for flexibility: capacity
+
+-> ![](/assets/pages/whats_new/monthly_supply_and_demand_volumes_en.png) <-
+
+*A detailed explanation can be found in the [documentation](https://docs.energytransitionmodel.com/main/flexibility).*
+
+## Modify profiles
+
+The ETM calculates the hourly production and demand of gas, electricity, heat, and hydrogen. It is now also possible to upload and work with your own curves in the **[Flexibility → Modify Profiles][modify curves slide]** section. There are three types of profiles you can modify:
+
+1. Demand profiles (e.g. electric buses, industrial heating)
+2. Production profiles (e.g. solar PV, wind offshore)
+3. Price curves (e.g. for power interconnectors)
+
+The chart on the right shows all profiles which you may customise. If you upload a custom profile this is directly reflected in the chart.
+
+![](/assets/pages/whats_new/modify_profiles_en.png)
+
+Check out [the Curves documentation](https://docs.energytransitionmodel.com/main/curves) for more information.
+
+## Download charts as images
+
+Need to use a chart in a report, or want to share it with colleagues? All charts in the model can now be downloaded as a high-resolution image by clicking the button just above the chart.
+
+-> ![](/assets/pages/whats_new/chart_as_image_en.png) <-
+
+---
+
 # November 2020
 
 ## Carbon capture, utilisation and storage (CCUS)
@@ -178,7 +217,11 @@ The format of the load and price curves of electricity has recently changed. For
 
 You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
 
-[ccus slide]: scenario/supply/ccus/capture-of-co2
+[flexibility]: /scenario/flexibility/flexibility_overview/what-is-flexibility
+
+[modify curves slide]: /scenario/flexibility/curve_upload/upload-curves
+
+[ccus slide]: /scenario/supply/ccus/capture-of-co2
 
 [esdl]: /import_esdl
 

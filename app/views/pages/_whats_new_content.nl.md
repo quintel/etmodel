@@ -2,6 +2,45 @@
 
 ---
 
+# Februari 2021
+
+## Nieuwe grafieken die de behoefte aan flexibiliteit tonen
+
+Natuurlijke patronen zoals de seizoenen (jaarlijks), veranderingen in het weer (wekelijks), dag en nacht, en ons eigen ritme van opstaan, naar werk gaan, thuiskomen, etc. zorgen ervoor dat zowel de benodigdheid van energie als de beschikbaarheid ervan fluctueert. Flexibiliteit gaat over het balanceren van vraag en aanbod van energie op al deze tijdschalen.
+
+We hebben een nieuwe sectie **[Flexibiliteit → Overzicht][flexibility]** aan het ETM toegevoegd met vier interactieve grafieken die laten zien hoe vraag en aanbod zich verhouden op verschillende tijdschalen. De grafieken tonen:
+
+* Maandelijkse volumes van vraag en aanbod
+* Onbalans in maandelijkse volumes van vraag en aanbod
+* Flexibiliteitsbehoefte: volume
+* Flexibiliteitsbehoefte: capaciteit
+
+-> ![](/assets/pages/whats_new/monthly_supply_and_demand_volumes_nl.png) <-
+
+Een gedetailleerd overzicht van de wijzigingen staat in onze  [documentatie](https://docs.energytransitionmodel.com/main/flexibility).
+
+## Profielen aanpassen
+
+Het ETM rekent vraag en aanbod van gas, elekriciteit, warmte en waterstof uit op uurbasis. Het is nu ook mogelijk om je eigen uurprofielen in het ETM te laden en hiermee te werken in de [Flexibiliteit → Profielen aanpassen](https://pro.energytransitionmodel.com/scenario/flexibility/curve_upload/upload-curves) sectie. Er zijn drie typen uurprofielen die je kunt uploaden:
+
+1. Vraagprofielen (bijv. elektrische bussen, warmte in industrie)
+2. Aanbodprofielen (bijv. zon PV, wind op zee)
+3. Prijscurves (bijv. voor elektriciteitsinterconnectoren)
+
+De grafiek aan de rechterkant laat alle aanpasbare profielen zien op basis van het keuzemenu onder de grafiek. Als je een eigen profiel upload is dit direct zichtbaar in de grafiek.
+
+![](/assets/pages/whats_new/modify_profiles_nl.png)
+
+*Meer weten? Ga dan naar de [Curves](https://docs.energytransitionmodel.com/main/curves) pagina in de documentatie.*
+
+## Download grafieken als afbeelding
+
+Heb je een grafiek nodig voor in een rapport of wil je hem delen met collega's? Vanaf nu kunnen alle grafieken in het model gedownload worden als hoge-resolutie afbeelding door te klikken op de download-knop net boven de grafiek.
+
+-> ![](/assets/pages/whats_new/chart_as_image_nl.png) <-
+
+---
+
 # November 2020
 
 ## Afvang, opslag en hergebruik van CO<sub>2</sub> (CCUS)
@@ -40,7 +79,7 @@ Het ETM kan nu rekenen met zogeheten 'negatieve' CO<sub>2</sub> emissies. Deze e
 
 ## Scenario navigatie bar
 
-Een nieuwe ‘scenario navigatie bar’ is toegevoegd dat de regio en eindjaar laat zien van jouw scenario. De naam van je scenario is ook zichtbaar wanneer je een opgeslagen scenario opent waardoor het makkelijker wordt om meerdere scenario’s te openen in verschillende browser tabs. Via de “Scenario opslaan” knop aan de rechterkant kun je snel je scenario opslaan. Het is nu makkelijker om al je opgeslagen scenario’s te bekijken door naar “Mijn scenario’s” te gaan. 
+Een nieuwe ‘scenario navigatie bar’ is toegevoegd dat de regio en eindjaar laat zien van jouw scenario. De naam van je scenario is ook zichtbaar wanneer je een opgeslagen scenario opent waardoor het makkelijker wordt om meerdere scenario’s te openen in verschillende browser tabs. Via de “Scenario opslaan” knop aan de rechterkant kun je snel je scenario opslaan. Het is nu makkelijker om al je opgeslagen scenario’s te bekijken door naar “Mijn scenario’s” te gaan.
 
 ![](/assets/pages/whats_new/scenario_navigatie_bar_nl.png)
 
@@ -171,6 +210,8 @@ Voor opgeslagen scenarios is het vanaf nu mogelijk om de waardes van je gezette 
 ## Data-export aangepast
 
 De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is veranderd. Per kolom uit de data-export wordt nu met "input" of "output" aangegeven of het om vraag of aanbod van elektriciteit gaat. Flexibiliteitsoplossingen hebben nu dus ook zowel een input als output kolom. Hiermee is de vorm van de data-export voor elektriciteit consistenter met de data-exports voor netwerkgas en waterstof.
+
+[flexibility]: /scenario/flexibility/flexibility_overview/what-is-flexibility
 
 [Hier vind je de aangepaste data-export voor elektriciteit!][data export slide]
 

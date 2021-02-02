@@ -174,6 +174,36 @@ en:
         the last hour is corrected to coincide with the level of the first hour. <br/><br/>
         More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
+    flexibility_hourly_electricity_supply_demand:
+      title: Hourly electricity supply and demand
+      description: |
+        This chart shows the hourly inflexible supply and baseload demand for electricity. <br/><br/>
+        We have defined which types of electricity supply are considered flexible/inflexible and 
+        which types of electricity demand are considered flexible/baseload in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand">documentation</a>.
+    flexibility_hourly_heat_network_supply_demand:
+      title: Hourly heat supply and demand for district heating
+      description: |
+        This chart shows the hourly inflexible supply and baseload demand for district heating
+        for the built environment and agriculture. <br/><br/>
+        We have defined which types of heat supply are considered flexible/inflexible and 
+        which types of heat demand are considered flexible/baseload in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand">documentation</a>.
+    flexibility_hourly_network_gas_supply_demand:
+      title: Hourly gas supply and demand
+      description: |
+        This chart shows the hourly inflexible supply and baseload demand for network gas. 
+        Network gas is the mix of natural gas and green gas in the gas networks.<br/><br/>
+        We have defined which types of gas supply are considered flexible/inflexible and 
+        which types of gas demand are considered flexible/baseload in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand">documentation</a>.
+    flexibility_hourly_hydrogen_supply_demand:
+      title: Hourly hydrogen supply and demand
+      description: |
+        TThis chart shows the hourly inflexible supply and baseload demand for hydrogen. <br/><br/>
+        We have defined which types of hydrogen supply are considered flexible/inflexible and 
+        which types of hydrogen demand are considered flexible/baseload in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand">documentation</a>.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulative imbalance per month
     merit_order:

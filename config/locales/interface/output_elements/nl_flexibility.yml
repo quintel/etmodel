@@ -192,6 +192,58 @@ nl:
         gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale
         benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden.
         Deze totale benodigde opslagcapaciteit is af te lezen aan de hoogste waarde van deze lijn.</li>
+    flexibility_hourly_electricity_supply_demand:
+      title: Vraag en aanbod van elektriciteit per uur
+      description: |
+        Deze grafiek laat per uur vraag en aanbod van elektriciteit zien. Wat er precies
+        onder vraag en aanbod valt, wordt hieronder uitgelegd:
+        <ul><li>De vraaglijn toont de finale elektriciteitsvraag van de sectoren. Hierin wordt
+        de vraag van flex-technologieën die het systeem balanceren <b>niet</b>
+        meegenomen, zoals elektriciteitsoverschotten voor power-to-gas elektrolysers,
+        hybride warmte in de industrie of batterijen. Ook valt export van elektriciteit
+        en curtailment <b>niet</b> onder de vraag.</li>
+        <li>De aanbodlijn toont de must-run en volatiele productie, zoals windmolens en zon PV.
+        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
+        elektriciteitsproductie door dispatchable gas/waterstof-centrales of elektriciteit
+        uit batterijen. Ook wordt import van elektriciteit <b>niet</b> meegenomen.</li>
+    flexibility_hourly_heat_network_supply_demand:
+      title: Vraag en aanbod van warmte voor warmtenetten per uur
+      description: |
+        Deze grafiek laat per uur vraag en aanbod van warmtenetten voor de gebouwde omgeving en
+        landbouw zien. Wat er precies onder vraag en aanbod valt, wordt hieronder uitgelegd:
+        <ul><li>De vraaglijn toont de totale warmtevraag van de gebouwde ogeving en landbouw. Als
+        je (seizoens)opslag van warmte in jouw scenario hebt ingesteld, dan wordt de warmte die de
+        opslag ingaat <b>niet</b> meegenomen in deze vraaglijn.</li>
+        <li>De aanbodlijn toont de niet-regelbare / volatiele productie, zoals geothermie en zonthermie.
+        Hierin wordt het aanbod van regelbare warmtebronnen dus <b>niet</b> meegenomen, zoals
+        warmteproductie door regelbare gasketels of warmtepompen. Ook wordt warmte uit een eventuele
+        (seizoens)opslag <b>niet</b> meegenomen.</li>
+    flexibility_hourly_network_gas_supply_demand:
+      title: Vraag en aanbod van gas per uur
+      description: |
+        Deze grafiek laat per uur vraag en aanbod van netwerkgas zien. Netwerkgas is de mix van aardgas en groen gas in
+        de gasnetwerken. Wat er precies onder vraag en aanbod valt, wordt hieronder uitgelegd:
+        <ul><li>De vraaglijn toont de finale gasvraag van alle sectoren en de eventuele constante export van gas om het
+        jaarvolume te balanceren. De vraag van flex-technologieën die het systeem balanceren valt <b>niet</b>
+        in deze categorie, zoals gas dat gebruikt wordt in regelbare elektriciteitscentrales of warmteketels
+        voor warmtenetten. In het ETM wordt gas automatisch gebufferd door het jaar heen. Het gas dat deze
+        opslag ingaat valt <b>niet</b> onder de vraag, evenals de export van gas.</li>
+        <li>De aanbodlijn toont de gasproductie, hiervoor neemt het ETM een vlakprofiel aan. Ook valt de constante import van
+        gas om het jaarvolume te balanceren in deze categorie. Gas uit gasbergingen valt <b>niet</b> onder deze aanbodlijn.</li>
+    flexibility_hourly_hydrogen_supply_demand:
+      title: Vraag en aanbod van waterstof per uur
+      description: |
+        Deze grafiek laat per uur vraag en aanbod van waterstof zien. Wat er precies onder vraag en aanbod valt, wordt hieronder uitgelegd:
+        <ul><li>De vraaglijn toont de finale waterstofvraag van alle sectoren en de constante export van waterstof om het
+        jaarvolume te balanceren. De vraag van flex-technologieën die het systeem balanceren valt <b>niet</b>
+        in deze categorie, zoals waterstof dat gebruikt wordt in regelbare elektriciteitscentrales of warmteketels
+        voor warmtenetten. In het ETM wordt waterstof automatisch gebufferd door het jaar heen. Het waterstof dat deze
+        berging ingaat valt <b>niet</b> onder de vraag.</li>
+        <li>De aanbodlijn toont de niet-regelbare / volatiele productie, zoals bijvoorbeeld windmolenparken
+        die de geproduceerde elektriciteit direct omzetten in waterstof of een SMR productie plant. Ook valt de constante import van
+        waterstof om het jaarvolume te balanceren in deze categorie. De waterstofproductie
+        door power-to-gas elektrolyzers die elektriciteitsoverschotten omzetten in waterstof vallen <b>niet</b> in
+        deze categorie. Ook wordt het waterstof dat uit de opslag komt <b>niet</b> meegenomen.</li>
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulatieve onbalans per maand
     merit_order:

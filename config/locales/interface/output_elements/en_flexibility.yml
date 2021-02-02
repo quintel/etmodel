@@ -123,42 +123,45 @@ en:
         demand.\r\n<br/><br/>\r\nThe table shows what place in the merit order each
         technology has, which is based on the operating costs. Also the table shows
         the available capacity of each technology as well as the full load hours."
+    flexibility_workflow:
+      title: Workflow
+      description: 
     flexibility_monthly_carriers_inflexible_supply_demand_sum:
-      title: Total supply and demand per month
+      title: Monthly supply and demand volumes
       description: |
         This chart shows the total volume of inflexible supply and the total volume 
         of baseload demand for electricity, gas, hydrogen and heat per month. The volume is obtained 
         by taking the sum of the hourly values for each carrier per month. <br/><br/>
-        More information about flexibility can be found on our
+        More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_monthly_carriers_inflexible_supply_demand_max:
-      title: Supply and demand peaks per month
+      title: "The need for flexibility: capacity"
       description: |
         This chart shows the maximum value for inflexible supply and the maximum 
         value for baseload demand for electricity, gas, hydrogen and heat in each month. 
         The maximum is obtained by taking the highest hourly value for each carrier in each month. <br/><br/>
-        More information about flexibility can be found on our
+        More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_monthly_carriers_inflexible_imbalance:
-      title: Imbalance ("residual load") per month
+      title: Imbalance of monthly supply and demand volumes
       description: |
         This chart shows the imbalance in the total volume of inflexible supply and the total volume of 
         baseload demand for electricity, gas, hydrogen and heat per month. The imbalance is calculated 
         by subtracting the baseload demand from the inflexible supply, and is also known as the "residual 
         load". Negative values mean "surpluses" of energy and positive values "shortages". <br/><br/>
-        More information about flexibility can be found on our
+        More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_hourly_carriers_inflexible_imbalance:
-      title: Imbalance ("residual load") load per hour
+      title: Imbalance ("residual load") per hour
       description: |
         This chart shows the hourly imbalance in inflexible supply and baseload demand for electricity, 
         gas, hydrogen and heat. The imbalance is calculated by subtracting the baseload demand from 
         the inflexible supply, and is also known as the "residual load". Negative values mean "surpluses" 
         of energy and positive values "shortages". <br/><br/>
-        More information about flexibility can be found on our
+        More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_hourly_all_carriers_cumulative_imbalance:
-      title: Need for seasonal storage
+      title: "The need for flexibility: volume"
       description: |
         This chart gives a rough estimate for how much long-term flexibility (storage volume) 
         is needed in your scenario. The blue (“uncorrected”) line in the chart is created by 
@@ -169,7 +172,7 @@ en:
         annual surplus/deficit from the blue line. Because the cumulative nature of the curve, 
         the correction of first hour is added to the correction of the second hour etc. until 
         the last hour is corrected to coincide with the level of the first hour. <br/><br/>
-        More information about flexibility can be found on our
+        More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulative imbalance per month

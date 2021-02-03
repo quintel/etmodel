@@ -208,25 +208,24 @@ en:
         interesting. For shorter timescales, the ability to produce or use a certain amount 
         of energy is more interesting. This is called <i>capacity</i>. </br></br>
         Some flexibility technologies are more suited to process large (fluctuations in) volumes 
-        of energy, others are more suitable large fluctuations in capacity. Only some are 
+        of energy, others are more suitable large fluctuations in capacity and some are 
         suited to both. Some examples are: </br>
         <ul> <i>Suitable for large (fluctuations in) volume </i>
         <ul><li> Import/export of gas/hydrogen </li>
         <li> Power-to-gas: hydrogen production from excess electricity </li>
         <li> Storage of gas/hydrogen </li>
         <li> Seasonal storage of heat </li>
-        <li> ... </li>
         </li>
         </ul>
         <i>Suitable for large (fluctuations in) capacity </i>
         <ul><li> Storage in lithium-ion batteries </li>
-        <li> ... </li>
         </ul>
         <i>Suitable for both volume and capacity </i>
         <ul><li> Import/export of electricity </li>
         <li> Power-to-heat: heat production from excess electricity (with heat storage) </li>
         <li> Curtailment of renewable electricity production </li>
-        <li> ... </li>
+        <li> Large-scale electricity storage: pumped hydro storage </li>
+        <li> Dispatchable power and heat plants </li>
         </ul> </ul> </br>
         In this section, you can see how supply and demand compare on various timescales. 
         For these comparisons we deliberately do not show the contributions of flexibility 
@@ -236,8 +235,7 @@ en:
         to address this need by tuning the amount of flexible technologies you have installed in 
         your scenario, for example in the 
         <a href="/scenario/flexibility/excess_electricity/order-of-flexibility-options">Excess electricity</a>
-        section. More information about flexibility can be found in our
-        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>.
+        section.
     flexibility_overview_inflexible_demand_supply_sum:
       title: Monthly supply and demand volumes
       short_description:
@@ -248,7 +246,7 @@ en:
         To get a good picture of this (im)balance, only the inflexible supply and the baseload demand 
         are shown in this chart. This allows you to clearly see the "need for flexibility" of the system. 
         More information about the definitions of inflexible supply and baseload demand can be found in 
-        our <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentation</a>. </br> </br>
+        our <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-inflexible-supply-and-baseload-demand">documentation</a>. </br> </br>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
         If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that carrier in a specific month.
         This will open a new chart showing the hourly values for that carrier in the selected month.
@@ -264,7 +262,7 @@ en:
         <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">Net load</a> section. </br></br>
         As with the above charts that focus on volume, only the inflexible supply and the baseload 
         demand are shown. More information about the definitions of inflexible supply and baseload 
-        demand can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility/">
+        demand can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-inflexible-supply-and-baseload-demand">
         documentation</a>. </br></br>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
         If you want to view when peaks occur within a month, you can also zoom in on an energy carrier by clicking 
@@ -280,7 +278,7 @@ en:
         The imbalance is calculated by subtracting the baseload demand from the inflexible supply, 
         this is called the "residual load". Negative values mean "surpluses" of energy and positive 
         values "shortages". More information about the definitions of inflexible supply and baseload 
-        demand can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility/">
+        demand can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-inflexible-supply-and-baseload-demand">
         documentation</a>. </br/></br>
         By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
         If you want a more detailed view, you can also zoom in by clicking on a specific month.
@@ -291,7 +289,8 @@ en:
       description: |
         This chart gives a rough estimate for how much long-term flexibility (storage volume) 
         is needed in your scenario. The blue (“uncorrected”) line in the chart is created by 
-        summing up the hourly imbalance for all relevant carriers at each hour. This line is 
+        summing up the hourly imbalance for all relevant carriers at each hour. Subsequently, the line
+        has been moved upwards, to only show positive values. This line is 
         indicative because we do not take any losses of storage or conversion into account. </br></br>
         This line gives a general impression of the extent to which the energy system is in 
         balance over the year. In periods where demand exceeds supply (cold periods with no 

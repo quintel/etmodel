@@ -291,13 +291,13 @@ en:
       description: |
         This chart gives a rough estimate for how much long-term flexibility (storage volume) 
         is needed in your scenario. The blue (“uncorrected”) line in the chart is created by 
-        summing up the hourly imbalance for all relevant carriers at each hour. This curve is 
+        summing up the hourly imbalance for all relevant carriers at each hour. This line is 
         indicative because we do not take any losses of storage or conversion into account. </br></br>
-        This curve gives a general impression of the extent to which the energy system is in 
+        This line gives a general impression of the extent to which the energy system is in 
         balance over the year. In periods where demand exceeds supply (cold periods with no 
-        wind and little sunshine), the resulting curve dips as ‘storage’ gets depleted. In 
-        periods where supply is generally higher than demand (like sunny summer months), the 
-        curve rises again. </br></br>
+        wind and little sunshine), the resulting line dips as ‘storage’ gets depleted. In 
+        line where supply is generally higher than demand (like sunny summer months), the 
+        line rises again. </br></br>
         By comparing the start and end point of this line, you can see whether the system is 
         in surplus or deficit on an annual basis. The absolute difference shows how much room 
         there is for surplus storage or surplus conversion losses to make up for any shortages, 
@@ -308,7 +308,7 @@ en:
         required storage capacity to ensure that carriers can be used at the right time. This 
         total required storage capacity can be read from the highest value of this line. </br></br>
         This line is obtained by subtracting the annual surplus/deficit from the blue line. 
-        Because the cumulative nature of the curve, the correction of first hour is added to 
+        Because the cumulative nature of the line, the correction of first hour is added to 
         the correction of the second hour etc. until the last hour is corrected to coincide 
         with the level of the first hour.
     flexibility_security_of_supply_electricity:

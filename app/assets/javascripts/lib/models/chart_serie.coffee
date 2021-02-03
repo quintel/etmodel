@@ -7,6 +7,9 @@ class @ChartSerie extends Backbone.Model
   safe_future_value:  -> @get('gquery').safe_future_value()
   safe_present_value: -> @get('gquery').safe_present_value()
 
+  isReady: ->
+    @present_value() != undefined || @future_value() != undefined
+
   present_value: => @get('gquery').present_value()
   future_value: => @get('gquery').future_value()
 

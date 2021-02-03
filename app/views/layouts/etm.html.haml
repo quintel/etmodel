@@ -5,8 +5,9 @@
 
 - content_for :content do
   = render partial: 'layouts/etm/scenario_nav'
-  = render "layouts/etm/sidebar" if @interface.try :current_sidebar_item
-  = yield
+  .flex-wrapper
+    = render "layouts/etm/sidebar" if @interface.try :current_sidebar_item
+    = yield
 
 - content_for :footer do
   = render "layouts/etm/dashboard"

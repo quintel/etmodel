@@ -43,13 +43,6 @@ class ScenariosController < ApplicationController
   end
 
   def show
-    if @scenario.created_at && @scenario.days_old > 180
-      if SavedScenario.where('user_id = ? AND scenario_id = ?', current_user, @scenario.id).empty?
-        @warning = t('scenario.preset_warning')
-      else
-        @warning = t('scenario.warning')
-      end
-    end
   end
 
   def reset

@@ -20,6 +20,13 @@
 
   #other_features
     %ul.other-features
+      %li.whats-new
+        %h4= t('intro.whats_new.title')
+        %p= t('intro.whats_new.description')
+        %p
+          = link_to(whats_new_path) do
+            = t('intro.whats_new.link')
+            →
       %li.local-global
         %h4= t('intro.local_vs_global.title')
         %p= t('intro.local_vs_global.description')

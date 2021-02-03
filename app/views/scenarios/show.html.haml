@@ -3,10 +3,6 @@
 .background_wrapper#saved_scenario
   .scenario_wrapper#show_scenario
 
-    - if @warning
-      .warning
-        = @warning
-
     %h1
       = @scenario.title ? format_subscripts(@scenario.title) : @scenario.id
 
@@ -19,7 +15,7 @@
       - if @scenario.created_at
         %li
           = t('scenario.created')
-          = I18n.localize(@scenario.parsed_created_at, :format => :long)
+          = I18n.localize(@scenario.created_at.to_date, :format => :long)
 
     .bar
 
@@ -29,6 +25,8 @@
 
     - if @scenario.description
       = formatted_scenario_description(@scenario.description)
+
+    = render partial: 'scenarios/version_warning', locals: { scenario: @scenario }
 
     - if @scenario.protected?
       .actions

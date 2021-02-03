@@ -9,6 +9,9 @@ class SavedScenariosController < ApplicationController
 
   def index
     respond_to do |format|
+      format.html do
+        redirect_to scenarios_url
+      end
       format.json do
         if current_user
           render json:
@@ -26,16 +29,6 @@ class SavedScenariosController < ApplicationController
   end
 
   def show
-    if @saved_scenario.days_until_last_update > 180
-      warning_type =
-        if owned_saved_scenario?
-          'warning'
-        else
-          'preset_warning'
-        end
-      @warning = t("scenario.#{warning_type}")
-    end
-
     respond_to do |format|
       format.html
       format.csv
@@ -46,7 +39,10 @@ class SavedScenariosController < ApplicationController
   #
   # GET /scenarios/:scenario_id/save
   def new
-    @saved_scenario = SavedScenario.new(scenario_id: params.require(:scenario_id))
+    @saved_scenario = SavedScenario.new(
+      scenario_id: params.require(:scenario_id),
+      title: params[:title].presence
+    )
 
     if params[:inline]
       render 'new', layout: false
@@ -89,17 +85,14 @@ class SavedScenariosController < ApplicationController
 
     # Setting an active_saved_scenario enables saving a scenario. We only
     # do this for the owner of a scenario.
-    Current.setting = if owned_saved_scenario?
+    Current.setting =
       Setting.load_from_scenario(
         @scenario,
         active_saved_scenario: {
-          id: @saved_scenario.id,
+          id: owned_saved_scenario? ? @saved_scenario.id : nil,
           title: @saved_scenario.localized_title(I18n.locale)
         }
       )
-    else
-      Setting.load_from_scenario(@scenario)
-    end
 
     new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })
     Current.setting.api_session_id = new_scenario.id

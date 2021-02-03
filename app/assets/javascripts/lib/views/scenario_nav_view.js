@@ -1,5 +1,5 @@
 /* globals $ Backbone DropdownView I18n */
-(function(window) {
+(function (window) {
   /**
    * Saves an already-saved scenario.
    *
@@ -13,31 +13,35 @@
       url: path,
       data: { scenario_id: scenarioID },
       dataType: 'json',
-      method: 'put'
+      method: 'put',
     });
   }
 
   function loadSaveScenarioForm(event) {
+    var url = event.target.href;
+    var paramSep = url.includes('?') ? '&' : '?';
+
     $.fancybox.open({
       autoSize: false,
-      href: event.target.href + '?inline=true',
+      href: url + paramSep + 'inline=true',
       type: 'ajax',
       height: 480,
       width: 530,
       padding: 0,
-      afterShow: function() {
+      afterShow: function () {
         var form = document.querySelector('form#new_saved_scenario');
         var titleField = form.querySelector('#saved_scenario_title');
         var wrapperEl = titleField.closest('div.input');
 
         titleField.focus();
+        titleField.select();
 
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
           if (titleField.value.trim().length === 0) {
             wrapperEl.classList.add('has-error');
             titleField.focus();
 
-            titleField.addEventListener('keyup', function() {
+            titleField.addEventListener('keyup', function () {
               wrapperEl.classList.remove('has-error');
             });
 
@@ -46,7 +50,7 @@
             return;
           }
         });
-      }
+      },
     });
   }
 
@@ -54,13 +58,13 @@
     events: {
       'click .save-scenario': 'saveScenario',
       'click .save-scenario-as': 'showSaveAsModal',
-      'click .save-scenario-as-inline': 'showSaveAsModal'
+      'click .save-scenario-as-inline': 'showSaveAsModal',
     },
 
     /**
      * Renders the navigation
      */
-    render: function() {
+    render: function () {
       if (!this.el) {
         return;
       }
@@ -85,7 +89,7 @@
 
       var model = this.model;
 
-      this.el.querySelectorAll('a[data-dylink]').forEach(function(element) {
+      this.el.querySelectorAll('a[data-dylink]').forEach(function (element) {
         element.href = element.dataset.dylink
           .replace(/:scenario_id/, model.get('id'))
           .replace(/:etengine/, model.etenginePath());
@@ -96,15 +100,15 @@
       return this;
     },
 
-    saveScenario: function() {
+    saveScenario: function () {
       var button = this.el.querySelector('.save-scenario');
       button.disabled = true;
 
-      saveScenario(button.dataset.path, this.model.get('id')).always(function() {
+      saveScenario(button.dataset.path, this.model.get('id')).always(function () {
         button.querySelector('.label').classList.remove('show');
         button.querySelector('.saved').classList.add('show');
 
-        window.setTimeout(function() {
+        window.setTimeout(function () {
           button.disabled = false;
           button.querySelector('.saved').classList.remove('show');
           button.querySelector('.main').classList.add('show');
@@ -112,10 +116,10 @@
       });
     },
 
-    showSaveAsModal: function(event) {
+    showSaveAsModal: function (event) {
       event && event.preventDefault();
       loadSaveScenarioForm(event);
-    }
+    },
   });
 
   window.ScenarioNavView = ScenarioNavView;

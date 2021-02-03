@@ -14,6 +14,12 @@ describe SavedScenariosController, vcr: true do
   let!(:user_scenario) { FactoryBot.create :saved_scenario, user: user, id: 648695 }
   let!(:admin_scenario) { FactoryBot.create :saved_scenario, user: admin, id: 648696 }
 
+  describe 'GET index' do
+    context 'when requesting HTML' do
+      it { expect(get(:index)).to redirect_to(scenarios_url) }
+    end
+  end
+
   context 'a regular user' do
     before do
       login_as user
@@ -45,6 +51,12 @@ describe SavedScenariosController, vcr: true do
           expect do
             get :load, params: { id: admin_scenario.id }
           end.not_to change{ session[:setting].active_saved_scenario_id }
+        end
+
+        it 'sets the scenario title in the settings' do
+          expect { get(:load, params: { id: admin_scenario.id }) }
+            .to change { session[:setting].active_scenario_title }
+            .from(nil).to(admin_scenario.title)
         end
 
         it "redirects to play path" do

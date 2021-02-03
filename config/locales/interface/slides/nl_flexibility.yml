@@ -447,26 +447,26 @@ nl:
 
         <br /><br />
 
-        <b>1. Vraagprofielen</b>
+        1. <b>Vraag</b>profielen (bijv. elektrische bussen, warmte in industrie)
+
         <br />
-        Deze profielen specificeren voor elk uur per jaar (8760 uur) welke fractie van de totale
-        jaarvraag in dat uur gebruikt wordt. De gebruikte eenheid in het profiel dat je uploadt
-        maakt niet uit: het ETM gebruikt de <i>vorm</i> van jouw profiel (relatieve verdeling over de tijd)
-        om de jaarvraag om de uurlijkse belasting uit te rekenen. Voorbeelden: elektrische buses, warmte in industrie.
 
-        <br /><br />
+        2. <b>Aanbod</b>profielen (bijv. zon PV, wind op zee)
 
-        <b>2. Aanbodprofielen</b>
         <br />
-        Deze profielen specificeren voor elk uur welke fractie van het opgestelde vermogen in dat
-        uur benut wordt. De som van alle uren moet optellen tot het aantal vollasturen van de
-        gekozen technologie. Voorbeelden: zon PV, wind op zee.
+
+        3. <b>Prijs</b>curves (bijv. voor elektriciteitsinterconnectoren)
+        <br /><br />
+        In het formulier hieronder kun je een categorie selecteren en een CSV-bestand met jouw eigen profiel
+        uploaden. Meer informatie over de bestandsvereisten voor elk type profiel kun je vinden in de
+        <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles">documentatie</a>
+        en door te klikken op het vraagteken ('?') in het onderstaande formulier.
 
         <br /><br />
-
-        <b>3. Prijscurves</b><br />
-
-        Deze profielen specificeren een prijs voor elk uur per jaar. De eenheid is €/MWh.
-        Voorbeeld: geïmporteerde elektriciteit.
-
-        <br /><br />
+        De grafiek rechts laat de profielen zien van alle aanpasbare categorieën. Als je een profiel uploadt,
+        verandert de chart mee. Let op: als een technologie niet gebruikt wordt in jouw scenario laat de grafiek een
+        lege serie zien. Standaard geeft de grafiek de piekcapaciteit per <i>dag</i> weer voor het hele jaar.
+        Selecteer een maand of week in het dropdown-menu om de <i>uurlijkse</i> waardes te zien.
+        <br/><br/>
+        Je kunt de uurlijkse vraag- en aanbodprofielen in jouw scenario downloaden in de
+        <a href="/scenario/data/data_export/energy-flows">Resultaten → Data-export</a>sectie.

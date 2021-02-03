@@ -1,30 +1,11 @@
-//
-//     +html/body/#main-----------------------------------------------------------------+
-//     |+header------------------------------------------------------------------------+|
-//     ||                                                                              ||
-//     ||  () ENERGY TRANSITION MODEL                                                  ||
-//     ||                                                                              ||
-//     |+------------------------------------------------------------------------------+|
-//     |+#sidebar------++#active-content-----------------------------------------------+|
-//     ||float:left    ||margin-left: w1                                               ||
-//     ||width: w1     ||+#title------------------------------------------------------+||
-//     ||              |||                                                            |||
-//     ||              |||                                                            |||
-//     ||              ||+------------------------------------------------------------+||
-//     ||              ||+------------------------++----------------------------------+||
-//     ||              |||float:left              ||margin-left: w2                   |||
-//     ||              |||width: w2               ||                                  |||
-//     ||              |||                        ||  (So: This width is fluid)       |||
-//     ||              |||                        ||                                  |||
-//     ||              |||                        ||                                  |||
-//     ||              |||                        ||                                  |||
-//     ||              ||+------------------------++----------------------------------+||
-//     |+--------------++--------------------------------------------------------------+|
-//     +--------------------------------------------------------------------------------+
-
 html, body, #main, #wrapper, #content
-  height: 100%
+  min-height: 100%
   background: #fff
+
+body#model
+  // Ensure a vertical scroll bar is always shown to avoid the page jumping when the length of the
+  // page changes, such as when opening a slide or sidebar section.
+  overflow-y: scroll
 
 body#outside-model #wrapper
   min-height: 100%
@@ -45,17 +26,33 @@ body#outside-model #wrapper
   margin: 0 10px
 
 #content
-  position: relative
+  // Subtract main header height.
+  height: 100%
+  height: calc(100% - 57px)
   min-width: 1000px
+  position: relative
+
+  .flex-wrapper
+    align-items: stretch
+    display: flex
+    height: 100%
+    // Subtract scenario nav  height.
+    height: calc(100% - 42px)
 
   #sidebar
-    float: left
-    min-height: 100%
     width: 209px
 
+    & > :last-child:after
+      // Adds some space below the last item in the sidebar to ensure that a scrollbar appears as soon
+      // as the dashboard comes close to the end of the sidebar.
+      content: " "
+      display: block
+      height: 100px
+      width: 10px
+
   #active-content
-    margin-left: 230px
-    padding-bottom: 155px
+    margin-left: 20px
+    padding-bottom: 120px
     #title
       overflow: hidden
 

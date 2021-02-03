@@ -94,17 +94,6 @@ $chart-header-icon-color: #8895b2
             right: 2px
             position: absolute
             width: 13px
-  .watermark
-    border-top: 1px solid #eee
-    color: #aaa
-    color: #aaa
-    display: none
-    font-size: 0.625rem
-    line-height: 1.4
-    margin: 20px auto 0
-    padding-top: 15px
-    text-align: center
-    width: 300px
 
   &.html2canvas
     margin: -15px -15px 0
@@ -123,22 +112,10 @@ $chart-header-icon-color: #8895b2
         font-weight: 600
         margin: 0
         padding: 0
-        // border-top: 3px solid #3e84c2
-        // padding-top: 5px
-      h4
-        color: #777
-        font-size: 1rem
-        font-weight: normal
-        margin: 0
-        .scenario-title:before
-          content: "–"
-          margin: 0 0.25rem
     .actions, select, input
       display: none !important
     .legend .legend-item span.rect
       box-shadow: none !important
-    .watermark
-      display: block
 
 .charts_container
   position: relative
@@ -406,6 +383,9 @@ div.d3_container
     .serie.linked:hover
       cursor: pointer
       opacity: 0.8
+
+  .no-data
+    display: none
 
   .subzero
     fill: black

@@ -86,6 +86,12 @@ export default class extends Base {
   render(force_redraw) {
     const firstRender = !this.drawn;
 
+    if (this.model.series.find((s) => !s.isReady())) {
+      // If query data has not been received, wait to render. This may be because of a prior API
+      // request being received while the request for the chart data is still ongoing.
+      return;
+    }
+
     if (force_redraw || firstRender) {
       this.clearContainer();
       this.containerNode().html(this.html());

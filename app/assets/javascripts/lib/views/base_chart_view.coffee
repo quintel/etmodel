@@ -107,7 +107,7 @@ class @BaseChartView extends Backbone.View
       @$el.find(".actions a.chart_to_image")
         .show()
         .off('click')
-        .on('click', BaseChartView.saveAsPNG)
+        .on('click', (event) -> BaseChartView.saveAsPNG(event, App.scenario.get('id')))
     else
       @$el.find(".actions a.chart_to_image").hide()
 

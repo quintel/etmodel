@@ -108,145 +108,82 @@ nl:
     flexibility_monthly_carriers_inflexible_supply_demand_sum:
       title: Maandelijkse volumes van vraag en aanbod
       description: |
-        Deze grafiek laat per maand de vraag en het aanbod zien
-        van elektriciteit, gas, waterstof en warmte. Alleen de basislast (baseload)
-        energievraag en de must-run en inflexibele aanbod worden getoond. Wat er precies
-        onder basislastvraag en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><li>Basislastvraag is het eindgebruik van de verschillende sectoren. Hierin wordt
-        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
-        meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
-        batterijen ingaat of gas/waterstof in gasbergingen.</li>
-        <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
-        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
-        warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
-        uit batterijen of gas/waterstof uit gasbergingen.</li></ul>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen. Als je benieuwd bent naar de
-        balans binnen een maand, kun je kikken op een drager in die
-        specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
-        van die drager in die maand.
+        Deze grafiek laat het totale volume van basislastvraag en het totale volume van inflexibel aanbod 
+        zien voor elektriciteit, gas, waterstof en warmte per maand. Het volume wordt berekend door de 
+        waardes voor elk uur in de maand voor elke drager op te tellen. <br/><br/>
+        Meer informatie over flexibiliteit is te vinden in onze 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentatie</a>.
     flexibility_monthly_carriers_inflexible_supply_demand_max:
       title: "Flexibiliteitsbehoefte: capaciteit"
       description: |
-        Deze grafiek toont de maandelijkse piekbelasting voor vraag en aanbod van elektriciteit, gas, waterstof en warmte.
-        Alleen het inflexibele aanbod en de basislastvraag worden getoond. Wat er precies onder basislastvraag
-        en inflexibel aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><li>Basislastvraag is het eindgebruik van de verschillende sectoren. Hierin wordt
-        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
-        meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
-        batterijen ingaat of gas/waterstof in gasbergingen.</li>
-        <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
-        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
-        warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
-        uit batterijen of gas/waterstof uit gasbergingen.</li></ul>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen.
-        Als je wilt weten waar in de maand de pieken plaatsvinden, kun je kikken op een drager in die
-        specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
-        van die drager in die maand.
+        Deze grafiek laat de maximale capaciteit voor basislastvraag en de maximale capaciteit voor inflexibel 
+        aanbod voor elektriciteit, gas, waterstof en warmte zien in elke maand. De capaciteit wordt berekend door 
+        in elke maand voor elke drager de maximale waarde te nemen die voorkomt. <br/><br/>
+        Meer informatie over flexibiliteit is te vinden in onze
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentatie</a>.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Onbalans in maandelijkse volumes van vraag en aanbod
       description: |
-        Deze grafiek is een vervolg op flexibiliteitsgrafiek "Vraag en aanbod per maand". Deze grafiek laat per maand de onbalans tussen vraag en aanbod zien
-        voor elektriciteit, gas, waterstof en warmte. De onbalans is berekend door de vraag af te trekken van het aanbod, dit heet
-        de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
-        "tekorten".Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><li>Basislastraag is het eindgebruik van de verschillende sectoren. Hierin wordt
-        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
-        meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
-        batterijen ingaat of gas/waterstof in gasbergingen.</li>
-        <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
-        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
-        warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
-        uit batterijen of gas/waterstof uit opslag.</li></ul>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen.
-        Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken
-        op die specifieke maand en zal er een grafiek openen met "residual load"-profielen voor die maand.
+        Deze grafiek laat de onbalans in het totale volume van basislastvraag en het totale volume van inflexibel
+        aanbod zien voor elektriciteit, gas, waterstof en warmte per maand. De onbalans is berekend door de 
+        basislastvraag af te trekken van het inflexibele aanbod, dit heet de "residual load". Negatieve waarden 
+        betekenen "overschotten" aan energie en positieve waarden "tekorten". </br></br>
+        Meer informatie over flexibiliteit is te vinden in onze
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentatie</a>.
     flexibility_hourly_carriers_inflexible_imbalance:
       title: Onbalans ("residual load") per uur
       description: |
-        Deze grafiek is een vervolg op de flexibiliteitsgrafiek "Onbalans per maand". Deze grafiek laat per uur de onbalans tussen vraag en aanbod zien
-        voor elektriciteit, gas, waterstof en warmte. De onbalans is berekend door de vraag af te trekken van het aanbod, dit heet
-        de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
-        "tekorten".</br></br>
-        Wat er precies onder vraag en aanbod wordt verstaan, wordt hieronder uitgelegd:
-        <ul><li>Basislastvraag is het eindgebruik uit de verschillende sectoren. Hierin wordt
-        de energievraag van flex-technologieën die het systeem balanceren <b>niet</b>
-        meegenomen, zoals gas/waterstof voor regelbare elektriciteitscentrales, elektriciteit die
-        batterijen ingaat of gas/waterstof in gasbergingen.</li>
-        <li>Inflexibel aanbod is de must-run en volatiele productie, zoals windmolens en zonthermie.
-        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
-        warmte-/elektriciteitsproductie door regelbare centrales, elektriciteit
-        uit batterijen of gas/waterstof uit opslag.</li>
+        Deze grafiek laat de onbalans in basislastvraag en inflexibel aanbod zien voor elektriciteit, gas, waterstof 
+        en warmte per uur. De onbalans is berekend door de basislastvraag af te trekken van het inflexibele aanbod, 
+        dit heet de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden 
+        "tekorten". </br></br>
+        Meer informatie over flexibiliteit is te vinden in onze
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentatie</a>.
     flexibility_hourly_all_carriers_cumulative_imbalance:
       title: "Flexibiliteitsbehoefte: volume"
       description: |
-        Deze grafiek is een vervolg op de flexibiliteitsgrafiek "Onbalans per maand". Het is aan te raden eerst die grafiek
-        te bekijken. Hieronder volgt een uitleg over de getoonde lijnen:
-        <ul><li>De lijn exclusief correctie in de grafiek toont de optelling van alle tekorten en overschotten van elektriciteit,
-        gas, waterstof en warmte door het jaar heen. Wanneer de lijn stijgt, betekent dit dat er netto overschotten
-        waren in dat uur en wanneer de lijn daalt betekent dit dat er netto tekorten
-        waren. Ligt het eindpunt van de grafiek hoger dan het beginpunt, dan betekent dit
-        dat de energie overschotten groter zijn dan de tekorten. <br/><br/>
-        Overschotten op een bepaald moment kunnen worden
-        gebruikt om tekorten op een later moment op te lossen, ofwel door de overschotten op te slaan, ofwel door ze
-        om te zetten in een andere drager. Door het start- en eindpunt van deze lijn te vergelijken, kan je zien hoeveel
-        ‘speelruimte’ je hebt om met de overschotten in jouw scenario de tekorten weg te werken. Dus hoeveel conversie/opslagverlies je je kunt
-        permitteren om uiteindelijk het systeem in balans te krijgen.</li><br/>
-        <li>Voor de gecorrigeerde lijn is aangenomen dat het energiesysteem al in balans is op jaarniveau: dat alle opgewekte energie ergens heen gaat en alle
-        gevraagde energie ergens vandaan komt. Hierdoor geeft dit een globale inschatting van je totale
-        benodigde opslagcapaciteit om te zorgen dat dragers op het juiste moment ingezet kunnen worden.
-        Deze totale benodigde opslagcapaciteit is af te lezen aan de hoogste waarde van deze lijn.</li>
+        Deze grafiek geeft een ruwe inschatting van de behoefte aan lange termijn flexibiliteit 
+        (opslagvolume) in jouw scenario. De blauwe lijn (exclusief “correctie”) wordt gemaakt door 
+        voor elk uur de onbalans in basislastvraag en inflexibel aanbod per uur voor elektriciteit,
+        gas, waterstof en warmte tot dan toe op te tellen. <br/><br/>
+        De rode lijn (inclusief “correctie”) laat de fluctuaties in vereist opslagvolume zien als vraag 
+        en aanbod in balans zouden zijn over het jaar. Deze lijn wordt gemaakt door het jaarlijkse 
+        overschot/tekort van de blauw lijn af te trekken. Omdat de lijn cumulatief is, telt de correctie 
+        van het eerste uur op bij de correctie van het twee uur etc. totdat het laatste uur zo is 
+        gecorrigeerd dat het overeenkomt met de waarde van het eerste uur. <br/><br/>
+        Meer informatie over flexibiliteit is te vinden in onze
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/">documentatie</a>.
+    flexibility_hourly_all_carriers_cumulative_imbalance:
     flexibility_hourly_electricity_supply_demand:
       title: Vraag en aanbod van elektriciteit per uur
       description: |
-        Deze grafiek laat per uur vraag en aanbod van elektriciteit zien. Wat er precies
-        onder vraag en aanbod valt, wordt hieronder uitgelegd:
-        <ul><li>De vraaglijn toont de finale elektriciteitsvraag van de sectoren. Hierin wordt
-        de vraag van flex-technologieën die het systeem balanceren <b>niet</b>
-        meegenomen, zoals elektriciteitsoverschotten voor power-to-gas elektrolysers,
-        hybride warmte in de industrie of batterijen. Ook valt export van elektriciteit
-        en curtailment <b>niet</b> onder de vraag.</li>
-        <li>De aanbodlijn toont de must-run en volatiele productie, zoals windmolens en zon PV.
-        Hierin wordt het aanbod van flex-technologieën <b>niet</b> meegenomen, zoals
-        elektriciteitsproductie door dispatchable gas/waterstof-centrales of elektriciteit
-        uit batterijen. Ook wordt import van elektriciteit <b>niet</b> meegenomen.</li>
+        Deze grafiek laat de basislastvraag en het inflexibele aanbod van elektriciteit zien per uur. <br/><br/>
+        In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand">documentatie</a>
+        hebben we gedefinieerd welke types elektriciteitsvraag worden gezien als flexibel/basislast en 
+        welke types elektriciteitsaanbod worden gezien als flexibel/inflexibel.
     flexibility_hourly_heat_network_supply_demand:
       title: Vraag en aanbod van warmte voor warmtenetten per uur
       description: |
-        Deze grafiek laat per uur vraag en aanbod van warmtenetten voor de gebouwde omgeving en
-        landbouw zien. Wat er precies onder vraag en aanbod valt, wordt hieronder uitgelegd:
-        <ul><li>De vraaglijn toont de totale warmtevraag van de gebouwde ogeving en landbouw. Als
-        je (seizoens)opslag van warmte in jouw scenario hebt ingesteld, dan wordt de warmte die de
-        opslag ingaat <b>niet</b> meegenomen in deze vraaglijn.</li>
-        <li>De aanbodlijn toont de niet-regelbare / volatiele productie, zoals geothermie en zonthermie.
-        Hierin wordt het aanbod van regelbare warmtebronnen dus <b>niet</b> meegenomen, zoals
-        warmteproductie door regelbare gasketels of warmtepompen. Ook wordt warmte uit een eventuele
-        (seizoens)opslag <b>niet</b> meegenomen.</li>
+        Deze grafiek laat de basislastvraag en het inflexibele aanbod van warmtenetten voor de gebouwde omgeving 
+        en landbouw zien per uur. <br/><br/>
+        In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand">documentatie</a>
+        hebben we gedefinieerd welke types warmtevraag worden gezien als flexibel/basislast en 
+        welke types warmteaanbod worden gezien als flexibel/inflexibel.
     flexibility_hourly_network_gas_supply_demand:
       title: Vraag en aanbod van gas per uur
       description: |
-        Deze grafiek laat per uur vraag en aanbod van netwerkgas zien. Netwerkgas is de mix van aardgas en groen gas in
-        de gasnetwerken. Wat er precies onder vraag en aanbod valt, wordt hieronder uitgelegd:
-        <ul><li>De vraaglijn toont de finale gasvraag van alle sectoren en de eventuele constante export van gas om het
-        jaarvolume te balanceren. De vraag van flex-technologieën die het systeem balanceren valt <b>niet</b>
-        in deze categorie, zoals gas dat gebruikt wordt in regelbare elektriciteitscentrales of warmteketels
-        voor warmtenetten. In het ETM wordt gas automatisch gebufferd door het jaar heen. Het gas dat deze
-        opslag ingaat valt <b>niet</b> onder de vraag, evenals de export van gas.</li>
-        <li>De aanbodlijn toont de gasproductie, hiervoor neemt het ETM een vlakprofiel aan. Ook valt de constante import van
-        gas om het jaarvolume te balanceren in deze categorie. Gas uit gasbergingen valt <b>niet</b> onder deze aanbodlijn.</li>
+        Deze grafiek laat de basislastvraag en het inflexibele aanbod van netwerkgas zien per uur. Netwerkgas 
+        is de mix van aardgas en groen gas in de gasnetwerken. <br/><br/>
+        In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand">documentatie</a>
+        hebben we gedefinieerd welke types gasvraag worden gezien als flexibel/basislast en 
+        welke types gasaanbod worden gezien als flexibel/inflexibel.
     flexibility_hourly_hydrogen_supply_demand:
       title: Vraag en aanbod van waterstof per uur
       description: |
-        Deze grafiek laat per uur vraag en aanbod van waterstof zien. Wat er precies onder vraag en aanbod valt, wordt hieronder uitgelegd:
-        <ul><li>De vraaglijn toont de finale waterstofvraag van alle sectoren en de constante export van waterstof om het
-        jaarvolume te balanceren. De vraag van flex-technologieën die het systeem balanceren valt <b>niet</b>
-        in deze categorie, zoals waterstof dat gebruikt wordt in regelbare elektriciteitscentrales of warmteketels
-        voor warmtenetten. In het ETM wordt waterstof automatisch gebufferd door het jaar heen. Het waterstof dat deze
-        berging ingaat valt <b>niet</b> onder de vraag.</li>
-        <li>De aanbodlijn toont de niet-regelbare / volatiele productie, zoals bijvoorbeeld windmolenparken
-        die de geproduceerde elektriciteit direct omzetten in waterstof of een SMR productie plant. Ook valt de constante import van
-        waterstof om het jaarvolume te balanceren in deze categorie. De waterstofproductie
-        door power-to-gas elektrolyzers die elektriciteitsoverschotten omzetten in waterstof vallen <b>niet</b> in
-        deze categorie. Ook wordt het waterstof dat uit de opslag komt <b>niet</b> meegenomen.</li>
+        Deze grafiek laat de basislastvraag en het inflexibele aanbod van waterstof zien per uur. <br/><br/>
+        In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand">documentatie</a>
+        hebben we gedefinieerd welke types waterstofvraag worden gezien als flexibel/basislast en 
+        welke types waterstofaanbod worden gezien als flexibel/inflexibel.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulatieve onbalans per maand
     merit_order:

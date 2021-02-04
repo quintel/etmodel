@@ -1,5 +1,5 @@
-html, body, #main, #wrapper, #content
-  min-height: 100%
+html, body, #main, #wrapper
+  height: 100%
   background: #fff
 
 body#model
@@ -26,18 +26,17 @@ body#outside-model #wrapper
   margin: 0 10px
 
 #content
-  // Subtract main header height.
-  height: 100%
-  height: calc(100% - 57px)
+  display: flex
+  flex-direction: column
+  // subtract header from height
+  min-height: calc(100% - 57px)
   min-width: 1000px
   position: relative
 
   .flex-wrapper
     align-items: stretch
     display: flex
-    height: 100%
-    // Subtract scenario nav  height.
-    height: calc(100% - 42px)
+    flex: 1
 
   #sidebar
     width: 209px

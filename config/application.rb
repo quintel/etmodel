@@ -34,6 +34,9 @@ module Etm
 
     # Custom 404 and 500 page
     config.exceptions_app = routes
+
+    # Hopefully fixes Segfaults in sassc: https://github.com/sass/sassc-ruby/issues/197
+    config.assets.configure { |env| env.export_concurrent = false }
   end
 
   Date::DATE_FORMATS[:default] = '%d-%m-%Y'

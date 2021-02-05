@@ -240,6 +240,7 @@ class @AppView extends Backbone.View
       req = $.ajax(
         url: App.scenario.url_path() + '/custom_curves?show_unattached=true'
         method: 'GET'
+        dataType: 'json'
       )
 
       req.success((data) =>
@@ -257,6 +258,7 @@ class @AppView extends Backbone.View
       req = $.ajax({
         url: '/saved_scenarios',
         method: 'GET'
+        dataType: 'json'
       })
 
       req.done((data) =>

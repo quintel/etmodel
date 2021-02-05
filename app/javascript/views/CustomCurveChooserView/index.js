@@ -187,10 +187,6 @@ export function renderCSVInfo(curveData, userScenarios, t, options) {
       : undefined
   );
 
-  if (options.isFromScenario) {
-    details.append(formatCurveScenarioInfo(curveData.source_scenario, t));
-  }
-
   main.append($('<div class="file ' + (opts.icon || 'csv') + '" />'));
   main.append(details);
 
@@ -200,6 +196,9 @@ export function renderCSVInfo(curveData, userScenarios, t, options) {
     el.append($('<div class="help" />').append($('<div class="inner" />').text(options.help)));
   }
 
+  if (options.isFromScenario) {
+    el.append(formatCurveScenarioInfo(curveData.source_scenario, t));
+  }
   el.append(formatCurveStats(curveData.stats, t));
   el.append(renderCSVActions(opts, t, userScenarios));
 

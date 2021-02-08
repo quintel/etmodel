@@ -58,7 +58,7 @@ module PagesHelper
   # Public: Path to redirect the user when using an unsupported browser, but they choose to continue
   # anyway.
   def allow_unsupported_browser_path
-    url = URI(params[:location])
+    url = URI(params[:location] || '/')
 
     if url.query
       "#{url.path}?#{url.query}&allow_unsupported_browser=true"

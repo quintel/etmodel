@@ -15,8 +15,8 @@ nl:
       date_only: "%d-%m-%Y"
   date:
     formats:
-      short: "%-d %b %H:%M"
-      long: "%B %-d %Y, %H:%M"
+      short: "%-d %b"
+      long: "%B %-d %Y"
 
   errors:
     format: "%{attribute} %{message}"

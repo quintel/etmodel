@@ -87,8 +87,11 @@ class Api::Area < ActiveResource::Base
   # Returns an Api::Area.
   def top_level_area
     if try(:base_dataset).present?
+      # Remove a trailing year from the dataset key.
+      base_key = base_dataset.gsub(/\d{4}$/, '')
+
       # rubocop:disable Rails/DynamicFindBy
-      self.class.find_by_country_memoized(base_dataset)&.top_level_area || self
+      self.class.find_by_country_memoized(base_key)&.top_level_area || self
       # rubocop:enable Rails/DynamicFindBy
     else
       self

@@ -188,8 +188,17 @@ nl:
     warning:
       message: |
         Dit scenario is voor het laatst bijgewerkt op %{last_updated}, in een eerdere versie van het model.
-        De meest recente versie van het model is gepubliceerd op %{release_date}. Sommige instellingen en
-        uitkomsten van dit scenario kunnen afwijken van de originele getallen.
+        De meest recente versie van het model is gepubliceerd op %{release_date}.
+      effect: Wat is de impact van model-updates op scenario's?
+      outcomes_explanation: |
+        Scenario outcomes may change due to improvements in the model, better quality data, or the
+        addition of new sliders.
+      outcomes_header: Outcomes
+      slider_changes_explanation: |
+        Tijdens verbeterprojecten zijn we soms genoodzaakt om schuifjes-instellingen aan te passen.
+        Dit is nodig om te zorgen dat het scenario compatibel blijft met de nieuwe versie van het
+        model, en dat de bedoelingen van de auteur zo goed mogelijk bewaard blijven.
+      slider_changes_header: Slider changes
       view_updates: Bekijk recente modelupdates
     created_by: "Gemaakt door"
     other: "Overig&hellip;"

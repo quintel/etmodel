@@ -51,6 +51,21 @@ table.default
       margin-bottom: 1rem
       padding: 1rem 1.5rem 1rem 4.5rem
 
+      dt
+        font-weight: 600
+      dd
+        margin: 1rem 0
+        padding: 0
+
+      details
+        margin-top: 1rem
+      summary
+        cursor: pointer
+        &:hover
+          text-decoration: underline
+        &:focus:not(:focus-visible)
+          outline: none
+
       .links
         margin-top: 0.75rem
         &:before

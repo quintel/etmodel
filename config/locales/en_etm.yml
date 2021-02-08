@@ -189,8 +189,17 @@ en:
     warning:
       message: |
         This scenario was last updated on %{last_updated}, in an earlier version of the model. The
-        most recent release of the model was on %{release_date}. Some of the slider settings and
-        outcomes may therefore deviate from their original values.
+        most recent release of the model was on %{release_date}.
+      effect: How do updates to the model affect scenarios?
+      outcomes_explanation: |
+        Scenario outcomes may change due to improvements in the model, better quality data, or the
+        addition of new sliders.
+      outcomes_header: Outcomes
+      slider_changes_explanation: |
+        During updates we must sometimes make small changes to the saved settings for some sliders.
+        This is done to ensure that scenario remains compatible with the new version of the model
+        and, whenever possible, that the intentions of the scenario’s author are preserved.
+      slider_changes_header: Slider changes
       view_updates: View recent model updates
     other: "Other&hellip;"
     actueel: "Featured"

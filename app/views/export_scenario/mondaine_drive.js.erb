@@ -1,0 +1,3 @@
+$('.options').hide();
+$("form#export_esdl").append('<%= escape_javascript(render partial: 'mondaine_drive', locals: { esdl_tree: @esdl_tree }) %>');
+$(document).ready(setupMondaineDriveListeners);

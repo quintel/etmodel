@@ -4,6 +4,7 @@
 # specified ESDL file. The service returns the scenario_id when (fully) succesful.
 class ImportEsdlController < ApplicationController
   before_action :ensure_esdl_enabled
+  before_action :store_location, only: :index
 
   def index
     return unless esdl_id

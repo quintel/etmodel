@@ -35,6 +35,8 @@ $(function () {
   var mondaineDrive = $('#mondaine_drive');
 
   if (mondaineDrive.length > 0) {
+    browseMondaineDrive($('form#import_esdl'));
+
     if (mondaineDrive.hasClass('disabled')) {
       mondaineDrive.find('a').on('click', false);
     } else {
@@ -44,7 +46,8 @@ $(function () {
 });
 
 // Browsing the Mondaine Drive
-$(function () {
+// selectType can be either 'file' or 'folder'
+function browseMondaineDrive(form, selectFolder = false) {
   var folders = $('.folder__true');
 
   if (folders.length > 0) {
@@ -56,7 +59,7 @@ $(function () {
   // from the server and create them in the DOM
   function expandFolder() {
     var folder = $(this);
-    swapIcon(folder.find('span'));
+    swapIcon(folder);
 
     if (folder.next('.children').length > 0) {
       folder.next().toggle(30);
@@ -87,12 +90,12 @@ $(function () {
     }
   }
 
-  // When a file is clicked (selected), add a 'selected' class, and remove the
+  // When an element is clicked (selected), add a 'selected' class, and remove the
   // 'required' property from the 'Browse my computer' input. Vice-versa
-  // when the file is de-selected.
-  function selectFile() {
+  // when the element is de-selected.
+  function selectElement() {
     var file = $(this);
-    var esdlForm = $('form#import_esdl');
+    var esdlForm = $(form);
 
     if (file.hasClass('selected')) {
       file.removeClass('selected');
@@ -118,25 +121,38 @@ $(function () {
       childNode.addClass(child['type'] + '__' + child['children']);
       childNode.data(child);
 
-      if (child['type'] == 'folder' && child['children'] == true) {
+      if (child['type'] == 'folder' && child['children']) {
         childNode.on('click', expandFolder);
-      } else if (child['type'] == 'file-esdl') {
-        childNode.on('click', selectFile);
-      } else {
+      } else if (child['type'] == 'folder' && !child['children']) {
         childNode.append(' (empty)');
+        if (selectFolder) {
+          childNode.addClass('hover-pointer');
+          childNode.on('click', selectElement);
+        }
+      } else if (child['type'] == 'file-esdl' && !selectFolder) {
+        childNode.on('click', selectElement);
       }
       childrenNode.append(childNode);
     });
 
     return childrenNode;
   }
-});
 
-// Swaps open and closed folder icons
-function swapIcon(icon) {
-  if (icon.hasClass('fa-folder')) {
-    icon.addClass('fa-folder-open').removeClass('fa-folder');
-  } else {
-    icon.addClass('fa-folder').removeClass('fa-folder-open');
+  // Swaps open and closed folder icons, and keeps track of the folder being selected if
+  // possible
+  function swapIcon(folder) {
+    var icon = folder.find('span');
+
+    if (icon.hasClass('fa-folder')) {
+      icon.addClass('fa-folder-open').removeClass('fa-folder');
+
+      if (selectFolder) {
+        $('.selected').removeClass('selected');
+        folder.addClass('selected');
+        $(form).find('input[name=mondaine_drive_path]').val(folder.data('id'));
+      }
+    } else {
+      icon.addClass('fa-folder').removeClass('fa-folder-open');
+    }
   }
 }

@@ -17,7 +17,7 @@ class EsdlSuiteController < ApplicationController
   def redirect
     esdl_suite_service.authenticate(params[:code], stored_nonce, current_user)
 
-    redirect_to import_esdl_path
+    redirect_to previous_esdl_action
   end
 
   # Browse the Mondaine Drive with an EsdlSuiteId
@@ -59,7 +59,12 @@ class EsdlSuiteController < ApplicationController
     session.delete(:esdl_nonce)
   end
 
+  # If last location of esdl action was not stored, return to root
+  def previous_esdl_action
+    session[:return_to] or root_path
+  end
+
   def require_esdl_suite_id
-    redirect_to import_esdl_path if current_user.esdl_suite_id.blank?
+    redirect_to previous_esdl_action if current_user.esdl_suite_id.blank?
   end
 end

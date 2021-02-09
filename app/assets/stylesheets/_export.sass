@@ -4,7 +4,6 @@
   text-align: center
 
   .exportbox
-    // text-align: left
     background-color: #fff
     border: 1px solid $landing-border-color
     border-bottom-color: darken($landing-border-color, 5%)
@@ -15,20 +14,60 @@
     padding: 15px 40px
     margin-top: 30px
 
+    .bar
+      border-top: 1px solid #aaa
+      margin: 0 auto
+      padding-bottom: 0.875rem
+
+    a:hover
+      text-decoration: none !important
     .option
       text-align: left
       border: 0.25px solid #aaa
       border-radius: 15px
-      padding: 3px 10px
+      padding: 4px 15px
       margin: 20px auto
       width: 350px
       cursor: pointer
       display: block
       color: #333
-      box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.1)
+      // box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.1)
+      background: #fff
       span
         float: right
-        font-weight: bolder
+        // font-weight: bold
         font-size: 15pt
+        // border-left: 0.25px solid #aaa
+        padding-left: 11px
+      &:hover, &:active
+        background: $landing-blue
+        border-color: $landing-blue
+        color: #fff
+        // span
+        //   color: $link-color
+      // &:active
+      //   background: #eee
+
+  #export_esdl
+    h3
+      text-align: left
+      margin-left: 75px
+    .back
+      color: $link-color
+      text-align: right
+      margin: 0 75px -35px 0
       &:hover
-        text-decoration: none
+        text-decoration: underline
+        cursor: pointer
+    .browsing, .filename
+      width: 400px
+      margin: 10px auto
+    .filename
+      padding: 10px
+      display: flex
+      justify-content: space-between
+      input[type="text"]
+        width: 250px
+      // .button
+      //   width: 50px
+

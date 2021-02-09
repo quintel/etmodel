@@ -1,0 +1,14 @@
+.mondaine_drive
+  .back
+    ← back
+  - if esdl_tree
+    %h3= t('esdl.mondaine_drive.browse')
+    = render partial: 'import_esdl/browse', locals: { esdl_tree: esdl_tree }
+    .filename
+      = label :filename, 'File name:'
+      = text_field_tag :filename, 'my_etm_scenario.esdl'
+      .button.submit
+        Export
+  - else
+    %h3 LOGIN
+    = render partial: 'import_esdl/login_to_drive'

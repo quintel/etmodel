@@ -1,3 +1,5 @@
+- content_for(:page_title) { "Export scenario - #{t('meta.name')}" }
+
 .background_wrapper
   #export
     %h1 Export your scenario
@@ -6,14 +8,14 @@
 
     .exportbox
       %h2 Export as ESDL
+      .bar
       = form_with url: export_esdl_scenario_path, id: 'export_esdl' do |f|
-        .option
-          To my computer
-          %span →
-      -# .option
-      -#   To my Mondaine Drive
-      -#   %span →
-
-      -# = form_with url: scenario_export_esdl_path, id: 'export_esdl' do |f|
-      -#   = f.hidden_field :scenario_id, value: @scenario_id
-      -#   = f.submit "Export →", class: 'button'
+        = f.hidden_field :mondaine_drive_path, value: ''
+        .options
+          .option.submit
+            To my computer
+            %span →
+          = link_to export_mondaine_drive_scenario_path, :remote => true do
+            .option.browse
+              To my Mondaine Drive
+              %span →

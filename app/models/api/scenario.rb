@@ -33,11 +33,11 @@ class Api::Scenario < ActiveResource::Base
 
   # The JSON request returns a string. Let's make it a DateTime object
   def created_at
-    Time.utc(attributes[:created_at]) if attributes[:created_at]
+    Time.parse(attributes[:created_at]).utc if attributes[:created_at]
   end
 
   def updated_at
-    Time.utc(attributes[:updated_at])
+    Time.parse(attributes[:updated_at]).utc
   end
 
   def days_old

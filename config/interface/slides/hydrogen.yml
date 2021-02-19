@@ -1,10 +1,12 @@
 ---
-- key: supply_hydrogen_production
+- general_sub_header: input_capacity
+  key: supply_hydrogen_production
   position: 1
   sidebar_item_key: hydrogen
   alt_output_element_key: hydrogen_production
   output_element_key: mekko_of_hydrogen_network
-- key: supply_hydrogen_transport
+- general_sub_header: share
+  key: supply_hydrogen_transport
   position: 3
   sidebar_item_key: hydrogen
   output_element_key: mekko_of_hydrogen_network

@@ -42,24 +42,6 @@
     margin-top: 30px
     border-top-color: $landing-gold
 
-    .dot
-      font-size: 6px
-      color: $link-color
-      margin: 0 6px
-      vertical-align: middle
-
-    .button.login
-      background: linear-gradient(lighten($landing-gold, 10%), $landing-gold)
-      width: 250px
-      font-size: 0.875rem
-      padding: 8px 4px
-      margin-bottom: 20px
-      &:hover
-        text-decoration: none !important
-        background: linear-gradient(lighten($landing-gold, 15%), lighten($landing-gold, 10%))
-      &:active
-        background: linear-gradient(darken($landing-gold, 1%), darken($landing-gold, 10%))
-
     &.disabled
       position: relative
       color: #ddd
@@ -178,3 +160,24 @@
       margin-left: -7px
       &:hover
         color: revert
+
+  #mondaine_drive, .mondaine_drive
+    .dot
+      font-size: 6px
+      color: $link-color
+      margin: 0 6px
+      vertical-align: middle
+
+    .button.login
+      background: linear-gradient(lighten($landing-gold, 10%), $landing-gold)
+      width: 250px
+      font-size: 0.875rem
+      font-weight: bold
+      padding: 8px 4px
+      margin-bottom: 20px
+      color: white
+      &:hover
+        text-decoration: none !important
+        background: linear-gradient(lighten($landing-gold, 15%), lighten($landing-gold, 10%))
+      &:active
+        background: linear-gradient(darken($landing-gold, 1%), darken($landing-gold, 10%))

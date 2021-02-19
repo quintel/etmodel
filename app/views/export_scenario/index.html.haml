@@ -2,20 +2,20 @@
 
 .background_wrapper
   #export
-    %h1 Export your scenario
+    %h1= t('export.title')
 
-    %p Export the settings of your scenario to another format. The sliders you set will be read and reinterpreted into the file-type of your choosing. Right now you can only export your scenario as ESDL.
+    %p= t('export.intro')
 
     .exportbox
-      %h2 Export as ESDL
+      %h2= t('export.esdl.title')
       .bar
       = form_with url: export_esdl_scenario_path, id: 'export_esdl' do |f|
         = f.hidden_field :mondaine_drive_path, value: ''
         .options
           .option.submit
-            To my computer
+            = t('export.esdl.to_computer')
             %span →
           = link_to export_mondaine_drive_scenario_path, :remote => true do
             .option.browse
-              To my Mondaine Drive
+              = t('export.esdl.to_drive')
               %span →

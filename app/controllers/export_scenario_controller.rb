@@ -21,7 +21,7 @@ class ExportScenarioController < ApplicationController
       # Upload to Mondaine Drive
       upload_result = UploadToEsdlSuite.call(esdl_id, mondaine_drive_upload_path, result.value)
       if upload_result.successful?
-        redirect_to export_scenario_path, notice: 'File was successfully uploaded'
+        redirect_to export_scenario_path, notice: t('export.esdl.success')
       else
         redirect_to export_scenario_path, notice: upload_result.errors.join(', ')
       end

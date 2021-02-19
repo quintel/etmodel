@@ -61,6 +61,9 @@ function browseMondaineDrive(form, selectFolder = false) {
     var folder = $(this);
     swapIcon(folder);
 
+    // Remove any old warnings
+    $('.warning').remove();
+
     if (folder.next('.children').length > 0) {
       folder.next().toggle(30);
       // When imploding a folder, 'deselect' the 'selected' file within

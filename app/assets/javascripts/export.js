@@ -27,9 +27,11 @@ function esdlSubmitChecks(form) {
 
   // If we want to export to Mondaine Drive, give a warning if no folder was selected
   if (form.find('input[name=mondaine_drive_path]').val() == '') {
-    mondaine_drive.append(
-      $('<div></div>').text(I18n.translate('export.esdl.select_folder')).addClass('warning')
-    );
+    if ($('.warning').length == 0) {
+      mondaine_drive.append(
+        $('<div></div>').text(I18n.translate('export.esdl.select_folder')).addClass('warning')
+      );
+    }
 
     return false;
   }

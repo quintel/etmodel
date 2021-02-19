@@ -9,23 +9,35 @@ task fetch_nodes_download_source: :environment do
 
   yml_file = Rails.root.join('config', 'nodes_download_source.yml')
 
-  yml = YAML.load_file(yml_file)
+  yml = YAML.load_file(yml_file) || {}
   nodes = InputElement.all.map(&:related_node).uniq.reject!(&:blank?)
+
+  counter = { total: nodes.length, done: 0 }
+  puts "Updating source download links for #{counter[:total]} nodes"
   nodes.each do |node|
     node = node.gsub(/ $/, '')
     NodeDownload.urls(node).each do |url|
       yml[node] = url + '?raw=true' if NodeDownload.valid_url?(url)
     end
+
+    counter[:done] += 1
+    puts "(#{counter[:done]} / #{counter[:total]}) processed" if (counter[:done] % 25).zero?
   end
   File.write(yml_file, yml.to_yaml)
+  puts 'Done!'
 end
 
 module NodeDownload
+  # Possible valid file endings
+  FILE_ENDINGS = %w[.xlsx .node.xlsx .central_producer.xlsx .converter.xlsx].freeze
+
   def urls(node)
     git_url = 'https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/'
     folder = node.gsub(/_.*/, '')
-    %w[.node.xlsx .central_producer.xlsx].map do |ending|
-      git_url + folder + '/' + node + ending
+    FILE_ENDINGS.flat_map do |ending|
+      %w[energy molecules].map do |type|
+        git_url + type + '/' + folder + '/' + node + ending
+      end
     end
   end
 

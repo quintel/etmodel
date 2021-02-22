@@ -17,11 +17,11 @@ nl:
         >Aanbod</a>). Per sector kun je met schuifjes aangeven hoe je denkt dat de
         toekomst eruit gaat zien. Een verandering kan altijd weer ongedaan gemaakt
         worden door het schuifje te resetten, dus probeer vooral uit! Begin bijvoorbeeld
-        eens met de <a href=\"/scenario/demand/households/space-heating-hot-water\"
+        eens met de <a href=\"/scenario/demand/households/space-heating-and-hot-water\"
         >warmtevoorziening in huishoudens</a> of de impact van <a href=\"/scenario/demand/transport/overview\"
         >vervoer</a>.</li>\r\n<li>Optioneel: gevorderde gebruikers kunnen aanpassingen
-        doen in <a href=\"/scenario/flexibility/excess_electricity/order-of-flexibility-options\"
-        >flexibiliteit</a> (matchen van vraag en aanbod van uur tot uur) en <a href=\"/scenario/costs/merit_order/merit-order\"
+        doen in <a href=\"/scenario/flexibility/flexibility_overview/what-is-flexibility\"
+        >flexibiliteit</a> (matchen van vraag en aanbod van uur tot uur) en <a href=\"/scenario/costs/fuel_costs/fossil-fuels\"
         >kostenontwikkelingen</a>.</li>\r\n<li>Je kunt jouw ideeën toetsen door het
         scenario rapport te bekijken onder het kopje <a href=\"/scenario/data/data_visuals/scenario-report\"
         >Resultaten</a>. Je kunt vervolgens altijd terugkeren naar een bepaald onderdeel
@@ -44,16 +44,21 @@ nl:
     overview_co2_emissions:
       title: Totale CO<sub>2</sub>-uitstoot
       short_description:
-      description: "Hoeveel CO<sub>2</sub> wordt er op dit moment uitgestoten door
-        de verschillende sectoren in jouw regio en wat is de impact van aanpassingen
-        aan het energiesysteem? \r\n</br></br>\r\nIn de grafiek rechts zie je de totale
-        <em>energetische</em> CO<sub>2</sub>-uitstoot voor drie verschillende jaren:
-        het referentiejaar 1990, het jaar waar we nu gegevens over hebben en het toekomstjaar
-        van jouw scenario. Zie je de waardes van de grafiek liever in een tabel? Klik
-        dan rechtsbovenaan in de grafiek op het tabel-icoontje.\r\n</br></br>\r\nHet
+      description: "Hoeveel CO<sub>2</sub> wordt er uitgestoten door
+        de verschillende sectoren in jouw regio? \r\n</br></br>\r\n
+        De grafiek rechts vergelijkt de uitstoot van CO<sub>2</sub>
+        in 1990, het heden en de toekomst. Het jaar 1990 wordt vaak als referentiejaar
+        gebruikt in CO<sub>2</sub> doelstellingen.\r\n</br></br>\r\nHet ETM neemt alleen
+        de binnenlandse, energetische CO<sub>2</sub>-uitstoot mee en de niet-energetische 
+        uitstoot van de kunstmestsector. Niet-energetische uitstoot in andere sectoren en 
+        overige broeikasgassen (zoals methaan) zijn niet meegenomen. In de
+        <a href=\"https://docs.energytransitionmodel.com/main/co2-overview-per-sector\"
+        target=\"_blank\">documentatie</a> kun je meer informatie vinden.
+        \r\n</br></br>\r\nHet
         percentage CO<sub>2</sub>-reductie ten opzichte van 1990 blijft zichtbaar
         in de balk onderaan terwijl je door het ETM navigeert. Je kunt de grafiek
-        rechts altijd oproepen door op dit getal onderaan te klikken."
+        rechts altijd oproepen door op dit getal onderaan te klikken. Zie je de waardes 
+        van de grafiek liever in een tabel? Klik dan rechtsbovenaan in de grafiek op het tabel-icoontje."
     overview_final_demand:
       title: Totaal energiegebruik
       short_description:

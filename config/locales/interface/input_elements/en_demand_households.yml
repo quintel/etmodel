@@ -441,13 +441,11 @@ en:
     households_heater_combined_network_gas_share:
       title: Condensing combi boiler
       short_description: ''
-      description: "This is a condensing gas-fired heater for a central heating system.
-        These systems are quite energy efficient, but not the most efficient heaters
-        use gas. To see which are more efficient, try some sliders below.<br/>\r\nThese
-        boilers also produce hot water for showering and other uses. Hot water production
-        is slightly less efficient than producing heat for the central heating system.<br/>\r\nThese
-        boilers emit CO<sub>2</sub>. The latter is a problem if you wish to reduce
-        emissions significantly."
+      description: "This is a condensing gas-fired heater.
+        When you click on \"Technical and financial properties\", then you will see that the
+        efficiency is above 100% for space heating. This is the case because these heaters also 
+        retrieve heat from condensation. These boilers also produce hot water for showering and other uses. Hot water production
+        is slightly less efficient than producing heat for the central heating system."
     households_heater_heatpump_ground_water_electricity_share:
       title: Heat pump (ground)
       short_description: ''

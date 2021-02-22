@@ -14,11 +14,11 @@ en:
         >Demand</a>) or produce energy (<a href=\"/scenario/supply/electricity/coal-plants\"
         >Supply</a>). For each sector you can use sliders to indicate what you think
         the future will be like. You can easily undo your changes by resetting your
-        slider, so just play around! For example you can start with <a href=\"/scenario/demand/households/space-heating-hot-water\"
+        slider, so just play around! For example you can start with <a href=\"/scenario/demand/households/space-heating-and-hot-water\"
         >space heating in households</a> or explore <a href=\"/scenario/demand/transport/overview\"
         >transport and mobility</a>.</li>\r\n<li>Optional: Advanced users can use
-        the <a href=\"/scenario/flexibility/excess_electricity/order-of-flexibility-options\"
-        >Flexibility</a> section to match demand and supply and the <a href=\"/scenario/costs/merit_order/merit-order\"
+        the <a href=\"/scenario/flexibility/flexibility_overview/what-is-flexibility\"
+        >Flexibility</a> section to match demand and supply and the <a href=\"/scenario/costs/fuel_costs/fossil-fuels\"
         >Costs</a> section for cost assumptions.</li>\r\n<li>You can test your ideas
         by taking a look at the scenario report under the header '<a href=\"/scenario/data/data_visuals/scenario-report\"
         >Results</a>'. You can always return to a certain part of the model to make
@@ -40,15 +40,22 @@ en:
       title: Total CO<sub>2</sub> emissions
       short_description:
       description: "How much CO<sub>2</sub> is currently emitted by the various sectors
-        in your region and what is the impact of adjustments to the energy system?\r\n</br></br>\r\nThe
-        chart on the right shows the total <em>energetic</em> CO<sub>2</sub>-emissions
-        for three different years: the reference year 1990, the year we use for the
-        present situation and the year of your scenario. Do you prefer to see the
-        values of the chart in a table? Click on the table icon at the top right of
-        the chart.\r\n</br></br>\r\nThe percentage of CO<sub>2</sub>-reduction with
+        in your region?\r\n</br></br>\r\n
+        The chart on the right compares CO<sub>2</sub> emissions between
+        1990, the present and the future. The year 1990 is often used as a reference
+        year for CO<sub>2</sub> emissions targets.<br/><br/>The ETM takes into account energetic
+        CO<sub>2</sub> emissions, which are emitted in domestic energy use and production, as well as 
+        non-energetic CO<sub>2</sub> emissions in the Fertilizers sector. Non-energetic CO<sub>2</sub>
+        emissions in other sectors and other green house gases (e.g. methane) are not included. You can find
+        more information in the 
+        <a href=\"https://docs.energytransitionmodel.com/main/co2-overview-per-sector\"
+        target=\"_blank\">documentation</a>.
+        \r\n</br></br>\r\nThe percentage of CO<sub>2</sub>-reduction with
         respect to 1990 remains visible in the bar at the bottom as you navigate through
         the ETM. You can re-visit the chart on the right at any time by clicking on
-        this number at the bottom. "
+        this number at the bottom. Do you prefer to see the
+        values of the chart in a table? Click on the table icon at the top right of
+        the chart."
     overview_final_demand:
       title: Total energy demand
       short_description:

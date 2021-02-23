@@ -3,335 +3,171 @@
   color: "#2296F3"
   order_by: 1
   group: wet
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: bio_fuels_from_wet_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: bio_fuels_wet_biomass_demand_by_category
 - label: chp_heat_and_electricity
   color: "#FFB300"
   order_by: 5
   group: wet
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: chp_heat_and_electricity_from_wet_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: chp_heat_and_electricity_wet_biomass_demand_by_category
 - label: electricity
   color: "#E91E63"
   order_by: 10
   group: wet
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: electricity_from_wet_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: electricity_wet_biomass_demand_by_category
 - label: export
   color: "#999999"
   order_by: 15
   group: wet
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: export_of_wet_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: export_wet_biomass_demand_by_category
 - label: greengas_final_demand
   color: "#4BAF50"
   order_by: 20
   group: wet
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
   gquery: greengas_from_wet_biomass
-  is_1990: false
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: greengas_final_demand_wet_biomass_demand_by_category
 - label: heat_network
   color: "#FF5722"
   order_by: 25
   group: wet
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
   gquery: heat_from_wet_biomass
-  is_1990: false
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: heat_network_wet_biomass_demand_by_category
 - label: hydrogen
   color: "#68C3E8"
   order_by: 30
   group: wet
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: hydrogen_from_wet_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: hydrogen_wet_biomass_demand_by_category
 - label: biomass_potential
   color: "#AB47BCCC"
   order_by: 35
   group: wet
-  show_at_first: 
   is_target_line: true
-  target_line_position: '1'
   gquery: max_demand_wet_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: biomass_potential_wet_biomass_demand_by_category_1
-- label: biomass_potential
-  color: "#AB47BCCC"
-  order_by: 40
-  group: wet
-  show_at_first: 
-  is_target_line: true
-  target_line_position: '2'
-  gquery: max_demand_wet_biomass
-  is_1990: 
-  dependent_on: 
-  output_element_key: biomass_demand_by_category
-  key: biomass_potential_wet_biomass_demand_by_category_2
 - label: chp_heat_and_electricity
   color: "#FFB300"
   order_by: 101
   group: dry
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: chp_heat_and_electricity_from_dry_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: chp_heat_and_electricity_dry_biomass_demand_by_category
 - label: electricity
   color: "#E91E63"
   order_by: 105
   group: dry
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: electricity_from_dry_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: electricity_dry_biomass_demand_by_category
 - label: export
   color: "#999999"
   order_by: 110
   group: dry
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: export_of_dry_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: export_dry_biomass_demand_by_category
 - label: greengas_final_demand
   color: "#4BAF50"
   order_by: 115
   group: dry
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
   gquery: greengas_from_dry_biomass
-  is_1990: false
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: greengas_final_demand_dry_biomass_demand_by_category
 - label: heat_network
   color: "#FF5722"
   order_by: 120
   group: dry
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
   gquery: heat_from_dry_biomass
-  is_1990: false
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: heat_network_dry_biomass_demand_by_category
 - label: hydrogen
   color: "#68C3E8"
   order_by: 125
   group: dry
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: hydrogen_from_dry_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: hydrogen_dry_biomass_demand_by_category
 - label: wood
   color: "#8D6E63"
   order_by: 130
   group: dry
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: wood_from_dry_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: wood_dry_biomass_demand_by_category
 - label: biomass_potential
   color: "#AB47BCCC"
   order_by: 135
   group: dry
-  show_at_first: 
   is_target_line: true
-  target_line_position: '1'
   gquery: max_demand_dry_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: biomass_potential_dry_biomass_demand_by_category_1
-- label: biomass_potential
-  color: "#AB47BCCC"
-  order_by: 140
-  group: dry
-  show_at_first: 
-  is_target_line: true
-  target_line_position: '2'
-  gquery: max_demand_dry_biomass
-  is_1990: 
-  dependent_on: 
-  output_element_key: biomass_demand_by_category
-  key: biomass_potential_dry_biomass_demand_by_category_2
 - label: bio_fuels
   color: "#2296F3"
   order_by: 201
   group: oily
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: bio_fuels_from_oily_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: bio_fuels_oily_biomass_demand_by_category
 - label: export
   color: "#999999"
   order_by: 205
   group: oily
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: export_of_oily_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: export_oily_biomass_demand_by_category
 - label: biomass_potential
   color: "#AB47BCCC"
   order_by: 210
   group: oily
-  show_at_first: 
   is_target_line: true
-  target_line_position: '1'
   gquery: max_demand_oily_biomass
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: biomass_potential_oily_biomass_demand_by_category_1
-- label: biomass_potential
-  color: "#AB47BCCC"
-  order_by: 215
-  group: oily
-  show_at_first: 
-  is_target_line: true
-  target_line_position: '2'
-  gquery: max_demand_oily_biomass
-  is_1990: 
-  dependent_on: 
-  output_element_key: biomass_demand_by_category
-  key: biomass_potential_oily_biomass_demand_by_category_2
 - label: chp_heat_and_electricity
   color: "#FFB300"
   order_by: 301
   group: biogenic_waste
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: chp_heat_and_electricity_from_biogenic_waste
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: chp_heat_and_electricity_biogenic_waste_biomass_demand_by_category
 - label: electricity
   color: "#E91E63"
   order_by: 305
   group: biogenic_waste
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: electricity_from_biogenic_waste
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: electricity_biogenic_waste_biomass_demand_by_category
 - label: export
   color: "#999999"
   order_by: 310
   group: biogenic_waste
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
   gquery: export_of_biogenic_waste
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: export_biogenic_waste_biomass_demand_by_category
 - label: heat_network
   color: "#FF5722"
   order_by: 315
   group: biogenic_waste
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
   gquery: heat_from_biogenic_waste
-  is_1990: false
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: heat_network_biogenic_waste_biomass_demand_by_category
 - label: biomass_potential
   color: "#AB47BCCC"
   order_by: 320
   group: biogenic_waste
-  show_at_first: 
   is_target_line: true
-  target_line_position: '1'
   gquery: max_demand_biogenic_waste
-  is_1990: 
-  dependent_on: 
   output_element_key: biomass_demand_by_category
   key: biomass_potential_biogenic_waste_biomass_demand_by_category_1
-- label: biomass_potential
-  color: "#AB47BCCC"
-  order_by: 325
-  group: biogenic_waste
-  show_at_first: 
-  is_target_line: true
-  target_line_position: '2'
-  gquery: max_demand_biogenic_waste
-  is_1990: 
-  dependent_on: 
-  output_element_key: biomass_demand_by_category
-  key: biomass_potential_biogenic_waste_biomass_demand_by_category_2

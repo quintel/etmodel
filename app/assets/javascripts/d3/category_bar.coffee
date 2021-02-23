@@ -1,4 +1,4 @@
-categoriesFromSeries = (series) ->
+categoriesFromSeries = (series, periods) ->
   byGroup = (serie) -> serie.get('group')
 
   # Series are already sorted; the order of each category is determined based
@@ -13,39 +13,85 @@ categoriesFromSeries = (series) ->
       orderedCategoryNames = _.without(orderedCategoryNames, key)
 
   for groupName in orderedCategoryNames
-    new D3.category_bar.Category(groupName, grouped[groupName])
+    new D3.category_bar.Category(groupName, grouped[groupName], periods)
+
+# A custom column stack method.
+#
+# Determines the y and y0 value for each series within a column. This allows us to stack series on
+# top of one another. Series which positive values are positioned above the zero axis, while those
+# with a negative value are positioned below.
+#
+# The series "y" value corresponds with its value; the "y0" is the sum of the
+# series which appear below. For example with three series:
+#
+#   * a: 10
+#   * b: 20
+#   * c: 10
+#
+# The values assigned will be:
+#
+#   * a - y: 10, y0: 0
+#   * b - y: 20, y0: 10
+#   * c - y: 10, y0: 30
+#
+# D3.js v2 does not support negative values in stacks. Newer versions (v6+) do support a "diverging"
+# stack methods which appears to support this.
+stackColumn = (series, zeroOffset) ->
+  positiveY = zeroOffset
+  negativeY = zeroOffset
+
+  series.map (serie) ->
+    if serie.y >= 0
+      serie.y0 = positiveY
+      positiveY += serie.y
+    else
+      negativeY -= Math.abs(serie.y)
+      serie.y0 = negativeY
+      serie.y = Math.abs(serie.y)
+
+    serie
+
+# stacker = (data, zeroOffset) ->
+#   stackColumn(series, zeroOffset)
+
+nonNegativeValue = (value) ->
+  if value < 0 then 0 else value
+
+nonPositiveValue = (value) ->
+  if value > 0 then 0 else value
+
+safeSerieValue = (serie, period) ->
+  if period == 'present'
+    serie.safe_present_value()
+  else
+    serie.safe_future_value()
 
 D3.category_bar =
   # Contains information about, and series for, a category.
   Category: class Category
-    constructor: (@key, @series) ->
+    constructor: (@key, @series, @periods) ->
       @targetSeries = @series.filter((serie) -> serie.get('is_target_line'))
       @valueSeries = @series.filter((serie) -> !serie.get('is_target_line'))
+
+    minMaxValues: (valueFilter) =>
+      @periods.map((period) => [
+        d3.sum(@valueSeries.map((serie) -> valueFilter(safeSerieValue(serie, period)))),
+        @targetSeries.map((serie) -> valueFilter(safeSerieValue(serie, period)))
+      ]).flat(3)
 
     # The category max is the highest target series, or the sum of all
     # non-target series.
     maxValue: () ->
-      sumPresent = d3.sum(
-        @valueSeries.map((serie) -> serie.safe_present_value())
-      )
+      d3.max(@minMaxValues(nonNegativeValue))
 
-      sumFuture = d3.sum(
-        @valueSeries.map((serie) -> serie.safe_future_value())
-      )
-
-      d3.max(_.flatten([
-        @targetSeries.map((serie) -> serie.safe_future_value()),
-        @targetSeries.map((serie) -> serie.safe_present_value()),
-        sumPresent,
-        sumFuture
-      ]))
+    minValue: () ->
+      d3.min(@minMaxValues(nonPositiveValue))
 
     # Columns which will be rendered on the chart to show the category data.
     columns: () ->
-      [
-        { key: "#{@key}_present", name: '', period: 'present' },
-        { key: "#{@key}_future", name: @key, period: 'future' }
-      ]
+      @periods.map((period) =>
+        { key: "#{@key}_#{period}", name: @key, period: period, category: this }
+      )
 
   # The category bar view.
   View: class extends D3ChartView
@@ -55,32 +101,39 @@ D3.category_bar =
 
       # the stack method will filter the data and calculate the offset
       # for every item
-      @stack_method = (columns) ->
-        _.flatten(columns.map (column) ->
-          d3.layout.stack().offset('zero')(column.map (item) -> [item]))
+      @stack_method = (column) ->
+        stackColumn(column, Math.abs(@inverted_y.domain()[0]))
 
     can_be_shown_as_table: -> true
 
     margins:
       top: 20
       bottom: 40
-      left: 30
+      left: 20
       right: 40
 
     legend_margin: 20
 
     is_empty: =>
-      total = 0
+      !@categories.some((category) -> category.minValue() != 0 || category.maxValue() != 0)
 
-      @prepare_data().map (d) ->
-        total += (d.reduce (t,s) -> t.y + s.y)
-
-      total <= 0
+    periods: ->
+      if @model.get('config') && @model.get('config').period
+        [@model.get('config').period]
+      else
+        ['present', 'future']
 
     draw: =>
-      @categories = categoriesFromSeries(@series)
+      self = this
+
+      @categories = categoriesFromSeries(@series, @periods())
 
       [@width, @height] = @available_size()
+
+      if @periods().length < 2
+        # The years will not be shown; margins can be reduced.
+        @margins.bottom = 20
+        @legend_margin = 0
 
       @series_height = @height - @legend_margin
 
@@ -94,80 +147,132 @@ D3.category_bar =
         .rangeRoundBands([0, @width - @margins.right])
         .domain(columns.map((col) -> col.key))
 
-      @y = d3.scale.linear().range([0, @series_height]).domain([0, 7])
-      @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 7])
+      @y = d3.scale.linear().range([0, @series_height]).domain([0, 1])
+      @inverted_y = d3.scale.linear().range([@series_height, 0]).domain([0, 1])
 
-      @bar_width = Math.round(@x.rangeBand() * 0.75)
-      @bar_space = Math.round(@x.rangeBand() - @bar_width)
+      # Scales and spacing
+      # ------------------
 
-      # Year names.
-      @svg.selectAll('text.year')
-        .data(columns)
-        .enter().append('svg:text')
-        .attr('class', 'year small')
-        .text((col) ->
-          if col.period == 'present'
-            App.settings.get('start_year')
-          else
-            App.settings.get('end_year')
-        )
-        .attr('x', (col) =>
-          moveTogether = if col.period == 'present'
-            (@bar_space / 2) - 2
-          else
-            (-@bar_space / 2) + 2
+      # The "inner" area of the chart contains all the columns. This allow us a little extra padding
+      # around the left- and right-most categories.
+      wrapper_width = (@width - @margins.right)
 
-          @x(col.key) + 10 + moveTogether
-        )
-        .attr('dx', @bar_width / 2)
-        .attr('y', @series_height + 15)
-        .attr('text-anchor', 'middle')
+      # The total amount of space available to each category, including padding.
+      # category_bandwidth_outer = (@width - @margins.right) / @categories.length
 
-      # Category names.
-      @svg.selectAll('text.category')
-        .data(columns)
-        .enter().append('svg:text')
-        .attr('class', 'category_label')
-        .text((col) ->
-          if col.name
-            I18n.t("output_element_series.groups.#{col.name}")
-          else
-            ''
-        )
-        .attr('x', (col) =>
-          @x(col.key) - (@bar_width / 2) + 1
-        )
-        .attr('dx', @bar_width / 2)
-        .attr('y', @series_height + 32)
-        .attr('text-anchor', 'middle')
+      # This amount of padding is added to the left and right of each category area, so that
+      # categories are separated. This is scale.padding() in D3v6.
+      space_per_category = wrapper_width / @categories.length
+      category_padding = space_per_category * 0.1
+      category_bandwidth = space_per_category * 0.8
 
-      # Render the bars.
-      rect = @svg.selectAll('rect.serie')
-        .data(@stack_method(@prepare_data()), (s) -> s.id)
+      @category_x = d3.scale.ordinal()
+        .rangeRoundBands([0, category_bandwidth * @categories.length])
+        .domain(@categories.map((category) -> category.key))
+
+      @year_x = d3.scale.ordinal()
+        .rangeRoundBands([0, @category_x.rangeBand()])
+        .domain(@categories[0] && @categories[0].periods || [])
+
+
+      # Determine width and padding for "period" bars within each category. Target overhang is used
+      # to allow the target lines to be slightly wider than the bars in the column.
+      if @year_x.domain().length == 1
+        bar_width = Math.round(@year_x.rangeBand())
+        bar_padding = 0
+        target_overhang = category_padding / 4
+      else
+        bar_width = Math.round(@year_x.rangeBand() * 0.95);
+        bar_padding = Math.round(@year_x.rangeBand() - bar_width)
+        target_overhang = bar_padding
+
+      # Drawing
+      # -------
+
+      @svg.selectAll('rect.negative-region')
+        .data([0])
         .enter().append('svg:rect')
-        .attr('class', (s) -> "serie #{s.period}")
-        .attr("width", @bar_width)
-        .attr('x', (s) =>
-          # Push the present and future bars together by moving the present to
-          # the right, and the future to the left.
-          #
-          # '-1'/'+1' to have a small space between the two bars.
-          moveTogether = if s.period == 'present'
-            (@bar_space / 2) - 2
-          else
-            (-@bar_space / 2) + 2
+        .attr('class', 'negative-region')
 
-          # Rounding prevents some aliasing artifacts in Chrome.
-          Math.round(@x(s.x) + 10 + moveTogether)
+      # Categories
+      categoryEls = @svg.selectAll('g.category-group')
+        .data(@categories, (category) -> category.key)
+        .enter()
+        .append('svg:g')
+        .attr('class', 'category-group')
+        .attr(
+          'transform',
+          (d, i) => "translate(#{@category_x(i) + category_padding * (i * 2 + 1)},0)"
         )
-        .attr('data-tooltip-title', (s) => s.label)
-        .attr('y', @series_height)
+
+      # Category labels.
+      categoryEls
+        .append('svg:text')
+        .attr('class', 'category_label')
+        .text((cat) -> if cat.key then I18n.t("output_element_series.groups.#{cat.key}") else '')
+        .attr('x', category_bandwidth / 2)
+        .attr('y', @series_height + (if @year_x.domain().length > 1 then 32 else 17))
+        .attr('text-anchor', 'middle')
+
+      # Add SVG groups for each column.
+      yearColEls = categoryEls.selectAll('g.column')
+        .data(
+          (category) -> category.columns(),
+          (column) -> column.key
+        )
+        .enter().append('g')
+        .attr('class', 'column')
+        .attr('transform', (d, i) => "translate(#{@year_x(d.period) + (bar_padding * i)})")
+
+      # Draw the rects for each series.
+      yearColEls.selectAll('rect.serie')
+        .data(
+          (column) -> self.stack_method(self.prepare_column(column)),
+          (serie) -> serie.id
+        )
+        .enter().append('svg:rect')
+        .attr('class', (d) => "serie #{d.period}")
+        .attr('data-tooltip-title', (d) => d.label)
+        .attr('height', 0)
+        .attr('width', bar_width)
+        .attr('y', @series_height - @y(0))
         .style('fill', (d) => d.color)
+
+      # Target lines.
+      yearColEls.selectAll('rect.target_line')
+        .data(
+          (column) -> self.prepare_target_column(column),
+          (d) -> d.id
+        )
+        .enter()
+        .append('svg:rect')
+        .attr('class', (s) -> "target_line #{s.period}")
+        .style('fill', (d) -> d.color)
+        .attr('height', 2)
+        .attr('width', bar_width + target_overhang * 2)
+        .attr('x', -target_overhang)
+        .attr('y', 0)
+
+      # Render the years, but only when more than one is shown.
+      if @year_x.domain().length > 1
+        yearColEls.selectAll('text.year')
+          .data((column) -> [column.period])
+          .enter().append('svg:text')
+          .attr('class', 'year small')
+          .text((period) ->
+            if period == 'present'
+              App.settings.get('start_year')
+            else
+              App.settings.get('end_year')
+          )
+          .attr('dx', bar_width / 2)
+          .attr('y', @series_height + 15)
+          .attr('text-anchor', 'middle')
 
       # Draw a nice axis
       @y_axis = d3.svg.axis()
         .scale(@inverted_y)
-        .ticks(5)
+        .ticks(7)
         .tickSize(-@width, 10, 0)
         .orient("right")
         .tickFormat(@main_formatter())
@@ -176,25 +281,6 @@ D3.category_bar =
         .attr("class", "y_axis inner_grid")
         .attr("transform", "translate(#{@width - 25}, 0)")
         .call(@y_axis)
-
-      # Target lines.
-      @svg.selectAll('rect.target_line')
-        .data(@prepare_target_data(), (d) -> d.id)
-        .enter()
-        .append('svg:rect')
-        .attr('class', (s) -> "target_line #{s.period}")
-        .style('fill', (d) -> d.color)
-        .attr('height', 2)
-        .attr('width', @bar_width + 4)
-        .attr('x', (serie) =>
-          moveTogether = if serie.period == 'present'
-            (@bar_space / 2) - 4
-          else
-            (-@bar_space / 2)
-
-          Math.round(@x(serie.x) + 10 + moveTogether)
-        )
-        .attr('y', 0)
 
       # Tooltips.
       $("#{@container_selector()} rect.serie").qtip
@@ -207,29 +293,62 @@ D3.category_bar =
           at: 'top center'
 
     refresh: =>
-      tallest = _.max(@categories.map (c) -> c.maxValue()) * 1.05
+      self = this
 
-      # Update the scales as needed.
-      @y = @y.domain([0, tallest]).nice()
-      @inverted_y = @inverted_y.domain([0, tallest]).nice()
+      tallest = d3.max(@categories.map (c) -> c.maxValue()) * 1.05
+      smallest = Math.min(0, d3.min(@categories.map (c) -> c.minValue()) * 1.05)
+
+      # Update the scales. Use a nice range for the inverted Y (e.g -2 to 2 rather than -1.8 to 1.8,
+      # and use that as the basis for Y). Applying nice() to both scales may result in different
+      # nice values being chosen.
+      @inverted_y = @inverted_y.domain([smallest, tallest]).nice(@y_axis.ticks()[0])
+      @y = @y.domain([0, Math.abs(@inverted_y.domain()[0]) + @inverted_y.domain()[1]])
+
+      # If the chart has negative values, make the tick line corresponding with value 0 fully
+      # black.
+      @svg.selectAll('.y_axis .tick')
+        .attr('class', (d) -> if smallest < 0 && d == 0 then 'tick bold' else 'tick')
+
+      @svg.selectAll('rect.negative-region')
+        .data([Math.abs(@inverted_y.domain()[0])])
+        .transition()
+        .attr('height', (d) => @y(d))
+        .attr('width', @width - 5)
+        .attr('x', 0 - @margins.left)
+        .attr('y', (d) => @series_height - @y(d))
 
       @y_axis.tickFormat(@main_formatter())
 
       # Animate the y-axis.
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
 
-      @svg.selectAll('rect.serie')
-        .data(@stack_method(@prepare_data()), (s) -> s.id)
+      categoryEls = @svg.selectAll('g.category-group')
+        .data(@categories, (category) -> category.key)
+
+      yearColEls = categoryEls.selectAll('g.column')
+        .data(
+          (category) -> category.columns(),
+          (column) -> column.key
+        )
+
+      yearColEls.selectAll('rect.serie')
+        .data(
+          (column) -> self.stack_method(self.prepare_column(column)),
+          (serie) -> serie.id
+        )
         .transition()
         .attr('y', (d) => @series_height - @y(d.y0 + d.y))
         .attr('height', (d) => @y(d.y))
         .attr("data-tooltip-text", (d) => @main_formatter()(d.y))
 
       # Move the target lines
-      @svg.selectAll('rect.target_line')
-        .data(@prepare_target_data(), (d) -> d.id)
+      yearColEls.selectAll('rect.target_line')
+        .data(
+          (column) -> self.prepare_target_column(column),
+          (d) -> d.id
+        )
         .transition()
-        .attr('y', (d) => Math.round(@series_height - @y(d.y)))
+        .attr('y', (d) => @inverted_y(d.y))
 
       @display_legend()
 
@@ -286,61 +405,36 @@ D3.category_bar =
 
       legend_series
 
-    # the stack layout method expects data to be in a precise format. We could
-    # force the values() method but this way is simpler and cleaner.
-    prepare_data: =>
-      columns = []
+    prepare_column: (column) ->
+      column.category.valueSeries.map((serie) ->
+        value = if column.period == 'present'
+          serie.safe_present_value()
+        else
+          serie.safe_future_value()
 
-      @categories.map (category) ->
-        presentVals = []
-        futureVals = []
+        {
+          x: "#{serie.get('group')}_#{column.period}",
+          y: value
+          id: "#{serie.get('gquery_key')}_#{column.period}",
+          color: serie.get('color'),
+          label: serie.get('label'),
+          period: column.period
+        }
+      )
 
-        category.valueSeries.map (serie) ->
-          presentVals.push({
-            x: "#{serie.get('group')}_present",
-            y: serie.safe_present_value(),
-            id: "#{serie.get('gquery_key')}_present",
-            color: serie.get('color'),
-            label: serie.get('label'),
-            period: 'present'
-          })
+    prepare_target_column: (column) ->
+      column.category.targetSeries.map((serie) ->
+        value = if column.period == 'present'
+          serie.safe_present_value()
+        else
+          serie.safe_future_value()
 
-          futureVals.push({
-            x: "#{serie.get('group')}_future",
-            y: serie.safe_future_value(),
-            id: "#{serie.get('gquery_key')}_future",
-            color: serie.get('color'),
-            label: serie.get('label'),
-            period: 'future'
-          })
-
-        columns.push(presentVals)
-        columns.push(futureVals)
-
-      columns
-
-    prepare_target_data: =>
-      data = []
-
-      @categories.map (category) ->
-        category.targetSeries.map (serie) ->
-          if serie.get('target_line_position') == '1'
-            data.push({
-              x: "#{serie.get('group')}_present",
-              y: serie.safe_present_value(),
-              id: "#{serie.get('gquery_key')}_present",
-              color: serie.get('color'),
-              label: serie.get('label'),
-              period: 'present'
-            })
-          else
-            data.push({
-              x: "#{serie.get('group')}_future",
-              y: serie.safe_future_value(),
-              id: "#{serie.get('gquery_key')}_future",
-              color: serie.get('color'),
-              label: serie.get('label'),
-              period: 'future'
-            })
-
-      data
+        {
+          x: "#{serie.get('group')}_#{column.period}",
+          y: value
+          id: "#{serie.get('gquery_key')}_#{column.period}",
+          color: serie.get('color'),
+          label: serie.get('label'),
+          period: column.period
+        }
+      )

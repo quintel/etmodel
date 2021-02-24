@@ -53,13 +53,13 @@
     <li><!-- class="target-met"> -->
       <p>
         <strong>Duurzaamheid</strong><br />
-        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 0 | autoscale: 'MT'}}</strong>, dat is <strong> {{future.dashboard_co2_emissions_versus_start_year |  times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in {{ settings.start_year }} van <strong>{{present.policy_goal_co2_emissions_value | round: 3 | autoscale: 'MT'}}</strong> en <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in 1990.
+        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 0 | autoscale: 'MT'}}</strong>, dat is een verandering van <strong> {{future.dashboard_co2_emissions_versus_start_year |  times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in {{ settings.start_year }} van <strong>{{present.policy_goal_co2_emissions_value | round: 3 | autoscale: 'MT'}}</strong> en <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> verandering ten opzichte van de uitstoot in 1990.
       </p>
     </li>
 
     <li>
         <strong>Besparing</strong><br />
-        De (finale) energievraag van alle sectoren is (<strong>{{ future.final_demand| round: 0 | autoscale: 'MJ' }}</strong>) is <strong> {{future.final_demand_difference | times: 100 | round: 1 }}% </strong> ten op zichte van {{ settings.start_year }} (<strong>{{present.final_demand | round: 0 | autoscale: 'MJ' }}</strong>)
+        De (finale) energievraag van alle sectoren is (<strong>{{ future.final_demand| round: 0 | autoscale: 'MJ' }}</strong>) en is <strong> {{future.final_demand_difference | times: 100 | round: 1 }}% </strong> veranderd ten op zichte van {{ settings.start_year }} (<strong>{{present.final_demand | round: 0 | autoscale: 'MJ' }}</strong>)
       </p>
     </li>
 
@@ -557,8 +557,25 @@
       </ul>
 	</p>
 
+  <h1 class="banner">7. Hernieuwbaarheid</h1>
+
+      <h2 class="banner">B. Hernieuwbaarheid</h2>
+    <p>
+          Het percentage hernieuwbare energie in jouw scenario is {{ future.renewability_percentage | round: 1 }}%.
+
+          {% chart renewability %}
+            Hernieuwbaarheidspercentage van energetisch eindgebruik.
+          {% endchart %}
+
+           Voor de opwek van elektriciteit is het hernieuwbaarheidspercentage
+          {{ future.share_of_renewable_electricity | times: 100 | round: 1 }}%.
+
+          {% chart renewable_electricity %}
+            Hernieuwbaarheidspercentage van elektriciteitsproductie.
+          {% endchart %}
+
 		</p>
-  <h1 class="banner">7. Discussie en aandachtspunten </h1>
+  <h1 class="banner">8. Discussie en aandachtspunten </h1>
 
   <ul class="summary-extras">
 
@@ -847,7 +864,7 @@
 
     {% endif %}
 
-  <h1 class="banner">8. Appendices</h1>
+  <h1 class="banner">9. Appendices</h1>
     <h2>Appendix A: Schuifjes-instellingen</h2>
 
   In deze appendix wordt een lijst gegeven van alle schuifjes die van hun startwaarde zijn verplaatst.

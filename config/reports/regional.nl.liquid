@@ -52,13 +52,13 @@
     <li><!-- class="target-met"> -->
       <p>
         <strong>Duurzaamheid</strong><br />
-        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 3  | autoscale: 'MT' }}</strong>, dat is <strong> {{future.dashboard_co2_emissions_versus_start_year | times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in {{ settings.start_year }} van <strong>{{present.policy_goal_co2_emissions_value | round: 3 | autoscale: 'MT'}}</strong> en <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in 1990.
+        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 3  | autoscale: 'MT' }}</strong>, dat is <strong> {{future.dashboard_co2_emissions_versus_start_year | times: 100 | round: 1 }}% </strong> veranderd ten opzichte van de uitstoot in {{ settings.start_year }} van <strong>{{present.policy_goal_co2_emissions_value | round: 3 | autoscale: 'MT'}}</strong> en <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> verandering ten opzichte van de uitstoot in 1990.
       </p>
     </li>
 
     <li>
         <strong>Besparing</strong><br />
-        De finale energievraag van de gebouwde omgeving (<strong>{{ future.final_demand_from_built_environment | round: 0 | autoscale: 'MJ' }}</strong>) is <strong> {{future.final_demand_from_built_environment_difference | times: 100 | round: 1 }}% </strong> veranderd ten opzichte van {{ settings.start_year }} (<strong>{{present.final_demand_from_built_environment | round: 0 | autoscale: 'MJ' }}</strong>)
+        De finale energievraag van de gebouwde omgeving (<strong>{{ future.final_demand_from_built_environment | round: 0 | autoscale: 'MJ' }}</strong>) is veranderd met <strong> {{future.final_demand_from_built_environment_difference | times: 100 | round: 1 }}% </strong> ten opzichte van {{ settings.start_year }} (<strong>{{present.final_demand_from_built_environment | round: 0 | autoscale: 'MJ' }}</strong>)
       </p>
     </li>
 

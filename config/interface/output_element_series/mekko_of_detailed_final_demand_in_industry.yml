@@ -935,3 +935,15 @@
   dependent_on: 
   output_element_key: mekko_of_detailed_final_demand_in_industry
   key: solar_ict_mekko_of_detailed_final_demand_in_industry
+- label: heat
+  color: "#8B0000"
+  order_by: 8
+  group: unused_heat
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_industry_unused_local_production_steam_hot_water
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_detailed_final_demand_in_industry
+  key: heat_unused_heat_mekko_of_detailed_final_demand_in_industry

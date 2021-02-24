@@ -168,25 +168,6 @@
       </li>
     {% endif %}
 
-    {% if future.bio_footprint > 1 %}
-      <li class="target-missed">
-        You use more land that your region supports! Your scenario bio-footprint
-        is
-    {% else %}
-      <li>
-        The bio-footprint of your scenario is
-    {% endif %}
-      {{ future.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }},
-      {% if present.bio_footprint.value == future.bio_footprint.value %}
-        which is unchanged from {{ settings.start_year }}.
-      {% else %}
-        compared with
-        {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}
-        in the present day.
-      {% endif %}
-      <a href="#bio-footprint" class="learn-more">Learn more &raquo;</a>
-    </li>
-
     {% if future.share_of_greengas_in_gas_network > 0.1 %}
       <li class="target-missed">
         Feeding in more than 10% green gas into the gas network requires large

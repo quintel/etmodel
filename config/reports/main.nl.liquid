@@ -35,10 +35,10 @@
     <h1 class="banner">1. Samenvatting scenario voor {{ settings.area_name }}  </h1>
 
       <p>
-      De totale broeikasgasuitstoot in {{ settings.area_name }} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | round: 1 | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> niet-energetisch, dus is niet het gevolg van het energiesysteem. De niet-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of N<sub>2</sub>O-uitstoot door kunstmestgebruik. Deze niet-energetische uitstoot is Nationaal behoorlijk gedaald sinds 1990. De aanpak hiervan is belangrijk, maar is wel anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich enkel op het energiesysteem van {{ settings.area_name }}.
+      De totale broeikasgasuitstoot in {{ settings.area_name }} was <strong>{{ present.total_energetic_and_non_energetic_co2_emissions | round: 1 | autoscale: 'T' }}</strong> in {{ settings.start_year }}. In Parijs spraken wij af deze broeikasgasuitstoot met 95% te reduceren in 2050 en het Nationale Klimaatakkoord gaat voor -49% in 2030. Van deze broeikasgasuitstoot is <strong>{{present.non_energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> niet-energetisch, dus is niet het gevolg van het energiesysteem. De niet-energetische broeikasgasuitstoot omvat bijvoorbeeld methaan van koeien, koelgassen in de voedselindustrie of N<sub>2</sub>O-uitstoot door kunstmestgebruik. Deze niet-energetische uitstoot is Nationaal behoorlijk gedaald sinds 1990. De aanpak hiervan is belangrijk, maar is wel anders dan de aanpak via het energiesysteem. Het Energietransitiemodel richt zich alleen op de binnenlandse, energetische CO2-uitstoot en de niet-energetische uitstoot van de kunstmestsector in {{ settings.area_name }}. Niet-energetische uitstoot in andere sectoren en overige broeikasgassen (zoals methaan) zijn niet meegenomen.
       </p>
       <p>
-       De totale huidige uitstoot van het energiesysteem is nu <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong> en <strong>{{present.energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> van de totale broeikasgasuitstoot van regio. Het gemaakte scenario zorgt dat deze energetische CO<sub>2</sub>-uitstoot van het energiesysteem in eindjaar <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong>  is veranderd ten opzichte van 1990. Dit rapport richt zich op het hele energiesysteem, namelijk huishoudens, overige gebouwen en diensten, mobiliteit, industrie en landbouw. Hieronder is te zien hoe de energetische CO<sub>2</sub>-uitstoot zich ontwikkelt in het scenario.
+       De totale huidige uitstoot van het energiesysteem en de niet-energetische uitstoot van de kunstmestsector is nu <strong>{{ present.policy_goal_co2_emissions_value | autoscale: 'MT' }}</strong> en <strong>{{present.energetic_co2_emissions_percentage | times: 100 | round: 1 }}%</strong> van de totale broeikasgasuitstoot van {{ settings.area_name }}. Het gemaakte scenario zorgt dat deze energetische uitstoot en non-energetische uitstoot van kunstmest in eindjaar <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong>  is veranderd ten opzichte van 1990. Dit rapport richt zich op het hele energiesysteem, namelijk huishoudens, overige gebouwen en diensten, mobiliteit, industrie en landbouw. Hieronder is te zien hoe de CO<sub>2</sub>-uitstoot zich ontwikkelt in het scenario.
 
       {% chart co2_emissions %}
         CO<sub>2</sub>-uitstoot gebaseerd op primair energiegebruik en uitgesplitst in sectoren voor 1990 (links),
@@ -53,13 +53,13 @@
     <li><!-- class="target-met"> -->
       <p>
         <strong>Duurzaamheid</strong><br />
-        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 0 | autoscale: 'MT'}}</strong>, dat is <strong> {{future.dashboard_co2_emissions_versus_start_year |  times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in {{ settings.start_year }} van <strong>{{present.policy_goal_co2_emissions_value | round: 3 | autoscale: 'MT'}}</strong> en <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in 1990.
+        De CO<sub>2</sub>-uitstoot van het energiesysteem in het scenario is <strong>{{future.policy_goal_co2_emissions_value | round: 0 | autoscale: 'MT'}}</strong>, dat is een verandering van <strong> {{future.dashboard_co2_emissions_versus_start_year |  times: 100 | round: 1 }}% </strong> ten opzichte van de uitstoot in {{ settings.start_year }} van <strong>{{present.policy_goal_co2_emissions_value | round: 3 | autoscale: 'MT'}}</strong> en <strong> {{future.dashboard_reduction_of_co2_emissions_versus_1990 | times: 100 | round: 1 }}% </strong> verandering ten opzichte van de uitstoot in 1990.
       </p>
     </li>
 
     <li>
         <strong>Besparing</strong><br />
-        De (finale) energievraag van alle sectoren is (<strong>{{ future.final_demand| round: 0 | autoscale: 'MJ' }}</strong>) is <strong> {{future.final_demand_difference | times: 100 | round: 1 }}% </strong> ten op zichte van {{ settings.start_year }} (<strong>{{present.final_demand | round: 0 | autoscale: 'MJ' }}</strong>)
+        De (finale) energievraag van alle sectoren is (<strong>{{ future.final_demand| round: 0 | autoscale: 'MJ' }}</strong>) en is <strong> {{future.final_demand_difference | times: 100 | round: 1 }}% </strong> veranderd ten op zichte van {{ settings.start_year }} (<strong>{{present.final_demand | round: 0 | autoscale: 'MJ' }}</strong>)
       </p>
     </li>
 
@@ -557,16 +557,10 @@
       </ul>
 	</p>
 
-      <h1 class="banner">7. Biovoetafdruk en hernieuwbaarheid</h1>
-   		<h2 class="banner">A. Biovoetafdruk</h2>
-          <p>
-            Je scenario gebruikt {{ future.bio_footprint | round: 1 }} keer het
-            beschikbare landbouwareaal voor de productie van biobrandstoffen
-            zoals hout, bio-ethanol, biogas en biodiesel.
-          </p>
+  <h1 class="banner">7. Hernieuwbaarheid</h1>
 
-   		<h2 class="banner">B. Hernieuwbaarheid</h2>
-		<p>
+      <h2 class="banner">B. Hernieuwbaarheid</h2>
+    <p>
           Het percentage hernieuwbare energie in jouw scenario is {{ future.renewability_percentage | round: 1 }}%.
 
           {% chart renewability %}
@@ -645,23 +639,6 @@
         van de startwaarde {{ settings.start_year }}.
       </li>
     {% endif %}
-
-    {% if future.bio_footprint > 1 %}
-      <li class="target-missed">
-        Het scenario gebruikt meer dan het beschikbare landbouwareaal in de regio!
-        De bio-voetafdruk van het scenario scenario is
-    {% else %}
-      <li>
-        De bio-voetafdruk van het scenario is
-    {% endif %}
-      {{ future.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }},
-      {% if present.bio_footprint.value == future.bio_footprint.value %}
-        gelijk aan de startwaarde in {{ settings.start_year }}.
-      {% else %}
-        in het startjaar is dat
-        {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}.
-      {% endif %}
-    </li>
 
     {% if future.share_of_greengas_in_gas_network > 0.1 %}
       <li class="target-missed">
@@ -802,24 +779,6 @@
           </a>
         </li>
       {% endif %}
-
-      {% if future.bio_footprint > 1 %}
-        <li class="target-missed">
-          Je gebruikt meer dan het beschikbare landbouwareaal in jouw regio!
-          De bio-voetafdruk van je scenario is
-      {% else %}
-        <li>
-          De bio-voetafdruk van je scenario is
-      {% endif %}
-        {{ future.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }},
-        {% if present.bio_footprint.value == future.bio_footprint.value %}
-          gelijk aan de startwaarde in {{ settings.start_year }}.
-        {% else %}
-          in het startjaar is dat
-          {{ present.bio_footprint | round: 1 }}x{{ settings.area_code | upcase }}.
-        {% endif %}
-        <a href="#a-biovoetafdruk" class="learn-more">Lees verder &raquo;</a>
-      </li>
 
       {% if future.share_of_greengas_in_gas_network > 0.1 %}
         <li class="target-missed">

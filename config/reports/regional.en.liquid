@@ -175,24 +175,6 @@
       </li>
     {% endif %}
 
-    {% if future.bio_footprint > 1 %}
-      <li class="target-missed">
-        You use more land than your region supports! Your scenario bio-footprint
-        is
-    {% else %}
-      <li>
-        The bio-footprint of your scenario is
-    {% endif %}
-      {{ future.bio_footprint | round: 1 }}x,
-      {% if present.bio_footprint.value == future.bio_footprint.value %}
-        which is unchanged from {{ settings.start_year }}.
-      {% else %}
-        compared with
-        {{ present.bio_footprint | round: 1 }}x in the present day.
-      {% endif %}
-      <a href="#bio-footprint" class="learn-more">Learn more &raquo;</a>
-    </li>
-
     {% if future.share_of_greengas_in_gas_network > 0.1 %}
       <li class="target-missed">
         Feeding in more than 10% green gas into the gas network requires large
@@ -611,17 +593,7 @@
         </p>
     {% endif %}
 
-  <h1 class="banner">Bio-footprint and renewability</h1>
-
-    <h2>Bio-footprint</h2>
-      <p>
-        In your scenario, {{ future.bio_footprint | round: 1 }} times the available areable land is used for
-        the production of bio-fuels such as wood, ethanol, bio-gas and bio-diesel.
-      </p>
-
-      {% chart mekko_of_bio_footprint %}
-        Bio footprint per carrier.
-      {% endchart %}
+  <h1 class="banner">Renewability</h1>
 
     <h2>Renewability</h2>
 
@@ -761,9 +733,7 @@
 
     <p>
       Your scenario has {{ future.share_of_greengas_in_gas_network | times: 100 | round: 1 }}% of greengas mixed into the gas
-      network. This requires about {{ future.bio_footprint_of_greengas_km | round: 1 }} of areable
-      land which is {{ future.bio_footprint_of_greengas_fraction_of_areable_land | round: 1 }} times the available
-      areable land in your country.
+      network.
     </p>
 
   {% endif %}

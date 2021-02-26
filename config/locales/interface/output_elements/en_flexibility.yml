@@ -147,7 +147,7 @@ en:
       description: |
         This chart shows the imbalance in the total volume of inflexible supply and the total volume of 
         baseload demand for electricity, gas, hydrogen and heat per month. The imbalance is calculated 
-        by subtracting the baseload demand from the inflexible supply, and is also known as the "residual 
+        by subtracting the inflexible supply from the baseload demand, and is also known as the "residual 
         load". Negative values mean "surpluses" of energy and positive values "shortages". <br/><br/>
         More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentation</a>.
@@ -155,8 +155,8 @@ en:
       title: Imbalance ("residual load") per hour
       description: |
         This chart shows the hourly imbalance in inflexible supply and baseload demand for electricity, 
-        gas, hydrogen and heat. The imbalance is calculated by subtracting the baseload demand from 
-        the inflexible supply, and is also known as the "residual load". Negative values mean "surpluses" 
+        gas, hydrogen and heat. The imbalance is calculated by subtracting the inflexible supply from 
+        the baseload demand, and is also known as the "residual load". Negative values mean "surpluses" 
         of energy and positive values "shortages". <br/><br/>
         More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentation</a>.

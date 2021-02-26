@@ -151,7 +151,9 @@ en:
     supply_electricity_renewable_biomass_plants:
       title: Biomass plants
       short_description:
-      description: How much heat will be produced with biomass?
+      description: How much electricity and heat will be produced using biomass? 
+        Here you can set the installed electrical capacity for biomass plants. 
+        The heat that is produced during the process will be used as heat supply for district heating networks.    
     supply_electricity_renewable_geothermal:
       title: Geothermal
       short_description: ''
@@ -302,8 +304,9 @@ en:
         as a feedstock for the chemical industry. The ETM allows you to explore a
         future hydrogen economy by allowing you to use hydrogen for:\r\n<ul>\r\n  <li><a
         href=\"/scenario/supply/electricity_renewable/hydrogen-plants\" >electricity
-        production</a></li>\r\n  <li>district heating for <a href=\"/scenario/demand/households/district-heating\">households</a>
-        and <a href=\"/scenario/demand/buildings/district-heating\">buildings</a></li>\r\n
+        production</a></li>\r\n  <li><a href=\"/scenario/supply/heat/heat-sources\">district heating</a>
+        for households, buildings and agriculture</li>\r\n
+        \ <li><a href=\"/scenario/demand/households/space-heating-and-hot-water\">hybrid heat pumps in households</a></li>\r\n 
         \ <li>heat production in <a href=\"/scenario/demand/industry/refineries\">industry</a>
         and <a href=\"/scenario/demand/agriculture/heat\">agriculture</a><br>\r\n
         \ <li><a href=\"/scenario/demand/industry/fertilizers\" >fertilizer production</a>

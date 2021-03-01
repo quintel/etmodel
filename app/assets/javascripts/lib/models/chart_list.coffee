@@ -280,6 +280,7 @@ class @ChartList extends Backbone.Collection
     prunables = @where prunable: true
 
     for chart in prunables
+      delete @chart_holders[chart.get('container')]
       chart.delete()
       @remove chart
 

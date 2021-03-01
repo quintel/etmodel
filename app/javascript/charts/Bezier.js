@@ -17,7 +17,7 @@ class Bezier extends D3Chart {
     top: 20,
     bottom: 20,
     left: 0,
-    right: 30,
+    right: 35,
   };
 
   canRenderAsTable() {

@@ -204,6 +204,7 @@ export default class extends Backbone.View {
   canDownloadImage() {
     return (
       typeof Promise !== 'undefined' &&
+      saveAsPNG.isSupported &&
       this.supportsToImage !== false &&
       this.model.get('config').supports_to_image !== false
     );

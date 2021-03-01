@@ -186,7 +186,10 @@ export default class extends Backbone.View {
 
     if (this.canDownloadImage()) {
       // Unbind any previously assigned saveAs event to prevent it being triggered multiple times.
-      saveImage.show().off('click').on('click', saveAsPNG);
+      saveImage
+        .show()
+        .off('click')
+        .on('click', (event) => saveAsPNG(event, App.scenario.get('id')));
     } else {
       saveImage.hide();
     }

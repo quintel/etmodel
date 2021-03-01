@@ -101,6 +101,10 @@ $chart-header-icon-color: #8895b2
     top: -10000px
     left: -10000px
     position: absolute
+    &.firefox-hidpi
+      // Add a class which reverts the clone to use Helvetica/Arial. As of 2021-03-01 rendering the
+      // system font to Canvas in Firefox on a HiDPI screen causes uneven letter spacing.
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
     header
       background: none !important
       display: block

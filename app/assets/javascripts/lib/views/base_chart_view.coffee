@@ -137,6 +137,7 @@ class @BaseChartView extends Backbone.View
 
   canDownloadImage: ->
     if typeof Promise == 'undefined' then return false
+    unless BaseChartView.saveAsPNG.isSupported then return false
     if this.supportsToImage == false then return false
     if this.model.get('config').supports_to_image == false then return false
 

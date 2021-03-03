@@ -3,7 +3,7 @@
   var DropdownView = Backbone.View.extend({
     events: {
       'click [data-toggle="dropdown"]': 'toggle',
-      'click a.dropdown-item': 'onClickItem',
+      'click .dropdown-item': 'onClickItem',
     },
 
     constructor: function () {

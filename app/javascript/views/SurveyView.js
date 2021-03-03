@@ -489,7 +489,7 @@ class SurveyView extends Backbone.View {
    * Starts wiggling the element for attention every 20 seconds when on the hello page.
    */
   seekAttention() {
-    if (this.isHello()) {
+    if (this.isHello() && !this.$el.hasClass('exiting')) {
       this.$el.addClass('attention');
     }
   }
@@ -516,21 +516,29 @@ class SurveyView extends Backbone.View {
   }
 
   sendDismiss(dismissUntil) {
-    const self = this;
-
     window.localStorage.setItem(LOCAL_STORAGE_DISMISS_KEY, JSON.stringify(dismissUntil));
 
-    this.$el.addClass('exiting');
+    this.$el.removeClass('entrance');
+    this.$el.removeClass('attention');
 
-    this.el.addEventListener(
-      'transitionend',
-      function (event) {
-        if (event.target === self.el) {
-          self.el.remove();
-        }
-      },
-      false
-    );
+    // A short wait avoids the animation glitching when the survey just faded in. Using rAF twice
+    // ensures it happens in the next frame, after the entrance/attention classes have been
+    // removed.
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        this.$el.addClass('exiting');
+
+        this.el.addEventListener(
+          'transitionend',
+          (event) => {
+            if (event.target === this.el) {
+              this.el.remove();
+            }
+          },
+          false
+        );
+      });
+    });
   }
 
   showFeedbackSent() {
@@ -598,6 +606,9 @@ class SurveyView extends Backbone.View {
 
     this.$el.find('.dismiss-buttons').css('opacity', 0).css('pointer-events', 'none');
     this.$el.find('button.next-question').addClass('success finished').text(I18n.t('survey.close'));
+
+    // Reach into the scenario nav and remove the survey option.
+    $('#scenario-nav .open-survey').remove();
   }
 }
 
@@ -605,6 +616,10 @@ SurveyView.begin = function () {
   const dismissUntil = window.localStorage.getItem(LOCAL_STORAGE_DISMISS_KEY);
 
   if (dismissUntil && new Date(JSON.parse(dismissUntil)) > new Date()) {
+    return;
+  }
+
+  if ($('body > .survey').length > 0) {
     return;
   }
 
@@ -616,6 +631,10 @@ SurveyView.begin = function () {
     });
 
     req.done(function (data) {
+      if ($('body > .survey').length > 0) {
+        return;
+      }
+
       if (!data.finished) {
         new SurveyView({ data: data }).render();
       }

@@ -67,10 +67,12 @@ window.D3ChartDateSelect = DateSelect;
 import ChartListView from '../views/ChartListView';
 import CustomCurveChooserView from '../views/CustomCurveChooserView';
 import MultiCurveChooserView from '../views/MultiCurveChooserView';
+import SurveyView from '../views/SurveyView';
 
 window.ChartListView = ChartListView;
 window.CustomCurveChooserView = CustomCurveChooserView;
 window.MultiCurveChooserView = MultiCurveChooserView;
+window.SurveyView = SurveyView;
 
 // Extensions to legacy classes
 // ----------------------------

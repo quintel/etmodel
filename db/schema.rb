@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_17_090701) do
+ActiveRecord::Schema.define(version: 2021_02_22_105558) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -105,6 +105,19 @@ ActiveRecord::Schema.define(version: 2020_12_17_090701) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
+  create_table "surveys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "background", limit: 256
+    t.integer "how_often"
+    t.string "typical_tasks", limit: 8192
+    t.integer "how_easy"
+    t.integer "how_useful"
+    t.string "feedback", limit: 8192
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_surveys_on_user_id"
+  end
+
   create_table "texts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "key", limit: 191
     t.text "content_en", size: :medium
@@ -148,4 +161,5 @@ ActiveRecord::Schema.define(version: 2020_12_17_090701) do
 
   add_foreign_key "esdl_suite_ids", "users"
   add_foreign_key "featured_scenarios", "saved_scenarios"
+  add_foreign_key "surveys", "users"
 end

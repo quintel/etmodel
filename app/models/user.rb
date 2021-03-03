@@ -37,6 +37,8 @@ class User < ApplicationRecord
   has_many   :multi_year_charts, dependent: :destroy
   has_one    :esdl_suite_id, dependent: :destroy
 
+  has_one    :survey, dependent: :destroy
+
   validates :email, uniqueness: { case_sensitive: false }
 
   validates :password,

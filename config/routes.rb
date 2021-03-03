@@ -33,10 +33,14 @@ Rails.application.routes.draw do
   put '/settings/dashboard',        to: 'settings#update_dashboard'
   put '/settings/hide_results_tip', to: 'settings#hide_results_tip'
 
+  get '/survey', to: 'survey#show'
+  put '/survey/:question', to: 'survey#answer_question'
+
   namespace :admin do
     root to: 'pages#index'
     get 'map', to: 'pages#map', as: :map
     post 'clear_cache' => 'pages#clear_cache', as: :clear_cache
+    get 'surveys', to: 'pages#surveys', as: :surveys
 
     resources :general_user_notifications,
               :users

@@ -72,3 +72,23 @@ If you encounter a bug or if you have a feature request, you can either let us
 know by creating an [Issue](http://github.com/quintel/etmodel/issues) *or* you
 can try to fix it yourself and create a
 [pull request](http://github.com/quintel/etmodel/pulls).
+
+## With thanks...
+
+The Energy Transition Model is built by [Quintel](https://quintel.com/). It is made possible by
+open source software, and assets kindly provided for free by many wonderful people and
+organisations.
+
+#### Software
+
+* [Backbone.js](https://backbonejs.org/)
+* [D3.js](https://d3js.org/)
+* [Ruby on Rails](https://rubyonrails.org/)
+* [jQuery](https://jquery.com/)
+* and [many](https://github.com/quintel/etmodel/blob/master/Gemfile), [many](https://github.com/quintel/etmodel/blob/master/package.json) more ...
+
+#### Icons and images
+
+* [Emily Jäger, OpenMoji](https://openmoji.org/)
+* [FontAwesome](https://fontawesome.com/)
+* [FreePik, Flaticon](https://www.flaticon.com/)

@@ -1,0 +1,50 @@
+---
+en:
+  survey:
+    ask_me_later: Ask me later
+    close: Close survey
+    hello: Hello!
+    intro: |
+      Would you mind answering a few short questions about your use of the Energy Transition Model?
+      Your input will help with our efforts to improve the model in 2021.
+    intro_continue: |
+      You still have some questions left to answer in our survey. Would you like to continue now?
+      Your input will help with our efforts to improve the model in 2021.
+    intro_promise: We promise this will only take a couple of minutes.
+    never_ask_again: Never ask again
+    next_question: Next question
+    optional: Optional
+    question_number: 'Question %{num} of %{total}'
+    send_feedback: Send feedback
+    sent: Sent!
+    sure: Sure!
+    questions:
+      background:
+        title: What is your background?
+        choices:
+          consultant: Consultant
+          energy_company: Energy company
+          government: Government
+          not_saying: Prefer not to say
+          other: Other
+          researcher: Researcher
+          student: Student
+      feedback:
+        title: Thank you!
+        text: |
+          Thank you for completing this questionnaire! If you have more feedback or a suggestion on
+          how we can improve the ETM, let us know here:
+      how_easy:
+        title: How easy is it to work with the ETM?
+        min: Very difficult
+        max: Easy
+      how_often:
+        title: How often do you use the Energy Transition Model (ETM)?
+        min: Never
+        max: Daily
+      how_useful:
+        title: How useful are the insights from the ETM?
+        min: Not useful
+        max: Essential
+      typical_tasks:
+        title: For what tasks do you use the ETM?

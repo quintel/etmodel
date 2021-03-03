@@ -1,0 +1,50 @@
+---
+nl:
+  survey:
+    ask_me_later: Vraag me later
+    close: Sluit deze vragenlijst
+    hello: Hallo!
+    intro: |
+      Mogen we je een paar korte vragen stellen over jouw gebruik van het Energietransitiemodel?
+      Jouw antwoorden helpen ons om het model in 2021 nog verder te verbeteren.
+    intro_continue: |
+      Je hebt nog niet alle vragen beantwoord; wil je nu verdergaan met de vragenlijst? Jouw
+      antwoorden helpen ons om het model in 2021 nog verder te verbeteren.
+    intro_promise: Dit duurt slechts enkele minuten.
+    never_ask_again: Nooit meer vragen
+    next_question: Volgende vraag
+    optional: Optioneel
+    question_number: 'Vraag %{num} van %{total}'
+    send_feedback: Feedback verzenden
+    sent: Verzonden!
+    sure: Natuurlijk!
+    questions:
+      background:
+        title: Wat is uw achtergrond?
+        choices:
+          consultant: Consultant
+          energy_company: Energie bedrijf
+          government: Overheit
+          not_saying: Zeg ik liever niet
+          other: Anders
+          researcher: Onderzeoker
+          student: Student
+      feedback:
+        title: Dank je!
+        text: |
+          Bedankt voor het afronden van deze enquête! Als u meer feedback heeft of suggesties voor
+          verbetering van het ETM, laat het ons hier weten:
+      how_easy:
+        title: Hoe makkelijk is het om het ETM te gebruiken?
+        min: Erg moeilijk
+        max: Makkelijk
+      how_often:
+        title: Hoe vaak gebruikt u het Energietransitiemodel (ETM)?
+        min: Nooit
+        max: Dagelijks
+      how_useful:
+        title: Hoe bruikbaar zijn inzichten van het ETM?
+        min: Niet bruikbaar
+        max: Essentieel
+      typical_tasks:
+        title: Voor welke taken gebruikt u het ETM?

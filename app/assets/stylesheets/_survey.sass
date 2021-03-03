@@ -1,0 +1,365 @@
+$survey-blue: #3d83c1
+$survey-green: #4ea14a
+$survey-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1)
+$survey-question-transition-duration: 0.3s;
+
+// Adapted from animate.css. MIT Licensed.
+@keyframes survey-entrance
+  from
+    opacity: 0
+    transform: scale(0.4) rotate(20deg)
+    transform-origin: center bottom
+
+  40%
+    transform: rotate(-10deg)
+
+  60%
+    transform: rotate(4deg)
+
+  80%
+    transform: rotate(-2deg)
+
+  to
+    opacity: 1
+    transform: scale(1)
+
+@keyframes survey-attention
+  97%
+    transform: rotate3d(0, 0, 1, 0deg)
+  97.5%
+    transform: rotate3d(0, 0, 1, 5deg)
+  98%
+    transform: rotate3d(0, 0, 1, -3deg)
+  98.5%
+    transform: rotate3d(0, 0, 1, 2deg)
+  99%
+    transform: rotate3d(0, 0, 1, -2deg)
+  99.5%
+    transform: rotate3d(0, 0, 1, 0deg)
+  to
+    transform: rotate3d(0, 0, 1, 0deg)
+
+.survey
+  background: white
+  border-radius: 4px
+  bottom: 6rem
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0.5rem 1rem rgba(0,0,0, 0.2)
+  overflow: hidden
+  padding: 1.75rem 2rem
+  position: fixed
+  right: 1.5rem
+  width: 24rem
+  transition-duration: 0.4s
+  transition-property: opacity, transform
+  transition-timing-function: $survey-transition-timing-function
+  z-index: 1060
+
+  &.entrance
+    animation: survey-entrance 0.75s !important
+
+  &.attention
+    animation: survey-attention 30s infinite
+
+  &.exiting
+    pointer-events: none
+    transform: scale(0.9) translateY(20px)
+    opacity: 0
+    *
+      pointer-events: none
+
+  &.hello
+    .commit
+      background: white
+      border-color: transparent
+      margin-top: 1rem
+
+  .hello-content
+    h3
+      display: flex
+      align-items: center
+      justify-content: center
+      img
+        margin-left: -0.5rem
+        margin-right: 0.5rem
+    p
+      font-size: 0.875rem
+      text-align: center
+      &:last-child
+        margin-bottom: 0
+    hl
+      background: #fff3c5
+      border-radius: 4px
+      margin: -0.25rem
+      padding: 0.25rem
+
+  button:focus:not(:focus-visible)
+    outline: none
+
+  button.close-button
+    background: none
+    border: none
+    cursor: pointer
+    padding: 0.5rem
+    position: absolute
+    opacity: 0.5
+    right: 0
+    top: 0
+    transition: background ease 0.2s, opacity ease 0.2s
+    &:hover
+      opacity: 1
+
+  .progress
+    color: #777
+    font-size: 0.75rem
+    text-align: center
+
+  h3
+    font-size: 1.25rem
+    font-weight: 500
+    line-height: 1.5rem
+    margin: 0 0 1.5rem
+    text-align: center
+
+  h3 + p
+    margin-top: -0.75rem
+
+  .height-wrapper
+    position: relative
+    transition: height 0.3s $survey-transition-timing-function
+
+  .question
+    bottom: 0
+    opacity: 1
+    position: absolute
+    transition-property: opacity, transform
+    transition-timing-function: $survey-transition-timing-function
+    transition-duration: $survey-question-transition-duration
+    width: 100%
+    &.initial
+      transform: translateX(26rem)
+      opacity: 0
+    &.exit
+      transform: translateX(-26rem)
+      opacity: 0
+
+  ul.choices
+    list-style: none
+    margin-bottom: 0
+    padding: 0
+    label
+      cursor: pointer
+    input[type="radio"]
+      // Visually hidden
+      clip: rect(0 0 0 0)
+      clip-path: inset(50%)
+      height: 1px
+      overflow: hidden
+      position: absolute
+      white-space: nowrap
+      width: 1px
+
+  .range-legend
+    background: linear-gradient(to bottom, white 48%, #ccc 53%, white 53%)
+    color: #777
+    display: flex
+    font-size: 12px
+    justify-content: space-between
+    span
+      background: white
+      &:first-child
+        padding-right: 0.5rem
+      &:last-child
+        padding-left: 0.5rem
+
+  ul.range-question
+    display: flex
+    justify-content: space-between
+    label
+      background: #eee
+      border-radius: 9999px
+      box-shadow: inset 0 0 0 0 #eee
+      display: inline-block
+      font-size: 1.25rem
+      font-weight: 500
+      height: 64px
+      line-height: 64px
+      text-align: center
+      transition-duration: 0.3s
+      transition-property: background, box-shadow, color
+      transition-timing-function: ease-in-out
+      width: 64px
+      &:hover
+        background: #ddd
+    input[type="radio"]:checked ~ label
+      background: #daf1d8
+      box-shadow: inset 0 0 0 3px $survey-green, inset 0 0 0 6px white
+      color: saturate(darken($survey-green, 15%), 25%)
+
+  .choices-how-easy .choice-content
+    // Hide numbers for the "how easy...?" question.
+    display: none
+
+  ul.multiple-choice-question
+    display: flex
+    flex-wrap: wrap
+    margin-right: -1rem
+    margin-bottom: -0.625rem
+    img
+      position: absolute
+      transition: opacity 0.2s ease, transform 0.2s ease
+    img.checked
+      transform: scale(0.8)
+      opacity: 0
+    img.icon
+      transform: scale(1)
+      opacity: 1
+    li
+      margin-bottom: 0.625rem
+      margin-right: 1rem
+      width: calc(50% - 1rem)
+    label
+      align-items: center
+      border-radius: 9999px
+      display: flex
+      flex: 1
+      font-size: 0.875rem
+      margin: -0.25rem 0.25rem -0.25rem -0.75rem
+      padding: 0.25rem 0.75rem
+      position: relative
+      transition: background 0.2s ease, color 0.2s ease
+      &:hover
+        background: #eef2f7
+    .icon-holder
+      display: inline-block
+      height: 32px
+      margin-right: 0.3125rem
+      position: relative
+      width: 32px
+    input[type="radio"]:checked ~ label
+      color: darken($survey-green, 5%)
+      img.checked
+        transform: scale(1)
+        opacity: 1
+      img.icon
+        transform: scale(0.8)
+        opacity: 0
+    img
+      opacity: 0.8
+      margin-right: 0.3125rem
+    input.other
+      background: none
+      border-radius: 9999px
+      border: 1px solid transparent
+      box-shadow: inset 0 0 0 2px transparent
+      box-sizing: border-box
+      cursor: pointer
+      font-size: 14px
+      left: 0
+      margin: 0
+      padding: 0.675rem 0 0.675rem 3rem
+      position: absolute
+      transition-property: box-shadow 0.2s ease, color 0.2s ease
+      top: 0
+      width: 100%
+      &:focus
+        box-shadow: inset 0 0 0 2px $survey-green
+      &::placeholder
+        transition: color 0.2s ease
+        color: black
+        opacity: 1
+    input[type="radio"]:checked ~ label input.other
+      color: darken($survey-green, 5%)
+      &::placeholder
+        color: darken($survey-green, 5%)
+
+  textarea
+    border-radius: 5px
+    border: none
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 2px 1px rgba(0, 0, 0, 0.12)
+    box-sizing: border-box
+    height: 7rem
+    font-size: 0.875rem
+    padding: 0.75rem
+    resize: none
+    width: 100%
+    &:focus
+      box-shadow: inset 0 0 0 2px $survey-blue
+
+  .commit
+    align-items: center
+    background: #eee
+    border-radius: 0 0 4px 4px
+    border-top: 1px solid #ccc
+    display: flex
+    justify-content: space-between
+    margin: 2rem -2rem -1.75rem
+    padding: 1.25rem 2rem
+    transition-duration: $survey-question-transition-duration
+    transition-property: background, border-color, margin-top
+    transition-timing-function: $survey-transition-timing-function
+
+    .dismiss-buttons
+      display: flex
+      flex-direction: column
+      transition: opacity 0.2s $survey-transition-timing-function
+      button
+        background: none
+        border-radius: 4px
+        box-shadow: 0 0 0 0 rgba($survey-blue, 0.0)
+        border: none
+        display: inline-block
+        color: #777
+        cursor: pointer
+        font-size: 0.75rem
+        padding: 0.125rem
+        margin: 0 -0.125rem
+        position: relative
+        text-align: left
+        transition: color 0.1s ease-in-out, box-shadow 0.175s ease-in-out
+        &:hover
+          color: #222
+        &:focus-visible
+          box-shadow: 0 0 0 2px transparentize($survey-blue, 0.6)
+          outline: none
+          z-index: 1
+      .fa
+        font-size: 0.8135rem
+        margin-right: 0.25rem
+        margin-top: -3px
+        vertical-align: middle
+        width: 11px
+
+    .next-question
+      font-size: 1rem
+      font-weight: 500
+      padding: 0.675rem 0.875rem
+      .fa
+        color: white
+        font-size: 11px
+        margin-top: -1px
+        vertical-align: middle
+      .fa ~ .fa
+        margin-left: -3px
+
+    button.finished
+      align-items: center
+      display: inline-flex
+      justify-content: center
+      position: relative
+      &[disabled]
+        // Disable the button, but don't fade it out so the user can clearly see "Sent!".
+        opacity: 1
+      .fa-check
+        font-size: 0.875rem
+      .levitate
+        position: absolute
+      .old-text, .levitate
+        opacity: 1
+        transition: opacity 0.3s $survey-transition-timing-function
+        &.hide
+          opacity: 0
+
+@media (prefers-reduced-motion)
+  .survey, .survey *
+    animation: none !important
+    transition: none !important

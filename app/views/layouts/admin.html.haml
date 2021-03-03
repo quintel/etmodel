@@ -19,6 +19,7 @@
           = tab.texts                  'Texts', admin_texts_path
           = tab.notifications          'Notifications', admin_general_user_notifications_path
           = tab.users                  'Users', admin_users_path
+          = tab.surveys                'Surveys CSV', admin_surveys_path(format: 'csv')
       #content
         - flash_message
         = yield

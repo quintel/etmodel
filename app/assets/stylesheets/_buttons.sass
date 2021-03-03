@@ -96,25 +96,36 @@ a.button, input.button, button.button, input.btn
     border-color: #8ebeea
 
   &.primary
-    background: #649ec6
-    background: linear-gradient(#7ab2eb, #4e98e4)
+    background: #458bd4 linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0))
     border: 1px solid #5788ba
     border-bottom-color: #3f7ab7
     box-shadow: 0 0 0 transparent
     color: white
     font-weight: 600
-    text-shadow: 0 1px 1px #3f7ab7
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
 
     &[disabled]
-      background: linear-gradient(#7ab2eb, #4e98e4) !important
+      background: #458bd4 linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0)) !important
 
     &:hover
-      background: linear-gradient(#72a9de, #4b90d8)
+      background-color: darken(#458bd4, 8%)
 
     &:active
-      background: linear-gradient(#6698c7, #4282c2)
+      background: darken(#458bd4, 8%) linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
       border-color: #4c7ba8
       box-shadow: 0 0 0 transparent
 
     &:focus:focus-visible
       box-shadow: 0 0 0 3px #cfe5f7
+
+  // Combine with primary
+  &.success
+    background-color: #52a54e
+    border-color: #59a654
+    border-bottom-color: #41843e
+    &[disabled]
+      background-color: #52a54e !important
+    &:hover
+      background-color: darken(#52a54e, 7%)
+    &:active
+      background-color: darken(#52a54e, 7%)

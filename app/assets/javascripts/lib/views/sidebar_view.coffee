@@ -50,7 +50,6 @@ class @SidebarView extends Backbone.View
       App.router.navigate(key, { trigger: true })
 
     @show_sub_items()
-    @setup_results_tip()
 
   show_sub_items: ->
     e = $("#sidebar ul li.active")
@@ -84,18 +83,3 @@ class @SidebarView extends Backbone.View
 
       $item.find('.bar').animate(width: pixels, 300)
       $item.find('.value').html("#{ percentage }%").animate(left: vPixels, 300)
-
-  # Shows a pop-up tip directing the user to the "Results" section some time
-  # after the scenario has loaded.
-  setup_results_tip: (after = 60000) =>
-    return unless ResultsTipView.shouldShow()
-
-    window.setTimeout(
-      =>
-        @results_tip = new ResultsTipView(
-          getScenarioID: App.scenario.api_session_id
-        )
-
-        $('#sidebar').append(@results_tip.render().hide().fadeIn())
-      after
-    )

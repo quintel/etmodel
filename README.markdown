@@ -92,3 +92,4 @@ organisations.
 * [Emily Jäger, OpenMoji](https://openmoji.org/)
 * [FontAwesome](https://fontawesome.com/)
 * [FreePik, Flaticon](https://www.flaticon.com/)
+* [Phosphor](https://phosphoricons.com/)

@@ -110,6 +110,19 @@ class Survey < ApplicationRecord
   validates :feedback, :typical_tasks, length: { maximum: 8192 }, allow_nil: true
   validates :how_often, :how_easy, :how_useful, inclusion: { in: [1, 2, 3, 4, 5] }, allow_nil: true
 
+  # Public: Retrieves the survey for the current user and session.
+  #
+  # Returns a survey.
+  def self.from_session(current_user, session)
+    if current_user&.survey
+      current_user.survey
+    elsif session[:survey_id] && Survey.exists?(session[:survey_id])
+      Survey.find(session[:survey_id])
+    else
+      Survey.new(user: current_user)
+    end
+  end
+
   # Public: Answers the question matching the `key` with the given `answer`.
   #
   # Returns true when the update succeeds, false otherwise. Returns false if no such question

@@ -31,13 +31,6 @@ class SurveyController < ApplicationController
   private
 
   def survey
-    @survey ||=
-      if current_user&.survey
-        current_user.survey
-      elsif session[:survey_id] && Survey.exists?(session[:survey_id])
-        Survey.find(session[:survey_id])
-      else
-        Survey.new(user: current_user)
-      end
+    @survey ||= Survey.from_session(current_user, session)
   end
 end

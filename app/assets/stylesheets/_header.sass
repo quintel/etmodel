@@ -101,7 +101,7 @@ header.main-header
     margin: -4px 0 0
     vertical-align: middle
 
-  a.dropdown-item
+  .dropdown-item
     color: #444
     min-width: 9rem
 
@@ -175,7 +175,7 @@ header.main-header
         cursor: default
   .scenario-actions .fa
     margin-left: 0.25rem
-  a.dropdown-item
+  .dropdown-item
     color: #444
     min-width: 11rem
 
@@ -258,16 +258,28 @@ header.main-header
     left: auto
     right: 0.5rem
 
-a.dropdown-item
+.dropdown-item
   color: black
   display: block
   padding: 0.25rem 1rem
   white-space: nowrap
   &:hover
-    background-color: #eee
     background-color: #4287c4
     color: white !important
+    cursor: pointer
     text-decoration: none
+  &[disabled], .disabled
+    opacity: 0.5
+    pointer-events: none
+
+button.dropdown-item
+  background: none
+  border: none
+  line-height: inherit
+  text-align: left
+  width: 100%
+  &:focus:not(:focus-visible)
+    outline: none
 
 .feedback-menu
   padding: 0

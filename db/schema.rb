@@ -109,10 +109,10 @@ ActiveRecord::Schema.define(version: 2021_02_22_105558) do
     t.bigint "user_id"
     t.string "background", limit: 256
     t.integer "how_often"
-    t.string "typical_tasks", limit: 8192
+    t.text "typical_tasks"
     t.integer "how_easy"
     t.integer "how_useful"
-    t.string "feedback", limit: 8192
+    t.text "feedback"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_surveys_on_user_id"

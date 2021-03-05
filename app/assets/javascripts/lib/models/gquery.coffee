@@ -8,8 +8,6 @@ class @Gquery extends Backbone.Model
 
   safe_present_value: =>
     x = @present_value()
-    # if @get('key') == 'chp_heat_and_electricity_from_wet_biomass'
-    #   return (if @is_acceptable_value(x) then -x else 0)
     if @is_acceptable_value(x) then x else 0
 
   safe_future_value: =>

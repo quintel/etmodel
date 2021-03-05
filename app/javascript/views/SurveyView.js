@@ -114,6 +114,8 @@ function renderChoices(question, contentFn) {
     .addClass('choices')
     .addClass('choices-' + question.key.toString().replace(/_/g, '-'));
 
+  const isCustomValue = question.value && !question.choices.includes(question.value);
+
   contentFn =
     contentFn ||
     function () {
@@ -124,6 +126,10 @@ function renderChoices(question, contentFn) {
     const id = _.uniqueId('choice_');
     const isOther = choice === 'other';
 
+    // A question is checked when it matches the chosen value, or when the choice is "other" and
+    // the user has a custom value.
+    const isChecked = question.value === choice || (isOther && isCustomValue);
+
     list.append(
       $('<li />')
         .addClass('choice-' + choice.toString().replace(/_/g, '-'))
@@ -133,7 +139,8 @@ function renderChoices(question, contentFn) {
             .attr('name', question.key)
             .attr('value', choice)
             .attr('id', id)
-            .attr('tabindex', 1),
+            .attr('tabindex', 1)
+            .attr('checked', isChecked),
 
           $('<label />')
             .attr('for', id)
@@ -147,7 +154,8 @@ function renderChoices(question, contentFn) {
                   .attr(
                     'placeholder',
                     t(question.key + '.choices.' + choice, { defaults: [{ message: choice }] })
-                  ),
+                  )
+                  .val(isCustomValue ? question.value : undefined),
               !isOther &&
                 $('<span />')
                   .addClass('choice-content')
@@ -167,7 +175,8 @@ function renderTextQuestion(question) {
     .attr('name', question.key)
     .attr('maxlength', question.max_length)
     .attr('tabindex', 1)
-    .attr('placeholder', I18n.t('survey.optional'));
+    .attr('placeholder', I18n.t('survey.optional'))
+    .text(question.value || '');
 }
 
 /**
@@ -202,8 +211,8 @@ function replaceSureButton(button) {
         .append(
           I18n.t('survey.next_question'),
           ' ',
-          $('<span />').addClass('fa').addClass('fa-chevron-right'),
-          $('<span />').addClass('fa').addClass('fa-chevron-right')
+          $('<span class="fa fa-chevron-right" />'),
+          $('<span class="fa fa-chevron-right" />')
         );
     },
     { once: true }
@@ -221,19 +230,20 @@ class SurveyView extends Backbone.View {
 
   get events() {
     return {
-      'submit form': 'advance',
       'change form': 'onFormChange',
-      'input textarea': 'onFormChange',
-      'input input': 'onFormChange',
+      'click .choice-other, click input.other': 'onClickOther',
+      'click .previous-question': 'backtrack',
       'click button.dismiss': 'dismissTemporarily',
       'click button.dismiss-forever': 'dismissForever',
-      'click .choice-other, click input.other': 'onClickOther',
+      'input input': 'onFormChange',
+      'input textarea': 'onFormChange',
+      'submit form': 'advance',
       mouseenter: 'stopAttention',
       mouseleave: 'seekAttention',
     };
   }
 
-  render({ wasHello } = { wasHello: false }) {
+  render({ backtracking, wasHello } = { backtracking: false, wasHello: false }) {
     const heightWrapper = this.$el.find('.height-wrapper');
 
     if (!this.isVisible) {
@@ -255,11 +265,16 @@ class SurveyView extends Backbone.View {
     }
 
     if (this.$el.find('.question').length > 0) {
-      this.swapContent(oldQuestionEl, questionEl);
+      this.swapContent(oldQuestionEl, questionEl, backtracking);
     } else {
       heightWrapper.append(questionEl);
       heightWrapper.css('height', questionEl.height());
     }
+
+    this.$el
+      .find('.previous-question')
+      .attr('disabled', this.currentPosition < 1 || this.isFinished())
+      .toggleClass('hidden', this.isHello() || this.isFinished());
 
     this.isFinished() && this.triggerFinished();
     this.enableDisableButton();
@@ -278,7 +293,6 @@ class SurveyView extends Backbone.View {
 
     if (!isHello) {
       this.sendAnswer();
-      this.currentQuestion().answered = true;
     }
 
     if (this.isFinished()) {
@@ -293,11 +307,28 @@ class SurveyView extends Backbone.View {
       return;
     }
 
-    // Advance to the first unanswered question. Normally, but not always, question 0: if the user
-    // started the survey previously, they may have answered some questions already.
-    this.currentPosition = this.options.data.questions.findIndex((question) => !question.answered);
+    if (this.isHello()) {
+      // Advance to the first unanswered question. Normally, but not always, question 0: if the user
+      // started the survey previously, they may have answered some questions already.
+      this.currentPosition = this.options.data.questions.findIndex(
+        (question) => !question.answered
+      );
+    } else {
+      this.currentPosition += 1;
+    }
 
     this.render({ wasHello: isHello });
+  }
+
+  backtrack(event) {
+    event.preventDefault();
+
+    if (this.currentPosition < 1 || this.isFinished()) {
+      return;
+    }
+
+    this.currentPosition -= 1;
+    this.render({ backtracking: true });
   }
 
   /**
@@ -325,7 +356,11 @@ class SurveyView extends Backbone.View {
       value = this.$el.find('input.other').val() || value;
     }
 
-    return value;
+    if (value === '' || Number.isNaN(Number(value))) {
+      return value;
+    }
+
+    return Number(value);
   }
 
   /**
@@ -350,17 +385,17 @@ class SurveyView extends Backbone.View {
    * current question.
    */
   enableDisableButton() {
+    const nextQuestionEl = this.$el.find('button.next-question');
+
     if (this.isFinished()) {
       if (this.answerValue()) {
-        this.$el.find('button.next-question').text(I18n.t('survey.send_feedback'));
+        nextQuestionEl.text(I18n.t('survey.send_feedback'));
       } else {
-        this.$el.find('button.next-question').text(I18n.t('survey.close'));
+        nextQuestionEl.text(I18n.t('survey.close'));
       }
     }
 
-    this.$el
-      .find('button[type=submit]')
-      .attr('disabled', !this.answerValue() && this.currentQuestion().type !== 'text');
+    nextQuestionEl.attr('disabled', !this.answerValue() && this.currentQuestion().type !== 'text');
   }
 
   /**
@@ -418,11 +453,22 @@ class SurveyView extends Backbone.View {
                   I18n.t('survey.never_ask_again')
                 )
             ),
-          $('<button />')
-            .attr('type', 'submit')
-            .attr('tabindex', 2)
-            .addClass('button primary success next-question')
-            .text(I18n.t('survey.sure'))
+          $('<div class="main-buttons" />').append(
+            $('<button />')
+              .attr('type', 'button')
+              .attr('tabindex', 2)
+              .addClass('button previous-question hidden')
+              .append(
+                $('<span class="text" />').text(I18n.t('survey.previous_question')),
+                $('<span class="fa fa-chevron-left" />'),
+                $('<span class="fa fa-chevron-left" />')
+              ),
+            $('<button />')
+              .attr('type', 'submit')
+              .attr('tabindex', 2)
+              .addClass('button primary success next-question')
+              .text(I18n.t('survey.sure'))
+          )
         )
     );
 
@@ -500,6 +546,9 @@ class SurveyView extends Backbone.View {
   sendAnswer() {
     const answerKey = this.currentPosition + '.' + this.answerValue();
 
+    this.currentQuestion().value = this.answerValue();
+    this.currentQuestion().answered = true;
+
     if (answerKey === this.lastAnswerKey) {
       // Don't send duplicate updates.
       return;
@@ -568,19 +617,31 @@ class SurveyView extends Backbone.View {
   /**
    * Moves the old question out to the left, brings the new one in from the right.
    */
-  swapContent(originalEl, newEl) {
+  swapContent(originalEl, newEl, backtracking = false) {
     const heightWrapper = this.$el.find('.height-wrapper');
 
+    let classes = {
+      exit: 'exit',
+      initial: 'initial',
+    };
+
+    if (backtracking) {
+      classes = {
+        exit: 'exit-backtrack',
+        initial: 'initial-backtrack',
+      };
+    }
+
     // Exit old element to the left.
-    originalEl.addClass('exit');
+    originalEl.addClass(classes.exit);
 
     // Bring in new element from the right.
-    newEl.addClass('initial');
+    newEl.addClass(classes.initial);
     heightWrapper.append(newEl);
 
     // Animated resize of wrapper element.
     heightWrapper.css('height', newEl.height());
-    newEl.removeClass('initial');
+    newEl.removeClass(classes.initial);
 
     window.setTimeout(function () {
       originalEl.remove();

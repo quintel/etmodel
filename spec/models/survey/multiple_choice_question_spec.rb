@@ -8,21 +8,6 @@ RSpec.describe Survey::MultipleChoiceQuestion do
       described_class.new(:background, %w[consultant government researcher])
     end
 
-    it 'coerces "consultant" into a translated value' do
-      expect(question.coerce_value('consultant'))
-        .to eq(I18n.t('survey.questions.background.choices.consultant', locale: :en))
-    end
-
-    it 'coerces "government" into a translated value' do
-      expect(question.coerce_value('government'))
-        .to eq(I18n.t('survey.questions.background.choices.government', locale: :en))
-    end
-
-    it 'coerces "researcher" into a translated value' do
-      expect(question.coerce_value('researcher'))
-        .to eq(I18n.t('survey.questions.background.choices.researcher', locale: :en))
-    end
-
     it 'keeps "student" as a literal value' do
       expect(question.coerce_value('student')).to eq('student')
     end

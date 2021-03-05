@@ -15,14 +15,14 @@
   gquery: electricity_imbalance_inflexible_shortage_peak
   output_element_key: installed_flexible_capacities
   key: shortage_peak_electricity_installed_flexible_capacities
-- label: energy_export_electricity
+- label: export_interconnection
   color: "#77bbdd"
   order_by: 120
   group: electricity
   is_target_line: false
   gquery: electricity_demand_flexible_export_capacity
   output_element_key: installed_flexible_capacities
-  key: export_electricity_installed_flexible_capacities
+  key: export_interconnection_electricity_installed_flexible_capacities
 - label: power_to_heat
   color: "#F6E58D"
   order_by: 121
@@ -31,7 +31,7 @@
   gquery: electricity_demand_flexible_power_to_heat_capacity
   output_element_key: installed_flexible_capacities
   key: power_to_heat_electricity_installed_flexible_capacities
-- label: energy_hydrogen_flexibility_p2g_electricity
+- label: power_to_hydrogen
   color: "#dd9977"
   order_by: 122
   group: electricity
@@ -40,7 +40,7 @@
   output_element_key: installed_flexible_capacities
   key: power_to_hydrogen_electricity_installed_flexible_capacities
 - label: power_to_power
-  color: "#dd33cc"
+  color: "#dd77bb"
   order_by: 123
   group: electricity
   is_target_line: false
@@ -71,22 +71,22 @@
   gquery: electricity_production_flexible_hydrogen_to_power_capacity
   output_element_key: installed_flexible_capacities
   key: hydrogen_to_power_electricity_installed_flexible_capacities
-- label: energy_import_electricity
+- label: import_interconnection
   color: "#77bbdd"
   order_by: 144
   group: electricity
   is_target_line: false
   gquery: electricity_production_flexible_import_capacity
   output_element_key: installed_flexible_capacities
-  key: import_electricity_installed_flexible_capacities
-- label: nuclear
+  key: import_interconnection_electricity_installed_flexible_capacities
+- label: nuclear_to_power
   color: "#fd8d3c"
   order_by: 146
   group: electricity
   is_target_line: false
   gquery: electricity_production_flexible_nuclear_to_power_capacity
   output_element_key: installed_flexible_capacities
-  key: nuclear_electricity_installed_flexible_capacities
+  key: nuclear_to_power_electricity_installed_flexible_capacities
 - label: oil_to_power
   color: "#7f2704"
   order_by: 148
@@ -94,9 +94,9 @@
   is_target_line: false
   gquery: electricity_production_flexible_oil_to_power_capacity
   output_element_key: installed_flexible_capacities
-  key: oil_electricity_installed_flexible_capacities
+  key: oil_to_power_electricity_installed_flexible_capacities
 - label: power_to_power
-  color: "#dd33cc"
+  color: "#dd77bb"
   order_by: 150
   group: electricity
   is_target_line: false
@@ -110,7 +110,7 @@
   is_target_line: false
   gquery: electricity_production_flexible_waste_to_power_capacity
   output_element_key: installed_flexible_capacities
-  key: waste_electricity_installed_flexible_capacities
+  key: waste_to_power_electricity_installed_flexible_capacities
 - label: wood_pellets_to_power
   color: "#6AB04C"
   order_by: 154
@@ -118,7 +118,7 @@
   is_target_line: false
   gquery: electricity_production_flexible_wood_pellets_to_power_capacity
   output_element_key: installed_flexible_capacities
-  key: wood_pellets_electricity_installed_flexible_capacities
+  key: wood_pellets__to_power_electricity_installed_flexible_capacities
 
 
 - label: excess_peak

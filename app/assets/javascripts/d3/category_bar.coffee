@@ -384,10 +384,14 @@ D3.category_bar =
       target_series = []
       legend_series = []
 
+      include_present = @periods().includes('present')
+      include_future  = @periods().includes('future')
+
       for series in @series
         label = series.get('label')
-        total = Math.abs(series.safe_future_value()) +
-                Math.abs(series.safe_present_value())
+
+        total = (if include_future then Math.abs(series.safe_future_value()) else 0) +
+                (if include_present then Math.abs(series.safe_present_value()) else 0)
 
         if (series.get('is_target_line') || total > 1e-7) &&
             _.indexOf(seen_labels, label) == -1

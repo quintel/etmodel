@@ -49,16 +49,16 @@ class Survey < ApplicationRecord
       @max_length = max_length
     end
 
-    def coerce_value(user_value)
-      return super(user_value) unless @choices.include?(user_value)
+    # def coerce_value(user_value)
+    #   return super(user_value) unless @choices.include?(user_value)
 
-      # Translate user_value to English if applicable, else use literal.
-      super(I18n.t(
-        "survey.questions.background.choices.#{user_value}",
-        default: user_value,
-        locale: :en
-      ))
-    end
+    #   # Translate user_value to English if applicable, else use literal.
+    #   super(I18n.t(
+    #     "survey.questions.background.choices.#{user_value}",
+    #     default: user_value,
+    #     locale: :en
+    #   ))
+    # end
 
     def as_json(*)
       super.merge(choices: choices)
@@ -147,11 +147,33 @@ class Survey < ApplicationRecord
     next_question.nil?
   end
 
+  # Public: Returns the value given by the user as an answer to the question.
+  def answer_for(question)
+    self[question.key]
+  end
+
+  # Public: Returns the value given by the user as an answer to the question, translated to English
+  # when appropriate.
+  def localized_answer_for(question)
+    raw_value = answer_for(question)
+
+    return raw_value unless question.is_a?(MultipleChoiceQuestion)
+
+    I18n.t(
+      "survey.questions.#{question.key}.choices.#{raw_value}",
+      default: raw_value,
+      locale: :en
+    )
+  end
+
   def as_json(*)
     {
       finished: finished?,
       questions: QUESTIONS.map do |question|
-        question.as_json.merge(answered: !self[question.key].nil?)
+        question.as_json.merge(
+          answered: !answer_for(question).nil?,
+          value: answer_for(question)
+        )
       end
     }
   end

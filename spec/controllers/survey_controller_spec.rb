@@ -15,7 +15,7 @@ RSpec.describe SurveyController do
 
       it 'sets the answer' do
         request
-        expect(Survey.last.background).to eq('Researcher')
+        expect(Survey.last.background).to eq('researcher')
       end
 
       it 'returns 200 OK' do
@@ -72,7 +72,7 @@ RSpec.describe SurveyController do
 
       it 'sets the answer' do
         request
-        expect(Survey.last.background).to eq('Researcher')
+        expect(Survey.last.background).to eq('researcher')
       end
 
       it 'returns 200 OK' do

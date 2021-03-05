@@ -12,6 +12,45 @@ RSpec.describe Survey, type: :model do
   it { is_expected.to belong_to(:user).optional }
   it { is_expected.to have_db_index([:user_id]) }
 
+  describe '#localized_answer_for' do
+    context 'with the key for a multiple-choice question with a translated value' do
+      let(:question) { Survey::QUESTIONS.find { |q| q.key == :background }}
+      let(:survey) { described_class.new(background: 'consultant') }
+
+      it 'translates the value to English' do
+        expect(survey.localized_answer_for(question))
+          .to eq(I18n.t('survey.questions.background.choices.consultant', locale: :en))
+      end
+    end
+
+    context 'with the key for a multiple-choice question with an untranslated value' do
+      let(:question) { Survey::QUESTIONS.find { |q| q.key == :background }}
+      let(:survey) { described_class.new(background: 'Wizard') }
+
+      it 'returns the original user-provided value' do
+        expect(survey.localized_answer_for(question)).to eq('Wizard')
+      end
+    end
+
+    context 'with the key for a text question' do
+      let(:question) { Survey::QUESTIONS.find { |q| q.key == :typical_tasks }}
+      let(:survey) { described_class.new(typical_tasks: 'Working') }
+
+      it 'returns the original user-provided value' do
+        expect(survey.localized_answer_for(question)).to eq('Working')
+      end
+    end
+
+    context 'with the key for a range question' do
+      let(:question) { Survey::QUESTIONS.find { |q| q.key == :how_useful }}
+      let(:survey) { described_class.new(how_useful: 4) }
+
+      it 'returns the original user-provided value' do
+        expect(survey.localized_answer_for(question)).to eq(4)
+      end
+    end
+  end
+
   describe '#answer_question' do
     let(:survey) { described_class.create! }
 
@@ -24,7 +63,7 @@ RSpec.describe Survey, type: :model do
     context 'when providing an answer' do
       it 'updates the record' do
         expect { survey.answer_question('background', 'consultant') }
-          .to change { survey.reload.background }.from(nil).to('Consultant')
+          .to change { survey.reload.background }.from(nil).to('consultant')
       end
 
       it 'returns true' do

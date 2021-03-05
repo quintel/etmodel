@@ -10,10 +10,14 @@ module Admin
 
     def surveys
       csv = CSV.generate do |builder|
-        builder << Survey::CSV_COLUMNS
+        builder << [:id, :user_id, *Survey::QUESTIONS.map(&:key)]
 
         Survey.find_each do |survey|
-          builder << survey.attributes.values_at(*Survey::CSV_COLUMNS)
+          builder << [
+            survey.id,
+            survey.user_id,
+            *Survey::QUESTIONS.map { |q| survey.localized_answer_for(q) }
+          ]
         end
       end
 

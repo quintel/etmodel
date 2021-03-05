@@ -112,13 +112,14 @@ $survey-question-transition-duration: 0.3s;
   .progress
     color: #777
     font-size: 0.75rem
+    margin-bottom: 0.125rem
     text-align: center
 
   h3
     font-size: 1.25rem
     font-weight: 500
     line-height: 1.5rem
-    margin: 0 0 1.5rem
+    margin: 0 0 1.25rem
     text-align: center
 
   h3 + p
@@ -126,7 +127,7 @@ $survey-question-transition-duration: 0.3s;
 
   .height-wrapper
     position: relative
-    transition: height 0.3s $survey-transition-timing-function
+    transition: height $survey-question-transition-duration $survey-transition-timing-function
 
   .question
     bottom: 0
@@ -136,16 +137,16 @@ $survey-question-transition-duration: 0.3s;
     transition-timing-function: $survey-transition-timing-function
     transition-duration: $survey-question-transition-duration
     width: 100%
-    &.initial
+    &.initial, &.exit-backtrack
       transform: translateX(26rem)
       opacity: 0
-    &.exit
+    &.exit, &.initial-backtrack
       transform: translateX(-26rem)
       opacity: 0
 
   ul.choices
     list-style: none
-    margin-bottom: 0
+    margin: 1rem 0 0
     padding: 0
     label
       cursor: pointer
@@ -261,7 +262,7 @@ $survey-question-transition-duration: 0.3s;
       padding-left: 3rem
       position: absolute
       top: 0
-      transition-property: box-shadow 0.2s ease, color 0.2s ease
+      transition: box-shadow 0.2s ease, color 0.2s ease
       width: 100%
       &:focus
         box-shadow: inset 0 0 0 2px $survey-green
@@ -325,11 +326,12 @@ $survey-question-transition-duration: 0.3s;
           outline: none
           z-index: 1
       .fa
-        font-size: 0.8135rem
+        font-size: 0.8125rem
         margin-right: 0.25rem
-        margin-top: -3px
-        vertical-align: middle
         width: 11px
+
+    .main-buttons
+      display: inline-flex
 
     .next-question
       font-size: 1rem
@@ -337,11 +339,40 @@ $survey-question-transition-duration: 0.3s;
       padding: 0.625rem 0.875rem
       .fa
         color: white
+
+    .next-question, .previous-question
+      .fa
         font-size: 11px
-        margin-top: -1px
-        vertical-align: middle
       .fa ~ .fa
         margin-left: -3px
+
+    .previous-question
+      border-color: transparent
+      background: none
+      box-shadow: none
+      color: #777
+      margin-right: 0.25rem
+      .text
+        // Visually hidden
+        clip: rect(0 0 0 0)
+        clip-path: inset(50%)
+        height: 1px
+        overflow: hidden
+        position: absolute
+        white-space: nowrap
+        width: 1px
+        opacity: 0
+      &[disabled], &.hidden
+        cursor: default
+        pointer-events: none
+      &.hidden
+        opacity: 0
+      &:hover:not([disabled])
+        background: #ddd
+        color: #555
+      &:active:not([disabled])
+        background: #ccc
+        color: #555
 
     button.finished
       align-items: center

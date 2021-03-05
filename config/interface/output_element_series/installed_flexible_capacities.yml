@@ -1,0 +1,24 @@
+---
+- label: excess_peak
+  color: "#AB47BCCC"
+  order_by: 101
+  group: electricity
+  is_target_line: true
+  gquery: electricity_imbalance_inflexible_excess_peak
+  output_element_key: installed_flexible_capacities
+  key: excess_peak_electricity_installed_flexible_capacities
+- label: shortage_peak
+  color: "#AB47BCCC"
+  order_by: 105
+  group: electricity
+  is_target_line: true
+  gquery: electricity_imbalance_inflexible_shortage_peak
+  output_element_key: installed_flexible_capacities
+- label: nuclear
+  color: "#AB47BCCC"
+  order_by: 110
+  group: electricity
+  is_target_line: false
+  gquery: electricity_production_flexible_nuclear_to_electricity_capacity
+  output_element_key: installed_flexible_capacities
+  key: nuclear_electricity_installed_flexible_capacities  

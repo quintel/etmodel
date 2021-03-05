@@ -39,10 +39,23 @@ $survey-question-transition-duration: 0.3s;
   to
     transform: rotate3d(0, 0, 1, 0deg)
 
+@keyframes survey-tada
+  from, to
+    transform: scale3d(1, 1, 1)
+
+  10%, 20%
+    transform: scale3d(0.93, 0.93, 0.93) rotate3d(0, 0, 1, -2deg)
+
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.07, 1.07, 1.07) rotate3d(0, 0, 1, 2deg)
+
+  40%, 60%, 80%
+    transform: scale3d(1.07, 1.07, 1.07) rotate3d(0, 0, 1, -2deg)
+
 .survey
   background: white
   border-radius: 4px
-  bottom: 6rem
+  bottom: 1.5rem
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0.5rem 1rem rgba(0,0,0, 0.2)
   overflow: hidden
   padding: 1.75rem 2rem
@@ -396,3 +409,7 @@ $survey-question-transition-duration: 0.3s;
   .survey, .survey *
     animation: none !important
     transition: none !important
+
+body#model
+  .survey
+    bottom: 6rem

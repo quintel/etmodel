@@ -10,6 +10,15 @@ header.main-header
   height: 57px
   justify-content: space-between
 
+  li.nav-item
+    margin-left: 0.5rem
+
+    &:last-child
+      margin-right: 1rem
+
+    &.nav-item-hidden
+      display: none
+
   .logo
     display: block
     padding-top: 0
@@ -22,14 +31,6 @@ header.main-header
     list-style: none
     margin: 0
     padding: 0
-
-    li.nav-item
-      margin-left: 0.5rem
-
-      &:first-child
-        margin-left: 1rem
-      &:last-child
-        margin-right: 1rem
 
   .logo
     align-items: center
@@ -52,6 +53,16 @@ header.main-header
       text-decoration: none
     &:focus:not(:focus-visible)
       outline: 0
+
+  .survey-item button
+    align-items: center
+    color: #ffefb2
+    display: inline-flex
+    &:hover
+      color: #ffefb2
+    svg
+      display: inline-block
+      margin-right: 0.125rem
 
   // Special styles for the rounded pills used for "My Scenarios" and "My Account"
   .my-scenarios

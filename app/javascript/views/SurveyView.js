@@ -674,17 +674,7 @@ class SurveyView extends Backbone.View {
     this.$el.find('button.next-question').addClass('success finished').text(I18n.t('survey.close'));
 
     // Reach into the scenario nav and remove the survey option.
-    const surveyNav = $('header.main-header .survey-item');
-    const feedbackNav = $('header.main-header .feedback-item');
-
-    surveyNav.animate({ opacity: 0 }, 'easeInOutQuad', () => {
-      surveyNav.remove();
-
-      feedbackNav
-        .css({ opacity: 0 })
-        .removeClass('nav-item-hidden')
-        .animate({ opacity: 1 }, 'easeInOutQuad');
-    });
+    $('header.main-header .survey-item').fadeOut(175);
   }
 }
 

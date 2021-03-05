@@ -2,9 +2,7 @@
   %a.logo{ href: root_path }
     %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
   %ul.user-settings
-    - survey_available = !Survey.from_session(current_user, session).finished?
-
-    - if survey_available
+    - unless Survey.from_session(current_user, session).finished?
       %li.survey-item.nav-item
         %button.nav-link{ type: 'button' }
           :plain
@@ -14,7 +12,7 @@
           = I18n.t('header.survey')
 
     - if APP_CONFIG[:feedback_email]
-      = render partial: 'layouts/etm/feedback_nav_item', locals: { hidden: survey_available }
+      = render partial: 'layouts/etm/feedback_nav_item'
 
     %li.locale.nav-item
       .dropdown

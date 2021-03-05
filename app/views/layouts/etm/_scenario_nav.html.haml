@@ -43,12 +43,6 @@
           %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }
             = t("header.reset_scenario")
 
-        - unless Survey.from_session(current_user, session).finished?
-          %li.sep-above.open-survey
-            %button.dropdown-item{ disabled: true, type: 'button' }
-              = t('header.survey')
-              %span.fa.fa-star{ style: 'color: orange; margin-left: 0.25rem' }
-
         - if current_user&.admin?
           %li.sep-above
             %a.dropdown-item{ href: "#", target: "_blank", data: { dylink: ':etengine' } }

@@ -195,6 +195,7 @@
     events: {
       'click #locale-button': 'updateLocaleLinks',
       'click #feedback-button': 'focusFeedbackField',
+      'click .survey-item button': 'openSurvey',
     },
 
     focusFeedbackField: function (event) {
@@ -211,6 +212,10 @@
       });
 
       new FeedbackView({ el: this.el.querySelector('.feedback-item form') }).render();
+    },
+
+    openSurvey: function () {
+      window.SurveyView && window.SurveyView.begin({ force: true });
     },
 
     updateLocaleLinks: function (event) {

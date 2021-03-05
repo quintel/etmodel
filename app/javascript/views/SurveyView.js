@@ -674,18 +674,39 @@ class SurveyView extends Backbone.View {
     this.$el.find('button.next-question').addClass('success finished').text(I18n.t('survey.close'));
 
     // Reach into the scenario nav and remove the survey option.
-    $('#scenario-nav .open-survey').remove();
+    const surveyNav = $('header.main-header .survey-item');
+    const feedbackNav = $('header.main-header .feedback-item');
+
+    surveyNav.animate({ opacity: 0 }, 'easeInOutQuad', () => {
+      surveyNav.remove();
+
+      feedbackNav
+        .css({ opacity: 0 })
+        .removeClass('nav-item-hidden')
+        .animate({ opacity: 1 }, 'easeInOutQuad');
+    });
   }
 }
 
-SurveyView.begin = function () {
-  const dismissUntil = window.localStorage.getItem(LOCAL_STORAGE_DISMISS_KEY);
+SurveyView.begin = function ({ force } = { force: false }) {
+  if (force) {
+    window.localStorage.removeItem(LOCAL_STORAGE_DISMISS_KEY);
+  } else {
+    const dismissUntil = window.localStorage.getItem(LOCAL_STORAGE_DISMISS_KEY);
 
-  if (dismissUntil && new Date(JSON.parse(dismissUntil)) > new Date()) {
-    return;
+    if (dismissUntil && new Date(JSON.parse(dismissUntil)) > new Date()) {
+      return;
+    }
   }
 
-  if ($('body > .survey').length > 0) {
+  const existingSurvey = $('body > .survey');
+
+  if (existingSurvey.length > 0) {
+    // Bring the user's attention to the survey and exit.
+    existingSurvey
+      .css({ animation: 'survey-tada 1s' })
+      .one('animationend', () => existingSurvey.css({ animation: '' }));
+
     return;
   }
 

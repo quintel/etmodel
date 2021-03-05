@@ -1,7 +1,7 @@
 - contact_us = link_to(t('feedback.contact_us'), contact_url)
 - our_documentation = link_to(t('feedback.our_documentation'), 'https://docs.energytransitionmodel.com', target: '_blank', rel: 'noopener')
 
-%li.feedback-item
+%li.feedback-item.nav-item{ class: hidden ? 'nav-item-hidden' : '' }
   .dropdown
     %button#feedback-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
       %span.fa.fa-comments

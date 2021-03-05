@@ -1,4 +1,4 @@
-/* globals $ Backbone DropdownView I18n SurveyView */
+/* globals $ Backbone DropdownView I18n */
 (function (window) {
   /**
    * Saves an already-saved scenario.
@@ -59,7 +59,6 @@
       'click .save-scenario': 'saveScenario',
       'click .save-scenario-as': 'showSaveAsModal',
       'click .save-scenario-as-inline': 'showSaveAsModal',
-      'click .open-survey button': 'openSurvey',
     },
 
     /**
@@ -99,11 +98,6 @@
       new DropdownView({ el: this.el.querySelector('.dropdown') }).render();
 
       return this;
-    },
-
-    openSurvey: function () {
-      window.localStorage.removeItem('etm.survey-2021.dismiss-until');
-      SurveyView.begin();
     },
 
     saveScenario: function () {

@@ -175,7 +175,12 @@ function renderTextQuestion(question) {
     .attr('name', question.key)
     .attr('maxlength', question.max_length)
     .attr('tabindex', 1)
-    .attr('placeholder', I18n.t('survey.optional'))
+    .attr(
+      'placeholder',
+      I18n.t(`survey.questions.${question.key}.placeholder`, {
+        defaults: [{ scope: 'survey.optional' }],
+      })
+    )
     .text(question.value || '');
 }
 

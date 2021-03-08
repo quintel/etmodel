@@ -46,6 +46,9 @@
               %li.sep-above.admin
                 %a.dropdown-item{ href: '/admin' } Admin
     - else
+      %li.sign-up.nav-item
+        %a.nav-link{ href: new_user_path }
+          = t('header.sign_up')
       %li.sign-in.nav-item
         %a.nav-link{ href: login_path }
           = t('header.sign_in')

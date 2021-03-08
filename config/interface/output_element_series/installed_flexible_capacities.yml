@@ -1,5 +1,5 @@
 ---
-- label: excess_peak
+- label: residual_load_excess_peak
   color: "blue"
   order_by: 100
   group: electricity
@@ -7,7 +7,7 @@
   gquery: electricity_imbalance_inflexible_excess_peak
   output_element_key: installed_flexible_capacities
   key: excess_peak_electricity_installed_flexible_capacities
-- label: shortage_peak
+- label: residual_load_shortage_peak
   color: "red"
   order_by: 105
   group: electricity
@@ -15,7 +15,7 @@
   gquery: electricity_imbalance_inflexible_shortage_peak
   output_element_key: installed_flexible_capacities
   key: shortage_peak_electricity_installed_flexible_capacities
-- label: export_interconnection
+- label: export
   color: "#77bbdd"
   order_by: 120
   group: electricity
@@ -39,7 +39,7 @@
   gquery: electricity_demand_flexible_power_to_hydrogen_capacity
   output_element_key: installed_flexible_capacities
   key: power_to_hydrogen_electricity_installed_flexible_capacities
-- label: power_to_power
+- label: electricity_storage
   color: "#dd77bb"
   order_by: 123
   group: electricity
@@ -71,7 +71,7 @@
   gquery: electricity_production_flexible_hydrogen_to_power_capacity
   output_element_key: installed_flexible_capacities
   key: hydrogen_to_power_electricity_installed_flexible_capacities
-- label: import_interconnection
+- label: import
   color: "#77bbdd"
   order_by: 144
   group: electricity
@@ -95,7 +95,7 @@
   gquery: electricity_production_flexible_oil_to_power_capacity
   output_element_key: installed_flexible_capacities
   key: oil_to_power_electricity_installed_flexible_capacities
-- label: power_to_power
+- label: electricity_storage
   color: "#dd77bb"
   order_by: 150
   group: electricity
@@ -121,7 +121,7 @@
   key: wood_pellets__to_power_electricity_installed_flexible_capacities
 
 
-- label: excess_peak
+- label: residual_load_excess_peak
   color: "blue"
   order_by: 300
   group: hydrogen
@@ -129,7 +129,7 @@
   gquery: hydrogen_imbalance_inflexible_excess_peak
   output_element_key: installed_flexible_capacities
   key: excess_peak_hydrogen_installed_flexible_capacities
-- label: shortage_peak
+- label: residual_load_shortage_peak
   color: "red"
   order_by: 305
   group: hydrogen
@@ -137,7 +137,7 @@
   gquery: hydrogen_imbalance_inflexible_shortage_peak
   output_element_key: installed_flexible_capacities
   key: shortage_peak_hydrogen_installed_flexible_capacities
-- label: energy_hydrogen_flexibility_p2g_electricity
+- label: power_to_hydrogen
   color: "#dd9977"
   order_by: 320
   group: hydrogen

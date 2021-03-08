@@ -36,15 +36,21 @@
         = f.input :password, required: true
         = f.input :password_confirmation, required: true
 
+      .row
+        - if MailchimpService.configured?
+          = f.input :allow_news
+
     .section.highlight
       .row
         = f.input :company_school
         = f.input :teacher_email
 
-    - if MailchimpService.configured?
-      = f.input :allow_news
-
     .section
+      %p.terms
+        = t('sign_up.agree_to_terms',
+            privacy_policy: link_to('Privacy Policy', privacy_url),
+            terms_of_service: link_to('Terms of Service', terms_of_service_url)).html_safe
+
       = f.button :submit, I18n.t('simple_form.labels.user.submit'), class: 'primary'
 
 .return-to-model

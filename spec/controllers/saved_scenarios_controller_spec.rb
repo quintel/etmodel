@@ -91,6 +91,17 @@ describe SavedScenariosController, vcr: true do
       get :show, params: { id: user_scenario.id }, format: :csv
       expect(response.media_type).to eq('text/csv')
     end
+
+    context 'when the scenario cannot be loaded' do
+      before do
+        allow(Api::Area).to receive(:code_exists?).and_return(false)
+      end
+
+      it 'redirects to the root page' do
+        get :show, params: { id: user_scenario.id }
+        expect(response).to be_redirect
+      end
+    end
   end
 
   describe 'GET new' do

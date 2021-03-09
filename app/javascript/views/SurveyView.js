@@ -238,7 +238,7 @@ class SurveyView extends Backbone.View {
       'change form': 'onFormChange',
       'click .choice-other, click input.other': 'onClickOther',
       'click .previous-question': 'backtrack',
-      'click button.dismiss': 'dismissTemporarily',
+      'click button.dismiss': 'onClickClose',
       'click button.dismiss-forever': 'dismissForever',
       'input input': 'onFormChange',
       'input textarea': 'onFormChange',
@@ -502,17 +502,18 @@ class SurveyView extends Backbone.View {
   }
 
   /**
-   * Triggered whenever a change or input event is fired within the form.
+   * Event triggered when the user clicks the "x" close button. When they have finished the survey,
+   * the button does a forever-dismiss to prevent it popping up again should their session be lost
+   * or cleared.
    */
-  onFormChange(event) {
+  onClickClose(event) {
     event.preventDefault();
 
-    // Don't submit while user is typing, wait for them to finish.
-    if (event.type !== 'input') {
-      this.sendAnswer();
+    if (this.isFinished()) {
+      this.dismissForever();
+    } else {
+      this.dismissTemporarily();
     }
-
-    this.enableDisableButton();
   }
 
   /**
@@ -527,6 +528,20 @@ class SurveyView extends Backbone.View {
       label.closest('li').querySelector('input[type="radio"]').click();
       label.querySelector('input.other').focus();
     }
+  }
+
+  /**
+   * Triggered whenever a change or input event is fired within the form.
+   */
+  onFormChange(event) {
+    event.preventDefault();
+
+    // Don't submit while user is typing, wait for them to finish.
+    if (event.type !== 'input') {
+      this.sendAnswer();
+    }
+
+    this.enableDisableButton();
   }
 
   /**
@@ -570,7 +585,7 @@ class SurveyView extends Backbone.View {
   }
 
   sendDismiss(dismissUntil) {
-    window.localStorage.setItem(LOCAL_STORAGE_DISMISS_KEY, JSON.stringify(dismissUntil));
+    this.setDismissedUntil(dismissUntil);
 
     this.$el.removeClass('entrance');
     this.$el.removeClass('attention');
@@ -593,6 +608,10 @@ class SurveyView extends Backbone.View {
         );
       });
     });
+  }
+
+  setDismissedUntil(dismissUntil) {
+    window.localStorage.setItem(LOCAL_STORAGE_DISMISS_KEY, JSON.stringify(dismissUntil));
   }
 
   showFeedbackSent() {
@@ -675,6 +694,9 @@ class SurveyView extends Backbone.View {
 
     // Reach into the scenario nav and remove the survey option.
     $('header.main-header .survey-item').fadeOut(175);
+
+    // Prevent the survey ever popping up again if the user clears their session.
+    this.setDismissedUntil(new Date(new Date().getTime() + 1000 * 3600 * 24 * 365 * 10));
   }
 }
 

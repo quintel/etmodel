@@ -30,8 +30,8 @@ class SavedScenariosController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html
-      format.csv
+      format.html { @saved_scenario.loadable? ? render : redirect_to(root_path) }
+      format.csv { @saved_scenario.loadable? ? render : render_not_found }
     end
   end
 

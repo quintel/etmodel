@@ -153,7 +153,7 @@
   output_element_key: installed_flexible_capacities
   key: coal_to_heat_heat_network_installed_flexible_capacities
 - label: gas_to_heat
-  color: "#969696"
+  color: "#CED6E0"
   order_by: 242
   group: heat_network
   is_target_line: false
@@ -265,3 +265,52 @@
   gquery: hydrogen_production_flexible_storage_capacity
   output_element_key: installed_flexible_capacities
   key: storage_output_hydrogen_installed_flexible_capacities
+
+- label: residual_load_excess_peak
+  color: "blue"
+  order_by: 400
+  group: network_gas
+  is_target_line: true
+  gquery: network_gas_imbalance_inflexible_excess_peak
+  output_element_key: installed_flexible_capacities
+  key: excess_peak_network_gas_installed_flexible_capacities
+- label: residual_load_shortage_peak
+  color: "red"
+  order_by: 405
+  group: network_gas
+  is_target_line: true
+  gquery: network_gas_imbalance_inflexible_shortage_peak
+  output_element_key: installed_flexible_capacities
+  key: shortage_peak_network_gas_installed_flexible_capacities
+- label: gas_to_heat
+  color: "#CED6E0"
+  order_by: 420
+  group: network_gas
+  is_target_line: false
+  gquery: network_gas_demand_flexible_gas_to_heat_capacity
+  output_element_key: installed_flexible_capacities
+  key: gas_to_heat_network_gas_installed_flexible_capacities
+- label: gas_to_power
+  color: "#969696"
+  order_by: 422
+  group: network_gas
+  is_target_line: false
+  gquery: network_gas_demand_flexible_gas_to_power_capacity
+  output_element_key: installed_flexible_capacities
+  key: gas_to_power_network_gas_installed_flexible_capacities
+- label: network_gas_storage
+  color: "#A4B0BE"
+  order_by: 410
+  group: network_gas
+  is_target_line: false
+  gquery: network_gas_demand_flexible_storage_capacity
+  output_element_key: installed_flexible_capacities
+  key: storage_input_network_gas_installed_flexible_capacities
+- label: network_gas_storage
+  color: "#A4B0BE"
+  order_by: 412
+  group: network_gas
+  is_target_line: false
+  gquery: network_gas_production_flexible_storage_capacity
+  output_element_key: installed_flexible_capacities
+  key: storage_output_network_gas_installed_flexible_capacities

@@ -133,6 +133,10 @@ module ApplicationHelper
     Current.setting.active_saved_scenario_id.present?
   end
 
+  def export_scenario_enabled?
+    Current.setting.esdl_exportable
+  end
+
   def back_url_or_root
     controller.request.env['HTTP_REFERER'].present? ? url_for(:back) : root_url
   end

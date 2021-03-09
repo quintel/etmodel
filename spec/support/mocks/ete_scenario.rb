@@ -19,6 +19,7 @@ def ete_scenario_mock
   allow(mock).to receive(:use_fce).and_return(nil)
   allow(mock).to receive(:scaling).and_return(nil)
   allow(mock).to receive(:protected?).and_return(false)
+  allow(mock).to receive(:esdl_exportable).and_return(false)
   allow(mock).to receive(:user_values)  do
     double('user_values', attributes: { foo: :bar })
   end

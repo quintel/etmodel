@@ -63,6 +63,10 @@ Rails.application.routes.draw do
       get 'energy_mix' => 'energy_mix#show'
       # legacy name for the energy mix
       get 'factsheet', to: redirect('scenarios/%{id}/energy_mix')
+
+      get  'export'                => 'export_scenario#index'
+      post 'export/esdl'           => 'export_scenario#esdl'
+      get  'export/mondaine_drive' => 'export_scenario#mondaine_drive'
     end
   end
 

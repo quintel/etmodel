@@ -35,7 +35,7 @@ $(function () {
   var mondaineDrive = $('#mondaine_drive');
 
   if (mondaineDrive.length > 0) {
-    browseMondaineDrive($('form#import_esdl'));
+    browseMondaineDrive($('form#import_esdl'), false);
 
     if (mondaineDrive.hasClass('disabled')) {
       mondaineDrive.find('a').on('click', false);
@@ -46,8 +46,9 @@ $(function () {
 });
 
 // Browsing the Mondaine Drive
-// selectType can be either 'file' or 'folder'
-function browseMondaineDrive(form, selectFolder = false) {
+// selectFolder should be true or false, depending on if the user should be able to select folders
+// or files while browsing the Drive
+function browseMondaineDrive(form, selectFolder) {
   var folders = $('.folder__true');
 
   if (folders.length > 0) {

@@ -182,6 +182,28 @@
       - households_solar_pv
       - energy_power_solar_pv
 - under_construction: false
+  unit: MWh
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_p2p_storage
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on:
+  description:
+  output_element_type_name: solar_curtailment
+  config:
+    serie_selections:
+      - storage_curve
+      - households_flexibility_p2p
+      - transport_car_flexibility_p2p
+      - energy_flexibility_mv_batteries
+      - energy_flexibility_hv_opac
+      - energy_flexibility_pumped_storage
+- under_construction: false
   unit: MW
   percentage: false
   group: Flexibility

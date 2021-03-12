@@ -188,7 +188,7 @@
     {% if future.profitability_percentage.value < 100 %}
       <li>
         {{ 100 | minus: future.profitability_percentage | round: 1 }}% of
-        power-plants are not profitable in your scenario. Do you think they will
+        dispatchable power plants are not profitable in your scenario. Do you think they will
         still be around in {{ settings.end_year }}?
         <a href="#profitability-of-power-plants" class="learn-more">
           Learn more &raquo;
@@ -523,7 +523,7 @@
 
     {% endif %}
 
-  <h1 class="banner">Security of supply and profitability of power plants</h1>
+  <h1 class="banner">Security of supply and profitability of dispatchable power plants</h1>
 
     <h2>Reliability</h2>
 
@@ -565,10 +565,10 @@
     {% endif %}
 
     {% if settings.merit_order_enabled %}
-      <h2>Profitability of power plants</h2>
+      <h2>Profitability of dispatchable power plants</h2>
 
         <p>
-          Security of (electricity) supply and the profitability of power plants are intimately linked.
+          Security of (electricity) supply and the profitability of dispatchable power plants are intimately linked.
           For dispatchable power plants to make money, they need to run sufficiently often, ideally when
           electricity prices are high.
           A reliable electricity system traditionally requires, however,
@@ -577,13 +577,13 @@
         </p>
 
         <p>
-          In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of power plants is not
+          In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of the dispatchalbe power plants is not
           profitable. This means that they are not earning back their investment costs
           (orange in table below) or are not even earning their OPEX (operational expenditure) back (red).
         </p>
 
         {% chart plant_profitability %}
-          Profitability of power plants.
+          Profitability of dispatchable power plants.
         {% endchart %}
 
         <p>

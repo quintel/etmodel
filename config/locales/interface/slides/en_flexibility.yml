@@ -273,7 +273,17 @@ en:
     flexibility_overview_flexible_capacities:
       title: "The provision of flexibility: capacity"
       short_description:
-      description:
+      description: |
+        So far, the charts shown in this section have focused on the need for flexibility. This chart focuses on 
+        the provision of flexibility. When the inflexible supply is larger than the baseload demand, flexible demand 
+        technologies can be installed to utilize the energy excess. When the reverse happens, flexible supply 
+        technologies can be installed to meet the energy shortage. </br></br>
+        This chart shows the installed <i>capacity</i> of flexible supply and demand technologies for electricity, gas, 
+        hydrogen and heat. Additionally, it shows the maximum excess and shortage of the residual load curve for each 
+        energy carrier. This indicates whether you have installed enough flexible technologies to fully utilize the 
+        excesses and to fully meet the shortage. More information about the definitions of flexible technologies can 
+        be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-inflexible-supply-and-baseload-demand" target=\"_blank\">
+        documentation</a>.
     flexibility_overview_inflexible_imbalance:
       title: Imbalance of monthly supply and demand volumes
       short_description:

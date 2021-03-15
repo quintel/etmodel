@@ -1,5 +1,5 @@
 ---
-- label: electricity_stored_in_household_batteries
+- label: households_flexibility_p2p_electricity_storage
   color: "#dd33cc"
   order_by: 100
   group: 
@@ -11,7 +11,7 @@
   dependent_on: 
   output_element_key: flexibility_hourly_p2p_storage
   key: electricity_stored_in_household_batteries_flexibility_hourly_p2p_storage
-- label: electricity_stored_in_EV
+- label: transport_car_flexibility_p2p_electricity_storage
   color: "#dd77bb"
   order_by: 110
   group: 
@@ -23,7 +23,7 @@
   dependent_on: 
   output_element_key: flexibility_hourly_p2p_storage
   key: electricity_stored_in_EV_flexibility_hourly_p2p_storage
-- label: energy_flexibility_pumped_storage_electricity
+- label: energy_flexibility_pumped_storage_electricity_storage
   color: "#416B86"
   order_by: 120
   group: 
@@ -35,7 +35,7 @@
   dependent_on: 
   output_element_key: flexibility_hourly_p2p_storage
   key: energy_flexibility_pumped_storage_electricity_flexibility_hourly_p2p_storage
-- label: electricity_stored_in_mv_batteries
+- label: energy_flexibility_mv_batteries_electricity_storage
   color: "#5a7bc4"
   order_by: 130
   group: 
@@ -47,7 +47,7 @@
   dependent_on: 
   output_element_key: flexibility_hourly_p2p_storage
   key: electricity_stored_in_mv_batteries_flexibility_hourly_p2p_storage
-- label: electricity_stored_in_opac
+- label: energy_flexibility_hv_opac_electricity_storage
   color: "#385ba6"
   order_by: 140
   group: 

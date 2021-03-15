@@ -310,6 +310,9 @@ en:
         energy_flexibility_mv_batteries: "Large-scale batteries"
         energy_flexibility_hv_opac: "Underground pumped hydro storage"
         energy_flexibility_pumped_storage: "Reservoirs"
+        energy_flexibility_mv_batteries_electricity_storage: 'Large-scale batteries'
+        energy_flexibility_hv_opac_electricity_storage: 'Underground pumped hydro storage'
+        energy_flexibility_pumped_storage_electricity_storage: 'Reservoirs'
         energy_import: "Energy import"
         energy_power_combined_cycle_ccs_coal: 'Coal IGCC CCS'
         energy_power_combined_cycle_ccs_network_gas: 'Gas CCGT CCS'
@@ -462,6 +465,7 @@ en:
         households_flexibility_p2h_electricity: 'Converted to heat for households'
         households_flexibility_p2p_electricity: 'Stored in household batteries'
         households_flexibility_p2p: 'Household batteries'
+        households_flexibility_p2p_electricity_storage: 'Batteries in households'
         households_heating_demand: "Heating households"
         households_solar_pv: 'Households'
         households_solar_pv_curtailed_electricity_output_curve: 'Curtailment households'
@@ -775,7 +779,7 @@ en:
         palm: "Oil palm"
         passenger_transport: "Passenger transport"
         p2g: "Power-to-gas"
-        power_to_hydrogen: "Power-to-hydrogen"
+        power_to_hydrogen: "Power-to-gas"
         power_to_heat: "Power-to-heat"
         power_to_heat_network: "Power-to-heat for district heating"
         peak_electricity_demand: "Peak power demand"
@@ -805,7 +809,7 @@ en:
         solar: "Solar"
         solar_csp: "Solar CSP plant"
         solar_panels: "Solar panels"
-        solar_pv: "Solar PV"
+        solar_pv: "Solar PV (stacked)"
         solar_pv_production: "Solar PV production"
         solar_pv_total_curtailed_electricity_curve: "Curtailment of solar PV"
         solar_thermal: "Solar thermal"
@@ -816,7 +820,7 @@ en:
         steam_methane_reforming: "Steam methane reforming"
         steam_methane_reforming_ccs: "Steam methane reforming CCS"
         steel: "Steel"
-        storage_curve: "Electricity storage"
+        storage_curve: "Electricity storage (stacked)"
         sugar_cane: "Sugar cane (bio-ethanol)"
         sugar_beets: "Sugar beets (bio-ethanol)"
         sustainable_electricity: "Renewable electricity"
@@ -840,6 +844,7 @@ en:
         trams: "Trams/metros"
         transport_car_using_electricity: "Stored in EV"
         transport_car_flexibility_p2p: "EV batteries"
+        transport_car_flexibility_p2p_electricity_storage: 'Batteries in electric vehicles'
         transport_e_cars: "Electric Cars"
         transport_e_buses: "Electric Buses"
         transport_e_trucks: "Electric Trucks"

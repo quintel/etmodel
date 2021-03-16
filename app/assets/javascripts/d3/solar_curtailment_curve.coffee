@@ -32,6 +32,7 @@ D3.solar_curtailment_curve =
     # are removed to ensure a full redraw.
     initialDraw: (xScale, yScale, area, line) ->
       @svg.selectAll('g.serie').remove()
+      @svg.selectAll('g.no-data').remove()
 
       super(xScale, yScale, area, line)
 

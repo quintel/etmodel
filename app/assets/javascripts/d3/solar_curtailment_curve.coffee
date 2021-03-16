@@ -57,7 +57,8 @@ D3.solar_curtailment_curve =
       legendSeries = []
       val = @serieSelect.selectBox.val()
       @series.forEach (serie) ->
-        if serie.attributes.gquery_key.includes(val)
+        if serie.attributes.gquery_key.includes(val) &&
+            serie.future_value().find((v) => v != 0)
           legendSeries.push(serie)
 
       legendSeries

@@ -38,10 +38,13 @@ D3.solar_curtailment_curve =
 
       @svg.append('g')
         .attr('class', 'no-data')
-        .append('text')
-        .attr('x',@width / 2)
+        .append('foreignObject')
+        .attr('width', @width + @margins.left + 2)
+        .attr('height', 100)
+        .attr('x', -@margins.left)
         .attr('y', (@height - @margins.bottom - 10) / 2)
-        .attr('text-anchor', 'middle')
+        .append('xhtml:p')
+        .attr('xmlns', 'http://www.w3.org/1999/xhtml')
         .text(
           I18n.t(
             'output_elements.empty.' + this.model.get('key'),

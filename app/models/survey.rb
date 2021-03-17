@@ -158,6 +158,7 @@ class Survey < ApplicationRecord
     raw_value = answer_for(question)
 
     return raw_value unless question.is_a?(MultipleChoiceQuestion)
+    return raw_value if raw_value.blank?
 
     I18n.t(
       "survey.questions.#{question.key}.choices.#{raw_value}",

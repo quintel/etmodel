@@ -127,8 +127,10 @@ class Bezier extends D3Chart {
       .selectAll('path.serie')
       .data(stacked_data, (d) => d.key)
       .attr('data-tooltip-text', (d) => {
+        const last = d.length - 1;
+
         const present = Math.abs(d[0][1]) - Math.abs(d[0][0]);
-        const future = Math.abs(d[1][1]) - Math.abs(d[1][0]);
+        const future = Math.abs(d[last][1]) - Math.abs(d[last][0]);
 
         return `${this.startYear}: ${this.formatValue(present)}</br> \
           ${this.endYear}: ${this.formatValue(future)}`;

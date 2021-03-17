@@ -444,7 +444,7 @@ class SurveyView extends Backbone.View {
               $('<button />')
                 .addClass('dismiss')
                 .attr('type', 'button')
-                .attr('tabindex', 3)
+                .attr('tabindex', 4)
                 .append(
                   $('<span />').addClass('fa').addClass('fa-history'),
                   I18n.t('survey.ask_me_later')
@@ -452,7 +452,7 @@ class SurveyView extends Backbone.View {
               $('<button />')
                 .addClass('dismiss-forever')
                 .attr('type', 'button')
-                .attr('tabindex', 4)
+                .attr('tabindex', 5)
                 .append(
                   $('<span />').addClass('fa').addClass('fa-times'),
                   I18n.t('survey.never_ask_again')
@@ -461,7 +461,7 @@ class SurveyView extends Backbone.View {
           $('<div class="main-buttons" />').append(
             $('<button />')
               .attr('type', 'button')
-              .attr('tabindex', 2)
+              .attr('tabindex', 3)
               .addClass('button previous-question hidden')
               .append(
                 $('<span class="text" />').text(I18n.t('survey.previous_question')),

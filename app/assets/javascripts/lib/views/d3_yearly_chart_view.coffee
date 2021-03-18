@@ -134,16 +134,22 @@ class @D3YearlyChartView extends D3ChartView
     values:    serie.future_value() || Array.apply(null, Array(8760)).map(-> 0)
 
   createLinearScale: ->
-    d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice()
+    d3.scale.linear().domain([0, @maxYvalue()]).range([@height, 0]).nice(6)
 
   createLinearAxis: (scale) ->
     formatter = @main_formatter()
 
-    d3.svg.axis().scale(scale)
+    axis = d3.svg.axis().scale(scale)
       .orient('left')
-      .ticks(7)
+      .ticks(6)
       .tickSize(-@width, 0)
       .tickFormat((v) => formatter(v))
+
+    if scale.domain()[0] == 0 && scale.domain()[1] == 0
+      axis = axis.scale(scale.domain([0, 1]))
+        .tickFormat((v) => if v == 0 then formatter(v) else '')
+
+    axis
 
   createTimeScale: (domain) ->
     d3.time.scale.utc().range([0, @width]).domain(domain)

@@ -93,6 +93,9 @@ nl:
       title: Uurlijkse productie van zonnepanelen
       short_description:
       description:
+    flexibility_hourly_p2p_storage:
+      title: "Uurlijks opgeslagen elektriciteitsvolume"
+      descrition:
     merit_order_table:
       title: Merit order tabel
       short_description: ''
@@ -121,6 +124,12 @@ nl:
         in elke maand voor elke drager de maximale waarde te nemen die voorkomt. <br/><br/>
         Meer informatie over flexibiliteit is te vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
+    installed_flexible_capacities:
+        title: "Geïnstalleerde capaciteit aan flexibele technologieën (systeemperspectief)"
+        description:
+    installed_flexible_carriers_capacities:
+        title: "Geïnstalleerde capaciteit aan flexibele technologieën (dragerperspectief)"
+        description:
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Onbalans in maandelijkse volumes van vraag en aanbod
       description: |

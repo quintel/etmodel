@@ -12,7 +12,12 @@ D3.solar_curtailment_curve =
     refresh: ->
       super()
 
-      if _.all(@visibleData(), (s) -> _.all(s.values, (v) -> v == 0))
+      noData = _.all(
+        @visibleData(),
+        (s) => _.all(@model.series.with_gquery(s.key).future_value(), (v) -> v == 0)
+      )
+
+      if noData
         @svg.selectAll('g.no-data').style('display', 'inline')
       else
         @svg.selectAll('g.no-data').style('display', 'none')

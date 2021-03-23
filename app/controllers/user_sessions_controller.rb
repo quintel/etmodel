@@ -23,7 +23,7 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions.xml
   def create
     @user_session = UserSession.new(
-      params.require(:user_session).permit(:email, :password).to_h
+      params.require(:user_session).permit(:email, :password, :remember_me).to_h
     )
 
     @user_session.save do |result|

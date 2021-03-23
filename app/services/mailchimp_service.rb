@@ -62,7 +62,7 @@ class MailchimpService
       ServiceResult.success(nil)
     else
       notify_sentry(response, user)
-      ServiceResult.failure(format_mailchimp_error(response.to_h))
+      ServiceResult.failure(format_mailchimp_error(response))
     end
   end
 
@@ -78,7 +78,13 @@ class MailchimpService
   end
 
   def format_mailchimp_error(response)
-    "Mailchimp error: #{response['status']} #{response['title']}: " \
-    "#{response['detail']}"
+    if response.respond_to?(:to_h)
+      data = response.to_h
+
+      "Mailchimp error: #{data['status']} #{data['title']}: " \
+      "#{data['detail']}"
+    else
+      "Mailchimp error: #{response.inspect}"
+    end
   end
 end

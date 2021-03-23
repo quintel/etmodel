@@ -17,6 +17,22 @@
     supports_to_image: false
 - group: Flexibility
   hidden: false
+  key: installed_flexible_capacities
+  output_element_type_name: category_bar
+  requires_merit_order: true
+  unit: MW
+  config:
+    period: future
+- group: Flexibility
+  hidden: false
+  key: installed_flexible_carriers_capacities
+  output_element_type_name: category_bar
+  requires_merit_order: true
+  unit: MW
+  config:
+    period: future
+- group: Flexibility
+  hidden: false
   key: flexibility_monthly_carriers_inflexible_supply_demand_sum
   output_element_type_name: hourly_summarized
   requires_merit_order: true
@@ -173,6 +189,28 @@
       - buildings_solar_pv
       - households_solar_pv
       - energy_power_solar_pv
+- under_construction: false
+  unit: MWh
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_p2p_storage
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on:
+  description:
+  output_element_type_name: solar_curtailment
+  config:
+    serie_selections:
+      - storage_curve
+      - households_flexibility_p2p_electricity_storage
+      - transport_car_flexibility_p2p_electricity_storage
+      - energy_flexibility_mv_batteries_electricity_storage
+      - energy_flexibility_hv_opac_electricity_storage
+      - energy_flexibility_pumped_storage_electricity_storage
 - under_construction: false
   unit: MW
   percentage: false

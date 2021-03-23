@@ -211,12 +211,20 @@ class HourlyBase extends D3Chart {
   }
 
   createLinearAxis(scale) {
-    return d3
+    const axis = d3
       .axisLeft()
       .scale(scale)
       .ticks(7)
       .tickSize(-this.width, 0)
       .tickFormat((v) => this.formatValue(v));
+
+    if (scale.domain()[0] === 0 && scale.domain()[1] === 0) {
+      axis.scale(scale.domain([0, 1])).tickFormat((v) => {
+        return v === 0 ? this.formatValue(v) : '';
+      });
+    }
+
+    return axis;
   }
 
   createTimeScale(domain) {

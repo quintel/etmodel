@@ -113,6 +113,10 @@ en:
       title: Hourly production of solar PV
       short_description:
       description:
+    flexibility_hourly_p2p_storage:
+      title: Hourly stored volume of electricity
+      short_description:
+        description:
     merit_order_table:
       title: Merit order table
       short_description: ''
@@ -142,6 +146,12 @@ en:
         The capacity is obtained by taking the maximum hourly value for each carrier in each month. <br/><br/>
         More information about flexibility can be found in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentation</a>.
+    installed_flexible_capacities:
+      title: "Installed capacity of flexible technologies (system perspective)"
+      description:
+    installed_flexible_carriers_capacities:
+      title: "Installed capacity of flexible technologies (carrier perspective)"
+      description:
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Imbalance of monthly supply and demand volumes
       description: |
@@ -200,7 +210,7 @@ en:
     flexibility_hourly_hydrogen_supply_demand:
       title: Hourly hydrogen supply and demand
       description: |
-        TThis chart shows the hourly inflexible supply and baseload demand for hydrogen. <br/><br/>
+        This chart shows the hourly inflexible supply and baseload demand for hydrogen. <br/><br/>
         We have defined which types of hydrogen supply are considered flexible/inflexible and 
         which types of hydrogen demand are considered flexible/baseload in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-inflexible-supply-and-baseload-demand" target=\"_blank\">documentation</a>.

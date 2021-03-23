@@ -140,6 +140,8 @@ en:
         biomass_products_heating: "Biomass (for heating)"
         biomass_products_energetic: "Biomass (energetic)"
         biomass_products_non_energetic: "Biomass (feedstock)"
+        biomass_to_power: "Biomass power plants"
+        biomass_to_heat: "Biomass heater"
         blue_energy: "Blue Energy"
         buildings_cooling_demand: "Cooling buildings"
         buildings_heating_demand: "Heating buildings"
@@ -204,6 +206,8 @@ en:
         coal_pwd: "Coal USC"
         coal_pwd_cofiring: "Coal co-firing USC"
         coal_pwd_ccs: "Coal USC CCS"
+        coal_to_power: "Coal power plants"
+        coal_to_heat: "Coal heater"
         coal_trains: "Coal trains"
         coastal: "Coastal"
         coastal_wind_turbines: "Coastal wind turbines"
@@ -264,6 +268,8 @@ en:
         electricity_cost: "Electricity cost"
         electricity_demand: "Electricity demand"
         electricity_demand_excluding_heating: "Electricity demand, excluding heating"
+        electricity_interconnection_import: "Import interconnection"
+        electricity_interconnection_export: "Export interconnection"
         electricity_inflexible_demand: "Base load demand (excl. p2p, p2h, p2g)"
         electricity_inflexible_supply: "Must-run / volatile production"
         electricity_import_1: "Import interconnector 1"
@@ -272,6 +278,7 @@ en:
         electricity_import_4: "Import interconnector 4"
         electricity_import_5: "Import interconnector 5"
         electricity_import_6: "Import interconnector 6"
+        electricity_storage: "Electricity storage"
         electricity_stored_in_household_batteries: "Stored in household batteries"
         electricity_stored_in_EV: "Stored in EV"
         electricity_stored_in_opac: "Stored in underground pumped hydro storage"
@@ -300,6 +307,12 @@ en:
         energy_flexibility_pumped_storage_electricity: 'Stored in reservoirs'
         energy_flexibility_opac_electricity: 'Stored in underground pumped hydro storage'
         energy_flexibility_mv_batteries_electricity: 'Stored in large-scale batteries'
+        energy_flexibility_mv_batteries: "Large-scale batteries"
+        energy_flexibility_hv_opac: "Underground pumped hydro storage"
+        energy_flexibility_pumped_storage: "Reservoirs"
+        energy_flexibility_mv_batteries_electricity_storage: 'Large-scale batteries'
+        energy_flexibility_hv_opac_electricity_storage: 'Underground pumped hydro storage'
+        energy_flexibility_pumped_storage_electricity_storage: 'Reservoirs'
         energy_import: "Energy import"
         energy_power_combined_cycle_ccs_coal: 'Coal IGCC CCS'
         energy_power_combined_cycle_ccs_network_gas: 'Gas CCGT CCS'
@@ -382,6 +395,8 @@ en:
         gas_power_plants_plants: "Gas power plants (plants)"
         gas_engine: "Gas engine"
         gas_turbine: "Gas turbine"
+        gas_to_power: "Gas power plants"
+        gas_to_heat: "Gas heater"
         gasoline: "Gasoline"
         gasoline_busses: "Gasoline busses"
         gasoline_cars: "Gasoline cars"
@@ -428,6 +443,7 @@ en:
         heat_network_demand: "Heat demand"
         heat_network_inflexible_demand: "District heating demand"
         heat_network_inflexible_supply: "Must-run / volatile production"
+        heat_network_storage: "(Seasonal) heat storage"
         heat_unused_heat_mekko_of_detailed_final_demand_in_industry_energetic: "Surplus heat"
         heatpumps: "Heatpumps"
         heavy_fuel_oil: "Heavy fuel oil"
@@ -449,6 +465,7 @@ en:
         households_flexibility_p2h_electricity: 'Converted to heat for households'
         households_flexibility_p2p_electricity: 'Stored in household batteries'
         households_flexibility_p2p: 'Household batteries'
+        households_flexibility_p2p_electricity_storage: 'Batteries in households'
         households_heating_demand: "Heating households"
         households_solar_pv: 'Households'
         households_solar_pv_curtailed_electricity_output_curve: 'Curtailment households'
@@ -507,6 +524,8 @@ en:
         hydrogen_trucks: "Hydrogen trucks"
         hydrogen_turbine: "Hydrogen turbine"
         hydrogen_ccgt: "Hydrogen plant (CCGT)"
+        hydrogen_to_power: "Hydrogen power plants"
+        hydrogen_to_heat: "Hydrogen heater"
         energy_hydrogen_biomass_gasification: "Biomass gasification"
         energy_hydrogen_biomass_gasification_ccs: "Biomass gasification CCS"
         energy_hydrogen_electrolysis_solar_electricity: "Solar PV plant for H2"
@@ -723,6 +742,7 @@ en:
         nuclear_plants_investm: "Nuclear plants (investm.)"
         nuclear_plants_plants: "Nuclear plants (plants)"
         nuclear_plants_prod: "Nuclear plants (prod.)"
+        nuclear_to_power: "Nuclear power plants"
         number_of_excess_events: "Number of excess electricity events per year"
         offshore: "Offshore"
         offshore_net: "Offshore net"
@@ -740,6 +760,8 @@ en:
         oil_power_plants_investment: "Oil power plants (investment)"
         oil_power_plants_plants: "Oil power plants (plants)"
         oil_power_plants_prod: "Oil power plants (prod)"
+        oil_to_power: "Oil power plants"
+        oil_to_heat: "Oil heater"
         oily_biomass: "Oil-containing biomass"
         old_residences: "Old residences"
         onshore: "Onshore"
@@ -757,6 +779,9 @@ en:
         palm: "Oil palm"
         passenger_transport: "Passenger transport"
         p2g: "Power-to-gas"
+        power_to_hydrogen: "Power-to-gas"
+        power_to_heat: "Power-to-heat"
+        power_to_heat_network: "Power-to-heat for district heating"
         peak_electricity_demand: "Peak power demand"
         percentage_of_renewables: "Percentage of renewables"
         percentage_renewables: "Percentage renewables"
@@ -775,6 +800,8 @@ en:
         regasified_lng: "Regasified LNG"
         removal: "Removal"
         renewable_electricity: "Renewable electricity"
+        residual_load_excess_peak: "Residual load excess peak"
+        residual_load_shortage_peak: "Residual load shortage peak"
         required_investment: "Required investment in electricity production"
         required_network_capacity: "Required network capacity"
         roof_use: "Roof use"
@@ -782,7 +809,7 @@ en:
         solar: "Solar"
         solar_csp: "Solar CSP plant"
         solar_panels: "Solar panels"
-        solar_pv: "Solar PV"
+        solar_pv: "Solar PV (stacked)"
         solar_pv_production: "Solar PV production"
         solar_pv_total_curtailed_electricity_curve: "Curtailment of solar PV"
         solar_thermal: "Solar thermal"
@@ -793,6 +820,7 @@ en:
         steam_methane_reforming: "Steam methane reforming"
         steam_methane_reforming_ccs: "Steam methane reforming CCS"
         steel: "Steel"
+        storage_curve: "Electricity storage (stacked)"
         sugar_cane: "Sugar cane (bio-ethanol)"
         sugar_beets: "Sugar beets (bio-ethanol)"
         sustainable_electricity: "Renewable electricity"
@@ -815,6 +843,8 @@ en:
         trains: "Trains"
         trams: "Trams/metros"
         transport_car_using_electricity: "Stored in EV"
+        transport_car_flexibility_p2p: "EV batteries"
+        transport_car_flexibility_p2p_electricity_storage: 'Batteries in electric vehicles'
         transport_e_cars: "Electric Cars"
         transport_e_buses: "Electric Buses"
         transport_e_trucks: "Electric Trucks"
@@ -829,6 +859,8 @@ en:
         waste_heat_and_cold: "Residue heat and cold"
         waste_incinerator: "Waste incinerator"
         waste_fats: "Waste fats (biodiesel/biokerosene)"
+        waste_to_power: "Waste power plants"
+        waste_to_heat: "Waste heater"
         wet_biomass: "Wet biomass"
         wheat: "Wheat (bio-ethanol)"
         wind: "Wind"
@@ -847,6 +879,7 @@ en:
         wind_onshore_production: "Wind onshore production"
         wind_turbines: "Wind"
         wood_pellets: "Wood pellets"
+        wood_pellets_to_power: "Wood pellets power plants"
         dry_biomass: "Dry biomass"
         wood: "Wood (final demand)"
         agriculture_final_demand_hydrogen: "Heat for agriculture"

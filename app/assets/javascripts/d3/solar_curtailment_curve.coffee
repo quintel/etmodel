@@ -12,7 +12,12 @@ D3.solar_curtailment_curve =
     refresh: ->
       super()
 
-      if _.all(@visibleData(), (s) -> _.all(s.values, (v) -> v == 0))
+      noData = _.all(
+        @visibleData(),
+        (s) => _.all(@model.series.with_gquery(s.key).future_value(), (v) -> v == 0)
+      )
+
+      if noData
         @svg.selectAll('g.no-data').style('display', 'inline')
       else
         @svg.selectAll('g.no-data').style('display', 'none')
@@ -32,15 +37,19 @@ D3.solar_curtailment_curve =
     # are removed to ensure a full redraw.
     initialDraw: (xScale, yScale, area, line) ->
       @svg.selectAll('g.serie').remove()
+      @svg.selectAll('g.no-data').remove()
 
       super(xScale, yScale, area, line)
 
       @svg.append('g')
         .attr('class', 'no-data')
-        .append('text')
-        .attr('x',@width / 2)
+        .append('foreignObject')
+        .attr('width', @width + @margins.left + 2)
+        .attr('height', 100)
+        .attr('x', -@margins.left)
         .attr('y', (@height - @margins.bottom - 10) / 2)
-        .attr('text-anchor', 'middle')
+        .append('xhtml:p')
+        .attr('xmlns', 'http://www.w3.org/1999/xhtml')
         .text(
           I18n.t(
             'output_elements.empty.' + this.model.get('key'),
@@ -56,7 +65,8 @@ D3.solar_curtailment_curve =
       legendSeries = []
       val = @serieSelect.selectBox.val()
       @series.forEach (serie) ->
-        if serie.attributes.gquery_key.includes(val)
+        if serie.attributes.gquery_key.includes(val) &&
+            serie.future_value().find((v) => v != 0)
           legendSeries.push(serie)
 
       legendSeries

@@ -31,6 +31,7 @@ gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
 gem 'http_accept_language'
 gem 'browser'
+gem 'valid_email2'
 
 # javascript
 gem 'webpacker'

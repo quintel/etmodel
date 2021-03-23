@@ -447,6 +447,9 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.0.0)
+    valid_email2 (3.6.0)
+      activemodel (>= 3.2)
+      mail (~> 2.5)
     validate_email (0.1.6)
       activemodel (>= 3.0)
       mail (>= 2.2.5)
@@ -550,6 +553,7 @@ DEPENDENCIES
   tabs_on_rails (~> 3.0)
   tomdoc
   uglifier
+  valid_email2
   vcr (~> 3.0.3)
   watchr
   webmock (>= 3.5)

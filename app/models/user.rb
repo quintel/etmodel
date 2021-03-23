@@ -39,7 +39,7 @@ class User < ApplicationRecord
 
   has_one    :survey, dependent: :destroy
 
-  validates :email, uniqueness: { case_sensitive: false }
+  validates :email, uniqueness: { case_sensitive: false }, 'valid_email_2/email': true
 
   validates :password,
     confirmation: { if: :require_password? },

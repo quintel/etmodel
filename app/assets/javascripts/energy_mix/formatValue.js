@@ -80,6 +80,10 @@ function formatNonQuantityValue(value, unit, options) {
     ];
   }
 
+  if (unit === 'year') {
+    return [value, unit, options];
+  }
+
   return [
     Metric.autoscale_value(value, unit, options.precision),
     unit,

@@ -65,7 +65,6 @@ EstablishmentShot.Main = (function() {
 
   Main.prototype = {
     render: function () {
-      EstablishmentShot.Charts.setNonEnergy(EstablishmentShot.nonEnergy);
       EstablishmentShot.queries = getQueries()
         .concat(EstablishmentShot.Charts.getQueries());
 

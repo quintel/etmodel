@@ -140,8 +140,8 @@ EstablishmentShot.Charts = (function () {
                     $(".column .column-inner .chart")
                         .stop().animate({'opacity': 1.0 }, 500);
                 }
-            };
-        },
+            }
+        };
     return {
         getCharts: function () {
             count = 0;
@@ -177,8 +177,8 @@ EstablishmentShot.Charts = (function () {
             for (chart in charts) {
                 charts[chart].series.forEach(function (serie) {
                     queries.push(serie.key);
-                });
-            },
+                })
+            };
 
             return queries;
         }

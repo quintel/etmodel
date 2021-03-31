@@ -1343,7 +1343,7 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: renewable_heat_export_and_curtailment_mekko_of_primary_demand
-- label: imported_heat
+- label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
   group: industry
@@ -1355,7 +1355,7 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_heat_industry_mekko_of_primary_demand
-- label: imported_heat
+- label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
   group: households
@@ -1367,7 +1367,7 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_heat_households_mekko_of_primary_demand
-- label: imported_heat
+- label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
   group: bunkers
@@ -1379,7 +1379,7 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_heat_bunkers_mekko_of_primary_demand
-- label: imported_heat
+- label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
   group: agriculture
@@ -1391,7 +1391,7 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_heat_agriculture_mekko_of_primary_demand
-- label: imported_heat
+- label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
   group: other
@@ -1403,7 +1403,7 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_heat_other_mekko_of_primary_demand
-- label: imported_heat
+- label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
   group: transport
@@ -1415,7 +1415,7 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_heat_transport_mekko_of_primary_demand
-- label: imported_heat
+- label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
   group: buildings
@@ -1427,7 +1427,7 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_heat_buildings_mekko_of_primary_demand
-- label: imported_heat
+- label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
   group: export_and_curtailment

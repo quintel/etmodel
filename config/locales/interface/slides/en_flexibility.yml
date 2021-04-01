@@ -274,16 +274,29 @@ en:
       title: "The provision of flexibility: capacity"
       short_description:
       description: |
+        As we have seen in previous sections, imbalance in the supply and demand of carriers occurs when we 
+        integrate large volumes of volatile energy in our energy system while keeping the demand fixed. Whenever 
+        the volatile (inflexible) supply is smaller than the baseload (inflexible) demand, the energy system can 
+        be said to have an ‘excess’ of energy. Flexible demand technologies can be used to utilize this energy 
+        excess. In moments where the reverse happens, flexible supply technologies can be used to meet the energy 
+        shortage. </br></br>
         So far, the charts shown in this section have focused on the need for flexibility. This chart focuses on 
-        the provision of flexibility. When the inflexible supply is larger than the baseload demand, flexible demand 
-        technologies can be installed to utilize the energy excess. When the reverse happens, flexible supply 
-        technologies can be installed to meet the energy shortage. </br></br>
-        This chart shows the installed <i>capacity</i> of flexible supply and demand technologies for electricity, gas, 
-        hydrogen and heat. Additionally, it shows the maximum excess and shortage of the residual load curve for each 
-        energy carrier. This indicates whether you have installed enough flexible technologies to fully utilize the 
-        excesses and to fully meet the shortage. More information about the definitions of flexible technologies can 
-        be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-inflexible-supply-and-baseload-demand" target=\"_blank\">
-        documentation</a>.
+        the provision of flexibility. More precisely: the installed capacity of flexible supply and demand 
+        technologies for electricity, gas, hydrogen and heat are shown. Additionally, it shows the maximum excess 
+        and shortage for each energy carrier. This indicates whether you have installed enough flexible 
+        technologies to fully utilize the excesses and to fully meet the shortage. </br></br>
+        Note that some technologies appear twice in this chart. Power-to-gas for instance occurs in the 
+        electricity column (as flexible demand) and in the hydrogen column (as flexible supply). This is a direct 
+        consequence of the chosen definition of flexible technologies in the ETM. More information about the 
+        definitions of flexible technologies can be found in our 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-inflexible-supply-and-baseload-demand" target=\"_blank\">
+        documentation</a>. </br></br>
+        It is also noteworthy that the methane- and hydrogen storage are not generally dimensioned to match the 
+        maximum shortage and excess. This has two reasons. Firstly, for the gaseous carriers, the storage is solely 
+        responsible for balancing. Secondly, in the case of  hydrogen, power-to-gas has a profile that typically 
+        follows volatile supply rather than demand. As noted above, power-to-gas is considered to be a flexible 
+        technology and, therefore, is not included in the residual load curve. This means that it does not affect 
+        the maximum excess (blue line).
     flexibility_overview_inflexible_imbalance:
       title: Imbalance of monthly supply and demand volumes
       short_description:

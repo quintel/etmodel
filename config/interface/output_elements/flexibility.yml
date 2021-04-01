@@ -25,14 +25,6 @@
     period: future
 - group: Flexibility
   hidden: false
-  key: installed_flexible_carriers_capacities
-  output_element_type_name: category_bar
-  requires_merit_order: true
-  unit: MW
-  config:
-    period: future
-- group: Flexibility
-  hidden: false
   key: flexibility_monthly_carriers_inflexible_supply_demand_sum
   output_element_type_name: hourly_summarized
   requires_merit_order: true

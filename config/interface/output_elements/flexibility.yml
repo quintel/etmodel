@@ -217,4 +217,56 @@
   dependent_on:
   description:
   output_element_type_name: solar_curtailment
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_electricity_supply_demand
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_network_gas_supply_demand
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_hydrogen_supply_demand
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: flexibility_hourly_heat_network_supply_demand
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: line
 

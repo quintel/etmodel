@@ -23,14 +23,22 @@
   gquery: electricity_demand_flexible_export_capacity
   output_element_key: installed_flexible_capacities
   key: export_interconnection_electricity_installed_flexible_capacities
-- label: power_to_heat
-  color: "#F6E58D"
+- label: power_to_heat_for_district_heating
+  color: "#FFA502"
   order_by: 126
   group: electricity
   is_target_line: false
-  gquery: electricity_demand_flexible_power_to_heat_capacity
+  gquery: electricity_demand_flexible_power_to_heat_district_heating_capacity
   output_element_key: installed_flexible_capacities
-  key: power_to_heat_electricity_installed_flexible_capacities
+  key: power_to_heat_for_district_heating_electricity_installed_flexible_capacities
+- label: power_to_heat_for_industry
+  color: "#8B0000"
+  order_by: 127
+  group: electricity
+  is_target_line: false
+  gquery: electricity_demand_flexible_power_to_heat_industry_capacity
+  output_element_key: installed_flexible_capacities
+  key: power_to_heat_for_industry_electricity_installed_flexible_capacities
 - label: power_to_hydrogen
   color: "#dd9977"
   order_by: 128
@@ -176,8 +184,8 @@
   gquery: heat_network_production_flexible_oil_to_heat_capacity
   output_element_key: installed_flexible_capacities
   key: oil_to_heat_heat_network_installed_flexible_capacities
-- label: power_to_heat_network
-  color: "#F6E58D"
+- label: power_to_heat_for_district_heating
+  color: "#FFA502"
   order_by: 248
   group: heat_network
   is_target_line: false
@@ -242,7 +250,7 @@
   output_element_key: installed_flexible_capacities
   key: hydrogen_to_power_hydrogen_installed_flexible_capacities
 - label: hydrogen_storage
-  color: "#87CEEB"
+  color: "#11698e"
   order_by: 310
   group: hydrogen
   is_target_line: false
@@ -258,7 +266,7 @@
   output_element_key: installed_flexible_capacities
   key: power_to_hydrogen_hydrogen_installed_flexible_capacities
 - label: hydrogen_storage
-  color: "#87CEEB"
+  color: "#11698e"
   order_by: 312
   group: hydrogen
   is_target_line: false
@@ -299,7 +307,7 @@
   output_element_key: installed_flexible_capacities
   key: gas_to_power_network_gas_installed_flexible_capacities
 - label: network_gas_storage
-  color: "#A4B0BE"
+  color: "#b8b5ff"
   order_by: 410
   group: network_gas
   is_target_line: false
@@ -307,7 +315,7 @@
   output_element_key: installed_flexible_capacities
   key: storage_input_network_gas_installed_flexible_capacities
 - label: network_gas_storage
-  color: "#A4B0BE"
+  color: "#b8b5ff"
   order_by: 412
   group: network_gas
   is_target_line: false

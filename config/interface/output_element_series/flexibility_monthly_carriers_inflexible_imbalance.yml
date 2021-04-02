@@ -11,7 +11,7 @@
   dependent_on:
   gquery: heat_network_imbalance_inflexible_curve
   key: heat_network_imbalance_inflexible_curve
-  label: heat
+  label: heat_network
   order_by: 3
   output_element_key: flexibility_monthly_carriers_inflexible_imbalance
 
@@ -19,7 +19,7 @@
   dependent_on:
   gquery: network_gas_imbalance_inflexible_curve
   key: network_gas_imbalance_inflexible_curve
-  label: gas
+  label: network_gas
   order_by: 2
   output_element_key: flexibility_monthly_carriers_inflexible_imbalance
 

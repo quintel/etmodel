@@ -21,7 +21,7 @@
   gquery: heat_network_production_inflexible_curve
   group: supply
   key: heat_network_production_inflexible_curve_max
-  label: heat
+  label: heat_network
   order_by: 5
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_max
 - color: "#B22222"
@@ -29,7 +29,7 @@
   gquery: heat_network_demand_inflexible_curve
   group: demand
   key: heat_network_demand_inflexible_curve_max
-  label: heat
+  label: heat_network
   order_by: 6
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_max
 
@@ -38,7 +38,7 @@
   gquery: network_gas_production_inflexible_curve
   group: supply
   key: network_gas_production_inflexible_curve_max
-  label: gas
+  label: network_gas
   order_by: 3
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_max
 - color: "#CCCCCC"
@@ -46,7 +46,7 @@
   gquery: network_gas_demand_inflexible_curve
   group: demand
   key: network_gas_demand_inflexible_curve_max
-  label: gas
+  label: network_gas
   order_by: 4
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_max
 

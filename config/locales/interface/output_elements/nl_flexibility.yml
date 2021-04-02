@@ -125,8 +125,16 @@ nl:
         Meer informatie over flexibiliteit is te vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
     installed_flexible_capacities:
-        title: "Geïnstalleerde capaciteit aan flexibele technologieën"
-        description:
+      title: "Geïnstalleerd vermogen aan flexibele technologieën"
+      description: |
+        Deze grafiek laat het geïnstalleerde vermogen van flexibele vraag- en aanbodtechnologieën zien voor 
+        elektriciteit, netwerkgas, waterstof en warmte voor warmtenetten. Positief vermogen staat voor technologieën 
+        die energie kunnen produceren en negatief vermogen voor technologieën die energie kunnen consumeren voor een 
+        bepaalde drager. </br></br>
+        Daarnaast laat deze grafiek voor elke drager de maximum overschotpiek van de residuele vraagcurve zien als 
+        een negatieve waarde en de maximale tekortpiek als een positieve waarde. </br></br>
+        Meer informatie over de residuele vraagcurve en definities van flexibele technologieën is te vinden in onze 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Onbalans in maandelijkse volumes van vraag en aanbod
       description: |

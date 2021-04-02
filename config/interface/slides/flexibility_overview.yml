@@ -1,25 +1,40 @@
 ---
 - key: flexibility_overview_introduction
-  position: 1
+  position: 100
   sidebar_item_key: flexibility_overview
   output_element_key: flexibility_workflow
+
+- key: flexibility_overview_hourly_electricity_supply_demand
+  position: 200
+  sidebar_item_key: flexibility_overview
+  output_element_key: flexibility_hourly_electricity_supply_demand
+
 - key: flexibility_overview_inflexible_demand_supply_sum
-  position: 2
+  position: 300
   sidebar_item_key: flexibility_overview
   output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_sum
-- key: flexibility_overview_inflexible_demand_supply_max
-  position: 5
+
+- key: flexibility_overview_hourly_carriers_inflexible_imbalance
+  position: 400
   sidebar_item_key: flexibility_overview
-  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_max
-- key: flexibility_overview_inflexible_imbalance
-  position: 3
+  output_element_key: flexibility_hourly_carriers_inflexible_imbalance
+
+- key: flexibility_overview_monthly_carriers_inflexible_imbalance
+  position: 500
   sidebar_item_key: flexibility_overview
   output_element_key: flexibility_monthly_carriers_inflexible_imbalance
+
 - key: flexibility_overview_cumulative_imbalance
-  position: 4
+  position: 600
   sidebar_item_key: flexibility_overview
   output_element_key: flexibility_hourly_all_carriers_cumulative_imbalance
+
+- key: flexibility_overview_inflexible_demand_supply_max
+  position: 700
+  sidebar_item_key: flexibility_overview
+  output_element_key: flexibility_monthly_carriers_inflexible_supply_demand_max
+
 - key: flexibility_overview_flexible_capacities
-  position: 5
+  position: 800
   sidebar_item_key: flexibility_overview
   output_element_key: installed_flexible_capacities

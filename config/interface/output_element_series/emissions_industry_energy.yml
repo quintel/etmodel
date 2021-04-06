@@ -1,0 +1,133 @@
+---
+- label: non_energetic_chemical_co2
+  color: "#5D7929"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_non_energetic_industry_chemical_co2
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: non_energetic_chemical_co2_emissions_industry_energy
+- label: non_energetic_waste_co2
+  color: "#5D7929"
+  order_by: 2
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_non_energetic_industry_waste_management_co2
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: non_energetic_waste_co2_emissions_industry_energy
+- label: non_energetic_other_co2
+  color: "#5D7929"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_non_energetic_other_industry_co2
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: non_energetic_other_co2_emissions_industry_energy
+- label: non_energetic_chemical_other_ghg
+  color: "#5D7929"
+  order_by: 4
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_non_energetic_industry_chemical_other_ghg
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: non_energetic_chemical_other_ghg_emissions_industry_energy
+- label: non_energetic_waste_other_ghg
+  color: "#5D7929"
+  order_by: 5
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_non_energetic_industry_waste_management_other_ghg
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: non_energetic_waste_other_ghg_emissions_industry_energy
+- label: non_energetic_other_other_ghg
+  color: "#5D7929"
+  order_by: 6
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_non_energetic_other_industry_other_ghg
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: non_energetic_other_other_ghg_emissions_industry_energy
+- label: energetic_other_other_ghg
+  color: "#5D7929"
+  order_by: 7
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_energetic_other_industry_other_ghg
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: energetic_other_other_ghg_emissions_industry_energy
+- label: energetic_energy_other_ghg
+  color: "#5D7929"
+  order_by: 8
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_energetic_industry_energy_other_ghg
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: energetic_energy_other_ghg_emissions_industry_energy
+- label: energetic_energy_co2
+  color: "#5D7929"
+  order_by: 9
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_energetic_industry_energy_co2
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: energetic_energy_co2_emissions_industry_energy
+- label: energetic_chemical_co2
+  color: "#5D7929"
+  order_by: 10
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_energetic_industry_chemical_co2
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: energetic_chemical_co2_emissions_industry_energy
+- label: energetic_other_co2
+  color: "#5D7929"
+  order_by: 11
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: emissions_energetic_other_industry_co2
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_industry_energy
+  key: energetic_other_co2_emissions_industry_energy

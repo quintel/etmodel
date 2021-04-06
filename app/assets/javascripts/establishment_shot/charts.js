@@ -19,21 +19,21 @@ EstablishmentShot.Charts = (function () {
                 '#CCE4FF',
                 '#80D4FF',
                 '#3C9AC9',
-                '#B01200'
+                '#DDDDDE'
             ],
             [
                 '#38DC2D',
                 '#26b01f',
                 '#E6C337',
                 '#ffcf28',
-                '#B01200'
+                '#DDDDDE'
             ],
             [
                 '#6E3E00',
                 '#B05E00',
                 '#FCB100',
                 '#006FB0',
-                '#00A0FC'
+                '#DDDDDE'
             ]
         ],
         queries = [

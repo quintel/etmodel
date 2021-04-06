@@ -2,6 +2,29 @@
 
 ---
 
+# April 2021
+
+## Nieuwe grafiek die flexibiliteitsvoorziening laat zien
+
+In onze update van februari 2021 hebben we een aantal grafieken toegevoegd die inzicht geven in de flexibiliteitsbehoefte. The volgende stap is om in die flexibiliteit te voorzien. We hebben daarom een grafiek toevoegd die het geïnstalleerde vermogen van flexibele vraag- en aanbodtechnologieën laat zien. Het vergelijken van deze vermogens met het maximale overschot en tekort helpt je te bepalen of je genoeg flexibel vermogen hebt geïnstaleerd om je energiesysteem te balanceren.
+
+-> ![](/assets/pages/whats_new/installed_flexible_capacities_nl.png) <-
+
+De grafiek kan gevonden worden in de sectie **[Flexibility → Overview][flexibility]**, waar we de uitleg van de bijbehorende grafieken vernieuwd hebben. We gaan nu in meer detail in op het inflexibele aanbod en vraag en de resiudal load curves, dus neem vooral kijkje!
+
+## Nieuw grafiek die het opgeslagen elektriciteitsvolume laat zien
+Een belangrijke prestatie-indicator voor elektriciteitsopslag technologieën is de mate waarin ze benut worden. We hebben daarom het op- en ontlaadgedrag van deze technologieën gevisualiseerd in een nieuwe grafiek, die het opslagen elektriciteitsvolume per uur laat zien.
+
+Je kunt de grafiek vinden in de sectie **[Flexibility → Excess electricity → Storage][electricity storage]**. Je kiezen of je alle volgende elektriciteitsoplag technologieën op elkaar gestapeld wilt zien, of slechts eentje:
+
+* Batterijen in huishoudens
+* Batterijen in elektrische auto's
+* Grootschalige batterijopslag
+* OPAC
+* Stuwmeren (afhankelijk van de geselecteerde dataset)
+
+-> ![](/assets/pages/whats_new/hourly_stored_volume_of_electricity_en.png) <-
+
 # Februari 2021
 
 ## Nieuwe grafieken die de behoefte aan flexibiliteit tonen

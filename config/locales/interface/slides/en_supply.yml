@@ -220,11 +220,9 @@ en:
     supply_heat_network_industry:
       title: Heat network sources
       short_description: ''
-      description: 'Below you can set the number of local combined heat and power
-        (CHP) units that will supply heat for the industrial heat network. When the
-        heat produced by local CHPs is lower than the heating demand from industry,
-        then heat can be delivered by <a href="/scenario/supply/heat/large-scale-heat-and-residual-heat">large-scale
-        heat and residual heat sources</a>. '
+      description: 'Below you can set the type of heat sources for the industrial heat network. 
+        If the total production does not cover total demand, a gas heater switches on automatically
+        to compensate the heat shortage.'
     supply_heat_combined_heat_power:
       title: Combined heat & power
       short_description:

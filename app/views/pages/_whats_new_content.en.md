@@ -6,7 +6,7 @@
 
 ## New chart showing the provision of flexibility
 
-We have added a new chart showing the installed capacity of flexible supply and demand technologies; for example power-to-gas elektrolyzers or gas power plants. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
+We have added a new chart showing the installed capacity of flexible supply and demand technologies; for example power-to-gas electrolyzers or gas power plants. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
 
 -> ![](/assets/pages/whats_new/installed_flexible_capacities_en.png) <-
 

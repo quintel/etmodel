@@ -6,7 +6,7 @@
 
 ## New chart showing the provision of flexibility
 
-In our February 2021 update we have added a number of charts that give insight into the need for flexibility. The next step is to provide that flexibility. We have therefore added a new chart that shows the installed capacity of flexible supply and demand technologies. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
+In our February 2021 update we have added a number of charts that give insight into the need for flexibility. The next step is to provide that flexibility. We have therefore added a new chart that shows the installed capacity of flexible supply and demand technologies, for example power-to-gas elektrolyzers or gas power plants. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
 
 -> ![](/assets/pages/whats_new/installed_flexible_capacities_en.png) <-
 
@@ -16,7 +16,7 @@ The chart can be found in the section **[Flexibility → Overview][flexibility]*
 
 A relevant performance metric for electricity storage technologies is the extent to which they are utilised. We have therefore visualised the (dis)charging behaviour of these technologies in a new chart that shows the hourly stored volume of electricity.
 
-You can find the chart in the section **[Flexibility → Excess electricity → Storage][electricity storage]**. You can choose to view all of the following electricity storage technologies stacked on each other, or just one:
+You can find the chart in the section **[Flexibility → Excess electricity → Storage][electricity storage]**. You can choose to view all of the electricity storage technologies stacked on each other, or just one:
 
 * Batteries in households
 * Batteries in electric vehicles

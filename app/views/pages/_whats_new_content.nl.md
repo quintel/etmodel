@@ -23,7 +23,7 @@ Je kunt de grafiek vinden in de sectie **[Flexibility → Excess electricity →
 * OPAC
 * Stuwmeren (afhankelijk van de geselecteerde dataset)
 
--> ![](/assets/pages/whats_new/hourly_stored_volume_of_electricity_en.png) <-
+-> ![](/assets/pages/whats_new/hourly_stored_volume_of_electricity_nl.png) <-
 
 # Februari 2021
 

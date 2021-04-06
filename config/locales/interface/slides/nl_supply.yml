@@ -254,12 +254,9 @@ nl:
     supply_heat_network_industry:
       title: Bronnen warmtenet
       short_description: ''
-      description: 'Hieronder kun je het aantal warmte-krachtkoppelingsinstallaties
-        (WKKs) bepalen dat warmte levert voor het warmtenet in de industrie. Als de
-        geproduceerde warmte van lokale WKKs lager is dan de warmtevraag van de industrie,
-        kunnen <a href="/scenario/supply/heat/large-scale-heat-and-residual-heat">grootschalige
-        warmte en restwarmte bronnen</a> bijspringen. '
-    supply_heat_network_losses:
+      description: 'Hieronder kun je de verschillende warmtebronnen kiezen die warmte leveren aan het 
+        industriele warmtenet. Als de totale warmte capaciteit lager is dan de totale vraag, wordt er automatisch een
+        gasturbine ingezet om de vraag op te vangen.'
       title: Transport- en distributieverliezen
       short_description:
       description: "Bij warmtenetten wordt warmte op een centrale locatie geproduceerd

@@ -6,23 +6,23 @@
 
 ## New chart showing the provision of flexibility
 
-In our February 2021 update we have added a number of charts that give insight into the need for flexibility. The next step is to provide that flexibility. We have therefore added a new chart that shows the installed capacity of flexible supply and demand technologies, for example power-to-gas elektrolyzers or gas power plants. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
+We have added a new chart showing the installed capacity of flexible supply and demand technologies; for example power-to-gas elektrolyzers or gas power plants. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
 
 -> ![](/assets/pages/whats_new/installed_flexible_capacities_en.png) <-
 
-The chart can be found in the section **[Flexibility → Overview][flexibility]**, where we have also updated the explanations accompanying the charts. We now discuss the inflexible demand and supply and the residual load curves in more detail, so be sure to check it out!
+The chart can be found in **[Flexibility → Overview][flexibility]** where we have also updated the explanations accompanying the charts. We now discuss the inflexible demand and supply and the residual load curves in more detail.
 
 ## New chart showing the stored volume of electricity
 
-A relevant performance metric for electricity storage technologies is the extent to which they are utilised. We have therefore visualised the (dis)charging behaviour of these technologies in a new chart that shows the hourly stored volume of electricity.
+A relevant performance metric for electricity storage technologies is the extent to which they are utilised. We have visualised the charging and discharging behaviour of these technologies in a new chart which shows the hourly stored volume of electricity.
 
-You can find the chart in the section **[Flexibility → Excess electricity → Storage][electricity storage]**. You can choose to view all of the electricity storage technologies stacked on each other, or just one:
+You can find the chart in **[Flexibility → Excess electricity → Storage][electricity storage]**. You can choose to view all of the electricity storage technologies at once, or just one of...
 
 * Batteries in households
 * Batteries in electric vehicles
 * Large-scale batteries
 * Underground pumped hydro storage
-* Reservoirs (depending on the selected dataset)
+* Reservoirs (depending on the selected region)
 
 -> ![](/assets/pages/whats_new/hourly_stored_volume_of_electricity_en.png) <-
 

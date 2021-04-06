@@ -2,6 +2,30 @@
 
 ---
 
+# April 2021
+
+## New chart showing the provision of flexibility
+
+We have added a new chart showing the installed capacity of flexible supply and demand technologies; for example power-to-gas elektrolyzers or gas power plants. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
+
+-> ![](/assets/pages/whats_new/installed_flexible_capacities_en.png) <-
+
+The chart can be found in **[Flexibility → Overview][flexibility]** where we have also updated the explanations accompanying the charts. We now discuss the inflexible demand and supply and the residual load curves in more detail.
+
+## New chart showing the stored volume of electricity
+
+A relevant performance metric for electricity storage technologies is the extent to which they are utilised. We have visualised the charging and discharging behaviour of these technologies in a new chart which shows the hourly stored volume of electricity.
+
+You can find the chart in **[Flexibility → Excess electricity → Storage][electricity storage]**. You can choose to view all of the electricity storage technologies at once, or just one of...
+
+* Batteries in households
+* Batteries in electric vehicles
+* Large-scale batteries
+* Underground pumped hydro storage
+* Reservoirs (depending on the selected region)
+
+-> ![](/assets/pages/whats_new/hourly_stored_volume_of_electricity_en.png) <-
+
 # February 2021
 
 ## New charts showing the need for flexibility
@@ -216,6 +240,8 @@ For saved scenarios it is possible to download the values ​​of your sliders 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
 
 You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
+
+[electricity storage]: /scenario/flexibility/flexibility_storage/electricity-storage
 
 [flexibility]: /scenario/flexibility/flexibility_overview/what-is-flexibility
 

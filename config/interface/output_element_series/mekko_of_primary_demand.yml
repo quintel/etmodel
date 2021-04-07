@@ -2,7 +2,7 @@
 - label: solid_biomass
   color: "#5D7929"
   order_by: 1
-  group: industry
+  group: energy_industry
   show_at_first: false
   is_target_line: false
   target_line_position: ''
@@ -14,7 +14,7 @@
 - label: oil
   color: "#854321"
   order_by: 2
-  group: industry
+  group: energy_industry
   show_at_first: 
   is_target_line: 
   target_line_position: 
@@ -26,7 +26,7 @@
 - label: natural_gas
   color: "#CCCCCC"
   order_by: 3
-  group: industry
+  group: energy_industry
   show_at_first: false
   is_target_line: false
   target_line_position: ''
@@ -38,7 +38,7 @@
 - label: uranium
   color: "#E07033"
   order_by: 4
-  group: industry
+  group: energy_industry
   show_at_first: 
   is_target_line: 
   target_line_position: 
@@ -50,7 +50,7 @@
 - label: coal
   color: "#333333"
   order_by: 5
-  group: industry
+  group: energy_industry
   show_at_first: 
   is_target_line: 
   target_line_position: 
@@ -62,7 +62,7 @@
 - label: lignite
   color: "#666666"
   order_by: 6
-  group: industry
+  group: energy_industry
   show_at_first: 
   is_target_line: 
   target_line_position: 
@@ -74,7 +74,7 @@
 - label: waste
   color: "#394C19"
   order_by: 7
-  group: industry
+  group: energy_industry
   show_at_first: 
   is_target_line: 
   target_line_position: 
@@ -86,7 +86,7 @@
 - label: bio_fuels
   color: "#ADDE4C"
   order_by: 8
-  group: industry
+  group: energy_industry
   show_at_first: 
   is_target_line: 
   target_line_position: 
@@ -98,7 +98,7 @@
 - label: greengas_biogas
   color: "#92B940"
   order_by: 9
-  group: industry
+  group: energy_industry
   show_at_first: false
   is_target_line: false
   target_line_position: ''
@@ -542,7 +542,7 @@
 - label: sustainable_electricity
   color: "#4169E1"
   order_by: 10
-  group: industry
+  group: energy_industry
   show_at_first: 
   is_target_line: 
   target_line_position: 
@@ -602,7 +602,7 @@
 - label: imported_electricity
   color: "#00008B"
   order_by: 11
-  group: industry
+  group: energy_industry
   show_at_first: 
   is_target_line: 
   target_line_position: 
@@ -830,7 +830,7 @@
 - label: lng
   color: "#696969"
   order_by: 12
-  group: industry
+  group: energy_industry
   show_at_first: false
   is_target_line: false
   target_line_position: ''
@@ -1154,7 +1154,7 @@
 - label: imported_hydrogen
   color: "#87CEEB"
   order_by: 13
-  group: industry
+  group: energy_industry
   show_at_first: false
   is_target_line: false
   target_line_position: ''
@@ -1250,7 +1250,7 @@
 - label: renewable_heat
   color: "#FFD900"
   order_by: 14
-  group: industry
+  group: energy_industry
   show_at_first: false
   is_target_line: false
   target_line_position: ''
@@ -1346,7 +1346,7 @@
 - label: primary_imported_heat
   color: "#8B0000"
   order_by: 15
-  group: industry
+  group: energy_industry
   show_at_first: false
   is_target_line: false
   target_line_position: ''

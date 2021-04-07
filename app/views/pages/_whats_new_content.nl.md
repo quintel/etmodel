@@ -12,7 +12,7 @@ In onze update van februari 2021 hebben we een aantal grafieken toegevoegd die i
 
 Je kunt de grafiek vinden in **[Flexibility → Overview][flexibility provision]**, waar we ook de verhaallijn bij de andere grafieken vernieuwd hebben. We gaan nu in meer detail in op het inflexibele aanbod en vraag en de resiudal load curves.
 
-## Nieuw grafiek die het opgeslagen elektriciteitsvolume laat zien
+## Nieuwe grafiek die het opgeslagen elektriciteitsvolume laat zien
 Een belangrijke prestatie-indicator voor opslagtechnologieën voor elektriciteit is de mate waarin ze benut worden. We hebben daarom het op- en ontlaadgedrag van deze technologieën gevisualiseerd in een nieuwe grafiek, die het opslagen volume per uur laat zien.
 
 Je kunt de grafiek vinden in **[Flexibility → Excess electricity → Storage][electricity storage]**. Je kan kiezen of je alle opslagtechnologieën op elkaar gestapeld wilt zien, of slechts één tegelijk:

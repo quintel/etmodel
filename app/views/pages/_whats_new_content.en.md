@@ -10,7 +10,7 @@ We have added a new chart showing the installed capacity of flexible supply and 
 
 -> ![](/assets/pages/whats_new/installed_flexible_capacities_en.png) <-
 
-The chart can be found in **[Flexibility → Overview][flexibility]** where we have also updated the explanations accompanying the charts. We now discuss the inflexible demand and supply and the residual load curves in more detail.
+The chart can be found in **[Flexibility → Overview][flexibility provision]** where we have also updated the explanations accompanying the other charts in this section. We now discuss the inflexible demand and supply and the residual load curves in more detail.
 
 ## New chart showing the stored volume of electricity
 
@@ -240,6 +240,8 @@ For saved scenarios it is possible to download the values ​​of your sliders 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
 
 You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
+
+[flexibility provision]: /scenario/flexibility/flexibility_overview/the-provision-of-flexibility-capacity
 
 [electricity storage]: /scenario/flexibility/flexibility_storage/electricity-storage
 

@@ -110,7 +110,7 @@ group :production, :staging do
   gem 'newrelic_rpm'
 end
 
-gem 'mini_racer'
+gem 'mini_racer', '>= 0.4.0.beta1'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'

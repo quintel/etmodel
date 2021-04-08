@@ -75,7 +75,7 @@
   position: 6
   disabled: false
   output_element_key: merit_order_hourly_supply
-  dependent_on: ''
+  dependent_on: has_merit_order
 - key: total_number_of_excess_events
   gquery_key: dashboard_total_number_of_excess_events
   group: summary

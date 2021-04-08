@@ -12,9 +12,14 @@ class @DashboardItemView extends Backbone.View
     key = @model.get 'key'
     if key == 'total_energy_cost' || key == 'costs_fte'
       @render_costs_label()
+
     formatted_value = @format_result()
-    $('strong', @dom_id).empty().append(formatted_value)
-    @updateArrows()
+    if formatted_value == 'unavailable'
+      @render_unavailable()
+    else
+      @element.removeClass('unavailable')
+      $('strong', @dom_id).empty().append(formatted_value)
+      @updateArrows()
     this
 
   # different behaviour unfortunately
@@ -32,6 +37,12 @@ class @DashboardItemView extends Backbone.View
     ].join('/')
 
     @update_subheader "(#{ unit })"
+
+  # An item can be unvailable when it's dependent on e.g. Merit being enabled
+  render_unavailable: () =>
+    $('strong', @dom_id).empty().append(I18n.t('units.unavailable'))
+    @cleanArrows()
+    @element.addClass('unavailable')
 
   update_header: (title) =>
     $('.header', @dom_id).html(title)
@@ -58,6 +69,7 @@ class @DashboardItemView extends Backbone.View
     result = @model.result()
     key    = @model.get('key')
     return '' if @model.error()
+    return 'unavailable' if result == 'unavailable'
 
     out = switch key
       when 'total_energy_cost'

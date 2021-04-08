@@ -107,12 +107,12 @@ class DashboardItem < YModel::Base
   # INSTANCE METHODS ---------------------------------------------------------
 
   # Creates a JSON representation of the DashboardItem. Contains only the id,
-  # key and Gquery key.
+  # key, Gquery key and the dependencies.
   #
   # @return [Hash{String => Object}]
   #
   def as_json(*)
-    %w[key gquery_key].to_h { |k| [k, send(k)] }
+    %w[key gquery_key dependent_on].index_with { |k| send(k) }
   end
 
   def description

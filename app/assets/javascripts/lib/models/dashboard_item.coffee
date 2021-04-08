@@ -38,10 +38,12 @@ class DashboardItem extends Backbone.Model
     })
 
   # All dashboard items show the value of the gquery they've been assigned.
-  # But there's one exception...
+  # But there's two exceptions...
   result: ->
     if @get('key') == 'profitability'
       MeritOrder.dashboardValue(@gquery.get('future'))
+    else if @get('dependent_on') == 'has_merit_order' && not App.settings.merit_order_enabled()
+      'unavailable'
     else
       @get('result')
 

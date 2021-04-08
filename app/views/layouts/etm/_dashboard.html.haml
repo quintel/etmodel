@@ -1,8 +1,9 @@
 #dashboard_container
   #dashboard
     .loading
-    = render 'layouts/etm/dashboard_items', :dashboard_items => @dashboard_items
-    = link_to 'Change', '#', :id => 'dashboard_change'
+    .dashboard_items
+      = render 'layouts/etm/dashboard_items', :dashboard_items => @dashboard_items
+      = link_to 'Change', '#', :id => 'dashboard_change'
     .clear
 
     %script

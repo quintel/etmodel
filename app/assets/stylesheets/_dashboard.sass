@@ -13,7 +13,10 @@
       opacity: 0.8
       width: 100%
       z-index: 2000
+    .dashboard_items
+      display: flex
     .dashboard_item
+      flex: 1
       float: left
       cursor: pointer
       border-top: 1px solid #d7e3ef
@@ -24,6 +27,9 @@
       &.unavailable
         .header, strong
           color: #999
+
+      &:last-of-type
+        border-right: 0
 
       .arrow
         position: absolute
@@ -40,10 +46,6 @@
         background-position: 0 -200px
       .arrow_up
         background-position: 0 -100px
-
-      &:nth-of-type(7) .arrow
-        // last-of-type isn't working correctly...
-        right: 18px
 
       img.questionmark
         position: absolute
@@ -78,8 +80,6 @@
     background: #71a2cf url(/assets/layout/change_dashboard_button.png) center center no-repeat
     display: block
     height: 68px
-    position: absolute
-    right: 0
     text-indent: -10000px
     width: 36px
 

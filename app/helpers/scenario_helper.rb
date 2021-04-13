@@ -149,9 +149,10 @@ module ScenarioHelper
   end
 
   # Public: Checks if the current area is a country. If so, a link to the Dataset Manager cannot
-  # be generated
+  # be generated. Pass on countries that are treated as regions in the Dataset Manager, like NI.
   def show_description_for_country?
-    Api::Area.find(Current.setting.area_code).country?
+    pass = %w[UKNI01_northern_ireland]
+    Api::Area.find(Current.setting.area_code).country? and pass.exclude?(Current.setting.area_code)
   end
 
   # Public: Creates the warning message shown when the scenario was created with a previous version

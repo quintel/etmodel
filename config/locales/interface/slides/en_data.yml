@@ -5,18 +5,21 @@ en:
       title: Region dataset
       short_description:
       description: |
-        This dataset is used to generate the present year. </br></br>
-        We know alot about data, and we love Eurostat
+        When you open the Energy Transition Model, source data for the present year is loaded
+        into the model to generate the present state of the region that you have selected. This 
+        present state is used to model the future year of your scenario and is unique for every 
+        region. <br/><br/>
+        A lot of data is required to load the present state, such as the energy flows 
+        from supply to demand, but also characteristics of the region such as the population size,
+        the length of the coastline etc. 
       country_description: |
-        I'm a country description
+        For country datasets we currently use source data from the International Energy Agency.
+        Unfortunately this data is not open source, so it is not possible to show these datasets 
+        here. We aim to change this in the future.
       subregion_description: |
-        I'm a subregion description, and I feature a cute button.
-    data_sources_country_dataset:
-      title: Country dataset
-      short_description:
-      description: |
-        This dataset is used to generate the present year. </br></br>
-        There should be no button here.
+        Because the Energy Transition Model is open source, we want to be as transparent about our
+        source data as possible. You can therefore view the source data for your region in a clear 
+        and structured way in the Dataset Manager, which you can visit by clicking on the button below.
     data_export_application_demands:
       title: Yearly energy demand per application
       short_description:

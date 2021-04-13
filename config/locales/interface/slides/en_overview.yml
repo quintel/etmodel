@@ -7,35 +7,37 @@ en:
     introduction_to_etm:
       title: How does the Energy Transition Model work?
       short_description:
-      description: "The ETM helps you explore future energy scenarios for a region
-        of your choice. The model is easy to use.\r\n<ol>\r\n<li>Before you start,
-        think about the goal of your scenario, then you know what to focus on.</li>\r\n<li>The
-        menu on the left displays all sectors that either use (<a href=\"/scenario/demand/households/population-housing-stock\"
-        >Demand</a>) or produce energy (<a href=\"/scenario/supply/electricity/coal-plants\"
+      description: |
+        The ETM helps you explore future energy scenarios for a region
+        of your choice. The model is easy to use by following these steps:
+        <ol><li>Before you start, think about the goal of your scenario, then you know what to focus on.</li>
+        <li>The menu on the left displays all sectors that either use (<a href="/scenario/demand/households/population-housing-stock"
+        >Demand</a>) or produce energy (<a href="/scenario/supply/electricity/coal-plants"
         >Supply</a>). For each sector you can use sliders to indicate what you think
         the future will be like. You can easily undo your changes by resetting your
-        slider, so just play around! For example you can start with <a href=\"/scenario/demand/households/space-heating-and-hot-water\"
-        >space heating in households</a> or explore <a href=\"/scenario/demand/transport/overview\"
-        >transport and mobility</a>.</li>\r\n<li>Optional: Advanced users can use
-        the <a href=\"/scenario/flexibility/flexibility_overview/what-is-flexibility\"
-        >Flexibility</a> section to match demand and supply and the <a href=\"/scenario/costs/fuel_costs/fossil-fuels\"
-        >Costs</a> section for cost assumptions.</li>\r\n<li>You can test your ideas
-        by taking a look at the scenario report under the header '<a href=\"/scenario/data/data_visuals/scenario-report\"
-        >Results</a>'. You can always return to a certain part of the model to make
-        more changes.</li>\r\n<li>You can share your scenario with others by saving
-        your scenario: click on 'Save scenario' (top right) and share the scenario link. <br /><i>Please
+        slider, so just play around! For example you can start with <a href="/scenario/demand/households/space-heating-and-hot-water"
+        >space heating in households</a> or explore <a href="/scenario/demand/transport/overview"
+        >transport and mobility</a>. </br>
+        Optional: advanced users can use the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"
+        >Flexibility</a> section to match demand and supply on specific timescales and the <a href="/scenario/costs/fuel_costs/fossil-fuels"
+        >Costs</a> section for cost assumptions.</li>
+        <li> The ETM will immediately show you the result of your actions: at the bottom of your screen, 
+        indicators show the impact on the entire system (e.g. CO<sub>2</sub> reduction, energy savings, costs).
+        On the right, charts display specific information for each section of the model. If you lock the chart 
+        it will remain visible as you navigate through the model. You can add charts by clicking "see more charts"
+        (top right). </br>
+        For a more complete overview of results you can take a look at the scenario report under the header <a href="/scenario/data/data_visuals/scenario-report"
+        >Results & data</a>. You can always return to a certain part of the model to make more changes. </li>
+        <li>You can share your scenario with others by saving your scenario: click on 
+        'Save scenario' (top right) and share the scenario link. <br/><i>Please
         note: The ETM is updated periodically. Save your scenario to ensure that outcomes
-        stay stable over time!</i></li>\r\n</ol>\r\n</br>\r\nThe ETM will immediately
-        show you the impact of your choices: on the right, charts display specific
-        information for each section of the model. At the bottom of your screen, indicators
-        show the impact on the entire system (e.g. CO<sub>2</sub> reduction, energy
-        savings, costs etc.). If you lock the chart it will remain visible as you
-        navigate through the model. You can add charts by clicking \"see more charts\"
-        (top right). \r\n</br></br>\r\nYou are in the driver's seat. The ETM contains
-        no hidden assumptions, like price or technology developments over time etc.
-        If you do nothing, the future will not change.\r\n</br></br>\r\nDo you have
-        questions or need help? Please, feel free to contact <a href=\"https://quintel.com/contact\"
-        target=\"_blank\">Quintel</a>, the developers of the Energy Transition Model."
+        stay stable over time! </i></li></ol></br>
+        You are in the driver's seat. The ETM contains no hidden assumptions, like price or technology 
+        developments over time etc. If you do nothing, the future will not change. </br></br>
+        The ETM is fully open source: under the header <a href="/scenario/data/data_sources/region_data">Results & data</a>
+        you can see the data sources that are used in the model. </br></br>
+        Do you have questions or need help? Please, feel free to contact <a href="https://quintel.com/contact"
+        target=\"_blank\">Quintel</a>, the developers of the Energy Transition Model.
     overview_co2_emissions:
       title: Total CO<sub>2</sub> emissions
       short_description:

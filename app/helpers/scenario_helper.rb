@@ -142,6 +142,18 @@ module ScenarioHelper
     )
   end
 
+  # Public: Creates a link to view the source data behind the current area in the ETM Dataset
+  # Manager.
+  def link_to_datamanager_for_current_area
+    "https://data.energytransitionmodel.com/datasets/#{Current.setting.area_code.split('_')[0]}"
+  end
+
+  # Public: Checks if the current area is a country. If so, a link to the Dataset Manager cannot
+  # be generated
+  def show_description_for_country?
+    Api::Area.find(Current.setting.area_code).country?
+  end
+
   # Public: Creates the warning message shown when the scenario was created with a previous version
   # of the model.
   def previous_version_scenario_warning(scenario, current_release_date)

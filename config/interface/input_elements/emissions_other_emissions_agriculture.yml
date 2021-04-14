@@ -1,16 +1,18 @@
 ---
-- key: emissions_greenhouse_gas_manure_co2
+- key: other_emissions_manure_co2
   step_value: 1.0 
   unit: MT
   related_node: non_energetic_emissions_co2_agriculture_manure
   position: 1
-  slide_key: greenhouse_gas_emissions_agriculture
-- key: soil_cultivation_co2
+  slide_key: other_emissions_manure_co2_agriculture
+- key: other_emissions_soil_cultivation_co2
   step_value: 1.0
-  unit: T
+  unit: MT
   related_node: non_energetic_emissions_co2_agriculture_soil_cultivation
   position: 2
-  slide_key: greenhouse_gas_emissions_agriculture
+  slide_key: other_emissions_soil_cultivation_co2_emissions_agriculture
+
+  
 - key: non_energetic_chemical_co2_emissions_industry_energy
   step_value: 1.0
   unit: MT

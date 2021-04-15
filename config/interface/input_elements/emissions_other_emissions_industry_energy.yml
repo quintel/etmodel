@@ -1,17 +1,60 @@
 ---
 - key: change_in_non_energetic_emissions_co2_chemical_industry
-  step_value: 0.1
+  interface_group: non_energetic_emissions_co2
+  step_value: 1.0
   unit: "%"
   position: 1
   slide_key: other_emissions_industry
 - key: change_in_non_energetic_emissions_co2_waste_management
-  step_value: 0.1
+  interface_group: non_energetic_emissions_co2
+  step_value: 1.0
   unit: "%"
   position: 2
   slide_key: other_emissions_industry
 - key: change_in_non_energetic_emissions_co2_other_industry
-  step_value: 0.1
+  interface_group: non_energetic_emissions_co2
+  step_value: 1.0
   unit: "%"
   position: 3
   slide_key: other_emissions_industry
+- key: change_in_non_energetic_emissions_other_ghg_chemical_industry
+  interface_group: non_energetic_emissions_other_ghg
+  step_value: 1.0
+  unit: "%"
+  position: 4
+  slide_key: other_emissions_industry
+- key: change_in_non_energetic_emissions_other_ghg_waste_management
+  interface_group: non_energetic_emissions_other_ghg
+  step_value: 1.0
+  unit: "%"
+  position: 5
+  slide_key: other_emissions_industry
+- key: change_in_non_energetic_emissions_other_ghg_other_industry
+  interface_group: non_energetic_emissions_other_ghg
+  step_value: 1.0
+  unit: "%"
+  position: 6
+  slide_key: other_emissions_industry
+- key: change_in_energetic_emissions_other_ghg_industry
+  interface_group: energetic_emissions_other_ghg
+  step_value: 1.0
+  unit: "%"
+  position: 7
+  slide_key: other_emissions_industry
+- key: change_in_energetic_emissions_other_ghg_energy
+  interface_group: energetic_emissions_other_ghg
+  step_value: 1.0
+  unit: "%"
+  position: 8
+  slide_key: other_emissions_industry  
+
+
+
+
+
+
+
+
+
+
 

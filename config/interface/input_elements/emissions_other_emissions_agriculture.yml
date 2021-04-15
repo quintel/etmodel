@@ -1,22 +1,52 @@
 ---
-- key: other_emissions_manure_co2
+- key: change_in_non_energetic_emissions_co2_agriculture_manure
+  interface_group: non_energetic_emissions_co2
   step_value: 1.0 
-  unit: MT
-  related_node: non_energetic_emissions_co2_agriculture_manure
+  unit: "%"
   position: 1
-  slide_key: other_emissions_manure_co2_agriculture
-- key: other_emissions_soil_cultivation_co2
-  step_value: 1.0
-  unit: MT
-  related_node: non_energetic_emissions_co2_agriculture_soil_cultivation
-  position: 2
-  slide_key: other_emissions_soil_cultivation_co2_emissions_agriculture
+  slide_key: other_emissions_agriculture
+- key: change_in_non_energetic_emissions_co2_agriculture_soil_cultivation
+  interface_group: non_energetic_emissions_co2
+  step_value: 1.0 
+  unit: "%"
+  position: 1
+  slide_key: other_emissions_agriculture
+- key: change_in_non_energetic_emissions_other_ghg_agriculture_manure
+  interface_group: non_energetic_emissions_other_ghg
+  step_value: 1.0 
+  unit: "%"
+  position: 1
+  slide_key: other_emissions_agriculture
+- key: change_in_non_energetic_emissions_other_ghg_agriculture_fermentation
+  interface_group: non_energetic_emissions_other_ghg
+  step_value: 1.0 
+  unit: "%"
+  position: 1
+  slide_key: other_emissions_agriculture
+- key: change_in_non_energetic_emissions_other_ghg_agriculture_soil_cultivation
+  interface_group: non_energetic_emissions_other_ghg
+  step_value: 1.0 
+  unit: "%"
+  position: 1
+  slide_key: other_emissions_agriculture
+- key: change_in_non_energetic_emissions_other_ghg_agriculture_other
+  interface_group: non_energetic_emissions_other_ghg
+  step_value: 1.0 
+  unit: "%"
+  position: 1
+  slide_key: other_emissions_agriculture
+- key: change_in_energetic_emissions_other_ghg_agriculture
+  interface_group: energetic_emissions_other_ghg
+  step_value: 1.0 
+  unit: "%"
+  position: 1
+  slide_key: other_emissions_agriculture          
 
   
-- key: non_energetic_chemical_co2_emissions_industry_energy
-  step_value: 1.0
-  unit: MT
-  related_node: non_energetic_emissions_co2_chemical_industry
-  position: 3
-  slide_key: non_energetic_chemical_co2_emissions_industry_energy
+
+
+
+  
+
+
 

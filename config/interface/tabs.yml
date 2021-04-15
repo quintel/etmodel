@@ -5,12 +5,12 @@
   position: 2
 - key: supply
   position: 3
-- key: costs
+- key: flexibility
   position: 4
+  dependent_on: has_electricity_storage  
 - key: emissions
   position: 5
-- key: flexibility
+- key: costs
   position: 6
-  dependent_on: has_electricity_storage
 - key: data
   position: 7

@@ -1,6 +1,6 @@
 ---
 - under_construction: false
-  unit: T
+  unit: MT
   percentage: false
   group: emissions
   sub_group: other_emissions
@@ -14,7 +14,7 @@
   dependent_on: ''
   output_element_type_name: vertical_stacked_bar   
 - under_construction: false
-  unit: T
+  unit: MT
   percentage: false
   group: emissions
   sub_group: other_emissions
@@ -28,7 +28,7 @@
   dependent_on: ''
   output_element_type_name: vertical_stacked_bar
 - under_construction: false
-  unit: T
+  unit: MT
   percentage: false
   group: emissions
   sub_group: other_emissions
@@ -42,7 +42,7 @@
   dependent_on: ''
   output_element_type_name: vertical_stacked_bar
 - under_construction: false
-  unit: T
+  unit: MT
   percentage: false
   group: emissions
   sub_group: other_emissions
@@ -56,7 +56,7 @@
   dependent_on: ''
   output_element_type_name: vertical_stacked_bar
 - under_construction: false
-  unit: T
+  unit: MT
   percentage: false
   group: emissions
   sub_group: other_emissions
@@ -68,4 +68,19 @@
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  output_element_type_name: vertical_stacked_bar      
+  output_element_type_name: vertical_stacked_bar  
+- under_construction: false
+  unit: MT
+  percentage: false
+  group: emissions
+  sub_group: other_emissions
+  show_point_label: false
+  growth_chart: false
+  key: emissions_indirect
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar  
+   

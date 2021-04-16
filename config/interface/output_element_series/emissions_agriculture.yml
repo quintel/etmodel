@@ -71,18 +71,18 @@
   dependent_on: 
   output_element_key: emissions_agriculture
   key: energetic_energy_use_ghg_emissions_agriculture
-- label: energetic_energy_use_co2
+- label: energetic_agriculture_co2
   color: "#e55039"
   order_by: 7
   group: 
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: emissions_energetic_agriculture_co2
+  gquery: co2_sheet_agriculture_total_co2_emissions_only_energetic
   is_1990: false
   dependent_on: 
   output_element_key: emissions_agriculture
-  key: energetic_energy_use_co2_emissions_agriculture
+  key: energetic_agriculture_co2_emissions_agriculture
 - label: non_energetic_other_ghg
   color: "#aaa69d"
   order_by: 8
@@ -95,3 +95,5 @@
   dependent_on: 
   output_element_key: emissions_agriculture
   key: non_energetic_other_ghg_emissions_agriculture  
+
+

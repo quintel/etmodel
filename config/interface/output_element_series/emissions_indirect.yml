@@ -1,0 +1,13 @@
+---
+- label: indirect_co2
+  color: "#079992"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: co2_sheet_indirect_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: emissions_indirect
+  key: indirect_co2_emissions_overview

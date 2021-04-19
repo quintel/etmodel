@@ -2,10 +2,58 @@
 
 require 'rails_helper'
 
+shared_examples 'a scenario description with links' do
+  context 'with a relative link' do
+    let(:text) { '[Relative](/example)' }
+
+    it 'keeps the link intact' do
+      expect(formatted).to eq('<p><a href="/example">Relative</a></p>')
+    end
+  end
+
+  context 'with a relative link and trailing whitespace' do
+    let(:text) { '<a href="/hi ">Hello</a>' }
+
+    it 'keeps the link intact' do
+      expect(formatted).to eq('<p><a href="/hi%20">Hello</a></p>')
+    end
+  end
+
+  context 'with an absolute link to the same host' do
+    let(:text) { '[Ok](http://test.host/hi)' }
+
+    it 'keeps the link intact' do
+      expect(formatted).to eq('<p><a href="http://test.host/hi">Ok</a></p>')
+    end
+  end
+
+  context 'with an absolute link to a subdomain of the same domain' do
+    let(:text) { '[Ok](http://another.test.host/hi)' }
+
+    it 'keeps the link intact' do
+      expect(formatted).to eq(
+        '<p><a href="http://another.test.host/hi">Ok</a></p>'
+      )
+    end
+  end
+
+  context 'with an invalid link' do
+    let(:text) { '<a href="::no">Hello</a>' }
+
+    it 'replaces the link with the text' do
+      expect(formatted).to eq('<p>Hello</p>')
+    end
+  end
+end
+
 describe ScenarioHelper do
   describe '.formatted_scenario_description' do
-    let(:formatted) { helper.formatted_scenario_description(text).strip }
+    let(:formatted) do
+      helper.formatted_scenario_description(text, allow_external_links: allow_external).strip
+    end
+
     let(:nokogiri) { Nokogiri::HTML(formatted) }
+    let(:allow_external) { false }
 
     context 'with a locale div' do
       around do |example|
@@ -38,53 +86,47 @@ describe ScenarioHelper do
       end
     end
 
-    context 'with a relative link' do
-      let(:text) { '[Relative](/example)' }
+    context 'when external links are disallowed' do
+      include_examples 'a scenario description with links'
 
-      it 'keeps the link intact' do
-        expect(formatted).to eq('<p><a href="/example">Relative</a></p>')
+      describe 'when the text contains an external link' do
+        let(:text) { '[Absolute](http://example.org)' }
+
+        it 'replaces the link with the text' do
+          expect(formatted).to eq('<p>Absolute</p>')
+        end
+      end
+
+      describe 'when the text contains a mailto link' do
+        let(:text) { '[MailTo](mailto:me@example.org)' }
+
+        it 'replaces the link with the text' do
+          expect(formatted).to eq('<p>MailTo</p>')
+        end
       end
     end
 
-    context 'with a relative link and trailing whitespace' do
-      let(:text) { '<a href="/hi ">Hello</a>' }
+    describe 'when external links are allowed' do
+      let(:allow_external) { true }
 
-      it 'keeps the link intact' do
-        expect(formatted).to eq('<p><a href="/hi%20">Hello</a></p>')
+      include_examples 'a scenario description with links'
+
+      describe 'when the text contains an external link' do
+        let(:text) { '[Absolute](http://example.org)' }
+
+        it 'keeps the link, adding a rel attribute' do
+          expect(formatted).to eq(
+            '<p><a href="http://example.org" rel="noopener nofollow">Absolute</a></p>'
+          )
+        end
       end
-    end
 
-    context 'with an absolute link to the same host' do
-      let(:text) { '[Ok](http://test.host/hi)' }
+      describe 'when the text contains a mailto link' do
+        let(:text) { '[MailTo](mailto:me@example.org)' }
 
-      it 'keeps the link intact' do
-        expect(formatted).to eq('<p><a href="http://test.host/hi">Ok</a></p>')
-      end
-    end
-
-    context 'with an absolute link to a subdomain of the same domain' do
-      let(:text) { '[Ok](http://another.test.host/hi)' }
-
-      it 'keeps the link intact' do
-        expect(formatted).to eq(
-          '<p><a href="http://another.test.host/hi">Ok</a></p>'
-        )
-      end
-    end
-
-    context 'with an external link' do
-      let(:text) { '[Absolute](http://example/org)' }
-
-      it 'replaces the link with the text' do
-        expect(formatted).to eq('<p>Absolute</p>')
-      end
-    end
-
-    context 'with an invalid link' do
-      let(:text) { '<a href="::no">Hello</a>' }
-
-      it 'replaces the link with the text' do
-        expect(formatted).to eq('<p>Hello</p>')
+        it 'replaces the link with the text' do
+          expect(formatted).to eq('<p>MailTo</p>')
+        end
       end
     end
 

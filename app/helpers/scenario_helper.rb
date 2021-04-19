@@ -19,7 +19,7 @@ module ScenarioHelper
   # unsafe links.
   #
   # Returns an HTML safe string.
-  def formatted_scenario_description(description)
+  def formatted_scenario_description(description, allow_external_links: false)
     # First check if the description has a div matching the current locale,
     # indicating that a localized version is available.
     localized = Loofah.fragment(description).css(".#{I18n.locale}")
@@ -29,9 +29,15 @@ module ScenarioHelper
       :no_image, :smart
     ).to_html
 
-    Rails::Html::SafeListSanitizer.new.sanitize(
-      strip_external_links(rendered)
-    ).html_safe
+    sanitized = Rails::Html::SafeListSanitizer.new.sanitize(rendered)
+
+    # rubocop:disable Rails/OutputSafety
+    if allow_external_links
+      add_rel_to_external_links(sanitized).html_safe
+    else
+      strip_external_links(sanitized).html_safe
+    end
+    # rubocop:enable Rails/OutputSafety
   end
 
   # Public: Parses the text as HTML, replacing any links to external sites with
@@ -57,7 +63,47 @@ module ScenarioHelper
         uri.host.to_s, ActionDispatch::Http::URL.tld_length
       )
 
+      if !uri.scheme.start_with?('http') && domain != request.domain
+        # Disallow any non-HTTP scheme.
+        node.replace(node.inner_text)
+        next
+      end
+
       node.replace(node.inner_text) unless domain == request.domain
+    end)
+
+    link_stripper.inner_html
+  end
+
+  # Public: Adds a rel="noopener nofollow" attribute to any external links.
+  #
+  # Returns a string.
+  def add_rel_to_external_links(text)
+    link_stripper = Loofah.fragment(text)
+
+    link_stripper.scrub!(Loofah::Scrubber.new do |node|
+      next unless node.name == 'a'
+
+      begin
+        uri = URI(node['href'].to_s.strip)
+        next if uri.relative?
+      rescue URI::InvalidURIError
+        # Remove the link with the text.
+        node.replace(node.inner_text)
+        next
+      end
+
+      domain = ActionDispatch::Http::URL.extract_domain(
+        uri.host.to_s, ActionDispatch::Http::URL.tld_length
+      )
+
+      if !uri.scheme.start_with?('http') && domain != request.domain
+        # Disallow any non-HTTP scheme.
+        node.replace(node.inner_text)
+        next
+      end
+
+      node[:rel] = 'noopener nofollow' unless domain == request.domain
     end)
 
     link_stripper.inner_html

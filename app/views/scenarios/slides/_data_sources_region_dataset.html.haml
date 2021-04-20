@@ -1,8 +1,8 @@
 - if show_description_for_country?
-  %p= t('slides.data_sources_region_dataset.country_description')
+  %p= t('slides.data_sources_region_dataset.country_description').html_safe
 - else
   %p
-    = t('slides.data_sources_region_dataset.subregion_description')
+    = t('slides.data_sources_region_dataset.subregion_description').html_safe
     %br/
     %br/
     = link_to link_to_datamanager_for_current_area, class: "simple-button", target: :_blank do

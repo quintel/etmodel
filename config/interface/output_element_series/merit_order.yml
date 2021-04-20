@@ -215,18 +215,30 @@
   dependent_on:
   output_element_key: merit_order
   key: lignite_oxy_merit_order
-- label: must_run
+- label: local_chp_biogas
   color: "#a1d99b"
   order_by: 1
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: must_run_merit_order
+  gquery: local_chp_biogas_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: must_run_merit_order
+  key: local_chp_biogas_merit_order
+- label: waste_power
+  color: "#a1d99b"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: waste_power_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: waste_power_merit_order  
 - label: nuclear_iii
   color: "#fd8d3c"
   order_by: 1

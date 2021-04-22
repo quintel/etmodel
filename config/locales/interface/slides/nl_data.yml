@@ -2,15 +2,26 @@
 nl:
   slides:
     data_sources_region_dataset:
-      title: Mijn kleine dataset
+      title: Data voor het startjaar
       short_description:
       description: |
-        Ik ben gek op mijn kleine dataset. </br></br>
-        Ik heb haar van Sinterklaas gekregen. Ik had haar omcirkeld in de Intertoys gids
+        Als je een regio opent in het Energietransitiemodel wordt brondata voor het startjaar in het model geladen.
+        Deze data geeft voor de regio die je hebt geselecteerd de huidige staat van het energiesysteem weer. Deze huidige 
+        staat wordt gebruikt als basis voor het modelleren van jouw toekomstscenario en is uniek voor elke regio. </br></br>
+        Om het Energietransitiemodel te laden is diverse data nodig, zoals de finale energievraag per sector, het 
+        geïnstalleerd vermogen van elektriciteitscentrales en karakteristieken van de regio zoals het aantal inwoners, 
+        het aantal huizen, het dakoppervlak dat geschikt is voor zonnepanelen etc.
       country_description: |
-        Gaaf he!
+        Voor landelijke datasets gebruiken we momenteel de energiebalans van het Internationaal Energieagentschap (IEA) 
+        als basis. Helaas is deze data niet open source en is het dus niet mogelijk deze direct te delen. Ons doel is om 
+        in de nabije toekomst gebruik te maken van een open source energiebalans. Naast de energiebalans van het IEA is 
+        ook andere data nodig, deze kan in afzonderlijke mappen per land gevonden worden op <a href="https://github.com/quintel/etdataset-public/tree/master/source_analyses"
+        target="_blank">deze GitHub pagina</a>. In de toekomst willen we de transparantie over onderliggende bronnen naar 
+        onze gebruikers vergroten door landelijke datasets toe te voegen aan onze online <a href="https://data.energytransitionmodel.com/" target="_blank">
+        ETM Dataset Manager</a>.
       subregion_description: |
-        Omdat ze een kleine regio beschrijft, heeft ze een mooi knop:
+        Je kunt de brondata voor jouw regio op een heldere en overzichtelijke manier inzien met the ETM Dataset Manager, 
+        die je kan openen door op de onderstaande knop te klikken.
     data_export_application_demands:
       title: Jaarlijkse energievraag per toepassing
       short_description:

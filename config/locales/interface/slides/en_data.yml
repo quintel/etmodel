@@ -5,23 +5,22 @@ en:
       title: Present year data
       short_description:
       description: |
-        When you open the Energy Transition Model, source data for the present year is loaded
-        into the model to generate the present state of the region that you have selected. This 
-        present state is used as the basis for modeling your future scenario and is unique for every 
+        When you open a region in the Energy Transition Model, source data for the present year is loaded
+        into the model. This data represents the current state of the energy system of the region that you have selected. This
+        present state is used as the basis for modelling your future scenario and is unique for every
         region. <br/><br/>
-        A lot of data is required to load the present state, such as final demand per sector or
-        installed capacities of electricity power plants, but also characteristics of the region such as the population size,
-        number of houses, potential roof surface for solar panels etc. 
+        Various data is required to load the Energy Transition Model, such as final energy demand per sector,
+        installed capacities of power plants and characteristics of the region such as the population size,
+        number of houses, roof surface suitable for solar panels etc.
       country_description: |
         For country datasets we currently use the International Energy Agency (IEA) energy balances as a basis.
         Unfortunately this data is not open source, so it is not possible to share directly. We aim to use an open source energy balance in the near future.
-        Besides the IEA energy balance other data is required, this data can be found on <a href="https://github.com/quintel/etdataset/tree/master/source_analyses" 
-        target="_blank">this GitHub page</a> in separate folders per country. In the future we want to increase transparancy for users to find underlying sources by adding the
+        Besides the IEA energy balance other data is required, this data can be found on <a href="https://github.com/quintel/etdataset-public/tree/master/source_analyses"
+        target="_blank">this GitHub page</a> in separate folders per country. In the future we plan to increase transparancy for users to find underlying sources by adding the
         country datasets to our online <a href="https://data.energytransitionmodel.com/" target="_blank">ETM Dataset Manager</a>.
       subregion_description: |
-        Because the Energy Transition Model is open source, we want to be as transparent about our
-        source data as possible. You can therefore view the source data for your region in a clear 
-        and structured way in the ETM Dataset Manager, which you can visit by clicking on the button below.
+        You can view the source data for your region in a clear
+        and structured way in the ETM Dataset Manager, which can be visited by clicking on the button below.
     data_export_application_demands:
       title: Yearly energy demand per application
       short_description:

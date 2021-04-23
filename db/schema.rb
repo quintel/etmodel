@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_105558) do
+ActiveRecord::Schema.define(version: 2021_04_23_082814) do
 
   create_table "area_dependencies", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_105558) do
     t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type"
   end
 
-  create_table "esdl_suite_ids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "esdl_suite_ids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "access_token", limit: 2048
     t.string "refresh_token", limit: 2048
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_105558) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
-  create_table "surveys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "surveys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.string "background", limit: 256
     t.integer "how_often"

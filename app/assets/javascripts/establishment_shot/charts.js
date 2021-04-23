@@ -148,22 +148,22 @@ EstablishmentShot.Charts = (function () {
             count = 0;
             return {
                 bar_chart: $.extend(totalChartDefaults(), total_chart_attributes),
-                co2_sheet_buildings_households_total_co2_emissions: $.extend({
+                co2_sheet_buildings_households_total_emissions: $.extend({
                     left: true,
                     top: false,
                     fa_icon: 'f015',
                 }, addQueries(), smallChartDefaults()),
-                co2_sheet_industry_energy_total_co2_emissions: $.extend({
+                co2_sheet_industry_energy_total_emissions: $.extend({
                     left: false,
                     top: false,
                     fa_icon: 'f275'
                 }, addQueries(), smallChartDefaults()),
-                co2_sheet_agriculture_total_co2_emissions: $.extend({
+                co2_sheet_agriculture_total_emissions: $.extend({
                     left: false,
                     top: true,
                     fa_icon: 'f06c'
                 }, addQueries(), smallChartDefaults()),
-                co2_sheet_transport_total_co2_emissions: $.extend({
+                co2_sheet_transport_total_emissions: $.extend({
                     left: true,
                     top: true,
                     fa_icon: 'f1b9'

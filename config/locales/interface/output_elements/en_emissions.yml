@@ -2,27 +2,33 @@
 en:
   output_elements:
     emissions_overview:
-      title: Overview total emissions
+      title: Total greenhouse gas emissions (CO<sub>2</sub>-eq)
       short_description: 
-      description: "Overview of total emissions attributed "
+      description: "Overview of total emissions"
     emissions_agriculture:
-      title: Emissions Agriculture
+      title: Greenhouse gas emissions Agriculture (CO<sub>2</sub>-eq)
       short_description: 
       description: "Emissions from agricultural activities can originate from manure,
       soil cultivation, energy usage or fermentation."
     emissions_built_environment:
-      title: Emissions Built Enviornment
+      title: Greenhouse gas emissions Built Environment (CO<sub>2</sub>-eq)
       short_description: 
       description: "Emissions from the built environment are the result of heating, cooling, 
       lichting, appliances and cooking."
     emissions_industry_energy:
-      title: Emissions Industry & Energy
+      title: Greenhouse gas emissions Industry and Energy (CO<sub>2</sub>-eq)
       short_description: 
       description: "Emissions from the industry and energy sector are a product of chemical
       processes, energy usage, energy production, waste management or other processes depending on
       the type of industry."
     emissions_transport:
-      title: Emissions transport
+      title: Greenhouse gas emissions Transport (CO<sub>2</sub>-eq)
       short_description: 
       description: "Emissions from transport are the result of freight transport, passenger transport,
-      aviation or public transport."
+      aviation or public transport. Apart from energetic CO<sub>2</sub> emissions there are also non-energetic
+      CO<sub>2</sub> emissions as a result of transport."
+    emissions_indirect:
+      title: Indirect CO<sub>2</sub> emissions 
+      short_description: 
+      description: "Indirect emissions are not directly emitted within the area but a result of 
+      activities that can be attributed to the area but emitted outside the area."

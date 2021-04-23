@@ -3,20 +3,57 @@ en:
     other_emissions_overview:
       title: Overview 
       short_description:
-      description: 'What is the total amount of emissions that can be attributed to your area?'
+      description: "The ETM calculates the amount of CO<sub>2</sub> that is emitted as a result of energy use. 
+      Apart from CO<sub>2</sub> emissions there are also other sources which lead to the emission of greenhouse 
+      gasses (GHG). These ‘other emissions’ can be separated into 3 groups:
+      <ul><li> Other greenhouse gas emissions die which are emitted as a result of energy use, such as methane 
+      (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O) </li>
+      <li>CO<sub>2</sub>-emissions of non-energetic activities, such as the use of raw materials in industry 
+      or the production of cement</li>
+      <li>Other greenhouse gas emissions from non-energetic activities, such as methane emissions from manure 
+      in agriculture</li></ul>
+      <br /><br />In this section these ‘other’ greenhouse gas emissions and non-energetic emissions are displayed. 
+      Per sector you can view the amount of other greenhouse gas emissions are emitted as a result of energy use 
+      (‘energetic other GHG’), how many non-energetic CO<sub>2</sub> emissions are emitted and how many 
+      non-energetic other greenhouse gasses.<br /><br />
+      With sliders you can adjust how these emissions will change in the future. You can find more information in 
+      our documentation (LINK)."
     other_emissions_agriculture:
       title: Emissions Agriculture
       short_description:
-      description: 'How much (other) emissions can be attributed to agriculture?'
+      description: "How much ‘other’ emissions are emitted in the future as a result of agricultural activities? 
+      These can be due to methane emissions from livestock (‘fermentation’), the use of manure or soil cultivation. 
+      Below you can specify assumptions regarding the future increase or decrease of non-energetic CO<sub>2</sub> 
+      or other greenhouse gas emissions (GHG). <br /><br />
+      The figure on the right shows you the different sources of emissions now and in the future."
     other_emissions_industry:
       title: Emissions Industry & Energy
       short_description:
-      description: 'How much (other) emissions can be attributed to industry & energy production?'
+      description: "How much ‘other’ emissions are emitted in the future as a result of industrial activities 
+      and energy production in the energy sector? These can be emitted during industrial processes 
+      (primarily CO<sub>2</sub>), as a result of waste dumping (mainly methane) or during the production of 
+      electricity and heat (methane and nitrous oxide). Below you can specify assumptions regarding the 
+      future increase or decrease of these non-energetic CO<sub>2</sub> or other greenhouse gas emissions (GHG). 
+      <br /><br /> The figure on the right shows you the different sources of emissions now and in the future."
     other_emissions_built_environment:
       title: Emissions Built Environment
       short_description:
-      description: 'How much (other) emissions can be attributed to the built environment?'
+      description: "How much ‘other’ emissions are emitted in the future in the built environment? These are 
+      mainly methane emissions released during the production of heat. Below you can specify whether these 
+      emissions from households and buildings will decrease or increase in the future. <br /><br />
+      The figure on the right shows you the different sources of emissions now and in the future."
     other_emissions_transport:
       title: Emissions Transport
       short_description:
-      description: 'How much (other) emissions can be attributed to transport?'
+      description: "How much ‘other’ emissions are emitted in the future in the transport sector? These are 
+      mainly methane and nitrous oxide emissions in exhaust gases. Below you can specify whether these 
+      emissions from households and buildings will decrease or increase in the future. <br /><br />
+      The figure on the right shows you the different sources of emissions now and in the future."
+    other_emissions_indirect:
+      title: Emissions Indirect
+      short_description:
+      description: "How much indirect emissions are emitted in the future? ‘Indirect emissions’ are a 
+      collection of emissions caused by the oxidation of Non-Methane Volatile Organic Compounds (NMVOC). 
+      These emissions have a large number of causes and can be emitted by any sector. Below you can specify 
+      whether these indirect emissions will decrease or increase in the future. <br /><br />
+      The figure on the right shows you the total indirect emissions now and in the future."

@@ -9,38 +9,38 @@
   interface_group: non_energetic_emissions_co2
   step_value: 1.0 
   unit: "%"
-  position: 1
+  position: 2
   slide_key: other_emissions_agriculture
 - key: change_in_non_energetic_emissions_other_ghg_agriculture_manure
   interface_group: non_energetic_emissions_other_ghg
   step_value: 1.0 
   unit: "%"
-  position: 1
-  slide_key: other_emissions_agriculture
-- key: change_in_non_energetic_emissions_other_ghg_agriculture_fermentation
-  interface_group: non_energetic_emissions_other_ghg
-  step_value: 1.0 
-  unit: "%"
-  position: 1
+  position: 3
   slide_key: other_emissions_agriculture
 - key: change_in_non_energetic_emissions_other_ghg_agriculture_soil_cultivation
   interface_group: non_energetic_emissions_other_ghg
   step_value: 1.0 
   unit: "%"
-  position: 1
+  position: 4
+  slide_key: other_emissions_agriculture
+- key: change_in_non_energetic_emissions_other_ghg_agriculture_fermentation
+  interface_group: non_energetic_emissions_other_ghg
+  step_value: 1.0 
+  unit: "%"
+  position: 5
   slide_key: other_emissions_agriculture
 - key: change_in_non_energetic_emissions_other_ghg_agriculture_other
   interface_group: non_energetic_emissions_other_ghg
   step_value: 1.0 
   unit: "%"
-  position: 1
+  position: 6
   slide_key: other_emissions_agriculture
 - key: change_in_energetic_emissions_other_ghg_agriculture
   interface_group: energetic_emissions_other_ghg
   step_value: 1.0 
   unit: "%"
-  position: 1
-  slide_key: other_emissions_agriculture          
+  position: 7
+  slide_key: other_emissions_agriculture
 
   
 

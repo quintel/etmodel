@@ -2,60 +2,60 @@
 - label: energetic_all_co2
   color: "#aaa69d"
   order_by: 1
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: emissions_energetic_all_co2
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: emissions_overview
   key: energetic_all_co2_emissions_overview
+- label: energetic_all_ghg
+  color: "#e58e26"
+  order_by: 2
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: emissions_energetic_all_ghg
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_overview
+  key: energetic_all_ghg_emissions_overview
 - label: non_energetic_all_ghg
   color: "#38ada9"
-  order_by: 2
-  group: 
-  show_at_first: 
+  order_by: 4
+  group:
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: emissions_non_energetic_all_ghg
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: emissions_overview
   key: non_energetic_all_ghg_emissions_overview
 - label: non_energetic_all_co2
   color: "#e55039"
   order_by: 3
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: emissions_non_energetic_all_co2
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: emissions_overview
   key: non_energetic_all_co2_emissions_overview
-- label: energetic_all_ghg
-  color: "#e58e26"
-  order_by: 4
-  group: 
-  show_at_first: 
-  is_target_line: false
-  target_line_position: 
-  gquery: emissions_energetic_all_ghg
-  is_1990: false
-  dependent_on: 
-  output_element_key: emissions_overview
-  key: energetic_all_ghg_emissions_overview 
 - label: indirect_co2
   color: "#3c6382"
   order_by: 5
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: co2_sheet_indirect_emissions
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: emissions_overview
   key: indirect_co2_emissions_overview

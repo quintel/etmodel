@@ -84,7 +84,6 @@ EstablishmentShot.Main = (function() {
     EstablishmentShot.area = data.area;
     EstablishmentShot.scenarioId = data.scenarioId;
     EstablishmentShot.time = data.time;
-    EstablishmentShot.nonEnergy = data.nonEnergy != "off";
   }
 
   return Main;

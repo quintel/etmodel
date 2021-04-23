@@ -1,5 +1,6 @@
 $border-color: #CCC
 $bg-color: #FFEEEE
+$bg-blue: #E5F9FF
 
 body
   .information_page
@@ -9,7 +10,7 @@ body
       .page, .error
         box-shadow: 0px 3px 19px 1px #CCC
         margin: 30px 0
-        background-color: #FFFFEE
+        background-color: $bg-blue
         padding: 12px 32px
 
       .error
@@ -45,7 +46,7 @@ body
 
     ul.toggle_year
       float: right
-      margin: 0
+      margin: 10px 0 0 0
       li
         list-style-type: none
         float: left
@@ -53,13 +54,18 @@ body
           background-color: #66A2CA
           background-image: none
           text-shadow: none
+          color: $bg-blue
           &:hover
             text-decoration: none
-            cursor: default
-            color: #333
+            // cursor: default
+            color: $bg-blue
           &:active
             box-shadow: none
             border-color: #b7b7b7
+        &#present a
+          border-radius: 15px 1px 1px 15px
+        &#future a
+          border-radius: 1px 15px 15px 1px
 
     .introduction
       text-align: justify

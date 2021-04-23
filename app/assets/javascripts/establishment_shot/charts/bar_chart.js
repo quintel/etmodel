@@ -26,14 +26,16 @@ EstablishmentShot.BarChart = (function () {
             pos    = info.top ? 'bottom' : 'top';
 
         this.data.forEach(function (serie) {
+            if (serie.value == 0) {
+                return;
+            }
+
             listItem = $('<li/>');
             square   = $('<i/>')
                 .addClass('fa fa-square')
                 .css('color', serie.color);
 
-            if (serie.value > 0) {
-                listItem.on('mouseover', mouseover).on('mouseout', mouseout);
-            }
+            listItem.on('mouseover', mouseover).on('mouseout', mouseout);
 
             title_key = serie.title ? serie.title : serie.key;
 

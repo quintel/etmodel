@@ -4,16 +4,16 @@ nl:
     created_by_html: "Gemaakt met <a href='/'>energietransitiemodel.nl</a>"
     header_html: "CO<sub>2</sub>-voetafdruk van %{area}"
     footer_text_html:
-      '* Energiegebruik wordt uitgedrukt in Joule (J), Uitstoot van broeikasgassen wordt uitgedrukt in ton (T) CO<sub>2</sub>-equivalent. Een kilo (k) is 10<sup>3</sup>, mega (M) 10<sup>6</sup>, giga (G) 10<sup>9</sup>, tera (T) 10<sup>12</sup>, peta (P) 10<sup>15</sup> en exa (E) 10<sup>18</sup>.'
+      '* Energiegebruik wordt uitgedrukt in joule (J), Uitstoot van broeikasgassen wordt uitgedrukt in kilogram (kg) (CO<sub>2</sub>-equivalent).'
     show: 'Toon'
     hide: 'Verberg'
     toggle_non_energy: ' andere non-energetische broeikasgassen uit '
     non_energy_info: 'De non-energetische emissies zijn niet aan te passen in het ETM. Je kunt kiezen of je ze in dit overzicht meeneemt.'
     introduction_html:
-      In dit overzicht vind je alle directe uitstoot van broeikasgassen van dit gebied.
+      In dit overzicht vind je alle uitstoot van broeikasgassen van dit gebied.
 
     charts:
-      bar_chart: "Emissies"
+      bar_chart: "Broeikasgasemissies"
       bar_chart_non_energy: "Totale uitstoot broeikasgassen"
       co2_sheet_agriculture_total_emissions: Landbouw
       co2_sheet_industry_energy_total_emissions: Industrie & Energie
@@ -30,19 +30,19 @@ nl:
       co2_sheet_buildings_households_hot_water_co2_emissions: Warm water
       co2_sheet_buildings_households_cooking_co2_emissions: Koken
       co2_sheet_buildings_households_appliances_light_co2_emissions: Apparaten & verlichting
-      co2_sheet_other_ghg_built_environment: Overige emissies gebouwde omgeving
+      co2_sheet_other_ghg_built_environment: Overige emissies
       co2_sheet_transport_total_domestic_aviation_co2_emissions: Binnenlandse luchtvaart
       co2_sheet_transport_total_domestic_freight_co2_emissions: Vrachtvervoer
       co2_sheet_transport_total_private_transport_co2_emissions: Personenvervoer
       co2_sheet_transport_total_public_transport_co2_emissions: Openbaar vervoer
-      co2_sheet_transport_other_ghg_emissions: Overige emissies transport
+      co2_sheet_transport_other_ghg_emissions: Overige emissies
       co2_sheet_industry_chemical_all_emissions: Chemie
-      co2_sheet_industry_waste_management_all_emissions: Afval
-      co2_sheet_industry_energy_sector_all_emissions: Energie
-      co2_sheet_industry_other_all_emissions: Overige emissies industrie
-      co2_sheet_agriculture_energy_all_emissions: Energie
+      co2_sheet_industry_waste_management_all_emissions: Afvalbeheer
+      co2_sheet_industry_energy_sector_all_emissions: Energiesector
+      co2_sheet_industry_other_all_emissions: Overige emissies
+      co2_sheet_agriculture_energy_all_emissions: Energiegebruik
       co2_sheet_agriculture_manure_all_emissions: Mest
       co2_sheet_agriculture_fermentation_other_ghg: Fermentatie
-      co2_sheet_agriculture_soil_cultivation_all_emissions: Grondbewerking
-      co2_sheet_agriculture_other_ghg_other: Overige emissies landbouw
+      co2_sheet_agriculture_soil_cultivation_all_emissions: Landbewerking
+      co2_sheet_agriculture_other_ghg_other: Overige emissies
       co2_sheet_indirect_emissions: Indirecte emissies

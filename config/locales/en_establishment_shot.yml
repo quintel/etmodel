@@ -4,16 +4,16 @@ en:
     created_by_html: "Created with <a href='/'>energytransitionmodel.com</a>"
     header_html: "CO<sub>2</sub> footprint of %{area}"
     footer_text_html:
-      '* Energy use is expressed in Joule (J), CO<sub>2</sub> emissions are expressed in tonne (T). A kilo (k) is 10<sup>3</sup>, mega (M) 10<sup>6</sup>, giga (G) 10<sup>9</sup>, tera (T) 10<sup>12</sup>, peta (P) 10<sup>15</sup> and exa (E) 10<sup>18</sup>.'
+      '* Energy use is expressed in joule (J), Greenhouse gas emissions are expressed in kilogram (kg) (CO<sub>2</sub> equivalent).'
     show: 'Show'
     hide: 'Hide'
     toggle_non_energy: ' non energetic greenhouse emissions from  '
     non_energy_info: 'The non energetic emissions are not adjustable in the ETM. You can only choose to show or to hide them.'
     introduction_html:
-      This overview shows all direct greenhouse gas emissions of this area.
+      This overview shows all greenhouse gas emissions of this area.
 
     charts:
-      bar_chart: "Emissions"
+      bar_chart: "Greenhouse gas emissions"
       bar_chart_non_energy: "Total greenhouse gas emissions"
       co2_sheet_agriculture_total_emissions: Agriculture
       co2_sheet_industry_energy_total_emissions: Industry & Energy
@@ -31,19 +31,19 @@ en:
       co2_sheet_buildings_households_hot_water_co2_emissions: Hot water
       co2_sheet_buildings_households_cooking_co2_emissions: Cooking
       co2_sheet_buildings_households_appliances_light_co2_emissions: Appliances & lighting
-      co2_sheet_other_ghg_built_environment: Other emissions built environment
+      co2_sheet_other_ghg_built_environment: Other emissions
       co2_sheet_transport_total_domestic_aviation_co2_emissions: Domestic aviation
       co2_sheet_transport_total_domestic_freight_co2_emissions: Freight transport
       co2_sheet_transport_total_private_transport_co2_emissions: Private transport
       co2_sheet_transport_total_public_transport_co2_emissions: Public transport
-      co2_sheet_transport_other_ghg_emissions: Other emissions transport
+      co2_sheet_transport_other_ghg_emissions: Other emissions
       co2_sheet_industry_chemical_all_emissions: Chemical
       co2_sheet_industry_waste_management_all_emissions: Waste management
-      co2_sheet_industry_energy_sector_all_emissions: Energy
-      co2_sheet_industry_other_all_emissions: Other emissions industry
-      co2_sheet_agriculture_energy_all_emissions: Energy
+      co2_sheet_industry_energy_sector_all_emissions: Energy sector
+      co2_sheet_industry_other_all_emissions: Other industry sectors
+      co2_sheet_agriculture_energy_all_emissions: Energy use
       co2_sheet_agriculture_manure_all_emissions: Manure
       co2_sheet_agriculture_fermentation_other_ghg: Fermentation
       co2_sheet_agriculture_soil_cultivation_all_emissions: Soil cultivation
-      co2_sheet_agriculture_other_ghg_other: Other emissions agriculture
+      co2_sheet_agriculture_other_ghg_other: Other emissions
       co2_sheet_indirect_emissions: Indirect emissions

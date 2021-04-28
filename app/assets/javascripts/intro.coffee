@@ -19,7 +19,7 @@ $ ->
       return state.text
 
     $('<span/>').append(
-      $('<span class="present">Present &ndash;</span>'),
+      $('<span class="present">' + I18n.t('period.present') + ' &ndash;</span>'),
       ' ',
       state.text
     )

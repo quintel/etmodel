@@ -171,7 +171,7 @@ D3.cost_capacity_bar =
           if d.load_factor
             html += "<br/>#{@t('load_factor')}: #{Metric.ratio_as_percentage(d.load_factor)}"
 
-          if d.key == 'must_run'
+          if d.type == 'must_run'
             html += '*<br/>* Must run plants do not participate in merit order'
 
           html

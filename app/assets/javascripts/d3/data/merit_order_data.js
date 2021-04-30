@@ -28,7 +28,7 @@ var MeritOrderData = (function () {
         key: item.attributes.gquery_key.replace(/_merit_order$/, ''),
         label: item.attributes.label,
         load_factor: load_factor,
-        operating_costs: operatingCosts(item),
+        operating_costs: operatingCosts(future),
       });
     },
 

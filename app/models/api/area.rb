@@ -76,7 +76,7 @@ class Api::Area < ActiveResource::Base
   end
 
   def country?
-    %w[province municipality neighborhood region].exclude?(group)
+    %w[province municipality neighborhood region res].exclude?(group)
   end
 
   # Public: Gets the largest region to which the area belongs.

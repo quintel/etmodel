@@ -249,7 +249,7 @@ You can find the adjusted data export here in the **[Data export → Merit order
 
 [modify curves slide]: /scenario/flexibility/curve_upload/upload-curves
 
-[ccus slide]: /scenario/supply/ccus/capture-of-co2
+[ccus slide]: /scenario/emissions/ccus/capture-of-co2
 
 [esdl]: /import_esdl
 

@@ -118,10 +118,10 @@
   disabled: false
   output_element_key: biomass_sankey
   dependent_on: ''
-- key: other_emissions_dashboard
+- key: all_ghg_reduction_relative_to_start_year
   gquery_key: dashboard_emissions
   group: co2
-  position: 3
+  position: 
   disabled: false
   output_element_key: emissions_overview
   dependent_on: has_other_emissions_section

@@ -16,21 +16,21 @@
 - key: net_energy_import
   gquery_key: dashboard_energy_import_netto
   group: import
-  position: 5
+  position: 6
   disabled: false
   output_element_key:
   dependent_on: ''
 - key: total_energy_cost
   gquery_key: dashboard_total_costs
   group: costs
-  position: 3
+  position: 4
   disabled: false
   output_element_key: breakdown_of_total_costs
   dependent_on:
 - key: renewable_percentage
   gquery_key: dashboard_renewability
   group: renewable
-  position: 4
+  position: 5
   disabled: false
   output_element_key: renewability
   dependent_on: ''
@@ -72,7 +72,7 @@
 - key: blackout_hours
   gquery_key: dashboard_blackout_hours
   group: summary
-  position: 6
+  position: 7
   disabled: false
   output_element_key: merit_order_hourly_supply
   dependent_on: has_merit_order
@@ -114,7 +114,14 @@
 - key: biomass_import_share
   gquery_key: dashboard_biomass_import_share
   group: footprint
-  position: 7
+  position: 8
   disabled: false
   output_element_key: biomass_sankey
   dependent_on: ''
+- key: other_emissions_dashboard
+  gquery_key: dashboard_emissions
+  group: co2
+  position: 3
+  disabled: false
+  output_element_key: emissions_overview
+  dependent_on: has_other_emissions_section

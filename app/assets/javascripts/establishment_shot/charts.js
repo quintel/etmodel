@@ -2,38 +2,44 @@ EstablishmentShot.Charts = (function () {
     'use strict';
     var count = 0,
         colors = [
-            '#26b01f', // green
-            '#ffcf28', // yellow
-            '#009cff', // blue
-            '#ff2600' // red
+            '#079992', // green
+            '#3c6382', // blue
+            '#e55039', // red
+            '#f6b93b', // orange
+            '#aaa69d', // grey
+            '#60a3bc', // light blue
+            '#b8e994' // light green
         ],
         smallColors = [
             [
-                '#9E6C00',
-                '#EBA000',
-                '#9E1D00',
-                '#EB2B00',
-                '#DDDDDE'
+                '#f6b93b',
+                '#e55039',
+                '#3c6382',
+                '#079992',
+                '#aaa69d'
             ],
             [
-                '#CCE4FF',
-                '#80D4FF',
-                '#3C9AC9',
-                '#DDDDDE'
+                '#60a3bc',
+                '#f6b93b',
+                '#e55039',
+                '#3c6382',
+                '#079992',
+                '#b8e994',
+                '#aaa69d'
             ],
             [
-                '#38DC2D',
-                '#26b01f',
-                '#E6C337',
-                '#ffcf28',
-                '#DDDDDE'
+                '#e55039',
+                '#3c6382',
+                '#079992',
+                '#b8e994',
+                '#aaa69d'
             ],
             [
-                '#6E3E00',
-                '#B05E00',
-                '#FCB100',
-                '#006FB0',
-                '#DDDDDE'
+                '#3c6382',
+                '#f6b93b',
+                '#e55039',
+                '#079992',
+                '#aaa69d'
             ]
         ],
         queries = [
@@ -48,6 +54,9 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_industry_chemical_all_emissions' },
                 { key: 'co2_sheet_industry_waste_management_all_emissions' },
                 { key: 'co2_sheet_industry_energy_sector_all_emissions' },
+                { key: 'co2_sheet_industry_metal_co2_emissions' },
+                { key: 'co2_sheet_industry_food_co2_emissions' },
+                { key: 'co2_sheet_industry_paper_co2_emissions' },
                 { key: 'co2_sheet_industry_other_all_emissions' }
             ],
             [

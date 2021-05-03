@@ -242,7 +242,7 @@ De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is ve
 
 [Hier vind je de aangepaste data-export voor elektriciteit!][data export slide]
 
-[ccus slide]: scenario/supply/ccus/capture-of-co2
+[ccus slide]: scenario/emissions/ccus/capture-of-co2
 
 [esdl]: /import_esdl
 

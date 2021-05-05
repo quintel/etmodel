@@ -88,8 +88,8 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_buildings_households_total_emissions',
                   title: 'co2_sheet_buildings_households_total_emissions',
                   fa_icon: '\uf015' },
-                { key: 'co2_sheet_indirect_emissions',
-                  title: 'co2_sheet_indirect_emissions',
+                { key: 'co2_sheet_indirect_delayed_emissions',
+                  title: 'co2_sheet_indirect_delayed_emissions',
                   fa_icon: '\uf016' }
             ],
             title: "bar_chart"

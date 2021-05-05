@@ -26,7 +26,7 @@
         .interface_group
           %hr
           %span.label
-            = t("accordion.#{to_yml_syntax(group)}")
+            = t("accordion.#{to_yml_syntax(group)}").html_safe
           - unless slide.group_sub_header.blank?
             %span.sub_header_arrow
               .arrow-down

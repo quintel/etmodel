@@ -18,7 +18,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: emissions_energetic_all_ghg
+  gquery: emissions_energetic_all_other_ghg
   is_1990: false
   dependent_on:
   output_element_key: emissions_overview
@@ -30,7 +30,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: emissions_non_energetic_all_ghg
+  gquery: emissions_non_energetic_all_other_ghg
   is_1990: false
   dependent_on:
   output_element_key: emissions_overview

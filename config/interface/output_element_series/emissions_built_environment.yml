@@ -2,38 +2,37 @@
 - label: energetic_built_environment_co2
   color: "#aaa69d"
   order_by: 1
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
-  target_line_position: 
-  gquery: co2_sheet_buildings_households_total_co2_emissions_only_energetic
+  target_line_position:
+  gquery: co2_sheet_buildings_households_total_co2_emissions_energetic
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: emissions_built_environment
   key: energetic_built_environment_co2_emissions_build_environment
 - label: households_ghg
   color: "#3c6382"
   order_by: 2
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: emissions_energetic_households_other_ghg
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: emissions_built_environment
   key: households_ghg_emissions_built_environment
 - label: buildings_ghg
   color: "#60a3bc"
   order_by: 3
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: emissions_energetic_buildings_other_ghg
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: emissions_built_environment
   key: buildings_ghg_emissions_built_environment
 
-    

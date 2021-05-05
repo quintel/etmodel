@@ -6,7 +6,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: co2_sheet_agriculture_total_co2_emissions_only_energetic
+  gquery: co2_sheet_agriculture_total_co2_emissions_energetic
   is_1990: false
   dependent_on:
   output_element_key: emissions_agriculture
@@ -30,7 +30,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: emissions_non_energetic_manure_co2
+  gquery: emissions_non_energetic_agriculture_manure_co2
   is_1990: false
   dependent_on:
   output_element_key: emissions_agriculture
@@ -42,7 +42,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: emissions_non_energetic_manure_other_ghg
+  gquery: emissions_non_energetic_agriculture_manure_other_ghg
   is_1990: false
   dependent_on:
   output_element_key: emissions_agriculture
@@ -54,7 +54,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: emissions_non_energetic_soil_cultivation_other_ghg
+  gquery: emissions_non_energetic_agriculture_soil_cultivation_other_ghg
   is_1990: false
   dependent_on:
   output_element_key: emissions_agriculture
@@ -66,7 +66,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: emissions_non_energetic_soil_cultivation_co2
+  gquery: emissions_non_energetic_agriculture_soil_cultivation_co2
   is_1990: false
   dependent_on:
   output_element_key: emissions_agriculture

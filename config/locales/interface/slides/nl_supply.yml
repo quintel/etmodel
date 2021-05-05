@@ -420,68 +420,10 @@ nl:
         deze het duurst zijn. Hiervoor moeten namelijk de straten worden opengebroken.\r\n\r\n<br/><br/>\r\n\r\nIn
         de grafiek zie je de benodigde meerinvestering in de elektriciteitsinfrastructuur
         als gevolg van jouw keuzes bij ‘Vraag’. "
-    supply_primary_production:
-      title: Extractie van primaire energiedragers in het ETM
-      short_description:
-      description: "De energie die we dagelijks gebruiken komt altijd in de vorm van
-        een energiedrager zoals stroom, kolen of gas. Sommige energiedragers kunnen
-        direct worden gewonnen (denk aan olie, kolen en gas). Die noemen we primaire
-        energiedragers. Ze worden vaak omgezet in andere, meer bruikbare energievormen
-        zoals stroom, warmte of benzine.\r\n<br/><br/>\r\nIn het ETM is de winning
-        van primaire energiedragers (nog) niet het gevolg van binnen- of buitenlandse
-        vraag ernaar. In plaats daarvan wordt de binnenlandse productie bepaald door
-        curves met geschatte jaarlijkse productiecijfers.\r\n<br/><br/>\r\nDit is
-        niet ideaal natuurlijk, maar bespaart de gebruiker de nodige hoofdbrekens.
-        Vragen zoals:\r\n<ul>\r\n<li>Wat zijn de binnenlandse voorraden en hoe (snel)
-        worden die opgemaakt tussen nu en het toekomstjaar?</li>\r\n<li>Wat is de
-        maximale jaarlijkse productiecapaciteit?</li>\r\n<li>Hoe reageert de jaarlijkse
-        productie op de verschillende marktomstandigheden?</li>\r\n</ul>\r\nDit zijn
-        lastig te beantwoorden vragen voor de meeste gebruikers en zouden veel extra
-        input (schuifjes) vergen."
-    supply_primary_production_coal:
-      title: Kolen en bruinkool
-      short_description:
-      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
-        productie van kolen en kolenproducten per jaar weergegeven. De gebruiker kan
-        deze curve momenteel nog niet aanpassen en deze reageert niet op marktomstandigheden
-        (bijvoorbeeld hoe concurrerend de winning van kolen is). \r\n<br/>\r\nLet
-        op dat deze hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt
-        in het model. Als er geen binnenlandse toepassing voor is in de toekomst leidt
-        dit automatisch tot export van gewonnen kolen."
-    supply_primary_production_oil:
-      title: Aardolie
-      short_description:
-      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
-        productie van aardolie per jaar weergegeven. De gebruiker kan deze curve momenteel
-        nog niet aanpassen en deze reageert niet op marktomstandigheden (bijvoorbeeld
-        hoe concurrerend de productie van olie is). \r\n<br/>\r\nLet op dat deze hoeveelheden
-        geproduceerd worden, ongeacht of ze ook worden gebruikt in het model. Als
-        er geen binnenlandse toepassing voor is in de toekomst leidt dit automatisch
-        tot export van de gewonnen olie."
     supply_primary_production_biomass:
       title: Houtige biomassa
       short_description:
       description:
-    supply_primary_production_natural_gas:
-      title: Aardgas
-      short_description:
-      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
-        productie van aardgas per jaar weergegeven. De gebruiker kan deze curve momenteel
-        nog niet aanpassen en deze reageert niet op marktomstandigheden (bijvoorbeeld
-        hoe concurrerend de winning van aardgas is). \r\n<br/>\r\nLet op dat deze
-        hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt in het
-        model. Als er geen binnenlandse toepassing voor is in de toekomst leidt dit
-        automatisch tot export van gewonnen aardgas."
-    supply_primary_production_uranium:
-      title: Uranium
-      short_description:
-      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
-        productie van uraniumoxide per jaar weergegeven. De gebruiker kan deze curve
-        momenteel nog niet aanpassen en deze reageert niet op marktomstandigheden
-        (bijvoorbeeld hoe concurrerend de winning van uranium is). \r\n<br/>\r\nLet
-        op dat deze hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt
-        in het model. Als er geen binnenlandse toepassing voor is in de toekomst leidt
-        dit automatisch tot export van gewonnen uranium."
     supply_transport_compressed_gas:
       title: Gas onder druk voor wegtransport
       short_description:
@@ -546,3 +488,13 @@ nl:
         ten koste gaat van voedselproductie. In de <a href="/scenario/demand/transport_passenger_transport/train-technology"
         >technologie passagierstreinen</a> and <a href="/scenario/demand/transport_freight_transport/train-technology"
         >technologie goederentreinen</a> kun je de treintechnologie specificeren.
+    future_fuel_production:
+      title: Toekomstige productie van primaire energiedragers
+      short_description: ''
+      description: "Much of the energy that is produced nowadays comes from fossil fuels such as coal, lignite, natural gas and oil. 
+      Uranium can also play an important role if electricity is produced via nuclear power plants. Together these resources can be defined as
+       the ‘primary carriers’ of energy and they are often converted to more useful carriers such as electricity, heat or gasoline. 
+      The production of these primary carriers via oil wells or mines might reduce or increase in the future. Using the sliders, 
+      you can make assumptions about the future production of primary carriers within the area. The current slider settings indicate 
+      the present (based on the start year of your scenario) production of primary carriers. The graph on the right shows how much of 
+      this production is used within the area, exported outside the area or imported if a shortage occurs."

@@ -6,7 +6,7 @@
   sub_group: production_curves_and_import
   show_point_label: true
   growth_chart: false
-  key: present_energy_imports
+  key: future_energy_imports
   max_axis_value: 
   min_axis_value: 
   hidden: false
@@ -20,66 +20,11 @@
   sub_group: production_curves_and_import
   show_point_label: true
   growth_chart: false
-  key: future_energy_imports
+  key: present_energy_imports
   max_axis_value: 
   min_axis_value: 
   hidden: false
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: waterfall
-- under_construction: false
-  unit: EJ
-  percentage: false
-  group: Supply
-  sub_group: production_curves_and_import
-  show_point_label: false
-  growth_chart: false
-  key: production_curve_coal
-  max_axis_value: 
-  min_axis_value: 
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: time_curve
-- under_construction: false
-  unit: EJ
-  percentage: false
-  group: Supply
-  sub_group: production_curves_and_import
-  show_point_label: false
-  growth_chart: false
-  key: production_curve_crude_oil
-  max_axis_value: 
-  min_axis_value: 
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: time_curve
-- under_construction: false
-  unit: EJ
-  percentage: false
-  group: Supply
-  sub_group: production_curves_and_import
-  show_point_label: false
-  growth_chart: false
-  key: production_curve_natural_gas
-  max_axis_value: 
-  min_axis_value: 
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: time_curve
-- under_construction: false
-  unit: EJ
-  percentage: false
-  group: Supply
-  sub_group: production_curves_and_import
-  show_point_label: false
-  growth_chart: false
-  key: production_curve_uranium
-  max_axis_value: 
-  min_axis_value: 
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: time_curve
+

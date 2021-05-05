@@ -48,7 +48,7 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_buildings_households_hot_water_co2_emissions' },
                 { key: 'co2_sheet_buildings_households_cooking_co2_emissions' },
                 { key: 'co2_sheet_buildings_households_appliances_light_co2_emissions' },
-                { key: 'co2_sheet_other_ghg_built_environment' }
+                { key: 'co2_sheet_buildings_households_other_emissions' }
             ],
             [
                 { key: 'co2_sheet_industry_chemical_all_emissions' },

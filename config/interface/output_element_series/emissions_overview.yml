@@ -47,14 +47,14 @@
   dependent_on:
   output_element_key: emissions_overview
   key: non_energetic_all_co2_emissions_overview
-- label: indirect_co2
+- label: indirect_delayed_co2
   color: "#3c6382"
   order_by: 5
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: co2_sheet_indirect_emissions
+  gquery: co2_sheet_indirect_delayed_emissions
   is_1990: false
   dependent_on:
   output_element_key: emissions_overview

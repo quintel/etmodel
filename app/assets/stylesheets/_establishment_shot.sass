@@ -1,6 +1,7 @@
-$border-color: #CCC
-$bg-color: #FFEEEE
-$bg-blue: #E5F9FF
+$border-color: #c7d4e0
+$bg-color: #e7f0f9
+$bg-blue: #e1eaf3
+$light-text: #69777b
 
 body
   .information_page
@@ -8,7 +9,7 @@ body
       width: 960px
 
       .page, .error
-        box-shadow: 0px 3px 19px 1px #CCC
+        box-shadow: 0 0 0 1px $border-color
         margin: 30px 0
         background-color: $bg-blue
         padding: 12px 32px
@@ -33,7 +34,7 @@ body
 
   #establishment_shot
     .axis text, svg text, .legend
-      font: 10px sans-serif
+      font: 12px sans-serif
 
     .axis line,
     .axis path
@@ -124,7 +125,10 @@ body
         position: absolute
         right: 0px
         margin: 10px 0
-        width: 100px
+        width: 140px
+
+        i.fa
+          font-size: 14px
 
     .chart
       position: relative
@@ -140,7 +144,7 @@ body
         margin: 0
         text-align: center
         padding-bottom: 10px
-        font-size: 90%
+        font-size: 14px
 
         span
           font-family: FontAwesome
@@ -171,11 +175,24 @@ body
         text-align: center
 
     .small-text
-      font-size: 80%
+      color: $light-text
+      font-size: 12px
       margin-bottom: 8px
 
     .footer
+      color: $light-text
       padding-top: 7px
       border-top: 1px solid $border-color
-      font-size: 80%
+      font-size: 12px
       text-align: center
+
+  .establishment_shot_navigation
+    text-align: center
+    .or
+      font-size: 1rem
+      margin: 0 0.5rem
+      color: #777
+    a
+      font-size: 1rem
+      padding: 0.75rem 1rem
+

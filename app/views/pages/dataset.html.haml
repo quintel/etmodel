@@ -76,7 +76,7 @@
         = t('establishment_shot.created_by_html')
 
     - unless params[:scenario]
-      .navigation
+      .navigation.establishment_shot_navigation
         = link_to I18n.t("dataset.start_scenario", area: I18n.t("areas.#{@area.area}")), root_path(country: @area.area), class: 'button primary scenario-link'
 
         %span.or or

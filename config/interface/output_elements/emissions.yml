@@ -3,26 +3,24 @@
   unit: T
   percentage: false
   group: emissions
-  sub_group: other_emissions
   show_point_label: false
   growth_chart: false
   key: emissions_overview
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_other_emissions_section
-  output_element_type_name: vertical_stacked_bar   
+  output_element_type_name: vertical_stacked_bar
 - under_construction: false
   unit: T
   percentage: false
   group: emissions
-  sub_group: other_emissions
   show_point_label: false
   growth_chart: false
   key: emissions_agriculture
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_other_emissions_section
@@ -31,12 +29,11 @@
   unit: T
   percentage: false
   group: emissions
-  sub_group: other_emissions
   show_point_label: false
   growth_chart: false
   key: emissions_built_environment
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_other_emissions_section
@@ -45,12 +42,11 @@
   unit: T
   percentage: false
   group: emissions
-  sub_group: other_emissions
   show_point_label: false
   growth_chart: false
   key: emissions_industry_energy
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_other_emissions_section
@@ -59,28 +55,25 @@
   unit: T
   percentage: false
   group: emissions
-  sub_group: other_emissions
   show_point_label: false
   growth_chart: false
   key: emissions_transport
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_other_emissions_section
-  output_element_type_name: vertical_stacked_bar  
+  output_element_type_name: vertical_stacked_bar
 - under_construction: false
   unit: T
   percentage: false
   group: emissions
-  sub_group: other_emissions
   show_point_label: false
   growth_chart: false
   key: emissions_indirect
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: has_other_emissions_section
-  output_element_type_name: vertical_stacked_bar  
-   
+  output_element_type_name: vertical_stacked_bar

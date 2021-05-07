@@ -1,6 +1,18 @@
 # What's new in the Energy Transition Model?
 
 ---
+# May 2021
+
+## Regional source data available in ETM Dataset Manager
+
+When you start a new scenario in the Energy Transition Model, source data for the present year is loaded into the model. This data represents the current state of the energy system of the region that you have selected. This present state is used as the basis for modelling your future scenario and is unique for every region.
+
+To increase transparency, we have developed an online and version-controlled environment for the documentation of the regional source data: the **[ETM Dataset Manager][ETM Dataset Manager]**. It gives a complete and structured overview of all data and sources used for the regions. At the moment, mostly _regions within_ countries are included; in the long run all countries will also become available through the ETM Dataset Manager.
+
+In the ETM we have added a button directing you to the selected region in the ETM Dataset Manager to view the source data, which may be found in **[Results & data → Source data][regional source data]**.
+
+-> ![](/assets/pages/whats_new/dataset_manager_en.jpg) <-
+___
 
 # April 2021
 
@@ -240,6 +252,10 @@ For saved scenarios it is possible to download the values ​​of your sliders 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
 
 You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
+
+[ETM Dataset Manager]: https://data.energytransitionmodel.com/
+
+[regional source data]: /scenario/data/data_sources/present-year-data
 
 [flexibility provision]: /scenario/flexibility/flexibility_overview/the-provision-of-flexibility-capacity
 

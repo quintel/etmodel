@@ -1,7 +1,7 @@
 %li.title
   - if group
     - group_key = group.is_a?(String) ? group.downcase.gsub(/\s+/, '_') : nil
-    %strong= t("scenario.#{ group_key }", default: group)
+    = t("scenario.#{ group_key }", default: group)
 
 - scenarios.each do |scenario|
   - title = scenario.localized_title(I18n.locale)

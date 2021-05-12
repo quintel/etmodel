@@ -3,7 +3,7 @@
 # Features a scenario such that it appears on the front page.
 class FeaturedScenario < ApplicationRecord
   # The groups to which a featured scenario may be assigned.
-  GROUPS = %w[national regional municipal].freeze
+  GROUPS = %w[national northern_ireland regional municipal].freeze
 
   # Groups as they are sorted on the front page. Scenarios in a group which isn't explicitly named
   # are sorted in `:rest`, while those with no group come last.

@@ -7,6 +7,7 @@
 - key: fuel_production_lignite
   step_value: 1.0
   unit: PJ
+  dependent_on: has_lignite
   position: 2
   slide_key: future_fuel_production
 - key: fuel_production_crude_oil

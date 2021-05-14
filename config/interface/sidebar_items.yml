@@ -186,12 +186,13 @@
   section: flexibility
   tab_key: flexibility
   position: 10
-- key: ccus
-  section: emissions
-  tab_key: emissions
-  position: 1
 - key: other_emissions
   section: emissions
   tab_key: emissions
-  position: 2 
+  position: 1
   dependent_on: has_other_emissions_section
+- key: ccus
+  section: emissions
+  tab_key: emissions
+  position: 2
+

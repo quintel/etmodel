@@ -6,22 +6,21 @@ en:
       description: |
         The ETM calculates the amount of CO<sub>2</sub> that is emitted as a result of energy use.
         Apart from CO<sub>2</sub> emissions there are also other sources which lead to the emission of greenhouse
-        gases (GHG). These ‘other emissions’ can be separated into 3 groups:
+        gases (GHG). These ‘other emissions’ can be separated into 4 groups:
         <ul><li> Other greenhouse gas emissions which are emitted as a result of energy use, such as methane
         (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O) </li>
-        <li>CO<sub>2</sub>-emissions of non-energetic activities, such as the use of raw materials in industry
+        <li>CO<sub>2</sub>-emissions of non-energetic activities, such as the use of feedstock in industry
         or the production of cement</li>
         <li>Other greenhouse gas emissions from non-energetic activities, such as methane emissions from manure
-        in agriculture</li></ul>
+        in agriculture
+        <li>Indirect or delayed CO<sub>2</sub>-emissions which are emitted due to the atmospheric oxidation 
+        of methane (CH<sub>4</sub>), carbon monoxide (CO) and Non-Methane Volatile Organic Compounds (NMVOC) in different sectors
+        </li></ul>
         <br />In this section these ‘other’ greenhouse gas emissions and non-energetic emissions are displayed.
         Per sector you can view the amount of other greenhouse gas emissions are emitted as a result of energy use
         (‘energetic other GHG’), how many non-energetic CO<sub>2</sub> emissions are emitted and how many
-        non-energetic other greenhouse gases.<br /><br />
-        With sliders you can adjust how these emissions will change in the future for every sector. 
-        Additionally, you can adjust indirect CO<sub>2</sub>-emissions. These are CO<sub>2</sub>-emissions which are
-        emitted indirectly due to the atmospheric oxidation of methane (CH<sub>4</sub>), carbon monoxide (CO) and 
-        Non-Methane Volatile Organic Compounds (NMVOC) in different sectors.
-        You can find more information in the <a href="https://docs.energytransitionmodel.com/main"
+        non-energetic other greenhouse gases. Lastly, you can adjust the indirect CO<sub>2</sub>-emissions. <br /><br />
+        You can find more information in the <a href="https://docs.energytransitionmodel.com/main/greenhouse-gases"
         target="_blank">documentation</a>.
     other_emissions_agriculture:
       title: Agriculture

@@ -1,9 +1,5 @@
 %container
   %row
-    %columns{ small: 12 }
-      %h3 Feedback from an ETM visitor!
-
-  %row
     %columns.paragraphs
       = simple_format(@text || '')
 

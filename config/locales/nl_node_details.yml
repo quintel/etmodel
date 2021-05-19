@@ -42,9 +42,9 @@ nl:
       total_installed_input_capacity: Opgesteld input vermogen
       total_installed_storage_capacity: Opgestelde opslagcapaciteit
       total_installed_transport_capacity: Opgestelde transportcapaciteit
-      total_investment_over_lifetime_per_mw_electricity: Investeringskosten
-      total_investment_over_lifetime_per_mw_typical_input_capacity: Investeringskosten
-      total_investment_over_lifetime_per_plant: Investeringskosten
+      total_investment_over_lifetime_per_mw_electricity: Investment over lifetime
+      total_investment_over_lifetime_per_mw_typical_input_capacity: Investment over lifetime
+      total_investment_over_lifetime_per_plant: Investment over lifetime
       total_storage_capacity: Opgesteld opslagvolume
       typical_input_capacity: Capaciteit per installatie
       typical_input_capacity_co2_capture: Afvangcapaciteit per installatie
@@ -55,6 +55,16 @@ nl:
       variable_operation_and_maintenance_costs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten (O&M)
       wacc: Kapitaalskosten (WACC)
       wood_pellets_input_conversion: Inputconversie vaste biomassa
+    descriptions:
+      total_investment_over_lifetime_per_mw_electricity: |
+        Includes initial invstment with any applicable installation, CCS, storage, and
+        decommissioning costs.
+      total_investment_over_lifetime_per_mw_typical_input_capacity: |
+        Includes initial invstment with any applicable installation, CCS, storage, and
+        decommissioning costs.
+      total_investment_over_lifetime_per_plant: |
+        Includes initial invstment with any applicable installation, CCS, storage, and
+        decommissioning costs.
     download_analysis: Download brondata
     groups:
       cost: Kosten

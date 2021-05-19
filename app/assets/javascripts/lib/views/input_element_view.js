@@ -234,7 +234,13 @@
 
     return groups.map(function (group) {
       var attrs = Object.entries(group[1]).map(function (entry) {
-        return $.extend({ name: I18n.t('node_details.attributes.' + entry[0]) }, entry[1]);
+        return $.extend(
+          {
+            name: I18n.t('node_details.attributes.' + entry[0]),
+            description: I18n.t('node_details.descriptions.' + entry[0], { defaultValue: false }),
+          },
+          entry[1]
+        );
       });
 
       return [group[0], attrs];

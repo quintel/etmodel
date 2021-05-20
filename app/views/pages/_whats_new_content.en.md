@@ -3,6 +3,12 @@
 ---
 # May 2021
 
+## New Greenhouse gases section
+
+An **[Emissions][Other emissions]** item has been added to the sidebar consisting of the existing ‘CCUS’ section and a new ‘Greenhouse gases’ section. In the new **[Greenhouse gases][Other emissions]** section you can view and make assumptions about non-energetic CO<sub>2</sub> emissions and other greenhouse gases. All energetic CO<sub>2</sub>emissions are automatically calculated in the ETM based on the energy system. By adding non-energetic CO<sub>2</sub> emissions and other greenhouse gases to the ETM you can now get an overview of all emissions in your area. These emissions are now also included in the updated **[Greenhouse gas footprint][Emissions sheet]**.
+
+-> ![](/assets/pages/whats_new/other_emissions_eng.png) <-
+
 ## Regional source data available in ETM Dataset Manager
 
 When you start a new scenario in the Energy Transition Model, source data for the present year is loaded into the model. This data represents the current state of the energy system of the region that you have selected. This present state is used as the basis for modelling your future scenario and is unique for every region.
@@ -292,3 +298,7 @@ You can find the adjusted data export here in the **[Data export → Merit order
 [residual heat documentation]: https://docs.energytransitionmodel.com/main/residual-heat-industry
 
 [wind curves documentation]: https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind
+
+[Other emissions]: /scenario/emissions/other_emissions/overview
+
+[Emissions sheet]: /regions/nl?time=future&scenario=

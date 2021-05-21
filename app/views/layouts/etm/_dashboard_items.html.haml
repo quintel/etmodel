@@ -4,15 +4,10 @@
       :id    => "dashboard_item_#{dashboard_item.key}",
       :href  => "/dashboard_items/#{dashboard_item.key}"
     }
-    key = if dashboard_item.key == 'co2_reduction' or dashboard_item.key == 'local_co2_reduction'
-      Current.setting.use_fce ? 'greenhouse_gas' : dashboard_item.key
-    else
-      dashboard_item.key
-    end
 
   .dashboard_item{ opts }
     .header
-      = raw I18n.t("dashboard_items.#{key}.label")
+      = raw I18n.t("dashboard_items.#{dashboard_item.key}.label")
       %span.sub_header
     .arrow
     %strong &nbsp;

@@ -26,7 +26,6 @@ class Setting
       area_code:                'nl',
       start_year:               2011,
       end_year:                 2050,
-      use_fce:                  false,
       use_merit_order:          true,
       esdl_exportable:          false,
       locked_charts:            [],
@@ -54,7 +53,6 @@ class Setting
   def self.load_from_scenario(scenario, active_saved_scenario: {})
     new(
       preset_scenario_id: scenario.id,
-      use_fce: scenario.use_fce,
       esdl_exportable: scenario.esdl_exportable,
       end_year: scenario.end_year,
       area_code: scenario.area_code,
@@ -95,7 +93,7 @@ class Setting
     self.api_session_id = nil
     self.preset_scenario_id = nil # to go back to a blank slate scenario
 
-    %i[use_fce network_parts_affected locked_charts].each do |key|
+    %i[network_parts_affected locked_charts].each do |key|
       reset_attribute(key)
     end
   end
@@ -114,10 +112,6 @@ class Setting
 
   def allow_merit_order?
     area.attributes[:has_merit_order]
-  end
-
-  def allow_fce?
-    area.attributes[:has_fce]
   end
 
   def locked_charts

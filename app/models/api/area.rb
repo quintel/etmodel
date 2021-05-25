@@ -21,7 +21,6 @@ class Api::Area < ActiveResource::Base
     :has_coastline,
     :has_cold_network,
     :has_employment,
-    :has_fce,
     :has_industry,
     :has_lignite,
     :has_merit_order,

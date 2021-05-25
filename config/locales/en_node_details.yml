@@ -40,9 +40,9 @@ en:
       total_installed_input_capacity: Total installed input capacity
       total_installed_storage_capacity: Total installed storage capacity
       total_installed_transport_capacity: Total installed transport capacity
-      total_investment_over_lifetime_per_mw_electricity: Initial investment
-      total_investment_over_lifetime_per_mw_typical_input_capacity: Initial investment
-      total_investment_over_lifetime_per_plant: Initial investment
+      total_investment_over_lifetime_per_mw_electricity: Investment over lifetime
+      total_investment_over_lifetime_per_mw_typical_input_capacity: Investment over lifetime
+      total_investment_over_lifetime_per_plant: Investment over lifetime
       total_storage_capacity: Total installed storage volume
       typical_input_capacity: Capacity per unit
       typical_input_capacity_co2_capture: Capture capacity per unit
@@ -55,6 +55,16 @@ en:
       coal_input_conversion: Coal input conversion
       torrefied_biomass_pellets_input_conversion: Torrefied biomass pellets input conversion
       wood_pellets_input_conversion: Wood pellets input conversion
+    descriptions:
+      total_investment_over_lifetime_per_mw_electricity: |
+        Includes initial investment with any applicable installation, CCS, storage, and
+        decommissioning costs.
+      total_investment_over_lifetime_per_mw_typical_input_capacity: |
+        Includes initial investment with any applicable installation, CCS, storage, and
+        decommissioning costs.
+      total_investment_over_lifetime_per_plant: |
+        Includes initial investment with any applicable installation, CCS, storage, and
+        decommissioning costs.
     download_analysis: Download source data
     groups:
       cost: Costs

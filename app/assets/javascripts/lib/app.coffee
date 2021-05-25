@@ -45,7 +45,6 @@ class @AppView extends Backbone.View
     deferred = @user_values()
       .done (args...) =>
         @input_elements.initialize_user_values(args...)
-        @setup_fce_toggle()
         @setup_checkboxes()
       .fail @handle_ajax_error
 
@@ -116,10 +115,6 @@ class @AppView extends Backbone.View
     else
       @charts.load_initial_charts(@settings.get('locked_charts'))
 
-  setup_fce_toggle: ->
-    if element = $('.slide .fce-toggle')
-      (new FCEToggleView(el: element, model: App.settings)).render()
-
   reset_scenario: =>
     @settings.set({
       api_session_id: null,
@@ -134,13 +129,12 @@ class @AppView extends Backbone.View
   scenario_url: =>
     "#{globals.api_url}/inspect/#{@api.scenario_id}"
 
-  # Prepares the Merit Order abd FCE checkboxes
+  # Prepares the Merit Order checkboxes
   setup_checkboxes: =>
     # Prevent double event bindings
     return if @checkboxes_initialized
     @update_merit_order_checkbox()
     # IE doesn't bubble onChange until the checkbox loses focus
-    $(document).on 'click', "#settings_use_fce", @settings.toggle_fce
     $(document).on 'click', "#settings_use_merit_order", @settings.toggle_merit_order
 
     @checkboxes_initialized = true
@@ -149,8 +143,6 @@ class @AppView extends Backbone.View
     @api.update
       queries:  window.gqueries.keys(),
       inputs:   input_params,
-      settings:
-        use_fce: App.settings.get('use_fce')
       success: (json, data, textStatus, jqXHR) =>
         @handle_api_result(json, data, textStatus, jqXHR)
         options.success?(json, data, textStatus, jqXHR)

@@ -1,8 +1,4 @@
 class @Setting extends Backbone.Model
-  constructor: ->
-    super
-    @on 'change:use_fce', @on_fce_status_change
-
   url: -> '/settings'
 
   # Always use PUT requests
@@ -10,27 +6,6 @@ class @Setting extends Backbone.Model
 
   get_scaling: =>
     @get('scaling') || @get('area_scaling')
-
-  toggle_fce: (event) =>
-    @set(use_fce: !! $(event.target).is(':checked'))
-
-  on_fce_status_change: (setting, use_fce) =>
-    # Old scenarios may provide "null" instead of true/false, and this causes
-    # the FCE warning to toggle on.
-    use_fce = false unless use_fce is true
-    $('#settings_use_fce').attr('checked', use_fce)
-
-    @save use_fce: use_fce
-    App.call_api()
-
-    # Update dashboard item texts for CO2 reduction.
-    for key in ['co2_reduction', 'local_co2_reduction']
-      if item = dashboard.find_by_key(key)
-        item.view.update_header(
-          if use_fce
-            I18n.t 'dashboard_items.greenhouse_gas.label'
-          else
-            I18n.t "dashboard_items.#{ key }.label" )
 
   # Used by the bio-footprint dashboard item
   country: => @get('area_code').split('-')[0]

@@ -12,7 +12,6 @@ class @Scenario extends Backbone.Model
       area_code: s.get('area_code')
       end_year: s.get('end_year')
       preset_scenario_id: s.get('preset_scenario_id')
-      use_fce: s.get('use_fce')
       source: 'ETM'
 
   api_attributes: ->

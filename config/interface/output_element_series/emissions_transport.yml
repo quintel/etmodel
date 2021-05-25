@@ -1,0 +1,25 @@
+---
+- label: energetic_transport_co2
+  color: "#aaa69d"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: co2_sheet_transport_total_co2_emissions_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_transport
+  key: energetic_transport_co2_emissions_transport
+- label: energetic_transport_other_ghg
+  color: "#3c6382"
+  order_by: 2
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: co2_sheet_transport_other_ghg_emissions
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_transport
+  key: energetic_transport_other_ghg_emissions_transport

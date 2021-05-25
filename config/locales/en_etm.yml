@@ -10,6 +10,7 @@ en:
     demand: "Demand"
     supply: "Supply"
     costs: "Costs"
+    emissions: "Emissions"
     flexibility: "Flexibility"
     data: "Results & data"
     overview: "Overview"
@@ -88,7 +89,7 @@ en:
   information:
     in_the_news: "Press releases about the Energy Transition Model"
     overview: "An overview of recently published articles related to the energy transition model (in Dutch)"
-  fce_toggle:
+  toggle:
     'on': "On"
     'off': "Off"
   results_tip:
@@ -218,9 +219,10 @@ en:
     actueel: "Featured"
     regional: "Local"
     high_energy_productivity_growth: "High Energy Productivity Growth"
-    national: "National scenarios"
-    regional: "Scenarios for provinces and regions in the Netherlands"
-    municipal: "Scenarios for municipalities and neigbourhoods"
+    national: "Netherlands"
+    northern_ireland: Northern Ireland
+    regional: "Provinces and regions of the Netherlands"
+    municipal: "Municipalities and neigbourhoods of the Netherlands"
     add_description: 'Add a description of your scenario...'
     edit_text: 'Edit title and description'
     save_text: 'Save changes'
@@ -348,6 +350,9 @@ en:
     power_plants: "Power plants"
     hydrogen_plants: "Hydrogen plants"
     direct_air_capture: "Direct air capture"
+    non_energetic_emissions_co2: "Non-energetic emissions (CO<sub>2</sub>)"
+    non_energetic_emissions_other_ghg: "Non-energetic emissions (other greenhouse gases)"
+    energetic_emissions_other_ghg: "Energetic emissions (other greenhouse gases)"
 
   "or": "or"
   "go": "go"

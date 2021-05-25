@@ -1,5 +1,4 @@
-# A Base class for toggle elements such as the FCE toggle, and the merit order
-# enable / disable slider.
+# A Base class for toggle elements such as the merit order toggle.
 #
 # Subclasses need to implement:
 #
@@ -15,8 +14,8 @@ class ToggleView extends Backbone.View
   # Renders the toggle element itself into the given element. This includes
   # the "on" / "off" labels, and the Quinn widget.
   renderWidget: (into) ->
-    @offEl    = $("<div class='off'>#{ I18n.t('fce_toggle.off') }</div>")
-    @onEl     = $("<div class='on'>#{ I18n.t('fce_toggle.on') }</div>")
+    @offEl    = $("<div class='off'>#{ I18n.t('toggle.off') }</div>")
+    @onEl     = $("<div class='on'>#{ I18n.t('toggle.on') }</div>")
     @widgetEl = $("<div class='widget'></div>")
 
     $(into).append(@offEl).append(@widgetEl).append(@onEl)
@@ -102,19 +101,6 @@ class @BooleanElementView extends ToggleView
 
   # Stubs to be API-compatiable with InputElementView
   closeInfoBox: ->
-
-# FCEToggleView --------------------------------------------------------------
-
-# A version of ToggleView used to set whether calculations should include fuel
-# chain emissions.
-class @FCEToggleView extends ToggleView
-  attr: 'use_fce'
-
-  render: ->
-    super
-
-    @renderWidget(@$el.empty().addClass('toggle-view'))
-    this
 
 # Renderer -------------------------------------------------------------------
 

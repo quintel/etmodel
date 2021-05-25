@@ -3,7 +3,7 @@
 # Features a scenario such that it appears on the front page.
 class FeaturedScenario < ApplicationRecord
   # The groups to which a featured scenario may be assigned.
-  GROUPS = %w[national regional municipal].freeze
+  GROUPS = %w[national northern_ireland regional municipal].freeze
 
   # Groups as they are sorted on the front page. Scenarios in a group which isn't explicitly named
   # are sorted in `:rest`, while those with no group come last.
@@ -33,7 +33,7 @@ class FeaturedScenario < ApplicationRecord
   # and a :scenarios key containing all the matching scenarios.
   def self.in_groups(featured_scenarios, groups = SORTABLE_GROUPS)
     grouped   = Hash.new { |hash, key| hash[key] = [] }
-    scenarios = featured_scenarios.sort_by { |fs| fs.saved_scenario.title }
+    scenarios = featured_scenarios.sort_by { |fs| fs.localized_title(I18n.locale) }
 
     group_for = lambda do |group|
       { name: group, scenarios: grouped[group] } if grouped[group].any?
@@ -61,10 +61,10 @@ class FeaturedScenario < ApplicationRecord
   end
 
   def localized_title(locale)
-    locale == :nl ? title_nl : title_en
+    (locale == :nl ? title_nl : title_en) || saved_scenario.title
   end
 
   def localized_description(locale)
-    locale == :nl ? description_nl : description_en
+    (locale == :nl ? description_nl : description_en) || saved_scenario.description
   end
 end

@@ -6,7 +6,7 @@ module ETModel
     MAJOR = 2021
 
     # Month of release.
-    MINOR = 2
+    MINOR = 5
 
     # Day of release. This is not used in version numbers but is required to build the DATE_VERSION
     # so that we know the exact date. This should be the day on which the minor version was released,

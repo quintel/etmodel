@@ -11,7 +11,16 @@
 
           <% _.each(group[1], function(data, attr) { %>
             <tr>
-              <td><%= data.name %></td>
+              <td>
+                <% if(data.description) { %>
+                  <details>
+                    <summary><%= data.name %></summary>
+                    <div class="attribute-description"><%= data.description %></div>
+                  </details>
+                <% } else { %>
+                  <%= data.name %>
+                <% } %>
+              </td>
               <td><%= Metric.node_detail_format(data.future, data.unit) %></td>
             </tr>
           <% }) %>

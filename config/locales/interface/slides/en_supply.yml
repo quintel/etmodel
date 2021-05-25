@@ -105,7 +105,7 @@ en:
         They produce roughly twice as much CO<sub>2</sub> as gas-fired ones. They
         are not flexible in their output.<br/><br/>
         Below, you can specify the installed capacities of various coal-fired power plant
-        technologies. In the <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a> section,
+        technologies. In the <a href='/scenario/emissions/ccus/capture-of-co2'>CCUS</a> section,
         it is possible to add a CO<sub>2</sub> capture unit to these power plants to reduce
         their emissions. In the
         <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomass</a>
@@ -404,67 +404,10 @@ en:
         up streets to place new cables.\r\n\r\n<br/><br/>\r\n\r\nIn the chart you
         see the required network investments as a result of your choices in the section
         ‘Demand’."
-    supply_primary_production:
-      title: Extraction of primary energy carriers in the ETM
-      short_description:
-      description: "The energy we use every day comes in the form of energy carriers
-        like electricity, coal or natural gas. Some of these carriers are extracted
-        from mines or wells. Such carriers are called primary carriers. They are often
-        converted to more useful carriers like electricity, heat or gasoline, for
-        example.   \r\n<br/><br/>\r\nIn the ETM, the extraction of primary energy
-        carriers is not (yet) the result of domestic or foreign demand. instead, domestic
-        production is determined by annual production curves. \r\n <br/><br/>\r\nAlthough
-        this is far from the ideal way of modeling the production of such carriers,
-        it does spare the user rather complicated considerations like:\r\n<ul>\r\n<li>What
-        are domestic resources and how (quickly) are they depleted in the intervening
-        years between the present and future year modeled?</li>\r\n<li>What is maximum
-        annual production capacity?</li>\r\n<li>How does annual production respond
-        to different circumstances in the market?</li>\r\n</ul>\r\nSuch questions
-        are not easily answered and would require quite a nit of extra input (sliders). "
-    supply_primary_production_coal:
-      title: Coal and lignite
-      short_description:
-      description: "The chart on the right shows our <strong>estimates</strong> of
-        annual extraction of coal and lignite. This curve cannot be adjusted by the
-        user and it does not respond to changing market conditions (for example how
-        competitive domestic production of coal will be).\r\n<br/>\r\nPlease note
-        that the quantities of coal shown will be produced regardless of whether their
-        is a use for coal in the future. In the absence of domestic demand, any mined
-        coal will automatically be exported."
-    supply_primary_production_oil:
-      title: Mineral oil
-      short_description:
-      description: "The chart on the right shows our <strong>estimates</strong> of
-        annual extraction of mineral oil. This curve cannot be adjusted by the user
-        and it does not respond to changing market conditions (for example how competitive
-        domestic production of oil will be).\r\n<br/>\r\nPlease note that the quantities
-        of oil shown will be produced regardless of whether their is a use for oil
-        in the future. In the absence of domestic demand, any extracted oil will automatically
-        be exported."
     supply_primary_production_biomass:
       title: Woody biomass
       short_description:
       description:
-    supply_primary_production_natural_gas:
-      title: Natural gas
-      short_description:
-      description: "The chart on the right shows our <strong>estimates</strong> of
-        annual extraction of natural gas. This curve cannot be adjusted by the user
-        and it does not respond to changing market conditions (for example how competitive
-        domestic production of natural gas will be).\r\n<br/>\r\nPlease note that
-        the quantities of natural gas shown will be produced regardless of whether
-        their is a use for natural gas in the future. In the absence of domestic demand,
-        any extracted natural gas will automatically be exported."
-    supply_primary_production_uranium:
-      title: Uranium
-      short_description:
-      description: "The chart on the right shows our <strong>estimates</strong> of
-        annual extraction of uranium oxide. This curve cannot be adjusted by the user
-        and it does not respond to changing market conditions (for example how competitive
-        domestic production of uranium oxide will be).\r\n<br/>\r\nPlease note that
-        the quantities of uranium shown will be produced regardless of whether their
-        is a use for it in the future. In the absence of domestic demand, any uranium
-        oxide produced will automatically be exported."
     supply_transport_compressed_gas:
       title: Compressed gas for road transport
       short_description:
@@ -527,3 +470,17 @@ en:
         crops for biodiesel competes with food production. In the <a href="/scenario/demand/transport_passenger_transport/train-technology"
         >passenger train section</a> and <a href="/scenario/demand/transport_freight_transport/train-technology"
         >freight train section</a> you can specify your train technology.
+    future_fuel_production:
+      title: Future production of primary carriers
+      short_description: ''
+      description: |
+        Coal, oil, gas and uranium are defined as ‘primary carriers’ of energy and are converted to other energy carriers such as electricity, heat or gasoline. 
+        These primary carriers are extracted from wells or mines and this process might reduce or increase in the future. Using the sliders on this page, 
+        you can make assumptions about the future production of primary carriers within your region. The current slider settings indicate the present production of primary carriers. 
+        </br></br>
+        The slider settings impact the import and export balance of the primary carriers in your scenario. 
+        The chart on the right showcases the amount of imported energy in the future.
+        Positive values stand for import en negative values for export. The right most bar shows the total amount of imported fuels. You can compare these with the present energy imports by choosing
+        the chart 'Present energy imports' under the 'see more charts' button.
+        </br></br>
+        

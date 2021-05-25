@@ -3,15 +3,15 @@ require 'rails_helper'
 describe SettingsController do
   describe 'on PUT /settings', vcr: true do
     it "should update individual settings" do
-      put :update, params: { format: :json, use_fce: true }
+      put :update, params: { format: :json, api_session_id: 10 }
       expect(response).to be_successful
-      expect(session[:setting][:use_fce].to_s).to eq('true')
+      expect(session[:setting][:api_session_id].to_s).to eq('10')
     end
 
     it "should update individual settings passed as strings" do
-      put :update, params: { format: :json, "use_fce" => true }
+      put :update, params: { format: :json, "api_session_id" => 20 }
       expect(response).to be_successful
-      expect(session[:setting][:use_fce].to_s).to eq('true')
+      expect(session[:setting][:api_session_id].to_s).to eq('20')
     end
 
     it "should update the charts hash" do

@@ -20,7 +20,7 @@
 
 # Entity used for filling charts
 class OutputElement < YModel::Base
-  MENU_ORDER = %w[Overview Flexibility Supply Demand Cost Network Policy FCE].freeze
+  MENU_ORDER = %w[Overview Flexibility Supply Demand Cost Network Policy].freeze
 
   SUB_GROUP_ORDER = %w[
     overview

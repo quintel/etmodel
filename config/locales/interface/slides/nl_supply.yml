@@ -110,7 +110,7 @@ nl:
         op vol vermogen. Ze zijn dus niet zo flexibel qua productie. Kolencentrales
         produceren grofweg twee keer zoveel CO<sub>2</sub> als gascentrales.<br/><br/>
         Hieronder kun je aangeven hoeveel vermogen er geïnstalleerd is van verschillende
-        typen kolencentrales. In de <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a>
+        typen kolencentrales. In de <a href='/scenario/emissions/ccus/capture-of-co2'>CCUS</a>
         sectie kun je aangeven of deze centrales zijn uitgerust met een CO<sub>2</sub>-afvanginstallatie
         om de emissies omlaag te brengen. Op de
         <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassapagina</a>
@@ -420,68 +420,10 @@ nl:
         deze het duurst zijn. Hiervoor moeten namelijk de straten worden opengebroken.\r\n\r\n<br/><br/>\r\n\r\nIn
         de grafiek zie je de benodigde meerinvestering in de elektriciteitsinfrastructuur
         als gevolg van jouw keuzes bij ‘Vraag’. "
-    supply_primary_production:
-      title: Extractie van primaire energiedragers in het ETM
-      short_description:
-      description: "De energie die we dagelijks gebruiken komt altijd in de vorm van
-        een energiedrager zoals stroom, kolen of gas. Sommige energiedragers kunnen
-        direct worden gewonnen (denk aan olie, kolen en gas). Die noemen we primaire
-        energiedragers. Ze worden vaak omgezet in andere, meer bruikbare energievormen
-        zoals stroom, warmte of benzine.\r\n<br/><br/>\r\nIn het ETM is de winning
-        van primaire energiedragers (nog) niet het gevolg van binnen- of buitenlandse
-        vraag ernaar. In plaats daarvan wordt de binnenlandse productie bepaald door
-        curves met geschatte jaarlijkse productiecijfers.\r\n<br/><br/>\r\nDit is
-        niet ideaal natuurlijk, maar bespaart de gebruiker de nodige hoofdbrekens.
-        Vragen zoals:\r\n<ul>\r\n<li>Wat zijn de binnenlandse voorraden en hoe (snel)
-        worden die opgemaakt tussen nu en het toekomstjaar?</li>\r\n<li>Wat is de
-        maximale jaarlijkse productiecapaciteit?</li>\r\n<li>Hoe reageert de jaarlijkse
-        productie op de verschillende marktomstandigheden?</li>\r\n</ul>\r\nDit zijn
-        lastig te beantwoorden vragen voor de meeste gebruikers en zouden veel extra
-        input (schuifjes) vergen."
-    supply_primary_production_coal:
-      title: Kolen en bruinkool
-      short_description:
-      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
-        productie van kolen en kolenproducten per jaar weergegeven. De gebruiker kan
-        deze curve momenteel nog niet aanpassen en deze reageert niet op marktomstandigheden
-        (bijvoorbeeld hoe concurrerend de winning van kolen is). \r\n<br/>\r\nLet
-        op dat deze hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt
-        in het model. Als er geen binnenlandse toepassing voor is in de toekomst leidt
-        dit automatisch tot export van gewonnen kolen."
-    supply_primary_production_oil:
-      title: Aardolie
-      short_description:
-      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
-        productie van aardolie per jaar weergegeven. De gebruiker kan deze curve momenteel
-        nog niet aanpassen en deze reageert niet op marktomstandigheden (bijvoorbeeld
-        hoe concurrerend de productie van olie is). \r\n<br/>\r\nLet op dat deze hoeveelheden
-        geproduceerd worden, ongeacht of ze ook worden gebruikt in het model. Als
-        er geen binnenlandse toepassing voor is in de toekomst leidt dit automatisch
-        tot export van de gewonnen olie."
     supply_primary_production_biomass:
       title: Houtige biomassa
       short_description:
       description:
-    supply_primary_production_natural_gas:
-      title: Aardgas
-      short_description:
-      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
-        productie van aardgas per jaar weergegeven. De gebruiker kan deze curve momenteel
-        nog niet aanpassen en deze reageert niet op marktomstandigheden (bijvoorbeeld
-        hoe concurrerend de winning van aardgas is). \r\n<br/>\r\nLet op dat deze
-        hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt in het
-        model. Als er geen binnenlandse toepassing voor is in de toekomst leidt dit
-        automatisch tot export van gewonnen aardgas."
-    supply_primary_production_uranium:
-      title: Uranium
-      short_description:
-      description: "In de grafiek hiernaast is de <strong>geschatte</strong> binnenlandse
-        productie van uraniumoxide per jaar weergegeven. De gebruiker kan deze curve
-        momenteel nog niet aanpassen en deze reageert niet op marktomstandigheden
-        (bijvoorbeeld hoe concurrerend de winning van uranium is). \r\n<br/>\r\nLet
-        op dat deze hoeveelheden geproduceerd worden, ongeacht of ze ook worden gebruikt
-        in het model. Als er geen binnenlandse toepassing voor is in de toekomst leidt
-        dit automatisch tot export van gewonnen uranium."
     supply_transport_compressed_gas:
       title: Gas onder druk voor wegtransport
       short_description:
@@ -546,3 +488,18 @@ nl:
         ten koste gaat van voedselproductie. In de <a href="/scenario/demand/transport_passenger_transport/train-technology"
         >technologie passagierstreinen</a> and <a href="/scenario/demand/transport_freight_transport/train-technology"
         >technologie goederentreinen</a> kun je de treintechnologie specificeren.
+    future_fuel_production:
+      title: Toekomstige productie van primaire energiedragers
+      short_description: ''
+      description: | 
+        Kolen, olie, gas en uranium worden gedefinieerd als ‘primaire dragers’ van energie en worden omgezet 
+        in andere energiedragers zoals elektriciteit, warmte of benzine. Deze primaire dragers worden gewonnen 
+        uit putten of mijnen en dit kan in de toekomst toenemen of afnemen. Met behulp van de schuifjes op deze pagina kan je
+        aannames doen over de toekomstige productie van primaire dragers binnen de grenzen van jouw gebied. 
+        De startwaardes van de schuifjes geven de huidige productie van de dragers aan.
+        </br> </br>
+        De schuifjesinstellingen zijn van invloed op de import en export van deze dragers in jouw scenario. 
+        De grafiek rechts toont de hoeveelheid geïmporteerde energie in de toekomst. Positieve waarden staan voor import en negatieve waarden voor export.
+        De meest rechterbalk laat het totaal aan geïmporteerde brandstoffen zien. Je kan deze vergelijken met de import in het 
+        startjaar door te kiezen voor de grafiek 'Huidige energie-import' onder de knop 'meer grafieken bekijken'. 
+        </br> </br>

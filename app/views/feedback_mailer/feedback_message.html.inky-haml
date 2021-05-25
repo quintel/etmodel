@@ -1,9 +1,5 @@
 %container
   %row
-    %columns{ small: 12 }
-      %h3 Feedback from an ETM visitor!
-
-  %row
     %columns.paragraphs
       = simple_format(@text || '')
 
@@ -67,7 +63,7 @@
         %columns{ small: 2 }
           %strong Saved scenario:
         %columns
-        = link_to(@saved_scenario_id, saved_scenario_url(@saved_scenario_id))
+          = link_to(@saved_scenario_id, saved_scenario_url(@saved_scenario_id))
 
     - if @charts&.any?
       %row

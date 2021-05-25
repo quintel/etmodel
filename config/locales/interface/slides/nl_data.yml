@@ -6,21 +6,21 @@ nl:
       short_description:
       description: |
         Als je een (nieuw) scenario start in het Energietransitiemodel wordt brondata voor het startjaar in het model geladen.
-        Deze data geeft voor de regio die je hebt geselecteerd de huidige staat van het energiesysteem weer. Deze huidige 
+        Deze data geeft voor de regio die je hebt geselecteerd de huidige staat van het energiesysteem weer. Deze huidige
         staat wordt gebruikt als basis voor het modelleren van jouw toekomstscenario en is uniek voor elke regio. </br></br>
-        Om het Energietransitiemodel te laden is diverse data nodig, zoals de finale energievraag per sector, het 
-        geïnstalleerd vermogen van elektriciteitscentrales en karakteristieken van de regio zoals het aantal inwoners, 
+        Om het Energietransitiemodel te laden is diverse data nodig, zoals de finale energievraag per sector, het
+        geïnstalleerd vermogen van elektriciteitscentrales en karakteristieken van de regio zoals het aantal inwoners,
         het aantal huizen, het dakoppervlak dat geschikt is voor zonnepanelen etc.
       country_description: |
-        Voor landelijke datasets gebruiken we momenteel de energiebalans van het Internationaal Energieagentschap (IEA) 
-        als basis. Helaas is deze data niet open source en is het dus niet mogelijk deze direct te delen. Ons doel is om 
-        in de nabije toekomst gebruik te maken van een open source energiebalans. Naast de energiebalans van het IEA is 
+        Voor landelijke datasets gebruiken we momenteel de energiebalans van het Internationaal Energieagentschap (IEA)
+        als basis. Helaas is deze data niet open source en is het dus niet mogelijk deze direct te delen. Ons doel is om
+        in de nabije toekomst gebruik te maken van een open source energiebalans. Naast de energiebalans van het IEA is
         ook andere data nodig, deze kan in afzonderlijke mappen per land gevonden worden op <a href="https://github.com/quintel/etdataset-public/tree/master/source_analyses"
-        target="_blank">deze GitHub pagina</a>. In de toekomst willen we de transparantie over onderliggende bronnen naar 
+        target="_blank">deze GitHub pagina</a>. In de toekomst willen we de transparantie over onderliggende bronnen naar
         onze gebruikers vergroten door landelijke datasets toe te voegen aan onze online <a href="https://data.energytransitionmodel.com/" target="_blank">
         ETM Dataset Manager</a>.
       subregion_description: |
-        Je kunt de brondata voor jouw regio op een heldere en overzichtelijke manier inzien met de ETM Dataset Manager, 
+        Je kunt de brondata voor jouw regio op een heldere en overzichtelijke manier inzien met de ETM Dataset Manager,
         die je kan openen door op de onderstaande knop te klikken.
     data_export_application_demands:
       title: Jaarlijkse energievraag per toepassing
@@ -163,11 +163,11 @@ nl:
           <span class="fa fa-book"></span> Bekijk het verslag →
         </a>
     data_visuals_co2_sheet:
-      title: CO<sub>2</sub>-voetafdruk
+      title: Broeikasgas-voetafdruk
       short_description:
       description: |
         Een printklare sheet met een visuele samenvatting van de
-        CO<sub>2</sub>-voetafdruk voor jouw scenario.
+        broeikasgas-voetafdruk voor jouw scenario.
         <br /><br />
         <a
           href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"

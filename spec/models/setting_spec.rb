@@ -22,14 +22,10 @@ describe Setting do
     end
 
     context "other settings" do
-      subject { Setting.new(use_merit_order: :bar, use_fce: :baz) }
+      subject { Setting.new(use_merit_order: :bar) }
 
       it 'sets a custom use_merit_order' do
         expect(subject[:use_merit_order]).to eql(:bar)
-      end
-
-      it 'sets a custom use_fce' do
-        expect(subject[:use_fce]).to eql(:baz)
       end
     end
   end

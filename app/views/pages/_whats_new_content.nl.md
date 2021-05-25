@@ -1,7 +1,19 @@
 # Wat is er nieuw in het Energietransitiemodel?
+___
+
+# May 2021
+
+## Regionale brondata beschikbaar in ETM Dataset Manager
+
+Als je een (nieuw) scenario start in het Energietransitiemodel wordt brondata voor het startjaar in het model geladen. Deze data geeft voor het gebied dat je hebt geselecteerd de huidige staat van het energiesysteem weer. Deze huidige staat wordt gebruikt als basis voor het modelleren van jouw toekomstscenario en is uniek voor elk gebied.
+
+Om de transparantie van onze data te vergroten, hebben we een online omgeving ontwikkeld inclusief versiebeheer voor de documentatie van de regionale brondata: de **[ETM Dataset Manager][ETM Dataset Manager]**.  Deze tool geeft een compleet en gestructureerd overzicht van alle data én bronnen die gebruikt worden voor deze gebieden. Op dit moment kun je vooral gebieden binnen een land openen in de ETM Dataset Manager en nog niet alle landen. Op den duur zullen alle landen beschikbaar komen in de ETM Dataset Manager.
+
+In de ETM hebben we een knop toegevoegd die u direct naar het geselecteerd gebied in de ETM Dataset Manager linkt om de brondata te bekijken. Deze knop is te vinden in **[Resultaten & data → Brondata][regional source data]**.
+
+-> ![](/assets/pages/whats_new/dataset_manager_nl.jpg) <-
 
 ---
-
 # April 2021
 
 ## Nieuwe grafiek die flexibiliteitsvoorziening laat zien
@@ -234,6 +246,10 @@ Voor opgeslagen scenarios is het vanaf nu mogelijk om de waardes van je gezette 
 
 De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is veranderd. Per kolom uit de data-export wordt nu met "input" of "output" aangegeven of het om vraag of aanbod van elektriciteit gaat. Flexibiliteitsoplossingen hebben nu dus ook zowel een input als output kolom. Hiermee is de vorm van de data-export voor elektriciteit consistenter met de data-exports voor netwerkgas en waterstof.
 
+[ETM Dataset Manager]: https://data.energytransitionmodel.com/
+
+[regional source data]: /scenario/data/data_sources/present-year-data
+
 [flexibility provision]: /scenario/flexibility/flexibility_overview/the-provision-of-flexibility-capacity
 
 [electricity storage]: /scenario/flexibility/flexibility_storage/electricity-storage
@@ -242,7 +258,7 @@ De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is ve
 
 [Hier vind je de aangepaste data-export voor elektriciteit!][data export slide]
 
-[ccus slide]: scenario/supply/ccus/capture-of-co2
+[ccus slide]: scenario/emissions/ccus/capture-of-co2
 
 [esdl]: /import_esdl
 

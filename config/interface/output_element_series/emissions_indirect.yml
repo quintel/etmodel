@@ -1,0 +1,25 @@
+---
+- label: indirect_co2
+  color: "#3c6382"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: co2_sheet_indirect_emissions
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_indirect
+  key: indirect_co2_emissions_indirect
+- label: delayed_emissions_co2
+  color: "#b1c0cd"
+  order_by: 2
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: delayed_emissions_co2
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_indirect
+  key: delayed_emissions_co2_emissions_indirect

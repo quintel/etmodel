@@ -310,26 +310,31 @@ body#root
       padding: 0
 
       li.title
-        color: $landing-grey
-        margin-top: 10px
+        font-weight: 500
+        margin-top: 15px
+        margin-bottom: 2px
         padding: 0 20px
+        font-size: 14px
 
       a
+        align-items: baseline
         color: black
-        display: block
+        display: flex
         padding: 3px 20px
+        position: relative
 
         &:hover
           background: $landing-background-color
           text-decoration: none
+
         &:active
-          background: darken($landing-background-color, 4%)
+          background: darken($landing-background-color, 3%)
 
       .org
         color: $landing-grey
         font-size: 13px
         line-height: 1
-        margin-left: 3px
+        margin-left: 6px
 
   #legal
     border-top: 1px solid $landing-border-color

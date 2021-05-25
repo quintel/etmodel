@@ -408,24 +408,6 @@
       The last column depicts the net import (or export) of all energy with neighbouring countries.
     {% endchart %}
 
-    <!-- If NL -->
-    {% case settings.area_code %}
-      {% when 'nl' %}
-        <p>
-          The Netherlands is traditionally a country with a big oil-processing industry resulting in large
-          energy flows of crude oil into the country and oil products out of the country. Having been largely
-          self-sufficient with respect to natural gas, the production of Dutch gas is declining see image
-          below:
-
-          {% chart production_curve_natural_gas %}
-            Production of natural gas as projected by Energie Beheer Nederland.
-          {% endchart %}
-        </p>
-      {% else %}
-        International energy dependence is a recurring theme in political debate around the globe. In the chart
-        below you can see how much energy is imported from abroad.
-    {% endcase %}
-
   {% else %}
     <p>
       Your scenario has -{{ future.total_net_energy_import | round: 1 | autoscale: 'MJ'}} of net energy export

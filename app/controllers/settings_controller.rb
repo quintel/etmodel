@@ -9,7 +9,6 @@ class SettingsController < ApplicationController
   def update
     setting_params = params.permit(
       :api_session_id,
-      :use_fce,
       :end_year,
       :network_parts_affected,
       locked_charts: Array(params[:locked_charts].try(:keys))
@@ -17,7 +16,6 @@ class SettingsController < ApplicationController
 
     [ :api_session_id,
       :network_parts_affected,
-      :use_fce,
       :locked_charts].each do |setting|
       Current.setting.send("#{setting}=", setting_params[setting]) unless params[setting].nil?
     end

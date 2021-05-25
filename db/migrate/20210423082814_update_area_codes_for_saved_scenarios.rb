@@ -19,7 +19,8 @@ class UpdateAreaCodesForSavedScenarios < ActiveRecord::Migration[6.0]
     REMOVE_SUFFIX.each do |suffix|
       say_with_time "removing suffix '#{suffix}'" do
         affected_scenarios(suffix).each do |scenario|
-          scenario.update(area_code: scenario.area_code.delete_suffix(suffix))
+          scenario.area_code = scenario.area_code.delete_suffix(suffix)
+          scenario.save(validate: false, touch: false)
         end
       end
     end

@@ -65,7 +65,6 @@ EstablishmentShot.Main = (function() {
 
   Main.prototype = {
     render: function () {
-      EstablishmentShot.Charts.setNonEnergy(EstablishmentShot.nonEnergy);
       EstablishmentShot.queries = getQueries()
         .concat(EstablishmentShot.Charts.getQueries());
 
@@ -85,7 +84,6 @@ EstablishmentShot.Main = (function() {
     EstablishmentShot.area = data.area;
     EstablishmentShot.scenarioId = data.scenarioId;
     EstablishmentShot.time = data.time;
-    EstablishmentShot.nonEnergy = data.nonEnergy != "off";
   }
 
   return Main;

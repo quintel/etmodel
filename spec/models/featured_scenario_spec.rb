@@ -26,21 +26,9 @@ describe FeaturedScenario do
 
     let(:group_one) do
       [
-        FactoryBot.build(
-          :featured_scenario,
-          group: 'one',
-          saved_scenario: FactoryBot.build(:saved_scenario, title: 'A')
-        ),
-        FactoryBot.build(
-          :featured_scenario,
-          group: 'one',
-          saved_scenario: FactoryBot.build(:saved_scenario, title: 'B')
-        ),
-        FactoryBot.build(
-          :featured_scenario,
-          group: 'one',
-          saved_scenario: FactoryBot.build(:saved_scenario, title: 'Z')
-        )
+        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'A'),
+        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'B'),
+        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'C')
       ]
     end
 

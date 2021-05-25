@@ -1,0 +1,99 @@
+---
+- label: energetic_agriculture_co2
+  color: "#aaa69d"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: co2_sheet_agriculture_total_co2_emissions_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_agriculture
+  key: energetic_agriculture_co2_emissions_agriculture
+- label: energetic_energy_use_ghg
+  color: "#b71540"
+  order_by: 2
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: emissions_energetic_agriculture_other_ghg
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_agriculture
+  key: energetic_energy_use_ghg_emissions_agriculture
+- label: non_energetic_manure_co2
+  color: "#78e08f"
+  order_by: 3
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: emissions_non_energetic_agriculture_manure_co2
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_agriculture
+  key: non_energetic_manure_co2_emissions_agriculture
+- label: non_energetic_manure_ghg
+  color: "#079992"
+  order_by: 4
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: emissions_non_energetic_agriculture_manure_other_ghg
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_agriculture
+  key: non_energetic_manure_ghg_emissions_agriculture
+- label: non_energetic_soil_cultivation_ghg
+  color: "#e58e26"
+  order_by: 7
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: emissions_non_energetic_agriculture_soil_cultivation_other_ghg
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_agriculture
+  key: non_energetic_soil_cultivation_ghg_emissions_agriculture
+- label: non_energetic_soil_cultivation_co2
+  color: "#f6b93b"
+  order_by: 6
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: emissions_non_energetic_agriculture_soil_cultivation_co2
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_agriculture
+  key: non_energetic_soil_cultivation_co2_emissions_agriculture
+- label: non_energetic_fermentation_ghg
+  color: "#3c6382"
+  order_by: 7
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: co2_sheet_agriculture_fermentation_other_ghg
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_agriculture
+  key: non_energetic_fermentation_ghg_emissions_agriculture
+- label: non_energetic_other_ghg
+  color: "#d1ccc0"
+  order_by: 8
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: co2_sheet_agriculture_other_ghg_other
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_agriculture
+  key: non_energetic_other_ghg_emissions_agriculture
+
+

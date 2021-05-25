@@ -75,7 +75,7 @@ group :development do
   gem 'capistrano-rails',       '~> 1.1',   require: false
   gem 'capistrano-bundler',     '~> 1.1',   require: false
   gem 'capistrano-maintenance', '~> 1.0',   require: false
-  gem 'capistrano3-puma',       '~> 3.1.1', require: false
+  gem 'capistrano3-puma',       '~> 5.0.4', require: false
 end
 
 group :test, :development do
@@ -106,7 +106,10 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'puma'
+  # Puma 5 doesn't support daemon mode (used by capistrano3-puma). We need to investigate if this
+  # is an issue. Using Puma 5 with capistrano3-puma's Systemd mode would be a better solution, but
+  # this may require privileges unavailable to the SSH user.
+  gem 'puma', '< 5'
   gem 'newrelic_rpm'
 end
 

@@ -9,6 +9,11 @@ An **[Emissions][Other emissions]** item has been added to the sidebar consistin
 
 -> ![](/assets/pages/whats_new/other_emissions_eng.png) <-
 
+## Greenhouse gas footprint update
+The emissions that were added to the new emissions section have also been added to the **[Greenhouse gas footprint][Emissions sheet]**. This means that the footprint now gives an overview of all emissions within your area. 
+
+-> ![](/assets/pages/whats_new/emissions_footprint_eng) <-
+
 ## Regional source data available in ETM Dataset Manager
 
 When you start a new scenario in the Energy Transition Model, source data for the present year is loaded into the model. This data represents the current state of the energy system of the region that you have selected. This present state is used as the basis for modelling your future scenario and is unique for every region.

@@ -156,7 +156,9 @@ en:
       short_description:
       description: |
         A printable sheet depicting the greenhouse gas footprint for your
-        scenario.
+        scenario.<br /><br />
+        More information about
+      this sheet can be found in the <a href="https://docs.energytransitionmodel.com/main/emissions-footprint">ETM documentation</a>.
         <br /><br />
         <a
           href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"

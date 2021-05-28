@@ -73,7 +73,7 @@ class @SidebarView extends Backbone.View
       result = gquery.future_value()
 
       $item      = $(item)
-      percentage = Math.round(result * 100)
+      percentage = Math.round(result)
       pixels     = "#{ percentage }px"
 
       if percentage is 0

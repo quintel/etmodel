@@ -1,13 +1,10 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
-
-# Mei 2021
-
-
+# Juni 2021
 
 ## Nieuwe Broeikasgassen sectie
 
-Een **[Emissie][Other emissions]** item is toegevoegd aan de zijbalk met daarbinnen de bestaande ‘CCUS’ sectie en een nieuwe 'Broeikasgassen' sectie. In de nieuwe **[Broeikasgassen][Other emissions]** sectie kun je de uitstoot van non-energetische CO<sub>2</sub> emissies en andere broeikasgassen bekijken en beïnvloeden. Alle energetische CO<sub>2</sub> emissies worden automatisch berekend in het ETM gebaseerd op het energiesysteem. Door het toevoegen van non-energetische CO<sub>2</sub> emissies en andere broeikasgassen in het ETM kun je nu een overzicht krijgen van alle broeikasgassen in jouw gebied. 
+Een **[Emissies][Other emissions]** item is toegevoegd aan de zijbalk met daarbinnen de bestaande ‘CCUS’ sectie en een nieuwe 'Broeikasgassen' sectie. In de nieuwe **[Broeikasgassen][Other emissions]** sectie kun je de uitstoot van non-energetische CO<sub>2</sub> emissies en andere broeikasgassen bekijken en beïnvloeden. Alle energetische CO<sub>2</sub> emissies worden automatisch berekend in het ETM gebaseerd op het energiesysteem. Door het toevoegen van non-energetische CO<sub>2</sub> emissies en andere broeikasgassen in het ETM kun je nu een overzicht krijgen van alle broeikasgassen in jouw gebied. 
 
 -> ![](/assets/pages/whats_new/other_emissions_nl.png) <-
 
@@ -15,6 +12,9 @@ Een **[Emissie][Other emissions]** item is toegevoegd aan de zijbalk met daarbin
 De emissies die zijn toegevoegd aan de nieuwe broeikasgassen sectie zijn ook toegevoegd aan de **[Broeikasgas-voetafdruk][Emissions sheet]**. Dit betekent dat de voetafdruk nu een overzicht geeft van alle emissies in jouw gebied.
 
 -> ![](/assets/pages/whats_new/emissions_footprint_nl) <-
+
+___
+# Mei 2021
 
 ## Regionale brondata beschikbaar in ETM Dataset Manager
 
@@ -49,7 +49,7 @@ Je kunt de grafiek vinden in **[Flexibility → Excess electricity → Storage][
 * Stuwmeren (afhankelijk van de geselecteerde regio)
 
 -> ![](/assets/pages/whats_new/hourly_stored_volume_of_electricity_nl.png) <-
-
+___
 # Februari 2021
 
 ## Nieuwe grafieken die de behoefte aan flexibiliteit tonen
@@ -88,7 +88,6 @@ Heb je een grafiek nodig voor in een rapport of wil je hem delen met collega's? 
 -> ![](/assets/pages/whats_new/chart_as_image_nl.png) <-
 
 ---
-
 # November 2020
 
 ## Afvang, opslag en hergebruik van CO<sub>2</sub> (CCUS)

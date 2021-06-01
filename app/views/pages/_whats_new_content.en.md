@@ -1,7 +1,7 @@
 # What's new in the Energy Transition Model?
 
 ---
-# May 2021
+# June 2021
 
 ## New Greenhouse gases section
 
@@ -13,6 +13,9 @@ An **[Emissions][Other emissions]** item has been added to the sidebar consistin
 The emissions that were added to the new emissions section have also been added to the **[Greenhouse gas footprint][Emissions sheet]**. This means that the footprint now gives an overview of all emissions within your area. 
 
 -> ![](/assets/pages/whats_new/emissions_footprint_eng) <-
+
+---
+# May 2021
 
 ## Regional source data available in ETM Dataset Manager
 
@@ -49,6 +52,7 @@ You can find the chart in **[Flexibility → Excess electricity → Storage][ele
 
 -> ![](/assets/pages/whats_new/hourly_stored_volume_of_electricity_en.png) <-
 
+___
 # February 2021
 
 ## New charts showing the need for flexibility

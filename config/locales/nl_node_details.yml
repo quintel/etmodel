@@ -3,20 +3,20 @@ nl:
   node_details:
     attributes:
       ccs_investment_per_mw_electricity: Investeringen voor CCS
-      ccs_investment_per_mw_typical_input_capacity: Investeringen voor CCS
+      ccs_investment_per_mw_input_capacity: Investeringen voor CCS
       ccs_investment_per_plant: Investeringen voor CCS
       coal_input_conversion: Inputconversie kolen
       coefficient_of_performance: COP (Coefficient of Performance)
       construction_time: Bouwtijd
       cost_of_installing_per_plant: Installatiekosten
       decommissioning_costs_per_mw_electricity: Ontmantelingskosten
-      decommissioning_costs_per_mw_typical_input_capacity: Ontmantelingskosten
+      decommissioning_costs_per_mw_input_capacity: Ontmantelingskosten
       decommissioning_costs_per_plant: Ontmantelingskosten
       efficiency: Efficiëntie
       electricity_output_capacity: Elektrische capaciteit per installatie
       electricity_output_conversion: Efficiëntie (elektriciteit)
       fixed_operation_and_maintenance_costs_per_mw_electricity: Vaste exploitatie- en onderhoudskosten (O&M)
-      fixed_operation_and_maintenance_costs_per_mw_typical_input_capacity: Vaste exploitatie- en onderhoudskosten (O&M)
+      fixed_operation_and_maintenance_costs_per_mw_input_capacity: Vaste exploitatie- en onderhoudskosten (O&M)
       fixed_operation_and_maintenance_costs_per_plant: Vaste exploitatie- en onderhoudskosten (O&M)
       free_co2_factor: Afvangpercentage CCS
       full_load_hours: Vollasturen
@@ -34,7 +34,7 @@ nl:
       timeframe: Tijdschalen waar deze technologie typisch wordt ingezet
       torrefied_biomass_pellets_input_conversion: Inputconversie getorrificeerde biomassa
       total_initial_investment_per_mw_electricity: Investeringskosten (excl CCS)
-      total_initial_investment_per_mw_typical_input_capacity: Investeringskosten
+      total_initial_investment_per_mw_input_capacity: Investeringskosten
       total_initial_investment_per_plant: Investeringskosten
       total_installed_capacity: Opgesteld vermogen
       total_installed_capture_capacity: Opgestelde afvangcapaciteit
@@ -43,13 +43,13 @@ nl:
       total_installed_storage_capacity: Opgestelde opslagcapaciteit
       total_installed_transport_capacity: Opgestelde transportcapaciteit
       total_investment_over_lifetime_per_mw_electricity: Investering gedurende de levensduur
-      total_investment_over_lifetime_per_mw_typical_input_capacity: Investering gedurende de levensduur
+      total_investment_over_lifetime_per_mw_input_capacity: Investering gedurende de levensduur
       total_investment_over_lifetime_per_plant: Investering gedurende de levensduur
       total_storage_capacity: Opgesteld opslagvolume
-      typical_input_capacity: Capaciteit per installatie
-      typical_input_capacity_co2_capture: Afvangcapaciteit per installatie
-      typical_input_capacity_co2_storage: Opslagcapaciteit per installatie
-      typical_input_capacity_co2_transport: Transportcapaciteit per installatie
+      input_capacity: Capaciteit per installatie
+      input_capacity_co2_capture: Afvangcapaciteit per installatie
+      input_capacity_co2_storage: Opslagcapaciteit per installatie
+      input_capacity_co2_transport: Transportcapaciteit per installatie
       useable_heat_output_conversion: Efficiëntie (warmte)
       variable_operation_and_maintenance_costs_for_ccs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten voor CCS
       variable_operation_and_maintenance_costs_per_full_load_hour: Variabele exploitatie- en onderhoudskosten (O&M)
@@ -58,7 +58,7 @@ nl:
     descriptions:
       total_investment_over_lifetime_per_mw_electricity: |
         Omvat de initiële investering plus de kosten voor installatie, CCS, opslag en ontmanteling (indien van toepassing)
-      total_investment_over_lifetime_per_mw_typical_input_capacity: |
+      total_investment_over_lifetime_per_mw_input_capacity: |
         Omvat de initiële investering plus de kosten voor installatie, CCS, opslag en ontmanteling (indien van toepassing)
       total_investment_over_lifetime_per_plant: |
         Omvat de initiële investering plus de kosten voor installatie, CCS, opslag en ontmanteling (indien van toepassing)

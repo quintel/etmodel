@@ -22,15 +22,14 @@ EstablishmentShot.TextUpdater = (function () {
 
     return {
         update: function (scope, data, time) {
-            var value,
-                unit,
-                quantity;
-
             $("[data-query]").each(function () {
-                quantity = quantityFrom(data.gqueries[$(this).data('query')], time);
+                var quantity = quantityFrom(data.gqueries[$(this).data('query')], time);
+                var precision = $(this).data('precision');
 
-                unit  = quantity.unit.name;
-                value = quantity.value;
+                var roundingMulti = Math.pow(10, precision != undefined ? precision : 2);
+
+                var unit = quantity.unit.name;
+                var value = quantity.value;
 
                 if (UNITS[unit]) {
                     unit = UNITS[unit];
@@ -38,7 +37,10 @@ EstablishmentShot.TextUpdater = (function () {
                     unit = '';
                 }
 
-                $(this).text((Math.round(value * 100) / 100).toLocaleString() + ' ' + unit);
+                $(this).text(
+                    (Math.round(value * roundingMulti) / roundingMulti).toLocaleString() +
+                        ' ' + unit
+                );
             });
         }
     }

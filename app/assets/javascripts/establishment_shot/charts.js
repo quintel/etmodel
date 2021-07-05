@@ -3,19 +3,22 @@ EstablishmentShot.Charts = (function () {
     var count = 0,
         colors = [
             '#079992', // green
-            '#3c6382', // blue
-            '#e55039', // red
             '#f6b93b', // orange
+            '#3c6382', // blue
+            '#e55039', // light red
             '#aaa69d', // grey
+            '#b71540', // red
             '#60a3bc', // light blue
-            '#b8e994' // light green
+            '#b8e994', // light green
+            '#8d6e63', // brown
+
         ],
         smallColors = [
             [
-                '#f6b93b',
                 '#e55039',
+                '#b71540',
                 '#3c6382',
-                '#079992',
+                '#f6b93b',
                 '#aaa69d'
             ],
             [
@@ -25,11 +28,11 @@ EstablishmentShot.Charts = (function () {
                 '#3c6382',
                 '#079992',
                 '#b8e994',
-                '#aaa69d'
+                '#8d6e63'
             ],
             [
                 '#e55039',
-                '#3c6382',
+                '#8d6e63',
                 '#079992',
                 '#b8e994',
                 '#aaa69d'
@@ -37,7 +40,7 @@ EstablishmentShot.Charts = (function () {
             [
                 '#3c6382',
                 '#f6b93b',
-                '#e55039',
+                '#8d6e63',
                 '#079992',
                 '#aaa69d'
             ]

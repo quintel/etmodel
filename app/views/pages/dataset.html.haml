@@ -34,7 +34,7 @@
           = I18n.t('establishment_shot.introduction_html')
 
         %li
-          %span{ data: { query: 'co2_sheet_energetic_emissions_share', precision: 1 } }
+          %span{ data: { query: 'co2_sheet_energetic_emissions_share', precision: 0 } }
           = I18n.t("dataset.energetic_emissions")
 
       .clearfix
@@ -51,11 +51,11 @@
 
         %li
           = I18n.t("dataset.total_energy_demand")
-          %span{ data: { query: 'co2_sheet_total_final_energy_demand', unit: 'J' } }
+          %span{ data: { query: 'co2_sheet_total_final_energy_demand', unit: 'J' , precision: 1} }
 
         %li.green
           = I18n.t("dataset.renewability")
-          %span{ data: { query: 'co2_sheet_renewability_percentage', unit: '%', precision: 1 } }
+          %span{ data: { query: 'co2_sheet_renewability_percentage', unit: '%', precision: 0} }
 
       .clearfix
 

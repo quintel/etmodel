@@ -33,6 +33,15 @@
   tab_key: demand
   position: 6
   dependent_on: has_other
+
+- key: specs_electricity
+  section: costs
+  tab_key: costs
+  position: 1
+- key: specs_renewable_electricity
+  section: costs
+  tab_key: costs
+  position: 1
 - key: combustion
   section: costs
   tab_key: costs
@@ -41,10 +50,6 @@
   section: costs
   tab_key: costs
   position: 4
-- key: wind
-  section: costs
-  tab_key: costs
-  position: 5
 - key: water
   section: costs
   tab_key: costs
@@ -57,6 +62,42 @@
   section: costs
   tab_key: costs
   position: 9
+- key: infrastructure
+  section: costs
+  tab_key: costs
+  position: 8
+  dependent_on: use_network_calculations
+- key: costs_heat
+  section: costs
+  tab_key: costs
+  position: 3
+- key: fuel_costs
+  section: costs
+  tab_key: costs
+  position: 1
+- key: costs_flexibility
+  section: costs
+  tab_key: costs
+  position: 7
+- key: transport_costs
+  section: costs
+  tab_key: costs
+  position: 4
+- key: merit_order
+  section: flexibility
+  tab_key: costs
+  position: 1
+  dependent_on: has_merit_order
+- key: electricity_import_costs
+  tab_key: costs
+  position: 5
+- key: costs_hydrogen
+  tab_key: costs
+  position: 5
+- key: wacc
+  tab_key: costs
+  position: 16
+
 - key: electricity
   section: supply
   tab_key: supply
@@ -73,28 +114,10 @@
   section: supply
   tab_key: supply
   position: 7
-- key: infrastructure
-  section: costs
-  tab_key: costs
-  position: 8
-  dependent_on: use_network_calculations
 - key: security_of_supply
   section: flexibility
   tab_key: flexibility
   position: 10
-- key: merit_order
-  section: flexibility
-  tab_key: costs
-  position: 1
-  dependent_on: has_merit_order
-- key: costs_heat
-  section: costs
-  tab_key: costs
-  position: 3
-- key: fuel_costs
-  section: costs
-  tab_key: costs
-  position: 1
 - key: flexibility_overview
   section: flexibility
   tab_key: flexibility
@@ -112,18 +135,10 @@
   section: supply
   tab_key: supply
   position: 11
-- key: costs_flexibility
-  section: costs
-  tab_key: costs
-  position: 7
 - key: hydrogen
   section: supply
   tab_key: supply
   position: 5
-- key: transport_costs
-  section: costs
-  tab_key: costs
-  position: 4
 - key: biomass
   section: supply
   tab_key: supply
@@ -159,25 +174,16 @@
 - key: flexibility_net_load
   tab_key: flexibility
   position: 3
-- key: electricity_import_costs
-  tab_key: costs
-  position: 5
 - key: data_visuals
   section: data
   tab_key: data
   position: 1
-- key: costs_hydrogen
-  tab_key: costs
-  position: 5
 - key: introduction
   tab_key: overview
   position: 1
 - key: flexibility_weather
   tab_key: flexibility
   position: 4
-- key: wacc
-  tab_key: costs
-  position: 16
 - key: heat_merit
   tab_key: supply
   position: 1
@@ -195,4 +201,3 @@
   section: emissions
   tab_key: emissions
   position: 2
-

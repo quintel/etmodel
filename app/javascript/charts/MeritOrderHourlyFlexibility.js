@@ -13,6 +13,30 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
     this.drawLegend(this.series);
   }
 
+  /**
+   * A custom offset function which stacks series above and below the total demand line
+   *
+   * Series with positive values will appear above the total demand, while those with negative
+   * values appear below.
+   */
+  stackOffset() {
+    return (series, order) => {
+      d3.stackOffsetDiverging(series, order);
+
+      const lastId = this.chartData.length - 1;
+      const demandValues = this.chartData[lastId].values;
+
+      for (const [i, demandValue] of demandValues.entries()) {
+        const baseline = demandValue.y;
+
+        for (let serieData of series) {
+          serieData[i][0] += baseline;
+          serieData[i][1] += baseline;
+        }
+      }
+    };
+  }
+
   drawData(xScale, yScale, area, line) {
     this.svg
       .selectAll('path.serie')
@@ -42,23 +66,6 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
       .attr('stroke', (data) => data.color)
       .attr('stroke-width', 2)
       .attr('fill', 'none');
-  }
-
-  setStackedData() {
-    super.setStackedData();
-
-    // Offset all stacked series by the total demand. Series with positive values will appear above
-    // the total demand line, while those with negative values appear below.
-    //
-    // There's probably a way to do this with d3.stack().offset().
-    for (let i = 0; i < this.totalDemand[0].values.length; i++) {
-      const baseline = this.totalDemand[0].values[i].y;
-
-      for (let serieData of this.stackedData) {
-        serieData[i][0] += baseline;
-        serieData[i][1] += baseline;
-      }
-    }
   }
 
   refresh(...args) {
@@ -111,31 +118,44 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
       .y((data) => yScale(data.y));
   }
 
-  maxYValue() {
+  extent() {
     const targetKeys = this.model.target_series().map((s) => s.get('gquery_key'));
     const grouped = _.groupBy(this.visibleData(), (d) => _.contains(targetKeys, d.key));
 
     const targets = _.pluck(grouped[true], 'values');
     const series = _.pluck(grouped[false], 'values');
 
+    let min = 0;
     let max = 0;
 
     for (var index = 0; index < series[0].length; index++) {
-      const targetLoad = d3.max(targets, (s) => s[index]);
+      const maxTargetLoad = d3.max(targets, (s) => s[index]);
+      const minTargetLoad = d3.min(targets, (s) => s[index]);
 
       // Values above zero are ignored as values in the charts are inverted from the original
       // (negative values [discharging] become positive, positive [charging] become negative).
-      const aggregateLoad = d3.sum(series, (s) => (s[index] >= 0 ? 0 : -s[index])) + targetLoad;
+      const posAggregateLoad =
+        d3.sum(series, (s) => (s[index] >= 0 ? 0 : -s[index])) + maxTargetLoad;
 
-      if (aggregateLoad > max) {
-        max = aggregateLoad;
-      }
+      const negAggregateLoad =
+        d3.sum(series, (s) => (s[index] <= 0 ? 0 : -s[index])) + minTargetLoad;
 
-      if (targetLoad > max) {
-        max = targetLoad;
-      }
+      console.log('-', index, min, minTargetLoad, negAggregateLoad);
+
+      max = Math.max(max, posAggregateLoad, maxTargetLoad);
+      min = Math.min(min, negAggregateLoad, minTargetLoad);
     }
 
+    return [min, max];
+  }
+
+  minYValue() {
+    const [min] = this.extent();
+    return min;
+  }
+
+  maxYValue() {
+    const [, max] = this.extent();
     return max;
   }
 }

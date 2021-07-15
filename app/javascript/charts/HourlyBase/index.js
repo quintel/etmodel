@@ -178,6 +178,11 @@ class HourlyBase extends D3Chart {
   }
 
   maxYValue() {
+    const [, max] = this.extent();
+    return max;
+  }
+
+  extent() {
     const targetKeys = this.model.target_series().map((s) => s.get('gquery_key'));
     const grouped = _.groupBy(this.visibleData(), (d) => _.contains(targetKeys, d.key));
 
@@ -199,22 +204,22 @@ class HourlyBase extends D3Chart {
       }
     }
 
-    return max;
+    return [0, max];
+  }
+
+  tickCount() {
+    return Math.floor((this.height - this.margins.top - this.margins.bottom) / 30);
   }
 
   createLinearScale() {
-    return d3
-      .scaleLinear()
-      .domain([0, this.maxYValue() * 1.05])
-      .range([this.height, 0])
-      .nice(7);
+    return d3.scaleLinear().domain(this.extent()).range([this.height, 0]).nice(this.tickCount());
   }
 
   createLinearAxis(scale) {
     const axis = d3
       .axisLeft()
       .scale(scale)
-      .ticks(7)
+      .ticks(this.tickCount())
       .tickSize(-this.width, 0)
       .tickFormat((v) => this.formatValue(v));
 

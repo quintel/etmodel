@@ -1,0 +1,22 @@
+---
+- key: om_costs_geothermal
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_heat_well_geothermal
+  position: 2
+  slide_key: costs_geothermal
+- key: investment_costs_geothermal
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_heat_well_geothermal
+  position: 1
+  slide_key: costs_geothermal
+- key: efficiency_energy_heat_well_geothermal
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_heat_well_geothermal
+  position: 1
+  slide_key: costs_geothermal

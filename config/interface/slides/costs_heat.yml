@@ -5,12 +5,6 @@
   sidebar_item_key: costs_heat
   alt_output_element_key: overview_costs_of_electricity_production
   output_element_key: breakdown_of_total_costs
-- general_sub_header: change
-  key: costs_heatpumps
-  position: 5
-  sidebar_item_key: costs_heat
-  alt_output_element_key: breakdown_of_total_cost_per_household
-  output_element_key: breakdown_of_total_cost_per_household
 - key: costs_heat_network
   position: 1
   sidebar_item_key: costs_heat
@@ -24,7 +18,12 @@
   position: 3
   sidebar_item_key: costs_heat
   output_element_key: breakdown_of_total_costs
-- key: costs_heat_efficiency
+- key: costs_heat_households
+  position: 6
+  sidebar_item_key: costs_heat
+  alt_output_element_key: breakdown_of_total_cost_per_household
+  output_element_key: breakdown_of_total_cost_per_household
+- key: costs_heat_buildings
   position: 6
   sidebar_item_key: costs_heat
   output_element_key: breakdown_of_total_costs

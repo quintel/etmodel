@@ -1,11 +1,13 @@
 ---
 - key: om_costs_solar_thermal
+  interface_group: costs
   step_value: 1.0
   unit: "%"
   related_node: energy_heat_solar_thermal
   position: 2
   slide_key: costs_solar_thermal
 - key: investment_costs_solar_thermal
+  interface_group: costs
   step_value: 1.0
   unit: "%"
   related_node: energy_heat_solar_thermal

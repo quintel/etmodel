@@ -1,6 +1,6 @@
 ---
 - key: investment_costs_wind_onshore
-  interface_group: investment_costs
+  interface_group: costs
   step_value: 1.0
   unit: "%"
   command_type: value
@@ -8,7 +8,7 @@
   position: 1
   slide_key: specs_electricity_renewable_wind_turbines
 - key: investment_costs_wind_offshore
-  interface_group: investment_costs
+  interface_group: costs
   step_value: 1.0
   unit: "%"
   command_type: value
@@ -16,7 +16,7 @@
   position: 2
   slide_key: specs_electricity_renewable_wind_turbines
 - key: om_costs_wind_onshore
-  interface_group: om_costs
+  interface_group: costs
   step_value: 1.0
   unit: "%"
   command_type: value
@@ -24,7 +24,7 @@
   position: 1
   slide_key: specs_electricity_renewable_wind_turbines
 - key: om_costs_wind_offshore
-  interface_group: om_costs
+  interface_group: costs
   step_value: 1.0
   unit: "%"
   command_type: value

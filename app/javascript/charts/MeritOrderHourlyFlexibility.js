@@ -2,6 +2,7 @@
 
 import * as d3 from './d3';
 import HourlyBase from './HourlyBase';
+import negativeRegionRect from './utils/negativeRegionRect';
 
 class MeritOrderHourlyFlexibility extends HourlyBase {
   filterYValue(serie, value) {
@@ -11,6 +12,12 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
   draw() {
     super.draw();
     this.drawLegend(this.series);
+
+    // Add a "negative region" which shades area of the chart representing values below zero.
+    const [negativeRect, updateNegativeRect] = negativeRegionRect(this.width, this.yScale);
+
+    this.updateNegativeRegion = updateNegativeRect;
+    this.svg.node().append(negativeRect);
   }
 
   /**
@@ -81,6 +88,8 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
     this.svg.select('.x_axis').call(this.createTimeAxis(xScale));
     this.svg.select('.y_axis').call(this.createLinearAxis(yScale));
 
+    this.updateNegativeRegion(yScale, d3.transition().duration(0));
+
     if (this.containerNode().find('g.serie-line').length > 0) {
       this.svg
         .selectAll('g.serie')
@@ -139,8 +148,6 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
 
       const negAggregateLoad =
         d3.sum(series, (s) => (s[index] <= 0 ? 0 : -s[index])) + minTargetLoad;
-
-      console.log('-', index, min, minTargetLoad, negAggregateLoad);
 
       max = Math.max(max, posAggregateLoad, maxTargetLoad);
       min = Math.min(min, negAggregateLoad, minTargetLoad);

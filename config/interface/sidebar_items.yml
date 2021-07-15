@@ -33,7 +33,6 @@
   tab_key: demand
   position: 6
   dependent_on: has_other
-
 - key: specs_electricity
   section: costs
   tab_key: costs
@@ -42,22 +41,6 @@
   section: costs
   tab_key: costs
   position: 1
-- key: combustion
-  section: costs
-  tab_key: costs
-  position: 4
-- key: nuclear
-  section: costs
-  tab_key: costs
-  position: 4
-- key: water
-  section: costs
-  tab_key: costs
-  position: 6
-- key: solar
-  section: costs
-  tab_key: costs
-  position: 7
 - key: co2
   section: costs
   tab_key: costs
@@ -97,7 +80,6 @@
 - key: wacc
   tab_key: costs
   position: 16
-
 - key: electricity
   section: supply
   tab_key: supply

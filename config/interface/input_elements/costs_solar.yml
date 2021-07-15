@@ -12,9 +12,9 @@
   position: 2
   dependent_on: has_solar_csp
   slide_key: specs_electricity_renewable_solar_power
-- key: technical_solar_pv_efficiency
+- key: efficiency_energy_power_solar_pv_solar_radiation
   interface_group: efficiency
   step_value: 0.1
   unit: "%"
-  position: 1
+  position: 3
   slide_key: specs_electricity_renewable_solar_power

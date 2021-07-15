@@ -380,12 +380,12 @@ nl:
         aanpast voor zowel zon op dak als grootschalige zonneparken. De onderstaande
         link laat de kosten van zon op dak zien. Let op: de installatiekosten van
         zon op dak (500 kEUR/MW) worden niet aangepast met deze schuif.\r\n<br/>"
-    technology_solar_panels:
-      title: Technologie zon-PV
+    efficiency_energy_power_solar_pv_solar_radiation:
+      title: Zon-PV
       description: "Hoe ontwikkelt zon-PV zich in de toekomst?
-        Hieronder kun je de efficiëntie van zonnepanelen instellen. Een hogere
+        Hier kun je de efficiëntie van zonnepanelen instellen. Een hogere
         efficiëntie betekent dat een zonnepaneel meer stroom opwekt en een
-        hoger piekvermogen heeft. Klik op '?' voor meer informatie."
+        hoger piekvermogen heeft."
     investment_costs_solar_concentrated_solar_power:
       title: Investeringskosten geconcentreerde zonnestroom
       short_description:
@@ -638,47 +638,163 @@ nl:
         rechten zijn. Voor de handelsperiode die in 2020 begint staat nog niet vast
         hoeveel rechten er dan geveild worden, maar de Europese commissie zet nu in
         op 70%. In 2027 is het doel om 100% van de rechten te veilen."
-    efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity:
-      title: Bodemwarmtepomp verwarming
+    efficiency_energy_power_ultra_supercritical_coal:
+      title: Poederkolen
       short_description: ''
-      description: Deze schuif ...
-    efficiency_buildings_space_heater_electricity:
-      title: Elektrische kachel
+      description: "Met deze schuif kun je de toekomstige efficientie van poederkolen centrales veranderen."
+    efficiency_energy_power_ultra_supercritical_cofiring_coal:
+      title: Poederkolen met bijstook
       short_description: ''
-      description: Deze schuif ...
+      description: "Met deze schuif kun je de toekomstige efficientie van poederkolen centrales met bijstook veranderen."
+    efficiency_energy_power_combined_cycle_ccs_coal:
+      title: Kolenvergassing CCS
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficientie van kolenvergassings centrales met CCS veranderen."
+    efficiency_energy_power_supercritical_coal:
+      title: Kolen conventioneel
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficientie van conventionele kolen centrales veranderen."
+    efficiency_energy_chp_ultra_supercritical_coal:
+      title: Kolencentrale met warmtelevering (WKK) - elektriciteit
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficientie van elektriciteits productie door kolencentrales met warmtelevering (WKK) veranderen."
+    efficiency_energy_chp_ultra_supercritical_coal_heat:
+      title: Kolencentrale met warmtelevering (WKK) - warmte
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficientie van warmte productie door kolencentrales met warmtelevering (WKK) veranderen."
+    efficiency_energy_chp_ultra_supercritical_cofiring_coal:
+      title: Bijstookkolencentrale met warmtelevering (WKK) - elektriciteit
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficientie van elektriciteits productie door bijstookkolencentrales met warmtelevering (WKK) veranderen."
+    efficiency_energy_chp_ultra_supercritical_cofiring_coal_heat:
+      title: Bijstookkolencentrale met warmtelevering (WKK) - warmte
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficientie van warmte productie door bijstookkolencentrales met warmtelevering (WKK) veranderen."
+    efficiency_energy_power_combined_cycle_network_gas:
+      title: Gas STEG
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficientie van gas STEG centrales veranderen."
+    efficiency_energy_power_turbine_network_gas:
+      title: Gasturbine
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficientie van gasturbines veranderen."
+    efficiency_energy_power_ultra_supercritical_network_gas:
+      title: Gas conventioneel
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van conventionele gascentrales veranderen."
+    efficiency_energy_power_engine_network_gas:
+      title: Gasmotor
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van gasmotoren veranderen."
+    efficiency_energy_chp_combined_cycle_network_gas:
+      title: Grootschalige gascentrale met warmtelevering (WKK) - elektriciteit
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteits productie door grootschalige gascentrale met warmtelevering (WKK) veranderen."
+    efficiency_energy_chp_combined_cycle_network_gas_heat:
+      title: Grootschalige gascentrale met warmtelevering (WKK) - warmte
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmte productie door grootschalige gascentrale met warmtelevering (WKK)veranderen."
+    efficiency_energy_chp_local_engine_network_gas:
+      title: Kleinschalige gascentrale met warmtelevering (WKK) - elektriciteit
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteits productie door kleinschalige gascentrale met warmtelevering (WKK) veranderen."
+    efficiency_energy_chp_local_engine_network_gas_heat:
+      title: Kleinschalige gascentrale met warmtelevering (WKK) - warmte
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmte productie door kleinschalige gascentrale met warmtelevering (WKK) veranderen."
+    efficiency_energy_power_ultra_supercritical_crude_oil:
+      title: Oliecentrale
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van oliecentrales veranderen."
+    efficiency_energy_power_engine_diesel:
+      title: Dieselgenerator
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van dieselgeneratoren veranderen."
+    efficiency_energy_power_nuclear_gen2_uranium_oxide:
+      title: Kern conventioneel
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van conventionele kerncentrales veranderen."
+    efficiency_energy_power_nuclear_gen3_uranium_oxide:
+      title: Kern 3e Gen
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van 3e generatie kerncentrales veranderen."
+    efficiency_energy_chp_local_wood_pellets:
+      title: Biomassa WKK - elektriciteit
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door biomassa wkk-centrales veranderen."
+    efficiency_energy_chp_local_wood_pellets_heat:
+      title: Biomassa WKK - warmte
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door biomassa wkk-centrales veranderen."
+    efficiency_energy_chp_local_engine_biogas:
+      title: Biogas WKK - elektriciteit
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door biogas wkk-centrales veranderen."
+    efficiency_energy_chp_local_engine_biogas_heat:
+      title: Biogas WKK - warmte
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van biogasproductie door biogas wkk-centrales veranderen."
+    efficiency_energy_power_supercritical_waste_mix:
+      title: Afvalverbranding
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van afvalverbrandingscentrales veranderen."
+    efficiency_energy_chp_supercritical_waste_mix:
+      title: Afval-WKK - elektriciteit
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door afvalverbrandings wkk-centrales veranderen."
+    efficiency_energy_chp_supercritical_waste_mix_heat:
+      title: Afval-WKK - warmte
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door afvalverbrandings wkk-centrales veranderen."
+    efficiency_energy_power_turbine_hydrogen:
+      title: Waterstofturbine
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van waterstofturbines veranderen."
+    efficiency_energy_power_combined_cycle_hydrogen:
+      title: Waterstofcentrale STEG
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van waterstofcentrales STEG veranderen."
+    efficiency_households_space_heater_combined_network_gas:
+      title: HR combiketel ruimteverwarming
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van HR combiketels voor ruimteverwarming veranderen."
+    efficiency_households_space_heater_heatpump_ground_water_electricity:
+      title: Bodemwarmtepomp ruimteverwarming
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van bodemwarmtepomp voor ruimteverwarming veranderen."
+    efficiency_households_space_heater_wood_pellets:
+      title: Houtpelletkachel ruimteverwarming
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van houtpelletkachel voor ruimteverwarming veranderen."
+    efficiency_households_space_heater_electricity:
+      title: Elektrische kachel/bijstook ruimteverwarming
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektrische (bijstook)kachels voor ruimteverwarming veranderen."
+    efficiency_households_space_heater_network_gas:
+      title: Gasketel ruimteverwarming
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van gasketels voor ruimteverwarming veranderen."
     efficiency_buildings_space_heater_network_gas:
       title: Gasketel
       short_description: ''
-      description: Deze schuif ...
+      description: "Met deze schuif kun je de toekomstige efficiëntie van gasketels voor verwarming veranderen."
+    efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity:
+      title: Bodemwarmtepomp verwarming
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van bodemwarmtepompen voor verwarming veranderen."
+    efficiency_buildings_space_heater_electricity:
+      title: Elektrische kachel
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektrische kachels voor verwarming veranderen."
     efficiency_buildings_space_heater_wood_pellets:
       title: Houtpelletkachel
       short_description: ''
-      description: Deze schuif ...
-    efficiency_chp_combined_cycle_network_gas_heat:
-      title: Gas STEG WKK
+      description: "Met deze schuif kun je de toekomstige efficiëntie van houtpelletkachels veranderen."
+    efficiency_energy_power_geothermal:
+      title: Geothermisch elektrisch
       short_description: ''
-      description: Deze schuif ...
-    efficiency_chp_local_engine_biogas_heat:
-      title: Biogasmotor-WKK - kleinschalig
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door geothermie veranderen."
+    efficiency_energy_heat_well_geothermal:
+      title: Geothermie
       short_description: ''
-      description: Deze schuif ...
-    efficiency_chp_local_engine_network_gas_heat:
-      title: Gasmotor-WKK - kleinschalig
-      short_description: ''
-      description: Deze schuif ...
-    efficiency_chp_local_wood_pellets_heat:
-      title: Biomassa-WKK - kleinschalig
-      short_description: ''
-      description: Deze schuif ...
-    efficiency_chp_supercritical_waste_mix_heat:
-      title: Afval-WKK
-      short_description: ''
-      description: Deze schuif ...
-    efficiency_chp_ultra_supercritical_coal_heat:
-      title: Kolencentrale met warmtelevering (WKK)
-      short_description: ''
-      description: Deze schuif ...
-    efficiency_chp_ultra_supercritical_cofiring_coal_heat:
-      title: Kolen-WKK met bijstook
-      short_description: ''
-      description: Deze schuif ...
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door geothermie veranderen."

@@ -279,7 +279,7 @@ nl:
       description: 'Hoeveel efficiënter zullen computers en andere audio/video apparatuur
         (exclusief televisies) in de toekomst zijn? '
     households_appliances_other_electricity_efficiency:
-      title: Overig 
+      title: Overig
       short_description: ''
       description: "Hoeveel efficiënter zullen andere huishoudelijke apparaten in
         de toekomst zijn? \r\n<br/><br/>\r\nDeze categorie omvat:<br/>\r\n- Persoonlijke
@@ -443,10 +443,18 @@ nl:
         na een paar decennia in de grond vaak gaan lekken en daarbij behoorlijke schade
         kunnen doen aan het milieu of de kwaliteit van het drinkwater.
     households_heater_combined_network_gas_share:
-      title: HR combiketel
+      title: HR combiketel (gas)
       short_description: ''
-      description: "Dit zijn gasgestookte HR-ketels. Als je klikt op 
-        \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan 
+      description: "Dit zijn gasgestookte HR-ketels. Als je klikt op
+        \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan
+        100% is voor ruimteverwarming. Dit komt omdat deze ketels ook energie ontrekken uit de condensatiewarmte.
+        Combiketels maken ook warm water om bijvoorbeeld mee te douchen. Warmwaterproductie is
+        iets minder efficiënt dan de productie van warmte voor het CV-systeem."
+    households_heater_combined_hydrogen_share:
+      title: HR combiketel (waterstof)
+      short_description: ''
+      description: "Dit zijn waterstofgestookte HR-ketels. Als je klikt op
+        \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan
         100% is voor ruimteverwarming. Dit komt omdat deze ketels ook energie ontrekken uit de condensatiewarmte.
         Combiketels maken ook warm water om bijvoorbeeld mee te douchen. Warmwaterproductie is
         iets minder efficiënt dan de productie van warmte voor het CV-systeem."

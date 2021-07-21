@@ -15,17 +15,20 @@
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
+  related_node: energy_power_supercritical_waste_mix
   position: 3
   slide_key: specs_electricity_renewable_waste_power
 - key: efficiency_energy_chp_supercritical_waste_mix
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
+  related_node: energy_chp_supercritical_waste_mix
   position: 3
   slide_key: specs_electricity_renewable_waste_power
 - key: efficiency_energy_chp_supercritical_waste_mix_heat
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
+  related_node: energy_chp_supercritical_waste_mix
   position: 3
   slide_key: specs_electricity_renewable_waste_power

@@ -15,6 +15,18 @@
   percentage_bar_query: share_of_transport_in_final_demand
   tab_key: demand
   position: 3
+- key: transport_international_transport
+  tab_key: demand
+  position: 3
+  parent_key: transport
+- key: transport_passenger_transport
+  tab_key: demand
+  position: 1
+  parent_key: transport
+- key: transport_freight_transport
+  tab_key: demand
+  position: 2
+  parent_key: transport
 - key: industry
   section: demand
   percentage_bar_query: share_of_industry_and_energy_in_final_demand
@@ -40,50 +52,48 @@
 - key: specs_renewable_electricity
   section: costs
   tab_key: costs
-  position: 1
-- key: co2
-  section: costs
-  tab_key: costs
-  position: 9
+  position: 2
 - key: infrastructure
   section: costs
   tab_key: costs
-  position: 8
+  position: 3
   dependent_on: use_network_calculations
 - key: costs_heat
   section: costs
   tab_key: costs
-  position: 3
-- key: fuel_costs
-  section: costs
-  tab_key: costs
-  position: 1
-- key: costs_flexibility
-  section: costs
-  tab_key: costs
-  position: 7
-- key: transport_costs
-  section: costs
-  tab_key: costs
   position: 4
-- key: merit_order
-  section: flexibility
-  tab_key: costs
-  position: 1
-  dependent_on: has_merit_order
-- key: electricity_import_costs
-  tab_key: costs
-  position: 5
 - key: costs_hydrogen
   tab_key: costs
   position: 5
+- key: specs_transport
+  section: costs
+  tab_key: costs
+  position: 6
+- key: fuel_costs
+  section: costs
+  tab_key: costs
+  position: 7
+- key: costs_flexibility
+  section: costs
+  tab_key: costs
+  position: 8
+- key: co2
+  section: costs
+  tab_key: costs
+  position: 9
 - key: wacc
   tab_key: costs
-  position: 16
+  position: 10
 - key: electricity
   section: supply
   tab_key: supply
   position: 1
+- key: merit_order
+  section: supply
+  tab_key: supply
+  position: 1
+  dependent_on: has_merit_order
+  parent_key: electricity
 - key: electricity_renewable
   section: supply
   tab_key: supply
@@ -92,10 +102,22 @@
   section: supply
   tab_key: supply
   position: 3
+- key: hydrogen
+  section: supply
+  tab_key: supply
+  position: 5
 - key: transport_fuels
   section: supply
   tab_key: supply
   position: 7
+- key: biomass
+  section: supply
+  tab_key: supply
+  position: 8
+- key: fuel_production
+  section: supply
+  tab_key: supply
+  position: 11
 - key: security_of_supply
   section: flexibility
   tab_key: flexibility
@@ -113,18 +135,6 @@
   section: flexibility
   tab_key: flexibility
   position: 4
-- key: fuel_production
-  section: supply
-  tab_key: supply
-  position: 11
-- key: hydrogen
-  section: supply
-  tab_key: supply
-  position: 5
-- key: biomass
-  section: supply
-  tab_key: supply
-  position: 8
 - key: data_export
   section: data
   tab_key: data
@@ -133,18 +143,6 @@
   section: data
   tab_key: data
   position: 2
-- key: transport_international_transport
-  tab_key: demand
-  position: 3
-  parent_key: transport
-- key: transport_passenger_transport
-  tab_key: demand
-  position: 1
-  parent_key: transport
-- key: transport_freight_transport
-  tab_key: demand
-  position: 2
-  parent_key: transport
 - key: flexibility_storage
   tab_key: flexibility
   position: 1

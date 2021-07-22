@@ -179,18 +179,30 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: transport_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: households_inidividual_hybrid_heat_pump_hydrogen_for_mekko
-  color: "#E34234"
+- label: households_inidividual_heater_hydrogen_for_mekko
+  color: "#E07033"
   order_by: 8
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: households_inidividual_hybrid_heat_pump_hydrogen_for_mekko
+  gquery: households_inidividual_heater_hydrogen_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: households_inidividual_hybrid_heat_pump_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+  key: households_inidividual_heater_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: buildings_inidividual_heater_hydrogen_for_mekko
+  color: "#fabd16"
+  order_by: 8
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: buildings_inidividual_heater_hydrogen_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: buildings_inidividual_heater_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: industry_final_demand_for_chemical_other_hydrogen_non_energetic_for_mekko
   color: "#228B22"
   order_by: 4

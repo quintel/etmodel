@@ -2,7 +2,7 @@
 en:
   input_elements:
     om_costs_nuclear_nuclear_plant:
-      title: O&M costs nuclear plant
+      title: O&M costs nuclear plants
       short_description: ''
       description: "This slider sets the height of your assumed operational and maintenance
         costs for a nuclear power plant. <br/>\r\n<br/>Operational and maintenance
@@ -53,7 +53,7 @@ en:
         costs for all gas-fired power plants (excluding fuel costs). Costs are compared to
         current costs.<br/><br/>\r\nThe specification below are for a CCGT plant: "
     om_costs_combustion_oil_plant:
-      title: O&M costs oil plant
+      title: O&M costs oil plants
       short_description: ''
       description: This slider sets the expected change in operational and maintenance
         costs for an oil-fired power plant (excluding fuel costs). Costs are compared to
@@ -250,7 +250,7 @@ en:
         therefore smaller margin of uncertainty.
         \r\n<br/><br/>\r\n<img src=\"/assets/popups/img_heat_storage_costs.png\" style=\"width:410px;height:285px\"/>"
     investment_costs_nuclear_nuclear_plant:
-      title: Investment costs nuclear plant
+      title: Investment costs nuclear plants
       short_description: ''
       description: "This slider sets the height of your assumed investment costs for
         a nuclear power plant, including the costs for decommissioning the plant at
@@ -302,7 +302,7 @@ en:
         gas-fired power generation capacity.\r\n<br/><br/>\r\nThe specifications below
         are for a CCGT plant."
     investment_costs_combustion_oil_plant:
-      title: Investment costs oil plant
+      title: Investment costs oil plants
       short_description: ''
       description: "This slider sets the expected change in investment costs for
         power plants that burns oil or an oil-derivative like diesel. Costs are compared
@@ -354,7 +354,7 @@ en:
       description: This slider determines the future change in investment costs large-scale
         battery storage.
     om_costs_water_river:
-      title: O&M costs hydro river
+      title: O&M costs hydroelectric
       short_description: ''
       description: This slider sets the height of your assumed operational and maintenance
         costs for a run-of-the-river hydro-electric power plant. Costs are compared
@@ -376,6 +376,25 @@ en:
         and solar PV plants. With the link below you can see the costs of solar panels
         on roofs. BTW: the cost of installing for solar panels on roofs do not change
         with this slider (500 kEUR/MW).\r\n<br/>"
+    efficiency_energy_power_solar_pv_solar_radiation:
+      title: Efficiency of solar panels
+      description: "Solar technology is getting more efficient in converting sunlight into electricity.
+        This slider allows you to set the future efficiency of solar panels. <br /><br />
+        For a standard 1.6m2 solar panel, efficiency and capacity are related in the following way: <br /><br />
+        17% efficiency: 272 Wp <br/>
+        18% efficiency: 288 Wp <br/>
+        19% efficiency: 304 Wp <br/>
+        20% efficiency: 320 Wp <br/>
+        21% efficiency: 336 Wp <br/>
+        22% efficiency: 352 Wp <br/><br />
+        <b>Remark 1:</b> The impact of this slider is different for roof top and ground-mount PV.
+        For roof top PV, you can set the share of roof surface covered with solar panels in the ETM. Increasing efficiency
+        means that the capacity of these solar panels goes up and that more electricity is produced. The number of panels
+        installed remains constant. For ground-mount, you can set the installed capacity in the ETM. Increasing efficiency means
+        that less solar panels are needed to meet this installed capacity. Installed capacity and produced electricity stay the same.<br/><br/>
+        <b>Remark 2:</b> Please note that this slider interacts with the PV cost slider above. If solar panels become more
+        efficient, their price per kW goes down.<br/><br/>
+        <b>Remark 3:</b> This slider does not affect efficiency of solar thermal and CSP (concentrated solar power).<br/>"
     investment_costs_solar_concentrated_solar_power:
       title: Investment costs concentrated solar power
       short_description:
@@ -463,17 +482,11 @@ en:
       short_description:
       description:
     investment_costs_water_river:
-      title: River
+      title: Investment costs hydroelectric
       short_description: ''
       description: "This slider sets the height of your assumed investment costs for
         a run-of-the-river hydro-electric power plant (10 MWe). Costs are compared
         to current costs.\r\n"
-    investment_costs_water_mountains:
-      title: Mountains
-      short_description: ''
-      description: This slider sets the height of your assumed investment costs for
-        a large hydro-electric power plant (500 MWe) in a mountain reservoir. These
-        plants require huge investments.
     investment_costs_electric_cars:
       title: Extra investment per electric car
       short_description:
@@ -629,19 +642,19 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of conventional coal plants."
     efficiency_energy_chp_ultra_supercritical_coal:
-      title: Coal plant for district heat (CHP) - electricity
+      title: Coal CHP - electricity
       short_description: ''
       description: "This slider sets the future efficiency of electricity production by coal plants for district heating (CHP)."
     efficiency_energy_chp_ultra_supercritical_coal_heat:
-      title: Coal plant for district heat (CHP) - heat
+      title: Coal CHP - heat
       short_description: ''
       description: "This slider sets the future efficiency of heat production by coal plants for district heating (CHP)."
     efficiency_energy_chp_ultra_supercritical_cofiring_coal:
-      title: Co-firing coal plant for district heat (CHP) - electricity
+      title: Co-firing coal CHP - electricity
       short_description: ''
       description: "This slider sets the future efficiency of electricity production by co-firing coal plants for district heating (CHP)."
     efficiency_energy_chp_ultra_supercritical_cofiring_coal_heat:
-      title: Co-firing coal plant for district heat (CHP) - heat
+      title: Co-firing coal CHP - heat
       short_description: ''
       description: "This slider sets the future efficiency of heat production by co-firing coal plants for district heating (CHP)."
     efficiency_energy_power_combined_cycle_network_gas:
@@ -661,19 +674,19 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of gas combustion engines."
     efficiency_energy_chp_combined_cycle_network_gas:
-      title: Large-scale gas plant for district heat (CHP) - electricity
+      title: Large-scale gas CHP - electricity
       short_description: ''
       description: "This slider sets the future efficiency of electricity production from large-scale gas plants for district heating (CHP)."
     efficiency_energy_chp_combined_cycle_network_gas_heat:
-      title: Large-scale gas plant for district heat (CHP) - heat
+      title: Large-scale gas CHP - heat
       short_description: ''
       description: "This slider sets the future efficiency of heat production from large-scale gas plants for district heating (CHP)."
     efficiency_energy_chp_local_engine_network_gas:
-      title: Small-scale gas plant for district heat (CHP) - electricity
+      title: Small-scale gas CHP - electricity
       short_description: ''
       description: "This slider sets the future efficiency of electricity production from small-scale gas plants for district heating (CHP)."
     efficiency_energy_chp_local_engine_network_gas_heat:
-      title: Small-scale gas plant for district heat (CHP) - heat
+      title: Small-scale gas CHP - heat
       short_description: ''
       description: "This slider sets the future efficiency of heat production from small-scale gas plants for district heating (CHP)."
     efficiency_energy_power_ultra_supercritical_crude_oil:
@@ -765,6 +778,6 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of biomass-fired heaters in buildings."
     efficiency_hydrogen_electrolysis:
-      title: Power-to-gas elektrolyzers
+      title: Power-to-gas elektrolysers
       short_description: ''
-      description: "This slider sets the future efficiency of power-to-gas elektrolyzers."
+      description: "This slider sets the future efficiency of power-to-gas elektrolysers."

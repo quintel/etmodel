@@ -45,24 +45,15 @@ nl:
       description: Niemand kan voorspellen hoeveel brandstoffen in de toekomst zullen
         kosten. Dat maakt het moeilijk om elektriciteitskosten te voorspellen. Wat
         gaan brandstoffen volgens jou kosten in de toekomst?
-    costs_combustion_investment:
-      title: Investeringen
-      short_description: ''
-      description: 'Hoe zullen de investeringskosten voor het bouwen van dit soort
-        centrales veranderen? Veel dingen spelen mee: staalprijzen, milieuwetgeving,
-        technologische doorbraken, enz.'
-    costs_combustion_operational_and_maintenance:
-      title: Onderhoud en beheer
-      short_description: ''
-      description: De kosten om centrales te laten draaien veranderen met de tijd.
-        Hoe hoog denk je dat ze in de toekomst zullen zijn?
     costs_flexibility_conversion:
       title: Investeringskosten conversie elektriciteit
       short_description:
-      description: "(Overtollige) elektriciteit kan worden geconverteerd naar andere
-        energiedragers, zoals waterstof of warmte. Hieronder kun je aangeven hoeveel
-        de investeringskosten van deze conversie-apparaten (zoals boilers en elektrolysers)
-        in de toekomst zullen veranderen."
+      description: |
+        (Overtollige) elektriciteit kan worden omgezet in andere
+        energiedragers, zoals waterstof of warmte. Hieronder kun je aangeven hoe
+        de investeringskosten van power-to-heat boilers zullen veranderen in de toekomst. 
+        De investeringskosten voor power-to-gas elektrolysers kunnen worden aangepast op de
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Waterstofproductie</a> pagina.
     costs_flexibility_storage:
       title: Investeringskosten opslag elektriciteit
       short_description:
@@ -75,23 +66,6 @@ nl:
       description: Wat denk je dat de kosten van warmtenetinfrastructuur zullen zijn
         in de toekomst? Zie <a href="https://docs.energytransitionmodel.com/main/heat-infrastructure-costs"
         target ="_blank">onze documentatie</a> voor informatie over de kostenberekening.
-    costs_heatpumps:
-      title: Warmtepompen
-      short_description:
-      description: Hieronder kun je de investeringskosten aanpassen voor warmtepompen
-        (zowel individuele als collectieve systemen) en de kosten voor warmtebuffers
-        in individuele huishoudens.
-    costs_geothermal:
-      title: Geothermie
-      short_description: ''
-      description: Er is veel aandacht voor aardwarmte tegenwoordig. Hoe veranderen
-        de investeringskosten en onderhoudskosten van deze technologie in de toekomst?
-    costs_solar_thermal:
-      title: Zonthermie
-      short_description:
-      description: Zonthermie is een interessante duurzame bron voor warmte, zowel
-        via individuele zonneboilers als collectieve systemen. Hoe veranderen de investeringskosten
-        en onderhoudskosten van deze technologie in de toekomst?
     costs_hydrogen_import:
       title: Waterstofimport
       short_description:
@@ -101,7 +75,7 @@ nl:
     costs_hydrogen_production:
       title: Waterstofproductie
       short_description:
-      description: Wat zullen de kosten en efficiënties voor waterstofproductie met elektrolyzers
+      description: Wat zullen de kosten en efficiënties voor waterstofproductie met elektrolysers
         zijn in de toekomst?
     costs_hydrogen_storage:
       title: Waterstofopslag
@@ -133,48 +107,12 @@ nl:
       description: Hoeveel kost kernbrandstof in de toekomst in vergelijking met de
         prijzen van vandaag? In de kostengrafiek zie je dat kernenergie niet zo gevoelig
         is voor de prijzen van uranium.
-    costs_nuclear_investment:
-      title: Investeringen
-      short_description: ''
-      description: 'Hoe zullen de investeringskosten voor het bouwen van nucleaire
-        centrales in de toekomst veranderen? Veel dingen spelen een rol: staalprijzen,
-        milieuwetgeving, technologische doorbraken, voldoende technisch geschoolde
-        mensen, enz.'
-    costs_nuclear_operational_and_maintenance:
-      title: Onderhoud en beheer
-      short_description: ''
-      description: De kosten om kerncentrales te laten draaien zullen in de toekomst
-        anders zijn, maar zijn slechts een klein onderdeel van de totale kosten. Hoe
-        hoog denk jij dat ze zullen zijn?
     costs_residual_heat:
       title: Restwarmte
       short_description:
       description: Wat zijn volgens jou de toekomstige kosten van industriële restwarmte
         en geïmporteerde warmte? Zie <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry"
         target ="_blank">onze documentatie</a> voor informatie over industriële restwarmte.
-    costs_solar_investment:
-      title: Investeringen
-      short_description: ''
-      description: Hoe zullen de investeringen die zijn nodig voor zonnestroom veranderen
-        in de toekomst? De kosten namen de afgelopen jaren zeer snel af, terwijl de
-        efficiëntie toenam.
-    technology_solar_panels:
-      title: Technologie zon-PV
-      description: Hoe ontwikkelt zon-PV zich in de toekomst? Hieronder kun je de
-        efficiëntie van zonnepanelen instellen. Een hogere efficiëntie betekent dat
-        een zonnepaneel meer stroom opwekt en een hoger piekvermogen heeft.
-        Klik op '?' voor meer informatie.
-    costs_water_investment:
-      title: Investeringen
-      short_description: ''
-      description: Hoe zullen de investeringskosten voor het bouwen van waterkracht
-        veranderen? Is er in de wereld genoeg ruimte voor grote dammen? Zullen ze
-        toegestaan zijn door strengere milieuwetten?
-    costs_water_operational_and_maintenance:
-      title: Onderhoud en beheer
-      short_description: ''
-      description: De kosten om waterkrachtcentrales te laten draaien zijn maar een
-        klein deel van het totaal. Hoe denk je dat deze zullen veranderen?
     costs_wacc:
       title: Gewogen kapitaalskosten (WACC)
       short_description:
@@ -197,9 +135,10 @@ nl:
     specs_electricity_renewable_solar_power:
       title: Zonne-energie
       short_description:
-      description: 'Hoe zullen de kosten en efficiëncties voor 
-      zonne-energie in de toekomst veranderen? De kosten namen de afgelopen jaren zeer snel af, terwijl de efficiëntie toenam.
-      Een hogere efficiëntie betekent dat een zonnepaneel meer stroom opwekt en een hoger piekvermogen heeft'
+      description: |
+        Hoe zullen de kosten en efficiëncties voor zonne-energie in de toekomst veranderen? De kosten namen de afgelopen jaren zeer snel af, terwijl de efficiëntie toenam.
+        Een hogere efficiëntie betekent dat een zonnepaneel meer stroom opwekt en een hoger piekvermogen heeft.
+        Klik op '?' voor meer informatie.
     specs_electricity_renewable_waste_power:
       title: Afvalverbrandingscenrales
       short_description:

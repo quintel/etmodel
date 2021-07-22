@@ -395,11 +395,25 @@ nl:
         link laat de kosten van zon op dak zien. Let op: de installatiekosten van
         zon op dak (500 kEUR/MW) worden niet aangepast met deze schuif.\r\n<br/>"
     efficiency_energy_power_solar_pv_solar_radiation:
-      title: Zon-PV
-      description: "Hoe ontwikkelt zon-PV zich in de toekomst?
-        Hier kun je de efficiëntie van zonnepanelen instellen. Een hogere
-        efficiëntie betekent dat een zonnepaneel meer stroom opwekt en een
-        hoger piekvermogen heeft."
+      title: Zonnepanelen
+      description: "Zonnepanelen worden steeds efficiënter in het omzetten van zonnestralen in elektriciteit.
+        Met deze schuif stel je de toekomstige efficiëntie van zonnepanelen in. <br /><br />
+        Voor een standaardpaneel van 1.6m2 hangen vermogens en efficiënties als volgt met elkaar samen: <br /><br />
+        17% efficiëntie: 272 Wp <br/>
+        18% efficiëntie: 288 Wp <br/>
+        19% efficiëntie: 304 Wp <br/>
+        20% efficiëntie: 320 Wp <br/>
+        21% efficiëntie: 336 Wp <br/>
+        22% efficiëntie: 352 Wp <br/><br />
+        <b>Opmerking 1:</b> De impact van deze schuif is anders voor zon op dak dan voor grondgebonden PV.
+        Voor zon op dak kun je in het ETM het percentage dakoppervlak instellen dat bedekt is met zonnepanelen.
+        Als de efficiëntie van deze panelen omhoog gaat, betekent dat dat het geïnstalleerde vermogen en
+        de productie van elektriciteit toenemen. Het aantal panelen blijft constant. Voor grondgebonden PV kun je het opgestelde vermogen instellen
+        in het ETM. Als de efficiëntie van panelen toeneemt, betekent dat dat er minder panelen nodig zijn om
+        hetzelfde geïnstalleerde vermogen te halen. Vermogen en geproduceerde elektriciteit blijven constant.<br/><br/>
+        <b>Opmerking 2:</b> Houd er rekening mee dat deze schuif invloed heeft op de kosten van zonnepanelen, net als de
+        schuif hierboven. Als zonnepanelen efficiënter worden, daalt de prijs per kW.<br/><br/>
+        <b>Opmerking 3:</b> Deze schuif heeft geen invloed op de efficiëntie van zonthermie en CSP (concentrated solar power).<br/>"
     investment_costs_solar_concentrated_solar_power:
       title: Investeringskosten geconcentreerde zonnestroom
       short_description:
@@ -669,19 +683,19 @@ nl:
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficientie van conventionele kolen centrales veranderen."
     efficiency_energy_chp_ultra_supercritical_coal:
-      title: Kolencentrale met warmtelevering (WKK) - elektriciteit
+      title: Kolen WKK - elektriciteit
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficientie van elektriciteitsproductie door kolencentrales met warmtelevering (WKK) veranderen."
     efficiency_energy_chp_ultra_supercritical_coal_heat:
-      title: Kolencentrale met warmtelevering (WKK) - warmte
+      title: Kolen WKK - warmte
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficientie van warmteproductie door kolencentrales met warmtelevering (WKK) veranderen."
     efficiency_energy_chp_ultra_supercritical_cofiring_coal:
-      title: Bijstookkolencentrale met warmtelevering (WKK) - elektriciteit
+      title: Kolen WKK met bijstook - elektriciteit
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficientie van elektriciteitsproductie door bijstookkolencentrales met warmtelevering (WKK) veranderen."
     efficiency_energy_chp_ultra_supercritical_cofiring_coal_heat:
-      title: Bijstookkolencentrale met warmtelevering (WKK) - warmte
+      title: Kolen WKK met bijstook - warmte
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficientie van warmteproductie door bijstookkolencentrales met warmtelevering (WKK) veranderen."
     efficiency_energy_power_combined_cycle_network_gas:
@@ -701,19 +715,19 @@ nl:
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van gasmotoren veranderen."
     efficiency_energy_chp_combined_cycle_network_gas:
-      title: Grootschalige gascentrale met warmtelevering (WKK) - elektriciteit
+      title: Grootschalige gas WKK - elektriciteit
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door grootschalige gascentrale met warmtelevering (WKK) veranderen."
     efficiency_energy_chp_combined_cycle_network_gas_heat:
-      title: Grootschalige gascentrale met warmtelevering (WKK) - warmte
+      title: Grootschalige gas WKK - warmte
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door grootschalige gascentrale met warmtelevering (WKK)veranderen."
     efficiency_energy_chp_local_engine_network_gas:
-      title: Kleinschalige gascentrale met warmtelevering (WKK) - elektriciteit
+      title: Kleinschalige gas WKK - elektriciteit
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door kleinschalige gascentrale met warmtelevering (WKK) veranderen."
     efficiency_energy_chp_local_engine_network_gas_heat:
-      title: Kleinschalige gascentrale met warmtelevering (WKK) - warmte
+      title: Kleinschalige gas WKK  - warmte
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door kleinschalige gascentrale met warmtelevering (WKK) veranderen."
     efficiency_energy_power_ultra_supercritical_crude_oil:
@@ -805,6 +819,6 @@ nl:
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van houtpelletkachels in gebouwen veranderen."
     efficiency_hydrogen_electrolysis:
-      title: Power-to-gas elektrolyzers
+      title: Power-to-gas elektrolysers
       short_description: ''
-      description: "Met deze schuif kun je de toekomstige efficiëntie van power-to-gas elektrolyzers."
+      description: "Met deze schuif kun je de toekomstige efficiëntie van power-to-gas elektrolysers."

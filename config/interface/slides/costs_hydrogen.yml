@@ -1,13 +1,17 @@
 ---
-- key: costs_hydrogen_import
+- key: costs_hydrogen_production
   position: 1
   sidebar_item_key: costs_hydrogen
   output_element_key: hydrogen_cost_capacity
-- key: costs_hydrogen_storage
+- key: costs_hydrogen_import
   position: 2
+  sidebar_item_key: costs_hydrogen
+  output_element_key: hydrogen_cost_capacity
+- key: costs_hydrogen_storage
+  position: 3
   sidebar_item_key: costs_hydrogen
   output_element_key: breakdown_of_total_costs
 - key: costs_hydrogen_transport
-  position: 3
+  position: 4
   sidebar_item_key: costs_hydrogen
   output_element_key: breakdown_of_total_costs

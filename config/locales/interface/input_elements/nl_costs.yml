@@ -49,37 +49,44 @@ nl:
         op zee zijn echt anders dan voor wind op land. Dit komt doordat het nodig
         is schepen met bemanning te huren voor de bouw van de molens."
     om_costs_combustion_gas_plant:
-      title: Onderhoudskosten gas- en waterstofcentrales
+      title: Onderhoudskosten gascentrales
       short_description: ''
       description: "Deze schuif stelt je de toe-of afname in die je verwacht voor
-        de onderhouds- en beheerkosten van gascentrales (zonder brandstof). De kosten
+        de onderhouds- en beheerkosten van gascentrales (exclusief brandstofkosten). De kosten
         worden vergeleken met de kosten van vandaag de dag. <br/><br/>\r\nDe specificaties
-        hieronder zijn voor een STEG centrale:"
+        hieronder zijn voor een STEG centrale."
     om_costs_combustion_oil_plant:
       title: Onderhoudskosten oliecentrales
       short_description: ''
       description: 'Deze schuif stelt je de toe-of afname in die je verwacht voor
-        de onderhouds- en beheerkosten van oliecentrales (zonder brandstof). De kosten
+        de onderhouds- en beheerkosten van oliecentrales (exclusief brandstofkosten). De kosten
         worden vergeleken met de kosten van vandaag de dag. '
     om_costs_combustion_coal_plant:
       title: Onderhoudskosten kolencentrales
       short_description: ''
       description: "Deze schuif stelt je de toe-of afname in die je verwacht voor
-        de onderhouds- en beheerkosten van kolencentrales (zonder brandstof). De kosten
+        de onderhouds- en beheerkosten van kolencentrales (exclusief brandstofkosten). De kosten
         worden vergeleken met de kosten van vandaag de dag. <br/><br/>\r\nDe specificaties
         hieronder zijn voor een ultra-supercritische kolencentrale:"
     om_costs_combustion_biomass_plant:
       title: Onderhoudskosten biomassacentrales
       short_description: ''
       description: Deze schuif stelt je de toe-of afname in die je verwacht voor de
-        onderhouds- en beheerkosten van biomassacentrales (zonder brandstof). De kosten
+        onderhouds- en beheerkosten van biomassacentrales (exclusief brandstofkosten). De kosten
         worden vergeleken met de kosten van vandaag de dag. Deze kosten zullen waarschijnlijk
         niet veel afwijken van de kosten voor kolencentrales.
+    om_costs_combustion_hydrogen_plant:
+      title: Onderhoudskosten waterstofcentrales
+      short_description: ''
+      description: |
+        Deze schuif stelt je de toe-of afname in die je verwacht voor
+        de onderhouds- en beheerkosten van waterstofcentrales (exclusief brandstofkosten). De kosten
+        worden vergeleken met de kosten van vandaag de dag.
     om_costs_combustion_waste_incinerator:
       title: Onderhoudskosten afvalverbranding
       short_description: ''
       description: 'Deze schuif stelt je de toe-of afname in die je verwacht voor
-        de onderhouds- en beheerkosten van afvalverbrandingscentrales (zonder brandstof).
+        de onderhouds- en beheerkosten van afvalverbrandingscentrales (exclusief brandstofkosten).
         De kosten worden vergeleken met de kosten van vandaag de dag. '
     costs_wacc_households:
       title: Huishoudens
@@ -300,13 +307,13 @@ nl:
         op zee zijn echt anders dan voor wind op land. Dit komt doordat de weersomstandigheden
         anders zijn en het zoute water veel slijtage veroorzaakt, bijvoorbeeld."
     investment_costs_combustion_gas_plant:
-      title: Investeringskosten gas- en waterstofcentrales
+      title: Investeringskosten gascentrales
       short_description: ''
       description: "Deze schuif stelt je de toe-of afname in die je verwacht voor
         de investeringskosten van gascentrales. De kosten worden vergeleken met de
         kosten van vandaag de dag. \r\n<br/><br/>\r\nDe afgelopen jaren hebben veel
         energiebedrijven aangekondigd gascentrales te willen bouwen. \r\n<br/><br/>\r\nDe
-        specificaties hieronder zijn voor een STEG centrale:"
+        specificaties hieronder zijn voor een STEG centrale."
     investment_costs_combustion_oil_plant:
       title: Investeringskosten oliecentrales
       short_description: ''
@@ -326,10 +333,10 @@ nl:
         moeten filtersystemen worden geïnstalleerd.\r\n<br/><br/>\r\nDe specificaties
         hieronder zijn voor een ultra-supercritische kolencentrale:"
     investment_costs_combustion_biomass_plants:
-      title: Investeringskosten biomassacentrale
+      title: Investeringskosten biomassacentrales
       short_description: ''
       description: 'Deze schuif stelt je de toe-of afname in die je verwacht voor
-        de investeringskosten van biomassa-WKKs. De kosten worden vergeleken met de
+        de investeringskosten van biomassa en biogas WKKs. De kosten worden vergeleken met de
         kosten van vandaag de dag en zullen niet veel verschillen van de kosten voor
         kolencentrales. '
     investment_costs_combustion_waste_incinerator:
@@ -339,6 +346,13 @@ nl:
         de investeringskosten van afvalverbrandingscentrales. De kosten worden vergeleken
         met de kosten van vandaag de dag. \r\n<br/><br/>\r\nDeze centrales worden
         vaak ingezet voor de productie van zowel warmte als elektriciteit."
+    investment_costs_combustion_hydrogen_plant:
+      title: Investeringskosten waterstofcentrales
+      short_description: ''
+      description: |
+        Deze schuif stelt je de toe-of afname in die je verwacht voor
+        de investeringskosten van waterstofcentrales. De kosten worden vergeleken met de
+        kosten van vandaag de dag.
     investment_costs_households_flexibility_p2p_electricity:
       title: Investeringskosten batterijen in huishoudens
       short_description:

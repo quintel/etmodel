@@ -1,17 +1,31 @@
 ---
+- key: investment_costs_combustion_hydrogen_plant
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  command_type: value
+  related_node: energy_power_combined_cycle_network_hydrogen
+  position: 1
+  slide_key: specs_electricity_renewable_hydrogen_plants
+- key: om_costs_combustion_hydrogen_plant
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  position: 2
+  slide_key: specs_electricity_renewable_hydrogen_plants
 - key: efficiency_energy_power_turbine_hydrogen
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
   related_node: energy_power_turbine_hydrogen
-  position: 1
+  position: 3
   slide_key: specs_electricity_renewable_hydrogen_plants
 - key: efficiency_energy_power_combined_cycle_hydrogen
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
   related_node: energy_power_combined_cycle_hydrogen
-  position: 2
+  position: 4
   slide_key: specs_electricity_renewable_hydrogen_plants
 
   

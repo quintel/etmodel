@@ -50,33 +50,39 @@ en:
       title: O&M costs gas plant
       short_description: ''
       description: "This slider sets the expected change in operational and maintenance
-        costs for a gas-fired power plant (excluding fuel). Costs are compared to
+        costs for all gas-fired power plants (excluding fuel costs). Costs are compared to
         current costs.<br/><br/>\r\nThe specification below are for a CCGT plant: "
     om_costs_combustion_oil_plant:
       title: O&M costs oil plant
       short_description: ''
       description: This slider sets the expected change in operational and maintenance
-        costs for an oil-fired power plant (excluding fuel). Costs are compared to
+        costs for an oil-fired power plant (excluding fuel costs). Costs are compared to
         current costs.
     om_costs_combustion_coal_plant:
       title: O&M costs coal plant
       short_description: ''
       description: "This slider sets the expected change in operational and maintenance
-        costs for a coal-fired power plant (excluding fuel). Costs are compared to
+        costs for a coal-fired power plant (excluding fuel costs). Costs are compared to
         current costs.<br/><br/>\r\nThe specifications below are for an ultra-supercritical
         coal power plant:"
     om_costs_combustion_biomass_plant:
       title: O&M costs biomass plant
       short_description: ''
       description: This slider sets the expected change in operational and maintenance
-        costs for a biomass-fired power plant (excluding fuel). Costs are compared
+        costs for biomass and biogas CHPs power plants (excluding fuel costs). Costs are compared
         to current costs. These costs are likely to follow developments for coal-fired
         power plants.
+    om_costs_combustion_hydrogen_plant:
+      title: O&M costs hydrogen plant
+      short_description: ''
+      description: "This slider sets the expected change in operational and maintenance
+        costs for a hydrogen-fired power plant (excluding fuel costs). Costs are compared to
+        current costs."
     om_costs_combustion_waste_incinerator:
       title: O&M costs waste incinerator
       short_description: ''
       description: This slider sets the expected change in operational and maintenance
-        costs for a waste incinerator that generates electricity (excluding fuel).
+        costs for a waste incinerator and waste CHP (excluding fuel costs).
         Costs are compared to current costs.
     costs_wacc_households:
       title: Households
@@ -288,25 +294,25 @@ en:
         This is a result of harsher conditions like stronger winds and salt water
         induced corrosion, for example."
     investment_costs_combustion_gas_plant:
-      title: Investment costs gas and hydrogen plants
+      title: Investment costs gas plants
       short_description: ''
-      description: "This slider sets the expected change in investment costs for a
-        gas-fired power plant. Costs are compared to current costs. \r\n<br/><br/>\r\nThe
+      description: "This slider sets the expected change in investment costs for
+        gas-fired power plants. Costs are compared to current costs. \r\n<br/><br/>\r\nThe
         past years, many companies around the world have announced plans to build
-        gas-fired power generation capacity.\r\n<br/><br/>\r\nThe specification below
-        are for a CCGT plant: "
+        gas-fired power generation capacity.\r\n<br/><br/>\r\nThe specifications below
+        are for a CCGT plant."
     investment_costs_combustion_oil_plant:
       title: Investment costs oil plant
       short_description: ''
-      description: "This slider sets the expected change in investment costs for a
-        power plant that burns oil or an oil-derivative like diesel. Costs are compared
+      description: "This slider sets the expected change in investment costs for
+        power plants that burns oil or an oil-derivative like diesel. Costs are compared
         to current costs.\r\n<br/>\r\nOil-fired plants are hardly being built anymore.
         Smaller diesel-fired generators are."
     investment_costs_combustion_coal_plant:
       title: Investment costs coal plant
       short_description: ''
-      description: "This slider sets the expected change in investment costs for a
-        coal-fired power plant. Costs are compared to current costs.\r\n<br/><br/>\r\nThe
+      description: "This slider sets the expected change in investment costs for
+        coal-fired power plants. Costs are compared to current costs.\r\n<br/><br/>\r\nThe
         past years, many companies around the world have announced plans to build
         coal-fired power generation capacity. Also, environmental rules increasingly
         require these plants to be outfitted with technology to reduce harmful emissions.\r\n<br/><br/>\r\nThe
@@ -314,14 +320,19 @@ en:
     investment_costs_combustion_biomass_plants:
       title: Investment costs biomass plant
       short_description: ''
-      description: This slider sets the expected change in investment costs for a
-        biomass-fired CHPs. Costs are compared to current costs. These costs will
-        be similar to investment costs for coal-fired power plants.
+      description: This slider sets the expected change in investment costs for
+        biomass and biogas CHPs. Costs are compared to current costs.
+    investment_costs_combustion_hydrogen_plant:
+      title: Investment costs hydrogen plants
+      short_description: ''
+      description: |
+        This slider sets the expected change in investment costs for 
+        hydrogen-fired power plants. Costs are compared to current costs.
     investment_costs_combustion_waste_incinerator:
       title: Investment costs waste incinerator
       short_description: ''
-      description: "This slider sets the expected change in investment costs for a
-        waste-incinerator plant. Costs are compared to current costs.\r\n<br/>\r\n<br/>\r\nWaste-incinerators
+      description: "This slider sets the expected change in investment costs for
+        waste-incinerator plants. Costs are compared to current costs.\r\n<br/>\r\n<br/>\r\nWaste-incinerators
         are often used to generate both heat and electricity."
     investment_costs_households_flexibility_p2p_electricity:
       title: Investment costs household batteries

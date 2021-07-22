@@ -1,25 +1,15 @@
 ---
-- key: costs_geothermal
-  general_sub_header: change
+- key: costs_heat_built_environment
+  position: 1
+  sidebar_item_key: costs_heat
+  alt_output_element_key: breakdown_of_total_cost_per_household
+  output_element_key: breakdown_of_total_cost_per_household
+- key: costs_heat_sources_other
   position: 2
   sidebar_item_key: costs_heat
   alt_output_element_key: overview_costs_of_electricity_production
   output_element_key: breakdown_of_total_costs
 - key: costs_heat_network
-  position: 1
-  sidebar_item_key: costs_heat
-  output_element_key: heat_infrastructure_annualised_costs
-- key: costs_residual_heat
-  position: 4
-  sidebar_item_key: costs_heat
-  output_element_key: breakdown_of_total_costs
-- key: costs_solar_thermal
-  general_sub_header: change
   position: 3
   sidebar_item_key: costs_heat
-  output_element_key: breakdown_of_total_costs
-- key: costs_heat_built_environment
-  position: 6
-  sidebar_item_key: costs_heat
-  alt_output_element_key: breakdown_of_total_cost_per_household
-  output_element_key: breakdown_of_total_cost_per_household
+  output_element_key: heat_infrastructure_annualised_costs

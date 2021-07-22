@@ -1,18 +1,4 @@
 ---
-- key: investment_costs_electric_heat_pumps
-  interface_group: costs
-  step_value: 1.0
-  unit: "%"
-  related_node: households_space_heater_heatpump_ground_water_electricity
-  position: 1
-  slide_key: costs_heat_built_environment
-- key: investment_costs_gas_heat_pumps
-  interface_group: costs
-  step_value: 1.0
-  unit: "%"
-  related_node: buildings_space_heater_heatpump_air_water_network_gas
-  position: 2
-  slide_key: costs_heat_built_environment
 - key: efficiency_households_space_heater_combined_network_gas
   interface_group: efficiency_households
   step_value: 1.0

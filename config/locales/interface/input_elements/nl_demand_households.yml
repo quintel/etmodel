@@ -447,7 +447,10 @@ nl:
       short_description: ''
       description: "Dit zijn gasgestookte HR-ketels. Als je klikt op
         \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan
-        100% is voor ruimteverwarming. Dit komt omdat deze ketels ook energie ontrekken uit de condensatiewarmte.
+        100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
+        onderwaardes / lower heating values (LHV) en deze HR-ketels ontrekken ook energie
+        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV, 
+        alleen in bovenwaarde / higher heating values (HHV).
         Combiketels maken ook warm water om bijvoorbeeld mee te douchen. Warmwaterproductie is
         iets minder efficiënt dan de productie van warmte voor het CV-systeem."
     households_heater_combined_hydrogen_share:
@@ -455,7 +458,10 @@ nl:
       short_description: ''
       description: "Dit zijn waterstofgestookte HR-ketels. Als je klikt op
         \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan
-        100% is voor ruimteverwarming. Dit komt omdat deze ketels ook energie ontrekken uit de condensatiewarmte.
+        100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
+        onderwaardes / lower heating values (LHV) en deze HR-ketels ontrekken ook energie
+        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV, 
+        alleen in bovenwaarde / higher heating values (HHV).
         Combiketels maken ook warm water om bijvoorbeeld mee te douchen. Warmwaterproductie is
         iets minder efficiënt dan de productie van warmte voor het CV-systeem."
     households_heater_heatpump_ground_water_electricity_share:

@@ -42,15 +42,22 @@ nl:
     buildings_space_heater_network_gas_share:
       title: HR combiketel (gas)
       short_description: ''
-      description: Deze ketels zijn gasgestookte HR-ketels. Dit zijn zeer efficiënte
-        systemen, maar ze stoten wel CO<sub>2</sub> uit.
+      description: Deze ketels zijn gasgestookte HR-ketels. Als je klikt op
+        "Technische parameters en kosten", zul je zien dat de efficiëntie hoger dan
+        100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
+        onderwaardes / lower heating values (LHV) en deze ketels ontrekken ook energie
+        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV, 
+        alleen in bovenwaarde / higher heating values (HHV).
     buildings_space_heater_combined_hydrogen_share:
       title: HR combiketel (waterstof)
       short_description: ''
       description: |
         Dit zijn waterstofgestookte HR-ketels. Als je klikt op
         "Technische parameters en kosten", zul je zien dat de efficiëntie hoger dan
-        100% is voor ruimteverwarming. Dit komt omdat deze ketels ook energie ontrekken uit de condensatiewarmte.
+        100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
+        onderwaardes / lower heating values (LHV) en deze ketels ontrekken ook energie
+        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV, 
+        alleen in bovenwaarde / higher heating values (HHV).
     buildings_space_heater_electricity_share:
       title: Elektrische kachel/bijstook
       short_description: ''

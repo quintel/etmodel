@@ -41,7 +41,7 @@
   related_node: energy_power_engine_network_gas
   position: 3
   slide_key: specs_electricity_gas_plants
-- key: efficiency_energy_chp_combined_cycle_network_gas
+- key: efficiency_energy_chp_combined_cycle_network_gas_electricity
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
@@ -55,7 +55,7 @@
   related_node: energy_chp_combined_cycle_network_gas_heat
   position: 7
   slide_key: specs_electricity_gas_plants
-- key: efficiency_energy_chp_local_engine_network_gas
+- key: efficiency_energy_chp_local_engine_network_gas_electricity
   interface_group: efficiency
   step_value: 1.0
   unit: "%"

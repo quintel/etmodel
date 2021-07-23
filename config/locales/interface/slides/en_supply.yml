@@ -151,9 +151,9 @@ en:
     supply_electricity_renewable_biomass_plants:
       title: Biomass plants
       short_description:
-      description: How much electricity and heat will be produced using biomass? 
-        Here you can set the installed electrical capacity for biomass plants. 
-        The heat that is produced during the process will be used as heat supply for district heating networks.    
+      description: How much electricity and heat will be produced using biomass?
+        Here you can set the installed electrical capacity for biomass plants.
+        The heat that is produced during the process will be used as heat supply for district heating networks.
     supply_electricity_renewable_geothermal:
       title: Geothermal
       short_description: ''
@@ -220,7 +220,7 @@ en:
     supply_heat_network_industry:
       title: Heat network sources
       short_description:
-      description: 'Below you can set the type of heat sources for the industrial heat network. 
+      description: 'Below you can set the type of heat sources for the industrial heat network.
         If the total production does not cover total demand, a gas heater switches on automatically
         to compensate the heat shortage.'
     supply_heat_combined_heat_power:
@@ -304,7 +304,7 @@ en:
         href=\"/scenario/supply/electricity_renewable/hydrogen-plants\" >electricity
         production</a></li>\r\n  <li><a href=\"/scenario/supply/heat/heat-sources\">district heating</a>
         for households, buildings and agriculture</li>\r\n
-        \ <li><a href=\"/scenario/demand/households/space-heating-and-hot-water\">hybrid heat pumps in households</a></li>\r\n 
+        \ <li><a href=\"/scenario/demand/households/space-heating-and-hot-water\">hybrid heat pumps in households</a></li>\r\n
         \ <li>heat production in <a href=\"/scenario/demand/industry/refineries\">industry</a>
         and <a href=\"/scenario/demand/agriculture/heat\">agriculture</a><br>\r\n
         \ <li><a href=\"/scenario/demand/industry/fertilizers\" >fertilizer production</a>
@@ -408,6 +408,10 @@ en:
       title: Woody biomass
       short_description:
       description:
+    supply_oil_mix:
+      title: Oil mix
+      short_description:
+      description: Something about the oil mix
     supply_transport_compressed_gas:
       title: Compressed gas for road transport
       short_description:
@@ -474,16 +478,15 @@ en:
       title: Future production of primary carriers
       short_description: ''
       description: |
-        Coal, oil, gas and uranium oxide are defined as ‘primary carriers’ of energy and are converted to other energy carriers such as electricity, heat or gasoline. 
+        Coal, oil, gas and uranium oxide are defined as ‘primary carriers’ of energy and are converted to other energy carriers such as electricity, heat or gasoline.
         These primary carriers are extracted from wells or mines and quantities might change
-         in the future. Using the sliders on this page, 
-        you can make assumptions about the future production of primary carriers within your region. The current slider settings indicate the present production of primary carriers. 
+         in the future. Using the sliders on this page,
+        you can make assumptions about the future production of primary carriers within your region. The current slider settings indicate the present production of primary carriers.
         </br></br>
-        The slider settings impact the import and export balance of the primary carriers in your scenario. 
+        The slider settings impact the import and export balance of the primary carriers in your scenario.
         The chart on the right shows the amount of imported energy in the future.
         Positive values indicate import en negative values export. The rightmost bar shows the total amount of imported fuels. You can compare these with the present energy imports by choosing
         the chart 'Present energy imports' under the 'see more charts' button.
         </br></br>
-        N.B. the ETM does not keep track of potential production capacity or the presence of 
+        N.B. the ETM does not keep track of potential production capacity or the presence of
         energy reserves in your area.
-        

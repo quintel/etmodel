@@ -742,7 +742,7 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of hydrogen plants (CCGT)."
     efficiency_households_space_heater_combined_network_gas:
-      title: Condensing combi boiler
+      title: Condensing combi boiler (gas)
       short_description: ''
       description: "This slider sets the future efficiency for space heating of condensing combi boilers in houses."
     efficiency_households_space_heater_heatpump_ground_water_electricity:
@@ -760,11 +760,11 @@ en:
     efficiency_households_space_heater_network_gas:
       title: Gas-fired heater
       short_description: ''
-      description: "This slider sets the future efficiency for space heating of gas-fired heaters in houses."
+      description: "This slider sets the future efficiency for space heating of non-condensing gas-fired heaters in houses."
     efficiency_buildings_space_heater_network_gas:
-      title: Gas-fired heater
+      title: Condensing combi boiler (gas)
       short_description: ''
-      description: "This slider sets the future efficiency of gas-fired heaters in buildings."
+      description: "This slider sets the future efficiency of condensing gas-fired boilers in buildings."
     efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity:
       title: Heat pump (ground)
       short_description: ''

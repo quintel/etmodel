@@ -88,20 +88,19 @@
   section: supply
   tab_key: supply
   position: 1
-- key: merit_order
-  section: supply
-  tab_key: supply
-  position: 1
-  dependent_on: has_merit_order
-  parent_key: electricity
 - key: electricity_renewable
   section: supply
   tab_key: supply
   position: 2
-- key: heat
+- key: merit_order
   section: supply
   tab_key: supply
   position: 3
+  dependent_on: has_merit_order
+- key: heat
+  section: supply
+  tab_key: supply
+  position: 4
 - key: hydrogen
   section: supply
   tab_key: supply

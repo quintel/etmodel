@@ -163,11 +163,6 @@ nl:
         scherm ('Doelen'), kun je zien hoeveel van je beleidsdoelen gehaald worden
         met de huidige samenstelling van de elektriciteitsproductie. Als je met je
         cursor hiernaartoe gaat, zie je een tabel met meer details."
-    electricity_import_costs:
-      short_title: Geïmporteerde elektriciteit
-      title: Kosten van geïmporteerde elektriciteit
-      short_description: ''
-      description: ''
     electricity_import_export:
       short_title: Import/Export
       title: Import en export van elektriciteit
@@ -229,6 +224,16 @@ nl:
         geeft een indicatie van hoe de kosten van een aantal conversietechnologieën
         zich tot elkaar verhouden en wanneer het economisch interessant zou kunnnen
         worden om conversie-eenheden te bouwen."
+    specs_electricity:
+      short_title: Elektriciteit
+      title: Elektriciteit
+      short_description: ''
+      description: 
+    specs_renewable_electricity:
+      short_title: Hernieuwbare elektriciteit
+      title: Hernieuwbare elektriciteit
+      short_description: ''
+      description: 
     flexibility_conversion:
       short_title: Conversie
       title: Conversie elektriciteit
@@ -335,7 +340,7 @@ nl:
         grafieken zie je dan hoe alles verandert.\r\n<br/><br/>\r\nDe industriesector
         is onderverdeeld in 10 subsectoren en warmte-kracht koppeling. Je keuzes over
         het energiegebruik in de industrie kun je maken in die subsectoren. Alleen
-        de warmte productie door WKKs moet worden ingesteld voor de industrie als
+        de warmteproductie door WKKs moet worden ingesteld voor de industrie als
         geheel.\r\n<br/><br/>\r\nOmdat industrie vaak energie-intensief is, is het
         de enige sector van de economie die stelselmatig efficiënter is geworden gedurende
         de afgelopen twee decennia. Energie is namelijk steeds duurder geworden. In
@@ -364,18 +369,6 @@ nl:
         scenario. Hiervoor vergelijkt men voor iedere beschikbare technologie de som
         van alle draaikosten: brandstof-, CO<sub>2</sub>-, en variabele onderhouds-
         en beheerkosten.'
-    nuclear:
-      short_title: Kerncentrales
-      title: Kosten kerncentrales
-      short_description: Het is zinvol om bijvoorbeeld kernenergie op een feitelijke
-        - en neutrale - basis met andere technologieën te vergelijken.
-      description: "Hoe zullen de kosten van kernenergie gaan veranderen in de toekomst?\r\n<br/><br/>\r\nKernenergie
-        zal waarschijnlijk altijd controversieel blijven. Een feitelijke - en neutrale
-        - vergelijking met andere technologieën kan aan het debat bijdragen. \r\n<br/><br/>\r\nHier
-        vind je een overzicht van allerlei gangbare soorten elektriciteitsproductie.
-        In de rechter grafiek worden de productiekosten vergeleken. Van elk type gebruikt
-        het model de meest moderne, commercieel toegepaste technologie.\r\n<br/><br/>\r\nHet
-        model houdt voor de kosten rekening met de levensduren van de centrales."
     other:
       short_title: Overig
       title: Energievraag Overige Gebruikers
@@ -436,7 +429,7 @@ nl:
         aannames kun je hier invullen. In de grafieken zie je dan hoe alles verandert.
         \r\n<br/>\r\n<br/>\r\nBijna alle vormen van transport zijn in volume toegenomen
         de afgelopen decennia.\r\n\r\n"
-    transport_costs:
+    specs_transport:
       short_title: Transport
       title: Transport
       short_description: Hoe duur zal transport zijn in de toekomst? Zullen investeringskosten
@@ -477,32 +470,3 @@ nl:
       title: Gewogen kapitaalskosten (WACC)
       short_description: ''
       description: ''
-    water:
-      short_title: Waterkracht
-      title: Kosten waterkracht
-      short_description: "Hoe gaan de kosten van waterkracht veranderen in de toekomst?\r\nWaterkracht
-        is een technologie die al redelijk ver is uitontwikkeld, maar doordat het
-        anders gaat regenen zijn centrales niet altijd verzekerd van water."
-      description: "Hoe gaan de kosten van waterkracht veranderen in de toekomst?\r\n<br/><br/>\r\nWaterkracht
-        is een technologie die al redelijk ver is uitontwikkeld, maar doordat het
-        anders gaat regenen zijn centrales niet altijd verzekerd van water. \r\n<br/><br/>\r\nHier
-        vind je een overzicht van alle soorten elektriciteitsproductie in het model.
-        Van elk type is steeds de meest moderne, commercieel toegepaste technologie
-        genomen.\r\n<br/>\r\n<br/>\r\nHet model neemt voor de kosten de levensduur
-        van de centrales mee en hoeveel stroom met water kan worden opgewekt in jouw
-        land. De grafiek rechts vergelijkt de kosten van stroomopwek."
-    wind:
-      short_title: Windmolens
-      title: Kosten windstroom
-      short_description: 'Hoe zullen de kosten van windstroom veranderen in de toekomst?
-        Wind op land en wind op zee zijn qua techniek behoorlijk anders, en zouden
-        zich best eens anders kunnen ontwikkelen. '
-      description: "Hoe zullen de kosten van windstroom veranderen in de toekomst?
-        \r\n<br/><br/>\r\nWind op land en wind op zee zijn qua techniek behoorlijk
-        anders, en zouden zich best eens anders kunnen ontwikkelen. Om deze kosten
-        te kunnen vergelijken met andere technologieën, kun je hier je aannames invullen.\r\n<br/><br/>\r\nHier
-        vind je een overzicht van alle soorten elektriciteitsproductie in het model.
-        Van elk type is steeds de meest moderne, commercieel toegepaste technologie
-        genomen. \r\n<br/>\r\n<br/>\r\nHet model neemt voor de kosten de levensduur
-        van de windmolens mee en hoeveel windenergie er in jouw land beschikbaar is.
-        De grafiek rechts vergelijkt de kosten van stroomopwek."

@@ -42,25 +42,15 @@ en:
       title: Fossil fuels
       short_description: test
       description: Nobody can predict future fuel prices. This makes electricity costs
-        hard to predict. What do you think these fuels will cost in the future?
-    costs_combustion_investment:
-      title: Investment
-      short_description: ''
-      description: 'How will the investment costs of these plants change in the future?
-        Many factors are influential: steel prices, environmental laws, technological
-        breakthroughs, etc. '
-    costs_combustion_operational_and_maintenance:
-      title: Operations and maintenance
-      short_description: ''
-      description: The costs to run power plants may be different in the future. How
-        do you think these could change?
+        hard to predict. What do you think these fuels will cost in the future?        
     costs_flexibility_conversion:
       title: Investment costs conversion electricity
       short_description:
-      description: "(Excess) electricity can be converted to other energy carriers,
+      description: |
+        (Excess) electricity can be converted to other energy carriers,
         like hydrogen or heat. Below, you can specify how much the investment costs
-        of these conversion devices (like boilers and electrolysers) will change in
-        the future."
+        for power-to-heat boilers. The investment costs for power-to-gas can be adjusted
+        on the <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Hydrogen production</a> page.
     costs_flexibility_storage:
       title: Investment costs storage electricity
       short_description:
@@ -73,24 +63,11 @@ en:
       description: What do you think the costs for heat network infrastructure will
         be in the future? See <a href="https://docs.energytransitionmodel.com/main/heat-infrastructure-costs"
         target ="_blank">our documentation</a> for information about the cost calculation.
-    costs_heatpumps:
-      title: Heat pumps
+    costs_hydrogen_production:
+      title: Hydrogen production
       short_description:
-      description: Below you can change the investment costs of heat pumps (both collective
-        and individual systems) and the costs for heat buffers in individual households.
-    costs_solar_thermal:
-      title: Solar thermal
-      short_description:
-      description: Solar thermal energy is an interesting sustainable heat source.
-        Both individual and collective systems are available on the market. How will
-        the investment costs and operation costs change for this technology in the
-        future?
-    costs_geothermal:
-      title: Geothermal
-      short_description: ''
-      description: Geothermal energy is getting quite a bit of attention these days.
-        How will the investment costs and operation costs change for this technology
-        in the future?
+      description: What do you think the costs and efficiency of hydrogen production
+        with elektrolysers will be in the future?
     costs_hydrogen_import:
       title: Hydrogen import
       short_description:
@@ -112,7 +89,7 @@ en:
       short_description:
       description: ''
     costs_imported_electricity:
-      title: Costs of imported electricity
+      title: Imported electricity
       short_description:
       description: |
         The pricing of imported electricity has been moved to a new location:
@@ -125,58 +102,7 @@ en:
       title: Nuclear fuels
       short_description: ''
       description: How much will nuclear fuel cost compared to today's prices? On
-        the right you can see that nuclear power is not so sensitive to uranium prices.
-    costs_nuclear_investment:
-      title: Investment
-      short_description: ''
-      description: 'How will the investment costs for nuclear plants change in the
-        future? Many factors are influential: steel prices, environmental laws, technological
-        breakthroughs, etc. '
-    costs_nuclear_operational_and_maintenance:
-      title: Operations and maintenance
-      short_description: ''
-      description: The costs to run nuclear plants may be different in the future.
-        How do you think these could change?
-    costs_residual_heat:
-      title: Residual heat
-      short_description:
-      description: What would the costs of residual heat from industry and imported
-        heat be in the future? See <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry"
-        target ="_blank">our documentation</a> for information about industrial residual
-        heat.
-    costs_solar_investment:
-      title: Investment
-      short_description: ''
-      description: How will investment costs for realizing solar power in your own
-        country change in the future? Costs are declining rapidly, while the efficiency
-        of solar panels is improving.
-    technology_solar_panels:
-      title: Solar PV technology
-      description: "How efficient will solar PV be in the future? The slider below allows you
-        to make assumptions about this. A higher efficiency means that a solar panel produces
-        more electricity and has a higher (peak) capacity. Click on '?' for more information."
-    costs_water_investment:
-      title: Investment
-      short_description: ''
-      description: How will the investment costs of water power change in the future?
-        Will there be room for big dams in the world? Will environmental laws allow
-        for them?
-    costs_water_operational_and_maintenance:
-      title: Operations and maintenance
-      short_description: ''
-      description: 'The costs to run hydro-electric dams are a minor part of the total.
-        How do you think these could change? '
-    costs_wind_investment:
-      title: Investment
-      short_description: ''
-      description: 'How will the investment costs of wind turbines change in the future?
-        Many factors are influential: steel prices, environmental laws, technological
-        breakthroughs, etc. '
-    costs_wind_operational_and_maintenance:
-      title: Operations and maintenance
-      short_description: ''
-      description: The costs to run wind power may change in the future, as the technology
-        develops. How do you think these could change?
+        the right you can see that nuclear power is not so sensitive to uranium prices.    
     costs_wacc:
       title: Weighted average cost of capital (WACC)
       short_description:
@@ -185,3 +111,61 @@ en:
         does not take inflation into account. The sources used to determine the current
         WACC percentages can be found in our <a href="https://docs.energytransitionmodel.com/main/cost-wacc"
         target ="_blank">documentation</a>.'
+    specs_electricity_renewable_wind_turbines:
+      title: Wind turbines
+      short_description:
+      description: 'How will the costs and efficiencies of wind turbines change in the future? 
+      Many factors are influential: steel prices, environmental laws, technological breakthroughs, etc.'
+    specs_electricity_renewable_hydro_electric:
+      title: Hydroelectric power
+      short_description:
+      description: 'How will the costs and efficiencies of hydroelectric power change in the future?'
+    specs_electricity_renewable_solar_power:
+      title: Solar power
+      short_description:
+      description: |
+        How will the costs and efficiencies of solar power change in the future?
+        The sliders below allows you to make assumptions about this. A higher efficiency means 
+        that a solar panel produces more electricity and has a higher (peak) capacity. Click on '?' for more information.
+    specs_electricity_renewable_waste_power:
+      title: Waste power
+      short_description:
+      description: 'How will the costs and efficiencies of waste power change in the future?'
+    specs_electricity_renewable_hydrogen_plants:
+      title: Hydrogen plants
+      short_description:
+      description: 'How will the costs and efficiencies of hydrogen plants change in the future?'
+    specs_electricity_renewable_biomass_plants:
+      title: Biomass plants
+      short_description:
+      description: 'How will the costs and efficiencies of biomass plants change in the future?'
+    specs_electricity_coal_plants:
+      title: Coal plants
+      short_description:
+      description: 'How will the costs and efficiencies of coal plants change in the future?'
+    specs_electricity_gas_plants:
+      title: Gas plants
+      short_description:
+      description: 'How will the costs and efficiencies of gas plants change in the future?'
+    specs_electricity_oil_plants:
+      title: Oil plants
+      short_description:
+      description: 'How will the costs and efficiencies of oil plants change in the future?'
+    specs_electricity_nuclear_plant:
+      title: Nuclear plants
+      short_description:
+      description: 'How will the costs and efficiencies of nuclear plants change in the future?'
+    costs_heat_built_environment:
+      title: Heating in houses and buildings
+      short_description:
+      description: 'How will the costs and efficiencies of heating technologies in houses and buildings change in the future?'
+    costs_heat_sources_other:
+      title: Other heating sources
+      short_description:
+      description: 'How will the costs of other heating sources change in the future?'
+    specs_transport_efficiency_improvement:
+      title: Efficiencies
+      short_description: ''
+      description: Transport vehicles tend to become more energy efficient over time,
+        but by how much? The sliders below allow you to indicate the efficiency improvement
+        per vehicle type in percentage per year.

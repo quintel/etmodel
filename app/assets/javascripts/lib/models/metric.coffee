@@ -39,6 +39,8 @@ translate_node_details_unit = (unit) ->
 format_node_detail_value = (value, unit) ->
   num = Number.parseFloat(value)
 
+  console.log(value, unit)
+
   if !isNaN(num)
     if unit == 'COP'
       formatted = num.toFixed(1)

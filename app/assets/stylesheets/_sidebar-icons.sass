@@ -23,36 +23,28 @@
 
   // Costs
 
+  #specs_electricity
+    @include sidebar-icon(electricity)
+  #specs_renewable_electricity
+    @include sidebar-icon(electricity_renewable)
+  #merit_order
+    @include sidebar-icon(merit_order)
   #fuel_costs
     @include sidebar-icon(fuel_costs)
-  #transport_costs
+  #specs_transport
     @include sidebar-icon(transport)
-  #combustion
-    @include sidebar-icon(combustion)
-  #nuclear
-    @include sidebar-icon(nuclear)
-  #wind
-    @include sidebar-icon(wind)
-  #water
-    @include sidebar-icon(water)
-  #solar
-    @include sidebar-icon(solar)
   #co2
     @include sidebar-icon(ccus)
   #infrastructure
     @include sidebar-icon(infrastructure)
-  #earth
-    @include sidebar-icon(earth)
-  #merit_order
-    @include sidebar-icon(merit_order)
   #heating_technologies
     @include sidebar-icon(renew_heat)
-  #electricity_import_costs
-    @include sidebar-icon(electricity)
   #costs_hydrogen
     @include sidebar-icon(hydrogen)
   #wacc
     @include sidebar-icon(wacc)
+  #costs_flexibility
+    @include sidebar-icon(excess_electricity)
 
   // Overview
 
@@ -91,7 +83,7 @@
 
   #flexibility_overview
     @include sidebar-icon(excess_electricity)
-  #excess_electricity, #costs_flexibility
+  #excess_electricity
     @include sidebar-icon(electricity)
   #flexibility_net_load
     @include sidebar-icon(net_load)

@@ -37,11 +37,14 @@ en:
         need cooling for more hours per year than before everyone started using computers,
         copiers, faxes and printers. "
     buildings_space_heater_network_gas_share:
-      title: Gas-fired heater
+      title: Condensing combi boiler (gas)
       short_description: ''
       description: These heaters are part of a gas-fired high efficiency central heating
-        system running on natural gas. These systems are quite energy efficient, but
-        emit CO<sub>2</sub>.
+        system running on natural gas. When you click on "Technical and financial properties", then you will see that the
+        efficiency is above 100% for space heating. This is the case because all energy in the
+        ETM is given in lower heating values (LHV) and this boiler also
+        retrieves heat from condensation. Condensation heat is not included in LHV, only in higher
+        heating values (HHV). 
     buildings_space_heater_electricity_share:
       title: Electric heater
       short_description: ''
@@ -54,7 +57,18 @@ en:
         Especially if they are added to electric heat pumps as extra heating capacity
         during cold days, impact on the local electricity grid can be extreme. If
         you want to see what will happen to the grid you can set the electric heater
-        slider to the same percentage as electric heat pumps (ground). "
+        slider to the same percentage as electric heat pumps (ground)."
+    buildings_space_heater_combined_hydrogen_share:
+      title: Condensing combi boiler (hydrogen)
+      short_description: ''
+      description: "This is a condensing hydrogen-fired heater.
+        When you click on \"Technical and financial properties\", then you will see that the
+        efficiency is above 100% for space heating. This is the case because all energy in the
+        ETM is given in lower heating values (LHV) and this boiler also
+        retrieves heat from condensation. Condensation heat is not included in LHV, only in higher
+        heating values (HHV).
+        These boilers also produce hot water for showering and other uses. Hot water production
+        is slightly less efficient than producing heat for the central heating system."
     buildings_space_heater_heatpump_air_water_network_gas_share:
       title: Gas-fired heat pump
       short_description: ''

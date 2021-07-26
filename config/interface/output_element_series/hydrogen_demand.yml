@@ -107,6 +107,18 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: households_final_demand_hydrogen_hydrogen_demand
+- label: buildings_final_demand_hydrogen
+  color: "#fabd16"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: buildings_final_demand_hydrogen_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: buildings_final_demand_hydrogen_hydrogen_demand
 - label: energy_power_combined_cycle_hydrogen
   color: "#FF6B6B"
   order_by: 11

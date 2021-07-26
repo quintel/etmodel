@@ -1,0 +1,32 @@
+---
+- key: investment_costs_water_river
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_power_hydro_river
+  position: 1
+  slide_key: specs_electricity_renewable_hydro_electric
+- key: investment_costs_water_mountains
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_power_hydro_mountain
+  position: 2
+  dependent_on: has_mountains
+  slide_key: specs_electricity_renewable_hydro_electric
+- key: om_costs_water_river
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_power_hydro_river
+  position: 1
+  slide_key: specs_electricity_renewable_hydro_electric
+- key: om_costs_water_mountains
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_power_hydro_mountain
+  position: 2
+  dependent_on: has_mountains
+  slide_key: specs_electricity_renewable_hydro_electric
+  

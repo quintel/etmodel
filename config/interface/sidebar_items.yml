@@ -15,6 +15,18 @@
   percentage_bar_query: share_of_transport_in_final_demand
   tab_key: demand
   position: 3
+- key: transport_international_transport
+  tab_key: demand
+  position: 3
+  parent_key: transport
+- key: transport_passenger_transport
+  tab_key: demand
+  position: 1
+  parent_key: transport
+- key: transport_freight_transport
+  tab_key: demand
+  position: 2
+  parent_key: transport
 - key: industry
   section: demand
   percentage_bar_query: share_of_industry_and_energy_in_final_demand
@@ -33,30 +45,45 @@
   tab_key: demand
   position: 6
   dependent_on: has_other
-- key: combustion
+- key: specs_electricity
+  section: costs
+  tab_key: costs
+  position: 1
+- key: specs_renewable_electricity
+  section: costs
+  tab_key: costs
+  position: 2
+- key: infrastructure
+  section: costs
+  tab_key: costs
+  position: 3
+  dependent_on: use_network_calculations
+- key: costs_heat
   section: costs
   tab_key: costs
   position: 4
-- key: nuclear
-  section: costs
-  tab_key: costs
-  position: 4
-- key: wind
-  section: costs
+- key: costs_hydrogen
   tab_key: costs
   position: 5
-- key: water
+- key: specs_transport
   section: costs
   tab_key: costs
   position: 6
-- key: solar
+- key: fuel_costs
   section: costs
   tab_key: costs
   position: 7
+- key: costs_flexibility
+  section: costs
+  tab_key: costs
+  position: 8
 - key: co2
   section: costs
   tab_key: costs
   position: 9
+- key: wacc
+  tab_key: costs
+  position: 10
 - key: electricity
   section: supply
   tab_key: supply
@@ -65,36 +92,35 @@
   section: supply
   tab_key: supply
   position: 2
-- key: heat
+- key: merit_order
   section: supply
   tab_key: supply
   position: 3
+  dependent_on: has_merit_order
+- key: heat
+  section: supply
+  tab_key: supply
+  position: 4
+- key: hydrogen
+  section: supply
+  tab_key: supply
+  position: 5
 - key: transport_fuels
   section: supply
   tab_key: supply
   position: 7
-- key: infrastructure
-  section: costs
-  tab_key: costs
+- key: biomass
+  section: supply
+  tab_key: supply
   position: 8
-  dependent_on: use_network_calculations
+- key: fuel_production
+  section: supply
+  tab_key: supply
+  position: 11
 - key: security_of_supply
   section: flexibility
   tab_key: flexibility
   position: 10
-- key: merit_order
-  section: flexibility
-  tab_key: costs
-  position: 1
-  dependent_on: has_merit_order
-- key: costs_heat
-  section: costs
-  tab_key: costs
-  position: 3
-- key: fuel_costs
-  section: costs
-  tab_key: costs
-  position: 1
 - key: flexibility_overview
   section: flexibility
   tab_key: flexibility
@@ -108,26 +134,6 @@
   section: flexibility
   tab_key: flexibility
   position: 4
-- key: fuel_production
-  section: supply
-  tab_key: supply
-  position: 11
-- key: costs_flexibility
-  section: costs
-  tab_key: costs
-  position: 7
-- key: hydrogen
-  section: supply
-  tab_key: supply
-  position: 5
-- key: transport_costs
-  section: costs
-  tab_key: costs
-  position: 4
-- key: biomass
-  section: supply
-  tab_key: supply
-  position: 8
 - key: data_export
   section: data
   tab_key: data
@@ -136,18 +142,6 @@
   section: data
   tab_key: data
   position: 2
-- key: transport_international_transport
-  tab_key: demand
-  position: 3
-  parent_key: transport
-- key: transport_passenger_transport
-  tab_key: demand
-  position: 1
-  parent_key: transport
-- key: transport_freight_transport
-  tab_key: demand
-  position: 2
-  parent_key: transport
 - key: flexibility_storage
   tab_key: flexibility
   position: 1
@@ -159,25 +153,16 @@
 - key: flexibility_net_load
   tab_key: flexibility
   position: 3
-- key: electricity_import_costs
-  tab_key: costs
-  position: 5
 - key: data_visuals
   section: data
   tab_key: data
   position: 1
-- key: costs_hydrogen
-  tab_key: costs
-  position: 5
 - key: introduction
   tab_key: overview
   position: 1
 - key: flexibility_weather
   tab_key: flexibility
   position: 4
-- key: wacc
-  tab_key: costs
-  position: 16
 - key: heat_merit
   tab_key: supply
   position: 1
@@ -195,4 +180,3 @@
   section: emissions
   tab_key: emissions
   position: 2
-

@@ -439,12 +439,24 @@ en:
         that oil tanks tend to start leaking after a few decades and this can cause
         significant pollution of soil and drinking water.
     households_heater_combined_network_gas_share:
-      title: Condensing combi boiler
+      title: Condensing combi boiler (gas)
       short_description: ''
       description: "This is a condensing gas-fired heater.
         When you click on \"Technical and financial properties\", then you will see that the
-        efficiency is above 100% for space heating. This is the case because these heaters also 
-        retrieve heat from condensation. These boilers also produce hot water for showering and other uses. Hot water production
+        efficiency is above 100% for space heating. This is the case because all energy in 
+        the ETM is given in lower heating values (LHV) and this boiler also retrieves 
+        heat from condensation. Condensation heat is not included in LHV, only in 
+        higher heating values (HHV). These boilers also produce hot water for showering and other uses. Hot water production
+        is slightly less efficient than producing heat for the central heating system."
+    households_heater_combined_hydrogen_share:
+      title: Condensing combi boiler (hydrogen)
+      short_description: ''
+      description: "This is a condensing hydrogen-fired heater.
+        When you click on \"Technical and financial properties\", then you will see that the
+        efficiency is above 100% for space heating. This is the case because all energy in 
+        the ETM is given in lower heating values (LHV) and this boiler also retrieves heat 
+        from condensation. Condensation heat is not included in LHV, only in higher 
+        heating values (HHV). These boilers also produce hot water for showering and other uses. Hot water production
         is slightly less efficient than producing heat for the central heating system."
     households_heater_heatpump_ground_water_electricity_share:
       title: Heat pump (ground)
@@ -460,9 +472,9 @@ en:
         heat from the ground. Gas-fired heat pumps are more often used to draw their
         heat from the air.\r\n<br/>"
     households_heater_wood_pellets_share:
-      title: Wood pellet stove
+      title: Wood pellet boiler
       short_description: ''
-      description: "This is a wood pellet-fired stove. These are quite efficient and
+      description: "This is a wood pellet-fired boiler. These are quite efficient and
         fully automated in that they draw their fuel from an attached silo. \r\n<br/><br/>\r\nIt
         is assumed the biomass used has been produced sustainably. Still, transporting
         biomass consumes fuel and the smaller the scale at which it is used, the less

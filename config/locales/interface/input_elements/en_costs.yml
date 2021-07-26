@@ -2,7 +2,7 @@
 en:
   input_elements:
     om_costs_nuclear_nuclear_plant:
-      title: Nuclear plant
+      title: O&M costs nuclear plants
       short_description: ''
       description: "This slider sets the height of your assumed operational and maintenance
         costs for a nuclear power plant. <br/>\r\n<br/>Operational and maintenance
@@ -34,49 +34,55 @@ en:
         solid fuels. In: Biofuels (8), pp.725-745 <br />\r\n2. CE Delft (2018). Waterstofroutes
         Nederland\r\n"
     investment_costs_wind_onshore:
-      title: Onshore
+      title: Investment costs onshore
       short_description: ''
       description: "This slider sets the height of the assumed investment costs for
         onshore wind-generated power. Costs are compared to current costs.\r\n<br/><br/>\r\nThe
         specifications below are for an inland wind turbine:"
     investment_costs_wind_offshore:
-      title: Offshore
+      title: Investment costs offshore
       short_description: ''
       description: "This slider sets the height of the assumed investment costs for
         offshore wind-generated power. Costs are compared to current costs.\r\n<br/>\r\nInvestment
         costs for offshore wind turbines are essentially different from those on land.
         This is a result of the need to rent boats and crew to build at sea.\r\n"
     om_costs_combustion_gas_plant:
-      title: Gas plant
+      title: O&M costs gas plant
       short_description: ''
       description: "This slider sets the expected change in operational and maintenance
-        costs for a gas-fired power plant (excluding fuel). Costs are compared to
+        costs for all gas-fired power plants (excluding fuel costs). Costs are compared to
         current costs.<br/><br/>\r\nThe specification below are for a CCGT plant: "
     om_costs_combustion_oil_plant:
-      title: Oil plant
+      title: O&M costs oil plants
       short_description: ''
       description: This slider sets the expected change in operational and maintenance
-        costs for an oil-fired power plant (excluding fuel). Costs are compared to
+        costs for an oil-fired power plant (excluding fuel costs). Costs are compared to
         current costs.
     om_costs_combustion_coal_plant:
-      title: Coal plant
+      title: O&M costs coal plant
       short_description: ''
       description: "This slider sets the expected change in operational and maintenance
-        costs for a coal-fired power plant (excluding fuel). Costs are compared to
+        costs for a coal-fired power plant (excluding fuel costs). Costs are compared to
         current costs.<br/><br/>\r\nThe specifications below are for an ultra-supercritical
         coal power plant:"
     om_costs_combustion_biomass_plant:
-      title: Biomass plant
+      title: O&M costs biomass plant
       short_description: ''
       description: This slider sets the expected change in operational and maintenance
-        costs for a biomass-fired power plant (excluding fuel). Costs are compared
+        costs for biomass and biogas CHPs power plants (excluding fuel costs). Costs are compared
         to current costs. These costs are likely to follow developments for coal-fired
         power plants.
+    om_costs_combustion_hydrogen_plant:
+      title: O&M costs hydrogen plant
+      short_description: ''
+      description: "This slider sets the expected change in operational and maintenance
+        costs for a hydrogen-fired power plant (excluding fuel costs). Costs are compared to
+        current costs."
     om_costs_combustion_waste_incinerator:
-      title: Waste incinerator
+      title: O&M costs waste incinerator
       short_description: ''
       description: This slider sets the expected change in operational and maintenance
-        costs for a waste incinerator that generates electricity (excluding fuel).
+        costs for a waste incinerator and waste CHP (excluding fuel costs).
         Costs are compared to current costs.
     costs_wacc_households:
       title: Households
@@ -106,7 +112,7 @@ en:
         plants, carbon capture and storage (CCS), supercritical water gasification
         (SCWG) and underground pumped hydro storage.'
     investment_costs_flexibility_p2h_electricity:
-      title: Power-to-heat electric boilers
+      title: Investment costs power-to-heat electric boilers
       short_description:
       description: Power-to-heat plants convert excess electricity to heat. In the
         ETM power-to-heat can be used in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households">households</a>
@@ -114,7 +120,7 @@ en:
         This slider determines the future change in investment costs of electric boilers.<br
         />
     investment_costs_hydrogen_electrolysis:
-      title: Power-to-gas
+      title: Investment costs power-to-gas
       short_description:
       description: Power-to-gas plants use electricity to produce gas (like hydrogen
         or methane). This is called electrolysis. This slider determines the change
@@ -244,7 +250,7 @@ en:
         therefore smaller margin of uncertainty.
         \r\n<br/><br/>\r\n<img src=\"/assets/popups/img_heat_storage_costs.png\" style=\"width:410px;height:285px\"/>"
     investment_costs_nuclear_nuclear_plant:
-      title: Nuclear plant
+      title: Investment costs nuclear plants
       short_description: ''
       description: "This slider sets the height of your assumed investment costs for
         a nuclear power plant, including the costs for decommissioning the plant at
@@ -274,13 +280,13 @@ en:
         enough temperature tends to be found at depths greater than 3 km in most non-volcanic
         countries."
     om_costs_wind_onshore:
-      title: Onshore
+      title: O&M costs onshore
       short_description: ''
       description: "This slider sets the height of the assumed operational and maintenance
         costs for onshore wind-generated power. Costs are compared to current costs.<br/><br/>\r\nThe
         specifications below are for an inland wind turbine:"
     om_costs_wind_offshore:
-      title: Offshore
+      title: O&M costs offshore
       short_description: ''
       description: "This slider sets the height of the assumed operational and maintenance
         costs for offshore wind-generated power. Costs are compared to current costs.\r\n<br/>\r\nMaintenance
@@ -288,43 +294,48 @@ en:
         This is a result of harsher conditions like stronger winds and salt water
         induced corrosion, for example."
     investment_costs_combustion_gas_plant:
-      title: Gas and hydrogen plants
+      title: Investment costs gas plants
       short_description: ''
-      description: "This slider sets the expected change in investment costs for a
-        gas-fired power plant. Costs are compared to current costs. \r\n<br/><br/>\r\nThe
+      description: "This slider sets the expected change in investment costs for
+        gas-fired power plants. Costs are compared to current costs. \r\n<br/><br/>\r\nThe
         past years, many companies around the world have announced plans to build
-        gas-fired power generation capacity.\r\n<br/><br/>\r\nThe specification below
-        are for a CCGT plant: "
+        gas-fired power generation capacity.\r\n<br/><br/>\r\nThe specifications below
+        are for a CCGT plant."
     investment_costs_combustion_oil_plant:
-      title: Oil plant
+      title: Investment costs oil plants
       short_description: ''
-      description: "This slider sets the expected change in investment costs for a
-        power plant that burns oil or an oil-derivative like diesel. Costs are compared
+      description: "This slider sets the expected change in investment costs for
+        power plants that burns oil or an oil-derivative like diesel. Costs are compared
         to current costs.\r\n<br/>\r\nOil-fired plants are hardly being built anymore.
         Smaller diesel-fired generators are."
     investment_costs_combustion_coal_plant:
-      title: Coal plant
+      title: Investment costs coal plant
       short_description: ''
-      description: "This slider sets the expected change in investment costs for a
-        coal-fired power plant. Costs are compared to current costs.\r\n<br/><br/>\r\nThe
+      description: "This slider sets the expected change in investment costs for
+        coal-fired power plants. Costs are compared to current costs.\r\n<br/><br/>\r\nThe
         past years, many companies around the world have announced plans to build
         coal-fired power generation capacity. Also, environmental rules increasingly
         require these plants to be outfitted with technology to reduce harmful emissions.\r\n<br/><br/>\r\nThe
         specifications below are for an ultra-supercritical coal power plant:"
     investment_costs_combustion_biomass_plants:
-      title: Biomass plant
+      title: Investment costs biomass plant
       short_description: ''
-      description: This slider sets the expected change in investment costs for a
-        biomass-fired CHPs. Costs are compared to current costs. These costs will
-        be similar to investment costs for coal-fired power plants.
+      description: This slider sets the expected change in investment costs for
+        biomass and biogas CHPs. Costs are compared to current costs.
+    investment_costs_combustion_hydrogen_plant:
+      title: Investment costs hydrogen plants
+      short_description: ''
+      description: |
+        This slider sets the expected change in investment costs for 
+        hydrogen-fired power plants. Costs are compared to current costs.
     investment_costs_combustion_waste_incinerator:
-      title: Waste incinerator
+      title: Investment costs waste incinerator
       short_description: ''
-      description: "This slider sets the expected change in investment costs for a
-        waste-incinerator plant. Costs are compared to current costs.\r\n<br/>\r\n<br/>\r\nWaste-incinerators
+      description: "This slider sets the expected change in investment costs for
+        waste-incinerator plants. Costs are compared to current costs.\r\n<br/>\r\n<br/>\r\nWaste-incinerators
         are often used to generate both heat and electricity."
     investment_costs_households_flexibility_p2p_electricity:
-      title: Household batteries
+      title: Investment costs household batteries
       short_description:
       description: "Household batteries are often mentioned as a convenient way to
         store excess electricity such that you can use it at a later time. With <a
@@ -333,30 +344,30 @@ en:
         such a battery and with the above slider you can presumably set your assumption
         for the future change in investment costs of households batteries.\r\n</br>"
     investment_costs_energy_flexibility_hv_opac_electricity:
-      title: Underground pumped hydro storage
+      title: Investment costs underground pumped hydro storage
       short_description:
       description: This slider determines the future change in investment costs of
         underground hydro pumped storage.
     investment_costs_energy_flexibility_mv_batteries_electricity:
-      title: Large-scale batteries
+      title: Investment costs large-scale batteries
       short_description:
       description: This slider determines the future change in investment costs large-scale
         battery storage.
     om_costs_water_river:
-      title: River
+      title: O&M costs hydroelectric
       short_description: ''
       description: This slider sets the height of your assumed operational and maintenance
         costs for a run-of-the-river hydro-electric power plant. Costs are compared
         to current costs.
     om_costs_water_mountains:
-      title: Mountains
+      title: O&M costs hydro mountains
       short_description: ''
       description: "This slider sets the height of your assumed operations and maintenance
         costs for a large hydro-electric power plant (500 MWe) in a mountain reservoir.
         \r\n<br/>\r\n<br/>\r\nO&amp;M costs are only a small part of total electricity
         costs for this plant type."
     investment_costs_solar_solar_panels:
-      title: Solar panels
+      title: Investment costs solar panels
       short_description: ''
       description: "This slider sets the change in investment costs for solar power
         compared to current costs. It is expected that solar pv panels will become
@@ -365,8 +376,27 @@ en:
         and solar PV plants. With the link below you can see the costs of solar panels
         on roofs. BTW: the cost of installing for solar panels on roofs do not change
         with this slider (500 kEUR/MW).\r\n<br/>"
+    efficiency_energy_power_solar_pv_solar_radiation:
+      title: Efficiency of solar panels
+      description: "Solar technology is getting more efficient in converting sunlight into electricity.
+        This slider allows you to set the future efficiency of solar panels. <br /><br />
+        For a standard 1.6m2 solar panel, efficiency and capacity are related in the following way: <br /><br />
+        17% efficiency: 272 Wp <br/>
+        18% efficiency: 288 Wp <br/>
+        19% efficiency: 304 Wp <br/>
+        20% efficiency: 320 Wp <br/>
+        21% efficiency: 336 Wp <br/>
+        22% efficiency: 352 Wp <br/><br />
+        <b>Remark 1:</b> The impact of this slider is different for roof top and ground-mount PV.
+        For roof top PV, you can set the share of roof surface covered with solar panels in the ETM. Increasing efficiency
+        means that the capacity of these solar panels goes up and that more electricity is produced. The number of panels
+        installed remains constant. For ground-mount, you can set the installed capacity in the ETM. Increasing efficiency means
+        that less solar panels are needed to meet this installed capacity. Installed capacity and produced electricity stay the same.<br/><br/>
+        <b>Remark 2:</b> Please note that this slider interacts with the PV cost slider above. If solar panels become more
+        efficient, their price per kW goes down.<br/><br/>
+        <b>Remark 3:</b> This slider does not affect efficiency of solar thermal and CSP (concentrated solar power).<br/>"
     investment_costs_solar_concentrated_solar_power:
-      title: Concentrated solar power
+      title: Investment costs concentrated solar power
       short_description:
       description: This slider sets the height of the assumed costs for concentrated
         solar power (CSP). Costs are compared to current costs.
@@ -452,17 +482,11 @@ en:
       short_description:
       description:
     investment_costs_water_river:
-      title: River
+      title: Investment costs hydroelectric
       short_description: ''
       description: "This slider sets the height of your assumed investment costs for
         a run-of-the-river hydro-electric power plant (10 MWe). Costs are compared
         to current costs.\r\n"
-    investment_costs_water_mountains:
-      title: Mountains
-      short_description: ''
-      description: This slider sets the height of your assumed investment costs for
-        a large hydro-electric power plant (500 MWe) in a mountain reservoir. These
-        plants require huge investments.
     investment_costs_electric_cars:
       title: Extra investment per electric car
       short_description:
@@ -484,60 +508,60 @@ en:
     costs_industry_residual_heat:
       title: Industrial residual heat
       short_description:
-      description: This slider sets the change in future investment and O&M costs
+      description: "This slider sets the change in future investment and O&M costs
         for residual heat from all industrial sectors. Costs are compared to current
         costs. The costs in the link below depict the costs that are used for residual
         heat from the chemical industry, refineries and fertilizer industry. For low
-        temperature heat from datacenters we use different costs.
+        temperature heat from datacenters we use different costs."
     costs_infrastructure_electricity_lv_net:
       title: Costs new low voltage net
       short_description:
-      description: These sliders allow you to change the future (average) grid expansion
+      description: "These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
-        for the Future', CE Delft (2017).
+        for the Future', CE Delft (2017)."
     costs_infrastructure_electricity_lv_mv_trafo:
       title: Costs new lv-mv transformator
       short_description:
-      description: These sliders allow you to change the future (average) grid expansion
+      description: "These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
-        for the Future', CE Delft (2017).
+        for the Future', CE Delft (2017)."
     costs_infrastructure_electricity_mv_net:
       title: Costs new medium voltage net
       short_description:
-      description: These sliders allow you to change the future (average) grid expansion
+      description: "These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
-        for the Future', CE Delft (2017).
+        for the Future', CE Delft (2017)."
     costs_infrastructure_electricity_mv_hv_trafo:
       title: Costs new low mv-hv transformator
       short_description:
-      description: These sliders allow you to change the future (average) grid expansion
+      description: "These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
-        for the Future', CE Delft (2017).
+        for the Future', CE Delft (2017)."
     costs_infrastructure_electricity_hv_net:
       title: Costs new high voltage net
       short_description:
-      description: These sliders allow you to change the future (average) grid expansion
+      description: "These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
-        for the Future', CE Delft (2017).
+        for the Future', CE Delft (2017)."
     costs_infrastructure_electricity_interconnector_net:
       title: Costs new interconnector net
       short_description:
-      description: These sliders allow you to change the future (average) grid expansion
+      description: "These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
-        for the Future', CE Delft (2017).
+        for the Future', CE Delft (2017)."
     costs_infrastructure_electricity_offshore_net:
       title: Costs new offshore net
       short_description:
-      description: These sliders allow you to change the future (average) grid expansion
+      description: "These sliders allow you to change the future (average) grid expansion
         costs for each voltage level. The default settings for the Netherlands are
         based on the current average expansion costs as reported in the study 'Grid
-        for the Future', CE Delft (2017).
+        for the Future', CE Delft (2017)."
     costs_oil:
       title: Oil
       short_description: ''
@@ -587,17 +611,181 @@ en:
     costs_co2:
       title: CO<sub>2</sub> price
       short_description: ''
-      description: This slider sets the future price (in €/tonne) of CO<sub>2</sub>
+      description: "This slider sets the future price (in €/tonne) of CO<sub>2</sub>
         emission rights for companies covered by the European Emission Trading Scheme,
         such as power companies. These rights can be traded in the form of certificates.
-        The certificates are auctioned to companies (among others) by national governments.
+        The certificates are auctioned to companies (among others) by national governments."
     costs_co2_free_allocation:
       title: Free allocation
       short_description: ''
-      description: This slider sets the percentage of CO<sub>2</sub> emission rights
+      description: "This slider sets the percentage of CO<sub>2</sub> emission rights
         that electricity production companies receive for free. With the start of
         the third trading period of the Emissions Trading Scheme (ETC) in 2013 it
         is likely that 50% of all emission permits will be auctioned. For the trading
         period starting in 2020 it is uncertain what percentage of permits will be
         auctioned, but the European Commission is aiming for 70%. In 2027 the goal
-        is to auction 100% of all the emission permits.
+        is to auction 100% of all the emission permits."
+    efficiency_energy_power_ultra_supercritical_coal:
+      title: Pulverized coal
+      short_description: ''
+      description: "This slider sets the future efficiency of pulverized coal plants."
+    efficiency_energy_power_ultra_supercritical_cofiring_coal:
+      title: Pulverized coal with co-firing
+      short_description: ''
+      description: "This slider sets the future efficiency of pulverized coal plants with co-firing."
+    efficiency_energy_power_combined_cycle_coal:
+      title: Coal IGCC
+      short_description: ''
+      description: "This slider sets the future efficiency of combined cycle plants."
+    efficiency_energy_power_supercritical_coal:
+      title: Coal conventional
+      short_description: ''
+      description: "This slider sets the future efficiency of conventional coal plants."
+    efficiency_energy_chp_ultra_supercritical_coal_electricity:
+      title: Coal CHP - electricity
+      short_description: ''
+      description: "This slider sets the future efficiency of electricity production by coal plants for district heating (CHP)."
+    efficiency_energy_chp_ultra_supercritical_coal_heat:
+      title: Coal CHP - heat
+      short_description: ''
+      description: "This slider sets the future efficiency of heat production by coal plants for district heating (CHP)."
+    efficiency_energy_chp_ultra_supercritical_cofiring_coal_electricity:
+      title: Co-firing coal CHP - electricity
+      short_description: ''
+      description: "This slider sets the future efficiency of electricity production by co-firing coal plants for district heating (CHP)."
+    efficiency_energy_chp_ultra_supercritical_cofiring_coal_heat:
+      title: Co-firing coal CHP - heat
+      short_description: ''
+      description: "This slider sets the future efficiency of heat production by co-firing coal plants for district heating (CHP)."
+    efficiency_energy_power_combined_cycle_network_gas:
+      title: Gas CCGT
+      short_description: ''
+      description: "This slider sets the future efficiency of gas CCGT plants."
+    efficiency_energy_power_turbine_network_gas:
+      title: Gas turbine
+      short_description: ''
+      description: "This slider sets the future efficiency of gas turbines."
+    efficiency_energy_power_ultra_supercritical_network_gas:
+      title: Gas conventional
+      short_description: ''
+      description: "This slider sets the future efficiency of conventional gas plants."
+    efficiency_energy_power_engine_network_gas:
+      title: Gas combustion engine
+      short_description: ''
+      description: "This slider sets the future efficiency of gas combustion engines."
+    efficiency_energy_chp_combined_cycle_network_gas_electricity:
+      title: Large-scale gas CHP - electricity
+      short_description: ''
+      description: "This slider sets the future efficiency of electricity production from large-scale gas plants for district heating (CHP)."
+    efficiency_energy_chp_combined_cycle_network_gas_heat:
+      title: Large-scale gas CHP - heat
+      short_description: ''
+      description: "This slider sets the future efficiency of heat production from large-scale gas plants for district heating (CHP)."
+    efficiency_energy_chp_local_engine_network_gas_electricity:
+      title: Small-scale gas CHP - electricity
+      short_description: ''
+      description: "This slider sets the future efficiency of electricity production from small-scale gas plants for district heating (CHP)."
+    efficiency_energy_chp_local_engine_network_gas_heat:
+      title: Small-scale gas CHP - heat
+      short_description: ''
+      description: "This slider sets the future efficiency of heat production from small-scale gas plants for district heating (CHP)."
+    efficiency_energy_power_ultra_supercritical_crude_oil:
+      title: Oil-fired
+      short_description: ''
+      description: "This slider sets the future efficiency of crude oil plants."
+    efficiency_energy_power_engine_diesel:
+      title: Diesel generator
+      short_description: ''
+      description: "This slider sets the future efficiency of diesel generators."
+    efficiency_energy_power_nuclear_gen2_uranium_oxide:
+      title: Nuclear conventional
+      short_description: ''
+      description: "This slider sets the future efficiency of conventional nuclear power plants."
+    efficiency_energy_power_nuclear_gen3_uranium_oxide:
+      title: Nuclear 3rd Gen
+      short_description: ''
+      description: "This slider sets the future efficiency of 3rd generation nuclear power plants."
+    efficiency_energy_chp_local_wood_pellets_electricity:
+      title: Biomass CHP - electricity
+      short_description: ''
+      description: "This slider sets the future efficiency of electricity production from biomass plants (CHP)."
+    efficiency_energy_chp_local_wood_pellets_heat:
+      title: Biomass CHP - heat
+      short_description: ''
+      description: "This slider sets the future efficiency of heat production from biomass plants (CHP)."
+    efficiency_energy_chp_local_engine_biogas_electricity:
+      title: Biogas CHP - electricity
+      short_description: ''
+      description: "This slider sets the future efficiency of electricity production from biogas plants (CHP)."
+    efficiency_energy_chp_local_engine_biogas_heat:
+      title: Biogas CHP - heat
+      short_description: ''
+      description: "This slider sets the future efficiency of heat production from biogas plants (CHP)."
+    efficiency_energy_power_supercritical_waste_mix:
+      title: Waste incinerator
+      short_description: ''
+      description: "This slider sets the future efficiency of waste incinerators."
+    efficiency_energy_chp_supercritical_waste_mix_electricity:
+      title: Waste CHP - electricity
+      short_description: ''
+      description: "This slider sets the future efficiency of electricity production by waste incinerators (CHP)."
+    efficiency_energy_chp_supercritical_waste_mix_heat:
+      title: Waste CHP - heat
+      short_description: ''
+      description: "This slider sets the future efficiency of heat production by waste incinerators (CHP)."
+    efficiency_energy_power_turbine_hydrogen:
+      title: Hydrogen turbine
+      short_description: ''
+      description: "This slider sets the future efficiency of hydrogen turbines."
+    efficiency_energy_power_combined_cycle_hydrogen:
+      title: Hydrogen plant (CCGT)
+      short_description: ''
+      description: "This slider sets the future efficiency of hydrogen plants (CCGT)."
+    efficiency_households_space_heater_combined_network_gas:
+      title: Condensing combi boiler (gas)
+      short_description: ''
+      description: "This slider sets the future efficiency for space heating of condensing combi boilers in houses.
+        As you see, the efficiency is above 100% for space heating. This is the case because all energy in 
+        the ETM is given in lower heating values (LHV) and this boiler also retrieves heat 
+        from condensation. Condensation heat is not included in LHV, only in higher 
+        heating values (HHV)."
+    efficiency_households_space_heater_heatpump_ground_water_electricity:
+      title: Heat pump (ground)
+      short_description: ''
+      description: "This slider sets the future efficiency for space heating of ground heat pumps in houses."
+    efficiency_households_space_heater_wood_pellets:
+      title: Wood pellet boiler
+      short_description: ''
+      description: "This slider sets the future efficiency for space heating of wood pellet stoves in houses."
+    efficiency_households_space_heater_electricity:
+      title: Electric heater
+      short_description: ''
+      description: "This slider sets the future efficiency for space heating of electric heaters in houses."
+    efficiency_households_space_heater_network_gas:
+      title: Gas-fired heater
+      short_description: ''
+      description: "This slider sets the future efficiency for space heating of non-condensing gas-fired heaters in houses."
+    efficiency_buildings_space_heater_network_gas:
+      title: Condensing combi boiler (gas)
+      short_description: ''
+      description: "This slider sets the future efficiency of condensing gas-fired boilers in buildings.
+        As you see, the efficiency is above 100%. This is the case because all energy in 
+        the ETM is given in lower heating values (LHV) and this boiler also retrieves heat 
+        from condensation. Condensation heat is not included in LHV, only in higher 
+        heating values (HHV)."
+    efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity:
+      title: Heat pump (ground)
+      short_description: ''
+      description: "This slider sets the future efficiency of ground heat pumps in buildings."
+    efficiency_buildings_space_heater_electricity:
+      title: Electric heater
+      short_description: ''
+      description: "This slider sets the future efficiency of electric heeaters in buildings."
+    efficiency_buildings_space_heater_wood_pellets:
+      title: Biomass-fired heater
+      short_description: ''
+      description: "This slider sets the future efficiency of biomass-fired heaters in buildings."
+    efficiency_hydrogen_electrolysis:
+      title: Power-to-gas elektrolysers
+      short_description: ''
+      description: "This slider sets the future efficiency of power-to-gas elektrolysers."

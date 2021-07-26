@@ -5,11 +5,9 @@ nl:
       default:
         title: Default
         description: |
-          De wind- en zonopwekprofielen van het startjaar zijn
-          gebaseerd op daadwerkelijke productieprofielen van ENTSO-e. Het
-          temperatuursprofiel komt van KNMI.
-          (Vollasturen: wind op land = 1920, wind aan de kust = 2550, wind offshore = 3500,
-          zon = 867)
+          Standaard gebruikt het ETM productieprofielen uit het startjaar van jouw scenario. Op
+          deze pagina vind je de bijbehorende vollasturen. Je kan de profielen inzien op de
+          <a href='/scenario/flexibility/curve_upload/upload-curves'>'Profielen aanpassen'</a> pagina.
       '1987':
         title: '"Dunkelflaute" tijdens extreem koude winter'
         description: |

@@ -17,7 +17,7 @@
     var descriptionEl;
 
     if (description.length) {
-      descriptionEl = $('<span class="description" />').text(description);
+      descriptionEl = $('<span class="description" />').html(description);
     }
 
     return $('<li></li>').append(

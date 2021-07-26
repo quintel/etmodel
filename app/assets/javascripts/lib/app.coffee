@@ -50,10 +50,7 @@ class @AppView extends Backbone.View
 
     wrapper = $('#accordion_wrapper')
 
-    # Create flexibility order.
-    if (flex_order = wrapper.find('#flexibility-options')).length
-      new UserSortable(flex_order, 'flexibility_order', true).render()
-
+    # Create heat network order.
     if (heat_order = wrapper.find('#heat-network-options')).length
       new UserSortable(heat_order, 'heat_network_order', true).render()
 

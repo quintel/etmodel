@@ -133,12 +133,7 @@ nl:
         kunnen opslaan of omzetten in andere energiedragers. Je kan die technologieën
         inzetten in de <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\">'Opslag'</a>
         en <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households\">'Conversie'</a>
-        tabs.\r\n<br/><br/>\r\nDoor middel van de lijst hieronder kun je de volgorde
-        bepalen waarin de technologieën worden ingezet. Het ETM stuurt elektriciteitsoverschotten
-        naar de technologie die als eerste op de lijst staat zolang de capaciteit
-        dit toelaat; verdere overschotten worden naar de tweede technologie op de
-        lijst gestuurd en zo verder. Enige overgebleven elektriciteit wordt gecurtailed.
-        Je kunt de technologieën in de gewenste volgorde verslepen."
+        tabs."
     flexibility_flexibility_power_storage:
       title: Opslag elektriciteit
       short_description:
@@ -256,15 +251,15 @@ nl:
       title: Wat is flexibiliteit?
       short_descriptioN:
       description: |
-        Natuurlijke patronen zoals de seizoenen (jaarlijks), veranderingen in het weer (wekelijks), 
-        dag en nacht, en ons eigen ritme van opstaan, naar werk gaan, thuiskomen, etc. zorgen ervoor dat 
-        zowel de benodigdheid van energie als de beschikbaarheid ervan fluctueert. Flexibiliteit 
+        Natuurlijke patronen zoals de seizoenen (jaarlijks), veranderingen in het weer (wekelijks),
+        dag en nacht, en ons eigen ritme van opstaan, naar werk gaan, thuiskomen, etc. zorgen ervoor dat
+        zowel de benodigdheid van energie als de beschikbaarheid ervan fluctueert. Flexibiliteit
         gaat over het balanceren van vraag en aanbod van energie op al deze tijdschalen. <br/><br/>
-        Voor langere tijdschalen is de hoeveelheid geleverde of gebruikte energie, ook wel het 
-        <i>volume</i>, vooral interessant. Voor kortere tijdschalen is het vermogen om een bepaalde 
-        hoeveelheid energie te kunnen produceren of te gebruiken interessant. Dit wordt <i>capaciteit</i> 
+        Voor langere tijdschalen is de hoeveelheid geleverde of gebruikte energie, ook wel het
+        <i>volume</i>, vooral interessant. Voor kortere tijdschalen is het vermogen om een bepaalde
+        hoeveelheid energie te kunnen produceren of te gebruiken interessant. Dit wordt <i>capaciteit</i>
         genoemd. <br/><br/>
-        Sommige flexibiliteitstechnologieën zijn geschikter om grote (fluctuaties in) volumes 
+        Sommige flexibiliteitstechnologieën zijn geschikter om grote (fluctuaties in) volumes
         van energie te verwerken, andere zijn geschikter voor grote fluctaties in capaciteit en een aantal zijn geschikt voor beide. Een aantal voorbeelden zijn:</br>
         <ul> <i>Geschikt voor grote (fluctuaties in) volumes </i>
         <ul><li> Import/export van gas/waterstof </li>
@@ -284,132 +279,132 @@ nl:
         <li> Productieverlaging van hernieuwbare elektriciteitsproductie </li>
         <li> Grootschalige elektriciteitsopslag in stuwmeren </li>
         </ul> </ul> </br>
-        In deze sectie kun je zien hoe vraag en aanbod zich op verschillende tijdschalen tot elkaar 
-        verhouden, hoe dit resulteert in de behoefte aan flexibiliteit in jouw scenario en hoe je in deze 
-        behoefte kan voorzien. In de volgende slides gaan we dieper in op de definities van onbalans en 
+        In deze sectie kun je zien hoe vraag en aanbod zich op verschillende tijdschalen tot elkaar
+        verhouden, hoe dit resulteert in de behoefte aan flexibiliteit in jouw scenario en hoe je in deze
+        behoefte kan voorzien. In de volgende slides gaan we dieper in op de definities van onbalans en
         flexibiliteit.
     flexibility_overview_hourly_electricity_supply_demand:
       title: Uurlijkse inflexibele vraag en aanbod
       short_description:
       description: |
-        Wat bedoelen we eigenlijk als we het hebben over de mismatch of onbalans tussen vraag en aanbod? 
-        Om ons te helpen deze concepten beter te begrijpen, beginnen we met het definiëren van twee 
+        Wat bedoelen we eigenlijk als we het hebben over de mismatch of onbalans tussen vraag en aanbod?
+        Om ons te helpen deze concepten beter te begrijpen, beginnen we met het definiëren van twee
         soorten aanbod van energie:</br>
-        <ul><li>Inflexibel aanbod: dit is de energie die wordt geproduceerd door technologieën die niet 
-        gemakkelijk door mensen kunnen worden gereguleerd of die continu draaien op basis van kostenoverwegingen. 
-        Energieproductie met wind en zon zijn goede voorbeelden van technologieën die niet door mensen kunnen 
-        worden gereguleerd. Ze vertonen weliswaar variabel gedrag (volatiel door de wisselende weersomstandigheden), 
-        maar volgen bijvoorbeeld geen uurlijkse elektriciteitsprijzen. We noemen ze daarom inflexibel. 
-        Kerncentrales zijn een voorbeeld van energiecentrales die op basis van kostenoverwegingen kunnen worden 
+        <ul><li>Inflexibel aanbod: dit is de energie die wordt geproduceerd door technologieën die niet
+        gemakkelijk door mensen kunnen worden gereguleerd of die continu draaien op basis van kostenoverwegingen.
+        Energieproductie met wind en zon zijn goede voorbeelden van technologieën die niet door mensen kunnen
+        worden gereguleerd. Ze vertonen weliswaar variabel gedrag (volatiel door de wisselende weersomstandigheden),
+        maar volgen bijvoorbeeld geen uurlijkse elektriciteitsprijzen. We noemen ze daarom inflexibel.
+        Kerncentrales zijn een voorbeeld van energiecentrales die op basis van kostenoverwegingen kunnen worden
         ignezet om continu te draaien. Dit soort centrales worden 'must-run' genoemd.</li>
         <li>Flexibel aanbod: deze energieproductie wordt beïnvloed door regels die door de mens zijn gemaakt
-        (zoals uurlijkse elektriciteitsprijzen) en omvat zogenaamde regelbare centrales zoals gasgestookte 
+        (zoals uurlijkse elektriciteitsprijzen) en omvat zogenaamde regelbare centrales zoals gasgestookte
         elektriciteitscentrales.</li></ul></br>
         ... en twee soorten vraag:
-        <ul><li>Inflexibele (of basislast) vraag: dit type energieverbruik wordt als inflexibel beschouwd omdat 
-        het niet gemakkelijk te reguleren is. Denk hierbij aan industriële processen die continu moeten draaien, 
-        of verbruik dat niet reageert op uurlijkse elektriciteitsprijzen zoals energieverbruik van individuele 
+        <ul><li>Inflexibele (of basislast) vraag: dit type energieverbruik wordt als inflexibel beschouwd omdat
+        het niet gemakkelijk te reguleren is. Denk hierbij aan industriële processen die continu moeten draaien,
+        of verbruik dat niet reageert op uurlijkse elektriciteitsprijzen zoals energieverbruik van individuele
         huishoudens. Het grootste deel van de finale vraag van sectoren valt in deze categorie.</li>
-        <li>Flexibele vraag: dit is het energieverbruik dat indien nodig kan worden verhoogd, verlaagd, of in 
+        <li>Flexibele vraag: dit is het energieverbruik dat indien nodig kan worden verhoogd, verlaagd, of in
         de tijd kan worden verschoven.</li></ul></br>
-        In de grafiek hiernaast laten we de inflexibele vraag en aanbod van alleen elektriciteit zien. Voor 
+        In de grafiek hiernaast laten we de inflexibele vraag en aanbod van alleen elektriciteit zien. Voor
         andere energiedragers vind je een vergelijkbare grafiek in de grafiekenlijst (rechterbovenhoek). </br></br>
-        Merk op dat veranderingen in flexibele technologieën indirect kunnen leiden tot 
-        veranderingen in de inflexibele vraag en aanbod. De installatie van electrolyzers, een flexibele 
-        technologie, kan bijvoorbeeld de behoefte verminderen aan waterstofimport, die inflexibel is, waardoor 
-        het inflexibele aanbod van waterstof verandert. Deze tweede orde effecten kunnen leiden tot interessant 
-        gedrag van de inflexibele vraag- en aanbodprofielen. Meer informatie over de definities van inflexibele 
+        Merk op dat veranderingen in flexibele technologieën indirect kunnen leiden tot
+        veranderingen in de inflexibele vraag en aanbod. De installatie van electrolyzers, een flexibele
+        technologie, kan bijvoorbeeld de behoefte verminderen aan waterstofimport, die inflexibel is, waardoor
+        het inflexibele aanbod van waterstof verandert. Deze tweede orde effecten kunnen leiden tot interessant
+        gedrag van de inflexibele vraag- en aanbodprofielen. Meer informatie over de definities van inflexibele
         vraag en aanbod zijn te vinden in <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentatie</a>.
-        </br></br>In de volgende sectie brengen we de verkenning van inflexibele vraag en aanbod een stap verder 
+        </br></br>In de volgende sectie brengen we de verkenning van inflexibele vraag en aanbod een stap verder
         door te kijken hoe ze zich gedragen op langere tijdschalen dan uren.
     flexibility_overview_inflexible_demand_supply_sum:
       title: Maandelijkse inflexibele vraag en aanbod volumes
       short_description:
       description: |
-        Deze grafiek toont de maandelijkse totale <i>volumes</i> voor vraag en aanbod van elektriciteit, netwerkgas, 
-        waterstof en warmte voor warmtenetten. Dit laat zien hoe deze dragers doorgaans het hele jaar door 
+        Deze grafiek toont de maandelijkse totale <i>volumes</i> voor vraag en aanbod van elektriciteit, netwerkgas,
+        waterstof en warmte voor warmtenetten. Dit laat zien hoe deze dragers doorgaans het hele jaar door
         variëren: wanneer worden ze voornamelijk geconsumeerd? Wanneer wordt er veel geproduceerd?<br/><br/>
-        Net als bij de uurprofielen in de vorige grafiek, worden alleen het inflexibele aanbod en aanbod in 
+        Net als bij de uurprofielen in de vorige grafiek, worden alleen het inflexibele aanbod en aanbod in
         deze grafiek weergegeven. Hierdoor kun je duidelijk de natuurlijke variaties in het energiesysteem zien. <br/><br/>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of 
-        verbergen. Als je benieuwd bent naar de balans binnen een maand, kun je klikken op een drager in 
-        die specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden van die 
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of
+        verbergen. Als je benieuwd bent naar de balans binnen een maand, kun je klikken op een drager in
+        die specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden van die
         drager in die maand.
     flexibility_overview_hourly_carriers_inflexible_imbalance:
       title: Residual load curves
       short_description:
       description: |
-        In de vorige grafieken hebben we gekeken naar de natuurlijke variaties in (inflexibele) vraag en 
-        aanbod van energie voor de verschillende dragers. Om de 'behoefte aan flexibiliteit' duidelijker te 
-        laten zien, trekken we het inflexibele aanbod af van de basislastvraag en brengen we de onbalans in kaart. 
-        Dit wordt de 'residual load curve' genoemd die voor elk uur laat zien of het verschil tussen (inflexibele) 
-        vraag en aanbod een 'restvraag' of een 'restaanbod' is. Andere woorden die vaak worden gebruikt om restvraag 
+        In de vorige grafieken hebben we gekeken naar de natuurlijke variaties in (inflexibele) vraag en
+        aanbod van energie voor de verschillende dragers. Om de 'behoefte aan flexibiliteit' duidelijker te
+        laten zien, trekken we het inflexibele aanbod af van de basislastvraag en brengen we de onbalans in kaart.
+        Dit wordt de 'residual load curve' genoemd die voor elk uur laat zien of het verschil tussen (inflexibele)
+        vraag en aanbod een 'restvraag' of een 'restaanbod' is. Andere woorden die vaak worden gebruikt om restvraag
         en -aanbod te beschrijven, zijn 'tekort' en 'overschot' aan energie.<br/><br/>
-        Met andere woorden: de 'residual load curve' geeft de uurlijkse onbalans van energiedragers weer die zou optreden 
+        Met andere woorden: de 'residual load curve' geeft de uurlijkse onbalans van energiedragers weer die zou optreden
         als we niet zouden proberen het energiesysteem in balans te brengen.<br/><br/>
-        Let goed op wat de negatieve en positieve waarden van de 'residual load curve' betekenen. Omdat het inflexibele aanbod 
-        wordt afgetrokken van de basislastvraag, betekenen negatieve waarden 'overschotten' aan energie en positieve waarden 
+        Let goed op wat de negatieve en positieve waarden van de 'residual load curve' betekenen. Omdat het inflexibele aanbod
+        wordt afgetrokken van de basislastvraag, betekenen negatieve waarden 'overschotten' aan energie en positieve waarden
         'tekorten'.<br/><br/>
         In de volgende grafiek zullen we de 'residual load' op de maandelijkse tijdschaal nader bekijken.
     flexibility_overview_monthly_carriers_inflexible_imbalance:
       title: Onbalans in maandelijkse volumes van vraag en aanbod
       short_description:
       description: |
-        Deze grafiek laat de maandelijkse onbalans in <i>volumes</i> van vraag en aanbod zien voor 
-        elektriciteit, netwerkgas, waterstof en warmte voor warmtenetten. Dit geeft je inzicht in de balans van je energiesysteem 
-        door het jaar heen: welke dragers zijn niet in balans? In welke maanden is er een onbalans? Zijn 
+        Deze grafiek laat de maandelijkse onbalans in <i>volumes</i> van vraag en aanbod zien voor
+        elektriciteit, netwerkgas, waterstof en warmte voor warmtenetten. Dit geeft je inzicht in de balans van je energiesysteem
+        door het jaar heen: welke dragers zijn niet in balans? In welke maanden is er een onbalans? Zijn
         dit overschotten of tekorten van energie? <br/><br/>
-        De onbalans is berekend door het inflexibele aanbod af te trekken van de basislastvraag, dit heet 
-        de 'residual load'. Negatieve waarden betekenen 'overschotten' aan energie en positieve waarden 
+        De onbalans is berekend door het inflexibele aanbod af te trekken van de basislastvraag, dit heet
+        de 'residual load'. Negatieve waarden betekenen 'overschotten' aan energie en positieve waarden
         'tekorten'. In vergelijking met de uurlijkse 'residual load curve' die in de vorige grafiek wordt
         weergegeven, kan je met deze grafiek de onbalans op een langere tijdschaal zien.<br/><br/>
-        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of 
-        verbergen. Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken op die specifieke 
+        Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of
+        verbergen. Als je benieuwd bent naar de onbalans binnen een maand, kun je klikken op die specifieke
         maand en zal er een grafiek openen met 'residual load curves' voor die maand.
     flexibility_overview_cumulative_imbalance:
       title: "Flexibiliteitsbehoefte: volume"
       short_description:
       description: |
-        Deze grafiek geeft een ruwe inschatting van de behoefte aan lange termijn flexibiliteit 
-        (opslagvolume) in jouw scenario. De blauwe lijn (exclusief “correctie”) wordt gemaakt door 
+        Deze grafiek geeft een ruwe inschatting van de behoefte aan lange termijn flexibiliteit
+        (opslagvolume) in jouw scenario. De blauwe lijn (exclusief “correctie”) wordt gemaakt door
         de uurlijkse onbalans van alle relevante energiedragers voor elk uur op te tellen. Vervolgens is
         ervoor gezorgd dat alleen positieve waarden getoond worden, door de lijn omhoog te schuiven.
-        Deze lijn is indicatief, omdat er geen opslag- of conversieverliezen mee worden genomen in 
-        de opsomming. <br/><br/> 
-        Deze lijn geeft een algemeen beeld van de mate waarin het energiesysteem over het jaar in 
-        balans is. In periodes waar de vraag groter is dan het aanbod (koude periodes zonder wind 
-        en met weinig zon), wordt de 'opslag' uitgeput en daalt de lijn. In periodes waar het aanbod 
-        in het algemeen hoger is dan de vraag (zoals zonnige zomermaanden), stijgt de lijn weer. 
+        Deze lijn is indicatief, omdat er geen opslag- of conversieverliezen mee worden genomen in
+        de opsomming. <br/><br/>
+        Deze lijn geeft een algemeen beeld van de mate waarin het energiesysteem over het jaar in
+        balans is. In periodes waar de vraag groter is dan het aanbod (koude periodes zonder wind
+        en met weinig zon), wordt de 'opslag' uitgeput en daalt de lijn. In periodes waar het aanbod
+        in het algemeen hoger is dan de vraag (zoals zonnige zomermaanden), stijgt de lijn weer.
         Merk op dat hier dus een andere conventie gebruikt wordt voor de betekenis van negatieve en positieve
         waarden dan in de grafiek "Onbalans in maandelijkse volumes van vraag en aanbod".<br/><br/>
-        Door het begin- en eindpunt van deze lijn te vergelijken, kun je zien of het systeem op 
-        jaarniveau een overschot heeft of tekortkomt. Het absolute verschil ertussen geeft aan 
-        hoeveel additionele opslag- of conversieverliezen geaccepteerd kunnen worden bij het voorzien 
-        van tekorten, of hoe groot de opslag is die gevuld moet worden met additionele energieproductie 
+        Door het begin- en eindpunt van deze lijn te vergelijken, kun je zien of het systeem op
+        jaarniveau een overschot heeft of tekortkomt. Het absolute verschil ertussen geeft aan
+        hoeveel additionele opslag- of conversieverliezen geaccepteerd kunnen worden bij het voorzien
+        van tekorten, of hoe groot de opslag is die gevuld moet worden met additionele energieproductie
         of import. <br/><br/>
-        De rode lijn (inclusief “correctie”) laat de fluctuaties zien van het benodigde opslagvolume als vraag 
-        en aanbod in balans zouden zijn over het jaar. Dit geeft een ruwe inschatting van de totale 
-        opslagcapaciteit die nodig is om ervoor te zorgen dat dragers op het juiste moment gebruikt 
-        kunnen worden. Deze totale benodigde opslagcapaciteit kan afgelezen worden van de hoogste waarde 
+        De rode lijn (inclusief “correctie”) laat de fluctuaties zien van het benodigde opslagvolume als vraag
+        en aanbod in balans zouden zijn over het jaar. Dit geeft een ruwe inschatting van de totale
+        opslagcapaciteit die nodig is om ervoor te zorgen dat dragers op het juiste moment gebruikt
+        kunnen worden. Deze totale benodigde opslagcapaciteit kan afgelezen worden van de hoogste waarde
         van deze lijn. <br/><br/>
-        Deze lijn wordt gemaakt door het jaarlijkse overschot/tekort van de blauwe lijn af te trekken. 
-        Omdat de lijn cumulatief is, telt de correctie van het eerste uur op bij de correctie van het 
-        twee uur etc. totdat het laatste uur zo is gecorrigeerd dat het overeenkomt met de waarde van 
+        Deze lijn wordt gemaakt door het jaarlijkse overschot/tekort van de blauwe lijn af te trekken.
+        Omdat de lijn cumulatief is, telt de correctie van het eerste uur op bij de correctie van het
+        twee uur etc. totdat het laatste uur zo is gecorrigeerd dat het overeenkomt met de waarde van
         het eerste uur.
     flexibility_overview_inflexible_demand_supply_max:
       title: "Flexibiliteitsbehoefte: capaciteit"
       short_description:
       description: |
-        Deze grafiek laat de maandelijkse maximale <i>capaciteit</i> van vraag en aanbod zien voor 
-        elektriciteit, netwerkgas, waterstof en warmte voor warmtenetten. Dit geeft een indicatie van de capaciteit die nodig 
-        is om voor elke energiedrager de onbalans op te lossen. Deze capaciteit kan gerealiseerd 
-        worden met transportinfrastructuur of door inzet van flexibiliteitsopties. Voor het 
-        elektriciteitsnetwerk kan de relatie tussen transportinfrastructuur en flexibiliteitsopties 
+        Deze grafiek laat de maandelijkse maximale <i>capaciteit</i> van vraag en aanbod zien voor
+        elektriciteit, netwerkgas, waterstof en warmte voor warmtenetten. Dit geeft een indicatie van de capaciteit die nodig
+        is om voor elke energiedrager de onbalans op te lossen. Deze capaciteit kan gerealiseerd
+        worden met transportinfrastructuur of door inzet van flexibiliteitsopties. Voor het
+        elektriciteitsnetwerk kan de relatie tussen transportinfrastructuur en flexibiliteitsopties
         in meer detail worden verkend in de sectie <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">
         Netbelasting</a>. <br/><br/>
-        Zoals ook voor de bovenstaande grafieken over volume het geval was, wordt hier alleen 
-        de basislastvraag en het inflexibele aanbod weergegeven. Op onze 
-        <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentatie</a> is meer 
+        Zoals ook voor de bovenstaande grafieken over volume het geval was, wordt hier alleen
+        de basislastvraag en het inflexibele aanbod weergegeven. Op onze
+        <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentatie</a> is meer
         informatie te vinden over de definities van basislastvraag en inflexibel aanbod. <br/><br/>
         Door op de labels van de grafiek te klikken kun je bepalen welke energiedragers je wilt tonen of verbergen.
         Als je wilt weten waar in de maand de pieken plaatsvinden, kun je klikken op een drager in die
@@ -419,31 +414,29 @@ nl:
       title: "Flexibiliteitsvoorziening: capaciteit"
       short_description:
       description: |
-        Zoals we in vorige grafieken hebben gezien, ontstaat er een onbalans in vraag en aanbod van dragers 
+        Zoals we in vorige grafieken hebben gezien, ontstaat er een onbalans in vraag en aanbod van dragers
         als we bij onveranderde vraag grote hoeveelheden volatiele energie integreren in ons energiesysteem.
-        Wanneer het volatiele en must-run (inflexibele) aanbod groter is dan de basislast 
-        (inflexibele) vraag, kan van het energiesysteem worden gezegd dat het een ‘overschot’ aan energie heeft. 
-        Flexibele vraagtechnologieën kunnen worden gebruikt om dit energieoverschot te benutten. Op momenten 
-        dat het omgekeerde gebeurt, kunnen flexibele aanbodtechnologieën worden ingezet om het energietekort 
+        Wanneer het volatiele en must-run (inflexibele) aanbod groter is dan de basislast
+        (inflexibele) vraag, kan van het energiesysteem worden gezegd dat het een ‘overschot’ aan energie heeft.
+        Flexibele vraagtechnologieën kunnen worden gebruikt om dit energieoverschot te benutten. Op momenten
+        dat het omgekeerde gebeurt, kunnen flexibele aanbodtechnologieën worden ingezet om het energietekort
         op te vangen.<br/><br/>
-        Tot dusver hebben de grafieken die in dit gedeelte worden getoond, de nadruk gelegd op de behoefte 
-        aan flexibiliteit. In deze grafiek staat het voorzien in flexibiliteit centraal. Preciezer gezegd: het 
-        opgestelde vermogen van flexibele vraag- en aanbodtechnologieën voor elektriciteit, netwerkgas, 
-        waterstof en warmte voor warmtenetten wordt getoond. Daarnaast laat het per energiedrager het 
-        maximale overschot en tekort zien. Dit geeft aan of je voldoende flexibele technieken hebt geïnstalleerd 
-        om de overschotten volledig te benutten en het tekort te voorzien. Je kunt het geïnstalleerd 
-        vermogen van flexibele technologieën in jouw scenario fijnstellen, bijvoorbeeld in de sectie 
-        <a href="https://beta-pro.energytransitionmodel.com/scenario/flexibility/excess_electricity/order-of-flexibility-options">
-        Elektriciteitsoverschotten</a>.<br/><br/>
-        Merk op dat sommige technologieën twee keer in deze grafiek voorkomen. Power-to-gas komt bijvoorbeeld 
-        voor in de elektriciteitskolom (als flexibele vraag) en in de waterstofkolom (als flexibele levering). 
+        Tot dusver hebben de grafieken die in dit gedeelte worden getoond, de nadruk gelegd op de behoefte
+        aan flexibiliteit. In deze grafiek staat het voorzien in flexibiliteit centraal. Preciezer gezegd: het
+        opgestelde vermogen van flexibele vraag- en aanbodtechnologieën voor elektriciteit, netwerkgas,
+        waterstof en warmte voor warmtenetten wordt getoond. Daarnaast laat het per energiedrager het
+        maximale overschot en tekort zien. Dit geeft aan of je voldoende flexibele technieken hebt geïnstalleerd
+        om de overschotten volledig te benutten en het tekort te voorzien.
+        <br/><br/>
+        Merk op dat sommige technologieën twee keer in deze grafiek voorkomen. Power-to-gas komt bijvoorbeeld
+        voor in de elektriciteitskolom (als flexibele vraag) en in de waterstofkolom (als flexibele levering).
         Dit is een direct gevolg van de gekozen definitie van flexibele technologieën in het ETM. <br/><br/>
-        Noemenswaardig is ook dat de gas- en waterstofopslag in het algemeen niet gedimensioneerd zijn om aan te 
-        sluiten bij de tekort- en overschotpieken. Dit heeft twee redenen. Ten eerste is voor de gasvormige 
-        dragers alleen de opslag verantwoordelijk voor het balanceren. Ten tweede heeft power-to-gas in het 
-        geval van waterstof een profiel dat doorgaans de volatiele elektriciteitsvoorziening volgt in plaats 
-        van de vraag naar waterstof. Zoals hierboven opgemerkt, wordt power-to-gas beschouwd als een flexibele 
-        technologie en wordt daarom niet meegenomen in de ‘residual load curve’. Dit betekent dat het geen 
+        Noemenswaardig is ook dat de gas- en waterstofopslag in het algemeen niet gedimensioneerd zijn om aan te
+        sluiten bij de tekort- en overschotpieken. Dit heeft twee redenen. Ten eerste is voor de gasvormige
+        dragers alleen de opslag verantwoordelijk voor het balanceren. Ten tweede heeft power-to-gas in het
+        geval van waterstof een profiel dat doorgaans de volatiele elektriciteitsvoorziening volgt in plaats
+        van de vraag naar waterstof. Zoals hierboven opgemerkt, wordt power-to-gas beschouwd als een flexibele
+        technologie en wordt daarom niet meegenomen in de ‘residual load curve’. Dit betekent dat het geen
         invloed heeft op de piek van de residual load curve (blauwe lijn in de grafiek).
     flexibility_security_of_supply_electricity:
       title: Elektriciteit

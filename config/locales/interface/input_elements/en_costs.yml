@@ -780,7 +780,7 @@ en:
     efficiency_buildings_space_heater_electricity:
       title: Electric heater
       short_description: ''
-      description: "This slider sets the future efficiency of electric heeaters in buildings."
+      description: "This slider sets the future efficiency of electric heaters in buildings."
     efficiency_buildings_space_heater_wood_pellets:
       title: Biomass-fired heater
       short_description: ''
@@ -789,3 +789,23 @@ en:
       title: Power-to-gas elektrolysers
       short_description: ''
       description: "This slider sets the future efficiency of power-to-gas elektrolysers."
+    efficiency_households_space_heater_heatpump_air_water_electricity:
+      title: Air heat pump
+      short_description: ''
+      description: "How will the efficiency (COP) of air heat pumps change in the future? 
+      With this slider you can adjust with which percentage the future efficiency (COP) of air heat pumps will increase or adjust the efficiency (COP) to a lower value. 
+      To view the present efficiency (COP) you can click on the 'Technical and financial properties'."
+    efficiency_households_space_heater_hybrid_heatpump_air_water_electricity:
+      title: Hybrid heat pump (gas)
+      short_description: ''
+      description: "How will the efficiency (COP) of hybrid heat pumps change in the future? 
+      With this slider you can adjust with which percentage the future efficiency (COP) of hybrid heat pumps will increase or adjust the efficiency (COP) to a lower value. 
+      To view the present efficiency (COP) you can click on the 'Technical and financial properties'."
+    efficiency_households_space_heater_combined_hydrogen:
+      title: Condensing combi boiler (hydrogen)  
+      short_description: ''
+      description: "This slider sets the future efficiency of condensing combi boilers (hydrogen) for households."
+    efficiency_buildings_space_heater_combined_hydrogen:
+      title: Condensing combi boiler (hydrogen) 
+      short_description: ''
+      description: "This slider sets the future efficiency of condensing combi boilers (hydrogen) for buildings."

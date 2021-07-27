@@ -35,9 +35,21 @@
   dependent_on:
   output_element_key: mekko_of_oil_mix
   key: final_demand_industry_oil_mekko_of_oil_mix
+- label: industry_non_energetic
+  color: "#a0de23"
+  order_by: 4
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_industry_non_energetic_oil
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_oil_mix
+  key: final_demand_industry_non_energetic_oil_mekko_of_oil_mix
 - label: agriculture
   color: "#6AB04C"
-  order_by: 4
+  order_by: 5
   group: demand
   show_at_first: false
   is_target_line: false
@@ -49,7 +61,7 @@
   key: final_demand_agriculture_oil_mekko_of_oil_mix
 - label: transport
   color: "#0984E3"
-  order_by: 5
+  order_by: 6
   group: demand
   show_at_first: false
   is_target_line: false
@@ -61,7 +73,7 @@
   key: final_demand_transport_oil_mekko_of_oil_mix
 - label: bunkers
   color: "#7ed9cd"
-  order_by: 6
+  order_by: 7
   group: demand
   show_at_first: false
   is_target_line: false
@@ -73,7 +85,7 @@
   key: final_demand_bunkers_oil_mekko_of_oil_mix
 - label: other
   color: "#ff96c4"
-  order_by: 7
+  order_by: 8
   group: demand
   show_at_first: false
   is_target_line: false
@@ -83,9 +95,21 @@
   dependent_on:
   output_element_key: mekko_of_oil_mix
   key: final_demand_other_sector_oil_mekko_of_oil_mix
+- label: other_non_energetic
+  color: "#fa4393"
+  order_by: 9
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_other_sector_non_energetic_oil
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_oil_mix
+  key: final_demand_other_sector_non_energetic_oil_mekko_of_oil_mix
 - label: diesel
   color: "#645070"
-  order_by: 8
+  order_by: 10
   group: supply
   show_at_first: false
   is_target_line: false
@@ -97,7 +121,7 @@
   key: final_demand_diesel_mekko_of_oil_mix
 - label: biodiesel
   color: "#c7a0de"
-  order_by: 9
+  order_by: 11
   group: supply
   show_at_first: false
   is_target_line: false
@@ -109,7 +133,7 @@
   key: final_demand_biodiesel_mekko_of_oil_mix
 - label: kerosene
   color: "#855f72"
-  order_by: 10
+  order_by: 12
   group: supply
   show_at_first: false
   is_target_line: false
@@ -121,7 +145,7 @@
   key: final_demand_kerosene_mekko_of_oil_mix
 - label: bio_kerosene
   color: "#dea0bf"
-  order_by: 11
+  order_by: 13
   group: supply
   show_at_first: false
   is_target_line: false
@@ -133,7 +157,7 @@
   key: final_demand_bio_kerosene_mekko_of_oil_mix
 - label: lpg
   color: "#a1862d"
-  order_by: 12
+  order_by: 14
   group: supply
   show_at_first: false
   is_target_line: false
@@ -145,7 +169,7 @@
   key: final_demand_lpg_mekko_of_oil_mix
 - label: other_oil
   color: "#82685c"
-  order_by: 13
+  order_by: 15
   group: supply
   show_at_first: false
   is_target_line: false
@@ -157,7 +181,7 @@
   key: final_demand_other_oil_mekko_of_oil_mix
 - label: other_bio_oil
   color: "#d4aa96"
-  order_by: 14
+  order_by: 16
   group: supply
   show_at_first: false
   is_target_line: false

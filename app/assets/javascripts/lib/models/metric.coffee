@@ -40,7 +40,9 @@ format_node_detail_value = (value, unit) ->
   num = Number.parseFloat(value)
 
   if !isNaN(num)
-    if unit.slice(0, 3) == 'EUR'
+    if unit == 'COP'
+      formatted = num.toFixed(1)
+    else if unit.slice(0, 3) == 'EUR'
       formatted = I18n.toCurrency(num, precision: 0, unit: '€')
     else
       formatted = Metric.autoscale_value(

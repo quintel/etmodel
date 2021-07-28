@@ -91,7 +91,8 @@ D3.hhp_cop_cost =
         .attr('cx', (data) -> xScale(data.x))
         .attr('cy', (data) -> yScale(data.y))
         .attr('data-tooltip-text', (data) =>
-          "COP #{Metric.round_number(data.x, 1)}, " +
+          "#{I18n.t('output_elements.hhp_cop_cost.x_axis')} " +
+          "#{Metric.round_number(data.x, 1)}, " +
           "#{Metric.round_number(data.y, 2)} #{@model.get('unit')} "
         )
 
@@ -161,7 +162,7 @@ D3.hhp_cop_cost =
         .attr("dy", ".71em")
         .attr("font-weight", "bold")
         .style("text-anchor", "end")
-        .text(@model.get('unit'))
+        .text(I18n.t("output_elements.hhp_cop_cost.y_axis"))
 
       scale
 
@@ -186,7 +187,7 @@ D3.hhp_cop_cost =
         .style("text-anchor", "middle")
         .attr('x', scale(3.5))
         .attr('y', @margins.bottom)
-        .text('COP')
+        .text(I18n.t('output_elements.hhp_cop_cost.x_axis'))
 
       scale
 

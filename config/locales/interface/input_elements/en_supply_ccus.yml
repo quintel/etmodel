@@ -26,7 +26,7 @@ en:
         costs.
         <br/><br/>
         In some areas, CO<sub>2</sub> capture of process emissions already takes place today. The
-        captured CO<sub>2</sub> is for example used for the production of urea or supplied to the 
+        captured CO<sub>2</sub> is for example used for the production of urea or supplied to the
         food industry for the production of soft drinks and beer.
 
     share_of_industry_chemicals_fertilizers_captured_combustion_co2:
@@ -231,3 +231,22 @@ en:
       title: Liquefied in ships
       description: "What share of total captured CO<sub>2</sub> in your scenario is transported via ships?
         CO<sub>2</sub> is liquefied before transportation."
+    share_of_energy_chp_supercritical_ccs_waste_mix:
+      title: Waste CHP
+      description: |
+        What share of installed waste CHP capacity will be equipped with a CO<sub>2</sub> capture
+        unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
+        power plants in your scenario. This is influenced by electricity demand, other installed
+        power generation technologies and commodity prices.<br/><br/> The amount of installed waste CHP capacity can be set in
+        <a href="/scenario/supply/electricity/waste-power">the Supply → Electricity → Waste power section</a>.
+        <br/><br/>
+
+    share_of_energy_power_supercritical_ccs_waste_mix:
+      title: Waste incinerator
+      description: |
+          What share of installed waste incinarator capacity will be equipped with a CO<sub>2</sub> capture
+          unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
+          power plants in your scenario. This is influenced by electricity demand, other installed
+          power generation technologies and commodity prices.<br/><br/> The amount of installed waste incicerator capacity can be set in
+          <a href="/scenario/supply/electricity/waste-power">the Supply → Electricity → Waste power section</a>.
+          <br/><br/>

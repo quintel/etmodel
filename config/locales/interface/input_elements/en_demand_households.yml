@@ -187,21 +187,17 @@ en:
     households_cooling_heatpump_air_water_electricity_share:
       title: Heat pump (air)
       short_description: ''
-      description: "A heat pump moves heat from one place to another. Buildings can
-        use them for heating and cooling, but they are also used in refrigerators.
-        Currently, their use in newly constructed houses is becoming quite popular,
-        since European legislation dictates that domestic energy consumption must
-        decrease.\r\n<br/><br/>\r\nThis is an electric heat pump that draws cold/heat
-        from the air outside and uses a wall or floor delivery system. Not all residences
-        are suitable for using a heat pump as they cannot all be fitted with wall
-        or floor delivery systems at acceptable costs. Considering the high investment
-        costs for such delivery systems, it is realistic to assume that no more than
-        ~20% of all residences could be equipped with such a heat pump. For the other
-        80%, the costs would probably outweigh the benefits.\r\n<br/><br/>\r\nNote
-        that for heat pump shares above 20%, the ETM will considerably underestimate
-        the associated investment costs. This is caused by the fact that the additional
-        investment costs are unknown for installation in residences that would normally
-        not qualify.  "
+      description: "With this slider you can adjust the percentage of air heatpumps used in households 
+        for cooling.\r\n<br/><br/>\r\nAn air heatpump uses electricity
+        and outside air to generate heat or cold. This cold can be transfered to water or air
+        and used in underfloor heating or airconditioning systems for cooling. 
+        \r\n<br/><br/>\r\nContrary to heating, the efficiency (COP) of this heat pump for cooling is
+        fixed. You can view the efficiency in the technical and financial properties.
+        \r\n<br/><br/>\r\nFor more information you can view the 
+        <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps\" target=\"_blank\">documentation</a>. 
+        To influence the efficiency of this heatpump you can go to the the Costs & efficiencies > Heat > 
+        <a href=\"/scenario/costs/costs_heat/heating-in-houses-and-buildings\" >Heating in houses and buildings</a> section
+        or choose to adjust the <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >weather curve</a>."
     households_appliances_fridge_freezer_electricity_efficiency:
       title: Fridge / Freezer
       short_description: ''
@@ -484,16 +480,18 @@ en:
       title: Heat pump (air)
       short_description: ''
       description: "With this slider you can adjust the percentage of air heatpumps used in households 
-        to generate heat and hot water.\r\n<br/><br/>\r\nAn air heatpump uses electricity
+        for space heating and hot water.\r\n<br/><br/>\r\nAn air heatpump uses electricity
         and outside air to generate heat. This heat can be transfered to water or air
-        and used in underfloor heating or airconditioning systems to heat the interior or for the generation of hot water. 
+        and used in underfloor heating or airconditioning systems for space heating or for the generation of hot water. 
         \r\n<br/><br/>\r\nThe efficiency (COP) of this heat pump is affected by the outside air temperature 
         and therefore determined by the weather. For every hour a seperate efficiency (COP) is calculated based on the 
-        weather curve available in the ETM. For more information you view the 
+        weather curve available in the ETM. The average of these hourly calculations (the Seasonal COP: 'SCOP') can be found
+        in the technical and financial properties.
+        \r\n<br/><br/>\r\nFor more information you can view the 
         <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps\" target=\"_blank\">documentation</a>. 
-        To influence the efficiency of this heatpump you can go to the the Costs > Heat > 
+        To influence the efficiency of this heatpump you can go to the the Costs & efficiencies > Heat > 
         <a href=\"/scenario/costs/costs_heat/heating-in-houses-and-buildings\" >Heating in houses and buildings</a> section
-        or choose to adjust the weather curve <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>."
+        or choose to adjust the <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >weather curve</a>."
     households_heater_coal_share:
       title: Coal-fired heater
       short_description: ''

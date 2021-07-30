@@ -806,6 +806,14 @@ nl:
       title: Gasketel
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie voor ruimteverwarming van non-condensing gasketels in huizen veranderen."
+    efficiency_households_space_heater_crude_oil:
+      title: Olieketel
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie voor ruimteverwarming van olieketels in huizen veranderen."
+    efficiency_buildings_space_heater_crude_oil:
+      title: Olieketel
+      short_description: ''
+      description: "Met deze schuif kun je de toekomstige efficiëntie voor ruimteverwarming van olieketels in gebouwen veranderen."
     efficiency_buildings_space_heater_network_gas:
       title: HR combiketel (gas)
       short_description: ''
@@ -833,15 +841,21 @@ nl:
     efficiency_households_space_heater_heatpump_air_water_electricity:
       title: Luchtwarmtepomp
       short_description: ''
-      description: "Hoeveel zal de efficiëntie (COP) van luchtwarmtepompen veranderen in de toekomst? 
-      Met deze schuif kun je aangeven met hoeveel procent de efficiëntie (COP) zal toenemen of kun je de efficiëntie eventueel bijstellen naar beneden.  
-      De huidige efficiëntie (COP) kun je vinden in de technische parameters en kosten."
+      description: |
+        Hoeveel zal de coefficient of performance (COP) van luchtwarmtepompen veranderen in de toekomst? 
+        Met deze schuif kun je aangeven met hoeveel procent de COP zal veranderen. De huidige jaarlijkse gemiddelde COP,
+        ookwel de seasonal COP (SCOP), kun je vinden in de "Technische parameters en kosten".
+        Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
+        het uurlijkse profiel van de buitentemperatuur.
     efficiency_households_space_heater_hybrid_heatpump_air_water_electricity:
-      title: Hybride warmtepomp (gas)
+      title: Hybride warmtepomp (gas/waterstof)
       short_description: ''
-      description: "Hoeveel zal de efficiëntie (COP) van hybride warmtepompen op gas veranderen in de toekomst? 
-      Met deze schuif kun je aangeven met hoeveel procent de efficiëntie (COP) zal toenemen of kun je de efficiëntie eventueel bijstellen naar beneden. 
-      De huidige efficiëntie (COP) kun je vinden in de technische parameters en kosten."
+      description: |
+        Hoeveel zal de coefficient of performance (COP) van hybride warmtepompen veranderen in de toekomst? 
+        Met deze schuif kun je aangeven met hoeveel procent de COP zal veranderen. De huidige jaarlijkse gemiddelde COP,
+        ookwel de seasonal COP (SCOP), kun je vinden in de "Technische parameters en kosten".
+        Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
+        het uurlijkse profiel van de buitentemperatuur.
     efficiency_households_space_heater_combined_hydrogen:
       title: HR combiketel (waterstof)
       short_description: ''

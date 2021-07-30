@@ -58,7 +58,7 @@ en:
         batteries. Below, you can specify how much the investment costs of this technology
         will change in the future.
     costs_heat_network:
-      title: District heating infrastructure
+      title: Costs district heating infrastructure
       short_description:
       description: What do you think the costs for heat network infrastructure will
         be in the future? See <a href="https://docs.energytransitionmodel.com/main/heat-infrastructure-costs"
@@ -156,13 +156,15 @@ en:
       short_description:
       description: 'How will the costs and efficiencies of nuclear plants change in the future?'
     costs_heat_built_environment:
-      title: Heating in houses and buildings
+      title: Efficiencies heating in houses and buildings
       short_description:
-      description: 'How will the costs and efficiencies of heating technologies in houses and buildings change in the future?'
+      description: 'How will the efficiencies of heating technologies in houses and buildings for space heating change in the future?
+        The chart on the right shows the final demand for heating and hot water in households. The final demand chart 
+        for space heating in buildings can be found in the chart list. Note that these sliders do not regard the efficiency of hot water production.'
     costs_heat_sources_other:
-      title: Other heating sources
+      title: Costs heating
       short_description:
-      description: 'How will the costs of other heating sources change in the future?'
+      description: 'How will the costs of heating change in the future?'
     specs_transport_efficiency_improvement:
       title: Efficiencies
       short_description: ''

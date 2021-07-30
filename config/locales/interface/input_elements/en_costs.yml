@@ -784,15 +784,15 @@ en:
     efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity:
       title: Heat pump (ground)
       short_description: ''
-      description: "This slider sets the future efficiency of ground heat pumps in buildings."
+      description: "This slider sets the future efficiency of ground heat pumps in buildings for space heating."
     efficiency_buildings_space_heater_electricity:
       title: Electric heater
       short_description: ''
-      description: "This slider sets the future efficiency of electric heaters in buildings."
+      description: "This slider sets the future efficiency of electric heaters in buildings for space heating."
     efficiency_buildings_space_heater_wood_pellets:
       title: Biomass-fired heater
       short_description: ''
-      description: "This slider sets the future efficiency of biomass-fired heaters in buildings."
+      description: "This slider sets the future efficiency of biomass-fired heaters in buildings for space heating.."
     efficiency_hydrogen_electrolysis:
       title: Power-to-gas elektrolysers
       short_description: ''
@@ -801,7 +801,7 @@ en:
       title: Heat pump (air)
       short_description: ''
       description: "How will the coefficient of performance (COP) of air-source heat pumps change in the future? 
-      With this slider you can adjust with which percentage the COP of air-source heat pumps will change in the future. 
+      With this slider you can adjust with which percentage the COP of air-source heat pumps for space heating will change in the future. 
       To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'. 
       It is not possible to the absolute value of the future SCOP of air-source heat pumps with a slider as this is a result of hourly 
       calculations based on the hourly outside temperature curve."
@@ -809,15 +809,15 @@ en:
       title: Hybrid heat pump (gas/hydrogen)
       short_description: ''
       description: "How will the coefficient of performance (COP) of hybrid heat pumps change in the future? 
-      With this slider you can adjust with which percentage the COP of hybrid heat pumps will change in the future. 
+      With this slider you can adjust with which percentage the COP of hybrid heat pumps for space heating will change in the future. 
       To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'. 
       It is not possible to set the absolute value of the future SCOP of hybrid heat pumps with a slider as this is a result of hourly 
       calculations based on the hourly outside temperature curve."
     efficiency_households_space_heater_combined_hydrogen:
       title: Condensing combi boiler (hydrogen)  
       short_description: ''
-      description: "This slider sets the future efficiency of condensing combi boilers (hydrogen) for households."
+      description: "This slider sets the future efficiency of condensing combi boilers (hydrogen) for space heating in households."
     efficiency_buildings_space_heater_combined_hydrogen:
       title: Condensing combi boiler (hydrogen) 
       short_description: ''
-      description: "This slider sets the future efficiency of condensing combi boilers (hydrogen) for buildings."
+      description: "This slider sets the future efficiency of condensing combi boilers (hydrogen) for space heating in buildings."

@@ -188,18 +188,19 @@ nl:
     households_cooling_heatpump_air_water_electricity_share:
       title: Luchtwarmtepomp
       short_description: ''
-      description: "Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt 
-        in huishoudens voor koeling veranderen.\r\n<br/><br/>\r\nEen 
-        luchtwarmtepomp gebruikt elektriciteit en buitenlucht om warmte of koude te genereren.
+      description: |
+        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt 
+        in huishoudens voor koeling veranderen.<br/><br/>
+        Een luchtwarmtepomp gebruikt elektriciteit en buitenlucht om warmte of koude te genereren.
         Deze koude kan worden gedistribueerd via water (met vloerverwarmingssystemen) 
-        of via de lucht (met airconditioners) om een woning te koelen.
-        \r\n<br/><br/>\r\nDe efficiëntie (COP) van de luchtwarmtepomp voor koeling (in tegenstelling
-        tot verwarming) is vastgesteld. Deze kun je vinden in de technische parameters en kosten.
-        \r\n<br/><br/>\r\nGa voor meer informatie naar de  
-        <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps\" target=\"_blank\">documentatie</a>. 
-        Om de efficientie (COP) te beïnvloeden kun je naar de Kosten & efficiënties > Warmte > 
-        <a href=\"/scenario/costs/costs_heat/heating-in-houses-and-buildings\" >Verwarming in huizen en gebouwen</a> gaan
-        of het <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >weerjaar</a> aanpassen."
+        of via de lucht (met airconditioners) om een woning te koelen.<br/><br/>
+        De efficiëntie (COP) van de luchtwarmtepomp voor koeling (in tegenstelling
+        tot verwarming) is vastgesteld. Deze kun je vinden in de technische parameters en kosten. <br/><br/>
+        Ga voor meer informatie naar de  
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>. 
+        Om de efficientie (COP) te beïnvloeden kun je naar de 
+        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
+        of het <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weerjaar</a> aanpassen.
     households_appliances_fridge_freezer_electricity_efficiency:
       title: Koelkast / Vriezer
       short_description: ''
@@ -487,22 +488,23 @@ nl:
     households_heater_heatpump_air_water_electricity_share:
       title: Luchtwarmtepomp
       short_description: ''
-      description: "Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt 
-        in huishoudens voor verwarming en warm tapwater veranderen.\r\n<br/><br/>\r\nEen 
-        luchtwarmtepomp gebruikt elektriciteit en buitenlucht om warmte te genereren.
+      description: |
+        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt 
+        in huishoudens voor verwarming en warm tapwater veranderen. <br/><br/>
+        Een luchtwarmtepomp gebruikt elektriciteit en buitenlucht om warmte te genereren.
         Deze warmte kan worden gedistribueerd via water (met vloerverwarmingssystemen) 
         of via de lucht (met airconditioners) om een woning te verwarmen ofwel om warm tapwater
-        te genereren.
-        \r\n<br/><br/>\r\nDe efficiëntie (COP) van de luchtwarmtepomp wordt 
+        te genereren. <br/><br/>
+        De efficiëntie (COP) van de luchtwarmtepomp wordt 
         beïnvloed door de buitentemperatuur en is daardoor afhankelijk van het weer. Voor elk 
         uur wordt de efficiëntie (COP) berekend gebaseerd op het weerjaar. Het gemiddelde van deze
         uurlijkse berekeningen (de seizoensafhankelijke COP: 'SCOP') kan worden gevonden in de 
-        technische parameters en kosten.
-        \r\n<br/><br/>\r\nGa voor meer informatie naar de  
-        <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps\" target=\"_blank\">documentatie</a>. 
-        Om de efficientie (COP) te beïnvloeden kun je naar de Kosten & efficiënties > Warmte > 
-        <a href=\"/scenario/costs/costs_heat/heating-in-houses-and-buildings\" >Verwarming in huizen en gebouwen</a> gaan
-        of het <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >weerjaar</a> aanpassen."
+        technische parameters en kosten. <br/><br/>
+        Ga voor meer informatie naar de  
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>. 
+        Om de efficientie (COP) te beïnvloeden kun je naar de 
+        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
+        of het <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weerjaar</a> aanpassen.
     households_heater_coal_share:
       title: Kolenketel
       short_description: ''

@@ -1,4 +1,19 @@
 # Wat is er nieuw in het Energietransitiemodel?
+
+# Augustus 2021
+
+## Kosten sectie vernieuwd en nieuwe efficiëntie sliders 
+
+De ‘Kosten’ sectie in het ETM is opnieuw gestructureerd en nieuwe sliders zijn toegevoegd die de efficiënties van technologieën beschrijven. Dit betekent dat je nu de efficiëntie van van de meeste technologieën in het ETM kunt aanpassen. Je kunt de nieuwe sliders vinden onder **[Elektriciteit][Costs electricity]**, **[Hernieuwbare elektriciteit][Costs renewable electricity]** en **[Warmte][Costs heat]**. De ‘Kosten’ sectie is hernoemd naar ‘Kosten en efficiënties’. 
+
+-> ![](/assets/pages/whats_new/costs_efficiencies_nl.png) <-
+
+## HR combiketel (waterstof) toegevoegd voor huishoudens en gebouwen
+
+Het is nu mogelijk om HR combiketels op waterstof voor ruimteverwarming en warm water toe te voegen aan je scenario. Ga naar Vraag > Huishoudens > **[Ruimteverwarming en warm water][Hydrogen boiler]** om de slider te gebruiken. 
+
+-> ![](/assets/pages/whats_new/boiler_hydrogen_nl.png) <-
+
 ___
 # Juni 2021
 
@@ -301,3 +316,12 @@ De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is ve
 [Other emissions]: /scenario/emissions/other_emissions/overview
 
 [Emissions sheet]: /regions/nl?time=future&scenario=
+
+[Costs electricity]: /scenario/costs/specs_electricity/coal-plants
+
+[Costs renewable electricity]: /scenario/costs/specs_renewable_electricity/biomass-plants
+
+[Costs heat]: /scenario/costs_heat/efficiencies-heating-in-houses-and-buildings
+
+[Hydrogen boiler]: /scenario/demand/households/space-heating-and-hot-water
+

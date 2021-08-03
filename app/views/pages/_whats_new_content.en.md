@@ -1,5 +1,13 @@
 # What's new in the Energy Transition Model?
 
+# August 2021
+
+## Costs section restructured and new efficiency sliders
+
+The ‘Costs’ section in the ETM has been restructured and new sliders were added describing the efficiencies of technologies. This means you can now adjust the efficiencies of most technologies within the ETM. You can find the efficiency sliders under **[Electricity][Costs electricity]**, **[Renewable electricity][Costs renewable electricity]** and **[Heat][Costs heat]**. The ‘Costs’ sidebar item has been renamed to ‘Costs & efficiencies’. 
+
+-> ![](/assets/pages/whats_new/costs_efficiencies.png) <-
+
 ---
 # June 2021
 
@@ -311,3 +319,11 @@ You can find the adjusted data export here in the **[Data export → Merit order
 [Other emissions]: /scenario/emissions/other_emissions/overview
 
 [Emissions sheet]: /regions/nl?time=future&scenario=
+
+[Costs electricity]: /scenario/costs/specs_electricity/coal-plants
+
+[Costs renewable electricity]: /scenario/costs/specs_renewable_electricity/biomass-plants
+
+[Costs heat]: /scenario/costs_heat/efficiencies-heating-in-houses-and-buildings
+
+

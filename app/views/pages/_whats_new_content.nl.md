@@ -8,6 +8,12 @@ De ‘Kosten’ sectie in het ETM is opnieuw gestructureerd en nieuwe sliders zi
 
 -> ![](/assets/pages/whats_new/costs_efficiencies_nl.png) <-
 
+## Nieuw: HR combiketel (waterstof)
+
+Het is nu mogelijk om HR combiketles op waterstof voor ruimteverwarming en warm water toe te voegen aan je scenario. Ga naar Vraag > Huishoudens > **[Ruimteverwarming en warm water][Hydrogen boiler]** om de slider te gebruiken. 
+
+-> ![](/assets/pages/whats_new/boiler_hydrogen_nl.png) <-
+
 ___
 # Juni 2021
 
@@ -316,4 +322,6 @@ De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is ve
 [Costs renewable electricity]: /scenario/costs/specs_renewable_electricity/biomass-plants
 
 [Costs heat]: /scenario/costs_heat/efficiencies-heating-in-houses-and-buildings
+
+[Hydrogen boiler]: /scenario/demand/households/space-heating-and-hot-water
 

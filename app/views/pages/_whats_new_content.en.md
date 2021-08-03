@@ -8,6 +8,12 @@ The ‘Costs’ section in the ETM has been restructured and new sliders were ad
 
 -> ![](/assets/pages/whats_new/costs_efficiencies.png) <-
 
+## New: Condensing combi boiler (hydrogen)
+
+It is now possible to add condensing combi boilers on hydrogen for space heating and hot water to your scenario. Go to Demand > Households > **[Space heating & hot water][Hydrogen boiler]** to adjust the slider. 
+
+-> ![](/assets/pages/whats_new/boiler_hydrogen.png) <-
+
 ---
 # June 2021
 
@@ -326,4 +332,5 @@ You can find the adjusted data export here in the **[Data export → Merit order
 
 [Costs heat]: /scenario/costs_heat/efficiencies-heating-in-houses-and-buildings
 
+[Hydrogen boiler]: /scenario/demand/households/space-heating-and-hot-water
 

@@ -4,13 +4,13 @@
 
 ## Kosten sectie vernieuwd en nieuwe efficiëntie sliders 
 
-De ‘Kosten’ sectie in het ETM is opnieuw gestructureerd en nieuwe sliders zijn toegevoegd die de efficiënties van technologieën beschrijven. Dit betekent dat je nu de efficientie van van de meeste technologien in het ETM kunt aanpassen. Je kun de nieuwe sliders vinden onder **[Elektriciteit][Costs electricity]**, **[Hernieuwbare elektriciteit][Costs renewable electricity]** en **[Warmte][Costs heat]**. De ‘Kosten’ sectie is hernoemd naar ‘Kosten en efficiënties’. 
+De ‘Kosten’ sectie in het ETM is opnieuw gestructureerd en nieuwe sliders zijn toegevoegd die de efficiënties van technologieën beschrijven. Dit betekent dat je nu de efficiëntie van van de meeste technologieën in het ETM kunt aanpassen. Je kunt de nieuwe sliders vinden onder **[Elektriciteit][Costs electricity]**, **[Hernieuwbare elektriciteit][Costs renewable electricity]** en **[Warmte][Costs heat]**. De ‘Kosten’ sectie is hernoemd naar ‘Kosten en efficiënties’. 
 
 -> ![](/assets/pages/whats_new/costs_efficiencies_nl.png) <-
 
-## Nieuw: HR combiketel (waterstof)
+## HR combiketel (waterstof) toegevoegd voor huishoudens en gebouwen
 
-Het is nu mogelijk om HR combiketles op waterstof voor ruimteverwarming en warm water toe te voegen aan je scenario. Ga naar Vraag > Huishoudens > **[Ruimteverwarming en warm water][Hydrogen boiler]** om de slider te gebruiken. 
+Het is nu mogelijk om HR combiketels op waterstof voor ruimteverwarming en warm water toe te voegen aan je scenario. Ga naar Vraag > Huishoudens > **[Ruimteverwarming en warm water][Hydrogen boiler]** om de slider te gebruiken. 
 
 -> ![](/assets/pages/whats_new/boiler_hydrogen_nl.png) <-
 

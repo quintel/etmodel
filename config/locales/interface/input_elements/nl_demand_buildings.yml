@@ -300,3 +300,37 @@ nl:
         onttrokken en in het koelingssysteem van een aantal gebouwen ingevoerd. Omdat
         ''s zomers de hoeveelheid koude opgeslagen in een meer significant afneemt
         hebben meren slechts een beperkte capaciteit over het jaar genomen. '
+    buildings_space_heater_heatpump_air_water_electricity_share:
+      title: Luchtwarmtepomp
+      short_description: ''
+      description: |
+        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt 
+        in gebouwen voor ruimteverwarming veranderen. <br/><br/>
+        Een luchtwarmtepomp gebruikt elektriciteit en omgevingswarmte om warmte te genereren.
+        Deze warmte kan worden gedistribueerd via water (met vloerverwarmingssystemen) 
+        of via de lucht (met airconditioners) om een gebouw te verwarmen. <br/><br/>
+        De efficiëntie (COP) van de luchtwarmtepomp wordt 
+        beïnvloed door de buitentemperatuur en is daardoor afhankelijk van het weer. Voor elk 
+        uur wordt de efficiëntie (COP) berekend gebaseerd op het weerjaar. Het gemiddelde van deze
+        uurlijkse berekeningen (de seizoensafhankelijke COP: 'SCOP') kan worden gevonden in de 
+        technische parameters en kosten. <br/><br/>
+        Ga voor meer informatie naar de  
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>. 
+        Om de efficientie (COP) te beïnvloeden kun je naar de 
+        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
+        of het <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weerjaar</a> aanpassen.
+    buildings_cooling_heatpump_air_water_electricity_share:
+      title: Heat pump (air)
+      short_description: ''
+      description: Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt 
+        in gebouwen voor koeling veranderen.<br/><br/>
+        Een luchtwarmtepomp gebruikt elektriciteit en omgevingskoude om warmte of koude te genereren.
+        Deze koude kan worden gedistribueerd via water (met vloerverwarmingssystemen) 
+        of via de lucht (met airconditioners) om een gebouw te koelen.<br/><br/>
+        De efficiëntie (COP) van de luchtwarmtepomp voor koeling (in tegenstelling
+        tot verwarming) is vastgesteld. Deze kun je vinden in de technische parameters en kosten. <br/><br/>
+        Ga voor meer informatie naar de  
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>. 
+        Om de efficientie (COP) te beïnvloeden kun je naar de 
+        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
+        of het <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weerjaar</a> aanpassen.

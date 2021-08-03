@@ -3,7 +3,7 @@ en:
   input_elements:
     bunkers_allocated_percentage_aviation:
       title: International aviation
-      short_description: 
+      short_description:
       description: "What percentage of the energy demand for international aviation
         should be included in your scenario? The total energy demand includes deliveries
         of aviation fuels to aircraft for international aviation. Fuels used by airlines
@@ -21,7 +21,7 @@ en:
         is located. "
     bunkers_allocated_percentage_shipping:
       title: International navigation
-      short_description: 
+      short_description:
       description: "What percentage of the energy demand for international navigation
         should be included in your scenario? The total energy demand covers those
         quantities delivered to ships of all flags that are engaged in international
@@ -53,20 +53,20 @@ en:
         on GitHub</a> for more information on the numbers used."
     transport_plane_using_gasoline_share:
       title: Gasoline
-      short_description: 
+      short_description:
       description: 'Not a large percentage of airplanes use gasoline as fuel. Its
         use is mostly limited to smaller private planes, since larger planes need
         higher energy content fuels to get far enough. '
     transport_bicycle_using_human_power_share:
       title: Bike
-      short_description: 
+      short_description:
       description: "How do you suppose the demand for bicycles will change in the
         future? Will it increase or decrease?\r\n<br/><br/>\r\nBicycles are one of
         the most traditional forms of transport and are rapidly coming back into style
         as people become more aware of the environmental as well as health benefits.\r\n"
     transport_bicycle_using_electricity_share:
       title: E-bike
-      short_description: 
+      short_description:
       description: "Will the share of electric bikes (e-bikes) expand in the future?\r\n<br/><br/>\r\nElectric
         bikes play a big role in expanding the existing market for bicycles as they
         provide speed and reduced effort which stretches the market to include parts
@@ -137,7 +137,7 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_car_using_hydrogen_share:
       title: Hydrogen
-      short_description: 
+      short_description:
       description: "What percentage of all cars will be hydrogen fuelled vehicles
         in the future? Hydrogen cars have been hyped as well as criticised a lot,
         and as with many choices, their value depends on other choices you make. Hydrogen
@@ -199,7 +199,7 @@ en:
         that trucks also include non-road mobile machinery and delivery vans."
     transport_truck_using_lng_mix_share:
       title: LNG
-      short_description: 
+      short_description:
       description: "What percentage of all trucks will use liquefied natural gas (LNG)
         fueled internal combustion engine (ICE) technology? LNG trucks have a longer
         driving range than compressed network gas (CNG) trucks, because the energy
@@ -209,7 +209,7 @@ en:
         that trucks also include non-road mobile machinery and delivery vans."
     transport_truck_using_hydrogen_share:
       title: Hydrogen
-      short_description: 
+      short_description:
       description: "What percentage of all trucks will be hydrogen fuelled vehicles
         in the future?<br/><br/>\r\nHydrogen is an energy carrier - not an energy
         source -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
@@ -225,7 +225,7 @@ en:
         that trucks also include non-road mobile machinery and delivery vans."
     transport_bus_using_electricity_share:
       title: Electric
-      short_description: 
+      short_description:
       description: "What percentage of all busses will be fully electric in the future?
         \r\n<br/><br/>\r\nGovernments and other regulatory boards in many countries
         are now trying to push electric busses as one of the primary modes of public
@@ -237,7 +237,7 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_bus_using_hydrogen_share:
       title: Hydrogen
-      short_description: 
+      short_description:
       description: "What percentage of all busses will be hydrogen fuelled vehicles
         in the future? \r\n<br/><br/>\r\nThe use of hydrogen for transport has been
         hyped as well as criticised a lot, and as with many choices, their value depends
@@ -258,7 +258,7 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_bus_using_diesel_mix_share:
       title: Diesel
-      short_description: 
+      short_description:
       description: "What percentage of all cars will use conventional diesel fueled
         internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nToday, nearly
         all of the busses use diesel as the primary source of fuel; however, competition
@@ -267,7 +267,7 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_bus_using_gasoline_mix_share:
       title: Gasoline
-      short_description: 
+      short_description:
       description: "What percentage of all busses will be using gasoline fuelled internal
         combustion engine (ICE) technology in the future?  \r\n<br/><br/>\r\nCompetition
         from zero-emissions technologies, like electric and hydrogen vehicles is pushing
@@ -277,7 +277,7 @@ en:
         demand will change?"
     transport_bus_using_lng_share:
       title: LNG
-      short_description: 
+      short_description:
       description: "What percentage of all busses will be using liquefied natural
         gas (LNG) technology in the future?\r\n<br/><br/>\r\nAs environmental concerns
         become a prime factor in shaping the demand for fuels in the transport sector,
@@ -289,7 +289,7 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_bus_using_compressed_natural_gas_share:
       title: Compressed gas
-      short_description: 
+      short_description:
       description: "What percentage of all busses will use compressed natural gas
         fueled internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nGas
         fueled busses are relatively clean compared to gasoline or diesel fueled ones.
@@ -309,12 +309,12 @@ en:
         gas fueled engines are already commercially available. "
     bunkers_ship_using_heavy_fuel_oil_share:
       title: HFO
-      short_description: 
+      short_description:
       description: 'Large international cargo ships generally operate on HFO, which
         is the heaviest commercial fuel that can be obtained from crude oil. '
     bunkers_ship_using_lng_share:
       title: LNG
-      short_description: 
+      short_description:
       description: "Ships transporting large cargo over long distances require very
         powerful engines and energy-rich fuels. Natural gas is an unsuitable shipping
         fuel as its energetic density is very low, but through liquefaction it increases
@@ -349,6 +349,12 @@ en:
         world. They are a very energy efficient and rather clean form of transport.
         They are not particularly flexible of course, and rely on expensive electric
         infrastructure, so they will never fully replace diesel trains.
+    transport_passenger_train_using_hydrogen_share:
+      title: Hydrogen
+      short_description: ''
+      description: Hydrogen trains are a new development that we might see more of in the future,
+        because of their clean and effective way of transportation. Currently there are not many
+        hydrogen trains in operation, as the expensive infrastructure is not in place.
     transport_cars_share:
       title: Cars
       short_description: ''
@@ -368,33 +374,33 @@ en:
         transport</a>.
     transport_useful_demand_passenger_kms:
       title: Passenger transport
-      short_description: 
+      short_description:
       description: Do you believe people will travel more or less in the future? Please
         indicate here by what percentage you think the number of 'passenger kilometres'
         will change each year.
     transport_busses_share:
       title: Busses
-      short_description: 
+      short_description:
       description: Please indicate what percentage of the kilometres we travel is
         covered by busses.
     transport_trams_share:
       title: Trams/metros
-      short_description: 
+      short_description:
       description: Please indicate what percentage of the kilometres we travel is
         covered by trams and metros.
     transport_bicycles_share:
       title: Bicycles
-      short_description: 
+      short_description:
       description: Please indicate what percentage of the kilometres we travel is
         covered by bicycles.
     transport_motorcycles_share:
       title: Motorcycles
-      short_description: 
+      short_description:
       description: Please indicate what percentage of the kilometres we travel is
         covered by motorcycles and mopeds
     transport_motorcycle_using_gasoline_mix_share:
       title: Gasoline
-      short_description: 
+      short_description:
       description: "What percentage of all motorcycles will be using gasoline fuelled
         technology in the future?\r\n<br/><br/>\r\nMany areas of the world are experiencing
         a rapid demand in motorcycle usage as this form of personal transport provides
@@ -408,7 +414,7 @@ en:
         gas fueled engines are already commercially available. "
     transport_motorcycle_using_electricity_share:
       title: Electric
-      short_description: 
+      short_description:
       description: "How do you think the demand for electric motorcycles will change
         in the future?\r\n<br/><br/>\r\nAs of today, electric motorcycles aren't yet
         used very often. Competition with cars at charging stations as well as a smaller
@@ -423,17 +429,17 @@ en:
         gas fueled engines are already commercially available. "
     bunkers_useful_demand_planes:
       title: International aviation
-      short_description: 
+      short_description:
       description: Please indicate how the number of international flights will change
         every year in the future.
     bunkers_useful_demand_ships:
       title: International navigation
-      short_description: 
+      short_description:
       description: Please indicate how the number of international shipping trades
         will change every year in the future.
     transport_ship_using_diesel_mix_share:
       title: Diesel / dual fuel
-      short_description: 
+      short_description:
       description: "The vast majority of ships for inland waterway transport are powered
         by diesel engines. These engines can run in several cycles and at high and
         low pressures. Depending on the exact engine configuration, diesel engines
@@ -445,7 +451,7 @@ en:
         on GitHub</a> for detailed information on the numbers and sources used."
     transport_ship_using_lng_mix_share:
       title: LNG
-      short_description: 
+      short_description:
       description: "(Liquefied) natural gas engines are a rather novel ship engine
         technology. They are spark-ignited engines which operate at low pressures
         and are optimized for liquefied natural gas (LNG). As a result, these engines
@@ -470,28 +476,34 @@ en:
         are relatively slow. They are ill-suited for transportation over short distances.
     transport_useful_demand_freight_tonne_kms:
       title: Freight transport
-      short_description: 
+      short_description:
       description: Do you believe that more or less freight will be transported in
         the future? Please indicate by what percentage per year you think the number
         of 'freight tonne kilometres' will change.
     transport_freight_trains_share:
       title: Trains
-      short_description: 
+      short_description:
       description: What do you think will happen to freight transport by rail? Trains
         are relatively energy-efficient, but depend on the presence of high-quality
         infrastructure.
     transport_freight_train_using_electricity_share:
       title: Electric
-      short_description: 
+      short_description:
       description: "Electric trains are the standard in all developed regions of the
         world. They are a very energy efficient and rather clean form of transport.
         They are not particularly flexible of course, and rely on expensive electric
         infrastructure, so they will never fully replace diesel trains.\r\n<br/><br/>\r\nSee
         the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/energy/transport\">documentation
         on GitHub</a> for detailed information on the numbers and sources used."
+    transport_freight_train_using_hydrogen_share:
+      title: Hydrogen
+      short_description: ''
+      description: Hydrogen trains are a new development that we might see more of in the future,
+        because of their clean and effective way of transportation. Currently there are not many
+        hydrogen trains in operation, as the expensive infrastructure is not in place.
     transport_freight_train_using_diesel_mix_share:
       title: Diesel
-      short_description: 
+      short_description:
       description: "Diesel-powered trains are not uncommon as they do not rely on
         expensive electricity infrastructure. They are ideal for very remote and sparsely
         populated regions, or for international transport of goods. Because Europe
@@ -537,7 +549,7 @@ en:
         become every year. Trains are already quite energy efficient.
     transport_vehicle_using_hydrogen_efficiency:
       title: Hydrogen vehicles
-      short_description: 
+      short_description:
       description: "Here you can indicate how much more efficient future hydrogen
         vehicles will become every year. Hydrogen vehicles include all vehicles that
         can run on hydrogen: cars, busses and trucks.\r\n<br/><br/>\r\nSince hydrogen

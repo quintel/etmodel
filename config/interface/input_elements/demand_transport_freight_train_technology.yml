@@ -6,10 +6,17 @@
   command_type: value
   position: 1
   slide_key: demand_transport_freight_train_technology
-- key: transport_freight_train_using_diesel_mix_share
+- key: transport_freight_train_using_hydrogen_share
   share_group: transport_freight_train_share
   step_value: 0.1
   unit: "%"
   command_type: value
   position: 2
+  slide_key: demand_transport_freight_train_technology
+- key: transport_freight_train_using_diesel_mix_share
+  share_group: transport_freight_train_share
+  step_value: 0.1
+  unit: "%"
+  command_type: value
+  position: 3
   slide_key: demand_transport_freight_train_technology

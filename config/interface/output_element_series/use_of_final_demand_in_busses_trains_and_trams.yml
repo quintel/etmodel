@@ -1,7 +1,7 @@
 ---
 - label: electric_trains
   color: "#4169E1"
-  order_by: 10
+  order_by: 1
   group: ''
   show_at_first: false
   is_target_line: false
@@ -11,9 +11,33 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_busses_trains_and_trams
   key: electric_trains_use_of_final_demand_in_busses_trains_and_trams
+- label: electric_trams
+  color: "#3854a8"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electric_trams_in_use_of_final_demand_in_busses_trains_and_trams
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_busses_trains_and_trams
+  key: electric_trams_use_of_final_demand_in_busses_trains_and_trams
+- label: electric_busses
+  color: "#00008B"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electric_busses_in_use_of_final_demand_in_busses_trains_and_trams
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_busses_trains_and_trams
+  key: electric_busses_use_of_final_demand_in_busses_trains_and_trams
 - label: hydrogen_trains
   color: "#08beff"
-  order_by: 11
+  order_by: 4
   group: ''
   show_at_first: false
   is_target_line: false
@@ -23,6 +47,18 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_busses_trains_and_trams
   key: hydrogen_trains_use_of_final_demand_in_busses_trains_and_trams
+- label: hydrogen_busses
+  color: "#87CEEB"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_busses_in_use_of_final_demand_in_busses_trains_and_trams
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_busses_trains_and_trams
+  key: hydrogen_busses_use_of_final_demand_in_busses_trains_and_trams
 - label: diesel_trains
   color: "#854321"
   order_by: 6
@@ -35,45 +71,9 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_busses_trains_and_trams
   key: diesel_trains_use_of_final_demand_in_busses_trains_and_trams
-- label: coal_trains
-  color: "#333333"
-  order_by: 1
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: coal_trains_in_use_of_final_demand_in_busses_trains_and_trams
-  is_1990: false
-  dependent_on:
-  output_element_key: use_of_final_demand_in_busses_trains_and_trams
-  key: coal_trains_use_of_final_demand_in_busses_trains_and_trams
-- label: electric_trams
-  color: "#416B86"
-  order_by: 9
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: electric_trams_in_use_of_final_demand_in_busses_trains_and_trams
-  is_1990: false
-  dependent_on:
-  output_element_key: use_of_final_demand_in_busses_trains_and_trams
-  key: electric_trams_use_of_final_demand_in_busses_trains_and_trams
-- label: electric_busses
-  color: "#00008B"
-  order_by: 8
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: electric_busses_in_use_of_final_demand_in_busses_trains_and_trams
-  is_1990: false
-  dependent_on:
-  output_element_key: use_of_final_demand_in_busses_trains_and_trams
-  key: electric_busses_use_of_final_demand_in_busses_trains_and_trams
 - label: diesel_busses
   color: "#E07033"
-  order_by: 5
+  order_by: 7
   group: ''
   show_at_first: false
   is_target_line: false
@@ -83,21 +83,9 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_busses_trains_and_trams
   key: diesel_busses_use_of_final_demand_in_busses_trains_and_trams
-- label: hydrogen_busses
-  color: "#87CEEB"
-  order_by: 7
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: hydrogen_busses_in_use_of_final_demand_in_busses_trains_and_trams
-  is_1990: false
-  dependent_on:
-  output_element_key: use_of_final_demand_in_busses_trains_and_trams
-  key: hydrogen_busses_use_of_final_demand_in_busses_trains_and_trams
 - label: gasoline_busses
   color: "#8B0000"
-  order_by: 4
+  order_by: 8
   group: ''
   show_at_first: false
   is_target_line: false
@@ -109,7 +97,7 @@
   key: gasoline_busses_use_of_final_demand_in_busses_trains_and_trams
 - label: lng_busses
   color: "#CCCCCC"
-  order_by: 3
+  order_by: 9
   group: ''
   show_at_first: false
   is_target_line: false
@@ -121,7 +109,7 @@
   key: lng_busses_use_of_final_demand_in_busses_trains_and_trams
 - label: compressed_natural_gas_busses
   color: "#666666"
-  order_by: 2
+  order_by: 10
   group: ''
   show_at_first: false
   is_target_line: false
@@ -131,3 +119,15 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_busses_trains_and_trams
   key: compressed_natural_gas_busses_use_of_final_demand_in_busses_trains_and_trams
+- label: coal_trains
+  color: "#333333"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_trains_in_use_of_final_demand_in_busses_trains_and_trams
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_busses_trains_and_trams
+  key: coal_trains_use_of_final_demand_in_busses_trains_and_trams

@@ -238,7 +238,19 @@
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: waste_power_merit_order  
+  key: waste_power_merit_order
+- label: waste_power_ccs
+  color: "#821a00"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: waste_power_ccs_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: waste_power_ccs_merit_order
 - label: nuclear_iii
   color: "#fd8d3c"
   order_by: 1
@@ -563,6 +575,18 @@
   dependent_on:
   output_element_key: merit_order
   key: waste_chp_merit_merit_order
+- label: waste_chp_ccs_merit
+  color: "#82002b"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: waste_chp_ccs_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: waste_chp_ccs_merit_merit_order
 - label: local_chp_wood_merit
   color: "#6AB04C"
   order_by: 1

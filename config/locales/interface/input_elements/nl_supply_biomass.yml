@@ -42,20 +42,20 @@ nl:
         In de praktijk wordt nooit zoveel olie bijgemengd.
     max_demand_of_biogenic_waste:
       title: Biogeen afval
-      short_description: 
+      short_description:
       description: Met deze slider zet je de potentie biogeen afval wat beschikbaar
         is om te worden verbrand afvalverbrandingsinstallaties (AVIs) en/of afval
         WKKs.
     max_demand_of_wet_biomass:
       title: Natte biomassa
-      short_description: 
+      short_description:
       description: 'Natte biomassa is biomassa met een vochtpercentage van minimaal
         40-50%. Hieronder valt: resten van de voedings- en genootmiddelindustrie (VGI),
         agrarische reststrommen, rioolsib, aquatische biomassa, geteelde graanproducten
         etc.'
     max_demand_of_dry_biomass:
       title: Droge biomassa
-      short_description: 
+      short_description:
       description: 'Droge biomassa bestaat uit relatief droge organische stoffen,
         zoals hout. Droge biomassa is ‘eenvoudige biomassa’: het heeft geen bewerking
         nodig en levert een hoog rendement op. Er is dan ook veel vraag naar schone,
@@ -65,7 +65,7 @@ nl:
         wilg, populier). '
     max_demand_of_oily_biomass:
       title: Oliehoudende biomassa
-      short_description: 
+      short_description:
       description: 'Oliehoudende biomassa is biomassa met zaden waarin olie zit. Door
         het uitpersen van oliehoudende zaden ontstaat ruwe biodiesel. Deze olie kan
         in een veresteringsproces met toevoeging van methanol worden omgezet in biodiesel.
@@ -77,7 +77,7 @@ nl:
         target="_blank">dit Volkskrant-artikel</a>)'
     energy_biogas_fermentation_share:
       title: Vergisting
-      short_description: 
+      short_description:
       description: "Biomassavergisting heeft biogas als product, dat direct kan worden
         gebruikt voor warmte en/of elektriciteit maar ook kan worden opgewerkt tot
         groen gas alvorens het gasnetwerk in te worden geleid. Er zijn twee methoden
@@ -95,7 +95,7 @@ nl:
         specificaties ervan zijn hieronder te lezen."
     energy_greengas_gasification_dry_biomass_share:
       title: Droge vergassing
-      short_description: 
+      short_description:
       description: Bij droge vergassing wordt droge biomassa vergast bij hoge temperaturen
         (800 tot 1000 °C), een soort verbranding met een ondermaat zuurstof. Bij vergassing
         staat de vorming van een synthesegas centraal. Dit synthesegas is een brandbaar
@@ -106,7 +106,7 @@ nl:
         en opwerking tot groen gas van aardgaskwaliteit.
     energy_greengas_gasification_wet_biomass_share:
       title: Natte vergassing (SCW)
-      short_description: 
+      short_description:
       description: "Een andere naam voor natte vergassing is superkritische watervergassing
         (Super Critical Water gasification, SCW). Bij SCW wordt natte biomassa onder
         hoger druk en temperatuur (minimaal 375 °C en 221 bar) omgezet in groen gas.
@@ -121,3 +121,171 @@ nl:
         gas aan het netwerk kan worden geleverd (NRC, 2019). Naast de installatie
         in Alkmaar, zijn er ook plannen voor twee grote installaties in Rotterdam
         en Groningen (van 150-200 MW)."
+    households_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage diesel in het gebruik van olieproducten door huishoudens. Deze diesel wordt
+        onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+    households_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage biodiesel in het gebruik van olieproducten door huishoudens. Deze biodiesel wordt
+        onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+    households_kerosene_in_crude_oil_share:
+      title: Kerosine
+      short_description:
+      description: |
+        Percentage kerosine in het gebruik van olieproducten door huishoudens. Deze kerosine wordt
+        onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+    households_bio_kerosene_in_crude_oil_share:
+      title: Bio-kerosine
+      short_description:
+      description: |
+        Percentage bio-kerosine in het gebruik van olieproducten door huishoudens. Deze bio-kerosine
+        wordt onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+    households_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage LPG in het gebruik van olieproducten door huishoudens. Deze LPG wordt
+        onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+    households_other_oil_in_crude_oil_share:
+      title: Andere olie
+      short_description:
+      description: |
+        Percentage van andere niet-bio olie en olieproducten in het oliegebruik van huishoudens. Hieronder
+        vallen onder andere benzine, lng, ruwe olie en smeerolie.
+    households_other_bio_oil_in_crude_oil_share:
+      title: Andere bio-olie
+      short_description:
+      description: |
+        Percentage van andere bio-olieproducten in het oliegebruik van huishoudens. Hieronder
+        vallen bio-benzine en verdere bio-brandstoffen.
+    buildings_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage diesel in het gebruik van olieproducten door gebouwen. Deze diesel wordt
+        onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+    buildings_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage biodiesel in het gebruik van olieproducten door gebouwen. Deze biodiesel wordt
+        onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+    buildings_kerosene_in_crude_oil_share:
+      title: Kerosine
+      short_description:
+      description: |
+        Percentage kerosine in het gebruik van olieproducten door gebouwen. Deze kerosine wordt
+        onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+    buildings_bio_kerosene_in_crude_oil_share:
+      title: Bio-kerosine
+      short_description:
+      description: |
+        Percentage bio-kerosine in het gebruik van olieproducten door gebouwen. Deze bio-kerosine
+        wordt onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+    buildings_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage LPG in het gebruik van olieproducten door gebouwen. Deze LPG wordt
+        onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+    buildings_other_oil_in_crude_oil_share:
+      title: Andere olie
+      short_description:
+      description: |
+        Percentage van andere niet-bio olie en olieproducten in het oliegebruik van gebouwen. Hieronder
+        vallen onder andere benzine, lng, ruwe olie en smeerolie.
+    buildings_other_bio_oil_in_crude_oil_share:
+      title: Andere bio-olie
+      short_description:
+      description: |
+        Percentage van andere bio-olieproducten in het oliegebruik van gebouwen. Hieronder
+        vallen bio-benzine en verdere bio-brandstoffen.
+    agriculture_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage diesel in het gebruik van olieproducten in de landbouw. Deze diesel wordt
+        gebruikt voor warmte.
+    agriculture_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage biodiesel in het gebruik van olieproducten in de landbouw. Deze biodiesel wordt
+        gebruikt voor warmte.
+    agriculture_kerosene_in_crude_oil_share:
+      title: Kerosine
+      short_description:
+      description: |
+        Percentage kerosine in het gebruik van olieproducten in de landbouw. Deze kerosine wordt
+        gebruikt voor warmte.
+    agriculture_bio_kerosene_in_crude_oil_share:
+      title: Bio-kerosine
+      short_description:
+      description: |
+        Percentage bio-kerosine in het gebruik van olieproducten in de landbouw. Deze bio-kerosine
+        wordt gebruikt voor warmte.
+    agriculture_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage LPG in het gebruik van olieproducten in de landbouw. Deze LPG
+        wordt gebruikt voor warmte.
+    agriculture_other_oil_in_crude_oil_share:
+      title: Andere olie
+      short_description:
+      description: |
+        Percentage van andere niet-bio olie en olieproducten in het oliegebruik van de landbouw. Hieronder
+        vallen onder andere benzine, lng, ruwe olie en smeerolie.
+    agriculture_other_bio_oil_in_crude_oil_share:
+      title: Andere bio-olie
+      short_description:
+      description: |
+        Percentage van andere bio-olieproducten in het oliegebruik van de landbouw. Hieronder
+        vallen bio-benzine en verdere bio-brandstoffen.
+    industry_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage diesel in het gebruik van olieproducten in de industrie. Deze diesel wordt
+        onder andere gebruikt voor warmte.
+    industry_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage biodiesel in het gebruik van olieproducten in de industrie. Deze biodiesel wordt
+        onder andere gebruikt voor warmte.
+    industry_kerosene_in_crude_oil_share:
+      title: Kerosine
+      short_description:
+      description: |
+        Percentage kerosine in het gebruik van olieproducten in de industrie. Deze kerosine wordt
+        onder andere gebruikt voor warmte.
+    industry_bio_kerosene_in_crude_oil_share:
+      title: Bio-kerosine
+      short_description:
+      description: |
+        Percentage bio-kerosine in het gebruik van olieproducten in de industrie. Deze bio-kerosine
+        wordt onder andere gebruikt voor warmte.
+    industry_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage LPG in het gebruik van olieproducten in de industrie. Deze LPG
+        wordt onder andere gebruikt voor warmte.
+    industry_other_oil_in_crude_oil_share:
+      title: Andere olie
+      short_description:
+      description: |
+        Percentage van andere niet-bio olie en olieproducten in het oliegebruik van de industrie. Hieronder
+        vallen onder andere benzine, lng, ruwe olie en smeerolie.
+    industry_other_bio_oil_in_crude_oil_share:
+      title: Andere bio-olie
+      short_description:
+      description: |
+        Percentage van andere bio-olieproducten in het oliegebruik van de industrie. Hieronder
+        vallen bio-benzine en verdere bio-brandstoffen.

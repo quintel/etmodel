@@ -74,7 +74,7 @@
     <!-- begin: national CO2 targets -->
     {% case settings.area_code %}
     {% when 'nl' %}
-      {% if future.co2_reduction_percentage > 40.0 %}
+      {% if future.co2_reduction_percentage > 49.0 %}
         <li class="target-met">
           The realised CO<sub>2</sub> reduction of
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
@@ -329,7 +329,7 @@
     {% endchart %}
 
     <!-- Supports else, elsif, and unless. -->
-    {% if future.co2_reduction_percentage > 40.0 %}
+    {% if future.co2_reduction_percentage > 49.0 %}
       <p>
         The reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}% exceeds the
         Dutch national ambition for 2030 of 49%.

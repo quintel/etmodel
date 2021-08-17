@@ -285,7 +285,10 @@ en:
       short_description: ''
       description: This indicates the extent to which air conditioning is used to
         cool buildings like offices, schools, hostpitals, hotels, restaurants etc.
-        Currently, most cooling is provided by air conditioning in most countries.
+        Currently, most cooling is provided by air conditioning in most countries. 
+        Airconditioners are similar to air heatpumps as they both use ambient air and electricity
+        to cool the air inside a building. However, older air conditioners are often not
+        equipped with the ability to provide space cooling and heating and operate under lower efficiencies.
     buildings_cooling_collective_cooling_network_electricity_share:
       title: Cooling network
       short_description: ''
@@ -304,7 +307,11 @@ en:
         for space heating.<br/><br/>
         An air heatpump uses electricity
         and ambient heat to generate heat. This heat can be transfered to water or air
-        and used in underfloor heating or airconditioning systems for space heating. <br/><br/>
+        and used in underfloor heating or airconditioning systems for space heating. 
+        Air heatpumps are similar to airconditioners as they both use ambient air and electricity
+        to cool the air inside a building. However, older air conditioners are often not
+        equipped with the ability to provide space cooling and heating and operate under lower efficiencies
+        compared to new air heatpumps. <br/><br/>
         The efficiency (COP) of this heat pump is affected by the outside air temperature 
         and therefore determined by the weather. For every hour a seperate efficiency (COP) is calculated based on the 
         weather curve available in the ETM. The average of these hourly calculations (the Seasonal COP or 'SCOP') can be found

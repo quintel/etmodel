@@ -122,35 +122,45 @@
     %td{:data => {:gquery => "buildings_space_heater_heatpump_air_water_network_gas_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_space_heater_heatpump_air_water_network_gas_delta_in_investment_cost_table"}}
   %tr.even
+    %th= t("input_elements.buildings_space_heater_heatpump_air_water_electricity_share.title").html_safe
+    %td.border-rgt{:data => {:gquery => "buildings_space_heater_heatpump_air_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_space_heater_heatpump_air_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_space_heater_heatpump_air_water_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
     %th= t("input_elements.buildings_space_heater_network_gas_share.title").html_safe
     %td.border-rgt{:data => {:gquery => "buildings_space_heater_network_gas_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "buildings_space_heater_network_gas_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_space_heater_network_gas_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.buildings_space_heater_combined_hydrogen_share.title").html_safe
     %td.border-rgt{:data => {:gquery => "buildings_space_heater_combined_hydrogen_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "buildings_space_heater_combined_hydrogen_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_space_heater_combined_hydrogen_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.buildings_space_heater_wood_pellets_share.title").html_safe
     %td.border-rgt{:data => {:gquery => "buildings_space_heater_wood_pellets_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "buildings_space_heater_wood_pellets_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_space_heater_wood_pellets_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.buildings_space_heater_solar_thermal_share.title").html_safe
     %td.border-rgt{:data => {:gquery => "buildings_space_heater_solar_thermal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "buildings_space_heater_solar_thermal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_space_heater_solar_thermal_delta_in_investment_cost_table"}}
-  %tr.even
+  %tr.odd
     %th= t("input_elements.buildings_solar_pv_solar_radiation_market_penetration.title").html_safe
     %td.border-rgt{:data => {:gquery => "buildings_solar_pv_solar_radiation_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "buildings_solar_pv_solar_radiation_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_solar_pv_solar_radiation_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.buildings_cooling_airconditioning_electricity_share.title").html_safe
     %td.border-rgt{:data => {:gquery => "buildings_cooling_airconditioning_electricity_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "buildings_cooling_airconditioning_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "buildings_cooling_airconditioning_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
+    %th= t("input_elements.buildings_cooling_heatpump_air_water_electricity_share.title").html_safe
+    %td.border-rgt{:data => {:gquery => "buildings_cooling_heatpump_air_water_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "buildings_cooling_heatpump_air_water_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "buildings_cooling_heatpump_air_water_electricity_delta_in_investment_cost_table"}}
 
   %thead.subhead
     %th{:colspan => 4, :style => "text-align: center"}=t 'output_elements.tables.investments.agriculture'

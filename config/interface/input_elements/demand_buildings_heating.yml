@@ -27,47 +27,46 @@
   related_node: buildings_space_heater_heatpump_air_water_network_gas
   position: 4
   slide_key: demand_buildings_heating
+- key: buildings_space_heater_heatpump_air_water_electricity_share
+  share_group: heating_buildings
+  step_value: 0.1
+  unit: "%"
+  related_node: buildings_space_heater_heatpump_air_water_electricity
+  position: 5
+  slide_key: demand_buildings_heating
 - key: buildings_space_heater_collective_heatpump_water_water_ts_electricity_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
   related_node: buildings_space_heater_collective_heatpump_water_water_ts_electricity
-  position: 5
-  slide_key: demand_buildings_heating
-- key: buildings_space_heater_wood_pellets_share
-  share_group: heating_buildings
-  step_value: 0.1
-  unit: "%"
-  related_node: buildings_space_heater_wood_pellets
-  position: 7
+  position: 6
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_electricity_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
   related_node: buildings_space_heater_electricity
-  position: 6
+  position: 7
+  slide_key: demand_buildings_heating
+- key: buildings_space_heater_wood_pellets_share
+  share_group: heating_buildings
+  step_value: 0.1
+  unit: "%"
+  related_node: buildings_space_heater_wood_pellets
+  position: 8
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_crude_oil_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
   related_node: buildings_space_heater_crude_oil
-  position: 8
+  position: 9
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_coal_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
-  position: 9
+  position: 10
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_buildings_heating
-- key: buildings_space_heater_heatpump_air_water_electricity_share
-  share_group: heating_buildings
-  step_value: 0.1
-  unit: "%"
-  related_node: buildings_space_heater_heatpump_air_water_electricity
-  position: 6
-  slide_key: demand_buildings_heating
-

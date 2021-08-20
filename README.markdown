@@ -2,7 +2,7 @@
 
 ![](https://docs.energytransitionmodel.com/img/docs/20181031_etmodel_screenshot.png)
 
-This is the source code of the [ETM Pro](http://pro.et-model.com):
+This is the source code of the [ETM Pro](https://pro.energytransitionmodel.com/):
 an online web app that let you create a future energy scenario for various countries, municipalities, neighbourhoods and more.
 This software is [Open Source](LICENSE.txt), so you can fork it and alter at your will.
 
@@ -11,13 +11,10 @@ If you have any questions, please [contact us](http://quintel.com/contact).
 ## Build Status
 
 ### Master
-![Master branch](https://semaphoreapp.com/api/v1/projects/4c715d68deace497255af08727d617d510d3e01d/8647/badge.png)
+[![Master branch](https://semaphoreci.com/api/v1/quintel/etmodel/branches/master/badge.svg)](https://semaphoreci.com/quintel/etmodel)
 
 ### Production
-![Production branch](https://semaphoreapp.com/api/v1/projects/4c715d68deace497255af08727d617d510d3e01d/110957/badge.png)
-
-### Staging
-![Staging branch](https://semaphoreapp.com/api/v1/projects/4c715d68deace497255af08727d617d510d3e01d/81874/badge.png)
+[![Production branch](https://semaphoreci.com/api/v1/quintel/etmodel/branches/production/badge.svg)](https://semaphoreci.com/quintel/etmodel)
 
 ## License
 
@@ -25,13 +22,15 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
 
 ## Branches
 
-* **master**: Working branch and is tracked by [the ETM beta server](http://beta.pro.et-model.com)
-* **production**: Tracks [the ETM production server](http://pro.et-model.com)
+* **master**: Working branch and is tracked by [the ETM beta server](https://beta-pro.energytransitionmodel.com/)
+* **production**: Tracks [the ETM production server](https://pro.energytransitionmodel.com/)
 
-## Dependencies
+## Prerequisites
 
-* Ruby 1.9.3, 2.1.2 or 2.3
+Mac users should be able to install the following prerequisites with [Homebrew](brew.sh), Ubuntu users can use `apt-get`.
+*  Ruby 2.6.6 and a Ruby version manager such as [rbenv](https://github.com/rbenv/rbenv)
 * Mysql database server
+* Yarn 1.22.5
 
 ## Installing
 
@@ -43,21 +42,13 @@ The ETM pro is released under the [MIT License](LICENSE.txt).
   cp -vn config/config.sample.yml config/config.yml
   cp -vn config/email.sample.yml config/email.yml
   ```
+  * **Local Engine** You can communicate with either a local version of ETEngine, or one of our servers by specifying the `api_url` in `config.yml`. To use a local version, change the standard beta server url to `http://localhost:<PORT>` based on which port you are running the Engine on.
+  * **Database password** If you added a username and password to your mysql service, please replace the standard login info in `database.yml` with your own credentials.
 
-  for the lazy:
-
-  ```bash
-  cd config
-  for i in *.sample.yml; do; j="$(echo $i | sed 's/.sample//g')"; cp -vn $i $j; done;
-  ```
-
-
-  * Probably set "standalone" to `true` in "config/config.yml"
-
-* Run `bundle install` to install all the dependencies
+* Run `bundle install` and `yarn install` to install all the dependencies
 * Create and fill local database with `rake db:setup` and `RAILS_ENV=test rake db:setup`
-* Fire up your local server with `rails server -p3000`
-* Go to [localhost:3000](http://localhost:3000) and you should see the ETM pro!
+* Fire up your local server with `rails server -p3001`
+* Go to [localhost:3001](http://localhost:3001) and you should see the ETM pro!
 
 ### Admin access
 

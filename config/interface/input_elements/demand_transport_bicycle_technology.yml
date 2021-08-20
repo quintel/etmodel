@@ -4,6 +4,7 @@
   step_value: 0.1
   unit: "%"
   position: 1
+  related_node: transport_bicycle_using_human_power
   slide_key: demand_transport_bicycle_technology
 - key: transport_bicycle_using_electricity_share
   share_group: transport_bicycle_tech
@@ -11,4 +12,5 @@
   unit: "%"
   command_type: value
   position: 2
+  related_node: transport_bicycle_using_electricity
   slide_key: demand_transport_bicycle_technology

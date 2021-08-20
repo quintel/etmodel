@@ -352,9 +352,14 @@ en:
     transport_passenger_train_using_hydrogen_share:
       title: Hydrogen
       short_description: ''
-      description: Hydrogen trains are a new development that we might see more of in the future,
-        because of their clean and effective way of transportation. Currently there are not many
-        hydrogen trains in operation, as the expensive infrastructure is not in place.
+      description: "What percentage of all passenger trains will be hydrogen fuelled vehicles
+        in the future?<br/><br/>\r\nHydrogen is an energy carrier - not an energy
+        source -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
+        >hydrogen production section</a> you can determine how this is done - through
+        steam reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
+        trains (in the ETM) are fuel cell electric vehicles (FCEVs). FCEVs are electric vehicles, but
+        they differ from electric vehicles in the sense that the electricity is not
+        stored on board in a battery, but instead generated in the train itself."
     transport_cars_share:
       title: Cars
       short_description: ''
@@ -498,9 +503,16 @@ en:
     transport_freight_train_using_hydrogen_share:
       title: Hydrogen
       short_description: ''
-      description: Hydrogen trains are a new development that we might see more of in the future,
-        because of their clean and effective way of transportation. Currently there are not many
-        hydrogen trains in operation, as the expensive infrastructure is not in place.
+      description: "What percentage of all freight trains will be hydrogen fuelled vehicles
+        in the future?<br/><br/>\r\nHydrogen is an energy carrier - not an energy
+        source -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
+        >hydrogen production section</a> you can determine how this is done - through
+        steam reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
+        trains (in the ETM) are fuel cell electric vehicles (FCEVs). FCEVs are electric vehicles, but
+        they differ from electric vehicles in the sense that the electricity is not
+        stored on board in a battery, but instead generated in the train itself. \r\n<br/><br/>\r\nSee
+        the <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/energy/transport\">documentation
+        on GitHub</a> for detailed information on the numbers and sources used."
     transport_freight_train_using_diesel_mix_share:
       title: Diesel
       short_description:

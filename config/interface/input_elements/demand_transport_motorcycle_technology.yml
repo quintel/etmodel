@@ -5,10 +5,12 @@
   unit: "%"
   command_type: value
   position: 1
+  related_node: transport_motorcycle_using_gasoline_mix
   slide_key: demand_transport_motorcycle_technology
 - key: transport_motorcycle_using_electricity_share
   share_group: transport_motorcycle_tech
   step_value: 0.1
   unit: "%"
   position: 2
+  related_node: transport_motorcycle_using_electricity
   slide_key: demand_transport_motorcycle_technology

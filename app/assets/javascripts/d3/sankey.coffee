@@ -320,7 +320,7 @@ D3.sankey =
           {left: 'water',                         right: 'central_heat_prod', gquery: 'water_to_central_heat_prod_in_sankey', color: '#4465c6'},
           {left: 'solar',                         right: 'central_heat_prod', gquery: 'solar_to_central_heat_prod_in_sankey', color: '#ffcc00'},
 
-          {left: 'hydrogen_prod',                 right: 'electricity_prod', gquery: 'hydrogen_prod_to_electricity_prod_in_sankey', color: '#27d3d3'},
+          {left: 'hydrogen_prod',                 right: 'electricity_prod',  gquery: 'hydrogen_prod_to_electricity_prod_in_sankey', color: '#27d3d3'},
 
           {left: 'electricity_prod',              right: 'central_heat_prod', gquery: 'electricity_prod_to_central_heat_prod_in_sankey', color: '#1f77b4'},
           {left: 'hydrogen_prod',                 right: 'central_heat_prod', gquery: 'hydrogen_prod_to_central_heat_prod_in_sankey', color: '#27d3d3'},
@@ -407,6 +407,7 @@ D3.sankey =
           {left: 'natural_gas',                   right: 'households',       gquery: 'natural_gas_to_households_in_sankey', color: '#7f7f7f'},
           {left: 'natural_gas',                   right: 'buildings',        gquery: 'natural_gas_to_buildings_in_sankey', color: '#7f7f7f'},
           {left: 'natural_gas',                   right: 'transport',        gquery: 'natural_gas_to_transport_in_sankey', color: '#7f7f7f'},
+          {left: 'natural_gas',                   right: 'bunkers',          gquery: 'natural_gas_to_bunkers_in_sankey', color: '#7f7f7f'},
           {left: 'natural_gas',                   right: 'industry',         gquery: 'natural_gas_to_industry_in_sankey', color: '#7f7f7f'},
           {left: 'natural_gas',                   right: 'feedstock',        gquery: 'natural_gas_to_feedstock_in_sankey', color: '#7f7f7f'},
           {left: 'natural_gas',                   right: 'agriculture',      gquery: 'natural_gas_to_agriculture_in_sankey', color: '#7f7f7f'},

@@ -1,9 +1,13 @@
 ---
-- key: costs_flexibility_storage
+- key: costs_flexibility_demand_curtailment
   position: 1
+  sidebar_item_key: costs_flexibility
+  output_element_key: merit_order_price_curve
+- key: costs_flexibility_storage
+  position: 2
   sidebar_item_key: costs_flexibility
   output_element_key: breakdown_of_total_costs
 - key: costs_flexibility_conversion
-  position: 2
+  position: 3
   sidebar_item_key: costs_flexibility
   output_element_key: breakdown_of_total_costs

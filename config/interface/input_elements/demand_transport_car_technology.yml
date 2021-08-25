@@ -5,34 +5,40 @@
   unit: "%"
   command_type: value
   position: 1
+  related_node: transport_car_using_electricity
   slide_key: demand_transport_car_technology
 - key: transport_car_using_diesel_mix_share
   share_group: transport_car_tech
   step_value: 0.1
   unit: "%"
   position: 3
+  related_node: transport_car_using_diesel_mix
   slide_key: demand_transport_car_technology
 - key: transport_car_using_gasoline_mix_share
   share_group: transport_car_tech
   step_value: 0.1
   unit: "%"
   position: 4
+  related_node: transport_car_using_gasoline_mix
   slide_key: demand_transport_car_technology
 - key: transport_car_using_lpg_share
   share_group: transport_car_tech
   step_value: 0.1
   unit: "%"
   position: 5
+  related_node: transport_car_using_lpg
   slide_key: demand_transport_car_technology
 - key: transport_car_using_compressed_natural_gas_share
   share_group: transport_car_tech
   step_value: 0.1
   unit: "%"
   position: 6
+  related_node: transport_car_using_compressed_natural_gas
   slide_key: demand_transport_car_technology
 - key: transport_car_using_hydrogen_share
   share_group: transport_car_tech
   step_value: 0.1
   unit: "%"
   position: 2
+  related_node: transport_car_using_hydrogen
   slide_key: demand_transport_car_technology

@@ -42,19 +42,19 @@ en:
         less than the theoretical maximum is co-fired in such plants.
     max_demand_of_biogenic_waste:
       title: Biogenic waste
-      short_description: 
+      short_description:
       description: With this slider you can set the potential of biogenic waste that
         is available for combustion in waste incinerators or waste CHPs.
     max_demand_of_wet_biomass:
       title: Wet biomass
-      short_description: 
+      short_description:
       description: 'Wet biomass is biomass with a moisture percentage of at least
         40-50%. This includes: residues from the food and beverage industry, agricultural
         residual streams, sewage sludge, aquatic biomass, cultivated grain products,
         etc.'
     max_demand_of_dry_biomass:
       title: Dry biomass
-      short_description: 
+      short_description:
       description: 'Dry biomass consists of relatively dry organic material, like
         wood. Dry biomass is ''simple biomass'': it requires no processing and provides
         a high return. There is therefore a great demand for clean, woody biomass.
@@ -63,7 +63,7 @@ en:
         and fast-growing bio-energy crops (elephant grass, willow, poplar).'
     max_demand_of_oily_biomass:
       title: Oil-containing biomass
-      short_description: 
+      short_description:
       description: 'Oil-containing biomass is biomass with seeds that contain oil.
         Crude biodiesel is produced by pressing oil seeds. This can be converted into
         biodiesel in an esterification process with the addition of methanol. Examples
@@ -71,7 +71,7 @@ en:
         fats also fall within this category.'
     energy_biogas_fermentation_share:
       title: Anearobic digestion
-      short_description: 
+      short_description:
       description: "Currently green gas is mostly generated from the anaerobic digestion
         of organic biomass and residues produced in agriculture, food production and
         waste processing. There are two methods for biomass digestion: mono-digestion
@@ -83,7 +83,7 @@ en:
         can be found below."
     energy_greengas_gasification_dry_biomass_share:
       title: Dry biomass gasification
-      short_description: 
+      short_description:
       description: During dry gasification dry biomass is gasified at high temperatures
         (800 to 1000 °C), a kind of combustion with a lack of oxygen. The formation
         of a synthesis gas is central to gasification. This synthesis gas is a flammable
@@ -94,7 +94,7 @@ en:
         and reprocessing into green gas of natural gas quality.
     energy_greengas_gasification_wet_biomass_share:
       title: Wet biomass gasification (SCW)
-      short_description: 
+      short_description:
       description: Wet gasification is also called Super Critical Water gasification
         (SCW). During SCW wet biomass is converted into green gas under high pressure
         and temperature (at least 375 °C and 221 bar). Above this critical point,
@@ -102,3 +102,171 @@ en:
         within the biomass fall apart en reach a new balance in the form of synthesis
         gas (methane, hydrogen, CO<sub>2</sub> and CO) (Gasunie, 2019). Inorganic
         substances crystallize out simultaneously so that they can be recovered.
+    households_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage of diesel in oil products used in the domestic sector. This diesel is mainly used
+        for heating and hot water.
+    households_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage of biodiesel in oil products used in the domestic sector. This biodiesel is mainly used
+        for heating and hot water.
+    households_kerosene_in_crude_oil_share:
+      title: Kerosene
+      short_description:
+      description: |
+        Percentage of kerosene in oil products used in the domestic sector. This kerosene is mainly used
+        for heating and hot water.
+    households_bio_kerosene_in_crude_oil_share:
+      title: Bio kerosene
+      short_description:
+      description: |
+        Percentage of bio kerosene in oil products used in the domestic sector. This bio kerosene is
+        mainly used for heating and hot water.
+    households_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage of liquified petroleum gas (LPG) in oil products used in the domestic sector.
+        This lpg is mainly used for heating and hot water.
+    households_other_oil_in_crude_oil_share:
+      title: Other oil
+      short_description:
+      description: |
+        Percentage of other non bio oil and oil products in the domestic sector. Included are gasoline,
+        liquified natural gas (lng), crude oil and other fuels.
+    households_other_bio_oil_in_crude_oil_share:
+      title: Other bio oil
+      short_description:
+      description: |
+        Percentage of other bio oil products in the domestic sector. Included are bio gasoline and
+        other bio fuels.
+    buildings_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage of diesel in oil products used in the buildings section. This diesel is
+        used for heating and appliances.
+    buildings_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage of biodiesel in oil products used in the buildings section. This biodiesel is
+        used for heating and appliances.
+    buildings_kerosene_in_crude_oil_share:
+      title: Kerosene
+      short_description:
+      description: |
+        Percentage of kerosene in oil products used in the buildings section. This kerosene is
+        used for heating and appliances.
+    buildings_bio_kerosene_in_crude_oil_share:
+      title: Bio kerosene
+      short_description:
+      description: |
+        Percentage of bio kerosene in oil products used in the buildings section. This bio kerosene
+        is used for heating and appliances.
+    buildings_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage of liquified petroleum gas (LPG) in oil products used in the buildings section.
+        This lpg is used for heating and appliances.
+    buildings_other_oil_in_crude_oil_share:
+      title: Other oil
+      short_description:
+      description: |
+        Percentage of other non bio oil and oil products in the buildings section. Included are gasoline,
+        liquified natural gas (lng), crude oil and other fuels.
+    buildings_other_bio_oil_in_crude_oil_share:
+      title: Other bio oil
+      short_description:
+      description: |
+        Percentage of other bio oil products in the buildings section. Included are bio gasoline and
+        other bio fuels.
+    agriculture_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage of diesel in oil products used in agriculture. This diesel is mainly used for
+        heating.
+    agriculture_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage of biodiesel in oil products used in agriculture. This biodiesel is mainly used
+        for heating.
+    agriculture_kerosene_in_crude_oil_share:
+      title: Kerosene
+      short_description:
+      description: |
+        Percentage of kerosene in oil products used in agriculture. This kerosene is mainly used
+        for heating.
+    agriculture_bio_kerosene_in_crude_oil_share:
+      title: Bio kerosene
+      short_description:
+      description: |
+        Percentage of bio kerosene in oil products used in agriculture. This bio kerosene is mainly
+        used for heating.
+    agriculture_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage of liquified petroleum gas (LPG) in oil products used in agriculture. This lpg
+        is mainly used for heating.
+    agriculture_other_oil_in_crude_oil_share:
+      title: Other oil
+      short_description:
+      description: |
+        Percentage of other non bio oil and oil products in agriculture. Included are gasoline,
+        liquified natural gas (lng), crude oil and other fuels.
+    agriculture_other_bio_oil_in_crude_oil_share:
+      title: Other bio oil
+      short_description:
+      description: |
+        Percentage of other bio oil products in agriculture. Included are bio gasoline and
+        other bio fuels.
+    industry_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage of diesel in oil products used in the industry sector. This diesel is mainly used
+        for heat.
+    industry_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage of biodiesel in oil products used in the industry sector. This biodiesel is mainly used
+        for heat.
+    industry_kerosene_in_crude_oil_share:
+      title: Kerosene
+      short_description:
+      description: |
+        Percentage of kerosene in oil products used in the industry sector. This kerosene is mainly used
+        for heat.
+    industry_bio_kerosene_in_crude_oil_share:
+      title: Bio kerosene
+      short_description:
+      description: |
+        Percentage of bio kerosene in oil products used in the industry sector. This bio kerosene is mainly
+        used for heat.
+    industry_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage of liquified petroleum gas (LPG) in oil products used in the industry sector. This lpg is
+        mainly used for heat.
+    industry_other_oil_in_crude_oil_share:
+      title: Other oil
+      short_description:
+      description: |
+        Percentage of other non bio oil and oil products in the industry sector. Included are gasoline,
+        liquified natural gas (lng), crude oil and other fuels.
+    industry_other_bio_oil_in_crude_oil_share:
+      title: Other bio oil
+      short_description:
+      description: |
+        Percentage of other bio oil products in the industry sector. Included are bio gasoline and
+        other bio fuels.

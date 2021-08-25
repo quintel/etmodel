@@ -74,11 +74,11 @@
     <!-- begin: national CO2 targets -->
     {% case settings.area_code %}
     {% when 'nl' %}
-      {% if future.co2_reduction_percentage > 40.0 %}
+      {% if future.co2_reduction_percentage > 49.0 %}
         <li class="target-met">
           The realised CO<sub>2</sub> reduction of
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-          exceeds the Dutch national ambition for 2030 of 40%.
+          exceeds the Dutch national ambition for 2030 of 49%.
 
           {% if future.co2_reduction_percentage > 80.0 %}
             Your scenario even surpasses the EU goal of 80% - 95% reduction by
@@ -92,7 +92,7 @@
         <li class="target-missed">
           The realised CO<sub>2</sub> reduction of
           {{ future.co2_reduction_percentage | round: 1 | without_unit }}%
-          falls short of the Dutch national ambition for 2030 of 40%.
+          falls short of the Dutch national ambition for 2030 of 49%.
           <a href="#suggestions-for-improvement" class="learn-more">
             Learn more &raquo;
           </a>
@@ -329,10 +329,10 @@
     {% endchart %}
 
     <!-- Supports else, elsif, and unless. -->
-    {% if future.co2_reduction_percentage > 40.0 %}
+    {% if future.co2_reduction_percentage > 49.0 %}
       <p>
         The reduction of {{ future.co2_reduction_percentage | round: 1 | without_unit }}% exceeds the
-        Dutch national ambition for 2030 of 40%.
+        Dutch national ambition for 2030 of 49%.
 
       {% if future.co2_reduction_percentage > 80.0 %}
         Your scenario even surpasses the goal of 80% - 95% reduction aimed for by the EU for 2050!
@@ -340,7 +340,7 @@
       </p>
     {% else %}
       <p>
-        In your scenario, CO<sub>2</sub> emission reductions fall short of the Dutch ambitions of 40% in 2030
+        In your scenario, CO<sub>2</sub> emission reductions fall short of the Dutch ambitions of 49% in 2030
         and 80% - 95% in 2050. You can reduce CO<sub>2</sub> by:
       </p>
 

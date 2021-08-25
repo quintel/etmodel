@@ -44,7 +44,7 @@ en:
         efficiency is above 100% for space heating. This is the case because all energy in the
         ETM is given in lower heating values (LHV) and this boiler also
         retrieves heat from condensation. Condensation heat is not included in LHV, only in higher
-        heating values (HHV). 
+        heating values (HHV).
     buildings_space_heater_electricity_share:
       title: Electric heater
       short_description: ''
@@ -70,7 +70,7 @@ en:
         These boilers also produce hot water for showering and other uses. Hot water production
         is slightly less efficient than producing heat for the central heating system."
     buildings_space_heater_heatpump_air_water_network_gas_share:
-      title: Gas-fired heat pump
+      title: Heat pump (gas)
       short_description: ''
       description: "A gas-fired heat pump is similar to an electric heat pump except
         that the energy driving the process comes from gas, not electricity. This
@@ -259,7 +259,7 @@ en:
         for example, but also larger. This means they do not always use less energy
         than the smaller screens used before.  \r\n"
     buildings_cooling_heatpump_air_water_network_gas_share:
-      title: Gas-fired heat pump
+      title: Heat pump (gas)
       short_description: ''
       description: A gas-fired heat pump is similar to an electric heat pump except
         that the energy driving the process comes from gas, not electricity. This
@@ -286,6 +286,9 @@ en:
       description: This indicates the extent to which air conditioning is used to
         cool buildings like offices, schools, hostpitals, hotels, restaurants etc.
         Currently, most cooling is provided by air conditioning in most countries.
+        Airconditioners are similar to air heatpumps as they both use ambient air and electricity
+        to cool the air inside a building. However, older air conditioners are often not
+        equipped with the ability to provide space cooling and heating and operate under lower efficiencies.
     buildings_cooling_collective_cooling_network_electricity_share:
       title: Cooling network
       short_description: ''
@@ -296,3 +299,38 @@ en:
         taking the cold from the water and using it to cool one or more buildings.
         Because the cold stored in a lake goes down drastically during summer the
         year round capacity of deep lakes is small.
+    buildings_space_heater_heatpump_air_water_electricity_share:
+      title: Heat pump (air)
+      short_description: ''
+      description: |
+        With this slider you can adjust the percentage of air heatpumps used in buildings
+        for space heating.<br/><br/>
+        An air heatpump uses electricity
+        and ambient heat to generate heat. This heat can be transfered to water or air
+        and used in underfloor heating or airconditioning systems for space heating.
+        Air heatpumps are similar to airconditioners as they both use ambient air and electricity
+        to cool the air inside a building. However, older air conditioners are often not
+        equipped with the ability to provide space cooling and heating and operate under lower efficiencies
+        compared to new air heatpumps. <br/><br/>
+        The efficiency (COP) of this heat pump is affected by the outside air temperature
+        and therefore determined by the weather. For every hour a seperate efficiency (COP) is calculated based on the
+        weather curve available in the ETM. The average of these hourly calculations (the Seasonal COP or 'SCOP') can be found
+        in the technical and financial properties. <br/><br/>
+        For more information you can view the
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
+        To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
+        or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weather curve</a>.
+    buildings_cooling_heatpump_air_water_electricity_share:
+      title: Heat pump (air)
+      short_description: ''
+      description: With this slider you can adjust the percentage of air heatpumps used in buildings
+        for cooling. <br/><br/>
+        An air heatpump uses electricity
+        and ambient cold to generate heat or cold. This cold can be transfered to water or air
+        and used in underfloor heating or airconditioning systems for cooling. <br/><br/>
+        Contrary to heating, the efficiency (COP) of this heat pump for cooling is
+        fixed. You can view the efficiency in the technical and financial properties. <br/><br/>
+        For more information you can view the
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
+        To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
+        or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weather curve</a>.

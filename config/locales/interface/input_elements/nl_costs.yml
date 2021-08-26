@@ -864,3 +864,12 @@ nl:
       title: HR combiketel (waterstof)
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie voor ruimteverwarming van HR combiketels (waterstof) veranderen."
+    efficiency_buildings_space_heater_heatpump_air_water_electricity:
+      title: Luchtwarmtepomp
+      short_description: ''
+      description: |
+        Hoeveel zal de coefficient of performance (COP) van luchtwarmtepompen veranderen in de toekomst? 
+        Met deze schuif kun je aangeven met hoeveel procent de COP zal veranderen. De huidige jaarlijkse gemiddelde COP,
+        ookwel de seasonal COP (SCOP), kun je vinden in de "Technische parameters en kosten".
+        Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
+        het uurlijkse profiel van de buitentemperatuur.

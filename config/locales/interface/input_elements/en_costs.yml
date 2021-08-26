@@ -821,3 +821,11 @@ en:
       title: Condensing combi boiler (hydrogen) 
       short_description: ''
       description: "This slider sets the future efficiency of condensing combi boilers (hydrogen) for space heating in buildings."
+    efficiency_buildings_space_heater_heatpump_air_water_electricity:
+      title: Heat pump (air)
+      short_description: ''
+      description: "How will the coefficient of performance (COP) of air-source heat pumps change in the future? 
+      With this slider you can adjust with which percentage the COP of air-source heat pumps for space heating in buildings will change in the future. 
+      To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'. 
+      It is not possible to the absolute value of the future SCOP of air-source heat pumps with a slider as this is a result of hourly 
+      calculations based on the hourly outside temperature curve."

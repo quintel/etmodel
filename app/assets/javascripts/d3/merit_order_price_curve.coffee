@@ -68,7 +68,7 @@ D3.merit_order_price_curve =
         .interpolate('step-after')
 
     main_formatter: () ->
-      (value) -> Metric.euros_to_string(value)
+      (value) -> "€ #{Math.round(value)}"
 
     refresh: ->
       super

@@ -1,0 +1,30 @@
+---
+- key: price_of_industry_chemicals_refineries_flexibility_p2h_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: consumption_price
+  related_node: industry_chemicals_refineries_flexibility_p2h_network_gas_electricity
+  position: 1
+  slide_key: flexibility_flexibility_power_to_heat_for_industry
+- key: price_of_industry_chemicals_other_flexibility_p2h_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: consumption_price
+  related_node: industry_chemicals_other_flexibility_p2h_network_gas_electricity
+  position: 2
+  slide_key: flexibility_flexibility_power_to_heat_for_industry
+- key: price_of_industry_other_food_flexibility_p2h_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: consumption_price
+  related_node: industry_other_food_flexibility_p2h_network_gas_electricity
+  position: 3
+  slide_key: flexibility_flexibility_power_to_heat_for_industry
+- key: price_of_industry_other_paper_flexibility_p2h_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: consumption_price
+  related_node: industry_other_paper_flexibility_p2h_network_gas_electricity
+  position: 4
+  slide_key: flexibility_flexibility_power_to_heat_for_industry
+  

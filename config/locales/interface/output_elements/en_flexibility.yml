@@ -81,13 +81,16 @@ en:
         complete list of assumptions, have a look at our <a href=\"https://docs.energytransitionmodel.com/main/storage\"
         target =\"_blank\">documentation</a>. "
     use_of_excess_electricity:
-      title: Use of excess electricity
+      title: Use of flexible electricity consumption
       short_description: ''
-      description: The ETM contains several flexibility technologies that are able
-        to deal with excess electricity from wind turbines and solar panels. This
-        chart shows the amount of electricity that is used by the different technologies
-        in your scenario. You can set how much of each of these technologies you would
-        like to install in your scenario in the Flexibility menu.
+      description: The ETM contains several flexible electricity demand technologies,
+        which can be found in the Flexiblity section of the model. We have defined 
+        which types of electricity demand are considered flexible in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentation</a>. </br></br>
+        This chart shows how the electricity consumed by the flexible demand technologies 
+        is used, as well as the combined losses due to storage and conversion of electricity 
+        by these technologies.
     storage_options:
       title: Flexibility options for excess electricity
       short_description: ''

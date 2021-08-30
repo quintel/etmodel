@@ -305,9 +305,37 @@ en:
     electricity_interconnector_5_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_6_co2_emissions_future: *interconnector_co2_future
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
-      title: Power-to-hydrogen
+      title: Power-to-gas
       short_description:
       description: "Power-to-gas plants convert <strong>excess</strong> electricity
         to hydrogen. This slider allows this hydrogen to be used in the central hydrogen
         network. Any excess hydrogen is exported. The efficiency of electrolysers can
         be adjusted <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >here</a>."
+    price_of_energy_hydrogen_flexibility_p2g_electricity:
+      title: Power-to-gas
+      short_description:
+      description: 
+    price_of_energy_heat_flexibility_p2h_boiler_electricity:
+      title: Power-to-heat boiler
+      short_description:
+      description:
+    price_of_energy_heat_flexibility_p2h_heatpump_electricity:
+      title: Power-to-heat heat pump
+      short_description:
+      description:
+    price_of_industry_chemicals_refineries_flexibility_p2h_electricity:
+      title: Power-to-heat boiler for refineries
+      short_description:
+      description:
+    price_of_industry_chemicals_other_flexibility_p2h_electricity:
+      title: Power-to-heat boiler for chemical industry
+      short_description:
+      description:
+    price_of_industry_other_food_flexibility_p2h_electricity:
+      title: Power-to-heat boiler for food industry
+      short_description:
+      description:
+    price_of_industry_other_paper_flexibility_p2h_electricity:
+      title: Power-to-heat boiler for paper industry
+      short_description:
+      description:

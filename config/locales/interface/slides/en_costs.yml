@@ -43,6 +43,16 @@ en:
       short_description: test
       description: Nobody can predict future fuel prices. This makes electricity costs
         hard to predict. What do you think these fuels will cost in the future?        
+    costs_flexibility_demand_curtailment:
+      title: Value of Lost Load
+      short_description:
+      description: |
+        In hours when the total electricity demand exceeds the total electricity supply,
+        a <a href="https://docs.energytransitionmodel.com/main/loss-of-load-expectation/"
+        target ="_blank">loss of load</a> occurs. The electricity price during these hours 
+        is represented in the model by the Value of Lost Load (VoLL). This is the value that 
+        electricity consumers attribute to receiving an uninterupted electricity supply, or 
+        in other words, the costs they would incur for a supply disruption.
     costs_flexibility_conversion:
       title: Investment costs conversion electricity
       short_description:

@@ -303,9 +303,17 @@ class CustomCurveChooserView extends Backbone.View {
     new CustomCurveLoadingView({ el: wrapper }).render();
 
     $.when(collectionDef, userScenarios).done(function (collection, scenarios) {
+      var curve = collection.getOrBuild(wrapper.data('curve-name'));
+
+      if (curve.get('internal')) {
+        console.error('Internal curves cannot be customized in ETModel: ' + curve.get('key'));
+        wrapper.remove();
+        return;
+      }
+
       var view = new CustomCurveChooserView({
         el: wrapper,
-        model: collection.getOrBuild(wrapper.data('curve-name')),
+        model: curve,
         scenarios: scenarios,
       });
 

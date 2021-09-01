@@ -118,7 +118,13 @@ en:
         It should be noted that in reality the VoLL is highly consumer-specific: for 
         some consumers the impact of a disruption in electricity supply is greater 
         than for others. The VoLL should therefore be seen as a aggregate estimate that 
-        can change depending on the methodology used and the country where it is measured.
+        can change depending on the methodology used and the region where it is measured. <br/><br/>
+        Additionally, the VoLL is not equal to the expected market price during a loss of 
+        load. During these hours, the price is determined by the market cap - if the electricity 
+        market has one in place - typically around 3000 or 10000 €/MWh. <br/><br/>
+        If your intention is to model realistic electricity prices, you should chose a 
+        VoLL that represents the market cap. If your intention is to determine an optimal
+        level of investment in infrastructure a VoLL representative for region should be chosen.
     investment_costs_flexibility_p2h_electricity:
       title: Investment costs power-to-heat electric boilers
       short_description:

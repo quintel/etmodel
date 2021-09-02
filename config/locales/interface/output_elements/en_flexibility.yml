@@ -81,10 +81,12 @@ en:
         complete list of assumptions, have a look at our <a href=\"https://docs.energytransitionmodel.com/main/storage\"
         target =\"_blank\">documentation</a>. "
     use_of_excess_electricity:
-      title: Use of flexible electricity consumption
+      title: Use of flexible electricity demand
       short_description: ''
-      description: The ETM contains several flexible electricity demand technologies,
-        which can be found in the Flexiblity section of the model. We have defined 
+      description: |
+        The ETM contains several flexible electricity demand technologies, which 
+        can be found in the in the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
+        Flexibility section</a>  of the model. We have defined 
         which types of electricity demand are considered flexible in our
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentation</a>. </br></br>
@@ -92,17 +94,21 @@ en:
         is used, as well as the combined losses due to storage and conversion of electricity 
         by these technologies.
     storage_options:
-      title: Flexibility options for excess electricity
+      title: Use of flexible electricity demand technologies
       short_description: ''
-      description: "The ETM contains several flexibility technologies that are able
-        to deal with excess electricity from wind turbines and solar panels. For each
-        of these technologies, this table shows the installed capacity, which determines
-        how much electricity you can store or convert at any time. The table also
+      description: |
+        The ETM contains several flexible electricity demand technologies which 
+        can be found in the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
+        Flexibility section</a>  of the model. We have defined 
+        which types of electricity demand are considered flexible in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentation</a>. </br></br>
+        For each of these technologies, this table shows the installed capacity, which 
+        determines how much electricity you can store or convert at any time. The table also
         shows the storage volume, indicating the maximum volume available for storage
         or conversion. Finally, the last columns show the annual usage of the flexibility
-        technologies in your scenario, both in PJ and TWh.\r\n</br></br>\r\nYou can
-        set how much of each of these technologies you would like to install in your
-        scenario in the Flexibility menu."
+        technologies in your scenario, in terms of electricity input, energy output and 
+        full load hours.
     merit_order_hourly_flexibility:
       title: Hourly use of flexibility options for excess electricity
       short_description: ''
@@ -267,7 +273,7 @@ en:
       title: Electricity demand per hour
       short_description: ''
       description: "This chart shows the impact of technology choices and demand growth
-        on the hight and shape of the total electricity demand profile at high voltage
+        on the hight and shape of the baseload electricity demand profile at high voltage
         level (red line).\r\n<br>\r\n<br>\r\nFor the following technologies and choices
         the impact on the profile is explicitly shown:\r\n<ul>\r\n<li>electric space
         heating technologies such as heat pumps</li>\r\n<li>insulation levels and

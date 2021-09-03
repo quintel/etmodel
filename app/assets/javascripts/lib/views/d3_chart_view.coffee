@@ -102,10 +102,14 @@ class @D3ChartView extends BaseChartView
   # Returns a D3-selected SVG container
   #
   create_svg_container: (width, height, margins, klass = '') =>
+    full_height = height + margins.top + margins.bottom
+    full_width = width + margins.left + margins.right
+
     d3.select(@container_selector())
       .append("svg:svg")
-      .attr("height", height + margins.top + margins.bottom)
-      .attr("width", width + margins.left + margins.right)
+      .attr("height", full_height)
+      .attr("width", full_width)
+      .attr("viewBox", "0 0 #{full_width} #{full_height}")
       .attr('class', klass)
       .append("svg:g")
       .attr("transform", "translate(#{margins.left}, #{margins.top})")

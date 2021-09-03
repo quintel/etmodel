@@ -186,11 +186,15 @@ export default class extends Base {
   // Returns a D3-selected aVG container
   //
   createSVGContainer(width, height, margins, className) {
+    const fullWidth = width + margins.left + margins.right;
+    const fullHeight = height + margins.top + margins.bottom;
+
     return d3
       .select(this.containerSelector())
       .append('svg:svg')
       .attr('height', height + margins.top + margins.bottom)
       .attr('width', width + margins.left + margins.right)
+      .attr('viewBox', `0 0 ${fullWidth} ${fullHeight}`)
       .attr('class', className || '')
       .append('svg:g')
       .attr('transform', `translate(${margins.left}, ${margins.top})`);

@@ -61,7 +61,10 @@ class CurveSelectView extends Backbone.View {
   }
 
   render() {
-    const [ungrouped, groups] = partitionCurvesByGroup(this.options.curves.models);
+    const [ungrouped, groups] = partitionCurvesByGroup(
+      this.options.curves.models.filter((curve) => !curve.get('internal'))
+    );
+
     const select = $('<select />');
 
     // Add ungrouped curves first.

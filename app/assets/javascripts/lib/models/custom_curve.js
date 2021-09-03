@@ -88,6 +88,12 @@
 
       return this.get(id);
     },
+
+    publicCurves: function () {
+      this.models.filter(function (model) {
+        return !model.get('internal');
+      });
+    },
   });
 
   // Globals -----------------------------------------------------------------

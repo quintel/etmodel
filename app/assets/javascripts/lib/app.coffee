@@ -230,7 +230,8 @@ class @AppView extends Backbone.View
 
       # Ajax request.
       req = $.ajax(
-        url: App.scenario.url_path() + '/custom_curves?include_unattached=true'
+        url: App.scenario.url_path() +
+          '/custom_curves?include_internal=true&include_unattached=true'
         method: 'GET'
         dataType: 'json'
       )

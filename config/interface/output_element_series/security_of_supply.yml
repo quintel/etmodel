@@ -47,3 +47,16 @@
   dependent_on: 
   output_element_key: security_of_supply
   key: volatile_electricity_production_capacity_security_of_supply
+- label: must_run_electricity_production_capacity
+  color: "#394C19"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: must_run_electricity_production_capacity
+  is_1990: 
+  dependent_on: 
+  output_element_key: security_of_supply
+  key: must_run_electricity_production_capacity_security_of_supply
+

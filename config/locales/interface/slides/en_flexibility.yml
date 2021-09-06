@@ -143,47 +143,67 @@ en:
       title: Conversion by flexible demand technologies
       short_description:
       description: |
-        In this section you can determine the <i>installed capacity</i> and <i>willingness-to-pay</i> 
-        of different types of flexible electricity demand technologies. In contrast to inflexible 
-        (or baseload) demand that cannot be regulated easily, the demand of these technologies is
-        considered flexible because it can be increased, reduced or shifted in time if needed (see our 
-        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
-        documentation</a> for more information). </br></br>
-        In this case, the behaviour of flexible demand technologies is determined by the hourly 
-        electricity price. Each technology has a willingness-to-pay that indicates the maximum 
-        electricity price for which it is willing to consume electricity. If the willingness-to-pay 
+        In this section you can determine the behaviour of different types of flexible demand technologies 
+        for electricity conversion. The demand of these technologies 
+        is considered flexible because it can be increased, reduced or shifted in time if needed (see the
+        <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> flexibility overview </a>
+        for background information). </br></br>
+        Each technology has a <i>willingness-to-pay</i> that indicates the maximum electricity price for which 
+        it is willing to consume electricity. If the willingness-to-pay 
         exceeds the electricity price in a given hour, the technology will consume electricity 
-        in that hours according to its installed capacity.
+        in that hour according to its <i>installed capacity</i>.
+        In the slides below you can set the willingness-to-pay and installed capacity for:
+        <ul><li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
+        conversion to hydrogen</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        conversion to heat for district heating</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
+        conversion to heat for industry</a></li></ul></br>
+        Note that the specific behaviour of these technologies is more complicated than stated in this short 
+        description. Our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> contains a more detailed description.
     flexibility_flexibility_power_to_heat_for_district_heating:
       title: Conversion to heat for district heating
       short_description:
-      description: "At times of excess electricity supply, an electric boiler or heat
-        pump could convert excess electricity into heat for district heating. Other
-        heat sources for district heating can be set in <a href=\"/scenario/supply/heat/heat-sources\"
-        >Supply > District Heating</a>. \r\n</br></br>\r\n Please note that 1 MWth
-        of power-to-heat boiler uses more electricity than 1 MWth of power-to-heat
-        heat pump. They produce the same amount of heat per hour, of course."
+      description: |
+        Electricity can be used to produce heat through electric boilers or heat pumps, which is
+        also known as power-to-heat. In the ETM, power-to-heat is a flexible demand technology, which 
+        means that heat is only produced when the willingness-to-pay of power-to-heat exceeds the hourly 
+        electricity price. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information. </br></br>
+        Note that a 1 MWth power-to-heat boiler uses more electricity than a 1 MWth power-to-heat heat 
+        pump, even though they produce the same amount of heat per hour. The produced heat is delivered 
+        to the district heating network. You can also choose other heat sources in the 
+        <a href="/scenario/supply/heat/heat-sources"> district heating</a> section. 
     flexibility_flexibility_power_to_heat_for_industry:
       title: Conversion to heat for industry
       short_description:
-      description: "At times of excess electricity supply, an electric boiler in industry
-        could convert excess electricity into heat. This in turn lowers the gas and
-        hydrogen demands (if present). This hybrid heating option can be used in these
-        industry sub sectors: \r\n<ul>\r\n  <li><a href=\"/scenario/demand/industry/refineries\"
-        >refineries</a></li>\r\n  <li><a href=\"/scenario/demand/industry/chemicals\">chemical
-        industry</a></li>\r\n  <li><a href=\"/scenario/demand/industry/food\">food
-        industry</a></li>\r\n  <li><a href=\"/scenario/demand/industry/paper\">paper
-        industry</a></li></ul>"
+      description: |
+        Gas and hydrogen burners in industry can be turned into hybrid heaters by fitting 
+        them with an electric boiler. In the ETM, this power-to-heat boiler is a flexible demand 
+        technology, which means that when the willingness-to-pay exceeds the hourly electricity 
+        price, the power-to-heat boilers will produce the required heat instead of the gas or 
+        hydrogen burners. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information. </br></br>
+        Because it is a hybrid heating option it requires capacity of both power-to-heat 
+        boilers and gas or hydrogen burners to be installed for it to have an effect.
+        You can set the installed capacity in these industry sub sectors: 
+        <ul><li><a href="/scenario/demand/industry/refineries">refineries</a></li>
+        <li><a href="/scenario/demand/industry/chemicals">chemical industry</a></li>
+        <li><a href="/scenario/demand/industry/food">food industry</a></li>
+        <li><a href="/scenario/demand/industry/paper">paper industry</a></li></ul>
     flexibility_flexibility_power_to_gas:
       title: Conversion to hydrogen
       short_description:
-      description: Excess electricity can be used to produce hydrogen in an electrolysis
-        process. In the ETM, the hydrogen produced by using excess power will be fed
-        into the central hydrogen network. In addition to this hydrogen producing
-        technology, you can choose to produce hydrogen through other processes in
-        <a href="/scenario/supply/hydrogen/hydrogen-production" >hydrogen production
-        slide</a>. Any excess hydrogen will be exported. The efficiency of electrolysers can
-        be adjusted <a href="/scenario/costs/costs_hydrogen/hydrogen-production" >here</a>.
+      description: |
+        Electricity can be used to produce hydrogen through the electrolysis of water, which is also
+        known as power-to-gas. In the ETM, power-to-gas is a flexible demand technology, which means that 
+        hydrogen is only produced when the willingness-to-pay of power-to-gas exceeds the hourly electricity 
+        price. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information. </br></br>
+        The produced hydrogen will be fed into the central hydrogen network. In the 
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> hydrogen production</a> section you can 
+        also choose to produce hydrogen through other processes. Any excess hydrogen will be exported.
     flexibility_flexibility_power_to_methane:
       title: Conversion to methane for gas network
       short_description:

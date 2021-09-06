@@ -5,16 +5,22 @@
   unit: "%"
   position: 1
   slide_key: specs_electricity_renewable_solar_power
-- key: investment_costs_solar_concentrated_solar_power
+- key: om_costs_solar_panels
   interface_group: costs
   step_value: 1.0
   unit: "%"
   position: 2
+  slide_key: specs_electricity_renewable_solar_power
+- key: investment_costs_solar_concentrated_solar_power
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  position: 3
   dependent_on: has_solar_csp
   slide_key: specs_electricity_renewable_solar_power
 - key: efficiency_energy_power_solar_pv_solar_radiation
   interface_group: efficiency
   step_value: 0.1
   unit: "%"
-  position: 3
+  position: 4
   slide_key: specs_electricity_renewable_solar_power

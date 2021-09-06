@@ -6,14 +6,14 @@ nl:
       short_description:
       description: |
         Een WKK produceert zowel elektriciteit als warmte. Stel hier het
-        elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten. 
+        elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
         Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Aanbod → Warmtenetten</a> pagina's bekijken.</br>
     capacity_of_energy_chp_local_wood_pellets:
       title: Biomassa WKK
       short_description:
       description: |
         Een WKK produceert zowel elektriciteit als warmte. Stel hier het
-        elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten. 
+        elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
         Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Aanbod → Warmtenetten</a> pagina's bekijken.</br>
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
@@ -138,6 +138,18 @@ nl:
         model importeert geen afval, dus de beschikbare hoeveelheid afval bepaalt
         het potentieel voor deze technologie.\r\n<br/><br/>\r\nDe schuifjesinstelling
         wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
+    capacity_of_energy_chp_supercritical_ccs_waste_mix:
+      title: Afval-WKK CCS
+      short_description:
+      description: "Hiermee bouw je een hoogrendment afvalverbrandingscentrale met CCUS installatie die
+          warmte levert aan een warmtenet (60 MWe, 33 MWth). Brandbaar afval (huishoudelijk-
+          en sloop-afval) wordt gebruikt om elektriciteit en warmte op te wekken. Door
+          het onder de juiste omstandigheden te verbranden, kan afval op een relatief
+          schone manier verwerkt worden. Rottend afval produceert methaan, een sterker
+          broeikasgas dan CO<sub>2</sub>, daarom is verbranden vaak beter. <br/><br/>\r\nHet
+          model importeert geen afval, dus de beschikbare hoeveelheid afval bepaalt
+          het potentieel voor deze technologie.\r\n<br/><br/>\r\nDe schuifjesinstelling
+          wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
     capacity_of_energy_power_nuclear_gen3_uranium_oxide:
       title: Kern 3e Gen
       short_description: ''

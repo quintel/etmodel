@@ -6,16 +6,16 @@ en:
       short_description:
       description: |
         A CHP produces both heat and electricity. Here you can set the
-        installed electrical capacity of biomass CHP plants that supply heat for district 
-        heating networks. For more information you can checkout the 
+        installed electrical capacity of biomass CHP plants that supply heat for district
+        heating networks. For more information you can checkout the
         <a href="/scenario/supply/heat/heat-sources">Supply → District Heating</a> section.</br>
     capacity_of_energy_chp_local_wood_pellets:
       title: Biomass CHP
       short_description:
       description: |
         A CHP produces both heat and electricity. Here you can set the
-        installed electrical capacity of biomass CHP plants that supply heat for district 
-        heating networks. For more information you can checkout the 
+        installed electrical capacity of biomass CHP plants that supply heat for district
+        heating networks. For more information you can checkout the
         <a href="/scenario/supply/heat/heat-sources">Supply → District Heating</a> section.</br>
     capacity_of_energy_power_turbine_hydrogen:
       title: Hydrogen turbine
@@ -140,6 +140,19 @@ en:
         waste. We assume no waste will be imported.\r\n<br/><br/>\r\nThe input of
         the slider (in MW) is converted to a (partial) number of the plant described
         above."
+    capacity_of_energy_chp_supercritical_ccs_waste_mix:
+      title: Waste CHP CCS
+      short_description:
+      description: "This builds a high energy yield waste-incineration plant with CCUS installation that
+            delivers heat to a central heating grid (60 MWe and 33 MWth). Waste that can
+            be safely burnt is used to generate electricity and heat. By incinerating
+            waste under the right conditions, it can be processed in a relatively clean
+            way. Rotting or decomposing waste produces strong greenhouse gases, so incineration
+            is often preferable from an environmental point of view.<br/><br/>\r\nThe
+            maximum potential for these power plants is limited by available domestic
+            waste. We assume no waste will be imported.\r\n<br/><br/>\r\nThe input of
+            the slider (in MW) is converted to a (partial) number of the plant described
+            above."
     capacity_of_energy_power_nuclear_gen3_uranium_oxide:
       title: Nuclear 3rd Gen
       short_description: ''

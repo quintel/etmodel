@@ -335,3 +335,15 @@
   dependent_on:
   output_element_key: collective_heat_mekko
   key: energy_heat_flexibility_p2h_heatpump_electricity_in_collective_heat_network_mekko_supply_collective_heat_mekko
+- label: energy_chp_supercritical_ccs_waste_mix_in_collective_heat_network_mekko
+  color: "#16a085"
+  order_by: 27
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_supercritical_ccs_waste_mix_in_collective_heat_network_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: collective_heat_mekko
+  key: energy_chp_supercritical_ccs_waste_mix_in_collective_heat_network_mekko_supply_collective_heat_mekko

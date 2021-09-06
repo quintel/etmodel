@@ -409,11 +409,13 @@ en:
       short_description:
       description:
     supply_oil_mix:
-      title: Mix of oil and oil products in heating
+      title: Mix of oil and oil products
       short_description:
       description: |
-        Spaces and buildings in all sectors can be heated by oil fired heaters. The mix of fuels
-        that should be used by such heaters in the future can be set here.
+        With the sliders below you can determine the oil mix used for the final energetic demand 
+        for oil in various sectors. The oil mix for the transport sector cannot be set directly 
+        here, because it is determined by the split between transport technologies (see the 
+        <a href="/scenario/demand/transport/overview">'Transport'</a> section).
     supply_transport_compressed_gas:
       title: Compressed gas for road transport
       short_description:

@@ -25,7 +25,7 @@
   group: costs
   position: 4
   disabled: false
-  output_element_key: breakdown_of_total_costs
+  output_element_key: costs_overview
   dependent_on:
 - key: renewable_percentage
   gquery_key: dashboard_renewability

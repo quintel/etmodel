@@ -1,0 +1,79 @@
+---
+- label: costs_building_and_installations
+  unit: euro
+  color: "#CC0000"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_building_and_installations
+  is_1990:
+  dependent_on:
+  output_element_key: costs_overview
+  key: costs_building_and_installations_costs_overview
+- label: costs_storage_and_conversion
+  unit: euro
+  color: "#786FA6"
+  order_by: 2
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_storage_and_conversion
+  is_1990:
+  dependent_on:
+  output_element_key: costs_overview
+  key: costs_storage_and_conversion_costs_overview
+- label: costs_production
+  unit: euro
+  color: "#FFA502"
+  order_by: 3
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_production
+  is_1990:
+  dependent_on:
+  output_element_key: costs_overview
+  key: costs_production_costs_overview
+- label: costs_carriers
+  unit: euro
+  color: "#E69567"
+  order_by: 4
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_building_and_installations
+  is_1990:
+  dependent_on:
+  output_element_key: costs_overview
+  key: costs_carriers_costs_overview
+- label: costs_infrastructure
+  unit: euro
+  color: "#009432"
+  order_by: 5
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_infrastructure
+  is_1990:
+  dependent_on:
+  output_element_key: costs_overview
+  key: costs_infrastructure_costs_overview
+- label: costs_co2
+  unit: euro
+  color: "#ADD8E6"
+  order_by: 6
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_co2
+  is_1990:
+  dependent_on:
+  output_element_key: costs_overview
+  key: costs_co2_costs_overview

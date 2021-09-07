@@ -71,6 +71,18 @@
   dependent_on:
   output_element_key: heat_network_production
   key: energy_chp_supercritical_waste_mix_steam_hot_water_output_curve_heat_network_production
+- label: energy_chp_supercritical_ccs_waste_mix_steam_hot_water_output_curve
+  color: "#218C74"
+  order_by: 6
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_supercritical_ccs_waste_mix_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production
+  key: energy_chp_supercritical_ccs_waste_mix_steam_hot_water_output_curve_heat_network_production
 - label: energy_chp_ultra_supercritical_lignite_steam_hot_water_output_curve
   color: "#222F3E"
   order_by: 7

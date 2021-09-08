@@ -104,13 +104,18 @@ en:
     capacity_of_industry_other_paper_flexibility_p2h_electricity:
       title: Power-to-heat boiler for gas and H<sub>2</sub> heaters
       short_description:
-      description: "Power-to-heat (P2H) boilers convert <strong>excess</strong> electricity
-        into heat. These boilers can be installed as an add-on for the existing gas
-        and hydrogen burners. During moments of excess electricity gas and hydrogen
-        burners will then lower their production (when these boilers are present).
-        The average FLH of P2H boilers in industry can be seen in the 'Flexibility
-        options'-table (go to the entire chart list in the upper right corner -> click
-        on 'see more charts\")."
+      description: |
+        These power-to-heat (P2H) boilers can be installed as an add-on for
+        gas and hydrogen heaters. In hours when the willingness-to-pay of these boilers 
+        exceeds the electricity price, they will use electricity to produce heat and the
+        gas and hydrogen heaters will lower their production. You can set the 
+        willingness-to-pay of these boilers in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
+        Flexibility</a> section. </br></br>
+        Note that for this slider to have an effect, capacity of either gas or hydrogen 
+        heaters needs to be installed as well. The average amount of full-load hours of 
+        the P2H boilers can be seen in the 'Flexible electricity demand technologies'-table 
+        (click on "see more charts" in the upper right corner).
     industry_other_paper_burner_hydrogen_share:
       title: H<sub>2</sub>-fired heater
       short_description:
@@ -118,7 +123,7 @@ en:
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Supply section </a>. <br />"
+        Supply section</a>. <br />"
     industry_steel_production:
       title: Steel
       short_description:
@@ -308,7 +313,7 @@ en:
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Supply section </a>. <br />"
+        Supply section</a>. <br />"
     industry_useful_demand_for_chemical_other:
       title: Size
       short_description:
@@ -397,13 +402,18 @@ en:
     capacity_of_industry_chemicals_other_flexibility_p2h_electricity:
       title: Power-to-heat boiler for gas and H<sub>2</sub> heaters
       short_description:
-      description: "Power-to-heat (P2H) boilers convert <strong>excess</strong> electricity
-        into heat. These boilers can be installed as an add-on for the existing gas
-        and hydrogen burners. During moments of excess electricity gas and hydrogen
-        burners will then lower their production (when these boilers are present).
-        The average FLH of P2H boilers in industry can be seen in the 'Flexibility
-        options'-table (go to the entire chart list in the upper right corner -> click
-        on 'see more charts\")."
+      description: |
+        These power-to-heat (P2H) boilers can be installed as an add-on for
+        gas and hydrogen heaters. In hours when the willingness-to-pay of these boilers 
+        exceeds the electricity price, they will use electricity to produce heat and the
+        gas and hydrogen heaters will lower their production. You can set the 
+        willingness-to-pay of these boilers in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
+        Flexibility</a> section. </br></br>
+        Note that for this slider to have an effect, capacity of either gas or hydrogen 
+        heaters needs to be installed as well. The average amount of full-load hours of 
+        the P2H boilers can be seen in the 'Flexible electricity demand technologies'-table 
+        (click on "see more charts" in the upper right corner).
     industry_chemicals_other_heater_electricity_share:
       title: Electric boiler
       short_description:
@@ -420,7 +430,7 @@ en:
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Supply section </a>. <br />"
+        Supply section</a>. <br />"
     industry_chemicals_other_wood_pellets_non_energetic_share:
       title: Biomass
       short_description:
@@ -569,13 +579,18 @@ en:
     capacity_of_industry_other_food_flexibility_p2h_electricity:
       title: Power-to-heat boiler for gas and H<sub>2</sub> heaters
       short_description:
-      description: "Power-to-heat (P2H) boilers convert <strong>excess</strong> electricity
-        into heat. These boilers can be installed as an add-on for the existing gas
-        and hydrogen burners. During moments of excess electricity gas and hydrogen
-        burners will then lower their production (when these boilers are present).
-        The average FLH of P2H boilers in industry can be seen in the 'Flexibility
-        options'-table (go to the entire chart list in the upper right corner -> click
-        on 'see more charts\")."
+      description: |
+        These power-to-heat (P2H) boilers can be installed as an add-on for
+        gas and hydrogen heaters. In hours when the willingness-to-pay of these boilers 
+        exceeds the electricity price, they will use electricity to produce heat and the
+        gas and hydrogen heaters will lower their production. You can set the 
+        willingness-to-pay of these boilers in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
+        Flexibility</a> section. </br></br>
+        Note that for this slider to have an effect, capacity of either gas or hydrogen 
+        heaters needs to be installed as well. The average amount of full-load hours of 
+        the P2H boilers can be seen in the 'Flexible electricity demand technologies'-table 
+        (click on "see more charts" in the upper right corner).
     industry_other_food_burner_hydrogen_share:
       title: H<sub>2</sub>-fired heater
       short_description:
@@ -583,7 +598,7 @@ en:
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Supply section </a>. <br />"
+        Supply section</a>. <br />"
     industry_useful_demand_for_chemical_refineries:
       title: Size
       short_description:
@@ -644,13 +659,18 @@ en:
     capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler for gas and H<sub>2</sub> heaters
       short_description:
-      description: "Power-to-heat (P2H) boilers convert <strong>excess</strong> electricity
-        into heat. These boilers can be installed as an add-on for the existing gas
-        and hydrogen burners. During moments of excess electricity gas and hydrogen
-        burners will then lower their production (when these boilers are present).
-        The average FLH of P2H boilers in industry can be seen in the 'Flexibility
-        options'-table (go to the entire chart list in the upper right corner -> click
-        on 'see more charts\")."
+      description: |
+        These power-to-heat (P2H) boilers can be installed as an add-on for
+        gas and hydrogen heaters. In hours when the willingness-to-pay of these boilers 
+        exceeds the electricity price, they will use electricity to produce heat and the
+        gas and hydrogen heaters will lower their production. You can set the 
+        willingness-to-pay of these boilers in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
+        Flexibility</a> section. </br></br>
+        Note that for this slider to have an effect, capacity of either gas or hydrogen 
+        heaters needs to be installed as well. The average amount of full-load hours of 
+        the P2H boilers can be seen in the 'Flexible electricity demand technologies'-table 
+        (click on "see more charts" in the upper right corner).
     industry_chemicals_refineries_burner_hydrogen_share:
       title: H<sub>2</sub>-fired heater
       short_description:

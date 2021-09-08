@@ -122,27 +122,28 @@ en:
         Additionally, the VoLL is not equal to the expected market price during a loss of 
         load. During these hours, the price is determined by the market cap - if the electricity 
         market has one in place - typically around 3000 or 10000 €/MWh. <br/><br/>
-        If your intention is to model realistic electricity prices, you should chose a 
+        If your intention is to model realistic electricity prices, you should choose a 
         VoLL that represents the market cap. If your intention is to determine an optimal
-        level of investment in infrastructure a VoLL representative for region should be chosen.
+        level of investment in infrastructure a VoLL representative for your region should be chosen.
     investment_costs_flexibility_p2h_electricity:
-      title: Investment costs power-to-heat electric boilers
+      title: Investment costs power-to-heat boilers
       short_description:
-      description: Power-to-heat plants convert excess electricity to heat. In the
-        ETM power-to-heat can be used in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households">households</a>
-        and in <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">industry</a>.
-        This slider determines the future change in investment costs of electric boilers.<br
-        />
+      description: |
+        Power-to-heat boilers convert electricity to heat. In the ETM power-to-heat boilers can be used
+        for <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        district heating</a> and for the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry"> industry</a>.
+        This slider determines the future change in investment costs of electric boilers.
     investment_costs_hydrogen_electrolysis:
       title: Investment costs power-to-gas
       short_description:
-      description: Power-to-gas plants use electricity to produce gas (like hydrogen
-        or methane). This is called electrolysis. This slider determines the change
-        in investment costs of power-to-gas plants. This affects the costs of hydrogen
-        production using <a href="/scenario/supply/hydrogen/hydrogen-production">wind
-        and solar power</a>, the costs of hydrogen production using <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">excess
-        electricity</a> and the costs of <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation">synthetic
-        kerosene production</a> for aviation.<br />
+      description: |
+        Power-to-gas plants use electricity to produce hydrogen, which is called electrolysis. 
+        This slider determines the change in investment costs of power-to-gas plants. This affects the costs 
+        of hydrogen production by power-to-gas plants connected to the electricity network as 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
+        flexible electricity demand technologies</a>, and direct hydrogen production with 
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind and solar power</a>.
     om_costs_co2_ccs:
       title: Operational & Maintenance
       short_description: ''

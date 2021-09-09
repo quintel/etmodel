@@ -110,10 +110,15 @@ en:
         technologies in your scenario, in terms of electricity input, energy output and 
         full load hours.
     merit_order_hourly_flexibility:
-      title: Hourly use of flexibility options for excess electricity
+      title: Flexible electricity demand per hour
       short_description: ''
-      description: The ETM determines on an hourly basis if there is excess electricity
-        and how this electricity is used.
+      description: |
+        The ETM contains several flexible electricity demand technologies which 
+        can be found in the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
+        Flexibility section</a>  of the model. We have defined 
+        which types of electricity demand are considered flexible in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentation</a>. This chart shows the hourly use of these technologies.
     solar_pv_curtailment:
       title: Curtailment of solar PV
       short_description:

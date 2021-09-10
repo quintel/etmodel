@@ -1,5 +1,21 @@
 # Wat is er nieuw in het Energietransitiemodel?
 
+# September 2021
+
+## Verander de oliemix en voeg bio-olie toe
+Het is nu mogelijk om de oliemix te bepalen en bio-olie toe te voegen in huishoudens, gebouwen, industrie en de landbouw. Dit kun je doen in *Aanbod > Biomassa >* **[Mix van olie en olieproducten][Mix of oil and oil products]**. 
+
+-> ![](/assets/pages/whats_new/final_demand_of_oil_nl.png) <-
+
+## Waterstof treinen
+Waterstoftreinen worden gezien als een mogelijkheid om diesel treinen te vervangen. Je kunt nu waterstoftreinen toevoegen aan je scenario door de nieuwe slider te gebruik in *Vraag > Transport > Passagiers vervoer >* **[Technologie passagierstreinen][Train technology]**. 
+
+## CCS Afvalverbranding
+Afvalverbranding wordt gezien als een hernieuwbare bron maar zijn nog wel een bron van broeikasgassen. Met de afvang van CO<sub>2</sub> (CCS) kunnen deze emissie voorkomen worden, waardoor afvalverbranding milieu vriendelijker wordt. Je kunt nu CCS toevoegen aan afvalverbranding in *Emissies > CCUS >* **[Capture of CO<sub>2</sub>][Capture of CO2]**. 
+
+## Luchtwarmtepomp gebouwen sector
+Luchtwarmtepompen worden gebruikt om gebouwen te voorzien van verwarming of koeling. Hiervoor was het niet mogelijk om luchtwarmtepompen toe te voegen voor gebouwen maar sinds kort kan dat wel met de nieuwe slider in *Vraag > Gebouwen >* **[Ruimteverwarming][Space heating buildings]** & **[Koeling][Cooling buildings]**.
+
 # Augustus 2021
 
 ## Kosten sectie vernieuwd en nieuwe efficiëntie sliders 
@@ -10,7 +26,7 @@ De ‘Kosten’ sectie in het ETM is opnieuw gestructureerd en nieuwe sliders zi
 
 ## HR combiketel (waterstof) toegevoegd voor huishoudens en gebouwen
 
-Het is nu mogelijk om HR combiketels op waterstof voor ruimteverwarming en warm water toe te voegen aan je scenario. Ga naar Vraag > Huishoudens > **[Ruimteverwarming en warm water][Hydrogen boiler]** om de slider te gebruiken. 
+Het is nu mogelijk om HR combiketels op waterstof voor ruimteverwarming en warm water toe te voegen aan je scenario. Ga naar *Vraag > Huishoudens >* **[Ruimteverwarming en warm water][Hydrogen boiler]** om de slider te gebruiken. 
 
 -> ![](/assets/pages/whats_new/boiler_hydrogen_nl.png) <-
 
@@ -324,4 +340,14 @@ De bestandsindeling van de draaiprofielen en prijscurves van elektriciteit is ve
 [Costs heat]: /scenario/costs_heat/efficiencies-heating-in-houses-and-buildings
 
 [Hydrogen boiler]: /scenario/demand/households/space-heating-and-hot-water
+
+[Mix of oil and oil products]: /scenario/supply/biomass/mix-of-oil-and-oil-products
+
+[Train technology]: /scenario/demand/transport_passenger_transport/train-technology
+
+[Capture of CO2]: /scenario/emissions/ccus/capture-of-co2
+
+[Space heating buildings]: /scenario/demand/buildings/space-heating
+
+[Cooling buildings]: /scenario/demand/buildings/cooling
 

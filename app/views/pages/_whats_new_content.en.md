@@ -1,5 +1,21 @@
 # What's new in the Energy Transition Model?
 
+# September 2021
+
+## Determine the oil mix and add bio oil
+It is now possible to determine the oil mix and add bio oils for households, buildings, industry and agriculture. You can do this under *Supply > Biomass >* **[Mix of oil and oil products][Mix of oil and oil products]**. 
+
+-> ![](/assets/pages/whats_new/final_demand_of_oil.png) <-
+
+## Hydrogen trains
+Hydrogen trains are seen as an opportunity to replace diesel trains. You can now add hydrogen trains to your scenario by using the new slider in *Demand > Transport > Passenger transport >* **[Train technology][Train technology]**. 
+
+## CCS Waste incinerators
+Even though waste incinerators are seen as renewable energy producers, they still emit greenhouse gases. With Carbon Capture and Storage (CCS) it is possible to prevent the emission of greenhouse gases, making waste incineration more climate friendly. You can now add CCS to waste incinerators in *Emissions > CCUS >* **[Capture of CO<sub>2</sub>][Capture of CO2]**.
+
+## Air heat pump buildings
+Air heat pumps in buildings are used as a method to provide heating or cooling. Previously it was not possible to incorporate air heat pumps within buildings but with the addition of a heat pump slider in *Demand > Buildings >* **[Space heating][Space heating buildings]** & **[Cooling][Cooling buildings]** you can add them to your scenario. 
+
 # August 2021
 
 ## Costs section restructured and new efficiency sliders
@@ -10,7 +26,7 @@ The ‘Costs’ section in the ETM has been restructured and new sliders were ad
 
 ## Condensing combi boiler (hydrogen) added for households and buildings
 
-It is now possible to add condensing combi boilers on hydrogen for space heating and hot water to your scenario. Go to Demand > Households > **[Space heating & hot water][Hydrogen boiler]** to adjust the slider. 
+It is now possible to add condensing combi boilers on hydrogen for space heating and hot water to your scenario. Go to *Demand > Households >* **[Space heating & hot water][Hydrogen boiler]** to adjust the slider. 
 
 -> ![](/assets/pages/whats_new/boiler_hydrogen.png) <-
 
@@ -333,4 +349,16 @@ You can find the adjusted data export here in the **[Data export → Merit order
 [Costs heat]: /scenario/costs_heat/efficiencies-heating-in-houses-and-buildings
 
 [Hydrogen boiler]: /scenario/demand/households/space-heating-and-hot-water
+
+[Mix of oil and oil products]: /scenario/supply/biomass/mix-of-oil-and-oil-products
+
+[Train technology]: /scenario/demand/transport_passenger_transport/train-technology
+
+[Capture of CO2]: /scenario/emissions/ccus/capture-of-co2
+
+[Space heating buildings]: /scenario/demand/buildings/space-heating
+
+[Cooling buildings]: /scenario/demand/buildings/cooling
+
+
 

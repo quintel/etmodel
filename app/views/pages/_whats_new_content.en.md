@@ -3,60 +3,70 @@
 # September 2021
 
 ## Determine the oil mix and add bio oil
-It is now possible to determine the oil mix and add bio oils for households, buildings, industry and agriculture. You can do this under *Supply > Biomass >* **[Mix of oil and oil products][Mix of oil and oil products]**. 
+
+It is now possible to determine the oil mix and add bio oils for households, buildings, industry and agriculture. You can do this under *Supply → Biomass* → **[Mix of oil and oil products](/scenario/supply/biomass/mix-of-oil-and-oil-products)**.
 
 -> ![](/assets/pages/whats_new/final_demand_of_oil.png) <-
 
 ## Hydrogen trains
-Hydrogen trains are seen as an opportunity to replace diesel trains. You can now add hydrogen trains to your scenario by using the new slider in *Demand > Transport > Passenger transport >* **[Train technology][Train technology]**. 
+
+Hydrogen trains are seen as an opportunity to replace diesel trains. You can now add hydrogen trains to your scenario by using the new slider in *Demand → Transport → Passenger transport* → **[Train technology](/scenario/demand/transport_passenger_transport/train-technology)**.
 
 ## CCS Waste incinerators
-Even though waste incinerators are seen as renewable energy producers, they still emit greenhouse gases. With Carbon Capture and Storage (CCS) it is possible to prevent the emission of greenhouse gases, making waste incineration more climate friendly. You can now add CCS to waste incinerators in *Emissions > CCUS >* **[Capture of CO<sub>2</sub>][Capture of CO2]**.
+
+Even though waste incinerators are seen as renewable energy producers, they still emit greenhouse gases. With Carbon Capture and Storage (CCS) it is possible to prevent the emission of greenhouse gases, making waste incineration more climate friendly. You can now add CCS to waste incinerators in *Emissions → CCUS* → **[Capture of CO<sub>2</sub>](/scenario/emissions/ccus/capture-of-co2)**.
 
 ## Air heat pump buildings
-Air heat pumps in buildings are used as a method to provide heating or cooling. Previously it was not possible to incorporate air heat pumps within buildings but with the addition of a heat pump slider in *Demand > Buildings >* **[Space heating][Space heating buildings]** & **[Cooling][Cooling buildings]** you can add them to your scenario. 
+
+Air heat pumps in buildings are used as a method to provide heating or cooling. Previously it was not possible to incorporate air heat pumps within buildings but with the addition of a heat pump slider in *Demand → Buildings* → **[Space heating](/scenario/demand/buildings/space-heating)** & **[Cooling](/scenario/demand/buildings/cooling)** you can add them to your scenario.
+
+------------------------------------------------------------------------
 
 # August 2021
 
 ## Costs section restructured and new efficiency sliders
 
-The ‘Costs’ section in the ETM has been restructured and new sliders were added describing the efficiencies of technologies. This means you can now adjust the efficiencies of most technologies within the ETM. You can find the efficiency sliders under **[Electricity][Costs electricity]**, **[Renewable electricity][Costs renewable electricity]** and **[Heat][Costs heat]**. The ‘Costs’ sidebar item has been renamed to ‘Costs & efficiencies’. 
+The 'Costs' section in the ETM has been restructured and new sliders were added describing the efficiencies of technologies. This means you can now adjust the efficiencies of most technologies within the ETM. You can find the efficiency sliders under **[Electricity](/scenario/costs/specs_electricity/coal-plants)**, **[Renewable electricity](/scenario/costs/specs_renewable_electricity/biomass-plants)** and **[Heat](/scenario/costs_heat/efficiencies-heating-in-houses-and-buildings)**. The 'Costs' sidebar item has been renamed to 'Costs & efficiencies'.
 
 -> ![](/assets/pages/whats_new/costs_efficiencies.png) <-
 
 ## Condensing combi boiler (hydrogen) added for households and buildings
 
-It is now possible to add condensing combi boilers on hydrogen for space heating and hot water to your scenario. Go to *Demand > Households >* **[Space heating & hot water][Hydrogen boiler]** to adjust the slider. 
+It is now possible to add condensing combi boilers on hydrogen for space heating and hot water to your scenario. Go to *Demand → Households →* **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)** to adjust the slider.
 
 -> ![](/assets/pages/whats_new/boiler_hydrogen.png) <-
 
----
+------------------------------------------------------------------------
+
 # June 2021
 
 ## New Greenhouse gases section
 
-An **[Emissions][Other emissions]** item has been added to the sidebar consisting of the existing ‘CCUS’ section and a new ‘Greenhouse gases’ section. In the new **[Greenhouse gases][Other emissions]** section you can view and make assumptions about non-energetic CO<sub>2</sub> emissions and other greenhouse gases. All energetic CO<sub>2</sub>emissions are automatically calculated in the ETM based on the energy system. By adding non-energetic CO<sub>2</sub> emissions and other greenhouse gases to the ETM you can now get an overview of all emissions in your area. These emissions are now also included in the updated **[Greenhouse gas footprint][Emissions sheet]**.
+An **[Emissions](/scenario/emissions/other_emissions/overview)** item has been added to the sidebar consisting of the existing 'CCUS' section and a new 'Greenhouse gases' section. In the new **[Greenhouse gases](/scenario/emissions/other_emissions/overview)** section you can view and make assumptions about non-energetic CO<sub>2</sub> emissions and other greenhouse gases. All energetic CO<sub>2</sub>emissions are automatically calculated in the ETM based on the energy system. By adding non-energetic CO<sub>2</sub> emissions and other greenhouse gases to the ETM you can now get an overview of all emissions in your area. These emissions are now also included in the updated **[Greenhouse gas footprint](/regions/nl?time=future&scenario=)**.
 
 -> ![](/assets/pages/whats_new/other_emissions_eng.png) <-
 
 ## Greenhouse gas footprint update
-The emissions that were added to the new emissions section have also been added to the **[Greenhouse gas footprint][Emissions sheet]**. This means that the footprint now gives an overview of all emissions within your area. 
+
+The emissions that were added to the new emissions section have also been added to the **[Greenhouse gas footprint](/regions/nl?time=future&scenario=)**. This means that the footprint now gives an overview of all emissions within your area.
 
 -> ![](/assets/pages/whats_new/emissions_footprint_eng) <-
 
----
+------------------------------------------------------------------------
+
 # May 2021
 
 ## Regional source data available in ETM Dataset Manager
 
 When you start a new scenario in the Energy Transition Model, source data for the present year is loaded into the model. This data represents the current state of the energy system of the region that you have selected. This present state is used as the basis for modelling your future scenario and is unique for every region.
 
-To increase transparency, we have developed an online and version-controlled environment for the documentation of the regional source data: the **[ETM Dataset Manager][ETM Dataset Manager]**. It gives a complete and structured overview of all data and sources used for the regions. At the moment, mostly _regions within_ countries are included; in the long run all countries will also become available through the ETM Dataset Manager.
+To increase transparency, we have developed an online and version-controlled environment for the documentation of the regional source data: the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. It gives a complete and structured overview of all data and sources used for the regions. At the moment, mostly *regions within* countries are included; in the long run all countries will also become available through the ETM Dataset Manager.
 
-In the ETM we have added a button directing you to the selected region in the ETM Dataset Manager to view the source data, which may be found in **[Results & data → Source data][regional source data]**.
+In the ETM we have added a button directing you to the selected region in the ETM Dataset Manager to view the source data, which may be found in **[Results & data → Source data](/scenario/data/data_sources/present-year-data)**.
 
 -> ![](/assets/pages/whats_new/dataset_manager_en.jpg) <-
-___
+
+------------------------------------------------------------------------
 
 # April 2021
 
@@ -66,13 +76,13 @@ We have added a new chart showing the installed capacity of flexible supply and 
 
 -> ![](/assets/pages/whats_new/installed_flexible_capacities_en.png) <-
 
-The chart can be found in **[Flexibility → Overview][flexibility provision]** where we have also updated the explanations accompanying the other charts in this section. We now discuss the inflexible demand and supply and the residual load curves in more detail.
+The chart can be found in **[Flexibility → Overview](/scenario/flexibility/flexibility_overview/the-provision-of-flexibility-capacity)** where we have also updated the explanations accompanying the other charts in this section. We now discuss the inflexible demand and supply and the residual load curves in more detail.
 
 ## New chart showing the stored volume of electricity
 
 A relevant performance metric for electricity storage technologies is the extent to which they are utilised. We have visualised the charging and discharging behaviour of these technologies in a new chart which shows the hourly stored volume of electricity.
 
-You can find the chart in **[Flexibility → Excess electricity → Storage][electricity storage]**. You can choose to view all of the electricity storage technologies at once, or just one of...
+You can find the chart in **[Flexibility → Excess electricity → Storage](/scenario/flexibility/flexibility_storage/electricity-storage)**. You can choose to view all of the electricity storage technologies at once, or just one of...
 
 * Batteries in households
 * Batteries in electric vehicles
@@ -82,14 +92,15 @@ You can find the chart in **[Flexibility → Excess electricity → Storage][ele
 
 -> ![](/assets/pages/whats_new/hourly_stored_volume_of_electricity_en.png) <-
 
-___
+------------------------------------------------------------------------
+
 # February 2021
 
 ## New charts showing the need for flexibility
 
 Natural patterns like seasons (yearly), the variations in weather (weekly), day and night and our rhythm of waking up, going to work, coming home, etc. cause both the need for energy and the availability of energy to fluctuate. Flexibility is about balancing energy supply and demand on all these timescales.
 
-We have added the section **[Flexibility → Overview][flexibility]** to the ETM with four interactive charts in which you can see how supply and demand compare on various timescales. These charts show:
+We have added the section **[Flexibility → Overview](/scenario/flexibility/flexibility_overview/what-is-flexibility)** to the ETM with four interactive charts in which you can see how supply and demand compare on various timescales. These charts show:
 
 * Monthly supply and demand volumes
 * Imbalance of monthly supply and demand volumes
@@ -102,11 +113,11 @@ We have added the section **[Flexibility → Overview][flexibility]** to the ETM
 
 ## Modify profiles
 
-The ETM calculates the hourly production and demand of gas, electricity, heat, and hydrogen. It is now also possible to upload and work with your own curves in the **[Flexibility → Modify Profiles][modify curves slide]** section. There are three types of profiles you can modify:
+The ETM calculates the hourly production and demand of gas, electricity, heat, and hydrogen. It is now also possible to upload and work with your own curves in the **[Flexibility → Modify Profiles](/scenario/flexibility/curve_upload/upload-curves)** section. There are three types of profiles you can modify:
 
-1. Demand profiles (e.g. electric buses, industrial heating)
-2. Production profiles (e.g. solar PV, wind offshore)
-3. Price curves (e.g. for power interconnectors)
+1. Demand profiles (e.g. electric buses, industrial heating)
+2. Production profiles (e.g. solar PV, wind offshore)
+3. Price curves (e.g. for power interconnectors)
 
 The chart on the right shows all profiles which you may customise. If you upload a custom profile this is directly reflected in the chart.
 
@@ -120,7 +131,7 @@ Need to use a chart in a report, or want to share it with colleagues? All charts
 
 -> ![](/assets/pages/whats_new/chart_as_image_en.png) <-
 
----
+------------------------------------------------------------------------
 
 # November 2020
 
@@ -130,31 +141,31 @@ Carbon capture, utilisation and storage (CCUS) is a group of emissions reduction
 
 The ETM models four types of carbon capture:
 
- * Capture in industry. A distinction is now made between various sub sectors and production technologies and their respective capture potentials, costs and energy requirements.
- * Capture in the power sector
- * Capture for hydrogen production
- * Direct Air Capture, a process of capturing CO2 directly from the ambient air using electricity.
+* Capture in industry. A distinction is now made between various sub sectors and production technologies and their respective capture potentials, costs and energy requirements.
+* Capture in the power sector
+* Capture for hydrogen production
+* Direct Air Capture, a process of capturing CO2 directly from the ambient air using electricity.
 
 ![](/assets/pages/whats_new/ccus_supply_demand_mekko.png)
 
 The ETM models four types of carbon usage:
 
- * Offshore storage
- * Utilisation of CO<sub>2</sub> as feedstock for synthetic kerosene production
- * Utilisation of CO<sub>2</sub> as feedstock for synthetic methanol production
- * Other utilisation, such as propellant gas for beer and soda or for the cultivation of crops in greenhouses.
+* Offshore storage
+* Utilisation of CO<sub>2</sub> as feedstock for synthetic kerosene production
+* Utilisation of CO<sub>2</sub> as feedstock for synthetic methanol production
+* Other utilisation, such as propellant gas for beer and soda or for the cultivation of crops in greenhouses.
 
 ![](/assets/pages/whats_new/co2-sankey-en.png)
 
 The ETM models two types of carbon transportation:
 
-  * Via pipelines
-  * Liquefied transport in ships
+* Via pipelines
+* Liquefied transport in ships
 
-
-Discover these new features in the **[Supply → CCUS][ccus slide]** section! A detailed explanation can be found in our [documentation](https://docs.energytransitionmodel.com/main/co2-ccus).
+Discover these new features in the **[Supply → CCUS](/scenario/emissions/ccus/capture-of-co2)** section! A detailed explanation can be found in our [documentation](https://docs.energytransitionmodel.com/main/co2-ccus).
 
 ## Negative emissions
+
 The ETM can now deal with so-called 'negative' CO<sub>2</sub> emissions. Such emissions may arise when applying carbon capture to processes using biomass or when CO<sub>2</sub> is captured directly from the ambient air using Direct Air Capture technology. See our [documentation](https://docs.energytransitionmodel.com/main/co2-negative-emissions) for more.
 
 ![](/assets/pages/whats_new/co2-negative-emissions.png)
@@ -165,16 +176,15 @@ A new scenario navigation bar has been added which shows the region and end year
 
 ![](/assets/pages/whats_new/scenario_navigation_bar_eng.png)
 
-
 ## Interaction possible with other models from the Mondaine Suite
 
-Multiple energy models are used to explore different parts of the complex challenge of the energy transition. A collaboration between these models makes it possible to exploit the strengths of each individual model. In the context of the [Mondaine](https://www.mondaine-suite.nl) project, the Energy System Description Language ([ESDL](https://energytransition.github.io/)) has been developed to support the communication between the different models - it allows the models to ‘speak’ the same language. ESDL can be used to describe information about spatial, technical, economical, social and temporal aspects of the energy transition, all in relation to each other. This makes it possible for a model to build further upon information from another model. The energy system defined in an ESDL file will be converted into slider settings - this makes it possible to explore the future energy system in the ETM and allows you to continue working on the scenario.
+Multiple energy models are used to explore different parts of the complex challenge of the energy transition. A collaboration between these models makes it possible to exploit the strengths of each individual model. In the context of the [Mondaine](https://www.mondaine-suite.nl) project, the Energy System Description Language ([ESDL](https://energytransition.github.io/)) has been developed to support the communication between the different models - it allows the models to 'speak' the same language. ESDL can be used to describe information about spatial, technical, economical, social and temporal aspects of the energy transition, all in relation to each other. This makes it possible for a model to build further upon information from another model. The energy system defined in an ESDL file will be converted into slider settings - this makes it possible to explore the future energy system in the ETM and allows you to continue working on the scenario.
 
-Check out the ESDL import functionality [here][esdl]!
+Check out the ESDL import functionality [here](/import_esdl)!
 
 ![](/assets/pages/whats_new/mondaine.jpg)
 
----
+------------------------------------------------------------------------
 
 # June 2020
 
@@ -184,7 +194,7 @@ Many countries import and export electricity with their neighbors through differ
 
 The ETM now models up to six independent interconnectors, each of which have configurable capacity, CO<sub>2</sub> emissions, and price. You may choose whether to export only excess electricity, or if dispatchable plants may also produce electricity destined for export. You can realistically model all electricity flows across the borders of your country, and see an overview of all these electricity flows in a new chart.
 
-Discover this new functionality in the **[Flexibility → Import/Export][import export]** section!
+Discover this new functionality in the **[Flexibility → Import/Export](/scenario/flexibility/electricity_import_export/electricity-interconnector-1)** section!
 
 ![](/assets/pages/whats_new/electricity_sankey_en.png)
 
@@ -192,7 +202,7 @@ Discover this new functionality in the **[Flexibility → Import/Export][import 
 
 The hourly heat demand curves in the buildings and agriculture sector are now temperature dependent. This means that the shape of the demand curves will change depending on the selected weather year. Previously, the ETM used static demand profiles for the buildings sector and a flat profile for agriculture. Both sectors now use the same profile, based on data from large gas consumers, which is generated dynamically using weather data. As a result, this profile is now also available for the weather years 1987, 1997, and 2004. Heat demand in buildings and agriculture responds to outdoor temperature fluctuations, just like households heating demand.
 
-Get insight in the impact of the weather year selection on demand curves in the **[Flexibility → Weather conditions][weather years slide]** section!
+Get insight in the impact of the weather year selection on demand curves in the **[Flexibility → Weather conditions](/scenario/flexibility/flexibility_weather/extreme-weather-conditions)** section!
 
 ![](/assets/pages/whats_new/weather_years_buildings_heating_en.png)
 
@@ -200,11 +210,11 @@ Get insight in the impact of the weather year selection on demand curves in the 
 
 The impact of a higher or lower average outdoor temperature has been revised. In addition to heating and cooling demand in households and buildings, changing outdoor temperature now also affects heating demand in the agriculture sector. Heating demand in all three sectors now is more sensitive to temperature changes; the impact of temperature on heat demand is based on research by the Dutch gas TSO. See our [documentation page](https://docs.energytransitionmodel.com/main/outdoor-temperature) for more info. This improvement is relevant for both the temperature slider and the weather year selection.
 
-Check out this improvement in the **[Flexibility → Weather conditions][weather years slide]** section!
+Check out this improvement in the **[Flexibility → Weather conditions](/scenario/flexibility/flexibility_weather/extreme-weather-conditions)** section!
 
 ![](/assets/pages/whats_new/outdoor_temperature_en.png)
 
----
+------------------------------------------------------------------------
 
 # March 2020
 
@@ -212,7 +222,7 @@ Check out this improvement in the **[Flexibility → Weather conditions][weather
 
 Installing a large capacity of solar PV panels may cause high peak demands on the electricity network. It is therefore desirable to be able to curtail these peaks. In some cases it might be smart to connect solar parks to a certain percentage of its peak power. It is now possible to set the curtailment as a percentage of the peak power in the ETM.
 
-Discover the curtailment of solar panels in the **[Flexibility → Net load][solar pv curtailment slide]** section!
+Discover the curtailment of solar panels in the **[Flexibility → Net load](/scenario/flexibility/flexibility_net_load/curtailment-solar-pv)** section!
 
 ![](/assets/pages/whats_new/curtailment_solar_pv_en.png)
 
@@ -220,7 +230,7 @@ Discover the curtailment of solar panels in the **[Flexibility → Net load][sol
 
 It is now possible to convert electricity excesses from solar and wind production into heat for district heating. This can be done by means of a power-to-heat (P2H) electric boiler and a P2H heat pump that only produce heat when there is an excess of electricity. The produced heat can be used immediately or can be stored for later use. For example, it is now possible to use solar and wind electricity excesses to heat households during winter.
 
-Check out the P2H sliders for district heating in the **[Flexibility → Excess electricity → Conversion][p2h district heating slide]** section!
+Check out the P2H sliders for district heating in the **[Flexibility → Excess electricity → Conversion](/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating)** section!
 
 ![](/assets/pages/whats_new/p2h_seasonal_storage_en.png)
 
@@ -228,7 +238,7 @@ Check out the P2H sliders for district heating in the **[Flexibility → Excess 
 
 The efficiency of hybrid heat pumps (HHP) is dependent on the ambient temperature and is depicted by the coefficient of performance (COP). The COP becomes lower as the outside temperature decreases. In the ETM you can set the COP threshold above which the HHP switches from gas to electricity. You can choose a setting that is most financially attractive for the consumer, but you can also choose a setting that produces less impact on the electricity network. Two charts have been added to assist the user in making this choice: a chart showing the cost-optimal threshold COP based on the consumer gas/electricity price and a chart showing gas and electricity demand per hour.
 
-Get insight in hybrid heat pump behavior in the **[Flexibility → Net load][behavior hhp slide]** section!
+Get insight in hybrid heat pump behavior in the **[Flexibility → Net load](/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps)** section!
 
 ![](/assets/pages/whats_new/HHP_behaviour_en.png)
 
@@ -236,41 +246,41 @@ Get insight in hybrid heat pump behavior in the **[Flexibility → Net load][beh
 
 The improved hourly heating demand curves used in the ETM better account for the concurrency of heating demand. The new curves are based on the average demand of 300 houses. Previously, demand curves were based on individual households which led to an overestimation of demand peaks.
 
-Note: Because the heat demand peaks for households are lower, the results of your scenario might change. For example, when many houses are connected to district heating fewer back-up boilers may be required. If many houses have a heat pump installed, the peak load on the electricity grid will be reduced. If you are having trouble understanding the differences, don't hesitate to <a href="mailto:info@energytransitionmodel.com">email us</a>.
+Note: Because the heat demand peaks for households are lower, the results of your scenario might change. For example, when many houses are connected to district heating fewer back-up boilers may be required. If many houses have a heat pump installed, the peak load on the electricity grid will be reduced. If you are having trouble understanding the differences, don't hesitate to [email us](mailto:info@energytransitionmodel.com).
 
 ## Data export adjusted
 
 In the data export, the hourly electricity curves for space heating in households have been broken down into series for individual heating technologies. This makes it possible to view the electricity hourly demand curve for air source heat pumps and other electric heating technologies.
 
----
+------------------------------------------------------------------------
 
-# January | February 2020
+# January \| February 2020
 
 ## District heating improved and expanded
 
 The modeling of district heating has been improved and expanded!
 
-- Heating networks in households, buildings, and agriculture have been merged into one network ("**residential district heating**"). It is no longer possible to exchange excess heat between industrial (steam) networks and residential networks.
+* Heating networks in households, buildings, and agriculture have been merged into one network ("**residential district heating**"). It is no longer possible to exchange excess heat between industrial (steam) networks and residential networks.
 
-- The demand and production of heat for residential district heating is now calculated on a **hourly basis** instead of on an annual basis.
+* The demand and production of heat for residential district heating is now calculated on a **hourly basis** instead of on an annual basis.
 
   -> ![](/assets/pages/whats_new/hourly_heat_en.png) <-
 
-- A distinction is made between "**must-run**" sources and "**dispatchable**" sources. Dispatchables only run if the must-runs do not produce enough to meet the demand. Their operating hours and profiles are therefore variable. Users can set which heaters start first
+* A distinction is made between "**must-run**" sources and "**dispatchable**" sources. Dispatchables only run if the must-runs do not produce enough to meet the demand. Their operating hours and profiles are therefore variable. Users can set which heaters start first
 
   -> ![](/assets/pages/whats_new/heat_merit_order_en.png) <-
 
-- It is now possible to use **large-scale solar thermal plants** for residential district heating
+* It is now possible to use **large-scale solar thermal plants** for residential district heating
 
-- Users can choose to turn **seasonal heat storage** 'on'. In that case, overproduction of must-run sources is stored for later use instead of being dumped
+* Users can choose to turn **seasonal heat storage** 'on'. In that case, overproduction of must-run sources is stored for later use instead of being dumped
 
   -> ![](/assets/pages/whats_new/seasonal_storage_heat_en.png) <-
 
-- **Residual heat** from the fertilizer, chemical, refining, and IT sectors can be used and fed into residential district heating networks. View [our documentation on GitHub][residual heat documentation] for the method and sources used
+* **Residual heat** from the fertilizer, chemical, refining, and IT sectors can be used and fed into residential district heating networks. View [our documentation on GitHub](https://docs.energytransitionmodel.com/main/residual-heat-industry) for the method and sources used
 
-- The **cost calculation** for heat infrastructure has been improved. Instead of calculating a fixed amount per connection, the costs are now subdivided into indoor costs, distribution costs (pipelines, substations) and primary network costs. The cost calculation has been aligned with the Vesta MAIS model, making comparisons and exchange of outcomes between the ETM and Vesta MAIS easier. View [our documentation on GitHub][heat-infra costs documentation] for more information.
+* The **cost calculation** for heat infrastructure has been improved. Instead of calculating a fixed amount per connection, the costs are now subdivided into indoor costs, distribution costs (pipelines, substations) and primary network costs. The cost calculation has been aligned with the Vesta MAIS model, making comparisons and exchange of outcomes between the ETM and Vesta MAIS easier. View [our documentation on GitHub](https://docs.energytransitionmodel.com/main/heat-infrastructure-costs) for more information.
 
-Discover the improved modelling of district heating in the **[District heating → Heat sources][district heating slide]** section and check out our [Github documentation][heat network documentation] for a more detailed explanation.
+Discover the improved modelling of district heating in the **[District heating → Heat sources](/scenario/supply/heat/heat-sources)** section and check out our [Github documentation](https://docs.energytransitionmodel.com/main/heat-networks) for a more detailed explanation.
 
 ## CHPs modeled differently
 
@@ -278,7 +288,7 @@ All CHPs (with the exception of biogas-CHP) now also work as dispatchable in the
 
 ## Wind load curves improved
 
-The wind load curves for the default dataset of the Netherlands are now created using the same (KNMI-based) method as used for the [extreme weather years (1987, 1997, 2004)][weather years slide]. This ensures more consistency between the different datasets for the Netherlands. Check out our [Github documentation][wind curves documentation] for a more detailed explanation of this method.
+The wind load curves for the default dataset of the Netherlands are now created using the same (KNMI-based) method as used for the [extreme weather years (1987, 1997, 2004)](/scenario/flexibility/flexibility_weather/extreme-weather-conditions). This ensures more consistency between the different datasets for the Netherlands. Check out our [Github documentation](https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind) for a more detailed explanation of this method.
 
 -> ![](/assets/pages/whats_new/wind_curves_en.png) <-
 
@@ -296,69 +306,4 @@ For saved scenarios it is possible to download the values ​​of your sliders 
 
 The format of the load and price curves of electricity has recently changed. For each column in the data export the extension "input" or "output" is used to indicate whether the data represents demand or supply of electricity. Flexibility solutions have two columns now, both for the electricity input and output. With these changes, the format of the data exports of electricity, network gas and hydrogen are more consistent.
 
-You can find the adjusted data export here in the **[Data export → Merit order price][data export slide]** section.
-
-[ETM Dataset Manager]: https://data.energytransitionmodel.com/
-
-[regional source data]: /scenario/data/data_sources/present-year-data
-
-[flexibility provision]: /scenario/flexibility/flexibility_overview/the-provision-of-flexibility-capacity
-
-[electricity storage]: /scenario/flexibility/flexibility_storage/electricity-storage
-
-[flexibility]: /scenario/flexibility/flexibility_overview/what-is-flexibility
-
-[modify curves slide]: /scenario/flexibility/curve_upload/upload-curves
-
-[ccus slide]: /scenario/emissions/ccus/capture-of-co2
-
-[esdl]: /import_esdl
-
-[weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
-
-[import export]: /scenario/flexibility/electricity_import_export/electricity-interconnector-1
-
-[solar pv curtailment slide]: /scenario/flexibility/flexibility_net_load/curtailment-solar-pv
-
-[p2h district heating slide]: /scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating
-
-[behavior hhp slide]: /scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
-
-[district heating slide]: /scenario/supply/heat/heat-sources
-
-[data export slide]: /scenario/data/data_export/merit-order-price
-
-[weather years slide]: /scenario/flexibility/flexibility_weather/extreme-weather-conditions
-
-[heat-infra costs documentation]: https://docs.energytransitionmodel.com/main/heat-infrastructure-costs
-
-[heat network documentation]: https://docs.energytransitionmodel.com/main/heat-networks
-
-[residual heat documentation]: https://docs.energytransitionmodel.com/main/residual-heat-industry
-
-[wind curves documentation]: https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind
-
-[Other emissions]: /scenario/emissions/other_emissions/overview
-
-[Emissions sheet]: /regions/nl?time=future&scenario=
-
-[Costs electricity]: /scenario/costs/specs_electricity/coal-plants
-
-[Costs renewable electricity]: /scenario/costs/specs_renewable_electricity/biomass-plants
-
-[Costs heat]: /scenario/costs_heat/efficiencies-heating-in-houses-and-buildings
-
-[Hydrogen boiler]: /scenario/demand/households/space-heating-and-hot-water
-
-[Mix of oil and oil products]: /scenario/supply/biomass/mix-of-oil-and-oil-products
-
-[Train technology]: /scenario/demand/transport_passenger_transport/train-technology
-
-[Capture of CO2]: /scenario/emissions/ccus/capture-of-co2
-
-[Space heating buildings]: /scenario/demand/buildings/space-heating
-
-[Cooling buildings]: /scenario/demand/buildings/cooling
-
-
-
+You can find the adjusted data export here in the **[Data export → Merit order price](/scenario/data/data_export/merit-order-price)** section.

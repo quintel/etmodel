@@ -265,8 +265,8 @@ en:
         >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
         >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
         >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Waste incineration</a>. It is also possible to convert excess electricity
-        in heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Waste incineration</a>. It is also possible to convert electricity
+        into heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
         >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
         in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
         target =\"_blank\">documentation</a>."
@@ -338,11 +338,10 @@ en:
         from wind/solar farms dedicated to hydrogen production; steam methane reforming
         (with and without <a href='/scenario/supply/ccus/capture-of-co2'>carbon capture</a>);
         gasification of biomass (with and without <a href='/scenario/supply/ccus/capture-of-co2'>carbon capture</a>); import from abroad.\r\n<br
-        /><br />\r\nIn addition, it is possible to convert excess electricity into
+        /><br />\r\nIn addition, it is possible to convert electricity into
         hydrogen using 'power-to-gas' (see the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
-        >power-to-gas slide</a>). You can do this if your scenario has moments where
-        electricity production exceeds demand. Hydrogen for the fertilizer industry
-        can also be produced on-site since this industry already has large hydrogen
+        >power-to-gas slide</a>).
+        Hydrogen for the fertilizer industry can also be produced on-site since this industry already has large hydrogen
         production plants built (see the <a href=\"/scenario/demand/industry/fertilizers\"
         >fertilizer industry slide</a>).\r\n<br><br />\r\nFor more information see
         our <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
@@ -455,11 +454,11 @@ en:
       title: International aviation
       short_description:
       description: "Will bio-kerosene contribute more to the aviation fuels mix in
-        the future? You can choose your blend of kerosene here. \r\n</br></br>\r\nIf
-        you have moments of excess electricity in your scenario, it is possible to
-        use this electricity to generate synthetic kerosene. This option can be chosen
-        in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation\"
-        > flexibility section</a>. "
+        the future? You can choose your blend of kerosene here. \r\n</br></br>\r\n
+        Kersone can also be produced synthetically, with captured CO<sub>2</sub>, 
+        hydrogen, and electricty. This option can be chosen in the 
+        <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
+        > CCUS section</a>. "
     supply_transport_international_shipping:
       title: International navigation
       short_description:

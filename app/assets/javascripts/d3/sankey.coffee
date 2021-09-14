@@ -873,7 +873,7 @@ D3.sankey =
     # returns the height of the tallest column
     max_column_value: =>
       sums = {}
-      for n in @nodes_excluding_loss
+      for n in @node_list
         column = n.get 'column'
         sums[column] = sums[column] || 0
         sums[column] += n.value()
@@ -885,7 +885,7 @@ D3.sankey =
     max_column_data: (axis) =>
       data = []
 
-      for node in @nodes_excluding_loss
+      for node in @node_list
         column = node.get('column')
 
         data[column] ||= { sum: 0.0, nodes: 0, nodeCompensation: 0 }

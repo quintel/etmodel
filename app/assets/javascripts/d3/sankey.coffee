@@ -886,6 +886,8 @@ D3.sankey =
       data = []
 
       for node in @node_list
+        continue unless node.should_show()
+
         column = node.get('column')
 
         data[column] ||= { sum: 0.0, nodes: 0, nodeCompensation: 0 }

@@ -5,13 +5,33 @@ import HourlyBase from './HourlyBase';
 import negativeRegionRect from './utils/negativeRegionRect';
 
 class MeritOrderHourlyFlexibility extends HourlyBase {
-  filterYValue(serie, value) {
-    return serie && serie.key === 'total_demand' ? value : -value;
+  filterSeriesValues(values, serie) {
+    if (serie?.is_target) return values;
+
+    let newValues;
+
+    const firstNonNegative = values.find((v) => v !== 0);
+    let lastWasNegative = firstNonNegative && firstNonNegative < 0;
+
+    for (const [index, value] of values.entries()) {
+      if (value === 0) {
+        // Only duplicates values if necessary.
+        newValues ||= [...values];
+
+        // Setting the number to `MIN_VALUE` avoids graphical artifacts caused by D3 reordering the
+        // series in the stack when its value is zero.
+        newValues[index] = lastWasNegative ? -Number.MIN_VALUE : Number.MIN_VALUE;
+      } else {
+        lastWasNegative = value < 0;
+      }
+    }
+
+    return newValues || values;
   }
 
   draw() {
     super.draw();
-    this.drawLegend(this.series);
+    this.drawLegend(this.series, 2);
 
     // Add a "negative region" which shades area of the chart representing values below zero.
     const [negativeRect, updateNegativeRect] = negativeRegionRect(this.width, this.yScale);
@@ -27,21 +47,7 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
    * values appear below.
    */
   stackOffset() {
-    return (series, order) => {
-      d3.stackOffsetDiverging(series, order);
-
-      const lastId = this.chartData.length - 1;
-      const demandValues = this.chartData[lastId].values;
-
-      for (const [i, demandValue] of demandValues.entries()) {
-        const baseline = demandValue.y;
-
-        for (let serieData of series) {
-          serieData[i][0] += baseline;
-          serieData[i][1] += baseline;
-        }
-      }
-    };
+    return d3.stackOffsetDiverging;
   }
 
   drawData(xScale, yScale, area, line) {
@@ -143,11 +149,8 @@ class MeritOrderHourlyFlexibility extends HourlyBase {
 
       // Values above zero are ignored as values in the charts are inverted from the original
       // (negative values [discharging] become positive, positive [charging] become negative).
-      const posAggregateLoad =
-        d3.sum(series, (s) => (s[index] >= 0 ? 0 : -s[index])) + maxTargetLoad;
-
-      const negAggregateLoad =
-        d3.sum(series, (s) => (s[index] <= 0 ? 0 : -s[index])) + minTargetLoad;
+      const posAggregateLoad = d3.sum(series, (s) => Math.max(0, s[index]));
+      const negAggregateLoad = d3.sum(series, (s) => Math.min(0, s[index]));
 
       max = Math.max(max, posAggregateLoad, maxTargetLoad);
       min = Math.min(min, negAggregateLoad, minTargetLoad);

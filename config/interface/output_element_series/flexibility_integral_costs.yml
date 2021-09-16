@@ -1,0 +1,17 @@
+---
+- label: investment_cost
+  color: "blue"
+  order_by: 100
+  group: power_to_gas
+  is_target_line: false
+  gquery: integral_fixed_cost_power_to_gas
+  output_element_key: flexibility_integral_costs
+  key: integral_fixed_cost_power_to_gas_flexibility_integral_costs
+- label: operation_maintenance_cost
+  color: "#ffd001"
+  order_by: 105
+  group: power_to_gas
+  is_target_line: false
+  gquery: integral_variable_cost_power_to_gas
+  output_element_key: flexibility_integral_costs
+  key: integral_variable_cost_power_to_gas_flexibility_integral_costs

@@ -9,3 +9,64 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: electricity_imbalance_inflexible_curve_hourly_flexibility_electricity
+
+- label: energy_hydrogen_flexibility_p2g_electricity
+  color: "#dd9977"
+  order_by: 300
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2g_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2p_curve_hourly_flexibility_electricity
+- label: power_to_heat_for_industry
+  color: "#8B0000"
+  order_by: 305
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2h_industry_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2h_industry_curve_hourly_flexibility_electricity
+- label: power_to_heat_for_district_heating
+  color: "#FFA502"
+  order_by: 310
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2h_district_heating_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2h_district_heating_curve_hourly_flexibility_electricity
+- label: power_to_power
+  color: "#dd33cc"
+  order_by: 315
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2p_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexiblity_electricity_p2p_curve_hourly_flexibility_electricity
+- label: energy_export_electricity
+  color: "#77dd99"
+  order_by: 320
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_export_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexiblity_electricity_export_curve_hourly_flexibility_electricity
+- label: energy_flexibility_curtailment_electricity
+  color: "#77bbdd"
+  order_by: 325
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_curtailment_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexiblity_electricity_curtailment_curve_hourly_flexibility_electricity

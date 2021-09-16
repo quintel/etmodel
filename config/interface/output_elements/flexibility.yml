@@ -25,6 +25,14 @@
     period: future
 - group: Flexibility
   hidden: false
+  key: flexibility_integral_costs
+  output_element_type_name: category_bar
+  requires_merit_order: true
+  unit: Eur/MWh
+  config:
+    period: future
+- group: Flexibility
+  hidden: false
   key: flexibility_monthly_carriers_inflexible_supply_demand_sum
   output_element_type_name: hourly_summarized
   requires_merit_order: true

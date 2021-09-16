@@ -1,0 +1,11 @@
+---
+- label: residual_load_curve
+  color: "#CC0000"
+  order_by: 800
+  group: flex
+  is_target_line: true
+  target_line_position:
+  gquery: electricity_imbalance_inflexible_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: electricity_imbalance_inflexible_curve_hourly_flexibility_electricity

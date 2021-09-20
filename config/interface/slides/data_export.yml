@@ -1,6 +1,6 @@
 ---
 - key: flexibility_merit_order_merit_order_price
-  position: 4
+  position: 5
   sidebar_item_key: data_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
@@ -8,6 +8,10 @@
   position: 2
   sidebar_item_key: data_export
   output_element_key: use_of_primary_energy
+- key: data_export_costs
+  position: 4
+  sidebar_item_key: data_export
+  output_element_key: breakdown_of_total_costs
 - key: data_export_production
   position: 3
   sidebar_item_key: data_export
@@ -17,22 +21,22 @@
   sidebar_item_key: data_export
   output_element_key: sankey
 - key: data_export_household_heat
-  position: 5
+  position: 6
   sidebar_item_key: data_export
   output_element_key: household_heat_demand_and_production
 - key: data_export_hydrogen
-  position: 7
+  position: 8
   sidebar_item_key: data_export
   output_element_key: hydrogen_demand
 - key: data_export_network_gas
-  position: 6
+  position: 7
   sidebar_item_key: data_export
   output_element_key: network_gas_demand
 - key: data_export_heat_network
-  position: 8
+  position: 9
   sidebar_item_key: data_export
   output_element_key: heat_network_demand
 - key: data_export_molecule_flows
-  position: 9
+  position: 10
   sidebar_item_key: data_export
   output_element_key: co2_emissions

@@ -13,9 +13,9 @@ en:
         installed capacities of power plants and characteristics of the region such as the population size,
         number of houses, roof surface suitable for solar panels etc.
       country_description: |
-        When possible, we use open source energy balances from <a href="https://ec.europa.eu/eurostat/web/energy/data/energy-balances"target="_blank">Eurostat</a> as a 
-        basis for our country datasets. Additionally, analyses are performed 
-        to provide any additonal data that is required to create a complete dataset. These analyses can be found on 
+        When possible, we use open source energy balances from <a href="https://ec.europa.eu/eurostat/web/energy/data/energy-balances"target="_blank">Eurostat</a> as a
+        basis for our country datasets. Additionally, analyses are performed
+        to provide any additonal data that is required to create a complete dataset. These analyses can be found on
         <a href="https://github.com/quintel/etdataset-public/tree/master/source_analyses"target="_blank">this GitHub page</a>, in separate folders per country.
         In the future we plan to increase transparancy to our users by adding the
         country datasets to our online <a href="https://data.energytransitionmodel.com/" target="_blank">ETM Dataset Manager</a>.
@@ -29,6 +29,19 @@ en:
         Download information about the primary and final demands, and also the primary CO<sub>2</sub> emissions of applications (such as cooking, appliances, heating, transport, etc).
         <ul class="data-download">
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv" target="_blank"><span class="name">Application primary and final demands</span> <span class="filetype">40KB CSV</span></a></li>
+        </ul>
+    data_export_costs:
+      title: Specifications costs
+      short_description:
+      description: |
+        Download detailed information on the costs (CAPEX, OPEX and totals) of different technologies
+        and user groups.
+        <ul class="data-download">
+          <li>
+            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/costs_parameters.csv" target="_blank">
+              <span class="name">Specifications costs</span> <span class="filetype">23KB CSV</span>
+            </a>
+          </li>
         </ul>
     data_export_energy_flows:
       title: Energy flows

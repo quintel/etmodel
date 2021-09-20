@@ -12,8 +12,8 @@ nl:
         geïnstalleerd vermogen van elektriciteitscentrales en karakteristieken van de regio zoals het aantal inwoners,
         het aantal huizen, het dakoppervlak dat geschikt is voor zonnepanelen etc.
       country_description: |
-        Wanneer mogelijk gebruiken we de open-source energiebalansen van <a href="https://ec.europa.eu/eurostat/web/energy/data/energy-balances"target="_blank">Eurostat</a> als basis 
-        voor onze landelijke datasets. Daarnaast worden analyses gedaan om alle aanvullende data te leveren die nodig is om een complete dataset te 
+        Wanneer mogelijk gebruiken we de open-source energiebalansen van <a href="https://ec.europa.eu/eurostat/web/energy/data/energy-balances"target="_blank">Eurostat</a> als basis
+        voor onze landelijke datasets. Daarnaast worden analyses gedaan om alle aanvullende data te leveren die nodig is om een complete dataset te
         maken. Deze analyses zijn te vinden op <a href="https://github.com/quintel/etdataset-public/tree/master/source_analyses"target="_blank">
         deze GitHub pagina</a>, in aparte mappen per land. In de toekomst willen we de transparantie naar onze gebruikers vergroten door landelijke
         datasets aan onze online <a href="https://data.energytransitionmodel.com/" target="_blank">
@@ -28,6 +28,19 @@ nl:
         Download informatie over de primaire en finale vraag – en de primaire CO<sub>2</sub>-uitstoot – van toepassingen van energie (zoals koken, apparaten, ruimterverwarming en transport).
         <ul class="data-download">
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv" target="_blank"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
+        </ul>
+    data_export_costs:
+      title: Specificaties kosten
+      short_description:
+      description: |
+        Download gedetailleerde informatie over de kosten (CAPEX, OPEX en totaal) van verschillende
+        gebruiksgroepen en technologieën.
+        <ul class="data-download">
+          <li>
+            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/costs_parameters.csv" target="_blank">
+              <span class="name">Eindspecificaties kosten</span> <span class="filetype">23KB CSV</span>
+            </a>
+          </li>
         </ul>
     data_export_energy_flows:
       title: Energiestromen

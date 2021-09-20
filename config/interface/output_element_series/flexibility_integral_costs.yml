@@ -1,6 +1,6 @@
 ---
 - label: investment_cost
-  color: "blue"
+  color: "#ffb300"
   order_by: 100
   group: power_to_gas
   is_target_line: false
@@ -8,10 +8,69 @@
   output_element_key: flexibility_integral_costs
   key: integral_fixed_cost_power_to_gas_flexibility_integral_costs
 - label: operation_maintenance_cost
-  color: "#ffd001"
+  color: "#e07033"
   order_by: 105
   group: power_to_gas
   is_target_line: false
   gquery: integral_variable_cost_power_to_gas
   output_element_key: flexibility_integral_costs
   key: integral_variable_cost_power_to_gas_flexibility_integral_costs
+- label: electricity_cost
+  color: "#4169e1"
+  order_by: 110
+  group: power_to_gas
+  is_target_line: false
+  gquery: integral_electricity_cost_power_to_gas
+  output_element_key: flexibility_integral_costs
+  key: integral_electricity_cost_power_to_gas_flexibility_integral_costs
+
+- label: investment_cost
+  color: "#ffb300"
+  order_by: 200
+  group: power_to_heat_network
+  is_target_line: false
+  gquery: integral_fixed_cost_power_to_heat_network
+  output_element_key: flexibility_integral_costs
+  key: integral_fixed_cost_power_to_heat_network_flexibility_integral_costs
+- label: operation_maintenance_cost
+  color: "#e07033"
+  order_by: 205
+  group: power_to_heat_network
+  is_target_line: false
+  gquery: integral_variable_cost_power_to_heat_network
+  output_element_key: flexibility_integral_costs
+  key: integral_variable_cost_power_to_heat_network_flexibility_integral_costs
+- label: electricity_cost
+  color: "#4169e1"
+  order_by: 210
+  group: power_to_heat_network
+  is_target_line: false
+  gquery: integral_electricity_cost_power_to_heat_network
+  output_element_key: flexibility_integral_costs
+  key: integral_electricity_cost_power_to_heat_network_flexibility_integral_costs
+
+
+- label: investment_cost
+  color: "#ffb300"
+  order_by: 300
+  group: power_to_heat_industry
+  is_target_line: false
+  gquery: integral_fixed_cost_power_to_heat_industry
+  output_element_key: flexibility_integral_costs
+  key: integral_fixed_cost_power_to_heat_industry_flexibility_integral_costs
+- label: operation_maintenance_cost
+  color: "#e07033"
+  order_by: 305
+  group: power_to_heat_industry
+  is_target_line: false
+  gquery: integral_variable_cost_power_to_heat_industry
+  output_element_key: flexibility_integral_costs
+  key: integral_variable_cost_power_to_heat_industry_flexibility_integral_costs
+- label: electricity_cost
+  color: "#4169e1"
+  order_by: 310
+  group: power_to_heat_industry
+  is_target_line: false
+  gquery: integral_electricity_cost_power_to_heat_industry
+  output_element_key: flexibility_integral_costs
+  key: integral_electricity_cost_power_to_heat_industry_flexibility_integral_costs

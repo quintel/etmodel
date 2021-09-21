@@ -80,9 +80,19 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: hourly_flexibility_electricity_hydrogen_production_curve_hourly_flexibility_electricity
+- label: power_to_power_supply
+  color: "#dd33cc"
+  order_by: 235
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2p_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexiblity_electricity_p2p_production_curve_hourly_flexibility_electricity
 - label: imported_electricity
   color: "#4169E1"
-  order_by: 235
+  order_by: 240
   group: flex
   is_target_line: false
   target_line_position:
@@ -121,8 +131,8 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: hourly_flexibility_electricity_p2h_district_heating_curve_hourly_flexibility_electricity
-- label: power_to_power
-  color: "#dd33cc"
+- label: power_to_power_demand
+  color: "#e80e41"
   order_by: 315
   group: flex
   is_target_line: false

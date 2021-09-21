@@ -111,7 +111,10 @@ class HourlyBase extends D3Chart {
    * Creates the formatter for values, using the largest hourly value.
    */
   createValueFormatter(opts = {}) {
-    return this.createScaler(this.maxYValue(), this.model.get('unit'), opts);
+    const [min, max] = this.extent();
+    const absMax = Math.max(Math.abs(min), Math.abs(max));
+
+    return this.createScaler(absMax, this.model.get('unit'), opts);
   }
 
   stackOffset() {

@@ -289,6 +289,29 @@ en:
         of electric vehicles</li>\r\n</ul>\r\nFor the electricity demand of other
         technologies and applications in the ETM, the fixed TenneT curve is assumed.
         This part is shown as the white region under the red line.\r\n"
+    hourly_flexibility_electricity:
+      title: Hourly flexible electricity demand and supply
+      short_description: ''
+      description: |
+        This chart shows you the behaviour of flexible electricity supply and demand technologies. 
+        We have defined which types of electricity technologies are considered flexible in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentation</a>. In this chart flexible electricity supply is stacked on the 
+        positive axis, while flexible electricity demand is stacked on the negative axis.
+        <br/><br/>
+        The chart also shows the residual load curve, which is the difference between the
+        inflexible electricity supply and demand. See our 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
+        Flexibility section</a> for more information. If the residual load curve is positive, 
+        the inflexible supply is insufficient to meet inflexible (or baseload) demand. If the 
+        residual load curve is positive, there is an excess of inflexible supply. Flexible 
+        demand and supply technologies are needed to balance these shortages and excesses. <br/><br/>
+        However, when the prices are right, flexible supply technologies can produce additional
+        electricity for flexible demand technologies, which is why the areas in the chart 
+        do not always align with the residual load curve. Whether the prices are right depends 
+        on the clearing of the electricity market, which you can read more about in our
+        <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">
+        documentation</a>.
     sankey_electrical_interconnection:
       title: Electricity supply and demand
       short_description: ''

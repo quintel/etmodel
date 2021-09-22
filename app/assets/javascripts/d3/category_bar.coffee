@@ -110,7 +110,7 @@ D3.category_bar =
       top: 20
       bottom: 40
       left: 20
-      right: 40
+      right: 50
 
     legend_margin: 20
 
@@ -442,3 +442,9 @@ D3.category_bar =
           period: column.period
         }
       )
+
+    main_formatter: (opts = {}) ->
+      if @model.get('config') && @model.get('config').y_precision != undefined
+        super(Object.assign({ precision: @model.get('config').y_precision }, opts))
+      else
+        super()

@@ -100,7 +100,7 @@ const loadLinkedChart = (key, month) => {
  *   A function which receives a serie key and attribute to be looked up, and returns the attribute.
  *   Typically the view's serieValue method.
  *
- * @return {(legendKey: string) => boolean}
+ * @return {(legendKey: { key: string }) => boolean}
  */
 const buildIsLinkedSerie = (chart, lookup) => {
   let set = new Set();

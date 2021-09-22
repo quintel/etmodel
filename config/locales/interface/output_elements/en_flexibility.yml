@@ -171,6 +171,22 @@ en:
         negative value and the maximum shortage peak of the residual load curve as a positive value. </br></br>
         More information about the residual load curve and definitions of flexible technologies can be found in 
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentation</a>.
+    flexibility_integral_costs:
+      title: "Integral costs of flexible electricity demand"
+      description: |
+        This chart shows the integral costs for flexible electricity demand technologies. We have defined 
+        which types of electricity demand are considered flexible in our 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentation</a>. </br></br>
+        Each bar shows the costs per produced unit of output for a certain flexible electricity demand technology. 
+        For different technologies the type of energy output can differ. Three costs categories are distinguished: 
+        fixed costs, variable costs and electricity costs. The electricity costs are calculated using the hourly 
+        electricity price and the hourly electricity consumption by a technology. </br></br>
+        The integral costs therefore depend on assumptions made about the costs and efficiencies of technologies,
+        which you can change in the <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> 
+        Cost & efficiencies</a> section. It also depends on the installed capacity and willingness-to-pay of 
+        technologies, which can be changed in  the <a href="/scenario/flexibility/flexibility_conversion/conversion-by-flexible-demand-technologies"> 
+        Flexibility</a> section.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Imbalance of monthly supply and demand volumes
       description: |
@@ -290,7 +306,7 @@ en:
         technologies and applications in the ETM, the fixed TenneT curve is assumed.
         This part is shown as the white region under the red line.\r\n"
     hourly_flexibility_electricity:
-      title: Hourly flexible electricity demand and supply
+      title: Flexible electricity demand and supply per hour
       short_description: ''
       description: |
         This chart shows you the behaviour of flexible electricity supply and demand technologies. 

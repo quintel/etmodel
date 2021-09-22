@@ -23,6 +23,14 @@
   gquery: integral_electricity_cost_power_to_gas
   output_element_key: flexibility_integral_costs
   key: integral_electricity_cost_power_to_gas_flexibility_integral_costs
+- label: hydrogen_price
+  color: "red"
+  order_by: 115
+  group: power_to_gas
+  is_target_line: true
+  gquery: integral_reference_price_hydrogen
+  output_element_key: flexibility_integral_costs
+  key: integral_reference_price_hydrogen_flexibility_integral_costs
 
 - label: investment_cost
   color: "#ffb300"
@@ -48,6 +56,14 @@
   gquery: integral_electricity_cost_power_to_heat_network
   output_element_key: flexibility_integral_costs
   key: integral_electricity_cost_power_to_heat_network_flexibility_integral_costs
+- label: imported_heat_price
+  color: "cyan"
+  order_by: 215
+  group: power_to_heat_network
+  is_target_line: true
+  gquery: integral_reference_price_imported_heat
+  output_element_key: flexibility_integral_costs
+  key: integral_reference_price_imported_heat_flexibility_integral_costs
 
 
 - label: investment_cost

@@ -10,18 +10,22 @@ D3.merit_order_price_curve =
       right: 20
       label_left: 20
 
+    visibleData: =>
+      @rawChartData
+        .map (serie) =>
+          $.extend({}, serie, values: MeritTransformator.transform(
+            serie.values, this.dateSelect.toTransformOptions()
+          ))
+
     draw: ->
       @average = new ChartSerie(
         color: "#CC0000",
         label: I18n.t("output_element_series.labels.merit_price_average")
       )
 
-      @legendSeries = @model.series.slice()
-      @legendSeries.push(@average)
-
       super
 
-      @drawLegend(@legendSeries, 2)
+      @drawOrRefreshLegend()
 
     averageData: (data) ->
       mean = d3.mean(_.find(data, (series) => series.is_target).values)
@@ -41,7 +45,7 @@ D3.merit_order_price_curve =
 
     drawData: (xScale, yScale, line) ->
       @svg.selectAll('path.serie')
-        .data(@chartData)
+        .data(@chartData, (d) -> d.key)
         .enter()
         .append('g')
         .attr('id', (data, index) -> "path_#{ index }")
@@ -51,6 +55,7 @@ D3.merit_order_price_curve =
         .attr('stroke', (data) -> data.color )
         .attr('stroke-width', 2)
         .attr('fill', 'none')
+        .attr('opacity', (data) -> if data.values.length == 0 then 0 else 1)
         .style("shape-rendering", "crispEdges")
         .style("stroke-dasharray", (d) ->
           if d.key == "average" then "3,3" else ""
@@ -79,11 +84,20 @@ D3.merit_order_price_curve =
 
       if @container_node().find("g.serie.line").length > 0
         @svg.selectAll('g.serie.line')
-          .data(@chartData)
+          .data(@chartData, (d) -> d.key)
           .select('path')
-          .attr('d', (data) -> line(data.values) )
+          .attr('d', (data) -> line(data.values || []) )
+          .attr('opacity', (data) -> if data.values.length == 0 then 0 else 1)
       else
         @drawData(xScale, yScale, line)
+
+      @drawOrRefreshLegend()
+
+    drawOrRefreshLegend: ->
+      legendSeries = @model.series.slice().filter((series) -> series.future_value().length > 0)
+      legendSeries.push(@average)
+
+      @drawLegend(legendSeries, 2)
 
     maxYvalue: ->
       d3.max(_.flatten(_.pluck(@visibleData(), 'values')))

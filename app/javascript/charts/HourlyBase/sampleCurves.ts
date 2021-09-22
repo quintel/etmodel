@@ -91,6 +91,10 @@ export const sliceValues = (
  * transformed according to the options.
  */
 export default (values: number[], opts: SampleCurveOptions): number[] => {
+  if (values.length === 0) {
+    return [];
+  }
+
   if (opts.weekNum == undefined && opts.monthNum == undefined) {
     return downsample(values, opts.downsampleMethod);
   }

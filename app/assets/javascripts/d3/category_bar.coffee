@@ -275,7 +275,7 @@ D3.category_bar =
         .ticks(7)
         .tickSize(-@width, 10, 0)
         .orient("right")
-        .tickFormat(@main_formatter())
+        .tickFormat(@y_axis_formatter())
 
       @svg.append("svg:g")
         .attr("class", "y_axis inner_grid")
@@ -317,7 +317,7 @@ D3.category_bar =
         .attr('x', 0 - @margins.left)
         .attr('y', (d) => @series_height - @y(d))
 
-      @y_axis.tickFormat(@main_formatter())
+      @y_axis.tickFormat(@y_axis_formatter())
 
       # Animate the y-axis.
       @svg.selectAll(".y_axis").transition().call(@y_axis.scale(@inverted_y))
@@ -443,8 +443,8 @@ D3.category_bar =
         }
       )
 
-    main_formatter: (opts = {}) ->
+    y_axis_formatter: (opts = {}) ->
       if @model.get('config') && @model.get('config').y_precision != undefined
-        super(Object.assign({ precision: @model.get('config').y_precision }, opts))
+        @main_formatter(Object.assign({ precision: @model.get('config').y_precision }, opts))
       else
-        super()
+        @main_formatter()

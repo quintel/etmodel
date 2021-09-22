@@ -39,8 +39,6 @@ translate_node_details_unit = (unit) ->
 format_node_detail_value = (value, unit) ->
   num = Number.parseFloat(value)
 
-  console.log(value, unit)
-
   if !isNaN(num)
     if unit == 'COP'
       formatted = num.toFixed(1)
@@ -118,6 +116,8 @@ format_node_detail_value = (value, unit) ->
     if scaleDown and Quantity.isSupported(unit)
       return new Quantity(x, unit).smartScale().format(precision: precision)
 
+    wantedPrecision = if typeof precision == 'number' then precision else undefined
+
     if x == 0
       pow = 0
       value = 0
@@ -173,13 +173,13 @@ format_node_detail_value = (value, unit) ->
       when 'FTE'
         "#{@round_number x, 0} #{@scaling_in_words(0, 'FTE')}"
       when 'Eur/Mwh'
-        "#{@round_number x, 2} €/MWh"
+        "#{@round_number x, if wantedPrecision == undefined then 2 else wantedPrecision} €/MWh"
       when 'Eur/MWhe'
-        "#{@round_number x, 2} €/MWhe"
+        "#{@round_number x, if wantedPrecision == undefined then 2 else wantedPrecision} €/MWhe"
       when 'Eur/MWe'
-        "#{@round_number x, 2} €/MWe"
+        "#{@round_number x, if wantedPrecision == undefined then 2 else wantedPrecision} €/MWe"
       when 'MEur/MWe'
-        "#{@round_number x, 2} M€/MWe"
+        "#{@round_number x, if wantedPrecision == undefined then 2 else wantedPrecision} M€/MWe"
       when '#'
         "#{value} #{@scaling_in_words(pow, 'nounit')}"
       when 'years'

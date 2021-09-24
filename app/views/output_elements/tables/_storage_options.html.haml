@@ -56,12 +56,33 @@
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_mv_batteries_electricity_output", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "energy_flexibility_mv_batteries_electricity_flhs", :graph => :future}}
     %tr
-      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_industry"
-      %td{:data => {:gquery => "industry_flexibility_p2h_electricity_capacity", :graph => :future}}
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_refineries_industry"
+      %td{:data => {:gquery => "industry_flexibility_p2h_refineries_electricity_capacity", :graph => :future}}
       %td
-      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_electricity_input", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_electricity_output", :graph => :future}}
-      %td{:data => {:decimals => 1, :gquery => "industry_flexibility_p2h_electricity_flhs", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_refineries_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_refineries_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "industry_flexibility_p2h_refineries_electricity_flhs", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_chemicals_industry"
+      %td{:data => {:gquery => "industry_flexibility_p2h_chemicals_electricity_capacity", :graph => :future}}
+      %td
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_chemicals_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_chemicals_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "industry_flexibility_p2h_chemicals_electricity_flhs", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_food_industry"
+      %td{:data => {:gquery => "industry_flexibility_p2h_food_electricity_capacity", :graph => :future}}
+      %td
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_food_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_food_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "industry_flexibility_p2h_food_electricity_flhs", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_paper_industry"
+      %td{:data => {:gquery => "industry_flexibility_p2h_paper_electricity_capacity", :graph => :future}}
+      %td
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_paper_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_paper_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "industry_flexibility_p2h_paper_electricity_flhs", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_boiler"
       %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_electricity_capacity", :graph => :future}}

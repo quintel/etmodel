@@ -8,6 +8,9 @@
         = t 'output_elements.tables.flexibility.storage_capacity'
         (MW)
       %th
+        = t 'output_elements.tables.flexibility.peak_capacity'
+        (MW)
+      %th
         = t 'output_elements.tables.flexibility.storage_volume'
         (MWh)
       %th
@@ -23,6 +26,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_stored_in_batteries"
       %td{:data => {:gquery => "households_flexibility_p2p_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "households_flexibility_p2p_electricity_peak_capacity", :graph => :future}}
       %td{:data => {:gquery => "households_flexibility_p2p_electricity_volume", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2p_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "households_flexibility_p2p_electricity_output", :graph => :future}}
@@ -30,6 +34,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_stored_in_EV"
       %td{:data => {:gquery => "transport_car_using_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "transport_car_using_electricity_peak_capacity", :graph => :future}}
       %td{:data => {:gquery => "transport_car_using_electricity_volume", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "transport_car_using_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "transport_car_using_electricity_output", :graph => :future}}
@@ -37,6 +42,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_stored_in_pumped_storage"
       %td{:data => {:gquery => "energy_flexibility_pumped_storage_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_flexibility_pumped_storage_electricity_peak_capacity", :graph => :future}}
       %td{:data => {:gquery => "energy_flexibility_pumped_storage_electricity_volume", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_pumped_storage_electricity_output", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_pumped_storage_electricity_input", :graph => :future}}
@@ -44,6 +50,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_stored_in_opac"
       %td{:data => {:gquery => "energy_flexibility_opac_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_flexibility_opac_electricity_peak_capacity", :graph => :future}}
       %td{:data => {:gquery => "energy_flexibility_opac_electricity_volume", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_opac_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_opac_electricity_output", :graph => :future}}
@@ -51,6 +58,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_stored_in_mv_batteries"
       %td{:data => {:gquery => "energy_flexibility_mv_batteries_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_flexibility_mv_batteries_electricity_peak_capacity", :graph => :future}}
       %td{:data => {:gquery => "energy_flexibility_mv_batteries_electricity_volume", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_mv_batteries_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_flexibility_mv_batteries_electricity_output", :graph => :future}}
@@ -58,6 +66,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_refineries_industry"
       %td{:data => {:gquery => "industry_flexibility_p2h_refineries_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "industry_flexibility_p2h_refineries_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_refineries_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_refineries_electricity_output", :graph => :future}}
@@ -65,6 +74,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_chemicals_industry"
       %td{:data => {:gquery => "industry_flexibility_p2h_chemicals_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "industry_flexibility_p2h_chemicals_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_chemicals_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_chemicals_electricity_output", :graph => :future}}
@@ -72,6 +82,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_food_industry"
       %td{:data => {:gquery => "industry_flexibility_p2h_food_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "industry_flexibility_p2h_food_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_food_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_food_electricity_output", :graph => :future}}
@@ -79,6 +90,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_paper_industry"
       %td{:data => {:gquery => "industry_flexibility_p2h_paper_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "industry_flexibility_p2h_paper_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_paper_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "industry_flexibility_p2h_paper_electricity_output", :graph => :future}}
@@ -86,6 +98,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_boiler"
       %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_boiler_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_boiler_electricity_output", :graph => :future}}
@@ -93,6 +106,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_heatpump"
       %td{:data => {:gquery => "energy_heat_flexibility_p2h_heatpump_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_heatpump_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_heatpump_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_heatpump_electricity_output", :graph => :future}}
@@ -100,6 +114,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_hydrogen"
       %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_hydrogen_flexibility_p2g_electricity_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "energy_hydrogen_flexibility_p2g_electricity_output", :graph => :future}}
@@ -108,12 +123,14 @@
       %th= t "output_elements.tables.flexibility.losses_in_storage"
       %td
       %td
+      %td
       %td{:data => {:decimals => 4, :gquery => "losses_in_storage", :graph => :future}}
       %td
       %td
     %tr
       %th= t "output_elements.tables.flexibility.interconnector_1"
       %td{:data => {:gquery => "energy_interconnector_1_exported_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_interconnector_1_exported_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_interconnector_1_exported_electricity_input", :graph => :future}}
       %td
@@ -121,6 +138,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.interconnector_2"
       %td{:data => {:gquery => "energy_interconnector_2_exported_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_interconnector_2_exported_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_interconnector_2_exported_electricity_input", :graph => :future}}
       %td
@@ -128,6 +146,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.interconnector_3"
       %td{:data => {:gquery => "energy_interconnector_3_exported_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_interconnector_3_exported_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_interconnector_3_exported_electricity_input", :graph => :future}}
       %td
@@ -135,6 +154,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.interconnector_4"
       %td{:data => {:gquery => "energy_interconnector_4_exported_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_interconnector_4_exported_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_interconnector_4_exported_electricity_input", :graph => :future}}
       %td
@@ -142,6 +162,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.interconnector_5"
       %td{:data => {:gquery => "energy_interconnector_5_exported_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_interconnector_5_exported_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_interconnector_5_exported_electricity_input", :graph => :future}}
       %td
@@ -149,6 +170,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.interconnector_6"
       %td{:data => {:gquery => "energy_interconnector_6_exported_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_interconnector_6_exported_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_interconnector_6_exported_electricity_input", :graph => :future}}
       %td
@@ -156,6 +178,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_curtailed"
       %td
+      %td{:data => {:decimals => 4, :gquery => "energy_curtailment_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_curtailment_electricity_input", :graph => :future}}
       %td
@@ -163,6 +186,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.electricity_curtailed_solar_pv"
       %td
+      %td{:data => {:decimals => 4, :gquery => "energy_curtailment_solar_pv_electricity_peak_capacity", :graph => :future}}
       %td
       %td{:data => {:decimals => 4, :gquery => "energy_curtailment_solar_pv_electricity_input", :graph => :future}}
       %td
@@ -170,6 +194,7 @@
     %tr
       %th= t "output_elements.tables.flexibility.total"
       %td{:data => {:gquery => "flexibility_total_capacity", :graph => :future}}
+      %td
       %td{:data => {:gquery => "flexibility_total_volume", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "flexibility_total_input", :graph => :future}}
       %td{:data => {:decimals => 4, :gquery => "flexibility_total_output", :graph => :future}}

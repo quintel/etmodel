@@ -8,19 +8,19 @@
   target_line_position: ''
   gquery: gas_ccgt
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: gas_ccgt_overview_costs_of_electricity_production
 - label: gas_conventional
   color: "#CCCCCC"
   order_by: 4
   group: gas
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: gas_conventional
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: gas_conventional_overview_costs_of_electricity_production
 - label: coal_powder
@@ -31,20 +31,20 @@
   is_target_line: false
   target_line_position: ''
   gquery: coal_powder
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_powder_overview_costs_of_electricity_production
 - label: biomass_chp
   color: "#5D7929"
   order_by: 1
   group: bio
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: biomass_chp
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: biomass_chp_overview_costs_of_electricity_production
 - label: coal_ccs
@@ -52,23 +52,23 @@
   order_by: 3
   group: coal
   show_at_first: true
-  is_target_line: 
-  target_line_position: 
+  is_target_line:
+  target_line_position:
   gquery: coal_ccs
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_ccs_overview_costs_of_electricity_production
 - label: gas_chp_large
   color: "#CCCCCC"
   order_by: 4
   group: gas
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: gas_chp_central
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: gas_chp_large_overview_costs_of_electricity_production
 - label: gas_chp_small
@@ -79,20 +79,20 @@
   is_target_line: false
   target_line_position: ''
   gquery: gas_chp_industry
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: gas_chp_small_overview_costs_of_electricity_production
 - label: coal_chp
   color: "#333333"
   order_by: 3
   group: coal
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: coal_chp
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_chp_overview_costs_of_electricity_production
 - label: oil_plant
@@ -103,56 +103,56 @@
   is_target_line: false
   target_line_position: ''
   gquery: oil_plant
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: oil_plant_overview_costs_of_electricity_production
 - label: coal_conventional
   color: "#333333"
   order_by: 3
   group: coal
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: coal_conventional
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_conventional_overview_costs_of_electricity_production
 - label: coal_igcc_ccs
   color: "#333333"
   order_by: 3
   group: coal
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: coal_igcc_ccs
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_igcc_ccs_overview_costs_of_electricity_production
 - label: coal_oxyfuel_ccs
   color: "#333333"
   order_by: 3
   group: coal
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: coal_oxyfuel_ccs
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_oxyfuel_ccs_overview_costs_of_electricity_production
 - label: coal_lignite
   color: "#333333"
   order_by: 3
   group: coal
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: coal_lignite
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_lignite_overview_costs_of_electricity_production
 - label: coal_igcc
@@ -160,11 +160,11 @@
   order_by: 3
   group: coal
   show_at_first: true
-  is_target_line: 
-  target_line_position: 
+  is_target_line:
+  target_line_position:
   gquery: coal_igcc
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_igcc_overview_costs_of_electricity_production
 - label: wind_inland
@@ -175,8 +175,8 @@
   is_target_line: false
   target_line_position: ''
   gquery: wind_inland
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: wind_inland_overview_costs_of_electricity_production
 - label: wind_coastal
@@ -187,8 +187,8 @@
   is_target_line: false
   target_line_position: ''
   gquery: wind_coastal
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: wind_coastal_overview_costs_of_electricity_production
 - label: wind_offshore
@@ -199,8 +199,8 @@
   is_target_line: false
   target_line_position: ''
   gquery: wind_offshore
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: wind_offshore_overview_costs_of_electricity_production
 - label: hydro_river
@@ -208,11 +208,11 @@
   order_by: 10
   group: water
   show_at_first: true
-  is_target_line: 
-  target_line_position: 
+  is_target_line:
+  target_line_position:
   gquery: hydro_river
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: hydro_river_overview_costs_of_electricity_production
 - label: geothermal_well
@@ -223,8 +223,8 @@
   is_target_line: false
   target_line_position: ''
   gquery: geothermal_well
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: geothermal_well_overview_costs_of_electricity_production
 - label: local_solar_pv_households
@@ -235,7 +235,7 @@
   is_target_line: false
   target_line_position: ''
   gquery: solar_pv_households
-  is_1990: 
+  is_1990:
   dependent_on: ''
   output_element_key: overview_costs_of_electricity_production
   key: local_solar_pv_households_overview_costs_of_electricity_production
@@ -243,24 +243,24 @@
   color: "#ADDE4C"
   order_by: 8
   group: solar
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: solar_pv_centrally
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: solar_pv_overview_costs_of_electricity_production
 - label: solar_csp
   color: "#ADDE4C"
   order_by: 8
   group: solar
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: solar_csp
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: solar_csp_overview_costs_of_electricity_production
 - label: nuclear
@@ -268,34 +268,70 @@
   order_by: 6
   group: nuclear
   show_at_first: true
-  is_target_line: 
-  target_line_position: 
+  is_target_line:
+  target_line_position:
   gquery: nuclear_3rd_generation
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: nuclear_overview_costs_of_electricity_production
 - label: waste_incinerator
   color: "#394C19"
   order_by: 9
   group: waste
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: waste_incinerator
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: waste_incinerator_overview_costs_of_electricity_production
+- label: waste_incinerator_ccs
+  color: "#394C19"
+  order_by: 9
+  group: waste
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: waste_incinerator_ccs
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: waste_incinerator_ccs_overview_costs_of_electricity_production
+- label: waste_chp
+  color: "#394C19"
+  order_by: 9
+  group: waste
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: waste_chp
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: waste_chp_overview_costs_of_electricity_production
+- label: waste_chp_ccs
+  color: "#394C19"
+  order_by: 9
+  group: waste
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: waste_chp_ccs
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: waste_chp_ccs_overview_costs_of_electricity_production
 - label: hydro_mountain
   color: "#416B86"
   order_by: 10
   group: water
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: hydro_mountain
-  is_1990: 
+  is_1990:
   dependent_on: has_mountains
   output_element_key: overview_costs_of_electricity_production
   key: hydro_mountain_overview_costs_of_electricity_production
@@ -304,10 +340,10 @@
   order_by: 6
   group: nuclear
   show_at_first: true
-  is_target_line: 
-  target_line_position: 
+  is_target_line:
+  target_line_position:
   gquery: nuclear_conventional
-  is_1990: 
+  is_1990:
   dependent_on: has_old_technologies
   output_element_key: overview_costs_of_electricity_production
   key: nuclear_conventional_overview_costs_of_electricity_production
@@ -315,12 +351,12 @@
   color: "#CCCCCC"
   order_by: 4
   group: gas
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: gas_ccgt_ccs
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: gas_ccgt_ccs_overview_costs_of_electricity_production
 - label: gas_turbine
@@ -332,7 +368,7 @@
   target_line_position: ''
   gquery: gas_turbine
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: gas_turbine_overview_costs_of_electricity_production
 - label: local_solar_pv_buildings
@@ -343,7 +379,7 @@
   is_target_line: false
   target_line_position: ''
   gquery: solar_pv_buildings
-  is_1990: 
+  is_1990:
   dependent_on: ''
   output_element_key: overview_costs_of_electricity_production
   key: local_solar_pv_buildings_overview_costs_of_electricity_production
@@ -356,7 +392,7 @@
   target_line_position: ''
   gquery: hydrogen_turbine
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: hydrogen_turbine_overview_costs_of_electricity_production
 - label: hydrogen_ccgt
@@ -368,7 +404,7 @@
   target_line_position: ''
   gquery: hydrogen_ccgt
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: hydrogen_ccgt_overview_costs_of_electricity_production
 - label: central_biogas_chp
@@ -380,6 +416,6 @@
   target_line_position: ''
   gquery: central_biogas_chp
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: central_biogas_chp_overview_costs_of_electricity_production

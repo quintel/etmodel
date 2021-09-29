@@ -229,13 +229,18 @@ en:
         1,600 MWe. The model uses a technical lifetime of 50 years.\r\n<br/><br/>
         \r\n<a href=\"/units\">More information on units...</a>\r\n<br/><br/><img
         SRC=\"/assets/popups/img_nuclear3.jpg\" />\r\n\r\n"
-    waste_incinerator_overview_costs_of_electricity_production:
-      short_description: High energy yield waste incineration plant
+    waste_chp_overview_costs_of_electricity_production:
+      short_description: High combined heat and power waste incineration plant
       description: "High energy yield waste incineration plant. Waste that can be burned
-        is used to generate electricity. The heat produced can also be used, but the
-        income from selling heat is not included in this graph. The model uses a technical
+        is used to generate heat.  The installation also produces electricity. The model uses a technical
         lifetime of 20 years.\r\n<br/><br/><img SRC=\"/assets/popups/img_avi.jpg\"
         />"
+    waste_chp_ccs_overview_costs_of_electricity_production:
+      short_description: High energy yield waste incineration plant with CC(U)S installation
+      description: "High energy yield waste incineration plant. Waste that can be burned
+        is used to generate heat. The installation also produces electricity. The model uses a technical
+      lifetime of 20 years.\r\n<br/><br/><img SRC=\"/assets/popups/img_avi.jpg\"
+      />"
     hydro_mountain_overview_costs_of_electricity_production:
       short_description: Large hydro-electric power plant
       description: "Large hydro-electric power plant (500 MWe) in mountain reservoir.

@@ -128,7 +128,6 @@ class OutputElement < YModel::Base
 
   def self.whitelisted
     not_hidden.reject(&:area_dependent)
-      .reject(&:block_chart?)
       .reject(&:not_allowed_in_this_area)
       .sort_by do |c|
         [

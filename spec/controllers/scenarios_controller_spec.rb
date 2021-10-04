@@ -140,7 +140,7 @@ describe ScenariosController, vcr: true do
 
         it 'resets to the default setting' do
           get :play
-          expect(session[:setting].area_code).to eq('nl')
+          expect(session[:setting].area_code).to eq(Setting.default_attributes[:area_code])
         end
       end
 

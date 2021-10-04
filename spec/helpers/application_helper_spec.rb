@@ -10,6 +10,9 @@ require 'rails_helper'
 #     end
 #   end
 # end
+# frozen_string_literal: true
+
+# rubocop:disable Style/FormatStringToken
 describe ApplicationHelper do
   describe 'format_description' do
     it 'does not alter plain strings' do
@@ -38,11 +41,12 @@ describe ApplicationHelper do
     end
 
     it 'interpolates "end_year"' do
-      expect(format_description('%{end_year}')).to eq('2050')
+      expect(format_description('%{end_year}')).to eq(Setting.default_attributes[:end_year].to_s)
     end
 
     it 'interpolates "area_code"' do
-      expect(format_description('%{area_code}')).to eq('nl')
+      expect(format_description('%{area_code}')).to eq(Setting.default_attributes[:area_code].to_s)
     end
   end
 end
+# rubocop:enable Style/FormatStringToken

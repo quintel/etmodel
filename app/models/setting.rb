@@ -14,7 +14,7 @@
 class Setting
   extend ActiveModel::Naming
 
-  MIN_YEAR = 2013
+  MIN_YEAR = 2020
   DEFAULT_YEAR = 2050
   MAX_YEAR = 2050
 
@@ -23,8 +23,8 @@ class Setting
   def self.default_attributes
     {
       network_parts_affected:   [],
-      area_code:                'nl',
-      start_year:               2011,
+      area_code:                'nl2019',
+      start_year:               2019,
       end_year:                 2050,
       use_merit_order:          true,
       esdl_exportable:          false,

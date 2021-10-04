@@ -4,11 +4,14 @@
 
 ## Startjaar 2019 nieuwe standaard voor scenario's voor Nederland
 
-In het Energietransitiemodel kan je het energiesysteem van de toekomst ontwerpen voor een regio naar keuze, door aanpassingen te maken aan het huidige energiesysteem. Voor Nederland hebben we nu het startjaar, dat het huidige energiesysteem weergeeft, geüpdatet van 2015 naar 2019. Dit betekent dat als je een nieuw scenario opent voor Nederland, je een weergave ziet van het energiesysteem van 2019, waaronder de hoeveelheid broeikasgasemissies, de elektriciteitsproductie per energiebron, het aandeel duurzame energie etc.
+In het Energietransitiemodel kan je voor een regio naar keuze het energiesysteem van de toekomst ontwerpen, door aanpassingen te maken aan het huidige energiesysteem. Voor Nederland hebben we nu het startjaar, dat het huidige energiesysteem weergeeft, geüpdatet van 2015 naar 2019. Dit betekent dat, als je een nieuw scenario opent voor Nederland, je een weergave ziet van het energiesysteem van 2019, waaronder de hoeveelheid broeikasgasemissies, de elektriciteitsproductie per energiebron, het aandeel duurzame energie etc.
 
 **Belangrijk:** er verandert niets voor scenario's die voor deze update gemaakt zijn en 2015 als startjaar hebben. Je kunt oude scenario's die je hebt opgeslagen nog steeds openen en bewerken onder **["Mijn Scenario's"](/scenarios)**.
 
-De open source energiebalans van Eurostat vormt de basis van deze dataset-update en wordt aangevuld door verschillende andere databronnen, zoals het CBS. Alle databronnen die we hebben gebruikt om de nieuwe dataset te maken, zijn te vinden in onze documentatie op **[Github](https://github.com/quintel/etdataset-public/tree/master/data/nl/2019)**. Verder hebben we ook het dataset update-proces verbeterd, wat daarmee ook de kwaliteit van de nieuwe Nederlandse dataset en toekomstige datasets verhoogt.
+De open source energiebalans van Eurostat vormt de basis van deze dataset-update en wordt aangevuld door verschillende andere databronnen, zoals het CBS. Alle databronnen die we hebben gebruikt om de nieuwe dataset te maken, zijn te vinden in onze documentatie op **[Github](https://github.com/quintel/etdataset-public/tree/master/data/nl/2019)**. Verder hebben we het dataset update-proces verbeterd, wat ook de kwaliteit van de nieuwe Nederlandse dataset en toekomstige datasets verhoogt.
+
+-> ![](/assets/pages/whats_new/co2_emissions_2019_nl.png) <-
+
 
 # September 2021
 

@@ -1,5 +1,18 @@
 # Wat is er nieuw in het Energietransitiemodel?
 
+# Oktober 2021
+
+## Startjaar 2019 nieuwe standaard voor scenario's voor Nederland
+
+In het Energietransitiemodel kan je voor een regio naar keuze het energiesysteem van de toekomst ontwerpen door aanpassingen te maken aan het huidige energiesysteem. Voor Nederland hebben we nu het startjaar, dat het huidige energiesysteem weergeeft, geüpdatet van 2015 naar 2019. Dit betekent dat, als je een nieuw scenario opent voor Nederland, je een weergave ziet van het energiesysteem van 2019, waaronder de hoeveelheid broeikasgasemissies, de elektriciteitsproductie per energiebron, het aandeel duurzame energie etc.
+
+**Belangrijk:** er verandert niets voor scenario's die voor deze update gemaakt zijn en 2015 als startjaar hebben. Je kunt oude scenario's die je hebt opgeslagen nog steeds openen en bewerken onder **["Mijn Scenario's"](/scenarios)**.
+
+De open source energiebalans van Eurostat vormt de basis van deze dataset en wordt aangevuld door verschillende andere databronnen, zoals het CBS. Alle databronnen die we hebben gebruikt om de nieuwe dataset te maken, zijn te vinden in onze documentatie op **[Github](https://github.com/quintel/etdataset-public/tree/master/data/nl/2019)**. Verder hebben we het dataset update-proces verbeterd, wat ook de kwaliteit van de nieuwe Nederlandse dataset en toekomstige datasets verhoogt.
+
+-> ![](/assets/pages/whats_new/co2_emissions_2019_nl.png) <-
+
+
 # September 2021
 
 ## Verander de oliemix en voeg bio-olie toe
@@ -8,13 +21,13 @@ Het is nu mogelijk om de oliemix te bepalen en bio-olie toe te voegen in huishou
 
 -> ![](/assets/pages/whats_new/final_demand_of_oil_nl.png) <-
 
-## Waterstof treinen
+## Waterstoftreinen
 
 Waterstoftreinen worden gezien als een mogelijkheid om diesel treinen te vervangen. Je kunt nu waterstoftreinen toevoegen aan je scenario door de nieuwe slider te gebruik in *Vraag → Transport → Passagiers vervoer* → **[Technologie passagierstreinen](/scenario/demand/transport_passenger_transport/train-technology)**.
 
 ## CCS Afvalverbranding
 
-Afvalverbranding wordt gezien als een hernieuwbare bron maar zijn nog wel een bron van broeikasgassen. Met de afvang van CO<sub>2</sub> (CCS) kunnen deze emissie voorkomen worden, waardoor afvalverbranding milieu vriendelijker wordt. Je kunt nu CCS toevoegen aan afvalverbranding in *Emissies → CCUS* → **[Capture of CO<sub>2</sub>](/scenario/emissions/ccus/capture-of-co2)**.
+Afvalverbranding wordt gezien als een hernieuwbare bron maar is nog wel een bron van broeikasgassen. Met de afvang van CO<sub>2</sub> (CCS) kunnen deze emissies voorkomen worden, waardoor afvalverbranding milieuvriendelijker wordt. Je kunt nu CCS toevoegen aan afvalverbranding in *Emissies → CCUS* → **[Capture of CO<sub>2</sub>](/scenario/emissions/ccus/capture-of-co2)**.
 
 ## Luchtwarmtepomp gebouwen sector
 

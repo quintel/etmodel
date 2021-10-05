@@ -1,5 +1,18 @@
 # What's new in the Energy Transition Model?
 
+# October 2021
+
+## Start year 2019 new standard for scenarios for the Netherlands
+
+The Energy Transition Model allows you to design your own energy system for a region of your choice, by making changes to its current energy system. For the Netherlands, we have now updated the start year representing the current energy system from 2015 to 2019. This means that when you open a new scenario for the Netherlands, you will see a representation of the energy system as it was in 2019, including the level of greenhouse gas emissions, the electricity production by energy source, the share of renewable energy etc.
+
+**Important:** for scenarios that have been made before this update, with 2015 as a start year, nothing has changed. You can still access and edit any old scenario you saved under **["My Scenarios"](/scenarios)**.
+
+The basis of this dataset update is the open source energy balance from Eurostat, which is complemented by a number of other data sources, such as the CBS. All of the data sources we used to create the new dataset can be found in our documentation on **[Github](https://github.com/quintel/etdataset-public/tree/master/data/nl/2019)**. In addition, we have improved the process of updating our datasets, thereby increasing the quality of the new Dutch dataset and any future dataset updates.
+
+-> ![](/assets/pages/whats_new/co2_emissions_2019_en.png) <-
+
+
 # September 2021
 
 ## Determine the oil mix and add bio oil

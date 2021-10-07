@@ -249,7 +249,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0225)
     mini_mime (1.1.1)
-    mini_portile2 (2.5.1)
+    mini_portile2 (2.6.1)
     mini_racer (0.4.0)
       libv8-node (~> 15.14.0.0)
     minitest (5.14.4)
@@ -262,8 +262,8 @@ GEM
     net-ssh (6.1.0)
     newrelic_rpm (7.0.0)
     nio4r (2.5.7)
-    nokogiri (1.11.5)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.12.5)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
@@ -539,7 +539,7 @@ DEPENDENCIES
   mini_racer (>= 0.4.0.beta1)
   mysql2
   newrelic_rpm
-  nokogiri (~> 1.11)
+  nokogiri (~> 1.12)
   non-stupid-digest-assets
   oily_png
   openid_connect

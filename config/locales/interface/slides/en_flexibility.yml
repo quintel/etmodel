@@ -122,17 +122,6 @@ en:
           \ data-chart-key=\"hybrid_heat_pump\"
         >electricity and gas share table</a>
         will show a breakdown of how hybrid heat pumps use energy in households."
-    flexibility_flexibility_flexibility_order:
-      title: Order of flexibility options
-      short_description:
-      description: "Wind turbines and solar panels are subject to volatile natural
-        patterns. The electricity that they produce might therefore not always be
-        used to match demand directly and consequently lead to excess electricity.
-        To prevent curtailment of excess electricity production, the ETM contains
-        several flexibility technologies that can either store or convert the excess
-        electricity. You can include these technologies in the <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\">'Storage'</a>
-        and <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households\">'Conversion'</a>
-        tab."
     flexibility_flexibility_power_storage:
       title: Electricity storage
       short_description:
@@ -239,7 +228,7 @@ en:
         Some examples are: </br>
         <ul> <i>Suitable for large (fluctuations in) volume </i>
         <ul><li> Import/export of gas/hydrogen </li>
-        <li> Power-to-gas: hydrogen production from excess electricity </li>
+        <li> Power-to-gas: hydrogen production from electricity </li>
         <li> Storage of gas/hydrogen </li>
         <li> Seasonal storage of heat </li>
         </li>
@@ -251,7 +240,7 @@ en:
         </ul>
         <i>Suitable for both volume and capacity </i>
         <ul><li> Import/export of electricity </li>
-        <li> Power-to-heat: heat production from excess electricity (with heat storage) </li>
+        <li> Power-to-heat: heat production from electricity (with heat storage) </li>
         <li> Curtailment of renewable electricity production </li>
         <li> Large-scale electricity storage: pumped hydro storage </li>
         </ul> </ul> </br>

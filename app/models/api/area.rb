@@ -8,7 +8,7 @@ class Api::Area < ActiveResource::Base
     neighborhood
   )
 
-  self.site = "#{APP_CONFIG[:api_url]}/api/v3"
+  self.site = "#{Settings.api_url}/api/v3"
 
   # This list of attributes is used in the forms where you can set the
   # area dependencies for an object, such as the input_elements

@@ -44,7 +44,7 @@ class IncomingWebhooksController < ApplicationController
   private
 
   def assert_valid_key
-    key = (APP_CONFIG[:incoming_webhook_keys] || {})[action_name]
+    key = Settings.dig(:incoming_webhook_keys, action_name)
     head :forbidden unless key && params[:key] == key
   end
 end

@@ -8,7 +8,7 @@
 # Returns a ServiceResult.
 UnprotectAPIScenario = lambda do |scenario_id|
   response = HTTParty.put(
-    "#{APP_CONFIG[:api_url]}/api/v3/scenarios/#{scenario_id}",
+    "#{Settings.api_url}/api/v3/scenarios/#{scenario_id}",
     body: { scenario: { protected: false } }
   )
 

@@ -81,7 +81,7 @@ class MultiYearChartsController < ApplicationController
   end
 
   def ensure_valid_config
-    return if APP_CONFIG[:multi_year_charts_url]
+    return if Settings.multi_year_charts_url
 
     redirect_to root_path,
       notice: 'Missing multi_year_charts_url setting in config.yml'

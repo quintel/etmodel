@@ -3,13 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe IncomingWebhooksController, '#mailchimp' do
-  before do
-    allow(APP_CONFIG)
-      .to receive(:[])
-      .with(:incoming_webhook_keys)
-      .and_return('mailchimp' => 'abc')
-  end
-
   context 'when type=subscribe' do
     let(:request) do
       post :mailchimp, params: {

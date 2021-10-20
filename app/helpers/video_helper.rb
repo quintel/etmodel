@@ -2,7 +2,7 @@ module VideoHelper
   # inserts the right video player according to global configuration
   #
   def smart_video_player(video_id, opts = {})
-    if APP_CONFIG[:standalone]
+    if Settings.standalone
       local_video_player(video_id, opts)
     else
       vimeo_video_player(video_id, opts)

@@ -46,6 +46,6 @@ class ExportEsdlScenario
   end
 
   def api_url
-    APP_CONFIG[:esdl_api_url] + 'export_esdl/'
+    Settings.esdl_api_url + 'export_esdl/'
   end
 end

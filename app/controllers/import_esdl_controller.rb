@@ -31,7 +31,7 @@ class ImportEsdlController < ApplicationController
   private
 
   def ensure_esdl_enabled
-    redirect_to(root_url) unless APP_CONFIG[:esdl_api_url]
+    redirect_to(root_url) unless Settings.esdl_api_url
   end
 
   def esdl_id

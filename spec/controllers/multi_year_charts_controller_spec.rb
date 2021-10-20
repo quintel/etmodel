@@ -27,7 +27,7 @@ describe MultiYearChartsController do
         post :create, params: { scenario_id: scenario.id }
 
         expect(response).to redirect_to(
-          %r{^#{APP_CONFIG[:multi_year_charts_url]}/#{myc.redirect_slug}}
+          %r{^#{Settings.multi_year_charts_url}/#{myc.redirect_slug}}
         )
       end
 

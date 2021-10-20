@@ -5,7 +5,7 @@ module MultiYearChartsHelper
   #
   # Returns a string.
   def myc_url(multi_year_chart)
-    "#{APP_CONFIG[:multi_year_charts_url]}/" \
+    "#{Settings.multi_year_charts_url}/" \
     "#{multi_year_chart.redirect_slug}?locale=#{I18n.locale}"
   end
 

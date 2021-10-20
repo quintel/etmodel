@@ -1,6 +1,6 @@
 class Partner
   LEADING_PARTNERS = ['gasterra']
-  REMOTE_URL       = APP_CONFIG[:partners_url] || 'http://et-model.com'
+  REMOTE_URL       = Settings.partners_url || 'http://et-model.com'
 
   attr_accessor :name, :key, :kind, :img
 

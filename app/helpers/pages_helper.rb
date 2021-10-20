@@ -2,8 +2,8 @@ module PagesHelper
   # Public: Determines if the "What's new in the ETM?" banner should be shown
   # in staging and production environments.
   def show_whats_new_banner?
-    if APP_CONFIG[:whats_new_cutoff]
-      Date.today < APP_CONFIG[:whats_new_cutoff]
+    if Settings.whats_new_cutoff
+      Date.today < Settings.whats_new_cutoff
     else
       Rails.env.development?
     end
@@ -46,7 +46,7 @@ module PagesHelper
   def co2_factsheet_options
     {
       area: @area.area,
-      host: APP_CONFIG[:api_url],
+      host: Settings.api_url,
       max_year: Setting::MAX_YEAR,
       min_year: Setting::MIN_YEAR,
       default_year: Setting::DEFAULT_YEAR,

@@ -16,7 +16,7 @@ class FeedbackMailer < ActionMailer::Base
     @page = "#{url_options[:host]}#{data[:page]}" if data[:page] && data[:page][0] == '/'
 
     mail(
-      to: APP_CONFIG[:feedback_email],
+      to: Settings.feedback_email,
       reply_to: user&.email || 'no-reply@quintel.com',
       subject: 'ETM Feedback'
     )

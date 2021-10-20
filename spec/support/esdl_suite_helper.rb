@@ -28,10 +28,10 @@ module EsdlSuiteHelper
   end
 
   def setup_esdl_suite_app_config
-    allow(APP_CONFIG).to receive(:[]).with(:esdl_suite_url).and_return(provider_url)
-    allow(APP_CONFIG).to receive(:[]).with(:esdl_suite_client_id).and_return(client_id)
-    allow(APP_CONFIG).to receive(:[]).with(:esdl_suite_client_secret).and_return('secret')
-    allow(APP_CONFIG).to receive(:[]).with(:esdl_suite_redirect_url).and_return(redirect_url)
+    allow(Settings).to receive(:esdl_suite_url).and_return(provider_url)
+    allow(Settings).to receive(:esdl_suite_client_id).and_return(client_id)
+    allow(Settings).to receive(:esdl_suite_client_secret).and_return('secret')
+    allow(Settings).to receive(:esdl_suite_redirect_url).and_return(redirect_url)
   end
 
   private

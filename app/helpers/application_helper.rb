@@ -43,12 +43,12 @@ module ApplicationHelper
   # Used to show a notice in the admin section
   #
   def live_server?
-    APP_CONFIG[:live_server]
+    Settings.live_server
   end
 
   def live_server_type
-    if APP_CONFIG[:live_server].is_a?(String)
-      APP_CONFIG[:live_server]
+    if Settings.live_server.is_a?(String)
+      Settings.live_server
     else
       'production'
     end
@@ -84,7 +84,7 @@ module ApplicationHelper
     links.push text: t("header.privacy_statement") ,  url: "http://#{ "beta." if is_beta? }#{ domain }/privacy?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.disclaimer") ,         url: "http://#{ "beta." if is_beta? }#{ domain }/terms?locale=#{ I18n.locale }", target: "_new"
     links.push text: t("header.bugs") ,               url: "http://#{ "beta." if is_beta? }#{ domain }/known_issues?locale=#{ I18n.locale }", target: "_new"
-    unless APP_CONFIG[:standalone]
+    unless Settings.standalone
       links.push text: t("header.documentation") ,    url: "https://docs.energytransitionmodel.com", target: "_blank"
       links.push text: t("header.publications") ,     url: "http://refman.et-model.com", target: "_blank"
     end
@@ -100,7 +100,7 @@ module ApplicationHelper
   # Returns a hash of values which may be interpolated into description texts.
   def formatted_description_values
     @description_values ||= {
-      etengine_url: APP_CONFIG[:api_url].to_s.chomp('/'),
+      etengine_url: Settings.api_url.to_s.chomp('/'),
       scenario_id:  Current.setting.api_session_id,
       area_code:    Current.setting.area_code,
       end_year:     Current.setting.end_year

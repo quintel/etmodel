@@ -42,10 +42,10 @@ class EsdlSuiteController < ApplicationController
   end
 
   def ensure_esdl_suite_configured
-    redirect_to import_esdl_path unless APP_CONFIG[:esdl_suite_client_id].present? &&
-      APP_CONFIG[:esdl_suite_client_secret].present? &&
-      APP_CONFIG[:esdl_suite_url].present? &&
-      APP_CONFIG[:esdl_suite_redirect_url].present?
+    redirect_to import_esdl_path unless Settings.esdl_suite_client_id.present? &&
+      Settings.esdl_suite_client_secret.present? &&
+      Settings.esdl_suite_url.present? &&
+      Settings.esdl_suite_redirect_url.present?
   end
 
   # Generates a unique value. Nonce is used to validate the request at

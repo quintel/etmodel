@@ -9,8 +9,8 @@ class MailchimpService
 
   # Internal: Returns if the application has Mailchimp configured.
   def self.configured?
-    APP_CONFIG[:mailchimp_api_key].present? &&
-      APP_CONFIG[:mailchimp_list_url].present?
+    Settings.mailchimp_api_key.present? &&
+      Settings.mailchimp_list_url.present?
   end
 
   # Public: Runs the service using the Mailchimp credentials stored in the
@@ -21,8 +21,8 @@ class MailchimpService
     end
 
     new(
-      APP_CONFIG[:mailchimp_api_key],
-      APP_CONFIG[:mailchimp_list_url]
+      Settings.mailchimp_api_key,
+      Settings.mailchimp_list_url
     ).call(*args)
   end
 

@@ -52,6 +52,6 @@ class FeedbackController < ApplicationController
   end
 
   def require_feedback_configured
-    render_not_found unless APP_CONFIG[:feedback_email]
+    render_not_found unless Settings.feedback_email
   end
 end

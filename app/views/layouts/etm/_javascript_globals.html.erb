@@ -1,9 +1,9 @@
 <script>
   var globals = <%= Jbuilder.encode do |json|
-        json.api_url          APP_CONFIG[:api_url]
-        json.api_proxy_url    APP_CONFIG[:api_proxy_url]
-        json.disable_cors     APP_CONFIG[:disable_cors]
-        json.standalone       APP_CONFIG[:standalone]
+        json.api_url          Settings.api_url
+        json.api_proxy_url    Settings.api_proxy_url
+        json.disable_cors     Settings.disable_cors
+        json.standalone       Settings.standalone
         json.settings         settings_as_json(Current.setting)
         json.debug_js         admin?
         json.env              Rails.env

@@ -16,7 +16,7 @@ describe InterpolateAPIScenario, type: :service do
     allow(HTTParty)
       .to receive(:post)
       .with(
-        "#{APP_CONFIG[:api_url]}/api/v3/scenarios/1/interpolate",
+        "#{Settings.api_url}/api/v3/scenarios/1/interpolate",
         hash_including(body: { end_year: 2030, protected: protect }.to_json)
       )
       .and_return(ServicesHelper::StubResponse.new(isok, body))

@@ -17,10 +17,10 @@ class EsdlSuiteService
   # Public: Setup a new EsdlSuitService with the configuration specified in the app config
   def self.setup
     new(
-      APP_CONFIG[:esdl_suite_url],
-      APP_CONFIG[:esdl_suite_client_id],
-      APP_CONFIG[:esdl_suite_client_secret],
-      APP_CONFIG[:esdl_suite_redirect_url]
+      Settings.esdl_suite_url,
+      Settings.esdl_suite_client_id,
+      Settings.esdl_suite_client_secret,
+      Settings.esdl_suite_redirect_url
     )
   end
 

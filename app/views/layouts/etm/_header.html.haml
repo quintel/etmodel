@@ -2,7 +2,7 @@
   %a.logo{ href: root_path }
     %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
   %ul.user-settings
-    - if APP_CONFIG[:feedback_email]
+    - if Settings.feedback_email
       = render partial: 'layouts/etm/feedback_nav_item'
 
     %li.locale.nav-item

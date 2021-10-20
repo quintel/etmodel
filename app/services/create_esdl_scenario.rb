@@ -50,6 +50,6 @@ class CreateEsdlScenario
   end
 
   def api_url
-    APP_CONFIG[:esdl_api_url] + 'create_scenario/'
+    Settings.esdl_api_url + 'create_scenario/'
   end
 end

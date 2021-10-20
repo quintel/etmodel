@@ -88,6 +88,6 @@ class OutputElementSerie < YModel::Base
   # rubocop:enable Metrics/LineLength
 
   def url_in_etengine
-    "#{APP_CONFIG[:gquery_detail_url]}#{gquery}"
+    "#{Settings.gquery_detail_url}#{gquery}"
   end
 end

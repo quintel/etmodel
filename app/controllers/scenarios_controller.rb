@@ -149,7 +149,7 @@ class ScenariosController < ApplicationController
       { scenario_id: id, weight: weight }
     end
 
-    result = HTTParty.post("#{APP_CONFIG[:api_url]}/api/v3/scenarios/merge", {
+    result = HTTParty.post("#{Settings.api_url}/api/v3/scenarios/merge", {
       body: { scenarios: req_body }.to_json,
       headers: {
         'Accept'       => 'application/json',
@@ -242,7 +242,7 @@ class ScenariosController < ApplicationController
   # Internal: For requests originating in the "multi-year charts" application,
   # we must permit pages to be loaded in an iframe.
   def myc_content_security_policy
-    url = APP_CONFIG[:multi_year_charts_url]
+    url = Settings.multi_year_charts_url
 
     return unless url
 

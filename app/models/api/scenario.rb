@@ -1,8 +1,8 @@
 class Api::Scenario < ActiveResource::Base
-  self.site = "#{APP_CONFIG[:api_url]}/api/v3"
+  self.site = "#{Settings.api_url}/api/v3"
 
   def self.url_to(path)
-    "#{ APP_CONFIG[:api_url] }/api/v3/scenarios/#{ path }"
+    "#{ Settings.api_url }/api/v3/scenarios/#{ path }"
   end
 
   def self.batch_load(ids, options = {})
@@ -21,7 +21,7 @@ class Api::Scenario < ActiveResource::Base
 
   def self.find_with_queries(id, queries)
     HTTParty.put(
-      "#{ APP_CONFIG[:api_url] }/api/v3/scenarios/#{ id }",
+      "#{ Settings.api_url }/api/v3/scenarios/#{ id }",
       body: { gqueries: Array(queries) }
     )
   end

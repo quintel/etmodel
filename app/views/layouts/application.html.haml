@@ -32,5 +32,5 @@
         %footer.fixed
           = yield :footer
     = yield :scripts
-    - if (Rails.env.production? || Rails.env.staging?) && !APP_CONFIG[:standalone]
+    - if (Rails.env.production? || Rails.env.staging?) && !Settings.standalone
       = render "layouts/etm/ga"

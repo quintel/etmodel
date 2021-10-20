@@ -4,13 +4,13 @@ require 'rails_helper'
 
 RSpec.describe FeedbackController do
   around do |example|
-    original = APP_CONFIG[:feedback_email]
-    APP_CONFIG[:feedback_email] = feedback_email
+    original = Settings.feedback_email
+    Settings.feedback_email = feedback_email
 
     begin
       example.call
     ensure
-      APP_CONFIG[:feedback_email] = original
+      Settings.feedback_email = original
     end
   end
 

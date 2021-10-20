@@ -86,6 +86,6 @@ class CreateMultiYearChart
   end
 
   def api_url(*suffix)
-    "#{APP_CONFIG[:api_url]}/api/v3/scenarios/#{suffix.join('/')}"
+    "#{Settings.api_url}/api/v3/scenarios/#{suffix.join('/')}"
   end
 end

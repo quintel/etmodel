@@ -128,14 +128,14 @@ en:
         in the future. \r\n</br></br>\r\nIn Europe, steel production has grown by
         0.5% annually since 2001. Globally, growth is more than 5% with China the
         biggest contributor (~16% annually).  "
-    industry_steel_blastfurnace_current_consumption_useable_heat_share:
+    industry_steel_blastfurnace_bof_share:
       title: Blast furnace
       short_description:
       description: "Iron and steel are conventionally produced in a blastfurnace.
         Globally, two-thirds of all iron and steel is produced this way (the rest
         is recycled steel).  \r\n</br></br>\r\nHere you can indicate what share blast
         furnaces have in total iron and steel production ."
-    industry_steel_hisarna_consumption_useable_heat_share:
+    industry_steel_cyclonefurnace_bof_share:
       title: Cyclone furnace
       short_description:
       description: "Iron production is energy and carbon intensive, so a strong incentive
@@ -145,9 +145,9 @@ en:
         In 2011 the first test plant was built in the Netherlands. It is expected
         that several more years of development are needed before the technology is
         fully mature. \r\n<br/><br/>\r\nHere you can indicate what share cyclone ovens
-        will have in future iron and steel production. "
-    industry_steel_electricfurnace_electricity_share:
-      title: Electric furnace (recycling)
+        will have in future iron and steel production."
+    industry_steel_scrap_hbi_eaf_share:
+      title: Electric arc furnace
       short_description:
       description: "Steel (like all metals) can be endlessly recycled. Electric arc
         furnaces are used to recycle 100% used steel. Steel can also be melted in
@@ -155,6 +155,14 @@ en:
         Globally, almost one third of steel is produced in electric arc furnaces.
         \r\n<p>\r\nHere you can indicate what share electric arc furnaces will have
         in steel production. "
+    industry_steel_dri_network_gas_eaf_share:
+      title: DRI (network gas)
+      short_description:
+      description: ""
+    industry_steel_dri_hydrogen_eaf_share:
+      title: DRI (hydrogen)
+      short_description:
+      description: ""
     energy_steel_hisarna_transformation_coal_woodpellets_share:
       title: Biomass in cyclone furnace
       short_description:

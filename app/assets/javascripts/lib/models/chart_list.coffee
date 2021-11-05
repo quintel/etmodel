@@ -419,11 +419,14 @@ class @ChartList extends Backbone.Collection
 
       target = $(e.target)
 
-      url = [
-        window.location.origin,
-        'output_elements',
-        target.data('chartKey'),
-        'zoom'
-      ]
+      if target.data('location') == 'side'
+        @load(target.data('chartKey')) unless @chart_already_on_screen(target.data('chartKey'))
+      else
+        url = [
+          window.location.origin,
+          'output_elements',
+          target.data('chartKey'),
+          'zoom'
+        ]
 
-      zoomChart(url.join('/'), target.data('chartFormat'))
+        zoomChart(url.join('/'), target.data('chartFormat'))

@@ -419,7 +419,7 @@ class @ChartList extends Backbone.Collection
 
       target = $(e.target)
 
-      if target.data('location') == 'side'
+      if target.data('chart-location') == 'side'
         @load(target.data('chartKey')) unless @chart_already_on_screen(target.data('chartKey'))
       else
         url = [

@@ -131,14 +131,14 @@ nl:
         gaat groeien of afnemen.\r\n</br></br>\r\nBinnen Europa is de staalproductie
         vanaf 2001 met ongeveer 0,5% per jaar gestegen. Wereldwijd is dit meer dan
         5% per jaar, met China als belangrijkste land (16% per jaar).\r\n"
-    industry_steel_blastfurnace_current_consumption_useable_heat_share:
+    industry_steel_blastfurnace_bof_share:
       title: Hoogoven
       short_description:
       description: "IJzer- en staalproductie met een hoogoven is de conventionele
         wijze van produceren. Wereldwijd wordt tweederde van de ijzer- en staalproductie
         met een hoogoven geproduceerd.\r\n</br></br>\r\nGeef hier aan welk aandeel
         de hoogoven heeft bij de productie van ijzer en staal.\r\n"
-    industry_steel_hisarna_consumption_useable_heat_share:
+    industry_steel_cyclonefurnace_bof_share:
       title: Cycloonoven
       short_description:
       description: "Wereldwijd wordt er gezocht naar nieuwe technieken om de productie
@@ -149,8 +149,8 @@ nl:
         heeft. In 2011 is in Nederland de eerste testfabriek hiervoor geplaatst. Naar
         verwachting duurt het nog enkele jaren voordat de techniek helemaal is uitgewerkt.\r\n<br><br>\r\nGeef
         hier aan welk aandeel de cycloonoven heeft bij de productie van ijzer en staal."
-    industry_steel_electricfurnace_electricity_share:
-      title: Elektrische oven (recycling)
+    industry_steel_scrap_hbi_eaf_share:
+      title: Elektrische oven (recycling / HBI)
       short_description:
       description: "Staal kan eindeloos gerecycled worden. De elektrische oven wordt
         ingezet om gebruikt staal te recyclen. Hoewel gebruikt staal ook in een hoogoven
@@ -159,6 +159,14 @@ nl:
         verwerkt. Wereldwijd komt ongeveer een derde van de staalproductie uit een
         elektrische oven.\r\n<p>\r\nGeef hier aan welk aandeel de elektrische oven
         heeft bij de productie van ijzer en staal.\r\n"
+    industry_steel_dri_network_gas_eaf_share:
+      title: DRI (netwerkgas)
+      short_description:
+      description:
+    industry_steel_dri_hydrogen_eaf_share:
+      title: DRI (waterstof)
+      short_description:
+      description:
     industry_steel_cyclonefurnace_bof_wood_pellets_share:
       title: Biomassa in cycloonoven
       short_description:

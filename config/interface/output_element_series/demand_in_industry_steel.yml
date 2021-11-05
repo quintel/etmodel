@@ -1,0 +1,109 @@
+---
+- label: coal_inc_losses
+  color: "#333333"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: coal_demand_in_industry_steel
+- label: coal_gas
+  color: "#686de0"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_gas_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: coal_gas_demand_in_industry_steel
+- label: cokes
+  color: "#5f27cd"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: cokes_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: cokes_demand_in_industry_steel
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: network_gas_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: network_gas_demand_in_industry_steel
+- label: crude_oil
+  color: "#854321"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: crude_oil_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: crude_oil_demand_in_industry_steel
+- label: electricity
+  color: "#4169E1"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: electricity_demand_in_industry_steel
+- label: heat
+  color: "#8B0000"
+  order_by: 7
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: steam_hot_water_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: heat_demand_in_industry_steel
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: hydrogen_demand_in_industry_steel
+- label: biomass
+  color: "#5D7929"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: wood_pellets_demand_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: biomass_demand_in_industry_steel

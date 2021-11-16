@@ -117,6 +117,28 @@ en:
           \ data-chart-key=\"hybrid_heat_pump\"
         >electricity and gas share table</a>
         will show a breakdown of how hybrid heat pumps use energy in households."
+    flexibility_power_storage_wind_turbine_inland:
+      title: Wind parks with storage systems
+      short_description:
+      description: |
+        Here you can set the capacity of the battery and the grid connection, relative to 
+        the installed capacity of wind turbines with an integrated battery system. For 
+        these sliders to be effective you therefore need to have these types of turbines 
+        installed. You can do this in the Supply section, under 
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Renewable electricity</a>.
+    flexibility_power_storage_solar_pv_solar_radiation:
+      title: Solar parks with storage systems
+      short_description:
+      description: |
+        Here you can set the capacity of the battery and the grid connection, relative to 
+        the installed capacity of solar PV plants with an integrated battery system. For
+        these sliders to be effective you therefore need to have these types of plants 
+        installed. You can do this in the Supply section, under 
+        <a href="/scenario/supply/electricity_renewable/solar-power">
+        Renewable electricity</a>.
+    flexibility_flexibility_power_to_heat:
+      title: Conversion to heat for households
     flexibility_electricity_storage_overview:
       title: Behaviour of storage technologies
       short_description:

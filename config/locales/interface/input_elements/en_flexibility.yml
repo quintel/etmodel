@@ -744,3 +744,75 @@ en:
     settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity:
       title: 'Improve use of storage by forecasting residual load'
       description: ''
+    connection_capacity_always_on_wind_turbine_inland:
+      title: Relative grid connection capacity
+      short_description:
+      description: |
+        Due to the volatile nature of wind power output, the impact of installing large 
+        numbers of wind turbines on the electricity grid can be large. To reduce the 
+        impact on the electricity grid, wind turbines with a battery system have a connection 
+        to the grid that is reduced in capacity compared to the installed capacity. <br/><br/>
+        The grid connection capacity is set relative to the installed capacity of the
+        wind turbines with battery systems. This means that if you change the installed 
+        capacity in the <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Supply</a> section, the grid connection will change accordingly, with the ratio 
+        specified by this slider. <br/><br/>
+        Any production by the wind turbines that exceeds the grid connection capacity 
+        will have to be consumed by the integrated battery system, for which you can 
+        determine the relative capacity with the slider below. If the battery cannot 
+        consume any more electricity due to charging capacity or volume constraints, 
+        the excess electricity production will be curtailed.
+    connection_capacity_always_on_solar_pv_solar_radiation:
+      title: Relative grid connection capacity
+      short_description:
+      description: |
+        Due to the volatile nature of solar power output, the impact of installing large 
+        numbers of solar PV plants on the electricity grid can be large. To reduce the 
+        impact on the electricity grid, solar PV plants with a battery system have a connection 
+        to the grid that is reduced in capacity compared to the installed capacity. <br/><br/>
+        The grid connection capacity is set relative to the installed capacity of the
+        solar PV plants with battery systems. This means that if you change the installed 
+        capacity in the <a href="/scenario/supply/electricity_renewable/solar-power">
+        Supply</a> section, the grid connection will change accordingly, with the ratio 
+        specified by this slider. <br/><br/>
+        Any production by the solar plants that exceeds the grid connection capacity 
+        will have to be consumed by the integrated battery system, for which you can 
+        determine the relative capacity with the slider below. If the battery cannot 
+        consume any more electricity due to charging capacity or volume constraints, 
+        the excess electricity production will be curtailed.
+    battery_capacity_always_on_wind_turbine_inland:
+      title: Relative battery capacity
+      short_description:
+      description: |
+        The input capacity, or charging capacity, of the battery is set relative to the 
+        installed capacity of the wind turbines with battery systems. This means that if 
+        you change the installed capacity in the 
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Supply</a> section, the charging capacity will change accordingly, with the ratio 
+        specified by this slider. <br/><br/>
+        The battery system only consumes electricity when the production exceeds the grid 
+        connection capacity threshold and starts to release it again when the production drops 
+        below the threshold. If the battery cannot consume any more electricity due to charging 
+        capacity or volume constraints, the excess electricity production will be curtailed. </br></br>
+        The storage volume is related to the charging capacity by a fixed ratio. This means 
+        that the storage volume will therefore also be updated if you change this slider. 
+        To see the effect of this slider on the total battery capacity and storage volume,
+        you can click on the 'Technical and financial properties'.
+    battery_capacity_always_on_solar_pv_solar_radiation:
+      title: Relative battery capacity
+      short_description:
+      description: |
+        The input capacity, or charging capacity, of the battery is set relative to the 
+        installed capacity of the solar PV plants with battery systems. This means that if 
+        you change the installed capacity in the 
+        <a href="/scenario/supply/electricity_renewable/solar-power>
+        Supply</a> section, the charging capacity will change accordingly, with the ratio 
+        specified by this slider. <br/><br/>
+        The battery system only consumes electricity when the production exceeds the grid 
+        connection capacity threshold and starts to release it again when the production drops 
+        below the threshold. If the battery cannot consume any more electricity due to charging 
+        capacity or volume constraints, the excess electricity production will be curtailed. </br></br>
+        The storage volume is related to the charging capacity by a fixed ratio. This means 
+        that the storage volume will therefore also be updated if you change this slider. 
+        To see the effect of this slider on the total battery capacity and storage volume,
+        you can click on the 'Technical and financial properties'.

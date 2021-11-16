@@ -1,0 +1,17 @@
+---
+- key: connection_capacity_always_on_wind_turbine_inland
+  step_value: 0.1
+  unit: "%"
+  interface_group: wind_turbine_inland
+  position: 1
+  slide_key: flexibility_power_storage_wind_turbine_inland
+- key: battery_capacity_always_on_wind_turbine_inland
+  step_value: 0.1
+  unit: "%"
+  interface_group: wind_turbine_inland
+  related_node: energy_flexibility_wind_batteries_electricity
+  position: 2
+  slide_key: flexibility_power_storage_wind_turbine_inland
+  additional_specs:
+    other:
+      timeframe: i_h_d

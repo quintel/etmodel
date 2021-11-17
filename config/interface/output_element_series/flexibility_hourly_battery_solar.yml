@@ -1,0 +1,51 @@
+---
+- label: total_to_grid
+  color: "#CC0000"
+  order_by: 1
+  is_target_line: true
+  target_line_position:
+  gquery: energy_battery_solar_total_to_grid_electricity_output
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_battery_solar
+  key: energy_battery_solar_total_to_grid_electricity_output_flexiblity_hourly_battery_solar
+- label: direct_to_grid
+  color: "#75EEA3"
+  order_by: 2
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_battery_solar_direct_to_grid_electricity_output
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_battery_solar
+  key: energy_battery_solar_direct_to_grid_electricity_output_flexiblity_hourly_battery_solar
+- label: battery_charge
+  color: "#dd77bb"
+  order_by: 4
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_flexibility_solar_batteries_electricity_input
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_battery_solar
+  key: energy_flexibility_solar_batteries_electricity_input_flexiblity_hourly_battery_solar
+- label: battery_discharge_to_grid
+  color: "#dd33cc"
+  order_by: 3
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_flexibility_solar_batteries_electricity_output
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_battery_solar
+  key: energy_flexibility_solar_batteries_electricity_output_flexiblity_hourly_battery_solar
+- label: curtailed
+  color: "#77bbdd"
+  order_by: 5
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_battery_curtailed_solar_electricity_input
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_battery_solar
+  key: energy_battery_curtailed_solar_electricity_input_flexiblity_hourly_battery_solar

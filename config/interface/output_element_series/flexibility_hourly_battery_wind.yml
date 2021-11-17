@@ -2,56 +2,50 @@
 - label: total_to_grid
   color: "#CC0000"
   order_by: 1
-  show_at_first: false
   is_target_line: true
-  target_line_position: ''
+  target_line_position:
   gquery: energy_battery_wind_total_to_grid_electricity_output
   is_1990: false
   dependent_on:
-  output_element_key: flexiblity_hourly_battery_wind
+  output_element_key: flexibility_hourly_battery_wind
   key: energy_battery_wind_total_to_grid_electricity_output_flexiblity_hourly_battery_wind
-
 - label: direct_to_grid
   color: "#63A1C9"
   order_by: 2
-  show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_flexibility_wind_direct_to_grid_output
+  gquery: energy_battery_wind_direct_to_grid_electricity_output
   is_1990: false
   dependent_on:
-  output_element_key: flexiblity_hourly_battery_wind
-  key: energy_flexibility_wind_direct_to_grid_output_flexiblity_hourly_battery_wind
-- label: battery_discharge
-  color: "#dd33cc"
-  order_by: 3
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: energy_flexibility_wind_batteries_electricity_input
-  is_1990: false
-  dependent_on:
-  output_element_key: flexiblity_hourly_battery_wind_
-  key: energy_flexibility_wind_batteries_electricity_input_flexiblity_hourly_battery_wind
+  output_element_key: flexibility_hourly_battery_wind
+  key: energy_battery_wind_direct_to_grid_electricity_output_flexiblity_hourly_battery_wind
 - label: battery_charge
   color: "#dd77bb"
   order_by: 4
-  show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: energy_flexibility_wind_batteries_electricity_input
   is_1990: false
   dependent_on:
-  output_element_key: flexiblity_hourly_battery_wind_
+  output_element_key: flexibility_hourly_battery_wind
   key: energy_flexibility_wind_batteries_electricity_input_flexiblity_hourly_battery_wind
-- label: curtailment
+- label: battery_discharge_to_grid
+  color: "#dd33cc"
+  order_by: 3
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_flexibility_wind_batteries_electricity_output
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_battery_wind
+  key: energy_flexibility_wind_batteries_electricity_output_flexiblity_hourly_battery_wind
+- label: curtailed
   color: "#77bbdd"
   order_by: 5
-  show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: energy_battery_curtailed_wind_electricity_input
   is_1990: false
   dependent_on:
-  output_element_key: flexiblity_hourly_battery_wind_
+  output_element_key: flexibility_hourly_battery_wind
   key: energy_battery_curtailed_wind_electricity_input_flexiblity_hourly_battery_wind

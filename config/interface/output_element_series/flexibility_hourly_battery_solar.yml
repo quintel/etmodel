@@ -49,3 +49,13 @@
   dependent_on:
   output_element_key: flexibility_hourly_battery_solar
   key: energy_battery_curtailed_solar_electricity_input_flexiblity_hourly_battery_solar
+- label: grid_connection_capacity
+  color: "#CCCCCC"
+  order_by: 6
+  is_target_line: true
+  target_line_position:
+  gquery: energy_battery_solar_connection_capacity
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_battery_solar
+  key: energy_battery_solar_connection_capacity_flexiblity_hourly_battery_solar

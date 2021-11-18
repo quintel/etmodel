@@ -49,3 +49,13 @@
   dependent_on:
   output_element_key: flexibility_hourly_battery_wind
   key: energy_battery_curtailed_wind_electricity_input_flexiblity_hourly_battery_wind
+- label: grid_connection_capacity
+  color: "#CCCCCC"
+  order_by: 6
+  is_target_line: true
+  target_line_position:
+  gquery: energy_battery_wind_connection_capacity
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_hourly_battery_wind
+  key: energy_battery_wind_connection_capacity_flexibility_hourly_battery_wind

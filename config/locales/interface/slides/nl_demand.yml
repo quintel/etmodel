@@ -214,11 +214,14 @@ nl:
     demand_industry_steel:
       title: Staal
       short_description:
-      description: "Voor staalverwerking zijn energie-intensieve ovens nodig. Hiervoor
+      description: |
+        Voor staalverwerking zijn energie-intensieve ovens nodig. Hiervoor
         zijn verschillende alternatieven mogelijk. Het percentage gerecycled staal
         dat als input kan dienen, verschilt per technologie: bij hoogovens en cycloonovens
         kan tot 20% hergebruikt worden en de elektrische oven dient alleen voor recycling.
-        Alleen de cycloonoven kan volledig op biogrondstof overschakelen.\r\n"
+        Alleen de cycloonoven kan tot 40% op 
+        <a href=/scenario/supply/biomass/wood-pellets-in-steel-production>biomassa </a> 
+        overschakelen.
     demand_other_demand_growth:
       title: Groei van de vraag
       short_description: ''

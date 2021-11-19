@@ -7,12 +7,12 @@
   output_element_key: gas_network_mix
 - general_sub_header: share
   key: supply_biomass_bio_coal_bio_oil
-  position: 5
+  position: 6
   sidebar_item_key: biomass
   alt_output_element_key: source_of_electricity_production
   output_element_key: biomass_sankey
 - key: supply_co2_emissions_biomass
-  position: 6
+  position: 7
   sidebar_item_key: biomass
   output_element_key: co2_emissions_biomass
 - key: supply_biomass_overview
@@ -28,6 +28,10 @@
   sidebar_item_key: biomass
   output_element_key: biomass_demand_by_category
 - key: supply_oil_mix
-  position: 7
+  position: 8
   sidebar_item_key: biomass
   output_element_key: mekko_of_oil_mix
+- key: supply_biomass_steel
+  position: 5
+  sidebar_item_key: biomass
+  output_element_key: biomass_sankey

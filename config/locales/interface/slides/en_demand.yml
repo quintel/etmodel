@@ -203,11 +203,14 @@ en:
     demand_industry_steel:
       title: Steel
       short_description:
-      description: 'Steel processing requires energy-intensive furnaces. Several alternatives
+      description: |
+        Steel processing requires energy-intensive furnaces. Several alternatives
         are possible. The percentage of recycled steel that can be used as input varies
         per technology: blast furnaces and cyclone furnaces use up to 20% recycled
         steel and electric ovens are used for recycling only. The cyclone furnaces
-        are unique in the sense that they can run on 100% bio-fuel.'
+        are unique in the sense that they can use up to 40% of 
+        <a href=/scenario/supply/biomass/wood-pellets-in-steel-production>biomass </a>
+        as input.
     demand_other_demand_growth:
       title: Demand growth
       short_description: ''

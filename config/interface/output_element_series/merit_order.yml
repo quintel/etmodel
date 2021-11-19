@@ -611,3 +611,28 @@
   dependent_on:
   output_element_key: merit_order
   key: local_chp_gas_merit_merit_order
+- label: coal_gas_ccgt
+  color: "#521b82"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: coal_gas_ccgt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: coal_gas_ccgt_merit_order
+- label: coal_gas_chp
+  color: "#7040c2"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: coal_gas_chp_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: coal_gas_chp_merit_order
+

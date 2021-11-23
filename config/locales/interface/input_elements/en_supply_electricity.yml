@@ -48,7 +48,7 @@ en:
     capacity_of_energy_power_solar_pv_solar_radiation:
       title: Solar PV plants
       short_description: ''
-      description: "With this slider you build centralized plants of photovoltaic
+      description: "With this slider you can build centralized plants of photovoltaic
         solar power panels. These are not mounted on roofs, but are usually placed
         in a field.<br/><br/>\r\n Like wind power, solar power output fluctuates over
         time, but in a more predictable way, making it easier to keep the electricity
@@ -78,7 +78,20 @@ en:
       title: Solar PV plants with battery system
       short_description: ''
       description: |
-        Sample text
+        Different from regular solar PV plants, these plants are fitted with a battery and 
+        a reduced grid connection capacity by default, as an integrated system. <br/><br/>
+        Due to the volatile nature of solar power output, the impact of installing large 
+        numbers of solar panels on the electricity grid can be large. That is why, for these 
+        plants, the grid connection capacity is reduced compared to the installed capacity. 
+        The battery system then consumes electricity when the production exceeds the grid 
+        connection capacity threshold and starts to release it again when the production drops 
+        below the threshold. <br/><br/>
+        Both the grid connection capacity and the input capacity of the battery are defined 
+        relative to the installed capacity. They will therefore both change accordingly if 
+        you adjust this slider. You can also change the relative ratios in the Flexibility 
+        section, under 
+        <a href="/scenario/flexibility/flexibility_storage/solar-parks-with-storage-systems">
+        Electricity storage</a>.
     capacity_of_energy_power_ultra_supercritical_crude_oil:
       title: Oil-fired
       short_description: ''
@@ -363,7 +376,20 @@ en:
       title: Onshore inland with battery system
       short_description: ''
       description: |
-        Sample text
+        Different from regular wind turbines on land, these turbines are fitted with a battery and 
+        a reduced grid connection capacity by default, as an integrated system. <br/><br/>
+        Due to the volatile nature of wind power output, the impact of installing large 
+        numbers of wind turbines on the electricity grid can be large. That is why, for these 
+        turbines, the grid connection capacity is reduced compared to the installed capacity. 
+        The battery system then consumes electricity when the production exceeds the grid 
+        connection capacity threshold and starts to release it again when the production drops 
+        below the threshold. <br/><br/>
+        Both the grid connection capacity and the input capacity of the battery are defined 
+        relative to the installed capacity. They will therefore both change accordingly if 
+        you adjust this slider. You can also change the relative ratios in the Flexibility 
+        section, under 
+        <a href="/scenario/flexibility/flexibility_storage/wind-parks-with-storage-systems">
+        Electricity storage</a>.
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventional
       short_description: ''

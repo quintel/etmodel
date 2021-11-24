@@ -114,13 +114,13 @@ en:
         This slider sets the installed capacity of power-to-heat boilers that use electricity 
         to produce heat for the <a href="/scenario/supply/heat/heat-sources">district heating network</a>. </br></br>
         A number of charts are available to help you determine the effect of installing power-to-heat capacity: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     capacity_of_energy_heat_flexibility_p2h_heatpump_electricity:
       title: Power-to-heat heat pump
@@ -129,13 +129,13 @@ en:
         This slider sets the installed capacity of power-to-heat heat pumps that use electricity and 
         ambient heat to produce heat for the <a href="/scenario/supply/heat/heat-sources">district heating network</a>. </br></br>
         A number of charts are available to help you determine the effect of installing power-to-heat capacity: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     households_flexibility_space_heating_cop_cutoff:
       title: Space heating
@@ -377,13 +377,13 @@ en:
         costs and efficiency of electrolysers can be adjusted 
         <a href="/scenario/costs/costs_hydrogen/hydrogen-production">here</a>. </br></br>
         A number of charts are available to help you determine the effect of installing power-to-gas capacity: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     price_of_energy_hydrogen_flexibility_p2g_electricity:
       title: Power-to-gas
@@ -393,13 +393,13 @@ en:
         electricity. Note that for this slider to have an effect, capacity of these power-to-gas 
         plants needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-gas: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     price_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
@@ -409,13 +409,13 @@ en:
         electricity. Note that for this slider to have an effect, capacity of these boilers 
         needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     price_of_energy_heat_flexibility_p2h_heatpump_electricity:
       title: Power-to-heat heat pump
@@ -425,13 +425,13 @@ en:
         electricity. Note that for this slider to have an effect, capacity of these heat pumps 
         needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     price_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler for refineries
@@ -443,13 +443,13 @@ en:
         capacity of these boilers and of either gas or hydrogen heaters needs to be 
         installed at the refineries. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     price_of_industry_chemicals_other_flexibility_p2h_electricity:
       title: Power-to-heat boiler for chemical industry
@@ -461,13 +461,13 @@ en:
         capacity of these boilers and of either gas or hydrogen heaters needs to be 
         installed in the chemical industry. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     price_of_industry_other_food_flexibility_p2h_electricity:
       title: Power-to-heat boiler for food industry
@@ -479,13 +479,13 @@ en:
         capacity of these boilers and of either gas or hydrogen heaters needs to be 
         installed in the food industry. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     price_of_industry_other_paper_flexibility_p2h_electricity:
       title: Power-to-heat boiler for paper industry
@@ -497,11 +497,11 @@ en:
         capacity of these boilers and of either gas or hydrogen heaters needs to be 
         installed in the paper industry. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity">
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity">
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs">
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options">
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>

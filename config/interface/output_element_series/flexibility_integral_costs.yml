@@ -28,9 +28,9 @@
   order_by: 115
   group: power_to_gas
   is_target_line: true
-  gquery: integral_reference_price_hydrogen
+  gquery: integral_reference_price_power_to_gas
   output_element_key: flexibility_integral_costs
-  key: integral_reference_price_hydrogen_flexibility_integral_costs
+  key: integral_reference_price_power_to_gas_flexibility_integral_costs
 
 - label: investment_cost
   color: "#ffb300"
@@ -81,3 +81,36 @@
   gquery: integral_electricity_cost_power_to_heat_industry
   output_element_key: flexibility_integral_costs
   key: integral_electricity_cost_power_to_heat_industry_flexibility_integral_costs
+
+- label: investment_cost
+  color: "#ffb300"
+  order_by: 400
+  group: power_to_power
+  is_target_line: false
+  gquery: integral_fixed_cost_power_to_power
+  output_element_key: flexibility_integral_costs
+  key: integral_fixed_cost_power_to_power_flexibility_integral_costs
+- label: operation_maintenance_cost
+  color: "#e07033"
+  order_by: 405
+  group: power_to_power
+  is_target_line: false
+  gquery: integral_variable_cost_power_to_power
+  output_element_key: flexibility_integral_costs
+  key: integral_variable_cost_power_to_power_flexibility_integral_costs
+- label: electricity_cost
+  color: "#4169e1"
+  order_by: 410
+  group: power_to_power
+  is_target_line: false
+  gquery: integral_electricity_cost_power_to_power
+  output_element_key: flexibility_integral_costs
+  key: integral_electricity_cost_power_to_power_flexibility_integral_costs
+- label: electricity_revenue
+  color: "red"
+  order_by: 415
+  group: power_to_power
+  is_target_line: true
+  gquery: integral_reference_price_power_to_power
+  output_element_key: flexibility_integral_costs
+  key: integral_reference_price_power_to_power_flexibility_integral_costs

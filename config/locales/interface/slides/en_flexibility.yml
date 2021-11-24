@@ -4,24 +4,19 @@ en:
       title: Electricity interconnectors
       short_description:
       description: |
-        The <strong>domestic electricity market</strong> in your scenario is
+        <p>The <strong>domestic electricity market</strong> in your scenario is
         connected to one or more <strong>external markets</strong> via
         interconnectors. These interconnectors allow for importing and exporting
         electricity.</p>
 
         <p>Import occurs whenever doing so is cheaper than using domestic
-        electricity generation options. By default, electricity is exported only
-        when there is a surplus from
-        <a
-          href="https://docs.energytransitionmodel.com/main/merit-order/#participants"
-          target="_blank"
-        >volatile and must-run sources</a>.</p>
+        electricity generation options. Similarly, electricity is exported whenever the
+        neighbouring countries are willing to pay more than the domestic
+        (production) price.</p>
 
-        <p>In real-world markets, electricity may be exported whenever the
-        production price is lower than that of the external market. Dispatchable
-        plants can then also be used for export. Enabling this feature with the
-        toggle below may significantly increase the amount of
-        electricity generated in your scenario.
+        <p>In the tabs below you can set the interconnector capacities of the external
+        markets your area is connected to. For each interconnector a price
+        (or hourly price curve) can be added.</p>
     flexibility_electricity_import_export_interconnectivity:
       title: Interconnector 1
       short_description:

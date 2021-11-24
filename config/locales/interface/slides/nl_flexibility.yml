@@ -4,23 +4,19 @@ nl:
       title: Elektrische interconnectoren
       short_description:
       description: |
-        De <strong>binnenlandse elektriciteitsmarkt</strong> in jouw scenario is
+        <p>De <strong>binnenlandse elektriciteitsmarkt</strong> in jouw scenario is
         verbonden met één of meerdere <strong>externe markten</strong> via
         interconnectoren. Deze interconnectoren importeren en exporteren
         elektriciteit.</p>
 
-        Elektriciteit wordt geïmporteerd als het goedkoper is dan de binnenlandse
-        productie van elektriciteit. In het ETM vindt elektriciteitsexport
-        standaard enkel plaats als er overschotten aanwezig zijn van <a
-          href="https://docs.energytransitionmodel.com/main/merit-order/#participants"
-          target="_blank"
-        >volatiele en must-run centrales</a>.</p>
+        <p>Elektriciteit wordt geïmporteerd als het goedkoper is dan de binnenlandse
+        productie van elektriciteit. Het omgekeerde geldt voor export: als er in een
+        externe markt een hogere prijs wordt geboden dan de binnenlandse (productie)prijs
+        wordt er stroom geëxporteerd.</p>
 
-        <p>Op de echte elektriciteitsmarkt wordt stroom geëxporteerd als de
-        productieprijs lager ligt dan op de externe markt. Ook dispatchable
-        centrales kunnen dan worden ingezet voor export. Door deze functionaliteit
-        met onderstaande knop aan te zetten, kan het zijn dat de
-        elektriciteitsproductie in jouw scenario sterk toeneemt.
+        <p>In de onderstaande tabs kun je de interconnectiecapaciteiten instellen van de
+        externe markten waar jouw gebied mee verbonden is. Voor elke interconnector kun je
+        een prijs (of uurlijkse prijscurve) opgeven.</p>
     flexibility_electricity_import_export_interconnectivity:
       title: "Interconnector 1"
       short_description:

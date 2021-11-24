@@ -80,12 +80,14 @@ en:
       description: |
         Different from regular solar PV plants, these plants are fitted with a battery and 
         a reduced grid connection capacity by default, as an integrated system. <br/><br/>
-        Due to the volatile nature of solar power output, the impact of installing large 
-        numbers of solar panels on the electricity grid can be large. That is why, for these 
-        plants, the grid connection capacity is reduced compared to the installed capacity. 
-        The battery system then consumes electricity when the production exceeds the grid 
-        connection capacity threshold and starts to release it again when the production drops 
-        below the threshold. If the battery cannot consume any more electricity due to charging 
+        Due to the volatile nature of solar power output, installing large numbers of solar 
+        panels can have a major impact on the electricity grid. To prevent large capacity 
+        peaks on the grid, these plants are not connected to the grid for the entire installed
+        capacity, but by a reduced amount. When production exceeds the grid connection capacity 
+        the battery consumes electricity. When the production drops below the threshold, the 
+        battery starts to release the electricity again. Note that due to efficiency losses and 
+        storage decay, some electricity is lost in the process. <br/><br/>
+        If the battery cannot consume any more electricity due to charging 
         capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
         Both the grid connection capacity and the input capacity of the battery are defined 
         relative to the installed capacity. They will therefore both change accordingly if 
@@ -389,12 +391,14 @@ en:
       description: |
         Different from regular wind turbines on land, these turbines are fitted with a battery and 
         a reduced grid connection capacity by default, as an integrated system. <br/><br/>
-        Due to the volatile nature of wind power output, the impact of installing large 
-        numbers of wind turbines on the electricity grid can be large. That is why, for these 
-        turbines, the grid connection capacity is reduced compared to the installed capacity. 
-        The battery system then consumes electricity when the production exceeds the grid 
-        connection capacity threshold and starts to release it again when the production drops 
-        below the threshold. If the battery cannot consume any more electricity due to charging 
+        Due to the volatile nature of wind power output, installing large numbers of wind 
+        turbines can have a major impact on the electricity grid. To prevent large capacity 
+        peaks on the grid, these turbines are not connected to the grid for the entire installed
+        capacity, but by a reduced amount. When production exceeds the grid connection capacity 
+        the battery consumes electricity. When the production drops below the threshold, the 
+        battery starts to release the electricity again. Note that due to efficiency losses and 
+        storage decay, some electricity is lost in the process. <br/><br/>
+        If the battery cannot consume any more electricity due to charging 
         capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
         Both the grid connection capacity and the input capacity of the battery are defined 
         relative to the installed capacity. They will therefore both change accordingly if 

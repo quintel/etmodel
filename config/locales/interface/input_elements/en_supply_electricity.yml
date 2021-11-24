@@ -85,13 +85,24 @@ en:
         plants, the grid connection capacity is reduced compared to the installed capacity. 
         The battery system then consumes electricity when the production exceeds the grid 
         connection capacity threshold and starts to release it again when the production drops 
-        below the threshold. <br/><br/>
+        below the threshold. If the battery cannot consume any more electricity due to charging 
+        capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
         Both the grid connection capacity and the input capacity of the battery are defined 
         relative to the installed capacity. They will therefore both change accordingly if 
         you adjust this slider. You can also change the relative ratios in the Flexibility 
         section, under 
         <a href="/scenario/flexibility/flexibility_storage/solar-parks-with-storage-systems">
-        Electricity storage</a>.
+        Electricity storage</a>. Click on the technical and financial properties to see the 
+        specifications of the solar PV plants without the batteries. <br/><br/>
+        See 
+        <a
+          href="#"
+          class="open_chart"
+          data-chart-key="flexibility_hourly_battery_solar"
+          data-chart-location="side">
+          this chart
+        </a>
+        for the hourly behaviour of these solar plants.
     capacity_of_energy_power_ultra_supercritical_crude_oil:
       title: Oil-fired
       short_description: ''
@@ -383,13 +394,24 @@ en:
         turbines, the grid connection capacity is reduced compared to the installed capacity. 
         The battery system then consumes electricity when the production exceeds the grid 
         connection capacity threshold and starts to release it again when the production drops 
-        below the threshold. <br/><br/>
+        below the threshold. If the battery cannot consume any more electricity due to charging 
+        capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
         Both the grid connection capacity and the input capacity of the battery are defined 
         relative to the installed capacity. They will therefore both change accordingly if 
         you adjust this slider. You can also change the relative ratios in the Flexibility 
         section, under 
         <a href="/scenario/flexibility/flexibility_storage/wind-parks-with-storage-systems">
-        Electricity storage</a>.
+        Electricity storage</a>. Click on the technical and financial properties to see the 
+        specifications of the wind turbines without the batteries. <br/><br/>
+        See 
+        <a
+          href="#"
+          class="open_chart"
+          data-chart-key="flexibility_hourly_battery_wind"
+          data-chart-location="side">
+          this chart
+        </a>
+        for the hourly behaviour of these wind turbines.
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventional
       short_description: ''

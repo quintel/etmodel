@@ -182,7 +182,9 @@ en:
         Each bar shows the costs per produced unit of output for a certain flexible electricity demand technology. 
         For different technologies the type of energy output can differ. Three costs categories are distinguished: 
         fixed costs, variable costs and electricity costs. The electricity costs are calculated using the hourly 
-        electricity price and the hourly electricity consumption by a technology. </br></br>
+        electricity price and the hourly electricity consumption by a technology. For power-to-gas, the hydrogen price 
+        is given as a reference price. For power-to-power, the reference price is the integral revenue, meaning the 
+        average revenue per produced unit of electricity. </br></br>
         The integral costs therefore depend on assumptions made about the costs and efficiencies of technologies,
         which you can change in the <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> 
         Cost & efficiencies</a> section. It also depends on the installed capacity and willingness-to-pay of 

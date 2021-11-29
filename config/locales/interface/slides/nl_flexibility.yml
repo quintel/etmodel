@@ -118,58 +118,98 @@ nl:
           \ data-chart-key=\"hybrid_heat_pump\"
         >hybride warmtepomp tabel</a>
         laat de jaarlijkse verdeling van gas en elektriciteit zien."
-    flexibility_flexibility_flexibility_order:
-      title: Volgorde flexibiliteitsopties
-      short_description:
-      description: "Windmolens en zonnepanelen hebben van nature een grillig productiepatroon.
-        De elektriciteit die ze produceren kan daarom niet altijd worden gebruikt
-        om elektriciteitsvraag in te vullen. Dit kan leiden tot overproductie van
-        elektriciteit. Om te voorkomen dat deze elektriciteitsproductie moet worden
-        beperkt, kent het ETM een aantal flexibiliteitstechnologieën die de overschotten
-        kunnen opslaan of omzetten in andere energiedragers. Je kan die technologieën
-        inzetten in de <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\">'Opslag'</a>
-        en <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households\">'Conversie'</a>
-        tabs."
-    flexibility_flexibility_power_storage:
-      title: Opslag elektriciteit
-      short_description:
-      description: Met de volgende sliders kun je aangeven welke elektriciteitsopslag
-        technologieën je inzet in de verschillende netvlakken. Elektriciteitsoverschotten
-        worden opgeslagen en ingezet zodra er geen overproductie meer is.
-    flexibility_flexibility_power_to_heat:
-      title: Conversie naar warmte voor huishoudens
+    flexibility_power_storage_households_flexibility_p2p_electricity:
+      title: Batterijen in huishoudens
       short_description:
       description:
+    flexibility_power_storage_transport_car_flexibility_p2p_electricity:
+      title: Batterijen in elektrische auto's
+      short_description:
+      description:
+    flexibility_power_storage_energy_flexibility_mv_batteries_electricity:
+      title: Grootschalige batterijopslag
+      short_description:
+      description:
+    flexibility_power_storage_energy_flexibility_pumped_storage_electricity:
+      title: Stuwmeren
+      short_description:
+      description:
+    flexibility_power_storage_energy_flexibility_hv_opac_electricity:
+      title: OPAC
+      short_description:
+      description:
+    flexibility_flexibility_flexible_demand_overview:
+      title: Conversie door flexibele vraagtechnologieën
+      short_description:
+      description: |
+        In deze sectie kun je het gedrag bepaalde van verschillende flexibele vraagtechnologieën 
+        voor de conversie van elektriciteit. Deze technologieën worden als flexibel gezien omdat 
+        de vraag indien wenselijk kan worden vergroot, verlaagd, of worden verplaatst in de tijd 
+        (zie voor achtergrondinformatie het 
+        <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Overzicht van
+        flexbiliteit</a>). </br></br>
+        Elke flexibele vraagtechnologie heeft een <i>betalingsbereidheid</i> die de maximale prijs 
+        aangeeft waarvoor de technologie bereid is elektriciteit te consumeren. Als de 
+        elektriciteitsprijs in een bepaald uur hoger is dan de betalingsbereidheid van een 
+        technologie, dan zal die technologie elektriciteit consumeren in dat uur. </br></br>
+        In de onderstaande slides kun je de betalingsbereidheid en het geïnstalleerde vermogen 
+        aanpassen voor:
+        <ul><li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
+        conversie naar waterstof</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        conversie naar warmte voor warmtenetten</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
+        conversie naar warmte voor industrie</a></li></ul></br>
+        Let op dat het daadwerkelijk gedrag van deze technologieën gecompliceerder is dan 
+        toegelicht in deze korte beschrijving. De <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentatie</a> bevat een meer gedetailleerde beschrijving.
     flexibility_flexibility_power_to_heat_for_district_heating:
       title: Conversie naar warmte voor warmtenetten
       short_description:
-      description: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische
-        boilers of warmtepompen deze overschotten omzetten in warmte voor warmtenetten.
-        Overige warmtebronnen voor warmtenetten kunnen bij <a href=\"/scenario/supply/heat/heat-sources\"
-        >Aanbod > Warmtenetten</a> worden ingesteld. \r\n</br></br>\r\n Houd er rekening
-        mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
-        power-to-heat warmtepomp. Ze produceren natuurlijk wel dezelfde hoeveelheid
-        warmte."
+      description: |
+        Elektriciteit kan worden gebruikt om warmte te produceren door middel van elektrische 
+        boilers of warmtepompen, wat ook wel power-to-heat wordt genoemd. In het ETM is power-to-heat 
+        een flexibele vraagtechnologie, wat betekent dat warmte alleen geproduceerd wordt wanneer 
+        de betalingsbereidheid van power-to-heat hoger is dan de uurlijkse elektriciteitsprijs.
+        Zie de <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentatie</a> voor meer informatie. </br></br>
+        Houd er rekening mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
+        power-to-heat warmtepomp, ondanks dat ze dezelfde hoeveelheid warmte produceren per uur. De
+        geproduceerde warmte wordt aan het residentiële warmtenet geleverd. Je kan ook andere 
+        warmtebronnen kiezen in de <a href="/scenario/supply/heat/heat-sources"> 
+        warmtenetten</a> sectie.
     flexibility_flexibility_power_to_heat_for_industry:
       title: Conversie naar warmte voor industrie
       short_description:
-      description: "Wanneer er elektriciteitsoverschotten zijn, kunnen elektrische
-        boilers in de industrie deze overschotten omzetten in warmte. Dit heeft als
-        gevolg dat de vraag naar gas en waterstof wordt verlaagd (indien aanwezig).
-        Deze hybride warmte opties kunnen in de vraag-sectie van volgende industriële
-        sectoren worden ingesteld:\r\n<ul>\r\n  <li><a href=\"/scenario/demand/industry/refineries\"
-        >raffinaderijen</a></li>\r\n  <li><a href=\"/scenario/demand/industry/chemicals\">chemische
-        industrie</a></li>\r\n  <li><a href=\"/scenario/demand/industry/food\">voedingsmiddelenindustrie</a></li>\r\n
-        \ <li><a href=\"/scenario/demand/industry/paper\">papierindustrie</a></li></ul>"
+      description: |
+        Gas- en waterstofketels in de industrie kunnen worden omgebouwd naar hybride ketels door 
+        ze uit te rusten met elektrische boilers. In het ETM is power-to-heat een flexibele 
+        vraagtechnologie, wat betekent dat, als de betalingsbereidheid van power-to-heat hoger is 
+        dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte producere 
+        in plaats van de gas- of waterstofketels. Zie de 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentatie</a> voor meer informatie. </br></br>
+        Omdat het een hybride technologie is, hebben deze schuifjes alleen effect als er zowel 
+        vermogen van de power-to-heat boilers als van de gas- of waterstofketels geïnstalleerd is.
+        Je kunt het geïnstalleerde vermogen bepalen voor deze subsectoren van de industrie:
+        <ul><li><a href="/scenario/demand/industry/refineries">raffinaderijen</a></li>
+        <li><a href="/scenario/demand/industry/chemicals">chemische industrie</a></li>
+        <li><a href="/scenario/demand/industry/food">voedingsmiddelenindustrie</a></li>
+        <li><a href="/scenario/demand/industry/paper">papierindustrie</a></li></ul>
     flexibility_flexibility_power_to_gas:
       title: Conversie naar waterstof
       short_description:
-      description: Overtollige elektriciteit kan worden gebruikt om waterstof te produceren
-        door elektrolyse. Deze waterstof wordt in het ETM gevoed in het centrale waterstofnetwerk.
-        Andere waterstofproducerende technologieën kunnen ingesteld worden in de <a
-        href="/scenario/supply/hydrogen/hydrogen-production">waterstofproductieslide</a>.
-        Overtollige waterstof wordt geëxporteerd. De efficiëntie van elektrolysers
-        kan <a href="/scenario/costs/costs_hydrogen/hydrogen-production" >hier</a> worden aangepast.
+      description: |
+        Elektriciteit kan worden gebruikt om waterstof te produceren door middel van de elektrolyse 
+        van water, wat ook wel power-to-gas wordt genoemd. In het ETM is power-to-gas 
+        een flexibele vraagtechnologie, wat betekent dat waterstof alleen geproduceerd wordt wanneer 
+        de betalingsbereidheid van power-to-gas hoger is dan de uurlijkse elektriciteitsprijs.
+        Zie de <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentatie</a> voor meer informatie. </br></br>
+        De geproduceerde waterstof wordt ingevoed in het centrale waterstofnetwerk. In de
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> waterstof productie</a> sectie kan je 
+        waterstof ook door middel van andere pocessen produceren. Eventuele overschotten aan 
+        waterstof worden geëxporteerd.
     flexibility_flexibility_power_to_methane:
       title: Conversie naar methaan voor gasnetwerk
       short_description:
@@ -259,7 +299,7 @@ nl:
         van energie te verwerken, andere zijn geschikter voor grote fluctaties in capaciteit en een aantal zijn geschikt voor beide. Een aantal voorbeelden zijn:</br>
         <ul> <i>Geschikt voor grote (fluctuaties in) volumes </i>
         <ul><li> Import/export van gas/waterstof </li>
-        <li> Power-to-gas: waterstofproductie met elektriciteitsoverschotten </li>
+        <li> Power-to-gas: waterstofproductie met elektriciteit</li>
         <li> Grootschalige opslag van gas/waterstof </li>
         <li> Seizoensopslag van warmte </li>
         </li>
@@ -271,7 +311,7 @@ nl:
         </ul>
         <i>Geschikt voor zowel volume als capaciteit </i>
         <ul><li> Import/export van elektriciteit </li>
-        <li> Power-to-heat: warmteproductie met elektriciteitsoverschotten (en warmteopslag) </li>
+        <li> Power-to-heat: warmteproductie met elektriciteit (en warmteopslag) </li>
         <li> Productieverlaging van hernieuwbare elektriciteitsproductie </li>
         <li> Grootschalige elektriciteitsopslag in stuwmeren </li>
         </ul> </ul> </br>

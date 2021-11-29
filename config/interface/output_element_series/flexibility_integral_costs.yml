@@ -1,5 +1,5 @@
 ---
-- label: investment_cost
+- label: capex
   color: "#ffb300"
   order_by: 100
   group: power_to_gas
@@ -7,7 +7,7 @@
   gquery: integral_fixed_cost_power_to_gas
   output_element_key: flexibility_integral_costs
   key: integral_fixed_cost_power_to_gas_flexibility_integral_costs
-- label: operation_maintenance_cost
+- label: opex
   color: "#e07033"
   order_by: 105
   group: power_to_gas
@@ -32,7 +32,7 @@
   output_element_key: flexibility_integral_costs
   key: integral_reference_price_power_to_gas_flexibility_integral_costs
 
-- label: investment_cost
+- label: capex
   color: "#ffb300"
   order_by: 200
   group: power_to_heat_network
@@ -40,7 +40,7 @@
   gquery: integral_fixed_cost_power_to_heat_network
   output_element_key: flexibility_integral_costs
   key: integral_fixed_cost_power_to_heat_network_flexibility_integral_costs
-- label: operation_maintenance_cost
+- label: opex
   color: "#e07033"
   order_by: 205
   group: power_to_heat_network
@@ -57,7 +57,7 @@
   output_element_key: flexibility_integral_costs
   key: integral_electricity_cost_power_to_heat_network_flexibility_integral_costs
 
-- label: investment_cost
+- label: capex
   color: "#ffb300"
   order_by: 300
   group: power_to_heat_industry
@@ -65,7 +65,7 @@
   gquery: integral_fixed_cost_power_to_heat_industry
   output_element_key: flexibility_integral_costs
   key: integral_fixed_cost_power_to_heat_industry_flexibility_integral_costs
-- label: operation_maintenance_cost
+- label: opex
   color: "#e07033"
   order_by: 305
   group: power_to_heat_industry
@@ -82,7 +82,7 @@
   output_element_key: flexibility_integral_costs
   key: integral_electricity_cost_power_to_heat_industry_flexibility_integral_costs
 
-- label: investment_cost
+- label: capex
   color: "#ffb300"
   order_by: 400
   group: power_to_power
@@ -90,7 +90,7 @@
   gquery: integral_fixed_cost_power_to_power
   output_element_key: flexibility_integral_costs
   key: integral_fixed_cost_power_to_power_flexibility_integral_costs
-- label: operation_maintenance_cost
+- label: opex
   color: "#e07033"
   order_by: 405
   group: power_to_power

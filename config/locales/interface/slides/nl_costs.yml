@@ -45,15 +45,25 @@ nl:
       description: Niemand kan voorspellen hoeveel brandstoffen in de toekomst zullen
         kosten. Dat maakt het moeilijk om elektriciteitskosten te voorspellen. Wat
         gaan brandstoffen volgens jou kosten in de toekomst?
+    costs_flexibility_demand_curtailment:
+      title: Value of Lost Load
+      description: |
+        Er treedt <a href="https://docs.energytransitionmodel.com/main/loss-of-load-expectation/"
+        target ="_blank">onvermogen (loss of load)</a> op in uren waar de totale elektriciteitsvraag 
+        groter is dan het totale aanbod. In deze uren wordt in het model de Value of Lost Load (VoLL)
+        gebruikt als representatie van de elektriciteitsprijs. Dit is de waarde die consumenten 
+        toekennen aan een ononderbroken elektriciteitslevering, of in andere woorden, de kosten die 
+        ze zouden maken als het aanbod verstoord wordt.
     costs_flexibility_conversion:
       title: Investeringskosten conversie elektriciteit
       short_description:
       description: |
-        (Overtollige) elektriciteit kan worden omgezet in andere
-        energiedragers, zoals waterstof of warmte. Hieronder kun je aangeven hoe
+        Elektriciteit kan worden 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-by-flexible-demand-technologies">
+        geconverteerd</a> naar andere energiedragers, zoals waterstof of warmte. Hieronder kun je aangeven hoe
         de investeringskosten van power-to-heat boilers zullen veranderen in de toekomst. 
         De investeringskosten voor power-to-gas elektrolysers kunnen worden aangepast op de
-        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Waterstofproductie</a> pagina.
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">waterstofproductie</a> pagina.
     costs_flexibility_storage:
       title: Investeringskosten opslag elektriciteit
       short_description:

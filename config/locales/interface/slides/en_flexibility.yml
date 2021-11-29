@@ -117,12 +117,6 @@ en:
           \ data-chart-key=\"hybrid_heat_pump\"
         >electricity and gas share table</a>
         will show a breakdown of how hybrid heat pumps use energy in households."
-    flexibility_flexibility_power_storage:
-      title: Electricity storage
-      short_description:
-      description: Using the sliders below you can set the electricity storage options
-        for the different network levels. Excess electricity is stored and supplied
-        to the grid later, once the "excess event" has passed.
     flexibility_power_storage_households_flexibility_p2p_electricity:
       title: Batteries in households
       short_description:
@@ -206,7 +200,7 @@ en:
         documentation</a> for more information. </br></br>
         The produced hydrogen will be fed into the central hydrogen network. In the
         <a href="/scenario/supply/hydrogen/hydrogen-production"> hydrogen production</a> section you can
-        also choose to produce hydrogen through other processes. Any excess hydrogen will be exported. </br></br>
+        also choose to produce hydrogen through other processes. Any excess hydrogen will be exported.
     flexibility_flexibility_power_to_methane:
       title: Conversion to methane for gas network
       short_description:
@@ -228,7 +222,7 @@ en:
         shows the effect of curtailment on the annual electricity production."
     flexibility_overview_introduction:
       title: What is flexibility?
-      short_descriptioN:
+      short_description:
       description: |
         Natural patterns like seasons (yearly), the variations in weather (weekly), day and night
         and our rhythm of waking up, going to work, coming home, etc. cause both the need for energy

@@ -54,7 +54,7 @@
 - key: price_of_households_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: price
+  interface_group: willingness_to_pay
   related_node: households_flexibility_p2p_electricity
   position: 100
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
@@ -64,7 +64,7 @@
 - key: price_of_transport_car_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: consumption_price
+  interface_group: willingness_to_pay
   related_node: transport_car_flexibility_p2p_electricity
   position: 105
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
@@ -74,7 +74,7 @@
 - key: price_of_energy_flexibility_mv_batteries_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: consumption_price
+  interface_group: willingness_to_pay
   related_node: energy_flexibility_mv_batteries_electricity
   position: 110
   slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
@@ -84,7 +84,7 @@
 - key: price_of_energy_flexibility_pumped_storage_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: consumption_price
+  interface_group: willingness_to_pay
   dependent_on: has_mountains
   related_node: energy_flexibility_pumped_storage_electricity
   position: 115
@@ -95,7 +95,7 @@
 - key: price_of_energy_flexibility_hv_opac_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: consumption_price
+  interface_group: willingness_to_pay
   related_node: energy_flexibility_hv_opac_electricity
   position: 120
   slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
@@ -106,7 +106,7 @@
 - key: costs_of_households_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: price
+  interface_group: willingness_to_pay
   related_node: households_flexibility_p2p_electricity
   position: 200
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
@@ -116,7 +116,7 @@
 - key: costs_of_transport_car_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: marginal_costs
+  interface_group: willingness_to_pay
   related_node: transport_car_flexibility_p2p_electricity
   position: 205
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
@@ -126,7 +126,7 @@
 - key: costs_of_energy_flexibility_mv_batteries_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: marginal_costs
+  interface_group: willingness_to_pay
   related_node: energy_flexibility_mv_batteries_electricity
   position: 210
   slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
@@ -137,7 +137,7 @@
   step_value: 0.1
   unit: "€/MWh"
   dependent_on: has_mountains
-  interface_group: marginal_costs
+  interface_group: willingness_to_pay
   related_node: energy_flexibility_pumped_storage_electricity
   position: 215
   slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
@@ -147,7 +147,7 @@
 - key: costs_of_energy_flexibility_hv_opac_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: marginal_costs
+  interface_group: willingness_to_pay
   related_node: energy_flexibility_hv_opac_electricity
   position: 220
   slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity

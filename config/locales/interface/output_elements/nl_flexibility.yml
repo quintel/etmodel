@@ -61,30 +61,42 @@ nl:
         gedetailleerde uitleg en een complete lijst van aannames, kunt u onze <a href=\"https://docs.energytransitionmodel.com/main/storage\"
         target =\"_blank\">documentatie</a> bekijken. "
     use_of_excess_electricity:
-      title: Gebruik van elektriciteitsoverschotten
+      title: Gebruik van flexibele elektriciteitsvraag
       short_description: ''
-      description: Het ETM kent een aantal flexibiliteitstechnologieën die goed kunnen
-        omgaan met elektriciteitsoverschotten uit windmolens en zonnepanelen. Deze
-        grafiek toont hoeveel elektriciteit door de verschillende opties wordt gebruikt
-        in jouw scenario. Via het Flexibiliteit menu kun je bepalen hoeveel van elke
-        technologie je in jouw scenario wilt inzetten.
+      description: |
+        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die 
+        te vinden zijn in de <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
+        Flexibiliteit</a> sectie van het model. In de 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentatie</a> is aangegeven welk typen elektriciteitsvraag als flexibel worden gedefinieerd. </br></br>
+        Deze grafiek laat zien hoe de elektriciteit wordt ingezet die consumeerd is door flexibele 
+        vraagtechnologieën. Daarnaast worden ook de verliezen getoond die optreden bij de opslag 
+        en conversie door deze technologieën.
     storage_options:
-      title: Flexibiliteitsopties voor elektriciteitsoverschotten
+      title: Technologieën met flexibele elektriciteitsvraag
       short_description: ''
-      description: "Het ETM kent een aantal flexibiliteitstechnologieën die goed kunnen
-        omgaan met elektriciteitsoverschotten uit windmolens en zonnepanelen. Deze
-        tabel toont het totale geïnstalleerde vermogen van elk van deze technologieën
-        in jouw scenario; dit bepaald hoeveel elektriciteit je op elk moment kunt
-        opslaan of omzetten. Verder toont de tabel het totale volume dat beschikbaar
-        is voor opslag en conversie. Tenslotte toont de tabel hoeveel elektriciteit
-        op jaarbasis wordt gebruikt door de verschillende opties; zowel in PJ als
-        in TWh.\r\n</br></br>\r\nVia het Flexibiliteit menu kun je bepalen hoeveel
-        van elke technologie je in jouw scenario wilt inzetten."
+      description: |
+        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die 
+        te vinden zijn in de <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
+        Flexibiliteit</a> sectie van het model. In de 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentatie</a> is aangegeven welk typen elektriciteitsvraag als flexibel worden gedefinieerd. </br></br>
+        Deze tabel toont het totale geïnstalleerde inputvermogen van elk van deze technologieën:
+        dit bepaalt hoeveel elektriciteit je op enig moment kunt opslaan of omzetten. Het piekvermogen 
+        geeft aan wat het maximaal benutte inputvermogen in het jaar is. Verder toont de tabel het 
+        totale volume dat beschikbaar is voor opslag. Tenslotte toont de tabel de inzet van de 
+        flexibele technologieën in jouw scenario, aan de hand van de input van elektriciteit, de output 
+        van energie en de vollasturen.
     merit_order_hourly_flexibility:
-      title: Uurlijkse inzet van flexibiliteitsopties voor elektriciteitsoverschotten
+      title: Flexibele elektriciteitsvraag per uur
       short_description: ''
-      description: Het ETM houdt op uurbasis bij of er elektriciteitsoverschotten
-        zijn en hoe deze worden ingezet.
+      description: |
+        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die 
+        te vinden zijn in de <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
+        Flexibiliteit</a> sectie van het model. In de 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentatie</a> is aangegeven welk typen elektriciteitsvraag als flexibel worden gedefinieerd.
+        De grafiek laat de uurlijkse inzet van deze technologieën zien.
     solar_pv_curtailment:
       title: Productiebeperking van zonnepanelen
       short_description:
@@ -135,6 +147,26 @@ nl:
         een negatieve waarde en de maximale tekortpiek als een positieve waarde. </br></br>
         Meer informatie over de residuele vraagcurve en definities van flexibele technologieën is te vinden in onze 
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
+    flexibility_integral_costs:
+      title: "Integrale kosten van flexibele elektriciteitsvraag"
+      description: |
+        Deze grafiek laat de integrale kosten zien van technologieën met flexibele elektriciteitsvraag. In de 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentatie</a> is aangegeven welk typen elektriciteitsvraag als flexibel worden gedefinieerd. </br></br>
+        Elke staaf laat zien wat de kosten zijn per geproduceerde eenheid output van een bepaalde technologie 
+        met flexibele elektriciteitsvraag. Het type energie-output kan verschillen per technologie. Er wordt 
+        onderscheid gemaakt tussen drie kostencategorieën: CAPEX, OPEX en elektriciteitskosten. De 
+        elektriciteitskosten worden berekend aan de hand van de uurlijkse elektriciteitsprijs en de uurlijkse
+        elektriciteitsconsumptie per technologie. Voor power-to-gas wordt daarnaast de prijs van waterstof 
+        gegeven als een referentieprijs. Voor elektriciteitsopslag is de integrale opbrengst de referentieprijs,
+        waarmee de gemiddelde opbrengst per geproduceerde eenheid elektriciteit bedoeld wordt. </br></br>
+        De integrale kosten hangen daarom af van gemaakte assumpties over de kosten en efficiënties van de 
+        technologieën. Deze kunnen worden aangepast in de 
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> 
+        Kosten & efficiënties</a> sectie. Daarnaast hangt het af van het geïnstalleerde vermogen en de 
+        betalingsbereidheid van elke technologie, wat aangepast kan worden in de
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-by-flexible-demand-technologies"> 
+        Flexibiliteit</a> sectie.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Onbalans in maandelijkse volumes van vraag en aanbod
       description: |
@@ -241,7 +273,7 @@ nl:
       title: Elektriciteitsvraag op uurbasis
       short_description: ''
       description: "Deze grafiek toont de impact van keuzes over vraag en inzet van
-        technologieën op de hoogte en vorm van de totale elektriciteitsvraag op hoogspanningsniveau
+        technologieën op de hoogte en vorm van de basislast elektriciteitsvraag op hoogspanningsniveau
         (rode lijn).\r\n<br>\r\n<br>\r\nVoor de volgende technologieën en keuzes wordt
         de impact op de vraagcurve expliciet getoond:\r\n<ul>\r\n<li>elektrische ruimteverwarmingstechnologieën
         zoals warmtepompen</li>\r\n<li>woningisolatie en warmtevraag (als elektrische
@@ -253,6 +285,30 @@ nl:
         elektriciteitsgebruik van technologieën en toepassingen in het ETM word de
         statische TenneT vraagcurve aangenomen. Dit deel wordt getoond als het witte
         gedeelte onder de rode lijn."
+    hourly_flexibility_electricity:
+      title: Flexibele elektriciteitsvraag- en aanbod per uur
+      short_description:
+      description: |
+        Deze grafiek toont het gedrag van flexibele elektriciteitsvraag- en aanbodtechnologieën. In de 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentatie</a> is aangegeven welk typen technologieën als flexibel worden gedefinieerd. In 
+        deze grafiek wordt flexibel aanbod gestapeld op de positieve as weergegeven en flexibele vraag 
+        op de negatieve as. <br/><br/>
+        De grafiek laat ook de residual load curve zien, die het verschil toont tussen de inflexibele 
+        vraag en het inflexibele aanbod van elektriciteit. Zie de 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
+        Flexibiliteit</a> sectie voor meer informatie. Als de residual load curve positief is, 
+        betekent dat dat het inflexibele aanbod ontoereikend is om te voorzien in de inflexibele (of 
+        basislast) vraag. Als de residual load negatief is, is er een overschot aan inflexibel aanbod.
+        Flexibele vraag- en aanbodtechnologieën zijn nodig om deze tekorten en overschotten te 
+        balanceren. <br/><br/>
+        Daarnaast geldt dat er, bij de juiste prijzen, additionele elektriciteit geproduceerd kan 
+        worden door flexibele aanbodtechnologieën voor flexibele vraagtechnologieën. Dit is reden 
+        dat de gestapelde vlakken niet altijd netjes overeenkomen met de residual load curve. Of 
+        de prijzen juist zijn, hangt af van de samenkomst van vraag en aanbod in de markt. 
+        Hierover kun je meer lezen in de
+        <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">
+        documentatie</a>.
     sankey_electrical_interconnection:
       title: Vraag en aanbod van elektriciteit
       short_description: ''

@@ -86,10 +86,9 @@ en:
       description: |
         The ETM contains several flexible electricity demand technologies, which 
         can be found in the in the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
-        Flexibility section</a>  of the model. We have defined 
-        which types of electricity demand are considered flexible in our
+        Flexibility</a> section of the model. It is defined in the 
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
-        documentation</a>. </br></br>
+        documentation</a> which types of electricity demand are considered flexible. </br></br>
         This chart shows how the electricity consumed by the flexible demand technologies 
         is used, as well as the combined losses due to storage and conversion of electricity 
         by these technologies.
@@ -99,10 +98,9 @@ en:
       description: |
         The ETM contains several flexible electricity demand technologies which 
         can be found in the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
-        Flexibility section</a>  of the model. We have defined 
-        which types of electricity demand are considered flexible in our
+        Flexibility</a> section of the model. It is defined in the 
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
-        documentation</a>. </br></br>
+        documentation</a> which types of electricity demand are considered flexible. </br></br>
         For each of these technologies, this table shows the installed electrical input capacity, 
         which determines how much electricity you can store or convert at any time. The peak capacity
         tells you what the maximum utilised electricial input capacity in the year is. The table also
@@ -116,10 +114,9 @@ en:
       description: |
         The ETM contains several flexible electricity demand technologies which 
         can be found in the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
-        Flexibility section</a>  of the model. We have defined 
-        which types of electricity demand are considered flexible in our
+        Flexibility</a> section of the model. It is defined in the 
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
-        documentation</a>. This chart shows the hourly use of these technologies.
+        documentation</a> which types of electricity demand are considered flexible. This chart shows the hourly use of these technologies.
     solar_pv_curtailment:
       title: Curtailment of solar PV
       short_description:
@@ -175,15 +172,14 @@ en:
     flexibility_integral_costs:
       title: "Integral costs of flexible electricity demand"
       description: |
-        This chart shows the integral costs for flexible electricity demand technologies. We have defined 
-        which types of electricity demand are considered flexible in our 
+        This chart shows the integral costs for flexible electricity demand technologies. It is defined in the 
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
-        documentation</a>. </br></br>
+        documentation</a> which types of electricity demand are considered flexible. </br></br>
         Each bar shows the costs per produced unit of output for a certain flexible electricity demand technology. 
         For different technologies the type of energy output can differ. Three costs categories are distinguished: 
-        fixed costs, variable costs and electricity costs. The electricity costs are calculated using the hourly 
+        CAPEX, OPEX and electricity costs. The electricity costs are calculated using the hourly 
         electricity price and the hourly electricity consumption by a technology. For power-to-gas, the hydrogen price 
-        is given as a reference price. For power-to-power, the reference price is the integral revenue, meaning the 
+        is given as a reference price. For electricity storage, the reference price is the integral revenue, meaning the 
         average revenue per produced unit of electricity. </br></br>
         The integral costs therefore depend on assumptions made about the costs and efficiencies of technologies,
         which you can change in the <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> 
@@ -226,32 +222,32 @@ en:
       title: Hourly electricity supply and demand
       description: |
         This chart shows the hourly inflexible supply and baseload demand for electricity. <br/><br/>
-        We have defined which types of electricity supply are considered flexible/inflexible and 
-        which types of electricity demand are considered flexible/baseload in our
-        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>.
+        It is defined in the <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>
+        which types of electricity supply are considered flexible/inflexible and 
+        which types of electricity demand are considered flexible/baseload.
     flexibility_hourly_heat_network_supply_demand:
       title: Hourly heat supply and demand for district heating
       description: |
         This chart shows the hourly inflexible supply and baseload demand for district heating
         for the built environment and agriculture. <br/><br/>
-        We have defined which types of heat supply are considered flexible/inflexible and 
-        which types of heat demand are considered flexible/baseload in our
-        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>.
+        It is defined in the <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>
+        which types of heat supply are considered flexible/inflexible and 
+        which types of heat demand are considered flexible/baseload.
     flexibility_hourly_network_gas_supply_demand:
       title: Hourly gas supply and demand
       description: |
         This chart shows the hourly inflexible supply and baseload demand for network gas. 
         Network gas is the mix of natural gas and green gas in the gas networks.<br/><br/>
-        We have defined which types of gas supply are considered flexible/inflexible and 
-        which types of gas demand are considered flexible/baseload in our
-        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>.
+        It is defined in the <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>
+        which types of gas supply are considered flexible/inflexible and 
+        which types of gas demand are considered flexible/baseload.
     flexibility_hourly_hydrogen_supply_demand:
       title: Hourly hydrogen supply and demand
       description: |
         This chart shows the hourly inflexible supply and baseload demand for hydrogen. <br/><br/>
-        We have defined which types of hydrogen supply are considered flexible/inflexible and 
-        which types of hydrogen demand are considered flexible/baseload in our
-        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>.
+        It is defined in the <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>
+        which types of hydrogen supply are considered flexible/inflexible and 
+        which types of hydrogen demand are considered flexible/baseload.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulative imbalance per month
     merit_order:
@@ -309,13 +305,14 @@ en:
         technologies and applications in the ETM, the fixed TenneT curve is assumed.
         This part is shown as the white region under the red line.\r\n"
     hourly_flexibility_electricity:
-      title: Flexible electricity demand and supply per hour
+      title: Flexible electricity supply and demand per hour
       short_description: ''
       description: |
         This chart shows you the behaviour of flexible electricity supply and demand technologies. 
-        We have defined which types of electricity technologies are considered flexible in our
+        It is defined in the 
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
-        documentation</a>. In this chart flexible electricity supply is stacked on the 
+        documentation</a> which types of technologies are considered flexible.
+        In this chart flexible electricity supply is stacked on the 
         positive axis, while flexible electricity demand is stacked on the negative axis.
         <br/><br/>
         The chart also shows the residual load curve, which is the difference between the
@@ -323,10 +320,10 @@ en:
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
         Flexibility section</a> for more information. If the residual load curve is positive, 
         the inflexible supply is insufficient to meet inflexible (or baseload) demand. If the 
-        residual load curve is positive, there is an excess of inflexible supply. Flexible 
+        residual load curve is negative, there is an excess of inflexible supply. Flexible 
         demand and supply technologies are needed to balance these shortages and excesses. <br/><br/>
-        However, when the prices are right, flexible supply technologies can produce additional
-        electricity for flexible demand technologies, which is why the areas in the chart 
+        Additionally, when the prices are right, flexible supply technologies can produce additional
+        electricity for flexible demand technologies, which is why the stacked areas in the chart 
         do not always align with the residual load curve. Whether the prices are right depends 
         on the clearing of the electricity market, which you can read more about in our
         <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">

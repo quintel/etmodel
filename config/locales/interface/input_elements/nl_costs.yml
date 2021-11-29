@@ -116,24 +116,43 @@ nl:
         (electrolyzers, power plants, infrastructuur, opslag), synthetische kerosine,
         kernenergie, carbon capture and storage (CCS), supercritical water gasification
         (SCWG) en Ondergrondse Pomp Accumulatie Centrale (OPAC).'
-    investment_costs_flexibility_p2h_electricity:
-      title: Investeringskosten elektrische boilers
+    costs_electricity_fallback_price:
+      title: Value of Lost Load (VoLL)
       short_description:
-      description: Power-to-heat-installaties produceren warmte met elektriciteitsoverschotten.
-        In het ETM kan power-to-heat worden ingezet bij <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households">huishoudens</a>
-        en in de <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">industrie</a>.
+      description: |
+        Merk op dat de VoLL in werkelijkheid sterk verschilt per consument: voor sommige
+        consumenten is de impact van een onderbreking in de stroomvoorziening groter dan 
+        voor anderen. De VoLL moet daarom worden beschouwd als een geaggregeerde inschatting 
+        die afhankelijk is de gebruikte methodologie en de regio waarvoor het wordt berekend. <br/><br/>
+        Belangrijk is ook dat de VoLL niet de verwachte marktprijs aangeeft in uren wanneer er 
+        onvermogen optreedt. In dergelijke uren wordt de prijs namelijk bepaald door de 
+        grenswaarde van de markt - als de elektriciteitsmarkt een dergelijke grens 
+        geïmplementeerd heeft - typisch rond 3000 of 10000 €/MWh. <br/><br/>
+        Als je daarom realistische marktprijzen wilt simuleren, moet je een VoLL instellen die 
+        gelijk is aan de grenswaarde van de markt. Als je echter een optimaal niveau van
+        investeringen in infrastructuur wilt bepalen, dan moet je een VoLL kiezen die 
+        representatief is voor jouw regio.
+    investment_costs_flexibility_p2h_electricity:
+      title: Investeringskosten power-to-heat boilers
+      short_description:
+      description: |
+        Power-to-heat boilers converteren elektriciteit naar warmte. In het ETM kan power-to-heat worden ingezet 
+        voor <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        warmtenetten</a> en voor de 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry"> industrie</a>.
         Dit schuifje bepaalt hoeveel de investeringskosten voor elektrische boilers
-        in de toekomst gaan veranderen. <br />
+        in de toekomst gaan veranderen.
     investment_costs_hydrogen_electrolysis:
       title: Investeringskosten power-to-gas
       short_description:
-      description: Power-to-gas-installaties gebruiken elektriciteit voor het produceren
-        gas (zoals waterstof of methaan). Dit gebeurt door middel van elektrolyse.
-        Dit schuifje bepaalt de verandering in investeringskosten voor elektrolyse-apparaten.
-        Dit heeft effect op de kosten voor waterstofproductie uit <a href="/scenario/supply/hydrogen/hydrogen-production">wind-
-        en zonnestroom</a>, de kosten voor waterstofproductie uit <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">elektriciteitsoverschotten</a>
-        en de kosten voor <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation">synthetische
-        kerosineproductie</a> voor de luchtvaart.<br />
+      description: |
+        Power-to-gas installaties gebruiken elektriciteit om waterstof te produceren, wat elektrolyse
+        genoemd wordt. Dit schuifje bepaalt de verandering in investeringskosten van power-to-gas installaties.
+        Dit heeft effect op de kosten voor waterstofproductie door power-to-gas installaties die aan het 
+        elektriciteitsnetwerk gekoppeld zijn als 
+         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
+        flexibele elektriciteitsvraag</a> en op de kosten voor directe waterstofproductie met 
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind- en zonnestroom</a>.
     om_costs_co2_ccs:
       title: Onderhoudskosten
       short_description: ''

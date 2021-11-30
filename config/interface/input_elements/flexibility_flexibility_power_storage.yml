@@ -51,7 +51,7 @@
     other:
       timeframe: i_h_d
 
-- key: price_of_households_flexibility_p2p_electricity
+- key: wtp_of_households_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -61,7 +61,7 @@
   additional_specs:
     other:
       timeframe: i_h_d_w
-- key: price_of_transport_car_flexibility_p2p_electricity
+- key: wtp_of_transport_car_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -71,7 +71,7 @@
   additional_specs:
     other:
       timeframe: i_h_d_w
-- key: price_of_energy_flexibility_mv_batteries_electricity
+- key: wtp_of_energy_flexibility_mv_batteries_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -81,7 +81,7 @@
   additional_specs:
     other:
       timeframe: i_h_d
-- key: price_of_energy_flexibility_pumped_storage_electricity
+- key: wtp_of_energy_flexibility_pumped_storage_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -92,7 +92,7 @@
   additional_specs:
     other:
       timeframe: i_h_d_w_s
-- key: price_of_energy_flexibility_hv_opac_electricity
+- key: wtp_of_energy_flexibility_hv_opac_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -103,7 +103,7 @@
     other:
       timeframe: i_h_d_w_s
 
-- key: costs_of_households_flexibility_p2p_electricity
+- key: wta_of_households_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -113,7 +113,7 @@
   additional_specs:
     other:
       timeframe: i_h_d_w
-- key: costs_of_transport_car_flexibility_p2p_electricity
+- key: wta_of_transport_car_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -123,7 +123,7 @@
   additional_specs:
     other:
       timeframe: i_h_d_w
-- key: costs_of_energy_flexibility_mv_batteries_electricity
+- key: wta_of_energy_flexibility_mv_batteries_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -133,7 +133,7 @@
   additional_specs:
     other:
       timeframe: i_h_d
-- key: costs_of_energy_flexibility_pumped_storage_electricity
+- key: wta_of_energy_flexibility_pumped_storage_electricity
   step_value: 0.1
   unit: "€/MWh"
   dependent_on: has_mountains
@@ -144,7 +144,7 @@
   additional_specs:
     other:
       timeframe: i_h_d_w_s
-- key: costs_of_energy_flexibility_hv_opac_electricity
+- key: wta_of_energy_flexibility_hv_opac_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay

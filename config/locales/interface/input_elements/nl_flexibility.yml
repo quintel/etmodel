@@ -669,6 +669,7 @@ nl:
     wtp_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:
+<<<<<<< HEAD
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers willen betalen
         voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor power-to-heat
@@ -787,3 +788,85 @@ nl:
     settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity:
       title: 'Verbeter inzet opslag met prognose van residual load'
       description: ''
+=======
+      description: "Power-to-gas installaties produceren waterstof met elektriciteitsoverschotten.
+        Dit schuifje zorgt ervoor dat deze waterstof wordt ingezet in het centrale
+        waterstofnetwerk. Overtollig waterstof wordt geëxporteerd. De efficiëntie van elektrolysers
+        kan <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast."
+    connection_capacity_always_on_wind_turbine_inland:
+      title: Relatieve aangesloten netwerkcapaciteit
+      short_description:
+      description: |
+        Doordat de elektriciteitsproductie door windmolens volatiel is, kan de installatie van veel 
+        windmolens een grote impact hebben op het 
+        elektriciteitsnet. Om deze impact te verlagen, is de aangesloten netwerkcapaciteit 
+        van windmolens met een batterijsysteem gereduceerd ten opzichte van het geïnstalleerde 
+        vermogen. <br/><br/>
+        De aangesloten netwerkcapaciteit is relatief ingesteld ten opzichte van het 
+        geïnstalleerde vermogen. Dit betekent dat, als je het geïnstalleerde vermogen verandert 
+        in de <a href="/scenario/supply/electricity_renewable/wind-turbines"> Aanbod</a> sectie, 
+        de aangesloten netwerkcapaciteit daarom zal meeveranderen op basis van de ratio die is 
+        aangegeven in dit schuifje. <br/><br/>
+        Productie door de windmolens die de aangesloten netwerkcapaciteit overschrijdt, zal door 
+        het geïntegreerde batterijsysteem moeten worden geconsumeerd. Met het schuifje hieronder 
+        kan je het relatieve vermogen van de batterij bepalen. In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld.
+    connection_capacity_always_on_solar_pv_solar_radiation:
+      title: Relatieve aangesloten netwerkcapaciteit
+      short_description:
+      description: |
+        Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie van veel 
+        zonnecentrales een grote impact hebben op het 
+        elektriciteitsnet. Om deze impact te verlagen, is de aangesloten netwerkcapaciteit 
+        van zonnecentrales PV met een batterijsysteem gereduceerd ten opzichte van het geïnstalleerde 
+        vermogen. <br/><br/>
+        De aangesloten netwerkcapaciteit is relatief ingesteld ten opzichte van het 
+        geïnstalleerde vermogen. Dit betekent dat, als je het geïnstalleerde vermogen verandert 
+        in de <a href="/scenario/supply/electricity_renewable/solar-power"> Aanbod</a> sectie, 
+        de aangesloten netwerkcapaciteit daarom zal meeveranderen op basis van de ratio die is 
+        aangegeven in dit schuifje. <br/><br/>
+        Productie door de zonnecentrales die de aangesloten netwerkcapaciteit overschrijdt, zal door 
+        het geïntegreerde batterijsysteem moeten worden geconsumeerd. Met het schuifje hieronder 
+        kan je het relatieve vermogen van de batterij bepalen. In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld.
+    battery_capacity_always_on_wind_turbine_inland:
+      title: Relatief batterijvermogen
+      short_description:
+      description: |
+        Het inputvermogen, ook wel het laadvermogen, van de batterij is relatief ingesteld ten opzichte 
+        van het geïnstalleerde vermogen van windmolens met batterijsystemen. Dit betekent dat, als je 
+        het geïnstalleerde vermogen verandert in de <a href="/scenario/supply/electricity_renewable/wind-turbines"> 
+        Aanbod</a> sectie, het laadvermogen daarom zal meeveranderen op basis van de ratio die is 
+        aangegeven in dit schuifje. <br/><br/>
+        Het batterijsysteem consumeert alleen elektriciteit als de productie de grenswaarde van de
+        aangesloten netwerkcapaciteit overschrijdt. De batterij begint te ontladen als de productie 
+        weer onder de grenswaarde zakt. In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/<br/>
+        Er is een vaste verhouding aangenomen van het opslagvolume ten opzichte van het laadvermogen.
+        Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op 
+        de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen 
+        en opslagvolume van de batterij te zien.
+    battery_capacity_always_on_solar_pv_solar_radiation:
+      title: Relatief batterijvermogen
+      short_description:
+      description: |
+        Het inputvermogen, ook wel het laadvermogen, van de batterij is relatief ingesteld ten opzichte 
+        van het geïnstalleerde vermogen van zonnecentrales PV met batterijsystemen. Dit betekent dat, als je 
+        het geïnstalleerde vermogen verandert in de <a href="/scenario/supply/electricity_renewable/solar-power"> 
+        Aanbod</a> sectie, het laadvermogen daarom zal meeveranderen op basis van de ratio die is 
+        aangegeven in dit schuifje. <br/><br/>
+        Het batterijsysteem consumeert alleen elektriciteit als de productie de grenswaarde van de
+        aangesloten netwerkcapaciteit overschrijdt. De batterij begint te ontladen als de productie 
+        weer onder de grenswaarde zakt. In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/<br/>
+        Er is een vaste verhouding aangenomen van het opslagvolume ten opzichte van het laadvermogen.
+        Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op 
+        de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen 
+        en opslagvolume van de batterij te zien.
+
+
+>>>>>>> Add nl locales for wind and solar with battery

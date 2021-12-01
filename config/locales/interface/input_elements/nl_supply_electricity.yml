@@ -58,6 +58,40 @@ nl:
         Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >hier</a> aanpassen.
         De efficiëntie van zonnepanelen kan <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >hier </a> aangepast worden.<br
         />"
+    capacity_of_energy_battery_solar_pv_solar_radiation:
+      title: Zonnecentrales PV met batterijsysteem
+      short_description: ''
+      description: |
+        Anders dan gewone zonnecentrales PV, zijn deze centrales standaard uitgerust met een
+        batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
+        systeem. <br/><br/>
+        Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie 
+        van veel zonnecentrales een grote impact hebben op het elektriciteitsnet. Om grote 
+        vermogenspieken op het net voorkomen, wordt niet het volledige geïnstalleerde vermogen 
+        aangesloten op net, maar een gereduceerd deel. Als de productie groter is dan de 
+        aangesloten netwerkcapaciteit begint de batterij elektriciteit te consumeren. Als de 
+        productie weer onder de netwerkcapaciteit zakt, begint de batterij deze elektriciteit 
+        te ontladen. Let op dat er door efficiëntieverliezen en opslagverliezen elektriciteit 
+        verloren gaat in dit proces. <br/><br/>
+        In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/><br/>
+        Zowel de aangesloten netwerkcapaciteit als het inputvermogen van de batterij wordt
+        relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide 
+        meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in 
+        de Flexibiliteit sectie, onder 
+         <a href="/scenario/flexibility/flexibility_storage/solar-parks-with-storage-systems">
+        Opslag elektriciteit</a>. <br/><br/>
+        Klik op de 'Technische parameters en kosten' om de specificaties van de zonnecentrale 
+        PV zonder het batterijsysteem te zien. In 
+        <a
+          href="#"
+          class="open_chart"
+          data-chart-key="flexibility_hourly_battery_solar"
+          data-chart-location="side">
+          deze grafiek
+        </a>
+        kun je het uurlijkse gedrag van deze zonnecentrales zien.
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Geconcentreerde zonnestroom
       short_description: ''
@@ -394,6 +428,40 @@ nl:
         het geïnstalleerd vermogen zitten. Hierdoor kan het aantal windturbines in
         het startscenario lager uitvallen. Het scenario rekent wel met de elektriciteitsproductie
         zoals die in de nationale statistieken wordt gerapporteerd."
+    capacity_of_energy_battery_wind_turbine_inland:
+      title: Op land met batterijsysteem
+      short_description: ''
+      description: |
+        Anders dan gewone windmolens op land, zijn deze windmolens standaard uitgerust met een
+        batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
+        systeem. <br/><br/>
+        Doordat de elektriciteitsproductie door windmolens volatiel is, kan de installatie 
+        van veel windmolens een grote impact hebben op het elektriciteitsnet. Om grote 
+        vermogenspieken op het net voorkomen, wordt niet het volledige geïnstalleerde vermogen 
+        aangesloten op net, maar een gereduceerd deel. Als de productie groter is dan de 
+        aangesloten netwerkcapaciteit begint de batterij elektriciteit te consumeren. Als de 
+        productie weer onder de netwerkcapaciteit zakt, begint de batterij deze elektriciteit 
+        te ontladen. Let op dat er door efficiëntieverliezen en opslagverliezen elektriciteit 
+        verloren gaat in dit proces. <br/><br/>
+        In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/><br/>
+        Zowel de aangesloten netwerkcapaciteit als het inputvermogen van de batterij wordt
+        relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide 
+        meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in 
+        de Flexibiliteit sectie, onder 
+         <a href="/scenario/flexibility/flexibility_storage/wind-parks-with-storage-systems">
+        Opslag elektriciteit</a>. <br/><br/>
+        Klik op de 'Technische parameters en kosten' om de specificaties van de windmolens 
+        zonder het batterijsysteem te zien. In 
+        <a
+          href="#"
+          class="open_chart"
+          data-chart-key="flexibility_hourly_battery_wind"
+          data-chart-location="side">
+          deze grafiek
+        </a>
+        kun je het uurlijkse gedrag van deze windmolens zien.
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventioneel
       short_description: ''

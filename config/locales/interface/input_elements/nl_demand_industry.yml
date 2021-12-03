@@ -134,9 +134,12 @@ nl:
     industry_steel_blastfurnace_bof_share:
       title: Hoogoven
       short_description:
-      description: "IJzer- en staalproductie met een hoogoven is de conventionele
+      description: "IJzer- en staalproductie met een hoogoven en oxystaaloven is de conventionele
         wijze van produceren. Wereldwijd wordt tweederde van de ijzer- en staalproductie
-        met een hoogoven geproduceerd.\r\n</br></br>\r\nGeef hier aan welk aandeel
+        met een hoogoven geproduceerd.\r\n</br></br>\r\nHoogovens en oxystaalovens produceren
+        gassen met een hoog koolstofgehalte. Deze gassen mogen niet uitgestoten worden.
+        Op dit moment worden de gassen gebruikt in specifieke WKK's en elektriciteitscentratles
+        voor de productie van warmte en elektriciteit.\r\n</br></br>\r\nGeef hier aan welk aandeel
         de hoogoven heeft bij de productie van ijzer en staal.\r\n"
     industry_steel_cyclonefurnace_bof_share:
       title: Cycloonoven
@@ -150,23 +153,43 @@ nl:
         verwachting duurt het nog enkele jaren voordat de techniek helemaal is uitgewerkt.\r\n<br><br>\r\nGeef
         hier aan welk aandeel de cycloonoven heeft bij de productie van ijzer en staal."
     industry_steel_scrap_hbi_eaf_share:
-      title: Recycling / Hot Briquetted Iron
+      title: Recycling / HBI
       short_description:
       description: "Staal kan eindeloos gerecycled worden. De elektrische oven wordt
         ingezet om gebruikt staal te recyclen. Hoewel gebruikt staal ook in een hoogoven
         omgesmolten kan worden, kan dit maar tot ongeveer 20% van het totaal (80%
-        moet nieuw ijzer zijn). In een elektrische oven wordt 100% gebruikt staal
+        moet nieuw ijzer zijn). In een elektrische oven kan 100% gebruikt staal worden
         verwerkt. Wereldwijd komt ongeveer een derde van de staalproductie uit een
-        elektrische oven.\r\n<p>\r\nGeef hier aan welk aandeel de elektrische oven
-        heeft bij de productie van ijzer en staal.\r\n"
+        elektrische oven.\r\n<p>\r\nNaast gebruikt staal kan er ook heet gebriketteerd ijzer (HBI)
+        in de elektrische ovens worden gebruikt. Hierdoor kan de ijzer- en staalproductie gemakkelijk
+        van elkaar gescheiden worden. HBI kan ergens anders geproduceerd worden
+        om het daarna te verschepen en te gebruiken voor staalproductie. Het energieverbruik
+        en de emissies van de ijzerproductie zijn niet in dit proces meegenomen. \r\n<p>\r\nGeef hier
+        aan welk aandeel de elektrische oven heeft bij de productie van ijzer en staal."
     industry_steel_dri_network_gas_share:
       title: DRI (netwerkgas)
       short_description:
-      description:
+      description: "Direct reduceren van ijzer (DRI) is een van de technologieën die het
+      energieverbruik en CO<sub>2</sub> emissies in de staalsector verlagen. IJzer wordt
+      geproduceerd in de DRI reactor, waarin ijzererst wordt gereduceerd door netwerkgas.
+      Dit proces is minder energie-intensief dan een hoogoven of cycloonoven. Er is ook
+      geen productie van kolengas, zoals in hoogovens. DRI is een nieuwe technologie die nog
+      niet commercieel gebruikt wordt. \r\n<p>\r\nGeef hier aan welk aandeel het DRI proces
+      met netwerkgas als reducerend gas heeft bij de productie van ijzer en staal."
     industry_steel_dri_hydrogen_share:
       title: DRI (waterstof)
       short_description:
-      description:
+      description: "Direct reduceren van ijzer (DRI) is een van de technologieën die het
+      energieverbruik en CO<sub>2</sub> emissies in de staalsector verlagen. IJzer wordt
+      geproduceerd in de DRI reactor, waarin ijzererst wordt gereduceerd door een reducerend
+      gas. Wanneer waterstof wordt gebruikt als reducerend gas, kan 80% van het netwerkgas
+      vervangen worden door waterstof. \r\n</br></br>\r\nDit proces is minder energie-intensief
+      dan een hoogoven of cycloonoven. Er is ook geen productie van kolengas, zoals in hoogovens.
+      Een DRI met waterstof als reducerend gas produceert bijna geen CO<sub>2</sub> emissies,
+      waardoor het een nog betere emissie besparende optie maakt dan de DRI gecombineerd met
+      netwerkgas. DRI is een nieuwe technologie die nog niet commercieel gebruikt wordt.
+      \r\n<p>\r\nGeef hier aan welk aandeel het DRI proces met waterstof als reducerend gas heeft
+      bij de productie van ijzer en staal."
     industry_other_metals_process_electricity_efficiency:
       title: Elektriciteit
       short_description:

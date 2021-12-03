@@ -117,34 +117,94 @@ en:
           \ data-chart-key=\"hybrid_heat_pump\"
         >electricity and gas share table</a>
         will show a breakdown of how hybrid heat pumps use energy in households."
+    flexibility_electricity_storage_overview:
+      titel: Behaviour of storage technologies
+      short_description:
+      description: |
+        In this section you can determine the behaviour of electricity storage technologies. These technologies 
+        are considered flexible, because both their supply and demand can be increased, reduced or shifted in 
+        time if needed (see the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> 
+        Flexibility overview</a> for background information). </br></br>
+        Each storage technology has a <i>willingness-to-pay</i> that indicates the maximum electricity price for 
+        which it is willing to charge electricity. If the electricity price in a given hour is lower than a 
+        technology's willingness-to-pay, the storage technology will charge. </br></br>
+        Similarly, each technology also has a <i>willingness-to-accept</i>, which indicates the minimum 
+        electricity price for which it is willing to discharge the stored electricity. </br></br>
+        In the slides below you can set the willingness-to-pay, the willingness-to-accept, and the installed 
+        capacity for various electricity storage technologies. Note that the specific behaviour of these 
+        technologies is more complicated than stated in this short description. Our 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\"> documentation</a> 
+        contains a more detailed description.
     flexibility_power_storage_households_flexibility_p2p_electricity:
       title: Batteries in households
       short_description:
-      description:
+      description: |
+        It is possible to install batteries in households. These can then be charged by electricity from the grid, 
+        or by solar power if the household has solar panels installed. </br></br>
+        Batteries in the ETM are flexible technologies, which 
+        means that if the electricity price is lower than the willingness-to-pay in a given hour, the battery 
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will 
+        discharge the stored electricity.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
     flexibility_power_storage_transport_car_flexibility_p2p_electricity:
       title: Batteries in electric vehicles
       short_description:
-      description:
+      description: |
+        Electric vehicles could provide a cost-effective way of storing electricity as they contain a relatively 
+        large battery. </br></br>
+        Batteries in the ETM are flexible technologies, which 
+        means that if the electricity price is lower than the willingness-to-pay in a given hour, the battery 
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will 
+        discharge the stored electricity.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
     flexibility_power_storage_energy_flexibility_mv_batteries_electricity:
       title: Large-scale batteries
       short_description:
-      description:
+      description: |
+        This large-scale battery is typically connected to the medium voltage network. Although in the battery does 
+        not react to congestion events, its behavior can help prevent capacity issues in the electricity network. </br></br>
+        Batteries in the ETM are flexible technologies, which 
+        means that if the electricity price is lower than the willingness-to-pay in a given hour, the battery 
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will 
+        discharge the stored electricity.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
     flexibility_power_storage_energy_flexibility_pumped_storage_electricity:
       title: Reservoirs
       short_description:
-      description:
+      description: |
+        Pumped storage provides a cheap way for large-scale storage of electricity. Electricity can 
+        be used to pump water from the lower reservoir to a higher reservoir. Electricity is then 
+        produced by releasing the stored water. </br></br>
+        Electricity storage in the ETM is a flexible technology, which 
+        means that if the electricity price is lower than the willingness-to-pay in a given hour, the lower reservoir 
+        will pump up water in that hour. If the electricity price exceeds the willingness-to-accept, it will 
+        release the water from the higher reservoir to produce electricity.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
     flexibility_power_storage_energy_flexibility_hv_opac_electricity:
       title: Underground pumped hydro storage
       short_description:
-      description:
-    flexibility_flexibility_flexible_demand_overview:
-      title: Conversion by flexible demand technologies
+      description: |
+        Underground pumped hydro storage (UPHS) allows for large-scale storage of electricity. It uses the 
+        height difference between two water reservoirs, of which the lower reservoir is underground,
+        to store electricity as potential energy. </br></br>
+        Electricity storage in the ETM is a flexible technology, which 
+        means that if the electricity price is lower than the willingness-to-pay in a given hour, the lower reservoir 
+        will pump up water in that hour. If the electricity price exceeds the willingness-to-accept, it will 
+        produce electricity by releasing the water from the higher reservoir through a turbine.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
+    flexibility_electricity_conversion_overview:
+      title: Behaviour of conversion technologies
       short_description:
       description: |
         In this section you can determine the behaviour of different types of flexible demand technologies
         for electricity conversion. The demand of these technologies
         is considered flexible because it can be increased, reduced or shifted in time if needed (see the
-        <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> flexibility overview </a>
+        <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Flexibility overview </a>
         for background information). </br></br>
         Each flexible demand technology has a <i>willingness-to-pay</i> that indicates the maximum electricity
         price for which it is willing to consume electricity. If the electricity price in a given hour is lower than a technology's willingness-to-pay, the technology will consume electricity

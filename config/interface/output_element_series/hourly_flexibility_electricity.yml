@@ -110,7 +110,7 @@
   gquery: hourly_flexibility_electricity_p2g_curve
   dependent_on:
   output_element_key: hourly_flexibility_electricity
-  key: hourly_flexibility_electricity_p2p_curve_hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2g_curve_hourly_flexibility_electricity
 - label: power_to_heat_for_industry
   color: "#8B0000"
   order_by: 305
@@ -132,7 +132,7 @@
   output_element_key: hourly_flexibility_electricity
   key: hourly_flexibility_electricity_p2h_district_heating_curve_hourly_flexibility_electricity
 - label: power_to_power_demand
-  color: "#dd77bb"
+  color: "#BC8CF2"
   order_by: 315
   group: flex
   is_target_line: false

@@ -124,10 +124,9 @@ en:
       label: Excess electricity
       title: Number of hours with excess electricity
       description: As a result of large numbers of wind turbines and solar panels
-        installed, the supply of electricity can be larger than the demand. The ETM
-        keeps track of the number of consecutive hours in which this is the case for
-        you scenario. If you include flexibility options in your scenario, the number
-        of excess events decreases.
+        installed, the volatile and must-run supply of electricity can be larger than the baseload 
+        demand. The ETM keeps track of the number of consecutive hours in which this is the case for
+        you scenario.
     all_ghg_reduction_relative_to_start_year:
       label: Greenhouse gases
       title: Total greenhouse gas emissions relative to start year

@@ -244,9 +244,20 @@ en:
     share_of_energy_power_supercritical_ccs_waste_mix:
       title: Waste incinerator
       description: |
-          What share of installed waste incinarator capacity will be equipped with a CO<sub>2</sub> capture
-          unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
-          power plants in your scenario. This is influenced by electricity demand, other installed
-          power generation technologies and commodity prices.<br/><br/> The amount of installed waste incicerator capacity can be set in
-          <a href="/scenario/supply/electricity_renewable/waste-power">the Supply → Electricity → Waste power section</a>.
-          <br/><br/>
+        What share of installed waste incinarator capacity will be equipped with a CO<sub>2</sub> capture
+        unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
+        power plants in your scenario. This is influenced by electricity demand, other installed          power generation technologies and commodity prices.<br/><br/> The amount of installed waste incicerator capacity can be set in
+        <a href="/scenario/supply/electricity_renewable/waste-power">the Supply → Electricity → Waste power section</a>.
+        <br/><br/>
+
+    share_of_energy_steel_energy_production_coal_gas:
+      title: Energy production
+      description: "Coal gas is currently used for electricity and heat production in specific
+        CHPs and power plants. <br/><br/>Here you can indicate what share of coal gas is used
+        for energy production."
+    share_of_energy_steel_chemical_feedstock_coal_gas:
+      title: Chemical feedstock
+      description: "An alternative for energy production with high CO<sub>2</sub> emissions
+        is the capture of coal gas. The captured gas can then be transformed into feedstock for
+        the chemical industry. <br/><br/>Here you can indicate what share of coal gas is used
+        for feedstock production."

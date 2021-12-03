@@ -91,6 +91,13 @@ en:
         relatively small CO<sub>2</sub> volumes or when CO<sub>2</sub> sources are located in more remote areas.
         Pipelines, on the other hand, are useful in scenarios with higher volumes of captured CO<sub>2</sub> or
         when CCUS activities are concentrated in the same location."
+    supply_ccus_steel_coal_gas:
+      title: Coal gas from steel sector
+      description: "Coal gas is produced as side product in the steel sector. This gas has
+        high carbon content and cannot be emitted. Currently, the coal gas is used in specific
+        CHPs and power plants for electricity and heat production. This process has high CO<sub>2</sub>
+        emissions. An alternative for this process is CCUS, in which the coal gas can be
+        transformed into feedstock for the chemical sector."
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub> emissions of biomass
       short_description:
@@ -419,9 +426,9 @@ en:
       title: Mix of oil and oil products
       short_description:
       description: |
-        With the sliders below you can determine the oil mix used for the final (energetic) demand 
-        for oil in various sectors. The oil mix for the transport sector cannot be set directly 
-        here, because it is determined by the split between transport technologies (see the 
+        With the sliders below you can determine the oil mix used for the final (energetic) demand
+        for oil in various sectors. The oil mix for the transport sector cannot be set directly
+        here, because it is determined by the split between transport technologies (see the
         <a href="/scenario/demand/transport/overview">'Transport'</a> section).
     supply_transport_compressed_gas:
       title: Compressed gas for road transport

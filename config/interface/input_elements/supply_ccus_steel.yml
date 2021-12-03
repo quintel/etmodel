@@ -1,0 +1,16 @@
+---
+- key: share_of_energy_steel_energy_production_coal_gas
+  share_group: coal_gas_ccus
+  step_value: 1.0
+  unit: "%"
+#  related_node: energy_power_combined_cycle_coal_gas
+#  related_node: energy_chp_coal_gas
+  position: 1
+  slide_key: supply_ccus_steel_coal_gas
+- key: share_of_energy_steel_chemical_feedstock_coal_gas
+  share_group: coal_gas_ccus
+  step_value: 1.0
+  unit: "%"
+#  related_node: energy_methanol_production_coal_gas
+  position: 2
+  slide_key: supply_ccus_steel_coal_gas

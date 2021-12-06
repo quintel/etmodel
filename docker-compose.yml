@@ -4,8 +4,6 @@ services:
   web: &web
     build:
       context: .
-      args:
-        RUBY_VERSION: '2.6.6'
     ports:
       - "3001:3000"
     volumes:

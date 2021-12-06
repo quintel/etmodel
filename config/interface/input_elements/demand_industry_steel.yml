@@ -11,13 +11,6 @@
   interface_group: production_route
   position: 1
   slide_key: demand_industry_steel
-- key: industry_steel_scrap_hbi_eaf_share
-  share_group: steel_production
-  step_value: 0.1
-  unit: "%"
-  interface_group: production_route
-  position: 2
-  slide_key: demand_industry_steel
 - key: industry_steel_dri_network_gas_share
   share_group: steel_production
   step_value: 0.1
@@ -38,4 +31,11 @@
   unit: "%"
   interface_group: production_route
   position: 5
+  slide_key: demand_industry_steel
+- key: industry_steel_scrap_hbi_eaf_share
+  share_group: steel_production
+  step_value: 0.1
+  unit: "%"
+  interface_group: production_route
+  position: 6
   slide_key: demand_industry_steel

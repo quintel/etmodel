@@ -20,7 +20,11 @@ blocks:
             - bundle install --deployment --path vendor/bundle
             - cache store
             - bundle exec rails db:setup
-            - bundle exec rspec
+            - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format documentation
+      epilogue:
+        always:
+          commands:
+            - test-results publish junit.xml
 promotions:
   - name: Deploy to staging
     pipeline_file: deploy_staging.yml

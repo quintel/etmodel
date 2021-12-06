@@ -95,15 +95,16 @@ group :test, :development do
 end
 
 group :test do
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.8'
-  gem 'shoulda-matchers', require: false
-  gem 'rails-controller-testing'
-  gem 'simplecov'
-  gem 'webmock', '>= 3.5'
-  gem 'capybara'
   gem 'launchy'
+  gem 'rails-controller-testing'
+  gem 'rspec_junit_formatter'
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov'
   gem 'vcr', '~> 3.0.3'
+  gem 'webmock', '>= 3.5'
 end
 
 group :production, :staging do

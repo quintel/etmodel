@@ -1,0 +1,29 @@
+version: v1.0
+name: Deploy to staging
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Docker
+    task:
+      prologue:
+        commands:
+          - chmod 0600 ~/.ssh/id_deploy
+          - ssh-add ~/.ssh/id_deploy
+      jobs:
+        - name: Build, publish, deploy
+          commands:
+            - checkout
+            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+            - cache restore
+            - 'docker build -f Dockerfile.production -t etmodel:beta .'
+            - 'docker tag etmodel:beta quintel/etmodel:beta'
+            - 'docker push quintel/etmodel:beta'
+            - cache store
+            - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
+      secrets:
+        - name: Docker Hub credentials
+        - name: Staging SSH settings
+    run:
+      when: branch = 'docker'

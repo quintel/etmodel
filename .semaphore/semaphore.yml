@@ -8,8 +8,8 @@ blocks:
   - name: RSpec
     task:
       env_vars:
-        - name: DATABASE_HOST
-          value: localhost
+        - name: DATABASE_URL
+          value: mysql2://root@localhost/etmodel_test?pool=5&encoding=utf8mb4
       jobs:
         - name: Test
           commands:
@@ -19,8 +19,9 @@ blocks:
             - 'gem install bundler:1.17.3'
             - bundle install --deployment --path vendor/bundle
             - cache store
+            - cat /dev/null > config/database.yml
             - bundle exec rails db:setup
-            - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format documentation
+            - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format progress
       epilogue:
         always:
           commands:

@@ -10,8 +10,6 @@ blocks:
       env_vars:
         - name: DATABASE_URL
           value: mysql2://root@localhost/etmodel_test?pool=5&encoding=utf8mb4
-        - name: NODE_ENV
-          value: test
         - name: RAILS_ENV
           value: test
       jobs:
@@ -22,6 +20,7 @@ blocks:
             - cache restore
             - 'gem install bundler:1.17.3'
             - bundle install --deployment --path vendor/bundle
+            - yarn install
             - cache store
             - cat /dev/null > config/database.yml
             - bundle exec rails webpacker:compile

@@ -23,18 +23,18 @@
   dependent_on: 
   output_element_key: industrial_heat_mekko
   key: industry_unused_local_production_steam_hot_water_in_industrial_heat_network_mekko_demand_industrial_heat_mekko
-- label: energy_steel_hisarna_transformation_coal_in_industrial_heat_network_mekko
+- label: energy_chp_coal_gas_in_industrial_heat_network_mekko
   color: "#6AB04C"
   order_by: 3
   group: supply
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: energy_steel_hisarna_transformation_coal_in_industrial_heat_network_mekko
+  gquery: energy_chp_coal_gas_in_industrial_heat_network_mekko
   is_1990: 
   dependent_on: 
   output_element_key: industrial_heat_mekko
-  key: energy_steel_hisarna_transformation_coal_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
+  key: energy_chp_coal_gas_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_chp_combined_cycle_gas_power_fuelmix_in_industrial_heat_network_mekko
   color: "#A4B0BE"
   order_by: 4

@@ -10,6 +10,10 @@ blocks:
       env_vars:
         - name: DATABASE_URL
           value: mysql2://root@localhost/etmodel_test?pool=5&encoding=utf8mb4
+        - name: NODE_ENV
+          value: test
+        - name: RAILS_ENV
+          value: test
       jobs:
         - name: Test
           commands:
@@ -20,6 +24,7 @@ blocks:
             - bundle install --deployment --path vendor/bundle
             - cache store
             - cat /dev/null > config/database.yml
+            - bundle exec rails webpacker:compile
             - bundle exec rails db:setup
             - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format progress
       epilogue:

@@ -1,0 +1,14 @@
+staging: &mailserver
+  :address:              'smtp.gmail.com'
+  :port:                  587
+  :domain:               'quintel.com'
+  :user_name:            'mailserver@quintel.com'
+  :password:             'oQ3WYrX6J'
+  :authentication:       'plain'
+  :enable_starttls_auto:  true
+
+production:
+  <<: *mailserver
+
+development:
+  <<: *mailserver

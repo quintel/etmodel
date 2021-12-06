@@ -35,13 +35,6 @@ Mac users should be able to install the following prerequisites with [Homebrew](
 ## Installing
 
 * Pull this repository with `git clone git@github.com:quintel/etmodel.git`
-* Create your personal configuration files from the samples with
-
-  ```bash
-  cp -vn config/database.sample.yml config/database.yml
-  cp -vn config/config.sample.yml config/config.yml
-  cp -vn config/email.sample.yml config/email.yml
-  ```
   * **Local Engine** You can communicate with either a local version of ETEngine, or one of our servers by specifying the `api_url` in `config.yml`. To use a local version, change the standard beta server url to `http://localhost:<PORT>` based on which port you are running the Engine on.
   * **Database password** If you added a username and password to your mysql service, please replace the standard login info in `database.yml` with your own credentials.
 

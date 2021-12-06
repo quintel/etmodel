@@ -1,6 +1,30 @@
+.git
+.gitignore
+
+.ruby-version
+.rvmrc
+
+# Docker
+Dockerfile*
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundle
+
+# Rails
+capybara-*.html
+.rspec
+/public/system
+/coverage/
+/spec/tmp
+rerun.txt
+
+# Node
+node_modules
+
+# Comment out this rule if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/master.key
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -8,51 +32,32 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore Byebug command history file.
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+
+/public/assets
 .byebug_history
 
-db/dumps
-db/sphinx
-config/development.sphinx.conf
-config/database.yml
-config/config.yml
-config/email.yml
-.yardoc
-doc/*
-public/tmp/*
-public/packages/*
-public/assets/*
-public/system/*
-public/flowplayer/*
-public/videos/*
-import/*
-etm*.sql
-public/doc
-vendor/bundle
-*.tmproj
-.powrc
-.tmtags
-tags
-.rvmrc
-.rbenv-version
-.DS_Store
-coverage/*
-spec/controllers/coverage/*
-spec/models/coverage/*
-.sass-cache/*
-public/stylesheets/
-public/javascripts/all.js
-public/javascripts/i18n/translations.js
-*.sublime-project
-*.sublime-workspace
-
+# Ignore precompiled javascript packs
 /public/packs
 /public/packs-test
-/node_modules
+/public/assets
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+# Ignore yarn files
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
 
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
+# Ignore dotenv
+.env
+.docker-env

@@ -92,12 +92,17 @@ en:
         Pipelines, on the other hand, are useful in scenarios with higher volumes of captured CO<sub>2</sub> or
         when CCUS activities are concentrated in the same location."
     supply_ccus_steel_coal_gas:
-      title: Coal gas from steel sector
-      description: "Coal gas is produced as side product in the steel sector. This gas has
-        high carbon content and cannot be emitted. Currently, the coal gas is used in specific
+      title: Coal gases from blast furnaces (steel)
+      description: "Steel-making via the blast furnace production route produces various coal gases
+        (also called Works Arising Gasses) as side product. These gases have a high carbon content and cannot be emitted. Currently, the coal gas is used in
         CHPs and power plants for electricity and heat production. This process has high CO<sub>2</sub>
         emissions. An alternative for this process is CCUS, in which the coal gas can be
-        transformed into feedstock for the chemical sector."
+        transformed into feedstock for the chemical sector (steel-to-chemicals). Below, you can make assumptions about what
+        happens with coal gases in the future. <br /><br />
+        Please note that coal gas production is only available in your scenario when steel is produced via the blast
+        furnace production route (see <a href='/scenario/demand/industry/steel'>steel sector</a>). Since
+        a lot is still unknown about the steel-to-chemicals route the ETM does not explicitly model the
+        impact of this on other (fossil) feedstock use in the <a href='/scenario/demand/industry/chemicals'>chemicals sector</a>."
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub> emissions of biomass
       short_description:

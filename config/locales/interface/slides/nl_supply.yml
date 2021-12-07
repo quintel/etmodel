@@ -97,13 +97,18 @@ nl:
         opslag van kleinere volumes CO<sub>2</sub> of op minder centraal gelegen plekken. Pijpleidingen zijn juist
         een voordehandliggende keuze bij grotere volumes en als afvang, hergebruik en opslag sterk gecentreerd is."
     supply_ccus_steel_coal_gas:
-      title: Kolengas uit de staalsector
-      description: "Kolengas is een bijproduct van de ijzer- en staalproductie. Dit gas
-        heeft een hoog koolstofgehalte en mag niet uitgestoten worden. Op dit moment wordt
-        het gas toegepast in specifieke WKK's en elektriciteitscentrales voor de productie
+      title: Kolengas uit hoogovens (staalsector)
+      description: "Kolengassen zijn een bijproduct van de ijzer- en staalproductie uit hoogovens. Dit gas
+        heeft een hoog koolstofgehalte en mag niet worden uitgestoten. Op dit moment wordt
+        het gas toegepast in WKK's en elektriciteitscentrales voor de productie
         van elektriciteit en warmte. Dit proces heeft hoge CO<sub>2</sub> emissies. Een alternatief
         voor dit proces is CCUS. Het kolengas wordt hierbij omgezet in grondstoffen voor
-        de chemische sector."
+        de chemische sector ('steel-to-chemicals'). Hieronder kun je aannames doen over het gebruik van
+        kolengassen in de toekomst. <br /><br />
+        Kolengassen zijn alleen aanwezig als er staalproductie uit hoogovens
+        is in jouw scenario (zie <a href='/scenario/demand/industry/steel'>staalsector</a>). De steel-to-chemicals
+        route staat nog in de kinderschoenen. Daarom modelleert het ETM niet expliciet de gevolgen hiervan
+        voor het gebruik van andere (fossiele) grondstoffen in de <a href='/scenario/demand/industry/chemicals'>chemiesector</a>."
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot van biomassa
       short_description:

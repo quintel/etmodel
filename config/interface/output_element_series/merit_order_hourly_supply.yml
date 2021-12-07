@@ -623,3 +623,27 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: industry_chp_wood_pellets_merit_order_hourly_supply
+- label: coal_gas_ccgt
+  color: "#521b82"
+  order_by: 6
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_combined_cycle_coal_gas
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_combined_cycle_coal_gas_merit_order_hourly_supply
+- label: coal_gas_chp
+  color: "#7040c2"
+  order_by: 6
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_coal_gas
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_chp_coal_gas_merit_order_hourly_supply

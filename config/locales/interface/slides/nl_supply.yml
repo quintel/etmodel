@@ -10,6 +10,7 @@ nl:
         warmtenetten</a></li>\r\n  <li>als <a href=\"/scenario/supply/transport_fuels/road-transport\">transportbrandstof</a>:
         bio-ethanol, biodiesel, bio-LNG and biokerosine</li>\r\n  <li>als meestook
         in <a href=\"/scenario/supply/electricity/coal-plants\" >kolencentrales</a></li>\r\n
+        <li>als <a href=\"/scenario/supply/biomass/wood-pellets-in-steel-production\">houtpellets</a> in staalproductie </li>\r\n
         \ <li>als <a href=\"/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants\">biokolen
         of bio-olie</a> in energiecentrales</li>\r\n  <li>voor <a href=\"/scenario/supply/hydrogen/hydrogen-production\">waterstofproductie</a>
         d.m.v. vergassing</li>\r\n</ul>\r\n</br>\r\nDe inzet van biomassa kan ten
@@ -52,6 +53,12 @@ nl:
         gemaakt o.b.v. nationale potenties, zie hiervoor onze <a href="https://docs.energytransitionmodel.com/main/biomass"
         target="_blank">documentatie</a>. Indien je de potenties wil aanpassen, kan
         je dat hier doen.'
+    supply_biomass_steel:
+      title: Houtpellets in staalproductie
+      short_description:
+      description: |
+        Geef hier aan welk deel van de kolen in de cycloonoven wordt vervangen
+        door houtpellets.
     supply_bunker_fuels_international_aviation:
       title: Internationale luchtvaart
       short_description:
@@ -89,6 +96,19 @@ nl:
         Dit kan via schip of via pijpleidingen. De eerste optie ligt meer voor de hand bij afvang, hergebruik of
         opslag van kleinere volumes CO<sub>2</sub> of op minder centraal gelegen plekken. Pijpleidingen zijn juist
         een voordehandliggende keuze bij grotere volumes en als afvang, hergebruik en opslag sterk gecentreerd is."
+    supply_ccus_steel_coal_gas:
+      title: Kolengas uit hoogovens (staalsector)
+      description: "Kolengassen zijn een bijproduct van de ijzer- en staalproductie uit hoogovens. Dit gas
+        heeft een hoog koolstofgehalte en mag niet worden uitgestoten. Op dit moment wordt
+        het gas toegepast in WKK's en elektriciteitscentrales voor de productie
+        van elektriciteit en warmte. Dit proces heeft hoge CO<sub>2</sub> emissies. Een alternatief
+        voor dit proces is CCUS. Het kolengas wordt hierbij omgezet in grondstoffen voor
+        de chemische sector ('steel-to-chemicals'). Hieronder kun je aannames doen over het gebruik van
+        kolengassen in de toekomst. <br /><br />
+        Kolengassen zijn alleen aanwezig als er staalproductie uit hoogovens
+        is in jouw scenario (zie <a href='/scenario/demand/industry/steel'>staalsector</a>). De steel-to-chemicals
+        route staat nog in de kinderschoenen. Daarom modelleert het ETM niet expliciet de gevolgen hiervan
+        voor het gebruik van andere (fossiele) grondstoffen in de <a href='/scenario/demand/industry/chemicals'>chemiesector</a>."
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot van biomassa
       short_description:

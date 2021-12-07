@@ -126,26 +126,22 @@ en:
       short_description:
       description: "Here you can indicate how the production of crude steel will change
         in the future. \r\n</br></br>\r\nIn Europe, steel production has grown by
-        0.5% annually since 2001. Globally, growth is more than 5% with China the
-        biggest contributor (~16% annually).  "
-    industry_steel_blastfurnace_bat_consumption_useable_heat_share:
-      title: Blast furnace BAT
-      short_description:
-      description: "Blast furnaces are part of extensive industrial complexes that
-        have a technical lifetime of decades. Few adjustments are possible during
-        their lifetime, making optimal efficiencies difficult to attain. Best available
-        technology (BAT) blast furnaces are built according to latest insights. Such
-        blast furnaces would be roughly 10% more efficient than conventional blast
-        furnaces.\r\n</br></br>\r\nHere you can indicate what share of iron and steel
-        production uses BAT blast furnaces.\r\n<br>"
-    industry_steel_blastfurnace_current_consumption_useable_heat_share:
+        0.5% annually since 2001. Globally, growth is more than 5% with China being the
+        biggest contributor (~16% annually). "
+    industry_steel_blastfurnace_bof_share:
       title: Blast furnace
       short_description:
-      description: "Iron and steel are conventionally produced in a blastfurnace.
-        Globally, two-thirds of all iron and steel is produced this way (the rest
-        is recycled steel).  \r\n</br></br>\r\nHere you can indicate what share blast
-        furnaces have in total iron and steel production ."
-    industry_steel_hisarna_consumption_useable_heat_share:
+      description: |
+        Iron and steel are conventionally produced in a blast furnace
+        combined with basic oxygen furnace. Globally, two-thirds of all iron and steel is 
+        produced this way (the rest is recycled steel). </br></br>
+        Blast furnaces and basic oxygen furnaces produce gases with high carbon content. 
+        These gases cannot be emitted. Currently, the gases are used in specific CHP and 
+        power plants for heat and electricity production, which you can see in 
+        <a href="#" class="open_chart" data-chart-key="use_of_coal_gases" data-chart-location="side">
+        this chart</a>. </br></br>
+        Here you can indicate what share blast furnaces have in total iron and steel production.
+    industry_steel_cyclonefurnace_bof_share:
       title: Cyclone furnace
       short_description:
       description: "Iron production is energy and carbon intensive, so a strong incentive
@@ -155,28 +151,44 @@ en:
         In 2011 the first test plant was built in the Netherlands. It is expected
         that several more years of development are needed before the technology is
         fully mature. \r\n<br/><br/>\r\nHere you can indicate what share cyclone ovens
-        will have in future iron and steel production. "
-    industry_steel_electricfurnace_electricity_share:
-      title: Electric furnace (recycling)
+        will have in future iron and steel production."
+    industry_steel_scrap_hbi_eaf_share:
+      title: Recycling / HBI
       short_description:
       description: "Steel (like all metals) can be endlessly recycled. Electric arc
         furnaces are used to recycle 100% used steel. Steel can also be melted in
         blast furnaces, but input is limited to 20% there (80% new iron is required).
         Globally, almost one third of steel is produced in electric arc furnaces.
-        \r\n<p>\r\nHere you can indicate what share electric arc furnaces will have
-        in steel production. "
-    energy_steel_hisarna_transformation_coal_woodpellets_share:
-      title: Biomass in cyclone furnace
+        \r\n<p>\r\nBesides used steel, the electric arc furnaces can also be used in
+        combination with hot briquetted iron (HBI). This allows an easy separation of
+        the iron- and steelmaking processes. The HBI can be produced somewhere else,
+        and then shipped to the steelmaking plant. The energy use and emissions from
+        HBI production are not accounted for here. \r\n<p>\r\nHere you can indicate
+        what share electric arc furnaces will have in steel production."
+    industry_steel_dri_network_gas_share:
+      title: DRI (network gas)
       short_description:
-      description: "Producing pig iron for steel in a blast furnace requires large
-        amounts of coal. The coal serves a source of carbon and 'reducing agent' for
-        separating iron and oxygen from iron ore. Coal is used partly in the form
-        of cokes and partly as injected coal. The injected coal could also be replaced
-        by biomass in the form of charcoal. The potential for replacing coal in blast
-        furnaces is 50%.\r\n<br><br>\r\nThe potential for replacing coal in cyclone
-        furnaces by biomass in the form of torrified wood pellets is 100%.\r\n<br/><br/>\r\nHere
-        you can indicate what share of coal input in cyclone furnaces is replaced
-        by torrified wood pellets. "
+      description: "Direct reduction of iron (DRI) is one of the technologies that could
+      reduce energy use and CO<sub>2</sub> emissions in the steel sector. The ironmaking process
+      takes place in a DRI reactor, in which iron ore is reduced by network gas. This process
+      is much less energy-intensive compared to the blast or cyclone furnaces. There is
+      also no production of side-products such as the coal gases in blast furnaces. DRI is a
+      new technology that is not yet used commercialy. \r\n<p>\r\nHere you can indicate
+      what share DRI with network gas as reducing agent will have in steel production."
+    industry_steel_dri_hydrogen_share:
+      title: DRI (hydrogen)
+      short_description:
+      description: "Direct reduction of iron (DRI) is one of the technologies that could
+      reduce energy use and CO<sub>2</sub> emissions in the steel sector. The ironmaking process
+      takes place in a DRI reactor, in which iron ore is reduced by reducing agents. Compared to
+      the DRI which uses network gas as reducing agent, a DRI process based on hydrogen allows
+      80% of the network gas to be replaced by hydrogen. \r\n</br></br>\r\nThe DRI process is much
+      less energy-intensive compared to the blast or cyclone furnaces and does not produces
+      side-products such as the coal gases in blast furnaces. DRI with hydrogen as reducing agent
+      produces almost no CO<sub>2</sub> emissions, making it an even better emission saving
+      options then the DRI based on network gas. DRI is a new technology that is not yet
+      commercialy used. \r\n</br></br>\r\nHere you can indicate what share DRI with hydrogen as
+      reducing agent will have in steel production."
     industry_other_metals_process_electricity_efficiency:
       title: Electricity
       short_description:
@@ -206,7 +218,7 @@ en:
       short_description:
       description: |
         Here you can indicate the total size of the central ICT industry in the future.
-        The demand for the start year of your scenario is set as the demand from the 
+        The demand for the start year of your scenario is set as the demand from the
         economic sector "Information and communication" (NACE J).
     industry_useful_demand_for_other_ict_efficiency:
       title: Efficiency improvement

@@ -1,0 +1,67 @@
+---
+- label: total_coal_gas_production
+  color: red
+  order_by: 100
+  group:
+  is_target_line: true
+  target_line_position: '1'
+  gquery: present_coal_gas_production_in_steel_production
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_coal_gases
+  key: present_coal_gas_production_use_of_coal_gases
+- label: total_coal_gas_production
+  color: red
+  order_by: 105
+  group:
+  is_target_line: true
+  target_line_position: '2'
+  gquery: future_coal_gas_production_in_steel_production
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_coal_gases
+  key: future_coal_gas_production_use_of_coal_gases
+- label: coal_gas_in_feedstock
+  color: "#2ACD99"
+  order_by: 200
+  group:
+  is_target_line: false
+  target_line_position:
+  gquery: use_of_coal_gas_in_feedstock
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_coal_gases
+  key: coal_gas_in_feedstock_use_of_coal_gases
+- label: coal_gas_in_combined_cycle
+  color: "#521b82"
+  order_by: 205
+  group:
+  is_target_line: false
+  target_line_position:
+  gquery: use_of_coal_gas_in_combined_cycle
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_coal_gases
+  key: coal_gas_in_combined_cycle_use_of_coal_gases
+- label: coal_gas_in_chp
+  color: "#7040c2"
+  order_by: 210
+  group:
+  is_target_line: false
+  target_line_position:
+  gquery: use_of_coal_gas_in_chp
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_coal_gases
+  key: coal_gas_in_chp_use_of_coal_gases
+- label: coal_gas_in_steel_production
+  color: "#A3BFF6"
+  order_by: 215
+  group:
+  is_target_line: false
+  target_line_position:
+  gquery: use_of_coal_gas_in_steel_production
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_coal_gases
+  key: coal_gas_in_steel_production_use_of_coal_gases

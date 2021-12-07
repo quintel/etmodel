@@ -134,13 +134,17 @@ nl:
     industry_steel_blastfurnace_bof_share:
       title: Hoogoven
       short_description:
-      description: "IJzer- en staalproductie met een hoogoven en oxystaaloven is de conventionele
+      description: |
+        IJzer- en staalproductie met een hoogoven en oxystaaloven is de conventionele
         wijze van produceren. Wereldwijd wordt tweederde van de ijzer- en staalproductie
-        met een hoogoven geproduceerd.\r\n</br></br>\r\nHoogovens en oxystaalovens produceren
-        gassen met een hoog koolstofgehalte. Deze gassen mogen niet uitgestoten worden.
-        Op dit moment worden de gassen gebruikt in specifieke WKK's en elektriciteitscentratles
-        voor de productie van warmte en elektriciteit.\r\n</br></br>\r\nGeef hier aan welk aandeel
-        de hoogoven heeft bij de productie van ijzer en staal.\r\n"
+        met een hoogoven geproduceerd. </br></br>
+        Hoogovens en oxystaalovens produceren gassen met een hoog koolstofgehalte. Deze 
+        gassen mogen niet uitgestoten worden. Op dit moment worden de gassen gebruikt in 
+        specifieke WKK's en elektriciteitscentrales voor de productie van warmte en 
+        elektriciteit, wat je kunt zien
+        <a href="#" class="open_chart" data-chart-key="use_of_coal_gases" data-chart-location="side">
+        deze grafiek</a>. </br></br>
+        Geef hier aan welk aandeel de hoogoven heeft bij de productie van ijzer en staal.
     industry_steel_cyclonefurnace_bof_share:
       title: Cycloonoven
       short_description:

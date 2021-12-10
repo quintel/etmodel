@@ -11,6 +11,7 @@
   interface_group: production_route
   position: 1
   slide_key: demand_industry_steel
+  related_node: industry_steel_blastfurnace_bof_production
 - key: industry_steel_dri_network_gas_share
   share_group: steel_production
   step_value: 0.1
@@ -18,6 +19,7 @@
   interface_group: production_route
   position: 3
   slide_key: demand_industry_steel
+  related_node: industry_steel_dri_network_gas_production
 - key: industry_steel_dri_hydrogen_share
   share_group: steel_production
   step_value: 0.1
@@ -25,6 +27,7 @@
   interface_group: production_route
   position: 4
   slide_key: demand_industry_steel
+  related_node: industry_steel_dri_hydrogen_production
 - key: industry_steel_cyclonefurnace_bof_share
   share_group: steel_production
   step_value: 0.1
@@ -32,6 +35,7 @@
   interface_group: production_route
   position: 5
   slide_key: demand_industry_steel
+  related_node: industry_steel_cyclonefurnace_bof_production
 - key: industry_steel_scrap_hbi_eaf_share
   share_group: steel_production
   step_value: 0.1
@@ -39,3 +43,4 @@
   interface_group: production_route
   position: 6
   slide_key: demand_industry_steel
+  related_node: industry_steel_scrap_hbi_eaf_production

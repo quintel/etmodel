@@ -132,14 +132,13 @@ en:
       title: Blast furnace
       short_description:
       description: |
-        Iron and steel are conventionally produced in a blast furnace
-        combined with basic oxygen furnace. Globally, two-thirds of all iron and steel is 
-        produced this way (the rest is recycled steel). </br></br>
-        Blast furnaces and basic oxygen furnaces produce gases with high carbon content. 
-        These gases cannot be emitted. Currently, the gases are used in specific CHP and 
-        power plants for heat and electricity production, which you can see in 
-        <a href="#" class="open_chart" data-chart-key="use_of_coal_gases" data-chart-location="side">
-        this chart</a>. </br></br>
+        Iron and steel are conventionally produced in a blast furnace combined with basic
+        oxygen furnace. Steel can also be recycled in blast furnaces, but input is limited
+        to 20% there (80% new iron is required). Blast furnaces and basic oxygen furnaces
+        produce gases with high carbon content. These gases cannot be emitted. Currently,
+        the gases are used in specific CHP and power plants for heat and electricity production,
+        which you can see in <a href="#" class="open_chart" data-chart-key="use_of_coal_gases"
+        data-chart-location="side"> this chart</a>. </br></br>
         Here you can indicate what share blast furnaces have in total iron and steel production.
     industry_steel_cyclonefurnace_bof_share:
       title: Cyclone furnace
@@ -150,7 +149,10 @@ en:
         processes in one, reducing energy consumption and CO<sub>2</sub> emissions.
         In 2011 the first test plant was built in the Netherlands. It is expected
         that several more years of development are needed before the technology is
-        fully mature. \r\n<br/><br/>\r\nHere you can indicate what share cyclone ovens
+        fully mature. \r\n<br/><br/>\r\n The cyclone furnaces are unique in the sense
+        that their coal input can be replaced for up to 40% by
+        <a href=/scenario/supply/biomass/wood-pellets-in-steel-production>biomass </a>.
+        \r\n<br/><br/>\r\nHere you can indicate what share cyclone ovens
         will have in future iron and steel production."
     industry_steel_scrap_hbi_eaf_share:
       title: Recycling / HBI

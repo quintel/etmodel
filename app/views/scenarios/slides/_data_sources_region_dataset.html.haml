@@ -1,6 +1,4 @@
-- if show_description_for_country?
-  %p= t('slides.data_sources_region_dataset.country_description').html_safe
-- else
+- if show_link_to_datamanager?
   %p
     = t('slides.data_sources_region_dataset.subregion_description').html_safe
     %br/
@@ -8,3 +6,5 @@
     = link_to link_to_datamanager_for_current_area, class: "simple-button", target: :_blank do
       %span{class: 'fa fa-globe'}
       ="#{t('dataset.view_in_dataset_manager')} →"
+- else
+  %p= t('slides.data_sources_region_dataset.country_description').html_safe

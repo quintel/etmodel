@@ -32,14 +32,14 @@ module LayoutHelper
     code = area[:area_code]
 
     selector = params[:country] || Current.setting.area_code
-    selected = selector == code || (selector == 'nl' && code == 'nl2019') ? "selected='true'" : nil
+    selected = selector == code || (selector == 'nl' && code =~ /^nl\d{4}$/)
 
     label = name_for(code)
     label += " (#{ I18n.t('new') })" if area[:test]
 
     content_tag :option, label.html_safe,
       value: code,
-      selected: selected,
+      selected: selected ? 'selected="true"' : nil,
       'data-earliest' => area[:analysis_year] + 1
   end
 

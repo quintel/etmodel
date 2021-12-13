@@ -19,6 +19,11 @@
   additional_specs:
     other:
       timeframe: i_h_d_w
+- key: settings_enable_storage_optimisation_transport_car_flexibility_p2p_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 3
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
 - key: capacity_of_energy_flexibility_pumped_storage_electricity
   step_value: 1.0
   unit: MW
@@ -30,6 +35,11 @@
   additional_specs:
     other:
       timeframe: i_h_d_w_s
+- key: settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 3
+  slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
 - key: capacity_of_energy_flexibility_hv_opac_electricity
   step_value: 1.0
   unit: MW
@@ -40,6 +50,11 @@
   additional_specs:
     other:
       timeframe: i_h_d_w_s
+- key: settings_enable_storage_optimisation_energy_flexibility_hv_opac_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 3
+  slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
 - key: capacity_of_energy_flexibility_mv_batteries_electricity
   step_value: 1.0
   unit: MW
@@ -50,7 +65,11 @@
   additional_specs:
     other:
       timeframe: i_h_d
-
+- key: settings_enable_storage_optimisation_energy_flexibility_mv_batteries_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 3
+  slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
 - key: wtp_of_households_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
@@ -61,6 +80,11 @@
   additional_specs:
     other:
       timeframe: i_h_d_w
+- key: settings_enable_storage_optimisation_households_flexibility_p2p_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 3
+  slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
 - key: wtp_of_transport_car_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"

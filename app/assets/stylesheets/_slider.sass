@@ -389,6 +389,11 @@ html.no-opacity .quinn.disabled
     margin-top: 0 !important
     padding-top: 13px
 
+  // Don't add an extra border when the toggle is preceded by an interface group label.
+  .interface_group + .slider p.toggle-title
+    border-top: none
+    padding-top: 0
+
 // Inputs where values are rendered as a radio button list.
 
 .radio-collection-view

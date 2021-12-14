@@ -2,27 +2,61 @@
   background-position: 0 1px
   background-repeat: no-repeat
   display: inline-block // Fixes blurred background image in Chrome.
-  &.be, &.br, &.de, &.dk, &.es, &.eu, &.fr, &.nl, &.nl2019, &.pl, &.uk
-    padding-left: 28px
-  &.be
-    background-image: asset-url("flags-24/be.png")
-  &.br
-    background-image: asset-url("flags-24/br.png")
-  &.de
-    background-image: asset-url("flags-24/de.png")
-  &.dk
-    background-image: asset-url("flags-24/dk.png")
-  &.es
-    background-image: asset-url("flags-24/es.png")
-  &.eu
-    background-image: asset-url("flags-24/eu.png")
-  &.fr
-    background-image: asset-url("flags-24/fr.png")
+  &.at_austria
+    @include flag($region: "at_austria")
+  &.be_belgium
+    @include flag($region: "be_belgium")
+  &.bg_bulgaria
+    @include flag($region: "bg_bulgaria")
+  &.cy_cyprus
+    @include flag($region: "cy_cyprus")
+  &.cz_czechia
+    @include flag($region: "cz_czechia")
+  &.de_germany
+    @include flag($region: "de_germany")
+  &.dk_denmark
+    @include flag($region: "dk_denmark")
+  &.ee_estonia
+    @include flag($region: "ee_estonia")
+  &.el_greece
+    @include flag($region: "el_greece")
+  &.es_spain
+    @include flag($region: "es_spain")
+  // &.eu
+  //   @include flag($region: "eu")
+  &.fi_finland
+    @include flag($region: "fi_finland")
+  &.fr_france
+    @include flag($region: "fr_france")
+  &.hr_croatia
+    @include flag($region: "hr_croatia")
+  &.hu_hungary
+    @include flag($region: "hu_hungary")
+  &.ie_ireland
+    @include flag($region: "ie_ireland")
+  &.it_italy
+    @include flag($region: "it_italy")
+  &.lt_lithuania
+    @include flag($region: "lt_lithuania")
+  &.lu_luxembourg
+    @include flag($region: "lu_luxembourg")
+  &.lv_latvia
+    @include flag($region: "lv_latvia")
   &.nl
-    background-image: asset-url("flags-24/nl.png")
+    @include flag($region: "nl")
   &.nl2019
-    background-image: asset-url("flags-24/nl.png")
-  &.pl
-    background-image: asset-url("flags-24/pl.png")
-  &.uk
-    background-image: asset-url("flags-24/uk.png")
+    @include flag($region: "nl")
+  &.pl_poland
+    @include flag($region: "pl_poland")
+  &.pt_portugal
+    @include flag($region: "pt_portugal")
+  &.ro_romania
+    @include flag($region: "ro_romania")
+  &.se_sweden
+    @include flag($region: "se_sweden")
+  &.si_slovenia
+    @include flag($region: "si_slovenia")
+  &.sk_slovakia
+    @include flag($region: "sk_slovakia")
+  &.uk_united_kingdom
+    @include flag($region: "uk_united_kingdom")

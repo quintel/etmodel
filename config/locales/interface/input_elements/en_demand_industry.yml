@@ -146,7 +146,7 @@ en:
       description: "Iron production is energy and carbon intensive, so a strong incentive
         exists to look for alternative technologies to make the process more efficient.
         \r\nCyclone ovens (also known as Hisarna ovens) will combine several different
-        processes in one, reducing energy consumption and CO<sub>2</sub> emissions.
+        processes in one, slightly reducing energy consumption and CO<sub>2</sub> emissions.
         In 2011 the first test plant was built in the Netherlands. It is expected
         that several more years of development are needed before the technology is
         fully mature. \r\n<br/><br/>\r\n The cyclone furnaces are unique in the sense
@@ -158,43 +158,37 @@ en:
       title: Recycling / HBI
       short_description:
       description: "Steel (like all metals) can be endlessly recycled. Electric arc
-        furnaces are used to recycle 100% used steel. Steel can also be melted in
-        blast furnaces, but input is limited to 20% there (80% new iron is required).
-        Globally, almost one third of steel is produced in electric arc furnaces.
-        Recycled steel is generally of lower quality than primary production, which
-        makes it unsuitable for high quality applications such as in the automotive
-        industry, for airplanes, and for windmills. \r\n<p>\r\n Besides used steel,
-        the electric arc furnaces can also be used in combination with hot briquetted
-        iron (HBI). This allows an easy separation of the iron- and steelmaking processes.
-        The HBI is imported from another country. The energy use and emissions from
-        HBI production are not accounted for here. They should be accounted for in
-        the country of origin. The quality of HBI can differ. It is possible to buy
+        furnaces are used to recycle 100% used steel. Recycled steel is generally
+        of lower quality than primary production, which makes it unsuitable for high
+        quality applications such as in the automotive industry, for airplanes, and
+        for windmills. \r\n<p>\r\n Besides used steel, the electric arc furnaces can
+        also be used with hot briquetted iron (HBI) as input. This allows an easy
+        separation of the iron- and steelmaking processes. The HBI is produced in
+        other countries and imported. The energy use and emissions from HBI production
+        are not accounted for here. They should be considered for the country where
+        the HBI is produced. The quality of HBI can differ. It is possible to buy
         high quality HBI and produce high quality steel. \r\n<p>\r\nHere you can
         indicate what share electric arc furnaces will have in steel production."
     industry_steel_dri_network_gas_share:
       title: DRI (network gas)
       short_description:
-      description: "Direct reduction of iron (DRI) is one of the technologies that could
-      reduce energy use and CO<sub>2</sub> emissions in the steel sector. The ironmaking process
-      takes place in a DRI reactor, in which iron ore is reduced by network gas. This process
-      is much less energy-intensive compared to the blast or cyclone furnaces. There is
-      also no production of side-products such as the coal gases in blast furnaces. DRI is a
-      new technology that is not yet used commercialy. \r\n<p>\r\nHere you can indicate
-      what share DRI with network gas as reducing agent will have in steel production."
+      description: "Direct reduction of iron (DRI) is an alternative for the blastfurnace.
+      The ironmaking process takes place in a DRI reactor, in which iron ore is reduced
+      by network gas. This process has lower CO<sub>2</sub> emissions compared to the
+      blast furnace. There is also no production of coal gases. DRI is a new technology
+      that is not yet used commercialy. \r\n<p>\r\nHere you can indicate what share
+      DRI with network gas as reducing agent will have in steel production."
     industry_steel_dri_hydrogen_share:
       title: DRI (hydrogen)
       short_description:
-      description: "Direct reduction of iron (DRI) is one of the technologies that could
-      reduce energy use and CO<sub>2</sub> emissions in the steel sector. The ironmaking process
-      takes place in a DRI reactor, in which iron ore is reduced by reducing agents. Compared to
-      the DRI which uses network gas as reducing agent, a DRI process based on hydrogen allows
-      80% of the network gas to be replaced by hydrogen. \r\n</br></br>\r\nThe DRI process is much
-      less energy-intensive compared to the blast or cyclone furnaces and does not produces
-      side-products such as the coal gases in blast furnaces. DRI with hydrogen as reducing agent
-      produces almost no CO<sub>2</sub> emissions, making it an even better emission saving
-      options then the DRI based on network gas. DRI is a new technology that is not yet
-      commercialy used. \r\n</br></br>\r\nHere you can indicate what share DRI with hydrogen as
-      reducing agent will have in steel production."
+      description: "Direct reduction of iron (DRI) is an alternative for the blastfurnace.
+      The ironmaking process takes place in a DRI reactor, in which iron ore is reduced
+      by reducing agents. Compared to the DRI with network gas as reducing agent,
+      a DRI process based on hydrogen allows 80% of the network gas to be replaced by
+      hydrogen. \r\n</br></br>\r\n DRI with hydrogen as reducing agent produces almost
+      no CO<sub>2</sub> emissions. There is also no production coal gases. DRI is a new
+      technology that is not yet commercialy used. \r\n</br></br>\r\nHere you can
+      indicate what share DRI with hydrogen as reducing agent will have in steel production."
     industry_other_metals_process_electricity_efficiency:
       title: Electricity
       short_description:

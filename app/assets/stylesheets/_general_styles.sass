@@ -8,6 +8,10 @@ $link-color: #3c8ed8
     color: darken($link-color, 23%)
     text-decoration: underline
 
+@mixin flag($region)
+  padding-left: 28px
+  background-image: asset-url("flags-24/" + $region + ".png")
+
 body
   font-family: $body-font-family
   font-size: 13px

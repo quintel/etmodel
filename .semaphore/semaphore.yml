@@ -12,6 +12,8 @@ blocks:
           value: mysql2://root@localhost/etmodel_test?pool=5&encoding=utf8mb4
         - name: RAILS_ENV
           value: test
+        - name: BUNDLE_JOBS
+          value: '4'
       jobs:
         - name: Test
           commands:

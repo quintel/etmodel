@@ -127,14 +127,23 @@ nl:
         kan worden vergroot, verlaagd, of worden verplaatst in de tijd (zie voor achtergrondinformatie 
         het <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Overzicht van
         flexbiliteit</a>). </br></br>
-        Elke opslagtechnologie heeft een <i>willingness-to-pay</i> die de maximale prijs aangeeft 
-        waarvoor de technologie bereid is elektriciteit te consumeren om op te laden. Als de 
+        Het ETM modelleert twee soorten batterijgedrag.<br /><ol><li>
+        Standaard gedraagt een batterij zich net als andere flexibele technologieën.
+        Elke opslagtechnologie heeft een <i>willingness-to-pay</i> die de maximale prijs aangeeft
+        waarvoor de technologie bereid is om op te laden. Als de
         elektriciteitsprijs in een bepaald uur lager is dan de willingness-to-pay van de technologie, 
         zal de opslagtechnologie in dat uur opladen. </br></br>
         Elke technologie heeft ook <i>willingness-to-accept</i>, die aangeeft wat de minimale prijs 
-        is waarvoor het bereid is de opgeslagen elektriciteit te ontladen. </br></br>
+        is waarvoor het bereid is de opgeslagen elektriciteit te ontladen. Dit is vergelijkbaar
+        met het begrip 'marginale kosten' bij regelbare centrales.</li>
+        <li>Daarnaast biedt het ETM een optie om een prognose-algoritme te gebruiken om het gedrag van batterijen te verbeteren.
+        In plaats van alleen te kijken naar de elektriciteitsprijs in één uur, kijkt het algoritme
+        vooruit in de tijd en probeert het interessante momenten om te laden en ontladen te identificeren.
+        Dit gebeurt door naar de pieken en dalen in de 'residual load' te kijken.</li></ol><br/>
         In de onderstaande slides kun je de willingness-to-pay, de willingness-to-accept en het 
-        geïnstalleerde vermogen voor verschillende opslagtechnologieën instellen. Let op dat het 
+        geïnstalleerde vermogen voor verschillende opslagtechnologieën instellen. Met een toggle kun
+        je het prognose-functie inschakelen. Dit overschrijft de willingness-to-pay-instellingen
+        en gebruikt in plaats daarvan het algoritme om het batterijgedrag te bepalen. Let op dat het
         daadwerkelijke gedrag van deze technologieën gecompliceerder is dan toegelicht in deze korte 
         beschrijving. De <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> bevat een meer gedetailleerde beschrijving.
@@ -144,10 +153,11 @@ nl:
       description: |
         Batterijen kunnen in huishoudens geïnstalleerd worden. Deze kunnen vervolgens worden opgeladen 
         door het elektriciteitsnet of door zonnepanelen, als huishoudens deze op hun daken hebben liggen. </br></br>
-        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat, als de elektriciteitsprijs 
-        in een bepaald uur lager is dan de willingness-to-pay, de batterij in dat uur gaat opladen. Wanneer 
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden 
-        ontladen. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        ontladen.
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_transport_car_flexibility_p2p_electricity:
       title: Batterijen in elektrische auto's
@@ -155,10 +165,11 @@ nl:
       description: |
         Elektrische auto's kunnen functioneren als een kosteneffectieve manier van elektriciteitsopslag, 
         aangezien ze een relatief grote batterij bevatten. </br></br>
-        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat, als de elektriciteitsprijs 
-        in een bepaald uur lager is dan de willingness-to-pay, de batterij in dat uur gaat opladen. Wanneer 
-        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden 
-        ontladen. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
+        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
+        ontladen.
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_energy_flexibility_mv_batteries_electricity:
       title: Grootschalige batterijopslag
@@ -167,10 +178,11 @@ nl:
         Deze grootschalige batterij wordt typisch aangesloten op het middenspanningsnet. Hoewel de batterij 
         niet reageert op netwerkcongestie kan het gedrag wel helpen om capaciteitsproblemen op het 
         middenspanningsnet te voorkomen. </br></br>
-        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat, als de elektriciteitsprijs 
-        in een bepaald uur lager is dan de willingness-to-pay, de batterij in dat uur gaat opladen. Wanneer 
-        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden 
-        ontladen. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
+        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
+        ontladen.
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_energy_flexibility_pumped_storage_electricity:
       title: Stuwmeren
@@ -179,11 +191,11 @@ nl:
         Stuwmeren bieden een goedkope vorm van grootschalige elektriciteitsopslag. Elektriciteit wordt 
         gebruikt om water op te pompen van een lager gelegen reservoir naar een hoger reservoir. Elektriciteit 
         wordt vervolgens geproduceerd door het opgeslagen water terug te laten stromen door een turbine. </br></br>
-        Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat, als de elektriciteitsprijs 
-        in een bepaald uur lager is dan de willingness-to-pay, water in dat uur opgepompt zal worden vanaf het 
-        lager gelegen reservoir. Wanneer de elektriciteitsprijs groter is dan de willingness-to-accept, zal het opgeslagen 
-        water terugstromen om elektriciteit te produceren. Zie onze 
-        <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat stuurbaar is wanneer er geladen en ontladen wordt. Als de elektriciteitsprijs
+        in een bepaald uur lager is dan de willingness-to-pay, gaat de opslag in dat uur opladen. Wanneer
+        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
+        ontladen.
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de opslag. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_energy_flexibility_hv_opac_electricity:
       title: OPAC
@@ -192,11 +204,11 @@ nl:
         De Ondergrondse Pomp Accumulatie Centrale (OPAC) is een vorm van grootschalige elektriciteitsopslag. Er 
         wordt gebruik gemaakt van het hoogteverschil tussen twee reservoirs, waarvan het lager gelegen reservoir 
         zich ondergronds bevindt, om elektriciteit op te slaan als potentiële energie. </br></br>
-        Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat, als de elektriciteitsprijs 
-        in een bepaald uur lager is dan de willingness-to-pay, water in dat uur opgepompt zal worden vanaf het 
-        lager gelegen reservoir. Wanneer de elektriciteitsprijs groter is dan de willingness-to-accept, zal het opgeslagen 
-        water terugstromen door turbine om elektriciteit te produceren. Zie onze 
-        <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat stuurbaar is wanneer er geladen en ontladen wordt. Als de elektriciteitsprijs
+        in een bepaald uur lager is dan de willingness-to-pay, gaat de opslag in dat uur opladen. Wanneer
+        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
+        ontladen.
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de opslag. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_electricity_conversion_overview:
       title: Gedrag van conversietechnologieën

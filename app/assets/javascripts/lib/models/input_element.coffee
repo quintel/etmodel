@@ -100,7 +100,7 @@ class @InputElement extends Backbone.Model
       App.update_merit_order_checkbox()
 
   handle_boolean_callbacks: ->
-    enabled = @get('user_value')
+    enabled = @get('user_value') || false
 
     # Handle when_true, when_false config
     { when_true, when_false } = (@get('config') || {})

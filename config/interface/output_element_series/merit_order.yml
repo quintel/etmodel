@@ -323,6 +323,18 @@
   dependent_on:
   output_element_key: merit_order
   key: energy_power_solar_pv_solar_radiation_merit_order
+- label: energy_power_solar_pv_offshore
+  color: "#ffae00"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_solar_pv_offshore_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: energy_power_solar_pv_offshore_merit_order
 - label: energy_power_solar_csp_solar_radiation
   color: "#ced976"
   order_by: 1

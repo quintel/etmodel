@@ -155,6 +155,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_solar_pv_solar_radiation_volatile_merit_order_hourly_supply
+- label: energy_power_solar_pv_offshore
+  color: "#e6d36c"
+  order_by: 5
+  group: volatile
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_solar_pv_offshore
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_solar_pv_offshore_volatile_merit_order_hourly_supply
 - label: energy_power_wind_turbine_coastal
   color: "#065530"
   order_by: 5

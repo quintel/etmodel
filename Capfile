@@ -23,6 +23,7 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/puma'
 require 'ed25519'
+require 'bcrypt_pbkdf'
 
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Daemon

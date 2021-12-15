@@ -100,6 +100,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.16)
+    bcrypt_pbkdf (1.1.0)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -546,6 +547,7 @@ DEPENDENCIES
   authlogic
   babel-transpiler
   bcrypt
+  bcrypt_pbkdf
   better_errors
   browser
   capistrano (~> 3.9)

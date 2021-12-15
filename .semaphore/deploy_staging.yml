@@ -26,4 +26,4 @@ blocks:
         - name: Docker Hub credentials
         - name: Staging SSH settings
     run:
-      when: branch = 'docker'
+      when: branch = 'master'

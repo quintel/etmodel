@@ -135,25 +135,22 @@ en:
         Iron and steel are conventionally produced in a blast furnace combined with basic
         oxygen furnace. Steel can also be recycled in blast furnaces, but input is limited
         to 20% there (80% new iron is required). Blast furnaces and basic oxygen furnaces
-        produce gases with high carbon content. These gases cannot be emitted. Currently,
-        the gases are used in specific CHP and power plants for heat and electricity production,
+        produce greenhouse gases and other gases. These gases cannot be emitted. Currently,
+        they are used in specific CHP and power plants for heat and electricity production,
         which you can see in <a href="#" class="open_chart" data-chart-key="use_of_coal_gases"
         data-chart-location="side"> this chart</a>. </br></br>
         Here you can indicate what share blast furnaces have in total iron and steel production.
     industry_steel_cyclonefurnace_bof_share:
       title: Cyclone furnace
       short_description:
-      description: "Iron production is energy and carbon intensive, so a strong incentive
-        exists to look for alternative technologies to make the process more efficient.
-        \r\nCyclone ovens (also known as Hisarna ovens) will combine several different
-        processes in one, slightly reducing energy consumption and CO<sub>2</sub> emissions.
-        In 2011 the first test plant was built in the Netherlands. It is expected
-        that several more years of development are needed before the technology is
-        fully mature. \r\n<br/><br/>\r\n The cyclone furnaces are unique in the sense
-        that their coal input can be replaced for up to 40% by
+      description: "Cyclone ovens (also known as Hisarna ovens) combine several different
+        processes in one. In 2011 the first test plant was built in the Netherlands.
+        It is expected that several more years of development are needed before the
+        technology is fully mature. \r\n<br/><br/>\r\n The cyclone furnaces are unique
+        in the sense that their coal input can be replaced for up to 40% by
         <a href=/scenario/supply/biomass/wood-pellets-in-steel-production>biomass </a>.
-        \r\n<br/><br/>\r\nHere you can indicate what share cyclone ovens
-        will have in future iron and steel production."
+        \r\n<br/><br/>\r\nHere you can indicate what share cyclone ovens will have
+        in future iron and steel production."
     industry_steel_scrap_hbi_eaf_share:
       title: Recycling / HBI
       short_description:
@@ -177,18 +174,19 @@ en:
       by network gas. This process has lower CO<sub>2</sub> emissions compared to the
       blast furnace. There is also no production of coal gases. DRI is a new technology
       that is not yet used commercialy. \r\n<p>\r\nHere you can indicate what share
-      DRI with network gas as reducing agent will have in steel production."
+      DRI with network gas as reducing agent will have in future steel production."
     industry_steel_dri_hydrogen_share:
       title: DRI (hydrogen)
       short_description:
       description: "Direct reduction of iron (DRI) is an alternative for the blastfurnace.
       The ironmaking process takes place in a DRI reactor, in which iron ore is reduced
       by reducing agents. Compared to the DRI with network gas as reducing agent,
-      a DRI process based on hydrogen allows 80% of the network gas to be replaced by
-      hydrogen. \r\n</br></br>\r\n DRI with hydrogen as reducing agent produces almost
-      no CO<sub>2</sub> emissions. There is also no production coal gases. DRI is a new
-      technology that is not yet commercialy used. \r\n</br></br>\r\nHere you can
-      indicate what share DRI with hydrogen as reducing agent will have in steel production."
+      a DRI process based on hydrogen allows 80% of the network gas to be replaced
+      by hydrogen. \r\n</br></br>\r\n DRI with hydrogen as reducing agent produces
+      almost no CO<sub>2</sub> emissions. There is also no production of coal gases.
+      DRI is a new technology that is not yet commercialy used. \r\n</br></br>\r\n
+      Here you can indicate what share DRI with hydrogen as reducing agent will have
+      in future steel production."
     industry_other_metals_process_electricity_efficiency:
       title: Electricity
       short_description:

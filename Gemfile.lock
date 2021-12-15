@@ -200,6 +200,7 @@ GEM
       dry-initializer (~> 3.0)
       dry-schema (~> 1.8, >= 1.8.0)
     dynamic_form (1.1.4)
+    ed25519 (1.2.4)
     erubi (1.10.0)
     execjs (2.8.1)
     factory_bot (4.11.1)
@@ -559,6 +560,7 @@ DEPENDENCIES
   dalli
   database_cleaner
   dynamic_form
+  ed25519
   factory_bot_rails (~> 4.8)
   font-awesome-rails
   haml (~> 5.0)

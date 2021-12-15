@@ -15,7 +15,11 @@
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'beta.et-model.com', user: 'deploy', roles: %w[web app db]
+server 'beta.et-model.com',
+  user: 'deploy',
+  roles: %w[web app db],
+  ssh_options: { keys: %w[~/.ssh/id_deploy] }
+
 set :branch, 'master'
 
 

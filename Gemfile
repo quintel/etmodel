@@ -77,6 +77,7 @@ group :development do
   gem 'capistrano-bundler',     '~> 1.1',   require: false
   gem 'capistrano-maintenance', '~> 1.0',   require: false
   gem 'capistrano3-puma',       '~> 5.0.4', require: false
+  gem 'ed25519'
 end
 
 group :test, :development do

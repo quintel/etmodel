@@ -22,6 +22,7 @@ require 'capistrano/maintenance'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/puma'
+require 'ed25519'
 
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Daemon

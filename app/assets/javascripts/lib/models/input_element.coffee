@@ -16,6 +16,10 @@ class @InputElement extends Backbone.Model
       App.analytics.inputChanged(input.get('key'))
     )
 
+    if @get('unit') == 'boolean'
+      @bind('change:user_value', @handle_boolean_callbacks)
+      @handle_boolean_callbacks()
+
   conversions: ->
     conversions = @get('conversions') or []
 
@@ -94,6 +98,20 @@ class @InputElement extends Backbone.Model
   additional_callbacks: ->
     if @get('key') == 'settings_enable_merit_order'
       App.update_merit_order_checkbox()
+
+  handle_boolean_callbacks: ->
+    enabled = @get('user_value')
+
+    # Handle when_true, when_false config
+    { when_true, when_false } = (@get('config') || {})
+
+    if when_true && when_true.disables
+      for key in when_true.disables
+        @collection.markInputDisabled(key, @get('key'), enabled)
+
+    if when_false && when_false.disables
+      for key in when_false.disables
+        @collection.markInputDisabled(key, @get('key'), !enabled)
 
   # Returns the step value of the input, except in cases where the step would
   # be too small to be meaningful (e.g. in small datasets), in which case the

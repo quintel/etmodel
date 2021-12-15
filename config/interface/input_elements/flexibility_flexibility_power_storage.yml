@@ -35,6 +35,11 @@
   interface_group: storage_optimisation
   position: 13
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
+  config:
+    when_true:
+      disables:
+        - wtp_of_households_flexibility_p2p_electricity
+        - wta_of_households_flexibility_p2p_electricity
 
 - key: transport_car_using_electricity_availability
   step_value: 0.1
@@ -72,6 +77,11 @@
   position: 23
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  config:
+    when_true:
+      disables:
+        - wtp_of_transport_car_flexibility_p2p_electricity
+        - wta_of_transport_car_flexibility_p2p_electricity
 
 - key: capacity_of_energy_flexibility_pumped_storage_electricity
   step_value: 1.0
@@ -149,6 +159,11 @@
   position: 43
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
+  config:
+    when_true:
+      disables:
+        - wtp_of_energy_flexibility_hv_opac_electricity
+        - wta_of_energy_flexibility_hv_opac_electricity
 
 - key: capacity_of_energy_flexibility_mv_batteries_electricity
   step_value: 1.0
@@ -186,3 +201,8 @@
   position: 53
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
+  config:
+    when_true:
+      disables:
+        - wtp_of_energy_flexibility_mv_batteries_electricity
+        - wta_of_energy_flexibility_mv_batteries_electricity

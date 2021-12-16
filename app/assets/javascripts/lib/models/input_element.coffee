@@ -18,6 +18,7 @@ class @InputElement extends Backbone.Model
 
     if @get('unit') == 'boolean'
       @bind('change:user_value', @handle_boolean_callbacks)
+      @bind('initial-set:user_value', @handle_boolean_callbacks)
       @handle_boolean_callbacks()
 
   conversions: ->
@@ -170,6 +171,9 @@ class @InputElementList extends Backbone.Collection
         # Disable if ET-Model *or* ET-Engine disable the input.
         disabled: this.isDisabled(i.get('key')) || i.get('disabled') || values.disabled
       }, { silent: true })
+
+      i.trigger('initial-set:user_value')
+      i.trigger('initial-set:disabled')
 
       @addInputElement(i)
 

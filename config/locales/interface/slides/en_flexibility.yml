@@ -135,7 +135,9 @@ en:
         </li><li>Optionally you can choose to activate a forecasting algorithm that tries to improve the
         charging and discharging behaviour of storage. Rather than looking at the electricity
         price in the current hour only, the battery will look ahead in time to identify interesting moments
-        for charging and discharging. It does so by looking at peaks and troughs in the residual load curve.</li></ol><br/>
+        for charging and discharging. It does so by looking at peaks and troughs in the 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves"> 
+        residual load curve</a>.</li></ol><br/>
         In the slides below you can set the willingness-to-pay, the willingness-to-accept, and the installed 
         capacity for various electricity storage technologies. You can switch a toggle to enable forecasting, which overrides the willingness-to-pay settings and instead uses the algorithm to determine battery behaviour. Note that the specific behaviour of these
         technologies is more complicated than stated in this short description. Our 

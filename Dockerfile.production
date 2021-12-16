@@ -38,4 +38,6 @@ RUN bundle install --jobs=4 --retry=3 --without="development test"
 
 COPY . /usr/src/app/
 
+RUN RAILS_ENV=production bundle exec rails assets:precompile
+
 CMD ["bundle", "exec", "--keep-file-descriptors", "puma", "-C", "config/puma.rb"]

@@ -27,7 +27,7 @@ import Bezier from '../charts/Bezier';
 import ElectricityNetworkLoad from '../charts/ElectricityNetworkLoad';
 import HourlySummarized from '../charts/HourlySummarized';
 import Line from '../charts/Line';
-import MeritOrderHourlyFlexibility from '../charts/MeritOrderHourlyFlexibility';
+import HourlyStackedArea from '../charts/HourlyStackedArea';
 import StackedBar from '../charts/StackedBar';
 
 import backwardsCompat from '../charts/utils/backwardsCompat';
@@ -36,15 +36,16 @@ window.D3 ||= {};
 
 window.D3.bezier = { View: backwardsCompat(Bezier) };
 window.D3.electricity_network_load = { View: backwardsCompat(ElectricityNetworkLoad) };
+window.D3.hourly_stacked_area = { View: backwardsCompat(HourlyStackedArea) };
 window.D3.hourly_summarized = { View: backwardsCompat(HourlySummarized) };
 window.D3.line = { View: backwardsCompat(Line) };
-window.D3.merit_order_hourly_flexibility = { View: backwardsCompat(MeritOrderHourlyFlexibility) };
 window.D3.stacked_bar = { View: backwardsCompat(StackedBar) };
 
+window.D3.electricity_hv_network_load = window.D3.electricity_network_load;
 window.D3.electricity_lv_network_load = window.D3.electricity_network_load;
 window.D3.electricity_mv_network_load = window.D3.electricity_network_load;
-window.D3.electricity_hv_network_load = window.D3.electricity_network_load;
 window.D3.hourly_balance = window.D3.merit_order_hourly_flexibility;
+window.D3.merit_order_hourly_flexibility = window.hourly_area;
 window.D3.network_load = window.D3.electricity_network_load;
 
 // Curve sampling

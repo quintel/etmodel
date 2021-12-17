@@ -4,9 +4,6 @@ nl:
     settings_enable_merit_order:
       title: ''
       description: ''
-    settings_satisfy_export_with_dispatchables:
-      title: 'Dispatchable centrales gebruiken voor export?'
-      description: ''
     transport_car_using_electricity_fast_charging_share:
       title: Snelladen
       short_description:
@@ -118,15 +115,37 @@ nl:
     capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:
-      description: Power-to-heat boilers produceren warmte met elektriciteitsoverschotten.
-        Dit schuifje zorgt ervoor dat deze warmte wordt ingezet in het <a href="/scenario/supply/heat/heat-sources">residentiële
-        warmtenet</a>.
+      description: |
+        Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat boilers die met 
+        elektriciteit warmte maken voor het <a href="/scenario/supply/heat/heat-sources">
+        residentiële warmtenet</a>. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van power-to-heat vermogen is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraag.technnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
     capacity_of_energy_heat_flexibility_p2h_heatpump_electricity:
       title: Power-to-heat warmtepomp
       short_description:
-      description: Power-to-heat warmtepompen produceren warmte met elektriciteitsoverschotten.
-        Dit schuifje zorgt ervoor dat deze warmte wordt ingezet in het <a href="/scenario/supply/heat/heat-sources">residentiële
-        warmtenet</a>.
+      description: |
+        Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat warmtepompen die met 
+        omgevingswarmte en elektriciteit warmte maken voor het <a href="/scenario/supply/heat/heat-sources">
+        residentiële warmtenet</a>. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van power-to-heat vermogen is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraag.technnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
     households_flexibility_space_heating_cop_cutoff:
       title: Ruimteverwarming
       short_description:
@@ -236,45 +255,344 @@ nl:
     households_flexibility_p2p_electricity_market_penetration:
       title: Batterijen in huishoudens
       short_description:
-      description: 'Thuisbatterijen worden vaak genoemd als oplossing voor het opvangen
-        van elektriciteitsoverschotten. Met deze slider kun je aangeven welk
-        percentage van de huishoudens is uitgerust met batterijopslag. De batterijen
-        kunnen worden opgeladen met netstroom of stroom uit zonnepanelen.'
+      description: |
+        Met dit schuifje kan je bepalen welk percentage van de huishoudens wordt uitgerust met een batterij.
+        Bij de 'Technische parameters en kosten' kun je vervolgens zien wat het totaal geïnstalleerde vermogen 
+        en opslagvolume is. De investeringskosten van batterijen in huishoudens kunnen 
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">hier</a> worden aangepast. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de installatie van batterijen in huishoudens: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wtp_of_households_flexibility_p2p_electricity:
+      title: Willingness to pay
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de maximale prijs is die batterijen in huishoudens bereid zijn te 
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-pay van batterijen in huishoudens: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wta_of_households_flexibility_p2p_electricity:
+      title: Willingness to accept
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de minimale prijs is die batterijen in huishoudens willen ontvangen
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-accept van batterijen in huishoudens: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     transport_car_using_electricity_availability:
       title: Batterijen in elektrische auto's
       short_description:
-      description: "Elektrische auto's zijn een kosteneffectieve manier om elektriciteit
-        op te slaan omdat ze een relatief grote batterij bevatten. Niet al het opslagvolume kan worden ingezet voor flexibiliteitsdoeleinden.
-        Een deel van het volume is immers ook nodig om mee te rijden. Met deze
-        slider kun je daarom aangeven welk percentage van de batterij in alle elektrische
-        auto's kan worden gebruikt voor flexibiliteitsdoeleinden. Je kunt het percentage
-        elektrische auto's instellen in <a href=\"/scenario/demand/transport_passenger_transport/car-technology\">autotechnologie
-        slide</a>."
+      description: |
+        Niet al het opslagvolume van elektrische auto's kan voor flexibiliteit worden gebruikt, omdat een deel van 
+        de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daaorm instellen 
+        hoeveel procent van de batterij van elektrische auto's beschikbaar is voor flexibiliteitsdoeleinden. Het 
+        aandeel elektrische auto's kun je instellen in de 
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">autotechnologie slide</a>. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van het benutten van batterijen in elektrische auto's: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wtp_of_transport_car_flexibility_p2p_electricity:
+      title: Willingness to pay
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de maximale prijs is die batterijen in elektrische auto's bereid zijn te 
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-pay van batterijen in elektrische auto's: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wta_of_transport_car_flexibility_p2p_electricity:
+      title: Willingness to accept
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de minimale prijs is die batterijen in elektrische auto's willen ontvangen
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-accept van batterijen in elektrische auto's: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     capacity_of_energy_flexibility_pumped_storage_electricity:
       title: Stuwmeren
       short_description:
-      description: "Stuwmeren zijn een goedkope, grootschalige manier om elektriciteit
-        op te slaan. Elektriciteit wordt gebruikt om water omhoog te pompen van een
-        lager gelegen naar een hoger gelegen stuwmeer. Als de elektriciteitsvraag
-        hoog is kan het opgeslagen water via turbines ontsnappen waarmee elektriciteit
-        wordt opgewekt."
+      description: |
+        Met dit schuifje kun je het inputvermogen van stuwmeren bepalen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de inzet van stuwmeren: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wtp_of_energy_flexibility_pumped_storage_electricity:
+      title: Willingness to pay
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de maximale prijs is die stuwmeren bereid zijn te betalen om water naar het
+        hoger gelegen reservoir te pompen. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze stuwmeren. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-pay van stuwmeren: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wta_of_energy_flexibility_pumped_storage_electricity:
+      title: Willingness to accept
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de minimale prijs is die stuwmeren willen ontvangen
+        om het opgeslagen water terug te laten stromen door een turbine. Als je wilt dat de stuwmeren winstgevend is, is het aan te raden de 
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze stuwmeren. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-accept van stuwmeren: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     capacity_of_energy_flexibility_hv_opac_electricity:
       title: OPAC
       short_description:
-      description: "De Ondergrondse Pomp Accumulatie Centrale (OPAC) is een vorm grootschalige
-        elektriciteitsopslag. Door gebruik te maken van het hoogteverschil tussen twee waterreservoirs 
-        kan elektriciteit worden opgeslagen als potentiële energie. Wanneer er elektriciteitsoverschotten 
-        zijn, kunnen deze worden gebruikt om water naar het hoger gelegen reservoir te pompen. Op een 
-        later moment, als er geen overschotten meer zijn, loopt het hoger gelegen reservoir weer leeg langs 
-        turbines. Hiermee wordt elektriciteit opgewekt wat vervolgens weer wordt teruggeleverd aan het hoogspanningsnet."
+      description: |
+        Met dit schuifje kun je het inputvermogen van Ondergrondse Pomp Accumulatie Centrales (OPAC) bepalen.
+        De investeringskosten van OPAC kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        hier</a> worden aangepast. <br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de inzet van OPAC: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wtp_of_energy_flexibility_hv_opac_electricity:
+      title: Willingness to pay
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de maximale prijs is die Ondergrondse Pomp Accumulatie Centrales (OPAC) bereid zijn te betalen om water naar het
+        hoger gelegen reservoir te pompen. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze OPAC. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-pay van OPAC: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wta_of_energy_flexibility_hv_opac_electricity:
+      title: Willingness to accept
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de minimale prijs is die Ondergrondse Pomp Accumulatie Centrales (OPAC) willen ontvangen
+        om het opgeslagen water terug te laten stromen door een turbine. Als je wilt dat de OPAC winstgevend is, is het aan te raden de 
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze OPAC. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-accept van OPAC: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     capacity_of_energy_flexibility_mv_batteries_electricity:
       title: Grootschalige batterijopslag
       short_description:
-      description: "Deze grootschalige batterij kan worden gebruikt om stroom-overschotten
-        van must-run en volatiele opwek op te slaan. Als de overproductie voorbij
-        is wordt de opgeslagen elektriciteit teruggeleverd aan het elektriciteitsnet.\r\nHoewel
-        de batterij niet reageert op netwerkcongestie kan haar gedrag wel helpen om
-        capaciteitsproblemen op het middenspanningsnet te voorkomen. \r\n"
+      description: |
+        Met dit schuifje kun je het inputvermogen van grootschalige batterijopslag bepalen.
+        De investeringskosten van grootschalige batterijopslag kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        hier</a> worden aangepast. <br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de inzet van grootschalige batterijopslag: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wtp_of_energy_flexibility_mv_batteries_electricity:
+      title: Willingness to pay
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de maximale prijs is die grootschalige batterijopslag bereid is te 
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-pay van grootschalige batterijopslag: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wta_of_energy_flexibility_mv_batteries_electricity:
+      title: Willingness to accept
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de minimale prijs is die grootschalige batterijopslag wil ontvangen
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-accept van grootschalige batterijopslag: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Huidige import
       short_description:
@@ -314,9 +632,158 @@ nl:
     electricity_interconnector_5_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_6_co2_emissions_future: *interconnector_co2_future
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
-      title: Power-to-hydrogen
+      title: Power-to-gas
       short_description:
-      description: "Power-to-gas installaties produceren waterstof met elektriciteitsoverschotten.
-        Dit schuifje zorgt ervoor dat deze waterstof wordt ingezet in het centrale
-        waterstofnetwerk. Overtollig waterstof wordt geëxporteerd. De efficiëntie van elektrolysers
-        kan <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast."
+      description: |
+        Dit schuifje bepaalt het geïnstalleerde vermogen aan power-to-gas installaties. 
+        De investeringskosten en efficiëntie van elektrolysers kunnen 
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hier</a> worden 
+        aangepast. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van power-to-gas vermogen is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    wtp_of_energy_hydrogen_flexibility_p2g_electricity:
+      title: Power-to-gas
+      short_description:
+      description: |
+        Dit schuifje bepaalt wat de maximale prijs is die power-to-gas installaties willen betalen
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook power-to-gas vermogen 
+        geïnstalleerd is. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van de willingness-to-pay van power-to-gas is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    wtp_of_energy_heat_flexibility_p2h_boiler_electricity:
+      title: Power-to-heat boiler
+      short_description:
+      description: |
+        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers willen betalen
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor power-to-heat
+        boilers geïnstalleerd is. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van de willingness-to-pay van power-to-heat is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    wtp_of_energy_heat_flexibility_p2h_heatpump_electricity:
+      title: Power-to-heat warmtepomp
+      short_description:
+      description: |
+        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat warmtepompen willen betalen
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor power-to-heat
+        warmtepompen geïnstalleerd is. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van de willingness-to-pay van power-to-heat is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    wtp_of_industry_chemicals_refineries_flexibility_p2h_electricity:
+      title: Power-to-heat boiler voor raffinaderijen
+      short_description:
+      description: |
+        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat bilers in 
+        <a href="/scenario/demand/industry/refineries">raffinaderijen</a> willen betalen
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
+        gas- of waterstofketels in raffinaderijen geïnstalleerd is. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van de willingness-to-pay van power-to-heat is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    wtp_of_industry_chemicals_other_flexibility_p2h_electricity:
+      title: Power-to-heat boiler voor chemische industrie
+      short_description:
+      description: |
+        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat bilers in de
+        <a href="/scenario/demand/industry/chemicals">chemische industrie</a> willen betalen
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
+        gas- of waterstofketels in de chemische industrie geïnstalleerd is. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van de willingness-to-pay van power-to-heat is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    wtp_of_industry_other_food_flexibility_p2h_electricity:
+      title: Power-to-heat boiler voor voedingsmiddelenindustrie
+      short_description:
+      description: |
+        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat bilers in de
+        <a href="/scenario/demand/industry/chemicals">voedingsmiddelenindustrie</a> willen betalen
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
+        gas- of waterstofketels in de voedingsmiddelenindustrie geïnstalleerd is. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van de willingness-to-pay van power-to-heat is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    wtp_of_industry_other_paper_flexibility_p2h_electricity:
+      title: Power-to-heat boiler voor papierindustrie
+      short_description:
+      description: |
+        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat bilers in de
+        <a href="/scenario/demand/industry/chemicals">papierindustrie</a> willen betalen
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
+        gas- of waterstofketels in de papierindustrie geïnstalleerd is. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        van de willingness-to-pay van power-to-heat is: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    settings_enable_storage_optimisation_transport_car_flexibility_p2p_electricity:
+      title: 'Verbeter inzet batterijen met prognose van residual load'
+      description: ''
+    settings_enable_storage_optimisation_households_flexibility_p2p_electricity:
+      title: 'Verbeter inzet batterijen met prognose van residual load'
+      description: ''
+    settings_enable_storage_optimisation_energy_flexibility_mv_batteries_electricity:
+      title: 'Verbeter inzet batterijen met prognose van residual load'
+      description: ''
+    settings_enable_storage_optimisation_energy_flexibility_hv_opac_electricity:
+      title: 'Verbeter inzet opslag met prognose van residual load'
+      description: ''
+    settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity:
+      title: 'Verbeter inzet opslag met prognose van residual load'
+      description: ''

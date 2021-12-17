@@ -2,51 +2,207 @@
 - key: households_flexibility_p2p_electricity_market_penetration
   step_value: 0.1
   unit: "%"
-  interface_group: lv_network
+  interface_group: capacity
   related_node: households_flexibility_p2p_electricity
-  position: 1
-  slide_key: flexibility_flexibility_power_storage
+  position: 10
+  slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
   additional_specs:
     other:
       timeframe: i_h_d_w
+- key: wtp_of_households_flexibility_p2p_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: households_flexibility_p2p_electricity
+  position: 11
+  slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: wta_of_households_flexibility_p2p_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: households_flexibility_p2p_electricity
+  position: 12
+  slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: settings_enable_storage_optimisation_households_flexibility_p2p_electricity
+  step_value: 1.0
+  unit: boolean
+  interface_group: storage_optimisation
+  position: 13
+  slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
+  config:
+    when_true:
+      disables:
+        - wtp_of_households_flexibility_p2p_electricity
+        - wta_of_households_flexibility_p2p_electricity
+
 - key: transport_car_using_electricity_availability
   step_value: 0.1
   unit: "%"
-  interface_group: lv_network
+  interface_group: capacity
   related_node: transport_car_flexibility_p2p_electricity
-  position: 2
-  slide_key: flexibility_flexibility_power_storage
+  position: 20
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
       timeframe: i_h_d_w
+- key: wtp_of_transport_car_flexibility_p2p_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: transport_car_flexibility_p2p_electricity
+  position: 21
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: wta_of_transport_car_flexibility_p2p_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: transport_car_flexibility_p2p_electricity
+  position: 22
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: settings_enable_storage_optimisation_transport_car_flexibility_p2p_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 23
+  interface_group: storage_optimisation
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  config:
+    when_true:
+      disables:
+        - wtp_of_transport_car_flexibility_p2p_electricity
+        - wta_of_transport_car_flexibility_p2p_electricity
+
 - key: capacity_of_energy_flexibility_pumped_storage_electricity
   step_value: 1.0
   unit: MW
-  interface_group: hv_network
+  interface_group: capacity
   related_node: energy_flexibility_pumped_storage_electricity
   position: 30
   dependent_on: has_mountains
-  slide_key: flexibility_flexibility_power_storage
+  slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
   additional_specs:
     other:
       timeframe: i_h_d_w_s
+- key: wtp_of_energy_flexibility_pumped_storage_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  dependent_on: has_mountains
+  related_node: energy_flexibility_pumped_storage_electricity
+  position: 31
+  slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w_s
+- key: wta_of_energy_flexibility_pumped_storage_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  dependent_on: has_mountains
+  interface_group: willingness_to_pay
+  related_node: energy_flexibility_pumped_storage_electricity
+  position: 32
+  slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w_s
+- key: settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 33
+  interface_group: storage_optimisation
+  slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
+
 - key: capacity_of_energy_flexibility_hv_opac_electricity
   step_value: 1.0
   unit: MW
-  interface_group: hv_network
+  interface_group: capacity
   related_node: energy_flexibility_hv_opac_electricity
-  position: 31
-  slide_key: flexibility_flexibility_power_storage
+  position: 40
+  slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
   additional_specs:
     other:
       timeframe: i_h_d_w_s
+- key: wtp_of_energy_flexibility_hv_opac_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: energy_flexibility_hv_opac_electricity
+  position: 41
+  slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w_s
+- key: wta_of_energy_flexibility_hv_opac_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: energy_flexibility_hv_opac_electricity
+  position: 42
+  slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w_s
+- key: settings_enable_storage_optimisation_energy_flexibility_hv_opac_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 43
+  interface_group: storage_optimisation
+  slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
+  config:
+    when_true:
+      disables:
+        - wtp_of_energy_flexibility_hv_opac_electricity
+        - wta_of_energy_flexibility_hv_opac_electricity
+
 - key: capacity_of_energy_flexibility_mv_batteries_electricity
   step_value: 1.0
   unit: MW
-  interface_group: mv_network
+  interface_group: capacity
   related_node: energy_flexibility_mv_batteries_electricity
-  position: 20
-  slide_key: flexibility_flexibility_power_storage
+  position: 50
+  slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
   additional_specs:
     other:
       timeframe: i_h_d
+- key: wtp_of_energy_flexibility_mv_batteries_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: energy_flexibility_mv_batteries_electricity
+  position: 51
+  slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d
+- key: wta_of_energy_flexibility_mv_batteries_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: energy_flexibility_mv_batteries_electricity
+  position: 52
+  slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d
+- key: settings_enable_storage_optimisation_energy_flexibility_mv_batteries_electricity
+  step_value: 1.0
+  unit: boolean
+  position: 53
+  interface_group: storage_optimisation
+  slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
+  config:
+    when_true:
+      disables:
+        - wtp_of_energy_flexibility_mv_batteries_electricity
+        - wta_of_energy_flexibility_mv_batteries_electricity

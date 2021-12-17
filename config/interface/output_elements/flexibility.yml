@@ -25,6 +25,15 @@
     period: future
 - group: Flexibility
   hidden: false
+  key: flexibility_integral_costs
+  output_element_type_name: category_bar
+  requires_merit_order: true
+  unit: 'Eur/Mwh'
+  config:
+    period: future
+    y_precision: 0
+- group: Flexibility
+  hidden: false
   key: flexibility_monthly_carriers_inflexible_supply_demand_sum
   output_element_type_name: hourly_summarized
   requires_merit_order: true
@@ -146,7 +155,20 @@
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  output_element_type_name: d3
+  output_element_type_name: hourly_stacked_area
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: hourly_flexibility_electricity
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: hourly_stacked_area
 - under_construction: false
   unit:
   percentage: false

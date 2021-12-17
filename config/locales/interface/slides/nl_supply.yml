@@ -266,7 +266,7 @@ nl:
         >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
         >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
         >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteitsoverschotten
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
         om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
         href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
         >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in
@@ -359,7 +359,7 @@ nl:
         vergassing van biomassa (met of zonder
         <a href='/scenario/supply/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
         import uit het buitenland.\r\n<br /><br />\r\nJe
-        kunt er ook voor kiezen om overschotten elektriciteit om te zetten in waterstof
+        kunt er ook voor kiezen om elektriciteit om te zetten in waterstof
         (zie de sectie <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
         >power-to-gas</a>). Dit kan alleen als er in jouw scenario momenten in het
         jaar zijn waarop de elektriciteitsproductie hoger is dan de vraag. Daarnaast
@@ -466,11 +466,11 @@ nl:
       title: Internationale luchtvaart
       short_description:
       description: "Hoeveel zal bio-kerosene gebruikt worden in de toekomstige internationale
-        luchtvaart? Hier kan je het aandeel bepalen.\r\n</br></br>\r\nAls er in jouw
-        scenario elektriciteitsoverschotten zijn door de inzet van wind en/of zonne-energie,
-        dan kun je deze overschotten gebruiken om synthetische kerosine te produceren.
-        Dit kun je kiezen in <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-aviation\"
-        > de flexibiliteitssectie</a>. "
+        luchtvaart? Hier kan je het aandeel bepalen.\r\n</br></br>\r\n
+        Het is ook mogelijk om synthetische kerosine te produceren, met afgevangen CO<sub>2</sub>, 
+        elektriciteit en waterstof. Dit kun je kiezen in 
+        <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
+        > de CCUS sectie</a>. "
     supply_transport_international_shipping:
       title: Internationale scheepvaart
       short_description:

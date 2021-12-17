@@ -43,14 +43,24 @@ en:
       short_description: test
       description: Nobody can predict future fuel prices. This makes electricity costs
         hard to predict. What do you think these fuels will cost in the future?        
+    costs_flexibility_demand_curtailment:
+      title: Value of Lost Load
+      short_description:
+      description: |
+        In hours when the total electricity demand exceeds the total electricity supply,
+        a <a href="https://docs.energytransitionmodel.com/main/loss-of-load-expectation/"
+        target ="_blank">loss of load</a> occurs. The electricity price during these hours 
+        is represented in the model by the Value of Lost Load (VoLL). This is the value that 
+        electricity consumers attribute to receiving an uninterupted electricity supply, or 
+        in other words, the costs they would incur for a supply disruption.
     costs_flexibility_conversion:
       title: Investment costs conversion electricity
       short_description:
       description: |
-        (Excess) electricity can be converted to other energy carriers,
-        like hydrogen or heat. Below, you can specify how much the investment costs
-        for power-to-heat boilers. The investment costs for power-to-gas can be adjusted
-        on the <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Hydrogen production</a> page.
+        Electricity can be <a href="/scenario/flexibility/flexibility_conversion/conversion-by-flexible-demand-technologies">
+        converted</a> to other energy carriers, like hydrogen or heat. Below, you can specify how much the investment costs 
+        will change for power-to-heat boilers. The investment costs for power-to-gas can be adjusted on the 
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hydrogen production costs</a> page.
     costs_flexibility_storage:
       title: Investment costs storage electricity
       short_description:
@@ -67,7 +77,7 @@ en:
       title: Hydrogen production
       short_description:
       description: What do you think the costs and efficiency of hydrogen production
-        with elektrolysers will be in the future?
+        with electrolysers will be in the future?
     costs_hydrogen_import:
       title: Hydrogen import
       short_description:

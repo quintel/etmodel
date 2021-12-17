@@ -16,6 +16,11 @@ class @InputElement extends Backbone.Model
       App.analytics.inputChanged(input.get('key'))
     )
 
+    if @get('unit') == 'boolean'
+      @bind('change:user_value', @handle_boolean_callbacks)
+      @bind('initial-set:user_value', @handle_boolean_callbacks)
+      @handle_boolean_callbacks()
+
   conversions: ->
     conversions = @get('conversions') or []
 
@@ -95,6 +100,20 @@ class @InputElement extends Backbone.Model
     if @get('key') == 'settings_enable_merit_order'
       App.update_merit_order_checkbox()
 
+  handle_boolean_callbacks: ->
+    enabled = @get('user_value') || false
+
+    # Handle when_true, when_false config
+    { when_true, when_false } = (@get('config') || {})
+
+    if when_true && when_true.disables
+      for key in when_true.disables
+        @collection.markInputDisabled(key, @get('key'), enabled)
+
+    if when_false && when_false.disables
+      for key in when_false.disables
+        @collection.markInputDisabled(key, @get('key'), !enabled)
+
   # Returns the step value of the input, except in cases where the step would
   # be too small to be meaningful (e.g. in small datasets), in which case the
   # step will be scaled down to ensure roughly 100 steps between the min and
@@ -152,6 +171,9 @@ class @InputElementList extends Backbone.Collection
         # Disable if ET-Model *or* ET-Engine disable the input.
         disabled: this.isDisabled(i.get('key')) || i.get('disabled') || values.disabled
       }, { silent: true })
+
+      i.trigger('initial-set:user_value')
+      i.trigger('initial-set:disabled')
 
       @addInputElement(i)
 

@@ -172,6 +172,7 @@ en:
     mv_network: "electricity input"
     hv_network: "electricity input"
     residual_heat: "value"
+    willingness_to_pay: "price"
 
   #------------ Output Serie Labels ------------- #
   scenario:
@@ -339,12 +340,14 @@ en:
     lv_network: "Low voltage network"
     mv_network: "Medium voltage network"
     hv_network: "High voltage network"
+    willingness_to_pay: "Willingness to pay"
     heat_network_storage: "Heat storage"
     non_dispatchable_heat: "Must-run / volatile heat sources"
     dispatchable_heat: "Dispatchable heat sources"
     heat_storage_losses: "Storage losses"
     heat_storage_capacity: "Storage output capacity"
     must_run_dispatchable: "Dispatchable [OFF] / must-run [ON]"
+    storage_optimisation: "Load forecasting"
     consumer_price: "Consumer price incl. taxes"
     curtailment: "Curtailment"
     co2_emissions: "CO2 emissions"

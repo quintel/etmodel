@@ -428,7 +428,7 @@
     <h2>Excess Electricity Production</h2>
 
       <p>You created a scenario where for {{ future.dashboard_total_number_of_excess_events | without_unit }}
-        hours in the year, (renewable and must-run) electricity production exceeds demand. The histogram below
+        hours in the year, (volatile and must-run) electricity production exceeds demand. The histogram below
         shows what the frequency and distribution of durations of excess events are.
       </p>
 
@@ -437,8 +437,8 @@
       {% endchart %}
 
       <p>
-        Flexibility options such as batteries, power-to-heat and power-to-gas can be used to use
-        excess electricity later (storage) or for heating (power-to-heat) or replace natural gas (power-to-gas).
+        Flexibility options such as batteries, power-to-heat and power-to-gas can be used to increase electricity
+        demand and use it for later (storage) or for heating (power-to-heat) or replace natural gas (power-to-gas).
         In section <a href="#unused-potential">Unused potential</a>, more details of how to use excess can be
         found.
       </p>
@@ -679,16 +679,16 @@
     <h2>Unused potential</h2>
 
     In your scenario, there are
-    {{ future.dashboard_total_number_of_excess_events }} hours that electricity production exceeds demand.
-    Some of this electricity is not used (curtailed). To usefully employ the excess electricity you can
+    {{ future.dashboard_total_number_of_excess_events }} hours that electricity production by volatile and must-run producers exceeds baseload demand.
+    Some of this electricity is not used (curtailed). To usefully employ this electricity you can:
 
     <ul>
       <li><strong>Store electricity</strong>: in the flexibility section, you can build batteries in homes or
-        indicate how much of ellectric car batteries can be used for storing electricity.</li>
+        indicate how much of electric car batteries can be used for storing electricity.</li>
       <li><strong>Convert electricity to gas</strong>: in the flexibility section, you can build power-to-gas plants
         to convert electricity to hydrogen gas.</li>
       <li><strong>Convert electricity to heat</strong>: in the flexibility section, you can build power-to-heat plants
-        which generate heat from electricity and store the heat for use in houses.</li>
+        which generate heat from electricity and deliver the heat to either the residential or the industrial heating network.</li>
       <li><strong>Increase interconnectivity</strong>: in the import/export section you can increase the capacity of
         the interconnectors with neighbouring countries.</li>
       <li><strong>Increase demand</strong>: by electrifying for example heating/hot water production in houses

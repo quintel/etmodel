@@ -1,0 +1,163 @@
+---
+- label: residual_load_curve
+  color: "#CC0000"
+  order_by: 800
+  group: flex
+  is_target_line: true
+  target_line_position:
+  gquery: electricity_imbalance_inflexible_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: electricity_imbalance_inflexible_curve_hourly_flexibility_electricity
+
+- label: coal_to_power
+  color: "#333333"
+  order_by: 200
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_coal_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_coal_production_curve_hourly_flexibility_electricity
+- label: gas_to_power
+  color: "#CCCCCC"
+  order_by: 205
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_gas_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_gas_production_curve_hourly_flexibility_electricity
+- label: nuclear_to_power
+  color: "#E07033"
+  order_by: 210
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_nuclear_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_nuclear_production_curve_hourly_flexibility_electricity
+- label: oil_to_power
+  color: "#854321"
+  order_by: 215
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_oil_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_oil_production_curve_hourly_flexibility_electricity
+- label: biomass_to_power
+  color: "#5D7929"
+  order_by: 220
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_biomass_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_biomass_production_curve_hourly_flexibility_electricity
+- label: waste_to_power
+  color: "#394C19"
+  order_by: 225
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_waste_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_waste_production_curve_hourly_flexibility_electricity
+- label: hydrogen_to_power
+  color: "#BFEFFF"
+  order_by: 230
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_hydrogen_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_hydrogen_production_curve_hourly_flexibility_electricity
+- label: power_to_power_supply
+  color: "#dd33cc"
+  order_by: 235
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2p_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexiblity_electricity_p2p_production_curve_hourly_flexibility_electricity
+- label: imported_electricity
+  color: "#4169E1"
+  order_by: 240
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: energy_interconnector_imported_electricity
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: energy_interconnector_imported_electricity_hourly_flexibility_electricity
+
+- label: energy_hydrogen_flexibility_p2g_electricity
+  color: "#dd9977"
+  order_by: 300
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2g_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2g_curve_hourly_flexibility_electricity
+- label: power_to_heat_for_industry
+  color: "#8B0000"
+  order_by: 305
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2h_industry_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2h_industry_curve_hourly_flexibility_electricity
+- label: power_to_heat_for_district_heating
+  color: "#FFA502"
+  order_by: 310
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2h_district_heating_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2h_district_heating_curve_hourly_flexibility_electricity
+- label: power_to_power_demand
+  color: "#BC8CF2"
+  order_by: 315
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2p_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexiblity_electricity_p2p_curve_hourly_flexibility_electricity
+- label: energy_export_electricity
+  color: "#77dd99"
+  order_by: 320
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_export_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexiblity_electricity_export_curve_hourly_flexibility_electricity
+- label: energy_flexibility_curtailment_electricity
+  color: "#77bbdd"
+  order_by: 325
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_curtailment_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexiblity_electricity_curtailment_curve_hourly_flexibility_electricity

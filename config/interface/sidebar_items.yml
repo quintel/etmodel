@@ -125,11 +125,6 @@
   section: flexibility
   tab_key: flexibility
   position: 1
-- key: excess_electricity
-  section: flexibility
-  tab_key: flexibility
-  position: 2
-  dependent_on: has_electricity_storage
 - key: electricity_import_export
   section: flexibility
   tab_key: flexibility
@@ -145,11 +140,10 @@
 - key: flexibility_storage
   tab_key: flexibility
   position: 1
-  parent_key: excess_electricity
+  dependent_on: has_electricity_storage
 - key: flexibility_conversion
   tab_key: flexibility
   position: 2
-  parent_key: excess_electricity
 - key: flexibility_net_load
   tab_key: flexibility
   position: 3

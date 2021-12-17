@@ -111,7 +111,10 @@ class HourlyBase extends D3Chart {
    * Creates the formatter for values, using the largest hourly value.
    */
   createValueFormatter(opts = {}) {
-    return this.createScaler(this.maxYValue(), this.model.get('unit'), opts);
+    const [min, max] = this.extent();
+    const absMax = Math.max(Math.abs(min), Math.abs(max));
+
+    return this.createScaler(absMax, this.model.get('unit'), opts);
   }
 
   stackOffset() {
@@ -173,8 +176,8 @@ class HourlyBase extends D3Chart {
     return scale;
   }
 
-  filterYValue(serie, value) {
-    return value;
+  filterSeriesValues(values) {
+    return values;
   }
 
   maxYValue() {
@@ -275,9 +278,9 @@ class HourlyBase extends D3Chart {
 
     return data.map((chart) => ({
       ...chart,
-      values: chart.values.map((value, i) => ({
+      values: this.filterSeriesValues(chart.values, chart).map((value, i) => ({
         x: new Date(offset.getTime() + i * seconds),
-        y: this.filterYValue(chart, value),
+        y: value,
       })),
     }));
   }

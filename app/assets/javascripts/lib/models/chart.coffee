@@ -133,8 +133,9 @@ class @Chart extends Backbone.Model
       when 'hourly_summarized'          then D3.hourly_summarized.View
       when 'hourly_balance'             then D3.hourly_balance.View
       when 'network_load'               then D3.network_load.View
+      when 'hourly_stacked_area'        then D3.hourly_stacked_area.View
       when 'line'                       then D3.line.View
-      else throw "Chart type not available"
+      else throw "Chart type \"#{@get('type')}\" not available"
 
   # D3 charts have their own class. Let's make an instance of the right one
   # D3 is a pseudo-namespace. See d3_chart_view.coffee

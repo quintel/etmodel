@@ -4,24 +4,19 @@ en:
       title: Electricity interconnectors
       short_description:
       description: |
-        The <strong>domestic electricity market</strong> in your scenario is
+        <p>The <strong>domestic electricity market</strong> in your scenario is
         connected to one or more <strong>external markets</strong> via
         interconnectors. These interconnectors allow for importing and exporting
         electricity.</p>
 
         <p>Import occurs whenever doing so is cheaper than using domestic
-        electricity generation options. By default, electricity is exported only
-        when there is a surplus from
-        <a
-          href="https://docs.energytransitionmodel.com/main/merit-order/#participants"
-          target="_blank"
-        >volatile and must-run sources</a>.</p>
+        electricity generation options. Similarly, electricity is exported whenever the
+        neighbouring countries are willing to pay more than the domestic
+        (production) price.</p>
 
-        <p>In real-world markets, electricity may be exported whenever the
-        production price is lower than that of the external market. Dispatchable
-        plants can then also be used for export. Enabling this feature with the
-        toggle below may significantly increase the amount of
-        electricity generated in your scenario.
+        <p>In the tabs below you can set the interconnector capacities of the external
+        markets your area is connected to. For each interconnector a price
+        (or hourly price curve) can be added.</p>
     flexibility_electricity_import_export_interconnectivity:
       title: Interconnector 1
       short_description:
@@ -122,62 +117,158 @@ en:
           \ data-chart-key=\"hybrid_heat_pump\"
         >electricity and gas share table</a>
         will show a breakdown of how hybrid heat pumps use energy in households."
-    flexibility_flexibility_flexibility_order:
-      title: Order of flexibility options
+    flexibility_electricity_storage_overview:
+      title: Behaviour of storage technologies
       short_description:
-      description: "Wind turbines and solar panels are subject to volatile natural
-        patterns. The electricity that they produce might therefore not always be
-        used to match demand directly and consequently lead to excess electricity.
-        To prevent curtailment of excess electricity production, the ETM contains
-        several flexibility technologies that can either store or convert the excess
-        electricity. You can include these technologies in the <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\">'Storage'</a>
-        and <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households\">'Conversion'</a>
-        tab. \r\n<br/><br/>\r\nUsing the list below, you can decide on the order in
-        which the flexibility technologies have to be applied. The ETM will send excess
-        electricity to the first technology on your list until its maximum capacity
-        is reached; the remaining excess electricity is send to the second technology
-        on your list and so on. Finally, any remaining excess electricity is curtailed.
-        You can drag and drop the technologies in the desired order."
-    flexibility_flexibility_power_storage:
-      title: Electricity storage
+      description: |
+        In this section you can determine the behaviour of electricity storage technologies such as batteries. These technologies
+        are considered flexible, because both their supply and demand can be increased, reduced or shifted in 
+        time if needed (see the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> 
+        Flexibility overview</a> for background information). </br></br>
+        The ETM models two types of storage behaviour. <br /><ol><li>By default, storage behaves like any other
+        flexible technology. Each storage technology has a <i>willingness-to-pay</i> that indicates the maximum electricity price for
+        which it is willing to charge electricity. If the electricity price in a given hour is lower than a 
+        technology's willingness-to-pay, the storage technology will charge. </br></br>
+        Similarly, each technology also has a <i>willingness-to-accept</i>, which indicates the minimum 
+        electricity price for which it is willing to discharge the stored electricity. This
+        is similar to the concept of 'marginal costs' for flexible power plants.</br></br>
+        </li><li>Optionally you can choose to activate a forecasting algorithm that tries to improve the
+        charging and discharging behaviour of storage. Rather than looking at the electricity
+        price in the current hour only, the battery will look ahead in time to identify interesting moments
+        for charging and discharging. It does so by looking at peaks and troughs in the 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves"> 
+        residual load curve</a>.</li></ol><br/>
+        In the slides below you can set the willingness-to-pay, the willingness-to-accept, and the installed 
+        capacity for various electricity storage technologies. You can switch a toggle to enable forecasting, which overrides the willingness-to-pay settings and instead uses the algorithm to determine battery behaviour. Note that the specific behaviour of these
+        technologies is more complicated than stated in this short description. Our 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\"> documentation</a> 
+        contains more details.
+    flexibility_power_storage_households_flexibility_p2p_electricity:
+      title: Batteries in households
       short_description:
-      description: Using the sliders below you can set the electricity storage options
-        for the different network levels. Excess electricity is stored and supplied
-        to the grid later, once the "excess event" has passed.
-    flexibility_flexibility_power_to_heat:
-      title: Conversion to heat for households
+      description: |
+        It is possible to install batteries in households. These can then be charged by electricity from the grid, 
+        or by solar power if the household has solar panels installed. </br></br>
+        Batteries in the ETM are flexible technologies, which 
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will 
+        discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
+    flexibility_power_storage_transport_car_flexibility_p2p_electricity:
+      title: Batteries in electric vehicles
       short_description:
-      description:
+      description: |
+        Electric vehicles could provide a cost-effective way of storing electricity as they contain a relatively 
+        large battery. </br></br>
+        Batteries in the ETM are flexible technologies, which 
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
+    flexibility_power_storage_energy_flexibility_mv_batteries_electricity:
+      title: Large-scale batteries
+      short_description:
+      description: |
+        This large-scale battery is typically connected to the medium voltage network. Although in the battery does 
+        not react to congestion events, its behavior can help prevent capacity issues in the electricity network. </br></br>
+        Batteries in the ETM are flexible technologies, which 
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
+    flexibility_power_storage_energy_flexibility_pumped_storage_electricity:
+      title: Reservoirs
+      short_description:
+      description: |
+        Pumped storage provides a cheap way for large-scale storage of electricity. Electricity can 
+        be used to pump water from the lower reservoir to a higher reservoir. Electricity is then 
+        produced by releasing the stored water through a turbine. </br></br>
+        Electricity storage in the ETM is a flexible technology, which
+        means that it can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the storage in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine storage behaviour. In both cases the ETM respects the storage volume limits of the storage.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
+    flexibility_power_storage_energy_flexibility_hv_opac_electricity:
+      title: Underground pumped hydro storage
+      short_description:
+      description: |
+        Underground pumped hydro storage (UPHS) allows for large-scale storage of electricity. It uses the 
+        height difference between two water reservoirs, of which the lower reservoir is underground,
+        to store electricity as potential energy. </br></br>
+        Electricity storage in the ETM is a flexible technology, which
+        means that it can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the storage in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine storage behaviour. In both cases the ETM respects the storage volume limits of the storage.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
+    flexibility_electricity_conversion_overview:
+      title: Behaviour of conversion technologies
+      short_description:
+      description: |
+        In this section you can determine the behaviour of different types of flexible demand technologies
+        for electricity conversion. The demand of these technologies
+        is considered flexible because it can be increased, reduced or shifted in time if needed (see the
+        <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Flexibility overview </a>
+        for background information). </br></br>
+        Each flexible demand technology has a <i>willingness-to-pay</i> that indicates the maximum electricity
+        price for which it is willing to consume electricity. If the electricity price in a given hour is lower than a technology's willingness-to-pay, the technology will consume electricity
+        in that hour.
+        In the slides below you can set the willingness-to-pay and installed capacity for:
+        <ul><li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
+        conversion to hydrogen</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        conversion to heat for district heating</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
+        conversion to heat for industry</a></li></ul></br>
+        Note that the specific behaviour of these technologies is more complicated than stated in this short
+        description. Our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> contains a more detailed description.
     flexibility_flexibility_power_to_heat_for_district_heating:
       title: Conversion to heat for district heating
       short_description:
-      description: "At times of excess electricity supply, an electric boiler or heat
-        pump could convert excess electricity into heat for district heating. Other
-        heat sources for district heating can be set in <a href=\"/scenario/supply/heat/heat-sources\"
-        >Supply > District Heating</a>. \r\n</br></br>\r\n Please note that 1 MWth
-        of power-to-heat boiler uses more electricity than 1 MWth of power-to-heat
-        pump. They produce the same amount of heat per hour, of course."
+      description: |
+        Electricity can be used to produce heat through electric boilers or heat pumps, which is
+        also known as power-to-heat. In the ETM, power-to-heat is a flexible demand technology, which
+        means that heat is only produced when the willingness-to-pay of power-to-heat exceeds the hourly
+        electricity price. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information. </br></br>
+        Note that a 1 MWth power-to-heat boiler uses more electricity than a 1 MWth power-to-heat heat
+        pump, even though they produce the same amount of heat per hour. The produced heat is delivered
+        to the district heating network. You can also choose other heat sources in the
+        <a href="/scenario/supply/heat/heat-sources"> district heating</a> section.
     flexibility_flexibility_power_to_heat_for_industry:
       title: Conversion to heat for industry
       short_description:
-      description: "At times of excess electricity supply, an electric boiler in industry
-        could convert excess electricity into heat. This in turn lowers the gas and
-        hydrogen demands (if present). This hybrid heating option can be used in these
-        industry sub sectors: \r\n<ul>\r\n  <li><a href=\"/scenario/demand/industry/refineries\"
-        >refineries</a></li>\r\n  <li><a href=\"/scenario/demand/industry/chemicals\">chemical
-        industry</a></li>\r\n  <li><a href=\"/scenario/demand/industry/food\">food
-        industry</a></li>\r\n  <li><a href=\"/scenario/demand/industry/paper\">paper
-        industry</a></li></ul>"
+      description: |
+        Gas and hydrogen burners in industry can be turned into hybrid heaters by fitting
+        them with an electric boiler. In the ETM, this power-to-heat boiler is a flexible demand
+        technology, which means that when the willingness-to-pay exceeds the hourly electricity
+        price, the power-to-heat boilers will produce the required heat instead of the gas or
+        hydrogen burners. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information. </br></br>
+        Because it is a hybrid heating option it requires capacity of both power-to-heat
+        boilers and gas or hydrogen burners to be installed for it to have an effect.
+        You can set the installed capacity in these industry sub sectors:
+        <ul><li><a href="/scenario/demand/industry/refineries">refineries</a></li>
+        <li><a href="/scenario/demand/industry/chemicals">chemical industry</a></li>
+        <li><a href="/scenario/demand/industry/food">food industry</a></li>
+        <li><a href="/scenario/demand/industry/paper">paper industry</a></li></ul>
     flexibility_flexibility_power_to_gas:
       title: Conversion to hydrogen
       short_description:
-      description: Excess electricity can be used to produce hydrogen in an electrolysis
-        process. In the ETM, the hydrogen produced by using excess power will be fed
-        into the central hydrogen network. In addition to this hydrogen producing
-        technology, you can choose to produce hydrogen through other processes in
-        <a href="/scenario/supply/hydrogen/hydrogen-production" >hydrogen production
-        slide</a>. Any excess hydrogen will be exported. The efficiency of elektrolysers can
-        be adjusted <a href="/scenario/costs/costs_hydrogen/hydrogen-production" >here</a>.
+      description: |
+        Electricity can be used to produce hydrogen through the electrolysis of water, which is also
+        known as power-to-gas. In the ETM, power-to-gas is a flexible demand technology, which means that
+        hydrogen is only produced when the willingness-to-pay of power-to-gas exceeds the hourly electricity
+        price. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information. </br></br>
+        The produced hydrogen will be fed into the central hydrogen network. In the
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> hydrogen production</a> section you can
+        also choose to produce hydrogen through other processes. Any excess hydrogen will be exported.
     flexibility_flexibility_power_to_methane:
       title: Conversion to methane for gas network
       short_description:
@@ -199,21 +290,21 @@ en:
         shows the effect of curtailment on the annual electricity production."
     flexibility_overview_introduction:
       title: What is flexibility?
-      short_descriptioN:
+      short_description:
       description: |
-        Natural patterns like seasons (yearly), the variations in weather (weekly), day and night 
-        and our rhythm of waking up, going to work, coming home, etc. cause both the need for energy 
-        and the availability of energy to fluctuate. Flexibility is about balancing energy supply 
+        Natural patterns like seasons (yearly), the variations in weather (weekly), day and night
+        and our rhythm of waking up, going to work, coming home, etc. cause both the need for energy
+        and the availability of energy to fluctuate. Flexibility is about balancing energy supply
         and demand on all these timescales. </br></br>
         For longer timescales, the amount or volume of energy supplied or used is more interesting.
-        For shorter timescales, the ability to produce or use a certain amount of energy is more 
+        For shorter timescales, the ability to produce or use a certain amount of energy is more
         interesting. This is called capacity.
-        Some flexibility technologies are more suited to process large (fluctuations in) volumes of 
-        energy, others are more suitable for large fluctuations in capacity, and some are suited to both. 
+        Some flexibility technologies are more suited to process large (fluctuations in) volumes of
+        energy, others are more suitable for large fluctuations in capacity, and some are suited to both.
         Some examples are: </br>
         <ul> <i>Suitable for large (fluctuations in) volume </i>
         <ul><li> Import/export of gas/hydrogen </li>
-        <li> Power-to-gas: hydrogen production from excess electricity </li>
+        <li> Power-to-gas: hydrogen production from electricity </li>
         <li> Storage of gas/hydrogen </li>
         <li> Seasonal storage of heat </li>
         </li>
@@ -225,165 +316,165 @@ en:
         </ul>
         <i>Suitable for both volume and capacity </i>
         <ul><li> Import/export of electricity </li>
-        <li> Power-to-heat: heat production from excess electricity (with heat storage) </li>
+        <li> Power-to-heat: heat production from electricity (with heat storage) </li>
         <li> Curtailment of renewable electricity production </li>
         <li> Large-scale electricity storage: pumped hydro storage </li>
         </ul> </ul> </br>
-        In this section, you can see how supply and demand (mis)match on various timescales, how this 
-        results in the need for flexibility in the energy system and how you can provide this need. In 
+        In this section, you can see how supply and demand (mis)match on various timescales, how this
+        results in the need for flexibility in the energy system and how you can provide this need. In
         the next slide we will go deeper into the definitions of imbalance and flexibility.
     flexibility_overview_hourly_electricity_supply_demand:
       title: Hourly inflexible supply and demand
       short_description:
       description: |
-        What do we actually mean when we talk about the mismatch or imbalance between supply and demand? 
+        What do we actually mean when we talk about the mismatch or imbalance between supply and demand?
         To help us understand these concepts better we begin by defining two types of supply: </br>
-        <ul><li> Inflexible supply: this is the energy produced by technologies that cannot be regulated 
-        easily by humans or that run continuously based on cost considerations. Wind and solar are good 
-        examples of technologies that cannot be regulated by humans. They do show variable behaviour 
-        (volatile changes due to environmental effects) but they for instance do not follow hourly 
-        electricity prices. We therefore call them inflexible. Nuclear power plants are an example of 
-        power plants that can be adjusted to run continuously based on cost considerations. These kind of 
+        <ul><li> Inflexible supply: this is the energy produced by technologies that cannot be regulated
+        easily by humans or that run continuously based on cost considerations. Wind and solar are good
+        examples of technologies that cannot be regulated by humans. They do show variable behaviour
+        (volatile changes due to environmental effects) but they for instance do not follow hourly
+        electricity prices. We therefore call them inflexible. Nuclear power plants are an example of
+        power plants that can be adjusted to run continuously based on cost considerations. These kind of
         plants are called must-run. </li>
-        <li> Flexible supply: this energy production typically <i>does</i> follow man-made rules (such as hourly 
+        <li> Flexible supply: this energy production typically <i>does</i> follow man-made rules (such as hourly
         electricity prices) and includes so-called <i>dispatchable</i> plants like gas-fired power plants. </li>
         </ul></br>
         ... and two types of demand:
-        <ul><li> Inflexible (or <i>baseload</i>) demand: this type of energy consumption is considered fixed 
-        because it cannot be regulated easily. This for example includes industrial processes that need 
-        to run continuously, or consumption that does not respond to hourly electricity prices such as 
+        <ul><li> Inflexible (or <i>baseload</i>) demand: this type of energy consumption is considered fixed
+        because it cannot be regulated easily. This for example includes industrial processes that need
+        to run continuously, or consumption that does not respond to hourly electricity prices such as
         individual households. Most of the final electricity demand of sectors falls into this category. </li>
-        <li> Flexible demand: this is energy consumption that can be increased, reduced, or shifted in 
+        <li> Flexible demand: this is energy consumption that can be increased, reduced, or shifted in
         time if needed. </li>
         </ul></br>
-        In the chart to the right, we only show the inflexible supply and demand of electricity. For other 
+        In the chart to the right, we only show the inflexible supply and demand of electricity. For other
         energy carriers you can find a similar chart in the chart list (upper right corner). </br></br>
-        It should be noted that changes in flexible technologies can, indirectly, lead to changes in the 
-        inflexible supply and demand. For example, the installation of power-to-gas, which is a flexible 
-        technology, can reduce the need for hydrogen import, which is inflexible, causing the inflexible 
-        supply of hydrogen to change. These second-order effects can lead to interesting behaviour of the 
-        inflexible supply and demand curves. More information about the definitions of inflexible supply and 
+        It should be noted that changes in flexible technologies can, indirectly, lead to changes in the
+        inflexible supply and demand. For example, the installation of power-to-gas, which is a flexible
+        technology, can reduce the need for hydrogen import, which is inflexible, causing the inflexible
+        supply of hydrogen to change. These second-order effects can lead to interesting behaviour of the
+        inflexible supply and demand curves. More information about the definitions of inflexible supply and
         baseload demand can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentation</a>. </br></br>
-        In the next section we take the exploration of inflexible supply and demand a step further by 
+        In the next section we take the exploration of inflexible supply and demand a step further by
         looking at how they behave on a timescale longer than hours.
     flexibility_overview_inflexible_demand_supply_sum:
       title: Monthly inflexible supply and demand volumes
       short_description:
       description: |
-        This chart shows the monthly total volumes for supply and demand of electricity, network gas, 
-        hydrogen and heat for district heating. This shows you how these carriers typically vary throughout 
+        This chart shows the monthly total volumes for supply and demand of electricity, network gas,
+        hydrogen and heat for district heating. This shows you how these carriers typically vary throughout
         the year: when are they mainly consumed? When are the moments of extra production? </br></br>
-        As with the hourly curves in the previous slide, only the inflexible supply and the baseload demand 
+        As with the hourly curves in the previous slide, only the inflexible supply and the baseload demand
         are shown in this chart. This allows you to clearly see the natural variations in the energy system.
         </br></br>
-        By clicking on the labels of the chart you can determine which energy carriers you want to show or 
-        hide. If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that 
-        carrier in a specific month. This will open a new chart showing the hourly values for that carrier in 
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or
+        hide. If you want a more detailed view, you can also zoom in on an energy carrier by clicking on that
+        carrier in a specific month. This will open a new chart showing the hourly values for that carrier in
         the selected month.
     flexibility_overview_inflexible_demand_supply_max:
       title: "The need for flexibility: capacity"
       short_description:
       description: |
-        This chart shows the monthly maximum <i>capacity</i> for supply and demand of electricity, 
-        network gas, hydrogen and heat for district heating. This gives an indication of the capacity needed to deal 
-        with imbalance for each energy carrier. This capacity can be realized in the form of transport 
+        This chart shows the monthly maximum <i>capacity</i> for supply and demand of electricity,
+        network gas, hydrogen and heat for district heating. This gives an indication of the capacity needed to deal
+        with imbalance for each energy carrier. This capacity can be realized in the form of transport
         infrastructure or other flexibility options. For the electricity network the relation between
-        transport infrastructure and flexibility options can be explored in more detail in the 
+        transport infrastructure and flexibility options can be explored in more detail in the
         <a href="/scenario/flexibility/flexibility_net_load/peak-load-and-usable-capacity">Net load</a> section. </br></br>
-        As with the above charts that focus on volume, only the inflexible supply and the baseload 
-        demand are shown. More information about the definitions of inflexible supply and baseload 
+        As with the above charts that focus on volume, only the inflexible supply and the baseload
+        demand are shown. More information about the definitions of inflexible supply and baseload
         demand can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentation</a>. </br></br>
-        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
-        If you want to view when peaks occur within a month, you can also zoom in on an energy carrier by clicking 
-        on that carrier in a specific month. This will open a new chart showing the hourly values for that 
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
+        If you want to view when peaks occur within a month, you can also zoom in on an energy carrier by clicking
+        on that carrier in a specific month. This will open a new chart showing the hourly values for that
         carrier in the selected month.
     flexibility_overview_flexible_capacities:
       title: "The provision of flexibility: capacity"
       short_description:
       description: |
-        As we have seen in previous sections, imbalance in the supply and demand of carriers occurs when we integrate 
-        large volumes of volatile energy in our energy system while keeping the demand fixed. Whenever the volatile 
-        and must-run (inflexible) supply is larger than the baseload (inflexible) demand, the energy system can be 
-        said to have an ‘excess’ of energy. Flexible demand technologies can be used to utilize this energy excess. 
+        As we have seen in previous sections, imbalance in the supply and demand of carriers occurs when we integrate
+        large volumes of volatile energy in our energy system while keeping the demand fixed. Whenever the volatile
+        and must-run (inflexible) supply is larger than the baseload (inflexible) demand, the energy system can be
+        said to have an ‘excess’ of energy. Flexible demand technologies can be used to utilize this energy excess.
         In moments where the reverse happens, flexible supply technologies can be used to meet the energy shortage.
         </br></br>
-        So far, the charts shown in this section have focused on the need for flexibility. This chart focuses on the 
-        provision of flexibility. More precisely: the installed capacity of flexible supply and demand technologies 
-        for electricity, network gas, hydrogen and heat for district heating are shown. Additionally, it shows the 
-        maximum excess and shortage for each energy carrier. This indicates whether you have installed enough flexible 
-        technologies to fully utilize the excesses and to fully meet the shortage. You can tune the installed capacity 
+        So far, the charts shown in this section have focused on the need for flexibility. This chart focuses on the
+        provision of flexibility. More precisely: the installed capacity of flexible supply and demand technologies
+        for electricity, network gas, hydrogen and heat for district heating are shown. Additionally, it shows the
+        maximum excess and shortage for each energy carrier. This indicates whether you have installed enough flexible
+        technologies to fully utilize the excesses and to fully meet the shortage. You can tune the installed capacity
         of flexible technologies in your scenario, for example in the Excess electricity section. </br></br>
-        Note that some technologies appear twice in this chart. Power-to-gas for instance occurs in the electricity 
-        column (as flexible demand) and in the hydrogen column (as flexible supply). This is a direct consequence of 
-        the chosen definition of flexible technologies in the ETM. More information about the definitions of flexible 
+        Note that some technologies appear twice in this chart. Power-to-gas for instance occurs in the electricity
+        column (as flexible demand) and in the hydrogen column (as flexible supply). This is a direct consequence of
+        the chosen definition of flexible technologies in the ETM. More information about the definitions of flexible
         technologies can be found in our <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentation</a>. </br></br>
-        It is also worth to note that the methane- and hydrogen storage are not generally dimensioned to match the maximum 
-        shortage and excess. This has two reasons. Firstly, for the gaseous carriers, the storage is solely responsible 
-        for balancing. Secondly, in the case of  hydrogen, power-to-gas has a profile that typically follows volatile 
-        electricity supply rather than hydrogen demand. As noted above, power-to-gas is considered to be a flexible 
-        technology and, is therefore not included in the residual load curve. This means that it does not affect the 
+        It is also worth to note that the methane- and hydrogen storage are not generally dimensioned to match the maximum
+        shortage and excess. This has two reasons. Firstly, for the gaseous carriers, the storage is solely responsible
+        for balancing. Secondly, in the case of  hydrogen, power-to-gas has a profile that typically follows volatile
+        electricity supply rather than hydrogen demand. As noted above, power-to-gas is considered to be a flexible
+        technology and, is therefore not included in the residual load curve. This means that it does not affect the
         maximum excess (blue line).
     flexibility_overview_hourly_carriers_inflexible_imbalance:
       title: Residual load curves
       short_description:
       description: |
-        In previous slides we looked at the natural variations of (inflexible) supply and demand of energy for 
-        the various carriers. To show the ‘need for flexibility’ more clearly, we subtract the inflexible supply 
-        from the baseload demand and plot the resulting difference. This is called the ‘residual load curve’ 
-        which shows for every hour whether the difference between (inflexible) supply and demand is a ‘residual 
-        demand’ or a ‘residual supply’. Other words that are commonly used to describe residual demand and supply 
+        In previous slides we looked at the natural variations of (inflexible) supply and demand of energy for
+        the various carriers. To show the ‘need for flexibility’ more clearly, we subtract the inflexible supply
+        from the baseload demand and plot the resulting difference. This is called the ‘residual load curve’
+        which shows for every hour whether the difference between (inflexible) supply and demand is a ‘residual
+        demand’ or a ‘residual supply’. Other words that are commonly used to describe residual demand and supply
         are ‘shortage’ and ‘surplus’ or ‘excess’ of energy. </br></br>
-        In other words: the residual load curve shows the hourly <i>imbalance</i> of energy carriers which would occur 
+        In other words: the residual load curve shows the hourly <i>imbalance</i> of energy carriers which would occur
         if we would not make an effort to balance the energy system. </br></br>
-        Please take a close look at what the signs of the residual load curve actually mean. Because the inflexible 
-        supply is subtracted from the baseload demand, negative values mean ‘surpluses’ of energy and positive 
-        values ‘shortages’. More information about the definitions of inflexible supply and baseload demand can be 
+        Please take a close look at what the signs of the residual load curve actually mean. Because the inflexible
+        supply is subtracted from the baseload demand, negative values mean ‘surpluses’ of energy and positive
+        values ‘shortages’. More information about the definitions of inflexible supply and baseload demand can be
         found in our documentation. </br></br>
         In the next slide we will take a closer look at the residual load on longer timescales.
     flexibility_overview_monthly_carriers_inflexible_imbalance:
       title: Imbalance of monthly supply and demand volumes
       short_description:
       description: |
-        This chart shows the monthly imbalance between supply and demand volumes for electricity, network gas, 
-        hydrogen and heat for district heating. This gives you insight into the balance of your energy system 
-        throughout the year: in which months does an imbalance occur? Which carriers are not in balance? Are 
+        This chart shows the monthly imbalance between supply and demand volumes for electricity, network gas,
+        hydrogen and heat for district heating. This gives you insight into the balance of your energy system
+        throughout the year: in which months does an imbalance occur? Which carriers are not in balance? Are
         these shortages or surpluses of energy? </br></br>
-        The imbalance is calculated by subtracting the inflexible supply from the baseload demand, this is 
-        called the "residual load". In comparison with the hourly residual load curve shown on the previous 
+        The imbalance is calculated by subtracting the inflexible supply from the baseload demand, this is
+        called the "residual load". In comparison with the hourly residual load curve shown on the previous
         slide, this chart allows you to see the imbalance on a longer timescale. </br></br>
-        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide. 
-        If you want a more detailed view, you can also zoom in by clicking on a specific month. This will open a 
+        By clicking on the labels of the chart you can determine which energy carriers you want to show or hide.
+        If you want a more detailed view, you can also zoom in by clicking on a specific month. This will open a
         new chart showing the residual load curves for the selected month.
     flexibility_overview_cumulative_imbalance:
       title: "The need for flexibility: volume"
       short_description:
       description: |
-        This chart gives a rough estimate for how much long-term flexibility (storage volume) 
-        is needed in your scenario. The blue (“uncorrected”) line in the chart is created by 
+        This chart gives a rough estimate for how much long-term flexibility (storage volume)
+        is needed in your scenario. The blue (“uncorrected”) line in the chart is created by
         summing up the hourly imbalance for all relevant carriers at each hour. Subsequently, the line
-        has been moved upwards, to only show positive values. This line is 
+        has been moved upwards, to only show positive values. This line is
         indicative because we do not take any losses of storage or conversion into account. </br></br>
-        This line gives a general impression of the extent to which the energy system is in 
-        balance over the year. In periods where demand exceeds supply (cold periods with no 
-        wind and little sunshine), the resulting line dips as ‘storage’ gets depleted. In 
-        line where supply is generally higher than demand (like sunny summer months), the 
-        line rises again. Note that here a different convention is used for the meaning of negative 
+        This line gives a general impression of the extent to which the energy system is in
+        balance over the year. In periods where demand exceeds supply (cold periods with no
+        wind and little sunshine), the resulting line dips as ‘storage’ gets depleted. In
+        line where supply is generally higher than demand (like sunny summer months), the
+        line rises again. Note that here a different convention is used for the meaning of negative
         and positive values than in the chart "Imbalance of monthly supply and demand volumes". </br></br>
-        By comparing the start and end point of this line, you can see whether the system is 
-        in surplus or deficit on an annual basis. The absolute difference shows how much room 
-        there is for surplus storage or surplus conversion losses to make up for any shortages, 
-        or how large the shortage is that needs to be filled with additional energy production 
+        By comparing the start and end point of this line, you can see whether the system is
+        in surplus or deficit on an annual basis. The absolute difference shows how much room
+        there is for surplus storage or surplus conversion losses to make up for any shortages,
+        or how large the shortage is that needs to be filled with additional energy production
         or imports. </br></br>
-        The red (“corrected”) line shows the fluctuations in required storage volume if supply 
-        and demand would balance out over the year. This gives a rough estimate of your total 
-        required storage capacity to ensure that carriers can be used at the right time. This 
+        The red (“corrected”) line shows the fluctuations in required storage volume if supply
+        and demand would balance out over the year. This gives a rough estimate of your total
+        required storage capacity to ensure that carriers can be used at the right time. This
         total required storage capacity can be read from the highest value of this line. </br></br>
-        This line is obtained by subtracting the annual surplus/deficit from the blue line. 
-        Because the cumulative nature of the line, the correction of first hour is added to 
-        the correction of the second hour etc. until the last hour is corrected to coincide 
+        This line is obtained by subtracting the annual surplus/deficit from the blue line.
+        Because the cumulative nature of the line, the correction of first hour is added to
+        the correction of the second hour etc. until the last hour is corrected to coincide
         with the level of the first hour.
     flexibility_security_of_supply_electricity:
       title: Electricity

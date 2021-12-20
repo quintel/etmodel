@@ -108,7 +108,24 @@ en:
     capacity_of_energy_power_solar_pv_offshore:
       title: Solar PV plants offshore
       short_description:
-      description:
+      description: |
+        With this slider you can build centralized plants of photovoltaic solar power panels.
+        This type of of solar PV plants is built to float in the sea. </br></br>
+        This technology is developed to increase the potential installation area for solar 
+        PV plants in a country. Additionally, these plants might be placed close to offshore 
+        wind parks. The idea is that the hourly production profiles of solar and wind can 
+        complement each other, meaning that the power cable to land will be better utilized.
+        You can see the combined output of offshore solar PV plants and wind parks in 
+        <a
+          href="#"
+          class="open_chart"
+          data-chart-key="supply_offshore_solar_wind"
+          data-chart-location="side">
+          this chart</a>. </br></br>
+        Production by solar can be more volatile than wind. To further enhance the compatibility 
+        of offshore solar and wind, the grid connection of these solar PV plants is 
+        therefore reduced by default with 33% of the peak capacity. You can change this value
+        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">here</a>.
     capacity_of_energy_power_ultra_supercritical_crude_oil:
       title: Oil-fired
       short_description: ''

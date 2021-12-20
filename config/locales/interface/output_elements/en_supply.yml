@@ -208,5 +208,12 @@ en:
     supply_offshore_solar_wind:
       title: Offshore solar and wind production per hour
       short_description:
-      description:
-     
+      description: |
+        This charts shows the hourly electricity production by 
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        offshore wind turbines</a> and
+        <a href="/scenario/supply/electricity_renewable/solar-power">
+        offshore solar PV plants</a>, as well as their combined output. Additionally, it shows how much 
+        production by the solar PV plants is curtailed when the connection capacity to the grid is 
+        lower than the peak capacity. You can set this capacity  
+        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">here</a>.

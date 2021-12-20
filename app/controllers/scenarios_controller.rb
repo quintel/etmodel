@@ -1,7 +1,7 @@
 class ScenariosController < ApplicationController
   include MainInterfaceController.new(:play, :play_multi_year_charts)
 
-  before_action :find_scenario, only: %i[show load play_multi_year_charts]
+  before_action :find_scenario, only: %i[show load play_multi_year_charts resume]
   before_action :require_user, only: %i[index new merge]
   before_action :redirect_compare, only: :compare
   before_action :setup_comparison, only: %i[compare weighted_merge]
@@ -90,6 +90,14 @@ class ScenariosController < ApplicationController
       format.html { render :play, layout: 'etm' }
       format.js
     end
+  end
+
+  # GET /scenario/resume/:id
+  def resume
+    Current.setting.reset!
+    Current.setting.api_session_id = @scenario.id
+
+    redirect_to play_path
   end
 
   # A "synonym" of `play`, which acts as an entrypoint for the scenario editor

@@ -308,6 +308,45 @@ describe ScenariosController, vcr: true do
         end
       end
     end
+
+    context 'when loading the resume play endpoint' do
+      # Rendering the view triggers requests to ETEngine.
+      render_views false
+
+      before do
+        session[:setting] = Setting.new(api_session_id: 12_345)
+      end
+
+      context 'with a valid scenario' do
+        it 'sets the API session ID' do
+          get :resume, params: { id: 123 }
+          expect(session[:setting].api_session_id).to eq('123')
+        end
+
+        it 'redirects to the play page' do
+          get :resume, params: { id: 123 }
+          expect(response).to redirect_to(play_path)
+        end
+      end
+
+      context 'with an invalid scenario' do
+        before do
+          allow(Api::Scenario)
+            .to receive(:find)
+            .and_raise(ActiveResource::ResourceNotFound.new(nil))
+        end
+
+        it 'does not set the API session ID' do
+          expect { get(:resume, params: { id: 123 }) }
+            .not_to change(session[:setting], :api_session_id)
+        end
+
+        it 'redirects to the root page' do
+          get :resume, params: { id: 123 }
+          expect(response).to redirect_to(root_url)
+        end
+      end
+    end
     # rubocop:enable RSpec/NestedGroups
   end
 

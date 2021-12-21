@@ -669,7 +669,6 @@ nl:
     wtp_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:
-<<<<<<< HEAD
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers willen betalen
         voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor power-to-heat
@@ -788,11 +787,6 @@ nl:
     settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity:
       title: 'Verbeter inzet opslag met prognose van residual load'
       description: ''
-=======
-      description: "Power-to-gas installaties produceren waterstof met elektriciteitsoverschotten.
-        Dit schuifje zorgt ervoor dat deze waterstof wordt ingezet in het centrale
-        waterstofnetwerk. Overtollig waterstof wordt geëxporteerd. De efficiëntie van elektrolysers
-        kan <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast."
     connection_capacity_always_on_wind_turbine_inland:
       title: Relatieve aangesloten netwerkcapaciteit
       short_description:
@@ -867,6 +861,3 @@ nl:
         Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op 
         de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen 
         en opslagvolume van de batterij te zien.
-
-
->>>>>>> Add nl locales for wind and solar with battery

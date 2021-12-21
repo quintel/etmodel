@@ -121,7 +121,6 @@ nl:
     flexibility_electricity_storage_overview:
       title: Gedrag van opslagtechnologieën
       short_description:
-<<<<<<< HEAD
       description: |
         In deze sectie kun je het gedrag bepalen van technologieën voor elektriciteitsopslag. Deze 
         technologieën worden als flexibel gezien omdat zowel hun vraag als aanbod indien wenselijk 
@@ -162,29 +161,6 @@ nl:
         ontladen.
         <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> voor meer informatie.
-    flexibility_power_storage_transport_car_flexibility_p2p_electricity:
-      title: Batterijen in elektrische auto's
-=======
-      description: "Windmolens en zonnepanelen hebben van nature een grillig productiepatroon.
-        De elektriciteit die ze produceren kan daarom niet altijd worden gebruikt
-        om elektriciteitsvraag in te vullen. Dit kan leiden tot overproductie van
-        elektriciteit. Om te voorkomen dat deze elektriciteitsproductie moet worden
-        beperkt, kent het ETM een aantal flexibiliteitstechnologieën die de overschotten
-        kunnen opslaan of omzetten in andere energiedragers. Je kan die technologieën
-        inzetten in de <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\">'Opslag'</a>
-        en <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-households\">'Conversie'</a>
-        tabs.\r\n<br/><br/>\r\nDoor middel van de lijst hieronder kun je de volgorde
-        bepalen waarin de technologieën worden ingezet. Het ETM stuurt elektriciteitsoverschotten
-        naar de technologie die als eerste op de lijst staat zolang de capaciteit
-        dit toelaat; verdere overschotten worden naar de tweede technologie op de
-        lijst gestuurd en zo verder. Enige overgebleven elektriciteit wordt gecurtailed.
-        Je kunt de technologieën in de gewenste volgorde verslepen."
-    flexibility_flexibility_power_storage:
-      title: Opslagsystemen
-      short_description:
-      description: Met de volgende sliders kun je aangeven welke elektriciteitsopslag
-        technologieën je inzet in de verschillende netvlakken. Elektriciteitsoverschotten
-        worden opgeslagen en ingezet zodra er geen overproductie meer is.
     flexibility_power_storage_wind_turbine_inland:
       title: Windmolens met opslagsystemen
       short_description:
@@ -205,9 +181,8 @@ nl:
         zonnecentrales geïnstalleerd hebt. Dit kun je doen in de Aanbod sectie, onder 
         <a href="/scenario/supply/electricity_renewable/solar-power">
         Hernieuwbare elektriciteit</a>.
-    flexibility_flexibility_power_to_heat:
-      title: Conversie naar warmte voor huishoudens
->>>>>>> Add nl locales for wind and solar with battery
+    flexibility_power_storage_transport_car_flexibility_p2p_electricity:
+      title: Batterijen in elektrische auto's
       short_description:
       description: |
         Elektrische auto's kunnen functioneren als een kosteneffectieve manier van elektriciteitsopslag, 

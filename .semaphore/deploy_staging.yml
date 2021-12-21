@@ -25,7 +25,7 @@ blocks:
             - 'docker push quintel/etmodel:beta'
             - cache store
             - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
-            - ssh -oStrictHostKeyChecking=no -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"
+            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"
       secrets:
         - name: Docker Hub credentials
         - name: Staging SSH settings

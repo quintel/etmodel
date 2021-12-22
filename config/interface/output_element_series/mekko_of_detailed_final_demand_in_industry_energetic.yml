@@ -1,4 +1,16 @@
 ---
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 10
+  group: metal
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_hydrogen_in_metal_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_detailed_final_demand_in_industry_energetic
+  key: hydrogen_metal_mekko_of_detailed_final_demand_in_industry_energetic
 - label: ambient
   color: "#ADDE4C"
   order_by: 8

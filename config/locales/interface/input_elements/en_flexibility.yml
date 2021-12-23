@@ -557,6 +557,18 @@ en:
         price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
+    capacity_of_energy_flexibility_flow_batteries_electricity:
+      title: Large-scale batteries
+      short_description:
+      description:
+    wtp_of_energy_flexibility_flow_batteries_electricity:
+      title: Willingness to pay
+      short_description:
+      description:
+    wta_of_energy_flexibility_flow_batteries_electricity:
+      title: Willingness to accept
+      short_description:
+      description:
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Present import
       short_description:
@@ -746,6 +758,9 @@ en:
       title: 'Improve use of storage by forecasting residual load'
       description: ''
     settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity:
+      title: 'Improve use of storage by forecasting residual load'
+      description: ''
+    settings_enable_storage_optimisation_energy_flexibility_flow_batteries_electricity:
       title: 'Improve use of storage by forecasting residual load'
       description: ''
     connection_capacity_always_on_wind_turbine_inland:

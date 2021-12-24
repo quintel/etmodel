@@ -217,17 +217,17 @@
   additional_specs:
     other:
       timeframe: i_h_d
-- key: wtp_of_energy_flexibility_flow_batteries_electricity
+- key: volume_of_energy_flexibility_flow_batteries_electricity
   step_value: 0.1
-  unit: "€/MWh"
-  interface_group: willingness_to_pay
+  unit: "MWh"
+  interface_group: volume
   related_node: energy_flexibility_flow_batteries_electricity
   position: 61
   slide_key: flexibility_power_storage_energy_flexibility_flow_batteries_electricity
   additional_specs:
     other:
       timeframe: i_h_d
-- key: wta_of_energy_flexibility_flow_batteries_electricity
+- key: wtp_of_energy_flexibility_flow_batteries_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: willingness_to_pay
@@ -237,10 +237,20 @@
   additional_specs:
     other:
       timeframe: i_h_d
+- key: wta_of_energy_flexibility_flow_batteries_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: energy_flexibility_flow_batteries_electricity
+  position: 63
+  slide_key: flexibility_power_storage_energy_flexibility_flow_batteries_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d
 - key: settings_enable_storage_optimisation_energy_flexibility_flow_batteries_electricity
   step_value: 1.0
   unit: boolean
-  position: 63
+  position: 64
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_energy_flexibility_flow_batteries_electricity
   config:

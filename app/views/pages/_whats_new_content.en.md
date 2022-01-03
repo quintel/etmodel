@@ -1,5 +1,17 @@
 # What's new in the Energy Transition Model?
 
+# January 2022
+
+## New EU countries can be selected for your scenarios
+
+## Choose from additional steel production technologies 
+
+## Explore price-sensitive electricity demand
+
+## Forecasting for electricity storage
+
+
+
 # October 2021
 
 ## Start year 2019 new standard for scenarios for the Netherlands

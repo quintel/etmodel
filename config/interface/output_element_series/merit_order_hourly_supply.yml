@@ -167,6 +167,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_solar_pv_offshore_volatile_merit_order_hourly_supply
+- label: energy_battery_solar_pv
+  color: "#FFF47D"
+  order_by: 5
+  group: volatile
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_battery_solar_electricity
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_battery_solar_electricity_volatile_merit_order_hourly_supply
 - label: energy_power_wind_turbine_coastal
   color: "#065530"
   order_by: 5
@@ -203,6 +215,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_wind_turbine_offshore_volatile_merit_order_hourly_supply
+- label: energy_battery_wind_electricity
+  color: "#63A1C9"
+  order_by: 5
+  group: volatile
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_battery_wind_electricity
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_battery_wind_electricity_volatile_merit_order_hourly_supply
 - label: households_solar_pv_solar_radiation
   color: "#C2FFD1"
   order_by: 5
@@ -479,7 +503,7 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_ultra_supercritical_oxyfuel_ccs_lignite_dispatchable_merit_order_hourly_supply
-- label: total_demand
+- label: baseload_demand
   color: "#CC0000"
   order_by: 5
   group: ''

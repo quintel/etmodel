@@ -36,10 +36,12 @@ nl:
     investment_costs_wind_onshore:
       title: Investeringskosten wind op land
       short_description: ''
-      description: "Deze schuif stelt de toe-of afname in die je verwacht voor de
-        investeringskosten van windmolens op land. De kosten worden vergeleken met
-        de kosten van vandaag de dag.\r\n<br/><br/>\r\nThe specificaties hieronder
-        zijn voor een windmolen op land:"
+      description: |
+        Deze schuif stelt de toe-of afname in die je verwacht voor de investeringskosten 
+        van windmolens op land. De kosten worden vergeleken met de kosten van vandaag de dag. 
+        Dit schuifje beïnvloedt windmolens op land, windmolens aan de kust en windmolens op land 
+        met een geïntegreerd batterijsysteem. <br/><br/> 
+        The specificaties hieronder zijn voor een windmolen op land:
     investment_costs_wind_offshore:
       title: Investeringskosten wind op zee
       short_description: ''
@@ -313,10 +315,13 @@ nl:
     om_costs_wind_onshore:
       title: Onderhoudskosten wind op land
       short_description: ''
-      description: "Deze schuif stelt je de toe-of afname in die je verwacht voor
+      description: |
+        Deze schuif stelt je de toe-of afname in die je verwacht voor
         onderhouds- en beheerkosten van windmolens op land. De kosten worden vergeleken
-        met de kosten van vandaag de dag.\r\n<br/><br/>\r\nThe specificaties hieronder
-        zijn voor een windmolen op land:"
+        met de kosten van vandaag de dag.
+        Dit schuifje beïnvloedt windmolens op land, windmolens aan de kust en windmolens op land 
+        met een geïntegreerd batterijsysteem. <br/><br/>
+        The specificaties hieronder zijn voor een windmolen op land:
     om_costs_wind_offshore:
       title: Onderhoudskosten wind op zee
       short_description: ''
@@ -388,8 +393,12 @@ nl:
     investment_costs_energy_flexibility_mv_batteries_electricity:
       title: Investeringskosten grootschalige batterijopslag
       short_description:
-      description: Deze slider bepaalt de toekomstige verandering in investeringskosten
-        van grootschalige batterijopslag.
+      description: |
+        Deze slider bepaalt de toekomstige verandering in investeringskosten van grootschalige batterijopslag. 
+        Dit geldt ook voor de batterijen die onderdeel zijn van een geïntegreerd systeem met 
+        <a href="scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems"> windmolens</a> 
+        of met <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
+        zonnecentrales</a>.
     om_costs_water_river:
       title: Onderhoudskosten waterkrachtcentrales
       short_description: ''
@@ -406,13 +415,15 @@ nl:
     investment_costs_solar_solar_panels:
       title: Investeringskosten zonnepanelen
       short_description: ''
-      description: "Met deze schuif stel je de toe- of afname in die je verwacht voor
+      description: |
+        Met deze schuif stel je de toe- of afname in die je verwacht voor
         de investeringskosten voor zonnepanelen. De kosten worden vergeleken met de
         kosten van vandaag de dag. Verwacht wordt dat zonnecellen de komende 40 jaar
         veel goedkoper zullen worden. Merk op dat je met deze schuif de investeringskosten
-        aanpast voor zowel zon op dak als grootschalige zonneparken. De onderstaande
-        link laat de kosten van zon op dak zien. Let op: de installatiekosten van
-        zon op dak (500 kEUR/MW) worden niet aangepast met deze schuif.\r\n<br/>"
+        aanpast voor zowel zon op dak als grootschalige zonneparken. Met grootschalige zonneparken
+        worden de zonneparken op land, op zee en met een geïntegreerd batterijsysteem bedoeld. <br/><br/>
+        De onderstaande link laat de kosten van zon op dak zien. Let op: de installatiekosten van
+        zon op dak (500 kEUR/MW) worden niet aangepast met deze schuif.
     efficiency_energy_power_solar_pv_solar_radiation:
       title: Zonnepanelen
       description: "Zonnepanelen worden steeds efficiënter in het omzetten van zonnestralen in elektriciteit.
@@ -427,7 +438,7 @@ nl:
         <b>Opmerking 1:</b> De impact van deze schuif is anders voor zon op dak dan voor grondgebonden PV.
         Voor zon op dak kun je in het ETM het percentage dakoppervlak instellen dat bedekt is met zonnepanelen.
         Als de efficiëntie van deze panelen omhoog gaat, betekent dat dat het geïnstalleerde vermogen en
-        de productie van elektriciteit toenemen. Het aantal panelen blijft constant. Voor grondgebonden PV kun je het opgestelde vermogen instellen
+        de productie van elektriciteit toenemen. Het aantal panelen blijft constant. Voor grondgebonden PV en PV op zee kun je het opgestelde vermogen instellen
         in het ETM. Als de efficiëntie van panelen toeneemt, betekent dat dat er minder panelen nodig zijn om
         hetzelfde geïnstalleerde vermogen te halen. Vermogen en geproduceerde elektriciteit blijven constant.<br/><br/>
         <b>Opmerking 2:</b> Houd er rekening mee dat deze schuif invloed heeft op de kosten van zonnepanelen, net als de

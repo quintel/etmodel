@@ -280,13 +280,16 @@ en:
         '<u>Change chart</u>' above the graph, to select different graphs about energy
         demand."
     roof_area_for_pv_in_households:
-      title: Available roof area for pv in households
+      title: Used roof area for panels in households
       short_description: ''
-      description: "This graph shows how the electricity that buildings use, is generated.
-        Centrally produced electricity is lumped together here. You will get a chance
-        to choose production methods under the 'Supply' section. \r\n<br/><br/>\r\nYou
-        can click '<u>Change chart</u>' above the graph, to select different graphs
-        about energy use."
+      description: "This graph shows how much roof area is used for electricity and
+        heat production in households. You can choose the amount of solar pv-panels
+        and pvt-panels under the 'Households' section. The pvt panels are part of the
+        heat pump with pvt system under the 'Space heating & hot water' section.
+        \r\n<br/><br/>\r\nPart of the roof is suitable for multiple technologies,
+        which means that the technologies partly compete with each other for roof space.
+        \r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above the graph, to
+        select different graphs about households."
     source_of_electricity_in_buildings:
       title: Sources of electricity in buildings
       short_description: ''

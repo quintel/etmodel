@@ -23,6 +23,18 @@
   dependent_on:
   output_element_key: roof_area_for_pv_in_households
   key: pvt_panels_roof_area_for_pv_in_households
+- label: solar_thermal_heaters
+  color: "#320833"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solar_thermal_heaters_in_roof_area_for_pv_in_households
+  is_1990: false
+  dependent_on:
+  output_element_key: roof_area_for_pv_in_households
+  key: solar_thermal_heaters_roof_area_for_pv_in_households
 - label: roof_max
   color: "#FFA500"
   order_by: 5

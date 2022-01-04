@@ -1,0 +1,49 @@
+---
+- label: solar_panels
+  color: "#FDE97B"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: solar_panels_in_roof_area_for_pv_in_households
+  is_1990: false
+  dependent_on:
+  output_element_key: roof_area_for_pv_in_households
+  key: solar_panels_roof_area_for_pv_in_households
+- label: pvt_panels
+  color: "#e07033"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: pvt_panels_in_roof_area_for_pv_in_households
+  is_1990: false
+  dependent_on:
+  output_element_key: roof_area_for_pv_in_households
+  key: pvt_panels_roof_area_for_pv_in_households
+- label: roof_max
+  color: "#FFA500"
+  order_by: 5
+  group:
+  show_at_first:
+  is_target_line: true
+  target_line_position: '2'
+  gquery: future_demand_in_roof_area_for_pv_in_households
+  is_1990:
+  dependent_on:
+  output_element_key: roof_area_for_pv_in_households
+  key: future_demand_roof_area_for_pv_in_households
+- label: roof_max
+  color: "#FFA500"
+  order_by: 6
+  group:
+  show_at_first:
+  is_target_line: true
+  target_line_position: '1'
+  gquery: present_demand_in_roof_area_for_pv_in_households
+  is_1990:
+  dependent_on:
+  output_element_key: roof_area_for_pv_in_households
+  key: present_demand_roof_area_for_pv_in_households

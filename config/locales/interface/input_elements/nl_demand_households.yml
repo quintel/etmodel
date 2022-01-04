@@ -478,16 +478,19 @@ nl:
     households_heater_heatpump_pvt_electricity_share:
       title: Warmtepomp met pvt-panelen
       short_description: ''
-      description: "Een warmtepomp is een apparaat dat warmte verplaatst. De meest
-        bekende toepassing is een koelkast, maar in een gebouw kan een warmtepomp
-        ook zorgen voor verwarming en koeling. Dat kost minder energie dan gasverwarming
-        met een HR CV-ketel, maar het werkt vaak alleen als vloer- en muurverwarming
+      description: |
+        "Een warmtepomp is een apparaat dat warmte verplaatst. De meest bekende
+        toepassing is een koelkast, maar in een gebouw kan een warmtepomp ook zorgen
+        voor verwarming en koeling. Dat kost minder energie dan gasverwarming met
+        een HR CV-ketel, maar het werkt vaak alleen als vloer- en muurverwarming
         worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen daarom
-        vooral nog ingezet bij nieuwbouw van huizen. Europese wetgeving schrijft namelijk
-        voor dat het energiegebruik van huizen per 2020 tot nul moet zijn toegebracht
-        (gemeten over een heel jaar). \r\n<br/><br/>\r\nDeze warmtepomp wordt gecombineerd
-        met pvt-panelen, deze panelen zijn een combinatie van zonnepanelen en zonneboilers.
-        De warmtepomp haalt warmte uit het warm water van de pvt-panelen. <br/>"
+        vooral nog ingezet bij nieuwbouw van huizen. <br/><br/>nDeze warmtepomp
+        wordt gecombineerd met pvt-panelen, deze panelen zijn een combinatie van
+        zonnepanelen en zonneboilers. De warmtepomp haalt warmte uit het warm water
+        van de pvt-panelen.<br/><br/> De pvt-panelen concurreren deels om
+        dakoppervlak met zonnepanlen. Je kunt het gebruik van dakoppervlak bekijken
+        in <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households"
+        data-chart-location="side"> deze grafiek</a>."
     households_heater_wood_pellets_share:
       title: Houtpelletkachel
       short_description: ''

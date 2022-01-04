@@ -84,3 +84,10 @@
   related_node: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   position: 6
   slide_key: demand_households_heating
+- key: households_heater_heatpump_pvt_electricity_share
+  share_group: heating_households
+  step_value: 0.1
+  unit: "%"
+  related_node: households_space_heater_heatpump_pvt_electricity
+  position: 7
+  slide_key: demand_households_heating

@@ -471,16 +471,18 @@ en:
     households_heater_heatpump_pvt_electricity_share:
       title: Heat pump (pvt)
       short_description: ''
-      description: "A heat pump moves heat from one place to another. Heat pumps are
+      description: |
+        "A heat pump moves heat from one place to another. Heat pumps are
         used in refrigerators, but buildings can use them for heating and cooling.
         This saves energy compared to a gas-fired central heating boiler, for example.
         For optimal application, it does often require installation of under-floor
-        and wall heating instead of radiators. Currently, their use in newly constructed
-        houses is becoming quite popular, since European legislation dictates that
-        domestic energy consumption must decrease.\r\n<br/><br/>\r\nThis electric 
+        and wall heating instead of radiators. <br/><br/>This electric
         heat pump is combined with photovoltaic solar thermal panels (pvt-panels).
         These panels produce elctricity and draw heat from solar radiation. The warmed
-        water of the pvt-panels is used to draw the heat pumps heat from.\r\n<br/>"
+        water of the pvt-panels is used to draw the heat pumps heat from. <br/><br/>
+        The pvt-panels partly compete with solar panels for roof area. You can see
+        the use of roof area in <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households"
+        data-chart-location="side"> this chart</a>."
     households_heater_wood_pellets_share:
       title: Wood pellet boiler
       short_description: ''

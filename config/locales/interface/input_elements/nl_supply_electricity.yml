@@ -95,7 +95,23 @@ nl:
     capacity_of_energy_power_solar_pv_offshore:
       title: Zonnecentrales PV op zee
       short_description:
-      description:
+      description: |
+        Met dit schuifje bouw je een grootschalig zonnepark. Dit type zonnepark drijft in de zee. </br></br>
+        Deze technologie wordt ontwikkeld om het potentiële installatieoppervlak voor zonneparken 
+        in landen te vergroten. Daarnaast kunnen deze parken geïnstalleerd worden naast windparken 
+        op zee. Het achterliggende idee is dat de uurlijkse productieprofielen van zon en wind 
+        elkaar kunnen aanvullen, waardoor de elektriciteitskabel naar het land beter wordt benut.
+        Je kunt de gecombineerde output van zonneparken en windparken op zee zien in 
+        <a
+          href="#"
+          class="open_chart"
+          data-chart-key="supply_offshore_solar_wind"
+          data-chart-location="side">
+          deze grafiek</a>. </br></br>
+        Productie door zon kan volatieler zijn dan wind. Om zon en wind op zee beter op elkaar aan 
+        te laten sluiten wordt daarom de netwerkcapaciteit van de zonneparken op zee gereduceerd 
+        met 33% van het piekvermogen. Je kan deze waarde 
+        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">hier</a> veranderen.
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Geconcentreerde zonnestroom
       short_description: ''

@@ -189,16 +189,16 @@ nl:
       title: Luchtwarmtepomp
       short_description: ''
       description: |
-        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt 
+        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
         in huishoudens voor koeling veranderen.<br/><br/>
         Een luchtwarmtepomp gebruikt elektriciteit en omgevingskoude om koude te genereren.
-        Deze koude kan worden gedistribueerd via water (met vloerverwarmingssystemen) 
+        Deze koude kan worden gedistribueerd via water (met vloerverwarmingssystemen)
         of via de lucht (met airconditioners) om een woning te koelen.<br/><br/>
         De efficiëntie (COP) van de luchtwarmtepomp voor koeling (in tegenstelling
         tot verwarming) is vastgesteld. Deze kun je vinden in de technische parameters en kosten. <br/><br/>
-        Ga voor meer informatie naar de  
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>. 
-        Om de efficientie (COP) te beïnvloeden kun je naar de 
+        Ga voor meer informatie naar de
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>.
+        Om de efficientie (COP) te beïnvloeden kun je naar de
         <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
         of het <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weerjaar</a> aanpassen.
     households_appliances_fridge_freezer_electricity_efficiency:
@@ -446,7 +446,7 @@ nl:
         \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan
         100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
         onderwaardes / lower heating values (LHV) en deze HR-ketels ontrekken ook energie
-        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV, 
+        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV,
         alleen in bovenwaarde / higher heating values (HHV).
         Combiketels maken ook warm water om bijvoorbeeld mee te douchen. Warmwaterproductie is
         iets minder efficiënt dan de productie van warmte voor het CV-systeem."
@@ -457,7 +457,7 @@ nl:
         \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan
         100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
         onderwaardes / lower heating values (LHV) en deze HR-ketels ontrekken ook energie
-        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV, 
+        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV,
         alleen in bovenwaarde / higher heating values (HHV).
         Combiketels maken ook warm water om bijvoorbeeld mee te douchen. Warmwaterproductie is
         iets minder efficiënt dan de productie van warmte voor het CV-systeem."
@@ -475,6 +475,23 @@ nl:
         is wel extra elektriciteit of gas nodig voor de warmtepomp. Deze warmtepomp
         gebruikt elektriciteit, omdat de warmte uit de grond gehaald wordt. Een gaswarmtepomp
         wordt vaker toegepast als warmte uit de lucht wordt gehaald. <br/>"
+    households_heater_heatpump_pvt_electricity_share:
+      title: Warmtepomp met PVT-panelen
+      short_description: ''
+      description: |
+        Een warmtepomp is een apparaat dat warmte verplaatst. De meest bekende
+        toepassing is een koelkast, maar in een gebouw kan een warmtepomp ook zorgen
+        voor verwarming en koeling. Dat kost minder energie dan gasverwarming met
+        een HR CV-ketel, maar het werkt vaak alleen als vloer- en muurverwarming
+        worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen daarom
+        vooral nog ingezet bij nieuwbouw van huizen. <br/><br/>nDeze warmtepomp
+        wordt gecombineerd met PVT-panelen, deze panelen zijn een combinatie van
+        zonnepanelen en zonneboilers. De warmtepomp haalt warmte uit het warme water
+        van de PVT-panelen waardoor de warmtepomp efficienter is dan warmtepompen die 
+        de buitenlucht of grondwater gebruiken.<br/><br/> De PVT-panelen concurreren deels om
+        dakoppervlak met andere zonnepanelen. Je kunt het gebruik van dakoppervlak bekijken
+        in <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households"
+        data-chart-location="side"> deze grafiek</a>.
     households_heater_wood_pellets_share:
       title: Houtpelletkachel
       short_description: ''
@@ -489,20 +506,20 @@ nl:
       title: Luchtwarmtepomp
       short_description: ''
       description: |
-        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt 
+        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
         in huishoudens voor verwarming en warm tapwater veranderen. <br/><br/>
         Een luchtwarmtepomp gebruikt elektriciteit en omgevingswarmte om warmte te genereren.
-        Deze warmte kan worden gedistribueerd via water (met vloerverwarmingssystemen) 
+        Deze warmte kan worden gedistribueerd via water (met vloerverwarmingssystemen)
         of via de lucht (met airconditioners) om een woning te verwarmen ofwel om warm tapwater
         te genereren. <br/><br/>
-        De efficiëntie (COP) van de luchtwarmtepomp wordt 
-        beïnvloed door de buitentemperatuur en is daardoor afhankelijk van het weer. Voor elk 
+        De efficiëntie (COP) van de luchtwarmtepomp wordt
+        beïnvloed door de buitentemperatuur en is daardoor afhankelijk van het weer. Voor elk
         uur wordt de efficiëntie (COP) berekend gebaseerd op het weerjaar. Het gemiddelde van deze
-        uurlijkse berekeningen (de seizoensafhankelijke COP: 'SCOP') kan worden gevonden in de 
+        uurlijkse berekeningen (de seizoensafhankelijke COP: 'SCOP') kan worden gevonden in de
         technische parameters en kosten. <br/><br/>
-        Ga voor meer informatie naar de  
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>. 
-        Om de efficientie (COP) te beïnvloeden kun je naar de 
+        Ga voor meer informatie naar de
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>.
+        Om de efficientie (COP) te beïnvloeden kun je naar de
         <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
         of het <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weerjaar</a> aanpassen.
     households_heater_coal_share:

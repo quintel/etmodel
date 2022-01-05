@@ -188,15 +188,15 @@ en:
       title: Heat pump (air)
       short_description: ''
       description: |
-        With this slider you can adjust the percentage of air heatpumps used in households 
+        With this slider you can adjust the percentage of air heatpumps used in households
         for cooling. <br/><br/>
         An air heatpump uses electricity
         and ambient cold to generate cold. This cold can be transfered to water or air
         and used in underfloor heating or airconditioning systems for cooling. <br/><br/>
         Contrary to heating, the efficiency (COP) of this heat pump for cooling is
         fixed. You can view the efficiency in the technical and financial properties. <br/><br/>
-        For more information you can view the 
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>. 
+        For more information you can view the
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weather curve</a>.
     households_appliances_fridge_freezer_electricity_efficiency:
@@ -440,9 +440,9 @@ en:
       short_description: ''
       description: "This is a condensing gas-fired heater.
         When you click on \"Technical and financial properties\", then you will see that the
-        efficiency is above 100% for space heating. This is the case because all energy in 
-        the ETM is given in lower heating values (LHV) and this boiler also retrieves 
-        heat from condensation. Condensation heat is not included in LHV, only in 
+        efficiency is above 100% for space heating. This is the case because all energy in
+        the ETM is given in lower heating values (LHV) and this boiler also retrieves
+        heat from condensation. Condensation heat is not included in LHV, only in
         higher heating values (HHV). These boilers also produce hot water for showering and other uses. Hot water production
         is slightly less efficient than producing heat for the central heating system."
     households_heater_combined_hydrogen_share:
@@ -450,9 +450,9 @@ en:
       short_description: ''
       description: "This is a condensing hydrogen-fired heater.
         When you click on \"Technical and financial properties\", then you will see that the
-        efficiency is above 100% for space heating. This is the case because all energy in 
-        the ETM is given in lower heating values (LHV) and this boiler also retrieves heat 
-        from condensation. Condensation heat is not included in LHV, only in higher 
+        efficiency is above 100% for space heating. This is the case because all energy in
+        the ETM is given in lower heating values (LHV) and this boiler also retrieves heat
+        from condensation. Condensation heat is not included in LHV, only in higher
         heating values (HHV). These boilers also produce hot water for showering and other uses. Hot water production
         is slightly less efficient than producing heat for the central heating system."
     households_heater_heatpump_ground_water_electricity_share:
@@ -468,6 +468,22 @@ en:
         run on gas or electricity. This is an electric heat pump, as it draws its
         heat from the ground. Gas-fired heat pumps are more often used to draw their
         heat from the air.\r\n<br/>"
+    households_heater_heatpump_pvt_electricity_share:
+      title: Heat pump (PVT)
+      short_description: ''
+      description: |
+        A heat pump moves heat from one place to another. Heat pumps are
+        used in refrigerators, but buildings can use them for heating and cooling.
+        This saves energy compared to a gas-fired central heating boiler, for example.
+        For optimal application, it does often require installation of under-floor
+        and wall heating instead of radiators. <br/><br/>This electric
+        heat pump is combined with photovoltaic solar thermal panels (PVT panels).
+        These panels produce elctricity and draw heat from solar radiation. The warm
+        water of the PVT panels is used in heat pumps resulting in a higher efficiency than
+        heat pumps using outside air or ground water.<br/><br/>
+        The PVT panels partly compete with other solar panels for roof area. You can see
+        the use of roof area in <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households"
+        data-chart-location="side"> this chart</a>.
     households_heater_wood_pellets_share:
       title: Wood pellet boiler
       short_description: ''
@@ -481,17 +497,17 @@ en:
       title: Heat pump (air)
       short_description: ''
       description: |
-        With this slider you can adjust the percentage of air heatpumps used in households 
+        With this slider you can adjust the percentage of air heatpumps used in households
         for space heating and hot water.<br/><br/>
         An air heatpump uses electricity
         and ambient heat to generate heat. This heat can be transfered to water or air
         and used in underfloor heating or airconditioning systems for space heating or for the generation of hot water. <br/><br/>
-        The efficiency (COP) of this heat pump is affected by the outside air temperature 
-        and therefore determined by the weather. For every hour a seperate efficiency (COP) is calculated based on the 
+        The efficiency (COP) of this heat pump is affected by the outside air temperature
+        and therefore determined by the weather. For every hour a seperate efficiency (COP) is calculated based on the
         weather curve available in the ETM. The average of these hourly calculations (the Seasonal COP: 'SCOP') can be found
         in the technical and financial properties. <br/><br/>
-        For more information you can view the 
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>. 
+        For more information you can view the
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weather curve</a>.
     households_heater_coal_share:

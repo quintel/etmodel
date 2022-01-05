@@ -117,6 +117,26 @@ en:
           \ data-chart-key=\"hybrid_heat_pump\"
         >electricity and gas share table</a>
         will show a breakdown of how hybrid heat pumps use energy in households."
+    flexibility_power_storage_wind_turbine_inland:
+      title: Wind turbines with storage systems
+      short_description:
+      description: |
+        Here you can set the capacity of the battery and the grid connection of wind turbines with an integrated battery system. For 
+        these sliders to be effective you therefore need to have these types of turbines 
+        installed. You can do this in the Supply section, under 
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Renewable electricity</a>.
+    flexibility_power_storage_solar_pv_solar_radiation:
+      title: Solar plants with storage systems
+      short_description:
+      description: |
+        Here you can set the capacity of the battery and the grid connection of solar PV plants with an integrated battery system. For
+        these sliders to be effective you therefore need to have these types of plants 
+        installed. You can do this in the Supply section, under 
+        <a href="/scenario/supply/electricity_renewable/solar-power">
+        Renewable electricity</a>.
+    flexibility_flexibility_power_to_heat:
+      title: Conversion to heat for households
     flexibility_electricity_storage_overview:
       title: Behaviour of storage technologies
       short_description:
@@ -203,6 +223,19 @@ en:
         means that it can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the storage in a given hour, it
         will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine storage behaviour. In both cases the ETM respects the storage volume limits of the storage.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
+    flexibility_power_storage_energy_flexibility_flow_batteries_electricity:
+      title: Flow batteries
+      short_description:
+      description: |
+        Flow batteries allow for large-scale storage of electricity. This is because installing storage volume is relatively 
+        cheap compared to other batteries and it can be scaled independent from the installed capacity. For flow batteries 
+        you can therefore determine both the capacity and the storage volume. </br></br>
+        Batteries in the ETM are flexible technologies, which 
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
         See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentation</a> for more information.
     flexibility_electricity_conversion_overview:

@@ -90,7 +90,11 @@ class HourlyBase extends D3Chart {
 
     this.svg = this.createSVGContainer(this.width, this.height, this.margins);
 
-    this.dateSelect = new DateSelect(this.d3ContainerNode(), this.downsampleWith);
+    this.dateSelect = new DateSelect(
+      this.d3ContainerNode(),
+      this.model.get('config')?.downsample_with || this.downsampleWith
+    );
+
     this.dateSelect.draw(this.refresh.bind(this));
 
     this.model.once('remove', this.dateSelect.remove);

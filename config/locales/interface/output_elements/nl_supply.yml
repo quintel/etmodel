@@ -206,3 +206,16 @@ nl:
         <li><b>LPG</b></li>
         <li><b>andere olie</b> (o.a. aardolie, benzine, stookolie, naphtha, petcokes en raffinagegas)</li>
         <li><b>andere bio-olie</b> (biobenzine, andere biobrandstoffen)</li>
+    supply_offshore_solar_wind:
+      title: Productie van zon en wind op zee per uur
+      short_description:
+      description: |
+        Deze grafiek toont de uurlijke productie van elektriciteit door 
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        windmolens op zee</a> en
+        <a href="/scenario/supply/electricity_renewable/solar-power">
+        zonneparken PV op zee</a>, alsmede hun gezamenlijke output. Daaarnaast laat het 
+        ook zien welk deel van de zonneparken PV is afgeschakeld als de netwerkcapaciteit 
+        lager is dan het piekvermogen. Je kunt deze capaciteit 
+        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">hier</a>
+        aanpassen.

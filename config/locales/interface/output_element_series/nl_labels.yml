@@ -105,6 +105,8 @@ nl:
         associated_nonrenewable: "Transformatieverliezen niet-hernieuwbaar"
         associated_renewable: "Transformatieverliezen hernieuwbaar"
         available_network_capacity: "Beschikbare netwerkcapaciteit"
+        battery_charge: "Laden batterij"
+        battery_discharge_to_grid: "Ontladen batterij naar net"
         bicycles: "Fietsen"
         biocoal: "Biokolen"
         bio_ethanol: "Bio-ethanol"
@@ -215,6 +217,7 @@ nl:
         coastal: "Kust"
         coastal_wind_turbines: "Windmolens aan de kust"
         collective_chp_s: "WKK centrales"
+        combined_offshore_power: "Combineerde productie op zee"
         combustion_engine_cars: "Auto's met verbrandingsmotoren"
         computer: "Computer"
         compressed_natural_gas_cars: "CNG-auto's (gas onder druk)"
@@ -236,6 +239,7 @@ nl:
         csp: "CSP"
         current_cost_electricity_network: "Huidige kosten elektriciteitsnet"
         current_cost_gas_network: "Huidige kosten gasnet"
+        curtailed: "Productieverlaging"
         delta_peak_load_max_mva: "Verschil in max peak load [MVA]"
         demand: "Vraag"
         demand_incl_export: "Vraag (incl. export)"
@@ -250,6 +254,7 @@ nl:
         diff_1990: "versch 1990"
         diff_2010: "versch 2010"
         diff_20xx: "versch 20xx"
+        direct_to_grid: "Directe levering aan net"
         dish_washer: "Vaatwasser"
         dispatchable_electricity_production_capacity: "Regelbare productiecapaciteit"
         domestic_demand: "Vraag (binnenlandse)"
@@ -287,6 +292,7 @@ nl:
         electricity_stored_in_EV: "Opgeslagen in elektrische auto's"
         electricity_stored_in_opac: "Opgeslagen in OPAC"
         electricity_stored_in_mv_batteries: "Opgeslagen in grootschalige batterijen"
+        electricity_stored_in_flow_batteries: "Opgeslagen in flowbatterijen"
         electricity_converted_to_heat_district_heating_heatpump: "Omgezet in warmte voor warmtenetten (boiler)"
         electricity_converted_to_heat_district_heating_boiler: "Omgezet in warmte voor warmtenetten (warmtepomp)"
         electricity_converted_to_heat_households: "Omgezet naar warmte voor huishoudens"
@@ -311,12 +317,14 @@ nl:
         energy_flexibility_curtailment_electricity: 'Productieverlaging volatiele bronnen'
         energy_flexibility_pumped_storage_electricity: 'Opslag in stuwmeren'
         energy_flexibility_opac_electricity: 'Opslag in OPAC'
+        energy_flexibility_flow_batteries_electricity: 'Opslag in flowbatterijen'
         energy_flexibility_mv_batteries_electricity: 'Grootschalige batterijopslag'
         energy_flexibility_mv_batteries: "Grootschalige batterijen"
         energy_flexibility_hv_opac: "OPAC"
         energy_flexibility_pumped_storage: "Stuwmeren"
         energy_flexibility_mv_batteries_electricity_storage: "Grootschalige batterijopslag"
         energy_flexibility_hv_opac_electricity_storage: "OPAC"
+        energy_flexibility_mv_batteries_electricity_storage: "Flowbatterijen"
         energy_flexibility_pumped_storage_electricity_storage: "Stuwmeren"
         energy_heat_flexibility_p2h_boiler_electricity: "Omgezet in warmte voor warmtenetten (boiler)"
         energy_heat_flexibility_p2h_heatpump_electricity: "Omgezet in warmte voor warmtenetten (warmtepomp)"
@@ -336,9 +344,14 @@ nl:
         energy_power_nuclear_gen3_uranium_oxide: 'Kern 3e Gen'
         energy_power_solar_csp_solar_radiation: 'Geconcentreerde zonnestroom'
         energy_power_solar_pv: 'Zonneparken'
+        energy_battery_solar_pv: "Zonneparken met batterij"
         energy_power_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zonneparken'
+        energy_power_solar_pv_offshore_curtailed_electricity_output_curve: 'Productieverlaging zonneparken op zee'
         energy_power_solar_pv_electricity_output_curve: 'Opwek zonneparken'
+        energy_power_solar_pv_offshore_electricity_output_curve: 'Opwek zonneparken op zee'
+        energy_battery_solar_pv_electricity_output_curve: 'Opwek zonneparken met batterij'
         energy_power_solar_pv_solar_radiation: 'Zonnecentrales PV'
+        energy_power_offshore_solar_pv: 'Zonnecentrales PV op zee'
         energy_power_supercritical_coal: 'Kolen conventioneel'
         energy_power_supercritical_waste_mix: 'Afvalverbranding'
         energy_power_supercritical_ccs_waste_mix: 'Afvalverbranding CCS'
@@ -361,6 +374,8 @@ nl:
         energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Zonnecentrales"
         energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Power-to-gas"
         energy_hydrogen_solar_pv_solar_radiation: "Zonnecentrales"
+        energy_power_solar_pv_offshore: "Zonnecentrales op zee"
+        energy_power_offshore_solar_pv: "Zonnecentrals op zee"
         energy_hydrogen_steam_methane_reformer_ccs_for_mekko: "SMR + CCS"
         energy_hydrogen_steam_methane_reformer_for_mekko: "SMR"
         energy_hydrogen_wind_turbine_offshore: "Offshore wind"
@@ -424,6 +439,7 @@ nl:
         greengas_biogas: "Groen gas / biogas"
         greengas_final_demand: "Groen gas (eindgebruik)"
         greengas_to_electricity_production: "Groen gas voor elektriciteitsproductie"
+        grid_connection_capacity: "Aangesloten netwerkcapaciteit"
         growth: "Groei"
         heat: "Warmte"
         heat_network: "Warmte (warmtenet)"
@@ -862,6 +878,7 @@ nl:
         primary_imported_heat: "Geïmporteerde warmte"
         production: "Productie"
         pv: "PV"
+        pvt_panels: "PVT panelen"
         rapeseed: "Koolzaad (biodiesel/biokerosine)"
         refinery: "Raffinaderij"
         regasified_bio_lng: "Hervergast bio-LNG"
@@ -875,6 +892,7 @@ nl:
         required_investment: "Benodigde investering in elektriciteitsproductie"
         required_network_capacity: "Benodigde netwerk capaciteit"
         roof_use: "Gebruik daken"
+        roof_max: "Maximaal dakoppervlak"
         ships: "Binnenvaartschepen"
         solar: "Zon"
         solar_csp: "Zon CSP"
@@ -885,6 +903,7 @@ nl:
         solar_thermal: "Zonthermie"
         solar_thermal_hot_water: "Zonthermie (voor warm water)"
         solar_thermal_heating: "Zonthermie (voor verwarming)"
+        solar_thermal_heaters: "Zonneboilers"
         solar_termal_heat_production: "Zonthermie warmteproductie"
         solid_biomass: "Vaste biomassa"
         steam_methane_reforming: "Aardgas reforming"
@@ -910,6 +929,7 @@ nl:
         total_plants_investm: "Totaal (investering)"
         total_plants_prod_future: "Totaal  (prod. toekomst)"
         total_plants_prod_present: "Totaal  (prod. heden)"
+        total_to_grid: "Totale levering aan net"
         trains: "Treinen"
         trams: "Trams/metro's"
         transport_car_using_electricity: "Opgeslagen in elektrische auto's"

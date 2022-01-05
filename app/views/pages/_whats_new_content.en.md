@@ -10,7 +10,9 @@ The Energy Transition Model has been updated with the latest insights in steel i
 
 The model shows how the steel sector is embedded in the energy system at large, allowing you to explore how the decarbonisation of the steel industry relates to other energy transition developments, such as the deployment of renewables and the production of green hydrogen.
 
-In addition, it is now possible to choose what coal gas in the steel sector will be used for using the new sliders in *Emissions → CCUS* → **[Coal gases from blast furnaces (steel)](/scenario/emissions/ccus/coal-gases-from-blast-furnaces)**. Coal gas can either be used for electricity production or for transformation into chemical feedstock.
+In addition, it is now possible to choose what coal gas in the steel sector will be used for using the new sliders in *Emissions → CCUS* → **[Coal gases from blast furnaces (steel)](/scenario/emissions/ccus/coal-gases-from-blast-furnaces-steel)**. Coal gas can either be used for electricity production or for transformation into chemical feedstock.
+
+-> ![](/assets/pages/whats_new/steel_energy_demand_en.png) <-
 
 ## Explore price-sensitive electricity demand
 

@@ -2,7 +2,7 @@
 
 # Januari 2022
 
-## New EU countries can be selected for your scenarios
+## Nieuwe EU landen kunnen worden geselecteerd voor scenario's
 
 ## Keuze uit extra staalproductie technologieën
 
@@ -11,6 +11,8 @@ Het Energietransitiemodel is geüpdatet met de laatste inzichten rondom staalpro
 Het ETM laat zien hoe de staalsector is ingebed in het bredere energiesysteem en stelt je in staat om te verkennen hoe verduurzaming van de staalproductie zich verhoudt tot andere ontwikkelingen in de energietransitie, zoals de uitbouw van hernieuwbare energie en de productie van groene waterstof.
 
 Daarnaast is het nu mogelijk om te kiezen wat er met overgebleven kolengas wordt gedaan met de nieuwe sliders *Emissies → CCUS* → **[Kolengas uit hoogovens (staalsector)](/scenario/emissions/ccus/coal-gases-from-blast-furnaces)**. Kolengas kan gebruikt worden voor elektriciteitsproductie of voor transformatie tot grondstof voor de chemische industrie.
+
+-> ![](/assets/pages/whats_new/steel_energy_demand_nl.png) <-
 
 ## Explore price-sensitive electricity demand
 

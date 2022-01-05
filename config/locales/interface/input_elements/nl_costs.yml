@@ -382,19 +382,19 @@ nl:
       short_description:
       description: "Batterijen in huishouden worden vaak genoemd als oplossing voor
         het opvangen van elektriciteitsoverschotten. Met <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
-        >deze slider</a> kun je aangeven welk percentage van de huishoudens is uitgerust
+        >dit schuifje</a> kun je aangeven welk percentage van de huishoudens is uitgerust
         met batterijopslag en vervolgens kan je met bovenstaande slider aangeven hoeveel
         de investeringskosten zullen veranderen voor deze batterijen.\r\n</br>"
     investment_costs_energy_flexibility_hv_opac_electricity:
       title: Investeringskosten OPAC
       short_description:
-      description: Deze slider bepaalt de toekomstige verandering in investeringskosten
+      description: Dit schuifje bepaalt de toekomstige verandering in investeringskosten
         van Ondergrondse Pomp Accumulatie Centrale (OPAC).
     investment_costs_energy_flexibility_mv_batteries_electricity:
       title: Investeringskosten grootschalige batterijopslag
       short_description:
       description: |
-        Deze slider bepaalt de toekomstige verandering in investeringskosten van grootschalige batterijopslag. 
+        Dit schuifje bepaalt de toekomstige verandering in investeringskosten van grootschalige batterijopslag. 
         Dit geldt ook voor de batterijen die onderdeel zijn van een geïntegreerd systeem met 
         <a href="scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems"> windmolens</a> 
         of met <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
@@ -402,7 +402,7 @@ nl:
     om_costs_water_river:
       title: Onderhoudskosten waterkrachtcentrales
       short_description: ''
-      description: Deze schuif stelt je de toe-of afname in die je verwacht voor de
+      description: Dit schuifje stelt je de toe-of afname in die je verwacht voor de
         onderhouds- en beheerkosten van een waterkrachtcentrale in een grote rivier.
         De kosten worden vergeleken met de kosten van vandaag de dag.
     om_costs_water_mountains:
@@ -903,3 +903,27 @@ nl:
         ookwel de seasonal COP (SCOP), kun je vinden in de "Technische parameters en kosten".
         Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
         het uurlijkse profiel van de buitentemperatuur.
+    capacity_costs_energy_flexibility_flow_batteries_electricity:
+      title: Investeringskosten per MW flowbatterijen
+      short_decription:
+      description: |
+        In tegenstelling tot andere batterijen kunnen voor flowbatterijen het inputvermogen en het 
+        opslagvolume afzonderlijk gevarieerd worden. De investeringskosten bestaan dan ook uit twee 
+        componenten. De kosten per MW inputcapaciteit kun je met dit schuifje zetten. De kosten per
+        MWh opslagvolume zet je met het schuifje hieronder. </br></br>
+        In de <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibiliteit</a> sectie kun je het opgesteld vermogen en de verhouding met het opslagvolume 
+        aanpassen.
+    volume_costs_energy_flexibility_flow_batteries_electricity:
+      title: Investeringskosten per Mwh flowbatterijen
+      short_decription:
+      description: |
+        In tegenstelling tot andere batterijen kunnen voor flowbatterijen het inputvermogen en het 
+        opslagvolume afzonderlijk gevarieerd worden. De investeringskosten bestaan dan ook uit twee 
+        componenten. De kosten per MW inputcapaciteit zet je met het schuifje hierboven. De kosten per
+        MWh opslagvolume kun je met dit schuifje zetten. </br></br>
+        In de <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibiliteit</a> sectie kun je het opgesteld vermogen en de verhouding met het opslagvolume 
+        aanpassen.
+
+

@@ -611,6 +611,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_flexibility_mv_batteries_electricity_flex_merit_order_hourly_supply
+- label: energy_flexibility_flow_batteries_electricity
+  color: "#162442"
+  order_by: 5
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_flexibility_flow_batteries_electricity
+  is_1990: false
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_flexibility_flow_batteries_electricity_flex_merit_order_hourly_supply
 - label: energy_chp_local_engine_biogas
   color: "#FDE97B"
   order_by: 5

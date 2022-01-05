@@ -856,3 +856,26 @@ en:
       To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'.
       It is not possible to the absolute value of the future SCOP of air-source heat pumps with a slider as this is a result of hourly
       calculations based on the hourly outside temperature curve."
+    capacity_costs_energy_flexibility_flow_batteries_electricity:
+      title: Investment costs per MW flow batteries
+      short_decription:
+      description: |
+        In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
+        be adjusted independently. The investment costs therefore also consist of two components.
+        With this slider you can set the investment costs per MW of input capacity. The slider below 
+        sets the investment costs per MWh storage volume. </br></br>
+        In the <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibility</a> section you can determine the installed capacity and relative storage volume 
+        for your scenario.
+    volume_costs_energy_flexibility_flow_batteries_electricity:
+      title: Investment costs per MWh flow batteries
+      short_decription:
+      description: |
+        In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
+        be adjusted independently. The investment costs therefore also consist of two components.
+        The slider above sets the investment costs per MW of input capacity. With this slider you can 
+        set the investment costs per MWh storage volume. </br></br>
+        In the <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibility</a> section you can determine the installed capacity and relative storage volume 
+        for your scenario.
+

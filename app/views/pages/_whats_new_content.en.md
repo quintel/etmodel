@@ -6,19 +6,17 @@
 
 ## Choose from additional steel production technologies
 
-The Energy Transition Model has been updated with the latest insights in steel industry production technologies. The model update includes recent insights into upcoming production technologies such as Direct Reduction of Iron (DRI) using hydrogen as well as options for carbon capture, utilisation, and storage (CCUS). To this end, we have made extensive use of data from the MIDDEN project by PBL and TNO. The new steel technology options can be found in *Demand → Industry* → **[Steel](/scenario/demand/industry/steel)**.
-
-The model shows how the steel sector is embedded in the energy system at large, allowing you to explore how the decarbonisation of the steel industry relates to other energy transition developments, such as the deployment of renewables and the production of green hydrogen.
+The Energy Transition Model has been updated with the latest insights in steel industry production technologies. The model now includes the upcoming production technology Direct Reduction of Iron (DRI), where you can choose between hydrogen or natural gas, and improvements in the existing production technologies. These new production technologies can be found in *Demand → Industry* → **[Steel](/scenario/demand/industry/steel)**.
 
 In addition, it is now possible to choose what coal gas in the steel sector will be used for using the new sliders in *Emissions → CCUS* → **[Coal gases from blast furnaces (steel)](/scenario/emissions/ccus/coal-gases-from-blast-furnaces-steel)**. Coal gas can either be used for electricity production or for transformation into chemical feedstock.
 
--> ![](/assets/pages/whats_new/steel_energy_demand_en.png) <-
+-> ![](/assets/pages/whats_new/steel_whats_new_en.png) <-
 
 ## Explore price-sensitive electricity demand
 
 ## Forecasting for electricity storage
 
-
+---
 
 # October 2021
 
@@ -32,6 +30,7 @@ The basis of this dataset update is the open source energy balance from Eurostat
 
 -> ![](/assets/pages/whats_new/co2_emissions_2019_en.png) <-
 
+---
 
 # September 2021
 

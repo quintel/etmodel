@@ -6,19 +6,17 @@
 
 ## Keuze uit extra staalproductie technologieën
 
-Het Energietransitiemodel is geüpdatet met de laatste inzichten rondom staalproductie. Het model bevat nieuwe inzichten rondom opkomende productietechnologieën als Direct Reduction of Iron (DRI) met waterstof en opties voor afvang, hergebruik en opslag van CO2 (CCUS). Hiervoor is uitgebreid gebruik gemaakt van data uit het MIDDEN-project van PBL en TNO. De nieuwe staalproductie technologieën kun je vinden in *Aanbod → Industrie* → **[Staal](/scenario/demand/industry/steel)**.
+Het Energietransitiemodel is geüpdatet met de laatste inzichten rondom staalproductie. Het model bevat nu de nieuwe productietechnologie Direct Reduction of Iron (DRI), waarbij je kunt kiezen tussen waterstof en aardgas, en verbeteringen in de bestaande productietechnologieën. Deze productietechnologieën kun je vinden in *Aanbod → Industrie* → **[Staal](/scenario/demand/industry/steel)**.
 
-Het ETM laat zien hoe de staalsector is ingebed in het bredere energiesysteem en stelt je in staat om te verkennen hoe verduurzaming van de staalproductie zich verhoudt tot andere ontwikkelingen in de energietransitie, zoals de uitbouw van hernieuwbare energie en de productie van groene waterstof.
+Ook is het nu mogelijk om te bepalen wat er met overgebleven kolengas wordt gedaan met nieuwe schuifjes in *Emissies → CCUS* → **[Kolengas uit hoogovens (staalsector)](/scenario/emissions/ccus/coal-gases-from-blast-furnaces)**. Kolengas kan gebruikt worden voor elektriciteitsproductie of voor transformatie tot grondstof voor de chemische industrie.
 
-Daarnaast is het nu mogelijk om te kiezen wat er met overgebleven kolengas wordt gedaan met de nieuwe sliders *Emissies → CCUS* → **[Kolengas uit hoogovens (staalsector)](/scenario/emissions/ccus/coal-gases-from-blast-furnaces)**. Kolengas kan gebruikt worden voor elektriciteitsproductie of voor transformatie tot grondstof voor de chemische industrie.
-
--> ![](/assets/pages/whats_new/steel_energy_demand_nl.png) <-
+-> ![](/assets/pages/whats_new/steel_whats_new_nl.png) <-
 
 ## Explore price-sensitive electricity demand
 
 ## Forecasting for electricity storage
 
-
+---
 
 # Oktober 2021
 
@@ -32,6 +30,7 @@ De open source energiebalans van Eurostat vormt de basis van deze dataset en wor
 
 -> ![](/assets/pages/whats_new/co2_emissions_2019_nl.png) <-
 
+---
 
 # September 2021
 

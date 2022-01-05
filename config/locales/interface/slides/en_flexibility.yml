@@ -231,7 +231,15 @@ en:
       title: Flow batteries
       short_description:
       description: |
-        Sample text
+        Flow batteries allow for large-scale storage of electricity. This is because installing storage volume is relatively 
+        cheap compared to other batteries and it can be scaled independent from the installed capacity. For flow batteries 
+        you can therefore determine both the capacity and the storage volume. </br></br>
+        Batteries in the ETM are flexible technologies, which 
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
+        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentation</a> for more information.
     flexibility_electricity_conversion_overview:
       title: Behaviour of conversion technologies
       short_description:

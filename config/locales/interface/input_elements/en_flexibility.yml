@@ -560,19 +560,76 @@ en:
     capacity_of_energy_flexibility_flow_batteries_electricity:
       title: Flow batteries
       short_description:
-      description:
+      description: |
+        With this slider, you can set the input capacity of flow batteries. Because the capacity and 
+        storage volume of flow batteries can be adjusted independently, the investment costs of these 
+        batteries also consist of two components. You can change the costs per MW of input capacity 
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
+        A number of charts are available to help you determine the effect of using flow batteries: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
+        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can 
+        change these parameters in the sliders below and you can view the hourly electricity price in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     volume_of_energy_flexibility_flow_batteries_electricity:
-      title: Flow batteries
+      title: Volume relative to capacity
       short_description:
-      description:
+      description: |
+        With this slider, you can set the storage volume of flow batteries, relative to the input capacity. You 
+        can see the total resulting storage volume in the 'Technical and financial properties'"' below. </br></br>
+        Because the capacity and storage volume of flow batteries can be adjusted independently, the investment 
+        costs of these batteries also consist of two components. You can change the costs per MWh of storage volume
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>.
     wtp_of_energy_flexibility_flow_batteries_electricity:
       title: Willingness to pay
       short_description:
-      description:
+      description: |
+        This slider sets the maximum price flow batteries are willing to pay to store 
+        electricity. Note that for this slider to have an effect, capacity of these
+        batteries needs to be installed as well. </br></br>
+        A number of charts are available to help you determine the effect of the willingness-to-pay of flow batteries: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
+        price never drops below the willingness-to-pay. You can view the hourly electricity price in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     wta_of_energy_flexibility_flow_batteries_electricity:
       title: Willingness to accept
       short_description:
-      description:
+      description: |
+        This slider sets the minimum price flow batteries are willing to accept to release their stored
+        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher 
+        than the willingness-to-pay by a margin: to make up for any storage decay and roundtrip efficiency losses.
+        Note that for this slider to have an effect, capacity of these
+        batteries needs to be installed as well. </br></br>
+        A number of charts are available to help you determine the effect of the willingness-to-accept of flow batteries: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
+        price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Present import
       short_description:

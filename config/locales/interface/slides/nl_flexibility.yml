@@ -161,6 +161,26 @@ nl:
         ontladen.
         <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> voor meer informatie.
+    flexibility_power_storage_wind_turbine_inland:
+      title: Windmolens met opslagsystemen
+      short_description:
+      description: |
+        Hieronder kun je het vermogen van de batterij en de capaciteit van de netwerkaansluiting 
+        instellen, in verhouding tot het geïnstalleerde vermogen van windmolens met een 
+        geïntegreerd batterijsysteem. Deze schuifjes hebben daarom pas effect als je dit type 
+        windmolens geïnstalleerd hebt. Dit kun je doen in de Aanbod sectie, onder 
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Hernieuwbare elektriciteit</a>.
+    flexibility_power_storage_solar_pv_solar_radiation:
+      title: Zonnecentrales met opslagsystemen
+      short_description:
+      description: |
+        Hieronder kun je het vermogen van de batterij en de capaciteit van de netwerkaansluiting 
+        instellen, in verhouding tot het geïnstalleerde vermogen van zonnecentrales met een 
+        geïntegreerd batterijsysteem. Deze schuifjes hebben daarom pas effect als je dit type 
+        zonnecentrales geïnstalleerd hebt. Dit kun je doen in de Aanbod sectie, onder 
+        <a href="/scenario/supply/electricity_renewable/solar-power">
+        Hernieuwbare elektriciteit</a>.
     flexibility_power_storage_transport_car_flexibility_p2p_electricity:
       title: Batterijen in elektrische auto's
       short_description:
@@ -211,6 +231,20 @@ nl:
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
         <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de opslag. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentatie</a> voor meer informatie.
+    flexibility_power_storage_energy_flexibility_flow_batteries_electricity:
+      title: Flowbatterijen
+      short_description:
+      description: |
+        Flowbatterijen zijn een vorm van grootschalige elektriciteitsopslag. Dit is omdat het installeren van 
+        opslagvolume relatief goedkoop is ten opzichte van andere batterijen en het onafhankelijk van het 
+        geïnstalleerd vermogen kan worden gevarieerd. Je kunt daarom voor deze batterijen zowel het vermogen 
+        en het opslagvolume aanpassen. </br></br>
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
+        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
+        ontladen.
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_electricity_conversion_overview:
       title: Gedrag van conversietechnologieën

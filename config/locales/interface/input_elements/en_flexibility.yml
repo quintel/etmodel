@@ -237,6 +237,12 @@ en:
       description: With this slider you set the curtailment as a percentage of the
         peak power. Solar PV plants are connected to the HV-net in the ETM. The installed
         capacity can be adjusted <a href="/scenario/supply/electricity_renewable/solar-power">here</a>.
+    curtailment_of_energy_power_solar_pv_offshore:
+      title: Solar PV plants offshore
+      short_description:
+      description: With this slider you set the curtailment as a percentage of the
+        peak power. Offshore solar PV plants are connected to the offshore-net in the ETM.
+        The installed capacity can be adjusted <a href="/scenario/demand/households/solar-panels">here</a>.
     households_flexibility_p2p_electricity_market_penetration:
       title: Batteries in households
       short_description:
@@ -553,6 +559,79 @@ en:
         price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
+    capacity_of_energy_flexibility_flow_batteries_electricity:
+      title: Flow batteries
+      short_description:
+      description: |
+        With this slider, you can set the input capacity of flow batteries. Because the capacity and 
+        storage volume of flow batteries can be adjusted independently, the investment costs of these 
+        batteries also consist of two components. You can change the costs per MW of input capacity 
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
+        A number of charts are available to help you determine the effect of using flow batteries: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
+        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can 
+        change these parameters in the sliders below and you can view the hourly electricity price in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
+    volume_of_energy_flexibility_flow_batteries_electricity:
+      title: Volume relative to capacity
+      short_description:
+      description: |
+        With this slider, you can set the storage volume of flow batteries, relative to the input capacity. You 
+        can see the total resulting storage volume in the 'Technical and financial properties'"' below. </br></br>
+        Because the capacity and storage volume of flow batteries can be adjusted independently, the investment 
+        costs of these batteries also consist of two components. You can change the costs per MWh of storage volume
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>.
+    wtp_of_energy_flexibility_flow_batteries_electricity:
+      title: Willingness to pay
+      short_description:
+      description: |
+        This slider sets the maximum price flow batteries are willing to pay to store 
+        electricity. Note that for this slider to have an effect, capacity of these
+        batteries needs to be installed as well. </br></br>
+        A number of charts are available to help you determine the effect of the willingness-to-pay of flow batteries: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
+        price never drops below the willingness-to-pay. You can view the hourly electricity price in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
+    wta_of_energy_flexibility_flow_batteries_electricity:
+      title: Willingness to accept
+      short_description:
+      description: |
+        This slider sets the minimum price flow batteries are willing to accept to release their stored
+        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher 
+        than the willingness-to-pay by a margin: to make up for any storage decay and roundtrip efficiency losses.
+        Note that for this slider to have an effect, capacity of these
+        batteries needs to be installed as well. </br></br>
+        A number of charts are available to help you determine the effect of the willingness-to-accept of flow batteries: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
+        price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Present import
       short_description:
@@ -744,3 +823,78 @@ en:
     settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity:
       title: 'Improve use of storage by forecasting residual load'
       description: ''
+    settings_enable_storage_optimisation_energy_flexibility_flow_batteries_electricity:
+      title: 'Improve use of storage by forecasting residual load'
+      description: ''
+    connection_capacity_always_on_wind_turbine_inland:
+      title: Relative grid connection capacity
+      short_description:
+      description: |
+        Due to the volatile nature of wind power output, the impact of installing large 
+        numbers of wind turbines on the electricity grid can be large. To reduce the 
+        impact on the electricity grid, wind turbines with a battery system have a connection 
+        to the grid that is reduced in capacity compared to the installed capacity. <br/><br/>
+        The grid connection capacity is set relative to the installed capacity of the
+        wind turbines with battery systems. This means that if you change the installed 
+        capacity in the <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Supply</a> section, the grid connection will change accordingly, with the ratio 
+        specified by this slider. <br/><br/>
+        Any production by the wind turbines that exceeds the grid connection capacity 
+        will have to be consumed by the integrated battery system, for which you can 
+        determine the relative capacity with the slider below. If the battery cannot 
+        consume any more electricity due to charging capacity or volume constraints, 
+        the excess electricity production will be curtailed.
+    connection_capacity_always_on_solar_pv_solar_radiation:
+      title: Relative grid connection capacity
+      short_description:
+      description: |
+        Due to the volatile nature of solar power output, the impact of installing large 
+        numbers of solar PV plants on the electricity grid can be large. To reduce the 
+        impact on the electricity grid, solar PV plants with a battery system have a connection 
+        to the grid that is reduced in capacity compared to the installed capacity. <br/><br/>
+        The grid connection capacity is set relative to the installed capacity of the
+        solar PV plants with battery systems. This means that if you change the installed 
+        capacity in the <a href="/scenario/supply/electricity_renewable/solar-power">
+        Supply</a> section, the grid connection will change accordingly, with the ratio 
+        specified by this slider. <br/><br/>
+        Any production by the solar plants that exceeds the grid connection capacity 
+        will have to be consumed by the integrated battery system, for which you can 
+        determine the relative capacity with the slider below. If the battery cannot 
+        consume any more electricity due to charging capacity or volume constraints, 
+        the excess electricity production will be curtailed.
+    battery_capacity_always_on_wind_turbine_inland:
+      title: Relative battery capacity
+      short_description:
+      description: |
+        The input capacity, or charging capacity, of the battery is set relative to the 
+        installed capacity of the wind turbines with battery systems. This means that if 
+        you change the installed capacity in the 
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Supply</a> section, the charging capacity will change accordingly, with the ratio 
+        specified by this slider. <br/><br/>
+        The battery system only consumes electricity when the production exceeds the grid 
+        connection capacity threshold and starts to release it again when the production drops 
+        below the threshold. If the battery cannot consume any more electricity due to charging 
+        capacity or volume constraints, the excess electricity production will be curtailed. </br></br>
+        The storage volume is related to the charging capacity by a fixed ratio. This means 
+        that the storage volume will therefore also be updated if you change this slider. 
+        To see the effect of this slider on the total battery capacity and storage volume,
+        you can click on the 'Technical and financial properties'.
+    battery_capacity_always_on_solar_pv_solar_radiation:
+      title: Relative battery capacity
+      short_description:
+      description: |
+        The input capacity, or charging capacity, of the battery is set relative to the 
+        installed capacity of the solar PV plants with battery systems. This means that if 
+        you change the installed capacity in the 
+        <a href="/scenario/supply/electricity_renewable/solar-power>
+        Supply</a> section, the charging capacity will change accordingly, with the ratio 
+        specified by this slider. <br/><br/>
+        The battery system only consumes electricity when the production exceeds the grid 
+        connection capacity threshold and starts to release it again when the production drops 
+        below the threshold. If the battery cannot consume any more electricity due to charging 
+        capacity or volume constraints, the excess electricity production will be curtailed. </br></br>
+        The storage volume is related to the charging capacity by a fixed ratio. This means 
+        that the storage volume will therefore also be updated if you change this slider. 
+        To see the effect of this slider on the total battery capacity and storage volume,
+        you can click on the 'Technical and financial properties'.

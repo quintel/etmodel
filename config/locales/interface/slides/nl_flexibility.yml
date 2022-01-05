@@ -236,7 +236,16 @@ nl:
       title: Flowbatterijen
       short_description:
       description: |
-        Sample text
+        Flowbatterijen zijn een vorm van grootschalige elektriciteitsopslag. Dit is omdat het installeren van 
+        opslagvolume relatief goedkoop is ten opzichte van andere batterijen en het onafhankelijk van het 
+        geïnstalleerd vermogen kan worden gevarieerd. Je kunt daarom voor deze batterijen zowel het vermogen 
+        en het opslagvolume aanpassen. </br></br>
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
+        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
+        ontladen.
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        documentatie</a> voor meer informatie.
     flexibility_electricity_conversion_overview:
       title: Gedrag van conversietechnologieën
       short_description:

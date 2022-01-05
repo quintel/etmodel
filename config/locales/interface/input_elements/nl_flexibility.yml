@@ -593,6 +593,85 @@ nl:
         De uurlijkse elektriciteitsprijs is te zien in 
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
+    capacity_of_energy_flexibility_flow_batteries_electricity:
+      title: Flowbatterijen
+      short_description:
+      description: |
+        Met dit schuifje kun je het inputvermogen van flowbatterijen bepalen. Omdat het inputvermogen en het 
+        opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan de investeringskosten 
+        ook uit twee componenten. Je kunt de investeringskosten per MW inputvermogen
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        hier</a> aanpassen. <br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de inzet van flowbatterijen: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    volume_of_energy_flexibility_flow_batteries_electricity:
+      title: Volume ten opzichte van vermogen
+      short_description:
+      description: |
+        Met dit schuifje kun je het relatieve opslagvolume van flowbatterijen ten opzichte van het inputvermogen bepalen.
+        Het totale opslagvolume kun je vervolgens zien in de 'Technische parameters en kosten' hieronder. </br></br>
+        Omdat het inputvermogen en het opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan 
+        de investeringskosten ook uit twee componenten. Je kunt de investeringskosten per MWh opslagvolume
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> hier</a> aanpassen.
+    wtp_of_energy_flexibility_flow_batteries_electricity:
+      title: Willingness to pay
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de maximale prijs is die flowbatterijen bereid zijn te 
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-pay van flowbatterijen: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wta_of_energy_flexibility_flow_batteries_electricity:
+      title: Willingness to accept
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de minimale prijs is die flowbatterijen willen ontvangen
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-accept van flowbatterijen: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Huidige import
       short_description:

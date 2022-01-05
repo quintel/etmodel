@@ -1,4 +1,28 @@
 ---
+- label: energy_power_solar_pv_offshore_electricity_output_curve
+  color: "#ffcc00"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_power_offshore_solar_pv_electricity_output_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: hourly_solar_pv_curtailment
+  key: energy_power_solar_pv_offshore_electricity_output_curve_hourly_solar_pv_curtailment
+- label: energy_battery_solar_pv_electricity_output_curve
+  color: "#FFF47D"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_battery_solar_pv_electricity_output_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: hourly_solar_pv_curtailment
+  key: energy_battery_solar_total_to_grid_electricity_output_hourly_solar_pv_curtailment
 - label: energy_power_solar_pv_electricity_output_curve
   color: lightgreen
   order_by: 1
@@ -35,8 +59,20 @@
   dependent_on: 
   output_element_key: hourly_solar_pv_curtailment
   key: households_solar_pv_electricity_output_curve_hourly_solar_pv_curtailment
+- label: energy_power_solar_pv_offshore_curtailed_electricity_output_curve
+  color: "#AA14F0"
+  order_by: 2
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_power_offshore_solar_pv_curtailed_electricity_output_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: hourly_solar_pv_curtailment
+  key: energy_power_solar_pv_offshore_curtailed_electricity_output_curve_hourly_solar_pv_curtailment
 - label: energy_power_solar_pv_curtailed_electricity_output_curve
-  color: skyblue
+  color: "#CAB8FF"
   order_by: 2
   group: 
   show_at_first: 

@@ -36,10 +36,12 @@ nl:
     investment_costs_wind_onshore:
       title: Investeringskosten wind op land
       short_description: ''
-      description: "Deze schuif stelt de toe-of afname in die je verwacht voor de
-        investeringskosten van windmolens op land. De kosten worden vergeleken met
-        de kosten van vandaag de dag.\r\n<br/><br/>\r\nThe specificaties hieronder
-        zijn voor een windmolen op land:"
+      description: |
+        Deze schuif stelt de toe-of afname in die je verwacht voor de investeringskosten 
+        van windmolens op land. De kosten worden vergeleken met de kosten van vandaag de dag. 
+        Dit schuifje beïnvloedt windmolens op land, windmolens aan de kust en windmolens op land 
+        met een geïntegreerd batterijsysteem. <br/><br/> 
+        The specificaties hieronder zijn voor een windmolen op land:
     investment_costs_wind_offshore:
       title: Investeringskosten wind op zee
       short_description: ''
@@ -313,10 +315,13 @@ nl:
     om_costs_wind_onshore:
       title: Onderhoudskosten wind op land
       short_description: ''
-      description: "Deze schuif stelt je de toe-of afname in die je verwacht voor
+      description: |
+        Deze schuif stelt je de toe-of afname in die je verwacht voor
         onderhouds- en beheerkosten van windmolens op land. De kosten worden vergeleken
-        met de kosten van vandaag de dag.\r\n<br/><br/>\r\nThe specificaties hieronder
-        zijn voor een windmolen op land:"
+        met de kosten van vandaag de dag.
+        Dit schuifje beïnvloedt windmolens op land, windmolens aan de kust en windmolens op land 
+        met een geïntegreerd batterijsysteem. <br/><br/>
+        The specificaties hieronder zijn voor een windmolen op land:
     om_costs_wind_offshore:
       title: Onderhoudskosten wind op zee
       short_description: ''
@@ -377,23 +382,27 @@ nl:
       short_description:
       description: "Batterijen in huishouden worden vaak genoemd als oplossing voor
         het opvangen van elektriciteitsoverschotten. Met <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
-        >deze slider</a> kun je aangeven welk percentage van de huishoudens is uitgerust
+        >dit schuifje</a> kun je aangeven welk percentage van de huishoudens is uitgerust
         met batterijopslag en vervolgens kan je met bovenstaande slider aangeven hoeveel
         de investeringskosten zullen veranderen voor deze batterijen.\r\n</br>"
     investment_costs_energy_flexibility_hv_opac_electricity:
       title: Investeringskosten OPAC
       short_description:
-      description: Deze slider bepaalt de toekomstige verandering in investeringskosten
+      description: Dit schuifje bepaalt de toekomstige verandering in investeringskosten
         van Ondergrondse Pomp Accumulatie Centrale (OPAC).
     investment_costs_energy_flexibility_mv_batteries_electricity:
       title: Investeringskosten grootschalige batterijopslag
       short_description:
-      description: Deze slider bepaalt de toekomstige verandering in investeringskosten
-        van grootschalige batterijopslag.
+      description: |
+        Dit schuifje bepaalt de toekomstige verandering in investeringskosten van grootschalige batterijopslag. 
+        Dit geldt ook voor de batterijen die onderdeel zijn van een geïntegreerd systeem met 
+        <a href="scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems"> windmolens</a> 
+        of met <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
+        zonnecentrales</a>.
     om_costs_water_river:
       title: Onderhoudskosten waterkrachtcentrales
       short_description: ''
-      description: Deze schuif stelt je de toe-of afname in die je verwacht voor de
+      description: Dit schuifje stelt je de toe-of afname in die je verwacht voor de
         onderhouds- en beheerkosten van een waterkrachtcentrale in een grote rivier.
         De kosten worden vergeleken met de kosten van vandaag de dag.
     om_costs_water_mountains:
@@ -406,13 +415,15 @@ nl:
     investment_costs_solar_solar_panels:
       title: Investeringskosten zonnepanelen
       short_description: ''
-      description: "Met deze schuif stel je de toe- of afname in die je verwacht voor
+      description: |
+        Met deze schuif stel je de toe- of afname in die je verwacht voor
         de investeringskosten voor zonnepanelen. De kosten worden vergeleken met de
         kosten van vandaag de dag. Verwacht wordt dat zonnecellen de komende 40 jaar
         veel goedkoper zullen worden. Merk op dat je met deze schuif de investeringskosten
-        aanpast voor zowel zon op dak als grootschalige zonneparken. De onderstaande
-        link laat de kosten van zon op dak zien. Let op: de installatiekosten van
-        zon op dak (500 kEUR/MW) worden niet aangepast met deze schuif.\r\n<br/>"
+        aanpast voor zowel zon op dak als grootschalige zonneparken. Met grootschalige zonneparken
+        worden de zonneparken op land, op zee en met een geïntegreerd batterijsysteem bedoeld. <br/><br/>
+        De onderstaande link laat de kosten van zon op dak zien. Let op: de installatiekosten van
+        zon op dak (500 kEUR/MW) worden niet aangepast met deze schuif.
     efficiency_energy_power_solar_pv_solar_radiation:
       title: Zonnepanelen
       description: "Zonnepanelen worden steeds efficiënter in het omzetten van zonnestralen in elektriciteit.
@@ -427,7 +438,7 @@ nl:
         <b>Opmerking 1:</b> De impact van deze schuif is anders voor zon op dak dan voor grondgebonden PV.
         Voor zon op dak kun je in het ETM het percentage dakoppervlak instellen dat bedekt is met zonnepanelen.
         Als de efficiëntie van deze panelen omhoog gaat, betekent dat dat het geïnstalleerde vermogen en
-        de productie van elektriciteit toenemen. Het aantal panelen blijft constant. Voor grondgebonden PV kun je het opgestelde vermogen instellen
+        de productie van elektriciteit toenemen. Het aantal panelen blijft constant. Voor grondgebonden PV en PV op zee kun je het opgestelde vermogen instellen
         in het ETM. Als de efficiëntie van panelen toeneemt, betekent dat dat er minder panelen nodig zijn om
         hetzelfde geïnstalleerde vermogen te halen. Vermogen en geproduceerde elektriciteit blijven constant.<br/><br/>
         <b>Opmerking 2:</b> Houd er rekening mee dat deze schuif invloed heeft op de kosten van zonnepanelen, net als de
@@ -892,3 +903,27 @@ nl:
         ookwel de seasonal COP (SCOP), kun je vinden in de "Technische parameters en kosten".
         Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
         het uurlijkse profiel van de buitentemperatuur.
+    capacity_costs_energy_flexibility_flow_batteries_electricity:
+      title: Investeringskosten per MW flowbatterijen
+      short_decription:
+      description: |
+        In tegenstelling tot andere batterijen kunnen voor flowbatterijen het inputvermogen en het 
+        opslagvolume afzonderlijk gevarieerd worden. De investeringskosten bestaan dan ook uit twee 
+        componenten. De kosten per MW inputcapaciteit kun je met dit schuifje zetten. De kosten per
+        MWh opslagvolume zet je met het schuifje hieronder. </br></br>
+        In de <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibiliteit</a> sectie kun je het opgesteld vermogen en de verhouding met het opslagvolume 
+        aanpassen.
+    volume_costs_energy_flexibility_flow_batteries_electricity:
+      title: Investeringskosten per Mwh flowbatterijen
+      short_decription:
+      description: |
+        In tegenstelling tot andere batterijen kunnen voor flowbatterijen het inputvermogen en het 
+        opslagvolume afzonderlijk gevarieerd worden. De investeringskosten bestaan dan ook uit twee 
+        componenten. De kosten per MW inputcapaciteit zet je met het schuifje hierboven. De kosten per
+        MWh opslagvolume kun je met dit schuifje zetten. </br></br>
+        In de <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibiliteit</a> sectie kun je het opgesteld vermogen en de verhouding met het opslagvolume 
+        aanpassen.
+
+

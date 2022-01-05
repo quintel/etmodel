@@ -252,6 +252,13 @@ nl:
         van het piekvermogen. Zonneparken zijn verbonden aan het hoogspanningsnet
         in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/supply/electricity_renewable/solar-power">hier</a>
         aan te passen.
+    curtailment_of_energy_power_solar_pv_offshore:
+      title: Zonneparken op zee
+      short_description:
+      description: Met dit schuifje stel je de productiebeperking in als percentage
+        van het piekvermogen. Zonneparken op zee zijn in het ETM aan hetzelfde net verbonden als wind op zee.
+        Het geïnstalleerd vermogen is <a href="/scenario/supply/electricity_renewable/solar-power">hier</a>
+        aan te passen.
     households_flexibility_p2p_electricity_market_penetration:
       title: Batterijen in huishoudens
       short_description:
@@ -593,6 +600,85 @@ nl:
         De uurlijkse elektriciteitsprijs is te zien in 
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
+    capacity_of_energy_flexibility_flow_batteries_electricity:
+      title: Flowbatterijen
+      short_description:
+      description: |
+        Met dit schuifje kun je het inputvermogen van flowbatterijen bepalen. Omdat het inputvermogen en het 
+        opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan de investeringskosten 
+        ook uit twee componenten. Je kunt de investeringskosten per MW inputvermogen
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        hier</a> aanpassen. <br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de inzet van flowbatterijen: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    volume_of_energy_flexibility_flow_batteries_electricity:
+      title: Volume ten opzichte van vermogen
+      short_description:
+      description: |
+        Met dit schuifje kun je het relatieve opslagvolume van flowbatterijen ten opzichte van het inputvermogen bepalen.
+        Het totale opslagvolume kun je vervolgens zien in de 'Technische parameters en kosten' hieronder. </br></br>
+        Omdat het inputvermogen en het opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan 
+        de investeringskosten ook uit twee componenten. Je kunt de investeringskosten per MWh opslagvolume
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> hier</a> aanpassen.
+    wtp_of_energy_flexibility_flow_batteries_electricity:
+      title: Willingness to pay
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de maximale prijs is die flowbatterijen bereid zijn te 
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-pay van flowbatterijen: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    wta_of_energy_flexibility_flow_batteries_electricity:
+      title: Willingness to accept
+      short_description:
+      description: |
+        Met dit schuifje kan je bepalen wat de minimale prijs is die flowbatterijen willen ontvangen
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        geïnstalleerd voor deze batterijen. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de willingness-to-accept van flowbatterijen: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
+        De uurlijkse elektriciteitsprijs is te zien in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Huidige import
       short_description:
@@ -787,3 +873,77 @@ nl:
     settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity:
       title: 'Verbeter inzet opslag met prognose van residual load'
       description: ''
+    connection_capacity_always_on_wind_turbine_inland:
+      title: Relatieve aangesloten netwerkcapaciteit
+      short_description:
+      description: |
+        Doordat de elektriciteitsproductie door windmolens volatiel is, kan de installatie van veel 
+        windmolens een grote impact hebben op het 
+        elektriciteitsnet. Om deze impact te verlagen, is de aangesloten netwerkcapaciteit 
+        van windmolens met een batterijsysteem gereduceerd ten opzichte van het geïnstalleerde 
+        vermogen. <br/><br/>
+        De aangesloten netwerkcapaciteit is relatief ingesteld ten opzichte van het 
+        geïnstalleerde vermogen. Dit betekent dat, als je het geïnstalleerde vermogen verandert 
+        in de <a href="/scenario/supply/electricity_renewable/wind-turbines"> Aanbod</a> sectie, 
+        de aangesloten netwerkcapaciteit daarom zal meeveranderen op basis van de ratio die is 
+        aangegeven in dit schuifje. <br/><br/>
+        Productie door de windmolens die de aangesloten netwerkcapaciteit overschrijdt, zal door 
+        het geïntegreerde batterijsysteem moeten worden geconsumeerd. Met het schuifje hieronder 
+        kan je het relatieve vermogen van de batterij bepalen. In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld.
+    connection_capacity_always_on_solar_pv_solar_radiation:
+      title: Relatieve aangesloten netwerkcapaciteit
+      short_description:
+      description: |
+        Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie van veel 
+        zonnecentrales een grote impact hebben op het 
+        elektriciteitsnet. Om deze impact te verlagen, is de aangesloten netwerkcapaciteit 
+        van zonnecentrales PV met een batterijsysteem gereduceerd ten opzichte van het geïnstalleerde 
+        vermogen. <br/><br/>
+        De aangesloten netwerkcapaciteit is relatief ingesteld ten opzichte van het 
+        geïnstalleerde vermogen. Dit betekent dat, als je het geïnstalleerde vermogen verandert 
+        in de <a href="/scenario/supply/electricity_renewable/solar-power"> Aanbod</a> sectie, 
+        de aangesloten netwerkcapaciteit daarom zal meeveranderen op basis van de ratio die is 
+        aangegeven in dit schuifje. <br/><br/>
+        Productie door de zonnecentrales die de aangesloten netwerkcapaciteit overschrijdt, zal door 
+        het geïntegreerde batterijsysteem moeten worden geconsumeerd. Met het schuifje hieronder 
+        kan je het relatieve vermogen van de batterij bepalen. In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld.
+    battery_capacity_always_on_wind_turbine_inland:
+      title: Relatief batterijvermogen
+      short_description:
+      description: |
+        Het inputvermogen, ook wel het laadvermogen, van de batterij is relatief ingesteld ten opzichte 
+        van het geïnstalleerde vermogen van windmolens met batterijsystemen. Dit betekent dat, als je 
+        het geïnstalleerde vermogen verandert in de <a href="/scenario/supply/electricity_renewable/wind-turbines"> 
+        Aanbod</a> sectie, het laadvermogen daarom zal meeveranderen op basis van de ratio die is 
+        aangegeven in dit schuifje. <br/><br/>
+        Het batterijsysteem consumeert alleen elektriciteit als de productie de grenswaarde van de
+        aangesloten netwerkcapaciteit overschrijdt. De batterij begint te ontladen als de productie 
+        weer onder de grenswaarde zakt. In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/<br/>
+        Er is een vaste verhouding aangenomen van het opslagvolume ten opzichte van het laadvermogen.
+        Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op 
+        de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen 
+        en opslagvolume van de batterij te zien.
+    battery_capacity_always_on_solar_pv_solar_radiation:
+      title: Relatief batterijvermogen
+      short_description:
+      description: |
+        Het inputvermogen, ook wel het laadvermogen, van de batterij is relatief ingesteld ten opzichte 
+        van het geïnstalleerde vermogen van zonnecentrales PV met batterijsystemen. Dit betekent dat, als je 
+        het geïnstalleerde vermogen verandert in de <a href="/scenario/supply/electricity_renewable/solar-power"> 
+        Aanbod</a> sectie, het laadvermogen daarom zal meeveranderen op basis van de ratio die is 
+        aangegeven in dit schuifje. <br/><br/>
+        Het batterijsysteem consumeert alleen elektriciteit als de productie de grenswaarde van de
+        aangesloten netwerkcapaciteit overschrijdt. De batterij begint te ontladen als de productie 
+        weer onder de grenswaarde zakt. In het geval dat de batterij 
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/<br/>
+        Er is een vaste verhouding aangenomen van het opslagvolume ten opzichte van het laadvermogen.
+        Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op 
+        de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen 
+        en opslagvolume van de batterij te zien.

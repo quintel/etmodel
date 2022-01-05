@@ -59,3 +59,15 @@
   dependent_on: 
   output_element_key: flexibility_hourly_p2p_storage
   key: electricity_stored_in_opac_flexibility_hourly_p2p_storage
+- label: energy_flexibility_flow_batteries_electricity_storage
+  color: "#162442"
+  order_by: 150
+  group: 
+  show_at_first:
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_flexibility_flow_batteries_electricity_storage_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_hourly_p2p_storage
+  key: electricity_stored_in_flow_batteries_flexibility_hourly_p2p_storage

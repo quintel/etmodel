@@ -131,6 +131,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_flexibility_opac_electricity_flex_merit_order_hourly_flexibility
+- label: energy_flexibility_flow_batteries_electricity
+  color: "#162442"
+  order_by: 325
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_flexibility_flow_batteries_electricity_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: merit_order_hourly_flexibility
+  key: energy_flexibility_flow_batteries_electricity_flex_merit_order_hourly_flexibility
 - label: energy_heat_flexibility_p2h_heatpump_electricity
   color: "#F6E58D"
   order_by: 215

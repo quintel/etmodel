@@ -1,0 +1,17 @@
+---
+- key: connection_capacity_always_on_solar_pv_solar_radiation
+  step_value: 0.1
+  unit: "%"
+  interface_group: solar_pv_solar_radiation
+  position: 3
+  slide_key: flexibility_power_storage_solar_pv_solar_radiation
+- key: battery_capacity_always_on_solar_pv_solar_radiation
+  step_value: 0.1
+  unit: "%"
+  interface_group: solar_pv_solar_radiation
+  related_node: energy_flexibility_solar_batteries_electricity
+  position: 4
+  slide_key: flexibility_power_storage_solar_pv_solar_radiation
+  additional_specs:
+    other:
+      timeframe: i_h_d

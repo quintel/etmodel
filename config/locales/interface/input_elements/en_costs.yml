@@ -36,9 +36,11 @@ en:
     investment_costs_wind_onshore:
       title: Investment costs onshore
       short_description: ''
-      description: "This slider sets the height of the assumed investment costs for
-        onshore wind-generated power. Costs are compared to current costs.\r\n<br/><br/>\r\nThe
-        specifications below are for an inland wind turbine:"
+      description: |
+        This slider sets the height of the assumed investment costs for onshore wind-generated power. 
+        Costs are compared to current costs. Note that this slider applies to inland turbines, coastal turbines 
+        and inland turbines with an integrated battery system. <br/><br/>
+        The specifications below are for an inland wind turbine:
     investment_costs_wind_offshore:
       title: Investment costs offshore
       short_description: ''
@@ -297,9 +299,12 @@ en:
     om_costs_wind_onshore:
       title: O&M costs onshore
       short_description: ''
-      description: "This slider sets the height of the assumed operational and maintenance
-        costs for onshore wind-generated power. Costs are compared to current costs.<br/><br/>\r\nThe
-        specifications below are for an inland wind turbine:"
+      description: |
+        This slider sets the height of the assumed operational and maintenance
+        costs for onshore wind-generated power. Costs are compared to current costs.
+        Note that this slider applies to inland turbines, coastal turbines 
+        and inland turbines with an integrated battery system. <br/><br/>
+        The specifications below are for an inland wind turbine:
     om_costs_wind_offshore:
       title: O&M costs offshore
       short_description: ''
@@ -366,8 +371,12 @@ en:
     investment_costs_energy_flexibility_mv_batteries_electricity:
       title: Investment costs large-scale batteries
       short_description:
-      description: This slider determines the future change in investment costs large-scale
-        battery storage.
+      description: |
+        This slider determines the future change in investment costs large-scale
+        battery storage. This also applies to the batteries that are part of integrated system 
+        with <a href="scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems"> wind turbines</a> 
+        or with <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
+        solar PV plants</a>.
     om_costs_water_river:
       title: O&M costs hydroelectric
       short_description: ''
@@ -384,13 +393,16 @@ en:
     investment_costs_solar_solar_panels:
       title: Investment costs solar panels
       short_description: ''
-      description: "This slider sets the change in investment costs for solar power
+      description: |
+        This slider sets the change in investment costs for solar power
         compared to current costs. It is expected that solar pv panels will become
         much cheaper in the coming 40 years. Note that this slider changes the investment
-        costs for all solar panels that are modeled in the ETM: solar panels on roofs
-        and solar PV plants. With the link below you can see the costs of solar panels
+        costs for all solar panels that are modelled in the ETM: solar panels on roofs
+        and solar PV plants.  Solar PV plants include plants on land, offshore and on land 
+        with an integrated battery system. </br></br>
+        With the link below you can see the costs of solar panels
         on roofs. BTW: the cost of installing for solar panels on roofs do not change
-        with this slider (500 kEUR/MW).\r\n<br/>"
+        with this slider (500 kEUR/MW).
     efficiency_energy_power_solar_pv_solar_radiation:
       title: Efficiency of solar panels
       description: "Solar technology is getting more efficient in converting sunlight into electricity.
@@ -405,7 +417,7 @@ en:
         <b>Remark 1:</b> The impact of this slider is different for roof top and ground-mount PV.
         For roof top PV, you can set the share of roof surface covered with solar panels in the ETM. Increasing efficiency
         means that the capacity of these solar panels goes up and that more electricity is produced. The number of panels
-        installed remains constant. For ground-mount, you can set the installed capacity in the ETM. Increasing efficiency means
+        installed remains constant. For ground-mount and offshore, you can set the installed capacity in the ETM. Increasing efficiency means
         that less solar panels are needed to meet this installed capacity. Installed capacity and produced electricity stay the same.<br/><br/>
         <b>Remark 2:</b> Please note that this slider interacts with the PV cost slider above. If solar panels become more
         efficient, their price per kW goes down.<br/><br/>
@@ -844,3 +856,26 @@ en:
       To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'.
       It is not possible to the absolute value of the future SCOP of air-source heat pumps with a slider as this is a result of hourly
       calculations based on the hourly outside temperature curve."
+    capacity_costs_energy_flexibility_flow_batteries_electricity:
+      title: Investment costs per MW flow batteries
+      short_decription:
+      description: |
+        In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
+        be adjusted independently. The investment costs therefore also consist of two components.
+        With this slider you can set the investment costs per MW of input capacity. The slider below 
+        sets the investment costs per MWh storage volume. </br></br>
+        In the <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibility</a> section you can determine the installed capacity and relative storage volume 
+        for your scenario.
+    volume_costs_energy_flexibility_flow_batteries_electricity:
+      title: Investment costs per MWh flow batteries
+      short_decription:
+      description: |
+        In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
+        be adjusted independently. The investment costs therefore also consist of two components.
+        The slider above sets the investment costs per MW of input capacity. With this slider you can 
+        set the investment costs per MWh storage volume. </br></br>
+        In the <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibility</a> section you can determine the installed capacity and relative storage volume 
+        for your scenario.
+

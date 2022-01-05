@@ -323,3 +323,28 @@ nl:
         Let op: als een technologie niet gebruikt wordt in jouw scenario laat de grafiek een lege serie zien.
         Standaard geeft de grafiek de piekcapaciteit per <i>dag</i> weer voor het hele jaar. Selecteer een maand
         of week in het dropdown-menu om de <i>uurlijkse</i> waardes te zien.
+    flexibility_hourly_battery_wind:
+      title: Uurlijkse productie door wind op land met batterij
+      short_description:
+      description: |
+        Deze grafiek toont de uurlijkse productie van windmolens op land met een geïntegreerd 
+        batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit. </br></br>
+        Je kunt meer leren over dit type windmolens en ze inzetten in jouw scenario in de 
+        Aanbod sectie, onder <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Hernieuwbare elektriciteit</a>. Vervolgens kan je de aangesloten netwerkcapaciteit en 
+        het inputvermogen van de batterij aanpassen in de Flexibiliteit sectie, onder 
+        a href="/scenario/flexibility/flexibility_storage/wind-parks-with-storage-systems">
+        Opslag elektriciteit</a>.
+    flexibility_hourly_battery_solar:
+      title: Uurlijkse productie door zon PV met batterij
+      short_description:
+      description: |
+        Deze grafiek toont de uurlijkse productie van zonnecentrales PV met een geïntegreerd 
+        batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit. </br></br>
+        Je kunt meer leren over dit type zonnecentrales en ze inzetten in jouw scenario in de 
+        Aanbod sectie, onder <a href="/scenario/supply/electricity_renewable/solar-power">
+        Hernieuwbare elektriciteit</a>. Vervolgens kan je de aangesloten netwerkcapaciteit en 
+        het inputvermogen van de batterij aanpassen in de Flexibiliteit sectie, onder 
+        a href="/scenario/flexibility/flexibility_storage/solar-parks-with-storage-systems">
+        Opslag elektriciteit</a>.
+

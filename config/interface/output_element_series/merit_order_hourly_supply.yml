@@ -515,7 +515,7 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: total_demand_merit_order_hourly_supply
-- label: households_flexibility_p2p_electricity
+- label: households_flexibility_p2p
   color: "#92896B"
   order_by: 1
   group: flex
@@ -527,7 +527,7 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: households_flexibility_p2p_electricity_flex_merit_order_hourly_supply
-- label: transport_car_using_electricity
+- label: transport_car_flexibility_p2p
   color: "#dd77bb"
   order_by: 5
   group: flex
@@ -587,7 +587,7 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_combined_cycle_hydrogen_dispatchable_merit_order_hourly_supply
-- label: energy_flexibility_opac_electricity
+- label: energy_flexibility_hv_opac_electricity_storage
   color: "#385ba6"
   order_by: 5
   group: flex
@@ -599,7 +599,7 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_flexibility_opac_electricity_flex_merit_order_hourly_supply
-- label: energy_flexibility_mv_batteries_electricity
+- label: energy_flexibility_mv_batteries_electricity_storage
   color: "#5a7bc4"
   order_by: 5
   group: flex
@@ -611,7 +611,7 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_flexibility_mv_batteries_electricity_flex_merit_order_hourly_supply
-- label: energy_flexibility_flow_batteries_electricity
+- label: energy_flexibility_flow_batteries_electricity_storage
   color: "#162442"
   order_by: 5
   group: flex

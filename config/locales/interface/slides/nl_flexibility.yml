@@ -127,7 +127,7 @@ nl:
         kan worden vergroot, verlaagd, of worden verplaatst in de tijd (zie voor achtergrondinformatie 
         het <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Overzicht van
         flexibiliteit</a>). </br></br>
-        Het ETM modelleert twee soorten batterijgedrag.<br /><ol><li>
+        Het ETM modelleert drie soorten batterijgedrag.<br /><ol><li>
         Standaard gedraagt een batterij zich net als andere flexibele technologieën.
         Elke opslagtechnologie heeft een <i>willingness-to-pay</i> die de maximale prijs aangeeft
         waarvoor de technologie bereid is om op te laden. Als de
@@ -135,17 +135,19 @@ nl:
         zal de opslagtechnologie in dat uur opladen. </br></br>
         Elke technologie heeft ook <i>willingness-to-accept</i>, die aangeeft wat de minimale prijs 
         is waarvoor het bereid is de opgeslagen elektriciteit te ontladen. Dit is vergelijkbaar
-        met het begrip 'marginale kosten' bij regelbare centrales.</li>
+        met het begrip 'marginale kosten' bij regelbare centrales.</li> </br>
         <li>Daarnaast biedt het ETM een optie om een prognose-algoritme te gebruiken om het gedrag van batterijen te verbeteren.
         In plaats van alleen te kijken naar de elektriciteitsprijs in één uur, kijkt het algoritme
         vooruit in de tijd en probeert het interessante momenten om te laden en ontladen te identificeren.
         Dit gebeurt door naar de pieken en dalen in de 
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves"> 
-        'residual load curve'</a> te kijken.</li></ol><br/>
-        In de onderstaande slides kun je de willingness-to-pay, de willingness-to-accept en het 
-        geïnstalleerde vermogen voor verschillende opslagtechnologieën instellen. Met een toggle kun
-        je het prognose-functie inschakelen. Dit overschrijft de willingness-to-pay-instellingen
-        en gebruikt in plaats daarvan het algoritme om het batterijgedrag te bepalen. Let op dat het
+        'residual load curve'</a> te kijken.</li></br>
+        <li> Tenslotte slaan opslagsystemen die geïntegreerd zijn in windmolens of zonnecentrales alleen 
+        elektriciteit op als de productie van de aangesloten hernieuwbare energiebron de capaciteit van 
+        de netwerkaansluiting overschrijdt. De elektriciteit wordt ontladen zodra de productie onder deze 
+        capaciteit zakt. Het opslagsysteem zelf heeft verder geen interactie met de rest van het elektriciteitssysteem. </li></ol><br/>
+        In de onderstaande slides het geïnstalleerde vermogen voor verschillende opslagtechnologieën instellen
+        en het gedrag bepalen. Let op dat het
         daadwerkelijke gedrag van deze technologieën gecompliceerder is dan toegelicht in deze korte 
         beschrijving. De <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
         documentatie</a> bevat een meer gedetailleerde beschrijving.

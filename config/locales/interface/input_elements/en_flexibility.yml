@@ -587,7 +587,10 @@ en:
       description: |
         With this slider, you can set the storage volume of flow batteries, relative to the input capacity. Effectively
         this sliders determines how many hours an empty flow battery can charge at full volume before it is full. You 
-        can see the total resulting storage volume in the 'Technical and financial properties' below. </br></br>
+        can see the total resulting storage volume in the 'Technical and financial properties' below. To quickly compare 
+        it with other storage technologies you can also open  
+        <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        this table</a>. </br></br>
         Because the capacity and storage volume of flow batteries can be adjusted independently, the investment 
         costs of these batteries also consist of two components. You can change the costs per MWh of storage volume
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>.

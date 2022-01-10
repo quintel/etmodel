@@ -2,6 +2,10 @@
 
 # Januari 2022
 
+## Verken prijsgevoelige elektriciteitsvraag
+
+-> ![](/assets/pages/whats_new/price_sensitive_en.png) <-=
+
 ## Nieuwe EU landen kunnen worden geselecteerd voor scenario's
 
 ## Keuze uit extra staalproductie technologieën
@@ -12,9 +16,7 @@ Ook is het nu mogelijk om te bepalen wat er met overgebleven kolengas wordt geda
 
 -> ![](/assets/pages/whats_new/steel_whats_new_nl.png) <-
 
-## Explore price-sensitive electricity demand
-
-## Forecasting for electricity storage
+## Innovatieve flexibele technologieën
 
 ---
 

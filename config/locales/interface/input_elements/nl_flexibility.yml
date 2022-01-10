@@ -625,11 +625,16 @@ nl:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     volume_of_energy_flexibility_flow_batteries_electricity:
-      title: Volume ten opzichte van vermogen
+      title: Relatief opslagvolume
       short_description:
       description: |
         Met dit schuifje kun je het relatieve opslagvolume van flowbatterijen ten opzichte van het inputvermogen bepalen.
-        Het totale opslagvolume kun je vervolgens zien in de 'Technische parameters en kosten' hieronder. </br></br>
+        Effectief bepaalt dit schuifje hoeveel uur je een lege fowbatterij op vol vermogen kan opladen tot het vol is.
+        Het totale opslagvolume kun je vervolgens zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt 
+        vergelijken met andere opslagtechnologieën kun je ook  
+        <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        deze tabel</a> openen.
+        </br></br>
         Omdat het inputvermogen en het opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan 
         de investeringskosten ook uit twee componenten. Je kunt de investeringskosten per MWh opslagvolume
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> hier</a> aanpassen.

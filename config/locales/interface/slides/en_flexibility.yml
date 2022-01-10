@@ -145,21 +145,25 @@ en:
         are considered flexible, because both their supply and demand can be increased, reduced or shifted in 
         time if needed (see the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> 
         Flexibility overview</a> for background information). </br></br>
-        The ETM models two types of storage behaviour. <br /><ol><li>By default, storage behaves like any other
+        The ETM models three types of storage behaviour. <br /><ol><li>By default, storage behaves like any other
         flexible technology. Each storage technology has a <i>willingness-to-pay</i> that indicates the maximum electricity price for
         which it is willing to charge electricity. If the electricity price in a given hour is lower than a 
         technology's willingness-to-pay, the storage technology will charge. </br></br>
         Similarly, each technology also has a <i>willingness-to-accept</i>, which indicates the minimum 
         electricity price for which it is willing to discharge the stored electricity. This
-        is similar to the concept of 'marginal costs' for flexible power plants.</br></br>
-        </li><li>Optionally you can choose to activate a forecasting algorithm that tries to improve the
+        is similar to the concept of 'marginal costs' for flexible power plants.</li> </br>
+        <li>Optionally you can choose to activate a forecasting algorithm that tries to improve the
         charging and discharging behaviour of storage. Rather than looking at the electricity
         price in the current hour only, the battery will look ahead in time to identify interesting moments
         for charging and discharging. It does so by looking at peaks and troughs in the 
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves"> 
-        residual load curve</a>.</li></ol><br/>
-        In the slides below you can set the willingness-to-pay, the willingness-to-accept, and the installed 
-        capacity for various electricity storage technologies. You can switch a toggle to enable forecasting, which overrides the willingness-to-pay settings and instead uses the algorithm to determine battery behaviour. Note that the specific behaviour of these
+        residual load curve</a>.</li> </br>
+        <li>Finally, storage systems that are integrated with wind turbines or solar plants only store electricity 
+        when the production of the connected renewable energy source exceeds the connection capacity to the grid. 
+        They release their electricity when the production drops below that capacity. The storage system itself has 
+        no further interaction with the rest of the electricity system.</li></ol><br/>
+        In the slides below you can set the the installed capacity for various electricity storage technologies and 
+        determine their behaviour. Note that the specific behaviour of these
         technologies is more complicated than stated in this short description. Our 
         <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\"> documentation</a> 
         contains more details.

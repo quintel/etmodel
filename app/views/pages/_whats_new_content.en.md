@@ -3,17 +3,18 @@
 # January 2022
 
 ## Explore price-sensitive electricity demand
-Previously, the use of flexible electricity demand technologies could be determined by manually setting a merit order. This has now been replaced by price-sensitive behaviour. This means that for power-to-gas, power-to-heat and electricity storage a willingness to pay has to be set. For export, the willingness to pay is given by the prices of the interconnectors.
+Previously, the use of flexible electricity demand technologies could be determined by manually setting the order in which these technologies may use electricity. This has now been replaced by price-sensitive behaviour. This means that for power-to-gas, power-to-heat and electricity storage a willingness to pay has to be set. For export, the willingness to pay is given by the prices of the interconnectors.
 
 The behaviour for all of these technologies can be set in the *Flexibility* section, for **[Storage](/scenario/flexibility_storage/behaviour-of-storage-technologies)**, **[Conversion](/scenario/flexibility/flexibility_conversion/behaviour-of-conversion-technologies)** and **[Export](/scenario/flexibility/electricity_import_export/electricity-interconnectors)**. New charts that can help you set the behaviour can also be found there. For storage, in addition to the willingness to pay, a willingness to accept has to be set. Alternatively, instead of the price-sensitive behaviour, a forecasting algorithm can be used to determine storage behaviour.
 
 -> ![](/assets/pages/whats_new/price_sensitive_en.png) <-
 
-It is now possible for power plants to supply these demand technologies. For example, depending on the prices, a nuclear power plant could be used to produce hydrogen through power-to-gas. It also means that power plants will be able to produce for export by default.
+If it is profitable, power plants will now supply these flexible demand technologies. For example, depending on the prices, a nuclear power plant could be used to produce hydrogen through power-to-gas. This also means that power plants will produce for export when it is profitable.
 
-**Important:** for scenarios that have been made before this update and manually changed the merit order, the willingness to pay of each technology is updated in such a way that it replicates this merit order. However, it should be note the impact of this model update can still be signficant for existing scenarios, because the prices of the interconnectors have not been adjusted for export,  as it would mean a corresponding change in the import prices.
+**Important:** for scenarios that have been made before this update and in which the flexibility merit order was manually set, the willingness to pay of each technology is updated to replicate this set merit order. Please note that the impact of this model update can still be significant for existing scenarios, because the prices of the interconnectors have not been adjusted for export and import.
 
 ## New EU countries can be selected for your scenarios
+
 
 ## Choose from additional steel production technologies
 
@@ -24,6 +25,19 @@ In addition, it is now possible to choose what coal gas in the steel sector will
 -> ![](/assets/pages/whats_new/steel_whats_new_en.png) <-
 
 ## Innovative flexible technologies
+A number of innovative technologies have been added to the ETM and can now be explored. These technologies are all aimed at improving the flexibility of the electricity system.
+
+First, it is possible to install inland wind turbines or solar PV plants that have an integrated battery system. By changing the capacty of the battery and the grid connection you can change the production profile that is supplied to the grid. In the Supply section you can install these **[Wind turbines](/scenario/supply/electricity_renewable/wind-turbines)** and **[Solar plants](/scenario/supply/electricity_renewable/solar-power)**.
+
+-> ![](/assets/pages/whats_new/solar_with_battery_en.png) <-
+
+Second, a new type of electricity storage is available: flow batteries. The innovative aspect of these batteries is that their volume can be scaled independently, and for relatively low costs compared to other batteries. These batteries can be found in *Flexibility → Electricity storage* → **[Flow batteries](/scenario/flexibility/flexibility_storage/flow-batteries)**.
+
+Third, offshore solar PV plants have been added to the model. These plants float in the sea, which increases the potential installation area for solar power in a country. They can be found in *Supply → Renewable electricity* → **[Solar power](/scenario/supply/electricity_renewable/solar-power)**.
+
+-> ![](/assets/pages/whats_new/solar_pv_offshore_en.png) <-
+
+Finally, new heat pump systems are added. These heat pumps draw higher temperature heat from a special type of solar panels, PVT panels, making them more efficient than many other heat pumps. The panels simultaneously produce electricity. You can install these heat pumps with PVT panels in *Demand → Households* → **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)**.
 
 ---
 

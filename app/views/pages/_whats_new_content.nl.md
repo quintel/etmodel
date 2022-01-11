@@ -3,8 +3,15 @@
 # Januari 2022
 
 ## Verken prijsgevoelige elektriciteitsvraag
+Eerder kon de inzet van flexibele elektriciteitsvraagtechnologieën bepaald worden door handmatig de volgorde te kiezen waarin deze technologieën gebruik mochten maken van elektriciteit. Dit is nu vervangen door prijs-gevoelig gedrag. Dit betekent dat er een willingness to pay ingesteld moet worden voor power-to-gas, power-to-heat en elektriciteitsopslag. Voor export wordt de willingness to pay bepaald door de prijzen van de interconnectoren.
 
--> ![](/assets/pages/whats_new/price_sensitive_en.png) <-=
+Het gedrag van al deze technologieën kan worden bepaald in de *Flexibiliteit* sectie, voor **[Opslag](/scenario/flexibility_storage/behaviour-of-storage-technologies)**, **[Conversie](/scenario/flexibility/flexibility_conversion/behaviour-of-conversion-technologies)** en **[Export](/scenario/flexibility/electricity_import_export/electricity-interconnectors)**. Daar zijn ook nieuwe grafieken te vinden die je helpen het gedrag te bepalen. Voor opslag moet er naast een willingness to pay ook een willingness to accept ingesteld worden. Optioneel is om in plaats van het prijs-gevoelige gedrag een prognose-algoritme in te stellen dat het gedrag van opslag bepaalt.
+
+-> ![](/assets/pages/whats_new/price_sensitive_nl.png) <-
+
+Als het winstgevend is, zullen elektriciteitscentrales nu ook leveren aan deze flexibele vraagtechnologieën. Afhankelijk van de prijzen kan bijvoorbeeld een kerncentrale gebruikt worden om waterstof te produceren door middel van power-to-gas. Dit betekent ook dat elektriciteitscentrales zullen produceren voor export als het winstgevend is.
+
+**Belangrijk:** voor scenario's die voor deze update zijn gemaakt en waarvoor de flexibiliteit merit order handmatig gezet was, is de willigness to pay van elke technologie zo aangepast dat deze merit order nagebootst wordt. Let op dat de impact van deze model-update alsnog significant kan zijn voor bestaande scenario's, omdat de prijzen van interconnectoren voor zowel export als import niet zijn aangepast.
 
 ## Nieuwe EU landen kunnen worden geselecteerd voor scenario's
 
@@ -17,6 +24,19 @@ Ook is het nu mogelijk om te bepalen wat er met overgebleven kolengas wordt geda
 -> ![](/assets/pages/whats_new/steel_whats_new_nl.png) <-
 
 ## Innovatieve flexibele technologieën
+Een aantal innovatieve technologieën zijn toegevoegd aan het ETM en kunnen nu worden verkend. Deze technologieën zijn er allen op gericht de flexibiliteit van het elektriciteitssysteem te verbeteren.
+
+Ten eerste is het mogelijk windmolens of zonnecentrales PV met een geïntegreerd batterijsysteem te installeren. Door het vermogen van de batterij en de capaciteit van de netaansluiting te veranderen kan je het profiel dat aan het net geleverd wordt beïnvloeden. Deze **[Windmolens](/scenario/supply/electricity_renewable/wind-turbines)** en **[Zonnecentrales](/scenario/supply/electricity_renewable/solar-power)** zijn te vinden in de Aanbod sectie.
+
+-> ![](/assets/pages/whats_new/solar_with_battery_nl.png) <-
+
+Ten tweede is een nieuwe vorm van elektriciteitsopslag beschikbaar: flowbatterijen. Het innovatieve aspect van deze batterijen is dat het volume onafhankelijk van het vermogen opgeschaald kan worden, voor relatief lage kosten ten opzichte van andere batterijen. Deze batterijen vind je onder *Flexibiliteit → Opslag elektriciteit* → **[Flowbatterijen](/scenario/flexibility/flexibility_storage/flow-batteries)**.
+
+Ten derde zijn zonnecentrales PV op zee toegevoegd aan het model. Deze centrales drijven in de zee, wat het potentiële installatieoppervlak voor zonne-energie in een land vergroot. Deze centrales zijn te vinden onder *Aanbod → Hernieuwbare elektriciteit* → **[Zonne-energie](/scenario/supply/electricity_renewable/solar-power)**.
+
+-> ![](/assets/pages/whats_new/solar_pv_offshore_nl.png) <-
+
+Tenslotte is een nieuw warmtepompsysteem toegevoegd. Deze warmtepomp ontrekt warmte van hogere temperatuur aan een speciaal type zonnepanelen, PVT-panelen, waardoor deze efficiëntier is dan veel andere warmtepompen. Deze panelen produceren tegelijkertijd ook elektriciteit. Je kunt deze warmtepompen met PVT-panelen installeren onder *Vraag → Huishoudens* → **[Ruimteverwarming & warm water](/scenario/demand/households/space-heating-and-hot-water)**.
 
 ---
 

@@ -39,6 +39,11 @@ Ten derde zijn zonnecentrales PV op zee toegevoegd aan het model. Deze centrales
 Tenslotte is een nieuw warmtepompsysteem toegevoegd. Deze warmtepomp ontrekt warmte van hogere temperatuur aan een speciaal type zonnepanelen, PVT-panelen, waardoor deze efficiëntier is dan veel andere warmtepompen. Deze panelen produceren tegelijkertijd ook elektriciteit. Je kunt deze warmtepompen met PVT-panelen installeren onder *Vraag → Huishoudens* → **[Ruimteverwarming & warm water](/scenario/demand/households/space-heating-and-hot-water)**.
 
 ---
+=======
+## EU landen beschikbaar in het ETM
+
+Met heel veel trots delen wij mee dat de meeste EU landen vanaf nu in het ETM te vinden zijn. Voor alle landen is (de meest recente) data uit 2019 gebruikt. Ontdek nu de verschillen in het energiesysteem tussen Frankrijk en Hongarije of maak een scenario voor Duitsland. 
+>>>>>>> Stashed changes
 
 # Oktober 2021
 

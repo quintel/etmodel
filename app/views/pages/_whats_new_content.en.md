@@ -1,5 +1,46 @@
 # What's new in the Energy Transition Model?
 
+# January 2022
+
+## Explore price-sensitive electricity demand
+Previously, the use of flexible electricity demand technologies could be determined by manually setting the order in which these technologies could use electricity. This has now been replaced by price-sensitive behaviour. This means that for power-to-gas, power-to-heat and electricity storage a willingness to pay has to be set. For export, the willingness to pay is given by the prices of the interconnectors.
+
+The behaviour for all of these technologies can be set in the *Flexibility* section, for **[Storage](/scenario/flexibility_storage/behaviour-of-storage-technologies)**, **[Conversion](/scenario/flexibility/flexibility_conversion/behaviour-of-conversion-technologies)** and **[Export](/scenario/flexibility/electricity_import_export/electricity-interconnectors)**. New charts that can help you set the behaviour can also be found there. For storage, in addition to the willingness to pay, a willingness to accept has to be set. Alternatively, instead of the price-sensitive behaviour, a forecasting algorithm can be used to determine storage behaviour.
+
+-> ![](/assets/pages/whats_new/price_sensitive_en.png) <-
+
+If it is profitable, power plants will now supply these flexible demand technologies. For example, depending on the prices, a nuclear power plant could be used to produce hydrogen through power-to-gas. This also means that power plants will produce for export when it is profitable.
+
+**Important:** for scenarios that have been made before this update and in which the flexibility merit order was manually set, the willingness to pay of each technology is updated to replicate this set merit order. Please note that the impact of this model update can still be significant for existing scenarios, because the prices of the interconnectors have not been adjusted for export and import.
+
+## New EU countries can be selected for your scenarios
+We are proud to share that most EU countries are now availbale in the ETM. The most recent data from 2019 was used to create the datasets. You can now discover the differences in energyproduction and consumption between France and Hungary or create a scenario for Germany.
+
+## Choose from additional steel production technologies
+
+The Energy Transition Model has been updated with the latest insights in steel industry production technologies. The model now includes the upcoming production technology Direct Reduction of Iron (DRI), where you can choose between hydrogen or natural gas, and improvements in the existing production technologies. These new production technologies can be found in *Demand → Industry* → **[Steel](/scenario/demand/industry/steel)**.
+
+In addition, it is now possible to choose what coal gas in the steel sector will be used for using the new sliders in *Emissions → CCUS* → **[Coal gases from blast furnaces (steel)](/scenario/emissions/ccus/coal-gases-from-blast-furnaces-steel)**. Coal gas can either be used for electricity production or for transformation into chemical feedstock.
+
+-> ![](/assets/pages/whats_new/steel_whats_new_en.png) <-
+
+## Innovative flexible technologies
+A number of innovative technologies have been added to the ETM and can now be explored. These technologies are all aimed at improving the flexibility of the electricity system.
+
+First, it is possible to install inland wind turbines or solar PV plants that have an integrated battery system. By changing the capacity of the battery and the grid connection you can change the profile that is supplied to the grid. In the Supply section you can install these **[Wind turbines](/scenario/supply/electricity_renewable/wind-turbines)** and **[Solar plants](/scenario/supply/electricity_renewable/solar-power)**.
+
+-> ![](/assets/pages/whats_new/solar_with_battery_en.png) <-
+
+Second, a new type of electricity storage is available: flow batteries. The innovative aspect of these batteries is that their volume can be scaled independently, and for relatively low costs compared to other batteries. These batteries can be found in *Flexibility → Electricity storage* → **[Flow batteries](/scenario/flexibility/flexibility_storage/flow-batteries)**.
+
+Third, offshore solar PV plants have been added to the model. These plants float in the sea, which increases the potential installation area for solar power in a country. They can be found in *Supply → Renewable electricity* → **[Solar power](/scenario/supply/electricity_renewable/solar-power)**.
+
+-> ![](/assets/pages/whats_new/solar_pv_offshore_en.png) <-
+
+Finally, new heat pump systems are added. These heat pumps draw higher temperature heat from a special type of solar panels, PVT panels, making them more efficient than many other heat pumps. The panels simultaneously produce electricity. You can install these heat pumps with PVT panels in *Demand → Households* → **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)**.
+
+---
+
 # October 2021
 
 ## Start year 2019 new standard for scenarios for the Netherlands
@@ -12,6 +53,7 @@ The basis of this dataset update is the open source energy balance from Eurostat
 
 -> ![](/assets/pages/whats_new/co2_emissions_2019_en.png) <-
 
+---
 
 # September 2021
 

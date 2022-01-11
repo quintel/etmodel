@@ -3,7 +3,7 @@
 # January 2022
 
 ## Explore price-sensitive electricity demand
-Previously, the use of flexible electricity demand technologies could be determined by manually setting the order in which these technologies may use electricity. This has now been replaced by price-sensitive behaviour. This means that for power-to-gas, power-to-heat and electricity storage a willingness to pay has to be set. For export, the willingness to pay is given by the prices of the interconnectors.
+Previously, the use of flexible electricity demand technologies could be determined by manually setting the order in which these technologies could use electricity. This has now been replaced by price-sensitive behaviour. This means that for power-to-gas, power-to-heat and electricity storage a willingness to pay has to be set. For export, the willingness to pay is given by the prices of the interconnectors.
 
 The behaviour for all of these technologies can be set in the *Flexibility* section, for **[Storage](/scenario/flexibility_storage/behaviour-of-storage-technologies)**, **[Conversion](/scenario/flexibility/flexibility_conversion/behaviour-of-conversion-technologies)** and **[Export](/scenario/flexibility/electricity_import_export/electricity-interconnectors)**. New charts that can help you set the behaviour can also be found there. For storage, in addition to the willingness to pay, a willingness to accept has to be set. Alternatively, instead of the price-sensitive behaviour, a forecasting algorithm can be used to determine storage behaviour.
 
@@ -27,7 +27,7 @@ In addition, it is now possible to choose what coal gas in the steel sector will
 ## Innovative flexible technologies
 A number of innovative technologies have been added to the ETM and can now be explored. These technologies are all aimed at improving the flexibility of the electricity system.
 
-First, it is possible to install inland wind turbines or solar PV plants that have an integrated battery system. By changing the capacty of the battery and the grid connection you can change the production profile that is supplied to the grid. In the Supply section you can install these **[Wind turbines](/scenario/supply/electricity_renewable/wind-turbines)** and **[Solar plants](/scenario/supply/electricity_renewable/solar-power)**.
+First, it is possible to install inland wind turbines or solar PV plants that have an integrated battery system. By changing the capacity of the battery and the grid connection you can change the profile that is supplied to the grid. In the Supply section you can install these **[Wind turbines](/scenario/supply/electricity_renewable/wind-turbines)** and **[Solar plants](/scenario/supply/electricity_renewable/solar-power)**.
 
 -> ![](/assets/pages/whats_new/solar_with_battery_en.png) <-
 

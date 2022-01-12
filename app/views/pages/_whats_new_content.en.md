@@ -14,7 +14,9 @@ If it is profitable, power plants will now supply these flexible demand technolo
 **Important:** for scenarios that have been made before this update and in which the flexibility merit order was manually set, the willingness to pay of each technology is updated to replicate this set merit order. Please note that the impact of this model update can still be significant for existing scenarios, because the prices of the interconnectors have not been adjusted for export and import.
 
 ## New EU countries can be selected for your scenarios
-We are proud to share that most EU countries are now availbale in the ETM. The most recent data from 2019 was used to create the datasets. You can now discover the differences in energyproduction and consumption between France and Hungary or create a scenario for Germany.
+We are proud to share that most EU countries are now available in the ETM. The most recent data from 2019 was used to create the datasets. You can now discover the differences in energy production and consumption between France and Hungary or create a scenario for Germany.
+
+-> ![](/assets/pages/whats_new/eu_countries-en.png) <-
 
 ## Choose from additional steel production technologies
 

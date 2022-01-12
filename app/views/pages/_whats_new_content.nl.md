@@ -14,6 +14,9 @@ Als het winstgevend is, zullen elektriciteitscentrales nu ook leveren aan deze f
 **Belangrijk:** voor scenario's die voor deze update zijn gemaakt en waarvoor de flexibiliteit merit order handmatig gezet was, is de willigness to pay van elke technologie zo aangepast dat deze merit order nagebootst wordt. Let op dat de impact van deze model-update alsnog significant kan zijn voor bestaande scenario's, omdat de prijzen van interconnectoren voor zowel export als import niet zijn aangepast.
 
 ## Nieuwe EU landen kunnen worden geselecteerd voor scenario's
+Met heel veel trots delen wij mee dat de meeste EU landen vanaf nu in het ETM te vinden zijn. Voor alle landen is (de meest recente) data uit 2019 gebruikt. Ontdek nu de verschillen in het energiesysteem tussen Frankrijk en Hongarije of maak een scenario voor Duitsland. 
+
+-> ![](/assets/pages/whats_new/eu_countries-nl.png) <-
 
 ## Keuze uit extra staalproductie technologieën
 
@@ -39,11 +42,6 @@ Ten derde zijn zonnecentrales PV op zee toegevoegd aan het model. Deze centrales
 Tenslotte is een nieuw warmtepompsysteem toegevoegd. Deze warmtepomp ontrekt warmte van hogere temperatuur aan een speciaal type zonnepanelen, PVT-panelen, waardoor deze efficiëntier is dan veel andere warmtepompen. Deze panelen produceren tegelijkertijd ook elektriciteit. Je kunt deze warmtepompen met PVT-panelen installeren onder *Vraag → Huishoudens* → **[Ruimteverwarming & warm water](/scenario/demand/households/space-heating-and-hot-water)**.
 
 ---
-=======
-## EU landen beschikbaar in het ETM
-
-Met heel veel trots delen wij mee dat de meeste EU landen vanaf nu in het ETM te vinden zijn. Voor alle landen is (de meest recente) data uit 2019 gebruikt. Ontdek nu de verschillen in het energiesysteem tussen Frankrijk en Hongarije of maak een scenario voor Duitsland. 
->>>>>>> Stashed changes
 
 # Oktober 2021
 

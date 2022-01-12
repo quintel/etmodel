@@ -60,7 +60,7 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-  config.cache_store = :mem_cache_store, ENV['MEMCACHE_SERVERS']
+  config.cache_store = :mem_cache_store, ENV.fetch('MEMCACHE_SERVERS', '127.0.0.1')
 
   # Used to generate URLs back to the app.
   config.action_mailer.default_url_options = {

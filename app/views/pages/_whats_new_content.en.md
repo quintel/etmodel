@@ -16,6 +16,8 @@ If it is profitable, power plants will now supply these flexible demand technolo
 ## New EU countries can be selected for your scenarios
 We are proud to share that most EU countries are now availbale in the ETM. The most recent data from 2019 was used to create the datasets. You can now discover the differences in energyproduction and consumption between France and Hungary or create a scenario for Germany.
 
+-> ![](/assets/pages/whats_new/eu_countries-en.png) <-
+
 ## Choose from additional steel production technologies
 
 The Energy Transition Model has been updated with the latest insights in steel industry production technologies. The model now includes the upcoming production technology Direct Reduction of Iron (DRI), where you can choose between hydrogen or natural gas, and improvements in the existing production technologies. These new production technologies can be found in *Demand → Industry* → **[Steel](/scenario/demand/industry/steel)**.

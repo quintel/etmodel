@@ -23,18 +23,6 @@
   dependent_on:
   output_element_key: hv_demand_curves
   key: hv_industry_chemical_hv_demand_curves
-- label: hv_industry_metals
-  color: "#3BFAEB"
-  order_by: 1
-  group:
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: hv_industry_metals_load_curve
-  is_1990:
-  dependent_on:
-  output_element_key: hv_demand_curves
-  key: hv_industry_metals_hv_demand_curves
 - label: hv_industry_other
   color: "#B895F6"
   order_by: 1

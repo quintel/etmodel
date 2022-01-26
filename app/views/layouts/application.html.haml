@@ -7,6 +7,8 @@
     %meta{:name=>"google-site-verification", :content=>"ILDmdAxQTYxcPyy969IJXq7YlXKzhGFfGCHqFi8fiWA"}
     = csrf_meta_tag
 
+    = yield :meta
+
     /[if lte IE 8]
       = stylesheet_link_tag 'ie'
     = stylesheet_link_tag 'application'

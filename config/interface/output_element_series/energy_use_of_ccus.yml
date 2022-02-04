@@ -119,3 +119,27 @@
   dependent_on:
   output_element_key: energy_use_of_ccus
   key: co2_supply_industry_steel_energy_use_of_ccus
+- label: co2_supply_industry_refineries_capture
+  color: "#854321"
+  order_by: 18
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_use_of_refineries_co2_capture
+  is_1990: false
+  dependent_on:
+  output_element_key: energy_use_of_ccus
+  key: co2_supply_industry_refineries_energy_use_of_ccus
+- label: co2_supply_industry_chemical_other_capture
+  color: "#416B86"
+  order_by: 19
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_use_of_chemical_other_co2_capture
+  is_1990: false
+  dependent_on:
+  output_element_key: energy_use_of_ccus
+  key: co2_supply_industry_chemical_other_energy_use_of_ccus

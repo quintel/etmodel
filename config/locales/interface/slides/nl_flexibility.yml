@@ -127,8 +127,8 @@ nl:
         kan worden vergroot, verlaagd, of worden verplaatst in de tijd (zie voor achtergrondinformatie 
         het <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Overzicht van
         flexibiliteit</a>). </br></br>
-        Het ETM modelleert drie soorten batterijgedrag.<br /><ol><li>
-        Standaard gedraagt een batterij zich net als andere flexibele technologieën.
+        Het ETM modelleert drie soorten opslaggedrag.<br /><ol><li>
+        Standaard gedraagt een opslagtechnologie zich net als andere flexibele technologieën.
         Elke opslagtechnologie heeft een <i>willingness-to-pay</i> die de maximale prijs aangeeft
         waarvoor de technologie bereid is om op te laden. Als de
         elektriciteitsprijs in een bepaald uur lager is dan de willingness-to-pay van de technologie, 
@@ -136,7 +136,9 @@ nl:
         Elke technologie heeft ook <i>willingness-to-accept</i>, die aangeeft wat de minimale prijs 
         is waarvoor het bereid is de opgeslagen elektriciteit te ontladen. Dit is vergelijkbaar
         met het begrip 'marginale kosten' bij regelbare centrales.</li> </br>
-        <li>Daarnaast biedt het ETM een optie om een prognose-algoritme te gebruiken om het gedrag van batterijen te verbeteren.
+        <li>Daarnaast biedt het ETM een optie om een 
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
+        prognose-algoritme</a> te gebruiken om het gedrag van opslagtechnologieën te verbeteren.
         In plaats van alleen te kijken naar de elektriciteitsprijs in één uur, kijkt het algoritme
         vooruit in de tijd en probeert het interessante momenten om te laden en ontladen te identificeren.
         Dit gebeurt door naar de pieken en dalen in de 
@@ -146,10 +148,10 @@ nl:
         elektriciteit op als de productie van de aangesloten hernieuwbare energiebron de capaciteit van 
         de netwerkaansluiting overschrijdt. De elektriciteit wordt ontladen zodra de productie onder deze 
         capaciteit zakt. Het opslagsysteem zelf heeft verder geen interactie met de rest van het elektriciteitssysteem. </li></ol><br/>
-        In de onderstaande slides het geïnstalleerde vermogen voor verschillende opslagtechnologieën instellen
+        In de onderstaande slides kun je het geïnstalleerde vermogen voor verschillende opslagtechnologieën instellen
         en het gedrag bepalen. Let op dat het
         daadwerkelijke gedrag van deze technologieën gecompliceerder is dan toegelicht in deze korte 
-        beschrijving. De <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        beschrijving. De <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> bevat een meer gedetailleerde beschrijving.
     flexibility_power_storage_households_flexibility_p2p_electricity:
       title: Batterijen in huishoudens
@@ -161,7 +163,7 @@ nl:
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden 
         ontladen.
-        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_wind_turbine_inland:
       title: Windmolens met opslagsystemen
@@ -193,7 +195,7 @@ nl:
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
-        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_energy_flexibility_mv_batteries_electricity:
       title: Grootschalige batterijopslag
@@ -206,7 +208,7 @@ nl:
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
-        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_energy_flexibility_pumped_storage_electricity:
       title: Stuwmeren
@@ -219,7 +221,7 @@ nl:
         in een bepaald uur lager is dan de willingness-to-pay, gaat de opslag in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
-        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de opslag. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de opslag. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_energy_flexibility_hv_opac_electricity:
       title: OPAC
@@ -232,7 +234,7 @@ nl:
         in een bepaald uur lager is dan de willingness-to-pay, gaat de opslag in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
-        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de opslag. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de opslag. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_energy_flexibility_flow_batteries_electricity:
       title: Flowbatterijen
@@ -246,7 +248,7 @@ nl:
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
-        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_electricity_conversion_overview:
       title: Gedrag van conversietechnologieën
@@ -271,7 +273,7 @@ nl:
         <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
         conversie naar warmte voor industrie</a></li></ul></br>
         Let op dat het daadwerkelijke gedrag van deze technologieën gecompliceerder is dan 
-        toegelicht in deze korte beschrijving. De <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        toegelicht in deze korte beschrijving. De <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> bevat een meer gedetailleerde beschrijving.
     flexibility_flexibility_power_to_heat_for_district_heating:
       title: Conversie naar warmte voor warmtenetten
@@ -281,7 +283,7 @@ nl:
         boilers of warmtepompen, wat ook wel power-to-heat wordt genoemd. In het ETM is power-to-heat 
         een flexibele vraagtechnologie, wat betekent dat warmte alleen geproduceerd wordt wanneer 
         de willingness-to-pay van power-to-heat hoger is dan de uurlijkse elektriciteitsprijs.
-        Zie de <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        Zie de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
         Houd er rekening mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
         power-to-heat warmtepomp, ondanks dat ze dezelfde hoeveelheid warmte produceren per uur. De
@@ -297,7 +299,7 @@ nl:
         vraagtechnologie, wat betekent dat, als de willingness-to-pay van power-to-heat hoger is 
         dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte producere 
         in plaats van de gas- of waterstofketels. Zie de 
-        <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
         Omdat het een hybride technologie is, hebben deze schuifjes alleen effect als er zowel 
         vermogen van de power-to-heat boilers als van de gas- of waterstofketels geïnstalleerd is.
@@ -314,10 +316,10 @@ nl:
         van water, wat ook wel power-to-gas wordt genoemd. In het ETM is power-to-gas 
         een flexibele vraagtechnologie, wat betekent dat waterstof alleen geproduceerd wordt wanneer 
         de willingness-to-pay van power-to-gas hoger is dan de uurlijkse elektriciteitsprijs.
-        Zie de <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        Zie de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
         De geproduceerde waterstof wordt ingevoed in het centrale waterstofnetwerk. In de
-        <a href="/scenario/supply/hydrogen/hydrogen-production"> waterstof productie</a> sectie kan je 
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> waterstofproductie</a> sectie kan je 
         waterstof ook door middel van andere pocessen produceren. Eventuele overschotten aan 
         waterstof worden geëxporteerd.
     flexibility_flexibility_power_to_methane:

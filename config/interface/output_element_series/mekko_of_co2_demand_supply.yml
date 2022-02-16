@@ -155,3 +155,27 @@
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
   key: co2_supply_industry_steel_mekko_of_co2_demand_supply
+- label: co2_supply_industry_refineries
+  color: "#854321"
+  order_by: 18
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: co2_supply_industry_refineries
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_co2_demand_supply
+  key: co2_supply_industry_refineries_mekko_of_co2_demand_supply
+- label: co2_supply_industry_chemical_other
+  color: "#416B86"
+  order_by: 19
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: co2_supply_industry_chemical_other
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_co2_demand_supply
+  key: co2_supply_industry_chemical_other_mekko_of_co2_demand_supply

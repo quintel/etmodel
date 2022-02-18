@@ -23,7 +23,7 @@ class Setting
   def self.default_attributes
     {
       network_parts_affected:   [],
-      area_code:                'nl2019',
+      area_code:                'nl',
       start_year:               2019,
       end_year:                 2050,
       use_merit_order:          true,

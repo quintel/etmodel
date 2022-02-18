@@ -114,4 +114,15 @@ class Slide < YModel::Base
   def visible_with_inputs?
     !removed_from_interface? && sliders.any?
   end
+
+  def subheader_image_available?
+    return false if subheader_image.blank?
+    return true if subheader_image_dependent_on_country.blank?
+
+    country = subheader_image_dependent_on_country
+    country = [country, 'nl2019'] if country == 'nl'
+
+    country.include?(Current.setting.area_code) ||
+      country.include?(Current.setting.area.top_level_area.area)
+  end
 end

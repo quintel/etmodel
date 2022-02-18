@@ -107,7 +107,7 @@ An **[Emissions](/scenario/emissions/other_emissions/overview)** item has been a
 
 The emissions that were added to the new emissions section have also been added to the **[Greenhouse gas footprint](/regions/nl?time=future&scenario=)**. This means that the footprint now gives an overview of all emissions within your area.
 
--> ![](/assets/pages/whats_new/emissions_footprint_eng) <-
+-> ![](/assets/pages/whats_new/emissions_footprint_eng.png) <-
 
 ------------------------------------------------------------------------
 

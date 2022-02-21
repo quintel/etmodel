@@ -10,7 +10,7 @@ describe DeleteMultiYearChart, type: :service do
   let(:result) { described_class.call(multi_year_chart) }
 
   before do
-    allow(UnprotectAPIScenario).to receive(:call)
+    allow(UnprotectApiScenario).to receive(:call)
       .with(multi_year_chart.scenarios.first.scenario_id)
   end
 
@@ -30,6 +30,6 @@ describe DeleteMultiYearChart, type: :service do
     id = multi_year_chart.scenarios.first.scenario_id
     result
 
-    expect(UnprotectAPIScenario).to have_received(:call).with(id)
+    expect(UnprotectApiScenario).to have_received(:call).with(id)
   end
 end

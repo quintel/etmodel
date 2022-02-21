@@ -71,7 +71,7 @@ class CreateMultiYearChart
       @years.map do |year|
         next if any_errors
 
-        res = InterpolateAPIScenario.call(@api_scenario.id, year, protect: true)
+        res = InterpolateApiScenario.call(@api_scenario.id, year, protect: true)
         any_errors = res.failure?
 
         res
@@ -81,7 +81,7 @@ class CreateMultiYearChart
 
   def clean_up_failure
     scenarios.each do |sresult|
-      UnprotectAPIScenario.call(sresult.value['id']) if sresult.successful?
+      UnprotectApiScenario.call(sresult.value['id']) if sresult.successful?
     end
   end
 

@@ -2,7 +2,7 @@
 
 # Creates a new API scenario with the given attributes. Scenarios are marked as
 # protected.
-CreateAPIScenario = lambda do |attributes = {}|
+CreateApiScenario = lambda do |attributes = {}|
   attributes = attributes
     .slice(:area_code, :end_year, :scenario_id, :protected)
     .reverse_merge(protected: true, source: 'ETM')
@@ -10,7 +10,7 @@ CreateAPIScenario = lambda do |attributes = {}|
   scenario = Api::Scenario.create(scenario: { scenario: attributes })
 
   if scenario.errors.any?
-    return ServiceResult.failure(scenario.errors.full_messages)
+    return ServiceResult.failure(scenario.errors.map(&:full_message))
   end
 
   return ServiceResult.success(scenario)

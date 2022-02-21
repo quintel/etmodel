@@ -33,7 +33,7 @@ class PasswordResetsController < ApplicationController
       flash[:notice] = I18n.t("user.forgot_password.success")
       redirect_to root_path
     else
-      flash[:error] = @user.errors.full_messages.join(', ')
+      flash[:error] = @user.errors.map(&:full_message).join(', ')
       Rails.logger.info @user.errors.inspect
       render action: :edit
     end

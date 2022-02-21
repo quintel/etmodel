@@ -14,7 +14,7 @@ describe UpdateSavedScenario, type: :service do
   end
 
   before do
-    allow(CreateAPIScenario).to receive(:call)
+    allow(CreateApiScenario).to receive(:call)
       .and_return(api_result)
     allow(saved_scenario).to receive(:scenario)
       .and_return(ete_scenario_mock)

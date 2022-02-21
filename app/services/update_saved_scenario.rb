@@ -39,11 +39,11 @@ class UpdateSavedScenario
   private
 
   def unprotect
-    UnprotectAPIScenario.call api_scenario.id
+    UnprotectApiScenario.call api_scenario.id
   end
 
   def failure
-    ServiceResult.failure saved_scenario.errors.full_messages
+    ServiceResult.failure(saved_scenario.errors.map(&:full_message))
   end
 
   def api_scenario
@@ -52,7 +52,7 @@ class UpdateSavedScenario
 
   def api_response
     @api_response ||=
-      CreateAPIScenario.call(
+      CreateApiScenario.call(
         settings.merge(
           scenario_id: scenario_id,
         )

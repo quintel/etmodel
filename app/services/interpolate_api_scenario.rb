@@ -11,7 +11,7 @@
 #
 # Returns a ServiceResult with either the parsed JSON response, or the errors
 # returned by ETEngine.
-InterpolateAPIScenario = lambda do |scenario_id, year, protect: false|
+InterpolateApiScenario = lambda do |scenario_id, year, protect: false|
   url = "#{Settings.api_url}/api/v3/scenarios/#{scenario_id}/interpolate"
 
   # Send as JSON so that "protected" is true/false not "true"/"false".

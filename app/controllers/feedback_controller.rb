@@ -39,7 +39,7 @@ class FeedbackController < ApplicationController
     feedback_params[:scenario_id] ||= Current.setting.api_session_id
 
     if feedback_params[:scenario_id].present?
-      scenario_res = CreateAPIScenario.call(
+      scenario_res = CreateApiScenario.call(
         protected: false,
         scenario_id: feedback_params[:scenario_id]
       )

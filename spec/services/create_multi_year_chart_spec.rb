@@ -10,13 +10,13 @@ describe CreateMultiYearChart, type: :service do
   # --
 
   def stub_successful_interpolation(year, id)
-    allow(InterpolateAPIScenario).to receive(:call)
+    allow(InterpolateApiScenario).to receive(:call)
       .with(scenario.id, year, protect: true)
       .and_return(ServiceResult.success('id' => id))
   end
 
   def stub_failed_interpolation(year, errors)
-    allow(InterpolateAPIScenario).to receive(:call)
+    allow(InterpolateApiScenario).to receive(:call)
       .with(scenario.id, year, protect: true)
       .and_return(ServiceResult.failure(errors))
   end
@@ -73,10 +73,10 @@ describe CreateMultiYearChart, type: :service do
       it 'does not unprotect any scenarios' do
         # Service should stop immediately after the 2030 scenario, and not
         # attempt to create any more.
-        allow(UnprotectAPIScenario).to receive(:call)
+        allow(UnprotectApiScenario).to receive(:call)
 
         result
-        expect(UnprotectAPIScenario).not_to have_received(:call)
+        expect(UnprotectApiScenario).not_to have_received(:call)
       end
 
       it 'includes the errors on the Result' do
@@ -97,7 +97,7 @@ describe CreateMultiYearChart, type: :service do
         stub_successful_interpolation(2030, 2)
         stub_failed_interpolation(2040, ["That didn't work."])
 
-        allow(UnprotectAPIScenario).to receive(:call).with(2)
+        allow(UnprotectApiScenario).to receive(:call).with(2)
       end
 
       it 'is not successful' do
@@ -106,7 +106,7 @@ describe CreateMultiYearChart, type: :service do
 
       it 'unprotects the successful 2030 scenario' do
         result
-        expect(UnprotectAPIScenario).to have_received(:call).with(2)
+        expect(UnprotectApiScenario).to have_received(:call).with(2)
       end
 
       it 'does not create any MultiYearChartScenario records' do
@@ -125,9 +125,9 @@ describe CreateMultiYearChart, type: :service do
       end
 
       it 'does not unprotect any scenarios' do
-        allow(UnprotectAPIScenario).to receive(:call)
+        allow(UnprotectApiScenario).to receive(:call)
         result
-        expect(UnprotectAPIScenario).not_to have_received(:call)
+        expect(UnprotectApiScenario).not_to have_received(:call)
       end
 
       it 'includes the errors on the Result' do
@@ -152,8 +152,8 @@ describe CreateMultiYearChart, type: :service do
     before do
       stub_successful_interpolation(2030, 2)
       stub_successful_interpolation(2050, 3)
-      allow(UnprotectAPIScenario).to receive(:call).with(2)
-      allow(UnprotectAPIScenario).to receive(:call).with(3)
+      allow(UnprotectApiScenario).to receive(:call).with(2)
+      allow(UnprotectApiScenario).to receive(:call).with(3)
     end
 
     it 'raises the error' do
@@ -167,7 +167,7 @@ describe CreateMultiYearChart, type: :service do
         nil
       end
 
-      expect(UnprotectAPIScenario).to have_received(:call).with(2)
+      expect(UnprotectApiScenario).to have_received(:call).with(2)
     end
 
     it 'unprotects the 2050 scenario' do
@@ -177,7 +177,7 @@ describe CreateMultiYearChart, type: :service do
         nil
       end
 
-      expect(UnprotectAPIScenario).to have_received(:call).with(3)
+      expect(UnprotectApiScenario).to have_received(:call).with(3)
     end
   end
 end

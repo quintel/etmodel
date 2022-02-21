@@ -22,7 +22,7 @@ class CreateFeaturedScenarios < ActiveRecord::Migration[5.2]
 
         dir.down do
           SavedScenario.where(id: FeaturedScenario.pluck(:saved_scenario_id)).each do |ss|
-            UnprotectAPIScenario.call(ss.scenario_id)
+            UnprotectApiScenario.call(ss.scenario_id)
             ss.destroy!
           end
         end

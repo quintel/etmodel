@@ -73,7 +73,7 @@ RSpec.describe FeedbackController do
     let(:request) { post(:send_message, params: { page: '/', scenario_id: 1 }) }
 
     before do
-      allow(CreateAPIScenario).to receive(:call)
+      allow(CreateApiScenario).to receive(:call)
         .with(protected: false, scenario_id: '1')
         .and_return(ServiceResult.success(Api::Scenario.new(id: 2)))
     end

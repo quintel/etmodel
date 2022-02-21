@@ -6,7 +6,7 @@
 # scenario_id - The ID of the ETEngine scenario to be unprotected.
 #
 # Returns a ServiceResult.
-UnprotectAPIScenario = lambda do |scenario_id|
+UnprotectApiScenario = lambda do |scenario_id|
   response = HTTParty.put(
     "#{Settings.api_url}/api/v3/scenarios/#{scenario_id}",
     body: { scenario: { protected: false } }

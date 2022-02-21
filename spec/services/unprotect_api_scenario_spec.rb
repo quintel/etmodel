@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe UnprotectAPIScenario, type: :service do
+describe UnprotectApiScenario, type: :service do
   context 'when the response is successful' do
     before do
       allow(HTTParty).to receive(:put).with(

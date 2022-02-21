@@ -334,3 +334,28 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weather curve</a>.
+    buildings_heater_hybrid_heatpump_air_water_electricity_share:
+      title: Hybrid heat pump (gas)
+      short_description: ''
+      description: "This heater is a combination of an electric heat pump that draws
+        its heat from the outside air and an efficient conventional gas-fired boiler.
+        Essentially, the hybrid heat pump offers a way to strongly reduce natural
+        gas demand for heating, while buying time for grid management companies to
+        reinforce grids. \r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe gas-fired
+        part takes over all of the heating of the building on cold winter days, when
+        heat demand peaks. Because of this clever trick, the heat pump has less impact
+        on the electricity grid than an all-electric heat pump does. Smart use of
+        hybrid heat pumps may therefore avoid the need to reinforce local power grids.
+        \r\n<br/><br/>\r\nHeat pumps move heat from one place to another. Refrigerators
+        use heat pumps, for example, but buildings can use them for heating and cooling
+        too. For optimal results with <em>most</em> types of heat pumps, installation
+        of under-floor and wall heating instead of radiators is often required, as
+        well as good levels of insulation. The <em>hybrid</em> heat pump is an exception,
+        because of its gas-fired heater as a fall-back option. Hybrid heat pumps can
+        intelligently use whichever part (heat pump or gas-fired heater) is the most
+        efficient or cost-effective given the weather conditions and insulation level.
+        Buildings with limited insulation will rely on the gas-fired part more, better
+        insulated ones will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP
+        of the electric part of the hybrid heat pump depends on ambient temperature.
+        When the COP drops below the threshold value the hybrid heat pump switches
+        to gas.\r\n\r\n"

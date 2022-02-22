@@ -101,7 +101,7 @@ group :test do
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers', require: false
   gem 'simplecov'
-  gem 'vcr', '~> 3.0.3'
+  gem 'vcr', '~> 6.0'
   gem 'webmock', '>= 3.5'
 end
 

@@ -517,7 +517,7 @@ GEM
     validate_url (1.0.13)
       activemodel (>= 3.0.0)
       public_suffix
-    vcr (3.0.3)
+    vcr (6.0.0)
     watchr (0.7)
     webfinger (1.2.0)
       activesupport
@@ -619,7 +619,7 @@ DEPENDENCIES
   tomdoc
   uglifier
   valid_email2
-  vcr (~> 3.0.3)
+  vcr (~> 6.0)
   watchr
   webmock (>= 3.5)
   webpacker

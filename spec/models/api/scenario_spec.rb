@@ -47,7 +47,7 @@ RSpec.describe Api::Scenario, vcr: true do
     context 'when the metadata has an empty title' do
       before do
         allow(scenario).to receive(:metadata).and_return(
-          Struct.new(:attributes).new('title' => '')
+          Struct.new(:attributes).new({ 'title' => '' })
         )
       end
 
@@ -59,7 +59,7 @@ RSpec.describe Api::Scenario, vcr: true do
     context 'when the metadata has a title' do
       before do
         allow(scenario).to receive(:metadata).and_return(
-          Struct.new(:attributes).new('title' => 'My scenario title')
+          Struct.new(:attributes).new({ 'title' => 'My scenario title' })
         )
       end
 

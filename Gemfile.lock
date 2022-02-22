@@ -272,6 +272,7 @@ GEM
     letter_opener (1.7.0)
       launchy (~> 2.2)
     libv8-node (16.10.0.0)
+    libv8-node (16.10.0.0-aarch64-linux)
     libv8-node (16.10.0.0-arm64-darwin)
     libv8-node (16.10.0.0-x86_64-darwin)
     libv8-node (16.10.0.0-x86_64-linux)
@@ -317,6 +318,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.3)
       mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    nokogiri (1.13.3-aarch64-linux)
       racc (~> 1.4)
     nokogiri (1.13.3-arm64-darwin)
       racc (~> 1.4)
@@ -454,9 +457,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
-    rubocop-rspec (2.4.0)
-      rubocop (~> 1.0)
-      rubocop-ast (>= 1.1.0)
+    rubocop-rspec (2.8.0)
+      rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     ruby_parser (3.18.1)
@@ -554,11 +556,10 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  arm64-darwin-20
-  arm64-darwin-21
+  aarch64-linux
+  arm64-darwin
   ruby
-  x86_64-darwin-20
-  x86_64-darwin-21
+  x86_64-darwin
   x86_64-linux
 
 DEPENDENCIES

@@ -116,7 +116,7 @@ group :production, :staging do
 end
 
 gem 'mini_racer', '>= 0.4.0.beta1'
-gem 'sass-rails'
+gem 'sassc-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'oily_png' # Faster sprite compilation.

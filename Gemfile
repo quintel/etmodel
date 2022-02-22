@@ -59,8 +59,6 @@ gem 'premailer-rails'
 group :development do
   gem 'letter_opener'
 
-  gem 'listen', '~> 3.0.5'
-
   gem 'tomdoc'
   gem 'yard-tomdoc', '~> 0.4.0'
 

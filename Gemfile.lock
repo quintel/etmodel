@@ -272,9 +272,6 @@ GEM
     letter_opener (1.7.0)
       launchy (~> 2.2)
     libv8-node (16.10.0.0)
-    listen (3.0.8)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
     local_time (2.1.0)
     loofah (2.14.0)
       crass (~> 1.0.2)
@@ -406,9 +403,6 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    rb-fsevent (0.11.1)
-    rb-inotify (0.10.1)
-      ffi (~> 1.0)
     rdiscount (2.2.0.2)
     regexp_parser (2.2.1)
     request_store (1.5.1)
@@ -588,7 +582,6 @@ DEPENDENCIES
   kaminari (~> 1.2.1)
   launchy
   letter_opener
-  listen (~> 3.0.5)
   local_time
   loofah
   mini_racer (>= 0.4.0.beta1)

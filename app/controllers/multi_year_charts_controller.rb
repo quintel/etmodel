@@ -31,7 +31,7 @@ class MultiYearChartsController < ApplicationController
     )
 
     if result.successful?
-      redirect_to helpers.myc_url(result.value)
+      redirect_to helpers.myc_url(result.value), allow_other_host: true
     else
       flash.now[:error] = result.errors.join(', ')
 

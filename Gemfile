@@ -9,9 +9,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 6.1.0'
+gem 'rails', '~> 7.0.0'
 gem 'activerecord-session_store'
-gem 'activeresource', '~> 5.1'
+gem 'activeresource', '~> 6.0'
 
 gem 'jquery-rails', '~> 4.2.2'
 gem 'local_time'
@@ -35,6 +35,7 @@ gem 'browser'
 gem 'valid_email2'
 
 # javascript
+gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'webpacker'
 gem 'babel-transpiler'
 gem 'rails-i18n'
@@ -55,14 +56,10 @@ gem 'jquery-etmodel-rails', ref: '8a64146', github: 'quintel/etplugin'
 gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 
-gem 'ymodel', path: 'lib/ymodel/'
-
 group :development do
   gem 'letter_opener'
 
   gem 'listen', '~> 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'tomdoc'
   gem 'yard-tomdoc', '~> 0.4.0'
@@ -114,7 +111,7 @@ group :production, :staging do
   # Puma 5 doesn't support daemon mode (used by capistrano3-puma). We need to investigate if this
   # is an issue. Using Puma 5 with capistrano3-puma's Systemd mode would be a better solution, but
   # this may require privileges unavailable to the SSH user.
-  gem 'puma', '< 5'
+  gem 'puma'
   gem 'newrelic_rpm'
 end
 

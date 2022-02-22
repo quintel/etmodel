@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Sorry for the dutch. PICO is in dutch...
 module Embeds
+  # Sorry for the dutch. PICO is in dutch...
   PICO_AREA_PATTERNS_WHITELIST = {
     gemeente: /\AGM/,
     land: /\Anl/,

@@ -23,7 +23,6 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 RUN bundle config --global frozen 1
 
 COPY Gemfile* package.json yarn.lock /usr/src/app/
-COPY lib/ymodel/* /usr/src/app/lib/ymodel/
 WORKDIR /usr/src/app
 
 RUN bundle config set deployment 'true'

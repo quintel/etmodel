@@ -30,7 +30,6 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash \
 RUN bundle config --global frozen 1
 
 COPY Gemfile* /usr/src/app/
-COPY lib/ymodel/* /usr/src/app/lib/ymodel/
 WORKDIR /usr/src/app
 RUN bundle install --jobs=4 --retry=3
 

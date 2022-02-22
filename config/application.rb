@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-require_relative 'boot'
+require_relative "boot"
 
 require "rails/all"
 
@@ -11,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Etm
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0
+    config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -21,6 +19,7 @@ module Etm
     config.time_zone = 'Etc/UTC'
     config.encoding = 'utf-8'
 
+    config.autoload_paths << Rails.root.join('lib')
     config.eager_load_paths << Rails.root.join('lib')
 
     config.i18n.available_locales = %i[en nl]

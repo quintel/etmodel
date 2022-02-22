@@ -9,7 +9,7 @@ class EsdlSuiteController < ApplicationController
 
   # Redirects the user to the login page of the ESDL Suite
   def login
-    redirect_to esdl_suite_service.auth_uri(new_nonce)
+    redirect_to esdl_suite_service.auth_uri(new_nonce), allow_other_host: true
   end
 
   # Route where the ESDL Suite redirects the user to after a succesfull login

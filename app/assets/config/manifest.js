@@ -4,7 +4,6 @@
 //= link application.css
 //= link establishment_shot_print.css
 //= link form_only.css
-//= link ie.css
 //= link multi_year_charts.css
 //= link report.css
 //= link pico.css

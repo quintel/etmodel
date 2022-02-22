@@ -14,6 +14,8 @@ blocks:
           value: test
         - name: BUNDLE_JOBS
           value: '4'
+        - name: CI
+          value: 'true'
       jobs:
         - name: Test
           commands:

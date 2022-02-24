@@ -42,20 +42,6 @@
   dependent_on: use_network_calculations
   output_element_type_name: waterfall
 - under_construction: false
-  unit: bln_euro
-  percentage: false
-  group: Cost
-  sub_group:
-  show_point_label: false
-  growth_chart: false
-  key: breakdown_electricity_costs
-  max_axis_value:
-  min_axis_value:
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: vertical_stacked_bar
-- under_construction: false
   unit: euro
   percentage: false
   group: Cost
@@ -91,20 +77,6 @@
   show_point_label: false
   growth_chart: false
   key: investment_electric_cars
-  max_axis_value:
-  min_axis_value:
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: vertical_stacked_bar
-- under_construction: false
-  unit: bln_euro
-  percentage: false
-  group: Cost
-  sub_group: ''
-  show_point_label: false
-  growth_chart: false
-  key: transport_fuel_costs_overview
   max_axis_value:
   min_axis_value:
   hidden: false

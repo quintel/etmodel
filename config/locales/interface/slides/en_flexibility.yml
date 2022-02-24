@@ -146,13 +146,15 @@ en:
         time if needed (see the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> 
         Flexibility overview</a> for background information). </br></br>
         The ETM models three types of storage behaviour. <br /><ol><li>By default, storage behaves like any other
-        flexible technology. Each storage technology has a <i>willingness-to-pay</i> that indicates the maximum electricity price for
+        flexible technology. Each storage technology has a <i>willingness to pay</i> that indicates the maximum electricity price for
         which it is willing to charge electricity. If the electricity price in a given hour is lower than a 
-        technology's willingness-to-pay, the storage technology will charge. </br></br>
-        Similarly, each technology also has a <i>willingness-to-accept</i>, which indicates the minimum 
+        technology's willingness to pay, the storage technology will charge. </br></br>
+        Similarly, each technology also has a <i>willingness to accept</i>, which indicates the minimum 
         electricity price for which it is willing to discharge the stored electricity. This
         is similar to the concept of 'marginal costs' for flexible power plants.</li> </br>
-        <li>Optionally you can choose to activate a forecasting algorithm that tries to improve the
+        <li>Optionally you can choose to activate a 
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
+        forecasting algorithm</a> that tries to improve the
         charging and discharging behaviour of storage. Rather than looking at the electricity
         price in the current hour only, the battery will look ahead in time to identify interesting moments
         for charging and discharging. It does so by looking at peaks and troughs in the 
@@ -165,7 +167,7 @@ en:
         In the slides below you can set the the installed capacity for various electricity storage technologies and 
         determine their behaviour. Note that the specific behaviour of these
         technologies is more complicated than stated in this short description. Our 
-        <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\"> documentation</a> 
+        <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\"> documentation</a> 
         contains more details.
     flexibility_power_storage_households_flexibility_p2p_electricity:
       title: Batteries in households
@@ -174,10 +176,10 @@ en:
         It is possible to install batteries in households. These can then be charged by electricity from the grid, 
         or by solar power if the household has solar panels installed. </br></br>
         Batteries in the ETM are flexible technologies, which 
-        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
-        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will 
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will 
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
-        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        See our <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentation</a> for more information.
     flexibility_power_storage_transport_car_flexibility_p2p_electricity:
       title: Batteries in electric vehicles
@@ -186,10 +188,10 @@ en:
         Electric vehicles could provide a cost-effective way of storing electricity as they contain a relatively 
         large battery. </br></br>
         Batteries in the ETM are flexible technologies, which 
-        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
-        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
-        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        See our <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentation</a> for more information.
     flexibility_power_storage_energy_flexibility_mv_batteries_electricity:
       title: Large-scale batteries
@@ -198,10 +200,10 @@ en:
         This large-scale battery is typically connected to the medium voltage network. Although in the battery does 
         not react to congestion events, its behavior can help prevent capacity issues in the electricity network. </br></br>
         Batteries in the ETM are flexible technologies, which 
-        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
-        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
-        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        See our <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentation</a> for more information.
     flexibility_power_storage_energy_flexibility_pumped_storage_electricity:
       title: Reservoirs
@@ -211,10 +213,10 @@ en:
         be used to pump water from the lower reservoir to a higher reservoir. Electricity is then 
         produced by releasing the stored water through a turbine. </br></br>
         Electricity storage in the ETM is a flexible technology, which
-        means that it can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the storage in a given hour, it
-        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        means that it can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the storage in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine storage behaviour. In both cases the ETM respects the storage volume limits of the storage.
-        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        See our <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentation</a> for more information.
     flexibility_power_storage_energy_flexibility_hv_opac_electricity:
       title: Underground pumped hydro storage
@@ -224,10 +226,10 @@ en:
         height difference between two water reservoirs, of which the lower reservoir is underground,
         to store electricity as potential energy. </br></br>
         Electricity storage in the ETM is a flexible technology, which
-        means that it can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the storage in a given hour, it
-        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        means that it can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the storage in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine storage behaviour. In both cases the ETM respects the storage volume limits of the storage.
-        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        See our <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentation</a> for more information.
     flexibility_power_storage_energy_flexibility_flow_batteries_electricity:
       title: Flow batteries
@@ -237,10 +239,10 @@ en:
         cheap compared to other batteries and it can be scaled independent from the installed capacity. For flow batteries 
         you can therefore determine both the capacity and the storage volume. </br></br>
         Batteries in the ETM are flexible technologies, which 
-        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness-to-pay of the battery in a given hour, it
-        will charge electricity in that hour. If the electricity price exceeds the willingness-to-accept, it will
+        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
+        will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
-        See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        See our <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentation</a> for more information.
     flexibility_electricity_conversion_overview:
       title: Behaviour of conversion technologies
@@ -251,10 +253,10 @@ en:
         is considered flexible because it can be increased, reduced or shifted in time if needed (see the
         <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Flexibility overview </a>
         for background information). </br></br>
-        Each flexible demand technology has a <i>willingness-to-pay</i> that indicates the maximum electricity
-        price for which it is willing to consume electricity. If the electricity price in a given hour is lower than a technology's willingness-to-pay, the technology will consume electricity
+        Each flexible demand technology has a <i>willingness to pay</i> that indicates the maximum electricity
+        price for which it is willing to consume electricity. If the electricity price in a given hour is lower than a technology's willingness to pay, the technology will consume electricity
         in that hour.
-        In the slides below you can set the willingness-to-pay and installed capacity for:
+        In the slides below you can set the willingness to pay and installed capacity for:
         <ul><li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
         conversion to hydrogen</a></li>
         <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
@@ -262,7 +264,7 @@ en:
         <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
         conversion to heat for industry</a></li></ul></br>
         Note that the specific behaviour of these technologies is more complicated than stated in this short
-        description. Our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        description. Our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentation</a> contains a more detailed description.
     flexibility_flexibility_power_to_heat_for_district_heating:
       title: Conversion to heat for district heating
@@ -270,8 +272,8 @@ en:
       description: |
         Electricity can be used to produce heat through electric boilers or heat pumps, which is
         also known as power-to-heat. In the ETM, power-to-heat is a flexible demand technology, which
-        means that heat is only produced when the willingness-to-pay of power-to-heat exceeds the hourly
-        electricity price. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        means that heat is only produced when the willingness to pay of power-to-heat exceeds the hourly
+        electricity price. See our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentation</a> for more information. </br></br>
         Note that a 1 MWth power-to-heat boiler uses more electricity than a 1 MWth power-to-heat heat
         pump, even though they produce the same amount of heat per hour. The produced heat is delivered
@@ -283,9 +285,9 @@ en:
       description: |
         Gas and hydrogen burners in industry can be turned into hybrid heaters by fitting
         them with an electric boiler. In the ETM, this power-to-heat boiler is a flexible demand
-        technology, which means that when the willingness-to-pay exceeds the hourly electricity
+        technology, which means that when the willingness to pay exceeds the hourly electricity
         price, the power-to-heat boilers will produce the required heat instead of the gas or
-        hydrogen burners. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        hydrogen burners. See our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentation</a> for more information. </br></br>
         Because it is a hybrid heating option it requires capacity of both power-to-heat
         boilers and gas or hydrogen burners to be installed for it to have an effect.
@@ -300,8 +302,8 @@ en:
       description: |
         Electricity can be used to produce hydrogen through the electrolysis of water, which is also
         known as power-to-gas. In the ETM, power-to-gas is a flexible demand technology, which means that
-        hydrogen is only produced when the willingness-to-pay of power-to-gas exceeds the hourly electricity
-        price. See our <a href="https://docs.energytransitionmodel.com/main/flexibility" target=\"_blank\">
+        hydrogen is only produced when the willingness to pay of power-to-gas exceeds the hourly electricity
+        price. See our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentation</a> for more information. </br></br>
         The produced hydrogen will be fed into the central hydrogen network. In the
         <a href="/scenario/supply/hydrogen/hydrogen-production"> hydrogen production</a> section you can

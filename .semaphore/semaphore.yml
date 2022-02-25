@@ -22,7 +22,8 @@ blocks:
             - checkout
             - sem-service start mysql 8
             - cache restore
-            - bundle install --local deployment 'true' --local path 'vendor/bundle'
+            - bundle config set --local deployment 'true'
+            - bundle install
             - yarn install
             - cache store
             - cat /dev/null > config/database.yml

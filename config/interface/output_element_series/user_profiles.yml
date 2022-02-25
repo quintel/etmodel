@@ -107,9 +107,33 @@
   dependent_on:
   output_element_key: user_profiles
   key: industry_chemicals_heat_user_profiles
-- label: industry_refineries_electricity
+- label: industry_fertilizers_electricity
   color: lightgreen
   order_by: 22
+  group: industry_electricity_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: industry_fertilizers_electricity_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: industry_fertilizers_electricity_user_profiles
+- label: industry_fertilizers_heat
+  color: lightgreen
+  order_by: 23
+  group: industry_heat_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: industry_fertilizers_heat_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: industry_fertilizers_heat_user_profiles
+- label: industry_refineries_electricity
+  color: lightgreen
+  order_by: 24
   group: industry_electricity_curves
   show_at_first:
   is_target_line:
@@ -121,7 +145,7 @@
   key: industry_refineries_electricity_user_profiles
 - label: industry_refineries_heat
   color: lightgreen
-  order_by: 23
+  order_by: 25
   group: industry_heat_curves
   show_at_first:
   is_target_line:
@@ -133,7 +157,7 @@
   key: industry_refineries_heat_user_profiles
 - label: industry_other_electricity
   color: lightgreen
-  order_by: 24
+  order_by: 26
   group: industry_electricity_curves
   show_at_first:
   is_target_line:
@@ -145,7 +169,7 @@
   key: industry_other_electricity_user_profiles
 - label: industry_other_heat
   color: lightgreen
-  order_by: 25
+  order_by: 27
   group: industry_heat_curves
   show_at_first:
   is_target_line:

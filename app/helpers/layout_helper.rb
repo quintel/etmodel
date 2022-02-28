@@ -86,8 +86,10 @@ module LayoutHelper
 
   # Returns a URL to the image for the current area code.
   def icon_for_area_code(code)
-    top_area = Api::Area.find_by_country_memoized(code).top_level_area
-    "/assets/icons/areas/#{top_area.area}.png"
+    code = Api::Area.find_by_country_memoized(code).top_level_area.area
+    code = code.to_s.gsub(/^(\w{2})\d{4}$/, '\1')
+
+    "/assets/icons/areas/#{code}.png"
   end
 
   def dutch?

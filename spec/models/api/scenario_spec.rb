@@ -24,4 +24,48 @@ RSpec.describe Api::Scenario, vcr: true do
       expect(scenario.updated_at.zone).to eq('UTC')
     end
   end
+
+  describe '#title' do
+    let(:scenario) { described_class.find(1_604_100, params: { detailed: true }) }
+
+    context 'when the scenario has no metadata' do
+      it 'returns nil' do
+        expect(scenario.title).to be_nil
+      end
+    end
+
+    context 'when the scenario has metadata but no title' do
+      before do
+        allow(scenario).to receive(:metadata).and_return(Struct.new(:attributes).new({}))
+      end
+
+      it 'returns nil' do
+        expect(scenario.title).to be_nil
+      end
+    end
+
+    context 'when the metadata has an empty title' do
+      before do
+        allow(scenario).to receive(:metadata).and_return(
+          Struct.new(:attributes).new('title' => '')
+        )
+      end
+
+      it 'returns nil' do
+        expect(scenario.title).to be_nil
+      end
+    end
+
+    context 'when the metadata has a title' do
+      before do
+        allow(scenario).to receive(:metadata).and_return(
+          Struct.new(:attributes).new('title' => 'My scenario title')
+        )
+      end
+
+      it 'returns the title' do
+        expect(scenario.title).to eq('My scenario title')
+      end
+    end
+  end
 end

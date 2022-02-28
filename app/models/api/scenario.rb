@@ -26,6 +26,10 @@ class Api::Scenario < ActiveResource::Base
     )
   end
 
+  def title
+    super.presence || try(:metadata)&.attributes&.[]('title')&.presence
+  end
+
   # Public: Determines if this scenario can be loaded.
   def loadable?
     Api::Area.code_exists?(area_code)

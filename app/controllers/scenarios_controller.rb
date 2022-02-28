@@ -95,6 +95,8 @@ class ScenariosController < ApplicationController
   # GET /scenario/resume/:id
   def resume
     Current.setting.reset!
+
+    Current.setting = Setting.load_from_scenario(@scenario)
     Current.setting.api_session_id = @scenario.id
 
     redirect_to play_path

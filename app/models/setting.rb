@@ -57,7 +57,7 @@ class Setting
       end_year: scenario.end_year,
       area_code: scenario.area_code,
       active_saved_scenario_id: active_saved_scenario[:id],
-      active_scenario_title: active_saved_scenario[:title]
+      active_scenario_title: active_saved_scenario[:title] || scenario.title
     )
   end
 

@@ -120,7 +120,7 @@
   output_element_key: use_of_final_demand_in_freight_transport_technologies
   key: lng_ships_use_of_final_demand_in_freight_transport_technologies
 - label: compressed_natural_gas_trucks
-  color: "#000000"
+  color: "#BADC58"
   order_by: 11
   group: ''
   show_at_first: false
@@ -131,3 +131,75 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_freight_transport_technologies
   key: compressed_natural_gas_trucks_use_of_final_demand_in_freight_transport_technologies
+- label: compressed_natural_gas_vans
+  color: "#006266"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: compressed_natural_gas_vans_in_use_of_final_demand_in_freight_transport_technologies
+  is_1990: false
+  dependent_on:
+  output_element_key: compressed_natural_gas_vans_use_of_final_demand_in_freight_transport_technologies
+  key: _use_of_final_demand_in_freight_transport_technologies
+- label: diesel_vans
+  color: "#82002b"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: diesel_vans_in_use_of_final_demand_in_freight_transport_technologies
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
+  key: diesel_vans_use_of_final_demand_in_freight_transport_technologies
+- label: electric_vans
+  color: "#6AB04C"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electric_vans_in_use_of_final_demand_in_freight_transport_technologies
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
+  key: electric_vans_use_of_final_demand_in_freight_transport_technologies
+- label: gasoline_vans
+  color: "#E84118"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gasoline_vans_in_use_of_final_demand_in_freight_transport_technologies
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
+  key: gasoline_vans_use_of_final_demand_in_freight_transport_technologies
+- label: hydrogen_vans
+  color: "#521b82"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_vans_in_use_of_final_demand_in_freight_transport_technologies
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
+  key: hydrogen_vans_use_of_final_demand_in_freight_transport_technologies
+- label: lpg_vans
+  color: "#7040c2"
+  order_by: 11
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lpg_vans_in_use_of_final_demand_in_freight_transport_technologies
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
+  key: lpg_vans_use_of_final_demand_in_freight_transport_technologies

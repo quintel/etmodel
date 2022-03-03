@@ -96,7 +96,7 @@
   step_value: 1.0
   unit: "%"
   related_node: buildings_space_heater_crude_oil
-  position: 24
+  position: 25
   slide_key: costs_heat_built_environment
   dependent_on: has_coal_oil_for_heating_built_environment
 - key: efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity
@@ -112,4 +112,11 @@
   unit: "%"
   related_node: buildings_space_heater_heatpump_air_water_electricity
   position: 31
+  slide_key: costs_heat_built_environment
+- key: efficiency_buildings_space_heater_heatpump_air_water_electricity
+  interface_group: cop_buildings
+  step_value: 1.0
+  unit: "%"
+  related_node: buildings_space_heater_hybrid_heatpump_air_water_electricity
+  position: 32
   slide_key: costs_heat_built_environment

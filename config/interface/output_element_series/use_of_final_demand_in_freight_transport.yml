@@ -23,6 +23,18 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_freight_transport
   key: trucks_use_of_final_demand_in_freight_transport
+- label: vans
+  color: "#83A374"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: vans_in_use_of_final_demand_in_freight_transport
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_transport
+  key: vans_use_of_final_demand_in_freight_transport
 - label: ships
   color: "#696969"
   order_by: 1
@@ -47,3 +59,4 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_freight_transport
   key: non_energetic_use_use_of_final_demand_in_freight_transport
+

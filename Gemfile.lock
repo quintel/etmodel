@@ -507,6 +507,8 @@ GEM
       httpclient (>= 2.4)
     tabs_on_rails (3.0.0)
     temple (0.8.2)
+    terser (1.1.8)
+      execjs (>= 0.3.0, < 3)
     thor (1.2.1)
     tilt (2.0.10)
     timeout (0.2.0)
@@ -516,8 +518,6 @@ GEM
     tomparse (0.4.2)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     unicode-display_width (2.1.0)
     valid_email2 (4.0.3)
       activemodel (>= 3.2)
@@ -631,8 +631,8 @@ DEPENDENCIES
   simplecov
   sprockets-rails
   tabs_on_rails (~> 3.0)
+  terser
   tomdoc
-  uglifier
   valid_email2
   vcr (~> 6.0)
   watchr

@@ -116,5 +116,5 @@ end
 gem 'mini_racer', '>= 0.6'
 gem 'sassc-rails'
 gem 'coffee-rails'
-gem 'uglifier'
+gem 'terser'
 gem 'oily_png' # Faster sprite compilation.

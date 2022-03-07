@@ -42,6 +42,45 @@ en:
         target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
         from Real Charging Events</a> by ELaad and Jedlix. This study analyses data
         from 10,000 charging sessions of 140 cars.
+    capacity_of_industry_metal_flexibility_load_shifting_electricity:
+      title: Capacity
+      short_description:
+      description:
+    wta_of_industry_metal_flexibility_load_shifing_electricity:
+      title: Marginal costs
+      short_description:
+      description:
+    deficit_capacity_of_industry_metal_flexibility_load_shifting_electricity:
+      title: Deficit capacity
+      short_description:
+      description:
+
+    capacity_of_industry_chemical_flexibility_load_shifting_electricity:
+      title: Capacity
+      short_description:
+      description:
+    wta_of_industry_chemical_flexibility_load_shifing_electricity:
+      title: Marginal costs
+      short_description:
+      description:
+    deficit_capacity_of_industry_chemical_flexibility_load_shifting_electricity:
+      title: Deficit capacity
+      short_description:
+      description:
+
+    capacity_of_industry_other_flexibility_load_shifting_electricity:
+      title: Capacity
+      short_description:
+      description:
+    wta_of_industry_other_flexibility_load_shifing_electricity:
+      title: Marginal costs
+      short_description:
+      description:
+    deficit_capacity_of_industry_other_flexibility_load_shifting_electricity:
+      title: Deficit capacity
+      short_description:
+      description:
+
     flexibility_outdoor_temperature:
       title: Outdoor temperature
       short_description:
@@ -111,7 +150,7 @@ en:
       title: Power-to-heat boiler
       short_description:
       description: |
-        This slider sets the installed capacity of power-to-heat boilers that use electricity 
+        This slider sets the installed capacity of power-to-heat boilers that use electricity
         to produce heat for the <a href="/scenario/supply/heat/heat-sources">district heating network</a>. </br></br>
         A number of charts are available to help you determine the effect of installing power-to-heat capacity: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -126,7 +165,7 @@ en:
       title: Power-to-heat heat pump
       short_description:
       description: |
-        This slider sets the installed capacity of power-to-heat heat pumps that use electricity and 
+        This slider sets the installed capacity of power-to-heat heat pumps that use electricity and
         ambient heat to produce heat for the <a href="/scenario/supply/heat/heat-sources">district heating network</a>. </br></br>
         A number of charts are available to help you determine the effect of installing power-to-heat capacity: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -249,7 +288,7 @@ en:
       description: |
         Using this slider you can set the percentage of households that is equipped with a household
         battery. You can click on the 'Technical and financial properties' to see the resulting
-        installed capacity and storage volume. The investment costs of household batteries can be adjusted 
+        installed capacity and storage volume. The investment costs of household batteries can be adjusted
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
         A number of charts are available to help you determine the effect of installing household batteries: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -260,16 +299,16 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can 
-        change these parameters in the sliders below and you can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wtp_of_households_flexibility_p2p_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        This slider sets the maximum price households batteries are willing to pay to store 
+        This slider sets the maximum price households batteries are willing to pay to store
         electricity. Note that for this slider to have an effect, capacity of these household
         batteries needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of household batteries: </br></br>
@@ -281,8 +320,8 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wta_of_households_flexibility_p2p_electricity:
@@ -290,7 +329,7 @@ en:
       short_description:
       description: |
         This slider sets the minimum price households batteries are willing to accept to release their stored
-        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher 
+        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher
         than the willingness-to-pay by a margin: to make up for any storage decay and roundtrip efficiency losses.
         Note that for this slider to have an effect, capacity of these
         batteries needs to be installed as well. </br></br>
@@ -303,15 +342,15 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never exceeds the willingness-to-accept. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     transport_car_using_electricity_availability:
       title: Batteries in electric vehicles
       short_description:
       description: |
-        Not all of the storage volume of electric vehicles can be used for flexibility purposes as some of the electricity 
+        Not all of the storage volume of electric vehicles can be used for flexibility purposes as some of the electricity
         is needed to power the next ride. With this slider, you can therefore set which percentage of the electric vehicles' battery is reserved
         for flexibility purposes. You can set the share of electric vehicles
         in the <a href="/scenario/demand/transport_passenger_transport/car-technology">car
@@ -325,16 +364,16 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can 
-        change these parameters in the sliders below and you can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wtp_of_transport_car_flexibility_p2p_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        This slider sets the maximum price batteries in electric vehicles are willing to pay to store 
+        This slider sets the maximum price batteries in electric vehicles are willing to pay to store
         electricity. Note that for this slider to have an effect, capacity of these
         batteries needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of batteries in electric vehicles: </br></br>
@@ -346,8 +385,8 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wta_of_transport_car_flexibility_p2p_electricity:
@@ -355,7 +394,7 @@ en:
       short_description:
       description: |
         This slider sets the minimum price batteries in electric vehicles are willing to accept to release their stored
-        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher 
+        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher
         than the willingness-to-pay by a margin: to make up for any storage decay and roundtrip efficiency losses.
         Note that for this slider to have an effect, capacity of these
         batteries needs to be installed as well. </br></br>
@@ -368,8 +407,8 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never exceeds the willingness-to-accept. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     capacity_of_energy_flexibility_pumped_storage_electricity:
@@ -386,16 +425,16 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can 
-        change these parameters in the sliders below and you can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wtp_of_energy_flexibility_pumped_storage_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        This slider sets the maximum price reservoirs are willing to pay to pump electricity to  
+        This slider sets the maximum price reservoirs are willing to pay to pump electricity to
         the higher reservoir. Note that for this slider to have an effect, capacity of these
         reservoirs needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of reservoirs: </br></br>
@@ -407,16 +446,16 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wta_of_energy_flexibility_pumped_storage_electricity:
       title: Willingness to accept
       short_description:
       description: |
-        This slider sets the minimum price reservoirs are willing to accept to release their stored water through 
-        a turbine. If you want this reservoir to be profitable you should set the willingness-to-accept higher 
+        This slider sets the minimum price reservoirs are willing to accept to release their stored water through
+        a turbine. If you want this reservoir to be profitable you should set the willingness-to-accept higher
         than the willingness-to-pay by a margin: to make up for roundtrip efficiency losses.
         Note that for this slider to have an effect, capacity of these
         reservoirs needs to be installed as well. </br></br>
@@ -429,8 +468,8 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never exceeds the willingness-to-accept. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     capacity_of_energy_flexibility_hv_opac_electricity:
@@ -438,7 +477,7 @@ en:
       short_description:
       description: |
         With this slider, you can set the input capacity of underground pumped hydro storage (UPHS).
-        The investment costs of UPHS can be adjusted 
+        The investment costs of UPHS can be adjusted
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using UPHS: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -449,16 +488,16 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can 
-        change these parameters in the sliders below and you can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wtp_of_energy_flexibility_hv_opac_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        This slider sets the maximum price underground pumped hydro storage (UPHS) is willing to pay to pump electricity to  
+        This slider sets the maximum price underground pumped hydro storage (UPHS) is willing to pay to pump electricity to
         the higher reservoir. Note that for this slider to have an effect, capacity of this
         UPHS needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of UPHS: </br></br>
@@ -470,16 +509,16 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wta_of_energy_flexibility_hv_opac_electricity:
       title: Willingness to accept
       short_description:
       description: |
-        This slider sets the minimum price underground pumped hydro storage (UPHS) are willing to accept to release their stored water through 
-        a turbine to the lower reservoir. If you want this reservoir to be profitable you should set the willingness-to-accept higher 
+        This slider sets the minimum price underground pumped hydro storage (UPHS) are willing to accept to release their stored water through
+        a turbine to the lower reservoir. If you want this reservoir to be profitable you should set the willingness-to-accept higher
         than the willingness-to-pay by a margin: to make up for roundtrip efficiency losses.
         Note that for this slider to have an effect, capacity of this
         UPHS needs to be installed as well. </br></br>
@@ -492,16 +531,16 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never exceeds the willingness-to-accept. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     capacity_of_energy_flexibility_mv_batteries_electricity:
       title: Large-scale batteries
       short_description:
       description: |
-        With this slider, you can set the input capacity of large-scale batteries. 
-        The investment costs of large-scale batteries can be adjusted 
+        With this slider, you can set the input capacity of large-scale batteries.
+        The investment costs of large-scale batteries can be adjusted
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using large-scale batteries: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -512,16 +551,16 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can 
-        change these parameters in the sliders below and you can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wtp_of_energy_flexibility_mv_batteries_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        This slider sets the maximum price large-scale batteries are willing to pay to store 
+        This slider sets the maximum price large-scale batteries are willing to pay to store
         electricity. Note that for this slider to have an effect, capacity of these
         batteries needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of large-scale batteries: </br></br>
@@ -533,8 +572,8 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wta_of_energy_flexibility_mv_batteries_electricity:
@@ -542,7 +581,7 @@ en:
       short_description:
       description: |
         This slider sets the minimum price large-scale batteries are willing to accept to release their stored
-        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher 
+        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher
         than the willingness-to-pay by a margin: to make up for any storage decay and roundtrip efficiency losses.
         Note that for this slider to have an effect, capacity of these
         batteries needs to be installed as well. </br></br>
@@ -555,17 +594,17 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never exceeds the willingness-to-accept. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     capacity_of_energy_flexibility_flow_batteries_electricity:
       title: Flow batteries
       short_description:
       description: |
-        With this slider, you can set the input capacity of flow batteries. Because the capacity and 
-        storage volume of flow batteries can be adjusted independently, the investment costs of these 
-        batteries also consist of two components. You can change the costs per MW of input capacity 
+        With this slider, you can set the input capacity of flow batteries. Because the capacity and
+        storage volume of flow batteries can be adjusted independently, the investment costs of these
+        batteries also consist of two components. You can change the costs per MW of input capacity
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using flow batteries: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -576,9 +615,9 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can 
-        change these parameters in the sliders below and you can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay or never exceeds the willingness-to-accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     volume_of_energy_flexibility_flow_batteries_electricity:
@@ -586,19 +625,19 @@ en:
       short_description:
       description: |
         With this slider, you can set the storage volume of flow batteries, relative to the input capacity. Effectively
-        this sliders determines how many hours an empty flow battery can charge at full volume before it is full. You 
-        can see the total resulting storage volume in the 'Technical and financial properties' below. To quickly compare 
-        it with other storage technologies you can also open  
+        this sliders determines how many hours an empty flow battery can charge at full volume before it is full. You
+        can see the total resulting storage volume in the 'Technical and financial properties' below. To quickly compare
+        it with other storage technologies you can also open
         <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         this table</a>. </br></br>
-        Because the capacity and storage volume of flow batteries can be adjusted independently, the investment 
+        Because the capacity and storage volume of flow batteries can be adjusted independently, the investment
         costs of these batteries also consist of two components. You can change the costs per MWh of storage volume
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>.
     wtp_of_energy_flexibility_flow_batteries_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        This slider sets the maximum price flow batteries are willing to pay to store 
+        This slider sets the maximum price flow batteries are willing to pay to store
         electricity. Note that for this slider to have an effect, capacity of these
         batteries needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of flow batteries: </br></br>
@@ -610,8 +649,8 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never drops below the willingness-to-pay. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness-to-pay. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     wta_of_energy_flexibility_flow_batteries_electricity:
@@ -619,7 +658,7 @@ en:
       short_description:
       description: |
         This slider sets the minimum price flow batteries are willing to accept to release their stored
-        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher 
+        electricity. If you want this battery to be profitable you should set the willingness-to-accept higher
         than the willingness-to-pay by a margin: to make up for any storage decay and roundtrip efficiency losses.
         Note that for this slider to have an effect, capacity of these
         batteries needs to be installed as well. </br></br>
@@ -632,8 +671,8 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity 
-        price never exceeds the willingness-to-accept. You can view the hourly electricity price in 
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never exceeds the willingness-to-accept. You can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
@@ -681,7 +720,7 @@ en:
       short_description:
       description: |
         This slider sets the installed capacity of power-to-gas plants. The investment
-        costs and efficiency of electrolysers can be adjusted 
+        costs and efficiency of electrolysers can be adjusted
         <a href="/scenario/costs/costs_hydrogen/hydrogen-production">here</a>. </br></br>
         A number of charts are available to help you determine the effect of installing power-to-gas capacity: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -696,8 +735,8 @@ en:
       title: Power-to-gas
       short_description:
       description: |
-        This slider sets the maximum price power-to-gas plants are willing to pay for their 
-        electricity. Note that for this slider to have an effect, capacity of these power-to-gas 
+        This slider sets the maximum price power-to-gas plants are willing to pay for their
+        electricity. Note that for this slider to have an effect, capacity of these power-to-gas
         plants needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-gas: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -712,8 +751,8 @@ en:
       title: Power-to-heat boiler
       short_description:
       description: |
-        This slider sets the maximum price power-to-heat boilers are willing to pay for their 
-        electricity. Note that for this slider to have an effect, capacity of these boilers 
+        This slider sets the maximum price power-to-heat boilers are willing to pay for their
+        electricity. Note that for this slider to have an effect, capacity of these boilers
         needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -728,8 +767,8 @@ en:
       title: Power-to-heat heat pump
       short_description:
       description: |
-        This slider sets the maximum price power-to-heat heat pumps are willing to pay for their 
-        electricity. Note that for this slider to have an effect, capacity of these heat pumps 
+        This slider sets the maximum price power-to-heat heat pumps are willing to pay for their
+        electricity. Note that for this slider to have an effect, capacity of these heat pumps
         needs to be installed as well. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -744,10 +783,10 @@ en:
       title: Power-to-heat boiler for refineries
       short_description:
       description: |
-        This slider sets the maximum price power-to-heat boilers in 
+        This slider sets the maximum price power-to-heat boilers in
         <a href="/scenario/demand/industry/refineries">refineries</a>
         are willing to pay for their electricity. Note that for this slider to have an effect,
-        capacity of these boilers and of either gas or hydrogen heaters needs to be 
+        capacity of these boilers and of either gas or hydrogen heaters needs to be
         installed at the refineries. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -783,7 +822,7 @@ en:
         This slider sets the maximum price power-to-heat boilers in the
         <a href="/scenario/demand/industry/chemicals">chemical industry</a>
         are willing to pay for their electricity. Note that for this slider to have an effect,
-        capacity of these boilers and of either gas or hydrogen heaters needs to be 
+        capacity of these boilers and of either gas or hydrogen heaters needs to be
         installed in the chemical industry. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -801,7 +840,7 @@ en:
         This slider sets the maximum price power-to-heat boilers in the
         <a href="/scenario/demand/industry/food">food industry</a>
         are willing to pay for their electricity. Note that for this slider to have an effect,
-        capacity of these boilers and of either gas or hydrogen heaters needs to be 
+        capacity of these boilers and of either gas or hydrogen heaters needs to be
         installed in the food industry. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -819,7 +858,7 @@ en:
         This slider sets the maximum price power-to-heat boilers in the
         <a href="/scenario/demand/industry/paper">paper industry</a>
         are willing to pay for their electricity. Note that for this slider to have an effect,
-        capacity of these boilers and of either gas or hydrogen heaters needs to be 
+        capacity of these boilers and of either gas or hydrogen heaters needs to be
         installed in the paper industry. </br></br>
         A number of charts are available to help you determine the effect of the willingness-to-pay of power-to-heat: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -855,71 +894,71 @@ en:
       title: Relative grid connection capacity
       short_description:
       description: |
-        Due to the volatile nature of wind power output, the impact of installing large 
-        numbers of wind turbines on the electricity grid can be large. To reduce the 
-        impact on the electricity grid, wind turbines with a battery system have a connection 
+        Due to the volatile nature of wind power output, the impact of installing large
+        numbers of wind turbines on the electricity grid can be large. To reduce the
+        impact on the electricity grid, wind turbines with a battery system have a connection
         to the grid that is reduced in capacity compared to the installed capacity. <br/><br/>
         The grid connection capacity is set relative to the installed capacity of the
-        wind turbines with battery systems. This means that if you change the installed 
+        wind turbines with battery systems. This means that if you change the installed
         capacity in the <a href="/scenario/supply/electricity_renewable/wind-turbines">
-        Supply</a> section, the grid connection will change accordingly, with the ratio 
+        Supply</a> section, the grid connection will change accordingly, with the ratio
         specified by this slider. <br/><br/>
-        Any production by the wind turbines that exceeds the grid connection capacity 
-        will have to be consumed by the integrated battery system, for which you can 
-        determine the relative capacity with the slider below. If the battery cannot 
-        consume any more electricity due to charging capacity or volume constraints, 
+        Any production by the wind turbines that exceeds the grid connection capacity
+        will have to be consumed by the integrated battery system, for which you can
+        determine the relative capacity with the slider below. If the battery cannot
+        consume any more electricity due to charging capacity or volume constraints,
         the excess electricity production will be curtailed.
     connection_capacity_always_on_solar_pv_solar_radiation:
       title: Relative grid connection capacity
       short_description:
       description: |
-        Due to the volatile nature of solar power output, the impact of installing large 
-        numbers of solar PV plants on the electricity grid can be large. To reduce the 
-        impact on the electricity grid, solar PV plants with a battery system have a connection 
+        Due to the volatile nature of solar power output, the impact of installing large
+        numbers of solar PV plants on the electricity grid can be large. To reduce the
+        impact on the electricity grid, solar PV plants with a battery system have a connection
         to the grid that is reduced in capacity compared to the installed capacity. <br/><br/>
         The grid connection capacity is set relative to the installed capacity of the
-        solar PV plants with battery systems. This means that if you change the installed 
+        solar PV plants with battery systems. This means that if you change the installed
         capacity in the <a href="/scenario/supply/electricity_renewable/solar-power">
-        Supply</a> section, the grid connection will change accordingly, with the ratio 
+        Supply</a> section, the grid connection will change accordingly, with the ratio
         specified by this slider. <br/><br/>
-        Any production by the solar plants that exceeds the grid connection capacity 
-        will have to be consumed by the integrated battery system, for which you can 
-        determine the relative capacity with the slider below. If the battery cannot 
-        consume any more electricity due to charging capacity or volume constraints, 
+        Any production by the solar plants that exceeds the grid connection capacity
+        will have to be consumed by the integrated battery system, for which you can
+        determine the relative capacity with the slider below. If the battery cannot
+        consume any more electricity due to charging capacity or volume constraints,
         the excess electricity production will be curtailed.
     battery_capacity_always_on_wind_turbine_inland:
       title: Relative battery capacity
       short_description:
       description: |
-        The input capacity, or charging capacity, of the battery is set relative to the 
-        installed capacity of the wind turbines with battery systems. This means that if 
-        you change the installed capacity in the 
+        The input capacity, or charging capacity, of the battery is set relative to the
+        installed capacity of the wind turbines with battery systems. This means that if
+        you change the installed capacity in the
         <a href="/scenario/supply/electricity_renewable/wind-turbines">
-        Supply</a> section, the charging capacity will change accordingly, with the ratio 
+        Supply</a> section, the charging capacity will change accordingly, with the ratio
         specified by this slider. <br/><br/>
-        The battery system only consumes electricity when the production exceeds the grid 
-        connection capacity threshold and starts to release it again when the production drops 
-        below the threshold. If the battery cannot consume any more electricity due to charging 
+        The battery system only consumes electricity when the production exceeds the grid
+        connection capacity threshold and starts to release it again when the production drops
+        below the threshold. If the battery cannot consume any more electricity due to charging
         capacity or volume constraints, the excess electricity production will be curtailed. </br></br>
-        The storage volume is related to the charging capacity by a fixed ratio. This means 
-        that the storage volume will therefore also be updated if you change this slider. 
+        The storage volume is related to the charging capacity by a fixed ratio. This means
+        that the storage volume will therefore also be updated if you change this slider.
         To see the effect of this slider on the total battery capacity and storage volume,
         you can click on the 'Technical and financial properties'.
     battery_capacity_always_on_solar_pv_solar_radiation:
       title: Relative battery capacity
       short_description:
       description: |
-        The input capacity, or charging capacity, of the battery is set relative to the 
-        installed capacity of the solar PV plants with battery systems. This means that if 
-        you change the installed capacity in the 
+        The input capacity, or charging capacity, of the battery is set relative to the
+        installed capacity of the solar PV plants with battery systems. This means that if
+        you change the installed capacity in the
         <a href="/scenario/supply/electricity_renewable/solar-power>
-        Supply</a> section, the charging capacity will change accordingly, with the ratio 
+        Supply</a> section, the charging capacity will change accordingly, with the ratio
         specified by this slider. <br/><br/>
-        The battery system only consumes electricity when the production exceeds the grid 
-        connection capacity threshold and starts to release it again when the production drops 
-        below the threshold. If the battery cannot consume any more electricity due to charging 
+        The battery system only consumes electricity when the production exceeds the grid
+        connection capacity threshold and starts to release it again when the production drops
+        below the threshold. If the battery cannot consume any more electricity due to charging
         capacity or volume constraints, the excess electricity production will be curtailed. </br></br>
-        The storage volume is related to the charging capacity by a fixed ratio. This means 
-        that the storage volume will therefore also be updated if you change this slider. 
+        The storage volume is related to the charging capacity by a fixed ratio. This means
+        that the storage volume will therefore also be updated if you change this slider.
         To see the effect of this slider on the total battery capacity and storage volume,
         you can click on the 'Technical and financial properties'.

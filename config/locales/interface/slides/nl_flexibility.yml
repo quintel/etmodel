@@ -118,22 +118,31 @@ nl:
           \ data-chart-key=\"hybrid_heat_pump\"
         >hybride warmtepomp tabel</a>
         laat de jaarlijkse verdeling van gas en elektriciteit zien."
+    flexibility_flexibility_demand_response_load_shifting:
+      title: Vraagsturing - verplaatsing vraag in industrie
+      short_description:
+      description: "Vraagsturing is een vorm van flexibiliteit waarbij de energievraag
+        wordt aangepast of verschoven in de tijd. Vaak is het doel hierbij om pieken
+        in de energievraag te voorkomen. Met de schuifjes in deze sectie kun je het
+        consumptie patroon van de industriële sectoren metaal, chemie en overig aanpassen.
+         \r\n<p>\r\n De totale vraag van deze sectoren is in te stellen in
+        <a href=\"/scenario/demand/industry\" >industrie sectie</a>."
     flexibility_electricity_storage_overview:
       title: Gedrag van opslagtechnologieën
       short_description:
       description: |
-        In deze sectie kun je het gedrag bepalen van technologieën voor elektriciteitsopslag. Deze 
-        technologieën worden als flexibel gezien omdat zowel hun vraag als aanbod indien wenselijk 
-        kan worden vergroot, verlaagd, of worden verplaatst in de tijd (zie voor achtergrondinformatie 
+        In deze sectie kun je het gedrag bepalen van technologieën voor elektriciteitsopslag. Deze
+        technologieën worden als flexibel gezien omdat zowel hun vraag als aanbod indien wenselijk
+        kan worden vergroot, verlaagd, of worden verplaatst in de tijd (zie voor achtergrondinformatie
         het <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Overzicht van
         flexibiliteit</a>). </br></br>
         Het ETM modelleert drie soorten opslaggedrag.<br /><ol><li>
         Standaard gedraagt een opslagtechnologie zich net als andere flexibele technologieën.
         Elke opslagtechnologie heeft een <i>willingness-to-pay</i> die de maximale prijs aangeeft
         waarvoor de technologie bereid is om op te laden. Als de
-        elektriciteitsprijs in een bepaald uur lager is dan de willingness-to-pay van de technologie, 
+        elektriciteitsprijs in een bepaald uur lager is dan de willingness-to-pay van de technologie,
         zal de opslagtechnologie in dat uur opladen. </br></br>
-        Elke technologie heeft ook <i>willingness-to-accept</i>, die aangeeft wat de minimale prijs 
+        Elke technologie heeft ook <i>willingness-to-accept</i>, die aangeeft wat de minimale prijs
         is waarvoor het bereid is de opgeslagen elektriciteit te ontladen. Dit is vergelijkbaar
         met het begrip 'marginale kosten' bij regelbare centrales.</li> </br>
         <li>Daarnaast biedt het ETM een optie om een 
@@ -141,12 +150,12 @@ nl:
         prognose-algoritme</a> te gebruiken om het gedrag van opslagtechnologieën te verbeteren.
         In plaats van alleen te kijken naar de elektriciteitsprijs in één uur, kijkt het algoritme
         vooruit in de tijd en probeert het interessante momenten om te laden en ontladen te identificeren.
-        Dit gebeurt door naar de pieken en dalen in de 
-        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves"> 
+        Dit gebeurt door naar de pieken en dalen in de
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
         'residual load curve'</a> te kijken.</li></br>
-        <li> Tenslotte slaan opslagsystemen die geïntegreerd zijn in windmolens of zonnecentrales alleen 
-        elektriciteit op als de productie van de aangesloten hernieuwbare energiebron de capaciteit van 
-        de netwerkaansluiting overschrijdt. De elektriciteit wordt ontladen zodra de productie onder deze 
+        <li> Tenslotte slaan opslagsystemen die geïntegreerd zijn in windmolens of zonnecentrales alleen
+        elektriciteit op als de productie van de aangesloten hernieuwbare energiebron de capaciteit van
+        de netwerkaansluiting overschrijdt. De elektriciteit wordt ontladen zodra de productie onder deze
         capaciteit zakt. Het opslagsysteem zelf heeft verder geen interactie met de rest van het elektriciteitssysteem. </li></ol><br/>
         In de onderstaande slides kun je het geïnstalleerde vermogen voor verschillende opslagtechnologieën instellen
         en het gedrag bepalen. Let op dat het
@@ -157,11 +166,11 @@ nl:
       title: Batterijen in huishoudens
       short_description:
       description: |
-        Batterijen kunnen in huishoudens geïnstalleerd worden. Deze kunnen vervolgens worden opgeladen 
+        Batterijen kunnen in huishoudens geïnstalleerd worden. Deze kunnen vervolgens worden opgeladen
         door het elektriciteitsnet of door zonnepanelen, als huishoudens deze op hun daken hebben liggen. </br></br>
         Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
-        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden 
+        de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
         <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
@@ -169,27 +178,27 @@ nl:
       title: Windmolens met opslagsystemen
       short_description:
       description: |
-        Hieronder kun je het vermogen van de batterij en de capaciteit van de netwerkaansluiting 
-        instellen, in verhouding tot het geïnstalleerde vermogen van windmolens met een 
-        geïntegreerd batterijsysteem. Deze schuifjes hebben daarom pas effect als je dit type 
-        windmolens geïnstalleerd hebt. Dit kun je doen in de Aanbod sectie, onder 
+        Hieronder kun je het vermogen van de batterij en de capaciteit van de netwerkaansluiting
+        instellen, in verhouding tot het geïnstalleerde vermogen van windmolens met een
+        geïntegreerd batterijsysteem. Deze schuifjes hebben daarom pas effect als je dit type
+        windmolens geïnstalleerd hebt. Dit kun je doen in de Aanbod sectie, onder
         <a href="/scenario/supply/electricity_renewable/wind-turbines">
         Hernieuwbare elektriciteit</a>.
     flexibility_power_storage_solar_pv_solar_radiation:
       title: Zonnecentrales met opslagsystemen
       short_description:
       description: |
-        Hieronder kun je het vermogen van de batterij en de capaciteit van de netwerkaansluiting 
-        instellen, in verhouding tot het geïnstalleerde vermogen van zonnecentrales met een 
-        geïntegreerd batterijsysteem. Deze schuifjes hebben daarom pas effect als je dit type 
-        zonnecentrales geïnstalleerd hebt. Dit kun je doen in de Aanbod sectie, onder 
+        Hieronder kun je het vermogen van de batterij en de capaciteit van de netwerkaansluiting
+        instellen, in verhouding tot het geïnstalleerde vermogen van zonnecentrales met een
+        geïntegreerd batterijsysteem. Deze schuifjes hebben daarom pas effect als je dit type
+        zonnecentrales geïnstalleerd hebt. Dit kun je doen in de Aanbod sectie, onder
         <a href="/scenario/supply/electricity_renewable/solar-power">
         Hernieuwbare elektriciteit</a>.
     flexibility_power_storage_transport_car_flexibility_p2p_electricity:
       title: Batterijen in elektrische auto's
       short_description:
       description: |
-        Elektrische auto's kunnen functioneren als een kosteneffectieve manier van elektriciteitsopslag, 
+        Elektrische auto's kunnen functioneren als een kosteneffectieve manier van elektriciteitsopslag,
         aangezien ze een relatief grote batterij bevatten. </br></br>
         Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
@@ -201,8 +210,8 @@ nl:
       title: Grootschalige batterijopslag
       short_description:
       description: |
-        Deze grootschalige batterij wordt typisch aangesloten op het middenspanningsnet. Hoewel de batterij 
-        niet reageert op netwerkcongestie kan het gedrag wel helpen om capaciteitsproblemen op het 
+        Deze grootschalige batterij wordt typisch aangesloten op het middenspanningsnet. Hoewel de batterij
+        niet reageert op netwerkcongestie kan het gedrag wel helpen om capaciteitsproblemen op het
         middenspanningsnet te voorkomen. </br></br>
         Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
@@ -214,8 +223,8 @@ nl:
       title: Stuwmeren
       short_description:
       description: |
-        Stuwmeren bieden een goedkope vorm van grootschalige elektriciteitsopslag. Elektriciteit wordt 
-        gebruikt om water op te pompen van een lager gelegen reservoir naar een hoger reservoir. Elektriciteit 
+        Stuwmeren bieden een goedkope vorm van grootschalige elektriciteitsopslag. Elektriciteit wordt
+        gebruikt om water op te pompen van een lager gelegen reservoir naar een hoger reservoir. Elektriciteit
         wordt vervolgens geproduceerd door het opgeslagen water terug te laten stromen door een turbine. </br></br>
         Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat stuurbaar is wanneer er geladen en ontladen wordt. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de opslag in dat uur opladen. Wanneer
@@ -227,8 +236,8 @@ nl:
       title: OPAC
       short_description:
       description: |
-        De Ondergrondse Pomp Accumulatie Centrale (OPAC) is een vorm van grootschalige elektriciteitsopslag. Er 
-        wordt gebruik gemaakt van het hoogteverschil tussen twee reservoirs, waarvan het lager gelegen reservoir 
+        De Ondergrondse Pomp Accumulatie Centrale (OPAC) is een vorm van grootschalige elektriciteitsopslag. Er
+        wordt gebruik gemaakt van het hoogteverschil tussen twee reservoirs, waarvan het lager gelegen reservoir
         zich ondergronds bevindt, om elektriciteit op te slaan als potentiële energie. </br></br>
         Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat stuurbaar is wanneer er geladen en ontladen wordt. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de opslag in dat uur opladen. Wanneer
@@ -240,9 +249,9 @@ nl:
       title: Flowbatterijen
       short_description:
       description: |
-        Flowbatterijen zijn een vorm van grootschalige elektriciteitsopslag. Dit is omdat het installeren van 
-        opslagvolume relatief goedkoop is ten opzichte van andere batterijen en het onafhankelijk van het 
-        geïnstalleerd vermogen kan worden gevarieerd. Je kunt daarom voor deze batterijen zowel het vermogen 
+        Flowbatterijen zijn een vorm van grootschalige elektriciteitsopslag. Dit is omdat het installeren van
+        opslagvolume relatief goedkoop is ten opzichte van andere batterijen en het onafhankelijk van het
+        geïnstalleerd vermogen kan worden gevarieerd. Je kunt daarom voor deze batterijen zowel het vermogen
         en het opslagvolume aanpassen. </br></br>
         Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
@@ -254,17 +263,17 @@ nl:
       title: Gedrag van conversietechnologieën
       short_description:
       description: |
-        In deze sectie kun je het gedrag bepalen van verschillende flexibele vraagtechnologieën 
-        voor de conversie van elektriciteit. Deze technologieën worden als flexibel gezien omdat 
-        de vraag indien wenselijk kan worden vergroot, verlaagd, of worden verplaatst in de tijd 
-        (zie voor achtergrondinformatie het 
+        In deze sectie kun je het gedrag bepalen van verschillende flexibele vraagtechnologieën
+        voor de conversie van elektriciteit. Deze technologieën worden als flexibel gezien omdat
+        de vraag indien wenselijk kan worden vergroot, verlaagd, of worden verplaatst in de tijd
+        (zie voor achtergrondinformatie het
         <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Overzicht van
         flexbiliteit</a>). </br></br>
-        Elke flexibele vraagtechnologie heeft een <i>willingness-to-pay</i> die de maximale prijs 
-        aangeeft waarvoor de technologie bereid is elektriciteit te consumeren. Als de 
-        elektriciteitsprijs in een bepaald uur hoger is dan de willingness-to-pay van een 
+        Elke flexibele vraagtechnologie heeft een <i>willingness-to-pay</i> die de maximale prijs
+        aangeeft waarvoor de technologie bereid is elektriciteit te consumeren. Als de
+        elektriciteitsprijs in een bepaald uur hoger is dan de willingness-to-pay van een
         technologie, dan zal die technologie elektriciteit consumeren in dat uur. </br></br>
-        In de onderstaande slides kun je de willingness-to-pay en het geïnstalleerde vermogen 
+        In de onderstaande slides kun je de willingness-to-pay en het geïnstalleerde vermogen
         aanpassen voor:
         <ul><li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
         conversie naar waterstof</a></li>
@@ -279,16 +288,16 @@ nl:
       title: Conversie naar warmte voor warmtenetten
       short_description:
       description: |
-        Elektriciteit kan worden gebruikt om warmte te produceren door middel van elektrische 
-        boilers of warmtepompen, wat ook wel power-to-heat wordt genoemd. In het ETM is power-to-heat 
-        een flexibele vraagtechnologie, wat betekent dat warmte alleen geproduceerd wordt wanneer 
+        Elektriciteit kan worden gebruikt om warmte te produceren door middel van elektrische
+        boilers of warmtepompen, wat ook wel power-to-heat wordt genoemd. In het ETM is power-to-heat
+        een flexibele vraagtechnologie, wat betekent dat warmte alleen geproduceerd wordt wanneer
         de willingness-to-pay van power-to-heat hoger is dan de uurlijkse elektriciteitsprijs.
         Zie de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
         Houd er rekening mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
         power-to-heat warmtepomp, ondanks dat ze dezelfde hoeveelheid warmte produceren per uur. De
-        geproduceerde warmte wordt aan het residentiële warmtenet geleverd. Je kan ook andere 
-        warmtebronnen kiezen in de <a href="/scenario/supply/heat/heat-sources"> 
+        geproduceerde warmte wordt aan het residentiële warmtenet geleverd. Je kan ook andere
+        warmtebronnen kiezen in de <a href="/scenario/supply/heat/heat-sources">
         warmtenetten</a> sectie.
     flexibility_flexibility_power_to_heat_for_industry:
       title: Conversie naar warmte voor industrie
@@ -301,7 +310,7 @@ nl:
         in plaats van de gas- of waterstofketels. Zie de 
         <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
-        Omdat het een hybride technologie is, hebben deze schuifjes alleen effect als er zowel 
+        Omdat het een hybride technologie is, hebben deze schuifjes alleen effect als er zowel
         vermogen van de power-to-heat boilers als van de gas- of waterstofketels geïnstalleerd is.
         Je kunt het geïnstalleerde vermogen bepalen voor deze subsectoren van de industrie:
         <ul><li><a href="/scenario/demand/industry/refineries">raffinaderijen</a></li>
@@ -313,9 +322,9 @@ nl:
       title: Conversie naar waterstof
       short_description:
       description: |
-        Elektriciteit kan worden gebruikt om waterstof te produceren door middel van de elektrolyse 
-        van water, wat ook wel power-to-gas wordt genoemd. In het ETM is power-to-gas 
-        een flexibele vraagtechnologie, wat betekent dat waterstof alleen geproduceerd wordt wanneer 
+        Elektriciteit kan worden gebruikt om waterstof te produceren door middel van de elektrolyse
+        van water, wat ook wel power-to-gas wordt genoemd. In het ETM is power-to-gas
+        een flexibele vraagtechnologie, wat betekent dat waterstof alleen geproduceerd wordt wanneer
         de willingness-to-pay van power-to-gas hoger is dan de uurlijkse elektriciteitsprijs.
         Zie de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>

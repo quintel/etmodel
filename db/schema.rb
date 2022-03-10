@@ -104,11 +104,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_12_15_125700) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
-<<<<<<< HEAD
   create_table "surveys", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-=======
-  create_table "surveys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
->>>>>>> 1a7a61936 (Changed colors and titles of cost charts)
     t.bigint "user_id"
     t.string "background", limit: 256
     t.integer "how_often"

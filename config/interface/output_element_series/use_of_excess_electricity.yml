@@ -167,3 +167,15 @@
   dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_curtailed_solar_pv_use_of_excess_electricity
+- label: electricity_load_shifting_in_industry_use_of_excess_electricity
+  color: "#F39C12"
+  order_by: 23
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_load_shifting_in_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_load_shifting_in_industry_use_of_excess_electricity

@@ -320,9 +320,8 @@ nl:
         energy_chp_ultra_supercritical_lignite: 'Bruinkoolcentrale met warmtelevering (WKK)'
         energy_export_electricity: 'Geëxporteerd'
         energy_flexibility_curtailment_electricity: 'Productieverlaging volatiele bronnen'
-        energy_flexibility_load_shifting_metal_electricity: "Vraagverschuiving metaal industrie"
-        energy_flexibility_load_shifting_chemical_electricity: "Vraagverschuiving chemische industrie"
-        energy_flexibility_load_shifting_other_electricity: "Vraagverschuiving overige industrie"
+        energy_flexibility_load_shifting_electricity_input: "Verhoogde vraag in industrie"
+        energy_flexibility_load_shifting_electricity_output: "Verlaagde vraag in industrie"
         energy_flexibility_pumped_storage_electricity: 'Opslag in stuwmeren'
         energy_flexibility_opac_electricity: 'Opslag in OPAC'
         energy_flexibility_flow_batteries_electricity: 'Opslag in flowbatterijen'
@@ -499,6 +498,8 @@ nl:
         hourly_buildings_heat_deficit: "Tekorten"
         hourly_household_heat_surplus: "Bufferen en uitstellen"
         hourly_household_heat_deficit: "Tekorten"
+        hourly_flexibility_electricity_load_shifting_input: "Verhoogde vraag in industrie"
+        hourly_flexibility_electricity_load_shifting_output: "Verlaagde vraag in industrie"
         households_cooling_demand: "Koeling huishoudens"
         households_flexibility_p2h_electricity: 'Omgezet naar warmte voor huishoudens'
         households_flexibility_p2p_electricity: 'Opgeslagen in thuisbatterijen'

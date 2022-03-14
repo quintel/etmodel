@@ -59,46 +59,30 @@
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_flexibility_curtailment_electricity_flex_merit_order_hourly_flexibility
-
-
-- label: energy_flexibility_load_shifting_metal_electricity
-  color: "#8B0000"
+- label: energy_flexibility_load_shifting_electricity_input
+  color: "#EC7063"
   order_by: 411
   group: flex
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_flexibility_load_shifting_metal_electricity_input_curve
+  gquery: energy_flexibility_load_shifting_electricity_input_curve
   is_1990:
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
-  key: energy_flexibility_load_shifting_metal_electricity_flex_merit_order_hourly_flexibility
-- label: energy_flexibility_load_shifting_chemical_electricity
-  color: "#74B9FF"
+  key: energy_flexibility_load_shifting_electricity_input_flex_merit_order_hourly_flexibility
+- label: energy_flexibility_load_shifting_electricity_output
+  color: "#F5B7B1"
   order_by: 412
   group: flex
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_flexibility_load_shifting_chemical_electricity_input_curve
+  gquery: energy_flexibility_load_shifting_electricity_output_curve
   is_1990:
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
-  key: energy_flexibility_load_shifting_chemical_electricity_flex_merit_order_hourly_flexibility
-- label: energy_flexibility_load_shifting_other_electricity
-  color: "#D87093"
-  order_by: 413
-  group: flex
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: energy_flexibility_load_shifting_other_electricity_input_curve
-  is_1990:
-  dependent_on:
-  output_element_key: merit_order_hourly_flexibility
-  key: energy_flexibility_load_shifting_other_electricity_flex_merit_order_hourly_flexibility
-
-
+  key: energy_flexibility_load_shifting_electricity_output_flex_merit_order_hourly_flexibility
 - label: baseload_demand
   color: "#dce9f7"
   order_by: 100

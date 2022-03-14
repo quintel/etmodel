@@ -100,6 +100,18 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: energy_interconnector_imported_electricity_hourly_flexibility_electricity
+- label: hourly_flexibility_electricity_load_shifting_input
+  color: "#EC7063"
+  order_by: 326
+  group: flex
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_load_shifting_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_load_shifting_input_hourly_flexibility_electricity
 
 - label: energy_hydrogen_flexibility_p2g_electricity
   color: "#dd9977"
@@ -161,3 +173,15 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: hourly_flexiblity_electricity_curtailment_curve_hourly_flexibility_electricity
+- label: hourly_flexibility_electricity_load_shifting_output
+  color: "#F5B7B1"
+  order_by: 327
+  group: flex
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_load_shifting_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_load_shifting_output_hourly_flexibility_electricity

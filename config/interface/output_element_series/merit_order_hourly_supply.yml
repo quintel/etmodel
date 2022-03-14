@@ -695,3 +695,15 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_chp_coal_gas_merit_order_hourly_supply
+- label: load_shifting_industry_supply
+  color: "#F5B7B1"
+  order_by: 7
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_load_shifting_industry
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_load_shifting_industry_merit_order_hourly_supply

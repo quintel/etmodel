@@ -122,9 +122,14 @@ en:
       short_description:
       description: "Demand response is a form of flexibility where energy demand is
         adjusted or shifted in time. The goal is to reduce peaks in energy demand.
-        With the sliders in this section, you can adjust the consumption pattern of
-        the industrial sectors metal, chemical and other. \r\n<p>\r\nThe total demand of these sectors can
-        be set in the <a href=\"/scenario/demand/industry\"> industry section</a>."
+        With the sliders in this section, you can adjust the electricity demand of
+        the industrial sectors metal, chemical and other. \r\n<p>\r\n When load shifting
+        is enabled, the sector decreases its production if electricity is too expensive.
+        The production is caught up at another moment in the year when the price is lower.
+        This ensures energy neutrality over the year. Load shifting in industry could
+        be a more cost-effective alternative to dispatchable electricity plants.
+        The \r\n<p>\r\nThe total demand of these sectors can be set in the
+        <a href=\"/scenario/demand/industry\"> industry section</a>."
     flexibility_power_storage_wind_turbine_inland:
       title: Wind turbines with storage systems
       short_description:

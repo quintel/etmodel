@@ -123,10 +123,14 @@ nl:
       short_description:
       description: "Vraagsturing is een vorm van flexibiliteit waarbij de energievraag
         wordt aangepast of verschoven in de tijd. Vaak is het doel hierbij om pieken
-        in de energievraag te voorkomen. Met de schuifjes in deze sectie kun je het
-        consumptie patroon van de industriële sectoren metaal, chemie en overig aanpassen.
-         \r\n<p>\r\n De totale vraag van deze sectoren is in te stellen in
-        <a href=\"/scenario/demand/industry\" >industrie sectie</a>."
+        in de energievraag te voorkomen. Met de schuifjes in deze sectie kun je de vraag
+        naar elektriciteit van de industriële sectoren metaal, chemie en overig aanpassen.
+        \r\n<p>\r\n Wanneer vraagverschuiving is ingeschakeld, verlaagt de sector zijn
+        productie als elektriciteit te duur is. De productie wordt op een ander moment
+        in het jaar ingehaald wanneer de prijs lager is. Hierdoor is deze optie energieneutraal.
+        Vraagverschuiving in de industrie zou een kosteneffectiever alternatief kunnen
+        zijn voor dispatchable elektriciteitscentrales. \r\n<p>\r\n De totale vraag van
+        de sectoren is in te stellen in de <a href=\"/scenario/demand/industry\" >industrie sectie</a>."
     flexibility_electricity_storage_overview:
       title: Gedrag van opslagtechnologieën
       short_description:

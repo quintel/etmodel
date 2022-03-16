@@ -1,3 +1,9 @@
+ARG SOURCE_IMAGE
+
+# Copy assets from the main ETModel image. We need to use FROM to create an alias because COPY's
+# --from won't expand a build arg.
+FROM ${SOURCE_IMAGE} as source
+
 # Base image
 FROM nginx:latest
 
@@ -19,8 +25,10 @@ RUN mkdir log
 # Copy Nginx config template
 COPY .docker/nginx/nginx.conf.template /etc/nginx/templates/default.conf.template
 
-# Copy assets from the main ETModel image.
-COPY --from=quintel/etmodel:beta /usr/src/app/public /html/public
+ARG SOURCE_IMAGE
+
+# Copy the ETModel assets.
+COPY --from=source /usr/src/app/public /html/public
 
 EXPOSE 80
 

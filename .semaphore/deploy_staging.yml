@@ -19,13 +19,10 @@ blocks:
           commands:
             - checkout
             - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-            - cache restore
-            - 'docker build -f Dockerfile.production -t etmodel:beta .'
-            - 'docker tag etmodel:beta quintel/etmodel:beta'
-            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:beta .'
+            - 'docker build -f Dockerfile.production -t quintel/etmodel:beta .'
+            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:beta --build-arg "SOURCE_IMAGE=quintel/etmodel:beta" .'
             - 'docker push quintel/etmodel:beta'
             - 'docker push quintel/etmodel-nginx:beta'
-            - cache store
             - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
             - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"
       secrets:

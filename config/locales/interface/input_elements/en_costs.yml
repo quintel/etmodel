@@ -858,7 +858,7 @@ en:
       calculations based on the hourly outside temperature curve."
     capacity_costs_energy_flexibility_flow_batteries_electricity:
       title: Investment costs per MW flow batteries
-      short_decription:
+      short_decription: ''
       description: |
         In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
         be adjusted independently. The investment costs therefore also consist of two components.
@@ -869,7 +869,7 @@ en:
         for your scenario.
     volume_costs_energy_flexibility_flow_batteries_electricity:
       title: Investment costs per MWh flow batteries
-      short_decription:
+      short_decription: ''
       description: |
         In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
         be adjusted independently. The investment costs therefore also consist of two components.
@@ -878,12 +878,12 @@ en:
         In the <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
         Flexibility</a> section you can determine the installed capacity and relative storage volume 
         for your scenario.
-    efficiency_buildings_space_heater_heatpump_air_water_electricity:
+    efficiency_buildings_space_heater_hybrid_heatpump_air_water_electricity:
       title: Hybrid heat pump (gas)
       short_description: ''
-      description: "How will the coefficient of performance (COP) of hybrid heat pumps change in the future?
-      With this slider you can adjust with which percentage the COP of hybrid heat pumps for space heating will change in the future.
-      To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'.
-      It is not possible to set the absolute value of the future SCOP of hybrid heat pumps with a slider as this is a result of hourly
-      calculations based on the hourly outside temperature curve."
-
+      description: |
+        How will the coefficient of performance (COP) of hybrid heat pumps change in the future?
+        With this slider you can adjust with which percentage the COP of hybrid heat pumps for space heating will change in the future.
+        To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'.
+        It is not possible to set the absolute value of the future SCOP of hybrid heat pumps with a slider as this is a result of hourly
+        calculations based on the hourly outside temperature curve.

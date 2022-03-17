@@ -46,26 +46,31 @@ en:
       title: Capacity
       short_description:
       description: |
+        The total potential of load shifting in a scenario is dependent on several factors,
+        such as the size of the industry, the level of electrification, and the types of 
+        installations and production processes. A study by Tennet has shown that the 
+        capacity available for demand side response in industry varies between 10-17% of 
+        peak electricity load. </br></br>
         This slider sets the capacity for load shifting as a percentage of the peak electricity 
         demand from the metal industry. You can affect the peak demand by changing sliders 
         for sectors that are part of the metal industry:
         <a href="/scenario/demand/industry/steel">steel</a>, 
         <a href="/scenario/demand/industry/aluminium">aluminium</a>, and
-        <a href="/scenario/scenario/demand/industry/other-metals">other metals</a>. </br></br>
-        The potential of load shifting is dependent on several factors,
-        such as the size of the industry, the size of sub sectors, the level of
-        electrification, and the differences in the types of installations and production
-        processes. A study by Tennet has shown that the capacity available for demand
-        side response in industry varies between 10-17% of peak electricity load.
+        <a href="/scenario/scenario/demand/industry/other-metals">other metals</a>.
     wta_of_industry_metal_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:
-      description: "Industry will only decrease or stop its production when it is
+      description:
+        Industry will only decrease or stop its production when it is
         cost-effective to do so. This means that the market electricity price should
         exceed the price that the industry is willing to accept. This price is different
         for every sub sector, depending on the costs involved with stopping or decreasing
         production. A study from DNV showed that the willingness to accept price
-        often exceeds 100 €/MWh."
+        often exceeds 100 €/MWh. </br></br>
+        This slider sets the willingness to accept load shifting for the metal industry. 
+        To help you set this slider, you can view the hourly electricity price in your scenario
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     deficit_limit_of_industry_metal_flexibility_load_shifting_electricity:
       title: Deficit limit
       short_description:
@@ -79,26 +84,31 @@ en:
       title: Capacity
       short_description:
       description: |
+        The total potential of load shifting in a scenario is dependent on several factors,
+        such as the size of the industry, the level of electrification, and the types of 
+        installations and production processes. A study by Tennet has shown that the 
+        capacity available for demand side response in industry varies between 10-17% of 
+        peak electricity load. </br></br>
         This slider sets the capacity for load shifting as a percentage of the peak electricity 
         demand from the chemical industry. You can affect the peak demand by changing sliders 
         for sectors that are part of the chemical industry:
         <a href="/scenario/demand/industry/refineries">refineries</a>, 
         <a href="/scenario/demand/industry/fertilizers">fertilizers</a>, and
-        <a href="/scenario/scenario/demand/industry/chemicals">other chemicals</a>. </br></br>
-        The potential of load shifting is dependent on several factors,
-        such as the size of the industry, the size of sub sectors, the level of
-        electrification, and the differences in the types of installations and production
-        processes. A study by Tennet has shown that the capacity available for demand
-        side response in industry varies between 10-17% of peak electricity load.
+        <a href="/scenario/scenario/demand/industry/chemicals">other chemicals</a>.
     wta_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:
-      description: "Industry will only decrease or stop its production when it is
+      description: |
+        Industry will only decrease or stop its production when it is
         cost-effective to do so. This means that the market electricity price should
         exceed the price that the industry is willing to accept. This price is different
         for every sub sector, depending on the costs involved with stopping or decreasing
         production. A study from DNV showed that the willingness to accept price
-        often exceeds 100 €/MWh."
+        often exceeds 100 €/MWh. </br></br>
+        This slider sets the willingness to accept load shifting for the chemical industry. 
+        To help you set this slider, you can view the hourly electricity price in your scenario
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     deficit_limit_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Deficit limit
       short_description:
@@ -112,26 +122,31 @@ en:
       title: Capacity
       short_description:
       description: |
+        The total potential of load shifting in a scenario is dependent on several factors,
+        such as the size of the industry, the level of electrification, and the types of 
+        installations and production processes. A study by Tennet has shown that the 
+        capacity available for demand side response in industry varies between 10-17% of 
+        peak electricity load. </br></br>
         This slider sets the capacity for load shifting as a percentage of the peak electricity 
         demand from the metal industry. You can affect the peak demand by changing sliders 
         for sectors that are part of the other industry:
         <a href="/scenario/demand/industry/steel">food</a>, 
         <a href="/scenario/demand/industry/aluminium">paper</a>, and
-        <a href="/scenario/scenario/demand/industry/other">other industry</a>. </br></br>
-        The potential of load shifting is dependent on several factors,
-        such as the size of the industry, the size of sub sectors, the level of
-        electrification, and the differences in the types of installations and production
-        processes. A study by Tennet has shown that the capacity available for demand
-        side response in industry varies between 10-17% of peak electricity load.
+        <a href="/scenario/scenario/demand/industry/other">other industry</a>.
     wta_of_industry_other_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:
-      description: "Industry will only decrease or stop its production when it is
+      description: |
+        Industry will only decrease or stop its production when it is
         cost-effective to do so. This means that the market electricity price should
         exceed the price that the industry is willing to accept. This price is different
         for every sub sector, depending on the costs involved with stopping or decreasing
         production. A study from DNV showed that the willingness to accept price
-        often exceeds 100 €/MWh."
+        often exceeds 100 €/MWh. </br></br>
+        This slider sets the willingness to accept load shifting for the other industry. 
+        To help you set this slider, you can view the hourly electricity price in your scenario
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     deficit_limit_of_industry_other_flexibility_load_shifting_electricity:
       title: Deficit limit
       short_description:

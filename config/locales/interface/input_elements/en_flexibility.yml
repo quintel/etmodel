@@ -45,11 +45,18 @@ en:
     capacity_of_industry_metal_flexibility_load_shifting_electricity:
       title: Capacity
       short_description:
-      description: "The potential of load shifting is dependent on several factors,
+      description: |
+        This slider sets the capacity for load shifting as a percentage of the peak electricity 
+        demand from the metal industry. You can affect the peak demand by changing sliders 
+        for sectors that are part of the metal industry:
+        <a href="/scenario/demand/industry/steel">steel</a>, 
+        <a href="/scenario/demand/industry/aluminium">aluminium</a>, and
+        <a href="/scenario/scenario/demand/industry/other-metals">other metals</a>. </br></br>
+        The potential of load shifting is dependent on several factors,
         such as the size of the industry, the size of sub sectors, the level of
         electrification, and the differences in the types of installations and production
         processes. A study by Tennet has shown that the capacity available for demand
-        side response in industry varies between 10-17% of peak electricity load."
+        side response in industry varies between 10-17% of peak electricity load.
     wta_of_industry_metal_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:
@@ -71,11 +78,18 @@ en:
     capacity_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Capacity
       short_description:
-      description: "The potential of load shifting is dependent on several factors,
+      description: |
+        This slider sets the capacity for load shifting as a percentage of the peak electricity 
+        demand from the chemical industry. You can affect the peak demand by changing sliders 
+        for sectors that are part of the chemical industry:
+        <a href="/scenario/demand/industry/refineries">refineries</a>, 
+        <a href="/scenario/demand/industry/fertilizers">fertilizers</a>, and
+        <a href="/scenario/scenario/demand/industry/chemicals">other chemicals</a>. </br></br>
+        The potential of load shifting is dependent on several factors,
         such as the size of the industry, the size of sub sectors, the level of
         electrification, and the differences in the types of installations and production
         processes. A study by Tennet has shown that the capacity available for demand
-        side response in industry varies between 10-17% of peak electricity load."
+        side response in industry varies between 10-17% of peak electricity load.
     wta_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:
@@ -97,11 +111,18 @@ en:
     capacity_of_industry_other_flexibility_load_shifting_electricity:
       title: Capacity
       short_description:
-      description: "The potential of load shifting is dependent on several factors,
+      description: |
+        This slider sets the capacity for load shifting as a percentage of the peak electricity 
+        demand from the metal industry. You can affect the peak demand by changing sliders 
+        for sectors that are part of the other industry:
+        <a href="/scenario/demand/industry/steel">food</a>, 
+        <a href="/scenario/demand/industry/aluminium">paper</a>, and
+        <a href="/scenario/scenario/demand/industry/other">other industry</a>. </br></br>
+        The potential of load shifting is dependent on several factors,
         such as the size of the industry, the size of sub sectors, the level of
         electrification, and the differences in the types of installations and production
         processes. A study by Tennet has shown that the capacity available for demand
-        side response in industry varies between 10-17% of peak electricity load."
+        side response in industry varies between 10-17% of peak electricity load.
     wta_of_industry_other_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:

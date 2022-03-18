@@ -38,10 +38,10 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash \
  # Throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
-COPY Gemfile* /usr/src/app/
-WORKDIR /usr/src/app
+COPY Gemfile* /app/
+WORKDIR /app
 RUN bundle install --jobs=4 --retry=3
 
-COPY . /usr/src/app/
+COPY . /app/
 
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]

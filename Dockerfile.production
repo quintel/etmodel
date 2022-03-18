@@ -31,14 +31,14 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
  # Throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
-COPY Gemfile* package.json yarn.lock /usr/src/app/
-WORKDIR /usr/src/app
+COPY Gemfile* package.json yarn.lock /app/
+WORKDIR /app
 
 RUN bundle config set deployment 'true'
 RUN bundle install --jobs=4 --retry=3 --without="development test"
 RUN yarn install
 
-COPY . /usr/src/app/
+COPY . /app/
 
 RUN RAILS_ENV=production bundle exec rails assets:precompile
 

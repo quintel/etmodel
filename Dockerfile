@@ -22,8 +22,6 @@ RUN apt-get update -yqq && \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && truncate -s 0 /var/log/*log
 
-RUN gem install bundler:1.17.3
-
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash \
   && apt-get update && apt-get install -y nodejs && rm -rf /var/lib/apt/lists/* \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \

@@ -20,6 +20,7 @@ services:
       - .env/development/web
     tmpfs:
       - /tmp
+      - /app/tmp/pids
     depends_on:
       database:
         condition: service_healthy

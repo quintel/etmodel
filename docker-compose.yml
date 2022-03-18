@@ -25,7 +25,7 @@ services:
         condition: service_healthy
 
   database:
-    image: mysql
+    image: mariadb:10
     command: --default-authentication-plugin=mysql_native_password
     env_file:
       - .env/development/database

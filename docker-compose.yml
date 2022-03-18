@@ -21,13 +21,17 @@ services:
     tmpfs:
       - /tmp
     depends_on:
-      - database
+      database:
+        condition: service_healthy
 
   database:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     env_file:
       - .env/development/database
+    healthcheck:
+      test: mysqladmin ping
+      interval: 2s
     volumes:
       - db_data:/var/lib/mysql
 

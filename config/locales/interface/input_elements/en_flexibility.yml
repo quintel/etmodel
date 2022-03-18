@@ -48,7 +48,7 @@ en:
       description: |
         The total potential of load shifting in a scenario is dependent on several factors,
         such as the size of the industry, the level of electrification, and the types of 
-        installations and production processes. A study by Tennet has shown that the 
+        installations and production processes. This study by Tennet has shown that the 
         capacity available for demand side response in industry varies between 10-17% of 
         peak electricity load. </br></br>
         This slider sets the capacity for load shifting as a percentage of the peak electricity 
@@ -65,7 +65,7 @@ en:
         cost-effective to do so. This means that the market electricity price should
         exceed the price that the industry is willing to accept. This price is different
         for every sub sector, depending on the costs involved with stopping or decreasing
-        production. A study from DNV showed that the willingness to accept price
+        production. This study from DNV showed that the willingness to accept price
         often exceeds 100 €/MWh. </br></br>
         This slider sets the willingness to accept load shifting for the metal industry. 
         To help you set this slider, you can view the hourly electricity price in your scenario
@@ -74,19 +74,24 @@ en:
     deficit_limit_of_industry_metal_flexibility_load_shifting_electricity:
       title: Deficit limit
       short_description:
-      description: "Load shifting can only be excecuted for a dinstinct timescale.
-        After some hours up to several weeks, the production must run on full capacity.
-        The maximum time of load shifting depends on the production processes and type
+      description: |
+        Reducing the demand for load shifting can only be executed for a certain period of time. 
+        After that the accumulated deficit is not allowed to increase any further and the metal industry  
+        will resume its standard electricity consumption. Reducing the demand only becomes possible
+        again once some of the accumulated deficit has been caught up. </br></br>
+        The deficit limit for load shifting depends on the production processes and type
         of installations. Some installations need longer to cool down or warm up.
-        A study from DNV gives estimates of the available timescales for load shifting
-        in different sub sectors. The timescales ranges between 1 hour to 3 weeks."
+        This study from DNV gives estimates of the available timescales for load shifting
+        in different sub sectors. The timescales ranges between 1 hour to 3 weeks. </br></br>
+        This slider determines the amount of hours that the load of the metal industry can 
+        be reduced at full load shifting capacity.
     capacity_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Capacity
       short_description:
       description: |
         The total potential of load shifting in a scenario is dependent on several factors,
         such as the size of the industry, the level of electrification, and the types of 
-        installations and production processes. A study by Tennet has shown that the 
+        installations and production processes. This study by Tennet has shown that the 
         capacity available for demand side response in industry varies between 10-17% of 
         peak electricity load. </br></br>
         This slider sets the capacity for load shifting as a percentage of the peak electricity 
@@ -103,7 +108,7 @@ en:
         cost-effective to do so. This means that the market electricity price should
         exceed the price that the industry is willing to accept. This price is different
         for every sub sector, depending on the costs involved with stopping or decreasing
-        production. A study from DNV showed that the willingness to accept price
+        production. This study from DNV showed that the willingness to accept price
         often exceeds 100 €/MWh. </br></br>
         This slider sets the willingness to accept load shifting for the chemical industry. 
         To help you set this slider, you can view the hourly electricity price in your scenario
@@ -112,19 +117,24 @@ en:
     deficit_limit_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Deficit limit
       short_description:
-      description: "Load shifting can only be excecuted for a dinstinct timescale.
-        After some hours up to several weeks, the production must run on full capacity.
-        The maximum time of load shifting depends on the production processes and type
+      description: |
+        Reducing the demand for load shifting can only be executed for a certain period of time. 
+        After that the accumulated deficit is not allowed to increase any further and the chemical industry  
+        will resume its standard electricity consumption. Reducing the demand only becomes possible
+        again once some of the accumulated deficit has been caught up. </br></br>
+        The deficit limit for load shifting depends on the production processes and type
         of installations. Some installations need longer to cool down or warm up.
-        A study from DNV gives estimates of the available timescales for load shifting
-        in different sub sectors. The timescales ranges between 1 hour to 3 weeks."
+        This study from DNV gives estimates of the available timescales for load shifting
+        in different sub sectors. The timescales ranges between 1 hour to 3 weeks. </br></br>
+        This slider determines the amount of hours that the load of the metal industry can 
+        be reduced at full load shifting capacity.
     capacity_of_industry_other_flexibility_load_shifting_electricity:
       title: Capacity
       short_description:
       description: |
         The total potential of load shifting in a scenario is dependent on several factors,
         such as the size of the industry, the level of electrification, and the types of 
-        installations and production processes. A study by Tennet has shown that the 
+        installations and production processes. This study by Tennet has shown that the 
         capacity available for demand side response in industry varies between 10-17% of 
         peak electricity load. </br></br>
         This slider sets the capacity for load shifting as a percentage of the peak electricity 
@@ -141,7 +151,7 @@ en:
         cost-effective to do so. This means that the market electricity price should
         exceed the price that the industry is willing to accept. This price is different
         for every sub sector, depending on the costs involved with stopping or decreasing
-        production. A study from DNV showed that the willingness to accept price
+        production. This study from DNV showed that the willingness to accept price
         often exceeds 100 €/MWh. </br></br>
         This slider sets the willingness to accept load shifting for the other industry. 
         To help you set this slider, you can view the hourly electricity price in your scenario
@@ -150,12 +160,17 @@ en:
     deficit_limit_of_industry_other_flexibility_load_shifting_electricity:
       title: Deficit limit
       short_description:
-      description: "Load shifting can only be excecuted for a dinstinct timescale.
-        After some hours up to several weeks, the production must run on full capacity.
-        The maximum time of load shifting depends on the production processes and type
+      description: |
+        Reducing the demand for load shifting can only be executed for a certain period of time. 
+        After that the accumulated deficit is not allowed to increase any further and the other industry  
+        will resume its standard electricity consumption. Reducing the demand only becomes possible
+        again once some of the accumulated deficit has been caught up. </br></br>
+        The deficit limit for load shifting depends on the production processes and type
         of installations. Some installations need longer to cool down or warm up.
-        A study from DNV gives estimates of the available timescales for load shifting
-        in different sub sectors. The timescales ranges between 1 hour to 3 weeks."
+        This study from DNV gives estimates of the available timescales for load shifting
+        in different sub sectors. The timescales ranges between 1 hour to 3 weeks. </br></br>
+        This slider determines the amount of hours that the load of the other industry can 
+        be reduced at full load shifting capacity.
     flexibility_outdoor_temperature:
       title: Outdoor temperature
       short_description:

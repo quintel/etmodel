@@ -1,6 +1,6 @@
 ---
 - label: costs_building_and_installations_households
-  color: "#416B86"
+  color: "#002B42"
   order_by: 1
   group:
   show_at_first:
@@ -12,7 +12,7 @@
   output_element_key: costs_overview_detailed
   key: costs_building_and_installations_households_costs_overview_detailed
 - label: costs_building_and_installations_buildings
-  color: "#74B9FF"
+  color: "#194054"
   order_by: 2
   group:
   show_at_first:
@@ -24,7 +24,7 @@
   output_element_key: costs_overview_detailed
   key: costs_building_and_installations_buildings_costs_overview_detailed
 - label: costs_building_and_installations_agriculture
-  color: "#CC0000"
+  color: "#325567"
   order_by: 3
   group:
   show_at_first:
@@ -36,7 +36,7 @@
   output_element_key: costs_overview_detailed
   key: costs_building_and_installations_agriculture_costs_overview_detailed
 - label: costs_building_and_installations_transport
-  color: "#FF8C8C"
+  color: "#4c6a7a"
   order_by: 4
   group:
   show_at_first:
@@ -48,7 +48,7 @@
   output_element_key: costs_overview_detailed
   key: costs_building_and_installations_transport_costs_overview
 - label: costs_building_and_installations_industry
-  color: "#b71540"
+  color: "#667f8d"
   order_by: 5
   group:
   show_at_first:
@@ -59,129 +59,9 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_building_and_installations_industry_costs_overview_detailed
-- label: costs_storage_and_conversion_p2p
-  color: "#786FA6"
-  order_by: 6
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_storage_and_conversion_p2p
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_storage_and_conversion_p2p_costs_overview_detailed
-- label: costs_storage_and_conversion_p2g
-  color: "#A4B0BE"
-  order_by: 7
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_storage_and_conversion_p2g
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_storage_and_conversion_p2g_costs_overview_detailed
-- label: costs_storage_and_conversion_p2h
-  color: "#63A1C9"
-  order_by: 8
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_storage_and_conversion_p2h
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_storage_and_conversion_p2h_costs_overview_detailed
-- label: costs_storage_and_conversion_storage
-  color: "#A2D679"
-  order_by: 9
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_storage_and_conversion_storage
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_storage_and_conversion_storage_costs_overview_detailed
-- label: costs_production_biomass
-  color: "#FFA502"
-  order_by: 10
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_production_biomass
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_production_biomass_costs_overview_detailed
-- label: costs_production_chp_plants
-  color: "#A2D679"
-  order_by: 11
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_production_chp_plants
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_production_chp_plants_overview_detailed
-- label: costs_production_dedicated_hydrogen_production
-  color: "#394C19"
-  order_by: 12
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_production_dedicated_hydrogen_production
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_production_dedicated_hydrogen_production_costs_overview_detailed
-- label: costs_production_heat_plants
-  color: "#485460"
-  order_by: 13
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_production_heat_plants
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_production_heat_plants_costs_overview_detailed
-- label: costs_production_other
-  color: "#228B22"
-  order_by: 14
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_production_other
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_production_other_costs_overview_detailed
-- label: costs_production_power_plants
-  color: "#666666"
-  order_by: 15
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_production_power_plants
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_production_power_plants_costs_overview_detailed
 - label: costs_carriers_biomass
-  color: "#E69567"
-  order_by: 16
+  color: "#619ab7"
+  order_by: 6
   group:
   show_at_first:
   is_target_line: false
@@ -192,8 +72,8 @@
   output_element_key: costs_overview_detailed
   key: costs_carriers_biomass_costs_overview_detailed
 - label: costs_carriers_coal_and_products
-  color: "#A9A9A9"
-  order_by: 17
+  color: "#70a4be"
+  order_by: 7
   group:
   show_at_first:
   is_target_line: false
@@ -204,8 +84,8 @@
   output_element_key: costs_overview_detailed
   key: costs_carriers_coal_and_products_costs_overview_detailed
 - label: costs_carriers_electricity
-  color: "#5D7929"
-  order_by: 18
+  color: "#80aec5"
+  order_by: 8
   group:
   show_at_first:
   is_target_line: false
@@ -216,8 +96,8 @@
   output_element_key: costs_overview_detailed
   key: costs_carriers_electricity_costs_overview_detailed
 - label: costs_carriers_heat
-  color: "#4169E1"
-  order_by: 19
+  color: "#90b8cc"
+  order_by: 9
   group:
   show_at_first:
   is_target_line: false
@@ -228,8 +108,8 @@
   output_element_key: costs_overview_detailed
   key: costs_carriers_heat_costs_overview_detailed
 - label: costs_carriers_hydrogen
-  color: "#333333"
-  order_by: 20
+  color: "#a0c2d3"
+  order_by: 10
   group:
   show_at_first:
   is_target_line: false
@@ -240,8 +120,8 @@
   output_element_key: costs_overview_detailed
   key: costs_carriers_hydrogen_costs_overview_detailed
 - label: costs_carriers_natural_gas
-  color: "#00008B"
-  order_by: 21
+  color: "#b0ccdb"
+  order_by: 11
   group:
   show_at_first:
   is_target_line: false
@@ -252,8 +132,8 @@
   output_element_key: costs_overview_detailed
   key: costs_carriers_natural_gas_costs_overview_detailed
 - label: costs_carriers_oil_and_products
-  color: "#854321"
-  order_by: 22
+  color: "#bfd6e2"
+  order_by: 12
   group:
   show_at_first:
   is_target_line: false
@@ -264,8 +144,8 @@
   output_element_key: costs_overview_detailed
   key: costs_carriers_oil_and_products_costs_overview_detailed
 - label: costs_carriers_uranium
-  color: "#ADDE4C"
-  order_by: 23
+  color: "#cfe0e9"
+  order_by: 13
   group:
   show_at_first:
   is_target_line: false
@@ -276,8 +156,8 @@
   output_element_key: costs_overview_detailed
   key: costs_carriers_uranium_costs_overview_detailed
 - label: costs_carriers_waste
-  color: "#B3CF7B"
-  order_by: 24
+  color: "#dfeaf0"
+  order_by: 14
   group:
   show_at_first:
   is_target_line: false
@@ -287,8 +167,128 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_carriers_waste_costs_overview_detailed
+- label: costs_production_biomass
+  color: "#C5D75F"
+  order_by: 15
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_production_biomass
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_production_biomass_costs_overview_detailed
+- label: costs_production_chp_plants
+  color: "#cadb6f"
+  order_by: 16
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_production_chp_plants
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_production_chp_plants_overview_detailed
+- label: costs_production_dedicated_hydrogen_production
+  color: "#D0DF7E"
+  order_by: 17
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_production_dedicated_hydrogen_production
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_production_dedicated_hydrogen_production_costs_overview_detailed
+- label: costs_production_heat_plants
+  color: "#D6E38F"
+  order_by: 18
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_production_heat_plants
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_production_heat_plants_costs_overview_detailed
+- label: costs_production_other
+  color: "#DCE79F"
+  order_by: 19
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_production_other
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_production_other_costs_overview_detailed
+- label: costs_production_power_plants
+  color: "#E2EBAF"
+  order_by: 20
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_production_power_plants
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_production_power_plants_costs_overview_detailed
+- label: costs_storage_and_conversion_p2p
+  color: "#CAB39E"
+  order_by: 21
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_storage_and_conversion_p2p
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_storage_and_conversion_p2p_costs_overview_detailed
+- label: costs_storage_and_conversion_p2g
+  color: "#cfbaa7"
+  order_by: 22
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_storage_and_conversion_p2g
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_storage_and_conversion_p2g_costs_overview_detailed
+- label: costs_storage_and_conversion_p2h
+  color: "#d4c2b1"
+  order_by: 23
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_storage_and_conversion_p2h
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_storage_and_conversion_p2h_costs_overview_detailed
+- label: costs_storage_and_conversion_storage
+  color: "#d9c9bb"
+  order_by: 24
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_storage_and_conversion_storage
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_storage_and_conversion_storage_costs_overview_detailed
 - label: costs_infrastructure_electricity
-  color: "#009432"
+  color: "#702283"
   order_by: 25
   group:
   show_at_first:
@@ -300,7 +300,7 @@
   output_element_key: costs_overview_detailed
   key: costs_infrastructure_electricity_costs_overview_detailed
 - label: costs_infrastructure_heat
-  color: "#C6C2DA"
+  color: "#7e388f"
   order_by: 26
   group:
   show_at_first:
@@ -312,7 +312,7 @@
   output_element_key: costs_overview_detailed
   key: costs_infrastructure_heat_costs_overview_detailed
 - label: costs_infrastructure_hydrogen
-  color: "#87CEEB"
+  color: "#8c4e9b"
   order_by: 27
   group:
   show_at_first:
@@ -324,7 +324,7 @@
   output_element_key: costs_overview_detailed
   key: costs_infrastructure_hydrogen_costs_overview_detailed
 - label: costs_infrastructure_network_gas
-  color: "#C6C2DA"
+  color: "#9a64a8"
   order_by: 28
   group:
   show_at_first:
@@ -336,7 +336,7 @@
   output_element_key: costs_overview_detailed
   key: costs_infrastructure_network_gas_costs_overview_detailed
 - label: costs_co2
-  color: "#87CEEB"
+  color: "#FCC43D"
   order_by: 29
   group:
   show_at_first:

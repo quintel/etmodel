@@ -46,87 +46,135 @@ nl:
     capacity_of_industry_metal_flexibility_load_shifting_electricity:
       title: Capaciteit
       short_description:
-      description: "Het potentieel voor vraagverschuiving is afhankelijk van meerdere
-        factoren zoals de grootte van de industrie, the grootte van subsectoren, de
-        mate van elektrificatie en verschillen in het type installaties en productieprocessen.
-        Een studie van Tennet laat zien dat de beschikbare capaciteit voor vraagsturing
-        in de industrie tussen 10-17% van de piek elektriciteitsvraag is."
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen. Deze studie van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        metaalindustrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
+        zijn van de metaalindustrie:
+        <a href="/scenario/demand/industry/steel">staal</a>, 
+        <a href="/scenario/demand/industry/aluminium">aluminium</a> en
+        <a href="/scenario/demand/industry/other-metals">overige metalen</a>.
     wta_of_industry_metal_flexibility_load_shifting_electricity:
-      title: Willingness to accept
+      title: Willingness-to-accept
       short_description:
-      description: "De industrie zal haar productie alleen stoppen of verlagen wanneer
+      description: |
+        De industrie zal haar productie alleen stoppen of verlagen wanneer
         het kosteneffectief is. Dat betekent dat de marktprijs voor elektriciteit
         hoger moet zijn dan de prijs die de industrie wil betalen. Deze prijs verschilt
         per subsector en is afhankelijk van de kosten van het stoppen of verlagen van
-        de productie. Een studie van DNV laat zien dat deze willingness to accept prijs
-        vaak boven 100 €/MWh ligt."
+        de productie. Deze studie van DNV laat zien dat deze willingness to accept prijs
+        vaak boven 100 €/MWh ligt. </br></br>
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        metaalindustrie. Je kunt de uurlijkse elektriciteitsprijs in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a> gebruiken om dit schuifje in te stellen.
     deficit_limit_of_industry_metal_flexibility_load_shifting_electricity:
       title: Maximaal tekort
       short_description:
-      description: "Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
-        uitgevoerd. Na een paar uur tot enkele weken moet de productie weer volledig
-        draaien. De maximale tijdsduur waarvoor vraagverschuiving beschikbaar is,
-        hangt of van het productieproces en het type installaties. Sommige installaties
+      description: |
+        Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de metaalindustrie hervat. De vraag mag pas weer verlaagd 
+        worden als een deel van het tekort ingehaald is. </br></br>
+        Het maximale tekort voor vraagverschuiving
+        hangt af van het productieproces en het type installaties. Sommige installaties
         hebben langer nodig om te stoppen of verminderen, of om weer op te starten.
-        Een studie van DNV geeft een schatting van de beschikbare tijdsduur voor
+        Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
         vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
-        wordt ingeschat tussen 1 uur tot 3 weken."
+        wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
+        Dit schuifje bepaalt het aantal uren dat de vraag van de metaalindustrie met volle 
+        vraagverschuivingscapaciteit verlaagd mag worden.
     capacity_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Capaciteit
       short_description:
-      description: "Het potentieel voor vraagverschuiving is afhankelijk van meerdere
-        factoren zoals de grootte van de industrie, the grootte van subsectoren, de
-        mate van elektrificatie en verschillen in het type installaties en productieprocessen.
-        Een studie van Tennet laat zien dat de beschikbare capaciteit voor vraagsturing
-        in de industrie tussen 10-17% van de piek elektriciteitsvraag is."
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen. Deze studie van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        chemische industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
+        zijn van de chemische industrie:
+        <a href="/scenario/demand/industry/refineries">raffinaderijen</a>, 
+        <a href="/scenario/demand/industry/fertilizers">kunstmest</a> en
+        <a href="/scenario/demand/industry/chemicals">overige chemie</a>.
     wta_of_industry_chemical_flexibility_load_shifting_electricity:
-      title: Willingness to accept
+      title: Willingness-to-accept
       short_description:
-      description: "De industrie zal haar productie alleen stoppen of verlagen wanneer
+      description: |
+        De industrie zal haar productie alleen stoppen of verlagen wanneer
         het kosteneffectief is. Dat betekent dat de marktprijs voor elektriciteit
         hoger moet zijn dan de prijs die de industrie wil betalen. Deze prijs verschilt
         per subsector en is afhankelijk van de kosten van het stoppen of verlagen van
-        de productie. Een studie van DNV laat zien dat deze willingness to accept prijs
-        vaak boven 100 €/MWh ligt."
+        de productie. Deze studie van DNV laat zien dat deze willingness to accept prijs
+        vaak boven 100 €/MWh ligt. </br></br>
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        chemische industrie. Je kunt de uurlijkse elektriciteitsprijs in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a> gebruiken om dit schuifje in te stellen.
     deficit_limit_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Maximaal tekort
       short_description:
-      description: "Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
-        uitgevoerd. Na een paar uur tot enkele weken moet de productie weer volledig
-        draaien. De maximale tijdsduur waarvoor vraagverschuiving beschikbaar is,
-        hangt of van het productieproces en het type installaties. Sommige installaties
+      description: |
+        Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de chemische industrie hervat. De vraag mag pas weer verlaagd 
+        worden als een deel van het tekort ingehaald is. </br></br>
+        Het maximale tekort voor vraagverschuiving
+        hangt af van het productieproces en het type installaties. Sommige installaties
         hebben langer nodig om te stoppen of verminderen, of om weer op te starten.
-        Een studie van DNV geeft een schatting van de beschikbare tijdsduur voor
+        Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
         vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
-        wordt ingeschat tussen 1 uur tot 3 weken."
+        wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
+        Dit schuifje bepaalt het aantal uren dat de vraag van de chemische industrie met volle 
+        vraagverschuivingscapaciteit verlaagd mag worden.
     capacity_of_industry_other_flexibility_load_shifting_electricity:
       title: Capaciteit
       short_description:
-      description: "Het potentieel voor vraagverschuiving is afhankelijk van meerdere
-        factoren zoals de grootte van de industrie, the grootte van subsectoren, de
-        mate van elektrificatie en verschillen in het type installaties en productieprocessen.
-        Een studie van Tennet laat zien dat de beschikbare capaciteit voor vraagsturing
-        in de industrie tussen 10-17% van de piek elektriciteitsvraag is."
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen. Deze studie van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        overige industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
+        zijn van de overige industrie:
+        <a href="/scenario/demand/industry/food">voedsel</a>, 
+        <a href="/scenario/demand/industry/paper">papier</a>, en
+        <a href="/scenario/demand/industry/other">overige industrie</a>.
     wta_of_industry_other_flexibility_load_shifting_electricity:
-      title: Willingness to accept
+      title: Willingness-to-accept
       short_description:
-      description: "De industrie zal haar productie alleen stoppen of verlagen wanneer
+      description: |
+        De industrie zal haar productie alleen stoppen of verlagen wanneer
         het kosteneffectief is. Dat betekent dat de marktprijs voor elektriciteit
         hoger moet zijn dan de prijs die de industrie wil betalen. Deze prijs verschilt
         per subsector en is afhankelijk van de kosten van het stoppen of verlagen van
-        de productie. Een studie van DNV laat zien dat deze willingness to accept prijs
-        vaak boven 100 €/MWh ligt."
+        de productie. Deze studie van DNV laat zien dat deze willingness to accept prijs
+        vaak boven 100 €/MWh ligt. </br></br>
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        overige industrie. Je kunt de uurlijkse elektriciteitsprijs in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a> gebruiken om dit schuifje in te stellen.
     deficit_limit_of_industry_other_flexibility_load_shifting_electricity:
       title: Maximaal tekort
       short_description:
-      description: "Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
-        uitgevoerd. Na een paar uur tot enkele weken moet de productie weer volledig
-        draaien. De maximale tijdsduur waarvoor vraagverschuiving beschikbaar is,
-        hangt of van het productieproces en het type installaties. Sommige installaties
+      description: |
+        Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de overige industrie hervat. De vraag mag pas weer verlaagd 
+        worden als een deel van het tekort ingehaald is. </br></br>
+        Het maximale tekort voor vraagverschuiving
+        hangt af van het productieproces en het type installaties. Sommige installaties
         hebben langer nodig om te stoppen of verminderen, of om weer op te starten.
-        Een studie van DNV geeft een schatting van de beschikbare tijdsduur voor
+        Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
         vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
-        wordt ingeschat tussen 1 uur tot 3 weken."
+        wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
+        Dit schuifje bepaalt het aantal uren dat de vraag van de overige industrie met volle 
+        vraagverschuivingscapaciteit verlaagd mag worden.
     flexibility_outdoor_temperature:
       title: Buitentemperatuur
       short_description:

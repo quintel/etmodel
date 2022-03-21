@@ -119,18 +119,20 @@ nl:
         >hybride warmtepomp tabel</a>
         laat de jaarlijkse verdeling van gas en elektriciteit zien."
     flexibility_flexibility_demand_response_load_shifting:
-      title: Vraagsturing - verplaatsing vraag in industrie
+      title: Vraagsturing - vraagverschuiving in industrie
       short_description:
-      description: "Vraagsturing is een vorm van flexibiliteit waarbij de energievraag
-        wordt aangepast of verschoven in de tijd. Vaak is het doel hierbij om pieken
-        in de energievraag te voorkomen. Met de schuifjes in deze sectie kun je de vraag
-        naar elektriciteit van de industriële sectoren metaal, chemie en overig aanpassen.
-        \r\n<p>\r\n Wanneer vraagverschuiving is ingeschakeld, verlaagt de sector zijn
-        productie als elektriciteit te duur is. De productie wordt op een ander moment
-        in het jaar ingehaald wanneer de prijs lager is. Hierdoor is deze optie energieneutraal.
-        Vraagverschuiving in de industrie zou een kosteneffectiever alternatief kunnen
-        zijn voor dispatchable elektriciteitscentrales. \r\n<p>\r\n De totale vraag van
-        de sectoren is in te stellen in de <a href=\"/scenario/demand/industry\" >industrie sectie</a>."
+      description: |
+        Vraagsturing is een vorm van flexibiliteit waarbij de energievraag
+        wordt aangepast of verschoven in de tijd. Een vorm van vraagsturing is vraagverschuiving.
+        Met de schuifjes in deze sectie kun je vraagverschuiving instellen voor de elektriciteitsvraag
+        van de metaal-, chemische en overige industrie. </br></br> 
+        Als je capaciteit voor vraagverschuiving instelt voor een sector, zal het die capaciteit 
+        gebruiken om een deel van de elektriciteitsconsumptie te verlagen als de elektriciteitsprijs te
+        hoog is. De verminderde consumptie wordt ingehaald als de prijs daalt. Dit betekent dat de 
+        totale elektriciteitsvraag over het jaar gelijk blijft. </br></br>
+        Het doel is om hoge elektriciteitskosten voor de industrie te vermijden en tegelijkertijd 
+        vraagpieken op het elektriciteitsnetwerk te verkleinen. Dit kan de behoefte aan piekcentrales 
+        in je scenario verminderen.
     flexibility_electricity_storage_overview:
       title: Gedrag van opslagtechnologieën
       short_description:

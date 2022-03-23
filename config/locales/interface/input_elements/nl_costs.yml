@@ -925,5 +925,14 @@ nl:
         In de <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
         Flexibiliteit</a> sectie kun je het opgesteld vermogen en de verhouding met het opslagvolume 
         aanpassen.
+    efficiency_buildings_space_heater_hybrid_heatpump_air_water_electricity:
+      title: Hybride warmtepomp (gas)
+      short_description: ''
+      description: |
+        Hoeveel zal de coefficient of performance (COP) van hybride warmtepompen veranderen in de toekomst?
+        Met deze schuif kun je aangeven met hoeveel procent de COP zal veranderen. De huidige jaarlijkse gemiddelde COP,
+        ookwel de seasonal COP (SCOP), kun je vinden in de "Technische parameters en kosten".
+        Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
+        het uurlijkse profiel van de buitentemperatuur.
 
 

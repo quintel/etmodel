@@ -28,7 +28,7 @@ COPY .docker/nginx/nginx.conf.template /etc/nginx/templates/default.conf.templat
 ARG SOURCE_IMAGE
 
 # Copy the ETModel assets.
-COPY --from=source /usr/src/app/public /html/public
+COPY --from=source /app/public /html/public
 
 EXPOSE 80
 

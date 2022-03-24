@@ -117,13 +117,26 @@ en:
           \ data-chart-key=\"hybrid_heat_pump\"
         >electricity and gas share table</a>
         will show a breakdown of how hybrid heat pumps use energy in households."
+    flexibility_flexibility_demand_response_load_shifting:
+      title: Demand response - load shifting in industry
+      short_description:
+      description: |
+        Demand response is a form of flexibility where energy demand is adjusted or shifted in time. 
+        One type of demand response is load shifting. With the sliders in this section you can implement
+        load shifting for the electricity demand of the industrial sectors 
+        metal, chemical and other industry. </br></br>
+        If you install load shifting capacity for sector, it will use that capacity to decrease part of its electricity 
+        consumption when the electricity price is too high. The reduced consumption is caught up when the price 
+        is drops. This means that the total electricity consumption over the year stays the same. </br></br>
+        The aim is to avoid high electricity costs for the industry, while at the same time decreasing demand 
+        peaks on the electricity network. This could decrease the need for peak power plants in your scenario.
     flexibility_power_storage_wind_turbine_inland:
       title: Wind turbines with storage systems
       short_description:
       description: |
-        Here you can set the capacity of the battery and the grid connection of wind turbines with an integrated battery system. For 
-        these sliders to be effective you therefore need to have these types of turbines 
-        installed. You can do this in the Supply section, under 
+        Here you can set the capacity of the battery and the grid connection of wind turbines with an integrated battery system. For
+        these sliders to be effective you therefore need to have these types of turbines
+        installed. You can do this in the Supply section, under
         <a href="/scenario/supply/electricity_renewable/wind-turbines">
         Renewable electricity</a>.
     flexibility_power_storage_solar_pv_solar_radiation:
@@ -131,8 +144,8 @@ en:
       short_description:
       description: |
         Here you can set the capacity of the battery and the grid connection of solar PV plants with an integrated battery system. For
-        these sliders to be effective you therefore need to have these types of plants 
-        installed. You can do this in the Supply section, under 
+        these sliders to be effective you therefore need to have these types of plants
+        installed. You can do this in the Supply section, under
         <a href="/scenario/supply/electricity_renewable/solar-power">
         Renewable electricity</a>.
     flexibility_flexibility_power_to_heat:
@@ -142,8 +155,8 @@ en:
       short_description:
       description: |
         In this section you can determine the behaviour of electricity storage technologies such as batteries. These technologies
-        are considered flexible, because both their supply and demand can be increased, reduced or shifted in 
-        time if needed (see the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> 
+        are considered flexible, because both their supply and demand can be increased, reduced or shifted in
+        time if needed (see the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
         Flexibility overview</a> for background information). </br></br>
         The ETM models three types of storage behaviour. <br /><ol><li>By default, storage behaves like any other
         flexible technology. Each storage technology has a <i>willingness to pay</i> that indicates the maximum electricity price for
@@ -157,14 +170,14 @@ en:
         forecasting algorithm</a> that tries to improve the
         charging and discharging behaviour of storage. Rather than looking at the electricity
         price in the current hour only, the battery will look ahead in time to identify interesting moments
-        for charging and discharging. It does so by looking at peaks and troughs in the 
-        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves"> 
+        for charging and discharging. It does so by looking at peaks and troughs in the
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
         residual load curve</a>.</li> </br>
-        <li>Finally, storage systems that are integrated with wind turbines or solar plants only store electricity 
-        when the production of the connected renewable energy source exceeds the connection capacity to the grid. 
-        They release their electricity when the production drops below that capacity. The storage system itself has 
+        <li>Finally, storage systems that are integrated with wind turbines or solar plants only store electricity
+        when the production of the connected renewable energy source exceeds the connection capacity to the grid.
+        They release their electricity when the production drops below that capacity. The storage system itself has
         no further interaction with the rest of the electricity system.</li></ol><br/>
-        In the slides below you can set the the installed capacity for various electricity storage technologies and 
+        In the slides below you can set the the installed capacity for various electricity storage technologies and
         determine their behaviour. Note that the specific behaviour of these
         technologies is more complicated than stated in this short description. Our 
         <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\"> documentation</a> 
@@ -173,7 +186,7 @@ en:
       title: Batteries in households
       short_description:
       description: |
-        It is possible to install batteries in households. These can then be charged by electricity from the grid, 
+        It is possible to install batteries in households. These can then be charged by electricity from the grid,
         or by solar power if the household has solar panels installed. </br></br>
         Batteries in the ETM are flexible technologies, which 
         means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
@@ -185,7 +198,7 @@ en:
       title: Batteries in electric vehicles
       short_description:
       description: |
-        Electric vehicles could provide a cost-effective way of storing electricity as they contain a relatively 
+        Electric vehicles could provide a cost-effective way of storing electricity as they contain a relatively
         large battery. </br></br>
         Batteries in the ETM are flexible technologies, which 
         means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
@@ -197,7 +210,7 @@ en:
       title: Large-scale batteries
       short_description:
       description: |
-        This large-scale battery is typically connected to the medium voltage network. Although in the battery does 
+        This large-scale battery is typically connected to the medium voltage network. Although in the battery does
         not react to congestion events, its behavior can help prevent capacity issues in the electricity network. </br></br>
         Batteries in the ETM are flexible technologies, which 
         means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
@@ -209,8 +222,8 @@ en:
       title: Reservoirs
       short_description:
       description: |
-        Pumped storage provides a cheap way for large-scale storage of electricity. Electricity can 
-        be used to pump water from the lower reservoir to a higher reservoir. Electricity is then 
+        Pumped storage provides a cheap way for large-scale storage of electricity. Electricity can
+        be used to pump water from the lower reservoir to a higher reservoir. Electricity is then
         produced by releasing the stored water through a turbine. </br></br>
         Electricity storage in the ETM is a flexible technology, which
         means that it can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the storage in a given hour, it
@@ -222,7 +235,7 @@ en:
       title: Underground pumped hydro storage
       short_description:
       description: |
-        Underground pumped hydro storage (UPHS) allows for large-scale storage of electricity. It uses the 
+        Underground pumped hydro storage (UPHS) allows for large-scale storage of electricity. It uses the
         height difference between two water reservoirs, of which the lower reservoir is underground,
         to store electricity as potential energy. </br></br>
         Electricity storage in the ETM is a flexible technology, which
@@ -235,8 +248,8 @@ en:
       title: Flow batteries
       short_description:
       description: |
-        Flow batteries allow for large-scale storage of electricity. This is because installing storage volume is relatively 
-        cheap compared to other batteries and it can be scaled independent from the installed capacity. For flow batteries 
+        Flow batteries allow for large-scale storage of electricity. This is because installing storage volume is relatively
+        cheap compared to other batteries and it can be scaled independent from the installed capacity. For flow batteries
         you can therefore determine both the capacity and the storage volume. </br></br>
         Batteries in the ETM are flexible technologies, which 
         means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it

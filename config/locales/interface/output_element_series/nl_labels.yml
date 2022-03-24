@@ -297,6 +297,7 @@ nl:
         electricity_stored_in_opac: "Opgeslagen in OPAC"
         electricity_stored_in_mv_batteries: "Opgeslagen in grootschalige batterijen"
         electricity_stored_in_flow_batteries: "Opgeslagen in flowbatterijen"
+        electricity_load_shifting_in_industry_use_of_excess_electricity: "Vraagverschuiving in industrie"
         electricity_converted_to_heat_district_heating_heatpump: "Omgezet in warmte voor warmtenetten (boiler)"
         electricity_converted_to_heat_district_heating_boiler: "Omgezet in warmte voor warmtenetten (warmtepomp)"
         electricity_converted_to_heat_households: "Omgezet naar warmte voor huishoudens"
@@ -319,6 +320,8 @@ nl:
         energy_chp_ultra_supercritical_lignite: 'Bruinkoolcentrale met warmtelevering (WKK)'
         energy_export_electricity: 'Geëxporteerd'
         energy_flexibility_curtailment_electricity: 'Productieverlaging volatiele bronnen'
+        energy_flexibility_load_shifting_electricity_input: "Verhoogde vraag in industrie"
+        energy_flexibility_load_shifting_electricity_output: "Verlaagde vraag in industrie"
         energy_flexibility_pumped_storage_electricity: 'Opslag in stuwmeren'
         energy_flexibility_opac_electricity: 'Opslag in OPAC'
         energy_flexibility_flow_batteries_electricity: 'Opslag in flowbatterijen'
@@ -495,6 +498,8 @@ nl:
         hourly_buildings_heat_deficit: "Tekorten"
         hourly_household_heat_surplus: "Bufferen en uitstellen"
         hourly_household_heat_deficit: "Tekorten"
+        hourly_flexibility_electricity_load_shifting_input: "Verhoogde vraag in industrie"
+        hourly_flexibility_electricity_load_shifting_output: "Verlaagde vraag in industrie"
         households_cooling_demand: "Koeling huishoudens"
         households_flexibility_p2h_electricity: 'Omgezet naar warmte voor huishoudens'
         households_flexibility_p2p_electricity: 'Opgeslagen in thuisbatterijen'
@@ -678,6 +683,7 @@ nl:
         lng_international_navigation: "LNG voor internationale scheepvaart"
         lng_ships: "LNG-schepen"
         lng_trucks: "LNG-vrachtwagens"
+        load_shifting_industry_supply: "Verlaagde vraag in industrie"
         local: "Lokaal"
         local_co2_emission: "Lokaal uitgestoten CO2"
         local_chp_biogas: "Biogas-WKK (must-run)"

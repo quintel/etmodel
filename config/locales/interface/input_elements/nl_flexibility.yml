@@ -43,6 +43,138 @@ nl:
         target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
         from Real Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert
         10.000 laadsessies van 140 automobilisten.
+    capacity_of_industry_metal_flexibility_load_shifting_electricity:
+      title: Capaciteit
+      short_description:
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen. Deze studie van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        metaalindustrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
+        zijn van de metaalindustrie:
+        <a href="/scenario/demand/industry/steel">staal</a>, 
+        <a href="/scenario/demand/industry/aluminium">aluminium</a> en
+        <a href="/scenario/demand/industry/other-metals">overige metalen</a>.
+    wta_of_industry_metal_flexibility_load_shifting_electricity:
+      title: Willingness-to-accept
+      short_description:
+      description: |
+        De industrie zal haar productie alleen stoppen of verlagen wanneer
+        het kosteneffectief is. Dat betekent dat de marktprijs voor elektriciteit
+        hoger moet zijn dan de prijs die de industrie wil betalen. Deze prijs verschilt
+        per subsector en is afhankelijk van de kosten van het stoppen of verlagen van
+        de productie. Deze studie van DNV laat zien dat deze willingness to accept prijs
+        vaak boven 100 €/MWh ligt. </br></br>
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        metaalindustrie. Je kunt de uurlijkse elektriciteitsprijs in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a> gebruiken om dit schuifje in te stellen.
+    deficit_limit_of_industry_metal_flexibility_load_shifting_electricity:
+      title: Maximaal tekort
+      short_description:
+      description: |
+        Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de metaalindustrie hervat. De vraag mag pas weer verlaagd 
+        worden als een deel van het tekort ingehaald is. </br></br>
+        Het maximale tekort voor vraagverschuiving
+        hangt af van het productieproces en het type installaties. Sommige installaties
+        hebben langer nodig om te stoppen of verminderen, of om weer op te starten.
+        Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
+        vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
+        wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
+        Dit schuifje bepaalt het aantal uren dat de vraag van de metaalindustrie met volle 
+        vraagverschuivingscapaciteit verlaagd mag worden.
+    capacity_of_industry_chemical_flexibility_load_shifting_electricity:
+      title: Capaciteit
+      short_description:
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen. Deze studie van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        chemische industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
+        zijn van de chemische industrie:
+        <a href="/scenario/demand/industry/refineries">raffinaderijen</a>, 
+        <a href="/scenario/demand/industry/fertilizers">kunstmest</a> en
+        <a href="/scenario/demand/industry/chemicals">overige chemie</a>.
+    wta_of_industry_chemical_flexibility_load_shifting_electricity:
+      title: Willingness-to-accept
+      short_description:
+      description: |
+        De industrie zal haar productie alleen stoppen of verlagen wanneer
+        het kosteneffectief is. Dat betekent dat de marktprijs voor elektriciteit
+        hoger moet zijn dan de prijs die de industrie wil betalen. Deze prijs verschilt
+        per subsector en is afhankelijk van de kosten van het stoppen of verlagen van
+        de productie. Deze studie van DNV laat zien dat deze willingness to accept prijs
+        vaak boven 100 €/MWh ligt. </br></br>
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        chemische industrie. Je kunt de uurlijkse elektriciteitsprijs in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a> gebruiken om dit schuifje in te stellen.
+    deficit_limit_of_industry_chemical_flexibility_load_shifting_electricity:
+      title: Maximaal tekort
+      short_description:
+      description: |
+        Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de chemische industrie hervat. De vraag mag pas weer verlaagd 
+        worden als een deel van het tekort ingehaald is. </br></br>
+        Het maximale tekort voor vraagverschuiving
+        hangt af van het productieproces en het type installaties. Sommige installaties
+        hebben langer nodig om te stoppen of verminderen, of om weer op te starten.
+        Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
+        vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
+        wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
+        Dit schuifje bepaalt het aantal uren dat de vraag van de chemische industrie met volle 
+        vraagverschuivingscapaciteit verlaagd mag worden.
+    capacity_of_industry_other_flexibility_load_shifting_electricity:
+      title: Capaciteit
+      short_description:
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen. Deze studie van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        overige industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
+        zijn van de overige industrie:
+        <a href="/scenario/demand/industry/food">voedsel</a>, 
+        <a href="/scenario/demand/industry/paper">papier</a>, en
+        <a href="/scenario/demand/industry/other">overige industrie</a>.
+    wta_of_industry_other_flexibility_load_shifting_electricity:
+      title: Willingness-to-accept
+      short_description:
+      description: |
+        De industrie zal haar productie alleen stoppen of verlagen wanneer
+        het kosteneffectief is. Dat betekent dat de marktprijs voor elektriciteit
+        hoger moet zijn dan de prijs die de industrie wil betalen. Deze prijs verschilt
+        per subsector en is afhankelijk van de kosten van het stoppen of verlagen van
+        de productie. Deze studie van DNV laat zien dat deze willingness to accept prijs
+        vaak boven 100 €/MWh ligt. </br></br>
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        overige industrie. Je kunt de uurlijkse elektriciteitsprijs in 
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a> gebruiken om dit schuifje in te stellen.
+    deficit_limit_of_industry_other_flexibility_load_shifting_electricity:
+      title: Maximaal tekort
+      short_description:
+      description: |
+        Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de overige industrie hervat. De vraag mag pas weer verlaagd 
+        worden als een deel van het tekort ingehaald is. </br></br>
+        Het maximale tekort voor vraagverschuiving
+        hangt af van het productieproces en het type installaties. Sommige installaties
+        hebben langer nodig om te stoppen of verminderen, of om weer op te starten.
+        Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
+        vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
+        wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
+        Dit schuifje bepaalt het aantal uren dat de vraag van de overige industrie met volle 
+        vraagverschuivingscapaciteit verlaagd mag worden.
     flexibility_outdoor_temperature:
       title: Buitentemperatuur
       short_description:
@@ -116,10 +248,10 @@ nl:
       title: Power-to-heat boiler
       short_description:
       description: |
-        Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat boilers die met 
+        Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat boilers die met
         elektriciteit warmte maken voor het <a href="/scenario/supply/heat/heat-sources">
         residentiële warmtenet</a>. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van power-to-heat vermogen is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -133,10 +265,10 @@ nl:
       title: Power-to-heat warmtepomp
       short_description:
       description: |
-        Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat warmtepompen die met 
+        Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat warmtepompen die met
         omgevingswarmte en elektriciteit warmte maken voor het <a href="/scenario/supply/heat/heat-sources">
         residentiële warmtenet</a>. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van power-to-heat vermogen is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -264,8 +396,8 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen welk percentage van de huishoudens wordt uitgerust met een batterij.
-        Bij de 'Technische parameters en kosten' kun je vervolgens zien wat het totaal geïnstalleerde vermogen 
-        en opslagvolume is. De investeringskosten van batterijen in huishoudens kunnen 
+        Bij de 'Technische parameters en kosten' kun je vervolgens zien wat het totaal geïnstalleerde vermogen
+        en opslagvolume is. De investeringskosten van batterijen in huishoudens kunnen
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de installatie van batterijen in huishoudens: </br></br>
@@ -277,17 +409,17 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wtp_of_households_flexibility_p2p_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        Met dit schuifje kan je bepalen wat de maximale prijs is die batterijen in huishoudens bereid zijn te 
-        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        Met dit schuifje kan je bepalen wat de maximale prijs is die batterijen in huishoudens bereid zijn te
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze batterijen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-pay van batterijen in huishoudens: </br></br>
@@ -299,9 +431,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wta_of_households_flexibility_p2p_electricity:
@@ -309,9 +441,9 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen wat de minimale prijs is die batterijen in huishoudens willen ontvangen
-        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
-        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
-        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze batterijen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-accept van batterijen in huishoudens: </br></br>
@@ -323,19 +455,19 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     transport_car_using_electricity_availability:
       title: Batterijen in elektrische auto's
       short_description:
       description: |
-        Niet al het opslagvolume van elektrische auto's kan voor flexibiliteit worden gebruikt, omdat een deel van 
-        de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daaorm instellen 
-        hoeveel procent van de batterij van elektrische auto's beschikbaar is voor flexibiliteitsdoeleinden. Het 
-        aandeel elektrische auto's kun je instellen in de 
+        Niet al het opslagvolume van elektrische auto's kan voor flexibiliteit worden gebruikt, omdat een deel van
+        de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daaorm instellen
+        hoeveel procent van de batterij van elektrische auto's beschikbaar is voor flexibiliteitsdoeleinden. Het
+        aandeel elektrische auto's kun je instellen in de
         <a href="/scenario/demand/transport_passenger_transport/car-technology">autotechnologie slide</a>. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van het benutten van batterijen in elektrische auto's: </br></br>
@@ -347,17 +479,17 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wtp_of_transport_car_flexibility_p2p_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        Met dit schuifje kan je bepalen wat de maximale prijs is die batterijen in elektrische auto's bereid zijn te 
-        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        Met dit schuifje kan je bepalen wat de maximale prijs is die batterijen in elektrische auto's bereid zijn te
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze batterijen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-pay van batterijen in elektrische auto's: </br></br>
@@ -369,9 +501,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wta_of_transport_car_flexibility_p2p_electricity:
@@ -379,9 +511,9 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen wat de minimale prijs is die batterijen in elektrische auto's willen ontvangen
-        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
-        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
-        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze batterijen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-accept van batterijen in elektrische auto's: </br></br>
@@ -393,9 +525,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     capacity_of_energy_flexibility_pumped_storage_electricity:
@@ -413,9 +545,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wtp_of_energy_flexibility_pumped_storage_electricity:
@@ -423,7 +555,7 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen wat de maximale prijs is die stuwmeren bereid zijn te betalen om water naar het
-        hoger gelegen reservoir te pompen. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        hoger gelegen reservoir te pompen. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze stuwmeren. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-pay van stuwmeren: </br></br>
@@ -435,9 +567,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wta_of_energy_flexibility_pumped_storage_electricity:
@@ -445,9 +577,9 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen wat de minimale prijs is die stuwmeren willen ontvangen
-        om het opgeslagen water terug te laten stromen door een turbine. Als je wilt dat de stuwmeren winstgevend is, is het aan te raden de 
-        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
-        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        om het opgeslagen water terug te laten stromen door een turbine. Als je wilt dat de stuwmeren winstgevend is, is het aan te raden de
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze stuwmeren. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-accept van stuwmeren: </br></br>
@@ -459,9 +591,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     capacity_of_energy_flexibility_hv_opac_electricity:
@@ -481,9 +613,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wtp_of_energy_flexibility_hv_opac_electricity:
@@ -491,7 +623,7 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen wat de maximale prijs is die Ondergrondse Pomp Accumulatie Centrales (OPAC) bereid zijn te betalen om water naar het
-        hoger gelegen reservoir te pompen. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        hoger gelegen reservoir te pompen. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze OPAC. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-pay van OPAC: </br></br>
@@ -503,9 +635,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wta_of_energy_flexibility_hv_opac_electricity:
@@ -513,9 +645,9 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen wat de minimale prijs is die Ondergrondse Pomp Accumulatie Centrales (OPAC) willen ontvangen
-        om het opgeslagen water terug te laten stromen door een turbine. Als je wilt dat de OPAC winstgevend is, is het aan te raden de 
-        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
-        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        om het opgeslagen water terug te laten stromen door een turbine. Als je wilt dat de OPAC winstgevend is, is het aan te raden de
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze OPAC. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-accept van OPAC: </br></br>
@@ -527,9 +659,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     capacity_of_energy_flexibility_mv_batteries_electricity:
@@ -549,17 +681,17 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wtp_of_energy_flexibility_mv_batteries_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        Met dit schuifje kan je bepalen wat de maximale prijs is die grootschalige batterijopslag bereid is te 
-        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        Met dit schuifje kan je bepalen wat de maximale prijs is die grootschalige batterijopslag bereid is te
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze batterijen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-pay van grootschalige batterijopslag: </br></br>
@@ -571,9 +703,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wta_of_energy_flexibility_mv_batteries_electricity:
@@ -581,9 +713,9 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen wat de minimale prijs is die grootschalige batterijopslag wil ontvangen
-        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
-        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
-        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze batterijen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-accept van grootschalige batterijopslag: </br></br>
@@ -595,17 +727,17 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     capacity_of_energy_flexibility_flow_batteries_electricity:
       title: Flowbatterijen
       short_description:
       description: |
-        Met dit schuifje kun je het inputvermogen van flowbatterijen bepalen. Omdat het inputvermogen en het 
-        opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan de investeringskosten 
+        Met dit schuifje kun je het inputvermogen van flowbatterijen bepalen. Omdat het inputvermogen en het
+        opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan de investeringskosten
         ook uit twee componenten. Je kunt de investeringskosten per MW inputvermogen
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
         hier</a> aanpassen. <br></br>
@@ -619,9 +751,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun 
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     volume_of_energy_flexibility_flow_batteries_electricity:
@@ -630,20 +762,20 @@ nl:
       description: |
         Met dit schuifje kun je het relatieve opslagvolume van flowbatterijen ten opzichte van het inputvermogen bepalen.
         Effectief bepaalt dit schuifje hoeveel uur je een lege fowbatterij op vol vermogen kan opladen tot het vol is.
-        Het totale opslagvolume kun je vervolgens zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt 
-        vergelijken met andere opslagtechnologieën kun je ook  
+        Het totale opslagvolume kun je vervolgens zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
         <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         deze tabel</a> openen.
         </br></br>
-        Omdat het inputvermogen en het opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan 
+        Omdat het inputvermogen en het opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan
         de investeringskosten ook uit twee componenten. Je kunt de investeringskosten per MWh opslagvolume
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> hier</a> aanpassen.
     wtp_of_energy_flexibility_flow_batteries_electricity:
       title: Willingness to pay
       short_description:
       description: |
-        Met dit schuifje kan je bepalen wat de maximale prijs is die flowbatterijen bereid zijn te 
-        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        Met dit schuifje kan je bepalen wat de maximale prijs is die flowbatterijen bereid zijn te
+        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze batterijen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-pay van flowbatterijen: </br></br>
@@ -655,9 +787,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     wta_of_energy_flexibility_flow_batteries_electricity:
@@ -665,9 +797,9 @@ nl:
       short_description:
       description: |
         Met dit schuifje kan je bepalen wat de minimale prijs is die flowbatterijen willen ontvangen
-        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de 
-        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele 
-        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is 
+        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de
+        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele
+        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is
         geïnstalleerd voor deze batterijen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de willingness-to-accept van flowbatterijen: </br></br>
@@ -679,9 +811,9 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs 
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
         nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in 
+        De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
@@ -726,11 +858,11 @@ nl:
       title: Power-to-gas
       short_description:
       description: |
-        Dit schuifje bepaalt het geïnstalleerde vermogen aan power-to-gas installaties. 
-        De investeringskosten en efficiëntie van elektrolysers kunnen 
-        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hier</a> worden 
+        Dit schuifje bepaalt het geïnstalleerde vermogen aan power-to-gas installaties.
+        De investeringskosten en efficiëntie van elektrolysers kunnen
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hier</a> worden
         aangepast. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van power-to-gas vermogen is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -745,9 +877,9 @@ nl:
       short_description:
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-gas installaties willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook power-to-gas vermogen 
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook power-to-gas vermogen
         geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay van power-to-gas is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -764,7 +896,7 @@ nl:
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers willen betalen
         voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor power-to-heat
         boilers geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay van power-to-heat is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -781,7 +913,7 @@ nl:
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat warmtepompen willen betalen
         voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor power-to-heat
         warmtepompen geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay van power-to-heat is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -797,9 +929,9 @@ nl:
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in 
         <a href="/scenario/demand/industry/refineries">raffinaderijen</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
         gas- of waterstofketels in raffinaderijen geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay van power-to-heat is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -833,9 +965,9 @@ nl:
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
         <a href="/scenario/demand/industry/chemicals">chemische industrie</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
         gas- of waterstofketels in de chemische industrie geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay van power-to-heat is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -851,9 +983,9 @@ nl:
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
         <a href="/scenario/demand/industry/chemicals">voedingsmiddelenindustrie</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
         gas- of waterstofketels in de voedingsmiddelenindustrie geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay van power-to-heat is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -869,9 +1001,9 @@ nl:
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
         <a href="/scenario/demand/industry/chemicals">papierindustrie</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
         gas- of waterstofketels in de papierindustrie geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay van power-to-heat is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -903,73 +1035,73 @@ nl:
       title: Relatieve aangesloten netwerkcapaciteit
       short_description:
       description: |
-        Doordat de elektriciteitsproductie door windmolens volatiel is, kan de installatie van veel 
-        windmolens een grote impact hebben op het 
-        elektriciteitsnet. Om deze impact te verlagen, is de aangesloten netwerkcapaciteit 
-        van windmolens met een batterijsysteem gereduceerd ten opzichte van het geïnstalleerde 
+        Doordat de elektriciteitsproductie door windmolens volatiel is, kan de installatie van veel
+        windmolens een grote impact hebben op het
+        elektriciteitsnet. Om deze impact te verlagen, is de aangesloten netwerkcapaciteit
+        van windmolens met een batterijsysteem gereduceerd ten opzichte van het geïnstalleerde
         vermogen. <br/><br/>
-        De aangesloten netwerkcapaciteit is relatief ingesteld ten opzichte van het 
-        geïnstalleerde vermogen. Dit betekent dat, als je het geïnstalleerde vermogen verandert 
-        in de <a href="/scenario/supply/electricity_renewable/wind-turbines"> Aanbod</a> sectie, 
-        de aangesloten netwerkcapaciteit daarom zal meeveranderen op basis van de ratio die is 
+        De aangesloten netwerkcapaciteit is relatief ingesteld ten opzichte van het
+        geïnstalleerde vermogen. Dit betekent dat, als je het geïnstalleerde vermogen verandert
+        in de <a href="/scenario/supply/electricity_renewable/wind-turbines"> Aanbod</a> sectie,
+        de aangesloten netwerkcapaciteit daarom zal meeveranderen op basis van de ratio die is
         aangegeven in dit schuifje. <br/><br/>
-        Productie door de windmolens die de aangesloten netwerkcapaciteit overschrijdt, zal door 
-        het geïntegreerde batterijsysteem moeten worden geconsumeerd. Met het schuifje hieronder 
-        kan je het relatieve vermogen van de batterij bepalen. In het geval dat de batterij 
-        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        Productie door de windmolens die de aangesloten netwerkcapaciteit overschrijdt, zal door
+        het geïntegreerde batterijsysteem moeten worden geconsumeerd. Met het schuifje hieronder
+        kan je het relatieve vermogen van de batterij bepalen. In het geval dat de batterij
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de
         batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld.
     connection_capacity_always_on_solar_pv_solar_radiation:
       title: Relatieve aangesloten netwerkcapaciteit
       short_description:
       description: |
-        Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie van veel 
-        zonnecentrales een grote impact hebben op het 
-        elektriciteitsnet. Om deze impact te verlagen, is de aangesloten netwerkcapaciteit 
-        van zonnecentrales PV met een batterijsysteem gereduceerd ten opzichte van het geïnstalleerde 
+        Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie van veel
+        zonnecentrales een grote impact hebben op het
+        elektriciteitsnet. Om deze impact te verlagen, is de aangesloten netwerkcapaciteit
+        van zonnecentrales PV met een batterijsysteem gereduceerd ten opzichte van het geïnstalleerde
         vermogen. <br/><br/>
-        De aangesloten netwerkcapaciteit is relatief ingesteld ten opzichte van het 
-        geïnstalleerde vermogen. Dit betekent dat, als je het geïnstalleerde vermogen verandert 
-        in de <a href="/scenario/supply/electricity_renewable/solar-power"> Aanbod</a> sectie, 
-        de aangesloten netwerkcapaciteit daarom zal meeveranderen op basis van de ratio die is 
+        De aangesloten netwerkcapaciteit is relatief ingesteld ten opzichte van het
+        geïnstalleerde vermogen. Dit betekent dat, als je het geïnstalleerde vermogen verandert
+        in de <a href="/scenario/supply/electricity_renewable/solar-power"> Aanbod</a> sectie,
+        de aangesloten netwerkcapaciteit daarom zal meeveranderen op basis van de ratio die is
         aangegeven in dit schuifje. <br/><br/>
-        Productie door de zonnecentrales die de aangesloten netwerkcapaciteit overschrijdt, zal door 
-        het geïntegreerde batterijsysteem moeten worden geconsumeerd. Met het schuifje hieronder 
-        kan je het relatieve vermogen van de batterij bepalen. In het geval dat de batterij 
-        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        Productie door de zonnecentrales die de aangesloten netwerkcapaciteit overschrijdt, zal door
+        het geïntegreerde batterijsysteem moeten worden geconsumeerd. Met het schuifje hieronder
+        kan je het relatieve vermogen van de batterij bepalen. In het geval dat de batterij
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de
         batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld.
     battery_capacity_always_on_wind_turbine_inland:
       title: Relatief batterijvermogen
       short_description:
       description: |
-        Het inputvermogen, ook wel het laadvermogen, van de batterij is relatief ingesteld ten opzichte 
-        van het geïnstalleerde vermogen van windmolens met batterijsystemen. Dit betekent dat, als je 
-        het geïnstalleerde vermogen verandert in de <a href="/scenario/supply/electricity_renewable/wind-turbines"> 
-        Aanbod</a> sectie, het laadvermogen daarom zal meeveranderen op basis van de ratio die is 
+        Het inputvermogen, ook wel het laadvermogen, van de batterij is relatief ingesteld ten opzichte
+        van het geïnstalleerde vermogen van windmolens met batterijsystemen. Dit betekent dat, als je
+        het geïnstalleerde vermogen verandert in de <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        Aanbod</a> sectie, het laadvermogen daarom zal meeveranderen op basis van de ratio die is
         aangegeven in dit schuifje. <br/><br/>
         Het batterijsysteem consumeert alleen elektriciteit als de productie de grenswaarde van de
-        aangesloten netwerkcapaciteit overschrijdt. De batterij begint te ontladen als de productie 
-        weer onder de grenswaarde zakt. In het geval dat de batterij 
-        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        aangesloten netwerkcapaciteit overschrijdt. De batterij begint te ontladen als de productie
+        weer onder de grenswaarde zakt. In het geval dat de batterij
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de
         batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/<br/>
         Er is een vaste verhouding aangenomen van het opslagvolume ten opzichte van het laadvermogen.
-        Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op 
-        de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen 
+        Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op
+        de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen
         en opslagvolume van de batterij te zien.
     battery_capacity_always_on_solar_pv_solar_radiation:
       title: Relatief batterijvermogen
       short_description:
       description: |
-        Het inputvermogen, ook wel het laadvermogen, van de batterij is relatief ingesteld ten opzichte 
-        van het geïnstalleerde vermogen van zonnecentrales PV met batterijsystemen. Dit betekent dat, als je 
-        het geïnstalleerde vermogen verandert in de <a href="/scenario/supply/electricity_renewable/solar-power"> 
-        Aanbod</a> sectie, het laadvermogen daarom zal meeveranderen op basis van de ratio die is 
+        Het inputvermogen, ook wel het laadvermogen, van de batterij is relatief ingesteld ten opzichte
+        van het geïnstalleerde vermogen van zonnecentrales PV met batterijsystemen. Dit betekent dat, als je
+        het geïnstalleerde vermogen verandert in de <a href="/scenario/supply/electricity_renewable/solar-power">
+        Aanbod</a> sectie, het laadvermogen daarom zal meeveranderen op basis van de ratio die is
         aangegeven in dit schuifje. <br/><br/>
         Het batterijsysteem consumeert alleen elektriciteit als de productie de grenswaarde van de
-        aangesloten netwerkcapaciteit overschrijdt. De batterij begint te ontladen als de productie 
-        weer onder de grenswaarde zakt. In het geval dat de batterij 
-        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        aangesloten netwerkcapaciteit overschrijdt. De batterij begint te ontladen als de productie
+        weer onder de grenswaarde zakt. In het geval dat de batterij
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de
         batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/<br/>
         Er is een vaste verhouding aangenomen van het opslagvolume ten opzichte van het laadvermogen.
-        Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op 
-        de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen 
+        Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op
+        de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen
         en opslagvolume van de batterij te zien.

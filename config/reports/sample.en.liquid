@@ -277,7 +277,7 @@
     <p>
       <!-- Round the query value to 2dp -->
       Electricity production costs:
-      {{ future.costs_of_used_electricity | round: 2 | autoscale: 'euro' }}.
+      {{ future.costs_production_power_plants | round: 2 | autoscale: 'euro' }}.
       <!-- Round a query value to 2dp and don't format with the unit -->
       Coastal area used by wind is
       {{ future.area_used_for_coastal_wind | round: 2 | without_unit }}

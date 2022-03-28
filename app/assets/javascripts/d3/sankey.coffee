@@ -16,6 +16,7 @@ D3.sankey =
           {id: 'import4',                      column: 0, label: 'import4',                color: '#b71540'},
           {id: 'import5',                      column: 0, label: 'import5',                color: '#b71540'},
           {id: 'import6',                      column: 0, label: 'import6',                color: '#b71540'},
+          {id: 'shortage',                      column: 0, label: 'hv_shortage',                color: '#DCDCDC'},
           {id: 'network',                      column: 1, label: 'network',                color: '#006266'},
           {id: 'households',                   column: 2, label: 'households',             color: '#4169E1'},
           {id: 'buildings',                    column: 2, label: 'buildings',              color: '#ADD8E6'},
@@ -47,6 +48,7 @@ D3.sankey =
           {left: 'import4',                    right: 'network',          gquery: 'import4_to_network_in_sankey', color: '#ff7f0e'},
           {left: 'import5',                    right: 'network',          gquery: 'import5_to_network_in_sankey', color: '#ff7f0e'},
           {left: 'import6',                    right: 'network',          gquery: 'import6_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'shortage',                   right: 'network',          gquery: 'shortage_to_network_in_sankey', color: '#DCDCDC'},
 
           {left: 'network',                    right: 'households',       gquery: 'network_to_households_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'buildings',        gquery: 'network_to_buildings_in_sankey', color: '#1f77b4'},

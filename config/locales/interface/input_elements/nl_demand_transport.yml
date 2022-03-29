@@ -574,9 +574,13 @@ nl:
       short_description:
       description: "Welk percentage van alle bestelbussen zal LPG gebruiken in de toekomst?"
     transport_van_using_compressed_natural_gas_share:
-      title: CNG
+      title: Gas onder druk (CNG)
       short_description:
-      description: "Welk percentage van alle bestelbussen zal CNG gebruiken in de toekomst?"
+      description: |
+        Welk percentage van alle bestelbussen zal aardgas onder druk gebruiken in de toekomst?
+        Aardgas onder druk komt van het gasnetwerk.
+        Als in dit scenario groen gas wordt bijgemengd in het gasnetwerk dan zullen
+        deze voertuigen ook deels op groen gas rijden.
     transport_vans_share:
       title: Bestelbussen
       short_description:

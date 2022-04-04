@@ -7,8 +7,8 @@ require_relative '../../app/services/create_multi_year_chart'
 
 describe MultiYearChartsController do
   describe '#create' do
-    context 'when signed in and given a valid API scenario ID' do
-      let(:scenario) { FactoryBot.build(:api_scenario, id: 1) }
+    context 'when signed in and given a valid saved scenario ID' do
+      let(:scenario) { FactoryBot.create(:saved_scenario, end_year: 2050, user: user) }
       let(:user) { FactoryBot.create(:user) }
       let(:myc) { FactoryBot.create(:multi_year_chart, scenarios_count: 1) }
 
@@ -18,9 +18,6 @@ describe MultiYearChartsController do
         login_as user
 
         allow(service).to receive(:call).and_return(ServiceResult.success(myc))
-
-        allow(Api::Scenario).to receive(:find)
-          .with(scenario.id).and_return(scenario)
       end
 
       it 'redirects to the MYC app' do
@@ -37,8 +34,20 @@ describe MultiYearChartsController do
       end
     end
 
+    context 'when signed in and given someone elses saved scenario ID' do
+      let(:scenario) { FactoryBot.create(:saved_scenario, end_year: 2050) }
+
+      before { login_as FactoryBot.create(:user) }
+
+      it 'raises a Not Found error' do
+        expect { post(:create, params: { scenario_id: scenario.id }) }
+          .to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+
     context 'when signed in and the CreateMultiYearChart service fails' do
-      let(:scenario) { FactoryBot.build(:api_scenario, id: 1) }
+      let(:scenario) { FactoryBot.create(:saved_scenario, end_year: 2050, user: user) }
+      let(:api_scenario) { FactoryBot.build(:api_scenario) }
       let(:user) { FactoryBot.create(:user) }
 
       let!(:service) { class_double('CreateMultiYearChart').as_stubbed_const }
@@ -51,7 +60,9 @@ describe MultiYearChartsController do
         ))
 
         allow(Api::Scenario).to receive(:find)
-          .with(scenario.id).and_return(scenario)
+          .with(scenario.scenario_id).and_return(api_scenario)
+
+        allow(Api::Scenario).to receive(:batch_load).and_return([api_scenario])
       end
 
       it 'fails the request with a 422 code' do

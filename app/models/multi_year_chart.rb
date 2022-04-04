@@ -11,14 +11,14 @@ class MultiYearChart < ApplicationRecord
 
   validates_presence_of :user_id
 
-  # Public: Creates a new MultiYearChart, setting some attributes to match those
-  # of the API scenario.
+  # Public: Creates a new MultiYearChart, setting some attributes to match those of the saved
+  # scenario.
   #
-  # scenario - The Api::Scenario
+  # scenario - The SavedScenario from which an MYC is to be created.
   # attrs    - Optional additional attributes to be set on the MultiYearChart.
   #
   # Returns an unsaved MultiYearChart.
-  def self.new_from_api_scenario(scenario, attrs = {})
+  def self.new_from_saved_scenario(scenario, attrs)
     new({
       area_code: scenario.area_code,
       end_year: scenario.end_year,

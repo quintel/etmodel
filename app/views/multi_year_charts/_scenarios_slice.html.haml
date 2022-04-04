@@ -1,7 +1,7 @@
 - scenarios.each do |ss|
   - if can_use_as_myc_scenario?(ss)
     %li
-      %button.myc-session{ name: 'scenario_id', value: ss.scenario_id }
+      %button.myc-session{ name: 'scenario_id', value: ss.id }
         = area_flag_icon(ss.area_code)
         %span.title= ss.title
         %span.details

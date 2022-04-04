@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe CreateMultiYearChart, type: :service do
-  let(:scenario) { FactoryBot.build(:api_scenario, id: 1) }
+  let(:scenario) { FactoryBot.build(:saved_scenario, scenario_id: 1) }
   let(:user) { FactoryBot.create(:user) }
   let(:result) { described_class.call(scenario, user, years) }
 
@@ -11,13 +11,13 @@ describe CreateMultiYearChart, type: :service do
 
   def stub_successful_interpolation(year, id)
     allow(InterpolateApiScenario).to receive(:call)
-      .with(scenario.id, year, protect: true)
+      .with(scenario.scenario_id, year, protect: true)
       .and_return(ServiceResult.success('id' => id))
   end
 
   def stub_failed_interpolation(year, errors)
     allow(InterpolateApiScenario).to receive(:call)
-      .with(scenario.id, year, protect: true)
+      .with(scenario.scenario_id, year, protect: true)
       .and_return(ServiceResult.failure(errors))
   end
 

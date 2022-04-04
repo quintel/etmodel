@@ -26,7 +26,7 @@ class MultiYearChartsController < ApplicationController
   # POST /multi_year_charts
   def create
     result = CreateMultiYearChart.call(
-      Api::Scenario.find(params.require(:scenario_id).to_i),
+      current_user.saved_scenarios.find(params.require(:scenario_id)),
       current_user
     )
 

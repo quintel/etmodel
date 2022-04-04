@@ -10,16 +10,16 @@ class CreateMultiYearChart
 
   # Public: Creates a new multi-year chart and interpolated scenarios.
   #
-  # api_scenario - The Api::Scenario to be used as the base scenario for
-  #                interpolating one or more new scenarios.
-  # user         - The user to which the resulting MultiYearChart should belong.
-  # years        - An optional array of years for which interpolated scenarios
-  #                will be created.
+  # saved_scenario - The SavedScenario to be used as the base scenario for interpolating one or more
+  #                  new scenarios.
+  # user           - The user to which the resulting MultiYearChart should belong.
+  # years          - An optional array of years for which interpolated scenarios
+  #                  will be created.
   #
-  def initialize(api_scenario, user, years = DEFAULT_YEARS)
-    @api_scenario = api_scenario
+  def initialize(saved_scenario, user, years = DEFAULT_YEARS)
+    @saved_scenario = saved_scenario
     @user = user
-    @years = (years + [@api_scenario.end_year]).uniq
+    @years = (years + [@saved_scenario.end_year]).uniq
   end
 
   # Internal: Creats interpolated scenarios for the chosen years, and the
@@ -49,7 +49,7 @@ class CreateMultiYearChart
   private
 
   def create_multi_year_chart
-    myc = MultiYearChart.new_from_api_scenario(@api_scenario, user: @user)
+    myc = MultiYearChart.new_from_saved_scenario(@saved_scenario, user: @user)
 
     scenarios.each do |sresult|
       myc.scenarios.build(scenario_id: sresult.value['id'])
@@ -71,7 +71,7 @@ class CreateMultiYearChart
       @years.map do |year|
         next if any_errors
 
-        res = InterpolateApiScenario.call(@api_scenario.id, year, protect: true)
+        res = InterpolateApiScenario.call(@saved_scenario.scenario_id, year, protect: true)
         any_errors = res.failure?
 
         res

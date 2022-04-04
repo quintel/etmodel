@@ -1,6 +1,16 @@
 ---
 en:
   slides:
+    data_export_overview:
+      title: Overview
+      short_description:
+      description: |
+        In this section you can find extensive data downloads for the calculations underpinning your scenario. <br/><br/>
+        You can choose to download <b>yearly results</b> (flows, emissions, demand and supply), additional <b>specifications</b>
+        (capacities, number of units and costs) or you can download <b>hourly results</b> (electricity,
+        household heat, gas, hydrogen and heat networks). <br/><br/>
+        You can also upload hourly demand and supply curves for your scenario in the
+        <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibility → Modify hourly profiles </a> section.
     data_sources_region_dataset:
       title: Present year data
       short_description:
@@ -44,7 +54,7 @@ en:
           </li>
         </ul>
     data_export_energy_flows:
-      title: Energy flows
+      title: Yearly energy flows
       short_description:
       description: |
         The Energy Transition Model describes the energy flows through several
@@ -99,7 +109,7 @@ en:
           </li>
         </ul>
     data_export_molecule_flows:
-      title: CCUS flows
+      title: Yearly CCUS flows
       short_description:
       description: |
         The Energy Transition Model models the flows of CO<sub>2</sub> related to carbon capture, utilisation and storage (CCUS)

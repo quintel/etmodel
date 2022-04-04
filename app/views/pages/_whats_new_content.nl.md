@@ -1,11 +1,22 @@
 # Wat is er nieuw in het Energietransitiemodel?
 
+# April 2022
+
+## Verken vraagsturing in de industrie
+Je kunt nu het effect van vraagsturing (*Demand Side Response*) voor de industrie op sub-sectorniveau verkennen in de *Flexibiliteit* sectie, onder **[Netbelasting](/scenario/flexibility_storage/behaviour-of-storage-technologies)**.
+
+Vermogen om elektriciteitsvraag te verschuiven kan worden geïnstalleerd voor de metaal-, chemische en overige industrie. In uren dat de elektriciteitsprijs te hoog is zal de sector dan in staat zijn de vraag te verlagen. Het tekort dat in die uren oploopt wordt op een later moment ingehaald, als de elektriciteitsprijs gedaald is, wat kosten bespaart voor de industrie.
+
+-> ![](/assets/pages/whats_new/load_shifting_nl.png) <-
+
+---
+
 # Januari 2022
 
 ## Verken prijsgevoelige elektriciteitsvraag
 Eerder kon de inzet van flexibele elektriciteitsvraagtechnologieën bepaald worden door handmatig de volgorde te kiezen waarin deze technologieën gebruik mochten maken van elektriciteit. Dit is nu vervangen door prijs-gevoelig gedrag. Dit betekent dat er een willingness-to-pay ingesteld moet worden voor power-to-gas, power-to-heat en elektriciteitsopslag. Voor export wordt de willingness-to-pay bepaald door de prijzen van de interconnectoren.
 
-Het gedrag van al deze technologieën kan worden bepaald in de *Flexibiliteit* sectie, voor **[Opslag](/scenario/flexibility_storage/behaviour-of-storage-technologies)**, **[Conversie](/scenario/flexibility/flexibility_conversion/behaviour-of-conversion-technologies)** en **[Export](/scenario/flexibility/electricity_import_export/electricity-interconnectors)**. Daar zijn ook nieuwe grafieken te vinden die je helpen het gedrag te bepalen. Voor opslag moet er naast een willingness-to-pay ook een willingness-to-accept ingesteld worden. Optioneel is om in plaats van het prijs-gevoelige gedrag een prognose-algoritme in te stellen dat het gedrag van opslag bepaalt.
+Het gedrag van al deze technologieën kan worden bepaald in de *Flexibiliteit* sectie, voor **[Opslag](/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies)**, **[Conversie](/scenario/flexibility/flexibility_conversion/behaviour-of-conversion-technologies)** en **[Export](/scenario/flexibility/electricity_import_export/electricity-interconnectors)**. Daar zijn ook nieuwe grafieken te vinden die je helpen het gedrag te bepalen. Voor opslag moet er naast een willingness-to-pay ook een willingness-to-accept ingesteld worden. Optioneel is om in plaats van het prijs-gevoelige gedrag een prognose-algoritme in te stellen dat het gedrag van opslag bepaalt.
 
 -> ![](/assets/pages/whats_new/price_sensitive_nl.png) <-
 

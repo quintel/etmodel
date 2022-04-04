@@ -68,14 +68,14 @@ class CreateMultiYearChart
     @scenarios ||= begin
       any_errors = false
 
-      @years.map do |year|
+      @years.filter_map do |year|
         next if any_errors
 
         res = InterpolateApiScenario.call(@saved_scenario.scenario_id, year, protect: true)
         any_errors = res.failure?
 
         res
-      end.compact
+      end
     end
   end
 

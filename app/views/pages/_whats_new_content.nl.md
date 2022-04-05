@@ -2,6 +2,11 @@
 
 # April 2022
 
+## Vrachttransport door bestelbussen
+In plaats van onderdeel te zijn van de categorie vrachtwagens worden bestelbussen nu als een afzonderlijke categorie getoond in het model. Hierdoor kun je verschillende keuzes maken voor ontwikkelingen in het gebruik en de technologieën van vrachtwagens en bestelbussen in de *Vraag → Transport* → **[Vrachtvervoer](/scenario/demand/transport_freight_transport/applications)** sectie!
+
+-> ![](/assets/pages/whats_new/vans_transport_nl.png) <-
+
 ## Verken vraagsturing in de industrie
 Je kunt nu het effect van vraagsturing (*Demand Side Response*) voor de industrie op sub-sectorniveau verkennen in de *Flexibiliteit* sectie, onder **[Netbelasting](/scenario/flexibility_storage/behaviour-of-storage-technologies)**.
 

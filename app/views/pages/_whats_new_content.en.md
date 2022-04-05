@@ -2,6 +2,12 @@
 
 # April 2022
 
+## Freight transport by vans
+Instead of being included in truck transport, vans are now shown in the model as a separate category of their own. This enables you to make different choices for developments in trucks and vans technologies and their use in the *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/applications)** section!
+
+-> ![](/assets/pages/whats_new/vans_transport_en.png) <-
+
+
 ## Explore Demand Side Response in industry
 You can now explore the effects of Demand Side Response in the industry on sub sector level in the *Flexibility* section, under **[Net Load](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)**.
 

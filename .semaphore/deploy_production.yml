@@ -18,23 +18,13 @@ blocks:
         - name: Build, publish, deploy
           commands:
             - checkout
-
-            # Capistrano deploy. Docker deploy will be enabled once the app is moved to new
-            # infrastructure.
-            - cache restore
-            - 'gem install bundler:1.17.3'
-            - bundle install --deployment --path vendor/bundle
-            - cache store
-            - bundle exec cap production deploy
-
-            # Docker
-            # - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-            # - cache restore
-            # - 'docker build -f Dockerfile.production -t etmodel:latest .'
-            # - 'docker tag etmodel:latest quintel/etmodel:latest'
-            # - 'docker push quintel/etmodel:latest'
-            # - cache store
-            # - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
+            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+            - 'docker build -f Dockerfile.production -t quintel/etmodel:latest .'
+            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:latest --build-arg "SOURCE_IMAGE=quintel/etmodel:latest" .'
+            - 'docker push quintel/etmodel:latest'
+            - 'docker push quintel/etmodel-nginx:latest'
+            - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
+            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"
       secrets:
         - name: Docker Hub credentials
         - name: Production SSH settings

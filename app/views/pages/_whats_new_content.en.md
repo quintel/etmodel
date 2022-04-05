@@ -1,11 +1,31 @@
 # What's new in the Energy Transition Model?
 
+# April 2022
+
+## Additions and improvements for EU countries
+With the inclusion of Cyprus, Estonia and Malta, all countries of the EU are now included in the model! You can check out these countries by selecting one of them in the region dropdown when starting a new scenario.
+
+## Freight transport by vans
+Instead of being included in truck transport, vans are now shown in the model as a separate category of their own. This enables you to make different choices for developments in trucks and vans technologies and their use in the *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/applications)** section!
+
+-> ![](/assets/pages/whats_new/vans_transport_en.png) <-
+
+
+## Explore Demand Side Response in industry
+You can now explore the effects of Demand Side Response in the industry on sub sector level in the *Flexibility* section, under **[Net Load](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)**.
+
+Capacity to shift the electricity demand can be installed for the metal, chemical, and other industry. In hours when the electricity price is too high, the sector will then be able to decrease its demand. The shortage that accumulates during those hours is caught up at a later time, when the electricity price is lower, thereby saving costs for industry.
+
+-> ![](/assets/pages/whats_new/load_shifting_en.png) <-
+
+---
+
 # January 2022
 
 ## Explore price-sensitive electricity demand
 Previously, the use of flexible electricity demand technologies could be determined by manually setting the order in which these technologies could use electricity. This has now been replaced by price-sensitive behaviour. This means that for power-to-gas, power-to-heat and electricity storage a willingness to pay has to be set. For export, the willingness to pay is given by the prices of the interconnectors.
 
-The behaviour for all of these technologies can be set in the *Flexibility* section, for **[Storage](/scenario/flexibility_storage/behaviour-of-storage-technologies)**, **[Conversion](/scenario/flexibility/flexibility_conversion/behaviour-of-conversion-technologies)** and **[Export](/scenario/flexibility/electricity_import_export/electricity-interconnectors)**. New charts that can help you set the behaviour can also be found there. For storage, in addition to the willingness to pay, a willingness to accept has to be set. Alternatively, instead of the price-sensitive behaviour, a forecasting algorithm can be used to determine storage behaviour.
+The behaviour for all of these technologies can be set in the *Flexibility* section, for **[Storage](/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies)**, **[Conversion](/scenario/flexibility/flexibility_conversion/behaviour-of-conversion-technologies)** and **[Export](/scenario/flexibility/electricity_import_export/electricity-interconnectors)**. New charts that can help you set the behaviour can also be found there. For storage, in addition to the willingness to pay, a willingness to accept has to be set. Alternatively, instead of the price-sensitive behaviour, a forecasting algorithm can be used to determine storage behaviour.
 
 -> ![](/assets/pages/whats_new/price_sensitive_en.png) <-
 

@@ -2,6 +2,9 @@
 
 # April 2022
 
+## Additions and improvements for EU countries
+With the inclusion of Cyprus, Estonia and Malta, all countries of the EU are now included in the model! You can check out these countries by selecting one of them in the region dropdown when starting a new scenario.
+
 ## Freight transport by vans
 Instead of being included in truck transport, vans are now shown in the model as a separate category of their own. This enables you to make different choices for developments in trucks and vans technologies and their use in the *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/applications)** section!
 

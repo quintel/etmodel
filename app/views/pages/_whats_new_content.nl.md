@@ -2,6 +2,9 @@
 
 # April 2022
 
+## Toevoegingen en verbeteringen voor EU-landen
+Met de toevoeging van Cyprus, Estland en Malta zijn nu alle EU-landen beschikbaar in het model! Je kunt deze landen bekijken door er eentje te selecteren bij het kiezen van je regio als je een nieuw scenario start.
+
 ## Vrachttransport door bestelbussen
 In plaats van onderdeel te zijn van de categorie vrachtwagens worden bestelbussen nu als een afzonderlijke categorie getoond in het model. Hierdoor kun je verschillende keuzes maken voor ontwikkelingen in het gebruik en de technologieën van vrachtwagens en bestelbussen in de *Vraag → Transport* → **[Vrachtvervoer](/scenario/demand/transport_freight_transport/applications)** sectie!
 

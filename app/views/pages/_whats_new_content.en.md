@@ -1,15 +1,17 @@
 # What's new in the Energy Transition Model?
 
+___
+
 # April 2022
 
 ## Additions and improvements for EU countries
-With the inclusion of Cyprus, Estonia and Malta, all countries of the EU are now included in the model! You can check out these countries by selecting one of them in the region dropdown when starting a new scenario.
+With the inclusion of Cyprus, Estonia and Malta, all countries of the EU are now included in the ETM! You can check out these countries by selecting one of them in the region dropdown when starting a new scenario. The base year data for these countries origins mainly from the [Eurostat Energy Balances 2019](https://ec.europa.eu/eurostat/web/energy/data/energy-balances) and [JRC Potencia tool](https://joint-research-centre.ec.europa.eu/potencia_en). For a complete overview of all data that is used, have a look at [ETM Dataset Manager](https://data.energytransitionmodel.com/). The final energy demand for these EU countries was matched as much as possible to the Eurostat Energy Balances. The supply side (heat and electricity production) is more complex and has some room for improvement.
+
 
 ## Freight transport by vans
 Instead of being included in truck transport, vans are now shown in the model as a separate category of their own. This enables you to make different choices for developments in trucks and vans technologies and their use in the *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/applications)** section!
 
 -> ![](/assets/pages/whats_new/vans_transport_en.png) <-
-
 
 ## Explore Demand Side Response in industry
 You can now explore the effects of Demand Side Response in the industry on sub sector level in the *Flexibility* section, under **[Net Load](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)**.

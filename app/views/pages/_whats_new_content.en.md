@@ -18,6 +18,12 @@ Capacity to shift the electricity demand can be installed for the metal, chemica
 
 -> ![](/assets/pages/whats_new/load_shifting_en.png) <-
 
+## Costs: update of charts and data export
+
+ETM contains new cost charts with clear catogories. The method of cost calculation has also been updated. ETM now explicitly calculates CAPEX, OPEX and fuel costs. For all technologies these can be exported in the **[data export section](https://pro.energytransitionmodel.com/scenario/data/data_export/specifications-annual-costs)** of the ETM. For more details about cost calculations see the **[documentation](**https://docs.energytransitionmodel.com/main/cost-main-principles)**.
+
+-> ![](/assets/pages/whats_new/costs_en.png) <-
+
 ---
 
 # January 2022

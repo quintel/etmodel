@@ -17,6 +17,13 @@ Vermogen om elektriciteitsvraag te verschuiven kan worden geïnstalleerd voor de
 
 -> ![](/assets/pages/whats_new/load_shifting_nl.png) <-
 
+## Kosten: nieuwe grafieken en data-export
+
+Het ETM bevat nieuwe grafieken voor kosten. Deze grafieken tonen duidelijke categorieën. Ook de berekeningsmethode is veranderd. Het ETM berekent nu expliciet CAPEX, OPEX en brandstofkosten. Ga naar **[data-export](https://pro.energytransitionmodel.com/scenario/data/data_export/specifications-annual-costs)** om kostendetails van alle technologieën en energiedragers te exporteren. Meer details over kostenberekeningen in het ETM staan in de **[documentatie](**https://docs.energytransitionmodel.com/main/cost-main-principles)**.
+
+-> ![](/assets/pages/whats_new/costs_nl.png) <-
+
+
 ---
 
 # Januari 2022

@@ -5,8 +5,9 @@ ___
 # April 2022
 
 ## Additions and improvements for EU countries
-With the inclusion of Cyprus, Estonia and Malta, all countries of the EU are now included in the ETM! You can check out these countries by selecting one of them in the region dropdown when starting a new scenario. The base year data for these countries origins mainly from the [Eurostat Energy Balances 2019](https://ec.europa.eu/eurostat/web/energy/data/energy-balances) and [JRC Potencia tool](https://joint-research-centre.ec.europa.eu/potencia_en). For a complete overview of all data that is used, have a look at [ETM Dataset Manager](https://data.energytransitionmodel.com/). The final energy demand for these EU countries was matched as much as possible to the Eurostat Energy Balances. The supply side (heat and electricity production) is more complex and has some room for improvement.
+With the inclusion of Cyprus, Estonia and Malta, all countries of the EU are now included in the ETM! You can check out these countries by selecting one of them in the region dropdown when starting a new scenario.
 
+The base year data for these countries origins mainly from the **[Eurostat Energy Balances 2019](https://ec.europa.eu/eurostat/web/energy/data/energy-balances)** and **[JRC Potencia tool](https://joint-research-centre.ec.europa.eu/potencia_en)**. For a complete overview of all data that is used, have a look at **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. The final energy demand for these EU countries was matched as much as possible to the Eurostat Energy Balances. The supply side (heat and electricity production) is more complex and has some room for improvement. Feel free to contact us with suggestions using the **[Contact form](https://energytransitionmodel.com/contact)**.
 
 ## Freight transport by vans
 Instead of being included in truck transport, vans are now shown in the model as a separate category of their own. This enables you to make different choices for developments in trucks and vans technologies and their use in the *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/applications)** section!
@@ -22,7 +23,7 @@ Capacity to shift the electricity demand can be installed for the metal, chemica
 
 ## Costs: update of charts and data export
 
-ETM contains new cost charts with clear catogories. The method of cost calculation has also been updated. ETM now explicitly calculates CAPEX, OPEX and fuel costs. For all technologies these can be exported in the **[data export section](https://pro.energytransitionmodel.com/scenario/data/data_export/specifications-annual-costs)** of the ETM. For more details about cost calculations see the **[documentation](**https://docs.energytransitionmodel.com/main/cost-main-principles)**.
+The ETM contains new cost charts with clear catogories. The method of cost calculation has also been updated. The ETM now explicitly calculates CAPEX, OPEX and fuel costs. For all technologies these can be exported in the **[data export section](https://pro.energytransitionmodel.com/scenario/data/data_export/specifications-annual-costs)** of the ETM. For more details about cost calculations see the **[documentation](**https://docs.energytransitionmodel.com/main/cost-main-principles)**.
 
 -> ![](/assets/pages/whats_new/costs_en.png) <-
 

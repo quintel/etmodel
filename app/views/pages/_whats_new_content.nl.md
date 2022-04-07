@@ -1,9 +1,12 @@
 # Wat is er nieuw in het Energietransitiemodel?
+___
 
 # April 2022
 
 ## Toevoegingen en verbeteringen voor EU-landen
-Met de toevoeging van Cyprus, Estland en Malta zijn nu alle EU-landen beschikbaar in het model! Je kunt deze landen bekijken door er eentje te selecteren bij het kiezen van je regio als je een nieuw scenario start.
+Met de toevoeging van Cyprus, Estland en Malta zijn nu alle EU-landen beschikbaar in het ETM! Je kunt deze landen bekijken door er eentje te selecteren bij het kiezen van je regio als je een nieuw scenario start.
+
+De basisjaargegevens voor deze landen zijn voornamelijk afkomstig uit de **[Eurostat Energiebalansen 2019](https://ec.europa.eu/eurostat/web/energy/data/energy-balances)** en **[JRC Potencia-tool](https://joint-research-centre.ec.europa.eu/potencia_en)**. Kijk voor een compleet overzicht van alle data die gebruikt wordt op de **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. De finale energievraag voor deze EU-landen komt zoveel mogelijk overeen met de Eurostat Energiebalansen. De aanbodzijde (warmte- en elektriciteitsproductie) is complexer en voor verbetering vatbaar. Voel je vrij suggesties te doen via het **[Contactformulier](https://energytransitionmodel.com/contact)**.
 
 ## Vrachttransport door bestelbussen
 In plaats van onderdeel te zijn van de categorie vrachtwagens worden bestelbussen nu als een afzonderlijke categorie getoond in het model. Hierdoor kun je verschillende keuzes maken voor ontwikkelingen in het gebruik en de technologieën van vrachtwagens en bestelbussen in de *Vraag → Transport* → **[Vrachtvervoer](/scenario/demand/transport_freight_transport/applications)** sectie!
@@ -16,6 +19,13 @@ Je kunt nu het effect van vraagsturing (*Demand Side Response*) voor de industri
 Vermogen om elektriciteitsvraag te verschuiven kan worden geïnstalleerd voor de metaal-, chemische en overige industrie. In uren dat de elektriciteitsprijs te hoog is zal de sector dan in staat zijn de vraag te verlagen. Het tekort dat in die uren oploopt wordt op een later moment ingehaald, als de elektriciteitsprijs gedaald is, wat kosten bespaart voor de industrie.
 
 -> ![](/assets/pages/whats_new/load_shifting_nl.png) <-
+
+## Kosten: nieuwe grafieken en data-export
+
+Het ETM bevat nieuwe grafieken voor kosten. Deze grafieken tonen duidelijke categorieën. Ook de berekeningsmethode is veranderd. Het ETM berekent nu expliciet CAPEX, OPEX en brandstofkosten. Ga naar **[data-export](https://pro.energytransitionmodel.com/scenario/data/data_export/specifications-annual-costs)** om kostendetails van alle technologieën en energiedragers te exporteren. Meer details over kostenberekeningen in het ETM staan in de **[documentatie](**https://docs.energytransitionmodel.com/main/cost-main-principles)**.
+
+-> ![](/assets/pages/whats_new/costs_nl.png) <-
+
 
 ---
 

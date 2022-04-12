@@ -316,16 +316,16 @@ GEM
     net-ssh (6.1.0)
     newrelic_rpm (8.5.0)
     nio4r (2.5.8)
-    nokogiri (1.13.3)
+    nokogiri (1.13.4)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.13.3-aarch64-linux)
+    nokogiri (1.13.4-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.13.3-arm64-darwin)
+    nokogiri (1.13.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.3-x86_64-darwin)
+    nokogiri (1.13.4-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.3-x86_64-linux)
+    nokogiri (1.13.4-x86_64-linux)
       racc (~> 1.4)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
@@ -602,7 +602,7 @@ DEPENDENCIES
   mini_racer (>= 0.6)
   mysql2
   newrelic_rpm
-  nokogiri (~> 1.12)
+  nokogiri (~> 1.13)
   non-stupid-digest-assets
   oily_png
   openid_connect

@@ -335,6 +335,12 @@ nl:
     electricity_interconnector_4_export_availability: *interconnector_export_availability
     electricity_interconnector_5_export_availability: *interconnector_export_availability
     electricity_interconnector_6_export_availability: *interconnector_export_availability
+    electricity_interconnector_7_export_availability: *interconnector_export_availability
+    electricity_interconnector_8_export_availability: *interconnector_export_availability
+    electricity_interconnector_9_export_availability: *interconnector_export_availability
+    electricity_interconnector_10_export_availability: *interconnector_export_availability
+    electricity_interconnector_11_export_availability: *interconnector_export_availability
+    electricity_interconnector_12_export_availability: *interconnector_export_availability
     electricity_interconnector_1_import_availability: &interconnector_import_availability
       title: Beschikbaar voor import
       short_description:
@@ -349,6 +355,12 @@ nl:
     electricity_interconnector_4_import_availability: *interconnector_import_availability
     electricity_interconnector_5_import_availability: *interconnector_import_availability
     electricity_interconnector_6_import_availability: *interconnector_import_availability
+    electricity_interconnector_7_import_availability: *interconnector_import_availability
+    electricity_interconnector_8_import_availability: *interconnector_import_availability
+    electricity_interconnector_9_import_availability: *interconnector_import_availability
+    electricity_interconnector_10_import_availability: *interconnector_import_availability
+    electricity_interconnector_11_import_availability: *interconnector_import_availability
+    electricity_interconnector_12_import_availability: *interconnector_import_availability
     electricity_interconnector_1_capacity: &interconnector_capacity
       title: Interconnectiecapaciteit
       short_description:
@@ -359,6 +371,12 @@ nl:
     electricity_interconnector_4_capacity: *interconnector_capacity
     electricity_interconnector_5_capacity: *interconnector_capacity
     electricity_interconnector_6_capacity: *interconnector_capacity
+    electricity_interconnector_7_capacity: *interconnector_capacity
+    electricity_interconnector_8_capacity: *interconnector_capacity
+    electricity_interconnector_9_capacity: *interconnector_capacity
+    electricity_interconnector_10_capacity: *interconnector_capacity
+    electricity_interconnector_11_capacity: *interconnector_capacity
+    electricity_interconnector_12_capacity: *interconnector_capacity
     electricity_interconnector_1_marginal_costs: &interconnector_marginal_costs
       title: Elektriciteitsprijs in externe markt
       short_description:
@@ -375,6 +393,12 @@ nl:
     electricity_interconnector_4_marginal_costs: *interconnector_marginal_costs
     electricity_interconnector_5_marginal_costs: *interconnector_marginal_costs
     electricity_interconnector_6_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_7_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_8_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_9_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_10_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_11_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_12_marginal_costs: *interconnector_marginal_costs
     curtailment_of_households_solar_pv_solar_radiation:
       title: Zon op dak huishoudens
       short_description:
@@ -844,6 +868,12 @@ nl:
     electricity_interconnector_4_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_5_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_6_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_7_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_8_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_9_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_10_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_11_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_12_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Toekomstige import
       short_description:
@@ -866,6 +896,12 @@ nl:
     electricity_interconnector_4_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_5_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_6_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_7_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_8_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_9_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_10_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_11_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_12_co2_emissions_future: *interconnector_co2_future
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
       title: Power-to-gas
       short_description:

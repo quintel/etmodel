@@ -74,7 +74,7 @@ RSpec.describe FeedbackController do
 
     before do
       allow(CreateApiScenario).to receive(:call)
-        .with(protected: false, scenario_id: '1')
+        .with(read_only: false, scenario_id: '1')
         .and_return(ServiceResult.success(Api::Scenario.new(id: 2)))
     end
 

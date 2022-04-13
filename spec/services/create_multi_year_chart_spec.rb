@@ -11,13 +11,13 @@ describe CreateMultiYearChart, type: :service do
 
   def stub_successful_interpolation(year, id)
     allow(InterpolateApiScenario).to receive(:call)
-      .with(scenario.scenario_id, year, protect: true)
+      .with(scenario.scenario_id, year, keep_compatible: true)
       .and_return(ServiceResult.success('id' => id))
   end
 
   def stub_failed_interpolation(year, errors)
     allow(InterpolateApiScenario).to receive(:call)
-      .with(scenario.scenario_id, year, protect: true)
+      .with(scenario.scenario_id, year, keep_compatible: true)
       .and_return(ServiceResult.failure(errors))
   end
 
@@ -73,10 +73,10 @@ describe CreateMultiYearChart, type: :service do
       it 'does not unprotect any scenarios' do
         # Service should stop immediately after the 2030 scenario, and not
         # attempt to create any more.
-        allow(UnprotectApiScenario).to receive(:call)
+        allow(SetApiScenarioCompatibility).to receive(:dont_keep_compatible)
 
         result
-        expect(UnprotectApiScenario).not_to have_received(:call)
+        expect(SetApiScenarioCompatibility).not_to have_received(:dont_keep_compatible)
       end
 
       it 'includes the errors on the Result' do
@@ -97,7 +97,7 @@ describe CreateMultiYearChart, type: :service do
         stub_successful_interpolation(2030, 2)
         stub_failed_interpolation(2040, ["That didn't work."])
 
-        allow(UnprotectApiScenario).to receive(:call).with(2)
+        allow(SetApiScenarioCompatibility).to receive(:dont_keep_compatible).with(2)
       end
 
       it 'is not successful' do
@@ -106,7 +106,7 @@ describe CreateMultiYearChart, type: :service do
 
       it 'unprotects the successful 2030 scenario' do
         result
-        expect(UnprotectApiScenario).to have_received(:call).with(2)
+        expect(SetApiScenarioCompatibility).to have_received(:dont_keep_compatible).with(2)
       end
 
       it 'does not create any MultiYearChartScenario records' do
@@ -125,9 +125,9 @@ describe CreateMultiYearChart, type: :service do
       end
 
       it 'does not unprotect any scenarios' do
-        allow(UnprotectApiScenario).to receive(:call)
+        allow(SetApiScenarioCompatibility).to receive(:dont_keep_compatible)
         result
-        expect(UnprotectApiScenario).not_to have_received(:call)
+        expect(SetApiScenarioCompatibility).not_to have_received(:dont_keep_compatible)
       end
 
       it 'includes the errors on the Result' do
@@ -152,8 +152,8 @@ describe CreateMultiYearChart, type: :service do
     before do
       stub_successful_interpolation(2030, 2)
       stub_successful_interpolation(2050, 3)
-      allow(UnprotectApiScenario).to receive(:call).with(2)
-      allow(UnprotectApiScenario).to receive(:call).with(3)
+      allow(SetApiScenarioCompatibility).to receive(:dont_keep_compatible).with(2)
+      allow(SetApiScenarioCompatibility).to receive(:dont_keep_compatible).with(3)
     end
 
     it 'raises the error' do
@@ -167,7 +167,7 @@ describe CreateMultiYearChart, type: :service do
         nil
       end
 
-      expect(UnprotectApiScenario).to have_received(:call).with(2)
+      expect(SetApiScenarioCompatibility).to have_received(:dont_keep_compatible).with(2)
     end
 
     it 'unprotects the 2050 scenario' do
@@ -177,7 +177,7 @@ describe CreateMultiYearChart, type: :service do
         nil
       end
 
-      expect(UnprotectApiScenario).to have_received(:call).with(3)
+      expect(SetApiScenarioCompatibility).to have_received(:dont_keep_compatible).with(3)
     end
   end
 end

@@ -145,7 +145,9 @@ describe SavedScenariosController, vcr: true do
 
     context 'with invalid attributes' do
       before do
-        allow(UnprotectApiScenario).to receive(:call).and_return(ServiceResult.success)
+        allow(SetApiScenarioCompatibility)
+          .to receive(:dont_keep_compatible)
+          .and_return(ServiceResult.success)
       end
 
       let(:request) do

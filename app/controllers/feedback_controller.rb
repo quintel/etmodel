@@ -40,7 +40,7 @@ class FeedbackController < ApplicationController
 
     if feedback_params[:scenario_id].present?
       scenario_res = CreateApiScenario.call(
-        protected: false,
+        read_only: false,
         scenario_id: feedback_params[:scenario_id]
       )
 

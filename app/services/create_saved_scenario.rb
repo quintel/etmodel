@@ -30,7 +30,7 @@ CreateSavedScenario = lambda do |scenario_id, user, settings = {}|
   )
 
   unless saved_scenario.valid?
-    UnprotectApiScenario.call(api_scenario.id)
+    SetApiScenarioCompatibility.dont_keep_compatible(api_scenario.id)
 
     # Set the scenario ID back to the original, rather than the cloned scenario created by
     # CreateApiScenario.

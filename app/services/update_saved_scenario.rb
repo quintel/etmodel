@@ -2,7 +2,7 @@
 
 # Creates a new API scenario based on the given existing API `scenario_id`, and
 # then adds it to the provided SavedScenario adding the old scenario to history.
-# The new API scenario will be marked as protected.
+# The new API scenario will be marked as read-only.
 #
 # saved_scenario  - The scenario to be updated
 # scenario_id     - The ID of the scenario to be saved.
@@ -39,7 +39,7 @@ class UpdateSavedScenario
   private
 
   def unprotect
-    UnprotectApiScenario.call api_scenario.id
+    SetApiScenarioCompatibility.dont_keep_compatible(api_scenario.id)
   end
 
   def failure

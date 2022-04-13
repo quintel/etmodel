@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 # Creates a new API scenario with the given attributes. Scenarios are marked as
-# protected.
+# read-only unless otherwise configured using the given attributes.
 CreateApiScenario = lambda do |attributes = {}|
   attributes = attributes
-    .slice(:area_code, :end_year, :scenario_id, :protected)
-    .reverse_merge(protected: true, source: 'ETM')
+    .slice(:area_code, :end_year, :scenario_id, :read_only)
+    .reverse_merge(read_only: true, source: 'ETM')
 
   scenario = Api::Scenario.create(scenario: { scenario: attributes })
 

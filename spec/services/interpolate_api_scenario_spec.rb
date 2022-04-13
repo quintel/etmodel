@@ -5,25 +5,25 @@ require 'rails_helper'
 describe InterpolateApiScenario, type: :service do
   # let(:scenario) { FactoryBot.build(:api_scenario, id: 1) }
   let(:user) { FactoryBot.create(:user) }
-  let(:result) { described_class.call(1, 2030, protect: protect) }
-  let(:protect) { false }
+  let(:result) { described_class.call(1, 2030, keep_compatible: keep_compatible) }
+  let(:keep_compatible) { false }
 
   # --
 
   # Returns a Struct which quacks enough like an HTTParty::Response for our
   # purposes.
-  def stub_response(isok, body, protect = false)
+  def stub_response(isok, body, keep_compatible = false)
     allow(HTTParty)
       .to receive(:post)
       .with(
         "#{Settings.api_url}/api/v3/scenarios/1/interpolate",
-        hash_including(body: { end_year: 2030, protected: protect }.to_json)
+        hash_including(body: { end_year: 2030, keep_compatible: }.to_json)
       )
       .and_return(ServicesHelper::StubResponse.new(isok, body))
   end
 
-  def stub_ok_response(id, protect)
-    stub_response(true, { 'id' => id }, protect)
+  def stub_ok_response(id, keep_compatible)
+    stub_response(true, { 'id' => id }, keep_compatible)
   end
 
   def stub_error_response(errors)
@@ -34,7 +34,7 @@ describe InterpolateApiScenario, type: :service do
 
   context 'when the interpolation is successful' do
     before do
-      stub_ok_response(2, protect)
+      stub_ok_response(2, keep_compatible)
     end
 
     it 'returns a ServiceResult' do
@@ -61,19 +61,19 @@ describe InterpolateApiScenario, type: :service do
 
       expect(HTTParty).to have_received(:post).with(
         anything,
-        hash_including(body: { end_year: 2030, protected: false }.to_json)
+        hash_including(body: { end_year: 2030, keep_compatible: false }.to_json)
       )
     end
 
-    context 'when marking the scenario protected' do
-      let(:protect) { true }
+    context 'when marking the scenario keep_compatible' do
+      let(:keep_compatible) { true }
 
       it 'tells ETEngine to protect the scenario' do
         result
 
         expect(HTTParty).to have_received(:post).with(
           anything,
-          hash_including(body: { end_year: 2030, protected: true }.to_json)
+          hash_including(body: { end_year: 2030, keep_compatible: true }.to_json)
         )
       end
     end

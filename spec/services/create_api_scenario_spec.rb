@@ -10,7 +10,7 @@ describe CreateApiScenario, type: :service do
       area_code: 'nl',
       end_year: 2050,
       scenario_id: nil,
-      protected: true,
+      read_only: true,
       source: 'ETM'
     }
   end
@@ -37,11 +37,11 @@ describe CreateApiScenario, type: :service do
     end
   end
 
-  context 'when creating an unprotected scenario' do
+  context 'when creating an writable scenario' do
     let(:scenario) { FactoryBot.build(:api_scenario, attributes) }
 
     let(:attributes) do
-      super().merge(protected: false)
+      super().merge(read_only: false)
     end
 
     it 'returns a ServiceResult' do
@@ -52,11 +52,11 @@ describe CreateApiScenario, type: :service do
       expect(result).to be_successful
     end
 
-    it 'creates an unprotected scenario' do
+    it 'creates a writable scenario' do
       result
 
       expect(Api::Scenario).to have_received(:create)
-        .with(scenario: { scenario: hash_including(protected: false) })
+        .with(scenario: { scenario: hash_including(read_only: false) })
     end
   end
 

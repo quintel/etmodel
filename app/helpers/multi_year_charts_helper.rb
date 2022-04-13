@@ -10,7 +10,6 @@ module MultiYearChartsHelper
   end
 
   def can_use_as_myc_scenario?(saved_scenario)
-    scenario = saved_scenario.scenario
-    scenario && (scenario.loadable? && scenario.end_year == 2050)
+    saved_scenario.loadable? && saved_scenario.end_year == 2050
   end
 end

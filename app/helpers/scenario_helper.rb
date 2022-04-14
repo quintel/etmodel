@@ -134,7 +134,7 @@ module ScenarioHelper
   # Public: Renders the HTML for an electricity interconnector price curve
   # upload form.
   #
-  # num - The number of the interconnector (1-6).
+  # num - The number of the interconnector (1-12).
   def interconnector_price_curve_upload(num)
     price_curve_upload(
       "interconnector_#{num}_price",

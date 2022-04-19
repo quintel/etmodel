@@ -113,27 +113,6 @@
             color: #999
             overflow: auto
             background: #fff
-          div.interface_group
-            color: #999
-            margin: 12px 0 0
-            overflow: hidden
-            padding: 10px 0 0
-            text-align: left
-            width: 100%
-            hr
-              margin: 0
-            .label
-              background: white
-              display: inline-block
-              margin-top: -12px
-              padding-right: 10px
-              vertical-align: top
-            .sub_header_arrow
-              background-position: center bottom
-              margin: -9px 12px 0 0
-              padding-left: 10px
-              padding-right: 10px
-              width: auto
           .sub_header_arrow
             background: #fff image-url('slides/grey_triangle_down.png') no-repeat right bottom
             display: inline-block
@@ -148,6 +127,29 @@
               background-size: 49px 6px
           .sub_header + .interface_group
             margin-top: 0
+
+        div.interface_group
+          color: #999
+          margin: 12px 0 0
+          overflow: hidden
+          padding: 10px 0 0
+          text-align: left
+          width: 100%
+          hr
+            margin: 0
+          .label
+            background: white
+            display: inline-block
+            margin-top: -12px
+            padding-right: 10px
+            vertical-align: top
+          .sub_header_arrow
+            background-position: center bottom
+            margin: -9px 12px 0 0
+            padding-left: 10px
+            padding-right: 10px
+            width: auto
+
       @include hidpi
         a.slide_header
           background-image: image-url('slides/triangle-hidpi.png')

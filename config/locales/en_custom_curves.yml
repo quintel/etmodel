@@ -4,6 +4,12 @@ en:
     confirm_remove: Are you sure you wish to remove this curve and revert to the default?
     default: Default curve
     full_load_hours: Full load hours
+    interconnector_intro_html: |
+      It is assumed that the price of imported electricity and availability of import and export are
+      constant, set using the sliders above. You may override these assumptions by uploading a CSV
+      file detailing the hourly price or availability. For more information on how this works, and
+      examples of compatible CSV files, please <a href=%{docs_path}>see our documentation</a>.
+    interface_group_title: Custom curves
     loading: Loading...
     max: Maximum
     mean: Mean
@@ -47,6 +53,30 @@ en:
       interconnector_10_price: Interconnector 10 price
       interconnector_11_price: Interconnector 11 price
       interconnector_12_price: Interconnector 12 price
+      interconnector_1_import_availability: Interconnector 1 import availability
+      interconnector_2_import_availability: Interconnector 2 import availability
+      interconnector_3_import_availability: Interconnector 3 import availability
+      interconnector_4_import_availability: Interconnector 4 import availability
+      interconnector_5_import_availability: Interconnector 5 import availability
+      interconnector_6_import_availability: Interconnector 6 import availability
+      interconnector_7_import_availability: Interconnector 7 import availability
+      interconnector_8_import_availability: Interconnector 8 import availability
+      interconnector_9_import_availability: Interconnector 9 import availability
+      interconnector_10_import_availability: Interconnector 10 import availability
+      interconnector_11_import_availability: Interconnector 11 import availability
+      interconnector_12_import_availability: Interconnector 12 import availability
+      interconnector_1_export_availability: Interconnector 1 export availability
+      interconnector_2_export_availability: Interconnector 2 export availability
+      interconnector_3_export_availability: Interconnector 3 export availability
+      interconnector_4_export_availability: Interconnector 4 export availability
+      interconnector_5_export_availability: Interconnector 5 export availability
+      interconnector_6_export_availability: Interconnector 6 export availability
+      interconnector_7_export_availability: Interconnector 7 export availability
+      interconnector_8_export_availability: Interconnector 8 export availability
+      interconnector_9_export_availability: Interconnector 9 export availability
+      interconnector_10_export_availability: Interconnector 10 export availability
+      interconnector_11_export_availability: Interconnector 11 export availability
+      interconnector_12_export_availability: Interconnector 12 export availability
       weather/air_temperature: Air temperature
       weather/buildings_heating: Buildings heating
       electric_buses: Electric buses
@@ -79,6 +109,14 @@ en:
       weather/wind_coastal_baseline: Wind coastal
       weather/wind_inland_baseline: Wind inland
     types:
+      availability:
+        default: Default availability
+        type: Availability curve
+        help: |
+          Customise the hourly availability by specifying a value between 0 and 1 for each hour. A
+          value of 0 means that none of the capacity is available; a value of 0.5 means 50% is
+          available; and 1 means all the capacity is available. Any value between 0 and 1 is
+          permitted.
       capacity_profile:
         default: Default profile
         type: Capacity profile
@@ -96,12 +134,6 @@ en:
           You can change this by uploading a CSV file, specifying the price of imported
           electricity for every hour of the year. This file should contain 8760 rows
           (one for each hour per year) with a price in €/MWh.
-        description_html: |
-          It is assumed that the price of imported electricity is constant, set
-          using the slider above. You may override this assumption by uploading a
-          CSV file detailing the hourly price of imports. For more information on
-          how this works, and examples of compatible CSV files, please
-          <a href=%{docs_path}>see our documentation</a>.
         value: "€%{value}/MWh"
         curve_from_scenario: Curve from scenario
         imported_from: From scenario

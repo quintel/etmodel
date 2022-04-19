@@ -118,28 +118,12 @@ module ScenarioHelper
     # rubocop:enable Rails/OutputSafety
   end
 
-  # Public: Renders the HTML needed to show a price curve upload form.
-  #
-  # curve_name - The name/type of the curve.
-  # input_name - An option input key which will be set to disabled if the
-  #              scenario has a curve attached.
-  def price_curve_upload(curve_name, input_key)
-    render partial: 'scenarios/slides/price_curve_upload', locals: {
-      associated_input: input_key,
-      curve_name: curve_name,
-      curve_type: :price
-    }
-  end
-
   # Public: Renders the HTML for an electricity interconnector price curve
   # upload form.
   #
   # num - The number of the interconnector (1-12).
   def interconnector_price_curve_upload(num)
-    price_curve_upload(
-      "interconnector_#{num}_price",
-      "electricity_interconnector_#{num}_marginal_costs"
-    )
+    render partial: 'scenarios/slides/interconnector_curves_upload', locals: { num: }
   end
 
   # Public: Creates a link to view the source data behind the current area in the ETM Dataset

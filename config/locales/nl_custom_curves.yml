@@ -4,6 +4,12 @@ nl:
     confirm_remove: Weet je zeker dat je dit profiel wilt verwijderen en het standaardprofiel wilt gebruiken?
     default: Standaardprofiel
     full_load_hours: Vollasturen
+    interconnector_intro_html: |
+      It is assumed that the price of imported electricity and availability of import and export are
+      constant, set using the sliders above. You may override these assumptions by uploading a CSV
+      file detailing the hourly price or availability. For more information on how this works, and
+      examples of compatible CSV files, please <a href=%{docs_path}>see our documentation</a>.
+    interface_group_title: Custom curves
     loading: Laden...
     max: Maximum
     mean: Gemiddelde
@@ -47,6 +53,30 @@ nl:
       interconnector_10_price: Interconnector 10 prijscurve
       interconnector_11_price: Interconnector 11 prijscurve
       interconnector_12_price: Interconnector 12 prijscurve
+      interconnector_1_import_availability: Interconnector 1 import availability
+      interconnector_2_import_availability: Interconnector 2 import availability
+      interconnector_3_import_availability: Interconnector 3 import availability
+      interconnector_4_import_availability: Interconnector 4 import availability
+      interconnector_5_import_availability: Interconnector 5 import availability
+      interconnector_6_import_availability: Interconnector 6 import availability
+      interconnector_7_import_availability: Interconnector 7 import availability
+      interconnector_8_import_availability: Interconnector 8 import availability
+      interconnector_9_import_availability: Interconnector 9 import availability
+      interconnector_10_import_availability: Interconnector 10 import availability
+      interconnector_11_import_availability: Interconnector 11 import availability
+      interconnector_12_import_availability: Interconnector 12 import availability
+      interconnector_1_export_availability: Interconnector 1 export availability
+      interconnector_2_export_availability: Interconnector 2 export availability
+      interconnector_3_export_availability: Interconnector 3 export availability
+      interconnector_4_export_availability: Interconnector 4 export availability
+      interconnector_5_export_availability: Interconnector 5 export availability
+      interconnector_6_export_availability: Interconnector 6 export availability
+      interconnector_7_export_availability: Interconnector 7 export availability
+      interconnector_8_export_availability: Interconnector 8 export availability
+      interconnector_9_export_availability: Interconnector 9 export availability
+      interconnector_10_export_availability: Interconnector 10 export availability
+      interconnector_11_export_availability: Interconnector 11 export availability
+      interconnector_12_export_availability: Interconnector 12 export availability
       weather/air_temperature: Buitentemperatuur
       weather/buildings_heating: Verwarming gebouwen
       electric_buses: Elektrische bussen
@@ -79,6 +109,14 @@ nl:
       weather/wind_coastal_baseline: Wind aan de kust
       weather/wind_inland_baseline: Wind op land
     types:
+      availability:
+        default: Default availability
+        type: Availability curve
+        help: |
+          Customise the hourly availability by specifying a value between 0 and 1 for each hour. A
+          value of 0 means that none of the capacity is available; a value of 0.5 means 50% is
+          available; and 1 means all the capacity is available. Any value between 0 and 1 is
+          permitted.
       capacity_profile:
         default: Standaard profiel
         type: Capaciteitsprofiel
@@ -97,11 +135,6 @@ nl:
           van het jaar een prijs voor import-stroom.
           Dit bestand moet uit 8760 rijen bestaan (één voor elk uur per jaar) met
           per rij de gewenste prijs (in €/MWh).
-        description_html: |
-          Het ETM veronderstelt standaard dat de prijs van geïmporteerde stroom constant is gedurende het jaar. Deze prijs kun je instellen met de slider hierboven. Je kunt afwijken van deze aanname door hieronder een
-          CSV-bestand te importeren met daarin voor elk uur van het jaar een prijs voor
-          import-stroom (in €/MWh). Voor meer uitleg over hoe dit werkt en voorbeelden van compatibele profielen
-          kun je <a href=%{docs_path}>onze documentatie bekijken.</a>.
         value: "€%{value}/MWh"
         curve_from_scenario: Profiel vanuit scenario
         imported_from: Vanuit scenario

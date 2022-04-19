@@ -78,7 +78,9 @@
 
     /** Sorts curves by their translated name. */
     comparator: function (a, b) {
-      return a.translatedName().localeCompare(b.translatedName());
+      return a
+        .translatedName()
+        .localeCompare(b.translatedName(), I18n.locale, { numeric: true, sensitivity: 'base' });
     },
 
     getOrBuild: function (id) {

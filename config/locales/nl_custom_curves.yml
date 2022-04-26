@@ -6,11 +6,12 @@ nl:
     download_file: Download bestand
     full_load_hours: Vollasturen
     interconnector_intro_html: |
-      It is assumed that the price of imported electricity and availability of import and export are
-      constant, set using the sliders above. You may override these assumptions by uploading a CSV
-      file detailing the hourly price or availability. For more information on how this works, and
-      examples of compatible CSV files, please <a href=%{docs_path}>see our documentation</a>.
-    interface_group_title: Custom curves
+      Het ETM veronderstelt standaard dat de prijs van geïmporteerde stroom en de beschikbaarheid van 
+      import en export constant zijn gedurende het jaar. Deze kun je instellen met de schuifjes 
+      hierboven. Je kunt afwijken van deze aannames door hieronder CSV-bestanden te importeren met de prijs of 
+      beschikbaarheid per uur. Zie onze <a href=%{docs_path}>documentatie</a> voor meer uitleg en 
+      voorbeelden van geschikte CSV-bestanden.
+    interface_group_title: Aanpasbare profielen
     loading: Laden...
     max: Maximum
     mean: Gemiddelde
@@ -54,30 +55,30 @@ nl:
       interconnector_10_price: Interconnector 10 prijscurve
       interconnector_11_price: Interconnector 11 prijscurve
       interconnector_12_price: Interconnector 12 prijscurve
-      interconnector_1_import_availability: Interconnector 1 import availability
-      interconnector_2_import_availability: Interconnector 2 import availability
-      interconnector_3_import_availability: Interconnector 3 import availability
-      interconnector_4_import_availability: Interconnector 4 import availability
-      interconnector_5_import_availability: Interconnector 5 import availability
-      interconnector_6_import_availability: Interconnector 6 import availability
-      interconnector_7_import_availability: Interconnector 7 import availability
-      interconnector_8_import_availability: Interconnector 8 import availability
-      interconnector_9_import_availability: Interconnector 9 import availability
-      interconnector_10_import_availability: Interconnector 10 import availability
-      interconnector_11_import_availability: Interconnector 11 import availability
-      interconnector_12_import_availability: Interconnector 12 import availability
-      interconnector_1_export_availability: Interconnector 1 export availability
-      interconnector_2_export_availability: Interconnector 2 export availability
-      interconnector_3_export_availability: Interconnector 3 export availability
-      interconnector_4_export_availability: Interconnector 4 export availability
-      interconnector_5_export_availability: Interconnector 5 export availability
-      interconnector_6_export_availability: Interconnector 6 export availability
-      interconnector_7_export_availability: Interconnector 7 export availability
-      interconnector_8_export_availability: Interconnector 8 export availability
-      interconnector_9_export_availability: Interconnector 9 export availability
-      interconnector_10_export_availability: Interconnector 10 export availability
-      interconnector_11_export_availability: Interconnector 11 export availability
-      interconnector_12_export_availability: Interconnector 12 export availability
+      interconnector_1_import_availability: Interconnector 1 import beschikbaarheid
+      interconnector_2_import_availability: Interconnector 2 import beschikbaarheid
+      interconnector_3_import_availability: Interconnector 3 import beschikbaarheid
+      interconnector_4_import_availability: Interconnector 4 import beschikbaarheid
+      interconnector_5_import_availability: Interconnector 5 import beschikbaarheid
+      interconnector_6_import_availability: Interconnector 6 import beschikbaarheid
+      interconnector_7_import_availability: Interconnector 7 import beschikbaarheid
+      interconnector_8_import_availability: Interconnector 8 import beschikbaarheid
+      interconnector_9_import_availability: Interconnector 9 import beschikbaarheid
+      interconnector_10_import_availability: Interconnector 10 import beschikbaarheid
+      interconnector_11_import_availability: Interconnector 11 import beschikbaarheid
+      interconnector_12_import_availability: Interconnector 12 import beschikbaarheid
+      interconnector_1_export_availability: Interconnector 1 export beschikbaarheid
+      interconnector_2_export_availability: Interconnector 2 export beschikbaarheid
+      interconnector_3_export_availability: Interconnector 3 export beschikbaarheid
+      interconnector_4_export_availability: Interconnector 4 export beschikbaarheid
+      interconnector_5_export_availability: Interconnector 5 export beschikbaarheid
+      interconnector_6_export_availability: Interconnector 6 export beschikbaarheid
+      interconnector_7_export_availability: Interconnector 7 export beschikbaarheid
+      interconnector_8_export_availability: Interconnector 8 export beschikbaarheid
+      interconnector_9_export_availability: Interconnector 9 export beschikbaarheid
+      interconnector_10_export_availability: Interconnector 10 export beschikbaarheid
+      interconnector_11_export_availability: Interconnector 11 export beschikbaarheid
+      interconnector_12_export_availability: Interconnector 12 export beschikbaarheid
       weather/air_temperature: Buitentemperatuur
       weather/buildings_heating: Verwarming gebouwen
       electric_buses: Elektrische bussen
@@ -111,13 +112,13 @@ nl:
       weather/wind_inland_baseline: Wind op land
     types:
       availability:
-        default: Default availability
-        type: Availability curve
+        default: Standaard beschikbaarheid
+        type: Beschikbaarheidsprofiel
         help: |
-          Customise the hourly availability by specifying a value between 0 and 1 for each hour. A
-          value of 0 means that none of the capacity is available; a value of 0.5 means 50% is
-          available; and 1 means all the capacity is available. Any value between 0 and 1 is
-          permitted.
+          Pas de beschikbaarheid per uur aan door voor elk uur een waarde tussen 0 en 1 op te geven.
+          Een waarde van 0 betekent dat geen vermogen beschikbaar is; een waarde van 0.5 betekent dat 
+          50% van het vermogen beschikbaar is; en 1 betekent dat al het vermogen beschikbaar is. Alle 
+          waardes tussen 0 en 1 zijn toegestaan.
       capacity_profile:
         default: Standaard profiel
         type: Capaciteitsprofiel

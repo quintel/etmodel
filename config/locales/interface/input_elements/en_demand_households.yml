@@ -4,113 +4,53 @@ en:
     households_insulation_level_apartments:
       title: Apartment
       short_description:
-      description: "The heat demand reduction is the percentage by which the heat
-        demand is reduced compared to a badly insulated house (characterised by label
-        G), i.e. the slider indicates how much of the potential savings has been achieved.
-        The current settings are based on the energy labels that are present within
-        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">\"Basisregistratie
-        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
-        demand reduction percentages. The relationship between heat demand reduction
-        and energy labels per housing type can be found in our <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>.
-        However, the mapping is ambiguous since there is no direct relationship between
-        energy labels and the insulation level. Please note that the label image above
-        the household insulation sliders shows the <i>average</i> label vs. heat demand
-        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
-        no insulation costs are taken into account, only when insulation measures
-        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
-        distinction between costs for existing and newly built houses. The insulation
-        costs for houses are not fixed per % heat demand reduction, but instead the
-        costs depend on the level of insulation in the present year: e.g. going from
-        0 to 30% is cheaper than going from 30% to 60% insulation."
+      description: "With this slider you can set the percentage of heat demand reduction based on the amount of insulation in households.
+        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
+        home to a highly insulated home. This amounts to a potential heat demand reduction
+        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
+        the heat demand of households. \r\n<br><br>\r\nCheck out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information on insulation."
     households_insulation_level_corner_houses:
       title: Corner house
       short_description:
-      description: "The heat demand reduction is the percentage by which the heat
-        demand is reduced compared to a badly insulated house (characterised by label
-        G), i.e. the slider indicates how much of the potential savings has been achieved.
-        The current settings are based on the energy labels that are present within
-        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">\"Basisregistratie
-        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
-        demand reduction percentages. The relationship between heat demand reduction
-        and energy labels per housing type can be found in our <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>.
-        However, the mapping is ambiguous since there is no direct relationship between
-        energy labels and the insulation level. Please note that the label image above
-        the household insulation sliders shows the <i>average</i> label vs. heat demand
-        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
-        no insulation costs are taken into account, only when insulation measures
-        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
-        distinction between costs for existing and newly built houses. The insulation
-        costs for houses are not fixed per % heat demand reduction, but instead the
-        costs depend on the level of insulation in the present year: e.g. going from
-        0 to 30% is cheaper than going from 30% to 60% insulation."
+      description: "With this slider you can set the percentage of heat demand reduction based on the amount of insulation in households.
+        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
+        home to a highly insulated home. This amounts to a potential heat demand reduction
+        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
+        the heat demand of households. \r\n<br><br>\r\nCheck out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information on insulation."
     households_insulation_level_detached_houses:
       title: Detached house
       short_description:
-      description: "The heat demand reduction is the percentage by which the heat
-        demand is reduced compared to a badly insulated house (characterised by label
-        G), i.e. the slider indicates how much of the potential savings has been achieved.
-        The current settings are based on the energy labels that are present within
-        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">\"Basisregistratie
-        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
-        demand reduction percentages. The relationship between heat demand reduction
-        and energy labels per housing type can be found in our <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>.
-        However, the mapping is ambiguous since there is no direct relationship between
-        energy labels and the insulation level. Please note that the label image above
-        the household insulation sliders shows the <i>average</i> label vs. heat demand
-        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
-        no insulation costs are taken into account, only when insulation measures
-        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
-        distinction between costs for existing and newly built houses. The insulation
-        costs for houses are not fixed per % heat demand reduction, but instead the
-        costs depend on the level of insulation in the present year: e.g. going from
-        0 to 30% is cheaper than going from 30% to 60% insulation."
+      description: "With this slider you can set the percentage of heat demand reduction based on the amount of insulation in households.
+        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
+        home to a highly insulated home. This amounts to a potential heat demand reduction
+        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
+        the heat demand of households. \r\n<br><br>\r\nCheck out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information on insulation."
     households_insulation_level_semi_detached_houses:
       title: Semi-detached house
       short_description:
-      description: "The heat demand reduction is the percentage by which the heat
-        demand is reduced compared to a badly insulated house (characterised by label
-        G), i.e. the slider indicates how much of the potential savings has been achieved.
-        The current settings are based on the energy labels that are present within
-        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">\"Basisregistratie
-        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
-        demand reduction percentages. The relationship between heat demand reduction
-        and energy labels per housing type can be found in our <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>.
-        However, the mapping is ambiguous since there is no direct relationship between
-        energy labels and the insulation level. Please note that the label image above
-        the household insulation sliders shows the <i>average</i> label vs. heat demand
-        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
-        no insulation costs are taken into account, only when insulation measures
-        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
-        distinction between costs for existing and newly built houses. The insulation
-        costs for houses are not fixed per % heat demand reduction, but instead the
-        costs depend on the level of insulation in the present year: e.g. going from
-        0 to 30% is cheaper than going from 30% to 60% insulation."
+      description: "With this slider you can set the percentage of heat demand reduction based on the amount of insulation in households.
+        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
+        home to a highly insulated home. This amounts to a potential heat demand reduction
+        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
+        the heat demand of households. \r\n<br><br>\r\nCheck out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information on insulation."
     households_insulation_level_terraced_houses:
       title: Terraced house
       short_description:
-      description: "The heat demand reduction is the percentage by which the heat
-        demand is reduced compared to a badly insulated house (characterised by label
-        G), i.e. the slider indicates how much of the potential savings has been achieved.
-        The current settings are based on the energy labels that are present within
-        your region, for the Netherlands this data is derived from <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">\"Basisregistratie
-        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
-        demand reduction percentages. The relationship between heat demand reduction
-        and energy labels per housing type can be found in our <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>.
-        However, the mapping is ambiguous since there is no direct relationship between
-        energy labels and the insulation level. Please note that the label image above
-        the household insulation sliders shows the <i>average</i> label vs. heat demand
-        reduction mapping for all housing types. \r\n<br><br>\r\nFor the current situation
-        no insulation costs are taken into account, only when insulation measures
-        are taken. The insulation costs are based on the Ecofys <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a> (Dutch only). We make a
-        distinction between costs for existing and newly built houses. The insulation
-        costs for houses are not fixed per % heat demand reduction, but instead the
-        costs depend on the level of insulation in the present year: e.g. going from
-        0 to 30% is cheaper than going from 30% to 60% insulation."
+      description: "With this slider you can set the percentage of heat demand reduction based on the amount of insulation in households.
+        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
+        home to a highly insulated home. This amounts to a potential heat demand reduction
+        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
+        the heat demand of households. \r\n<br><br>\r\nCheck out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information on insulation."
     households_useful_demand_for_cooling:
       title: Cooling demand
       short_description: ''

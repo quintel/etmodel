@@ -75,13 +75,18 @@ en:
     transport_car_using_electricity_share:
       title: Electric
       short_description: ''
-      description: "With this slider you can set which percentage of cars is electric.
-        \r\n<br/><br/>\r\n Electric engines are more efficient than combustion engines. If you increase the amount
-        of electric cars the energy demand for transport will therefore drop.
-        Even though electric cars are more efficient, they still need electricity in order to charge their batteries.
-        This means that electricity demand will increase when you increase the amount of electric cars.
-        You can match the increase in electricity with <a href=\"/scenario/supply/electricity_renewable/wind-turbines\"
-        >sustainable production</a>."
+      description: |
+        What percentage of all cars will be electric cars in the future? <br/><br/>
+        Electric cars typically use less energy than the “well to wheels” fuel consumption
+        of cars with internal combustion engines, such as diesel or gasoline cars. </br></br>
+        If you want to include hybrid cars in your scenario, you could assume that one
+        fully electric car is equivalent to three plug-in hybrid cars with range extenders.
+        These are electric cars that can be charged from the grid, but have limited
+        battery capacity. A range extender is a small gasoline engine that re-charges
+        the battery once it's depleted. </br></br>
+        It is important to note that the electricity used by electric cars still needs to 
+        be generated somewhere. If this is done with wind power, electric cars contribute 
+        strongly to a more sustainable society, but less so when coal power is used.
     transport_car_using_diesel_mix_share:
       title: Diesel
       short_description: ''

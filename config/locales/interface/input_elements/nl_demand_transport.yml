@@ -79,13 +79,19 @@ nl:
     transport_car_using_electricity_share:
       title: Elektrisch
       short_description: ''
-      description: "Met deze slider kun je het aangeven welk percentage van de auto's elektrisch is.
-        \r\n<br/><br/>\r\n Elektrische motoren zijn efficiënter dan verbrandingsmotoren.
-        Als het aandeel elektrische auto's toeneemt zal hierdoor de energievraag voor transport afnemen.
-        Ook al zijn elektrische auto's efficiënter, ze hebben nog steeds elektriciteit nodig om op te laden.
-        Dit betekent dat de totale elektriciteitsvraag zal toenemen als het aandeel elektrische auto's groter wordt.
-        Je kunt de toegenomen elektriciteitsvraag balanceren met <a href=\"/scenario/supply/electricity_renewable/wind-turbines\"
-        >duurzame productie</a>."
+      description: |
+        Welk deel van de auto's rijdt in de toekomst op elektriciteit? <br/><br/>
+        Elektrische auto's gebruiken typisch minder energie dan de brandstofconsumptie 
+        van brandstofauto's zoals diesel- of benzineauto's, gemeten van bron tot wielen. <br/><br/>
+        Als je hybride auto's wilt opnemen in je scenario zou je kunnen aanenemen dat
+        één elektrische auto gelijk is aan 3 plug-in hybride
+        auto's met 'range extender'. Dit zijn elektrische auto's die aan het net opgeladen
+        kunnen worden, maar een kleine batterij hebben. Een 'range extender' is een kleine
+        benzinemotor, die de batterij oplaadt zodra deze leeg is. <br/><br/>
+        Vergeet niet dat de elektricteit voor de auto's
+        nog wel ergens moet worden opgewekt. Als dat met hernieuwbare stroom gebeurt, kunnen
+        elektrische auto's sterk bijdragen aan een hernieuwbare samenleving. Als kolenstroom
+        wordt gebruikt is dat minder het geval.
     transport_car_using_diesel_mix_share:
       title: Diesel
       short_description: ''

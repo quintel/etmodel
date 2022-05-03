@@ -79,23 +79,13 @@ nl:
     transport_car_using_electricity_share:
       title: Elektrisch
       short_description: ''
-      description: "Welk deel van de auto's rijdt in de toekomst volledig op elektriciteit?
-        \r\n<br/><br/>\r\nElektrische auto's gebruiken minder dan de helft van de
-        energie van een dieselauto, van de bron naar de wielen gemeten. De technologie
-        voor de auto's is beschikbaar, maar de benodigde infrastructuur (om op te
-        kunnen laden of accu's te wisselen) is er nog niet. Een typische elektrische
-        sedan heeft een bereik van ~150 - 250 km met een volle accu. Zo'n auto is
-        dus geschikt voor kleine en dichtbevolkte landen. Bovendien zijn elektrische
-        auto's ook ideaal voor elektriciteitsopslag 's nachts als ze staan te laden.
-        Dan moet het laden wel van een afstand gecontroleerd kunnen worden.\r\n<br/><br/>\r\nJe
-        zou kunnen zeggen dat één elektrische auto gelijk is aan 3 plug-in hybride
-        auto's met 'range extender'. Dit zijn elektrische auto's die aan het net opgeladen
-        kunnen worden, maar met een kleine batterij. Een 'range extender' is een kleine
-        benzine motor, die het bereik vergroot door de batterij weer op te laden na
-        50 - 60 km. \r\n<br/><br/>\r\nVergeet niet dat de elektricteit voor de auto
-        nog wel moet worden opgewekt. Als dat met hernieuwbare stroom gebeurt, kunnen
-        elektrische auto's sterk bijdragen aan een hernieuwbare samenleving. Als kolenstroom
-        wordt gebruikt is dat minder het geval."
+      description: "Met deze slider kun je het aangeven welk percentage van de auto's elektrisch is.
+        \r\n<br/><br/>\r\n Elektrische motoren zijn efficiënter dan verbrandingsmotoren.
+        Als het aandeel elektrische auto's toeneemt zal hierdoor de energievraag voor transport afnemen.
+        Ook al zijn elektrische auto's efficiënter, ze hebben nog steeds elektriciteit nodig om op te laden.
+        Dit betekent dat de totale elektriciteitsvraag zal toenemen als het aandeel elektrische auto's groter wordt.
+        Je kunt de toegenomen elektriciteitsvraag balanceren met <a href=\"/scenario/supply/electricity_renewable/wind-turbines\"
+        >duurzame productie</a>."
     transport_car_using_diesel_mix_share:
       title: Diesel
       short_description: ''

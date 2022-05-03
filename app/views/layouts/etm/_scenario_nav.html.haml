@@ -1,7 +1,7 @@
 #scenario-nav
   .scenario-info
     - if Current.setting.active_scenario?
-      %span.region.region-flag{ class: Current.setting.area_code.downcase }
+      %span.region.region-flag{ class: Current.setting.area_code }
         = current_area_name
       %span.year
         = Current.setting.end_year

@@ -78,6 +78,21 @@ class Api::Area < ActiveResource::Base
     %w[province municipality neighborhood region res].exclude?(group)
   end
 
+  # Public: Gets the country to which the area belongs.
+  #
+  # If the area is a country, self is returned. Otherwise iteratively looks at the parent datasets
+  # until it finds a country. If none is found, self is returned.
+  def country_area
+    if country? || try(:base_dataset).blank?
+      self
+    else
+      # Remove a trailing year from the dataset key.
+      base_key = base_dataset.gsub(/\d{4}$/, '')
+
+      self.class.find_by_country_memoized(base_key).country_area || self
+    end
+  end
+
   # Public: Gets the largest region to which the area belongs.
   #
   # For example, if this is a municipality in the Netherlands, the base dataset

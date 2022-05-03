@@ -172,6 +172,10 @@ Naming/MethodName:
   Exclude:
     - 'app/models/gql/runtime/functions/*'
 
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_country_memoized
+
 Rails/UnknownEnv:
   Environments:
     - development

@@ -26,9 +26,9 @@ module PagesHelper
   # Returns true or false.
   def area_css_class(area)
     return '' if area.area == 'UKNI01_northern_ireland'
-    return area.area.downcase if area.top_level_area.area == 'eu'
+    return area.area.downcase if area.country_area.area == 'eu'
 
-    area ? area.top_level_area.area : ''
+    area ? area.country_area.area : ''
   end
 
   # Public: Returns an image tag to the flag representing the given area.

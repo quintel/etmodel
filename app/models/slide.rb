@@ -123,6 +123,6 @@ class Slide < YModel::Base
     country = [country, 'nl2019'] if country == 'nl'
 
     country.include?(Current.setting.area_code) ||
-      country.include?(Current.setting.area.top_level_area.area)
+      country.include?(Current.setting.area.country_area.area)
   end
 end

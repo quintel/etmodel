@@ -75,23 +75,18 @@ en:
     transport_car_using_electricity_share:
       title: Electric
       short_description: ''
-      description: "What percentage of all cars will be fully electric cars in the
-        future? \r\n<br/><br/>\r\nThese cars use less than half the energy from “well
-        to wheels” of good diesel cars and are even more efficient compared to gasoline
-        engines. The technology for electric cars is available, but the required infrastructure
-        (sufficient opportunities for charging or exchanging batteries) is not. A
-        typical electric family car has a range of 150 – 250 km on a full set of batteries,
-        which makes them quite suited for small and densely populated countries. Furthermore,
-        electric cars are the ideal mobile electricity storage at night, if they are
-        plugged in and the charge they hold is remote controlled.\r\n<br/><br/>\r\nIf
-        you want to include hybrid cars in your scenario, you could assume that one
+      description: |
+        What percentage of all cars will be electric cars in the future? <br/><br/>
+        Electric cars typically use less energy than the “well to wheels” fuel consumption
+        of cars with internal combustion engines, such as diesel or gasoline cars. </br></br>
+        If you want to include hybrid cars in your scenario, you could assume that one
         fully electric car is equivalent to three plug-in hybrid cars with range extenders.
         These are electric cars that can be charged from the grid, but have limited
         battery capacity. A range extender is a small gasoline engine that re-charges
-        the battery after about 50 - 60 km. \r\n<br/><br/>\r\nDo not forget that the
-        electricity still needs to be generated. If this is done with wind power,
-        electric cars contribute strongly to a more sustainable society, but less
-        so when coal power is used."
+        the battery once it's depleted. </br></br>
+        It is important to note that the electricity used by electric cars still needs to 
+        be generated somewhere. If this is done with wind power, electric cars contribute 
+        strongly to a more sustainable society, but less so when coal power is used.
     transport_car_using_diesel_mix_share:
       title: Diesel
       short_description: ''

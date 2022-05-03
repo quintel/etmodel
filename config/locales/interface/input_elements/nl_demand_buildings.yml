@@ -133,22 +133,13 @@ nl:
     buildings_insulation_level:
       title: Isolatie
       short_description: ''
-      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
-        lager is ten opzichte van een slecht geïsoleerd  gebouw (met label E). Oftewel:
-        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
-        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
-        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">Basisregistratie
-        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
-        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentatie</a>.
-        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
-        omdat er geen direct verband is tussen energielabels en isolatie van de schil
-        van een gebouw.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen isolatiekosten,
-        deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten komen uit
-        het energiemodel <a href=\"https://www.pbl.nl/vesta\">Vesta</a>, zie de <a
-        href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentatie</a>
-        voor de precieze berekening. De isolatiekosten voor gebouwen zijn gemodelleerd
-        als een vast bedrag per % warmtevraag-reductie: € 606 per % voor bestaande
-        gebouwen en € 479 per % voor nieuwe gebouwen. "
+      description: "Met deze slider kun je het percentage warmtereductie bepalen op basis van de isolatiegraad van gebouwen.
+        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerd gebouw te vergelijken
+        met een zeer goed geïsoleerd gebouw. Dit resulteert in een potentiële reductie van 60%
+        op de totale warmtevraag voor verwarming. Het verhogen van het percentage warmtereductie door extra isolatie van gebouwen zorgt voor
+        een directe verlaging van de warmtevraag van gebouwen.
+        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie over isolatie."
     buildings_lighting_standard_fluorescent_electricity_share:
       title: Conventionele TL-buis
       short_description: ''

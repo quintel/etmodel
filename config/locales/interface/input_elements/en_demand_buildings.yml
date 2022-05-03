@@ -127,23 +127,13 @@ en:
     buildings_insulation_level:
       title: Insulation
       short_description: ''
-      description: "The heat demand reduction is the percentage by which the heat
-        demand is reduced compared to a badly insulated building (characterised by
-        label E), i.e. the slider indicates how much of the potential savings has
-        been achieved. The current settings are based on the energy labels that are
-        present within your region, for the Netherlands this data is derived from
-        <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\">\"Basisregistratie
-        Adressen en Gebouwen (BAG)\"</a>. These labels have been converted into heat
-        demand reduction percentages. The relationship between heat demand reduction
-        and energy labels can be found in our <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>.
-        However, the mapping is ambiguous since there is no direct relationship between
-        energy labels and the insulation level.  \r\n<br><br>\r\nFor the current situation
-        no insulation costs are taken into account, only when insulation measures
-        are taken. The insulation costs are based on the energy model <a href=\"https://www.pbl.nl/vesta\">Vesta</a>,
-        see the <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>
-        for the exact modelling. The insulation costs for buildings are modelled as
-        a fixed amount per % heat demand reduction: € 606 per % for existing buildings
-        and € 479 per % for new buildings."
+      description: "With this slider you can set the percentage of heat demand reduction based on the amount of insulation in buildings.
+        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
+        building to a highly insulated building. This amounts to a potential heat demand reduction
+        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
+        the heat demand of buildings. \r\n<br><br>\r\nCheck out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information on insulation."
     buildings_lighting_standard_fluorescent_electricity_share:
       title: Fluorescent tube
       short_description: ''

@@ -4,113 +4,63 @@ nl:
     households_insulation_level_apartments:
       title: Appartement
       short_description:
-      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
-        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
-        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
-        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
-        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">Basisregistratie
-        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
-        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentatie</a>.
-        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
-        omdat er geen direct verband is tussen energielabels en isolatie van de schil
-        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
-        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
-        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
-        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
-        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
-        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
-        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
-        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
-        isolatie."
+      description: "Met deze slider kun je het percentage warmtereductie instellen voor appartementen.
+        Hiermee bepaal je hoe goed appartementen gemiddeld geïsoleerd zijn (voor zowel oud- en nieuwbouw).
+        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
+        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
+        op de totale warmtevraag voor verwarming.
+        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
+        een directe verlaging van de warmtevraag van huishoudens.
+        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie over isolatie."
     households_insulation_level_corner_houses:
       title: Hoekhuis
       short_description:
-      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
-        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
-        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
-        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
-        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">Basisregistratie
-        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
-        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentatie</a>.
-        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
-        omdat er geen direct verband is tussen energielabels en isolatie van de schil
-        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
-        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
-        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
-        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
-        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
-        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
-        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
-        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
-        isolatie."
+      description: "Met deze slider kun je het percentage warmtereductie instellen voor hoekhuizen.
+        Hiermee bepaal je hoe goed hoekhuizen geïsoleerd zijn.
+        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
+        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
+        op de totale warmtevraag voor verwarming.
+        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
+        een directe verlaging van de warmtevraag van huishoudens.
+        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie over isolatie."
     households_insulation_level_detached_houses:
       title: Vrijstaand huis
       short_description:
-      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
-        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
-        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
-        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
-        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">Basisregistratie
-        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
-        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentatie</a>.
-        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
-        omdat er geen direct verband is tussen energielabels en isolatie van de schil
-        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
-        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
-        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
-        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
-        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
-        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
-        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
-        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
-        isolatie."
+      description: "Met deze slider kun je het percentage warmtereductie instellen voor vrijstaande huizen.
+        Hiermee bepaal je hoe goed vrijstaande huizen geïsoleerd zijn.
+        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
+        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
+        op de totale warmtevraag voor verwarming.
+        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
+        een directe verlaging van de warmtevraag van huishoudens.
+        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie over isolatie."
     households_insulation_level_semi_detached_houses:
       title: Twee-onder-een-kapwoning
       short_description:
-      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
-        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
-        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
-        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
-        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">Basisregistratie
-        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
-        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentatie</a>.
-        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
-        omdat er geen direct verband is tussen energielabels en isolatie van de schil
-        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
-        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
-        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
-        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
-        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
-        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
-        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
-        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
-        isolatie."
+      description: "Met deze slider kun je het percentage warmtereductie instellen voor twee-onder-één-kap-woningen.
+        Hiermee bepaal je hoe goed twee-onder-één-kap-woningen geïsoleerd zijn.
+        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
+        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
+        op de totale warmtevraag voor verwarming.
+        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
+        een directe verlaging van de warmtevraag van huishoudens.
+        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie over isolatie."
     households_insulation_level_terraced_houses:
       title: Rijtjeshuis
       short_description:
-      description: "De warmtevraag-reductie is het percentage waarmee de warmtevraag
-        lager is ten opzichte van een slecht geïsoleerd huis (met label G). Oftewel:
-        welk aandeel van het besparingspotentieel is al benut? Het huidige percentage
-        van de slider is gebaseerd op de energielabels die aanwezig zijn in jouw regio;
-        voor Nederland komt deze data van <a href=\"https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html#?geometry.x=160000&geometry.y=455000&zoomlevel=0)\" target=\"_blank\">Basisregistratie
-        Adressen en Gebouwen (BAG)</a>. De energielabels zijn vervolgens omgezet in
-        een warmtevraag-reductie, deze berekening is terug te vinden in onze <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentatie</a>.
-        De koppeling tussen energielabel en warmtevraag is echter moeilijk te leggen
-        omdat er geen direct verband is tussen energielabels en isolatie van de schil
-        van een huis. Let op: de legenda met energielabels (boven de schuifjes) geeft
-        de <i>gemiddelde</i> koppeling tussen energielabels en warmtevraag-reductie
-        weer voor huizen.\r\n<br><br>\r\nVoor de huidige situatie rekenen we geen
-        isolatiekosten, deze nemen we enkel mee als er wordt geïsoleerd. De isolatiekosten
-        komen uit het Ecofys rapport <a href=\"https://refman.energytransitionmodel.com/publications/2063\" target=\"_blank\">'De
-        systeemkosten van warmte voor woningen (2015)'</a>. We maken onderscheid tussen
-        kosten voor bestaande en nieuwbouwhuizen. De kosten zijn geen vast bedrag
-        per % warmtevraag-reductie, maar afhankelijk van het isolatieniveau in het
-        huidige jaar: bijv. van 0 tot 30% isolatie is goedkoper dan van 30% naar 60%
-        isolatie."
+      description: "Met deze slider kun je het percentage warmtereductie instellen voor rijtjeshuizen.
+        Hiermee bepaal je hoe goed rijtjeshuizen geïsoleerd zijn.
+        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
+        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
+        op de totale warmtevraag voor verwarming.
+        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
+        een directe verlaging van de warmtevraag van huishoudens.
+        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie over isolatie."
     households_useful_demand_for_cooling:
       title: Koudevraag
       short_description: ''

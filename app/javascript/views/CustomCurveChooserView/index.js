@@ -150,6 +150,19 @@ function formatCurveScenarioInfo(scenario, t) {
 }
 
 /**
+ * Creates a button which can be used to download a custom curve.
+ */
+function renderDownloadCSVButton(url, t) {
+  const downloadCSV = $('<div class="download-file" />').append(
+    $('<a>')
+      .text(t('download_file'))
+      .attr('href', url + '.csv')
+  );
+
+  return downloadCSV;
+}
+
+/**
  * Renders the box containing the CSV name and size, and buttons to upload a
  * new curve or revert to default.
  *
@@ -199,7 +212,13 @@ export function renderCSVInfo(curveData, userScenarios, t, options) {
   if (options.isFromScenario) {
     el.append(formatCurveScenarioInfo(curveData.source_scenario, t));
   }
+
   el.append(formatCurveStats(curveData.stats, t));
+
+  if (curveData.attached) {
+    el.append(renderDownloadCSVButton(options.apiURL, t));
+  }
+
   el.append(renderCSVActions(opts, t, userScenarios));
 
   return el;
@@ -339,6 +358,7 @@ class CustomCurveChooserView extends Backbone.View {
           showRemove: true,
           isFromScenario: this.model.isFromScenario(),
           help: this.t('help', { defaults: [{ message: false }] }),
+          apiURL: this.apiURL,
         })
       );
     } else {
@@ -347,6 +367,7 @@ class CustomCurveChooserView extends Backbone.View {
           showUpload: true,
           icon: 'csv-light',
           help: this.t('help', { defaults: [{ message: false }] }),
+          apiURL: this.apiURL,
         })
       );
     }

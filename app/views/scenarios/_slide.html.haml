@@ -34,4 +34,5 @@
         - sliders.each do |input_element|
           = render :partial => 'input_elements/slider', :object => input_element
 
-    = render "scenarios/slides/#{slide.key}" rescue nil
+    -if lookup_context.exists?(slide.key.to_s, ['scenarios/slides'], true)
+      = render partial: "scenarios/slides/#{slide.key}"

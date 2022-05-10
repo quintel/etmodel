@@ -16,7 +16,13 @@ D3.sankey =
           {id: 'import4',                      column: 0, label: 'import4',                color: '#b71540'},
           {id: 'import5',                      column: 0, label: 'import5',                color: '#b71540'},
           {id: 'import6',                      column: 0, label: 'import6',                color: '#b71540'},
-          {id: 'shortage',                      column: 0, label: 'hv_shortage',                color: '#DCDCDC'},
+          {id: 'import7',                      column: 0, label: 'import7',                color: '#b71540'},
+          {id: 'import8',                      column: 0, label: 'import8',                color: '#b71540'},
+          {id: 'import9',                      column: 0, label: 'import9',                color: '#b71540'},
+          {id: 'import10',                     column: 0, label: 'import10',              color: '#b71540'},
+          {id: 'import11',                     column: 0, label: 'import11',              color: '#b71540'},
+          {id: 'import12',                     column: 0, label: 'import12',              color: '#b71540'},
+          {id: 'shortage',                     column: 0, label: 'hv_shortage',           color: '#DCDCDC'},
           {id: 'network',                      column: 1, label: 'network',                color: '#006266'},
           {id: 'households',                   column: 2, label: 'households',             color: '#4169E1'},
           {id: 'buildings',                    column: 2, label: 'buildings',              color: '#ADD8E6'},
@@ -32,6 +38,12 @@ D3.sankey =
           {id: 'export4',                      column: 2, label: 'export4',                color: '#43464B'},
           {id: 'export5',                      column: 2, label: 'export5',                color: '#43464B'},
           {id: 'export6',                      column: 2, label: 'export6',                color: '#43464B'},
+          {id: 'export7',                      column: 2, label: 'export7',                color: '#43464B'},
+          {id: 'export8',                      column: 2, label: 'export8',                color: '#43464B'},
+          {id: 'export9',                      column: 2, label: 'export9',                color: '#43464B'},
+          {id: 'export10',                     column: 2, label: 'export10',               color: '#43464B'},
+          {id: 'export11',                     column: 2, label: 'export11',               color: '#43464B'},
+          {id: 'export12',                     column: 2, label: 'export12',               color: '#43464B'},
           {id: 'loss',                         column: 2, label: 'loss',                   color: '#DCDCDC'}
         ]
         links: [
@@ -48,6 +60,12 @@ D3.sankey =
           {left: 'import4',                    right: 'network',          gquery: 'import4_to_network_in_sankey', color: '#ff7f0e'},
           {left: 'import5',                    right: 'network',          gquery: 'import5_to_network_in_sankey', color: '#ff7f0e'},
           {left: 'import6',                    right: 'network',          gquery: 'import6_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import7',                    right: 'network',          gquery: 'import7_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import8',                    right: 'network',          gquery: 'import8_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import9',                    right: 'network',          gquery: 'import9_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import10',                   right: 'network',          gquery: 'import10_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import11',                   right: 'network',          gquery: 'import11_to_network_in_sankey', color: '#ff7f0e'},
+          {left: 'import12',                   right: 'network',          gquery: 'import12_to_network_in_sankey', color: '#ff7f0e'},
           {left: 'shortage',                   right: 'network',          gquery: 'shortage_to_network_in_sankey', color: '#DCDCDC'},
 
           {left: 'network',                    right: 'households',       gquery: 'network_to_households_in_sankey', color: '#1f77b4'},
@@ -64,6 +82,12 @@ D3.sankey =
           {left: 'network',                    right: 'export4',          gquery: 'network_to_export4_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'export5',          gquery: 'network_to_export5_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'export6',          gquery: 'network_to_export6_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export7',          gquery: 'network_to_export7_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export8',          gquery: 'network_to_export8_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export9',          gquery: 'network_to_export9_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export10',         gquery: 'network_to_export10_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export11',         gquery: 'network_to_export11_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export12',         gquery: 'network_to_export12_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'loss',             gquery: 'network_to_loss_in_sankey', color: '#DCDCDC'}
         ]
     biomass_sankey:

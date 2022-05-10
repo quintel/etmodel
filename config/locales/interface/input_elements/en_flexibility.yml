@@ -320,6 +320,12 @@ en:
     electricity_interconnector_4_export_availability: *interconnector_export_availability
     electricity_interconnector_5_export_availability: *interconnector_export_availability
     electricity_interconnector_6_export_availability: *interconnector_export_availability
+    electricity_interconnector_7_export_availability: *interconnector_export_availability
+    electricity_interconnector_8_export_availability: *interconnector_export_availability
+    electricity_interconnector_9_export_availability: *interconnector_export_availability
+    electricity_interconnector_10_export_availability: *interconnector_export_availability
+    electricity_interconnector_11_export_availability: *interconnector_export_availability
+    electricity_interconnector_12_export_availability: *interconnector_export_availability
     electricity_interconnector_1_import_availability: &interconnector_import_availability
       title: Availability for import
       short_description:
@@ -333,6 +339,12 @@ en:
     electricity_interconnector_4_import_availability: *interconnector_import_availability
     electricity_interconnector_5_import_availability: *interconnector_import_availability
     electricity_interconnector_6_import_availability: *interconnector_import_availability
+    electricity_interconnector_7_import_availability: *interconnector_import_availability
+    electricity_interconnector_8_import_availability: *interconnector_import_availability
+    electricity_interconnector_9_import_availability: *interconnector_import_availability
+    electricity_interconnector_10_import_availability: *interconnector_import_availability
+    electricity_interconnector_11_import_availability: *interconnector_import_availability
+    electricity_interconnector_12_import_availability: *interconnector_import_availability
     electricity_interconnector_1_capacity: &interconnector_capacity
       title: Interconnector capacity
       short_description:
@@ -344,6 +356,12 @@ en:
     electricity_interconnector_4_capacity: *interconnector_capacity
     electricity_interconnector_5_capacity: *interconnector_capacity
     electricity_interconnector_6_capacity: *interconnector_capacity
+    electricity_interconnector_7_capacity: *interconnector_capacity
+    electricity_interconnector_8_capacity: *interconnector_capacity
+    electricity_interconnector_9_capacity: *interconnector_capacity
+    electricity_interconnector_10_capacity: *interconnector_capacity
+    electricity_interconnector_11_capacity: *interconnector_capacity
+    electricity_interconnector_12_capacity: *interconnector_capacity
     electricity_interconnector_1_marginal_costs: &interconnector_marginal_costs
       title: Cost of electricity in external market
       short_description:
@@ -351,8 +369,8 @@ en:
         average it will be cheap because of peak production, or will it be expensive
         because of peak demand?\r\n</p>\r\n\r\nThe average costs of electricity at
         the Central West European market was around 35 €/MWh in 2015. However this
-        fluctuates a lot. <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
-        target =\"_blank\">(European Commission, 2015)</a>. \r\n\r\n\r\n</p>\r\n\r\nFor
+        fluctuates a lot. <a href=\"https://ec.europa.eu/energy/sites/ener/files/documents/quarterly_report_on_european_electricity_markets_q4_2015-q1_2016.pdf\"
+        target =\"_blank\">(European Commission, 2016)</a>. \r\n\r\n\r\n</p>\r\n\r\nFor
         more information about the fluctuating prices see the <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\"
         target =\"_blank\">documentation</a>. "
     electricity_interconnector_2_marginal_costs: *interconnector_marginal_costs
@@ -360,6 +378,12 @@ en:
     electricity_interconnector_4_marginal_costs: *interconnector_marginal_costs
     electricity_interconnector_5_marginal_costs: *interconnector_marginal_costs
     electricity_interconnector_6_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_7_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_8_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_9_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_10_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_11_marginal_costs: *interconnector_marginal_costs
+    electricity_interconnector_12_marginal_costs: *interconnector_marginal_costs
     curtailment_of_households_solar_pv_solar_radiation:
       title: Solar PV households
       short_description:
@@ -793,6 +817,12 @@ en:
     electricity_interconnector_4_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_5_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_6_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_7_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_8_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_9_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_10_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_11_co2_emissions_present: *interconnector_co2_present
+    electricity_interconnector_12_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Future import
       short_description:
@@ -803,7 +833,7 @@ en:
         imported electricity is set equal to the Dutch electricity mix.
         \r\n\r\n</p>\r\nThis electricity could come from renewable sources
         like sun and wind, with an emission close to 0 gram CO<sub>2</sub>/kWh. \r\n\r\n</p>\r\n\r\nOn
-        the other hand, this imported electricity could also be a peek demand just
+        the other hand, this imported electricity could also be a peak demand just
         when there is not much wind and sun available. In this case this electricity
         could come from gas (380 -1000 gCO<sub>2</sub>/kWh), coal (660 -1050 gCO<sub>2</sub>/kWh),
         or even lignite (800 -1300 gCO<sub>2</sub>/kWh) with quite high CO<sub>2</sub>
@@ -817,6 +847,12 @@ en:
     electricity_interconnector_4_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_5_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_6_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_7_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_8_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_9_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_10_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_11_co2_emissions_future: *interconnector_co2_future
+    electricity_interconnector_12_co2_emissions_future: *interconnector_co2_future
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
       title: Power-to-gas
       short_description:

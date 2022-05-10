@@ -145,6 +145,15 @@ class MultiCurveChooserView extends Backbone.View {
 
   static setupWithWrapper(el, curvesPromise, scenariosPromise) {
     $.when(curvesPromise, scenariosPromise).done(function (curves, scenarios) {
+      if (el.dataset.curveNameMatch) {
+        curves = curves.clone();
+
+        const regex = new RegExp(el.dataset.curveNameMatch);
+        const nonMatching = curves.models.filter((curve) => !curve.get('key').match(regex));
+
+        curves.remove(nonMatching);
+      }
+
       el.querySelector('.loading').remove();
       new MultiCurveChooserView({ el, curves, scenarios }).render();
     });

@@ -47,6 +47,30 @@
     }
 
     /**
+     * When progressively enhancing an HTML input, this Quinn object's
+     * "wrapper", which is initially the input element, will be swapped with a
+     * new <div/> which can be used as the Quinn element.
+     */
+    function createReplacementEl (element) {
+        return $('<div />').css({
+            'width':   element.outerWidth(),
+            'margin':  element.css('margin'),
+            'display': 'inline-block'
+        });
+    }
+
+    /**
+     * When progressively-enhancing an HTML input, we need to use its min/max
+     * values. This will read them, falling back to data- attributes, or the
+     * Quinn defaults.
+     */
+    function readInputAttribute (el, quinn, attribute) {
+        var value = el.attr(attribute) || el.data('quinn-' + attribute);
+
+        return (value ? parseFloat(value) : quinn.options[attribute]);
+    }
+
+    /**
      * ## Quinn
      *
      * Quinn is the main slider class, and handles setting up the slider UI,
@@ -70,6 +94,11 @@
         this.disabled       = false;
         this.activeHandle   = null;
         this.previousValue  = null;
+
+        if (wrapper.is('input')) {
+            this.enhance(wrapper);
+        }
+
         this.drawTo         = drawToOpts(opts.drawTo, opts.min, opts.max);
 
         this.model          = new Model(this, this.options.strict);
@@ -99,7 +128,7 @@
     }
 
     // The current Quinn version.
-    Quinn.VERSION = '1.0.5';
+    Quinn.VERSION = '1.2.0';
 
     // ### Event Handling
 
@@ -209,7 +238,7 @@
             nextScalar   = null,
             scalar;
 
-        if (typeof newValue === 'undefined' || newValue === null) {
+        if (newValue === undefined || newValue === null) {
             return false;
         }
 
@@ -563,9 +592,9 @@
                 if (this.options.keyFloodWait) {
                     // Prevent multiple successive keydowns from repeatedly
                     // triggering resolve.
-                    this.keyFloodTimer = window.setTimeout(_.bind(function() {
-                        this.resolve();
-                    }, this), this.options.keyFloodWait);
+                    this.keyFloodTimer = window.setTimeout(
+                        _.bind(this.resolve, this),
+                        this.options.keyFloodWait);
                 } else {
                     this.resolve();
                 }
@@ -600,6 +629,30 @@
         }
 
         event.preventDefault();
+    };
+
+    /**
+     * Used during initialization to progressively-enhance an existing HTML
+     * input, instead of simply drawing into a <div/>.
+     *
+     * Afters the Quinn options, renders the replacement elements in the DOM,
+     * and sets up events to send the value back-and-forth between Quinn and the
+     * original input element.
+     */
+    Quinn.prototype.enhance = function (element) {
+        this.options.disabled = element.attr('disabled');
+        this.options.step     = readInputAttribute(element, this, 'step');
+        this.options.value    = readInputAttribute(element, this, 'value');
+        this.options.min      = readInputAttribute(element, this, 'min');
+        this.options.max      = readInputAttribute(element, this, 'max');
+
+        this.wrapper = createReplacementEl(element).insertAfter(element.hide());
+
+        this.on('change', function (value) { element.val(value) });
+
+        element.on('change', _.bind(function () {
+            this.setValue(element.val());
+        }, this));
     };
 
     /**
@@ -645,7 +698,7 @@
          * developer, instead fall back to using the minimum.
          */
 
-        if (typeof opts.value === 'undefined' || opts.value === null) {
+        if (opts.value === undefined || opts.value === null) {
             initialValue = this.minimum;
         } else if (_.isArray(opts.value)) {
             initialValue = opts.value;
@@ -818,10 +871,9 @@
      * render() is called automatically when creating a new Quinn instance.
      */
     Quinn.Renderer.prototype.render = function () {
-        var i, length, marginLeft;
+        var i, length;
 
-        this.width  = this.wrapper.width();
-        this.adjust = -this.wrapper.height();
+        this.width = this.wrapper.width();
 
         function addRoundingElements (element) {
             element.append($('<div class="left" />'));
@@ -848,7 +900,10 @@
 
         // Add each of the handles to the bar, and bind the click events.
         for (i = 0, length = this.model.values.length; i < length; i++) {
-            this.handles[i] = $('<span class="handle" tabindex="0"></span>');
+            this.handles[i] = $('<span class="handle" tabindex="0" role="slider"></span>')
+                .attr('aria-valuemin', this.model.minimum)
+                .attr('aria-valuemax', this.model.maximum)
+                .attr('aria-valuenow', this.model.values[i]);
 
             this.handles[i].on(DRAG_START_E, this.quinn.startDrag);
 
@@ -860,19 +915,18 @@
             this.bar.append(this.handles[i]);
         }
 
-        // Adjust the positioning of the handles so that they appear to
-        // "dangle" over the edge of the bar.
-
-        marginLeft = this.handles[0].width() + this.adjust;
-        marginLeft = -(marginLeft / 2) + 'px';
-
-        for (i = 0, length = this.handles.length; i < length; i++) {
-            this.handles[i].css('marginLeft', marginLeft);
-        }
-
         // Finally, these events are triggered when the user seeks to
         // update the slider.
         this.wrapper.on(DRAG_START_E, this.quinn.clickBar);
+
+        this.barHeight = this.bar.height();
+
+        // If the handles have left and right margins, it indicates that the
+        // user wants the handle to "overhang" the edges of the bar. We have to
+        // account for this when positioning the handles.
+        this.handleOverhang =
+            parseInt(this.handles[0].css('margin-left'), 10) +
+            parseInt(this.handles[0].css('margin-right'), 10);
 
         this.redraw(false);
     };
@@ -898,7 +952,9 @@
             }
 
             handle   = self.handles[i].stop();
-            position = self.position(value, self.adjust) + 'px';
+            position = self.position(value) + 'px';
+
+            handle.attr('aria-valuenow', value);
 
             if (animate && self.options.effects) {
                 handle.animate({ left: position }, {
@@ -922,16 +978,18 @@
      * within a `step` callback in a jQuery `animate` call.
      */
     Quinn.Renderer.prototype.redrawDeltaBar = function (value, handle) {
-        var left = null, right = null;
+        var left = null,
+            right = null,
+            drawAt = parseInt(handle.position().left, 10) + this.barHeight;
 
         this.deltaBar.stop(true);
 
         if (this.model.values.length > 1) {
             if (handle) {
                 if (handle === this.handles[0]) {
-                    left = value;
+                    left = drawAt;
                 } else {
-                    right = value;
+                    right = drawAt;
                 }
             } else {
                 left  = value[0];
@@ -940,22 +998,22 @@
         } else if (value < 0) {
             // position with the left edge underneath the handle, and the
             // right edge at 0
-            left  = value;
-            right = 0;
+            left  = drawAt;
+            right = this.position(0, true);
         } else {
             // position with the right edge underneath the handle, and the
             // left edge at 0
-            right = value;
-            left  = 0;
+            right = drawAt;
+            left  = this.position(0, true);
         }
 
         if (left !== null) {
-            this.deltaBar.css('left', this.position(left) + 'px');
+            this.deltaBar.css('left', left);
         }
 
         if (right !== null) {
-            right = this.width - this.position(right);
-            this.deltaBar.css('right', right + 'px');
+            right = this.width - right;
+            this.deltaBar.css('right', right);
         }
     };
 
@@ -970,12 +1028,13 @@
             return function() {};
         }
 
-        var min  = this.quinn.drawTo.left,
-            max  = this.quinn.drawTo.right,
-            self = this;
+        var min    = this.quinn.drawTo.left,
+            max    = this.quinn.drawTo.right,
+            adjust = Math.ceil(this.deltaBar.height() / 2),
+            self   = this;
 
         return function (now) {
-            now = now / self.width;
+            now = (now + adjust) / self.width;
 
             // "now" is the current "left" position of the handle.
             // Convert that to the equivalent value. For example,
@@ -993,20 +1052,24 @@
      * Given a slider value, returns the position in pixels where the value is
      * on the slider bar. For example, in a 200px wide bar whose values are
      * 1->100, the value 20 is found 40px from the left of the bar.
-     *
-     * If adjust is present, the position will be calculated for a handle so
-     * that it "dangles" over the edge of the bar by the given number of
-     * pixels.
      */
-    Quinn.Renderer.prototype.position = function (value, adjust) {
+    Quinn.Renderer.prototype.position = function (value, ignoreOverhang) {
         var delta    = this.quinn.drawTo.right - this.quinn.drawTo.left,
-            width    = adjust ? (this.width + adjust) : this.width,
-            position = (((value - this.quinn.drawTo.left) / delta)) * width;
+            maxRight = this.width,
+            position;
+
+        if (! ignoreOverhang) {
+            // When using the position function for drawing the delta bar, we
+            // need to account for the "overhang" margin of the handle.
+            maxRight -= this.handles[0].width() + this.handleOverhang;
+        }
+
+        position = ((value - this.quinn.drawTo.left) / delta) * maxRight;
 
         if (position < 0) {
             return 0;
-        } else if (position > this.width) {
-            return this.width;
+        } else if (position > maxRight) {
+            return maxRight;
         }
 
         return Math.round(position);

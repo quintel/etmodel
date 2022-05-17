@@ -3,7 +3,7 @@
 //= require ie-d3-shims
 
 //= require jqplot
-//= require jquery.quinn.min
+//= require jquery.quinn
 //= require liquid
 
 // silly sprockets...

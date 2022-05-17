@@ -128,7 +128,7 @@
     }
 
     // The current Quinn version.
-    Quinn.VERSION = '1.2.0';
+    Quinn.VERSION = '1.2.1';
 
     // ### Event Handling
 
@@ -980,7 +980,7 @@
     Quinn.Renderer.prototype.redrawDeltaBar = function (value, handle) {
         var left = null,
             right = null,
-            drawAt = parseInt(handle.position().left, 10) + this.barHeight;
+            drawAt = parseInt(handle.css('left'), 10) + this.barHeight;
 
         this.deltaBar.stop(true);
 

@@ -1,7 +1,7 @@
 //= require d3.v2
 //= require lib/models/metric
 //= require lib/models/quantity
-//= require jquery.quinn.min
+//= require jquery.quinn
 //= require establishment_shot/main
 //= require establishment_shot/error_handler
 //= require establishment_shot/scenario_creator

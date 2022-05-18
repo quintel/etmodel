@@ -222,6 +222,7 @@ header.main-header
   border-radius: 4px
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0,0,0, 0.1)
   display: block
+  font-size: 0.875rem
   left: 0.5em
   list-style: none
   margin: 0
@@ -264,6 +265,12 @@ header.main-header
     margin-top: 0.5rem
     padding-top: 0.5rem
 
+  li.category
+    font-size: 0.75rem
+    font-weight: 400
+    padding: 0.75rem 1rem 0.125rem
+    text-transform: uppercase
+
   .dropdown-content
     padding: 0.5rem 1rem
 
@@ -280,13 +287,15 @@ header.main-header
   padding: 0.25rem 1rem
   white-space: nowrap
   &:hover
-    background-color: #4287c4
+    background-color: #498dd3
     color: white !important
     cursor: pointer
     text-decoration: none
   &[disabled], .disabled
     opacity: 0.5
     pointer-events: none
+  &.inset
+    padding-left: 2rem
 
 button.dropdown-item
   background: none

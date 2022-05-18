@@ -27,6 +27,13 @@ nl:
   grows: "groeien met"
   nevermind: "Niet gebruiken"
   cancel: "Annuleren"
+  last_updated_ago: "Laatst bijgewerkt %{when} geleden"
+  delete: Verwijderen
+  delete_permanently: Permanent verwijderen
+  restore: Herstellen
+  trash: Vuilnisbak
+  settings: Opties
+  move_to: Verhuizen naar
 
   chart_picker:
     no_matches: Geen resultaten
@@ -244,6 +251,16 @@ nl:
         %0D%0A
         Ik heb een scenario gemaakt met het Energietransitiemodel, en zou het graag met je delen.%0D%0A
         Klik op de volgende link om het te bekijken:"
+    trash:
+      notice: Scenarios in the trash will be automatically deleted after %{deleted_after} days.
+      empty:
+        title:
+          There are no scenarios in the trash
+        description:
+          Deleted scenarios are sent to the trash where you can choose to permanently
+          delete or restore them. Trashed scenarios are automatically removed after ${deleted_after}
+          days.
+        back: Back to my scenarios
   featured_scenario:
     unfeature: 'Stop met uitlichten'
     unfeature_title: 'Stop met uitlichten van dit scenario'

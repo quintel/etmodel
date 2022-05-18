@@ -19,6 +19,11 @@
 #
 # Contains a record of all the scenario IDs for previous versions of the scenario.
 class SavedScenario < ApplicationRecord
+  include Discard::Model
+
+  # Discarded scenarios are deleted automatically after this period.
+  AUTO_DELETES_AFTER = 60.days
+
   belongs_to :user
   has_one :featured_scenario, dependent: :destroy
 
@@ -33,7 +38,7 @@ class SavedScenario < ApplicationRecord
   # Order as to be provided to the custom curves chooser. Scenarios with the given
   # end_year go on top, scenarios with the given area_code are not included.
   def self.custom_curves_order(end_year, area_code)
-    scenarios = all.where.not(area_code: area_code)
+    scenarios = available.where.not(area_code: area_code)
     top = scenarios.where(end_year: end_year).order(updated_at: :desc)
     bottom = scenarios.where.not(end_year: end_year).order(end_year: :desc, updated_at: :desc)
     top + bottom
@@ -49,6 +54,18 @@ class SavedScenario < ApplicationRecord
     end
 
     saved_scenarios
+  end
+
+  # Returns all saved scenarios whose areas are avaliable.
+  def self.available
+    kept.where(area_code: Api::Area.keys)
+  end
+
+  # Public: Destroys all saved scenarios which were discarded some time ago.
+  def self.destroy_old_discarded!
+    discarded
+      .where(discarded_at: ..SavedScenario::AUTO_DELETES_AFTER.ago)
+      .destroy_all
   end
 
   # Public: Cutomizes the attributes returned by `as_json` and `to_xml`. Omits the deprecated

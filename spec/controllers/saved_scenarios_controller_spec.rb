@@ -231,4 +231,141 @@ describe SavedScenariosController, vcr: true do
       end
     end
   end
+
+  describe 'PUT discard' do
+    before do
+      login_as(user)
+      session[:setting] = Setting.new
+    end
+
+    context 'with an owned saved scenario' do
+      before do
+        post(:discard, params: { id: user_scenario.id })
+      end
+
+      it 'redirects to the scenario listing' do
+        expect(response).to be_redirect
+      end
+
+      it 'soft-deletes the scenario' do
+        expect(user_scenario.reload).to be_discarded
+      end
+    end
+
+    context 'with an unowned saved scenario' do
+      before do
+        post(:discard, params: { id: admin_scenario.id })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+
+      it 'does not soft-delete the scenario' do
+        expect(admin_scenario.reload).not_to be_discarded
+      end
+    end
+
+    context 'with a saved scenario ID that does not exist' do
+      before do
+        post(:discard, params: { id: 99_999 })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+    end
+  end
+
+  describe 'PUT undiscard' do
+    before do
+      login_as(user)
+      session[:setting] = Setting.new
+    end
+
+    context 'with an owned saved scenario' do
+      before do
+        user_scenario.discard!
+        post(:undiscard, params: { id: user_scenario.id })
+      end
+
+      it 'redirects to the scenario listing' do
+        expect(response).to be_redirect
+      end
+
+      it 'removes the soft-deletion of the scenario' do
+        expect(user_scenario.reload).not_to be_discarded
+      end
+    end
+
+    context 'with an unowned saved scenario' do
+      before do
+        admin_scenario.discard!
+        post(:undiscard, params: { id: admin_scenario.id })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+
+      it 'does not remove the soft-deletion of the scenario' do
+        expect(admin_scenario.reload).to be_discarded
+      end
+    end
+
+    context 'with a saved scenario ID that does not exist' do
+      before do
+        post(:undiscard, params: { id: 99_999 })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+    end
+  end
+
+  describe 'DELETE destroy' do
+    before do
+      login_as(user)
+      session[:setting] = Setting.new
+    end
+
+    context 'with an owned saved scenario' do
+      before do
+        delete(:destroy, params: { id: user_scenario.id })
+      end
+
+      it 'redirects to the scenario listing' do
+        expect(response).to be_redirect
+      end
+
+      it 'destroys the scenario' do
+        expect(SavedScenario.exists?(user_scenario.id)).to be(false)
+      end
+    end
+
+    context 'with an unowned saved scenario' do
+      before do
+        delete(:destroy, params: { id: admin_scenario.id })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+
+      it 'does not destroy the scenario' do
+        expect(SavedScenario.exists?(admin_scenario.id)).to be(true)
+      end
+    end
+
+    context 'with a saved scenario ID that does not exist' do
+      before do
+        delete(:destroy, params: { id: 99_999 })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+    end
+  end
 end

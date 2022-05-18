@@ -30,8 +30,34 @@ table.default
   flex: 1
 
 .scenario_wrapper
+  font-size: 0.875rem
+
+  // flash notice messages which are to be shown inside the scenario wrapper.
+  .inner-notice
+    align-items: center
+    background: #e8f7e7
+    border-radius: 4px
+    border: 1px solid #9ed79b
+    color: #32772e
+    display: flex
+    font-size: 14px
+    justify-content: center
+    margin-bottom: 0.5rem
+    padding: 0.5rem
+    > *
+      margin: 0 0.25rem
+    .dot
+      font-size: 6px
+    .message
+      margin-left: 0
+    a
+      color: #32772e
+      font-weight: 600
+      &:hover
+        color: black
+
   &#show_scenario, &#feature_scenario, &#index
-    width: $landing-width
+    width: $landing-width + 200px
     margin: 0 auto 3rem
     background: white
     border: 1px solid $landing-border-color
@@ -42,7 +68,7 @@ table.default
     border-radius: 4px
     padding: 15px 40px
 
-    .warning
+    .version-warning
       background: #f0f7ee image-url('icons/warning-information.svg') 1.5rem 1.25rem no-repeat
       background-size: 2rem
       border-left: 3px solid #79a765
@@ -82,19 +108,20 @@ table.default
             color: black
 
     h1
-      margin-bottom: 0.5em
+      margin-bottom: 0.675rem
+      font-size: 1.5rem
       sub
         line-height: 0
 
     .actions
       display: flex
+      align-items: center
       a
         text-decoration: none
-        margin: 0.5rem 0.5rem 1rem 0
         &:hover
           color: darken($link-color, 20%)
       .dot
-        margin: 1rem 0.5rem 1rem 0
+        margin: 1rem 0.5rem
         font-size: 6px
         color: $link-color
 
@@ -109,12 +136,11 @@ table.default
       border-radius: 3px
       cursor: pointer
       font-size: 1rem
-      font-weight: bold
+      font-weight: 500
       text-align: center
       text-shadow: none
       padding: 10px 15px
-      margin: 0.5rem 0.5rem 1rem 0
-      -webkit-font-smoothing: antialiased
+      margin: 0.5rem 0.5rem 0.5rem 0
       &.load
         background-color: $landing-blue
         background: linear-gradient(lighten($landing-blue, 10%), $landing-blue)
@@ -126,6 +152,7 @@ table.default
         &.dim
           background: linear-gradient(lighten($landing-blue, 25%), lighten($landing-blue, 18%))
       &.cancel, &.compare
+        color: black
         &:hover
           color: lighten(black, 15%)
           background: linear-gradient(lighten(#eee, 9%), lighten(#eee, 2%))
@@ -147,6 +174,14 @@ table.default
         padding: 5px 8px
         -webkit-font-smoothing: auto
 
+  .edit_featured_scenario .actions
+    a, input
+      margin-top: 0
+      margin-bottom: 0
+      line-height: 1
+    & > * + *
+      margin-left: 0.5rem
+
   &#index
     .vertical-bar
       width: 0
@@ -155,56 +190,155 @@ table.default
       display: inline-block
       margin: 0 0.5rem 0 0
       vertical-align: middle
-    a
-      color: #3c8ee1
 
-    table
-      width: 100%
-      margin: 10px 0
-      td
-        border: none
-        padding: 8px 10px
-        &.box
-          padding-left: 0
-          padding-right: 0
-          input
-            margin: 0
-      input
-        height: 16px
-        width: 16px
+    .save-wrapper
+      align-items: center
+      display: flex
+      margin: 0 20px 0 auto
+      .save
+        margin: 0
+        font-size: 14px
+    .empty-state
+      text-align: center
+      padding: 2rem 8rem
+      h4
+        font-size: 18px
+        font-weight: 500
+        margin: 0
+      p
+        color: $landing-grey
+        font-size: 14px
+        margin: 0.75rem 0 0
       a
-        display: block
-        text-decoration: none
-        cursor: pointer
-        .title
-          font-weight: bold
-          font-size: 1rem
-          display: inline-block
-          width: 100%
-        .info
-          color: black
-        .author
-          color: $landing-grey
-        .featured
-          color: #e2ac49
-        &:hover .title
-          color: darken($landing-blue, 25%)
-          text-decoration: underline
-      .unavailable
-        .info
-          color: $error-red
+        padding: 0.5rem
+        margin: -0.5rem
 
-      #scenario_paginator td
-        border: none
-        a
-          border-top: 1px solid #ddd
-          color: #56b351
-          font-size: 1rem
-          font-weight: bold
-          padding-top: 1rem
+    .trash-notice
+      align-items: center
+      color: $landing-grey
+      display: flex
+      font-size: 14px
+      justify-content: center
+      padding: 0.5rem 0
+      svg
+        margin-right: 0.25rem
+
+    .pagination
+      align-items: center
+      display: flex
+      font-size: 16px
+      justify-content: center
+      margin: 0 0 0.5rem
+
+      a
+        border-radius: 4px
+        padding: 0.375rem 0.5rem
+        &:hover
+          background: lighten($landing-grey, 42%)
+          text-decoration: none
+        &:active
+          background: lighten($landing-grey, 35%)
+          color: darken($landing-grey, 15%)
+
+      .current
+        font-weight: 600
+        padding: 0.375rem 0.5rem
+
+    .scenario-row
+      display: flex
+      margin: 0 -1rem
+      &:hover
+        border-radius: 4px
+        .buttons
+          opacity: 1
+          pointer-events: initial
+      &.discarded .buttons
+        // buttons are always visible for discarded scenarios.
+        opacity: 1
+        pointer-events: initial
+      a.title, .check input
+        // title link and checkbox are clickable for the entire container.
+        &::after
+          position: absolute
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          z-index: 1
+          content: ""
+      .check, .scenario-info, .buttons
+        padding: 0.5rem
+      & > :first-child
+        padding-left: 1rem
+      & > :last-child
+        padding-left: 1rem
+      .check
+        position: relative
+        input
+          height: 16px
+          margin: 0
+          width: 16px
+      .scenario-info
+        flex: 1
+        position: relative
+        a.title:hover
+          text-decoration: underline
+      .buttons
+        align-items: center
+        pointer-events: none
+        opacity: 0
+        transition: opacity 0.15s ease-in-out
+        .discard
+          align-items: center
+          background: lighten($landing-grey, 42%)
+          border-radius: 4px
+          color: $landing-grey
+          display: flex
+          height: 24px
+          justify-content: center
+          padding: 0.375rem
+          transition: all 0.15s ease-in-out
+          width: 24px
           &:hover
-            color: darken(#56b351, 20%)
-            text-decoration: underline
+            background: lighten($landing-grey, 35%)
+          &:active
+            background: lighten($landing-grey, 28%)
+            color: darken($landing-grey, 15%)
+        .destroy
+          color: $error-red
+      .title
+        font-weight: 600
+        font-size: 1rem
+        display: inline-block
+        width: 100%
+      .info, .author, .last-updated
+        font-size: 0.8125rem
+      .info
+        color: black
+      .author, .last-updated
+        color: $landing-grey
+      .featured
+        color: #e2ac49
+        position: relative
+        z-index: 2
+    .unavailable .scenario-info
+      opacity: 0.3
+      .info
+        color: $error-red
+
+    #scenario_paginator
+      border: none
+      a
+        border-top: 1px solid #ddd
+        color: #56b351
+        display: inline-block
+        font-size: 1rem
+        font-weight: bold
+        padding-top: 1rem
+        margin: 1rem 0
+        &:hover
+          color: darken(#56b351, 20%)
+          text-decoration: underline
 
   &#show_scenario
     .title
@@ -231,14 +365,33 @@ table.default
 
     ul.details
       display: flex
-      padding-left: 0
       margin-top: 0
-      li
+      padding-left: 0
+      & > li
         list-style: none
         padding-right: 8px
-        color: #999
+        color: #888
         strong
           color: initial
+          font-weight: 600
+      .area-flag
+        vertical-align: middle
+        margin-top: -4px
+      #scenario-location button
+        background: none
+        border: 0
+        color: inherit
+        cursor: pointer
+        font-size: inherit
+        margin: -0.5rem
+        padding: 0.5rem
+        svg
+          vertical-align: middle
+          margin-top: -3px
+        &:hover
+          color: #444
+        .fa
+          margin-left: 0.25rem
 
     .bar
       border-top: 1px solid #eee
@@ -358,8 +511,8 @@ table.default
         font-weight: normal
       .button.save
         background: linear-gradient(#de8283, #bd5252)
+        color: white
         &:hover
-          color: white
           background: linear-gradient(lighten(#de8283, 4%), lighten(#bd5252, 4%))
         &:active
           background: linear-gradient(darken(#de8283, 5%), darken(#bd5252, 5%))
@@ -376,6 +529,54 @@ table.default
           margin-top: 0 !important
         *:last-child
           margin-bottom: 0 !important
+
+  .big-tabs
+    align-items: stretch
+    background: #eef2f7
+    border-bottom: 1px solid #d2d6d9
+    display: flex
+    font-weight: 500
+    margin: -15px -40px 20px
+    .count
+      align-items: center
+      background: #ccd3db
+      background: lighten(#79828d, 31%)
+      border-radius: 99px
+      color: darken(#79828d, 15%)
+      display: inline-flex
+      font-size: 11px
+      font-weight: normal
+      height: 0.75rem
+      justify-content: center
+      margin-left: 0.25rem
+      min-width: 0.5rem
+      padding: 0.25rem 0.375rem
+      &.red
+        background-color: #e35252
+        color: white
+    .tab
+      align-items: center
+      border-right: 1px solid #d2d6d9
+      color: darken(#79828d, 15%)
+      display: flex
+      font-size: 16px
+      gap: 0.125rem
+      padding: 20px 40px
+      &:hover
+        color: darken(#79828d, 15%)
+        text-decoration: none
+        .name
+          text-decoration: underline
+      &.active
+        background: white
+        color: black
+        border-bottom: 1px solid white
+        margin-bottom: -1px
+        &:hover
+          color: black
+      svg
+        display: inline-block
+        margin-right: 0.125rem
 
   hr
     border: none

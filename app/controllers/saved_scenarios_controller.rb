@@ -2,9 +2,9 @@
 
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
-  before_action :assign_saved_scenario, only: %i[show load edit update]
+  before_action :assign_saved_scenario, only: %i[show load edit update discard undiscard destroy]
   before_action :assign_scenario, only: :load
-  before_action :ensure_owner, only: %i[edit update]
+  before_action :ensure_owner, only: %i[edit update discard undiscard destroy]
   helper_method :owned_saved_scenario?
 
   def index
@@ -25,6 +25,18 @@ class SavedScenariosController < ApplicationController
           render json: []
         end
       end
+    end
+  end
+
+  def discarded
+    @saved_scenarios = current_user.saved_scenarios.discarded
+      .includes(:featured_scenario, :user)
+      .order('updated_at DESC')
+      .page(params[:page])
+      .per(100)
+
+    respond_to do |format|
+      format.html
     end
   end
 
@@ -114,10 +126,53 @@ class SavedScenariosController < ApplicationController
     end
   end
 
+  # Soft-deletes the scenario so that it no longer appears in listings.
+  #
+  # PUT /saved_scenarios/:id/discard
+  def discard
+    unless @saved_scenario.discarded?
+      @saved_scenario.discarded_at = Time.zone.now
+      @saved_scenario.save(touch: false)
+
+      flash.notice = 'Your scenario was put in the trash'
+      flash[:undo_params] = [undiscard_saved_scenario_path(@saved_scenario), { method: :put }]
+    end
+
+    redirect_back(fallback_location: saved_scenarios_path)
+  end
+
+  # Removes the soft-deletes of the scenario.
+  #
+  # PUT /saved_scenarios/:id/undiscard
+  def undiscard
+    unless @saved_scenario.kept?
+      @saved_scenario.discarded_at = nil
+      @saved_scenario.save(touch: false)
+
+      flash.notice = 'Your scenario was restored'
+      flash[:undo_params] = [discard_saved_scenario_path(@saved_scenario), { method: :put }]
+    end
+
+    redirect_back(fallback_location: discarded_saved_scenarios_path)
+  end
+
+  # DELETE /saved_scenarios/:id
+  def destroy
+    @saved_scenario.destroy
+    flash.notice = 'Your scenario was permanently deleted'
+    redirect_to discarded_saved_scenarios_path
+  end
+
   private
 
   def ensure_owner
-    head(:forbidden) unless owned_saved_scenario?
+    return if owned_saved_scenario?
+
+    if request.format.json?
+      head(:not_found)
+    else
+      render_not_found('saved scenario')
+    end
   end
 
   def owned_saved_scenario?(saved_scenario = nil)
@@ -131,6 +186,8 @@ class SavedScenariosController < ApplicationController
 
   def assign_saved_scenario
     @saved_scenario = SavedScenario.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render_not_found
   end
 
   def assign_scenario

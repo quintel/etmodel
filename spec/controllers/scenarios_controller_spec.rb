@@ -350,26 +350,6 @@ describe ScenariosController, vcr: true do
     # rubocop:enable RSpec/NestedGroups
   end
 
-  context 'with an admin' do
-    before do
-      login_as admin
-    end
-
-    describe '#index' do
-      subject do
-        get :index
-        response
-      end
-
-      it { is_expected.to be_successful }
-      it 'gets a list of all saved scenarios' do
-        subject
-        expect(assigns(:saved_scenarios))
-          .to include user_scenario, admin_scenario
-      end
-    end
-  end
-
   context 'with a teacher' do
     let(:student) { FactoryBot.create(:user, teacher_email: user.email) }
     let(:student_scenario) { FactoryBot.create(:saved_scenario, user: student) }

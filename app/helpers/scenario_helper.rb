@@ -149,4 +149,19 @@ module ScenarioHelper
       release_date: l(current_release_date.to_date, format: :long)
     )
   end
+
+  # Classes for the scenario row on the scenario listing.
+  def classes_for_scenario_row(saved_scenario)
+    [
+      saved_scenario.discarded? ? 'discarded' : nil,
+      saved_scenario.loadable? ? '' : 'unavailable'
+    ].compact.join(' ')
+  end
+
+  # Shows the number of scenarios in a tab. When the number is zero nothing is shown.
+  def tab_count(count, options = {})
+    return if count.zero?
+
+    tag.span(number_with_delimiter(count), class: "count #{options[:class]}".strip)
+  end
 end

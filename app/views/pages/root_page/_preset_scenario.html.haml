@@ -1,7 +1,8 @@
 #preset-scenario
-  %h4== #{t('intro.load_a_scenario')}&hellip;
-
-  - grouped = FeaturedScenario.in_groups(FeaturedScenario.all)
+  .header-container
+    %h4== #{t('intro.load_a_scenario')}&hellip;
+    = link_to "#{t('header.load_scenario')} →", saved_scenarios_path
+    - grouped = FeaturedScenario.in_groups(FeaturedScenario.all)
 
   %ul.scenario-list
     - grouped.each do |data|

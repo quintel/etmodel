@@ -1,5 +1,6 @@
 #new-scenario
-  %h4== #{t('intro.start_a_new_scenario')}&hellip;
+  .header-container
+    %h4== #{t('intro.start_a_new_scenario')}&hellip;
   = form_tag root_path do
     .country
       = render "pages/root_page/country_select"

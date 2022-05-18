@@ -26,15 +26,18 @@ class ScenariosController < ApplicationController
 
   def index
     @student_ids = current_user.students.pluck(:id)
-    items = if current_user.admin?
-      SavedScenario.all.includes(:featured_scenario, :user)
-    elsif current_user.students.present?
-      SavedScenario.includes(:featured_scenario, :user)
-        .where(user_id: @student_ids + [current_user.id])
+    items = if current_user.students.present?
+      SavedScenario.where(user_id: @student_ids + [current_user.id])
     else
       current_user.saved_scenarios
     end
-    @saved_scenarios = items.order('updated_at DESC').page(params[:page]).per(50)
+
+    @saved_scenarios = items
+      .available
+      .includes(:featured_scenario, :user)
+      .order('updated_at DESC')
+      .page(params[:page])
+      .per(50)
 
     respond_to do |format|
       format.html

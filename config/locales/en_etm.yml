@@ -27,6 +27,13 @@ en:
   grows: "grows"
   nevermind: "Never mind"
   cancel: "Cancel"
+  last_updated_ago: "Last updated %{when} ago"
+  delete: Delete
+  delete_permanently: Delete Permanently
+  restore: Restore
+  trash: Trash
+  settings: Settings
+  move_to: Move to
 
   chart_picker:
     no_matches: No matches
@@ -243,6 +250,16 @@ en:
         %0D%0A
         I used the Energy Transition Model to create a scenario, and I would like to share it with you.%0D%0A
         Please click on the following link to view the scenario:"
+    trash:
+      notice: Scenarios in the trash will be automatically deleted after %{deleted_after} days.
+      empty:
+        title:
+          There are no scenarios in the trash
+        description:
+          Deleted scenarios are sent to the trash where you can choose to permanently
+          delete or restore them. Trashed scenarios are automatically removed after %{deleted_after}
+          days.
+        back: Back to my scenarios
   featured_scenario:
     unfeature: 'Unfeature'
     unfeature_title: 'Unfeature this scenario'

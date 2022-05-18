@@ -115,6 +115,64 @@ describe SavedScenario do
     end
   end
 
+  describe '.available' do
+    let!(:scenario) { FactoryBot.create(:saved_scenario) }
+
+    it 'includes active scenarios' do
+      expect(described_class.available).to include(scenario)
+    end
+
+    it 'omits discarded scenarios' do
+      discarded = FactoryBot.create(:saved_scenario, discarded_at: Time.zone.now)
+      expect(described_class.available).not_to include(discarded)
+    end
+
+    it 'omits scenarios for unsupported regions' do
+      invalid = FactoryBot.create(:saved_scenario, area_code: 'invalid')
+      expect(described_class.available).not_to include(invalid)
+    end
+  end
+
+  describe '.destroy_old_discarded!' do
+    it 'does not destroy a scenario which is not discarded' do
+      scenario = FactoryBot.create(:saved_scenario)
+
+      expect { described_class.destroy_old_discarded! }
+        .not_to change { described_class.exists?(scenario.id) }
+        .from(true)
+    end
+
+    it 'does not destroy a recently discarded scenario' do
+      scenario = FactoryBot.create(:saved_scenario, discarded_at: Time.zone.now)
+
+      expect { described_class.destroy_old_discarded! }
+        .not_to change { described_class.exists?(scenario.id) }
+        .from(true)
+    end
+
+    it 'does not delete a discarded scenario on the threshold of being old' do
+      scenario = FactoryBot.create(
+        :saved_scenario,
+        discarded_at: (SavedScenario::AUTO_DELETES_AFTER - 10.seconds).ago
+      )
+
+      expect { described_class.destroy_old_discarded! }
+        .not_to change { described_class.exists?(scenario.id) }
+        .from(true)
+    end
+
+    it 'destroys an old discarded scenario' do
+      scenario = FactoryBot.create(
+        :saved_scenario,
+        discarded_at: (SavedScenario::AUTO_DELETES_AFTER + 10.seconds).ago
+      )
+
+      expect { described_class.destroy_old_discarded! }
+        .to change { described_class.exists?(scenario.id) }
+        .from(true).to(false)
+    end
+  end
+
   describe '#as_json' do
     let(:scenario) { FactoryBot.create(:saved_scenario) }
     let(:json) { scenario.as_json }

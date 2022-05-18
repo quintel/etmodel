@@ -1,35 +1,4 @@
-- @saved_scenarios.each do |ss|
-  - if ss.loadable?
-    %tr
-      %td.box= check_box_tag 'scenario_ids[]', ss.scenario_id
-      %td
-        %a{ href:"/saved_scenarios/#{ss.id}" }
-          %span.title= ss.localized_title(I18n.locale)
-          %span.info
-            = t('areas.' + ss.area_code)
-            = ss.end_year
-          %span.author
-            = t('scenario.by')
-            = ss.user&.name
-          - if ss.featured?
-            %span.featured.tooltip{ title: t('scenario.featured_scenario')} &#9733;
+= render partial: 'saved_scenarios/scenario_row', collection: @saved_scenarios
 
-  - elsif current_user.admin?
-    %tr.unavailable
-      %td.box= check_box_tag 'scenario_ids[]', -1, false, disabled: true
-      %td
-        %a
-          %span.title
-            = ss.title
-            (#{ss.scenario_id})
-          %span.info
-            %code= ss.area_code
-            (#{t('scenario.area_not_exists')})
-          %span.author
-            = t('scenario.by')
-            = ss.user&.name
-          - if ss.featured?
-            %span.featured{ title: t('scenario.featured_scenario')} &#9733;
-%tr#scenario_paginator
-  %td
-  %td= link_to_next_page @saved_scenarios, 'More...', remote: true
+#scenario_paginator
+  = link_to_next_page @saved_scenarios, 'More...', remote: true

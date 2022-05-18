@@ -70,16 +70,22 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :saved_scenarios, except: %i[new destroy] do
+  resources :saved_scenarios, except: %i[new] do
     resource :feature, only: %i[show create update destroy], controller: 'featured_scenarios'
 
     member do
       get :load
+      put :discard
+      put :undiscard
 
       # get    'feature' => 'featured_scenarios#edit'
       # post   'feature' => 'featured_scenarios#create'
       # put    'feature' => 'featured_scenarios#update'
       # delete 'feature' => 'featured_scenarios#destroy'
+    end
+
+    collection do
+      get :discarded
     end
 
     get '/report/:report_name' => 'saved_scenario_reports#show'

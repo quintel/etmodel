@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2021_12_15_125700) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_03_145118) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -91,6 +91,8 @@ ActiveRecord::Schema[7.0].define(version: 2021_12_15_125700) do
     t.text "settings"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
+    t.datetime "discarded_at"
+    t.index ["discarded_at"], name: "index_saved_scenarios_on_discarded_at"
     t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
     t.index ["user_id"], name: "index_saved_scenarios_on_user_id"
   end

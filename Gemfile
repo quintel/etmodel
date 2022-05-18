@@ -33,6 +33,7 @@ gem 'non-stupid-digest-assets'
 gem 'http_accept_language'
 gem 'browser'
 gem 'valid_email2'
+gem 'discard'
 
 # javascript
 gem 'sprockets-rails', require: 'sprockets/railtie'

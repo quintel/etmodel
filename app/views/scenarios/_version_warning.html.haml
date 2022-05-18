@@ -1,5 +1,5 @@
 - if !ETModel::Version.prerelease? && scenario.updated_at && scenario.updated_at < ETModel::Version::DATE
-  .warning
+  .version-warning
     = previous_version_scenario_warning(scenario, ETModel::Version::DATE)
     %details
       %summary= t('scenario.warning.effect')

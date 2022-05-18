@@ -26,7 +26,10 @@
     #wrapper
       = render "layouts/etm/header"
       #content
-        - flash_message
+        - if content_for?(:flash)
+          = yield :flash
+        - else
+          - flash_message
         = content_for?(:content) ? yield(:content) : yield
       - if content_for?(:footer)
         %footer.fixed

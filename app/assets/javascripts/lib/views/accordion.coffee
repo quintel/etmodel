@@ -63,5 +63,7 @@ class @Accordion
         else
           App.call_api()
 
+      App.analytics.sendPageView(window.location.pathname, document.title)
+
   open_right_tab: ->
     $("h3.selected").trigger 'click'

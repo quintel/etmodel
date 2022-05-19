@@ -30,6 +30,15 @@ window.Analytics = (function () {
     inputChanged: function (key) {
       this.track('input', 'changed', key);
     },
+
+    sendPageView: function (path, title) {
+      this.sendEvent('set', {
+        page: path,
+        title: title,
+      });
+
+      this.sendEvent('send', 'pageview');
+    },
   };
 
   return Analytics;

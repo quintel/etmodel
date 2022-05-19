@@ -140,4 +140,13 @@ module ApplicationHelper
   def back_url_or_root
     controller.request.env['HTTP_REFERER'].present? ? url_for(:back) : root_url
   end
+
+  # Public: Returns if a asset exists at the specified path.
+  def asset_exists?(path)
+    if Rails.configuration.assets.compile
+      !Rails.application.assets.find_asset(path).nil?
+    else
+      !Rails.application.assets_manifest.assets[path].nil?
+    end
+  end
 end

@@ -37,9 +37,12 @@ module PagesHelper
       area_or_code = Api::Area.find_by_country_memoized(area_or_code)
     end
 
-    css_class = area_css_class(area_or_code)
+    path = "flags-24/#{area_css_class(area_or_code).to_s.downcase}.png"
+    image_tag(path, class: 'area-flag', alt: '') if asset_exists?(path)
+  end
 
-    image_tag("flags-24/#{css_class}.png", class: 'area-flag', alt: '') if css_class.present?
+  def placeholder_area_flag
+    tag.span(class: 'area-flag placeholder-area-flag')
   end
 
   # Public: Returns the options for the co2 factsheet.

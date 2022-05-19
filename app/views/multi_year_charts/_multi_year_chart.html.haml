@@ -1,6 +1,6 @@
 %li
   %a.myc-session{ href: myc_url(multi_year_chart) }
-    = area_flag_icon(multi_year_chart.area_code)
+    = area_flag_icon(multi_year_chart.area_code) || placeholder_area_flag
     %span.title= multi_year_chart.title
     %span.details
       == (#{t("areas.#{multi_year_chart.area_code}")}, #{multi_year_chart.end_year})

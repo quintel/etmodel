@@ -1,4 +1,4 @@
-window.Analytics = (function() {
+window.Analytics = (function () {
   'use strict';
 
   /**
@@ -9,7 +9,7 @@ window.Analytics = (function() {
    *   endpoint. May be an empty function if you want no events to be sent.
    */
   function Analytics(sender) {
-    this.sendEvent = sender || function() {};
+    this.sendEvent = sender || function () {};
 
     // Only send these events the first time they occur (i.e. notify that user
     // has changed "input_1" the first time it is changed and ignore further
@@ -19,17 +19,17 @@ window.Analytics = (function() {
   }
 
   Analytics.prototype = {
-    track: function(scope, type, data) {
+    track: function (scope, type, data) {
       this.sendEvent('send', 'event', scope, type, data);
     },
 
-    chartAdded: function(key) {
+    chartAdded: function (key) {
       this.track('chart', 'added', key);
     },
 
-    inputChanged: function(key) {
+    inputChanged: function (key) {
       this.track('input', 'changed', key);
-    }
+    },
   };
 
   return Analytics;

@@ -31,9 +31,9 @@ nl:
   delete: Verwijderen
   delete_permanently: Permanent verwijderen
   restore: Herstellen
-  trash: Vuilnisbak
+  trash: Prullenbak
   settings: Opties
-  move_to: Verhuizen naar
+  move_to: Verplaatsen naar
 
   chart_picker:
     no_matches: Geen resultaten
@@ -252,15 +252,15 @@ nl:
         Ik heb een scenario gemaakt met het Energietransitiemodel, en zou het graag met je delen.%0D%0A
         Klik op de volgende link om het te bekijken:"
     trash:
-      notice: Scenarios in the trash will be automatically deleted after %{deleted_after} days.
+      notice: Scenarios in de prullenbak worden na %{deleted_after} dagen automatisch verwijderd.
       empty:
         title:
-          There are no scenarios in the trash
+          De prullenbak is leeg
         description:
-          Deleted scenarios are sent to the trash where you can choose to permanently
-          delete or restore them. Trashed scenarios are automatically removed after ${deleted_after}
-          days.
-        back: Back to my scenarios
+          Wanneer je een scenario weggooit gaat deze eerst naar de prullenbak. Hier kan je ervoor
+          kiezen om een scenario te herstellen of permanent te verwijderen. Scenarios in de
+          prullenbak worden automatisch verwijderd na %{deleted_after} dagen.
+        back: Terug naar mijn scenarios
   featured_scenario:
     unfeature: 'Stop met uitlichten'
     unfeature_title: 'Stop met uitlichten van dit scenario'

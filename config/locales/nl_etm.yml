@@ -34,6 +34,7 @@ nl:
   trash: Prullenbak
   settings: Opties
   move_to: Verplaatsen naar
+  undo: Ongedaan maken
 
   chart_picker:
     no_matches: Geen resultaten
@@ -253,6 +254,8 @@ nl:
         Klik op de volgende link om het te bekijken:"
     trash:
       notice: Scenarios in de prullenbak worden na %{deleted_after} dagen automatisch verwijderd.
+      discarded_flash: Your scenario was put in the trash
+      undiscarded_flash: Your scenario was restored
       empty:
         title:
           De prullenbak is leeg

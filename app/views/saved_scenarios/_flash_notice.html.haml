@@ -8,4 +8,4 @@
       = flash[:notice]
     - if flash[:undo_params]
       .fa.dot.fa-circle
-      = link_to 'Undo?', *flash[:undo_params]
+      = link_to "#{t('undo')}?", *flash[:undo_params]

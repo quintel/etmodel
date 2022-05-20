@@ -134,7 +134,7 @@ class SavedScenariosController < ApplicationController
       @saved_scenario.discarded_at = Time.zone.now
       @saved_scenario.save(touch: false)
 
-      flash.notice = 'Your scenario was put in the trash'
+      flash.notice = t('scenario.trash.discarded_flash')
       flash[:undo_params] = [undiscard_saved_scenario_path(@saved_scenario), { method: :put }]
     end
 
@@ -149,7 +149,7 @@ class SavedScenariosController < ApplicationController
       @saved_scenario.discarded_at = nil
       @saved_scenario.save(touch: false)
 
-      flash.notice = 'Your scenario was restored'
+      flash.notice = t('scenario.trash.undiscarded_flash')
       flash[:undo_params] = [discard_saved_scenario_path(@saved_scenario), { method: :put }]
     end
 

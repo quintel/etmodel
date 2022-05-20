@@ -34,6 +34,7 @@ en:
   trash: Trash
   settings: Settings
   move_to: Move to
+  undo: Undo
 
   chart_picker:
     no_matches: No matches
@@ -252,6 +253,8 @@ en:
         Please click on the following link to view the scenario:"
     trash:
       notice: Scenarios in the trash will be automatically deleted after %{deleted_after} days.
+      discarded_flash: Your scenario was put in the trash
+      undiscarded_flash: Your scenario was restored
       empty:
         title:
           There are no scenarios in the trash

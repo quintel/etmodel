@@ -22,8 +22,8 @@ class ToggleView extends Backbone.View
 
     @quinn = new jQuery.Quinn @widgetEl,
       min:         0
-      max:         95 # One pixel per "step".
-      value:       if @model.get(@attr) then 95 else 0
+      max:         1 # One pixel per "step".
+      value:       if @model.get(@attr) then 1 else 0
       effectSpeed: 150
       renderer:    Renderer
       change:      @onQuinnChange
@@ -118,8 +118,6 @@ class Renderer extends jQuery.Quinn.Renderer
 
     # Style adjustments.
     @bar.css('marginLeft', '-20px')
-    @bar.css('paddingRight', '31px')
-    @handles[0].css('marginLeft', '-4px')
 
     # "Fast" click events.
     @handles[0].on(onEvent, @handleDown)
@@ -140,3 +138,6 @@ class Renderer extends jQuery.Quinn.Renderer
   redrawDeltaBar: (value, handle) ->
     super
     @deltaBar.css('right', '+=6')
+
+  position: (value, ignoreOverhang) ->
+    super - 1

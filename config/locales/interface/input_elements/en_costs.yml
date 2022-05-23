@@ -378,7 +378,7 @@ en:
         or with <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
         solar PV plants</a>.
     om_costs_water_river:
-      title: O&M costs hydroelectric
+      title: O&M costs hydro river
       short_description: ''
       description: This slider sets the height of your assumed operational and maintenance
         costs for a run-of-the-river hydro-electric power plant. Costs are compared
@@ -509,11 +509,18 @@ en:
       short_description:
       description:
     investment_costs_water_river:
-      title: Investment costs hydroelectric
+      title: Investment costs hydro river
       short_description: ''
       description: "This slider sets the height of your assumed investment costs for
         a run-of-the-river hydro-electric power plant (10 MWe). Costs are compared
         to current costs.\r\n"
+    investment_costs_water_mountains:
+      title: Investment costs hydro mountains
+      short_description: ''
+      description: |
+        This slider sets the height of your assumed investment costs for
+        a large hydro-electric power plant (500 MWe) in a mountain reservoir.
+        Costs are compared to current costs.
     investment_costs_electric_cars:
       title: Extra investment per electric car
       short_description:

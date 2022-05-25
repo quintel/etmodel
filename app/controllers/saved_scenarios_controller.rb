@@ -159,7 +159,7 @@ class SavedScenariosController < ApplicationController
   # DELETE /saved_scenarios/:id
   def destroy
     @saved_scenario.destroy
-    flash.notice = 'Your scenario was permanently deleted'
+    flash.notice = t('scenario.trash.deleted_flash')
     redirect_to discarded_saved_scenarios_path
   end
 

@@ -34,13 +34,6 @@
   disabled: false
   output_element_key: renewability
   dependent_on: ''
-- key: household_energy_cost
-  gquery_key: dashboard_total_costs_per_household
-  group: costs
-  position:
-  disabled: false
-  output_element_key: breakdown_of_total_cost_per_household
-  dependent_on:
 - key: loss_of_load
   gquery_key: dashboard_security_of_supply
   group: summary

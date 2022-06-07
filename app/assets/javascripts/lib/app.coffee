@@ -226,16 +226,17 @@ class @AppView extends Backbone.View
       @customCurvesDeferred = $.Deferred()
 
       # Ajax request.
-      req = $.ajax(
-        url: App.scenario.url_path() +
-          '/custom_curves?include_internal=true&include_unattached=true'
-        method: 'GET'
-        dataType: 'json'
-      )
+      @api.ensure_id().done (id) =>
+        req = $.ajax(
+          url: App.scenario.url_path() +
+            '/custom_curves?include_internal=true&include_unattached=true'
+          method: 'GET'
+          dataType: 'json'
+        )
 
-      req.success((data) =>
-        @customCurvesDeferred.resolve(new CustomCurveCollection(data))
-      )
+        req.success((data) =>
+          @customCurvesDeferred.resolve(new CustomCurveCollection(data))
+        )
 
     return @customCurvesDeferred.promise()
 

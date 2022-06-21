@@ -148,7 +148,7 @@ describe PagesController, vcr: true do
   end
 
   context 'when visiting static pages' do
-    %i[bugs units disclaimer privacy_statement].each do |page|
+    %i[units disclaimer privacy_statement].each do |page|
       describe "#{page} page" do
         # rubocop:disable RSpec/MultipleExpectations
         it 'works' do
@@ -183,25 +183,11 @@ describe PagesController, vcr: true do
     it { expect { subject }.not_to change(I18n, :locale) }
   end
 
-  context 'with hidden setting pages' do
-    %i[show_all_countries show_flanders].each do |p|
-      # rubocop:disable  RSpec/MultipleExpectations
-      describe "pages##{p}" do
-        it 'updates the session variable and redirect to home page' do
-          get p
-          expect(session[p]). to be(true)
-          expect(response).to redirect_to(root_path)
-        end
-      end
-      # rubocop:enable  RSpec/MultipleExpectations
-    end
-  end
-
   describe 'whats new' do
     it 'renders an h1' do
       # Assert markdown rendering works
       get :whats_new
-      expect(response.body).to have_css('.whats_new h1', text: /what’s new/i)
+      expect(response.body).to have_css('.whats_new h1', text: /april/i)
     end
   end
 end

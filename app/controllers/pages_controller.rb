@@ -25,46 +25,27 @@ class PagesController < ApplicationController
   end
 
   def whats_new
+    render 'markdown', locals: { key: :whats_new }
+  end
+
+  def about
+    render 'markdown', locals: { key: :about }
+  end
+
+  def features
+    render 'markdown', locals: { key: :features }
+  end
+
+  def development
+    render 'markdown', locals: { key: :development }
   end
 
   def unsupported_browser
     render layout: 'form_only'
   end
 
-protected
-
-  def setup_countries_and_regions
-    @show_all = session[:show_municipalities] || session[:show_all_countries]
-    @show_german_provinces = (current_user.try(:email) == "brandenburg@et-model.com" || session[:show_all_countries])
-  end
-
-  def assign_settings_and_redirect
-    Current.setting = Setting.default
-    Current.setting.end_year = params[:end_year]
-    Current.setting.area_code = params[:area_code]
-    Current.setting.preset_scenario_id = params[:preset_scenario_id]
-
-    redirect_to play_path and return
-  end
-
-public
-
   def update_footer
     render partial: "layouts/etm/footer"
-  end
-
-  def show_all_countries
-    session[:show_all_countries] = true
-    redirect_to root_path
-  end
-
-  def show_flanders
-    session[:show_flanders] = true
-    redirect_to root_path
-  end
-
-  def quality
-    @quality = Text.where(key: :quality_control).first
   end
 
   def tutorial
@@ -79,5 +60,21 @@ public
   def set_locale
     locale
     render(plain: '', status: :ok)
+  end
+
+  protected
+
+  def setup_countries_and_regions
+    @show_all = session[:show_municipalities] || session[:show_all_countries]
+    @show_german_provinces = (current_user.try(:email) == "brandenburg@et-model.com" || session[:show_all_countries])
+  end
+
+  def assign_settings_and_redirect
+    Current.setting = Setting.default
+    Current.setting.end_year = params[:end_year]
+    Current.setting.area_code = params[:area_code]
+    Current.setting.preset_scenario_id = params[:preset_scenario_id]
+
+    redirect_to play_path and return
   end
 end

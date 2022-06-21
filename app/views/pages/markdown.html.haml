@@ -1,0 +1,10 @@
+- content_for(:page_title) { "#{t("pages.#{key}.title")} - #{t('meta.name')}" }
+
+.information_page.whats_new
+  %h1= t("pages.#{key}.title")
+  %hr
+
+  = render partial: "pages/#{key}/content"
+
+  %section.go_back
+    %p= link_to "← #{t('back_to_model')}", root_path

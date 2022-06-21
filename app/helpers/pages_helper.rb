@@ -70,4 +70,32 @@ module PagesHelper
       "#{url.path}?allow_unsupported_browser=true"
     end
   end
+
+  def learn_link(text, url)
+    external = if url.start_with?('http')
+      # Tailwind external-link
+      tag.svg(xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 20 20', fill: 'currentColor', class: 'external') do
+        tag.path('d' => 'M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z') +
+          tag.path('d' => 'M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z')
+      end
+    end
+
+    external_props = if url.start_with?('http')
+      { target: '_blank', rel: 'noopener noreferrer' }
+    else
+      {}
+    end
+
+    link_to(url, class: 'learn-link', **external_props) do
+      # Tailwind minus-sm
+      tag.svg(xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 20 20', fill: 'currentColor', class: 'dash') do
+        tag.path(
+          'fill-rule' => 'evenodd',
+          'd' => 'M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z',
+          'clip-rule' => 'evenodd'
+        )
+      end +
+        tag.span(text) + external
+    end
+  end
 end

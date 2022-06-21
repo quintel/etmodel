@@ -1,6 +1,10 @@
 %header#top.main-header
-  %a.logo{ href: root_path }
-    %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
+  %div{ style: 'display: flex' }
+    %a.logo{ href: root_path }
+      %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
+    .app-nav
+      = render partial: 'layouts/etm/app_menu'
+
   %ul.user-settings
     - if Settings.feedback_email
       = render partial: 'layouts/etm/feedback_nav_item'

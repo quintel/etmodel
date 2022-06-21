@@ -1,0 +1,72 @@
+.dropdown
+  %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
+    = t('app_nav.title')
+    %span.fa.fa-caret-down
+  .dropdown-menu{ 'aria-labelledby': 'locale-button' }
+    .learn-dropdown
+      .section.about
+        %strong
+          :plain
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+            </svg>
+          = t('app_nav.about_the_etm')
+        %ul
+          %li= learn_link t('app_nav.info'), about_path
+          %li= learn_link t('app_nav.resources'), '#'
+      .section.features
+        %strong
+          :plain
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+            </svg>
+          = t('app_nav.features')
+        %ul
+          %li= learn_link t('app_nav.whats_new'), whats_new_path
+          - if current_user
+            %li= learn_link t('header.load_scenario'), scenarios_path
+          %li= learn_link t('app_nav.mondaine_suite'), import_esdl_path
+      .section.collaborate
+        %strong
+          :plain
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+            </svg>
+          = t('app_nav.collaborate')
+        %ul
+          %li= learn_link t('app_nav.development'), development_path
+          %li= learn_link 'Quintel', 'https://quintel.com'
+          %li= learn_link t('app_nav.partners'), 'https://energytransitionmodel.com/partners'
+    .learn-dropdown.extras
+      .section.about
+        %ul
+          %li.learn-section
+            :plain
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+              </svg>
+            = t('app_nav.learn')
+          %li= learn_link t('app_nav.documentation'), 'https://docs.energytransitionmodel.com'
+          %li= learn_link t('app_nav.api'), 'https://docs.energytransitionmodel.com/api/intro'
+      .section.features
+        %ul
+          %li.learn-section
+            :plain
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
+              </svg>
+            = t('app_nav.other_apps')
+          %li= learn_link t('app_nav.game'), 'https://light.energytransitionmodel.com'
+          %li= learn_link t('app_nav.local_vs_global'), local_global_path
+          %li= learn_link t('app_nav.transition_paths'), multi_year_charts_path
+      .section.collaborate
+        %ul
+          %li.learn-section
+            :plain
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+            = t('app_nav.reach_out')
+          %li= learn_link t('app_nav.contact_us'), contact_url
+          %li= learn_link t('app_nav.contribute'), '#'

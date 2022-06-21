@@ -21,13 +21,19 @@ header.main-header
     padding-top: 0
     padding-bottom: 0
 
-  .user-settings
+  .user-settings, .app-nav
     display: flex
     flex-direction: row
     flex-wrap: wrap
     list-style: none
     margin: 0
     padding: 0
+
+  .app-nav
+    border-left: 1px solid rgba(255, 255, 255, 0.2)
+    margin-left: 0.25rem
+    margin-top: 3px
+    padding-left: 0.5rem
 
   .logo
     align-items: center
@@ -122,6 +128,121 @@ header.main-header
 
   .fa
     font-size: 16px
+
+// Dropdown containing content for Learn and Collaborate
+
+.app-nav .dropdown-menu
+  left: -10rem
+  &::before
+    left: 14rem
+
+.learn-dropdown
+  margin: -0.5rem 0
+  display: flex
+  width: 850px
+
+  &.extras
+    margin-top: 0.5rem
+    padding-top: 0
+    .section
+      padding-top: 0
+    li.learn-section
+      margin-top: 0
+    a
+      color: #374151
+      font-weight: normal
+
+  .section
+    width: 33%
+    padding: 1.5rem 2rem
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1)
+    &:first-child
+      border-radius: 4px 0 0 4px
+    &:last-child
+      box-shadow: none
+      border-radius: 0 4px 4px 0
+
+  strong
+    align-items: center
+    display: flex
+    font-size: 1.125rem
+    font-weight: 500
+    margin-bottom: 0.5rem
+
+    svg
+      border-radius: 4px
+      color: white
+      height: 1.25rem
+      margin-right: 0.5rem
+      padding: 0.25rem
+      width: 1.25rem
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li.learn-section
+      align-items: center
+      color: #6b7280
+      display: flex
+      font-size: 0.8125rem
+      font-weight: 500
+      margin-top: 1rem
+      padding-left: 2.25rem
+      text-transform: uppercase
+      svg
+        height: 1.25rem
+        margin-left: -2rem
+        width: 1.25rem
+        margin-right: 0.75rem
+    a
+      color: #1f2937
+      font-weight: 500
+      display: flex
+      align-items: center
+      padding: 0.25rem 0 0 2.25rem
+      svg.dash
+        width: 1.25rem
+        height: 1.25rem
+        margin-left: -2rem
+        margin-right: 0.75rem
+        opacity: 0.5
+        display: none
+      svg.external
+        width: 1rem
+        height: 1rem
+        margin-left: 0.25rem
+
+  .about
+    background-color: #eef2ff
+    li.learn-section, svg.external
+      color: #82819d
+    strong, a svg
+      color: #4338ca
+    strong svg
+      background: #6366f1
+
+  .features
+    background-color: #f0fdfa
+    li.learn-section, svg.external
+      color: #769290
+    strong, a svg
+      color: #0f766e
+    strong svg
+      background: #14b8a6
+
+  .collaborate
+    background-color: #fffbeb
+    li.learn-section, svg.external
+      color: #9a7d67
+    strong,  a svg
+      color: #b45309
+    strong svg
+      background: #d97706
+
+  &:not(.extras) .section
+    // Fade to white at the top so that the arrow from the dialog doesn't look out of place.
+    background-image: linear-gradient(white, transparent 2rem)
 
 // Scenario Sub-Nav
 //

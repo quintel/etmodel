@@ -119,6 +119,18 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_freight_transport_technologies
   key: lng_ships_use_of_final_demand_in_freight_transport_technologies
+- label: hydrogen_ships
+  color: "#4682B4"
+  order_by: 10
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_ships_in_use_of_final_demand_in_freight_transport_technologies
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
+  key: hydrogen_ships_use_of_final_demand_in_freight_transport_technologies
 - label: compressed_natural_gas_trucks
   color: "#BADC58"
   order_by: 11

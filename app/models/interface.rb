@@ -25,7 +25,7 @@ class Interface
   # interface in an iframe.
   class LiteVariant
     def charts?
-      false
+      true
     end
 
     def results_tip?

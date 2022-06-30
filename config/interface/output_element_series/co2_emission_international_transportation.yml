@@ -6,7 +6,7 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: bio_kerosene_co2_emission_international_aviation
+  gquery: bio_kerosene_co2_emission_international_transport
   is_1990: false
   dependent_on: 
   output_element_key: co2_emission_international_transportation
@@ -18,7 +18,7 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: kerosene_co2_emission_international_aviation
+  gquery: kerosene_co2_emission_international_transport
   is_1990: false
   dependent_on: 
   output_element_key: co2_emission_international_transportation
@@ -30,7 +30,7 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: heavy_fuel_oil_co2_emission_international_shipping
+  gquery: heavy_fuel_oil_co2_emission_international_transport
   is_1990: false
   dependent_on: 
   output_element_key: co2_emission_international_transportation
@@ -42,11 +42,23 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: lng_co2_emission_international_shipping
+  gquery: lng_co2_emission_international_transport
   is_1990: false
   dependent_on: 
   output_element_key: co2_emission_international_transportation
   key: lng_co2_emission_international_transportation
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 5
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: hydrogen_co2_emission_international_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: hydrogen_co2_emission_international_transportation
 - label: international_transportation_1990
   color: "#333333"
   order_by: 1

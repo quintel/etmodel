@@ -245,7 +245,8 @@ nl:
     demand_transport_car_technology:
       title: Technologie auto's
       short_description: ''
-      description: Gaan we massaal over op auto's die geen fossiele brandstoffen gebruiken?
+      description: |
+        Gaan we massaal over op auto's die geen fossiele brandstoffen gebruiken?
         Wat gebeurt er als we allemaal overstappen op elektrische auto's? Hier kun
         je aangeven in wat voor auto's we in de toekomst rijden. In de <a href="/scenario/supply/transport_fuels/road-transport"
         >sectie brandstoffen wegverkeer </a> kun je bepalen op welke brandstofmix
@@ -272,9 +273,9 @@ nl:
     demand_transport_international_navigation_technology:
       title: Technologie internationale scheepvaart
       short_description:
-      description: Zullen schepen blijven varen op zware stookolie (heavy fuel oil
-        = HFO) of zullen ze overstappen op vloeibaar aardgas (LNG) voor internationaal
-        transport?
+      description: |
+        Zullen schepen blijven varen op zware stookolie (heavy fuel oil - HFO) of zullen ze overstappen op 
+        LNG of waterstof voor internationale scheepvaart?
     demand_transport_international_aviation_technology:
       title: Technologie internationale luchtvaart
       short_description:
@@ -286,7 +287,8 @@ nl:
     demand_transport_freight_train_technology:
       title: Technologie goederentreinen
       short_description:
-      description: Welke trein-technologiën zullen voornamelijk gebruikt worden? Elektrische
+      description: |
+        Welke trein-technologiën zullen voornamelijk gebruikt worden? Elektrische
         treinen zijn schoner en efficiënter dan dieseltreinen, maar hebben wel meer
         infrastructuur nodig om te kunnen rijden. In de <a href="/scenario/supply/transport_fuels/rail-transport"
         > brandstoffensectie van treinen</a> kun je aangeven welke brandstoffen dieseltreinen
@@ -359,10 +361,10 @@ nl:
     demand_transport_domestic_navigation_technology:
       title: Technologie binnenvaartschepen
       short_description:
-      description: "Blijft de binnenvaart conventionele dieselmotoren gebruiken, of
-        maakt men de overstap naar schepen met LNG-motoren? In de <a href=/scenario/supply/transport_fuels/domestic-navigation
-        >brandstoffensectie van binnenvaartschepen</a> kun je instellen door welke
-        brandstofmix deze motoren aangedreven worden."
+      description: |
+        Blijft de binnenvaart conventionele motoren (diesel / dual fuel) gebruiken, of maakt men de 
+        overstap naar schepen met LNG- of waterstofmotoren? In de <a href=/scenario/supply/transport_fuels/domestic-navigation>
+        transportbrandstoffen sectie</a> kun je instellen door welke brandstofmix diesel / dual fuel en LNG-motoren worden aangedreven.
     demand_transport_van_technology:
       title: Technologie bestelbussen
       short_description:

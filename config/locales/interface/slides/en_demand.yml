@@ -235,7 +235,8 @@ en:
     demand_transport_car_technology:
       title: Car technology
       short_description: ''
-      description: Will there be a shift away from cars that run on fossil fuels?
+      description: |
+        Will there be a shift away from cars that run on fossil fuels?
         How will a massive roll-out of electric cars affect energy use? Please indicate
         what cars we drive in the future. In the <a href="/scenario/supply/transport_fuels/road-transport"
         >road fuels section</a> you can determine which fuel blends cars will use
@@ -251,10 +252,10 @@ en:
     demand_transport_domestic_navigation_technology:
       title: Domestic navigation technology
       short_description:
-      description: "Will ships owners hold on to conventional diesel engine ships,
-        or will they make a transition to Liquefied Natural Gas (LNG) engine ships?
-        In the <a href=\"/scenario/supply/transport_fuels/domestic-navigation\" >domestic
-        navigation fuels section</a> you can set the fuel mix these engines run on.\r\n"
+      description: |
+        Will ships owners hold on to ships with conventional engines (diesel / dual fuel), or will they make a transition to 
+        engines that run on LNG or hydrogen? In the <a href=/scenario/supply/transport_fuels/domestic-navigation>
+        transport fuels section</a> you can determine the fuel mix of diesel /dual fuel engines and LNG engines.
     demand_transport_international_transport:
       title: International transport
       short_description:
@@ -276,9 +277,10 @@ en:
     demand_transport_international_navigation_technology:
       title: International navigation technology
       short_description:
-      description: Will ships owners hold on to conventional ships running on heavy
-        fuel oil (HFO) or will they make a transition to liquefied natural gas-fired
-        (LNG) ships for international navigation?
+      description: |
+        Will ships owners hold on to conventional ships running on heavy
+        fuel oil (HFO) or will they make a transition to engines that run on LNG or 
+        hydrogen for international navigation?
     demand_transport_international_aviation_technology:
       title: International aviation technology
       short_description:
@@ -338,7 +340,8 @@ en:
     demand_transport_passenger_train_technology:
       title: Train technology
       short_description: ''
-      description: Which train technologies will be mostly used? Electric trains are
+      description: |
+        Which train technologies will be mostly used? Electric trains are
         cleaner and more efficient than diesel or coal-powered ones, but require more
         infrastructure to run. In the <a href="/scenario/supply/transport_fuels/rail-transport"
         >train fuels section</a> you can determine which fuels diesel trains will

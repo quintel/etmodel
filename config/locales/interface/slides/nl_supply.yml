@@ -335,20 +335,23 @@ nl:
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:
-      description: "Er is een groeiende interesse in het gebruik van waterstof als
+      description: |
+        Er is een groeiende interesse in het gebruik van waterstof als
         energiedrager, bijvoorbeeld voor warmteproductie, elektriciteitsproductie,
         transportbrandstof of als grondstof in de chemie. In het ETM kun je een toekomstige
-        waterstofeconomie verkennen door waterstof in te zetten voor:\r\n\r\n<ul>\r\n
-        \ <li><a href=\"/scenario/supply/electricity_renewable/hydrogen-plants\" >elektricititeitsproductie</a></li>\r\n
-        \ <li><a href=\"/scenario/supply/heat/heat-sources\">warmtenetten</a>
-        voor huishoudens, gebouwen en landbouw</li>\r\n
-        \ <li><a href=\"/scenario/demand/households/space-heating-and-hot-water\">hybride warmtepompen voor huishoudens</a></li>\r\n
-        \ <li>warmteproductie in <a href=\"/scenario/demand/industry/refineries\">industrie</a>
-        en <a href=\"/scenario/demand/agriculture/heat\">landbouw</a></li>\r\n  <li><a
-        href=\"/scenario/demand/industry/fertilizers\" >kunstmestproductie</a> (als
-        grondstof)</li>\r\n  <li>transport (<a href=\"/scenario/demand/transport_passenger_transport/car-technology\">auto's</a>,
-        <a href=\"/scenario/demand/transport_passenger_transport/bus-technology\">bussen</a>
-        en <a href=\"/scenario/demand/transport_freight_transport/truck-technology\">vrachtwagens</a>)</li></ul>"
+        waterstofeconomie verkennen door waterstof in te zetten voor:
+        <ul>
+        <li><a href=/scenario/supply/electricity_renewable/hydrogen-plants >elektricititeitsproductie</a></li>
+        <li><a href=/scenario/supply/heat/heat-sources>warmtenetten</a> voor huishoudens, gebouwen en landbouw</li>
+        <li><a href=/scenario/demand/households/space-heating-and-hot-water>hybride warmtepompen voor huishoudens</a></li>
+        <li>warmteproductie in <a href=/scenario/demand/industry/refineries>industrie</a> en <a href=/scenario/demand/agriculture/heat>landbouw</a></li>
+        <li><a href=/scenario/demand/industry/fertilizers>kunstmestproductie</a> (als grondstof)</li> 
+        <li>nationaal transport (<a href=/scenario/demand/transport_passenger_transport/car-technology>auto's</a>,
+        <a href=/scenario/demand/transport_passenger_transport/bus-technology>bussen</a>,
+        <a href=/scenario/demand/transport_freight_transport/truck-technology>vrachtwagens</a>
+        en <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>binnenvaart</a>)</li>
+        <li>internationaal transport (<a href=/scenario/demand/transport_international_transport/international-navigation-technology>scheepvaart</a>)</li>
+        </ul>
     supply_hydrogen_production:
       title: Waterstofproductie
       short_description:

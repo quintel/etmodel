@@ -4,81 +4,75 @@ en:
       title: Electricity interconnectors
       short_description:
       description: |
-        <p>The <strong>domestic electricity market</strong> in your scenario is
+        The <strong>domestic electricity market</strong> in your scenario is
         connected to one or more <strong>external markets</strong> via
         interconnectors. These interconnectors allow for importing and exporting
-        electricity.</p>
-
-        <p>Import occurs whenever doing so is cheaper than using domestic
+        electricity. </br></br>
+        Import occurs whenever doing so is cheaper than using domestic
         electricity generation options. Similarly, electricity is exported whenever the
         neighbouring countries are willing to pay more than the domestic
-        (production) price.</p>
-
-        <p>In the tabs below you can set the interconnector capacities of the external
-        markets your area is connected to. For each interconnector a price
-        (or hourly price curve) can be added.</p>
+        (production) price. </br></br>
+        In the tabs below you can determine the capacity of interconnectors in 
+        your scenario, as well as a number of other attributes.
     flexibility_electricity_import_export_interconnectivity:
       title: Interconnector 1
       short_description:
-      description: "The difference between supply and demand of electricity on an
-      hourly basis can be imported or exported. Many countries import and export
-      electricity with their neighboring countries through different interconnectors.
-      In the ETM it is possible to model up to six different electrical interconnectors
-      between countries. You add an interconnector by setting interconnection capacity
-      for that interconnector. If you prefer to model all interconnectors together,
-      you only set interconnector capacity for interconnector 1.
-      \r\n<br/><br/>\r\n
-      You can set the capacity per interconnector. However, not all of this capacity
-      may be available for export, for example because the neighboring country suffers
-      from electricity surpluses at the same time. It is therefore possible to limit
-      the percentage of interconnection capacity available for export. In addition to capacity,
-      it is also possible to set the corresponding CO<sub>2</sub> emissions and price.
-      The price determines the deployment order of interconnectors
-      for import and export."
+      description:
+        Many countries import and export electricity with their neighboring countries through different 
+        interconnectors. In the ETM it is possible to model up to twelve different electrical interconnectors
+        between countries. You add an interconnector by setting interconnection capacity for that 
+        interconnector. If you prefer to model all interconnectors together, you only set interconnector 
+        capacity for interconnector 1. <br/><br/>
+        You can set the capacity per interconnector. However, not all of this capacity may be available for 
+        export, for example because the neighboring country suffers from electricity surpluses at the same 
+        time. It is therefore possible to limit the percentage of interconnection capacity available for 
+        export. In addition to capacity, it is also possible to set the corresponding CO<sub>2</sub> 
+        emissions and price. The price determines the deployment order of interconnectors for import and 
+        export.
     flexibility_electricity_import_export_interconnectivity_2:
       title: "Interconnector 2"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 2.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 2.
     flexibility_electricity_import_export_interconnectivity_3:
       title: "Interconnector 3"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 3.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 3.
     flexibility_electricity_import_export_interconnectivity_4:
       title: "Interconnector 4"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 4.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 4.
     flexibility_electricity_import_export_interconnectivity_5:
       title: "Interconnector 5"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 5.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 5.
     flexibility_electricity_import_export_interconnectivity_6:
       title: "Interconnector 6"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 6.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 6.
     flexibility_electricity_import_export_interconnectivity_7:
       title: "Interconnector 7"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 7.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 7.
     flexibility_electricity_import_export_interconnectivity_8:
       title: "Interconnector 8"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 8.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 8.
     flexibility_electricity_import_export_interconnectivity_9:
       title: "Interconnector 9"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 9.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 9.
     flexibility_electricity_import_export_interconnectivity_10:
       title: "Interconnector 10"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 10.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 10.
     flexibility_electricity_import_export_interconnectivity_11:
       title: "Interconnector 11"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 11.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 11.
     flexibility_electricity_import_export_interconnectivity_12:
       title: "Interconnector 12"
       description: |
-        Below you can set the capacity, CO<sub>2</sub> emissions and price for electricity interconnector 12.
+        Below you can set the capacity, availability, CO<sub>2</sub> emissions, and price for electricity interconnector 12.
     flexibility_flexibility_cold_snap:
       title: Cold snap
       short_description:

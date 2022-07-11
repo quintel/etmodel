@@ -1,4 +1,17 @@
 # What's new in the Energy Transition Model?
+___
+
+# July 2022
+
+## Hydrogen-powered ships
+Hydrogen-powered ships are now available as a technology in the transport sector. Hydrogen can be used as a fuel for inland shipping, also known as domestic navigation. Go to the *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/domestic-navigation-technology)** section to check it out. It can also be used as a fuel for maritime shipping, or international navigation, which you can set at the *Demand → Transport* → **[International transport](/scenario/demand/transport_international_transport/international-navigation-technology)** section.
+
+
+-> ![](/assets/pages/whats_new/hydrogen_shipping_en.png) <-
+
+
+## Hybrid hydrogen heatpump for buildings
+In addition to a hybrid heatpump on gas, it is now also possible to heat the buildings in your scenario with a hybrid heatpump that uses hydrogen. You can find this new heating technology in the *Demand → Buildings* → **[Space heating](/scenario/demand/buildings/space-heating)** section.
 
 ___
 

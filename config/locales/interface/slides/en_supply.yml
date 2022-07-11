@@ -316,20 +316,23 @@ en:
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:
-      description: "There is a growing interest in using hydrogen as energy carrier,
+      description: |
+        There is a growing interest in using hydrogen as energy carrier,
         for instance for heat production, electricity production, transport fuel or
         as a feedstock for the chemical industry. The ETM allows you to explore a
-        future hydrogen economy by allowing you to use hydrogen for:\r\n<ul>\r\n  <li><a
-        href=\"/scenario/supply/electricity_renewable/hydrogen-plants\" >electricity
-        production</a></li>\r\n  <li><a href=\"/scenario/supply/heat/heat-sources\">district heating</a>
-        for households, buildings and agriculture</li>\r\n
-        \ <li><a href=\"/scenario/demand/households/space-heating-and-hot-water\">hybrid heat pumps in households</a></li>\r\n
-        \ <li>heat production in <a href=\"/scenario/demand/industry/refineries\">industry</a>
-        and <a href=\"/scenario/demand/agriculture/heat\">agriculture</a><br>\r\n
-        \ <li><a href=\"/scenario/demand/industry/fertilizers\" >fertilizer production</a>
-        (as feedstock)</li>\r\n  <li>transport vehicles (<a href=\"/scenario/demand/transport_passenger_transport/car-technology\">cars</a>,
-        <a href=\"/scenario/demand/transport_passenger_transport/bus-technology\">busses</a>
-        and <a href=\"/scenario/demand/transport_freight_transport/truck-technology\">trucks</a>)</li></ul>"
+        future hydrogen economy by allowing you to use hydrogen for:
+        <ul>
+        <li><a href=/scenario/supply/electricity_renewable/hydrogen-plants >electricity production</a></li> 
+        <li><a href=/scenario/supply/heat/heat-sources>district heating</a> for households, buildings and agriculture</li>
+        <li><a href=/scenario/demand/households/space-heating-and-hot-water>hybrid heat pumps in households</a></li>
+        <li>heat production in <a href=/scenario/demand/industry/refineries>industry</a> and <a href=/scenario/demand/agriculture/heat>agriculture</a></li>
+        <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a> (as feedstock)</li> 
+        <li> national transport (<a href=/scenario/demand/transport_passenger_transport/car-technology>cars</a>,
+        <a href=/scenario/demand/transport_passenger_transport/bus-technology>busses</a>, 
+        <a href=/scenario/demand/transport_freight_transport/truck-technology>trucks</a>
+        and <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>inland ships</a>)</li>
+        <li> international transport (<a href=/scenario/demand/transport_international_transport/international-navigation-technology>maritime ships</a>)</li>
+        </ul>
     supply_hydrogen_production:
       title: Hydrogen production
       short_description:
@@ -455,7 +458,7 @@ en:
       short_description:
       description: "Will bio-kerosene contribute more to the aviation fuels mix in
         the future? You can choose your blend of kerosene here. \r\n</br></br>\r\n
-        Kersone can also be produced synthetically, with captured CO<sub>2</sub>, 
+        Kerosene can also be produced synthetically, with captured CO<sub>2</sub>, 
         hydrogen, and electricity. This option can be chosen in the 
         <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
         > CCUS section</a>. "

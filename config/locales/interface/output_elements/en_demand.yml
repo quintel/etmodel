@@ -162,18 +162,20 @@ en:
       description: ''
     use_of_final_demand_in_international_transport:
       title: Fuels used for international transport
-      short_description: CO<sub>2</sub> emissions by international aviation
-      description: This chart shows how the amount of CO<sub>2</sub> emissions caused
-        by different aviation fuels will change as a result of the choices you make
-        in this section. The CO<sub>2</sub> emissions of fuels which are consumed
-        at international flights depends on how the aviation fuel mix consists of.
-        The more bio-fuels used the less CO<sub>2</sub> emissions are caused.
+      short_description:
+      description: |
+        This chart shows you the fuels used in <a href=/scenario/demand/transport_international_transport/international-transport> 
+        international transport</a>. International transport consists of
+        <a href=/scenario/demand/transport_international_transport/international-aviation-technology> aviation</a>
+        and <a href=/scenario/demand/transport_international_transport/international-navigation-technology> navigation</a>.
     co2_emission_international_transportation:
       title: CO<sub>2</sub> emissions of international transportation
-      short_description: Energy demand of international aviation
-      description: This chart shows how energy demand for international aviation will
-        change as a result of the choices you make in this section. Energy use depends
-        on how much people will use flights for international traveling.
+      short_description:
+      description: |
+        This chart shows the CO<sub>2</sub> emissions of <a href=/scenario/demand/transport_international_transport/international-transport> 
+        international transport</a>. By changing the fuels used for <a href=/scenario/supply/transport_fuels/international-aviation>
+        international aviation</a> and the technologies used for <a href=/scenario/demand/transport_international_transport/international-navigation-technology>
+        international navigation</a>, you can affect the CO<sub>2</sub> emissions.
     transport_categories_overview:
       title: Final energy demand transport
       short_description: ''
@@ -247,7 +249,7 @@ en:
         can click '<u>Change chart</u>' above the graph, to select different graphs
         about energy demand."
     source_of_heat_in_buildings:
-      title: Final energy demand for heating in non-residences
+      title: Final energy demand for heating in buildings
       short_description: Building
       description: "This graph shows how heat demand in buildings changes from now
         to the future, as a result of the choices in 'Demand'. Heating demand is broken

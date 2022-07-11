@@ -63,6 +63,13 @@
   related_node: households_space_heater_hybrid_heatpump_air_water_electricity
   position: 13
   slide_key: costs_heat_built_environment
+- key: efficiency_households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  interface_group: cop_households
+  step_value: 1.0
+  unit: "%"
+  related_node: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  position: 14
+  slide_key: costs_heat_built_environment
 - key: efficiency_buildings_space_heater_network_gas
   interface_group: efficiency_buildings
   step_value: 1.0
@@ -119,4 +126,11 @@
   unit: "%"
   related_node: buildings_space_heater_hybrid_heatpump_air_water_electricity
   position: 32
+  slide_key: costs_heat_built_environment
+- key: efficiency_buildings_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  interface_group: cop_buildings
+  step_value: 1.0
+  unit: "%"
+  related_node: buildings_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  position: 33
   slide_key: costs_heat_built_environment

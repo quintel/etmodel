@@ -179,6 +179,18 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: transport_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: bunkers_final_demand_hydrogen_for_mekko
+  color: "#8B4513"
+  order_by: 12
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bunkers_final_demand_hydrogen_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: bunkers_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: households_inidividual_heater_hydrogen_for_mekko
   color: "#E07033"
   order_by: 8

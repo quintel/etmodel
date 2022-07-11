@@ -390,6 +390,7 @@ D3.sankey =
           {left: 'hydrogen_prod',                 right: 'agriculture',      gquery: 'hydrogen_prod_to_agriculture_in_sankey', color: '#27d3d3'},
           {left: 'hydrogen_prod',                 right: 'energy',           gquery: 'hydrogen_prod_to_energy_in_sankey', color: '#27d3d3'},
           {left: 'hydrogen_prod',                 right: 'other',            gquery: 'hydrogen_prod_to_other_in_sankey', color: '#27d3d3'},
+          {left: 'hydrogen_prod',                 right: 'bunkers',          gquery: 'hydrogen_prod_to_bunkers_in_sankey', color: '#27d3d3'},
           {left: 'hydrogen_prod',                 right: 'export',           gquery: 'hydrogen_prod_to_export_in_sankey', color: '#27d3d3'},
           {left: 'hydrogen_prod',                 right: 'conversion_losses', gquery: 'hydrogen_prod_to_conversion_loss_in_sankey', color: '#DCDCDC'},
           {left: 'hydrogen_prod',                 right: 'transport_losses', gquery: 'hydrogen_prod_to_transport_loss_in_sankey', color: '#DCDCDC'},

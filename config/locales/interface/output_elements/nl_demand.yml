@@ -171,18 +171,20 @@ nl:
       description: ''
     use_of_final_demand_in_international_transport:
       title: Brandstofgebruik van internationaal transport
-      short_description: CO<sub>2</sub> emissions by international aviation
-      description: This chart shows how the amount of CO<sub>2</sub> emissions caused
-        by different aviation fuels will change as a result of the choices you make
-        in this section. The CO<sub>2</sub> emissions of fuels which are consumed
-        at international flights depends on how the aviation fuel mix consists of.
-        The more bio-fuels used the less CO<sub>2</sub> emissions are caused.
+      short_description:
+      description: |
+        Deze grafiek toont welke brandstoffen gebruikt worden in <a href=/scenario/demand/transport_international_transport/international-transport> 
+        internationaal transport</a>. Internationaal transport bestaat uit 
+        <a href=/scenario/demand/transport_international_transport/international-aviation-technology> luchtvaart</a>
+        en <a href=/scenario/demand/transport_international_transport/international-navigation-technology> scheepvaart</a>.
     co2_emission_international_transportation:
       title: CO<sub>2</sub>-uitstoot van internationaal transport
-      short_description: Energy demand of international aviation
-      description: This chart shows how energy demand for international aviation will
-        change as a result of the choices you make in this section. Energy use depends
-        on how much people will use flights for international traveling.
+      short_description:
+      description: |
+        Deze grafiek toont de CO<sub>2</sub>-emissies van <a href=/scenario/demand/transport_international_transport/international-transport> 
+        internationaal transport</a>. Door de brandstoffen voor <a href=/scenario/supply/transport_fuels/international-aviation>
+        internationale luchtvaart</a> en de technologieen voor <a href=/scenario/demand/transport_international_transport/international-navigation-technology>
+        internationale scheepvaart</a> te veranderen, kan je de CO<sub>2</sub>-emissies beïnvloeden.
     transport_categories_overview:
       title: Eindgebruik energie in transport
       short_description: ''

@@ -11,7 +11,7 @@ Hydrogen-powered ships are now available as a technology in the transport sector
 
 
 ## Hybrid hydrogen heatpump for buildings
-In addition to a hybrid heatpump on gas, it is now also possible to heat the buildings in your scenario with a hybrid heatpump that uses hydrogen. You can find this new heating technology in the *Demand → Buildings* → **[Space heating](/scenario/demand/buildings/space-heating)** section.
+In addition to a hybrid heatpump that uses gas, it is now also possible to heat the buildings in your scenario with a hybrid heatpump that uses hydrogen. You can find this new heating technology in the *Demand → Buildings* → **[Space heating](/scenario/demand/buildings/space-heating)** section.
 
 ___
 

@@ -53,3 +53,21 @@
   interface_group: load_shifting_other
   position: 22
   slide_key: flexibility_flexibility_demand_response_load_shifting
+- key: capacity_of_industry_other_ict_flexibility_load_shifting_electricity
+  step_value: 0.1
+  unit: "%"
+  interface_group: load_shifting_other_ict
+  position: 30
+  slide_key: flexibility_flexibility_demand_response_load_shifting
+- key: wta_of_industry_other_ict_flexibility_load_shifting_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: load_shifting_other_ict
+  position: 31
+  slide_key: flexibility_flexibility_demand_response_load_shifting
+- key: deficit_limit_of_industry_other_ict_flexibility_load_shifting_electricity
+  step_value: 0.1
+  unit: "hours"
+  interface_group: load_shifting_other_ict
+  position: 32
+  slide_key: flexibility_flexibility_demand_response_load_shifting

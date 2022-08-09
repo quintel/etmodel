@@ -35,6 +35,78 @@
   dependent_on:
   output_element_key: hv_demand_curves
   key: hv_industry_other_hv_demand_curves
+- label: dsr_load_shifting_industry_chemical_input_curve
+  color: "#B93160"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hv_industry_chemical_load_shifting_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hv_demand_curves
+  key: hv_industry_chemical_load_shifting_input_curve_hv_demand_curves
+- label: dsr_load_shifting_industry_chemical_output_curve
+  color: "#D75281"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hv_industry_chemical_load_shifting_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hv_demand_curves
+  key: hv_industry_chemical_load_shifting_output_curve_hv_demand_curves
+- label: dsr_load_shifting_industry_other_input_curve
+  color: "#FEB139"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hv_industry_other_load_shifting_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hv_demand_curves
+  key: hv_industry_other_load_shifting_input_curve_hv_demand_curves
+- label: dsr_load_shifting_industry_other_output_curve
+  color: "#FFF80A"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hv_industry_other_load_shifting_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hv_demand_curves
+  key: hv_industry_other_load_shifting_output_curve_hv_demand_curves
+- label: dsr_load_shifting_industry_other_ict_input_curve
+  color: "#14C38E"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hv_industry_other_ict_load_shifting_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hv_demand_curves
+  key: hv_industry_other_ict_load_shifting_input_curve_hv_demand_curves
+- label: dsr_load_shifting_industry_other_ict_output_curve
+  color: "#00FFAB"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hv_industry_other_ict_load_shifting_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hv_demand_curves
+  key: hv_industry_other_ict_load_shifting_output_curve_hv_demand_curves
 - label: hv_loss
   color: "#F76814"
   order_by: 1

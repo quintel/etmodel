@@ -23,6 +23,30 @@
   dependent_on:
   output_element_key: mv_demand_curves
   key: mv_industry_metals_mv_demand_curves
+- label: dsr_load_shifting_industry_metals_input_curve
+  color: "#EC7063"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: mv_industry_metals_load_shifting_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: mv_demand_curves
+  key: mv_industry_metals_load_shifting_input_curve_mv_demand_curves
+- label: dsr_load_shifting_industry_metals_output_curve
+  color: "#F5B7B1"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: mv_industry_metals_load_shifting_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: mv_demand_curves
+  key: mv_industry_metals_load_shifting_output_curve_mv_demand_curves
 - label: mv_other
   color: "#DC1912"
   order_by: 1

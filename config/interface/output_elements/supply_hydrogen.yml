@@ -74,3 +74,12 @@
   description: 
   output_element_type_name: cost_capacity_bar
   related_output_element_key: hydrogen_production
+- group: Supply
+  sub_group: hydrogen
+  hidden: false
+  key: co2_intensity_of_hydrogen_production
+  output_element_type_name: category_bar
+  requires_merit_order: true
+  unit: kg/MWh
+  config:
+    period: future

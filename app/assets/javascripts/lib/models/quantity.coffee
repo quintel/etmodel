@@ -81,6 +81,12 @@ compiledUnits['km2'] = {
   power: { prefix: 'k', multiple: 1e6, i18n: 'thousands' }
 }
 
+compiledUnits['kg/MWh'] = {
+  name: 'kg/MWh',
+  base: { name: 'kg/MWh', i18n: 'kg/MWh' },
+  power: POWERS[8]
+}
+
 # ------------------------------------------------------------------------------
 
 class @Quantity

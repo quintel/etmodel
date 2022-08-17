@@ -29,9 +29,7 @@ class @D3YearlyChartView extends D3ChartView
   # Internal: Returns a function which will format values for the "main" axis
   # of the chart.
   main_formatter: (opts = {}) =>
-    # Formatter allows values up to 5,000 before moving up to the next
-    # magnitude.
-    @create_scaler(@maxYvalue() / 5, @model.get('unit'), opts)
+    @create_scaler(@maxYvalue(), @model.get('unit'), opts)
 
   dataForChart: ->
     @series = @model.non_target_series().concat(@model.target_series())

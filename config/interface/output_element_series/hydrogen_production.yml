@@ -119,3 +119,15 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: imported_hydrogen_hydrogen_production
+- label: industry_residual_hydrogen
+  color: "#006400"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_residual_hydrogen_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production
+  key: industry_residual_hydroge_hydrogen_production

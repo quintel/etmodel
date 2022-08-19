@@ -61,7 +61,7 @@
   key: network_gas_storage_output_network_gas_production
 - label: natural_gas_import
   color: "#666666"
-  order_by: 3
+  order_by: 2
   group: ''
   show_at_first: false
   is_target_line: false
@@ -71,3 +71,27 @@
   dependent_on: 
   output_element_key: network_gas_production
   key: natural_gas_import_network_gas_production
+- label: industry_residual_natural_gas
+  color: "#964B00"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_residual_natural_gas_network_gas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: industry_residual_natural_gas_network_gas_production
+- label: industry_residual_greengas
+  color: "#006400"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_residual_greengas_network_gas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: industry_residual_greengas_network_gas_production

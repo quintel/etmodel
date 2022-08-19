@@ -251,3 +251,15 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_synthetic_products_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: industry_residual_hydrogen_for_mekko
+  color: "#006400"
+  order_by: 8
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: industry_residual_hydrogen_for_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: industry_residual_hydrogen_for_mekko_supply_mekko_of_hydrogen_network

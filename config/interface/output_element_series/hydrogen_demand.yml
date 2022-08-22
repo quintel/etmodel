@@ -179,3 +179,15 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: energy_synthetic_products_from_hydrogen_hydrogen_demand
+- label: transport_losses
+  color: "#800080"
+  order_by: 20
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_transport_hydrogen_loss_input_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_demand
+  key: transport_losses_hydrogen_demand

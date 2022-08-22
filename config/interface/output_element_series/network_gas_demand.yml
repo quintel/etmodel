@@ -155,3 +155,15 @@
   dependent_on: 
   output_element_key: network_gas_demand
   key: network_gas_storage_input_network_gas_demand
+- label: transport_losses
+  color: "#800080"
+  order_by: 12
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: loss_network_gas_input_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: network_gas_demand
+  key: transport_losses_network_gas_demand

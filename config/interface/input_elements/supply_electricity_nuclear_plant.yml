@@ -12,6 +12,12 @@
   position: 2
   dependent_on: has_old_technologies
   slide_key: supply_electricity_nuclear_plant
+- key: capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide
+  step_value: 1.0
+  unit: MW
+  related_node: energy_power_nuclear_small_modular_reactor_uranium_oxide
+  position: 5
+  slide_key: supply_electricity_nuclear_plant
 - key: merit_order_subtype_of_energy_power_nuclear_uranium_oxide
   step_value: 1.0
   unit: boolean

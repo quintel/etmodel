@@ -79,6 +79,7 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
     industry_chp_ultra_supercritical_coal: 'industry_chp_coal'
     energy_power_nuclear_gen2_uranium_oxide: 'nuclear_ii'
     energy_power_nuclear_gen3_uranium_oxide: 'nuclear_iii'
+    energy_power_nuclear_small_modular_reactor_uranium_oxide: 'nuclear_smr'
     energy_power_ultra_supercritical_crude_oil: 'oil_plant'
     energy_power_combined_cycle_hydrogen: 'hydrogen_ccgt'
     energy_power_turbine_hydrogen: 'hydrogen_turbine'

@@ -1,26 +1,29 @@
 ---
-- key: capacity_of_energy_power_nuclear_gen3_uranium_oxide
-  step_value: 1.0
-  unit: MW
-  related_node: energy_power_nuclear_gen3_uranium_oxide
-  position: 3
-  slide_key: supply_electricity_nuclear_plant
 - key: capacity_of_energy_power_nuclear_gen2_uranium_oxide
   step_value: 1.0
   unit: MW
+  interface_group: large_reactors
   related_node: energy_power_nuclear_gen2_uranium_oxide
-  position: 2
+  position: 1
   dependent_on: has_old_technologies
   slide_key: supply_electricity_nuclear_plant
-- key: capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide
+- key: capacity_of_energy_power_nuclear_gen3_uranium_oxide
   step_value: 1.0
   unit: MW
-  related_node: energy_power_nuclear_small_modular_reactor_uranium_oxide
-  position: 5
+  interface_group: large_reactors
+  related_node: energy_power_nuclear_gen3_uranium_oxide
+  position: 2
   slide_key: supply_electricity_nuclear_plant
 - key: merit_order_subtype_of_energy_power_nuclear_uranium_oxide
   step_value: 1.0
   unit: boolean
   interface_group: must_run_dispatchable
   position: 10
+  slide_key: supply_electricity_nuclear_plant
+- key: capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide
+  step_value: 1.0
+  unit: MW
+  interface_group: small_reactors
+  related_node: energy_power_nuclear_small_modular_reactor_uranium_oxide
+  position: 20
   slide_key: supply_electricity_nuclear_plant

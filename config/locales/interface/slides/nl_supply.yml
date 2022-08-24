@@ -148,15 +148,17 @@ nl:
         <a href='/scenario/supply/biomass/green-gas-in-gas-network'>groen gas</a>pagina
         kun je aannames doen over de hoeveelheid groen gas in het gasnet.
     supply_electricity_nuclear_plant:
-      title: Kerncentrale
+      title: Kerncentrales
       short_description: ''
-      description: Hier kan je het geïnstalleerd vermogen van conventionele en 3e
-        generatie kerncentrales instellen. Het ETM neemt voor kerncentrales geen CO<sub>2</sub>
-        uitstoot mee. Standaard worden kerncentrales als regelbare centrales gemodelleerd.
-        Met de knop onder de schuifjes kan je dit aanpassen naar een niet-regelbare
-        centrale (onafhankelijk van de elektriciteitsvraag) met een vlak profiel.
-        Deze functionaliteit is toegevoegd, omdat kerncentrales zoveel mogelijk op
-        vol vermogen draaien. Ze hebben namelijk lage draaikosten en hoge kapitaalkosten.
+      description: |
+        Hier kan je het geïnstalleerd vermogen van grote 2e en 3e generatie kerncentrales
+        en kleine modulaire reactoren instellen. Het ETM neemt voor kerncentrales geen CO<sub>2</sub>
+        uitstoot mee. </br></br>
+        Standaard draaien kerncentrales als regelbare centrales. Vanwege de hoge kapitaalkosten en 
+        lage operationele kosten draaien grote reactoren typisch zoveel mogelijk op vol vermogen. 
+        Met onderstaande knop kun je er daarom voor kiezen ze als 
+        <a href="https://docs.energytransitionmodel.com/main/merit-order#producers" target=\"_blank\"> niet-regelbare</a>
+        centrales te modelleren. Hierdoor draaien ze met een vlak profiel, onafhankelijk van de vraag.
     supply_electricity_oil_plants:
       title: Oliecentrales
       short_description: ''

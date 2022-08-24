@@ -144,13 +144,16 @@ en:
     supply_electricity_nuclear_plant:
       title: Nuclear plants
       short_description: ''
-      description: Here you can set the capacity for conventional and 3rd generation
-        nuclear plants. The ETM does not include any CO<sub>2</sub> emissions for
-        nuclear power plants. By default nuclear power plants are modeled as dispatchable
-        plants. The toggle below the sliders allows you to make them 'must-run' plants
-        (independent of electricity demand) with a flat production profile. This functionality
-        was added, because nuclear plants tend to run as much as possible. This is
-        because of their low operating costs and high capital costs.
+      description: |
+        Here you can set the capacity for large 2nd and 3rd generation nuclear plants 
+        and for small modular reactors. The ETM does not include any CO<sub>2</sub> 
+        emissions for nuclear power plants. </br></br>
+        By default all nuclear power plants are run as dispatchable producers. Due to 
+        their high captial costs and low operating costs, large reactors tend to run as
+        much as possible. You therefore also have the option to model them as 
+        <a href="https://docs.energytransitionmodel.com/main/merit-order#producers" target=\"_blank\"> 'must-run'</a> 
+        power plants by switching the toggle. This means that they will run with a 
+        flat production profile, independent of demand.
     supply_electricity_oil_plants:
       title: Oil plants
       short_description: ''

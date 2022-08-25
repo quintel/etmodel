@@ -236,13 +236,27 @@ en:
         they tend to run at maximum capacity as much as possible (more than 80% of
         the time).\r\n"
     capacity_of_energy_power_nuclear_gen2_uranium_oxide:
-      title: Nuclear conventional
+      title: Nuclear 2nd Gen
       short_description: ''
       description: "This builds nuclear power plants of an older type of nuclear power
         plant. In reality, these plants will not be built anymore and are included
-        mainly to show the difference between modern nuclear plants and older types.<br/>\r\nIf
-        you want to build nuclear power plants, please build the modern type of plant.
-        The capacity is converted to plants of 1,650 MWe.\r\n<br/><br/> \r\n"
+        mainly to show the difference between modern nuclear plants and older types.\r\n"
+    capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide:
+      title: Nuclear small modular reactor
+      short_description:
+      description: |
+        With this slider you can build a novel type of nuclear power plant. As its name 
+        indicates, the key characteristic of this type of plant is that it is smaller 
+        than traditional nuclear power plants and that it can be prefabricated and easily
+        assembled on-site. </br></br>
+        Potential benefits than can arise from these characteritstics are, among others,
+        a decreased construction time and associated costs due to their modular nature, 
+        and reduced land-use due to their small nature. </br></br>
+        Because the technology still has to become commercially viable it is as yet unclear 
+        whether these or other benefits will be realized in practice. For example, based on current 
+        specifications, small modular reactors are still more expensive per MW than their traditional
+        counterparts. You can change these costs in the <a href="/scenario/costs/specs_electricity/nuclear-plants">
+        Cost & efficiencies</a> section.
     merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
       title: ''
       description: ''

@@ -275,6 +275,18 @@
   dependent_on:
   output_element_key: merit_order
   key: nuclear_ii_merit_order
+- label: nuclear_smr
+  color: "#DF7861"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: nuclear_smr_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: nuclear_smr_merit_order
 - label: oil_plant
   color: "#7f2704"
   order_by: 1

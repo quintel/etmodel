@@ -2,13 +2,22 @@
 en:
   input_elements:
     om_costs_nuclear_nuclear_plant:
-      title: O&M costs nuclear plants
+      title: O&M costs large reactors
       short_description: ''
-      description: "This slider sets the height of your assumed operational and maintenance
-        costs for a nuclear power plant. <br/>\r\n<br/>Operational and maintenance
-        costs are a minor part of total costs for nuclear energy.\r\n<br/><br/> \r\nThe
-        specifications below are for a super modern third generation nuclear power
-        plant."
+      description: |
+        This slider sets the height of your assumed operational and maintenance
+        costs for 2nd and 3rd generation nuclear power plants. <br/><br/>
+        Operational and maintenance costs are a minor part of total costs for 
+        nuclear energy. The specifications below are for the 3rd generation nuclear 
+        power plant.
+    om_costs_nuclear_small_modular_reactor:
+      title: O&M costs small reactors
+      short_description:
+      description: |
+        This slider sets the height of your assumed operational and maintenance
+        costs for small modular reactor nuclear power plants. <br/><br/>
+        Operational and maintenance costs are a minor part of total costs for nuclear 
+        energy.
     costs_hydrogen:
       title: Hydrogen (import)
       short_description:
@@ -267,20 +276,28 @@ en:
         therefore smaller margin of uncertainty.
         \r\n<br/><br/>\r\n<img src=\"/assets/popups/img_heat_storage_costs.png\" style=\"width:410px;height:285px\"/>"
     investment_costs_nuclear_nuclear_plant:
-      title: Investment costs nuclear plants
-      short_description: ''
-      description: "This slider sets the height of your assumed investment costs for
-        a nuclear power plant, including the costs for decommissioning the plant at
-        the end of its lifetime. External costs for society, such as that people do
+      title: Investment costs large reactors
+      short_description:
+      description: |
+        This slider sets the height of your assumed investment costs for 2nd and 3rd
+        generation nuclear power plant, including the costs for decommissioning at
+        the end of their lifetime. External costs for society, such as that people do
         not like to live close to a nuclear power plant, have not been included. The
         costs for permanent storage of nuclear waste have also not been included,
         as it is unclear how much this would cost. External costs have also not been
-        included for other types of power plants. \r\n<br/><br/>\r\nCurrently, production
-        capacity for nuclear reactors is considerably short of what would be required
-        to meet (expected) investment plans around the world. In many countries there
-        will most likely be a shortage of trained technicians in this part of the
-        energy sector.\r\n<br/><br/> \r\nThe specifications below are for a super
-        modern third generation nuclear power plant."
+        included for other types of power plants. The specifications below are for 
+        the 3rd generation nuclear power plant.
+    investment_costs_nuclear_small_modular_reactor:
+      title: Investment costs small reactors
+      short_description: ''
+      description: |
+        This slider sets the height of your assumed investment costs for small modular 
+        reactor nuclear power plants, including the costs for decommissioning at
+        the end of their lifetime. External costs for society, such as that people do
+        not like to live close to a nuclear power plant, have not been included. The
+        costs for permanent storage of nuclear waste have also not been included,
+        as it is unclear how much this would cost. External costs have also not been
+        included for other types of power plants.
     om_costs_geothermal:
       title: O&M costs geothermal energy
       short_description: ''
@@ -732,13 +749,17 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of diesel generators."
     efficiency_energy_power_nuclear_gen2_uranium_oxide:
-      title: Nuclear conventional
+      title: Nuclear 2nd Gen
       short_description: ''
       description: "This slider sets the future efficiency of conventional nuclear power plants."
     efficiency_energy_power_nuclear_gen3_uranium_oxide:
       title: Nuclear 3rd Gen
       short_description: ''
       description: "This slider sets the future efficiency of 3rd generation nuclear power plants."
+    efficiency_energy_power_nuclear_small_modular_reactor_uranium_oxide:
+      title: Nuclear small modular reactor
+      short_description:
+      description: "This slider sets the future efficiency of small modular reactor nuclear power plants."
     efficiency_energy_chp_local_wood_pellets_electricity:
       title: Biomass CHP - electricity
       short_description: ''

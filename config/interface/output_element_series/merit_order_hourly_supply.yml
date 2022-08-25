@@ -395,6 +395,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_nuclear_gen3_uranium_oxide_dispatchable_merit_order_hourly_supply
+- label: energy_power_nuclear_small_modular_reactor_uranium_oxide
+  color: "#ca5ce0"
+  order_by: 5
+  group: dispatchable
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_nuclear_small_modular_reactor_uranium_oxide
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_nuclear_small_modular_reactor_uranium_oxide_dispatchable_merit_order_hourly_supply
 - label: energy_power_supercritical_coal
   color: "#2F2661"
   order_by: 5

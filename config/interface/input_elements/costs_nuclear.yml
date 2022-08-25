@@ -13,20 +13,38 @@
   related_node: energy_power_nuclear_gen3_uranium_oxide
   position: 2
   slide_key: specs_electricity_nuclear_plant
+- key: investment_costs_nuclear_small_modular_reactor
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_power_nuclear_small_modular_reactor_uranium_oxide
+  position: 11
+  slide_key: specs_electricity_nuclear_plant
+- key: om_costs_nuclear_small_modular_reactor
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_power_nuclear_small_modular_reactor_uranium_oxide
+  position: 12
+  slide_key: specs_electricity_nuclear_plant
 - key: efficiency_energy_power_nuclear_gen2_uranium_oxide
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
   related_node: energy_power_nuclear_gen2_uranium_oxide
-  position: 3
+  position: 20
   slide_key: specs_electricity_nuclear_plant
 - key: efficiency_energy_power_nuclear_gen3_uranium_oxide
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
   related_node: energy_power_nuclear_gen3_uranium_oxide
-  position: 4
+  position: 21
   slide_key: specs_electricity_nuclear_plant
-
-
-
+- key: efficiency_energy_power_nuclear_small_modular_reactor_uranium_oxide
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_power_nuclear_small_modular_reactor_uranium_oxide
+  position: 22
+  slide_key: specs_electricity_nuclear_plant

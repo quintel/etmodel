@@ -232,13 +232,26 @@ nl:
         zijn duur om te bouwen en goedkoop om te laten draaien. Daarom draaien ze
         zoveel mogelijk op vol vermogen (meer dan 80% van de tijd). "
     capacity_of_energy_power_nuclear_gen2_uranium_oxide:
-      title: Kern conventioneel
+      title: Kern 2e Gen
       short_description: ''
       description: "Hiermee bouw je kerncentrales van een ouder type. Deze zullen
         in de praktijk niet meer gebouwd worden en staan hier vooral om het verschil
-        te tonen met de moderne 3e generatie centrales. <br/>\r\nAls je kerncentrales
-        wilt bouwen, bouw dan een moderne 3e generatie kerncentrale. De capaciteit
-        wordt omgezet in centrales van 1.650 MWe.\r\n<br/><br/>\r\n"
+        te tonen met de moderne 3e generatie centrales.\r\n"
+    capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide:
+      title: Kern kleine modulaire reactor
+      short_description:
+      description: |
+        Met dit schuifje kun je een nieuw type kerncentrale bouwen. Zoals de naam al 
+        doet vermoeden is deze centrale kleiner dan traditionele kerncentrales en kan 
+        deze vooraf worden gefabriceerd en vervolgens op locatie worden geassembleerd. </br></br>
+        Potentiële voordelen die hieruit voortkomen zijn onder meer dat de bouwtijd en 
+        bijbehorende kosten lager liggen door het modulaire ontwerp, en dat het 
+        ruimtegebruik lager ligt door het kleinere formaat. </br></br>
+        Omdat de technologie nog in ontwikkeling is, is het onzeker of deze of andere 
+        voordelen in de praktijk gerealiseerd zullen worden. Een voorbeeld hiervan is 
+        dat op basis van huidige specificaties de kleine modulaire reactor per MW nog 
+        duurder is dan de traditionele reactoren. Je kunt deze kosten aanpassen onder 
+        <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a>.
     merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
       title: ''
       description: ''

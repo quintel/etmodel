@@ -263,7 +263,7 @@
   dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: solar_csp_overview_costs_of_electricity_production
-- label: nuclear
+- label: nuclear_iii
   color: "#E07033"
   order_by: 6
   group: nuclear
@@ -335,7 +335,7 @@
   dependent_on: has_mountains
   output_element_key: overview_costs_of_electricity_production
   key: hydro_mountain_overview_costs_of_electricity_production
-- label: nuclear_conventional
+- label: nuclear_ii
   color: "#E07033"
   order_by: 6
   group: nuclear
@@ -347,6 +347,18 @@
   dependent_on: has_old_technologies
   output_element_key: overview_costs_of_electricity_production
   key: nuclear_conventional_overview_costs_of_electricity_production
+- label: nuclear_smr
+  color: "#E07033"
+  order_by: 6
+  group: nuclear
+  show_at_first: true
+  is_target_line:
+  target_line_position:
+  gquery: nuclear_small_modular_reactor
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: nuclear_small_modular_reactor_overview_costs_of_electricity_production
 - label: gas_ccgt_ccs
   color: "#CCCCCC"
   order_by: 4

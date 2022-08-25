@@ -2,14 +2,24 @@
 nl:
   input_elements:
     om_costs_nuclear_nuclear_plant:
-      title: Onderhoudskosten kerncentrales
+      title: Onderhoudskosten grote reactoren
       short_description: ''
-      description: "Deze schuif stelt de toe-of afname in die je verwacht voor
-        de onderhouds- en beheerkosten van kerncentrales. De kosten worden vergeleken
-        met de kosten van vandaag de dag.<br/>\r\n<br/>\r\nOnderhouds-en beheerkosten
-        zijn een relatief klein onderdeel van de totale kosten van kernenergie.\r\n<br/><br/>
-        \r\nDe specificaties hieronder zijn voor een super moderne derde generatie
-        kerncentrale."
+      description: |
+        Deze schuif stelt de toe-of afname in die je verwacht voor de onderhouds- 
+        en beheerkosten van 2e en 3e generatie kerncentrales. De kosten worden vergeleken
+        met de kosten van vandaag de dag. <br/><br/>
+        Onderhouds-en beheerkosten zijn een relatief klein onderdeel van de totale 
+        kosten van kernenergie. De specificaties hieronder zijn voor de 3e generatie 
+        kerncentrale.
+    om_costs_nuclear_small_modular_reactor:
+      title: Onderhoudskosten kleine reactoren
+      short_description: ''
+      description: |
+        Deze schuif stelt de toe-of afname in die je verwacht voor de onderhouds- 
+        en beheerkosten van kleine modulaire reactor kerncentrales. De kosten worden vergeleken
+        met de kosten van vandaag de dag. <br/><br/>
+        Onderhouds-en beheerkosten zijn een relatief klein onderdeel van de totale 
+        kosten van kernenergie.
     costs_hydrogen:
       title: Waterstof (import)
       short_description:
@@ -280,22 +290,30 @@ nl:
         kleinere onzekerheidsmarge.
         \r\n<br/><br/>\r\n<img src=\"/assets/popups/img_heat_storage_costs.png\" style=\"width:410px;height:285px\"/>"
     investment_costs_nuclear_nuclear_plant:
-      title: Investeringskosten kerncentrales
+      title: Investeringskosten grote reactoren
       short_description: ''
-      description: "Deze schuif stelt de toe-of afname in die je verwacht voor
-        de investeringskosten voor kerncentrales. De kosten worden vergeleken met
+      description: |
+        Deze schuif stelt de toe-of afname in die je verwacht voor de investeringskosten 
+        voor 2e en 3e generatie kerncentrales. De kosten worden vergeleken met
         de kosten van vandaag de dag. De kosten voor afbraak aan het eind van de levensduur
         zijn hierin meegenomen. Maatschappelijke kosten, bijvoorbeeld dat sommige
         mensen niet graag vlak bij een kerncentrale wonen, zijn niet meegenomen in
         de berekening. Noch zijn de kosten voor 'permanente' opslag van kernafval
         meegenomne, aangezien onduidelijk is hoeveel dat zou kosten. Zulke externe
-        kosten zijn overigens ook niet voor andere type centrales meegenomen. Er zijn
-        ook mensen die geen windmolen of CO<sub>2</sub> opslag in de achtertuin willen
-        hebben. \r\n<br/><br/>\r\nMomenteel is de productiecapaciteit van onderdelen
-        voor kerncentrales te laag om aan de (verwachte) wereldwijde plannen te voldoen.
-        Ook zal er op korte termijn in veel landen een tekort aan technici zijn voor
-        deze energievorm.\r\n<br/><br/> \r\nDe specificaties hieronder zijn voor een
-        super moderne derde generatie kerncentrale."
+        kosten zijn overigens ook niet voor andere type centrales meegenomen.
+        De specificaties hieronder zijn voor de 3e generatie kerncentrale.
+    investment_costs_nuclear_small_modular_reactor:
+      title: Investeringskosten kleine reactoren
+      short_description: ''
+      description: |
+        Deze schuif stelt de toe-of afname in die je verwacht voor de investeringskosten 
+        voor kleine modulaire reactor kerncentrales. De kosten worden vergeleken met
+        de kosten van vandaag de dag. De kosten voor afbraak aan het eind van de levensduur
+        zijn hierin meegenomen. Maatschappelijke kosten, bijvoorbeeld dat sommige
+        mensen niet graag vlak bij een kerncentrale wonen, zijn niet meegenomen in
+        de berekening. Noch zijn de kosten voor 'permanente' opslag van kernafval
+        meegenomne, aangezien onduidelijk is hoeveel dat zou kosten. Zulke externe
+        kosten zijn overigens ook niet voor andere type centrales meegenomen.
     om_costs_geothermal:
       title: Onderhoudskosten aardwarmte
       short_description: ''

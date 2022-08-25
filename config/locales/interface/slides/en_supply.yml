@@ -150,10 +150,10 @@ en:
         emissions for nuclear power plants. </br></br>
         By default all nuclear power plants are run as dispatchable producers. Due to 
         their high captial costs and low operating costs, large reactors tend to run as
-        much as possible. You therefore also have the option to model them as 
+        much as possible. You therefore also have the option to model the <b>large reactors</b> as 
         <a href="https://docs.energytransitionmodel.com/main/merit-order#producers" target=\"_blank\"> 'must-run'</a> 
         power plants by switching the toggle. This means that they will run with a 
-        flat production profile, independent of demand.
+        flat production profile, independent of demand. This does not affect the <b>small reactors</b>.
     supply_electricity_oil_plants:
       title: Oil plants
       short_description: ''

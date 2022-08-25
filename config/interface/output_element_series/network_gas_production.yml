@@ -71,7 +71,7 @@
   dependent_on: 
   output_element_key: network_gas_production
   key: natural_gas_import_network_gas_production
-- label: industry_residual_natural_gas
+- label: natural_gas_residual_industry
   color: "#964B00"
   order_by: 3
   group: ''
@@ -83,7 +83,7 @@
   dependent_on: 
   output_element_key: network_gas_production
   key: industry_residual_natural_gas_network_gas_production
-- label: industry_residual_greengas
+- label: greengas_residual_industry
   color: "#006400"
   order_by: 3
   group: ''

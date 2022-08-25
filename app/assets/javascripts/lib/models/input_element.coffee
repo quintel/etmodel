@@ -125,8 +125,9 @@ class @InputElement extends Backbone.Model
     step = @get('step_value')
     delta = @get('max_value') - @get('min_value')
 
-    while (step * 20) > delta
-      step /= 10
+    if delta > 0
+      while (step * 20) > delta
+        step /= 10
 
     @smartStepValue = step
 

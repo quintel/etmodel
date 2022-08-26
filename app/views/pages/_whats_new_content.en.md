@@ -1,6 +1,16 @@
 # What's new in the Energy Transition Model?
 ___
 
+# September 2022
+
+## Addition of small modular reactors
+
+## Update of the transition path charts
+
+## Load shifting in the central ICT
+
+___
+
 # July 2022
 
 ## Hydrogen-powered ships

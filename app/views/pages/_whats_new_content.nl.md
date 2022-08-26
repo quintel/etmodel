@@ -1,7 +1,17 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
-# July 2022
+# September 2022
+
+## Toevoeging van kleine modulaire reactoren
+
+## Update van de transitiepaden
+
+## Vraagverschuiving in de centrale ICT
+
+___
+
+# Juli 2022
 
 ## Waterstofschepen
 Schepen die met waterstof worden aangedreven zijn nu beschikbaar als technologie in de transportsector. Waterstof kan worden gebruikt als brandstof voor de binnenvaart. Ga hiervoor naar de sectie *Vraag → Transport* → **[Vrachtvervoer](/scenario/demand/transport_freight_transport/domestic-navigation-technology)**. Daarnaast kan het worden gebruikt als brandstof voor de internationale scheepvaart, wat je in kunt stellen in de sectie *Vraag → Transport* → **[Internationaal transport](/scenario/demand/transport_international_transport/international-navigation-technology)**.

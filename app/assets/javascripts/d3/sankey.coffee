@@ -178,7 +178,8 @@ D3.sankey =
           {left: 'dry',                             right: 'bunkers',                     gquery: 'dry_biomass_to_bunkers_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'export',                      gquery: 'dry_biomass_to_export_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'losses',                      gquery: 'dry_biomass_to_losses_in_biomass_sankey', color: '#DCDCDC'},
-          {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'}
+          {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'},
+          {left: 'industry',                        right: 'greengas',                    gquery: 'industry_to_greengas_in_biomass_sankey', color: '#A3CB38'}
         ]
     co2_sankey:
       data:

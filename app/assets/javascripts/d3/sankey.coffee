@@ -339,6 +339,7 @@ D3.sankey =
           {left: 'imported_electricity',          right: 'hydrogen_prod',    gquery: 'imported_electricity_to_hydrogen_prod_in_sankey', color: '#1f77b4'},
           {left: 'imported_hydrogen',             right: 'hydrogen_prod',    gquery: 'hydrogen_import_to_hydrogen_prod_in_sankey', color: '#27d3d3'},
           {left: 'water',                         right: 'hydrogen_prod',    gquery: 'water_to_hydrogen_prod_in_sankey', color: '#4465c6'},
+          {left: 'industry',                      right: 'hydrogen_prod',    gquery: 'industry_to_hydrogen_prod_in_sankey', color: '#27d3d3'},
 
           {left: 'coal_and_derivatives',          right: 'central_heat_prod', gquery: 'coal_and_derivatives_to_central_heat_prod_in_sankey', color: '#252525'},
           {left: 'oil_and_derivatives',           right: 'central_heat_prod', gquery: 'oil_and_derivatives_to_central_heat_prod_in_sankey', color: '#8c564b'},
@@ -350,7 +351,7 @@ D3.sankey =
           {left: 'imported_heat',                 right: 'central_heat_prod', gquery: 'imported_heat_to_central_heat_prod_in_sankey', color: '#d62728'},
           {left: 'nuclear',                       right: 'central_heat_prod', gquery: 'nuclear_to_central_heat_prod_in_sankey', color: '#ff7f0e'},
           {left: 'water',                         right: 'central_heat_prod', gquery: 'water_to_central_heat_prod_in_sankey', color: '#4465c6'},
-          {left: 'solar',                         right: 'central_heat_prod', gquery: 'solar_to_central_heat_prod_in_sankey', color: '#ffcc00'},
+          {left: 'industry',                      right: 'central_heat_prod', gquery: 'industry_to_central_heat_prod_in_sankey', color: '#d62728'},
 
           {left: 'hydrogen_prod',                 right: 'electricity_prod',  gquery: 'hydrogen_prod_to_electricity_prod_in_sankey', color: '#27d3d3'},
 

@@ -69,7 +69,20 @@
   related_node: energy_chp_ultra_supercritical_cofiring_coal
   position: 11
   slide_key: specs_electricity_coal_plants
-
+- key: efficiency_industry_chp_ultra_supercritical_coal_electricity
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: industry_chp_ultra_supercritical_coal
+  position: 12
+  slide_key: specs_electricity_coal_plants
+- key: efficiency_industry_chp_ultra_supercritical_coal_heat
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: industry_chp_ultra_supercritical_coal
+  position: 13
+  slide_key: specs_electricity_coal_plants
 
 
 

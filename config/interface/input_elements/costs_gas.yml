@@ -52,7 +52,7 @@
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
-  related_node: energy_chp_combined_cycle_network_gas_heat
+  related_node: energy_chp_combined_cycle_network_gas
   position: 7
   slide_key: specs_electricity_gas_plants
 - key: efficiency_energy_chp_local_engine_network_gas_electricity
@@ -66,6 +66,48 @@
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
-  related_node: energy_chp_local_engine_network_gas_heat
+  related_node: energy_chp_local_engine_network_gas
   position: 9
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_industry_chp_combined_cycle_gas_power_fuelmix_electricity
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: industry_chp_combined_cycle_gas_power_fuelmix
+  position: 10
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_industry_chp_combined_cycle_gas_power_fuelmix_heat
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: industry_chp_combined_cycle_gas_power_fuelmix
+  position: 11
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_industry_chp_engine_gas_power_fuelmix_electricity
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: industry_chp_engine_gas_power_fuelmix
+  position: 12
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_industry_chp_engine_gas_power_fuelmix_heat
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: industry_chp_engine_gas_power_fuelmix
+  position: 13
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_industry_chp_turbine_gas_power_fuelmix_electricity
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: industry_chp_turbine_gas_power_fuelmix
+  position: 14
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_industry_chp_turbine_gas_power_fuelmix_heat
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: industry_chp_turbine_gas_power_fuelmix
+  position: 15
   slide_key: specs_electricity_gas_plants

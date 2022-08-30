@@ -20,7 +20,15 @@
   gquery: network_gas_imbalance_inflexible_curve
   key: network_gas_imbalance_inflexible_curve_flexiblity_hourly_carriers_inflexible_imbalance
   label: gas
-  order_by: 3
+  order_by: 30
+  output_element_key: flexibility_hourly_carriers_inflexible_imbalance
+
+- color: "#999999"
+  dependent_on:
+  gquery: network_gas_imbalance_inflexible_smoothed_curve
+  key: network_gas_imbalance_inflexible_smoothed_curve_flexiblity_hourly_carriers_inflexible_imbalance
+  label: gas_smoothed
+  order_by: 31
   output_element_key: flexibility_hourly_carriers_inflexible_imbalance
 
 - color: "#87CEEB"
@@ -28,5 +36,13 @@
   gquery: hydrogen_imbalance_inflexible_curve
   key: hydrogen_imbalance_inflexible_curve_flexiblity_hourly_carriers_inflexible_imbalance
   label: hydrogen
-  order_by: 4
+  order_by: 40
+  output_element_key: flexibility_hourly_carriers_inflexible_imbalance
+
+- color: "#69a2b8"
+  dependent_on:
+  gquery: hydrogen_imbalance_inflexible_smoothed_curve
+  key: hydrogen_imbalance_inflexible_smoothed_curve_flexiblity_hourly_carriers_inflexible_imbalance
+  label: hydrogen_smoothed
+  order_by: 41
   output_element_key: flexibility_hourly_carriers_inflexible_imbalance

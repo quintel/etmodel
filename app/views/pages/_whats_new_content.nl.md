@@ -1,7 +1,26 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
-# July 2022
+# September 2022
+
+## Update van de transitiepaden tool
+De transitiepaden tool heeft een grote vernieuwing ondergaan. Met deze tool kun je een scenario openen en verkennen wat er tussen het start- en eindjaar gebeurt. Je kunt gemakkelijk veranderingen aanbrengen aan schuifjesinstellingen van de tussenliggende jaren en daarmee het transitiepad naar de toekomst vormgeven.
+
+Onderdeel van de update is een verbeterde interface, verschillende nieuwe grafieken die zowel als vlak en als staaf weergegeven kunnen worden en een toegevoegde tabel onder de grafieken. Ook is het nu eenvoudig om data te exporteren als CSV-bestand. Bekijk de vernieuwde tool **[hier](https://pro.energytransitionmodel.com/multi_year_charts)**!
+
+-> ![](/assets/pages/whats_new/transition_path_nl.png) <-
+
+## Toevoeging van kleine modulaire kernreactoren
+Een nieuwe type kerncentrale is aan het model toegevoegd: kleine modulaire reactoren. Deze nieuwe technologie is nu beschikbaar in aanvulling op de bestaande grote reactoren, de 2e en 3e generatie kerncentrales. Ga naar *Aanbod → Elektriciteit* → **[Kerncentrales](/scenario/supply/electricity/nuclear-plants)** om het aan jouw scenario toe te voegen.
+
+## Vraagverschuiving in de centrale ICT sector
+Vraagverschuiving is een vorm van vraagsturing waarbij elektriciteitsverbruikers ervoor kunnen kiezen hun vraag uit te stellen. Tijdens uren waarin de elektriciteitsprijs te hoog wordt bevonden, kunnen deze verbruikers hun vraag verlagen. Zodra de prijs weer daalt kunnen ze vervolgens het opgelopen tekort compenseren door de vraag juist te verhogen.
+
+Deze vorm van vraagsturing was al beschikbaar voor de metaal-, chemische en overige industrie. Het is nu ook beschikbaar voor de **[centrale ICT](/scenario/demand/industry/central-ict)** sector, die bestaat uit datacenters, telecom en overige informatie- en communicatiediensten. Je kunt vraagverschuiving voor de centrale ICT toevoegen onder *Flexibiliteit → Netbelasting* → **[Vraagsturing - vraagverschuiving in industrie](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)**.
+
+___
+
+# Juli 2022
 
 ## Waterstofschepen
 Schepen die met waterstof worden aangedreven zijn nu beschikbaar als technologie in de transportsector. Waterstof kan worden gebruikt als brandstof voor de binnenvaart. Ga hiervoor naar de sectie *Vraag → Transport* → **[Vrachtvervoer](/scenario/demand/transport_freight_transport/domestic-navigation-technology)**. Daarnaast kan het worden gebruikt als brandstof voor de internationale scheepvaart, wat je in kunt stellen in de sectie *Vraag → Transport* → **[Internationaal transport](/scenario/demand/transport_international_transport/international-navigation-technology)**.

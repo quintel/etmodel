@@ -1,6 +1,25 @@
 # What's new in the Energy Transition Model?
 ___
 
+# September 2022
+
+## Update of the transition path charts tool
+The transition path charts tool has had a significant update. With this tool you can open one of your scenarios and explore what happens between the start and end year. You can easily make changes to the slider settings for various intermediate years and thereby shape the transition path towards the future.
+
+The update includes an improved interface, various new charts that now allow you to toggle between area and bar charts, a table view underneath the charts and the possibility to easily export data as CSV files. Check out the updated tool **[here](https://pro.energytransitionmodel.com/multi_year_charts)**!
+
+-> ![](/assets/pages/whats_new/transition_path_en.png) <-
+
+## Addition of small modular nuclear reactors
+A new type of nuclear power plants has been added to the model: small modular reactors. This novel technology is now available next to the existing large reactor 2nd and 3rd generation nuclear power plants. Go to *Supply → Electricity* → **[Nuclear plants](/scenario/supply/electricity/nuclear-plants)** to add them to your scenario.
+
+## Load shifting in the central ICT sector
+Load shifting is a form of demand side response where electricity consumers can choose to delay their electricity demand. In hours where the electricity price is deemed too high, these consumers will reduce their demand. When the price drops again, they will then compensate for the accumulated deficit by increasing their demand.
+
+This form of demand side response was already available for the metal, chemical, and other industry. It is now also available for the **[central ICT](/scenario/demand/industry/central-ict)** sector, which covers data centers, telecom, and other information and communication services. You can add load shifting for the central ICT under *Flexibility → Net load* → **[Demand response - load shifting in industry](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)**.
+
+___
+
 # July 2022
 
 ## Hydrogen-powered ships

@@ -4,10 +4,19 @@ ___
 # September 2022
 
 ## Toevoeging van kleine modulaire reactoren
+Een nieuwe type kerncentrale is aan het model toegevoegd: kleine modulaire reactoren. Deze nieuwe technologie is nu beschikbaar in aanvulling op de bestaande grote reactoren, de 2e en 3e generatie kerncentrales. Ga naar *Aanbod → Elektriciteit* → **[Kerncentrales](/scenario/supply/electricity/nuclear-plants)** om het aan jouw scenario toe te voegen.
 
 ## Update van de transitiepaden
+De transitiepaden tool heeft een grote vernieuwing ondergaan. Met deze tool kun je een scenario openen en verkennen wat er tussen het start- en eindjaar gebeurt. Je kunt veranderingen aanbrengen aan de tussenliggende jaren en daarmee het pad naar de toekomst vormgeven.
+
+Onderdeel van de update is een verbeterde interface en verschillende nieuwe grafieken die zowel als vlak en als staaf weergegeven kunnen worden. Ook is het nu eenvoudig om data te exporteren als CSV-bestand. Bekijk de vernieuwde tool **[hier](https://pro.energytransitionmodel.com/multi_year_charts)**!
+
+-> ![](/assets/pages/whats_new/transition_path_nl.png) <-
 
 ## Vraagverschuiving in de centrale ICT
+Vraagverschuiving is een vorm van vraagsturing waarbij elektriciteitsverbruikers ervoor kunnen kiezen hun vraag uit te stellen. Tijdens uren waarin de elektriciteitsprijs te hoog wordt bevonden, kunnen deze verbruikers hun vraag verlagen. Zodra de prijs weer daalt kunnen ze vervolgens het opgelopen tekort compenseren door de vraag juist te verhogen.
+
+Deze vorm van vraagsturing was al beschikbaar voor de metaal-, chemische en overige industrie. Het is nu ook beschikbaar voor de **[centrale ICT](/scenario/demand/industry/central-ict)** sector, die bestaat uit datacenters, telecom en overige informatie- en communicatiediensten. Je kunt vraagverschuiving voor de centrale ICT toevoegen onder *Flexibiliteit → Netbelasting* → **[Vraagsturing - vraagverschuiving in industrie](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)**.
 
 ___
 

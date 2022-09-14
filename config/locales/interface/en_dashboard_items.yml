@@ -86,7 +86,7 @@ en:
       title: Share of renewable energy in households
       description:
     renewable_electricity_percentage:
-      label: Renewable el.
+      label: Renewable electricity
       title: Total share of renewable electricity
       description: What percentage of all electricity used is renewable? (Number may
         deviate from national statistics due to different definitions. See our <a
@@ -127,6 +127,24 @@ en:
         installed, the volatile and must-run supply of electricity can be larger than the baseload 
         demand. The ETM keeps track of the number of consecutive hours in which this is the case for
         you scenario.
+    total_curtailment:
+      label: Curtailment
+      title: Total curtailment
+      description: |
+        This gives the total curtailment of must-run and volatile producers, also known as 'inflexible' producers (see our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
+        documentation</a> for more information). It covers curtailment from solar PV set in the 
+        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">Net load</a> section, and curtailment that is 
+        applied when must-run and volatile production exceeds total demand.
+    share_of_curtailment:
+      label: Relative curtailment
+      title: Relative share of curtailment
+      description: |
+        This gives the total curtailment of must-run and volatile producers, relative to their total electricity production. 
+        It covers curtailment from solar PV set in the <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">Net load</a> 
+        section, and curtailment that is applied when must-run and volatile production exceeds total demand. The total electricity 
+        production of solar PV is corrected to include the electricity curtailed in the
+        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">Net load</a> section.
     all_ghg_reduction_relative_to_start_year:
       label: Greenhouse gases
       title: Total greenhouse gas emissions relative to start year

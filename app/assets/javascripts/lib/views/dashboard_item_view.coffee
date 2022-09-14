@@ -104,6 +104,10 @@ class @DashboardItemView extends Backbone.View
           "#{formatted}#{App.settings.country().toUpperCase()}"
       when 'loss_of_load', 'blackout_hours', 'total_number_of_excess_events'
         "#{Metric.round_number(result, 0)} #{I18n.t('units.hours')}"
+      when 'total_curtailment'
+        Metric.autoscale_value(result, @model.gquery.get('unit'), 1)
+      when 'share_of_curtailment'
+        Metric.ratio_as_percentage(result)
       when 'score'
         parseInt(result,10)
       else

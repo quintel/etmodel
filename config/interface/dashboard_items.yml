@@ -76,6 +76,20 @@
   disabled: false
   output_element_key: merit_order_excess_events
   dependent_on: ''
+- key: total_curtailment
+  gquery_key: dashboard_total_curtailment
+  group: summary
+  position:
+  disabled: false
+  output_element_key: use_of_excess_electricity
+  dependent_on:
+- key: share_of_curtailment
+  gquery_key: dashboard_share_of_curtailment_in_inflexible_production
+  group: summary
+  position:
+  disabled: false
+  output_element_key: use_of_excess_electricity
+  dependent_on:
 - key: co2_reduction_relative_to_start_year
   gquery_key: dashboard_co2_emissions_versus_start_year
   group: co2

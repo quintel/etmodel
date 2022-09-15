@@ -63,3 +63,25 @@ en:
         heat demand will be like? This parameter depends primarily on the number of
         greenhouses (determined by economic growth, but also conditions for investment
         etc.). "
+    capacity_of_agriculture_flexibility_p2h_electricity:
+      title: Power-to-heat boiler for gas and H<sub>2</sub> heaters
+      short_description:
+      description: |
+        These power-to-heat (P2H) boilers can be installed as an add-on for
+        gas and hydrogen heaters. In hours when the willingness to pay of these boilers 
+        exceeds the electricity price, they will use electricity to produce heat and the
+        gas and hydrogen heaters will lower their production. You can set the 
+        willingness to pay of these boilers in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-agriculture">
+        Flexibility</a> section. </br></br>
+        Note that for this slider to have an effect, capacity of either gas or hydrogen 
+        heaters needs to be installed as well. A number of charts are available to help you 
+        determine the effect of installing power-to-heat capacity: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul>

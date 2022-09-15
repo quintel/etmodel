@@ -287,7 +287,7 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: network_gas_buildings_final_demand_mekko_mece
-- label: hot_water
+- label: heat
   color: "#8B0000"
   order_by: 11
   group: other
@@ -299,7 +299,7 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: hot_water_other_final_demand_mekko_mece
-- label: hot_water
+- label: heat
   color: "#8B0000"
   order_by: 11
   group: agriculture
@@ -311,7 +311,7 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: hot_water_agriculture_final_demand_mekko_mece
-- label: hot_water
+- label: heat
   color: "#8B0000"
   order_by: 11
   group: households
@@ -323,7 +323,7 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: hot_water_households_final_demand_mekko_mece
-- label: hot_water
+- label: heat
   color: "#8B0000"
   order_by: 11
   group: industry
@@ -335,7 +335,7 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: hot_water_industry_final_demand_mekko_mece
-- label: hot_water
+- label: heat
   color: "#8B0000"
   order_by: 11
   group: transport
@@ -347,7 +347,7 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: hot_water_transport_final_demand_mekko_mece
-- label: hot_water
+- label: heat
   color: "#8B0000"
   order_by: 11
   group: buildings
@@ -731,7 +731,7 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: network_gas_energy_final_demand_mekko_mece
-- label: hot_water
+- label: heat
   color: "#8B0000"
   order_by: 11
   group: energy
@@ -839,7 +839,7 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: electricity_bunkers_final_demand_mekko_mece
-- label: hot_water
+- label: heat
   color: "#8B0000"
   order_by: 11
   group: bunkers

@@ -333,7 +333,7 @@ nl:
         Gas- en waterstofketels in de industrie kunnen worden omgebouwd naar hybride ketels door 
         ze uit te rusten met elektrische boilers. In het ETM is power-to-heat een flexibele 
         vraagtechnologie, wat betekent dat, als de willingness-to-pay van power-to-heat hoger is 
-        dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte producere 
+        dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte produceren 
         in plaats van de gas- of waterstofketels. Zie de 
         <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
@@ -345,6 +345,21 @@ nl:
         <li><a href="/scenario/demand/industry/chemicals">chemische industrie</a></li>
         <li><a href="/scenario/demand/industry/food">voedingsmiddelenindustrie</a></li>
         <li><a href="/scenario/demand/industry/paper">papierindustrie</a></li></ul>
+    flexibility_flexibility_power_to_heat_for_agriculture:
+      title: Conversie naar warmte voor landbouw
+      short_description:
+      description: |
+        Gas- en waterstofketels in de landbouw kunnen worden omgebouwd naar hybride ketels door 
+        ze uit te rusten met elektrische boilers. In het ETM is power-to-heat een flexibele 
+        vraagtechnologie, wat betekent dat, als de willingness-to-pay van power-to-heat hoger is 
+        dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte produceren 
+        in plaats van de gas- of waterstofketels. Zie de 
+        <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
+        documentatie</a> voor meer informatie. </br></br>
+        Omdat het een hybride technologie is, hebben deze schuifjes alleen effect als er zowel
+        vermogen van de power-to-heat boilers als van de gas- of waterstofketels geïnstalleerd is.
+        Je kunt het geïnstalleerde vermogen bepalen in de <a href="/scenario/demand/agriculture/heat">landbouwsector</a>.
+    flexibility_flexibility_power_to_gas:
     flexibility_flexibility_power_to_gas:
       title: Conversie naar waterstof
       short_description:

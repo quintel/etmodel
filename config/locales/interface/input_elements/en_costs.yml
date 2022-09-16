@@ -845,7 +845,7 @@ en:
         from condensation. Condensation heat is not included in LHV, only in higher
         heating values (HHV)."
     efficiency_households_space_heater_heatpump_ground_water_electricity:
-      title: Heat pump (ground)
+      title: Ground heat pump
       short_description: ''
       description: "This slider sets the future efficiency for space heating of ground heat pumps in houses."
     efficiency_households_space_heater_wood_pellets:
@@ -877,7 +877,11 @@ en:
         from condensation. Condensation heat is not included in LHV, only in higher
         heating values (HHV)."
     efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity:
+<<<<<<< HEAD
       title: Heat pump with TS
+=======
+      title: Ground heat pump
+>>>>>>> 9aed9fb48 (Add water water heat pump for agriculture and update locales)
       short_description: ''
       description: "This slider sets the future efficiency of ground heat pumps in buildings for space heating."
     efficiency_buildings_space_heater_electricity:
@@ -893,7 +897,7 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of power-to-gas electrolysers."
     efficiency_households_space_heater_heatpump_air_water_electricity:
-      title: Heat pump (air)
+      title: Air heat pump
       short_description: ''
       description: "How will the coefficient of performance (COP) of air-source heat pumps change in the future?
       With this slider you can adjust with which percentage the COP of air-source heat pumps for space heating will change in the future.
@@ -901,7 +905,7 @@ en:
       It is not possible to the absolute value of the future SCOP of air-source heat pumps with a slider as this is a result of hourly
       calculations based on the hourly outside temperature curve."
     efficiency_households_space_heater_hybrid_heatpump_air_water_electricity:
-      title: Hybrid heat pump (gas)
+      title: Hybrid air heat pump (gas)
       short_description: ''
       description: "How will the coefficient of performance (COP) of hybrid heat pumps running on gas change in the future?
       With this slider you can adjust with which percentage the COP of hybrid heat pumps for space heating will change in the future.
@@ -909,7 +913,7 @@ en:
       It is not possible to set the absolute value of the future SCOP of hybrid heat pumps with a slider as this is a result of hourly
       calculations based on the hourly outside temperature curve."
     efficiency_households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity:
-      title: Hybrid heat pump (hydrogen)
+      title: Hybrid air heat pump (hydrogen)
       short_description: ''
       description: "How will the coefficient of performance (COP) of hybrid heat pumps running on hydrogen change in the future?
       With this slider you can adjust with which percentage the COP of hybrid heat pumps for space heating will change in the future.
@@ -925,7 +929,7 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of condensing combi boilers (hydrogen) for space heating in buildings."
     efficiency_buildings_space_heater_heatpump_air_water_electricity:
-      title: Heat pump (air)
+      title: Air heat pump
       short_description: ''
       description: "How will the coefficient of performance (COP) of air-source heat pumps change in the future?
       With this slider you can adjust with which percentage the COP of air-source heat pumps for space heating in buildings will change in the future.
@@ -955,7 +959,7 @@ en:
         Flexibility</a> section you can determine the installed capacity and relative storage volume 
         for your scenario.
     efficiency_buildings_space_heater_hybrid_heatpump_air_water_electricity:
-      title: Hybrid heat pump (gas)
+      title: Hybrid air heat pump (gas)
       short_description:
       description: |
         How will the coefficient of performance (COP) of hybrid heat pumps running on gas change in the future?
@@ -964,7 +968,7 @@ en:
         It is not possible to set the absolute value of the future SCOP of hybrid heat pumps with a slider as this is a result of hourly
         calculations based on the hourly outside temperature curve.
     efficiency_buildings_space_heater_hybrid_hydrogen_heatpump_air_water_electricity:
-      title: Hybrid heat pump (hydrogen)
+      title: Hybrid air heat pump (hydrogen)
       short_description:
       description: |
         How will the coefficient of performance (COP) of hybrid heat pumps running on hydrogen change in the future?

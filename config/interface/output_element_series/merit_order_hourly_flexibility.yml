@@ -119,6 +119,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: industry_flexibility_p2h_electricity_flex_merit_order_hourly_flexibility
+- label: agriculture_flexibility_p2h_electricity
+  color: "#FFD700"
+  order_by: 210
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: agriculture_flexibility_p2h_electricity_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: merit_order_hourly_flexibility
+  key: agriculture_flexibility_p2h_electricity_flex_merit_order_hourly_flexibility
 - label: energy_flexibility_pumped_storage_electricity
   color: "#416B86"
   order_by: 310

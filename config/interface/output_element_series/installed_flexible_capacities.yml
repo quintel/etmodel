@@ -39,6 +39,14 @@
   gquery: electricity_demand_flexible_power_to_heat_industry_capacity
   output_element_key: installed_flexible_capacities
   key: power_to_heat_for_industry_electricity_installed_flexible_capacities
+- label: power_to_heat_for_agriculture
+  color: "#FFD700"
+  order_by: 127
+  group: electricity
+  is_target_line: false
+  gquery: electricity_demand_flexible_power_to_heat_agriculture_capacity
+  output_element_key: installed_flexible_capacities
+  key: power_to_heat_for_agriculture_electricity_installed_flexible_capacities
 - label: power_to_hydrogen
   color: "#dd9977"
   order_by: 128
@@ -169,7 +177,7 @@
   output_element_key: installed_flexible_capacities
   key: gas_to_heat_heat_network_installed_flexible_capacities
 - label: hydrogen_to_heat
-  color: "#F9CA24"
+  color: "#77dd99"
   order_by: 244
   group: heat_network
   is_target_line: false
@@ -234,7 +242,7 @@
   output_element_key: installed_flexible_capacities
   key: shortage_peak_hydrogen_installed_flexible_capacities
 - label: hydrogen_to_heat
-  color: "#F9CA24"
+  color: "#77dd99"
   order_by: 320
   group: hydrogen
   is_target_line: false

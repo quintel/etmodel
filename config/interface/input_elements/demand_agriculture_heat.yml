@@ -15,20 +15,28 @@
   related_node: agriculture_burner_wood_pellets
   position: 3
   slide_key: demand_agriculture_heat
+- key: agriculture_heatpump_water_water_electricity_share
+  share_group: agri_heat
+  step_value: 0.1
+  unit: "%"
+  interface_group: heat production
+  related_node: agriculture_heatpump_water_water_electricity
+  position: 5
+  slide_key: demand_agriculture_heat
 - key: agriculture_heatpump_water_water_ts_electricity_share
   share_group: agri_heat
   step_value: 0.1
   unit: "%"
   interface_group: heat production
   related_node: agriculture_heatpump_water_water_ts_electricity
-  position: 4
+  position: 6
   slide_key: demand_agriculture_heat
 - key: agriculture_geothermal_share
   share_group: agri_heat
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  position: 5
+  position: 7
   slide_key: demand_agriculture_heat
 - key: agriculture_burner_network_gas_share
   share_group: agri_heat
@@ -43,7 +51,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  position: 6
+  position: 8
   slide_key: demand_agriculture_heat
 - key: agriculture_burner_hydrogen_share
   share_group: agri_heat

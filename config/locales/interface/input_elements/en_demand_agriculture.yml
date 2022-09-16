@@ -15,7 +15,7 @@ en:
         met by biomass-fired heaters? <br><br>Burning locally available biomass is
         usually quite efficient.
     agriculture_heatpump_water_water_ts_electricity_share:
-      title: Heat pump with TS
+      title: Water heat pump with TS
       short_description: ''
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer and using
@@ -25,6 +25,14 @@ en:
         less energy has to be added to cool or heat water to the right temperature.
         It is difficult to realize underground thermal storage in densely populated
         areas."
+    agriculture_heatpump_water_water_electricity_share:
+      title: Water heat pump
+      short_description:
+      description: |
+        With this slider you can install a water-to-water heat pump. This type of heat 
+        pump uses a water supply well as a heat source. Only a small amount of electricity 
+        is then still required to bring the output water to the required temperature. This makes 
+        a water-to-water heat pump much more efficient than an electric boiler.
     agriculture_geothermal_share:
       title: Geothermal
       short_description: ''

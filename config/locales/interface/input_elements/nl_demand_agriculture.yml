@@ -15,7 +15,7 @@ nl:
         komt van het verbranden van biomassa? Het verbranden van lokaal beschikbare
         biomassa is energetisch vrij efficiënt. '
     agriculture_heatpump_water_water_ts_electricity_share:
-      title: El. warmtepomp WKO
+      title: Water warmtepomp met WKO
       short_description: ''
       description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
         opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
@@ -26,6 +26,14 @@ nl:
         hoeft te worden toegevoegd om een gebouw te koelen of te verwarmen. Het is
         helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
         (bijvoorbeeld in stedelijk gebied)."
+    agriculture_heatpump_water_water_electricity_share:
+      title: Water warmtepomp
+      short_description:
+      description: |
+        Met dit schuifje kun je een water-water warmtepomp installeren. Dit type warmtepomp 
+        gebruikt een put als warmtebron. Er is dan nog maar een beperkte hoeveelheid elektriciteit 
+        nodig om het geleverde water op de gewenste temperatuur te krijgen. Dit maakt een water-water 
+        warmtepomp veel efficiënter dan een elektrische boiler.
     agriculture_geothermal_share:
       title: Geothermisch
       short_description: ''

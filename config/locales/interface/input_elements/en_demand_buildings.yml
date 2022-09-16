@@ -70,7 +70,7 @@ en:
         These boilers also produce hot water for showering and other uses. Hot water production
         is slightly less efficient than producing heat for the central heating system."
     buildings_space_heater_heatpump_air_water_network_gas_share:
-      title: Heat pump (gas)
+      title: Air heat pump (gas)
       short_description: ''
       description: "A gas-fired heat pump is similar to an electric heat pump except
         that the energy driving the process comes from gas, not electricity. This
@@ -84,7 +84,7 @@ en:
         and require additional electric heating capacity for cold days. The latter
         will require large investments to reinforce electricity grids."
     buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
-      title: Heat pump with TS
+      title: Water heat pump with TS
       short_description: ''
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer. This heat
@@ -249,7 +249,7 @@ en:
         for example, but also larger. This means they do not always use less energy
         than the smaller screens used before.  \r\n"
     buildings_cooling_heatpump_air_water_network_gas_share:
-      title: Heat pump (gas)
+      title: Air heat pump (gas)
       short_description: ''
       description: A gas-fired heat pump is similar to an electric heat pump except
         that the energy driving the process comes from gas, not electricity. This
@@ -259,7 +259,7 @@ en:
         gas-fired heat pumps are roughly as efficient as electric ones for heating,
         and less efficient for cooling.
     buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
-      title: Heat pump with TS
+      title: Water heat pump with TS
       short_description: ''
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer. This heat
@@ -290,7 +290,7 @@ en:
         Because the cold stored in a lake goes down drastically during summer the
         year round capacity of deep lakes is small.
     buildings_space_heater_heatpump_air_water_electricity_share:
-      title: Heat pump (air)
+      title: Air heat pump
       short_description: ''
       description: |
         With this slider you can adjust the percentage of air heatpumps used in buildings
@@ -311,7 +311,7 @@ en:
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weather curve</a>.
     buildings_cooling_heatpump_air_water_electricity_share:
-      title: Heat pump (air)
+      title: Air heat pump
       short_description: ''
       description: With this slider you can adjust the percentage of air heatpumps used in buildings
         for cooling. <br/><br/>
@@ -325,7 +325,7 @@ en:
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weather curve</a>.
     buildings_space_heater_hybrid_heatpump_air_water_electricity_share:
-      title: Hybrid heat pump (gas)
+      title: Hybrid air heat pump (gas)
       short_description: ''
       description: "This heater is a combination of an electric heat pump that draws
         its heat from the outside air and an efficient conventional gas-fired boiler.
@@ -351,7 +351,7 @@ en:
         to gas. The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
         >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     buildings_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
-      title: Hybrid heat pump (hydrogen)
+      title: Hybrid air heat pump (hydrogen)
       short_description:
       description: |
         This heater is a combination of an electric heat pump that draws its heat 

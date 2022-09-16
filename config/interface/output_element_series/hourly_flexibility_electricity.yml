@@ -133,6 +133,16 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: hourly_flexibility_electricity_p2h_industry_curve_hourly_flexibility_electricity
+- label: power_to_heat_for_agriculture
+  color: "#FFD700"
+  order_by: 308
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2h_agriculture_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2h_agriculture_curve_hourly_flexibility_electricity
 - label: power_to_heat_for_district_heating
   color: "#FFA502"
   order_by: 310

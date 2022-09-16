@@ -85,6 +85,31 @@
 - label: capex
   color: "#ffb300"
   order_by: 400
+  group: power_to_heat_agriculture
+  is_target_line: false
+  gquery: integral_fixed_cost_power_to_heat_agriculture
+  output_element_key: flexibility_integral_costs
+  key: integral_fixed_cost_power_to_heat_agriculture_flexibility_integral_costs
+- label: opex
+  color: "#e07033"
+  order_by: 405
+  group: power_to_heat_agriculture
+  is_target_line: false
+  gquery: integral_variable_cost_power_to_heat_agriculture
+  output_element_key: flexibility_integral_costs
+  key: integral_variable_cost_power_to_heat_agriculture_flexibility_integral_costs
+- label: electricity_cost
+  color: "#4169e1"
+  order_by: 410
+  group: power_to_heat_agriculture
+  is_target_line: false
+  gquery: integral_electricity_cost_power_to_heat_agriculture
+  output_element_key: flexibility_integral_costs
+  key: integral_electricity_cost_power_to_heat_agriculture_flexibility_integral_costs
+
+- label: capex
+  color: "#ffb300"
+  order_by: 500
   group: power_to_power
   is_target_line: false
   gquery: integral_fixed_cost_power_to_power
@@ -92,7 +117,7 @@
   key: integral_fixed_cost_power_to_power_flexibility_integral_costs
 - label: opex
   color: "#e07033"
-  order_by: 405
+  order_by: 505
   group: power_to_power
   is_target_line: false
   gquery: integral_variable_cost_power_to_power
@@ -100,7 +125,7 @@
   key: integral_variable_cost_power_to_power_flexibility_integral_costs
 - label: electricity_cost
   color: "#4169e1"
-  order_by: 410
+  order_by: 510
   group: power_to_power
   is_target_line: false
   gquery: integral_electricity_cost_power_to_power
@@ -108,7 +133,7 @@
   key: integral_electricity_cost_power_to_power_flexibility_integral_costs
 - label: electricity_revenue
   color: "blue"
-  order_by: 415
+  order_by: 515
   group: power_to_power
   is_target_line: true
   gquery: integral_reference_price_power_to_power

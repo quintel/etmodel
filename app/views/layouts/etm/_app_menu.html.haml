@@ -12,8 +12,10 @@
             </svg>
           = t('app_nav.about_the_etm')
         %ul
-          %li= learn_link t('app_nav.info'), about_path
-          %li= learn_link t('app_nav.resources'), '#'
+          %li= learn_link t('app_nav.etm_what'), about_path
+          %li= learn_link t('app_nav.etm_why'), about_path
+          %li= learn_link t('app_nav.etm_use_cases'), about_path
+          %li= learn_link t('app_nav.getting_started'), about_path
       .section.features
         %strong
           :plain
@@ -25,7 +27,8 @@
           %li= learn_link t('app_nav.whats_new'), whats_new_path
           - if current_user
             %li= learn_link t('header.load_scenario'), scenarios_path
-          %li= learn_link t('app_nav.mondaine_suite'), import_esdl_path
+          %li= learn_link t('app_nav.transition_paths'), multi_year_charts_path
+          %li= learn_link t('app_nav.local_vs_global'), local_global_path
       .section.collaborate
         %strong
           :plain
@@ -34,9 +37,10 @@
             </svg>
           = t('app_nav.collaborate')
         %ul
-          %li= learn_link t('app_nav.development'), development_path
-          %li= learn_link 'Quintel', 'https://quintel.com'
-          %li= learn_link t('app_nav.partners'), 'https://energytransitionmodel.com/partners'
+          %li= learn_link t('app_nav.quintel'), development_path
+          %li= learn_link t('app_nav.open_source'), development_path
+          %li= learn_link t('app_nav.process'), development_path
+          %li= learn_link t('app_nav.partners'), development_path
     .learn-dropdown.extras
       .section.about
         %ul
@@ -45,9 +49,10 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
               </svg>
-            = t('app_nav.learn')
+            = t('app_nav.resources')
           %li= learn_link t('app_nav.documentation'), 'https://docs.energytransitionmodel.com'
           %li= learn_link t('app_nav.api'), 'https://docs.energytransitionmodel.com/api/intro'
+          %li= learn_link t('app_nav.github'), 'https://github.com/quintel'
       .section.features
         %ul
           %li.learn-section
@@ -57,8 +62,7 @@
               </svg>
             = t('app_nav.other_apps')
           %li= learn_link t('app_nav.game'), 'https://light.energytransitionmodel.com'
-          %li= learn_link t('app_nav.local_vs_global'), local_global_path
-          %li= learn_link t('app_nav.transition_paths'), multi_year_charts_path
+          %li= learn_link t('app_nav.mondaine_suite'), import_esdl_path
       .section.collaborate
         %ul
           %li.learn-section
@@ -69,4 +73,3 @@
               </svg>
             = t('app_nav.reach_out')
           %li= learn_link t('app_nav.contact_us'), contact_url
-          %li= learn_link t('app_nav.contribute'), '#'

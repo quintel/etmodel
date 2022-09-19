@@ -203,15 +203,3 @@
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_heat_flexibility_p2h_boiler_electricity_flex_merit_order_hourly_flexibility
-- label: solar_pv_total_curtailed_electricity_curve
-  color: "blue"
-  order_by: 405
-  group: flex
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: solar_pv_total_curtailed_electricity_input_curve
-  is_1990: false
-  dependent_on:
-  output_element_key: merit_order_hourly_flexibility
-  key: solar_pv_total_curtailed_electricity_curve_flex_merit_order_hourly_flexibility

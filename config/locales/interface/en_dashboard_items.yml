@@ -131,20 +131,17 @@ en:
       label: Curtailment
       title: Total curtailment
       description: |
-        This gives the total curtailment of must-run and volatile producers, also known as 'inflexible' producers (see our
+        This gives the total curtailment volume of must-run and volatile producers, also known as 'inflexible' producers (see our
         <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
-        documentation</a> for more information). It covers curtailment from solar PV set in the 
-        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">Net load</a> section, and curtailment that is 
-        applied when must-run and volatile production exceeds total demand.
+        documentation</a> for more information). Curtailment is applied as a last resort when inflexible production exceeds total demand.
     share_of_curtailment:
       label: Relative curtailment
       title: Relative share of curtailment
       description: |
-        This gives the total curtailment of must-run and volatile producers, relative to their total electricity production. 
-        It covers curtailment from solar PV set in the <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">Net load</a> 
-        section, and curtailment that is applied when must-run and volatile production exceeds total demand. The total electricity 
-        production of solar PV is corrected to include the electricity curtailed in the
-        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">Net load</a> section.
+        This gives the total curtailment volume of must-run and volatile producers, relative to their total electricity production. 
+        These producers are also known as 'inflexible' producers (see our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
+        documentation</a> for more information). Curtailment is applied as a last resort when inflexible production exceeds total demand.
     all_ghg_reduction_relative_to_start_year:
       label: Greenhouse gases
       title: Total greenhouse gas emissions relative to start year

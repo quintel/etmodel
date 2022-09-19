@@ -13,7 +13,7 @@
   key: energy_power_solar_pv_offshore_electricity_output_curve_hourly_solar_pv_curtailment
 - label: energy_battery_solar_pv_electricity_output_curve
   color: "#FFF47D"
-  order_by: 1
+  order_by: 2
   group: 
   show_at_first: 
   is_target_line: 
@@ -25,7 +25,7 @@
   key: energy_battery_solar_total_to_grid_electricity_output_hourly_solar_pv_curtailment
 - label: energy_power_solar_pv_electricity_output_curve
   color: lightgreen
-  order_by: 1
+  order_by: 3
   group: 
   show_at_first: 
   is_target_line: 
@@ -37,7 +37,7 @@
   key: energy_power_solar_pv_electricity_output_curve_hourly_solar_pv_curtailment
 - label: buildings_solar_pv_electricity_output_curve
   color: "#32a852"
-  order_by: 1
+  order_by: 4
   group: 
   show_at_first: 
   is_target_line: 
@@ -49,7 +49,7 @@
   key: buildings_solar_pv_electricity_output_curve_hourly_solar_pv_curtailment
 - label: households_solar_pv_electricity_output_curve
   color: green
-  order_by: 1
+  order_by: 5
   group: 
   show_at_first: 
   is_target_line: 
@@ -61,7 +61,7 @@
   key: households_solar_pv_electricity_output_curve_hourly_solar_pv_curtailment
 - label: energy_power_solar_pv_offshore_curtailed_electricity_output_curve
   color: "#AA14F0"
-  order_by: 2
+  order_by: 10
   group: 
   show_at_first: 
   is_target_line: 
@@ -71,9 +71,21 @@
   dependent_on: 
   output_element_key: hourly_solar_pv_curtailment
   key: energy_power_solar_pv_offshore_curtailed_electricity_output_curve_hourly_solar_pv_curtailment
+- label: energy_battery_solar_pv_curtailed_electricity_output_curve
+  color: "#D800A6"
+  order_by: 11
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_battery_solar_pv_curtailed_electricity_output_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: hourly_solar_pv_curtailment
+  key: energy_battery_solar_pv_curtailed_electricity_output_curve_hourly_solar_pv_curtailment
 - label: energy_power_solar_pv_curtailed_electricity_output_curve
   color: "#CAB8FF"
-  order_by: 2
+  order_by: 12
   group: 
   show_at_first: 
   is_target_line: 
@@ -85,7 +97,7 @@
   key: energy_power_solar_pv_curtailed_electricity_output_curve_hourly_solar_pv_curtailment
 - label: buildings_solar_pv_curtailed_electricity_output_curve
   color: "#46c1e3"
-  order_by: 3
+  order_by: 13
   group: ''
   show_at_first: false
   is_target_line: false
@@ -97,7 +109,7 @@
   key: buildings_solar_pv_curtailed_electricity_output_curve_hourly_solar_pv_curtailment
 - label: households_solar_pv_curtailed_electricity_output_curve
   color: blue
-  order_by: 4
+  order_by: 14
   group: ''
   show_at_first: false
   is_target_line: false

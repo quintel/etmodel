@@ -71,6 +71,18 @@
   dependent_on:
   output_element_key: collective_heat_mekko
   key: energy_heat_distribution_loss_in_collective_heat_network_mekko_demand_collective_heat_mekko
+- label: energy_direct_air_capture_in_collective_heat_network_mekko
+  color: "#b71540"
+  order_by: 7
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_direct_air_capture_in_collective_heat_network_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: collective_heat_mekko
+  key: energy_direct_air_capture_in_collective_heat_network_mekko_demand_collective_heat_mekko
 - label: energy_heat_heatpump_water_water_electricity_in_collective_heat_network_mekko
   color: "#ADD8E6"
   order_by: 9

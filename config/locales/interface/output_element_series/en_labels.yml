@@ -373,7 +373,7 @@ en:
         electricity_converted_to_hydrogen: "Converted to hydrogen"
         electricity_converted_to_kerosene: "Converted to kerosene for aviation"
         electricity_exported: "Exported"
-        electricity_curtailed: "Curtailment of volatile producers"
+        electricity_curtailed: "Curtailment of must-run and volatile producers"
         electricity_curtailed_solar_pv: "Curtailment of solar PV"
         electrical_appliances: "Electrical appliances"
         electricity_revenue: "Integral revenue for electricity storage"
@@ -388,7 +388,7 @@ en:
         energy_chp_ultra_supercritical_cofiring_coal: 'Co-firing coal plant for district heat (CHP)'
         energy_chp_ultra_supercritical_lignite: 'Lignite plant for district heat (CHP)'
         energy_export_electricity: "Exported"
-        energy_flexibility_curtailment_electricity: "Curtailment of volatile producers"
+        energy_flexibility_curtailment_electricity: "Curtailment of must-run and volatile producers"
         energy_flexibility_load_shifting_electricity_input: "Increased demand in industry"
         energy_flexibility_load_shifting_electricity_output: "Decreased demand in industry"
         energy_hydrogen_flexibility_p2g_electricity: 'Converted to hydrogen'
@@ -653,6 +653,7 @@ en:
         energy_power_solar_pv_offshore_curtailed_electricity_output_curve: "Curtailment solar PV plants offshore"
         energy_power_solar_pv_offshore_electricity_output_curve: "Production solar PV plants offshore"
         energy_battery_solar_pv_electricity_output_curve: "Production solar PV plants with battery"
+        energy_battery_solar_pv_curtailed_electricity_output_curve: "Curtailment solar PV plants with battery"
         greengas_price: "Green gas price"
         hydrogen_demand: "Hydrogen demand"
         hydrogen_price: "Hydrogen price"

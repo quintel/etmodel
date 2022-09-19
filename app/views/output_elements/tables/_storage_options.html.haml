@@ -168,6 +168,14 @@
       %td
       %td
     %tr
+      %th= t "output_elements.tables.flexibility.electricity_curtailed_wind"
+      %td
+      %td{:data => {:decimals => 4, :gquery => "energy_curtailment_wind_electricity_peak_capacity", :graph => :future}}
+      %td
+      %td{:data => {:decimals => 4, :gquery => "energy_curtailment_wind_electricity_input", :graph => :future}}
+      %td
+      %td
+    %tr
       %th= t "output_elements.tables.flexibility.load_shifting_metal_industry"
       %td
       %td{:data => {:gquery => "energy_flexibility_load_shifting_metal_industry_electricity_peak_capacity", :graph => :future}}

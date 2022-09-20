@@ -174,7 +174,7 @@ describe ScenariosController, vcr: true do
             expect(session[:setting].api_session_id).to eq('123')
           end
 
-          it 'sets the area code', :focus do
+          it 'sets the area code' do
             scenario_mock = ete_scenario_mock
 
             allow(scenario_mock).to receive(:id).and_return('456')

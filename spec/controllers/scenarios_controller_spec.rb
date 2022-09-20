@@ -174,6 +174,17 @@ describe ScenariosController, vcr: true do
             expect(session[:setting].api_session_id).to eq('123')
           end
 
+          it 'sets the area code', :focus do
+            scenario_mock = ete_scenario_mock
+
+            allow(scenario_mock).to receive(:id).and_return('456')
+            allow(scenario_mock).to receive(:area_code).and_return('some_code')
+            allow(Api::Scenario).to receive(:find).and_return(scenario_mock)
+
+            get :play_multi_year_charts, params: { id: 456 }
+            expect(session[:setting].area_code).to eq('some_code')
+          end
+
           it 'opens the play page' do
             get :play_multi_year_charts, params: { id: 123 }
             expect(response).to render_template(:play)
@@ -198,7 +209,7 @@ describe ScenariosController, vcr: true do
           end
         end
 
-        context 'with a valid input named' do
+        context 'with a valid input name' do
           let(:input) do
             second_sidebar_item.slides.first.sliders.first
           end

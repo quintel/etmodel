@@ -119,6 +119,7 @@ class ScenariosController < ApplicationController
   def play_multi_year_charts
     Current.setting.reset!
 
+    Current.setting = Setting.load_from_scenario(@scenario)
     Current.setting.api_session_id = @scenario.id
 
     if params[:input] && (input = InputElement.find_by_key(params[:input]))

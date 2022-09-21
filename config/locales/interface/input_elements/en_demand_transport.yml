@@ -40,32 +40,39 @@ en:
     transport_plane_using_kerosene_share:
       title: Kerosene
       short_description: ''
-      description: 'Fossil fuels for aviation can be several, but the bulk of it is
-        kerosene, which is used for all large aircraft. '
+      description: "With this slider you can set the percentage of total passenger kilometers 
+        in domestic aviation traveled by airplanes using kerosene.  </br></br>
+        Kerosene is the most dominant fuel used in aviation due to its high energy content and 
+        low freezing temperature. This means planes can fly large distances and 
+        the kerosene does not solidify when flying on high altitudes. </br></br>
+        Checkout the technical and financial properties below for more information."
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
       short_description: ''
-      description: "Bio-based aviation fuels are still in an experimental stage. Transatlantic
-        flights have been completed successfully, during which one of four (or more)
-        engines used a bio-diesel. Since airplanes need so much high-energy fuel,
-        it remains to be seen whether such bio-fuels can ever make a large dent in
-        the fossil fuel use."
+      description: "With this slider you can set the percentage of total passenger kilometers 
+        in domestic aviation traveled by airplanes using bio-ethanol.  </br></br>
+        Bio-ethanol or other types of bio-based fuels are derived from plants or waste. The energy content
+        of bio-ethanol is lower compared to kerosene and production is limited. This explains
+        the current infrequent use of bio-ethanol in airplanes. Using a (modified) combustion engine airplanes  
+        can complete their flight solely using bio-fuels. </br></br>
+        Checkout the technical and financial properties below for more information."
     transport_plane_using_gasoline_share:
       title: Gasoline
       short_description:
-      description: 'Not a large percentage of airplanes use gasoline as fuel. Its
-        use is mostly limited to smaller private planes, since larger planes need
-        higher energy content fuels to get far enough. '
+      description: "With this slider you can set the percentage of total passenger kilometers 
+        in domestic aviation traveled by airplanes using gasoline.  </br></br>
+        Gasoline is only sparingly used in smaller aircrafts. Due to its lower energy content compared to 
+        kerosene, airplanes using gasoline cannot travel large distances. </br></br>
+        Checkout the technical and financial properties below for more information."
     transport_plane_using_electricity_share:
       title: Electric
       short_description:
       description: "With this slider you can set the percentage of total passenger kilometers 
         in domestic aviation traveled by electric airplanes.  </br></br>
         (Fully) electric airplanes use batteries to propel their flight. Batteries in combination with 
-        an electric engine are around twice as efficient compared to combustion engines 
-        resulting in a decline in energy use. Electric planes are still in a development stage 
-        as available battery technologies do not yet allow large planes to fly far distances 
-        efficiently. </br></br>
+        an electric engine are around twice as efficient compared to combustion engines. 
+        Electric planes are still in a development stage as available battery technologies 
+        do not (yet) allow large planes to fly far distances efficiently. </br></br>
         Checkout the technical and financial properties below for more information."
     transport_plane_using_hydrogen_share:
       title: Hydrogen
@@ -448,36 +455,46 @@ en:
     transport_ship_using_diesel_mix_share:
       title: Diesel / dual fuel
       short_description:
-      description: "The vast majority of ships for inland waterway transport are powered
+      description: |
+        With this slider you can set the percentage of total freight kilometers traveled by 
+        diesel ships. </br></br>
+        The vast majority of ships for inland waterway transport are powered
         by diesel engines. These engines can run in several cycles and at high and
         low pressures. Depending on the exact engine configuration, diesel engines
         can also run in a dual fuel mode in which they use both diesel and LNG. In
         this dual fuel mode, the actual fuel usage can vary from 100% diesel to 1%
         diesel / 99% LNG. In the <a href=\"/scenario/supply/transport_fuels/domestic-navigation\"
         >transport fuels section</a> , you can determine the exact fuel mix of ships
-        with diesel / dual fuel engines."
+        with diesel / dual fuel engines.</br></br>
+        Checkout the technical and financial properties below for more information.
     transport_ship_using_lng_mix_share:
       title: LNG
       short_description:
-      description: "(Liquefied) natural gas engines are a rather novel ship engine
+      description: |
+        With this slider you can set the percentage of total freight kilometers traveled by 
+        LNG ships. </br></br>
+        (Liquefied) natural gas engines are a rather novel ship engine
         technology. They are spark-ignited engines which operate at low pressures
         and are optimized for liquefied natural gas (LNG). As a result, these engines
         can only run on LNG but have superior performance to dual fuel engines. On
         the other hand, dual fuel engines allow for more flexibility, being less dependent
-        on the availability of shipping fuels."
+        on the availability of shipping fuels.</br></br>
+        Checkout the technical and financial properties below for more information.
     transport_ship_using_hydrogen_share:
       title: Hydrogen
       short_description:
       description: |
+        With this slider you can set the percentage of total freight kilometers traveled by 
+        hydrogen ships. </br></br>
         Hydrogen-powered shipping is a novel technology that is still in its developmental phase.
         Different designs are possible for this technology, for example whether an internal combustion
-        engine (ICE) or a fuel cell (FC) will be used to convert the hydrogen. Here we have
-        chosen to use the specifications of a hydrogen-powered ship using a fuel cell. See the 
-        "Technical and financial properties" for more information. </br></br>
+        engine (ICE) or a fuel cell (FC) will be used to convert the hydrogen. This slider
+        represents a hydrogen-powered ship using a fuel cell.
         Compared to LNG, diesel, or especially HFO (heavy fuel oil), using hydrogen in the inland shipping 
         sector can significantly decrease emissions. This does depend on the way that the hydrogen is 
         produced. In the <a href=/scenario/supply/hydrogen/hydrogen-production>hydrogen production 
-        section</a> you can determine how this is done.
+        section</a> you can determine how this is done.</br></br>
+        Checkout the technical and financial properties below for more information.
     transport_ship_using_electricity_share:
       title: Electric
       short_description:

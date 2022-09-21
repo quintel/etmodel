@@ -42,29 +42,39 @@ nl:
     transport_plane_using_kerosene_share:
       title: Kerosine
       short_description: ''
-      description: 'Er zijn verschillende fossiele brandstoffen om op te vliegen,
-        maar verreweg het grootste volume bestaat uit kerosine. Alle grote vliegtuigen
-        vliegen op kerosine. '
+      description: "Met deze slider kun je het percentage van de totale passagiers 
+        kilometers in de binnenlandse luchtvaart instellen die worden afgelegd door  
+        kerosine vliegtuigen. </br></br>
+        Kerosine is de meest dominante brandstof in de luchtvaart vanwege de hoge energie-inhoud en het
+        lage vriespunt. Dit betekent dat vliegtuigen lange afstanden kunnen afleggen en de
+        kerosine niet stolt bij het vliegen op grote hoogte. </br></br>
+        Bekijk de technische parameters en kosten hieronder voor meer informatie."
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
       short_description: ''
-      description: "Biobrandstoffen voor vliegtuigen bevinden zich nog in een experimenteel
-        stadium. Er zijn transatlantische vluchten uitgevoerd, waarbij één van de
-        vier motoren van het vliegtuig op biodiesel draaide. Aangezien vliegtuigen
-        zeer veel hoog-energetische brandstof nodig hebben, is het de vraag of biobrandstoffen
-        ooit significant zullen bijdragen."
+      description: "Met deze slider kun je het percentage van de totale passagiers 
+        kilometers in de binnenlandse luchtvaart instellen die worden afgelegd door  
+        bio-ethanol vliegtuigen. </br></br>
+        Bio-ethanol of andere soorten bio-brandstoffen worden gewonnen uit planten of afval. De energie-inhoud
+        van bio-ethanol is lager in vergelijking met kerosine en de productie is beperkt. Dit verklaart
+        het huidige schaarse gebruik van bio-ethanol in vliegtuigen. Met een (aangepaste) verbrandingsmotor 
+        kunnen vliegtuigen hun vlucht uitsluitend met biobrandstoffen voltooien. </br></br>
+        Bekijk de technische parameters en kosten hieronder voor meer informatie."
     transport_plane_using_gasoline_share:
       title: Benzine
       short_description:
-      description: Momenteel gebruiken vooral kleinere privé vliegtuigjes benzine.
-        Grotere vliegtuigen hebben over het algemeen een energierijkere brandstof
-        nodig om ver genoeg te kunnen vliegen.
+      description: "Met deze slider kun je het percentage van de totale passagiers 
+        kilometers in de binnenlandse luchtvaart instellen die worden afgelegd door  
+        benzine vliegtuigen. </br></br>
+        Benzine wordt voornamelijk gebruikt in kleinere vliegtuigen. Door de lagere energie-inhoud in vergelijking met
+        kerosine kunnen vliegtuigen die benzine gebruiken geen grote afstanden afleggen. </br></br>
+        Bekijk de technische en financiële eigenschappen hieronder voor meer informatie."
     transport_plane_using_electricity_share:
       title: Elektrisch
       short_description:
-      description: "Met deze slider kun je het percentage instellen van de totale passagiers 
-        kilometers in de binnenlandse luchtvaart die worden afgelegd door elektrische 
-        vliegtuigen. </br></br>
+      description: "Met deze slider kun je het percentage van de totale passagiers 
+        kilometers in de binnenlandse luchtvaart instellen die worden afgelegd door  
+        elektrische vliegtuigen. </br></br>
         Elektrische vliegtuigen gebruiken batterijen om te vliegen. Batterijen in combinatie 
         met een elektrische motor zijn ongeveer twee keer zo efficiënt vergeleken met 
         een verbrandingsmotor. Elektrische vliegtuigen zitten nog in een ontwikkelingsfase 
@@ -471,7 +481,10 @@ nl:
     transport_ship_using_diesel_mix_share:
       title: Diesel / dual fuel
       short_description:
-      description: "Schepen voor de binnenvaart worden doorgaans aangedreven door
+      description: |
+        Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
+        de binnenvaart die worden afgelegd door diesel schepen. </br></br>
+        Schepen voor de binnenvaart worden doorgaans aangedreven door
         dieselmotoren. Deze motoren kunnen volgens diverse processen en onder hoge
         en lage druk werken. Afhankelijk van de precieze motor configuratie, kunnen
         dieselmotoren ook in een zogeheten dual fuel modus opereren waarbij zij zowel
@@ -479,40 +492,48 @@ nl:
         kan het daadwerkelijke brandstofgebruik variëren van 100% diesel tot 1% diesel
         / 99% LNG. In de <a href=\"/scenario/supply/transport_fuels/domestic-navigation\"
         >transport brandstoffen sectie</a> kun je de brandstofmix voor schepen met
-        diesel / dual fuel-motoren instellen."
+        diesel / dual fuel-motoren instellen. </br></br>
+        Bekijk de technische parameters en kosten hieronder voor meer informatie.
     transport_ship_using_lng_mix_share:
       title: Vloeibaar aardgas (LNG)
       short_description:
-      description: "(Vloeibaar) aardgas-motoren zijn een relatief nieuwe motortechnologie.
+      description: |
+        Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
+        de binnenvaart die worden afgelegd door LNG schepen. </br></br>
+        (Vloeibaar) aardgas-motoren zijn een relatief nieuwe motortechnologie.
         Dit zijn Ottomotoren die op lage druk werken en geoptimaliseerd zijn voor
         vloeibaar aardgas (LNG). Hierdoor werken zij enkel op LNG, maar zijn de prestaties
         wel beter dan die van dual fuel-motoren. Aan de andere kant zorgen dual fuel-motoren
         wel voor meer flexibiliteit, omdat schepen dan minder afhankelijk zijn van
-        de beschikbaarheid van brandstoffen."
+        de beschikbaarheid van brandstoffen.</br></br>
+        Bekijk de technische parameters en kosten hieronder voor meer informatie.
     transport_ship_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
+        Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
+        de binnenvaart die worden afgelegd door waterstof schepen. </br></br>
         Waterstof-aangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
         Er zijn voor deze technologie daarom nog verschillende ontwerpen mogelijk, bijvoorbeeld of er een interne 
         verbrandingsmotor of een brandstofcel gebruikt wordt om de waterstof om te zetten. 
-        Hier is ervoor gekozen om de specificaties van een schip met brandstofcel te gebruiken.
-        Zie de "Technische parameters en kosten" voor meer informatie. </br></br>
-        Vergeleken met LNG, diesel, of zeker met zware stookolie (heavy fuel oil, HFO), kan de inzet van 
+        Dit schuifje representeerd een schip met een brandstofcel. Vergeleken met LNG, diesel, 
+        of zeker met zware stookolie (heavy fuel oil, HFO), kan de inzet van 
         waterstof in de binnenvaart significant bijdragen aan het verlagen van emissies. Dit 
         hangt wel af van de manier waarop waterstof geproduceerd wordt.
         In de <a href=/scenario/supply/hydrogen/hydrogen-production>waterstofproductiesectie</a>
-        kun je bepalen hoe dat gedaan wordt.
+        is het mogelijk om dit aan te passen. </br></br>
+        Bekijk de technische parameters en kosten hieronder voor meer informatie.
     transport_ship_using_electricity_share:
       title: Elektrisch
       short_description:
-      description: "Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
-        de binnenvaart die worden afgelegd door elektrische schepen.  \r\n<br/><br/>\r\n
+      description: |
+        Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
+        de binnenvaart die worden afgelegd door elektrische schepen. </br></br>
         (Volledig) elektrische schepen gebruiken batterijen om vracht te vervoeren. Batterijen in combinatie 
         met een elektrische motor zijn ongeveer twee keer zo efficiënt vergeleken met een verbrandingsmotor. 
         Met de huidige batterij technologie is het niet mogelijk om efficiënt grote afstanden te 
-        overbruggen waardoor batterijen vaak opnieuw opgeladen of vervangen moeten worden. \r\n<br/><br/>\r\n 
-        Checkout the technical and financial properties below for more information."
+        overbruggen waardoor batterijen vaak opnieuw opgeladen of vervangen moeten worden. </br></br>
+        Bekijk de technische parameters en kosten hieronder voor meer informatie.
     transport_trucks_share:
       title: Vrachtwagens
       short_description: ''

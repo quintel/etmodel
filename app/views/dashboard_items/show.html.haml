@@ -1,9 +1,6 @@
 #dashboard_popup{ class: @dashboard_item.key }
   %h2
-    - if @dashboard_item.output_element
-      = t("output_elements.#{@dashboard_item.output_element.key}.title").html_safe
-    - else
-      = t("dashboard_items.#{@dashboard_item.key}.title").html_safe
+    = t("dashboard_items.#{@dashboard_item.key}.title").html_safe
 
     - if @dashboard_item.output_element_key
       %span.popup-actions

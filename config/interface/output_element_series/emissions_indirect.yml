@@ -1,6 +1,6 @@
 ---
 - label: indirect_co2
-  color: "#3c6382"
+  color: "#0a3d62"
   order_by: 1
   group:
   show_at_first:
@@ -11,15 +11,27 @@
   dependent_on:
   output_element_key: emissions_indirect
   key: indirect_co2_emissions_indirect
-- label: delayed_emissions_co2
-  color: "#b1c0cd"
+- label: delayed_emissions_emitted_co2
+  color: "#079992"
   order_by: 2
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: delayed_emissions_co2
+  gquery: delayed_emissions_emitted_co2
   is_1990: false
   dependent_on:
   output_element_key: emissions_indirect
-  key: delayed_emissions_co2_emissions_indirect
+  key: delayed_emissions_emitted_co2_emissions_indirect
+- label: delayed_emissions_indefinitely_co2
+  color: "#78e08f"
+  order_by: 3
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: delayed_emissions_indefinitely_co2
+  is_1990: false
+  dependent_on:
+  output_element_key: emissions_indirect
+  key: delayed_emissions_indefinitely_co2_emissions_indirect

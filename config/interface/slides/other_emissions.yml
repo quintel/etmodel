@@ -4,22 +4,32 @@
   sidebar_item_key: other_emissions
   output_element_key: emissions_overview
 - key: other_emissions_agriculture
+  general_sub_header: change
   position: 5
   sidebar_item_key: other_emissions
   output_element_key: emissions_agriculture
 - key: other_emissions_industry
+  general_sub_header: change
   position: 4
   sidebar_item_key: other_emissions
   output_element_key: emissions_industry_energy
 - key: other_emissions_built_environment
+  general_sub_header: change
   position: 2
   sidebar_item_key: other_emissions
   output_element_key: emissions_built_environment
 - key: other_emissions_transport
+  general_sub_header: change
   position: 3
   sidebar_item_key: other_emissions
   output_element_key: emissions_transport
 - key: other_emissions_indirect
+  general_sub_header: change
   position: 6
+  sidebar_item_key: other_emissions
+  output_element_key: emissions_indirect
+- key: other_emissions_delayed
+  general_sub_header: share
+  position: 7
   sidebar_item_key: other_emissions
   output_element_key: emissions_indirect

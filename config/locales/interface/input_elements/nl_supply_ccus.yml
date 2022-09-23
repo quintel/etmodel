@@ -227,13 +227,17 @@ nl:
         doen op de <a href='/scenario/demand/industry/chemicals'>chemiepagina</a>.<br/>"
     demand_of_molecules_other_utilisation_co2:
       title: Overig hergebruik van CO<sub>2</sub>
-      description: "Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er wordt gebruikt voor
+      description: |
+        Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er wordt gebruikt voor
         'overige' toepassingen. Hieronder vallen alle toepassingen die niet apart gemodelleerd zijn in
         het ETM. Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor frisdrank, bier of kassen. Ook wordt
         in sommige gevallen CO<sub>2</sub> uit de kunstmestsector afgevangen voor de productie van ureum,
         een kunstmest en voedingssupplement voor de veehouderij.<br/><br/>
-        Omdat deze categorie in veel gevallen om uitgestelde emissies gaat, rekent het ETM deze CO<sub>2</sub> mee
-        in de totale uitstoot in jouw scenario.<br/>"
+        Omdat deze categorie in veel gevallen om uitgestelde emissies gaat, rekent het ETM standaard deze 
+        CO<sub>2</sub> mee in de totale uitstoot in jouw scenario. Het is echter ook mogelijk om een deel 
+        van deze emissies voor onbepaalde tijd uit te stellen, waardoor ze niet meetellen in de totale uitstoot.
+        Dit aandeel kun je instellen in de <a href="/scenario/emissions/other_emissions/delayed-emissions">
+        Broeikasgassensectie</a>.
     share_of_molecules_transport_pipelines_co2:
       title: Leidingen
       description: "Met deze schuif geef je aan hoeveel procent van de afgevangen CO<sub>2</sub> in jouw scenario wordt

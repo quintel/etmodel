@@ -242,7 +242,10 @@ en:
         <br/><br/>
         In many cases, utilising CO<sub>2</sub> does not reduce emission but only delays it.
         Therefore, the amount of CO<sub>2</sub> set with this slider is included in the total
-        emissions of your scenario.
+        emissions of your scenario by default. It is however also possible to delay part of these 
+        emissions indefinitely, in which case they are excluded from the total emissions.
+        You can set this share in the <a href="/scenario/emissions/other_emissions/delayed-emissions">
+        Greenhouse gases section</a>.
     share_of_molecules_transport_pipelines_co2:
       title: Pipelines
       description: "What share of total captured CO<sub>2</sub> in your scenario is transported via pipelines?"

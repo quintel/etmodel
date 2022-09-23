@@ -6,7 +6,7 @@ nl:
       description: |
         Het ETM rekent automatisch uit hoeveel CO<sub>2</sub> er wordt uitgestoten door het gebruik van energie.
         Naast deze CO<sub>2</sub> zijn er nog andere bronnen die leiden tot uitstoot van broeikasgassen (BKG).
-        Deze ‘overige emissies’ zijn op te delen in 4 groepen:
+        Deze ‘overige emissies’ zijn op te delen in 5 groepen:
         <ul><li>Andere broeikasgassen die vrijkomen door energiegebruik, zoals methaan (CH<sub>4</sub>) of lachgas
         (N<sub>2</sub>O) </li>
         <li>CO<sub>2</sub>-uitstoot door ‘niet-energetische’ activiteiten, bijvoorbeeld het gebruik van grondstoffen
@@ -14,13 +14,16 @@ nl:
         <li>Andere broeikasgassen die vrijkomen door ‘niet-energetische’ activiteiten, zoals methaanuitstoot van mest
         in de landbouw</li>
         <li>Indirecte CO<sub>2</sub>-uitstoot door de atmosferische oxidatie van methaan (CH<sub>4</sub>),
-        koolstofmonoxide (CO) en niet-methaan vluchtige organische stoffen (NMVOS) in allerlei sectoren
+        koolstofmonoxide (CO) en niet-methaan vluchtige organische stoffen (NMVOS) in allerlei sectoren </li>
+        <li> Uitgestelde CO<sub>2</sub>-emissies die worden veroorzaakt door de afvang van CO<sub>2</sub> voor 
+        'Overig hergebruik'
         </li></ul>
-        <br />In deze sectie komen deze ‘overige’ broeikasgassen en niet-energetische emissies aanbod. Per sector kun je
+        <br/>
+        In deze sectie komen deze ‘overige’ broeikasgassen en niet-energetische emissies aanbod. Per sector kun je
         zien hoeveel overige broeikasgassen er worden uitgestoten als gevolg van energiegebruik (‘energetische
         overige BKG’), hoeveel niet-energetische CO<sub>2</sub> wordt uitgestoten en hoeveel niet-energetische
         overige broeikasgassen. Met schuifjes kun je aangeven hoe deze uitstoot in de toekomst gaat veranderen in
-        onderstaande sectoren. Als laatste kun je de indirecte CO<sub>2</sub>-emissies aanpassen.<br /><br />
+        onderstaande sectoren. Als laatste kun je de indirecte en uitgestelde CO<sub>2</sub>-emissies aanpassen.<br/><br/>
         Meer informatie is te vinden in onze <a href="https://docs.energytransitionmodel.com/main/greenhouse-gases"
         target="_blank">documentatie</a>.
     other_emissions_agriculture:
@@ -62,7 +65,16 @@ nl:
         Hoeveel indirecte CO<sub>2</sub>-emissies worden er in de toekomst uitgestoten? ‘Indirecte emissies’
         zijn CO<sub>2</sub>- emissies veroorzaakt door atmosferische oxidatie van methaan (CH<sub>4</sub>), koolstofmonoxide (CO) en niet-methaan
         vluchtige organische stoffen (NMVOS). Deze emissies worden vaak uitgestoten tijdens non-energetische processen zoals de opslag van mest, chemische processen of
-        het gebruik van solventen. Door de grote verscheidenheid aan oorzaken kunnen indirecte emissies in allerlei sectoren ontstaan (landbouw, industrie, huishoudens en andere sectoren).<br /><br />
-        In de grafiek zie je de uitstoot van indirecte emissies voor het heden en de toekomst.
-        Ook zie je de uitstoot van 'uitgestelde' emissies. Dit is CO<sub>2</sub> die is afgevangen en vervolgens bij
-        hergebruik alsnog is uitgestoten. Meer informatie vind je in de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS-sectie</a>.
+        het gebruik van solventen. Door de grote verscheidenheid aan oorzaken kunnen indirecte emissies in allerlei sectoren ontstaan (landbouw, industrie, huishoudens en andere sectoren).
+    other_emissions_delayed:
+      title: Uitgestelde emissies
+      short_description:
+      description: |
+        In de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS-sectie</a> kun je CO<sub>2</sub>
+        afvangen voor 'Overig hergebruik'. De emissies die hierbij vrijkomen worden 'uitgestelde' CO<sub>2</sub>-emissies
+        genoemd. Standaard wordt aangenomen dat alle uitgestelde emissies hetzelfde jaar nog worden uitgestoten en dus 
+        meetellen in de totale CO<sub>2</sub>-emissies van jouw scenario. </br></br>
+        Het is echter ook mogelijk om deze emissies voor onbepaalde tijd uit te stellen, bijvoorbeeld wanneer de afgevangen
+        CO<sub>2</sub> voor de productie van plastic wordt gebruikt. Deze emissies tellen niet mee in de totale 
+        CO<sub>2</sub>-emissies. Met onderstaande schuifjes kun je bepaal welk deel van de afgevangen emissies voor 'Overig 
+        hergebruik' voor onbepaalde tijd worden uitgesteld.

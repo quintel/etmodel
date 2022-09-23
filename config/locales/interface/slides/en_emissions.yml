@@ -6,7 +6,7 @@ en:
       description: |
         The ETM automatically calculates the amount of CO<sub>2</sub> that is emitted as a result of energy use.
         Apart from CO<sub>2</sub> emissions there are also other sources which lead to the emission of greenhouse
-        gases (GHG). These ‘other emissions’ can be separated into 4 groups:
+        gases (GHG). These ‘other emissions’ can be separated into 5 groups:
         <ul><li> Other greenhouse gas emissions which are emitted as a result of energy use, such as methane
         (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O) </li>
         <li>CO<sub>2</sub> emissions of non-energetic activities, such as the use of feedstock in industry
@@ -14,12 +14,15 @@ en:
         <li>Other greenhouse gas emissions from non-energetic activities, such as methane emissions from manure
         in agriculture</li>
         <li>Indirect CO<sub>2</sub> emissions which are emitted due to the atmospheric oxidation
-        of methane (CH<sub>4</sub>), carbon monoxide (CO) and Non-Methane Volatile Organic Compounds (NMVOC) in different sectors
+        of methane (CH<sub>4</sub>), carbon monoxide (CO) and Non-Methane Volatile Organic Compounds (NMVOC) in 
+        different sectors</li>
+        <li>Delayed CO<sub>2</sub> emissions which arise from the capture of CO<sub>2</sub> for 'Other utilisation'
         </li></ul>
-        <br />In this section these ‘other’ greenhouse gas emissions and non-energetic emissions are displayed.
+        <br/>
+        In this section these ‘other’ greenhouse gas emissions and non-energetic emissions are displayed.
         Per sector you can view the amount of other greenhouse gas emissions are emitted as a result of energy use
         (‘energetic other GHG’), how many non-energetic CO<sub>2</sub> emissions are emitted and how many
-        non-energetic other greenhouse gases. Lastly, you can adjust the indirect CO<sub>2</sub> emissions. <br /><br />
+        non-energetic other greenhouse gases. Finally, you can adjust the indirect and delayed CO<sub>2</sub> emissions. <br/><br/>
         You can find more information in the <a href="https://docs.energytransitionmodel.com/main/greenhouse-gases"
         target="_blank">documentation</a>.
     other_emissions_agriculture:
@@ -61,7 +64,15 @@ en:
         by the atmospheric oxidation of methane (CH<sub>4</sub>), carbon monoxide (CO) and Non-Methane Volatile Organic Compounds (NMVOC).
         These substances are often released during non-energetic processes such as the storage of manure, chemical processes or use of solvents.
         Due to the large number of causes, indirect emissions can originate in any sector (agriculture, industry, the built environment or other sectors).
-        Below you can specify whether these indirect emissions will decrease or increase in the future. <br /><br />
-        The figure on the right shows you the total indirect emissions now and in the future.
-        This chart also shows 'delayed' emissions, i.e. captured CO<sub>2</sub> that has been emitted at a
-        later point in time. More information about this can be found in the <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS section</a>.
+        Below you can specify whether these indirect emissions will decrease or increase in the future.
+    other_emissions_delayed:
+      title: Delayed emissions
+      short_description:
+      description: |
+        In the <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS section</a> you can capture 
+        CO<sub>2</sub> for 'Other utilisation'. The emissions that arise from this utilisation are considered 'delayed' 
+        CO<sub>2</sub> emissions. By default, all delayed emissions are assumed to be emitted in the same year, which 
+        means that they count towards the total CO<sub>2</sub> emissions in your scenario. </br></br>
+        It is however also possible to delay emissions indefinitely, for example when the captured CO<sub>2</sub> is 
+        used to produce plastics. These emissions do not count towards the total CO<sub>2</sub> emissions. With the 
+        sliders below you can determine which share of the captured 'Other utilisaton' CO<sub>2</sub> is delayed indefinitely.

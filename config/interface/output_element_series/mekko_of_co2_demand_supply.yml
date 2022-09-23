@@ -47,18 +47,30 @@
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
   key: co2_demand_synthetic_methanol_mekko_of_co2_demand_supply
-- label: co2_demand_other_utilisation
+- label: co2_demand_other_utilisation_emitted
   color: "#A7A1C5"
   order_by: 5
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: co2_demand_other_utilisation
+  gquery: co2_demand_other_utilisation_emitted
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
-  key: co2_demand_other_utilisation_supply_mekko_of_co2_demand_supply
+  key: co2_demand_other_utilisation_emitted_supply_mekko_of_co2_demand_supply
+- label: co2_demand_other_utilisation_indefinitely
+  color: "#533483"
+  order_by: 6
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: co2_demand_other_utilisation_indefinitely
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_co2_demand_supply
+  key: co2_demand_other_utilisation_indefinitely_supply_mekko_of_co2_demand_supply
 - label: co2_supply_direct_air_capture
   color: "#b71540"
   order_by: 10

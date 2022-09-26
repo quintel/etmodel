@@ -179,9 +179,9 @@
   dependent_on:
   output_element_key: dynamic_demand_curve
   key: merit_industry_other_dynamic_demand_curve
-- label: flexibility
-  color: "#87CEEB"
-  order_by: 16
+- label: flexibility_conversion_and_storage
+  color: "#0AA1DD"
+  order_by: 20
   group:
   show_at_first:
   is_target_line:
@@ -191,9 +191,9 @@
   dependent_on:
   output_element_key: dynamic_demand_curve
   key: flexibility_dynamic_demand_curve
-- label: merit_export
-  color: "#ADD8E6"
-  order_by: 17
+- label: flexibility_export
+  color: "#79DAE8"
+  order_by: 21
   group: ''
   show_at_first: false
   is_target_line: false
@@ -203,3 +203,16 @@
   dependent_on:
   output_element_key: dynamic_demand_curve
   key: merit_export_dynamic_demand_curve
+- label: flexibility_curtailment
+  color: "#E8F9FD"
+  order_by: 22
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: merit_flexibility_curtailment_demand
+  is_1990: false
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_flexibility_curtailment_demand_dynamic_demand_curve
+

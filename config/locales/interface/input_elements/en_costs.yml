@@ -502,10 +502,10 @@ en:
         to decrease. If you believe this technology will be successful in the future,
         you can indicate how much cheaper you think they may become.\r\n<br/><br/>\r\nVarious
         kinds of electric heat pumps can be chosen as heating technology in <a href=\"/scenario/demand/households/space-heating\">households
-        space heating<a/>, <a href=\"/scenario/demand/households/district-heating\">households
-        district heating<a/>, <a href=\"/scenario/demand/buildings/space-heating\">buildings
-        space heating<a/>, <a href=\"/scenario/demand/buildings/district-heating\">buildings
-        district heating<a/> and <a href=\"/scenario/demand/industry/chemicals\">chemical
+        space heating<a/>, <a href=\"/scenario/demand/buildings/space-heating\">buildings
+        space heating<a/>, <a href=\"/scenario/demand/agriculture/heat\">agriculture heating<a/>,
+        <a href=\"/scenario/supply/heat/heat-sources\">district heating<a/>
+        and <a href=\"/scenario/demand/industry/chemicals\">chemical
         industry<a/>. \r\n<br/><br/>\r\nThe technical and financial parameters of
         one kind of heat pump can be seen by clicking the link below."
     investment_costs_gas_heat_pumps:
@@ -878,12 +878,16 @@ en:
         heating values (HHV)."
     efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity:
 <<<<<<< HEAD
+<<<<<<< HEAD
       title: Heat pump with TS
 =======
       title: Ground heat pump
 >>>>>>> 9aed9fb48 (Add water water heat pump for agriculture and update locales)
+=======
+      title: Water heat pump with TS
+>>>>>>> fcdbbcb0e (Add efficiency sliders for agriculture heat pumps and various improvements to heat pump costs & efficiency locales)
       short_description: ''
-      description: "This slider sets the future efficiency of ground heat pumps in buildings for space heating."
+      description: "This slider sets the future efficiency of water heat pumps with thermal storage (TS) in buildings for space heating."
     efficiency_buildings_space_heater_electricity:
       title: Electric heater
       short_description: ''
@@ -976,3 +980,13 @@ en:
         To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'.
         It is not possible to set the absolute value of the future SCOP of hybrid heat pumps with a slider as this is a result of hourly
         calculations based on the hourly outside temperature curve.
+    efficiency_agriculture_heatpump_water_water_electricity:
+      title: Water heat pump
+      short_description:
+      description: |
+        This slider sets the future efficiency of water heat pumps in agriculture for heating.
+    efficiency_agriculture_heatpump_water_water_ts_electricity:
+      title: Water heat pump with TS
+      short_description:
+      description: |
+        This slider sets the future efficiency of water heat pumps with thermal storage (TS) in agriculture for heating.

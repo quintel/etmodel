@@ -17,15 +17,20 @@ nl:
     agriculture_heatpump_water_water_ts_electricity_share:
       title: Water warmtepomp met WKO
       short_description: ''
-      description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
+      description: |
+        Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
         opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
         bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
         het huis mee te verwarmen. Als alternatief kan ook de natuurlijke warmte of
-        koude van oppervlaktewater of wegen gebruikt worden.\r\n<br/><br/>\r\nWarmtepompen
-        zijn zeer efficiënt als ze met WKO gecombineerd worden, omdat minder energie
+        koude van oppervlaktewater of wegen gebruikt worden. <br/><br/>
+        Warmtepompen zijn zeer efficiënt als ze met WKO gecombineerd worden, omdat minder energie
         hoeft te worden toegevoegd om een gebouw te koelen of te verwarmen. Het is
         helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
-        (bijvoorbeeld in stedelijk gebied)."
+        (bijvoorbeeld in stedelijk gebied). </br></br>
+        Je kunt de <a href="/scenario/costs/costs_heat/costs-heating">kosten</a>
+        van elektrische warmtepompen in het algemeen veranderen, of de 
+        <a href="/scenario/costs/costs_heat/efficiencies-heating-built-environment">COP</a>
+        van deze specifieke warmtepomp.
     agriculture_heatpump_water_water_electricity_share:
       title: Water warmtepomp
       short_description:
@@ -33,7 +38,11 @@ nl:
         Met dit schuifje kun je een water-water warmtepomp installeren. Dit type warmtepomp 
         gebruikt een put als warmtebron. Er is dan nog maar een beperkte hoeveelheid elektriciteit 
         nodig om het geleverde water op de gewenste temperatuur te krijgen. Dit maakt een water-water 
-        warmtepomp veel efficiënter dan een elektrische boiler.
+        warmtepomp veel efficiënter dan een elektrische boiler. </br></br>
+        Je kunt de <a href="/scenario/costs/costs_heat/costs-heating">kosten</a>
+        van elektrische warmtepompen in het algemeen veranderen, of de 
+        <a href="/scenario/costs/costs_heat/efficiencies-heating-built-environment">COP</a>
+        van deze specifieke warmtepomp.
     agriculture_geothermal_share:
       title: Geothermisch
       short_description: ''

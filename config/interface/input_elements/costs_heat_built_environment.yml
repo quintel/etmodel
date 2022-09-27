@@ -134,3 +134,17 @@
   related_node: buildings_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   position: 33
   slide_key: costs_heat_built_environment
+- key: efficiency_agriculture_heatpump_water_water_electricity
+  interface_group: cop_agriculture
+  step_value: 0.1
+  unit: "COP"
+  related_node: agriculture_heatpump_water_water_electricity
+  position: 40
+  slide_key: costs_heat_built_environment
+- key: efficiency_agriculture_heatpump_water_water_ts_electricity
+  interface_group: cop_agriculture
+  step_value: 0.1
+  unit: "COP"
+  related_node: agriculture_heatpump_water_water_ts_electricity
+  position: 41
+  slide_key: costs_heat_built_environment

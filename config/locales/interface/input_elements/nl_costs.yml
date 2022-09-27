@@ -528,10 +528,10 @@ nl:
         zullen de kosten ook afnemen. Als je gelooft dat deze technologie in de toekomst
         succesvol zal zijn, kun je hier invullen hoeveel goedkoper ze worden. \r\n<br/><br/>\r\nIn
         het onderdeel <a href=\"/scenario/demand/households/space-heating\">ruimteverwarming
-        huishoudens<a/>, <a href=\"/scenario/demand/households/district-heating\">warmtenet
         huishoudens<a/>, <a href=\"/scenario/demand/buildings/space-heating\">ruimteverwarming
-        gebouwen<a/>, <a href=\"/scenario/demand/buildings/district-heating\">warmtenet
-        gebouwen<a/> en <a href=\"/scenario/demand/industry/chemicals\">chemische
+        gebouwen<a/>, <a href=\"/scenario/demand/agriculture/heat\">verwarming landbouw<a/>,
+        <a href=\"/scenario/supply/heat/heat-sources\">warmtenetten<a/>
+        en <a href=\"/scenario/demand/industry/chemicals\">chemische
         industrie<a/>. \r\n<br/><br/>\r\nDe technische en financiële parameters van
         een zo'n warmtepomp kun je zien als je op de link hieronder klikt. "
     investment_costs_gas_heat_pumps:
@@ -915,9 +915,9 @@ nl:
         uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV,
         alleen in bovenwaarde / higher heating values (HHV)."
     efficiency_buildings_space_heater_collective_heatpump_water_water_ts_electricity:
-      title: Elektrische warmtepomp WKO
+      title: Water warmtepomp met WKO
       short_description: ''
-      description: "Met deze schuif kun je de toekomstige efficiëntie van bodemwarmtepompen voor ruimteverwarming in gebouwen veranderen."
+      description: "Met deze schuif kun je de toekomstige efficiëntie van water warmtepompen met warmte- en koudeopslag (WKO) voor ruimteverwarming in gebouwen veranderen."
     efficiency_buildings_space_heater_electricity:
       title: Elektrische kachel
       short_description: ''
@@ -1014,5 +1014,14 @@ nl:
         ook wel de seasonal COP (SCOP), kun je vinden in de "Technische parameters en kosten".
         Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
         het uurlijkse profiel van de buitentemperatuur.
-
+    efficiency_agriculture_heatpump_water_water_electricity:
+      title: Water warmtepomp
+      short_description:
+      description: |
+        Met deze schuif kun je de toekomstige efficiëntie van water warmtepompen voor verwarming in de landbouw veranderen.
+    efficiency_agriculture_heatpump_water_water_ts_electricity:
+      title: Water warmtepomp met WKO
+      short_description:
+      description: |
+        Met deze schuif kun je de toekomstige efficiëntie van water warmtepompen met warmte- en koudeopslag (WKO) voor verwarming in de landbouw veranderen.
 

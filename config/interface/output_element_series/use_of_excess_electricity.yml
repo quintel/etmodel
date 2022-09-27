@@ -83,6 +83,18 @@
   dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_converted_to_heat_industry_use_of_excess_electricity
+- label: electricity_converted_to_heat_electricity
+  color: "#FFD700"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_converted_to_heat_agriculture
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_converted_to_heat_electricity_use_of_excess_electricity
 - label: energy_flexibility_pumped_storage_electricity
   color: "#416B86"
   order_by: 3

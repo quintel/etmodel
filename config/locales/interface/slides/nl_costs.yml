@@ -184,12 +184,15 @@ nl:
       description: 'Hoe zullen de kosten en efficiëncties voor 
       kerncentrales in de toekomst veranderen?'
     costs_heat_built_environment:
-      title: Efficiënties verwarming in huizen en gebouwen
+      title: Efficiënties verwarming gebouwde omgeving
       short_description:
-      description: 'Hoe zullen de efficiëncties voor verwarmingstechnologieën in huizen en gebouwen voor ruimteverwarming veranderen?
-        De grafiek rechts laat het eindgebruik voor verwarming en warm tapwater in huizen zien. De grafiek die 
-        het eindgebruik voor verwarming in gebouwen laat zien, kan je vinden in de grafiekenlijst. Onderstaande sliders
-        passen niet de efficiëntie van heet water productie aan.'
+      description: |
+        Hoe zullen de efficiëncties voor verwarmingstechnologieën in huishoudens, gebouwen en de landbouw veranderen? </br></br>
+        De grafiek rechts laat het eindgebruik voor verwarming en warm tapwater in huizen zien. Je kunt ook het eindgebruik zien 
+        voor verwarming in 
+        <a href="#" class="open_chart" data-chart-key="source_of_heat_in_buildings" data-chart-location="side">gebouwen</a> of de
+        <a href="#" class="open_chart" data-chart-key="source_of_heat_in_agriculture" data-chart-location="side">landbouw</a>.
+        Onderstaande schuifjes hebben geen effect op de efficiëntie van warmwaterproductie.
     costs_heat_sources_other:
       title: Kosten verwarming
       short_description:

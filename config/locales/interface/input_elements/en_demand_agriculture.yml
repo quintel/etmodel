@@ -17,14 +17,19 @@ en:
     agriculture_heatpump_water_water_ts_electricity_share:
       title: Water heat pump with TS
       short_description: ''
-      description: "Thermal storage works by storing a building's heat underground
+      description: |
+        Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer and using
         that heat in winter for heating the building. Alternatively the natural heat
-        of cold of ground water or roads, for example, can be used.\r\n<br/><br/>\r\nHeat
-        pumps are more efficient when used in combination with thermal storage, because
+        of cold of ground water or roads, for example, can be used.>br/><br/>
+        Heat pumps are more efficient when used in combination with thermal storage, because
         less energy has to be added to cool or heat water to the right temperature.
         It is difficult to realize underground thermal storage in densely populated
-        areas."
+        areas. </br></br>
+        You can change the <a href="/scenario/costs/costs_heat/costs-heating">costs</a>
+        of all electric heat pumps and the 
+        <a href="/scenario/costs/costs_heat/efficiencies-heating-built-environment">COP</a>
+        of this particular heat pump.
     agriculture_heatpump_water_water_electricity_share:
       title: Water heat pump
       short_description:
@@ -32,7 +37,11 @@ en:
         With this slider you can install a water-to-water heat pump. This type of heat 
         pump uses a water supply well as a heat source. Only a small amount of electricity 
         is then still required to bring the output water to the required temperature. This makes 
-        a water-to-water heat pump much more efficient than an electric boiler.
+        a water-to-water heat pump much more efficient than an electric boiler. </br></br>
+        You can change the <a href="/scenario/costs/costs_heat/costs-heating">costs</a>
+        of all electric heat pumps and the 
+        <a href="/scenario/costs/costs_heat/efficiencies-heating-built-environment">COP</a>
+        of this particular heat pump.
     agriculture_geothermal_share:
       title: Geothermal
       short_description: ''

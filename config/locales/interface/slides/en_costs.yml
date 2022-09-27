@@ -166,11 +166,15 @@ en:
       short_description:
       description: 'How will the costs and efficiencies of nuclear plants change in the future?'
     costs_heat_built_environment:
-      title: Efficiencies heating in houses and buildings
+      title: Efficiencies heating built environment
       short_description:
-      description: 'How will the efficiencies of heating technologies in houses and buildings for space heating change in the future?
-        The chart on the right shows the final demand for heating and hot water in households. The final demand chart 
-        for space heating in buildings can be found in the chart list. Note that these sliders do not regard the efficiency of hot water production.'
+      description: |
+        How will the efficiencies of heating technologies in households, buildings and agriculture change in the future? </br></br>
+        The chart on the right shows the final demand for heating and hot water in households. You can also view the final demand 
+        for heating in 
+        <a href="#" class="open_chart" data-chart-key="source_of_heat_in_buildings" data-chart-location="side">buildings</a> or
+        <a href="#" class="open_chart" data-chart-key="source_of_heat_in_agriculture" data-chart-location="side">agriculture</a>.
+        Note that these sliders do not affect the efficiency of hot water production.
     costs_heat_sources_other:
       title: Costs heating
       short_description:

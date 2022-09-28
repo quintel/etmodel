@@ -71,8 +71,9 @@ nl:
       short_description:
       description: |
         In de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS-sectie</a> kun je CO<sub>2</sub>
-        afvangen voor 'Overig hergebruik'. De emissies die hierbij vrijkomen worden 'uitgestelde' CO<sub>2</sub>-emissies
-        genoemd. Standaard wordt aangenomen dat alle uitgestelde emissies hetzelfde jaar nog worden uitgestoten en dus 
+        afvangen voor 'Overig hergebruik'. Hieronder vallen alle toepassingen die niet apart gemodelleerd zijn in het ETM. 
+        Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor frisdrank, bier of kassen. De emissies die hierbij vrijkomen worden 'uitgestelde' CO<sub>2</sub>-emissies
+        genoemd, omdat ze op een later moment worden uitgestoten. Standaard wordt aangenomen dat alle uitgestelde emissies hetzelfde jaar nog worden uitgestoten en dus 
         meetellen in de totale CO<sub>2</sub>-emissies van jouw scenario. </br></br>
         Het is echter ook mogelijk om deze emissies voor onbepaalde tijd uit te stellen, bijvoorbeeld wanneer de afgevangen
         CO<sub>2</sub> voor de productie van plastic wordt gebruikt. Deze emissies tellen niet mee in de totale 

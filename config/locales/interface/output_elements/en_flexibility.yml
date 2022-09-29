@@ -369,4 +369,17 @@ en:
         and the input capacity of the battery in the Flexibility section, under 
         <a href="/scenario/flexibility/flexibility_storage/solar-parks-with-storage-systems">
         Electricity storage</a>.
-
+    need_for_flexibility:
+      title: Need for flexibility on different timescales
+      short_description:
+      description: |
+        RLC curve based on imbalance, inflexible demand and supply (definitions in docs and explanation in slides)
+        See chart
+        Result is need for flexible supply (positive) and need for flexible demand (negative)
+        Moving average to split the curve in short term and long term varation
+        Short timescale is the difference between the original and the moving average
+        Long timescale is the moving average
+        Peak capacity supply and demand
+        Volume supply and demand
+        Need for flexibility to balance the inflexible imbalance, but more flexibility can be used
+        Flexible supply for flexible demand

@@ -134,6 +134,8 @@ en:
         This gives the total curtailment volume of must-run and volatile producers, also known as 'inflexible' producers (see our
         <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
         documentation</a> for more information). Curtailment is applied as a last resort when inflexible production exceeds total demand.
+        Curtailing a lot of inflexible production can be a waste of electricity, but it can also be costly to install flexible capacity to use this 
+        curtailment instead. This dashboard item can help you achieve the desired level of curtailment.
     share_of_curtailment:
       label: Relative curtailment
       title: Relative share of curtailment
@@ -142,6 +144,8 @@ en:
         These producers are also known as 'inflexible' producers (see our
         <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
         documentation</a> for more information). Curtailment is applied as a last resort when inflexible production exceeds total demand.
+        Curtailing a lot of inflexible production can be a waste of electricity, but it can also be costly to install flexible capacity to use this 
+        curtailment instead. This dashboard item can help you achieve the desired level of curtailment.
     all_ghg_reduction_relative_to_start_year:
       label: Greenhouse gases
       title: Total greenhouse gas emissions relative to start year

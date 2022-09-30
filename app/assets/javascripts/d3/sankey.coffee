@@ -259,12 +259,13 @@ D3.sankey =
           {id: 'industry_paper',                 column: 0, label: 'industry_paper',         color: '#394C19'},
           {id: 'import',                         column: 0, label: 'import',                 color: '#FDE97B'},
           {id: 'captured_co2',                   column: 1, label: 'captured_co2',           color: '#1f77b4'},
-          {id: 'offshore_sequestration',         column: 2, label: 'offshore_sequestration', color: '#416B86'},
-          {id: 'synthetic_methanol',             column: 2, label: 'synthetic_methanol',     color: '#FF8C8C'},
-          {id: 'synthetic_kerosene',             column: 2, label: 'synthetic_kerosene',     color: '#74B9FF'},
-          {id: 'other_delayed',                  column: 2, label: 'other_delayed',          color: '#A7A1C5'},
-          {id: 'other_indefinitely',             column: 2, label: 'other_indefinitely',     color: '#533483'},
-          {id: 'export',                         column: 2, label: 'export',                 color: '#6AB04C'}
+          {id: 'other_utilisation',              column: 2, label: 'other_utilisation',      color: '#A7A1C5'},
+          {id: 'other_delayed',                  column: 3, label: 'other_delayed',          color: '#A7A1C5'},
+          {id: 'other_indefinitely',             column: 3, label: 'other_indefinitely',     color: '#533483'},
+          {id: 'offshore_sequestration',         column: 3, label: 'offshore_sequestration', color: '#416B86'},
+          {id: 'synthetic_methanol',             column: 3, label: 'synthetic_methanol',     color: '#FF8C8C'},
+          {id: 'synthetic_kerosene',             column: 3, label: 'synthetic_kerosene',     color: '#74B9FF'},
+          {id: 'export',                         column: 3, label: 'export',                 color: '#6AB04C'}
         ]
         links: [
           {left: 'dac',                          right: 'captured_co2',               gquery: 'dac_captured_co2_total_in_ccus_sankey', color: '#b71540'},
@@ -277,12 +278,13 @@ D3.sankey =
           {left: 'industry_food',                right: 'captured_co2',               gquery: 'industry_food_captured_co2_total_in_ccus_sankey', color: '#A2D679'},
           {left: 'industry_paper',               right: 'captured_co2',               gquery: 'industry_paper_captured_co2_total_in_ccus_sankey', color: '#394C19'},
           {left: 'import',                       right: 'captured_co2',               gquery: 'import_captured_co2_total_in_ccus_sankey', color: '#FDE97B'},
+          {left: 'captured_co2',                 right: 'other_utilisation',          gquery: 'captured_co2_other_utilisation_total_in_ccus_sankey', color: '#1f77b4'},
+          {left: 'other_utilisation',            right: 'other_delayed',              gquery: 'captured_co2_other_utilisation_emitted_in_ccus_sankey', color: '#A7A1C5'},
+          {left: 'other_utilisation',            right: 'other_indefinitely',         gquery: 'captured_co2_other_utilisation_indefinitely_in_ccus_sankey', color: '#533483'},
           {left: 'captured_co2',                 right: 'offshore_sequestration',     gquery: 'captured_co2_offshore_sequestration_total_in_ccus_sankey', color: '#1f77b4'},
           {left: 'captured_co2',                 right: 'synthetic_methanol',         gquery: 'captured_co2_synthetic_methanol_total_in_ccus_sankey', color: '#1f77b4'},
           {left: 'captured_co2',                 right: 'synthetic_kerosene',         gquery: 'captured_co2_synthetic_kerosene_total_in_ccus_sankey', color: '#1f77b4'},
-          {left: 'captured_co2',                 right: 'other_delayed',          gquery: 'captured_co2_other_utilisation_emitted_in_ccus_sankey', color: '#1f77b4'},
-          {left: 'captured_co2',                 right: 'other_indefinitely',          gquery: 'captured_co2_other_utilisation_indefinitely_in_ccus_sankey', color: '#1f77b4'},
-          {left: 'captured_co2',                 right: 'export',                     gquery: 'captured_co2_export_total_in_ccus_sankey', color: '#1f77b4'},
+          {left: 'captured_co2',                 right: 'export',                     gquery: 'captured_co2_export_total_in_ccus_sankey', color: '#1f77b4'}
        ]
     sankey:
       data:

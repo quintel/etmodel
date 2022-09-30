@@ -203,7 +203,12 @@ en:
         the baseload demand, and is also known as the "residual load". Negative values mean "surpluses" 
         of energy and positive values "shortages". <br/><br/>
         More information about flexibility can be found in our
-        <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentation</a>.
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentation</a>. </br></br>
+        For network gas and hydrogen an additional line is plotted that shows the 72-hour moving average of 
+        the original residual load curve. This is used to split the curve into two timescales and analyse the 
+        need for flexibility. You can open the table 
+        <a href="#" class="open_chart" data-chart-key="need_for_flexibility" data-chart-location="side">
+        here</a>.
     flexibility_hourly_all_carriers_cumulative_imbalance:
       title: "The need for flexibility: volume"
       description: |
@@ -373,13 +378,20 @@ en:
       title: Need for flexibility on different timescales
       short_description:
       description: |
-        RLC curve based on imbalance, inflexible demand and supply (definitions in docs and explanation in slides)
-        See chart
-        Result is need for flexible supply (positive) and need for flexible demand (negative)
-        Moving average to split the curve in short term and long term varation
-        Short timescale is the difference between the original and the moving average
-        Long timescale is the moving average
-        Peak capacity supply and demand
-        Volume supply and demand
-        Need for flexibility to balance the inflexible imbalance, but more flexibility can be used
-        Flexible supply for flexible demand
+        This table analyses the 'residual load curve' for network gas and hydrogen to determine the 
+        need for flexibility. The residual load curve indicates the imbalance in inflexible supply 
+        and demand (see <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
+        Flexibility overview</a> for more information). </br></br>
+        If the residual load curve is positive, the inflexible demand exceeds inflexible supply. This 
+        means that there is a <i>need</i> for flexible supply to maintain system balance. When the residual 
+        load curve is negative, there is a <i>need</i> for flexible demand. </br></br>
+        The table first shows both the peak capacity and the volume for supply and demand of the original 
+        residual load curve. A 72-hour moving-average is then applied to split the <i>original</i> residual 
+        load curve into two timescales. The <i>short</i> timescale is given by the difference between the 
+        original load curve and the moving average, and is typically very variable. The <i>long</i>
+        timescale is given by the moving average, and is typically much more smooth. You can 
+        view the original curve and the moving average by clicking on the 'Annual' toggle or by 
+        opening the chart 
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
+        here</a>.
+

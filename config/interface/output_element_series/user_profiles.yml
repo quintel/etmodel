@@ -11,6 +11,30 @@
   dependent_on:
   output_element_key: user_profiles
   key: buildings_heating_user_profiles
+- label: buildings_cooling
+  color: lightgreen
+  order_by: 2
+  group: buildings_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: buildings_cooling_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: buildings_cooling_user_profiles
+- label: buildings_appliances
+  color: lightgreen
+  order_by: 3
+  group: buildings_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: buildings_appliances_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: buildings_appliances_user_profiles
 - label: transport_e_cars
   color: lightgreen
   order_by: 5
@@ -47,6 +71,18 @@
   dependent_on:
   output_element_key: user_profiles
   key: transport_e_trucks_user_profiles
+- label: transport_e_vans
+  color: lightgreen
+  order_by: 8
+  group: transport_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: transport_e_vans_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: transport_e_vans_user_profiles
 - label: industry_ict_electricity
   color: lightgreen
   order_by: 17
@@ -311,3 +347,52 @@
   dependent_on:
   output_element_key: user_profiles
   key: wind_coastal_production_user_profiles
+- label: agriculture_electricity
+  color: lightgreen
+  order_by: 71
+  group: agriculture_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: agriculture_electricity_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: agriculture_electricity_user_profiles
+- label: households_cooling
+  color: lightgreen
+  order_by: 72
+  group: households_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: households_cooling_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: households_cooling_user_profiles
+- label: households_hot_water
+  color: lightgreen
+  order_by: 73
+  group: households_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: households_hot_water_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: households_hot_water_user_profiles
+- label: households_appliances
+  color: lightgreen
+  order_by: 74
+  group: households_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: households_appliances_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: households_appliances_user_profiles
+

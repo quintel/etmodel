@@ -39,6 +39,7 @@ nl:
       heat_production: "Aanbod: Warmte"
       electricity_production: "Aanbod: Elektriciteit"
       buildings: "Vraag: Gebouwen"
+      households: "Vraag: Huishoudens"
       industry_electricity: "Vraag: Industrie elektriciteit"
       industry_heat: "Vraag: Industrie warmte"
       interconnectors: "Import/export: Interconnectoren"
@@ -46,7 +47,10 @@ nl:
       gas_import_export: "Import/export: Gassen"
       weather: Weerdata
     names:
-      agriculture_heating: Landbouw warmtevraag
+      weather/agriculture_heating: Landbouw warmtevraag
+      agriculture_electricity: Landbouw elektriciteitsvraag
+      buildings_appliances: Gebouwen vraag apparaten en verlichting
+      buildings_cooling: Gebouwen koelingsvraag
       interconnector_1_price: Interconnector 1 elektricteitsprijs
       interconnector_2_price: Interconnector 2 elektricteitsprijs
       interconnector_3_price: Interconnector 3 elektricteitsprijs
@@ -87,11 +91,15 @@ nl:
       weather/buildings_heating: Verwarming gebouwen
       electric_buses: Elektrische bussen
       electric_trucks: Elektrische vrachtwagens
+      electric_vans: Elektrische bestelbussen
       electric_vehicle_profile_1: Elektrische auto's "overal laden"
       electric_vehicle_profile_2: Elektrische auto's "thuisladen"
       electric_vehicle_profile_3: Elektrische auto's "snelladen"
       electric_vehicle_profile_4: Elektrische auto's "slim laden"
       electric_vehicle_profile_5: Elektrische auto's "regulier laden"
+      households_appliances: Huishoudens vraag apparaten en verlichting
+      households_cooling: Huishoudens koelingsvraag
+      households_hot_water: Huishoudens warm water vraag
       industry_chemicals_electricity: Chemie elektriciteitsvraag
       industry_chemicals_heat: Chemie warmtevraag
       industry_fertilizers_electricity: Kunstmest elektriciteitsvraag

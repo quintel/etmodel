@@ -1,6 +1,22 @@
 # What's new in the Energy Transition Model?
 ___
 
+# October 2022
+
+## New transport technologies for ships and planes
+For domestic navigation, also known as inland shipping, it is now possible to switch to electric ships. You can determine the share of electric ships in the total transportation by domestic navigation in *Demand → Transport → Freight transport* → **[Domestic navigation technology](/scenario/demand/transport_freight_transport/domestic-navigation-technology)**.
+
+For domestic aviation technology, or more simply put, plane transport, two new technologies have been added to the model. In addition to kerosene, gasoline and bio-ethanol, you can swith to either elecricity or hydrogen. Go to *Demand → Transport → Passenger transport* → **[Domestic aviation technology](/scenario/demand/transport_passenger_transport/domestic-aviation-technology)** to check it out.
+
+## New heating technologies in agriculture
+In the agriculture sector you can now choose to install a water heat pump. This is an electric water-water heat pump that uses a water reservoir as its heat source. Only a small amount of electricity is then still required to bring the water to the desired temparature, making it much more efficient than a simple electric boiler. You can find the heat pump in *Demand → Agriculture* → **[Heat](/scenario/demand/agriculture/heat)**.
+
+In the same section you can now also install power-to-heat capacity for agriculture. This is an electric boiler that is fitted to existing natural gas or hydrogen heaters, making them hybrid heaters. The hybrid heater uses electricity when the electricity price is below the maximum willingness to pay. If the electricity price exceeds the willingness to pay, the heater switches to its original fuel source (either gas or hydrogen). You can set this willingness to pay in *Flexibility → Electricity conversion* → **[Conversion to heat for agriculture](/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-agriculture)**.
+
+-> ![](/assets/pages/whats_new/agriculture_heating_en.png) <-
+
+___
+
 # September 2022
 
 ## Update of the transition path charts tool

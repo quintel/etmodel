@@ -1,6 +1,22 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# Oktober 2022
+
+## Nieuwe transporttechnologieën voor schepen en vliegtuigen
+Het is nu mogelijk om voor binnenvaart de overstap te maken naar elektrische schepen. Je kan het aandeel van elektrische schepen in het totale transport door binnenvaart instellen in *Vraag → Transport → Vrachtvervoer* → **[Technologie binnenvaartschepen](/scenario/demand/transport_freight_transport/domestic-navigation-technology)**.
+
+Voor de binnenlandse luchtvaart zijn er twee nieuwe technologieën. Naast kerosine, benzine en bio-ethanol kun je nu gebruik maken van elekriciteit en waterstof. Bekijk het in *Vraag → Transport → Passagiersvervoer* → **[Technologie binnenlandse luchtvaart](/scenario/demand/transport_passenger_transport/domestic-aviation-technology)**.
+
+## Nieuwe verwarmingtechnologieën in de landbouw
+Je kunt nu een water warmtepomp installeren in de landbouw. Dit is een elektrische water-water warmtepomp die een waterreservoir als warmtebron. Er is dan nog slechts een beperkte hoeveelheid elektriciteit nodig om het water op de gewenste temperatuur te brengen. Dit maakt de warmtepomp veel efficiënter dan een simpele elektrische boiler. Je kunt de warmtepomp vinden in *Vraag → Landbouw* → **[Warmte](/scenario/demand/agriculture/heat)**.
+
+In dezelfde sectie kun je nu ook vermogen instellen voor power-to-heat voor de landbouw. Dit is een elektrische boiler die wordt geïnstalleerd bij bestaande waterstof- of gasketels, waardoor het hybride ketels woreden. De hybride ketels gebruiken elektriciteit als de elektriciteitsprijs lager is dan de maximale betalingsbereidheid, ook wel de *willingness-to-pay*. Als de elektriciteitsprijs te hoog is, zal de ketel weer terugvallen op de oorspronkelijke energiebron (gas of waterstof). Je kunt de betalingsbereidheid instellen in *Flexibiliteit → Conversie elektriciteit* → **[Conversie naar warmte voor landbouw](/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-agriculture)**.
+
+-> ![](/assets/pages/whats_new/agriculture_heating_nl.png) <-
+
+___
+
 # September 2022
 
 ## Update van de transitiepaden tool

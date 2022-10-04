@@ -7,6 +7,7 @@ en:
         actual_20xx: "future"
         actual_co2_emitted: "Actual CO2 emissions"
         agriculture_heating_demand: "Heating agriculture"
+        agriculture_electricity: "Agriculture electricity"
         all_time_resolved_carriers_cumulative_incl_correction_incl_offset_curve: "Including correction"
         all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve: "Excluding correction"
         costs_building_and_installations: "Building and installations"
@@ -204,6 +205,8 @@ en:
         buildings_cooling_demand: "Cooling buildings"
         buildings_heating_demand: "Heating buildings"
         buildings_heating: "Buildings heating"
+        buildings_cooling: "Buildings cooling"
+        buildings_appliances: "Buildings appliances"
         buildings_solar_pv: 'Buildings'
         buildings_solar_pv_curtailed_electricity_output_curve: 'Curtailment buildings'
         buildings_solar_pv_electricity_output_curve: 'Production buildings'
@@ -576,6 +579,9 @@ en:
         hourly_flexibility_electricity_load_shifting_input: "Increased demand in industry"
         hourly_flexibility_electricity_load_shifting_output: "Decreased demand in industry"
         households_cooling_demand: "Cooling households"
+        households_cooling: "Households cooling"
+        households_appliances: "Households appliances and lighting"
+        households_hot_water: "Households hot water"
         households_flexibility_p2h_electricity: 'Converted to heat for households'
         households_flexibility_p2p_electricity: 'Stored in household batteries'
         households_flexibility_p2p: 'Household batteries'
@@ -1055,9 +1061,10 @@ en:
         transport_car_using_electricity: "Stored in EV"
         transport_car_flexibility_p2p: "EV batteries"
         transport_car_flexibility_p2p_electricity_storage: 'Batteries in electric vehicles'
-        transport_e_cars: "Electric Cars"
-        transport_e_buses: "Electric Buses"
-        transport_e_trucks: "Electric Trucks"
+        transport_e_cars: "Electric cars"
+        transport_e_buses: "Electric buses"
+        transport_e_trucks: "Electric trucks"
+        transport_e_vans: "Electric vans"
         transport_losses: "Distribution losses"
         trucks: "Trucks"
         uranium: "Uranium oxide"

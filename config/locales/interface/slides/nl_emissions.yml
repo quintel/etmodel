@@ -70,12 +70,17 @@ nl:
       title: Uitgestelde emissies
       short_description:
       description: |
-        In de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS-sectie</a> kun je de hoeveelheid CO<sub>2</sub>
-        voor 'Overig hergebruik' instellen. Hieronder vallen alle toepassingen die niet apart gemodelleerd zijn in het ETM. 
-        Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor frisdrank, bier of kassen. De emissies die hierbij vrijkomen worden 'uitgestelde' CO<sub>2</sub>-emissies
-        genoemd, omdat ze op een later moment worden uitgestoten. Standaard wordt aangenomen dat alle uitgestelde emissies hetzelfde jaar nog worden uitgestoten en dus 
-        meetellen in de totale CO<sub>2</sub>-emissies van jouw scenario. </br></br>
-        Het is echter ook mogelijk om deze emissies voor onbepaalde tijd uit te stellen, bijvoorbeeld wanneer de afgevangen
-        CO<sub>2</sub> voor de productie van plastic wordt gebruikt. Deze emissies tellen niet mee in de totale 
-        CO<sub>2</sub>-emissies. Met onderstaande schuifjes kun je bepaal welk deel van de afgevangen emissies voor 'Overig 
-        hergebruik' voor onbepaalde tijd worden uitgesteld.
+        Uitgestelde emissies worden veroorzaakt door 'Overig gebruik' van CO<sub>2</sub> in de 
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS-sectie</a>. Voorbeeld van 
+        'Overig gebruik' zijn het gebruik van CO<sub>2</sub> voor bier of frisdrank, de productie van de 
+        kunstmeststof ureum, of in de kassenteelt. In de toekomst zou afgevangen CO<sub>2</sub> ook gebruikt 
+        kunnen worden om plastic te produceren. </br></br>
+        Voor veel van de bovenstaande voorbeelden geldt dat de afgevangen CO<sub>2</sub> alleen tijdelijk 
+        wordt opgeslagen: zodra het bier of de frisdrank wordt geconsumeerd komt de CO<sub>2</sub> weer vrij.
+        De emissies die hieruit voortkomen zijn daarom gedefinieerd als 'uitgestelde emissies'. Standaard 
+        wordt aangenomen dat alle uitgestelde emissies plaatsvinden in hetzelfde jaar als ze afgevangen zijn,
+        waardoor ze meetellen aan de totale uitstoot van jouw scenario. </br></br>
+        For sommige voorbeelden, zoals de productie van plastics, geldt echter dat de afgevangen CO<sub>2</sub>
+        voor zeer lange tijd wordt opgeslagen. Deze emissies zijn 'uitgesteld voor onbepaalde tijd' en zijn 
+        tellen daarom niet mee aan de totale uitstoot. Met onderstaande schuifjes kun je bepalen welk aandeel 
+        voor onbepaalde tijd wordt uitgesteld.

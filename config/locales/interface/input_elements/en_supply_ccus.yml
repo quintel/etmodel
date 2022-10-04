@@ -232,18 +232,20 @@ en:
       title: Other utilisation
       description: |
         This slider sets the amount of CO<sub>2</sub>  used for 'other' purposes. This encompasses
-        all utilisation of CO<sub>2</sub> that is not modelled separately in the ETM. Examples
-        include utilisation of CO<sub>2</sub> as a propellant gas for beer and soda or for the
-        cultivation of crops in greenhouses. CO<sub>2</sub> emitted by the fertilizers industry
-        sector can also be captured and used to produce urea, which is used as an animal feed
-        additive and fertilizer.
-        <br/><br/>
-        In many cases, utilising CO<sub>2</sub> does not reduce emission but only delays it.
-        Therefore, the amount of CO<sub>2</sub> set with this slider is included in the total
-        emissions of your scenario by default. It is however also possible to delay part of these 
-        emissions indefinitely, in which case they are excluded from the total emissions.
-        You can set this share in the <a href="/scenario/emissions/other_emissions/delayed-emissions">
-        Greenhouse gases section</a>.
+        all utilisation of CO<sub>2</sub> that is not modelled explicitly in the ETM. Examples
+        include utilisation of CO<sub>2</sub> as a propellant gas for beer and soda, for the
+        production of the fertilizer urea or for the cultivation of crops in greenhouses. In the 
+        future, captured CO<sub>2</sub> may even be used to produce plastics. </br></br>
+        For most of the examples above, the CO<sub>2</sub> is only stored for a short time: when 
+        soda or beer is consumed, the CO<sub>2</sub> is released. The resulting emissions of this 
+        type of 'Other utilisation' are therefore defined as 'delayed emissions'. By default, all 
+        delayed emissions are assumed to be take place within the same year as they are captured and 
+        therefore count towards the total emissions in your scenario. </br></br>
+        For some of the examples above, like the production of plastics, the captured CO<sub>2</sub> 
+        can actually be stored for a very long time. These emissions are assumed to be 'delayed indefinitely' 
+        and are therefore excluded from the total emissions. You can determine which share of 
+        delayed emissions is delayed indefinitely in the 
+        <a href="/scenario/emissions/other_emissions/delayed-emissions"> Greenhouse gases section</a>.
     share_of_molecules_transport_pipelines_co2:
       title: Pipelines
       description: "What share of total captured CO<sub>2</sub> in your scenario is transported via pipelines?"
@@ -259,17 +261,13 @@ en:
         power plants in your scenario. This is influenced by electricity demand, other installed
         power generation technologies and commodity prices.<br/><br/> The amount of installed waste CHP capacity can be set in
         <a href="/scenario/supply/electricity_renewable/waste-power">the Supply → Electricity → Waste power section</a>.
-        <br/><br/>
-
     share_of_energy_power_supercritical_ccs_waste_mix:
       title: Waste incinerator
       description: |
         What share of installed waste incinarator capacity will be equipped with a CO<sub>2</sub> capture
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
-        power plants in your scenario. This is influenced by electricity demand, other installed          power generation technologies and commodity prices.<br/><br/> The amount of installed waste incicerator capacity can be set in
+        power plants in your scenario. This is influenced by electricity demand, other installed power generation technologies and commodity prices.<br/><br/> The amount of installed waste incicerator capacity can be set in
         <a href="/scenario/supply/electricity_renewable/waste-power">the Supply → Electricity → Waste power section</a>.
-        <br/><br/>
-
     share_of_energy_steel_energy_production_coal_gas:
       title: Energy production
       description: "Coal gas is currently used for electricity and heat production in specific

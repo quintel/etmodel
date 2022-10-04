@@ -155,15 +155,15 @@ en:
       soil acidification are all part of soil cultivation. With this slider you can determine how these emissions will change in the future.
       <br/><br/> In the 'Common Reporting Format' developed by the UNFCCC these emissions are included in
       categories: 3.C, 3.D, 3.E, 3.G"
-    share_of_molecules_other_utilisation_delayed_indefinitely_co2:
-      title: Indefinitely delayed
-      short_description:
-      description: |
-        With this slider you can determine which share of the delayed emissions is delayed indefinitely and 
-        therefore doesn't count towards the total CO<sub>2</sub> emissions in your scenario.
     share_of_molecules_other_utilisation_delayed_emitted_co2:
       title: Delayed emitted
       short_description:
       description: |
-        With this slider you can determine which share of the delayed emissions is emitted and 
-        therefore counts towards the total CO<sub>2</sub> emissions in your scenario.
+        With this slider you can determine which share of the delayed emissions is emitted and is
+        therefore <b>included</b> in the total CO<sub>2</sub> emissions in your scenario.
+    share_of_molecules_other_utilisation_delayed_indefinitely_co2:
+      title: Indefinitely delayed
+      short_description:
+      description: |
+        With this slider you can determine which share of the delayed emissions is delayed indefinitely 
+        and is therefore <b>excluded</b> from the total CO<sub>2</sub> emissions of your scenario.

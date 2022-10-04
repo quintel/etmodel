@@ -223,26 +223,30 @@ nl:
         methanol en andere producten in de conventionele chemiesector. Aannames hierover kun je
         doen op de <a href='/scenario/demand/industry/chemicals'>chemiepagina</a>.<br/>"
     demand_of_molecules_other_utilisation_co2:
-      title: Overig hergebruik
+      title: Overig gebruik
       description: |
         Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er wordt gebruikt voor
-        'overige' toepassingen. Hieronder vallen alle toepassingen die niet apart gemodelleerd zijn in
-        het ETM. Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor frisdrank, bier of kassen. Ook wordt
-        in sommige gevallen CO<sub>2</sub> uit de kunstmestsector afgevangen voor de productie van ureum,
-        een kunstmest en voedingssupplement voor de veehouderij.<br/><br/>
-        Omdat deze categorie in veel gevallen om uitgestelde emissies gaat, rekent het ETM standaard deze 
-        CO<sub>2</sub> mee in de totale uitstoot in jouw scenario. Het is echter ook mogelijk om een deel 
-        van deze emissies voor onbepaalde tijd uit te stellen, waardoor ze niet meetellen in de totale uitstoot.
-        Dit aandeel kun je instellen in de <a href="/scenario/emissions/other_emissions/delayed-emissions">
-        Broeikasgassensectie</a>.
+        'overige' toepassingen. Hieronder vallen alle toepassingen die niet expliciet gemodelleerd zijn in
+        het ETM. Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor bier of frisdrank, de productie van de 
+        kunstmeststof ureum, of in de kassenteelt. In de toekomst zou afgevangen CO<sub>2</sub> ook gebruikt 
+        kunnen worden om plastic te produceren. </br></br>
+        Voor veel van de bovenstaande voorbeelden geldt dat de afgevangen CO<sub>2</sub> alleen tijdelijk 
+        wordt opgeslagen: zodra het bier of de frisdrank wordt geconsumeerd komt de CO<sub>2</sub> weer vrij.
+        De emissies die hieruit voortkomen zijn daarom gedefinieerd als 'uitgestelde emissies'. Standaard 
+        wordt aangenomen dat alle uitgestelde emissies plaatsvinden in hetzelfde jaar als ze afgevangen zijn,
+        waardoor ze meetellen aan de totale uitstoot van jouw scenario. </br></br>
+        For sommige voorbeelden, zoals de productie van plastics, geldt echter dat de afgevangen CO<sub>2</sub>
+        voor zeer lange tijd wordt opgeslagen. Deze emissies zijn 'uitgesteld voor onbepaalde tijd' en zijn 
+        tellen daarom niet mee aan de totale uitstoot. Je kunt bepalen welk aandeel voor onbepaalde tijd wordt 
+        uitgesteld in de <a href="/scenario/emissions/other_emissions/delayed-emissions"> Broeikasgassensectie</a>.
     share_of_molecules_transport_pipelines_co2:
       title: Leidingen
       description: "Met deze schuif geef je aan hoeveel procent van de afgevangen CO<sub>2</sub> in jouw scenario wordt
-        getransporteerd via pijpleidingen.<br/>"
+        getransporteerd via pijpleidingen."
     share_of_molecules_transport_ships_co2:
       title: Vloeibaar in schepen
       description: "Met deze schuif geef je aan hoeveel procent van de afgevangen CO<sub>2</sub> in jouw scenario wordt
-        getransporteerd via schepen. De CO<sub>2</sub> moet hiervoor eerst vloeibaar gemaakt worden.<br/>"
+        getransporteerd via schepen. De CO<sub>2</sub> moet hiervoor eerst vloeibaar gemaakt worden."
     share_of_energy_chp_supercritical_ccs_waste_mix:
       title: Afval WKK
       description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
@@ -252,7 +256,7 @@ nl:
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
         Het opgestelde vermogen aan Afval WKK centrales is in te stellen op de
-        <a href='/scenario/supply/electricity_renewable/waste-power'>elektriciteitspagina</a>.<br/><br/>
+        <a href='/scenario/supply/electricity_renewable/waste-power'>elektriciteitspagina</a>.
         "
     share_of_energy_power_supercritical_ccs_waste_mix:
       title: Afvalverbranding
@@ -263,7 +267,7 @@ nl:
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
         Het opgestelde vermogen aan Afvalverbrandingscentrales is in te stellen op de
-        <a href='/scenario/supply/electricity_renewable/waste-power'>elektriciteitspagina</a>.<br/><br/>
+        <a href='/scenario/supply/electricity_renewable/waste-power'>elektriciteitspagina</a>.
         "
     share_of_energy_steel_energy_production_coal_gas:
       title: Energieproductie

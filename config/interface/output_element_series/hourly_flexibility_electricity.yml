@@ -80,6 +80,16 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: hourly_flexibility_electricity_hydrogen_production_curve_hourly_flexibility_electricity
+- label: hydro_to_power
+  color: "#87CEEB"
+  order_by: 232
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_hydro_production_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_hydro_production_curve_hourly_flexibility_electricity
 - label: power_to_power_supply
   color: "#dd33cc"
   order_by: 235

@@ -179,3 +179,15 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
   key: hydrogen_non_energetic_use_of_final_demand_in_industry_chemical_fertilizers
+- label: ammonia_non_energetic
+  color: "#1ce6d6"
+  order_by: 20
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_ammonia_in_fertilizers_industry_non_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
+  key: ammonia_non_energetic_use_of_final_demand_in_industry_chemical_fertilizers

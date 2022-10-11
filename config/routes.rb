@@ -136,7 +136,6 @@ Rails.application.routes.draw do
   get '/whats-new'                    => 'pages#whats_new', as: :whats_new
   get '/about'                        => 'pages#about', as: :about
   get '/development'                  => 'pages#development', as: :development
-  get '/features'                     => 'pages#features', as: :features
   put '/set_locale(/:locale)'         => 'pages#set_locale', as: :set_locale
   get '/unsupported-browser'          => 'pages#unsupported_browser', as: :unsupported_browser
   get '/update_footer'                => 'pages#update_footer'

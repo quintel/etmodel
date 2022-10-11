@@ -32,10 +32,6 @@ class PagesController < ApplicationController
     render 'markdown', locals: { key: :about }
   end
 
-  def features
-    render 'markdown', locals: { key: :features }
-  end
-
   def development
     render 'markdown', locals: { key: :development }
   end

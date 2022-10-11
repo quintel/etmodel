@@ -1,6 +1,6 @@
 - content_for(:page_title) { "#{t("pages.#{key}.title")} - #{t('meta.name')}" }
 
-.information_page.whats_new
+.information_page{ class: action_name }
   %h1= t("pages.#{key}.title")
   %hr
 

@@ -76,22 +76,49 @@
       &:active
         background: darken(#4589d0, 10%)
 
-.whats_new
-  h2
-    border-top: 2px solid #eee
-    padding-top: 1em
+  h1, h2, h3, strong
+    font-weight: 600
+
   img
     max-width: 100%
     max-width: -moz-fill-available
     max-width: -webkit-fill-available
     max-width: fill-available
+
   hr
     background: #eee
     border: 0
     height: 10px
-    margin: 50px 0
-  h1 + hr
-    margin: 25px 0
+    margin: 2rem 0
+
+  &.development, &.about
+    color: #1f2937
+    font-size: 16px
+    line-height: 1.6
+    a
+      font-weight: 500
+    section
+      border: none
+      margin: 0 0 1rem
+      position: relative
+    h2
+      font-size: 1.5rem
+      margin: 2rem 0 1rem
+    .action-link
+      display: inline-flex
+      align-items: center
+      svg
+        margin-right: 0.5rem
+
+  &.whats_new
+    h2
+      border-top: 2px solid #eee
+      padding-top: 1em
+    hr + h2
+      border-top: none
+      padding-top: 0
+    h1 + hr
+      margin: 25px 0
 
 .edit_account
   width: 725px

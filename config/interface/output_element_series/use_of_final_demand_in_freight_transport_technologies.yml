@@ -143,6 +143,18 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_freight_transport_technologies
   key: electric_ships_use_of_final_demand_in_freight_transport_technologies
+- label: ammonia_ships
+  color: "#1ce6d6"
+  order_by: 10
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ammonia_ships_in_use_of_final_demand_in_freight_transport_technologies
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_transport_technologies
+  key: ammonia_ships_use_of_final_demand_in_freight_transport_technologies
 - label: compressed_natural_gas_trucks
   color: "#BADC58"
   order_by: 11

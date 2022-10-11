@@ -17,13 +17,19 @@
   share_group: transport_marine
   step_value: 0.1
   unit: "%"
-  position: 2
+  position: 3
   related_node: transport_ship_using_hydrogen
   slide_key: demand_transport_domestic_navigation_technology
 - key: transport_ship_using_electricity_share
   share_group: transport_marine
   step_value: 0.1
   unit: "%"
-  position: 2
+  position: 4
   related_node: transport_ship_using_electricity
+- key: transport_ship_using_ammonia_share
+  share_group: transport_marine
+  step_value: 0.1
+  unit: "%"
+  position: 5
+  related_node: transport_ship_using_ammonia
   slide_key: demand_transport_domestic_navigation_technology

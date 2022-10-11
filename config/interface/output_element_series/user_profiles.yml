@@ -83,6 +83,30 @@
   dependent_on:
   output_element_key: user_profiles
   key: transport_e_vans_user_profiles
+- label: transport_e_ships
+  color: lightgreen
+  order_by: 8
+  group: transport_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: transport_e_ships_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: transport_e_ships_user_profiles
+- label: transport_e_planes
+  color: lightgreen
+  order_by: 8
+  group: transport_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: transport_e_planes_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: transport_e_planes_user_profiles
 - label: industry_ict_electricity
   color: lightgreen
   order_by: 17

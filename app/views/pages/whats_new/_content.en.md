@@ -1,7 +1,3 @@
-# What's new in the Energy Transition Model?
-___
-
-# November 2022
 
 ## First Asian country is now available: Singapore
 A few weeks ago Singapore has been added to the ETM as the first city-state and the first Asian country. This also means it is now easier to add countries outside of the EU to the ETM. Select Singapore as a region when starting a new scenario to start exploring its energy system!
@@ -49,7 +45,7 @@ In the same section, you can now also install power-to-heat capacity for agricul
 
 -> ![](/assets/pages/whats_new/agriculture_heating_en.png) <-
 
-___
+---
 
 # September 2022
 

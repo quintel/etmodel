@@ -1,6 +1,3 @@
-# Wat is er nieuw in het Energietransitiemodel?
-___
-
 # November 2022
 
 ## Eerste Aziatische land is nu beschikbaar: Singapore
@@ -49,7 +46,7 @@ In dezelfde sectie kun je nu ook vermogen instellen voor power-to-heat voor de l
 
 -> ![](/assets/pages/whats_new/agriculture_heating_nl.png) <-
 
-___
+---
 
 # September 2022
 

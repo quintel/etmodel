@@ -25,15 +25,15 @@ class PagesController < ApplicationController
   end
 
   def whats_new
-    render 'markdown', locals: { key: :whats_new }
+    render 'markdown', locals: { key: :whats_new }, layout: 'static_page'
   end
 
   def about
-    render 'markdown', locals: { key: :about }
+    render 'markdown', locals: { key: :about }, layout: 'static_page'
   end
 
   def development
-    render 'markdown', locals: { key: :development }
+    render 'markdown', locals: { key: :development }, layout: 'static_page'
   end
 
   def unsupported_browser

@@ -131,3 +131,15 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: industry_residual_hydroge_hydrogen_production
+- label: energy_hydrogen_ammonia_reformer
+  color: "#1ce6d6"
+  order_by: 7
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_ammonia_reformer_hydrogen_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production
+  key: energy_hydrogen_ammonia_reformer_hydrogen_production

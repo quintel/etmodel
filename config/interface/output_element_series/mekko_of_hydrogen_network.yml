@@ -143,6 +143,18 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_hydrogen_biomass_gasification_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_ammonia_reformer_for_mekko
+  color: "#1ce6d6"
+  order_by: 20
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_ammonia_reformer_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_hydrogen_ammonia_reformer_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_export_hydrogen_for_mekko
   color: "#485460"
   order_by: 1

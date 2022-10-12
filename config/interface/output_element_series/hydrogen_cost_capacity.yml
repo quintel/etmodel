@@ -107,3 +107,15 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: imported_hydrogen_hydrogen_cost_capacity
+- label: energy_hydrogen_ammonia_reformer
+  color: "#1ce6d6"
+  order_by: 10
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_ammonia_reformer_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_ammonia_reformer_hydrogen_cost_capacity

@@ -55,33 +55,26 @@
   interface_group: heat production
   position: 54
   slide_key: demand_industry_chemical_fertilizers
-- key: industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share
-  share_group: hydrogen_production
+- key: industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share
+  share_group: fertilizer_production_route
   step_value: 0.1
   unit: "%"
-  interface_group: hydrogen_production
-  position: 40
-  slide_key: demand_industry_chemical_fertilizers
-- key: industry_chemicals_fertilizers_hydrogen_network_share
-  share_group: hydrogen_production
-  step_value: 0.1
-  unit: "%"
-  interface_group: hydrogen_production
-  position: 41
-  slide_key: demand_industry_chemical_fertilizers
-- key: industry_chemicals_fertilizers_haber_bosch_ammonia_share
-  share_group: ammonia_production
-  step_value: 0.1
-  unit: "%"
-  interface_group: ammonia_production
+  interface_group: fertilizer_production_route
   position: 30
   slide_key: demand_industry_chemical_fertilizers
-- key: industry_chemicals_fertilizers_ammonia_network_share
-  share_group: ammonia_production
+- key: industry_chemicals_fertilizers_local_ammonia_central_hydrogen_share
+  share_group: fertilizer_production_route
   step_value: 0.1
   unit: "%"
-  interface_group: ammonia_production
+  interface_group: fertilizer_production_route
   position: 31
+  slide_key: demand_industry_chemical_fertilizers
+- key: industry_chemicals_fertilizers_central_ammonia_share
+  share_group: fertilizer_production_route
+  step_value: 0.1
+  unit: "%"
+  interface_group: fertilizer_production_route
+  position: 32
   slide_key: demand_industry_chemical_fertilizers
 - key: industry_chemicals_fertilizers_burner_hydrogen_share
   share_group: chemical_fertilizers_heat

@@ -5,20 +5,28 @@
   sidebar_item_key: hydrogen
   alt_output_element_key: hydrogen_production
   output_element_key: mekko_of_hydrogen_network
+- key: supply_hydrogen_demand
+  position: 2
+  sidebar_item_key: hydrogen
+  output_element_key: hydrogen_demand
 - general_sub_header: share
   key: supply_hydrogen_transport
   position: 3
   sidebar_item_key: hydrogen
   output_element_key: mekko_of_hydrogen_network
-- key: supply_hydrogen_co2_import
-  position: 5
-  sidebar_item_key: hydrogen
-  output_element_key: co2_emissions
 - key: supply_hydrogen_storage
   position: 4
   sidebar_item_key: hydrogen
   output_element_key: hydrogen_storage
-- key: supply_hydrogen_demand
-  position: 2
+- key: supply_ammonia_production
+  position: 10
   sidebar_item_key: hydrogen
-  output_element_key: hydrogen_demand
+  output_element_key: mekko_of_ammonia_demand_supply
+- key: supply_hydrogen_co2_import
+  position: 50
+  sidebar_item_key: hydrogen
+  output_element_key: co2_emissions
+- key: supply_ammonia_co2_import
+  position: 55
+  sidebar_item_key: hydrogen
+  output_element_key: co2_emissions

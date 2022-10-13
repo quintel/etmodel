@@ -83,3 +83,17 @@
   unit: kg/MWh
   config:
     period: future
+- under_construction: false
+  unit: MJ
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_ammonia_demand_supply
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko

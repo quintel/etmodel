@@ -132,7 +132,7 @@ en:
         scenario. The columns contain (from left to right) name, number of units,
         electricity production, heat production and installed capacity of CHP plants.\r\n"
     collective_heat_mekko:
-      title: Demand and supply of district heating
+      title: Supply and demand of district heating
       short_description: ''
       description: ''
     heat_network_demand:
@@ -144,7 +144,7 @@ en:
       short_description: ''
       description: ''
     industrial_heat_mekko:
-      title: Demand and supply of collective heat in industry
+      title: Supply and demand of collective heat in industry
       short_description:
       description:
     heat_network_storage:
@@ -156,7 +156,7 @@ en:
       short_description: ''
       description: ''
     mekko_of_hydrogen_network:
-      title: Demand and supply of the central hydrogen network
+      title: Supply and demand of the central hydrogen network
       short_description: ''
       description: ''
     hydrogen_production:
@@ -195,7 +195,7 @@ en:
         the end result in the end year (the black bar to the far right of the chart).\r\n<br/><br/>\r\nOverall,
         the lower the dependence on foreign energy the better it is."
     mekko_of_kerosene_demand_supply:
-      title: Demand and supply of kerosene
+      title: Supply and demand of kerosene
       short_description: ''
       description: ''
     mekko_of_oil_mix:
@@ -209,6 +209,10 @@ en:
         <li><b>LPG</b></li>
         <li><b>other oil</b> (a.o. crude oil, gasoline, fuel oil, naphtha, petcokes and refinery gas)</li>
         <li><b>other bio-oil</b> (biogasoline, other biofuels)</li>
+    mekko_of_ammonia_demand_supply:
+      title: Supply and demand of ammonia
+      short_description:
+      description:
     supply_offshore_solar_wind:
       title: Offshore solar and wind production per hour
       short_description:

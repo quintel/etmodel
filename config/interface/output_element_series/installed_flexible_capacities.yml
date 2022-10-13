@@ -134,7 +134,15 @@
   is_target_line: false
   gquery: electricity_production_flexible_wood_pellets_to_power_capacity
   output_element_key: installed_flexible_capacities
-  key: wood_pellets__to_power_electricity_installed_flexible_capacities
+  key: wood_pellets_to_power_electricity_installed_flexible_capacities
+- label: hydro_to_power
+  color: "#87CEEB"
+  order_by: 155
+  group: electricity
+  is_target_line: false
+  gquery: electricity_production_flexible_hydro_to_power_capacity
+  output_element_key: installed_flexible_capacities
+  key: hydro_to_power_electricity_installed_flexible_capacities
 
 - label: residual_load_excess_peak
   color: "blue"

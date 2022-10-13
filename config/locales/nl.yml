@@ -57,3 +57,22 @@ nl:
 
       full_messages:
         format: "%{attribute} %{message}"
+
+  activemodel:
+    attributes:
+      contact_us_message:
+        name: Naam
+        email: Emailadres
+        message: Bericht
+    errors:
+      models:
+        contact_us_message:
+          attributes:
+            email:
+              disallowed_domain: is not allowed
+            message:
+              disallowed_content: contains disallowed content
+
+invisible_captch:
+  sentence_for_humans: If you are a human, ignore this field
+  timestamp_error_message: Sorry, that was too quick! Please resubmit.

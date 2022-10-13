@@ -55,3 +55,18 @@ en:
 
       full_messages:
         format: "%{attribute} %{message}"
+
+  activemodel:
+    attributes:
+      contact_us_message:
+        name: Name
+        email: E-mail
+        message: Message
+    errors:
+      models:
+        contact_us_message:
+          attributes:
+            email:
+              disallowed_domain: is not allowed
+            message:
+              disallowed_content: contains disallowed content

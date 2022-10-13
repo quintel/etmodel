@@ -1,12 +1,9 @@
 -# Nested layout that will add padding and back_to_model links
 - content_for :content do
-  .information_page
+  .static-page{ class: action_name }
     = yield
 
     .footer
-      %ul
-        %li= link_to(t('footer.terms'), terms_of_service_url)
-        %li= link_to(t('footer.privacy'), privacy_url)
-        %li= link_to(t('footer.contact_us'), contact_url)
+      = render partial: 'layouts/etm/footer'
 
 = render template: 'layouts/application'

@@ -57,9 +57,14 @@ VCR.configure do |c|
   }
   c.debug_logger = File.open Rails.root.join("log/vcr.log"), 'w'
 
+  # Permit requests for webdrivers used in system tests.
+  c.ignore_hosts 'chromedriver.storage.googleapis.com', '127.0.0.1'
+
   c.around_http_request do |request|
     uri = URI(request.uri)
 
+    # require 'pry'
+    # binding.pry
     if uri.path == '/api/v3/areas.json' && uri.query == 'detailed=false'
       # Redirect the standard areas.json request to a specific cassette so that
       # we don't need to store many copies.

@@ -34,6 +34,7 @@ gem 'http_accept_language'
 gem 'browser'
 gem 'valid_email2'
 gem 'discard'
+gem 'invisible_captcha'
 
 # javascript
 gem 'sprockets-rails', require: 'sprockets/railtie'
@@ -82,7 +83,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
-  gem 'rspec-rails', '~> 4.0'
+  gem 'rspec-rails'
   gem 'watchr'
 
   gem 'rubocop', '~> 1.0',    require: false
@@ -100,9 +101,11 @@ group :test do
   gem 'launchy'
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', require: false
   gem 'simplecov'
   gem 'vcr', '~> 6.0'
+  gem 'webdrivers'
   gem 'webmock', '>= 3.5'
 end
 

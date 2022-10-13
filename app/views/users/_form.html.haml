@@ -48,7 +48,7 @@
     .section
       %p.terms
         = t('sign_up.agree_to_terms',
-            privacy_policy: link_to(t('sign_up.privacy_policy'), privacy_url),
+            privacy_policy: link_to(t('sign_up.privacy_policy'), privacy_statement_url),
             terms_of_service: link_to(t('sign_up.terms_of_service'), terms_of_service_url)).html_safe
 
       = f.button :submit, I18n.t('simple_form.labels.user.submit'), class: 'primary'

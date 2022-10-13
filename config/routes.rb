@@ -124,22 +124,22 @@ Rails.application.routes.draw do
   match '/ete(/*url)',       to: 'api_proxy#default', via: :all
   match '/ete_proxy(/*url)', to: 'api_proxy#default', via: :all
 
-  get '/units'                        => 'pages#units'
   get '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', as: :tutorial
-  get '/disclaimer'                   => 'pages#disclaimer'
-  get '/privacy_statement'            => 'pages#privacy_statement'
   get '/show_all_countries'           => 'pages#show_all_countries'
   get '/show_flanders'                => 'pages#show_flanders'
-  get '/sitemap(.:format)'            => 'pages#sitemap', defaults: { format: :xml }
-  get '/known_issues'                 => 'pages#bugs',        as: :bugs
-  get '/quality_control'              => 'pages#quality', as: :quality
-  get '/whats-new'                    => 'pages#whats_new', as: :whats_new
-  get '/about'                        => 'pages#about', as: :about
-  get '/development'                  => 'pages#development', as: :development
   put '/set_locale(/:locale)'         => 'pages#set_locale', as: :set_locale
   get '/unsupported-browser'          => 'pages#unsupported_browser', as: :unsupported_browser
   get '/update_footer'                => 'pages#update_footer'
   get '/regions/:dataset_locale'      => 'pages#dataset', as: :region
+
+  get '/contact'                      => 'contact#index', as: :contact
+  post '/contact'                     => 'contact#send_message'
+
+  get '/about'                        => 'content#about', as: :about
+  get '/development'                  => 'content#development', as: :development
+  get '/privacy-policy'               => 'content#privacy_statement', as: :privacy_statement
+  get '/terms-of-service'             => 'content#terms_of_service', as: :terms_of_service
+  get '/whats-new'                    => 'content#whats_new', as: :whats_new
 
   post '/feedback' => 'feedback#send_message', as: :feedback
 

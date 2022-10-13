@@ -147,20 +147,6 @@ describe PagesController, vcr: true do
     # rubocop:enable RSpec/MultipleExpectations
   end
 
-  context 'when visiting static pages' do
-    %i[units disclaimer privacy_statement].each do |page|
-      describe "#{page} page" do
-        # rubocop:disable RSpec/MultipleExpectations
-        it 'works' do
-          get page
-          expect(response).to be_successful
-          expect(response).to render_template(page)
-        end
-        # rubocop:enable RSpec/MultipleExpectations
-      end
-    end
-  end
-
   context 'with a valid locale setting' do
     subject do
       put :set_locale, params: { locale: 'nl' }
@@ -181,13 +167,5 @@ describe PagesController, vcr: true do
 
     it { is_expected.to be_successful }
     it { expect { subject }.not_to change(I18n, :locale) }
-  end
-
-  describe 'whats new' do
-    it 'renders an h1' do
-      # Assert markdown rendering works
-      get :whats_new
-      expect(response.body).to have_css('.whats_new h1', text: /april/i)
-    end
   end
 end

@@ -1,3 +1,5 @@
+# About the Energy Transition Model
+
 <h2 id="what-is">What is the Energy Transition Model?</h2>
 
 The Energy Transition Model (ETM) is an interactive online simulation tool for energy systems. It allows you to explore and quantify potential future energy systems in great detail. The ETM is free to use, [open source](/development), and is available for (EU) countries, municipalities, and many other regions.

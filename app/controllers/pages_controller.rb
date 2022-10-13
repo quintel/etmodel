@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   skip_before_action :ensure_modern_browser, only: [:unsupported_browser]
 
-  layout 'static_page', only: %i[about units bugs disclaimer privacy_statement quality dataset]
+  layout 'static_page', only: :dataset
   layout 'landing', only: :root
 
   def root
@@ -22,18 +22,6 @@ class PagesController < ApplicationController
     @time ||= 'present'
     @year = Current.setting.end_year if @time == 'future'
     @year ||= @area.analysis_year
-  end
-
-  def whats_new
-    render 'markdown', locals: { key: :whats_new }, layout: 'static_page'
-  end
-
-  def about
-    render 'markdown', locals: { key: :about }, layout: 'static_page'
-  end
-
-  def development
-    render 'markdown', locals: { key: :development }, layout: 'static_page'
   end
 
   def unsupported_browser

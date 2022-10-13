@@ -1,3 +1,5 @@
+# Development
+
 <h2 id="about-quintel">About Quintel</h2>
 
 The ETM is developed and maintained by [Quintel](https://quintel.com/). Quintel aims to accelerate
@@ -28,7 +30,8 @@ Quintel to match the ever-changing needs of the energy transition. These needs a
 by our users, who can propose changes on any part of the model due to its open-source nature.
 
 Additionally, these needs come from our extensive network of partners, who we collaborate with in
-development projects. If you have any suggestions as to how to improve the model, let us know here.
+development projects. If you have any suggestions as to how to improve the model, [let us know
+here](/contact).
 
 <h2 id="partners">Partners</h2>
 

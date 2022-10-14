@@ -28,7 +28,16 @@
 
 - label: co2_emission
   color: "#49A5F8"
-  order_by: 400
+  order_by: 150
+  group: ammonia_reforming
+  is_target_line: false
+  gquery: co2_intensity_of_hydrogen_production_ammonia_reformer
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_ammonia_reformer_co2_intensity_of_hydrogen_production
+
+- label: co2_emission
+  color: "#49A5F8"
+  order_by: 500
   group: import
   is_target_line: false
   gquery: co2_intensity_of_hydrogen_production_import

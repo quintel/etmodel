@@ -155,14 +155,14 @@ en:
     demand_industry_chemical_fertilizers:
       title: Fertilizers
       short_description:
-      description: "Ammonia (NH<sub>3</sub>) constitutes the basis of all nitrogen-based
+      description: |
+        Ammonia (NH<sub>3</sub>) constitutes the basis of all nitrogen-based
         fertilizers. The most important step in producing ammonia is reacting hydrogen
         with nitrogen. At the moment the required hydrogen is produced locally by
-        stripping natural gas in a steam methane reforming (SMR) plant, which produces
-        CO<sub>2</sub> as a side product. In the future, it may become possible to
-        use hydrogen from a central hydrogen network. This network delivers hydrogen
-        originating from different processes that can be chosen in the \r\n<a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >hydrogen production slide</a>."
+        stripping natural gas in a steam methane reforming (SMR). </br></br>
+        In the future, you might use hydrogen from a central hydrogen network, instead 
+        of producing it locally with the SMR. It may even become possible to source the 
+        ammonia centrally, bypassing the need for local ammonia production entirely.
     demand_industry_chemical_other:
       title: Chemicals
       short_description:
@@ -251,9 +251,8 @@ en:
       title: Domestic navigation technology
       short_description:
       description: |
-        Will ship owners hold on to ships with conventional engines (diesel / dual fuel), or will they make a transition to 
-        engines that run on LNG, hydrogen or electricity? In the <a href=/scenario/supply/transport_fuels/domestic-navigation>
-        transport fuels section</a> you can determine the fuel mix of diesel / dual fuel engines and LNG engines.
+        Will ships owners hold on to ships with conventional engines (diesel / dual fuel), or will they make 
+        a transition to ships that are powered by LNG, hydrogen, electricity or ammonia?
     demand_transport_international_transport:
       title: International transport
       short_description:
@@ -277,8 +276,8 @@ en:
       short_description:
       description: |
         Will ships owners hold on to conventional ships running on heavy
-        fuel oil (HFO) or will they make a transition to engines that run on LNG or 
-        hydrogen for international navigation?
+        fuel oil (HFO) or will they make a transition to ships that are powered by LNG, 
+        hydrogen or ammonia for international navigation?
     demand_transport_international_aviation_technology:
       title: International aviation technology
       short_description:

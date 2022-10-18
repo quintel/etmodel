@@ -335,17 +335,30 @@ en:
       title: Hydrogen
       short_description:
       description: |
-        Hydrogen-powered shipping is a novel technology that is in its developmental phase.
-        Different designs are therefore still possible for this technology, for example whether an internal combustion
+        Hydrogen-powered shipping is a novel technology that is still in its developmental phase.
+        Different designs are possible for this technology, for example whether an internal combustion
         engine (ICE) or a fuel cell (FC) will be used to convert the hydrogen. </br></br>
-        Compared to LNG, or especially HFO (heavy fuel oil), using hydrogen in the maritime shipping 
-        sector can significantly decrease emissions. This does depend on the way that the hydrogen is 
-        produced. In the <a href=/scenario/supply/hydrogen/hydrogen-production>hydrogen production 
-        section</a> you can determine how this is done.
+        It is technically possible to produce carbon-free hydrogen. Switching to hydrogen-powered shipping 
+        therefore offers a way to decarbonize freight transport by ships. How much emissions you actually reduce 
+        by switching to hydrogen depends on the way that it is produced. In the 
+        <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a> 
+        section you can determine how this is done.
     bunkers_ship_using_ammonia_share:
       title: Ammonia
       short_description:
-      description:
+      description: |
+        Like hydrogen-powered shipping, ammonia-powered shipping is a novel technology. A single dominant 
+        design has yet to emerge for this type of ship. </br></br>
+        It is technically possible to produce carbon-free ammonia. Switching to ammonia-powered shipping 
+        therefore offers a way to decarbonize freight transport by ships. How much emissions you actually reduce 
+        by switching to ammonia depends on the way that it is produced. In the 
+        <a href=/scenario/supply/hydrogen/ammonia-production> Ammonia production</a> 
+        section you can determine how this is done. </br></br>
+        Compared to hydrogen-powered ships the main benefit of using ammonia is that it's easier to store. 
+        Ammonia turns liquid at a temperature much closer to zero than hydrogen, making liquefied storage 
+        of ammonia less energy-intensive. Alternatively, compressed ammonia has a substantialy 
+        higher volumetric energy density than hydrogen at the same pressure, meaning that it takes 
+        up less space to transport the same amount of fuel.
     transport_passenger_train_using_coal_share:
       title: Coal
       short_description: ''
@@ -492,12 +505,14 @@ en:
         hydrogen ships. </br></br>
         Hydrogen-powered shipping is a novel technology that is still in its developmental phase.
         Different designs are possible for this technology, for example whether an internal combustion
-        engine (ICE) or a fuel cell (FC) will be used to convert the hydrogen. This slider
-        represents a hydrogen-powered ship using a fuel cell.
-        Compared to LNG, diesel, or especially HFO (heavy fuel oil), using hydrogen in the inland shipping 
-        sector can significantly decrease emissions. This does depend on the way that the hydrogen is 
-        produced. In the <a href=/scenario/supply/hydrogen/hydrogen-production>hydrogen production 
-        section</a> you can determine how this is done.
+        engine (ICE) or a fuel cell (FC) will be used to convert the hydrogen. Here we have
+        chosen to use the specifications of a hydrogen-powered ship using a fuel cell. See the 
+        "Technical and financial properties" for more information. </br></br>
+        It is technically possible to produce carbon-free hydrogen. Switching to hydrogen-powered shipping 
+        therefore offers a way to decarbonize freight transport by ships. How much emissions you actually reduce 
+        by switching to hydrogen depends on the way that it is produced. In the 
+        <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a> 
+        section you can determine how this is done.
     transport_ship_using_electricity_share:
       title: Electric
       short_description:
@@ -512,7 +527,21 @@ en:
     transport_ship_using_ammonia_share:
       title: Ammonia
       short_description:
-      description:
+      description: |
+        Like hydrogen-powered shipping, ammonia-powered shipping is a novel technology. A single dominant 
+        design has yet to emerge for this type of ship. Here we have chosen to use the specifications of 
+        an ammonia-powered ship using an internal combustion engine. See the "Technical and financial 
+        properties" for more information. </br></br>
+        It is technically possible to produce carbon-free ammonia. Switching to ammonia-powered shipping 
+        therefore offers a way to decarbonize freight transport by ships. How much emissions you actually reduce 
+        by switching to ammonia depends on the way that it is produced. In the 
+        <a href=/scenario/supply/hydrogen/ammonia-production> Ammonia production</a> 
+        section you can determine how this is done. </br></br>
+        Compared to hydrogen-powered ships the main benefit of using ammonia is that it's easier to store. 
+        Ammonia turns liquid at a temperature much closer to zero than hydrogen, making liquefied storage 
+        of ammonia less energy-intensive. Alternatively, compressed ammonia has a substantialy 
+        higher volumetric energy density than hydrogen at the same pressure, meaning that it takes 
+        up less space to transport the same amount of fuel.
     transport_trucks_share:
       title: Trucks
       short_description: ''

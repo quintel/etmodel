@@ -316,6 +316,53 @@ en:
         here</a>. <br /><br />\r\n\r\nThis slider allows you to set how much non-energetic
         hydrogen is produced locally using natural gas and how much is drawn from
         the central hydrogen network."
+    industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share:
+      title: Local NH<sub>3</sub> (steam methane reforming)
+      short_description:
+      description: |
+        In this production route, steam methane reforming is first used to produce hydrogen. This causes 
+        a non-energetic demand for network gas. The hydrogen then reacts with nitrogen to form ammonia 
+        in what is called the Haber-Bosch process. The ammonia is subsequently used to produce fertilizers, 
+        most notably urea and nitric-acid. Heat is required at various steps in the process, causing an 
+        energetic demand. </br></br>
+        CO<sub>2</sub> is produced in the SMR, which counts as non-energetic emissions in your 
+        scenario (see <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">
+        this</a> chart). These process emissions can be captured in the
+        <a href="/scenario/emissions/ccus/capture-of-co2"> CCUS</a> section. Capturing (part of) 
+        these emissions is standard practice in the fertilizer industry, since a CO<sub>2</sub> 
+        stream is required to produce urea from ammonia. You can model this stream in the 
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2"> CCUS</a> section
+        as 'Other utilisation'.
+    industry_chemicals_fertilizers_local_ammonia_central_hydrogen_share:
+      title: Local NH<sub>3</sub> (central hydrogen network)
+      short_description:
+      description: |
+        Instead of using steam methane reforming, this production route sources its hydrogen from the 
+        central hydrogen network. How this hydrogen is produced can be determined in the 
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> Hydrogen production</a> section.
+        The non-energetic demand for network gas is therefore replaced by a non-energetic demand for 
+        hydrogen. The subsequent Haber-Bosch process to form ammonia and further processing to 
+        fertilizers remain the same. </br></br>
+        Associated CO<sub>2</sub> emissions of non-energetic hydrogen demand in the Haber-Bosch process 
+        are counted as non-energetic emissions in your scenario (see 
+        <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">
+        this</a> chart). By changing how hydrogen is produced you can affect the associated carbon 
+        intensity. You can view the carbon intensity of different hydrogen production routes in 
+        <a href="#" class="open_chart" data-chart-key="co2_intensity_of_hydrogen_production" 
+        data-chart-location="side"> this</a> chart.
+    industry_chemicals_fertilizers_central_ammonia_share:
+      title: Central NH<sub>3</sub> network
+      short_description:
+      description: |
+        This production route skips both the steam methane reformer and the Haber-Bosch process.
+        Instead, ammonia is sourced centrally and used directly for further processing to fertilizers.
+        This creates a non-energetic demand for ammonia. How this ammonia is produced can be determined 
+        in the <a href="/scenario/supply/hydrogen/ammonia-production"> Ammonia production section</a>. </br></br>
+        Associated CO<sub>2</sub> emissions of non-energetic ammonia demand are counted as non-energetic 
+        emissions in your scenario (see <a href="#" class="open_chart" data-chart-key="co2_emissions" 
+        data-chart-location="side"> this</a> chart). You can affect the associated carbon intensity for 
+        imported ammonia in the <a href="/scenario/supply/hydrogen/hydrogen-production"> 
+        CO<sub>2</sub> emissions of imported ammonia</a> section. 
     industry_chemicals_fertilizers_burner_hydrogen_share:
       title: H<sub>2</sub>-fired heater
       short_description:
@@ -732,15 +779,3 @@ en:
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
         Supply section </a>. <br />"
-    industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share:
-      title: Local NH<sub>3</sub> (steam methane reforming)
-      short_description:
-      description:
-    industry_chemicals_fertilizers_local_ammonia_central_hydrogen_share:
-      title: Local NH<sub>3</sub> (central hydrogen network)
-      short_description:
-      description:
-    industry_chemicals_fertilizers_central_ammonia_share:
-      title: Central NH<sub>3</sub> network
-      short_description:
-      description:

@@ -972,7 +972,6 @@ en:
         To view the yearly average COP, the so-called seasonal COP (SCOP), you can click on the 'Technical and financial properties'.
         It is not possible to set the absolute value of the future SCOP of hybrid heat pumps with a slider as this is a result of hourly
         calculations based on the hourly outside temperature curve.
-<<<<<<< HEAD
     efficiency_agriculture_heatpump_water_water_electricity:
       title: Water heat pump
       short_description:
@@ -983,17 +982,21 @@ en:
       short_description:
       description: |
         This slider sets the future efficiency of water heat pumps with thermal storage (TS) in agriculture for heating.
-=======
     costs_imported_ammonia:
       title: Imported ammonia
       short_description:
-      description:
+      description: |
+        This slider sets the future wholesale price of imported ammonia (in €/MWh).
     investment_costs_ammonia_reforming:
       title: Investment costs ammonia reformer
       short_description:
-      description:
+      description: |
+        Ammonia reformers convert ammonia (NH<sub>3</sub>) into hydrogen (H<sub>2</sub>).
+        This slider determines the change in future investment costs of ammonia reformers.
+        You can set installed capacity for these reformers in the 
+        <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a> section.
     efficiency_ammonia_reforming:
       title: Ammonia reformer
       short_description:
-      description:
->>>>>>> 322592da9 (Add ammonia efficiency and costs sliders)
+      description: |
+        This slider sets the future efficiency of ammonia reformers.

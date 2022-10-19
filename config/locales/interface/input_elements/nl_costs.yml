@@ -1014,7 +1014,6 @@ nl:
         ook wel de seasonal COP (SCOP), kun je vinden in de "Technische parameters en kosten".
         Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
         het uurlijkse profiel van de buitentemperatuur.
-<<<<<<< HEAD
     efficiency_agriculture_heatpump_water_water_electricity:
       title: Water warmtepomp
       short_description:
@@ -1025,18 +1024,21 @@ nl:
       short_description:
       description: |
         Met deze schuif kun je de toekomstige efficiëntie van water warmtepompen met warmte- en koudeopslag (WKO) voor verwarming in de landbouw veranderen.
-
-=======
     costs_imported_ammonia:
       title: Geïmporteerde ammoniak
       short_description:
-      description:
+      description: |
+        Dit schuifje stelt de toekomstige groothandelsprijs voor ammoniak in, uitgedrukt in €/MWh
     investment_costs_ammonia_reforming:
       title: Investeringskosten ammoniak reformer
       short_description:
-      description:
+      description: |
+        Ammoniak reformers zetten ammoniak (NH<sub>3</sub>) om in waterstof (H<sub>2</sub>).
+        Met dit schuifje bepaal je de verandering in toekomstige investeringskosten van ammoniak 
+        reformers. Je kunt het geïnstalleerd vermogen van deze reformers instellen in de
+        <a href=/scenario/supply/hydrogen/hydrogen-production> Waterstofproductie</a> sectie.
     efficiency_ammonia_reforming:
       title: Ammoniak reformer
       short_description:
-      description:
->>>>>>> 322592da9 (Add ammonia efficiency and costs sliders)
+      description: |
+        Dit schuifje stelt de toekomstige efficiëntie van ammoniak reformers in.

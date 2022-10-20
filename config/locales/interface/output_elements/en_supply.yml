@@ -212,7 +212,18 @@ en:
     mekko_of_ammonia_demand_supply:
       title: Supply and demand of ammonia
       short_description:
-      description:
+      description: |
+        This charts compares the supply and demand of ammonia (NH<sub>3</sub>). You can set the supply 
+        in the <a href="/scenario/supply/hydrogen/ammonia-production"> Ammonia production</a> section.
+        It can then be used for:
+        <ul>
+        <li><a href=/scenario/supply/hydrogen/hydrogen-production>reforming to hydrogen</a></li>
+        <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a></li>
+        <li><a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>domestic navigation</a> (inland shipping) </li>
+        <li><a href=/scenario/demand/transport_international_transport/international-navigation-technology>international navigation</a> (maritime shipping) </li>
+        </ul>
+        If the supply is insufficient to cover demand, back-up import is used to cover the difference.
+        If it exceeds demand, the excess is exported.
     supply_offshore_solar_wind:
       title: Offshore solar and wind production per hour
       short_description:

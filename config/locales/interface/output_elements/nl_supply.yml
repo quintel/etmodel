@@ -213,7 +213,18 @@ nl:
     mekko_of_ammonia_demand_supply:
       title: Vraag en aanbod van ammoniak
       short_description:
-      description:
+      description: |
+        Deze grafiek vergelijkt de vraag naar ammoniak (NH<sub>3</sub>) met het aanbod. Je kunt aanbod 
+        instellen in de <a href="/scenario/supply/hydrogen/ammonia-production"> Ammoniakproductie</a>
+        sectie. Je kunt het vervolgens gebruiken voor:
+        <ul>
+        <li><a href=/scenario/supply/hydrogen/hydrogen-production>reformen naar waterstof </a></li>
+        <li><a href=/scenario/demand/industry/fertilizers>kunstmestproductie</a></li>
+        <li><a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>binnenlandse scheepvaart</a></li>
+        <li><a href=/scenario/demand/transport_international_transport/international-navigation-technology>internationale scheepvaart</a></li>
+        </ul>
+        Als er onvoldoende aanbod is om aan de vraag te voldoen wordt back-up import ingezet om het 
+        tekort te leveren. Als het aanbod groter is dan de vraag wordt het overschot geëxporteerd.
     supply_offshore_solar_wind:
       title: Productie van zon en wind op zee per uur
       short_description:

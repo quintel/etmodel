@@ -474,6 +474,30 @@ en:
         If you want to view when peaks occur within a month, you can also zoom in on an energy carrier by clicking
         on that carrier in a specific month. This will open a new chart showing the hourly values for that
         carrier in the selected month.
+    flexibility_overview_timescales_imbalance:
+      title: "The need for flexibility: timescales"
+      short_description:
+      description: |
+        This table takes the concepts learned in the previous sections a step further by analyzing 
+        the need for flexibility on different timescales. It shows the need for flexible capacity 
+        and flexible volume for both supply and demand. </br></br>
+        The basis of the analysis is the <i>original imbalance</i> (the 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>), 
+        which is shown first. The curve is then split into two timescales by applying a 72-hour moving average.
+        The curves can be seen in
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
+        this</a> chart.
+        <ul>
+        <li> The <i>short timescale</i> is given by the difference between the original residual 
+        load curve and the moving average, and is typically very variable. </li>
+        <li>The <i>long timescale</i> is given by the moving average, and is typically much more 
+        smooth. </li>
+        </ul> </br>
+        Some technologies are well suited to deliver short-term flexibility, while others can handle 
+        long-term flexibility better. For network gas and hydrogen, where flexibility is provided by 
+        storage, typically underground, there may be technical and economical limitations to extent 
+        to which both technology types can be realized in your area. The table can help you assess 
+        whether your scenario falls within these limitations.
     flexibility_overview_flexible_capacities:
       title: "The provision of flexibility: capacity"
       short_description:

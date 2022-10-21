@@ -378,20 +378,8 @@ en:
       title: Need for flexibility on different timescales
       short_description:
       description: |
-        This table analyses the 'residual load curve' for network gas and hydrogen to determine the 
-        need for flexibility. The residual load curve indicates the imbalance in inflexible supply 
-        and demand (see <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
-        Flexibility overview</a> for more information). </br></br>
-        If the residual load curve is positive, the inflexible demand exceeds inflexible supply. This 
-        means that there is a <i>need</i> for flexible supply to maintain system balance. When the residual 
-        load curve is negative, there is a <i>need</i> for flexible demand. </br></br>
-        The table first shows both the peak capacity and the volume for supply and demand of the original 
-        residual load curve. A 72-hour moving-average is then applied to split the <i>original</i> residual 
-        load curve into two timescales. The <i>short</i> timescale is given by the difference between the 
-        original load curve and the moving average, and is typically very variable. The <i>long</i>
-        timescale is given by the moving average, and is typically much more smooth. You can 
-        view the original curve and the moving average by clicking on the 'Annual' toggle or by 
-        opening the chart 
-        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
-        here</a>.
-
+        This table analyses the imbalance in inflexible supply and demand (the residual load curve) 
+        for network gas and hydrogen, to determine the need for flexibility on different timescales. 
+        How to interpret this table is explained in the
+        <a href="/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales">
+        Flexibility overview</a> section.

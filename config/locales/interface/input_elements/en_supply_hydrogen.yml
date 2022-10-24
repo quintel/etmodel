@@ -159,7 +159,9 @@ en:
         ammonia in the <a href=/scenario/supply/hydrogen/co2-emissions-of-imported-ammonia
         >slide below</a>. Additionally, it is possible to set the costs of imported
         ammonia in the <a href=/scenario/costs/costs_hydrogen/ammonia-import
-        >Costs & efficiencies</a> section.
+        >Costs & efficiencies</a> section. </br></br>
+        If the baseload import is insufficient to cover demand, back-up import is used. 
+        If it exceeds demand, the excess is exported.
     co2_emissions_of_imported_ammonia_present:
       title: Present import
       short_description:

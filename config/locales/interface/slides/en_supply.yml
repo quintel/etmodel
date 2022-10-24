@@ -382,23 +382,19 @@ en:
       title: Ammonia production
       short_description:
       description: |
-        Traditionally ammonia is produced in the <a href=/scenario/demand/industry/fertilizers>
-        fertilizer industry</a> by letting hydrogen react with nitrogen, where it is directly used
-        for further processing. If you have ammonia you can however also convert it
-        back into hydrogen through <a href=/scenario/supply/hydrogen/hydrogen-production>
-        ammonia reforming</a>. </br></br>
-        This way, ammonia can function as an energy carrier similar to hydrogen. Despite the roundtrip
-        efficiency losses, ammonia is seen as a potentially better way to transport large energy 
-        volumes over long distances than hydrogen. This is because of its advantageous storage properties. </br></br>
-        With the slider below you can determine the baseload import capacity of ammonia. If the baseload 
-        import is insufficient to cover demand, back-up import is used. If it exceeds demand, the excess 
-        is exported. You can use ammonia for:
-        <ul>
-        <li><a href=/scenario/supply/hydrogen/hydrogen-production>reforming to hydrogen</a></li>
-        <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a></li>
-        <li><a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>domestic navigation</a> (inland shipping) </li>
-        <li><a href=/scenario/demand/transport_international_transport/international-navigation-technology>international navigation</a> (maritime shipping) </li>
-        </ul>
+        Ammonia as an energy carrier has advantageous storage properties and can be produced 
+        without generating carbon emissions. This makes it a potentially effective carrier to 
+        facilitate global transport of large (renewable) energy volumes. You can determine 
+        how much ammonia you want to import in your scenario with the slider below. </br></br>
+        Ammonia can then be converted into hydrogen through
+        <a href=/scenario/supply/hydrogen/hydrogen-production> ammonia reforming</a>.
+        You can however also use ammonia directly. Currently virtually all ammonia is produced on-site 
+        in the <a href=/scenario/demand/industry/fertilizers>fertilizer industry</a>. This local production 
+        can be replaced by centralized import.
+        Additionally, the ships that 
+        transport ammonia may use it as a transport fuel. You can therefore use ammonia in
+        <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>domestic</a> and
+        and <a href=/scenario/demand/transport_international_transport/international-navigation-technology>international</a> navigation.
     supply_hydrogen_co2_import:
       title: CO<sub>2</sub> emissions of imported hydrogen
       short_description:

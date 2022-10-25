@@ -351,13 +351,13 @@ en:
         <a href="#" class="open_chart" data-chart-key="co2_intensity_of_hydrogen_production" 
         data-chart-location="side"> this</a> chart.
     industry_chemicals_fertilizers_central_ammonia_share:
-      title: Central NH<sub>3</sub> network
+      title: Central NH<sub>3</sub> import
       short_description:
       description: |
         This production route skips both the steam methane reformer and the Haber-Bosch process.
         Instead, ammonia is sourced centrally and used directly for further processing to fertilizers.
-        This creates a non-energetic demand for ammonia. How this ammonia is produced can be determined 
-        in the <a href="/scenario/supply/hydrogen/ammonia-production"> Ammonia production section</a>. </br></br>
+        This creates a non-energetic demand for ammonia. You can match this demand with import of ammonia 
+        in the <a href="/scenario/supply/hydrogen/ammonia-production"> Ammonia production</a> section. </br></br>
         Associated CO<sub>2</sub> emissions of non-energetic ammonia demand are counted as non-energetic 
         emissions in your scenario (see <a href="#" class="open_chart" data-chart-key="co2_emissions" 
         data-chart-location="side"> this</a> chart). You can affect the associated carbon intensity for 

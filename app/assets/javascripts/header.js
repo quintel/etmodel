@@ -2,7 +2,6 @@
 (function (window) {
   var DropdownView = Backbone.View.extend({
     events: {
-      'click [data-toggle="dropdown"]': 'toggle',
       'click .dropdown-item': 'onClickItem',
     },
 
@@ -13,6 +12,13 @@
       this.dropdownEl = this.el.querySelector('.dropdown-menu');
       this.dismissEvent = this.dismissEvent.bind(this);
       this.finishDismissEvent = this.finishDismissEvent.bind(this);
+
+      if (this.buttonEl.dataset.dropdownTrigger === 'hover') {
+        this.el.addEventListener('mouseenter', this.toggle.bind(this));
+        this.el.addEventListener('mouseleave', this.toggle.bind(this));
+      } else {
+        this.buttonEl.addEventListener('click', this.toggle.bind(this));
+      }
     },
 
     /**

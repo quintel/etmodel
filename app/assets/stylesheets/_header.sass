@@ -133,11 +133,15 @@ header.main-header
 // Dropdown containing content for Learn and Collaborate
 
 .app-nav .dropdown > button
-  padding: 0.35rem 0.675rem
+  padding: 0.75rem 0.675rem
+  margin: -0.4rem 0
+  &[aria-expanded="true"]
+    color: white
 
 .dropdown-menu.learn-dropdown
   margin: -0.5rem 0
   padding: 1.5rem 4rem 1.5rem 2rem
+  min-width: 160px
   top: 45px
   white-space: nowrap
 

@@ -406,25 +406,43 @@ nl:
       title: Ammoniakproductie
       short_description:
       description: |
-        Hier staat tekst
+        Ammoniak heeft als energiedrager gunstige eigenschappen voor opslag en kan worden geproduceerd 
+        zonder CO<sub>2</sub>-emissies te genereren. Dit maakt het een potentieel geschikte drager om 
+        grootschalig globaal transport van (hernieuwbare) energievolumes te faciliteren. Met onderstaand schuifje 
+        kun je bepalen hoeveel ammoniak je wilt importen importeren in jouw scenario. </br></br>
+        Ammoniak kan vervolgens worden omgezet in waterstof door 
+        <a href=/scenario/supply/hydrogen/hydrogen-production> ammoniak reforming</a>. Het kan echter ook 
+        direct worden toegepast. Momenteel wordt vrijwel alle ammoniak on-site geproduceerd in de 
+        <a href=/scenario/demand/industry/fertilizers>kunstmestindustrie</a>. Deze lokale productie kan 
+        worden vervangen door centrale import. Daarnaast zouden de schepen die ammoniak vervoeren het ook 
+        als transportbrandstof kunnen gebruiken, zowel voor de 
+        <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>binnenvaart</a>
+        als voor de <a href=/scenario/demand/transport_international_transport/international-navigation-technology>
+        internationale scheepvaart</a>.
     supply_hydrogen_co2_import:
       title: CO<sub>2</sub>-emissies van geïmporteerde waterstof
       short_description:
       description: "In sommige scenario's wordt er waterstof geïmporteerd van buiten
         jouw gebied. Hoeveel waterstof er geïmporteerd wordt, hangt af van jouw keuzes
         in het tabblad <a href=\"/scenario/supply/hydrogen/hydrogen-production\">'Waterstofproductie'</a>.
-        De productie en distributie van geïmporteerde waterstof kan CO<sub>2</sub>-emissies
+        De productie en distributie van geïmporteerde waterstof kunnen CO<sub>2</sub>-emissies
         hebben veroorzaakt. Hoeveel van deze emissies wil je toekennen aan jouw gebied?
         De standaardwaarde (in kg CO<sub>2</sub> per MWh waterstof) staat op de hoeveelheid
         emissies die vrijkomt bij waterstofproductie met Steam Methane Reforming (SMR),
         omdat op dit moment meer dan 90% van de waterstof met deze methode wordt geproduceerd.
         Je kunt dit zelf hieronder aanpassen. Klik op het vraagteken voor referentiewaarden.\r\n\r\n<br/><br/>\r\nDe
-        kosten voor geïmporteerde waterstof kunnen worden aangepast in de <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">kostensectie</a>."
+        kosten voor geïmporteerde waterstof kunnen worden aangepast in de <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">Kosten & efficiënties</a> sectie."
     supply_ammonia_co2_import:
       title: CO<sub>2</sub>-emissies van geïmporteerde ammoniak
       short_description:
       description: |
-        Hier staat tekst
+        De productie en distributie van geïmporteerde ammoniak kunnen CO<sub>2</sub>-emissies
+        hebben veroorzaakt. Hoeveel van deze emissies wil je toekennen aan jouw gebied? </br></br>
+        Standaard zijn de emissies van geïmporteerde ammoniak geijkt op de stoomreforming 
+        productieroute, aangezien dit momenteel het meest voorkomt. Je kunt
+        dit echter zelf hieronder aanpassen. Klik op het vraagteken voor referentiewaardes. </br></br>
+        De kosten voor geïmporteerde ammoniak kunnen worden aangepast in de 
+        <a href=/scenario/costs/costs_hydrogen/ammonia-import>Kosten & efficiënties</a> sectie.
     supply_infrastructure_high_voltage_network:
       title: Hoogspanningsnetwerk
       short_description: ''

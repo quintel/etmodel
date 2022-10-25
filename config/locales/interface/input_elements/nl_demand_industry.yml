@@ -757,14 +757,51 @@ nl:
         Aanbodsectie</a> kun je specificeren hoe de gebruikte waterstof wordt geproduceerd.
         <br />"
     industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share:
-      title: Lokale NH<sub>3</sub> (stoomreforming met aardgas)
+      title: Lokale NH<sub>3</sub> (stoomreforming van aardgas)
       short_description:
-      description:
+      description: |
+        In deze productieroute wordt er eerst waterstof geproduceerd door stoomreforming van aardgas 
+        (SMR). Dit leidt tot een non-energetische vraag naar netwerkgas. De vrijgekomen waterstof reageert
+        vervolgens in het zogeheten Haber-Boschproces met stikstof tot ammoniak. De ammoniak wordt 
+        gebruikt om kunstmest te produceren, met name ureum en salpeterzuur. Voor verschillende 
+        stappen in het proces is warmte nodig, wat een energetische vraag veroorzaakt. </br></br>
+        Er ontstaat CO<sub>2</sub> in de SMR, wat als non-energetische emissies meetelt in jouw scenario 
+        (zie <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">
+        deze</a> grafiek). Deze procesemissies kunnen worden afgevangen in de 
+        <a href="/scenario/emissions/ccus/capture-of-co2"> CCUS</a>-sectie. Het (gedeeltelijk) afvangen 
+        van deze emissies is gebruikelijk in de kunstmestindustrie, aangezien een CO<sub>2</sub>-stroom
+        nodig is om ureum te maken van ammoniak. Je kunt deze stroom modelleren als 'Overig gebruik' in de 
+        <a href="/scenario/emissions/ccus/capture-of-co2"> CCUS</a>-sectie.
     industry_chemicals_fertilizers_local_ammonia_central_hydrogen_share:
       title: Lokale NH<sub>3</sub> (centraal waterstofnetwerk)
       short_description:
-      description:
+      description: |
+        In deze productieroute wordt waterstof geleverd door het centrale waterstofnetwerk, in plaats van 
+        door de stoomreforming van aardgas. Hoe deze waterstof wordt geproduceerd kun je bepalen in de 
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> Waterstofproductie</a>-sectie. De 
+        non-energetische vraag naar netwerkgas wordt in deze route vervangen door non-energetische waterstofvraag.
+        Het daaropvolgende Haber-Boschproces om ammoniak te produceren en de verdere verwerking tot 
+        kunstmest blijft hetzelfde. </br></br>
+        Geassocieerde CO<sub>2</sub>-emissies van non-energetische waterstofvraag in het Haber-Boschproces 
+        tellen mee als non-energetische emissies in jouw scenario (zie 
+        <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">deze</a>
+        grafiek). Door te veranderen hoe waterstof geproduceerd wordt kun je de geassocieerde CO<sub>2</sub>-
+        intensiteit veranderen. Je kunt zien wat de CO<sub>2</sub>-intensiteit van verschillende 
+        waterstofproductieroutes is in 
+        <a href="#" class="open_chart" data-chart-key="co2_intensity_of_hydrogen_production" 
+        data-chart-location="side"> deze</a> grafiek.
     industry_chemicals_fertilizers_central_ammonia_share:
-      title: Centrale NH<sub>3</sub> netwerk
+      title: Centrale NH<sub>3</sub> import
       short_description:
-      description:
+      description: |
+        In deze productieroute wordt zowel de stoomreformer als het Haber-Boschproces overgeslagen.
+        In plaats daarvan wordt ammoniak uit centrale import direct gebruikt voor verdere verwerking 
+        tot kunstmest. Dit leidt tot een non-energetische ammoniakvraag. Je kunt in deze vraag 
+        voorzien door ammoniak te importeren in de
+        <a href="/scenario/supply/hydrogen/ammonia-production"> Ammoniakproductie</a>-sectie. </br></br>
+        Geassocieerde CO<sub>2</sub>-emissies van non-energetische ammoniakvraag worden meegeteld 
+        als non-energetische emissies in jouw scenario (zie 
+        <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">deze</a>
+        grafiek). Je kunt de geassocieerde CO<sub>2</sub>-intensiteit van geïmporteerde ammoniak veranderen 
+        in de <a href="/scenario/supply/hydrogen/hydrogen-production"> 
+        CO<sub>2</sub>-emissies van geïmporteerde ammoniak</a> sectie.

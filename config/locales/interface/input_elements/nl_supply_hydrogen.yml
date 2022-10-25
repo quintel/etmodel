@@ -93,11 +93,22 @@ nl:
     capacity_of_energy_hydrogen_ammonia_reformer:
       title: Ammoniak reforming
       short_description:
-      description:
+      description: |
+        Reforming van ammoniak (NH<sub>3</sub>) naar waterstof is een nieuwe technologie. Het reformen 
+        zelf is een zeer volwassen proces, aangezien dit breed wordt toegepast in de Stoomreforming van 
+        aardgas. Desondanks is verdere technologische ontwikkeling nodig voordat reforming van ammoniak 
+        commercieel beschikbaar zal zijn. Je kunt de efficiëntie en de investeringskosten van de 
+        ammoniakreformer instellen in de <a href=/scenario/costs/costs_hydrogen/hydrogen-production>
+        Kosten & efficiënties</a> sectie. </br></br>
+        De ammoniak die in de reformer gebruikt wordt, wordt centraal geleverd. Je kunt de productie 
+        instellen in <a href=/scenario/supply/hydrogen/ammonia-production> onderstaande slide</a>. Je
+        kunt ook vraag en aanbod van ammoniak vergelijken in 
+        <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
+        data-chart-location="side"> deze</a> grafiek.
     capacity_of_energy_imported_hydrogen_baseload:
       title: H<sub>2</sub> import
       short_description:
-      description: "Hoeveel waterstof zal er in de toekomst wordem geïmporteerd?\r\n<br><br>\r\nDe
+      description: "Hoeveel waterstof zal er in de toekomst worden geïmporteerd?\r\n<br><br>\r\nDe
         schuif bepaalt de hoeveelheid geïmporteerde waterstof van buiten jouw gebied.
         Deze waterstof kan uit verschillende landen komen en met verschillende technologieën
         geproduceerd zijn; deze factoren hebben beide invloed op de bijbehorende CO<sub>2</sub>-uitstoot.
@@ -105,7 +116,7 @@ nl:
         waterstof zelf in te kunnen stellen in de <a href=\"/scenario/supply/hydrogen/co-sub-2-sub-emissions-of-imported-hydrogen\"
         >onderstaande slide</a>. Ook is het mogelijk om de kosten van geïmporteerde
         waterstof aan te passen bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-import\"
-        >kosten</a>."
+        >Kosten & efficiënties</a>."
     energy_transport_hydrogen_compressed_trucks_share:
       title: H<sub>2</sub> onder druk in vrachtwagens
       short_description:
@@ -129,12 +140,62 @@ nl:
     capacity_of_energy_imported_ammonia_baseload:
       title: Ammoniak import
       short_description:
-      description:
+      description: |
+        Hoeveel ammoniak zal er in de toekomst worden geïmporteerd? </br></br>
+        Dit schuifje bepaalt de hoeveelheid geïmporteerde ammoniak van buiten jouw gebied.
+        Deze ammoniak kan uit verschillende landen komen en met verschillende typen waterstof
+        geproduceerd zijn: beide factoren hebben invloed op de geassocieerde CO<sub>2</sub>-uitstoot.
+        Het is daarom mogelijk om de CO<sub>2</sub>-emissies van geïmporteerde ammoniak in te stellen 
+        in de <a href=/scenario/supply/hydrogen/co2-emissions-of-imported-ammonia>onderstaande slide</a>.
+        Ook is het mogelijk om de kosten van geïmporteerde ammoniak aan te passen in de 
+        <a href=/scenario/costs/costs_hydrogen/ammonia-import>Kosten & efficiënties</a> sectie. </br></br>
+        Als er onvoldoende basislast import is om aan de vraag te voldoen wordt back-up import ingezet om het 
+        tekort te leveren. Als het aanbod groter is dan de vraag wordt het overschot geëxporteerd.
     co2_emissions_of_imported_ammonia_present:
       title: Huidige import
       short_description:
-      description:
+      description: |
+        Hieronder vind je referentiewaardes voor de CO<sub>2</sub>-uitstoot van enkele 
+        ammoniakproductieroutes (in kg CO<sub>2</sub> per MWh NH<sub>3</sub>). De reactie om 
+        ammoniak te produceren uit waterstof en stikstof verandert niet. Het verschil zit hem 
+        in de waterstofproductie: </br></br>
+        <ul>
+        <li>Aardgas SMR: 348 kg</li>
+        <li>Aardgas ATR: 310 kg</li>
+        <li>Kolenvergassing: 619 kg</li>
+        <li>SMR met CCS: 19 kg</li>
+        <li>ATR met CCS: 19 kg</li>
+        <li>Kolen met CCS: 39 kg</li>
+        <li>Elektrolyse: 0 kg</li>
+        <li>Biomassavergassing: 0 kg</li>
+        <li>Methaanpyrolyse: 0 kg</li>
+        </ul> </br>
+        De bovenstaande getallen zijn exclusief eventuele CO<sub>2</sub>-uitstoot veroorzaakt 
+        door het vervoeren van ammoniak naar jouw gebied. Ook ketenemissies, zoals de emissies 
+        die vrijkomen bij het bouwen van een ammoniakfrabiek of het delven van benodigde 
+        grondstoffen, zijn niet meegenomen. </br></br>
+        Bron: IEA (2021). Ammonia Technology Roadmap. p.33.
     co2_emissions_of_imported_ammonia_future:
       title: Toekomstige import
       short_description:
-      description:
+      description: |
+        Hieronder vind je referentiewaardes voor de CO<sub>2</sub>-uitstoot van enkele 
+        ammoniakproductieroutes (in kg CO<sub>2</sub> per MWh NH<sub>3</sub>). De reactie om 
+        ammoniak te produceren uit waterstof en stikstof verandert niet. Het verschil zit hem 
+        in de waterstofproductie: </br></br>
+        <ul>
+        <li>Aardgas SMR: 348 kg</li>
+        <li>Aardgas ATR: 310 kg</li>
+        <li>Kolenvergassing: 619 kg</li>
+        <li>SMR met CCS: 19 kg</li>
+        <li>ATR met CCS: 19 kg</li>
+        <li>Kolen met CCS: 39 kg</li>
+        <li>Elektrolyse: 0 kg</li>
+        <li>Biomassavergassing: 0 kg</li>
+        <li>Methaanpyrolyse: 0 kg</li>
+        </ul> </br>
+        De bovenstaande getallen zijn exclusief eventuele CO<sub>2</sub>-uitstoot veroorzaakt 
+        door het vervoeren van ammoniak naar jouw gebied. Ook ketenemissies, zoals de emissies 
+        die vrijkomen bij het bouwen van een ammoniakfrabiek of het delven van benodigde 
+        grondstoffen, zijn niet meegenomen. </br></br>
+        Bron: IEA (2021). Ammonia Technology Roadmap. p.33.

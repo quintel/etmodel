@@ -34,8 +34,8 @@
     %dl
       %dt= t('pages.contact.email')
       %dd
-        %a{ href: 'mailto:info@energytransitionmodel.com' }
-          info@energytransitionmodel.com
+        %a{ href: "mailto:#{Settings.feedback_email}" }
+          = Settings.feedback_email
       %dt= t('pages.contact.phone')
       %dd
         %a{ href: "tel:+31203033004" }

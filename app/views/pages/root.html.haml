@@ -71,7 +71,4 @@
     .ukni01_northern_ireland.blank-flag
 
   #legal
-    %ul
-      %li= link_to(t('footer.terms'), terms_of_service_url)
-      %li= link_to(t('footer.privacy'), privacy_statement_url)
-      %li= link_to(t('footer.contact_us'), contact_url)
+    = render partial: 'layouts/etm/footer'

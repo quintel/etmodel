@@ -141,8 +141,6 @@ Rails.application.routes.draw do
   get '/terms-of-service'             => 'content#terms_of_service', as: :terms_of_service
   get '/whats-new'                    => 'content#whats_new', as: :whats_new
 
-  post '/feedback' => 'feedback#send_message', as: :feedback
-
   get '/local-global' => 'compare#index', as: :local_global
   get '/local-global/:ids' => 'compare#show', as: :local_global_scenarios
 

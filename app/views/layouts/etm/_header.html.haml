@@ -3,12 +3,11 @@
     %a.logo{ href: root_path }
       %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
     .app-nav
-      = render partial: 'layouts/etm/app_menu'
+      = render partial: 'layouts/etm/about_menu'
+      = render partial: 'layouts/etm/features_menu'
+      = render partial: 'layouts/etm/development_menu'
 
   %ul.user-settings
-    - if Settings.feedback_email
-      = render partial: 'layouts/etm/feedback_nav_item'
-
     %li.locale.nav-item
       .dropdown
         %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }

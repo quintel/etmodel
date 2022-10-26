@@ -58,6 +58,21 @@ en:
         is often thought of an important transitional hydrogen production process:
         far from the cleanest and greenest, but able to facilitate upcoming hydrogen
         demand.<br />"
+    capacity_of_energy_hydrogen_autothermal_reformer:
+      title: Autothermal reforming
+      short_description:
+      description: |
+        Adjust the total installed capacity of autothermal reformers (ATR) using this slider.
+        <br/><br/>
+        Autothermal reforming (ATR) is a production method for syngas/biofuels: a combination of hydrogen (H2) and carbon monoxide (CO). 
+        It combines partial oxidation (POX) and steam methane reforming (SMR) within one reactor. The advantage of 
+        this production method is that the ratio between hydrogen and carbon monoxide (H2:CO) can be varied. This 
+        is useful for the production of (different types of) biofuels. The disadvantage is a lower energy 
+        efficiency in comparison to an SMR.
+        <br/><br/>
+        Add CCUS to the ATR by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
+        <br/><br/>
+        For more technology specifications, checkout the technical and financial properties below.
     capacity_of_energy_hydrogen_biomass_gasification:
       title: Biomass gasification
       short_description:

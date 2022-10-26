@@ -4,8 +4,8 @@
 
 Het Energietransitiemoodel (ETM) is een interactieve, online simulatie tool voor energiesystemen.
 Het model stelt je in staat om tot in groot detail mogelijke toekomstige energiesystemen te
-onderzoeken en kwantificeren. Het ETM is gratis in gebruik, open source en beschikbaar voor (EU)
-landen, gemeenten en vele andere regio’s.
+onderzoeken en kwantificeren. Het ETM is gratis in gebruik, [open source](/development#open-source)
+en beschikbaar voor (EU) landen, gemeenten en vele andere regio’s.
 
 <h2 id="why-use">Waarom het Energietransitiemodel?</h2>
 

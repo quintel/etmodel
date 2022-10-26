@@ -4,10 +4,11 @@
 
 Het Energietransitiemodel is ontwikkeld en wordt onderhouden door [Quintel](https://quintel.com/).
 Quintel streeft ernaar de energietransitie te versnellen met state-of-the-art en open source tools
-en data. Dit doen wij in samenwerking met onze partners. Naast het doorontwikkelen van het
-Energietransitiemodel helpen we netbeheerders, beleidsmakers, adviseurs en vele anderen bij het
-gebruiken en toepassen van het ETM. Bekijk [hier](https://quintel.com/projects) wat wij voor u
-kunnen betekenen.
+en data. Dit doen wij in samenwerking met onze partners. Naast de continue 
+[ontwikkeling](/development#development-process) van het Energietransitiemodel helpen we netbeheerders, 
+beleidsmakers, adviseurs en vele anderen bij het gebruiken en toepassen van het ETM. 
+
+[Bekijk wat wij voor u kunnen betekenen →](https://quintel.com/projects)
 
 <h2 id="open-source">Open source</h2>
 
@@ -40,4 +41,6 @@ De uitbreiding en verbetering van het ETM is volledig afhankelijk van (de contin
 van partners. Door de jaren heen hebben netbeheerders, overheidspartijen, adviesbureaus,
 universiteiten en kennisinstellingen actief kennis en middelen ingebracht om ervoor te zorgen dat
 het ETM een toonaangevend en open source tool blijft. Wilt u samenwerken om het model uit te breiden
-of te verbeteren? Neem dan [hier](https://quintel.com/contact) contact met ons op.
+of te verbeteren?
+
+[Neem contact met ons op →](https://quintel.com/contact)

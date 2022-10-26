@@ -174,7 +174,24 @@ en:
     co2_intensity_of_hydrogen_production:
       title: CO<sub>2</sub> intensity per hydrogen production type
       short_description:
-      description:
+      description: |
+        This chart shows the CO<sub>2</sub> intensity of different hydrogen production technologies
+        in kg CO<sub>2</sub> per MWh hydrogen produced. You can find power-to-gas (P2G) in the 
+        <a href=/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen>Conversion to hydrogen</a>
+        section. All other technologies can be found in the 
+        <a href=/scenario/supply/hydrogen/hydrogen-production>Hydrogen production</a> section. </br></br>
+        The emitted CO<sub>2</sub> intensity is calculated by dividing the primary emissions 
+        of each technology by its hydrogen production. For the captured CO<sub>2</sub> intensity 
+        the captured emissions are used. See our 
+        <a href="https://https://docs.energytransitionmodel.com/main/co2-main-principles#modelling-principles" target=\"_blank\">documentation</a>
+        for more information on the calculation of primary emissions. </br></br>
+        In the ETM, primary emissions are calculated on a yearly basis. For e.g., the steam methane 
+        reforming this approach suffices, since its
+        <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors" target=\"_blank\">emission factor</a>
+        is fixed throughout the year. For power-to-gas however, the CO<sub>2</sub> intensity of the 
+        electricity input can change every hour. Therefore, for power-to-gas, first the CO<sub>2</sub> 
+        intensity of electricity production is calculated. This is then combined with the hourly 
+        electricity input of power-to-gas to determine the average hourly CO<sub>2</sub> intensity.
     hydrogen_cost_capacity:
       title: Production capacities and costs of hydrogen
       short_description:

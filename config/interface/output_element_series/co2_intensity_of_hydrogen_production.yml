@@ -24,6 +24,14 @@
   gquery: co2_intensity_of_hydrogen_production_p2g_hourly_electricity_input
   output_element_key: co2_intensity_of_hydrogen_production
   key: co2_emission_power_to_gas_co2_intensity_of_hydrogen_production
+- label: co2_captured
+  color: "#E86C33"
+  order_by: 210
+  group: power_to_gas
+  is_target_line: false
+  gquery: captured_co2_intensity_of_hydrogen_production_p2g_hourly_electricity_input
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: captured_co2_emission_power_to_gas_co2_intensity_of_hydrogen_production
 
 - label: co2_emitted
   color: "#49A5F8"

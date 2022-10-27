@@ -18,6 +18,23 @@
 
 - label: co2_emitted
   color: "#49A5F8"
+  order_by: 120
+  group: autothermal_reforming
+  is_target_line: false
+  gquery: co2_intensity_of_hydrogen_production_autothermal_reformer
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_emission_autothermal_reforming_co2_intensity_of_hydrogen_production
+- label: co2_captured
+  color: "#E86C33"
+  order_by: 130
+  group: autothermal_reforming
+  is_target_line: false
+  gquery: captured_co2_intensity_of_hydrogen_production_autothermal_reformer
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: captured_co2_autothermal_reforming_co2_intensity_of_hydrogen_production
+
+- label: co2_emitted
+  color: "#49A5F8"
   order_by: 200
   group: power_to_gas
   is_target_line: false

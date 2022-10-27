@@ -174,7 +174,24 @@ nl:
     co2_intensity_of_hydrogen_production:
       title: CO<sub>2</sub>-intensiteit per type waterstofproductie
       short_description:
-      description:
+      description: |
+        Deze grafiek laat de CO<sub>2</sub>-intensiteit van verschillende waterstofproductietechnologieën
+        zien in kg CO<sub>2</sub> per geproduceerde MWh waterstof. Je kunt power-to-gas (P2G) vinden in de 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof</a>
+        sectie. Alle andere technologieën zijn in de 
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie te vinden. </br></br>
+        De uitgestoten CO<sub>2</sub>-intensiteit wordt berekend door de primaire emissies van elke technologie 
+        te delen door de bijbehorende waterstofproductie. Voor de afgevangen CO<sub>2</sub>-intensiteit zijn 
+        de afgevangen emissies gebruikt. Ga naar onze 
+        <a href="https://https://docs.energytransitionmodel.com/main/co2-main-principles#modelling-principles" target="_blank">documentatie</a>
+        voor meer informatie over de berekening van primaire emissies. </br></br>
+        Primaire emissies worden in het ETM op jaarbasis berekend. In de meeste gevallen is dit toereikend, omdat
+        de <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors" target="_blank">emissiefactor</a>
+        constant is gedurende het jaar, zoals bij stoomreforming van aardgas. Bij power-to-gas kan de 
+        CO<sub>2</sub>-intensiteit van de elektriciteitsinput per uur veranderen. Daarom is voor power-to-gas
+        eerst de CO<sub>2</sub>-intensiteit van elektriciteitsproductie berekend. Dit wordt vervolgens gecombineerd
+        met de uurlijkse elektriciteitsinput van power-to-gas om de gemiddelde uurlijkse CO<sub>2</sub>-intensiteit
+        te bepalen.
     hydrogen_cost_capacity:
       title: Productiecapaciteiten en kosten van waterstof
       short_description:

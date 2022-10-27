@@ -176,21 +176,21 @@ en:
       short_description:
       description: |
         This chart shows the CO<sub>2</sub> intensity of different hydrogen production technologies
-        in kg CO<sub>2</sub> per MWh hydrogen produced. You can find power-to-gas (P2G) in the 
-        <a href=/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen>Conversion to hydrogen</a>
-        section. All other technologies can be found in the 
-        <a href=/scenario/supply/hydrogen/hydrogen-production>Hydrogen production</a> section. </br></br>
-        The emitted CO<sub>2</sub> intensity is calculated by dividing the primary emissions 
-        of each technology by its hydrogen production. For the captured CO<sub>2</sub> intensity 
-        the captured emissions are used. See our 
-        <a href="https://https://docs.energytransitionmodel.com/main/co2-main-principles#modelling-principles" target=\"_blank\">documentation</a>
+        in kg CO<sub>2</sub> per MWh hydrogen produced. You can find power-to-gas (P2G) in the
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen</a>
+        section. All other technologies can be found in the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section. </br></br>
+        The emitted CO<sub>2</sub> intensity is calculated by dividing the primary emissions
+        of each technology by its hydrogen production. For the captured CO<sub>2</sub> intensity
+        the captured emissions are used. See our
+        <a href="https://https://docs.energytransitionmodel.com/main/co2-main-principles#modelling-principles" target="_blank">documentation</a>
         for more information on the calculation of primary emissions. </br></br>
-        In the ETM, primary emissions are calculated on a yearly basis. For e.g., the steam methane 
-        reforming this approach suffices, since its
-        <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors" target=\"_blank\">emission factor</a>
-        is fixed throughout the year. For power-to-gas however, the CO<sub>2</sub> intensity of the 
-        electricity input can change every hour. Therefore, for power-to-gas, first the CO<sub>2</sub> 
-        intensity of electricity production is calculated. This is then combined with the hourly 
+        In the ETM, primary emissions are calculated on a yearly basis. In most cases, for example steam methane
+        reforming, this approach suffices since its
+        <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors" target="_blank">emission factor</a>
+        is fixed throughout the year. For power-to-gas however, the CO<sub>2</sub> intensity of the
+        electricity input can change every hour. Therefore, for power-to-gas first the CO<sub>2</sub>
+        intensity of electricity production is calculated. This is then combined with the hourly
         electricity input of power-to-gas to determine the average hourly CO<sub>2</sub> intensity.
     hydrogen_cost_capacity:
       title: Production capacities and costs of hydrogen
@@ -219,7 +219,7 @@ en:
       title: Final demand of oil per sector and per product
       short_description:
       description: |
-        This chart compares the final demand of oil per sector with the 
+        This chart compares the final demand of oil per sector with the
         final demand of oil per product. The following products are shown:
         <ul> <li><b>(bio)diesel</b></li>
         <li><b>(bio)kerosene</b></li>
@@ -230,7 +230,7 @@ en:
       title: Supply and demand of ammonia
       short_description:
       description: |
-        This charts compares the supply and demand of ammonia (NH<sub>3</sub>). You can set the supply 
+        This charts compares the supply and demand of ammonia (NH<sub>3</sub>). You can set the supply
         in the <a href="/scenario/supply/hydrogen/ammonia-production"> Ammonia production</a> section.
         It can then be used for:
         <ul>
@@ -245,11 +245,11 @@ en:
       title: Offshore solar and wind production per hour
       short_description:
       description: |
-        This charts shows the hourly electricity production by 
+        This charts shows the hourly electricity production by
         <a href="/scenario/supply/electricity_renewable/wind-turbines">
         offshore wind turbines</a> and
         <a href="/scenario/supply/electricity_renewable/solar-power">
-        offshore solar PV plants</a>, as well as their combined output. Additionally, it shows how much 
-        production by the solar PV plants is curtailed when the connection capacity to the grid is 
-        lower than the peak capacity. You can set this capacity  
+        offshore solar PV plants</a>, as well as their combined output. Additionally, it shows how much
+        production by the solar PV plants is curtailed when the connection capacity to the grid is
+        lower than the peak capacity. You can set this capacity
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">here</a>.

@@ -610,6 +610,29 @@ nl:
         Als je wilt weten waar in de maand de pieken plaatsvinden, kun je klikken op een drager in die
         specifieke maand en zal er een nieuwe grafiek openen die inzoomt op de uurwaarden
         van die drager in die maand.
+    flexibility_overview_timescales_imbalance:
+      title: "Flexibiliteitsbehoefte: tijdschalen"
+      short_description:
+      description: |
+        Deze tabel brengt de concepten van de vorige secties een stap verder door de flexibiliteitsbehoefte 
+        te analyseren op verschillende tijdschalen. Het laat de behoefte aan flexibel vermogen en aan 
+        flexibel volume zien voor zowel vraag als aanbod. </br></br>
+        De basis van de analyse is de <i>oorspronkelijke onbalans</i> (de
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>), 
+        die als eerst wordt getoond. De curve wordt vervolgens in twee tijdschalen opgesplitst door een 
+        72-uurs voortschrijdend gemiddelde toe te passen. Je kunt de curves zien in 
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
+        deze</a> grafiek.
+        <ul>
+        <li> De <i>korte tijdschaal</i> wordt gegeven door het verschil tussen de oorspronkelijke residual load curve 
+        en het voortschrijdend gemiddelde en is typisch zeer variabel. </li>
+        <li> De <i>lange tijdschaal</i> wordt gegeven door het voortschrijdend gemiddelde en is typisch veel vlakker. </li>
+        </ul> </br>
+        Sommige technologieën kunnen goed korte termijn flexibiliteit leveren, terwijl andere beter met lange termijn 
+        flexibiliteit om kunnen gaan. Voor netwerkgas en waterstof geldt dat flexibiliteit door (typisch ondergrondse)
+        opslag wordt gelevered. Er zijn mogelijk technische en economische beperkingen aan de mate waarin beide vormen 
+        van opslag gerealiseerd kunnen worden in jouw region. De tabel helpt je te bepalen of jouw scenario binnen 
+        deze beperkingen valt.
     flexibility_overview_flexible_capacities:
       title: "Flexibiliteitsvoorziening: capaciteit"
       short_description:

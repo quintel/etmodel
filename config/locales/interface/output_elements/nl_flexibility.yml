@@ -357,20 +357,8 @@ nl:
       title: Flexibiliteitsbehoefte op verschillende tijdschalen
       short_description:
       description: |
-        Deze tabel analyseert de '<i>residual load curve</i>' voor netwerkgas en waterstof om de 
-        flexibiliteitsbehoefte te bepalen. The residual load curve geeft de onbalans in inflexibele 
-        vraag en aanbod aan (zie <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
-        Flexibility overview</a> voor meer uitleg). </br></br>
-        Als de residual load curve positief is, is de inflexibele vraag groter dan het inflexibele aanbod.
-        Er is dan een <i>behoefte</i> aan flexibel aanbod om de systeembalans te handhaven. Als de residual 
-        load curve negatief is, is er een <i>behoefte</i> aan flexibele vraag. </br></br>
-        De tabel toont eerst het piekvermogen en het volume voor vraag en aanbod van de oorspronkelijke 
-        residual load curve. Een 72-uurs voortschrijdend gemiddeld is vervolgens toegepast om de 
-        oorspronkelijke curve in twee tijdschalen te verdelen. De <i>korte</i> tijdschaal wordt gegeven door 
-        het verschil tussen de originele curve en het voortschrijdend gemiddelde en is typisch zeer variabel.
-        De <i>lange</i> tijdschaal wordt gegeven door het voortschrijdend gemiddelde en is typisch veel
-        vlakker. Je kunt de originele curve en het voortschrijdend gemiddelde zien door op de 'Jaarlijkse' 
-        knop te klikken of door 
-        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
-        deze</a> grafiek te openen.
-
+        Deze tabel analyseert de onbalans in inflexibele vraag en aanbod (de '<i>residual load curve</i>')
+        voor netwerkgas en waterstof, om te bepalen wat de flexibiliteitsbehoefte op verschillende 
+        tijdschalen is. Hoe je deze tabel moet interpreteren wordt uitgelegd in de
+        <a href="/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales">
+        Overzicht van flexibiliteit</a> sectie.

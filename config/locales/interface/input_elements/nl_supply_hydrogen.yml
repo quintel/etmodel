@@ -47,7 +47,18 @@ nl:
     capacity_of_energy_hydrogen_autothermal_reformer:
       title: Autothermal reforming met aardgas
       short_description:
-      description: "..."
+      description: |
+        Pas met deze slider de totale capaciteit van autothermal reformers (ATR) aan.
+        <br/><br/>
+        Autothermal reforming (ATR) is een productie methode voor syngas/biobrandstof: een combinatie van waterstof (H2)
+        en koolstofmonoxide (CO). Dit wordt gedaan door een steam methane reformer (SMR) te combineren met 
+        gedeeltelijke oxidatie (POX). Het voordeel hiervan is dat deze productie methode de ratio tussen waterstof en 
+        koolstofmonoxide kan varieëren. Dit is handig voor de productie van (verschillende typen) biobrandstof. 
+        Het nadeel is de lagere efficiëntie van deze techniek in vergelijking met een SMR. 
+        <br/><br/>
+        Voeg CCUS toe aan de ATR in de <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> sectie.
+        <br/><br/>
+        Klik op de technische en financiële parameters hieronder voor meer specificaties.
     capacity_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing CCS
       short_description:

@@ -218,3 +218,20 @@ en:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv" target="_blank"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
+    data_export_residual_load_curves:
+      title: Hourly residual load curves
+      short_description:
+      description: |
+        Download the curves shown in the chart on the right. For electricity, heat on the district heating 
+        network, network gas and hydrogen, you can download the imbalance in inflexible supply and demand.
+        This imbalance is also known as the residual load curve (see the
+        <a href=/scenario/flexibility/flexibility_overview/residual-load-curves>Residual load curves</a> 
+        section for more information). </br></br>
+        For network gas and hydrogen, two additional curves are included the download, which are calculated using
+        a moving-average: the imbalance on a short and a long timescale. See the 
+        <a href=/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales>
+        Need for flexibility: timescales</a> section for more information.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/residual_load.csv" target="_blank"> <span class="name">Residual load curves</span> <span class="filetype">1MB CSV</span></a></li>
+        </ul>

@@ -41,9 +41,9 @@
   config:
     linked_chart:
       electricity: flexibility_hourly_electricity_supply_demand
-      heat: flexibility_hourly_heat_network_supply_demand
+      heat_network: flexibility_hourly_heat_network_supply_demand
       hydrogen: flexibility_hourly_hydrogen_supply_demand
-      gas: flexibility_hourly_network_gas_supply_demand
+      network_gas: flexibility_hourly_network_gas_supply_demand
     original_unit: 'MW'
 - group: Flexibility
   hidden: false
@@ -54,9 +54,9 @@
   config:
     linked_chart:
       electricity: flexibility_hourly_electricity_supply_demand
-      heat: flexibility_hourly_heat_network_supply_demand
+      heat_network: flexibility_hourly_heat_network_supply_demand
       hydrogen: flexibility_hourly_hydrogen_supply_demand
-      gas: flexibility_hourly_network_gas_supply_demand
+      network_gas: flexibility_hourly_network_gas_supply_demand
     reduce_with: max
 - group: Flexibility
   hidden: false

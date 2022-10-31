@@ -483,10 +483,8 @@ en:
         and flexible volume for both supply and demand. </br></br>
         The basis of the analysis is the <i>original imbalance</i> (the 
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>), 
-        which is shown first. The curve is then split into two timescales by applying a 72-hour moving average.
-        The curves can be seen in
-        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
-        this</a> chart.
+        which is shown first. The curve is then split into two timescales by applying a moving average. You 
+        can set the period of the moving average with the slider below.
         <ul>
         <li> The <i>short timescale</i> is given by the difference between the original residual 
         load curve and the moving average, and is typically very variable. </li>

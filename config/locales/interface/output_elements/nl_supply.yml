@@ -256,6 +256,9 @@ nl:
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">hier</a>
         aanpassen.
     source_of_electricity_in_p2g:
-      title: Herkomst elektriciteit voor power-to-gas
+      title: Elektriciteitsmix voor power-to-gas
       short_description:
-      description:
+      description: | 
+        Deze grafiek toont de elektriciteitsmix die de power-to-gas elektrolyzer gebruikt.
+        Deze mix is bepaald door te kijken naar de uurlijkse elektriciteitmix en het uurlijkse verbruik, je ziet 
+        dus de daadwerkelijke herkomst van de elektriciteit.

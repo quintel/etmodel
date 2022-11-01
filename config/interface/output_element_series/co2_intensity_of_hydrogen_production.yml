@@ -15,6 +15,14 @@
   gquery: captured_co2_intensity_of_hydrogen_production_steam_methane_reformer
   output_element_key: co2_intensity_of_hydrogen_production
   key: captured_co2_steam_methane_reforming_co2_intensity_of_hydrogen_production
+- label: co2_threshold
+  color: "#AB47BC"
+  order_by: 115
+  group: steam_methane_reforming
+  is_target_line: true
+  gquery: co2_intensity_european_commission_threshold
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_smr_co2_intensity_of_hydrogen_production
 
 - label: co2_emitted
   color: "#49A5F8"
@@ -32,6 +40,14 @@
   gquery: captured_co2_intensity_of_hydrogen_production_autothermal_reformer
   output_element_key: co2_intensity_of_hydrogen_production
   key: captured_co2_autothermal_reforming_co2_intensity_of_hydrogen_production
+- label: co2_threshold
+  color: "#AB47BC"
+  order_by: 135
+  group: autothermal_reforming
+  is_target_line: true
+  gquery: co2_intensity_european_commission_threshold
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_atr_co2_intensity_of_hydrogen_production
 
 - label: co2_emitted
   color: "#49A5F8"
@@ -49,6 +65,14 @@
   gquery: captured_co2_intensity_of_hydrogen_production_p2g_hourly_electricity_input
   output_element_key: co2_intensity_of_hydrogen_production
   key: captured_co2_emission_power_to_gas_co2_intensity_of_hydrogen_production
+- label: co2_threshold
+  color: "#AB47BC"
+  order_by: 215
+  group: power_to_gas
+  is_target_line: true
+  gquery: co2_intensity_european_commission_threshold
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_p2g_co2_intensity_of_hydrogen_production
 
 - label: co2_emitted
   color: "#49A5F8"
@@ -66,6 +90,14 @@
   gquery: captured_co2_intensity_of_hydrogen_production_biomass_gasification
   output_element_key: co2_intensity_of_hydrogen_production
   key: captured_co2_emission_biomass_gasification_co2_intensity_of_hydrogen_production
+- label: co2_threshold
+  color: "#AB47BC"
+  order_by: 315
+  group: biomass_gasification
+  is_target_line: true
+  gquery: co2_intensity_european_commission_threshold
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_biomass_co2_intensity_of_hydrogen_production
 
 - label: co2_emitted
   color: "#49A5F8"
@@ -75,6 +107,14 @@
   gquery: co2_intensity_of_hydrogen_production_ammonia_reformer
   output_element_key: co2_intensity_of_hydrogen_production
   key: co2_intensity_of_hydrogen_production_ammonia_reformer_co2_intensity_of_hydrogen_production
+- label: co2_threshold
+  color: "#AB47BC"
+  order_by: 155
+  group: ammonia_reforming
+  is_target_line: true
+  gquery: co2_intensity_european_commission_threshold
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_ammonia_co2_intensity_of_hydrogen_production
 
 - label: co2_emitted
   color: "#49A5F8"
@@ -84,3 +124,11 @@
   gquery: co2_intensity_of_hydrogen_production_import
   output_element_key: co2_intensity_of_hydrogen_production
   key: co2_emission_import_co2_intensity_of_hydrogen_production
+- label: co2_threshold
+  color: "#AB47BC"
+  order_by: 505
+  group: import
+  is_target_line: true
+  gquery: co2_intensity_european_commission_threshold
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_import_co2_intensity_of_hydrogen_production

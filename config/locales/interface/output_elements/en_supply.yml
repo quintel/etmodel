@@ -191,7 +191,12 @@ en:
         is fixed throughout the year. For power-to-gas however, the CO<sub>2</sub> intensity of the
         electricity input can change every hour. Therefore, for power-to-gas first the CO<sub>2</sub>
         intensity of electricity production is calculated. This is then combined with the hourly
-        electricity input of power-to-gas to determine the average hourly CO<sub>2</sub> intensity.
+        electricity input of power-to-gas to determine the average hourly CO<sub>2</sub> intensity. </br></br>
+        Finally, a CO<sub>2</sub> intensity threshold value that determines whether, according to the 
+        <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021R2139&from=EN" target="_blank">
+        European Commission</a>, the manufacturing of hydrogen qualifies as "contributing substantially to climate 
+        change mitigation" has been added to the chart. This threshold is set at 3 kg CO<sub>2</sub> per kg of 
+        H<sub>2</sub> produced and has been converted to kg per MWh.
     hydrogen_cost_capacity:
       title: Production capacities and costs of hydrogen
       short_description:

@@ -455,6 +455,18 @@
   dependent_on: 
   output_element_key: mekko_of_detailed_final_demand_in_industry
   key: solar_fertilizers_mekko_of_detailed_final_demand_in_industry
+- label: ammonia
+  color: "#1ce6d6"
+  order_by: 8
+  group: fertilizers
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: final_demand_of_ammonia_in_fertilizers_industry
+  is_1990: 
+  dependent_on: 
+  output_element_key: mekko_of_detailed_final_demand_in_industry
+  key: ammonia_fertilizers_mekko_of_detailed_final_demand_in_industry
 - label: solar
   color: "#FFD900"
   order_by: 7

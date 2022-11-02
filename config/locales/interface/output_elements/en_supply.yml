@@ -132,7 +132,7 @@ en:
         scenario. The columns contain (from left to right) name, number of units,
         electricity production, heat production and installed capacity of CHP plants.\r\n"
     collective_heat_mekko:
-      title: Demand and supply of district heating
+      title: Supply and demand of district heating
       short_description: ''
       description: ''
     heat_network_demand:
@@ -144,7 +144,7 @@ en:
       short_description: ''
       description: ''
     industrial_heat_mekko:
-      title: Demand and supply of collective heat in industry
+      title: Supply and demand of collective heat in industry
       short_description:
       description:
     heat_network_storage:
@@ -156,7 +156,7 @@ en:
       short_description: ''
       description: ''
     mekko_of_hydrogen_network:
-      title: Demand and supply of the central hydrogen network
+      title: Supply and demand of the central hydrogen network
       short_description: ''
       description: ''
     hydrogen_production:
@@ -171,6 +171,32 @@ en:
       title: Hydrogen storage
       short_description: ''
       description: ''
+    co2_intensity_of_hydrogen_production:
+      title: CO<sub>2</sub> intensity per hydrogen production type
+      short_description:
+      description: |
+        This chart shows the CO<sub>2</sub> intensity of different hydrogen production technologies
+        in kg CO<sub>2</sub> per MWh hydrogen produced. You can find power-to-gas (P2G) in the
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen</a>
+        section. All other technologies can be found in the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section. </br></br>
+        The emitted CO<sub>2</sub> intensity is calculated by dividing the primary emissions
+        of each technology by its hydrogen production. For the captured CO<sub>2</sub> intensity
+        the captured emissions are used. See our
+        <a href="https://https://docs.energytransitionmodel.com/main/co2-main-principles#modelling-principles" target="_blank">documentation</a>
+        for more information on the calculation of primary emissions. </br></br>
+        In the ETM, primary emissions are calculated on a yearly basis. In most cases, for example steam methane
+        reforming, this approach suffices since its
+        <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors" target="_blank">emission factor</a>
+        is fixed throughout the year. For power-to-gas however, the CO<sub>2</sub> intensity of the
+        electricity input can change every hour. Therefore, for power-to-gas first the CO<sub>2</sub>
+        intensity of electricity production is calculated. This is then combined with the hourly
+        electricity input of power-to-gas to determine the average hourly CO<sub>2</sub> intensity. </br></br>
+        Finally, a CO<sub>2</sub> intensity threshold value that determines whether, according to the 
+        <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021R2139&from=EN" target="_blank">
+        European Commission</a>, the manufacturing of hydrogen qualifies as "contributing substantially to climate 
+        change mitigation" has been added to the chart. This threshold is set at 3 kg CO<sub>2</sub> per kg of 
+        H<sub>2</sub> produced and has been converted to kg per MWh.
     hydrogen_cost_capacity:
       title: Production capacities and costs of hydrogen
       short_description:
@@ -191,29 +217,52 @@ en:
         the end result in the end year (the black bar to the far right of the chart).\r\n<br/><br/>\r\nOverall,
         the lower the dependence on foreign energy the better it is."
     mekko_of_kerosene_demand_supply:
-      title: Demand and supply of kerosene
+      title: Supply and demand of kerosene
       short_description: ''
       description: ''
     mekko_of_oil_mix:
       title: Final demand of oil per sector and per product
       short_description:
       description: |
-        This chart compares the final demand of oil per sector with the 
+        This chart compares the final demand of oil per sector with the
         final demand of oil per product. The following products are shown:
         <ul> <li><b>(bio)diesel</b></li>
         <li><b>(bio)kerosene</b></li>
         <li><b>LPG</b></li>
         <li><b>other oil</b> (a.o. crude oil, gasoline, fuel oil, naphtha, petcokes and refinery gas)</li>
         <li><b>other bio-oil</b> (biogasoline, other biofuels)</li>
+    mekko_of_ammonia_demand_supply:
+      title: Supply and demand of ammonia
+      short_description:
+      description: |
+        This charts compares the supply and demand of ammonia (NH<sub>3</sub>). You can set the supply
+        in the <a href="/scenario/supply/hydrogen/ammonia-production"> Ammonia production</a> section.
+        It can then be used for:
+        <ul>
+        <li><a href=/scenario/supply/hydrogen/hydrogen-production>reforming to hydrogen</a></li>
+        <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a></li>
+        <li><a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>domestic navigation</a> (inland shipping) </li>
+        <li><a href=/scenario/demand/transport_international_transport/international-navigation-technology>international navigation</a> (maritime shipping) </li>
+        </ul>
+        If the supply is insufficient to cover demand, back-up import is used to cover the difference.
+        If it exceeds demand, the excess is exported.
     supply_offshore_solar_wind:
       title: Offshore solar and wind production per hour
       short_description:
       description: |
-        This charts shows the hourly electricity production by 
+        This charts shows the hourly electricity production by
         <a href="/scenario/supply/electricity_renewable/wind-turbines">
         offshore wind turbines</a> and
         <a href="/scenario/supply/electricity_renewable/solar-power">
-        offshore solar PV plants</a>, as well as their combined output. Additionally, it shows how much 
-        production by the solar PV plants is curtailed when the connection capacity to the grid is 
-        lower than the peak capacity. You can set this capacity  
+        offshore solar PV plants</a>, as well as their combined output. Additionally, it shows how much
+        production by the solar PV plants is curtailed when the connection capacity to the grid is
+        lower than the peak capacity. You can set this capacity
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">here</a>.
+    source_of_electricity_in_p2g:
+      title: Electricity mix for power-to-gas
+      short_description:
+      description: | 
+        This graph shows the electricity mix that the power-to-gas electrolyzer uses.
+        This mix is determined by looking at the hourly electricity mix and the hourly consumption, 
+        in this way you see the actual source of the electricity.
+        

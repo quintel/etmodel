@@ -4,12 +4,27 @@
   step_value: 1.0
   unit: "%"
   related_node: energy_hydrogen_flexibility_p2g_electricity
-  position: 1
+  position: 100
   slide_key: costs_hydrogen_production
+- key: investment_costs_ammonia_reforming
+  interface_group: costs
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_hydrogen_ammonia_reformer
+  position: 110
+  slide_key: costs_hydrogen_production
+
 - key: efficiency_hydrogen_electrolysis
   interface_group: efficiency
   step_value: 1.0
   unit: "%"
   related_node: energy_hydrogen_flexibility_p2g_electricity
-  position: 2
+  position: 200
+  slide_key: costs_hydrogen_production
+- key: efficiency_ammonia_reforming
+  interface_group: efficiency
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_hydrogen_ammonia_reformer
+  position: 210
   slide_key: costs_hydrogen_production

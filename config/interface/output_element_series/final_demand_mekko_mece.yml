@@ -863,3 +863,39 @@
   dependent_on: 
   output_element_key: final_demand_mekko_mece
   key: hydrogen_bunkers_final_demand_mekko_mece
+- label: ammonia
+  color: "#1ce6d6"
+  order_by: 50
+  group: industry
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: final_demand_of_ammonia_in_industry
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_mekko_mece
+  key: ammonia_industry_final_demand_mekko_mece
+- label: ammonia
+  color: "#1ce6d6"
+  order_by: 50
+  group: transport
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: final_demand_of_ammonia_in_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_mekko_mece
+  key: ammonia_transport_final_demand_mekko_mece
+- label: ammonia
+  color: "#1ce6d6"
+  order_by: 50
+  group: bunkers
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: final_demand_of_ammonia_in_bunkers
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_mekko_mece
+  key: ammonia_bunkers_final_demand_mekko_mece

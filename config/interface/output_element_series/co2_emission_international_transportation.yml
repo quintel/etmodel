@@ -59,6 +59,18 @@
   dependent_on: 
   output_element_key: co2_emission_international_transportation
   key: hydrogen_co2_emission_international_transportation
+- label: ammonia
+  color: "#1ce6d6"
+  order_by: 6
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: ammonia_co2_emission_international_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: ammonia_co2_emission_international_transportation
 - label: international_transportation_1990
   color: "#333333"
   order_by: 1

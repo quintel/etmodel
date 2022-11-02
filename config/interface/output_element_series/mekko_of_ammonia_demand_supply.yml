@@ -1,0 +1,86 @@
+---
+- label: ammonia_demand_domestic_navigation
+  color: "#0984E3"
+  order_by: 130
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_domestic_navigation
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_domestic_navigation_mekko_of_ammonia_demand_supply
+- label: ammonia_demand_international_navigation
+  color: "#8B4513"
+  order_by: 100
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_international_navigation
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_international_navigation_mekko_of_ammonia_demand_supply
+- label: ammonia_demand_fertilizer_industry
+  color: "#228B22"
+  order_by: 110
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_fertilizer_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_fertilizer_industry_mekko_of_ammonia_demand_supply
+- label: ammonia_demand_hydrogen_ammonia_reformer
+  color: "#87CEEB"
+  order_by: 120
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_hydrogen_ammonia_reformer
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_hydrogen_ammonia_reformer_mekko_of_ammonia_demand_supply
+- label: ammonia_demand_export
+  color: "#485460"
+  order_by: 150
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_export
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_export_mekko_of_ammonia_demand_supply
+
+- label: ammonia_supply_import_baseload
+  color: "#bdfff6"
+  order_by: 200
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_supply_import_baseload
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_supply_import_baseload_mekko_of_ammonia_demand_supply
+- label: ammonia_supply_import_backup
+  color: "#71e3da"
+  order_by: 210
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_supply_import_backup
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_supply_import_backup_mekko_of_ammonia_demand_supply

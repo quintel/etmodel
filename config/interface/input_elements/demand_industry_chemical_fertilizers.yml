@@ -8,13 +8,13 @@
   step_value: 0.1
   unit: "%/year"
   interface_group: efficiency_industry
-  position: 2
+  position: 40
   slide_key: demand_industry_chemical_fertilizers
 - key: industry_useful_demand_for_chemical_fertilizers_useable_heat_efficiency
   step_value: 0.1
   unit: "%/year"
   interface_group: efficiency_industry
-  position: 3
+  position: 41
   slide_key: demand_industry_chemical_fertilizers
 - key: industry_chemicals_fertilizers_burner_network_gas_share
   share_group: chemical_fertilizers_heat
@@ -22,7 +22,7 @@
   unit: "%"
   interface_group: heat production
   related_node: industry_chemicals_fertilizers_burner_network_gas
-  position: 4
+  position: 50
   slide_key: demand_industry_chemical_fertilizers
 - key: industry_chemicals_fertilizers_burner_crude_oil_share
   share_group: chemical_fertilizers_heat
@@ -30,7 +30,7 @@
   unit: "%"
   interface_group: heat production
   related_node: industry_chemicals_fertilizers_burner_crude_oil
-  position: 5
+  position: 51
   slide_key: demand_industry_chemical_fertilizers
 - key: industry_chemicals_fertilizers_burner_coal_share
   share_group: chemical_fertilizers_heat
@@ -38,7 +38,7 @@
   unit: "%"
   interface_group: heat production
   related_node: industry_chemicals_fertilizers_burner_coal
-  position: 7
+  position: 53
   slide_key: demand_industry_chemical_fertilizers
 - key: industry_chemicals_fertilizers_burner_wood_pellets_share
   share_group: chemical_fertilizers_heat
@@ -46,28 +46,35 @@
   unit: "%"
   interface_group: heat production
   related_node: industry_chemicals_fertilizers_burner_wood_pellets
-  position: 6
+  position: 52
   slide_key: demand_industry_chemical_fertilizers
 - key: industry_final_demand_for_chemical_fertilizers_steam_hot_water_share
   share_group: chemical_fertilizers_heat
   step_value: 0.1
   unit: "%"
   interface_group: heat production
-  position: 10
+  position: 54
   slide_key: demand_industry_chemical_fertilizers
-- key: industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share
-  share_group: hydrogen_production
+- key: industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share
+  share_group: fertilizer_production_route
   step_value: 0.1
   unit: "%"
-  interface_group: hydrogen_production
-  position: 4
+  interface_group: fertilizer_production_route
+  position: 30
   slide_key: demand_industry_chemical_fertilizers
-- key: industry_chemicals_fertilizers_hydrogen_network_share
-  share_group: hydrogen_production
+- key: industry_chemicals_fertilizers_local_ammonia_central_hydrogen_share
+  share_group: fertilizer_production_route
   step_value: 0.1
   unit: "%"
-  interface_group: hydrogen_production
-  position: 5
+  interface_group: fertilizer_production_route
+  position: 31
+  slide_key: demand_industry_chemical_fertilizers
+- key: industry_chemicals_fertilizers_central_ammonia_share
+  share_group: fertilizer_production_route
+  step_value: 0.1
+  unit: "%"
+  interface_group: fertilizer_production_route
+  position: 32
   slide_key: demand_industry_chemical_fertilizers
 - key: industry_chemicals_fertilizers_burner_hydrogen_share
   share_group: chemical_fertilizers_heat
@@ -75,7 +82,7 @@
   unit: "%"
   interface_group: heat production
   related_node: industry_chemicals_fertilizers_burner_hydrogen
-  position: 10
+  position: 55
   slide_key: demand_industry_chemical_fertilizers
 - key: capacity_of_industry_chemicals_fertilizers_flexibility_p2h_electricity
   step_value: 1.0

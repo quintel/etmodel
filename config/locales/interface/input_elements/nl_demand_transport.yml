@@ -353,11 +353,27 @@ nl:
         Waterstof-aangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
         Er zijn voor deze technologie daarom nog verschillende ontwerpen mogelijk, bijvoorbeeld of er een interne 
         verbrandingsmotor of een brandstofcel gebruikt wordt om de waterstof om te zetten. </br></br>
-        Vergeleken met LNG, of zeker met zware stookolie (heavy fuel oil, HFO), kan de inzet van 
-        waterstof in de zeevaart significant bijdragen aan het verlagen van emissies. Dit 
-        hangt wel af van de manier waarop waterstof geproduceerd wordt.
-        In de <a href=/scenario/supply/hydrogen/hydrogen-production>waterstofproductiesectie</a>
+        Het is technisch mogelijk om CO<sub>2</sub>-vrije waterstof te produceren. Inzet van waterstof 
+        in de scheepvaart kan daarom bijdragen aan de decarbonisatie van vrachtvervoer door schepen.
+        Hoeveel emissies je daadwerkelijk reduceert hangt af van de manier waarop de waterstof is geproduceerd.
+        In de <a href=/scenario/supply/hydrogen/hydrogen-production>Waterstofproductie</a>-sectie
         kun je bepalen hoe dat gedaan wordt.
+    bunkers_ship_using_ammonia_share:
+      title: Ammoniak
+      short_description:
+      description: |
+        Net zoals waterstof-aangedreven schepen, zijn ammoniak-aangedreven schepen een nieuwe technologie.
+        Een enkel dominant ontwerp moet voor dit type schip nog ontstaan. </br></br>
+        Het is technisch mogelijk om CO<sub>2</sub>-vrije ammonia te produceren. Inzet van ammoniak 
+        in de scheepvaart kan daarom bijdragen aan de decarbonisatie van vrachtvervoer door schepen.
+        Hoeveel emissies je daadwerkelijk reduceert hangt af van de manier waarop de ammonia is geproduceerd.
+        In de <a href=/scenario/supply/hydrogen/ammonia-production>Ammoniakproductie</a>-sectie
+        kun je bepalen hoe dat gedaan wordt. </br></br>
+        Vergeleken met waterstof-aangedreven schepen is het voornaamste voordeel van ammoniak dat het 
+        gemakkelijker opgeslagen kan worden. Ammoniak wordt vloeibaar bij een temperatuur die veel dichter 
+        bij 0 ligt dan waterstof. Hierdoor is vloeibare opslag van ammoniak minder energie-intensief. 
+        Als alternatief heeft gecomprimeerde ammoniak bij gelijke druk een substantieel hogere energiedichtheid 
+        dan waterstof, waardoor minder ruimte nodig is om dezelfde hoeveelheid brandstof te vervoeren.
     transport_passenger_train_using_coal_share:
       title: Kolen
       short_description: ''
@@ -482,7 +498,7 @@ nl:
       title: Diesel / dual fuel
       short_description:
       description: |
-        Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
+        Met dit schuifje kun je het percentage instellen van de totale vrachtkilometers in 
         de binnenvaart die worden afgelegd door diesel schepen. </br></br>
         Schepen voor de binnenvaart worden doorgaans aangedreven door
         dieselmotoren. Deze motoren kunnen volgens diverse processen en onder hoge
@@ -498,7 +514,7 @@ nl:
       title: Vloeibaar aardgas (LNG)
       short_description:
       description: |
-        Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
+        Met dit schuifje kun je het percentage instellen van de totale vrachtkilometers in 
         de binnenvaart die worden afgelegd door LNG schepen. </br></br>
         (Vloeibaar) aardgas-motoren zijn een relatief nieuwe motortechnologie.
         Dit zijn Ottomotoren die op lage druk werken en geoptimaliseerd zijn voor
@@ -511,29 +527,47 @@ nl:
       title: Waterstof
       short_description:
       description: |
-        Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
+        Met dit schuifje kun je het percentage instellen van de totale vrachtkilometers in 
         de binnenvaart die worden afgelegd door waterstof schepen. </br></br>
         Waterstof-aangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
         Er zijn voor deze technologie daarom nog verschillende ontwerpen mogelijk, bijvoorbeeld of er een interne 
         verbrandingsmotor of een brandstofcel gebruikt wordt om de waterstof om te zetten. 
-        Dit schuifje representeerd een schip met een brandstofcel. Vergeleken met LNG, diesel, 
-        of zeker met zware stookolie (heavy fuel oil, HFO), kan de inzet van 
-        waterstof in de binnenvaart significant bijdragen aan het verlagen van emissies. Dit 
-        hangt wel af van de manier waarop waterstof geproduceerd wordt.
-        In de <a href=/scenario/supply/hydrogen/hydrogen-production>waterstofproductiesectie</a>
-        is het mogelijk om dit aan te passen. </br></br>
-        Bekijk de technische parameters en kosten hieronder voor meer informatie.
+        Hier is ervoor gekozen om de specificaties van een schip met brandstofcel te gebruiken.
+        Zie de "Technische parameters en kosten" voor meer informatie. </br></br>
+        Het is technisch mogelijk om CO<sub>2</sub>-vrije waterstof te produceren. Inzet van waterstof 
+        in de scheepvaart kan daarom bijdragen aan de decarbonisatie van vrachtvervoer door schepen.
+        Hoeveel emissies je daadwerkelijk reduceert hangt af van de manier waarop de waterstof is geproduceerd.
+        In de <a href=/scenario/supply/hydrogen/hydrogen-production>Waterstofproductie</a>-sectie
+        kun je bepalen hoe dat gedaan wordt.
     transport_ship_using_electricity_share:
       title: Elektrisch
       short_description:
       description: |
-        Met deze slider kun je het percentage instellen van de totale vrachtkilometers in 
+        Met dit schuifje kun je het percentage instellen van de totale vrachtkilometers in 
         de binnenvaart die worden afgelegd door elektrische schepen. </br></br>
         (Volledig) elektrische schepen gebruiken batterijen om vracht te vervoeren. Batterijen in combinatie 
         met een elektrische motor zijn ongeveer twee keer zo efficiënt vergeleken met een verbrandingsmotor. 
         Met de huidige batterij technologie is het niet mogelijk om efficiënt grote afstanden te 
         overbruggen waardoor batterijen vaak opnieuw opgeladen of vervangen moeten worden. </br></br>
         Bekijk de technische parameters en kosten hieronder voor meer informatie.
+    transport_ship_using_ammonia_share:
+      title: Ammonia
+      short_description:
+      description: |
+        Net zoals waterstof-aangedreven schepen, zijn ammoniak-aangedreven schepen een nieuwe technologie.
+        Een enkel dominant ontwerp moet voor dit type schip nog ontstaan. Hier hebben we ervoor gekozen om 
+        de specificaties van een ammoniak-aangedreven schip met een interne verbrandingsmotor te gebruiken.
+        Zie de "Technische parameters en kosten" voor meer informatie. </br></br>
+        Het is technisch mogelijk om CO<sub>2</sub>-vrije ammonia te produceren. Inzet van ammoniak 
+        in de scheepvaart kan daarom bijdragen aan de decarbonisatie van vrachtvervoer door schepen.
+        Hoeveel emissies je daadwerkelijk reduceert hangt af van de manier waarop de ammonia is geproduceerd.
+        In de <a href=/scenario/supply/hydrogen/ammonia-production>Ammoniakproductie</a>-sectie
+        kun je bepalen hoe dat gedaan wordt. </br></br>
+        Vergeleken met waterstof-aangedreven schepen is het voornaamste voordeel van ammoniak dat het 
+        gemakkelijker opgeslagen kan worden. Ammoniak wordt vloeibaar bij een temperatuur die veel dichter 
+        bij 0 ligt dan waterstof. Hierdoor is vloeibare opslag van ammoniak minder energie-intensief. 
+        Als alternatief heeft gecomprimeerde ammoniak bij gelijke druk een substantieel hogere energiedichtheid 
+        dan waterstof, waardoor minder ruimte nodig is om dezelfde hoeveelheid brandstof te vervoeren.
     transport_trucks_share:
       title: Vrachtwagens
       short_description: ''

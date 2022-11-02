@@ -982,3 +982,21 @@ en:
       short_description:
       description: |
         This slider sets the future efficiency of water heat pumps with thermal storage (TS) in agriculture for heating.
+    costs_imported_ammonia:
+      title: Imported ammonia
+      short_description:
+      description: |
+        This slider sets the future wholesale price of imported ammonia (in €/MWh).
+    investment_costs_ammonia_reforming:
+      title: Investment costs ammonia reformer
+      short_description:
+      description: |
+        Ammonia reformers convert ammonia (NH<sub>3</sub>) into hydrogen (H<sub>2</sub>).
+        This slider determines the change in future investment costs of ammonia reformers.
+        You can set installed capacity for these reformers in the 
+        <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a> section.
+    efficiency_ammonia_reforming:
+      title: Ammonia reformer
+      short_description:
+      description: |
+        This slider sets the future efficiency of ammonia reformers.

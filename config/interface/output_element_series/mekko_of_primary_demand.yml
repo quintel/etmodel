@@ -1439,3 +1439,99 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_heat_export_and_curtailment_mekko_of_primary_demand
+- label: imported_ammonia
+  color: "#1ce6d6"
+  order_by: 16
+  group: energy_industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_ammonia_industry_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_ammonia_industry_mekko_of_primary_demand
+- label: imported_ammonia
+  color: "#1ce6d6"
+  order_by: 16
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_ammonia_households_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_ammonia_households_mekko_of_primary_demand
+- label: imported_ammonia
+  color: "#1ce6d6"
+  order_by: 16
+  group: bunkers
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_ammonia_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_ammonia_bunkers_mekko_of_primary_demand
+- label: imported_ammonia
+  color: "#1ce6d6"
+  order_by: 16
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_ammonia_agriculture_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_ammonia_agriculture_mekko_of_primary_demand
+- label: imported_ammonia
+  color: "#1ce6d6"
+  order_by: 16
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_ammonia_other_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_ammonia_other_mekko_of_primary_demand
+- label: imported_ammonia
+  color: "#1ce6d6"
+  order_by: 16
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_ammonia_transport_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_ammonia_transport_mekko_of_primary_demand
+- label: imported_ammonia
+  color: "#1ce6d6"
+  order_by: 16
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_ammonia_buildings_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_ammonia_buildings_mekko_of_primary_demand
+- label: imported_ammonia
+  color: "#1ce6d6"
+  order_by: 16
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_ammonia_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_ammonia_export_and_curtailment_mekko_of_primary_demand

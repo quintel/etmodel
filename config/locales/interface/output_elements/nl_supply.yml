@@ -171,6 +171,32 @@ nl:
       title: Waterstofopslag
       short_description: ''
       description: ''
+    co2_intensity_of_hydrogen_production:
+      title: CO<sub>2</sub>-intensiteit per type waterstofproductie
+      short_description:
+      description: |
+        Deze grafiek laat de CO<sub>2</sub>-intensiteit van verschillende waterstofproductietechnologieën
+        zien in kg CO<sub>2</sub> per geproduceerde MWh waterstof. Je kunt power-to-gas (P2G) vinden in de 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof</a>
+        sectie. Alle andere technologieën zijn in de 
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie te vinden. </br></br>
+        De uitgestoten CO<sub>2</sub>-intensiteit wordt berekend door de primaire emissies van elke technologie 
+        te delen door de bijbehorende waterstofproductie. Voor de afgevangen CO<sub>2</sub>-intensiteit zijn 
+        de afgevangen emissies gebruikt. Ga naar onze 
+        <a href="https://https://docs.energytransitionmodel.com/main/co2-main-principles#modelling-principles" target="_blank">documentatie</a>
+        voor meer informatie over de berekening van primaire emissies. </br></br>
+        Primaire emissies worden in het ETM op jaarbasis berekend. In de meeste gevallen is dit toereikend, omdat
+        de <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors" target="_blank">emissiefactor</a>
+        constant is gedurende het jaar, zoals bij stoomreforming van aardgas. Bij power-to-gas kan de 
+        CO<sub>2</sub>-intensiteit van de elektriciteitsinput per uur veranderen. Daarom is voor power-to-gas
+        eerst de CO<sub>2</sub>-intensiteit van elektriciteitsproductie berekend. Dit wordt vervolgens gecombineerd
+        met de uurlijkse elektriciteitsinput van power-to-gas om de gemiddelde uurlijkse CO<sub>2</sub>-intensiteit
+        te bepalen. </br></br>
+        Tenslotte is er een grenswaarde voor de CO<sub>2</sub>-intensiteit toegevoegd die aangeeft of, volgens de
+        <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/PDF/?uri=CELEX:32021R2139&from=EN" target="_blank">
+        Europese Commissie</a>, de productie van waterstof kan worden aangemerkt als "substantieel bijdragend aan de 
+        mitigatie van klimaatverandering". Deze grenswaarde staat op 3 kg CO<sub>2</sub> per kg H<sub>2</sub> en is
+        omgerekend naar kg per MWh.
     hydrogen_cost_capacity:
       title: Productiecapaciteiten en kosten van waterstof
       short_description:
@@ -206,6 +232,21 @@ nl:
         <li><b>LPG</b></li>
         <li><b>andere olie</b> (o.a. aardolie, benzine, stookolie, naphtha, petcokes en raffinagegas)</li>
         <li><b>andere bio-olie</b> (biobenzine, andere biobrandstoffen)</li>
+    mekko_of_ammonia_demand_supply:
+      title: Vraag en aanbod van ammoniak
+      short_description:
+      description: |
+        Deze grafiek vergelijkt de vraag naar ammoniak (NH<sub>3</sub>) met het aanbod. Je kunt het aanbod 
+        instellen in de <a href="/scenario/supply/hydrogen/ammonia-production"> Ammoniakproductie</a>
+        sectie. Je kunt het vervolgens gebruiken voor:
+        <ul>
+        <li><a href=/scenario/supply/hydrogen/hydrogen-production>reformen naar waterstof </a></li>
+        <li><a href=/scenario/demand/industry/fertilizers>kunstmestproductie</a></li>
+        <li><a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>binnenlandse scheepvaart</a></li>
+        <li><a href=/scenario/demand/transport_international_transport/international-navigation-technology>internationale scheepvaart</a></li>
+        </ul>
+        Als er onvoldoende aanbod is om aan de vraag te voldoen wordt back-up import ingezet om het 
+        tekort te leveren. Als het aanbod groter is dan de vraag wordt het overschot geëxporteerd.
     supply_offshore_solar_wind:
       title: Productie van zon en wind op zee per uur
       short_description:
@@ -219,3 +260,10 @@ nl:
         lager is dan het piekvermogen. Je kunt deze capaciteit 
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">hier</a>
         aanpassen.
+    source_of_electricity_in_p2g:
+      title: Elektriciteitsmix voor power-to-gas
+      short_description:
+      description: | 
+        Deze grafiek toont de elektriciteitsmix die de power-to-gas elektrolyzer gebruikt.
+        Deze mix is bepaald door te kijken naar de uurlijkse elektriciteitmix en het uurlijkse verbruik, je ziet 
+        dus de daadwerkelijke herkomst van de elektriciteit.

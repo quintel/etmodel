@@ -71,3 +71,15 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
   key: hydrogen_ships_use_of_final_demand_in_international_transport
+- label: ammonia_ships
+  color: "#1ce6d6"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ammonia_demand_international_shipping
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_international_transport
+  key: ammonia_ships_use_of_final_demand_in_international_transport

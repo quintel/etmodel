@@ -12,7 +12,7 @@
   output_element_key: hydrogen_cost_capacity
   key: energy_hydrogen_biomass_gasification_ccs_hydrogen_cost_capacity
 - label: energy_hydrogen_biomass_gasification
-  color: "#A2D679"
+  color: "#CEDDC2"
   order_by: 2
   group: ''
   show_at_first: false
@@ -60,7 +60,7 @@
   output_element_key: hydrogen_cost_capacity
   key: energy_hydrogen_steam_methane_reformer_ccs_hydrogen_cost_capacity
 - label: energy_hydrogen_steam_methane_reformer
-  color: "#A4B0BE"
+  color: "#BEC3C8"
   order_by: 6
   group: ''
   show_at_first: false
@@ -71,9 +71,33 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: energy_hydrogen_steam_methane_reformer_hydrogen_cost_capacity
+- label: energy_hydrogen_autothermal_reformer_ccs
+  color: "#D5C6BA"
+  order_by: 7
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_autothermal_reformer_ccs_h2_chart
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_autothermal_reformer_ccs_hydrogen_cost_capacity
+- label: energy_hydrogen_autothermal_reformer
+  color: "#A59990"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_autothermal_reformer_h2_chart
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_autothermal_reformer_hydrogen_cost_capacity
 - label: energy_hydrogen_wind_turbine_offshore
   color: "#63A1C9"
-  order_by: 7
+  order_by: 9
   group: 
   show_at_first: 
   is_target_line: 
@@ -85,19 +109,19 @@
   key: energy_hydrogen_wind_turbine_offshore_hydrogen_cost_capacity
 - label: energy_imported_hydrogen_backup
   color: "#A7A1C5"
-  order_by: 8
+  order_by: 10
   group: 
   show_at_first: 
-  is_target_line: 
+  is_target_line:
   target_line_position: 
   gquery: energy_imported_hydrogen_backup_h2_chart
   is_1990: 
-  dependent_on: 
+  dependent_on:
   output_element_key: hydrogen_cost_capacity
   key: energy_imported_hydrogen_backup_hydrogen_cost_capacity
 - label: imported_hydrogen
   color: "#C6C2DA"
-  order_by: 9
+  order_by: 11
   group: ''
   show_at_first: false
   is_target_line: false
@@ -107,3 +131,16 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: imported_hydrogen_hydrogen_cost_capacity
+- label: energy_hydrogen_ammonia_reformer
+  color: "#1ce6d6"
+  order_by: 12
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_ammonia_reformer_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_ammonia_reformer_hydrogen_cost_capacity
+

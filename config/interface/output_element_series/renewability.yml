@@ -191,3 +191,27 @@
   dependent_on: 
   output_element_key: renewability
   key: fossil_hydrogen_renewability
+- label: sustainable_ammonia
+  color: "#1ce6d6"
+  order_by: 8
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_sustainable_ammonia_in_renewability
+  is_1990: 
+  dependent_on: 
+  output_element_key: renewability
+  key: sustainable_ammonia_renewability
+- label: fossil_ammonia
+  color: "#18b5a9"
+  order_by: 13
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_fossil_ammonia_in_renewability
+  is_1990: 
+  dependent_on: 
+  output_element_key: renewability
+  key: fossil_ammonia_renewability

@@ -342,7 +342,7 @@ en:
       description: "Below you can specify how hydrogen will be produced in the future.
         The ETM offers the following options: electrolysis of wind and solar power
         from wind/solar farms dedicated to hydrogen production; steam methane reforming
-        (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>);
+        (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); ammonia reforming:
         gasification of biomass (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); import from abroad.\r\n<br
         /><br />\r\nIn addition, it is possible to convert electricity into
         hydrogen using 'power-to-gas' (see the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
@@ -378,6 +378,23 @@ en:
         storage volume that is needed for that is shown in the chart on the right.
         The costs for storage can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
         >costs section</a>."
+    supply_ammonia_production:
+      title: Ammonia production
+      short_description:
+      description: |
+        Ammonia as an energy carrier has advantageous storage properties and can be produced 
+        without generating carbon emissions. This makes it a potentially effective carrier to 
+        facilitate global transport of large (renewable) energy volumes. You can determine 
+        how much ammonia you want to import in your scenario with the slider below. </br></br>
+        Ammonia can then be converted into hydrogen through
+        <a href=/scenario/supply/hydrogen/hydrogen-production> ammonia reforming</a>.
+        You can however also use ammonia directly. Currently virtually all ammonia is produced on-site 
+        in the <a href=/scenario/demand/industry/fertilizers>fertilizer industry</a>. This local production 
+        can be replaced by centralized import.
+        Additionally, the ships that 
+        transport ammonia may use it as a transport fuel, for both
+        <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>domestic</a> and
+        <a href=/scenario/demand/transport_international_transport/international-navigation-technology>international</a> navigation.
     supply_hydrogen_co2_import:
       title: CO<sub>2</sub> emissions of imported hydrogen
       short_description:
@@ -391,8 +408,22 @@ en:
         Steam Methane Reforming (SMR), since over 90% of hydrogen produced today comes
         from SMR. However, you can change the emissions yourself below. Click on the
         '?' for some reference values.<br/><br/>\r\n\r\nThe costs related to this
-        imported hydrogen can be set in the <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">costs
-        section</a>.\r\n\r\n"
+        imported hydrogen can be set in the <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">Costs
+        & efficiencies</a> section.\r\n\r\n"
+    supply_ammonia_co2_import:
+      title: CO<sub>2</sub> emissions of imported ammonia
+      short_description:
+      description: |
+        The production and distribution of imported ammonia may have caused CO<sub>2</sub> 
+        emissions in the region that the ammonia is imported from. How much of these emissions 
+        do you want to attribute to your region? </br></br>
+        By default, the emissions of imported ammonia are set equal to the emissions of 
+        ammonia produced using steam methane reforming, because this currently is the dominant 
+        ammonia production route. However, you can change the 
+        emissions yourself below. Click on the '?' for some reference values. </br></br>
+        The costs related to this imported ammonia can be set in the 
+        <a href=/scenario/costs/costs_hydrogen/ammonia-import
+        >Costs & efficiencies</a> section.
     supply_infrastructure_high_voltage_network:
       title: High voltage network
       short_description: ''

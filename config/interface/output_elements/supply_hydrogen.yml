@@ -74,3 +74,40 @@
   description: 
   output_element_type_name: cost_capacity_bar
   related_output_element_key: hydrogen_production
+- group: Supply
+  sub_group: hydrogen
+  hidden: false
+  key: co2_intensity_of_hydrogen_production
+  output_element_type_name: category_bar
+  requires_merit_order: true
+  unit: kg/MWh
+  config:
+    period: future
+- under_construction: false
+  unit: MJ
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_ammonia_demand_supply
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: source_of_electricity_in_p2g
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on:
+  output_element_type_name: vertical_stacked_bar

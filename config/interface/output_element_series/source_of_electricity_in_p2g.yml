@@ -1,0 +1,181 @@
+---
+- label: coal
+  color: "#333333"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_coal
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: coal_source_of_electricity_in_p2g
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 2
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: p2g_input_electricity_from_natural_gas
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: natural_gas_source_of_electricity_in_p2g
+- label: oil
+  color: "#854321"
+  order_by: 8
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_fossil_oil
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: oil_source_of_electricity_in_p2g
+- label: nuclear
+  color: "#E07033"
+  order_by: 4
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_uranium
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: nuclear_source_of_electricity_in_p2g
+- label: solid_biomass
+  color: "#5D7929"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: p2g_input_electricity_from_biomass
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: solid_biomass_source_of_electricity_in_p2g
+- label: wind
+  color: "#63A1C9"
+  order_by: 6
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_wind
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: wind_source_of_electricity_in_p2g
+- label: hydro
+  color: "#87CEEB"
+  order_by: 7
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_hydro
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: hydro_source_of_electricity_in_p2g
+- label: greengas
+  color: "#92B940"
+  order_by: 3
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_greengas
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: greengas_source_of_electricity_in_p2g
+- label: geothermal
+  color: "#BA7D40"
+  order_by: 9
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_geothermal
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: geothermal_source_of_electricity_in_p2g
+- label: waste
+  color: "#394C19"
+  order_by: 10
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_waste
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: waste_source_of_electricity_in_p2g
+- label: solar
+  color: "#ADDE4C"
+  order_by: 11
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: p2g_input_electricity_from_solar
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: solar_source_of_electricity_in_p2g
+- label: import
+  color: "#4169E1"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: p2g_input_electricity_from_import
+  is_1990: false
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: import_source_of_electricity_in_p2g
+- label: biogas
+  color: "#32CD32"
+  order_by: 12
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: p2g_input_electricity_from_biogas
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: biogas_source_of_electricity_in_p2g
+- label: hydrogen
+  color: "#BFEFFF"
+  order_by: 6
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: p2g_input_electricity_from_hydrogen
+  is_1990: false
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: hydrogen_source_of_electricity_in_p2g
+- label: coal_gas
+  color: "#7040c2"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: p2g_input_electricity_from_coal_gas
+  is_1990: false
+  dependent_on:
+  output_element_key: source_of_electricity_in_p2g
+  key: coal_gas_source_of_electricity_in_p2g

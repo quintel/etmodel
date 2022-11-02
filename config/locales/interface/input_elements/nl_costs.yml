@@ -1024,4 +1024,21 @@ nl:
       short_description:
       description: |
         Met deze schuif kun je de toekomstige efficiëntie van water warmtepompen met warmte- en koudeopslag (WKO) voor verwarming in de landbouw veranderen.
-
+    costs_imported_ammonia:
+      title: Geïmporteerde ammoniak
+      short_description:
+      description: |
+        Dit schuifje stelt de toekomstige groothandelsprijs voor ammoniak in, uitgedrukt in €/MWh
+    investment_costs_ammonia_reforming:
+      title: Investeringskosten ammoniak reformer
+      short_description:
+      description: |
+        Ammoniak reformers zetten ammoniak (NH<sub>3</sub>) om in waterstof (H<sub>2</sub>).
+        Met dit schuifje bepaal je de verandering in toekomstige investeringskosten van ammoniak 
+        reformers. Je kunt het geïnstalleerd vermogen van deze reformers instellen in de
+        <a href=/scenario/supply/hydrogen/hydrogen-production> Waterstofproductie</a> sectie.
+    efficiency_ammonia_reforming:
+      title: Ammoniak reformer
+      short_description:
+      description: |
+        Dit schuifje stelt de toekomstige efficiëntie van ammoniak reformers in.

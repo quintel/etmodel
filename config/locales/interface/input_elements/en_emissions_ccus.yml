@@ -85,7 +85,7 @@ en:
         The ETM calculates the impact of CO<sub>2</sub> capture on total emissions, energy use and
         costs.
     share_of_energy_power_ultra_supercritical_ccs_coal:
-      title: Pulverised coal
+      title: Pulverised coal + CCS
       description: |
         What share of installed pulverised coal capacity will be equipped with a CO<sub>2</sub>
         capture unit? How much CO<sub>2</sub> is captured depends on the number of full load hours
@@ -100,7 +100,7 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
         of the ETM.
     share_of_energy_power_combined_cycle_ccs_coal:
-      title: Coal IGCC
+      title: Coal IGCC + CCS
       description: |
         What share of installed coal IGCC capacity will be equipped with a CO<sub>2</sub> capture
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
@@ -115,7 +115,7 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
         of the ETM.
     share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
-      title: Lignite oxyfuel
+      title: Lignite oxyfuel + CCS
       description: |
         What share of installed coal lignite oxyfuel capacity will be equipped with a CO<sub>2</sub>
         capture unit? How much CO<sub>2</sub> is captured depends on the number of full load hours
@@ -125,7 +125,7 @@ en:
         The amount of installed lignite oxyfuel capacity can be set in
         <a href="/scenario/supply/electricity/coal-plants">the Supply → Electricity → Coal plants section</a>.
     share_of_energy_power_combined_cycle_ccs_network_gas:
-      title: Gas CCGT
+      title: Gas CCGT + CCS
       description: |
         What share of installed gas CCGT capacity will be equipped with a CO<sub>2</sub> capture
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
@@ -263,7 +263,7 @@ en:
       description: "What share of total captured CO<sub>2</sub> in your scenario is transported via ships?
         CO<sub>2</sub> is liquefied before transportation."
     share_of_energy_chp_supercritical_ccs_waste_mix:
-      title: Waste CHP
+      title: Waste CHP + CCS
       description: |
         What share of installed waste CHP capacity will be equipped with a CO<sub>2</sub> capture
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
@@ -271,7 +271,7 @@ en:
         power generation technologies and commodity prices.<br/><br/> The amount of installed waste CHP capacity can be set in
         <a href="/scenario/supply/electricity_renewable/waste-power">the Supply → Electricity → Waste power section</a>.
     share_of_energy_power_supercritical_ccs_waste_mix:
-      title: Waste incinerator
+      title: Waste incinerator + CCS
       description: |
         What share of installed waste incinarator capacity will be equipped with a CO<sub>2</sub> capture
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these

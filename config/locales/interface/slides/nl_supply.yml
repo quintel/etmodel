@@ -411,14 +411,13 @@ nl:
         grootschalig globaal transport van (hernieuwbare) energievolumes te faciliteren. Met onderstaand schuifje 
         kun je bepalen hoeveel ammoniak je wilt importen importeren in jouw scenario. </br></br>
         Ammoniak kan vervolgens worden omgezet in waterstof door 
-        <a href=/scenario/supply/hydrogen/hydrogen-production> ammoniak reforming</a>. Het kan echter ook 
-        direct worden toegepast. Momenteel wordt vrijwel alle ammoniak on-site geproduceerd in de 
-        <a href=/scenario/demand/industry/fertilizers>kunstmestindustrie</a>. Deze lokale productie kan 
-        worden vervangen door centrale import. Daarnaast zouden de schepen die ammoniak vervoeren het ook 
-        als transportbrandstof kunnen gebruiken, zowel voor de 
-        <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>binnenvaart</a>
-        als voor de <a href=/scenario/demand/transport_international_transport/international-navigation-technology>
-        internationale scheepvaart</a>.
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> ammoniak reforming</a>. Het kan echter ook 
+        direct worden toegepast als transportbrandstof (in de 
+        <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology">binnenvaart</a>
+        en de <a href="/scenario/demand/transport_international_transport/international-navigation-technology">
+        internationale scheepvaart</a>). Momenteel wordt vrijwel alle ammoniak on-site geproduceerd in de 
+        <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a>. Deze lokale productie kan ook
+        worden vervangen door centrale import.
     supply_hydrogen_co2_import:
       title: CO<sub>2</sub>-emissies van geïmporteerde waterstof
       short_description:

@@ -60,7 +60,8 @@ nl:
     capacity_of_energy_hydrogen_steam_methane_reformer:
       title: Steam reforming met aardgas
       short_description:
-      description: "Aardgas-reforming (of beter, methaan-reforming) is een ver ontwikkeld
+      description: | 
+        Aardgas-reforming (of beter, methaan-reforming) is een ver ontwikkeld
         waterstofproductie proces. Het werkt als volgt: methaan reageert in de aanwezigheid
         van een katalysator met stoom met een hoge temperatuur en geeft een mengsel
         van waterstof en andere gassen. De ongewenste gassen (inclusief CO<sub>2</sub>)
@@ -69,7 +70,13 @@ nl:
         techniek wordt reeds uitgebreid toegepast, maar met name om waterstof te produceren
         voor industrieel gebruik. Deze centrale gebruikt aardgas. Methaan-reforming wordt vaak gezien als een belangrijke
         overgangsproductiemethode: lang niet de schoonste en de groenste, maar in
-        staat om de toenemende vraag naar waterstof te faciliteren.<br/>"
+        staat om de toenemende vraag naar waterstof te faciliteren.
+        <br/><br/>
+        Voeg CCS toe aan de SMR in de <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> sectie.
+        <br/><br/>
+        Klik op de technische en financiële parameters hieronder voor meer specificaties.
+        Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
+        zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_autothermal_reformer:
       title: Autothermal reforming met aardgas
       short_description:
@@ -81,9 +88,11 @@ nl:
         de eenvoudige manier van produceren met een hoge concentratie koolstof dioxide. 
         Dit maakt het mogelijk om een hoog percentage koolstof af te vangen gedurende het conversie proces.
         <br/><br/>
-        Voeg CCUS toe aan de ATR in de <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> sectie.
+        Voeg CCS toe aan de ATR in de <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> sectie.
         <br/><br/>
         Klik op de technische en financiële parameters hieronder voor meer specificaties.
+        Let op: de parameters in de tabel horen bij de ATR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
+        zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing CCS
       short_description:
@@ -93,8 +102,13 @@ nl:
     capacity_of_energy_hydrogen_biomass_gasification:
       title: Biomassavergassing
       short_description:
-      description: Biomassavergassing is een volwassen technologie voor de productie
-        van waterstof uit biomassa. <br />
+      description: | 
+        Biomassavergassing is een volwassen technologie voor de productie
+        van waterstof uit biomassa. 
+        <br/><br/>
+        Klik op de technische en financiële parameters hieronder voor meer specificaties.
+        Let op: de parameters in de tabel horen bij de centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
+        zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_wind_turbine_offshore:
       title: Windmolen op zee voor H<sub>2</sub>
       short_description:

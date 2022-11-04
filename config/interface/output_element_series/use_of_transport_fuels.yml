@@ -227,3 +227,27 @@
   dependent_on: 
   output_element_key: use_of_transport_fuels
   key: lng_international_transport_use_of_transport_fuels
+- label: ammonia_national_transport
+  color: "#71e3da"
+  order_by: 14
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ammonia_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: ammonia_national_transport_use_of_transport_fuels
+- label: ammonia_international_transport
+  color: "#bdfff6"
+  order_by: 18
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ammonia_international_transport_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: ammonia_international_transport_use_of_transport_fuels

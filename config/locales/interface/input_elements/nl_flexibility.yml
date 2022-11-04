@@ -1216,3 +1216,13 @@ nl:
         Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op
         de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen
         en opslagvolume van de batterij te zien.
+    flexibility_residual_load_curve_moving_average:
+      title: Voortschrijdend gemiddelde tijdsperiode
+      short_description:
+      description: |
+        Met dit schuifje kun je de tijdsperiode instellen van het voortschrijdend gemiddelde dat wordt 
+        toegepast op de residual load curve van netwerkgas en waterstof in 
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
+        deze grafiek</a>. </br></br>
+        Het voortschrijdend gemiddelde wordt toegepast om onderscheid te maken tussen een korte en lange 
+        termijn flexibiliteitsbehoefte. Met dit schuifje kun je dat onderscheid aanpassen.

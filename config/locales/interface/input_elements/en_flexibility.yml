@@ -1161,3 +1161,13 @@ en:
         that the storage volume will therefore also be updated if you change this slider.
         To see the effect of this slider on the total battery capacity and storage volume,
         you can click on the 'Technical and financial properties'.
+    flexibility_residual_load_curve_moving_average:
+      title: Moving average time period
+      short_description:
+      description: |
+        With this slider you can set the time period of the moving average that is applied 
+        to the residual load curves of network gas and hydrogen in 
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
+        this chart</a>. </br></br>
+        The moving average is applied to distinguish between a short-term and long-term need 
+        for flexibility. This slider allows you to change that distinction.

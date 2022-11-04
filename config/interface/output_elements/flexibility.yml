@@ -41,9 +41,9 @@
   config:
     linked_chart:
       electricity: flexibility_hourly_electricity_supply_demand
-      heat: flexibility_hourly_heat_network_supply_demand
+      heat_network: flexibility_hourly_heat_network_supply_demand
       hydrogen: flexibility_hourly_hydrogen_supply_demand
-      gas: flexibility_hourly_network_gas_supply_demand
+      network_gas: flexibility_hourly_network_gas_supply_demand
     original_unit: 'MW'
 - group: Flexibility
   hidden: false
@@ -54,9 +54,9 @@
   config:
     linked_chart:
       electricity: flexibility_hourly_electricity_supply_demand
-      heat: flexibility_hourly_heat_network_supply_demand
+      heat_network: flexibility_hourly_heat_network_supply_demand
       hydrogen: flexibility_hourly_hydrogen_supply_demand
-      gas: flexibility_hourly_network_gas_supply_demand
+      network_gas: flexibility_hourly_network_gas_supply_demand
     reduce_with: max
 - group: Flexibility
   hidden: false
@@ -320,3 +320,17 @@
   requires_merit_order: true
   dependent_on: ''
   output_element_type_name: hourly_stacked_area
+- under_construction: false
+  unit: ''
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: need_for_flexibility
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: html_table
+  related_output_element_key: flexibility_hourly_carriers_inflexible_imbalance

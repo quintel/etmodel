@@ -226,3 +226,20 @@ nl:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv" target="_blank"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
+    data_export_residual_load_curves:
+      title: Uurlijkse residual load curves
+      short_description:
+      description: |
+        Download de curves die in de grafiek aan de rechterzijde worden getoond. Voor elektriciteit, 
+        warmte op het residentiële warmtenet, netwerkgas en waterstof kun je de onbalans in inflexibele 
+        vraag en aanbod downloaden. Deze onbalans wordt de residual load curve genoemd (zie de
+        <a href=/scenario/flexibility/flexibility_overview/residual-load-curves>Residual load curves</a> 
+        sectie voor meer informatie). </br></br>
+        For netwerkgas en waterstof zijn twee additionele curves toegevoegd aan de download, die zijn 
+        berekend met behulp van een voortschrijdend gemiddelde: de onbalans op een korte en lange tijdschaal.
+        Zie de <a href=/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales>
+        Flexibiliteitsbehoefte: tijdschalen</a> sectie voor meer informatie.
+
+        <ul class="data-download merit-data-downloads">
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/residual_load.csv" target="_blank"> <span class="name">Residual load curves</span> <span class="filetype">1MB CSV</span></a></li>
+        </ul>

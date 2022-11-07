@@ -1,6 +1,36 @@
 # What's new in the Energy Transition Model?
 ___
 
+# November 2022
+
+## Addition of Autothermal reforming
+A new hydrogen production technology has been added to the model: Autothermal reforming (ATR). This is a proven technology that uses natural gas to produce hydrogen. You can set its installed capacity in *Supply → Hydrogen* → **[Hydrogen production](/scenario/supply/hydrogen/hydrogen-production)**. The main benefit of ATR compared to the common hydrogen production technology Steam methane reforming (SMR), is that allows for the capture of a higher share of CO<sub>2</sub> emissions. You can add carbon capture for the ATR in  *Emissions → CCUS* → **[Capture of CO<sub>2</sub>](/scenario/emissions/ccus/capture-of-co2)**.
+
+## Addition of ammonia
+Shipping of liquified green ammonia (and then reforming it to hydrogen) is seen as a more practical option for importing large amounts of green hydrogen than transporting the hydrogen directly. The possibility to **[Import ammonia](/scenario/supply/hydrogen/ammonia-production)** and convert it to hydrogen using a **[Reformer](/scenario/supply/hydrogen/hydrogen-production)** has therefore been added to the model.
+
+In addition to that, it is possible to use ammonia directly in the **[Fertilizer industry](/scenario/demand/industry/fertilizers)**, or as a transport fuel in **[Domestic](/scenario/demand/transport_freight_transport/domestic-navigation-technology)** or **[International](/scenario/demand/transport_international_transport/international-navigation-technology)** navigation.
+
+-> ![](/assets/pages/whats_new/ammonia_mekko_en.png) <-
+
+## Analysis of need for flexibility
+For the gaseous carriers hydrogen and network gas, hourly balancing of supply and demand is performed by storage. There are however technical and economical limitations to the extent to which storage volume can be realized in an area. This is especially relevant when different types of large-scale underground storage are required. Some storage may be required to handle short term variations in supply and demand, while additional storage volume may be necessary to deal with long term, seasonal, variatons.
+
+A new section and table have been added that can help you assess the different storage needs. You can find them in *Flexibility → Overview* → **[The need for flexibility: timescales](/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales)**.
+
+## New CO2 intensity of hydrogen chart
+A new chart that allows you to compare the CO<sub>2</sub> intensity of different hydrogen production routes has been added to the model. You can select the chart from the chart selection or go to *Supply → Hydrogen* → **[CO<sub>2</sub> emissions of imported hydrogen](/scenario/supply/hydrogen/co2-emissions-of-imported-hydrogen)**.
+
+-> ![](/assets/pages/whats_new/hydrogen_co2_intensity_en.png) <-
+
+## New electricity mix for power-to-gas chart
+Another useful chart has been added. This chart shows you the electricity mix used to produce hydrogen through electrolysis, also known as power-to-gas. You can select the chart from the chart selection or go to *Flexibility → Electricity conversion* → **[Conversion to hydrogen](/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen)**.
+
+-> ![](/assets/pages/whats_new/electricity_mix_p2g_en.png) <-
+
+
+___
+
 # October 2022
 
 ## New transport technologies for ships and planes

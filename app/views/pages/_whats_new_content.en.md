@@ -31,8 +31,7 @@ Another useful chart has been added. This chart shows you the electricity mix us
 -> ![](/assets/pages/whats_new/electricity_mix_p2g_en.png) <-
 
 ## First Asian country is now available: Singapore
-A few weeks ago Singapore has been added to the ETM as first city-state and first Asian country. This also means it is now easier to add countries 
-outside of the EU to the ETM. Select Singapore as a region when starting a new scenario to start exploring its energy system!
+A few weeks ago Singapore has been added to the ETM as first city-state and first Asian country. This also means it is now easier to add countries outside of the EU to the ETM. Select Singapore as a region when starting a new scenario to start exploring its energy system!
 
 ___
 

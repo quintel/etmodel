@@ -4,7 +4,9 @@ ___
 # November 2022
 
 ## Addition of Autothermal reforming
-A new hydrogen production technology has been added to the model: Autothermal reforming (ATR). This is a proven technology that uses natural gas to produce hydrogen. You can set its installed capacity in *Supply → Hydrogen* → **[Hydrogen production](/scenario/supply/hydrogen/hydrogen-production)**. The main benefit of ATR compared to the common hydrogen production technology Steam methane reforming (SMR), is that it allows for the capture of a higher share of CO<sub>2</sub> emissions. You can add carbon capture for the ATR in  *Emissions → CCUS* → **[Capture of CO<sub>2</sub>](/scenario/emissions/ccus/capture-of-co2)**.
+A new hydrogen production technology has been added to the model: Autothermal reforming (ATR). This is a proven technology that uses natural gas to produce hydrogen. You can set its installed capacity in *Supply → Hydrogen* → **[Hydrogen production](/scenario/supply/hydrogen/hydrogen-production)**.
+
+The main benefit of ATR compared to the common hydrogen production technology Steam methane reforming (SMR), is that it allows for the capture of a higher share of CO<sub>2</sub> emissions. You can add carbon capture for the ATR in  *Emissions → CCUS* → **[Capture of CO<sub>2</sub>](/scenario/emissions/ccus/capture-of-co2)**.
 
 ## Addition of ammonia
 Shipping of liquified green ammonia (and then reforming it to hydrogen) is seen as a more practical option for importing large amounts of green hydrogen than transporting the hydrogen directly. The possibility to **[Import ammonia](/scenario/supply/hydrogen/ammonia-production)** and convert it to hydrogen using a **[Reformer](/scenario/supply/hydrogen/hydrogen-production)** has therefore been added to the model.
@@ -29,8 +31,9 @@ Another useful chart has been added. This chart shows you the electricity mix us
 -> ![](/assets/pages/whats_new/electricity_mix_p2g_en.png) <-
 
 ## First Asian country is now available: Singapore
-A few weeks ago Singapore has been added to the ETM. This also means it is now easier to add countries 
-outside of the EU to the ETM. Select Singapore in the menu on the landing page to start a scenario. 
+A few weeks ago Singapore has been added to the ETM as first city-state and first Asian country. This also means it is now easier to add countries 
+outside of the EU to the ETM. Select Singapore as a region when starting a new scenario to start exploring its energy system!
+
 ___
 
 # October 2022

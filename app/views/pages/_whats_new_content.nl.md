@@ -1,4 +1,10 @@
 # Wat is er nieuw in het Energietransitiemodel?
+
+
+## Eerste Aziatische land is nu beschikbaar: Singapore
+Een paar weken geleden is Singapore toegevoegd aan het ETM. Dit betekent dat het nu ook makkelijker is om andere 
+landen buiten de EU toe te voegen aan het ETM. Selecteer Singapore in het menu op de landings pagine om een scenario te starten.
+
 ___
 
 # Oktober 2022

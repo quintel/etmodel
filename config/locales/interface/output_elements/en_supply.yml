@@ -239,10 +239,10 @@ en:
         in the <a href="/scenario/supply/hydrogen/ammonia-production"> Ammonia production</a> section.
         It can then be used for:
         <ul>
-        <li><a href=/scenario/supply/hydrogen/hydrogen-production>reforming to hydrogen</a></li>
-        <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a></li>
-        <li><a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>domestic navigation</a> (inland shipping) </li>
-        <li><a href=/scenario/demand/transport_international_transport/international-navigation-technology>international navigation</a> (maritime shipping) </li>
+        <li><a href="/scenario/supply/hydrogen/hydrogen-production">reforming to hydrogen</a></li>
+        <li><a href="/scenario/demand/industry/fertilizers">fertilizer production</a></li>
+        <li><a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology">domestic navigation</a> (inland shipping) </li>
+        <li><a href="/scenario/demand/transport_international_transport/international-navigation-technology">international navigation</a> (maritime shipping) </li>
         </ul>
         If the supply is insufficient to cover demand, back-up import is used to cover the difference.
         If it exceeds demand, the excess is exported.
@@ -262,7 +262,12 @@ en:
       title: Electricity mix for power-to-gas
       short_description:
       description: |
-        This graph shows the electricity mix that the power-to-gas electrolyzer uses.
+        This graph shows the electricity mix that the power-to-gas electrolyser uses.
         This mix is determined by looking at the hourly electricity mix and the hourly consumption by electrolysers, 
-        in this way you see the actual source of the electricity.
-        
+        in this way you see the actual source of the electricity. </br></br>
+        Note that this chart only shows the electricity mix for the flexible electrolyser, 
+        which you can find in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Flexibility</a> 
+        section. Direct electrolysis of wind and solar electricity from the 
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section 
+        is not included in this chart.

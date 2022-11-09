@@ -1,6 +1,40 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# November 2022
+
+## Eerste Aziatische land is nu beschikbaar: Singapore
+Singapore is als eerste stadstaat en eerste Aziatische land toegevoegd aan het ETM. Dit betekent dat het nu ook makkelijker is om andere landen van buiten de EU toe te voegen aan het ETM. Selecteer Singapore als regio bij het starten van een nieuw scenario om het energiesysteem te verkennen!
+
+## Toevoeging van ammoniak
+Het verschepen van vloeibare ammomiak (om het daarna te reformen naar waterstof) wordt als een meer praktische optie gezien om grote volumes groene waterstof te transporteren, dan om de groene waterstof direct te verschepen. Het is daarom nu mogelijk **[ammoniak import](/scenario/supply/hydrogen/ammonia-production)** in te stellen en dit te converteren naar waterstof door middel van een **[reformer](/scenario/supply/hydrogen/hydrogen-production)**.
+
+Daarnaast is het ook mogelijk om de ammoniak direct te gebruiken in de **[kunstmestindustrie](/scenario/demand/industry/fertilizers)**, of als transportbrandstof in de **[binnenvaart](/scenario/demand/transport_freight_transport/domestic-navigation-technology)** of **[internationale scheepvaart](/scenario/demand/transport_international_transport/international-navigation-technology)**.
+
+-> ![](/assets/pages/whats_new/ammonia_mekko_nl.png) <-
+
+## Toevoeging van Autothermal reforming
+Er is een nieuwe waterstofproductietechnologie toegevoegd aan het model: Autothermal reforming (ATR). Dit is een bewezen technologie die aardgas gebruikt om waterstof te produceren. Je kunt het vermogen instellen in *Aanbod → Waterstof* → **[Waterstofproductie](/scenario/supply/hydrogen/hydrogen-production)**.
+
+Het voordeel van ATR ten opzichte van de gebruikelijke waterstofproductietechnologie, Steam methane reforming (SMR), is dat een groter deel van de CO<sub>2</sub>-emissies kunnen worden afgevangen. Je kunt afvang van CO<sub>2</sub> voor de ATR instellen in *Emissies → CCUS* → **[Afvang van CO<sub>2</sub>](/scenario/emissions/ccus/capture-of-co2)**.
+
+## Nieuwe CO2-intensiteit van waterstof grafiek
+Er is een nieuwe grafiek waarmee je de CO<sub>2</sub>-intensiteit van verschillende waterstofproductieroutes kunt vergelijken. Je kunt de grafiek openen via de grafiekselectie of door naar *Aanbod → Waterstof* → **[CO<sub>2</sub>-emissies van  geïmporteerde waterstof](/scenario/supply/hydrogen/co2-emissions-of-imported-hydrogen)** te gaan.
+
+-> ![](/assets/pages/whats_new/hydrogen_co2_intensity_nl.png) <-
+
+## Nieuwe elektriciteitsmix voor power-to-gas grafiek
+Er is nog een nuttige grafiek toegevoegd. Deze grafiek laat zien welke elektriciteitsmix gebruikt is om waterstof te produceren door middel van elektrolyse (ook bekend als power-to-gas). Je kunt de grafiek openen via de grafiekselectie of door naar *Flexibiliteit → Conversie elektriciteit* → **[Conversie naar waterstof](/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen)** te gaan.
+
+-> ![](/assets/pages/whats_new/electricity_mix_p2g_nl.png) <-
+
+## Analyse van flexibiliteitsbehoefte
+Voor de gasvormige dragers waterstof en netwerkgas zorgt opslag voor de balancering van vraag en aanbod op uurbasis. Er zijn echter technische en economische beperkingen aan de mate waarin opslagvolume in een bepaalde regio gerealiseerd kan worden. Dit wordt met name relevant als er verschillende types ondergrondse opslag nodig zijn. Bepaalde vormen van opslag zijn kunnen nodig zijn om variaties in vraag en aanbod op korte termijn op te vangen, terwijl er ook opslag nodig kan zijn om met lange termijn, seizoensvariaties, om te gaan.
+
+Er is een nieuwe sectie en tabel die je kan helpen de behoefte aan verschillende types opslag te evalueren. Je kunt dit vinden in *Flexibiliteit → Overzicht* → **[Flexibiliteitsbehoefte: tijdschalen](/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales)**.
+
+___
+
 # Oktober 2022
 
 ## Nieuwe transporttechnologieën voor schepen en vliegtuigen

@@ -38,9 +38,10 @@ EstablishmentShot.Charts = (function () {
                 '#aaa69d'
             ],
             [
-                '#3c6382',
+                '#60a3bc',
                 '#f6b93b',
-                '#8d6e63',
+                '#e55039',
+                '#3c6382',
                 '#079992',
                 '#aaa69d'
             ]
@@ -74,6 +75,7 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_transport_total_domestic_freight_co2_emissions' },
                 { key: 'co2_sheet_transport_total_private_transport_co2_emissions' },
                 { key: 'co2_sheet_transport_total_public_transport_co2_emissions' },
+                { key: 'co2_sheet_transport_total_international_transport_co2_emission' },
                 { key: 'co2_sheet_transport_other_ghg_emissions' }
             ]
         ],

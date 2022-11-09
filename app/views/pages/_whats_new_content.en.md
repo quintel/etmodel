@@ -29,7 +29,7 @@ Another useful chart has been added. This chart shows you the electricity mix us
 -> ![](/assets/pages/whats_new/electricity_mix_p2g_en.png) <-
 
 ## Analysis of the need for flexibility
-For the gaseous carriers hydrogen and network gas, hourly balancing of supply and demand is performed by storage. There are however technical and economical limitations to the extent to which storage volume can be realized in an area. This is especially relevant when different types of large-scale underground storage are required. Some storage may be required to handle short0term variations in supply and demand, while additional storage volume may be necessary to deal with long-term seasonal variations.
+For the gaseous carriers hydrogen and network gas, hourly balancing of supply and demand is performed by storage. There are however technical and economical limitations to the extent to which storage volume can be realized in an area. This is especially relevant when different types of large-scale underground storage are required. Some storage may be required to handle short-term variations in supply and demand, while additional storage volume may be necessary to deal with long-term seasonal variations.
 
 A new section and table have been added that can help you assess the different storage needs. You can find them in *Flexibility → Overview* → **[The need for flexibility: timescales](/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales)**.
 

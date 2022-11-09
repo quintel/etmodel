@@ -4,7 +4,7 @@ ___
 # November 2022
 
 ## First Asian country is now available: Singapore
-A few weeks ago Singapore has been added to the ETM as first city-state and first Asian country. This also means it is now easier to add countries outside of the EU to the ETM. Select Singapore as a region when starting a new scenario to start exploring its energy system!
+A few weeks ago Singapore has been added to the ETM as the first city-state and the first Asian country. This also means it is now easier to add countries outside of the EU to the ETM. Select Singapore as a region when starting a new scenario to start exploring its energy system!
 
 ## Addition of ammonia
 Shipping of liquified green ammonia (and then reforming it to hydrogen) is seen as a more practical option for importing large amounts of green hydrogen than transporting the hydrogen directly. The possibility to **[import ammonia](/scenario/supply/hydrogen/ammonia-production)** and convert it to hydrogen using a **[reformer](/scenario/supply/hydrogen/hydrogen-production)** has therefore been added to the model.
@@ -19,7 +19,7 @@ A new hydrogen production technology has been added to the model: Autothermal re
 The main benefit of ATR compared to the common hydrogen production technology Steam methane reforming (SMR), is that it allows for the capture of a higher share of CO<sub>2</sub> emissions. You can add carbon capture for the ATR in  *Emissions → CCUS* → **[Capture of CO<sub>2</sub>](/scenario/emissions/ccus/capture-of-co2)**.
 
 ## New CO2 intensity of hydrogen chart
-A new chart that allows you to compare the CO<sub>2</sub> intensity of different hydrogen production routes has been added to the model. You can select the chart from the chart selection or go to *Supply → Hydrogen* → **[CO<sub>2</sub> emissions of imported hydrogen](/scenario/supply/hydrogen/co2-emissions-of-imported-hydrogen)**.
+A new chart that allows you to compare the CO<sub>2</sub> intensity of different hydrogen production routes have been added to the model. You can select the chart from the chart selection or go to *Supply → Hydrogen* → **[CO<sub>2</sub> emissions of imported hydrogen](/scenario/supply/hydrogen/co2-emissions-of-imported-hydrogen)**.
 
 -> ![](/assets/pages/whats_new/hydrogen_co2_intensity_en.png) <-
 
@@ -28,8 +28,8 @@ Another useful chart has been added. This chart shows you the electricity mix us
 
 -> ![](/assets/pages/whats_new/electricity_mix_p2g_en.png) <-
 
-## Analysis of need for flexibility
-For the gaseous carriers hydrogen and network gas, hourly balancing of supply and demand is performed by storage. There are however technical and economical limitations to the extent to which storage volume can be realized in an area. This is especially relevant when different types of large-scale underground storage are required. Some storage may be required to handle short term variations in supply and demand, while additional storage volume may be necessary to deal with long term, seasonal, variatons.
+## Analysis of the need for flexibility
+For the gaseous carriers hydrogen and network gas, hourly balancing of supply and demand is performed by storage. There are however technical and economical limitations to the extent to which storage volume can be realized in an area. This is especially relevant when different types of large-scale underground storage are required. Some storage may be required to handle short0term variations in supply and demand, while additional storage volume may be necessary to deal with long-term seasonal variations.
 
 A new section and table have been added that can help you assess the different storage needs. You can find them in *Flexibility → Overview* → **[The need for flexibility: timescales](/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales)**.
 

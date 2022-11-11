@@ -418,7 +418,7 @@ D3.sankey =
           {left: 'p2p',                           right: 'conversion_losses', gquery: 'p2p_to_conversion_loss_in_sankey',  color: '#DCDCDC'},
           {left: 'p2h',                           right: 'households',        gquery: 'p2h_to_households_in_sankey',       color: '#d62728'},
           {left: 'p2h',                           right: 'industry',          gquery: 'p2h_to_industry_in_sankey',         color: '#d62728'},
-          {left: 'p2h',                           right: 'agriculture',       gquery: 'p2h_to_agriculutre_in_sankey',      color: '#d62728'},
+          {left: 'p2h',                           right: 'agriculture',       gquery: 'p2h_to_agriculture_in_sankey',      color: '#d62728'},
           {left: 'p2h',                           right: 'conversion_losses', gquery: 'p2h_to_conversion_loss_in_sankey',  color: '#DCDCDC'},
           {left: 'p2g',                           right: 'hydrogen_prod',     gquery: 'p2g_to_hydrogen_prod_in_sankey',    color: '#27d3d3'},
           {left: 'p2g',                           right: 'conversion_losses', gquery: 'p2g_to_conversion_loss_in_sankey',  color: '#DCDCDC'},

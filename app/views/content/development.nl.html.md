@@ -32,8 +32,9 @@ energietransitie. Deze behoeften worden gedeeltelijk aangegeven door onze gebrui
 het open-source karakter wijzigingen kunnen voorstellen aan elk onderdeel van het model.
 
 Bovendien komen deze behoeften voort uit ons uitgebreide netwerk van partners, met wie we graag
-samenwerken in ontwikkelingsprojecten. Als u suggesties heeft om het model te verbeteren, [laat het
-ons dan hier weten](/contact).
+samenwerken in ontwikkelingsprojecten. Heeft u suggesties om het model te verbeteren?
+
+[Laat het ons weten →](/contact)
 
 <h2 id="partners">Partners</h2>
 

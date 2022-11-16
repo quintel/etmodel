@@ -520,13 +520,15 @@ en:
       description:
     supply_transport_road_transport:
       title: Road transport
-      short_description: ''
-      description: How much of the fuels used in road transport will come from renewable
+      short_description:
+      description: |
+        How much of the fuels used in road transport will come from renewable
         sources? Do consider the impact on land (and sea) use for growing the required
-        crops. In the <a href="/scenario/demand/transport_passenger_transport/car-technology"
-        >car technology</a> and the <a href="/scenario/demand/transport_freight_transport/truck-technology"
-        >truck technology</a> section you can select the engine type of your cars
-        and trucks. Keep in mind that LNG is used by trucks, but not by cars.
+        crops. By changing the road transport technologies in the 
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">passenger</a> 
+        and <a href="/scenario/demand/transport_freight_transport/truck-technology">freight</a> 
+        transport section, you can determine which engines, and therefore which transport fuels 
+        are used.
     supply_transport_trains:
       title: Rail transport
       short_description: ''

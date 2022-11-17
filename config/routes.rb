@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     post :confirm_delete, on: :member
   end
 
+  resources :areas, only: %i[index show]
+
   # Old partner paths.
   get '/partners/:id', to: redirect("#{Partner::REMOTE_URL}/partners/%{id}")
   get '/partners',     to: redirect("#{Partner::REMOTE_URL}/partners")

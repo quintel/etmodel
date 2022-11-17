@@ -89,11 +89,13 @@ class Api::Area < ActiveResource::Base
       # Remove a trailing year from the dataset key.
       base_key = base_dataset.gsub(/\d{4}$/, '')
 
+      puts "wtf: #{self.inspect} #{base_key.inspect}"
+
       self.class.find_by_country_memoized(base_key).country_area || self
     end
   end
 
-  # Public: Gets the largest region to which the area belongs.
+  #  Public: Gets the largest region to which the area belongs.
   #
   # For example, if this is a municipality in the Netherlands, the base dataset
   # in "nl", so the Netherlands area is returned.

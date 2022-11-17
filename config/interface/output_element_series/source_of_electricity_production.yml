@@ -1,5 +1,5 @@
 ---
-- label: coal
+- label: eletricity_from_coal
   color: "#333333"
   order_by: 1
   group:
@@ -11,7 +11,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: coal_source_of_electricity_production
-- label: natural_gas
+- label: eletricity_from_natural_gas
   color: "#CCCCCC"
   order_by: 2
   group: ''
@@ -23,7 +23,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: natural_gas_source_of_electricity_production
-- label: oil
+- label: eletricity_from_oil
   color: "#854321"
   order_by: 8
   group:
@@ -35,7 +35,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: oil_source_of_electricity_production
-- label: nuclear
+- label: eletricity_from_nuclear
   color: "#E07033"
   order_by: 4
   group:
@@ -47,7 +47,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: nuclear_source_of_electricity_production
-- label: solid_biomass
+- label: eletricity_from_solid_biomass
   color: "#5D7929"
   order_by: 5
   group: ''
@@ -59,7 +59,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: solid_biomass_source_of_electricity_production
-- label: wind
+- label: eletricity_from_wind
   color: "#63A1C9"
   order_by: 6
   group:
@@ -71,7 +71,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: wind_source_of_electricity_production
-- label: hydro
+- label: eletricity_from_hydro
   color: "#87CEEB"
   order_by: 7
   group:
@@ -83,7 +83,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: hydro_source_of_electricity_production
-- label: greengas
+- label: eletricity_from_greengas
   color: "#92B940"
   order_by: 3
   group:
@@ -95,7 +95,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: greengas_source_of_electricity_production
-- label: geothermal
+- label: eletricity_from_geothermal
   color: "#BA7D40"
   order_by: 9
   group:
@@ -107,7 +107,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: geothermal_source_of_electricity_production
-- label: waste
+- label: eletricity_from_waste
   color: "#394C19"
   order_by: 10
   group:
@@ -119,7 +119,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: waste_source_of_electricity_production
-- label: solar
+- label: eletricity_from_solar
   color: "#ADDE4C"
   order_by: 11
   group:
@@ -167,7 +167,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: future_demand_source_of_electricity_production
-- label: import
+- label: eletricity_from_import
   color: "#4169E1"
   order_by: 5
   group: ''
@@ -179,7 +179,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: import_source_of_electricity_production
-- label: biogas
+- label: eletricity_from_biogas
   color: "#32CD32"
   order_by: 12
   group: ''
@@ -191,7 +191,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: biogas_source_of_electricity_production
-- label: hydrogen
+- label: eletricity_from_hydrogen
   color: "#BFEFFF"
   order_by: 6
   group: ''
@@ -203,7 +203,7 @@
   dependent_on:
   output_element_key: source_of_electricity_production
   key: hydrogen_source_of_electricity_production
-- label: coal_gas
+- label: eletricity_from_coal_gas
   color: "#7040c2"
   order_by: 1
   group: ''

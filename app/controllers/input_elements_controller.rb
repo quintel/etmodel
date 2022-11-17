@@ -2,6 +2,7 @@
 
 # A controller for the retrieving the input_element resource.
 class InputElementsController < ApplicationController
+  include MycContentSecurityPolicy
   before_action :myc_content_security_policy, only: :by_slide
 
   # Responds with a JSON array containing the name and key of each slide which
@@ -17,19 +18,5 @@ class InputElementsController < ApplicationController
     end
 
     render(json:)
-  end
-
-  private
-
-  # Internal: For requests originating in the "multi-year charts" application, we must loading the
-  # input elements from the same domain as the application.
-  def myc_content_security_policy
-    url = Settings.multi_year_charts_url
-
-    return unless url
-
-    response.set_header('Access-Control-Allow-Origin', url)
-    response.set_header('Access-Control-Allow-Methods', 'GET')
-    response.set_header('Access-Control-Allow-Headers', 'Accept, Accept-Language, Content-Type')
   end
 end

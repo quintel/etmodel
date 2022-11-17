@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class AreasController < ActionController::API
+  include MycContentSecurityPolicy
+  before_action :myc_content_security_policy
+
   def index
     @areas = Api::Area.all
     render json: Api::Area.all.map { |area| serialize_area(area) }

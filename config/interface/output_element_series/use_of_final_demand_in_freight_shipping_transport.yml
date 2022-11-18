@@ -1,0 +1,109 @@
+---
+- label: diesel
+  color: "#854321"
+  order_by: 100
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_diesel_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: diesel_use_of_final_demand_in_freight_shipping_transport
+- label: biodiesel
+  color: "#5D7929"
+  order_by: 105
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_biodiesel_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: biodiesel_use_of_final_demand_in_freight_shipping_transport
+- label: bio_ethanol
+  color: "#394C19"
+  order_by: 107
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_bio_ethanol_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: bio_ethanol_use_of_final_demand_in_freight_shipping_transport
+- label: lng
+  color: "#696969"
+  order_by: 110
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_lng_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: lng_use_of_final_demand_in_freight_shipping_transport
+- label: bio_lng
+  color: "#006400"
+  order_by: 115
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_bio_lng_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: bio_lng_use_of_final_demand_in_freight_shipping_transport
+- label: heavy_fuel_oil
+  color: "#BA7D40"
+  order_by: 120
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_heavy_fuel_oil_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: heavy_fuel_oil_use_of_final_demand_in_freight_shipping_transport
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 125
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_hydrogen_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: hydrogen_use_of_final_demand_in_freight_shipping_transport
+- label: electricity
+  color: "#4169E1"
+  order_by: 130
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_electricity_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: electricity_use_of_final_demand_in_freight_shipping_transport
+- label: ammonia
+  color: "#71e3da"
+  order_by: 135
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_ammonia_in_freight_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: ammonia_use_of_final_demand_in_freight_shipping_transport

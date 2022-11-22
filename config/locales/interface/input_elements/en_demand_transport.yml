@@ -470,19 +470,19 @@ en:
       description: Please indicate how the number of international shipping trades
         will change every year in the future.
     transport_ship_using_diesel_mix_share:
-      title: Diesel / dual fuel
+      title: Diesel (single/dual/multi-fuel engine)
       short_description:
       description: |
         With this slider you can set the percentage of shipping freight kilometers traveled by 
-        diesel ships. </br></br>
-        The vast majority of ships for inland waterway transport are powered
-        by diesel engines. These engines can run in several cycles and at high and
-        low pressures. Depending on the exact engine configuration, diesel engines
-        can also run in a dual fuel mode in which they use both diesel and LNG. In
-        this dual fuel mode, the actual fuel usage can vary from 100% diesel to 1%
-        diesel / 99% LNG. In the <a href=\"/scenario/supply/transport_fuels/domestic-navigation\"
-        >transport fuels section</a> , you can determine the exact fuel mix of ships
-        with diesel / dual fuel engines.</br></br>
+        diesel engine ships. </br></br>
+        The vast majority of ships for inland waterway transport are powered by conventional 
+        diesel engines. There are however also dual fuel engines available that can switch 
+        between two fuels, typically LNG and diesel. Even more advanced multifuel
+        engines are being developed that, in addition to LNG and diesel, can run on liquid 
+        fuels such as bio-ethanol. </br></br>
+        For clarity the share of all types of diesel engines is set with this slider. You can then 
+        set the aggregate fuel mix in the 
+        <a href="/scenario/supply/transport_fuels/domestic-navigation">transport fuels</a> section.
         Checkout the technical and financial properties below for more information.
     transport_ship_using_lng_mix_share:
       title: LNG

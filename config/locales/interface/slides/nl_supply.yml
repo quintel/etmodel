@@ -530,12 +530,11 @@ nl:
     supply_transport_marine_fuels:
       title: Binnenlandse scheepvaart
       short_description: ''
-      description: Welke brandstoffen zullen jouw binnenvaartschepen gebruiken? Vergeet
-        niet dat schepen met diesel / dual fuel motoren op verschillende brandstoffen
-        kunnen varen, en dat jouw keuze hier de gemiddelde brandstofmix voor een schip
-        met deze motor weerspiegelt. In de <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
-        >binnenvaartsectie</a> kun je kiezen met welke motoren jouw binnenvaartschepen
-        uitgerust zijn.
+      description: |
+        Welke brandstoffen zullen worden gebruikt voor schepen met dieselmotoren en schepen
+        met LNG-motoren? In de <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
+        >binnenvaart</a> sectie kun je het aandeel van deze motoren in het totale vrachtvervoer door binnenvaart 
+        bepalen.
     supply_transport_public_transport_technologies:
       title: Energiedragers openbaar vervoer
       short_description:

@@ -551,3 +551,24 @@ en:
         then regasified to natural gas at import terminals and fed into the national
         gas network. In liquid form (hence, as LNG) it is only used in the transport
         sector.
+    share_of_energy_steel_energy_production_coal_gas:
+      title: Energy production
+      description: |
+        Coal gas is currently used for electricity and heat production in specific CHPs and power 
+        plants. Here you can indicate what share of coal gas that is not used for the steel-making
+        process itself, is used for electricity and heat generation. </br></br>
+        Note that the coal gas CHPs and power plants are considered must-run. They therefore produce 
+        when coal gas is available, irrespective of electricity and heat demand. You can view the 
+        installed capacities of these plants in the
+        <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">
+        merit order table</a>.
+    share_of_energy_steel_chemical_feedstock_coal_gas:
+      title: Chemical feedstock
+      description: |
+        An alternative for energy production with high CO<sub>2</sub> emissions
+        is the capture of coal gas. The captured gas can then be transformed into feedstock for
+        the chemical industry. Here you can indicate what share of coal gas that is not used for 
+        the steel-making process itself, is used for feedstock production. </br></br>
+        Since a lot is still unknown about the steel-to-chemicals route the ETM does not explicitly 
+        model the impact of this on other (fossil) feedstock use in the 
+        <a href="/scenario/demand/industry/chemicals">chemical industry</a>.

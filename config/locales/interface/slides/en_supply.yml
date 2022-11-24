@@ -92,17 +92,19 @@ en:
         Pipelines, on the other hand, are useful in scenarios with higher volumes of captured CO<sub>2</sub> or
         when CCUS activities are concentrated in the same location."
     supply_ccus_steel_coal_gas:
-      title: Coal gases from blast furnaces (steel)
-      description: "Steel-making via the blast furnace production route produces various coal gases
-        (also called Works Arising Gasses) as side product. These gases have a high carbon content and cannot be emitted. Currently, the coal gas is used in
-        CHPs and power plants for electricity and heat production. This process has high CO<sub>2</sub>
-        emissions. An alternative for this process is CCUS, in which the coal gas can be
-        transformed into feedstock for the chemical sector (steel-to-chemicals). Below, you can make assumptions about what
-        happens with coal gases in the future. <br /><br />
-        Please note that coal gas production is only available in your scenario when steel is produced via the blast
-        furnace production route (see <a href='/scenario/demand/industry/steel'>steel sector</a>). Since
-        a lot is still unknown about the steel-to-chemicals route the ETM does not explicitly model the
-        impact of this on other (fossil) feedstock use in the <a href='/scenario/demand/industry/chemicals'>chemicals sector</a>."
+      title: Coal gas plants
+      description: |
+        Coal gases are a side product from steel production, that are only present in your scenario 
+        if steel is produced through the blast furnace production route. If you want to reduce the 
+        production of coal gases altogether, you can switch to a different steel production process 
+        in the <a href="/scenario/demand/industry/steel">steel sector</a>. </br></br>
+        Part of these gases are used in the steel-making process itself. The remainder is 
+        typically used in CHPs and power plants for electricity and heat production. Due to 
+        the high carbon content of coal gases, this is very CO<sub>2</sub>-intensive. An alternative 
+        use for these coal gases is to transform them into feedstock for the chemical industry 
+        (steel-to-chemicals). </br></br>
+        With the sliders below you can specify which share of the coal gases is used for electricity
+        and heat generation and which share is transformed into feedstock.
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub> emissions of biomass
       short_description:

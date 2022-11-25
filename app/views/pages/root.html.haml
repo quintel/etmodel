@@ -34,6 +34,13 @@
           = link_to(local_global_path) do
             = t('intro.local_vs_global.try_it')
             →
+      %li.game
+        %h4= t('intro.game.title')
+        %p= t('intro.game.description')
+        %p
+          = link_to('https://light.energytransitionmodel.com') do
+            = t('intro.game.try_it')
+            →
       - if Settings.multi_year_charts_url
         %li.multi-year-charts
           %h4= t('intro.multi_year_charts.title')

@@ -63,3 +63,11 @@
   position: 9
   interface_group: industry_heaters
   slide_key: supply_heat_network_industry
+- key: capacity_of_industry_heat_burner_hydrogen
+  step_value: 1.0
+  unit: MW
+  related_node: industry_heat_burner_hydrogen
+  position: 10
+  interface_group: industry_heaters
+  slide_key: supply_heat_network_industry
+

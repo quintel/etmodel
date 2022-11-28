@@ -163,26 +163,26 @@ en:
       title: Biomass CHP
       short_description:
       description: A CHP produces electricity and heat. In the industry sector this
-        heat is very often stored in steam. Here you can choose the capacity of wood
+        heat is very often delivered as steam. Here you can choose the capacity of wood
         pellet CHPs delivering to the industrial steam network.
     capacity_of_industry_heat_burner_coal:
       title: Coal heater
       short_description:
       description: A burner produces heat. In the industry sector this heat is very
-        often stored in steam. Here you can choose the capacity of coal burner delivering
-        to the industrial steam network.”
+        often delivered as steam. Here you can choose the capacity of coal burner delivering
+        to the industrial steam network.
     capacity_of_industry_heat_burner_crude_oil:
       title: Oil heater
       short_description:
       description: A burner produces heat. In the industry sector this heat is very
-        often stored in steam. Here you can choose the capacity of oil burners delivering
-        to the industrial steam network.”
+        often delivered as steam. Here you can choose the capacity of oil burners delivering
+        to the industrial steam network.
     capacity_of_industry_heat_burner_lignite:
       title: Lignite heater
       short_description:
       description: A burner produces heat. In the industry sector this heat is very
-        often stored in steam. Here you can choose the capacity of lignite burners
-        delivering to the industrial steam network.”
+        often delivered as steam. Here you can choose the capacity of lignite burners
+        delivering to the industrial steam network.
     capacity_of_industry_heat_well_geothermal:
       title: Geothermal heat
       short_description:
@@ -190,7 +190,14 @@ en:
         the temperature of this heat is too low for industrial processes. However,
         in some sectors like Food and Paper geothermal heat could be an interesting
         heat source. Here you can choose the capacity of geothermal wells delivering
-        heat to the industry sector.”
+        heat to the industry sector.
+    capacity_of_industry_heat_burner_hydrogen:
+      title: Hydrogen heater
+      short_description:
+      description: |
+        A burner produces heat. In the industry sector this heat is very often
+        delivered as steam. Here you can choose the capacity of hydrogen burners
+        delivering to the industrial steam network.
     capacity_of_energy_heat_burner_coal:
       title: Coal heater
       short_description:

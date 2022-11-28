@@ -3,56 +3,64 @@
   step_value: 1.0
   unit: MW
   related_node: industry_chp_combined_cycle_gas_power_fuelmix
-  position: 1
+  position: 100
   interface_group: industry_chps
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_chp_turbine_gas_power_fuelmix
   step_value: 1.0
   unit: MW
   related_node: industry_chp_turbine_gas_power_fuelmix
-  position: 2
+  position: 110
   interface_group: industry_chps
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_chp_engine_gas_power_fuelmix
   step_value: 1.0
   unit: MW
   related_node: industry_chp_engine_gas_power_fuelmix
-  position: 3
+  position: 120
   interface_group: industry_chps
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_chp_ultra_supercritical_coal
   step_value: 1.0
   unit: MW
   related_node: industry_chp_ultra_supercritical_coal
-  position: 4
+  position: 130
   interface_group: industry_chps
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_chp_wood_pellets
   step_value: 1.0
   unit: MW
   related_node: industry_chp_wood_pellets
-  position: 5
+  position: 140
   interface_group: industry_chps
   slide_key: supply_heat_network_industry
+- key: capacity_of_industry_chp_turbine_hydrogen
+  step_value: 1.0
+  unit: MW
+  related_node: industry_chp_turbine_hydrogen
+  position: 150
+  interface_group: industry_chps
+  slide_key: supply_heat_network_industry
+
 - key: capacity_of_industry_heat_burner_coal
   step_value: 1.0
   unit: MW
   related_node: industry_heat_burner_coal
-  position: 6
+  position: 200
   interface_group: industry_heaters
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_heat_burner_crude_oil
   step_value: 1.0
   unit: MW
   related_node: industry_heat_burner_crude_oil
-  position: 7
+  position: 210
   interface_group: industry_heaters
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_heat_burner_lignite
   step_value: 1.0
   unit: MW
   related_node: industry_heat_burner_lignite
-  position: 8
+  position: 220
   interface_group: industry_heaters
   dependent_on: has_lignite
   slide_key: supply_heat_network_industry
@@ -60,14 +68,14 @@
   step_value: 1.0
   unit: MW
   related_node: industry_heat_well_geothermal
-  position: 9
+  position: 230
   interface_group: industry_heaters
   slide_key: supply_heat_network_industry
 - key: capacity_of_industry_heat_burner_hydrogen
   step_value: 1.0
   unit: MW
   related_node: industry_heat_burner_hydrogen
-  position: 10
+  position: 240
   interface_group: industry_heaters
   slide_key: supply_heat_network_industry
 

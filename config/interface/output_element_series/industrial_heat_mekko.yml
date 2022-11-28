@@ -1,7 +1,7 @@
 ---
 - label: industry_final_demand_steam_hot_water_in_industrial_heat_network_mekko
   color: "#A9A9A9"
-  order_by: 1
+  order_by: 100
   group: demand
   show_at_first: 
   is_target_line: false
@@ -13,7 +13,7 @@
   key: industry_final_demand_steam_hot_water_in_industrial_heat_network_mekko_demand_industrial_heat_mekko
 - label: industry_unused_local_production_steam_hot_water_in_industrial_heat_network_mekko
   color: "#FF8C8C"
-  order_by: 2
+  order_by: 110
   group: demand
   show_at_first: 
   is_target_line: false
@@ -23,9 +23,10 @@
   dependent_on: 
   output_element_key: industrial_heat_mekko
   key: industry_unused_local_production_steam_hot_water_in_industrial_heat_network_mekko_demand_industrial_heat_mekko
+
 - label: energy_chp_coal_gas_in_industrial_heat_network_mekko
   color: "#6AB04C"
-  order_by: 3
+  order_by: 200
   group: supply
   show_at_first: 
   is_target_line: false
@@ -37,7 +38,7 @@
   key: energy_chp_coal_gas_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_chp_combined_cycle_gas_power_fuelmix_in_industrial_heat_network_mekko
   color: "#A4B0BE"
-  order_by: 4
+  order_by: 205
   group: supply
   show_at_first: 
   is_target_line: false
@@ -49,7 +50,7 @@
   key: industry_chp_combined_cycle_gas_power_fuelmix_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_chp_engine_gas_power_fuelmix_in_industrial_heat_network_mekko
   color: "#DFE4EA"
-  order_by: 5
+  order_by: 210
   group: supply
   show_at_first: 
   is_target_line: false
@@ -61,7 +62,7 @@
   key: industry_chp_engine_gas_power_fuelmix_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_chp_turbine_gas_power_fuelmix_in_industrial_heat_network_mekko
   color: "#F9CA24"
-  order_by: 6
+  order_by: 215
   group: supply
   show_at_first: 
   is_target_line: false
@@ -73,7 +74,7 @@
   key: industry_chp_turbine_gas_power_fuelmix_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_chp_ultra_supercritical_coal_in_industrial_heat_network_mekko
   color: "#485460"
-  order_by: 7
+  order_by: 220
   group: supply
   show_at_first: 
   is_target_line: false
@@ -85,7 +86,7 @@
   key: industry_chp_ultra_supercritical_coal_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_chp_wood_pellets_in_industrial_heat_network_mekko
   color: "#009432"
-  order_by: 8
+  order_by: 225
   group: supply
   show_at_first: 
   is_target_line: false
@@ -95,9 +96,21 @@
   dependent_on: 
   output_element_key: industrial_heat_mekko
   key: industry_chp_wood_pellets_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
+- label: industry_chp_turbine_hydrogen_in_industrial_heat_network_mekko
+  color: "#87b9eb"
+  order_by: 225
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_chp_turbine_hydrogen_in_industrial_heat_network_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: industrial_heat_mekko
+  key: industry_chp_turbine_hydrogen_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_heat_backup_burner_network_gas_in_industrial_heat_network_mekko
   color: "#CED6E0"
-  order_by: 9
+  order_by: 300
   group: supply
   show_at_first: 
   is_target_line: false
@@ -109,7 +122,7 @@
   key: industry_heat_backup_burner_network_gas_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_heat_burner_coal_in_industrial_heat_network_mekko
   color: "#333333"
-  order_by: 10
+  order_by: 305
   group: supply
   show_at_first: 
   is_target_line: false
@@ -121,7 +134,7 @@
   key: industry_heat_burner_coal_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_heat_burner_crude_oil_in_industrial_heat_network_mekko
   color: "#CD6133"
-  order_by: 11
+  order_by: 310
   group: supply
   show_at_first: 
   is_target_line: false
@@ -133,7 +146,7 @@
   key: industry_heat_burner_crude_oil_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_heat_burner_lignite_in_industrial_heat_network_mekko
   color: "#e61919"
-  order_by: 12
+  order_by: 315
   group: supply
   show_at_first: 
   is_target_line: false
@@ -145,7 +158,7 @@
   key: industry_heat_burner_lignite_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
 - label: industry_heat_well_geothermal_in_industrial_heat_network_mekko
   color: "#FFA502"
-  order_by: 13
+  order_by: 320
   group: supply
   show_at_first: 
   is_target_line: false
@@ -155,3 +168,15 @@
   dependent_on: 
   output_element_key: industrial_heat_mekko
   key: industry_heat_well_geothermal_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
+- label: industry_heat_burner_hydrogen_in_industrial_heat_network_mekko
+  color: "#87CEEB"
+  order_by: 325
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_heat_burner_hydrogen_in_industrial_heat_network_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: industrial_heat_mekko
+  key: industry_heat_burner_hydrogen_in_industrial_heat_network_mekko_supply_industrial_heat_mekko

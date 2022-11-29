@@ -671,6 +671,18 @@
   dependent_on:
   output_element_key: merit_order
   key: industry_chp_gas_engine_merit_merit_order
+- label: industry_chp_hydrogen_turbine_merit
+  color: "#31a2c4"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: industry_chp_hydrogen_turbine_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: industry_chp_hydrogen_turbine_merit_merit_order
 - label: industry_chp_wood_merit
   color: "#BADC58"
   order_by: 1

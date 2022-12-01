@@ -512,11 +512,11 @@ en:
     supply_transport_marine_fuels:
       title: Domestic navigation
       short_description: ''
-      description: Which fuels will power your ships? Keep in mind that ships with
-        diesel / dual fuel engines can run on a variety of fuels, and that your choice
-        here is the average fuel mix of a ship with that engine. In the <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
-        >domestic navigation section</a> you can select the engines your inland vessels
-        will be equiped with.
+      description: |
+        Which fuels will be used to power ships with diesel engines and ships with LNG engines?
+        In the <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
+        >domestic navigation</a> section you can determine the share of these engines in the total 
+        freight transport by inland shipping.
     supply_transport_public_transport_technologies:
       title: Public transport fuels
       short_description:

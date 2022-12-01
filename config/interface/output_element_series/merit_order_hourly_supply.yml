@@ -683,6 +683,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: industry_chp_wood_pellets_merit_order_hourly_supply
+- label: industry_chp_turbine_hydrogen
+  color: "#31a2c4"
+  order_by: 5
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: industry_chp_turbine_hydrogen
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: industry_chp_turbine_hydrogen_merit_order_hourly_supply
 - label: coal_gas_ccgt
   color: "#521b82"
   order_by: 6

@@ -114,6 +114,7 @@ en:
         other_final_demand_steam_hot_water_input_curve: 'Other'
         energy_chp_combined_cycle_network_gas_in_heat_network_mekko: "Gas CHP - large-scale"
         industry_chp_wood_pellets: 'Biomass CHP - industry'
+        industry_chp_turbine_hydrogen: 'Hydrogen turbine CHP - industry'
         energy_chp_local_wood_pellets: 'Biomass CHP - small-scale'
         energy_chp_local_engine_network_gas: 'Gas engine CHP - small-scale'
         energy_chp_local_engine_biogas: 'Biogas engine CHP - small-scale'
@@ -308,6 +309,7 @@ en:
         compressed_natural_gas_busses: "Compressed gas busses"
         compressed_natural_gas_trucks: "Compressed gas trucks"
         compressed_natural_gas_vans: "Compressed gas vans"
+        compressed_natural_gas: "Compressed gas"
         conventional: "Conventional"
         conversion_losses: "Conversion losses"
         cooking: "Cooking"
@@ -765,6 +767,8 @@ en:
         imported_heat: "Imported (residual) heat"
         imported_heat_waterfall: "(Residual) heat"
         imported_hydrogen: "Imported hydrogen"
+        industry_heat_from_hydrogen_for_mekko: "Heat for industrial heat network"
+        industry_heat_network_hydrogen: "Heat for industrial heat network"
         industry_chp_combined_cycle_gas_power_fuelmix: 'Gas CHP - industry'
         industry_chp_engine_gas_power_fuelmix: 'Gas motor CHP - industry'
         industry_chp_turbine_gas_power_fuelmix: 'Gas turbine CHP - industry'
@@ -868,6 +872,7 @@ en:
         industry_chp_gas_ccgt_merit: "Gas CHP (industry)"
         industry_chp_gas_engine_merit: "Gas motor CHP (industry)"
         industry_chp_gas_turbine_merit: "Gas turbine CHP (industry)"
+        industry_chp_hydrogen_turbine_merit: "Hydrogen turbine CHP (industry)"
         industry_chp_wood_merit: "Wood pellets CHP (industry)"
         local_chp_wood_merit: "Biomass CHP (small-scale)"
         local_chp_gas_merit: "Gas CHP (small-scale)"
@@ -1115,6 +1120,23 @@ en:
         transport_e_ships: "Electric ships"
         transport_losses: "Distribution losses"
         trucks: "Trucks"
+        trucks_demand_for_diesel: "Diesel for trucks"
+        trucks_demand_for_biodiesel: "Biodiesel for trucks"
+        trucks_demand_for_gasoline: "Gasoline for trucks"
+        trucks_demand_for_bio_ethanol: "Bio-ethanol for trucks"
+        trucks_demand_for_compressed_natural_gas: "CNG for trucks"
+        trucks_demand_for_lng: "LNG for trucks"
+        trucks_demand_for_bio_lng: "Bio-LNG for trucks"
+        trucks_demand_for_electricity: "Electricity for trucks"
+        trucks_demand_for_hydrogen: "Hydrogen for trucks"
+        vans_demand_for_diesel: "Diesel for vans"
+        vans_demand_for_biodiesel: "Biodiesel for vans"
+        vans_demand_for_gasoline: "Gasoline for vans"
+        vans_demand_for_bio_ethanol: "Bio-ethanol for vans"
+        vans_demand_for_compressed_natural_gas: "CNG for vans"
+        vans_demand_for_lpg: "LPG for vans"
+        vans_demand_for_electricity: "Electricity for vans"
+        vans_demand_for_hydrogen: "Hydrogen for vans"
         uranium: "Uranium oxide"
         vans: "Vans"
         vacuum_cleaner: "Vacuum cleaner"
@@ -1202,11 +1224,13 @@ en:
         industry_chp_turbine_gas_power_fuelmix_in_industrial_heat_network_mekko: "Gas turbine CHP"
         industry_chp_ultra_supercritical_coal_in_industrial_heat_network_mekko: "Coal CHP"
         industry_chp_wood_pellets_in_industrial_heat_network_mekko: "Biomass CHP"
+        industry_chp_turbine_hydrogen_in_industrial_heat_network_mekko: "Hydrogen turbine CHP"
         industry_heat_backup_burner_network_gas_in_industrial_heat_network_mekko: "Heat shortage (gas backup)"
         industry_heat_burner_coal_in_industrial_heat_network_mekko: "Coal heater"
         industry_heat_burner_crude_oil_in_industrial_heat_network_mekko: "Oil heater"
         industry_heat_burner_lignite_in_industrial_heat_network_mekko: "Lignite heater"
         industry_heat_well_geothermal_in_industrial_heat_network_mekko: "Geothermal heat"
+        industry_heat_burner_hydrogen_in_industrial_heat_network_mekko: "Hydrogen heater"
         other_oil: "Other oil"
         other_bio_oil: "Other bio oil"
         industry: "Industry"

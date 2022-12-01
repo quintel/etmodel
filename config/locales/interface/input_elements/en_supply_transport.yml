@@ -105,7 +105,8 @@ en:
       title: LNG
       short_description: 
       description: |
-        This slider sets the energetic share of fossil LNG in the LNG mix. </br></br>
+        With this slider you set the energetic share of LNG in the fuel mix of ships 
+        with LNG engines. </br></br>
         Liquified Natural Gas (LNG) is a rather novel shipping fuel. Traditionally,
         large ships use large fractions of oil and smaller vessels typically run on
         diesel-like fuels. Ships transporting large cargo over long distances require
@@ -118,63 +119,89 @@ en:
       title: Bio-LNG
       short_description: 
       description: |
-        This slider sets the energetic share of bio-LNG in the LNG mix. </br></br>
-        Bio-based fuels for navigation are not common. Very large ocean-faring
-        vessels tend to use extremely heavy tar-like oil fractions that will probably
-        never be replaced by bio-fuels, as this is hardly economical. Furthermore,
-        since ships are relatively efficient, you might wonder whether it is a good
-        idea  to have them run on bio-fuels. Road transport being far less efficient,
-        bio-fuels will have a much larger impact there.
+        With this slider you set the energetic share of bio-LNG in the fuel mix of ships 
+        with LNG engines. </br></br>
+        Bio-based fuels for navigation are currently not common. Keep in mind that the potential 
+        to produce bio-based fuels is limited by land use constraints. You can compare the use 
+        of bio-based fuels with the potential in your area in 
+        <a href="#" class="open_chart" data-chart-key="biomass_demand_by_category" data-chart-location="side">
+        this chart</a>.
     transport_shipping_mixer_diesel_diesel_share:
       title: Diesel
       short_description: 
       description: |
-        This slider sets the energetic share of fossil diesel in the fuel mix. </br></br>
+        With this slider you set the energetic share of diesel in the aggregate fuel mix of ships 
+        with single, dual and multifuel engines. </br></br>
         Large ships use tar-like fractions of oil, which tend to be a waste
         product of all but the most advanced refineries. This makes this fuel very
-        cheap (and rich in energy). The smaller a ship becomes, the closer its fuel
-        will tend to common diesel. Since ships in domestic navigation are relatively
-        small, diesel is a rather common fuel there.
+        cheap (and rich in energy). The smaller a ship becomes, the more often diesel is 
+        used. Since ships in domestic navigation are relatively small, diesel is a rather 
+        common fuel there.
     transport_shipping_mixer_diesel_biodiesel_share:
       title: Biodiesel
       short_description: 
       description: |
-        This slider sets the energetic share of biodiesel in the fuel mix. </br></br>
-        Bio-based fuels for navigation are not common. Very large ocean-faring
-        vessels tend to use extremely heavy tar-like oil fractions that will probably
-        never be replaced by bio-fuels, as this is hardly economical. Furthermore,
-        since ships are relatively efficient, you might wonder whether it is a good
-        idea  to have them run on bio-fuels. Road transport being far less efficient,
-        bio-fuels will have a much larger impact there.
+        With this slider you set the energetic share of biodiesel in the aggregate fuel mix of ships 
+        with single, dual and multifuel engines. </br></br>
+        Bio-based fuels for navigation are currently not common. Keep in mind that the potential 
+        to produce bio-based fuels is limited by land use constraints. You can compare the use 
+        of bio-based fuels with the potential in your area in 
+        <a href="#" class="open_chart" data-chart-key="biomass_demand_by_category" data-chart-location="side">
+        this chart</a>.
     transport_shipping_mixer_diesel_lng_share:
       title: LNG
       short_description: 
       description: |
-        This slider sets the energetic share of fossil LNG in the fuel mix. </br></br>
-        Liquified Natural Gas (LNG) is a rather novel shipping fuel. Traditionally,
+        With this slider you set the energetic share of LNG in the aggregate fuel mix of ships 
+        with single, dual and multifuel engines. </br></br>
+        Liquified natural gas (LNG) is a rather novel shipping fuel. Traditionally,
         large ships use large fractions of oil and smaller vessels typically run on
         diesel-like fuels. Ships transporting large loads over long distances, require
         very powerful engines and energy-rich fuels. Natural gas is an unsuitable
         shipping fuel as its energetic density is very low, but through liquefaction
         it increases by a factor 600 - more than enough to compete with diesel. Since
         LNG is also a clean-burning fossil fuel, it is an alternative shipping fuel
-        worth considering.
+        worth considering. </br></br>
+        LNG cannot be used in conventional diesel engines. To be able to switch between 
+        LNG and diesel, ships need to be fitted with dual engines. Given that the lifespan 
+        of conventional diesel engines can range from 10 to 20 and even up to 50 years, it 
+        may take time to transition to this type of engine.
     transport_shipping_mixer_diesel_bio_lng_share:
-      title: Bio LNG
+      title: Bio-LNG
       short_description: 
       description: |
-        This slider sets the energetic share of bio LNG in the fuel mix. </br></br>
-        Bio-based fuels for navigation are not common. Very large ocean-faring
-        vessels tend to use extremely heavy tar-like oil fractions that will probably
-        never be replaced by bio-fuels, as this is hardly economical. Furthermore,
-        since ships are relatively efficient, you might wonder whether it is a good
-        idea  to have them run on bio-fuels. Road transport being far less efficient,
-        bio-fuels will have a much larger impact there.
+        With this slider you set the energetic share of bio-LNG in the aggregate fuel mix of ships 
+        with single, dual and multifuel engines. </br></br>
+        Bio-based fuels for navigation are currently not common. Keep in mind that the potential 
+        to produce bio-based fuels is limited by land use constraints. You can compare the use 
+        of bio-based fuels with the potential in your area in 
+        <a href="#" class="open_chart" data-chart-key="biomass_demand_by_category" data-chart-location="side">
+        this chart</a>. </br></br>
+        Bio-LNG cannot be used in conventional diesel engines. To be able to switch between 
+        bio-LNG and diesel, ships need to be fitted with dual fuel engines. Given that the lifespan 
+        of conventional diesel engines can range from 10 to 20 and even up to 50 years, it 
+        may take time to transition to dual fuel engines.
+    transport_shipping_mixer_diesel_bio_ethanol_share:
+      title: Bio-ethanol
+      short_description:
+      description: |
+        With this slider you set the energetic share of bio-ethanol in the aggregate fuel mix of ships 
+        with single, dual and multifuel engines. </br></br>
+        Bio-based fuels for navigation are currently not common. Keep in mind that the potential 
+        to produce bio-based fuels is limited by land use constraints. You can compare the use 
+        of bio-based fuels with the potential in your area in 
+        <a href="#" class="open_chart" data-chart-key="biomass_demand_by_category" data-chart-location="side">
+        this chart</a>. </br></br>
+        Bio-ethanol cannot be used in conventional diesel engines. To use 
+        bio-ethanol, ships need to be fitted with multifuel engines. This is a type of engine that 
+        is even more advanced than the dual fuel engine, as it needs to be able to switch between 
+        multiple types of fuel. It may take time before this technology is widely available.
     transport_shipping_mixer_diesel_heavy_fuel_oil_share:
       title: Heavy fuel oil
       short_description: 
       description: |
-        This slider sets the energetic share of heavy fuel oil in the fuel mix. </br></br>
+        With this slider you set the energetic share of heavy fuel oil in the aggregate fuel mix of ships 
+        with single, dual and multifuel engines. </br></br>
         The larger a ship becomes, the heavier the fuel it uses. Large
         ocean-faring ships use a tar-like substance that is a waste product of all
         but the most advanced refineries. Since these fractions have few other uses

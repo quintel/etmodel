@@ -275,6 +275,18 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_heat_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: industry_heat_from_hydrogen_for_mekko
+  color: "#2e4c5e"
+  order_by: 7
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: industry_heat_from_hydrogen_for_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: industry_heat_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_synthetic_products_from_hydrogen_for_mekko
   color: "#7bed9f"
   order_by: 8
@@ -289,7 +301,7 @@
   key: energy_synthetic_products_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: industry_residual_hydrogen_for_mekko
   color: "#006400"
-  order_by: 8
+  order_by: 10
   group: supply
   show_at_first:
   is_target_line: false

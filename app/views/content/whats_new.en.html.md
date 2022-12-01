@@ -1,3 +1,17 @@
+# What's new in the Energy Transition Model?
+___
+
+# December 2022
+
+## Bio-ethanol for inland shipping
+Currently, ships for inland waterway transport are often fitted with conventional diesel engines. Advanced multifuel diesel engines are being developed that can run on a range of fuels, including bio-ethanol. You can set the share of diesel engines in *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/domestic-navigation-technology)**. You can then add bio-ethanol by changing the fuel mix of these engines in *Supply → Transport fuels* → **[Domestic navigation](/scenario/supply/transport_fuels/domestic-navigation)**.
+
+-> ![](/assets/pages/whats_new/bio_ethanol_inland_shipping_en.png) <-
+
+## Hydrogen use in the industrial heating network
+Two new technologies have been added that can supply steam to the industrial heat network. You can now install capacity for a hydrogen turbine CHP, which produces both steam and electricity, and for a hydrogen heater, which only produces steam. Go to *Demand → Industry* → **[Heat network sources](/scenario/demand/industry/heat-network-sources)** to check it out.
+___
+
 # November 2022
 
 ## First Asian country is now available: Singapore

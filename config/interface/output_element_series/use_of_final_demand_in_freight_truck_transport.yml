@@ -1,0 +1,110 @@
+---
+- label: diesel
+  color: "#854321"
+  order_by: 100
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_diesel_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: diesel_use_of_final_demand_in_freight_truck_transport
+- label: gasoline
+  color: "#8B0000"
+  order_by: 110
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_gasoline_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: gasoline_use_of_final_demand_in_freight_truck_transport
+- label: compressed_natural_gas
+  color: "#32a4a8"
+  order_by: 120
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_compressed_natural_gas_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: compressed_natural_gas_use_of_final_demand_in_freight_truck_transport
+- label: lng
+  color: "#696969"
+  order_by: 130
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_lng_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: lng_use_of_final_demand_in_freight_truck_transport
+- label: biodiesel
+  color: "#5D7929"
+  order_by: 200
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_biodiesel_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: biodiesel_use_of_final_demand_in_freight_truck_transport
+- label: bio_ethanol
+  color: "#394C19"
+  order_by: 210
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_bio_ethanol_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: bio_ethanol_use_of_final_demand_in_freight_truck_transport
+- label: bio_lng
+  color: "#006400"
+  order_by: 220
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_bio_lng_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: bio_lng_use_of_final_demand_in_freight_truck_transport
+- label: electricity
+  color: "#4169E1"
+  order_by: 300
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_electricity_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: electricity_use_of_final_demand_in_freight_truck_transport
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 305
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_hydrogen_in_truck_road_freight_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_truck_transport
+  key: hydrogen_use_of_final_demand_in_freight_truck_transport
+

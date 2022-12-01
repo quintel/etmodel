@@ -114,7 +114,7 @@ nl:
         van restwarmte kunnen <a href=\"/scenario/costs/costs_heat/residual-heat\">hier</a>
         aangepast worden.\r\n</br>"
     capacity_of_industry_chp_combined_cycle_gas_power_fuelmix:
-      title: Gas WKK (STEG)
+      title: Gas-WKK (STEG)
       short_description: ''
       description: |
         Warmtekrachtkoppelingen (WKK’s) maken warmte en elektriciteit.
@@ -155,6 +155,15 @@ nl:
         De industriële gas WKK's draaien op een brandstofmix van gas, olie en bio-olie.
         Klik <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>hier</a> 
         om de brandstofmix voor jouw scenario te zien en te veranderen.
+    capacity_of_industry_chp_turbine_hydrogen:
+      title: Waterstofturbine-WKK
+      short_description:
+      description: |
+        Een WKK produceert zowel warmte als elektriciteit. In de industrie
+        is wordt deze warmte typisch in de vorm van stoom geleverd. Kies hier 
+        het vermogen aan waterstofturbine-WKKs dat levert aan het industriële stoomnetwerk.<br/><br/>
+        Klik <a href=/scenario/costs/specs_renewable_electricity/hydrogen-plants>hier</a> 
+        om de efficiënties van deze WKK aan te passen.
     capacity_of_industry_chp_ultra_supercritical_coal:
       title: Kolen-WKK
       short_description:
@@ -196,6 +205,13 @@ nl:
         is deze warmte vaak een té lage temperatuur. Toch is het in sommige sectoren
         inzetbaar, zoals de papier- en voedselindustrie. Kies hier het vermogen aan
         geothermieputten dat warmte levert aan de industrie.
+    capacity_of_industry_heat_burner_hydrogen:
+      title: Waterstofketel
+      short_description:
+      description: |
+        Een ketel produceert warmte. In de industrie is deze warmte vaak
+        in de vorm van stoom. Kies hier het vermogen aan waterstofketels dat levert
+        aan het industriële stoomnetwerk.
     capacity_of_energy_heat_burner_coal:
       title: Kolenketel
       short_description:

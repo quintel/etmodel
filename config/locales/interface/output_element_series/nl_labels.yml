@@ -300,6 +300,7 @@ nl:
         compressed_natural_gas_busses: "CNG-bussen (gas onder druk)"
         compressed_natural_gas_trucks: "CNG-vrachtwagens (gas onder druk)"
         compressed_natural_gas_vans: "CNG-bestelbussen (gas onder druk)"
+        compressed_natural_gas: "CNG (gas onder druk)"
         conventional: "Conventioneel"
         conversion_losses: "Omzetverliezen"
         cooking: "Koken"
@@ -760,11 +761,14 @@ nl:
         imported_heat: "Geïmporteerde (rest)warmte"
         imported_heat_waterfall: "Restwarmte"
         imported_hydrogen: "Geïmporteerde waterstof"
+        industry_heat_from_hydrogen_for_mekko: "Warmte voor industrieel warmtenet"
+        industry_heat_network_hydrogen: "Warmte voor industrieel warmtenet"
         industry_chp_combined_cycle_gas_power_fuelmix: 'Gas WKK - industrie'
         industry_chp_engine_gas_power_fuelmix: 'Gasmotor WKK - industrie'
         industry_chp_turbine_gas_power_fuelmix: 'Gasturbine WKK - industrie'
         industry_chp_ultra_supercritical_coal: 'Kolen WKK - industrie'
         industry_chp_wood_pellets: 'Biomassa-WKK - industrie'
+        industry_chp_turbine_hydrogen: "Waterstofturbine-WKK - industrie"
         energy_chp_local_wood_pellets: 'Biomassa-WKK - kleinschalig'
         energy_chp_local_engine_network_gas: 'Gasmotor-WKK - kleinschalig'
         energy_chp_local_engine_biogas: 'Biogasmotor-WKK - kleinschalig'
@@ -869,6 +873,7 @@ nl:
         industry_chp_gas_ccgt_merit: "Gas-WKK (industrie)"
         industry_chp_gas_engine_merit: "Gasmotor-WKK (industrie)"
         industry_chp_gas_turbine_merit: "Gasturbine-WKK (industrie)"
+        industry_chp_hydrogen_turbine_merit: "Waterstofturbine-WKK (industrie)"
         industry_chp_wood_merit: "Biomassa-WKK (industrie)"
         local_chp_wood_merit: "Biomassa-WKK (kleinschalig)"
         local_chp_gas_merit: "Gas-WKK (kleinschalig)"
@@ -1113,6 +1118,23 @@ nl:
         transport_e_ships: "Elektrische schepen"
         transport_losses: "Distributieverliezen"
         trucks: "Vrachtwagens"
+        trucks_demand_for_diesel: "Diesel voor vrachtwagens"
+        trucks_demand_for_biodiesel: "Biodiesel voor vrachtwagens"
+        trucks_demand_for_gasoline: "Benzine voor vrachtwagens"
+        trucks_demand_for_bio_ethanol: "Bio-ethanol voor vrachtwagens"
+        trucks_demand_for_compressed_natural_gas: "CNG voor vrachtwagens"
+        trucks_demand_for_lng: "LNG voor vrachtwagens"
+        trucks_demand_for_bio_lng: "Bio-LNG voor vrachtwagens"
+        trucks_demand_for_electricity: "Elektriciteit voor vrachtwagens"
+        trucks_demand_for_hydrogen: "Waterstof voor vrachtwagens"
+        vans_demand_for_diesel: "Diesel voor bestelbussen"
+        vans_demand_for_biodiesel: "Biodiesel voor bestelbussen"
+        vans_demand_for_gasoline: "Benzine voor bestelbussen"
+        vans_demand_for_bio_ethanol: "Bio-ethanol voor bestelbussen"
+        vans_demand_for_compressed_natural_gas: "CNG voor bestelbussen"
+        vans_demand_for_lpg: "LPG voor bestelbussen"
+        vans_demand_for_electricity: "Elektriciteit voor bestelbussen"
+        vans_demand_for_hydrogen: "Waterstof voor bestelbussen"
         uranium: "Uranium oxide"
         vacuum_cleaner: "Stofzuiger"
         vans: "Bestelbussen"
@@ -1199,11 +1221,13 @@ nl:
         industry_chp_turbine_gas_power_fuelmix_in_industrial_heat_network_mekko: "Gas turbine WKK"
         industry_chp_ultra_supercritical_coal_in_industrial_heat_network_mekko: "Kolen WKK"
         industry_chp_wood_pellets_in_industrial_heat_network_mekko: "Biomassa WKK"
+        industry_chp_turbine_hydrogen_in_industrial_heat_network_mekko: "Waterstofturbine WKK"
         industry_heat_backup_burner_network_gas_in_industrial_heat_network_mekko: "Warmtetekort (gas back-up) "
         industry_heat_burner_coal_in_industrial_heat_network_mekko: "Kolenketel"
         industry_heat_burner_crude_oil_in_industrial_heat_network_mekko: "Olieketel"
         industry_heat_burner_lignite_in_industrial_heat_network_mekko: "Bruinkoolketel"
         industry_heat_well_geothermal_in_industrial_heat_network_mekko: "Geothermie"
+        industry_heat_burner_hydrogen_in_industrial_heat_network_mekko: "Waterstofketel"
         other_oil: "Andere olie"
         other_bio_oil: "Andere bio-olie"
         agriculture: "Landbouw"

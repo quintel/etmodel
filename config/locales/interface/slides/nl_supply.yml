@@ -542,14 +542,15 @@ nl:
       description:
     supply_transport_road_transport:
       title: Wegverkeer
-      short_description: ''
-      description: 'Hoeveel van de gebruikte brandstof voor het wegverkeer komt van
+      short_description:
+      description: |
+        Hoeveel van de gebruikte brandstof voor het wegverkeer komt van
         hernieuwbare bronnen? Houd rekening met de impact op landgebruik (of zeegebruik)
-        als hiervoor gewassen geteeld moeten worden. In de <a href="/scenario/demand/transport_passenger_transport/car-technology"
-        >autotechnologie-</a> en de <a href="/scenario/demand/transport_freight_transport/truck-technology"
-        >vrachtwagentechnologiesectie</a> kun je bepalen welk type motor auto''s en
-        vrachtwagens hebben. N.B.: vloeibaar aardgas wordt door vrachtwagens gebruikt,
-        maar niet door auto''s.'
+        als hiervoor gewassen geteeld moeten worden. Door de wegverkeertechnologieën in de
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">personen-</a>
+        en <a href="/scenario/demand/transport_freight_transport/truck-technology">vrachtvervoer</a>
+        aan te passen, kun je bepalen welke motoren en dus welke transportbrandstoffen 
+        gebruikt worden.
     supply_transport_trains:
       title: Treinverkeer
       short_description: ''

@@ -4,51 +4,72 @@ en:
     transport_road_mixer_diesel_diesel_share:
       title: Diesel
       short_description: ''
-      description: Diesel has a higher energy content than gasoline, and diesel engines
+      description: |
+        This slider sets the energetic share of fossil diesel in the diesel mix used 
+        by road transport. </br></br>
+        Diesel has a higher energy content than gasoline, and diesel engines
         tend to be more energy efficient than gasoline engines. Due to emissions of
         fine particulate matter, filters are becoming mandatory in most parts of the
         world.
     transport_road_mixer_diesel_biodiesel_share:
       title: Biodiesel
-      short_description: ''
-      description: "Biodiesel can be made from a range of vegetable or animals fats.
+      short_description:
+      description: |
+        This slider sets the energetic share of biodiesel in the diesel mix used 
+        by road transport. </br></br>
+        Biodiesel can be made from a range of vegetable or animal fats.
         Seed oils are particularly popular. Diesel produced from algae has captured
         people's imagination, since growing crops for biodiesel often still competes
         for space with growing food. So far, it accounts for only a small percentage
-        of the total production of bio-diesel.\r\n<br/><br/>\r\nEngines can run on
+        of the total production of bio-diesel. <br/><br/>
+        Engines can run on
         bio-diesel without modifications, but the vegetable-based diesels tend to
-        be rather corrosive to the engine.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses\">documentation
-        on GitHub</a> for more information on the numbers used.\r\n"
+        be rather corrosive to the engine. <br/><br/>
+        See the <a href="https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses">documentation
+        on GitHub</a> for more information on the numbers used.
     transport_road_mixer_gasoline_gasoline_share:
       title: Gasoline
-      short_description: ''
-      description: Gasoline started out as a refinery waste product! Nowadays it is
+      short_description:
+      description: |
+        This slider sets the energetic share of fossil gasoline in the gasoline mix 
+        used by road transport. </br></br>
+        Gasoline started out as a refinery waste product. Nowadays it is
         the most common fuel for cars, even though it is neither particularly clean,
         nor very efficient.
     transport_road_mixer_gasoline_ethanol_share:
       title: Bio-ethanol
-      short_description: ''
-      description: "Bio-ethanol is a partial replacement for gasoline. Engines can
+      short_description:
+      description: |
+        This slider sets the energetic share of bio-ethanol in the gasoline mix 
+        used by road transport. </br></br>
+        Bio-ethanol is a partial replacement for gasoline. Engines can
         run on bio-ethanol without needing re-tuning if not too much bio-ethanol is
         mixed with gasoline. High percentages of bio-ethanol require minor modifications
-        to engines in order to retain efficiency.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses\">documentation
-        on GitHub</a> for more information on the numbers used."
+        to engines in order to retain efficiency. <br/><br/>
+        See the <a href="https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses">documentation
+        on GitHub</a> for more information on the numbers used.
     transport_road_mixer_lng_lng_share:
       title: LNG
       short_description: 
-      description: "Liquefied Natural Gas (LNG) is a clean burning fossil fuel. Liquefaction
+      description: |
+        This slider sets the energetic share of fossil LNG in the LNG mix 
+        used by road transport. </br></br>
+        Liquefied Natural Gas (LNG) is a clean burning fossil fuel. Liquefaction
         makes natural gas significantly richer in energy, and therefore interesting
         for long distance transport. Currently the only large scale European liquefaction
-        plants are found in Norway and LNG is imported from the Middle East as well.\r\n<br/><br/>\r\nLNG
-        is used by trucks (and not by cars) because of its high energy content and
+        plants are found in Norway and LNG is imported from the Middle East as well. <br/><br/>
+        LNG is used by trucks (and not by cars) because of its high energy content and
         its slow evaporation process (since it is cooled passively). As the annual
         mileage of trucks is significantly higher and their usage much more constant
         and almost continuous, the high energy content allows for a large driving
-        range while LNG evaporation does not pose a problem."
+        range while LNG evaporation does not pose a problem.
     transport_road_mixer_lng_bio_lng_share:
-      title: Bio LNG
+      title: Bio-LNG
       short_description: 
-      description: Bio LNG is in fact liquefied bio methane. Through anaerobic digestion
+      description: |
+        This slider sets the energetic share of bio-LNG in the LNG mix 
+        used by road transport. </br></br>
+        Bio LNG is in fact liquefied bio methane. Through anaerobic digestion
         or fermentation biodegradable materials can be converted into biogas. This
         gas consists of mostly bio methane, carbondioxide and several other gases.
         It is upgraded to bio methane by removing all the unwanted gases - engines
@@ -58,25 +79,34 @@ en:
     transport_rail_mixer_diesel_biodiesel_share:
       title: Biodiesel
       short_description: 
-      description: "Biodiesel can be made from a range of vegetable or animals fats.
+      description: |
+        This slider sets the energetic share of biodiesel in the diesel mix 
+        used by train transport. </br></br>
+        Biodiesel can be made from a range of vegetable or animals fats.
         Seed oils are particularly popular. Diesel produced from algae has captured
         people's imagination, since growing crops for biodiesel often still competes
         for space with growing food. So far, it accounts for only a small percentage
-        of the total production of bio-diesel, as it is not commercially viable yet.\r\n<br/><br/>\r\nEngines
-        can run on bio-diesel without modifications, but the vegetable-based diesels
-        tend to be rather corrosive to the engine.\r\n<br/><br/>\r\nSee the <a href=\"https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses\">documentation
-        on GitHub</a> for more information on the numbers used."
+        of the total production of bio-diesel, as it is not commercially viable yet. <br/><br/>
+        Engines can run on bio-diesel without modifications, but the vegetable-based diesels
+        tend to be rather corrosive to the engine. <br/><br/>
+        See the <a href="https://github.com/quintel/etdataset-public/tree/master/carriers_source_analyses">documentation
+        on GitHub</a> for more information on the numbers used.
     transport_rail_mixer_diesel_diesel_share:
       title: Diesel
       short_description: 
-      description: Diesel is the standard fossil fuel for trains in 'remote' areas
+      description: |
+        This slider sets the energetic share of fossil diesel in the diesel mix 
+        used by train transport. </br></br>
+        Diesel is the standard fossil fuel for trains in 'remote' areas
         that lack an electric rail system. Diesel engines are quite efficient and
         sturdy. Due to emissions of fine particulate matter, filters are becoming
         mandatory in most parts of the world.
     transport_shipping_mixer_lng_lng_share:
       title: LNG
       short_description: 
-      description: Liquified Natural Gas (LNG) is a rather novel shipping fuel. Traditionally,
+      description: |
+        This slider sets the energetic share of fossil LNG in the LNG mix. </br></br>
+        Liquified Natural Gas (LNG) is a rather novel shipping fuel. Traditionally,
         large ships use large fractions of oil and smaller vessels typically run on
         diesel-like fuels. Ships transporting large cargo over long distances require
         very powerful engines and energy-rich fuels. Natural gas is an unsuitable
@@ -85,18 +115,22 @@ en:
         LNG is also a clean-burning fossil fuel, it is an alternative shipping fuel
         worth considering.
     transport_shipping_mixer_lng_bio_lng_share:
-      title: Bio LNG
+      title: Bio-LNG
       short_description: 
-      description: 'Bio-based fuels for navigation are not common. Very large ocean-faring
+      description: |
+        This slider sets the energetic share of bio-LNG in the LNG mix. </br></br>
+        Bio-based fuels for navigation are not common. Very large ocean-faring
         vessels tend to use extremely heavy tar-like oil fractions that will probably
         never be replaced by bio-fuels, as this is hardly economical. Furthermore,
         since ships are relatively efficient, you might wonder whether it is a good
         idea  to have them run on bio-fuels. Road transport being far less efficient,
-        bio-fuels will have a much larger impact there. '
+        bio-fuels will have a much larger impact there.
     transport_shipping_mixer_diesel_diesel_share:
       title: Diesel
       short_description: 
-      description: Large ships use tar-like fractions of oil, which tend to be a waste
+      description: |
+        This slider sets the energetic share of fossil diesel in the fuel mix. </br></br>
+        Large ships use tar-like fractions of oil, which tend to be a waste
         product of all but the most advanced refineries. This makes this fuel very
         cheap (and rich in energy). The smaller a ship becomes, the closer its fuel
         will tend to common diesel. Since ships in domestic navigation are relatively
@@ -104,16 +138,20 @@ en:
     transport_shipping_mixer_diesel_biodiesel_share:
       title: Biodiesel
       short_description: 
-      description: 'Bio-based fuels for navigation are not common. Very large ocean-faring
+      description: |
+        This slider sets the energetic share of biodiesel in the fuel mix. </br></br>
+        Bio-based fuels for navigation are not common. Very large ocean-faring
         vessels tend to use extremely heavy tar-like oil fractions that will probably
         never be replaced by bio-fuels, as this is hardly economical. Furthermore,
         since ships are relatively efficient, you might wonder whether it is a good
         idea  to have them run on bio-fuels. Road transport being far less efficient,
-        bio-fuels will have a much larger impact there. '
+        bio-fuels will have a much larger impact there.
     transport_shipping_mixer_diesel_lng_share:
       title: LNG
       short_description: 
-      description: Liquified Natural Gas (LNG) is a rather novel shipping fuel. Traditionally,
+      description: |
+        This slider sets the energetic share of fossil LNG in the fuel mix. </br></br>
+        Liquified Natural Gas (LNG) is a rather novel shipping fuel. Traditionally,
         large ships use large fractions of oil and smaller vessels typically run on
         diesel-like fuels. Ships transporting large loads over long distances, require
         very powerful engines and energy-rich fuels. Natural gas is an unsuitable
@@ -124,31 +162,38 @@ en:
     transport_shipping_mixer_diesel_bio_lng_share:
       title: Bio LNG
       short_description: 
-      description: 'Bio-based fuels for navigation are not common. Very large ocean-faring
+      description: |
+        This slider sets the energetic share of bio LNG in the fuel mix. </br></br>
+        Bio-based fuels for navigation are not common. Very large ocean-faring
         vessels tend to use extremely heavy tar-like oil fractions that will probably
         never be replaced by bio-fuels, as this is hardly economical. Furthermore,
         since ships are relatively efficient, you might wonder whether it is a good
         idea  to have them run on bio-fuels. Road transport being far less efficient,
-        bio-fuels will have a much larger impact there. '
+        bio-fuels will have a much larger impact there.
     transport_shipping_mixer_diesel_heavy_fuel_oil_share:
       title: Heavy fuel oil
       short_description: 
-      description: The larger a ship becomes, the heavier the fuel it uses. Large
+      description: |
+        This slider sets the energetic share of heavy fuel oil in the fuel mix. </br></br>
+        The larger a ship becomes, the heavier the fuel it uses. Large
         ocean-faring ships use a tar-like substance that is a waste product of all
         but the most advanced refineries. Since these fractions have few other uses
         without being broken down further, they are relatively cheap.
     bunkers_plane_using_kerosene_share:
       title: Kerosene
       short_description: 
-      description: 'For international aviation mainly large aircrafts are used and
-        they consume primarily kerosene. '
+      description: |
+        This slider sets the energetic share of fossil kerosene in the kerosene mix. </br></br>
+        For international aviation mainly large aircrafts are used and
+        they consume primarily kerosene.
     bunkers_plane_using_bio_kerosene_share:
       title: Bio-kerosene
       short_description: 
-      description: "Instead of using fossil kerosene also bio-kerosene can be used
-        in the same type of engines; it is a so-called \"drop-in fuel\". At the moment
+      description: |
+        This slider sets the energetic share of bio-kerosene in the kerosene mix. </br></br>
+        Instead of using fossil kerosene also bio-kerosene can be used
+        in the same type of engines; it is a so-called "drop-in fuel". At the moment
         four technologies are certified to supply bio-kerosene to commercial aviation,
         of which the Hydrotreated Esters and Fatty Acids (HEFA) technology is used
         in 90% of the cases. Do consider the impact on land (and sea) use for growing
-        the required crops. \r\n</br></br>\r\nCurrently, it is possible to tank bio-kerosene
-        at two airports: Los Angeles and Oslo. "
+        the required crops.

@@ -7,7 +7,7 @@ en:
         \ <li>as <a href=\"/scenario/supply/biomass/green-gas-in-gas-network\">green
         gas</a> in the gas network</li>\r\n  <li>in biomass heaters for <a href=\"/scenario/supply/heat/heat-sources\">(local)
         heat networks</a></li>\r\n  <li>as <a href=\"/scenario/supply/transport_fuels/road-transport\">transport
-        fuel</a>: bio-ethanol, biodiesel, bio-LNG and biokerosene</li>\r\n  <li>as
+        fuel</a>: bio-ethanol, biodiesel, bio-LNG and bio-kerosene</li>\r\n  <li>as
         co-firing in <a href=\"/scenario/supply/electricity/coal-plants\" >coal plants</a></li>\r\n
         <li>as <a href=\"/scenario/supply/biomass/wood-pellets-in-steel-production\">wood pellets</a> in steel production</li>\r\n
         \ <li>as <a href=\"/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants\">biocoal
@@ -523,13 +523,15 @@ en:
       description:
     supply_transport_road_transport:
       title: Road transport
-      short_description: ''
-      description: How much of the fuels used in road transport will come from renewable
+      short_description:
+      description: |
+        How much of the fuels used in road transport will come from renewable
         sources? Do consider the impact on land (and sea) use for growing the required
-        crops. In the <a href="/scenario/demand/transport_passenger_transport/car-technology"
-        >car technology</a> and the <a href="/scenario/demand/transport_freight_transport/truck-technology"
-        >truck technology</a> section you can select the engine type of your cars
-        and trucks. Keep in mind that LNG is used by trucks, but not by cars.
+        crops. By changing the road transport technologies in the 
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">passenger</a> 
+        and <a href="/scenario/demand/transport_freight_transport/truck-technology">freight</a> 
+        transport section, you can determine which engines, and therefore which transport fuels 
+        are used.
     supply_transport_trains:
       title: Rail transport
       short_description: ''

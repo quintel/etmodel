@@ -1,8 +1,8 @@
-# Development
+# Collaborate
 
-<h2 id="about-quintel">About Quintel</h2>
+<h2 id="about-quintel">Over Quintel</h2>
 
-Het Energietransitiemodel is ontwikkeld en wordt onderhouden door [Quintel](https://quintel.com/).
+Het Energietransitiemodel (ETM) is ontwikkeld en wordt onderhouden door [Quintel](https://quintel.com/).
 Quintel streeft ernaar de energietransitie te versnellen met state-of-the-art en open source tools
 en data. Dit doen wij in samenwerking met onze partners. Naast de continue
 [ontwikkeling](/development#development-process) van het Energietransitiemodel helpen we netbeheerders,
@@ -17,8 +17,8 @@ energietransitie enorm kan versnellen. Daarom bieden we het ETM aan als een voll
 tool. Dit betekent dat iedereen de gegevens, berekeningen, definities en software die deel uitmaken
 van het model kan bekijken en verbeteren.
 
-Hoewel het ETM is gemaakt en ontwikkeld door Quintel, kan het bestaan dankzij het werk van duizenden
-bijdragers aan open-sourceprojecten zoals Ruby on Rails, Backbone, React en nog veel meer.
+Hoewel het ETM is gemaakt en ontwikkeld door Quintel, kan het bestaan dankzij het werk aan 
+open-source tools zoals Ruby on Rails, Backbone, React en nog veel meer.
 Pictogrammen en afbeeldingen die in de ETM worden gebruikt zijn voornamelijk afkomstig uit Hero
 Icons, Font Awesome en Freepik (Flaticon).
 

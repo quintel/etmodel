@@ -1,4 +1,4 @@
-# Development
+# Collaborate
 
 <h2 id="about-quintel">About Quintel</h2>
 

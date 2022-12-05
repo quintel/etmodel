@@ -10,10 +10,10 @@ The energy transition requires a major re-design of the energy system. Many stak
 
 <h2 id="what-to-do">What to do with the Energy Transition Model?</h2>
 
-Use the ETM to get a comprehensive overview of the energy system of your area or country covering demand, supply, emissions, and much more. Choose different technologies, costs, etc. to simulate the impact on the future energy system. By means of a wide variety of KPI’s and (hourly) charts, the ETM will provide you with the quantitative and fact-based feedback to support strategic decision-making.
+Use the ETM to get a comprehensive overview of the energy system of your area or country covering demand, supply, emissions, and much more. Choose different technologies, costs, etc. to simulate the impact on the future energy system. By means of a wide variety of KPIs and (hourly) charts, the ETM will provide you with the quantitative and fact-based feedback to support strategic decision-making.
 
 <h2 id="getting-started">Getting started</h2>
 
-Choose the area that you are interested in and a year in the future and simply start exploring! The ETM simulates the energy system of your area for the present and your future year. Use the sliders to adjust the future energy system. The interactive charts, tables, and KPI's will visualize the impact of your choices on the future. By creating a free account, you can save and share your work.
+Choose the area that you are interested in and a year in the future and simply start exploring! The ETM simulates the energy system of your area for the present and your future year. Use the sliders to adjust the future energy system. The interactive charts, tables, and KPIs will visualize the impact of your choices on the future. By creating a free account, you can save and share your work.
 
 [Check out the documentation](https://docs.energytransitionmodel.com/main/starting-or-exploring) for a complete guide on how to use the ETM.

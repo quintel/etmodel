@@ -27,20 +27,6 @@
           = link_to(whats_new_path) do
             = t('intro.whats_new.link')
             →
-      %li.local-global
-        %h4= t('intro.local_vs_global.title')
-        %p= t('intro.local_vs_global.description')
-        %p
-          = link_to(local_global_path) do
-            = t('intro.local_vs_global.try_it')
-            →
-      %li.game
-        %h4= t('intro.game.title')
-        %p= t('intro.game.description')
-        %p
-          = link_to('https://light.energytransitionmodel.com') do
-            = t('intro.game.try_it')
-            →
       - if Settings.multi_year_charts_url
         %li.multi-year-charts
           %h4= t('intro.multi_year_charts.title')
@@ -49,6 +35,20 @@
             = link_to(multi_year_charts_path) do
               = t('intro.multi_year_charts.try_it')
               →
+      %li.game
+        %h4= t('intro.game.title')
+        %p= t('intro.game.description')
+        %p
+          = link_to('https://light.energytransitionmodel.com') do
+            = t('intro.game.try_it')
+            →
+      %li.local-global
+        %h4= t('intro.local_vs_global.title')
+        %p= t('intro.local_vs_global.description')
+        %p
+          = link_to(local_global_path) do
+            = t('intro.local_vs_global.try_it')
+            →
       - if Settings.esdl_api_url
         %li.esdl
           %h4= t('intro.esdl.title')
@@ -66,9 +66,6 @@
             →
           = link_to('https://docs.energytransitionmodel.com') do
             = t('intro.about_us.documentation')
-            →
-          = link_to(contact_url) do
-            = t('intro.about_us.feedback')
             →
 
   #area-select-options

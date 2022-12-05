@@ -1,10 +1,10 @@
-# Collaborate
+# Samenwerken
 
 <h2 id="about-quintel">Over Quintel</h2>
 
 Het Energietransitiemodel (ETM) is ontwikkeld en wordt onderhouden door [Quintel](https://quintel.com/).
 Quintel streeft ernaar de energietransitie te versnellen met state-of-the-art en open source tools
-en data. Dit doen wij in samenwerking met onze partners. Naast de continue
+en data. Dit doen wij in samenwerking met onze [partners](/development#partners). Naast de continue
 [ontwikkeling](/development#development-process) van het Energietransitiemodel helpen we netbeheerders,
 beleidsmakers, adviseurs en vele anderen bij het gebruiken en toepassen van het ETM.
 

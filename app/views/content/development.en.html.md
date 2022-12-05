@@ -1,10 +1,10 @@
-# Development
+# Collaborate
 
 <h2 id="about-quintel">About Quintel</h2>
 
 The ETM is developed and maintained by [Quintel](https://quintel.com/). Quintel aims to accelerate
 the energy transition with state-of-the-art and open-source tools and data. We do this in
-collaboration with our partners. In addition to our continuous [development](/development#development-process)
+collaboration with our [partners](/development#partners). In addition to our continuous [development](/development#development-process)
 of the ETM, we help grid operators, policy makers, consultants, and many others to use and apply the ETM.
 
 [See what we can do for you →](https://quintel.com/projects)

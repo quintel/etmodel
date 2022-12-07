@@ -1,4 +1,8 @@
 #title
+  align-items: center
+  display: flex
+  gap: 0.5rem
+
   padding:
     top: 20px
     bottom: 15px
@@ -11,33 +15,41 @@
     font-weight: bold
     float: left
     line-height: 21px
-    margin: 3px 30px 0 0
+    margin: 3px auto 0 0
     text-align: left
 
-  a:first-child
-    margin-left: 40px
+  .help a, #oe_preset_list_button
+    align-items: center
+    appearance: none
+    border-radius: 3px
+    border: none
+    color: #444
+    cursor: pointer
+    display: flex
+    font-family: $body-font-family
+    font-size: 14px
+    line-height: 1
+    padding: 8px 10px
+    text-transform: none
+    transition: color 0.1s ease, background-color 0.15s ease
 
-  .help
-    float: right
+  .help a
+    background: #eee
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.07)
+    &:hover
+      background: #ddd
+      color: #222
+      text-decoration: none
+    &:active
+      background: #ccc
 
-    a
-      align-items: center
+    svg
+      margin: -0.5rem 0.125rem -0.5rem -0.125rem
+
+  #oe_preset_list_button
+    background: transparent
+    &:hover
       background: #eee
-      border-radius: 3px
-      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.07)
-      color: #444
-      display: inline-flex
-      font-size: 14px
-      margin: -2px 0 0 25px
-      padding: 5px 9px 5px 7px
-      text-transform: none
-      transition: color 0.1s ease, background-color 0.1s ease
-      &:hover
-        background: #ddd
-        color: #222
-        text-decoration: none
-      &:active
-        background: #ccc
+    &:active
+      background: #ddd
 
-      svg
-        margin-right: 0.125rem

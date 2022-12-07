@@ -1,5 +1,22 @@
 %h2= raw t("sidebar_items.#{@interface.current_sidebar_item.key}.title")
 
+#output_element_preset_list.dropdown
+  %button#oe_preset_list_button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' } }
+    = t("chart_presets.title")
+    %span.fa.fa-caret-down{ style: 'margin-left: 0.375rem' }
+  %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'oe_preset_list_button' }
+    %li
+      %button.dropdown-item{ data: { output_elements: '' } }
+        = t("chart_presets.reset_to_default")
+    %li.sep
+    - OutputElementPreset.for_list.each do |preset|
+      %li
+        %button.dropdown-item{ data: { output_elements: preset.output_elements_for_js.join(',') } }
+          = preset.title
+
+:javascript
+  new DropdownView({ el: $('#output_element_preset_list') })
+
 .help
   %a.add_chart{:href => output_elements_path}
     :plain

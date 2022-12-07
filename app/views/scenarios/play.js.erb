@@ -8,3 +8,8 @@ $("#title").busyBox('close')
 // setup slider values, defaults etc
 App.setup_sliders();
 App.accordion.open_right_tab();
+
+const presetListEl = $('#output_element_preset_list');
+if (presetListEl.length > 0) {
+  new OutputElementPresetListView({ el: presetListEl });
+}

@@ -16,8 +16,8 @@ gem 'activeresource', '~> 6.0'
 gem 'jquery-rails', '~> 4.2.2'
 gem 'local_time'
 gem 'haml', '~> 5.0'
-gem 'authlogic'
-gem 'openid_connect'
+# gem 'authlogic'
+# gem 'openid_connect'
 gem 'bcrypt'
 gem 'config'
 gem 'httparty'
@@ -35,6 +35,9 @@ gem 'browser'
 gem 'valid_email2'
 gem 'discard'
 gem 'invisible_captcha'
+
+# Authentication
+gem 'identity', ref: '319432e', github: 'quintel/identity_rails'
 
 # javascript
 gem 'sprockets-rails', require: 'sprockets/railtie'

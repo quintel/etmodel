@@ -26,8 +26,6 @@ RSpec.describe SurveyController do
         request
         expect(Survey.last.user).to be_nil
       end
-
-      xit 'returns body ___'
     end
 
     context 'with a survey and one answered question' do
@@ -51,13 +49,11 @@ RSpec.describe SurveyController do
       it 'returns 200 OK' do
         expect(request).to be_ok
       end
-
-      xit 'returns body ___'
     end
   end
 
   context 'when updating and signed in' do
-    before { login_as(user) }
+    before { sign_in(user) }
 
     let(:user) { FactoryBot.create(:user) }
 
@@ -83,8 +79,6 @@ RSpec.describe SurveyController do
         request
         expect(Survey.last.user).to eq(user)
       end
-
-      xit 'returns body ___'
     end
 
     context 'with a survey and one answered question' do
@@ -108,8 +102,6 @@ RSpec.describe SurveyController do
       it 'returns 200 OK' do
         expect(request).to be_ok
       end
-
-      xit 'returns body ___'
     end
   end
 end

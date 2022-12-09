@@ -29,7 +29,7 @@ describe ScenariosController, vcr: true do
     describe '#index' do
       it 'is redirected' do
         get :index
-        expect(response).to redirect_to(login_url)
+        expect(response).to redirect_to(sign_in_path)
       end
     end
   end
@@ -67,7 +67,7 @@ describe ScenariosController, vcr: true do
 
   context 'with a registered user' do
     before do
-      login_as user
+      sign_in user
     end
 
     describe '#index' do
@@ -359,30 +359,6 @@ describe ScenariosController, vcr: true do
       end
     end
     # rubocop:enable RSpec/NestedGroups
-  end
-
-  context 'with a teacher' do
-    let(:student) { FactoryBot.create(:user, teacher_email: user.email) }
-    let(:student_scenario) { FactoryBot.create(:saved_scenario, user: student) }
-
-    before do
-      login_as user
-      student_scenario
-    end
-
-    describe '#index' do
-      subject do
-        get :index
-        response
-      end
-
-      it { is_expected.to be_successful }
-      it 'shows only the teachers and their students scenarios' do
-        subject
-        expect(assigns(:saved_scenarios))
-          .to contain_exactly(user_scenario, student_scenario)
-      end
-    end
   end
 
   describe 'PUT update' do

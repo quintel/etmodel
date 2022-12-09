@@ -34,15 +34,14 @@
             %span= current_user.name.presence || t('header.my_profile')
             %span.fa.fa-caret-down
           %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'my-account-button' }
-            %li= link_to t('header.my_profile'), edit_user_path, class: 'dropdown-item'
-            %li= link_to t('header.sign_out'), logout_path, class: 'dropdown-item'
+            %li= link_to t('header.my_profile'), user_profile_url, class: 'dropdown-item'
+            %li= link_to t('header.sign_out'), sign_out_path, class: 'dropdown-item', method: :post
             - if current_user.admin?
               %li.sep-above.admin
                 %a.dropdown-item{ href: '/admin' } Admin
     - else
       %li.sign-up.nav-item
-        %a.nav-link{ href: new_user_path }
+        %a.nav-link{ href: sign_up_url }
           = t('header.sign_up')
       %li.sign-in.nav-item
-        %a.nav-link{ href: login_path }
-          = t('header.sign_in')
+        = button_to t('header.sign_in'), sign_in_path, class: 'nav-link', method: :post

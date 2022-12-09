@@ -1,6 +1,11 @@
+# frozen_string_literal: true
+
+require 'identity/test/controller_helpers'
+
 module EtmAuthHelper
-  def login_as(u)
-    activate_authlogic
-    UserSession.create(u)
+  include Identity::Test::ControllerHelpers
+
+  def login_as(user)
+    sign_in(user)
   end
 end

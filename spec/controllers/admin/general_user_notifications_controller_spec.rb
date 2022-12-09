@@ -5,7 +5,7 @@ describe Admin::GeneralUserNotificationsController do
   let!(:general_user_notification) { FactoryBot.create :general_user_notification }
 
   before do
-    login_as(FactoryBot.create(:admin))
+    sign_in(FactoryBot.create(:admin))
   end
 
   describe "GET new" do

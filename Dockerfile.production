@@ -38,6 +38,6 @@ RUN yarn install
 
 COPY . /app/
 
-RUN RAILS_ENV=production bundle exec rails assets:precompile
+RUN RAILS_ENV=production DOCKER_BUILD=true bundle exec rails assets:precompile
 
 CMD ["bundle", "exec", "--keep-file-descriptors", "puma", "-C", "config/puma.rb"]

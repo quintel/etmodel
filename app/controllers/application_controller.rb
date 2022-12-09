@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper :all
-  helper_method :current_user_session, :current_user, :admin?
+  helper_method :current_user, :admin?
 
   before_action :initialize_current
   before_action :assign_locale
@@ -58,14 +58,14 @@ protected
   def permission_denied
     flash[:error] = I18n.t("flash.not_allowed")
     store_location
-    redirect_to login_path
+    redirect_to sign_in_path
   end
 
   def require_user
     unless current_user
       store_location
       flash[:notice] = I18n.t("flash.need_login")
-      redirect_to login_url
+      redirect_to sign_in_path
       return false
     end
   end
@@ -75,7 +75,7 @@ protected
   end
 
   def admin?
-    current_user.try :admin?
+    identity_user&.admin?
   end
 
   def restrict_to_admin
@@ -94,16 +94,20 @@ protected
 
 private
 
-  def current_user_session
-    return @current_user_session if defined?(@current_user_session)
-    @current_user_session = UserSession.find
-  end
+  # def current_user_session
+  #   return @current_user_session if defined?(@current_user_session)
+  #   @current_user_session = UserSession.find
+  # end
+
+  # def current_user
+  #   return @current_user if defined?(@current_user)
+
+  #   # Re-find the user, to avoid AssociationMismatch errors or stale objects.
+  #   @current_user = current_user_session&.user && User.find(current_user_session.user.id)
+  # end
 
   def current_user
-    return @current_user if defined?(@current_user)
-
-    # Re-find the user, to avoid AssociationMismatch errors or stale objects.
-    @current_user = current_user_session&.user && User.find(current_user_session.user.id)
+    @current_user ||= User.from_session_user!(identity_user) if signed_in?
   end
 
   # Internal: Renders a 404 page.

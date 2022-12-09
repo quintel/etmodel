@@ -83,7 +83,7 @@ describe PagesController, vcr: true do
 
   context 'when visiting as a signed-in user' do
     before do
-      login_as FactoryBot.create(:user)
+      sign_in FactoryBot.create(:user)
       get :root
     end
 
@@ -94,7 +94,7 @@ describe PagesController, vcr: true do
 
   context 'when visiting as an admin' do
     before do
-      login_as FactoryBot.create(:admin)
+      sign_in FactoryBot.create(:admin)
       get :root
     end
 

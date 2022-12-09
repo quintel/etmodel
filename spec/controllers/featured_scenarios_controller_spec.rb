@@ -16,7 +16,7 @@ describe FeaturedScenariosController do
 
   context 'when signed in as a user' do
     before do
-      login_as(FactoryBot.create(:user))
+      sign_in(FactoryBot.create(:user))
     end
 
     it 'renders 404' do
@@ -27,7 +27,7 @@ describe FeaturedScenariosController do
 
   context 'when signed in as an admin' do
     before do
-      login_as(FactoryBot.create(:admin))
+      sign_in(FactoryBot.create(:admin))
     end
 
     it 'shows the featured scenario form' do

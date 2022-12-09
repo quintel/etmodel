@@ -76,6 +76,14 @@ mailchimp_list_url: <%= ENV['MAILCHIMP_LIST_URL'] %>
 incoming_webhook_keys:
   mailchimp: <%= ENV['MAILCHIMP_INCOMING_WEBHOOK_KEY'] %>
 
+# Authentication
+# --------------
+
+identity:
+  client_id: <%= ENV['IDENTITY_CLIENT_ID'] %>
+  client_secret: <%= ENV['IDENTITY_CLIENT_SECRET'] %>
+  client_uri: http://localhost:3001
+
 # ESDL
 # ----
 

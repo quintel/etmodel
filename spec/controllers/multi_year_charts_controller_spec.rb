@@ -15,7 +15,7 @@ describe MultiYearChartsController do
       let!(:service) { class_double('CreateMultiYearChart').as_stubbed_const }
 
       before do
-        login_as user
+        sign_in user
 
         allow(service).to receive(:call).and_return(ServiceResult.success(myc))
       end
@@ -37,7 +37,7 @@ describe MultiYearChartsController do
     context 'when signed in and given someone elses saved scenario ID' do
       let(:scenario) { FactoryBot.create(:saved_scenario, end_year: 2050) }
 
-      before { login_as FactoryBot.create(:user) }
+      before { sign_in FactoryBot.create(:user) }
 
       it 'raises a Not Found error' do
         expect { post(:create, params: { scenario_id: scenario.id }) }
@@ -53,7 +53,7 @@ describe MultiYearChartsController do
       let!(:service) { class_double('CreateMultiYearChart').as_stubbed_const }
 
       before do
-        login_as user
+        sign_in user
 
         allow(service).to receive(:call).and_return(ServiceResult.failure(
           "That didn't work."
@@ -91,7 +91,7 @@ describe MultiYearChartsController do
 
       it 'redirects to the login page' do
         post :create, params: { scenario_id: scenario.id }
-        expect(response).to redirect_to(login_url)
+        expect(response).to redirect_to(sign_in_path)
       end
     end
   end
@@ -104,7 +104,7 @@ describe MultiYearChartsController do
 
       before do
         allow(service).to receive(:call).and_return(ServiceResult.success)
-        login_as myc.user
+        sign_in myc.user
       end
 
       it 'redirects to the MYC root' do
@@ -122,7 +122,7 @@ describe MultiYearChartsController do
       let(:myc) { FactoryBot.create(:multi_year_chart) }
 
       before do
-        login_as FactoryBot.create(:user)
+        sign_in FactoryBot.create(:user)
       end
 
       it 'raises RecordNotFound' do
@@ -136,7 +136,7 @@ describe MultiYearChartsController do
 
       it 'redirects to the login page' do
         delete :destroy, params: { id: myc.id }
-        expect(response).to redirect_to(login_url)
+        expect(response).to redirect_to(sign_in_path)
       end
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_03_145118) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_140842) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -81,7 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_145118) do
   end
 
   create_table "saved_scenarios", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.integer "scenario_id", null: false
     t.string "scenario_id_history"
     t.string "title", null: false
@@ -132,7 +132,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_145118) do
     t.index ["key"], name: "index_translations_on_key"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "users", id: :bigint, default: nil, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users_old", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", limit: 191, null: false
     t.string "company_school"
@@ -157,10 +163,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_145118) do
     t.string "group"
     t.integer "teacher_id"
     t.integer "student_id"
-    t.index ["email"], name: "index_users_on_email"
+    t.index ["email"], name: "index_users_old_on_email"
   end
 
   add_foreign_key "esdl_suite_ids", "users"
   add_foreign_key "featured_scenarios", "saved_scenarios"
+  add_foreign_key "multi_year_charts", "users"
+  add_foreign_key "saved_scenarios", "users"
   add_foreign_key "surveys", "users"
 end

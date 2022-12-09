@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount Identity::Engine => '/auth'
+
   root to: 'pages#root'
   post '/' => 'pages#root'
 
@@ -8,18 +10,18 @@ Rails.application.routes.draw do
 
   get '/texts/:id' => 'texts#show'
 
-  get 'login'  => 'user_sessions#new', as: :login
-  get 'logout' => 'user_sessions#destroy', as: :logout
+  # get 'login'  => 'user_sessions#new', as: :login
+  # get 'logout' => 'user_sessions#destroy', as: :logout
 
   get '/descriptions/charts/:id' => 'descriptions#charts'
 
-  resources :user_sessions
+  # resources :user_sessions
   resources :users, except: %i[index show edit destroy]
   resources :password_resets, only: %i[new create edit update]
 
-  resource :user, only: %i[edit update destroy] do
-    post :confirm_delete, on: :member
-  end
+  # resource :user, only: %i[edit update destroy] do
+  #   post :confirm_delete, on: :member
+  # end
 
   resources :areas, only: %i[index show]
 
@@ -44,8 +46,7 @@ Rails.application.routes.draw do
     post 'clear_cache' => 'pages#clear_cache', as: :clear_cache
     get 'surveys', to: 'pages#surveys', as: :surveys
 
-    resources :general_user_notifications,
-              :users
+    resources :general_user_notifications
 
     resources :texts, except: [:show]
   end
@@ -157,8 +158,7 @@ Rails.application.routes.draw do
   end
 
   # Incoming webhooks
-  get '/incoming_webhooks/mailchimp/:key'  => 'incoming_webhooks#verify'
-  post '/incoming_webhooks/mailchimp/:key' => 'incoming_webhooks#mailchimp'
+  get '/incoming_webhooks/verify' => 'incoming_webhooks#verify'
 
   %w[404 422 500].each do |code|
     get "/#{code}", to: 'errors#show', code: code

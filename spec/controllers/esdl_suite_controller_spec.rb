@@ -56,7 +56,7 @@ describe EsdlSuiteController do
 
     context 'with no nonce present in session' do
       before do
-        login_as user
+        sign_in user
       end
 
       it { is_expected.to redirect_to(esdl_auth_url) }
@@ -76,7 +76,7 @@ describe EsdlSuiteController do
 
     context 'with a nonce already present in the session' do
       before do
-        login_as user
+        sign_in user
         session[:esdl_nonce] = nonce
       end
 
@@ -96,7 +96,7 @@ describe EsdlSuiteController do
     end
 
     before do
-      login_as user
+      sign_in user
       session[:esdl_nonce] = nonce
       stub_esdl_suite_open_id_methods
     end
@@ -120,7 +120,7 @@ describe EsdlSuiteController do
     end
 
     before do
-      login_as user
+      sign_in user
       stub_esdl_suite_open_id_methods
     end
 

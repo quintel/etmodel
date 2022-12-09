@@ -4,7 +4,7 @@ describe Admin::TextsController do
   let!(:text) { FactoryBot.create :text }
 
   before(:each) do
-    login_as(FactoryBot.create(:admin))
+    sign_in(FactoryBot.create(:admin))
   end
 
   it "index action should render index template" do

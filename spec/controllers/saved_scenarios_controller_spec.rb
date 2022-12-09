@@ -22,7 +22,7 @@ describe SavedScenariosController, vcr: true do
 
   context 'a regular user' do
     before do
-      login_as user
+      sign_in user
       session[:setting] = Setting.new
     end
 
@@ -113,7 +113,7 @@ describe SavedScenariosController, vcr: true do
 
   describe 'POST create' do
     before do
-      login_as(user)
+      sign_in(user)
 
       allow(CreateApiScenario).to receive(:call).and_return(
         ServiceResult.success(Api::Scenario.new(
@@ -177,7 +177,7 @@ describe SavedScenariosController, vcr: true do
 
     context 'with an owned saved_scenario and an empty title' do
       before do
-        login_as user
+        sign_in user
         session[:setting] = Setting.new
         update
       end
@@ -196,7 +196,7 @@ describe SavedScenariosController, vcr: true do
 
     context 'with an owned saved_scenario and a new title and description' do
       before do
-        login_as user
+        sign_in user
         session[:setting] = Setting.new
         update
       end
@@ -234,7 +234,7 @@ describe SavedScenariosController, vcr: true do
 
   describe 'PUT discard' do
     before do
-      login_as(user)
+      sign_in(user)
       session[:setting] = Setting.new
     end
 
@@ -279,7 +279,7 @@ describe SavedScenariosController, vcr: true do
 
   describe 'PUT undiscard' do
     before do
-      login_as(user)
+      sign_in(user)
       session[:setting] = Setting.new
     end
 
@@ -326,7 +326,7 @@ describe SavedScenariosController, vcr: true do
 
   describe 'DELETE destroy' do
     before do
-      login_as(user)
+      sign_in(user)
       session[:setting] = Setting.new
     end
 

@@ -1,12 +1,20 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :user do
-    name { "Username" }
-    sequence(:email) {|n| "person#{n}@quintel.com" }
-    password { "password" }
-    password_confirmation { "password" }
+    sequence(:id) { |n| n }
+    name { 'John Doe' }
+    sequence(:email) { |n| "person#{n}@quintel.com" }
+    roles { %w[user] }
+
+    initialize_with do
+      User.new(id:, name:).tap do |user|
+        user.identity_user = Identity::User.new(id:, name:, email:, roles:)
+      end
+    end
   end
 
   factory :admin, parent: :user do
-    association :role, factory: :admin_role
+    roles { %w[user admin] }
   end
 end

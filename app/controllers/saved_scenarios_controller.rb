@@ -106,7 +106,7 @@ class SavedScenariosController < ApplicationController
         }
       )
 
-    new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })
+    new_scenario = Engine::Scenario.create(scenario: { scenario: scenario_attrs })
     Current.setting.api_session_id = new_scenario.id
     redirect_to play_path
   end

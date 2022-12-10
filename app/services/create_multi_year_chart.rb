@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Receives a 2050 Api::Scenario and creates scenarios for selected years, with
+# Receives a 2050 Engine::Scenario and creates scenarios for selected years, with
 # input values interpolated from the source scenario. Interpolator also creates
 # a duplicate of the original scenario.
 class CreateMultiYearChart

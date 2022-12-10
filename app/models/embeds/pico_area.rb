@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Embeds
-  # This is a simple wrapper/decorator for Api::Area.
+  # This is a simple wrapper/decorator for Engine::Area.
   class PicoArea < SimpleDelegator
     TYPES             = Embeds::Pico::AreaType::ALL
     FALLBACK_TYPE     = Embeds::Pico::AreaType::Country
@@ -9,7 +9,7 @@ module Embeds
                          Embeds::Pico::AreaType::Res].freeze
 
     def self.find_by_area_code(area_code)
-      new Api::Area.find(area_code)
+      new Engine::Area.find(area_code)
     end
 
     # Sorry for the dutch. PICO is in dutch...

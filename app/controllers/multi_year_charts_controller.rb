@@ -77,7 +77,7 @@ class MultiYearChartsController < ApplicationController
 
     current_user
       .multi_year_charts
-      .where(area_code: Api::Area.keys)
+      .where(area_code: Engine::Area.keys)
       .order(created_at: :desc)
       .page(params[:page])
       .per(50)

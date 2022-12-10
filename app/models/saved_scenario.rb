@@ -47,7 +47,7 @@ class SavedScenario < ApplicationRecord
   def self.batch_load(saved_scenarios, options = {})
     saved_scenarios = saved_scenarios.to_a
     ids = saved_scenarios.map(&:scenario_id)
-    loaded = Api::Scenario.batch_load(ids, options).index_by(&:id)
+    loaded = Engine::Scenario.batch_load(ids, options).index_by(&:id)
 
     saved_scenarios.each do |saved|
       saved.scenario = loaded[saved.scenario_id]
@@ -58,7 +58,7 @@ class SavedScenario < ApplicationRecord
 
   # Returns all saved scenarios whose areas are avaliable.
   def self.available
-    kept.where(area_code: Api::Area.keys)
+    kept.where(area_code: Engine::Area.keys)
   end
 
   # Public: Destroys all saved scenarios which were discarded some time ago.
@@ -84,9 +84,9 @@ class SavedScenario < ApplicationRecord
   def scenario(detailed: false)
     begin
       if detailed
-        @scenario ||= Api::Scenario.find(scenario_id, params: {detailed: true})
+        @scenario ||= Engine::Scenario.find(scenario_id, params: {detailed: true})
       else
-        @scenario ||= Api::Scenario.find(scenario_id)
+        @scenario ||= Engine::Scenario.find(scenario_id)
       end
     rescue ActiveResource::ResourceNotFound
       nil
@@ -115,7 +115,7 @@ class SavedScenario < ApplicationRecord
 
   # Public: Determines if this scenario can be loaded.
   def loadable?
-    Api::Area.code_exists?(area_code)
+    Engine::Area.code_exists?(area_code)
   end
 
   def days_until_last_update

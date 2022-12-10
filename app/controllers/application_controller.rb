@@ -46,7 +46,7 @@ protected
   def initialize_current
     Current.session = session
 
-    unless Api::Area.code_exists?(Current.setting.area_code)
+    unless Engine::Area.code_exists?(Current.setting.area_code)
       Current.setting.reset!
     end
   end

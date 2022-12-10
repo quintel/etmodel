@@ -24,7 +24,7 @@ module Report
     path.read
   end
 
-  # Public: Given an Api::Area, returns the key of the most appropriate report
+  # Public: Given an Engine::Area, returns the key of the most appropriate report
   # to show.
   def self.key_for_area(area)
     area.country? ? :main : :regional

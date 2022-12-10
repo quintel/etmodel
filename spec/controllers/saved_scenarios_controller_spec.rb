@@ -6,7 +6,7 @@ describe SavedScenariosController, vcr: true do
   let(:scenario_mock) { ete_scenario_mock }
 
   before do
-    allow(Api::Scenario).to receive(:find).and_return scenario_mock
+    allow(Engine::Scenario).to receive(:find).and_return scenario_mock
   end
 
   let(:user) { FactoryBot.create :user }
@@ -72,7 +72,7 @@ describe SavedScenariosController, vcr: true do
       end
 
       it 'with a non-existent scenario redirects to #show' do
-        allow(Api::Scenario)
+        allow(Engine::Scenario)
           .to receive(:find)
           .and_raise(ActiveResource::ResourceNotFound.new(nil))
         get :load, params: { id: user_scenario.id }
@@ -94,7 +94,7 @@ describe SavedScenariosController, vcr: true do
 
     context 'when the scenario cannot be loaded' do
       before do
-        allow(Api::Area).to receive(:code_exists?).and_return(false)
+        allow(Engine::Area).to receive(:code_exists?).and_return(false)
       end
 
       it 'redirects to the root page' do
@@ -116,7 +116,7 @@ describe SavedScenariosController, vcr: true do
       sign_in(user)
 
       allow(CreateApiScenario).to receive(:call).and_return(
-        ServiceResult.success(Api::Scenario.new(
+        ServiceResult.success(Engine::Scenario.new(
           id: 999, area_code: 'nl', end_year: 2050
         ))
       )

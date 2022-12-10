@@ -12,7 +12,7 @@ module AdminHelper
   #
   # Returns an array.
   def area_dependency_options(model)
-    base_options     = Api::Area::DEPENDABLE_ATTRIBUTES
+    base_options     = Engine::Area::DEPENDABLE_ATTRIBUTES
     model_dependency = model.area_dependency&.dependent_on.presence
 
     if model_dependency && !base_options.include?(model_dependency.to_sym)

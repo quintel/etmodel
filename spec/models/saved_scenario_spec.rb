@@ -13,7 +13,7 @@ describe SavedScenario do
 
   describe "#scenario" do
     it "returns nil if scenario is not found in ET-Engine" do
-      expect(Api::Scenario).to receive(:find).with(0).and_raise(ActiveResource::ResourceNotFound.new(404))
+      expect(Engine::Scenario).to receive(:find).with(0).and_raise(ActiveResource::ResourceNotFound.new(404))
       expect(SavedScenario.new(scenario_id: 0).scenario).to be_nil
     end
   end
@@ -38,7 +38,7 @@ describe SavedScenario do
 
   describe '#build_setting_for' do
     before(:each) do
-      allow( Api::Scenario).to receive(:find){ ete_scenario_mock }
+      allow( Engine::Scenario).to receive(:find){ ete_scenario_mock }
     end
 
     subject { FactoryBot.create(:saved_scenario) }

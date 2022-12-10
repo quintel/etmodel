@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Api::Area < ActiveResource::Base
+class Engine::Area < ActiveResource::Base
   ORDER = %w(
     country
     province
@@ -37,10 +37,10 @@ class Api::Area < ActiveResource::Base
     :has_coal_oil_for_heating_built_environment
   ]
 
-  # Represents an optional nested "scaling" attribute within an Api::Area
+  # Represents an optional nested "scaling" attribute within an Engine::Scenario
   class Scaling < ActiveResource::Base
-    self.prefix = Api::Area.prefix
-    self.site = Api::Area.site
+    self.prefix = Engine::Scenario.prefix
+    self.site = Engine::Scenario.site
   end
 
   def self.grouped
@@ -100,7 +100,7 @@ class Api::Area < ActiveResource::Base
   # For example, if this is a municipality in the Netherlands, the base dataset
   # in "nl", so the Netherlands area is returned.
   #
-  # Returns an Api::Area.
+  # Returns an Engine::Scenario.
   def top_level_area
     if try(:base_dataset).present?
       # Remove a trailing year from the dataset key.

@@ -31,11 +31,11 @@ module Embeds
       # select_field:          key of some type that is needed for interfacing
       #                        with pico. We use this code to infer it from key.
       #
-      # matcher:               A regex to detect what area type an Api::Area is
+      # matcher:               A regex to detect what area type an Engine::Area is
       #                        from its #area.
       #
       # select_field_stripper: Strategy for creating a select_field from
-      #                        an Api::Area#area.
+      #                        an Engine::Area#area.
 
       type =
         Struct.new(:key, :select_field, :matcher, :select_field_stripper) do

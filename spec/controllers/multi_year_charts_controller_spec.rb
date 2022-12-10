@@ -59,10 +59,10 @@ describe MultiYearChartsController do
           "That didn't work."
         ))
 
-        allow(Api::Scenario).to receive(:find)
+        allow(Engine::Scenario).to receive(:find)
           .with(scenario.scenario_id).and_return(api_scenario)
 
-        allow(Api::Scenario).to receive(:batch_load).and_return([api_scenario])
+        allow(Engine::Scenario).to receive(:batch_load).and_return([api_scenario])
       end
 
       it 'fails the request with a 422 code' do

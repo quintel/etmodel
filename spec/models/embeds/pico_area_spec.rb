@@ -18,7 +18,7 @@ describe Embeds::PicoArea, vcr: true do
   describe '#methods' do
     subject { nl.methods }
     it do
-      api_area_methods = Api::Area.first.methods - Object.new.methods
+      api_area_methods = Engine::Area.first.methods - Object.new.methods
       is_expected.to include(*api_area_methods)
     end
   end

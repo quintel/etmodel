@@ -7,7 +7,7 @@ CreateApiScenario = lambda do |attributes = {}|
     .slice(:area_code, :end_year, :scenario_id, :read_only)
     .reverse_merge(read_only: true, source: 'ETM')
 
-  scenario = Api::Scenario.create(scenario: { scenario: attributes })
+  scenario = Engine::Scenario.create(scenario: { scenario: attributes })
 
   if scenario.errors.any?
     return ServiceResult.failure(scenario.errors.map(&:full_message))

@@ -51,7 +51,7 @@ describe Setting do
       let(:setting) { described_class.new(api_session_id: 1, area_code: 'invalid') }
 
       before do
-        allow(Api::Area).to receive(:find_by_country_memoized).and_return(nil)
+        allow(Engine::Area).to receive(:find_by_country_memoized).and_return(nil)
       end
 
       it 'returns false' do
@@ -60,7 +60,7 @@ describe Setting do
 
       it 'will have checked for a valid area' do
         setting.active_scenario?
-        expect(Api::Area).to have_received(:find_by_country_memoized).with('invalid')
+        expect(Engine::Area).to have_received(:find_by_country_memoized).with('invalid')
       end
     end
 
@@ -68,7 +68,7 @@ describe Setting do
       let(:setting) { described_class.new(api_session_id: 1, area_code: 'nl') }
 
       before do
-        allow(Api::Area).to receive(:find_by_country_memoized).with('nl').and_return(Object.new)
+        allow(Engine::Area).to receive(:find_by_country_memoized).with('nl').and_return(Object.new)
       end
 
       it 'returns true' do
@@ -77,7 +77,7 @@ describe Setting do
 
       it 'will have checked for a valid area' do
         setting.active_scenario?
-        expect(Api::Area).to have_received(:find_by_country_memoized).with('nl')
+        expect(Engine::Area).to have_received(:find_by_country_memoized).with('nl')
       end
     end
   end
@@ -169,8 +169,8 @@ describe Setting do
     describe "#area" do
       before {
         @setting = Setting.default
-        @area = Api::Area.new
-        expect(Api::Area).to receive(:find_by_country_memoized).with(@setting.area_code).and_return(@area)
+        @area = Engine::Area.new
+        expect(Engine::Area).to receive(:find_by_country_memoized).with(@setting.area_code).and_return(@area)
       }
       it "should return area" do
         expect(@setting.area).to eq(@area)
@@ -184,7 +184,7 @@ describe Setting do
     }.each do |setting_method_name, area_method_name|
       describe "##{setting_method_name} should be true if area##{area_method_name} is true" do
         before do
-          area = Api::Area.new
+          area = Engine::Area.new
           allow(area).to receive(area_method_name).and_return(true)
           allow(@setting).to receive(:area).and_return(area)
         end

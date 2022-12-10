@@ -5,7 +5,7 @@ class EnergyMixController < ApplicationController
   layout 'energy_mix'
 
   def show
-    @scenario = Api::Scenario.find(params[:id])
+    @scenario = Engine::Scenario.find(params[:id])
     @saved_scenario = SavedScenario.find_by(scenario_id: @scenario.id)
   rescue ActiveResource::ResourceNotFound
     # No such scenario.

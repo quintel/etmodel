@@ -16,7 +16,7 @@ describe CreateApiScenario, type: :service do
   end
 
   before do
-    allow(Api::Scenario).to receive(:create)
+    allow(Engine::Scenario).to receive(:create)
       .with(scenario: { scenario: attributes })
       .and_return(scenario)
   end
@@ -55,7 +55,7 @@ describe CreateApiScenario, type: :service do
     it 'creates a writable scenario' do
       result
 
-      expect(Api::Scenario).to have_received(:create)
+      expect(Engine::Scenario).to have_received(:create)
         .with(scenario: { scenario: hash_including(read_only: false) })
     end
   end

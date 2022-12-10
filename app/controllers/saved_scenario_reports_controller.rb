@@ -15,7 +15,7 @@ class SavedScenarioReportsController < ApplicationController
 
   def api_response
     @api_response ||=
-      Api::Scenario.find_with_queries(@saved_scenario.scenario_id, queries)
+      Engine::Scenario.find_with_queries(@saved_scenario.scenario_id, queries)
                    .parsed_response
   end
 

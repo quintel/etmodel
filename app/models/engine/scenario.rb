@@ -1,4 +1,4 @@
-class Api::Scenario < ActiveResource::Base
+class Engine::Scenario < ActiveResource::Base
   self.site = "#{Settings.api_url}/api/v3"
 
   def self.url_to(path)
@@ -32,7 +32,7 @@ class Api::Scenario < ActiveResource::Base
 
   # Public: Determines if this scenario can be loaded.
   def loadable?
-    Api::Area.code_exists?(area_code)
+    Engine::Scenario.code_exists?(area_code)
   end
 
   # The JSON request returns a string. Let's make it a DateTime object

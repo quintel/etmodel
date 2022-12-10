@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   end
 
   def dataset
-    @area = Api::Area.find_by_country_memoized(params[:dataset_locale])
+    @area = Engine::Area.find_by_country_memoized(params[:dataset_locale])
     raise ActiveRecord::RecordNotFound unless @area
 
     @time = params[:time] if %w[present future].include?(params[:time])

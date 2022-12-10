@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Api::Scenario, vcr: true do
+RSpec.describe Engine::Scenario, vcr: true do
   let(:scenario) { described_class.find(648_696) }
 
   describe '#created_at' do

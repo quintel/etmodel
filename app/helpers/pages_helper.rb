@@ -33,8 +33,8 @@ module PagesHelper
 
   # Public: Returns an image tag to the flag representing the given area.
   def area_flag_icon(area_or_code)
-    unless area_or_code.is_a?(Api::Area)
-      area_or_code = Api::Area.find_by_country_memoized(area_or_code)
+    unless area_or_code.is_a?(Engine::Area)
+      area_or_code = Engine::Area.find_by_country_memoized(area_or_code)
     end
 
     path = "flags-24/#{area_css_class(area_or_code).to_s.downcase}.png"

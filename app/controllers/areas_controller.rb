@@ -5,12 +5,12 @@ class AreasController < ActionController::API
   before_action :myc_content_security_policy
 
   def index
-    @areas = Api::Area.all
-    render json: Api::Area.all.map { |area| serialize_area(area) }
+    @areas = Engine::Area.all
+    render json: Engine::Area.all.map { |area| serialize_area(area) }
   end
 
   def show
-    @area = Api::Area.find_by_country_memoized(params[:id])
+    @area = Engine::Area.find_by_country_memoized(params[:id])
 
     if @area
       render json: serialize_area(@area)

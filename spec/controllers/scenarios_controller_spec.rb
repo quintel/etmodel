@@ -22,7 +22,7 @@ describe ScenariosController, vcr: true do
   end
 
   before do
-    allow(Api::Scenario).to receive(:find).and_return scenario_mock
+    allow(Engine::Scenario).to receive(:find).and_return scenario_mock
   end
 
   context 'with a guest' do
@@ -40,7 +40,7 @@ describe ScenariosController, vcr: true do
     before do
       session[:setting] = Setting.new(area_code: 'nl', api_session_id: 123)
 
-      allow(Api::Area)
+      allow(Engine::Area)
         .to receive(:find_by_country_memoized)
         .and_return(FactoryBot.build(:api_area))
     end
@@ -117,7 +117,7 @@ describe ScenariosController, vcr: true do
 
         context 'with a non-existent scenario' do
           before do
-            allow(Api::Scenario)
+            allow(Engine::Scenario)
               .to receive(:find)
               .and_raise(ActiveResource::ResourceNotFound.new(nil))
           end
@@ -133,7 +133,7 @@ describe ScenariosController, vcr: true do
         before do
           session[:setting] = Setting.new(area_code: 'nope')
 
-          allow(Api::Area)
+          allow(Engine::Area)
             .to receive(:code_exists?)
             .with('nope').and_return(false)
         end
@@ -147,7 +147,7 @@ describe ScenariosController, vcr: true do
       context 'with a scenario for a existing region' do
         subject do
           session[:setting] = Setting.new(area_code: 'de', api_session_id: 123)
-          allow(Api::Area)
+          allow(Engine::Area)
             .to receive(:code_exists?)
             .with('de').and_return(true)
           get :play
@@ -179,7 +179,7 @@ describe ScenariosController, vcr: true do
 
             allow(scenario_mock).to receive(:id).and_return('456')
             allow(scenario_mock).to receive(:area_code).and_return('some_code')
-            allow(Api::Scenario).to receive(:find).and_return(scenario_mock)
+            allow(Engine::Scenario).to receive(:find).and_return(scenario_mock)
 
             get :play_multi_year_charts, params: { id: 456 }
             expect(session[:setting].area_code).to eq('some_code')
@@ -193,7 +193,7 @@ describe ScenariosController, vcr: true do
 
         context 'with an invalid scenario' do
           before do
-            allow(Api::Scenario)
+            allow(Engine::Scenario)
               .to receive(:find)
               .and_raise(ActiveResource::ResourceNotFound.new(nil))
           end
@@ -342,7 +342,7 @@ describe ScenariosController, vcr: true do
 
       context 'with an invalid scenario' do
         before do
-          allow(Api::Scenario)
+          allow(Engine::Scenario)
             .to receive(:find)
             .and_raise(ActiveResource::ResourceNotFound.new(nil))
         end

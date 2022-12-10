@@ -57,7 +57,7 @@ class ScenariosController < ApplicationController
 
     Current.setting = Setting.load_from_scenario(@scenario)
 
-    new_scenario = Api::Scenario.create(scenario: { scenario: scenario_attrs })
+    new_scenario = Engine::Scenario.create(scenario: { scenario: scenario_attrs })
     Current.setting.api_session_id = new_scenario.id
 
     redirect_to play_path
@@ -137,7 +137,7 @@ class ScenariosController < ApplicationController
     @inputs = YAML.load inputs
     end_year = params[:end_year].to_i
     end_year = 2050 unless end_year.between?(2010, 2050)
-    @scenario = Api::Scenario.create(
+    @scenario = Engine::Scenario.create(
       scenario: { scenario: {
         source: 'ETM',
         user_values: @inputs,
@@ -181,7 +181,7 @@ class ScenariosController < ApplicationController
 
   # Finds the scenario from id
   def find_scenario
-    @scenario = Api::Scenario.find(
+    @scenario = Engine::Scenario.find(
       params[:id].to_i,
       params: { detailed: true }
     )
@@ -214,7 +214,7 @@ class ScenariosController < ApplicationController
 
   def setup_comparison
     scenario_ids = params[:scenario_ids] || []
-    @scenarios = scenario_ids.map{|id| Api::Scenario.find id, params: {detailed: true}}
+    @scenarios = scenario_ids.map{|id| Engine::Scenario.find id, params: {detailed: true}}
     if @scenarios.empty?
       flash[:error] = "Please select one or more scenarios"
       redirect_to scenarios_path and return

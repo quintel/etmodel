@@ -26,7 +26,7 @@ module SavedScenarioHelper
   end
 
   def area_flag(area_code)
-    area = Api::Area.find_by_country_memoized(area_code)
+    area = Engine::Area.find_by_country_memoized(area_code)
 
     return unless area.country? && area.area != 'UKNI01_northern_ireland'
 

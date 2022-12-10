@@ -46,7 +46,7 @@ module LayoutHelper
   def area_links
     options = []
 
-    Api::Area.grouped.map do |group, areas|
+    Engine::Area.grouped.map do |group, areas|
       options.push(
         text: I18n.t("country_select.groups.#{ group }"),
         data: areas.sort_by{ |a| name_for(a.area) }.map(&method(:area_choice))
@@ -86,7 +86,7 @@ module LayoutHelper
 
   # Returns a URL to the image for the current area code.
   def icon_for_area_code(code)
-    code = Api::Area.find_by_country_memoized(code).country_area.area
+    code = Engine::Area.find_by_country_memoized(code).country_area.area
     code = code.to_s.gsub(/^(\w{2})\d{4}$/, '\1')
 
     "/assets/icons/areas/#{code}.png"

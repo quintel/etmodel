@@ -41,7 +41,7 @@ class ExportScenarioController < ApplicationController
   private
 
   def set_scenario
-    @scenario ||= Api::Scenario.find(params[:id])
+    @scenario ||= Engine::Scenario.find(params[:id])
   rescue ActiveResource::ResourceNotFound
     render_not_found('scenario')
   end

@@ -39,12 +39,12 @@ class Setting
 
   attr_accessor(*default_attributes.keys)
 
-  # Public: Create a new setting object for a Api::Scenario.
+  # Public: Create a new setting object for a Engine::Scenario.
   #
   # The setting object has no api_session_id, so that backbone initializes a new
   # ETengine session, based on the loaded scenario.
   #
-  # scenario                 - The Api::Scenario being loaded.
+  # scenario                 - The Engine::Scenario being loaded.
   # active_saved_scenario    - Optional hash containing the ID and title of the
   #                            currently-active saved scenario.
   #
@@ -126,13 +126,13 @@ class Setting
     # rubocop:disable Rails/DynamicFindBy
     api_session_id.present? &&
       area_code.present? &&
-      Api::Area.find_by_country_memoized(area_code).present?
+      Engine::Area.find_by_country_memoized(area_code).present?
     # rubocop:enable Rails/DynamicFindBy
   end
 
   # Returns the ActiveResource object
   def area
-    Api::Area.find_by_country_memoized(area_code)
+    Engine::Area.find_by_country_memoized(area_code)
   end
 
   # returns the country part of the area_code

@@ -5,7 +5,7 @@ require 'rails_helper'
 describe AreasController do
   describe 'on GET index' do
     before do
-      allow(Api::Area).to receive(:all).and_return([
+      allow(Engine::Area).to receive(:all).and_return([
         FactoryBot.build(:api_area, area: 'nl', area_code: 'nl'),
         FactoryBot.build(:api_area, area: 'be', area_code: 'be')
       ])
@@ -49,7 +49,7 @@ describe AreasController do
     let(:json) { JSON.parse(response.body) }
 
     before do
-      allow(Api::Area).to receive(:find_by_country_memoized).with('nl').and_return(area)
+      allow(Engine::Area).to receive(:find_by_country_memoized).with('nl').and_return(area)
     end
 
     context 'when the area has a flag' do

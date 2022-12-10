@@ -13,7 +13,7 @@ describe SavedScenarioPresenter, vcr: true do
   end
 
   before do
-    allow(Api::Scenario).to receive(:find).and_return scenario_mock
+    allow(Engine::Scenario).to receive(:find).and_return scenario_mock
   end
 
   context 'with two saved scenarios' do

@@ -119,7 +119,7 @@ RSpec.configure do |config|
   config.include Capybara::RSpecMatchers
 
   config.before(:each, type: :controller) do
-    allow(Api::Area).to receive(:code_exists?).and_return(true)
+    allow(Engine::Area).to receive(:code_exists?).and_return(true)
   end
 
   config.before(:each, type: :service) do

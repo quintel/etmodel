@@ -13,3 +13,10 @@ Identity.configure do |config|
     User.from_identity!(session.user)
   end
 end
+
+if Rails.env.development?
+  # In development, ETEngine often runs as only a single process. Pre-fetch the JWKS keys from the
+  # engine so that the first request to the API does not deadlock.
+  require_relative '../../lib/etmodel/engine_token'
+  ETModel::EngineToken.jwks_hash rescue nil
+end

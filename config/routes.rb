@@ -10,18 +10,9 @@ Rails.application.routes.draw do
 
   get '/texts/:id' => 'texts#show'
 
-  # get 'login'  => 'user_sessions#new', as: :login
-  # get 'logout' => 'user_sessions#destroy', as: :logout
-
   get '/descriptions/charts/:id' => 'descriptions#charts'
 
-  # resources :user_sessions
-  resources :users, except: %i[index show edit destroy]
   resources :password_resets, only: %i[new create edit update]
-
-  # resource :user, only: %i[edit update destroy] do
-  #   post :confirm_delete, on: :member
-  # end
 
   resources :areas, only: %i[index show]
 
@@ -159,6 +150,11 @@ Rails.application.routes.draw do
 
   # Incoming webhooks
   get '/incoming_webhooks/verify' => 'incoming_webhooks#verify'
+
+  # Routes for the API. Typically used by ETEngine.
+  namespace :api, path: '/api/v1' do
+    put '/user' => 'user#update'
+  end
 
   %w[404 422 500].each do |code|
     get "/#{code}", to: 'errors#show', code: code

@@ -122,6 +122,10 @@ RSpec.configure do |config|
     allow(Engine::Area).to receive(:code_exists?).and_return(true)
   end
 
+  config.before(:each, :api) do
+    config.include JWTHelper
+  end
+
   config.before(:each, type: :service) do
     config.include ServicesHelper
   end

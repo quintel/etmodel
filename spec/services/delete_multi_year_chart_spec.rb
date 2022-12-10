@@ -10,7 +10,7 @@ describe DeleteMultiYearChart, type: :service do
   let(:result) { described_class.call(multi_year_chart) }
 
   before do
-    allow(SetApiScenarioCompatibility).to receive(:dont_keep_compatible)
+    allow(SetAPIScenarioCompatibility).to receive(:dont_keep_compatible)
       .with(multi_year_chart.scenarios.first.scenario_id)
   end
 
@@ -30,6 +30,6 @@ describe DeleteMultiYearChart, type: :service do
     id = multi_year_chart.scenarios.first.scenario_id
     result
 
-    expect(SetApiScenarioCompatibility).to have_received(:dont_keep_compatible).with(id)
+    expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(id)
   end
 end

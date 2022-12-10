@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe SetApiScenarioCompatibility, type: :service do
+describe SetAPIScenarioCompatibility, type: :service do
   context 'when the response is successful' do
     before do
       allow(HTTParty).to receive(:put).with(

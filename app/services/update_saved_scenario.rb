@@ -39,7 +39,7 @@ class UpdateSavedScenario
   private
 
   def unprotect
-    SetApiScenarioCompatibility.dont_keep_compatible(api_scenario.id)
+    SetAPIScenarioCompatibility.dont_keep_compatible(api_scenario.id)
   end
 
   def failure
@@ -52,7 +52,7 @@ class UpdateSavedScenario
 
   def api_response
     @api_response ||=
-      CreateApiScenario.call(
+      CreateAPIScenario.call(
         settings.merge(
           scenario_id: scenario_id,
         )

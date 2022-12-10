@@ -10,7 +10,7 @@
 # keep_compatible - A boolean indicating if the API scenario needs to be kept compatible.
 #
 # Returns a ServiceResult.
-module SetApiScenarioCompatibility
+module SetAPIScenarioCompatibility
   module_function
 
   def call(scenario_id, keep_compatible)

@@ -10,7 +10,7 @@
 #
 # Returns a ServiceResult with either the parsed JSON response, or the errors
 # returned by ETEngine.
-InterpolateApiScenario = lambda do |scenario_id, end_year, keep_compatible: false|
+InterpolateAPIScenario = lambda do |scenario_id, end_year, keep_compatible: false|
   url = "#{Settings.api_url}/api/v3/scenarios/#{scenario_id}/interpolate"
 
   # Send as JSON so that "keep_compatible" is true/false not "true"/"false".

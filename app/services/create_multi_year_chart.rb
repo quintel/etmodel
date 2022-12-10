@@ -71,7 +71,7 @@ class CreateMultiYearChart
       @years.filter_map do |year|
         next if any_errors
 
-        res = InterpolateApiScenario.call(@saved_scenario.scenario_id, year, keep_compatible: true)
+        res = InterpolateAPIScenario.call(@saved_scenario.scenario_id, year, keep_compatible: true)
         any_errors = res.failure?
 
         res
@@ -81,7 +81,7 @@ class CreateMultiYearChart
 
   def clean_up_failure
     scenarios.each do |sresult|
-      SetApiScenarioCompatibility.dont_keep_compatible(sresult.value['id']) if sresult.successful?
+      SetAPIScenarioCompatibility.dont_keep_compatible(sresult.value['id']) if sresult.successful?
     end
   end
 

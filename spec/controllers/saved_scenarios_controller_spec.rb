@@ -115,7 +115,7 @@ describe SavedScenariosController, vcr: true do
     before do
       sign_in(user)
 
-      allow(CreateApiScenario).to receive(:call).and_return(
+      allow(CreateAPIScenario).to receive(:call).and_return(
         ServiceResult.success(Engine::Scenario.new(
           id: 999, area_code: 'nl', end_year: 2050
         ))
@@ -145,7 +145,7 @@ describe SavedScenariosController, vcr: true do
 
     context 'with invalid attributes' do
       before do
-        allow(SetApiScenarioCompatibility)
+        allow(SetAPIScenarioCompatibility)
           .to receive(:dont_keep_compatible)
           .and_return(ServiceResult.success)
       end

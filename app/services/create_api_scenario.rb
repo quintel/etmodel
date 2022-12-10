@@ -2,7 +2,7 @@
 
 # Creates a new API scenario with the given attributes. Scenarios are marked as
 # read-only unless otherwise configured using the given attributes.
-CreateApiScenario = lambda do |attributes = {}|
+CreateAPIScenario = lambda do |attributes = {}|
   attributes = attributes
     .slice(:area_code, :end_year, :scenario_id, :read_only)
     .reverse_merge(read_only: true, source: 'ETM')

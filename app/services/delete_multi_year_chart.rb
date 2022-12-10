@@ -10,7 +10,7 @@ DeleteMultiYearChart = lambda do |myc|
   scenario_ids = myc.scenarios.pluck(:scenario_id)
 
   myc.destroy
-  scenario_ids.each { |id| SetApiScenarioCompatibility.dont_keep_compatible(id) }
+  scenario_ids.each { |id| SetAPIScenarioCompatibility.dont_keep_compatible(id) }
 
   ServiceResult.success
 end

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe InterpolateApiScenario, type: :service do
+describe InterpolateAPIScenario, type: :service do
   # let(:scenario) { FactoryBot.build(:api_scenario, id: 1) }
   let(:user) { FactoryBot.create(:user) }
   let(:result) { described_class.call(1, 2030, keep_compatible: keep_compatible) }

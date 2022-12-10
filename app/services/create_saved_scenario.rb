@@ -12,7 +12,7 @@
 #
 # Returns a ServiceResult with the resulting SavedScenario.
 CreateSavedScenario = lambda do |scenario_id, user, settings = {}|
-  api_res = CreateApiScenario.call(
+  api_res = CreateAPIScenario.call(
     settings.except(:description, :title).merge(scenario_id: scenario_id)
   )
 
@@ -30,10 +30,10 @@ CreateSavedScenario = lambda do |scenario_id, user, settings = {}|
   )
 
   unless saved_scenario.valid?
-    SetApiScenarioCompatibility.dont_keep_compatible(api_scenario.id)
+    SetAPIScenarioCompatibility.dont_keep_compatible(api_scenario.id)
 
     # Set the scenario ID back to the original, rather than the cloned scenario created by
-    # CreateApiScenario.
+    # CreateAPIScenario.
     saved_scenario.scenario_id = scenario_id
     return ServiceResult.failure(saved_scenario.errors.map(&:full_message), saved_scenario)
   end

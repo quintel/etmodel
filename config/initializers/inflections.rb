@@ -12,6 +12,7 @@
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular('serie', 'series')
+  inflect.acronym('API')
   inflect.acronym('ETModel')
   inflect.acronym('YModel')
 end

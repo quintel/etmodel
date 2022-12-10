@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe CreateApiScenario, type: :service do
+describe CreateAPIScenario, type: :service do
   let(:result) { described_class.call(attributes) }
 
   let(:attributes) do

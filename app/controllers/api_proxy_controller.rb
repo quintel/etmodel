@@ -3,7 +3,7 @@ require 'uri'
 
 # This is used for testing only
 #
-class ApiProxyController < ApplicationController
+class APIProxyController < ApplicationController
   def default
     uri = "/#{params[:url]}"
     uri += ".#{params[:format]}" if params[:format]

@@ -89,9 +89,9 @@ describe MultiYearChartsController do
     context 'when not signed in signed in' do
       let(:scenario) { FactoryBot.build(:api_scenario, id: 1) }
 
-      it 'redirects to the login page' do
+      it 'shows a sign-in prompt' do
         post :create, params: { scenario_id: scenario.id }
-        expect(response).to redirect_to(sign_in_path)
+        expect(response).to be_forbidden
       end
     end
   end
@@ -134,9 +134,9 @@ describe MultiYearChartsController do
     context 'when not signed in signed in' do
       let(:myc) { FactoryBot.create(:multi_year_chart) }
 
-      it 'redirects to the login page' do
+      it 'shows the sign-in prompt' do
         delete :destroy, params: { id: myc.id }
-        expect(response).to redirect_to(sign_in_path)
+        expect(response).to be_forbidden
       end
     end
   end

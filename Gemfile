@@ -37,7 +37,7 @@ gem 'discard'
 gem 'invisible_captcha'
 
 # Authentication
-gem 'identity', ref: '319432e', github: 'quintel/identity_rails'
+gem 'identity', ref: 'e626bd2', github: 'quintel/identity_rails'
 
 # javascript
 gem 'sprockets-rails', require: 'sprockets/railtie'

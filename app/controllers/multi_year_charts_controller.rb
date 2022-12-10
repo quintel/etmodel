@@ -4,7 +4,10 @@ class MultiYearChartsController < ApplicationController
   layout 'multi_year_charts'
 
   before_action :ensure_valid_config
-  before_action :require_user, except: :index
+
+  before_action do
+    authenticate_user!(show_as: :sign_in)
+  end
 
   def index
     @scenarios = user_scenarios

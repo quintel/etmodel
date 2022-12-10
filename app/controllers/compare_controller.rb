@@ -1,6 +1,10 @@
 class CompareController < ApplicationController
   layout 'compare'
 
+  before_action do
+    authenticate_user!(show_as: :sign_in)
+  end
+
   def index
     @scenarios = user_scenarios
 

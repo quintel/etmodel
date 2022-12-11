@@ -9,7 +9,7 @@ RSpec.describe 'API::User', type: :request, api: true do
         put '/api/v1/user',
           as: :json,
           params: { id: user.id, name: 'John' },
-          headers: { 'Authorization' => "Bearer #{generate_jwt(user)}" }
+          headers: authorization_header(user)
       end
 
       it 'returns 200 OK' do
@@ -26,11 +26,11 @@ RSpec.describe 'API::User', type: :request, api: true do
         put '/api/v1/user',
           as: :json,
           params: { id: user.id, name: ' ' },
-          headers: { 'Authorization' => "Bearer #{generate_jwt(user)}" }
+          headers: authorization_header(user)
       end
 
       it 'returns 400 Bad Request' do
-        expect(response.status).to eq(400)
+        expect(response).to have_http_status(:bad_request)
       end
 
       it 'returns an error message' do
@@ -44,11 +44,11 @@ RSpec.describe 'API::User', type: :request, api: true do
         put '/api/v1/user',
           as: :json,
           params: { id: user.id + 1, name: 'John' },
-          headers: { 'Authorization' => "Bearer #{generate_jwt(user)}" }
+          headers: authorization_header(user)
       end
 
       it 'returns 403 Forbidden' do
-        expect(response.status).to eq(403)
+        expect(response).to have_http_status(:forbidden)
       end
     end
   end

@@ -117,6 +117,7 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers
+  config.include FactoryBot::Syntax::Methods
 
   config.before(:each, type: :controller) do
     allow(Engine::Area).to receive(:code_exists?).and_return(true)

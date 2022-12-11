@@ -13,6 +13,12 @@ module API
       render json: { errors: [e.message] }, status: :bad_request
     end
 
+    rescue_from ActiveRecord::RecordNotFound do |e|
+      render json: {
+        errors: ["No such #{e.model.underscore.humanize.downcase}: #{e.id}"]
+      }, status: :not_found
+    end
+
     # Returns the current user, if a token is set and is valid.
     def current_user
       return nil unless token
@@ -20,10 +26,21 @@ module API
       @current_user ||= User.from_jwt!(token) if token
     end
 
-    # Verifies that a token is set and is valid. Raises if the token is invalid and is caught by
-    # the rescue_from block above.
+    # Verifies that a token is set and is valid.
     def verify_token!
-      token || render(json: { errors: ['Missing or invalid token'] }, status: :forbidden)
+      token || render(json: { errors: ['Missing or invalid token'] }, status: :unauthorized)
+    end
+
+    # Verifies that the token has the desired scopes.
+    def verify_scopes!(required_scopes)
+      missing = Array(required_scopes).reject { |scope| token['scopes'].include?(scope) }
+
+      return if missing.empty?
+
+      render(
+        json: { errors: ["Missing required scope: #{missing.join(', ')}"] },
+        status: :forbidden
+      )
     end
 
     # Returns the contents of the current token, if an Authorization header is set.

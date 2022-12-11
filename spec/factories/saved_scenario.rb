@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :saved_scenario do
-    title { "Some scenario" }
+    title { 'Some scenario' }
     end_year { 2050 }
     area_code { 'nl' }
     scenario_id { 648695 }

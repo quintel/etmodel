@@ -154,6 +154,8 @@ Rails.application.routes.draw do
   # Routes for the API. Typically used by ETEngine.
   namespace :api, path: '/api/v1' do
     put '/user' => 'user#update'
+
+    resources :saved_scenarios, only: %i[index show create update destroy]
   end
 
   %w[404 422 500].each do |code|

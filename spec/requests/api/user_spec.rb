@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'API::User', type: :request, api: true do
   describe 'PUT /api/v1/user' do
-    let(:user) { FactoryBot.create(:user) }
+    let(:user) { create(:user) }
 
-    context 'given a valid token and body' do
+    context 'when given a valid token and body' do
       before do
         put '/api/v1/user',
           as: :json,
@@ -21,7 +21,7 @@ RSpec.describe 'API::User', type: :request, api: true do
       end
     end
 
-    context 'given an invalid user' do
+    context 'when given an invalid user' do
       before do
         put '/api/v1/user',
           as: :json,
@@ -39,7 +39,7 @@ RSpec.describe 'API::User', type: :request, api: true do
       end
     end
 
-    context 'given a non-matching token and user' do
+    context 'when given a non-matching token and user' do
       before do
         put '/api/v1/user',
           as: :json,

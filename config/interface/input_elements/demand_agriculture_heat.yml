@@ -46,12 +46,19 @@
   related_node: agriculture_burner_network_gas
   position: 1
   slide_key: demand_agriculture_heat
-- key: agriculture_final_demand_steam_hot_water_share
+- key: agriculture_final_demand_central_steam_hot_water_share
   share_group: agri_heat
   step_value: 0.1
   unit: "%"
   interface_group: heat production
   position: 8
+  slide_key: demand_agriculture_heat
+- key: agriculture_final_demand_local_steam_hot_water_share
+  share_group: agri_heat
+  step_value: 0.1
+  unit: "%"
+  interface_group: heat production
+  position: 9
   slide_key: demand_agriculture_heat
 - key: agriculture_burner_hydrogen_share
   share_group: agri_heat
@@ -61,6 +68,7 @@
   related_node: agriculture_burner_hydrogen
   position: 4
   slide_key: demand_agriculture_heat
+
 - key: capacity_of_agriculture_flexibility_p2h_electricity
   step_value: 1.0
   unit: MW

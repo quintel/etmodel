@@ -52,13 +52,17 @@ en:
       short_description: ''
       description: These are gas-fired central heating systems. These systems are
         quite energy efficient, but emit CO<sub>2</sub>.
-    agriculture_final_demand_steam_hot_water_share:
+    agriculture_final_demand_central_steam_hot_water_share:
       title: District heating
       short_description: ''
       description: District heating is heat supplied by a heat network. The heat can
         be produced by local heat plants / large-scale burners or the heat can be
         imported from outside your region. You can set the heat sources in the Supply-section
         under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+    agriculture_final_demand_local_steam_hot_water_share:
+      title: Heat from local CHPs
+      short_description:
+      description:
     agriculture_burner_hydrogen_share:
       title: H<sub>2</sub>-fired heater
       short_description: 

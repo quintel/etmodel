@@ -1,0 +1,86 @@
+---
+- label: agriculture_demand_local_steam_hot_water
+  color: "#6AB04C"
+  order_by: 100
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: agriculture_demand_local_steam_hot_water
+  is_1990: 
+  dependent_on: 
+  output_element_key: agriculture_local_heat_mekko
+  key: agriculture_demand_local_steam_hot_water_agriculture_local_heat_mekko
+- label: agriculture_demand_unused_steam_hot_water
+  color: "#FF8C8C"
+  order_by: 110
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: agriculture_demand_unused_steam_hot_water
+  is_1990: 
+  dependent_on: 
+  output_element_key: agriculture_local_heat_mekko
+  key: agriculture_demand_unused_steam_hot_water_agriculture_local_heat_mekko
+
+- label: agriculture_supply_chp_engine_biogas
+  color: "#CE8814"
+  order_by: 200
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: agriculture_supply_chp_engine_biogas
+  is_1990: 
+  dependent_on: 
+  output_element_key: agriculture_local_heat_mekko
+  key: agriculture_supply_chp_engine_biogas_agriculture_local_heat_mekko
+- label: agriculture_supply_chp_wood_pellets
+  color: "#3D6B0D"
+  order_by: 210
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: agriculture_supply_chp_wood_pellets
+  is_1990: 
+  dependent_on: 
+  output_element_key: agriculture_local_heat_mekko
+  key: agriculture_supply_chp_wood_pellets_agriculture_local_heat_mekko
+- label: agriculture_supply_chp_engine_dispatchable_network_gas
+  color: "#DFE4EA"
+  order_by: 220
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: agriculture_supply_chp_engine_dispatchable_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: agriculture_local_heat_mekko
+  key: agriculture_supply_chp_engine_dispatchable_network_gas_agriculture_local_heat_mekko
+- label: agriculture_supply_chp_engine_must_run_network_gas
+  color: "#A4B0BE"
+  order_by: 230
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: agriculture_supply_chp_engine_must_run_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: agriculture_local_heat_mekko
+  key: agriculture_supply_chp_engine_must_run_network_gas_agriculture_local_heat_mekko
+- label: agriculture_supply_backup_network_gas
+  color: "#CED6E0"
+  order_by: 240
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: agriculture_supply_backup_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: agriculture_local_heat_mekko
+  key: agriculture_supply_backup_network_gas_agriculture_local_heat_mekko

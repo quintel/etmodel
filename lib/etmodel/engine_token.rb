@@ -5,46 +5,38 @@ module ETModel
   module EngineToken
     module_function
 
-    def verify(token, verify: true)
-      decoded = JWT.decode(
-        token,
-        nil,
-        verify,
-        algorithm: 'RS256',
-        iss: Settings.api_url,
-        verify_iss: true,
-        aud: Settings.identity.client_uri,
-        verify_aud: true
-      ) do |header|
-        jwks_hash[header['kid']]
+    DecodeError = Class.new(StandardError)
+
+    def decode(token)
+      decoded = JSON::JWT.decode(token, jwk_set)
+
+      unless (
+        decoded[:iss] == Settings.api_url &&
+        decoded[:aud] == Settings.identity.client_uri &&
+        decoded[:sub].present? &&
+        decoded[:exp] > Time.now.to_i
+      )
+        raise DecodeError, 'JWT verification failed'
       end
 
       # The JWT gem returns an array of the decoded token and the header.
-      decoded.first
+      decoded
     end
 
-    def jwks_hash
-      jwks_cache.fetch('jwks_hash') do
-        etengine_uri = URI.parse(Settings.api_url)
-        etengine_uri.path = '/oauth/discovery/keys'
-
-        jwks_raw = JSON.parse(Net::HTTP.get(etengine_uri))['keys']
-
-        Array(jwks_raw).to_h do |raw|
-          jwk = JWT::JWK.import(raw)
-          [jwk.kid, jwk.public_key]
-        end
+    def jwk_set
+      jwk_cache.fetch('jwks_hash') do
+        JSON::JWK::Set::Fetcher.fetch(Identity.discovery_config.jwks_endpoint)
       end
     end
 
-    def jwks_cache
+    def jwk_cache
       if Rails.env.development?
-        @jwks_cache ||= ActiveSupport::Cache::MemoryStore.new
+        @jwk_cache ||= ActiveSupport::Cache::MemoryStore.new
       else
         Rails.cache
       end
     end
 
-    private_class_method :jwks_cache
+    private_class_method :jwk_cache
   end
 end

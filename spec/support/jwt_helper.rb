@@ -13,9 +13,14 @@ module JWTHelper
 
   def generate_jwt(user, **kwargs)
     allow(ETModel::EngineToken)
-      .to receive(:jwks_hash).and_return('test_key' => JWTHelper.key.public_key)
+      .to receive(:jwk_set).and_return(
+        JSON::JWK::Set.new([JSON::JWK.new(JWTHelper.key.public_key, kid: 'test_key')])
+      )
 
-    JWT.encode(jwt_payload(user, **kwargs), JWTHelper.key, 'RS256', kid: 'test_key')
+    token = JSON::JWT.new(jwt_payload(user, **kwargs))
+    token.header[:kid] = 'test_key'
+
+    token.sign(JWTHelper.key, :RS256).to_s
   end
 
   def jwt_payload(

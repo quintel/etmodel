@@ -49,6 +49,8 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
   # other merit order table
   #
   series_labels:
+    agriculture_chp_engine_network_gas_dispatchable: 'agriculture_chp_gas_dispatchable'
+    agriculture_chp_wood_pellets: 'agriculture_chp_wood_pellets'
     energy_chp_combined_cycle_network_gas: 'central_gas_chp'
     energy_chp_ultra_supercritical_coal: 'coal_chp'
     energy_chp_ultra_supercritical_cofiring_coal: 'coal_chp_cofiring'

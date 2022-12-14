@@ -27,7 +27,7 @@ class Engine::Scenario < ActiveResource::Base
   end
 
   def title
-    super.presence || try(:metadata)&.attributes&.[]('title')&.presence
+    try(:metadata)&.attributes&.[]('title').presence
   end
 
   # Public: Determines if this scenario can be loaded.

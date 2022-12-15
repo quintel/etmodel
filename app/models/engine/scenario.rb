@@ -14,7 +14,7 @@ class Engine::Scenario < ActiveResource::Base
     if res.code == 200
       res.map { |scn| new(scn) }
     else
-      Raven.capture_message('Scenario batch load failed', level: :error, extra: { url: url })
+      Sentry.capture_message('Scenario batch load failed', level: :error, extra: { url: url })
       []
     end
   end

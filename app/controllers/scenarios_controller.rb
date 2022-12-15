@@ -21,7 +21,7 @@ class ScenariosController < ApplicationController
 
   rescue_from NoScenarioIdError do |ex|
     render :cannot_save_without_id, status: :bad_request
-    Raven.capture_exception(ex)
+    Sentry.capture_exception(ex)
   end
 
   def index

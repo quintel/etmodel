@@ -48,7 +48,7 @@ gem 'i18n-js', '~> 3'
 gem 'jbuilder'
 
 # supporting gems
-gem 'sentry-raven'
+gem 'sentry-ruby'
 
 # system gems
 gem 'mysql2'

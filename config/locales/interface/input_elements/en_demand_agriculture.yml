@@ -58,16 +58,39 @@ en:
       description: District heating is heat supplied by a heat network. The heat can
         be produced by local heat plants / large-scale burners or the heat can be
         imported from outside your region. You can set the heat sources in the Supply-section
-        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+        under the header <a href="/scenario/supply/heat">"Heat networks"</a>.
     agriculture_final_demand_local_steam_hot_water_share:
       title: Heat from local CHPs
+      short_description:
+      description: |
+        This slider sets the share of useful heat demand from agriculture that is supplied 
+        by local combined heat and power (CHP). </br></br>
+        You can determine which CHPs you want to use to meet the resulting demand in
+        the <a href="/scenario/demand/agriculture/heat-from-local-chps"> Heat from local CHPs</a>
+        section below. You can export the hourly demand and supply of heat from local CHPs 
+        in the <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">
+        Data export</a> section.
+    capacity_of_agriculture_chp_engine_biogas:
+      title: Biogas CHP
+      short_description:
+      description:
+    capacity_of_agriculture_chp_engine_network_gas_dispatchable:
+      title: Gas motor CHP
+      short_description:
+      description:
+    capacity_of_agriculture_chp_engine_network_gas_must_run:
+      title: Gas motor CHP
+      short_description:
+      description:
+    capacity_of_agriculture_chp_wood_pellets:
+      title: Biomass CHP
       short_description:
       description:
     agriculture_burner_hydrogen_share:
       title: H<sub>2</sub>-fired heater
       short_description: 
-      description: What percentage of heat demand in agriculture (greenhouses) is
-        met by hydrogen heaters? <br />
+      description: |
+        What percentage of heat demand in agriculture is met by hydrogen heaters?
     agriculture_useful_demand_electricity:
       title: Electricity
       short_description: ''

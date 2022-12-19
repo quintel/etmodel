@@ -35,18 +35,30 @@
   dependent_on: 
   output_element_key: source_of_heat_in_agriculture
   key: electricity_source_of_heat_in_agriculture
-- label: heat
+- label: agriculture_local_heat
+  color: "#4d0101"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: local_heat_used_for_heating_in_agriculture
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_in_agriculture
+  key: local_heat_source_of_heat_in_agriculture
+- label: agriculture_central_heat
   color: "#8B0000"
   order_by: 1
   group: 
   show_at_first: 
   is_target_line: 
   target_line_position: 
-  gquery: heat_used_for_heating_in_agriculture
+  gquery: central_heat_used_for_heating_in_agriculture
   is_1990: 
   dependent_on: 
   output_element_key: source_of_heat_in_agriculture
-  key: heat_source_of_heat_in_agriculture
+  key: central_heat_source_of_heat_in_agriculture
 - label: natural_gas_and_derivatives
   color: "#CCCCCC"
   order_by: 3

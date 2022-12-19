@@ -20,7 +20,16 @@ en:
     supply_agriculture_local_heat:
       title: Heat from local CHPs
       short_description:
-      description:
+      description: |
+        In this section you can determine how you want to meet the demand for heat from 
+        local combined heat and power (CHP) production in the 
+        <a href="/scenario/demand/agriculture/heat"> Heat</a> section above. </br></br>
+        There are two types of CHPs available. The dispatchable CHPs produce electricity 
+        and heat according to the needs of electricity market. The must-run CHPs follow 
+        the heat demand of the agriculture sector. </br></br>
+        If the total heat supply from the CHPs exceeds the demand, the excess heat is 
+        vented to the air. If the supply falls short of demand, the shortage is supplied 
+        by a back-up gas burner.
     demand_buildings_appliances:
       title: Appliances
       short_description: ''

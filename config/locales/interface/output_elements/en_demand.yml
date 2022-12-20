@@ -332,16 +332,13 @@ en:
         about energy demand."
     source_of_heat_in_agriculture:
       title: Final energy demand for heating in agriculture
-      short_description: Agricultural
-      description: "This graph shows agricultural heat demand changes from now to
-        the future, as a result of the choices in 'Demand'. Heat demand is broken
-        down into 'heat from fossil fuels, heat from electricity, heat from biomass
-        and ambient heat'.\r\n<br/><br/>\r\nOf course, what technologies are used,
-        does not really change the actual demand for heat, but it can change energy
-        efficiency and sustainability of heat production. In order to reduce heat
-        demand, buildings will need to be better insulated, for example.\r\n<br/><br/>\r\nYou
-        can click '<u>Change chart</u>' above the graph, to select different graphs
-        about energy demand."
+      short_description:
+      description: |
+        This graph shows agricultural heat demand changes from now to the future, as a 
+        result of technology choices in the <a href="/scenario/demand/agriculture/heat">
+        Agriculture</a> section. <br/><br/>
+        Of course, what technologies are used does not change the useful demand for heat, 
+        but it can change the efficiency and renewability of heat production.
     use_of_final_electricity_demand_in_households:
       title: Electricity use of household appliances
       short_description: Households, by application
@@ -450,5 +447,15 @@ en:
       title: Electricity and gas shares of hybrid heat pump in households
       description:
     agriculture_local_heat_mekko:
-      title: Supply and demand of heat from local CHPs in agriculture
-      description:
+      title: Supply and demand of heat from local CHPs
+      description: |
+        This chart shows local combined heat and power (CHP) that supply heat to the agriculture 
+        sector and the final demand for that heat. To see the hourly behaviour of this demand and 
+        supply, you can go to the 
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a> 
+        section. </br></br>
+        The final demand for heat is determined by the "Heat from local CHPs" slider in
+        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from 
+        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a> 
+        section. Excess heat is wasted and heat shortages are supplied by a backup burner.
+

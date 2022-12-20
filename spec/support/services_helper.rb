@@ -33,4 +33,11 @@ module ServicesHelper
       body
     end
   end
+
+  def stub_faraday_422(body)
+    faraday_response = instance_double(Faraday::Response)
+    allow(faraday_response).to receive(:[]).with(:body).and_return('errors' => body)
+
+    Faraday::UnprocessableEntityError.new(nil, faraday_response)
+  end
 end

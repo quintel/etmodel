@@ -6,6 +6,7 @@
 # changes to the model. This allows the scenario to remain relevant in the future. Throwaway
 # scenarios can have their `keep_compatible` setting set to false (which is the default).
 #
+# http_client     - The client used to communiate with ETEngine.
 # scenario_id     - The ID of the ETEngine scenario to be unprotected.
 # keep_compatible - A boolean indicating if the API scenario needs to be kept compatible.
 #
@@ -13,24 +14,25 @@
 module SetAPIScenarioCompatibility
   module_function
 
-  def call(scenario_id, keep_compatible)
-    response = HTTParty.put(
-      "#{Settings.api_url}/api/v3/scenarios/#{scenario_id}",
-      body: { scenario: { keep_compatible: !!keep_compatible } }
+  def call(http_client, scenario_id, keep_compatible)
+    http_client.put(
+      "/api/v3/scenarios/#{scenario_id}",
+      scenario: { keep_compatible: !!keep_compatible }
     )
 
-    if response.ok?
-      ServiceResult.success
-    else
-      ServiceResult.failure(response['errors'])
-    end
+    ServiceResult.success
+  rescue Faraday::UnprocessableEntityError => e
+    ServiceResult.failure_from_unprocessable_entity(e)
+  rescue Faraday::ClientError => e
+    Sentry.capture_exception(e)
+    ServiceResult.failure
   end
 
-  def keep_compatible(scenario_id)
-    call(scenario_id, true)
+  def keep_compatible(http_client, scenario_id)
+    call(http_client, scenario_id, true)
   end
 
-  def dont_keep_compatible(scenario_id)
-    call(scenario_id, false)
+  def dont_keep_compatible(http_client, scenario_id)
+    call(http_client, scenario_id, false)
   end
 end

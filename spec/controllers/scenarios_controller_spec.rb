@@ -374,7 +374,7 @@ describe ScenariosController, vcr: true do
 
       it 'changes the scenario_id of the saved scenario' do
         request
-        expect(UpdateSavedScenario).to have_received(:call).with(user_scenario, 99)
+        expect(UpdateSavedScenario).to have_received(:call).with(anything, user_scenario, 99)
       end
 
       it 'returns the saved scenario JSON' do

@@ -4,6 +4,7 @@
 # then creates a new SavedScenario. The new API scenario will be marked as
 # protected.
 #
+# http_client - The client used to communiate with ETEngine.
 # scenario_id - The ID of the scenario to be saved.
 # user        - User to which the saved scenario will belong.
 # settings    - Optional extra scenario data to be sent to ETEngine when
@@ -11,9 +12,9 @@
 #               creation of the saved scenario, like the title and description
 #
 # Returns a ServiceResult with the resulting SavedScenario.
-CreateSavedScenario = lambda do |scenario_id, user, settings = {}|
+CreateSavedScenario = lambda do |http_client, scenario_id, user, settings = {}|
   api_res = CreateAPIScenario.call(
-    settings.except(:description, :title).merge(scenario_id: scenario_id)
+    http_client, settings.except(:description, :title).merge(scenario_id:)
   )
 
   return api_res if api_res.failure?
@@ -30,7 +31,7 @@ CreateSavedScenario = lambda do |scenario_id, user, settings = {}|
   )
 
   unless saved_scenario.valid?
-    SetAPIScenarioCompatibility.dont_keep_compatible(api_scenario.id)
+    SetAPIScenarioCompatibility.dont_keep_compatible(http_client, api_scenario.id)
 
     # Set the scenario ID back to the original, rather than the cloned scenario created by
     # CreateAPIScenario.

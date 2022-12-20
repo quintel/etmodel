@@ -10,13 +10,15 @@ class CreateMultiYearChart
 
   # Public: Creates a new multi-year chart and interpolated scenarios.
   #
+  # http_client    - The client used to communiate with ETEngine.
   # saved_scenario - The SavedScenario to be used as the base scenario for interpolating one or more
   #                  new scenarios.
   # user           - The user to which the resulting MultiYearChart should belong.
   # years          - An optional array of years for which interpolated scenarios
   #                  will be created.
   #
-  def initialize(saved_scenario, user, years = DEFAULT_YEARS)
+  def initialize(http_client, saved_scenario, user, years = DEFAULT_YEARS)
+    @http_client = http_client
     @saved_scenario = saved_scenario
     @user = user
     @years = (years + [@saved_scenario.end_year]).uniq
@@ -71,7 +73,13 @@ class CreateMultiYearChart
       @years.filter_map do |year|
         next if any_errors
 
-        res = InterpolateAPIScenario.call(@saved_scenario.scenario_id, year, keep_compatible: true)
+        res = InterpolateAPIScenario.call(
+          @http_client,
+          @saved_scenario.scenario_id,
+          year,
+          keep_compatible: true
+        )
+
         any_errors = res.failure?
 
         res
@@ -81,7 +89,9 @@ class CreateMultiYearChart
 
   def clean_up_failure
     scenarios.each do |sresult|
-      SetAPIScenarioCompatibility.dont_keep_compatible(sresult.value['id']) if sresult.successful?
+      next unless sresult.successful?
+
+      SetAPIScenarioCompatibility.dont_keep_compatible(@http_client, sresult.value['id'])
     end
   end
 

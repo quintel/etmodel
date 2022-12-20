@@ -27,8 +27,12 @@ class ServiceResult
 
   # Public: Creates a failure result from a Faraday::UnprocessableEntityError.
   def self.failure_from_unprocessable_entity(exception, value = nil)
-    errors = exception.response[:body]['errors'].flat_map do |key, messages|
-      messages.map { |message| "#{key.humanize} #{message}" }
+    errors = exception.response[:body]['errors']
+
+    if errors.is_a?(Hash)
+      errors = exception.response[:body]['errors'].flat_map do |key, messages|
+        messages.map { |message| "#{key.humanize} #{message}" }
+      end
     end
 
     failure(errors, value)

@@ -86,7 +86,13 @@ class SavedScenariosController < ApplicationController
     ss_params = params.require(:saved_scenario).permit(:description, :title, :scenario_id)
 
     # Re-find the user, due to AssociationMismatch errors in development.
-    result = CreateSavedScenario.call(ss_params[:scenario_id], current_user, ss_params)
+    result = CreateSavedScenario.call(
+      engine_client,
+      ss_params[:scenario_id],
+      current_user,
+      ss_params
+    )
+
     @saved_scenario = result.value
 
     if result.failure?

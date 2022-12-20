@@ -70,18 +70,7 @@ describe CreateAPIScenario, type: :service do
 
   context 'when the response is unsuccessful' do
     let(:response) do
-      faraday_response = instance_double(Faraday::Response)
-      allow(faraday_response).to receive(:[]).with(:body).and_return(
-        {
-          'errors' => {
-            'area_code' => [
-              'is unknown or not supported'
-            ]
-          }
-        }
-      )
-
-      raise Faraday::UnprocessableEntityError.new(nil, faraday_response)
+      raise stub_faraday_422('Area code is unknown or not supported')
     end
 
     it 'returns a ServiceResult' do

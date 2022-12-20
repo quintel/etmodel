@@ -70,7 +70,7 @@ class ScenariosController < ApplicationController
     scenario_id = params.require(:scenario_id).to_i
 
     @saved_scenario = SavedScenario.find(params[:id])
-    update = UpdateSavedScenario.call(@saved_scenario, scenario_id)
+    update = UpdateSavedScenario.call(engine_client, @saved_scenario, scenario_id)
 
     if update.successful?
       render json: @saved_scenario

@@ -6,11 +6,11 @@
 # myc - A MultiYearChart record.
 #
 # Returns a ServiceResult.
-DeleteMultiYearChart = lambda do |myc|
+DeleteMultiYearChart = lambda do |http_client, myc|
   scenario_ids = myc.scenarios.pluck(:scenario_id)
 
   myc.destroy
-  scenario_ids.each { |id| SetAPIScenarioCompatibility.dont_keep_compatible(id) }
+  scenario_ids.each { |id| SetAPIScenarioCompatibility.dont_keep_compatible(http_client, id) }
 
   ServiceResult.success
 end

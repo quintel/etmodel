@@ -7,11 +7,12 @@ describe DeleteMultiYearChart, type: :service do
     FactoryBot.create(:multi_year_chart, scenarios_count: 1)
   end
 
-  let(:result) { described_class.call(multi_year_chart) }
+  let(:client) { instance_double(Faraday::Connection) }
+  let(:result) { described_class.call(client, multi_year_chart) }
 
   before do
     allow(SetAPIScenarioCompatibility).to receive(:dont_keep_compatible)
-      .with(multi_year_chart.scenarios.first.scenario_id)
+      .with(client, multi_year_chart.scenarios.first.scenario_id)
   end
 
   it 'returns a successful result' do
@@ -30,6 +31,6 @@ describe DeleteMultiYearChart, type: :service do
     id = multi_year_chart.scenarios.first.scenario_id
     result
 
-    expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(id)
+    expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(client, id)
   end
 end

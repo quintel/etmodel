@@ -11,16 +11,13 @@
 #
 # Returns a ServiceResult with the resulting SavedScenario.
 class UpdateSavedScenario
-
-  # Act like a lambda
+  extend Dry::Initializer
   include Service
 
-  attr_reader :saved_scenario, :scenario_id, :settings
-
-  def initialize(saved_scenario, scenario_id, settings = {})
-    @saved_scenario, @scenario_id, @settings =
-      saved_scenario, scenario_id, settings
-  end
+  param :http_client
+  param :saved_scenario
+  param :scenario_id
+  param :settings, default: proc { {} }
 
   def call
     return api_response if failure?
@@ -28,7 +25,12 @@ class UpdateSavedScenario
     saved_scenario.tap do |ss|
       ss.add_id_to_history(ss.scenario_id)
       ss.scenario_id = api_scenario.id
-      unprotect and return failure unless saved_scenario.valid?
+
+      unless ss.valid?
+        unprotect
+        return failure
+      end
+
       ss.save
       saved_scenario.scenario = api_scenario
     end
@@ -39,7 +41,7 @@ class UpdateSavedScenario
   private
 
   def unprotect
-    SetAPIScenarioCompatibility.dont_keep_compatible(api_scenario.id)
+    SetAPIScenarioCompatibility.dont_keep_compatible(http_client, api_scenario.id)
   end
 
   def failure
@@ -51,12 +53,7 @@ class UpdateSavedScenario
   end
 
   def api_response
-    @api_response ||=
-      CreateAPIScenario.call(
-        settings.merge(
-          scenario_id: scenario_id,
-        )
-      )
+    @api_response ||= CreateAPIScenario.call(http_client, settings.merge(scenario_id:))
   end
 
   def failure?

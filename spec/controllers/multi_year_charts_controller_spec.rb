@@ -30,7 +30,7 @@ describe MultiYearChartsController do
 
       it 'calls the CreateMultiYearChart service' do
         post :create, params: { scenario_id: scenario.id }
-        expect(service).to have_received(:call).with(scenario, user)
+        expect(service).to have_received(:call).with(anything, scenario, user)
       end
     end
 
@@ -82,7 +82,7 @@ describe MultiYearChartsController do
 
       it 'calls the CreateMultiYearChart service' do
         post :create, params: { scenario_id: scenario.id }
-        expect(service).to have_received(:call).with(scenario, user)
+        expect(service).to have_received(:call).with(anything, scenario, user)
       end
     end
 
@@ -114,7 +114,7 @@ describe MultiYearChartsController do
 
       it 'calls the DeleteMultiYearChart service' do
         delete :destroy, params: { id: myc.id }
-        expect(service).to have_received(:call).with(myc)
+        expect(service).to have_received(:call).with(anything, myc)
       end
     end
 

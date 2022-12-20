@@ -5,19 +5,19 @@ require 'rails_helper'
 describe CreateMultiYearChart, type: :service do
   let(:scenario) { FactoryBot.build(:saved_scenario, scenario_id: 1) }
   let(:user) { FactoryBot.create(:user) }
-  let(:result) { described_class.call(scenario, user, years) }
+  let(:result) { described_class.call(nil, scenario, user, years) }
 
   # --
 
   def stub_successful_interpolation(year, id)
     allow(InterpolateAPIScenario).to receive(:call)
-      .with(scenario.scenario_id, year, keep_compatible: true)
+      .with(anything, scenario.scenario_id, year, keep_compatible: true)
       .and_return(ServiceResult.success('id' => id))
   end
 
   def stub_failed_interpolation(year, errors)
     allow(InterpolateAPIScenario).to receive(:call)
-      .with(scenario.scenario_id, year, keep_compatible: true)
+      .with(anything, scenario.scenario_id, year, keep_compatible: true)
       .and_return(ServiceResult.failure(errors))
   end
 
@@ -97,7 +97,7 @@ describe CreateMultiYearChart, type: :service do
         stub_successful_interpolation(2030, 2)
         stub_failed_interpolation(2040, ["That didn't work."])
 
-        allow(SetAPIScenarioCompatibility).to receive(:dont_keep_compatible).with(2)
+        allow(SetAPIScenarioCompatibility).to receive(:dont_keep_compatible).with(nil, 2)
       end
 
       it 'is not successful' do
@@ -106,7 +106,7 @@ describe CreateMultiYearChart, type: :service do
 
       it 'unprotects the successful 2030 scenario' do
         result
-        expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(2)
+        expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(nil, 2)
       end
 
       it 'does not create any MultiYearChartScenario records' do
@@ -152,8 +152,8 @@ describe CreateMultiYearChart, type: :service do
     before do
       stub_successful_interpolation(2030, 2)
       stub_successful_interpolation(2050, 3)
-      allow(SetAPIScenarioCompatibility).to receive(:dont_keep_compatible).with(2)
-      allow(SetAPIScenarioCompatibility).to receive(:dont_keep_compatible).with(3)
+      allow(SetAPIScenarioCompatibility).to receive(:dont_keep_compatible).with(nil, 2)
+      allow(SetAPIScenarioCompatibility).to receive(:dont_keep_compatible).with(nil, 3)
     end
 
     it 'raises the error' do
@@ -167,7 +167,7 @@ describe CreateMultiYearChart, type: :service do
         nil
       end
 
-      expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(2)
+      expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(nil, 2)
     end
 
     it 'unprotects the 2050 scenario' do
@@ -177,7 +177,7 @@ describe CreateMultiYearChart, type: :service do
         nil
       end
 
-      expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(3)
+      expect(SetAPIScenarioCompatibility).to have_received(:dont_keep_compatible).with(nil, 3)
     end
   end
 end

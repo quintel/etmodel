@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/quintel/etplugin.git
-  revision: 8a64146f8650def03a5bd172392b5b32dbe9f0bf
-  ref: 8a64146
+  revision: 16e258e31697343f439ebfded7ccd5b7a1cff93f
+  ref: 16e258e
   specs:
     jquery-etmodel-rails (0.3)
       railties (>= 3.1)
 
 GIT
   remote: https://github.com/quintel/identity_rails.git
-  revision: f35a5ef9ca8d934542387dbfe31d0886eb1915cb
-  ref: f35a5ef
+  revision: 65ee73d857be605bfa84bbb56d3efef1f408d51b
+  ref: 65ee73d
   specs:
     identity (0.1.0)
       dry-configurable (>= 1.0)
@@ -208,6 +208,11 @@ GEM
       dry-logic (>= 1.5, < 2)
       dry-types (>= 1.7, < 2)
       zeitwerk (~> 2.6)
+    dry-struct (1.6.0)
+      dry-core (~> 1.0, < 2)
+      dry-types (>= 1.7, < 2)
+      ice_nine (~> 0.11)
+      zeitwerk (~> 2.6)
     dry-types (1.7.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 1.0, < 2)
@@ -256,6 +261,7 @@ GEM
       concurrent-ruby (~> 1.0)
     i18n-js (3.9.1)
       i18n (>= 0.6.6)
+    ice_nine (0.11.2)
     inky-rb (1.4.2.0)
       foundation_emails (~> 2)
       nokogiri
@@ -403,7 +409,7 @@ GEM
       httpclient
       json-jwt (>= 1.11.0)
       rack (>= 2.1.0)
-    rack-protection (3.0.4)
+    rack-protection (3.0.5)
       rack
     rack-proxy (0.7.2)
       rack
@@ -622,6 +628,8 @@ DEPENDENCIES
   dalli
   database_cleaner
   discard
+  dry-initializer
+  dry-struct
   dynamic_form
   ed25519
   factory_bot_rails (~> 4.8)

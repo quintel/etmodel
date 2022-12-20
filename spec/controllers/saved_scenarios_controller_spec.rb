@@ -6,7 +6,8 @@ describe SavedScenariosController, vcr: true do
   let(:scenario_mock) { ete_scenario_mock }
 
   before do
-    allow(Engine::Scenario).to receive(:find).and_return scenario_mock
+    allow(user_scenario).to receive(:scenario).and_return(scenario_mock)
+    allow(admin_scenario).to receive(:scenario).and_return(scenario_mock)
   end
 
   let(:user) { FactoryBot.create :user }
@@ -66,15 +67,16 @@ describe SavedScenariosController, vcr: true do
       end
 
       it 'with a not-loadable scenario redirects to #show' do
-        allow(user_scenario.scenario).to receive(:loadable?).and_return(false)
+        allow(user_scenario.scenario(nil)).to receive(:loadable?).and_return(false)
         get :load, params: { id: user_scenario.id }
         expect(response).to be_redirect
       end
 
       it 'with a non-existent scenario redirects to #show' do
-        allow(Engine::Scenario)
-          .to receive(:find)
-          .and_raise(ActiveResource::ResourceNotFound.new(nil))
+        allow(CreateAPIScenario)
+          .to receive(:call)
+          .and_return(ServiceResult.failure('Scenario not found'))
+
         get :load, params: { id: user_scenario.id }
         expect(response).to be_redirect
       end
@@ -117,7 +119,7 @@ describe SavedScenariosController, vcr: true do
 
       allow(CreateAPIScenario).to receive(:call).and_return(
         ServiceResult.success(Engine::Scenario.new(
-          id: 999, area_code: 'nl', end_year: 2050
+          attributes_for(:engine_scenario, id: 999, area_code: 'nl', end_year: 2050)
         ))
       )
     end

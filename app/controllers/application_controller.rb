@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper :all
-  helper_method :current_user, :admin?
+  helper_method :engine_client, :current_user, :admin?
 
   before_action :initialize_current
   before_action :assign_locale
@@ -92,7 +92,17 @@ protected
     redirect_back(fallback_location: default_url)
   end
 
-private
+  # Returns the Faraday client which should be used to communicate with ETEngine. This contains the
+  # user authentication token if the user is logged in.
+  def engine_client
+    if current_user
+      identity_session.access_token.http_client
+    else
+      Identity.http_client
+    end
+  end
+
+  private
 
   # def current_user_session
   #   return @current_user_session if defined?(@current_user_session)

@@ -28,12 +28,11 @@
 
     = render partial: 'scenarios/version_warning', locals: { scenario: @scenario }
 
-    - if @scenario.read_only?
-      .actions
-        = link_to t("scenario.load_energy_mix"),
-          energy_mix_scenario_path(@scenario.id)
+    .actions
+      = link_to t("scenario.load_energy_mix"),
+        energy_mix_scenario_path(@scenario.id)
 
-      = render partial: 'share_links', locals: { scenario: @scenario }
+    = render partial: 'share_links', locals: { scenario: @scenario }
 
     %p.note
       = t("scenario.overwritten")

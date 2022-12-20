@@ -17,6 +17,17 @@ class @Scenario extends Backbone.Model
   api_attributes: ->
     @apiAttributes()
 
+  isReadOnly: ->
+    !@isWritable()
+
+  isWritable: ->
+    owner = @get('owner')
+
+    return true unless owner
+    return false unless globals.user.id
+
+    return globals.user.id == owner.id
+
   # Returns the base scenario URL, taking into account CORS support
   urlPath: -> App.api.path "scenarios/#{@api_session_id()}"
 

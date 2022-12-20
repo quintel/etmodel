@@ -8,9 +8,9 @@ require_relative '../../app/services/create_multi_year_chart'
 describe MultiYearChartsController do
   describe '#create' do
     context 'when signed in and given a valid saved scenario ID' do
-      let(:scenario) { FactoryBot.create(:saved_scenario, end_year: 2050, user: user) }
-      let(:user) { FactoryBot.create(:user) }
-      let(:myc) { FactoryBot.create(:multi_year_chart, scenarios_count: 1) }
+      let(:scenario) { create(:saved_scenario, end_year: 2050, user: user) }
+      let(:user) { create(:user) }
+      let(:myc) { create(:multi_year_chart, scenarios_count: 1) }
 
       let!(:service) { class_double('CreateMultiYearChart').as_stubbed_const }
 
@@ -35,9 +35,9 @@ describe MultiYearChartsController do
     end
 
     context 'when signed in and given someone elses saved scenario ID' do
-      let(:scenario) { FactoryBot.create(:saved_scenario, end_year: 2050) }
+      let(:scenario) { create(:saved_scenario, end_year: 2050) }
 
-      before { sign_in FactoryBot.create(:user) }
+      before { sign_in create(:user) }
 
       it 'raises a Not Found error' do
         expect { post(:create, params: { scenario_id: scenario.id }) }
@@ -46,9 +46,9 @@ describe MultiYearChartsController do
     end
 
     context 'when signed in and the CreateMultiYearChart service fails' do
-      let(:scenario) { FactoryBot.create(:saved_scenario, end_year: 2050, user: user) }
-      let(:api_scenario) { FactoryBot.build(:api_scenario) }
-      let(:user) { FactoryBot.create(:user) }
+      let(:scenario) { create(:saved_scenario, end_year: 2050, user: user) }
+      let(:api_scenario) { build(:engine_scenario) }
+      let(:user) { create(:user) }
 
       let!(:service) { class_double('CreateMultiYearChart').as_stubbed_const }
 
@@ -59,8 +59,8 @@ describe MultiYearChartsController do
           "That didn't work."
         ))
 
-        allow(Engine::Scenario).to receive(:find)
-          .with(scenario.scenario_id).and_return(api_scenario)
+        allow(FetchAPIScenario).to receive(:call)
+          .with(anything, scenario.scenario_id).and_return(api_scenario)
 
         allow(Engine::Scenario).to receive(:batch_load).and_return([api_scenario])
       end
@@ -87,7 +87,7 @@ describe MultiYearChartsController do
     end
 
     context 'when not signed in signed in' do
-      let(:scenario) { FactoryBot.build(:api_scenario, id: 1) }
+      let(:scenario) { build(:engine_scenario) }
 
       it 'shows a sign-in prompt' do
         post :create, params: { scenario_id: scenario.id }
@@ -100,7 +100,7 @@ describe MultiYearChartsController do
     let!(:service) { class_double('DeleteMultiYearChart').as_stubbed_const }
 
     context 'when the MYC belongs to the logged-in user' do
-      let(:myc) { FactoryBot.create(:multi_year_chart) }
+      let(:myc) { create(:multi_year_chart) }
 
       before do
         allow(service).to receive(:call).and_return(ServiceResult.success)
@@ -119,10 +119,10 @@ describe MultiYearChartsController do
     end
 
     context 'when the MYC belongs to a different user' do
-      let(:myc) { FactoryBot.create(:multi_year_chart) }
+      let(:myc) { create(:multi_year_chart) }
 
       before do
-        sign_in FactoryBot.create(:user)
+        sign_in create(:user)
       end
 
       it 'raises RecordNotFound' do
@@ -132,7 +132,7 @@ describe MultiYearChartsController do
     end
 
     context 'when not signed in signed in' do
-      let(:myc) { FactoryBot.create(:multi_year_chart) }
+      let(:myc) { create(:multi_year_chart) }
 
       it 'shows the sign-in prompt' do
         delete :destroy, params: { id: myc.id }

@@ -456,7 +456,7 @@
 
         value: this.model.get('user_value'),
         step: quinnStep,
-        disable: this.model.get('disabled'),
+        disable: this.model.isDisabled(),
 
         drawTo: {
           left: this.model.drawToMin(),
@@ -586,7 +586,13 @@
     updateIsDisabled: function (_model, isDisabled) {
       if (isDisabled) {
         this.$el.addClass('disabled');
-        this.valueElement.html('&mdash;');
+
+        if (this.model.get('disabledByFeature')) {
+          this.valueElement.html('&mdash;');
+        } else {
+          this.setTransientValue(this.quinn.model.value);
+        }
+
         this.quinn.disable();
       } else {
         this.$el.removeClass('disabled');

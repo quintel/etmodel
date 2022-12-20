@@ -37,7 +37,7 @@ gem 'discard'
 gem 'invisible_captcha'
 
 # Authentication
-gem 'identity', ref: 'f35a5ef', github: 'quintel/identity_rails'
+gem 'identity', ref: '65ee73d', github: 'quintel/identity_rails'
 
 # javascript
 gem 'sprockets-rails', require: 'sprockets/railtie'
@@ -56,10 +56,14 @@ gem 'dalli'
 
 gem 'dynamic_form'
 
-gem 'jquery-etmodel-rails', ref: '8a64146', github: 'quintel/etplugin'
+gem 'jquery-etmodel-rails', ref: '16e258e', github: 'quintel/etplugin'
 
 gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
+
+# Engine
+gem 'dry-initializer'
+gem 'dry-struct'
 
 group :development do
   gem 'letter_opener'

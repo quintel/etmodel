@@ -10,7 +10,17 @@ module API
     before_action(only: %i[destroy])       { verify_scopes!(%w[scenarios:read scenarios:delete]) }
 
     def index
-      render json: current_user.saved_scenarios.order(:id)
+      scenarios = current_user
+        .saved_scenarios
+        .order(created_at: :desc)
+        .page((params[:page].presence || 1).to_i)
+        .per((params[:limit].presence || 25).to_i.clamp(1, 100))
+
+      render json: PaginationSerializer.new(
+        collection: scenarios,
+        serializer: ->(item) { item },
+        url_for: ->(page, limit) { api_saved_scenarios_url(page:, limit:) }
+      )
     end
 
     def show
@@ -52,5 +62,6 @@ module API
         :scenario_id, :title, :description, :area_code, :end_year
       )
     end
+
   end
 end

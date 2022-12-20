@@ -1,18 +1,3 @@
 <script>
-  var globals = <%= Jbuilder.encode do |json|
-        json.api_url          Settings.api_url
-        json.api_proxy_url    Settings.api_proxy_url
-        json.disable_cors     Settings.disable_cors
-        json.standalone       Settings.standalone
-        json.settings         settings_as_json(Current.setting)
-        json.debug_js         admin?
-        json.env              Rails.env
-        json.charts_enabled   @interface && @interface.variant.charts?
-
-        if Current.setting.active_scenario?
-          json.api_session_id Current.setting.api_session_id
-        else
-          json.api_session_id nil
-        end
-      end.html_safe %>;
+  var globals = <%= js_globals %>;
 </script>

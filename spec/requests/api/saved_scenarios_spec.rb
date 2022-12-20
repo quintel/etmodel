@@ -22,14 +22,14 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       end
 
       it 'returns the saved scenarios' do
-        expect(JSON.parse(response.body)).to eq([
+        expect(JSON.parse(response.body)['data']).to eq([
           user_ss1.as_json,
           user_ss2.as_json
         ])
       end
 
       it 'does not contain scenarios from other users' do
-        expect(JSON.parse(response.body)).not_to include(other_ss.as_json)
+        expect(JSON.parse(response.body)['data']).not_to include(other_ss.as_json)
       end
     end
 

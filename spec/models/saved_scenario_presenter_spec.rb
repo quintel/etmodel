@@ -4,16 +4,16 @@ require 'rails_helper'
 
 describe SavedScenarioPresenter, vcr: true do
   let(:scenario_mock) { ete_scenario_mock }
-  let(:api_scenario) { FactoryBot.create(:api_scenario) }
+  let(:engine_scenario) { build(:engine_scenario) }
   let(:saved_scenario_one) do
-    FactoryBot.create(:saved_scenario, scenario: api_scenario)
+    FactoryBot.create(:saved_scenario, scenario: engine_scenario)
   end
   let(:saved_scenario_two) do
-    FactoryBot.create(:saved_scenario, scenario: api_scenario)
+    FactoryBot.create(:saved_scenario, scenario: engine_scenario)
   end
 
   before do
-    allow(Engine::Scenario).to receive(:find).and_return scenario_mock
+    allow(FetchAPIScenario).to receive(:call).and_return(scenario_mock)
   end
 
   context 'with two saved scenarios' do

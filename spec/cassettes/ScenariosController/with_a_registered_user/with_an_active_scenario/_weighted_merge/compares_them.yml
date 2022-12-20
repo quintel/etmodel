@@ -11,28 +11,29 @@ http_interactions:
       - application/json
       Content-Type:
       - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Server:
-      - nginx/1.14.0
+      - nginx/1.21.3
       Date:
-      - Fri, 14 Feb 2020 14:56:19 GMT
+      - Mon, 19 Dec 2022 19:33:41 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
-      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
-      - 1; mode=block
+      - '0'
       X-Content-Type-Options:
       - nosniff
       X-Download-Options:
@@ -41,18 +42,19 @@ http_interactions:
       - none
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Vary:
+      - Accept, Origin
       Etag:
-      - W/"28f993d08d373ca16dc2b63b57ea4eda"
+      - W/"dc8fb9aa641313035fffcb4c0648ca24"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ce6cff81-6111-48f0-a678-66fbd9a67712
+      - d221a538-0617-4823-9f79-bdf0df87fe37
       X-Runtime:
-      - '0.044918'
+      - '0.025998'
     body:
       encoding: UTF-8
-      string: '{"id":1267014,"title":"Merged Scenario","area_code":"nl","start_year":2015,"end_year":2050,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/1267014","ordering":null,"display_group":null,"scaling":null,"source":"ETEngine
-        Merger","template":null,"created_at":"2020-02-14T15:56:19.000+01:00"}'
-    http_version: 
-  recorded_at: Fri, 14 Feb 2020 14:56:19 GMT
-recorded_with: VCR 3.0.3
+      string: '{"id":2179001,"created_at":"2022-12-19T19:33:41.000Z","updated_at":"2022-12-19T19:33:41.000Z","user_values":{},"end_year":2050,"keep_compatible":false,"private":false,"area_code":"nl","source":"ETEngine
+        Merger","balanced_values":{},"metadata":{},"start_year":2015,"template":null,"esdl_exportable":false,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/2179001"}'
+  recorded_at: Mon, 19 Dec 2022 19:33:41 GMT
+recorded_with: VCR 6.0.0

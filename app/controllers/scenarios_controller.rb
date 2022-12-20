@@ -57,7 +57,7 @@ class ScenariosController < ApplicationController
 
     Current.setting = Setting.load_from_scenario(@scenario)
 
-    new_scenario = Engine::Scenario.create(scenario: { scenario: scenario_attrs })
+    new_scenario = CreateAPIScenario.call(engine_client, scenario_attrs).unwrap
     Current.setting.api_session_id = new_scenario.id
 
     redirect_to play_path
@@ -127,7 +127,7 @@ class ScenariosController < ApplicationController
   end
 
   def compare
-    @default_values = @scenarios.first.all_inputs
+    @default_values = @scenarios.first.inputs(engine_client)
     @average_values = {}
     @average_values_using_defaults = {}
   end
@@ -137,14 +137,16 @@ class ScenariosController < ApplicationController
     @inputs = YAML.load inputs
     end_year = params[:end_year].to_i
     end_year = 2050 unless end_year.between?(2010, 2050)
-    @scenario = Engine::Scenario.create(
-      scenario: { scenario: {
+
+    @scenario = CreateAPIScenario.call(
+      engine_client,
+      {
         source: 'ETM',
         user_values: @inputs,
         area_code: params[:area_code] || 'nl',
         end_year: end_year
-      }}
-    )
+      }
+    ).unwrap
   end
 
   def weighted_merge
@@ -181,16 +183,14 @@ class ScenariosController < ApplicationController
 
   # Finds the scenario from id
   def find_scenario
-    @scenario = Engine::Scenario.find(
-      params[:id].to_i,
-      params: { detailed: true }
-    )
+    @scenario = FetchAPIScenario.call(engine_client, params.require(:id).to_i).or do
+      redirect_to root_path, notice: 'Scenario not found'
+      return
+    end
 
     unless @scenario.loadable?
       redirect_to root_path, notice: 'Sorry, this scenario cannot be loaded'
     end
-  rescue ActiveResource::ResourceNotFound
-    redirect_to root_path, notice: 'Scenario not found'
   end
 
   # Remembers the most recently visited ETM page so that the visitor can be
@@ -214,7 +214,7 @@ class ScenariosController < ApplicationController
 
   def setup_comparison
     scenario_ids = params[:scenario_ids] || []
-    @scenarios = scenario_ids.map{|id| Engine::Scenario.find id, params: {detailed: true}}
+    @scenarios = scenario_ids.filter_map { |id| FetchAPIScenario.call(engine_client, id).or(nil) }
     if @scenarios.empty?
       flash[:error] = "Please select one or more scenarios"
       redirect_to scenarios_path and return

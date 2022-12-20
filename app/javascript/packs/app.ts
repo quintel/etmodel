@@ -20,6 +20,12 @@
 import 'core-js/features/array/fill';
 import 'core-js/features/array/flat';
 
+// Core
+// -----
+
+import AccessToken from '../models/AccessToken';
+window.AccessToken = AccessToken;
+
 // Charts
 // ------
 

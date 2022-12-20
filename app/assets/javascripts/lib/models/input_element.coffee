@@ -21,6 +21,9 @@ class @InputElement extends Backbone.Model
       @bind('initial-set:user_value', @handle_boolean_callbacks)
       @handle_boolean_callbacks()
 
+  isDisabled: ->
+    @get('disabled') || App.scenario.isReadOnly()
+
   conversions: ->
     conversions = @get('conversions') or []
 
@@ -249,7 +252,12 @@ class @InputElementList extends Backbone.Collection
       inputStatus.delete(feature)
 
     if @find_by_key(key)
-      @find_by_key(key).set({ disabled: this.isDisabled(key) })
+      isDisabled = tihs.isDisabled(key)
+
+      @find_by_key(key).set({
+        disabled: isDisabled
+        disabledByFeature: isDisabled
+      })
 
   # Returns if one or more features require the input to be disabled.
   isDisabled: (key) ->

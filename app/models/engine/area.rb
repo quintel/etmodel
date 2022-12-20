@@ -39,8 +39,8 @@ class Engine::Area < ActiveResource::Base
 
   # Represents an optional nested "scaling" attribute within an Engine::Scenario
   class Scaling < ActiveResource::Base
-    self.prefix = Engine::Scenario.prefix
-    self.site = Engine::Scenario.site
+    self.prefix = Engine::Area.prefix
+    self.site = Engine::Area.site
   end
 
   def self.grouped

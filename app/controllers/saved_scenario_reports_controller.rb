@@ -4,7 +4,9 @@ class SavedScenarioReportsController < ApplicationController
   before_action :assign_saved_scenario
 
   def show
-    if valid_report_name? && api_response['errors'].blank?
+    @queries = fetch_queries.or { return(render_not_found) }
+
+    if valid_report_name?
       respond_to { |format| format.csv }
     else
       redirect_to @saved_scenario, notice: 'Your report could not be created'
@@ -13,10 +15,8 @@ class SavedScenarioReportsController < ApplicationController
 
   private
 
-  def api_response
-    @api_response ||=
-      Engine::Scenario.find_with_queries(@saved_scenario.scenario_id, queries)
-                   .parsed_response
+  def fetch_queries
+    FetchAPIScenarioQueries.call(engine_client, @saved_scenario.scenario_id, queries)
   end
 
   def report_template

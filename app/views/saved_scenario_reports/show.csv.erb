@@ -3,5 +3,5 @@ Category;Subcategory;Split;PresentValue;FutureValue;Unit
 <%-@report_template.each do |category, value| %>
 <%-value.each do |subcategory, subvalue| %>
 <%-subvalue.each do |split, query| %>
-<%=category%>;<%=subcategory%>;<%=split%>;<%=@api_response['gqueries'][query]['present'].to_s.gsub('.',',')%>;<%=@api_response['gqueries'][query]['future'].to_s.gsub('.',',')%>;<%=@api_response['gqueries'][query]['unit']%>
+<%=category%>;<%=subcategory%>;<%=split%>;<%=@queries[query]['present'].to_s.gsub('.',',')%>;<%=@queries[query]['future'].to_s.gsub('.',',')%>;<%=@queries[query]['unit']%>
 <%-end%><%-end%><%-end%>

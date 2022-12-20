@@ -106,7 +106,11 @@ class SavedScenariosController < ApplicationController
         }
       )
 
-    new_scenario = Engine::Scenario.create(scenario: { scenario: scenario_attrs })
+    new_scenario = CreateAPIScenario.call(engine_client, scenario_attrs).or do
+      flash[:alert] = t('scenario.cannot_load')
+      return redirect_to(saved_scenario_path(params[:id]))
+    end
+
     Current.setting.api_session_id = new_scenario.id
     redirect_to play_path
   end
@@ -191,7 +195,7 @@ class SavedScenariosController < ApplicationController
   end
 
   def assign_scenario
-    @scenario = @saved_scenario.scenario(detailed: true)
+    @scenario = @saved_scenario.scenario(engine_client)
 
     unless @scenario&.loadable?
       redirect_to @saved_scenario, notice: 'Sorry, this scenario cannot be loaded'

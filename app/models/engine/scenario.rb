@@ -1,64 +1,72 @@
-class Engine::Scenario < ActiveResource::Base
-  self.site = "#{Settings.api_url}/api/v3"
+# frozen_string_literal: true
 
-  def self.url_to(path)
-    "#{ Settings.api_url }/api/v3/scenarios/#{ path }"
-  end
+module Engine
+  # Represents a scenario on ETEngine.
+  class Scenario < Dry::Struct
+    transform_keys(&:to_sym)
 
-  def self.batch_load(ids, options = {})
-    return [] if ids.empty?
+    CoercibleTime = Dry::Types['optional.time'].constructor { |input| Time.parse(input).utc }
 
-    url = url_to("#{ids.uniq.join(',')}/batch")
-    res = HTTParty.get(url, options)
+    attribute  :area_code,       Dry::Types['strict.string']
+    attribute  :balanced_values, Dry::Types['strict.hash']
+    attribute  :end_year,        Dry::Types['strict.integer']
+    attribute  :id,              Dry::Types['strict.integer']
+    attribute  :keep_compatible, Dry::Types['strict.bool']
+    attribute  :metadata,        Dry::Types['strict.hash']
+    attribute  :private,         Dry::Types['strict.bool']
+    attribute  :user_values,     Dry::Types['strict.hash']
 
-    if res.code == 200
-      res.map { |scn| new(scn) }
-    else
-      Sentry.capture_message('Scenario batch load failed', level: :error, extra: { url: url })
+    attribute? :esdl_exportable, Dry::Types['strict.bool']
+    attribute? :owner,           User | Dry::Types['strict.nil']
+    attribute? :scaling,         ScenarioScaler | Dry::Types['strict.nil']
+    attribute? :template,        Dry::Types['optional.integer']
+    attribute? :url,             Dry::Types['optional.string']
+
+    attribute? :created_at,      CoercibleTime
+    attribute? :updated_at,      CoercibleTime
+
+    alias_method :keep_compatible?, :keep_compatible
+    alias_method :private?, :private
+    alias_method :edsl_exportable?, :esdl_exportable
+
+    # Loads multiple scenarios by ID. Excludes any missing or inaccessable scenarios.
+    #
+    # This exists for backwards compatibility with the old ActiveResource class and would ideally
+    # be moved to a Service object.
+    def self.batch_load(http_client, ids)
+      return [] if ids.empty?
+
+      url = "/api/v3/scenarios/#{ids.uniq.join(',')}/batch"
+      response = http_client.get(url)
+
+      response.body.map { |scn| new(scn) }
+    rescue Faraday::Error
+      Sentry.capture_message('Scenario batch load failed', level: :error, extra: { url: })
       []
     end
-  end
 
-  def self.find_with_queries(id, queries)
-    HTTParty.put(
-      "#{ Settings.api_url }/api/v3/scenarios/#{ id }",
-      body: { gqueries: Array(queries) }
-    )
-  end
+    def title
+      metadata['title'].presence
+    end
 
-  def title
-    try(:metadata)&.attributes&.[]('title').presence
-  end
+    def description
+      metadata['description'].presence
+    end
 
-  def description
-    try(:metadata)&.attributes&.[]('description').presence
-  end
+    def loadable?
+      Engine::Area.code_exists?(area_code)
+    end
 
-  # Public: Determines if this scenario can be loaded.
-  def loadable?
-    Engine::Area.code_exists?(area_code)
-  end
+    def owned?
+      owner.present?
+    end
 
-  # The JSON request returns a string. Let's make it a DateTime object
-  def created_at
-    Time.parse(attributes[:created_at]).utc if attributes[:created_at]
-  end
+    def inputs(http_client)
+      http_client.get("/api/v3/scenarios/#{id}/inputs").body
+    end
 
-  def updated_at
-    Time.parse(attributes[:updated_at]).utc
-  end
-
-  def days_old
-    (Time.now.utc - updated_at) / 60 / 60 / 24
-  end
-
-  # Returns an HTTParty::Reponse object with a hash of the scenario user_values
-  def all_inputs
-    HTTParty.get(self.class.url_to("#{ id }/inputs"))
-  end
-
-  # The value which is used for sorting. Used on the preset scenario list
-  def sorting_value
-    respond_to?(:ordering) ? ordering : 0
+    def to_request_attributes
+      to_h.except(:balanced_values, :owner, :scaler, :created_at, :updated_at)
+    end
   end
 end

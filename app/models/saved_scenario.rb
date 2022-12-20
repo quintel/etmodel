@@ -81,16 +81,12 @@ class SavedScenario < ApplicationRecord
     ))
   end
 
-  def scenario(detailed: false)
-    begin
-      if detailed
-        @scenario ||= Engine::Scenario.find(scenario_id, params: {detailed: true})
-      else
-        @scenario ||= Engine::Scenario.find(scenario_id)
-      end
-    rescue ActiveResource::ResourceNotFound
-      nil
+  def scenario(engine_client)
+    unless engine_client.is_a?(Faraday::Connection)
+      raise 'SavedScenario#scenario expects an HTTP client as its first argument'
     end
+
+    @scenario ||= FetchAPIScenario.call(engine_client, scenario_id).or(nil)
   end
 
   def add_id_to_history(scenario_id)
@@ -101,16 +97,6 @@ class SavedScenario < ApplicationRecord
   def scenario=(x)
     @scenario = x
     self.scenario_id = x.id unless x.nil?
-  end
-
-  def build_setting(user: nil)
-    if user && (user.id == self.user_id)
-      Setting.load_from_scenario(
-        scenario, active_saved_scenario: { id: id, title: title }
-      )
-    else
-      Setting.load_from_scenario(scenario)
-    end
   end
 
   # Public: Determines if this scenario can be loaded.
@@ -132,5 +118,14 @@ class SavedScenario < ApplicationRecord
 
   def localized_description(locale)
     featured? ? featured_scenario.localized_description(locale) : description
+  end
+
+  def as_json(options = {})
+    options[:include] ||= {}
+    options[:include][:user] = { only: %i[id name] }
+
+    options[:except] ||= %i[discarded_at]
+
+    super(options)
   end
 end

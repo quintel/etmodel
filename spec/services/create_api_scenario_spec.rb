@@ -3,7 +3,17 @@
 require 'rails_helper'
 
 describe CreateAPIScenario, type: :service do
-  let(:result) { described_class.call(attributes) }
+  let(:client) do
+    Faraday.new do |builder|
+      builder.adapter(:test) do |stub|
+        stub.post('/api/v3/scenarios') do |_env|
+          response
+        end
+      end
+    end
+  end
+
+  let(:result) { described_class.call(client, attributes) }
 
   let(:attributes) do
     {
@@ -15,14 +25,26 @@ describe CreateAPIScenario, type: :service do
     }
   end
 
-  before do
-    allow(Engine::Scenario).to receive(:create)
-      .with(scenario: { scenario: attributes })
-      .and_return(scenario)
-  end
-
   context 'when the response is successful' do
-    let(:scenario) { FactoryBot.build(:api_scenario, attributes) }
+    let(:response) do
+      [
+        200,
+        { 'Content-Type' => 'application/json' },
+        attributes_for(:engine_scenario, attributes.stringify_keys.merge(
+          'balanced_values' => {},
+          'esdl_exportable' => false,
+          'id' => 123,
+          'keep_compatible' => false,
+          'metadata' => {},
+          'private' => false,
+          'user_values' => {},
+          'owner' => {
+            'id' => 456,
+            'name' => 'John Doe'
+          }
+        ))
+      ]
+    end
 
     it 'returns a ServiceResult' do
       expect(result).to be_a(ServiceResult)
@@ -33,38 +55,33 @@ describe CreateAPIScenario, type: :service do
     end
 
     it 'returns the scenario as the value' do
-      expect(result.value).to eq(scenario)
-    end
-  end
-
-  context 'when creating an writable scenario' do
-    let(:scenario) { FactoryBot.build(:api_scenario, attributes) }
-
-    let(:attributes) do
-      super().merge(read_only: false)
+      expect(result.value.to_h).to include({
+        id: 123,
+        area_code: 'nl',
+        end_year: 2050
+      })
     end
 
-    it 'returns a ServiceResult' do
-      expect(result).to be_a(ServiceResult)
-    end
-
-    it 'is successful' do
-      expect(result).to be_successful
-    end
-
-    it 'creates a writable scenario' do
-      result
-
-      expect(Engine::Scenario).to have_received(:create)
-        .with(scenario: { scenario: hash_including(read_only: false) })
+    it 'sets the owner' do
+      expect(result.value.owner).to be_a(Engine::User)
+      expect(result.value.owner.to_h).to eq(id: 456, name: 'John Doe')
     end
   end
 
   context 'when the response is unsuccessful' do
-    let(:scenario) do
-      FactoryBot.build(:api_scenario, attributes).tap do |scen|
-        scen.errors.add(:area_code, 'is not included in the list')
-      end
+    let(:response) do
+      faraday_response = instance_double(Faraday::Response)
+      allow(faraday_response).to receive(:[]).with(:body).and_return(
+        {
+          'errors' => {
+            'area_code' => [
+              'is unknown or not supported'
+            ]
+          }
+        }
+      )
+
+      raise Faraday::UnprocessableEntityError.new(nil, faraday_response)
     end
 
     it 'returns a ServiceResult' do
@@ -76,7 +93,7 @@ describe CreateAPIScenario, type: :service do
     end
 
     it 'returns the scenario error messages' do
-      expect(result.errors).to eq(['Area code is not included in the list'])
+      expect(result.errors).to eq(['Area code is unknown or not supported'])
     end
   end
 end

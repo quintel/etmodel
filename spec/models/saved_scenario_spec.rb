@@ -12,9 +12,11 @@ describe SavedScenario do
   end
 
   describe "#scenario" do
-    it "returns nil if scenario is not found in ET-Engine" do
-      expect(Engine::Scenario).to receive(:find).with(0).and_raise(ActiveResource::ResourceNotFound.new(404))
-      expect(SavedScenario.new(scenario_id: 0).scenario).to be_nil
+    it "returns nil if scenario is not found in ETEngine" do
+      allow(FetchAPIScenario).to receive(:call)
+        .with(anything, 0).and_return(ServiceResult.failure('Scenario not found'))
+
+      expect(described_class.new(scenario_id: 0).scenario(Identity.http_client)).to be_nil
     end
   end
 
@@ -33,28 +35,6 @@ describe SavedScenario do
       @saved_scenario_db  = nil
       expect{ @saved_scenario_new.scenario = @saved_scenario_db }
         .to_not change{ @saved_scenario_new.scenario_id }
-    end
-  end
-
-  describe '#build_setting_for' do
-    before(:each) do
-      allow( Engine::Scenario).to receive(:find){ ete_scenario_mock }
-    end
-
-    subject { FactoryBot.create(:saved_scenario) }
-
-    it 'returns a setting' do
-      expect(subject.build_setting).to be_a Setting
-    end
-
-    it 'has an active_saved_scenario_id with owner user as argument' do
-      result = subject.build_setting(user: subject.user)
-      expect(result.active_saved_scenario_id).to eq(subject.id)
-    end
-
-    it 'doesn\'t have an active_saved_scenario_id without an argument' do
-      result = subject.build_setting
-      expect(result.active_saved_scenario_id).to eq(nil)
     end
   end
 
@@ -82,9 +62,9 @@ describe SavedScenario do
 
     let(:scenario_nl_2030) { FactoryBot.create(:saved_scenario, end_year: 2030) }
     let(:scenario_nl_2050) { FactoryBot.create(:saved_scenario, end_year: 2050) }
-    let(:scenario_de_2030) { FactoryBot.create(:saved_scenario, end_year: 2030, area_code: 'de') }
-    let(:scenario_de_2050) { FactoryBot.create(:saved_scenario, end_year: 2050, area_code: 'de') }
-    let(:scenario_be_2030) { FactoryBot.create(:saved_scenario, end_year: 2030, area_code: 'be') }
+    let(:scenario_de_2030) { FactoryBot.create(:saved_scenario, end_year: 2030, area_code: 'DE_germany') }
+    let(:scenario_de_2050) { FactoryBot.create(:saved_scenario, end_year: 2050, area_code: 'DE_germany') }
+    let(:scenario_be_2030) { FactoryBot.create(:saved_scenario, end_year: 2030, area_code: 'BE_belgium') }
 
     before do
       scenario_nl_2030

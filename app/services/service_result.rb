@@ -25,6 +25,15 @@ class ServiceResult
     new(false, value: value, errors: Array(errors))
   end
 
+  # Public: Creates a failure result from a Faraday::UnprocessableEntityError.
+  def self.failure_from_unprocessable_entity(exception, value = nil)
+    errors = exception.response[:body]['errors'].flat_map do |key, messages|
+      messages.map { |message| "#{key.humanize} #{message}" }
+    end
+
+    failure(errors, value)
+  end
+
   def initialize(success, value: nil, errors: [])
     @success = success
     @value = value
@@ -39,6 +48,16 @@ class ServiceResult
 
   def failure?
     !successful?
+  end
+
+  def or(fallback = nil)
+    if successful?
+      value
+    elsif fallback.nil? && block_given?
+      yield
+    else
+      fallback
+    end
   end
 
   # Public: Returns the value if the result is successful, otherwise raises an error with the

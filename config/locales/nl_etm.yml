@@ -266,6 +266,7 @@ nl:
     save_first: "Wil je je huidige scenario eerst opslaan?"
     saved: "Opgeslagen Scenario's"
     title: "Titel"
+    cannot_load: Sorry, your scenario could not be loaded.
     warning:
       message: |
         Dit scenario is voor het laatst bijgewerkt op %{last_updated}, in een eerdere versie van het model.
@@ -474,6 +475,9 @@ nl:
   "go": "ga"
   "no": "Nee"
   "yes": "Ja"
+
+  cannot_load_scenario:
+    Sorry, your scenario cannot be saved at the moment.
 
   no_scenario_id_error_html:
     Sorry, your scenario cannot be saved at the moment. You can

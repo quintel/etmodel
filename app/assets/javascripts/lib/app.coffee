@@ -10,7 +10,15 @@ class @AppView extends Backbone.View
     @scenario    = new Scenario()
     @scenarioNav = new ScenarioNavView(model: @scenario, el: $('#scenario-nav'))
     @router      = new Router()
-    @analytics   = new Analytics(window.ga);
+    @analytics   = new Analytics(window.ga)
+    @accessToken = null
+
+    if globals.access_token
+      @accessToken = new AccessToken(
+        globals.access_token.token,
+        new Date(globals.access_token.expires_at * 1000)
+      )
+      @configureTokenRefresh(@accessToken)
 
     @api = new ApiGateway
       api_path:           globals.api_url
@@ -23,6 +31,7 @@ class @AppView extends Backbone.View
       area_code:          globals.settings.area_code
       end_year:           globals.settings.end_year
       scale:              globals.settings.scaling
+      access_token:       if globals.access_token then globals.access_token.token else undefined
 
     # Store the scenario id
     @api.ensure_id().done (id) =>
@@ -73,6 +82,24 @@ class @AppView extends Backbone.View
         MultiCurveChooserView.setupWithWrapper(element, curveCollectionDef, userScenariosDef)
 
     deferred
+
+  configureTokenRefresh: (accessToken) ->
+    return unless accessToken
+
+    refresh = () ->
+      console.log('Refreshing access token')
+      window.location.reload()
+
+    expiresInMS = accessToken.expiresAt.getTime() - new Date().getTime();
+    refreshInMS = Math.max(expiresInMS - 60000, 0)
+
+    if globals.debug_js
+      console.log(
+        "Access token expires at #{accessToken.expiresAt.toISOString()} and will refresh " +
+        "in #{Math.round(refreshInMS/100/60)/10} minutes (#{Math.floor(refreshInMS/1000)}s)"
+      )
+
+    window.setTimeout(refresh, refreshInMS)
 
   # Returns a deferred object on which the .done() method can be called
   #
@@ -172,6 +199,8 @@ class @AppView extends Backbone.View
     for own key, values of results
       if gquery = window.gqueries.with_key(key)
         gquery.handle_api_result(values)
+
+    @scenario.set({ owner: data.scenario.owner })
 
     @charts.invoke 'trigger', 'refresh'
     @sidebar.update_bars()

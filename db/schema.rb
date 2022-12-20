@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_140842) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_20_152312) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -88,6 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_140842) do
     t.text "description"
     t.string "area_code", null: false
     t.integer "end_year", null: false
+    t.boolean "private", default: false
     t.text "settings"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil

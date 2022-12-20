@@ -128,7 +128,7 @@ table.default
     input, textarea
       box-sizing: border-box
 
-    .button
+    .scenario-button
       background: #eee
       background: linear-gradient(lighten(#eee, 7%), #eee)
       box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
@@ -173,6 +173,10 @@ table.default
         margin-bottom: 0.5rem
         padding: 5px 8px
         -webkit-font-smoothing: auto
+
+  #edit_scenario .actions
+    .cancel, input
+      line-height: 1
 
   .edit_featured_scenario .actions
     a, input
@@ -377,21 +381,36 @@ table.default
       .area-flag
         vertical-align: middle
         margin-top: -4px
-      #scenario-location button
-        background: none
-        border: 0
-        color: inherit
-        cursor: pointer
-        font-size: inherit
-        margin: -0.5rem
-        padding: 0.5rem
-        svg
-          vertical-align: middle
-          margin-top: -3px
-        &:hover
-          color: #444
-        .fa
-          margin-left: 0.25rem
+      #scenario-location, #scenario-privacy
+        button.scenario-actions
+          align-items: center
+          background: none
+          border: 0
+          color: inherit
+          cursor: pointer
+          display: flex
+          font-size: inherit
+          gap: 0.125rem
+          margin: -0.5rem
+          padding: 0.5rem
+          &:hover
+            color: #444
+          .fa
+            margin-left: 0.25rem
+        svg.lock-icon
+          margin-top: -1px
+          margin-bottom: 1px
+          marign-left: -2px
+        .dropdown-item
+          font-size: inherit
+          svg
+            opacity: 0.5
+        .dropdown-item:hover svg
+            opacity: 1
+        .dropdown-menu .info
+          color: black
+          margin: 0.5rem 1rem 1rem
+          width: 250px
 
     .bar
       border-top: 1px solid #eee

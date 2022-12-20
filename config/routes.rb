@@ -71,6 +71,8 @@ Rails.application.routes.draw do
       get :load
       put :discard
       put :undiscard
+      put :publish
+      put :unpublish
 
       # get    'feature' => 'featured_scenarios#edit'
       # post   'feature' => 'featured_scenarios#create'

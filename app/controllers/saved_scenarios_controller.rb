@@ -2,9 +2,22 @@
 
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
-  before_action :assign_saved_scenario, only: %i[show load edit update discard undiscard destroy]
+  load_resource only: %i[load discard undiscard publish unpublish]
+  load_and_authorize_resource only: %i[show new create edit update destroy]
+
+  before_action only: %i[load] do
+    authorize!(:read, @saved_scenario)
+  end
+
+  before_action only: %i[publish unpublish] do
+    authorize!(:update, @saved_scenario)
+  end
+
+  before_action only: %i[discard undiscard] do
+    authorize!(:destroy, @saved_scenario)
+  end
+
   before_action :assign_scenario, only: :load
-  before_action :ensure_owner, only: %i[edit update discard undiscard destroy]
   helper_method :owned_saved_scenario?
 
   def index
@@ -122,7 +135,7 @@ class SavedScenariosController < ApplicationController
   end
 
   def update
-    @saved_scenario.update(saved_scenario_parameters)
+    @saved_scenario.update(saved_scenario_params)
     reload_current_title(@saved_scenario)
 
     respond_to do |format|
@@ -158,6 +171,32 @@ class SavedScenariosController < ApplicationController
     end
 
     redirect_back(fallback_location: discarded_saved_scenarios_path)
+  end
+
+  # Makes a scenario public.
+  def publish
+    @saved_scenario.update(private: false)
+
+    UpdateAPIScenarioPrivacy.call_with_ids(
+      engine_client,
+      [@saved_scenario.scenario_id, *@saved_scenario.scenario_id_history],
+      private: false
+    )
+
+    redirect_to saved_scenario_path(@saved_scenario)
+  end
+
+  # Makes a scenario private.
+  def unpublish
+    @saved_scenario.update(private: true)
+
+    UpdateAPIScenarioPrivacy.call_with_ids(
+      engine_client,
+      [@saved_scenario.scenario_id, *@saved_scenario.scenario_id_history],
+      private: true
+    )
+
+    redirect_to saved_scenario_path(@saved_scenario)
   end
 
   # DELETE /saved_scenarios/:id
@@ -204,7 +243,7 @@ class SavedScenariosController < ApplicationController
     redirect_to @saved_scenario, notice: 'Scenario not found'
   end
 
-  def saved_scenario_parameters
+  def saved_scenario_params
     params.require(:saved_scenario).permit(:title, :description)
   end
 

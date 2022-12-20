@@ -29,13 +29,14 @@ describe SavedScenariosController, vcr: true do
 
     describe 'GET load' do
       context 'with an owned saved_scenario' do
-        before(:each){ get :load, params: {id: user_scenario.id} }
         subject { response }
+
+        before { get(:load, params: { id: user_scenario.id }) }
 
         it { is_expected.to redirect_to play_path }
 
         it do
-          expect(assigns(:saved_scenario)).to eq user_scenario
+          expect(assigns(:saved_scenario)).to eq(user_scenario)
         end
       end
 
@@ -108,7 +109,9 @@ describe SavedScenariosController, vcr: true do
 
   describe 'GET new' do
     it 'renders the new saved scenario form' do
+      sign_in(user)
       get :new, params: { scenario_id: user_scenario.id }
+
       expect(response).to be_ok
     end
   end
@@ -322,6 +325,102 @@ describe SavedScenariosController, vcr: true do
 
       it 'returns 404' do
         expect(response).to be_not_found
+      end
+    end
+  end
+
+  describe 'PUT publish' do
+    before do
+      sign_in(user)
+      session[:setting] = Setting.new
+      allow(UpdateAPIScenarioPrivacy).to receive(:call_with_ids)
+    end
+
+    context 'with an owned saved scenario' do
+      before do
+        user_scenario.update!(private: true)
+        post(:publish, params: { id: user_scenario.id })
+      end
+
+      it 'redirects to the scenario' do
+        expect(response).to be_redirect
+      end
+
+      it 'makes the scenario public' do
+        expect(user_scenario.reload).not_to be_private
+      end
+
+      it 'updates the API scenarios' do
+        expect(UpdateAPIScenarioPrivacy).to have_received(:call_with_ids).with(
+          anything, [user_scenario.id], private: false
+        )
+      end
+    end
+
+    context 'with an unowned saved scenario' do
+      before do
+        admin_scenario.update!(private: true)
+        post(:publish, params: { id: admin_scenario.id })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+
+      it 'does not change the scenario privacy' do
+        expect(admin_scenario.reload).to be_private
+      end
+
+      it 'does not update the API scenarios' do
+        expect(UpdateAPIScenarioPrivacy).not_to have_received(:call_with_ids)
+      end
+    end
+  end
+
+  describe 'PUT unpublish' do
+    before do
+      sign_in(user)
+      allow(UpdateAPIScenarioPrivacy).to receive(:call_with_ids)
+      session[:setting] = Setting.new
+    end
+
+    context 'with an owned saved scenario' do
+      before do
+        user_scenario.update!(private: false)
+        post(:unpublish, params: { id: user_scenario.id })
+      end
+
+      it 'redirects to the scenario listing' do
+        expect(response).to be_redirect
+      end
+
+      it 'makes the scenario public' do
+        expect(user_scenario.reload).to be_private
+      end
+
+      it 'updates the API scenarios' do
+        expect(UpdateAPIScenarioPrivacy).to have_received(:call_with_ids).with(
+          anything, [user_scenario.id], private: true
+        )
+      end
+    end
+
+    context 'with an unowned saved scenario' do
+      before do
+        user_scenario.update!(private: false)
+        post(:unpublish, params: { id: admin_scenario.id })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+
+      it 'does not change the scenario privacy' do
+        expect(admin_scenario.reload).not_to be_private
+      end
+
+      it 'does not update the API scenarios' do
+        expect(UpdateAPIScenarioPrivacy).not_to have_received(:call_with_ids)
       end
     end
   end

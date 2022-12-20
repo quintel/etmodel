@@ -35,8 +35,8 @@ describe ReportsController, vcr: true do
       end
 
       it 'renders 404 when the specified report does not exist' do
-        expect { get :show, params: { id: 'four-oh-four' } }
-          .to raise_error(ActiveRecord::RecordNotFound)
+        get :show, params: { id: 'four-oh-four' }
+        expect(response).to have_http_status(:not_found)
       end
     end
 

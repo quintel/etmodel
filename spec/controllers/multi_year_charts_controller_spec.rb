@@ -40,8 +40,8 @@ describe MultiYearChartsController do
       before { sign_in create(:user) }
 
       it 'raises a Not Found error' do
-        expect { post(:create, params: { scenario_id: scenario.id }) }
-          .to raise_error(ActiveRecord::RecordNotFound)
+        post(:create, params: { scenario_id: scenario.id })
+        expect(response).to have_http_status(:not_found)
       end
     end
 
@@ -126,8 +126,8 @@ describe MultiYearChartsController do
       end
 
       it 'raises RecordNotFound' do
-        expect { delete :destroy, params: { id: myc.id } }
-          .to raise_error(ActiveRecord::RecordNotFound)
+        delete :destroy, params: { id: myc.id }
+        expect(response).to have_http_status(:not_found)
       end
     end
 

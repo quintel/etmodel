@@ -14,4 +14,4 @@
     = tab_count(current_user.saved_scenarios.discarded.count, class: 'red')
   - if Current.setting.api_session_id && local_assigns[:show_save_current] != false
     .save-wrapper
-      = link_to t("scenario.link"), new_saved_scenario_path(scenario_id: Current.setting.api_session_id), class: 'button save'
+      = link_to t("scenario.link"), new_saved_scenario_path(scenario_id: Current.setting.api_session_id), class: 'button scenario-button save'

@@ -16,9 +16,6 @@ gem 'activeresource', '~> 6.0'
 gem 'jquery-rails', '~> 4.2.2'
 gem 'local_time'
 gem 'haml', '~> 5.0'
-# gem 'authlogic'
-# gem 'openid_connect'
-gem 'bcrypt'
 gem 'config'
 gem 'httparty'
 gem 'tabs_on_rails', '~> 3.0'
@@ -35,8 +32,10 @@ gem 'browser'
 gem 'valid_email2'
 gem 'discard'
 gem 'invisible_captcha'
+gem 'inline_svg'
 
 # Authentication
+gem 'cancancan'
 gem 'identity', ref: '65ee73d', github: 'quintel/identity_rails'
 
 # javascript

@@ -4,8 +4,8 @@
 module Service
   def self.included(klass)
     klass.instance_eval do
-      def self.call(*args)
-        new(*args).call
+      def self.call(...)
+        new(...).call
       end
     end
   end

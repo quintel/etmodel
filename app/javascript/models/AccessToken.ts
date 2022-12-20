@@ -19,6 +19,24 @@ class AccessToken {
   isExpired(): boolean {
     return this.expiresAt < new Date();
   }
+
+  headers(): Record<string, string> {
+    return { Authorization: `Bearer ${this.token}` };
+  }
 }
 
-export default AccessToken;
+class GuestToken {
+  async refresh(): Promise<AccessToken> {
+    return Promise.reject({ error: 'Guest user cannot refresh token' });
+  }
+
+  isExpired(): boolean {
+    return false;
+  }
+
+  Headers(): Record<string, string> {
+    return {};
+  }
+}
+
+export { AccessToken, GuestToken };

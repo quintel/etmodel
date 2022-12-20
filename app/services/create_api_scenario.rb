@@ -4,11 +4,11 @@
 # read-only unless otherwise configured using the given attributes.
 CreateAPIScenario = lambda do |http_client, attributes = {}|
   attributes = attributes
-    .slice(:area_code, :end_year, :scenario_id, :read_only)
-    .reverse_merge(read_only: true, source: 'ETM')
+    .slice(:area_code, :end_year, :scenario_id)
+    .reverse_merge(source: 'ETM')
 
   ServiceResult.success(Engine::Scenario.new(
-    http_client.post('/api/v3/scenarios', { scenario: attributes }).body
+    http_client.post('/api/v3/scenarios', { scenario: attributes }.to_json).body
   ))
 rescue Faraday::UnprocessableEntityError => e
   return ServiceResult.failure_from_unprocessable_entity(e)

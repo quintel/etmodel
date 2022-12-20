@@ -17,7 +17,6 @@ def ete_scenario_mock
   allow(mock).to receive(:days_old).and_return(1)
   allow(mock).to receive(:errors).and_return([])
   allow(mock).to receive(:scaling).and_return(nil)
-  allow(mock).to receive(:read_only?).and_return(false)
   allow(mock).to receive(:keep_compatible?).and_return(false)
   allow(mock).to receive(:esdl_exportable).and_return(false)
   allow(mock).to receive(:user_values)  do

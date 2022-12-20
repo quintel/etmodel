@@ -75,10 +75,17 @@ jQuery(function() {
     queriesFromCharts(window.charts.definitions)
   );
 
+  var headers;
+
+  if (window.energyMixSettings.token) {
+    headers = { Authorization: 'Bearer ' + window.energyMixSettings.token };
+  }
+
   request = $.ajax({
     type: 'PUT',
     url: url,
     data: { gqueries: queries },
+    headers: headers,
     dataType: 'json'
   });
 

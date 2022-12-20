@@ -19,6 +19,8 @@ class @AppView extends Backbone.View
         new Date(globals.access_token.expires_at * 1000)
       )
       @configureTokenRefresh(@accessToken)
+    else
+      @accessToken = new GuestToken()
 
     @api = new ApiGateway
       api_path:           globals.api_url
@@ -259,6 +261,7 @@ class @AppView extends Backbone.View
         req = $.ajax(
           url: App.scenario.url_path() +
             '/custom_curves?include_internal=true&include_unattached=true'
+          headers: @accessToken.headers()
           method: 'GET'
           dataType: 'json'
         )
@@ -278,6 +281,7 @@ class @AppView extends Backbone.View
       req = $.ajax({
         url: '/saved_scenarios',
         method: 'GET'
+        headers: @accessToken.headers()
         dataType: 'json'
       })
 

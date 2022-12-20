@@ -198,6 +198,7 @@
     $.ajax({
       dataType: "json",
       url: App.api.opts.api_path + '/api/v3/scenarios',
+      headers: App.accessToken.headers(),
       data: {
         scenario: {
           area_code: settings.get('area_code'),

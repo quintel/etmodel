@@ -7,7 +7,7 @@ module EnergyMixHelper
       .map { |token| token.to_s.chomp('/') }
       .join('/')
 
-    { endpoint: url }
+    { endpoint: url, token: signed_in? ? identity_access_token.token : nil }
   end
 
   def can_dismiss_disclaimer?

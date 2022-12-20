@@ -20,7 +20,6 @@ describe CreateAPIScenario, type: :service do
       area_code: 'nl',
       end_year: 2050,
       scenario_id: nil,
-      read_only: true,
       source: 'ETM'
     }
   end

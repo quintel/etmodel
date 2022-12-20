@@ -88,7 +88,9 @@ en:
         also choose to upload a different agriculture heat demand profile in the
         <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibility</a> section.
         Go to the <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">
-        Data export</a> section to export the hourly supply of this CHP.
+        Data export</a> section to export the hourly supply of this CHP. Click 
+        <a href=/scenario/costs/specs_renewable_electricity/biomass-plants>here</a> to adjust the costs 
+        and efficiencies of this CHP.
     capacity_of_agriculture_chp_engine_network_gas_dispatchable:
       title: Gas motor CHP
       short_description:
@@ -102,9 +104,11 @@ en:
         It can happen that this CHP produces heat even when 
         there is little demand from agriculture. If the total local heat production for agriculture 
         exceeds demand, the excess heat is wasted. In greenhouses this can be done simply by opening 
-        windows and venting the excess heat. Go to the 
-        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">
-        Data export</a> section to export the hourly supply of this CHP.
+        windows and venting the excess heat. </br></br>
+        Go to the <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a> 
+        section to export the hourly supply of this CHP. Click 
+        <a href=/scenario/costs/specs_electricity/gas-plants>here</a> to adjust the costs 
+        and efficiencies of this CHP.
     capacity_of_agriculture_chp_engine_network_gas_must_run:
       title: Gas motor CHP
       short_description:
@@ -119,7 +123,9 @@ en:
         also chooose to upload a different agriculture heat demand profile in the
         <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibility</a> section.
         Go to the <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">
-        Data export</a> section to export the hourly supply of this CHP.
+        Data export</a> section to export the hourly supply of this CHP. Click 
+        <a href=/scenario/costs/specs_electricity/gas-plants>here</a> to adjust the costs 
+        and efficiencies of this CHP.
     capacity_of_agriculture_chp_wood_pellets:
       title: Biomass CHP
       short_description:
@@ -133,9 +139,11 @@ en:
         It can happen that this CHP produces heat even when 
         there is little demand from agriculture. If the total local heat production for agriculture 
         exceeds demand, the excess heat is wasted. In greenhouses this can be done simply by opening 
-        windows and venting the excess heat. Go to the 
-        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">
-        Data export</a> section to export the hourly supply of this CHP.
+        windows and venting the excess heat. </br></br>
+        Go to the <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a> 
+        section to export the hourly supply of this CHP. Click 
+        <a href=/scenario/costs/specs_renewable_electricity/biomass-plants>here</a> to adjust the costs 
+        and efficiencies of this CHP.
     agriculture_burner_hydrogen_share:
       title: H<sub>2</sub>-fired heater
       short_description: 

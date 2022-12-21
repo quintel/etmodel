@@ -6,6 +6,7 @@ EstablishmentShot.ScenarioUpdater = (function () {
             return $.ajax({
                 type: 'PUT',
                 dataType: 'json',
+                headers: establishment.requestHeaders(),
                 data: {
                     gqueries: establishment.queries
                 },

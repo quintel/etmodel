@@ -74,8 +74,16 @@ EstablishmentShot.Main = (function() {
         renderWithoutScenario();
       }
 
-    }
+    },
   };
+
+  EstablishmentShot.requestHeaders = function () {
+    if (EstablishmentShot.accessToken) {
+      return { Authorization: 'Bearer ' + EstablishmentShot.accessToken };
+    }
+
+    return {};
+  }
 
   function Main(scope) {
     var data = $(scope).data();
@@ -84,6 +92,7 @@ EstablishmentShot.Main = (function() {
     EstablishmentShot.area = data.area;
     EstablishmentShot.scenarioId = data.scenarioId;
     EstablishmentShot.time = data.time;
+    EstablishmentShot.accessToken = data.accessToken;
   }
 
   return Main;

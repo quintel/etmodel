@@ -55,7 +55,8 @@ module PagesHelper
       default_year: Setting::DEFAULT_YEAR,
       scenario_id: params[:scenario],
       time: @time,
-      non_energy: params[:non_energy]
+      non_energy: params[:non_energy],
+      access_token: signed_in? ? identity_access_token.token : nil
     }
   end
 

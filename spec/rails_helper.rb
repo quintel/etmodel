@@ -11,7 +11,9 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'shoulda/matchers'
 require 'vcr'
+
 require 'identity/test/controller_helpers'
+require 'identity/test/system_helpers'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -114,6 +116,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include Identity::Test::ControllerHelpers, type: :controller
+  config.include RequestHelpers, type: :request
 
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers

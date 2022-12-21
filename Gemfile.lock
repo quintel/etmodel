@@ -8,8 +8,8 @@ GIT
 
 GIT
   remote: https://github.com/quintel/identity_rails.git
-  revision: 65ee73d857be605bfa84bbb56d3efef1f408d51b
-  ref: 65ee73d
+  revision: 7a3d167aef1f68a191f2b79411cfba1d1a99a181
+  ref: 7a3d167
   specs:
     identity (0.1.0)
       dry-configurable (>= 1.0)
@@ -104,8 +104,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     aes_key_wrap (1.1.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
@@ -182,6 +182,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    date (3.3.3)
     debug_inspector (1.1.0)
     deep_merge (1.2.2)
     diff-lcs (1.5.0)
@@ -327,11 +328,12 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mysql2 (0.5.3)
-    net-imap (0.3.1)
+    net-imap (0.3.3)
+      date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.0)
+    net-protocol (0.2.1)
       timeout
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
@@ -401,7 +403,7 @@ GEM
     pry-stack_explorer (0.6.1)
       binding_of_caller (~> 1.0)
       pry (~> 0.13)
-    public_suffix (4.0.6)
+    public_suffix (5.0.1)
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.1)

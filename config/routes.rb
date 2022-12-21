@@ -93,6 +93,10 @@ Rails.application.routes.draw do
   get '/scenario/reset' => 'scenarios#reset'
   get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
 
+  get '/passthru/:id/*rest' => 'api_passthru#passthru',
+    constraints: { rest: /.*/ },
+    as: :api_passthru
+
   get '/scenario/reports/auto' => 'reports#auto'
   get '/scenario/reports/:id' => 'reports#show',
       constraints: { id: /[0-9a-z-]+/ }, as: :report

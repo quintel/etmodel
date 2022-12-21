@@ -787,29 +787,45 @@ nl:
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door kleinschalige gascentrale met warmtelevering (WKK) veranderen."
     efficiency_industry_chp_combined_cycle_gas_power_fuelmix_electricity:
-      title: Gas STEG WKK (industrie) - elektriciteit
+      title: Gas STEG WKK - elektriciteit
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door gas-WKK (STEG) in de industrie veranderen."
     efficiency_industry_chp_combined_cycle_gas_power_fuelmix_heat:
-      title: Gas STEG WKK (industrie) - warmte
+      title: Gas STEG WKK - warmte
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door gas-WKK (STEG) in de industrie veranderen."
     efficiency_industry_chp_engine_gas_power_fuelmix_electricity:
-      title: Gasmotor-WKK (industrie) - elektriciteit
+      title: Gasmotor-WKK - elektriciteit
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door gasmotor-WKK in de industrie veranderen."
     efficiency_industry_chp_engine_gas_power_fuelmix_heat:
-      title: Gasmotor-WKK (industrie) - warmte
+      title: Gasmotor-WKK - warmte
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door gasmotor-WKK in de industrie veranderen."
     efficiency_industry_chp_turbine_gas_power_fuelmix_electricity:
-      title: Gasturbine-WKK (industrie) - elektriciteit
+      title: Gasturbine-WKK - elektriciteit
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door gasturbine-WKK in de industrie veranderen."
     efficiency_industry_chp_turbine_gas_power_fuelmix_heat:
-      title: Gasturbine-WKK (industrie) - warmte
+      title: Gasturbine-WKK - warmte
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door gasturbine-WKK in de industrie veranderen."
+    efficiency_agriculture_chp_engine_dispatchable_network_gas_electricity:
+      title: Gasmotor-WKK (regelbaar) - elektriciteit
+      short_description:
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door de regelbare gasmotor-WKK in de landbouw veranderen."
+    efficiency_agriculture_chp_engine_dispatchable_network_gas_heat:
+      title: Gasmotor-WKK (regelbaar) - warmte
+      short_description:
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door de regelbare gasmotor-WKK in de landbouw veranderen."
+    efficiency_agriculture_chp_engine_must_run_network_gas_electricity:
+      title: Gasmotor-WKK (must-run) - elektriciteit
+      short_description:
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door de must-run gasmotor-WKK in de landbouw veranderen."
+    efficiency_agriculture_chp_engine_must_run_network_gas_heat:
+      title: Gasmotor-WKK (must-run) - warmte
+      short_description:
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door de must-run gasmotor-WKK in de landbouw veranderen."
     efficiency_energy_power_ultra_supercritical_crude_oil:
       title: Oliecentrale
       short_description: ''
@@ -839,13 +855,29 @@ nl:
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door biomassa-WKK's veranderen."
     efficiency_industry_chp_wood_pellets_electricity:
-      title: Biomassa-WKK (industrie) - elektriciteit
+      title: Biomassa-WKK - elektriciteit
       short_description: ''
-      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door biomassa-WKK's' in de industrie veranderen."
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door biomassa-WKK's in de industrie veranderen."
     efficiency_industry_chp_wood_pellets_heat:
-      title: Biomassa-WKK (industrie) - warmte
+      title: Biomassa-WKK - warmte
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door biomassa-WKK's in de industrie veranderen."
+    efficiency_agriculture_chp_engine_biogas_electricity:
+      title: Biogas-WKK - elektriciteit
+      short_description:
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door de biogas-WKK in de landbouw veranderen."
+    efficiency_agriculture_chp_engine_biogas_heat:
+      title: Biogas-WKK - warmte
+      short_description:
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door de biogas-WKK in de landbouw veranderen."
+    efficiency_agriculture_chp_wood_pellets_electricity:
+      title: Biomassa-WKK - elektriciteit
+      short_description:
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektriciteitsproductie door de biomassa-WKK in de landbouw veranderen."
+    efficiency_agriculture_chp_wood_pellets_heat:
+      title: Biomassa-WKK - warmte
+      short_description:
+      description: "Met deze schuif kun je de toekomstige efficiëntie van warmteproductie door de biomassa-WKK in de landbouw veranderen."
     efficiency_energy_chp_local_engine_biogas_electricity:
       title: Biogas-WKK - elektriciteit
       short_description: ''

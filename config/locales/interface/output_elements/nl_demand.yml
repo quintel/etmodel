@@ -339,16 +339,13 @@ nl:
         energiegebruik."
     source_of_heat_in_agriculture:
       title: Finaal energiegebruik voor verwarming in de landbouw
-      short_description: Agricultural
-      description: "Deze grafiek laat zien hoe de warmtevraag in de landbouw verandert
-        in de toekomst, als gevolg van jouw keuzes in het onderdeel 'Vraag'. De warmtevraag
-        valt hier uiteen in 'warmte uit fossiel, warmte uit elektriciteit, warmte
-        uit biomassa en omgevingswarmte'.\r\n<br/><br/>\r\nDe technieken die je gebruikt
-        om te verwarmen bepalen natuurlijk de warmtevraag niet, maar wel de energie-efficiëntie
-        en hernieuwbaarheid van de warmteproductie. Om de warmtevraag af te laten
-        nemen, moeten broeikassen bijvoorbeeld beter geïsoleerd worden, of andere
-        gewassen gaan telen.\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven de
-        grafiek om andere grafieken te tonen over energiegebruik."
+      short_description:
+      description: |
+        Deze grafiek laat zien hoe de warmtevraag in de landbouw verandert
+        in de toekomst, als gevolg van jouw keuze voor technologieën in de sectie 
+        <a href="/scenario/demand/agriculture/heat">Landbouw</a>. </br></br>
+        De technologieën die je kiest veranderen de warmtevraag zelf niet, maar wel 
+        de energie-efficiëntie en hernieuwbaarheid van de warmteproductie.
     use_of_final_electricity_demand_in_households:
       title: Elektriciteitsgebruik van huishoudelijke apparaten
       short_description: Huishoudelijk, naar toepassing
@@ -460,3 +457,16 @@ nl:
     hybrid_heat_pump:
       title: Elektriciteit en gas aandeel van hybride warmtepomp voor huishoudens
       description:
+    agriculture_local_heat_mekko:
+      title: Vraag en aanbod van warmte van lokale WKK's
+      description: |
+        Deze grafiek toont lokale warmte-krachtkoppeling (WKK) die warmte levert aan de 
+        landbouw en de toont de finale vraag naar die warmte. Om het uurlijkse gedrag van 
+        vraag en aanbod te zien kun je naar de sectie 
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a> 
+        gaan. </br></br>
+        De finale vraag naar warmte wordt bepaald door het schuifje "Warmte van lokale WKK's" in 
+        de <a href="/scenario/demand/agriculture/heat">Landbouw</a> sectie. Het aanbod van de 
+        WKK's kan worden <a href="/scenario/demand/agriculture/heat-from-local-chps">hier</a> 
+        worden ingesteld. Overtollige warmte wordt versplid en warmtetekorten worden geleverd door 
+        een back-up gasketel.

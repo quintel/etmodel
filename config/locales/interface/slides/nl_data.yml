@@ -247,13 +247,13 @@ nl:
       title: Uurlijkse profielen voor warmte in landbouw
       short_description:
       description: |
-        Download informatie over de uurlijkse vraag en productie van
-        warmte in de landbouwsector.
+        Download informatie over de uurlijkse vraag en aanbod van warmte van lokale warmte-krachtkoppeling 
+        (WKK) in de landbouw.
 
         <ul class="data-download">
           <li>
             <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/agriculture_heat.csv" target="_blank">
-              <span class="name">Warmtevraag, -productie en -opslag per uur voor landbouw</span>
+              <span class="name">Lokale WKK warmtevraag en -productie per uur</span>
               <span class="filetype">500KB CSV</span>
             </a>
           </li>

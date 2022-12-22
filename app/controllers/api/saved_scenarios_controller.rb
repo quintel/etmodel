@@ -55,9 +55,7 @@ module API
     private
 
     def scenario_params
-      params.require(:saved_scenario).permit(
-        :scenario_id, :title, :description, :area_code, :end_year, :private, :discarded
-      )
+      params.permit(:scenario_id, :title, :description, :area_code, :end_year, :private, :discarded)
     end
   end
 end

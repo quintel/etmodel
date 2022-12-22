@@ -139,7 +139,7 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
     let(:request) do
       post '/api/v1/saved_scenarios',
         as: :json,
-        params: { saved_scenario: scenario_attributes },
+        params: scenario_attributes,
         headers:
     end
 
@@ -244,7 +244,7 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
     let(:request) do
       put "/api/v1/saved_scenarios/#{scenario.id}",
         as: :json,
-        params: { saved_scenario: scenario_attributes },
+        params: scenario_attributes,
         headers: authorization_header(user, %w[scenarios:read scenarios:write])
     end
 
@@ -329,7 +329,7 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       let(:request) do
         put "/api/v1/saved_scenarios/#{scenario.id}",
           as: :json,
-          params: { saved_scenario: scenario_attributes },
+          params: scenario_attributes,
           headers: authorization_header(create(:user), %w[scenarios:read scenarios:write])
       end
 
@@ -343,7 +343,7 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       let(:request) do
         put "/api/v1/saved_scenarios/#{scenario.id}",
           as: :json,
-          params: { saved_scenario: scenario_attributes.merge(discarded: true) },
+          params: scenario_attributes.merge(discarded: true),
           headers: authorization_header(user, %w[scenarios:read scenarios:write])
       end
 
@@ -361,7 +361,7 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       let(:request) do
         put "/api/v1/saved_scenarios/#{scenario.id}",
           as: :json,
-          params: { saved_scenario: scenario_attributes.merge(discarded: true) },
+          params: scenario_attributes.merge(discarded: true),
           headers: authorization_header(user, %w[scenarios:read scenarios:write])
       end
 
@@ -379,7 +379,7 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       let(:request) do
         put "/api/v1/saved_scenarios/#{scenario.id}",
           as: :json,
-          params: { saved_scenario: scenario_attributes.merge(discarded: false) },
+          params: scenario_attributes.merge(discarded: false),
           headers: authorization_header(user, %w[scenarios:read scenarios:write])
       end
 
@@ -398,7 +398,7 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       let(:request) do
         put "/api/v1/saved_scenarios/#{scenario.id}",
           as: :json,
-          params: { saved_scenario: scenario_attributes.merge(discarded: false) },
+          params: scenario_attributes.merge(discarded: false),
           headers: authorization_header(user, %w[scenarios:read scenarios:write])
       end
 

@@ -280,6 +280,40 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       end
     end
 
+    context 'when updating without a scenario ID' do
+      let(:scenario_attributes) { super().except(:scenario_id) }
+
+      it 'returns success' do
+        request
+        expect(response).to have_http_status(:success)
+      end
+
+      it 'does not change the scenario ID history' do
+        expect { request }
+          .not_to change { scenario.reload.scenario_id_history }
+          .from([])
+      end
+
+      it 'does not change the scenario ID' do
+        expect { request }.not_to change { scenario.reload.scenario_id }
+      end
+    end
+
+    context 'when updating with the same scenario ID' do
+      let(:scenario_attributes) { super().merge(scenario_id: scenario.scenario_id) }
+
+      it 'returns success' do
+        request
+        expect(response).to have_http_status(:success)
+      end
+
+      it 'does not change the scenario ID history' do
+        expect { request }
+          .not_to change { scenario.reload.scenario_id_history }
+          .from([])
+      end
+    end
+
     context 'when given invalid data' do
       let(:scenario_attributes) do
         super().merge(title: '')
@@ -302,6 +336,74 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       it 'returns not found' do
         request
         expect(response).to have_http_status(:not_found)
+      end
+    end
+
+    context 'when discarding a scenario' do
+      let(:request) do
+        put "/api/v1/saved_scenarios/#{scenario.id}",
+          as: :json,
+          params: { saved_scenario: scenario_attributes.merge(discarded: true) },
+          headers: authorization_header(user, %w[scenarios:read scenarios:write])
+      end
+
+      it 'is successful' do
+        request
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'sets the discarded_at timestamp' do
+        expect { request }.to change { scenario.reload.discarded_at }.from(nil)
+      end
+    end
+
+    context 'when discarding an already discarded scenario' do
+      let(:request) do
+        put "/api/v1/saved_scenarios/#{scenario.id}",
+          as: :json,
+          params: { saved_scenario: scenario_attributes.merge(discarded: true) },
+          headers: authorization_header(user, %w[scenarios:read scenarios:write])
+      end
+
+      before do
+        scenario.update(discarded_at: 1.day.ago)
+      end
+
+      it 'sets the discarded_at timestamp' do
+        expect { request }.not_to change { scenario.reload.discarded_at }
+          .from(scenario.discarded_at)
+      end
+    end
+
+    context 'when undiscarding a scenario' do
+      let(:request) do
+        put "/api/v1/saved_scenarios/#{scenario.id}",
+          as: :json,
+          params: { saved_scenario: scenario_attributes.merge(discarded: false) },
+          headers: authorization_header(user, %w[scenarios:read scenarios:write])
+      end
+
+      before do
+        scenario.update(discarded_at: 1.day.ago)
+      end
+
+      it 'sets the discarded_at timestamp' do
+        expect { request }.to change { scenario.reload.discarded_at }
+          .from(scenario.discarded_at)
+          .to(nil)
+      end
+    end
+
+    context 'when undiscarding a non-discarded scenario' do
+      let(:request) do
+        put "/api/v1/saved_scenarios/#{scenario.id}",
+          as: :json,
+          params: { saved_scenario: scenario_attributes.merge(discarded: false) },
+          headers: authorization_header(user, %w[scenarios:read scenarios:write])
+      end
+
+      it 'sets the discarded_at timestamp' do
+        expect { request }.not_to change { scenario.reload.discarded_at }.from(nil)
       end
     end
   end

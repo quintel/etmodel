@@ -40,10 +40,7 @@ module API
     def update
       scenario = current_user.saved_scenarios.find(params.require(:id))
 
-      scenario.add_id_to_history(scenario.scenario_id)
-      scenario.attributes = scenario_params
-
-      if scenario.save
+      if scenario.update_with_api_params(scenario_params)
         render json: scenario, status: :ok
       else
         render json: scenario.errors, status: :unprocessable_entity
@@ -59,9 +56,8 @@ module API
 
     def scenario_params
       params.require(:saved_scenario).permit(
-        :scenario_id, :title, :description, :area_code, :end_year
+        :scenario_id, :title, :description, :area_code, :end_year, :private, :discarded
       )
     end
-
   end
 end

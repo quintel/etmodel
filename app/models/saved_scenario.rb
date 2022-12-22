@@ -90,6 +90,8 @@ class SavedScenario < ApplicationRecord
   end
 
   def add_id_to_history(scenario_id)
+    return if !scenario_id || scenario_id_history.include?(scenario_id)
+
     scenario_id_history.shift if scenario_id_history.count >= 20
     scenario_id_history << scenario_id
   end
@@ -120,12 +122,30 @@ class SavedScenario < ApplicationRecord
     featured? ? featured_scenario.localized_description(locale) : description
   end
 
+  # Updates a saved scenario with parameters from the API controller.
+  def update_with_api_params(params)
+    incoming_id = params[:scenario_id]
+    add_id_to_history(scenario_id) if incoming_id && scenario_id != incoming_id
+
+    self.attributes = params.except(:discarded)
+
+    if params.key?(:discarded)
+      if params[:discarded]
+        self.discarded_at ||= Time.current
+      else
+        self.discarded_at = nil
+      end
+    end
+
+    save
+  end
+
   def as_json(options = {})
     options[:include] ||= {}
     options[:include][:user] = { only: %i[id name] }
 
     options[:except] ||= %i[discarded_at]
 
-    super(options)
+    super(options).merge('discarded' => discarded_at.present?)
   end
 end

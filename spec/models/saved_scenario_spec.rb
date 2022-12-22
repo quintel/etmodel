@@ -193,4 +193,89 @@ describe SavedScenario do
       end
     end
   end
+
+  describe '#update_with_api_params' do
+    let(:ss) { create(:saved_scenario, scenario_id: 1) }
+
+    context 'when discarding a scenario' do
+      it 'sets discarded at' do
+        expect { ss.update_with_api_params(discarded: true) }
+          .to change(ss, :discarded_at)
+          .from(nil)
+      end
+    end
+
+    context 'when discarding an already-discarded scenario' do
+      it 'sets discarded at' do
+        ss.update!(discarded_at: 1.day.ago)
+
+        expect { ss.update_with_api_params(discarded: true) }
+          .not_to change(ss, :discarded_at)
+      end
+    end
+
+    context 'when undiscarding scenario' do
+      it 'unsets discarded at' do
+        ss.update!(discarded_at: 1.day.ago)
+
+        expect { ss.update_with_api_params(discarded: false) }
+          .to change(ss, :discarded_at)
+          .to(nil)
+      end
+    end
+
+    context 'when given a new scenario_id' do
+      it 'returns true' do
+        expect(ss.update_with_api_params(scenario_id: 2)).to be(true)
+      end
+
+      it 'updates the scenario_id' do
+        expect { ss.update_with_api_params(scenario_id: 2) }
+          .to change(ss, :scenario_id)
+          .from(1).to(2)
+      end
+
+      it 'adds the old scenario_id to the history' do
+        expect { ss.update_with_api_params(scenario_id: 2) }
+          .to change(ss, :scenario_id_history)
+          .from([]).to([1])
+      end
+    end
+
+    context 'when given no scenario_id' do
+      it 'returns true' do
+        expect(ss.update_with_api_params(title: 'New title')).to be(true)
+      end
+
+      it 'does not update the scenario_id' do
+        expect { ss.update_with_api_params(title: 'New title') }
+          .not_to change(ss, :scenario_id)
+          .from(1)
+      end
+
+      it 'does not update the history' do
+        expect { ss.update_with_api_params(title: 'New title') }
+          .not_to change(ss, :scenario_id_history)
+          .from([])
+      end
+    end
+
+    context 'when given the same scenario_id' do
+      it 'returns true' do
+        expect(ss.update_with_api_params(scenario_id: 1, title: 'New title')).to be(true)
+      end
+
+      it 'does not update the scenario_id' do
+        expect { ss.update_with_api_params(scenario_id: 1, title: 'New title') }
+          .not_to change(ss, :scenario_id)
+          .from(1)
+      end
+
+      it 'does not update the history' do
+        expect { ss.update_with_api_params(scenario_id: 1, title: 'New title') }
+          .not_to change(ss, :scenario_id_history)
+          .from([])
+      end
+    end
+  end
 end

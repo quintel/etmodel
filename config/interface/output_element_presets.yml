@@ -1,6 +1,17 @@
 ---
-- key: test
+- key: system_overview
   output_elements:
-  - ccus_sankey
-  - mekko_of_co2_demand_supply
+  - future_energy_imports
+  - source_of_electricity_production
+  - hourly_flexibility_electricity
+  - mekko_of_hydrogen_network
+  - source_of_electricity_in_p2g
+  - collective_heat_mekko
+  - heat_network_storage
+  - source_of_electricity_production
+  - dynamic_demand_curve
+  - merit_order
+  - flexibility_hourly_p2p_storage
+  - storage_options
+  - merit_order_table
   dependent_on: ''

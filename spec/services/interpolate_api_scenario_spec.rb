@@ -18,7 +18,7 @@ describe InterpolateAPIScenario, type: :service do
       .to receive(:post)
       .with(
         '/api/v3/scenarios/1/interpolate',
-        scenario: { end_year: 2030, keep_compatible: }
+        end_year: 2030, keep_compatible:
       )
 
     if isok
@@ -67,7 +67,7 @@ describe InterpolateAPIScenario, type: :service do
 
       expect(client).to have_received(:post).with(
         '/api/v3/scenarios/1/interpolate',
-        scenario: { end_year: 2030, keep_compatible: false }
+        end_year: 2030, keep_compatible: false
       )
     end
 
@@ -79,7 +79,7 @@ describe InterpolateAPIScenario, type: :service do
 
         expect(client).to have_received(:post).with(
           '/api/v3/scenarios/1/interpolate',
-          scenario: { end_year: 2030, keep_compatible: true }
+          end_year: 2030, keep_compatible: true
         )
       end
     end

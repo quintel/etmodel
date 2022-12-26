@@ -15,7 +15,7 @@ InterpolateAPIScenario = lambda do |http_client, scenario_id, end_year, keep_com
   ServiceResult.success(
     http_client.post(
       "/api/v3/scenarios/#{scenario_id}/interpolate",
-      scenario: { end_year:, keep_compatible: }
+      end_year:, keep_compatible:
     ).body
   )
 rescue Faraday::UnprocessableEntityError => e

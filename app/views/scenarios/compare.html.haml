@@ -61,14 +61,14 @@
                     %td{ colspan: 6 }
 
                     - @scenarios.each do |s|
-                      %td.cell= s.user_values.attributes[slider.key]
+                      %td.cell= s.user_values[slider.key]
                   - else
                     :ruby
                       key = slider.key
                       attrs = @default_values[key] || {"min" => 0, "max" => 0, "default" => 0}
-                      values = @scenarios.map{|s| s.user_values.attributes[key]}.compact
+                      values = @scenarios.map{|s| s.user_values[key]}.compact
                       user_avg = (values.sum / values.compact.size).round(1) rescue nil
-                      total_avg = (@scenarios.map{|s| s.user_values.attributes[key] || attrs["default"]}.sum / @scenarios.size).round(1)
+                      total_avg = (@scenarios.map{|s| s.user_values[key] || attrs["default"]}.sum / @scenarios.size).round(1)
                       @average_values[key] = user_avg unless user_avg.nil?
                       @average_values_using_defaults[key] = total_avg
 
@@ -80,7 +80,7 @@
                     %td.cell #{values.compact.size}/#{size}
 
                     - @scenarios.each do |s|
-                      %td.cell= s.user_values.attributes[slider.key].round(1) rescue '-'
+                      %td.cell= s.user_values[slider.key].round(1) rescue '-'
 
     %p
       %table

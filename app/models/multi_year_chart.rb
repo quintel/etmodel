@@ -37,4 +37,13 @@ class MultiYearChart < ApplicationRecord
   def redirect_slug
     scenarios.pluck(:scenario_id).join(',')
   end
+
+  def as_json(options = {})
+    options[:except] ||= %i[area_code end_year user_id]
+
+    super(options).merge(
+      'owner' => user.as_json(only: %i[id name]),
+      'scenario_ids' => scenarios.pluck(:scenario_id).sort
+    )
+  end
 end

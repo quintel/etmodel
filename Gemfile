@@ -63,6 +63,8 @@ gem 'premailer-rails'
 # Engine
 gem 'dry-initializer'
 gem 'dry-struct'
+gem 'dry-validation'
+gem 'dry-monads'
 
 group :development do
   gem 'letter_opener'

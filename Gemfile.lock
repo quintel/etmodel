@@ -201,6 +201,10 @@ GEM
       concurrent-ruby (~> 1.0)
       dry-core (~> 1.0, < 2)
       zeitwerk (~> 2.6)
+    dry-monads (1.6.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
     dry-schema (1.13.0)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 1.0, >= 1.0.1)
@@ -634,7 +638,9 @@ DEPENDENCIES
   database_cleaner
   discard
   dry-initializer
+  dry-monads
   dry-struct
+  dry-validation
   dynamic_form
   ed25519
   factory_bot_rails (~> 4.8)

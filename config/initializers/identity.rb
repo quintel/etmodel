@@ -1,5 +1,28 @@
 # frozen_string_literal: true
 
+if Settings.identity.client_id.blank? || Settings.identity.client_secret.blank?
+  $stderr.puts <<~MESSAGE
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │           !!!️  NO IDENTITY / AUTHENTICATION CONFIG FOUND !!!️            │
+    ├─────────────────────────────────────────────────────────────────────────┤
+    │ You're missing the client_id and client_secret used to connect ETModel  │
+    │ to ETEngine. Please add these to your config/settings.local.yml file.   │
+    │                                                                         │
+    │ 1. Visit the ETEngine you wish to connect to. If you're running         │
+    │    ETEngine locally, start it with: bundle exec rails server.           │
+    │                                                                         │
+    │ 2. Sign in to your ETEngine account. If ETEngine is running locally,    │
+    │    sign in at http://localhost:3000.                                    │
+    │                                                                         │
+    │ 3. Scroll down and create a new ETModel or Transition Path application. │
+    │                                                                         │
+    │ 4. Copy the generated config to ETModel.                                │
+    └─────────────────────────────────────────────────────────────────────────┘
+  MESSAGE
+
+  exit(1) # rubocop:disable Rails/Exit
+end
+
 Identity.configure do |config|
   config.issuer = Settings.api_url
   config.client_uri = Settings.identity.client_uri

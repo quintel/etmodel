@@ -89,15 +89,4 @@ class Interface
   def default_chart
     current_slide.output_element
   end
-
-  def current_tutorial_movie
-    current_sidebar_item.send "#{I18n.locale}_vimeo_id"
-  end
-
-  def tutorial_movie_path
-    Rails.application.routes.url_helpers.tutorial_path(
-      tab: current_tab.key,
-      sidebar: current_sidebar_item.key
-    )
-  end
 end

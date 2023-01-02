@@ -32,15 +32,6 @@ class PagesController < ApplicationController
     render partial: "layouts/etm/footer"
   end
 
-  def tutorial
-    loc = I18n.locale
-    @tab = params[:tab]
-    @vimeo_id_for_tab =  Tab.find_by_key(@tab).try("#{loc}_vimeo_id")
-    @sidebar = params[:sidebar]
-    @vimeo_id_for_sidebar = SidebarItem.find_by_key(@sidebar).try("#{loc}_vimeo_id")
-    render layout: false
-  end
-
   def set_locale
     locale
     render(plain: '', status: :ok)

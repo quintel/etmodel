@@ -73,11 +73,6 @@ Rails.application.routes.draw do
       put :undiscard
       put :publish
       put :unpublish
-
-      # get    'feature' => 'featured_scenarios#edit'
-      # post   'feature' => 'featured_scenarios#create'
-      # put    'feature' => 'featured_scenarios#update'
-      # delete 'feature' => 'featured_scenarios#destroy'
     end
 
     collection do
@@ -122,7 +117,6 @@ Rails.application.routes.draw do
   match '/ete(/*url)',       to: 'api_proxy#default', via: :all
   match '/ete_proxy(/*url)', to: 'api_proxy#default', via: :all
 
-  get '/tutorial/(:tab)(/:sidebar)'   => 'pages#tutorial', as: :tutorial
   get '/show_all_countries'           => 'pages#show_all_countries'
   get '/show_flanders'                => 'pages#show_flanders'
   put '/set_locale(/:locale)'         => 'pages#set_locale', as: :set_locale

@@ -252,7 +252,7 @@ class @InputElementList extends Backbone.Collection
       inputStatus.delete(feature)
 
     if @find_by_key(key)
-      isDisabled = tihs.isDisabled(key)
+      isDisabled = this.isDisabled(key)
 
       @find_by_key(key).set({
         disabled: isDisabled

@@ -1,15 +1,19 @@
-// update main content area
-$("#title").html('<%= escape_javascript render("layouts/etm/title")%>');
+try {
+  // update main content area
+  $("#title").html('<%= escape_javascript render("layouts/etm/title")%>');
 
-$("ul.accordion").html('<%= escape_javascript render(:partial => "slide", :collection => @interface.slides)%>');
-$("ul.accordion").fadeIn(100);
-$("#title").busyBox('close')
+  $("ul.accordion").html('<%= escape_javascript render(:partial => "slide", :collection => @interface.slides)%>');
+  $("ul.accordion").fadeIn(100);
+  $("#title").busyBox('close')
 
-// setup slider values, defaults etc
-App.setup_sliders();
-App.accordion.open_right_tab();
+  // setup slider values, defaults etc
+  App.setup_sliders();
+  App.accordion.open_right_tab();
 
-const presetListEl = $('#output_element_preset_list');
-if (presetListEl.length > 0) {
-  new OutputElementPresetListView({ el: presetListEl });
+  const presetListEl = $('#output_element_preset_list');
+  if (presetListEl.length > 0) {
+    new OutputElementPresetListView({ el: presetListEl });
+  }
+} catch (e) {
+  console.error(e);
 }

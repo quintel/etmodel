@@ -34,7 +34,7 @@ class GuestToken {
     return false;
   }
 
-  Headers(): Record<string, string> {
+  headers(): Record<string, string> {
     return {};
   }
 }

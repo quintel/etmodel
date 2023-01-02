@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-if Settings.identity.client_id.blank? || Settings.identity.client_secret.blank?
-  $stderr.puts <<~MESSAGE
+if !ENV['DOCKER_BUILD'] && (
+    Settings.identity.client_uri.blank? ||
+    Settings.identity.client_id.blank? ||
+    Settings.identity.client_secret.blank?)
+  abort <<~MESSAGE
     ┌─────────────────────────────────────────────────────────────────────────┐
     │           !!!️  NO IDENTITY / AUTHENTICATION CONFIG FOUND !!!️            │
     ├─────────────────────────────────────────────────────────────────────────┤
@@ -19,8 +22,6 @@ if Settings.identity.client_id.blank? || Settings.identity.client_secret.blank?
     │ 4. Copy the generated config to ETModel.                                │
     └─────────────────────────────────────────────────────────────────────────┘
   MESSAGE
-
-  exit(1) # rubocop:disable Rails/Exit
 end
 
 Identity.configure do |config|

@@ -269,6 +269,15 @@ en:
     saved: "Saved Scenarios"
     title: "Title"
     cannot_load: Sorry, your scenario could not be loaded.
+    privacy:
+      public:
+        title: Public
+        description: Anyone can view or clone this scenario, but only you can make changes
+        invert: Make this scenario private
+      private:
+        title: Private
+        description: Only you can view or clone this scenario
+        invert: Make this scenario public
     warning:
       message: |
         This scenario was last updated on %{last_updated}, in an earlier version of the model. The

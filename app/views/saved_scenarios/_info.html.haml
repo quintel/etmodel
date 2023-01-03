@@ -14,31 +14,31 @@
         .dropdown#scenario-privacy<>
           %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
             = inline_svg_tag 'hero/20/lock.svg', class: 'lock-icon'
-            Private
+            = t('scenario.privacy.private.title')
             %span.fa.fa-caret-down
           %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-privacy-button', style: 'margin-top: -8px' }
             %li
               .info
-                Only you can view or change this scenario.
+                = t('scenario.privacy.private.description')
             %li.sep-above
               = button_to publish_saved_scenario_path(@saved_scenario), method: :put, class: 'dropdown-item' do
                 = inline_svg_tag 'hero/20/eye.svg'
-                Make scenario public
+                = t('scenario.privacy.private.invert')
     - else
       %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
         .dropdown#scenario-privacy<>
           %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
             = inline_svg_tag 'hero/20/eye.svg', style: 'margin-right: 0.125rem'
-            Public
+            = t('scenario.privacy.public.title')
             %span.fa.fa-caret-down
           %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-privacy-button', style: 'margin-top: -8px' }
             %li
               .info
-                This scenario can be viewed or cloned by anyone, but only you can make changes.
+                = t('scenario.privacy.public.description')
             %li.sep-above
               = button_to unpublish_saved_scenario_path(@saved_scenario), method: :put, class: 'dropdown-item' do
                 = inline_svg_tag 'hero/20/lock.svg', class: 'lock-icon'
-                Make scenario private
+                = t('scenario.privacy.public.invert')
 
     :javascript
       new DropdownView({ el: $('#scenario-privacy') }).render()

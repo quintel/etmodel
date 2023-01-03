@@ -26,8 +26,9 @@ CreateSavedScenario = lambda do |http_client, scenario_id, user, settings = {}|
     description: settings[:description],
     area_code: api_scenario.area_code,
     end_year: api_scenario.end_year,
-    user: user,
-    scenario_id: api_scenario.id
+    scenario_id: api_scenario.id,
+    private: api_scenario.private?,
+    user:
   )
 
   unless saved_scenario.valid?

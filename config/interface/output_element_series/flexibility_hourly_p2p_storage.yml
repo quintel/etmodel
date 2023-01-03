@@ -22,7 +22,43 @@
   is_1990: 
   dependent_on: 
   output_element_key: flexibility_hourly_p2p_storage
-  key: electricity_stored_in_EV_flexibility_hourly_p2p_storage
+  key: electricity_stored_in_cars_flexibility_hourly_p2p_storage
+- label: transport_bus_flexibility_p2p_electricity_storage
+  color: "#f78fb4"
+  order_by: 111
+  group: 
+  show_at_first:
+  is_target_line: 
+  target_line_position: 
+  gquery: transport_bus_flexibility_p2p_electricity_storage_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_hourly_p2p_storage
+  key: electricity_stored_in_busses_flexibility_hourly_p2p_storage
+- label: transport_truck_flexibility_p2p_electricity_storage
+  color: "#db4270"
+  order_by: 112
+  group: 
+  show_at_first:
+  is_target_line: 
+  target_line_position: 
+  gquery: transport_truck_flexibility_p2p_electricity_storage_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_hourly_p2p_storage
+  key: electricity_stored_in_trucks_flexibility_hourly_p2p_storage
+- label: transport_van_flexibility_p2p_electricity_storage
+  color: "#c91042"
+  order_by: 113
+  group: 
+  show_at_first:
+  is_target_line: 
+  target_line_position: 
+  gquery: transport_van_flexibility_p2p_electricity_storage_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: flexibility_hourly_p2p_storage
+  key: electricity_stored_in_van_flexibility_hourly_p2p_storage
 - label: energy_flexibility_pumped_storage_electricity_storage
   color: "#416B86"
   order_by: 120

@@ -51,12 +51,42 @@
   additional_specs:
     other:
       timeframe: i_h_d_w
+- key: transport_bus_using_electricity_availability
+  step_value: 0.1
+  unit: "%"
+  interface_group: capacity
+  related_node: transport_bus_flexibility_p2p_electricity
+  position: 21
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: transport_truck_using_electricity_availability
+  step_value: 0.1
+  unit: "%"
+  interface_group: capacity
+  related_node: transport_truck_flexibility_p2p_electricity
+  position: 22
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: transport_van_using_electricity_availability
+  step_value: 0.1
+  unit: "%"
+  interface_group: capacity
+  related_node: transport_van_flexibility_p2p_electricity
+  position: 23
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
 - key: wtp_of_transport_car_flexibility_p2p_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: transport_car_flexibility_p2p_electricity
-  position: 21
+  position: 24
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -66,7 +96,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: transport_car_flexibility_p2p_electricity
-  position: 22
+  position: 25
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -74,7 +104,7 @@
 - key: settings_enable_storage_optimisation_transport_car_flexibility_p2p_electricity
   step_value: 1.0
   unit: boolean
-  position: 23
+  position: 26
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   config:

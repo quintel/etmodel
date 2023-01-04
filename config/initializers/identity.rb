@@ -29,7 +29,7 @@ Identity.configure do |config|
   config.client_uri = Settings.identity.client_uri
   config.client_id = Settings.identity.client_id
   config.client_secret = Settings.identity.client_secret
-  config.scope = 'openid profile email scenarios:read scenarios:write scenarios:delete'
+  config.scope = 'openid profile email roles scenarios:read scenarios:write scenarios:delete'
   config.validate_config = ENV['DOCKER_BUILD'] != 'true'
 
   # Create or update the local user when signing in.

@@ -11,18 +11,54 @@
   dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_stored_in_household_batteries_use_of_excess_electricity
-- label: electricity_stored_in_EV
+- label: electricity_stored_in_electric_cars
   color: "#dd77bb"
   order_by: 2
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: electricity_stored_in_ev
+  gquery: electricity_stored_in_electric_cars
   is_1990: false
   dependent_on:
   output_element_key: use_of_excess_electricity
-  key: electricity_stored_in_EV_use_of_excess_electricity
+  key: electricity_stored_in_electric_cars_use_of_excess_electricity
+- label: electricity_stored_in_electric_busses
+  color: "#f78fb4"
+  order_by: 3
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_stored_in_electric_busses
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_stored_in_electric_busses_use_of_excess_electricity
+- label: electricity_stored_in_electric_vans
+  color: "#c91042"
+  order_by: 4
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_stored_in_electric_vans
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_stored_in_electric_vans_use_of_excess_electricity
+- label: electricity_stored_in_electric_trucks
+  color: "#db4270"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_stored_in_electric_trucks
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_stored_in_electric_trucks_use_of_excess_electricity
 - label: electricity_exported
   color: "#77dd99"
   order_by: 20

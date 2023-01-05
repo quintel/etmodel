@@ -539,7 +539,7 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: households_flexibility_p2p_electricity_flex_merit_order_hourly_supply
-- label: transport_car_flexibility_p2p
+- label: transport_car_flexibility_p2p_electricity_storage
   color: "#dd77bb"
   order_by: 5
   group: flex
@@ -551,6 +551,42 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: transport_car_using_electricity_flex_merit_order_hourly_supply
+- label: transport_bus_flexibility_p2p_electricity_storage
+  color: "#f78fb4"
+  order_by: 5
+  group: flex
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: transport_bus_using_electricity
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: transport_bus_using_electricity_flex_merit_order_hourly_supply
+- label: transport_van_flexibility_p2p_electricity_storage
+  color: "#c91042"
+  order_by: 5
+  group: flex
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: transport_van_using_electricity
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: transport_van_using_electricity_flex_merit_order_hourly_supply
+- label: transport_truck_flexibility_p2p_electricity_storage
+  color: "#db4270"
+  order_by: 5
+  group: flex
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: transport_truck_using_electricity
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: transport_truck_using_electricity_flex_merit_order_hourly_supply
 - label: imported_electricity
   color: "#cccccc"
   order_by: 5

@@ -84,7 +84,7 @@ end
 if files.none?
   # If there are no files specified in ARGV, search for them in the source dir.
   files = Dir.glob(source_dir + '/*.sql{,.bz2,.gz}')
-    .sort
+    .sort_by { |path| [path.include?('etmodel_') ? 1 : 0, File.mtime(path)] }
     .reverse
     .map { |path| FileInfo.new(path) }
 end

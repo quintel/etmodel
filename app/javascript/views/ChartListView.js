@@ -1,4 +1,4 @@
-/* globals $ Backbone I18n */
+/* globals $ App Backbone I18n */
 
 /**
  * A simple fuzzy text matcher, inspired by bevacqua/fuzzysearch (MIT License).
@@ -164,9 +164,19 @@ class ChartListItem extends ListItem {
   onClick(event) {
     event.preventDefault();
 
-    if (!this.options.isElementDisabled(this.options.key)) {
-      this.options.onSelectChart(this.options.key);
+    if (this.options.isElementDisabled(this.options.key)) {
+      return;
     }
+
+    if (this.options.output_element_type_name === 'preset') {
+      App.settings.save({ locked_charts: this.options.items }).done(function () {
+        location.reload();
+      });
+
+      return;
+    }
+
+    this.options.onSelectChart(this.options.key);
   }
 }
 

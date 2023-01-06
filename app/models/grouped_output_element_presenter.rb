@@ -9,23 +9,12 @@ class GroupedOutputElementPresenter
   end
 
   def as_json(*)
-    @grouped_elements.map do |key, value|
-      group_name = I18n.t("chart_group.#{key.downcase}")
+    chart_data = chart_groups
 
-      # Grouped charts come in two forms: either an array - in which case this is a top-level group
-      # with charts belonging to it without any subgroups - or an Hash of subgroup keys and the
-      # charts belonging to them.
-      if value.is_a?(Array)
-        group_as_json(key, value).merge(type: :group, name: group_name)
-      elsif value.is_a?(Hash)
-        {
-          elements: subgroups_as_json(value),
-          key: key&.downcase&.presence,
-          name: group_name,
-          type: :group
-        }
-      end
-    end
+    preset_data = presets_group
+    chart_data << preset_data if preset_data
+
+    chart_data
   end
 
   private
@@ -60,5 +49,57 @@ class GroupedOutputElementPresenter
       name: I18n.t("output_elements.#{element.key}.title"),
       image_url: @view_context.image_url("output_elements/#{element.icon}")
     )
+  end
+
+  def chart_groups
+    @grouped_elements.map do |key, value|
+      group_name = I18n.t("chart_group.#{key.downcase}")
+
+      # Grouped charts come in two forms: either an array - in which case this is a top-level group
+      # with charts belonging to it without any subgroups - or an Hash of subgroup keys and the
+      # charts belonging to them.
+      if value.is_a?(Array)
+        group_as_json(key, value).merge(type: :group, name: group_name)
+      elsif value.is_a?(Hash)
+        {
+          elements: subgroups_as_json(value),
+          key: key&.downcase&.presence,
+          name: group_name,
+          type: :group
+        }
+      end
+    end
+  end
+
+  def presets_group
+    return nil if OutputElementPreset.for_list.empty?
+
+    presets = OutputElementPreset.for_list.map { |preset| preset_as_json(preset) }
+
+    {
+      key: 'presets',
+      name: I18n.t('chart_presets.title'),
+      type: :group,
+      elements: [
+        {
+          key: 'reset_to_default',
+          name: I18n.t('chart_presets.reset_to_default'),
+          output_element_type_name: :preset,
+          items: [],
+          image_url: @view_context.image_url('output_elements/reset.png')
+        },
+        *presets
+      ]
+    }
+  end
+
+  def preset_as_json(preset)
+    {
+      key: preset.key,
+      name: preset.title,
+      output_element_type_name: :preset,
+      items: preset.output_elements_for_js,
+      image_url: @view_context.image_url('output_elements/preset.png')
+    }
   end
 end

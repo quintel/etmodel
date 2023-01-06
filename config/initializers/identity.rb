@@ -42,5 +42,10 @@ if Rails.env.development?
   # In development, ETEngine often runs as only a single process. Pre-fetch the JWKS keys from the
   # engine so that the first request to the API does not deadlock.
   require_relative '../../lib/etmodel/engine_token'
-  ETModel::EngineToken.jwk_set rescue nil
+
+  begin
+    ETModel::EngineToken.jwk_set
+  rescue StandardError => e
+    warn("Couldn't pre-fetch ETEngine public key: #{e.message}")
+  end
 end

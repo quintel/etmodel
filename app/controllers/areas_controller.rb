@@ -5,8 +5,11 @@ class AreasController < ActionController::API
   before_action :myc_content_security_policy
 
   def index
-    @areas = Engine::Area.all
-    render json: Engine::Area.all.map { |area| serialize_area(area) }
+    areas = Rails.cache.fetch('serialized_areas') do
+      Engine::Area.all.map { |area| serialize_area(area) }
+    end
+
+    render json: areas
   end
 
   def show

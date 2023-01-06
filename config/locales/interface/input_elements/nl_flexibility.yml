@@ -545,11 +545,11 @@ nl:
       title: Batterijen in elektrische auto's
       short_description:
       description: |
-        Niet al het opslagvolume van elektrische auto's kan voor flexibiliteit worden gebruikt, omdat een deel van
-        de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daaorm instellen
-        hoeveel procent van de batterij van elektrische auto's beschikbaar is voor flexibiliteitsdoeleinden. Het
-        aandeel elektrische auto's kun je instellen in de
-        <a href="/scenario/demand/transport_passenger_transport/car-technology">autotechnologie slide</a>. </br></br>
+        Niet al het opslagvolume van elektrische auto's kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
+        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
+        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. De totale beschikbare 
+        capaciteit van batterijen in auto's hangt af van het aandeel elektrische auto's in de 
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">autotechnologie</a> sectie. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van het benutten van batterijen in elektrische auto's: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -566,17 +566,77 @@ nl:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     transport_bus_using_electricity_availability:
-      title: Batteries in electric busses
+      title: Batterijen in elektrische bussen
       short_description:
-      description:
+      description: |
+        Niet al het opslagvolume van elektrische bussen kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
+        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
+        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. De totale beschikbare 
+        capaciteit van batterijen in bussen hangt af van het aandeel elektrische bussen in de 
+        <a href="/scenario/demand/transport_passenger_transport/bus-technology">bustechnologie</a> sectie. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van het benutten van batterijen in elektrische auto's: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     transport_truck_using_electricity_availability:
-      title: Batteries in electric trucks
+      title: Batterijen in elektrische vrachtwagens
       short_description:
-      description:
+      description: |
+        Niet al het opslagvolume van elektrische vrachtwagens kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
+        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
+        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. De totale beschikbare 
+        capaciteit van batterijen in vrachtwagens hangt af van het aandeel elektrische vrachtwagens in de 
+        <a href="/scenario/demand/transport_freight_transport/truck-technology">vrachtwagentechnologie</a> sectie. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van het benutten van batterijen in elektrische auto's: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     transport_van_using_electricity_availability:
-      title: Batteries in electric vans
+      title: Batterijen in elektrische bestelbussen
       short_description:
-      description:
+      description: |
+        Niet al het opslagvolume van elektrische bestelbussen kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
+        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
+        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. De totale beschikbare 
+        capaciteit van batterijen in bestelbussen hangt af van het aandeel elektrische bestelbussen in de 
+        <a href="/scenario/demand/transport_freight_transport/truck-technology">bestelbussentechnologie</a> sectie. </br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van het benutten van batterijen in elektrische auto's: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
     wtp_of_transport_car_flexibility_p2p_electricity:
       title: Willingness-to-pay
       short_description:

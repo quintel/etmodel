@@ -520,11 +520,11 @@ en:
       title: Batteries in electric cars
       short_description:
       description: |
-        Not all of the storage volume of electric vehicles can be used for flexibility purposes as some of the electricity
-        is needed to power the next ride. With this slider, you can therefore set which percentage of the electric vehicles' battery is reserved
-        for flexibility purposes. You can set the share of electric vehicles
-        in the <a href="/scenario/demand/transport_passenger_transport/car-technology">car
-        technology section of transport</a>. </br></br>
+        Not all of the storage volume of electric cars can be used to provide storage services to the electricity 
+        grid, because some of the electricity is needed to power the next ride. With this slider, you can therefore 
+        determine which percentage of the total available battery capacity can be used for storage 
+        services. The total available capacity of car batteries is determined by the share of electric cars in the 
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">car technology</a> section. </br></br>
         A number of charts are available to help you determine the effect of using batteries in electric vehicles: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -540,17 +540,74 @@ en:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     transport_bus_using_electricity_availability:
-      title: Batteries in electric busses
+      title: Batteries in electric buses
       short_description:
-      description:
+      description: |
+        Not all of the storage volume of electric buses can be used to provide storage services to the electricity 
+        grid, because some of the electricity is needed to power the next ride. With this slider, you can therefore 
+        determine which percentage of the total available battery capacity can be used for storage 
+        services. The total available capacity of bus batteries is determined by the share of electric buses in the 
+        <a href="/scenario/demand/transport_passenger_transport/bus-technology">bus technology</a> section. </br></br>
+        A number of charts are available to help you determine the effect of using batteries in electric vehicles: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness to pay or never exceeds the willingness to accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     transport_truck_using_electricity_availability:
       title: Batteries in electric trucks
       short_description:
-      description:
+      description: |
+        Not all of the storage volume of electric trucks can be used to provide storage services to the electricity 
+        grid, because some of the electricity is needed to power the next ride. With this slider, you can therefore 
+        determine which percentage of the total available battery capacity can be used for storage 
+        services. The total available capacity of truck batteries is determined by the share of electric trucks in the 
+        <a href="/scenario/demand/transport_freight_transport/truck-technology">truck technology</a> section. </br></br>
+        A number of charts are available to help you determine the effect of using batteries in electric vehicles: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness to pay or never exceeds the willingness to accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     transport_van_using_electricity_availability:
       title: Batteries in electric vans
       short_description:
-      description:
+      description: |
+        Not all of the storage volume of electric vans can be used to provide storage services to the electricity 
+        grid, because some of the electricity is needed to power the next ride. With this slider, you can therefore 
+        determine which percentage of the total available battery capacity can be used for storage 
+        services. The total available capacity of van batteries is determined by the share of electric vans in the 
+        <a href="/scenario/demand/transport_freight_transport/van-technology">van technology</a> section. </br></br>
+        A number of charts are available to help you determine the effect of using batteries in electric vehicles: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness to pay or never exceeds the willingness to accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
     wtp_of_transport_car_flexibility_p2p_electricity:
       title: Willingness to pay
       short_description:

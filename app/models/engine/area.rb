@@ -89,8 +89,6 @@ class Engine::Area < ActiveResource::Base
       # Remove a trailing year from the dataset key.
       base_key = base_dataset.gsub(/\d{4}$/, '')
 
-      puts "wtf: #{self.inspect} #{base_key.inspect}"
-
       self.class.find_by_country_memoized(base_key).country_area || self
     end
   end

@@ -272,13 +272,13 @@ nl:
     cannot_load: Sorry, jouw scenario kan niet worden geladen.
     privacy:
       public:
-        title: Public
-        description: Anyone can view or clone this scenario, but only you can make changes
-        invert: Make this scenario private
+        title: Publiek
+        description: Iedereen kan dit scenario bekijken en kopiëren, maar alleen jij kan aanpassingen maken
+        invert: Maak dit scenario privé
       private:
-        title: Private
-        description: Only you can view or clone this scenario
-        invert: Make this scenario public
+        title: Privé
+        description: Alleen jij kan dit scenario bekijken en kopiëren
+        invert: Maak dit scenario publiek
     warning:
       message: |
         Dit scenario is voor het laatst bijgewerkt op %{last_updated}, in een eerdere versie van het model.

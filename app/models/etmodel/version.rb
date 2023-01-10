@@ -3,15 +3,15 @@
 module ETModel
   module Version
     # Year of release.
-    MAJOR = 2022
+    MAJOR = 2023
 
     # Month of release.
-    MINOR = 12
+    MINOR = 1
 
     # Day of release. This is not used in version numbers but is required to build the DATE_VERSION
     # so that we know the exact date. This should be the day on which the minor version was released,
     # not incremented for each small change.
-    DAY = 6
+    DAY = 10
 
     STRING = format('%<major>d.%<minor>02d', major: MAJOR, minor: MINOR)
     DATE = Date.new(MAJOR, MINOR, DAY)

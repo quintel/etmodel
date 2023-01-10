@@ -1,6 +1,18 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# Januari 2023
+
+## Single sign-on
+
+## WKK's voor lokale warmtevraag uit de landbouw
+
+## Elektriciteitsopslag in elektrische bussen, bestelbussen en vrachtwagens
+
+## Grafiekensets
+
+___
+
 # December 2022
 
 ## Bio-ethanol voor binnenvaart

@@ -1,6 +1,18 @@
 # What's new in the Energy Transition Model?
 ___
 
+# January 2023
+
+## Single sign-on
+
+## CHPs for local agriculture heat demand
+
+## Electricity storage in electric buses, vans and trucks
+
+## Chart presets
+
+___
+
 # December 2022
 
 ## Bio-ethanol for inland shipping

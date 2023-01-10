@@ -37,6 +37,14 @@ class PagesController < ApplicationController
     render(plain: '', status: :ok)
   end
 
+  # ETEngine redirects to this endpoint when the user is deleted. We show a notification to the user
+  # but no deletion is performed in this action since responds to a GET request.
+  def account_deleted
+    reset_session
+    flash[:notice] = I18n.t('flash.account_deleted')
+    redirect_to root_path
+  end
+
   protected
 
   def setup_countries_and_regions

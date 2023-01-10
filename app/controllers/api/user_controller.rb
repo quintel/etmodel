@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module API
-  # Updates user informaiton.
+  # Updates user information.
   class UserController < APIController
     before_action :verify_token!
 
@@ -14,6 +14,11 @@ module API
       else
         render json: current_user.errors, status: :unprocessable_entity
       end
+    end
+
+    def destroy
+      current_user.destroy
+      head :ok
     end
   end
 end

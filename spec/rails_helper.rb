@@ -117,6 +117,7 @@ RSpec.configure do |config|
 
   config.include Identity::Test::ControllerHelpers, type: :controller
   config.include RequestHelpers, type: :request
+  config.include RequestHelpers, type: :system
 
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers

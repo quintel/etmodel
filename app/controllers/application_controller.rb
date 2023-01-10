@@ -108,20 +108,12 @@ protected
 
   private
 
-  # def current_user_session
-  #   return @current_user_session if defined?(@current_user_session)
-  #   @current_user_session = UserSession.find
-  # end
-
-  # def current_user
-  #   return @current_user if defined?(@current_user)
-
-  #   # Re-find the user, to avoid AssociationMismatch errors or stale objects.
-  #   @current_user = current_user_session&.user && User.find(current_user_session.user.id)
-  # end
-
   def current_user
     @current_user ||= User.from_session_user!(identity_user) if signed_in?
+  rescue ActiveRecord::RecordNotFound
+    # The user has been deleted from the database. This means the user has deleted their account.
+    reset_session
+    redirect_to root_path
   end
 
   # Internal: Renders a 404 page.

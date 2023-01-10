@@ -52,4 +52,56 @@ RSpec.describe 'API::User', type: :request, api: true do
       end
     end
   end
+
+  describe 'DELETE /api/v1/user' do
+    let(:user) { create(:user) }
+
+    context 'when given a valid token and the user exists' do
+      let(:run_request) do
+        delete '/api/v1/user',
+          as: :json,
+          headers: authorization_header(user)
+      end
+
+      it 'returns 200 OK' do
+        run_request
+        expect(response).to be_successful
+      end
+
+      it 'deletes the user' do
+        user
+        expect { run_request }.to change { User.where(id: user.id).count }.from(1).to(0)
+      end
+
+      it "deletes the user's saved scenarios" do
+        scenario = create(:saved_scenario, user:)
+
+        expect { run_request }
+          .to change { SavedScenario.where(id: scenario.id).count }
+          .from(1).to(0)
+      end
+
+      it "deletes the user's transition paths" do
+        path = create(:multi_year_chart, user:)
+
+        expect { run_request }
+          .to change { MultiYearChart.where(id: path.id).count }
+          .from(1).to(0)
+      end
+    end
+
+    context 'when given a valid token but the user does not exist' do
+      before do
+        user.destroy!
+
+        delete '/api/v1/user',
+          as: :json,
+          headers: authorization_header(user)
+      end
+
+      it 'returns 200 OK' do
+        expect(response).to be_successful
+      end
+    end
+  end
 end

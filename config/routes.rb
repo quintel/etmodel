@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   put '/settings/dashboard',        to: 'settings#update_dashboard'
   put '/settings/hide_results_tip', to: 'settings#hide_results_tip'
 
+  get '/user/account_deleted', to: 'pages#account_deleted'
+
   get '/survey', to: 'survey#show'
   put '/survey/:question', to: 'survey#answer_question'
 
@@ -153,7 +155,8 @@ Rails.application.routes.draw do
 
   # Routes for the API. Typically used by ETEngine.
   namespace :api, path: '/api/v1' do
-    put '/user' => 'user#update'
+    put '/user'    => 'user#update'
+    delete '/user' => 'user#destroy'
 
     resources :saved_scenarios, only: %i[index show create update destroy]
     resources :transition_paths, only: %i[index show create update destroy]

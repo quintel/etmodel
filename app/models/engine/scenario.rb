@@ -45,6 +45,10 @@ module Engine
       []
     end
 
+    def to_param
+      id.to_s
+    end
+
     def title
       metadata['title'].presence
     end

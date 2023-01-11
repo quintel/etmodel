@@ -93,7 +93,10 @@ class @AppView extends Backbone.View
       window.location.reload()
 
     expiresInMS = accessToken.expiresAt.getTime() - new Date().getTime();
-    refreshInMS = Math.max(expiresInMS - 60000, 0)
+
+    # A random number of seconds between 0 and 10 is added to the refresh time. This avoids multiple
+    # browser tabs refreshing simultaneously and causing unnecessary token refreshes.
+    refreshInMS = Math.max(expiresInMS - 60000 + Math.round(Math.random() * 10000), 0)
 
     if globals.debug_js
       console.log(

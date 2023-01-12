@@ -458,4 +458,17 @@ en:
         the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from 
         CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a> 
         section. Excess heat is wasted and heat shortages are supplied by a backup burner.
+    agriculture_sankey:
+      title: Local heat and electricity production in agriculture
+      description: |
+        This sankey chart shows local combined heat and power (CHP) that supply heat to the agriculture 
+        sector. It also shows the electricity production by these
+        CHPs and how this relates to the demand / supply from the grid. To see the hourly behaviour of this demand and 
+        supply, you can go to the 
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a> 
+        section. </br></br>
+        The final demand for heat is determined by the "Heat from local CHPs" slider in
+        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from 
+        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a> 
+        section. Excess heat is wasted and heat shortages are supplied by a backup burner.
 

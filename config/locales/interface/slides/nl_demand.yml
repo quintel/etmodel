@@ -23,7 +23,10 @@ nl:
       description: |
         In deze sectie kun je bepalen hoe je wilt voorzien in de finale vraag naar warmte van 
         lokale warmte-krachtkoppeling (WKK) uit de 
-        <a href="/scenario/demand/agriculture/heat"> Warmte</a> sectie hierboven. </br></br>
+        <a href="/scenario/demand/agriculture/heat"> Warmte</a> sectie hierboven. De grafiek rechts laat de warmtebalans
+        zien van deze WKKs. Voor een gedetailleerder overzicht, bekijk dan ook de sankey grafiek 
+        <a href="#" class="open_chart" data-chart-key="agriculture_sankey" data-chart-location="side">
+        Lokale warmte- en elektriciteitsproductie in de landbouw.</a></br></br>
         Als de totale lokale warmteproductie van deze WKK's groter is dan de vraag vanuit de 
         landbouw wordt de overtollige warmte verspild. Als het aanbod onvoldoende is om in de 
         vraag te voorzien, wordt het tekort geleverd door een back-up gasketel. Lokale 

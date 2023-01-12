@@ -23,7 +23,10 @@ en:
       description: |
         In this section you can determine how you want to meet the final demand for heat from 
         local combined heat and power (CHP) production in the 
-        <a href="/scenario/demand/agriculture/heat"> Heat</a> section above. </br></br>
+        <a href="/scenario/demand/agriculture/heat"> Heat</a> section above. The chart on the right shows you
+        the heat balance of these local CHPs. For a more detailed overview, have a look at the sankey chart 
+        <a href="#" class="open_chart" data-chart-key="agriculture_sankey" data-chart-location="side">
+        Local heat and electricity production in agriculture.</a></br></br>
         If the total local heat supply from these CHPs exceeds the demand from agriculture, 
         the excess heat is wasted. If supply falls short of demand, the shortage is supplied 
         by a back-up gas burner. Local electricity excesses and shortages are exchanged with 

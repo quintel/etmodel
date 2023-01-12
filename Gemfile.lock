@@ -522,6 +522,9 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    sentry-rails (5.3.0)
+      railties (>= 5.0)
+      sentry-ruby-core (~> 5.3.0)
     sentry-ruby (5.3.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       sentry-ruby-core (= 5.3.0)
@@ -686,6 +689,7 @@ DEPENDENCIES
   sassc-rails
   seed_dump
   selenium-webdriver
+  sentry-rails
   sentry-ruby
   shoulda-matchers
   simple_form

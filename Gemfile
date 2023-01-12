@@ -48,6 +48,7 @@ gem 'jbuilder'
 
 # supporting gems
 gem 'sentry-ruby'
+gem 'sentry-rails'
 
 # system gems
 gem 'mysql2'

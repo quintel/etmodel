@@ -11,7 +11,6 @@ module EnergyMixHelper
   end
 
   def can_dismiss_disclaimer?
-    current_user &&
-      (current_user.admin? || current_user.role.try(:name) == 'overmorgen')
+    current_user && current_user.admin?
   end
 end

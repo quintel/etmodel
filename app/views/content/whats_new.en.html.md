@@ -20,11 +20,11 @@ As the number of electric vehicles increases, it is becoming increasingly intere
 Go to the *Flexibility → Electricity storage* → **[Batteries in electric vehicles](/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles)** section, to see how you can put these batteries to use. The total available battery storage volume does depend on the number of electric vehicles in your scenario, which you can determine in the *Demand* → **[Transport](/scenario/demand/transport/overview)** section.
 
 ## Chart sets
-In the 'See more charts' pop-up, you can now choose to load a set of charts at once. With a single click on 'System overview' you will open a predetermined selection of charts and tables that provide you a full overview of your energy system.
+In the 'See more charts' pop-up, you can now choose to load multiple charts at once. With a single click on 'System overview' you will open a predetermined selection of charts and tables that provide you a full overview of your energy system.
 
 -> ![](/assets/pages/whats_new/chart_sets_en.png) <-
 
-If you would like to add another set of charts, please **[contact Quintel](/contact)**.
+If you would like to add another set of charts, please **[contact](/contact)** Quintel.
 
 ___
 

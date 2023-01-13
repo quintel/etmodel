@@ -1,0 +1,30 @@
+---
+- key: capacity_of_agriculture_chp_wood_pellets
+  step_value: 1.0
+  unit: MW
+  interface_group: flexible_chps
+  related_node: agriculture_chp_wood_pellets
+  position: 100
+  slide_key: supply_agriculture_local_heat
+- key: capacity_of_agriculture_chp_engine_network_gas_dispatchable
+  step_value: 1.0
+  unit: MW
+  interface_group: flexible_chps
+  related_node: agriculture_chp_engine_network_gas_dispatchable
+  position: 110
+  slide_key: supply_agriculture_local_heat
+
+- key: capacity_of_agriculture_chp_engine_biogas
+  step_value: 1.0
+  unit: MW
+  interface_group: must_run_chps
+  related_node: agriculture_chp_engine_biogas
+  position: 200
+  slide_key: supply_agriculture_local_heat
+- key: capacity_of_agriculture_chp_engine_network_gas_must_run
+  step_value: 1.0
+  unit: MW
+  interface_group: must_run_chps
+  related_node: agriculture_chp_engine_network_gas_must_run
+  position: 210
+  slide_key: supply_agriculture_local_heat

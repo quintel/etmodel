@@ -577,6 +577,38 @@ D3.sankey =
           {left: 'distribution_oil_products',     right: 'export',                   gquery: 'oil_products_distribution_to_export_in_sankey', color: '#854321'},
           {left: 'distribution_refinery_gas',     right: 'industry',                 gquery: 'refinery_gas_distribution_to_industry_in_sankey', color: '#7f7f7f'}
         ]
+    agriculture_sankey:
+      data:
+        nodes: [
+          {id: 'network_gas',                     column: 0, label: 'network_gas',                    color: '#7f7f7f'},
+          {id: 'biogas',                          column: 0, label: 'biogas',                         color: '#CE8814'},
+          {id: 'biomass',                         column: 0, label: 'biomass',                        color: '#2ca02c'},
+          {id: 'electricity_grid_left',           column: 0, label: 'electricity_grid',               color: '#1f77b4'},
+          {id: 'chps',                            column: 1, label: 'chps',                           color: '#9467bd'},
+          {id: 'backup_heater',                   column: 1, label: 'backup_heater',                  color: '#9467bd'},
+          {id: 'agriculture',         column: 2, label: 'agriculture',                    color: '#FFD700'},
+          {id: 'agriculture',  column: 2, label: 'agriculture',                    color: '#FFD700'},
+          {id: 'electricity_grid_right',          column: 2, label: 'electricity_grid',               color: '#1f77b4'},
+          {id: 'wasted_heat',                     column: 2, label: 'wasted_heat',                    color: '#d62728'},
+          {id: 'conversion_losses',               column: 2, label: 'losses',              color: '#DCDCDC'}
+        ]
+        links: [
+          {left: 'network_gas',                   right: 'chps',                      gquery: 'network_gas_to_chps_in_sankey_agriculture', color: '#7f7f7f'},
+          {left: 'network_gas',                   right: 'backup_heater',             gquery: 'network_gas_to_backup_heater_in_sankey_agriculture', color: '#7f7f7f'},
+          {left: 'biogas',                        right: 'chps',                      gquery: 'biogas_to_chps_in_sankey_agriculture', color: '#CE8814'},
+          {left: 'biomass',                       right: 'chps',                      gquery: 'wood_pellets_to_chps_in_sankey_agriculture_chps', color: '#2ca02c'},
+
+          {left: 'chps',                          right: 'agriculture',   gquery: 'chps_to_local_steam_hot_water_in_sankey_agriculture_chps', color: '#d62728'},
+          {left: 'chps',                          right: 'wasted_heat',               gquery: 'chps_to_unused_steam_hot_water_in_sankey_agriculture_chps', color: '#d62728'},
+          {left: 'chps',                          right: 'agriculture', gquery: 'chps_to_local_electricity_in_sankey_agriculture', color: '#1f77b4'},
+          {left: 'chps',                          right: 'electricity_grid_right',    gquery: 'chps_to_mv_grid_in_sankey_agriculture', color: '#1f77b4'},
+          {left: 'chps',                          right: 'conversion_losses',         gquery: 'chps_to_conversion_losses_in_sankey_agriculture', color: '#DCDCDC'},
+
+          {left: 'backup_heater',                 right: 'agriculture',   gquery: 'backup_heater_to_local_steam_hot_water_in_sankey_agriculture', color: '#d62728'},
+          {left: 'backup_heater',                 right: 'conversion_losses',         gquery: 'backup_heater_to_conversion_losses_in_sankey_agriculture', color: '#DCDCDC'},
+
+          {left: 'electricity_grid_left',         right: 'agriculture',               gquery: 'mv_grid_to_local_electricity_in_sankey_agriculture', color: '#1f77b4'},
+        ]
 
   # In this chart most positioning is calculated by us. The D3 sankey plugin is
   # cool but not flexible enough

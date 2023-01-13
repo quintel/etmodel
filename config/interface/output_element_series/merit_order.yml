@@ -767,4 +767,52 @@
   dependent_on:
   output_element_key: merit_order
   key: coal_gas_chp_merit_order
+- label: agriculture_chp_engine_dispatchable_network_gas
+  color: "#783737"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: agriculture_chp_gas_dispatchable_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: agriculture_chp_gas_dispatchable_merit_order
+- label: agriculture_chp_engine_must_run_network_gas
+  color: "#850404"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: agriculture_chp_gas_must_run_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: agriculture_chp_gas_must_run_merit_order
+- label: agriculture_chp_engine_biogas
+  color: "#cf5f5f"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: agriculture_chp_biogas_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: agriculture_chp_biogas_merit_order
+- label: agriculture_chp_wood_pellets
+  color: "#fc0505"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: agriculture_chp_wood_pellets_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: agriculture_chp_wood_pellets_merit_order
 

@@ -1,6 +1,45 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# Januari 2023
+
+## Single sign-on
+
+Het Energietransitiemodel heeft een nieuw inlogsysteem. Het ETM werkt zoals het altijd heeft gewerkt, maar heeft nu een nieuw jasje voor de inlog- en accountpagina's.
+
+Het nieuwe systeem maakt het mogelijk om scenario's te koppelen aan jouw account, waardoor wordt gegarandeerd dat alleen jij wijzigingen kunt aanbrengen. Net zoals hiervoor zijn scenario's standaard publiekelijk beschikbaar. Hierdoor kunnen andere bezoekers jouw scenario zien en kopiëren, maar niet bewerken. Als je jouw scenario's liever privé houdt, kun je de privacy-instellingen veranderingen in je [account-instellingen](https://engine.energytransitionmodel.com/identity/profile). Privéscenario's kunnen alleen worden bekeken door hun eigenaar: jij.
+
+Daarnaast is het ook mogelijk om per scenario te bepalen of het een privé of publiek toegankelijk is. Dit kun je instellen bij [jouw opgeslagen scenario's](/scenarios). Klik op het scenario dat je wilt veranderen en vervolgens op de "Publiek/Privé" selectie aan de rechterzijde van de pagina.
+
+### API
+
+Gebruikers van [onze API](https://docs.energytransitionmodel.com/api/intro) kunnen ook profiteren van de toegenomen beveiliging die single sign-on met zich meebrengt, door middel van [persoonlijke toegangstokens](https://docs.energytransitionmodel.com/api/authentication). Je kunt [jouw scenario's weergeven](https://docs.energytransitionmodel.com/api/scenarios#listing-your-scenarios) en [scenario's verwijderen](https://docs.energytransitionmodel.com/api/scenarios#deleting-your-scenarios). Daarnaast kun je werken met [opgeslagen scenario's](https://docs.energytransitionmodel.com/api/saved-scenarios) en [transitiepaden](https://docs.energytransitionmodel.com/api/transition-paths).
+
+[Een complete lijst van veranderingen](https://docs.energytransitionmodel.com/api/changelog#10th-january-2023-) is beschikbaar op onze documentatiewebsite.
+
+## WKK's voor lokale warmtevraag uit de landbouw
+Het is nu mogelijk om warmte-krachtkoppeling (WKK) te installeren die warmte levert om aan de lokale vraag van de landbouw te voldoen. Je kunt het deel van de warmtevraag dat wordt geleverd door deze lokale WKK's instellen in de sectie *Vraag → Landbouw* → **[Warmte](/scenario/demand/agriculture/heat)**. Het vermogen voor verschillende types WKK's kan vervolgens worden ingesteld in de sectie *Vraag → Landbouw* → **[Warmte van lokale WKK's](scenario/demand/agriculture/heat-from-local-chps)**.
+
+Er zijn twee grafieken toegevoegd, één die de totale vraag en aanbod van lokale warmte weergeeft. De andere grafiek (zie hieronder) toont ook de elektriciteitsstromen die worden geproduceerd door de WKK's.
+
+-> ![](/assets/pages/whats_new/agriculture_sankey_nl.png) <-
+
+## Elektriciteitsopslag in elektrische bussen, bestelbussen en vrachtwagens
+Naarmate het aantal elektrische voertuigen toeneemt, wordt het steeds interessanter om de batterijen die aanwezig zijn in die voertuigen nuttig te gebruiken tijdens uren waarop ze niet voor vervoer worden gebruikt. Het was al mogelijk om met batterijen in elektrische auto's opslagdiensten aan het elektriciteitsnet te verlenen. Nu is dit ook mogelijk voor elektrische bussen, bestelbussen en vrachtwagens.
+
+-> ![](/assets/pages/whats_new/electric_vehicles_storage_nl.png) <-
+
+Ga naar de sectie *Flexibiliteit → Opslag elektriciteit* → **[Batterijen in elektrische voertuigen](/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles)** om te zien hoe je deze batterijen kunt inzetten. Het totale beschikbare batterijopslagvolume hangt af van het aantal elektrische voertuigen in je scenario. Dit kun je bepalen in de sectie *Vraag* → **[Transport](/scenario/demand/transport/overview)**.
+
+## Grafiekensets
+In de pop-up "Meer grafieken bekijken" kun je er nu voor kiezen om meerdere grafieken tegelijk te laden. Door op "Systeemoverzicht" te klikken, open je een vooraf bepaalde selectie van grafieken en tabellen die een volledig overzicht geven van jouw energiesysteem.
+
+-> ![](/assets/pages/whats_new/chart_sets_nl.png) <-
+
+Als je een andere grafiekenset wilt toevoegen, neem dan **[contact](/contact)** op met Quintel.
+
+___
+
 # December 2022
 
 ## Bio-ethanol voor binnenvaart

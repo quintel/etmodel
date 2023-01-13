@@ -1,6 +1,45 @@
 # What's new in the Energy Transition Model?
 ___
 
+# January 2023
+
+## Single sign-on
+
+The Energy Transition Model has a new system for signing in. Aside from a new look to the login and account pages, the ETM should work much as it always has.
+
+The new system allows us to associate your scenarios with your account, ensuring that only you can make changes to them. As before, they will default to being public, allowing other visitors to view and copy your scenarios, but not edit them. If you prefer to keep your scenarios private, you can change the privacy setting [in your account settings](https://engine.energytransitionmodel.com/identity/profile). Private scenarios can only be viewed by their owner: you.
+
+Alternatively, it is possible to change the privacy setting of individual saved scenarios. To do this, head to [your saved scenarios page](/scenarios), click on the scenario you'd like to change, and then on the "Public/Private" dropdown on the right side of the page.
+
+### API
+
+Users of [our API](https://docs.energytransitionmodel.com/api/intro) can also benefit from the added security provided by authentication by using [personal access tokens](https://docs.energytransitionmodel.com/api/authentication). You can now [list all of your scenarios](https://docs.energytransitionmodel.com/api/scenarios#listing-your-scenarios), [delete scenarios](https://docs.energytransitionmodel.com/api/scenarios#deleting-your-scenarios), as well as work with [saved scenarios](https://docs.energytransitionmodel.com/api/saved-scenarios) and [transition paths](https://docs.energytransitionmodel.com/api/transition-paths).
+
+[A detailed list of changes](https://docs.energytransitionmodel.com/api/changelog#10th-january-2023-) is available on our documentation website.
+
+## CHPs for local agriculture heat demand
+It is now possible to install combined heat and power (CHP) units, that supply heat to meet local demand from agriculture. You can set the share of heat demand that is supplied by these local CHPs in the *Demand → Agriculture* → **[Heat](/scenario/demand/agriculture/heat)** section. The capacities of different types of CHPs can then be set in the *Demand → Agriculture* → **[Heat from local CHPs](scenario/demand/agriculture/heat-from-local-chps)** section.
+
+Two charts have been added, one that shows you the total local heat supply and demand per year. The other chart (see below) also shows you the electricity flows that are produced by the CHPs.
+
+-> ![](/assets/pages/whats_new/agriculture_sankey_en.png) <-
+
+## Electricity storage in electric buses, vans and trucks
+As the number of electric vehicles increases, it is becoming increasingly interesting to utilize the batteries that are present in those vehicles during hours when they are not used for transportation. It was already possible to use batteries in electric cars to provide storage services to the electricity grid, and now this is also possible for electric buses, vans and trucks.
+
+-> ![](/assets/pages/whats_new/electric_vehicles_storage_en.png) <-
+
+Go to the *Flexibility → Electricity storage* → **[Batteries in electric vehicles](/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles)** section, to see how you can put these batteries to use. The total available battery storage volume does depend on the number of electric vehicles in your scenario, which you can determine in the *Demand* → **[Transport](/scenario/demand/transport/overview)** section.
+
+## Chart sets
+In the 'See more charts' pop-up, you can now choose to load multiple charts at once. With a single click on 'System overview' you will open a predetermined selection of charts and tables that provide you a full overview of your energy system.
+
+-> ![](/assets/pages/whats_new/chart_sets_en.png) <-
+
+If you would like to add another set of charts, please **[contact](/contact)** Quintel.
+
+___
+
 # December 2022
 
 ## Bio-ethanol for inland shipping

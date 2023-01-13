@@ -17,6 +17,20 @@ en:
       description: How is heat produced in agriculture? A different mix of heat generating
         technologies can strongly affect energy efficiency, sustainability and CO<sub>2</sub>
         emissions.
+    supply_agriculture_local_heat:
+      title: Heat from local CHPs
+      short_description:
+      description: |
+        In this section you can determine how you want to meet the final demand for heat from 
+        local combined heat and power (CHP) production in the 
+        <a href="/scenario/demand/agriculture/heat"> Heat</a> section above. The chart on the right shows you
+        the heat balance of these local CHPs. For a more detailed overview, have a look at the sankey chart 
+        <a href="#" class="open_chart" data-chart-key="agriculture_sankey" data-chart-location="side">
+        Local heat and electricity production in agriculture.</a></br></br>
+        If the total local heat supply from these CHPs exceeds the demand from agriculture, 
+        the excess heat is wasted. If supply falls short of demand, the shortage is supplied 
+        by a back-up gas burner. Local electricity excesses and shortages are exchanged with 
+        the electricity network.
     demand_buildings_appliances:
       title: Appliances
       short_description: ''
@@ -335,7 +349,7 @@ en:
         applications (car, bus, bike, etc.) and is not influenced by the population
         size. \r\n<br /> <br />\r\nBesides the growth rate, you can choose the division
         of transport applications here. What percentage of the kilometres we travel
-        is covered by cars, busses, bikes, etc.?\r\n\r\n<br /> <br />\r\nPlease note
+        is covered by cars, buses, bikes, etc.?\r\n\r\n<br /> <br />\r\nPlease note
         that international aviation is part of the <a href=\"/scenario/demand/transport_international_transport/international-transport\">international
         transport section</a>."
     demand_transport_passenger_train_technology:

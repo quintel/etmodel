@@ -755,6 +755,54 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_chp_coal_gas_merit_order_hourly_supply
+- label: agriculture_chp_engine_dispatchable_network_gas
+  color: "#783737"
+  order_by: 6
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: agriculture_chp_engine_dispatchable_network_gas
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: agriculture_chp_engine_dispatchable_network_gas_merit_order_hourly_supply
+- label: agriculture_chp_engine_must_run_network_gas
+  color: "#850404"
+  order_by: 6
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: agriculture_chp_engine_must_run_network_gas
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: agriculture_chp_engine_must_run_network_gas_merit_order_hourly_supply
+- label: agriculture_chp_engine_biogas
+  color: "#cf5f5f"
+  order_by: 6
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: agriculture_chp_engine_biogas
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: agriculture_chp_engine_biogas_merit_order_hourly_supply
+- label: agriculture_chp_wood_pellets
+  color: "#fc0505"
+  order_by: 6
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: agriculture_chp_wood_pellets
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: agriculture_chp_wood_pellets_merit_order_hourly_supply
 - label: load_shifting_industry_supply
   color: "#F5B7B1"
   order_by: 7

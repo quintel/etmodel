@@ -5,109 +5,140 @@
   unit: "%"
   command_type: value
   related_node: energy_power_combined_cycle_network_gas
-  position: 1
+  position: 100
   slide_key: specs_electricity_gas_plants
 - key: om_costs_combustion_gas_plant
   interface_group: costs
   step_value: 1.0
   unit: "%"
-  position: 2
+  position: 105
   slide_key: specs_electricity_gas_plants
+
 - key: efficiency_energy_power_combined_cycle_network_gas
-  interface_group: efficiency
+  interface_group: efficiency_energy_plants
   step_value: 1.0
   unit: "%"
   related_node: energy_power_combined_cycle_network_gas
-  position: 3
+  position: 200
   slide_key: specs_electricity_gas_plants
 - key: efficiency_energy_power_turbine_network_gas
-  interface_group: efficiency
+  interface_group: efficiency_energy_plants
   step_value: 1.0
   unit: "%"
   related_node: energy_power_turbine_network_gas
-  position: 4
+  position: 205
   slide_key: specs_electricity_gas_plants
 - key: efficiency_energy_power_ultra_supercritical_network_gas
-  interface_group: efficiency
+  interface_group: efficiency_energy_plants
   step_value: 1.0
   unit: "%"
   related_node: energy_power_ultra_supercritical_network_gas
-  position: 5
+  position: 210
   slide_key: specs_electricity_gas_plants
 - key: efficiency_energy_power_engine_network_gas
-  interface_group: efficiency
+  interface_group: efficiency_energy_plants
   step_value: 1.0
   unit: "%"
   related_node: energy_power_engine_network_gas
-  position: 3
+  position: 215
   slide_key: specs_electricity_gas_plants
 - key: efficiency_energy_chp_combined_cycle_network_gas_electricity
-  interface_group: efficiency
+  interface_group: efficiency_energy_plants
   step_value: 1.0
   unit: "%"
   related_node: energy_chp_combined_cycle_network_gas
-  position: 6
+  position: 220
   slide_key: specs_electricity_gas_plants
 - key: efficiency_energy_chp_combined_cycle_network_gas_heat
-  interface_group: efficiency
+  interface_group: efficiency_energy_plants
   step_value: 1.0
   unit: "%"
   related_node: energy_chp_combined_cycle_network_gas
-  position: 7
+  position: 225
   slide_key: specs_electricity_gas_plants
 - key: efficiency_energy_chp_local_engine_network_gas_electricity
-  interface_group: efficiency
+  interface_group: efficiency_energy_plants
   step_value: 1.0
   unit: "%"
   related_node: energy_chp_local_engine_network_gas
-  position: 8
+  position: 230
   slide_key: specs_electricity_gas_plants
 - key: efficiency_energy_chp_local_engine_network_gas_heat
-  interface_group: efficiency
+  interface_group: efficiency_energy_plants
   step_value: 1.0
   unit: "%"
   related_node: energy_chp_local_engine_network_gas
-  position: 9
+  position: 235
   slide_key: specs_electricity_gas_plants
+
 - key: efficiency_industry_chp_combined_cycle_gas_power_fuelmix_electricity
-  interface_group: efficiency
+  interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_combined_cycle_gas_power_fuelmix
-  position: 10
+  position: 300
   slide_key: specs_electricity_gas_plants
 - key: efficiency_industry_chp_combined_cycle_gas_power_fuelmix_heat
-  interface_group: efficiency
+  interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_combined_cycle_gas_power_fuelmix
-  position: 11
+  position: 305
   slide_key: specs_electricity_gas_plants
 - key: efficiency_industry_chp_engine_gas_power_fuelmix_electricity
-  interface_group: efficiency
+  interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_engine_gas_power_fuelmix
-  position: 12
+  position: 310
   slide_key: specs_electricity_gas_plants
 - key: efficiency_industry_chp_engine_gas_power_fuelmix_heat
-  interface_group: efficiency
+  interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_engine_gas_power_fuelmix
-  position: 13
+  position: 315
   slide_key: specs_electricity_gas_plants
 - key: efficiency_industry_chp_turbine_gas_power_fuelmix_electricity
-  interface_group: efficiency
+  interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_turbine_gas_power_fuelmix
-  position: 14
+  position: 320
   slide_key: specs_electricity_gas_plants
 - key: efficiency_industry_chp_turbine_gas_power_fuelmix_heat
-  interface_group: efficiency
+  interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_turbine_gas_power_fuelmix
-  position: 15
+  position: 325
+  slide_key: specs_electricity_gas_plants
+
+- key: efficiency_agriculture_chp_engine_dispatchable_network_gas_electricity
+  interface_group: efficiency_agriculture_plants
+  step_value: 1.0
+  unit: "%"
+  related_node: agriculture_chp_engine_network_gas_dispatchable
+  position: 410
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_agriculture_chp_engine_dispatchable_network_gas_heat
+  interface_group: efficiency_agriculture_plants
+  step_value: 1.0
+  unit: "%"
+  related_node: agriculture_chp_engine_network_gas_dispatchable
+  position: 415
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_agriculture_chp_engine_must_run_network_gas_electricity
+  interface_group: efficiency_agriculture_plants
+  step_value: 1.0
+  unit: "%"
+  related_node: agriculture_chp_engine_network_gas_must_run
+  position: 420
+  slide_key: specs_electricity_gas_plants
+- key: efficiency_agriculture_chp_engine_must_run_network_gas_heat
+  interface_group: efficiency_agriculture_plants
+  step_value: 1.0
+  unit: "%"
+  related_node: agriculture_chp_engine_network_gas_must_run
+  position: 425
   slide_key: specs_electricity_gas_plants

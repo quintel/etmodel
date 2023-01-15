@@ -57,7 +57,12 @@ class ScenariosController < ApplicationController
 
     Current.setting = Setting.load_from_scenario(@scenario)
 
-    new_scenario = CreateAPIScenario.call(engine_client, scenario_attrs).unwrap
+    new_scenario = CreateAPIScenario.call(engine_client, scenario_attrs).or do
+      flash[:error] = t('scenario.cannot_load')
+      redirect_to(root_path)
+      return
+    end
+
     Current.setting.api_session_id = new_scenario.id
 
     redirect_to play_path

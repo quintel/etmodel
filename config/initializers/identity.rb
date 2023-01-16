@@ -36,6 +36,43 @@ Identity.configure do |config|
   config.on_sign_in = lambda do |session|
     User.from_identity!(session.user)
   end
+
+  # We've had cases where browsers make multiple simultaneous requests to the ETM; presumably a
+  # browser restoring pages removed from memory. If the access token has expired, this causes the
+  # second request to fail due to the refresh token having expired when the first refreshed the
+  # access token.
+  #
+  # 1. Request one starts
+  # 2. Request two starts
+  # 3. Request one refreshes the access token
+  # 4. Request two tries to refresh the token, but the refresh token has expired in (3)
+  # 5. Request one completes.
+  # 6. Request two fails and signs the user out.
+  #
+  # To prevent this, if refreshing the token results in an invalid grant error, we
+  # wait a short period and attempt to reload the session from the database.
+  config.on_invalid_grant = lambda do |controller, exception|
+    id_session_key = Identity::ControllerHelpers::IDENTITY_SESSION_KEY
+
+    sleep(1)
+
+    # rubocop:disable Rails/DynamicFindBy
+    db_session = controller.session.id &&
+      ActiveRecord::SessionStore::Session.find_by_session_id(controller.session.id.private_id)
+    # rubocop:enable Rails/DynamicFindBy
+
+    expires_at = db_session&.data&.dig(id_session_key, :access_token, :expires_at)
+    token      = db_session&.data&.dig(id_session_key, :access_token, :token)
+
+    if token && expires_at && expires_at > Time.now.to_i
+      controller.session[id_session_key] = db_session.data[id_session_key]
+      Identity::Session.load(db_session.data[id_session_key])
+    else
+      controller.reset_session
+      Sentry.capture_exception(exception)
+      nil
+    end
+  end
 end
 
 if Rails.env.development?

@@ -36,7 +36,7 @@ gem 'inline_svg'
 
 # Authentication
 gem 'cancancan'
-gem 'identity', ref: '659581d', github: 'quintel/identity_rails'
+gem 'identity', ref: 'df08519', github: 'quintel/identity_rails'
 
 # javascript
 gem 'sprockets-rails', require: 'sprockets/railtie'

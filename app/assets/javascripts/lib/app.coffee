@@ -63,7 +63,15 @@ class @AppView extends Backbone.View
 
     # Create heat network order.
     if (heat_order = wrapper.find('#heat-network-options')).length
-      new UserSortable(heat_order, 'heat_network_order', true).render()
+      new UserSortable(heat_order, 'heat_network_order', { capacity: true }).render()
+
+    # Create forecast storage order.
+    if (forecast_storage_order = wrapper.find('#forecast-storage-order')).length
+      new UserSortable(
+        forecast_storage_order,
+        'forecast_storage_order',
+        { capacity: true, sortable: true }
+      ).render()
 
     if (curve_upload = wrapper.find('.single-curve-upload')).length
       curveCollectionDef = @customCurves()

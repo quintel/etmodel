@@ -141,6 +141,10 @@
   tab_key: flexibility
   position: 1
   dependent_on: has_electricity_storage
+- key: flexibility_forecast_storage_order
+  tab_key: flexibility
+  position: 1
+  parent_key: flexibility_storage
 - key: flexibility_conversion
   tab_key: flexibility
   position: 2

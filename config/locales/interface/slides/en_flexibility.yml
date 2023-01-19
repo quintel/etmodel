@@ -170,7 +170,12 @@ en:
       title: Forecasting storage order
       short_description:
       description: |
-        Some text.
+        In the ETM, it is possible to use a forecasting algorithm (see our 
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
+        documentation</a>) for electricity storage technologies. You can decide whether to turn this 
+        algorithm on for each technology in the
+        <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
+        Electricity storage</a> section. </br></br>
     flexibility_flexibility_power_to_heat:
       title: Conversion to heat for households
     flexibility_electricity_storage_overview:

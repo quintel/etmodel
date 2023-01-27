@@ -11,6 +11,7 @@ ul.sortable
 ul.sortable li, .sortable-container .fixed
   background: white
   border: 1px solid #ddd
+  font-weight: 500
   list-style-type: none
   margin-bottom: -1px
   overflow: hidden
@@ -18,13 +19,14 @@ ul.sortable li, .sortable-container .fixed
   position: relative
 
   &:before
-    bottom: 0px
     background: linear-gradient(white, #fafafa)
     border-right: 1px solid #ddd
-    color: #999
-    counter-increment: section
+    bottom: 0px
+    color: #888
     content: counter(section)
+    counter-increment: section
     display: inline-block
+    font-weight: 400
     left: 0px
     padding: 10px 0 0
     position: absolute
@@ -53,7 +55,7 @@ ul.sortable li
     border-bottom-right-radius: 3px
 
   &.not-installed
-    color: #999
+    color: #888
 
   .fa
     -webkit-transform: scale(1.5, 1.0)
@@ -77,20 +79,21 @@ ul.sortable li
 
 .flexibility-options
   &__capacity
+    color: #888
+    display: flex
     float: left
+    font-size: 12px
+    font-weight: normal
+    gap: 0.25rem
     width: 100%
-    font-size: 11px
-    color: #999
 
 .sortable-container
   .loading-message
     display: none
 
   .fixed
-    border-radius: 3px
-    color: #999
+    color: #888
     cursor: default
-    margin-top: 4px
     margin-bottom: 0
 
     span.fa
@@ -98,7 +101,17 @@ ul.sortable li
       font-size: 17px
       top: 12px
 
-  .fixed, .sortable li:last-child
+  .sortable + .fixed
+    margin-top: 4px
+    border-radius: 4px 4px 0 0
+
+  .fixed + .fixed
+    border-top: none
+
+  .fixed:last-child
+    border-radius: 0 0 4px 4px
+
+  .fixed:last-child, .sortable li:last-child
     border-bottom-color: #ccc
     box-shadow: 0 1px 0 #ddd
 

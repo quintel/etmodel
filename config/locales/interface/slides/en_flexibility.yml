@@ -166,6 +166,23 @@ en:
         installed. You can do this in the Supply section, under
         <a href="/scenario/supply/electricity_renewable/solar-power">
         Renewable electricity</a>.
+    flexibility_power_storage_forecast_order:
+      title: Forecasting storage order
+      short_description:
+      description: |
+        In the <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
+        Electricity storage</a> section, you can use a 
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
+        forecasting algorithm</a> to determine the behaviour of electricity storage technologies. 
+        Below you can change the merit order of storage technologies 
+        for which the forecasting algorithm is enabled. </br></br>
+        The first technology in this merit order will try to flatten the 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>.
+        Each following technology will then use the resulting curve of the previous technology to try and 
+        flatten it even further. </br></br>
+        Technologies higher in the merit order will typically apply their forecasting algorithm 
+        to more variable curves. Whether a technology is suitable to deal with high variability depends on 
+        its specifications. The table on the right gives an overview of these specifications.
     flexibility_flexibility_power_to_heat:
       title: Conversion to heat for households
     flexibility_electricity_storage_overview:

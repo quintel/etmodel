@@ -144,6 +144,20 @@
   output_element_type_name: html_table
   related_output_element_key: merit_order_hourly_flexibility
 - under_construction: false
+  unit: ''
+  percentage: false
+  group: Flexibility
+  show_point_label: false
+  growth_chart: false
+  key: storage_specifications
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: html_table
+  related_output_element_key: flexibility_hourly_p2p_storage
+- under_construction: false
   unit: MW
   percentage: false
   group: Flexibility

@@ -71,6 +71,16 @@ en:
       mv_batteries: "Storage in large-scale batteries"
       installed: "available"
       not_installed: "No capacity installed"
+    forecast_storage_order:
+      energy_flexibility_flow_batteries_electricity: Flow batteries
+      energy_flexibility_hv_opac_electricity: Underground pumped hydro storage
+      energy_flexibility_mv_batteries_electricity: Large-scale batteries
+      households_flexibility_p2p_electricity: Batteries in households
+      not_sortable: Forecasting not enabled
+      transport_bus_flexibility_p2p_electricity: Batteries in electric buses
+      transport_car_flexibility_p2p_electricity: Batteries in electric cars
+      transport_truck_flexibility_p2p_electricity: Batteries in electric trucks
+      transport_van_flexibility_p2p_electricity: Batteries in electric vans
     heat_network_order:
       energy_heat_network_storage: "Heat from storage"
       energy_heat_backup_burner_network_gas: Gas backup (network gas)

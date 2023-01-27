@@ -195,7 +195,7 @@ nl:
       description: |
         Batterijen kunnen in huishoudens geïnstalleerd worden. Deze kunnen vervolgens worden opgeladen
         door het elektriciteitsnet of door zonnepanelen, als huishoudens deze op hun daken hebben liggen. </br></br>
-        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat het regelbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
@@ -228,7 +228,7 @@ nl:
         Elektrische voertuigen zijn vaak langer op het netwerk aangesloten dan nodig is om hun batterijen 
         volledig op te laden. Tijdens die inactieve uren kan het kosteneffectief zijn om de batterijen in te 
         zetten om opslagdiensten te leveren aan het elektriciteitsnet. </br></br>
-        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat het regelbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
@@ -241,7 +241,7 @@ nl:
         Deze grootschalige batterij wordt typisch aangesloten op het middenspanningsnet. Hoewel de batterij
         niet reageert op netwerkcongestie kan het gedrag wel helpen om capaciteitsproblemen op het
         middenspanningsnet te voorkomen. </br></br>
-        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat het regelbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
@@ -254,7 +254,7 @@ nl:
         Stuwmeren bieden een goedkope vorm van grootschalige elektriciteitsopslag. Elektriciteit wordt
         gebruikt om water op te pompen van een lager gelegen reservoir naar een hoger reservoir. Elektriciteit
         wordt vervolgens geproduceerd door het opgeslagen water terug te laten stromen door een turbine. </br></br>
-        Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat stuurbaar is wanneer er geladen en ontladen wordt. Als de elektriciteitsprijs
+        Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat het regelbaar is wanneer er geladen en ontladen wordt. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de opslag in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
@@ -267,7 +267,7 @@ nl:
         De Ondergrondse Pomp Accumulatie Centrale (OPAC) is een vorm van grootschalige elektriciteitsopslag. Er
         wordt gebruik gemaakt van het hoogteverschil tussen twee reservoirs, waarvan het lager gelegen reservoir
         zich ondergronds bevindt, om elektriciteit op te slaan als potentiële energie. </br></br>
-        Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat stuurbaar is wanneer er geladen en ontladen wordt. Als de elektriciteitsprijs
+        Elektriciteitsopslag is een flexibele technologie in het ETM, wat betekent dat het regelbaar is wanneer er geladen en ontladen wordt. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de opslag in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
@@ -281,12 +281,28 @@ nl:
         opslagvolume relatief goedkoop is ten opzichte van andere batterijen en het onafhankelijk van het
         geïnstalleerd vermogen kan worden gevarieerd. Je kunt daarom voor deze batterijen zowel het vermogen
         en het opslagvolume aanpassen. </br></br>
-        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat stuurbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
+        Batterijen zijn flexibele technologieën in het ETM, wat betekent dat het regelbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
         de elektriciteitsprijs groter is dan de willingness-to-accept, zal de opslagen elektriciteit worden
         ontladen.
         <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
+    flexibility_power_storage_forecast_order:
+      title: Inzetvolgorde prognose opslag
+      short_description:
+      description: |
+        In de sectie <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
+        Opslag elektriciteit</a> kun je een 
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
+        prognose-algoritme</a> inzetten om het gedrag van opslagtechnologieën te bepalen. Hieronder kun je 
+        de inzetvolgorde bepalen voor technologieën waarvoor het prognose-algoritme is ingeschakeld. </br></br>
+        De eerste technologie zal proberen de 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a> af te 
+        vlakken. Elke daaropvolgende technologie gebruikt vervolgens de resulterende curve van de voorgaande 
+        technologie om deze nog verder af te vlakken. </br></br>
+        Hoe eerder een technologie aan de beurt is, hoe variabeler de curve waarop het prognose-algoritme wordt 
+        toegepast typisch is. De specificaties van de technologie bepalen in welke mate deze geschikt is om met 
+        hoge variabiliteit om te gaan. De tabel rechts geeft je een overzicht van deze specificaties.
     flexibility_electricity_conversion_overview:
       title: Gedrag van conversietechnologieën
       short_description:

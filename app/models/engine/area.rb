@@ -4,8 +4,11 @@ class Engine::Area < ActiveResource::Base
   ORDER = %w(
     country
     province
+    municipality_dk
+    municipality_be
     municipality
     neighborhood
+    neighbourhood_be
   )
 
   self.site = "#{Settings.api_url}/api/v3"
@@ -75,7 +78,7 @@ class Engine::Area < ActiveResource::Base
   end
 
   def country?
-    %w[province municipality neighborhood region res].exclude?(group)
+    %w[province municipality_dk municipality_be municipality neighborhood neighbourhood_be region res].exclude?(group)
   end
 
   # Public: Gets the country to which the area belongs.

@@ -1,6 +1,20 @@
 # What's new in the Energy Transition Model?
 ___
 
+# February 2023
+
+## New feature for electricity storage technologies
+
+In the *Flexibility* → **[Electricity storage](/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies)** section, you can decide for each storage technology whether you want to enable a forecasting algorithm to determine its behaviour.
+
+The technologies for which this forecasting algorithm algorithm is enabled, will consecutively try to flatten the electricity [residual load curve](/scenario/flexibility/flexibility_overview/residual-load-curves). You can now set the order in which these technologies are applied yourself. Go to the *Flexibility → Electricity storage* → **[Merit order](/scenario/flexibility/flexibility_forecast_storage_order/forecasting-storage-order)** section to see how.
+
+-> ![](/assets/pages/whats_new/forecasting_algorithm_merit_order_en.png) <-
+
+For more information, go to [our documentation](https://docs.energytransitionmodel.com/main/battery-forecasting#merit-order).
+
+___
+
 # January 2023
 
 ## Single sign-on

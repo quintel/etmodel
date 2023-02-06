@@ -1,6 +1,20 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# Februari 2023
+
+## Nieuwe feature voor technologieën voor elektriciteitsopslag
+
+In de sectie *Flexibiliteit* → **[Opslag elektriciteit](/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies)** kun je per opslagtechnologie kiezen of je het gedrag wilt laten bepalen door een prognose-algoritme.
+
+De technologieën waarvoor dit prognose-algoritme is ingesteld zullen achtereenvolgens proberen de *[residual load curve](/scenario/flexibility/flexibility_overview/residual-load-curves)* van elektriciteit af te vlakken. De volgorde waarin deze technologieën worden ingezet kan je nu zelf instellen. Dit doe je in de sectie *Flexibiliteit → Opslag elektriciteit* → **[Merit order](/scenario/flexibility/flexibility_forecast_storage_order/forecasting-storage-order)**.
+
+-> ![](/assets/pages/whats_new/forecasting_algorithm_merit_order_nl.png) <-
+
+Ga voor meer informatie naar [onze documentatie](https://docs.energytransitionmodel.com/main/battery-forecasting#merit-order).
+
+___
+
 # Januari 2023
 
 ## Single sign-on

@@ -5,7 +5,7 @@ ___
 
 ## Nieuwe feature voor technologieën voor elektriciteitsopslag
 
-In de sectie *Flexibiliteit* → **[Opslag elektriciteit](/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies)** kun je per opslagtechnologie bepalen of je het gedrag wil laten bepalen door een prognose-algoritme.
+In de sectie *Flexibiliteit* → **[Opslag elektriciteit](/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies)** kun je per opslagtechnologie kiezen of je het gedrag wilt laten bepalen door een prognose-algoritme.
 
 De technologieën waarvoor dit prognose-algoritme is ingesteld zullen achtereenvolgens proberen de *[residual load curve](/scenario/flexibility/flexibility_overview/residual-load-curves)* van elektriciteit af te vlakken. De volgorde waarin deze technologieën worden ingezet kan je nu zelf instellen. Dit doe je in de sectie *Flexibiliteit → Opslag elektriciteit* → **[Merit order](/scenario/flexibility/flexibility_forecast_storage_order/forecasting-storage-order)**.
 

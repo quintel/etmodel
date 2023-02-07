@@ -1,8 +1,9 @@
 %main
   #metrics
     .loading
-      = image_tag('layout/ajax-loader-small.gif')
-      = t('local_global.loading')
+      -# = image_tag('layout/ajax-loader-small.gif')
+      -# = t('local_global.loading')
+      = t('local_global.maintenance')
 
 %script#compare-metric-template(type="text/template")
   .summary

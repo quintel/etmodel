@@ -1,4 +1,4 @@
-/* globals $ _ Backbone I18n */
+/* globals $ _ Backbone App I18n */
 
 (function() {
   'use strict';
@@ -745,6 +745,8 @@
 
   $(function() {
     new Workspace(); // eslint-disable-line no-new
-    Backbone.history.start({ pushState: true });
+    if (!Backbone.History.started) {
+      Backbone.history.start({ pushState: true });
+    }
   });
 })();

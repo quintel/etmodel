@@ -1,5 +1,5 @@
 - scenarios.each do |ss|
-  - if ss.scenario&.loadable?
+  - if eligible_for_compare?(ss)
     %li
       %label
         %span.check= check_box_tag('scenario_ids[]', ss.scenario_id)

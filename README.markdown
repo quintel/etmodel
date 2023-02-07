@@ -12,10 +12,10 @@ If you have any questions, please [contact us](http://quintel.com/contact).
 ## Build Status
 
 ### Master
-[![Master branch](https://semaphoreci.com/api/v1/quintel/etmodel/branches/master/badge.svg)](https://semaphoreci.com/quintel/etmodel)
+[![Build Status](https://quintel.semaphoreci.com/badges/etmodel/branches/master.svg)](https://quintel.semaphoreci.com/projects/etmodel)
 
 ### Production
-[![Production branch](https://semaphoreci.com/api/v1/quintel/etmodel/branches/production/badge.svg)](https://semaphoreci.com/quintel/etmodel)
+[![Build Status](https://quintel.semaphoreci.com/badges/etmodel/branches/production.svg)](https://quintel.semaphoreci.com/projects/etmodel)
 
 ## License
 

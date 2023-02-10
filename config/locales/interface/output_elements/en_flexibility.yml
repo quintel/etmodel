@@ -116,7 +116,9 @@ en:
         be found in the <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
         Flexibility</a> section of the model. Information about the behaviour of these technologies 
         can be found in our <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
-        documentation</a>. </br></br>
+        documentation</a>. The charge cycles are calculated by dividing the annual electricity input by the 
+        storage volume.
+        </br></br>
         By clicking on the toggle you can see the hourly behaviour of individual electricity storage 
         technologies. In <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         this</a> chart you can view the combined charging and discharging behaviour of these technologies 

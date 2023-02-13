@@ -12,6 +12,20 @@
       </svg>
     %span.name= t('trash')
     = tab_count(current_user.saved_scenarios.discarded.count, class: 'red')
+  - if current_user.admin?
+    %a.tab{ href: all_saved_scenarios_path, class: active_tab == :all_scenarios ? 'active' : '' }
+      :plain
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 256 256">
+          <polyline points="192 104 152 104 152 64" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline>
+          <line x1="208" y1="48" x2="152" y2="104" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line>
+          <polyline points="64 152 104 152 104 192"stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline>
+          <line x1="48" y1="208" x2="104" y2="152" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line>
+          <polyline points="152 192 152 152 192 152" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline>
+          <line x1="208" y1="208" x2="152" y2="152" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line>
+          <polyline points="104 64 104 104 64 104" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></polyline>
+          <line x1="48" y1="48" x2="104" y2="104" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"></line>
+        </svg>
+      %span.name= t('scenario.all')
   - if Current.setting.api_session_id && local_assigns[:show_save_current] != false
     .save-wrapper
       = link_to t("scenario.link"), new_saved_scenario_path(scenario_id: Current.setting.api_session_id), class: 'button scenario-button save'

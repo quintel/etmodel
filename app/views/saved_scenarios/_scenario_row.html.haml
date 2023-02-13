@@ -31,7 +31,6 @@
         = link_to t('restore'), undiscard_saved_scenario_path(scenario_row), method: :put, class: 'button compare'
         = link_to t('delete_permanently'), saved_scenario_path(scenario_row), method: :delete, class: 'button compare destroy'
       - else
-        -# If one already exists dont create a new one
         = link_to multi_year_charts_path(scenario_id: scenario_row.id), method: :post, class: 'discard create tooltip', title: t('scenario.open_in_myc') do
           :plain
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="20" viewBox="0 0 256 256">

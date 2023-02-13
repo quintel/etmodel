@@ -79,6 +79,7 @@ Rails.application.routes.draw do
 
     collection do
       get :discarded
+      get :all
     end
 
     get '/report/:report_name' => 'saved_scenario_reports#show'

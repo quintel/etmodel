@@ -17,6 +17,7 @@ class SavedScenariosController < ApplicationController
     authorize!(:destroy, @saved_scenario)
   end
 
+  before_action :require_admin, only: :all
   before_action :assign_scenario, only: :load
   helper_method :owned_saved_scenario?
 
@@ -43,6 +44,18 @@ class SavedScenariosController < ApplicationController
 
   def discarded
     @saved_scenarios = current_user.saved_scenarios.discarded
+      .includes(:featured_scenario, :user)
+      .order('updated_at DESC')
+      .page(params[:page])
+      .per(100)
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def all
+    @saved_scenarios = SavedScenario.all
       .includes(:featured_scenario, :user)
       .order('updated_at DESC')
       .page(params[:page])
@@ -257,5 +270,9 @@ class SavedScenariosController < ApplicationController
     if Current.setting.active_saved_scenario_id == saved_scenario.id
       Current.setting.active_scenario_title = saved_scenario.title
     end
+  end
+
+  def require_admin
+    redirect_to saved_scenarios_path unless current_user.admin?
   end
 end

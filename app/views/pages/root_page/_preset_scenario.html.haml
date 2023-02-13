@@ -1,6 +1,6 @@
 #preset-scenario
   .header-container
-    %h4== #{t('intro.load_a_scenario')}&hellip;
+    %h4== #{t('intro.load_a_scenario')}
     = link_to "#{t('header.load_scenario')} →", saved_scenarios_path
     - grouped = FeaturedScenario.in_groups(FeaturedScenario.includes(:saved_scenario))
 

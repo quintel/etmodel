@@ -1,0 +1,13 @@
+- content_for(:page_title) { "#{t('scenario.all')} - #{t('meta.name')}" }
+
+.background_wrapper#saved_scenario
+  .scenario_wrapper#index
+    = render partial: 'scenario_list_tabs', locals: { active_tab: :all_scenarios }
+
+    - if current_user.admin?
+      = render partial: 'scenario_row', collection: @saved_scenarios
+      = paginate @saved_scenarios
+    - else
+      .empty-state
+        %h4= t('scenario.cannot_load')
+

@@ -1,24 +1,28 @@
 $sidebar-hover-bg: #fbfbfb
-$sidebar-active-bg: #e2e2e2
+$sidebar-active-bg: #eee
 
 #sidebar
-  background: #f0f0f0
+  // background: #f0f0f0
   border-right: 1px solid #ddd
   color: black
   h4
-    background: linear-gradient(#fbfbfb, #f0f0f0)
     margin: 0 0 0 0
     padding: 10px 1rem
     cursor: pointer
     color: #333
     font-weight: bold
     font-size: 14px
-    &:hover
-      text-decoration: underline
-  .sep
-    height: 1px
-    background: #ddd
-    margin: 0
+    display: flex
+    &:after
+      margin-left: auto
+      font: normal normal normal 14px/1 FontAwesome
+      content: "\f054"
+      font-size: 11px
+      color: #666
+      font-weight: 10
+      margin-top: 4px
+    &.active:after
+      content: "\f078"
   ul
     margin: 0 0 10px 0
     padding: 0
@@ -33,7 +37,7 @@ $sidebar-active-bg: #e2e2e2
         color: black
         margin-right: -1px
         a
-          border-right: 4px solid #71a2cf
+          border-right: 4px solid $landing-blue
           color: black
           width: 176px
           &:hover

@@ -1,12 +1,3 @@
-$landing-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
-$landing-width: 652px
-$landing-green: #56b351
-$landing-grey: #78818c
-$landing-blue: #4e98e4
-$landing-gold: #e2ac49
-$landing-background-color: #eef2f7
-$landing-border-color: #d0d5d8
-
 body#root
   font-family: $landing-font-family
 
@@ -115,9 +106,9 @@ body#root
       &:hover
         text-decoration: none
       &:hover span.root-button
-        background: linear-gradient(lighten($landing-green, 14%), lighten($landing-green, 7%))
+        background: lighten($landing-green, 14%)
       &:active span.root-button
-        background: linear-gradient(darken($landing-green, 1%), darken($landing-green, 7%))
+        background:darken($landing-green, 1%)
     .title, .details
       display: block
     .title
@@ -195,7 +186,6 @@ body#root
       // &.UKNI01_northern_ireland
     span.root-button
       background: $landing-green
-      background: linear-gradient(lighten($landing-green, 10%), $landing-green)
       margin-top: 9px
 
     ul.dashboard
@@ -310,16 +300,15 @@ body#root
         padding: 5px 5px 5px 35px
       button.root-button
         background-color: $landing-blue
-        background: linear-gradient(lighten($landing-blue, 10%), $landing-blue)
         cursor: pointer
         outline: none
         padding-bottom: 7px
         padding-top: 7px
         transition: all 0.1s ease-out
         &:hover
-          background: linear-gradient(lighten($landing-blue, 13%), lighten($landing-blue, 6%))
+          background: lighten($landing-blue, 13%)
         &:active
-          background: linear-gradient(darken($landing-blue, 1%), darken($landing-blue, 7%))
+          background: darken($landing-blue, 1%)
     .hint
       border-top: 1px solid $landing-border-color
       color: $landing-grey
@@ -333,22 +322,20 @@ body#root
     background: #ccc
     border-radius: 3px
     border: none
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1)
     color: white
     float: right
     font-family: $landing-font-family
     font-size: 14px
-    font-weight: bold
+    font-weight: 500
     margin: 0
-    padding: 5px 10px
-    text-shadow: 0 1px 1px rgba(0,0,0,0.2)
+    padding: 10px 15px
     transition: all 0.15s ease-out
     white-space: nowrap
     -webkit-font-smoothing: antialiased
     .fa
       color: white
-      font-size: 11px
-      margin-top: -1px
+      font-size: 9px
+      margin-top: -1.5px
       vertical-align: middle
       + .fa
         margin-left: -6px

@@ -58,7 +58,7 @@ class @DashboardItemView extends Backbone.View
       autoSize: false
       type:     'ajax'
       width:    720
-      height:   500
+      height:   540
       padding:  0
       beforeClose: ->
         # don't leave stale charts around!

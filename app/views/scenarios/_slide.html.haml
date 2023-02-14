@@ -9,8 +9,8 @@
   .slide
     .description
       %p
-        = image_tag(slide.image_path) if slide.image.present?
         = raw format_description(I18n.t("slides.#{slide.key}.description"))
+      %hr
 
     .items
       - unless slide.general_sub_header.blank?

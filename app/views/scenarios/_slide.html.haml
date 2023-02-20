@@ -10,9 +10,11 @@
     .description
       %p
         = raw format_description(I18n.t("slides.#{slide.key}.description"))
-      %hr
 
     .items
+      - unless slide.input_elements_not_belonging_to_a_group.empty?
+        %hr
+        %br
       - unless slide.general_sub_header.blank?
         .sub_header{ :id => "sub_header_#{slide.key}" }
           %span.sub_header_arrow= t("subheaders.#{to_yml_syntax(slide.general_sub_header)}")

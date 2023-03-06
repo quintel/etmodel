@@ -1,6 +1,22 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# Maart 2023
+
+## Lokaal vs. Globaal tool is gedeactiveerd
+
+De **Lokaal vs. Globaal** tool is voor onbepaalde tijd gedeactiveerd. De tool stelde je in staat om meerdere scenario's te selecteren en hun gecombineerde resultaten te zien voor een aantal indicatoren. Hoewel de functionaliteit die de tool bood waardevol is, maakte de beperkte reikwijdte van de implementatie het niet langer de moeite waard het te onderhouden.
+
+-> <img src="/assets/pages/whats_new/local_global_button_nl.png" width="300" /> <-
+
+Onze ambitie is om in plaats daarvan verder te bouwen aan de **[Transitiepaden](/multi_year_charts)** tool. Deze tool is recent verder ontwikkeld en biedt veel flexibiliteit voor gebruikers die meerdere scenario's willen visualiseren en wijzigen binnen één interface. De functionaliteit die de Lokaal vs. Globaal tool bood zou in de toekomst in de Transitiepaden tool kunnen worden opgenomen.
+
+-> <img src="/assets/pages/whats_new/transition_path_button_nl.png" width="300" /> <-
+
+Als je vragen hebt over de Lokaal vs. Globaal too, of suggesties heeft voor de verbetering van de Transitiepaden tool, neem dan **[contact](/contact)** op met Quintel.
+
+___
+
 # Februari 2023
 
 ## Nieuwe feature voor technologieën voor elektriciteitsopslag

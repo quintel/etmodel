@@ -1,6 +1,22 @@
 # What's new in the Energy Transition Model?
 ___
 
+# March 2023
+
+## Local vs. Global tool is discontinued
+
+The **Local vs. Global** tool is discontinued indefinitely. The tool allowed you to select multiple scenarios and see their combined results on a number of indicators. Though the functionality the tool offered is valuable, the limited scope of its implementation made it is no longer worth the effort required to maintain it.
+
+-> <img src="/assets/pages/whats_new/local_global_button_en.png" width="300" /> <-
+
+Our ambition is to further build on the **[Transition Paths](/multi_year_charts)** tool instead. This tool has recently seen much development and offers a lot of flexibility for users who want to visualise and change multiple scenarios within a single interface. The functionality that the Local vs. Global tool offered may be incorporated in the Transition Paths tool in the future.
+
+-> <img src="/assets/pages/whats_new/transition_path_button_en.png" width="300" /> <-
+
+If you have any questions about the Local vs. Global tool, or would like to discuss suggestions for improvement of the Transition Paths tool, please **[contact](/contact)** Quintel.
+
+___
+
 # February 2023
 
 ## New feature for electricity storage technologies

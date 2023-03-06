@@ -5,7 +5,7 @@ ___
 
 ## Local vs. Global tool is discontinued
 
-The **Local vs. Global** tool is discontinued indefinitely. The tool allowed you to select multiple scenarios and see their combined results on a number of indicators. Though the functionality the tool offered is valuable, the limited scope of its implementation made it is no longer worth the effort required to maintain it.
+The **Local vs. Global** tool is discontinued indefinitely. The tool allowed you to select multiple scenarios and see their combined results on a number of indicators. Though the functionality the tool offered is valuable, the limited scope of its implementation made it no longer worth the effort required to maintain it.
 
 -> <img src="/assets/pages/whats_new/local_global_button_en.png" width="300" /> <-
 
@@ -13,7 +13,7 @@ Our ambition is to further build on the **[Transition Paths](/multi_year_charts)
 
 -> <img src="/assets/pages/whats_new/transition_path_button_en.png" width="300" /> <-
 
-If you have any questions about the Local vs. Global tool, or would like to discuss suggestions for improvement of the Transition Paths tool, please **[contact](/contact)** Quintel.
+If you have any questions about the Local vs. Global tool, or would like to discuss suggestions for the improvement of the Transition Paths tool, please **[contact](/contact)** Quintel.
 
 ___
 

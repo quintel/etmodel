@@ -13,7 +13,7 @@ Onze ambitie is om in plaats daarvan verder te bouwen aan de **[Transitiepaden](
 
 -> <img src="/assets/pages/whats_new/transition_path_button_nl.png" width="300" /> <-
 
-Als je vragen hebt over de Lokaal vs. Globaal too, of suggesties heeft voor de verbetering van de Transitiepaden tool, neem dan **[contact](/contact)** op met Quintel.
+Als je vragen hebt over de Lokaal vs. Globaal tool, of suggesties hebt voor de verbetering van de Transitiepaden tool, neem dan **[contact](/contact)** op met Quintel.
 
 ___
 

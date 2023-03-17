@@ -21,6 +21,17 @@ class MultiYearChartsController < ApplicationController
     end
   end
 
+  # Part of the My Scenarios view
+  #
+  # GET multi_year_charts/list
+  def list
+    @multi_year_charts = user_multi_year_charts
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # Creates a new MultiYearChart record based on the scenario specified in the
   # params.
   #

@@ -61,8 +61,8 @@ table.default
     background: white
     border: 1px solid $landing-border-color
     border-bottom-color: darken($landing-border-color, 5%)
-    border-top-color: $landing-gold
-    border-top-width: 2px
+    // border-top-color: #e4f7ff
+    // border-top-width: 2px
     box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
     border-radius: 4px
     padding: 15px 40px
@@ -182,6 +182,8 @@ table.default
       margin-left: 0.5rem
 
   &#index
+    min-height: 60vh
+
     .vertical-bar
       width: 0
       height: 26px
@@ -198,8 +200,7 @@ table.default
         margin: 0
         font-size: 14px
     .empty-state
-      text-align: center
-      padding: 2rem 8rem
+      padding-top: 2rem
       h4
         font-size: 18px
         font-weight: 500
@@ -265,6 +266,9 @@ table.default
           left: 0
           z-index: 1
           content: ""
+        span
+          padding-left: 0.25rem
+          font-size: 0.875rem
       .check, .scenario-info, .buttons
         padding: 0.5rem
       & > :first-child
@@ -595,9 +599,14 @@ table.default
         background: white
         color: black
         border-bottom: 1px solid white
+        border-top: 2px solid $landing-gold
+        border-radius: 4px 4px 0 0
         margin-bottom: -1px
+        margin-top: -2px
         &:hover
           color: black
+      &.myc
+        // background-color: #e4f7ff
       svg
         display: inline-block
         margin-right: 0.125rem

@@ -1,0 +1,15 @@
+.scenario-row{ class: 'loadable' }
+  .scenario-info
+    %a.title{ href: myc_url(multi_year_chart_row), target:'_blank' }
+      = multi_year_chart_row.title
+      %span.fa.fa-external-link
+    %span.info
+      = t("areas.#{multi_year_chart_row.area_code}")
+      = multi_year_chart_row.end_year
+      - if current_user.id != multi_year_chart_row.user_id
+        %span.author
+          = t('scenario.by')
+          = multi_year_chart_row.user&.name
+    %span.last-updated
+      •
+      = t('multi_year_charts.created_at', date: distance_of_time_in_words_to_now(multi_year_chart_row.created_at))

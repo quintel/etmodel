@@ -2,6 +2,7 @@
   .scenario-info
     %a.title{ href: myc_url(multi_year_chart_row), target:'_blank' }
       = multi_year_chart_row.title
+      %span.fa.fa-external-link
     %span.info
       = t("areas.#{multi_year_chart_row.area_code}")
       = multi_year_chart_row.end_year

@@ -9,16 +9,15 @@
     = render partial: 'scenario_list_tabs', locals: { active_tab: :trash }
     = render partial: 'flash_notice'
 
-    - if @saved_scenarios.any?
+    - if @discarded_scenarios.any?
       .trash-notice
         :plain
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         = t('scenario.trash.notice', deleted_after: SavedScenario::AUTO_DELETES_AFTER.in_days.to_i)
-
-      = render partial: 'scenario_row', collection: @saved_scenarios
-      = paginate @saved_scenarios
+      = render partial: 'discarded_row', collection: @discarded_scenarios
+      = paginate @discarded_scenarios
     - else
       .empty-state
         %h4= t('scenario.trash.empty.title')

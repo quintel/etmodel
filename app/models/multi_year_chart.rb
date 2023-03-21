@@ -43,6 +43,12 @@ class MultiYearChart < ApplicationRecord
     scenarios.pluck(:scenario_id).join(',')
   end
 
+  # Public: MYC doesn't have an update at, but we need it for sorting the items
+  # in the trash
+  def updated_at
+    created_at
+  end
+
   def as_json(options = {})
     options[:except] ||= %i[area_code end_year user_id]
 

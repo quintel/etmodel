@@ -5,7 +5,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
       </svg>
     %span.name= t('header.load_scenario')
-  %a.tab.myc{ href: multi_year_charts_list_path, class: active_tab == :my_myc ? 'active' : '' }
+  %a.tab.myc{ href: list_multi_year_charts_path, class: active_tab == :my_myc ? 'active' : '' }
     :plain
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="20" viewBox="0 0 256 256">
         <polyline points="232 56 136 152 96 112 24 184" stroke-linecap="round" stroke-linejoin="round"></polyline>
@@ -18,7 +18,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
       </svg>
     %span.name= t('trash')
-    = tab_count(current_user.saved_scenarios.discarded.count, class: 'red')
+    = tab_count(current_user.saved_scenarios.discarded.count + current_user.multi_year_charts.discarded.count, class: 'red')
   - if current_user.admin?
     %a.tab{ href: all_saved_scenarios_path, class: active_tab == :all_scenarios ? 'active' : '' }
       :plain

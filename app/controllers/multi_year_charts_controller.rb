@@ -27,18 +27,20 @@ class MultiYearChartsController < ApplicationController
     end
   end
 
-  # Part of the My Scenarios view
+  # Part of the My Scenarios view, lists all MYC that are not discarded
   #
   # GET multi_year_charts/list
   def list
     @multi_year_charts = user_multi_year_charts
+      .kept
+      .includes(:user)
+      .order('created_at DESC')
+      .page(params[:page])
+      .per(50)
 
     respond_to do |format|
       format.html {render :layout => 'application'}
     end
-  end
-
-  def discarded
   end
 
   # Creates a new MultiYearChart record based on the scenario specified in the
@@ -105,7 +107,7 @@ class MultiYearChartsController < ApplicationController
       flash[:undo_params] = [discard_multi_year_chart_path(@multi_year_chart), { method: :put }]
     end
 
-    redirect_back(fallback_location: discarded_multi_year_charts_path)
+    redirect_back(fallback_location: discarded_saved_scenarios_path)
   end
 
   private

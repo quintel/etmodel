@@ -140,4 +140,106 @@ describe MultiYearChartsController do
       end
     end
   end
+
+  describe 'PUT discard' do
+    let(:scenario) { create(:saved_scenario, end_year: 2050, user: user) }
+    let(:user) { create(:user) }
+    let(:myc) { create(:multi_year_chart, scenarios_count: 1) }
+
+    before do
+      sign_in(myc.user)
+      session[:setting] = Setting.new
+    end
+
+    context 'with an owned myc' do
+      before do
+        post(:discard, params: { id: myc.id })
+      end
+
+      it 'redirects to the scenario listing' do
+        expect(response).to be_redirect
+      end
+
+      it 'soft-deletes the scenario' do
+        expect(myc.reload).to be_discarded
+      end
+    end
+
+    context 'with an unowned myc' do
+      before do
+        sign_in create(:user)
+        post(:discard, params: { id: myc.id })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+
+      it 'does not soft-delete the myc' do
+        expect(myc.reload).not_to be_discarded
+      end
+    end
+
+    context 'with a myc ID that does not exist' do
+      before do
+        post(:discard, params: { id: 99_999 })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+    end
+  end
+
+  describe 'PUT undiscard' do
+    let(:scenario) { create(:saved_scenario, end_year: 2050, user: user) }
+    let(:user) { create(:user) }
+    let(:myc) { create(:multi_year_chart, scenarios_count: 1) }
+
+    before do
+      sign_in(myc.user)
+      session[:setting] = Setting.new
+    end
+
+    context 'with an owned myc' do
+      before do
+        myc.discard!
+        post(:undiscard, params: { id: myc.id })
+      end
+
+      it 'redirects to the myc listing' do
+        expect(response).to be_redirect
+      end
+
+      it 'removes the soft-deletion of the myc' do
+        expect(myc.reload).not_to be_discarded
+      end
+    end
+
+    context 'with an unowned myc' do
+      before do
+        myc.discard!
+        sign_in create(:user)
+        post(:undiscard, params: { id: myc.id })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+
+      it 'does not remove the soft-deletion of the myc' do
+        expect(myc.reload).to be_discarded
+      end
+    end
+
+    context 'with a myc ID that does not exist' do
+      before do
+        post(:undiscard, params: { id: 99_999 })
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+    end
+  end
 end

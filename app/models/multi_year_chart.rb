@@ -3,6 +3,11 @@
 # Represents a saved multi-year charts session. Contains one or more scenario
 # which will be loaded in the MYC interface.
 class MultiYearChart < ApplicationRecord
+  include Discard::Model
+
+  # Discarded scenarios are deleted automatically after this period.
+  AUTO_DELETES_AFTER = 60.days
+
   belongs_to :user
 
   has_many :scenarios,
@@ -42,6 +47,7 @@ class MultiYearChart < ApplicationRecord
     options[:except] ||= %i[area_code end_year user_id]
 
     super(options).merge(
+      'discarded' => discarded_at.present?,
       'owner' => user.as_json(only: %i[id name]),
       'scenario_ids' => scenarios.pluck(:scenario_id).sort
     )

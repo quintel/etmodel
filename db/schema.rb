@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_20_152312) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_21_133548) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -71,6 +71,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_20_152312) do
     t.string "area_code", null: false
     t.integer "end_year", null: false
     t.datetime "created_at", precision: nil, null: false
+    t.datetime "discarded_at"
+    t.index ["discarded_at"], name: "index_multi_year_charts_on_discarded_at"
     t.index ["user_id"], name: "index_multi_year_charts_on_user_id"
   end
 
@@ -133,7 +135,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_20_152312) do
     t.index ["key"], name: "index_translations_on_key"
   end
 
-  create_table "users", id: :bigint, default: nil, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", id: :bigint, default: nil, charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

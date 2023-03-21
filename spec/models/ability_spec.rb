@@ -26,6 +26,10 @@ RSpec.describe Ability do
     it 'may not destroy a saved scenario' do
       expect(ability).not_to be_able_to(:destroy, create(:saved_scenario))
     end
+
+    it 'may not destroy a multi year chart' do
+      expect(ability).not_to be_able_to(:destroy, create(:saved_scenario))
+    end
   end
 
   context 'when a user' do
@@ -67,6 +71,14 @@ RSpec.describe Ability do
 
     it 'may not destroy someone elses saved scenario' do
       expect(ability).not_to be_able_to(:destroy, create(:saved_scenario, user: create(:user)))
+    end
+
+    it 'may destroy their own multi year chart' do
+      expect(ability).to be_able_to(:destroy, create(:multi_year_chart, user:))
+    end
+
+    it 'may not destroy someone elses multi year chart' do
+      expect(ability).not_to be_able_to(:destroy, create(:multi_year_chart, user: create(:user)))
     end
   end
 end

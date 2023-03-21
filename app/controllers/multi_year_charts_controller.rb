@@ -3,10 +3,16 @@
 class MultiYearChartsController < ApplicationController
   layout 'multi_year_charts'
 
+  load_resource only: %i[discard undiscard]
+
   before_action :ensure_valid_config
 
-  before_action do
+  before_action except: %i[discard undiscard] do
     authenticate_user!(show_as: :sign_in)
+  end
+
+  before_action only: %i[discard undiscard] do
+    authorize!(:destroy, @multi_year_chart)
   end
 
   def index
@@ -28,8 +34,11 @@ class MultiYearChartsController < ApplicationController
     @multi_year_charts = user_multi_year_charts
 
     respond_to do |format|
-      format.html
+      format.html {render :layout => 'application'}
     end
+  end
+
+  def discarded
   end
 
   # Creates a new MultiYearChart record based on the scenario specified in the
@@ -67,6 +76,36 @@ class MultiYearChartsController < ApplicationController
     )
 
     redirect_to multi_year_charts_path
+  end
+
+  # Soft-deletes the myc so that it no longer appears in listings.
+  #
+  # PUT /multi_year_charts/:id/discard
+  def discard
+    unless @multi_year_chart.discarded?
+      @multi_year_chart.discarded_at = Time.zone.now
+      @multi_year_chart.save(touch: false)
+
+      flash.notice = t('scenario.trash.discarded_flash')
+      flash[:undo_params] = [undiscard_multi_year_chart_path(@multi_year_chart), { method: :put }]
+    end
+
+    redirect_back(fallback_location: list_multi_year_charts_path)
+  end
+
+  # Removes the soft-deletes of the scenario.
+  #
+  # PUT /multi_year_charts/:id/undiscard
+  def undiscard
+    unless @multi_year_chart.kept?
+      @multi_year_chart.discarded_at = nil
+      @multi_year_chart.save(touch: false)
+
+      flash.notice = t('scenario.trash.undiscarded_flash')
+      flash[:undo_params] = [discard_multi_year_chart_path(@multi_year_chart), { method: :put }]
+    end
+
+    redirect_back(fallback_location: discarded_multi_year_charts_path)
   end
 
   private

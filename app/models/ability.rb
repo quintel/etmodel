@@ -39,5 +39,7 @@ class Ability
     can :read,    SavedScenario, user_id: user.id
     can :update,  SavedScenario, user_id: user.id
     can :destroy, SavedScenario, user_id: user.id
+
+    can :destroy, MultiYearChart, user_id: user.id
   end
 end

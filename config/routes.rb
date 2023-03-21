@@ -139,8 +139,17 @@ Rails.application.routes.draw do
   get '/local-global' => 'compare#index', as: :local_global
   get '/local-global/:ids' => 'compare#show', as: :local_global_scenarios
 
-  resources :multi_year_charts, only: %i[index create destroy]
-  get '/multi_year_charts/list' => 'multi_year_charts#list'
+  resources :multi_year_charts, except: %i[new show edit update] do
+    member do
+      put :discard
+      put :undiscard
+    end
+
+    collection do
+      get :discarded
+      get :list
+    end
+  end
 
   get '/import_esdl'  => 'import_esdl#index'
   post '/import_esdl/create' => 'import_esdl#create', as: :import_esdl_create

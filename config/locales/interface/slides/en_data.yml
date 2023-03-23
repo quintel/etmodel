@@ -7,7 +7,7 @@ en:
       description: |
         In this section you can find extensive data downloads for the calculations underpinning your scenario. <br/><br/>
         You can choose to download <b>yearly results</b> (flows, emissions, demand and supply), additional <b>specifications</b>
-        (capacities, number of units and costs) or you can download <b>hourly results</b> (electricity,
+        (capacities, storage, technologies, number of units and costs) or you can download <b>hourly results</b> (electricity,
         household heat, gas, hydrogen and heat networks). <br/><br/>
         You can also upload hourly demand and supply curves for your scenario in the
         <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibility → Modify hourly profiles </a> section.
@@ -50,6 +50,26 @@ en:
           <li>
             <a href="/passthru/%{scenario_id}/costs_parameters.csv" target="_blank">
               <span class="name">Specifications costs</span> <span class="filetype">23KB CSV</span>
+            </a>
+          </li>
+        </ul>
+    data_export_storage:
+      title: Specifications storage technologies
+      short_description:
+      description: |
+        Download detailed information about the parameters of 
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_p2p_storage" data-chart-location="side">
+        Electricity storage</a> technologies,
+        <a href="#" class="open_chart" data-chart-key="heat_network_storage" data-chart-location="side">
+        (Seasonal) storage of heat</a> on the district heating network,
+        <a href="#" class="open_chart" data-chart-key="hydrogen_storage" data-chart-location="side">
+        Hydrogen storage</a> and
+        <a href="#" class="open_chart" data-chart-key="network_gas_storage" data-chart-location="side">
+        Network gas storage</a>.
+        <ul class="data-download">
+          <li>
+            <a href="/passthru/%{scenario_id}/storage_parameters.csv" target="_blank">
+              <span class="name">Specifications storage technologies</span> <span class="filetype">10KB CSV</span>
             </a>
           </li>
         </ul>

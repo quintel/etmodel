@@ -7,7 +7,7 @@ nl:
       description: |
         In deze sectie kan je uitgebreide data-downloads vinden voor de onderliggende berekeningen van jouw scenario. <br/><br/>
         Je kunt er voor kiezen om <b>jaarlijkse resultaten</b> (stromen, emissies, vraag en aanbod), aanvullende
-        <b>specificaties</b> (vermogens, aantal eenheden en kosten), of <b>uurlijkse
+        <b>specificaties</b> (vermogens, opslagtechnologieën, aantal eenheden en kosten), of <b>uurlijkse
         resultaten</b> (elektriciteit, warmte in huishoudens, gas, waterstof en warmtenetten) te downloaden. <br/><br/>
         Je kunt ook de uurlijkse vraag- en aanbodprofielen uploaden in jouw scenario in de
         <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibiliteit → Uurprofielen aanpassen</a> sectie.
@@ -49,6 +49,26 @@ nl:
           <li>
             <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/costs_parameters.csv" target="_blank">
               <span class="name">Eindspecificaties kosten</span> <span class="filetype">23KB CSV</span>
+            </a>
+          </li>
+        </ul>
+    data_export_storage:
+      title: Specificaties opslagtechnologieën
+      short_description:
+      description: |
+        Download gedetailleerde informatie over de parameters van 
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_p2p_storage" data-chart-location="side">
+        Elektriciteitsopslagtechnologieën</a>,
+        <a href="#" class="open_chart" data-chart-key="heat_network_storage" data-chart-location="side">
+        (Seizoens)opslag van warmte</a> op het residentiële warmtenet,
+        <a href="#" class="open_chart" data-chart-key="hydrogen_storage" data-chart-location="side">
+        Waterstofopslag</a> en
+        <a href="#" class="open_chart" data-chart-key="network_gas_storage" data-chart-location="side">
+        Gasberging</a>.
+        <ul class="data-download">
+          <li>
+            <a href="/passthru/%{scenario_id}/storage_parameters.csv" target="_blank">
+              <span class="name">Specificaties opslagtechnologieën</span> <span class="filetype">10KB CSV</span>
             </a>
           </li>
         </ul>

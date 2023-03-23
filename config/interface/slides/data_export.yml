@@ -1,54 +1,58 @@
 ---
 - key: data_export_overview
-  position: 1
+  position: 100
   sidebar_item_key: data_export
   output_element_key: final_energy_demand_per_sector_joule
 - key: data_export_energy_flows
-  position: 2
+  position: 105
   sidebar_item_key: data_export
   output_element_key: final_energy_demand_per_sector_joule
 - key: data_export_molecule_flows
-  position: 3
+  position: 110
   sidebar_item_key: data_export
   output_element_key: co2_emissions
 - key: data_export_application_demands
-  position: 4
+  position: 120
   sidebar_item_key: data_export
   output_element_key: use_of_primary_energy
 - key: data_export_production
-  position: 5
+  position: 200
   sidebar_item_key: data_export
   output_element_key: costs_overview_detailed
 - key: data_export_costs
-  position: 6
+  position: 210
   sidebar_item_key: data_export
   output_element_key: costs_overview_detailed
+- key: data_export_storage
+  position: 220
+  sidebar_item_key: data_export
+  output_element_key: storage_specifications
 - key: data_export_household_heat
-  position: 7
+  position: 300
   sidebar_item_key: data_export
   output_element_key: household_heat_demand_and_production
 - key: data_export_hydrogen
-  position: 8
+  position: 310
   sidebar_item_key: data_export
   output_element_key: hydrogen_demand
 - key: data_export_network_gas
-  position: 9
+  position: 320
   sidebar_item_key: data_export
   output_element_key: network_gas_demand
 - key: data_export_heat_network
-  position: 10
+  position: 330
   sidebar_item_key: data_export
   output_element_key: heat_network_demand
 - key: data_export_agriculture_heat
-  position: 11
+  position: 340
   sidebar_item_key: data_export
   output_element_key: agriculture_local_heat_mekko
 - key: flexibility_merit_order_merit_order_price
-  position: 12
+  position: 350
   sidebar_item_key: data_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
 - key: data_export_residual_load_curves
-  position: 13
+  position: 360
   sidebar_item_key: data_export
   output_element_key: flexibility_hourly_carriers_inflexible_imbalance

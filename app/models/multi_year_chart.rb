@@ -31,6 +31,13 @@ class MultiYearChart < ApplicationRecord
     }.merge(attrs))
   end
 
+  # Public: Destroys all multi year charts which were discarded some time ago.
+  def self.destroy_old_discarded!
+    discarded
+      .where(discarded_at: ..MultiYearChart::AUTO_DELETES_AFTER.ago)
+      .destroy_all
+  end
+
   # Public: Returns an way for the MYC app to identify this instance, to use
   # used when directing to the application.
   #

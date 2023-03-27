@@ -1,25 +1,29 @@
 .scenario-row{ class: multi_year_chart_row.discarded? ? 'discarded' : 'loadable' }
-  - if multi_year_chart_row.discarded?
-    %span.big-icon
-      :plain
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="20" viewBox="0 0 256 256">
-          <polyline points="232 56 136 152 96 112 24 184" stroke-linecap="round" stroke-linejoin="round"></polyline>
-          <polyline points="232 120 232 56 168 56" stroke-linecap="round" stroke-linejoin="round"></polyline>
-        </svg>
   .scenario-info
-    %a.title{ href: myc_url(multi_year_chart_row), target:'_blank' }
-      = multi_year_chart_row.title
-      %span.fa.fa-external-link
-    %span.info
-      = t("areas.#{multi_year_chart_row.area_code}")
-      = multi_year_chart_row.end_year
-      - if current_user.id != multi_year_chart_row.user_id
-        %span.author
-          = t('scenario.by')
-          = multi_year_chart_row.user&.name
-    %span.last-updated
-      •
-      = t('multi_year_charts.created_at', date: distance_of_time_in_words_to_now(multi_year_chart_row.created_at))
+    .sub-row
+      %a.title{ href: myc_url(multi_year_chart_row), target:'_blank' }
+        = multi_year_chart_row.title
+        %span.fa.fa-external-link
+      - if multi_year_chart_row.discarded?
+        .type-tag
+          %span.type.icon
+            :plain
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" stroke="currentColor" stroke-width="20" viewBox="0 0 256 256">
+                <polyline points="232 56 136 152 96 112 24 184" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                <polyline points="232 120 232 56 168 56" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              </svg>
+          = t('multi_year_charts.transition_path')
+    .sub-row
+      %span.info
+        = t("areas.#{multi_year_chart_row.area_code}")
+        = multi_year_chart_row.end_year
+        - if current_user.id != multi_year_chart_row.user_id
+          %span.author
+            = t('scenario.by')
+            = multi_year_chart_row.user&.name
+      %span.last-updated
+        •
+        = t('multi_year_charts.created_at', date: distance_of_time_in_words_to_now(multi_year_chart_row.created_at))
   - if current_user.id == multi_year_chart_row.user_id
     .buttons
       - if multi_year_chart_row.discarded?

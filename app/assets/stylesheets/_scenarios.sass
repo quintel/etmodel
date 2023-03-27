@@ -262,12 +262,16 @@ table.default
         pointer-events: initial
         .button
           background: none
+          &:hover
+            color: #000
+          &.destroy:hover
+            color: darken($error-red, 10%)
       &.discarded .big-icon
         padding: 8px 8px 2px 8px
         color: #666
         border: 1px solid #eee
         border-radius: 24px
-        margin: 10px 10px 10px 0px
+        margin: 10px 10px 10px 0
       a.title, .check input
         // title link and checkbox are clickable for the entire container.
         &::after
@@ -281,6 +285,22 @@ table.default
         span
           padding-left: 0.25rem
           font-size: 0.875rem
+      .sub-row
+        display: flex
+      .type-tag
+        color: $landing-gold
+        font-weight: normal
+        border: 1px solid $landing-gold
+        border-radius: 24px
+        padding: 1px 10px 0 8px
+        display: flex
+        margin-left: 10px
+        margin-top: -2px
+        font-size: 0.75rem
+        line-height: 1.2rem
+        span.icon
+            margin-top: 2px
+            padding-right: 4px
       .check, .scenario-info, .buttons
         padding: 0.5rem
       & > :first-child
@@ -334,8 +354,6 @@ table.default
       .title
         font-weight: 600
         font-size: 1rem
-        display: inline-block
-        width: 100%
       .info, .author, .last-updated
         font-size: 0.8125rem
       .info

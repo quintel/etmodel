@@ -383,9 +383,21 @@
   dependent_on:
   output_element_key: user_profiles
   key: agriculture_electricity_user_profiles
-- label: households_cooling
+- label: agriculture_heat
   color: lightgreen
   order_by: 72
+  group: agriculture_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: agriculture_heat_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: agriculture_heat_user_profiles
+- label: households_cooling
+  color: lightgreen
+  order_by: 73
   group: households_curves
   show_at_first:
   is_target_line:
@@ -397,7 +409,7 @@
   key: households_cooling_user_profiles
 - label: households_hot_water
   color: lightgreen
-  order_by: 73
+  order_by: 74
   group: households_curves
   show_at_first:
   is_target_line:
@@ -409,7 +421,7 @@
   key: households_hot_water_user_profiles
 - label: households_appliances
   color: lightgreen
-  order_by: 74
+  order_by: 75
   group: households_curves
   show_at_first:
   is_target_line:

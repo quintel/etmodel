@@ -17,7 +17,7 @@ class SavedScenariosController < ApplicationController
     authorize!(:destroy, @saved_scenario)
   end
 
-  before_action :require_admin, only: :all
+  before_action :restrict_to_admin, only: :all
   before_action :assign_scenario, only: :load
   helper_method :owned_saved_scenario?
 
@@ -274,9 +274,5 @@ class SavedScenariosController < ApplicationController
     if Current.setting.active_saved_scenario_id == saved_scenario.id
       Current.setting.active_scenario_title = saved_scenario.title
     end
-  end
-
-  def require_admin
-    redirect_to saved_scenarios_path unless current_user.admin?
   end
 end

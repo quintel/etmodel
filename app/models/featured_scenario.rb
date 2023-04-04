@@ -14,7 +14,7 @@ class FeaturedScenario < ApplicationRecord
   validates :description_en, :description_nl, :title_en, :title_nl, presence: true
   validates :group, inclusion: GROUPS
 
-  delegate :area_code, :end_year, :scenario_id, to: :saved_scenario
+  delegate :area_code, :end_year, :scenario_id, :updated_at, to: :saved_scenario
 
   # Public: Given an array of scenarios, an array of display groups, groups the
   # scenarios according to their display_group, in the order specified in the

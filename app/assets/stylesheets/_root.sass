@@ -340,6 +340,11 @@ body#root
 
   #preset-scenario
     border-top-color: $landing-gold
+    .header-container a
+      color: $landing-grey
+      text-decoration: underline
+      &:hover
+        color: $landing-blue
 
     .hint
       color: $landing-grey
@@ -348,6 +353,7 @@ body#root
     .year-tabs
       display: flex
       border-bottom: solid 1px $landing-border-color
+      margin-bottom: 5px
       .end-year-tab
         border: 1px solid $landing-border-color
         border-bottom: none
@@ -362,7 +368,7 @@ body#root
             cursor: pointer
             color: #666
         &.active
-          border-top: solid 2px $landing-green
+          border-top: solid 2px $landing-grey
           margin-bottom: -1px
           background: white
           a
@@ -374,11 +380,17 @@ body#root
 
     ul.scenario-list
       list-style: none
-      margin: 20px -20px 0
+      margin: 0 -20px 0
       padding: 0
-      display: none
+      // display: none
+      transition: opacity 1s ease-out
+      opacity: 0
+      height: 0
+      overflow: hidden
       &.show
-        display: block
+        // display: block
+        opacity: 1
+        height: auto
 
       li.title
         font-weight: 500
@@ -406,6 +418,11 @@ body#root
         font-size: 13px
         line-height: 1
         margin-left: 6px
+
+      span.last_updated
+        margin-left: auto
+        color: darken($landing-background-color, 18%)
+        font-size: 0.75rem
 
   #legal
     border-top: 1px solid $landing-border-color

@@ -60,6 +60,15 @@ class FeaturedScenario < ApplicationRecord
     end.flatten.compact
   end
 
+  def self.in_groups_per_end_year(featured_scenarios, groups=SORTABLE_GROUPS)
+    scenarios = featured_scenarios.group_by(&:end_year)
+    scenarios.each do |end_year, year_scenarios|
+      scenarios[end_year] = FeaturedScenario.in_groups(year_scenarios, groups)
+    end
+
+    scenarios
+  end
+
   def localized_title(locale)
     (locale == :nl ? title_nl : title_en) || saved_scenario.title
   end

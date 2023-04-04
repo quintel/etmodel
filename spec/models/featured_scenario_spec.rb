@@ -101,4 +101,58 @@ describe FeaturedScenario do
       expect(ordered[5][:scenarios]).to eq(group_nil)
     end
   end
+
+  describe '.in_groups_per_end_year' do
+    let(:defaults) { { group: nil, title: nil } }
+
+    let(:scenario_2050) { FactoryBot.build(:saved_scenario, end_year: 2050) }
+    let(:scenario_2030) { FactoryBot.build(:saved_scenario, end_year: 2030) }
+
+    let(:group_one) do
+      [
+        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'A', saved_scenario: scenario_2030),
+        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'B', saved_scenario: scenario_2030),
+        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'C', saved_scenario: scenario_2050)
+      ]
+    end
+
+    let(:group_two) do
+      [
+        FactoryBot.build(:featured_scenario, group: 'two', saved_scenario: scenario_2030),
+        FactoryBot.build(:featured_scenario, group: 'two', saved_scenario: scenario_2050)
+      ]
+    end
+
+    let(:unsorted) do
+      [
+        group_one[2],
+        group_two[1],
+        group_one[0],
+        group_two[0],
+        group_one[1]
+      ]
+    end
+
+    let(:order) { ['one', 'two', :rest, nil] }
+
+    let(:ordered) { described_class.in_groups_per_end_year(unsorted, order) }
+
+    describe 'the 2030 group' do
+      it 'has scenarios which belong to the "one" group' do
+        expect(ordered[2030][0][:scenarios][0]).to be(group_one[0])
+      end
+      it 'has scenarios which belong to the "two" group' do
+        expect(ordered[2030][1][:scenarios][0]).to be(group_two[0])
+      end
+    end
+
+    describe 'the 2050 group' do
+      it 'has scenarios which belong to the "one" group' do
+        expect(ordered[2050][0][:scenarios][0]).to be(group_one[2])
+      end
+      it 'has scenarios which belong to the "two" group' do
+        expect(ordered[2050][1][:scenarios][0]).to be(group_two[1])
+      end
+    end
+  end
 end

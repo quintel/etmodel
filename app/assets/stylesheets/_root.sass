@@ -343,11 +343,42 @@ body#root
 
     .hint
       color: $landing-grey
+      margin: 1.5rem 0
+
+    .year-tabs
+      display: flex
+      border-bottom: solid 1px $landing-border-color
+      .end-year-tab
+        border: 1px solid $landing-border-color
+        border-bottom: none
+        border-radius: 3px 3px 0 0
+        font-size: .875rem
+        padding: 5px 13px
+
+        a
+          color: $landing-grey
+          &:hover
+            text-decoration: none
+            cursor: pointer
+            color: #666
+        &.active
+          border-top: solid 2px $landing-green
+          margin-bottom: -1px
+          background: white
+          a
+            color: #333
+          &:hover
+            cursor: default
+        &:first-child
+          margin-left: 5px
 
     ul.scenario-list
       list-style: none
       margin: 20px -20px 0
       padding: 0
+      display: none
+      &.show
+        display: block
 
       li.title
         font-weight: 500

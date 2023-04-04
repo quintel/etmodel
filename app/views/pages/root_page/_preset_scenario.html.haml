@@ -3,7 +3,8 @@
     %h4== #{t('intro.load_a_scenario')}
     = link_to "#{t('header.load_scenario')} →", saved_scenarios_path
     - grouped = FeaturedScenario.in_groups(FeaturedScenario.includes(:saved_scenario))
-
+  %p.hint
+    = t('intro.about_featured_scenarios')
   %ul.scenario-list
     - grouped.each do |data|
       = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }

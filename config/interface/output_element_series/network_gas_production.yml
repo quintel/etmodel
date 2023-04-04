@@ -1,7 +1,7 @@
 ---
 - label: network_gas_demand
   color: "#FF0000"
-  order_by: 1
+  order_by: 100
   group: 
   show_at_first: 
   is_target_line: true
@@ -13,7 +13,7 @@
   key: network_gas_demand_network_gas_production
 - label: natural_gas_production
   color: "#A4B0BE"
-  order_by: 2
+  order_by: 200
   group: ''
   show_at_first: false
   is_target_line: false
@@ -23,21 +23,45 @@
   dependent_on: 
   output_element_key: network_gas_production
   key: natural_gas_production_network_gas_production
-- label: greengas_production
-  color: "#92B940"
-  order_by: 4
+- label: greengas_dry_biomass
+  color: "#4CACBC"
+  order_by: 300
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: greengas_network_gas_output_curve
+  gquery: greengas_gasification_dry_biomass_output_curve
   is_1990: false
   dependent_on: 
   output_element_key: network_gas_production
-  key: greengas_production_network_gas_production
+  key: greengas_dry_biomass_network_gas_production
+- label: greengas_wet_biomass
+  color: "#6CC4A1"
+  order_by: 305
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_gasification_wet_biomass_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: greengas_wet_biomass_network_gas_production
+- label: greengas_upgrade_biogas
+  color: "#A0D995"
+  order_by: 310
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_upgrade_biogas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: greengas_upgrade_biogas_network_gas_production
 - label: lng_production
   color: "#F6E58D"
-  order_by: 5
+  order_by: 220
   group: ''
   show_at_first: false
   is_target_line: false
@@ -49,7 +73,7 @@
   key: lng_production_network_gas_production
 - label: network_gas_storage_output
   color: "#DFE4EA"
-  order_by: 6
+  order_by: 400
   group: ''
   show_at_first: false
   is_target_line: false
@@ -61,7 +85,7 @@
   key: network_gas_storage_output_network_gas_production
 - label: natural_gas_import
   color: "#666666"
-  order_by: 2
+  order_by: 210
   group: ''
   show_at_first: false
   is_target_line: false
@@ -73,7 +97,7 @@
   key: natural_gas_import_network_gas_production
 - label: natural_gas_residual_industry
   color: "#964B00"
-  order_by: 3
+  order_by: 215
   group: ''
   show_at_first: false
   is_target_line: false
@@ -85,7 +109,7 @@
   key: industry_residual_natural_gas_network_gas_production
 - label: greengas_residual_industry
   color: "#006400"
-  order_by: 3
+  order_by: 320
   group: ''
   show_at_first: false
   is_target_line: false

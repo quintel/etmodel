@@ -23,14 +23,20 @@ body#model
   min-height: calc(100% - 57px)
   min-width: 1000px
   position: relative
+  padding-top: 57px
 
   .flex-wrapper
     align-items: stretch
     display: flex
     flex: 1
+    padding-top: 42px;
 
   #sidebar
     width: 209px
+    position: fixed
+    height: 100%
+    background-color: #fff
+    z-index: 98
 
     & > .sep:last-child:after
       // Adds some space below the last item in the sidebar to ensure that a scrollbar appears as soon
@@ -41,7 +47,7 @@ body#model
       width: 10px
 
   #active-content
-    margin-left: 40px
+    margin-left: 249px
     padding-bottom: 120px
 
     #accordion_wrapper

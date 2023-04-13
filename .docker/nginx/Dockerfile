@@ -5,7 +5,7 @@ ARG SOURCE_IMAGE
 FROM ${SOURCE_IMAGE} as source
 
 # Base image
-FROM nginx:latest
+FROM nginx:1.23.4-bullseye
 
 # Install dependencies
 RUN apt-get update -qq && apt-get -y install apache2-utils

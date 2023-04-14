@@ -28,7 +28,7 @@ header.main-header
   .user-settings, .app-nav
     display: flex
     flex-direction: row
-    flex-wrap: wrap
+    flex-wrap: nowrap
     list-style: none
     margin: 0
     padding: 0
@@ -74,12 +74,14 @@ header.main-header
   // Special styles for the rounded pills used for "My Scenarios" and "My Account"
   .my-scenarios
     padding-right: 0
+    white-space: nowrap
     a
       border-top-left-radius: 50rem
       border-bottom-left-radius: 50rem
   .my-account
     margin-left: 1px !important
     padding-left: 0
+    white-space: nowrap
     button
       border-top-right-radius: 50rem
       border-bottom-right-radius: 50rem
@@ -113,7 +115,11 @@ header.main-header
 
       .fa
         vertical-align: middle
-        margin: -4px 1px 0 0
+        margin: 2px 5px 0 6px
+
+    #locale-button
+      display: flex
+      flex-wrap: nowrap
 
   .logo
     padding-left: 1rem

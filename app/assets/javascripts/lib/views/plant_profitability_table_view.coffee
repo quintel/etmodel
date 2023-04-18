@@ -68,7 +68,6 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
     energy_power_engine_network_gas: 'gas_engine'
     energy_power_turbine_network_gas: 'gas_turbine'
     energy_power_ultra_supercritical_lignite: 'lignite'
-    energy_chp_ultra_supercritical_lignite: 'lignite_chp'
     energy_power_ultra_supercritical_oxyfuel_ccs_lignite: 'lignite_oxy'
     energy_power_supercritical_waste_mix: 'energy_power_supercritical_waste_mix'
     energy_power_supercritical_ccs_waste_mix: 'energy_power_supercritical_ccs_waste_mix'
@@ -87,6 +86,8 @@ class @PlantProfitabilityTableView extends HtmlTableChartView
     energy_power_turbine_hydrogen: 'hydrogen_turbine'
     energy_chp_local_wood_pellets: 'local_chp_wood'
     energy_chp_local_engine_network_gas: 'local_chp_gas'
+    energy_power_hydro_mountain: 'hydro_mountain'
+    industry_chp_turbine_hydrogen: 'industry_chp_hydrogen_turbine'
 
   # Sort by two fields
   #

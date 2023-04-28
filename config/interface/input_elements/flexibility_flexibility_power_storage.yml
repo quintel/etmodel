@@ -2,9 +2,19 @@
 - key: households_flexibility_p2p_electricity_market_penetration
   step_value: 0.1
   unit: "%"
-  interface_group: capacity
+  interface_group: technical_specifications
   related_node: households_flexibility_p2p_electricity
   position: 10
+  slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: volume_of_households_flexibility_p2p_electricity
+  step_value: 0.1
+  unit: "hours"
+  interface_group: technical_specifications
+  related_node: households_flexibility_p2p_electricity
+  position: 11
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -14,7 +24,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: households_flexibility_p2p_electricity
-  position: 11
+  position: 12
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -24,7 +34,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: households_flexibility_p2p_electricity
-  position: 12
+  position: 13
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -33,7 +43,7 @@
   step_value: 1.0
   unit: boolean
   interface_group: storage_optimisation
-  position: 13
+  position: 14
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
   config:
     when_true:
@@ -165,7 +175,7 @@
       timeframe: i_h_d_w_s
 - key: volume_of_energy_flexibility_hv_opac_electricity
   step_value: 1.0
-  unit: hour
+  unit: "hours"
   interface_group: technical_specifications
   related_node: energy_flexibility_hv_opac_electricity
   position: 41
@@ -208,9 +218,19 @@
 - key: capacity_of_energy_flexibility_mv_batteries_electricity
   step_value: 1.0
   unit: MW
-  interface_group: capacity
+  interface_group: technical_specifications
   related_node: energy_flexibility_mv_batteries_electricity
   position: 50
+  slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d
+- key: volume_of_energy_flexibility_mv_batteries_electricity
+  step_value: 1.0
+  unit: "hours"
+  interface_group: technical_specifications
+  related_node: energy_flexibility_mv_batteries_electricity
+  position: 51
   slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
   additional_specs:
     other:
@@ -220,7 +240,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: energy_flexibility_mv_batteries_electricity
-  position: 51
+  position: 52
   slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
   additional_specs:
     other:
@@ -230,7 +250,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: energy_flexibility_mv_batteries_electricity
-  position: 52
+  position: 53
   slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
   additional_specs:
     other:
@@ -238,7 +258,7 @@
 - key: settings_enable_storage_optimisation_energy_flexibility_mv_batteries_electricity
   step_value: 1.0
   unit: boolean
-  position: 53
+  position: 54
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
   config:

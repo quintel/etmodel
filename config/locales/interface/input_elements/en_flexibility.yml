@@ -453,11 +453,33 @@ en:
         peak power. Offshore solar PV plants are connected to the offshore-net in the ETM.
         The installed capacity can be adjusted <a href="/scenario/demand/households/solar-panels">here</a>.
     households_flexibility_p2p_electricity_market_penetration:
-      title: Batteries in households
+      title: Market penetration
       short_description:
       description: |
         Using this slider you can set the percentage of households that is equipped with a household
         battery. You can click on the 'Technical and financial properties' to see the resulting
+        installed capacity and storage volume. The investment costs of household batteries can be adjusted
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
+        A number of charts are available to help you determine the effect of installing household batteries: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness to pay or never exceeds the willingness to accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
+    volume_of_households_flexibility_p2p_electricity:
+      title: Relative storage volume
+      short_description:
+      description: |
+        Using this slider you can set the relative storage volume in hours of household
+        batteries. You can click on the 'Technical and financial properties' to see the resulting
         installed capacity and storage volume. The investment costs of household batteries can be adjusted
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
         A number of charts are available to help you determine the effect of installing household batteries: </br></br>
@@ -796,10 +818,31 @@ en:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     capacity_of_energy_flexibility_mv_batteries_electricity:
-      title: Large-scale batteries
+      title: Installed capacity
       short_description:
       description: |
         With this slider, you can set the input capacity of large-scale batteries.
+        The investment costs of large-scale batteries can be adjusted
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
+        A number of charts are available to help you determine the effect of using large-scale batteries: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        The yearly use of electricity consumed by flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        The hourly electricity supply and demand by flexible technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        The integral costs of flexible demand technologies.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
+        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
+        price never drops below the willingness to pay or never exceeds the willingness to accept. You can
+        change these parameters in the sliders below and you can view the hourly electricity price in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        this chart</a>.
+    volume_of_energy_flexibility_mv_batteries_electricity:
+      title: Relative storage volume
+      short_description:
+      description: |
+        With this slider, you can set the relative storage volume of large-scale batteries.
         The investment costs of large-scale batteries can be adjusted
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using large-scale batteries: </br></br>

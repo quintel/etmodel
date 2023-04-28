@@ -750,10 +750,32 @@ nl:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     capacity_of_energy_flexibility_hv_opac_electricity:
-      title: OPAC
+      title: Geïnstalleerd vermogen
       short_description:
       description: |
         Met dit schuifje kun je het inputvermogen van Ondergrondse Pomp Accumulatie Centrales (OPAC) bepalen.
+        De investeringskosten van OPAC kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        hier</a> worden aangepast. <br></br>
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
+        van de inzet van OPAC: </br></br>
+        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        De integrale kosten van flexible vraagtechnnologieën</a></li>
+        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
+        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
+        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
+        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
+        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
+        deze grafiek</a>.
+    volume_of_energy_flexibility_hv_opac_electricity:
+      title: Relatief opslagvolume
+      short_description:
+      description: |
+        Met dit schuifje kun je het opslagvolume van Ondergrondse Pomp Accumulatie Centrales (OPAC) bepalen.
         De investeringskosten van OPAC kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
         hier</a> worden aangepast. <br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is

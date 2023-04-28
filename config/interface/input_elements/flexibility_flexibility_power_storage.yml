@@ -156,9 +156,19 @@
 - key: capacity_of_energy_flexibility_hv_opac_electricity
   step_value: 1.0
   unit: MW
-  interface_group: capacity
+  interface_group: technical_specifications
   related_node: energy_flexibility_hv_opac_electricity
   position: 40
+  slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w_s
+- key: volume_of_energy_flexibility_hv_opac_electricity
+  step_value: 1.0
+  unit: hour
+  interface_group: technical_specifications
+  related_node: energy_flexibility_hv_opac_electricity
+  position: 41
   slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
   additional_specs:
     other:
@@ -168,7 +178,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: energy_flexibility_hv_opac_electricity
-  position: 41
+  position: 42
   slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
   additional_specs:
     other:
@@ -178,7 +188,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: energy_flexibility_hv_opac_electricity
-  position: 42
+  position: 43
   slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
   additional_specs:
     other:
@@ -186,7 +196,7 @@
 - key: settings_enable_storage_optimisation_energy_flexibility_hv_opac_electricity
   step_value: 1.0
   unit: boolean
-  position: 43
+  position: 44
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
   config:

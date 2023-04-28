@@ -64,9 +64,10 @@ en:
     costs_flexibility_storage:
       title: Electricity storage
       short_description:
-      description: Excess electricity can temporarily be stored in for example household
-        batteries. Below, you can specify how much the investment costs of this technology
-        will change in the future.
+      description: |
+        Electricity can be <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
+        stored</a> in different technologies. Below you can specify how the investment costs and the 
+        round-trip efficiency of electricity storage will change in the future.
     costs_heat_network:
       title: Costs district heating infrastructure
       short_description:

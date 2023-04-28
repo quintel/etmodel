@@ -372,21 +372,21 @@ en:
         waste-incinerator plants. Costs are compared to current costs.\r\n<br/>\r\n<br/>\r\nWaste-incinerators
         are often used to generate both heat and electricity."
     investment_costs_households_flexibility_p2p_electricity:
-      title: Investment costs household batteries
+      title: Batteries in households
       short_description:
       description: "Household batteries are often mentioned as a convenient way to
         store excess electricity such that you can use it at a later time. With <a
         href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
         >this slider</a> you can choose what percentage of all households should have
-        such a battery and with the above slider you can presumably set your assumption
+        such a battery and with the above slider you can set your assumption
         for the future change in investment costs of households batteries.\r\n</br>"
     investment_costs_energy_flexibility_hv_opac_electricity:
-      title: Investment costs underground pumped hydro storage
+      title: Underground pumped hydro storage
       short_description:
       description: This slider determines the future change in investment costs of
         underground hydro pumped storage.
     investment_costs_energy_flexibility_mv_batteries_electricity:
-      title: Investment costs large-scale batteries
+      title: Large-scale batteries
       short_description:
       description: |
         This slider determines the future change in investment costs large-scale
@@ -975,7 +975,7 @@ en:
       It is not possible to the absolute value of the future SCOP of air-source heat pumps with a slider as this is a result of hourly
       calculations based on the hourly outside temperature curve."
     capacity_costs_energy_flexibility_flow_batteries_electricity:
-      title: Investment costs per MW flow batteries
+      title: Flow batteries per MW
       short_decription: ''
       description: |
         In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
@@ -986,7 +986,7 @@ en:
         Flexibility</a> section you can determine the installed capacity and relative storage volume 
         for your scenario.
     volume_costs_energy_flexibility_flow_batteries_electricity:
-      title: Investment costs per MWh flow batteries
+      title: Flow batteries per MWh
       short_decription: ''
       description: |
         In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
@@ -1042,3 +1042,67 @@ en:
       short_description:
       description: |
         This slider sets the future efficiency of ammonia reformers.
+    efficiency_households_flexibility_p2p_electricity:
+      title: Batteries in households
+      short_description:
+      description: |
+        The round-trip efficiency is the ratio of the energy output compared to the energy 
+        input of a storage technology, taking into account losses incurred during charging 
+        and discharging. </br></br>
+        With this slider you can determine the future round-trip efficiency of 
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-households">
+        batteries in households</a>.
+    efficiency_transport_flexibility_p2p_electricity:
+      title: Batteries in electric vehicles
+      short_description:
+      description: |
+        The round-trip efficiency is the ratio of the energy output compared to the energy 
+        input of a storage technology, taking into account losses incurred during charging 
+        and discharging. </br></br>
+        With this slider you can determine the future round-trip efficiency of 
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        batteries in electric vehicles</a>: cars, buses, trucks and vans.
+    efficiency_energy_flexibility_mv_batteries_electricity:
+      title: Large-scale batteries
+      short_description:
+      description: |
+        The round-trip efficiency is the ratio of the energy output compared to the energy 
+        input of a storage technology, taking into account losses incurred during charging 
+        and discharging. </br></br>
+        With this slider you can determine the future round-trip efficiency of 
+        <a href="/scenario/flexibility/flexibility_storage/large-scale-batteries">
+        large-scale batteries</a>, including the batteries used in 
+        <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
+        wind turbines with storage systems</a> and in 
+        <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
+        solar plants with storage systems</a>.
+    efficiency_energy_flexibility_pumped_storage_electricity:
+      title: Reservoirs
+      short_description:
+      description: |
+        The round-trip efficiency is the ratio of the energy output compared to the energy 
+        input of a storage technology, taking into account losses incurred during charging 
+        and discharging. </br></br>
+        With this slider you can determine the future round-trip efficiency of 
+        <a href="/scenario/flexibility/flexibility_storage/reservoirs">
+        reservoirs</a>.
+    efficiency_energy_flexibility_hv_opac_electricity:
+      title: Underground pumped hydro storage
+      short_description:
+      description: |
+        The round-trip efficiency is the ratio of the energy output compared to the energy 
+        input of a storage technology, taking into account losses incurred during charging 
+        and discharging. </br></br>
+        With this slider you can determine the future round-trip efficiency of 
+        <a href="/scenario/flexibility/flexibility_storage/underground-pumped-hydro-storage">
+        underground pumped hydro storage</a>.
+    efficiency_energy_flexibility_flow_batteries_electricity:
+      title: Flow batteries
+      short_description:
+      description: |
+        The round-trip efficiency is the ratio of the energy output compared to the energy 
+        input of a storage technology, taking into account losses incurred during charging 
+        and discharging. </br></br>
+        With this slider you can determine the future round-trip efficiency of 
+        <a href="/scenario/flexibility/flexibility_storage/flow-batteries">
+        flow batteries</a>.

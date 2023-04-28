@@ -396,7 +396,7 @@ nl:
         de investeringskosten van waterstofcentrales. De kosten worden vergeleken met de
         kosten van vandaag de dag.
     investment_costs_households_flexibility_p2p_electricity:
-      title: Investeringskosten batterijen in huishoudens
+      title: Batterijen in huishoudens
       short_description:
       description: "Batterijen in huishouden worden vaak genoemd als oplossing voor
         het opvangen van elektriciteitsoverschotten. Met <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
@@ -404,12 +404,12 @@ nl:
         met batterijopslag en vervolgens kan je met bovenstaande slider aangeven hoeveel
         de investeringskosten zullen veranderen voor deze batterijen.\r\n</br>"
     investment_costs_energy_flexibility_hv_opac_electricity:
-      title: Investeringskosten OPAC
+      title: OPAC
       short_description:
       description: Dit schuifje bepaalt de toekomstige verandering in investeringskosten
         van Ondergrondse Pomp Accumulatie Centrale (OPAC).
     investment_costs_energy_flexibility_mv_batteries_electricity:
-      title: Investeringskosten grootschalige batterijopslag
+      title: Grootschalige batterijopslag
       short_description:
       description: |
         Dit schuifje bepaalt de toekomstige verandering in investeringskosten van grootschalige batterijopslag. 
@@ -1017,7 +1017,7 @@ nl:
         Het is niet mogelijk om de absolute waarde van de SCOP van de hybride warmtepompen in te stellen, omdat het een resultaat is van uurlijkse berekeningen o.b.v.
         het uurlijkse profiel van de buitentemperatuur.
     capacity_costs_energy_flexibility_flow_batteries_electricity:
-      title: Investeringskosten per MW flowbatterijen
+      title: Flowbatterijen per MW
       short_decription:
       description: |
         In tegenstelling tot andere batterijen kunnen voor flowbatterijen het inputvermogen en het 
@@ -1028,7 +1028,7 @@ nl:
         Flexibiliteit</a> sectie kun je het opgesteld vermogen en de verhouding met het opslagvolume 
         aanpassen.
     volume_costs_energy_flexibility_flow_batteries_electricity:
-      title: Investeringskosten per MWh flowbatterijen
+      title: Flowbatterijen per MWh
       short_decription:
       description: |
         In tegenstelling tot andere batterijen kunnen voor flowbatterijen het inputvermogen en het 
@@ -1084,3 +1084,67 @@ nl:
       short_description:
       description: |
         Dit schuifje stelt de toekomstige efficiëntie van ammoniak reformers in.
+    efficiency_households_flexibility_p2p_electricity:
+      title: Batterijen in huishoudens
+      short_description:
+      description: |
+        De retourefficiëntie is de verhouding tussen de energie-output en de energie-input 
+        van een opslagtechnologie, rekening houdend met verliezen die optreden tijdens het 
+        opladen en ontladen. </br></br>
+        Met dit schuifje kun je de toekomstige retourefficiëntie van 
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-households">
+        batterijen in huishoudens</a> bepalen.
+    efficiency_transport_flexibility_p2p_electricity:
+      title: Batterijen in elektrische voertuigen
+      short_description:
+      description: |
+        De retourefficiëntie is de verhouding tussen de energie-output en de energie-input 
+        van een opslagtechnologie, rekening houdend met verliezen die optreden tijdens het 
+        opladen en ontladen. </br></br>
+        Met dit schuifje kun je de toekomstige retourefficiëntie van 
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        batterijen in elektrische voertuigen</a> bepalen: auto's, bussen, vrachtwagens en bestelbussen.
+    efficiency_energy_flexibility_mv_batteries_electricity:
+      title: Grootschalige batterijopslag
+      short_description:
+      description: |
+        De retourefficiëntie is de verhouding tussen de energie-output en de energie-input 
+        van een opslagtechnologie, rekening houdend met verliezen die optreden tijdens het 
+        opladen en ontladen. </br></br>
+        Met dit schuifje kun je de toekomstige retourefficiëntie van 
+        <a href="/scenario/flexibility/flexibility_storage/large-scale-batteries">
+        grootschalige batterijopslag</a> bepalen, waaronder ook de batterijen die gebruikt worden in
+        <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
+        windmolens met opslagsystemen</a> en
+        <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
+        zonnecentrales met opslagsystemen</a>.
+    efficiency_energy_flexibility_pumped_storage_electricity:
+      title: Stuwmeren
+      short_description:
+      description: |
+        De retourefficiëntie is de verhouding tussen de energie-output en de energie-input 
+        van een opslagtechnologie, rekening houdend met verliezen die optreden tijdens het 
+        opladen en ontladen. </br></br>
+        Met dit schuifje kun je de toekomstige retourefficiëntie van 
+        <a href="/scenario/flexibility/flexibility_storage/reservoirs">
+        stuwmeren</a> bepalen.
+    efficiency_energy_flexibility_hv_opac_electricity:
+      title: OPAC
+      short_description:
+      description: |
+        De retourefficiëntie is de verhouding tussen de energie-output en de energie-input 
+        van een opslagtechnologie, rekening houdend met verliezen die optreden tijdens het 
+        opladen en ontladen. </br></br>
+        Met dit schuifje kun je de toekomstige retourefficiëntie van 
+        <a href="/scenario/flexibility/flexibility_storage/underground-pumped-hydro-storage">
+        OPAC</a> bepalen.
+    efficiency_energy_flexibility_flow_batteries_electricity:
+      title: Flowbatterijen
+      short_description:
+      description: |
+        De retourefficiëntie is de verhouding tussen de energie-output en de energie-input 
+        van een opslagtechnologie, rekening houdend met verliezen die optreden tijdens het 
+        opladen en ontladen. </br></br>
+        Met dit schuifje kun je de toekomstige retourefficiëntie van 
+        <a href="/scenario/flexibility/flexibility_storage/flow-batteries">
+        flowbatterijen</a> bepalen.

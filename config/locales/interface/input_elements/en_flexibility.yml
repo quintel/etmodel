@@ -539,7 +539,7 @@ en:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     transport_car_using_electricity_availability:
-      title: Batteries in electric cars
+      title: Deployable capacity
       short_description:
       description: |
         Not all of the storage volume of electric cars can be used to provide storage services to the electricity 
@@ -561,8 +561,12 @@ en:
         change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
+    volume_of_transport_car_using_electricity:
+      title: Relative storage volume
+      short_description:
+      description:
     transport_bus_using_electricity_availability:
-      title: Batteries in electric buses
+      title: Deployable capacity
       short_description:
       description: |
         Not all of the storage volume of electric buses can be used to provide storage services to the electricity 
@@ -584,8 +588,12 @@ en:
         change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
+    volume_of_transport_bus_using_electricity:
+      title: Relative storage volume
+      short_description:
+      description:
     transport_truck_using_electricity_availability:
-      title: Batteries in electric trucks
+      title: Deployable capacity
       short_description:
       description: |
         Not all of the storage volume of electric trucks can be used to provide storage services to the electricity 
@@ -607,8 +615,12 @@ en:
         change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
+    volume_of_transport_truck_using_electricity:
+      title: Relative storage volume
+      short_description:
+      description:
     transport_van_using_electricity_availability:
-      title: Batteries in electric vans
+      title: Deployable capacity
       short_description:
       description: |
         Not all of the storage volume of electric vans can be used to provide storage services to the electricity 
@@ -630,6 +642,10 @@ en:
         change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
+    volume_of_transport_van_using_electricity:
+      title: Relative storage volume
+      short_description:
+      description:
     wtp_of_transport_car_flexibility_p2p_electricity:
       title: Willingness to pay
       short_description:
@@ -676,7 +692,7 @@ en:
       title: Reservoirs
       short_description:
       description: |
-        With this slider, you can set the input capacity of reservoirs. </br></br>
+        With this slider, you can set the installed input capacity of reservoirs. </br></br>
         A number of charts are available to help you determine the effect of using reservoirs: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -737,7 +753,7 @@ en:
       title: Installed capacity
       short_description:
       description: |
-        With this slider, you can set the input capacity of underground pumped hydro storage (UPHS).
+        With this slider, you can set the installed input capacity of underground pumped hydro storage (UPHS).
         The investment costs of UPHS can be adjusted
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using UPHS: </br></br>
@@ -821,7 +837,7 @@ en:
       title: Installed capacity
       short_description:
       description: |
-        With this slider, you can set the input capacity of large-scale batteries.
+        With this slider, you can set the installed input capacity of large-scale batteries.
         The investment costs of large-scale batteries can be adjusted
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using large-scale batteries: </br></br>
@@ -902,10 +918,10 @@ en:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     capacity_of_energy_flexibility_flow_batteries_electricity:
-      title: Flow batteries
+      title: Installed capacity
       short_description:
       description: |
-        With this slider, you can set the input capacity of flow batteries. Because the capacity and
+        With this slider, you can set the installed input capacity of flow batteries. Because the capacity and
         storage volume of flow batteries can be adjusted independently, the investment costs of these
         batteries also consist of two components. You can change the costs per MW of input capacity
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>

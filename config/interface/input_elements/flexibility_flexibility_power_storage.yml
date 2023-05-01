@@ -54,9 +54,19 @@
 - key: transport_car_using_electricity_availability
   step_value: 0.1
   unit: "%"
-  interface_group: capacity
+  interface_group: technical_specifications_cars
   related_node: transport_car_flexibility_p2p_electricity
   position: 20
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: volume_of_transport_car_using_electricity
+  step_value: 0.1
+  unit: "hours"
+  interface_group: technical_specifications_cars
+  related_node: transport_car_flexibility_p2p_electricity
+  position: 21
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -64,9 +74,19 @@
 - key: transport_bus_using_electricity_availability
   step_value: 0.1
   unit: "%"
-  interface_group: capacity
+  interface_group: technical_specifications_buses
   related_node: transport_bus_flexibility_p2p_electricity
-  position: 21
+  position: 22
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: volume_of_transport_bus_using_electricity
+  step_value: 0.1
+  unit: "hours"
+  interface_group: technical_specifications_buses
+  related_node: transport_bus_flexibility_p2p_electricity
+  position: 23
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -74,9 +94,19 @@
 - key: transport_truck_using_electricity_availability
   step_value: 0.1
   unit: "%"
-  interface_group: capacity
+  interface_group: technical_specifications_trucks
   related_node: transport_truck_flexibility_p2p_electricity
-  position: 22
+  position: 24
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: volume_of_transport_truck_using_electricity
+  step_value: 0.1
+  unit: "hours"
+  interface_group: technical_specifications_trucks
+  related_node: transport_truck_flexibility_p2p_electricity
+  position: 25
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -84,9 +114,19 @@
 - key: transport_van_using_electricity_availability
   step_value: 0.1
   unit: "%"
-  interface_group: capacity
+  interface_group: technical_specifications_vans
   related_node: transport_van_flexibility_p2p_electricity
-  position: 23
+  position: 26
+  slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w
+- key: volume_of_transport_van_using_electricity
+  step_value: 0.1
+  unit: "hours"
+  interface_group: technical_specifications_vans
+  related_node: transport_van_flexibility_p2p_electricity
+  position: 27
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -96,7 +136,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: transport_car_flexibility_p2p_electricity
-  position: 24
+  position: 28
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -106,7 +146,7 @@
   unit: "€/MWh"
   interface_group: price_sensitive
   related_node: transport_car_flexibility_p2p_electricity
-  position: 25
+  position: 29
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   additional_specs:
     other:
@@ -114,7 +154,7 @@
 - key: settings_enable_storage_optimisation_transport_car_flexibility_p2p_electricity
   step_value: 1.0
   unit: boolean
-  position: 26
+  position: 30
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_transport_car_flexibility_p2p_electricity
   config:
@@ -174,7 +214,7 @@
     other:
       timeframe: i_h_d_w_s
 - key: volume_of_energy_flexibility_hv_opac_electricity
-  step_value: 1.0
+  step_value: 0.1
   unit: "hours"
   interface_group: technical_specifications
   related_node: energy_flexibility_hv_opac_electricity
@@ -226,7 +266,7 @@
     other:
       timeframe: i_h_d
 - key: volume_of_energy_flexibility_mv_batteries_electricity
-  step_value: 1.0
+  step_value: 0.1
   unit: "hours"
   interface_group: technical_specifications
   related_node: energy_flexibility_mv_batteries_electricity
@@ -270,7 +310,7 @@
 - key: capacity_of_energy_flexibility_flow_batteries_electricity
   step_value: 1.0
   unit: MW
-  interface_group: capacity
+  interface_group: technical_specifications
   related_node: energy_flexibility_flow_batteries_electricity
   position: 60
   slide_key: flexibility_power_storage_energy_flexibility_flow_batteries_electricity
@@ -280,7 +320,7 @@
 - key: volume_of_energy_flexibility_flow_batteries_electricity
   step_value: 0.1
   unit: "hours"
-  interface_group: volume
+  interface_group: technical_specifications
   related_node: energy_flexibility_flow_batteries_electricity
   position: 61
   slide_key: flexibility_power_storage_energy_flexibility_flow_batteries_electricity

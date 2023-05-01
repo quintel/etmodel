@@ -565,7 +565,7 @@ nl:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     transport_car_using_electricity_availability:
-      title: Batterijen in elektrische auto's
+      title: Inzetbaar vermogen
       short_description:
       description: |
         Niet al het opslagvolume van elektrische auto's kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
@@ -588,8 +588,12 @@ nl:
         je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
+    volume_of_transport_car_using_electricity:
+      title: Relatief opslagvolume
+      short_description:
+      description:
     transport_bus_using_electricity_availability:
-      title: Batterijen in elektrische bussen
+      title: Inzetbaar vermogen
       short_description:
       description: |
         Niet al het opslagvolume van elektrische bussen kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
@@ -612,8 +616,12 @@ nl:
         je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
+    volume_of_transport_bus_using_electricity:
+      title: Relatief opslagvolume
+      short_description:
+      description:
     transport_truck_using_electricity_availability:
-      title: Batterijen in elektrische vrachtwagens
+      title: Inzetbaar vermogen
       short_description:
       description: |
         Niet al het opslagvolume van elektrische vrachtwagens kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
@@ -636,8 +644,12 @@ nl:
         je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
+    volume_of_transport_truck_using_electricity:
+      title: Relatief opslagvolume
+      short_description:
+      description:
     transport_van_using_electricity_availability:
-      title: Batterijen in elektrische bestelbussen
+      title: Inzetbaar vermogen
       short_description:
       description: |
         Niet al het opslagvolume van elektrische bestelbussen kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
@@ -660,6 +672,10 @@ nl:
         je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
+    volume_of_transport_van_using_electricity:
+      title: Relatief opslagvolume
+      short_description:
+      description:
     wtp_of_transport_car_flexibility_p2p_electricity:
       title: Willingness-to-pay
       short_description:
@@ -710,7 +726,7 @@ nl:
       title: Stuwmeren
       short_description:
       description: |
-        Met dit schuifje kun je het inputvermogen van stuwmeren bepalen. </br></br>
+        Met dit schuifje kun je het geïnstalleerd inputvermogen van stuwmeren bepalen. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de inzet van stuwmeren: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -776,7 +792,7 @@ nl:
       title: Geïnstalleerd vermogen
       short_description:
       description: |
-        Met dit schuifje kun je het inputvermogen van Ondergrondse Pomp Accumulatie Centrales (OPAC) bepalen.
+        Met dit schuifje kun je het geïnstalleerd inputvermogen van Ondergrondse Pomp Accumulatie Centrales (OPAC) bepalen.
         De investeringskosten van OPAC kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
         hier</a> worden aangepast. <br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
@@ -866,7 +882,7 @@ nl:
       title: Geïnstalleerd vermogen
       short_description:
       description: |
-        Met dit schuifje kun je het inputvermogen van grootschalige batterijopslag bepalen.
+        Met dit schuifje kun je het geïnstalleerd inputvermogen van grootschalige batterijopslag bepalen.
         De investeringskosten van grootschalige batterijopslag kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
         hier</a> worden aangepast. <br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
@@ -953,10 +969,10 @@ nl:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     capacity_of_energy_flexibility_flow_batteries_electricity:
-      title: Flowbatterijen
+      title: Geïnstalleerd vermogen
       short_description:
       description: |
-        Met dit schuifje kun je het inputvermogen van flowbatterijen bepalen. Omdat het inputvermogen en het
+        Met dit schuifje kun je het geïnstalleerd inputvermogen van flowbatterijen bepalen. Omdat het inputvermogen en het
         opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan de investeringskosten
         ook uit twee componenten. Je kunt de investeringskosten per MW inputvermogen
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">

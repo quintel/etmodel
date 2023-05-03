@@ -34,9 +34,12 @@ body#model
   #sidebar
     width: 209px
     position: fixed
-    height: 100%
+    // - height of dashboard - height of scenario-nav - height of main nav
+    height: calc(100% - 68px - 42px - 57px)
     background-color: #fff
     z-index: 98
+    overflow-y: scroll
+    overflow-x: hidden
 
     & > .sep:last-child:after
       // Adds some space below the last item in the sidebar to ensure that a scrollbar appears as soon

@@ -458,8 +458,8 @@ en:
       description: |
         Using this slider you can set the percentage of households that is equipped with a household
         battery. You can click on the 'Technical and financial properties' to see the resulting
-        installed capacity and storage volume. The investment costs of household batteries can be adjusted
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
+        installed capacity and storage volume. The efficiency and investment costs of household batteries can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of installing household batteries: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -478,24 +478,14 @@ en:
       title: Relative storage volume
       short_description:
       description: |
-        Using this slider you can set the relative storage volume in hours of household
-        batteries. You can click on the 'Technical and financial properties' to see the resulting
-        installed capacity and storage volume. The investment costs of household batteries can be adjusted
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
-        A number of charts are available to help you determine the effect of installing household batteries: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
-        price never drops below the willingness to pay or never exceeds the willingness to accept. You can
-        change these parameters in the sliders below and you can view the hourly electricity price in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        this chart</a>.
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     wtp_of_households_flexibility_p2p_electricity:
       title: Willingness to pay
       short_description:
@@ -545,8 +535,11 @@ en:
         Not all of the storage volume of electric cars can be used to provide storage services to the electricity 
         grid, because some of the electricity is needed to power the next ride. With this slider, you can therefore 
         determine which percentage of the total available battery capacity can be used for storage 
-        services. The total available capacity of car batteries is determined by the share of electric cars in the 
-        <a href="/scenario/demand/transport_passenger_transport/car-technology">car technology</a> section. </br></br>
+        services. </br></br>
+        The total available capacity of car batteries is determined by the share of electric cars in the 
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">car technology</a> section.
+        The efficiency of electric vehicles can be can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using batteries in electric vehicles: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -564,7 +557,15 @@ en:
     volume_of_transport_car_using_electricity:
       title: Relative storage volume
       short_description:
-      description:
+      description: |
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     transport_bus_using_electricity_availability:
       title: Deployable capacity
       short_description:
@@ -572,8 +573,11 @@ en:
         Not all of the storage volume of electric buses can be used to provide storage services to the electricity 
         grid, because some of the electricity is needed to power the next ride. With this slider, you can therefore 
         determine which percentage of the total available battery capacity can be used for storage 
-        services. The total available capacity of bus batteries is determined by the share of electric buses in the 
-        <a href="/scenario/demand/transport_passenger_transport/bus-technology">bus technology</a> section. </br></br>
+        services. </br></br>
+        The total available capacity of bus batteries is determined by the share of electric buses in the 
+        <a href="/scenario/demand/transport_passenger_transport/bus-technology">bus technology</a> section.
+        The efficiency of electric vehicles can be can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using batteries in electric vehicles: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -591,7 +595,15 @@ en:
     volume_of_transport_bus_using_electricity:
       title: Relative storage volume
       short_description:
-      description:
+      description: |
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     transport_truck_using_electricity_availability:
       title: Deployable capacity
       short_description:
@@ -599,8 +611,11 @@ en:
         Not all of the storage volume of electric trucks can be used to provide storage services to the electricity 
         grid, because some of the electricity is needed to power the next ride. With this slider, you can therefore 
         determine which percentage of the total available battery capacity can be used for storage 
-        services. The total available capacity of truck batteries is determined by the share of electric trucks in the 
-        <a href="/scenario/demand/transport_freight_transport/truck-technology">truck technology</a> section. </br></br>
+        services. </br></br>
+        The total available capacity of truck batteries is determined by the share of electric trucks in the 
+        <a href="/scenario/demand/transport_freight_transport/truck-technology">truck technology</a> section.
+        The efficiency of electric vehicles can be can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using batteries in electric vehicles: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -618,7 +633,15 @@ en:
     volume_of_transport_truck_using_electricity:
       title: Relative storage volume
       short_description:
-      description:
+      description: |
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     transport_van_using_electricity_availability:
       title: Deployable capacity
       short_description:
@@ -626,8 +649,11 @@ en:
         Not all of the storage volume of electric vans can be used to provide storage services to the electricity 
         grid, because some of the electricity is needed to power the next ride. With this slider, you can therefore 
         determine which percentage of the total available battery capacity can be used for storage 
-        services. The total available capacity of van batteries is determined by the share of electric vans in the 
-        <a href="/scenario/demand/transport_freight_transport/van-technology">van technology</a> section. </br></br>
+        services. </br></br>
+        The total available capacity of van batteries is determined by the share of electric vans in the 
+        <a href="/scenario/demand/transport_freight_transport/van-technology">van technology</a> section. 
+        The efficiency of electric vehicles can be can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using batteries in electric vehicles: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -645,7 +671,15 @@ en:
     volume_of_transport_van_using_electricity:
       title: Relative storage volume
       short_description:
-      description:
+      description: |
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     wtp_of_transport_car_flexibility_p2p_electricity:
       title: Willingness to pay
       short_description:
@@ -689,10 +723,12 @@ en:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
     capacity_of_energy_flexibility_pumped_storage_electricity:
-      title: Reservoirs
+      title: Installed capacity
       short_description:
       description: |
-        With this slider, you can set the installed input capacity of reservoirs. </br></br>
+        With this slider, you can set the installed input capacity of reservoirs. 
+        The efficiency of reservoirs can be can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using reservoirs: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -707,6 +743,18 @@ en:
         change these parameters in the sliders below and you can view the hourly electricity price in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         this chart</a>.
+    volume_of_energy_flexibility_pumped_storage_electricity:
+      title: Relative storage volume
+      short_description:
+      description: |
+        With this slider, you can set the storage volume relative to the input capacity of the reservoirs.
+        This determines how many hours the reservoirs need to consume electricity at full capacity to go from being empty 
+        to being full. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     wtp_of_energy_flexibility_pumped_storage_electricity:
       title: Willingness to pay
       short_description:
@@ -754,8 +802,8 @@ en:
       short_description:
       description: |
         With this slider, you can set the installed input capacity of underground pumped hydro storage (UPHS).
-        The investment costs of UPHS can be adjusted
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
+        The efficiency and investment costs of UPHS can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using UPHS: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -774,23 +822,14 @@ en:
       title: Relative storage volume
       short_description:
       description: |
-        With this slider, you can set the storage volume of underground pumped hydro storage (UPHS).
-        The investment costs of UPHS can be adjusted
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
-        A number of charts are available to help you determine the effect of using UPHS: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
-        price never drops below the willingness to pay or never exceeds the willingness to accept. You can
-        change these parameters in the sliders below and you can view the hourly electricity price in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        this chart</a>.
+        With this slider, you can set the storage volume relative to the input capacity of the underground pumped hydro storage (UPHS).
+        This determines how many hours the UPHS needs to consume electricity at full capacity to go from being empty 
+        to being full. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     wtp_of_energy_flexibility_hv_opac_electricity:
       title: Willingness to pay
       short_description:
@@ -838,8 +877,8 @@ en:
       short_description:
       description: |
         With this slider, you can set the installed input capacity of large-scale batteries.
-        The investment costs of large-scale batteries can be adjusted
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
+        The efficiency and investment costs of large-scale batteries can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using large-scale batteries: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -858,23 +897,14 @@ en:
       title: Relative storage volume
       short_description:
       description: |
-        With this slider, you can set the relative storage volume of large-scale batteries.
-        The investment costs of large-scale batteries can be adjusted
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
-        A number of charts are available to help you determine the effect of using large-scale batteries: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        The yearly use of electricity consumed by flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        The hourly electricity supply and demand by flexible technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        The integral costs of flexible demand technologies.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        A table overview of the use of flexible demand technologies.</a></li></ul> </br>
-        If you do not see an effect of changing this slider, it may be the case that the hourly electricity
-        price never drops below the willingness to pay or never exceeds the willingness to accept. You can
-        change these parameters in the sliders below and you can view the hourly electricity price in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        this chart</a>.
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     wtp_of_energy_flexibility_mv_batteries_electricity:
       title: Willingness to pay
       short_description:
@@ -923,8 +953,8 @@ en:
       description: |
         With this slider, you can set the installed input capacity of flow batteries. Because the capacity and
         storage volume of flow batteries can be adjusted independently, the investment costs of these
-        batteries also consist of two components. You can change the costs per MW of input capacity
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">here</a>. </br></br>
+        batteries also consist of two components. You can change the efficiency of the flow batteries and the costs per MW and MWh
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>. </br></br>
         A number of charts are available to help you determine the effect of using flow batteries: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -943,11 +973,13 @@ en:
       title: Relative storage volume
       short_description:
       description: |
-        With this slider, you can set the storage volume of flow batteries, relative to the input capacity. Effectively
-        this sliders determines how many hours an empty flow battery can charge at full volume before it is full. You
-        can see the total resulting storage volume in the 'Technical and financial properties' below. To quickly compare
-        it with other storage technologies you can also open
-        <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
         this table</a>. </br></br>
         Because the capacity and storage volume of flow batteries can be adjusted independently, the investment
         costs of these batteries also consist of two components. You can change the costs per MWh of storage volume
@@ -1291,7 +1323,9 @@ en:
         The storage volume is related to the charging capacity by a fixed ratio. This means
         that the storage volume will therefore also be updated if you change this slider.
         To see the effect of this slider on the total battery capacity and storage volume,
-        you can click on the 'Technical and financial properties'.
+        you can click on the 'Technical and financial properties'. </br></br>
+        The efficiency of the battery can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>.
     battery_capacity_always_on_solar_pv_solar_radiation:
       title: Relative battery capacity
       short_description:
@@ -1299,7 +1333,7 @@ en:
         The input capacity, or charging capacity, of the battery is set relative to the
         installed capacity of the solar PV plants with battery systems. This means that if
         you change the installed capacity in the
-        <a href="/scenario/supply/electricity_renewable/solar-power>
+        <a href="/scenario/supply/electricity_renewable/solar-power">
         Supply</a> section, the charging capacity will change accordingly, with the ratio
         specified by this slider. <br/><br/>
         The battery system only consumes electricity when the production exceeds the grid
@@ -1309,7 +1343,33 @@ en:
         The storage volume is related to the charging capacity by a fixed ratio. This means
         that the storage volume will therefore also be updated if you change this slider.
         To see the effect of this slider on the total battery capacity and storage volume,
-        you can click on the 'Technical and financial properties'.
+        you can click on the 'Technical and financial properties'. </br></br>
+        The efficiency of the battery can be adjusted
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">here</a>.
+    volume_of_energy_flexibility_wind_batteries_electricity:
+      title: Relative storage volume
+      short_description:
+      description: |
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
+    volume_of_energy_flexibility_solar_batteries_electricity:
+      title: Relative storage volume
+      short_description:
+      description: |
+        With this slider, you can set the storage volume relative to the input capacity of the battery.
+        This determines how many hours the battery needs to charge at full capacity to go from being empty 
+        to fully charged. Effectively this slider therefore changes the total storage volume, given a 
+        certain amount of installed capacity. </br></br>
+        You can see the total resulting storage volume in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>.
     flexibility_residual_load_curve_moving_average:
       title: Moving average time period
       short_description:

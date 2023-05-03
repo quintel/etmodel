@@ -478,8 +478,8 @@ nl:
       description: |
         Met dit schuifje kan je bepalen welk percentage van de huishoudens wordt uitgerust met een batterij.
         Bij de 'Technische parameters en kosten' kun je vervolgens zien wat het totaal geïnstalleerde vermogen
-        en opslagvolume is. De investeringskosten van batterijen in huishoudens kunnen
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">hier</a> worden aangepast. </br></br>
+        en opslagvolume is. De investeringskosten en efficiëntie van batterijen in huishoudens kunnen
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de installatie van batterijen in huishoudens: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -499,25 +499,14 @@ nl:
       title: Relatief opslagvolume
       short_description:
       description: |
-        Met dit schuifje kan je het relatieve opslagvolume van thuisbatterijen instellen in uren.
-        Bij de 'Technische parameters en kosten' kun je vervolgens zien wat het totaal geïnstalleerde vermogen
-        en opslagvolume is. De investeringskosten van batterijen in huishoudens kunnen
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">hier</a> worden aangepast. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
-        van de installatie van batterijen in huishoudens: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        deze grafiek</a>.
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     wtp_of_households_flexibility_p2p_electricity:
       title: Willingness-to-pay
       short_description:
@@ -570,9 +559,12 @@ nl:
       description: |
         Niet al het opslagvolume van elektrische auto's kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
         omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
-        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. De totale beschikbare 
+        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. </br></br>
+        De totale beschikbare 
         capaciteit van batterijen in auto's hangt af van het aandeel elektrische auto's in de 
-        <a href="/scenario/demand/transport_passenger_transport/car-technology">autotechnologie</a> sectie. </br></br>
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">autotechnologie</a> sectie. 
+        De efficiëntie van batterijen in elektrische voertuigen kan
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van het benutten van batterijen in elektrische auto's: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -591,16 +583,27 @@ nl:
     volume_of_transport_car_using_electricity:
       title: Relatief opslagvolume
       short_description:
-      description:
+      description: |
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     transport_bus_using_electricity_availability:
       title: Inzetbaar vermogen
       short_description:
       description: |
         Niet al het opslagvolume van elektrische bussen kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
         omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
-        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. De totale beschikbare 
+        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. </br></br>
+        De totale beschikbare 
         capaciteit van batterijen in bussen hangt af van het aandeel elektrische bussen in de 
-        <a href="/scenario/demand/transport_passenger_transport/bus-technology">bustechnologie</a> sectie. </br></br>
+        <a href="/scenario/demand/transport_passenger_transport/bus-technology">bustechnologie</a> sectie.
+        De efficiëntie van batterijen in elektrische voertuigen kan
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van het benutten van batterijen in elektrische auto's: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -619,16 +622,27 @@ nl:
     volume_of_transport_bus_using_electricity:
       title: Relatief opslagvolume
       short_description:
-      description:
+      description: |
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     transport_truck_using_electricity_availability:
       title: Inzetbaar vermogen
       short_description:
       description: |
         Niet al het opslagvolume van elektrische vrachtwagens kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
         omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
-        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. De totale beschikbare 
+        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. </br></br>
+        De totale beschikbare 
         capaciteit van batterijen in vrachtwagens hangt af van het aandeel elektrische vrachtwagens in de 
-        <a href="/scenario/demand/transport_freight_transport/truck-technology">vrachtwagentechnologie</a> sectie. </br></br>
+        <a href="/scenario/demand/transport_freight_transport/truck-technology">vrachtwagentechnologie</a> sectie.
+        De efficiëntie van batterijen in elektrische voertuigen kan
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van het benutten van batterijen in elektrische auto's: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -647,16 +661,27 @@ nl:
     volume_of_transport_truck_using_electricity:
       title: Relatief opslagvolume
       short_description:
-      description:
+      description: |
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     transport_van_using_electricity_availability:
       title: Inzetbaar vermogen
       short_description:
       description: |
         Niet al het opslagvolume van elektrische bestelbussen kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
         omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
-        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. De totale beschikbare 
+        welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. </br></br>
+        De totale beschikbare 
         capaciteit van batterijen in bestelbussen hangt af van het aandeel elektrische bestelbussen in de 
-        <a href="/scenario/demand/transport_freight_transport/truck-technology">bestelbussentechnologie</a> sectie. </br></br>
+        <a href="/scenario/demand/transport_freight_transport/truck-technology">bestelbussentechnologie</a> sectie.
+        De efficiëntie van batterijen in elektrische voertuigen kan
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van het benutten van batterijen in elektrische auto's: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -675,7 +700,15 @@ nl:
     volume_of_transport_van_using_electricity:
       title: Relatief opslagvolume
       short_description:
-      description:
+      description: |
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     wtp_of_transport_car_flexibility_p2p_electricity:
       title: Willingness-to-pay
       short_description:
@@ -723,10 +756,12 @@ nl:
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
     capacity_of_energy_flexibility_pumped_storage_electricity:
-      title: Stuwmeren
+      title: Geïnstalleerd vermogen
       short_description:
       description: |
-        Met dit schuifje kun je het geïnstalleerd inputvermogen van stuwmeren bepalen. </br></br>
+        Met dit schuifje kun je het geïnstalleerd inputvermogen van stuwmeren bepalen. 
+        De efficiëntie van stuwmeren kan
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de inzet van stuwmeren: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -742,6 +777,18 @@ nl:
         je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a>.
+    volume_of_energy_flexibility_pumped_storage_electricity:
+      title: Relatief opslagvolume
+      short_description:
+      description: |
+        Met dit schuifje kun je het opslagvolume van de stuwmeren relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de stuwmeren op vol vermogen elektriciteit moeten consumeren om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        opgesteld vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     wtp_of_energy_flexibility_pumped_storage_electricity:
       title: Willingness-to-pay
       short_description:
@@ -793,7 +840,7 @@ nl:
       short_description:
       description: |
         Met dit schuifje kun je het geïnstalleerd inputvermogen van Ondergrondse Pomp Accumulatie Centrales (OPAC) bepalen.
-        De investeringskosten van OPAC kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        De efficiëntie en investeringskosten van OPAC kunnen <a href="/scenario/costs/costs_flexibility/electricity-storage">
         hier</a> worden aangepast. <br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de inzet van OPAC: </br></br>
@@ -814,24 +861,14 @@ nl:
       title: Relatief opslagvolume
       short_description:
       description: |
-        Met dit schuifje kun je het opslagvolume van Ondergrondse Pomp Accumulatie Centrales (OPAC) bepalen.
-        De investeringskosten van OPAC kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
-        hier</a> worden aangepast. <br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
-        van de inzet van OPAC: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        deze grafiek</a>.
+        Met dit schuifje kun je het opslagvolume van de Ondergrondse Pomp Accumulatie Centrales (OPAC) relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de OPAC op vol vermogen elektriciteit moeten consumeren om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        opgesteld vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     wtp_of_energy_flexibility_hv_opac_electricity:
       title: Willingness-to-pay
       short_description:
@@ -883,7 +920,7 @@ nl:
       short_description:
       description: |
         Met dit schuifje kun je het geïnstalleerd inputvermogen van grootschalige batterijopslag bepalen.
-        De investeringskosten van grootschalige batterijopslag kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        De efficiëntie en investeringskosten van grootschalige batterijopslag kunnen <a href="/scenario/costs/costs_flexibility/electricity-storage">
         hier</a> worden aangepast. <br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de inzet van grootschalige batterijopslag: </br></br>
@@ -904,24 +941,14 @@ nl:
       title: Relatief opslagvolume
       short_description:
       description: |
-        Met dit schuifje kun je het relatieve opslagvolume van grootschalige batterijopslag bepalen.
-        De investeringskosten van grootschalige batterijopslag kunnen <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
-        hier</a> worden aangepast. <br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
-        van de inzet van grootschalige batterijopslag: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        deze grafiek</a>.
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     wtp_of_energy_flexibility_mv_batteries_electricity:
       title: Willingness-to-pay
       short_description:
@@ -974,8 +1001,8 @@ nl:
       description: |
         Met dit schuifje kun je het geïnstalleerd inputvermogen van flowbatterijen bepalen. Omdat het inputvermogen en het
         opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan de investeringskosten
-        ook uit twee componenten. Je kunt de investeringskosten per MW inputvermogen
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        ook uit twee componenten. Je kunt de efficiëntie van flowbatterijen en investeringskosten per MW en per MWh
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">
         hier</a> aanpassen. <br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
         van de inzet van flowbatterijen: </br></br>
@@ -996,11 +1023,13 @@ nl:
       title: Relatief opslagvolume
       short_description:
       description: |
-        Met dit schuifje kun je het relatieve opslagvolume van flowbatterijen ten opzichte van het inputvermogen bepalen.
-        Effectief bepaalt dit schuifje hoeveel uur je een lege fowbatterij op vol vermogen kan opladen tot het vol is.
-        Het totale opslagvolume kun je vervolgens zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
-        <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
         deze tabel</a> openen.
         </br></br>
         Omdat het inputvermogen en het opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan
@@ -1352,7 +1381,9 @@ nl:
         Er is een vaste verhouding aangenomen van het opslagvolume ten opzichte van het laadvermogen.
         Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op
         de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen
-        en opslagvolume van de batterij te zien.
+        en opslagvolume van de batterij te zien. </br></br>
+        De efficiëntie van de batterij kan
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast.
     battery_capacity_always_on_solar_pv_solar_radiation:
       title: Relatief batterijvermogen
       short_description:
@@ -1370,7 +1401,33 @@ nl:
         Er is een vaste verhouding aangenomen van het opslagvolume ten opzichte van het laadvermogen.
         Dit betekent dat als je dit schuifje verandert, het opslagvolume ook zal veranderen. Klik op
         de 'Technische parameters en kosten' om het effect van dit schuifje op het totale vermogen
-        en opslagvolume van de batterij te zien.
+        en opslagvolume van de batterij te zien.  </br></br>
+        De efficiëntie van de batterij kan
+        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast.
+    volume_of_energy_flexibility_wind_batteries_electricity:
+      title: Relatief opslagvolume
+      short_description:
+      description: |
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
+    volume_of_energy_flexibility_solar_batteries_electricity:
+      title: Relatief opslagvolume
+      short_description:
+      description: |
+        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
+        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd vermogen. </br></br>
+        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen.
     flexibility_residual_load_curve_moving_average:
       title: Voortschrijdend gemiddelde tijdsperiode
       short_description:

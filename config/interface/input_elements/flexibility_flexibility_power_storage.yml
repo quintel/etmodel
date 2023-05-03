@@ -166,10 +166,20 @@
 - key: capacity_of_energy_flexibility_pumped_storage_electricity
   step_value: 1.0
   unit: MW
-  interface_group: capacity
+  interface_group: technical_specifications
   related_node: energy_flexibility_pumped_storage_electricity
   position: 30
   dependent_on: has_mountains
+  slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
+  additional_specs:
+    other:
+      timeframe: i_h_d_w_s
+- key: volume_of_energy_flexibility_pumped_storage_electricity
+  step_value: 0.1
+  unit: "hours"
+  interface_group: technical_specifications
+  related_node: energy_flexibility_pumped_storage_electricity
+  position: 31
   slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
   additional_specs:
     other:
@@ -180,7 +190,7 @@
   interface_group: price_sensitive
   dependent_on: has_mountains
   related_node: energy_flexibility_pumped_storage_electricity
-  position: 31
+  position: 32
   slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
   additional_specs:
     other:
@@ -191,7 +201,7 @@
   dependent_on: has_mountains
   interface_group: price_sensitive
   related_node: energy_flexibility_pumped_storage_electricity
-  position: 32
+  position: 33
   slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
   additional_specs:
     other:
@@ -199,7 +209,7 @@
 - key: settings_enable_storage_optimisation_energy_flexibility_pumped_storage_electricity
   step_value: 1.0
   unit: boolean
-  position: 33
+  position: 34
   interface_group: storage_optimisation
   slide_key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
 

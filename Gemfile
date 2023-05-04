@@ -13,7 +13,7 @@ gem 'rails', '~> 7.0.0'
 gem 'activerecord-session_store'
 gem 'activeresource', '~> 6.0'
 
-gem 'jquery-rails', '~> 4.2.2'
+gem 'jquery-rails', '~> 4.4.0'
 gem 'local_time'
 gem 'haml', '~> 5.0'
 gem 'config'

@@ -55,7 +55,7 @@ nl:
         toekennen aan een ononderbroken elektriciteitslevering, of in andere woorden, de kosten die 
         ze zouden maken als het aanbod verstoord wordt.
     costs_flexibility_conversion:
-      title: Investeringskosten conversie elektriciteit
+      title: Conversie elektriciteit
       short_description:
       description: |
         Elektriciteit kan worden 
@@ -65,11 +65,13 @@ nl:
         De investeringskosten voor power-to-gas elektrolysers kunnen worden aangepast op de
         <a href="/scenario/costs/costs_hydrogen/hydrogen-production">waterstofproductie</a> pagina.
     costs_flexibility_storage:
-      title: Investeringskosten opslag elektriciteit
+      title: Opslag elektriciteit
       short_description:
-      description: Overschotten aan elektriciteit kunnen tijdelijk worden opgeslagen
-        in bijvoorbeeld batterijen in huizen. Hieronder kun je aangeven hoeveel de
-        investeringskosten van deze technologie in de toekomst zullen veranderen.
+      description: |
+        Elektriciteit kan in verschillende technologieën worden
+        <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
+        opgeslagen</a>. Hieronder kun je bepalen hoeveel de investeringskosten en retourefficiëntie 
+        van elektriciteitsoplag zullen veranderen.
     costs_heat_network:
       title: Kosten warmtenetinfrastructuur
       short_description:

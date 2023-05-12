@@ -24,6 +24,9 @@ class @InputElement extends Backbone.Model
   isDisabled: ->
     @get('disabled') || App.scenario.isReadOnly()
 
+  isCoupled: ->
+    this.isDisabled() && @get('coupling_groups')
+
   conversions: ->
     conversions = @get('conversions') or []
 
@@ -153,6 +156,7 @@ class @InputElementList extends Backbone.Collection
       if !values
         console.warn "Missing slider information! #{i.get 'key'}"
         return false
+
       i.set
         min_value: values.min
         max_value: values.max
@@ -169,15 +173,19 @@ class @InputElementList extends Backbone.Collection
 
       v = +values.user
       def = if (v? && !_.isNaN(v)) then v else values.default
+      # Disable if ET-Model *or* ET-Engine disable the input.
+      dis = this.isDisabled(i.get('key')) || i.get('disabled') || values.disabled
 
       i.set({
         user_value: def
-        # Disable if ET-Model *or* ET-Engine disable the input.
-        disabled: this.isDisabled(i.get('key')) || i.get('disabled') || values.disabled
+        disabled: dis
+        # Was it disabled by a coupling?
+        coupled: values.coupling_groups && dis
       }, { silent: true })
 
       i.trigger('initial-set:user_value')
       i.trigger('initial-set:disabled')
+      i.trigger('initial-set:coupled')
 
       @addInputElement(i)
 

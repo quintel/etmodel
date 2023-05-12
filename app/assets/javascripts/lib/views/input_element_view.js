@@ -593,9 +593,15 @@
           this.setTransientValue(this.quinn.model.value);
         }
 
+        if (this.model.get('coupled')) {
+          this.valueElement.addClass('coupled');
+          this.valueElement.html('');
+        }
+
         this.quinn.disable();
       } else {
         this.$el.removeClass('disabled');
+        this.valueElement.removeClass('coupled');
         this.setTransientValue(this.quinn.model.value);
         this.quinn.enable();
       }

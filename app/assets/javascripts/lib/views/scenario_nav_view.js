@@ -96,6 +96,7 @@
       });
 
       new DropdownView({ el: this.el.querySelector('.dropdown') }).render();
+      new DropdownView({ el: this.el.querySelector('#dropdown-coupling') }).render();
 
       return this;
     },

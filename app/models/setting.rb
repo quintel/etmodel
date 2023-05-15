@@ -100,6 +100,10 @@ class Setting
     end
   end
 
+  def uncouple_scenario
+    self.coupling = false
+  end
+
   def start_year
     area.analysis_year || self.class.default_attributes[:start_year]
   end

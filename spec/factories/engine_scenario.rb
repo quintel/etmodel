@@ -6,6 +6,7 @@ FactoryBot.define do
     balanced_values { {} }
     end_year { 2050 }
     esdl_exportable { false }
+    coupling { false }
     keep_compatible { false }
     metadata { {} }
     owner { { id: 1, name: 'John Doe' } }

@@ -65,5 +65,8 @@
             .dropdown-item.text
               = t('header.has_been_coupled')
           %li.sep-above
+            %a.dropdown-item{ href: uncouple_scenario_path(Current.setting.api_session_id), data: { confirm: t('header.uncouple_scenario_confirm') } }
+              = t("header.uncouple_scenario")
+          %li
             %a.dropdown-item{ href: "https://docs.energytransitionmodel.com", target: "_blank"}
               = t('header.documentation')

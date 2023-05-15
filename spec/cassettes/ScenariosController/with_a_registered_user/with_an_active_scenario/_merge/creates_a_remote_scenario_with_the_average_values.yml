@@ -8,11 +8,11 @@ http_interactions:
       string: '{"scenario":{"source":"ETM","area_code":"nl","end_year":2050}}'
     headers:
       User-Agent:
-      - Faraday v2.7.2
+      - Faraday v2.7.3
       Content-Type:
       - application/json
       Authorization:
-      - Bearer access_PvY2W1q3RtKKWJrE
+      - Bearer access_SQu9G7LYxXJ3S9Hv
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx/1.21.3
       Date:
-      - Wed, 21 Dec 2022 10:16:38 GMT
+      - Mon, 15 May 2023 10:08:09 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -47,15 +47,15 @@ http_interactions:
       Vary:
       - Accept, Origin
       Etag:
-      - W/"172db4b1eddce4160afe8f34f018a063"
+      - W/"843119c652d87c91656da4bbb3159beb"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c2de7641-a53f-4e15-92ce-23922713eaa0
+      - e4ab2486-b136-4297-a2de-a9b1d560c7a3
       X-Runtime:
-      - '0.023795'
+      - '1.736149'
     body:
       encoding: UTF-8
-      string: '{"id":2179527,"created_at":"2022-12-21T10:16:38.000Z","updated_at":"2022-12-21T10:16:38.000Z","user_values":{},"end_year":2050,"keep_compatible":false,"private":false,"area_code":"nl","source":"ETM","balanced_values":{},"metadata":{},"start_year":2015,"template":null,"esdl_exportable":false,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/2179527"}'
-  recorded_at: Wed, 21 Dec 2022 10:16:38 GMT
+      string: '{"id":2255690,"created_at":"2023-05-15T10:08:09.000Z","updated_at":"2023-05-15T10:08:09.000Z","user_values":{},"end_year":2050,"keep_compatible":false,"private":false,"area_code":"nl","source":"ETM","balanced_values":{},"metadata":{},"start_year":2015,"owner":null,"coupling":false,"scaling":null,"template":null,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/2255690"}'
+  recorded_at: Mon, 15 May 2023 10:08:09 GMT
 recorded_with: VCR 6.0.0

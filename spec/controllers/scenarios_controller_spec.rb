@@ -256,6 +256,24 @@ describe ScenariosController, vcr: true do
         end
       end
 
+      describe '#uncouple' do
+        subject do
+          get :uncouple, params: { id: 123 }
+          response
+        end
+
+        before do
+          allow(UncoupleAPIScenario).to receive(:call).and_return(ServiceResult.success)
+        end
+
+        it { is_expected.to be_redirect }
+
+        it 'updates the session settings' do
+          subject
+          expect(session[:setting].coupling).to be_falsey
+        end
+      end
+
       xdescribe '#compare' do
         subject do
           s1 = FactoryBot.create :saved_scenario

@@ -999,9 +999,8 @@ nl:
       title: Geïnstalleerd vermogen
       short_description:
       description: |
-        Met dit schuifje kun je het geïnstalleerd inputvermogen van flowbatterijen bepalen. Omdat het inputvermogen en het
-        opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan de investeringskosten
-        ook uit twee componenten. Je kunt de efficiëntie van flowbatterijen en investeringskosten per MW en per MWh
+        Met dit schuifje kun je het geïnstalleerd inputvermogen van flowbatterijen bepalen.
+        Je kunt de efficiëntie van flowbatterijen en investeringskosten per MW en per MWh
         <a href="/scenario/costs/costs_flexibility/electricity-storage">
         hier</a> aanpassen. <br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
@@ -1030,10 +1029,9 @@ nl:
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
         <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
-        deze tabel</a> openen.
-        </br></br>
-        Omdat het inputvermogen en het opslagvolume van flowbatterijen afzonderlijk gevarieerd kunnen worden, bestaan
-        de investeringskosten ook uit twee componenten. Je kunt de investeringskosten per MWh opslagvolume
+        deze tabel</a> openen. </br></br>
+        Omdat het opslagvolume van flowbatterijen in grote mate opgeschaald kan worden, bestaan
+        de investeringskosten uit twee componenten. Je kunt de investeringskosten per MWh opslagvolume
         <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> hier</a> aanpassen.
     wtp_of_energy_flexibility_flow_batteries_electricity:
       title: Willingness-to-pay

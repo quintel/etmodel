@@ -396,27 +396,38 @@ nl:
         de investeringskosten van waterstofcentrales. De kosten worden vergeleken met de
         kosten van vandaag de dag.
     investment_costs_households_flexibility_p2p_electricity:
-      title: Batterijen in huishoudens
+      title: Batterijen in huishoudens per MWh
       short_description:
-      description: "Batterijen in huishouden worden vaak genoemd als oplossing voor
-        het opvangen van elektriciteitsoverschotten. Met <a href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
-        >dit schuifje</a> kun je aangeven welk percentage van de huishoudens is uitgerust
-        met batterijopslag en vervolgens kan je met bovenstaande slider aangeven hoeveel
-        de investeringskosten zullen veranderen voor deze batterijen.\r\n</br>"
+      description: |
+        Dit schuifje bepaalt de toekomstige verandering in investeringskosten voor 
+        batterijen in huishoudens per MWh. </br></br>
+        In de sectie <a href="scenario/flexibility/flexibility_storage/batteries-in-households"> 
+        Flexibiliteit</a> kun je het opgesteld vermogen en relatieve opslagvolume instellen 
+        voor jouw scenario.
     investment_costs_energy_flexibility_hv_opac_electricity:
-      title: OPAC
+      title: OPAC per MWh
       short_description:
-      description: Dit schuifje bepaalt de toekomstige verandering in investeringskosten
-        van Ondergrondse Pomp Accumulatie Centrale (OPAC).
+      description: |
+        Dit schuifje bepaalt de toekomstige verandering in investeringskosten voor 
+        Ondergrondse Pomp Accumulatie Centrale (OPAC) per MWh. </br></br>
+        In de sectie <a href="scenario/flexibility/flexibility_storage/underground-pumped-hydro-storage"> 
+        Flexibiliteit</a> kun je het opgesteld vermogen en relatieve opslagvolume instellen 
+        voor jouw scenario.
     investment_costs_energy_flexibility_mv_batteries_electricity:
-      title: Grootschalige batterijopslag
+      title: Grootschalige batterijopslag per MWh
       short_description:
       description: |
         Dit schuifje bepaalt de toekomstige verandering in investeringskosten van grootschalige batterijopslag. 
-        Dit geldt ook voor de batterijen die onderdeel zijn van een geïntegreerd systeem met 
-        <a href="scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems"> windmolens</a> 
-        of met <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
-        zonnecentrales</a>.
+        Dit geldt ook voor de batterijen die onderdeel zijn van een geïntegreerd systeem met windmolens of met 
+        zonnecentrales. </br></br>
+        In de sectie Flexibiliteit kun opgesteld vermogen en relatieve opslagvolume instellen 
+        voor jouw scenario voor 
+        <a href="scenario/flexibility/flexibility_storage/large-scale-batteries"> 
+        grootschalige batterijopslag</a>, 
+        <a href="scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems"> 
+        batterijen geïntegreerd met windmolens</a>, and
+        <a href="scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems"> 
+        batterijen geïntegreerd met zonnecentrales</a>.
     om_costs_water_river:
       title: Onderhoudskosten waterkracht rivier
       short_description: ''
@@ -1020,23 +1031,21 @@ nl:
       title: Flowbatterijen per MW
       short_decription:
       description: |
-        In tegenstelling tot andere batterijen kunnen voor flowbatterijen het inputvermogen en het 
-        opslagvolume afzonderlijk gevarieerd worden. De investeringskosten bestaan dan ook uit twee 
+        In tegenstelling tot andere batterijen bestaan de investeringskosten van flowbatterijen uit twee
         componenten. De kosten per MW inputcapaciteit kun je met dit schuifje zetten. De kosten per
         MWh opslagvolume zet je met het schuifje hieronder. </br></br>
-        In de <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
-        Flexibiliteit</a> sectie kun je het opgesteld vermogen en de verhouding met het opslagvolume 
+        In de sectie <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibiliteit</a> kun je het opgesteld vermogen en de verhouding met het opslagvolume 
         aanpassen.
     volume_costs_energy_flexibility_flow_batteries_electricity:
       title: Flowbatterijen per MWh
       short_decription:
       description: |
-        In tegenstelling tot andere batterijen kunnen voor flowbatterijen het inputvermogen en het 
-        opslagvolume afzonderlijk gevarieerd worden. De investeringskosten bestaan dan ook uit twee 
+        In tegenstelling tot andere batterijen bestaan de investeringskosten van flowbatterijen uit twee
         componenten. De kosten per MW inputcapaciteit zet je met het schuifje hierboven. De kosten per
         MWh opslagvolume kun je met dit schuifje zetten. </br></br>
-        In de <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
-        Flexibiliteit</a> sectie kun je het opgesteld vermogen en de verhouding met het opslagvolume 
+        In de sectie <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
+        Flexibiliteit</a> kun je het opgesteld vermogen en de verhouding met het opslagvolume 
         aanpassen.
     efficiency_buildings_space_heater_hybrid_heatpump_air_water_electricity:
       title: Hybride luchtwarmtepomp (gas)

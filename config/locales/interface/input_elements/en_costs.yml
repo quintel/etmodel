@@ -372,28 +372,38 @@ en:
         waste-incinerator plants. Costs are compared to current costs.\r\n<br/>\r\n<br/>\r\nWaste-incinerators
         are often used to generate both heat and electricity."
     investment_costs_households_flexibility_p2p_electricity:
-      title: Batteries in households
-      short_description:
-      description: "Household batteries are often mentioned as a convenient way to
-        store excess electricity such that you can use it at a later time. With <a
-        href=\"/scenario/flexibility/flexibility_storage/storage-in-household-batteries\"
-        >this slider</a> you can choose what percentage of all households should have
-        such a battery and with the above slider you can set your assumption
-        for the future change in investment costs of households batteries.\r\n</br>"
-    investment_costs_energy_flexibility_hv_opac_electricity:
-      title: Underground pumped hydro storage
-      short_description:
-      description: This slider determines the future change in investment costs of
-        underground hydro pumped storage.
-    investment_costs_energy_flexibility_mv_batteries_electricity:
-      title: Large-scale batteries
+      title: Batteries in households per MWh
       short_description:
       description: |
-        This slider determines the future change in investment costs large-scale
-        battery storage. This also applies to the batteries that are part of integrated system 
-        with <a href="scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems"> wind turbines</a> 
-        or with <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
-        solar PV plants</a>.
+        This slider determines the future change in investment costs of
+        batteries in households per MWh. </br></br>
+        In the <a href="scenario/flexibility/flexibility_storage/batteries-in-households"> 
+        Flexibility</a> section you can determine the installed capacity and relative storage volume 
+        for your scenario.
+    investment_costs_energy_flexibility_hv_opac_electricity:
+      title: Underground pumped hydro storage per MWh
+      short_description:
+      description: |
+        This slider determines the future change in investment costs of
+        underground hydro pumped storage per MWh. </br></br>
+        In the <a href="scenario/flexibility/flexibility_storage/underground-pumped-hydro-storage"> 
+        Flexibility</a> section you can determine the installed capacity and relative storage volume 
+        for your scenario.
+    investment_costs_energy_flexibility_mv_batteries_electricity:
+      title: Large-scale batteries per MWh
+      short_description:
+      description: |
+        This slider determines the future change in investment costs of large-scale
+        battery storage per MWh. This also applies to the batteries that are part of an integrated system 
+        with wind turbines or solar plants. </br></br>
+        In the Flexibility section you can determine the installed capacity and relative storage volume 
+        for your scenario for
+        <a href="scenario/flexibility/flexibility_storage/large-scale-batteries"> 
+        large-scale batteries</a>, 
+        <a href="scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems"> 
+        batteries integrated with wind turbines</a>, and
+        <a href="scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems"> 
+        batteries integrated with solar plants</a>.
     om_costs_water_river:
       title: O&M costs hydro river
       short_description: ''
@@ -978,8 +988,7 @@ en:
       title: Flow batteries per MW
       short_decription: ''
       description: |
-        In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
-        be adjusted independently. The investment costs therefore also consist of two components.
+        In contrast to other batteries, the investment costs of flow batteries consist of two components.
         With this slider you can set the investment costs per MW of input capacity. The slider below 
         sets the investment costs per MWh storage volume. </br></br>
         In the <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 
@@ -989,8 +998,7 @@ en:
       title: Flow batteries per MWh
       short_decription: ''
       description: |
-        In contrast to other batteries, the input capacity and storage volume of flowbatteries can 
-        be adjusted independently. The investment costs therefore also consist of two components.
+        In contrast to other batteries, the investment costs of flow batteries consist of two components.
         The slider above sets the investment costs per MW of input capacity. With this slider you can 
         set the investment costs per MWh storage volume. </br></br>
         In the <a href="scenario/flexibility/flexibility_storage/flowbatteries"> 

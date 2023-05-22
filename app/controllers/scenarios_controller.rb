@@ -43,6 +43,7 @@ class ScenariosController < ApplicationController
   end
 
   def reset
+    Current.setting.uncouple_scenario
     Current.setting.reset_scenario
     redirect_to_back
   end

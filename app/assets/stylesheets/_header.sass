@@ -399,6 +399,9 @@ header.main-header
     transform: scale(1) translateY(0px)
     transition-duration: 0.125s
 
+  &.coupling
+    width: 14rem
+
   li
     margin: 0
     padding: 0
@@ -446,6 +449,15 @@ header.main-header
     background-color: #fff
     color: #444 !important
     cursor: default
+  &.text
+    white-space: normal
+  &.external
+    color: $landing-blue !important
+    text-decoration: underline
+  &.external:hover
+    color: darken($landing-blue, 5%)
+     background-color: #fff
+    cursor: pointer
 
 button.dropdown-item
   background: none

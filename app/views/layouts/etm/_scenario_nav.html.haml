@@ -60,13 +60,14 @@
             </svg>
           = t('header.coupled')
           %span.fa.fa-caret-down
-        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-couplings-button' }
+        %ul.dropdown-menu.dropdown-menu-right.coupling{ 'aria-labelledby': 'scenario-couplings-button' }
           %li
             .dropdown-item.text
               = t('header.has_been_coupled')
+          %li
+            %a.dropdown-item.external{ href: "https://docs.energytransitionmodel.com", target: "_blank"}
+              = t('header.coupled_docs')
+
           %li.sep-above
             %a.dropdown-item{ href: uncouple_scenario_path(Current.setting.api_session_id), data: { confirm: t('header.uncouple_scenario_confirm') } }
               = t("header.uncouple_scenario")
-          %li
-            %a.dropdown-item{ href: "https://docs.energytransitionmodel.com", target: "_blank"}
-              = t('header.documentation')

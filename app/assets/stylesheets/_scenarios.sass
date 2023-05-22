@@ -696,9 +696,28 @@ table.default
         border-color: #e65a5a
         box-shadow: 0 0 0 3px #f9c6c6
 
-    .btn
-      font-size: 1rem
-      font-weight: 500
-      padding: 0.6rem
-      width: 100%
+  .btn
+    font-size: 1rem
+    font-weight: 500
+    padding: 0.6rem
+    width: 100%
+    padding: 10px 15px
+    margin: 0.5rem 0.5rem 0.5rem 0
+    border-radius: 3px
+    &.cancel
+      width: 40%
+      color: black
+      background: #eee
+      &:hover
+        color: lighten(black, 15%)
+        background: darken(#eee, 9%)
+    &.confirm
+      width: 40%
+      background: $landing-green
+      color: white
+      &:hover
+        color: white
+        background: lighten($landing-green, 14%)
+      &:active
+        background: darken($landing-green, 1%)
 

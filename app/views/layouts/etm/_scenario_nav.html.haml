@@ -69,5 +69,5 @@
               = t('header.coupled_docs')
 
           %li.sep-above
-            %a.dropdown-item{ href: uncouple_scenario_path(Current.setting.api_session_id), data: { confirm: t('header.uncouple_scenario_confirm') } }
+            %a.dropdown-item.uncouple-scenario{ href: "#", data: { dylink: confirm_uncouple_scenario_path(Current.setting.api_session_id) } }
               = t("header.uncouple_scenario")

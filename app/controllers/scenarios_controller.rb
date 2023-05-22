@@ -47,6 +47,14 @@ class ScenariosController < ApplicationController
     redirect_to_back
   end
 
+  def confirm_uncouple
+    if params[:inline]
+      render 'uncouple', layout: false
+    else
+      render 'uncouple'
+    end
+  end
+
   def uncouple
     UncoupleAPIScenario.call(engine_client, @scenario.id).or do
       flash[:error] = t('scenario.cannot_load')

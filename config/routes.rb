@@ -57,6 +57,7 @@ Rails.application.routes.draw do
     member do
       get :load
       get :uncouple
+      get :confirm_uncouple
       get 'energy_mix' => 'energy_mix#show'
       # legacy name for the energy mix
       get 'factsheet', to: redirect('scenarios/%{id}/energy_mix')

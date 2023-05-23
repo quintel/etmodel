@@ -91,6 +91,7 @@ Rails.application.routes.draw do
 
   get '/scenario/new' => 'scenarios#new'
   get '/scenario/reset' => 'scenarios#reset'
+  get '/scenario/confirm_reset' => 'scenarios#confirm_reset'
   get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
 
   get '/passthru/:id/*rest' => 'api_passthru#passthru',

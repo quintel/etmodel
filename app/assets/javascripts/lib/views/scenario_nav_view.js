@@ -54,7 +54,7 @@
     });
   }
 
-  function uncoupleScenarioForm(event) {
+  function confirmForm(event) {
     var url = event.target.href;
     var paramSep = url.includes('?') ? '&' : '?';
 
@@ -66,7 +66,7 @@
       width: 530,
       padding: 0,
       afterShow: function () {
-        var closeBtn = document.querySelector('#cancel-uncoupling');
+        var closeBtn = document.querySelector('#cancel-box');
         closeBtn.addEventListener('click', $.fancybox.close);
       },
     });
@@ -77,7 +77,8 @@
       'click .save-scenario': 'saveScenario',
       'click .save-scenario-as': 'showSaveAsModal',
       'click .save-scenario-as-inline': 'showSaveAsModal',
-      'click .uncouple-scenario': 'showUncoupleAsModal',
+      'click .uncouple-scenario': 'showConfirmModal',
+      'click .reset-scenario': 'showConfirmModal',
     },
 
     /**
@@ -143,9 +144,9 @@
       loadSaveScenarioForm(event);
     },
 
-    showUncoupleAsModal: function (event) {
+    showConfirmModal: function (event) {
       event && event.preventDefault();
-      uncoupleScenarioForm(event);
+      confirmForm(event);
     },
   });
 

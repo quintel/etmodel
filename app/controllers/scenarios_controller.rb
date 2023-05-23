@@ -42,6 +42,14 @@ class ScenariosController < ApplicationController
   def show
   end
 
+  def confirm_reset
+    if params[:inline]
+      render 'reset', layout: false
+    else
+      render 'reset'
+    end
+  end
+
   def reset
     Current.setting.uncouple_scenario
     Current.setting.reset_scenario

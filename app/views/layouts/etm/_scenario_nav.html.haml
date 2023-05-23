@@ -40,7 +40,7 @@
             = succeed '&hellip;'.html_safe do
               = t("header.save_scenario_as")
         %li
-          %a.dropdown-item{ href: scenario_reset_path, data: { confirm: t('header.reset_scenario_confirm') } }
+          %a.dropdown-item.reset-scenario{ href: scenario_confirm_reset_path}
             = t("header.reset_scenario")
         - if export_scenario_enabled?
           %li

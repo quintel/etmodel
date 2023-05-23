@@ -1,0 +1,10 @@
+- content_for(:page_title) { "#{t('header.reset_scenario')} - #{t('meta.name')}" }
+
+.scenario_wrapper
+  %h1= t("header.reset_scenario")
+  %p= t("header.reset_scenario_confirm")
+
+  %a.btn.cancel#cancel-box
+    = t("scenario.cancel")
+  %a.btn.confirm{href: scenario_reset_path}
+    = t("header.reset_scenario")

@@ -1,7 +1,7 @@
 class ScenariosController < ApplicationController
   include MainInterfaceController.new(:play, :play_multi_year_charts)
 
-  before_action :find_scenario, only: %i[show load play_multi_year_charts resume]
+  before_action :find_scenario, only: %i[show load play_multi_year_charts resume uncouple]
   before_action :require_user, only: %i[index new merge]
   before_action :redirect_compare, only: :compare
   before_action :setup_comparison, only: %i[compare weighted_merge]
@@ -42,8 +42,36 @@ class ScenariosController < ApplicationController
   def show
   end
 
+  def confirm_reset
+    if params[:inline]
+      render 'reset', layout: false
+    else
+      render 'reset'
+    end
+  end
+
   def reset
+    Current.setting.uncouple_scenario
     Current.setting.reset_scenario
+    redirect_to_back
+  end
+
+  def confirm_uncouple
+    if params[:inline]
+      render 'uncouple', layout: false
+    else
+      render 'uncouple'
+    end
+  end
+
+  def uncouple
+    UncoupleAPIScenario.call(engine_client, @scenario.id).or do
+      flash[:error] = t('scenario.cannot_load')
+      redirect_to(root_path)
+      return
+    end
+
+    Current.setting.uncouple_scenario
     redirect_to_back
   end
 

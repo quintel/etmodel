@@ -28,6 +28,7 @@ class Setting
       end_year:                 2050,
       use_merit_order:          true,
       esdl_exportable:          false,
+      coupling:                 false,
       locked_charts:            [],
       last_etm_page:            nil,
       preset_scenario_id:       nil,
@@ -54,6 +55,7 @@ class Setting
     new(
       preset_scenario_id: scenario.id,
       esdl_exportable: scenario.esdl_exportable,
+      coupling: scenario.coupled?,
       end_year: scenario.end_year,
       area_code: scenario.area_code,
       active_saved_scenario_id: active_saved_scenario[:id],
@@ -96,6 +98,10 @@ class Setting
     %i[network_parts_affected locked_charts].each do |key|
       reset_attribute(key)
     end
+  end
+
+  def uncouple_scenario
+    self.coupling = false
   end
 
   def start_year

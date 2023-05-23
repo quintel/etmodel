@@ -55,10 +55,13 @@ nl:
     current_end_year: "Huidig eindjaar"
     current_language: "Taal"
     current_scenario: "Huidig scenario"
+    coupled: Gekoppeld
+    coupled_docs: Wat betekent dit?
     disclaimer: "Disclaimer"
     documentation: "Documentatie"
     education: "Onderwijs"
     feedback: "Feedback"
+    has_been_coupled: Dit scenario is gekoppeld aan een extern model
     information: "Informatie"
     load_scenario: "Mijn Scenario's"
     merit_order_check: "Gebruik uurlijkse berekeningen"
@@ -69,6 +72,7 @@ nl:
     publications: "Publicaties"
     reset_scenario: "Scenario resetten"
     reset_scenario_confirm: "Weet je zeker dat je het scenario wilt terugzetten naar de beginwaarden van dit scenario? Alle wijzigingen die je hebt gemaakt, zullen hiermee verloren gaan."
+    uncouple_scenario: "Scenario ontkoppelen"
     save_scenario: "Scenario opslaan"
     save_scenario_as: "Scenario opslaan als"
     saved: "Opgeslagen"
@@ -307,6 +311,15 @@ nl:
     municipal: "Gemeentes en wijken van Nederlands"
     northern_ireland: "Noord-Ierland"
     add_description: 'Voeg een beschrijving van je scenario toe...'
+    cancel: 'Annuleer'
+    uncouple: 'Ontkoppel'
+    uncouple_desc: |
+      Weet je zeker dat je het scenario wilt ontkoppelen van externe modellen? 
+      Alle waardes die door externe modellen zijn ingesteld worden hiermee uit 
+      het scenario verwijderd en kunnen niet meer worden hersteld. </br></br>
+      Zie voor meer informatie de 
+      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
+      documentatie</a>.
     edit_text: 'Pas titel en beschrijving aan'
     save_text: 'Sla veranderingen op'
     cancel_text: 'Annuleren'

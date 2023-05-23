@@ -56,6 +56,8 @@ Rails.application.routes.draw do
 
     member do
       get :load
+      get :uncouple
+      get :confirm_uncouple
       get 'energy_mix' => 'energy_mix#show'
       # legacy name for the energy mix
       get 'factsheet', to: redirect('scenarios/%{id}/energy_mix')
@@ -89,6 +91,7 @@ Rails.application.routes.draw do
 
   get '/scenario/new' => 'scenarios#new'
   get '/scenario/reset' => 'scenarios#reset'
+  get '/scenario/confirm_reset' => 'scenarios#confirm_reset'
   get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
 
   get '/passthru/:id/*rest' => 'api_passthru#passthru',

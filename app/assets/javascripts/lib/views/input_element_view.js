@@ -433,11 +433,13 @@
           name: this.model.get('translated_name'),
           info: this.model.get('sanitized_description'),
           sublabel: this.model.get('label'),
+          coupling: this.model.get('coupled'),
           node: this.model.get('related_node'),
           node_source: this.model.get('node_source_url'),
           input_element_key: this.model.get('key'),
           end_year: App.settings.get('end_year'),
           info_link: I18n.t('input_elements.common.info_link'),
+          info_coupling: I18n.t('input_elements.common.info_coupling'),
         })
       );
 
@@ -593,9 +595,15 @@
           this.setTransientValue(this.quinn.model.value);
         }
 
+        if (this.model.get('coupled')) {
+          this.valueElement.addClass('coupled');
+          this.valueElement.html('');
+        }
+
         this.quinn.disable();
       } else {
         this.$el.removeClass('disabled');
+        this.valueElement.removeClass('coupled');
         this.setTransientValue(this.quinn.model.value);
         this.quinn.enable();
       }

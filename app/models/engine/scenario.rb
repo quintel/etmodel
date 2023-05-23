@@ -9,6 +9,7 @@ module Engine
 
     attribute  :area_code,       Dry::Types['strict.string']
     attribute  :balanced_values, Dry::Types['strict.hash']
+    attribute  :coupling,        Dry::Types['strict.bool']
     attribute  :end_year,        Dry::Types['strict.integer']
     attribute  :id,              Dry::Types['strict.integer']
     attribute  :keep_compatible, Dry::Types['strict.bool']
@@ -28,6 +29,7 @@ module Engine
     alias_method :keep_compatible?, :keep_compatible
     alias_method :private?, :private
     alias_method :edsl_exportable?, :esdl_exportable
+    alias_method :coupled?, :coupling
 
     # Loads multiple scenarios by ID. Excludes any missing or inaccessable scenarios.
     #

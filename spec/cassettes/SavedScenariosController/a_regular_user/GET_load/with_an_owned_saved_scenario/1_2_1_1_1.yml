@@ -8,9 +8,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.2
+      - Faraday v2.7.3
       Authorization:
-      - Bearer access_EFYnUqmQYoq19WCT
+      - Bearer access_SP4gBuDidQEWT1RM
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx/1.21.3
       Date:
-      - Wed, 21 Dec 2022 10:16:45 GMT
+      - Tue, 23 May 2023 11:10:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -45,18 +45,18 @@ http_interactions:
       Vary:
       - Accept, Origin
       Etag:
-      - W/"278679e3bf98e20f1ae8e902e2fbbd60"
+      - W/"1620a809decf3f8004708dbe14f56f93"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 797a319e-0dd6-419e-85e4-f66644e7d466
+      - 93f97821-37a5-4ae6-9ef5-62b0f7e1039d
       X-Runtime:
-      - '0.011554'
+      - '0.039505'
     body:
       encoding: UTF-8
       string: '{"id":648695,"created_at":"2017-03-13T19:22:35.000Z","updated_at":"2019-12-05T09:14:10.000Z","user_values":{},"end_year":2050,"keep_compatible":true,"private":false,"area_code":"nl","source":"ETM","balanced_values":{},"metadata":{"title":"ETM
-        Test Scenario"},"start_year":2015,"template":null,"esdl_exportable":false,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/648695"}'
-  recorded_at: Wed, 21 Dec 2022 10:16:45 GMT
+        Test Scenario"},"start_year":2015,"coupling":false,"owner":null,"scaling":null,"template":null,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/648695"}'
+  recorded_at: Tue, 23 May 2023 11:10:38 GMT
 - request:
     method: post
     uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios
@@ -65,11 +65,11 @@ http_interactions:
       string: '{"scenario":{"source":"ETM","scenario_id":648695}}'
     headers:
       User-Agent:
-      - Faraday v2.7.2
+      - Faraday v2.7.3
       Content-Type:
       - application/json
       Authorization:
-      - Bearer access_EFYnUqmQYoq19WCT
+      - Bearer access_SP4gBuDidQEWT1RM
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -82,7 +82,7 @@ http_interactions:
       Server:
       - nginx/1.21.3
       Date:
-      - Wed, 21 Dec 2022 10:16:45 GMT
+      - Tue, 23 May 2023 11:10:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -104,15 +104,15 @@ http_interactions:
       Vary:
       - Accept, Origin
       Etag:
-      - W/"bd1561b739c6f18fd3f6e511b14ea8c8"
+      - W/"9238b79d8b9ea5b50ea077d694ae663b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b75d6b0f-b2c8-48a2-ad46-b4b14be04012
+      - 5f958139-96da-4d1d-82e8-b8b06871b726
       X-Runtime:
-      - '0.029454'
+      - '0.045472'
     body:
       encoding: UTF-8
-      string: '{"id":2179530,"created_at":"2022-12-21T10:16:45.000Z","updated_at":"2022-12-21T10:16:45.000Z","user_values":{},"end_year":2050,"keep_compatible":false,"private":false,"area_code":"nl","source":"ETM","balanced_values":{},"metadata":{},"start_year":2015,"template":648695,"esdl_exportable":false,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/2179530"}'
-  recorded_at: Wed, 21 Dec 2022 10:16:45 GMT
+      string: '{"id":2259133,"created_at":"2023-05-23T11:10:38.000Z","updated_at":"2023-05-23T11:10:38.000Z","user_values":{},"end_year":2050,"keep_compatible":false,"private":false,"area_code":"nl","source":"ETM","balanced_values":{},"metadata":{},"start_year":2015,"coupling":false,"owner":null,"scaling":null,"template":648695,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/2259133"}'
+  recorded_at: Tue, 23 May 2023 11:10:38 GMT
 recorded_with: VCR 6.0.0

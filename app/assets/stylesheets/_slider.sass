@@ -89,8 +89,6 @@ $slider-box-height: 22px
       background: #eee
       border-radius: 4px
       cursor: text
-      margin-right: -4px
-      padding-right: 4px
     &:active
       background: #e3e3e3
 
@@ -135,6 +133,15 @@ $slider-box-height: 22px
             display: none
           .loader
             display: inline-block
+      &.coupling-info
+        border-bottom: 1px solid #ddd
+        margin-bottom: 0.75rem
+        border-top: none
+        margin-top: 0
+        a
+          margin: -0.75rem 0 0
+        svg
+          margin-bottom: -0.2rem
 
   &.info-box-visible
     .show-info
@@ -155,6 +162,11 @@ $slider-box-height: 22px
     .output
       background: none
       cursor: default
+
+  .output.coupled
+    background: asset-url("icons/link.svg") right no-repeat
+    color: #aaa
+
 
   // Buttons are only visible on hovering the slider div.
   .reset, .decrease, .increase

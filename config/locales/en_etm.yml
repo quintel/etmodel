@@ -56,9 +56,12 @@ en:
     current_end_year: "Current end year"
     current_language: "Language"
     current_scenario: "Current scenario"
+    coupled: Coupled
+    coupled_docs: What does this mean?
     disclaimer: "Disclaimer"
     education: "Education"
     feedback: "Feedback"
+    has_been_coupled: This scenario has been coupled with an external model
     information: "Information"
     load_scenario: "My Scenarios"
     merit_order_check: "Enable hourly calculations"
@@ -69,6 +72,7 @@ en:
     publications: "Publications"
     reset_scenario: "Reset scenario"
     reset_scenario_confirm: "Are you sure you wish to reset this scenario to the default settings? You will lose any changes you have made."
+    uncouple_scenario: "Uncouple scenario"
     save_scenario: "Save scenario"
     save_scenario_as: "Save scenario as"
     saved: "Saved"
@@ -304,6 +308,15 @@ en:
     northern_ireland: Northern Ireland
     regional: "Provinces and regions of the Netherlands"
     municipal: "Municipalities and neigbourhoods of the Netherlands"
+    cancel: 'Cancel'
+    uncouple: 'Uncouple'
+    uncouple_desc: |
+      Are you sure you want to uncouple the scenario from external models?
+      All the values that are set by external models will be deleted from 
+      the scenario and cannot be retrieved. </br></br>
+      Visit the 
+      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
+      documentation</a> for more information.
     add_description: 'Add a description of your scenario...'
     edit_text: 'Edit title and description'
     save_text: 'Save changes'

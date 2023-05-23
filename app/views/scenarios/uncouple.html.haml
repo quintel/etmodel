@@ -1,0 +1,10 @@
+- content_for(:page_title) { "#{t('header.uncouple_scenario')} - #{t('meta.name')}" }
+
+.scenario_wrapper
+  %h1= t("header.uncouple_scenario")
+  %p= t("scenario.uncouple_desc").html_safe
+
+  %a.btn.cancel#cancel-box
+    = t("scenario.cancel")
+  %a.btn.confirm{href: uncouple_scenario_path(Current.setting.api_session_id)}
+    = t("scenario.uncouple")

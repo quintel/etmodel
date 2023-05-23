@@ -11,6 +11,7 @@ describe Engine::Scenario do
       esdl_exportable: false,
       id: 123,
       keep_compatible: false,
+      coupling: false,
       metadata: {},
       private: false,
       user_values: {}

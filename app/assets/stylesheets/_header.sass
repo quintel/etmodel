@@ -284,6 +284,11 @@ header.main-header
     margin: 0
     padding: $header-item-padding
 
+  #scenario-coupling-button
+    svg
+      margin-bottom: -5px
+      color: #444
+
   .scenario-info
     .region
       color: black
@@ -394,6 +399,9 @@ header.main-header
     transform: scale(1) translateY(0px)
     transition-duration: 0.125s
 
+  &.coupling
+    width: 14rem
+
   li
     margin: 0
     padding: 0
@@ -437,6 +445,19 @@ header.main-header
     pointer-events: none
   &.inset
     padding-left: 2rem
+  &.text:hover
+    background-color: #fff
+    color: #444 !important
+    cursor: default
+  &.text
+    white-space: normal
+  &.external
+    color: $landing-blue !important
+    text-decoration: underline
+  &.external:hover
+    color: darken($landing-blue, 23%) !important
+    background-color: #fff
+    cursor: pointer
 
 button.dropdown-item
   background: none

@@ -16,6 +16,7 @@ RSpec.describe FetchAPIScenario do
       'private' => false,
       'user_values' => { 'a' => 1 },
       'esdl_exportable' => false,
+      'coupling' => false,
       'owner' => nil,
       'scaling' => nil,
       'template' => nil,

@@ -62,7 +62,7 @@
       autoSize: false,
       href: url + paramSep + 'inline=true',
       type: 'ajax',
-      height: 480,
+      height: 300,
       width: 530,
       padding: 0,
       afterShow: function () {

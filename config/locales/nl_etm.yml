@@ -313,7 +313,13 @@ nl:
     add_description: 'Voeg een beschrijving van je scenario toe...'
     cancel: 'Annuleer'
     uncouple: 'Ontkoppel'
-    uncouple_desc: "Weet je zeker dat je het scenario wilt ontkoppelen van het andere model? Alle waardes uit de koppeling zullen hiermee verloren gaan."
+    uncouple_desc: |
+      Weet je zeker dat je het scenario wilt ontkoppelen van externe modellen? 
+      Alle waardes die door externe modellen zijn ingesteld worden hiermee uit 
+      het scenario verwijderd en kunnen niet meer worden hersteld. </br></br>
+      Zie voor meer informatie de 
+      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
+      documentatie</a>.
     edit_text: 'Pas titel en beschrijving aan'
     save_text: 'Sla veranderingen op'
     cancel_text: 'Annuleren'

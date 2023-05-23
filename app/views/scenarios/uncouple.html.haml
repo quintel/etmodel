@@ -2,7 +2,7 @@
 
 .scenario_wrapper
   %h1= t("header.uncouple_scenario")
-  %p= t("scenario.uncouple_desc")
+  %p= t("scenario.uncouple_desc").html_safe
 
   %a.btn.cancel#cancel-uncoupling
     = t("scenario.cancel")

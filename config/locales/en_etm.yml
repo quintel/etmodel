@@ -310,7 +310,13 @@ en:
     municipal: "Municipalities and neigbourhoods of the Netherlands"
     cancel: 'Cancel'
     uncouple: 'Uncouple'
-    uncouple_desc: "Are you sure you wish to uncouple this scenario from the other model? You will lose all values of the coupling."
+    uncouple_desc: |
+      Are you sure you want to uncouple the scenario from external models?
+      All the values that are set by external models will be deleted from 
+      the scenario and cannot be retrieved. </br></br>
+      Visit the 
+      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
+      documentation</a> for more information.
     add_description: 'Add a description of your scenario...'
     edit_text: 'Edit title and description'
     save_text: 'Save changes'

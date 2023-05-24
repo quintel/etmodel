@@ -1,7 +1,7 @@
 ---
-- label: coal_inc_losses
+- label: coal_final_demand
   color: "#333333"
-  order_by: 1
+  order_by: 100
   group: ''
   show_at_first: false
   is_target_line: false
@@ -11,9 +11,21 @@
   dependent_on:
   output_element_key: demand_in_industry_steel
   key: coal_demand_in_industry_steel
-- label: coal_gas
+- label: coal_transformation_losses
+  color: "#696969"
+  order_by: 105
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_transformation_losses_in_industry_steel
+  is_1990:
+  dependent_on:
+  output_element_key: demand_in_industry_steel
+  key: coal_transformation_losses_in_industry_steel
+- label: coal_gas_final_demand
   color: "#686de0"
-  order_by: 2
+  order_by: 110
   group: ''
   show_at_first: false
   is_target_line: false
@@ -23,9 +35,9 @@
   dependent_on:
   output_element_key: demand_in_industry_steel
   key: coal_gas_demand_in_industry_steel
-- label: cokes
+- label: cokes_final_demand
   color: "#5f27cd"
-  order_by: 3
+  order_by: 120
   group: ''
   show_at_first: false
   is_target_line: false
@@ -35,9 +47,9 @@
   dependent_on:
   output_element_key: demand_in_industry_steel
   key: cokes_demand_in_industry_steel
-- label: network_gas
+- label: network_gas_final_demand
   color: "#CCCCCC"
-  order_by: 4
+  order_by: 130
   group: ''
   show_at_first: false
   is_target_line: false
@@ -47,9 +59,9 @@
   dependent_on:
   output_element_key: demand_in_industry_steel
   key: network_gas_demand_in_industry_steel
-- label: crude_oil
+- label: crude_oil_final_demand
   color: "#854321"
-  order_by: 5
+  order_by: 140
   group: ''
   show_at_first: false
   is_target_line: false
@@ -59,9 +71,9 @@
   dependent_on:
   output_element_key: demand_in_industry_steel
   key: crude_oil_demand_in_industry_steel
-- label: electricity
+- label: electricity_final_demand
   color: "#4169E1"
-  order_by: 6
+  order_by: 150
   group: ''
   show_at_first: false
   is_target_line: false
@@ -71,9 +83,9 @@
   dependent_on:
   output_element_key: demand_in_industry_steel
   key: electricity_demand_in_industry_steel
-- label: heat
+- label: heat_final_demand
   color: "#8B0000"
-  order_by: 7
+  order_by: 160
   group: ''
   show_at_first: false
   is_target_line: false
@@ -83,9 +95,9 @@
   dependent_on:
   output_element_key: demand_in_industry_steel
   key: heat_demand_in_industry_steel
-- label: hydrogen
+- label: hydrogen_final_demand
   color: "#87CEEB"
-  order_by: 8
+  order_by: 170
   group: ''
   show_at_first: false
   is_target_line: false
@@ -95,9 +107,9 @@
   dependent_on:
   output_element_key: demand_in_industry_steel
   key: hydrogen_demand_in_industry_steel
-- label: biomass
+- label: biomass_final_demand
   color: "#5D7929"
-  order_by: 8
+  order_by: 180
   group: ''
   show_at_first: false
   is_target_line: false

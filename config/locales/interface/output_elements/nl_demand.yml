@@ -256,14 +256,13 @@ nl:
         energiebesparing.\r\n\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven
         de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
     use_of_final_demand_in_buildings:
-      title: Eindgebruik energie in gebouwen
-      short_description: Gebouwen
-      description: "Deze grafiek toont hoeveel van het warmte- en elektriciteitsgebruik
-        in de gebouwensector door warmte-kracht koppelingen (WKK's) wordt ingevuld.
-        Warmte die niet met WKK is gemaakt wordt geproduceerd met de opties op de
-        Gebouwen 'Verwarming' pagina. Elektriciteit die niet decentraal wordt gemaakt,
-        komt van het elektriciteitsnet. \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>'
-        boven de grafiek om andere grafieken te tonen over industrieel energiegebruik."
+      title: Eindgebruik energie in gebouwen per applicatie
+      short_description:
+      description: |
+        Deze grafiek toont hoe de finale vraag naar energie in gebouwen verandert 
+        als gevolg van de keuzes en aannames die je in dit onderdeel maakt. <br/><br/>
+        Kies <u>Wijzig grafiek</u> om andere grafieken te tonen
+        over energiegebruik.
     effect_of_insulation_in_buildings:
       title: Warmtevraag met isolatie in gebouwen
       short_description: Gebouwen
@@ -444,12 +443,13 @@ nl:
       short_description: ''
       description: ''
     households_final_demand_per_application:
-      title: Eindgebruik energie in huishoudens
+      title: Eindgebruik energie in huishoudens per applicatie
       short_description: Huishoudelijk, naar toepassing
-      description: "Deze grafiek toont hoe de huishoudelijke finale vraag naar energie
-        verandert als gevolg van de keuzes en aannames die je in dit onderdeel maakt.
-        \r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' om andere grafieken te tonen
-        over energiegebruik."
+      description: |
+        Deze grafiek toont hoe de finale vraag naar energie in huishoudens verandert 
+        als gevolg van de keuzes en aannames die je in dit onderdeel maakt. <br/><br/>
+        Kies <u>Wijzig grafiek</u> om andere grafieken te tonen
+        over energiegebruik.
     household_space_heater_hhp_hourly_demand:
       title: Vraagprofiel van hybride warmtepomp (gas) voor huishoudens
       short_description:

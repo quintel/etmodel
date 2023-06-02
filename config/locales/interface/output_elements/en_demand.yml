@@ -247,14 +247,13 @@ en:
         of energy saved. \r\n\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
         above the graph, to select different graphs about energy demand.\r\n"
     use_of_final_demand_in_buildings:
-      title: Final energy demand in buildings
-      short_description: Buildings
-      description: "This chart shows how much of the heat and electricity that is
-        used in buildings is produced using combined heat and power (CHP) units. If
-        it is not generated using CHP units, heat is produced with the other options
-        available on the Buildings 'Heating' page, and electricity is taken from the
-        electricity grid.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above
-        the graph, to select different graphs about energy demand."
+      title: Final energy demand in buildings per application
+      short_description:
+      description: |
+        This graph shows how buildings final demand for energy will change
+        as a result of the choices you make in this section. <br/><br/>
+        You can click <u>Change chart</u> above the graph, to select different graphs
+        about energy demand.
     effect_of_insulation_in_buildings:
       title: Heating demand with insulation in buildings
       short_description: Buildings
@@ -433,12 +432,13 @@ en:
       short_description: ''
       description: ''
     households_final_demand_per_application:
-      title: Final demand households per application
-      short_description: Households, by application
-      description: "This graph shows how household final demand for energy will change
-        as a result of the choices you make in this section. \r\n<br/><br/>\r\nYou
-        can click '<u>Change chart</u>' above the graph, to select different graphs
-        about energy demand."
+      title: Final energy demand in households per application
+      short_description:
+      description: |
+        This graph shows how households final demand for energy will change
+        as a result of the choices you make in this section. <br/><br/>
+        You can click <u>Change chart</u> above the graph, to select different graphs
+        about energy demand.
     household_space_heater_hhp_hourly_demand:
       title: Demand curve of hybrid heat pump (gas) in households
       short_description:

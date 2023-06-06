@@ -92,7 +92,9 @@
           font-weight: 10
           margin-top: 10px
         &.selected:after
-          content: "\f078"
+          transform: rotate(90deg)
+          transform-origin: 4px 6px
+          transition: transform 0.5s
         a
           font-size: 14px
           line-height: 30px

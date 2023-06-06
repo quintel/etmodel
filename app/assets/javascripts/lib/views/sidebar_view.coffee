@@ -19,9 +19,9 @@ class @SidebarView extends Backbone.View
       tab.addClass('active')
 
       target = tab.next('ul')
-      target.slideDown('fast')
+      target.slideDown(300, 'linear')
 
-      $("#sidebar ul").not(target).slideUp('fast')
+      $("#sidebar ul").not(target).slideUp(300, 'linear')
 
       if tab.data('key') == 'data' && self.results_tip
         self.results_tip.close()

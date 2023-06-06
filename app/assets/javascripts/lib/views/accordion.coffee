@@ -13,13 +13,13 @@ class @Accordion
       # close all slides
       ul = header.parents("ul.accordion")
       ul.find("li.accordion_element h3").removeClass('selected')
-      ul.find("li.accordion_element .slide").slideUp('fast')
+      ul.find("li.accordion_element .slide").slideUp(300, 'linear')
       App.input_elements.close_all_info_boxes() if App.input_elements
 
       # open the right one
       current = header.parents("li.accordion_element")
       current.find('h3').addClass('selected')
-      current.find(".slide").slideToggle('fast')
+      current.find(".slide").slideToggle(300, 'linear')
 
       # update the fragment url
       url = header.find('a').attr('href')

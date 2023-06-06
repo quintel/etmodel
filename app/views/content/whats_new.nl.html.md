@@ -7,7 +7,7 @@ ___
 
 Twee specificaties van opslagtechnologieën voor elektriciteit kunnen nu worden aangepast in het model. De eerste is de retourefficiëntie. Dit kun je aanpassen in *Kosten & efficiënties* → *Flexibiliteit* → **[Opslag elektriciteit](/scenario/costs/costs_flexibility/electricity-storage)**.
 
-Je kunt daarnaast het relatief opslagvolume van elke technologie aanpassen in *Flexibiliteit* → **[Opslag elektriciteit](/scenario/flexibility/flexibility_storage/batteries-in-households)**. Het relatief opslagvolume geeft aan hoeveel uur een technologie op vol vermogen moet laden om van 0% tot 100% geladen te gaan. Effectief kun je hiermee het totaal opgesteld opslagvolume voor een gegeven opgesteld veromgen instellen.
+Je kunt daarnaast het relatief opslagvolume van elke technologie aanpassen in *Flexibiliteit* → **[Opslag elektriciteit](/scenario/flexibility/flexibility_storage/batteries-in-households)**. Het relatief opslagvolume geeft aan hoeveel uur een technologie op vol vermogen moet laden om van 0% tot 100% geladen te gaan. Effectief kun je hiermee het totaal opgesteld opslagvolume voor een gegeven opgesteld vermogen instellen.
 
 In de tabel "Specificaties opslagtechnologieën elektriciteit" kun je de specificaties voor de verschillende technologieën eenvoudig vergelijken:
 

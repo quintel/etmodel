@@ -1,6 +1,20 @@
 # What's new in the Energy Transition Model?
 ___
 
+# June 2023
+
+## Adjustable specifications of electricity storage technologies
+
+Two specifications of electricity storage technologies can now be customized in the model. The first is the roundtrip efficiency. You can adjust this in *Costs & efficiencies* → *Flexibility* → **[Electricity storage](/scenario/costs/costs_flexibility/electricity-storage)**.
+
+You can also change the relative storage volume of each technology in *Flexibility* → **[Electricity storage](/scenario/flexibility/flexibility_storage/batteries-in-households)**. The relative storage volume specifies how many hours a technology needs to charge at full capacity to go from 0% to 100% charged. Effectively it allows you to change the total installed storage volume for a given installed capacity.
+
+In the table "Electricity storage technologies specifications" you can quickly compare the specifications across technologies:
+
+-> <img src="/assets/pages/whats_new/relative_storage_volume_en.png" width="600" /> <-
+
+___
+
 # March 2023
 
 ## Local vs. Global tool is discontinued

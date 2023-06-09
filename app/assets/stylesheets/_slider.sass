@@ -181,11 +181,11 @@ $slider-box-height: 22px
 
   // Custom value selection, and flexible input values.
   .value-selector
-    background: #f6f6f6
-    background: linear-gradient(#fff, #f0f0f0)
-    border: 1px solid #bbb
-    border-top-color: #ccc
-    border-bottom-color: #aaa
+    background: #DBEDFE
+    // background: linear-gradient(#fff, #f0f0f0)
+    // border: 1px solid #bbb
+    // border-top-color: #ccc
+    // border-bottom-color: #aaa
     border-radius: 7px
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 3px 7px rgba(0, 0, 0, 0.1)
     display: none
@@ -205,12 +205,12 @@ $slider-box-height: 22px
       top: 100%
       width: 0
       height: 0
-      border-top: 9px solid #999
+      border-top: 9px solid #ccc
       border-right: 9px solid transparent
       border-bottom: 0 solid transparent
       border-left: 9px solid transparent
     &:after
-      border-top: 8px solid #f0f0f0
+      border-top: 8px solid #DBEDFE
       border-right: 8px solid transparent
       border-bottom: 0 solid transparent
       border-left: 8px solid transparent
@@ -278,28 +278,24 @@ $slider-box-height: 22px
         filter: alpha(opacity = 0)
 
     button
-      border: 1px solid #4e7dac
-      border-bottom-color: #426180
-      background: #649ec6
+      border: none
+      background: $landing-blue
       border-radius: 0 3px 3px 0
-      background: linear-gradient(#7bbaea, #5390c3)
-      box-shadow: inset 0 1px 0 #75a9e4
       color: white
       cursor: pointer
       font-size: 11px
-      text-shadow: 0 -1px 0 #425c8c
       text-transform: uppercase
       line-height: 14px
       margin: -1px
-      padding: 7px 10px 6px
+      padding: 8px 10px 7px
+      font-weight: 500
 
       &::-moz-focus-inner
         border: 0
         padding: 0
 
       &:active, &:focus
-        background: linear-gradient(#74aadc, #4b7fb0)
-        box-shadow: inset 0 3px 6px #4c76a1
+        background: darken($landing-blue, 5%)
         outline: none
 
   @include hidpi

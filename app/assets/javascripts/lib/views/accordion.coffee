@@ -9,6 +9,11 @@ class @Accordion
     $(document).on 'click', ".accordion_element h3", (e) =>
       e.preventDefault()
       header = $(e.target).closest('h3')
+      current = header.parents("li.accordion_element")
+
+      if header.hasClass('selected') && current.find(".slide").is(':visible')
+        return
+
 
       # close all slides
       ul = header.parents("ul.accordion")
@@ -17,7 +22,6 @@ class @Accordion
       App.input_elements.close_all_info_boxes() if App.input_elements
 
       # open the right one
-      current = header.parents("li.accordion_element")
       current.find('h3').addClass('selected')
       current.find(".slide").slideToggle(300, 'linear')
 

@@ -7,3 +7,4 @@
 //= link multi_year_charts.css
 //= link report.css
 //= link pico.css
+//= link_tree ../builds

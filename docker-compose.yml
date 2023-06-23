@@ -37,6 +37,7 @@ services:
       - db_data:/var/lib/mysql
 
   webpacker:
+    # TODO: CHECK THIS!
     <<: *web
     command: ./bin/webpack-dev-server
     environment:

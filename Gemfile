@@ -76,6 +76,8 @@ group :development do
   gem 'better_errors'
   gem 'seed_dump'
 
+  gem 'foreman'
+
   # Deploy with Capistrano.
   gem 'capistrano',             '~> 3.9',   require: false
   gem 'capistrano-rbenv',       '~> 2.0',   require: false

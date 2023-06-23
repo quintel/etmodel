@@ -37,3 +37,6 @@ if Rails.env.test?
     env.export_concurrent = false
   end
 end
+
+# Add node_modules folder to the asset load path.
+Rails.application.config.assets.paths << Rails.root.join("node_modules")

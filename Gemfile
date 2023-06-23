@@ -40,7 +40,7 @@ gem 'identity', ref: 'df08519', github: 'quintel/identity_rails'
 
 # javascript
 gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'webpacker', '6.0.0.rc.6'
+gem 'shakapacker', '6.0.0'
 gem 'babel-transpiler'
 gem 'rails-i18n'
 gem 'i18n-js', '~> 3'

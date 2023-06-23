@@ -10,10 +10,12 @@ RUN apt-get update -yqq && \
     curl \
     default-libmysqlclient-dev \
     git \
+    gnupg \
     libreadline-dev \
     libxml2-dev \
     libxslt1-dev \
     libyaml-dev \
+    nodejs \
     vim \
     zlib1g \
     zlib1g-dev \
@@ -22,9 +24,7 @@ RUN apt-get update -yqq && \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && truncate -s 0 /var/log/*log
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash \
-  && apt-get update && apt-get install -y nodejs && rm -rf /var/lib/apt/lists/* \
-  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
   && apt-get update \
   && apt-get install -y yarn \
@@ -36,10 +36,12 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash \
  # Throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
-COPY Gemfile* /app/
+COPY Gemfile* package.json yarn.lock /app/
 WORKDIR /app
+
 RUN bundle install --jobs=4 --retry=3
+RUN yarn install
 
 COPY . /app/
 
-CMD ["bin/rails", "s", "-b", "0.0.0.0"]
+CMD ["./bin/rails", "s", "-b", "0.0.0.0"]

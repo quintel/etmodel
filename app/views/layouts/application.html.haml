@@ -11,7 +11,11 @@
 
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
-    = javascript_pack_tag 'survey'
+
+    - if defined?(extra_pack)
+      = javascript_pack_tag 'survey', extra_pack
+    - else
+      = javascript_pack_tag 'survey'
 
     :javascript
       I18n.defaultLocale = "#{I18n.default_locale}";

@@ -38,7 +38,7 @@ services:
 
   webpacker:
     <<: *web
-    command: ./bin/webpack-dev-server
+    command: ./bin/webpacker-dev-server
     environment:
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
     env_file:

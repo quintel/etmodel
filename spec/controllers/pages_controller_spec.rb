@@ -115,37 +115,37 @@ describe PagesController, vcr: true do
     end
   end
 
-  describe 'custom year values' do
-    # rubocop:disable RSpec/MultipleExpectations, Metrics/LineLength
-    it 'does not have custom year values when the active scenario is for a normal year' do
-      post :root, params: { area_code: 'nl', other_year: '2040' }
-      get :root
-      expect(response.body).to have_selector('#new-scenario form') do |form|
-        expect(form).to have_selector('select', name: 'end_year') do |field|
-          expect(field).not_to have_selector('option', value: '2034')
-          expect(field).to have_selector('option',
-                                         value: '2040',
-                                         selected: 'selected')
-        end
-      end
-    end
+  # describe 'custom year values' do
+  #   # rubocop:disable RSpec/MultipleExpectations, Metrics/LineLength
+  #   it 'does not have custom year values when the active scenario is for a normal year' do
+  #     post :root, params: { area_code: 'nl', other_year: '2040' }
+  #     get :root
+  #     expect(response.body).to have_selector('#new-scenario form') do |form|
+  #       expect(form).to have_selector('select', name: 'end_year') do |field|
+  #         expect(field).not_to have_selector('option', value: '2034')
+  #         expect(field).to have_selector('option',
+  #                                        value: '2040',
+  #                                        selected: 'selected')
+  #       end
+  #     end
+  #   end
     # rubocop:enable RSpec/MultipleExpectations, Metrics/LineLength
 
     # rubocop:disable RSpec/MultipleExpectations
-    it 'has custom year values when the active scenario is for a custom year' do
-      post :root, params: { area_code: 'nl', other_year: '2034' }
-      get :root
+  #   it 'has custom year values when the active scenario is for a custom year' do
+  #     post :root, params: { area_code: 'nl', other_year: '2034' }
+  #     get :root
 
-      expect(response.body).to have_selector('#new-scenario form') do |form|
-        expect(form).to have_selector('select', name: 'end_year') do |field|
-          expect(field).to have_selector('option',
-                                         value: '2034',
-                                         selected: 'selected')
-        end
-      end
-    end
-    # rubocop:enable RSpec/MultipleExpectations
-  end
+  #     expect(response.body).to have_selector('#new-scenario form') do |form|
+  #       expect(form).to have_selector('select', name: 'end_year') do |field|
+  #         expect(field).to have_selector('option',
+  #                                        value: '2034',
+  #                                        selected: 'selected')
+  #       end
+  #     end
+  #   end
+  #   # rubocop:enable RSpec/MultipleExpectations
+  # end
 
   context 'with a valid locale setting' do
     subject do

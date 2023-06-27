@@ -1,0 +1,32 @@
+version: v1.0
+name: Deploy to TYNDP
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Docker
+    task:
+      prologue:
+        commands:
+          - chmod 0600 ~/.ssh/id_deploy
+          - ssh-add ~/.ssh/id_deploy
+      env_vars:
+        - name: BUNDLE_JOBS
+          value: '4'
+      jobs:
+        - name: Build, publish #, deploy
+          commands:
+            - checkout
+            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+            - 'docker build -f Dockerfile.production -t quintel/etmodel:tyndp2024 .'
+            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:tyndp2024 --build-arg "SOURCE_IMAGE=quintel/etmodel:tyndp2024" .'
+            - 'docker push quintel/etmodel:tyndp2024'
+            - 'docker push quintel/etmodel-nginx:tyndp2024'
+            # - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
+            # - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_tyndp2024 && ./deploy.sh"
+      secrets:
+        - name: Docker Hub credentials
+        - name: Production SSH settings
+    run:
+      when: branch = 'tyndp2024'

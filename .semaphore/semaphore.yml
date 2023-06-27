@@ -44,3 +44,7 @@ promotions:
     pipeline_file: deploy_production.yml
     auto_promote:
       when: "result = 'passed' and branch = 'production'"
+  - name: Deploy to TYNDP2024
+    pipeline_file: deploy_tyndp.yml
+    auto_promote:
+      when: "result = 'passed' and branch = 'tyndp2024'"

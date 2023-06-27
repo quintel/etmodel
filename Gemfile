@@ -118,7 +118,7 @@ group :test do
   gem 'webmock', '>= 3.5'
 end
 
-group :production, :staging do
+group :production, :staging, :tyndp2024 do
   # Puma 5 doesn't support daemon mode (used by capistrano3-puma). We need to investigate if this
   # is an issue. Using Puma 5 with capistrano3-puma's Systemd mode would be a better solution, but
   # this may require privileges unavailable to the SSH user.

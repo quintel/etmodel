@@ -52,3 +52,7 @@ production:
 staging:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+
+tyndp2024:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>

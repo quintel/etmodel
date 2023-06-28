@@ -4,7 +4,7 @@
 #landing
   #blurb
     %h1= t('intro.introduction')
-    %p= t('intro.root_text')
+    %p= t('intro.root_text').html_safe
 
   - if has_active_scenario?
     = render partial: 'pages/root_page/resume_scenario'

@@ -3,6 +3,7 @@
 -# We'll render the flash in this view, so suppress doing so in the layout.
 - content_for(:flash) do
   %span
+= render "layouts/banner"
 
 .background_wrapper#saved_scenario
   .scenario_wrapper#index

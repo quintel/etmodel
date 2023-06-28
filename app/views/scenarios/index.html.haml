@@ -4,6 +4,8 @@
 - content_for(:flash) do
   %span
 
+= render "layouts/banner"
+
 .background_wrapper#saved_scenario
   .scenario_wrapper#index
     = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_scenarios }

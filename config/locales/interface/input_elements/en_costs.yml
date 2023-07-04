@@ -142,8 +142,13 @@ en:
       description: |
         Power-to-heat boilers convert electricity to heat. In the ETM power-to-heat boilers can be used
         for <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
-        district heating</a> and for the 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry"> industry</a>.
+        district heating</a>, for the industry 
+        (<a href="/scenario/demand/industry/refineries">refineries</a>,
+        <a href="/scenario/demand/industry/fertilizers"> fertilizers</a>,
+        <a href="/scenario/demand/industry/chemicals"> chemicals</a>,
+        <a href="/scenario/demand/industry/food"> food</a>, and
+        <a href="/scenario/demand/industry/paper"> paper</a>), and for the
+        <a href="/scenario/demand/agriculture/heat"> agriculture</a>.
         This slider determines the future change in investment costs of electric boilers.
     investment_costs_hydrogen_electrolysis:
       title: Investment costs power-to-gas

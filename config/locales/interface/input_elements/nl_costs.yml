@@ -150,9 +150,13 @@ nl:
       description: |
         Power-to-heat boilers converteren elektriciteit naar warmte. In het ETM kan power-to-heat worden ingezet 
         voor <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
-        warmtenetten</a>, voor de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry"> industrie</a>
-        en voor de <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-agriculture"> landbouw</a>.
+        warmtenetten</a>, voor de industrie (
+        <a href="/scenario/demand/industry/refineries"> raffinaderijen</a>,
+        <a href="/scenario/demand/industry/fertilizers"> kunstmest</a>,
+        <a href="/scenario/demand/industry/chemicals"> chemie</a>,
+        <a href="/scenario/demand/industry/food"> voedsel</a>, en
+        <a href="/scenario/demand/industry/paper"> papier</a>) en voor de landbouw
+        <a href="/scenario/demand/agriculture/heat"> agriculture</a>.
         Dit schuifje bepaalt hoeveel de investeringskosten voor elektrische boilers
         in de toekomst gaan veranderen.
     investment_costs_hydrogen_electrolysis:

@@ -203,6 +203,18 @@
   dependent_on:
   output_element_key: heat_network_production
   key: energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve_heat_network_production
+- label: energy_heat_boiler_electricity_steam_hot_water_output_curve
+  color: "#b9effe"
+  order_by: 17
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_boiler_electricity_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production
+  key: energy_heat_boiler_electricity_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_import_steam_hot_water_steam_hot_water_output_curve
   color: "#FF8C8C"
   order_by: 2

@@ -39,6 +39,13 @@ en:
       description: A heat pump produces heat with electricity and ambient heat. Specify
         here the capacity of collective heat pumps that supplies heat for district
         heating.
+    capacity_of_energy_heat_boiler_electricity:
+      title: Electric heater
+      short_description:
+      description: This slider influences the capacity of electric heaters that supply heat 
+        to district heating systems. An electric heater generates heat through electricity. 
+        It is commonly employed to lower electricity grid peaks or serve as a 
+        backup boiler in a district heating system.
     capacity_of_energy_heat_burner_network_gas:
       title: Gas heater (network gas)
       short_description:

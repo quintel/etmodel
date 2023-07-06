@@ -95,6 +95,18 @@
   dependent_on:
   output_element_key: collective_heat_mekko
   key: energy_heat_heatpump_water_water_electricity_in_collective_heat_network_mekko_supply_collective_heat_mekko
+- label: energy_heat_boiler_electricity_in_collective_heat_network_mekko
+  color: "#b9effe"
+  order_by: 13
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_boiler_electricity_in_collective_heat_network_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: collective_heat_mekko
+  key: energy_heat_boiler_electricity_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_heat_import_steam_hot_water_in_collective_heat_network_mekko
   color: "#e61919"
   order_by: 10
@@ -133,7 +145,7 @@
   key: energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_heat_burner_crude_oil_in_collective_heat_network_mekko
   color: "#CD6133"
-  order_by: 13
+  order_by: 14
   group: supply
   show_at_first:
   is_target_line: false
@@ -145,7 +157,7 @@
   key: energy_heat_burner_crude_oil_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_heat_burner_hydrogen_in_collective_heat_network_mekko
   color: "#87CEEB"
-  order_by: 14
+  order_by: 15
   group: supply
   show_at_first:
   is_target_line: false
@@ -157,7 +169,7 @@
   key: energy_heat_burner_hydrogen_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_heat_burner_network_gas_in_collective_heat_network_mekko
   color: "#A4B0BE"
-  order_by: 15
+  order_by: 16
   group: supply
   show_at_first:
   is_target_line: false
@@ -169,7 +181,7 @@
   key: energy_heat_burner_network_gas_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_heat_burner_waste_mix_in_collective_heat_network_mekko
   color: "#006266"
-  order_by: 16
+  order_by: 17
   group: supply
   show_at_first:
   is_target_line: false
@@ -181,7 +193,7 @@
   key: energy_heat_burner_waste_mix_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_chp_supercritical_waste_mix_in_collective_heat_network_mekko
   color: "#218C74"
-  order_by: 17
+  order_by: 18
   group: supply
   show_at_first:
   is_target_line: false
@@ -193,7 +205,7 @@
   key: energy_chp_supercritical_waste_mix_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_chp_ultra_supercritical_lignite_in_collective_heat_network_mekko
   color: "#222F3E"
-  order_by: 18
+  order_by: 19
   group: supply
   show_at_first:
   is_target_line: false
@@ -205,7 +217,7 @@
   key: energy_chp_ultra_supercritical_lignite_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_chps_coal_in_collective_heat_network_mekko
   color: "#485460"
-  order_by: 19
+  order_by: 20
   group: supply
   show_at_first:
   is_target_line: false
@@ -217,7 +229,7 @@
   key: energy_chps_coal_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_chp_local_engine_network_gas_in_collective_heat_network_mekko
   color: "#DFE4EA"
-  order_by: 20
+  order_by: 21
   group: supply
   show_at_first:
   is_target_line: false
@@ -229,7 +241,7 @@
   key: energy_chp_local_engine_network_gas_in_collective_heat_network_mekko_supply_collective_heat_mekko
 - label: energy_chp_local_wood_pellets_in_collective_heat_network_mekko
   color: "#3D6B0D"
-  order_by: 21
+  order_by: 22
   group: supply
   show_at_first:
   is_target_line: false

@@ -39,6 +39,13 @@ nl:
       description: Een warmtepomp produceert warmte uit elektriciteit en omgevingswarmte.
         Stel hier het vermogen aan collectieve warmtepompen in dat warmte levert aan
         warmtenetten.
+    capacity_of_energy_heat_boiler_electricity:
+      title: Elektrische ketel
+      short_description:
+      description: Dit schuifje beïnvloedt de capaciteit van elektrische ketels die warmte 
+        leveren aan warmtenetwerken. Een elektrische ketel produceert warmte uit elektriciteit. 
+        De ketel wordt vaak ingezet om pieken in het elektriciteitsnet op te vangen of 
+        als back-up ketel in een warmtenet.
     capacity_of_energy_heat_burner_network_gas:
       title: Gasketel (netwerk gas)
       short_description:

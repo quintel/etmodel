@@ -95,6 +95,18 @@
   dependent_on: 
   output_element_key: heat_cost_capacity
   key: energy_heat_heatpump_water_water_electricity_heat_cost_capacity
+- label: energy_heat_boiler_electricity
+  color: "#b9effe"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_boiler_electricity_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity
+  key: energy_heat_boiler_electricity_heat_cost_capacity
 - label: energy_heat_network_storage
   color: "#0984E3"
   order_by: 1

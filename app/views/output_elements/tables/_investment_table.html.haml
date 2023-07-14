@@ -511,11 +511,16 @@
     %td{:data => {:gquery => "energy_heat_heatpump_water_water_electricity_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_heat_heatpump_water_water_electricity_delta_in_investment_cost_table"}}
   %tr.even
+    %th= t("input_elements.capacity_of_energy_heat_boiler_electricity.title").html_safe
+    %td.border-rgt{:data => {:gquery => "energy_heat_boiler_electricity_present_in_investment_cost_table", :graph => :present}}
+    %td{:data => {:gquery => "energy_heat_boiler_electricity_future_in_investment_cost_table"}}
+    %td{:data => {:gquery => "energy_heat_boiler_electricity_delta_in_investment_cost_table"}}
+  %tr.odd
     %th= t("input_elements.capacity_of_energy_heat_solar_thermal.title").html_safe
     %td.border-rgt{:data => {:gquery => "energy_heat_solar_thermal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_heat_solar_thermal_future_in_investment_cost_table"}}
     %td{:data => {:gquery => "energy_heat_solar_thermal_delta_in_investment_cost_table"}}
-  %tr.odd
+  %tr.even
     %th= t("input_elements.capacity_of_energy_heat_well_geothermal.title").html_safe
     %td.border-rgt{:data => {:gquery => "energy_heat_well_geothermal_present_in_investment_cost_table", :graph => :present}}
     %td{:data => {:gquery => "energy_heat_well_geothermal_future_in_investment_cost_table"}}

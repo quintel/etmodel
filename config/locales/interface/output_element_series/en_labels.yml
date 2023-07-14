@@ -102,6 +102,7 @@ en:
         energy_heat_burner_waste_mix_steam_hot_water_output_curve: 'Waste heater'
         energy_heat_burner_wood_pellets_steam_hot_water_output_curve: 'Biomass heater'
         energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Collective water heat pump'
+        energy_heat_boiler_electricity_steam_hot_water_output_curve: 'Electric boiler'
         energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Imported heat'
         energy_heat_industry_residual_heat_steam_hot_water_output_curve: 'Residual heat from industry'
         energy_heat_solar_thermal_steam_hot_water_output_curve: 'Solar thermal'
@@ -131,6 +132,7 @@ en:
         energy_heat_network_storage_in: "Heat to (seasonal) storage"
         energy_heat_network_storage_out: "Heat from (seasonal) storage"
         energy_heat_heatpump_water_water_electricity: "Electric heat pump"
+        energy_heat_boiler_electricity: "Electric boiler"
         energy_heat_burner_wood_pellets: "Biomass burner"
         energy_heat_burner_waste_mix: "Waste incineration"
         energy_heat_burner_network_gas: "Network gas burner"
@@ -380,7 +382,7 @@ en:
         electric_vans: "Electric vans"
         electric_ships: "Electric ships"
         electric_planes: "Electric planes"
-        electric_heaters: "Electric heaters"
+        electric_heaters: "Electric boilers"
         electric_vehicles: "Electric vehicles"
         electric_ships: "Electric ships"
         electricity: "Electricity"
@@ -662,7 +664,7 @@ en:
         households_space_heater_combined_network_gas: "Condensing combi boiler space heating"
         households_space_heater_crude_oil: "Oil-fired heater space heating"
         households_space_heater_district_heating_steam_hot_water: "District heating space heating"
-        households_space_heater_electricity: "Electric heater space heating"
+        households_space_heater_electricity: "Electric boiler space heating"
         households_space_heater_heatpump_air_water_electricity: "Heat pump (air) space heating"
         households_space_heater_heatpump_ground_water_electricity: "Heat pump (ground) space heating"
         households_space_heater_hybrid_heatpump_air_water_electricity: "Hybrid heat pump space heating"
@@ -914,7 +916,7 @@ en:
         merit_buildings_lighting: "Buildings - Lighting"
         merit_buildings_other: "Buildings - Other"
         merit_buildings_space_heating: "Buildings - Space heating"
-        merit_collective_heat: "Collective heat pumps"
+        merit_collective_heat: "Collective heat"
         merit_ev_demand: "Transport - Electric vehicles"
         merit_export: "Export"
         merit_households_appliances: "Households - Appliances"
@@ -1234,6 +1236,7 @@ en:
         energy_heat_burner_wood_pellets_in_collective_heat_network_mekko: "Biomass heater"
         energy_heat_distribution_loss_in_collective_heat_network_mekko: "Distribution losses"
         energy_heat_heatpump_water_water_electricity_in_collective_heat_network_mekko: "Collective water heat pump"
+        energy_heat_boiler_electricity_in_collective_heat_network_mekko: "Electric boiler"
         energy_heat_import_steam_hot_water_in_collective_heat_network_mekko: "Imported heat"
         energy_heat_solar_thermal_in_collective_heat_network_mekko: "Solar thermal"
         energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko: "Heat shortage (gas back-up)"

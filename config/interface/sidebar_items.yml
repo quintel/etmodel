@@ -161,9 +161,17 @@
 - key: flexibility_weather
   tab_key: flexibility
   position: 4
-- key: heat_merit
+- key: heat_merit_lt
   tab_key: supply
   position: 1
+  parent_key: heat
+- key: heat_merit_mt
+  tab_key: supply
+  position: 2
+  parent_key: heat
+- key: heat_merit_ht
+  tab_key: supply
+  position: 3
   parent_key: heat
 - key: curve_upload
   section: flexibility

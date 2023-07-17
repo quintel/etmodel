@@ -146,11 +146,12 @@
    * Handles setting up the user-sortable order and triggers fetching and
    * receiving the order from ETEngine.
    */
-  var UserSortable = function (element, resourcePath, fetchOptions) {
+  var UserSortable = function (element, resourcePath, resourceOptions, fetchOptions) {
     this.element = $(element);
     this.lastGood = null;
     this.i18nKey = this.resourcePath = resourcePath;
     this.url = App.scenario.url_path() + '/' + resourcePath;
+    this.resourceOptions = resourceOptions || {};
     this.fetchOptions = fetchOptions || {};
   };
 
@@ -165,6 +166,7 @@
 
     var xhr = $.ajax({
       url: this.url,
+      data: this.resourceOptions,
       headers: App.accessToken.headers(),
       type: 'GET',
     });
@@ -220,7 +222,7 @@
       var self = this;
       var options = sortable.toArray();
 
-      var data = {};
+      var data = this.resourceOptions;
       data[this.resourcePath] = { order: options };
 
       var xhr = $.ajax({

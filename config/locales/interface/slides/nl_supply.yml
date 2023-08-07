@@ -251,7 +251,7 @@ nl:
       short_description:
       description:
     supply_heat_sources:
-      title: Warmtebronnen
+      title: Overzicht warmtenetten
       short_description:
       description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
         in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
@@ -368,6 +368,58 @@ nl:
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
         >kosten</a>.\r\n"
+    waste_burner:
+      title: "Afvalketels"
+      short_description:
+      description: "...."
+    aquathermal: 
+      title: "Aquathermie"
+      short_description:
+      description: "...."
+    biomass_burner:
+      title: "Biomassaketels"
+      short_description:
+      description: "...."
+    e_boiler_hp:
+      title: "Elektrische boilers en warmtepompen"
+      short_description:
+      description: "...."
+    geothermal_heat:
+      title: "Geothermie"
+      short_description:
+      description: "...."
+    solar_thermal:
+      title: "Zonthermie"
+      short_description:
+      description: "...."
+    hydrogen_burner:
+      title: "Waterstofketels"
+      short_description:
+      description: "...."
+    network_gas_burner:
+      title: "Gasketels"
+      short_description:
+      description: "...."
+    coal_burner:
+      title: "Kolenketels"
+      short_description:
+      description: "...."
+    oil_burner:
+      title: "Olieketels"
+      short_description:
+      description: "...."
+    chp_heat:
+      title: "Warmte uit WKK's"
+      short_description:
+      description: "...."
+    residual_heat:
+      title: "Restwarmte"
+      short_description:
+      description: "...."
+    import_heat:
+      title: "Import"
+      short_description:
+      description: "...."
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:

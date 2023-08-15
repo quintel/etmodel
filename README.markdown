@@ -141,3 +141,7 @@ organisations.
 * [FontAwesome](https://fontawesome.com/)
 * [FreePik, Flaticon](https://www.flaticon.com/)
 * [Phosphor](https://phosphoricons.com/)
+
+#### Wiki
+
+[Wiki](../../wiki)

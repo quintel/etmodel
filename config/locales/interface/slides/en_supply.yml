@@ -251,7 +251,7 @@ en:
       title: Combined heat & power
       short_description:
       description:
-    supply_heat_sources:
+    supply_heat_overview:
       title: Overview of heat districts
       short_description:
       description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
@@ -275,6 +275,18 @@ en:
         >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
         in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
         target =\"_blank\">documentation</a>."
+    supply_heat_overview_chp:
+      title: Allocation of heat from CHP's
+      short_description:
+      description: "..."
+    supply_heat_overview_residual:
+      title: Allocation residual heat
+      short_description:
+      description: "..."
+    supply_heat_overview_emissions:
+      title: Emissions from heat import
+      short_description:
+      description: "..."
     supply_heat_network_losses:
       title: Transport and distribution losses
       short_description:
@@ -323,7 +335,7 @@ en:
         to change the (merit) order of dispatchable heat sources: which heat source
         is switched on first in case of a heat deficit? The chart to the right shows
         the marginal costs of each dispatchable source."
-    supply_heat_network_storage_toggle:
+    supply_heat_ht_storage:
       title: "(Seasonal) storage of heat"
       short_description:
       description: "Scenarios with large amounts of \"must-run\" and volatile heat
@@ -344,58 +356,60 @@ en:
         losses can be updated with the slider below the toggle. The costs for storage
         can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
         >costs section</a>."
-    waste_burner:
-      title: "Waste burners"
+    supply_heat_mt_storage:
+      title: "(Seasonal) storage of heat"
       short_description:
-      description: "...."
-    aquathermal:
-      title: "Aquathermal heat"
+      description: "Scenarios with large amounts of \"must-run\" and volatile heat
+        sources will often\r\nhave considerable heat production during hours of low
+        demand. (Seasonal) storage allows you to preserve\r\nthis heat for later use,
+        reducing the amount of dispatchable capacity (such as back-up heaters) required
+        to meet demand. \r\n</br></br>\r\nIf you decide to switch the toggle below
+        to 'On', the ETM will add heat storage to your scenario. This ensures that
+        all excess heat production is saved and can be used in a later moment. The
+        chart to the right shows you storage in and outflows for every hour of the
+        year.\r\n<br /><br />\r\nCaution: If you install too much must-run or volatile
+        capacity in your scenario you may end up with a heat surplus in the storage
+        at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
+        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
+        >installed capacity of must-runs / volatile heat sources</a>, increasing district
+        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
+        losses can be updated with the slider below the toggle. The costs for storage
+        can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >costs section</a>."
+    supply_heat_lt_storage:
+      title: "(Seasonal) storage of heat"
       short_description:
-      description: "...."
-    biomass_burner:
-      title: "Biomass burners"
+      description: "Scenarios with large amounts of \"must-run\" and volatile heat
+        sources will often\r\nhave considerable heat production during hours of low
+        demand. (Seasonal) storage allows you to preserve\r\nthis heat for later use,
+        reducing the amount of dispatchable capacity (such as back-up heaters) required
+        to meet demand. \r\n</br></br>\r\nIf you decide to switch the toggle below
+        to 'On', the ETM will add heat storage to your scenario. This ensures that
+        all excess heat production is saved and can be used in a later moment. The
+        chart to the right shows you storage in and outflows for every hour of the
+        year.\r\n<br /><br />\r\nCaution: If you install too much must-run or volatile
+        capacity in your scenario you may end up with a heat surplus in the storage
+        at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
+        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
+        >installed capacity of must-runs / volatile heat sources</a>, increasing district
+        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
+        losses can be updated with the slider below the toggle. The costs for storage
+        can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >costs section</a>."
+    supply_heat_ht_sources:
+      title: "Sources"
       short_description:
-      description: "...."
-    e_boiler_hp:
-      title: "Electric boilers and heat-pumps"
+      description: "..."
+    supply_heat_lt_sources:
+      title: "Sources"
       short_description:
-      description: "...."
-    geothermal_heat:
-      title: "Geothermal heat"
+      description: "..."
+    supply_heat_mt_sources:
+      title: "Sources"
       short_description:
-      description: "...."
-    solar_thermal:
-      title: "Solar thermal heat"
-      short_description:
-      description: "...."
-    hydrogen_burner:
-      title: "Hydrogen burners"
-      short_description:
-      description: "...."
-    network_gas_burner:
-      title: "Network gas burner"
-      short_description:
-      description: "...."
-    coal_burner:
-      title: "Coal burners"
-      short_description:
-      description: "...."
-    oil_burner:
-      title: "Oil burners"
-      short_description:
-      description: "...."
-    chp_heat:
-      title: "Heat from CHP's"
-      short_description:
-      description: "...."
-    residual_heat:
-      title: "Residual heat"
-      short_description:
-      description: "...."
-    import_heat:
-      title: "Import"
-      short_description:
-      description: "...."
+      description: "..."
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:

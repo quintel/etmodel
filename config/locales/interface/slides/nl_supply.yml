@@ -250,7 +250,7 @@ nl:
       title: Brandstofmix gasgestookte WKK
       short_description:
       description:
-    supply_heat_sources:
+    supply_heat_overview:
       title: Overzicht warmtenetten
       short_description:
       description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
@@ -276,6 +276,18 @@ nl:
         >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in
         onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
         target =\"_blank\">documentatie</a>."
+    supply_heat_overview_chp:
+      title: Allocatie warmte uit WKK's
+      short_description:
+      description: "..."
+    supply_heat_overview_residual:
+      title: Allocatie restwarmte
+      short_description:
+      description: "..."
+    supply_heat_overview_emissions:
+      title: Emissies van warmteimport
+      short_description:
+      description: "..."
     supply_heat_network_industry:
       title: Bronnen warmtenet
       short_description: ''
@@ -291,11 +303,7 @@ nl:
         die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
         naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
         kun je de distributieverliezen in jouw scenario instellen."
-    supply_heat_combined_heat_power:
-      title: Warmte-krachtkoppeling
-      short_description:
-      description:
-    supply_heat_network_orde_lt:
+    supply_heat_network_order_lt:
       title: Inzetvolgorde van LT regelbare warmtebronnen
       short_description:
       description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele warmtebronnen
@@ -343,7 +351,7 @@ nl:
         springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
         kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare
         bronnen."
-    supply_heat_network_storage_toggle:
+    supply_heat_ht_storage:
       title: "(Seizoens)opslag van warmte"
       short_description:
       description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
@@ -368,58 +376,68 @@ nl:
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
         >kosten</a>.\r\n"
-    waste_burner:
-      title: "Afvalketels"
+    supply_heat_mt_storage:
+      title: "(Seizoens)opslag van warmte"
       short_description:
-      description: "...."
-    aquathermal: 
-      title: "Aquathermie"
+      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+        zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
+        in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
+        om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
+        er minder regelbaar vermogen nodig, zoals back-up ketels, om in de vraag te
+        voorzien. \r\n</br></br>\r\nAls je ervoor kiest om de knop hieronder op 'Aan'
+        te zetten, plaatst het ETM automatisch voldoende opslagvolume in jouw scenario
+        om voor elk uur per jaar de overschotten aan warmte op te kunnen slaan. Deze
+        warmte wordt weer uit de opslag gehaald op momenten dat de vraag hoger is
+        dan de (niet-regelbare) productie. De grafiek hiernaast laat het verloop van
+        de opslag zien.\r\n<br /><br />Let op: Als je teveel \"must-run\" of volatiel
+        vermogen in je scenario hebt, kan het voorkomen dat er aan het einde van het
+        'warmtejaar' (dat loopt van 1 april tot 31 maart) een warmteoverschot in de
+        opslag achterblijft. Om te voorkomen dat deze warmte verloren gaat, kun je
+        proberen om <a href=\"/scenario/supply/heat/heat-sources\" >het geïnstalleerd
+        vermogen van niet-regelbare / volatiele warmtebronnen</a> te verlagen, de
+        warmtevraag in je scenario te verhogen of de positie van warmteopslag in <a
+        href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >de inzetvolgorde van regelbare warmtebronnen</a> te veranderen.\r\n<br><br
+        />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
+        De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >kosten</a>.\r\n"
+    supply_heat_lt_storage:
+      title: "(Seizoens)opslag van warmte"
       short_description:
-      description: "...."
-    biomass_burner:
-      title: "Biomassaketels"
+      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+        zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
+        in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
+        om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
+        er minder regelbaar vermogen nodig, zoals back-up ketels, om in de vraag te
+        voorzien. \r\n</br></br>\r\nAls je ervoor kiest om de knop hieronder op 'Aan'
+        te zetten, plaatst het ETM automatisch voldoende opslagvolume in jouw scenario
+        om voor elk uur per jaar de overschotten aan warmte op te kunnen slaan. Deze
+        warmte wordt weer uit de opslag gehaald op momenten dat de vraag hoger is
+        dan de (niet-regelbare) productie. De grafiek hiernaast laat het verloop van
+        de opslag zien.\r\n<br /><br />Let op: Als je teveel \"must-run\" of volatiel
+        vermogen in je scenario hebt, kan het voorkomen dat er aan het einde van het
+        'warmtejaar' (dat loopt van 1 april tot 31 maart) een warmteoverschot in de
+        opslag achterblijft. Om te voorkomen dat deze warmte verloren gaat, kun je
+        proberen om <a href=\"/scenario/supply/heat/heat-sources\" >het geïnstalleerd
+        vermogen van niet-regelbare / volatiele warmtebronnen</a> te verlagen, de
+        warmtevraag in je scenario te verhogen of de positie van warmteopslag in <a
+        href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >de inzetvolgorde van regelbare warmtebronnen</a> te veranderen.\r\n<br><br
+        />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
+        De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >kosten</a>.\r\n"
+    supply_heat_ht_sources:
+      title: "Bronnen"
       short_description:
-      description: "...."
-    e_boiler_hp:
-      title: "Elektrische boilers en warmtepompen"
+      description: "..."
+    supply_heat_lt_sources:
+      title: "Bronnen"
       short_description:
-      description: "...."
-    geothermal_heat:
-      title: "Geothermie"
+      description: "..."
+    supply_heat_mt_sources:
+      title: "Bronnen"
       short_description:
-      description: "...."
-    solar_thermal:
-      title: "Zonthermie"
-      short_description:
-      description: "...."
-    hydrogen_burner:
-      title: "Waterstofketels"
-      short_description:
-      description: "...."
-    network_gas_burner:
-      title: "Gasketels"
-      short_description:
-      description: "...."
-    coal_burner:
-      title: "Kolenketels"
-      short_description:
-      description: "...."
-    oil_burner:
-      title: "Olieketels"
-      short_description:
-      description: "...."
-    chp_heat:
-      title: "Warmte uit WKK's"
-      short_description:
-      description: "...."
-    residual_heat:
-      title: "Restwarmte"
-      short_description:
-      description: "...."
-    import_heat:
-      title: "Import"
-      short_description:
-      description: "...."
+      description: "..."
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:

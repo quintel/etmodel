@@ -6,6 +6,21 @@
   sub_group: collective_heat
   show_point_label: false
   growth_chart: false
+  key: sankey_heat_networks
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: sankey
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
   key: source_of_heat_production
   max_axis_value: 
   min_axis_value: 

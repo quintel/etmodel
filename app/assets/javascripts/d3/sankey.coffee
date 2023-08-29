@@ -117,7 +117,7 @@ D3.sankey =
           {id: 'transport',                    column: 2, label: 'transport',                         color: '#8B0000'},
           {id: 'distribution_losses',          column: 2, label: 'distribution_losses',               color: '#DCDCDC'},
           {id: 'storage_losses',               column: 2, label: 'storage_losses',                    color: '#DCDCDC'},
-          {id: 'unused_heat',                  column: 2, label: 'unused_heat',                       color: '#DCDCDC'}
+          {id: 'unused_heat',                  column: 2, label: 'unused_heat',                       color: '#c70000'}
         ]
         links: [
           {left: 'coal_and_derivatives',         right: 'ht_network',           gquery: 'coal_and_derivatives_to_ht_network_in_sankey_heat_networks',         color: '#252525'},
@@ -144,7 +144,7 @@ D3.sankey =
           {left: 'ht_network',                   right: 'transport',            gquery: 'ht_network_to_final_demand_transport_in_sankey_heat_networks',       color: '#8B0000'},
           {left: 'ht_network',                   right: 'distribution_losses',  gquery: 'ht_network_to_distribution_losses_in_sankey_heat_networks',          color: '#DCDCDC'},
           {left: 'ht_network',                   right: 'storage_losses',       gquery: 'ht_network_to_storage_losses_in_sankey_heat_networks',               color: '#DCDCDC'},
-          {left: 'ht_network',                   right: 'unused_heat',          gquery: 'ht_network_to_unused_heat_in_sankey_heat_networks',                  color: '#DCDCDC'}
+          {left: 'ht_network',                   right: 'unused_heat',          gquery: 'ht_network_to_unused_heat_in_sankey_heat_networks',                  color: '#c70000'}
         ]
     biomass_sankey:
       data:

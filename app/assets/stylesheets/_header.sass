@@ -217,42 +217,30 @@ header.main-header
         height: 1rem
         margin-left: 0.25rem
 
+  &.about, &.features, &.development
+    background: #F6FFF1
+    li.learn-section, svg.external
+      color: $landing-grey
+    strong, a svg
+      color: $landing-green
+    strong svg
+      background: $landing-green
+
   &.about
-    background: linear-gradient(white, white 10px, #f2f5fe 30px)
     left: -7rem
     transform-origin: 12rem center
-    li.learn-section, svg.external
-      color: #82819d
-    strong, a svg
-      color: #4338ca
-    strong svg
-      background: #6366f1
     &::before
       left: 9rem
 
   &.features
-    background: linear-gradient(white, white 10px, #f6fffd 30px)
     left: -5rem
     transform-origin: 7rem center
-    li.learn-section, svg.external
-      color: #769290
-    strong, a svg
-      color: #0f766e
-    strong svg
-      background: #14b8a6
     &::before
       left: 7.5rem
 
   &.development
-    background: linear-gradient(white, white 10px, #fffdf3 30px)
     left: -5rem
     transform-origin: 13rem center
-    li.learn-section, svg.external
-      color: #9a7d67
-    strong,  a svg
-      color: #b45309
-    strong svg
-      background: #d97706
     &::before
       left: 8rem
 
@@ -361,9 +349,7 @@ header.main-header
 
 .dropdown-menu
   background: white
-  border-bottom-color: rgba(0, 0, 0, 0.2)
-  border-radius: 4px
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0,0,0, 0.1)
+  border-radius: 6px
   display: block
   font-size: 0.875rem
   left: 0.5em
@@ -380,9 +366,8 @@ header.main-header
   z-index: 100
 
   &:before
-    background: white
+    background: #F6FFF1
     border-radius: 2px
-    box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.15)
     content: " "
     height: 0.625rem
     left: 0.625rem

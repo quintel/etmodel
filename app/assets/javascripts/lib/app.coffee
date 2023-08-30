@@ -190,8 +190,7 @@ class @AppView extends Backbone.View
   handle_ajax_error: (jqXHR, textStatus, error) ->
     console.log("Something went wrong: " + textStatus)
 
-    if globals.env == 'development' ||
-        (globals.env == 'staging' && globals.debug_js)
+    if globals.env == 'development' || (globals.env == 'staging' && globals.debug_js)
       body = $('body')
 
       if !body.hasClass('has-api-error')
@@ -231,6 +230,11 @@ class @AppView extends Backbone.View
   # Get the value of all changed sliders. Get the chart. Sends those values to
   # the server.
   doUpdateRequest: =>
+    # LiteUI means we're rendering in an iframe.
+    # Let the parent window know we're processing a request
+    if $('body').hasClass('liteui')
+      parent.postMessage('request-started', '*')
+
     dirtyInputElements = @input_elements.dirty()
     return if dirtyInputElements.length == 0
     input_params = @input_elements.api_update_params()
@@ -247,6 +251,10 @@ class @AppView extends Backbone.View
   hideLoading: ->
     $(".chart_holder").busyBox('close')
     $("#dashboard .loading").hide()
+
+    # Done! Also let the parent know
+    if $('body').hasClass('liteui')
+      parent.postMessage('request-stopped', '*')
 
   debug: (t) ->
     console.log(t) if globals.debug_js

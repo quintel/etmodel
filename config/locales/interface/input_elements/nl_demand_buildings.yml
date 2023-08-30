@@ -118,13 +118,27 @@ nl:
         wordt geproduceerd (behalve CO<sub>2</sub>). Een groot nadeel is dat de olietanks
         na een paar decennia in de grond vaak gaan lekken en daarbij behoorlijke schade
         kunnen doen aan het milieu of de kwaliteit van het drinkwater.
-    buildings_space_heater_district_heating_steam_hot_water_share:
-      title: Warmtenet
+    buildings_space_heater_district_heating_ht_steam_hot_water_share:
+      title: HT-warmtenet
       short_description:
       description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
         / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
         jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
-        <a href="/scenario/supply/heat" >"Warmtenetten"</a>.
+        <a href="/scenario/supply/heat_ht">"HT-warmtenetten"</a>.
+    buildings_space_heater_district_heating_mt_steam_hot_water_share:
+      title: MT-warmtenet
+      short_description:
+      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
+        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
+        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
+        <a href="/scenario/supply/heat_mt">"MT-warmtenetten"</a>.
+    buildings_space_heater_district_heating_lt_steam_hot_water_share:
+      title: LT-warmtenet
+      short_description:
+      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
+        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
+        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
+        <a href="/scenario/supply/heat_lt">"LT-warmtenetten"</a>.
     buildings_space_heater_coal_share:
       title: Kolenketel
       short_description:

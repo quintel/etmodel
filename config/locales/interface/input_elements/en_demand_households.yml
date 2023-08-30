@@ -467,13 +467,27 @@ en:
       description: These are the same heaters as the "Condensing combi boiler", except
         that they do not produce hot water, but only heat for a central heating systems.
         This makes them on average a little more efficient than their 'combi' counterparts.
-    households_heater_district_heating_steam_hot_water_share:
-      title: District heating
+    households_heater_district_heating_ht_steam_hot_water_share:
+      title: HT district heating
       short_description:
       description: District heating is heat supplied by a heat network. The heat can
         be produced by local heat plants / large-scale burners or the heat can be
-        imported from outside your region. You can set the heat sources in the Supply-section
-        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+        imported from outside your region. You can set the heat sources in the Supply section
+        under the header <a href="/scenario/supply/heat_ht">"HT heat networks"</a>.
+    households_heater_district_heating_mt_steam_hot_water_share:
+      title: MT district heating
+      short_description:
+      description: District heating is heat supplied by a heat network. The heat can
+        be produced by local heat plants / large-scale burners or the heat can be
+        imported from outside your region. You can set the heat sources in the Supply section
+        under the header <a href="/scenario/supply/heat_mt">"MT heat networks"</a>.
+    households_heater_district_heating_lt_steam_hot_water_share:
+      title: LT district heating
+      short_description:
+      description: District heating is heat supplied by a heat network. The heat can
+        be produced by local heat plants / large-scale burners or the heat can be
+        imported from outside your region. You can set the heat sources in the Supply section
+        under the header <a href="/scenario/supply/heat_lt">"LT heat networks"</a>.
     households_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (gas)
       short_description:

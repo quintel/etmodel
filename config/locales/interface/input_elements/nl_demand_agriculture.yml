@@ -54,13 +54,21 @@ nl:
       short_description: ''
       description: Dit zijn gasgestookte ketels. Dit zijn behoorlijk efficiënte systemen,
         maar ze stoten wel CO<sub>2</sub> uit.
-    agriculture_final_demand_central_steam_hot_water_share:
-      title: Warmtenet
+    agriculture_final_demand_ht_central_steam_hot_water_share:
+      title: HT-warmtenet
       short_description:
       description: |
         Dit schuifje stelt het percentage nuttige warmtevraag van de landbouw in dat geleverd wordt 
-        door een warmtenet. Je kunt bepalen welke bronnen je op het warmtenet wilt 
-        inzetten in de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a>
+        door een HT-warmtenet. Je kunt bepalen welke bronnen je op het HT-warmtenet wilt 
+        inzetten in de <a href="/scenario/supply/heat_ht">HT-warmtenetten</a>
+        sectie.
+    agriculture_final_demand_mt_central_steam_hot_water_share:
+      title: MT-warmtenet
+      short_description:
+      description: |
+        Dit schuifje stelt het percentage nuttige warmtevraag van de landbouw in dat geleverd wordt 
+        door een MT-warmtenet. Je kunt bepalen welke bronnen je op het MT-warmtenet wilt 
+        inzetten in de <a href="/scenario/supply/heat_mt">MT-warmtenetten</a>
         sectie.
     agriculture_final_demand_local_steam_hot_water_share:
       title: Warmte van lokale WKK's

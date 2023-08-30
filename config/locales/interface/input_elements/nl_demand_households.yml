@@ -485,13 +485,27 @@ nl:
       description: 'Dit zijn dezelfde ketels als de "HR combiketels", behalve dat
         ze geen warm water maken, maar alleen warmte voor de centrale verwarming.
         Hierdoor zijn deze apparaten een beetje efficiënter dan de combiketels. '
-    households_heater_district_heating_steam_hot_water_share:
-      title: Warmtenet
+    households_heater_district_heating_ht_steam_hot_water_share:
+      title: HT-warmtenet
       short_description:
       description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
         / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
-        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
-        <a href="/scenario/supply/heat" >"Warmtenetten"</a>.
+        jouw gebied. Kies de warmtebronnen in het Aanbod gedeelte onder het kopje
+        <a href="/scenario/supply/heat_ht">"HT-warmtenetten"</a>.
+    households_heater_district_heating_mt_steam_hot_water_share:
+      title: MT-warmtenet
+      short_description:
+      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
+        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
+        jouw gebied. Kies de warmtebronnen in het Aanbod gedeelte onder het kopje
+        <a href="/scenario/supply/heat_mt">"MT-warmtenetten"</a>.
+    households_heater_district_heating_lt_steam_hot_water_share:
+      title: LT-warmtenet
+      short_description:
+      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
+        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
+        jouw gebied. Kies de warmtebronnen in het Aanbod gedeelte onder het kopje
+        <a href="/scenario/supply/heat_lt">"LT-warmtenetten"</a>.
     households_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (gas)
       short_description:

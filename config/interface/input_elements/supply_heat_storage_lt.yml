@@ -3,16 +3,16 @@
   step_value: 0.1
   unit: "%"
   position: 3
-  slide_key: storage_lt
+  slide_key: supply_heat_storage_lt
 - key: energy_heat_network_storage_lt_steam_hot_water_output_capacity_share
   step_value: 0.1
   unit: "%"
   fixed: false
   position: 2
-  slide_key: storage_lt
+  slide_key: supply_heat_storage_lt
 - key: heat_storage_enabled_lt
   step_value: 0.1
   unit: boolean
   position: 1
-  slide_key: storage_lt
+  slide_key: supply_heat_storage_lt
 

@@ -270,162 +270,190 @@ nl:
         scenario. Voor moderne warmtenetten is 15% een veelgebruikte aanname, voor
         oudere/bestaande systemen ligt dit dichter bij 25-30%.
     capacity_of_energy_heat_boiler_ht_electricity:
-      title: ...
+      title: Elektrische boiler
       short_description:
       description: "..."
     capacity_of_energy_heat_boiler_lt_electricity:
-      title: ...
+      title: Elektrische boiler
       short_description:
       description: "..."
     capacity_of_energy_heat_boiler_mt_electricity:
-      title: ...
+      title: Elektrische boiler
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_ht_coal:
-      title: ...
+      title: Kolenketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_ht_crude_oil:
-      title: ...
+      title: Olieketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_ht_hydrogen:
-      title: ...
+      title: Waterstofketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_ht_network_gas:
-      title: ...
+      title: Gasketel (netwerk gas)
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_ht_waste_mix:
-      title: ...
+      title: Afvalketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_ht_wood_pellets:
-      title: ...
+      title: Biomassaketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_lt_hydrogen:
-      title: ...
+      title: Waterstofketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_mt_coal:
-      title: ...
+      title: Kolenketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_mt_crude_oil:
-      title: ...
+      title: Olieketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_mt_hydrogen:
-      title: ...
+      title: Waterstofketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_mt_network_gas:
-      title: ...
+      title: Gasketel (netwerk gas)
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_mt_waste_mix:
-      title: ...
+      title: Afvalketel
       short_description:
       description: "..."
     capacity_of_energy_heat_burner_mt_wood_pellets:
-      title: ...
+      title: Biomassaketel
       short_description:
       description: "..."
     capacity_of_energy_heat_heatpump_water_water_ht_electricity:
-      title: ...
+      title: Water warmtepomp
       short_description:
       description: "..."
     capacity_of_energy_heat_heatpump_water_water_lt_electricity:
-      title: ...
+      title: Water warmtepomp
       short_description:
       description: "..."
     capacity_of_energy_heat_heatpump_water_water_mt_electricity:
-      title: ...
+      title: Water warmtepomp
       short_description:
       description: "..."
     capacity_of_energy_heat_solar_lt_solar_thermal:
-      title: ...
+      title: Zonthermie
       short_description:
       description: "..."
     capacity_of_energy_heat_solar_mt_solar_thermal:
-      title: ...
+      title: Zonthermie
       short_description:
       description: "..."
     capacity_of_energy_heat_well_deep_mt_geothermal:
-      title: ...
+      title: Geothermie (diep)
       short_description:
       description: "..."
     capacity_of_energy_heat_well_shallow_heatpump_mt_geothermal:
-      title: ...
+      title: Geothermie + warmtepomp (ondiep)
       short_description:
       description: "..."
     capacity_of_energy_heat_well_shallow_lt_geothermal:
-      title: ...
+      title: Geothermie (diep)
       short_description:
       description: "..."
     energy_heat_distribution_ht_loss_share:
-      title: ...
+      title: Transport en distributieverliezen
       short_description:
       description: "..."
     energy_heat_distribution_lt_loss_share:
-      title: ...
+      title: Transport en distributieverliezen
       short_description:
       description: "..."
     energy_heat_distribution_mt_loss_share:
-      title: ...
+      title: Transport en distributieverliezen
       short_description:
       description: "..."
     energy_heat_network_storage_ht_loss_share:
-      title: ...
+      title: Jaarlijkse verliezen
       short_description:
       description: "..."
     energy_heat_network_storage_ht_steam_hot_water_output_capacity_share:
-      title: ...
+      title: Jaarlijkse verliezen
       short_description:
       description: "..."
     energy_heat_network_storage_lt_loss_share:
-      title: ...
+      title: Jaarlijkse verliezen
       short_description:
       description: "..."
-    energy_heat_network_storage_lt_output_capacity_share:
-      title: ...
-      short_description:
-      description: "..."
-    energy_heat_network_storage_mt_loss_share:
-      title: ...
+    energy_heat_network_storage_lt_steam_hot_water_output_capacity_share:
+      title: Output capcity (as % of average hourly load)
       short_description:
       description: "..."
     energy_heat_network_storage_mt_steam_hot_water_output_capacity_share:
-      title: ...
-      short_description:
-      description: "..."
-    heat_storage_enabled_ht:
-      title: ...
-      short_description:
-      description: "..."
-    heat_storage_enabled_lt:
-      title: ...
-      short_description:
-      description: "..."
-    heat_storage_enabled_mt:
-      title: ...
-      short_description:
-      description: "..."
-    share_of_energy_chp_supercritical_mt_waste_mix:
-      title: ...
+      title: Output capcity (as % of average hourly load)
       short_description:
       description: "..."
     volume_of_ht_imported_heat:
-      title: ...
+      title: Geïmporteerde warmte
       short_description:
       description: "..."
     volume_of_lt_imported_heat:
-      title: ...
+      title: Geimporteerde warmte
       short_description:
       description: "..."
     volume_of_mt_imported_heat:
-      title: ...
+      title: Geimporteerde warmte
+      short_description:
+      description: "..."
+    share_of_energy_chp_combined_cycle_ht_network_gas:
+      title: HT
+      short_description:
+      description: "..."
+    share_of_energy_chp_combined_cycle_mt_network_gas:
+      title: MT
+      short_description:
+      description: "..."
+    share_of_energy_chp_local_engine_ht_biogas:
+      title: HT
+      short_description:
+      description: "..."
+    share_of_energy_chp_local_engine_ht_network_gas:
+      title: HT
+      short_description:
+      description: "..."
+    share_of_energy_chp_local_engine_mt_biogas:
+      title: MT
+      short_description:
+      description: "..."
+    share_of_energy_chp_local_engine_mt_network_gas:
+      title: MT
+      short_description:
+      description: "..."
+    share_of_energy_chp_local_ht_wood_pellets:
+      title: HT
+      short_description:
+      description: "..."
+    share_of_energy_chp_local_mt_wood_pellets:
+      title: MT
+      short_description:
+      description: "..."
+    share_of_energy_chp_ultra_supercritical_cofiring_ht_coal:
+      title: HT
+      short_description:
+      description: "..."
+    share_of_energy_chp_ultra_supercritical_cofiring_mt_coal:
+      title: MT
+      short_description:
+      description: "..."
+    share_of_energy_chp_ultra_supercritical_ht_coal:
+      title: HT
+      short_description:
+      description: "..."
+    share_of_energy_chp_ultra_supercritical_mt_coal:
+      title: LT
       short_description:
       description: "..."

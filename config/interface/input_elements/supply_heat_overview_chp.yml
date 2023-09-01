@@ -1,98 +1,121 @@
 ---
-- key: share_of_energy_chp_combined_cycle_ht_network_gas  
-  share_group: chp_cc_network_gas_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: cc_network_gas_heat
-  position: 3
-  slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_combined_cycle_mt_network_gas
-  share_group: chp_cc_network_gas_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: cc_network_gas_heat
-  position: 3
-  slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_local_engine_ht_biogas  
-  share_group: chp_biogas_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: biogas_heat
-  position: 1
-  slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_local_engine_mt_biogas  
-  share_group: chp_biogas_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: biogas_heat
-  position: 2
-  slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_local_engine_ht_network_gas
-  share_group: chp_network_gas_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: network_gas_heat
-  position: 3
-- key: share_of_energy_chp_local_engine_mt_network_gas
-  share_group: chp_network_gas_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: network_gas_heat
-  position: 3
-  slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_local_ht_wood_pellets
-  share_group: chp_wood_pellets_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: wood_pellets_heat
-  position: 3
-  slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_local_mt_wood_pellets
-  share_group: chp_wood_pellets_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: wood_pellets_heat
-  position: 3
-  slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_ultra_supercritical_cofiring_ht_coal  
-  share_group: chp_cofiring_coal_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: cofiring_coal_heat
-  position: 3
-  slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_ultra_supercritical_cofiring_mt_coal  
-  share_group: chp_cofiring_coal_heat
-  step_value: 1.0
-  unit: "%"
-  interface_group: cofiring_coal_heat
-  position: 5
-  slide_key: supply_heat_overview_chp
 - key: share_of_energy_chp_ultra_supercritical_ht_coal  
   share_group: chp_coal_heat
   step_value: 1.0
   unit: "%"
   interface_group: coal_heat
-  position: 6
+  position: 100
   slide_key: supply_heat_overview_chp
 - key: share_of_energy_chp_ultra_supercritical_mt_coal  
   share_group: chp_coal_heat
   step_value: 1.0
   unit: "%"
   interface_group: coal_heat
-  position: 7
+  position: 110
   slide_key: supply_heat_overview_chp
+
+- key: share_of_energy_chp_ultra_supercritical_cofiring_ht_coal  
+  share_group: chp_cofiring_coal_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: cofiring_coal_heat
+  position: 120
+  slide_key: supply_heat_overview_chp
+- key: share_of_energy_chp_ultra_supercritical_cofiring_mt_coal  
+  share_group: chp_cofiring_coal_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: cofiring_coal_heat
+  position: 130
+  slide_key: supply_heat_overview_chp
+
+- key: share_of_energy_chp_ultra_supercritical_ht_lignite  
+  share_group: chp_lignite_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: lignite_heat
+  position: 120
+  dependent_on: has_lignite
+  slide_key: supply_heat_overview_chp
+- key: share_of_energy_chp_ultra_supercritical_mt_lignite  
+  share_group: chp_lignite_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: lignite_heat
+  position: 130
+  dependent_on: has_lignite
+  slide_key: supply_heat_overview_chp
+
+- key: share_of_energy_chp_combined_cycle_ht_network_gas  
+  share_group: chp_cc_network_gas_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: cc_network_gas_heat
+  position: 200
+  slide_key: supply_heat_overview_chp
+- key: share_of_energy_chp_combined_cycle_mt_network_gas
+  share_group: chp_cc_network_gas_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: cc_network_gas_heat
+  position: 210
+  slide_key: supply_heat_overview_chp
+
+- key: share_of_energy_chp_local_engine_ht_network_gas
+  share_group: chp_network_gas_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: network_gas_heat
+  position: 250
+- key: share_of_energy_chp_local_engine_mt_network_gas
+  share_group: chp_network_gas_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: network_gas_heat
+  position: 260
+  slide_key: supply_heat_overview_chp
+
+- key: share_of_energy_chp_local_ht_wood_pellets
+  share_group: chp_wood_pellets_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: wood_pellets_heat
+  position: 300
+  slide_key: supply_heat_overview_chp
+- key: share_of_energy_chp_local_mt_wood_pellets
+  share_group: chp_wood_pellets_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: wood_pellets_heat
+  position: 310
+  slide_key: supply_heat_overview_chp
+
+- key: share_of_energy_chp_local_engine_ht_biogas  
+  share_group: chp_biogas_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: biogas_heat
+  position: 350
+  slide_key: supply_heat_overview_chp
+- key: share_of_energy_chp_local_engine_mt_biogas  
+  share_group: chp_biogas_heat
+  step_value: 1.0
+  unit: "%"
+  interface_group: biogas_heat
+  position: 360
+  slide_key: supply_heat_overview_chp
+
 - key: share_of_energy_chp_supercritical_ht_waste_mix  
   share_group: chp_waste_heat
   step_value: 1.0
   unit: "%"
   interface_group: waste_heat
-  position: 7
+  position: 400
   slide_key: supply_heat_overview_chp
 - key: share_of_energy_chp_supercritical_mt_waste_mix  
   share_group: chp_waste_heat
   step_value: 1.0
   unit: "%"
   interface_group: waste_heat
-  position: 7
+  position: 410
   slide_key: supply_heat_overview_chp

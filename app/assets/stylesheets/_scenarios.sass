@@ -588,10 +588,10 @@ table.default
 
   .big-tabs
     align-items: stretch
-    border-bottom: 3px solid $soft-grey
     display: flex
     font-weight: 500
     margin: -15px -40px 20px
+    background: $soft-grey
     .count
       align-items: center
       background: #ccd3db
@@ -611,12 +611,17 @@ table.default
         color: white
     .tab
       align-items: center
-      border-right: 3px solid $soft-grey
+      background: #fff
+      border-radius: 4px 4px 0 0
+      margin-right: 3px
+      border-bottom: 3px solid $soft-grey
       color: darken(#79828d, 15%)
       display: flex
       font-size: 16px
       gap: 0.125rem
       padding: 20px 35px
+      &:first-child
+        border-top-left-radius: 6px
       &:hover
         color: darken(#79828d, 15%)
         text-decoration: none
@@ -625,11 +630,10 @@ table.default
       &.active
         background: white
         color: black
-        border-bottom: 1px solid white
-        border-top: 2px solid $landing-gold
-        border-radius: 4px 4px 0 0
-        margin-bottom: -3px
-        margin-top: -2px
+        border-bottom: none
+        border-top: 3px solid $landing-gold
+        padding-top: 17px
+        padding-bottom: 23px
         &:hover
           color: black
       &.myc

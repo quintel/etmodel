@@ -297,6 +297,10 @@ header.main-header
   .dropdown
     display: inline-block
     position: relative
+    .dropdown-menu
+      background: $light-blue
+      &::before
+        background: $light-blue
   .save-scenario, .save-scenario-as, .scenario-actions, .sign-in-to-save
     border: none
     border-left: 2px solid #fff
@@ -306,7 +310,7 @@ header.main-header
     text-align: center
     transition: background 0.15s ease-in-out
     &.active, &.active:hover
-      background: #ddd
+      background: #f9f9f9
     &:hover
       background: #f9f9f9
       cursor: pointer

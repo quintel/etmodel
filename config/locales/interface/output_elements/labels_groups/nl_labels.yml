@@ -26,7 +26,9 @@ nl:
       network_gas_storage: "Er is geen gasvraag en/of -aanbod in je scenario"
       mekko_of_hydrogen_network: "Er is geen waterstofvraag en/of -aanbod in je scenario"
       use_of_excess_electricity: "Er is geen flexibele elektriciteitsvraag in je scenario"
-      heat_cost_capacity: "Er is geen collectieve warmtevraag en/of -aanbod in je scenario"
+      heat_cost_capacity_ht: "Er is geen collectieve HT-warmtevraag en/of -aanbod in je scenario"
+      heat_cost_capacity_mt: "Er is geen collectieve MT-warmtevraag en/of -aanbod in je scenario"
+      heat_cost_capacity_lt: "Er is geen collectieve LT-warmtevraag en/of -aanbod in je scenario"
       heat_demand: "Er is geen collectieve warmtevraag en/of -aanbod in je scenario"
       heat_supply: "Er is geen collectieve warmtevraag en/of -aanbod in je scenario"
       heat_network_storage: "Er is geen collectieve warmtevraag en/of -aanbod in je scenario"
@@ -135,6 +137,7 @@ nl:
       a_double: "Extra hernieuwbare opwek"
     import_export_flows: "Interconnectiecapaciteit"
     sankey_labels:
+      ambient_heat: "omgevingswarmte"
       ammonia: "ammonia"
       biomass_products: "biomassaproducten"
       captured: "afgevangen"

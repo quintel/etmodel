@@ -1,0 +1,121 @@
+---
+- label: energy_heat_backup_burner_mt_network_gas
+  color: "#CED6E0"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_backup_burner_mt_network_gas_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_backup_burner_mt_network_gas_heat_cost_capacity
+- label: energy_heat_burner_mt_coal
+  color: "#333333"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_burner_mt_coal_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_burner_mt_coal_heat_cost_capacity
+- label: energy_heat_burner_mt_crude_oil
+  color: "#CD6133"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_burner_mt_crude_oil_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_burner_mt_crude_oil_heat_cost_capacity
+- label: energy_heat_burner_mt_hydrogen
+  color: "#87CEEB"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_burner_mt_hydrogen_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_burner_mt_hydrogen_heat_cost_capacity
+- label: energy_heat_burner_mt_network_gas
+  color: "#A4B0BE"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_burner_mt_network_gas_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_burner_mt_network_gas_heat_cost_capacity
+- label: energy_heat_burner_mt_waste_mix
+  color: "#006266"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_burner_mt_waste_mix_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_burner_mt_waste_mix_heat_cost_capacity
+- label: energy_heat_burner_mt_wood_pellets
+  color: "#009432"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_burner_mt_wood_pellets_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_burner_mt_wood_pellets_heat_cost_capacity
+- label: energy_heat_heatpump_water_water_mt_electricity
+  color: "#ADD8E6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_heatpump_water_water_mt_electricity_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_heatpump_water_water_mt_electricity_heat_cost_capacity
+- label: energy_heat_boiler_mt_electricity
+  color: "#b9effe"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_boiler_mt_electricity_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_boiler_mt_electricity_heat_cost_capacity
+- label: energy_heat_network_storage
+  color: "#0984E3"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_network_storage_heat_mt_steam_hot_water_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_mt
+  key: energy_heat_network_storage_heat_mt_steam_hot_water_heat_cost_capacity_chart

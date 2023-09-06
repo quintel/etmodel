@@ -1,0 +1,61 @@
+---
+- label: energy_heat_backup_burner_lt_network_gas
+  color: "#CED6E0"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_backup_burner_lt_network_gas_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_lt
+  key: energy_heat_backup_burner_lt_network_gas_heat_cost_capacity
+- label: energy_heat_burner_lt_hydrogen
+  color: "#87CEEB"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_burner_lt_hydrogen_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_lt
+  key: energy_heat_burner_lt_hydrogen_heat_cost_capacity
+- label: energy_heat_heatpump_water_water_lt_electricity
+  color: "#ADD8E6"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_heatpump_water_water_lt_electricity_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_lt
+  key: energy_heat_heatpump_water_water_lt_electricity_heat_cost_capacity
+- label: energy_heat_boiler_lt_electricity
+  color: "#b9effe"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_boiler_lt_electricity_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_lt
+  key: energy_heat_boiler_lt_electricity_heat_cost_capacity
+- label: energy_heat_network_storage
+  color: "#0984E3"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_heat_network_storage_heat_lt_steam_hot_water_heat_cost_capacity_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_cost_capacity_lt
+  key: energy_heat_network_storage_heat_lt_steam_hot_water_heat_cost_capacity_chart

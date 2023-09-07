@@ -188,6 +188,8 @@
           return !extraData.isLocked[item];
         });
 
+        sortableEl.empty();
+
         renderOptions(sortableEl, sortableOrder, extraData.capacity, self.i18nKey);
 
         // Any locked items are shown below the list.
@@ -214,11 +216,6 @@
         });
       });
     });
-
-    UserSortable.prototype.rerender = function () {
-      this.element.find('.sortable').empty();
-      this.render();
-    }
 
     /**
      * Receives a sortable instance and triggers an update to ETEngine.

@@ -248,7 +248,7 @@ class @AppView extends Backbone.View
     @input_elements.reset_dirty()
     @call_api(input_params)
     if (@heat_order)
-      @heat_order.rerender()
+      @heat_order.render()
 
   showLoading: ->
     # D3 charts shouldn't be blocked, only jqPlot ones

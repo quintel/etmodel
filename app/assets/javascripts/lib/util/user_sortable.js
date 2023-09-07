@@ -215,6 +215,11 @@
       });
     });
 
+    UserSortable.prototype.rerender = function () {
+      this.element.find('.sortable').empty();
+      this.render();
+    }
+
     /**
      * Receives a sortable instance and triggers an update to ETEngine.
      */

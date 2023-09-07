@@ -6,11 +6,11 @@
   show_at_first: 
   is_target_line: true
   target_line_position: 
-  gquery: heat_network_production_curve
+  gquery: heat_network_ht_production_curve
   is_1990: 
   dependent_on: 
-  output_element_key: heat_network_demand
-  key: heat_network_production_heat_network_demand
+  output_element_key: heat_network_demand_ht
+  key: heat_network_ht_production_heat_network_demand
 - label: agriculture_final_demand_steam_hot_water_input_curve
   color: "#6AB04C"
   order_by: 2
@@ -18,11 +18,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: agriculture_final_demand_central_steam_hot_water_input_curve
+  gquery: agriculture_final_demand_ht_central_steam_hot_water_input_curve
   is_1990: 
   dependent_on: 
-  output_element_key: heat_network_demand
-  key: agriculture_final_demand_central_steam_hot_water_input_curve_heat_network_demand
+  output_element_key: heat_network_demand_ht
+  key: agriculture_final_demand_ht_central_steam_hot_water_input_curve_heat_network_demand
 - label: buildings_final_demand_steam_hot_water_input_curve
   color: "#F9CA24"
   order_by: 3
@@ -30,11 +30,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: buildings_final_demand_steam_hot_water_input_curve
+  gquery: buildings_final_demand_ht_steam_hot_water_input_curve
   is_1990: 
   dependent_on: 
-  output_element_key: heat_network_demand
-  key: buildings_final_demand_steam_hot_water_input_curve_heat_network_demand
+  output_element_key: heat_network_demand_ht
+  key: buildings_final_demand_ht_steam_hot_water_input_curve_heat_network_demand
 - label: households_final_demand_steam_hot_water_input_curve
   color: "#E69567"
   order_by: 4
@@ -42,11 +42,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_final_demand_steam_hot_water_input_curve
+  gquery: households_final_demand_ht_steam_hot_water_input_curve
   is_1990: 
   dependent_on: 
-  output_element_key: heat_network_demand
-  key: households_final_demand_steam_hot_water_input_curve_heat_network_demand
+  output_element_key: heat_network_demand_ht
+  key: households_final_demand_ht_steam_hot_water_input_curve_heat_network_demand
 - label: other_final_demand_steam_hot_water_input_curve
   color: "#786FA6"
   order_by: 5
@@ -54,11 +54,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: other_final_demand_steam_hot_water_input_curve
+  gquery: other_final_demand_ht_steam_hot_water_input_curve
   is_1990: 
   dependent_on: 
-  output_element_key: heat_network_demand
-  key: other_final_demand_steam_hot_water_input_curve_heat_network_demand
+  output_element_key: heat_network_demand_ht
+  key: other_final_demand_ht_steam_hot_water_input_curve_heat_network_demand
 - label: energy_direct_air_capture_steam_hot_water_input_curve
   color: "#b71540"
   order_by: 6
@@ -69,7 +69,7 @@
   gquery: energy_direct_air_capture_steam_hot_water_input_curve
   is_1990: 
   dependent_on: 
-  output_element_key: heat_network_demand
+  output_element_key: heat_network_demand_ht
   key: energy_direct_air_capture_steam_hot_water_input_curve_heat_network_demand
 - label: energy_heat_distribution_loss_input_curve
   color: "#800080"
@@ -78,11 +78,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: energy_heat_distribution_loss_input_curve
+  gquery: energy_heat_distribution_ht_loss_input_curve
   is_1990: 
   dependent_on: 
-  output_element_key: heat_network_demand
-  key: energy_heat_distribution_loss_input_curve_heat_network_demand
+  output_element_key: heat_network_demand_ht
+  key: energy_heat_distribution_ht_loss_input_curve_heat_network_demand
 - label: energy_heat_unused_steam_hot_water_input_curve
   color: "#BFEFFF"
   order_by: 8
@@ -90,11 +90,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: energy_heat_unused_steam_hot_water_input_curve
+  gquery: energy_heat_unused_ht_steam_hot_water_input_curve
   is_1990: 
   dependent_on: 
-  output_element_key: heat_network_demand
-  key: energy_heat_unused_steam_hot_water_input_curve_heat_network_demand
+  output_element_key: heat_network_demand_ht
+  key: energy_heat_unused_ht_steam_hot_water_input_curve_heat_network_demand
 - label: energy_heat_network_storage_in
   color: "#0984E3"
   order_by: 9
@@ -102,8 +102,8 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_heat_network_storage_input_curve
+  gquery: energy_heat_network_storage_ht_steam_hot_water_input_curve
   is_1990: false
   dependent_on: 
-  output_element_key: heat_network_demand
-  key: energy_heat_network_storage_in_heat_network_demand
+  output_element_key: heat_network_demand_ht
+  key: energy_heat_network_storage_ht_in_heat_network_demand

@@ -64,7 +64,21 @@
   sub_group: collective_heat
   show_point_label: false
   growth_chart: false
-  key: heat_network_demand
+  key: heat_network_demand_ht
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_demand_mt
   max_axis_value: 
   min_axis_value: 
   hidden: false

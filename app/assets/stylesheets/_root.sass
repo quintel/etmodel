@@ -352,31 +352,34 @@ body#root
 
     .year-tabs
       display: flex
-      border-bottom: solid 1px $landing-border-color
       margin-bottom: 5px
       .end-year-tab
-        border: 1px solid $landing-border-color
-        border-bottom: none
-        border-radius: 3px 3px 0 0
+        margin-left: 3px
+        margin-bottom: 3px
+        border-radius: 6px
         font-size: .875rem
         padding: 5px 13px
-
+        background: $soft-grey
+        transition: background 0.15s ease-in
         a
           color: $landing-grey
+          transition: color 0.15s ease-in
           &:hover
             text-decoration: none
             cursor: pointer
-            color: #666
-        &.active
-          border-top: solid 2px $landing-grey
-          margin-bottom: -1px
-          background: white
+            color: white
+        &:hover
+          background: $landing-gold
           a
-            color: #333
+            color: white
+        &.active
+          background: $landing-green
+          a
+            color: white
           &:hover
             cursor: default
         &:first-child
-          margin-left: 5px
+          margin-left: 0
 
     ul.scenario-list
       list-style: none
@@ -405,9 +408,10 @@ body#root
         display: flex
         padding: 3px 20px
         position: relative
+        transition: background 0.15s ease-in
 
         &:hover
-          background: $landing-background-color
+          background: $soft-grey
           text-decoration: none
 
         &:active
@@ -445,8 +449,6 @@ body#root
 
 #whats-new
   background: #fffced
-  border-bottom: 1px solid $landing-border-color
-  box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
   line-height: 1.5
   padding: 20px 0
 

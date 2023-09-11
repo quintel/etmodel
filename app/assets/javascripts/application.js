@@ -31,3 +31,4 @@
 //= require load_pico_embed
 //= require copy_link_box
 //= require header
+//= require featured_scenario

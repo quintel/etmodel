@@ -340,11 +340,60 @@ body#root
 
   #preset-scenario
     border-top-color: $landing-gold
+    .header-container a
+      color: $landing-grey
+      text-decoration: underline
+      &:hover
+        color: $landing-blue
+
+    .hint
+      color: $landing-grey
+      margin: 1.5rem 0
+
+    .year-tabs
+      display: flex
+      margin-bottom: 5px
+      .end-year-tab
+        margin-left: 3px
+        margin-bottom: 3px
+        border-radius: 6px
+        font-size: .875rem
+        padding: 5px 13px
+        background: $soft-grey
+        transition: background 0.15s ease-in
+        a
+          color: $landing-grey
+          transition: color 0.15s ease-in
+          &:hover
+            text-decoration: none
+            cursor: pointer
+            color: white
+        &:hover
+          background: $landing-gold
+          a
+            color: white
+        &.active
+          background: $landing-green
+          a
+            color: white
+          &:hover
+            cursor: default
+        &:first-child
+          margin-left: 0
 
     ul.scenario-list
       list-style: none
-      margin: 20px -20px 0
+      margin: 0 -20px 0
       padding: 0
+      // display: none
+      transition: opacity 1s ease-out
+      opacity: 0
+      height: 0
+      overflow: hidden
+      &.show
+        // display: block
+        opacity: 1
+        height: auto
 
       li.title
         font-weight: 500
@@ -359,9 +408,10 @@ body#root
         display: flex
         padding: 3px 20px
         position: relative
+        transition: background 0.15s ease-in
 
         &:hover
-          background: $landing-background-color
+          background: $soft-grey
           text-decoration: none
 
         &:active
@@ -372,6 +422,11 @@ body#root
         font-size: 13px
         line-height: 1
         margin-left: 6px
+
+      span.last_updated
+        margin-left: auto
+        color: darken($landing-background-color, 18%)
+        font-size: 0.75rem
 
   #legal
     border-top: 1px solid $landing-border-color
@@ -394,8 +449,6 @@ body#root
 
 #whats-new
   background: #fffced
-  border-bottom: 1px solid $landing-border-color
-  box-shadow: 0 3px 5px rgba(50, 71, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)
   line-height: 1.5
   padding: 20px 0
 

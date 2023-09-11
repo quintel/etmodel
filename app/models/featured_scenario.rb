@@ -14,7 +14,7 @@ class FeaturedScenario < ApplicationRecord
   validates :description_en, :description_nl, :title_en, :title_nl, presence: true
   validates :group, inclusion: GROUPS
 
-  delegate :area_code, :end_year, :scenario_id, to: :saved_scenario
+  delegate :area_code, :end_year, :scenario_id, :updated_at, to: :saved_scenario
 
   # Public: Given an array of scenarios, an array of display groups, groups the
   # scenarios according to their display_group, in the order specified in the
@@ -58,6 +58,15 @@ class FeaturedScenario < ApplicationRecord
         group_for.call(group)
       end
     end.flatten.compact
+  end
+
+  def self.in_groups_per_end_year(featured_scenarios, groups=SORTABLE_GROUPS)
+    scenarios = featured_scenarios.group_by(&:end_year)
+    scenarios.each do |end_year, year_scenarios|
+      scenarios[end_year] = FeaturedScenario.in_groups(year_scenarios, groups)
+    end
+
+    scenarios
   end
 
   def localized_title(locale)

@@ -73,7 +73,7 @@
   key: energy_chp_supercritical_waste_mix_mt_steam_hot_water_output_curve_heat_network_production
 - label: energy_chp_supercritical_ccs_waste_mix_steam_hot_water_output_curve
   color: "#218C74"
-  order_by: 6
+  order_by: 21
   group:
   show_at_first:
   is_target_line: false
@@ -217,7 +217,7 @@
   key: energy_heat_boiler_electricity_mt_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_import_steam_hot_water_steam_hot_water_output_curve
   color: "#FF8C8C"
-  order_by: 2
+  order_by: 22
   group: ''
   show_at_first: false
   is_target_line: false
@@ -243,7 +243,7 @@
 # DEEP HT EN MT, SHALLOW MT EN LT
 - label: energy_heat_well_geothermal_steam_hot_water_output_curve
   color: "#FFA502"
-  order_by: 2
+  order_by: 23
   group: ''
   show_at_first: false
   is_target_line: false
@@ -253,6 +253,19 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_well_geothermal_mt_steam_hot_water_output_curve_heat_network_production
+# DEZE KRIJG IK NOG NIET WERKEND, VERSCHIJNT NIET IN DE PRODUCTION GRAFIEK
+- label: energy_heat_well_shallow_geothermal_steam_hot_water_output_curve
+  color: "yellow"
+  order_by: 24
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_heat_well_shallow_heatpump_geothermal_mt_steam_hot_water_output_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_network_production_mt
+  key: energy_heat_well_shallow_heatpump_geothermal_mt_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_network_storage_out
   color: "#0984E3"
   order_by: 20
@@ -268,7 +281,7 @@
 # RESIDUAL HEAT ALLEEN OP MT 
 - label: energy_heat_industry_residual_heat_steam_hot_water_output_curve
   color: "#00008B"
-  order_by: 1
+  order_by: 25
   group:
   show_at_first:
   is_target_line:
@@ -281,7 +294,7 @@
 # P2H BOILER ALLEEN OP MT
 - label: energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve
   color: "#46c1e3"
-  order_by: 9
+  order_by: 26
   group:
   show_at_first:
   is_target_line:
@@ -294,7 +307,7 @@
 # P2H HEATPUMP ALLEEN OP MT
 - label: energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve
   color: "blue"
-  order_by: 9
+  order_by: 27
   group:
   show_at_first:
   is_target_line:

@@ -227,22 +227,6 @@
   dependent_on:
   output_element_key: heat_network_production_ht
   key: energy_heat_import_steam_hot_water_ht_steam_hot_water_output_curve_heat_network_production
-
-# SOLAR THERMAL ALLEEN OP MT EN LT
-# - label: energy_heat_solar_thermal_steam_hot_water_output_curve
-#   color: "#FFD700"
-#   order_by: 18
-#   group:
-#   show_at_first:
-#   is_target_line: false
-#   target_line_position:
-#   gquery: energy_heat_solar_thermal_steam_hot_water_output_curve
-#   is_1990:
-#   dependent_on:
-#   output_element_key: heat_network_production
-#   key: energy_heat_solar_thermal_steam_hot_water_output_curve_heat_network_production
-
-# DEEP HT EN MT, SHALLOW MT EN LT
 - label: energy_heat_well_deep_geothermal_steam_hot_water_output_curve
   color: "#FFA502"
   order_by: 2
@@ -267,42 +251,3 @@
   dependent_on:
   output_element_key: heat_network_production_ht
   key: energy_heat_network_storage_ht_steam_hot_water_out_heat_network_production
-# RESIDUAL HEAT ALLEEN OP MT 
-# - label: energy_heat_industry_residual_heat_steam_hot_water_output_curve
-#   color: "#00008B"
-#   order_by: 1
-#   group:
-#   show_at_first:
-#   is_target_line:
-#   target_line_position:
-#   gquery: energy_heat_industry_residual_heat_steam_hot_water_output_curve
-#   is_1990:
-#   dependent_on:
-#   output_element_key: heat_network_production_mt
-#   key: energy_heat_industry_residual_heat_steam_hot_water_output_curve_heat_network_production
-# P2H BOILER ALLEEN OP MT
-# - label: energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve
-#   color: "#46c1e3"
-#   order_by: 9
-#   group:
-#   show_at_first:
-#   is_target_line:
-#   target_line_position:
-#   gquery: energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve
-#   is_1990:
-#   dependent_on:
-#   output_element_key: heat_network_production
-#   key: energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve_heat_network_production
-# P2H HEATPUMPT ALLEEN OP MT
-# - label: energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve
-#   color: "blue"
-#   order_by: 9
-#   group:
-#   show_at_first:
-#   is_target_line:
-#   target_line_position:
-#   gquery: energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve
-#   is_1990:
-#   dependent_on:
-#   output_element_key: heat_network_production
-#   key: energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve_heat_network_production

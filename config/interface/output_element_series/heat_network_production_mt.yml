@@ -227,7 +227,6 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_import_steam_hot_water_mt_steam_hot_water_output_curve_heat_network_production
-# SOLAR THERMAL ALLEEN OP MT EN LT
 - label: energy_heat_solar_thermal_steam_hot_water_output_curve
   color: "#FFD700"
   order_by: 18
@@ -240,8 +239,7 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_solar_thermal_mt_steam_hot_water_output_curve_heat_network_production
-# DEEP HT EN MT, SHALLOW MT EN LT
-- label: energy_heat_well_geothermal_steam_hot_water_output_curve
+- label: energy_heat_well_deep_geothermal_steam_hot_water_output_curve
   color: "#FFA502"
   order_by: 23
   group: ''
@@ -253,9 +251,8 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_well_geothermal_mt_steam_hot_water_output_curve_heat_network_production
-# DEZE KRIJG IK NOG NIET WERKEND, VERSCHIJNT NIET IN DE PRODUCTION GRAFIEK
 - label: energy_heat_well_shallow_geothermal_steam_hot_water_output_curve
-  color: "yellow"
+  color: "#FFC04F"
   order_by: 24
   group: ''
   show_at_first: false
@@ -278,7 +275,6 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_network_storage_mt_steam_hot_water_out_heat_network_production
-# RESIDUAL HEAT ALLEEN OP MT 
 - label: energy_heat_industry_residual_heat_steam_hot_water_output_curve
   color: "#00008B"
   order_by: 25
@@ -291,7 +287,6 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_industry_residual_heat_mt_steam_hot_water_output_curve_heat_network_production
-# P2H BOILER ALLEEN OP MT
 - label: energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve
   color: "#46c1e3"
   order_by: 26
@@ -304,7 +299,6 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_flexibility_p2h_boiler_electricity_mt_steam_hot_water_output_curve_heat_network_production
-# P2H HEATPUMP ALLEEN OP MT
 - label: energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve
   color: "blue"
   order_by: 27

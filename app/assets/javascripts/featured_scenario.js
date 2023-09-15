@@ -51,17 +51,15 @@
       render: function () {
         var scenarioList = this.scenarioList.bind(this);
         var hideAll = this.hideAll.bind(this);
-        var firstElem = true;
+        var showElem = '2050';
 
         this.el.querySelectorAll('.year-tabs .end-year-tab').forEach(function (element) {
             new ScenarioEndYearView({
                 el: element,
                 yearList: scenarioList(element.getAttribute('year')),
                 hideAll: hideAll,
-                firstElem: firstElem,
+                firstElem: element.getAttribute('year') == showElem,
             }).render();
-
-            firstElem = false;
         });
 
 

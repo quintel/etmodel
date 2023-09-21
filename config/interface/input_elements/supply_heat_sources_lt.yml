@@ -42,6 +42,21 @@
   position: 210
   related_node: energy_heat_burner_lt_hydrogen
   slide_key: supply_heat_sources_lt
+- key: capacity_of_energy_heat_heatpump_surface_water_water_ts_lt_electricity
+  step_value: 0.1
+  unit: MW
+  position: 215
+  slide_key: supply_heat_sources_lt
+- key: capacity_of_energy_heat_heatpump_waste_water_water_ts_lt_electricity
+  step_value: 0.1
+  unit: MW
+  position: 220
+  slide_key: supply_heat_sources_lt
+- key: capacity_of_energy_heat_heatpump_drink_water_water_ts_lt_electricity
+  step_value: 0.1
+  unit: MW
+  position: 225
+  slide_key: supply_heat_sources_lt
 
 - key: volume_of_lt_imported_heat
   step_value: 0.1

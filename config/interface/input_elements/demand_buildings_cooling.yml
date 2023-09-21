@@ -20,18 +20,25 @@
   related_node: buildings_cooling_collective_heatpump_water_water_ts_electricity
   position: 3
   slide_key: demand_buildings_cooling
+- key: buildings_cooling_heatpump_surface_water_water_ts_electricity_share
+  share_group: cooling_buildings
+  step_value: 0.1
+  unit: "%"
+  related_node: buildings_cooling_heatpump_surface_water_water_ts_electricity
+  position: 4
+  slide_key: demand_buildings_cooling
 - key: buildings_cooling_airconditioning_share
   share_group: cooling_buildings
   step_value: 0.1
   unit: "%"
   related_node: buildings_cooling_airconditioning_electricity
-  position: 4
+  position: 5
   slide_key: demand_buildings_cooling
 - key: buildings_cooling_collective_cooling_network_electricity_share
   share_group: cooling_buildings
   step_value: 0.1
   unit: "%"
   related_node: buildings_cooling_collective_cooling_network_electricity
-  position: 5
+  position: 6
   dependent_on: has_cold_network
   slide_key: demand_buildings_cooling

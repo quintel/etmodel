@@ -84,7 +84,7 @@ en:
         and require additional electric heating capacity for cold days. The latter
         will require large investments to reinforce electricity grids."
     buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
-      title: Water heat pump with TS
+      title: Ground heat pump with TS
       short_description: ''
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer. This heat
@@ -95,6 +95,11 @@ en:
         It is difficult to realize underground thermal storage in densely populated
         areas so this is only lucrative for large projects supplying heat and cold
         to larger office buildings, for example. "
+    buildings_space_heater_heatpump_surface_water_water_ts_electricity_share:
+      title: Aquathermal heat pump with TS (surface water)
+      short_description: ''
+      description: |
+        ...
     buildings_space_heater_wood_pellets_share:
       title: Biomass-fired heater
       short_description: ''
@@ -273,7 +278,7 @@ en:
         gas-fired heat pumps are roughly as efficient as electric ones for heating,
         and less efficient for cooling.
     buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
-      title: Water heat pump with TS
+      title: Ground heat pump with TS
       short_description: ''
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer. This heat
@@ -284,6 +289,11 @@ en:
         It is difficult to realize underground thermal storage in densely populated
         areas so this is only lucrative for large projects supplying heat and cold
         to larger office buildings, for example. "
+    buildings_cooling_heatpump_surface_water_water_ts_electricity_share:
+      title: Aquathermal heat pump with TS (surface water)
+      short_description: ''
+      description: |
+        ...
     buildings_cooling_airconditioning_share:
       title: Airconditioning
       short_description: ''

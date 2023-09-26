@@ -163,7 +163,35 @@
   sub_group: collective_heat
   show_point_label: false
   growth_chart: false
-  key: heat_network_storage
+  key: heat_network_storage_lt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- under_construction: false
+  unit: MWh
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_storage_mt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- under_construction: false
+  unit: MWh
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_storage_ht
   max_axis_value: 
   min_axis_value: 
   hidden: false

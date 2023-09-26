@@ -92,7 +92,7 @@ Currently, ships for inland waterway transport are often fitted with conventiona
 -> ![](/assets/pages/whats_new/bio_ethanol_inland_shipping_en.png) <-
 
 ## Hydrogen use in the industrial heating network
-Two new technologies have been added that can supply steam to the industrial heat network. You can now install capacity for a hydrogen turbine CHP, which produces both steam and electricity, and for a hydrogen heater, which only produces steam. Go to *Demand → Industry* → **[Heat network sources](/scenario/demand/industry/heat-network-sources)** to check it out.
+Two new technologies have been added that can supply steam to the industrial heat network. You can now install capacity for a hydrogen turbine CHP, which produces both steam and electricity, and for a hydrogen heater, which only produces steam. Go to *Demand → Industry* → **[Steam network sources](/scenario/demand/industry/steam-network-sources)** to check it out.
 ___
 
 # November 2022

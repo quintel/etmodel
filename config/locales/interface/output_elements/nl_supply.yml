@@ -128,47 +128,51 @@ nl:
         het aantal, de productie van elektriciteit, de productie van warmte en het
         geïnstalleerde (elektrische) vermogen van WKK.\r\n"
     collective_heat_mekko:
-      title: Totale vraag en aanbod op het collectieve warmtenet
-      short_description: ''
-      description: ''
+      title: Warmtenetten vraag en aanbod
+      short_description:
+      description:
     heat_network_demand_ht:
-      title: Uurlijkse warmtevraag in HT-warmtenetten
-      short_description: ''
-      description: ''
+      title: HT-warmtenetten vraag per uur
+      short_description:
+      description:
     heat_network_demand_mt:
-      title: Uurlijkse warmtevraag in MT-warmtenetten
-      short_description: ''
-      description: ''
+      title: MT-warmtenetten vraag per uur
+      short_description:
+      description:
     heat_network_demand_lt:
-      title: Uurlijkse warmtevraag in LT-warmtenetten
-      short_description: ''
-      description: ''
+      title: LT-warmtenetten vraag per uur
+      short_description:
+      description:
     heat_network_production_ht:
-      title: Uurlijkse warmteproductie in HT-warmtenetten
-      short_description: ''
-      description: ''
+      title: HT-warmtenetten productie per uur
+      short_description:
+      description:
     heat_network_production_mt:
-      title: Uurlijkse warmteproductie in MT-warmtenetten
-      short_description: ''
-      description: ''
+      title: MT-warmtenetten productie per uur
+      short_description:
+      description:
     heat_network_production_lt:
-      title: Uurlijkse warmteproductie in LT-warmtenetten
-      short_description: ''
-      description: ''
-    industrial_heat_mekko:
-      title: Vraag en aanbod van industriële stoomnetten
+      title: LT-warmtenetten productie per uur
       short_description:
       description:
     heat_network_storage_ht:
-      title: (Seizoens)opslag van warmte (HT)
+      title: HT-warmtenetten (seizoens)opslag per uur
       short_description:
       description:
     heat_network_storage_mt:
-      title: (Seizoens)opslag van warmte (MT)
+      title: MT-warmtenetten (seizoens)opslag per uur
       short_description:
       description:
     heat_network_storage_lt:
-      title: (Seizoens)opslag van warmte (LT)
+      title: LT-warmtenetten (seizoens)opslag per uur
+      short_description:
+      description:
+    sankey_heat_networks:
+      title: Warmtenetten vraag en aanbod per temperatuurniveau
+      short_description:
+      description:
+    industrial_heat_mekko:
+      title: Industrieël stoomnet vraag en aanbod
       short_description:
       description:
     heat_cost_capacity_ht:
@@ -300,7 +304,3 @@ nl:
         sectie. Directe elektrolyse van wind- en zonnestroom uit de 
         <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie is niet 
         meegenomen.
-    sankey_heat_networks:
-      title: Vraag en aanbod warmtenetten per temperatuurniveau
-      short_description:
-      description:

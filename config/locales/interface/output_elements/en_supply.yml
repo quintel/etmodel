@@ -127,47 +127,51 @@ en:
         scenario. The columns contain (from left to right) name, number of units,
         electricity production, heat production and installed capacity of CHP plants.\r\n"
     collective_heat_mekko:
-      title: Supply and demand of district heating
+      title: District heating supply and demand
       short_description: ''
       description: ''
     heat_network_demand_ht:
-      title: Hourly heat demand for high temperature district heating
+      title: HT district heating demand per hour
       short_description: ''
       description: ''
     heat_network_demand_mt:
-      title: Hourly heat demand for medium temperature district heating
+      title: MT district heating demand per hour
       short_description: ''
       description: ''
     heat_network_demand_lt:
-      title: Hourly heat demand for low temperature district heating
+      title: LT district heating demand per hour
       short_description: ''
       description: ''
     heat_network_production_ht:
-      title: Hourly heat production for high temperature district heating
+      title: HT district heating production per hour
       short_description: ''
       description: ''
     heat_network_production_mt:
-      title: Hourly heat production for medium temperature district heating
+      title: MT district heating production per hour
       short_description: ''
       description: ''
     heat_network_production_lt:
-      title: Hourly heat production for low temperature district heating
-      short_description: ''
-      description: ''
-    industrial_heat_mekko:
-      title: Supply and demand of collective heat in industry
+      title: LT district heating production per hour
       short_description:
       description:
     heat_network_storage_ht:
-      title: (Seasonal) storage of heat (HT)
+      title: HT district heating (seasonal) storage per hour
       short_description:
       description:
     heat_network_storage_mt:
-      title: (Seasonal) storage of heat (MT)
+      title: MT district heating (seasonal) storage per hour
       short_description:
       description:
     heat_network_storage_lt:
-      title: (Seasonal) storage of heat (LT)
+      title: LT district heating (seasonal) storage per hour
+      short_description:
+      description:
+    sankey_heat_networks:
+      title: District heating supply and demand per temperature level
+      short_description:
+      description:
+    industrial_heat_mekko:
+      title: Industrial steam network supply and demand
       short_description:
       description:
     heat_cost_capacity_ht:
@@ -298,7 +302,3 @@ en:
         section. Direct electrolysis of wind and solar electricity from the 
         <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section 
         is not included in this chart.
-    sankey_heat_networks:
-      title: Heat network supply and demand per temperature level
-      short_description:
-      description:

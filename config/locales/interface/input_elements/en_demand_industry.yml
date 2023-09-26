@@ -87,12 +87,13 @@ en:
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_other_paper_steam_hot_water_share:
-      title: District heating
+      title: Steam network
       short_description:
-      description: District heating is heat supplied by a heat network. The heat can
-        be produced by local heat plants / large-scale burners or the heat can be
-        imported from outside your region. You can set the heat sources in the Supply-section
-        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+      description: |
+        Heat is supplied from a collective network as steam. The heat can be produced by 
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
+        section.
     industry_other_paper_heater_electricity_share:
       title: Electric boiler
       short_description:
@@ -288,12 +289,13 @@ en:
         determined by fuel prices and environmental legislation. See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_chemical_fertilizers_steam_hot_water_share:
-      title: District heating
+      title: Steam network
       short_description:
-      description: District heating is heat supplied by a heat network. The heat can
-        be produced by local heat plants / large-scale burners or the heat can be
-        imported from outside your region. You can set the heat sources in the Supply-section
-        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+      description: |
+        Heat is supplied from a collective network as steam. The heat can be produced by 
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
+        section.
     industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share:
       title: Local steam methane reforming
       short_description:
@@ -447,12 +449,13 @@ en:
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_chemical_other_steam_hot_water_share:
-      title: District heating
+      title: Steam network
       short_description:
-      description: District heating is heat supplied by a heat network. The heat can
-        be produced by local heat plants / large-scale burners or the heat can be
-        imported from outside your region. You can set the heat sources in the Supply-section
-        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+      description: |
+        Heat is supplied from a collective network as steam. The heat can be produced by 
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
+        section.
     industry_chemicals_other_steam_recompression_electricity_share:
       title: Mechanical vapour recompression
       short_description:
@@ -647,12 +650,13 @@ en:
         determined by fuel prices and environmental legislation. See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_other_food_steam_hot_water_share:
-      title: District heating
+      title: Steam network
       short_description:
-      description: District heating is heat supplied by a heat network. The heat can
-        be produced by local heat plants / large-scale burners or the heat can be
-        imported from outside your region. You can set the heat sources in the Supply-section
-        under the header <a href="/scenario/supply/heat" >"Heat networks"</a>.
+      description: |
+        Heat is supplied from a collective network as steam. The heat can be produced by 
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
+        section.
     industry_other_food_heater_electricity_share:
       title: Electric boiler
       short_description:
@@ -742,13 +746,13 @@ en:
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part.\r\n<br>"
     industry_final_demand_for_chemical_refineries_steam_hot_water_share:
-      title: District heating
+      title: Steam network
       short_description:
-      description: "District heating is heat supplied by a heat network. The heat
-        can be produced by local heat plants / large-scale burners or the heat can
-        be imported from outside your region. You can set the heat sources in the
-        Supply-section under the header <a href=\"/scenario/supply/heat\" >\"Heat
-        networks\"</a>.\r\n"
+      description: |
+        Heat is supplied from a collective network as steam. The heat can be produced by 
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
+        section.
     capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler for gas and H<sub>2</sub> heaters
       short_description:

@@ -1,6 +1,6 @@
 ---
 - label: agriculture_local_heat
-  color: "#4d0101"
+  color: "#8B0000"
   order_by: 100
   group: 
   show_at_first: 
@@ -11,21 +11,33 @@
   dependent_on: 
   output_element_key: source_of_heat_in_agriculture
   key: local_heat_source_of_heat_in_agriculture
-- label: agriculture_central_heat
-  color: "#8B0000"
+- label: agriculture_central_ht_heat
+  color: "#785EF0"
+  order_by: 104
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: central_ht_heat_used_for_heating_in_agriculture
+  is_1990: 
+  dependent_on: 
+  output_element_key: source_of_heat_in_agriculture
+  key: central_ht_heat_source_of_heat_in_agriculture
+- label: agriculture_central_mt_heat
+  color: "#DC267F"
   order_by: 105
   group: 
   show_at_first: 
   is_target_line: 
   target_line_position: 
-  gquery: central_heat_used_for_heating_in_agriculture
+  gquery: central_mt_heat_used_for_heating_in_agriculture
   is_1990: 
   dependent_on: 
   output_element_key: source_of_heat_in_agriculture
-  key: central_heat_source_of_heat_in_agriculture
+  key: central_mt_heat_source_of_heat_in_agriculture
 - label: agriculture_wasted_heat
   color: "#FF8C8C"
-  order_by: 110
+  order_by: 101
   group: 
   show_at_first: 
   is_target_line: 

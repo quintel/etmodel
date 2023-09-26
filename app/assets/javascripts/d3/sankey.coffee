@@ -149,7 +149,7 @@ D3.sankey =
           {left: 'ambient_heat',                 right: 'mt_network',           gquery: 'ambient_heat_to_mt_network_in_sankey_heat_networks',                 color: '#ADDE4C'},
           {left: 'imported_heat',                right: 'mt_network',           gquery: 'imported_heat_to_mt_network_in_sankey_heat_networks',                color: '#e61919'},
           {left: 'residual_heat',                right: 'mt_network',           gquery: 'residual_heat_to_mt_network_in_sankey_heat_networks',                color: '#00008B'},
-          
+
           {left: 'coal_and_derivatives',         right: 'lt_network',           gquery: 'coal_and_derivatives_to_lt_network_in_sankey_heat_networks',         color: '#252525'},
           {left: 'natural_gas_and_derivatives',  right: 'lt_network',           gquery: 'natural_gas_and_derivatives_to_lt_network_in_sankey_heat_networks',  color: '#7f7f7f'},
           {left: 'crude_oil_and_derivatives',    right: 'lt_network',           gquery: 'crude_oil_and_derivatives_to_lt_network_in_sankey_heat_networks',    color: '#8c564b'},
@@ -738,7 +738,7 @@ D3.sankey =
       return @__horizontal_spacing if @__horizontal_spacing?
       cols = @view.number_of_columns()
       # this should leave enough room for the node labels
-      @__horizontal_spacing = (@view.width - (25 * cols)) / (cols - 1)
+      @__horizontal_spacing = (@view.width - (7 * cols)) / (cols - 1)
       @__horizontal_spacing
 
     # vertical position of the top left corner of the node. Adds some margin
@@ -753,10 +753,31 @@ D3.sankey =
         offset += n.value() + (if n.should_show() then margin else 0)
       offset
 
-    x_offset: => @get('column') * (@width + @horizontal_spacing())
+    x_offset: =>
+      return @get('column') * (@width + @horizontal_spacing()) if !@is_last_column()
+
+      # If it's the last column we right align
+      @view.width
+
+    x_offset_label: =>
+      return @x_offset() if !@is_last_column()
+
+      # If it's the last column we right align
+      @view.width - 10 - @width
 
     # center point of the node. We use it as link anchor point
     x_center: => @x_offset() + @width / 2
+
+    is_last_column: =>
+      return @__is_last_column if @__is_last_column?
+      @__is_last_column = (@get('column') + 1) == @view.number_of_columns()
+      @__is_last_column
+
+    label_classes: =>
+      return "label" if !@is_last_column()
+
+      # If it's the last column we right align
+      "label last-label"
 
     # The height of the node is the sum of the height of its link. Since links
     # are both inbound and outbound, let's use the max size. Ideally the values
@@ -963,8 +984,8 @@ D3.sankey =
         .attr("height", (d) => @y d.value())
 
       nodes.append("svg:text")
-        .attr("class", "label")
-        .attr("x", (d) => d.x_offset())
+        .attr("class", (d) => d.label_classes())
+        .attr("x", (d) => d.x_offset_label())
         .attr("dx", 10)
         .attr("dy", 3)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )

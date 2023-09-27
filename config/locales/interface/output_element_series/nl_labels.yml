@@ -158,13 +158,13 @@ nl:
         agriculture_wasted_heat: "Warmteoverschot van lokale WKK's (verspild)"
         agriculture_demand_local_steam_hot_water: "Vraag landbouw"
         agriculture_demand_unused_steam_hot_water: "Warmteoverschot (verspild)"
-        agriculture_chp_engine_biogas: "Biogas-WKK - landbouw"
+        agriculture_chp_engine_biogas: "Landbouw biogas-WKK"
         agriculture_supply_chp_engine_biogas: "Biogas-WKK"
-        agriculture_chp_wood_pellets: "Biomassa-WKK - landbouw"
+        agriculture_chp_wood_pellets: "Landbouw biomassa-WKK"
         agriculture_supply_chp_wood_pellets: "Biomassa-WKK"
-        agriculture_chp_engine_dispatchable_network_gas: "Gasmotor-WKK - landbouw (regelbaar)"
+        agriculture_chp_engine_dispatchable_network_gas: "Landbouw gasmotor-WKK (regelbaar)"
         agriculture_supply_chp_engine_dispatchable_network_gas: "Gasmotor-WKK (regelbaar)"
-        agriculture_chp_engine_must_run_network_gas: "Gasmotor-WKK - landbouw (must-run)"
+        agriculture_chp_engine_must_run_network_gas: "Landbouw gasmotor-WKK (must-run)"
         agriculture_supply_chp_engine_must_run_network_gas: "Gasmotor-WKK (must-run)"
         agriculture_supply_backup_network_gas: "Gasketel (back-up)"
         all_plants_capacity: "Alle centrales (capaciteit)"
@@ -210,6 +210,8 @@ nl:
         bio_lng_national_transport: "Bio-LNG voor nationaal transport"
         bio_oil: "Bio-olie"
         biogas: "Biogas"
+        biogas_chp_ht: "Biogas-WKK (HT)"
+        biogas_chp_mt: "Biogas-WKK (MT)"
         biodiesel: "Biodiesel"
         biodiesel_national_transport: "Biodiesel voor nationaal transport"
         biodiesel_biokerosene: "Biodiesel/biokerosine"
@@ -293,6 +295,10 @@ nl:
         coal_and_derivatives_hot_water: "Kolen (voor warm water)"
         coal_and_derivatives_heating: "Kolen (voor verwarming)"
         coal_ccs: "Kolen USC CCS"
+        coal_chp_pwd_ht: "Poederkolen-WKK (HT)"
+        coal_chp_pwd_mt: "Poederkolen-WKK (MT)"
+        coal_chp_pwd_cofiring_ht: "Poederkolen-WKK met bijstook (HT)"
+        coal_chp_pwd_cofiring_mt: "Poederkolen-WKK met bijstook (MT)"
         coal_chp: "Kolen WKK"
         coal_chp_cofiring: "Kolen bijstook WKK"
         coal_conv: "Kolen SC"
@@ -444,12 +450,12 @@ nl:
         losses_in_storage: "Verliezen"
         energetic_use: "Energetisch gebruik"
         energy: "Energie"
-        energy_chp_combined_cycle_network_gas: 'Gascentrale met warmtelevering (WKK)'
-        energy_chp_supercritical_waste_mix: 'Afvalverbranding WKK'
-        energy_chp_supercritical_ccs_waste_mix: 'Afvalverbranding WKK CCS'
-        energy_chp_ultra_supercritical_coal: 'Kolencentrale met warmtelevering (WKK)'
-        energy_chp_ultra_supercritical_cofiring_coal: 'Bijstook kolencentrale met warmtelevering (WKK)'
-        energy_chp_ultra_supercritical_lignite: 'Bruinkoolcentrale met warmtelevering (WKK)'
+        energy_chp_combined_cycle_network_gas: 'Gas STEG WKK'
+        energy_chp_supercritical_waste_mix: 'Afval-WKK'
+        energy_chp_supercritical_ccs_waste_mix: 'Afval-WKK + CCS'
+        energy_chp_ultra_supercritical_coal: 'Poederkolen-WKK'
+        energy_chp_ultra_supercritical_cofiring_coal: 'Poederkolen-WKK met bijstook'
+        energy_chp_ultra_supercritical_lignite: 'Bruinkolen-WKK'
         energy_export_electricity: 'Geëxporteerd'
         energy_flexibility_curtailment_electricity: 'Productieverlaging must-run en volatiele bronnen'
         energy_flexibility_load_shifting_electricity_input: "Verhoogde vraag in industrie"
@@ -564,6 +570,10 @@ nl:
         fuel_cost: "Brandstof"
         fuels: "Transportbrandstoffen"
         gas: "Gas"
+        gas_chp_ccgt_ht: "Gas STEG WKK (HT)"
+        gas_chp_ccgt_mt: "Gas CCGT WKK (MT)"
+        gas_chp_engine_ht: "Gasmotor-WKK (HT)"
+        gas_chp_engine_mt: "Gasmotor-WkK (MT)"
         gas_ccgt: "Gas STEG"
         gas_ccgt_ccs: "Gas STEG CCS"
         gas_chp_large: "Large-scale gas WKK"
@@ -797,15 +807,15 @@ nl:
         imported_hydrogen: "Geïmporteerde waterstof"
         industry_heat_from_hydrogen_for_mekko: "Warmte voor industrieel warmtenet"
         industry_heat_network_hydrogen: "Warmte voor industrieel warmtenet"
-        industry_chp_combined_cycle_gas_power_fuelmix: 'Gas WKK - industrie'
-        industry_chp_engine_gas_power_fuelmix: 'Gasmotor WKK - industrie'
-        industry_chp_turbine_gas_power_fuelmix: 'Gasturbine WKK - industrie'
-        industry_chp_ultra_supercritical_coal: 'Kolen WKK - industrie'
-        industry_chp_wood_pellets: 'Biomassa-WKK - industrie'
-        industry_chp_turbine_hydrogen: "Waterstofturbine-WKK - industrie"
-        energy_chp_local_wood_pellets: 'Biomassa-WKK - kleinschalig'
-        energy_chp_local_engine_network_gas: 'Gasmotor-WKK - kleinschalig'
-        energy_chp_local_engine_biogas: 'Biogasmotor-WKK - kleinschalig'
+        industry_chp_combined_cycle_gas_power_fuelmix: 'Industriële gas STEG WKK'
+        industry_chp_engine_gas_power_fuelmix: 'Industriële gasmotor-WKK'
+        industry_chp_turbine_gas_power_fuelmix: 'Industriële gasturbine-WKK'
+        industry_chp_ultra_supercritical_coal: 'Industriële poederkolen-WKK'
+        industry_chp_wood_pellets: 'Industriële biomassa-WKK'
+        industry_chp_turbine_hydrogen: "Industriële waterstofturbine-WKK"
+        energy_chp_local_wood_pellets: 'Biomassa-WKK'
+        energy_chp_local_engine_network_gas: 'Gasmotor-WKK'
+        energy_chp_local_engine_biogas: 'Biogas-WKK'
         industry_flexibility_p2h_electricity: "Omgezet naar warmte voor industrie"
         agriculture_flexibility_p2h_electricity: "Omgezet naar warmte voor landbouw"
         industry_ict_electricity: "ICT industrie elektriciteitsvraag"
@@ -858,6 +868,8 @@ nl:
         kosten_coefficient_eur_mva: "Kostencoefficient [EUR/MVA]"
         lighting: "Verlichting"
         lignite: "Bruinkool"
+        lignite_chp_ht: "Bruinkolen-WKK (HT)"
+        lignite_chp_mt: "Bruinkolen-WKK (MT)"
         lignite_chp: "Bruinkool WKK"
         lignite_oxy: "Bruinkool 'Oxyfuel' CCS"
         lng: "LNG"
@@ -1188,8 +1200,12 @@ nl:
         waste_power_ccs: "Afvalverbranding CCS"
         waste_incinerator: "Afvalverbranding"
         waste_incinerator_ccs: "Afvalverbranding CCS"
-        waste_chp: "Afval WKK"
-        waste_chp_ccs: "Afval WKK CCS"
+        waste_chp: "Afval-WKK"
+        waste_chp_ht: "Afval-WKK (HT)"
+        waste_chp_mt: "Afval-WKK (MT)"
+        waste_chp_ccs_ht: "Afval-WKK + CCS (HT)"
+        waste_chp_ccs_mt: "Afval-WKK + CCS (MT)"
+        waste_chp_ccs: "Afval-WKK CCS"
         waste_to_power: "Afvalcentrales"
         waste_to_heat: "Afvalketel"
         wet_biomass: "Natte biomass"
@@ -1210,6 +1226,8 @@ nl:
         with_im_export_2010: "Met im- en export 2010"
         with_im_export_20xx: "Met im- en export 20xx"
         wood_pellets: "Houtpellets (bijstook)"
+        wood_pellets_chp_ht: "Biomassa-WKK (HT)"
+        wood_pellets_chp_mt: "Biomassa-WKK (MT)"
         wood_pellets_to_power: "Houtpelletscentrales"
         dry_biomass: "Droge biomassa"
         wood: "Hout (eindgebruik)"

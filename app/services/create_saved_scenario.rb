@@ -40,6 +40,8 @@ CreateSavedScenario = lambda do |http_client, scenario_id, user, settings = {}|
     return ServiceResult.failure(saved_scenario.errors.map(&:full_message), saved_scenario)
   end
 
+  SetAPIScenarioCompatibility.keep_compatible(http_client, api_scenario.id)
+
   saved_scenario.save
   saved_scenario.scenario = api_scenario
 

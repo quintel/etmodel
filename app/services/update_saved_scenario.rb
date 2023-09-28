@@ -31,6 +31,8 @@ class UpdateSavedScenario
         return failure
       end
 
+      protect
+
       ss.save
       saved_scenario.scenario = api_scenario
     end
@@ -39,6 +41,10 @@ class UpdateSavedScenario
   end
 
   private
+
+  def protect
+    SetAPIScenarioCompatibility.keep_compatible(http_client, api_scenario.id)
+  end
 
   def unprotect
     SetAPIScenarioCompatibility.dont_keep_compatible(http_client, api_scenario.id)

@@ -19,6 +19,9 @@ describe UpdateSavedScenario, type: :service do
       .and_return(api_result)
     allow(saved_scenario).to receive(:scenario)
       .and_return(ete_scenario_mock)
+    allow(client).to receive(:put).with(
+      '/api/v3/scenarios/11', scenario: { keep_compatible: true }
+    )
   end
 
   context 'when the API response is successful' do

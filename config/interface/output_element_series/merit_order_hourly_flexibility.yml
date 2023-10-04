@@ -215,27 +215,51 @@
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_flexibility_flow_batteries_electricity_flex_merit_order_hourly_flexibility
-- label: energy_heat_flexibility_p2h_heatpump_electricity
-  color: "#F6E58D"
+- label: energy_heat_flexibility_p2h_heatpump_ht_electricity
+  color: "#f2d22e"
   order_by: 215
   group: flex
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_heat_flexibility_p2h_heatpump_electricity_input_curve
+  gquery: energy_heat_flexibility_p2h_heatpump_ht_electricity_input_curve
   is_1990: false
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
-  key: energy_heat_flexibility_p2h_heatpump_electricity_flex_merit_order_hourly_flexibility
-- label: energy_heat_flexibility_p2h_boiler_electricity
-  color: "#FFA502"
+  key: energy_heat_flexibility_p2h_heatpump_ht_electricity_flex_merit_order_hourly_flexibility
+- label: energy_heat_flexibility_p2h_heatpump_mt_electricity
+  color: "#F6E58D"
+  order_by: 216
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_heat_flexibility_p2h_heatpump_mt_electricity_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: merit_order_hourly_flexibility
+  key: energy_heat_flexibility_p2h_heatpump_mt_electricity_flex_merit_order_hourly_flexibility
+- label: energy_heat_flexibility_p2h_boiler_ht_electricity
+  color: "#ff7802"
   order_by: 210
   group: flex
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_heat_flexibility_p2h_boiler_electricity_input_curve
+  gquery: energy_heat_flexibility_p2h_boiler_ht_electricity_input_curve
   is_1990: false
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
-  key: energy_heat_flexibility_p2h_boiler_electricity_flex_merit_order_hourly_flexibility
+  key: energy_heat_flexibility_p2h_boiler_ht_electricity_flex_merit_order_hourly_flexibility
+- label: energy_heat_flexibility_p2h_boiler_mt_electricity
+  color: "#FFA502"
+  order_by: 211
+  group: flex
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_heat_flexibility_p2h_boiler_mt_electricity_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: merit_order_hourly_flexibility
+  key: energy_heat_flexibility_p2h_boiler_mt_electricity_flex_merit_order_hourly_flexibility

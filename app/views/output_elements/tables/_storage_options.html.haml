@@ -144,21 +144,37 @@
       %td{:data => {:decimals => 4, :gquery => "agriculture_p2h_electricity_output", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "agriculture_p2h_electricity_flhs", :graph => :future}}
     %tr
-      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_boiler"
-      %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_electricity_capacity", :graph => :future}}
-      %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_electricity_peak_capacity", :graph => :future}}
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_ht_boiler"
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_ht_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_ht_electricity_peak_capacity", :graph => :future}}
       %td
-      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_boiler_electricity_input", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_boiler_electricity_output", :graph => :future}}
-      %td{:data => {:decimals => 1, :gquery => "energy_heat_flexibility_p2h_boiler_electricity_flhs", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_boiler_ht_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_boiler_ht_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "energy_heat_flexibility_p2h_boiler_ht_electricity_flhs", :graph => :future}}
     %tr
-      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_heatpump"
-      %td{:data => {:gquery => "energy_heat_flexibility_p2h_heatpump_electricity_capacity", :graph => :future}}
-      %td{:data => {:gquery => "energy_heat_flexibility_p2h_heatpump_electricity_peak_capacity", :graph => :future}}
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_mt_boiler"
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_mt_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_boiler_mt_electricity_peak_capacity", :graph => :future}}
       %td
-      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_heatpump_electricity_input", :graph => :future}}
-      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_heatpump_electricity_output", :graph => :future}}
-      %td{:data => {:decimals => 1, :gquery => "energy_heat_flexibility_p2h_heatpump_electricity_flhs", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_boiler_mt_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_boiler_mt_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "energy_heat_flexibility_p2h_boiler_mt_electricity_flhs", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_ht_heatpump"
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_heatpump_ht_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_heatpump_ht_electricity_peak_capacity", :graph => :future}}
+      %td
+      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_heatpump_ht_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_heatpump_ht_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "energy_heat_flexibility_p2h_heatpump_ht_electricity_flhs", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.flexibility.electricity_converted_to_heat_district_heating_mt_heatpump"
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_heatpump_mt_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_heat_flexibility_p2h_heatpump_mt_electricity_peak_capacity", :graph => :future}}
+      %td
+      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_heatpump_mt_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_heat_flexibility_p2h_heatpump_mt_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "energy_heat_flexibility_p2h_heatpump_mt_electricity_flhs", :graph => :future}}
     %tr
       %th= t "output_elements.tables.flexibility.electricity_converted_to_hydrogen"
       %td{:data => {:gquery => "energy_hydrogen_flexibility_p2g_electricity_capacity", :graph => :future}}

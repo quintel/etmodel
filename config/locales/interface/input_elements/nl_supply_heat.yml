@@ -498,7 +498,7 @@ nl:
         using deep geothermal energy will be visible in the supply side of the 
         graph on the right."
     capacity_of_energy_heat_well_shallow_heatpump_mt_geothermal:
-      title: Geothermal + heatpump (shallow)
+      title: Geothermal + heat pump (shallow)
       short_description:
       description: "Use this slider to adjust the total installed capacity (MW) 
         of a shallow geothermal heat installation with heat-pump in 
@@ -731,7 +731,7 @@ nl:
         \r\n<br/><br/>\r\n
         The amount of heat that is produces by pulverized coal CHPs with cofiring is determined by the 
         installed capacity. Checkout the amount of installed capacity 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>." 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_ultra_supercritical_ht_coal:
       title: Hoge temperatuur
       short_description:
@@ -749,7 +749,7 @@ nl:
         \r\n<br/><br/>\r\n
         The amount of heat that is produces by pulverized coal CHPs is determined by the 
         installed capacity. Checkout the amount of installed capacity 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>." 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_supercritical_ht_waste_mix:
       title: Hoge temperatuur
       short_description:
@@ -758,7 +758,7 @@ nl:
         \r\n<br/><br/>\r\n
         The amount of heat that is produces by waste CHPs is determined by the 
         installed capacity. Checkout the amount of installed capacity 
-        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >here</a>." 
+        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >here</a>."
     share_of_energy_chp_supercritical_mt_waste_mix:
       title: Medium temperatuur
       short_description:
@@ -767,5 +767,45 @@ nl:
         \r\n<br/><br/>\r\n
         The amount of heat that is produces by waste CHPs is determined by the 
         installed capacity. Checkout the amount of installed capacity 
-        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >here</a>." 
+        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >here</a>."
+    share_of_energy_heat_flexibility_p2h_boiler_ht_electricity:
+      title: High temperature
+      short_description:
+      description: |
+        Use this slider to determine the percentage of heat from the power-to-heat
+        boiler that is allocated to high-temperature (HT) district heating. <br/><br/>
+        The amount of heat that is produced depends on the installed capacity and 
+        the willingness to pay. You can set these attributes in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Conversion to district heating</a> section.
+    share_of_energy_heat_flexibility_p2h_boiler_mt_electricity:
+      title: Medium temperature
+      short_description:
+      description: |
+        Use this slider to determine the percentage of heat from the power-to-heat
+        boiler that is allocated to medium-temperature (MT) district heating. <br/><br/>
+        The amount of heat that is produced depends on the installed capacity and 
+        the willingness to pay. You can set these attributes in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Conversion to district heating</a> section.
+    share_of_energy_heat_flexibility_p2h_heatpump_ht_electricity:
+      title: High temperature
+      short_description:
+      description: |
+        Use this slider to determine the percentage of heat from the power-to-heat
+        heat pump that is allocated to high-temperature (HT) district heating. <br/><br/>
+        The amount of heat that is produced depends on the installed capacity and 
+        the willingness to pay. You can set these attributes in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Conversion to district heating</a> section.
+    share_of_energy_heat_flexibility_p2h_heatpump_mt_electricity:
+      title: Medium temperature
+      short_description:
+      description: |
+        Use this slider to determine the percentage of heat from the power-to-heat
+        heat pump that is allocated to medium-temperature (MT) district heating. <br/><br/>
+        The amount of heat that is produced depends on the installed capacity and 
+        the willingness to pay. You can set these attributes in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Conversion to district heating</a> section.
         

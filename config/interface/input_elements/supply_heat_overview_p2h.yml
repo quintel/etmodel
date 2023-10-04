@@ -1,0 +1,34 @@
+---
+- key: share_of_energy_heat_flexibility_p2h_boiler_ht_electricity  
+  share_group: p2h_boiler_heat
+  related_node: energy_heat_flexibility_p2h_boiler_ht_electricity
+  step_value: 1.0
+  unit: "%"
+  interface_group: heat_allocation_p2h_boiler
+  position: 100
+  slide_key: supply_heat_overview_p2h
+- key: share_of_energy_heat_flexibility_p2h_boiler_mt_electricity  
+  share_group: p2h_boiler_heat
+  related_node: energy_heat_flexibility_p2h_boiler_mt_electricity
+  step_value: 1.0
+  unit: "%"
+  interface_group: heat_allocation_p2h_boiler
+  position: 110
+  slide_key: supply_heat_overview_p2h
+
+- key: share_of_energy_heat_flexibility_p2h_heatpump_ht_electricity  
+  share_group: p2h_heatpump_heat
+  related_node: energy_heat_flexibility_p2h_heatpump_ht_electricity
+  step_value: 1.0
+  unit: "%"
+  interface_group: heat_allocation_p2h_heatpump
+  position: 120
+  slide_key: supply_heat_overview_p2h
+- key: share_of_energy_heat_flexibility_p2h_heatpump_mt_electricity  
+  share_group: p2h_heatpump_heat
+  related_node: energy_heat_flexibility_p2h_heatpump_mt_electricity
+  step_value: 1.0
+  unit: "%"
+  interface_group: heat_allocation_p2h_heatpump
+  position: 130
+  slide_key: supply_heat_overview_p2h

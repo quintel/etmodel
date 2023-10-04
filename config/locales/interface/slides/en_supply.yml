@@ -253,13 +253,13 @@ en:
       short_description:
       description:
     supply_heat_overview:
-      title: Overview of heat districts
+      title: Overview district heating
       short_description:
       description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
         >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
         and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
         are roughly two types of heat sources: dispatchable and must-run heat sources.
-        Dispatchable heat sources can be switched on/ off depending on the heat demand
+        Dispatchable heat sources can be switched on/off depending on the heat demand
         at that time, while must-run heat sources supply the heat network regardless
         of heat demand. For the second type in particular <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
         >(seasonal) storage of heat</a> is an interesting option.\r\n<br /><br />\r\nBelow
@@ -281,11 +281,11 @@ en:
       short_description:
       description: "..."
     supply_heat_overview_residual:
-      title: Allocation residual heat
+      title: Allocation of residual heat
       short_description:
       description: "..."
     supply_heat_overview_emissions:
-      title: Emissions from heat import
+      title: CO<sub>2</sub> emission of imported heat
       short_description:
       description: "..."
     supply_heat_transport_lt:
@@ -316,7 +316,7 @@ en:
         30% or even higher in older networks. \r\n<br /><br />\r\nBelow you change
         the distribution losses in your scenario."
     supply_heat_network_order_lt:
-      title: Priority of LT dispatchable heat producers
+      title: Merit order of dispatchable heat sources
       short_description:
       description: "The ETM makes a distinction between 'must-run' / volatile heat
         sources (such as geothermal, solar thermal and residual heat) and dispatchable
@@ -329,7 +329,7 @@ en:
         is switched on first in case of a heat deficit? The chart to the right shows
         the marginal costs of each dispatchable source."
     supply_heat_network_order_mt:
-      title: Priority of MT dispatchable heat producers
+      title: Merit order of dispatchable heat sources
       short_description:
       description: "The ETM makes a distinction between 'must-run' / volatile heat
         sources (such as geothermal, solar thermal and residual heat) and dispatchable
@@ -342,7 +342,7 @@ en:
         is switched on first in case of a heat deficit? The chart to the right shows
         the marginal costs of each dispatchable source."
     supply_heat_network_order_ht:
-      title: Priority of HT dispatchable heat producers
+      title: Merit order of dispatchable heat sources
       short_description:
       description: "The ETM makes a distinction between 'must-run' / volatile heat
         sources (such as geothermal, solar thermal and residual heat) and dispatchable

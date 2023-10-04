@@ -109,12 +109,19 @@
   interface_group: direct_air_capture
   position: 30
   slide_key: supply_ccus_capture
-- key: share_of_energy_chp_supercritical_ccs_waste_mix
+- key: share_of_energy_chp_supercritical_ccs_ht_waste_mix
   step_value: 1.0
   unit: "%"
-  related_node: energy_chp_supercritical_ccs_waste_mix
+  related_node: energy_chp_supercritical_ccs_ht_waste_mix
   interface_group: power_plants
   position: 35
+  slide_key: supply_ccus_capture
+- key: share_of_energy_chp_supercritical_ccs_mt_waste_mix
+  step_value: 1.0
+  unit: "%"
+  related_node: energy_chp_supercritical_ccs_mt_waste_mix
+  interface_group: power_plants
+  position: 36
   slide_key: supply_ccus_capture
 - key: share_of_energy_power_supercritical_ccs_waste_mix
   step_value: 1.0

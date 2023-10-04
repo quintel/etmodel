@@ -86,7 +86,7 @@ nl:
       title: Poederkolen + CCS
       description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan (poeder)kolencentrales is uitgerust met een
-        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
@@ -102,7 +102,7 @@ nl:
       title: Kolenvergassing + CCS
       description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan kolen(vergassings)centrales is uitgerust met een
-        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
@@ -118,7 +118,7 @@ nl:
       title: Bruinkolen + CCS
       description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan bruinkoolcentrales is uitgerust met een
-        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
@@ -128,7 +128,7 @@ nl:
       title: Gas STEG + CCS
       description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan STEG gascentrales is uitgerust met een
-        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
@@ -144,7 +144,7 @@ nl:
       title: Biomassavergassing + CCS
       description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan biomassavergassingsfabrieken voor de productie van waterstof
-        is uitgerust met een CO<sub>2</sub>afvanginstallatie. Omdat emissies van biomassa
+        is uitgerust met een CO<sub>2</sub>-afvanginstallatie. Omdat emissies van biomassa
         als 'kortcyclisch' worden gerekend, ontstaan er (boekhoudkundig) 'negatieve'
         emissies in jouw scenario als deze CO<sub>2</sub> wordt afgevangen.
         Meer hierover lees je in de
@@ -156,7 +156,7 @@ nl:
       title: Steam reforming + CCS
       description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan stoomreformingsfabrieken voor de productie van waterstof
-        is uitgerust met een CO<sub>2</sub>afvanginstallatie. Het opgestelde vermogen aan
+        is uitgerust met een CO<sub>2</sub>-afvanginstallatie. Het opgestelde vermogen aan
         stoomreformingsfabrieken is in te stellen op de
         <a href='/scenario/supply/hydrogen/hydrogen-production'>waterstofpagina</a>.<br/><br/>"
     share_of_energy_hydrogen_autothermal_reformer_ccs:
@@ -255,24 +255,40 @@ nl:
       title: Vloeibaar in schepen
       description: "Met deze schuif geef je aan hoeveel procent van de afgevangen CO<sub>2</sub> in jouw scenario wordt
         getransporteerd via schepen. De CO<sub>2</sub> moet hiervoor eerst vloeibaar gemaakt worden."
-    share_of_energy_chp_supercritical_ccs_waste_mix:
-      title: Afval WKK + CCS
-      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
-        vermogen aan Afval WKK centrales is uitgerust met een
-        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+    share_of_energy_chp_supercritical_ccs_ht_waste_mix:
+      title: Afval WKK + CCS (HT)
+      description: |
+        Met deze schuif kun je instellen hoeveel procent van het opgestelde
+        vermogen aan Afval-WKK centrales dat aan een hoge-temperatuur (HT) warmtenet levert is uitgerust met een
+        CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
-        prijsontwikkelingen.<br/><br/>
-        Het opgestelde vermogen aan Afval WKK centrales is in te stellen op de
-        <a href='/scenario/supply/electricity_renewable/waste-power'>elektriciteitspagina</a>.
-        "
+        prijsontwikkelingen. <br/><br/>
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href="/scenario/supply/electricity_renewable/waste-power">Afvalverbrandingcentrales</a>.
+        De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
+    share_of_energy_chp_supercritical_ccs_mt_waste_mix:
+      title: Afval WKK + CCS (MT)
+      description: |
+        Met deze schuif kun je instellen hoeveel procent van het opgestelde
+        vermogen aan Afval-WKK centrales dat aan een midden-temperatuur (MT) warmtenet levert is uitgerust met een
+        CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
+        onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
+        prijsontwikkelingen. <br/><br/>
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href="/scenario/supply/electricity_renewable/waste-power">Afvalverbrandingcentrales</a>.
+        De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
     share_of_energy_power_supercritical_ccs_waste_mix:
       title: Afvalverbranding + CCS
-      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+      description: |
+        Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan Afvalverbrandingcentrales is uitgerust met een
-        CO<sub>2</sub>afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
+        CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
-        Het opgestelde vermogen aan Afvalverbrandingscentrales is in te stellen op de
-        <a href='/scenario/supply/electricity_renewable/waste-power'>elektriciteitspagina</a>."
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href='/scenario/supply/electricity_renewable/waste-power'>Afvalverbrandingcentrales</a>."

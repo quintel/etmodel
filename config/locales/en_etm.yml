@@ -289,6 +289,9 @@ en:
       message: |
         This scenario was last updated on %{last_updated}, in an earlier version of the model. The
         most recent release of the model was on %{release_date}.
+      explanation: |
+        This could potentially mean the scenario has values set for (slider) inputs that have been altered
+        or no longer exist, and is therefore no longer compatible with the current model.
       effect: How do updates to the model affect scenarios?
       outcomes_explanation: |
         Scenario outcomes may change due to improvements in the model, better quality data, or the

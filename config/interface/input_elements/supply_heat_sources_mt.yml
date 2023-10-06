@@ -11,13 +11,13 @@
   interface_group: non_dispatchable_heat
   position: 105
   slide_key: supply_heat_sources_mt
-
 - key: capacity_of_energy_heat_well_shallow_heatpump_mt_geothermal  
   step_value: 0.1
   unit: MW
-  interface_group: dispatchable_heat
-  position: 200
+  interface_group: non_dispatchable_heat
+  position: 110
   slide_key: supply_heat_sources_mt
+
 - key: capacity_of_energy_heat_heatpump_water_water_mt_electricity  
   step_value: 0.1
   unit: MW

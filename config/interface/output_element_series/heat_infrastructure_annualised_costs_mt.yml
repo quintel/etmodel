@@ -1,0 +1,61 @@
+---
+- label: heat_infrastructure_mt_distribution_pipelines_annualised_costs
+  color: "#002B42"
+  order_by: 1
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: heat_infrastructure_mt_distribution_pipelines_annualised_costs
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_infrastructure_mt_annualised_costs
+  key: heat_infrastructure_mt_distribution_pipelines_annualised_costs_heat_infrastructure_annualised_costs
+- label: heat_infrastructure_mt_primary_pipelines_annualised_costs
+  color: "#619AB7"
+  order_by: 2
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: heat_infrastructure_mt_primary_pipelines_annualised_costs
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_infrastructure_mt_annualised_costs
+  key: heat_infrastructure_mt_primary_pipelines_annualised_costs_heat_infrastructure_annualised_costs
+- label: heat_infrastructure_mt_distribution_stations_annualised_costs
+  color: "#C5D75F"
+  order_by: 3
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: heat_infrastructure_mt_distribution_stations_annualised_costs
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_infrastructure_mt_annualised_costs
+  key: heat_infrastructure_mt_distribution_stations_annualised_costs_heat_infrastructure_annualised_costs
+- label: heat_infrastructure_mt_indoor_annualised_costs
+  color: "#CAB39E"
+  order_by: 4
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: heat_infrastructure_mt_indoor_annualised_costs
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_infrastructure_mt_annualised_costs
+  key: heat_infrastructure_mt_indoor_annualised_costs_heat_infrastructure_annualised_costs
+- label: heat_infrastructure_mt_storage_annualised_costs
+  color: "#FCC43D"
+  order_by: 5
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: heat_infrastructure_mt_storage_annualised_costs
+  is_1990: 
+  dependent_on: 
+  output_element_key: heat_infrastructure_mt_annualised_costs
+  key: heat_infrastructure_mt_storage_annualised_costs_heat_infrastructure_annualised_costs

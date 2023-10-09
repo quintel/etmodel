@@ -1,4 +1,11 @@
 ---
+- key: capacity_of_energy_heat_well_deep_ht_geothermal  
+  step_value: 0.1
+  unit: MW
+  interface_group: non_dispatchable_heat
+  position: 100
+  slide_key: supply_heat_sources_ht
+
 - key: capacity_of_energy_heat_boiler_ht_electricity  
   step_value: 0.1
   unit: MW

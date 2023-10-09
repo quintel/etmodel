@@ -1,0 +1,84 @@
+---
+- label: heat_infrastructure_lt_outdoor_infrastructure_annualised_capex_per_household
+  color: "#002B42"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  gquery: households_lt_outdoor_heat_infrastructure_capex_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_infrastructure_annualised_costs_per_household_lt 
+  key: heat_infrastructure_lt_outdoor_infrastructure_annualised_capex_per_household_lt_heat_network
+- label: heat_infrastructure_lt_outdoor_infrastructure_annualised_opex_per_household
+  color: "#325567"
+  order_by: 2
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: households_lt_outdoor_heat_infrastructure_opex_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_infrastructure_annualised_costs_per_household_lt 
+  key: heat_infrastructure_lt_outdoor_infrastructure_annualised_opex_per_household_lt_heat_network
+- label: heat_infrastructure_lt_installations_annualised_capex_per_household
+  color: "#619ab7"
+  order_by: 3
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: households_lt_installations_capex_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_infrastructure_annualised_costs_per_household_lt 
+  key: heat_infrastructure_lt_installations_annualised_capex_per_household_lt_heat_network
+- label: heat_infrastructure_lt_installations_annualised_opex_per_household
+  color: "#bfd6e2"
+  order_by: 4
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: households_lt_installations_opex_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_infrastructure_annualised_costs_per_household_lt 
+  key: heat_infrastructure_lt_installations_annualised_opex_per_household_lt_heat_network
+- label: heat_infrastructure_lt_indoor_infrastructure_annualised_capex_per_household
+  color: "#CAB39E"
+  order_by: 5
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: households_lt_indoor_heat_infrastructure_capex_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_infrastructure_annualised_costs_per_household_lt 
+  key: heat_infrastructure_lt_indoor_infrastructure_annualised_capex_per_household_lt_heat_network
+- label: heat_infrastructure_lt_indoor_infrastructure_annualised_opex_per_household
+  color: "#e4d9ce"
+  order_by: 6
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: households_lt_indoor_heat_infrastructure_opex_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_infrastructure_annualised_costs_per_household_lt 
+  key: heat_infrastructure_lt_indoor_infrastructure_annualised_opex_per_household_lt_heat_network
+- label: heat_infrastructure_lt_heat_delivery_system_annualised_capex_per_household
+  color: "#FCC43D"
+  order_by: 7
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: households_lt_heat_delivery_system_capex_per_household
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_infrastructure_annualised_costs_per_household_lt 
+  key: heat_infrastructure_lt_heat_delivery_system_annualised_capex_per_household_lt_heat_network

@@ -5,7 +5,7 @@
   group:
   show_at_first:
   is_target_line: false
-  gquery: annual_ht_outdoor_heat_infrastructure_capex_per_household
+  gquery: households_ht_outdoor_heat_infrastructure_capex_per_household
   is_1990: false
   dependent_on:
   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
@@ -17,7 +17,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: annual_ht_outdoor_heat_infrastructure_opex_per_household
+  gquery: households_ht_outdoor_heat_infrastructure_opex_per_household
   is_1990: false
   dependent_on:
   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
@@ -29,7 +29,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: ht_installations_capex_per_household
+  gquery: households_ht_installations_capex_per_household
   is_1990: false
   dependent_on:
   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
@@ -41,7 +41,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: ht_installations_opex_per_household
+  gquery: households_ht_installations_opex_per_household
   is_1990: false
   dependent_on:
   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
@@ -53,7 +53,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: annual_ht_indoor_heat_infrastructure_capex_per_household
+  gquery: households_ht_indoor_heat_infrastructure_capex_per_household
   is_1990: false
   dependent_on:
   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
@@ -65,7 +65,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: annual_ht_indoor_heat_infrastructure_opex_per_household
+  gquery: households_ht_indoor_heat_infrastructure_opex_per_household
   is_1990: false
   dependent_on:
   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
@@ -77,33 +77,8 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: ht_heat_delivery_system_capex_per_household
+  gquery: households_ht_heat_delivery_system_capex_per_household
   is_1990: false
   dependent_on:
   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
   key: heat_infrastructure_ht_heat_delivery_system_annualised_capex_per_household_ht_heat_network
-# paars: carriers
-# - label: 
-#   color: "#702283"
-#   order_by: 
-#   group:
-#   show_at_first:
-#   is_target_line: false
-#   target_line_position:
-#   gquery: 
-#   is_1990: false
-#   dependent_on:
-#   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
-#   key: 
-# - label: 
-#   color: "#9a64a8"
-#   order_by: 
-#   group:
-#   show_at_first:
-#   is_target_line: false
-#   target_line_position:
-#   gquery: 
-#   is_1990: false
-#   dependent_on:
-#   output_element_key: heat_infrastructure_annualised_costs_per_household_ht 
-#   key: 

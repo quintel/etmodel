@@ -279,19 +279,53 @@ nl:
     supply_heat_overview_chp:
       title: Allocatie van warmte uit WKK's
       short_description:
-      description: "..."
+      description: "Sommige warmtebronnen kunnen warmte leveren aan warmtenetten van verschillende temperatuurniveaus.
+      \r\n<br /><br />\r\n
+      Hieronder kun je de relatieve toewijzing instellen van warmte uit WKK's aan zowel hoge- als midden-temperatuur warmtenetten."
     supply_heat_overview_residual:
       title: Allocatie van restwarmte
       short_description:
-      description: "..."
+      description: "Sommige sectoren van de industrie kunnen restwarmte leveren aan midden-temperatuur warmtenetten. 
+      \r\n<br /><br />\r\n
+      Hieronder kun je het percentage restwarmte instellen dat de beschikbare sectoren leveren aan midden-temperatuur warmtenetten."
     supply_heat_overview_p2h:
       title: Allocatie van power-to-heat
       short_description:
-      description: "..."
+      description: "Sommige warmtebronnen kunnen warmte leveren aan warmtenetten van verschillende temperatuurniveaus.
+      \r\n<br /><br />\r\n
+      Hieronder kun je de relatieve toewijzing instellen van warmte uit power-to-heat bronnen aan zowel hoge- als midden-temperatuur warmtenetten."
     supply_heat_overview_emissions:
       title: CO<sub>2</sub>-emissies van geïmporteerde warmte
       short_description:
-      description: "..."
+      description: "Hieronder kun je de CO<sub>2</sub>-emissies van geïmporteerde warmte instellen."
+    supply_heat_transport_lt:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "Bij warmtenetten wordt warmte op een centrale locatie geproduceerd
+        en vervolgens via een netwerk van geïsoleerde pijpleidingen getransporteerd
+        naar huizen en bedrijven. Dit transport van warmte leidt tot energieverliezen,
+        die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
+        naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
+        kun je de distributieverliezen in jouw scenario instellen."
+    supply_heat_transport_mt:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "Bij warmtenetten wordt warmte op een centrale locatie geproduceerd
+        en vervolgens via een netwerk van geïsoleerde pijpleidingen getransporteerd
+        naar huizen en bedrijven. Dit transport van warmte leidt tot energieverliezen,
+        die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
+        naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
+        kun je de distributieverliezen in jouw scenario instellen."
+    supply_heat_transport_ht:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "Bij warmtenetten wordt warmte op een centrale locatie geproduceerd
+        en vervolgens via een netwerk van geïsoleerde pijpleidingen getransporteerd
+        naar huizen en bedrijven. Dit transport van warmte leidt tot energieverliezen,
+        die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
+        naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
+        kun je de distributieverliezen in jouw scenario instellen."
+
     supply_heat_network_industry:
       title: Bronnen stoomnet
       short_description: ''
@@ -356,7 +390,7 @@ nl:
         springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
         kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare
         bronnen."
-    supply_heat_ht_storage:
+    supply_heat_storage_ht:
       title: "(Seizoens)opslag van warmte"
       short_description:
       description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
@@ -381,7 +415,7 @@ nl:
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
         >kosten</a>.\r\n"
-    supply_heat_mt_storage:
+    supply_heat_storage_mt:
       title: "(Seizoens)opslag van warmte"
       short_description:
       description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
@@ -406,7 +440,7 @@ nl:
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
         >kosten</a>.\r\n"
-    supply_heat_lt_storage:
+    supply_heat_storage_lt:
       title: "(Seizoens)opslag van warmte"
       short_description:
       description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
@@ -431,18 +465,84 @@ nl:
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
         >kosten</a>.\r\n"
-    supply_heat_ht_sources:
+    supply_heat_sources_ht:
       title: "Bronnen"
       short_description:
-      description: "..."
-    supply_heat_lt_sources:
+      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
+        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
+        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
+        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
+        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
+        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
+        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
+        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
+        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
+        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
+        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
+        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
+        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kun je vinden in
+        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentatie</a>."
+    supply_heat_sources_lt:
       title: "Bronnen"
       short_description:
-      description: "..."
-    supply_heat_mt_sources:
+      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
+        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
+        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
+        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
+        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
+        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
+        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
+        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
+        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
+        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
+        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
+        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
+        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kun je vinden in
+        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentatie</a>."
+    supply_heat_sources_mt:
       title: "Bronnen"
       short_description:
-      description: "..."
+      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
+        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
+        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
+        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
+        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
+        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
+        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
+        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
+        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
+        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
+        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
+        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
+        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kun je vinden in
+        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentatie</a>."
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:

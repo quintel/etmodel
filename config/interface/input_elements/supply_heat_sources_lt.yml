@@ -1,37 +1,42 @@
 ---
-- key: capacity_of_energy_heat_solar_lt_solar_thermal  
+- key: capacity_of_energy_heat_solar_lt_solar_thermal
   step_value: 1.0
   unit: MW
   interface_group: non_dispatchable_heat
   position: 100
+  related_node: energy_heat_solar_lt_solar_thermal
   slide_key: supply_heat_sources_lt
-- key: capacity_of_energy_heat_well_shallow_lt_geothermal  
+- key: capacity_of_energy_heat_well_shallow_lt_geothermal
   step_value: 1.0
   unit: MW
   interface_group: non_dispatchable_heat
   position: 105
+  related_node: energy_heat_well_shallow_lt_geothermal
   slide_key: supply_heat_sources_lt
 
-- key: capacity_of_energy_heat_heatpump_water_water_lt_electricity  
+- key: capacity_of_energy_heat_heatpump_water_water_lt_electricity
   step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 200
+  related_node: energy_heat_heatpump_water_water_lt_electricity
   slide_key: supply_heat_sources_lt
-- key: capacity_of_energy_heat_boiler_lt_electricity  
+- key: capacity_of_energy_heat_boiler_lt_electricity
   step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 205
+  related_node: energy_heat_boiler_lt_electricity
   slide_key: supply_heat_sources_lt
-- key: capacity_of_energy_heat_burner_lt_hydrogen  
+- key: capacity_of_energy_heat_burner_lt_hydrogen
   step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 210
+  related_node: energy_heat_burner_lt_hydrogen
   slide_key: supply_heat_sources_lt
 
-- key: volume_of_lt_imported_heat  
+- key: volume_of_lt_imported_heat
   step_value: 1.0
   unit: PJ
   interface_group: imported_heat

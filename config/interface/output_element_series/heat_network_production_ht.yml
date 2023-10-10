@@ -227,6 +227,18 @@
   dependent_on:
   output_element_key: heat_network_production_ht
   key: energy_heat_import_steam_hot_water_ht_steam_hot_water_output_curve_heat_network_production
+- label: energy_heat_solar_thermal_steam_hot_water_output_curve
+  color: "#FFD700"
+  order_by: 18
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_solar_thermal_ht_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production_ht
+  key: energy_heat_solar_thermal_ht_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_well_deep_geothermal_steam_hot_water_output_curve
   color: "#FFA502"
   order_by: 2

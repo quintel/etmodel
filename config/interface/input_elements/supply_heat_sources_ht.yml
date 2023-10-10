@@ -1,65 +1,81 @@
 ---
-- key: capacity_of_energy_heat_well_deep_ht_geothermal  
-  step_value: 0.1
+- key: capacity_of_energy_heat_solar_ht_solar_thermal
+  step_value: 1.0
   unit: MW
   interface_group: non_dispatchable_heat
   position: 100
+  related_node: energy_heat_solar_ht_solar_thermal
   slide_key: supply_heat_sources_ht
-
-- key: capacity_of_energy_heat_boiler_ht_electricity  
+- key: capacity_of_energy_heat_well_deep_ht_geothermal
   step_value: 1.0
   unit: MW
-  interface_group: dispatchable_heat
-  position: 100
-  slide_key: supply_heat_sources_ht
-- key: capacity_of_energy_heat_heatpump_water_water_ht_electricity  
-  step_value: 1.0
-  unit: MW
-  interface_group: dispatchable_heat
+  interface_group: non_dispatchable_heat
   position: 105
-  slide_key: supply_heat_sources_ht
-- key: capacity_of_energy_heat_burner_ht_hydrogen  
-  step_value: 1.0
-  unit: MW
-  interface_group: dispatchable_heat
-  position: 110
-  slide_key: supply_heat_sources_ht
-- key: capacity_of_energy_heat_burner_ht_wood_pellets  
-  step_value: 1.0
-  unit: MW
-  interface_group: dispatchable_heat
-  position: 115
-  slide_key: supply_heat_sources_ht
-- key: capacity_of_energy_heat_burner_ht_waste_mix  
-  step_value: 1.0
-  unit: MW
-  interface_group: dispatchable_heat
-  position: 120
-  slide_key: supply_heat_sources_ht
-- key: capacity_of_energy_heat_burner_ht_crude_oil  
-  step_value: 1.0
-  unit: MW
-  interface_group: dispatchable_heat
-  dependent_on: has_coal_oil_for_heating_built_environment
-  position: 125
-  slide_key: supply_heat_sources_ht
-- key: capacity_of_energy_heat_burner_ht_network_gas  
-  step_value: 1.0
-  unit: MW
-  interface_group: dispatchable_heat
-  position: 130
-  slide_key: supply_heat_sources_ht
-- key: capacity_of_energy_heat_burner_ht_coal  
-  step_value: 1.0
-  unit: MW
-  interface_group: dispatchable_heat
-  dependent_on: has_coal_oil_for_heating_built_environment
-  position: 135
+  related_node: energy_heat_well_deep_ht_geothermal
   slide_key: supply_heat_sources_ht
 
-- key: volume_of_ht_imported_heat  
+- key: capacity_of_energy_heat_boiler_ht_electricity
+  step_value: 1.0
+  unit: MW
+  interface_group: dispatchable_heat
+  position: 200
+  related_node: energy_heat_boiler_ht_electricity
+  slide_key: supply_heat_sources_ht
+- key: capacity_of_energy_heat_heatpump_water_water_ht_electricity
+  step_value: 1.0
+  unit: MW
+  interface_group: dispatchable_heat
+  position: 205
+  related_node: energy_heat_heatpump_water_water_ht_electricity
+  slide_key: supply_heat_sources_ht
+- key: capacity_of_energy_heat_burner_ht_hydrogen
+  step_value: 1.0
+  unit: MW
+  interface_group: dispatchable_heat
+  position: 210
+  related_node: energy_heat_burner_ht_hydrogen
+  slide_key: supply_heat_sources_ht
+- key: capacity_of_energy_heat_burner_ht_wood_pellets
+  step_value: 1.0
+  unit: MW
+  interface_group: dispatchable_heat
+  position: 215
+  related_node: energy_heat_burner_ht_wood_pellets
+  slide_key: supply_heat_sources_ht
+- key: capacity_of_energy_heat_burner_ht_waste_mix
+  step_value: 1.0
+  unit: MW
+  interface_group: dispatchable_heat
+  position: 220
+  related_node: energy_heat_burner_ht_waste_mix
+  slide_key: supply_heat_sources_ht
+- key: capacity_of_energy_heat_burner_ht_crude_oil
+  step_value: 1.0
+  unit: MW
+  interface_group: dispatchable_heat
+  dependent_on: has_coal_oil_for_heating_built_environment
+  position: 225
+  related_node: energy_heat_burner_ht_crude_oil
+  slide_key: supply_heat_sources_ht
+- key: capacity_of_energy_heat_burner_ht_network_gas
+  step_value: 1.0
+  unit: MW
+  interface_group: dispatchable_heat
+  position: 230
+  related_node: energy_heat_burner_ht_network_gas
+  slide_key: supply_heat_sources_ht
+- key: capacity_of_energy_heat_burner_ht_coal
+  step_value: 1.0
+  unit: MW
+  interface_group: dispatchable_heat
+  dependent_on: has_coal_oil_for_heating_built_environment
+  position: 235
+  related_node: energy_heat_burner_ht_coal
+  slide_key: supply_heat_sources_ht
+
+- key: volume_of_ht_imported_heat
   step_value: 1.0
   unit: PJ
   interface_group: imported_heat
-  position: 200
+  position: 300
   slide_key: supply_heat_sources_ht

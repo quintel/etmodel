@@ -1,75 +1,77 @@
 ---
 - key: capacity_of_energy_heat_solar_mt_solar_thermal  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: non_dispatchable_heat
   position: 100
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_well_deep_mt_geothermal  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: non_dispatchable_heat
   position: 105
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_well_shallow_heatpump_mt_geothermal  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: non_dispatchable_heat
   position: 110
   slide_key: supply_heat_sources_mt
 
 - key: capacity_of_energy_heat_heatpump_water_water_mt_electricity  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 205
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_boiler_mt_electricity  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 210
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_burner_mt_hydrogen  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 215
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_burner_mt_wood_pellets  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 220
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_burner_mt_waste_mix  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 225
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_burner_mt_crude_oil  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
+  dependent_on: has_coal_oil_for_heating_built_environment
   position: 230
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_burner_mt_network_gas  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 235
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_burner_mt_coal  
-  step_value: 0.1
+  step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
+  dependent_on: has_coal_oil_for_heating_built_environment
   position: 240
   slide_key: supply_heat_sources_mt
 
 
 - key: volume_of_mt_imported_heat  
-  step_value: 0.1
+  step_value: 1.0
   interface_group: imported_heat
   unit: PJ
   position: 300

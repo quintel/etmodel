@@ -64,22 +64,9 @@
   dependent_on:
   output_element_key: costs_overview
   key: costs_infrastructure_costs_overview
-- label: costs_heat_delivery_system
-  unit: euro
-  color: "#FCC43D"
-  order_by: 6
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_heat_delivery_system
-  is_1990:
-  dependent_on:
-  output_element_key: costs_overview
-  key: costs_heat_delivery_system_costs_overview
 - label: costs_co2
   unit: euro
-  color: "#CAB39E"
+  color: "#FCC43D"
   order_by: 7
   group:
   show_at_first:

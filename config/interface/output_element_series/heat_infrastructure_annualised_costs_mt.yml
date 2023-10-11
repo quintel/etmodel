@@ -9,7 +9,7 @@
   gquery: heat_infrastructure_mt_distribution_pipelines_annualised_costs
   is_1990: 
   dependent_on: 
-  output_element_key: heat_infrastructure_mt_annualised_costs
+  output_element_key: heat_infrastructure_annualised_costs_mt
   key: heat_infrastructure_mt_distribution_pipelines_annualised_costs_heat_infrastructure_annualised_costs
 - label: heat_infrastructure_mt_primary_pipelines_annualised_costs
   color: "#619AB7"
@@ -21,7 +21,7 @@
   gquery: heat_infrastructure_mt_primary_pipelines_annualised_costs
   is_1990: 
   dependent_on: 
-  output_element_key: heat_infrastructure_mt_annualised_costs
+  output_element_key: heat_infrastructure_annualised_costs_mt
   key: heat_infrastructure_mt_primary_pipelines_annualised_costs_heat_infrastructure_annualised_costs
 - label: heat_infrastructure_mt_distribution_stations_annualised_costs
   color: "#C5D75F"
@@ -33,7 +33,7 @@
   gquery: heat_infrastructure_mt_distribution_stations_annualised_costs
   is_1990: 
   dependent_on: 
-  output_element_key: heat_infrastructure_mt_annualised_costs
+  output_element_key: heat_infrastructure_annualised_costs_mt
   key: heat_infrastructure_mt_distribution_stations_annualised_costs_heat_infrastructure_annualised_costs
 - label: heat_infrastructure_mt_indoor_annualised_costs
   color: "#CAB39E"
@@ -45,7 +45,7 @@
   gquery: heat_infrastructure_mt_indoor_annualised_costs
   is_1990: 
   dependent_on: 
-  output_element_key: heat_infrastructure_mt_annualised_costs
+  output_element_key: heat_infrastructure_annualised_costs_mt
   key: heat_infrastructure_mt_indoor_annualised_costs_heat_infrastructure_annualised_costs
 - label: heat_infrastructure_mt_storage_annualised_costs
   color: "#FCC43D"
@@ -57,5 +57,5 @@
   gquery: heat_infrastructure_mt_storage_annualised_costs
   is_1990: 
   dependent_on: 
-  output_element_key: heat_infrastructure_mt_annualised_costs
+  output_element_key: heat_infrastructure_annualised_costs_mt
   key: heat_infrastructure_mt_storage_annualised_costs_heat_infrastructure_annualised_costs

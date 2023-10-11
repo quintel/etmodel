@@ -1,18 +1,19 @@
 ---
+- key: heat_storage_enabled_ht
+  step_value: 0.1
+  unit: boolean
+  position: 100
+  slide_key: supply_heat_storage_ht
 - key: energy_heat_network_storage_ht_loss_share  
   step_value: 0.1
   unit: "%"
-  position: 3
+  interface_group: heat_storage_losses
+  position: 200
   slide_key: supply_heat_storage_ht
 - key: energy_heat_network_storage_ht_steam_hot_water_output_capacity_share
   step_value: 0.1
   unit: "%"
+  interface_group: heat_storage_capacity
   fixed: false
-  position: 2
+  position: 300
   slide_key: supply_heat_storage_ht
-- key: heat_storage_enabled_ht
-  step_value: 0.1
-  unit: boolean
-  position: 1
-  slide_key: supply_heat_storage_ht
-

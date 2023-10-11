@@ -86,28 +86,27 @@
   position: 240
   related_node: energy_heat_burner_mt_coal
   slide_key: supply_heat_sources_mt
-
+- key: capacity_of_energy_heat_heatpump_surface_water_water_ts_mt_electricity
+  step_value: 0.1
+  unit: MW
+  position: 245
+  slide_key: supply_heat_sources_mt
+- key: capacity_of_energy_heat_heatpump_waste_water_water_ts_mt_electricity
+  step_value: 0.1
+  unit: MW
+  position: 250
+  slide_key: supply_heat_sources_mt
+- key: capacity_of_energy_heat_heatpump_drink_water_water_ts_mt_electricity
+  step_value: 0.1
+  unit: MW
+  position: 255
+  slide_key: supply_heat_sources_mt
 
 - key: volume_of_mt_imported_heat
   step_value: 0.1
   interface_group: imported_heat
   unit: PJ
   position: 300
-  slide_key: supply_heat_sources_mt
-- key: capacity_of_energy_heat_heatpump_surface_water_water_ts_mt_electricity
-  step_value: 0.1
-  unit: MW
-  position: 3
-  slide_key: supply_heat_sources_mt
-- key: capacity_of_energy_heat_heatpump_waste_water_water_ts_mt_electricity
-  step_value: 0.1
-  unit: MW
-  position: 3
-  slide_key: supply_heat_sources_mt
-- key: capacity_of_energy_heat_heatpump_drink_water_water_ts_mt_electricity
-  step_value: 0.1
-  unit: MW
-  position: 3
   slide_key: supply_heat_sources_mt
 
 

@@ -13,7 +13,7 @@
   key: heat_network_demand_heat_network_production_lt
 - label: energy_heat_backup_burner_network_gas_steam_hot_water_output_curve
   color: "#CED6E0"
-  order_by: 19
+  order_by: 100
   group: ''
   show_at_first: false
   is_target_line: false
@@ -47,6 +47,42 @@
   dependent_on:
   output_element_key: heat_network_production_lt
   key: energy_heat_heatpump_water_water_electricity_lt_steam_hot_water_output_curve_heat_network_production
+- label: energy_heat_heatpump_surface_water_water_ts_electricity_steam_hot_water_output_curve
+  color: "#87e3eb"
+  order_by: 25
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_heatpump_surface_water_water_ts_lt_electricity_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production_lt
+  key: energy_heat_heatpump_surface_water_water_ts_lt_electricity_steam_hot_water_output_curve_heat_network_production
+- label: energy_heat_heatpump_waste_water_water_ts_electricity_steam_hot_water_output_curve
+  color: "#9deef5"
+  order_by: 26
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_heatpump_waste_water_water_ts_lt_electricity_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production_lt
+  key: energy_heat_heatpump_waste_water_water_ts_lt_electricity_steam_hot_water_output_curve_heat_network_production
+- label: energy_heat_heatpump_drink_water_water_ts_electricity_steam_hot_water_output_curve
+  color: "#c1f1f5"
+  order_by: 27
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_heatpump_drink_water_water_ts_lt_electricity_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production_lt
+  key: energy_heat_heatpump_drink_water_water_ts_lt_electricity_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_boiler_electricity_steam_hot_water_output_curve
   color: "#b9effe"
   order_by: 17

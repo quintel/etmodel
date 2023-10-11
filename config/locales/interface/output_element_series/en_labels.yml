@@ -105,6 +105,9 @@ en:
         energy_heat_burner_waste_mix_steam_hot_water_output_curve: 'Waste heater'
         energy_heat_burner_wood_pellets_steam_hot_water_output_curve: 'Biomass heater'
         energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Collective water heat pump'
+        energy_heat_heatpump_surface_water_water_ts_electricity_steam_hot_water_output_curve: 'Aquathermal heat pump (surface water)'
+        energy_heat_heatpump_waste_water_water_ts_electricity_steam_hot_water_output_curve: 'Aquathermal heat pump (waste water)'
+        energy_heat_heatpump_drink_water_water_ts_electricity_steam_hot_water_output_curve: 'Aquathermal heat pump (drink water)'
         energy_heat_boiler_electricity_steam_hot_water_output_curve: 'Electric boiler'
         energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Imported heat'
         energy_heat_industry_residual_heat_steam_hot_water_output_curve: 'Residual heat from industry'
@@ -1326,7 +1329,10 @@ en:
         households_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Households"
         energy_heat_burner_wood_pellets_in_collective_heat_network_mekko: "Biomass heater"
         energy_heat_distribution_loss_in_collective_heat_network_mekko: "Distribution losses"
-        energy_heat_heatpump_water_water_electricity_in_collective_heat_network_mekko: "Collective water heat pump"
+        energy_heat_heatpump_water_water_electricity_in_collective_heat_network_mekko: "Collective ground heat pump"
+        energy_heat_heatpump_surface_water_water_ts_electricity: 'Aquathermal heat pump (surface water)'
+        energy_heat_heatpump_waste_water_water_ts_electricity: 'Aquathermal heat pump (waste water)'
+        energy_heat_heatpump_drink_water_water_ts_electricity: 'Aquathermal heat pump (drink water)'
         energy_heat_boiler_electricity_in_collective_heat_network_mekko: "Electric boiler"
         energy_heat_import_steam_hot_water_in_collective_heat_network_mekko: "Imported heat"
         energy_heat_solar_thermal_in_collective_heat_network_mekko: "Solar thermal"

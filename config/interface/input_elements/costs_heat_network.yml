@@ -2,16 +2,29 @@
 - key: costs_heat_infra_indoors
   step_value: 0.1
   unit: "%"
-  position: 1
+  position: 100
   slide_key: costs_heat_network
 - key: costs_heat_infra_outdoors
   step_value: 0.1
   unit: "%"
-  position: 2
+  position: 105
   slide_key: costs_heat_network
-- key: costs_heat_network_storage
+
+- key: costs_heat_network_storage_ht_steam_hot_water
   step_value: 0.1
   unit: "€/MWh"
   interface_group: heat_network_storage
-  position: 10
+  position: 200
+  slide_key: costs_heat_network
+- key: costs_heat_network_storage_mt_steam_hot_water
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: heat_network_storage
+  position: 205
+  slide_key: costs_heat_network
+- key: costs_heat_network_storage_lt_steam_hot_water
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: heat_network_storage
+  position: 210
   slide_key: costs_heat_network

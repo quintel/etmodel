@@ -249,37 +249,75 @@ en:
       description: This slider sets the change in future investment and O&M costs for
         outdoor heating infrastructure. This includes district heating pipelines and
         exchanger stations. See <a href="https://docs.energytransitionmodel.com/main/heat-infrastructure-costs">our documentation</a> for more info.
-    costs_heat_network_storage:
-      title: Seasonal storage
+    costs_heat_network_storage_ht_steam_hot_water:
+      title: HT (seasonal) storage
       short_description:
-      description: "Scenarios with large amounts of \"must-run\" heat production will
+      description: |
+        Scenarios with large amounts of "must-run" heat production will
         often have considerable excesses of heat. Storage allows you to preserve this
-        heat for later use. Seasonal storage can be switched on/off <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >here</a>.\r\n</br></br>\r\nThe start value (43 €/MWh) is based on the potential
+        heat for later use. Seasonal storage can be switched on/off 
+        <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">here</a>. </br></br>
+        The start value (43 €/MWh) is based on the potential
         costs of large-scale ATES (Aquifer Thermal Energy Storage).
         ATES is the underground storage of warm water in aquifers.
         If you want to use the costs of another storage system in your scenario,
-        <a href=\"https://refman.energytransitionmodel.com/publications/2125\"
-        target =\"_blank\">this report</a> from Ecovat gives the costs per technology below.
-        Note: A different technology choice also involves other annual storage losses.
-        You can set this <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\" >here</a>
-        and the loss percentages per technology are also shown in the text next to the slider.
+        <a href="https://refman.energytransitionmodel.com/publications/2125"
+        target =\"_blank\">this report</a> from Ecovat gives the costs per technology below. </br></br>
         <ul>
         <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% losses </li>
         <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% losses </li>
         <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% losses </li>
         <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% losses </li>
         <li> Ecovat: 86 €/MWh, 10% losses </li>
-        </ul>
-        The graph below shows the costs per technology. The costs for the 'heat loss
-        compensation' are not taken into account in the costs above as these are
-        already included in the ETM calculation when balancing supply and demand.
-        The black bars in the graph indicate
-        margins of uncertainty in costs due to efficiency bandwidth. The purpose of
-        the graph is to clarify the distribution of costs among the various cost items:
-        systems with higher CAPEX recover costs at low OPEX, higher efficiency and
-        therefore smaller margin of uncertainty.
-        \r\n<br/><br/>\r\n<img src=\"/assets/popups/img_heat_storage_costs.png\" style=\"width:410px;height:285px\"/>"
+        </ul> </br>
+        Note: A different technology choice also involves other annual storage losses.
+        You can set this <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">here</a>.
+    costs_heat_network_storage_mt_steam_hot_water:
+      title: MT (seasonal) storage
+      short_description:
+      description: |
+        Scenarios with large amounts of "must-run" heat production will
+        often have considerable excesses of heat. Storage allows you to preserve this
+        heat for later use. Seasonal storage can be switched on/off 
+        <a href="/scenario/supply/heat_mt/seasonal-storage-of-heat">here</a>. </br></br>
+        The start value (43 €/MWh) is based on the potential
+        costs of large-scale ATES (Aquifer Thermal Energy Storage).
+        ATES is the underground storage of warm water in aquifers.
+        If you want to use the costs of another storage system in your scenario,
+        <a href="https://refman.energytransitionmodel.com/publications/2125"
+        target =\"_blank\">this report</a> from Ecovat gives the costs per technology below. </br></br>
+        <ul>
+        <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% losses </li>
+        <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% losses </li>
+        <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% losses </li>
+        <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% losses </li>
+        <li> Ecovat: 86 €/MWh, 10% losses </li>
+        </ul> </br>
+        Note: A different technology choice also involves other annual storage losses.
+        You can set this <a href="/scenario/supply/heat_mt/seasonal-storage-of-heat" >here</a>.
+    costs_heat_network_storage_lt_steam_hot_water:
+      title: LT (seasonal) storage
+      short_description:
+      description: |
+        Scenarios with large amounts of "must-run" heat production will
+        often have considerable excesses of heat. Storage allows you to preserve this
+        heat for later use. Seasonal storage can be switched on/off 
+        <a href="/scenario/supply/heat_lt/seasonal-storage-of-heat">here</a>. </br></br>
+        The start value (43 €/MWh) is based on the potential
+        costs of large-scale ATES (Aquifer Thermal Energy Storage).
+        ATES is the underground storage of warm water in aquifers.
+        If you want to use the costs of another storage system in your scenario,
+        <a href="https://refman.energytransitionmodel.com/publications/2125"
+        target =\"_blank\">this report</a> from Ecovat gives the costs per technology below. </br></br>
+        <ul>
+        <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% losses </li>
+        <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% losses </li>
+        <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% losses </li>
+        <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% losses </li>
+        <li> Ecovat: 86 €/MWh, 10% losses </li>
+        </ul> </br>
+        Note: A different technology choice also involves other annual storage losses.
+        You can set this <a href="/scenario/supply/heat_lt/seasonal-storage-of-heat" >here</a>.
     investment_costs_nuclear_nuclear_plant:
       title: Investment costs large reactors
       short_description:

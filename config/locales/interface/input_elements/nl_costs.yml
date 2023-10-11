@@ -261,39 +261,78 @@ nl:
       description: Met deze schuif stel je de toe- of afname in die je verwacht voor de
         investeringskosten en onderhouds- en beheerkosten van leidingen en onderstations
         voor warmtenetten. Zie <a href="https://docs.energytransitionmodel.com/main/heat-infrastructure-costs">onze documentatie</a> voor meer info.
-    costs_heat_network_storage:
-      title: Seizoensopslag
+    costs_heat_network_storage_ht_steam_hot_water:
+      title: HT-(seizoens)opslag
       short_description:
-      description: "Scenario's met een grote hoeveelheid 'must run' en volatiele warmteproductie
+      description: |
+        Scenario's met een grote hoeveelheid 'must run' en volatiele warmteproductie
         zoals zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
         in uren met geen of weinig vraag. (Seizoens)opslag stelt je in staat om deze
         warmte op te slaan en op een later moment in te zetten. Seizoensopslag kan
-        <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\" >hier</a> aan/uit
-        worden gezet.\r\n</br></br>\r\nDe startwaarde (43 €/MWh) is gebaseerd op de
+        <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">hier</a> aan/uit
+        worden gezet. </br></br>
+        De startwaarde (43 €/MWh) is gebaseerd op de
         potentiële kosten van grootschalige ATES (Aquifer Thermal
         Energy Storage). ATES is het ondergronds opslaan van warm water in aquifers. Als je
-        de kosten van een ander opslagsysteem wil gebruiken in jouw scenario, geeft <a href=\"https://refman.energytransitionmodel.com/publications/2125\"
-        target =\"_blank\">dit rapport</a> van Ecovat de onderstaande kosten per technologie.
-        Let op: bij een andere technologiekeuze horen ook andere jaarlijkse opslagverliezen. Die kan je
-        <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\" >hier</a>
-        instellen en in de tekst bij het schuifje staan ook de verliespercentages per technologie.
+        de kosten van een ander opslagsysteem wil gebruiken in jouw scenario, geeft <a href="https://refman.energytransitionmodel.com/publications/2125"
+        target =\"_blank\">dit rapport</a> van Ecovat de onderstaande kosten per technologie. </br></br>
         <ul>
         <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% verlies </li>
         <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% verlies </li>
         <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% verlies </li>
         <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% verlies </li>
         <li> Ecovat: 86 €/MWh, 10% verlies </li>
-        </ul>
-        Onderstaande grafiek laat de kosten per technologie zien. De kosten voor
-        'heat loss compensation' worden niet meegenomen in de bovenstaande kosten
-        omdat het ETM deze al doorrekent tijdens de balancering van vraag en aanbod.
-        De zwarte balken in de grafiek geven onzekerheidsmarges aan in de kosten
-        als gevolg van efficiëntie bandbreedte.
-        Het doel van de grafiek is om duidelijk te maken wat de
-        verdeling van kosten onder de verschillende kostenposten is: systemen met
-        hogere CAPEX hebben het voordeel van een lagere OPEX, hogere efficiëntie en daarmee
-        kleinere onzekerheidsmarge.
-        \r\n<br/><br/>\r\n<img src=\"/assets/popups/img_heat_storage_costs.png\" style=\"width:410px;height:285px\"/>"
+        </ul> </br>
+        Let op: bij een andere technologiekeuze horen ook andere jaarlijkse opslagverliezen. Die kan je
+        <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">hier</a> instellen.
+    costs_heat_network_storage_mt_steam_hot_water:
+      title: MT-(seizoens)opslag
+      short_description:
+      description: |
+        Scenario's met een grote hoeveelheid 'must run' en volatiele warmteproductie
+        zoals zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
+        in uren met geen of weinig vraag. (Seizoens)opslag stelt je in staat om deze
+        warmte op te slaan en op een later moment in te zetten. Seizoensopslag kan
+        <a href="/scenario/supply/heat_mt/seasonal-storage-of-heat" >hier</a> aan/uit
+        worden gezet. </br></br>
+        De startwaarde (43 €/MWh) is gebaseerd op de
+        potentiële kosten van grootschalige ATES (Aquifer Thermal
+        Energy Storage). ATES is het ondergronds opslaan van warm water in aquifers. Als je
+        de kosten van een ander opslagsysteem wil gebruiken in jouw scenario, geeft <a href="https://refman.energytransitionmodel.com/publications/2125"
+        target =\"_blank\">dit rapport</a> van Ecovat de onderstaande kosten per technologie. </br></br>
+        <ul>
+        <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% verlies </li>
+        <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% verlies </li>
+        <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% verlies </li>
+        <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% verlies </li>
+        <li> Ecovat: 86 €/MWh, 10% verlies </li>
+        </ul> </br>
+        Let op: bij een andere technologiekeuze horen ook andere jaarlijkse opslagverliezen. Die kan je
+        <a href="/scenario/supply/heat_mt/seasonal-storage-of-heat">hier</a> instellen.
+    costs_heat_network_storage_lt_steam_hot_water:
+      title: LT-(seizoens)opslag
+      short_description:
+      description: |
+        Scenario's met een grote hoeveelheid 'must run' en volatiele warmteproductie
+        zoals zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
+        in uren met geen of weinig vraag. (Seizoens)opslag stelt je in staat om deze
+        warmte op te slaan en op een later moment in te zetten. Seizoensopslag kan
+        <a href="/scenario/supply/heat_lt/seasonal-storage-of-heat" >hier</a> aan/uit
+        worden gezet. </br></br>
+        De startwaarde (43 €/MWh) is gebaseerd op de
+        potentiële kosten van grootschalige ATES (Aquifer Thermal
+        Energy Storage). ATES is het ondergronds opslaan van warm water in aquifers. Als je
+        de kosten van een ander opslagsysteem wil gebruiken in jouw scenario, geeft <a href="https://refman.energytransitionmodel.com/publications/2125"
+        target =\"_blank\">dit rapport</a> van Ecovat de onderstaande kosten per technologie. </br></br>
+        <ul>
+        <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% verlies </li>
+        <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% verlies </li>
+        <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% verlies </li>
+        <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% verlies </li>
+        <li> Ecovat: 86 €/MWh, 10% verlies </li>
+        </ul> </br>
+        Let op: bij een andere technologiekeuze horen ook andere jaarlijkse opslagverliezen. Die kan je
+        <a href="/scenario/supply/heat_lt/seasonal-storage-of-heat">hier</a> instellen.
     investment_costs_nuclear_nuclear_plant:
       title: Investeringskosten grote reactoren
       short_description: ''

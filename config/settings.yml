@@ -7,8 +7,7 @@
 # +------------------------------------------------------------------------+
 
 # URL for ETEngine.
-#api_url: https://beta-engine.energytransitionmodel.com
-api_url: http://localhost:5000
+api_url: https://beta-engine.energytransitionmodel.com
 
 # URL for the Multi-Year Charts application.
 multi_year_charts_url: http://localhost:3005
@@ -45,8 +44,8 @@ live_server: false
 # hidden.
 whats_new_cutoff: 2019-10-07
 
-# E-mail address to which feedback should be sent. No value results in the feature being disabled.
-# feedback_email:
+# E-mail address to which feedback should be sent.
+feedback_email: info@energytransitionmodel.com
 
 # Sentry
 # ------
@@ -75,6 +74,14 @@ mailchimp_list_url: <%= ENV['MAILCHIMP_LIST_URL'] %>
 # example: https://your-app/incoming_webhooks/mailchimp/TOKEN.
 incoming_webhook_keys:
   mailchimp: <%= ENV['MAILCHIMP_INCOMING_WEBHOOK_KEY'] %>
+
+# Authentication
+# --------------
+
+identity:
+  client_id: <%= ENV['IDENTITY_CLIENT_ID'] %>
+  client_secret: <%= ENV['IDENTITY_CLIENT_SECRET'] %>
+  client_uri: http://localhost:3001
 
 # ESDL
 # ----

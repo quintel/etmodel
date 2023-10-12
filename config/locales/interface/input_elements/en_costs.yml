@@ -570,6 +570,13 @@ en:
         heat pumps can be chosen as heating technology in the <a href=\"/scenario/demand/households/space-heating\"a>households
         section<a/>. <br/>\r\nThe technical and financial parameters of one kind of
         gas-fired heat pump can be seen by clicking the link below."
+    investment_costs_gas_heat_pumps:
+      title: Households LT heat delivery system
+      short_description:
+      description: "What will be the costs of LT heat delivery systems for households. "
+
+
+
     investment_costs_households_storage_space_heating:
       title: Space heater buffers
       short_description:
@@ -617,6 +624,51 @@ en:
         costs. The costs in the link below depict the costs that are used for residual
         heat from the chemical industry, refineries and fertilizer industry. For low
         temperature heat from datacenters we use different costs."
+    costs_households_ht_heat_delivery_system_costs_apartments_eur_per_connection:
+      title: HT apartments
+      description: "This slider sets the future costs of the HT heat delivery system in apartments.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
+    costs_households_mt_heat_delivery_system_costs_apartments_eur_per_connection:
+      title: MT apartments
+      description: "This slider sets the future costs of the MT heat delivery system in apartments.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
+    costs_households_lt_heat_delivery_system_costs_apartments_eur_per_connection:
+      title: LT apartments
+      description: "This slider sets the future costs of the LT heat delivery system in apartments.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
+    costs_households_ht_heat_delivery_system_costs_ground_level_houses_eur_per_connection:
+      title: HT ground level houses
+      description: "This slider sets the future costs of the HT heat delivery system in ground level houses.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
+    costs_households_mt_heat_delivery_system_costs_ground_level_houses_eur_per_connection:
+      title: MT ground level houses
+      description: "This slider sets the future costs of the MT heat delivery system in ground level houses.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
+    costs_households_lt_heat_delivery_system_costs_ground_level_houses_eur_per_connection:
+      title: LT ground level houses
+      description: "This slider sets the future costs of the LT heat delivery system in ground level houses.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
+    costs_buildings_ht_heat_delivery_system_costs_eur_per_connection:
+      title: HT buildings
+      description: "This slider sets the future costs of the HT heat delivery system in buildings.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
+    costs_buildings_mt_heat_delivery_system_costs_eur_per_connection:
+      title: MT buildings
+      description: "This slider sets the future costs of the MT heat delivery system in buildings.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
+    costs_buildings_lt_heat_delivery_system_costs_eur_per_connection:
+      title: LT buildings
+      description: "This slider sets the future costs of the LT heat delivery system in buildings.
+      The heat delivery system is the set of technologies that distributes heat throughout the building. 
+      For example, radiators, convectors or underfloor heating."
     costs_infrastructure_electricity_lv_net:
       title: Costs new low voltage net
       short_description:

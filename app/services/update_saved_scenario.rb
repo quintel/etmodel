@@ -22,6 +22,15 @@ class UpdateSavedScenario
   def call
     return api_response if failure?
 
+    # "Manual versioning" by the user, e.g. setting an earlier used scenario-id
+    # as the current active scenario, is not allowed.
+    if saved_scenario.scenario_id_history.include?(api_scenario.id)
+      return ServiceResult.failure(
+        "Scenario id #{api_scenario} is already present in this saved scenario's history.",
+        saved_scenario
+      )
+    end
+
     saved_scenario.tap do |ss|
       ss.add_id_to_history(ss.scenario_id)
       ss.scenario_id = api_scenario.id

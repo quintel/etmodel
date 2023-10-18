@@ -127,6 +127,17 @@ class SavedScenario < ApplicationRecord
     incoming_id = params[:scenario_id]
     add_id_to_history(scenario_id) if incoming_id && scenario_id != incoming_id
 
+    # "Manual versioning" by the user, e.g. setting an earlier used scenario-id
+    # as the current active scenario, is not allowed.
+    if scenario_id_history.include?(incoming_id)
+      errors.add(
+        :scenario_id,
+        "Given scenario id #{incoming_id} is already present in this saved scenario's history."
+      )
+
+      return false
+    end
+
     self.attributes = params.except(:discarded)
 
     if params.key?(:discarded)

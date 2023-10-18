@@ -22,7 +22,7 @@ class UpdateSavedScenario
   def call
     return api_response if failure?
 
-    # "Manual versioning" by the user, e.g. setting an earlier used scenario-id
+    # "Manual scenario reverting" by the user, e.g. setting an earlier used scenario-id
     # as the current active scenario, is not allowed.
     if saved_scenario.scenario_id_history.include?(api_scenario.id)
       return ServiceResult.failure(

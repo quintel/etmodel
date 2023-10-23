@@ -128,27 +128,63 @@ nl:
         het aantal, de productie van elektriciteit, de productie van warmte en het
         geïnstalleerde (elektrische) vermogen van WKK.\r\n"
     collective_heat_mekko:
-      title: Totale vraag en aanbod op het collectieve warmtenet
-      short_description: ''
-      description: ''
-    heat_network_demand:
-      title: Uurlijkse warmtevraag in warmtenetten
-      short_description: ''
-      description: ''
-    heat_network_production:
-      title: Uurlijkse warmteproductie in warmtenetten
-      short_description: ''
-      description: ''
-    industrial_heat_mekko:
-      title: Vraag en aanbod van industriële stoomnetten
+      title: Warmtenetten vraag en aanbod
       short_description:
       description:
-    heat_network_storage:
-      title: "(Seizoens)opslag van warmte"
+    heat_network_demand_ht:
+      title: HT-warmtenetten vraag per uur
+      short_description:
+      description:
+    heat_network_demand_mt:
+      title: MT-warmtenetten vraag per uur
+      short_description:
+      description:
+    heat_network_demand_lt:
+      title: LT-warmtenetten vraag per uur
+      short_description:
+      description:
+    heat_network_production_ht:
+      title: HT-warmtenetten productie per uur
+      short_description:
+      description:
+    heat_network_production_mt:
+      title: MT-warmtenetten productie per uur
+      short_description:
+      description:
+    heat_network_production_lt:
+      title: LT-warmtenetten productie per uur
+      short_description:
+      description:
+    heat_network_storage_ht:
+      title: HT-warmtenetten (seizoens)opslag per uur
+      short_description:
+      description:
+    heat_network_storage_mt:
+      title: MT-warmtenetten (seizoens)opslag per uur
+      short_description:
+      description:
+    heat_network_storage_lt:
+      title: LT-warmtenetten (seizoens)opslag per uur
+      short_description:
+      description:
+    sankey_heat_networks:
+      title: Warmtenetten vraag en aanbod per temperatuurniveau
+      short_description:
+      description:
+    industrial_heat_mekko:
+      title: Industrieël stoomnet vraag en aanbod
+      short_description:
+      description:
+    heat_cost_capacity_ht:
+      title: 'HT-warmtenetbronnen: vermogens en marginale kosten'
       short_description: ''
       description: ''
-    heat_cost_capacity:
-      title: 'Warmtenetbronnen: vermogens en marginale kosten'
+    heat_cost_capacity_mt:
+      title: 'MT-warmtenetbronnen: vermogens en marginale kosten'
+      short_description: ''
+      description: ''
+    heat_cost_capacity_lt:
+      title: 'LT-warmtenetbronnen: vermogens en marginale kosten'
       short_description: ''
       description: ''
     mekko_of_hydrogen_network:

@@ -63,13 +63,20 @@ class @AppView extends Backbone.View
 
     # Create heat network order.
     if (heat_order = wrapper.find('#heat-network-options')).length
-      new UserSortable(heat_order, 'heat_network_order', { capacity: true }).render()
+      @heat_order = new UserSortable(
+        heat_order,
+        'heat_network_order',
+        { subtype: heat_order.data('subtype') },
+        { capacity: true }
+      )
+      @heat_order.render()
 
     # Create forecast storage order.
     if (forecast_storage_order = wrapper.find('#forecast-storage-order')).length
       new UserSortable(
         forecast_storage_order,
         'forecast_storage_order',
+        {},
         { capacity: true, sortable: true }
       ).render()
 
@@ -240,6 +247,8 @@ class @AppView extends Backbone.View
     input_params = @input_elements.api_update_params()
     @input_elements.reset_dirty()
     @call_api(input_params)
+    if (@heat_order)
+      @heat_order.render()
 
   showLoading: ->
     # D3 charts shouldn't be blocked, only jqPlot ones

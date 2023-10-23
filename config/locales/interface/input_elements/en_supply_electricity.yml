@@ -31,7 +31,7 @@ en:
         is typically limited, they can play an important role in balancing the energy
         system. <br />"
     capacity_of_energy_power_combined_cycle_hydrogen:
-      title: Hydrogen plant (CCGT)
+      title: Hydrogen CCGT
       short_description:
       description: 'Here you can build capacity of combined cycle hydrogen plants.
         At the moment, these turbines are not used (yet) on a large scale. Because
@@ -180,7 +180,7 @@ en:
         power plants is limited by available domestic waste. We assume no waste will
         be imported."
     capacity_of_energy_power_supercritical_ccs_waste_mix:
-      title: Waste incinerator CCS
+      title: Waste incinerator + CCS
       short_description: ''
       description: "This builds high energy yield waste-incineration plants with CCS installation. The slidersetting
         is converted to (a part of) of 55 MWe plants. Waste that can be safely burnt
@@ -204,7 +204,7 @@ en:
         the slider (in MW) is converted to a (partial) number of the plant described
         above."
     capacity_of_energy_chp_supercritical_ccs_waste_mix:
-      title: Waste CHP CCS
+      title: Waste CHP + CCS
       short_description:
       description: "This builds a high energy yield waste-incineration plant with CCUS installation that
             delivers heat to a central heating grid (60 MWe and 33 MWth). Waste that can
@@ -306,20 +306,20 @@ en:
         of the slider (in MW) is converted to a (partial) number of the plant described
         above."
     capacity_of_energy_chp_ultra_supercritical_lignite:
-      title: Lignite plant for district heat (CHP)
+      title: Lignite CHP
       short_description: ''
       description: "This indicates the capacity of large central lignite-fired power
         plants are used to supply heat to district heating grids. The power generated
         is shown in the graph on the right as coal-fired electricity production.\r\n<br/><br/> "
     capacity_of_energy_chp_ultra_supercritical_coal:
-      title: Coal plant for district heat (CHP)
+      title: Pulverized coal CHP
       short_description: ''
       description: "Large ultra-supercritical pulverized coal-fired CHP plant. \r\nSuch
         plants are identical to a common coal plant, except that it also supplies
         heat to large heating grids. This comes at the expense of some power production.
         \r\n \r\n\r\n\r\n"
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
-      title: Co-firing coal plant for district heat (CHP)
+      title: Pulverized coal CHP with co-firing
       short_description:
       description: "Large ultra-supercritical pulverized coal-fired CHP plant. \r\nSuch
         plants are identical to a common coal plant, except that it also supplies
@@ -472,7 +472,7 @@ en:
         the slider (in MW) is converted to a (partial) number of the plant described
         above."
     capacity_of_energy_chp_combined_cycle_network_gas:
-      title: Large-scale gas plant for district heat (CHP)
+      title: Gas CCGT CHP
       short_description: ''
       description: "This builds a Combined Heat and Power (CHP) unit (~120 MWe and
         ~120 MWth) that runs on gas. The power generated is shown in the graph on
@@ -519,7 +519,7 @@ en:
         efficient in balancing wind power. \r\n<br/><br/>\r\nThe input of the slider
         (in MW) is converted to a (partial) number of the plant described above."
     capacity_of_energy_chp_local_engine_network_gas:
-      title: Small-scale gas plant for district heat (CHP)
+      title: Gas motor CHP
       short_description:
       description: "A CHP produces both heat and electricity. Here you can set the
         capacity of gas CHPs that supply heat for district heating.\r\n</br>"

@@ -93,7 +93,7 @@ Vervolgens kun je bio-ethanol toevoegen door de brandstofmix aan te passen in *A
 -> ![](/assets/pages/whats_new/bio_ethanol_inland_shipping_nl.png) <-
 
 ## Waterstofgebruik in het industriële warmtenet
-Er zijn twee nieuwe technologieën toegevoegd die stoom kunnen leveren aan het industriële warmtenet. Je kunt nu vermogen installeren voor een waterstofturbine-WKK, die zowel stoom als elektriciteit produceert, en voor een waterstofketel, die alleen stoom produceert. Ga hiervoor naar *Vraag → Industrie* → **[Bronnen warmtenet](/scenario/demand/industry/heat-network-sources)**.
+Er zijn twee nieuwe technologieën toegevoegd die stoom kunnen leveren aan het industriële warmtenet. Je kunt nu vermogen installeren voor een waterstofturbine-WKK, die zowel stoom als elektriciteit produceert, en voor een waterstofketel, die alleen stoom produceert. Ga hiervoor naar *Vraag → Industrie* → **[Bronnen stoomnet](/scenario/demand/industry/steam-network-sources)**.
 
 ___
 

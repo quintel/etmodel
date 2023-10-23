@@ -5,7 +5,7 @@ nl:
       title: Geïmporteerde warmte
       short_description:
       description: "Hoeveel (rest)warmte kan er geïmporteerd worden van buiten jouw
-        regio? Met deze slider kan jij bepalen hoeveel dat zal zijn.\r\n</br></br>\r\nDaarbij
+        regio? Met dit schuifje kan jij bepalen hoeveel dat zal zijn.\r\n</br></br>\r\nDaarbij
         kan je met het schuifje hieronder de CO<sub>2</sub>-uitstoot van geïmporteerde
         warmte instellen en kan je onder het kopje <a href=\"/scenario/costs/costs_heat/imported-residual-heat\"
         >'Kosten'</a> de kosten voor geïmporteerde warmte bepalen."
@@ -119,7 +119,7 @@ nl:
         van restwarmte kunnen <a href=\"/scenario/costs/costs_heat/residual-heat\">hier</a>
         aangepast worden.\r\n</br>"
     capacity_of_industry_chp_combined_cycle_gas_power_fuelmix:
-      title: Gas-WKK (STEG)
+      title: Gas STEG WKK
       short_description: ''
       description: |
         Warmtekrachtkoppelingen (WKK’s) maken warmte en elektriciteit.
@@ -170,7 +170,7 @@ nl:
         Klik <a href=/scenario/costs/specs_renewable_electricity/hydrogen-plants>hier</a> 
         om de efficiënties van deze WKK aan te passen.
     capacity_of_industry_chp_ultra_supercritical_coal:
-      title: Kolen-WKK
+      title: Poederkolen-WKK
       short_description:
       description: "Warmtekrachtkoppelingen (WKK’s) produceren warmte en elektriciteit.
         Deze combinatie maakt WKK's vrij energie-efficiënt. Lokaal produceren en gebruiken
@@ -180,7 +180,7 @@ nl:
         op gas, maar afhankelijk van de beschikbaarheid van brandstoffen kunnen ook
         kolen WKK's worden gebouwd."
     capacity_of_industry_chp_wood_pellets:
-      title: Biomassa WKK
+      title: Biomassa-WKK
       short_description:
       description: Een WKK produceert zowel warmte als elektriciteit. In de industrie
         is deze warmte vaak in de vorm van stoom. Kies hier het vermogen aan biomassa-WKKs
@@ -222,10 +222,18 @@ nl:
       short_description:
       description: Een ketel produceert warmte. Stel hier het vermogen aan kolenketels
         in dat warmte levert aan warmtenetten.
-    heat_storage_enabled:
+
+    
+    heat_storage_enabled_ht:
       title: ''
       description: ''
-    energy_heat_network_storage_loss_share:
+    heat_storage_enabled_mt:
+      title: ''
+      description: ''
+    heat_storage_enabled_lt:
+      title: ''
+      description: ''
+    energy_heat_network_storage_ht_loss_share:
       title: Jaarlijkse verliezen
       short_description:
       description: "De startwaarde (30%) is gebaseerd op de jaarlijkse verliezen van
@@ -242,11 +250,330 @@ nl:
         <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% verlies </li>
         <li> Ecovat: 86 €/MWh, 10% verlies </li>
         </ul>
-        De kosten van warmteopslag zijn <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\" >hier</a> in te stellen."
-    energy_heat_network_storage_output_capacity_share:
-      title: Levercapaciteit (als % van gemiddelde uurvraag)
+        De kosten van warmteopslag zijn <a href=\"/scenario/costs/costs_heat/costs-district-heating-infrastructure\" >hier</a> in te stellen."
+    energy_heat_network_storage_mt_loss_share:
+      title: Jaarlijkse verliezen
       short_description:
-      description: 'Met deze schuif stel je de uurlijkse warmtelevercapaciteit (outputcapaciteit)
+      description: "De startwaarde (30%) is gebaseerd op de jaarlijkse verliezen van
+        een ATES (Aquifer thermal energy storage) systeem. Opslagverliezen zijn afhankelijk van het type systeem. Bij
+        grotere opslagsystemen vermindert bijvoorbeeld het verliespercentage. Daarentegen
+        nemen de verliezen juist toe wanneer een open systeem wordt gebruikt (bijv.
+        WKO) in plaats van een gesloten systeem (zoals Ecovat). Hieronder vind je de
+        verliezen en kosten per opslagsysteem volgens <a href=\"https://refman.energytransitionmodel.com/publications/2125\"
+        target =\"_blank\">dit rapport</a>:
+        <ul>
+        <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% verlies </li>
+        <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% verlies </li>
+        <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% verlies </li>
+        <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% verlies </li>
+        <li> Ecovat: 86 €/MWh, 10% verlies </li>
+        </ul>
+        De kosten van warmteopslag zijn <a href=\"/scenario/costs/costs_heat/costs-district-heating-infrastructure\" >hier</a> in te stellen."
+    energy_heat_network_storage_lt_loss_share:
+      title: Jaarlijkse verliezen
+      short_description:
+      description: "De startwaarde (30%) is gebaseerd op de jaarlijkse verliezen van
+        een ATES (Aquifer thermal energy storage) systeem. Opslagverliezen zijn afhankelijk van het type systeem. Bij
+        grotere opslagsystemen vermindert bijvoorbeeld het verliespercentage. Daarentegen
+        nemen de verliezen juist toe wanneer een open systeem wordt gebruikt (bijv.
+        WKO) in plaats van een gesloten systeem (zoals Ecovat). Hieronder vind je de
+        verliezen en kosten per opslagsysteem volgens <a href=\"https://refman.energytransitionmodel.com/publications/2125\"
+        target =\"_blank\">dit rapport</a>:
+        <ul>
+        <li> Aquifer thermal energy storage (ATES): 43 €/MWh, 30% verlies </li>
+        <li> Pit thermal energy storage (PTES): 58 €/MWh, 25% verlies </li>
+        <li> Tank Thermal Energy Storage (TTES): 83 €/MWh, 30% verlies </li>
+        <li> Bore-hole Thermal Energy Storage (BTES): 79 €/MWh, 50% verlies </li>
+        <li> Ecovat: 86 €/MWh, 10% verlies </li>
+        </ul>
+        De kosten van warmteopslag zijn <a href=\"/scenario/costs/costs_heat/costs-district-heating-infrastructure\" >hier</a> in te stellen."
+    capacity_of_energy_heat_boiler_ht_electricity:
+      title: Elektrische boiler
+      short_description:
+      description: "Gebruik dit schuifje om het totale, ingestelde vermogen (MW) van elektrische boilers
+        in het hoge-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Elektrische boilers gebruiken elektriciteit om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van e-boilers in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_boiler_lt_electricity:
+      title: Elektrische boiler
+      short_description:
+      description: "Gebruik dit schuifje om het totale, ingestelde vermogen (MW) van elektrische boilers
+        in het lage temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Elektrische boilers gebruiken elektriciteit om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van e-boilers in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_boiler_mt_electricity:
+      title: Elektrische boiler
+      short_description:
+      description: "Gebruik dit schuifje om het totale, ingestelde vermogen (MW) van elektrische boilers
+        in het midden-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Elektrische boilers gebruiken elektriciteit om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van e-boilers in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_ht_coal:
+      title: Kolenketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van kolenketels 
+        in het hoge-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Kolenketels verstoken kolen om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van kolenketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_ht_crude_oil:
+      title: Olieketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van olieketels 
+        in het hoge-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Olieketels verstoken olie om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van olieketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_ht_hydrogen:
+      title: Waterstofketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van waterstofketels 
+        in het hoge-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Waterstofketels verstoken waterstof om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van waterstofketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_ht_network_gas:
+      title: Gasketel (netwerkgas)
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van netwerkgasketels 
+        in het hoge-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Gasketels verstoken gas om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van gasketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts.
+        \r\n<br/><br/>\r\n 
+        Let op: netwerkgas kan bestaan uit een mengsel van aardgas en biogas.
+        Zie Aanbod > Biomassa > <a href=\"/scenario/supply/biomass/green-gas-in-gas-network\" 
+        >(Groen) gas in gasnetwerk</a> voor meer informatie."
+    capacity_of_energy_heat_burner_ht_waste_mix:
+      title: Afvalketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van afvalketels 
+        in het hoge-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Afvalketels verstoken afval om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie via afvalverbranding in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_ht_wood_pellets:
+      title: Biomassaketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van biomassaketels 
+        in het hoge-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Biomassaketels verstoken biomassa om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van biomassaketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts. Bekijk de totale vraag en de potentie van biomassa
+        in de regio via de ‘Biomassavraag en -potentie’ grafiek of ga naar Aanbod > Biomassa > 
+        <a href=\"/scenario/supply/biomass/potential-of-biomass\" 
+        >Potentie van biomassa</a>."
+    capacity_of_energy_heat_burner_lt_hydrogen:
+      title: Waterstofketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van waterstofketels 
+        in het lage-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Waterstofketels verstoken waterstof om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van waterstofketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_mt_coal:
+      title: Kolenketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van kolenketels 
+        in het midden-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Kolenketels verstoken kolen om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van kolenketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_mt_crude_oil:
+      title: Olieketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van olieketels 
+        in het midden-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Olieketels verstoken olie om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van olieketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_mt_hydrogen:
+      title: Waterstofketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van waterstofketels 
+        in het midden-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Waterstofketels verstoken waterstof om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van waterstofketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_mt_network_gas:
+      title: Gasketel (netwerkgas)
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van netwerkgasketels 
+        in het midden-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Gasketels verstoken gas om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van gasketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts.
+        \r\n<br/><br/>\r\n 
+        Let op: netwerkgas kan bestaan uit een mengsel van aardgas en biogas.
+        Zie Aanbod > Biomassa > <a href=\"/scenario/supply/biomass/green-gas-in-gas-network\" 
+        >(Groen) gas in gasnetwerk</a> voor meer informatie."
+    capacity_of_energy_heat_burner_mt_waste_mix:
+      title: Afvalketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van afvalketels 
+        in het midden-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Afvalketels verstoken afval om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie via afvalverbranding in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_burner_mt_wood_pellets:
+      title: Biomassaketel
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van biomassaketels 
+        in het midden-temperatuur warmtenet in te stellen.
+        \r\n<br/><br/>\r\n 
+        Biomassaketels verstoken biomassa om warmte te genereren. Met dit schuifje
+        stel je de jaarlijke warmteproductie van biomassaketels in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts. Bekijk de totale vraag en de potentie van biomassa
+        in de regio via de ‘Biomassavraag en -potentie’ grafiek of ga naar Aanbod > Biomassa > 
+        <a href=\"/scenario/supply/biomass/potential-of-biomass\" 
+        >Potentie van biomassa</a>."
+    capacity_of_energy_heat_heatpump_water_water_ht_electricity:
+      title: Collectieve water warmtepomp
+      short_description:
+      description: Een warmtepomp produceert warmte uit elektriciteit en omgevingswarmte.
+        Stel hier het vermogen aan collectieve warmtepompen in dat warmte levert aan
+        hoge-temperatuur warmtenetten.
+    capacity_of_energy_heat_heatpump_water_water_lt_electricity:
+      title: Collectieve water warmtepomp
+      short_description:
+      description: Een warmtepomp produceert warmte uit elektriciteit en omgevingswarmte.
+        Stel hier het vermogen aan collectieve warmtepompen in dat warmte levert aan
+        lage-temperatuur warmtenetten.
+    capacity_of_energy_heat_heatpump_water_water_mt_electricity:
+      title: Collectieve water warmtepomp
+      short_description:
+      description: Een warmtepomp produceert warmte uit elektriciteit en omgevingswarmte.
+        Stel hier het vermogen aan collectieve warmtepompen in dat warmte levert aan
+        midden-temperatuur warmtenetten.
+    capacity_of_energy_heat_solar_lt_solar_thermal:
+      title: Zonthermie
+      short_description:
+      description: Bij zonthermie wordt de warmte van de zon omgezet in warm water.
+        Deze warmteproductie is vooral groot in de zomer, terwijl de vraag naar warmte
+        hoog is in de winter. Maak gebruik van seizoensopslag voor een effectieve
+        inzet.
+    capacity_of_energy_heat_solar_mt_solar_thermal:
+      title: Zonthermie
+      short_description:
+      description: Bij zonthermie wordt de warmte van de zon omgezet in warm water.
+        Deze warmteproductie is vooral groot in de zomer, terwijl de vraag naar warmte
+        hoog is in de winter. Maak gebruik van seizoensopslag voor een effectieve
+        inzet.
+    capacity_of_energy_heat_solar_ht_solar_thermal:
+      title: Zonthermie
+      short_description:
+      description: |
+        Bij zonthermie wordt de warmte van de zon omgezet in warm water.
+        Deze warmteproductie is vooral groot in de zomer, terwijl de vraag naar warmte
+        hoog is in de winter. Maak gebruik van seizoensopslag voor een effectieve
+        inzet.
+    capacity_of_energy_heat_well_deep_ht_geothermal:
+      title: Diepe geothermie
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW)
+        aan diepe geothermie warmteinstallaties in hoge-temperatuur warmtenetten in te stellen.
+        \r\n<br/><br/>\r\n 
+        Diepe geothermische energie wordt onttrokken aan aardlagen van 1500-4000 meter diep. 
+        Doorgaans produceren diep-geothermische warmtebronnen een relatief constant vermogen
+        aangezien ze niet vatbaar zijn voor temperatuurschommelingen gedurende het seizoen.
+        De leveringstemperatuur kan liggen tussen de 70 en 90 graden Celsius afhankelijk van de diepte en de locatie.
+        \r\n<br/><br/>\r\n 
+        Met dit schuifje stel je de jaarlijke warmteproductie van diep-geothermische bronnen in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_well_deep_mt_geothermal:
+      title: Diepe geothermie
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW)
+        aan diepe geothermie warmteinstallaties in midden-temperatuur warmtenetten in te stellen.
+        \r\n<br/><br/>\r\n 
+        Diepe geothermische energie wordt onttrokken aan aardlagen van 1500-4000 meter diep. 
+        Doorgaans produceren diep-geothermische warmtebronnen een relatief constant vermogen
+        aangezien ze niet vatbaar zijn voor temperatuurschommelingen gedurende het seizoen.
+        De leveringstemperatuur kan liggen tussen de 70 en 90 graden Celsius afhankelijk van de diepte en de locatie.
+        \r\n<br/><br/>\r\n 
+        Met dit schuifje stel je de jaarlijke warmteproductie van diep-geothermische bronnen in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_well_shallow_heatpump_mt_geothermal:
+      title: Ondiepe geothermie met warmtepomp
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) 
+        van ondiepe geothermische warmteinstallaties met warmtepompen 
+        in midden-temperatuur warmtenetten.
+        \r\n<br/><br/>\r\n 
+        Ondiepe geothermische energie wordt onttrokken aan aardlagen van 
+        500-1500 meter diep. Doorgaans produceren ondiep-geothermische warmtebronnen een 
+        relatief constant vermogen aangezien ze niet vatbaar zijn voor temperatuurschommelingen gedurende het seizoen.
+        De leveringstemperatuur kan liggen tussen de 20 en 70 graden Celsius afhankelijk van de diepte en de locatie. 
+        Er wordt gebruikgemaakt van een warmtepomp om de warmte naar de juiste temperatuur op te waarderen
+        voor een midden-temperatuur warmtenet.
+        \r\n<br/><br/>\r\n
+        Met dit schuifje stel je de jaarlijke warmteproductie van ondiep-geothermische bronnen in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    capacity_of_energy_heat_well_shallow_lt_geothermal:
+      title: Ondiepe geothermie met warmtepomp
+      short_description:
+      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) 
+        van ondiepe geothermische warmteinstallaties met warmtepompen 
+        in midden-temperatuur warmtenetten.
+        \r\n<br/><br/>\r\n 
+        Ondiepe geothermische energie wordt onttrokken aan aardlagen van 
+        500-1500 meter diep. Doorgaans produceren ondiep-geothermische warmtebronnen een 
+        relatief constant vermogen aangezien ze niet vatbaar zijn voor temperatuurschommelingen gedurende het seizoen.
+        De leveringstemperatuur kan liggen tussen de 20 en 70 graden Celsius afhankelijk van de diepte en de locatie. 
+        Er wordt gebruikgemaakt van een warmtepomp om de warmte naar de juiste temperatuur op te waarderen
+        voor een midden-temperatuur warmtenet.
+        \r\n<br/><br/>\r\n
+        Met dit schuifje stel je de jaarlijke warmteproductie van ondiep-geothermische bronnen in en maak je deze zichtbaar in de
+        aanbodkant van de grafiek rechts."
+    energy_heat_distribution_ht_loss_share:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "De standaardwaarde van de verliesschuif is erg laag of zelfs nul
+        voor veel landen en regio's in het ETM. Dit komt omdat er vaak geen betrouwbare
+        data over warmteverliezen beschikbaar is. Zorg ervoor dat de schuif hieronder
+        op een realistisch getal gezet wordt als warmtenetten een rol spelen in jouw
+        scenario. Voor moderne warmtenetten is 15% een veelgebruikte aanname, voor
+        oudere/bestaande systemen ligt dit dichter bij 25-30%."
+    energy_heat_distribution_lt_loss_share:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "De standaardwaarde van de verliesschuif is erg laag of zelfs nul
+        voor veel landen en regio's in het ETM. Dit komt omdat er vaak geen betrouwbare
+        data over warmteverliezen beschikbaar is. Zorg ervoor dat de schuif hieronder
+        op een realistisch getal gezet wordt als warmtenetten een rol spelen in jouw
+        scenario. Voor moderne warmtenetten is 15% een veelgebruikte aanname, voor
+        oudere/bestaande systemen ligt dit dichter bij 25-30%."
+    energy_heat_distribution_mt_loss_share:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "De standaardwaarde van de verliesschuif is erg laag of zelfs nul
+        voor veel landen en regio's in het ETM. Dit komt omdat er vaak geen betrouwbare
+        data over warmteverliezen beschikbaar is. Zorg ervoor dat de schuif hieronder
+        op een realistisch getal gezet wordt als warmtenetten een rol spelen in jouw
+        scenario. Voor moderne warmtenetten is 15% een veelgebruikte aanname, voor
+        oudere/bestaande systemen ligt dit dichter bij 25-30%."
+    energy_heat_network_storage_lt_steam_hot_water_output_capacity_share:
+      title: Warmtelevercapaciteit (als % van gemiddelde uurlast)
+      short_description:
+      description: 'Met dit schuifje stel je de uurlijkse warmtelevercapaciteit (outputcapaciteit)
         van warmteopslag in. Standaard is deze capaciteit onbeperkt. Dit houdt in dat er
         geen limiet is aan de hoeveelheid warmte die in een uur uit de opslag gehaald
         kan worden (gegeven dat er voldoende warmte in de opslag aanwezig is). Met deze
@@ -260,12 +587,243 @@ nl:
         vermogen in MW zien.<br/><br/>
         Deze schuif is bedoeld voor expertgebruikers. In veel gevallen hoeft de standaardinstelling
         niet aangepast te worden.'
-    energy_heat_distribution_loss_share:
-      title: Transport- en distributieverliezen
+    energy_heat_network_storage_mt_steam_hot_water_output_capacity_share:
+      title: Warmtelevercapaciteit (als % van gemiddelde uurlast)
       short_description:
-      description: De standaardwaarde van de verliesschuif is erg laag of zelfs nul
-        voor veel landen en regio's in het ETM. Dit komt omdat er vaak geen betrouwbare
-        data over warmteverliezen beschikbaar is. Zorg ervoor dat de schuif hieronder
-        op een realistisch getal gezet wordt als warmtenetten een rol spelen in jouw
-        scenario. Voor moderne warmtenetten is 15% een veelgebruikte aanname, voor
-        oudere/bestaande systemen ligt dit dichter bij 25-30%.
+      description: 'Met dit schuifje stel je de uurlijkse warmtelevercapaciteit (outputcapaciteit)
+        van warmteopslag in. Standaard is deze capaciteit onbeperkt. Dit houdt in dat er
+        geen limiet is aan de hoeveelheid warmte die in een uur uit de opslag gehaald
+        kan worden (gegeven dat er voldoende warmte in de opslag aanwezig is). Met deze
+        schuif kun je dit beperken. Hierdoor wordt de opslag gedurende het jaar langzamer
+        leeggehaald. Een gevolg is dat andere regelbare warmtebronnen (zoals piekketels)
+        mogelijk eerder moeten bijspringen.<br/><br/>
+        De schuif is een percentage van de gemiddelde uurlijkse warmtevraag. Bijvoorbeeld:
+        een waarde van 200% betekent dat de hoeveelheid warmte die in een uur uit de opslag
+        gehaald kan worden maximaal 2 keer de gemiddelde uurlijkse vraag is.
+        Bekijk de grafiek "Warmtenetbronnen: vermogens en marginale kosten" om het resulterende
+        vermogen in MW zien.<br/><br/>
+        Deze schuif is bedoeld voor expertgebruikers. In veel gevallen hoeft de standaardinstelling
+        niet aangepast te worden.'
+    energy_heat_network_storage_ht_steam_hot_water_output_capacity_share:
+      title: Warmtelevercapaciteit (als % van gemiddelde uurlast)
+      short_description:
+      description: 'Met dit schuifje stel je de uurlijkse warmtelevercapaciteit (outputcapaciteit)
+        van warmteopslag in. Standaard is deze capaciteit onbeperkt. Dit houdt in dat er
+        geen limiet is aan de hoeveelheid warmte die in een uur uit de opslag gehaald
+        kan worden (gegeven dat er voldoende warmte in de opslag aanwezig is). Met deze
+        schuif kun je dit beperken. Hierdoor wordt de opslag gedurende het jaar langzamer
+        leeggehaald. Een gevolg is dat andere regelbare warmtebronnen (zoals piekketels)
+        mogelijk eerder moeten bijspringen.<br/><br/>
+        De schuif is een percentage van de gemiddelde uurlijkse warmtevraag. Bijvoorbeeld:
+        een waarde van 200% betekent dat de hoeveelheid warmte die in een uur uit de opslag
+        gehaald kan worden maximaal 2 keer de gemiddelde uurlijkse vraag is.
+        Bekijk de grafiek "Warmtenetbronnen: vermogens en marginale kosten" om het resulterende
+        vermogen in MW zien.<br/><br/>
+        Deze schuif is bedoeld voor expertgebruikers. In veel gevallen hoeft de standaardinstelling
+        niet aangepast te worden.'
+    volume_of_ht_imported_heat:
+      title: Warmte-import
+      short_description:
+      description: "Gebruik dit schuifje om de hoeveelheid warmte-import (PJ) te beinvloeden die van
+        buiten dit gebied wordt geimporteerd voor hoge-temperatuur warmtenetten.
+        \r\n<br/><br/>\r\n 
+        Ga naar Aanbod > Warmtenetten > 
+        <a href=\"/scenario/supply/heat/co2-emission-of-imported-heat\" >CO<sub>2</sub>-emissie van geïmporteerde warmte</a> om 
+        om de hoeveelheid bijkomstige emissies door geimporteerde warmte in te stellen."
+    volume_of_lt_imported_heat:
+      title: Warmte-import
+      short_description:
+      description: "Gebruik dit schuifje om de hoeveelheid warmte-import (PJ) te beinvloeden die van
+        buiten dit gebied wordt geimporteerd voor lage-temperatuur warmtenetten.
+        \r\n<br/><br/>\r\n 
+        Ga naar Aanbod > Warmtenetten > 
+        <a href=\"/scenario/supply/heat/co2-emission-of-imported-heat\" >CO<sub>2</sub>-emissie van geïmporteerde warmte</a> om 
+        om de hoeveelheid bijkomstige emissies door geimporteerde warmte in te stellen."
+    volume_of_mt_imported_heat:
+      title: Warmte-import
+      short_description:
+      description: "Gebruik dit schuifje om de hoeveelheid warmte-import (PJ) te beinvloeden die van
+        buiten dit gebied wordt geimporteerd voor midden-temperatuur warmtenetten.
+        \r\n<br/><br/>\r\n 
+        Ga naar Aanbod > Warmtenetten > 
+        <a href=\"/scenario/supply/heat/co2-emission-of-imported-heat\" >CO<sub>2</sub>-emissie van geïmporteerde warmte</a> om 
+        om de hoeveelheid bijkomstige emissies door geimporteerde warmte in te stellen."
+    share_of_energy_chp_combined_cycle_ht_network_gas:
+      title: Hoge-temperatuur gas STEG WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
+        gas STEG WKK's voor hoge-temperatuur warmtenetten in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die wordt geproduceerd door Gas STEG WKK's wordt bepaald
+        door het totaal geinstalleerd vermogen. 
+        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Gascentrales</a>
+        om dit aan te passen."
+    share_of_energy_chp_combined_cycle_mt_network_gas:
+      title: Midden-temperatuur gas STEG WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
+        gas STEG WKK's voor midden-temperatuur warmtenetten in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die wordt geproduceerd door gas STEG WKK's wordt bepaald
+        door het totaal geinstalleerd vermogen. 
+        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Gascentrales</a>
+        om dit aan te passen."
+    share_of_energy_chp_local_engine_ht_biogas:
+      title: Hoge-temperatuur biogas WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
+        biogas WKK's voor hoge-temperatuur warmtenetten in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die wordt geproduceerd door biogas WKK's wordt bepaald
+        door het totaal geinstalleerd vermogen. 
+        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
+        om dit aan te passen."
+    share_of_energy_chp_local_engine_mt_biogas:
+      title: Midden-temperatuur biogas WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
+        biogas WKK's voor midden-temperatuur warmtenetten in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die wordt geproduceerd door biogas WKK's wordt bepaald
+        door het totaal geinstalleerd vermogen. 
+        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
+        om dit aan te passen."
+    share_of_energy_chp_local_engine_mt_network_gas:
+      title: Midden-temperatuur gasmotor WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
+        gasmotor WKK's voor midden-temperatuur warmtenetten in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die wordt geproduceerd door gasmotor WKK's wordt bepaald
+        door het totaal geinstalleerd vermogen. 
+        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Gascentrales</a>
+        om dit aan te passen."
+    share_of_energy_chp_local_engine_ht_network_gas:
+      title: Hoge-temperatuur gasmotor WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
+        gasmotor WKK's voor hoge-temperatuur warmtenetten in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die wordt geproduceerd door gasmotor WKK's wordt bepaald
+        door het totaal geinstalleerd vermogen. 
+        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Gascentrales</a>
+        om dit aan te passen."
+    share_of_energy_chp_local_ht_wood_pellets:
+      title: Hoge-temperatuur biomassa WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
+        biomassa WKK's voor hoge-temperatuur warmtenetten in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die wordt geproduceerd door biomassa WKK's wordt bepaald
+        door het totaal geinstalleerd vermogen. 
+        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
+        om dit aan te passen."
+    share_of_energy_chp_local_mt_wood_pellets:
+      title: Midden-temperatuur biomassa WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
+        biomassa WKK's voor hoge-temperatuur warmtenetten in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die wordt geproduceerd door Biomassa WKK's wordt bepaald
+        door het totaal geinstalleerd vermogen. 
+        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
+        om dit aan te passen."
+    share_of_energy_chp_ultra_supercritical_cofiring_ht_coal:
+      title: Hoge-temperatuur grootschalige kolen WKK met bijstook
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        grootschalige poederkolen WKK's met bijstook voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n 
+        De hoeveelheid warmte die geproduceerd wordt door poederkolen WKK's met bijstook
+        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+    share_of_energy_chp_ultra_supercritical_cofiring_mt_coal:
+      title: Midden-temperatuur grootschalige kolen WKK met bijstook
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        grootschalige poederkolen WKK's met bijstook voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n 
+        De hoeveelheid warmte die geproduceerd wordt door grootschalige poederkolen WKK's met bijstook
+        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+    share_of_energy_chp_ultra_supercritical_ht_coal:
+      title: Hoge-temperatuur grootschalige kolen WKK met bijstook
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        grootschalige poederkolen WKK's voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n 
+        De hoeveelheid warmte die geproduceerd wordt door poederkolen WKK's met bijstook
+        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+    share_of_energy_chp_ultra_supercritical_mt_coal:
+      title: Hoge-temperatuur grootschalige kolen WKK met bijstook
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        grootschalige poederkolen WKK's voor het midden-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n 
+        De hoeveelheid warmte die geproduceerd wordt door poederkolen WKK's met bijstook
+        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+    share_of_energy_chp_supercritical_ht_waste_mix:
+      title: Hoge-temperatuur afval WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        afval WKK's voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die geproduceerd wordt door afval WKK's
+        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
+        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >hier</a>."
+    share_of_energy_chp_supercritical_mt_waste_mix:
+      title: Midden-temperatuur afval WKK
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        afval WKK's voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die geproduceerd wordt door afval WKK's
+        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
+        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >hier</a>."
+    share_of_energy_heat_flexibility_p2h_boiler_ht_electricity:
+      title: Hoge-temperatuur power-to-heat (P2H) boiler
+      short_description:
+      description:
+        Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        power-to-heat (P2H) boilers voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die geproduceerd wordt door power-to-heat boilers wordt bepaald door het geïnstalleerde vermogen
+        en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Conversie naar warmte voor warmtenetten</a> sectie.
+    share_of_energy_heat_flexibility_p2h_boiler_mt_electricity:
+      title: Midden-temperatuur power-to-heat (P2H) boiler
+      short_description:
+      description:
+        Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        power-to-heat (P2H) boilers voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die geproduceerd wordt door power-to-heat boilers wordt bepaald door het geïnstalleerde vermogen
+        en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Conversie naar warmte voor warmtenetten</a> sectie.
+    share_of_energy_heat_flexibility_p2h_heatpump_ht_electricity:
+      title: Hoge-temperatuur power-to-heat (P2H) warmtepomp
+      short_description:
+      description:
+        Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        power-to-heat (P2H) warmtepompen voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die geproduceerd wordt door power-to-heat warmtepompen wordt bepaald door het geïnstalleerde vermogen
+        en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Conversie naar warmte voor warmtenetten</a> sectie.
+    share_of_energy_heat_flexibility_p2h_heatpump_mt_electricity:
+      title: Midden-temperatuur power-to-heat (P2H) warmtepomp
+      short_description:
+      description:
+        Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        power-to-heat (P2H) warmtepompen voor het midden-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n
+        De hoeveelheid warmte die geproduceerd wordt door power-to-heat warmtepompen wordt bepaald door het geïnstalleerde vermogen
+        en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Conversie naar warmte voor warmtenetten</a> sectie.
+        

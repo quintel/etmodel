@@ -1,0 +1,13 @@
+---
+- label: energy_heat_network_storage
+  color: "#FFB000"
+  order_by: 100
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_network_storage_lt_steam_hot_water_storage_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: heat_network_storage_lt
+  key: heat_network_storage_lt_storage_curve

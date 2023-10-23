@@ -2,14 +2,14 @@
 nl:
   input_elements:
     capacity_of_energy_chp_local_engine_biogas:
-      title: Biogas WKK
+      title: Biogas-WKK
       short_description:
       description: |
         Een WKK produceert zowel elektriciteit als warmte. Stel hier het
         elektrische vermogen aan biogas-WKK's in dat warmte levert aan warmtenetten.
         Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
     capacity_of_energy_chp_local_wood_pellets:
-      title: Biomassa WKK
+      title: Biomassa-WKK
       short_description:
       description: |
         Een WKK produceert zowel elektriciteit als warmte. Stel hier het
@@ -30,7 +30,7 @@ nl:
         beperkt is, kunnen ze een belangrijke rol spelen in het balanceren van het
         elektriciteitsnet. <br />"
     capacity_of_energy_power_combined_cycle_hydrogen:
-      title: Waterstofcentrale (STEG)
+      title: Waterstof STEG
       short_description:
       description: 'Met deze schuif kun je capaciteit van STEG-waterstofcentrales
         opstellen die elektriciteit produceren met waterstof. Omdat STEG-waterstofcentrales
@@ -181,7 +181,7 @@ nl:
         importeert geen afval, dus de beschikbare hoeveelheid afval bepaalt het potentieel
         voor deze technologie."
     capacity_of_energy_power_supercritical_ccs_waste_mix:
-      title: Afvalverbranding CCS
+      title: Afvalverbranding + CCS
       short_description:
         description: "Hiermee bouw je hoogrendment afvalverbrandingscentrale met CCS installatie. De instelling
           wordt omgezet in (delen van) centrales van 55 MWe. Brandbaar afval (huishoudelijk-
@@ -204,7 +204,7 @@ nl:
         het potentieel voor deze technologie.\r\n<br/><br/>\r\nDe schuifjesinstelling
         wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
     capacity_of_energy_chp_supercritical_ccs_waste_mix:
-      title: Afval-WKK CCS
+      title: Afval-WKK + CCS
       short_description:
       description: "Hiermee bouw je een hoogrendment afvalverbrandingscentrale met CCUS installatie die
           warmte levert aan een warmtenet (60 MWe, 33 MWth). Brandbaar afval (huishoudelijk-
@@ -268,7 +268,7 @@ nl:
         van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
         omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
     capacity_of_energy_power_ultra_supercritical_ccs_coal:
-      title: Poederkolen CCS
+      title: Poederkolen + CCS
       short_description: ''
       description: "Dezelfde soort kolencentrale als hierboven (Poederkolencentrale).
         Deze past daarnaast ook afvang en opslag van de meeste geproduceerde CO<sub>2</sub>
@@ -293,7 +293,7 @@ nl:
         schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
         hierboven omschreven.\r\n"
     capacity_of_energy_power_combined_cycle_ccs_coal:
-      title: Kolenvergassing CCS
+      title: Kolenvergassing + CCS
       short_description: ''
       description: "Dit is dezelfde kolenvergassingscentrale als hierboven. Deze past
         daarnaast ook afvang en opslag van de meeste geproduceerde CO<sub>2</sub>
@@ -306,7 +306,7 @@ nl:
         van de tijd op vol vermogen. \r\n\r\n<br/><br/>\r\nDe schuifjesinstelling
         wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n"
     capacity_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
-      title: Bruinkolen 'oxyfuel' CCS
+      title: Bruinkolen 'oxyfuel' + CCS
       short_description: ''
       description: "800 MWe kolen- of bruinkolencentrale die daarnaast ook afvang
         en opslag van de meeste geproduceerde CO<sub>2</sub> toepast. Deze technologie
@@ -341,13 +341,13 @@ nl:
         van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
         omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
     capacity_of_energy_chp_ultra_supercritical_lignite:
-      title: Bruinkoolcentrale met warmtelevering (WKK)
+      title: Bruinkolen-WKK
       short_description: ''
       description: 'Hier stel je in je hoeveel grote bruinkoolcentrales warmte leveren
         aan stadsverwarming en andere ''laagwaardige warmte'' netwerken. De stroom
         die wordt opgewekt zie je op de grafiek terug als kolenstroom. '
     capacity_of_energy_chp_ultra_supercritical_coal:
-      title: Kolencentrale met warmtelevering (WKK)
+      title: Poederkolen-WKK
       short_description: ''
       description: "Grote ultra-superkritische poederkolen WKK centrale. Deze centrale
         is hetzelfde als de elektriciteitscentrale, behalve dat bij deze ook warmte
@@ -357,7 +357,7 @@ nl:
         Afgezet tegen de totale kosten van een kolencentrale zijn de extra investeringen
         in warmteuitkoppeling beperkt."
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
-      title: Bijstookkolencentrale met warmtelevering (WKK)
+      title: Poederkolen-WKK met bijstook
       short_description:
       description: "Grote ultra-superkritische poederkolen WKK centrale. Deze centrale
         is hetzelfde als de elektriciteitscentrale, behalve dat bij deze ook warmte
@@ -517,7 +517,7 @@ nl:
         schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
         hierboven omschreven."
     capacity_of_energy_chp_combined_cycle_network_gas:
-      title: Grootschalige gascentrale met warmtelevering (WKK)
+      title: Gas STEG WKK
       short_description: ''
       description: "Hiermee bouw je een grote warmte-kracht koppeling (WKK's) (~120
         MWe and ~120 MWth) op gas. De stroom die de grote WKK's produceren staat in
@@ -528,7 +528,7 @@ nl:
         (6000 uren/jaar e-productie). Een installatie van vergelijkbare grootte staat
         bijvoorbeeld in Rotterdam (RoCa)."
     capacity_of_energy_power_combined_cycle_ccs_network_gas:
-      title: Gas STEG CCS
+      title: Gas STEG + CCS
       short_description: ''
       description: "Dezelfde soort gascentrale als hierboven (STEG). Deze past daarnaast
         ook afvang en opslag van de meeste geproduceerde CO<sub>2</sub> toe. Deze
@@ -577,7 +577,7 @@ nl:
         schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
         hierboven omschreven."
     capacity_of_energy_chp_local_engine_network_gas:
-      title: Kleinschalige gascentrale met warmtelevering (WKK)
+      title: Gasmotor-WKK
       short_description:
       description: "Een WKK produceert zowel warmte als elektriciteit. Stel hier het
         vermogen aan gas WKKs in dat warmte levert aan warmtenetten.\r\n</br>"

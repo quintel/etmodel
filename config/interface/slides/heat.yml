@@ -1,15 +1,21 @@
 ---
-- image: house_direct_heating.gif
-  group_sub_header: heat_output
-  key: supply_heat_sources
-  position: 1
+- key: supply_heat_overview
+  position: 100
   sidebar_item_key: heat
-  output_element_key: collective_heat_mekko
-- key: supply_heat_network_storage_toggle
-  position: 3
+  output_element_key: sankey_heat_networks
+- key: supply_heat_overview_chp
+  position: 200
   sidebar_item_key: heat
-  output_element_key: heat_network_storage
-- key: supply_heat_network_losses
-  position: 2
+  output_element_key: sankey_heat_networks
+- key: supply_heat_overview_residual
+  position: 300
   sidebar_item_key: heat
-  output_element_key: collective_heat_mekko
+  output_element_key: sankey_heat_networks
+- key: supply_heat_overview_p2h
+  position: 400
+  sidebar_item_key: heat
+  output_element_key: sankey_heat_networks
+- key: supply_heat_overview_emissions
+  position: 500
+  sidebar_item_key: heat
+  output_element_key: sankey_heat_networks

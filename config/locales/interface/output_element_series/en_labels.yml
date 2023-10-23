@@ -106,7 +106,8 @@ en:
         energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Imported heat'
         energy_heat_industry_residual_heat_steam_hot_water_output_curve: 'Residual heat from industry'
         energy_heat_solar_thermal_steam_hot_water_output_curve: 'Solar thermal'
-        energy_heat_well_geothermal_steam_hot_water_output_curve: 'Geothermal heat'
+        energy_heat_well_deep_geothermal_steam_hot_water_output_curve: 'Geothermal (deep)'
+        energy_heat_well_shallow_geothermal_steam_hot_water_output_curve: 'Geothermal (shallow)'
         energy_heat_distribution_loss_input_curve: 'Distribution losses'
         energy_direct_air_capture_steam_hot_water_input_curve: 'Direct Air Capture (CCUS)'
         energy_heat_unused_steam_hot_water_input_curve: 'Heat surplus (wasted)'
@@ -115,11 +116,11 @@ en:
         households_final_demand_steam_hot_water_input_curve: 'Households'
         other_final_demand_steam_hot_water_input_curve: 'Other'
         energy_chp_combined_cycle_network_gas_in_heat_network_mekko: "Gas CHP - large-scale"
-        industry_chp_wood_pellets: 'Biomass CHP - industry'
-        industry_chp_turbine_hydrogen: 'Hydrogen turbine CHP - industry'
-        energy_chp_local_wood_pellets: 'Biomass CHP - small-scale'
-        energy_chp_local_engine_network_gas: 'Gas engine CHP - small-scale'
-        energy_chp_local_engine_biogas: 'Biogas engine CHP - small-scale'
+        industry_chp_wood_pellets: 'Industry biomass CHP'
+        industry_chp_turbine_hydrogen: 'Industry hydrogen turbine CHP'
+        energy_chp_local_wood_pellets: 'Biomass CHP'
+        energy_chp_local_engine_network_gas: 'Gas motor CHP'
+        energy_chp_local_engine_biogas: 'Biogas CHP'
         energy_chp_engine_biogas_in_heat_network_mekko: "Biogas CHP - large-scale"
         energy_chp_supercritical_waste_mix_in_heat_network_mekko: "Waste CHP - large-scale"
         energy_chp_ultra_supercritical_coal_in_heat_network_mekko: "Coal CHPs - large-scale"
@@ -131,15 +132,28 @@ en:
         energy_heat_network_storage: "(Seasonal) storage"
         energy_heat_network_storage_in: "Heat to (seasonal) storage"
         energy_heat_network_storage_out: "Heat from (seasonal) storage"
-        energy_heat_heatpump_water_water_electricity: "Electric heat pump"
-        energy_heat_boiler_electricity: "Electric boiler"
-        energy_heat_burner_wood_pellets: "Biomass burner"
-        energy_heat_burner_waste_mix: "Waste incineration"
-        energy_heat_burner_network_gas: "Network gas burner"
-        energy_heat_burner_hydrogen: "Hydrogen burner"
-        energy_heat_burner_crude_oil: "Oil burner"
-        energy_heat_burner_coal: "Coal burner"
-        energy_heat_backup_burner_network_gas: "Network gas burner (back-up)"
+        energy_heat_heatpump_water_water_ht_electricity: "Collective heat pump (HT)"
+        energy_heat_heatpump_water_water_mt_electricity: "Collective heat pump (MT)"
+        energy_heat_heatpump_water_water_lt_electricity: "Collective heat pump (LT)"
+        energy_heat_boiler_ht_electricity: "Electric boiler (HT)"
+        energy_heat_boiler_mt_electricity: "Electric boiler (MT)"
+        energy_heat_boiler_lt_electricity: "Electric boiler (LT)"
+        energy_heat_burner_ht_wood_pellets: "Biomass burner (HT)"
+        energy_heat_burner_mt_wood_pellets: "Biomass burner (MT)"
+        energy_heat_burner_ht_waste_mix: "Waste incineration (HT)"
+        energy_heat_burner_mt_waste_mix: "Waste incineration (MT)"
+        energy_heat_burner_ht_network_gas: "Network gas burner (HT)"
+        energy_heat_burner_mt_network_gas: "Network gas burner (MT)"
+        energy_heat_burner_ht_hydrogen: "Hydrogen burner (HT)"
+        energy_heat_burner_mt_hydrogen: "Hydrogen burner (MT)"
+        energy_heat_burner_lt_hydrogen: "Hydrogen burner (LT)"
+        energy_heat_burner_ht_crude_oil: "Oil burner (HT)"
+        energy_heat_burner_mt_crude_oil: "Oil burner (MT)"
+        energy_heat_burner_ht_coal: "Coal burner (HT)"
+        energy_heat_burner_mt_coal: "Coal burner (MT)"
+        energy_heat_backup_burner_ht_network_gas: "Network gas backup burner (HT)"
+        energy_heat_backup_burner_mt_network_gas: "Network gas backup burner (MT)"
+        energy_heat_backup_burner_lt_network_gas: "Network gas backup burner (LT)"
         households_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Households"
         energy_interconnector_imported_electricity: "Imported electricity"
         energy_steel_hisarna_transformation_coal: "Cyclone furnace on biomass - steel industry"
@@ -156,17 +170,19 @@ en:
         total_heat_network_demand_agriculture: "Agricultural heat network demand"
         total_heat_network_demand_industry: "Industrial heat network demand"
         agriculture_central_heat: "Heat from district heating"
+        agriculture_central_ht_heat: "Heat from HT district heating"
+        agriculture_central_mt_heat: "Heat from MT district heating"
         agriculture_local_heat: "Heat from local CHPs"
         agriculture_wasted_heat: "Heat surplus from local CHPs (wasted)"
         agriculture_demand_local_steam_hot_water: "Agriculture demand"
         agriculture_demand_unused_steam_hot_water: "Heat surplus (wasted)"
-        agriculture_chp_engine_biogas: "Biogas CHP - agriculture"
+        agriculture_chp_engine_biogas: "Agriculture biogas CHP"
         agriculture_supply_chp_engine_biogas: "Biogas CHP"
-        agriculture_chp_wood_pellets: "Biomass CHP - agriculture"
+        agriculture_chp_wood_pellets: "Agriculture biomass CHP"
         agriculture_supply_chp_wood_pellets: "Biomass CHP"
-        agriculture_chp_engine_dispatchable_network_gas: "Gas motor CHP - agriculture (dispatchable)"
+        agriculture_chp_engine_dispatchable_network_gas: "Agriculture gas motor CHP (dispatchable)"
         agriculture_supply_chp_engine_dispatchable_network_gas: "Gas motor CHP (dispatchable)"
-        agriculture_chp_engine_must_run_network_gas: "Gas motor CHP - agriculture (must-run)"
+        agriculture_chp_engine_must_run_network_gas: "Agriculture gas motor CHP (must-run)"
         agriculture_supply_chp_engine_must_run_network_gas: "Gas motor CHP (must-run)"
         agriculture_supply_backup_network_gas: "Gas burner (back-up)"
         all_plants_capacity: "All Plants (capacity)"
@@ -212,6 +228,8 @@ en:
         bio_lng: "Bio LNG"
         bio_lng_national_transport: "Bio-LNG for national transport"
         biogas: "Biogas"
+        biogas_chp_ht: "Biogas CHP (HT)"
+        biogas_chp_mt: "Biogas CHP (MT)"
         biogas_chp: "Biogas CHP"
         biodiesel: "Biodiesel"
         biodiesel_national_transport: "Biodiesel for national transport"
@@ -266,7 +284,7 @@ en:
         chp_heat_and_electricity: "CHP (heat and electricity)"
         chp_renewable_electricity: "CHP renewable electricity"
         chp_renewable_heat: "CHP renewable heat"
-        chp_s: "CHP's"
+        chp_s: "CHPs"
         cleaning: "Cleaning"
         clothes_dryer: "Dryer"
         captured_co2_emission: "Captured CO<sub>2</sub> emissions"
@@ -298,6 +316,10 @@ en:
         coal_and_derivatives_heating: "Coal (for heating)"
         coal_and_derivatives_non_energetic: "Coal (feedstock)"
         coal_ccs: "Coal CCS"
+        coal_chp_pwd_ht: "Pulverized coal CHP (HT)"
+        coal_chp_pwd_mt: "Pulverized coal CHP (MT)"
+        coal_chp_pwd_cofiring_ht: "Pulverized coal CHP with co-firing (HT)"
+        coal_chp_pwd_cofiring_mt: "Pulverized coal CHP with co-firing (MT)"
         coal_chp: "Coal CHP"
         coal_chp_cofiring: "Coal co-firing CHP"
         coal_conv: "Coal SC"
@@ -451,12 +473,12 @@ en:
         emissions: "Emissies"
         energetic_use: "Energetic use"
         energy: "Energy"
-        energy_chp_combined_cycle_network_gas: 'Gas plant for district heat (CHP)'
+        energy_chp_combined_cycle_network_gas: 'Gas CCGT CHP'
         energy_chp_supercritical_waste_mix: 'Waste CHP'
-        energy_chp_supercritical_ccs_waste_mix: 'Waste CHP CCS'
-        energy_chp_ultra_supercritical_coal: 'Coal plant for district heat (CHP)'
-        energy_chp_ultra_supercritical_cofiring_coal: 'Co-firing coal plant for district heat (CHP)'
-        energy_chp_ultra_supercritical_lignite: 'Lignite plant for district heat (CHP)'
+        energy_chp_supercritical_ccs_waste_mix: 'Waste CHP + CCS'
+        energy_chp_ultra_supercritical_coal: 'Pulverized coal CHP'
+        energy_chp_ultra_supercritical_cofiring_coal: 'Pulverized coal with CHP co-firing'
+        energy_chp_ultra_supercritical_lignite: 'Lignite CHP'
         energy_export_electricity: "Exported"
         energy_flexibility_curtailment_electricity: "Curtailment of must-run and volatile producers"
         energy_flexibility_load_shifting_electricity_input: "Increased demand in industry"
@@ -510,6 +532,10 @@ en:
         energy_export_hydrogen_for_mekko: 'Export'
         energy_heat_flexibility_p2h_boiler_electricity: "Converted to heat for district heating (boiler)"
         energy_heat_flexibility_p2h_heatpump_electricity: "Converted to heat for district heating (heat pump)"
+        energy_heat_flexibility_p2h_boiler_ht_electricity: "Converted to heat for HT district heating (boiler)"
+        energy_heat_flexibility_p2h_boiler_mt_electricity: "Converted to heat for MT district heating (boiler)"
+        energy_heat_flexibility_p2h_heatpump_ht_electricity: "Converted to heat for HT district heating (heat pump)"
+        energy_heat_flexibility_p2h_heatpump_mt_electricity: "Converted to heat for MT district heating (heat pump)"
         energy_hydrogen_biomass_gasification_for_mekko: 'Biomass gasification'
         energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomass gasification + CCS"
         energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Offshore wind"
@@ -560,6 +586,10 @@ en:
         gas: "Gas"
         gas_ccgt: "Gas CCGT"
         gas_ccgt_ccs: "Gas CCGT CCS"
+        gas_chp_ccgt_ht: "Gas CCGT CHP (HT)"
+        gas_chp_ccgt_mt: "Gas CCGT CHP (MT)"
+        gas_chp_engine_ht: "Gas motor CHP (HT)"
+        gas_chp_engine_mt: "Gas motor CHP (MT)"
         gas_chp_large: "Large-scale gas CHP"
         gas_chp_small: "Gas CHP"
         gas_conv: "Conventional Gas"
@@ -616,11 +646,42 @@ en:
         heat_from_renewables: "Heat from renewables"
         heat_from_waste: "Heat from waste"
         heat_hot_water: "Heat / Hot water"
-        heat_infrastructure_indoor_annualised_costs: "Indoor costs"
-        heat_infrastructure_distribution_pipelines_annualised_costs: "Distribution pipelines"
-        heat_infrastructure_distribution_stations_annualised_costs: "Exchanger stations"
-        heat_infrastructure_primary_pipelines_annualised_costs: "Primary heat source pipelines"
-        heat_infrastructure_storage_annualised_costs: "Heat storage"
+        heat_infrastructure_ht_indoor_annualised_costs: "Indoor costs"
+        heat_infrastructure_ht_distribution_pipelines_annualised_costs: "Distribution pipelines"
+        heat_infrastructure_ht_distribution_stations_annualised_costs: "Exchanger stations"
+        heat_infrastructure_ht_primary_pipelines_annualised_costs: "Primary heat source pipelines"
+        heat_infrastructure_ht_storage_annualised_costs: "Heat storage"
+        heat_infrastructure_mt_indoor_annualised_costs: "Indoor costs"
+        heat_infrastructure_mt_distribution_pipelines_annualised_costs: "Distribution pipelines"
+        heat_infrastructure_mt_distribution_stations_annualised_costs: "Exchanger stations"
+        heat_infrastructure_mt_primary_pipelines_annualised_costs: "Primary heat source pipelines"
+        heat_infrastructure_mt_storage_annualised_costs: "Heat storage"
+        heat_infrastructure_lt_indoor_annualised_costs: "Indoor costs"
+        heat_infrastructure_lt_distribution_pipelines_annualised_costs: "Distribution pipelines"
+        heat_infrastructure_lt_distribution_stations_annualised_costs: "Exchanger stations"
+        heat_infrastructure_lt_primary_pipelines_annualised_costs: "Primary heat source pipelines"
+        heat_infrastructure_lt_storage_annualised_costs: "Heat storage"
+        heat_infrastructure_ht_outdoor_infrastructure_annualised_capex_per_household: "Outdoor infrastructure CAPEX"
+        heat_infrastructure_ht_outdoor_infrastructure_annualised_opex_per_household: "Outdoor infrastructure OPEX"
+        heat_infrastructure_ht_installations_annualised_capex_per_household: "Installations (heat sources) CAPEX"
+        heat_infrastructure_ht_installations_annualised_opex_per_household: "Installations (heat sources) OPEX"
+        heat_infrastructure_ht_indoor_infrastructure_annualised_capex_per_household: "Indoor infrastructure CAPEX"
+        heat_infrastructure_ht_indoor_infrastructure_annualised_opex_per_household: "Indoor infrastructure OPEX"
+        heat_infrastructure_ht_heat_delivery_system_annualised_capex_per_household: "Indoor heat delivery system CAPEX"
+        heat_infrastructure_mt_outdoor_infrastructure_annualised_capex_per_household: "Outdoor infrastructure CAPEX"
+        heat_infrastructure_mt_outdoor_infrastructure_annualised_opex_per_household: "Outdoor infrastructure OPEX"
+        heat_infrastructure_mt_installations_annualised_capex_per_household: "Installations (heat sources) CAPEX"
+        heat_infrastructure_mt_installations_annualised_opex_per_household: "Installations (heat sources) OPEX"
+        heat_infrastructure_mt_indoor_infrastructure_annualised_capex_per_household: "Indoor infrastructure CAPEX"
+        heat_infrastructure_mt_indoor_infrastructure_annualised_opex_per_household: "Indoor infrastructure OPEX"
+        heat_infrastructure_mt_heat_delivery_system_annualised_capex_per_household: "Indoor heat delivery system CAPEX"
+        heat_infrastructure_lt_outdoor_infrastructure_annualised_capex_per_household: "Outdoor infrastructure CAPEX"
+        heat_infrastructure_lt_outdoor_infrastructure_annualised_opex_per_household: "Outdoor infrastructure OPEX"
+        heat_infrastructure_lt_installations_annualised_capex_per_household: "Installations (heat sources) CAPEX"
+        heat_infrastructure_lt_installations_annualised_opex_per_household: "Installations (heat sources) OPEX"
+        heat_infrastructure_lt_indoor_infrastructure_annualised_capex_per_household: "Indoor infrastructure CAPEX"
+        heat_infrastructure_lt_indoor_infrastructure_annualised_opex_per_household: "Indoor infrastructure OPEX"
+        heat_infrastructure_lt_heat_delivery_system_annualised_capex_per_household: "Indoor heat delivery system CAPEX"
         heat_network_production: "Heat production"
         heat_network_demand: "Heat demand"
         heat_network_inflexible_demand: "District heating demand"
@@ -801,10 +862,10 @@ en:
         imported_hydrogen: "Imported hydrogen"
         industry_heat_from_hydrogen_for_mekko: "Heat for industrial heat network"
         industry_heat_network_hydrogen: "Heat for industrial heat network"
-        industry_chp_combined_cycle_gas_power_fuelmix: 'Gas CHP - industry'
-        industry_chp_engine_gas_power_fuelmix: 'Gas motor CHP - industry'
-        industry_chp_turbine_gas_power_fuelmix: 'Gas turbine CHP - industry'
-        industry_chp_ultra_supercritical_coal: 'Coal CHP - industry'
+        industry_chp_combined_cycle_gas_power_fuelmix: 'Industry gas CCGT CHP'
+        industry_chp_engine_gas_power_fuelmix: 'Industry gas motor CHP'
+        industry_chp_turbine_gas_power_fuelmix: 'Industry gas turbine CHP'
+        industry_chp_ultra_supercritical_coal: 'Industry pulverized coal CHP'
         industry_flexibility_p2h_electricity: "Converted to heat for industry"
         agriculture_flexibility_p2h_electricity: "Converted to heat for agriculture"
         industry_ict_electricity: "ICT industry electricity demand"
@@ -859,6 +920,8 @@ en:
         lignite: "Lignite"
         lignite_oxy: "Lignite Oxyfuel CCS"
         lignite_chp: "Lignite CHP"
+        lignite_chp_ht: "Lignite CHP (HT)"
+        lignite_chp_mt: "Lignite CHP (MT)"
         lng: "LNG"
         lng_domestic_navigation: "LNG domestic navigation"
         lng_international_navigation: "LNG international navigation"
@@ -1188,6 +1251,10 @@ en:
         waste_heat_and_cold: "Residue heat and cold"
         waste_incinerator: "Waste incinerator"
         waste_incinerator_ccs: "Waste incinerator CCS"
+        waste_chp_ht: "Waste CHP (HT)"
+        waste_chp_mt: "Waste CHP (MT)"
+        waste_chp_ccs_ht: "Waste CHP + CCS (HT)"
+        waste_chp_ccs_mt: "Waste CHP + CCS (MT)"
         waste_chp: "Waste CHP"
         waste_chp_ccs: "Waste CHP CCS"
         waste_fats: "Waste fats (biodiesel/bio-kerosene)"
@@ -1211,6 +1278,8 @@ en:
         wind_onshore_production: "Wind onshore production"
         wind_turbines: "Wind"
         wood_pellets: "Wood pellets"
+        wood_pellets_chp_ht: "Biomass CHP (HT)"
+        wood_pellets_chp_mt: "Biomass CHP (MT)"
         wood_pellets_to_power: "Wood pellets power plants"
         dry_biomass: "Dry biomass"
         wood: "Wood (final demand)"

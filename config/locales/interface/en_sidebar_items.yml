@@ -279,11 +279,21 @@ en:
         mostly need heat and electricity. Heat use has been steadily decreasing the
         past years, because of better insulation in houses. Electricity demand has
         kept increasing. As people get richer, they use ever more electrical appliances.\r\n\r\n\r\n"
-    heat_merit:
-      short_title: Merit order
-      title: Merit order dispatchable heat sources
-      short_description: ''
-      description: ''
+    heat_lt:
+      short_title: LT district heating
+      title: Low-temperature (LT) district heating
+      short_description:
+      description:
+    heat_mt:
+      short_title: MT district heating
+      title: Medium-temperature (MT) district heating
+      short_description:
+      description:
+    heat_ht:
+      short_title: HT district heating
+      title: High-temperature (HT) district heating
+      short_description:
+      description:
     hydrogen:
       short_title: Hydrogen
       title: Hydrogen & ammonia
@@ -409,12 +419,12 @@ en:
       short_title: Electricity
       title: Electricity
       short_description: ''
-      description: 
+      description:
     specs_renewable_electricity:
       short_title: Renewable electricity
       title: Renewable electricity
       short_description: ''
-      description: 
+      description:
     specs_transport:
       short_title: Transport
       title: Transport efficiencies

@@ -127,27 +127,63 @@ en:
         scenario. The columns contain (from left to right) name, number of units,
         electricity production, heat production and installed capacity of CHP plants.\r\n"
     collective_heat_mekko:
-      title: Supply and demand of district heating
+      title: District heating supply and demand
       short_description: ''
       description: ''
-    heat_network_demand:
-      title: Hourly heat demand for district heating
+    heat_network_demand_ht:
+      title: HT district heating demand per hour
       short_description: ''
       description: ''
-    heat_network_production:
-      title: Hourly heat production for district heating
+    heat_network_demand_mt:
+      title: MT district heating demand per hour
       short_description: ''
       description: ''
-    industrial_heat_mekko:
-      title: Supply and demand of collective heat in industry
+    heat_network_demand_lt:
+      title: LT district heating demand per hour
+      short_description: ''
+      description: ''
+    heat_network_production_ht:
+      title: HT district heating production per hour
+      short_description: ''
+      description: ''
+    heat_network_production_mt:
+      title: MT district heating production per hour
+      short_description: ''
+      description: ''
+    heat_network_production_lt:
+      title: LT district heating production per hour
       short_description:
       description:
-    heat_network_storage:
-      title: "(Seasonal) storage of heat"
+    heat_network_storage_ht:
+      title: HT district heating (seasonal) storage per hour
+      short_description:
+      description:
+    heat_network_storage_mt:
+      title: MT district heating (seasonal) storage per hour
+      short_description:
+      description:
+    heat_network_storage_lt:
+      title: LT district heating (seasonal) storage per hour
+      short_description:
+      description:
+    sankey_heat_networks:
+      title: District heating supply and demand per temperature level
+      short_description:
+      description:
+    industrial_heat_mekko:
+      title: Industrial steam network supply and demand
+      short_description:
+      description:
+    heat_cost_capacity_ht:
+      title: 'HT district heating sources: capacities and marginal costs'
       short_description: ''
       description: ''
-    heat_cost_capacity:
-      title: 'District heating sources: capacities and marginal costs'
+    heat_cost_capacity_mt:
+      title: 'MT district heating sources: capacities and marginal costs'
+      short_description: ''
+      description: ''
+    heat_cost_capacity_lt:
+      title: 'LT district heating sources: capacities and marginal costs'
       short_description: ''
       description: ''
     mekko_of_hydrogen_network:

@@ -1,40 +1,76 @@
 ---
-- label: central_gas_chp
+- label: gas_chp_ccgt_ht
   color: "#d9d9d9"
   order_by: 1
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: central_gas_chp_merit_order
+  gquery: gas_chp_ccgt_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: central_gas_chp_merit_order
-- label: coal_chp
+  key: gas_chp_ccgt_ht_merit_order
+- label: gas_chp_ccgt_mt
+  color: "#d9d9d9"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: gas_chp_ccgt_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: gas_chp_ccgt_mt_merit_order
+- label: coal_chp_pwd_ht
   color: "#737373"
   order_by: 1
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: coal_chp_merit_order
+  gquery: coal_chp_pwd_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: coal_chp_merit_order
-- label: coal_chp_cofiring
+  key: coal_chp_pwd_ht_merit_order
+- label: coal_chp_pwd_mt
+  color: "#737373"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: coal_chp_pwd_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: coal_chp_pwd_mt_merit_order
+- label: coal_chp_pwd_cofiring_ht
   color: "#83A374"
   order_by: 1
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: coal_chp_cofiring_merit_order
+  gquery: coal_chp_pwd_cofiring_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: coal_chp_cofiring_merit_order
+  key: coal_chp_pwd_cofiring_ht_merit_order
+- label: coal_chp_pwd_cofiring_mt
+  color: "#83A374"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: coal_chp_pwd_cofiring_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: coal_chp_pwd_cofiring_mt_merit_order
 - label: coal_conv
   color: "#000000"
   order_by: 1
@@ -191,18 +227,30 @@
   dependent_on:
   output_element_key: merit_order
   key: lignite_merit_order
-- label: lignite_chp
+- label: lignite_chp_ht
   color: "#574528"
   order_by: 1
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: lignite_chp_merit_order
+  gquery: lignite_chp_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: lignite_chp_merit_order
+  key: lignite_chp_ht_merit_order
+- label: lignite_chp_mt
+  color: "#574528"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: lignite_chp_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: lignite_chp_mt_merit_order
 - label: lignite_oxy
   color: "#593B0A"
   order_by: 1
@@ -215,18 +263,30 @@
   dependent_on:
   output_element_key: merit_order
   key: lignite_oxy_merit_order
-- label: local_chp_biogas
+- label: biogas_chp_ht
   color: "#98e3dc"
   order_by: 1
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: local_chp_biogas_merit_order
+  gquery: biogas_chp_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: local_chp_biogas_merit_order
+  key: biogas_chp_ht_merit_order
+- label: biogas_chp_mt
+  color: "#98e3dc"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: biogas_chp_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: biogas_chp_mt_merit_order
 - label: waste_power
   color: "#a1d99b"
   order_by: 1
@@ -695,54 +755,102 @@
   dependent_on:
   output_element_key: merit_order
   key: industry_chp_wood_merit_merit_order
-- label: waste_chp_merit
+- label: waste_chp_ht
   color: "#006266"
   order_by: 1
   group: ''
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: waste_chp_merit_order
+  gquery: waste_chp_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: waste_chp_merit_merit_order
-- label: waste_chp_ccs_merit
+  key: waste_chp_ht_merit_order
+- label: waste_chp_mt
+  color: "#006266"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: waste_chp_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: waste_chp_mt_merit_order
+- label: waste_chp_ccs_ht
   color: "#82002b"
   order_by: 1
   group: ''
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: waste_chp_ccs_merit_order
+  gquery: waste_chp_ccs_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: waste_chp_ccs_merit_merit_order
-- label: local_chp_wood_merit
+  key: waste_chp_ccs_ht_merit_merit_order
+- label: waste_chp_ccs_mt
+  color: "#82002b"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: waste_chp_ccs_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: waste_chp_ccs_mt_merit_merit_order
+- label: wood_pellets_chp_ht
   color: "#6AB04C"
   order_by: 1
   group: ''
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: local_chp_wood_merit_order
+  gquery: wood_pellets_chp_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: local_chp_wood_merit_merit_order
-- label: local_chp_gas_merit
+  key: wood_pellets_chp_ht_merit_order
+- label: wood_pellets_chp_mt
+  color: "#6AB04C"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_chp_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_chp_mt_merit_order
+- label: gas_chp_engine_ht
   color: "#E84118"
   order_by: 1
   group: ''
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: local_chp_gas_merit_order
+  gquery: gas_chp_engine_ht_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: local_chp_gas_merit_merit_order
+  key: gas_chp_engine_ht_merit_order
+- label: gas_chp_engine_mt
+  color: "#E84118"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: gas_chp_engine_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: gas_chp_engine_mt_merit_order
 - label: coal_gas_ccgt
   color: "#521b82"
   order_by: 1

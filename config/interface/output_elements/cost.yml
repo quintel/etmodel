@@ -62,7 +62,82 @@
   sub_group:
   show_point_label: false
   growth_chart: false
-  key: heat_infrastructure_annualised_costs
+  key: heat_infrastructure_annualised_costs_ht
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: vertical_stacked_bar
+- under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group:
+  show_point_label: false
+  growth_chart: false
+  key: heat_infrastructure_annualised_costs_mt
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: vertical_stacked_bar
+- under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group:
+  show_point_label: false
+  growth_chart: false
+  key: heat_infrastructure_annualised_costs_lt
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: vertical_stacked_bar
+- under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group:
+  show_point_label: false
+  growth_chart: false
+  key: heat_infrastructure_annualised_costs_per_household_ht
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: vertical_stacked_bar
+- under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group:
+  show_point_label: false
+  growth_chart: false
+  key: heat_infrastructure_annualised_costs_per_household_mt
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: vertical_stacked_bar
+- under_construction: false
+  unit: euro
+  percentage: false
+  group: Cost
+  sub_group:
+  show_point_label: false
+  growth_chart: false
+  key: heat_infrastructure_annualised_costs_per_household_lt
   max_axis_value:
   min_axis_value:
   hidden: false

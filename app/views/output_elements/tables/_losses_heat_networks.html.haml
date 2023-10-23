@@ -1,0 +1,20 @@
+-# Losses heat networks households table
+%table#losses_heat_networks.chart.centered.autostripe
+  %thead
+    %tr
+      %th
+      %th= t 'output_elements.tables.losses_heat_networks.losses_heat_networks_present'
+      %th= t 'output_elements.tables.losses_heat_networks.losses_heat_networks_future'
+  %tbody
+    %tr
+      %th= t "output_elements.tables.losses_heat_networks.losses_heat_networks_households_ht"
+      %td{:data => {:gquery => "heat_loss_per_household_heat_networks_households_ht", :graph => :present}}
+      %td{:data => {:gquery => "heat_loss_per_household_heat_networks_households_ht", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.losses_heat_networks.losses_heat_networks_households_mt"
+      %td{:data => {:gquery => "heat_loss_per_household_heat_networks_households_mt", :graph => :present}}
+      %td{:data => {:gquery => "heat_loss_per_household_heat_networks_households_mt", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.losses_heat_networks.losses_heat_networks_households_lt"
+      %td{:data => {:gquery => "heat_loss_per_household_heat_networks_households_lt", :graph => :present}}
+      %td{:data => {:gquery => "heat_loss_per_household_heat_networks_households_lt", :graph => :future}}

@@ -6,6 +6,21 @@
   sub_group: collective_heat
   show_point_label: false
   growth_chart: false
+  key: sankey_heat_networks
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: sankey
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
   key: source_of_heat_production
   max_axis_value: 
   min_axis_value: 
@@ -37,7 +52,7 @@
   key: collective_heat_mekko
   max_axis_value: 
   min_axis_value: 
-  hidden: false
+  hidden: true
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: mekko
@@ -49,13 +64,13 @@
   sub_group: collective_heat
   show_point_label: false
   growth_chart: false
-  key: heat_network_demand
+  key: heat_network_demand_ht
   max_axis_value: 
   min_axis_value: 
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  output_element_type_name: demand_curve
+  output_element_type_name: hourly_stacked_area
 - under_construction: false
   unit: MW
   percentage: false
@@ -63,13 +78,69 @@
   sub_group: collective_heat
   show_point_label: false
   growth_chart: false
-  key: heat_network_production
+  key: heat_network_demand_mt
   max_axis_value: 
   min_axis_value: 
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  output_element_type_name: demand_curve
+  output_element_type_name: hourly_stacked_area
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_demand_lt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: hourly_stacked_area
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_production_ht
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: hourly_stacked_area
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_production_mt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: hourly_stacked_area
+- under_construction: false
+  unit: MW
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_production_lt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: hourly_stacked_area
 - under_construction: false
   unit: MJ
   percentage: false
@@ -92,7 +163,35 @@
   sub_group: collective_heat
   show_point_label: false
   growth_chart: false
-  key: heat_network_storage
+  key: heat_network_storage_lt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- under_construction: false
+  unit: MWh
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_storage_mt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: demand_curve
+- under_construction: false
+  unit: MWh
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_network_storage_ht
   max_axis_value: 
   min_axis_value: 
   hidden: false
@@ -106,10 +205,52 @@
   sub_group: collective_heat
   show_point_label: false
   growth_chart: false
-  key: heat_cost_capacity
+  key: heat_cost_capacity_ht
   max_axis_value: 
   min_axis_value: 
   hidden: false
   requires_merit_order: true
   dependent_on: ''
   output_element_type_name: cost_capacity_bar
+- under_construction: false
+  unit: Eur/Mwh
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_cost_capacity_mt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: cost_capacity_bar
+- under_construction: false
+  unit: Eur/Mwh
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: heat_cost_capacity_lt
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: ''
+  output_element_type_name: cost_capacity_bar
+- under_construction: false
+  unit: 'GJ'
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: losses_heat_networks
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: html_table

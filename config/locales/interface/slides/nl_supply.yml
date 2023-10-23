@@ -99,16 +99,16 @@ nl:
     supply_ccus_steel_coal_gas:
       title: Kolengascentrales
       description: |
-        Kolengassen zijn een bijproduct van staalproductie, die alleen aanwezig zijn in jouw scenario als 
-        staal geproduceerd wordt uit hoogovens. Als je de algehel productie van kolengas wilt verminderen, 
+        Kolengassen zijn een bijproduct van staalproductie, die alleen aanwezig zijn in jouw scenario als
+        staal geproduceerd wordt uit hoogovens. Als je de algehel productie van kolengas wilt verminderen,
         kun je in de <a href="/scenario/demand/industry/steel">staalsector</a> het productieproces
         veranderen. </br></br>
-        Een deel van deze gassen worden in het staalproductieproces zelf gebruikt. De rest wordt typisch 
-        gebruikt in WKK's en elektriciteitscentrales voor de productie van elektriciteit en warmte. Vanwege 
-        het hoge koolstofgehalte in deze gassen is deze productie zeer CO<sub>2</sub>-intensief. Een 
-        alternatief is om de deze kolengassen om te zetten naar grondstof voor de chemische industrie 
+        Een deel van deze gassen worden in het staalproductieproces zelf gebruikt. De rest wordt typisch
+        gebruikt in WKK's en elektriciteitscentrales voor de productie van elektriciteit en warmte. Vanwege
+        het hoge koolstofgehalte in deze gassen is deze productie zeer CO<sub>2</sub>-intensief. Een
+        alternatief is om de deze kolengassen om te zetten naar grondstof voor de chemische industrie
         ('steel-to-chemicals'). </br></br>
-        Met onderstaande schuifjes kun je aangeven welk deel van de kolengassen worden gebruikt voor elektriciteit- 
+        Met onderstaande schuifjes kun je aangeven welk deel van de kolengassen worden gebruikt voor elektriciteit-
         en warmteproductie, en welk deel wordt omgezet naar grondstof.
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot van biomassa
@@ -155,9 +155,9 @@ nl:
         Hier kan je het geïnstalleerd vermogen van grote 2e en 3e generatie kerncentrales
         en kleine modulaire reactoren instellen. Het ETM neemt voor kerncentrales geen CO<sub>2</sub>
         uitstoot mee. </br></br>
-        Standaard draaien kerncentrales als regelbare centrales. Vanwege de hoge kapitaalkosten en 
-        lage operationele kosten draaien grote reactoren typisch zoveel mogelijk op vol vermogen. 
-        Met onderstaande knop kun je er daarom voor kiezen de <b>grote reactoren</b> als 
+        Standaard draaien kerncentrales als regelbare centrales. Vanwege de hoge kapitaalkosten en
+        lage operationele kosten draaien grote reactoren typisch zoveel mogelijk op vol vermogen.
+        Met onderstaande knop kun je er daarom voor kiezen de <b>grote reactoren</b> als
         <a href="https://docs.energytransitionmodel.com/main/merit-order#producers" target=\"_blank\"> niet-regelbare</a>
         centrales te modelleren. Hierdoor draaien ze met een vlak profiel, onafhankelijk van de vraag.
         Dit heeft geen effect op <b>kleine reactoren</b>.
@@ -250,8 +250,8 @@ nl:
       title: Brandstofmix gasgestookte WKK
       short_description:
       description:
-    supply_heat_sources:
-      title: Warmtebronnen
+    supply_heat_overview:
+      title: Overzicht warmtenetten
       short_description:
       description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
         in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
@@ -273,15 +273,69 @@ nl:
         >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
         om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
         href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nMeer informatie kunt u vinden in
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nHandvatten voor typische grootte van bronnen en algemene 
+        informatie over bronnen is te vinden op de website van het 
+        <a href=\"https://nplw.nl/technieken/warmtebronnen/default.aspx\"target =\"_blank\">Nationaal Programma Lokale Warmtetransitie</a>.
+        \r\n\r\n<br /><br />\r\nMeer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
         onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
         target =\"_blank\">documentatie</a>."
+    supply_heat_overview_chp:
+      title: Allocatie van warmte uit WKK's
+      short_description:
+      description: "Sommige warmtebronnen kunnen warmte leveren aan warmtenetten van verschillende temperatuurniveaus.
+      \r\n<br /><br />\r\n
+      Hieronder kun je de relatieve toewijzing instellen van warmte uit WKK's aan zowel hoge- als midden-temperatuur warmtenetten."
+    supply_heat_overview_residual:
+      title: Allocatie van restwarmte
+      short_description:
+      description: |
+        Sommige sectoren van de industrie kunnen restwarmte leveren aan hoge-temperatuur warmtenetten. <br/><br/>
+        Hieronder kun je het percentage restwarmte instellen dat de beschikbare sectoren leveren aan hoge-temperatuur warmtenetten.
+    supply_heat_overview_p2h:
+      title: Allocatie van power-to-heat
+      short_description:
+      description: "Sommige warmtebronnen kunnen warmte leveren aan warmtenetten van verschillende temperatuurniveaus.
+      \r\n<br /><br />\r\n
+      Hieronder kun je de relatieve toewijzing instellen van warmte uit power-to-heat bronnen aan zowel hoge- als midden-temperatuur warmtenetten."
+    supply_heat_overview_emissions:
+      title: CO<sub>2</sub>-emissies van geïmporteerde warmte
+      short_description:
+      description: "Hieronder kun je de CO<sub>2</sub>-emissies van geïmporteerde warmte instellen."
+    supply_heat_transport_lt:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "Bij warmtenetten wordt warmte op een centrale locatie geproduceerd
+        en vervolgens via een netwerk van geïsoleerde pijpleidingen getransporteerd
+        naar huizen en bedrijven. Dit transport van warmte leidt tot energieverliezen,
+        die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
+        naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
+        kun je de distributieverliezen in jouw scenario instellen."
+    supply_heat_transport_mt:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "Bij warmtenetten wordt warmte op een centrale locatie geproduceerd
+        en vervolgens via een netwerk van geïsoleerde pijpleidingen getransporteerd
+        naar huizen en bedrijven. Dit transport van warmte leidt tot energieverliezen,
+        die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
+        naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
+        kun je de distributieverliezen in jouw scenario instellen."
+    supply_heat_transport_ht:
+      title: Transport- en distributieverliezen
+      short_description:
+      description: "Bij warmtenetten wordt warmte op een centrale locatie geproduceerd
+        en vervolgens via een netwerk van geïsoleerde pijpleidingen getransporteerd
+        naar huizen en bedrijven. Dit transport van warmte leidt tot energieverliezen,
+        die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
+        naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
+        kun je de distributieverliezen in jouw scenario instellen."
+
     supply_heat_network_industry:
-      title: Bronnen warmtenet
+      title: Bronnen stoomnet
       short_description: ''
-      description: 'Hieronder kun je de verschillende warmtebronnen kiezen die warmte leveren aan het
+      description: |
+        Hieronder kun je de verschillende warmtebronnen kiezen die warmte leveren aan het
         industriële warmtenet. Als de totale warmteproductie lager is dan de totale vraag, wordt er automatisch een
-        gasketel ingezet om de vraag op te vangen.'
+        gasketel ingezet om de vraag op te vangen.
     supply_heat_network_losses:
       title: Transport- en distributieverliezen
       short_description: ''
@@ -291,12 +345,8 @@ nl:
         die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
         naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
         kun je de distributieverliezen in jouw scenario instellen."
-    supply_heat_combined_heat_power:
-      title: Warmte-krachtkoppeling
-      short_description:
-      description:
-    supply_heat_network_order:
-      title: Inzetvolgorde van regelbare warmtebronnen
+    supply_heat_network_order_lt:
+      title: Merit order van regelbare warmtebronnen
       short_description:
       description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele warmtebronnen
         (zoals geothermie, zonthermie en industriële restwarmte) en regelbare warmtebronnen.
@@ -311,7 +361,39 @@ nl:
         springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
         kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare
         bronnen."
-    supply_heat_network_storage_toggle:
+    supply_heat_network_order_mt:
+      title: Merit order van regelbare warmtebronnen
+      short_description:
+      description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele warmtebronnen
+        (zoals geothermie, zonthermie en industriële restwarmte) en regelbare warmtebronnen.
+        De warmteproductie van de eerste categorie bronnen is moeilijk regelbaar,
+        zonthermieproductie is bijvoorbeeld afhankelijk van het weer. Regelbare bronnen
+        daarentegen kunnen aan- en uitgeschakeld worden op momenten dat dat nodig
+        is. Het ETM kijkt voor elk uur per jaar hoeveel warmte er uit 'must-run' en
+        volatiele bronnen beschikbaar is. Als de vraag in een bepaald uur hoger is
+        dan deze productie, wordt er een regelbare bron ingeschakeld om te zorgen
+        dat er voldoende warmte is.\r\n<br /><br />\r\nHieronder is het mogelijk om
+        de inzetvolgorde van de regelbare warmtebronnen in te stellen: welke bron
+        springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
+        kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare
+        bronnen."
+    supply_heat_network_order_ht:
+      title: Merit order van regelbare warmtebronnen
+      short_description:
+      description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele warmtebronnen
+        (zoals geothermie, zonthermie en industriële restwarmte) en regelbare warmtebronnen.
+        De warmteproductie van de eerste categorie bronnen is moeilijk regelbaar,
+        zonthermieproductie is bijvoorbeeld afhankelijk van het weer. Regelbare bronnen
+        daarentegen kunnen aan- en uitgeschakeld worden op momenten dat dat nodig
+        is. Het ETM kijkt voor elk uur per jaar hoeveel warmte er uit 'must-run' en
+        volatiele bronnen beschikbaar is. Als de vraag in een bepaald uur hoger is
+        dan deze productie, wordt er een regelbare bron ingeschakeld om te zorgen
+        dat er voldoende warmte is.\r\n<br /><br />\r\nHieronder is het mogelijk om
+        de inzetvolgorde van de regelbare warmtebronnen in te stellen: welke bron
+        springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
+        kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare
+        bronnen."
+    supply_heat_storage_ht:
       title: "(Seizoens)opslag van warmte"
       short_description:
       description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
@@ -336,6 +418,143 @@ nl:
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
         >kosten</a>.\r\n"
+    supply_heat_storage_mt:
+      title: "(Seizoens)opslag van warmte"
+      short_description:
+      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+        zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
+        in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
+        om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
+        er minder regelbaar vermogen nodig, zoals back-up ketels, om in de vraag te
+        voorzien. \r\n</br></br>\r\nAls je ervoor kiest om de knop hieronder op 'Aan'
+        te zetten, plaatst het ETM automatisch voldoende opslagvolume in jouw scenario
+        om voor elk uur per jaar de overschotten aan warmte op te kunnen slaan. Deze
+        warmte wordt weer uit de opslag gehaald op momenten dat de vraag hoger is
+        dan de (niet-regelbare) productie. De grafiek hiernaast laat het verloop van
+        de opslag zien.\r\n<br /><br />Let op: Als je teveel \"must-run\" of volatiel
+        vermogen in je scenario hebt, kan het voorkomen dat er aan het einde van het
+        'warmtejaar' (dat loopt van 1 april tot 31 maart) een warmteoverschot in de
+        opslag achterblijft. Om te voorkomen dat deze warmte verloren gaat, kun je
+        proberen om <a href=\"/scenario/supply/heat/heat-sources\" >het geïnstalleerd
+        vermogen van niet-regelbare / volatiele warmtebronnen</a> te verlagen, de
+        warmtevraag in je scenario te verhogen of de positie van warmteopslag in <a
+        href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >de inzetvolgorde van regelbare warmtebronnen</a> te veranderen.\r\n<br><br
+        />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
+        De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >kosten</a>.\r\n"
+    supply_heat_storage_lt:
+      title: "(Seizoens)opslag van warmte"
+      short_description:
+      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+        zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
+        in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
+        om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
+        er minder regelbaar vermogen nodig, zoals back-up ketels, om in de vraag te
+        voorzien. \r\n</br></br>\r\nAls je ervoor kiest om de knop hieronder op 'Aan'
+        te zetten, plaatst het ETM automatisch voldoende opslagvolume in jouw scenario
+        om voor elk uur per jaar de overschotten aan warmte op te kunnen slaan. Deze
+        warmte wordt weer uit de opslag gehaald op momenten dat de vraag hoger is
+        dan de (niet-regelbare) productie. De grafiek hiernaast laat het verloop van
+        de opslag zien.\r\n<br /><br />Let op: Als je teveel \"must-run\" of volatiel
+        vermogen in je scenario hebt, kan het voorkomen dat er aan het einde van het
+        'warmtejaar' (dat loopt van 1 april tot 31 maart) een warmteoverschot in de
+        opslag achterblijft. Om te voorkomen dat deze warmte verloren gaat, kun je
+        proberen om <a href=\"/scenario/supply/heat/heat-sources\" >het geïnstalleerd
+        vermogen van niet-regelbare / volatiele warmtebronnen</a> te verlagen, de
+        warmtevraag in je scenario te verhogen of de positie van warmteopslag in <a
+        href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >de inzetvolgorde van regelbare warmtebronnen</a> te veranderen.\r\n<br><br
+        />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
+        De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >kosten</a>.\r\n"
+    supply_heat_sources_ht:
+      title: "Bronnen"
+      short_description:
+      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
+        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
+        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
+        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
+        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
+        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
+        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
+        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
+        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
+        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
+        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
+        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
+        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nHandvatten voor typische grootte van bronnen en algemene 
+        informatie over bronnen is te vinden op de website van het 
+        <a href=\"https://nplw.nl/technieken/warmtebronnen/default.aspx\"target =\"_blank\">Nationaal Programma Lokale Warmtetransitie</a>.
+        \r\n\r\n<br /><br />\r\nMeer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
+        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentatie</a>."
+    supply_heat_sources_lt:
+      title: "Bronnen"
+      short_description:
+      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
+        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
+        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
+        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
+        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
+        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
+        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
+        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
+        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
+        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
+        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
+        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
+        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nHandvatten voor typische grootte van bronnen en algemene 
+        informatie over bronnen is te vinden op de website van het 
+        <a href=\"https://nplw.nl/technieken/warmtebronnen/default.aspx\"target =\"_blank\">Nationaal Programma Lokale Warmtetransitie</a>.
+        \r\n\r\n<br /><br />\r\nMeer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
+        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentatie</a>."
+    supply_heat_sources_mt:
+      title: "Bronnen"
+      short_description:
+      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
+        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
+        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
+        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
+        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
+        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
+        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
+        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
+        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
+        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
+        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
+        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
+        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nHandvatten voor typische grootte van bronnen en algemene 
+        informatie over bronnen is te vinden op de website van het 
+        <a href=\"https://nplw.nl/technieken/warmtebronnen/default.aspx\"target =\"_blank\">Nationaal Programma Lokale Warmtetransitie</a>.
+        \r\n\r\n<br /><br />\r\nMeer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
+        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentatie</a>."
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:
@@ -349,7 +568,7 @@ nl:
         <li><a href=/scenario/supply/heat/heat-sources>warmtenetten</a> voor huishoudens, gebouwen en landbouw</li>
         <li><a href=/scenario/demand/households/space-heating-and-hot-water>hybride warmtepompen voor huishoudens</a></li>
         <li>warmteproductie in <a href=/scenario/demand/industry/refineries>industrie</a> en <a href=/scenario/demand/agriculture/heat>landbouw</a></li>
-        <li><a href=/scenario/demand/industry/fertilizers>kunstmestproductie</a> (als grondstof)</li> 
+        <li><a href=/scenario/demand/industry/fertilizers>kunstmestproductie</a> (als grondstof)</li>
         <li>nationaal transport (<a href=/scenario/demand/transport_passenger_transport/car-technology>auto's</a>,
         <a href=/scenario/demand/transport_passenger_transport/bus-technology>bussen</a>,
         <a href=/scenario/demand/transport_freight_transport/truck-technology>vrachtwagens</a>
@@ -407,16 +626,16 @@ nl:
       title: Ammoniakproductie
       short_description:
       description: |
-        Ammoniak heeft als energiedrager gunstige eigenschappen voor transport en opslag en kan worden geproduceerd 
-        zonder CO<sub>2</sub>-emissies te genereren. Dit maakt het een potentieel geschikte drager om 
-        grootschalig globaal transport van (hernieuwbare) energievolumes te faciliteren. Met onderstaand schuifje 
+        Ammoniak heeft als energiedrager gunstige eigenschappen voor transport en opslag en kan worden geproduceerd
+        zonder CO<sub>2</sub>-emissies te genereren. Dit maakt het een potentieel geschikte drager om
+        grootschalig globaal transport van (hernieuwbare) energievolumes te faciliteren. Met onderstaand schuifje
         kun je bepalen hoeveel ammoniak je wilt importen importeren in jouw scenario. </br></br>
-        Ammoniak kan vervolgens worden omgezet in waterstof door 
-        <a href="/scenario/supply/hydrogen/hydrogen-production"> ammoniak reforming</a>. Het kan echter ook 
-        direct worden toegepast als transportbrandstof (in de 
+        Ammoniak kan vervolgens worden omgezet in waterstof door
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> ammoniak reforming</a>. Het kan echter ook
+        direct worden toegepast als transportbrandstof (in de
         <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology">binnenvaart</a>
         en de <a href="/scenario/demand/transport_international_transport/international-navigation-technology">
-        internationale scheepvaart</a>). Momenteel wordt vrijwel alle ammoniak on-site geproduceerd in de 
+        internationale scheepvaart</a>). Momenteel wordt vrijwel alle ammoniak on-site geproduceerd in de
         <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a>. Deze lokale productie kan ook
         worden vervangen door centrale import.
     supply_hydrogen_co2_import:
@@ -438,14 +657,14 @@ nl:
       description: |
         De productie en distributie van geïmporteerde ammoniak kunnen CO<sub>2</sub>-emissies
         hebben veroorzaakt. Hoeveel van deze emissies wil je toekennen aan jouw gebied? </br></br>
-        Het verschepen van vloeibare ammomiak (om het daarna te reformen naar waterstof) wordt 
-        als een meer praktische optie gezien om grote volumes groene waterstof te transporteren dan 
+        Het verschepen van vloeibare ammomiak (om het daarna te reformen naar waterstof) wordt
+        als een meer praktische optie gezien om grote volumes groene waterstof te transporteren dan
         om de groene waterstof direct te verschepen.
-        Standaard zijn de emissies van geïmporteerde ammoniak geijkt op de stoomreforming 
-        productieroute, aangezien dit momenteel het meest wordt toegepast. Als je verwacht voornamelijk 
-        groene ammoniak te importeren kun je de emissies hieronder zelf aanpassen. 
+        Standaard zijn de emissies van geïmporteerde ammoniak geijkt op de stoomreforming
+        productieroute, aangezien dit momenteel het meest wordt toegepast. Als je verwacht voornamelijk
+        groene ammoniak te importeren kun je de emissies hieronder zelf aanpassen.
         Klik op het vraagteken voor referentiewaardes. </br></br>
-        De kosten voor geïmporteerde ammoniak kunnen worden aangepast in de 
+        De kosten voor geïmporteerde ammoniak kunnen worden aangepast in de
         <a href=/scenario/costs/costs_hydrogen/ammonia-import>Kosten & efficiënties</a> sectie.
     supply_infrastructure_high_voltage_network:
       title: Hoogspanningsnetwerk
@@ -507,8 +726,8 @@ nl:
       short_description:
       description: "Hoeveel zal bio-kerosene gebruikt worden in de toekomstige internationale
         luchtvaart? Hier kan je het aandeel bepalen.\r\n</br></br>\r\n
-        Het is ook mogelijk om synthetische kerosine te produceren, met afgevangen CO<sub>2</sub>, 
-        elektriciteit en waterstof. Dit kun je kiezen in 
+        Het is ook mogelijk om synthetische kerosine te produceren, met afgevangen CO<sub>2</sub>,
+        elektriciteit en waterstof. Dit kun je kiezen in
         <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
         > de CCUS sectie</a>. "
     supply_transport_international_shipping:
@@ -533,7 +752,7 @@ nl:
       description: |
         Welke brandstoffen zullen worden gebruikt voor schepen met dieselmotoren en schepen
         met LNG-motoren? In de <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
-        >binnenvaart</a> sectie kun je het aandeel van deze motoren in het totale vrachtvervoer door binnenvaart 
+        >binnenvaart</a> sectie kun je het aandeel van deze motoren in het totale vrachtvervoer door binnenvaart
         bepalen.
     supply_transport_public_transport_technologies:
       title: Energiedragers openbaar vervoer
@@ -548,7 +767,7 @@ nl:
         als hiervoor gewassen geteeld moeten worden. Door de wegverkeertechnologieën in de
         <a href="/scenario/demand/transport_passenger_transport/car-technology">personen-</a>
         en <a href="/scenario/demand/transport_freight_transport/truck-technology">vrachtvervoer</a>
-        aan te passen, kun je bepalen welke motoren en dus welke transportbrandstoffen 
+        aan te passen, kun je bepalen welke motoren en dus welke transportbrandstoffen
         gebruikt worden.
     supply_transport_trains:
       title: Treinverkeer

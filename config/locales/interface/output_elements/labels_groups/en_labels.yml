@@ -28,7 +28,9 @@ en:
       network_gas_storage: "There is no network gas demand and/or supply in your scenario"
       mekko_of_hydrogen_network: "There is no hydrogen demand and/or supply in your scenario"
       use_of_excess_electricity: "There is no flexible electricity demand in your scenario"
-      heat_cost_capacity: "There is no collective heat demand and/or supply in your scenario"
+      heat_cost_capacity_ht: "There is no collective HT heat demand and/or supply in your scenario"
+      heat_cost_capacity_mt: "There is no collective MT heat demand and/or supply in your scenario"
+      heat_cost_capacity_lt: "There is no collective LT heat demand and/or supply in your scenario"
       heat_demand: "There is no collective heat demand and/or supply in your scenario"
       heat_production: "There is no collective heat demand and/or supply in your scenario"
       heat_network_storage: "There is no collective heat demand and/or supply in your scenario"
@@ -83,16 +85,31 @@ en:
       transport_truck_flexibility_p2p_electricity: Batteries in electric trucks
       transport_van_flexibility_p2p_electricity: Batteries in electric vans
     heat_network_order:
-      energy_heat_network_storage: "Heat from storage"
-      energy_heat_backup_burner_network_gas: Gas backup (network gas)
-      energy_heat_burner_coal: "Coal heater"
-      energy_heat_burner_crude_oil: "Oil heater"
-      energy_heat_burner_hydrogen: "Hydrogen heater"
-      energy_heat_burner_network_gas: "Gas heater (network gas)"
-      energy_heat_burner_waste_mix: "Waste heater"
-      energy_heat_burner_wood_pellets: "Biomass heater"
-      energy_heat_heatpump_water_water_electricity: "Collective heat pump"
-      energy_heat_boiler_electricity: "Electric boiler"
+      energy_heat_network_storage_ht_steam_hot_water: "Heat from storage"
+      energy_heat_network_storage_mt_steam_hot_water: "Heat from storage"
+      energy_heat_network_storage_lt_steam_hot_water: "Heat from storage"
+      energy_heat_backup_burner_ht_network_gas: Network gas backup burner
+      energy_heat_backup_burner_mt_network_gas: Network gas backup burner
+      energy_heat_backup_burner_lt_network_gas: Network gas backup burner
+      energy_heat_burner_ht_coal: "Coal burner"
+      energy_heat_burner_mt_coal: "Coal burner"
+      energy_heat_burner_ht_crude_oil: "Oil burner"
+      energy_heat_burner_mt_crude_oil: "Oil burner"
+      energy_heat_burner_ht_hydrogen: "Hydrogen burner"
+      energy_heat_burner_mt_hydrogen: "Hydrogen burner"
+      energy_heat_burner_lt_hydrogen: "Hydrogen burner"
+      energy_heat_burner_ht_network_gas: "Network gas burner"
+      energy_heat_burner_mt_network_gas: "Network gas burner"
+      energy_heat_burner_ht_waste_mix: "Waste incineration"
+      energy_heat_burner_mt_waste_mix: "Waste incineration"
+      energy_heat_burner_ht_wood_pellets: "Biomass burner"
+      energy_heat_burner_mt_wood_pellets: "Biomass burner"
+      energy_heat_heatpump_water_water_ht_electricity: "Collective heat pump"
+      energy_heat_heatpump_water_water_mt_electricity: "Collective heat pump"
+      energy_heat_heatpump_water_water_lt_electricity: "Collective heat pump"
+      energy_heat_boiler_ht_electricity: "Electric boiler"
+      energy_heat_boiler_mt_electricity: "Electric boiler"
+      energy_heat_boiler_lt_electricity: "Electric boiler"
     hhp_cop_cost:
       x_axis: COP
       y_axis: "ct/MJ heat"
@@ -137,17 +154,30 @@ en:
       a_double: "Increased renewables"
     import_export_flows: "Interconnection capacity"
     sankey_labels:
+      ambient_heat: "ambient heat"
+      ammonia: "ammonia"
+      biomass_products: "biomass products"
       captured: "captured"
       coal: "coal"
       coal_households: "coal for households"
+      coal_and_derivatives: "coal and coal products"
+      crude_oil_and_derivatives: "oil and oil products"
       curtailment: "curtailment"
+      distribution_losses: "distribution losses"
+      ht_network: "HT network"
+      mt_network: "MT network"
+      lt_network: "LT network"
       oil: "oil"
       oil_households: "oil for households"
+      solar_thermal: "solar thermal"
+      storage_losses: "storage losses"
       renewable: "renewable"
       gas: "natural gas"
       gas_households: "gas for households"
+      geothermal: "geothermal"
       hydrogen: "hydrogen"
       uranium: "uranium"
+      unused_heat: "surplus heat"
       biomass_waste: "biomass & waste"
       biomass_waste_greengas: "biomass, waste & green gas"
       electricity_import: "electricity import"
@@ -212,6 +242,7 @@ en:
       losses: 'losses'
       electricity_demand: 'electricity demand'
       heat_demand: 'heat demand'
+      residual_heat: "residual heat"
       hydrogen_demand: 'hydrogen demand'
       hydrogen: "hydrogen"
       other_renewables: "other renewables"

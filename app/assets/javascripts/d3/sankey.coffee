@@ -90,6 +90,116 @@ D3.sankey =
           {left: 'network',                    right: 'export12',         gquery: 'network_to_export12_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'loss',             gquery: 'network_to_loss_in_sankey', color: '#DCDCDC'}
         ]
+    sankey_heat_networks:
+      data:
+        nodes: [
+          {id: 'coal_and_derivatives',         column: 0, label: 'coal_and_derivatives',              color: '#252525'},
+          {id: 'natural_gas_and_derivatives',  column: 0, label: 'natural_gas',                       color: '#7f7f7f'},
+          {id: 'crude_oil_and_derivatives',    column: 0, label: 'crude_oil_and_derivatives',         color: '#8c564b'},
+          {id: 'electricity',                  column: 0, label: 'electricity',                       color: '#1f77b4'},
+          {id: 'hydrogen',                     column: 0, label: 'hydrogen',                          color: '#87cfeb'},
+          {id: 'ammonia',                      column: 0, label: 'ammonia',                           color: '#00dba1'},
+          {id: 'biomass_products',             column: 0, label: 'biomass_products',                  color: '#2ca02c'},
+          {id: 'non_biogenic_waste',           column: 0, label: 'non_biogenic_waste',                color: '#BA7D40'},
+          {id: 'solar_thermal',                column: 0, label: 'solar_thermal',                     color: '#ffcc00'},
+          {id: 'geothermal',                   column: 0, label: 'geothermal',                        color: '#FF8400'},
+          {id: 'ambient_heat',                 column: 0, label: 'ambient_heat',                      color: '#ADDE4C'},
+          {id: 'imported_heat',                column: 0, label: 'imported_heat',                     color: '#e61919'},
+          {id: 'residual_heat',                column: 0, label: 'residual_heat',                     color: '#00008B'},
+          {id: 'ht_network',                   column: 1, label: 'ht_network',                        color: '#785EF0'},
+          {id: 'mt_network',                   column: 1, label: 'mt_network',                        color: '#DC267F'},
+          {id: 'lt_network',                   column: 1, label: 'lt_network',                        color: '#FFB000'},
+          {id: 'agriculture',                  column: 2, label: 'agriculture',                       color: '#FFD700'},
+          {id: 'buildings',                    column: 2, label: 'buildings',                         color: '#ADD8E6'},
+          {id: 'bunkers',                      column: 2, label: 'bunkers',                           color: '#8B4513'},
+          {id: 'energy',                       column: 2, label: 'energy',                            color: '#416B86'},
+          {id: 'households',                   column: 2, label: 'households',                        color: '#4169E1'},
+          {id: 'industry',                     column: 2, label: 'industry',                          color: '#A9A9A9'},
+          {id: 'other',                        column: 2, label: 'other',                             color: '#E07033'},
+          {id: 'transport',                    column: 2, label: 'transport',                         color: '#8B0000'},
+          {id: 'distribution_losses',          column: 2, label: 'distribution_losses',               color: '#DCDCDC'},
+          {id: 'storage_losses',               column: 2, label: 'storage_losses',                    color: '#DCDCDC'},
+          {id: 'unused_heat',                  column: 2, label: 'unused_heat',                       color: '#c70000'}
+        ]
+        links: [
+          {left: 'coal_and_derivatives',         right: 'ht_network',           gquery: 'coal_and_derivatives_to_ht_network_in_sankey_heat_networks',         color: '#252525'},
+          {left: 'natural_gas_and_derivatives',  right: 'ht_network',           gquery: 'natural_gas_and_derivatives_to_ht_network_in_sankey_heat_networks',  color: '#7f7f7f'},
+          {left: 'crude_oil_and_derivatives',    right: 'ht_network',           gquery: 'crude_oil_and_derivatives_to_ht_network_in_sankey_heat_networks',    color: '#8c564b'},
+          {left: 'electricity',                  right: 'ht_network',           gquery: 'electricity_to_ht_network_in_sankey_heat_networks',                  color: '#1f77b4'},
+          {left: 'hydrogen',                     right: 'ht_network',           gquery: 'hydrogen_to_ht_network_in_sankey_heat_networks',                     color: '#87cfeb'},
+          {left: 'ammonia',                      right: 'ht_network',           gquery: 'ammonia_to_ht_network_in_sankey_heat_networks',                      color: '#00dba1'},
+          {left: 'biomass_products',             right: 'ht_network',           gquery: 'biomass_products_to_ht_network_in_sankey_heat_networks',             color: '#2ca02c'},
+          {left: 'non_biogenic_waste',           right: 'ht_network',           gquery: 'non_biogenic_waste_to_ht_network_in_sankey_heat_networks',           color: '#BA7D40'},
+          {left: 'solar_thermal',                right: 'ht_network',           gquery: 'solar_thermal_to_ht_network_in_sankey_heat_networks',                color: '#ffcc00'},
+          {left: 'geothermal',                   right: 'ht_network',           gquery: 'geothermal_to_ht_network_in_sankey_heat_networks',                   color: '#FF8400'},
+          {left: 'ambient_heat',                 right: 'ht_network',           gquery: 'ambient_heat_to_ht_network_in_sankey_heat_networks',                 color: '#ADDE4C'},
+          {left: 'imported_heat',                right: 'ht_network',           gquery: 'imported_heat_to_ht_network_in_sankey_heat_networks',                color: '#e61919'},
+          {left: 'residual_heat',                right: 'ht_network',           gquery: 'residual_heat_to_ht_network_in_sankey_heat_networks',                color: '#00008B'},
+
+          {left: 'coal_and_derivatives',         right: 'mt_network',           gquery: 'coal_and_derivatives_to_mt_network_in_sankey_heat_networks',         color: '#252525'},
+          {left: 'natural_gas_and_derivatives',  right: 'mt_network',           gquery: 'natural_gas_and_derivatives_to_mt_network_in_sankey_heat_networks',  color: '#7f7f7f'},
+          {left: 'crude_oil_and_derivatives',    right: 'mt_network',           gquery: 'crude_oil_and_derivatives_to_mt_network_in_sankey_heat_networks',    color: '#8c564b'},
+          {left: 'electricity',                  right: 'mt_network',           gquery: 'electricity_to_mt_network_in_sankey_heat_networks',                  color: '#1f77b4'},
+          {left: 'hydrogen',                     right: 'mt_network',           gquery: 'hydrogen_to_mt_network_in_sankey_heat_networks',                     color: '#87cfeb'},
+          {left: 'ammonia',                      right: 'mt_network',           gquery: 'ammonia_to_mt_network_in_sankey_heat_networks',                      color: '#00dba1'},
+          {left: 'biomass_products',             right: 'mt_network',           gquery: 'biomass_products_to_mt_network_in_sankey_heat_networks',             color: '#2ca02c'},
+          {left: 'non_biogenic_waste',           right: 'mt_network',           gquery: 'non_biogenic_waste_to_mt_network_in_sankey_heat_networks',           color: '#BA7D40'},
+          {left: 'solar_thermal',                right: 'mt_network',           gquery: 'solar_thermal_to_mt_network_in_sankey_heat_networks',                color: '#ffcc00'},
+          {left: 'geothermal',                   right: 'mt_network',           gquery: 'geothermal_to_mt_network_in_sankey_heat_networks',                   color: '#FF8400'},
+          {left: 'ambient_heat',                 right: 'mt_network',           gquery: 'ambient_heat_to_mt_network_in_sankey_heat_networks',                 color: '#ADDE4C'},
+          {left: 'imported_heat',                right: 'mt_network',           gquery: 'imported_heat_to_mt_network_in_sankey_heat_networks',                color: '#e61919'},
+          {left: 'residual_heat',                right: 'mt_network',           gquery: 'residual_heat_to_mt_network_in_sankey_heat_networks',                color: '#00008B'},
+
+          {left: 'coal_and_derivatives',         right: 'lt_network',           gquery: 'coal_and_derivatives_to_lt_network_in_sankey_heat_networks',         color: '#252525'},
+          {left: 'natural_gas_and_derivatives',  right: 'lt_network',           gquery: 'natural_gas_and_derivatives_to_lt_network_in_sankey_heat_networks',  color: '#7f7f7f'},
+          {left: 'crude_oil_and_derivatives',    right: 'lt_network',           gquery: 'crude_oil_and_derivatives_to_lt_network_in_sankey_heat_networks',    color: '#8c564b'},
+          {left: 'electricity',                  right: 'lt_network',           gquery: 'electricity_to_lt_network_in_sankey_heat_networks',                  color: '#1f77b4'},
+          {left: 'hydrogen',                     right: 'lt_network',           gquery: 'hydrogen_to_lt_network_in_sankey_heat_networks',                     color: '#87cfeb'},
+          {left: 'ammonia',                      right: 'lt_network',           gquery: 'ammonia_to_lt_network_in_sankey_heat_networks',                      color: '#00dba1'},
+          {left: 'biomass_products',             right: 'lt_network',           gquery: 'biomass_products_to_lt_network_in_sankey_heat_networks',             color: '#2ca02c'},
+          {left: 'non_biogenic_waste',           right: 'lt_network',           gquery: 'non_biogenic_waste_to_lt_network_in_sankey_heat_networks',           color: '#BA7D40'},
+          {left: 'solar_thermal',                right: 'lt_network',           gquery: 'solar_thermal_to_lt_network_in_sankey_heat_networks',                color: '#ffcc00'},
+          {left: 'geothermal',                   right: 'lt_network',           gquery: 'geothermal_to_lt_network_in_sankey_heat_networks',                   color: '#FF8400'},
+          {left: 'ambient_heat',                 right: 'lt_network',           gquery: 'ambient_heat_to_lt_network_in_sankey_heat_networks',                 color: '#ADDE4C'},
+          {left: 'imported_heat',                right: 'lt_network',           gquery: 'imported_heat_to_lt_network_in_sankey_heat_networks',                color: '#e61919'},
+          {left: 'residual_heat',                right: 'lt_network',           gquery: 'residual_heat_to_lt_network_in_sankey_heat_networks',                color: '#00008B'},
+
+          {left: 'ht_network',                   right: 'agriculture',          gquery: 'ht_network_to_final_demand_agriculture_in_sankey_heat_networks',     color: '#785EF0'},
+          {left: 'ht_network',                   right: 'buildings',            gquery: 'ht_network_to_final_demand_buildings_in_sankey_heat_networks',       color: '#785EF0'},
+          {left: 'ht_network',                   right: 'bunkers',              gquery: 'ht_network_to_final_demand_bunkers_in_sankey_heat_networks',         color: '#785EF0'},
+          {left: 'ht_network',                   right: 'energy',               gquery: 'ht_network_to_final_demand_energy_in_sankey_heat_networks',          color: '#785EF0'},
+          {left: 'ht_network',                   right: 'households',           gquery: 'ht_network_to_final_demand_households_in_sankey_heat_networks',      color: '#785EF0'},
+          {left: 'ht_network',                   right: 'industry',             gquery: 'ht_network_to_final_demand_industry_in_sankey_heat_networks',        color: '#785EF0'},
+          {left: 'ht_network',                   right: 'other',                gquery: 'ht_network_to_final_demand_other_in_sankey_heat_networks',           color: '#785EF0'},
+          {left: 'ht_network',                   right: 'transport',            gquery: 'ht_network_to_final_demand_transport_in_sankey_heat_networks',       color: '#785EF0'},
+          {left: 'ht_network',                   right: 'distribution_losses',  gquery: 'ht_network_to_distribution_losses_in_sankey_heat_networks',          color: '#785EF0'},
+          {left: 'ht_network',                   right: 'storage_losses',       gquery: 'ht_network_to_storage_losses_in_sankey_heat_networks',               color: '#785EF0'},
+          {left: 'ht_network',                   right: 'unused_heat',          gquery: 'ht_network_to_unused_heat_in_sankey_heat_networks',                  color: '#785EF0'},
+
+          {left: 'mt_network',                   right: 'agriculture',          gquery: 'mt_network_to_final_demand_agriculture_in_sankey_heat_networks',     color: '#DC267F'},
+          {left: 'mt_network',                   right: 'buildings',            gquery: 'mt_network_to_final_demand_buildings_in_sankey_heat_networks',       color: '#DC267F'},
+          {left: 'mt_network',                   right: 'bunkers',              gquery: 'mt_network_to_final_demand_bunkers_in_sankey_heat_networks',         color: '#DC267F'},
+          {left: 'mt_network',                   right: 'energy',               gquery: 'mt_network_to_final_demand_energy_in_sankey_heat_networks',          color: '#DC267F'},
+          {left: 'mt_network',                   right: 'households',           gquery: 'mt_network_to_final_demand_households_in_sankey_heat_networks',      color: '#DC267F'},
+          {left: 'mt_network',                   right: 'industry',             gquery: 'mt_network_to_final_demand_industry_in_sankey_heat_networks',        color: '#DC267F'},
+          {left: 'mt_network',                   right: 'other',                gquery: 'mt_network_to_final_demand_other_in_sankey_heat_networks',           color: '#DC267F'},
+          {left: 'mt_network',                   right: 'transport',            gquery: 'mt_network_to_final_demand_transport_in_sankey_heat_networks',       color: '#DC267F'},
+          {left: 'mt_network',                   right: 'distribution_losses',  gquery: 'mt_network_to_distribution_losses_in_sankey_heat_networks',          color: '#DC267F'},
+          {left: 'mt_network',                   right: 'storage_losses',       gquery: 'mt_network_to_storage_losses_in_sankey_heat_networks',               color: '#DC267F'},
+          {left: 'mt_network',                   right: 'unused_heat',          gquery: 'mt_network_to_unused_heat_in_sankey_heat_networks',                  color: '#DC267F'},
+
+          {left: 'lt_network',                   right: 'agriculture',          gquery: 'lt_network_to_final_demand_agriculture_in_sankey_heat_networks',     color: '#FFB000'},
+          {left: 'lt_network',                   right: 'buildings',            gquery: 'lt_network_to_final_demand_buildings_in_sankey_heat_networks',       color: '#FFB000'},
+          {left: 'lt_network',                   right: 'bunkers',              gquery: 'lt_network_to_final_demand_bunkers_in_sankey_heat_networks',         color: '#FFB000'},
+          {left: 'lt_network',                   right: 'energy',               gquery: 'lt_network_to_final_demand_energy_in_sankey_heat_networks',          color: '#FFB000'},
+          {left: 'lt_network',                   right: 'households',           gquery: 'lt_network_to_final_demand_households_in_sankey_heat_networks',      color: '#FFB000'},
+          {left: 'lt_network',                   right: 'industry',             gquery: 'lt_network_to_final_demand_industry_in_sankey_heat_networks',        color: '#FFB000'},
+          {left: 'lt_network',                   right: 'other',                gquery: 'lt_network_to_final_demand_other_in_sankey_heat_networks',           color: '#FFB000'},
+          {left: 'lt_network',                   right: 'transport',            gquery: 'lt_network_to_final_demand_transport_in_sankey_heat_networks',       color: '#FFB000'},
+          {left: 'lt_network',                   right: 'distribution_losses',  gquery: 'lt_network_to_distribution_losses_in_sankey_heat_networks',          color: '#FFB000'},
+          {left: 'lt_network',                   right: 'storage_losses',       gquery: 'lt_network_to_storage_losses_in_sankey_heat_networks',               color: '#FFB000'},
+          {left: 'lt_network',                   right: 'unused_heat',          gquery: 'lt_network_to_unused_heat_in_sankey_heat_networks',                  color: '#FFB000'}
+        ]
     biomass_sankey:
       data:
         nodes: [
@@ -628,7 +738,7 @@ D3.sankey =
       return @__horizontal_spacing if @__horizontal_spacing?
       cols = @view.number_of_columns()
       # this should leave enough room for the node labels
-      @__horizontal_spacing = (@view.width - (25 * cols)) / (cols - 1)
+      @__horizontal_spacing = (@view.width - (7 * cols)) / (cols - 1)
       @__horizontal_spacing
 
     # vertical position of the top left corner of the node. Adds some margin
@@ -643,10 +753,31 @@ D3.sankey =
         offset += n.value() + (if n.should_show() then margin else 0)
       offset
 
-    x_offset: => @get('column') * (@width + @horizontal_spacing())
+    x_offset: =>
+      return @get('column') * (@width + @horizontal_spacing()) if !@is_last_column()
+
+      # If it's the last column we right align
+      @view.width
+
+    x_offset_label: =>
+      return @x_offset() if !@is_last_column()
+
+      # If it's the last column we right align
+      @view.width - 10 - @width
 
     # center point of the node. We use it as link anchor point
     x_center: => @x_offset() + @width / 2
+
+    is_last_column: =>
+      return @__is_last_column if @__is_last_column?
+      @__is_last_column = (@get('column') + 1) == @view.number_of_columns()
+      @__is_last_column
+
+    label_classes: =>
+      return "label" if !@is_last_column()
+
+      # If it's the last column we right align
+      "label last-label"
 
     # The height of the node is the sum of the height of its link. Since links
     # are both inbound and outbound, let's use the max size. Ideally the values
@@ -853,8 +984,8 @@ D3.sankey =
         .attr("height", (d) => @y d.value())
 
       nodes.append("svg:text")
-        .attr("class", "label")
-        .attr("x", (d) => d.x_offset())
+        .attr("class", (d) => d.label_classes())
+        .attr("x", (d) => d.x_offset_label())
         .attr("dx", 10)
         .attr("dy", 3)
         .attr("y", (d) => @y(d.y_offset() + d.value() / 2) )

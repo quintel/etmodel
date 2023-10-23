@@ -94,14 +94,14 @@ en:
     supply_ccus_steel_coal_gas:
       title: Coal gas plants
       description: |
-        Coal gases are a side product from steel production, that are only present in your scenario 
-        if steel is produced through the blast furnace production route. If you want to reduce the 
-        production of coal gases altogether, you can switch to a different steel production process 
+        Coal gases are a side product from steel production, that are only present in your scenario
+        if steel is produced through the blast furnace production route. If you want to reduce the
+        production of coal gases altogether, you can switch to a different steel production process
         in the <a href="/scenario/demand/industry/steel">steel sector</a>. </br></br>
-        Part of these gases are used in the steel-making process itself. The remainder is 
-        typically used in CHPs and power plants for electricity and heat production. Due to 
-        the high carbon content of coal gases, this is very CO<sub>2</sub>-intensive. An alternative 
-        use for these coal gases is to transform them into feedstock for the chemical industry 
+        Part of these gases are used in the steel-making process itself. The remainder is
+        typically used in CHPs and power plants for electricity and heat production. Due to
+        the high carbon content of coal gases, this is very CO<sub>2</sub>-intensive. An alternative
+        use for these coal gases is to transform them into feedstock for the chemical industry
         (steel-to-chemicals). </br></br>
         With the sliders below you can specify which share of the coal gases is used for electricity
         and heat generation and which share is transformed into feedstock.
@@ -147,14 +147,14 @@ en:
       title: Nuclear plants
       short_description: ''
       description: |
-        Here you can set the capacity for large 2nd and 3rd generation nuclear plants 
-        and for small modular reactors. The ETM does not include any CO<sub>2</sub> 
+        Here you can set the capacity for large 2nd and 3rd generation nuclear plants
+        and for small modular reactors. The ETM does not include any CO<sub>2</sub>
         emissions for nuclear power plants. </br></br>
-        By default all nuclear power plants are run as dispatchable producers. Due to 
+        By default all nuclear power plants are run as dispatchable producers. Due to
         their high captial costs and low operating costs, large reactors tend to run as
-        much as possible. You therefore also have the option to model the <b>large reactors</b> as 
-        <a href="https://docs.energytransitionmodel.com/main/merit-order#producers" target=\"_blank\"> 'must-run'</a> 
-        power plants by switching the toggle. This means that they will run with a 
+        much as possible. You therefore also have the option to model the <b>large reactors</b> as
+        <a href="https://docs.energytransitionmodel.com/main/merit-order#producers" target=\"_blank\"> 'must-run'</a>
+        power plants by switching the toggle. This means that they will run with a
         flat production profile, independent of demand. This does not affect the <b>small reactors</b>.
     supply_electricity_oil_plants:
       title: Oil plants
@@ -242,17 +242,193 @@ en:
       short_description:
       description:
     supply_heat_network_industry:
-      title: Heat network sources
+      title: Steam network sources
       short_description:
-      description: 'Below you can set the type of heat sources for the industrial heat network.
+      description: |
+        Below you can set the type of heat sources for the industrial steam network.
         If the total production does not cover total demand, a gas heater switches on automatically
-        to compensate the heat shortage.'
+        to compensate the heat shortage.
     supply_heat_combined_heat_power:
       title: Combined heat & power
       short_description:
       description:
-    supply_heat_sources:
-      title: Heat sources
+    supply_heat_overview:
+      title: Overview district heating
+      short_description:
+      description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
+        >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
+        and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
+        are roughly two types of heat sources: dispatchable and must-run heat sources.
+        Dispatchable heat sources can be switched on/off depending on the heat demand
+        at that time, while must-run heat sources supply the heat network regardless
+        of heat demand. For the second type in particular <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seasonal) storage of heat</a> is an interesting option.\r\n<br /><br />\r\nBelow
+        you can find several technologies for both types of heat sources. The chart
+        on the right shows whether demand and supply add up. In addition, it is possible
+        to use residual heat from (large-scale) power plants in the power sector.
+        This can be done in the 'Electricity' and 'Renewable Electricity' side bar
+        items for the following power plants: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Waste incineration</a>. It is also possible to convert electricity
+        into heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
+        in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentation</a>."
+    supply_heat_overview_chp:
+      title: Allocation of heat from CHPs
+      short_description:
+      description: "Some heat sources can provide heat to heat networks of different temperature levels.
+      \r\n<br /><br />\r\n
+      Below you can set the relative allocation of heat from CHP's to both high and medium temperature heat networks."
+    supply_heat_overview_residual:
+      title: Allocation of residual heat
+      short_description:
+      description: |
+        Some sectors of industry can provide residual heat to high-temperature heat networks. <br/><br/>
+        Below you can set the percentage of residual heat that each available sector provides to high-temperature heat networks.
+    supply_heat_overview_p2h:
+      title: Allocation of power-to-heat
+      short_description:
+      description: "Some heat sources can provide heat to heat networks of different temperature levels.
+      \r\n<br /><br />\r\n
+      Below you can set the relative allocation of power-to-heat sources to both high and medium temperature heat networks."
+    supply_heat_overview_emissions:
+      title: CO<sub>2</sub> emission of imported heat
+      short_description:
+      description: "Below, you can set the CO<sub>2</sub>-emissions associated with imported heat."
+    supply_heat_transport_lt:
+      title: Transport and distribution losses
+      short_description:
+      description: "In a district heating network, heat is generated in a centralised
+        location and subsequently distributed to residential and commercial facilities
+        via a network of insulated pipes. This transportation of heat leads to energy
+        losses which can range from 10-15% in modern district heating networks to
+        30% or even higher in older networks. \r\n<br /><br />\r\nBelow you change
+        the distribution losses in your scenario."
+    supply_heat_transport_mt:
+      title: Transport and distribution losses
+      short_description:
+      description: "In a district heating network, heat is generated in a centralised
+        location and subsequently distributed to residential and commercial facilities
+        via a network of insulated pipes. This transportation of heat leads to energy
+        losses which can range from 10-15% in modern district heating networks to
+        30% or even higher in older networks. \r\n<br /><br />\r\nBelow you change
+        the distribution losses in your scenario."
+    supply_heat_transport_ht:
+      title: Transport and distribution losses
+      short_description:
+      description: "In a district heating network, heat is generated in a centralised
+        location and subsequently distributed to residential and commercial facilities
+        via a network of insulated pipes. This transportation of heat leads to energy
+        losses which can range from 10-15% in modern district heating networks to
+        30% or even higher in older networks. \r\n<br /><br />\r\nBelow you change
+        the distribution losses in your scenario."
+    supply_heat_network_order_lt:
+      title: Merit order of dispatchable heat sources
+      short_description:
+      description: "The ETM makes a distinction between 'must-run' / volatile heat
+        sources (such as geothermal, solar thermal and residual heat) and dispatchable
+        heat sources. In contrast to the first category, dispatchable heat sources
+        can be turned on or off at will. The ETM calculates for every hour per year
+        how much heat from must-run and volatile sources is available. If heat demand
+        exceeds this supply in a given hour, dispatchable heat sources will be switched
+        on to ensure that no deficit occurs.\r\n<br /><br />\r\nBelow it is possible
+        to change the (merit) order of dispatchable heat sources: which heat source
+        is switched on first in case of a heat deficit? The chart to the right shows
+        the marginal costs of each dispatchable source."
+    supply_heat_network_order_mt:
+      title: Merit order of dispatchable heat sources
+      short_description:
+      description: "The ETM makes a distinction between 'must-run' / volatile heat
+        sources (such as geothermal, solar thermal and residual heat) and dispatchable
+        heat sources. In contrast to the first category, dispatchable heat sources
+        can be turned on or off at will. The ETM calculates for every hour per year
+        how much heat from must-run and volatile sources is available. If heat demand
+        exceeds this supply in a given hour, dispatchable heat sources will be switched
+        on to ensure that no deficit occurs.\r\n<br /><br />\r\nBelow it is possible
+        to change the (merit) order of dispatchable heat sources: which heat source
+        is switched on first in case of a heat deficit? The chart to the right shows
+        the marginal costs of each dispatchable source."
+    supply_heat_network_order_ht:
+      title: Merit order of dispatchable heat sources
+      short_description:
+      description: "The ETM makes a distinction between 'must-run' / volatile heat
+        sources (such as geothermal, solar thermal and residual heat) and dispatchable
+        heat sources. In contrast to the first category, dispatchable heat sources
+        can be turned on or off at will. The ETM calculates for every hour per year
+        how much heat from must-run and volatile sources is available. If heat demand
+        exceeds this supply in a given hour, dispatchable heat sources will be switched
+        on to ensure that no deficit occurs.\r\n<br /><br />\r\nBelow it is possible
+        to change the (merit) order of dispatchable heat sources: which heat source
+        is switched on first in case of a heat deficit? The chart to the right shows
+        the marginal costs of each dispatchable source."
+    supply_heat_storage_lt:
+      title: "(Seasonal) storage of heat"
+      short_description:
+      description: "Scenarios with large amounts of \"must-run\" and volatile heat
+        sources will often\r\nhave considerable heat production during hours of low
+        demand. (Seasonal) storage allows you to preserve\r\nthis heat for later use,
+        reducing the amount of dispatchable capacity (such as back-up heaters) required
+        to meet demand. \r\n</br></br>\r\nIf you decide to switch the toggle below
+        to 'On', the ETM will add heat storage to your scenario. This ensures that
+        all excess heat production is saved and can be used in a later moment. The
+        chart to the right shows you storage in and outflows for every hour of the
+        year.\r\n<br /><br />\r\nCaution: If you install too much must-run or volatile
+        capacity in your scenario you may end up with a heat surplus in the storage
+        at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
+        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
+        >installed capacity of must-runs / volatile heat sources</a>, increasing district
+        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
+        losses can be updated with the slider below the toggle. The costs for storage
+        can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >costs section</a>."
+    supply_heat_storage_ht:
+      title: "(Seasonal) storage of heat"
+      short_description:
+      description: "Scenarios with large amounts of \"must-run\" and volatile heat
+        sources will often\r\nhave considerable heat production during hours of low
+        demand. (Seasonal) storage allows you to preserve\r\nthis heat for later use,
+        reducing the amount of dispatchable capacity (such as back-up heaters) required
+        to meet demand. \r\n</br></br>\r\nIf you decide to switch the toggle below
+        to 'On', the ETM will add heat storage to your scenario. This ensures that
+        all excess heat production is saved and can be used in a later moment. The
+        chart to the right shows you storage in and outflows for every hour of the
+        year.\r\n<br /><br />\r\nCaution: If you install too much must-run or volatile
+        capacity in your scenario you may end up with a heat surplus in the storage
+        at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
+        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
+        >installed capacity of must-runs / volatile heat sources</a>, increasing district
+        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
+        losses can be updated with the slider below the toggle. The costs for storage
+        can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >costs section</a>."
+    supply_heat_storage_mt:
+      title: "(Seasonal) storage of heat"
+      short_description:
+      description: "Scenarios with large amounts of \"must-run\" and volatile heat
+        sources will often\r\nhave considerable heat production during hours of low
+        demand. (Seasonal) storage allows you to preserve\r\nthis heat for later use,
+        reducing the amount of dispatchable capacity (such as back-up heaters) required
+        to meet demand. \r\n</br></br>\r\nIf you decide to switch the toggle below
+        to 'On', the ETM will add heat storage to your scenario. This ensures that
+        all excess heat production is saved and can be used in a later moment. The
+        chart to the right shows you storage in and outflows for every hour of the
+        year.\r\n<br /><br />\r\nCaution: If you install too much must-run or volatile
+        capacity in your scenario you may end up with a heat surplus in the storage
+        at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
+        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
+        >installed capacity of must-runs / volatile heat sources</a>, increasing district
+        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
+        losses can be updated with the slider below the toggle. The costs for storage
+        can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
+        >costs section</a>."
+    supply_heat_sources_ht:
+      title: "Sources"
       short_description:
       description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
         >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
@@ -275,49 +451,54 @@ en:
         >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
         in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
         target =\"_blank\">documentation</a>."
-    supply_heat_network_losses:
-      title: Transport and distribution losses
+    supply_heat_sources_lt:
+      title: "Sources"
       short_description:
-      description: "In a district heating network, heat is generated in a centralised
-        location and subsequently distributed to residential and commercial facilities
-        via a network of insulated pipes. This transportation of heat leads to energy
-        losses which can range from 10-15% in modern district heating networks to
-        30% or even higher in older networks. \r\n<br /><br />\r\nBelow you change
-        the distribution losses in your scenario."
-    supply_heat_network_order:
-      title: Priority of dispatchable heat producers
+      description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
+        >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
+        and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
+        are roughly two types of heat sources: dispatchable and must-run heat sources.
+        Dispatchable heat sources can be switched on/ off depending on the heat demand
+        at that time, while must-run heat sources supply the heat network regardless
+        of heat demand. For the second type in particular <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seasonal) storage of heat</a> is an interesting option.\r\n<br /><br />\r\nBelow
+        you can find several technologies for both types of heat sources. The chart
+        on the right shows whether demand and supply add up. In addition, it is possible
+        to use residual heat from (large-scale) power plants in the power sector.
+        This can be done in the 'Electricity' and 'Renewable Electricity' side bar
+        items for the following power plants: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Waste incineration</a>. It is also possible to convert electricity
+        into heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
+        in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentation</a>."
+    supply_heat_sources_mt:
+      title: "Sources"
       short_description:
-      description: "The ETM makes a distinction between 'must-run' / volatile heat
-        sources (such as geothermal, solar thermal and residual heat) and dispatchable
-        heat sources. In contrast to the first category, dispatchable heat sources
-        can be turned on or off at will. The ETM calculates for every hour per year
-        how much heat from must-run and volatile sources is available. If heat demand
-        exceeds this supply in a given hour, dispatchable heat sources will be switched
-        on to ensure that no deficit occurs.\r\n<br /><br />\r\nBelow it is possible
-        to change the (merit) order of dispatchable heat sources: which heat source
-        is switched on first in case of a heat deficit? The chart to the right shows
-        the marginal costs of each dispatchable source."
-    supply_heat_network_storage_toggle:
-      title: "(Seasonal) storage of heat"
-      short_description:
-      description: "Scenarios with large amounts of \"must-run\" and volatile heat
-        sources will often\r\nhave considerable heat production during hours of low
-        demand. (Seasonal) storage allows you to preserve\r\nthis heat for later use,
-        reducing the amount of dispatchable capacity (such as back-up heaters) required
-        to meet demand. \r\n</br></br>\r\nIf you decide to switch the toggle below
-        to 'On', the ETM will add heat storage to your scenario. This ensures that
-        all excess heat production is saved and can be used in a later moment. The
-        chart to the right shows you storage in and outflows for every hour of the
-        year.\r\n<br /><br />\r\nCaution: If you install too much must-run or volatile
-        capacity in your scenario you may end up with a heat surplus in the storage
-        at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
-        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
-        >installed capacity of must-runs / volatile heat sources</a>, increasing district
-        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
-        >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
-        losses can be updated with the slider below the toggle. The costs for storage
-        can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
-        >costs section</a>."
+      description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
+        >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
+        and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
+        are roughly two types of heat sources: dispatchable and must-run heat sources.
+        Dispatchable heat sources can be switched on/ off depending on the heat demand
+        at that time, while must-run heat sources supply the heat network regardless
+        of heat demand. For the second type in particular <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
+        >(seasonal) storage of heat</a> is an interesting option.\r\n<br /><br />\r\nBelow
+        you can find several technologies for both types of heat sources. The chart
+        on the right shows whether demand and supply add up. In addition, it is possible
+        to use residual heat from (large-scale) power plants in the power sector.
+        This can be done in the 'Electricity' and 'Renewable Electricity' side bar
+        items for the following power plants: <a href=\"/scenario/supply/electricity/gas-plants\"
+        >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
+        >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
+        >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        >Waste incineration</a>. It is also possible to convert electricity
+        into heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
+        >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
+        in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
+        target =\"_blank\">documentation</a>."
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:
@@ -327,13 +508,13 @@ en:
         as a feedstock for the chemical industry. The ETM allows you to explore a
         future hydrogen economy by allowing you to use hydrogen for:
         <ul>
-        <li><a href=/scenario/supply/electricity_renewable/hydrogen-plants >electricity production</a></li> 
+        <li><a href=/scenario/supply/electricity_renewable/hydrogen-plants >electricity production</a></li>
         <li><a href=/scenario/supply/heat/heat-sources>district heating</a> for households, buildings and agriculture</li>
         <li><a href=/scenario/demand/households/space-heating-and-hot-water>hybrid heat pumps in households</a></li>
         <li>heat production in <a href=/scenario/demand/industry/refineries>industry</a> and <a href=/scenario/demand/agriculture/heat>agriculture</a></li>
-        <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a> (as feedstock)</li> 
+        <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a> (as feedstock)</li>
         <li> national transport (<a href=/scenario/demand/transport_passenger_transport/car-technology>cars</a>,
-        <a href=/scenario/demand/transport_passenger_transport/bus-technology>busses</a>, 
+        <a href=/scenario/demand/transport_passenger_transport/bus-technology>busses</a>,
         <a href=/scenario/demand/transport_freight_transport/truck-technology>trucks</a>
         and <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>inland ships</a>)</li>
         <li> international transport (<a href=/scenario/demand/transport_international_transport/international-navigation-technology>maritime ships</a>)</li>
@@ -384,17 +565,17 @@ en:
       title: Ammonia production
       short_description:
       description: |
-        Ammonia as an energy carrier has advantageous transport and storage properties and can be produced 
-        without generating carbon emissions. This makes it a potentially effective carrier to 
-        facilitate global transport of large (renewable) energy volumes. You can determine 
+        Ammonia as an energy carrier has advantageous transport and storage properties and can be produced
+        without generating carbon emissions. This makes it a potentially effective carrier to
+        facilitate global transport of large (renewable) energy volumes. You can determine
         how much ammonia you want to import in your scenario with the slider below. </br></br>
         Ammonia can then be converted into hydrogen through
         <a href="/scenario/supply/hydrogen/hydrogen-production"> ammonia reforming</a>.
         You can however also use ammonia directly as a transport fuel (for both
         <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology">domestic</a> and
-        <a href="/scenario/demand/transport_international_transport/international-navigation-technology">international</a> 
-        navigation). Currently virtually all ammonia is produced on-site 
-        in the <a href="/scenario/demand/industry/fertilizers">fertilizer industry</a>. This local 
+        <a href="/scenario/demand/transport_international_transport/international-navigation-technology">international</a>
+        navigation). Currently virtually all ammonia is produced on-site
+        in the <a href="/scenario/demand/industry/fertilizers">fertilizer industry</a>. This local
         production can also be replaced by centralized import.
     supply_hydrogen_co2_import:
       title: CO<sub>2</sub> emissions of imported hydrogen
@@ -416,16 +597,16 @@ en:
       title: CO<sub>2</sub> emissions of imported ammonia
       short_description:
       description: |
-        The production and distribution of imported ammonia may have caused CO<sub>2</sub> 
-        emissions in the region that the ammonia is imported from. How much of these emissions 
+        The production and distribution of imported ammonia may have caused CO<sub>2</sub>
+        emissions in the region that the ammonia is imported from. How much of these emissions
         do you want to attribute to your region? </br></br>
-        Shipping of liquified green ammonia (and then reforming it to hydrogen) is seen as 
-        a more practical option for importing large amounts of green hydrogen than transporting 
-        the hydrogen directly. By default, the emissions of imported ammonia are set equal to the 
-        emissions of ammonia produced using steam methane reforming, because this currently is the 
-        dominant production route. If you expect to import mostly green ammonia, you can change the 
+        Shipping of liquified green ammonia (and then reforming it to hydrogen) is seen as
+        a more practical option for importing large amounts of green hydrogen than transporting
+        the hydrogen directly. By default, the emissions of imported ammonia are set equal to the
+        emissions of ammonia produced using steam methane reforming, because this currently is the
+        dominant production route. If you expect to import mostly green ammonia, you can change the
         emissions yourself below. Click on the '?' for some reference values. </br></br>
-        The costs related to this imported ammonia can be set in the 
+        The costs related to this imported ammonia can be set in the
         <a href=/scenario/costs/costs_hydrogen/ammonia-import
         >Costs & efficiencies</a> section.
     supply_infrastructure_high_voltage_network:
@@ -497,8 +678,8 @@ en:
       short_description:
       description: "Will bio-kerosene contribute more to the aviation fuels mix in
         the future? You can choose your blend of kerosene here. \r\n</br></br>\r\n
-        Kerosene can also be produced synthetically, with captured CO<sub>2</sub>, 
-        hydrogen, and electricity. This option can be chosen in the 
+        Kerosene can also be produced synthetically, with captured CO<sub>2</sub>,
+        hydrogen, and electricity. This option can be chosen in the
         <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
         > CCUS section</a>. "
     supply_transport_international_shipping:
@@ -515,7 +696,7 @@ en:
       description: |
         Which fuels will be used to power ships with diesel engines and ships with LNG engines?
         In the <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
-        >domestic navigation</a> section you can determine the share of these engines in the total 
+        >domestic navigation</a> section you can determine the share of these engines in the total
         freight transport by inland shipping.
     supply_transport_public_transport_technologies:
       title: Public transport fuels
@@ -527,10 +708,10 @@ en:
       description: |
         How much of the fuels used in road transport will come from renewable
         sources? Do consider the impact on land (and sea) use for growing the required
-        crops. By changing the road transport technologies in the 
-        <a href="/scenario/demand/transport_passenger_transport/car-technology">passenger</a> 
-        and <a href="/scenario/demand/transport_freight_transport/truck-technology">freight</a> 
-        transport section, you can determine which engines, and therefore which transport fuels 
+        crops. By changing the road transport technologies in the
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">passenger</a>
+        and <a href="/scenario/demand/transport_freight_transport/truck-technology">freight</a>
+        transport section, you can determine which engines, and therefore which transport fuels
         are used.
     supply_transport_trains:
       title: Rail transport

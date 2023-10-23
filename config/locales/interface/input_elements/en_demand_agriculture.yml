@@ -52,14 +52,22 @@ en:
       short_description: ''
       description: These are gas-fired central heating systems. These systems are
         quite energy efficient, but emit CO<sub>2</sub>.
-    agriculture_final_demand_central_steam_hot_water_share:
-      title: District heating
+    agriculture_final_demand_ht_central_steam_hot_water_share:
+      title: HT district heating
       short_description: ''
       description: |
         This slider sets the share of useful heat demand from agriculture that is supplied 
-        by a heat network.
-        You can determine with which heat network sources you want to meet this demand in
-        the <a href="/scenario/supply/heat/heat-sources">District heating</a> section.
+        by a HT heat network.
+        You can determine with which HT heat network sources you want to meet this demand in
+        the <a href="/scenario/supply/heat_ht">HT district heating</a> section.
+    agriculture_final_demand_mt_central_steam_hot_water_share:
+      title: MT district heating
+      short_description: ''
+      description: |
+        This slider sets the share of useful heat demand from agriculture that is supplied 
+        by a MT heat network.
+        You can determine with which MT heat network sources you want to meet this demand in
+        the <a href="/scenario/supply/heat_mt">MT district heating</a> section.
     agriculture_final_demand_local_steam_hot_water_share:
       title: Heat from local CHPs
       short_description:

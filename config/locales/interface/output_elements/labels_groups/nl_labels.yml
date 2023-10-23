@@ -26,7 +26,9 @@ nl:
       network_gas_storage: "Er is geen gasvraag en/of -aanbod in je scenario"
       mekko_of_hydrogen_network: "Er is geen waterstofvraag en/of -aanbod in je scenario"
       use_of_excess_electricity: "Er is geen flexibele elektriciteitsvraag in je scenario"
-      heat_cost_capacity: "Er is geen collectieve warmtevraag en/of -aanbod in je scenario"
+      heat_cost_capacity_ht: "Er is geen collectieve HT-warmtevraag en/of -aanbod in je scenario"
+      heat_cost_capacity_mt: "Er is geen collectieve MT-warmtevraag en/of -aanbod in je scenario"
+      heat_cost_capacity_lt: "Er is geen collectieve LT-warmtevraag en/of -aanbod in je scenario"
       heat_demand: "Er is geen collectieve warmtevraag en/of -aanbod in je scenario"
       heat_supply: "Er is geen collectieve warmtevraag en/of -aanbod in je scenario"
       heat_network_storage: "Er is geen collectieve warmtevraag en/of -aanbod in je scenario"
@@ -90,7 +92,7 @@ nl:
       energy_heat_burner_waste_mix: "Afvalketel"
       energy_heat_burner_wood_pellets: "Biomassaketel"
       energy_heat_heatpump_water_water_electricity: "Collectieve warmtepomp"
-      energy_heat_boiler_electricity: "Electrische boiler"
+      energy_heat_boiler_electricity: "Elektrische boiler"
     hhp_cop_cost:
       x_axis: COP
       y_axis: "ct/MJ warmte"
@@ -135,14 +137,27 @@ nl:
       a_double: "Extra hernieuwbare opwek"
     import_export_flows: "Interconnectiecapaciteit"
     sankey_labels:
+      ambient_heat: "omgevingswarmte"
+      ammonia: "ammonia"
+      biomass_products: "biomassaproducten"
       captured: "afgevangen"
       coal: "kolen"
+      coal_and_derivatives: "kool en koolproducten"
+      crude_oil_and_derivatives: "olie en olieproducten"
       curtailment: "productiebeperking"
+      distribution_losses: "distributieverliezen"
+      ht_network: "HT-net"
+      mt_network: "MT-net"
+      lt_network: "LT-net"
       oil: "olie"
+      solar_thermal: "zonthermie"
+      storage_losses: "opslagverliezen"
       renewable: "hernieuwbaar"
       gas: "aardgas"
+      geothermal: "geothermie"
       hydrogen: "waterstof"
       uranium: "uranium"
+      unused_heat: "warmte-overschotten"
       biomass_waste: "biomassa & afval"
       biomass_waste_greengas: "biomassa, afval & groen gas"
       electricity_import: "elektriciteit import"
@@ -207,6 +222,7 @@ nl:
       losses: 'verliezen'
       electricity_demand: 'elektriciteitsvraag'
       heat_demand: 'warmtevraag'
+      residual_heat: "restwarmte"
       hydrogen_demand: 'waterstofvraag'
       hydrogen: "waterstof"
       other_renewables: "overig hernieuwbaar"

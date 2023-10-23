@@ -262,18 +262,32 @@ en:
       title: Liquefied in ships
       description: "What share of total captured CO<sub>2</sub> in your scenario is transported via ships?
         CO<sub>2</sub> is liquefied before transportation."
-    share_of_energy_chp_supercritical_ccs_waste_mix:
-      title: Waste CHP + CCS
+    share_of_energy_chp_supercritical_ccs_ht_waste_mix:
+      title: Waste CHP + CCS (HT)
       description: |
-        What share of installed waste CHP capacity will be equipped with a CO<sub>2</sub> capture
+        What share of installed Waste CHP capacity that produces for high-temperature (HT) district heating will be equipped with a CO<sub>2</sub> capture
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
         power plants in your scenario. This is influenced by electricity demand, other installed
-        power generation technologies and commodity prices.<br/><br/> The amount of installed waste CHP capacity can be set in
-        <a href="/scenario/supply/electricity_renewable/waste-power">the Supply → Electricity → Waste power section</a>.
+        power generation technologies and commodity prices. <br/><br/>
+        The total installed capacity can be set in the
+        <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.
+        The share of HT and MT heat can then be set in the
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
+    share_of_energy_chp_supercritical_ccs_mt_waste_mix:
+      title: Waste CHP + CCS (MT)
+      description: |
+        What share of installed Waste CHP capacity that produces for medium-temperature (MT) district heating will be equipped with a CO<sub>2</sub> capture
+        unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
+        power plants in your scenario. This is influenced by electricity demand, other installed
+        power generation technologies and commodity prices. <br/><br/>
+        The total installed capacity can be set in the
+        <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.
+        The share of HT and MT heat can then be set in the
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
     share_of_energy_power_supercritical_ccs_waste_mix:
       title: Waste incinerator + CCS
       description: |
         What share of installed waste incinarator capacity will be equipped with a CO<sub>2</sub> capture
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
         power plants in your scenario. This is influenced by electricity demand, other installed power generation technologies and commodity prices.<br/><br/> The amount of installed waste incicerator capacity can be set in
-        <a href="/scenario/supply/electricity_renewable/waste-power">the Supply → Electricity → Waste power section</a>.
+        <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.

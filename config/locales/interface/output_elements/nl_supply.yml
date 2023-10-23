@@ -304,3 +304,24 @@ nl:
         sectie. Directe elektrolyse van wind- en zonnestroom uit de 
         <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie is niet 
         meegenomen.
+    residual_heat_supply_potential:
+      title: Restwarmteproductie en -potentieel
+      short_description:
+      description: |
+        Deze grafiek vergelijkt de productie met het potentieel aan beschikbare restwarmte.
+        De restwarmteproductie per temperatuurniveau kun je instellen op de pagina van 
+        You can set the supply of residual heat for each temperature level
+        in the <a href="scenario/supply/heat/overview-district-heating"> Warmtenetten</a>.
+        Het restwarmtepotentieel wordt berekend op basis van de volgende sectoren: 
+        <ul>
+        <li><a href="scenario/demand/industry/refineries">Raffinaderijen</a> </li>
+        <li><a href="/scenario/demand/industry/fertilizers">Kunstmest</a> </li>
+        <li><a href="/scenario/demand/industry/chemicals">Chemie</a> </li>
+        <li><a href="/scenario/demand/industry/central-ict">Centrale ICT</a> </li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof via power-to-gas</a></li>
+        </ul>
+        De wijze waarop de restwarmtepotentiëlen berekend worden staat beschreven in 
+        de <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry/">documentatie</a>.
+        <br></br>
+        Let op: hoewel je de restwarmteproductie kunt instellen op een waarde hoger dan het restwarmtepotentieel,
+        moet de restwarmte in werkelijkheid wel door één of meerdere industrieën geleverd worden.

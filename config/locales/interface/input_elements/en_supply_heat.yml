@@ -640,6 +640,21 @@ en:
         To change the amount of emissions attributed to imported heat, 
         go to Supply > District heating > 
         <a href=\"/scenario/supply/biomass/potential-of-biomass\" >Emissions from heat import</a>."
+    volume_of_ht_residual_heat:
+      title: Residual heat
+      short description:
+      description: "Use this slider to adjust the amount of residual heat (PJ) provided by all industries
+      to high-temperature heat grids."
+    volume_of_mt_residual_heat:
+      title: Residual heat
+      short description:
+      description: "Use this slider to adjust the amount of residual heat (PJ) provided by all industries
+      to medium-temperature heat grids."
+    volume_of_lt_residual_heat:
+      title: Residual heat
+      short description:
+      description: "Use this slider to adjust the amount of residual heat (PJ) provided by all industries
+      to low-temperature heat grids."
     share_of_energy_chp_combined_cycle_ht_network_gas:
       title: High temperature
       short_description:
@@ -806,4 +821,21 @@ en:
         the willingness to pay. You can set these attributes in the 
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
         Conversion to district heating</a> section.
+    residual_heat_supply_potential:
+      title: Supply and potential of residual heat
+      short_description:
+      description: |
+        This chart compares the supply and potential of residual heat.
+        You can set the supply of residual heat for each temperature level
+        in the <a href="scenario/supply/heat/overview-district-heating"> District heating</a> section.
+        The residual heat potential is calculated based on the size of the following sectors: 
+        <ul>
+        <li><a href="scenario/demand/industry/refineries">Refineries</a> </li>
+        <li><a href="/scenario/demand/industry/fertilizers">Fertilizer production</a> </li>
+        <li><a href="/scenario/demand/industry/chemicals">Chemicals</a> </li>
+        <li><a href="/scenario/demand/industry/central-ict">Central ICT</a> </li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen via power-to-gas</a></li>
+        </ul>
+        Note that although you can set the supply of residual heat manually above the potentials shown, 
+        in reality the heat needs to be provided by some industry or another. 
 

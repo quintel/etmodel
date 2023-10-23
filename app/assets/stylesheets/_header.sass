@@ -424,7 +424,7 @@ header.main-header
   padding: 0.25rem 1rem
   white-space: nowrap
   &:hover
-    background-color: #498dd3
+    background-color: $landing-blue
     color: white !important
     cursor: pointer
     text-decoration: none
@@ -434,7 +434,7 @@ header.main-header
   &.inset
     padding-left: 2rem
   &.text:hover
-    background-color: #fff
+    background-color: inherit
     color: #444 !important
     cursor: default
   &.text
@@ -443,9 +443,7 @@ header.main-header
     color: $landing-blue !important
     text-decoration: underline
   &.external:hover
-    color: darken($landing-blue, 23%) !important
-    background-color: #fff
-    cursor: pointer
+    color: #fff !important
 
 button.dropdown-item
   background: none

@@ -272,44 +272,117 @@
 
       <p>
         District heating in your scenario can be used to heat houses and
-        buildings and provide heat to agricultural sectors. The
-        chart below shows the yearly balance of heat produced and consumed.
+        buildings and provide heat to agricultural sectors. There are three types of district heating networks: high-temperature (HT), medium-temperature (MT) and low temperature (LT).
+        
+        The Sankey diagram below shows:
+        <ul>
+            <li><strong>which sources</strong> deliver heat to the district heating networks (left column);</li>
+            <li><strong>which type</strong> of network the heat is delivered to (centre column), and</li>
+            <li><strong>which consumers</strong> use heat from each type of network (right column)</li>
+          </ul>
       </p>
 
-      {% chart collective_heat_mekko %}
+      {% chart sankey_heat_networks %}
          Demand and supply of district heating
       {% endchart %}
 
-      {% if future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko > 0.0 %}
-        <p>
-          There is
-          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'MJ'}}
-          excess heat produced in agriculture or industry which flows back into the central heat
-          network but is not used by other sectors.
-        </p>
+      {% if future.final_demand_of_ht_heat_total > 0.0 %}
+        {% if future.unused_heat_in_ht_heat_network > 0.0 %}
+          <p>
+            In the <strong>HT network</strong>, there is 
+            {{ future.ht_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
+            of excess heat produced which is not used by other sectors.
+          </p>
 
-        <p>You can balance the network by</p>
+          <p>You can balance the network by</p>
 
-        <ul>
-          <li><strong>Reducing heat production</strong>: you can decrease the number of heat sources</li>
-          <li><strong>Increase demand</strong>: you can increase the demand of all sectors in the left-hand side
-            of the diagram</li>
-        </ul>
-      {% else %}
-        <p>
-          There is
-          {{ future.energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko | autoscale: 'MJ'}}
-          insufficient heat produced to satisfy the demand of the central heat network. A backup
-          gas heater is deployed to satisfy the deficit.
-        </p>
+          <ul>
+            <li><strong>Reducing heat production</strong>: you can decrease the number of heat sources in the left-hand side of the diagram</li>
+            <li><strong>Increasing demand</strong>: you can increase the demand of all sectors in the right-hand side
+              of the diagram</li>
+          </ul>
+        {% else %}
+          <p>
+            In the <strong>HT network</strong>, there is 
+            {{ future.heat_production_from_backup_burner_ht_network_gas | autoscale: 'MJ'}}
+            insufficient heat produced to satisfy the heat demand. A backup
+            gas heater is deployed to satisfy the deficit.
+          </p>
 
-        <p>You can balance the network by</p>
+          <p>You can balance the network by</p>
 
-        <ul>
-          <li><strong>Building more heat production</strong>: you can generate more heat by increasing the number of heat sources</li>
-          <li><strong>Decreasing demand</strong>: by reducing the demand of all sectors in the left-hand side
-            of the diagram</li>
-        </ul>
+          <ul>
+            <li><strong>Building more heat production</strong>: you can generate more heat by increasing the number of heat sources in the left-hand side of the diagram</li>
+            <li><strong>Decreasing demand</strong>: you can reduce the demand of all sectors in the right-hand side
+              of the diagram</li>
+          </ul>
+        {% endif %}
+      {% endif %}
+
+      {% if future.final_demand_of_mt_heat_total > 0.0 %}
+        {% if future.unused_heat_in_mt_heat_network > 0.0 %}
+          <p>
+            In the <strong>MT network</strong>, there is 
+            {{ future.mt_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
+            of excess heat produced which is not used by other sectors.
+          </p>
+
+          <p>You can balance the network by</p>
+
+          <ul>
+            <li><strong>Reducing heat production</strong>: you can decrease the number of heat sources in the left-hand side of the diagram</li>
+            <li><strong>Increasing demand</strong>: you can increase the demand of all sectors in the right-hand side
+              of the diagram</li>
+          </ul>
+        {% else %}
+          <p>
+            In the <strong>MT network</strong>, there is 
+            {{ future.heat_production_from_backup_burner_mt_network_gas | autoscale: 'MJ'}}
+            insufficient heat produced to satisfy the heat demand. A backup
+            gas heater is deployed to satisfy the deficit.
+          </p>
+
+          <p>You can balance the network by</p>
+
+          <ul>
+            <li><strong>Building more heat production</strong>: you can generate more heat by increasing the number of heat sources in the left-hand side of the diagram</li>
+            <li><strong>Decreasing demand</strong>: you can reduce the demand of all sectors in the right-hand side
+              of the diagram</li>
+          </ul>
+        {% endif %}
+      {% endif %}
+
+      {% if future.final_demand_of_lt_heat_total > 0.0 %}
+        {% if future.unused_heat_in_lt_heat_network > 0.0 %}
+          <p>
+            In the <strong>LT network</strong>, there is 
+            {{ future.lt_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
+            of excess heat produced which is not used by other sectors.
+          </p>
+
+          <p>You can balance the network by</p>
+
+          <ul>
+            <li><strong>Reducing heat production</strong>: you can decrease the number of heat sources in the left-hand side of the diagram</li>
+            <li><strong>Increasing demand</strong>: you can increase the demand of all sectors in the right-hand side
+              of the diagram</li>
+          </ul>
+        {% else %}
+          <p>
+            In the <strong>LT network</strong>, there is 
+            {{ future.heat_production_from_backup_burner_lt_network_gas | autoscale: 'MJ'}}
+            insufficient heat produced to satisfy the heat demand. A backup
+            gas heater is deployed to satisfy the deficit.
+          </p>
+
+          <p>You can balance the network by</p>
+
+          <ul>
+            <li><strong>Building more heat production</strong>: you can generate more heat by increasing the number of heat sources in the left-hand side of the diagram</li>
+            <li><strong>Decreasing demand</strong>: you can reduce the demand of all sectors in the right-hand side
+              of the diagram</li>
+          </ul>
+        {% endif %}
       {% endif %}
 
   <h1 class="banner">CO<sub>2</sub> emissions</h1>
@@ -449,7 +522,7 @@
 
       <p>
         Costs of the future energy system are roughly
-        {{ future.dashboard_total_costs | autoscale: 'euro' }} and are broken down in the following chart.
+        {{ future.dashboard_total_costs | autoscale: 'bln_euro' }} and are broken down in the following chart.
         Costs include
 
         <ul>

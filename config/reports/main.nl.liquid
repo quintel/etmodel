@@ -116,7 +116,7 @@
         </p>
         <h4 class="banner">Vraagontwikkeling</h4>
           <p>
-          In het gemaakte scenario zijn de volgende aannames gemaakt over de ontwikkeling van de huizenvoorraad en de gevolgen van isoleren.
+          In het gemaakte scenario zijn de volgende aannames gedaan over de ontwikkeling van de huizenvoorraad en de gevolgen van isoleren.
             {% chart effect_of_insulation_in_households %}
               Isolatie in woningen/huishoudens
               {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
@@ -371,41 +371,111 @@
 
     <h2 class="banner">B. Warmtenetten</h2>
     <p>
-    Hieronder zie je een overzicht van de vraag (links) en aanbod (rechts) op het warmtenet. Wanneer er te
-	weinig warmteaanbod is in het scenario, dan springt er een gas back-up ketel aan. Wanneer er overschotten zijn,
-	dan zie je dit aan de linkerkant in het lichtroze.
-        {% chart collective_heat_mekko %}
-        Vraag (links) en aanbod (rechts) op het warmtenet in {{ settings.end_year }}.
+    Er zijn drie typen warmtenetten in het ETM opgenomen: hoge-temperatuur (HT), midden-temperatuur (MT) en lage-temperatuur (LT). 
+
+    Het Sankey diagram hieronder toont
+        <ul>
+            <li><strong>welke bronnen</strong> warmte leveren aan de warmtenetten (linkerkolom);</li>
+            <li><strong>welk type</strong> warmtenet de geleverde warmte ontvangt (middelste kolom), en</li>
+            <li><strong>welke gebruikers</strong> warmte uit elk type warmtenet afnemen (rechterkolom)</li>
+          </ul>
+      </p>
+    
+    Wanneer er te	weinig warmteaanbod is in het scenario, dan springt er een gas back-up ketel aan. Eventuele overschotten van warmte worden per temperatuurniveau ook in het diagram getoond. 
+        {% chart sankey_heat_networks %}
+        Aanbod (links) en vraag (rechts) op de warmtenetten in {{ settings.end_year }}.
         {% endchart %}
   	</p>
 
-  	{% if future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko > 0.0 %}
+    {% if future.final_demand_of_ht_heat_total > 0.0 %}
+      {% if future.unused_heat_in_ht_heat_network > 0.0 %}
         <p>
-          Er wordt <strong>
-          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'MJ'}} </strong>
-          aan restwarmte uit het netwerk niet gebruikt!
+          In het <strong>HT warmtenet</strong> wordt er 
+          {{ future.ht_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
+          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut. 
         </p>
 
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
 
         <ul>
-          <li><strong>Productieverlaging</strong>: verlaag het aantal warmtbronnen</li>
-          <li><strong>Vraagtoename</strong>: vergroot de warmtevraag van de sectoren in het linkerdeel van de grafiek</li>
+          <li><strong>Productieverlaging</strong>: verlaag het aantal warmtebronnen</li>
+          <li><strong>Vraagtoename</strong>: vergroot de warmtevraag van de sectoren in het rechterdeel van het diagram</li>
         </ul>
-   	{% else %}
+      {% else %}
         <p>
-        Er is onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort van
-		{{ future.energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko | autoscale: 'MJ'}} op te vangen.
+          In het <strong>HT netwerk</strong> is er onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort van
+          {{ future.heat_production_from_backup_burner_ht_network_gas | autoscale: 'MJ'}}
+          op te vangen.
         </p>
 
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
 
         <ul>
           <li><strong>Productieverhoging</strong>: vergroot het aantal warmtebronnen
-          <li><strong>Vraagverlaging</strong>: reduceer de warmtevraag van de sectoren in het linkerdeel van de grafiek</li>
+          <li><strong>Vraagverlaging</strong>: reduceer de warmtevraag van de sectoren in het rechterdeel van het diagram</li>
         </ul>
- 	{% endif %}
+      {% endif %}
+    {% endif %}
 
+    {% if future.final_demand_of_mt_heat_total > 0.0 %}
+      {% if future.unused_heat_in_mt_heat_network > 0.0 %}
+        <p>
+          In het <strong>MT warmtenet</strong> wordt er 
+          {{ future.mt_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
+          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut. 
+        </p>
+
+        <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
+
+        <ul>
+          <li><strong>Productieverlaging</strong>: verlaag het aantal warmtebronnen</li>
+          <li><strong>Vraagtoename</strong>: vergroot de warmtevraag van de sectoren in het rechterdeel van het diagram</li>
+        </ul>
+      {% else %}
+        <p>
+          In het <strong>MT warmtenet</strong> is er onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort van
+          {{ future.heat_production_from_backup_burner_mt_network_gas | autoscale: 'MJ'}}
+          op te vangen.
+        </p>
+
+        <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
+
+        <ul>
+          <li><strong>Productieverhoging</strong>: vergroot het aantal warmtebronnen
+          <li><strong>Vraagverlaging</strong>: reduceer de warmtevraag van de sectoren in het rechterdeel van het diagram</li>
+        </ul>
+      {% endif %}
+    {% endif %}
+
+    {% if future.final_demand_of_lt_heat_total > 0.0 %}
+      {% if future.unused_heat_in_lt_heat_network > 0.0 %}
+        <p>
+          In het <strong>LT warmtenet</strong> wordt er 
+          {{ future.lt_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
+          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut. 
+        </p>
+
+        <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
+
+        <ul>
+          <li><strong>Productieverlaging</strong>: verlaag het aantal warmtebronnen</li>
+          <li><strong>Vraagtoename</strong>: vergroot de warmtevraag van de sectoren in het rechterdeel van het diagram</li>
+        </ul>
+      {% else %}
+        <p>
+          In het <strong>LT warmtenet</strong> is er onvoldoende warmte geproduceerd. Een back-up gasketel wordt nu ingezet om het tekort van
+          {{ future.heat_production_from_backup_burner_lt_network_gas | autoscale: 'MJ'}}
+          op te vangen.
+        </p>
+
+        <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
+
+        <ul>
+          <li><strong>Productieverhoging</strong>: vergroot het aantal warmtebronnen
+          <li><strong>Vraagverlaging</strong>: reduceer de warmtevraag van de sectoren in het rechterdeel van het diagram</li>
+        </ul>
+      {% endif %}
+    {% endif %}
 
     <h2 class="banner">C. Waterstof</h2>
     {% if future.hydrogen_used_in_scenario > 0.0 %}
@@ -422,7 +492,7 @@
     	</p>
 
 		<p>
-		Hieronder staat weergegeven hoe de waterstof in het scenario ieder uur wordt ingezet. Rechtsonder de figuur
+		Hieronder staat weergegeven hoe de waterstof in het scenario ieder uur wordt ingezet. Rechtsonder in de figuur
 		kun je kiezen om het hele jaar weer te geven of slechts één week van het jaar.
 
     		{% chart hydrogen_demand %}

@@ -275,18 +275,6 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_network_storage_mt_steam_hot_water_out_heat_network_production
-- label: energy_heat_industry_residual_heat_steam_hot_water_output_curve
-  color: "#00008B"
-  order_by: 25
-  group:
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: energy_heat_industry_residual_heat_mt_steam_hot_water_output_curve
-  is_1990:
-  dependent_on:
-  output_element_key: heat_network_production_mt
-  key: energy_heat_industry_residual_heat_mt_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve
   color: "#46c1e3"
   order_by: 26
@@ -311,3 +299,15 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_heat_flexibility_p2h_heatpump_electricity_mt_steam_hot_water_output_curve_heat_network_production
+- label: energy_heat_network_residual_heat_out
+  color: "#00008B"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: energy_heat_production_mt_residual_heat_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production_mt
+  key: energy_heat_network_residual_heat_out_heat_network_production_mt

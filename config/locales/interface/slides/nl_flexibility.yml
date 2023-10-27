@@ -743,6 +743,26 @@ nl:
         target =\"_blank\">documentatie</a>.\r\n</p>\r\nProductiecurves kunnen worden
         gedownload in de <a href=\"/scenario/data/data_export/merit-order-prices\">resultaten
         sectie</a>.\r\n\r\n\r\n"
+    flexibility_transit_flows_introduction:
+      title: Wat zijn transitostromen?
+      description: |
+        Het ETM modelleert energiestromen en stromen van energiedragers binnen een regio. Veel regio's hebben echter te maken met 
+        stromen die de regio enkel doorkruisen op doortocht naar een volgende bestemming. Deze stromen worden dus niet geproduceerd of verbruikt door onderdelen van het lokale energiesysteem.
+        Zulke energiestromen worden <b>transitostromen</b> of doorvoerstromen genoemd, aangezien ze enkel op doorvoer zijn in de regio.
+        Een voorbeeld van zo'n transitostroom is de import van olie via de haven en de daaropvolgende export via lokale pijpleidingen naar het achterland, zonder dat de olie onderweg wordt verbruikt.
+        <br /> <br />
+        Deze sectie licht toe welke transitostromen zijn opgenomen in het ETM en hoe het ETM flexibele en inflexibele transitostromen onderscheidt.
+    flexibility_transit_flows_types_of_flows:
+      title: Flexibele en inflexibele transitostromen
+      description: |
+        Met de blik van een lokaal energiesysteem kunenn transitostromen op twee manieren beschreven worden: vanuit een import- of een exportperspectief.
+        Met andere woorden, <i>importeert</i> het systeem opgegeven energiestromen en moet het daarom de resulterende, overtollige stromen exporteren?
+        Of <i>exporteert</i> het systeem opgegeven energiestromen en moet het daarom de resulterende tekorten importeren?
+        <br /> <br />
+        Het ETM hanteert het exportperspectief. De voornaamste reden hierachter is dat in de praktijk exporten gebonden zijn aan contractuele verplichtingen en daarmee ook de hoeveelheid import van een regio bepalen.
+        Binnen dit exportperspectief kan de gebruiker de exportstromen van energie en energiedragers opgeven in absolute aantallen (PJ). Deze opgegeven energiestromen worden ook wel <b>inflexibele</b> stromen genoemd, 
+        aangezien het ETM de bijbehorende waarden moet accepteren als gegeven. Het ETM past vervolgens de bijbehorende importstromen aan zodat het systeem als geheel in evenwicht is. Deze dynamische stromen worden <b>flexibele</b> stromen
+        genoemd, aangezien ze reageren op de instellingen die volgen uit de regio en de gebruiker.
     multi_curve_upload:
       title: Curve upload
       description: |

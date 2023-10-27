@@ -1,10 +1,4 @@
 ---
-- key: volume_of_baseload_export_ammonia
-  step_value: 1.0
-  unit: "PJ"
-  interface_group: gas_products
-  position: 10
-  slide_key: demand_export_energy
 - key: volume_of_baseload_export_coal
   step_value: 1.0
   unit: "PJ"
@@ -63,6 +57,12 @@
   step_value: 1.0
   unit: "PJ"
   interface_group: oil_products
+  position: 52
+  slide_key: demand_export_energy
+- key: volume_of_baseload_export_ammonia
+  step_value: 1.0
+  unit: "PJ"
+  interface_group: gas_products
   position: 55
   slide_key: demand_export_energy
 - key: volume_of_baseload_export_network_gas

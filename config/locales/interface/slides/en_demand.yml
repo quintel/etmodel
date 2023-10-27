@@ -67,6 +67,16 @@ en:
       short_description: ''
       description: Generating electricity locally saves energy and maybe also money
         in the future.
+    demand_export_energy:
+      title: "Exports of energy"
+      short_description: ''
+      description: 'There are often predefined export flows of energy and energy carriers within an energy system. 
+        These can be contractual obligations to export certain amounts of energy to neighbouring regions,
+        or flows of energy that only pass through the region, for instance from a port to the hinterland.
+        <br/><br/>
+        You can set the export flows of several energy (carriers) using the sliders below. These sliders are predominantly relevant
+        to force transit flows through the ETM. See the <a href="/scenario/flexibility/transit-flows/what-are-transit-flows"> Transit flows</a> section 
+        for more information.'
     demand_households_appliances:
       title: Appliances
       short_description: ''

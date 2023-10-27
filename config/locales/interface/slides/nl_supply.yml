@@ -638,34 +638,6 @@ nl:
         internationale scheepvaart</a>). Momenteel wordt vrijwel alle ammoniak on-site geproduceerd in de
         <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a>. Deze lokale productie kan ook
         worden vervangen door centrale import.
-    supply_hydrogen_co2_import:
-      title: CO<sub>2</sub>-emissies van geïmporteerde waterstof
-      short_description:
-      description: "In sommige scenario's wordt er waterstof geïmporteerd van buiten
-        jouw gebied. Hoeveel waterstof er geïmporteerd wordt, hangt af van jouw keuzes
-        in het tabblad <a href=\"/scenario/supply/hydrogen/hydrogen-production\">'Waterstofproductie'</a>.
-        De productie en distributie van geïmporteerde waterstof kunnen CO<sub>2</sub>-emissies
-        hebben veroorzaakt. Hoeveel van deze emissies wil je toekennen aan jouw gebied? <br/><br/>\r\n\r\n
-        De standaardwaarde (in kg CO<sub>2</sub> per MWh waterstof) staat op de hoeveelheid
-        emissies die vrijkomt bij waterstofproductie met Steam Methane Reforming (SMR),
-        omdat op dit moment meer dan 90% van de waterstof met deze methode wordt geproduceerd.
-        Je kunt dit zelf hieronder aanpassen. Klik op het vraagteken voor referentiewaarden.\r\n\r\n<br/><br/>\r\nDe
-        kosten voor geïmporteerde waterstof kunnen worden aangepast in de <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">Kosten & efficiënties</a> sectie."
-    supply_ammonia_co2_import:
-      title: CO<sub>2</sub>-emissies van geïmporteerde ammoniak
-      short_description:
-      description: |
-        De productie en distributie van geïmporteerde ammoniak kunnen CO<sub>2</sub>-emissies
-        hebben veroorzaakt. Hoeveel van deze emissies wil je toekennen aan jouw gebied? </br></br>
-        Het verschepen van vloeibare ammomiak (om het daarna te reformen naar waterstof) wordt
-        als een meer praktische optie gezien om grote volumes groene waterstof te transporteren dan
-        om de groene waterstof direct te verschepen.
-        Standaard zijn de emissies van geïmporteerde ammoniak geijkt op de stoomreforming
-        productieroute, aangezien dit momenteel het meest wordt toegepast. Als je verwacht voornamelijk
-        groene ammoniak te importeren kun je de emissies hieronder zelf aanpassen.
-        Klik op het vraagteken voor referentiewaardes. </br></br>
-        De kosten voor geïmporteerde ammoniak kunnen worden aangepast in de
-        <a href=/scenario/costs/costs_hydrogen/ammonia-import>Kosten & efficiënties</a> sectie.
     supply_infrastructure_high_voltage_network:
       title: Hoogspanningsnetwerk
       short_description: ''

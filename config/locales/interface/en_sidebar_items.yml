@@ -197,9 +197,19 @@ en:
         At the bottom of the screen ('Targets'), you can see how many of your own
         policy targets you meet with the current electricity production mix. If you
         move your cursor over this indicator, you will see a table with more details."
+    export_energy:
+      short_title: Export
+      title: Export
+      short_description: "Which flows of energy and energy carriers are exported out of the region?"
+      description: "A more detailed description follows"
     other_emissions:
       short_title: Greenhouse gases
       title: Greenhouse gases
+      short_description:
+      description: ''
+    emission_factors:
+      short_title: Emission factors
+      title: Emission factors
       short_description:
       description: ''
     flexibility_conversion:
@@ -404,6 +414,11 @@ en:
         \r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime of the solar
         panels and how much solar energy is available in your country. The graph on
         the right shows how costs compare. "
+    transit_flows:
+      short_title: Transit flows
+      title: Transit flows
+      short_description: "Short_description Test"
+      description: "Description Test "
     transport:
       short_title: Transport
       title: Transport

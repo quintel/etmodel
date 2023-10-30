@@ -537,46 +537,58 @@ nl:
         kunnen worden door andere bronnen, zoals biomassa of waterstof. Met deze schuifjes
         kun je de grondstofmix voor de chemische industrie aanpassen. Hoe groot is
         het aandeel van steenkool in de chemische industrie van de toekomst?
-    industry_aggregated_other_industry_wood_pellets_share:
+    industry_aggregated_other_industry_wood_pellets_share_energetic:
       title: Biomassa
       short_description:
-      description: Welk aandeel zal biomassa hebben in het toekomstige energiegebruik
-        van de overige industriesector?
+      description: Welk aandeel zal biomassa hebben in de totale energievraag van de
+        overige industriesector?
     industry_aggregated_other_industry_electricity_share:
       title: Elektriciteit
       short_description:
-      description: Welk aandeel zal elektriciteit hebben in het toekomstige energiegebruik
-        van de overige industriesector?
-    industry_aggregated_other_industry_crude_oil_share:
+      description: Welk aandeel zal elektriciteit hebben in de totale energievraag van
+        de overige industriesector?
+    industry_aggregated_other_industry_crude_oil_share_energetic:
       title: Olie
       short_description:
-      description: Welk aandeel zal olie hebben in het toekomstige energiegebruik
-        van de overige industriesector?
-    industry_aggregated_other_industry_network_gas_share:
+      description: Welk aandeel zal olie hebben in de totale energievraag van de overige industriesector?
+    industry_aggregated_other_industry_network_gas_share_energetic:
       title: Gas
       short_description:
-      description: Welk aandeel zal gas hebben in het toekomstige energiegebruik van
-        de overige industriesector?
-    industry_aggregated_other_industry_coal_share:
+      description: Welk aandeel zal netwerkgas hebben in de totale energievraag van de overige industriesector?
+    industry_aggregated_other_industry_coal_share_energetic:
       title: Kolen
       short_description:
-      description: Welk aandeel zal kolen hebben in het toekomstige energiegebruik
-        van de overige industriesector?
+      description: Welk aandeel zullen kolen hebben in de totale energievraag van de overige industriesector?
     industry_aggregated_other_industry_useable_heat_share:
       title: Warmte
       short_description:
-      description: Welk aandeel zal centrale warmte hebben in het toekomstige energiegebruik
-        van de overige industriesector?
-    industry_useful_demand_for_aggregated_other:
-      title: Grootte
+      description: Welk aandeel zal centrale warmte hebben in de totale energievraag van
+        de overige industriesector?
+    industry_useful_demand_for_aggregated_other_energetic:
+      title: Grootte (energetisch)
       short_description:
-      description: Geef hier aan hoe de overige industrie in de toekomst zal groeien
-        of krimpen.
-    industry_aggregated_other_industry_hydrogen_share:
+      description: Hier kun je de toekomstige, totale energievraag van de overige industriesector instellen.
+    industry_useful_demand_for_aggregated_other_non_energetic:
+      title: Grootte (niet-energetisch)
+      short_description:
+      description: Hier kun je de totale, niet-energetische vraag van de overige industriesector instellen.
+    industry_aggregated_other_industry_hydrogen_share_energetic:
       title: Waterstof
       short_description:
-      description: Welk aandeel zal waterstof hebben in het toekomstige energiegebruik
-        van de overige industriesector?
+      description: Welk aandeel zal waterstof hebben in de totale energievraag van de
+        overige industriesector?
+    industry_aggregated_other_industry_coal_share_non_energetic:
+      title: Kolen
+      description: Welk aandeel zal kolen hebben in de totale niet-energetische vraag van de overige industriesector?
+    industry_aggregated_other_industry_crude_oil_share_non_energetic:
+      title: Olie
+      description: Welk aandeel zal olie hebben in de totale niet-energetische vraag van de overige industriesector?
+    industry_aggregated_other_industry_network_gas_share_non_energetic:
+      title: Gas
+      description: Welk aandeel zal netwerkgas hebben in de totale niet-energetische vraag van de overige industriesector?
+    industry_aggregated_other_industry_wood_pellets_share_non_energetic:
+      title: Biomass
+      description: Welk aandeel zal biomass hebben in de totale niet-energetische vraag van de overige industriesector?
     industry_useful_demand_for_other_food:
       title: Grootte
       short_description:

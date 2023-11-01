@@ -42,23 +42,47 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: final_demand_of_coal_and_derivatives_in_other_non_specified_industry_energetic
+  gquery: final_demand_of_coal_and_coal_gas_in_other_non_specified_industry_energetic
   is_1990: false
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_other
   key: coal_energetic_aggregated_other_use_of_final_demand_in_industry_other
-- label: coal_and_derivatives_non_energetic
+- label: coal_non_energetic
   color: "#000000"
   order_by: 3
   group: aggregated_other
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: final_demand_of_coal_and_derivatives_in_other_non_specified_industry_non_energetic
+  gquery: final_demand_of_coal_and_coal_gas_in_other_non_specified_industry_non_energetic
   is_1990: false
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_other
-  key: coal_and_derivatives_non_energetic_aggregated_other_use_of_final_demand_in_industry_other
+  key: coal_and_coal_gas_non_energetic_aggregated_other_use_of_final_demand_in_industry_other
+- label: cokes_energetic
+  color: "#6971DC"
+  order_by: 4
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_cokes_in_other_non_specified_industry_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other
+  key: cokes_energetic_aggregated_other_use_of_final_demand_in_industry_other
+- label: cokes_non_energetic
+  color: "#5F34C8"
+  order_by: 5
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_cokes_in_other_non_specified_industry_non_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other
+  key: cokes_non_energetic_aggregated_other_use_of_final_demand_in_industry_other
 - label: electricity
   color: "#4169E1"
   order_by: 8
@@ -95,7 +119,7 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_other
   key: heat_aggregated_other_use_of_final_demand_in_industry_other
-- label: hydrogen
+- label: hydrogen_energetic
   color: "#87CEEB"
   order_by: 11
   group: aggregated_other
@@ -106,7 +130,19 @@
   is_1990: false
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_other
-  key: hydrogen_aggregated_other_use_of_final_demand_in_industry_other
+  key: hydrogen_aggregated_other_use_of_final_demand_in_industry_other_energetic
+- label: hydrogen_non_energetic
+  color: "#45b3e0"
+  order_by: 12
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_hydrogen_in_other_non_specified_industry_non_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other
+  key: hydrogen_aggregated_other_use_of_final_demand_in_industry_other_non_energetic
 - label: network_gas_energetic
   color: "#CCCCCC"
   order_by: 4

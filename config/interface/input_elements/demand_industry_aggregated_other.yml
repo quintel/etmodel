@@ -1,55 +1,111 @@
 ---
-- key: industry_aggregated_other_industry_wood_pellets_share
+- key: industry_useful_demand_for_aggregated_other_energetic
+  step_value: 0.1
+  unit: "%"
+  position: 100
+  slide_key: demand_industry_aggregated_other
+- key: industry_useful_demand_for_aggregated_other_non_energetic
+  step_value: 0.1
+  unit: "%"
+  position: 105
+  slide_key: demand_industry_aggregated_other
+
+- key: industry_aggregated_other_industry_wood_pellets_share_energetic
   share_group: other_industry_energetic
   step_value: 0.1
   unit: "%"
   interface_group: other_industry_energetic
-  position: 1
+  position: 200
   slide_key: demand_industry_aggregated_other
 - key: industry_aggregated_other_industry_electricity_share
   share_group: other_industry_energetic
   step_value: 0.1
   unit: "%"
   interface_group: other_industry_energetic
-  position: 2
+  position: 205
   slide_key: demand_industry_aggregated_other
-- key: industry_aggregated_other_industry_crude_oil_share
+- key: industry_aggregated_other_industry_crude_oil_share_energetic
   share_group: other_industry_energetic
   step_value: 0.1
   unit: "%"
   interface_group: other_industry_energetic
-  position: 3
+  position: 210
   slide_key: demand_industry_aggregated_other
-- key: industry_aggregated_other_industry_network_gas_share
+- key: industry_aggregated_other_industry_network_gas_share_energetic
   share_group: other_industry_energetic
   step_value: 0.1
   unit: "%"
   interface_group: other_industry_energetic
-  position: 4
+  position: 215
   slide_key: demand_industry_aggregated_other
-- key: industry_aggregated_other_industry_coal_share
+- key: industry_aggregated_other_industry_coal_share_energetic
   share_group: other_industry_energetic
   step_value: 0.1
   unit: "%"
   interface_group: other_industry_energetic
-  position: 5
+  position: 220
+  slide_key: demand_industry_aggregated_other
+- key: industry_aggregated_other_industry_cokes_share_energetic
+  share_group: other_industry_energetic
+  step_value: 0.1
+  unit: "%"
+  interface_group: other_industry_energetic
+  position: 225
   slide_key: demand_industry_aggregated_other
 - key: industry_aggregated_other_industry_useable_heat_share
   share_group: other_industry_energetic
   step_value: 0.1
   unit: "%"
   interface_group: other_industry_energetic
-  position: 6
+  position: 230
   slide_key: demand_industry_aggregated_other
-- key: industry_useful_demand_for_aggregated_other
-  step_value: 0.1
-  unit: "%"
-  position: 1
-  slide_key: demand_industry_aggregated_other
-- key: industry_aggregated_other_industry_hydrogen_share
+- key: industry_aggregated_other_industry_hydrogen_share_energetic
   share_group: other_industry_energetic
   step_value: 0.1
   unit: "%"
   interface_group: other_industry_energetic
-  position: 0
+  position: 235
+  slide_key: demand_industry_aggregated_other
+- key: industry_aggregated_other_industry_wood_pellets_share_non_energetic
+  share_group: other_industry_non_energetic
+  step_value: 0.1
+  unit: "%"
+  interface_group: other_industry_non_energetic
+  position: 240
+  slide_key: demand_industry_aggregated_other
+
+- key: industry_aggregated_other_industry_crude_oil_share_non_energetic
+  share_group: other_industry_non_energetic
+  step_value: 0.1
+  unit: "%"
+  interface_group: other_industry_non_energetic
+  position: 300
+  slide_key: demand_industry_aggregated_other
+- key: industry_aggregated_other_industry_network_gas_share_non_energetic
+  share_group: other_industry_non_energetic
+  step_value: 0.1
+  unit: "%"
+  interface_group: other_industry_non_energetic
+  position: 305
+  slide_key: demand_industry_aggregated_other
+- key: industry_aggregated_other_industry_coal_share_non_energetic
+  share_group: other_industry_non_energetic
+  step_value: 0.1
+  unit: "%"
+  interface_group: other_industry_non_energetic
+  position: 310
+  slide_key: demand_industry_aggregated_other
+- key: industry_aggregated_other_industry_cokes_share_non_energetic
+  share_group: other_industry_non_energetic
+  step_value: 0.1
+  unit: "%"
+  interface_group: other_industry_non_energetic
+  position: 315
+  slide_key: demand_industry_aggregated_other
+- key: industry_aggregated_other_industry_hydrogen_share_non_energetic
+  share_group: other_industry_non_energetic
+  step_value: 0.1
+  unit: "%"
+  interface_group: other_industry_non_energetic
+  position: 320
   slide_key: demand_industry_aggregated_other

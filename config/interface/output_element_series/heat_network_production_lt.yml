@@ -107,3 +107,15 @@
   dependent_on:
   output_element_key: heat_network_production_lt
   key: energy_heat_network_storage_lt_steam_hot_water_out_heat_network_production
+- label: energy_heat_network_residual_heat_out
+  color: "#00008B"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: energy_heat_production_lt_residual_heat_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production_lt
+  key: energy_heat_network_residual_heat_out_heat_network_production_lt

@@ -20,6 +20,13 @@
   position: 110
   related_node: energy_heat_well_shallow_heatpump_mt_geothermal
   slide_key: supply_heat_sources_mt
+- key: volume_of_mt_residual_heat
+  step_value: 0.1
+  unit: PJ
+  interface_group: non_dispatchable_heat
+  position: 115
+  related_node: energy_heat_production_mt_residual_heat
+  slide_key: supply_heat_sources_mt
 
 - key: capacity_of_energy_heat_heatpump_water_water_mt_electricity
   step_value: 1.0
@@ -82,7 +89,7 @@
 
 
 - key: volume_of_mt_imported_heat
-  step_value: 1.0
+  step_value: 0.1
   interface_group: imported_heat
   unit: PJ
   position: 300

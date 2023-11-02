@@ -302,3 +302,23 @@ en:
         section. Direct electrolysis of wind and solar electricity from the 
         <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section 
         is not included in this chart.
+    residual_heat_supply_potential:
+      title: Supply and potential of residual heat
+      short_description:
+      description: |
+        This chart compares the supply and potential of residual heat.
+        You can set the supply of residual heat for each temperature level
+        in the <a href="scenario/supply/heat/overview-district-heating"> District heating</a> section.
+        The residual heat potential is calculated based on the size of the following sectors: 
+        <ul>
+        <li><a href="scenario/demand/industry/refineries">Refineries</a> </li>
+        <li><a href="/scenario/demand/industry/fertilizers">Fertilizer production</a> </li>
+        <li><a href="/scenario/demand/industry/chemicals">Chemicals</a> </li>
+        <li><a href="/scenario/demand/industry/central-ict">Central ICT</a> </li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen via power-to-gas</a></li>
+        </ul>
+        The method for calculating the residual heat potentials is described in the 
+        <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry/" target=\"_blank\">documentation</a>.
+        <br></br>
+        Note that although you can set the supply of residual heat manually above the potentials shown, 
+        in reality the heat needs to be provided by some industry or another. 

@@ -643,18 +643,48 @@ en:
     volume_of_ht_residual_heat:
       title: Residual heat
       short description:
-      description: "Use this slider to adjust the amount of residual heat (PJ) provided by all industries
-      to high-temperature heat grids."
+      description: |
+        Use this slider to adjust the amount of residual heat supplied to the high-temperature (HT)
+        district heating network. </br></br>
+        Residual heat can be sourced from
+        the <a href="/scenario/demand/industry/fertilizers">fertilizers industry</a>,
+        the <a href="/scenario/demand/industry/chemicals">chemical industry</a>,
+        <a href="/scenario/demand/industry/refineries">refineries</a>, 
+        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>. 
+        You can compare your use of residual heat with the estimated potential of each of these sources in 
+        <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">this</a>
+        chart.
     volume_of_mt_residual_heat:
       title: Residual heat
       short description:
-      description: "Use this slider to adjust the amount of residual heat (PJ) provided by all industries
-      to medium-temperature heat grids."
+      description: |
+        Use this slider to adjust the amount of residual heat supplied to the high-temperature (HT)
+        district heating network. </br></br>
+        Residual heat can be sourced from
+        the <a href="/scenario/demand/industry/fertilizers">fertilizers industry</a>,
+        the <a href="/scenario/demand/industry/chemicals">chemical industry</a>,
+        <a href="/scenario/demand/industry/refineries">refineries</a>, 
+        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>. 
+        You can compare your use of residual heat with the estimated potential of each of these sources in 
+        <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">this</a>
+        chart.
     volume_of_lt_residual_heat:
       title: Residual heat
       short description:
-      description: "Use this slider to adjust the amount of residual heat (PJ) provided by all industries
-      to low-temperature heat grids."
+      description: |
+        Use this slider to adjust the amount of residual heat supplied to the high-temperature (HT)
+        district heating network. </br></br>
+        Residual heat can be sourced from
+        the <a href="/scenario/demand/industry/fertilizers">fertilizers industry</a>,
+        the <a href="/scenario/demand/industry/chemicals">chemical industry</a>,
+        <a href="/scenario/demand/industry/refineries">refineries</a>, 
+        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>. 
+        You can compare your use of residual heat with the estimated potential of each of these sources in 
+        <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">this</a>
+        chart.
     share_of_energy_chp_combined_cycle_ht_network_gas:
       title: High temperature
       short_description:

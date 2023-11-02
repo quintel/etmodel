@@ -651,18 +651,48 @@ nl:
     volume_of_ht_residual_heat:
       title: Restwarmte
       short description:
-      description: "Gebruik dit schuifje om de hoeveelheid restwarmte (PJ) in te stellen die de gehele industrie
-      levert aan hoge-temperatuur warmtenetten."
+      description: |
+        Gebruik dit schuifje om de hoeveelheid restwarmte in te stellen die geleverd wordt aan hoge-temperatuur (HT)
+        warmtenetten. </br></br>
+        Restwarmte kan geleverd worden door
+        de <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a>,
+        de <a href="/scenario/demand/industry/chemicals">chemische industrie</a>,
+        <a href="/scenario/demand/industry/refineries">raffinaderijen</a>, 
+        <a href="/scenario/demand/industry/central-ict">centrale ICT</a> en door 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">elektrolysers</a>. 
+        Je kunt jouw inzet van restwarmte vergelijken met het geschatte potentieel van elk van deze bronnen in
+        <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">deze</a>
+        grafiek.
     volume_of_mt_residual_heat:
       title: Restwarmte
       short description:
-      description: "Gebruik dit schuifje om de hoeveelheid restwarmte (PJ) in te stellen die de gehele industrie
-      levert aan midden-temperatuur warmtenetten."
+      description: |
+        Gebruik dit schuifje om de hoeveelheid restwarmte in te stellen die geleverd wordt aan hoge-temperatuur (HT)
+        warmtenetten. </br></br>
+        Restwarmte kan geleverd worden door
+        de <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a>,
+        de <a href="/scenario/demand/industry/chemicals">chemische industrie</a>,
+        <a href="/scenario/demand/industry/refineries">raffinaderijen</a>, 
+        <a href="/scenario/demand/industry/central-ict">centrale ICT</a> en door 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">elektrolysers</a>. 
+        Je kunt jouw inzet van restwarmte vergelijken met het geschatte potentieel van elk van deze bronnen in
+        <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">deze</a>
+        grafiek.
     volume_of_lt_residual_heat:
       title: Restwarmte
       short description:
-      description: "Gebruik dit schuifje om de hoeveelheid restwarmte (PJ) in te stellen die de gehele industrie
-      levert aan lage-temperatuur warmtenetten."
+      description: |
+        Gebruik dit schuifje om de hoeveelheid restwarmte in te stellen die geleverd wordt aan hoge-temperatuur (HT)
+        warmtenetten. </br></br>
+        Restwarmte kan geleverd worden door
+        de <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a>,
+        de <a href="/scenario/demand/industry/chemicals">chemische industrie</a>,
+        <a href="/scenario/demand/industry/refineries">raffinaderijen</a>, 
+        <a href="/scenario/demand/industry/central-ict">centrale ICT</a> en door 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">elektrolysers</a>. 
+        Je kunt jouw inzet van restwarmte vergelijken met het geschatte potentieel van elk van deze bronnen in
+        <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">deze</a>
+        grafiek.
     share_of_energy_chp_combined_cycle_ht_network_gas:
       title: Hoge-temperatuur gas STEG WKK
       short_description:

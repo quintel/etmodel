@@ -243,7 +243,7 @@ class SavedScenariosController < ApplicationController
 
   def owned_saved_scenario?(saved_scenario = nil)
     saved_scenario ||= @saved_scenario
-    saved_scenario.user_id == current_user&.id
+    saved_scenario.owner?(current_user)
   end
 
   def scenario_by_current_user?(scenario)

@@ -3,7 +3,6 @@
 # Table name: saved_scenarios
 #
 #  id                  :integer          not null, primary key
-#  user_id             :integer          not null
 #  scenario_id         :integer          not null
 #  scenario_id_history :string
 #  title               :string           not null
@@ -24,10 +23,11 @@ class SavedScenario < ApplicationRecord
   # Discarded scenarios are deleted automatically after this period.
   AUTO_DELETES_AFTER = 60.days
 
-  belongs_to :user
+  has_many :saved_scenario_users, dependent: :destroy
+  has_many :users, through: :saved_scenario_users
+
   has_one :featured_scenario, dependent: :destroy
 
-  validates :user_id,     presence: true
   validates :scenario_id, presence: true
   validates :title,       presence: true
   validates :end_year,    presence: true
@@ -68,8 +68,7 @@ class SavedScenario < ApplicationRecord
       .destroy_all
   end
 
-  # Public: Cutomizes the attributes returned by `as_json` and `to_xml`. Omits the deprecated
-  # `settings` attribute, and `user_id`.
+  # Public: Customizes the attributes returned by `as_json` and `to_xml`. Omits the deprecated `settings` attribute
   #
   # Returns a hash.
   def serializable_hash(options = {})
@@ -77,7 +76,7 @@ class SavedScenario < ApplicationRecord
     options ||= {}
 
     super(options.merge(
-      except: (options[:except] || []) + %i[settings user_id]
+      except: (options[:except] || []) + %i[settings]
     ))
   end
 
@@ -145,7 +144,19 @@ class SavedScenario < ApplicationRecord
 
     super(options).merge(
       'discarded' => discarded_at.present?,
-      'owner' => user.as_json(only: %i[id name]),
+      'owners' => users.map { |u| u.as_json(only: %i[id name]) },
     )
+  end
+
+  def owner?(user)
+    saved_scenario_users.find_by(user_id: user.id)&.role_id == User::ROLES.key(:owner)
+  end
+
+  def collaborator?(user)
+    saved_scenario_users.find_by(user_id: user.id)&.role_id == User::ROLES.key(:collaborator)
+  end
+
+  def viewer?(user)
+    saved_scenario_users.find_by(user_id: user.id)&.role_id == User::ROLES.key(:viewer)
   end
 end

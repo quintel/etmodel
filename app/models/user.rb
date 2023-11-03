@@ -1,10 +1,17 @@
 # A registered user.
 class User < ApplicationRecord
+  ROLES = {
+    1 => :scenario_viewer,
+    2 => :scenario_collaborator,
+    3 => :scenario_owner
+  }.freeze
+
   attr_accessor :identity_user
 
   delegate :email, :roles, :admin?, to: :identity_user, allow_nil: true
 
-  has_many :saved_scenarios, dependent: :destroy
+  has_many :saved_scenario_users, dependent: :destroy
+  has_many :saved_scenarios, through: :saved_scenario_users
   has_many :multi_year_charts, dependent: :destroy
   has_one  :esdl_suite_id, dependent: :destroy
   has_one  :survey, dependent: :destroy

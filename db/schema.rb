@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_21_133548) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_26_121719) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -82,6 +82,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_133548) do
     t.datetime "updated_at", precision: nil
   end
 
+  create_table "saved_scenario_users", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "saved_scenario_id", null: false
+    t.integer "role_id", null: false
+    t.string "user_email"
+    t.index ["saved_scenario_id", "user_id"], name: "saved_scenario_users_saved_scenario_id_user_id_idx"
+    t.index ["user_email"], name: "saved_scenario_users_user_email_idx"
+  end
+
   create_table "saved_scenarios", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "scenario_id", null: false
@@ -135,7 +144,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_133548) do
     t.index ["key"], name: "index_translations_on_key"
   end
 
-  create_table "users", id: :bigint, default: nil, charset: "utf8mb3", force: :cascade do |t|
+  create_table "users", id: :bigint, default: nil, charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

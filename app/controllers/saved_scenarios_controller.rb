@@ -60,7 +60,7 @@ class SavedScenariosController < ApplicationController
 
   def all
     @saved_scenarios = SavedScenario.all
-      .includes(:featured_scenario, :user)
+      .includes(:featured_scenario, :users)
       .order('updated_at DESC')
       .page(params[:page])
       .per(100)

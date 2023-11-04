@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_26_121719) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_04_110117) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -83,16 +83,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_121719) do
   end
 
   create_table "saved_scenario_users", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "saved_scenario_id", null: false
     t.integer "role_id", null: false
+    t.integer "user_id"
     t.string "user_email"
     t.index ["saved_scenario_id", "user_id"], name: "saved_scenario_users_saved_scenario_id_user_id_idx"
     t.index ["user_email"], name: "saved_scenario_users_user_email_idx"
   end
 
   create_table "saved_scenarios", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.integer "scenario_id", null: false
     t.string "scenario_id_history"
     t.string "title", null: false

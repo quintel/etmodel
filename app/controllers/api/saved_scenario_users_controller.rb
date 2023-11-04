@@ -2,15 +2,18 @@ module API
   # Allows owners of a SavedScenario to manage the roles for users on a given scenario
   class SavedScenarioUsersController < APIController
     #before_action :verify_token!
-    before_action :find_scenario
 
-    def show
-      render json: current_user.saved_scenarios.find(params.require(:id)).users.map { |u| u.slice(:id, :name) }
+    before_action :find_scenario, except: :index
+
+    def index
+      render json: users_return_values
     end
 
     def create
+      render json: users_return_values and return if scenario_params[:users].blank?
+
       scenario_params[:users].each do |user_params|
-        @scenario.users << build_saved_scenario_user(user_params)
+        @scenario.saved_scenario_users << build_saved_scenario_user(user_params)
       end
 
       if @scenario.save
@@ -21,13 +24,15 @@ module API
     end
 
     def update
+      render json: users_return_values and return if scenario_params[:users].blank?
+
       scenario_users_updated = true
       scenario_user_error = nil
       http_error_status = :unprocessable_entity
 
       scenario_params[:users].each do |user_params|
-        su = @scenario.users.find(
-          user_id: user_params.try(:[], :user_id)
+        su = @scenario.saved_scenario_users.find_by(
+          user_id: user_params.try(:[], :id)
         )
 
         if su.blank?
@@ -37,7 +42,7 @@ module API
           break
         end
 
-        unless (scenario_users_updated = su.update(role_id: User::ROLES.key(user_params.try(:[], :role))))
+        unless (scenario_users_updated = su.update(role_id: User::ROLES.key(user_params.try(:[], :role).to_sym)))
           scenario_user_error = su.errors
 
           break
@@ -52,8 +57,10 @@ module API
     end
 
     def destroy
-      @scenario.users.where(
-        user_id: params.permit(user_ids: [])[:user_ids]
+      render json: users_return_values and return if scenario_params[:user_ids].blank?
+
+      @scenario.saved_scenario_users.where(
+        user_id: scenario_params[:user_ids]
       ).destroy_all
 
       head :ok
@@ -61,16 +68,21 @@ module API
 
     private
 
-    def saved_scenario_params
-      params.permit(:id, users: [])
+    def scenario_params
+      params.permit(:scenario_id, users: [%i[id role email]], user_ids: [])
     end
 
-    def find_saved_scenario
-      @saved_scenario = current_user.saved_scenarios.find(saved_scenario_params[:id])
+    def find_scenario
+      @scenario = current_user.scenarios.find(scenario_params[:scenario_id])
     end
 
     def users_return_values
-      @scenario.users.map do |u|
+      user_ids = scenario_params[:users].pluck(:id) if scenario_params[:users].present?
+
+      saved_scenario_users = @scenario.saved_scenario_users
+      saved_scenario_users = scenario_users.where(user_id: user_ids) if user_ids.present?
+
+      saved_scenario_users.map do |u|
         { id: u.user_id, email: u.user_email, role: User::ROLES[u.role_id] }
       end
     end
@@ -80,8 +92,8 @@ module API
 
       SavedScenarioUser.new(
         user_id: user_params.try(:[], :id),
-        saved_scenario_id: scenario_params[:id],
-        role_id: User::ROLES.key(user_params.try(:[], :role)),
+        saved_scenario_id: scenario_params[:scenario_id],
+        role_id: User::ROLES.key(user_params.try(:[], :role).to_sym),
         user_email: user.present? ? nil : user_params.try(:[], :email)
       )
     end

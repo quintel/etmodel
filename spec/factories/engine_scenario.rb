@@ -9,11 +9,10 @@ FactoryBot.define do
     coupling { false }
     keep_compatible { false }
     metadata { {} }
-    owner { { id: 1, name: 'John Doe' } }
+    users { [{ id: 1, name: 'John Doe', role: 'scenario_owner' }] }
     private { false }
     sequence(:id) { |n| n }
     user_values { {} }
-
     initialize_with do
       Engine::Scenario.new(attributes)
     end

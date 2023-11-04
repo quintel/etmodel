@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
     render_not_found
   end
 
-  #rescue_from ActiveRecord::RecordNotFound, CanCan::AccessDenied do
-  #  puts 'cancan-accessdenied'
-  #  render_not_found
-  #end
+  rescue_from ActiveRecord::RecordNotFound, CanCan::AccessDenied do
+    puts 'cancan-accessdenied'
+    render_not_found
+  end
 
   def assign_locale
     # update session if passed

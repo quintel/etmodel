@@ -3,7 +3,7 @@ require 'rails_helper'
 describe User do
   it { is_expected.to validate_presence_of(:name) }
 
-  it { is_expected.to have_many(:saved_scenarios).dependent(:destroy) }
+  it { is_expected.to have_many(:saved_scenarios).through(:saved_scenario_users) }
   it { is_expected.to have_many(:multi_year_charts).dependent(:destroy) }
   it { is_expected.to have_one(:esdl_suite_id).dependent(:destroy) }
   it { is_expected.to have_one(:survey).dependent(:destroy) }

@@ -173,39 +173,24 @@ class SavedScenario < ApplicationRecord
   end
 
   def owner?(user)
-    return false unless user.present?
+    return false if user.blank?
 
-    saved_scenario_users.find_by(user_id: user.id)&.role_id == User::ROLES.key(:scenario_owner)
+    ssu = saved_scenario_users.find_by(user_id: user.id)
+    ssu.present? && ssu.role_id == User::ROLES.key(:scenario_owner)
   end
 
   def collaborator?(user)
-    return false unless user.present?
+    return false if user.blank?
 
-    saved_scenario_users.find_by(user_id: user.id)&.role_id >= User::ROLES.key(:scenario_collaborator)
+    ssu = saved_scenario_users.find_by(user_id: user.id)
+    ssu.present? && ssu.role_id >= User::ROLES.key(:scenario_collaborator)
   end
 
   def viewer?(user)
-    return false unless user.present?
+    return false if user.blank?
 
-    saved_scenario_users.find_by(user_id: user.id)&.role_id >= User::ROLES.key(:scenario_viewer)
-  end
-
-  def add_owner(user)
-    return unless valid?
-
-    SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_owner))
-  end
-
-  def add_collaborator(user)
-    return unless valid?
-
-    SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_collaborator))
-  end
-
-  def add_viewer(user)
-    return unless valid?
-
-    SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_viewer))
+    ssu = saved_scenario_users.find_by(user_id: user.id)
+    ssu.present? && ssu.role_id >= User::ROLES.key(:scenario_viewer)
   end
 
   # Convenience method to quickly set the owner for a scenario, e.g. when creating it as
@@ -213,6 +198,8 @@ class SavedScenario < ApplicationRecord
   def user=(user)
     return false if user.blank? || saved_scenario_users.count > 0
 
-    add_owner(user)
+    return false unless valid?
+
+    SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_owner))
   end
 end

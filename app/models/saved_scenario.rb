@@ -24,7 +24,7 @@ class SavedScenario < ApplicationRecord
   AUTO_DELETES_AFTER = 60.days
 
   has_many :saved_scenario_users, dependent: :destroy
-  has_many :users, through: :saved_scenario_users, dependent: :destroy
+  has_many :users, through: :saved_scenario_users
 
   has_one :featured_scenario, dependent: :destroy
 
@@ -66,6 +66,30 @@ class SavedScenario < ApplicationRecord
     discarded
       .where(discarded_at: ..SavedScenario::AUTO_DELETES_AFTER.ago)
       .destroy_all
+  end
+
+  def self.owned_by?(user)
+    joins(:saved_scenario_users)
+      .where(
+        'saved_scenario_users.user_id': user.id,
+        'saved_scenario_users.role_id': User::ROLES.key(:scenario_owner)
+      )
+  end
+
+  def self.collaborated_by?(user)
+    joins(:saved_scenario_users)
+      .where(
+        'saved_scenario_users.user_id': user.id,
+        'saved_scenario_users.role_id': User::ROLES.key(:scenario_collaborator)..
+      )
+  end
+
+  def self.viewable_by?(user)
+    joins(:saved_scenario_users)
+      .where(
+        'saved_scenario_users.user_id': user.id,
+        'saved_scenario_users.role_id': User::ROLES.key(:scenario_viewer)..
+      )
   end
 
   # Public: Customizes the attributes returned by `as_json` and `to_xml`. Omits the deprecated `settings` attribute

@@ -8,7 +8,8 @@ class CreateSavedScenarioUsers < ActiveRecord::Migration[7.0]
       t.string  :user_email, default: nil
     end
 
-    add_index :saved_scenario_users, [:saved_scenario_id, :user_id], name: 'saved_scenario_users_saved_scenario_id_user_id_idx'
+    add_index :saved_scenario_users, [:saved_scenario_id, :user_id, :role_id], name: 'saved_scenario_users_saved_scenario_id_user_id_role_id_idx'
+    add_index :saved_scenario_users, [:user_id, :role_id], name: 'saved_scenario_users_user_id_role_id_idx'
     add_index :saved_scenario_users, :user_email, name: 'saved_scenario_users_user_email_idx'
 
     # Create SavedScenarioUser relations for currently existing saved scenarios

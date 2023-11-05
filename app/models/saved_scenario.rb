@@ -24,7 +24,7 @@ class SavedScenario < ApplicationRecord
   AUTO_DELETES_AFTER = 60.days
 
   has_many :saved_scenario_users, dependent: :destroy
-  has_many :users, through: :saved_scenario_users
+  has_many :users, through: :saved_scenario_users, dependent: :destroy
 
   has_one :featured_scenario, dependent: :destroy
 
@@ -76,7 +76,7 @@ class SavedScenario < ApplicationRecord
     options ||= {}
 
     super(options.merge(
-      except: (options[:except] || []) + %i[settings]
+      except: (options[:except] || []) + %i[settings user_id]
     ))
   end
 
@@ -140,7 +140,7 @@ class SavedScenario < ApplicationRecord
   end
 
   def as_json(options = {})
-    options[:except] ||= %i[discarded_at]
+    options[:except] ||= %i[discarded_at user_id]
 
     super(options).merge(
       'discarded' => discarded_at.present?,
@@ -149,14 +149,46 @@ class SavedScenario < ApplicationRecord
   end
 
   def owner?(user)
-    saved_scenario_users.find_by(user_id: user.id)&.role_id == User::ROLES.key(:owner)
+    return false unless user.present?
+
+    saved_scenario_users.find_by(user_id: user.id)&.role_id == User::ROLES.key(:scenario_owner)
   end
 
   def collaborator?(user)
-    saved_scenario_users.find_by(user_id: user.id)&.role_id == User::ROLES.key(:collaborator)
+    return false unless user.present?
+
+    saved_scenario_users.find_by(user_id: user.id)&.role_id >= User::ROLES.key(:scenario_collaborator)
   end
 
   def viewer?(user)
-    saved_scenario_users.find_by(user_id: user.id)&.role_id == User::ROLES.key(:viewer)
+    return false unless user.present?
+
+    saved_scenario_users.find_by(user_id: user.id)&.role_id >= User::ROLES.key(:scenario_viewer)
+  end
+
+  def add_owner(user)
+    return unless valid?
+
+    SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_owner))
+  end
+
+  def add_collaborator(user)
+    return unless valid?
+
+    SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_collaborator))
+  end
+
+  def add_viewer(user)
+    return unless valid?
+
+    SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_viewer))
+  end
+
+  # Convenience method to quickly set the owner for a scenario, e.g. when creating it as
+  # Scenario.create(user: User). Only works to set the first owner, returns false otherwise.
+  def user=(user)
+    return false if user.blank? || saved_scenario_users.count > 0
+
+    add_owner(user)
   end
 end

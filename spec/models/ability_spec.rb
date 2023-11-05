@@ -36,21 +36,26 @@ RSpec.describe Ability do
     subject(:ability) { described_class.new(user) }
 
     let(:user) { create(:user) }
+    let(:other_user) { create(:user) }
+    let!(:public_scenario) { create(:saved_scenario, user: user, private: false) }
+    let!(:private_scenario) { create(:saved_scenario, user: user, private: true) }
+    let!(:other_public_scenario) { create(:saved_scenario, user: other_user, private: false) }
+    let!(:other_private_scenario) { create(:saved_scenario, user: other_user, private: true) }
 
     it 'may view a public saved scenario' do
-      expect(ability).to be_able_to(:read, create(:saved_scenario, user:, private: false))
+      expect(ability).to be_able_to(:read, public_scenario)
     end
 
     it 'may view a public saved scenario belong to someone else' do
-      expect(ability).to be_able_to(:read, create(:saved_scenario, user: create(:user), private: false))
+      expect(ability).to be_able_to(:read, other_public_scenario)
     end
 
     it 'may view their own private saved scenarios' do
-      expect(ability).to be_able_to(:read, create(:saved_scenario, user:, private: true))
+      expect(ability).to be_able_to(:read, private_scenario)
     end
 
     it 'may not view private saved scenarios belonging to someone else' do
-      expect(ability).not_to be_able_to(:read, create(:saved_scenario, user: create(:user), private: true))
+      expect(ability).not_to be_able_to(:read, other_private_scenario)
     end
 
     it 'may create a saved scenario' do
@@ -58,19 +63,19 @@ RSpec.describe Ability do
     end
 
     it 'may update their own saved scenario' do
-      expect(ability).to be_able_to(:update, create(:saved_scenario, user:))
+      expect(ability).to be_able_to(:update, private_scenario)
     end
 
     it 'may not update someone elses saved scenario' do
-      expect(ability).not_to be_able_to(:update, create(:saved_scenario, user: create(:user)))
+      expect(ability).not_to be_able_to(:update, other_private_scenario)
     end
 
     it 'may destroy their own saved scenario' do
-      expect(ability).to be_able_to(:destroy, create(:saved_scenario, user:))
+      expect(ability).to be_able_to(:destroy, private_scenario)
     end
 
     it 'may not destroy someone elses saved scenario' do
-      expect(ability).not_to be_able_to(:destroy, create(:saved_scenario, user: create(:user)))
+      expect(ability).not_to be_able_to(:destroy, other_private_scenario)
     end
 
     it 'may destroy their own multi year chart' do

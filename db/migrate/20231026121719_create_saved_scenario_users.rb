@@ -2,10 +2,10 @@ class CreateSavedScenarioUsers < ActiveRecord::Migration[7.0]
   def up
     # Create new table + indices
     create_table :saved_scenario_users do |t|
-      t.integer     :saved_scenario_id, null: false
-      t.integer     :role_id, null: false
-      t.integer     :user_id, default: nil
-      t.string      :user_email, default: nil
+      t.integer :saved_scenario_id, null: false
+      t.integer :role_id, null: false
+      t.integer :user_id, default: nil
+      t.string  :user_email, default: nil
     end
 
     add_index :saved_scenario_users, [:saved_scenario_id, :user_id], name: 'saved_scenario_users_saved_scenario_id_user_id_idx'

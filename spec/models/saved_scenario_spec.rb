@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe SavedScenario do
-  it { is_expected.to belong_to :user }
+  it { is_expected.to respond_to :users }
 
   # AR attributes
   it { is_expected.to respond_to :scenario_id_history }

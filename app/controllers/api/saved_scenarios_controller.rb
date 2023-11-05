@@ -28,7 +28,7 @@ module API
     end
 
     def create
-      scenario = current_user.saved_scenarios.build(scenario_params)
+      scenario = SavedScenario.new(scenario_params.merge(user: current_user))
 
       if scenario.save
         render json: scenario, status: :created

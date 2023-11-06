@@ -9,7 +9,7 @@ FactoryBot.define do
     coupling { false }
     keep_compatible { false }
     metadata { {} }
-    users { [{ id: 1, name: 'John Doe', role: 'scenario_owner' }] }
+    users { [{ id: 1, name: 'John Doe' }] }
     private { false }
     sequence(:id) { |n| n }
     user_values { {} }

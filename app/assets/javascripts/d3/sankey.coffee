@@ -1,5 +1,60 @@
 D3.sankey =
   charts:
+    sankey_energy_overview:
+      data:
+        nodes: [
+          {id: 'natural_gas_and_derivatives',  column: 0, label: 'natural_gas',                       color: '#7f7f7f'},
+          {id: 'biomass_products',             column: 0, label: 'biomass_products',                  color: '#2ca02c'},
+          {id: 'non_biogenic_waste',           column: 0, label: 'non_biogenic_waste',                color: '#BA7D40'},
+          {id: 'ammonia',                      column: 0, label: 'ammonia',                           color: '#00dba1'}, # imported ammonia?
+          {id: 'imported_hydrogen',            column: 0, label: 'imported_hydrogen',                 color: '#e61919'},
+          {id: 'residual_gases',               column: 0, label: 'residual_gases',                    color: '#00008B'}, # residual gases or residual?
+
+          {id: 'electricity',                  column: 1, label: 'electricity',                       color: '#785EF0'},
+          {id: 'heat',                         column: 1, label: 'heat',                              color: '#DC267F'},
+          {id: 'hydrogen',                     column: 1, label: 'hydrogen',                          color: '#FFB000'},
+          {id: 'oil',                          column: 1, label: 'oil',                               color: '#FFB000'}, # what are the primary carriers?
+
+          {id: 'agriculture',                  column: 2, label: 'agriculture',                       color: '#FFD700'},
+          {id: 'households',                   column: 2, label: 'households',                        color: '#4169E1'},
+          {id: 'buildings',                    column: 2, label: 'buildings',                         color: '#ADD8E6'},
+          {id: 'transport',                    column: 2, label: 'transport',                         color: '#8B0000'},
+          {id: 'industry',                     column: 2, label: 'industry',                          color: '#A9A9A9'},
+          {id: 'energy',                       column: 2, label: 'energy',                            color: '#416B86'},
+          {id: 'other',                        column: 2, label: 'other',                             color: '#E07033'},
+          {id: 'bunkers',                      column: 2, label: 'bunkers',                           color: '#8B4513'},
+          {id: 'feedstock',                    column: 2, label: 'feedstock',                         color: '#8B4513'},
+          {id: 'export',                       column: 2, label: 'export',                            color: '#8B4513'},
+          {id: 'losses',                       column: 2, label: 'losses',                            color: '#DCDCDC'}
+        ]
+        links: [
+          {left: 'natural_gas_and_derivatives',  right: 'hydrogen',             gquery: 'sankey_0_to_1_gas_to_hydrogen',                   color: '#7f7f7f'},
+          {left: 'ammonia',                      right: 'hydrogen',             gquery: 'sankey_0_to_1_ammonia_to_hydrogen',               color: '#1f77b4'},
+          {left: 'biomass_products',             right: 'hydrogen',             gquery: 'sankey_0_to_1_biomass_to_hydrogen',               color: '#87cfeb'},
+          {left: 'non_biogenic_waste',           right: 'hydrogen',             gquery: 'sankey_0_to_1_non_biogenic_waste_to_hydrogen',    color: '#00dba1'},
+          {left: 'imported_hydrogen',            right: 'hydrogen',             gquery: 'sankey_0_to_1_coal_to_hydrogen',                  color: '#ffcc00'},
+          {left: 'residual_gases',               right: 'hydrogen',             gquery: 'sankey_0_to_1_coal_to_hydrogen',                  color: '#ADDE4C'},
+
+          {left: 'electricity',                  right: 'hydrogen',             gquery: 'sankey_1_to_1_electricity_to_hydrogen',           color: '#FFB000'},
+          {left: 'heat',                         right: 'hydrogen',             gquery: 'sankey_1_to_1_heat_to_hydrogen',                  color: '#FFB000'},
+          {left: 'oil',                          right: 'hydrogen',             gquery: 'sankey_1_to_1_oil_to_hydrogen',                   color: '#FFB000'},
+
+          {left: 'hydrogen',                     right: 'electricity',          gquery: 'sankey_1_to_1_hydrogen_to_electricity',           color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'heat',                 gquery: 'sankey_1_to_1_hydrogen_to_heat',                  color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'oil',                  gquery: 'sankey_1_to_1_hydrogen_to_oil',                   color: '#FFB000'},
+
+          {left: 'hydrogen',                     right: 'agriculture',          gquery: 'sankey_1_to_2_hydrogen_to_agriculture',           color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'households',           gquery: 'sankey_1_to_2_hydrogen_to_households',            color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'buildings',            gquery: 'sankey_1_to_2_hydrogen_to_buildings',             color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'transport',            gquery: 'sankey_1_to_2_hydrogen_to_transport',             color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'industry',             gquery: 'sankey_1_to_2_hydrogen_to_industry',              color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'energy',               gquery: 'sankey_1_to_2_hydrogen_to_energy',                color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'other',                gquery: 'sankey_1_to_2_hydrogen_to_other',                 color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'bunkers',              gquery: 'sankey_1_to_2_hydrogen_to_bunkers',               color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'feedstock',            gquery: 'sankey_1_to_2_hydrogen_to_feedstock',             color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'export',               gquery: 'sankey_1_to_2_hydrogen_to_export',                color: '#FFB000'},
+          {left: 'hydrogen',                     right: 'losses',               gquery: 'sankey_1_to_2_hydrogen_to_loss',                  color: '#FFB000'},
+        ]
     sankey_electrical_interconnection:
       data:
         nodes: [

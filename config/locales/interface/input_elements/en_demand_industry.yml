@@ -47,11 +47,17 @@ en:
       short_description:
       description: Here you can indicate the total size of the paper industrie in
         the future.
-    industry_useful_demand_for_other_paper_efficiency:
-      title: Efficiency improvement
+    industry_useful_demand_for_other_paper_electricity_efficiency:
+      title: Electricity
       short_description:
-      description: "How will efficiency in the paper industry improve every year?
-        \r\n</br></br>\r\nThese improvements are the result of technological innovation
+      description: "How will electricity efficiency in the paper industry have been improved by your target year?
+        These improvements are the result of technological innovation
+        or newer and more efficient energetic processes."
+    industry_useful_demand_for_other_paper_useable_heat_efficiency:
+      title: Heat
+      short_description:
+      description: "How will heat efficiency in the paper industry have been improved by your target year?
+        These improvements are the result of technological innovation
         or newer and more efficient energetic processes."
     industry_other_paper_burner_network_gas_share:
       title: Gas-fired heater
@@ -565,6 +571,16 @@ en:
         biomass or hydrogen. These sliders allow you to change the future feedstock
         mix. What will be the share of coal feedstock in the chemical industry of
         the future?
+    industry_useful_demand_for_aggregated_other_electricity_efficiency:
+      title: Electricity
+      description: How will electric efficiency in the 'other industry' sector have been improved by your target year?
+        These improvements are the result of technological innovation or newer and
+        more efficient energetic processes.
+    industry_useful_demand_for_aggregated_other_useable_heat_efficiency:
+      title: Heat
+      description: How will heat efficiency in the 'other industry' sector have been improved by your target year?
+        These improvements are the result of technological innovation or newer and
+        more efficient energetic processes.
     industry_aggregated_other_industry_wood_pellets_share_energetic:
       title: Biomass
       short_description:
@@ -644,12 +660,18 @@ en:
       short_description:
       description: Here you can indicate the total size of the food industry in the
         future.
-    industry_useful_demand_for_other_food_efficiency:
+    industry_useful_demand_for_other_food_electricity_efficiency:
       title: Efficiency improvement
       short_description:
-      description: "How will efficiency in the food industry improve every year? \r\n</br></br>\r\nThese
+      description: How will electricity efficiency in the food industry have been improved by your target year? These
         improvements are the result of technological innovation or newer and more
-        efficient energetic processes."
+        efficient energetic processes.
+    industry_useful_demand_for_other_food_useable_heat_efficiency:
+      title: Efficiency improvement
+      short_description:
+      description: How will heat efficiency in the food industry have been improved by your target year? These
+        improvements are the result of technological innovation or newer and more
+        efficient energetic processes.
     industry_other_food_burner_coal_share:
       title: Coal-fired heater
       short_description:

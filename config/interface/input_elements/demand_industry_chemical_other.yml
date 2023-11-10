@@ -5,15 +5,15 @@
   position: 1
   slide_key: demand_industry_chemical_other
 - key: industry_useful_demand_for_chemical_other_electricity_efficiency
-  step_value: 0.1
+  step_value: 1
   unit: "%"
-  interface_group: efficiency_industry
+  interface_group: efficiency_industry_total
   position: 2
   slide_key: demand_industry_chemical_other
 - key: industry_useful_demand_for_chemical_other_useable_heat_efficiency
-  step_value: 0.1
+  step_value: 1
   unit: "%"
-  interface_group: efficiency_industry
+  interface_group: efficiency_industry_total
   position: 3
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_burner_network_gas_share

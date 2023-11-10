@@ -4,11 +4,17 @@
   unit: "%"
   position: 1
   slide_key: demand_industry_other_food
-- key: industry_useful_demand_for_other_food_efficiency
-  step_value: 0.1
+- key: industry_useful_demand_for_other_food_electricity_efficiency
+  step_value: 1
   unit: "%"
-  interface_group: efficiency_industry
+  interface_group: efficiency_industry_total
   position: 2
+  slide_key: demand_industry_other_food
+- key: industry_useful_demand_for_other_food_useable_heat_efficiency
+  step_value: 1
+  unit: "%"
+  interface_group: efficiency_industry_total
+  position: 3
   slide_key: demand_industry_other_food
 - key: industry_other_food_burner_coal_share
   share_group: other_food_heat

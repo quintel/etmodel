@@ -10,7 +10,7 @@ D3.sankey =
           {id: 'imported_hydrogen',            column: 0, label: 'imported_hydrogen',                 color: '#87cfeb'},
           {id: 'residual_hydrogen',            column: 0, label: 'residual_hydrogen',                 color: '#87cfeb'},
           {id: 'imported_ammonia',             column: 0, label: 'imported_ammonia',                  color: '#00dba1'},
-          {id: 'solar_thermal',                column: 0, label: 'solar',                             color: '#ffcc00'},
+          {id: 'solar_thermal',                column: 0, label: 'solar_thermal',                     color: '#ffcc00'},
           {id: 'geothermal',                   column: 0, label: 'geothermal',                        color: '#787821'},
           {id: 'ambient_heat',                 column: 0, label: 'ambient_heat',                      color: '#ADDE4C'},
           {id: 'imported_heat',                column: 0, label: 'imported_heat',                     color: '#cc0000'},

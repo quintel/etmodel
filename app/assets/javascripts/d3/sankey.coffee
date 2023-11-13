@@ -3,17 +3,30 @@ D3.sankey =
     sankey_energy_overview:
       data:
         nodes: [
-          {id: 'natural_gas_and_derivatives',  column: 0, label: 'natural_gas',                       color: '#7f7f7f'},
+          {id: 'solar_electricity',            column: 0, label: 'solar_electricity',                 color: '#ffcc00'},
+          {id: 'wind_electricity',             column: 0, label: 'wind_electricity',                  color: '#63A1C9'},
+          {id: 'hydro_electricity',            column: 0, label: 'hydro_electricity',                 color: '#4465c6'},
+          {id: 'imported_electricity',         column: 0, label: 'imported_electricity',              color: '#1f77b4'},
+          {id: 'imported_hydrogen',            column: 0, label: 'imported_hydrogen',                 color: '#87cfeb'},
+          {id: 'residual_hydrogen',            column: 0, label: 'residual_hydrogen',                 color: '#87cfeb'},
+          {id: 'imported_ammonia',             column: 0, label: 'imported_ammonia',                  color: '#00dba1'},
+          {id: 'solar_thermal',                column: 0, label: 'solar',                             color: '#ffcc00'},
+          {id: 'geothermal',                   column: 0, label: 'geothermal',                        color: '#787821'},
+          {id: 'ambient_heat',                 column: 0, label: 'ambient_heat',                      color: '#ADDE4C'},
+          {id: 'imported_heat',                column: 0, label: 'imported_heat',                     color: '#cc0000'},
+          {id: 'residual_heat',                column: 0, label: 'residual_heat',                     color: '#cc0000'},
+          {id: 'coal_and_coal_products',       column: 0, label: 'coal_and_coal_products',            color: '#252525'},
+          {id: 'crude_oil',                    column: 0, label: 'crude_oil',                         color: '#8c564b'},
+          {id: 'oil_products',                 column: 0, label: 'oil_products',                      color: '#8c564b'},
+          {id: 'natural_gas',                  column: 0, label: 'natural_gas',                       color: '#7f7f7f'},
+          {id: 'uranium',                      column: 0, label: 'uranium',                           color: '#ff7f0e'},
           {id: 'biomass_products',             column: 0, label: 'biomass_products',                  color: '#2ca02c'},
           {id: 'non_biogenic_waste',           column: 0, label: 'non_biogenic_waste',                color: '#BA7D40'},
-          {id: 'ammonia',                      column: 0, label: 'ammonia',                           color: '#00dba1'}, # imported ammonia?
-          {id: 'imported_hydrogen',            column: 0, label: 'imported_hydrogen',                 color: '#e61919'},
-          {id: 'residual_gases',               column: 0, label: 'residual_gases',                    color: '#00008B'}, # residual gases or residual?
-
-          {id: 'electricity',                  column: 1, label: 'electricity',                       color: '#785EF0'},
-          {id: 'heat',                         column: 1, label: 'heat',                              color: '#DC267F'},
-          {id: 'hydrogen',                     column: 1, label: 'hydrogen',                          color: '#FFB000'},
-          {id: 'oil',                          column: 1, label: 'oil',                               color: '#FFB000'}, # what are the primary carriers?
+          
+          {id: 'electricity',                  column: 1, label: 'electricity',                       color: '#1f77b4'},
+          {id: 'heat',                         column: 1, label: 'heat',                              color: '#cc0000'},
+          {id: 'hydrogen',                     column: 1, label: 'hydrogen',                          color: '#87cfeb'},
+          {id: 'oil_and_oil_products',         column: 1, label: 'oil_and_oil_products',              color: '#8c564b'},
 
           {id: 'agriculture',                  column: 2, label: 'agriculture',                       color: '#FFD700'},
           {id: 'households',                   column: 2, label: 'households',                        color: '#4169E1'},

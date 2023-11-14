@@ -1,66 +1,116 @@
 ---
 nl:
   input_elements:
-    households_insulation_level_apartments:
-      title: Appartement
+    households_insulation_level_apartments_new:
+      title: Nieuwbouw
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor appartementen.
-        Hiermee bepaal je hoe goed appartementen gemiddeld geïsoleerd zijn (voor zowel oud- en nieuwbouw).
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
-    households_insulation_level_corner_houses:
-      title: Hoekhuis
+      description: "..."
+    households_insulation_level_apartments_2005:
+      title: 2005 - nu
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor hoekhuizen.
-        Hiermee bepaal je hoe goed hoekhuizen geïsoleerd zijn.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
-    households_insulation_level_detached_houses:
-      title: Vrijstaand huis
+      description: "This slider adjusts the average heat demand per square meter 
+        for apartments built between 2005 and nu.
+        \r\n<br><br>\r\nThe average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        \r\n<br><br>\r\n Go to <a href=\"scenario/demand/households/
+        population-and-housing-stock\">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href=\"scenario/demand/households/
+        population-and-housing-stock\">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        \r\n<br><br>\r\nCheck out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources."
+    households_insulation_level_apartments_1985_2004:
+      title: 1985 - 2004
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor vrijstaande huizen.
-        Hiermee bepaal je hoe goed vrijstaande huizen geïsoleerd zijn.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
-    households_insulation_level_semi_detached_houses:
-      title: Twee-onder-een-kapwoning
+      description: "..."
+    households_insulation_level_apartments_1965_1984:
+      title: 1965 - 1984
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor twee-onder-één-kap-woningen.
-        Hiermee bepaal je hoe goed twee-onder-één-kap-woningen geïsoleerd zijn.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
-    households_insulation_level_terraced_houses:
-      title: Rijtjeshuis
+      description: "..."
+    households_insulation_level_apartments_1945_1964:
+      title: 1945 - 1964
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor rijtjeshuizen.
-        Hiermee bepaal je hoe goed rijtjeshuizen geïsoleerd zijn.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
+      description: "..."
+    households_insulation_level_apartments_1945:
+      title: < 1945
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_new:
+      title: Nieuwbouw
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_2005:
+      title: 2005 - nu
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_1945:
+      title: < 1945
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_new:
+      title: Nieuwbouw
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_2005:
+      title: 2005 - nu
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_1945:
+      title: < 1945
+      short_description:
+      description: "..."
+    households_insulation_level_detached_new:
+      title: Nieuwbouw
+      short_description:
+      description: "..."
+    households_insulation_level_detached_2005:
+      title: 2005 - nu
+      short_description:
+      description: "..."
+    households_insulation_level_detached_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "..."
+    households_insulation_level_detached_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "..."
+    households_insulation_level_detached_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "..."
+    households_insulation_level_detached_1945:
+      title: < 1945
+      short_description:
+      description: "..."
     households_useful_demand_for_cooling:
       title: Koudevraag
       short_description: ''

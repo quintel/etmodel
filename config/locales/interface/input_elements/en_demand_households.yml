@@ -1,61 +1,117 @@
 ---
 en:
   input_elements:
-    households_insulation_level_apartments:
-      title: Apartment
+    households_insulation_level_apartments_new:
+      title: New dwellings
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for apartments.
-        As a result you determine the avarage amount of insulation in all apartments (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
-        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
-    households_insulation_level_corner_houses:
-      title: Corner house
+      description: "..."
+    households_insulation_level_apartments_2005:
+      title: 2005 - now
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for corner houses.
-        As a result you determine the avarage amount of insulation in all corner houses (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
+      description: "This slider adjusts the average heat demand per square meter 
+        for apartments built between 2005 and now.
+        \r\n<br><br>\r\nThe average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        \r\n<br><br>\r\n Go to <a href=\"scenario/demand/households/
+        population-and-housing-stock\">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href=\"scenario/demand/households/
+        population-and-housing-stock\">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        \r\n<br><br>\r\nCheck out the
         <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
-    households_insulation_level_detached_houses:
-      title: Detached house
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources."
+    households_insulation_level_apartments_1985_2004:
+      title: 1985 - 2004
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for detached houses.
-        As a result you determine the avarage amount of insulation in all detached houses (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
-        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
-    households_insulation_level_semi_detached_houses:
-      title: Semi-detached house
+      description: "..."
+    households_insulation_level_apartments_1965_1984:
+      title: 1965 - 1984
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for semi-detached houses.
-        As a result you determine the avarage amount of insulation in all semi-detached houses (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
-        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
-    households_insulation_level_terraced_houses:
-      title: Terraced house
+      description: "..."
+    households_insulation_level_apartments_1945_1964:
+      title: 1945 - 1964
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for terraced houses.
-        As a result you determine the avarage amount of insulation in all terraced houses (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
-        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
+      description: "..."
+    households_insulation_level_apartments_1945:
+      title: < 1945
+      short_description:
+      description: "..."
+
+    households_insulation_level_terraced_new:
+      title: New dwellings
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_2005:
+      title: 2005 - now
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "..."
+    households_insulation_level_terraced_1945:
+      title: < 1945
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_new:
+      title: New dwellings
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_2005:
+      title: 2005 - now
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "..."
+    households_insulation_level_semi-detached_1945:
+      title: < 1945
+      short_description:
+      description: "..."
+    households_insulation_level_detached_new:
+      title: New dwellings
+      short_description:
+      description: "..."
+    households_insulation_level_detached_2005:
+      title: 2005 - now
+      short_description:
+      description: "..."
+    households_insulation_level_detached_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "..."
+    households_insulation_level_detached_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "..."
+    households_insulation_level_detached_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "..."
+    households_insulation_level_detached_1945:
+      title: < 1945
+      short_description:
+      description: "..."
     households_useful_demand_for_cooling:
       title: Cooling demand
       short_description: ''

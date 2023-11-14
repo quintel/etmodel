@@ -1,15 +1,15 @@
 ---
 en:
   input_elements:
-    households_insulation_level_apartments_new:
+    households_insulation_level_apartments_future:
       title: New dwellings
       short_description:
       description: "..."
     households_insulation_level_apartments_2005:
-      title: 2005 - now
+      title: 2005 - present
       short_description:
       description: "This slider adjusts the average heat demand per square meter 
-        for apartments built between 2005 and now.
+        for apartments built between 2005 and the present.
         \r\n<br><br>\r\nThe average heat demand per square meter is a measure for the level of insulation
         in households. If the insulation level is increased, the average heat demand per square meter decreases. 
         This results in a total decrease of heating and cooling demand.
@@ -39,13 +39,12 @@ en:
       title: < 1945
       short_description:
       description: "..."
-
-    households_insulation_level_terraced_new:
+    households_insulation_level_terraced_future:
       title: New dwellings
       short_description:
       description: "..."
     households_insulation_level_terraced_2005:
-      title: 2005 - now
+      title: 2005 - present
       short_description:
       description: "..."
     households_insulation_level_terraced_1985_2004:
@@ -64,36 +63,36 @@ en:
       title: < 1945
       short_description:
       description: "..."
-    households_insulation_level_semi-detached_new:
+    households_insulation_level_semi_detached_future:
       title: New dwellings
       short_description:
       description: "..."
-    households_insulation_level_semi-detached_2005:
-      title: 2005 - now
+    households_insulation_level_semi_detached_2005:
+      title: 2005 - present
       short_description:
       description: "..."
-    households_insulation_level_semi-detached_1985_2004:
+    households_insulation_level_semi_detached_1985_2004:
       title: 1985 - 2004
       short_description:
       description: "..."
-    households_insulation_level_semi-detached_1965_1984:
+    households_insulation_level_semi_detached_1965_1984:
       title: 1965 - 1984
       short_description:
       description: "..."
-    households_insulation_level_semi-detached_1945_1964:
+    households_insulation_level_semi_detached_1945_1964:
       title: 1945 - 1964
       short_description:
       description: "..."
-    households_insulation_level_semi-detached_1945:
+    households_insulation_level_semi_detached_1945:
       title: < 1945
       short_description:
       description: "..."
-    households_insulation_level_detached_new:
+    households_insulation_level_detached_future:
       title: New dwellings
       short_description:
       description: "..."
     households_insulation_level_detached_2005:
-      title: 2005 - now
+      title: 2005 - present
       short_description:
       description: "..."
     households_insulation_level_detached_1985_2004:
@@ -385,10 +384,102 @@ en:
       title: Terraced house
       short_description:
       description: How many terraced houses will there be in the future?
-    households_number_of_residences:
-      title: Residences
+    households_number_of_apartments_future:
+      title: New dwellings
       short_description:
-      description: How do you expect the number of residences to develop over time?
+      description: "This slider sets the total number of new apartments."
+    households_number_of_apartments_2005:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of new apartments."
+    households_number_of_apartments_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of new apartments."
+    households_number_of_apartments_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of new apartments."
+    households_number_of_apartments_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of new apartments."
+    households_number_of_apartments_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of new apartments."
+    households_number_of_terraced_future:
+      title: New dwellings
+      short_description:
+      description: "This slider sets the total number of new terraced."
+    households_number_of_terraced_2005:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of new terraced."
+    households_number_of_terraced_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of new terraced."
+    households_number_of_terraced_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of new terraced."
+    households_number_of_terraced_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of new terraced."
+    households_number_of_terraced_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of new terraced."
+    households_number_of_semi_detached_future:
+      title: New dwellings
+      short_description:
+      description: "This slider sets the total number of new semi-detached."
+    households_number_of_semi_detached_2005:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of new semi-detached."
+    households_number_of_semi_detached_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of new semi-detached."
+    households_number_of_semi_detached_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of new semi-detached."
+    households_number_of_semi_detached_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of new semi-detached."
+    households_number_of_semi_detached_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of new semi-detached."
+    households_number_of_detached_future:
+      title: New dwellings
+      short_description:
+      description: "This slider sets the total number of new detached."
+    households_number_of_detached_2005:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of new detached."
+    households_number_of_detached_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of new detached."
+    households_number_of_detached_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of new detached."
+    households_number_of_detached_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of new detached."
+    households_number_of_detached_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of new detached."
     households_lighting_efficient_fluorescent_electricity_share:
       title: Low-energy light bulb
       short_description: ''

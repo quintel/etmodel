@@ -4,7 +4,7 @@
   unit: mln
   position: 0
   slide_key: demand_households_population
-- key: households_number_of_apartments_new
+- key: households_number_of_apartments_future
   step_value: 0.1
   unit: "#"
   interface_group: housing_stock_apartments
@@ -40,7 +40,7 @@
   interface_group: housing_stock_apartments
   position: 600
   slide_key: demand_households_population
-- key: households_number_of_terraced_new
+- key: households_number_of_terraced_future
   step_value: 0.1
   unit: "#"
   interface_group: housing_stock_terraced
@@ -76,7 +76,7 @@
   interface_group: housing_stock_terraced
   position: 1200
   slide_key: demand_households_population
-- key: households_number_of_semi_detached_new
+- key: households_number_of_semi_detached_future
   step_value: 0.1
   unit: "#"
   interface_group: housing_stock_semi_detached
@@ -112,7 +112,7 @@
   interface_group: housing_stock_semi_detached
   position: 1800
   slide_key: demand_households_population
-- key: households_number_of_detached_new
+- key: households_number_of_detached_future
   step_value: 0.1
   unit: "#"
   interface_group: housing_stock_detached

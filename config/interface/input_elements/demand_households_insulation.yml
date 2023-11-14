@@ -1,5 +1,5 @@
 ---
-- key: households_insulation_level_apartments_new
+- key: households_insulation_level_apartments_future
   step_value: 0.1
   draw_to_min: 0.0
   unit: "kWh/m2"
@@ -41,7 +41,7 @@
   interface_group: insulation_apartments
   position: 600
   slide_key: demand_households_insulation
-- key: households_insulation_level_terraced_new
+- key: households_insulation_level_terraced_future
   step_value: 0.1
   draw_to_min: 0.0
   unit: "kWh/m2"
@@ -83,7 +83,7 @@
   interface_group: insulation_terraced
   position: 1200
   slide_key: demand_households_insulation
-- key: households_insulation_level_semi_detached_new
+- key: households_insulation_level_semi_detached_future
   step_value: 0.1
   draw_to_min: 0.0
   unit: "kWh/m2"
@@ -125,7 +125,7 @@
   interface_group: insulation_semi_detached
   position: 1800
   slide_key: demand_households_insulation
-- key: households_insulation_level_detached_new
+- key: households_insulation_level_detached_future
   step_value: 0.1
   draw_to_min: 0.0
   unit: "kWh/m2"

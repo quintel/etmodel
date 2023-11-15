@@ -17,12 +17,7 @@
   interface_group: coal_products
   position: 25
   slide_key: demand_export_energy
-- key: volume_of_baseload_export_lng
-  step_value: 1.0
-  unit: "PJ"
-  interface_group: gas_products
-  position: 30
-  slide_key: demand_export_energy
+
 - key: volume_of_baseload_export_crude_oil
   step_value: 1.0
   unit: "PJ"
@@ -59,6 +54,7 @@
   interface_group: oil_products
   position: 52
   slide_key: demand_export_energy
+
 - key: volume_of_baseload_export_ammonia
   step_value: 1.0
   unit: "PJ"
@@ -71,9 +67,28 @@
   interface_group: gas_products
   position: 60
   slide_key: demand_export_energy
-- key: volume_of_baseload_export_hydrogen
+- key: volume_of_baseload_export_lng
   step_value: 1.0
   unit: "PJ"
   interface_group: gas_products
+  position: 62
+  slide_key: demand_export_energy
+
+- key: volume_of_baseload_export_hydrogen
+  step_value: 1.0
+  unit: "PJ"
+  interface_group: hydrogen_carriers
+  position: 65
+  slide_key: demand_export_energy
+- key: volume_of_baseload_export_liquid_hydrogen
+  step_value: 1.0
+  unit: "PJ"
+  interface_group: hydrogen_carriers
+  position: 65
+  slide_key: demand_export_energy
+- key: volume_of_baseload_export_lohc
+  step_value: 1.0
+  unit: "PJ"
+  interface_group: hydrogen_carriers
   position: 65
   slide_key: demand_export_energy

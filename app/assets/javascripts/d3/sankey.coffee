@@ -18,11 +18,14 @@ D3.sankey =
           {id: 'coal_and_coal_products',       column: 0, label: 'coal_and_coal_products',            color: '#252525'},
           {id: 'crude_oil',                    column: 0, label: 'crude_oil',                         color: '#8c564b'},
           {id: 'oil_products',                 column: 0, label: 'oil_products',                      color: '#8c564b'},
+          {id: 'imported_oil',                 column: 0, label: 'imported_oil',                      color: '#8c564b'},
           {id: 'natural_gas',                  column: 0, label: 'natural_gas',                       color: '#7f7f7f'},
           {id: 'uranium',                      column: 0, label: 'uranium',                           color: '#ff7f0e'},
           {id: 'biomass_products',             column: 0, label: 'biomass_products',                  color: '#2ca02c'},
           {id: 'non_biogenic_waste',           column: 0, label: 'non_biogenic_waste',                color: '#BA7D40'},
-          
+          {id: 'crude_oil',                    column: 0, label: 'crude_oil',                         color: '#8c564b'},
+
+
           {id: 'electricity',                  column: 1, label: 'electricity',                       color: '#1f77b4'},
           {id: 'heat',                         column: 1, label: 'heat',                              color: '#cc0000'},
           {id: 'hydrogen',                     column: 1, label: 'hydrogen',                          color: '#87cfeb'},
@@ -40,33 +43,179 @@ D3.sankey =
           {id: 'export',                       column: 2, label: 'export',                            color: '#43464B'},
           {id: 'losses',                       column: 2, label: 'losses',                            color: '#DCDCDC'}
         ]
+
         links: [
-          {left: 'imported_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_hydrogen_to_hydrogen',     color: '#87cfeb'},
-          {left: 'residual_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_residual_hydrogen_to_hydrogen',     color: '#87cfeb'},
-          {left: 'imported_ammonia',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_ammonia_to_hydrogen',      color: '#00dba1'},
-          {left: 'natural_gas',                  right: 'hydrogen',                  gquery: 'sankey_0_to_1_natural_gas_to_hydrogen',           color: '#7f7f7f'},
-          {left: 'biomass_products',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_biomass_products_to_hydrogen',      color: '#2ca02c'},
+          {left: 'imported_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_hydrogen_to_hydrogen',            color: '#87cfeb'},
 
-          {left: 'electricity',                  right: 'hydrogen',                  gquery: 'sankey_1_to_1_electricity_to_hydrogen',           color: '#1f77b4'},
-          {left: 'heat',                         right: 'hydrogen',                  gquery: 'sankey_1_to_1_heat_to_hydrogen',                  color: '#cc0000'},
-          {left: 'oil_and_oil_products',         right: 'hydrogen',                  gquery: 'sankey_1_to_1_oil_and_oil_products_to_hydrogen',  color: '#8c564b'},
+          {left: 'residual_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_residual_hydrogen_to_hydrogen',            color: '#87cfeb'},
 
-          {left: 'hydrogen',                     right: 'electricity',               gquery: 'sankey_1_to_1_hydrogen_to_electricity',           color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'heat',                      gquery: 'sankey_1_to_1_hydrogen_to_heat',                  color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_hydrogen_to_oil_and_oil_products',  color: '#87cfeb'},
+          {left: 'imported_ammonia',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_ammonia_to_hydrogen',             color: '#00dba1'},
 
-          {left: 'hydrogen',                     right: 'agriculture',               gquery: 'sankey_1_to_2_hydrogen_to_agriculture',           color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'households',                gquery: 'sankey_1_to_2_hydrogen_to_households',            color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'buildings',                 gquery: 'sankey_1_to_2_hydrogen_to_buildings',             color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'transport',                 gquery: 'sankey_1_to_2_hydrogen_to_transport',             color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'industry',                  gquery: 'sankey_1_to_2_hydrogen_to_industry',              color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'energy',                    gquery: 'sankey_1_to_2_hydrogen_to_energy',                color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'other',                     gquery: 'sankey_1_to_2_hydrogen_to_other',                 color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'bunkers',                   gquery: 'sankey_1_to_2_hydrogen_to_bunkers',               color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'feedstock',                 gquery: 'sankey_1_to_2_hydrogen_to_feedstock',             color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'export',                    gquery: 'sankey_1_to_2_hydrogen_to_export',                color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'losses',                    gquery: 'sankey_1_to_2_hydrogen_to_loss',                  color: '#87cfeb'},
+          {left: 'natural_gas',                  right: 'hydrogen',                  gquery: 'sankey_0_to_1_natural_gas_to_hydrogen',                  color: '#7f7f7f'},
+
+          {left: 'biomass_products',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_biomass_products_to_hydrogen',             color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'electricity',               gquery: 'sankey_0_to_1_biomass_products_to_electricity',          color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'heat',                      gquery: 'sankey_0_to_1_biomass_products_to_heat',                 color: '#2ca02c'},
+
+          {left: 'ambient_heat',                 right: 'heat',                      gquery: 'sankey_0_to_1_ambient_heat_to_heat',                     color: '#ADDE4C'},
+
+          {left: 'coal_and_coal_products',       right: 'heat',                      gquery: 'sankey_0_to_1_coal_and_coal_products_to_heat',           color: '#252525'},  
+          {left: 'coal_and_coal_products',       right: 'electricity',               gquery: 'sankey_0_to_1_coal_and_coal_products_to_electricity',    color: '#252525'},   
+
+
+          {left: 'uranium',                      right: 'heat',                      gquery: 'sankey_0_to_1_uranium_to_heat',                          color: '#ff7f0e'},  
+          {left: 'uranium',                      right: 'electricity',               gquery: 'sankey_0_to_1_uranium_to_electricity',                   color: '#ff7f0e'},             
+          
+          #{left: 'crude_oil',                    right: 'electricity',               gquery: 'sankey_0_to_1_crude_oil_to_electricity',                 color: '#8c564b'}, 
+          #{left: 'crude_oil',                    right: 'hydrogen',                  gquery: 'sankey_0_to_1_crude_oil_to_hydrogen',                    color: '#8c564b'},
+
+          {left: 'crude_oil',                    right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',        color: '#8c564b'}, 
+          {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_to_oil_and_oil_products',     color: '#8c564b'},           
+
+          #{left: 'geothermal',                   right: 'heat',                      gquery: 'sankey_0_to_1_crude_oil_to_hydrogen',                    color: '#cc0000'}, 
+
+          {left: 'hydro_electricity',            right: 'electricity',               gquery: 'sankey_0_to_1_hydro_electricity_to_electricity',         color: '#4465c6'},
+          {left: 'hydro_electricity',            right: 'heat',                      gquery: 'sankey_0_to_1_hydro_electricity_to_heat',                color: '#4465c6'},
+          {left: 'solar_electricity',            right: 'electricity',               gquery: 'sankey_0_to_1_solar_electricity_to_electricity',         color: '#4465c6'},
+          #{left: 'solar_electricity',            right: 'heat',                      gquery: 'sankey_0_to_1_solar_electricity_to_heat',                color: '#4465c6'},
+          {left: 'wind_electricity',             right: 'electricity',               gquery: 'sankey_0_to_1_wind_electricity_to_electricity',          color: '#4465c6'},       
+          {left: 'wind_electricity',             right: 'heat',                      gquery: 'sankey_0_to_1_wind_electricity_to_heat',                color: '#4465c6'},
+
+          {left: 'imported_electricity',         right: 'electricity',               gquery: 'sankey_0_to_1_imported_electricity_to_electricity',     color: '#4465c6'},
+          #{left: 'imported_heat',                right: 'heat',                      gquery: 'sankey_0_to_1_hydro_electricity_to_heat',                color: '#4465c6'},
+
+          {left: 'natural_gas',                  right: 'electricity',               gquery: 'sankey_0_to_1_natural_gas_to_electricity',               color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'heat',                      gquery: 'sankey_0_to_1_natural_gas_to_heat',                      color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'hydrogen',                  gquery: 'sankey_0_to_1_natural_gas_to_hydrogen',                  color: '#7f7f7f'},
+
+          {left: 'imported_ammonia',             right: 'agriculture',               gquery: 'sankey_0_to_2_ammonia_to_agriculture',                   color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'households',                gquery: 'sankey_0_to_2_ammonia_to_households',                    color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'buildings',                 gquery: 'sankey_0_to_2_ammonia_to_buildings',                     color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'transport',                 gquery: 'sankey_0_to_2_ammonia_to_transport',                     color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'industry',                  gquery: 'sankey_0_to_2_ammonia_to_industry',                      color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'energy',                    gquery: 'sankey_0_to_2_ammonia_to_energy',                        color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'other',                     gquery: 'sankey_0_to_2_ammonia_to_other',                         color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'bunkers',                   gquery: 'sankey_0_to_2_ammonia_to_bunkers',                       color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'feedstock',                 gquery: 'sankey_0_to_2_ammonia_to_feedstock',                     color: '#00dba1'},
+          {left: 'imported_ammonia',             right: 'export',                    gquery: 'sankey_0_to_2_ammonia_to_export',                        color: '#00dba1'},
+
+          {left: 'biomass_products',             right: 'agriculture',               gquery: 'sankey_0_to_2_biomass_products_to_agriculture',          color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'households',                gquery: 'sankey_0_to_2_biomass_products_to_households',           color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'buildings',                 gquery: 'sankey_0_to_2_biomass_products_to_buildings',            color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'transport',                 gquery: 'sankey_0_to_2_biomass_products_to_transport',            color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'industry',                  gquery: 'sankey_0_to_2_biomass_products_to_industry',             color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'energy',                    gquery: 'sankey_0_to_2_biomass_products_to_energy',               color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'other',                     gquery: 'sankey_0_to_2_biomass_products_to_other',                color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'bunkers',                   gquery: 'sankey_0_to_2_biomass_products_to_bunkers',              color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'feedstock',                 gquery: 'sankey_0_to_2_biomass_products_to_feedstock',            color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'export',                    gquery: 'sankey_0_to_2_biomass_products_to_export',               color: '#2ca02c'},
+          {left: 'biomass_products',             right: 'losses',                    gquery: 'sankey_0_to_2_biomass_products_to_loss',                 color: '#2ca02c'},
+
+          {left: 'coal_and_coal_products',       right: 'agriculture',               gquery: 'sankey_0_to_2_coal_and_coal_products_to_agriculture',    color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'households',                gquery: 'sankey_0_to_2_coal_and_coal_products_to_households',     color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'buildings',                 gquery: 'sankey_0_to_2_coal_and_coal_products_to_buildings',      color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'transport',                 gquery: 'sankey_0_to_2_coal_and_coal_products_to_transport',      color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'industry',                  gquery: 'sankey_0_to_2_coal_and_coal_products_to_industry',       color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'energy',                    gquery: 'sankey_0_to_2_coal_and_coal_products_to_energy',         color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'other',                     gquery: 'sankey_0_to_2_coal_and_coal_products_to_other',          color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'bunkers',                   gquery: 'sankey_0_to_2_coal_and_coal_products_to_bunkers',        color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'feedstock',                 gquery: 'sankey_0_to_2_coal_and_coal_products_to_feedstock',      color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'export',                    gquery: 'sankey_0_to_2_coal_and_coal_products_to_export',         color: '#252525'},
+          {left: 'coal_and_coal_products',       right: 'losses',                    gquery: 'sankey_0_to_2_coal_and_coal_products_to_loss',           color: '#252525'},
+
+          {left: 'geothermal',                   right: 'agriculture',               gquery: 'sankey_0_to_2_geothermal_to_agriculture',                color: '#787821'},
+          {left: 'geothermal',                   right: 'households',                gquery: 'sankey_0_to_2_geothermal_to_households',                 color: '#787821'},
+          {left: 'geothermal',                   right: 'buildings',                 gquery: 'sankey_0_to_2_geothermal_to_buildings',                  color: '#787821'},
+          {left: 'geothermal',                   right: 'transport',                 gquery: 'sankey_0_to_2_geothermal_to_transport',                  color: '#787821'},
+          {left: 'geothermal',                   right: 'industry',                  gquery: 'sankey_0_to_2_geothermal_to_industry',                   color: '#787821'},
+          {left: 'geothermal',                   right: 'energy',                    gquery: 'sankey_0_to_2_geothermal_to_energy',                     color: '#787821'},
+          {left: 'geothermal',                   right: 'other',                     gquery: 'sankey_0_to_2_geothermal_to_other',                      color: '#787821'},
+          {left: 'geothermal',                   right: 'bunkers',                   gquery: 'sankey_0_to_2_geothermal_to_bunkers',                    color: '#787821'},
+          {left: 'geothermal',                   right: 'feedstock',                 gquery: 'sankey_0_to_2_geothermal_to_feedstock',                  color: '#787821'},
+          #{left: 'geothermal',                   right: 'export',                    gquery: 'sankey_0_to_2_geothermal_to_export',                     color: '#787821'},   
+
+          {left: 'natural_gas',                  right: 'agriculture',               gquery: 'sankey_0_to_2_natural_gas_to_agriculture',               color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'households',                gquery: 'sankey_0_to_2_natural_gas_to_households',                color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'buildings',                 gquery: 'sankey_0_to_2_natural_gas_to_buildings',                 color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'transport',                 gquery: 'sankey_0_to_2_natural_gas_to_transport',                 color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'industry',                  gquery: 'sankey_0_to_2_natural_gas_to_industry',                  color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'energy',                    gquery: 'sankey_0_to_2_natural_gas_to_energy',                    color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'other',                     gquery: 'sankey_0_to_2_natural_gas_to_other',                     color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'bunkers',                   gquery: 'sankey_0_to_2_natural_gas_to_bunkers',                    color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'feedstock',                 gquery: 'sankey_0_to_2_natural_gas_to_feedstock',                  color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'export',                    gquery: 'sankey_0_to_2_natural_gas_to_export',                     color: '#7f7f7f'},            
+
+          {left: 'solar_thermal',                right: 'agriculture',               gquery: 'sankey_0_to_2_solar_thermal_to_agriculture',             color: '#ffcc00'},
+          {left: 'solar_thermal',                right: 'households',                gquery: 'sankey_0_to_2_solar_thermal_to_households',              color: '#ffcc00'},
+          {left: 'solar_thermal',                right: 'buildings',                 gquery: 'sankey_0_to_2_solar_thermal_to_buildings',               color: '#ffcc00'},
+          {left: 'solar_thermal',                right: 'transport',                 gquery: 'sankey_0_to_2_solar_thermal_to_transport',               color: '#ffcc00'},
+          {left: 'solar_thermal',                right: 'industry',                  gquery: 'sankey_0_to_2_solar_thermal_to_industry',                color: '#ffcc00'},
+          {left: 'solar_thermal',                right: 'energy',                    gquery: 'sankey_0_to_2_solar_thermal_to_energy',                  color: '#ffcc00'},
+          {left: 'solar_thermal',                right: 'other',                     gquery: 'sankey_0_to_2_solar_thermal_to_other',                   color: '#ffcc00'},
+          {left: 'solar_thermal',                right: 'bunkers',                   gquery: 'sankey_0_to_2_solar_thermal_to_bunkers',                 color: '#ffcc00'},
+          {left: 'solar_thermal',                right: 'feedstock',                 gquery: 'sankey_0_to_2_solar_thermal_to_feedstock',               color: '#ffcc00'},
+          #{left: 'solar_thermal',                right: 'export',                    gquery: 'sankey_0_to_2_solar_thermal_to_export',                  color: '#ffcc00'},   
+
+          {left: 'electricity',                  right: 'hydrogen',                  gquery: 'sankey_1_to_1_electricity_to_hydrogen',                  color: '#1f77b4'},
+
+          {left: 'oil_and_oil_products',         right: 'hydrogen',                  gquery: 'sankey_1_to_1_oil_and_oil_products_to_hydrogen',         color: '#8c564b'},
+          
+          {left: 'oil_and_oil_products',         right: 'electricity',               gquery: 'sankey_1_to_1_oil_and_oil_products_to_electricity',      color: '#8c564b'},
+
+          {left: 'heat',                         right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_heat_to_oil_and_oil_products',             color: '#cc0000'},
+
+          {left: 'hydrogen',                     right: 'electricity',               gquery: 'sankey_1_to_1_hydrogen_to_electricity',                  color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'heat',                      gquery: 'sankey_1_to_1_hydrogen_to_heat',                         color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_hydrogen_to_oil_and_oil_products',         color: '#87cfeb'},
+
+          {left: 'electricity',                  right: 'agriculture',               gquery: 'sankey_1_to_2_electricity_to_agriculture',               color: '#1f77b4'},
+          {left: 'electricity',                  right: 'households',                gquery: 'sankey_1_to_2_electricity_to_households',                color: '#1f77b4'},
+          {left: 'electricity',                  right: 'buildings',                 gquery: 'sankey_1_to_2_electricity_to_buildings',                 color: '#1f77b4'},
+          {left: 'electricity',                  right: 'transport',                 gquery: 'sankey_1_to_2_electricity_to_transport',                 color: '#1f77b4'},
+          {left: 'electricity',                  right: 'industry',                  gquery: 'sankey_1_to_2_electricity_to_industry',                  color: '#1f77b4'},
+          {left: 'electricity',                  right: 'energy',                    gquery: 'sankey_1_to_2_electricity_to_energy',                    color: '#1f77b4'},
+          {left: 'electricity',                  right: 'other',                     gquery: 'sankey_1_to_2_electricity_to_other',                     color: '#1f77b4'},
+          {left: 'electricity',                  right: 'bunkers',                   gquery: 'sankey_1_to_2_electricity_to_bunkers',                   color: '#1f77b4'},
+          {left: 'electricity',                  right: 'feedstock',                 gquery: 'sankey_1_to_2_electricity_to_feedstock',                 color: '#1f77b4'},
+          {left: 'electricity',                  right: 'export',                    gquery: 'sankey_1_to_2_electricity_to_export',                    color: '#1f77b4'},
+          {left: 'electricity',                  right: 'losses',                    gquery: 'sankey_1_to_2_electricity_to_loss',                      color: '#1f77b4'},
+
+          {left: 'heat',                         right: 'agriculture',               gquery: 'sankey_1_to_2_heat_to_agriculture',                      color: '#cc0000'},
+          {left: 'heat',                         right: 'households',                gquery: 'sankey_1_to_2_heat_to_households',                       color: '#cc0000'},
+          {left: 'heat',                         right: 'buildings',                 gquery: 'sankey_1_to_2_heat_to_buildings',                        color: '#cc0000'},
+          {left: 'heat',                         right: 'transport',                 gquery: 'sankey_1_to_2_heat_to_transport',                        color: '#cc0000'},
+          {left: 'heat',                         right: 'industry',                  gquery: 'sankey_1_to_2_heat_to_industry',                         color: '#cc0000'},
+          {left: 'heat',                         right: 'energy',                    gquery: 'sankey_1_to_2_heat_to_energy',                           color: '#cc0000'},
+          {left: 'heat',                         right: 'other',                     gquery: 'sankey_1_to_2_heat_to_other',                            color: '#cc0000'},
+          {left: 'heat',                         right: 'bunkers',                   gquery: 'sankey_1_to_2_heat_to_bunkers',                          color: '#cc0000'},
+          {left: 'heat',                         right: 'feedstock',                 gquery: 'sankey_1_to_2_heat_to_feedstock',                        color: '#cc0000'},
+          {left: 'heat',                         right: 'losses',                    gquery: 'sankey_1_to_2_heat_to_loss',                             color: '#cc0000'},
+
+          {left: 'hydrogen',                     right: 'agriculture',               gquery: 'sankey_1_to_2_hydrogen_to_agriculture',                  color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'households',                gquery: 'sankey_1_to_2_hydrogen_to_households',                   color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'buildings',                 gquery: 'sankey_1_to_2_hydrogen_to_buildings',                    color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'transport',                 gquery: 'sankey_1_to_2_hydrogen_to_transport',                    color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'industry',                  gquery: 'sankey_1_to_2_hydrogen_to_industry',                     color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'energy',                    gquery: 'sankey_1_to_2_hydrogen_to_energy',                       color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'other',                     gquery: 'sankey_1_to_2_hydrogen_to_other',                        color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'bunkers',                   gquery: 'sankey_1_to_2_hydrogen_to_bunkers',                      color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'feedstock',                 gquery: 'sankey_1_to_2_hydrogen_to_feedstock',                    color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'export',                    gquery: 'sankey_1_to_2_hydrogen_to_export',                       color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'losses',                    gquery: 'sankey_1_to_2_hydrogen_to_loss',                         color: '#87cfeb'},
+
+          {left: 'oil_and_oil_products',         right: 'agriculture',               gquery: 'sankey_1_to_2_oil_and_oil_products_to_agriculture',      color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'households',                gquery: 'sankey_1_to_2_oil_and_oil_products_to_households',       color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'buildings',                 gquery: 'sankey_1_to_2_oil_and_oil_products_to_buildings',        color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'transport',                 gquery: 'sankey_1_to_2_oil_and_oil_products_to_transport',        color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'industry',                  gquery: 'sankey_1_to_2_oil_and_oil_products_to_industry',         color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'energy',                    gquery: 'sankey_1_to_2_oil_and_oil_products_to_energy',           color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'other',                     gquery: 'sankey_1_to_2_oil_and_oil_products_to_other',            color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'bunkers',                   gquery: 'sankey_1_to_2_oil_and_oil_products_to_bunkers',          color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'feedstock',                 gquery: 'sankey_1_to_2_oil_and_oil_products_to_feedstock',        color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'export',                    gquery: 'sankey_1_to_2_oil_and_oil_products_to_export',           color: '#8c564b'},
+          {left: 'oil_and_oil_products',         right: 'losses',                    gquery: 'sankey_1_to_2_oil_and_oil_products_to_loss',             color: '#8c564b'}
         ]
+
     sankey_electrical_interconnection:
       data:
         nodes: [
@@ -113,6 +262,7 @@ D3.sankey =
           {id: 'export12',                     column: 2, label: 'export12',               color: '#43464B'},
           {id: 'loss',                         column: 2, label: 'loss',                   color: '#DCDCDC'}
         ]
+
         links: [
           {left: 'solar',                      right: 'network',          gquery: 'solar_to_network_in_sankey', color: '#ffcc00'},
           {left: 'wind',                       right: 'network',          gquery: 'wind_to_network_in_sankey', color: '#63A1C9'},
@@ -140,7 +290,7 @@ D3.sankey =
           {left: 'network',                    right: 'transport',        gquery: 'network_to_transport_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'industry',         gquery: 'network_to_industry_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'agriculture',      gquery: 'network_to_agriculture_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'power-to-gas',      gquery: 'network_to_p2g_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'power-to-gas',     gquery: 'network_to_p2g_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'curtailment',      gquery: 'network_to_curtailment_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'other',            gquery: 'network_to_other_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'export1',          gquery: 'network_to_export1_in_sankey', color: '#1f77b4'},
@@ -434,7 +584,8 @@ D3.sankey =
           {id: 'industry_steel',                 column: 0, label: 'industry_steel',         color: '#485460'},
           {id: 'industry_food',                  column: 0, label: 'industry_food',          color: '#A2D679'},
           {id: 'industry_paper',                 column: 0, label: 'industry_paper',         color: '#394C19'},
-          {id: 'import',                         column: 0, label: 'import',                 color: '#FDE97B'},
+          {id: 'import_co2_backup',              column: 0, label: 'import_co2_backup',      color: '#FDE97B'},
+          {id: 'import_co2_baseload',            column: 0, label: 'import_co2_baseload',    color: '#FDE97B'},
           {id: 'captured_co2',                   column: 1, label: 'captured_co2',           color: '#1f77b4'},
           {id: 'other_utilisation',              column: 2, label: 'other_utilisation',      color: '#A7A1C5'},
           {id: 'other_delayed',                  column: 3, label: 'other_delayed',          color: '#A7A1C5'},
@@ -442,7 +593,8 @@ D3.sankey =
           {id: 'offshore_sequestration',         column: 3, label: 'offshore_sequestration', color: '#416B86'},
           {id: 'synthetic_methanol',             column: 3, label: 'synthetic_methanol',     color: '#FF8C8C'},
           {id: 'synthetic_kerosene',             column: 3, label: 'synthetic_kerosene',     color: '#74B9FF'},
-          {id: 'export',                         column: 3, label: 'export',                 color: '#6AB04C'}
+          {id: 'export',                         column: 3, label: 'export',                 color: '#6AB04C'},
+
         ]
         links: [
           {left: 'dac',                          right: 'captured_co2',               gquery: 'dac_captured_co2_total_in_ccus_sankey', color: '#b71540'},
@@ -454,7 +606,8 @@ D3.sankey =
           {left: 'industry_steel',               right: 'captured_co2',               gquery: 'industry_steel_captured_co2_total_in_ccus_sankey', color: '#485460'},
           {left: 'industry_food',                right: 'captured_co2',               gquery: 'industry_food_captured_co2_total_in_ccus_sankey', color: '#A2D679'},
           {left: 'industry_paper',               right: 'captured_co2',               gquery: 'industry_paper_captured_co2_total_in_ccus_sankey', color: '#394C19'},
-          {left: 'import',                       right: 'captured_co2',               gquery: 'import_captured_co2_total_in_ccus_sankey', color: '#FDE97B'},
+          {left: 'import_co2_backup',            right: 'captured_co2',               gquery: 'import_captured_co2_backup_in_ccus_sankey', color: '#FDE97B'},
+          {left: 'import_co2_baseload',          right: 'captured_co2',               gquery: 'import_captured_co2_baseload_in_ccus_sankey', color: '#FDE97B'},
           {left: 'captured_co2',                 right: 'other_utilisation',          gquery: 'captured_co2_other_utilisation_total_in_ccus_sankey', color: '#1f77b4'},
           {left: 'other_utilisation',            right: 'other_delayed',              gquery: 'captured_co2_other_utilisation_emitted_in_ccus_sankey', color: '#A7A1C5'},
           {left: 'other_utilisation',            right: 'other_indefinitely',         gquery: 'captured_co2_other_utilisation_indefinitely_in_ccus_sankey', color: '#533483'},
@@ -462,6 +615,7 @@ D3.sankey =
           {left: 'captured_co2',                 right: 'synthetic_methanol',         gquery: 'captured_co2_synthetic_methanol_total_in_ccus_sankey', color: '#1f77b4'},
           {left: 'captured_co2',                 right: 'synthetic_kerosene',         gquery: 'captured_co2_synthetic_kerosene_total_in_ccus_sankey', color: '#1f77b4'},
           {left: 'captured_co2',                 right: 'export',                     gquery: 'captured_co2_export_total_in_ccus_sankey', color: '#1f77b4'}
+      
        ]
     sankey:
       data:

@@ -1,7 +1,7 @@
 ---
 - label: co2_demand_export
   color: "#ff9f43"
-  order_by: 1
+  order_by: 10
   group: demand
   show_at_first: false
   is_target_line: false
@@ -13,7 +13,7 @@
   key: co2_demand_export_for_mekko_mekko_of_co2_demand_supply
 - label: co2_demand_offshore_sequestration
   color: "#416B86"
-  order_by: 2
+  order_by: 20
   group: demand
   show_at_first: false
   is_target_line: false
@@ -25,7 +25,7 @@
   key: co2_demand_offshore_sequestration_mekko_of_co2_demand_supply
 - label: co2_demand_synthetic_kerosene
   color: "#74B9FF"
-  order_by: 3
+  order_by: 30
   group: demand
   show_at_first: false
   is_target_line: false
@@ -37,7 +37,7 @@
   key: co2_demand_synthetic_kerosene_mekko_of_co2_demand_supply
 - label: co2_demand_synthetic_methanol
   color: "#FF8C8C"
-  order_by: 4
+  order_by: 40
   group: demand
   show_at_first: false
   is_target_line: false
@@ -49,7 +49,7 @@
   key: co2_demand_synthetic_methanol_mekko_of_co2_demand_supply
 - label: co2_demand_other_utilisation_emitted
   color: "#A7A1C5"
-  order_by: 5
+  order_by: 50
   group: demand
   show_at_first: false
   is_target_line: false
@@ -61,7 +61,7 @@
   key: co2_demand_other_utilisation_emitted_supply_mekko_of_co2_demand_supply
 - label: co2_demand_other_utilisation_indefinitely
   color: "#533483"
-  order_by: 6
+  order_by: 60
   group: demand
   show_at_first: false
   is_target_line: false
@@ -71,9 +71,10 @@
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
   key: co2_demand_other_utilisation_indefinitely_supply_mekko_of_co2_demand_supply
+
 - label: co2_supply_direct_air_capture
   color: "#b71540"
-  order_by: 10
+  order_by: 100
   group: supply
   show_at_first: false
   is_target_line: false
@@ -85,7 +86,7 @@
   key: co2_supply_direct_air_capture_mekko_of_co2_demand_supply
 - label: co2_supply_energy_hydrogen
   color: "#2e86de"
-  order_by: 11
+  order_by: 110
   group: supply
   show_at_first: false
   is_target_line: false
@@ -97,7 +98,7 @@
   key: co2_supply_energy_hydrogen_mekko_of_co2_demand_supply
 - label: co2_supply_energy_power
   color: "#786FA6"
-  order_by: 12
+  order_by: 120
   group: supply
   show_at_first: false
   is_target_line: false
@@ -107,21 +108,33 @@
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
   key: co2_supply_energy_power_mekko_of_co2_demand_supply
-- label: co2_supply_import
+- label: co2_supply_import_backup
   color: "#FDE97B"
-  order_by: 13
+  order_by: 130
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: co2_supply_import
+  gquery: co2_supply_import_backup
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
-  key: co2_supply_import_mekko_of_co2_demand_supply
+  key: co2_supply_import_baseload_mekko_of_co2_demand_supply
+- label: co2_supply_import_baseload
+  color: "#FDE97B"
+  order_by: 140
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: co2_supply_import_baseload
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_co2_demand_supply
+  key: co2_supply_import_backup_mekko_of_co2_demand_supply
 - label: co2_supply_industry_fertilizers
   color: "#10ac84"
-  order_by: 14
+  order_by: 150
   group: supply
   show_at_first: false
   is_target_line: false
@@ -133,7 +146,7 @@
   key: co2_supply_industry_fertilizers_mekko_of_co2_demand_supply
 - label: co2_supply_industry_food
   color: "#A2D679"
-  order_by: 15
+  order_by: 160
   group: supply
   show_at_first: false
   is_target_line: false
@@ -145,7 +158,7 @@
   key: co2_supply_industry_food_mekko_of_co2_demand_supply
 - label: co2_supply_industry_paper
   color: "#394C19"
-  order_by: 16
+  order_by: 170
   group: supply
   show_at_first: false
   is_target_line: false
@@ -157,7 +170,7 @@
   key: co2_supply_industry_paper_mekko_of_co2_demand_supply
 - label: co2_supply_industry_steel
   color: "#485460"
-  order_by: 17
+  order_by: 180
   group: supply
   show_at_first: false
   is_target_line: false
@@ -169,7 +182,7 @@
   key: co2_supply_industry_steel_mekko_of_co2_demand_supply
 - label: co2_supply_industry_refineries
   color: "#854321"
-  order_by: 18
+  order_by: 190
   group: supply
   show_at_first: false
   is_target_line: false
@@ -181,7 +194,7 @@
   key: co2_supply_industry_refineries_mekko_of_co2_demand_supply
 - label: co2_supply_industry_chemical_other
   color: "#416B86"
-  order_by: 19
+  order_by: 200
   group: supply
   show_at_first: false
   is_target_line: false

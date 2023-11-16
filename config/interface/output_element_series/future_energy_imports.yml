@@ -1,28 +1,4 @@
 ---
-- label: uranium
-  color: "#E07033"
-  order_by: 50
-  group: future
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: uranium_in_future_energy_imports
-  is_1990: false
-  dependent_on: 
-  output_element_key: future_energy_imports
-  key: uranium_future_future_energy_imports
-- label: natural_gas
-  color: "#CCCCCC"
-  order_by: 40
-  group: future
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: gas_in_future_energy_imports
-  is_1990: false
-  dependent_on: 
-  output_element_key: future_energy_imports
-  key: natural_gas_future_future_energy_imports
 - label: coal
   color: "#333333"
   order_by: 10
@@ -35,6 +11,54 @@
   dependent_on: 
   output_element_key: future_energy_imports
   key: coal_future_future_energy_imports
+- label: oil
+  color: "#854321"
+  order_by: 20
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: oil_in_future_energy_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_imports
+  key: oil_future_future_energy_imports
+- label: oil_products
+  color: "#854321"
+  order_by: 30
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: oil_products_in_future_energy_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_imports
+  key: oil_products_future_future_energy_imports
+- label: natural_gas
+  color: "#CCCCCC"
+  order_by: 40
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_in_future_energy_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_imports
+- label: uranium
+  color: "#E07033"
+  order_by: 50
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: uranium_in_future_energy_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_imports
+  key: uranium_future_future_energy_imports
+  key: natural_gas_future_future_energy_imports
 - label: electricity
   color: "#63A1C9"
   order_by: 60
@@ -71,6 +95,30 @@
   dependent_on: 
   output_element_key: future_energy_imports
   key: hydrogen_future_future_energy_imports
+- label: liquid_hydrogen
+  color: "#d9f5ff"
+  order_by: 80
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: liquid_hydrogen_in_future_energy_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_imports
+  key: liquid_hydrogen_future_future_energy_imports
+- label: lohc
+  color: "#f2fcff"
+  order_by: 80
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lohc_in_future_energy_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_imports
+  key: lohc_future_future_energy_imports
 - label: ammonia
   color: "#1ce6d6"
   order_by: 85
@@ -95,30 +143,6 @@
   dependent_on: 
   output_element_key: future_energy_imports
   key: lng_future_future_energy_imports
-- label: oil_products
-  color: "#854321"
-  order_by: 30
-  group: future
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: oil_products_in_future_energy_imports
-  is_1990: false
-  dependent_on: 
-  output_element_key: future_energy_imports
-  key: oil_products_future_future_energy_imports
-- label: oil
-  color: "#854321"
-  order_by: 20
-  group: future
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: oil_in_future_energy_imports
-  is_1990: false
-  dependent_on: 
-  output_element_key: future_energy_imports
-  key: oil_future_future_energy_imports
 - label: imported_heat_waterfall
   color: "#E84118"
   order_by: 100

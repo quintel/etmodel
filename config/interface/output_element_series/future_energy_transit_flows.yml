@@ -1,0 +1,185 @@
+---
+- label: coal
+  color: "#1D1D1D"
+  order_by: 100
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_in_future_energy_transit_flows
+  is_1990: 
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: coal_future_future_energy_transit_flows
+- label: cokes
+  color: "#494949"
+  order_by: 110
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: cokes_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: cokes_future_future_energy_transit_flows
+- label: lignite
+  color: "#808080"
+  order_by: 120
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lignite_in_future_energy_transit_flows
+  is_1990: 
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: lignite_future_future_energy_transit_flows
+
+- label: crude_oil
+  color: "#351B11"
+  order_by: 200
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: crude_oil_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: crude_oil_future_future_energy_transit_flows
+- label: kerosene
+  color: "#472314"
+  order_by: 210
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: kerosene_future_future_energy_transit_flows
+- label: gasoline
+  color: "#5B2B18"
+  order_by: 220
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gasoline_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: gasoline_future_future_energy_transit_flows
+- label: diesel
+  color: "#6E341C"
+  order_by: 230
+  group: future
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: diesel_in_future_energy_transit_flows
+  is_1990: 
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: diesel_future_future_energy_transit_flows
+- label: lpg
+  color: "#652E19"
+  order_by: 240
+  group: future
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: lpg_in_future_energy_transit_flows
+  is_1990: 
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: lpg_future_future_energy_transit_flows
+- label: heavy_fuel_oil
+  color: "#652E19"
+  order_by: 250
+  group: future
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: heavy_fuel_oil_in_future_energy_transit_flows
+  is_1990: 
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: heavy_fuel_oil_future_future_energy_transit_flows
+
+# - label: network_gas
+#   color: "#C64F1F"
+#   order_by: 300
+#   group: future
+#   show_at_first: false
+#   is_target_line: false
+#   target_line_position: ''
+#   gquery: network_gas_in_future_energy_transit_flows
+#   is_1990: false
+#   dependent_on: 
+#   output_element_key: future_energy_transit_flows
+#   key: network_gas_future_future_energy_transit_flows
+- label: lng
+  color: "#E08863"
+  order_by: 310
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: lng_future_future_energy_transit_flows
+- label: ammonia
+  color: "#ACDD53"
+  order_by: 320
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ammonia_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: ammonia_future_future_energy_transit_flows
+
+- label: hydrogen
+  color: "#5288A6"
+  order_by: 400
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: hydrogen_future_future_energy_transit_flows
+- label: liquid_hydrogen
+  color: "#A7C5D6"
+  order_by: 410
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: liquid_hydrogen_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: liquid_hydrogen_future_future_energy_transit_flows
+- label: lohc
+  color: "#B7D0DE"
+  order_by: 420
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lohc_in_future_energy_transit_flows
+  is_1990: false
+  dependent_on: 
+  output_element_key: future_energy_transit_flows
+  key: lohc_future_future_energy_transit_flows
+

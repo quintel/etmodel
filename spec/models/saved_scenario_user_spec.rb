@@ -91,13 +91,22 @@ describe SavedScenarioUser do
     ).to be(User::ROLES.key(:scenario_owner))
   end
 
-  it 'cancels a destroy action for the last owner of a scenario' do
+  it 'cancels a destroy action for the last owner of a scenario if other users are present' do
+    owner = create(:saved_scenario_user, saved_scenario: saved_scenario, role_id: User::ROLES.key(:scenario_owner))
+    viewer = create(:saved_scenario_user, saved_scenario: saved_scenario, role_id: User::ROLES.key(:scenario_viewer))
+
+    owner.destroy
+
+    expect(owner.reload).to_not be(nil)
+  end
+
+  it 'does not cancel destroy action for the last owner of a scenario if its the last user' do
     # The first user added will automatically become the scenario owner
-    saved_scenario.user = create(:user)
+    owner = create(:saved_scenario_user, saved_scenario: saved_scenario, role_id: User::ROLES.key(:scenario_owner))
+    owner.destroy
 
-    saved_scenario_user = saved_scenario.saved_scenario_users.first
-    saved_scenario_user.destroy
-
-    expect(saved_scenario_user.reload).to_not be(nil)
+    expect(
+      saved_scenario.saved_scenario_users.count
+    ).to be(0)
   end
 end

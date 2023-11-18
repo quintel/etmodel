@@ -71,6 +71,12 @@ Rails.application.routes.draw do
   resources :saved_scenarios, except: %i[new] do
     resource :feature, only: %i[show create update destroy], controller: 'featured_scenarios'
 
+    resources :users, controller: 'saved_scenario_users' do
+      member do
+        get :confirm_destroy
+      end
+    end
+
     member do
       get :load
       put :discard
@@ -174,10 +180,7 @@ Rails.application.routes.draw do
     put '/user'    => 'user#update'
     delete '/user' => 'user#destroy'
 
-    #resources :saved_scenarios, only: %i[index show create update destroy]
-    resources :saved_scenarios, only: %i[index show create update destroy] do
-      resources :users, only: %i[show create update destroy], controller: 'scenario_users'
-    end
+    resources :saved_scenarios, only: %i[index show create update destroy]
     resources :transition_paths, only: %i[index show create update destroy]
   end
 

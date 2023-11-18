@@ -87,7 +87,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_04_110117) do
     t.integer "role_id", null: false
     t.integer "user_id"
     t.string "user_email"
-    t.index ["saved_scenario_id", "user_id"], name: "saved_scenario_users_saved_scenario_id_user_id_idx"
+    t.index ["saved_scenario_id", "user_email"], name: "saved_scenario_users_saved_scenario_id_user_email_idx", unique: true
+    t.index ["saved_scenario_id", "user_id", "role_id"], name: "saved_scenario_users_saved_scenario_id_user_id_role_id_idx"
+    t.index ["saved_scenario_id", "user_id"], name: "saved_scenario_users_saved_scenario_id_user_id_idx", unique: true
     t.index ["user_email"], name: "saved_scenario_users_user_email_idx"
   end
 

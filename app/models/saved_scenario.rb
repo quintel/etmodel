@@ -202,4 +202,13 @@ class SavedScenario < ApplicationRecord
 
     SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_owner))
   end
+
+  # Check if the user has a 'pending' invitation, meaning the user_email attribute is still set.
+  # If this is the case for the given user, link the current user to this SavedScenario directly.
+  def check_pending_invitation_for(user)
+    ssu = saved_scenario_users.where(user_email: user.email)
+
+    ssu.where(user_id: nil).update_all(user_id: user.id)
+    ssu.update_all(user_email: nil)
+  end
 end

@@ -59,6 +59,8 @@ class SavedScenariosController < ApplicationController
   end
 
   def all
+    User.update_pending_scenario_invitations(current_user)
+
     @saved_scenarios = SavedScenario.all
       .includes(:featured_scenario, :users)
       .order('updated_at DESC')
@@ -71,6 +73,8 @@ class SavedScenariosController < ApplicationController
   end
 
   def show
+    @saved_scenario.check_pending_invitation_for(current_user)
+
     respond_to do |format|
       format.html { @saved_scenario.loadable? ? render : redirect_to(root_path) }
       format.csv { @saved_scenario.loadable? ? render : render_not_found }
@@ -86,11 +90,7 @@ class SavedScenariosController < ApplicationController
       title: params[:title].presence
     )
 
-    if params[:inline]
-      render 'new', layout: false
-    else
-      render 'new'
-    end
+    render 'new', layout: false
   end
 
   # Saves a scenario by creating a SavedScenario.
@@ -241,9 +241,10 @@ class SavedScenariosController < ApplicationController
     end
   end
 
+  # This determines whether the SavedScenario is editable by the current_user
   def owned_saved_scenario?(saved_scenario = nil)
     saved_scenario ||= @saved_scenario
-    saved_scenario.owner?(current_user)
+    saved_scenario.collaborator?(current_user) || saved_scenario.owner?(current_user)
   end
 
   def scenario_by_current_user?(scenario)
@@ -274,5 +275,9 @@ class SavedScenariosController < ApplicationController
     if Current.setting.active_saved_scenario_id == saved_scenario.id
       Current.setting.active_scenario_title = saved_scenario.title
     end
+  end
+
+  def update_scenario_users
+    @saved_scenario.update_users_with(current_user)
   end
 end

@@ -47,4 +47,15 @@ class User < ApplicationRecord
   def self.from_session_user!(identity_user)
     find(identity_user.id).tap { |u| u.identity_user = identity_user }
   end
+
+  # Check if the user has a 'pending' invitation for any scenario, meaning the user_email attribute is still set.
+  # If this is the case for the given user, link the current user to the SavedScenario directly.
+  def self.update_pending_scenario_invitations(user)
+    return if user&.id.blank? || user&.email.blank?
+
+    ssu = SavedScenarioUser.where(user_email: user.email)
+
+    ssu.where(user_id: nil).update_all(user_id: user.id)
+    ssu.update_all(user_email: nil)
+  end
 end

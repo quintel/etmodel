@@ -35,6 +35,7 @@ Identity.configure do |config|
   # Create or update the local user when signing in.
   config.on_sign_in = lambda do |session|
     User.from_identity!(session.user)
+    User.update_pending_scenario_invitations(session.user)
   end
 
   # We've had cases where browsers make multiple simultaneous requests to the ETM; presumably a

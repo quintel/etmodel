@@ -1,0 +1,46 @@
+- content_for(:page_title) { "#{@saved_scenario.title} - #{t('meta.name')}" }
+
+-# We'll render the flash in this view, so suppress doing so in the layout.
+- content_for(:flash) do
+  %span
+
+.background_wrapper#saved_scenario
+  .scenario_wrapper#show_scenario
+    - if @saved_scenario.owner?(current_user)
+      = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: @saved_scenario.discarded? ? :trash : :my_scenarios, show_save_current: false }
+
+    = render partial: 'flash', format: :js
+
+    .scenario
+      %h1
+        = @saved_scenario.title ? format_subscripts(@saved_scenario.title) : @saved_scenario.id
+
+      %ul.details
+        %li
+          = area_flag_icon(@saved_scenario.area_code)
+          %strong
+            = t "areas.#{@saved_scenario.area_code}"
+            = @saved_scenario.end_year
+        %li
+          = t('scenario.updated')
+          = local_time(@saved_scenario.updated_at, :long)
+
+      .bar
+
+      .description
+        = t('scenario.users.manage_description')
+
+      %h2= t('scenario.users.current')
+
+      = render partial: 'user_table', format: :js, locals: { saved_scenario: @saved_scenario }
+
+    .actions
+      .save.button.scenario-button.show-new-saved-scenario-user-form{ data: { form_url: new_saved_scenario_user_path } }
+        = succeed '&hellip;'.html_safe do
+          = t('scenario.users.invite')
+      %a.cancel.button.scenario-button{ href: saved_scenario_path(@saved_scenario) }
+        = t('scenario.back_to')
+
+    #edit_scenario
+    - unless @saved_scenario.featured?
+      = render partial: 'scenarios/version_warning', locals: { scenario: @saved_scenario }

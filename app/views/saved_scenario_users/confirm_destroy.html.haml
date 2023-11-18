@@ -1,0 +1,12 @@
+.scenario_wrapper
+  %h1= t('scenario.users.destroy.title')
+  %p= t('scenario.users.destroy.description')
+
+  %p{ style: 'font-weight: bold' }
+    - if @saved_scenario_user.user_email.present?
+      = "#{@saved_scenario_user.user_email} (#{t("scenario.users.roles.#{User::ROLES[@saved_scenario_user.role_id].to_s}")})"
+    - else
+      = "#{@saved_scenario_user.user.name} (#{t("scenario.users.roles.#{User::ROLES[@saved_scenario_user.role_id].to_s}")})"
+
+  .remove_saved_scenario_user_form
+    = link_to t('scenario.users.destroy.button'), saved_scenario_user_path, remote: true, method: :delete, data: { turbo_method: :delete }

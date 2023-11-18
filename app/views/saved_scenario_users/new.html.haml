@@ -1,0 +1,19 @@
+.scenario_wrapper
+  %h1= t('scenario.users.new.title')
+  %p= t('scenario.users.new.description')
+
+  .create_saved_scenario_user_form
+    = render partial: 'form_flash', format: :js
+
+    = simple_form_for @saved_scenario_user, url: saved_scenario_users_path, remote: true do |f|
+      = f.label :user_email, class: 'label' do
+        =t('scenario.users.new.email')
+      = f.input :user_email, label: false, required: true
+
+      = f.label :role_id, class: 'label' do
+        =t('scenario.users.role')
+        = f.input :role_id, label: false,
+          collection: User::ROLES.map{ |r| [t("scenario.users.roles.#{r[1]}"), r[0]] },
+          selected: t("scenario.users.roles.#{User::ROLES.values.first}")
+
+      = f.button :submit, value: t('scenario.users.invite'), class: 'btn primary', data: { disable_with: false }

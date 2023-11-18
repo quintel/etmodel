@@ -25,6 +25,8 @@ class ScenariosController < ApplicationController
   end
 
   def index
+    User.update_pending_scenario_invitations(current_user)
+
     @saved_scenarios = current_user
       .saved_scenarios
       .available

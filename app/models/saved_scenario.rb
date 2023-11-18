@@ -189,12 +189,14 @@ class SavedScenario < ApplicationRecord
   def viewer?(user)
     return false if user.blank?
 
+    return true if user.admin?
+
     ssu = saved_scenario_users.find_by(user_id: user.id)
     ssu.present? && ssu.role_id >= User::ROLES.key(:scenario_viewer)
   end
 
   # Convenience method to quickly set the owner for a scenario, e.g. when creating it as
-  # Scenario.create(user: User). Only works to set the first owner, returns false otherwise.
+  # Scenario.create(user: User). Only works to set the first user, returns false otherwise.
   def user=(user)
     return false if user.blank? || saved_scenario_users.count > 0
 

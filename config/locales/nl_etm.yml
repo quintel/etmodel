@@ -265,6 +265,7 @@ nl:
     updated: "Laatst gewijzigd op"
     end_year: "Eindjaar"
     go_back: " of ga anders terug naar"
+    back_to: "Terug naar scenario"
     link: "Sla huidig scenario op"
     by: "Door"
     area_not_exists: 'Regio bestaat niet'
@@ -316,7 +317,6 @@ nl:
     regional: "Provincies and regio's van Nederlands"
     municipal: "Gemeentes en wijken van Nederlands"
     northern_ireland: "Noord-Ierland"
-    add_description: 'Voeg een beschrijving van je scenario toe...'
     cancel: 'Annuleer'
     uncouple: 'Ontkoppel'
     uncouple_desc: |
@@ -326,6 +326,7 @@ nl:
       Zie voor meer informatie de 
       <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
       documentatie</a>.
+    add_description: 'Voeg een beschrijving van je scenario toe...'
     edit_text: 'Pas titel en beschrijving aan'
     save_text: 'Sla veranderingen op'
     cancel_text: 'Annuleren'
@@ -333,6 +334,41 @@ nl:
     feature_scenario: 'Maak dit een uitgelicht scenario'
     featured_scenario: 'Uitgelicht scenario'
     created_with: 'Scenario gemaakt met het Energietransitiemodel'
+    users:
+      manage: 'Beheer gebruikers'
+      manage_description:
+        Hier kun je beheren wie met welke rechten toegang heeft tot je scenario.
+        Klik op de 'Gebruiker uitnodigen' knop om iemand toegang te geven, of gebruik
+        de tabel om gekoppelde gebruikers te beheren.
+      current: 'Huidige scenario gebruikers'
+      invite: 'Gebruiker uitnodigen'
+      name: 'Gebruiker'
+      role: 'Rol'
+      roles:
+        scenario_owner: 'Eigenaar'
+        scenario_collaborator: 'Medewerker'
+        scenario_viewer: 'Toeschouwer'
+        pending: 'In afwachting'
+      new:
+        title: 'Gebruiker uitnodigen voor scenario'
+        description:
+          Voer het e-mail adres in van de gebruiker die je uit wil nodigen voor dit scenario
+          en kies een rol voor deze gebruiker. Indien er geen gebruiker met het gegeven
+          e-mail adres kan worden gevonden zal een e-mail worden verzonden om deze persoon
+          uit te nodigen een account aan te maken bij het ETM.
+        email: 'E-mail adres van gebruiker'
+      destroy:
+        title: 'Gebruiker verwijderen van scenario'
+        description:
+          Je staat op het punt om de volgende gebruiker te verwijderen van dit scenario.
+          Weet je dit zeker?
+      errors:
+        create: Er ging iets mis tijdens het uitnodigen van de gebruiker!
+        create_email: Het ingevoerde e-mail adres is onjuist.
+        update: Er ging iets mis tijdens het veranderen van de rol voor deze gebruiker!
+        destroy: Er ging iets mis tijdens het verwijderen van de gebruiker van dit scenario!
+        general: Probeer het later alsjeblieft nog een keer. Neem contact op met Quintel indien je deze fout blijft krijgen.
+    group: 'Groep'
     share:
       by: 'Delen via'
       copy: 'Kopieer link'

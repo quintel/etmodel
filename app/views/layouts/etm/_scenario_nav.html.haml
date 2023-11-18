@@ -21,7 +21,7 @@
             = t('header.saved')
       - else
         %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id', title: Current.setting.active_scenario_title) } }
-          = t('header.save_scenario').titleize
+          = t('header.save_scenario_as').titleize
     - else
       %a.sign-in-to-save.disabled{ href: sign_in_path }
         = t('header.save_scenario').titleize

@@ -5,18 +5,3 @@
 - if saved_scenario.localized_description(I18n.locale).presence
   .description
     = formatted_scenario_description(saved_scenario.localized_description(I18n.locale), allow_external_links: saved_scenario.featured?)
-
-.actions
-  - if current_user&.admin?
-    - if saved_scenario.featured?
-      = link_to t('scenario.edit_featured_scenario'), saved_scenario_feature_path(saved_scenario)
-    - else
-      = link_to t('scenario.feature_scenario'), saved_scenario_feature_path(saved_scenario)
-    .dot{ class: 'fa fa-circle' }
-  - if owned_saved_scenario?(saved_scenario)
-    = link_to t("scenario.edit_text"),
-        edit_saved_scenario_path(saved_scenario.id),
-        remote: true
-    .dot{ class: 'fa fa-circle' }
-  = link_to t("scenario.load_energy_mix"),
-    energy_mix_scenario_path(saved_scenario.scenario_id)

@@ -1,0 +1,48 @@
+$error-red: #d81616
+
+table.saved_scenario_users
+  border-collapse: collapse;
+  width: 75%;
+
+  tr.header th
+    border: 0px;
+    text-align: left;
+    font-weight: bold;
+  tr.header th.user_name 
+    width: 55%;
+  tr.header th.user_role
+    width: 35%;
+  tr.header th.user_remove
+    text-align: center;
+    width: 10%;
+
+  td.remove-saved-scenario-user
+    text-align: center;
+
+  td.pending
+    color: #777;
+
+.create_saved_scenario_user_form
+  .label
+    float: left;
+    text-align: left;
+    margin-left: 0px;
+
+.remove_saved_scenario_user_form
+  a
+    font-size: 1rem
+    font-weight: 500
+    padding: 0.6rem
+    width: 100%
+    padding: 10px 15px
+    margin: 0.5rem 0.5rem 0.5rem 0
+    border-radius: 3px
+    width: 40%
+    background: #c00
+    color: white
+    &:hover
+      color: white
+      background: lighten(#c00, 14%)
+    &:active
+      background: darken(#c00, 1%)
+

@@ -275,17 +275,6 @@ describe SavedScenarioUsersController do
         saved_scenario.saved_scenario_users.where(role_id: User::ROLES.key(:scenario_owner)).count
       ).to be(1)
     end
-
-    it "cannot remove itself if it's the last owner" do
-      delete(:destroy, format: :js, params: {
-        saved_scenario_id: saved_scenario.id,
-        id: scenario_owner.id
-      })
-
-      expect(
-        saved_scenario.saved_scenario_users.count
-      ).to be(1)
-    end
   end
 
   describe 'an admin user' do

@@ -39,37 +39,4 @@ class SavedScenarioUser < ApplicationRecord
     # Cancel this action of there are other users and none of them is an owner
     throw(:abort) if other_users.count > 0 && other_role_ids.none?(User::ROLES.key(:scenario_owner))
   end
-
-  # The following methods synchronize the user roles between
-  # the SavedScenario and its Scenarios in ETEngine.
-  def create_api_scenario_user(http_client)
-    CreateAPIScenarioUser.call(http_client, saved_scenario.scenario_id, as_api_params)
-    saved_scenario.scenario_id_history.each do |scenario_id|
-      CreateAPIScenarioUser.call(http_client, scenario_id, as_api_params)
-    end
-  end
-
-  def update_api_scenario_user(http_client)
-    UpdateAPIScenarioUser.call(http_client, saved_scenario.scenario_id, as_api_params)
-    saved_scenario.scenario_id_history.each do |scenario_id|
-      UpdateAPIScenarioUser.call(http_client, scenario_id, as_api_params)
-    end
-  end
-
-  def destroy_api_scenario_user(http_client)
-    DestroyAPIScenarioUser.call(http_client, saved_scenario.scenario_id, as_api_params)
-    saved_scenario.scenario_id_history.each do |scenario_id|
-      DestroyAPIScenarioUser.call(http_client, scenario_id, as_api_params)
-    end
-  end
-
-  def as_api_params(saved_scenario = nil)
-    saved_scenario = self if saved_scenario.blank?
-
-    {
-      role: User::ROLES[saved_scenario.role_id],
-      id: saved_scenario.user_id,
-      email: saved_scenario.user_email
-    }
-  end
 end

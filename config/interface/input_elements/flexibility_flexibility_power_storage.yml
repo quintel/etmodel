@@ -41,16 +41,10 @@
       timeframe: i_h_d_w
 - key: settings_enable_storage_optimisation_households_flexibility_p2p_electricity
   step_value: 1.0
-  unit: boolean
+  unit: weather-curves
   interface_group: storage_optimisation
   position: 14
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
-  config:
-    when_true:
-      disables:
-        - wtp_of_households_flexibility_p2p_electricity
-        - wta_of_households_flexibility_p2p_electricity
-
 - key: transport_car_using_electricity_availability
   step_value: 0.1
   unit: "%"

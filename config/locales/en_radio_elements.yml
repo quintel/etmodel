@@ -38,3 +38,40 @@ en:
           (Full load hours: wind onshore / coastal = 1937, wind offshore = 3334,
           solar pv = 933, solar thermal = 604. Average temperature difference compared to 2015 = -0.5 degrees
           Celsius)
+    settings_enable_storage_optimisation_households_flexibility_p2p_electricity:
+      default:
+        title: Default
+        description: |
+          By default the ETM uses production curves from the start year of your scenario.
+          The corresponding full load hours are shown on this page. You can have a look at the
+          production curves in the <a href='/scenario/flexibility/curve_upload/upload-curves'>Modify profiles</a> section.
+      '1987':
+        title: '"Dunkelflaute" during extreme cold winter period'
+        description: |
+          In 1987 the Netherlands faced an extreme cold period from 6 to 21 January:
+          the average temperature was -6.5 degrees Celsius. This resulted in a
+          significant heat demand increase. In
+          the second week of January there was also little wind: a so-called "Dunkelflaute".
+          (Full load hours: wind onshore / coastal = 1765, wind offshore = 2905,
+          solar pv = 853, solar thermal = 510. Average temperature difference compared to 2015 = -2.0 degrees
+          Celsius)
+      '1997':
+        title: 'Lack of sustainable energy (incl. "Dunkelflaute") and extreme cold days'
+        description: |
+          In 1997 the last "Elfstedentocht" took place in the Netherlands. There
+          were several extreme cold days with high peak heating
+          demands, even in April and October.
+          This year also had many periods with scarce sustainable energy generation,
+          mainly wind: a "Dunkelflaute" throughout the month of January
+          and a calm period in November.
+          (Full load hours: wind onshore / coastal = 1759, wind offshore = 3025,
+          solar pv = 915, solar thermal = 585. Average temperature difference compared to 2015 = -0.6 degrees
+          Celsius)
+      '2004':
+        title: 'Excessive and scarce sustainable energy'
+        description: |
+          In 2004 the Netherlands had several periods with scarce sustainable energy generation
+          and in September periods with excess sustainable electricity.
+          (Full load hours: wind onshore / coastal = 1937, wind offshore = 3334,
+          solar pv = 933, solar thermal = 604. Average temperature difference compared to 2015 = -0.5 degrees
+          Celsius)

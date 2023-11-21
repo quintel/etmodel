@@ -31,14 +31,22 @@ class SavedScenarioUsersController < ApplicationController
   #
   # POST /saved_scenarios/:saved_scenario_id/users
   def create
-    saved_scenario_user = SavedScenarioUser.create(
+    saved_scenario_user = SavedScenarioUser.new(
       saved_scenario_id: @saved_scenario.id,
       user_email: permitted_params[:saved_scenario_user][:user_email],
       role_id: permitted_params[:saved_scenario_user][:role_id]&.to_i
     )
 
-    if saved_scenario_user.save
-      saved_scenario_user.create_api_scenario_user(engine_client)
+    begin
+      saved_scenario_user.save!
+    rescue ActiveRecord::RecordInvalid
+      error_message = "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
+    rescue ActiveRecord::RecordNotUnique
+      error_message = "#{t('scenario.users.errors.duplicate')}"
+    end
+
+    if saved_scenario_user.persisted?
+      synchronize_api_scenario_user('create')
 
       @saved_scenario.reload
 
@@ -47,7 +55,9 @@ class SavedScenarioUsersController < ApplicationController
       end
     else
       flash[:alert] = \
-        if saved_scenario_user.errors.first.attribute == :user_email
+        if error_message.present?
+          error_message
+        elsif saved_scenario_user.errors.first&.attribute == :user_email
           t('scenario.users.errors.create_email')
         else
           "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
@@ -69,7 +79,7 @@ class SavedScenarioUsersController < ApplicationController
     @saved_scenario_user.role_id = permitted_params[:saved_scenario_user][:role_id]&.to_i
 
     if @saved_scenario_user.save
-      @saved_scenario_user.update_api_scenario_user(engine_client)
+      synchronize_api_scenario_user('update')
 
       @saved_scenario.reload
 
@@ -98,7 +108,7 @@ class SavedScenarioUsersController < ApplicationController
   # PUT /saved_scenarios/:saved_scenario_id/users/:id
   def destroy
     if @saved_scenario_user.destroy
-      @saved_scenario_user.destroy_api_scenario_user(engine_client)
+      synchronize_api_scenario_user('destroy')
 
       respond_to do |format|
         format.js { render 'user_table', layout: false }
@@ -147,5 +157,28 @@ class SavedScenarioUsersController < ApplicationController
 
   def clear_flash
     flash.clear
+  end
+
+  # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
+  # by calling the respective *APIScenarioUser service class.
+  def synchronize_api_scenario_user(action)
+    api_service = "#{action.titleize}APIScenarioUser".constantize
+
+    # Set arguments for the call of the current scenario.
+    call_args = [ engine_client, @saved_scenario.scenario_id, permitted_params[:saved_scenario_user] ]
+
+    # Add extra hash with information about the SavedScenario that are needed
+    # to send an invitation mail to the invited user if we are about to send a 'create' event.
+    if action.downcase == 'create'
+      call_args + [{ invite: true, user_name: current_user.name, id: @saved_scenario.id, title: @saved_scenario.title }]
+    end
+
+    # Update role for the 'current' scenario of this SavedScenario.
+    api_service.call(call_args)
+
+    # Update role for all historic scenarios as well
+    @saved_scenario.scenario_id_history.each do |scenario_id|
+      api_service.call(engine_client, scenario_id, permitted_params[:saved_scenario_user])
+    end
   end
 end

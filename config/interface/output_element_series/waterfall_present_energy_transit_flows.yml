@@ -1,0 +1,182 @@
+---
+- label: ammonia
+  color: "#44AA99" 
+  order_by: 10 
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ammonia_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: ammonia_present_energy_transit_flows
+
+- label: biomass_products
+  color: "#117733" 
+  order_by: 20
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: biomass_products_in_present_energy_transit
+  is_1990: false
+  dependent_on:
+  output_element_key: waterfall_present_energy_transit_flows
+  key: biomass_present_energy_transit_flows
+
+- label: coal_and_coal_products 
+  color: "#CC6677" 
+  order_by: 30
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_and_coal_products_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: coal_present_energy_transit_flows
+
+- label: crude_oil
+  color: "#8c564b" 
+  order_by: 40
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: crude_oil_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: crude_oil_present_energy_transit_flows
+
+- label: electricity
+  color: "#332288" 
+  order_by: 50
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: electricity_present_energy_transit_flows
+
+- label: heat 
+  color: "#882255"
+  order_by: 60
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heat_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: heat_present_energy_transit_flows
+
+- label: hydrogen_gaseous 
+  color: "#88CCEE"
+  order_by: 70
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_gaseous_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: hydrogen_gaseous_present_energy_transit_flows
+
+- label: hydrogen_liquid
+  color: "#88CCEE" 
+  order_by: 80
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_liquid_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: hydrogen_liquid_present_energy_transit_flows
+
+- label: hydrogen_lohc
+  color: "#88CCEE" 
+  order_by: 90
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_lohc_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: hydrogen_lohc_present_energy_transit_flows
+
+- label: lng 
+  color: "#7f7f7f" 
+  order_by: 100
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: lng_present_energy_transit_flows
+
+- label: natural_gas
+  color: "#7f7f7f" 
+  order_by: 110
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: natural_gas_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: natural_gas_present_energy_transit_flows
+
+- label: non_biogenic_waste
+  color: "#7f7f7f" 
+  order_by: 120
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: non_biogenic_waste_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: non_biogenic_waste_present_energy_transit_flows  
+
+- label: oil_products
+  color: "#8c564b" 
+  order_by: 130
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: oil_products_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: oil_products_present_energy_transit_flows  
+
+- label: uranium_oxide
+  color: "#AA4499" 
+  order_by: 140
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: uranium_oxide_in_present_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_transit_flows
+  key: uranium_oxide_present_energy_transit_flows    

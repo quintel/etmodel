@@ -4,11 +4,6 @@
 class UpdateAPIScenarioUser
   include Service
 
-  # Updates a ScenarioUser for multiple Scenarios.
-  def self.call_with_ids(http_client, ids, scenario_user)
-    ids.each { |id| call(http_client, id, scenario_user) }
-  end
-
   def initialize(http_client, id, scenario_user)
     @http_client = http_client
     @id = id
@@ -17,7 +12,10 @@ class UpdateAPIScenarioUser
 
   def call
     ServiceResult.success(
-      @http_client.put("/api/v3/scenarios/#{@id}/users", scenario_users: [@scenario_user]).body
+      @http_client.put(
+        "/api/v3/scenarios/#{@id}/users",
+        { scenario_users: [@scenario_user], origin: 'etmodel' }
+      ).body
     )
   rescue Faraday::ResourceNotFound
     ServiceResult.failure('Scenario not found')

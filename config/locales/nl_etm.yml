@@ -329,12 +329,15 @@ nl:
     featured_scenario: 'Uitgelicht scenario'
     created_with: 'Scenario gemaakt met het Energietransitiemodel'
     users:
-      manage: 'Beheer gebruikers'
+      manage: 'Beheer toegang'
       manage_description:
         Hier kun je beheren wie met welke rechten toegang heeft tot je scenario.
         Klik op de 'Gebruiker uitnodigen' knop om iemand toegang te geven, of gebruik
-        de tabel om gekoppelde gebruikers te beheren.
-      current: 'Huidige scenario gebruikers'
+        de tabel om gekoppelde gebruikers te beheren.<br /><br />
+        Bekijk alsjeblieft de
+        <a href="https://docs.energytransitionmodel.com/main/#12-saved-scenario-access-management-page" target=\"_blank\"> 
+        documentatien</a> voor meer informatie en details over gebruikersbeheer, zoals gebruikersrollen.
+      current: 'Wie heeft toegang?'
       invite: 'Gebruiker uitnodigen'
       name: 'Gebruiker'
       role: 'Rol'

@@ -4,9 +4,9 @@
 class CreateAPIScenarioUser
   include Service
 
-  def initialize(http_client, id, scenario_user, invitation_args = nil)
+  def initialize(http_client, scenario_id, scenario_user, invitation_args = nil)
     @http_client = http_client
-    @id = id
+    @scenario_id = scenario_id
     @scenario_user = scenario_user
     @invitation_args = invitation_args
   end
@@ -14,8 +14,8 @@ class CreateAPIScenarioUser
   def call
     ServiceResult.success(
       @http_client.post(
-        "/api/v3/scenarios/#{@id}/users",
-        { scenario_users: [@scenario_user], invitation_args:  @invitation_args, origin: 'etmodel' }
+        "/api/v3/scenarios/#{@scenario_id}/users",
+        { scenario_users: [@scenario_user], invitation_args: @invitation_args }
       ).body
     )
   rescue Faraday::ResourceNotFound

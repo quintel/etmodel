@@ -4,17 +4,16 @@
 class DestroyAPIScenarioUser
   include Service
 
-  def initialize(http_client, id, scenario_user)
+  def initialize(http_client, scenario_id, scenario_user)
     @http_client = http_client
-    @id = id
+    @scenario_id = scenario_id
     @scenario_user = scenario_user
   end
 
   def call
     ServiceResult.success(
       @http_client.delete(
-        "/api/v3/scenarios/#{@id}/users",
-        { scenario_users: [@scenario_user], origin: 'etmodel' }
+        "/api/v3/scenarios/#{scenario_@id}/users", scenario_users: [@scenario_user]
       ).body
     )
   rescue Faraday::ResourceNotFound

@@ -21,6 +21,7 @@
                     collection: User::ROLES.map{ |r| [t("scenario.users.roles.#{r[1]}"), r[0]] },
                     selected: saved_scenario_user.role_id
                 %div.checkmark= '✅'
+                %div.cross= '❌'
 
           %td.remove
             = content_tag :svg,

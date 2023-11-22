@@ -90,7 +90,11 @@ class SavedScenariosController < ApplicationController
       title: params[:title].presence
     )
 
-    render 'new', layout: false
+    if params[:inline]
+      render 'new', layout: false
+    else
+      render 'new'
+    end
   end
 
   # Saves a scenario by creating a SavedScenario.

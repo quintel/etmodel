@@ -46,7 +46,7 @@ class SavedScenarioUsersController < ApplicationController
     end
 
     if saved_scenario_user.persisted?
-      synchronize_api_scenario_user('create')
+      synchronize_api_scenario_user('create', saved_scenario_user)
 
       @saved_scenario.reload
 
@@ -79,7 +79,7 @@ class SavedScenarioUsersController < ApplicationController
     @saved_scenario_user.role_id = permitted_params[:saved_scenario_user][:role_id]&.to_i
 
     if @saved_scenario_user.save
-      synchronize_api_scenario_user('update')
+      synchronize_api_scenario_user('update', @saved_scenario_user)
 
       @saved_scenario.reload
 
@@ -108,7 +108,7 @@ class SavedScenarioUsersController < ApplicationController
   # PUT /saved_scenarios/:saved_scenario_id/users/:id
   def destroy
     if @saved_scenario_user.destroy
-      synchronize_api_scenario_user('destroy')
+      synchronize_api_scenario_user('destroy', @saved_scenario_user)
 
       respond_to do |format|
         format.js { render 'user_table', layout: false }
@@ -161,24 +161,30 @@ class SavedScenarioUsersController < ApplicationController
 
   # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
   # by calling the respective *APIScenarioUser service class.
-  def synchronize_api_scenario_user(action)
+  def synchronize_api_scenario_user(action, saved_scenario_user)
     api_service = "#{action.titleize}APIScenarioUser".constantize
 
-    # Set arguments for the call of the current scenario.
-    call_args = [ engine_client, @saved_scenario.scenario_id, permitted_params[:saved_scenario_user] ]
+    user_params = {
+      user_id: saved_scenario_user.user_id,
+      user_email: saved_scenario_user.user_email,
+      role: User::ROLES[saved_scenario_user.role_id]
+    }
 
+    # Set arguments for the call of the current scenario.
     # Add extra hash with information about the SavedScenario that are needed
     # to send an invitation mail to the invited user if we are about to send a 'create' event.
     if action.downcase == 'create'
-      call_args + [{ invite: true, user_name: current_user.name, id: @saved_scenario.id, title: @saved_scenario.title }]
+      api_service.call(
+        engine_client, @saved_scenario.scenario_id, user_params,
+        { invite: true, user_name: current_user.name, id: @saved_scenario.id, title: @saved_scenario.title }
+      )
+    else
+      api_service.call(engine_client, @saved_scenario.scenario_id, user_params)
     end
-
-    # Update role for the 'current' scenario of this SavedScenario.
-    api_service.call(call_args)
 
     # Update role for all historic scenarios as well
     @saved_scenario.scenario_id_history.each do |scenario_id|
-      api_service.call(engine_client, scenario_id, permitted_params[:saved_scenario_user])
+      api_service.call(engine_client, scenario_id, user_params)
     end
   end
 end

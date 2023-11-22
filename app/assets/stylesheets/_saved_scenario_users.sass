@@ -16,11 +16,23 @@ table.saved_scenario_users
     text-align: center;
     width: 10%;
 
-  td.remove-saved-scenario-user
-    text-align: center;
-
   td.pending
     color: #777;
+
+  td.remove
+    text-align: center;
+
+    svg.remove-saved-scenario-user
+      cursor: pointer;
+
+  form.edit_saved_scenario_user
+    float: left
+
+  div.checkmark
+    display: none
+    float: left
+    margin-left: 10px
+
 
 .create_saved_scenario_user_form
   .label

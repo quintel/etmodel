@@ -13,7 +13,7 @@ class DestroyAPIScenarioUser
   def call
     ServiceResult.success(
       @http_client.delete(
-        "/api/v3/scenarios/#{scenario_@id}/users", scenario_users: [@scenario_user]
+        "/api/v3/scenarios/#{@scenario_id}/users", scenario_users: [@scenario_user]
       ).body
     )
   rescue Faraday::ResourceNotFound

@@ -143,7 +143,8 @@ D3.sankey =
           {left: 'natural_gas',                  right: 'other',                     gquery: 'sankey_0_to_2_natural_gas_to_other',                     color: '#7f7f7f'},
           {left: 'natural_gas',                  right: 'bunkers',                   gquery: 'sankey_0_to_2_natural_gas_to_bunkers',                    color: '#7f7f7f'},
           {left: 'natural_gas',                  right: 'feedstock',                 gquery: 'sankey_0_to_2_natural_gas_to_feedstock',                  color: '#7f7f7f'},
-          {left: 'natural_gas',                  right: 'export',                    gquery: 'sankey_0_to_2_natural_gas_to_export',                     color: '#7f7f7f'},            
+          {left: 'natural_gas',                  right: 'export',                    gquery: 'sankey_0_to_2_natural_gas_to_export',                     color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'losses',                    gquery: 'sankey_0_to_2_natural_gas_to_loss',                     color: '#7f7f7f'},            
 
           {left: 'solar_thermal',                right: 'agriculture',               gquery: 'sankey_0_to_2_solar_thermal_to_agriculture',             color: '#ffcc00'},
           {left: 'solar_thermal',                right: 'households',                gquery: 'sankey_0_to_2_solar_thermal_to_households',              color: '#ffcc00'},
@@ -154,7 +155,11 @@ D3.sankey =
           {left: 'solar_thermal',                right: 'other',                     gquery: 'sankey_0_to_2_solar_thermal_to_other',                   color: '#ffcc00'},
           {left: 'solar_thermal',                right: 'bunkers',                   gquery: 'sankey_0_to_2_solar_thermal_to_bunkers',                 color: '#ffcc00'},
           {left: 'solar_thermal',                right: 'feedstock',                 gquery: 'sankey_0_to_2_solar_thermal_to_feedstock',               color: '#ffcc00'},
-          #{left: 'solar_thermal',                right: 'export',                    gquery: 'sankey_0_to_2_solar_thermal_to_export',                  color: '#ffcc00'},   
+          #{left: 'solar_thermal',                right: 'export',                    gquery: 'sankey_0_to_2_solar_thermal_to_export',                  color: '#ffcc00'},
+
+          {left: 'uranium',                      right: 'losses',                    gquery: 'sankey_0_to_2_uranium_to_loss',                     color: '#7f7f7f'},
+
+             
 
           {left: 'electricity',                  right: 'hydrogen',                  gquery: 'sankey_1_to_1_electricity_to_hydrogen',                  color: '#1f77b4'},
 

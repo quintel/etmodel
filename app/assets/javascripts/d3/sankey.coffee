@@ -66,8 +66,7 @@ D3.sankey =
   
   
           {left: 'solar_thermal',                right: 'heat',                      gquery: 'sankey_0_to_1_solar_thermal_to_heat',                    color: '#4465c6'},   
-          {left: 'uranium',                      right: 'heat',                      gquery: 'sankey_0_to_1_uranium_to_heat',                          color: '#ff7f0e'}, 
-          {left: 'wind_electricity',             right: 'heat',                      gquery: 'sankey_0_to_1_wind_electricity_to_heat',                 color: '#4465c6'},    
+          {left: 'uranium',                      right: 'heat',                      gquery: 'sankey_0_to_1_uranium_to_heat',                          color: '#ff7f0e'},  
           {left: 'ambient_heat',                 right: 'heat',                      gquery: 'sankey_0_to_1_ambient_heat_to_heat',                     color: '#ADDE4C'},
           {left: 'natural_gas',                  right: 'heat',                      gquery: 'sankey_0_to_1_natural_gas_to_heat',                      color: '#7f7f7f'},           
 

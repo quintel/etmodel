@@ -3,71 +3,95 @@
   step_value: 0.1
   unit: "%"
   interface_group: load_shifting_metal
-  position: 1
+  position: 10
+  slide_key: flexibility_flexibility_demand_response_load_shifting
+- key: capacity_of_industry_metal_flexibility_load_shifting_electricity_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: load_shifting_metal
+  position: 20
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: wta_of_industry_metal_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: load_shifting_metal
-  position: 2
+  position: 30
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: deficit_limit_of_industry_metal_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "hours"
   interface_group: load_shifting_metal
-  position: 3
+  position: 40
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: capacity_of_industry_chemical_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "%"
   interface_group: load_shifting_chemical
-  position: 10
+  position: 100
   slide_key: flexibility_flexibility_demand_response_load_shifting
+- key: capacity_of_industry_chemical_flexibility_load_shifting_electricity_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: load_shifting_chemical
+  position: 110
+  slide_key: flexibility_flexibility_demand_response_load_shifting  
 - key: wta_of_industry_chemical_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: load_shifting_chemical
-  position: 11
+  position: 120
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: deficit_limit_of_industry_chemical_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "hours"
   interface_group: load_shifting_chemical
-  position: 12
+  position: 130
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: capacity_of_industry_other_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "%"
   interface_group: load_shifting_other
-  position: 20
+  position: 200
+  slide_key: flexibility_flexibility_demand_response_load_shifting
+- key: capacity_of_industry_other_flexibility_load_shifting_electricity_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: load_shifting_other
+  position: 210
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: wta_of_industry_other_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: load_shifting_other
-  position: 21
+  position: 220
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: deficit_limit_of_industry_other_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "hours"
   interface_group: load_shifting_other
-  position: 22
+  position: 230
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: capacity_of_industry_other_ict_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "%"
   interface_group: load_shifting_other_ict
-  position: 30
+  position: 300
+  slide_key: flexibility_flexibility_demand_response_load_shifting
+- key: capacity_of_industry_other_ict_flexibility_load_shifting_electricity_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: load_shifting_other_ict
+  position: 310
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: wta_of_industry_other_ict_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "€/MWh"
   interface_group: load_shifting_other_ict
-  position: 31
+  position: 320
   slide_key: flexibility_flexibility_demand_response_load_shifting
 - key: deficit_limit_of_industry_other_ict_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "hours"
   interface_group: load_shifting_other_ict
-  position: 32
+  position: 330
   slide_key: flexibility_flexibility_demand_response_load_shifting

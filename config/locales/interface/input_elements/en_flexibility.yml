@@ -59,6 +59,23 @@ en:
         <a href="/scenario/demand/industry/steel">steel</a>, 
         <a href="/scenario/demand/industry/aluminium">aluminium</a>, and
         <a href="/scenario/demand/industry/other-metals">other metals</a>.
+    capacity_of_industry_metal_flexibility_load_shifting_electricity_share:
+      title: Capacity electricity share
+      short_description:
+      description: |
+        The total potential of load shifting in a scenario is dependent on several factors,
+        such as the size of the industry, the level of electrification, and the types of 
+        installations and production processes.
+        <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">This study</a>
+        by TenneT has shown that the 
+        capacity available for demand side response in industry varies between 10-17% of 
+        peak electricity load. </br></br>
+        This slider sets the capacity for load shifting as a percentage of the peak electricity 
+        demand from the metal industry. You can affect the peak demand by changing sliders 
+        for sectors that are part of the metal industry:
+        <a href="/scenario/demand/industry/steel">steel</a>, 
+        <a href="/scenario/demand/industry/aluminium">aluminium</a>, and
+        <a href="/scenario/demand/industry/other-metals">other metals</a>.      
     wta_of_industry_metal_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:
@@ -91,6 +108,23 @@ en:
         be reduced at full load shifting capacity.
     capacity_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Capacity
+      short_description:
+      description: |
+        The total potential of load shifting in a scenario is dependent on several factors,
+        such as the size of the industry, the level of electrification, and the types of 
+        installations and production processes.
+        <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">This study</a>
+        by TenneT has shown that the 
+        capacity available for demand side response in industry varies between 10-17% of 
+        peak electricity load. </br></br>
+        This slider sets the capacity for load shifting as a percentage of the peak electricity 
+        demand from the chemical industry. You can affect the peak demand by changing sliders 
+        for sectors that are part of the chemical industry:
+        <a href="/scenario/demand/industry/refineries">refineries</a>, 
+        <a href="/scenario/demand/industry/fertilizers">fertilizers</a>, and
+        <a href="/scenario/demand/industry/chemicals">other chemicals</a>.
+    capacity_of_industry_chemical_flexibility_load_shifting_electricity_share:
+      title: Capacity share
       short_description:
       description: |
         The total potential of load shifting in a scenario is dependent on several factors,
@@ -153,6 +187,23 @@ en:
         <a href="/scenario/demand/industry/food">food</a>, 
         <a href="/scenario/demand/industry/paper">paper</a>, and
         <a href="/scenario/demand/industry/other">other industry</a>.
+    capacity_of_industry_other_flexibility_load_shifting_electricity_share:
+      title: Capacity share
+      short_description:
+      description: |
+        The total potential of load shifting in a scenario is dependent on several factors,
+        such as the size of the industry, the level of electrification, and the types of 
+        installations and production processes.
+        <a href="https://www.tennet.eu/fileadmin/user_upload/Company/Publications/Other_publications/Rapportage_Industri%C3%ABle_vraagrespons_10-2020.pdf" target="_blank">This study</a>
+        by TenneT has shown that the 
+        capacity available for demand side response in industry varies between 10-17% of 
+        peak electricity load. </br></br>
+        This slider sets the capacity for load shifting as a percentage of the peak electricity 
+        demand from the metal industry. You can affect the peak demand by changing sliders 
+        for sectors that are part of the other industry:
+        <a href="/scenario/demand/industry/food">food</a>, 
+        <a href="/scenario/demand/industry/paper">paper</a>, and
+        <a href="/scenario/demand/industry/other">other industry</a>.    
     wta_of_industry_other_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:
@@ -197,6 +248,20 @@ en:
         This slider sets the capacity for load shifting as a percentage of the peak electricity 
         demand from the central ICT industry. You can affect the peak demand by changing sliders 
         in the <a href="/scenario/demand/industry/central-ict">central ICT industry</a>.
+    capacity_of_industry_other_ict_flexibility_load_shifting_electricity_share:
+      title: Capacity electricity share
+      short_description:
+      description: |
+        The total potential of load shifting in a scenario is dependent on several factors,
+        such as the size of the industry, the level of electrification, and the types of 
+        installations and production processes.
+        <a href="https://www.tennet.eu/fileadmin/user_upload/Company/Publications/Other_publications/Rapportage_Industri%C3%ABle_vraagrespons_10-2020.pdf" target="_blank">This study</a>
+        by TenneT has shown that the 
+        capacity available for demand side response in industry varies between 10-17% of 
+        peak electricity load. </br></br>
+        This slider sets the capacity for load shifting as a percentage of the peak electricity 
+        demand from the central ICT industry. You can affect the peak demand by changing sliders 
+        in the <a href="/scenario/demand/industry/central-ict">central ICT industry</a>.    
     wta_of_industry_other_ict_flexibility_load_shifting_electricity:
       title: Willingness to accept
       short_description:
@@ -1273,7 +1338,7 @@ en:
       title: Relative grid connection capacity
       short_description:
       description: |
-        Due to the volatile nature of wind power output, the impact of installing large
+        Due to the volatile nature of wind power electricity_share, the impact of installing large
         numbers of wind turbines on the electricity grid can be large. To reduce the
         impact on the electricity grid, wind turbines with a battery system have a connection
         to the grid that is reduced in capacity compared to the installed capacity. <br/><br/>
@@ -1291,7 +1356,7 @@ en:
       title: Relative grid connection capacity
       short_description:
       description: |
-        Due to the volatile nature of solar power output, the impact of installing large
+        Due to the volatile nature of solar power electricity_share, the impact of installing large
         numbers of solar PV plants on the electricity grid can be large. To reduce the
         impact on the electricity grid, solar PV plants with a battery system have a connection
         to the grid that is reduced in capacity compared to the installed capacity. <br/><br/>

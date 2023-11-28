@@ -1,0 +1,15 @@
+.scenario_wrapper
+  %h1= t('scenario.versions.new.title')
+  %p= t('scenario.versions.new.description')
+
+  .create_saved_scenario_version_form
+    = render partial: 'form_flash', format: :js
+
+    = simple_form_for @saved_scenario_version, url: saved_scenario_version_path, remote: true do |f|
+      = f.hidden_field :scenario_id
+
+      = f.label :message, class: 'label' do
+        =t('scenario.versions.new.message')
+      = f.input :message, label: false, required: true
+
+      = f.button :submit, value: t('scenario.versions.new.button'), class: 'btn primary', data: { disable_with: false }

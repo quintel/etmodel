@@ -8,12 +8,16 @@
    *
    * @return {Promise} The promise returned by the request.
    */
-  function saveScenario(path, scenarioID) {
-    return $.ajax({
-      url: path,
-      data: { scenario_id: scenarioID },
-      dataType: 'json',
-      method: 'put',
+  function loadSaveScenarioVersionForm(url, scenarioId) {
+    var paramSep = url.includes('?') ? '&' : '?';
+
+    $.fancybox.open({
+      autoSize: false,
+      href: url + paramSep + 'scenario_id=' + scenarioId + '&inline=true',
+      type: 'ajax',
+      height: 350,
+      width: 530,
+      padding: 0
     });
   }
 
@@ -74,7 +78,7 @@
 
   var ScenarioNavView = Backbone.View.extend({
     events: {
-      'click .save-scenario': 'saveScenario',
+      'click .save-scenario': 'showSaveScenarioVersionModal',
       'click .save-scenario-as': 'showSaveAsModal',
       'click .save-scenario-as-inline': 'showSaveAsModal',
       'click .uncouple-scenario': 'showConfirmModal',
@@ -137,6 +141,15 @@
           button.querySelector('.main').classList.add('show');
         }, 3000);
       });
+    },
+
+    showSaveScenarioVersionModal: function (event) {
+      event && event.preventDefault();
+
+      const url = $(this.el).find('button.save-scenario').data('path');
+      const scenarioId = this.model.get('id');
+
+      loadSaveScenarioVersionForm(url, scenarioId);
     },
 
     showSaveAsModal: function (event) {

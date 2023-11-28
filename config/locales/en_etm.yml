@@ -362,6 +362,15 @@ en:
         destroy: Something went wrong while trying to remove the user from the scenario!
         general: Please try again later. If you keep getting this error, please contact Quintel.
         duplicate: This user is already coupled with this scenario.
+    versions:
+      new:
+        title: New scenario version
+        description:
+          You are about to save a new version of your scenario. Please enter a brief description
+          that will help you or other collaborators to identify what changed in this version
+          compared to the previous one.
+        message: Description
+        button: Save new version
     group: 'Group'
     share:
       by: 'Share by'

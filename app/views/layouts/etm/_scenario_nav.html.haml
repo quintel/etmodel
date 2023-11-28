@@ -14,7 +14,7 @@
   %div
     - if current_user
       - if save_scenario_enabled?
-        %button.save-scenario{ data: { path: scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
+        %button.save-scenario{ data: { path: new_saved_scenario_version_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
           %span.main.label.show= t('header.save_scenario').titleize
           %span.saved.label.abs-label
             %span.fa.fa-check

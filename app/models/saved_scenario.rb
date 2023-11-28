@@ -26,6 +26,8 @@ class SavedScenario < ApplicationRecord
   has_many :saved_scenario_users, dependent: :destroy
   has_many :users, through: :saved_scenario_users
 
+  has_many :saved_scenario_versions, dependent: :destroy
+
   has_one :featured_scenario, dependent: :destroy
 
   validates :scenario_id, presence: true
@@ -112,17 +114,34 @@ class SavedScenario < ApplicationRecord
     @scenario ||= FetchAPIScenario.call(engine_client, scenario_id).or(nil)
   end
 
-  def add_id_to_history(scenario_id)
-    return if !scenario_id || scenario_id_history.include?(scenario_id)
-
-    scenario_id_history.shift if scenario_id_history.count >= 20
-    scenario_id_history << scenario_id
-  end
-
   def scenario=(x)
     @scenario = x
     self.scenario_id = x.id unless x.nil?
   end
+
+  def current_version
+    saved_scenario_versions.find(current_saved_scenario_version_id)
+  end
+
+  # Adds a SavedScenarioVersion to the history of this SavedScenario.
+  # Expects parameters with which a new SavedScenarioVersion can be created,
+  # or an existing one can be found.
+  def set_version_as_current(version_attributes, revert = false)
+    return false unless version_attributes
+
+    saved_scenario_version = saved_scenario_versions.find_or_create_by(version_attributes)
+
+    update(current_saved_scenario_version_id: saved_scenario_version.id)
+    
+    # If we're reverting to a previous version we should remove
+    # all versions that lie in the future of the given version
+    if revert
+      saved_scenario_versions \
+        .where('created_at > ?', saved_scenario_version.created_at)
+        .destroy_all
+    end
+  end
+
 
   # Public: Determines if this scenario can be loaded.
   def loadable?
@@ -148,7 +167,10 @@ class SavedScenario < ApplicationRecord
   # Updates a saved scenario with parameters from the API controller.
   def update_with_api_params(params)
     incoming_id = params[:scenario_id]
-    add_id_to_history(scenario_id) if incoming_id && scenario_id != incoming_id
+
+    if incoming_id && scenario_id != incoming_id
+      add_version_to_history( params.except(:scenario_id).merge(scenario_id: scenario_id) )
+    end
 
     self.attributes = params.except(:discarded)
 

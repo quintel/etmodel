@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_04_110117) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_18_211359) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -93,6 +93,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_04_110117) do
     t.index ["user_email"], name: "saved_scenario_users_user_email_idx"
   end
 
+  create_table "saved_scenario_versions", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "saved_scenario_id"
+    t.integer "scenario_id", null: false
+    t.bigint "user_id"
+    t.string "message"
+    t.boolean "discarded", default: false
+    t.index ["saved_scenario_id", "scenario_id"], name: "saved_scenario_users_saved_scenario_id_scenario_id_idx", unique: true
+    t.index ["saved_scenario_id"], name: "index_saved_scenario_versions_on_saved_scenario_id"
+    t.index ["saved_scenario_id"], name: "saved_scenario_versions_saved_scenario_id_idx"
+    t.index ["user_id"], name: "index_saved_scenario_versions_on_user_id"
+    t.index ["user_id"], name: "saved_scenario_versions_user_id_idx"
+  end
+
   create_table "saved_scenarios", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "scenario_id", null: false
@@ -106,6 +119,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_04_110117) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.datetime "discarded_at"
+    t.integer "current_saved_scenario_version_id"
     t.index ["discarded_at"], name: "index_saved_scenarios_on_discarded_at"
     t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
     t.index ["user_id"], name: "index_saved_scenarios_on_user_id"

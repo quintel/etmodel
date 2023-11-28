@@ -21,7 +21,7 @@ class SavedScenarioUser < ApplicationRecord
   end
 
   def ensure_one_owner_left_before_save
-  # Don't check new records and ignore if the role is set to owner.
+    # Don't check new records and ignore if the role is set to owner.
     return if new_record? || role_id == User::ROLES.key(:scenario_owner)
 
     # Collect roles for other users of this scenario

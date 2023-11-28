@@ -77,6 +77,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resource :version, controller: 'saved_scenario_versions'
+
     member do
       get :load
       put :discard
@@ -178,7 +180,9 @@ Rails.application.routes.draw do
     put '/user'    => 'user#update'
     delete '/user' => 'user#destroy'
 
-    resources :saved_scenarios, only: %i[index show create update destroy]
+    resources :saved_scenarios, only: %i[index show create update destroy] do
+      resources :versions, only: %i[index show create update destroy], controller: 'saved_scenario_versions'
+    end
     resources :transition_paths, only: %i[index show create update destroy]
   end
 

@@ -1,0 +1,133 @@
+---
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 10
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_ambient_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: ambient_final_demand_per_carrier_energetic
+- label: ammonia
+  color: "#E69567"
+  order_by: 20
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_ammonia_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: ammonia_final_demand_per_carrier_energetic
+- label: biomass_products
+  color: "#2ca02c"
+  order_by: 30
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_biomass_products_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: biomass_products_final_demand_per_carrier_energetic
+- label: coal_and_derivatives
+  color: "#252525"
+  order_by: 40
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_coal_and_derivatives_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: coal_and_derivatives_final_demand_per_carrier_energetic
+- label: electricity
+  color: "#1f77b4"
+  order_by: 50
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_electricity_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: electricity_final_demand_per_carrier_energetic
+- label: geothermal
+  color: "#787821"
+  order_by: 60
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_geothermal_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: geothermal_final_demand_per_carrier_energetic
+- label: heat
+  color: "#cc0000"
+  order_by: 70
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_heat_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: heat_final_demand_per_carrier_energetic  
+- label: hydrogen
+  color: "#87cfeb"
+  order_by: 80
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_hydrogen_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: hydrogen_final_demand_per_carrier_energetic    
+- label: natural_gas_and_derivatives
+  color: "#7f7f7f"
+  order_by: 90
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_natural_gas_and_derivatives_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key:   gas_and_derivatives_final_demand_per_carrier_energetic
+- label: oil_and_derivatives
+  color: "#8c564b"
+  order_by: 100
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_oil_and_derivatives_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: oil_and_derivatives_final_demand_per_carrier_energetic 
+- label: solar
+  color: "#ffcc00"
+  order_by: 110
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_solar_energetic_myc
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_energetic
+  key: solar_final_demand_per_carrier_energetic    

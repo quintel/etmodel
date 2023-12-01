@@ -162,6 +162,7 @@ D3.sankey =
           {left: 'electricity',                  right: 'losses',                    gquery: 'sankey_1_to_2_electricity_to_loss',                      color: '#1f77b4'},
 
           {left: 'electricity',                  right: 'hydrogen',                  gquery: 'sankey_1_to_1_electricity_to_hydrogen',                  color: '#1f77b4'},
+          {left: 'electricity',                  right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_electricity_to_oil_and_oil_products',      color: '#8c564b'},
 
           {left: 'heat',                         right: 'agriculture',               gquery: 'sankey_1_to_2_heat_to_agriculture',                      color: '#cc0000'},
           {left: 'heat',                         right: 'households',                gquery: 'sankey_1_to_2_heat_to_households',                       color: '#cc0000'},
@@ -176,10 +177,7 @@ D3.sankey =
 
           #{left: 'heat',                         right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_heat_to_oil_and_oil_products',             color: '#cc0000'},
 
-          {left: 'crude_oil',                    right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',        color: '#8c564b'}, 
-          {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_to_oil_and_oil_products',     color: '#8c564b'},  
-        
-
+      
           {left: 'hydrogen',                     right: 'heat',                      gquery: 'sankey_1_to_1_hydrogen_to_heat',                         color: '#87cfeb'},   
 
           {left: 'hydrogen',                     right: 'agriculture',               gquery: 'sankey_1_to_2_hydrogen_to_agriculture',                  color: '#87cfeb'},
@@ -195,6 +193,9 @@ D3.sankey =
           {left: 'hydrogen',                     right: 'losses',                    gquery: 'sankey_1_to_2_hydrogen_to_loss',                         color: '#87cfeb'},
           
           {left: 'hydrogen',                     right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_hydrogen_to_oil_and_oil_products',         color: '#87cfeb'},
+          
+          {left: 'crude_oil',                    right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',        color: '#8c564b'}, 
+          {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_to_oil_and_oil_products',     color: '#8c564b'},            
 
           {left: 'oil_and_oil_products',         right: 'electricity',               gquery: 'sankey_1_to_1_oil_and_oil_products_to_electricity',      color: '#8c564b'},
           

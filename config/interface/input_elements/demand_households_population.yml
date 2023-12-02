@@ -2,149 +2,153 @@
 - key: households_number_of_inhabitants
   step_value: 0.1
   unit: mln
-  position: 0
-  slide_key: demand_households_population
-- key: households_number_of_apartments_future
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_apartments
   position: 100
   slide_key: demand_households_population
-- key: households_number_of_apartments_2005
-  step_value: 0.1
+
+- key: households_number_of_apartments_future
+  step_value: 1.0
   unit: "#"
   interface_group: housing_stock_apartments
   position: 200
   slide_key: demand_households_population
-- key: households_number_of_apartments_1985_2004
-  step_value: 0.1
+- key: households_number_of_apartments_2005_present
+  step_value: 1.0
   unit: "#"
   interface_group: housing_stock_apartments
-  position: 300
+  position: 205
+  slide_key: demand_households_population
+- key: households_number_of_apartments_1985_2004
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_apartments
+  position: 210
   slide_key: demand_households_population
 - key: households_number_of_apartments_1965_1984
-  step_value: 0.1
+  step_value: 1.0
   unit: "#"
   interface_group: housing_stock_apartments
-  position: 400
+  position: 215
   slide_key: demand_households_population
 - key: households_number_of_apartments_1945_1964
-  step_value: 0.1
+  step_value: 1.0
   unit: "#"
   interface_group: housing_stock_apartments
+  position: 220
+  slide_key: demand_households_population
+- key: households_number_of_apartments_before_1945
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_apartments
+  position: 225
+  slide_key: demand_households_population
+
+- key: households_number_of_detached_houses_future
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_detached_houses
+  position: 300
+  slide_key: demand_households_population
+- key: households_number_of_detached_houses_2005_present
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_detached_houses
+  position: 305
+  slide_key: demand_households_population
+- key: households_number_of_detached_houses_1985_2004
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_detached_houses
+  position: 310
+  slide_key: demand_households_population
+- key: households_number_of_detached_houses_1965_1984
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_detached_houses
+  position: 315
+  slide_key: demand_households_population
+- key: households_number_of_detached_houses_1945_1964
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_detached_houses
+  position: 320
+  slide_key: demand_households_population
+- key: households_number_of_detached_houses_before_1945
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_detached_houses
+  position: 325
+  slide_key: demand_households_population
+
+- key: households_number_of_semi_detached_houses_future
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_semi_detached_houses
+  position: 400
+  slide_key: demand_households_population
+- key: households_number_of_semi_detached_houses_2005_present
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_semi_detached_houses
+  position: 405
+  slide_key: demand_households_population
+- key: households_number_of_semi_detached_houses_1985_2004
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_semi_detached_houses
+  position: 410
+  slide_key: demand_households_population
+- key: households_number_of_semi_detached_houses_1965_1984
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_semi_detached_houses
+  position: 415
+  slide_key: demand_households_population
+- key: households_number_of_semi_detached_houses_1945_1964
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_semi_detached_houses
+  position: 420
+  slide_key: demand_households_population
+- key: households_number_of_semi_detached_houses_before_1945
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_semi_detached_houses
+  position: 425
+  slide_key: demand_households_population
+
+- key: households_number_of_terraced_houses_future
+  step_value: 1.0
+  unit: "#"
+  interface_group: housing_stock_terraced_houses
   position: 500
   slide_key: demand_households_population
-- key: households_number_of_apartments_1945
-  step_value: 0.1
+- key: households_number_of_terraced_houses_2005_present
+  step_value: 1.0
   unit: "#"
-  interface_group: housing_stock_apartments
-  position: 600
+  interface_group: housing_stock_terraced_houses
+  position: 505
   slide_key: demand_households_population
-- key: households_number_of_terraced_future
-  step_value: 0.1
+- key: households_number_of_terraced_houses_1985_2004
+  step_value: 1.0
   unit: "#"
-  interface_group: housing_stock_terraced
-  position: 700
+  interface_group: housing_stock_terraced_houses
+  position: 510
   slide_key: demand_households_population
-- key: households_number_of_terraced_2005
-  step_value: 0.1
+- key: households_number_of_terraced_houses_1965_1984
+  step_value: 1.0
   unit: "#"
-  interface_group: housing_stock_terraced
-  position: 800
+  interface_group: housing_stock_terraced_houses
+  position: 515
   slide_key: demand_households_population
-- key: households_number_of_terraced_1985_2004
-  step_value: 0.1
+- key: households_number_of_terraced_houses_1945_1964
+  step_value: 1.0
   unit: "#"
-  interface_group: housing_stock_terraced
-  position: 900
+  interface_group: housing_stock_terraced_houses
+  position: 520
   slide_key: demand_households_population
-- key: households_number_of_terraced_1965_1984
-  step_value: 0.1
+- key: households_number_of_terraced_houses_before_1945
+  step_value: 1.0
   unit: "#"
-  interface_group: housing_stock_terraced
-  position: 1000
-  slide_key: demand_households_population
-- key: households_number_of_terraced_1945_1964
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_terraced
-  position: 1100
-  slide_key: demand_households_population
-- key: households_number_of_terraced_1945
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_terraced
-  position: 1200
-  slide_key: demand_households_population
-- key: households_number_of_semi_detached_future
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_semi_detached
-  position: 1300
-  slide_key: demand_households_population
-- key: households_number_of_semi_detached_2005
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_semi_detached
-  position: 1400
-  slide_key: demand_households_population
-- key: households_number_of_semi_detached_1985_2004
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_semi_detached
-  position: 1500
-  slide_key: demand_households_population
-- key: households_number_of_semi_detached_1965_1984
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_semi_detached
-  position: 1600
-  slide_key: demand_households_population
-- key: households_number_of_semi_detached_1945_1964
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_semi_detached
-  position: 1700
-  slide_key: demand_households_population
-- key: households_number_of_semi_detached_1945
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_semi_detached
-  position: 1800
-  slide_key: demand_households_population
-- key: households_number_of_detached_future
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_detached
-  position: 1900
-  slide_key: demand_households_population
-- key: households_number_of_detached_2005
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_detached
-  position: 2000
-  slide_key: demand_households_population
-- key: households_number_of_detached_1985_2004
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_detached
-  position: 2100
-  slide_key: demand_households_population
-- key: households_number_of_detached_1965_1984
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_detached
-  position: 2200
-  slide_key: demand_households_population
-- key: households_number_of_detached_1945_1964
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_detached
-  position: 2300
-  slide_key: demand_households_population
-- key: households_number_of_detached_1945
-  step_value: 0.1
-  unit: "#"
-  interface_group: housing_stock_detached
-  position: 2400
+  interface_group: housing_stock_terraced_houses
+  position: 525
   slide_key: demand_households_population

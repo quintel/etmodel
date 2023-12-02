@@ -2,20 +2,15 @@
 - key: households_behavior_standby_killer_turn_off_appliances
   step_value: 0.1
   unit: "%"
-  position: 1
+  position: 100
   slide_key: demand_households_behaviour
 - key: households_behavior_turn_off_the_light
   step_value: 0.1
   unit: "%"
-  position: 2
-  slide_key: demand_households_behaviour
-- key: households_behavior_close_windows_turn_off_heating
-  step_value: 0.1
-  unit: "%"
-  position: 3
+  position: 105
   slide_key: demand_households_behaviour
 - key: households_behavior_low_temperature_washing
   step_value: 0.1
   unit: "%"
-  position: 4
+  position: 110
   slide_key: demand_households_behaviour

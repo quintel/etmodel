@@ -1,21 +1,22 @@
 ---
-- key: number_of_buildings
-  step_value: 0.1
-  unit: "%"
-  position: 1
+- key: buildings_number_of_buildings_present
+  step_value: 1.0
+  unit: "#"
+  position: 100
   slide_key: demand_buildings_demand_growth
+- key: buildings_number_of_buildings_future
+  step_value: 1.0
+  unit: "#"
+  position: 105
+  slide_key: demand_buildings_demand_growth
+
 - key: buildings_useful_demand_electricity
   step_value: 0.1
   unit: "%"
-  position: 2
-  slide_key: demand_buildings_demand_growth
-- key: buildings_useful_demand_for_space_heating
-  step_value: 0.1
-  unit: "%"
-  position: 3
+  position: 200
   slide_key: demand_buildings_demand_growth
 - key: buildings_useful_demand_cooling
   step_value: 0.1
   unit: "%"
-  position: 4
+  position: 205
   slide_key: demand_buildings_demand_growth

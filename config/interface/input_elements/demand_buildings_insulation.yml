@@ -1,8 +1,13 @@
 ---
-- key: buildings_insulation_level
+- key: buildings_insulation_level_buildings_present
   step_value: 0.1
-  draw_to_min: 0.0
-  unit: "%"
-  position: 1
+  unit: "kWh/m2"
+  position: 100
+  dependent_on: has_buildings
+  slide_key: demand_buildings_insulation
+- key: buildings_insulation_level_buildings_future
+  step_value: 0.1
+  unit: "kWh/m2"
+  position: 105
   dependent_on: has_buildings
   slide_key: demand_buildings_insulation

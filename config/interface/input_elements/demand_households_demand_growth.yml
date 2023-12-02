@@ -1,37 +1,32 @@
 ---
-- key: households_useful_demand_for_cooling
-  step_value: 0.1
-  unit: "%"
-  interface_group: per household
-  position: 6
-  slide_key: demand_households_demand_growth
-- key: households_useful_demand_heat_per_person
-  step_value: 0.1
-  unit: "%"
-  interface_group: per household
-  position: 5
-  slide_key: demand_households_demand_growth
 - key: households_useful_demand_hot_water_share
   step_value: 0.1
   unit: "%"
   interface_group: per person
-  position: 1
-  slide_key: demand_households_demand_growth
-- key: households_useful_demand_cooking_per_person
-  step_value: 0.1
-  unit: "%"
-  interface_group: per person
-  position: 4
+  position: 100
   slide_key: demand_households_demand_growth
 - key: households_useful_demand_electric_appliances
   step_value: 0.1
   unit: "%"
   interface_group: per person
-  position: 2
+  position: 105
   slide_key: demand_households_demand_growth
 - key: households_useful_demand_lighting
   step_value: 0.1
   unit: "%"
   interface_group: per person
-  position: 3
+  position: 110
+  slide_key: demand_households_demand_growth
+- key: households_useful_demand_cooking_per_person
+  step_value: 0.1
+  unit: "%"
+  interface_group: per person
+  position: 115
+  slide_key: demand_households_demand_growth
+
+- key: households_useful_demand_for_cooling
+  step_value: 0.1
+  unit: "%"
+  interface_group: per household
+  position: 200
   slide_key: demand_households_demand_growth

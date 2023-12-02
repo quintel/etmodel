@@ -78,36 +78,42 @@
   unit: "kWh/m2"
   interface_group: insulation_semi_detached_houses
   position: 300
+  dependent_on: has_semi_detached_houses
   slide_key: demand_households_insulation
 - key: households_insulation_level_semi_detached_houses_2005_present
   step_value: 0.1
   unit: "kWh/m2"
   interface_group: insulation_semi_detached_houses
   position: 305
+  dependent_on: has_semi_detached_houses
   slide_key: demand_households_insulation
 - key: households_insulation_level_semi_detached_houses_1985_2004
   step_value: 0.1
   unit: "kWh/m2"
   interface_group: insulation_semi_detached_houses
   position: 310
+  dependent_on: has_semi_detached_houses
   slide_key: demand_households_insulation
 - key: households_insulation_level_semi_detached_houses_1965_1984
   step_value: 0.1
   unit: "kWh/m2"
   interface_group: insulation_semi_detached_houses
   position: 315
+  dependent_on: has_semi_detached_houses
   slide_key: demand_households_insulation
 - key: households_insulation_level_semi_detached_houses_1945_1964
   step_value: 0.1
   unit: "kWh/m2"
   interface_group: insulation_semi_detached_houses
   position: 320
+  dependent_on: has_semi_detached_houses
   slide_key: demand_households_insulation
 - key: households_insulation_level_semi_detached_houses_before_1945
   step_value: 0.1
   unit: "kWh/m2"
   interface_group: insulation_semi_detached_houses
   position: 325
+  dependent_on: has_semi_detached_houses
   slide_key: demand_households_insulation
 
 - key: households_insulation_level_terraced_houses_future

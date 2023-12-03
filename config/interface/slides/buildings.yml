@@ -1,37 +1,34 @@
 ---
-- image: building_uncapped.gif
-  general_sub_header: "%/year"
-  key: demand_buildings_demand_growth
-  position: 10
+- general_sub_header: number
+  key: demand_buildings_stock
+  position: 100
   sidebar_item_key: buildings
-  alt_output_element_key: use_of_final_demand_in_buildings
   output_element_key: use_of_final_demand_in_buildings
 - image: building_insulation.gif
   general_sub_header: heat_demand_reduction
-  subheader_image: buildings_insulation_energy_label.png
   key: demand_buildings_insulation
-  position: 2
+  position: 105
   sidebar_item_key: buildings
   alt_output_element_key: effect_of_insulation_in_buildings
   output_element_key: use_of_final_demand_in_buildings
 - image: building_heating_uncapped.gif
   general_sub_header: of_heat_demand
   key: demand_buildings_heating
-  position: 3
+  position: 110
   sidebar_item_key: buildings
   alt_output_element_key: source_of_heat_in_buildings
   output_element_key: source_of_heat_in_buildings
 - image: building_cooling_uncapped.gif
   general_sub_header: share
   key: demand_buildings_cooling
-  position: 5
+  position: 115
   sidebar_item_key: buildings
   alt_output_element_key: source_of_cooling_in_buildings
   output_element_key: source_of_cooling_in_buildings
 - image: building_appliances_uncapped.gif
   general_sub_header: "%/year"
   key: demand_buildings_appliances
-  position: 7
+  position: 120
   sidebar_item_key: buildings
   alt_output_element_key: use_of_electricity_in_buildings
   output_element_key: use_of_electricity_in_buildings
@@ -39,14 +36,21 @@
   general_sub_header: share
   group_sub_header: "% of potential"
   key: demand_buildings_lighting
-  position: 8
+  position: 125
   sidebar_item_key: buildings
   alt_output_element_key: use_of_electricity_in_buildings
   output_element_key: use_of_electricity_in_buildings
 - image: building_decentral_uncapped.gif
   general_sub_header: "% of potential"
   key: demand_buildings_solar_panels
-  position: 9
+  position: 130
   sidebar_item_key: buildings
   alt_output_element_key: source_of_electricity_in_buildings
   output_element_key: source_of_electricity_in_buildings
+- image: buildings_uncapped.gif
+  general_sub_header: "%/year"
+  key: demand_buildings_demand_growth
+  position: 135
+  sidebar_item_key: buildings
+  alt_output_element_key: use_of_final_demand_in_buildings
+  output_element_key: use_of_final_demand_in_buildings

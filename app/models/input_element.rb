@@ -28,6 +28,7 @@ class InputElement < YModel::Base
   source_file 'config/interface/input_elements'
 
   default_attribute :draw_to_max, with: nil
+  default_attribute :draw_to_min, with: nil
   default_attribute :fixed, with: false
   default_attribute :additional_specs, with: -> { {} }
   default_attribute :config, with: -> { {} }

@@ -4,6 +4,10 @@
   percentage_bar_query: share_of_households_in_final_demand
   tab_key: demand
   position: 1
+- key: households_heating_order
+  tab_key: demand
+  position: 1
+  parent_key: households
 - key: buildings
   section: demand
   percentage_bar_query: share_of_buildings_in_final_demand

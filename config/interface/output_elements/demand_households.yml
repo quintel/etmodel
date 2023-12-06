@@ -163,13 +163,18 @@
   sub_group: households
   show_point_label: false
   growth_chart: true
+<<<<<<< HEAD
   key: number_of_residences_overview
+=======
+  key: residences_overview_mekko
+>>>>>>> 61ef4c26a ( Addition of overview of residences graph to the model)
   max_axis_value:
   min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: mekko
+<<<<<<< HEAD
 - under_construction: false
   unit: PJ
   percentage: false
@@ -212,3 +217,5 @@
   requires_merit_order: true
   dependent_on:
   output_element_type_name: html_table
+=======
+>>>>>>> 61ef4c26a ( Addition of overview of residences graph to the model)

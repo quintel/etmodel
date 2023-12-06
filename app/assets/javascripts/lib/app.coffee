@@ -80,6 +80,15 @@ class @AppView extends Backbone.View
         { capacity: true, sortable: true }
       ).render()
 
+    # Create forecast storage order.
+    if (households_heating_producer_order = wrapper.find('#households-heating-producer-order')).length
+      new UserSortable(
+        households_heating_producer_order,
+        'households_space_heating_producer_order',
+        {},
+        { capacity: true, sortable: true }
+      ).render()
+
     if (curve_upload = wrapper.find('.single-curve-upload')).length
       curveCollectionDef = @customCurves()
       userScenariosArray = @userScenarios()

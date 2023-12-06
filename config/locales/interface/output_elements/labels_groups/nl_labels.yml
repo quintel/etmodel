@@ -99,6 +99,22 @@ nl:
       energy_heat_heatpump_drink_water_water_ts_lt_electricity: "Warmtepomp met aquathermie (TED)"
       energy_heat_heatpump_drink_water_water_ts_mt_electricity: "Warmtepomp met aquathermie (TED)"
       energy_heat_boiler_electricity: "Elektrische boiler"
+    households_space_heating_producer_order:
+      households_space_heater_coal: "Kolenketel"
+      households_space_heater_combined_hydrogen:  "HR combiketel (waterstof)"
+      households_space_heater_combined_network_gas: "HR combiketel (gas)"
+      households_space_heater_crude_oil: "Olieketel"
+      households_space_heater_district_heating_ht_steam_hot_water: "HT-warmtenet"
+      households_space_heater_district_heating_lt_steam_hot_water: "LT-warmtenet"
+      households_space_heater_district_heating_mt_steam_hot_water: "MT-warmtenet"
+      households_space_heater_electricity: "Elekrische boiler"
+      households_space_heater_heatpump_air_water_electricity: "Luchtwarmtepomp"
+      households_space_heater_heatpump_ground_water_electricity: "Bodemwarmtepomp"
+      households_space_heater_heatpump_pvt_electricity: "Bodemwarmtepomp met PVT"
+      households_space_heater_hybrid_heatpump_air_water_electricity: "Hybride luchtwarmtepomp (gas)"
+      households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity: "Hybride luchtwarmtepomp (waterstof)"
+      households_space_heater_network_gas: "Gasketel"
+      households_space_heater_wood_pellets: "Houtpelletkachel"
     hhp_cop_cost:
       x_axis: COP
       y_axis: "ct/MJ warmte"

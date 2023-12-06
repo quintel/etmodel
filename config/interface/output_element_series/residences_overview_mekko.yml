@@ -1,0 +1,297 @@
+---
+- label: residences_before_1945
+  color: "#332288"
+  order_by: 10
+  group: apartments
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_apartments_before_1945_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_apartments_before_1945_mekko_residences_overview_mekko
+- label: residences_1945_1964
+  color: "#44AA99"
+  order_by: 20
+  group: apartments
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_apartments_1945_1964_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_apartments_1945_1964_mekko_residences_overview_mekko
+- label: residences_1965_1984
+  color: "#DDCC77"
+  order_by: 30
+  group: apartments
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_apartments_1965_1984_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_apartments_1965_1984_mekko_residences_overview_mekko  
+- label: residences_1985_2004
+  color: "#AA4499"
+  order_by: 40
+  group: apartments
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_apartments_1985_2004_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_apartments_1985_2004_mekko_residences_overview_mekko
+- label: residences_2005_present
+  color: "#117733"
+  order_by: 50
+  group: apartments
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_apartments_2005_present_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_apartments_2005_present_mekko_residences_overview_mekko  
+- label: residences_future
+  color: "#88CCEE"
+  order_by: 60
+  group: apartments
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_apartments_future_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_apartments_future_mekko_residences_overview_mekko    
+
+
+- label: residences_before_1945
+  color: "#332288"
+  order_by: 10
+  group: detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_detached_houses_before_1945_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_detached_houses_before_1945_mekko_residences_overview_mekko
+- label: residences_1945_1964
+  color: "#44AA99"
+  order_by: 20
+  group: detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_detached_houses_1945_1964_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_detached_houses_1945_1964_mekko_residences_overview_mekko
+- label: residences_1965_1984
+  color: "#DDCC77"
+  order_by: 30
+  group: detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_detached_houses_1965_1984_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_detached_houses_1965_1984_mekko_residences_overview_mekko  
+- label: residences_1985_2004
+  color: "#AA4499"
+  order_by: 40
+  group: detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_detached_houses_1985_2004_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_detached_houses_1985_2004_mekko_residences_overview_mekko
+- label: residences_2005_present
+  color: "#117733"
+  order_by: 50
+  group: detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_detached_houses_2005_present_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_detached_houses_2005_present_mekko_residences_overview_mekko  
+- label: residences_future
+  color: "#88CCEE"
+  order_by: 60
+  group: detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_detached_houses_future_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_detached_houses_future_mekko_residences_overview_mekko    
+
+- label: residences_before_1945
+  color: "#332288"
+  order_by: 10
+  group: semi_detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_semi_detached_houses_before_1945_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_semi_detached_houses_before_1945_mekko_residences_overview_mekko
+- label: residences_1945_1964
+  color: "#44AA99"
+  order_by: 20
+  group: semi_detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_semi_detached_houses_1945_1964_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_semi_detached_houses_1945_1964_mekko_residences_overview_mekko
+- label: residences_1965_1984
+  color: "#DDCC77"
+  order_by: 30
+  group: semi_detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_semi_detached_houses_1965_1984_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_semi_detached_houses_1965_1984_mekko_residences_overview_mekko  
+- label: residences_1985_2004
+  color: "#AA4499"
+  order_by: 40
+  group: semi_detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_semi_detached_houses_1985_2004_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_semi_detached_houses_1985_2004_mekko_residences_overview_mekko
+- label: residences_2005_present
+  color: "#117733"
+  order_by: 50
+  group: semi_detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_semi_detached_houses_2005_present_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_semi_detached_houses_2005_present_mekko_residences_overview_mekko  
+- label: residences_future
+  color: "#88CCEE"
+  order_by: 60
+  group: semi_detached_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_semi_detached_houses_future_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_semi_detached_houses_future_mekko_residences_overview_mekko    
+
+- label: residences_before_1945
+  color: "#332288"
+  order_by: 10
+  group: terraced_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_terraced_houses_before_1945_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_terraced_houses_before_1945_mekko_residences_overview_mekko
+- label: residences_1945_1964
+  color: "#44AA99"
+  order_by: 20
+  group: terraced_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_terraced_houses_1945_1964_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_terraced_houses_1945_1964_mekko_residences_overview_mekko
+- label: residences_1965_1984
+  color: "#DDCC77"
+  order_by: 30
+  group: terraced_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_terraced_houses_1965_1984_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_terraced_houses_1965_1984_mekko_residences_overview_mekko  
+- label: residences_1985_2004
+  color: "#AA4499"
+  order_by: 40
+  group: terraced_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_terraced_houses_1985_2004_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_terraced_houses_1985_2004_mekko_residences_overview_mekko
+- label: residences_2005_present
+  color: "#117733"
+  order_by: 50
+  group: terraced_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_terraced_houses_2005_present_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_terraced_houses_2005_present_mekko_residences_overview_mekko  
+- label: residences_future
+  color: "#88CCEE"
+  order_by: 60
+  group: terraced_houses
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_terraced_houses_future_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: residences_overview_mekko
+  key: number_of_terraced_houses_future_mekko_residences_overview_mekko    
+
+
+
+

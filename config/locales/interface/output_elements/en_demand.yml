@@ -164,7 +164,7 @@ en:
       title: Final energy demand for international transport per carrier
       short_description:
       description: |
-        This chart shows you the fuels used in <a href=/scenario/demand/transport_international_transport/international-transport> 
+        This chart shows you the fuels used in <a href=/scenario/demand/transport_international_transport/international-transport>
         international transport</a>. International transport consists of
         <a href=/scenario/demand/transport_international_transport/international-aviation-technology> aviation</a>
         and <a href=/scenario/demand/transport_international_transport/international-navigation-technology> navigation</a>.
@@ -172,7 +172,7 @@ en:
       title: CO<sub>2</sub> emissions of international transportation
       short_description:
       description: |
-        This chart shows the CO<sub>2</sub> emissions of <a href=/scenario/demand/transport_international_transport/international-transport> 
+        This chart shows the CO<sub>2</sub> emissions of <a href=/scenario/demand/transport_international_transport/international-transport>
         international transport</a>. By changing the fuels used for <a href=/scenario/supply/transport_fuels/international-aviation>
         international aviation</a> and the technologies used for <a href=/scenario/demand/transport_international_transport/international-navigation-technology>
         international navigation</a>, you can affect the CO<sub>2</sub> emissions.
@@ -333,10 +333,10 @@ en:
       title: Final energy demand for heating in agriculture
       short_description:
       description: |
-        This graph shows agricultural heat demand changes from now to the future, as a 
+        This graph shows agricultural heat demand changes from now to the future, as a
         result of technology choices in the <a href="/scenario/demand/agriculture/heat">
         Agriculture</a> section. <br/><br/>
-        Of course, what technologies are used does not change the useful demand for heat, 
+        Of course, what technologies are used does not change the useful demand for heat,
         but it can change the efficiency and renewability of heat production.
     use_of_final_electricity_demand_in_households:
       title: Electricity use of household appliances
@@ -430,27 +430,27 @@ en:
     agriculture_local_heat_mekko:
       title: Supply and demand of heat from local CHPs
       description: |
-        This chart shows local combined heat and power (CHP) that supply heat to the agriculture 
-        sector and shows the final demand for that heat. To see the hourly behaviour of this demand and 
-        supply, you can go to the 
-        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a> 
+        This chart shows local combined heat and power (CHP) that supply heat to the agriculture
+        sector and shows the final demand for that heat. To see the hourly behaviour of this demand and
+        supply, you can go to the
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a>
         section. </br></br>
         The final demand for heat is determined by the "Heat from local CHPs" slider in
-        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from 
-        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a> 
+        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from
+        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a>
         section. Excess heat is wasted and heat shortages are supplied by a backup burner.
     agriculture_sankey:
       title: Local heat and electricity production in agriculture
       description: |
-        This sankey chart shows local combined heat and power (CHP) that supply heat to the agriculture 
+        This sankey chart shows local combined heat and power (CHP) that supply heat to the agriculture
         sector. It also shows the electricity production by these
-        CHPs and how this relates to the demand / supply from the grid. To see the hourly behaviour of this demand and 
-        supply, you can go to the 
-        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a> 
+        CHPs and how this relates to the demand / supply from the grid. To see the hourly behaviour of this demand and
+        supply, you can go to the
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a>
         section. </br></br>
         The final demand for heat is determined by the "Heat from local CHPs" slider in
-        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from 
-        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a> 
+        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from
+        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a>
         section. Excess heat is wasted and heat shortages are supplied by a backup burner.
     losses_heat_networks:
       title: Heat losses in heat network per household
@@ -461,11 +461,15 @@ en:
       short_description: Future year
       description: |
         This chart shows a breakdown of the energy that transits the region
-        in the future by energy source. 
+        in the future by energy source.
         Each of the bars add up to the end result in the end year (the black bar to the far right of the chart)
     heat_aquathermal_demand:
       title: Heat demand for aquathermal sources
       description: |
-        This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water). 
-        The chart shows the distribution of heat demand between collective sources (heat networks) 
+        This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water).
+        The chart shows the distribution of heat demand between collective sources (heat networks)
         and individual sources and includes the potential for each aquathermal source for the region, whenever available.
+    residences_overview_mekko:
+      title: Overview of residences
+      description:
+        This chart shows the amount of residences divided over the residence type and the building period.

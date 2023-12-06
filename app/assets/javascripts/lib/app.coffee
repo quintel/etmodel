@@ -86,7 +86,7 @@ class @AppView extends Backbone.View
         households_heating_producer_order,
         'households_space_heating_producer_order',
         {},
-        { capacity: true, sortable: true }
+        { capacity: true }
       ).render()
 
     if (curve_upload = wrapper.find('.single-curve-upload')).length

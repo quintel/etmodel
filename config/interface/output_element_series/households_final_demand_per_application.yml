@@ -1,19 +1,7 @@
 ---
-- label: appliances
-  color: "#4169E1"
-  order_by: 3
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: households_final_demand_appliances
-  is_1990: false
-  dependent_on: 
-  output_element_key: households_final_demand_per_application
-  key: appliances_households_final_demand_per_application
 - label: cooking
-  color: "#E69567"
-  order_by: 4
+  color: "#44AA99"
+  order_by: 100
   group: ''
   show_at_first: false
   is_target_line: false
@@ -23,9 +11,21 @@
   dependent_on: 
   output_element_key: households_final_demand_per_application
   key: cooking_households_final_demand_per_application
+- label: appliances
+  color: "#648FFF"
+  order_by: 105
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: households_final_demand_appliances
+  is_1990: false
+  dependent_on: 
+  output_element_key: households_final_demand_per_application
+  key: appliances_households_final_demand_per_application
 - label: cooling
-  color: "#ADD8E6"
-  order_by: 6
+  color: "#785EF0"
+  order_by: 110
   group: ''
   show_at_first: false
   is_target_line: false
@@ -36,8 +36,8 @@
   output_element_key: households_final_demand_per_application
   key: cooling_households_final_demand_per_application
 - label: hot_water
-  color: "#8B0000"
-  order_by: 2
+  color: "#DC267F"
+  order_by: 115
   group: ''
   show_at_first: false
   is_target_line: false
@@ -47,21 +47,9 @@
   dependent_on: 
   output_element_key: households_final_demand_per_application
   key: hot_water_households_final_demand_per_application
-- label: lighting
-  color: "#FFD700"
-  order_by: 5
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: households_final_demand_lighting
-  is_1990: false
-  dependent_on: 
-  output_element_key: households_final_demand_per_application
-  key: lighting_households_final_demand_per_application
-- label: heat
-  color: "#696969"
-  order_by: 1
+- label: space_heating
+  color: "#FE6100"
+  order_by: 120
   group: ''
   show_at_first: false
   is_target_line: false
@@ -71,3 +59,15 @@
   dependent_on: 
   output_element_key: households_final_demand_per_application
   key: heat_households_final_demand_per_application
+- label: lighting
+  color: "#FFB000"
+  order_by: 125
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: households_final_demand_lighting
+  is_1990: false
+  dependent_on: 
+  output_element_key: households_final_demand_per_application
+  key: lighting_households_final_demand_per_application

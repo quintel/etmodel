@@ -337,7 +337,8 @@ nl:
         Bekijk alsjeblieft de
         <a href="https://docs.energytransitionmodel.com/main/#12-saved-scenario-access-management-page" target=\"_blank\">
         documentatien</a> voor meer informatie en details over gebruikersbeheer, zoals gebruikersrollen.
-      invite: 'Gebruiker uitnodigen'
+      invite: '+ Mensen uitnodigen'
+      send_invite: Uitnodiging versturen
       name: 'Naam'
       role: 'Rol'
       roles:
@@ -348,11 +349,10 @@ nl:
       new:
         title: 'Gebruiker uitnodigen voor scenario'
         description:
-          Voer het e-mail adres in van de gebruiker die je uit wil nodigen voor dit scenario
-          en kies een rol voor deze gebruiker. Indien er geen gebruiker met het gegeven
+          Indien er geen gebruiker met het gegeven
           e-mail adres kan worden gevonden zal een e-mail worden verzonden om deze persoon
           uit te nodigen een account aan te maken bij het ETM.
-        email: 'E-mail adres van gebruiker'
+        email: 'E-mail adres'
       destroy:
         title: 'Gebruiker verwijderen van scenario'
         description:
@@ -363,7 +363,7 @@ nl:
         create_email: Het ingevoerde e-mail adres is onjuist.
         update: Er ging iets mis tijdens het veranderen van de rol voor deze gebruiker!
         destroy: Er ging iets mis tijdens het verwijderen van de gebruiker van dit scenario!
-        general: Probeer het later alsjeblieft nog een keer. Neem contact op met Quintel indien je deze fout blijft krijgen.
+        general: Probeer het later alsjeblieft nog een keer. Neem contact op met ons indien je deze fout blijft krijgen.
         duplicate: Deze gebruiker is al aan dit scenario gekoppeld.
     group: 'Groep'
     share:

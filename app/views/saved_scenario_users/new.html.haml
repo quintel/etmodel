@@ -6,14 +6,10 @@
     = render partial: 'form_flash', format: :js
 
     = simple_form_for @saved_scenario_user, url: saved_scenario_users_path, remote: true do |f|
-      = f.label :user_email, class: 'label' do
-        =t('scenario.users.new.email')
-      = f.input :user_email, label: false, required: true
-
-      = f.label :role_id, class: 'label' do
-        =t('scenario.users.role')
+      .row
         = f.input :role_id, label: false,
           collection: User::ROLES.map{ |r| [t("scenario.users.roles.#{r[1]}"), r[0]] },
           selected: t("scenario.users.roles.#{User::ROLES.values.first}")
+        = f.input :user_email, label: false, required: true, class: 'email', placeholder: t('scenario.users.new.email')
 
-      = f.button :submit, value: t('scenario.users.invite'), class: 'btn primary', data: { disable_with: false }
+      = f.button :submit, value: t('scenario.users.send_invite'), class: 'scenario-button', data: { disable_with: false }

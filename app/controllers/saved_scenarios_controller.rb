@@ -45,7 +45,7 @@ class SavedScenariosController < ApplicationController
   def discarded
     @discarded_scenarios = Kaminari.paginate_array(
         (
-          current_user.saved_scenarios.discarded.includes(:featured_scenario, :user) +
+          current_user.saved_scenarios.discarded.includes(:featured_scenario, :users) +
           current_user.multi_year_charts.discarded.includes(:user)
         )
         .sort_by(&:updated_at)

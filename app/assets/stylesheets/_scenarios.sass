@@ -455,12 +455,27 @@ table.default
           margin-top: -1px
           margin-bottom: 1px
           marign-left: -2px
+        .dropdown-menu, .dropdown-menu::before
+          background: $landing-gold
+          color: #fff
         .dropdown-item
           font-size: inherit
+          color: #fff
           svg
             opacity: 0.5
+          .fa, span.icon
+            color: #fff
+            margin-right: 0.25rem
+            margin-bottom: -1px
+          span.icon
+            margin-right: 0
+            margin-bottom: -2px
+            svg
+              opacity: 1
         .dropdown-item:hover svg
             opacity: 1
+        .dropdown-item:hover span.icon, .dropdown-item:hover .fa
+          color: #fff
         .dropdown-menu .info
           color: black
           line-height: 1.5

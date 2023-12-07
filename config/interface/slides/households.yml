@@ -1,11 +1,14 @@
 ---
+- key: demand_households_overview
+  position: 0
+  sidebar_item_key: households
+  output_element_key: households_final_demand_per_application
 - image: house.gif
   general_sub_header: number
   key: demand_households_population
   position: 100
   sidebar_item_key: households
-  alt_output_element_key: population_residences_overview
-  output_element_key: households_final_demand_per_application
+  output_element_key: number_of_residences_overview
 - image: house_insulation.gif
   general_sub_header: heat_demand_reduction
   key: demand_households_insulation

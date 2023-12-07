@@ -467,3 +467,12 @@ en:
       title: Residential heating demand
       description: |
         This bar chart shows the residential heating demand per residence type and building period.
+    buildings_heating_demand:
+      title: Buildings heating demand
+      description: |
+        This bar chart shows the useful heating demand for buildings per building period.
+        The \"useful demand\", which is the energy actually used for a given purpose.
+        This differs from \"final demand\" shown in some of the other graphs in the
+        model, which is the input from energy sources before it's converted to it's
+        useful purpose.
+

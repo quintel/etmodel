@@ -471,4 +471,13 @@ nl:
       title: Warmte vraag van woningen
       description: |
         Deze grafiek toont de warmtevraag per woningtype en bouwperiode.
+    buildings_heating_demand:    
+      title: Warmtevraag gebouwen
+      description: |
+        Deze grafiek toont het nuttig gebruik van warmte per bouwperiode van de gebouwen.
+        \"Nuttig gebruik\" betekent dat het de energie toont die nuttig gebruikt wordt voor een bepaald
+        doel. Dit verschilt van \"finaal gebruik\", zoals in sommige andere grafieken
+        in het model. Dit zijn namelijk de verschillende soorten energie die gebruikt
+        worden om tot het nuttige gebruik te komen, waarbij ook een deel van de energie
+        verloren gaat aan omzetting.
 

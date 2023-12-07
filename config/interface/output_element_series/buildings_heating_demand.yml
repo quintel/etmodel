@@ -1,0 +1,26 @@
+---
+- label: buildings_present
+  color: "#648FFF"
+  order_by: 10
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: useful_demand_buildings_present_bar
+  is_1990: 
+  dependent_on: 
+  output_element_key: buildings_heating_demand
+  key: useful_demand_buildings_present_bar_buildings_heating_demand
+- label: buildings_future
+  color: "#FE6100"
+  order_by: 20
+  group:
+  show_at_first: 
+  is_target_line: false
+  target_line_position:
+  gquery: useful_demand_buildings_future_bar
+  is_1990: 
+  dependent_on: 
+  output_element_key: buildings_heating_demand
+  key: useful_demand_buildings_future_bar_buildings_heating_demand
+

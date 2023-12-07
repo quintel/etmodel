@@ -4,6 +4,7 @@ class Engine::Area < ActiveResource::Base
   ORDER = %w(
     country
     province
+    province_vanuatu
     municipality_dk
     municipality_be
     municipality
@@ -78,7 +79,7 @@ class Engine::Area < ActiveResource::Base
   end
 
   def country?
-    %w[province municipality_dk municipality_be municipality neighborhood neighbourhood_be region res].exclude?(group)
+    %w[province province_vanuatu municipality_dk municipality_be municipality neighborhood neighbourhood_be region res].exclude?(group)
   end
 
   # Public: Gets the country to which the area belongs.

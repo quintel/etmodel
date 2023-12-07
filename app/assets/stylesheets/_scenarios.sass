@@ -122,6 +122,7 @@ table.default
     h1
       margin-bottom: 0.675rem
       font-size: 1.5rem
+      color: #333
       sub
         line-height: 0
 
@@ -136,6 +137,8 @@ table.default
         margin: 1rem 0.5rem
         font-size: 6px
         color: $link-color
+      &.scenario-users
+        margin-bottom: 1rem
 
     input, textarea
       box-sizing: border-box
@@ -183,6 +186,9 @@ table.default
         margin-bottom: 0.5rem
         padding: 5px 8px
         -webkit-font-smoothing: auto
+      &.show-new-saved-scenario-user-form
+        font-size: 0.875rem
+        padding: 0.5rem 0.75rem
 
   #edit_scenario .actions
     .cancel, input
@@ -431,10 +437,12 @@ table.default
         color: #888
         strong
           color: initial
-          font-weight: 600
+          font-weight: 500
+          text-transform: uppercase
       .area-flag
         vertical-align: middle
         margin-top: -4px
+        margin-right: 0.25rem
       #scenario-location, #scenario-privacy
         button.scenario-actions
           align-items: center
@@ -464,7 +472,6 @@ table.default
           svg
             opacity: 0.5
           .fa, span.icon
-            color: #fff
             margin-right: 0.25rem
             margin-bottom: -1px
           span.icon
@@ -474,8 +481,9 @@ table.default
               opacity: 1
         .dropdown-item:hover svg
             opacity: 1
-        .dropdown-item:hover span.icon, .dropdown-item:hover .fa
-          color: #fff
+        .dropdown-item:hover
+          color: #333 !important
+          background: #fff
         .dropdown-menu .info
           color: black
           line-height: 1.5
@@ -485,7 +493,7 @@ table.default
     .bar
       border-top: 1px solid #eee
       width: 100%
-      margin-bottom: 10px
+      margin-bottom: 1rem
 
     .sharing-links
       display: flex

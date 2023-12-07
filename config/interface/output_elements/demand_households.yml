@@ -55,7 +55,7 @@
   hidden: true
   requires_merit_order: false
   dependent_on: ''
-  output_element_type_name: beziergit 
+  output_element_type_name: bezier 
   related_output_element_key: household_heat_demand_and_production
 - under_construction: false
   unit: PJ
@@ -109,7 +109,7 @@
   key: household_heat_demand_and_production
   max_axis_value:
   min_axis_value:
-  hidden: false
+  hidden: true
   requires_merit_order: true
   dependent_on: ''
   output_element_type_name: heat_demand_and_production

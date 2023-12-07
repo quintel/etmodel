@@ -20,8 +20,10 @@
                   = f.input :role_id, label: false, input_html: { class: 'update-saved-scenario-user' },
                     collection: User::ROLES.map{ |r| [t("scenario.users.roles.#{r[1]}"), r[0]] },
                     selected: saved_scenario_user.role_id
-                %div.checkmark= '✅'
-                %div.cross= '❌'
+                %div.checkmark
+                  .fa.fa-check
+                %div.cross
+                  .fa.fa-times
 
           %td.remove
             = content_tag :svg,

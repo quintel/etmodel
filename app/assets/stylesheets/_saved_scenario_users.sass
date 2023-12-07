@@ -1,5 +1,3 @@
-$error-red: #d81616
-
 #saved_scenario_users_table
   border: 1px solid $light-blue
   border-top: 3px solid  $landing-green
@@ -55,40 +53,68 @@ table.saved_scenario_users
     display: none
     float: left
     margin-left: 10px
+    color: $landing-green
 
   div.cross
     display: none
     float: left
     margin-left: 10px
+    color: $landing-gold
 
-  .edit_saved_scenario_user select
-    box-shadow: none
-    background: #fff
-    padding: 0.25rem 0.5rem
-    border-radius: 6px
-    border-color: $light-blue
+.edit_saved_scenario_user select, .saved_scenario_user_role_id select
+  background: #fff
+  padding: 0.25rem 0.5rem
+  border-radius: 6px
+  border-color: $light-blue
 
 
 .create_saved_scenario_user_form
+  margin-top: 1.875rem
+  #saved_scenario_form_flash
+    margin-bottom: 1.875rem
   .label
     float: left
     text-align: left
     margin-left: 0px
+  .btn.scenario-button
+    width: 25%
+    border: none
+    background: $landing-green
+    color: white
+    font-size: 0.875rem
+    padding: 0.5rem 0.75rem
+    margin-top: 1rem
+    &:hover
+      color: white
+      background: lighten($landing-green, 14%)
+    &:active
+      background: darken($landing-green, 1%)
+  .row
+    display: flex
+    justify-content: space-between
+  input.email
+    width: 292px
+    border: 2px solid $light-blue
+  .saved_scenario_user_role_id
+    select
+      background: $light-blue
+      padding: 0.5rem 0.75rem
+      font-weight: 500
+      color: #333
 
 .remove_saved_scenario_user_form
+  margin-top: 2rem
   a
     font-size: 1rem
     font-weight: 500
     padding: 0.6rem
-    width: 100%
-    padding: 10px 15px
-    margin: 0.5rem 0.5rem 0.5rem 0
+    margin: 1rem 0.5rem 0.5rem 0
     border-radius: 3px
-    width: 40%
-    background: #c00
+    background: $landing-gold
     color: white
     &:hover
       color: white
       background: lighten(#c00, 14%)
+      text-decoration: none
     &:active
       background: darken(#c00, 1%)

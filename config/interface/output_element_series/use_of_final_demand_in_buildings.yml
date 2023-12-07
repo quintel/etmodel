@@ -1,6 +1,6 @@
 ---
 - label: appliances
-  color: "#648FFF"
+  color: "#44AA99"
   order_by: 100
   group: ''
   show_at_first: false
@@ -11,7 +11,6 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_buildings
   key: electrical_appliances_use_of_final_demand_in_buildings
-  key: heat_demand_buildings_use_of_final_demand_in_buildings
 - label: cooling_demand
   color: "#785EF0"
   order_by: 105
@@ -25,7 +24,7 @@
   output_element_key: use_of_final_demand_in_buildings
   key: cooling_demand_use_of_final_demand_in_buildings
 - label: heat_demand_buildings
-  color: "#FE6100"
+  color: "#DC267F"
   order_by: 110
   group: ''
   show_at_first: false
@@ -35,8 +34,9 @@
   is_1990: false
   dependent_on: 
   output_element_key: use_of_final_demand_in_buildings
+  key: heat_demand_buildings_use_of_final_demand_in_buildings  
 - label: lighting
-  color: "#FFB000"
+  color: "#FE6100"
   order_by: 115
   group: ''
   show_at_first: false

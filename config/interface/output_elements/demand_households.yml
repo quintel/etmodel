@@ -114,20 +114,6 @@
   dependent_on: ''
   output_element_type_name: heat_demand_and_production
 - under_construction: false
-  unit: PJ
-  percentage: false
-  group: Demand
-  sub_group: households
-  show_point_label: false
-  growth_chart: false
-  key: households_final_demand_per_application
-  max_axis_value:
-  min_axis_value:
-  hidden: false
-  requires_merit_order: false
-  dependent_on: ''
-  output_element_type_name: bezier
-- under_construction: false
   unit: MW
   percentage: false
   group: Demand
@@ -198,4 +184,18 @@
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: category_bar  
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: buildings
+  show_point_label: false
+  growth_chart: true
+  key: use_of_final_demand_in_households
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_buildings
+  output_element_type_name: bezier  
 

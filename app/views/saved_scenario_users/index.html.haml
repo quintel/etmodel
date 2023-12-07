@@ -34,7 +34,8 @@
 
       %h3.access= t('scenario.users.manage')
 
-      = render partial: 'user_table', format: :js, locals: { saved_scenario: @saved_scenario }
+      #saved_scenario_users_table
+        = render partial: 'user_table', format: :js, locals: { saved_scenario: @saved_scenario }
 
     .actions.scenario-users
       .save.button.scenario-button.show-new-saved-scenario-user-form{ data: { form_url: new_saved_scenario_user_path } }

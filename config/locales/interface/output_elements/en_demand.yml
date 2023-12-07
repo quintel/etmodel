@@ -454,7 +454,7 @@ en:
         section. Excess heat is wasted and heat shortages are supplied by a backup burner.
     losses_heat_networks:
       title: Heat losses in heat network per household
-      description:
+      description: |
         This tabel shows the heat losses in heat networks per household. The total heat losses in the heat networks are allocated to households based on the share that households have in the total final demand of heat.
     future_energy_transit_flows:
       title: Future energy transit flows
@@ -471,5 +471,9 @@ en:
         and individual sources and includes the potential for each aquathermal source for the region, whenever available.
     residences_overview_mekko:
       title: Overview of residences
-      description:
-        This chart shows the amount of residences divided over the residence type and the building period.
+      description: |
+        This chart shows the amount of residences divided per residence type and building period.
+    residential_heating_demand:
+      title: Residential heating demand
+      description: |
+        This bar chart shows the residential heating demand per residence type and building period.

@@ -21,16 +21,21 @@ en:
       title: Heat from local CHPs
       short_description:
       description: |
-        In this section you can determine how you want to meet the final demand for heat from 
-        local combined heat and power (CHP) production in the 
+        In this section you can determine how you want to meet the final demand for heat from
+        local combined heat and power (CHP) production in the
         <a href="/scenario/demand/agriculture/heat"> Heat</a> section above. The chart on the right shows you
-        the heat balance of these local CHPs. For a more detailed overview, have a look at the sankey chart 
+        the heat balance of these local CHPs. For a more detailed overview, have a look at the sankey chart
         <a href="#" class="open_chart" data-chart-key="agriculture_sankey" data-chart-location="side">
         Local heat and electricity production in agriculture.</a></br></br>
-        If the total local heat supply from these CHPs exceeds the demand from agriculture, 
-        the excess heat is wasted. If supply falls short of demand, the shortage is supplied 
-        by a back-up gas burner. Local electricity excesses and shortages are exchanged with 
+        If the total local heat supply from these CHPs exceeds the demand from agriculture,
+        the excess heat is wasted. If supply falls short of demand, the shortage is supplied
+        by a back-up gas burner. Local electricity excesses and shortages are exchanged with
         the electricity network.
+    demand_buildings_stock:
+      title: Building stock
+      short_description:
+      description: |
+        The energy demand for all buildings combined depends on the number of buildings.
     demand_buildings_appliances:
       title: Appliances
       short_description: ''
@@ -52,8 +57,8 @@ en:
       description: How will offices and other buildings be heated? European countries
         can save a lot of energy by being smarter about how buildings are heated.
     demand_buildings_insulation:
-      title: Insulation
-      short_description: ''
+      title: Typical heat demand per building
+      short_description:
       description: The insulation of buildings such as offices, schools, shops, hospitals,
         and hotels tends to be quite different. What is the average heat demand reduction
         for these buildings in the future?
@@ -71,31 +76,31 @@ en:
       title: Introduction
       short_description: ''
       description: |
-        Many regions deal with energy flows that merely pass through the region and 
-        are not consumed or produced by parts of the local energy system. These flows 
-        of energy (carriers) are called <b>transit flows</b>, as they are only 'in transit' 
-        in the region. An example of such transit flow is the import of oil through a 
-        harbor and subsequent export via local pipelines to the hinterland, with no oil 
+        Many regions deal with energy flows that merely pass through the region and
+        are not consumed or produced by parts of the local energy system. These flows
+        of energy (carriers) are called <b>transit flows</b>, as they are only 'in transit'
+        in the region. An example of such transit flow is the import of oil through a
+        harbor and subsequent export via local pipelines to the hinterland, with no oil
         consumption taking place in between.
         <br /> <br />
-        These can be contractual obligations to export certain amounts of energy to 
-        neighbouring regions, or flows of energy that only pass through the region, for 
+        These can be contractual obligations to export certain amounts of energy to
+        neighbouring regions, or flows of energy that only pass through the region, for
         instance from a port to the hinterland.
-        
+
     demand_export_energy:
       title: Export volumes per carrier
       short_description: ''
       description: |
-        In order to model transit flows in your scenario, you can set the <i>inflexible</i> 
-        export volumes of several energy (carriers) using the sliders below. Setting an 
+        In order to model transit flows in your scenario, you can set the <i>inflexible</i>
+        export volumes of several energy (carriers) using the sliders below. Setting an
         export flow also enforces an import flow for the system to be balanced.
-        
+
     demand_export_energy_transit_flows:
       title: Transit flows
       short_description: ''
       description: |
         In the chart on the right an overview is shown of all energy flows in your energy system,
-        including transit flows. Do you want more insights into the transit flows within your scenario? 
+        including transit flows. Do you want more insights into the transit flows within your scenario?
         Also view the following graphs:
 
         <ul>
@@ -112,8 +117,14 @@ en:
         <br />
 
         See our
-        <a href="https://docs.energytransitionmodel.com/main/transit-flows/" target=\"_blank\">documentation</a> 
+        <a href="https://docs.energytransitionmodel.com/main/transit-flows/" target=\"_blank\">documentation</a>
         for more background information about the transit flows modelling in the ETM.
+    demand_households_overview:
+      title: Overview
+      short_description:
+      description: |
+        The energy demand for all residences combined depends on the size of the population
+        and the number of residences.
     demand_households_appliances:
       title: Appliances
       short_description: ''
@@ -148,10 +159,11 @@ en:
       short_description: ''
       description: "How will households be heated and generate hot water? \r\n"
     demand_households_insulation:
-      title: Insulation
-      short_description: ''
-      description: 'The demand for heating depends on the level of insulation. Below
-        you can set for each housing type the heat demand reduction due to insulation.'
+      title: Typical heat demand per residence
+      short_description:
+      description: |
+        The demand for heating depends on the level of insulation. Below
+        you can set for each housing type the heat demand reduction due to insulation.
     demand_households_lighting:
       title: Lighting
       short_description: ''
@@ -162,6 +174,11 @@ en:
       short_description:
       description: 'The energy demand for all residences combined depends on the size
         of the population and the number of residences, which both can be set here. '
+    demand_households_heating_producers_order:
+      title: Merit order residences heating technologies
+      short_description:
+      description: |
+        Here you can determine the allocation of heating technologies in residences.
     demand_households_solar_panels:
       title: Solar panels
       short_description: ''
@@ -221,8 +238,8 @@ en:
         fertilizers. The most important step in producing ammonia is reacting hydrogen
         with nitrogen. At the moment the required hydrogen is produced locally by
         stripping natural gas in a steam methane reforming (SMR). </br></br>
-        In the future, you might use hydrogen from a central hydrogen network, instead 
-        of producing it locally with the SMR. It may even become possible to source the 
+        In the future, you might use hydrogen from a central hydrogen network, instead
+        of producing it locally with the SMR. It may even become possible to source the
         ammonia centrally, bypassing the need for local ammonia production entirely.
     demand_industry_chemical_other:
       title: Chemicals
@@ -279,7 +296,7 @@ en:
     demand_other_demand_growth:
       title: Development of demand
       short_description: ''
-      description: 'The development of demand you indicate here is due to changes in economics and population. 
+      description: 'The development of demand you indicate here is due to changes in economics and population.
       This development is <strong>excluding</strong> efficiencies and technological changes.'
     demand_transport_bus_technology:
       title: Bus technology
@@ -307,14 +324,14 @@ en:
     demand_transport_domestic_aviation_technology:
       title: Domestic aviation technology
       short_description: ''
-      description: Which plane technology will prevail in the future? 
+      description: Which plane technology will prevail in the future?
     demand_transport_domestic_navigation_technology:
       title: Domestic navigation technology
       short_description:
       description: |
-        Ships for inland waterway transport are typically equipped with (single fuel) diesel engines. 
-        Will ship owners replace these with dual or even multifuel diesel engines? Or will they switch 
-        to ships that are powered by entirely different fuels, such as LNG, hydrogen, electricity 
+        Ships for inland waterway transport are typically equipped with (single fuel) diesel engines.
+        Will ship owners replace these with dual or even multifuel diesel engines? Or will they switch
+        to ships that are powered by entirely different fuels, such as LNG, hydrogen, electricity
         or ammonia? </br></br>
         In the <a href="/scenario/supply/transport_fuels/road-transport">transport fuels</a> section
         you can determine which fuel mix diesel and LNG engines will use.
@@ -341,7 +358,7 @@ en:
       short_description:
       description: |
         Will ships owners hold on to conventional ships running on heavy
-        fuel oil (HFO) or will they make a transition to ships that are powered by LNG, 
+        fuel oil (HFO) or will they make a transition to ships that are powered by LNG,
         hydrogen or ammonia for international navigation?
     demand_transport_international_aviation_technology:
       title: International aviation technology

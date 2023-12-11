@@ -60,7 +60,7 @@ en:
         <a href="/scenario/demand/industry/aluminium">aluminium</a>, and
         <a href="/scenario/demand/industry/other-metals">other metals</a>.
     capacity_of_industry_metal_flexibility_load_shifting_electricity_share:
-      title: Capacity electricity share
+      title: Capacity input share
       short_description:
       description: |
         The total potential of load shifting in a scenario is dependent on several factors,
@@ -70,9 +70,9 @@ en:
         by TenneT has shown that the 
         capacity available for demand side response in industry varies between 10-17% of 
         peak electricity load. </br></br>
-        This slider sets the capacity for load shifting as a percentage of the peak electricity 
-        demand from the metal industry. You can affect the peak demand by changing sliders 
-        for sectors that are part of the metal industry:
+        This slider sets the input capacity for load shifting as a percentage of the output capacity for load shifting from the metal industry.
+        This means that a decrease in load may be matched by a 
+        later (or earlier) increase in load that is lower and therfore spread over multiple hours.
         <a href="/scenario/demand/industry/steel">steel</a>, 
         <a href="/scenario/demand/industry/aluminium">aluminium</a>, and
         <a href="/scenario/demand/industry/other-metals">other metals</a>.      
@@ -124,7 +124,7 @@ en:
         <a href="/scenario/demand/industry/fertilizers">fertilizers</a>, and
         <a href="/scenario/demand/industry/chemicals">other chemicals</a>.
     capacity_of_industry_chemical_flexibility_load_shifting_electricity_share:
-      title: Capacity share
+      title: Capacity input share
       short_description:
       description: |
         The total potential of load shifting in a scenario is dependent on several factors,
@@ -134,9 +134,9 @@ en:
         by TenneT has shown that the 
         capacity available for demand side response in industry varies between 10-17% of 
         peak electricity load. </br></br>
-        This slider sets the capacity for load shifting as a percentage of the peak electricity 
-        demand from the chemical industry. You can affect the peak demand by changing sliders 
-        for sectors that are part of the chemical industry:
+        This slider sets the input capacity for load shifting as a percentage of the output capacity for load shifting from the chemical industry.
+        This means that a decrease in load may be matched by a 
+        later (or earlier) increase in load that is lower and therfore spread over multiple hours.
         <a href="/scenario/demand/industry/refineries">refineries</a>, 
         <a href="/scenario/demand/industry/fertilizers">fertilizers</a>, and
         <a href="/scenario/demand/industry/chemicals">other chemicals</a>.
@@ -181,14 +181,14 @@ en:
         by TenneT has shown that the 
         capacity available for demand side response in industry varies between 10-17% of 
         peak electricity load. </br></br>
-        This slider sets the capacity for load shifting as a percentage of the peak electricity 
-        demand from the metal industry. You can affect the peak demand by changing sliders 
+        This slider sets the output capacity for load shifting as a percentage of the peak electricity 
+        demand from other industry. You can affect the peak demand by changing sliders 
         for sectors that are part of the other industry:
         <a href="/scenario/demand/industry/food">food</a>, 
         <a href="/scenario/demand/industry/paper">paper</a>, and
         <a href="/scenario/demand/industry/other">other industry</a>.
     capacity_of_industry_other_flexibility_load_shifting_electricity_share:
-      title: Capacity share
+      title: Capacity input share
       short_description:
       description: |
         The total potential of load shifting in a scenario is dependent on several factors,
@@ -198,8 +198,10 @@ en:
         by TenneT has shown that the 
         capacity available for demand side response in industry varies between 10-17% of 
         peak electricity load. </br></br>
-        This slider sets the capacity for load shifting as a percentage of the peak electricity 
-        demand from the metal industry. You can affect the peak demand by changing sliders 
+        This slider sets the input capacity for load shifting as a percentage of the output capacity for load shifting from other industry.
+        This means that a decrease in load may be matched by a 
+        later (or earlier) increase in load that is lower and therfore spread over multiple hours.
+        You can affect the peak demand by changing sliders 
         for sectors that are part of the other industry:
         <a href="/scenario/demand/industry/food">food</a>, 
         <a href="/scenario/demand/industry/paper">paper</a>, and
@@ -249,7 +251,7 @@ en:
         demand from the central ICT industry. You can affect the peak demand by changing sliders 
         in the <a href="/scenario/demand/industry/central-ict">central ICT industry</a>.
     capacity_of_industry_other_ict_flexibility_load_shifting_electricity_share:
-      title: Capacity electricity share
+      title: Capacity input share
       short_description:
       description: |
         The total potential of load shifting in a scenario is dependent on several factors,
@@ -259,8 +261,10 @@ en:
         by TenneT has shown that the 
         capacity available for demand side response in industry varies between 10-17% of 
         peak electricity load. </br></br>
-        This slider sets the capacity for load shifting as a percentage of the peak electricity 
-        demand from the central ICT industry. You can affect the peak demand by changing sliders 
+        This slider sets the input capacity for load shifting as a percentage of the output capacity for load shifting of the central ICT industry.
+        This means that a decrease in load may be matched by a 
+        later (or earlier) increase in load that is lower and therfore spread over multiple hours. 
+        You can affect the peak demand by changing sliders 
         in the <a href="/scenario/demand/industry/central-ict">central ICT industry</a>.    
     wta_of_industry_other_ict_flexibility_load_shifting_electricity:
       title: Willingness to accept

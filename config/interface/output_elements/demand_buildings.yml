@@ -97,3 +97,17 @@
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: vertical_stacked_bar    
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: buildings
+  show_point_label: false
+  growth_chart: true
+  key: final_demand_appliances_in_buildings_energetic
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_buildings
+  output_element_type_name: bezier  

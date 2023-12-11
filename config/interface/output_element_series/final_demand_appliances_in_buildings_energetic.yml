@@ -1,0 +1,61 @@
+---
+- label: coal
+  color: "#333333"
+  order_by: 5
+  group: 
+  show_at_first: 
+  is_target_line: true
+  target_line_position: 
+  gquery: coal_in_use_of_final_demand_of_appliances_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: final_demand_appliances_in_buildings_energetic
+  key: coal_final_demand_appliances_in_buildings_energetic
+- label: crude_oil
+  color: "#854321"
+  order_by: 10
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: crude_oil_in_use_of_final_demand_of_appliances_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: final_demand_appliances_in_buildings_energetic
+  key: crude_oil_final_demand_appliances_in_buildings_energetic
+- label: electricity
+  color: "#4169E1"
+  order_by: 15
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: electricity_in_use_of_final_demand_of_appliances_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: final_demand_appliances_in_buildings_energetic
+  key: electricity_final_demand_appliances_in_buildings_energetic
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 20
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: network_gas_in_use_of_final_demand_of_appliances_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: final_demand_appliances_in_buildings_energetic
+  key: network_gas_final_demand_appliances_in_buildings_energetic
+- label: wood_pellets
+  color: "#5D7929"
+  order_by: 25
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: wood_pellets_in_use_of_final_demand_of_appliances_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: final_demand_appliances_in_buildings_energetic
+  key: wood_pelletsfinal_demand_appliances_in_buildings_energetic      

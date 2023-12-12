@@ -719,25 +719,6 @@ en:
         target =\"_blank\">documentation</a>.\r\n</p>\r\nDemand and production curves
         can be downloaded in the <a href=\"/scenario/data/data_export/merit-order-prices\">results
         section</a>."
-    flexibility_transit_flows_introduction:
-      title: What are transit flows?
-      description: |
-        The ETM models the flows of energy and energy carriers within a region. Many regions, however, deal with flows that merely pass through
-        the region and are not consumed or produced by parts of the local energy system. These flows of energy (carriers) are called transit flows, as they are only 'in transit' in the region.
-        An example of such a transit flow is the import of oil through a harbor and subsequent export via local pipelines to the hinterland, with no oil consumption taking place in between.
-        <br /> <br />
-        This section explains which transit flows are included in the ETM and how the ETM distinguishes between flexible and inflexible transit flows.
-    flexibility_transit_flows_types_of_flows:
-      title: Flexible and inflexible flows
-      description: |
-        From the viewpoint of a local energy system, transit flows can be described either from an import-based or an export-based perspective.
-        In other words, does the system <i>import</i> predefined flows and therefore need to export excess flows? Or does the system <i>export</i> predefined flows
-        and therefore need to import deficient flows? 
-        <br /> <br />
-        The ETM takes the second, export-based perspective. The main reason for this is that in practice, exports are bounded by contractual obligations and therefore 
-        determine the amount of imports in a region. In this export-based perspective, the user can specify the export flows of energy and energy carriers in absolute amounts (PJ). These user-defined flows are called <b>inflexible</b> flows, as the ETM has 
-        to accept their size as a given. The ETM then adapts the corresponding import flows such that the system as a whole is balanced. These dynamic flows are called <b>flexible</b> flows,
-        as they respond to the settings defined by the area and the user.
     multi_curve_upload:
       title: Upload curves
       short_description:

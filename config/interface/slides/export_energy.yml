@@ -1,6 +1,16 @@
 ---
-- key: demand_export_energy
-  position: 1
+- key: demand_export_energy_introduction
+  position: 100
   sidebar_item_key: export_energy
   alt_output_element_key: 
-  output_element_key: 
+  output_element_key: waterfall_future_energy_transit_flows
+- key: demand_export_energy
+  position: 200
+  sidebar_item_key: export_energy
+  alt_output_element_key: 
+  output_element_key: waterfall_future_energy_transit_flows
+- key: demand_export_energy_transit_flows
+  position: 300
+  sidebar_item_key: export_energy
+  alt_output_element_key: 
+  output_element_key: sankey_energy_overview

@@ -418,8 +418,12 @@ table.default
 
     .description
       margin-bottom: 10px
-      font-size: 14px
       line-height: 1.5em
+      &.info
+        background: $light-blue
+        padding: 1rem
+        border-radius: 6px
+        color: #333
       textarea
         width: 100%
         min-height: 100px
@@ -440,6 +444,7 @@ table.default
           color: initial
           font-weight: 500
           text-transform: uppercase
+          font-size: 0.75rem
       .area-flag
         vertical-align: middle
         margin-top: -4px
@@ -470,6 +475,9 @@ table.default
         .dropdown-item
           font-size: inherit
           color: #fff
+          margin: 0 0.41rem
+          border-radius: 5px
+          padding: 0.41rem
           svg
             opacity: 0.5
           .fa, span.icon
@@ -480,13 +488,14 @@ table.default
             margin-bottom: -2px
             svg
               opacity: 1
+        button.dropdown-item
+          width: calc(100% - 2 * 0.41rem)
         .dropdown-item:hover svg
             opacity: 1
         .dropdown-item:hover
           color: #333 !important
           background: #fff
         .dropdown-menu .info
-          color: black
           line-height: 1.5
           margin: 0.5rem 1rem 1rem
           width: 300px

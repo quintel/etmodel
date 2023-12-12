@@ -99,7 +99,16 @@ en:
       title: Aquathermal heat pump with TS (surface water)
       short_description: ''
       description: |
-        ...
+        This slider influences the percentage of heat demand from buildings that is filled in with heat-pumps
+        abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        due to the addition of thermal storage. <br/><br/>
+        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> this chart</a>.
+        It is also possible to use aquathermal energy for district heating. 
+        Checkout <a href="/scenario/supply/heat/overview-district-heating" >district heating</a> to 
+        add aquathermal heat as a heat source for LT or MT district heating. 
     buildings_space_heater_wood_pellets_share:
       title: Biomass-fired heater
       short_description: ''
@@ -293,7 +302,10 @@ en:
       title: Aquathermal heat pump with TS (surface water)
       short_description: ''
       description: |
-        ...
+        This slider influences the percentage of cooling demand from buildings that is filled in with heat-pumps
+        abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        due to the addition of thermal storage.
     buildings_cooling_airconditioning_share:
       title: Airconditioning
       short_description: ''

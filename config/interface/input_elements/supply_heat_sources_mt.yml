@@ -97,18 +97,21 @@
   unit: MW
   interface_group: dispatchable_heat
   position: 245
+  related_node: energy_heat_heatpump_surface_water_water_ts_mt_electricity
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_heatpump_waste_water_water_ts_mt_electricity
   step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 250
+  related_node: energy_heat_heatpump_waste_water_water_ts_mt_electricity
   slide_key: supply_heat_sources_mt
 - key: capacity_of_energy_heat_heatpump_drink_water_water_ts_mt_electricity
   step_value: 1.0
   unit: MW
   interface_group: dispatchable_heat
   position: 255
+  related_node: energy_heat_heatpump_drink_water_water_ts_mt_electricity
   slide_key: supply_heat_sources_mt
 
 

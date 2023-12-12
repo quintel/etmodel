@@ -78,6 +78,7 @@ class SavedScenarioUsersController < ApplicationController
   def update
     @saved_scenario_user.role_id = permitted_params[:saved_scenario_user][:role_id]&.to_i
 
+    # TODO: NORA: find out why this table is not picked up in the js, but is part of the response. How to handle permission changes otherwise?
     if @saved_scenario_user.save
       synchronize_api_scenario_user('update', @saved_scenario_user)
 

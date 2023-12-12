@@ -90,14 +90,14 @@
   output_element_key: waterfall_future_energy_transit_flows
   key: heat_future_energy_transit_flows
 
-- label: hydrogen_gaseous 
+- label: hydrogen_gaseous
   color: "#88CCEE"
   order_by: 70
   group: future
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: hydrogen_gaseous_in_future_energy_transit
+  gquery: hydrogen_in_future_energy_transit
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_future_energy_transit_flows
@@ -110,7 +110,7 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: hydrogen_liquid_in_future_energy_transit
+  gquery: liquid_hydrogen_in_future_energy_transit
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_future_energy_transit_flows
@@ -123,7 +123,7 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: hydrogen_lohc_in_future_energy_transit
+  gquery: lohc_in_future_energy_transit
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_future_energy_transit_flows

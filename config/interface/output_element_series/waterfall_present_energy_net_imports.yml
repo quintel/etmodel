@@ -90,14 +90,14 @@
   output_element_key: waterfall_present_energy_net_imports
   key: heat_present_energy_net_imports
 
-- label: hydrogen_gaseous 
+- label: hydrogen_gaseous
   color: "#88CCEE"
   order_by: 70
   group: present
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: hydrogen_gaseous_in_present_energy_net_imports
+  gquery: hydrogen_in_present_energy_net_imports
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_present_energy_net_imports
@@ -110,7 +110,7 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: hydrogen_liquid_in_present_energy_net_imports
+  gquery: liquid_hydrogen_in_present_energy_net_imports
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_present_energy_net_imports
@@ -123,7 +123,7 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: hydrogen_lohc_in_present_energy_net_imports
+  gquery: lohc_in_present_energy_net_imports
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_present_energy_net_imports

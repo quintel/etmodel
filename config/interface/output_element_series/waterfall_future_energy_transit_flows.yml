@@ -1,6 +1,6 @@
 ---
 - label: ammonia
-  color: "#44AA99" 
+  color: "#1ce6d6" 
   order_by: 10 
   group: future
   show_at_first: false
@@ -13,7 +13,7 @@
   key: ammonia_future_energy_transit_flows
 
 - label: biomass_products
-  color: "#117733" 
+  color: "#5D7929" 
   order_by: 20
   group: future
   show_at_first: false
@@ -26,7 +26,7 @@
   key: biomass_future_energy_transit_flows
 
 - label: coal_and_coal_products 
-  color: "#CC6677" 
+  color: "#333333" 
   order_by: 30
   group: future
   show_at_first: false
@@ -39,7 +39,7 @@
   key: coal_future_energy_transit_flows
 
 - label: crude_oil
-  color: "#8c564b" 
+  color: "#854321" 
   order_by: 40
   group: future
   show_at_first: false
@@ -51,8 +51,21 @@
   output_element_key: waterfall_future_energy_transit_flows
   key: crude_oil_future_energy_transit_flows
 
+- label: oil_products
+  color: "#854321" 
+  order_by: 45
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: oil_products_in_future_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_future_energy_transit_flows
+  key: oil_products_future_energy_transit_flows
+
 - label: electricity
-  color: "#332288" 
+  color: "#4169E1" 
   order_by: 50
   group: future
   show_at_first: false
@@ -65,7 +78,7 @@
   key: electricity_future_energy_transit_flows
 
 - label: heat 
-  color: "#882255"
+  color: "#8B0000"
   order_by: 60
   group: future
   show_at_first: false
@@ -130,7 +143,7 @@
   key: lng_future_energy_transit_flows
 
 - label: natural_gas
-  color: "#7f7f7f" 
+  color: "#CCCCCC" 
   order_by: 110
   group: future
   show_at_first: false
@@ -155,21 +168,8 @@
   output_element_key: waterfall_future_energy_transit_flows
   key: non_biogenic_waste_future_energy_transit_flows  
 
-- label: oil_products
-  color: "#8c564b" 
-  order_by: 130
-  group: future
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: oil_products_in_future_energy_transit
-  is_1990: false
-  dependent_on: 
-  output_element_key: waterfall_future_energy_transit_flows
-  key: oil_products_future_energy_transit_flows  
-
 - label: uranium_oxide
-  color: "#AA4499" 
+  color: "#E07033" 
   order_by: 140
   group: future
   show_at_first: false

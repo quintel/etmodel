@@ -1,6 +1,6 @@
 ---
 - label: ammonia
-  color: "#44AA99" 
+  color: "#1ce6d6" 
   order_by: 10 
   group: present
   show_at_first: false
@@ -13,7 +13,7 @@
   key: ammonia_present_energy_net_imports
 
 - label: biomass_products
-  color: "#117733" 
+  color: "#5D7929" 
   order_by: 20
   group: present
   show_at_first: false
@@ -26,7 +26,7 @@
   key: biomass_present_energy_net_imports
 
 - label: coal_and_coal_products 
-  color: "#CC6677" 
+  color: "#333333" 
   order_by: 30
   group: present
   show_at_first: false
@@ -39,7 +39,7 @@
   key: coal_present_energy_net_imports
   
 - label: crude_oil
-  color: "#8c564b" 
+  color: "#854321" 
   order_by: 40
   group: present
   show_at_first: false
@@ -51,8 +51,21 @@
   output_element_key: waterfall_present_energy_net_imports
   key: crude_oil_present_energy_net_imports
 
+- label: oil_products
+  color: "#854321" 
+  order_by: 45
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: oil_products_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: oil_products_present_energy_net_imports
+
 - label: electricity
-  color: "#332288" 
+  color: "#4169E1" 
   order_by: 50
   group: present
   show_at_first: false
@@ -65,7 +78,7 @@
   key: electricity_present_energy_net_imports
 
 - label: heat 
-  color: "#882255"
+  color: "#8B0000"
   order_by: 60
   group: present
   show_at_first: false
@@ -130,7 +143,7 @@
   key: lng_present_energy_net_imports
 
 - label: natural_gas
-  color: "#7f7f7f" 
+  color: "#CCCCCC" 
   order_by: 110
   group: present
   show_at_first: false
@@ -153,23 +166,10 @@
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_present_energy_net_imports
-  key: non_biogenic_waste_present_energy_net_imports  
-
-- label: oil_products
-  color: "#8c564b" 
-  order_by: 130
-  group: present
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: oil_products_in_present_energy_net_imports
-  is_1990: false
-  dependent_on: 
-  output_element_key: waterfall_present_energy_net_imports
-  key: oil_products_present_energy_net_imports  
+  key: non_biogenic_waste_present_energy_net_imports
 
 - label: uranium_oxide
-  color: "#AA4499" 
+  color: "#E07033" 
   order_by: 140
   group: present
   show_at_first: false
@@ -179,4 +179,4 @@
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_present_energy_net_imports
-  key: uranium_oxide_present_energy_net_imports    
+  key: uranium_oxide_present_energy_net_imports

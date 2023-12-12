@@ -168,8 +168,17 @@ class SavedScenario < ApplicationRecord
 
     super(options).merge(
       'discarded' => discarded_at.present?,
+      # TODO: NORA: Check why there is no role check for users that should be owners
       'owners' => users.map { |u| u.as_json(only: %i[id name]) },
     )
+  end
+
+  def owners
+    saved_scenario_users.where(role_id: User::ROLES.key(:scenario_owner))
+  end
+
+  def single_owner?
+    owners.count == 1
   end
 
   def owner?(user)

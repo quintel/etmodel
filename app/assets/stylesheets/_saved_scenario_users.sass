@@ -7,7 +7,6 @@
 
 h3.access
   font-weight: 500
-  text-transform: uppercase
   margin-top: 2rem
 
 li.back-to-scenario-view
@@ -32,12 +31,20 @@ table.saved_scenario_users
   tr.header th.user_remove
     text-align: center
     width: 10%
+  tr.user
+    border-bottom: solid 1px $soft-grey
+    &:last-child
+      border: none
 
   td.pending
     color: #777
+    padding: 0.5rem 0.125rem
 
   td.role
     padding-top: 0.55rem
+
+  span.you
+    color:#777
 
   td.remove
     text-align: center
@@ -47,6 +54,13 @@ table.saved_scenario_users
       color: #333
       &:hover
         color: $landing-gold
+
+    &.disabled
+      svg.remove-saved-scenario-user
+        color:#777
+        cursor: revert
+        &:hover
+          color: #777
 
   form.edit_saved_scenario_user
     float: left

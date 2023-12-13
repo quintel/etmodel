@@ -83,7 +83,6 @@ table.saved_scenario_users
   border-radius: 6px
   border-color: $light-blue
 
-
 .create_saved_scenario_user_form
   margin-top: 1.875rem
   #saved_scenario_form_flash
@@ -121,7 +120,7 @@ table.saved_scenario_users
 .remove_saved_scenario_user_form
   margin-top: 2rem
   a
-    font-size: 1rem
+    font-size: 0.875rem
     font-weight: 500
     padding: 0.6rem
     margin: 1rem 0.5rem 0.5rem 0
@@ -130,7 +129,14 @@ table.saved_scenario_users
     color: white
     &:hover
       color: white
-      background: lighten(#c00, 14%)
+      background: lighten($landing-gold, 14%)
       text-decoration: none
     &:active
-      background: darken(#c00, 1%)
+      background: darken($landing-gold, 1%)
+    
+  .cancel
+    cursor: pointer
+    background: $landing-grey
+    &:hover
+      background: lighten($landing-grey, 14%)
+      text-decoration: none

@@ -104,6 +104,21 @@ en:
         You can also view the demand and supply of ammonia in 
         <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
         data-chart-location="side"> this</a> chart.
+    capacity_of_energy_hydrogen_liquid_hydrogen_regasifier:
+      title: LH2 regasification
+      short_description:
+      description: |
+        Hydrogen regasification is the process of converting liquid hydrogen (LH2) back into its 
+        gaseous state. Here you can determine the capacity of the regasifier.
+    capacity_of_energy_hydrogen_lohc_reformer:
+      title: LOHC reforming
+      short_description:
+      description: |
+        LOHC (Liquid Organic Hydrogen Carrier) is a chemical compound that can absorb and release
+        hydrogen reversibly. They provide a way to store and transport hydrogen at ambient conditions,
+        avoiding some of the challenges associated with storing and transporting gaseous hydrogen.
+        LOHC reforming is the process of releasing hydrogen from the compounds. Here you can determine
+        the capacity of the reformer.
     capacity_of_energy_imported_hydrogen_baseload:
       title: H<sub>2</sub> import
       short_description:

@@ -140,7 +140,6 @@ class SavedScenarioUsersController < ApplicationController
       end
 
     raise ActiveRecord::RecordNotFound if @saved_scenario.blank?
-    raise CanCan::AccessDenied unless current_user.admin? || @saved_scenario.owner?(current_user)
     redirect_to saved_scenario_path(@saved_scenario) and return false unless current_user.admin? || @saved_scenario.owner?(current_user)
   end
 

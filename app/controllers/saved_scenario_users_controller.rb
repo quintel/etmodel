@@ -40,9 +40,14 @@ class SavedScenarioUsersController < ApplicationController
     begin
       saved_scenario_user.save!
     rescue ActiveRecord::RecordInvalid
-      error_message = "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
+      error_message = \
+        if saved_scenario_user.errors.first&.attribute&.in?(%i[base user_email])
+          t('scenario.users.errors.create_email')
+        else
+          "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
+        end
     rescue ActiveRecord::RecordNotUnique
-      error_message = "#{t('scenario.users.errors.duplicate')}"
+      error_message = t('scenario.users.errors.duplicate')
     end
 
     if saved_scenario_user.persisted?
@@ -54,14 +59,7 @@ class SavedScenarioUsersController < ApplicationController
         format.js { render 'user_table', layout: false }
       end
     else
-      flash[:alert] = \
-        if error_message.present?
-          error_message
-        elsif saved_scenario_user.errors.first&.attribute == :user_email
-          t('scenario.users.errors.create_email')
-        else
-          "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
-        end
+      flash[:alert] = error_message.presence || "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
 
       respond_to do |format|
         format.js { render 'form_flash', layout: false }

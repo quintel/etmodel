@@ -141,10 +141,12 @@ class SavedScenarioUsersController < ApplicationController
 
     raise ActiveRecord::RecordNotFound if @saved_scenario.blank?
     raise CanCan::AccessDenied unless current_user.admin? || @saved_scenario.owner?(current_user)
+    redirect_to saved_scenario_path(@saved_scenario) and return false unless current_user.admin? || @saved_scenario.owner?(current_user)
   end
 
   def load_saved_scenario_user
     raise ActiveRecord::RecordNotFound if permitted_params[:id].blank? && permitted_params[:saved_scenario_user][:user_id].blank?
+    raise CanCan::AccessDenied unless current_user.admin? || @saved_scenario.owner?(current_user)
 
     @saved_scenario_user = \
       if permitted_params[:id].present?

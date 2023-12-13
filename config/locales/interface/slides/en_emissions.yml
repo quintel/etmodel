@@ -83,3 +83,34 @@ en:
         can actually be stored for a very long time. These emissions are assumed to be 'delayed indefinitely' 
         and are therefore excluded from the total emissions. You can determine which share of 
         delayed emissions is delayed indefinitely with the sliders below.
+    emissions_emission_factors_imported_heat:
+      title: CO<sub>2</sub> emission of imported heat
+      short_description:
+      description: "Below, you can set the CO<sub>2</sub>-emissions associated with imported heat."
+    emissions_emission_factors_hydrogen_co2_import:
+      title: CO<sub>2</sub> emissions of imported hydrogen carriers and ammmonia
+      short_description:
+      description: |
+        In some scenarios hydrogen carriers and/or ammonia will be imported from outside your
+        region. This depends on how much you choose to produce locally in the
+        <a href=\"/scenario/supply/hydrogen/hydrogen-production\">Hydrogen production</a>
+        and <a href=\"/scenario/supply/hydrogen/ammonia-production\">Ammonia production</a>
+        tabs. The production and distribution of imported hydrogen could have caused
+        CO<sub>2</sub> emissions elsewhere. How much of these emissions do you want
+        to attribute to your region?
+        <br/><br/>
+        As a default, the emissions (in kg CO<sub>2</sub> per MWh hydrogen) are set equal to 
+        the emissions of hydrogen produced with Steam Methane Reforming (SMR), since over 90% 
+        of hydrogen produced today comes from SMR. However, you can change the emissions 
+        yourself below. Click on the '?' for some reference values.
+        <br/><br/>
+        Shipping of liquified green ammonia (and then reforming it to hydrogen) is seen as
+        a more practical option for importing large amounts of green hydrogen than transporting
+        the hydrogen directly. By default, the emissions of imported ammonia are set equal to the
+        emissions of ammonia produced using steam methane reforming, because this currently is the
+        dominant production route. If you expect to import mostly green ammonia, you can change the
+        emissions yourself below.
+        <br/><br/>
+        The costs related to this imported hydrogen can be set in the
+        <a href=/scenario/costs/costs_hydrogen/ammonia-import> section.
+        

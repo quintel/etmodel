@@ -1,0 +1,182 @@
+---
+- label: ammonia
+  color: "#1ce6d6" 
+  order_by: 10 
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: ammonia_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: ammonia_present_energy_net_imports
+
+- label: biomass_products
+  color: "#5D7929" 
+  order_by: 20
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: biomass_products_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: biomass_present_energy_net_imports
+
+- label: coal_and_coal_products 
+  color: "#333333" 
+  order_by: 30
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: coal_and_coal_products_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: coal_present_energy_net_imports
+  
+- label: crude_oil
+  color: "#854321" 
+  order_by: 40
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: crude_oil_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: crude_oil_present_energy_net_imports
+
+- label: oil_products
+  color: "#854321" 
+  order_by: 45
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: oil_products_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: oil_products_present_energy_net_imports
+
+- label: electricity
+  color: "#4169E1" 
+  order_by: 50
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: electricity_present_energy_net_imports
+
+- label: heat 
+  color: "#8B0000"
+  order_by: 60
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heat_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: heat_present_energy_net_imports
+
+- label: hydrogen_gaseous
+  color: "#88CCEE"
+  order_by: 70
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: hydrogen_gaseous_present_energy_net_imports
+
+- label: hydrogen_liquid
+  color: "#88CCEE" 
+  order_by: 80
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: liquid_hydrogen_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: hydrogen_liquid_present_energy_net_imports
+
+- label: hydrogen_lohc
+  color: "#88CCEE" 
+  order_by: 90
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lohc_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: hydrogen_lohc_present_energy_net_imports
+
+- label: lng 
+  color: "#7f7f7f" 
+  order_by: 100
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: lng_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: lng_present_energy_net_imports
+
+- label: natural_gas
+  color: "#CCCCCC" 
+  order_by: 110
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: natural_gas_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: natural_gas_present_energy_net_imports
+
+- label: non_biogenic_waste
+  color: "#7f7f7f" 
+  order_by: 120
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: non_biogenic_waste_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: non_biogenic_waste_present_energy_net_imports
+
+- label: uranium_oxide
+  color: "#E07033" 
+  order_by: 140
+  group: present
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: uranium_oxide_in_present_energy_net_imports
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_present_energy_net_imports
+  key: uranium_oxide_present_energy_net_imports

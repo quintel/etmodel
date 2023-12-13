@@ -67,6 +67,53 @@ en:
       short_description: ''
       description: Generating electricity locally saves energy and maybe also money
         in the future.
+    demand_export_energy_introduction:
+      title: Introduction
+      short_description: ''
+      description: |
+        Many regions deal with energy flows that merely pass through the region and 
+        are not consumed or produced by parts of the local energy system. These flows 
+        of energy (carriers) are called <b>transit flows</b>, as they are only 'in transit' 
+        in the region. An example of such transit flow is the import of oil through a 
+        harbor and subsequent export via local pipelines to the hinterland, with no oil 
+        consumption taking place in between.
+        <br /> <br />
+        These can be contractual obligations to export certain amounts of energy to 
+        neighbouring regions, or flows of energy that only pass through the region, for 
+        instance from a port to the hinterland.
+        
+    demand_export_energy:
+      title: Export volumes per carrier
+      short_description: ''
+      description: |
+        In order to model transit flows in your scenario, you can set the <i>inflexible</i> 
+        export volumes of several energy (carriers) using the sliders below. Setting an 
+        export flow also enforces an import flow for the system to be balanced.
+        
+    demand_export_energy_transit_flows:
+      title: Transit flows
+      short_description: ''
+      description: |
+        In the chart on the right an overview is shown of all energy flows in your energy system,
+        including transit flows. Do you want more insights into the transit flows within your scenario? 
+        Also view the following graphs:
+
+        <ul>
+        <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_net_imports" data-chart-location="side">
+        Net energy import</a> per energy carrier</li>
+        <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_transit_flows" data-chart-location="side">
+        Transit flows</a> per energy carrier</li>
+        <li><a href="#" class="open_chart" data-chart-key="costs_overview" data-chart-location="side">
+        Costs</a> of required infrastructure for transit flows</li>
+        <li><a href="#" class="open_chart" data-chart-key="space_requirements_transit_flows" data-chart-location="side">
+        Space requirements</a> of required infrastructure for transit flows</li>
+        </ul>
+
+        <br />
+
+        See our
+        <a href="https://docs.energytransitionmodel.com/main/transit-flows/" target=\"_blank\">documentation</a> 
+        for more background information about the transit flows modelling in the ETM.
     demand_households_appliances:
       title: Appliances
       short_description: ''

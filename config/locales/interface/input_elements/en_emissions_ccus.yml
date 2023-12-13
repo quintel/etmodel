@@ -270,7 +270,7 @@ en:
         power plants in your scenario. This is influenced by electricity demand, other installed
         power generation technologies and commodity prices. <br/><br/>
         The total installed capacity can be set in the
-        <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.
+        <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.etm
         The share of HT and MT heat can then be set in the
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
     share_of_energy_chp_supercritical_ccs_mt_waste_mix:
@@ -291,3 +291,7 @@ en:
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
         power plants in your scenario. This is influenced by electricity demand, other installed power generation technologies and commodity prices.<br/><br/> The amount of installed waste incicerator capacity can be set in
         <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.
+    volume_of_molecules_import_co2_baseload:
+      title: Import
+      description: |
+        This slider sets the amount of baseload CO<sub>2</sub> that will be imported in the model.

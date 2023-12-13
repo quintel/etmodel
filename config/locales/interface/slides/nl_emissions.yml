@@ -84,3 +84,32 @@ nl:
         voor zeer lange tijd wordt opgeslagen. Deze emissies zijn 'uitgesteld voor onbepaalde tijd' en zijn 
         tellen daarom niet mee aan de totale uitstoot. Met onderstaande schuifjes kun je bepalen welk aandeel 
         voor onbepaalde tijd wordt uitgesteld.
+    emissions_emission_factors_hydrogen_co2_import:
+      title: CO<sub>2</sub>-emissies van geïmporteerde waterstofdragers en ammoniak
+      short_description:
+      description: |
+        In sommige scenario's worden er waterstofdragers en/of ammoniak geïmporteerd van buiten
+        jouw gebied. Hoeveel er geïmporteerd wordt, hangt af van jouw keuzes in de tabbladen 
+        <a href=\"/scenario/supply/hydrogen/hydrogen-production\">Waterstofproductie</a> en 
+        <a href=\"/scenario/supply/hydrogen/ammonia-production\">Ammoniakproductie</a>.
+        De productie en distributie van geïmporteerde waterstof en ammoniak kunnen 
+        CO<sub>2</sub>-emissies hebben veroorzaakt. Hoeveel van deze emissies wil je toekennen 
+        aan jouw gebied?
+        <br/><br/>
+        De standaardwaarde (in kg CO<sub>2</sub> per MWh waterstof) staat op de hoeveelheid
+        emissies die vrijkomt bij waterstofproductie met Steam Methane Reforming (SMR),
+        omdat op dit moment meer dan 90% van de waterstof met deze methode wordt geproduceerd.
+        Je kunt dit zelf hieronder aanpassen. Klik op het vraagteken voor referentiewaarden.
+        <br/><br/>
+        Het verschepen van vloeibare ammomiak (om het daarna te reformen naar waterstof) wordt
+        als een meer praktische optie gezien om grote volumes groene waterstof te transporteren dan
+        om de groene waterstof direct te verschepen. Als je verwacht voornamelijk groene ammoniak
+        te importeren, kun je de emissies hieronder zelf aanpassen.
+        <br/><br/>
+        De kosten voor geïmporteerde waterstofdragers en ammoniak kunnen worden aangepast in de 
+        <a href=/scenario/costs/costs_hydrogen/ammonia-import>Kosten & efficiënties</a> sectie.
+    emissions_emission_factors_imported_heat:
+      title: CO<sub>2</sub>-emissies van geïmporteerde warmte
+      short_description:
+      description: |
+        Hieronder kun je de CO<sub>2</sub>-emissies van geïmporteerde warmte instellen. 

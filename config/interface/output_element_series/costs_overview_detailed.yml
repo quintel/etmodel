@@ -108,18 +108,18 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_carriers_heat_costs_overview_detailed
-- label: costs_carriers_hydrogen
+- label: costs_carriers_hydrogen_carriers
   color: "#a0c2d3"
   order_by: 240
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: costs_carriers_hydrogen
+  gquery: costs_carriers_hydrogen_carriers
   is_1990: false
   dependent_on:
   output_element_key: costs_overview_detailed
-  key: costs_carriers_hydrogen_costs_overview_detailed
+  key: costs_carriers_hydrogen_carriers_costs_overview_detailed
 - label: costs_carriers_natural_gas
   color: "#b0ccdb"
   order_by: 250

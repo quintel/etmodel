@@ -63,7 +63,7 @@ en:
       title:
       description: ''
     supply_ccus_capture:
-      title: Capture of CO<sub>2</sub>
+      title: Capture and import of CO<sub>2</sub>
       description: "Carbon Capture, Utilisation and Storage (CCUS) is a group of technologies to capture
         the CO<sub>2</sub> that is emitted in (e.g.) industrial processes and subsequently to store
         or 'recycle' these emissions. In this section you can explore the role CCUS could play in the
@@ -294,10 +294,6 @@ en:
       description: "Some heat sources can provide heat to heat networks of different temperature levels.
       \r\n<br /><br />\r\n
       Below you can set the relative allocation of power-to-heat sources to both high and medium temperature heat networks."
-    supply_heat_overview_emissions:
-      title: CO<sub>2</sub> emission of imported heat
-      short_description:
-      description: "Below, you can set the CO<sub>2</sub>-emissions associated with imported heat."
     supply_heat_transport_lt:
       title: Transport and distribution losses
       short_description:
@@ -576,39 +572,7 @@ en:
         <a href="/scenario/demand/transport_international_transport/international-navigation-technology">international</a>
         navigation). Currently virtually all ammonia is produced on-site
         in the <a href="/scenario/demand/industry/fertilizers">fertilizer industry</a>. This local
-        production can also be replaced by centralized import.
-    supply_hydrogen_co2_import:
-      title: CO<sub>2</sub> emissions of imported hydrogen
-      short_description:
-      description: "In some scenarios hydrogen will be imported from outside your
-        area. This depends on how much hydrogen you chose to produce locally in the
-        <a href=\"/scenario/supply/hydrogen/hydrogen-production\">'Hydrogen production'</a>
-        tab. The production and distribution of imported hydrogen could have caused
-        CO<sub>2</sub> emissions elsewhere. How much of these emissions do you want
-        to attribute to your region? <br/><br/>\r\n\r\n
-        As a default, the emissions (in kg CO<sub>2</sub>
-        per MWh hydrogen) are set equal to the emissions of hydrogen produced with
-        Steam Methane Reforming (SMR), since over 90% of hydrogen produced today comes
-        from SMR. However, you can change the emissions yourself below. Click on the
-        '?' for some reference values.<br/><br/>\r\n\r\nThe costs related to this
-        imported hydrogen can be set in the <a href=\"/scenario/costs/fuel_costs/combustion-fuel\">Costs
-        & efficiencies</a> section.\r\n\r\n"
-    supply_ammonia_co2_import:
-      title: CO<sub>2</sub> emissions of imported ammonia
-      short_description:
-      description: |
-        The production and distribution of imported ammonia may have caused CO<sub>2</sub>
-        emissions in the region that the ammonia is imported from. How much of these emissions
-        do you want to attribute to your region? </br></br>
-        Shipping of liquified green ammonia (and then reforming it to hydrogen) is seen as
-        a more practical option for importing large amounts of green hydrogen than transporting
-        the hydrogen directly. By default, the emissions of imported ammonia are set equal to the
-        emissions of ammonia produced using steam methane reforming, because this currently is the
-        dominant production route. If you expect to import mostly green ammonia, you can change the
-        emissions yourself below. Click on the '?' for some reference values. </br></br>
-        The costs related to this imported ammonia can be set in the
-        <a href=/scenario/costs/costs_hydrogen/ammonia-import
-        >Costs & efficiencies</a> section.
+        production can also be replaced by centralized import. 
     supply_infrastructure_high_voltage_network:
       title: High voltage network
       short_description: ''

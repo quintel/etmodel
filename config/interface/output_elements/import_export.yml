@@ -1,0 +1,114 @@
+---
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: import_export
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_future_energy_imports
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  output_element_type_name: waterfall
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: import_export
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_future_energy_net_imports
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  output_element_type_name: waterfall
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: import_export
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_future_energy_exports
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  output_element_type_name: waterfall
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: import_export
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_future_energy_transit_flows
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  output_element_type_name: waterfall
+
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: import_export
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_present_energy_imports
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  output_element_type_name: waterfall
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: import_export
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_present_energy_net_imports
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  output_element_type_name: waterfall
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: import_export
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_present_energy_exports
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  output_element_type_name: waterfall
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: import_export
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_present_energy_transit_flows
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  output_element_type_name: waterfall

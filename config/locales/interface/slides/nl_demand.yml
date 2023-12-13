@@ -70,6 +70,51 @@ nl:
       short_description: ''
       description: Het lokaal opwekken van stroom bespaart energie en in de toekomst
         mogelijk ook geld.
+    demand_export_energy_introduction:
+      title: Introductie
+      short_description: ''
+      description: |
+        Veel regio's hebben te maken met energiestromen die niet geproduceerd of verbruikt worden 
+        binnen het lokale energiesysteem maar alleen worden doorgevoerd naar het achterland. 
+        Zulke energiestromen worden <b>transitstromen</b> of doorvoerstromen genoemd. Een voorbeeld 
+        van zo'n transitstroom is de import van olie via de haven en de daaropvolgende export via 
+        lokale pijpleidingen naar het achterland, zonder dat de olie onderweg wordt verbruikt.
+        <br /><br />
+        Deze stromen kunnen bijvoorbeeld voortvloeien uit contractuele verplichtingen om bepaalde 
+        hoeveelheden energie te exporteren naar naastgelegen gebieden, of ze zijn enkel op doorvoer, 
+        bijvoorbeeld van een haven naar het achterland.
+    demand_export_energy:
+      title: Exportvolumes per drager
+      short_description: ''
+      description: |
+        Om transitstromen te modelleren in je scenario, kun je de <i>inflexibele</i> exportvolumes 
+        van verschillende energiedragers instellen met de schuifjes hieronder. Het instellen van zo'n 
+        exportstroom dwingt ook een vraag naar import af in je scenario zodat het energiesysteem in 
+        balans blijft.
+    demand_export_energy_transit_flows:
+      title: Transitstromen
+      short_description: ''
+      description: |
+        In de grafiek hiernaast zie je een overzicht van alle energiestromen binnen je energiesysteem,
+        waaronder de transitstromen. Wil je meer inzicht in de transitstromen binnen je scenario?
+        Bekijk dan ook de volgende grafieken:
+
+        <ul>
+        <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_net_imports" data-chart-location="side">
+        Netto importstromen</a> per energiedrager</li>
+        <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_transit_flows" data-chart-location="side">
+        Transitstromen</a> per energiedrager</li>
+        <li><a href="#" class="open_chart" data-chart-key="costs_overview" data-chart-location="side">
+        Kosten</a> van benodigde infrastructuur voor transitstromen</li>
+        <li><a href="#" class="open_chart" data-chart-key="space_requirements_transit_flows" data-chart-location="side">
+        Ruimtebeslag</a> van benodigde infrastructuur (opslag) voor transitstromen</li>
+        </ul>
+
+        <br />
+
+        Zie ook onze 
+        <a href="https://docs.energytransitionmodel.com/main/transit-flows/" target=\"_blank\">documentatie</a> 
+        voor meer achtergrondinformatie over de modellering van transitstromen in het ETM.
     demand_households_appliances:
       title: Apparaten
       short_description: ''

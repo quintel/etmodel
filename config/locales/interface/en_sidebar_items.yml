@@ -119,7 +119,7 @@ en:
         style=\"float:left;margin-right:20px\"/>"
     costs_hydrogen:
       short_title: Hydrogen
-      title: Hydrogen & ammonia
+      title: Hydrogen carriers and ammonia
       short_description: ''
       description: ''
     curve_upload:
@@ -197,9 +197,19 @@ en:
         At the bottom of the screen ('Targets'), you can see how many of your own
         policy targets you meet with the current electricity production mix. If you
         move your cursor over this indicator, you will see a table with more details."
+    export_energy:
+      short_title: Export
+      title: Exports of energy
+      short_description: "Which flows of energy and energy carriers are exported out of the region?"
+      description: ""
     other_emissions:
       short_title: Greenhouse gases
       title: Greenhouse gases
+      short_description:
+      description: ''
+    emission_factors:
+      short_title: Emission factors
+      title: Emission factors
       short_description:
       description: ''
     flexibility_conversion:
@@ -296,7 +306,7 @@ en:
       description:
     hydrogen:
       short_title: Hydrogen
-      title: Hydrogen & ammonia
+      title: Hydrogen carriers and ammonia
       short_description: How will your hydrogen be produced?
       description: 'How will your hydrogen be produced? '
     hydrogen_costs:
@@ -404,6 +414,11 @@ en:
         \r\n<br/>\r\n<br/>\r\nThe model takes into account the lifetime of the solar
         panels and how much solar energy is available in your country. The graph on
         the right shows how costs compare. "
+    transit_flows:
+      short_title: Transit flows
+      title: Transit flows
+      short_description: ''
+      description: ''
     transport:
       short_title: Transport
       title: Transport

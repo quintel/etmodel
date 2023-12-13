@@ -4,35 +4,49 @@
   unit: MW
   command_type: value
   related_node: energy_hydrogen_electrolysis_wind_electricity
-  position: 1
+  position: 10
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_solar_pv_solar_radiation
   step_value: 1.0
   unit: MW
   command_type: value
   related_node: energy_hydrogen_electrolysis_solar_electricity
-  position: 2
+  position: 20
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_steam_methane_reformer
   step_value: 1.0
   unit: MW
   command_type: value
   related_node: energy_hydrogen_steam_methane_reformer
-  position: 3
+  position: 30
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_autothermal_reformer
   step_value: 1.0
   unit: MW
   command_type: value
   related_node: energy_hydrogen_autothermal_reformer
-  position: 4
+  position: 40
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_ammonia_reformer
   step_value: 1.0
   unit: MW
   command_type: value
   related_node: energy_hydrogen_ammonia_reformer
-  position: 10
+  position: 50
+  slide_key: supply_hydrogen_production
+- key: capacity_of_energy_hydrogen_liquid_hydrogen_regasifier
+  step_value: 1.0
+  unit: MW
+  command_type: value
+  related_node: energy_hydrogen_ammonia_reformer
+  position: 60
+  slide_key: supply_hydrogen_production
+- key: capacity_of_energy_hydrogen_lohc_reformer
+  step_value: 1.0
+  unit: MW
+  command_type: value
+  related_node: energy_hydrogen_ammonia_reformer
+  position: 70
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_biomass_gasification
   step_value: 1.0
@@ -44,5 +58,5 @@
   step_value: 1.0
   unit: MW
   command_type: value
-  position: 30
+  position: 80
   slide_key: supply_hydrogen_production

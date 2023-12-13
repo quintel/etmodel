@@ -4,6 +4,8 @@
     %strong
       = t "areas.#{scenario.area_code}"
       = scenario.end_year
+  %li.owners
+    = owner_names(@saved_scenario)
   %li
     = t('scenario.updated')
     = local_time(scenario.updated_at, :long)

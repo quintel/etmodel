@@ -313,10 +313,10 @@ en:
     uncouple: 'Uncouple'
     uncouple_desc: |
       Are you sure you want to uncouple the scenario from external models?
-      All the values that are set by external models will be deleted from 
+      All the values that are set by external models will be deleted from
       the scenario and cannot be retrieved. </br></br>
-      Visit the 
-      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
+      Visit the
+      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\">
       documentation</a> for more information.
     add_description: 'Add a description of your scenario...'
     edit_text: 'Edit title and description'
@@ -330,27 +330,27 @@ en:
       manage: 'Manage access'
       manage_description:
         Here you can manage who has access to your scenario and in which manner.
-        Click the 'Invite user' button to give someone access to your scenario,
+        Click the 'Invite' button to give someone access to your scenario,
         or use the table below to manage users that are already coupled.<br /><br />
-        Please visit the 
-        <a href="https://docs.energytransitionmodel.com/main/#12-saved-scenario-access-management-page" target=\"_blank\"> 
+        Please visit the
+        <a href="https://docs.energytransitionmodel.com/main/#12-saved-scenario-access-management-page" target=\"_blank\">
         documentation</a> for more information and details on user access management, such as user roles.
-      current: 'Who can access?'
-      invite: 'Invite user'
-      name: 'User'
+      invite: '+ Invite people'
+      send_invite: Send invite
+      name: 'Name'
       role: 'Role'
+      you: 'you'
       roles:
         scenario_owner: 'Owner'
         scenario_collaborator: 'Collaborator'
         scenario_viewer: 'Viewer'
         pending: 'Pending'
       new:
-        title: 'Invite user for scenario'
+        title: 'Give someone access to your scenario'
         description:
-          Please insert the email address of the user to invite for this scenario and pick a role for that user.
-          If no user can be found for the given email address we will send an email
+          If no existing user can be found for the given email address we will send an email
           inviting this person to create an account for the ETM.
-        email: 'User email address'
+        email: 'Email address'
       destroy:
         title: 'Remove user from scenario'
         description: You are about to remove the following user from this scenario. Are you sure?
@@ -360,7 +360,7 @@ en:
         create_email: The e-mail address you entered was invalid.
         update: Something went wrong while trying to set a new role for the user!
         destroy: Something went wrong while trying to remove the user from the scenario!
-        general: Please try again later. If you keep getting this error, please contact Quintel.
+        general: Please try again later. If you keep getting this error, please contact us.
         duplicate: This user is already coupled with this scenario.
     versions:
       new:

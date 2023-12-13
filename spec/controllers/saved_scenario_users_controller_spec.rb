@@ -99,13 +99,13 @@ describe SavedScenarioUsersController do
         session[:setting] = Setting.new
       end
 
-      it 'cannot view the list of users for a saved scenario' do
+      it 'is redirected when attempting to view the list of users for a saved scenario' do
         get(:index, params: { saved_scenario_id: saved_scenario.id })
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(302)
       end
 
-      it 'cannot add a new user to a scenario' do
+      it 'is redirected when attempting to add a new user to a scenario' do
         post(:create, format: :js, params: {
           saved_scenario_id: saved_scenario.id,
           saved_scenario_user: {
@@ -114,10 +114,10 @@ describe SavedScenarioUsersController do
           }
         })
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(302)
       end
 
-      it 'cannot update an existing scenario user' do
+      it 'is redirected when attempting to update an existing scenario user' do
         put(:update, format: :js, params: {
           saved_scenario_id: saved_scenario.id,
           id: scenario_owner.id,
@@ -126,16 +126,16 @@ describe SavedScenarioUsersController do
           }
         })
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(302)
       end
 
-      it 'cannot remove an existing scenario user' do
+      it 'is redirected when attempting to remove an existing scenario user' do
         delete(:destroy, params: {
           saved_scenario_id: saved_scenario.id,
           id: scenario_owner.id
         })
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(302)
       end
     end
 
@@ -145,13 +145,13 @@ describe SavedScenarioUsersController do
         session[:setting] = Setting.new
       end
 
-      it 'cannot view the list of users for a saved scenario' do
+      it 'is redirected when attempting to view the list of users for a saved scenario' do
         get(:index, params: { saved_scenario_id: saved_scenario.id })
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(302)
       end
 
-      it 'cannot add a new user to a scenario' do
+      it 'is redirected when attempting to add a new user to a scenario' do
         post(:create, format: :js, params: {
           saved_scenario_id: saved_scenario.id,
           saved_scenario_user: {
@@ -160,10 +160,10 @@ describe SavedScenarioUsersController do
           }
         })
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(302)
       end
 
-      it 'cannot update an existing scenario user' do
+      it 'is redirected when attempting to update an existing scenario user' do
         put(:update, format: :js, params: {
           saved_scenario_id: saved_scenario.id,
           id: scenario_owner.id,
@@ -172,16 +172,16 @@ describe SavedScenarioUsersController do
           }
         })
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(302)
       end
 
-      it 'cannot remove an existing scenario user' do
+      it 'is redirected when attempting to remove an existing scenario user' do
         delete(:destroy, params: {
           saved_scenario_id: saved_scenario.id,
           id: scenario_owner.id
         })
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(302)
       end
     end
   end

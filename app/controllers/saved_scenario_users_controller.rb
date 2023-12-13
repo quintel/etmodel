@@ -40,9 +40,14 @@ class SavedScenarioUsersController < ApplicationController
     begin
       saved_scenario_user.save!
     rescue ActiveRecord::RecordInvalid
-      error_message = "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
+      error_message = \
+        if saved_scenario_user.errors.first&.attribute&.in?(%i[base user_email])
+          t('scenario.users.errors.create_email')
+        else
+          "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
+        end
     rescue ActiveRecord::RecordNotUnique
-      error_message = "#{t('scenario.users.errors.duplicate')}"
+      error_message = t('scenario.users.errors.duplicate')
     end
 
     if saved_scenario_user.persisted?
@@ -54,14 +59,7 @@ class SavedScenarioUsersController < ApplicationController
         format.js { render 'user_table', layout: false }
       end
     else
-      flash[:alert] = \
-        if error_message.present?
-          error_message
-        elsif saved_scenario_user.errors.first&.attribute == :user_email
-          t('scenario.users.errors.create_email')
-        else
-          "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
-        end
+      flash[:alert] = error_message.presence || "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
 
       respond_to do |format|
         format.js { render 'form_flash', layout: false }
@@ -78,6 +76,7 @@ class SavedScenarioUsersController < ApplicationController
   def update
     @saved_scenario_user.role_id = permitted_params[:saved_scenario_user][:role_id]&.to_i
 
+    # TODO: NORA: find out why this table is not picked up in the js, but is part of the response. How to handle permission changes otherwise?
     if @saved_scenario_user.save
       synchronize_api_scenario_user('update', @saved_scenario_user)
 
@@ -139,11 +138,12 @@ class SavedScenarioUsersController < ApplicationController
       end
 
     raise ActiveRecord::RecordNotFound if @saved_scenario.blank?
-    raise CanCan::AccessDenied unless current_user.admin? || @saved_scenario.owner?(current_user)
+    redirect_to saved_scenario_path(@saved_scenario) and return false unless current_user.admin? || @saved_scenario.owner?(current_user)
   end
 
   def load_saved_scenario_user
     raise ActiveRecord::RecordNotFound if permitted_params[:id].blank? && permitted_params[:saved_scenario_user][:user_id].blank?
+    raise CanCan::AccessDenied unless current_user.admin? || @saved_scenario.owner?(current_user)
 
     @saved_scenario_user = \
       if permitted_params[:id].present?

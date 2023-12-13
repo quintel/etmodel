@@ -1,29 +1,66 @@
-$error-red: #d81616
+#saved_scenario_users_table
+  border: 1px solid $light-blue
+  border-top: 3px solid  $landing-green
+  border-radius: 6px
+  padding: 0.75rem
+  margin-bottom: 0.825rem
+
+h3.access
+  font-weight: 500
+  margin-top: 2rem
+
+li.back-to-scenario-view
+  padding-right: 0 !important
+  margin-left: auto
+  a
+    text-decoration: underline
 
 table.saved_scenario_users
   border-collapse: collapse
-  width: 75%
+  width: 100%
 
   tr.header th
     border: 0px
     text-align: left
     font-weight: bold
-  tr.header th.user_name 
+    padding-bottom: 0.5rem
+  tr.header th.user_name
     width: 55%
   tr.header th.user_role
     width: 35%
   tr.header th.user_remove
     text-align: center
     width: 10%
+  tr.user
+    border-bottom: solid 1px $soft-grey
+    &:last-child
+      border: none
 
   td.pending
     color: #777
+    padding: 0.5rem 0.125rem
+
+  td.role
+    padding-top: 0.55rem
+
+  span.you
+    color:#777
 
   td.remove
     text-align: center
 
     svg.remove-saved-scenario-user
       cursor: pointer
+      color: #333
+      &:hover
+        color: $landing-gold
+
+    &.disabled
+      svg.remove-saved-scenario-user
+        color:#777
+        cursor: revert
+        &:hover
+          color: #777
 
   form.edit_saved_scenario_user
     float: left
@@ -32,34 +69,74 @@ table.saved_scenario_users
     display: none
     float: left
     margin-left: 10px
+    color: $landing-green
 
   div.cross
     display: none
     float: left
     margin-left: 10px
+    color: $landing-gold
 
+.edit_saved_scenario_user select, .saved_scenario_user_role_id select
+  background: #fff
+  padding: 0.25rem 0.5rem
+  border-radius: 6px
+  border-color: $light-blue
 
 .create_saved_scenario_user_form
+  margin-top: 1.875rem
+  #saved_scenario_form_flash
+    margin-bottom: 1.875rem
   .label
     float: left
     text-align: left
     margin-left: 0px
+  .btn.scenario-button
+    width: 25%
+    border: none
+    background: $landing-green
+    color: white
+    font-size: 0.875rem
+    padding: 0.5rem 0.75rem
+    margin-top: 1rem
+    &:hover
+      color: white
+      background: lighten($landing-green, 14%)
+    &:active
+      background: darken($landing-green, 1%)
+  .row
+    display: flex
+    justify-content: space-between
+  input.email
+    width: 292px
+    border: 2px solid $light-blue
+  .saved_scenario_user_role_id
+    select
+      background: $light-blue
+      padding: 0.5rem 0.75rem
+      font-weight: 500
+      color: #333
 
 .remove_saved_scenario_user_form
+  margin-top: 2rem
   a
-    font-size: 1rem
+    font-size: 0.875rem
     font-weight: 500
     padding: 0.6rem
-    width: 100%
-    padding: 10px 15px
-    margin: 0.5rem 0.5rem 0.5rem 0
+    margin: 1rem 0.5rem 0.5rem 0
     border-radius: 3px
-    width: 40%
-    background: #c00
+    background: $landing-gold
     color: white
     &:hover
       color: white
-      background: lighten(#c00, 14%)
+      background: lighten($landing-gold, 14%)
+      text-decoration: none
     &:active
-      background: darken(#c00, 1%)
-
+      background: darken($landing-gold, 1%)
+    
+  .cancel
+    cursor: pointer
+    background: $landing-grey
+    &:hover
+      background: lighten($landing-grey, 14%)
+      text-decoration: none

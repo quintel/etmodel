@@ -181,9 +181,16 @@ Rails.application.routes.draw do
     delete '/user' => 'user#destroy'
 
     resources :saved_scenarios, only: %i[index show create update destroy] do
+      resources :users, only: %i[index create update destroy], controller: 'saved_scenario_users' do
+        collection do
+          post :create
+          put :update
+          delete :destroy
+        end
+      end
+
       resources :versions, only: %i[index show create update destroy], controller: 'saved_scenario_versions'
     end
-    resources :transition_paths, only: %i[index show create update destroy]
   end
 
   %w[404 422 500].each do |code|

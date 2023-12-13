@@ -1,11 +1,21 @@
 ---
-- key: co2_emissions_of_imported_hydrogen_present
-  step_value: 1.0
-  unit: kg/MWh
-  position: 1
-  slide_key: emissions_emission_factors_hydrogen_co2_import
 - key: co2_emissions_of_imported_hydrogen_future
   step_value: 1.0
   unit: kg/MWh
-  position: 2
+  position: 10
+  slide_key: emissions_emission_factors_hydrogen_co2_import
+- key: co2_emissions_of_imported_liquid_hydrogen_future
+  step_value: 1.0
+  unit: kg/MWh
+  position: 10
+  slide_key: emissions_emission_factors_hydrogen_co2_import
+- key: co2_emissions_of_imported_lohc_future
+  step_value: 1.0
+  unit: kg/MWh
+  position: 10
+  slide_key: emissions_emission_factors_hydrogen_co2_import
+- key: co2_emissions_of_imported_ammonia_future
+  step_value: 1.0
+  unit: kg/MWh
+  position: 40
   slide_key: emissions_emission_factors_hydrogen_co2_import

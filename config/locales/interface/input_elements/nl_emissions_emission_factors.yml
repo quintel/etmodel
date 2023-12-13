@@ -9,36 +9,8 @@ nl:
         wanneer de warmte van een STEG gascentrale komt, hoort hier een CO<sub>2</sub>-uitstoot
         van 36,0 kg/GJ bij (volgens <a href=\"https://www.co2emissiefactoren.nl/lijst-emissiefactoren\"
         >deze bron</a>)"
-    co2_emissions_of_imported_hydrogen_present:
-      title: Huidige import
-      short_description:
-      description: |
-        In het ETM worden CO<sub>2</sub>-emissies toegekend aan de regio waar de 
-        energie wordt <i>gebruikt</i> in plaats van op basis van de <i>locatie</i> van de 
-        emissies. Dit betekent dat er standaard geassocieerde 
-        CO<sub>2</sub>-emissies worden toegekend aan geïmporteerde waterstof.
-        Zie onze
-        <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">
-        documentatie</a> voor meer informatie. </br></br>
-        Hieronder vind je referentiewaarden voor de CO<sub>2</sub>-uitstoot van enkele 
-        waterstofproductietechnieken (in kg CO<sub>2</sub> per MWh waterstof): <br/><br/>
-        <ul>
-        <li>Steam Methane Reforming (SMR): 281 kg</li>
-        <li>Autothermal Reforming (ATR): 281 kg</li>
-        <li>Kolenvergassing: 540 kg</li>
-        <li>Elektrolyse (kolenstroom): 1320 kg</li>
-        <li>Elektrolyse (nucleaire stroom): 30 kg</li>
-        <li>Elektrolyse (zonne-/windstroom): 0 kg</li>
-        </ul> <br/>
-        De bovenstaande getallen
-        zijn exclusief eventuele CO<sub>2</sub>-uitstoot veroorzaakt door het vervoeren
-        van waterstof naar jouw gebied. Ook ketenemissies, zoals de emissies die vrijkomen
-        bij het bouwen van een waterstoffabriek of het delven van grondstoffen die
-        gebruikt worden bij waterstofproductie, zijn niet meegenomen. <br/><br/>
-        Bron: Gnanapragasam, N.V. & M.A. Rosen (2017). A review of hydrogen production using
-        coal, biomass and other solid fuels. In: Biofuels (8), pp.725-745
     co2_emissions_of_imported_hydrogen_future:
-      title: Toekomstige import
+      title: Waterstof
       short_description:
       description: |
         In het ETM worden CO<sub>2</sub>-emissies toegekend aan de regio waar de 
@@ -65,39 +37,64 @@ nl:
         gebruikt worden bij waterstofproductie, zijn niet meegenomen. <br/><br/>
         Bron: Gnanapragasam, N.V. & M.A. Rosen (2017). A review of hydrogen production using
         coal, biomass and other solid fuels. In: Biofuels (8), pp.725-745
-    co2_emissions_of_imported_ammonia_present:
-      title: Huidige import
+    co2_emissions_of_imported_liquid_hydrogen_future:
+      title: Vloeibare waterstof
       short_description:
       description: |
         In het ETM worden CO<sub>2</sub>-emissies toegekend aan de regio waar de 
         energie wordt <i>gebruikt</i> in plaats van op basis van de <i>locatie</i> van de 
         emissies. Dit betekent dat er standaard geassocieerde 
-        CO<sub>2</sub>-emissies worden toegekend aan geïmporteerde ammoniak.
+        CO<sub>2</sub>-emissies worden toegekend aan geïmporteerde vloeibare waterstof.
         Zie onze
         <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
-        Hieronder vind je referentiewaardes voor de CO<sub>2</sub>-uitstoot van enkele 
-        ammoniakproductieroutes (in kg CO<sub>2</sub> per MWh NH<sub>3</sub>). De reactie om 
-        ammoniak te produceren uit waterstof en stikstof verandert niet. Het verschil zit hem 
-        in de waterstofproductie: </br></br>
+        Hieronder vind je referentiewaarden voor de CO<sub>2</sub>-uitstoot van enkele 
+        waterstofproductietechnieken (in kg CO<sub>2</sub> per MWh waterstof): <br/><br/>
         <ul>
-        <li>Aardgas SMR: 348 kg</li>
-        <li>Aardgas ATR: 310 kg</li>
-        <li>Kolenvergassing: 619 kg</li>
-        <li>SMR met CCS: 19 kg</li>
-        <li>ATR met CCS: 19 kg</li>
-        <li>Kolen met CCS: 39 kg</li>
-        <li>Elektrolyse: 0 kg</li>
-        <li>Biomassavergassing: 0 kg</li>
-        <li>Methaanpyrolyse: 0 kg</li>
-        </ul> </br>
-        De bovenstaande getallen zijn exclusief eventuele CO<sub>2</sub>-uitstoot veroorzaakt 
-        door het vervoeren van ammoniak naar jouw gebied. Ook ketenemissies, zoals de emissies 
-        die vrijkomen bij het bouwen van een ammoniakfrabiek of het delven van benodigde 
-        grondstoffen, zijn niet meegenomen. </br></br>
-        Bron: IEA (2021). Ammonia Technology Roadmap. p.33.
+        <li>Steam Methane Reforming (SMR): 281 kg</li>
+        <li>Autothermal Reforming (ATR): 281 kg</li>
+        <li>Kolenvergassing: 540 kg</li>
+        <li>Elektrolyse (kolenstroom): 1320 kg</li>
+        <li>Elektrolyse (nucleaire stroom): 30 kg</li>
+        <li>Elektrolyse (zonne-/windstroom): 0 kg</li>
+        </ul> <br/>
+        De bovenstaande getallen
+        zijn exclusief eventuele CO<sub>2</sub>-uitstoot veroorzaakt door het vervoeren
+        van waterstof naar jouw gebied. Ook ketenemissies, zoals de emissies die vrijkomen
+        bij het bouwen van een waterstoffabriek of het delven van grondstoffen die
+        gebruikt worden bij waterstofproductie, zijn niet meegenomen. <br/><br/>
+        Bron: Gnanapragasam, N.V. & M.A. Rosen (2017). A review of hydrogen production using
+        coal, biomass and other solid fuels. In: Biofuels (8), pp.725-745
+    co2_emissions_of_imported_lohc_future:
+      title: LOHC
+      short_description:
+      description: |
+        In het ETM worden CO<sub>2</sub>-emissies toegekend aan de regio waar de 
+        energie wordt <i>gebruikt</i> in plaats van op basis van de <i>locatie</i> van de 
+        emissies. Dit betekent dat er standaard geassocieerde 
+        CO<sub>2</sub>-emissies worden toegekend aan geïmporteerde LOHC.
+        Zie onze
+        <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">
+        documentatie</a> voor meer informatie. </br></br>
+        Hieronder vind je referentiewaarden voor de CO<sub>2</sub>-uitstoot van enkele 
+        waterstofproductietechnieken (in kg CO<sub>2</sub> per MWh waterstof): <br/><br/>
+        <ul>
+        <li>Steam Methane Reforming (SMR): 281 kg</li>
+        <li>Autothermal Reforming (ATR): 281 kg</li>
+        <li>Kolenvergassing: 540 kg</li>
+        <li>Elektrolyse (kolenstroom): 1320 kg</li>
+        <li>Elektrolyse (nucleaire stroom): 30 kg</li>
+        <li>Elektrolyse (zonne-/windstroom): 0 kg</li>
+        </ul> <br/>
+        De bovenstaande getallen
+        zijn exclusief eventuele CO<sub>2</sub>-uitstoot veroorzaakt door het vervoeren
+        van waterstof naar jouw gebied. Ook ketenemissies, zoals de emissies die vrijkomen
+        bij het bouwen van een waterstoffabriek of het delven van grondstoffen die
+        gebruikt worden bij waterstofproductie, zijn niet meegenomen. <br/><br/>
+        Bron: Gnanapragasam, N.V. & M.A. Rosen (2017). A review of hydrogen production using
+        coal, biomass and other solid fuels. In: Biofuels (8), pp.725-745
     co2_emissions_of_imported_ammonia_future:
-      title: Toekomstige import
+      title: Ammoniak
       short_description:
       description: |
         In het ETM worden CO<sub>2</sub>-emissies toegekend aan de regio waar de 

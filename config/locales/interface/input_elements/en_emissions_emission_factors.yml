@@ -9,36 +9,8 @@ en:
         when heat originates from a gas CCGT plant, the emissions are around 36,0
         kg/GJ (<a href=\"https://www.co2emissiefactoren.nl/lijst-emissiefactoren\"
         >source</a>(in Dutch!))"
-    co2_emissions_of_imported_hydrogen_present:
-      title: Present import
-      short_description:
-      description: |
-        The ETM allocates CO<sub>2</sub> emissions to the area where the energy 
-        is <i>used</i>, rather than the <i>location</i> of the emissions. This is why 
-        emissions associated with hydrogen production are allocated to your scenario by default 
-        for imported hydrogen. See our 
-        <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">
-        documentation</a> for more information. </br></br>
-        Below you can find reference values for the CO<sub>2</sub> emissions of some common
-        hydrogen production technologies (kg CO<sub>2</sub> per MWh H<sub>2</sub>): </br></br>
-        <ul>
-        <li>Steam Methane Reforming (SMR): 281 kg</li>
-        <li>Autothermal Reforming (ATR): 281 kg</li>
-        <li>Coal gasification: 540 kg</li>
-        <li>Electrolysis (coal): 1320 kg</li>
-        <li>Electrolysis (nuclear): 30 kg</li>
-        <li>Electrolysis (solar/wind): 0 kg</li>
-        </ul> </br>
-        Note that these numbers do not
-        take into account any CO<sub>2</sub> emissions that result from transporting
-        hydrogen to your area. Supply chain emissions, such as the emissions resulting
-        from building the hydrogen production plants or mining the required natural
-        resources, are also not taken into account. </br></br>
-        Source: Gnanapragasam,
-        N.V. & M.A. Rosen (2017). A review of hydrogen production using coal, biomass
-        and other solid fuels. In: Biofuels (8), pp.725-745.
     co2_emissions_of_imported_hydrogen_future:
-      title: Future import
+      title: Hydrogen
       short_description:
       description: |
         The ETM allocates CO<sub>2</sub> emissions to the area where the energy 
@@ -65,38 +37,64 @@ en:
         Source: Gnanapragasam,
         N.V. & M.A. Rosen (2017). A review of hydrogen production using coal, biomass
         and other solid fuels. In: Biofuels (8), pp.725-745.
-    co2_emissions_of_imported_ammonia_present:
-      title: Present import
+    co2_emissions_of_imported_liquid_hydrogen_future:
+      title: Liquid hydrogen
       short_description:
       description: |
         The ETM allocates CO<sub>2</sub> emissions to the area where the energy 
         is <i>used</i>, rather than the <i>location</i> of the emissions. This is why 
-        emissions associated with ammonia production are allocated to your scenario by default 
-        for imported ammonia. See our 
+        emissions associated with hydrogen production are allocated to your scenario by default 
+        for imported liquid hydrogen. See our 
         <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">
         documentation</a> for more information. </br></br>
-        Below you can find reference values for the direct CO<sub>2</sub> emissions of some common
-        ammonia production routes (kg CO<sub>2</sub> per MWh NH<sub>3</sub>). Note that the reaction 
-        to produce ammonia from hydrogen and nitrogen does not change. The difference is in the hydrogen 
-        production: </br></br>
+        Below you can find reference values for the CO<sub>2</sub> emissions of some common
+        hydrogen production technologies (kg CO<sub>2</sub> per MWh H<sub>2</sub>): </br></br>
         <ul>
-        <li>Natural gas SMR: 348 kg</li>
-        <li>Natural gas ATR: 310 kg</li>
-        <li>Coal gasification: 619 kg</li>
-        <li>SMR with CCS: 19 kg</li>
-        <li>ATR with CCS: 19 kg</li>
-        <li>Coal with CCS: 39 kg</li>
-        <li>Electrolysis: 0 kg</li>
-        <li>Biomass gasification: 0 kg</li>
-        <li>Methane pyrolysis: 0 kg</li>
+        <li>Steam Methane Reforming (SMR): 281 kg</li>
+        <li>Autothermal Reforming (ATR): 281 kg</li>
+        <li>Coal gasification: 540 kg</li>
+        <li>Electrolysis (coal): 1320 kg</li>
+        <li>Electrolysis (nuclear): 30 kg</li>
+        <li>Electrolysis (solar/wind): 0 kg</li>
         </ul> </br>
-        Note that these numbers do not take into account any CO<sub>2</sub> emissions that 
-        result from transporting ammonia to your area. Supply chain emissions, such as the 
-        emissions resulting from building the ammonia production plants or mining the 
-        required natural resources, are also not taken into account. </br></br>
-        Source: IEA (2021). Ammonia Technology Roadmap. p.33.
+        Note that these numbers do not
+        take into account any CO<sub>2</sub> emissions that result from transporting
+        hydrogen to your area. Supply chain emissions, such as the emissions resulting
+        from building the hydrogen production plants or mining the required natural
+        resources, are also not taken into account. </br></br>
+        Source: Gnanapragasam,
+        N.V. & M.A. Rosen (2017). A review of hydrogen production using coal, biomass
+        and other solid fuels. In: Biofuels (8), pp.725-745.
+    co2_emissions_of_imported_lohc_future:
+      title: LOHC
+      short_description:
+      description: |
+        The ETM allocates CO<sub>2</sub> emissions to the area where the energy 
+        is <i>used</i>, rather than the <i>location</i> of the emissions. This is why 
+        emissions associated with hydrogen production are allocated to your scenario by default 
+        for imported LOHC. See our 
+        <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">
+        documentation</a> for more information. </br></br>
+        Below you can find reference values for the CO<sub>2</sub> emissions of some common
+        hydrogen production technologies (kg CO<sub>2</sub> per MWh H<sub>2</sub>): </br></br>
+        <ul>
+        <li>Steam Methane Reforming (SMR): 281 kg</li>
+        <li>Autothermal Reforming (ATR): 281 kg</li>
+        <li>Coal gasification: 540 kg</li>
+        <li>Electrolysis (coal): 1320 kg</li>
+        <li>Electrolysis (nuclear): 30 kg</li>
+        <li>Electrolysis (solar/wind): 0 kg</li>
+        </ul> </br>
+        Note that these numbers do not
+        take into account any CO<sub>2</sub> emissions that result from transporting
+        hydrogen to your area. Supply chain emissions, such as the emissions resulting
+        from building the hydrogen production plants or mining the required natural
+        resources, are also not taken into account. </br></br>
+        Source: Gnanapragasam,
+        N.V. & M.A. Rosen (2017). A review of hydrogen production using coal, biomass
+        and other solid fuels. In: Biofuels (8), pp.725-745.
     co2_emissions_of_imported_ammonia_future:
-      title: Future import
+      title: Ammonia
       short_description:
       description: |
         The ETM allocates CO<sub>2</sub> emissions to the area where the energy 

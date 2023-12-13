@@ -19,8 +19,10 @@
         %li
           = area_flag_icon(@saved_scenario.area_code)
           %strong
-            = t "areas.#{@saved_scenario.area_code}"
+            = t("areas.#{@saved_scenario.area_code}")
             = @saved_scenario.end_year
+        %li.owners
+          = owner_names(@saved_scenario)
         %li
           = t('scenario.updated')
           = local_time(@saved_scenario.updated_at, :long)

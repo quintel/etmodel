@@ -9,4 +9,8 @@ module SavedScenarioUserHelper
   def only_owner?(saved_scenario, saved_scenario_user)
     saved_scenario.single_owner? && current_scenario_user?(saved_scenario_user)
   end
+
+  def owner_names(saved_scenario)
+    saved_scenario.owners.map { |o| o.user.name }.join(', ')
+  end
 end

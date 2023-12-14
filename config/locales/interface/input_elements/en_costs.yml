@@ -19,7 +19,7 @@ en:
         Operational and maintenance costs are a minor part of total costs for nuclear 
         energy.
     costs_hydrogen:
-      title: Hydrogen (import)
+      title: Hydrogen
       short_description:
       description: "This slider sets the future wholesale price of hydrogen (in €/MWh).
         This slider affects the costs of imported hydrogen and influences the position
@@ -42,6 +42,16 @@ en:
         M.A. (2017). A review of hydrogen production using coal, biomass and other
         solid fuels. In: Biofuels (8), pp.725-745 <br />\r\n2. CE Delft (2018). Waterstofroutes
         Nederland\r\n"
+    costs_imported_liquid_hydrogen:
+      title: Liquid hydrogen
+      short_description:
+      description: |
+        This slider sets the future wholesale price of liquid hydrogen (in €/MWh).
+    costs_imported_lohc:
+      title: LOHC
+      short_description:
+      description: |
+        This slider sets the future wholesale price of LOHC (in €/MWh).
     investment_costs_wind_onshore:
       title: Investment costs onshore
       short_description: ''
@@ -1136,7 +1146,7 @@ en:
       description: |
         This slider sets the future efficiency of water heat pumps with thermal storage (TS) in agriculture for heating.
     costs_imported_ammonia:
-      title: Imported ammonia
+      title: Ammonia
       short_description:
       description: |
         This slider sets the future wholesale price of imported ammonia (in €/MWh).

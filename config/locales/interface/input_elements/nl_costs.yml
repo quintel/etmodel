@@ -21,7 +21,7 @@ nl:
         Onderhouds-en beheerkosten zijn een relatief klein onderdeel van de totale 
         kosten van kernenergie.
     costs_hydrogen:
-      title: Waterstof (import)
+      title: Waterstof
       short_description:
       description: "Deze schuif stelt de toekomstige groothandelsprijs voor waterstof
         in, uitgedrukt in €/MWh. De schuif bepaalt de kosten voor geïmporteerde waterstof
@@ -43,6 +43,16 @@ nl:
         Gnanapragasam, N.V. & Rosen M.A. (2017). A review of hydrogen production using
         coal, biomass and other solid fuels. In: Biofuels (8), pp.725-745\r\n<br />
         <br />\r\n2. CE Delft (2018). Hydrogen routes Netherlands"
+    costs_imported_liquid_hydrogen:
+      title: Vloeibare waterstof
+      short_description:
+      description: |
+        Deze schuif stelt de toekomstige groothandelsprijs voor vloeibare waterstof in, uitgedrukt in €/MWh.
+    costs_imported_lohc:
+      title: LOHC
+      short_description:
+      description: |
+        Deze schuif stelt de toekomstige groothandelsprijs voor LOHC in, uitgedrukt in €/MWh.
     investment_costs_wind_onshore:
       title: Investeringskosten wind op land
       short_description: ''
@@ -1174,7 +1184,7 @@ nl:
       description: |
         Met deze schuif kun je de toekomstige efficiëntie van water warmtepompen met warmte- en koudeopslag (WKO) voor verwarming in de landbouw veranderen.
     costs_imported_ammonia:
-      title: Geïmporteerde ammoniak
+      title: Ammoniak
       short_description:
       description: |
         Dit schuifje stelt de toekomstige groothandelsprijs voor ammoniak in, uitgedrukt in €/MWh

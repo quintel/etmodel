@@ -45,22 +45,44 @@ en:
         requires much higher temperatures than geothermal heat for used in buildings
         or greenhouses. Whether it is an attractive option is partly determined by
         how far underground these high temperatures are found."
-    capacity_of_energy_power_solar_pv_solar_radiation:
-      title: Solar PV plants
+    capacity_of_households_solar_pv_solar_radiation:
+      title: Solar PV households (small-scale)
       short_description: ''
-      description: "With this slider you can build centralized plants of photovoltaic
+      description: |
+        With this slider you set the total installed capacity of solar PV panels
+        on roof surfaces of households. These are typically small-scale installations, defined as
+        having an output capacity of < 15 kWp within the Netherlands and < 20 kWp for all other European countries. <br/><br/>
+        This technology is developing rapidly and solar panels
+        are becoming ever more efficient and cheaper. Solar panels produce electricity
+        on site, so transport of electricity is not always required. This avoids losses
+        on the grid and that saves energy. Feeding locally produced power back into
+        the local power grid requires a higher capacity or smarter local grid, to
+        prevent it from overloading. It may be desirable to curtail the power peaks
+        in order to decrease the load on the net, you can set this you can set this 
+        <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>. <br/><br/>
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
+        The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
+        />
+    capacity_of_energy_power_solar_pv_solar_radiation:
+      title: Solar PV plants (large-scale)
+      short_description: ''
+      description: |
+        With this slider you can build centralized plants of photovoltaic
         solar power panels. These are not mounted on roofs, but are usually placed
-        in a field.<br/><br/>\r\n Like wind power, solar power output fluctuates over
+        in a field. These are typically large-scale installations, defined as 
+        having an output capacity of > 15 kWp within the Netherlands and
+        > 20 kWp for all other European countries. <br/><br/>
+        Like wind power, solar power output fluctuates over
         time, but in a more predictable way, making it easier to keep the electricity
         grid in balance. Still, the impact of installing large numbers of solar panels
         can be large, because electricity is fed back into the local grid. This may
         require balancing solutions at the local level for the grid. In some cases
         it is smart to connect solar parks to only a certain percentage of the peak
-        power, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.\r\n<br/><br />\r\n
+        power, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.<br/><br/>
         You can adjust the full load hours of solar
         panels <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
-        />"
+        The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Concentrated solar power
       short_description: ''

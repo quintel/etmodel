@@ -288,6 +288,24 @@ nl:
         wassen op 40 graden Celcius kan 50% elektriciteit besparen ten opzichte van
         wassen op 60 graden.\r\n<br/><br/>\r\nWelk percentage van de bevolking gaat
         wassen met lagere temperaturen?"
+    capacity_of_households_solar_pv_solar_radiation:
+      title: Zon op dak huishoudens (kleinschalig)
+      short_description: ''
+      description: |
+        Met dit schuifje stel je het totale geïnstalleerde vermogen aan kleine
+        zonnestroominstallaties op de daken van huishoudens in. 
+
+        Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
+        gebruikt wordt (in huis) en dus is het niet altijd nodig om de elektriciteit
+        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
+        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
+        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
+        zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen. \r\n<br/><br/>\r\n
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >hier</a> aanpassen.
+        De efficiëntie van zonnepanelen kan <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >hier</a> aangepast worden.<br
+        />"
     households_solar_pv_solar_radiation_market_penetration:
       title: PV zonnepanelen
       short_description: ''

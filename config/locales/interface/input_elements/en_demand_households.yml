@@ -629,25 +629,25 @@ en:
         your laundry at 40 degrees Celcius instead of 60 degrees can save up to 50%
         of the electricity.\r\n<br/><br/>\r\nWhat percentage of the people do you
         think will start washing their laundry at lower temperatures?"
-    households_solar_pv_solar_radiation_market_penetration:
-      title: PV panels
-      short_description: ''
-      description: "With this slider you set the percentage of the potential roof
-        area where you want to install solar panels. Do you want to know the installed
-        capacity? Then look in the 'Merit order table', which can be found in the
-        chart list (you can get here by clicking 'See more charts' at the top right).
-        \r\n<br/><br/>\r\n This technology is developing rapidly and solar panels
-        are becoming ever more efficient and cheaper. Solar panels produce electricity
-        on site, so transport of electricity is not always required. This avoids losses
-        on the grid and that saves energy. Feeding locally produced power back into
-        the local power grid requires a higher capacity or smarter local grid, to
-        prevent it from overloading. It may be desirable to curtail the power peaks
-        in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
-        \r\n<br/><br />\r\n
-        You can adjust the full load hours of solar
-        panels <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
-        />"
+    # households_solar_pv_solar_radiation_market_penetration:
+    #   title: PV panels
+    #   short_description: ''
+    #   description: "With this slider you set the percentage of the potential roof
+    #     area where you want to install solar panels. Do you want to know the installed
+    #     capacity? Then look in the 'Merit order table', which can be found in the
+    #     chart list (you can get here by clicking 'See more charts' at the top right).
+    #     \r\n<br/><br/>\r\n This technology is developing rapidly and solar panels
+    #     are becoming ever more efficient and cheaper. Solar panels produce electricity
+    #     on site, so transport of electricity is not always required. This avoids losses
+    #     on the grid and that saves energy. Feeding locally produced power back into
+    #     the local power grid requires a higher capacity or smarter local grid, to
+    #     prevent it from overloading. It may be desirable to curtail the power peaks
+        # in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
+        # \r\n<br/><br />\r\n
+        # You can adjust the full load hours of solar
+        # panels <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
+        # The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
+        # />"
     households_water_heater_solar_thermal_share:
       title: Solar thermal collectors
       short_description: ''

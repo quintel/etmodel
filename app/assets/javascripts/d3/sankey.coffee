@@ -22,7 +22,7 @@ D3.sankey =
           {id: 'imported_lohc',                column: 0, label: 'imported_lohc',                     color: '#87cfeb'},
           {id: 'imported_ammonia',             column: 0, label: 'imported_ammonia',                  color: '#00dba1'},
           {id: 'residual_hydrogen',            column: 0, label: 'residual_hydrogen',                 color: '#87cfeb'},
-          {id: 'crude_oil',                    column: 0, label: 'crude_oil',                         color: '#8c564b'},
+          {id: 'extracted_oil',                column: 0, label: 'extracted_oil',                     color: '#8c564b'},
           {id: 'imported_oil',                 column: 0, label: 'imported_oil',                      color: '#8c564b'},
           {id: 'oil_products',                 column: 0, label: 'oil_products',                      color: '#8c564b'},
 
@@ -71,7 +71,7 @@ D3.sankey =
           {left: 'imported_ammonia',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_ammonia_to_hydrogen',                      color: '#00dba1'},
           {left: 'residual_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_residual_hydrogen_to_hydrogen',            color: '#87cfeb'},
 
-          {left: 'crude_oil',                    right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',        color: '#8c564b'}, 
+          {left: 'extracted_oil',                right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',        color: '#8c564b'}, 
           {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_to_oil_and_oil_products',     color: '#8c564b'},
 
 

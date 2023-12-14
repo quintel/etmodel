@@ -63,8 +63,6 @@ RSpec.describe 'API::SavedScenarioUsers', type: :request, api: true do
       end
 
       it 'returns success' do
-        pp response.body
-
         expect(response).to have_http_status(:created)
       end
 

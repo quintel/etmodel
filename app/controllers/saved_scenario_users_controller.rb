@@ -3,8 +3,13 @@
 # The controller that handles calls to collections of SavedScenarioUsers
 # for a given SavedScenario.
 class SavedScenarioUsersController < ApplicationController
-  before_action :load_and_authorize_saved_scenario
+  before_action :assign_saved_scenario
   before_action :load_saved_scenario_user, only: %i[update confirm_destroy destroy]
+
+  # Owners are the only ones with destroy rights.
+  before_action do
+    authorize!(:destroy, @saved_scenario)
+  end
 
   after_action :clear_flash, only: %i[create update destroy]
 
@@ -124,26 +129,22 @@ class SavedScenarioUsersController < ApplicationController
   private
 
   def permitted_params
-    params.permit(:saved_scenario_id, :id, :role_id, saved_scenario_user: %i[user_id user_email role_id])
+    params.permit(
+      :saved_scenario_id,
+      :id,
+      :role_id,
+      saved_scenario_user: %i[user_id user_email role_id]
+    )
   end
 
-  def load_and_authorize_saved_scenario
-    raise CanCan::AccessDenied if current_user.blank?
-
-    @saved_scenario = \
-      if current_user.admin?
-        SavedScenario.find(permitted_params[:saved_scenario_id])
-      else
-        current_user.saved_scenarios.find(permitted_params[:saved_scenario_id])
-      end
-
-    raise ActiveRecord::RecordNotFound if @saved_scenario.blank?
-    redirect_to saved_scenario_path(@saved_scenario) and return false unless current_user.admin? || @saved_scenario.owner?(current_user)
+  def assign_saved_scenario
+    @saved_scenario = SavedScenario.find(permitted_params[:saved_scenario_id])
+  rescue ActiveRecord::RecordNotFound
+    render_not_found
   end
 
   def load_saved_scenario_user
     raise ActiveRecord::RecordNotFound if permitted_params[:id].blank? && permitted_params[:saved_scenario_user][:user_id].blank?
-    raise CanCan::AccessDenied unless current_user.admin? || @saved_scenario.owner?(current_user)
 
     @saved_scenario_user = \
       if permitted_params[:id].present?

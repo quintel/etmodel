@@ -102,7 +102,7 @@ describe SavedScenarioUsersController do
       it 'is redirected when attempting to view the list of users for a saved scenario' do
         get(:index, params: { saved_scenario_id: saved_scenario.id })
 
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(404)
       end
 
       it 'is redirected when attempting to add a new user to a scenario' do
@@ -114,7 +114,7 @@ describe SavedScenarioUsersController do
           }
         })
 
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(404)
       end
 
       it 'is redirected when attempting to update an existing scenario user' do
@@ -126,7 +126,7 @@ describe SavedScenarioUsersController do
           }
         })
 
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(404)
       end
 
       it 'is redirected when attempting to remove an existing scenario user' do
@@ -135,7 +135,7 @@ describe SavedScenarioUsersController do
           id: scenario_owner.id
         })
 
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(404)
       end
     end
 
@@ -148,7 +148,7 @@ describe SavedScenarioUsersController do
       it 'is redirected when attempting to view the list of users for a saved scenario' do
         get(:index, params: { saved_scenario_id: saved_scenario.id })
 
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(404)
       end
 
       it 'is redirected when attempting to add a new user to a scenario' do
@@ -160,7 +160,7 @@ describe SavedScenarioUsersController do
           }
         })
 
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(404)
       end
 
       it 'is redirected when attempting to update an existing scenario user' do
@@ -172,7 +172,7 @@ describe SavedScenarioUsersController do
           }
         })
 
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(404)
       end
 
       it 'is redirected when attempting to remove an existing scenario user' do
@@ -181,7 +181,7 @@ describe SavedScenarioUsersController do
           id: scenario_owner.id
         })
 
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(404)
       end
     end
   end
@@ -293,13 +293,13 @@ describe SavedScenarioUsersController do
       session[:setting] = Setting.new
     end
 
-    it 'can view the list of users for a saved scenario' do
+    it 'can not view the list of users for a saved scenario' do
       get(:index, params: { saved_scenario_id: saved_scenario.id })
 
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(404)
     end
 
-    it 'can add a new user to a scenario' do
+    it 'can not add a new user to a scenario' do
       post(:create, format: :js, params: {
         saved_scenario_id: saved_scenario.id,
         saved_scenario_user: {
@@ -310,7 +310,7 @@ describe SavedScenarioUsersController do
 
       expect(
         saved_scenario.saved_scenario_users.where(user_email: 'test@test.com').count
-      ).to be(1)
+      ).to be(0)
     end
 
     context 'when updating or removing an existing scenario user' do
@@ -323,7 +323,7 @@ describe SavedScenarioUsersController do
         )
       end
 
-      it 'can update the role' do
+      it 'can not update the role' do
         # Promote to owner!
         put(:update, format: :js, params: {
           saved_scenario_id: saved_scenario.id,
@@ -336,11 +336,11 @@ describe SavedScenarioUsersController do
         expect(
           saved_scenario.saved_scenario_users.find_by(user_email: 'test@test.com')&.role_id
         ).to eq(
-          User::ROLES.key(:scenario_owner)
+          User::ROLES.key(:scenario_viewer)
         )
       end
 
-      it 'can remove the user' do
+      it 'can not remove the user' do
         delete(:destroy, format: :js, params: {
           saved_scenario_id: saved_scenario.id,
           id: scenario_viewer.id
@@ -348,7 +348,7 @@ describe SavedScenarioUsersController do
 
         expect(
           saved_scenario.saved_scenario_users.where(user_email: 'test@test.com').count
-        ).to be(0)
+        ).to be(1)
       end
     end
   end

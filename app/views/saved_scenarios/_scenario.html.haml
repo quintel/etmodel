@@ -5,3 +5,8 @@
 - if saved_scenario.localized_description(I18n.locale).presence
   .description
     = formatted_scenario_description(saved_scenario.localized_description(I18n.locale), allow_external_links: saved_scenario.featured?)
+
+- if current_user&.admin? || @saved_scenario.viewer?(current_user)
+  .bar
+
+  = render partial: 'saved_scenario_versions/list', locals: { saved_scenario: @saved_scenario }

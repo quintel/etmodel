@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/828362
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Authorization:
+      - Bearer access_DJBcvN1TKKLZWzhX
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.21.3
+      Date:
+      - Thu, 14 Dec 2023 02:16:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept, Origin
+      Etag:
+      - W/"a7c2277abe528ba207a849aae4e47b2e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c2c49300-ce63-42a2-9a70-d5191c6c12c5
+      X-Runtime:
+      - '0.015128'
+    body:
+      encoding: UTF-8
+      string: '{"id":828362,"created_at":"2018-03-09T00:07:46.000Z","updated_at":"2018-03-09T00:07:47.000Z","user_values":{},"end_year":2050,"keep_compatible":false,"private":false,"area_code":"nl","source":"Mechanical
+        Turk","balanced_values":{},"metadata":{},"start_year":2015,"coupling":false,"owner":null,"scaling":null,"template":null,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/828362"}'
+  recorded_at: Thu, 14 Dec 2023 02:16:12 GMT
+- request:
+    method: post
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios
+    body:
+      encoding: UTF-8
+      string: '{"scenario":{"source":"ETM","scenario_id":828362}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer access_DJBcvN1TKKLZWzhX
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.21.3
+      Date:
+      - Thu, 14 Dec 2023 02:16:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept, Origin
+      Etag:
+      - W/"eee5df1aac5e4792248545d0758daed5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 41dc101d-6f3d-4b6d-9eab-07fff081226e
+      X-Runtime:
+      - '0.034919'
+    body:
+      encoding: UTF-8
+      string: '{"id":2510671,"created_at":"2023-12-14T02:16:12.000Z","updated_at":"2023-12-14T02:16:12.000Z","user_values":{},"end_year":2050,"keep_compatible":false,"private":false,"area_code":"nl","source":"ETM","balanced_values":{},"metadata":{},"start_year":2015,"coupling":false,"owner":null,"scaling":null,"template":828362,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/2510671"}'
+  recorded_at: Thu, 14 Dec 2023 02:16:12 GMT
+recorded_with: VCR 6.0.0

@@ -106,42 +106,46 @@ class SavedScenario < ApplicationRecord
     ))
   end
 
-  def scenario(engine_client)
+  def scenario(engine_client, other_scenario_id = nil)
     unless engine_client.is_a?(Faraday::Connection)
       raise 'SavedScenario#scenario expects an HTTP client as its first argument'
     end
 
-    @scenario ||= FetchAPIScenario.call(engine_client, scenario_id).or(nil)
+    @scenario ||= FetchAPIScenario.call(engine_client, other_scenario_id || scenario_id).or(nil)
   end
 
-  def scenario=(x)
-    @scenario = x
-    self.scenario_id = x.id unless x.nil?
+  def scenario=(scenario)
+    @scenario = scenario
+    self.scenario_id = scenario.id unless scenario.nil?
   end
 
   def current_version
-    saved_scenario_versions.find(current_saved_scenario_version_id)
+    saved_scenario_versions.find(saved_scenario_version_id)
   end
 
   # Adds a SavedScenarioVersion to the history of this SavedScenario.
-  # Expects parameters with which a new SavedScenarioVersion can be created,
-  # or an existing one can be found.
-  def set_version_as_current(version_attributes, revert = false)
-    return false unless version_attributes
+  # Expects an existing SavedScenarioVersion, or parameters with which
+  # a new SavedScenarioVersion can be created.
+  def set_version_as_current(version, revert: false)
+    return false unless version
 
-    saved_scenario_version = saved_scenario_versions.find_or_create_by(version_attributes)
+    saved_scenario_version = \
+      if version.is_a?(SavedScenarioVersion)
+        version
+      else
+        saved_scenario_versions.find_or_create_by(version)
+      end
 
-    update(current_saved_scenario_version_id: saved_scenario_version.id)
-    
+    update(saved_scenario_version_id: saved_scenario_version.id)
+
     # If we're reverting to a previous version we should remove
     # all versions that lie in the future of the given version
-    if revert
-      saved_scenario_versions \
-        .where('created_at > ?', saved_scenario_version.created_at)
-        .destroy_all
-    end
-  end
+    return unless revert
 
+    saved_scenario_versions \
+      .where('created_at > ?', saved_scenario_version.created_at)
+      .destroy_all
+  end
 
   # Public: Determines if this scenario can be loaded.
   def loadable?
@@ -168,8 +172,8 @@ class SavedScenario < ApplicationRecord
   def update_with_api_params(params)
     incoming_id = params[:scenario_id]
 
-    if incoming_id && scenario_id != incoming_id
-      add_version_to_history( params.except(:scenario_id).merge(scenario_id: scenario_id) )
+    if incoming_id && incoming_id != saved_scenario_version_id
+      set_version_as_current(params.except(:scenario_id))
     end
 
     self.attributes = params.except(:discarded)

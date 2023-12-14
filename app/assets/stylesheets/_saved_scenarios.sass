@@ -1,0 +1,280 @@
+// Contains styles for:
+//   SavedScenarios,
+//   SavedScenarioUsers and
+//   SavedScenarioVersion
+
+$error-red: #d81616
+
+table.saved_scenario_users
+  border-collapse: collapse
+  width: 75%
+
+  tr.header th
+    border: 0px
+    text-align: left
+    font-weight: bold
+  tr.header th.user_name 
+    width: 55%
+  tr.header th.user_role
+    width: 35%
+  tr.header th.user_remove
+    text-align: center
+    width: 10%
+
+  td.pending
+    color: #777
+
+  td.remove
+    text-align: center
+
+    svg.remove-saved-scenario-user
+      cursor: pointer
+
+  form.edit_saved_scenario_user
+    float: left
+
+  div.checkmark
+    display: none
+    float: left
+    margin-left: 10px
+
+  div.cross
+    display: none
+    float: left
+    margin-left: 10px
+
+
+.create_saved_scenario_user_form
+  .label
+    float: left
+    text-align: left
+    margin-left: 0px
+
+.remove_saved_scenario_user_form
+  a
+    font-size: 1rem
+    font-weight: 500
+    padding: 0.6rem
+    width: 100%
+    padding: 10px 15px
+    margin: 0.5rem 0.5rem 0.5rem 0
+    border-radius: 3px
+    width: 40%
+    background: #c00
+    color: white
+    &:hover
+      color: white
+      background: lighten(#c00, 14%)
+    &:active
+      background: darken(#c00, 1%)
+
+.create_saved_scenario_version_form
+  .label
+    float: left
+    text-align: left
+    margin-left: 0px
+
+  textarea
+    width: 415px;
+    height: 40px;
+
+.has-error
+  label
+    color: #a93434
+  input
+    border-color: #e65a5a
+    box-shadow: 0 0 0 3px #f9c6c6
+
+$text-black: #333
+$text-grey: #aaa
+$timeline-black: #333
+$timeline-grey: #ccc
+$timeline-width: 3px
+
+ul.saved-scenario-versions
+  width: 850px
+  padding-left: 0px
+  list-style: none
+
+  li.previous, li.current
+    width: 850px
+    float: left
+    display: flex
+
+    .timeline
+      float: left
+      display: flex
+      position: relative
+      min-width: 50px
+      min-height: 100%
+      margin: 0px
+
+    .button
+      float: right
+      display: flex
+      flex-wrap: wrap
+      align-content: center
+
+  li.current
+    .line
+      float: left
+      position: absolute
+      left: 24px
+      bottom: 0px
+      width: $timeline-width
+      height: 50%
+      margin: auto
+      background: $timeline-grey
+
+    .bullet
+      float: left
+      width: 23px
+      height: 23px
+      margin: auto;
+      background: $timeline-black
+      border-radius: 50%
+      z-index: 10
+
+    .contents
+      width: 625px
+      float: left
+      display: flex
+      flex-wrap: wrap
+      overflow: hidden
+      align-content: center
+
+      .message
+        float: left
+        width: 100%
+        font-size: 1rem
+        font-weight: 550
+        color: $text-black
+
+      .details
+        .user
+          float: left
+          color: $text-grey
+        .user::after
+          content: ' • '
+        .created_at
+          float: left
+          color: $text-grey
+          padding-left: 5px
+
+    .button
+      max-width: 175px
+
+      a
+        max-height: 15px
+
+  li.previous
+    height: 50px
+
+    .line
+      float: left
+      position: absolute
+      top: 0px
+      left: 24px
+      height: 100%
+      width: $timeline-width
+      margin: auto
+      background: $timeline-grey
+
+    .bullet
+      float: left
+      width: 15px
+      height: 15px
+      margin: auto;
+      background: $timeline-grey
+      border-radius: 50%
+      z-index: 10
+
+    .contents
+      width: 700px
+      height: 100%
+      float: left
+      display: flex
+      flex-wrap: wrap
+      align-content: center
+
+      .message
+        float: left
+        max-width: 450px
+        white-space: nowrap
+
+        color: $text-grey
+        overflow: hidden
+        text-overflow: ellipsis
+        font-size: 0.95rem
+        font-weight: 500
+
+        position: relative
+        //display: inline-block
+        border-bottom: 1px dashed $text-grey
+
+        &:hover .tooltip
+          visibility: visible
+
+        .tooltip
+          visibility: hidden
+          position: fixed
+          z-index: 999
+          margin-top: 3px
+          padding: 5px
+          border-radius: 6px
+          border: 1px solid $text-grey
+          background-color: #fff
+          color: $text-black
+          max-width: 675px
+          white-space: initial
+
+      .details
+        .user
+          float: left
+          color: $text-grey
+          padding-left: 5px
+        .user::after
+          content: ' • '
+        .created_at
+          float: left
+          color: $text-grey
+          padding-left: 5px
+
+    .button
+      width: 100px
+
+      .saved-scenario-options
+        button.scenario-version-actions
+          align-items: center
+          background: none
+          border: 0
+          color: $text-grey
+          cursor: pointer
+          display: flex
+          font-size: inherit
+          gap: 0.125rem
+          margin: -0.5rem
+          padding: 0.5rem
+          &:hover
+            color: $text-black
+          .fa
+            margin-left: 0.25rem
+        svg.lock-icon
+          margin-top: -1px
+          margin-bottom: 1px
+          marign-left: -2px
+        .dropdown-item
+          font-size: inherit
+          svg
+            opacity: 0.5
+        .dropdown-item:hover svg
+            opacity: 1
+        .dropdown-menu .info
+          color: $text-black
+          line-height: 1.5
+          margin: 0.5rem 1rem 1rem
+          width: 300px
+
+ul.saved-scenario-versions li:last-of-type
+  .line
+    height: 50%

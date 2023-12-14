@@ -1,0 +1,14 @@
+%li.current
+  %div.timeline
+    %div.bullet
+    - if versions_count > 1
+      %div.line
+  %div.contents
+    %div.message= saved_scenario_version.message
+    %div.details
+      %div.user= saved_scenario_version.user.name
+      %div.created_at= local_time(saved_scenario_version.created_at, :long)
+  %div.button
+    = link_to t("scenario.load"), load_saved_scenario_path(saved_scenario), class: "scenario-button button load"
+
+%div{ style: 'clear: both' }

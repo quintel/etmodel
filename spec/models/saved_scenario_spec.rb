@@ -57,6 +57,43 @@ describe SavedScenario do
     end
   end
 
+  describe 'set_version_as_current' do
+    let(:saved_scenario) { create(:saved_scenario) }
+    let(:version) { create(:saved_scenario_version) }
+
+    context 'when version is nil' do
+      it 'returns false' do
+        expect(saved_scenario.set_version_as_current(nil)).to be_falsey
+      end
+    end
+
+    context 'when version is an existing SavedScenarioVersion' do
+      it 'updates the saved_scenario_version_id' do
+        saved_scenario.set_version_as_current(version)
+        expect(saved_scenario.saved_scenario_version_id).to eq(version.id)
+      end
+    end
+
+    context 'when version is not an existing SavedScenarioVersion' do
+      it 'creates a new SavedScenarioVersion' do
+        saved_scenario.set_version_as_current({ version: '1.0' })
+        expect(saved_scenario.saved_scenario_versions.count).to eq(1)
+      end
+    end
+
+    context 'when revert is true' do
+      let!(:future_version) { create(:saved_scenario_version, created_at: Time.now + 1.day) }
+
+      it 'destroys all versions created after the given version' do
+        saved_scenario.set_version_as_current(version, revert: true)
+        expect(saved_scenario.saved_scenario_versions).not_to include(future_version)
+      end
+    end
+
+    context 'when revert is false' do
+    end
+  end
+
   describe '.custom_curves_order' do
     subject { described_class.custom_curves_order(2050, 'nl') }
 

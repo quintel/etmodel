@@ -5,88 +5,70 @@ require 'rails_helper'
 RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
   let(:user) { create(:user) }
   let!(:saved_scenario) { create(:saved_scenario, user: user) }
+  let!(:first_saved_scenario_version) { create(:saved_scenario_version, saved_scenario: saved_scenario, scenario_id: 123) }
+  let!(:current_saved_scenario_version) { create(:saved_scenario_version, saved_scenario: saved_scenario, scenario_id: 234) }
 
-  describe 'GET /api/v1/saved_scenarios/id/history' do
-    context 'with an access token with the correct scope' do
-      let!(:user_ss1) { create(:saved_scenario, user:) }
-      let!(:user_ss2) { create(:saved_scenario, user:) }
-      let!(:other_ss) { create(:saved_scenario) }
+  describe 'GET index' do
+    it 'returns invalid token without a proper access token' do
+      get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions", as: :json
 
+      expect(response.status).to be(401)
+    end
+
+    # A user should have a token with the scenario:delete scope before its allowed
+    # to do anything through this endpoint, because this is what equals to the 'owner' role.
+    it 'returns forbidden for a token without the proper access scope' do
+      get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions", as: :json,
+        headers: authorization_header(user, ['scenarios:read'])
+
+      expect(response).to have_http_status(:forbidden)
+    end
+
+    context 'with a proper token and scope' do
       before do
-        get "/api/v1/saved_scenarios/#{saved_scenario.id}/history",
-          as: :json,
-          headers: authorization_header(user, ['scenarios:delete'])
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions", as: :json,
+          headers: authorization_header(user, ['scenarios:write'])
       end
 
       it 'returns success' do
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:ok)
       end
 
-      it 'returns the saved scenarios' do
+      it 'returns a list of all versions' do
         expect(response.parsed_body['data']).to eq([
-          user_ss1.as_json,
-          user_ss2.as_json
+          first_saved_scenario_version.as_json,
+          current_saved_scenario_version.as_json
         ])
-      end
-
-      it 'does not contain scenarios from other users' do
-        expect(JSON.parse(response.body)['data']).not_to include(other_ss.as_json)
-      end
-    end
-
-    context 'with an access token with the incorrect scope' do
-      before do
-        get '/api/v1/saved_scenarios',
-          as: :json,
-          headers: authorization_header(user, [])
-      end
-
-      it 'returns forbidden' do
-        expect(response).to have_http_status(:forbidden)
       end
     end
   end
 
-  # ------------------------------------------------------------------------------------------------
-
-  describe 'GET /api/v1/saved_scenarios/:id' do
+  describe 'GET /api/v1/saved_scenarios/:id/versions/:id' do
     let(:saved_scenario) { create(:saved_scenario, user:) }
 
-    context 'with a valid access token' do
+    context 'when the version is existing and self-owned' do
       before do
-        get "/api/v1/saved_scenarios/#{saved_scenario.id}",
-          as: :json,
-          headers: authorization_header(user, 'scenarios:read')
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{current_saved_scenario_version.id}",
+          as: :json, headers: authorization_header(user, ['scenarios:write'])
       end
 
       it 'returns success' do
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:ok)
       end
 
-      it 'returns the saved scenario' do
-        expect(JSON.parse(response.body)).to eq(saved_scenario.as_json)
-      end
-    end
-
-    context 'without an access token' do
-      before do
-        get '/api/v1/saved_scenarios/1', as: :json
-      end
-
-      it 'returns success' do
-        expect(response).to have_http_status(:unauthorized)
+      it 'returns the requested version' do
+        expect(response.parsed_body).to eq(current_saved_scenario_version.as_json)
       end
     end
 
-    context 'with an access token with the incorrect scope' do
+    context 'when the version is non-existing' do
       before do
-        get "/api/v1/saved_scenarios/#{saved_scenario.id}",
-          as: :json,
-          headers: authorization_header(user, [])
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/999",
+          as: :json, headers: authorization_header(user, ['scenarios:write'])
       end
 
-      it 'returns forbidden' do
-        expect(response).to have_http_status(:forbidden)
+      it 'returns not found' do
+        expect(response).to have_http_status(:not_found)
       end
     end
 
@@ -94,9 +76,8 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
       let(:different_user) { create(:user) }
 
       before do
-        get "/api/v1/saved_scenarios/#{saved_scenario.id}",
-          as: :json,
-          headers: authorization_header(different_user, 'scenarios:read')
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{current_saved_scenario_version.id}",
+          as: :json, headers: authorization_header(different_user, ['scenarios:write'])
       end
 
       it 'returns not found' do
@@ -105,328 +86,132 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
     end
   end
 
-  # ------------------------------------------------------------------------------------------------
+  describe 'POST /api/v1/saved_scenarios/:id/versions' do
+    context 'with proper params' do
+      before do
+        post "/api/v1/saved_scenarios/#{saved_scenario.id}/versions",
+          as: :json,
+          headers: authorization_header(user, ['scenarios:write']),
+          params: {
+            saved_scenario_id: saved_scenario,
+            scenario_id: 999,
+            message: 'New version!'
+          }
+      end
 
-  describe 'POST /api/v1/saved_scenarios/:id' do
-    let(:request) do
-      post '/api/v1/saved_scenarios',
-        as: :json,
-        params: scenario_attributes,
-        headers:
-    end
-
-    let(:headers) do
-      authorization_header(user, %w[scenarios:read scenarios:write])
-    end
-
-    let(:scenario_attributes) do
-      {
-        area_code: 'nl',
-        end_year: 2050,
-        scenario_id: 1,
-        title: 'My scenario'
-      }
-    end
-
-    context 'when given a valid access token and data, and the user exists' do
-      it 'returns created' do
-        request
+      it 'returns success' do
         expect(response).to have_http_status(:created)
       end
 
-      it 'creates a saved scenario' do
-        expect { request }.to change(user.saved_scenarios, :count).by(1)
-      end
-
-      it 'returns the scenario' do
-        request
-        expect(JSON.parse(response.body)).to eq(user.saved_scenarios.last.as_json)
+      it 'adds the given version to the saved scenario' do
+        expect(response.body).to eq(saved_scenario.saved_scenario_versions.last.to_json)
       end
     end
 
-    context 'when given a valid access token and data, but the user does not exist' do
-      before { user.destroy! }
-
-      it 'returns created' do
-        request
-        expect(response).to have_http_status(:created)
+    context 'with malformed version params' do
+      before do
+        post "/api/v1/saved_scenarios/#{saved_scenario.id}/versions",
+          as: :json,
+          headers: authorization_header(user, ['scenarios:write']),
+          params: {
+            saved_scenario_id: saved_scenario,
+            scenario_id: 999
+          }
       end
 
-      it 'creates the user' do
-        expect { request }.to change(User, :count).by(1)
-      end
-
-      it 'creates a saved scenario' do
-        expect { request }.to change(user.saved_scenarios, :count).by(1)
-      end
-
-      it 'returns the scenario' do
-        request
-        expect(JSON.parse(response.body)).to eq(user.reload.saved_scenarios.last.as_json)
-      end
-    end
-
-    context 'when given a valid access token and invalid data' do
-      before { user.destroy! }
-
-      let(:scenario_attributes) { super().except(:area_code) }
-
-      it 'returns unprocessable entity' do
-        request
+      it 'returns 422: unprocessable entity' do
         expect(response).to have_http_status(:unprocessable_entity)
       end
 
-      it 'does not create a saved scenario' do
-        expect { request }.not_to change(user.saved_scenarios, :count)
-      end
-    end
-
-    context 'when given a token without the scenarios:write scope' do
-      before { user.destroy! }
-
-      let(:headers) do
-        authorization_header(user, 'scenarios:read')
-      end
-
-      it 'returns forbidden' do
-        request
-        expect(response).to have_http_status(:forbidden)
-      end
-
-      it 'does not create a saved scenario' do
-        expect { request }.not_to change(user.saved_scenarios, :count)
+      it 'returns an error' do
+        expect(response.body).to eq(
+          { message: ["can't be blank"] }.to_json
+        )
       end
     end
   end
 
-  # ------------------------------------------------------------------------------------------------
-
-  describe 'PUT /api/v1/saved_scenarios/:id' do
-    let(:scenario) do
-      create(
-        :saved_scenario,
-        area_code: 'nl',
-        end_year: 2050,
-        scenario_id: 1,
-        title: 'My scenario',
-        user:
-      )
-    end
-
-    let(:request) do
-      put "/api/v1/saved_scenarios/#{scenario.id}",
-        as: :json,
-        params: scenario_attributes,
-        headers: authorization_header(user, %w[scenarios:read scenarios:write])
-    end
-
-    let(:scenario_attributes) do
-      {
-        area_code: 'uk',
-        end_year: 2060,
-        scenario_id: 2,
-        title: 'My updated scenario'
-      }
-    end
-
-    context 'when given a valid access token and data' do
-      it 'returns success' do
-        request
-        expect(response).to have_http_status(:success)
-      end
-
-      it 'updates the saved scenario' do
-        expect { request }
-          .to change { scenario.reload.attributes.symbolize_keys.slice(*scenario_attributes.keys) }
-          .from(area_code: 'nl', end_year: 2050, scenario_id: 1, title: 'My scenario')
-          .to(scenario_attributes)
-      end
-
-      it 'adds the previous scenario ID to the history' do
-        previous_id = scenario.scenario_id
-
-        expect { request }
-          .to change { scenario.reload.scenario_id_history }
-          .from([])
-          .to([previous_id])
-      end
-    end
-
-    context 'when updating without a scenario ID' do
-      let(:scenario_attributes) { super().except(:scenario_id) }
-
-      it 'returns success' do
-        request
-        expect(response).to have_http_status(:success)
-      end
-
-      it 'does not change the scenario ID history' do
-        expect { request }
-          .not_to change { scenario.reload.scenario_id_history }
-          .from([])
-      end
-
-      it 'does not change the scenario ID' do
-        expect { request }.not_to change { scenario.reload.scenario_id }
-      end
-    end
-
-    context 'when updating with the same scenario ID' do
-      let(:scenario_attributes) { super().merge(scenario_id: scenario.scenario_id) }
-
-      it 'returns success' do
-        request
-        expect(response).to have_http_status(:success)
-      end
-
-      it 'does not change the scenario ID history' do
-        expect { request }
-          .not_to change { scenario.reload.scenario_id_history }
-          .from([])
-      end
-    end
-
-    context 'when given invalid data' do
-      let(:scenario_attributes) do
-        super().merge(title: '')
-      end
-
-      it 'returns unprocessable entity' do
-        request
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
-    end
-
-    context 'when the scenario belongs to a different user' do
-      let(:request) do
-        put "/api/v1/saved_scenarios/#{scenario.id}",
+  describe 'PUT /api/v1/saved_scenarios/:id/versions/:id' do
+    context 'with proper params' do
+      before do
+        put "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{current_saved_scenario_version.id}",
           as: :json,
-          params: scenario_attributes,
-          headers: authorization_header(create(:user), %w[scenarios:read scenarios:write])
+          headers: authorization_header(user, ['scenarios:write']),
+          params: { message: 'New version description!' }
       end
 
-      it 'returns not found' do
-        request
-        expect(response).to have_http_status(:not_found)
-      end
-    end
-
-    context 'when discarding a scenario' do
-      let(:request) do
-        put "/api/v1/saved_scenarios/#{scenario.id}",
-          as: :json,
-          params: scenario_attributes.merge(discarded: true),
-          headers: authorization_header(user, %w[scenarios:read scenarios:write])
-      end
-
-      it 'is successful' do
-        request
+      it 'returns success' do
         expect(response).to have_http_status(:ok)
       end
 
-      it 'sets the discarded_at timestamp' do
-        expect { request }.to change { scenario.reload.discarded_at }.from(nil)
+      it 'updates the version message' do
+        expect(response.parsed_body).to include("message" => 'New version description!')
       end
     end
 
-    context 'when discarding an already discarded scenario' do
-      let(:request) do
-        put "/api/v1/saved_scenarios/#{scenario.id}",
-          as: :json,
-          params: scenario_attributes.merge(discarded: true),
-          headers: authorization_header(user, %w[scenarios:read scenarios:write])
-      end
-
+    context 'with extra params' do
       before do
-        scenario.update(discarded_at: 1.day.ago)
-      end
-
-      it 'sets the discarded_at timestamp' do
-        expect { request }.not_to change { scenario.reload.discarded_at }
-          .from(scenario.discarded_at)
-      end
-    end
-
-    context 'when undiscarding a scenario' do
-      let(:request) do
-        put "/api/v1/saved_scenarios/#{scenario.id}",
+        put "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{current_saved_scenario_version.id}",
           as: :json,
-          params: scenario_attributes.merge(discarded: false),
-          headers: authorization_header(user, %w[scenarios:read scenarios:write])
-      end
-
-      before do
-        scenario.update(discarded_at: 1.day.ago)
-      end
-
-      it 'sets the discarded_at timestamp' do
-        expect { request }.to change { scenario.reload.discarded_at }
-          .from(scenario.discarded_at)
-          .to(nil)
-      end
-    end
-
-    context 'when undiscarding a non-discarded scenario' do
-      let(:request) do
-        put "/api/v1/saved_scenarios/#{scenario.id}",
-          as: :json,
-          params: scenario_attributes.merge(discarded: false),
-          headers: authorization_header(user, %w[scenarios:read scenarios:write])
-      end
-
-      it 'sets the discarded_at timestamp' do
-        expect { request }.not_to change { scenario.reload.discarded_at }.from(nil)
-      end
-    end
-  end
-
-  # ------------------------------------------------------------------------------------------------
-
-  describe 'DELETE /api/v1/saved_scenarios/:id' do
-    let!(:scenario) { create(:saved_scenario, user:) }
-
-    context 'when the scenario belongs to the user' do
-      let(:request) do
-        delete "/api/v1/saved_scenarios/#{scenario.id}",
-          as: :json,
-          headers: authorization_header(user, %w[scenarios:read scenarios:delete])
+          headers: authorization_header(user, ['scenarios:write']),
+          params: { message: 'New version description!', scenario_id: 999 }
       end
 
       it 'returns success' do
-        request
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:ok)
       end
 
-      it 'removes the scenario' do
-        expect { request }.to change(user.saved_scenarios, :count).by(-1)
-      end
-    end
-
-    context 'when missing the scenarios:delete scope' do
-      let(:request) do
-        delete "/api/v1/saved_scenarios/#{scenario.id}",
-          as: :json,
-          headers: authorization_header(user, %w[scenarios:read scenarios:write])
-      end
-
-      it 'returns forbidden' do
-        request
-        expect(response).to have_http_status(:forbidden)
-      end
-    end
-
-    context 'when the scenario belongs to a different user' do
-      let(:request) do
-        delete "/api/v1/saved_scenarios/#{scenario.id}",
-          as: :json,
-          headers: authorization_header(create(:user), %w[scenarios:read scenarios:delete])
-      end
-
-      it 'returns not found' do
-        request
-        expect(response).to have_http_status(:not_found)
+      it 'only updates the message and ignores the rest' do
+        expect(response.parsed_body).to include(
+          "message" => 'New version description!',
+          "scenario_id" => 234
+        )
       end
     end
   end
-end
 
+  describe 'GET /api/v1/saved_scenarios/:id/versions/:id/revert' do
+    before do
+      saved_scenario.update(saved_scenario_version_id: current_saved_scenario_version.id)
+    end
+
+    context 'when calling for an existing version' do
+      before do
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{first_saved_scenario_version.id}/revert",
+          as: :json, headers: authorization_header(user, ['scenarios:write'])
+      end
+
+      it 'returns success' do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'sets the given saved scenario version as the current version' do
+        expect(saved_scenario.reload.current_version).to eq(first_saved_scenario_version)
+      end
+
+      it 'removes all future scenario versions' do
+        expect(saved_scenario.reload.saved_scenario_versions.count).to eq(1)
+      end
+    end
+
+    context 'when calling for a non-existing version' do
+      before do
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/999/revert",
+          as: :json, headers: authorization_header(user, ['scenarios:write'])
+      end
+
+      it 'returns not found' do
+        expect(response).to have_http_status(:not_found)
+      end
+
+      it 'does not change the current version' do
+        expect(saved_scenario.reload.current_version).to eq(current_saved_scenario_version)
+      end
+
+      it 'does not removes any versions' do
+        expect(saved_scenario.reload.saved_scenario_versions.count).to eq(2)
+      end
+    end
+  end
+
+end

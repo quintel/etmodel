@@ -6,9 +6,10 @@
       = scenario.end_year
   %li.owners
     = owner_names(@saved_scenario)
-  %li
-    = t('scenario.updated')
-    = local_time(scenario.updated_at, :long)
+  - if !current_user&.admin? && !@saved_scenario.viewer?(current_user)
+    %li
+      = t('scenario.updated')
+      = local_time(scenario.updated_at, :long)
 
   - if owned_saved_scenario?(scenario) && action_name == 'show'
     - if scenario.private?
@@ -100,7 +101,7 @@
       :javascript
         new DropdownView({ el: $('#scenario-location') }).render()
 
-
-.bar
-
-= link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load"
+- if !current_user&.admin? && !@saved_scenario.viewer?(current_user)
+  .bar
+  
+  = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load"

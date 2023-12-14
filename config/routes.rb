@@ -77,7 +77,14 @@ Rails.application.routes.draw do
       end
     end
 
-    resource :version, controller: 'saved_scenario_versions'
+    resources :versions, controller: 'saved_scenario_versions' do
+      member do
+        get :new
+        post :create
+        get :load
+        get :revert
+      end
+    end
 
     member do
       get :load
@@ -189,7 +196,11 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :versions, only: %i[index show create update destroy], controller: 'saved_scenario_versions'
+      resources :versions, only: %i[index show create update], controller: 'saved_scenario_versions' do
+        member do
+          get :revert
+        end
+      end
     end
   end
 

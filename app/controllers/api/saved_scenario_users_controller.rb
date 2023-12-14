@@ -6,7 +6,6 @@ module API
     before_action :verify_token!
 
     # Only scenario owners, having the delete authority, may manage scenario users.
-    # The scenario:delete scope is something only owners have.
     before_action { verify_scopes!(%w[scenarios:delete]) }
 
     before_action :find_and_authorize_saved_scenario

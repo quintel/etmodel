@@ -1,0 +1,7 @@
+%ul.saved-scenario-versions
+  - versions_count = @saved_scenario.saved_scenario_versions.count
+  - @saved_scenario.saved_scenario_versions.order(created_at: :desc).each do |version|
+    - if version == @saved_scenario.current_version
+      = render partial: 'saved_scenario_versions/current', locals: { saved_scenario: saved_scenario, saved_scenario_version: version, versions_count: versions_count }
+    - else
+      = render partial: 'saved_scenario_versions/previous', locals: {  saved_scenario: saved_scenario, saved_scenario_version: version }

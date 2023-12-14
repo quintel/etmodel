@@ -32,7 +32,8 @@ nl:
   delete_permanently: Permanent verwijderen
   restore: Herstellen
   trash: Prullenbak
-  settings: Opties
+  settings: Instellingen
+  options: Opties
   move_to: Verplaatsen naar
   undo: Ongedaan maken
   required: Verplicht
@@ -375,6 +376,19 @@ nl:
           versie is veranderd ten opzichte van de vorige versie.
         message: Beschrijving
         button: Sla nieuw versie op
+      load: Open versie voor inzage
+      revert: Draai scenario terug naar deze versie
+      confirm_revert:
+        Weet je zeker dat je het scenario terug wil draaien naar deze versie?
+        Alle versies die na deze versie zijn aangemaakt zullen permanent worden verwijderd, inclusief de huidige versie!
+      duplicate: Sla een nieuw scenario op gebaseerd op deze versie
+      duplicate_of: Kopie van
+      compare: Vergelijk huidige versie met deze versie
+      errors:
+        general: Probeer het later alsjeblieft nog een keer. Neem contact op met Quintel indien je deze fout blijft krijgen.
+        create: Er ging iets mis tijdens het opslaan van een nieuwe versie van dit scenario!
+        create_message: De ingevoerde beschrijving ontbreekt of is onjuist.
+        duplicate: Dit scenario is al eerder opgeslagen.
     group: 'Groep'
     share:
       by: 'Delen via'

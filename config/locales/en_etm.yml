@@ -33,6 +33,7 @@ en:
   restore: Restore
   trash: Trash
   settings: Settings
+  options: Options
   move_to: Move to
   undo: Undo
   required: Required
@@ -371,6 +372,19 @@ en:
           compared to the previous one.
         message: Description
         button: Save new version
+      load: Open version for viewing
+      revert: Revert to this version
+      confirm_revert:
+        Are you sure you want to revert to this version?
+        All versions that were created after this version will be permanently removed, including the current version!
+      duplicate: Save a new scenario based on this version
+      duplicate_of: Duplicate of
+      compare: Compare the current version to this version
+      errors:
+        general: Please try again later. Contact Quintel if this error keeps being returned.
+        create: Something went wrong while trying to save a new version of this scenario!
+        create_message: The given description is missing or incorrect.
+        duplicate: This scenario has already been saved.
     group: 'Group'
     share:
       by: 'Share by'

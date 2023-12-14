@@ -15,9 +15,58 @@
       autoSize: false,
       href: url + paramSep + 'scenario_id=' + scenarioId + '&inline=true',
       type: 'ajax',
-      height: 350,
+      height: 375,
       width: 530,
-      padding: 0
+      padding: 0,
+      afterShow: function () {
+        // Prepare form for validation and submitting through an AJAX call.
+        const form = document.querySelector('form#new_saved_scenario_version');
+        const submit = form.querySelector("input[name='commit']");
+        const message = form.querySelector("#saved_scenario_version_message");
+        const errorWrapper = document.querySelector('#saved_scenario_version_form_flash');
+
+        submit.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          const saveScenarioButton = document.querySelector('.save-scenario');
+
+          // In case of success disable the 'Save scenario' button and close the Fancybox
+          handleSuccess = function () {
+            saveScenarioButton.disabled = true;
+            saveScenarioButton.querySelector('.label').classList.remove('show');
+            saveScenarioButton.querySelector('.saved').classList.add('show');
+
+            $.fancybox.close();
+          }
+          handleError = function (msg) {
+            $(errorWrapper).html("<div class='inner-alert message'>"+msg+"</div>");
+            $(message).focus();
+          }
+
+          // Form is validated, submit it and respond accordingly
+          $.ajax({
+            url: submit.form.action + '?' + $(submit.form).serialize(),
+            method: 'POST',
+            dataType: 'json',
+            success: function () {
+              // Server says OK!
+              handleSuccess();
+            },
+            error: function (response) {
+              const error = response.responseJSON.error
+
+              // Request failed.
+              if (error == 'saved_scenario_version_exists') {
+                // The scenario was already saved. Quietly dismiss the error and treat it as success.
+                handleSuccess();
+              } else {
+                // Some other error occurred. Render it.
+                handleError(error);
+              }
+            }
+          });
+        });
+      },
     });
   }
 

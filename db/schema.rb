@@ -94,11 +94,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_211359) do
   end
 
   create_table "saved_scenario_versions", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "saved_scenario_id"
     t.integer "scenario_id", null: false
     t.bigint "user_id"
-    t.string "message"
-    t.boolean "discarded", default: false
+    t.string "message", null: false
     t.index ["saved_scenario_id", "scenario_id"], name: "saved_scenario_users_saved_scenario_id_scenario_id_idx", unique: true
     t.index ["saved_scenario_id"], name: "index_saved_scenario_versions_on_saved_scenario_id"
     t.index ["saved_scenario_id"], name: "saved_scenario_versions_saved_scenario_id_idx"
@@ -119,7 +120,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_211359) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.datetime "discarded_at"
-    t.integer "current_saved_scenario_version_id"
+    t.integer "saved_scenario_version_id"
     t.index ["discarded_at"], name: "index_saved_scenarios_on_discarded_at"
     t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
     t.index ["user_id"], name: "index_saved_scenarios_on_user_id"

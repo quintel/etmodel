@@ -39,4 +39,10 @@ module SavedScenarioHelper
       )
     end
   end
+
+  def saved_scenario_version_myc_url(saved_scenario_version)
+    "#{Settings.multi_year_charts_url}/#{[saved_scenario_version.scenario_id, saved_scenario_version.saved_scenario.current_version.scenario_id].join(',')}?" \
+      "locale=#{I18n.locale}&" \
+      "title=#{ERB::Util.url_encode(saved_scenario_version.saved_scenario.title)}"
+  end
 end

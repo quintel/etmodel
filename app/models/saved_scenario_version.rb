@@ -4,5 +4,6 @@ class SavedScenarioVersion < ApplicationRecord
   belongs_to :saved_scenario
   belongs_to :user
 
-  validates_presence_of :scenario_id
+  validates :scenario_id, :message, presence: true
 end
+

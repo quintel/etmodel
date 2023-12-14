@@ -5,11 +5,12 @@
   .create_saved_scenario_version_form
     = render partial: 'form_flash', format: :js
 
-    = simple_form_for @saved_scenario_version, url: saved_scenario_version_path, remote: true do |f|
+    = simple_form_for @saved_scenario_version, url: saved_scenario_version_url, remote: true, method: :post do |f|
       = f.hidden_field :scenario_id
 
       = f.label :message, class: 'label' do
         =t('scenario.versions.new.message')
-      = f.input :message, label: false, required: true
+      = f.input :message, label: false, required: true,
+        as: :text, input_html: { rows: 2, cols: 25 }
 
       = f.button :submit, value: t('scenario.versions.new.button'), class: 'btn primary', data: { disable_with: false }

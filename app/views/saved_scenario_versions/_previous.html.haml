@@ -1,0 +1,39 @@
+%li.previous
+  %div.timeline
+    %div.bullet
+    %div.line
+  %div.contents
+    %div.message
+      = saved_scenario_version.message
+      %div.tooltip= saved_scenario_version.message
+    %div.details
+      %div.user= saved_scenario_version.user.name
+      %div.created_at= local_time(saved_scenario_version.created_at, :long)
+  %div.button
+    %div.options
+      .dropdown.saved-scenario-options{ id: "saved-scenario-options-#{saved_scenario_version.id}" }
+        %button.scenario-version-actions{ id: "saved-scenario-options-button-#{saved_scenario_version.id}", aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+          = inline_svg_tag 'hero/20/cog.svg'
+          = t('options')
+          %span.fa.fa-caret-down
+        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': "saved-scenario-options-button-#{saved_scenario_version.id}", style: 'margin-top: -8px' }
+          %li
+            = link_to t('scenario.versions.load'),
+                load_saved_scenario_version_path(saved_scenario_id: saved_scenario_version.saved_scenario.id, id: saved_scenario_version.id),
+                class: 'dropdown-item'
+          - if current_user&.admin? || saved_scenario.collaborator?(current_user)
+            %li
+              = link_to t('scenario.versions.revert'),
+                  revert_saved_scenario_version_path(saved_scenario_id: saved_scenario_version.saved_scenario.id, id: saved_scenario_version.id),
+                  onClick: "return confirm('#{t('scenario.versions.confirm_revert')}');",
+                  class: 'dropdown-item'
+            %li
+              = link_to t('scenario.versions.compare'),
+                  saved_scenario_version_myc_url(saved_scenario_version),
+                  target: '_blank',
+                  class: 'dropdown-item'
+
+      :javascript
+        new DropdownView({ el: $('#saved-scenario-options-#{saved_scenario_version.id}') }).render()
+
+%div{ style: 'clear: both' }

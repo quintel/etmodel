@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/305174
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Authorization:
+      - Bearer access_nkZF1nErBFpy6LHY
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.21.3
+      Date:
+      - Thu, 14 Dec 2023 02:18:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept, Origin
+      Etag:
+      - W/"12034717e6dc8fe2379f09a3ee3d6042"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 364e2ff6-e334-4570-9af7-7ccf7caed6b0
+      X-Runtime:
+      - '0.015838'
+    body:
+      encoding: UTF-8
+      string: '{"id":305174,"created_at":"2014-02-12T12:04:47.000Z","updated_at":"2017-11-22T16:58:12.000Z","user_values":{"households_insulation_level_old_houses":0.6373932860990021,"households_lighting_led_electricity_share":46.52915933745652,"transport_car_using_electricity_share":41.40203227349419,"households_water_heater_fuel_cell_chp_network_gas_share":32.166379132529855,"households_space_heater_heatpump_ground_water_electricity_share":28.390073708202124,"households_water_heater_solar_thermal_share":48.96493901414713,"number_of_energy_power_ultra_supercritical_coal":4.155469975352898,"number_of_energy_power_combined_cycle_network_gas":2.153170296613316,"number_of_energy_power_nuclear_gen3_uranium_oxide":0.7837284150567325,"number_of_energy_power_wind_turbine_offshore":818.3300353808962,"households_solar_pv_solar_radiation_market_penetration":60.765868122520374,"green_gas_total_share":1.0050311799376577,"settings_enable_merit_order":0.0,"transport_motorcycle_using_gasoline_mix_share":58.59796772650581},"end_year":2040,"keep_compatible":false,"private":false,"area_code":"nl","source":"Mechanical
+        ETAPI","balanced_values":{"households_lighting_incandescent_electricity_share":53.47084066254348,"households_lighting_efficient_fluorescent_electricity_share":0.0,"transport_car_using_diesel_mix_share":28.723856376393254,"transport_car_using_lpg_share":0.0,"transport_car_using_gasoline_mix_share":29.874111350112553,"transport_car_using_compressed_natural_gas_share":0.0,"households_water_heater_district_heating_steam_hot_water_share":7.0925454631029865,"households_water_heater_resistive_electricity_share":12.334401408982666,"households_water_heater_wood_pellets_share":4.379197788043224,"households_water_heater_crude_oil_share":4.379197788043224,"households_water_heater_combined_network_gas_share":4.379197788043224,"households_water_heater_micro_chp_network_gas_share":4.379197788043224,"households_water_heater_coal_share":4.379197788043224,"households_water_heater_heatpump_ground_water_electricity_share":4.379197788043224,"households_water_heater_heatpump_air_water_electricity_share":4.379197788043224,"households_water_heater_network_gas_share":17.752289479081927,"households_space_heater_wood_pellets_share":0.0,"households_space_heater_district_heating_steam_hot_water_share":0.0,"households_space_heater_heatpump_air_water_electricity_share":0.0,"households_space_heater_coal_share":0.0,"households_space_heater_network_gas_share":1.773489127592449,"households_space_heater_crude_oil_share":0.0,"households_space_heater_electricity_share":0.0,"households_space_heater_micro_chp_network_gas_share":0.0,"households_space_heater_combined_network_gas_share":69.83643716420542,"natural_gas_total_share":98.99496882006234},"metadata":{},"start_year":2015,"coupling":false,"owner":null,"scaling":null,"template":null,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/305174"}'
+  recorded_at: Thu, 14 Dec 2023 02:18:52 GMT
+- request:
+    method: post
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios
+    body:
+      encoding: UTF-8
+      string: '{"scenario":{"source":"ETM","scenario_id":305174}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer access_nkZF1nErBFpy6LHY
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.21.3
+      Date:
+      - Thu, 14 Dec 2023 02:18:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept, Origin
+      Etag:
+      - W/"63b5ff30451fc0ab774f3352349d96c7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 85fe2694-0248-4598-8067-6ee679613b2c
+      X-Runtime:
+      - '0.037472'
+    body:
+      encoding: UTF-8
+      string: '{"id":2510679,"created_at":"2023-12-14T02:18:53.000Z","updated_at":"2023-12-14T02:18:53.000Z","user_values":{"households_insulation_level_old_houses":0.6373932860990021,"households_lighting_led_electricity_share":46.52915933745652,"transport_car_using_electricity_share":41.40203227349419,"households_water_heater_fuel_cell_chp_network_gas_share":32.166379132529855,"households_space_heater_heatpump_ground_water_electricity_share":28.390073708202124,"households_water_heater_solar_thermal_share":48.96493901414713,"number_of_energy_power_ultra_supercritical_coal":4.155469975352898,"number_of_energy_power_combined_cycle_network_gas":2.153170296613316,"number_of_energy_power_nuclear_gen3_uranium_oxide":0.7837284150567325,"number_of_energy_power_wind_turbine_offshore":818.3300353808962,"households_solar_pv_solar_radiation_market_penetration":60.765868122520374,"green_gas_total_share":1.0050311799376577,"settings_enable_merit_order":0.0,"transport_motorcycle_using_gasoline_mix_share":58.59796772650581},"end_year":2040,"keep_compatible":false,"private":false,"area_code":"nl","source":"ETM","balanced_values":{"households_lighting_incandescent_electricity_share":53.47084066254348,"households_lighting_efficient_fluorescent_electricity_share":0.0,"transport_car_using_diesel_mix_share":28.723856376393254,"transport_car_using_lpg_share":0.0,"transport_car_using_gasoline_mix_share":29.874111350112553,"transport_car_using_compressed_natural_gas_share":0.0,"households_water_heater_district_heating_steam_hot_water_share":7.0925454631029865,"households_water_heater_resistive_electricity_share":12.334401408982666,"households_water_heater_wood_pellets_share":4.379197788043224,"households_water_heater_crude_oil_share":4.379197788043224,"households_water_heater_combined_network_gas_share":4.379197788043224,"households_water_heater_micro_chp_network_gas_share":4.379197788043224,"households_water_heater_coal_share":4.379197788043224,"households_water_heater_heatpump_ground_water_electricity_share":4.379197788043224,"households_water_heater_heatpump_air_water_electricity_share":4.379197788043224,"households_water_heater_network_gas_share":17.752289479081927,"households_space_heater_wood_pellets_share":0.0,"households_space_heater_district_heating_steam_hot_water_share":0.0,"households_space_heater_heatpump_air_water_electricity_share":0.0,"households_space_heater_coal_share":0.0,"households_space_heater_network_gas_share":1.773489127592449,"households_space_heater_crude_oil_share":0.0,"households_space_heater_electricity_share":0.0,"households_space_heater_micro_chp_network_gas_share":0.0,"households_space_heater_combined_network_gas_share":69.83643716420542,"natural_gas_total_share":98.99496882006234},"metadata":{},"start_year":2015,"coupling":false,"owner":null,"scaling":null,"template":305174,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/2510679"}'
+  recorded_at: Thu, 14 Dec 2023 02:18:53 GMT
+recorded_with: VCR 6.0.0

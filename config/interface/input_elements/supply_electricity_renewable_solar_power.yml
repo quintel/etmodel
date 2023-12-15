@@ -1,27 +1,38 @@
 ---
 - key: capacity_of_households_solar_pv_solar_radiation
 <<<<<<< HEAD
+<<<<<<< HEAD
   step_value: 1.0
 =======
   step_value: 1
 >>>>>>> 6de6702cc (Move household solar PV to renewable electricity and solar thermal collectors to households - space heating. Remove slide households - solar panels.)
+=======
+  step_value: 1.0
+>>>>>>> 5fb6b0fd9 (Move buildings PV to renewable electricity and solar thermal collectors to buildings - space heating. Remove slide buildings - solar panels.)
   unit: MW
   related_node: households_solar_pv_solar_radiation
   position: 1
   slide_key: supply_electricity_renewable_solar_power
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5fb6b0fd9 (Move buildings PV to renewable electricity and solar thermal collectors to buildings - space heating. Remove slide buildings - solar panels.)
 - key: capacity_of_buildings_solar_pv_solar_radiation
   step_value: 1.0
   unit: MW
   related_node: buildings_solar_pv_solar_radiation
   position: 2
   slide_key: supply_electricity_renewable_solar_power
+<<<<<<< HEAD
 =======
 >>>>>>> 6de6702cc (Move household solar PV to renewable electricity and solar thermal collectors to households - space heating. Remove slide households - solar panels.)
+=======
+>>>>>>> 5fb6b0fd9 (Move buildings PV to renewable electricity and solar thermal collectors to buildings - space heating. Remove slide buildings - solar panels.)
 - key: capacity_of_energy_power_solar_pv_solar_radiation
   step_value: 1.0
   unit: MW
   related_node: energy_power_solar_pv_solar_radiation
+<<<<<<< HEAD
 <<<<<<< HEAD
   position: 3
 =======
@@ -34,6 +45,9 @@
   position: 5
   dependent_on: has_solar_csp
 >>>>>>> 6de6702cc (Move household solar PV to renewable electricity and solar thermal collectors to households - space heating. Remove slide households - solar panels.)
+=======
+  position: 3
+>>>>>>> 5fb6b0fd9 (Move buildings PV to renewable electricity and solar thermal collectors to buildings - space heating. Remove slide buildings - solar panels.)
   slide_key: supply_electricity_renewable_solar_power
 - key: capacity_of_energy_battery_solar_pv_solar_radiation
   step_value: 1.0
@@ -46,10 +60,14 @@
   unit: MW
   related_node: energy_power_solar_pv_offshore
 <<<<<<< HEAD
+<<<<<<< HEAD
   position: 5
 =======
   position: 3
 >>>>>>> 6de6702cc (Move household solar PV to renewable electricity and solar thermal collectors to households - space heating. Remove slide households - solar panels.)
+=======
+  position: 5
+>>>>>>> 5fb6b0fd9 (Move buildings PV to renewable electricity and solar thermal collectors to buildings - space heating. Remove slide buildings - solar panels.)
   dependent_on: has_offshore_solar
   slide_key: supply_electricity_renewable_solar_power
 - key: capacity_of_energy_power_solar_csp_solar_radiation

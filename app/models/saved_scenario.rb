@@ -158,7 +158,7 @@ class SavedScenario < ApplicationRecord
   end
 
   # Creates the first SavedScenarioVersion for this scenario
-  def create_first_version(user)
+  def create_new_version(user)
     return false unless user
 
     version = saved_scenario_versions.create(

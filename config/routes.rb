@@ -202,6 +202,8 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    resources :transition_paths, only: %i[index show create update destroy]
   end
 
   %w[404 422 500].each do |code|

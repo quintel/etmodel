@@ -17,14 +17,15 @@ class UpdateSavedScenario
   param :http_client
   param :saved_scenario
   param :scenario_id
+  param :user
   param :settings, default: proc { {} }
 
   def call
     return api_response if failure?
 
     saved_scenario.tap do |ss|
-      ss.add_id_to_history(ss.scenario_id)
       ss.scenario_id = api_scenario.id
+      ss.create_new_version(user)
 
       unless ss.valid?
         unprotect

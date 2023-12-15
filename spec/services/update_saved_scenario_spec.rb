@@ -7,7 +7,7 @@ describe UpdateSavedScenario, type: :service do
   let(:user) { FactoryBot.create(:user) }
   let(:result_scenario) { FactoryBot.build(:engine_scenario, id: 11) }
   let(:api_result) { ServiceResult.success(result_scenario) }
-  let(:result) { described_class.call(client, saved_scenario, 10) }
+  let(:result) { described_class.call(client, saved_scenario, 10, user) }
   let!(:saved_scenario) do
     FactoryBot.create :saved_scenario,
                       user: user,
@@ -48,11 +48,9 @@ describe UpdateSavedScenario, type: :service do
       )
     end
 
-    it 'changes the scenario_id_history on the SavedScenario' do
+    it 'changes the saved_scenario_version_id on the SavedScenario' do
       expect { result }.to(
-        change(saved_scenario, :scenario_id_history)
-          .from([])
-          .to([648_695])
+        change(saved_scenario, :saved_scenario_version_id)
       )
     end
   end

@@ -270,13 +270,11 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
           .to(scenario_attributes)
       end
 
-      it 'adds the previous scenario ID to the history' do
+      it 'updated the saved_scenario_version_id' do
         previous_id = scenario.scenario_id
 
         expect { request }
-          .to change { scenario.reload.scenario_id_history }
-          .from([])
-          .to([previous_id])
+          .to change { scenario.reload.saved_scenario_version_id }
       end
     end
 
@@ -288,15 +286,15 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
         expect(response).to have_http_status(:success)
       end
 
-      it 'does not change the scenario ID history' do
-        expect { request }
-          .not_to change { scenario.reload.scenario_id_history }
-          .from([])
-      end
-
       it 'does not change the scenario ID' do
         expect { request }.not_to change { scenario.reload.scenario_id }
       end
+
+      it 'does not change the saved_scenario_version_id' do
+        expect { request }
+          .not_to change { scenario.reload.saved_scenario_version_id }
+      end
+
     end
 
     context 'when updating with the same scenario ID' do

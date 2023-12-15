@@ -44,7 +44,7 @@ CreateSavedScenario = lambda do |http_client, scenario_id, user, settings = {}|
 
   saved_scenario.save
   saved_scenario.scenario = api_scenario
-  saved_scenario.create_first_version(user)
+  saved_scenario.create_new_version(user)
 
   ServiceResult.success(saved_scenario)
 end

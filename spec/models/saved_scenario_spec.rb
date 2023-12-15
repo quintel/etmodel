@@ -38,25 +38,25 @@ describe SavedScenario do
     end
   end
 
-  describe '.create_first_version' do
+  describe '.create_new_version' do
     let(:saved_scenario) { create(:saved_scenario) }
     let(:user) { create(:user) }
 
     context 'when called without a user' do
       it 'returns false' do
-        expect(saved_scenario.create_first_version(nil)).to be_falsey
+        expect(saved_scenario.create_new_version(nil)).to be_falsey
       end
     end
 
     context 'when called with a user' do
       it 'creates a new SavedScenarioVersion for the SavedScenario' do
-        expect { saved_scenario.create_first_version(user) }
+        expect { saved_scenario.create_new_version(user) }
           .to change { saved_scenario.saved_scenario_versions.count }
           .from(1).to(2)
       end
 
       it 'updated the saved_scenario_version_id' do
-        expect { saved_scenario.create_first_version(user) }
+        expect { saved_scenario.create_new_version(user) }
           .to change(saved_scenario, :saved_scenario_version_id)
       end
     end

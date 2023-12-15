@@ -25,4 +25,3 @@ class CreateAPIScenarioUser
     ServiceResult.failure("Failed to create scenario user: #{e.message}")
   end
 end
-

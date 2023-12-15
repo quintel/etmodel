@@ -12,7 +12,6 @@ class SavedScenarioUsersController < ApplicationController
   end
 
   after_action :clear_flash, only: %i[create update destroy]
-  rescue_from ActiveRecord::RecordNotUnique, with: :flash_duplicate
 
   # Render a page with a table showing all SavedScenarioUsers for a SavedScenario.
   #
@@ -34,30 +33,29 @@ class SavedScenarioUsersController < ApplicationController
     render 'new', layout: false
   end
 
+  # TODO: Check for failure in service result and serve the message as error message, plus add:
+  # - invite mailer error
+  # - verify duplicate email with engine user (because we can't do that here)
+
   # Creates a new SavedScenarioUser for the given SavedScenario.
   # Renders the updated user-table on success or a flash message on failure.
   #
   # POST /saved_scenarios/:saved_scenario_id/users
   def create
-    saved_scenario_user = SavedScenarioUser.new(
-      saved_scenario_id: @saved_scenario.id,
-      user_email: permitted_params[:saved_scenario_user][:user_email],
-      role_id: permitted_params[:saved_scenario_user][:role_id]&.to_i
+    result = CreateSavedScenarioUser.call(
+      engine_client, @saved_scenario, current_user.name, scenario_user_params
     )
 
-    if saved_scenario_user.valid?
-      saved_scenario_user.save!
-
-      create_api_scenario_users(saved_scenario_user)
-
+    if result.success?
       @saved_scenario.reload
 
       respond_to do |format|
         format.js { render 'user_table', layout: false }
       end
     else
+      # TODO: redo error handling
       flash[:alert] =
-        t("scenario.users.errors.#{saved_scenario_user.errors.messages.keys.first}") ||
+        t("scenario.users.errors.#{result.errors.first}") ||
         "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
 
       respond_to do |format|
@@ -121,6 +119,10 @@ class SavedScenarioUsersController < ApplicationController
 
   private
 
+  def scenario_user_params
+    permitted_params[:saved_scenario_user]
+  end
+
   def permitted_params
     params.permit(
       :saved_scenario_id,
@@ -147,52 +149,13 @@ class SavedScenarioUsersController < ApplicationController
     flash.clear
   end
 
-  def flash_duplicate
-    flash[:alert] = t('scenario.users.errors.duplicate')
-
-    respond_to do |format|
-      format.js { render 'form_flash', layout: false }
-    end
-  end
-
-  def create_user_invite_params
-    {
-      invite: true,
-      user_name: current_user.name,
-      id: @saved_scenario.id,
-      title: @saved_scenario.title
-    }
-  end
-
-  # TODO: Move this to as_json on model
+  # TODO: This can go after we fix the services
   def api_user_params(saved_scenario_user)
     @api_user_params ||= {
       user_id: saved_scenario_user.user_id,
       user_email: saved_scenario_user.user_email,
       role: User::ROLES[saved_scenario_user.role_id]
     }
-  end
-
-  # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
-  def create_api_scenario_users(saved_scenario_user)
-    # The first call includes the invite
-    CreateAPIScenarioUser.call(
-      engine_client,
-      @saved_scenario.scenario_id,
-      api_user_params(saved_scenario_user),
-      create_user_invite_params
-    )
-
-    # TODO: Check for failure in service result and serve the message as error message, plus add:
-    # - invite mailer error
-    # - verify duplicate email with engine user (because we can't do that here)
-
-    # Update role for all historic scenarios as well
-    @saved_scenario.scenario_id_history.each do |scenario_id|
-      CreateAPIScenarioUser.call(
-        engine_client, scenario_id, api_user_params(saved_scenario_user)
-      )
-    end
   end
 
   # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine

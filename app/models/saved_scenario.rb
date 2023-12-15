@@ -124,27 +124,16 @@ class SavedScenario < ApplicationRecord
   end
 
   # Adds a SavedScenarioVersion to the history of this SavedScenario.
-  # Expects an existing SavedScenarioVersion, or parameters with which
-  # a new SavedScenarioVersion can be created.
+  # If revert is passed and true all versions that lie in the future
+  # of the given version are removed.
   def set_version_as_current(version, revert: false)
     return false unless version
 
-    saved_scenario_version = \
-      if version.is_a?(SavedScenarioVersion)
-        version
-      else
-        saved_scenario_versions.find_or_create_by(version)
-      end
+    update(saved_scenario_version_id: version.id)
 
-    update(saved_scenario_version_id: saved_scenario_version.id)
-
-    # If we're reverting to a previous version we should remove
-    # all versions that lie in the future of the given version
     return unless revert
 
-    saved_scenario_versions \
-      .where('created_at > ?', saved_scenario_version.created_at)
-      .destroy_all
+    saved_scenario_versions.where('created_at > ?', version.created_at).destroy_all
   end
 
   # Public: Determines if this scenario can be loaded.
@@ -168,12 +157,32 @@ class SavedScenario < ApplicationRecord
     featured? ? featured_scenario.localized_description(locale) : description
   end
 
+  # Creates the first SavedScenarioVersion for this scenario
+  def create_first_version(user)
+    return false unless user
+
+    version = saved_scenario_versions.create(
+      scenario_id: scenario_id,
+      user: user,
+      message: title || 'Scenario created'
+    )
+
+    set_version_as_current(version, revert: false)
+  end
+
   # Updates a saved scenario with parameters from the API controller.
-  def update_with_api_params(params)
+  def update_with_api_params(params, user)
     incoming_id = params[:scenario_id]
 
+    # Create or set a new SavedScenarioVersion if the scenario_id was updated
     if incoming_id && incoming_id != saved_scenario_version_id
-      set_version_as_current(params.except(:scenario_id))
+      version = saved_scenario_versions.find_or_create_by(scenario_id: incoming_id)
+      version.update(
+        user: user || owners.first,
+        message: params[:title] || 'Scenario update'
+      )
+
+      set_version_as_current(version, revert: false)
     end
 
     self.attributes = params.except(:discarded)

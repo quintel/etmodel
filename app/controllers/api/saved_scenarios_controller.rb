@@ -40,7 +40,7 @@ module API
     def update
       scenario = current_user.saved_scenarios.find(params.require(:id))
 
-      if scenario.update_with_api_params(scenario_params)
+      if scenario.update_with_api_params(scenario_params, current_user)
         render json: scenario, status: :ok
       else
         render json: scenario.errors, status: :unprocessable_entity

@@ -38,28 +38,34 @@ describe SavedScenario do
     end
   end
 
-  describe 'add_id_to_history' do
-    it "adds the provided id to the end of its history" do
-      subject.add_id_to_history("1234")
-      expect(subject.scenario_id_history.last).to eq("1234")
+  describe '.create_first_version' do
+    let(:saved_scenario) { create(:saved_scenario) }
+    let(:user) { create(:user) }
+
+    context 'when called without a user' do
+      it 'returns false' do
+        expect(saved_scenario.create_first_version(nil)).to be_falsey
+      end
     end
 
-    it "increases the amount of items in the history by one" do
-      expect{ subject.add_id_to_history("1234") }
-        .to change{subject.scenario_id_history.count}.by 1
-    end
+    context 'when called with a user' do
+      it 'creates a new SavedScenarioVersion for the SavedScenario' do
+        expect { saved_scenario.create_first_version(user) }
+          .to change { saved_scenario.saved_scenario_versions.count }
+          .from(1).to(2)
+      end
 
-    it "won't add more then 20 items" do
-      20.times{|n| subject.add_id_to_history(n)}
-
-      expect{ subject.add_id_to_history("1234") }
-        .not_to change{subject.scenario_id_history.count}
+      it 'updated the saved_scenario_version_id' do
+        expect { saved_scenario.create_first_version(user) }
+          .to change(saved_scenario, :saved_scenario_version_id)
+      end
     end
   end
 
-  describe 'set_version_as_current' do
+  describe '.set_version_as_current' do
     let(:saved_scenario) { create(:saved_scenario) }
-    let(:version) { create(:saved_scenario_version) }
+    let!(:new_version) { create(:saved_scenario_version, saved_scenario: saved_scenario) }
+    let!(:newer_version) { create(:saved_scenario_version, saved_scenario: saved_scenario) }
 
     context 'when version is nil' do
       it 'returns false' do
@@ -67,30 +73,32 @@ describe SavedScenario do
       end
     end
 
-    context 'when version is an existing SavedScenarioVersion' do
+    context 'when version is present' do
       it 'updates the saved_scenario_version_id' do
-        saved_scenario.set_version_as_current(version)
-        expect(saved_scenario.saved_scenario_version_id).to eq(version.id)
+        saved_scenario.set_version_as_current(new_version)
+        expect(saved_scenario.saved_scenario_version_id).to eq(new_version.id)
       end
     end
 
-    context 'when version is not an existing SavedScenarioVersion' do
-      it 'creates a new SavedScenarioVersion' do
-        saved_scenario.set_version_as_current({ version: '1.0' })
-        expect(saved_scenario.saved_scenario_versions.count).to eq(1)
-      end
-    end
-
-    context 'when revert is true' do
-      let!(:future_version) { create(:saved_scenario_version, created_at: Time.now + 1.day) }
-
-      it 'destroys all versions created after the given version' do
-        saved_scenario.set_version_as_current(version, revert: true)
-        expect(saved_scenario.saved_scenario_versions).not_to include(future_version)
+    context 'when revert is omitted' do
+      it 'does not destroy all versions created after the given version' do
+        saved_scenario.set_version_as_current(new_version)
+        expect(saved_scenario.saved_scenario_versions).to include(newer_version)
       end
     end
 
     context 'when revert is false' do
+      it 'does not destroy all versions created after the given version' do
+        saved_scenario.set_version_as_current(new_version, revert: false)
+        expect(saved_scenario.saved_scenario_versions).to include(newer_version)
+      end
+    end
+
+    context 'when revert is true' do
+      it 'destroys all versions created after the given version' do
+        saved_scenario.set_version_as_current(new_version, revert: true)
+        expect(saved_scenario.saved_scenario_versions).not_to include(newer_version)
+      end
     end
   end
 
@@ -233,10 +241,11 @@ describe SavedScenario do
 
   describe '#update_with_api_params' do
     let(:ss) { create(:saved_scenario, scenario_id: 1) }
+    let(:user) { create(:user) }
 
     context 'when discarding a scenario' do
       it 'sets discarded at' do
-        expect { ss.update_with_api_params(discarded: true) }
+        expect { ss.update_with_api_params({ discarded: true }, user) }
           .to change(ss, :discarded_at)
           .from(nil)
       end
@@ -246,7 +255,7 @@ describe SavedScenario do
       it 'sets discarded at' do
         ss.update!(discarded_at: 1.day.ago)
 
-        expect { ss.update_with_api_params(discarded: true) }
+        expect { ss.update_with_api_params({ discarded: true }, user) }
           .not_to change(ss, :discarded_at)
       end
     end
@@ -255,7 +264,7 @@ describe SavedScenario do
       it 'unsets discarded at' do
         ss.update!(discarded_at: 1.day.ago)
 
-        expect { ss.update_with_api_params(discarded: false) }
+        expect { ss.update_with_api_params({ discarded: false }, user) }
           .to change(ss, :discarded_at)
           .to(nil)
       end
@@ -263,55 +272,71 @@ describe SavedScenario do
 
     context 'when given a new scenario_id' do
       it 'returns true' do
-        expect(ss.update_with_api_params(scenario_id: 2)).to be(true)
+        expect(ss.update_with_api_params({ scenario_id: 2 }, user)).to be(true)
       end
 
       it 'updates the scenario_id' do
-        expect { ss.update_with_api_params(scenario_id: 2) }
+        expect { ss.update_with_api_params({ scenario_id: 2 }, user) }
           .to change(ss, :scenario_id)
           .from(1).to(2)
       end
 
-      it 'adds the old scenario_id to the history' do
-        expect { ss.update_with_api_params(scenario_id: 2) }
-          .to change(ss, :scenario_id_history)
-          .from([]).to([1])
+      it 'creates a new SavedScenarioVersion for the SavedScenario' do
+        expect { ss.update_with_api_params({ scenario_id: 2 }, user) }
+          .to change { ss.saved_scenario_versions.count }
+          .from(1).to(2)
+      end
+
+      it 'updates the saved_scenario_version_id' do
+        expect { ss.update_with_api_params({ scenario_id: 2 }, user) }
+          .to change(ss, :saved_scenario_version_id)
       end
     end
 
     context 'when given no scenario_id' do
       it 'returns true' do
-        expect(ss.update_with_api_params(title: 'New title')).to be(true)
+        expect(ss.update_with_api_params({ title: 'New title' }, user)).to be(true)
       end
 
       it 'does not update the scenario_id' do
-        expect { ss.update_with_api_params(title: 'New title') }
+        expect { ss.update_with_api_params({ title: 'New title' }, user) }
           .not_to change(ss, :scenario_id)
           .from(1)
       end
 
-      it 'does not update the history' do
-        expect { ss.update_with_api_params(title: 'New title') }
-          .not_to change(ss, :scenario_id_history)
-          .from([])
+      it 'does not create a new SavedScenarioVersion for the SavedScenario' do
+        expect { ss.update_with_api_params({ scenario_id: 2 }, user) }
+          .to change { ss.saved_scenario_versions.count }
+          .from(1).to(2)
+      end
+
+
+      it 'does not update the saved_scenario_version_id' do
+        expect { ss.update_with_api_params({ title: 'New title' }, user) }
+          .not_to change(ss, :saved_scenario_version_id)
       end
     end
 
     context 'when given the same scenario_id' do
       it 'returns true' do
-        expect(ss.update_with_api_params(scenario_id: 1, title: 'New title')).to be(true)
+        expect(ss.update_with_api_params({ scenario_id: 1, title: 'New title'}, user)).to be(true)
       end
 
       it 'does not update the scenario_id' do
-        expect { ss.update_with_api_params(scenario_id: 1, title: 'New title') }
+        expect { ss.update_with_api_params({ scenario_id: 1, title: 'New title'}, user) }
           .not_to change(ss, :scenario_id)
           .from(1)
       end
 
-      it 'does not update the history' do
-        expect { ss.update_with_api_params(scenario_id: 1, title: 'New title') }
-          .not_to change(ss, :scenario_id_history)
-          .from([])
+      it 'does not create a new SavedScenarioVersion for the SavedScenario' do
+        expect { ss.update_with_api_params({ scenario_id: 2 }, user) }
+          .to change { ss.saved_scenario_versions.count }
+          .from(1).to(2)
+      end
+
+      it 'does not update the saved_scenario_version_id' do
+        expect { ss.update_with_api_params({ title: 'New title' }, user) }
+          .not_to change(ss, :saved_scenario_version_id)
       end
     end
   end

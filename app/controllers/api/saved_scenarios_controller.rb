@@ -31,6 +31,8 @@ module API
       scenario = SavedScenario.new(scenario_params.merge(user: current_user))
 
       if scenario.save
+        scenario.create_new_version(current_user)
+
         render json: scenario, status: :created
       else
         render json: scenario.errors, status: :unprocessable_entity

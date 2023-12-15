@@ -3,6 +3,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_network_gas
   position: 1
   slide_key: demand_buildings_heating
@@ -10,6 +11,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_combined_hydrogen
   position: 2
   slide_key: demand_buildings_heating
@@ -17,6 +19,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_district_heating_ht_steam_hot_water
   position: 3
   slide_key: demand_buildings_heating
@@ -24,6 +27,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_district_heating_mt_steam_hot_water
   position: 4
   slide_key: demand_buildings_heating
@@ -31,6 +35,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_district_heating_lt_steam_hot_water
   position: 5
   slide_key: demand_buildings_heating
@@ -38,6 +43,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   command_type: value
   related_node: buildings_space_heater_heatpump_air_water_network_gas
   position: 6
@@ -46,6 +52,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_heatpump_air_water_electricity
   position: 7
   slide_key: demand_buildings_heating
@@ -53,6 +60,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_hybrid_heatpump_air_water_electricity
   position: 8
   slide_key: demand_buildings_heating
@@ -60,6 +68,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   position: 9
   slide_key: demand_buildings_heating
@@ -67,6 +76,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_collective_heatpump_water_water_ts_electricity
   position: 10
   slide_key: demand_buildings_heating
@@ -81,6 +91,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_electricity
   position: 12
   slide_key: demand_buildings_heating
@@ -88,6 +99,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_wood_pellets
   position: 13
   slide_key: demand_buildings_heating
@@ -95,6 +107,7 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_crude_oil
   position: 14
   dependent_on: has_coal_oil_for_heating_built_environment
@@ -103,8 +116,17 @@
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
+  interface_group: space_heating_technologies
   related_node: buildings_space_heater_coal
   position: 15
   dependent_on: has_coal_oil_for_heating_built_environment
+  slide_key: demand_buildings_heating
+
+- key: buildings_space_heater_solar_thermal_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: auxiliary_space_heating_technologies
+  related_node: buildings_space_heater_solar_thermal
+  position: 2
   slide_key: demand_buildings_heating
 

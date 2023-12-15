@@ -356,12 +356,13 @@ en:
         description: You are about to remove the following user from this scenario. Are you sure?
         button: 'Remove user'
       errors:
-        create: Something went wrong while trying to invite a new user!
-        create_email: The e-mail address you entered was invalid.
-        update: Something went wrong while trying to set a new role for the user!
+        create: Something went wrong while trying create the invite!
+        base: Please enter an email address.
+        user_email: The e-mail address you entered was invalid.
+        update: Something went wrong while trying to update this role!
         destroy: Something went wrong while trying to remove the user from the scenario!
         general: Please try again later. If you keep getting this error, please contact us.
-        duplicate: This user is already coupled with this scenario.
+        duplicate: This person is already invited to join the scenario.
     group: 'Group'
     share:
       by: 'Share by'

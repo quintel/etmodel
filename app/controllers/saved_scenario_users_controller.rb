@@ -4,7 +4,7 @@
 # for a given SavedScenario.
 class SavedScenarioUsersController < ApplicationController
   before_action :assign_saved_scenario
-  before_action :load_saved_scenario_user, only: %i[update confirm_destroy destroy]
+  before_action :assign_saved_scenario_user, only: %i[update confirm_destroy destroy]
 
   # Owners are the only ones with destroy rights.
   before_action do
@@ -12,6 +12,7 @@ class SavedScenarioUsersController < ApplicationController
   end
 
   after_action :clear_flash, only: %i[create update destroy]
+  rescue_from ActiveRecord::RecordNotUnique, with: :flash_duplicate
 
   # Render a page with a table showing all SavedScenarioUsers for a SavedScenario.
   #
@@ -26,7 +27,9 @@ class SavedScenarioUsersController < ApplicationController
   #
   # GET /saved_scenarios/:saved_scenario_id/users/new
   def new
-    @saved_scenario_user = SavedScenarioUser.new(saved_scenario_id: @saved_scenario.id)
+    @saved_scenario_user = SavedScenarioUser.new(
+      saved_scenario_id: @saved_scenario.id
+    )
 
     render 'new', layout: false
   end
@@ -42,21 +45,10 @@ class SavedScenarioUsersController < ApplicationController
       role_id: permitted_params[:saved_scenario_user][:role_id]&.to_i
     )
 
-    begin
+    if saved_scenario_user.valid?
       saved_scenario_user.save!
-    rescue ActiveRecord::RecordInvalid
-      error_message = \
-        if saved_scenario_user.errors.first&.attribute&.in?(%i[base user_email])
-          t('scenario.users.errors.create_email')
-        else
-          "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
-        end
-    rescue ActiveRecord::RecordNotUnique
-      error_message = t('scenario.users.errors.duplicate')
-    end
 
-    if saved_scenario_user.persisted?
-      synchronize_api_scenario_user('create', saved_scenario_user)
+      create_api_scenario_users(saved_scenario_user)
 
       @saved_scenario.reload
 
@@ -64,7 +56,9 @@ class SavedScenarioUsersController < ApplicationController
         format.js { render 'user_table', layout: false }
       end
     else
-      flash[:alert] = error_message.presence || "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
+      flash[:alert] =
+        t("scenario.users.errors.#{saved_scenario_user.errors.messages.keys.first}") ||
+        "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
 
       respond_to do |format|
         format.js { render 'form_flash', layout: false }
@@ -81,12 +75,11 @@ class SavedScenarioUsersController < ApplicationController
   def update
     @saved_scenario_user.role_id = permitted_params[:saved_scenario_user][:role_id]&.to_i
 
-    # TODO: NORA: find out why this table is not picked up in the js, but is part of the response. How to handle permission changes otherwise?
     if @saved_scenario_user.save
-      synchronize_api_scenario_user('update', @saved_scenario_user)
-
+      update_api_scenario_users
       @saved_scenario.reload
 
+      # TODO: Responds with new table, but this is picked up nowhere
       respond_to do |format|
         format.js { render 'user_table', layout: false }
       end
@@ -112,7 +105,7 @@ class SavedScenarioUsersController < ApplicationController
   # PUT /saved_scenarios/:saved_scenario_id/users/:id
   def destroy
     if @saved_scenario_user.destroy
-      synchronize_api_scenario_user('destroy', @saved_scenario_user)
+      destroy_api_scenario_users
 
       respond_to do |format|
         format.js { render 'user_table', layout: false }
@@ -143,49 +136,89 @@ class SavedScenarioUsersController < ApplicationController
     render_not_found
   end
 
-  def load_saved_scenario_user
-    raise ActiveRecord::RecordNotFound if permitted_params[:id].blank? && permitted_params[:saved_scenario_user][:user_id].blank?
-
-    @saved_scenario_user = \
-      if permitted_params[:id].present?
-        @saved_scenario.saved_scenario_users.find(permitted_params[:id])
-      else
-        @saved_scenario.saved_scenario_users.find_by(user_id: permitted_params[:saved_scenario_user][:user_id])
-      end
-
-    raise ActiveRecord::RecordNotFound if @saved_scenario_user.blank?
+  def assign_saved_scenario_user
+    @saved_scenario_user = @saved_scenario.saved_scenario_users.find(permitted_params[:id])
+  rescue ActiveRecord::RecordNotFound
+    # TODO: add translation
+    redirect_to saved_scenario_users_path, notice: 'Something went wrong'
   end
 
   def clear_flash
     flash.clear
   end
 
-  # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
-  # by calling the respective *APIScenarioUser service class.
-  def synchronize_api_scenario_user(action, saved_scenario_user)
-    api_service = "#{action.titleize}APIScenarioUser".constantize
+  def flash_duplicate
+    flash[:alert] = t('scenario.users.errors.duplicate')
 
-    user_params = {
+    respond_to do |format|
+      format.js { render 'form_flash', layout: false }
+    end
+  end
+
+  def create_user_invite_params
+    {
+      invite: true,
+      user_name: current_user.name,
+      id: @saved_scenario.id,
+      title: @saved_scenario.title
+    }
+  end
+
+  # TODO: Move this to as_json on model
+  def api_user_params(saved_scenario_user)
+    @api_user_params ||= {
       user_id: saved_scenario_user.user_id,
       user_email: saved_scenario_user.user_email,
       role: User::ROLES[saved_scenario_user.role_id]
     }
+  end
 
-    # Set arguments for the call of the current scenario.
-    # Add extra hash with information about the SavedScenario that are needed
-    # to send an invitation mail to the invited user if we are about to send a 'create' event.
-    if action.downcase == 'create'
-      api_service.call(
-        engine_client, @saved_scenario.scenario_id, user_params,
-        { invite: true, user_name: current_user.name, id: @saved_scenario.id, title: @saved_scenario.title }
-      )
-    else
-      api_service.call(engine_client, @saved_scenario.scenario_id, user_params)
-    end
+  # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
+  def create_api_scenario_users(saved_scenario_user)
+    # The first call includes the invite
+    CreateAPIScenarioUser.call(
+      engine_client,
+      @saved_scenario.scenario_id,
+      api_user_params(saved_scenario_user),
+      create_user_invite_params
+    )
+
+    # TODO: Check for failure in service result and serve the message as error message, plus add:
+    # - invite mailer error
+    # - verify duplicate email with engine user (because we can't do that here)
 
     # Update role for all historic scenarios as well
     @saved_scenario.scenario_id_history.each do |scenario_id|
-      api_service.call(engine_client, scenario_id, user_params)
+      CreateAPIScenarioUser.call(
+        engine_client, scenario_id, api_user_params(saved_scenario_user)
+      )
     end
+  end
+
+  # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
+  def update_api_scenario_users
+    elegible_scenario_ids.each do |scenario_id|
+      UpdateAPIScenarioUser.call(
+        engine_client,
+        scenario_id,
+        api_user_params(@saved_scenario_user)
+      )
+    end
+  end
+
+  # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
+  def destroy_api_scenario_users
+    elegible_scenario_ids.each do |scenario_id|
+      DestroyAPIScenarioUser.call(
+        engine_client,
+        scenario_id,
+        api_user_params(@saved_scenario_user)
+      )
+    end
+  end
+
+  # All API Scenario ID's that should recieve updates on create, update and destroy
+  def elegible_scenario_ids
+    [@saved_scenario.scenario_id].concat(@saved_scenario.scenario_id_history)
   end
 end

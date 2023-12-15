@@ -360,12 +360,15 @@ nl:
           Je staat op het punt om de volgende gebruiker te verwijderen van dit scenario.
           Weet je dit zeker?
       errors:
-        create: Er ging iets mis tijdens het uitnodigen van de gebruiker!
-        create_email: Het ingevoerde e-mail adres is onjuist.
-        update: Er ging iets mis tijdens het veranderen van de rol voor deze gebruiker!
+        create: Er ging iets mis tijdens het maken van de uitnodiging!
+        base: Voer een e-mailadres in.
+        user_email: Het ingevoerde e-mail adres is onjuist.
+        update: Er ging iets mis tijdens het veranderen van deze rol!
         destroy: Er ging iets mis tijdens het verwijderen van de gebruiker van dit scenario!
-        general: Probeer het later alsjeblieft nog een keer. Neem contact op met ons indien je deze fout blijft krijgen.
-        duplicate: Deze gebruiker is al aan dit scenario gekoppeld.
+        general: |
+          Probeer het later alsjeblieft nog een keer. Neem contact met ons op
+          indien deze fout zich blijft voordoen.
+        duplicate: Deze gebruiker is al uitgenodigd.
     group: 'Groep'
     share:
       by: 'Delen via'

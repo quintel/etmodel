@@ -17,7 +17,11 @@ class SavedScenarioUser < ApplicationRecord
   def user_id_or_email
     return if user_id.blank? ^ user_email.blank?
 
-    errors.add(:base, 'Either user_id or user_email should be present.')
+    errors.add(
+      :base,
+      :user_or_email_blank,
+      message: 'Either user_id or user_email should be present.'
+    )
   end
 
   def ensure_one_owner_left_before_save

@@ -387,12 +387,13 @@ describe ScenariosController, vcr: true do
       let(:request) { put(:update, params: { id: user_scenario.id, scenario_id: 99 }) }
 
       before do
+        sign_in user
         allow(UpdateSavedScenario).to receive(:call).and_return(ServiceResult.success('123'))
       end
 
       it 'changes the scenario_id of the saved scenario' do
         request
-        expect(UpdateSavedScenario).to have_received(:call).with(anything, user_scenario, 99)
+        expect(UpdateSavedScenario).to have_received(:call).with(anything, user_scenario, 99, user)
       end
 
       it 'returns the saved scenario JSON' do

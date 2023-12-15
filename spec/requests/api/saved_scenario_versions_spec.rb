@@ -5,8 +5,8 @@ require 'rails_helper'
 RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
   let(:user) { create(:user) }
   let!(:saved_scenario) { create(:saved_scenario, user: user) }
-  let!(:first_saved_scenario_version) { create(:saved_scenario_version, saved_scenario: saved_scenario, scenario_id: 123) }
-  let!(:current_saved_scenario_version) { create(:saved_scenario_version, saved_scenario: saved_scenario, scenario_id: 234) }
+  let!(:new_saved_scenario_version) { create(:saved_scenario_version, saved_scenario: saved_scenario, scenario_id: 123) }
+  let!(:latest_saved_scenario_version) { create(:saved_scenario_version, saved_scenario: saved_scenario, scenario_id: 234) }
 
   describe 'GET index' do
     it 'returns invalid token without a proper access token' do
@@ -36,8 +36,9 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
 
       it 'returns a list of all versions' do
         expect(response.parsed_body['data']).to eq([
-          first_saved_scenario_version.as_json,
-          current_saved_scenario_version.as_json
+          saved_scenario.saved_scenario_versions.first.as_json,
+          new_saved_scenario_version.as_json,
+          latest_saved_scenario_version.as_json
         ])
       end
     end
@@ -48,7 +49,7 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
 
     context 'when the version is existing and self-owned' do
       before do
-        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{current_saved_scenario_version.id}",
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{latest_saved_scenario_version.id}",
           as: :json, headers: authorization_header(user, ['scenarios:write'])
       end
 
@@ -57,7 +58,7 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
       end
 
       it 'returns the requested version' do
-        expect(response.parsed_body).to eq(current_saved_scenario_version.as_json)
+        expect(response.parsed_body).to eq(latest_saved_scenario_version.as_json)
       end
     end
 
@@ -76,7 +77,7 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
       let(:different_user) { create(:user) }
 
       before do
-        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{current_saved_scenario_version.id}",
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{latest_saved_scenario_version.id}",
           as: :json, headers: authorization_header(different_user, ['scenarios:write'])
       end
 
@@ -134,7 +135,7 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
   describe 'PUT /api/v1/saved_scenarios/:id/versions/:id' do
     context 'with proper params' do
       before do
-        put "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{current_saved_scenario_version.id}",
+        put "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{latest_saved_scenario_version.id}",
           as: :json,
           headers: authorization_header(user, ['scenarios:write']),
           params: { message: 'New version description!' }
@@ -151,7 +152,7 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
 
     context 'with extra params' do
       before do
-        put "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{current_saved_scenario_version.id}",
+        put "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{latest_saved_scenario_version.id}",
           as: :json,
           headers: authorization_header(user, ['scenarios:write']),
           params: { message: 'New version description!', scenario_id: 999 }
@@ -172,12 +173,12 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
 
   describe 'GET /api/v1/saved_scenarios/:id/versions/:id/revert' do
     before do
-      saved_scenario.update(saved_scenario_version_id: current_saved_scenario_version.id)
+      saved_scenario.update(saved_scenario_version_id: latest_saved_scenario_version.id)
     end
 
     context 'when calling for an existing version' do
       before do
-        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{first_saved_scenario_version.id}/revert",
+        get "/api/v1/saved_scenarios/#{saved_scenario.id}/versions/#{new_saved_scenario_version.id}/revert",
           as: :json, headers: authorization_header(user, ['scenarios:write'])
       end
 
@@ -186,11 +187,11 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
       end
 
       it 'sets the given saved scenario version as the current version' do
-        expect(saved_scenario.reload.current_version).to eq(first_saved_scenario_version)
+        expect(saved_scenario.reload.current_version).to eq(new_saved_scenario_version)
       end
 
       it 'removes all future scenario versions' do
-        expect(saved_scenario.reload.saved_scenario_versions.count).to eq(1)
+        expect(saved_scenario.reload.saved_scenario_versions).not_to include(:latest_saved_scenario_version)
       end
     end
 
@@ -205,11 +206,11 @@ RSpec.describe 'API::SavedScenarioVersions', type: :request, api: true do
       end
 
       it 'does not change the current version' do
-        expect(saved_scenario.reload.current_version).to eq(current_saved_scenario_version)
+        expect(saved_scenario.reload.current_version).to eq(latest_saved_scenario_version)
       end
 
       it 'does not removes any versions' do
-        expect(saved_scenario.reload.saved_scenario_versions.count).to eq(2)
+        expect(saved_scenario.reload.saved_scenario_versions.count).to eq(3)
       end
     end
   end

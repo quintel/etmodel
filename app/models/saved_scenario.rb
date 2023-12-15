@@ -129,7 +129,7 @@ class SavedScenario < ApplicationRecord
   def set_version_as_current(version, revert: false)
     return false unless version
 
-    update(saved_scenario_version_id: version.id)
+    update(saved_scenario_version_id: version['id'])
 
     return unless revert
 

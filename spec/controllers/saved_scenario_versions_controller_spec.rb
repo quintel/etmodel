@@ -93,8 +93,12 @@ describe SavedScenarioVersionsController do
         expect(response).to be_redirect
       end
 
+      it 'updated the saved_scenario_version_id' do
+        expect(user_scenario.reload.saved_scenario_version_id).to eq(user_first_scenario_version.id)
+      end
+
       it 'removes any future scenario versions' do
-        expect(user_scenario.saved_scenario_versions.count).to eq(1)
+        expect(user_scenario.reload.saved_scenario_versions).not_to include(user_current_scenario_version)
       end
     end
 
@@ -108,7 +112,7 @@ describe SavedScenarioVersionsController do
       end
 
       it 'does not remove future scenario versions' do
-        expect(user_scenario.saved_scenario_versions.count).to eq(2)
+        expect(admin_scenario.reload.saved_scenario_versions).to include(admin_current_scenario_version)
       end
     end
 

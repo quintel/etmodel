@@ -45,24 +45,63 @@ nl:
         van stroom vereist hogere temperaturen dan het verwarmen van gebouwen en broeikassen.
         Of het nu een aantrekkelijke optie is, wordt deels bepaald door hoe diep ondergronds
         het water zich bevindt, met temperaturen die hoog genoeg zijn."
-    capacity_of_energy_power_solar_pv_solar_radiation:
-      title: Zonnecentrales PV
+    capacity_of_buildings_solar_pv_solar_radiation:
+      title: Zon op dak gebouwen
       short_description: ''
-      description: "Met dit schuifje bouw je een grootschalig zonnepark.<br/><br/>\r\nNet als
-        windstroom, is zonnestroom fluctuerend. Toch is de variatie van zonnestroom
+      description: "Met dit schuifje stel je het percentage van het potentiële dakoppervlak
+        in waar je zonnepanelen wil installeren. Wil je weten hoeveel vermogen dit
+        is? Kijk dan in de 'Merit order tabel', deze is te vinden in de grafiekenlijst
+        (hier kom je door rechtsbovenaan op 'Meer grafieken bekijken' te klikken).
+        \r\n<br/><br/>\r\n Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
+        gebruikt wordt (in huis) en dus is het niet altijd nodig om de elektriciteit
+        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
+        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
+        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
+        zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen. \r\n<br/><br/>\r\n
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >hier</a> aanpassen.
+        De efficiëntie van zonnepanelen kan <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >hier</a> aangepast worden.<br
+        />"
+    capacity_of_households_solar_pv_solar_radiation:
+      title: Zon op dak huishoudens (kleinschalig)
+      short_description: ''
+      description: |
+        Met dit schuifje stel je het totale geïnstalleerde vermogen aan kleine
+        zonnestroominstallaties op de daken van huishoudens in. Dit zijn typisch kleinschalige
+        installaties met een vermogen van < 15 kWp voor Nederland en < 20 kWp voor andere Europese landen. <br/><br/>
+
+        Zonnepanelen zijn nog volop in ontwikkeling en ze worden
+        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
+        gebruikt wordt (in huis) en dus is het niet altijd nodig om de elektriciteit
+        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
+        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
+        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
+        zo het net te ontlasten, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
+        instellen. <br/><br/>
+        Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >hier</a> aanpassen.
+        De efficiëntie van zonnepanelen kan <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >hier</a> aangepast worden.<br
+        />
+    capacity_of_energy_power_solar_pv_solar_radiation:
+      title: Zon op land (grootschalig)
+      short_description: ''
+      description: |
+        Met dit schuifje bouw je een grootschalig zonnepark op land, met een typisch vermogen van 
+        > 15 kWp voor Nederland en > 20 kWp voor andere Europese landen.<br/><br/>
+        Net als windstroom is zonnestroom fluctuerend. Toch is de variatie van zonnestroom
         beter te voorspellen. Als zeer veel zonnepanelen geïnstalleerd worden, kan
         het nodig zijn om oplossingen te vinden voor onbalans op het laagspanningsnet.
         In sommige gevallen is het slim om zonneparken aan te sluiten op slechts een
         bepaald percentage van het piekvermogen, dit kan je <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen.\r\n<br/><br />\r\n
+        instellen.\r\n<br/><br/>
         Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >hier</a> aanpassen.
         De efficiëntie van zonnepanelen kan <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >hier </a> aangepast worden.<br
-        />"
+        />
     capacity_of_energy_battery_solar_pv_solar_radiation:
-      title: Zonnecentrales PV met batterijsysteem
+      title: Zon op land met batterijsysteem (grootschalig)
       short_description: ''
       description: |
-        Anders dan gewone zonnecentrales PV, zijn deze centrales standaard uitgerust met een
+        Anders dan gewone grootschalige installaties voor zon op land zijn deze centrales standaard uitgerust met een
         batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
         systeem. <br/><br/>
         Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie 
@@ -96,7 +135,7 @@ nl:
       title: Zonnecentrales PV op zee
       short_description:
       description: |
-        Met dit schuifje bouw je een grootschalig zonnepark. Dit type zonnepark drijft in de zee. </br></br>
+        Met dit schuifje bouw je een grootschalig zonnepark. Dit type zonnepark drijft op zee. </br></br>
         Deze technologie wordt ontwikkeld om het potentiële installatieoppervlak voor zonneparken 
         in landen te vergroten. Daarnaast kunnen deze parken waarschijnlijk geïnstalleerd worden tussen de windmolens
         op zee, hierdoor wordt er geen extra ruimte gebruikt. Het achterliggende idee is dat de uurlijkse productieprofielen van zon en wind 

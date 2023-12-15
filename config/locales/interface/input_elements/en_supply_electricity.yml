@@ -64,8 +64,27 @@ en:
         panels <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
         The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
         />
+    capacity_of_buildings_solar_pv_solar_radiation:
+      title: Solar PV buildings
+      short_description: ''
+      description: |
+        With this slider you set the capacity of rooftop solar PV installations on
+        rooftop areas of buildings. These include both small-scale installations (< 15 kWp in the Netherlands
+        and < 20 kWp in all other European countries) and large-scale installations. <br/><br/> 
+        
+        This technology is developing rapidly and solar panels
+        are becoming ever more efficient and cheaper. Solar panels produce electricity
+        on site, so transport of electricity is not always required. This avoids losses
+        on the grid and that saves energy. Feeding locally produced power back into
+        the local power grid requires a higher capacity or smarter local grid, to
+        prevent it from overloading. It may be desirable to curtail the power peaks
+        in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>. <br/><br
+
+        You can adjust the full load hours of solar
+        panels <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
+        The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br/>
     capacity_of_energy_power_solar_pv_solar_radiation:
-      title: Solar PV plants (large-scale)
+      title: Solar PV plants onshore (large-scale)
       short_description: ''
       description: |
         With this slider you can build centralized plants of photovoltaic
@@ -97,11 +116,13 @@ en:
         heat, allowing it to keep on producing electricity until several hours after
         sundown.\r\n\r\n<br/><br/> \r\n<a href=\"/units\">More information on units...</a>\r\n\r\n"
     capacity_of_energy_battery_solar_pv_solar_radiation:
-      title: Solar PV plants with battery system
+      title: Solar PV plants onshore with battery system (large-scale)
       short_description: ''
       description: |
         Different from regular solar PV plants, these plants are fitted with a battery and 
-        a reduced grid connection capacity by default, as an integrated system. <br/><br/>
+        a reduced grid connection capacity by default, as an integrated system. These plants are typically
+        large-scale, defined as having an output capacity of > 15 kWp within the Netherlands and
+        > 20 kWp for all other European countries. <br/><br/>
         Due to the volatile nature of solar power output, installing large numbers of solar 
         panels can have a major impact on the electricity grid. To prevent large capacity 
         peaks on the grid, these plants are not connected to the grid for the entire installed
@@ -128,11 +149,13 @@ en:
         </a>
         for the hourly behaviour of these solar plants.
     capacity_of_energy_power_solar_pv_offshore:
-      title: Solar PV plants offshore
+      title: Solar PV plants offshore (large-scale)
       short_description:
       description: |
         With this slider you can build centralized plants of photovoltaic solar power panels.
-        This type of of solar PV plants is built to float in the sea. </br></br>
+        This type of of solar PV plants is built to float in the sea. These plants are typically
+        large-scale, defined as having an output capacity of > 15 kWp within the Netherlands and
+        > 20 kWp for all other European countries. </br></br>
         This technology is developed to increase the potential installation area for solar 
         PV plants in a country. Additionally, these plants might be placed between offshore wind turbines, 
         taking up no extra offshore surface. The idea is that the hourly production profiles of solar and wind can 

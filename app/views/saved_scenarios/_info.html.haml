@@ -10,7 +10,7 @@
     = t('scenario.updated')
     = local_time(scenario.updated_at, :long)
 
-  - if owned_saved_scenario?(scenario) && action_name == 'show'
+  - if editable_saved_scenario?(scenario) && action_name == 'show'
     - if scenario.private?
       %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
         .dropdown#scenario-privacy<>

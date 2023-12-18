@@ -5,9 +5,9 @@ describe SavedScenarioUsersController do
 
   before do
     # Disable relaying ScenarioUserUpdates to ETEngine
-    allow(CreateAPIScenarioUser).to receive(:call).and_return(true)
-    allow(UpdateAPIScenarioUser).to receive(:call).and_return(true)
-    allow(DestroyAPIScenarioUser).to receive(:call).and_return(true)
+    allow(CreateAPIScenarioUser).to receive(:call).and_return(ServiceResult.success)
+    allow(UpdateAPIScenarioUser).to receive(:call).and_return(ServiceResult.success)
+    allow(DestroyAPIScenarioUser).to receive(:call).and_return(ServiceResult.success)
   end
 
   let(:saved_scenario) { FactoryBot.create :saved_scenario, id: 648691 }

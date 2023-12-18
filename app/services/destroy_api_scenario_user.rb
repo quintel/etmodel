@@ -23,4 +23,3 @@ class DestroyAPIScenarioUser
     ServiceResult.failure("Failed to destroy scenario user: #{e.message}")
   end
 end
-

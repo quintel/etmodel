@@ -25,7 +25,7 @@ class SavedScenarioUser < ApplicationRecord
   end
 
   def ensure_one_owner_left_before_save
-  # Don't check new records and ignore if the role is set to owner.
+    # Don't check new records and ignore if the role is set to owner.
     return if new_record? || role_id == User::ROLES.key(:scenario_owner)
 
     # Collect roles for other users of this scenario
@@ -36,11 +36,18 @@ class SavedScenarioUser < ApplicationRecord
   end
 
   def ensure_one_owner_left_before_destroy
+    # If the saved_scenario or user is getting destroyed, skip this validation
+    return true if destroyed_by_association
+    return true unless role_id == User::ROLES.key(:scenario_owner)
+
     # Collect roles for other users of this scenario
     other_users = saved_scenario.saved_scenario_users.where.not(id: id)
     other_role_ids = other_users.pluck(:role_id).compact.uniq
 
-    # Cancel this action of there are other users and none of them is an owner
-    throw(:abort) if other_users.count > 0 && other_role_ids.none?(User::ROLES.key(:scenario_owner))
+    # Cancel this action when there are no other users or no other owners
+    if other_users.blank? || other_role_ids.none?(User::ROLES.key(:scenario_owner))
+      errors.add(:base, :ownership, message: 'Last owner cannot be deleted')
+      throw(:abort)
+    end
   end
 end

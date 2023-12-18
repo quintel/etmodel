@@ -33,10 +33,6 @@ class SavedScenarioUsersController < ApplicationController
     render 'new', layout: false
   end
 
-  # TODO: Check for failure in service result and serve the message as error message, plus add:
-  # - invite mailer error
-  # - verify duplicate email with engine user (because we can't do that here)
-
   # Creates a new SavedScenarioUser for the given SavedScenario.
   # Renders the updated user-table on success or a flash message on failure.
   #
@@ -46,14 +42,14 @@ class SavedScenarioUsersController < ApplicationController
       engine_client, @saved_scenario, current_user.name, scenario_user_params
     )
 
-    if result.success?
+    if result.successful?
       @saved_scenario.reload
 
       respond_to do |format|
         format.js { render 'user_table', layout: false }
       end
     else
-      # TODO: redo error handling
+      # TODO: redo error handling --> check what ETEngine returns
       flash[:alert] =
         t("scenario.users.errors.#{result.errors.first}") ||
         "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
@@ -102,13 +98,16 @@ class SavedScenarioUsersController < ApplicationController
   #
   # PUT /saved_scenarios/:saved_scenario_id/users/:id
   def destroy
-    if @saved_scenario_user.destroy
-      destroy_api_scenario_users
+    result = DestroySavedScenarioUser.call(engine_client, @saved_scenario, @saved_scenario_user)
+
+    if result.successful?
+      @saved_scenario.reload
 
       respond_to do |format|
         format.js { render 'user_table', layout: false }
       end
     else
+      # TODO: redo error handling --> check what ETEngine returns
       flash[:alert] = "#{t('scenario.users.errors.destroy')} #{t('scenario.users.errors.general')}"
 
       respond_to do |format|
@@ -162,17 +161,6 @@ class SavedScenarioUsersController < ApplicationController
   def update_api_scenario_users
     elegible_scenario_ids.each do |scenario_id|
       UpdateAPIScenarioUser.call(
-        engine_client,
-        scenario_id,
-        api_user_params(@saved_scenario_user)
-      )
-    end
-  end
-
-  # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
-  def destroy_api_scenario_users
-    elegible_scenario_ids.each do |scenario_id|
-      DestroyAPIScenarioUser.call(
         engine_client,
         scenario_id,
         api_user_params(@saved_scenario_user)

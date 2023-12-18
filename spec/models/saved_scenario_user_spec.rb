@@ -100,13 +100,44 @@ describe SavedScenarioUser do
     expect(owner.reload).to_not be(nil)
   end
 
-  it 'does not cancel destroy action for the last owner of a scenario if its the last user' do
-    # The first user added will automatically become the scenario owner
-    owner = create(:saved_scenario_user, saved_scenario: saved_scenario, role_id: User::ROLES.key(:scenario_owner))
+  it 'cancels the destroy action for the last owner of a scenario if its the last user' do
+    owner = create(
+      :saved_scenario_user,
+      saved_scenario: saved_scenario,
+      role_id: User::ROLES.key(:scenario_owner)
+    )
     owner.destroy
 
     expect(
       saved_scenario.saved_scenario_users.count
-    ).to be(0)
+    ).to be(1)
+  end
+
+  context 'when destroying the saved scenario' do
+    subject { saved_scenario.destroy }
+
+    before { saved_scenario_user }
+
+    let(:saved_scenario_user) do
+      FactoryBot.create(
+        :saved_scenario_user,
+        saved_scenario: saved_scenario,
+        role_id: User::ROLES.key(:scenario_owner),
+        id: 123_778
+      )
+    end
+
+    it 'is successful' do
+      expect(subject.errors).to be_empty
+    end
+
+    it 'allows the saved scenario to be destroyed' do
+      expect { subject }.to change(saved_scenario, :persisted?).from(true).to(false)
+    end
+
+    it 'also destroys the saved scenario users' do
+      subject
+      expect { saved_scenario_user.reload }.to raise_error(ActiveRecord::RecordNotFound)
+    end
   end
 end

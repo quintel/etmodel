@@ -4,14 +4,14 @@
   unit: "%"
   related_node: industry_steel_blastfurnace_bof_captured_co2
   interface_group: industry
-  position: 100
+  position: 5
   slide_key: supply_ccus_capture
 - key: share_of_industry_chemicals_refineries_captured_co2
   step_value: 1.0
   unit: "%"
   related_node: industry_chemicals_refineries_captured_co2
   interface_group: industry
-  position: 110
+  position: 10
   slide_key: supply_ccus_capture
   dependent_on: true
 - key: share_of_industry_chemicals_fertilizers_captured_processes_co2
@@ -20,7 +20,7 @@
   related_node: industry_chemicals_fertilizers_captured_processes_co2
   interface_group: industry
   dependent_on: has_detailed_chemical_industry
-  position: 120
+  position: 15
   slide_key: supply_ccus_capture
 - key: share_of_industry_chemicals_fertilizers_captured_combustion_co2
   step_value: 1.0
@@ -28,14 +28,14 @@
   related_node: industry_chemicals_fertilizers_captured_combustion_co2
   interface_group: industry
   dependent_on: has_detailed_chemical_industry
-  position: 130
+  position: 20
   slide_key: supply_ccus_capture
 - key: share_of_industry_chemical_other_captured_co2
   step_value: 1.0
   unit: "%"
   related_node: industry_chemical_other_captured_co2
   interface_group: industry
-  position: 140
+  position: 25
   slide_key: supply_ccus_capture
   dependent_on: _always_hidden
 - key: share_of_industry_other_paper_captured_co2
@@ -43,43 +43,44 @@
   unit: "%"
   related_node: industry_other_paper_captured_co2
   interface_group: industry
-  position: 150
+  position: 30
   slide_key: supply_ccus_capture
 - key: share_of_industry_other_food_captured_co2
   step_value: 1.0
   unit: "%"
   related_node: industry_other_food_captured_co2
   interface_group: industry
-  position: 160
+  position: 35
   slide_key: supply_ccus_capture
+
 
 - key: share_of_energy_power_ultra_supercritical_ccs_coal
   step_value: 1.0
   unit: "%"
   interface_group: power_plants
   related_node: energy_power_ultra_supercritical_ccs_coal
-  position: 200
+  position: 100
   slide_key: supply_ccus_capture
 - key: share_of_energy_power_combined_cycle_ccs_coal
   step_value: 1.0
   unit: "%"
   interface_group: power_plants
   related_node: energy_power_combined_cycle_ccs_coal
-  position: 210
+  position: 105
   slide_key: supply_ccus_capture
 - key: share_of_energy_power_combined_cycle_ccs_network_gas
   step_value: 1.0
   unit: "%"
   interface_group: power_plants
   related_node: energy_power_combined_cycle_ccs_network_gas
-  position: 220
+  position: 110
   slide_key: supply_ccus_capture
 - key: share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite
   step_value: 1.0
   unit: "%"
   interface_group: power_plants
   related_node: energy_power_ultra_supercritical_oxyfuel_ccs_lignite
-  position: 230
+  position: 115
   dependent_on: has_lignite
   slide_key: supply_ccus_capture
 - key: share_of_energy_chp_supercritical_ccs_ht_waste_mix
@@ -87,52 +88,81 @@
   unit: "%"
   related_node: energy_chp_supercritical_ccs_ht_waste_mix
   interface_group: power_plants
-  position: 240
+  position: 120
   slide_key: supply_ccus_capture
 - key: share_of_energy_chp_supercritical_ccs_mt_waste_mix
   step_value: 1.0
   unit: "%"
   related_node: energy_chp_supercritical_ccs_mt_waste_mix
   interface_group: power_plants
-  position: 250
+  position: 125
   slide_key: supply_ccus_capture
 - key: share_of_energy_power_supercritical_ccs_waste_mix
   step_value: 1.0
   unit: "%"
   related_node: energy_power_supercritical_ccs_waste_mix
   interface_group: power_plants
-  position: 260
+  position: 130
   slide_key: supply_ccus_capture
+- key: share_of_energy_power_wood_pellets_ccs
+  step_value: 0.1
+  unit: "%"
+  related_node: energy_power_wood_pellets_ccs
+  interface_group: power_plants
+  position: 135
+  slide_key: supply_ccus_capture  
+- key: share_of_energy_chp_local_mt_wood_pellets_ccs
+  step_value: 0.1
+  unit: "%"
+  related_node: energy_chp_local_mt_wood_pellets_ccs
+  interface_group: power_plants
+  position: 140
+  slide_key: supply_ccus_capture
+- key: share_of_energy_chp_local_ht_wood_pellets_ccs
+  step_value: 0.1
+  unit: "%"
+  related_node: energy_chp_local_ht_wood_pellets_ccs
+  interface_group: power_plants
+  position: 145
+  slide_key: supply_ccus_capture  
+
+- key: merit_order_subtype_of_energy_power_wood_pellets
+  step_value: 1.0
+  unit: boolean
+  interface_group: must_run_dispatchable
+  position: 150
+  slide_key: supply_ccus_capture  
 
 - key: share_of_energy_hydrogen_steam_methane_reformer_ccs
   step_value: 1.0
   unit: "%"
   interface_group: hydrogen_plants
-  related_node: energy_hydrogen_steam_methane_reformer_ccs
-  position: 300
+  related_node: energy_hydrogen_steam_methane_reformer_ccs  
+  position: 200
   slide_key: supply_ccus_capture
 - key: share_of_energy_hydrogen_autothermal_reformer_ccs
   step_value: 1.0
   unit: "%"
   interface_group: hydrogen_plants
   related_node: energy_hydrogen_autothermal_reformer_ccs
-  position: 310
+  position: 205
   slide_key: supply_ccus_capture
 - key: share_of_energy_hydrogen_biomass_gasification_ccs
   step_value: 1.0
   unit: "%"
   interface_group: hydrogen_plants
   related_node: energy_hydrogen_biomass_gasification_ccs
-  position: 320
+  position: 210
   slide_key: supply_ccus_capture
+
+
 - key: demand_of_molecules_direct_air_capture_co2
   step_value: 0.1
   unit: "Mton"
   related_node: molecules_direct_air_capture_co2
   interface_group: direct_air_capture
-  position: 330
+  position: 300
   slide_key: supply_ccus_capture
-
 - key: volume_of_molecules_import_co2_baseload
   step_value: 0.1
   unit: "Mton"

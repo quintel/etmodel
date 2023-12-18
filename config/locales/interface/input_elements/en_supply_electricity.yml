@@ -23,20 +23,6 @@ en:
       description: |
         A biomass power plant produces electricity. Here you can set the
         installed electrical capacity of biomass plants that supply electricity.
-    capacity_of_energy_chp_local_wood_pellets_ccs:
-      title: Biomass CHP + CCS
-      short_description:
-      description: |
-        A CHP produces both heat and electricity. Here you can set the
-        installed electrical capacity of biomass CHP plants that supply heat for district
-        heating networks with CCS technology. For more information you can checkout the
-        <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
-    capacity_of_energy_power_wood_pellets_ccs:
-      title: Biomass power plant + CCS
-      short_description:
-      description: |
-        A biomass power plant produces electricity. Here you can set the
-        installed electrical capacity of biomass plants that supply electricity with CCS technology..
     capacity_of_energy_power_turbine_hydrogen:
       title: Hydrogen turbine
       short_description:
@@ -643,5 +629,5 @@ en:
         model the impact of this on other (fossil) feedstock use in the 
         <a href="/scenario/demand/industry/chemicals">chemical industry</a>.
     merit_order_subtype_of_energy_power_wood_pellets:
-      title:
-      description:     
+      title: ''
+      description: ''

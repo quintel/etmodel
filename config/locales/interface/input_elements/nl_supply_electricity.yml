@@ -21,21 +21,7 @@ nl:
       description: |
         Een biomassa centrale prduceert elektrciteit. Stel hier het elektrische 
         vermogen aan biomassa centrales in dat elektriciteit levert aan het
-        hoogspanningsnet.  
-    capacity_of_energy_chp_local_wood_pellets_ccs:
-      title: Biomassa-WKK + CCS
-      short_description:
-      description: |
-        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
-        elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
-        Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
-    capacity_of_energy_power_wood_pellets_ccs:
-      title: Biomassa centrale + CCS 
-      short_description:
-      description: |
-        Een biomassa centrale prduceert elektrciteit. Stel hier het elektrische 
-        vermogen aan biomassa centrales in dat elektriciteit levert aan het
-        hoogspanningsnet.          
+        hoogspanningsnet.        
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
       short_description:
@@ -698,5 +684,5 @@ nl:
         expliciet de gevolgen hiervan voor het gebruik van andere (fossiele) grondstoffen in de 
         <a href="/scenario/demand/industry/chemicals">chemische industrie</a>.
     merit_order_subtype_of_energy_power_wood_pellets:
-      title:
-      description:         
+      title: ''
+      description: ' '         

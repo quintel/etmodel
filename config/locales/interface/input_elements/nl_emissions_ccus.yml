@@ -292,8 +292,28 @@ nl:
         prijsontwikkelingen.<br/><br/>
         Het totaal opgestelde vermogen is in te stellen in de sectie
         <a href='/scenario/supply/electricity_renewable/waste-power'>Afvalverbrandingcentrales</a>."
+    share_of_energy_chp_local_ht_wood_pellets_ccs:
+      title: Biomassa-WKK HT + CCS
+      short_description:
+      description: |
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
+    share_of_energy_chp_local_mt_wood_pellets_ccs:
+      title: Biomassa-WKK MT + CCS
+      short_description:
+      description: |
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>    
+    share_of_energy_power_wood_pellets_ccs:
+      title: Biomassa centrale + CCS 
+      short_description:
+      description: |
+        Een biomassa centrale prduceert elektrciteit. Stel hier het elektrische 
+        vermogen aan biomassa centrales in dat elektriciteit levert aan het
+        hoogspanningsnet.        
     volume_of_molecules_import_co2_baseload:
       title: Import
       description: |
-        Met deze schuif kan de import van CO<sub>2</sub> aangepast worden. 
- 
+        Met deze schuif kan de import van CO<sub>2</sub> aangepast worden.     

@@ -110,10 +110,6 @@ nl:
         Netto importstromen</a> per energiedrager</li>
         <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_transit_flows" data-chart-location="side">
         Transitstromen</a> per energiedrager</li>
-        <li><a href="#" class="open_chart" data-chart-key="costs_overview" data-chart-location="side">
-        Kosten</a> van benodigde infrastructuur voor transitstromen</li>
-        <li><a href="#" class="open_chart" data-chart-key="space_requirements_transit_flows" data-chart-location="side">
-        Ruimtebeslag</a> van benodigde infrastructuur (opslag) voor transitstromen</li>
         </ul>
 
         <br />
@@ -121,6 +117,12 @@ nl:
         Zie ook onze 
         <a href="https://docs.energytransitionmodel.com/main/transit-flows/" target=\"_blank\">documentatie</a> 
         voor meer achtergrondinformatie over de modellering van transitstromen in het ETM.
+#           <li><a href="#" class="open_chart" data-chart-key="costs_overview" data-chart-location="side">
+      #  Kosten</a> van benodigde infrastructuur voor transitstromen</li>
+      # <li><a href="#" class="open_chart" data-chart-key="space_requirements_transit_flows" data-chart-location="side">
+      #  Ruimtebeslag</a> van benodigde infrastructuur (opslag) voor transitstromen</li>
+#
+#
     demand_households_appliances:
       title: Apparaten
       short_description: ''

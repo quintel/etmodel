@@ -44,7 +44,7 @@ class CreateSavedScenarioUser
     @api_user_params ||= {
       user_id: settings[:user_id],
       user_email: settings[:user_email],
-      role: User::ROLES[settings[:role_id]]
+      role: User::ROLES[settings[:role_id].to_i]
     }
   end
 

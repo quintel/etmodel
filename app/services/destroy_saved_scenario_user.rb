@@ -18,6 +18,7 @@ class DestroySavedScenarioUser
 
   def call
     if saved_scenario_user.destroy
+      # TODO: and undo the destroy on fail!
       return api_response if failure?
       return historical_scenarios_result if historical_scenarios_result.failure?
 

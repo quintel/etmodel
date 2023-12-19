@@ -44,7 +44,7 @@ nl:
         from Real Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert
         10.000 laadsessies van 140 automobilisten.
     capacity_of_industry_metal_flexibility_load_shifting_electricity:
-      title: Capaciteit
+      title: Vraagverlaging vermogen
       short_description:
       description: |
         De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
@@ -53,12 +53,25 @@ nl:
         <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de 
         metaalindustrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
         zijn van de metaalindustrie:
         <a href="/scenario/demand/industry/steel">staal</a>, 
         <a href="/scenario/demand/industry/aluminium">aluminium</a> en
         <a href="/scenario/demand/industry/other-metals">overige metalen</a>.
+    input_capacity_of_industry_metal_flexibility_load_shifting_electricity:
+      title: Vraagverhoging vermogen
+      short_description:
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen.
+        <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">Deze studie</a>
+        van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Vraagverlaging in de metaalindustrie moet op een later moment ingehaald worden door de vraag te 
+        verhogen. Dit schuifje bepaalt de beschikbare capaciteit voor vraagverhoging als percentage
+        van de piek elektriciteitsvraag van de metaalindustrie.     
     wta_of_industry_metal_flexibility_load_shifting_electricity:
       title: Willingness-to-accept
       short_description:
@@ -92,7 +105,7 @@ nl:
         Dit schuifje bepaalt het aantal uren dat de vraag van de metaalindustrie met volle 
         vraagverschuivingscapaciteit verlaagd mag worden.
     capacity_of_industry_chemical_flexibility_load_shifting_electricity:
-      title: Capaciteit
+      title: Vraagverlaging vermogen
       short_description:
       description: |
         De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
@@ -101,12 +114,25 @@ nl:
         <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de 
         chemische industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
         zijn van de chemische industrie:
         <a href="/scenario/demand/industry/refineries">raffinaderijen</a>, 
         <a href="/scenario/demand/industry/fertilizers">kunstmest</a> en
         <a href="/scenario/demand/industry/chemicals">overige chemie</a>.
+    input_capacity_of_industry_chemical_flexibility_load_shifting_electricity:
+      title: Vraagverhoging vermogen
+      short_description:
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen.
+        <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">Deze studie</a>
+        van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Vraagverlaging in de chemische industrie moet op een later moment ingehaald worden door de vraag te 
+        verhogen. Dit schuifje bepaalt de beschikbare capaciteit voor vraagverhoging als percentage
+        van de piek elektriciteitsvraag van de chemische industrie.
     wta_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Willingness-to-accept
       short_description:
@@ -140,7 +166,7 @@ nl:
         Dit schuifje bepaalt het aantal uren dat de vraag van de chemische industrie met volle 
         vraagverschuivingscapaciteit verlaagd mag worden.
     capacity_of_industry_other_flexibility_load_shifting_electricity:
-      title: Capaciteit
+      title: Vraagverlaging vermogen
       short_description:
       description: |
         De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
@@ -149,12 +175,25 @@ nl:
         <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de 
         overige industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
         zijn van de overige industrie:
         <a href="/scenario/demand/industry/food">voedsel</a>, 
         <a href="/scenario/demand/industry/paper">papier</a>, en
         <a href="/scenario/demand/industry/other">overige industrie</a>.
+    input_capacity_of_industry_other_flexibility_load_shifting_electricity:
+      title: Vraagverhoging vermogen
+      short_description:
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen.
+        <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">Deze studie</a>
+        van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Vraagverlaging in de overige industrie moet op een later moment ingehaald worden door de vraag te 
+        verhogen. Dit schuifje bepaalt de beschikbare capaciteit voor vraagverhoging als percentage
+        van de piek elektriciteitsvraag van de overige industrie.      
     wta_of_industry_other_flexibility_load_shifting_electricity:
       title: Willingness-to-accept
       short_description:
@@ -188,7 +227,7 @@ nl:
         Dit schuifje bepaalt het aantal uren dat de vraag van de overige industrie met volle 
         vraagverschuivingscapaciteit verlaagd mag worden.
     capacity_of_industry_other_ict_flexibility_load_shifting_electricity:
-      title: Capaciteit
+      title: Vraagverlaging vermogen
       short_description:
       description: |
         De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
@@ -197,9 +236,22 @@ nl:
         <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Dit schuifje bepaalt de capaciteit voor vraagverschuiving als percentage van de piek elektriciteitsvraag van de 
+        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de 
         centrale ICT industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de 
         <a href="/scenario/demand/industry/central-ict">centrale ICT industrie</a>.
+    input_capacity_of_industry_other_ict_flexibility_load_shifting_electricity:
+      title: Vraagverhoging vermogen
+      short_description:
+      description: |
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
+        factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
+        en productieprocessen.
+        <a href="https://www.vemw.nl/~/media/VEMW/Downloads/Public/Nieuwtjes/DSR%20TenneT%20studie.ashx" target="_blank">Deze studie</a>
+        van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
+        in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
+        Vraagverlaging in de centrale ICT industrie moet op een later moment ingehaald worden door de vraag te 
+        verhogen. Dit schuifje bepaalt de beschikbare capaciteit voor vraagverhoging als percentage
+        van de piek elektriciteitsvraag van de centrale ICT industrie.   
     wta_of_industry_other_ict_flexibility_load_shifting_electricity:
       title: Willingness-to-accept
       short_description:

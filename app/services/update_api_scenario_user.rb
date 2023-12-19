@@ -23,4 +23,3 @@ class UpdateAPIScenarioUser
     ServiceResult.failure("Failed to update scenario user: #{e.message}")
   end
 end
-

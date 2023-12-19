@@ -29,10 +29,14 @@ class SavedScenarioUser < ApplicationRecord
     return if new_record? || role_id == User::ROLES.key(:scenario_owner)
 
     # Collect roles for other users of this scenario
-    other_role_ids = saved_scenario.saved_scenario_users.where.not(id: id).pluck(:role_id).compact.uniq
+    other_users = saved_scenario.saved_scenario_users.where.not(id: id)
+    other_role_ids = other_users.pluck(:role_id).compact.uniq
 
-    # Cancel this action of none of the other users is an owner
-    throw(:abort) if other_role_ids.none?(User::ROLES.key(:scenario_owner))
+    # Cancel this action when there are no other users or no other owners
+    if other_users.blank? || other_role_ids.none?(User::ROLES.key(:scenario_owner))
+      errors.add(:base, :ownership, message: 'Last owner cannot be changed')
+      throw(:abort)
+    end
   end
 
   def ensure_one_owner_left_before_destroy

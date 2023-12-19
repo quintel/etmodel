@@ -5,7 +5,7 @@
   interface_group: load_shifting_metal
   position: 10
   slide_key: flexibility_flexibility_demand_response_load_shifting
-- key: input_capacity_of_industry_metal_flexibility_load_shifting_electricity_share
+- key: input_capacity_of_industry_metal_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "%"
   interface_group: load_shifting_metal
@@ -30,7 +30,7 @@
   interface_group: load_shifting_chemical
   position: 100
   slide_key: flexibility_flexibility_demand_response_load_shifting
-- key: input_capacity_of_industry_chemical_flexibility_load_shifting_electricity_share
+- key: input_capacity_of_industry_chemical_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "%"
   interface_group: load_shifting_chemical
@@ -55,7 +55,7 @@
   interface_group: load_shifting_other
   position: 200
   slide_key: flexibility_flexibility_demand_response_load_shifting
-- key: input_capacity_of_industry_other_flexibility_load_shifting_electricity_share
+- key: input_capacity_of_industry_other_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "%"
   interface_group: load_shifting_other
@@ -80,7 +80,7 @@
   interface_group: load_shifting_other_ict
   position: 300
   slide_key: flexibility_flexibility_demand_response_load_shifting
-- key: input_capacity_of_industry_other_ict_flexibility_load_shifting_electricity_share
+- key: input_capacity_of_industry_other_ict_flexibility_load_shifting_electricity
   step_value: 0.1
   unit: "%"
   interface_group: load_shifting_other_ict

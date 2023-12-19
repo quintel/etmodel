@@ -172,8 +172,19 @@ class SavedScenario < ApplicationRecord
     )
   end
 
+  # Returns a collection of SavedScenarioUsers
   def owners
     saved_scenario_users.where(role_id: User::ROLES.key(:scenario_owner))
+  end
+
+  # Returns a collection of SavedScenarioUsers
+  def collaborators
+    saved_scenario_users.where(role_id: User::ROLES.key(:scenario_collaborator))
+  end
+
+  # Returns a collection of SavedScenarioUsers
+  def viewers
+    saved_scenario_users.where(role_id: User::ROLES.key(:scenario_viewer))
   end
 
   def single_owner?

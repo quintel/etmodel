@@ -67,10 +67,14 @@ class SavedScenarioUsersController < ApplicationController
   #
   # PUT /saved_scenarios/:saved_scenario_id/users/:id
   def update
-    @saved_scenario_user.role_id = permitted_params[:saved_scenario_user][:role_id]&.to_i
+    result = UpdateSavedScenarioUser.call(
+      engine_client,
+      @saved_scenario,
+      @saved_scenario_user,
+      scenario_user_params[:role_id]&.to_i
+    )
 
-    if @saved_scenario_user.save
-      update_api_scenario_users
+    if result.successful?
       @saved_scenario.reload
 
       # TODO: Responds with new table, but this is picked up nowhere
@@ -78,6 +82,7 @@ class SavedScenarioUsersController < ApplicationController
         format.js { render 'user_table', layout: false }
       end
     else
+      # TODO: fix error messaging coming from the engine
       flash[:alert] = "#{t('scenario.users.errors.update')} #{t('scenario.users.errors.general')}"
 
       respond_to do |format|
@@ -146,30 +151,5 @@ class SavedScenarioUsersController < ApplicationController
 
   def clear_flash
     flash.clear
-  end
-
-  # TODO: This can go after we fix the services
-  def api_user_params(saved_scenario_user)
-    @api_user_params ||= {
-      user_id: saved_scenario_user.user_id,
-      user_email: saved_scenario_user.user_email,
-      role: User::ROLES[saved_scenario_user.role_id]
-    }
-  end
-
-  # Synchronize the user roles between the SavedScenario and its Scenarios in ETEngine
-  def update_api_scenario_users
-    elegible_scenario_ids.each do |scenario_id|
-      UpdateAPIScenarioUser.call(
-        engine_client,
-        scenario_id,
-        api_user_params(@saved_scenario_user)
-      )
-    end
-  end
-
-  # All API Scenario ID's that should recieve updates on create, update and destroy
-  def elegible_scenario_ids
-    [@saved_scenario.scenario_id].concat(@saved_scenario.scenario_id_history)
   end
 end

@@ -303,11 +303,11 @@ en:
         <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section 
         is not included in this chart.
     residual_heat_supply_potential:
-      title: Supply and potential of residual heat
+      title: Demand and potential of residual heat
       short_description:
       description: |
-        This chart compares the supply and potential of residual heat.
-        You can set the supply of residual heat for each temperature level
+        This chart compares the demand and potential of residual heat.
+        You can set the demand for residual heat for each temperature level
         in the <a href="scenario/supply/heat/overview-district-heating"> District heating</a> section.
         The residual heat potential is calculated based on the size of the following sectors: 
         <ul>
@@ -321,4 +321,10 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry/" target=\"_blank\">documentation</a>.
         <br></br>
         Note that although you can set the supply of residual heat manually above the potentials shown, 
-        in reality the heat needs to be provided by some industry or another. 
+        in reality the heat needs to be provided by some industry or another.
+    heat_aquathermal_demand:
+      title: Demand and potential of aquathermal heat
+      description: |
+        This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water). 
+        The chart shows the distribution of heat demand between collective sources (heat networks) 
+        and individual sources and includes the potential for each aquathermal source for the region, whenever available.

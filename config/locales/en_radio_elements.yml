@@ -38,3 +38,13 @@ en:
           (Full load hours: wind onshore / coastal = 1937, wind offshore = 3334,
           solar pv = 933, solar thermal = 604. Average temperature difference compared to 2015 = -0.5 degrees
           Celsius)
+    settings_enable_storage_optimisation_households_flexibility_p2p_electricity:
+      default:
+        title: 'Off'
+        description: The battery shows price sensitive behaviour
+      optimizing_storage:
+        title: 'Forecasting on the full energy system'
+        description: '...'
+      optimizing_storage_households:
+        title: 'Forecasting only for households'
+        description: '...'

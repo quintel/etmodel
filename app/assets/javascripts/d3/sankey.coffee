@@ -72,7 +72,7 @@ D3.sankey =
           {left: 'residual_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_residual_hydrogen_to_hydrogen',            color: '#87cfeb'},
 
           {left: 'extracted_oil',                right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',        color: '#8c564b'}, 
-          {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_to_oil_and_oil_products',     color: '#8c564b'},
+          {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_and_oil_products_to_oil_and_oil_products',     color: '#8c564b'},
 
 
           {left: 'hydrogen',                     right: 'electricity',               gquery: 'sankey_1_to_1_hydrogen_to_electricity',                  color: '#87cfeb'},

@@ -167,30 +167,6 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_synthetic_products_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: conversion_losses_liquid_hydrogen
-  color: "#C53A3A"
-  order_by: 75
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: losses_liquid_hydrogen_energetic_for_mekko
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_hydrogen_network
-  key: conversion_losses_liquid_hydrogen_demand_mekko_of_hydrogen_network    
-- label: conversion_losses_lohc
-  color: "#FF7474"
-  order_by: 80
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: losses_lohc_energetic_for_mekko
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_hydrogen_network
-  key: conversion_losses_lohc_demand_mekko_of_hydrogen_network
 
 
 

@@ -97,8 +97,8 @@ en:
         refomer, which is currently widely used. Even so, technological development is required 
         before reforming of ammonia becomes commercially viable. You can change the efficiency 
         and the investment costs of the ammonia reformer in the 
-        <a href=/scenario/costs/costs_hydrogen/hydrogen-production>Costs & efficiencies</a> 
-        section. </br></br>
+        <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia\"</a> 
+        Emissions section</a>. </br></br>
         The ammonia used in the reformer is imported. You can determine the import capacity in 
         the <a href=/scenario/supply/hydrogen/ammonia-production> slide below</a>.
         You can also view the demand and supply of ammonia in 
@@ -122,15 +122,15 @@ en:
     capacity_of_energy_imported_hydrogen_baseload:
       title: H<sub>2</sub> import
       short_description:
-      description: "How much hydrogen will be imported in the future?\r\n<br><br>\r\nThis
-        slider sets the amount of hydrogen that is imported from outside your area.
+      description: |
+        How much hydrogen will be imported in the future?
+        This slider sets the amount of hydrogen that is imported from outside your area.
         The hydrogen can originate from different countries and can be produced with
         different technologies, both of which influence the accompanied CO<sub>2</sub> emissions.
         Therefore, it is possible to adjust the CO<sub>2</sub> emissions of imported
-        hydrogen in the <a href=\"/scenario/supply/hydrogen/co-sub-2-sub-emissions-of-imported-hydrogen\"
-        >slide below</a>. Additionally, it is possible to set the costs of imported
-        hydrogen in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-import\"
-        >Costs & efficiencies</a> section."
+        hydrogen in the <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">Emissions section</a>. 
+        Additionally, it is possible to set the costs of imported
+        hydrogen in the <a href="/scenario/costs/costs_hydrogen/hydrogen-import">Costs & efficiencies</a> section.
     energy_transport_hydrogen_compressed_trucks_share:
       title: Compressed H<sub>2</sub> in trucks
       short_description:

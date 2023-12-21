@@ -38,3 +38,13 @@ nl:
           (Vollasturen: wind op land / aan de kust = 1937, wind offshore = 3334,
           zon pv = 933, zonthermie = 604. Gemiddelde temperatuursverschil t.o.v. 2015 = -0,5 graden
           Celsius)
+    settings_enable_storage_optimisation_households_flexibility_p2p_electricity:
+      default:
+        title: 'Off'
+        description: The battery shows price sensitive behaviour
+      optimizing_storage:
+        title: 'Forecasting on the full energy system'
+        description: '...'
+      optimizing_storage_households:
+        title: 'Forecasting only for households'
+        description: '...'

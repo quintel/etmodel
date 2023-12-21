@@ -87,7 +87,7 @@ nl:
         nodig om voldoende warmte te maken en dat zou sterke verzwaring van het elektriciteitsnet
         nodig maken."
     buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
-      title: Water warmtepomp met WKO
+      title: Bodemwarmtepomp met WKO
       short_description: ''
       description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
         opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
@@ -99,6 +99,20 @@ nl:
         helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
         (bijvoorbeeld in stedelijk gebied). Daarom is WKO alleen lucratief op grote
         schaal, zoals voor grote kantoorpanden bijvoorbeeld."
+    buildings_space_heater_heatpump_surface_water_water_ts_electricity_share:
+      title: Warmtepomp met aquathermie (TEO) en WKO
+      short_description: ''
+      description: |
+        Deze slider beïnvloed het percentage van de warmtevraag voor gebouwen dat
+        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater. <br/><br/>
+        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur 
+        door de combinatie met WKO. <br/><br/>
+        Voor meer informatie over het totale gebruik van aquathermie, open <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand" 
+        data-chart-location="side"> deze grafiek</a>.
+        Het is ook mogelijk om aquathermie in te zetten in een (collectief) warmtenet. 
+        Ga naar <a href="/scenario/supply/heat/overview-district-heating" >warmtenetten</a>
+        om aquathermie toe te voegen als warmtebron voor het MT of LT warmtenet. 
     buildings_space_heater_wood_pellets_share:
       title: Biomassaketel
       short_description: ''
@@ -276,7 +290,7 @@ nl:
         als je de stroom opwekt met het centrale park van vandaag de dag. Voor koelen
         is hij minder efficiënt.
     buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
-      title: Water warmtepomp met WKO
+      title: Bodemwarmtepomp met WKO
       short_description: ''
       description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
         opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
@@ -288,6 +302,14 @@ nl:
         helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
         (bijvoorbeeld in stedelijk gebied). Daarom is WKO alleen lucratief op grote
         schaal, zoals voor grote kantoorpanden bijvoorbeeld."
+    buildings_cooling_heatpump_surface_water_water_ts_electricity_share:
+      title: Warmtepomp met aquathermie (TEO) en WKO
+      short_description: ''
+      description: |
+        Deze slider beïnvloed het percentage van de koudevraag voor gebouwen dat
+        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater. <br/><br/>
+        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur 
+        door de combinatie met WKO.
     buildings_cooling_airconditioning_share:
       title: Airconditioning
       short_description: ''

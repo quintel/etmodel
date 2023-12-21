@@ -31,6 +31,72 @@ en:
       description: A heat pump produces heat with electricity and ambient heat. Specify
         here the capacity of collective heat pumps that supplies heat for district
         heating.
+    capacity_of_energy_heat_heatpump_surface_water_water_ts_lt_electricity:
+      title: Aquathermal heat pump with TS (surface water)
+      short_description:
+      description: |
+        This slider influences the total capacity of heat-pumps
+        abstracting heat from surface water and equipped with thermal seasonal storage (TS) in LT heat grids.<br/><br/>
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        due to the addition of thermal storage. <br/><br/>
+        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> this chart</a>.
+        It is also possible to use aquathermal energy from surface water for individual households or buildings. 
+        Go to <a href="/scenario/demand/households/space-heating-and-hot-water" >households</a> or
+        <a href="/scenario/demand/buildings/space-heating" >buildings</a> to 
+        add aquathermal heat as a heat source households or buildings.
+    capacity_of_energy_heat_heatpump_surface_water_water_ts_mt_electricity:
+      title: Aquathermal heat pump with TS (surface water)
+      short_description:
+      description: |
+        This slider influences the total capacity of heat-pumps
+        abstracting heat from surface water and equipped with thermal seasonal storage (TS) in MT heat grids.<br/><br/>
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        due to the addition of thermal storage. <br/><br/>
+        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> this chart</a>.
+        It is also possible to use aquathermal energy from surface water for individual households or buildings. 
+        Go to <a href="/scenario/demand/households/space-heating-and-hot-water" >households</a> or
+        <a href="/scenario/demand/buildings/space-heating" >buildings</a> to 
+        add aquathermal heat as a heat source households or buildings.
+    capacity_of_energy_heat_heatpump_waste_water_water_ts_lt_electricity:
+      title: Aquathermal heat pump with TS (waste water)
+      short_description:
+      description: |
+        This slider influences the total capacity of heat-pumps
+        abstracting heat from wastewater and equipped with thermal seasonal storage (TS) in LT heat grids.<br/><br/>
+        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> this chart</a>.
+    capacity_of_energy_heat_heatpump_waste_water_water_ts_mt_electricity:
+      title: Aquathermal heat pump with TS (waste water)
+      short_description:
+      description: |
+        This slider influences the total capacity of heat-pumps
+        abstracting heat from wastewater and equipped with thermal seasonal storage (TS) in MT heat grids.<br/><br/>
+        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> this chart</a>.
+    capacity_of_energy_heat_heatpump_drink_water_water_ts_lt_electricity:
+      title: Aquathermal heat pump with TS (drink water)
+      short_description:
+      description: |
+        This slider influences the total capacity of heat-pumps
+        abstracting heat from drinking water and equipped with thermal seasonal storage (TS) in LT heat grids.<br/><br/>
+        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> this chart</a>.
+    capacity_of_energy_heat_heatpump_drink_water_water_ts_mt_electricity:
+      title: Aquathermal heat pump with TS (drink water)
+      short_description:
+      description: |
+        This slider influences the total capacity of heat-pumps
+        abstracting heat from drinking water and equipped with thermal seasonal storage (TS) in MT heat grids.<br/><br/>
+        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> this chart</a>.
     capacity_of_energy_heat_boiler_electricity:
       title: Electric boiler
       short_description:

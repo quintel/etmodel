@@ -1,8 +1,8 @@
 ---
-- label: residual_heat_production_ht
+- label: residual_heat_demand_ht
   color: "#785EF0"
   order_by: 120
-  group: residual_heat_production
+  group: residual_heat_demand
   show_at_first: 
   is_target_line: false
   target_line_position: 
@@ -11,10 +11,10 @@
   dependent_on: 
   output_element_key: residual_heat_supply_potential
   key: residual_heat_supply_potential_production_ht_residual_heat
-- label: residual_heat_production_mt
+- label: residual_heat_demand_mt
   color: "#DC267F"
   order_by: 110
-  group: residual_heat_production
+  group: residual_heat_demand
   show_at_first: 
   is_target_line: false
   target_line_position: 
@@ -23,10 +23,10 @@
   dependent_on: 
   output_element_key: residual_heat_supply_potential
   key: residual_heat_supply_potential_production_mt_residual_heat
-- label: residual_heat_production_lt
+- label: residual_heat_demand_lt
   color: "#FFB000"
   order_by: 100
-  group: residual_heat_production
+  group: residual_heat_demand
   show_at_first: 
   is_target_line: false
   target_line_position: 

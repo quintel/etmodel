@@ -70,26 +70,33 @@
   related_node: buildings_space_heater_collective_heatpump_water_water_ts_electricity
   position: 10
   slide_key: demand_buildings_heating
+- key: buildings_space_heater_heatpump_surface_water_water_ts_electricity_share
+  share_group: heating_buildings
+  step_value: 0.1
+  unit: "%"
+  related_node: buildings_space_heater_heatpump_surface_water_water_ts_electricity
+  position: 11
+  slide_key: demand_buildings_heating
 - key: buildings_space_heater_electricity_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
   related_node: buildings_space_heater_electricity
-  position: 11
+  position: 12
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_wood_pellets_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
   related_node: buildings_space_heater_wood_pellets
-  position: 12
+  position: 13
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_crude_oil_share
   share_group: heating_buildings
   step_value: 0.1
   unit: "%"
   related_node: buildings_space_heater_crude_oil
-  position: 13
+  position: 14
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_buildings_heating
 - key: buildings_space_heater_coal_share
@@ -97,7 +104,7 @@
   step_value: 0.1
   unit: "%"
   related_node: buildings_space_heater_coal
-  position: 14
+  position: 15
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_buildings_heating
 

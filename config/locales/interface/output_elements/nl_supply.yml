@@ -305,13 +305,12 @@ nl:
         <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie is niet 
         meegenomen.
     residual_heat_supply_potential:
-      title: Restwarmteproductie en -potentieel
+      title: Vraag en potentieel van restwarmte
       short_description:
       description: |
-        Deze grafiek vergelijkt de productie met het potentieel aan beschikbare restwarmte.
-        De restwarmteproductie per temperatuurniveau kun je instellen op de pagina van 
-        You can set the supply of residual heat for each temperature level
-        in the <a href="scenario/supply/heat/overview-district-heating"> Warmtenetten</a>.
+        Deze grafiek vergelijkt de vraag met het potentieel aan beschikbare restwarmte.
+        De restwarmtevraag per temperatuurniveau kun je instellen op de pagina van 
+        <a href="scenario/supply/heat/overview-district-heating"> Warmtenetten</a>.
         Het restwarmtepotentieel wordt berekend op basis van de volgende sectoren: 
         <ul>
         <li><a href="scenario/demand/industry/refineries">Raffinaderijen</a> </li>
@@ -324,4 +323,10 @@ nl:
         de <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry/" target=\"_blank\">documentatie</a>.
         <br></br>
         Let op: hoewel je de restwarmteproductie kunt instellen op een waarde hoger dan het restwarmtepotentieel,
-        moet de restwarmte in werkelijkheid wel door één of meerdere industrieën geleverd worden.  
+        moet de restwarmte in werkelijkheid wel door één of meerdere industrieën geleverd worden.
+    heat_aquathermal_demand:
+      title: Vraag en potentieel van aquathermie
+      description: |
+        Dze grafiek laat de vraag naar warmte van aquathermie zien (oppervlaktewater, afvalwater, drinkwater).
+        De grafiek toont de verdeling van warmte tussen collectieve bronnen (warmtenetten) en individuele bronnen 
+        en bevat een indicatie van beschikbare technische thermische potentie (indien beschikbaar).

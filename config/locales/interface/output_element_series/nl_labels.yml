@@ -104,7 +104,10 @@ nl:
         energy_heat_burner_wood_pellets_steam_hot_water_output_curve: 'Biomassaketel'
         energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve: "Power-to-heat warmtepomp"
         energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve: "Power-to-heat boiler"
-        energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Collective water warmtepomp'
+        energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Collective bodemwarmtepomp'
+        energy_heat_heatpump_surface_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TEO)'
+        energy_heat_heatpump_waste_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TEA)'
+        energy_heat_heatpump_drink_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TED)'
         energy_heat_boiler_electricity_steam_hot_water_output_curve: 'Elektrische boiler'
         energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Geïmporteerde warmte'
         energy_heat_industry_residual_heat_steam_hot_water_output_curve: 'Restwarmte uit de industrie'
@@ -131,6 +134,9 @@ nl:
         energy_heat_network_storage_out: "Warmte uit (seizoens)opslag"
         energy_heat_network_storage: "(Seizoens)opslag"
         energy_heat_heatpump_water_water_electricity: "Elektrische warmtepomp"
+        energy_heat_heatpump_surface_water_water_ts_electricity: 'Warmtepomp met aquathermie (TEO)'
+        energy_heat_heatpump_waste_water_water_ts_electricity: 'Warmtepomp met aquathermie (TEA)'
+        energy_heat_heatpump_drink_water_water_ts_electricity: 'Warmtepomp met aquathermie (TED)'
         energy_heat_boiler_electricity: "Elektrische boiler"
         energy_heat_burner_wood_pellets: "Biomassaverbrander"
         energy_heat_burner_waste_mix: "Afvalverbranding"
@@ -330,6 +336,9 @@ nl:
         coal_trains: "Kolentreinen"
         coastal: "Kust"
         coastal_wind_turbines: "Windmolens aan de kust"
+        collective: "Collectieve verwarming (warmtenet)"
+        collective_heat_demand: "Collectieve warmtevraag (warmtenetten)"
+        individual_heat_demand: "Individuele warmtevraag"
         collective_chp_s: "WKK centrales"
         combined_offshore_power: "Combineerde productie op zee"
         combustion_engine_cars: "Auto's met verbrandingsmotoren"
@@ -862,6 +871,7 @@ nl:
         imported: "Geïmporteerde"
         imported_electricity: "Geïmporteerde elektriciteit"
         imported_ammonia: "Geïmporteerde ammoniak"
+        individual: "Individuele verwarming"
         interconnector_1_marginal_cost_curve: "Prijs van interconnector 1"
         interconnector_2_marginal_cost_curve: "Prijs van interconnector 2"
         interconnector_3_marginal_cost_curve: "Prijs van interconnector 3"
@@ -1160,6 +1170,10 @@ nl:
         power_to_heat_for_district_heating: "Power-to-heat voor warmtenetten"
         power_to_heat_for_industry: "Power-to-heat voor industrie"
         power_to_heat_for_agriculture: "Power-to-heat voor landbouw"
+        potential_surface_water: "Thermische potentie oppervlaktewater"
+        potential_waste_water: "Thermische potentie afvalwater"
+        potential_drink_water: "Thermische potentie drinkwater"
+        technical_thermal_potential: "Technische thermische potentie"
         peak_electricity_demand: "Piek elektriciteitsvraag"
         percentage_of_renewables: "Percentage hernieuwbaar"
         percentage_renewables: "Percentage hernieuwbaar"
@@ -1187,6 +1201,9 @@ nl:
         residual_heat_production_ht: "HT restwarmteproductie"
         residual_heat_production_mt: "MT restwarmteproductie"
         residual_heat_production_lt: "LT restwarmteproductie"
+        residual_heat_demand_ht: "HT restwarmtevraag"
+        residual_heat_demand_mt: "MT restwarmtevraag"
+        residual_heat_demand_lt: "LT restwarmtevraag"
         residual_heat_potential_refineries: "Raffinaderijen restwarmtepotentieel"
         residual_heat_potential_fertilizers: "Kunstmestprodcutie restwarmtepotentieel"
         residual_heat_potential_chemicals: "Chemische industrie restwarmtepotentieel"

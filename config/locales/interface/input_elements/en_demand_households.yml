@@ -104,6 +104,14 @@ en:
         you indicate how you expect demand for lighting per person to change. This
         is mainly determined by growth in prosperity. As people become richer, they
         start living in larger houses that require more lighting."
+    households_cooling_heatpump_surface_water_water_ts_electricity_share:
+      title: Aquathermal heat pump with TS (surface water)
+      short_description: ''
+      description: |
+        This slider influences the percentage of cooling demand from households that is filled in with heat-pumps
+        abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        due to the addition of thermal storage.
     households_cooling_heatpump_ground_water_electricity_share:
       title: Ground heat pump
       short_description: ''
@@ -455,6 +463,20 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weather curve</a>.
+    households_heater_heatpump_surface_water_water_ts_electricity_share:
+      title: Aquathermal heat pump with TS (surface water)
+      short_description: ''
+      description: |
+        This slider influences the percentage of heat demand from households that is filled in with heat-pumps
+        abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        due to the addition of thermal storage.<br/><br/>
+        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> this chart</a>.
+        It is also possible to use aquathermal energy for district heating. 
+        Checkout <a href="/scenario/supply/heat/overview-district-heating" >district heating</a> to 
+        add aquathermal heat as a heat source for LT or MT district heating. 
     households_heater_coal_share:
       title: Coal-fired heater
       short_description: ''

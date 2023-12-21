@@ -110,6 +110,15 @@ nl:
         zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Als mensen
         rijker worden, gaan ze in grotere huizen wonen waarvoor meer verlichting nodig
         is."
+    households_cooling_heatpump_surface_water_water_ts_electricity_share:
+      title: Warmtepomp met aquathermie (TEO) en WKO
+      short_description: ''
+      description: |
+        Deze slider beïnvloed het percentage van de koudevraag voor huishoudens dat
+        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater en uitgerust zijn
+        met warmte-koude opslage (WKO). <br/><br/>
+        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur 
+        door de combinatie met WKO.
     households_cooling_heatpump_ground_water_electricity_share:
       title: Bodemwarmtepomp
       short_description: ''
@@ -472,6 +481,21 @@ nl:
         Om de efficientie (COP) te beïnvloeden kun je naar de
         <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
         of het <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions" >weerjaar</a> aanpassen.
+    households_heater_heatpump_surface_water_water_ts_electricity_share:
+      title: Warmtepomp met aquathermie (TEO) en WKO
+      short_description: ''
+      description: |
+        Deze slider beïnvloed het percentage van de warmtevraag voor huishoudens dat
+        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewateren en uitgerust zijn
+        met warmte-koude opslag (WKO). <br/><br/>
+        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur 
+        door de combinatie met WKO. <br/><br/>
+        Voor meer informatie over het totale gebruik van aquathermie, open <a href="#" 
+        class="open_chart" data-chart-key="heat_aquathermal_demand" 
+        data-chart-location="side"> deze grafiek</a>.
+        Het is ook mogelijk om aquathermie in te zetten in een (collectief) warmtenet. 
+        Ga naar <a href="/scenario/supply/heat/overview-district-heating" >warmtenetten</a>
+        om aquathermie toe te voegen als warmtebron voor het MT of LT warmtenet. 
     households_heater_coal_share:
       title: Kolenketel
       short_description: ''

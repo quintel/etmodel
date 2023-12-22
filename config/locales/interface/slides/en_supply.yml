@@ -255,27 +255,29 @@ en:
     supply_heat_overview:
       title: Overview district heating
       short_description:
-      description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
-        >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
-        and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
+      description: |
+        District heating can be used as heating technology in <a href="/scenario/demand/households/space-heating-hot-water"
+        >households</a>, <a href="/scenario/demand/buildings/space-heating" >buildings</a>
+        and <a href="/scenario/demand/agriculture/heat" >agriculture</a>. There
         are roughly two types of heat sources: dispatchable and must-run heat sources.
         Dispatchable heat sources can be switched on/off depending on the heat demand
         at that time, while must-run heat sources supply the heat network regardless
-        of heat demand. For the second type in particular <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >(seasonal) storage of heat</a> is an interesting option.\r\n<br /><br />\r\nBelow
-        you can find several technologies for both types of heat sources. The chart
+        of heat demand. For the second type in particular <a href="/scenario/supply/heat/seasonal-storage-of-heat"
+        >(seasonal) storage of heat</a> is an interesting option. <br/><br/>
+        Below you can find several technologies for both types of heat sources. The chart
         on the right shows whether demand and supply add up. In addition, it is possible
         to use residual heat from (large-scale) power plants in the power sector.
         This can be done in the 'Electricity' and 'Renewable Electricity' side bar
-        items for the following power plants: <a href=\"/scenario/supply/electricity/gas-plants\"
-        >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
-        >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
-        >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        items for the following power plants: <a href="/scenario/supply/electricity/gas-plants"
+        >(Natural) gas plants</a>, <a href="/scenario/supply/electricity/coal-plants"
+        >Coal plants</a>, <a href="/scenario/supply/electricity_renewable/biomass-plants"
+        >Biomass plants</a> and <a href="/scenario/supply/electricity_renewable/waste-power"
         >Waste incineration</a>. It is also possible to convert electricity
-        into heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
-        in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
-        target =\"_blank\">documentation</a>."
+        into heat through power-to-heat boilers or heat pumps in the <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating"
+        >Flexibility section</a>. <br/><br/>
+        More information can be found
+        in our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentation</a>.
     supply_heat_overview_chp:
       title: Allocation of heat from CHPs
       short_description:

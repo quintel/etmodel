@@ -253,32 +253,31 @@ nl:
     supply_heat_overview:
       title: Overzicht warmtenetten
       short_description:
-      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
-        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
-        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
+      description: |
+        Warmtenetten kunnen worden ingezet als verwarmingstechnologie
+        in <a href="/scenario/demand/households/space-heating-hot-water" >huishoudens</a>,
+        <a href="/scenario/demand/buildings/space-heating" >gebouwen</a> en <a href="/scenario/demand/agriculture/heat"
         >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
         regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
         aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
         niet-regelbare warmtebronnen het warmtenet beleveren ongeacht de warmtevraag.
-        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
-        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        Met name voor het laatste type bronnen is <a href="/scenario/supply/heat/seasonal-storage-of-heat"
+        >(seizoens)opslag</a> interessant. <br/><br/>
+        Hieronder kun je voor beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
         De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
         mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
         Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
-        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
-        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
-        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
-        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
+        de volgende centrales: <a href="/scenario/supply/electricity/gas-plants"
+        >(Aard)gascentrales</a>, <a href="/scenario/supply/electricity/coal-plants"
+        >Kolencentrales</a>, <a href="/scenario/supply/electricity_renewable/biomass-plants"
+        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power"
         >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
         om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
-        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nHandvatten voor typische grootte van bronnen en algemene 
-        informatie over bronnen is te vinden op de website van het 
-        <a href=\"https://nplw.nl/technieken/warmtebronnen/default.aspx\"target =\"_blank\">Nationaal Programma Lokale Warmtetransitie</a>.
-        \r\n\r\n<br /><br />\r\nMeer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
-        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
-        target =\"_blank\">documentatie</a>."
+        href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating"
+        >Flexibiliteit</a>. <br/><br/>
+        Meer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
+        onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentatie</a>.
     supply_heat_overview_chp:
       title: Allocatie van warmte uit WKK's
       short_description:

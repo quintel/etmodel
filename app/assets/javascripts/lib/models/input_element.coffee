@@ -109,7 +109,7 @@ class @InputElement extends Backbone.Model
       this.handle_radio_callbacks()
 
   handle_radio_callbacks: ->
-    enabled = @get('user_value') || false
+    enabled = @get('user_value') != "default"
 
     # Handle when_true, when_false config
     { when_not_default } = (@get('config') || {})

@@ -72,6 +72,8 @@
 
       this.updateSelected();
 
+      this.model.handle_radio_callbacks();
+
       return this;
     },
 

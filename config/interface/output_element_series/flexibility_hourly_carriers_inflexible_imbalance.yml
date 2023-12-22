@@ -6,7 +6,7 @@
   label: electricity_total_system
   order_by: 100
   output_element_key: flexibility_hourly_carriers_inflexible_imbalance
-- color: "#4169E1"
+- color: "#062c9c"
   dependent_on:
   gquery: electricity_local_households_imbalance_inflexible_curve
   key: electricity_local_households_imbalance_inflexible_curve_flexibility_hourly_carriers_inflexible_imbalance

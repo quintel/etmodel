@@ -40,11 +40,17 @@ en:
           Celsius)
     settings_enable_storage_optimisation_households_flexibility_p2p_electricity:
       default:
-        title: 'Off'
-        description: The battery shows price sensitive behaviour
+        title: 'No forecasting algorithm'
+        description: |
+          Battery behaviour is price-sensitive, meaning that its behaviour is determined by the 
+          willingness-to-pay and willingness-to-accepts sliders above.
       optimizing_storage:
-        title: 'Forecasting on the full energy system'
-        description: '...'
+        title: 'System forecasting algorithm'
+        description: |
+          Battery behaviour is determined by a forecasting algorithm that looks at the supply and 
+          demand of the electricity system as a whole.
       optimizing_storage_households:
-        title: 'Forecasting only for households'
-        description: '...'
+        title: 'Local forecasting algorithm'
+        description: |
+          Battery behaviour is determined by a forecasting algorithm that looks at local household
+          electricity supply and demand.

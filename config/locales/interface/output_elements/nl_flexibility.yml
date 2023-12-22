@@ -191,17 +191,21 @@ nl:
         Meer informatie over flexibiliteit is te vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
     flexibility_hourly_carriers_inflexible_imbalance:
-      title: Onbalans ("residual load") per uur
+      title: Onbalans (<i>residual load</i>) per uur
       description: |
         Deze grafiek laat de onbalans in basislastvraag en inflexibel aanbod zien voor elektriciteit, gas, waterstof 
         en warmte per uur. De onbalans is berekend door het inflexibele aanbod af te trekken van de basislastvraag, 
-        dit heet de "residual load". Negatieve waarden betekenen "overschotten" aan energie en positieve waarden 
+        dit heet de <i>residual load</i>. Negatieve waarden betekenen "overschotten" aan energie en positieve waarden 
         "tekorten". </br></br>
         Voor netwerkgas en waterstof is een extra lijn toegevoegd, waarmee het voortschrijdend gemiddelde 
         wordt getoond. Dit wordt gebruikt om de originele residual load curve op te splitsen in twee tijdschalen 
         en daarmee de flexibiliteitsbehoefte te analyseren. Je kunt de periode van het voortschrijdend gemiddelde 
         <a href="/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales">hier</a> veranderen. </br></br>
-        Voor een analyse van de residual load van netwerkgas en waterstof kun je
+        Voor elektriciteit is ook een additionele lijn toegevoegd. Deze lijn toont de lokale <i>residual load</i> van 
+        huishoudens, die door batterijen in huishoudens gebruikt kan worden om een prognose-algoritme voor in te zetten 
+        (zie de sectie <a href="/scenario/flexibility/flexibility_storage/batteries-in-households"> 
+        Flexibiliteit</a>). </br></br>
+        Voor een analyse van de <i>residual load</i> van netwerkgas en waterstof kun je
         <a href="#" class="open_chart" data-chart-key="need_for_flexibility" data-chart-location="side">
         deze tabel</a> openen. Je kunt ook de curves downloaden in de 
         <a href="/scenario/data/data_export/hourly-curves-for-residual-load">Data-export</a> sectie.

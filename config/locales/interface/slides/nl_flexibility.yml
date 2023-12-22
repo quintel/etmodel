@@ -289,14 +289,14 @@ nl:
         <br/><br/>Optioneel kun je ervoor kiezen dit gedrag te overschrijven en in plaats daarvan het gedrag te laten bepalen door een prognose-algoritme. Dit kan door de toggle hieronder op 'aan' te zetten. In beide gevallen houdt het ETM rekening met het opslagvolume van de batterij. Zie onze <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> voor meer informatie.
     flexibility_power_storage_forecast_order:
-      title: Inzetvolgorde prognose opslag
+      title: Inzetvolgorde elektriciteitsopslagtechnologieën
       short_description:
       description: |
         In de sectie <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
         Opslag elektriciteit</a> kun je ervoor kiezen een 
         <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
         prognose-algoritme</a> in te zetten om het gedrag van opslagtechnologieën te bepalen. Hieronder kun je 
-        de inzetvolgorde bepalen voor technologieën waarvoor het prognose-algoritme is ingeschakeld. </br></br>
+        de inzetvolgorde bepalen voor technologieën waarvoor het systeemprognose-algoritme is ingeschakeld. </br></br>
         De eerste technologie zal proberen de 
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a> af te 
         vlakken. Elke daaropvolgende technologie gebruikt vervolgens de resulterende curve van de voorgaande 

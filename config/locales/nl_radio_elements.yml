@@ -38,3 +38,19 @@ nl:
           (Vollasturen: wind op land / aan de kust = 1937, wind offshore = 3334,
           zon pv = 933, zonthermie = 604. Gemiddelde temperatuursverschil t.o.v. 2015 = -0,5 graden
           Celsius)
+    settings_enable_storage_optimisation_households_flexibility_p2p_electricity:
+      default:
+        title: 'Geen prognose-algoritme'
+        description: |
+          Het batterijgedrag is prijs-gestuurd, wat betekent dat het gedrag bepaald wordt door 
+          de bovenstaande <i>willingness-to-pay</i> en <i>willingness-to-accept</i> schuifjes.
+      optimizing_storage:
+        title: 'Systeemprognose-algoritme'
+        description: |
+          Het batterijgedrag wordt bepaald door een prognose-algoritme dat reageert op vraag en 
+          aanbod van het gehele elektriciteitssysteem.
+      optimizing_storage_households:
+        title: 'Lokaal prognose-algoritme'
+        description: |
+          Het batterijgedrag wordt bepaald door een prognose-algoritme dat reageert op de lokale elektriciteitsvraag
+          en het lokale aanbod van huishoudens.

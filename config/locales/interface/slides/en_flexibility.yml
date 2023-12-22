@@ -175,7 +175,7 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
         forecasting algorithm</a> to determine the behaviour of electricity storage technologies. 
         Below you can change the merit order of storage technologies 
-        for which the forecasting algorithm is enabled. </br></br>
+        for which the system forecasting algorithm is enabled. </br></br>
         The first technology in this merit order will try to flatten the 
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>.
         Each following technology will then use the resulting curve of the previous technology to try and 
@@ -221,14 +221,16 @@ en:
       title: Batteries in households
       short_description:
       description: |
-        It is possible to install batteries in households. These can then be charged by electricity from the grid,
-        or by solar power if the household has solar panels installed. </br></br>
-        Batteries in the ETM are flexible technologies, which 
-        means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
-        will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will 
-        discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
-        See our <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
-        documentation</a> for more information.
+        It is possible to install batteries in households. By default, if the electricity price is lower than the willingness 
+        to pay of the battery in a given hour, it will charge electricity in that hour. If the electricity price exceeds the 
+        willingness to accept, it will discharge the stored electricity. <br/><br/>
+        Optionally, you can override this behaviour by switching to a 
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting" target=\"_blank\">
+        forecasting algorithm</a>. Two types of forecasting are available for household batteries. The first type uses
+        them to balance the electricity system as a whole, while the second type aims to balance local household demand with 
+        local production from solar PV. In
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
+        this chart</a> you can compare the curves to which both types of forecasting are applied.
     flexibility_power_storage_transport_car_flexibility_p2p_electricity:
       title: Batteries in electric vehicles
       short_description:

@@ -105,6 +105,18 @@ class @InputElement extends Backbone.Model
   additional_callbacks: ->
     if @get('key') == 'settings_enable_merit_order'
       App.update_merit_order_checkbox()
+    if @get('unit') == 'radio'
+      this.handle_radio_callbacks()
+
+  handle_radio_callbacks: ->
+    enabled = @get('user_value') || false
+
+    # Handle when_true, when_false config
+    { when_not_default } = (@get('config') || {})
+
+    if when_not_default && when_not_default.disables
+      for key in when_not_default.disables
+        @collection.markInputDisabled(key, @get('key'), enabled)
 
   handle_boolean_callbacks: ->
     enabled = @get('user_value') || false

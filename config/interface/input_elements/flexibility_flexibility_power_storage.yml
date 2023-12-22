@@ -46,7 +46,7 @@
   position: 14
   slide_key: flexibility_power_storage_households_flexibility_p2p_electricity
   config:
-    when_true:
+    when_not_default:
       disables:
         - wtp_of_households_flexibility_p2p_electricity
         - wta_of_households_flexibility_p2p_electricity

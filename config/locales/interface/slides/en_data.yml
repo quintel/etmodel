@@ -212,6 +212,23 @@ en:
         >
           <span class="fa fa-newspaper-o"></span> View the sheet →
         </a>
+    data_visuals_land_use_solar_wind:
+      title: Land use of solar and wind energy
+      short_description:
+      description: |
+        Solar and wind technologies partially compete for space. The chart under this section shows 
+        the total land use of all solar and wind technologies.
+        In particular, you can manually set the split between large-scale and small-scale inland wind turbines
+        using the sliders below.
+        Please note that this split is for visual purposes only and does not affect your scenario.
+
+        <br/><br/>
+
+        The full specifications of each technology, including electricity production and number of units,
+        are available in the table 
+        <a href="#" class="open_chart" data-chart-key="land_use_solar_wind" data-chart-location="side">
+        Land use of solar and wind (table)</a>
+
     flexibility_merit_order_merit_order_price:
       title: Hourly curves for electricity
       short_description:

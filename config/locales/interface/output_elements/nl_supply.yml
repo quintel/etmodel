@@ -317,3 +317,19 @@ nl:
         Dze grafiek laat de vraag naar warmte van aquathermie zien (oppervlaktewater, afvalwater, drinkwater).
         De grafiek toont de verdeling van warmte tussen collectieve bronnen (warmtenetten) en individuele bronnen 
         en bevat een indicatie van beschikbare technische thermische potentie (indien beschikbaar).
+    land_use_solar_wind:
+      title: Ruimtegebruik van zon en wind (tabel)
+      short_description:
+      description: |
+        Deze tabel toont de elektriciteitsproductie, technische parameters en landgebruik van alle opwek uit zon en wind.
+        De opwek van wind op land kan handmatig onderverdeeld worden in grootschalige en kleinschalige turbines.
+        Het aandeel van deze typen turbines kun je instellen in de 
+        <a href="scenario/data/data_visuals/data/data_visuals/land-use-of-solar-and-wind-energy-supply"> Ruimtegebruik van zon en wind </a> sectie.
+        Let op: de onderverdeling tussen grootschalig en kleinschalige wind op land heeft alleen een visuele functie. 
+        Deze onderverdeling heeft geen verdere invloed op jouw scenario.
+    land_use_solar_wind_chart:
+      title: Ruimtegebruik van zon en wind (grafiek)
+      short_description:
+      description: |
+        Deze grafiek toont het ruimtegebruik van opwek uit zon en wind. Het ruimtegebruik is onderverdeeld in
+        ruimtegebruik op zee, op land en op dak. Voor technologieën op dak wordt ook het potentieel getoond, dat wil zeggen: het totale beschikbare dakoppervlak.

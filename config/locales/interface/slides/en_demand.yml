@@ -441,8 +441,11 @@ en:
         does this affect energy use? In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine the fuelmix.
     demand_households_overview:
       title: Energy demand households
-      short_description:
-      description: ''  
+      short_description: 
+      description: |
+        The energy demand for households is responsible for a significant part of the energy use.
+        Most of the energy demand is used for heat in the households section. 
+        Next to the heat demand, demand for power to use for lightning or appliances such as tv's can be found in this section as well.
     demand_households_heating_producers:
       title: Merit order heat
       short_description:

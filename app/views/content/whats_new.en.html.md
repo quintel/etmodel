@@ -1,6 +1,83 @@
 # What's new in the Energy Transition Model?
 ___
 
+# January 2024
+
+### Load shifting
+
+
+Modelling load shifting for the industrial sector has been extended. 
+Users can now set the load reduction capacity and load increase capacity separately. 
+This extension allows the user to model load shifting more accurately.
+It can be found in *Flexibility* → *Net load* **[Demand response - load shifting in indsutry](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)**
+
+### Residential forecasting
+
+Users can now change the residential forecasting algorithm used to allocate power within batteries in households. 
+
+The local forecasting algorithm tries to match electricity supply and demand at local households. 
+This could improve the local usage of batteries in households.
+It can be found in *Flexibility* → *Electricity storage* → **[Batteries in households](/scenario/flexibility/flexibility_storage/batteries-in-households)**
+
+
+
+# December 2023
+
+## Transit flows
+
+Users can gain more insight in the transit flows of energy carriers within their system.
+A new tab is added in which the export volume per carrier can be set. 
+Also, new graphs have been added which give an overview of the transit flows in the energy system. 
+It can be found in *Demand* → *Export* → **[Transit flows](/scenario/demand/export_energy/transit-flows)**
+
+In addition 2 new hydrogen carriers have been added to the ETM:
+
+* Liquid organic hydrogen carriers (LOHC)
+LOHCs are substances that can store and transport hydrogen in a liquid form.
+This form provides a higher energy density compared to gaseous hydrogen.
+
+* Liquid hydrogen (LH2)
+At extremely low temperatures, hydrogen gas can be compressed into liquid form. 
+The liquid form makes it more compressed, this leads to an advantage in transporting the hydrogen. 
+
+
+
+# November 2023
+
+
+### Heat
+
+The heat modeling for buildings and households has been heavily revised. The updates for this section of the ETM can be divided over the following three packages.  
+
+### Temperature levels of district heating
+
+Three distinctions in temperature levels of district heating networks are made in the model: High temperature (HT, 75+ degrees Celsius), Medium temperature (MT, 55-75 degrees Celsius) and Low temperature (LT, 30-55 degrees Celsius). User can now specify the heat sources, seasonal storage of heat, transport and distribution losses and the merit order of dispatchable heat sources for each of the district heating networks.
+This can be found in *Supply* → **[District heating](/scenario/supply/heat/overview-district-heating)**
+
+### Aquathermal 
+
+Now, extra Aquathermal technologies for heat modelling have been added to the ETM. 
+These can be allocated to the heat demand of buildings and households while using a merit order.
+With these features, users are able to gain insights in the potential of these technologies In the energy transition.
+This can be found in *Demand* → *Households* → **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)**
+
+### Residual heat
+
+
+Households have also been divided over 4 types: 
+
+* Apartments
+
+* Detached houses
+
+* Semi-detached houses
+
+* Terraced houses
+
+For each of these 4 types, 6 different building periods can be applied, resulting in 24 different residential types. 
+For each of these 24 residential types a different insulation level can be set by the user, giving more accuracy in modelling the heat demand.  
+This can be found in *Demand* → *Households* → **[Population & housing stock](/scenario/demand/households/population-and-housing-stock)**
+
 # June 2023
 
 ## Adjustable specifications of electricity storage technologies

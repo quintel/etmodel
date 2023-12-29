@@ -8,6 +8,38 @@ nl:
         Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
         ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
         van de belangrijkste factoren die de energievraag beïnvloeden. '
+    buildings_number_of_buildings_future:
+      title: New buildings
+      short_description: ''
+      description: |
+        Met deze slider wordt het aantal in de toekomst gebouwde gebouwen ingesteld.
+        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
+        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
+        van de belangrijkste factoren die de energievraag beïnvloeden. '
+        <br/><br/>De warmtevraag van deze gebouwen kan hier <a href="/scenario/demand/buildings/typical-heat-demand-per-building">hier</a> aangepast worden.
+    buildings_number_of_buildings_present:
+      title: Present buildings
+      short_description: ''
+      description: |
+        Met deze slider wordt het aantal huidige gebouwen ingesteld.
+        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
+        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
+        van de belangrijkste factoren die de energievraag beïnvloeden. '
+        <br/><br/>De warmtevraag van deze gebouwen kan hier <a href="/scenario/demand/buildings/typical-heat-demand-per-building">hier</a> aangepast worden.
+    buildings_insulation_level_buildings_future:
+      title: New buildings
+      short_description: ''
+      description: |
+        Met deze slider wordt de warmtevraag van de toekomst gebouwde gebouwen ingesteld.
+        Een lagere warmtevraag representeerd een beter isolatie niveau.
+        <br/><br/> Het aantal toekomstige gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
+    buildings_insulation_level_buildings_present:
+      title: Present buildings
+      short_description:
+      description: |
+        Met deze slider wordt de warmtevraag van de huidige gebouwen ingesteld.
+        Een lagere warmtevraag representeerd een beter isolatie niveau.
+        <br/><br/> Het aantal huidige gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.     
     buildings_useful_demand_electricity:
       title: Elektriciteit per gebouw
       short_description: ''

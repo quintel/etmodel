@@ -40,38 +40,29 @@ ___
 
 # November 2023
 
-### Heat
+## Heat
 
-The heat modeling for buildings and households has been heavily revised. The updates for this section of the ETM can be divided over the following three packages.  
+There are a number of significant changes for the modelling of heat in the ETM. The following three main changes have been made.
 
 ### Temperature levels of district heating
 
-Three distinctions in temperature levels of district heating networks are made in the model: High temperature (HT, 75+ degrees Celsius), Medium temperature (MT, 55-75 degrees Celsius) and Low temperature (LT, 30-55 degrees Celsius). User can now specify the heat sources, seasonal storage of heat, transport and distribution losses and the merit order of dispatchable heat sources for each of the district heating networks.
-This can be found in *Supply* → **[District heating](/scenario/supply/heat/overview-district-heating)**
+District heating networks on different temperature levels can be specified: high temperature (HT), medium temperature (MT) and low temperature (LT). Each temperature level has distinct heat sources. You can set the demand, supply, storage and transport and losses for each temperature level. The costs of district heating infrastructure have been updated, using values specific for each temperature level. Finally, a number of charts have been added to help you set demand and supply. Explore the new **[District heating](/scenario/supply/heat/overview-district-heating)** section to find out more.
+
+-> <img src="/assets/pages/whats_new/district_heating_sankey_en.png" width="600" /> <-
 
 ### Aquathermal 
 
-Now, extra Aquathermal technologies for heat modelling have been added to the ETM. 
-These can be allocated to the heat demand of buildings and households while using a merit order.
-With these features, users are able to gain insights in the potential of these technologies In the energy transition.
-This can be found in *Demand* → *Households* → **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)**
+Now, extra aquathermal technologies have been added to the ETM. Aquathermal refers to using water for heating and cooling. Three types of water reservoirs are taken into account: drink water, surface water and waste water.
+
+Aquathermal technologies can be selected for invidiual residences, both for **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)** and for **[Cooling](/scenario/demand/households/cooling)**. This also applies to **[Space heating](/scenario/demand/buildings/space-heating)** and **[Cooling](/scenario/demand/buildings/cooling)** in buildings. Additionally, aquathermal heat can be used in MT and LT district heating. A chart has been added that allows you to demand for aquathermal heat and compare it to the potential.
+
+-> <img src="/assets/pages/whats_new/aquathermal_heat_en.png" width="600" /> <-
 
 ### Residual heat
 
+It is now possible to specify exactly the amount of residual heat you want to use in your scenario. You can then compare the demand for residual heat with an estimate of the potential in a new chart. The estimate of the potential depends on the respective size of the industry sectors.
 
-Households have also been divided over 4 types: 
-
-* Apartments
-
-* Detached houses
-
-* Semi-detached houses
-
-* Terraced houses
-
-For each of these 4 types, 6 different building periods can be applied, resulting in 24 different residential types. 
-For each of these 24 residential types a different insulation level can be set by the user, giving more accuracy in modelling the heat demand.  
-This can be found in *Demand* → *Households* → **[Population & housing stock](/scenario/demand/households/population-and-housing-stock)**
+-> <img src="/assets/pages/whats_new/residual_heat_chart_en.png" width="600" /> <-
 
 ___
 

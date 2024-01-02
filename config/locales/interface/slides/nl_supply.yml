@@ -254,30 +254,26 @@ nl:
       title: Overzicht warmtenetten
       short_description:
       description: |
-        Warmtenetten kunnen worden ingezet als verwarmingstechnologie
-        in <a href="/scenario/demand/households/space-heating-hot-water" >huishoudens</a>,
-        <a href="/scenario/demand/buildings/space-heating" >gebouwen</a> en <a href="/scenario/demand/agriculture/heat"
-        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
-        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
-        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
-        niet-regelbare warmtebronnen het warmtenet beleveren ongeacht de warmtevraag.
-        Met name voor het laatste type bronnen is <a href="/scenario/supply/heat/seasonal-storage-of-heat"
-        >(seizoens)opslag</a> interessant. <br/><br/>
-        Hieronder kun je voor beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
-        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
-        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
-        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
-        de volgende centrales: <a href="/scenario/supply/electricity/gas-plants"
-        >(Aard)gascentrales</a>, <a href="/scenario/supply/electricity/coal-plants"
-        >Kolencentrales</a>, <a href="/scenario/supply/electricity_renewable/biomass-plants"
-        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power"
-        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
-        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
-        href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating"
-        >Flexibiliteit</a>. <br/><br/>
-        Meer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
-        onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
-        target =\"_blank\">documentatie</a>.
+        Warmtenetten kunnen worden ingezet om warmte te leveren aan 
+        <a href="/scenario/demand/households/space-heating-hot-water">huishoudens</a>,
+        <a href="/scenario/demand/buildings/space-heating">gebouwen</a> en
+        <a href="/scenario/demand/agriculture/heat">landbouw</a>. </br></br>
+        Een warmtenet opereert meestal op een specifiek temperatuurniveau, maar verschillende 
+        netten kunnen verschillende temperaturen hebben. Het ETM biedt drie temperatuurniveaus 
+        aan. Bepaalde karakteristieken verschillen per temperatuurniveau, zoals de beschikbare 
+        warmtebronnen, de verliezen en de kosten. Je kunt dit aanpassen in de bijbehorende secties: </br>
+        <ul>
+        <li><a href="/scenario/supply/heat_ht/sources">Hoge temperatuur (HT)</a></li>
+        <li><a href="/scenario/supply/heat_mt/sources">Medium temperatuur (MT)</a></li>
+        <li><a href="/scenario/supply/heat_lt/sources">Lage temperatuur (LT)</a></li>
+        </ul></br>
+        Voor bepaalde bronnen wordt het aanbod van warmte bepaald door andere factoren in het model.
+        Voor deze bronnen kun je de verdeling van warmte over de verschillende temperatuurniveaus 
+        instellen in onderstaande slides. Dit geldt voor 
+        warmte van <a href="/scenario/supply/heat/allocation-of-heat-from-chps">WKK's</a> and
+        warmte van <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
+        Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentatie</a> voor meer informatie.
     supply_heat_overview_chp:
       title: Allocatie van warmte uit WKK's
       short_description:
@@ -327,7 +323,6 @@ nl:
         die typisch rond de 10-15% liggen voor moderne warmtenetten en kunnen oplopen
         naar 30% of hoger voor oudere infrastructuur.\r\n<br /><br />\r\nHieronder
         kun je de distributieverliezen in jouw scenario instellen."
-
     supply_heat_network_industry:
       title: Bronnen stoomnet
       short_description: ''
@@ -409,10 +404,10 @@ nl:
         vermogen in je scenario hebt, kan het voorkomen dat er aan het einde van het
         'warmtejaar' (dat loopt van 1 april tot 31 maart) een warmteoverschot in de
         opslag achterblijft. Om te voorkomen dat deze warmte verloren gaat, kun je
-        proberen om <a href=\"/scenario/supply/heat/heat-sources\" >het geïnstalleerd
+        proberen om <a href=\"/scenario/supply/heat_ht/heat-sources\" >het geïnstalleerd
         vermogen van niet-regelbare / volatiele warmtebronnen</a> te verlagen, de
         warmtevraag in je scenario te verhogen of de positie van warmteopslag in <a
-        href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        href=\"/scenario/supply/heat_ht/merit-order-of-dispatchable-heat-sources\"
         >de inzetvolgorde van regelbare warmtebronnen</a> te veranderen.\r\n<br><br
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
@@ -434,10 +429,10 @@ nl:
         vermogen in je scenario hebt, kan het voorkomen dat er aan het einde van het
         'warmtejaar' (dat loopt van 1 april tot 31 maart) een warmteoverschot in de
         opslag achterblijft. Om te voorkomen dat deze warmte verloren gaat, kun je
-        proberen om <a href=\"/scenario/supply/heat/heat-sources\" >het geïnstalleerd
+        proberen om <a href=\"/scenario/supply/heat_mt/heat-sources\" >het geïnstalleerd
         vermogen van niet-regelbare / volatiele warmtebronnen</a> te verlagen, de
         warmtevraag in je scenario te verhogen of de positie van warmteopslag in <a
-        href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        href=\"/scenario/supply/heat_mt/merit-order-of-dispatchable-heat-sources\"
         >de inzetvolgorde van regelbare warmtebronnen</a> te veranderen.\r\n<br><br
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
@@ -459,10 +454,10 @@ nl:
         vermogen in je scenario hebt, kan het voorkomen dat er aan het einde van het
         'warmtejaar' (dat loopt van 1 april tot 31 maart) een warmteoverschot in de
         opslag achterblijft. Om te voorkomen dat deze warmte verloren gaat, kun je
-        proberen om <a href=\"/scenario/supply/heat/heat-sources\" >het geïnstalleerd
+        proberen om <a href=\"/scenario/supply/heat_lt/heat-sources\" >het geïnstalleerd
         vermogen van niet-regelbare / volatiele warmtebronnen</a> te verlagen, de
         warmtevraag in je scenario te verhogen of de positie van warmteopslag in <a
-        href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        href=\"/scenario/supply/heat_lt/merit-order-of-dispatchable-heat-sources\"
         >de inzetvolgorde van regelbare warmtebronnen</a> te veranderen.\r\n<br><br
         />\r\nOpslagverliezen kunnen worden aangepast met het schuifje onder de knop.
         De opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
@@ -470,90 +465,55 @@ nl:
     supply_heat_sources_ht:
       title: "Bronnen"
       short_description:
-      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
-        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
-        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
-        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
-        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
-        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
-        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
-        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
-        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
-        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
-        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
-        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
-        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
-        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
-        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
-        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
-        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
-        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nHandvatten voor typische grootte van bronnen en algemene 
-        informatie over bronnen is te vinden op de website van het 
-        <a href=\"https://nplw.nl/technieken/warmtebronnen/default.aspx\"target =\"_blank\">Nationaal Programma Lokale Warmtetransitie</a>.
-        \r\n\r\n<br /><br />\r\nMeer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
-        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
-        target =\"_blank\">documentatie</a>."
+      description: |
+        Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan- 
+        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment. 
+        Welke regelbare warmtebron eerst gaat, kun bepalen door de
+        <a href="/scenario/supply/heat_ht/merit-order-of-dispatchable-heat-sources">inzetvolgorde</a>
+        te veranderen. Niet-regelbare warmtebronnen produceren ongeacht de warmtevraag.
+        Voor dit laatste type bronnen kan 
+        <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">(seizoens)opslag</a> interessant zijn. </br></br>
+        Hieronder kun je voor beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Naast deze bronnen kan warmte worden
+        geleverd door <a href="/scenario/supply/heat/allocation-of-heat-from-chps">WKK's</a> of door 
+        <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
+        Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentatie</a> voor meer informatie.
     supply_heat_sources_lt:
       title: "Bronnen"
       short_description:
-      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
-        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
-        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
-        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
-        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
-        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
-        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
-        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
-        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
-        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
-        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
-        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
-        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
-        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
-        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
-        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
-        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
-        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nHandvatten voor typische grootte van bronnen en algemene 
-        informatie over bronnen is te vinden op de website van het 
-        <a href=\"https://nplw.nl/technieken/warmtebronnen/default.aspx\"target =\"_blank\">Nationaal Programma Lokale Warmtetransitie</a>.
-        \r\n\r\n<br /><br />\r\nMeer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
-        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
-        target =\"_blank\">documentatie</a>."
+      description: |
+        Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan- 
+        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment. 
+        Welke regelbare warmtebron eerst gaat, kun bepalen door de
+        <a href="/scenario/supply/heat_lt/merit-order-of-dispatchable-heat-sources">inzetvolgorde</a>
+        te veranderen. Niet-regelbare warmtebronnen produceren ongeacht de warmtevraag.
+        Voor dit laatste type bronnen kan 
+        <a href="/scenario/supply/heat_lt/seasonal-storage-of-heat">(seizoens)opslag</a> interessant zijn. </br></br>
+        Hieronder kun je voor beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn.
+        Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentatie</a> voor meer informatie.
     supply_heat_sources_mt:
       title: "Bronnen"
       short_description:
-      description: "Warmtenetten kunnen worden ingezet als verwarmingstechnologie
-        in <a href=\"/scenario/demand/households/space-heating-hot-water\" >huishoudens</a>,
-        <a href=\"/scenario/demand/buildings/space-heating\" >gebouwen</a> en <a href=\"/scenario/demand/agriculture/heat\"
-        >landbouw</a>. Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
-        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen
-        aan/uit worden gezet afhankelijk van de warmtevraag op dat moment, terwijl
-        niet-regelbare warmtebronnen het warmtenet voorzien ongeacht de warmtevraag.
-        Met name voor het laatste type bronnen is <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >(seizoens)opslag</a> interessant.\r\n<br /><br />\r\nHieronder kun je voor
-        beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
-        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Ook is het
-        mogelijk om restwarmte uit de elektriciteitssector te voeden in het warmtenet.
-        Dit kan in de menu-items 'Elektriciteit' en 'Hernieuwbare Elektriciteit' voor
-        de volgende centrales: <a href=\"/scenario/supply/electricity/gas-plants\"
-        >(Aard)gascentrales</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
-        >Kolencentrales</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
-        >Biomassacentrales</a> en <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Afvalverbranding</a>. Daarbij is het mogelijk om elektriciteit
-        om te zetten in warmte d.m.v. power-to-heat boilers of warmtepompen bij <a
-        href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibiliteit</a>.\r\n\r\n<br /><br />\r\nHandvatten voor typische grootte van bronnen en algemene 
-        informatie over bronnen is te vinden op de website van het 
-        <a href=\"https://nplw.nl/technieken/warmtebronnen/default.aspx\"target =\"_blank\">Nationaal Programma Lokale Warmtetransitie</a>.
-        \r\n\r\n<br /><br />\r\nMeer informatie over hoe het ETM rekent aan warmtenetten kunt u vinden in
-        onze <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
-        target =\"_blank\">documentatie</a>."
+      description: |
+        Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan- 
+        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment. 
+        Welke regelbare warmtebron eerst gaat, kun bepalen door de
+        <a href="/scenario/supply/heat_mt/merit-order-of-dispatchable-heat-sources">inzetvolgorde</a>
+        te veranderen. Niet-regelbare warmtebronnen produceren ongeacht de warmtevraag.
+        Voor dit laatste type bronnen kan 
+        <a href="/scenario/supply/heat_mt/seasonal-storage-of-heat">(seizoens)opslag</a> interessant zijn. </br></br>
+        Hieronder kun je voor beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
+        De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Naast deze bronnen kan warmte worden
+        geleverd door <a href="/scenario/supply/heat/allocation-of-heat-from-chps">WKK's</a> of door 
+        <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
+        Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentatie</a> voor meer informatie.
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:

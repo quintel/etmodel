@@ -23,11 +23,11 @@ ___
 
 Many regions deal with energy flows that merely pass through the region and are not consumed or produced by parts of the local energy system. Users can now gain more insight in these transit flows of energy carriers within their system. In order to model transit flows in your scenario, you can set the inflexible export volumes of several energy carriers. Setting an export flow also enforces an import flow for the system to be balanced.
 
-New charts have been added which give an overview of the transit flows in the energy system. The new features can be found in *Demand* → **[Export](/scenario/demand/export_energy/transit-flows)**.
+New charts have been added which give an overview of the transit flows in the energy system. The new features can be found in the **[Demand](/scenario/demand/export_energy/transit-flows)** section. 
 
 -> <img src="/assets/pages/whats_new/transit_flows_en.png" width="600" /> <-
 
-It is also possible to model a transit flow for CO<sub>2</sub> by setting an import flow in Mton. See *Emissions* → *CCUS* → [Capture and import of CO<sub>2</sub>](/scenario/emissions/ccus/capture-and-import-of-co2).
+It is also possible to model a transit flow for CO<sub>2</sub> by setting an import flow in Mton. See the **[Emissions](/scenario/emissions/ccus/capture-and-import-of-co2)** section.
 
 -> <img src="/assets/pages/whats_new/co2_import_en.png" width="600" /> <-
 
@@ -41,7 +41,7 @@ This form provides a higher energy density compared to gaseous hydrogen.
 * **Liquid hydrogen (LH2)** — At extremely low temperatures, hydrogen gas can be compressed into liquid form. 
 The liquid form makes it more compressed, this leads to an advantage in transporting the hydrogen. 
 
-This allows for instance to import liquid hydrogen, reform it to produce gaseous hydrogen and export the latter. See the new hydrogen production technologies in *Supply* → *Hydrogen* → **[Hydrogen production](/scenario/supply/hydrogen/hydrogen-production)**.
+This allows for instance to import liquid hydrogen, reform it to produce gaseous hydrogen and export the latter. See the new hydrogen production technologies in the **[Supply](/scenario/supply/hydrogen/hydrogen-production)** section. 
 
 ___
 
@@ -61,7 +61,7 @@ District heating networks on different temperature levels can be specified: high
 
 Now, extra aquathermal technologies have been added to the ETM. Aquathermal refers to using water for heating and cooling. Three types of water reservoirs are taken into account: drink water, surface water and waste water.
 
-Aquathermal technologies can be selected for invidiual residences, both for **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)** and for **[Cooling](/scenario/demand/households/cooling)**. This also applies to **[Space heating](/scenario/demand/buildings/space-heating)** and **[Cooling](/scenario/demand/buildings/cooling)** in buildings. Additionally, aquathermal heat can be used in MT and LT district heating. A chart has been added that allows you to demand for aquathermal heat and compare it to the potential.
+Aquathermal technologies can be selected for invidiual residences, both for **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)** and for **[Cooling](/scenario/demand/households/cooling)**. This also applies to **[Space heating](/scenario/demand/buildings/space-heating)** and **[Cooling](/scenario/demand/buildings/cooling)** in buildings. Additionally, aquathermal heat can be used in MT and LT district heating. A chart has been added that allows you to see the demand for aquathermal heat and compare it to the potential.
 
 -> <img src="/assets/pages/whats_new/aquathermal_heat_en.png" width="600" /> <-
 

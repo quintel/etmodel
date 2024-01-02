@@ -4,16 +4,19 @@ ___
 
 # Januari 2024
 
-### Vraagverschuiving
+### Lokale prognose voor batterijen van huishoudens
 
-Het modelleren van load shifting voor de industriële sector is uitgebreid. Gebruikers kunnen nu de capaciteit voor het verminderen en verhogen van de belasting afzonderlijk instellen. Deze uitbreiding stelt de gebruiker in staat om load shifting nauwkeuriger te modelleren. Dit is te vinden in *Flexibiliteit* → *Netbelasting* [Vraagsturen - vraagverschuiving in industrie](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)
+Gebruikers kunnen nu 2 types prognose voor huishoudelijke batterijen kiezen. De eerste is het bestaande systeem prognose algoritme, die voor alle elektrische opslag beschikbaar is. De tweede is het nieuwe lokale algoritme. In plaats van op alle elektriciteitsvraag - en aanbod focust het lokaal prognose algorithme alleen op de huishoud elektricitietsvraag - en aanbod. De algoritmes hebben een andere uitwerking op het elektriciteitsnetwerk. Probeer het zelf in de **[Flexibiliteit](/scenario/flexibility/flexibility_storage/batteries-in-households)** sectie.
 
-### Lokale prognose 
 
-Gebruikers kunnen nu het algoritme voor residentiële voorspelling wijzigen dat wordt gebruikt om stroom toe te wijzen binnen batterijen in huishoudens.
 
-Het lokale voorspellingsalgoritme probeert de elektriciteitsaanbod en -vraag in lokale huishoudens op elkaar af te stemmen. Dit kan het lokale gebruik van batterijen in huishoudens verbeteren. Dit is te vinden in *Flexibiliteit* → *Opslag elektriciteit* → [Batterijen in huishoudens](/scenario/flexibility/flexibility_storage/batteries-in-households)
+-> <img src="/assets/pages/whats_new/residential_forecasting_nl.png" width="600" /> <-
 
+### Input capaciteit van vraagverschuiving
+
+Het modelleren van load shifting voor de industriële sector is uitgebreid. Bij het toepassen van de vraagverschuiving in de industriële sector kunnen gebruikers nu de capaciteit voor het verminderen en verhogen van de belasting op het net afzonderlijk instellen. Deze uitbreiding stelt de gebruiker in staat om de impact van de verhoogde belasting op het net te verminderen. Dit is te vinden in de **[Flexibiliteit](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)** sectie.
+
+-> <img src="/assets/pages/whats_new/input_capacity_dsr_nl.png" width="600" /> <-
 
 
 # December 2023
@@ -22,11 +25,11 @@ Het lokale voorspellingsalgoritme probeert de elektriciteitsaanbod en -vraag in 
 
 Veel regio's hebben te maken met energiestromen die niet geproduceerd of verbruikt worden binnen het lokale energiesysteem maar alleen worden doorgevoerd naar het achterland. Gebruikers kunnen nu meer inzicht krijgen in deze transitstromen of doorvoerstromen van energiedragers binnen hun systeem. Om transitstromen te modelleren in je scenario, kun je als gebruiker de inflexibele exportvolumes van verschillende energiedragers instellen. Het instellen van zo'n exportstroom dwingt ook een vraag naar import af in je scenario zodat het energiesysteem in balans blijft.
 
-Er zijn nieuwe grafieken toegevoegd die een overzicht geven van de (netto) importstromen, exportstromen en transitstromen in het energiesysteem. Zie *Vraag* → **[Export](/scenario/demand/export_energy/introduction)** voor de nieuwe functionaliteiten.
+Er zijn nieuwe grafieken toegevoegd die een overzicht geven van de (netto) importstromen, exportstromen en transitstromen in het energiesysteem. Zie de **[Vraag](/scenario/demand/export_energy/introduction)** sectie voor de nieuwe functionaliteiten.
 
 -> <img src="/assets/pages/whats_new/transit_flows_nl.png" width="600" /> <-
 
-Ook is het mogelijk om voor CO<sub>2</sub> een transitstroom te modelleren door een importstroom in Mton in te stellen. Zie *Emissies* → *CCUS* → **[Afvang en import van CO<sub>2</sub>](/scenario/emissions/ccus/capture-and-import-of-co2)**.
+Ook is het mogelijk om voor CO<sub>2</sub> een transitstroom te modelleren door een importstroom in Mton in te stellen. Zie de **[Emissies](/scenario/emissions/ccus/capture-and-import-of-co2)** sectie.
 
 -> <img src="/assets/pages/whats_new/co2_import_nl.png" width="600" /> <-
 
@@ -38,7 +41,7 @@ Hiernaast zijn er 2 nieuwe waterstofdragers toegevoegd aan de ETM:
 
 * **Vloeibare waterstof (LH2)** — Bij extreem lage temperaturen kan waterstofgas worden samengeperst tot vloeibare vorm. Deze vloeibare vorm maakt de dichtheid hoger, wat een voordeel oplevert bij het transport.
 
-Dit maakt het bijvoorbeeld ook mogelijk om vloeibare waterstof te importeren, om te zetten naar waterstofgas en in deze vorm te exporteren naar het achterland. Zie ook de nieuwe LH2 vergassing en LOHC reforming technologieën in *Aanbod* → *Waterstof* → **[Waterstofstofproductie](/scenario/supply/hydrogen/hydrogen-production)**.
+Dit maakt het bijvoorbeeld ook mogelijk om vloeibare waterstof te importeren, om te zetten naar waterstofgas en in deze vorm te exporteren naar het achterland. Zie ook de nieuwe LH2 vergassing en LOHC reforming technologieën in **[Aanbod](/scenario/supply/hydrogen/hydrogen-production)**.
 
 
 # November 2023
@@ -46,30 +49,31 @@ Dit maakt het bijvoorbeeld ook mogelijk om vloeibare waterstof te importeren, om
 
 ### Warmte
 
-Het modelleren van warmte voor gebouwen en huishoudens is grondig herzien. De updates voor dit gedeelte van de ETM kunnen worden onderverdeeld in de volgende drie pakketten.
+Het modelleren van warmte voor gebouwen en huishoudens is grondig herzien. De volgende drie hoofdveranderingen zijn doorgevoerd.
 
 ### Temperatuurniveaus van warmtenetten
 
-Er worden drie onderscheidingen gemaakt in temperatuurniveaus van warmtenetten in het model: Hoge temperatuur (HT, 75+ graden Celsius), Medium temperatuur (MT, 55-75 graden Celsius) en Lage temperatuur (LT, 30-55 graden Celsius). Gebruikers kunnen nu de warmtebronnen, seizoensopslag van warmte, transport- en distributieverliezen en de merit order van inzetbare warmtebronnen specificeren voor elk van de stadsverwarmingnetwerken. Dit is te vinden in *Aanbod* → [Warmtenetten](/scenario/supply/heat/overview-district-heating)
+Er worden drie onderscheidingen gemaakt in temperatuurniveaus van warmtenetten in het model: Hoge temperatuur (HT), Medium temperatuur (MT) en Lage temperatuur (LT). Elke temperatuur heeft verschillende warmtebronnen. Voor elk niveau kan de vraag, het aanbod, transport en verliezen ingesteld worden. De kosten van de warmte infrastructuur zijn geüpdatet, waarbij specifieke waardes voor de verschillende temperatuurniveaus zijn gebruikt. Afsluitend zijn grafieken toegevoegd als hulpmiddel voor het zetten van de vraag en het aanbod. Ontdek de nieuwe **[Warmtenetten](/scenario/supply/heat/overview-district-heating)** sectie om meer te weten te komen.
+
+-> <img src="/assets/pages/whats_new/district_heating_sankey_nl.png" width="600" /> <-
 
 ### Aquathermie
 
-Extra Aquathermische technologieën voor warmtemodellering toegevoegd aan de ETM. Deze kunnen worden toegewezen aan de warmtevraag van gebouwen en huishoudens met behulp van een merit order. Met deze functies kunnen gebruikers inzicht krijgen in het potentieel van deze technologieën in de energietransitie. Dit is te vinden in *Vraag* → *Huishoudens* → [Ruimteverwarming & warm water](/scenario/demand/households/space-heating-and-hot-water)
+Extra Aquathermische technologieën voor warmtemodellering zijn toegevoegd aan het ETM. 
+Aquathermal verwijst naar het gebruik van water voor verwarming en koeling. Er worden drie soorten waterreservoirs in overweging genomen: drinkwater, oppervlaktewater en afvalwater.
+
+Aquathermische technologieën kunnen gebruikt worden voor individuele houshuidens, zowel voor **[Ruimteverwarming & warm water](/scenario/demand/households/space-heating-and-hot-water)** als **[Koeling](/scenario/demand/households/cooling)**. Dit geldt ook voor **[Ruimteverwarming](/scenario/demand/buildings/space-heating)** en **[Koeling](/scenario/demand/buildings/cooling)** in gebouwen. Hiernaast kan aquathermie gebruikt worden in MT & LT warmtenetten. Een grafiek is toegevoegd aan het model zodat de gebruiker de vraag voor aquathermische warmte kan inzien en deze kan vergelijken met het potentieel.
+
+
+-> <img src="/assets/pages/whats_new/aquathermal_heat_nl.png" width="600" /> <-
+
 
 ### Restwarmte
 
-Huishoudens zijn ook onderverdeeld in 4 typen:
 
-* Appartementen
+Het is nu mogelijk om precies de hoeveelheid restwarmte te specificeren die u wilt gebruiken in uw scenario. U kunt vervolgens de vraag naar restwarmte vergelijken met een schatting van het potentieel in een nieuw diagram. De schatting van het potentieel hangt af van de respectieve omvang van de industriële sectoren.
 
-* Vrijstaande huizen
-
-* Hoekhuizen
-
-* Rijtjeshuizen
-
-Voor elk van deze 4 typen kunnen 6 verschillende bouwperioden worden toegepast, resulterend in 24 verschillende woontypen. Voor elk van deze 24 woontypen kan de gebruiker een ander isolatieniveau instellen, wat zorgt voor meer nauwkeurigheid in het modelleren van de warmtevraag. Dit is te vinden in *Vraag* → *Huishoudens* → [Bevolking & huizenvoorraad](/scenario/demand/households/population-and-housing-stock)
-
+-> <img src="/assets/pages/whats_new/residual_heat_chart_nl.png" width="600" /> <-
 
 # Juni 2023
 

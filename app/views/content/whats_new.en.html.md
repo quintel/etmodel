@@ -3,23 +3,19 @@ ___
 
 # January 2024
 
-### Load shifting
+### Local forecasting for household batteries
 
+You can now choose two types of forecasting for household batteries. The first is the existing system forecasting algorithm, which is available for all electricity storage technologies. The second is a new local forecasting algorithm. Instead of all the electricity demand and supply in a region, it only tries to match household electricity demand and supply. Both types of forecasting have a different impact on the electricity grid. Try it for yourself in the **[Flexibility](/scenario/flexibility/flexibility_storage/batteries-in-households)** section.
 
-Modelling load shifting for the industrial sector has been extended. 
-Users can now set the load reduction capacity and load increase capacity separately. 
-This extension allows the user to model load shifting more accurately.
-It can be found in *Flexibility* → *Net load* **[Demand response - load shifting in indsutry](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)**
+-> <img src="/assets/pages/whats_new/residential_forecasting_en.png" width="600" /> <-
 
-### Residential forecasting
+### Input capacity for load shifting
 
-Users can now change the residential forecasting algorithm used to allocate power within batteries in households. 
+Demand-side response in the industry has been updated. When applying load shifting in an industry sector, it is now possible to set the available capacity to increase the load seperately from the capacity to decrease the load. This makes it possible to reduce the impact of the increased load on the electricity grid. It can be found in the **[Flexibility](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)** section.
 
-The local forecasting algorithm tries to match electricity supply and demand at local households. 
-This could improve the local usage of batteries in households.
-It can be found in *Flexibility* → *Electricity storage* → **[Batteries in households](/scenario/flexibility/flexibility_storage/batteries-in-households)**
+-> <img src="/assets/pages/whats_new/input_capacity_dsr_en.png" width="600" /> <-
 
-
+___
 
 # December 2023
 
@@ -40,10 +36,9 @@ This form provides a higher energy density compared to gaseous hydrogen.
 At extremely low temperatures, hydrogen gas can be compressed into liquid form. 
 The liquid form makes it more compressed, this leads to an advantage in transporting the hydrogen. 
 
-
+___
 
 # November 2023
-
 
 ### Heat
 
@@ -77,6 +72,8 @@ Households have also been divided over 4 types:
 For each of these 4 types, 6 different building periods can be applied, resulting in 24 different residential types. 
 For each of these 24 residential types a different insulation level can be set by the user, giving more accuracy in modelling the heat demand.  
 This can be found in *Demand* → *Households* → **[Population & housing stock](/scenario/demand/households/population-and-housing-stock)**
+
+___
 
 # June 2023
 

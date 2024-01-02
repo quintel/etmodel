@@ -1,6 +1,66 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+
+# Januari 2024
+
+### Vraagverschuiving
+
+Het modelleren van load shifting voor de industriële sector is uitgebreid. Gebruikers kunnen nu de capaciteit voor het verminderen en verhogen van de belasting afzonderlijk instellen. Deze uitbreiding stelt de gebruiker in staat om load shifting nauwkeuriger te modelleren. Dit is te vinden in *Flexibiliteit* → *Netbelasting* [Vraagsturen - vraagverschuiving in industrie](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)
+
+### Lokaale prognose 
+
+Gebruikers kunnen nu het algoritme voor residentiële voorspelling wijzigen dat wordt gebruikt om stroom toe te wijzen binnen batterijen in huishoudens.
+
+Het lokale voorspellingsalgoritme probeert de elektriciteitsaanbod en -vraag in lokale huishoudens op elkaar af te stemmen. Dit kan het lokale gebruik van batterijen in huishoudens verbeteren. Dit is te vinden in *Flexibiliteit* → *Opslag elektriciteit* → [Batterijen in huishoudens](/scenario/flexibility/flexibility_storage/batteries-in-households)
+
+
+
+# December 2023
+
+## Transitstromen
+
+Gebruikers kunnen meer inzicht krijgen in de transitstromen van energiedragers binnen hun systeem. Een nieuwe tab is toegevoegd waarin het exportvolume per drager kan worden ingesteld. Ook zijn er nieuwe grafieken toegevoegd die een overzicht geven van de transitstromen in het energiesysteem. Dit is te vinden in *Vraag* → *Export* → [Transitstromen](/scenario/demand/export_energy/transit-flows)
+
+Hiernaast zijn er 2 nieuwe waterstofdragers toegevoegd aan de ETM:
+
+* Vloeibare organische waterstofdragers (LOHC)
+LOHCs zijn stoffen die waterstof kunnen opslaan en transporteren in vloeibare vorm. Deze vorm biedt een hogere energiedichtheid in vergelijking met gasvormige waterstof.
+
+* Vloeibare waterstof (LH2)
+Bij extreem lage temperaturen kan waterstofgas worden samengeperst tot vloeibare vorm. Deze vloeibare vorm maakt de dichtheid hoger, wat een voordeel oplevert bij het transport.
+
+
+# November 2023
+
+
+### Warmte
+
+Het modelleren van warmte voor gebouwen en huishoudens is grondig herzien. De updates voor dit gedeelte van de ETM kunnen worden onderverdeeld in de volgende drie pakketten.
+
+### Temperatuurniveaus van warmtenetten
+
+Er worden drie onderscheidingen gemaakt in temperatuurniveaus van warmtenetten in het model: Hoge temperatuur (HT, 75+ graden Celsius), Medium temperatuur (MT, 55-75 graden Celsius) en Lage temperatuur (LT, 30-55 graden Celsius). Gebruikers kunnen nu de warmtebronnen, seizoensopslag van warmte, transport- en distributieverliezen en de merit order van inzetbare warmtebronnen specificeren voor elk van de stadsverwarmingnetwerken. Dit is te vinden in *Aanbod* → [Warmtenetten](/scenario/supply/heat/overview-district-heating)
+
+### Aquathermie
+
+Extra Aquathermische technologieën voor warmtemodellering toegevoegd aan de ETM. Deze kunnen worden toegewezen aan de warmtevraag van gebouwen en huishoudens met behulp van een merit order. Met deze functies kunnen gebruikers inzicht krijgen in het potentieel van deze technologieën in de energietransitie. Dit is te vinden in *Vraag* → *Huishoudens* → [Ruimteverwarming & warm water](/scenario/demand/households/space-heating-and-hot-water)
+
+### Restwarmte
+
+Huishoudens zijn ook onderverdeeld in 4 typen:
+
+* Appartementen
+
+* Vrijstaande huizen
+
+* Hoekhuizen
+
+* Rijtjeshuizen
+
+Voor elk van deze 4 typen kunnen 6 verschillende bouwperioden worden toegepast, resulterend in 24 verschillende woontypen. Voor elk van deze 24 woontypen kan de gebruiker een ander isolatieniveau instellen, wat zorgt voor meer nauwkeurigheid in het modelleren van de warmtevraag. Dit is te vinden in *Vraag* → *Huishoudens* → [Bevolking & huizenvoorraad](/scenario/demand/households/population-and-housing-stock)
+
+
 # Juni 2023
 
 ## Aanpasbare specificaties voor technologieën voor elektriciteitsopslag

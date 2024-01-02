@@ -19,22 +19,29 @@ ___
 
 # December 2023
 
-## Transit flows
+### Transit flows
 
-Users can gain more insight in the transit flows of energy carriers within their system.
-A new tab is added in which the export volume per carrier can be set. 
-Also, new graphs have been added which give an overview of the transit flows in the energy system. 
-It can be found in *Demand* → *Export* → **[Transit flows](/scenario/demand/export_energy/transit-flows)**
+Many regions deal with energy flows that merely pass through the region and are not consumed or produced by parts of the local energy system. Users can now gain more insight in these transit flows of energy carriers within their system. In order to model transit flows in your scenario, you can set the inflexible export volumes of several energy carriers. Setting an export flow also enforces an import flow for the system to be balanced.
+
+New charts have been added which give an overview of the transit flows in the energy system. The new features can be found in *Demand* → **[Export](/scenario/demand/export_energy/transit-flows)**.
+
+-> <img src="/assets/pages/whats_new/transit_flows_en.png" width="600" /> <-
+
+It is also possible to model a transit flow for CO<sub>2</sub> by setting an import flow in Mton. See *Emissions* → *CCUS* → [Capture and import of CO<sub>2</sub>](/scenario/emissions/ccus/capture-and-import-of-co2).
+
+-> <img src="/assets/pages/whats_new/co2_import_en.png" width="600" /> <-
+
+### New hydrogen carriers
 
 In addition 2 new hydrogen carriers have been added to the ETM:
 
-* Liquid organic hydrogen carriers (LOHC)
-LOHCs are substances that can store and transport hydrogen in a liquid form.
+* **Liquid organic hydrogen carriers (LOHC)** — LOHCs are substances that can store and transport hydrogen in a liquid form.
 This form provides a higher energy density compared to gaseous hydrogen.
 
-* Liquid hydrogen (LH2)
-At extremely low temperatures, hydrogen gas can be compressed into liquid form. 
+* **Liquid hydrogen (LH2)** — At extremely low temperatures, hydrogen gas can be compressed into liquid form. 
 The liquid form makes it more compressed, this leads to an advantage in transporting the hydrogen. 
+
+This allows for instance to import liquid hydrogen, reform it to produce gaseous hydrogen and export the latter. See the new hydrogen production technologies in *Supply* → *Hydrogen* → **[Hydrogen production](/scenario/supply/hydrogen/hydrogen-production)**.
 
 ___
 

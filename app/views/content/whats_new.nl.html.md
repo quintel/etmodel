@@ -8,7 +8,7 @@ ___
 
 Het modelleren van load shifting voor de industriële sector is uitgebreid. Gebruikers kunnen nu de capaciteit voor het verminderen en verhogen van de belasting afzonderlijk instellen. Deze uitbreiding stelt de gebruiker in staat om load shifting nauwkeuriger te modelleren. Dit is te vinden in *Flexibiliteit* → *Netbelasting* [Vraagsturen - vraagverschuiving in industrie](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)
 
-### Lokaale prognose 
+### Lokale prognose 
 
 Gebruikers kunnen nu het algoritme voor residentiële voorspelling wijzigen dat wordt gebruikt om stroom toe te wijzen binnen batterijen in huishoudens.
 
@@ -18,17 +18,27 @@ Het lokale voorspellingsalgoritme probeert de elektriciteitsaanbod en -vraag in 
 
 # December 2023
 
-## Transitstromen
+### Transitstromen
 
-Gebruikers kunnen meer inzicht krijgen in de transitstromen van energiedragers binnen hun systeem. Een nieuwe tab is toegevoegd waarin het exportvolume per drager kan worden ingesteld. Ook zijn er nieuwe grafieken toegevoegd die een overzicht geven van de transitstromen in het energiesysteem. Dit is te vinden in *Vraag* → *Export* → [Transitstromen](/scenario/demand/export_energy/transit-flows)
+Veel regio's hebben te maken met energiestromen die niet geproduceerd of verbruikt worden binnen het lokale energiesysteem maar alleen worden doorgevoerd naar het achterland. Gebruikers kunnen nu meer inzicht krijgen in deze transitstromen of doorvoerstromen van energiedragers binnen hun systeem. Om transitstromen te modelleren in je scenario, kun je als gebruiker de inflexibele exportvolumes van verschillende energiedragers instellen. Het instellen van zo'n exportstroom dwingt ook een vraag naar import af in je scenario zodat het energiesysteem in balans blijft.
+
+Er zijn nieuwe grafieken toegevoegd die een overzicht geven van de (netto) importstromen, exportstromen en transitstromen in het energiesysteem. Zie *Vraag* → **[Export](/scenario/demand/export_energy/introduction)** voor de nieuwe functionaliteiten.
+
+-> <img src="/assets/pages/whats_new/transit_flows_nl.png" width="600" /> <-
+
+Ook is het mogelijk om voor CO<sub>2</sub> een transitstroom te modelleren door een importstroom in Mton in te stellen. Zie *Emissies* → *CCUS* → **[Afvang en import van CO<sub>2</sub>](/scenario/emissions/ccus/capture-and-import-of-co2)**.
+
+-> <img src="/assets/pages/whats_new/co2_import_nl.png" width="600" /> <-
+
+### Nieuwe waterstofdragers
 
 Hiernaast zijn er 2 nieuwe waterstofdragers toegevoegd aan de ETM:
 
-* Vloeibare organische waterstofdragers (LOHC)
-LOHCs zijn stoffen die waterstof kunnen opslaan en transporteren in vloeibare vorm. Deze vorm biedt een hogere energiedichtheid in vergelijking met gasvormige waterstof.
+* **Vloeibare organische waterstofdragers (LOHC)** — LOHCs zijn stoffen die waterstof kunnen opslaan en transporteren in vloeibare vorm. Deze vorm biedt een hogere energiedichtheid in vergelijking met gasvormige waterstof.
 
-* Vloeibare waterstof (LH2)
-Bij extreem lage temperaturen kan waterstofgas worden samengeperst tot vloeibare vorm. Deze vloeibare vorm maakt de dichtheid hoger, wat een voordeel oplevert bij het transport.
+* **Vloeibare waterstof (LH2)** — Bij extreem lage temperaturen kan waterstofgas worden samengeperst tot vloeibare vorm. Deze vloeibare vorm maakt de dichtheid hoger, wat een voordeel oplevert bij het transport.
+
+Dit maakt het bijvoorbeeld ook mogelijk om vloeibare waterstof te importeren, om te zetten naar waterstofgas en in deze vorm te exporteren naar het achterland. Zie ook de nieuwe LH2 vergassing en LOHC reforming technologieën in *Aanbod* → *Waterstof* → **[Waterstofstofproductie](/scenario/supply/hydrogen/hydrogen-production)**.
 
 
 # November 2023

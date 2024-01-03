@@ -38,8 +38,7 @@ In addition 2 new hydrogen carriers have been added to the ETM:
 * **Liquid organic hydrogen carriers (LOHC)** — LOHCs are substances that can store and transport hydrogen in a liquid form.
 This form provides a higher energy density compared to gaseous hydrogen.
 
-* **Liquid hydrogen (LH2)** — At extremely low temperatures, hydrogen gas can be compressed into liquid form. 
-The liquid form makes it more compressed, this leads to an advantage in transporting the hydrogen. 
+* **Liquid hydrogen (LH2)** — At extremely low temperatures, hydrogen transitions from gaseous into liquid form. In liquid form it has a much higher volumetric energy density, leading to an advantage in transporting the hydrogen.
 
 This allows for instance to import liquid hydrogen, reform it to produce gaseous hydrogen and export the latter. See the new hydrogen production technologies in the **[Supply](/scenario/supply/hydrogen/hydrogen-production)** section. 
 

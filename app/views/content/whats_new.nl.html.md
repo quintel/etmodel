@@ -39,7 +39,7 @@ Hiernaast zijn er 2 nieuwe waterstofdragers toegevoegd aan de ETM:
 
 * **Vloeibare organische waterstofdragers (LOHC)** — LOHCs zijn stoffen die waterstof kunnen opslaan en transporteren in vloeibare vorm. Deze vorm biedt een hogere energiedichtheid in vergelijking met gasvormige waterstof.
 
-* **Vloeibare waterstof (LH2)** — Bij extreem lage temperaturen kan waterstofgas worden samengeperst tot vloeibare vorm. Deze vloeibare vorm maakt de dichtheid hoger, wat een voordeel oplevert bij het transport.
+* **Vloeibare waterstof (LH2)** — Bij extreem lage temperaturen gaat gasvormige waterstof over in vloeibare vorm. In vloeibare vorm is de energiedichtheid per volume-eenheid hoger, wat een voordeel oplevert bij het transport.
 
 Dit maakt het bijvoorbeeld ook mogelijk om vloeibare waterstof te importeren, om te zetten naar waterstofgas en in deze vorm te exporteren naar het achterland. Zie ook de nieuwe LH2 vergassing en LOHC reforming technologieën in **[Aanbod](/scenario/supply/hydrogen/hydrogen-production)**.
 

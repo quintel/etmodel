@@ -109,7 +109,7 @@ D3.sankey =
           {left: 'biomass_products',             right: 'bunkers',                   gquery: 'sankey_0_to_2_biomass_products_to_bunkers',              color: '#2ca02c'},
           {left: 'biomass_products',             right: 'feedstock',                 gquery: 'sankey_0_to_2_biomass_products_to_feedstock',            color: '#2ca02c'},
           {left: 'biomass_products',             right: 'export',                    gquery: 'sankey_0_to_2_biomass_products_to_export',               color: '#2ca02c'},
-          #{left: 'biomass_products',            right: 'losses',                    gquery: 'sankey_0_to_2_biomass_products_to_loss',                 color: '#2ca02c'},
+          #{left: 'biomass_products',            right: 'losses',                    gquery: 'sankey_0_to_2_biomass_products_to_loss',                 color: '#DCDCDC'},
 
           {left: 'coal_and_coal_products',       right: 'agriculture',               gquery: 'sankey_0_to_2_coal_and_coal_products_to_agriculture',    color: '#252525'},
           {left: 'coal_and_coal_products',       right: 'households',                gquery: 'sankey_0_to_2_coal_and_coal_products_to_households',     color: '#252525'},
@@ -121,7 +121,7 @@ D3.sankey =
           {left: 'coal_and_coal_products',       right: 'bunkers',                   gquery: 'sankey_0_to_2_coal_and_coal_products_to_bunkers',        color: '#252525'},
           {left: 'coal_and_coal_products',       right: 'feedstock',                 gquery: 'sankey_0_to_2_coal_and_coal_products_to_feedstock',      color: '#252525'},
           {left: 'coal_and_coal_products',       right: 'export',                    gquery: 'sankey_0_to_2_coal_and_coal_products_to_export',         color: '#252525'},
-          #{left: 'coal_and_coal_products',      right: 'losses',                    gquery: 'sankey_0_to_2_coal_and_coal_products_to_loss',           color: '#252525'},
+          #{left: 'coal_and_coal_products',      right: 'losses',                    gquery: 'sankey_0_to_2_coal_and_coal_products_to_loss',           color: '#DCDCDC'},
 
           {left: 'geothermal',                   right: 'agriculture',               gquery: 'sankey_0_to_2_geothermal_to_agriculture',                color: '#787821'},
           {left: 'geothermal',                   right: 'households',                gquery: 'sankey_0_to_2_geothermal_to_households',                 color: '#787821'},
@@ -144,7 +144,7 @@ D3.sankey =
           {left: 'natural_gas',                  right: 'bunkers',                   gquery: 'sankey_0_to_2_natural_gas_to_bunkers',                    color: '#7f7f7f'},
           {left: 'natural_gas',                  right: 'feedstock',                 gquery: 'sankey_0_to_2_natural_gas_to_feedstock',                  color: '#7f7f7f'},
           {left: 'natural_gas',                  right: 'export',                    gquery: 'sankey_0_to_2_natural_gas_to_export',                     color: '#7f7f7f'},
-          #{left: 'natural_gas',                 right: 'losses',                    gquery: 'sankey_0_to_2_natural_gas_to_loss',                     color: '#7f7f7f'},            
+          #{left: 'natural_gas',                 right: 'losses',                    gquery: 'sankey_0_to_2_natural_gas_to_loss',                     color: '#DCDCDC'},            
 
           {left: 'solar_thermal',                right: 'agriculture',               gquery: 'sankey_0_to_2_solar_thermal_to_agriculture',             color: '#ffcc00'},
           {left: 'solar_thermal',                right: 'households',                gquery: 'sankey_0_to_2_solar_thermal_to_households',              color: '#ffcc00'},
@@ -157,7 +157,7 @@ D3.sankey =
           {left: 'solar_thermal',                right: 'feedstock',                 gquery: 'sankey_0_to_2_solar_thermal_to_feedstock',               color: '#ffcc00'},
           #{left: 'solar_thermal',               right: 'export',                    gquery: 'sankey_0_to_2_solar_thermal_to_export',                  color: '#ffcc00'},
 
-          #{left: 'uranium',                     right: 'losses',                    gquery: 'sankey_0_to_2_uranium_to_loss',                     color: '#7f7f7f'},
+          #{left: 'uranium',                     right: 'losses',                    gquery: 'sankey_0_to_2_uranium_to_loss',                     color: '#DCDCDC'},
 
           {left: 'imported_liquid_hydrogen',     right: 'export',                    gquery: 'sankey_0_to_2_imported_liquid_hydrogen_to_export',       color: '#87cfeb'},
 
@@ -173,7 +173,7 @@ D3.sankey =
           {left: 'electricity',                  right: 'bunkers',                   gquery: 'sankey_1_to_2_electricity_to_bunkers',                   color: '#1f77b4'},
           {left: 'electricity',                  right: 'feedstock',                 gquery: 'sankey_1_to_2_electricity_to_feedstock',                 color: '#1f77b4'},
           {left: 'electricity',                  right: 'export',                    gquery: 'sankey_1_to_2_electricity_to_export',                    color: '#1f77b4'},
-          {left: 'electricity',                  right: 'losses',                    gquery: 'sankey_1_to_2_electricity_to_loss',                      color: '#1f77b4'},
+          {left: 'electricity',                  right: 'losses',                    gquery: 'sankey_1_to_2_electricity_to_loss',                      color: '#DCDCDC'},
 
           {left: 'heat',                         right: 'agriculture',               gquery: 'sankey_1_to_2_heat_to_agriculture',                      color: '#cc0000'},
           {left: 'heat',                         right: 'households',                gquery: 'sankey_1_to_2_heat_to_households',                       color: '#cc0000'},
@@ -184,7 +184,7 @@ D3.sankey =
           {left: 'heat',                         right: 'other',                     gquery: 'sankey_1_to_2_heat_to_other',                            color: '#cc0000'},
           {left: 'heat',                         right: 'bunkers',                   gquery: 'sankey_1_to_2_heat_to_bunkers',                          color: '#cc0000'},
           {left: 'heat',                         right: 'feedstock',                 gquery: 'sankey_1_to_2_heat_to_feedstock',                        color: '#cc0000'},
-          {left: 'heat',                         right: 'losses',                    gquery: 'sankey_1_to_2_heat_to_loss',                             color: '#cc0000'},
+          {left: 'heat',                         right: 'losses',                    gquery: 'sankey_1_to_2_heat_to_loss',                             color: '#DCDCDC'},
       
           {left: 'hydrogen',                     right: 'agriculture',               gquery: 'sankey_1_to_2_hydrogen_to_agriculture',                  color: '#87cfeb'},
           {left: 'hydrogen',                     right: 'households',                gquery: 'sankey_1_to_2_hydrogen_to_households',                   color: '#87cfeb'},
@@ -196,7 +196,7 @@ D3.sankey =
           {left: 'hydrogen',                     right: 'bunkers',                   gquery: 'sankey_1_to_2_hydrogen_to_bunkers',                      color: '#87cfeb'},
           {left: 'hydrogen',                     right: 'feedstock',                 gquery: 'sankey_1_to_2_hydrogen_to_feedstock',                    color: '#87cfeb'},
           {left: 'hydrogen',                     right: 'export',                    gquery: 'sankey_1_to_2_hydrogen_to_export',                       color: '#87cfeb'},
-          {left: 'hydrogen',                     right: 'losses',                    gquery: 'sankey_1_to_2_hydrogen_to_loss',                         color: '#87cfeb'},
+          {left: 'hydrogen',                     right: 'losses',                    gquery: 'sankey_1_to_2_hydrogen_to_loss',                         color: '#DCDCDC'},
 
           {left: 'oil_and_oil_products',         right: 'agriculture',               gquery: 'sankey_1_to_2_oil_and_oil_products_to_agriculture',      color: '#8c564b'},
           {left: 'oil_and_oil_products',         right: 'households',                gquery: 'sankey_1_to_2_oil_and_oil_products_to_households',       color: '#8c564b'},
@@ -208,7 +208,7 @@ D3.sankey =
           {left: 'oil_and_oil_products',         right: 'bunkers',                   gquery: 'sankey_1_to_2_oil_and_oil_products_to_bunkers',          color: '#8c564b'},
           {left: 'oil_and_oil_products',         right: 'feedstock',                 gquery: 'sankey_1_to_2_oil_and_oil_products_to_feedstock',        color: '#8c564b'},
           {left: 'oil_and_oil_products',         right: 'export',                    gquery: 'sankey_1_to_2_oil_and_oil_products_to_export',           color: '#8c564b'},
-          {left: 'oil_and_oil_products',         right: 'losses',                    gquery: 'sankey_1_to_2_oil_and_oil_products_to_loss',             color: '#8c564b'}
+          {left: 'oil_and_oil_products',         right: 'losses',                    gquery: 'sankey_1_to_2_oil_and_oil_products_to_loss',             color: '#DCDCDC'}
 
         ]
 

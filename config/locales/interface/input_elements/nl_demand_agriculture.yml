@@ -58,18 +58,28 @@ nl:
       title: HT-warmtenet
       short_description:
       description: |
-        Dit schuifje stelt het percentage nuttige warmtevraag van de landbouw in dat geleverd wordt 
-        door een HT-warmtenet. Je kunt bepalen welke bronnen je op het HT-warmtenet wilt 
-        inzetten in de <a href="/scenario/supply/heat_ht">HT-warmtenetten</a>
-        sectie.
+        Dit schuifje bepaalt welk deel van de warmtevraag van landbouw wordt geleverd 
+        door warmtenetten die opereren op een hoge temperatuur (HT). </br></br>
+        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
+        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke 
+        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
+        Ga naar de sectie <a href="/scenario/supply/heat_ht">HT-warmtenetten</a> om te bepalen 
+        hoe de warmte wordt geleverd. Zie onze 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentatie</a> voor meer informatie.
     agriculture_final_demand_mt_central_steam_hot_water_share:
       title: MT-warmtenet
       short_description:
       description: |
-        Dit schuifje stelt het percentage nuttige warmtevraag van de landbouw in dat geleverd wordt 
-        door een MT-warmtenet. Je kunt bepalen welke bronnen je op het MT-warmtenet wilt 
-        inzetten in de <a href="/scenario/supply/heat_mt">MT-warmtenetten</a>
-        sectie.
+        Dit schuifje bepaalt welk deel van de warmtevraag van landbouw wordt geleverd 
+        door warmtenetten die opereren op een midden temperatuur (MT). </br></br>
+        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
+        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke 
+        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
+        Ga naar de sectie <a href="/scenario/supply/heat_mt">MT-warmtenetten</a> om te bepalen 
+        hoe de warmte wordt geleverd. Zie onze 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentatie</a> voor meer informatie.
     agriculture_final_demand_local_steam_hot_water_share:
       title: Warmte van lokale WKK's
       short_description:

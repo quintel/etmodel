@@ -1,6 +1,77 @@
 # What's new in the Energy Transition Model?
 ___
 
+# January 2024
+
+### Local forecasting for household batteries
+
+You can now choose two types of forecasting for household batteries. The first is the existing system forecasting algorithm, which is available for all electricity storage technologies. The second is a new local forecasting algorithm. Instead of all the electricity demand and supply in a region, it only tries to match household electricity demand and supply. Both types of forecasting have a different impact on the electricity grid. Try it for yourself in the **[Flexibility](/scenario/flexibility/flexibility_storage/batteries-in-households)** section.
+
+-> <img src="/assets/pages/whats_new/residential_forecasting_en.png" width="600" /> <-
+
+### Input capacity for load shifting
+
+Demand-side response in the industry has been updated. When applying load shifting in an industry sector, it is now possible to set the available capacity to increase the load seperately from the capacity to decrease the load. This makes it possible to reduce the impact of the increased load on the electricity grid. It can be found in the **[Flexibility](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)** section.
+
+-> <img src="/assets/pages/whats_new/input_capacity_dsr_en.png" width="600" /> <-
+
+___
+
+# December 2023
+
+### Transit flows
+
+Many regions deal with energy flows that merely pass through the region and are not consumed or produced by parts of the local energy system. Users can now gain more insight in these transit flows of energy carriers within their system. In order to model transit flows in your scenario, you can set the inflexible export volumes of several energy carriers. Setting an export flow also enforces an import flow for the system to be balanced.
+
+New charts have been added which give an overview of the transit flows in the energy system. The new features can be found in the **[Demand](/scenario/demand/export_energy/transit-flows)** section. 
+
+-> <img src="/assets/pages/whats_new/transit_flows_en.png" width="600" /> <-
+
+It is also possible to model a transit flow for CO<sub>2</sub> by setting an import flow in Mton. See the **[Emissions](/scenario/emissions/ccus/capture-and-import-of-co2)** section.
+
+-> <img src="/assets/pages/whats_new/co2_import_en.png" width="600" /> <-
+
+### New hydrogen carriers
+
+In addition 2 new hydrogen carriers have been added to the ETM:
+
+* **Liquid organic hydrogen carriers (LOHC)** — LOHCs are substances that can store and transport hydrogen in a liquid form.
+This form provides a higher energy density compared to gaseous hydrogen.
+
+* **Liquid hydrogen (LH2)** — At extremely low temperatures, hydrogen transitions from gaseous into liquid form. In liquid form it has a much higher volumetric energy density, leading to an advantage in transporting the hydrogen.
+
+This allows for instance to import liquid hydrogen, reform it to produce gaseous hydrogen and export the latter. See the new hydrogen production technologies in the **[Supply](/scenario/supply/hydrogen/hydrogen-production)** section. 
+
+___
+
+# November 2023
+
+## Heat
+
+There are a number of significant changes for the modelling of heat in the ETM. The following three main changes have been made.
+
+### Temperature levels of district heating
+
+District heating networks on different temperature levels can be specified: high temperature (HT), medium temperature (MT) and low temperature (LT). Each temperature level has distinct heat sources. You can set the demand, supply, storage and transport and losses for each temperature level. The costs of district heating infrastructure have been updated, using values specific for each temperature level. Finally, a number of charts have been added to help you set demand and supply. Explore the new **[District heating](/scenario/supply/heat/overview-district-heating)** section to find out more.
+
+-> <img src="/assets/pages/whats_new/district_heating_sankey_en.png" width="600" /> <-
+
+### Aquathermal 
+
+Now, extra aquathermal technologies have been added to the ETM. Aquathermal refers to using water for heating and cooling. Three types of water reservoirs are taken into account: drink water, surface water and waste water.
+
+Aquathermal technologies can be selected for invidiual residences, both for **[Space heating & hot water](/scenario/demand/households/space-heating-and-hot-water)** and for **[Cooling](/scenario/demand/households/cooling)**. This also applies to **[Space heating](/scenario/demand/buildings/space-heating)** and **[Cooling](/scenario/demand/buildings/cooling)** in buildings. Additionally, aquathermal heat can be used in MT and LT district heating. A chart has been added that allows you to see the demand for aquathermal heat and compare it to the potential.
+
+-> <img src="/assets/pages/whats_new/aquathermal_heat_en.png" width="600" /> <-
+
+### Residual heat
+
+It is now possible to specify exactly the amount of residual heat you want to use in your scenario. You can then compare the demand for residual heat with an estimate of the potential in a new chart. The estimate of the potential depends on the respective size of the industry sectors.
+
+-> <img src="/assets/pages/whats_new/residual_heat_chart_en.png" width="600" /> <-
+
+___
+
 # June 2023
 
 ## Adjustable specifications of electricity storage technologies

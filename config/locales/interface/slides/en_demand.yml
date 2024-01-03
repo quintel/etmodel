@@ -99,21 +99,27 @@ en:
         Also view the following graphs:
 
         <ul>
+        <li><a href="#" class="open_chart" data-chart-key="sankey_energy_overview" data-chart-location="side">
+        Energy flow overview</a> per energy carrier</li>
+        <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_imports" data-chart-location="side">
+        Energy import</a> per energy carrier</li>
+        <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_exports" data-chart-location="side">
+        Energy export</a> per energy carrier</li>
         <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_net_imports" data-chart-location="side">
         Net energy import</a> per energy carrier</li>
         <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_transit_flows" data-chart-location="side">
         Transit flows</a> per energy carrier</li>
-        <li><a href="#" class="open_chart" data-chart-key="costs_overview" data-chart-location="side">
-        Costs</a> of required infrastructure for transit flows</li>
-        <li><a href="#" class="open_chart" data-chart-key="space_requirements_transit_flows" data-chart-location="side">
-        Space requirements</a> of required infrastructure for transit flows</li>
+
         </ul>
 
         <br />
-
         See our
-        <a href="https://docs.energytransitionmodel.com/main/transit-flows/" target=\"_blank\">documentation</a> 
-        for more background information about the transit flows modelling in the ETM.
+        <a href="https://docs.energytransitionmodel.com/main/demand/#export" target=\"_blank\">documentation</a> 
+        for more background information about the transit flow modelling in the ETM.
+      #  <li><a href="#" class="open_chart" data-chart-key="costs_overview" data-chart-location="side">
+      #  Costs</a> of required infrastructure for transit flows</li>
+      #  <li><a href="#" class="open_chart" data-chart-key="space_requirements_transit_flows" data-chart-location="side">
+      #  Space requirements</a> of required infrastructure for transit flows</li>    
     demand_households_appliances:
       title: Appliances
       short_description: ''

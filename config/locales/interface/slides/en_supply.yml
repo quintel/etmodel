@@ -256,28 +256,26 @@ en:
       title: Overview district heating
       short_description:
       description: |
-        District heating can be used as heating technology in <a href="/scenario/demand/households/space-heating-hot-water"
-        >households</a>, <a href="/scenario/demand/buildings/space-heating" >buildings</a>
-        and <a href="/scenario/demand/agriculture/heat" >agriculture</a>. There
-        are roughly two types of heat sources: dispatchable and must-run heat sources.
-        Dispatchable heat sources can be switched on/off depending on the heat demand
-        at that time, while must-run heat sources supply the heat network regardless
-        of heat demand. For the second type in particular <a href="/scenario/supply/heat/seasonal-storage-of-heat"
-        >(seasonal) storage of heat</a> is an interesting option. <br/><br/>
-        Below you can find several technologies for both types of heat sources. The chart
-        on the right shows whether demand and supply add up. In addition, it is possible
-        to use residual heat from (large-scale) power plants in the power sector.
-        This can be done in the 'Electricity' and 'Renewable Electricity' side bar
-        items for the following power plants: <a href="/scenario/supply/electricity/gas-plants"
-        >(Natural) gas plants</a>, <a href="/scenario/supply/electricity/coal-plants"
-        >Coal plants</a>, <a href="/scenario/supply/electricity_renewable/biomass-plants"
-        >Biomass plants</a> and <a href="/scenario/supply/electricity_renewable/waste-power"
-        >Waste incineration</a>. It is also possible to convert electricity
-        into heat through power-to-heat boilers or heat pumps in the <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating"
-        >Flexibility section</a>. <br/><br/>
-        More information can be found
-        in our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
-        target =\"_blank\">documentation</a>.
+        District heating can be used to supply heat demand from
+        <a href="/scenario/demand/households/space-heating-hot-water">households</a>,
+        <a href="/scenario/demand/buildings/space-heating">buildings</a> and
+        <a href="/scenario/demand/agriculture/heat">agriculture</a>. </br></br>
+        A heat network used for district heating typically operates at a specific temperature
+        level, but different heat networks can operate at different temperatures. The ETM allows 
+        you to model three temperature levels. Characteristics such as the available heat sources, 
+        the costs and the losses can differ per temperature level. You can specify these in their 
+        respective sections: </br>
+        <ul>
+        <li><a href="/scenario/supply/heat_ht/sources">High temperature (HT)</a></li>
+        <li><a href="/scenario/supply/heat_mt/sources">Medium temperature (MT)</a></li>
+        <li><a href="/scenario/supply/heat_lt/sources">Low temperature (LT)</a></li>
+        </ul></br>
+        For some sources the heat supply is determined by other factors in the model. For these sources 
+        you can determine the distribution per temperature level in the slides below. This applies to 
+        heat from <a href="/scenario/supply/heat/allocation-of-heat-from-chps">CHPs</a> and
+        heat from <a href="/scenario/supply/heat/allocation-of-power-to-heat">power-to-heat</a>.
+        See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentation</a> for more information.
     supply_heat_overview_chp:
       title: Allocation of heat from CHPs
       short_description:
@@ -376,9 +374,9 @@ en:
         year.\r\n<br /><br />\r\nCaution: If you install too much must-run or volatile
         capacity in your scenario you may end up with a heat surplus in the storage
         at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
-        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
+        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat_lt/heat-sources\"
         >installed capacity of must-runs / volatile heat sources</a>, increasing district
-        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_lt/merit-order-of-dispatchable-heat-sources\"
         >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
         losses can be updated with the slider below the toggle. The costs for storage
         can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
@@ -399,7 +397,7 @@ en:
         at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
         dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
         >installed capacity of must-runs / volatile heat sources</a>, increasing district
-        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_ht/merit-order-of-dispatchable-heat-sources\"
         >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
         losses can be updated with the slider below the toggle. The costs for storage
         can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
@@ -418,9 +416,9 @@ en:
         year.\r\n<br /><br />\r\nCaution: If you install too much must-run or volatile
         capacity in your scenario you may end up with a heat surplus in the storage
         at the end of the 'heat year' (which runs from 1 April to 31 March). To avoid
-        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat/heat-sources\"
+        dumping this heat surplus, you could try decreasing <a href=\"/scenario/supply/heat_mt/heat-sources\"
         >installed capacity of must-runs / volatile heat sources</a>, increasing district
-        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_merit/priority-of-dispatchable-heat-producers\"
+        heating demand or changing the position of heat storage in <a href=\"/scenario/supply/heat_mt/merit-order-of-dispatchable-heat-sources\"
         >the priority list of dispatchable heat producers</a>.\r\n</br></br>\r\nStorage
         losses can be updated with the slider below the toggle. The costs for storage
         can be adjusted in the <a href=\"/scenario/costs/costs_heat/district-heating-infrastructure\"
@@ -428,75 +426,54 @@ en:
     supply_heat_sources_ht:
       title: "Sources"
       short_description:
-      description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
-        >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
-        and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
-        are roughly two types of heat sources: dispatchable and must-run heat sources.
+      description: |
+        There are roughly two types of heat sources: dispatchable and must-run heat sources.
         Dispatchable heat sources can be switched on/ off depending on the heat demand
-        at that time, while must-run heat sources supply the heat network regardless
-        of heat demand. For the second type in particular <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >(seasonal) storage of heat</a> is an interesting option.\r\n<br /><br />\r\nBelow
-        you can find several technologies for both types of heat sources. The chart
-        on the right shows whether demand and supply add up. In addition, it is possible
-        to use residual heat from (large-scale) power plants in the power sector.
-        This can be done in the 'Electricity' and 'Renewable Electricity' side bar
-        items for the following power plants: <a href=\"/scenario/supply/electricity/gas-plants\"
-        >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
-        >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
-        >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Waste incineration</a>. It is also possible to convert electricity
-        into heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
-        in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
-        target =\"_blank\">documentation</a>."
+        at a given time. You can determine which dispatchable heat source supplies first 
+        by changing the <a href="/scenario/supply/heat_ht/merit-order-of-dispatchable-heat-sources">merit order</a>.
+        Must-run heat sources supply heat regardless of the heat demand. For this last type 
+        <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">(seasonal) storage of heat</a>
+        can be an interesting option. </br></br>
+        Below you can find several technologies for both types of heat sources. The chart
+        on the right shows whether demand and supply add up. In addition to these source, 
+        heat can be supplied by 
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">CHPs</a> or by
+        <a href="/scenario/supply/heat/allocation-of-power-to-heat">power-to-heat</a>.
+        See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentation</a> for more information.
     supply_heat_sources_lt:
       title: "Sources"
       short_description:
-      description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
-        >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
-        and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
-        are roughly two types of heat sources: dispatchable and must-run heat sources.
+      description: |
+        There are roughly two types of heat sources: dispatchable and must-run heat sources.
         Dispatchable heat sources can be switched on/ off depending on the heat demand
-        at that time, while must-run heat sources supply the heat network regardless
-        of heat demand. For the second type in particular <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >(seasonal) storage of heat</a> is an interesting option.\r\n<br /><br />\r\nBelow
-        you can find several technologies for both types of heat sources. The chart
-        on the right shows whether demand and supply add up. In addition, it is possible
-        to use residual heat from (large-scale) power plants in the power sector.
-        This can be done in the 'Electricity' and 'Renewable Electricity' side bar
-        items for the following power plants: <a href=\"/scenario/supply/electricity/gas-plants\"
-        >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
-        >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
-        >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Waste incineration</a>. It is also possible to convert electricity
-        into heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
-        in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
-        target =\"_blank\">documentation</a>."
+        at a given time. You can determine which dispatchable heat source supplies first 
+        by changing the <a href="/scenario/supply/heat_lt/merit-order-of-dispatchable-heat-sources">merit order</a>.
+        Must-run heat sources supply heat regardless of the heat demand. For this last type 
+        <a href="/scenario/supply/heat_lt/seasonal-storage-of-heat">(seasonal) storage of heat</a>
+        can be an interesting option. </br></br>
+        Below you can find several technologies for both types of heat sources. The chart
+        on the right shows whether demand and supply add up.
+        See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentation</a> for more information.
     supply_heat_sources_mt:
       title: "Sources"
       short_description:
-      description: "District heating can be used as heating technology in <a href=\"/scenario/demand/households/space-heating-hot-water\"
-        >households</a>, <a href=\"/scenario/demand/buildings/space-heating\" >buildings</a>
-        and <a href=\"/scenario/demand/agriculture/heat\" >agriculture</a>. There
-        are roughly two types of heat sources: dispatchable and must-run heat sources.
+      description: |
+        There are roughly two types of heat sources: dispatchable and must-run heat sources.
         Dispatchable heat sources can be switched on/ off depending on the heat demand
-        at that time, while must-run heat sources supply the heat network regardless
-        of heat demand. For the second type in particular <a href=\"/scenario/supply/heat/seasonal-storage-of-heat\"
-        >(seasonal) storage of heat</a> is an interesting option.\r\n<br /><br />\r\nBelow
-        you can find several technologies for both types of heat sources. The chart
-        on the right shows whether demand and supply add up. In addition, it is possible
-        to use residual heat from (large-scale) power plants in the power sector.
-        This can be done in the 'Electricity' and 'Renewable Electricity' side bar
-        items for the following power plants: <a href=\"/scenario/supply/electricity/gas-plants\"
-        >(Natural) gas plants</a>, <a href=\"/scenario/supply/electricity/coal-plants\"
-        >Coal plants</a>, <a href=\"/scenario/supply/electricity_renewable/biomass-plants\"
-        >Biomass plants</a> and <a href=\"/scenario/supply/electricity_renewable/waste-power\"
-        >Waste incineration</a>. It is also possible to convert electricity
-        into heat through power-to-heat boilers or heat pumps in the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating\"
-        >Flexibility section</a>.\r\n<br /><br />\r\nMore information can be found
-        in our <a href=\"https://docs.energytransitionmodel.com/main/heat-networks\"
-        target =\"_blank\">documentation</a>."
+        at a given time. You can determine which dispatchable heat source supplies first 
+        by changing the <a href="/scenario/supply/heat_mt/merit-order-of-dispatchable-heat-sources">merit order</a>.
+        Must-run heat sources supply heat regardless of the heat demand. For this last type 
+        <a href="/scenario/supply/heat_mt/seasonal-storage-of-heat">(seasonal) storage of heat</a>
+        can be an interesting option. </br></br>
+        Below you can find several technologies for both types of heat sources. The chart
+        on the right shows whether demand and supply add up. In addition to these source, 
+        heat can be supplied by 
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">CHPs</a> or by
+        <a href="/scenario/supply/heat/allocation-of-power-to-heat">power-to-heat</a>.
+        See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
+        target =\"_blank\">documentation</a> for more information.
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:
@@ -532,7 +509,8 @@ en:
         production plants built (see the <a href=\"/scenario/demand/industry/fertilizers\"
         >fertilizer industry slide</a>).\r\n<br><br />\r\nFor more information see
         our <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
-        target=\"_blank\">documentation</a>."
+        target=\"_blank\">documentation</a>.
+        \r\n<br><br />\r\nPlease note that when referring to hydrogen, unless stated otherwise, it is implied that gaseous hydrogen is meant."
     supply_hydrogen_transport:
       title: Hydrogen transport
       short_description:

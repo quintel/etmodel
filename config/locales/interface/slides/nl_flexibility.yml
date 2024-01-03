@@ -86,7 +86,7 @@ nl:
       short_description:
       description: "De energietransitie heeft gevolgen voor het elektriciteitsnet.
         In de tabel rechts kan je de piekbelasting en bruikbare capaciteit zien op
-        de verschillende netniveau's. Als je klikt op het 'Jaarlijkse'-schuifje krijg
+        de verschillende netniveaus. Als je klikt op het 'Jaarlijkse'-schuifje krijg
         je de grafiek te zien die de nettobelasting op het elektriciteitsnetwerk per
         uur laat zien. Wanneer je geïnteresseerd bent in uurlijkse piekbelasting-curves
         of vraagcurves per netniveau, kan je deze vinden in de lijst met alle grafieken
@@ -341,9 +341,9 @@ nl:
         documentatie</a> voor meer informatie. </br></br>
         Houd er rekening mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
         power-to-heat warmtepomp, ondanks dat ze dezelfde hoeveelheid warmte produceren per uur. De
-        geproduceerde warmte wordt aan het residentiële warmtenet geleverd. Je kan ook andere
-        warmtebronnen kiezen in de <a href="/scenario/supply/heat/heat-sources">
-        warmtenetten</a> sectie.
+        geproduceerde warmte wordt aan het residentiële warmtenet geleverd. Je kunt vervolgens bepalen
+        of er midden of hoge temperatuur warmte wordt geproduceerd in de sectie
+        <a href="/scenario/supply/heat/allocation-of-power-to-heat">Warmtenetten</a>.
     flexibility_flexibility_power_to_heat_for_industry:
       title: Conversie naar warmte voor industrie
       short_description:

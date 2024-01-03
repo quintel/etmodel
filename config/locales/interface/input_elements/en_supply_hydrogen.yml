@@ -25,19 +25,20 @@ en:
       title: Autothermal reforming
       short_description:
       description: |
-        Adjust the total installed capacity of autothermal reformers (ATR) using this slider.
+        This slider adjusts the total installed capacity of autothermal reformers (ATR). 
         <br/><br/>
-        Autothermal reforming (ATR) is a production method for hydrogen. It is similar to steam 
-        methane reforming (SMR) but has a lower efficiency. The advantage of the ATR, however, 
-        is that is has a simpler production stream with a high concentration of carbon 
-        dioxide. This makes it easier to capture a higher percentage of carbon emissions during 
-        the conversion process. 
+        Note: ATR emits CO directly into the air, this means carbon capture and storage(CCS)
+        will need to be used in combination with this method for carbon neutrality. 
         <br/><br/>
-        Add CCS to the ATR by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
-        <br/><br/>
-        For more technology specifications, checkout the technical and financial properties below.
-        Note: the parameters in the table belong to the ATR plants without CCS, so when you have set 100% CCS,
-        you will see no installed capacity here.
+        ATR is a method for syngas/biofuel production, combining partial oxidation and steam methane reforming. 
+        It allows flexible hydrogen-to-carbon monoxide ratios for varied biofuel production. 
+        For more information, checkout the <a href="https://docs.energytransitionmodel.com/main/hydrogen"> Documentation </a>.
+        <br/><br/> 
+        Go to Emissions > CCUS >  <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a>  
+        to install CO capture or the production of pure hydrogen production.
+        <br/><br/> 
+        Go to Costs & Efficiencies > Hydrogen > <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Hydrogen production</a> 
+        for changing costs and efficiency.
     capacity_of_energy_hydrogen_biomass_gasification:
       title: Biomass gasification
       short_description:

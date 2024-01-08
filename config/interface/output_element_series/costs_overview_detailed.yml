@@ -35,18 +35,6 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_building_and_installations_agriculture_costs_overview_detailed
-- label: costs_building_and_installations_transport
-  color: "#4c6a7a"
-  order_by: 130
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: costs_building_and_installations_transport
-  is_1990: false
-  dependent_on:
-  output_element_key: costs_overview_detailed
-  key: costs_building_and_installations_transport_costs_overview
 - label: costs_building_and_installations_industry
   color: "#667f8d"
   order_by: 140

@@ -4,7 +4,7 @@ en:
     capacity_of_energy_hydrogen_steam_methane_reformer:
       title: Steam methane reforming
       short_description:
-      description: | 
+      description: |
         Steam methane reforming is a very mature hydrogen production process.
         It works like this: methane reacts in the presence of a catalyst with high
         temperature steam and gives a mixture of hydrogen and other gases. The unwanted
@@ -25,24 +25,21 @@ en:
       title: Autothermal reforming
       short_description:
       description: |
-        This slider adjusts the total installed capacity of autothermal reformers (ATR). 
+        This slider adjusts the total installed input capacity of autothermal reformers (ATR).
+        </br></br>
+        ATR is a method for syngas/biofuel production, combining partial oxidation and steam methane reforming. 
+        It allows flexible hydrogen-to-carbon monoxide ratios for varied biofuel production.
         <br/><br/>
-        Note: ATR emits CO directly into the air, this means carbon capture and storage(CCS)
+        Note: ATR emits CO<sub>2</sub> directly into the air, this means carbon capture and storage (CCS)
         will need to be used in combination with this method for carbon neutrality. 
         <br/><br/>
-        ATR is a method for syngas/biofuel production, combining partial oxidation and steam methane reforming. 
-        It allows flexible hydrogen-to-carbon monoxide ratios for varied biofuel production. 
-        For more information, checkout the <a href="https://docs.energytransitionmodel.com/main/hydrogen"> Documentation </a>.
-        <br/><br/> 
-        Go to Emissions > CCUS >  <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a>  
-        to install CO capture or the production of pure hydrogen production.
-        <br/><br/> 
-        Go to Costs & Efficiencies > Hydrogen > <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Hydrogen production</a> 
-        for changing costs and efficiency.
+        Go to the <a href="/scenario/emissions/ccus/capture-of-co2">CCUS</a> section to install CO<sub>2</sub> 
+        capture or the production of pure hydrogen production. For more information, checkout the 
+        <a href="https://docs.energytransitionmodel.com/main/hydrogen">documentation</a>.
     capacity_of_energy_hydrogen_biomass_gasification:
       title: Biomass gasification
       short_description:
-      description: | 
+      description: |
         Biomass gasification is a mature technology in which biomass is
         converted into hydrogen. 
         <br/><br/>

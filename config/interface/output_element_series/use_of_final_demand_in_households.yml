@@ -1,6 +1,18 @@
 ---
-- label: appliances
+- label: cooking_demand
   color: "#44AA99"
+  order_by: 95
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: cooking_demand_in_use_of_final_demand_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_households
+  key: cooking_demand_use_of_final_demand_in_households
+- label: appliances
+  color: "#648FFF"
   order_by: 100
   group: ''
   show_at_first: false
@@ -12,21 +24,9 @@
   output_element_key: use_of_final_demand_in_households
   key: electrical_appliances_use_of_final_demand_in_households
   key: heat_demand_households_use_of_final_demand_in_households
-- label: cooking_demand
-  color: "#648FFF"
-  order_by: 105
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: cooking_demand_in_use_of_final_demand_in_households
-  is_1990: false
-  dependent_on: 
-  output_element_key: use_of_final_demand_in_households
-  key: cooking_demand_use_of_final_demand_in_households  
 - label: cooling_demand
   color: "#785EF0"
-  order_by: 110
+  order_by: 105
   group: ''
   show_at_first: false
   is_target_line: false
@@ -36,8 +36,20 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_households
   key: cooling_demand_use_of_final_demand_in_households
-- label: hot_water_demand
+- label: space_heating
   color: "#DC267F"
+  order_by: 110
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: space_heating_demand_in_use_of_final_demand_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_households
+  key: space_heating_use_of_final_demand_in_households
+- label: hot_water_demand
+  color: "#FE6100"
   order_by: 115
   group: ''
   show_at_first: false
@@ -47,9 +59,9 @@
   is_1990: false
   dependent_on: 
   output_element_key: use_of_final_demand_in_households
-  key: hot_water_demanduse_of_final_demand_in_households
+  key: hot_water_demand_use_of_final_demand_in_households
 - label: lighting
-  color: "#FE6100"
+  color: "#FFB000"
   order_by: 120
   group: ''
   show_at_first: false
@@ -60,16 +72,3 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_households
   key: lighting_use_of_final_demand_in_households
-- label: space_heating
-  color: "#FFB000"
-  order_by: 125
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: space_heating_demand_in_use_of_final_demand_in_households
-  is_1990: false
-  dependent_on: 
-  output_element_key: use_of_final_demand_in_households  
-  key: space_heating_use_of_final_demand_in_households
-

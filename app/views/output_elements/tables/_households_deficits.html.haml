@@ -1,0 +1,26 @@
+-# Built environment heating deficits table
+%table#households_deficits.chart.centered.autostripe
+  %thead
+    %tr
+      %th
+      %th
+      %th= t 'output_elements.tables.households_deficits.apartments'
+      %th= t 'output_elements.tables.households_deficits.detached_houses'
+      %th= t 'output_elements.tables.households_deficits.semi_detached_houses'
+      %th= t 'output_elements.tables.households_deficits.terraced_houses'
+  %tbody
+    %tr
+      %th= t "output_elements.tables.households_deficits.absolute_deficits"
+      %th= t "output_elements.tables.households_deficits.before_1945"
+      %td{:data => {:gquery => "households_heating_absolute_deficits_apartments_before_1945", :graph => :future}}
+      %td{:data => {:gquery => "households_heating_absolute_deficits_detached_houses_before_1945", :graph => :future}}
+      %td{:data => {:gquery => "households_heating_absolute_deficits_semi_detached_houses_before_1945", :graph => :future}}
+      %td{:data => {:gquery => "households_heating_absolute_deficits_terraced_houses_before_1945", :graph => :future}}
+  %tbody
+    %tr
+      %th= t "output_elements.tables.households_deficits.absolute_deficits"
+      %th= t "output_elements.tables.households_deficits.1945_1964"
+      %td{:data => {:gquery => "households_heating_absolute_deficits_apartments_1945_1964", :graph => :future}}
+      %td{:data => {:gquery => "households_heating_absolute_deficits_detached_houses_1945_1964", :graph => :future}}
+      %td{:data => {:gquery => "households_heating_absolute_deficits_semi_detached_houses_1945_1964", :graph => :future}}
+      %td{:data => {:gquery => "households_heating_absolute_deficits_terraced_houses_1945_1964", :graph => :future}}

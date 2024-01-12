@@ -31,46 +31,59 @@ en:
         the excess heat is wasted. If supply falls short of demand, the shortage is supplied
         by a back-up gas burner. Local electricity excesses and shortages are exchanged with
         the electricity network.
+    demand_buildings_overview:
+      title: Overview
+      short_description:
+      description: |
+        Non-residential buildings are used to provide a range of services. They among others include offices, shops,
+        schools, hospitals and swimming pools. The demand is broken down into applications:
+        space heating, cooling, appliances and lighting.
     demand_buildings_stock:
       title: Building stock
       short_description:
       description: |
-        The energy demand for all buildings combined depends on the number of buildings.
+        The total energy demand of buildings depends on the number of buildings. New buildings can be constructed
+        and old buildings can be demolished.
     demand_buildings_appliances:
       title: Appliances
-      short_description: ''
-      description: There is ample room for improvement of appliances. Computers, monitors
-        and the like are becoming more efficient. Do you know by how much?
+      short_description:
+      description: |
+        There is ample room for improvement of appliances. Computers, monitors
+        and the like are becoming more efficient.
     demand_buildings_cooling:
       title: Cooling
-      short_description: ''
-      description: How will offices and other buildings be cooled in the future?
+      short_description:
+      description: |
+        How will offices and other buildings be cooled in the future?
     demand_buildings_demand_growth:
       title: Development of demand
-      short_description: ''
-      description: 'The changes in energy use per building you indicate here are due
-        to changes in prosperity. This is <strong>excluding</strong> efficiencies
-        and technological changes you can indicate in the subsections below.  '
+      short_description:
+      description: |
+        The changes in energy use per building you indicate here are due
+        to changes in prosperity. This is excluding efficiencies
+        and technological changes.
     demand_buildings_heating:
       title: Space heating
-      short_description: ''
-      description: How will offices and other buildings be heated? European countries
-        can save a lot of energy by being smarter about how buildings are heated.
-    demand_buildings_insulation:
-      title: Typical heat demand per building
       short_description:
-      description: The insulation of buildings such as offices, schools, shops, hospitals,
-        and hotels tends to be quite different. What is the average heat demand reduction
-        for these buildings in the future?
+      description: |
+        How will offices and other buildings be heated?
+    demand_buildings_insulation:
+      title: Heat demand & insulation
+      short_description:
+      description: |
+        The energy demand of a building depends strongly on its function,
+        but also on building characteristics such as the level of insulation.
     demand_buildings_lighting:
       title: Lighting
-      short_description: ''
-      description: 'Whereas lighting is a small part of household energy consumption,
-        in offices and other buildings it is quite significant. '
+      short_description:
+      description: |
+        Whereas lighting is a small part of household energy consumption,
+        in offices and other buildings it can be quite significant.
     demand_buildings_solar_panels:
       title: Solar panels
-      short_description: ''
-      description: Generating electricity locally saves energy and maybe also money
+      short_description:
+      description: |
+        Generating electricity locally saves energy and maybe also money
         in the future.
     demand_export_energy_introduction:
       title: Introduction
@@ -86,7 +99,6 @@ en:
         These can be contractual obligations to export certain amounts of energy to
         neighbouring regions, or flows of energy that only pass through the region, for
         instance from a port to the hinterland.
-
     demand_export_energy:
       title: Export volumes per carrier
       short_description: ''
@@ -94,7 +106,6 @@ en:
         In order to model transit flows in your scenario, you can set the <i>inflexible</i>
         export volumes of several energy (carriers) using the sliders below. Setting an
         export flow also enforces an import flow for the system to be balanced.
-
     demand_export_energy_transit_flows:
       title: Transit flows
       short_description: ''
@@ -102,7 +113,6 @@ en:
         In the chart on the right an overview is shown of all energy flows in your energy system,
         including transit flows. Do you want more insights into the transit flows within your scenario?
         Also view the following graphs:
-
         <ul>
         <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_net_imports" data-chart-location="side">
         Net energy import</a> per energy carrier</li>
@@ -113,18 +123,21 @@ en:
         <li><a href="#" class="open_chart" data-chart-key="space_requirements_transit_flows" data-chart-location="side">
         Space requirements</a> of required infrastructure for transit flows</li>
         </ul>
-
-        <br />
-
+        <br/>
         See our
         <a href="https://docs.energytransitionmodel.com/main/transit-flows/" target=\"_blank\">documentation</a>
         for more background information about the transit flows modelling in the ETM.
     demand_households_overview:
       title: Overview
-      short_description:
+      short_description: 
       description: |
-        The energy demand for all residences combined depends on the size of the population
-        and the number of residences.
+        opulation and housing stock are important drivers of total household demand. 
+        The demand is broken down into applications:
+        space heating and hot water, cooling, cooking, appliances and lighting.
+    demand_households_heating_producers:
+      title: Merit order heat
+      short_description:
+      description:
     demand_households_appliances:
       title: Appliances
       short_description: ''
@@ -156,14 +169,16 @@ en:
         below.
     demand_households_heating:
       title: Space heating & hot water
-      short_description: ''
-      description: "How will households be heated and generate hot water? \r\n"
-    demand_households_insulation:
-      title: Typical heat demand per residence
       short_description:
       description: |
-        The demand for heating depends on the level of insulation. Below
-        you can set for each housing type the heat demand reduction due to insulation.
+        How will households be heated and generate hot water?
+    demand_households_insulation:
+      title: Heat demand & insulation
+      short_description:
+      description: |
+        The energy demand of a residence depends on building characteristics, especially 
+        the level of insulation, but other factors such as behavior and desired comfort 
+        also play a role.
     demand_households_lighting:
       title: Lighting
       short_description: ''
@@ -172,8 +187,9 @@ en:
     demand_households_population:
       title: Population & housing stock
       short_description:
-      description: 'The energy demand for all residences combined depends on the size
-        of the population and the number of residences, which both can be set here. '
+      description: |
+        Populations grow or decline over time. New residences can be constructed 
+        and old residences can demolished.
     demand_households_heating_producers_order:
       title: Merit order residences heating technologies
       short_description:
@@ -444,15 +460,4 @@ en:
       short_description: ''
       description: Will there be a shift away from vans that run on fossil fuels? How
         does this affect energy use? In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine the fuelmix.
-    demand_households_overview:
-      title: Energy demand households
-      short_description: 
-      description: |
-        The energy demand for households is responsible for a significant part of the energy use.
-        Most of the energy demand is used for heat in the households section. 
-        Next to the heat demand, demand for power to use for lightning or appliances such as tv's can be found in this section as well.
-    demand_households_heating_producers:
-      title: Merit order heat
-      short_description:
-      description: ''  
       

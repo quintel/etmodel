@@ -31,53 +31,64 @@ nl:
         landbouw wordt de overtollige warmte verspild. Als het aanbod onvoldoende is om in de 
         vraag te voorzien, wordt het tekort geleverd door een back-up gasketel. Lokale 
         overschotten en tekorten van elektriciteit worden uitgewisseld met het elektriciteitsnet.
+    demand_buildings_overview:
+      title: Overzicht
+      short_description: 
+      description: |
+        Niet-residentiële gebouwen worden gebruikt om verschillende diensten te leveren. Ze omvatten onder 
+        andere kantoren, winkels, scholen, ziekenhuizen en zwembaden. De vraag is verdeeld in toepassingen: 
+        ruimteverwarming, koeling, koken, apparaten en verlichting.
     demand_buildings_stock:
-      title: Gebouwenvoorraad
+      title: Gebouwvoorraad
       short_description:
       description: |
-        De energievraag van alle gebouwen bij elkaar is afhankelijk van het aantal gebouwen. 
+        De totale energievraag van gebouwen is afhankelijk van het aantal gebouwen. Nieuwe gebouwen kunnen worden
+        gebouwd en oude gebouwen kunnen worden gesloopt.
     demand_buildings_appliances:
       title: Apparaten
-      short_description: ''
-      description: Er kan nog veel verbeterd worden aan apparaten in kantoren. Computers,
-        monitoren en dergelijke worden steeds zuiniger. Weet jij hoeveel?
+      short_description:
+      description: |
+        Er kan nog veel verbeterd worden aan apparaten in kantoren. Computers,
+        monitoren en dergelijke worden steeds zuiniger.
     demand_buildings_cooling:
       title: Koeling
-      short_description: ''
-      description: 'Hoe worden kantoren en andere gebouwen in de toekomst gekoeld? '
+      short_description:
+      description: |
+        Hoe worden kantoren en andere gebouwen in de toekomst gekoeld?
     demand_buildings_demand_growth:
       title: Vraagontwikkeling
-      short_description: ''
-      description: De veranderingen in energiegebruik per gebouw die je hier aangeeft
-        zijn het gevolg van ontwikkeling op het gebied van welvaart. Dit is dus <strong>exclusief</strong>
-        efficiëntieverbeteringen en andere technologieën die je in de gedeeltes hieronder
-        kunt aangeven.
+      short_description:
+      description: |
+        De veranderingen in energiegebruik per gebouw die je hier aangeeft
+        zijn het gevolg van ontwikkeling op het gebied van welvaart. Dit is exclusief
+        efficiëntieverbeteringen en andere technologieën.
     demand_buildings_heating:
       title: Ruimteverwarming
-      short_description: ''
-      description: Hoe zullen kantoren en overige gebouwen verwarmd worden? In de
-        meeste Europese landen kan veel energie bespaard worden door gebouwen op een
-        slimmere manier te verwarmen.
+      short_description:
+      description: |
+        Hoe zullen kantoren en overige gebouwen verwarmd worden?
     demand_buildings_insulation:
-      title: Isolatie
-      short_description: ''
-      description: De isolatie van gebouwen zoals kantoren, scholen, winkels, ziekenhuizen
-        en horeca verschilt sterk. Wat is de gemiddelde warmtevraag-reductie voor
-        deze gebouwen in de toekomst?
+      title: Warmtevraag & isolatie
+      short_description:
+      description: |
+        De energievraag van een gebouw is sterk afhankelijk van de functie, maar ook van
+        gebouwkenmerken zoals de mate van isolatie.
     demand_buildings_lighting:
       title: Verlichting
-      short_description: ''
-      description: Hoewel maar een klein deel van het energiegebruik van huishoudens
-        naar verlichting gaat, is het een flink deel van het gebruik in kantoren en
-        overige gebouwen.
+      short_description:
+      description: |
+        Hoewel maar een klein deel van het energiegebruik van huishoudens
+        naar verlichting gaat, kan het een flink deel van het gebruik zijn
+        in kantoren en overige gebouwen.
     demand_buildings_solar_panels:
       title: Zonnepanelen
-      short_description: ''
-      description: Het lokaal opwekken van stroom bespaart energie en in de toekomst
+      short_description:
+      description: |
+        Het lokaal opwekken van stroom bespaart energie en in de toekomst
         mogelijk ook geld.
     demand_export_energy_introduction:
       title: Introductie
-      short_description: ''
+      short_description:
       description: |
         Veel regio's hebben te maken met energiestromen die niet geproduceerd of verbruikt worden 
         binnen het lokale energiesysteem maar alleen worden doorgevoerd naar het achterland. 
@@ -90,7 +101,7 @@ nl:
         bijvoorbeeld van een haven naar het achterland.
     demand_export_energy:
       title: Exportvolumes per drager
-      short_description: ''
+      short_description:
       description: |
         Om transitstromen te modelleren in je scenario, kun je de <i>inflexibele</i> exportvolumes 
         van verschillende energiedragers instellen met de schuifjes hieronder. Het instellen van zo'n 
@@ -98,12 +109,11 @@ nl:
         balans blijft.
     demand_export_energy_transit_flows:
       title: Transitstromen
-      short_description: ''
+      short_description:
       description: |
         In de grafiek hiernaast zie je een overzicht van alle energiestromen binnen je energiesysteem,
         waaronder de transitstromen. Wil je meer inzicht in de transitstromen binnen je scenario?
         Bekijk dan ook de volgende grafieken:
-
         <ul>
         <li><a href="#" class="open_chart" data-chart-key="waterfall_future_energy_net_imports" data-chart-location="side">
         Netto importstromen</a> per energiedrager</li>
@@ -114,12 +124,21 @@ nl:
         <li><a href="#" class="open_chart" data-chart-key="space_requirements_transit_flows" data-chart-location="side">
         Ruimtebeslag</a> van benodigde infrastructuur (opslag) voor transitstromen</li>
         </ul>
-
-        <br />
-
+        <br/>
         Zie ook onze 
         <a href="https://docs.energytransitionmodel.com/main/transit-flows/" target=\"_blank\">documentatie</a> 
         voor meer achtergrondinformatie over de modellering van transitstromen in het ETM.
+    demand_households_overview:
+      title: Overzicht
+      short_description:
+      description: |
+        De bevolking en woningvoorraad zijn belangrijke factoren die invloed hebben op de totale vraag 
+        van huishoudens. De vraag is verdeeld in toepassingen: ruimteverwarming en warm water, 
+        koeling, koken, apparaten en verlichting.
+    demand_households_heating_producers:
+      title: Merit order warmte
+      short_description:
+      description: 
     demand_households_appliances:
       title: Apparaten
       short_description: ''
@@ -156,20 +175,23 @@ nl:
       description: "Hoe zullen huishoudens verwarmd worden en hun warm water maken?
         \r\n"
     demand_households_insulation:
-      title: Isolatie
-      short_description: ''
-      description: De vraag naar warmte is afhankelijk van de mate van isolatie. Hieronder
-        kan je de warmtevraag-reductie per huistype instellen ten gevolge van isolatiemaatregelen.
+      title: Warmtevraag & isolatie
+      short_description:
+      description: |
+        De energiebehoefte van een woning is afhankelijk van gebouwkenmerken, met name 
+        de mate van isolatie, maar ook andere factoren zoals gedrag en gewenst comfort
+        spelen een rol.
     demand_households_lighting:
       title: Verlichting
       short_description: ''
       description: Verlichting is een klein maar zichtbaar deel van het energiegebruik
         van een huishouden.
     demand_households_population:
-      title: Bevolking & huizenvoorraad
+      title: Bevolking & woningvoorraad
       short_description:
-      description: De energievraag voor alle huishoudens samen is afhankelijk van
-        het aantal inwoners en het aantal huizen, die je beide hier kunt instellen.
+      description: |
+        Bevolkingen groeien of krimpen in de loop van de tijd. Nieuwe woningen kunnen worden 
+        gebouwd en oude woningen kunnen worden gesloopt.
     demand_households_solar_panels:
       title: Zonnepanelen
       short_description: ''
@@ -441,14 +463,3 @@ nl:
       description: "Komen er meer bestelbussen die geen fossiele brandstoffen gebruiken?
         Wat gebeurt er dan met het energiegebruik? In de <a href=/scenario/supply/transport_fuels/road-transport
         >brandstoffensectie van wegverkeer</a> kun je de brandstofmix bepalen."
-    demand_households_overview:
-      title: Energievraag huishoudens
-      short_description:
-      description: |
-        De energievraag van huishoudens is een signifcant onderdeel van de totale energievraag.
-        Het groostste aandeel van deze energievraag is de vraag naar warmte in huishoudens.
-        Naast deze warmtevraag kan de elektriciteitsvraag van huishoudens voor verlichting en huishoudelijke apparaten zoals tv's hier gevonden worden.
-    demand_households_heating_producers:
-      title: Merit order warmte
-      short_description:
-      description: ''    

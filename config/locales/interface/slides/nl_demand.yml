@@ -72,7 +72,10 @@ nl:
       short_description:
       description: |
         De energievraag van een gebouw is sterk afhankelijk van de functie, maar ook van
-        gebouwkenmerken zoals de mate van isolatie.
+        gebouwkenmerken zoals de mate van isolatie. De typische warmtevraag voor gebouwen 
+        kan hier worden ingesteld per bouwjaarklasse. Ga naar de 
+        <a href="https://docs.energytransitionmodel.com/main/demand#buildings" target=\"_blank\">documentatie</a>
+        voor meer informatie.
     demand_buildings_lighting:
       title: Verlichting
       short_description:
@@ -135,28 +138,27 @@ nl:
         De bevolking en woningvoorraad zijn belangrijke factoren die invloed hebben op de totale vraag 
         van huishoudens. De vraag is verdeeld in toepassingen: ruimteverwarming en warm water, 
         koeling, koken, apparaten en verlichting.
-    demand_households_heating_producers:
-      title: Merit order warmte
-      short_description:
-      description: 
     demand_households_appliances:
       title: Apparaten
-      short_description: ''
-      description: 'Er kan nog veel verbeterd worden aan huishoudelijke apparaten.
-        Hoeveel efficiënter denk jij dat ze zullen worden? '
+      short_description:
+      description: |
+        Er kan nog veel verbeterd worden aan huishoudelijke apparaten.
+        Hoeveel efficiënter denk jij dat ze zullen worden?
     demand_households_behaviour:
       title: Gedrag
-      short_description: ''
-      description: 'Hoeveel verandert de huishoudelijke energievraag als we ons gedrag
-        aanpassen?  '
+      short_description:
+      description: |
+        Hoeveel verandert de huishoudelijke energievraag als we ons gedrag
+        aanpassen?
     demand_households_cooking:
       title: Koken
-      short_description: ''
-      description: Zal de energievraag veel veranderen als huishoudens anders gaan
+      short_description:
+      description: |
+        Zal de energievraag veel veranderen als huishoudens anders gaan
         koken?
     demand_households_cooling:
       title: Koeling
-      short_description: ''
+      short_description:
       description: |
         Hoe worden woningen gekoeld? Hiervoor kunnen voor een deel dezelfde
         apparaten worden gebruikt als voor 'Ruimteverwarming & warm water'.
@@ -171,19 +173,28 @@ nl:
         kunt aangeven.
     demand_households_heating:
       title: Ruimteverwarming & warm water
-      short_description: ''
-      description: "Hoe zullen huishoudens verwarmd worden en hun warm water maken?
-        \r\n"
+      short_description:
+      description: |
+        Hoe zullen huishoudens verwarmd worden en hun warm water maken? Hoe technologieën
+        worden verdeeld over de verschillende woningtypes en bouwjaarklasses wordt bepaald 
+        in de sectie
+        <a href="/scenario/demand/households_heating_order/merit-order">
+        Merit order</a>. Ga naar de 
+        <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentatie</a>
+        voor meer informatie.
     demand_households_insulation:
       title: Warmtevraag & isolatie
       short_description:
       description: |
         De energiebehoefte van een woning is afhankelijk van gebouwkenmerken, met name 
         de mate van isolatie, maar ook andere factoren zoals gedrag en gewenst comfort
-        spelen een rol.
+        spelen een rol. De typische warmtevraag voor woningen kan hier worden ingesteld 
+        per woningtype en bouwjaarklasse. Ga naar de 
+        <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentatie</a>
+        voor meer informatie.
     demand_households_lighting:
       title: Verlichting
-      short_description: ''
+      short_description:
       description: Verlichting is een klein maar zichtbaar deel van het energiegebruik
         van een huishouden.
     demand_households_population:
@@ -194,17 +205,33 @@ nl:
         gebouwd en oude woningen kunnen worden gesloopt.
     demand_households_solar_panels:
       title: Zonnepanelen
-      short_description: ''
+      short_description:
       description: |
         Hieronder kan je PV panelen en zonthermische collectoren installeren. Bij "Ruimteverwarming &
         warm water" kan je ook PVT panelen installeren in combinatie met een wartempomp.
         Deze technologieën concurreren deels om dakoppervlak. Je kunt het gebruik van dakoppervlak bekijken in <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households"
         data-chart-location="side">deze grafiek</a>.
-    demand_households_heating_technologies:
-      title: verwarmingstechnologieën
+    demand_households_heating_producers_order:
+      title: Inzetvolgorde
       short_description: 
       description: |
-        In deze tab kan de warmte output capaciteit voor verschillende verwarmingstechnologieën gezet worden.
+        In de sectie <a href="/scenario/demand/households/space-heating-and-hot-water">
+        Ruimteverwarming & warm water</a> is de mix van verwarmingstechnologieën ingesteld. 
+        Hoe de technologieën worden toegewezen aan woningen van een specifiek type en bouwjaarklasse 
+        (zie <a href="/scenario/demand/households/population-and-housing-stock">
+        Bevolking & woningvoorraad</a>), wordt hier bepaald. </br></br>
+        Er wordt aangenomen dat het de voorkeur van technologieën is om te leveren aan de meest 
+        recent gebouwde woningen. De technologie die vooraan in de inzetvolgorde staat, 
+        heeft als eerste de keuze en zal worden geïnstalleerd in de nieuwste woningen, 
+        doorgaans met de beste isolatie. De laatste technologie in de inzetvolgorde zal
+        dan de oudste woningen voorzien, die doorgaans slecht geïsoleerd zijn. 
+        Zie de <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentatie</a>
+        voor meer informatie.
+    demand_households_heating_technologies:
+      title: Vermogens
+      short_description: 
+      description: |
+        In deze tab kan de warmte outputcapaciteit voor verschillende verwarmingstechnologieën gezet worden.
     demand_industry:
       title: Energievraag in de industrie
       short_description:

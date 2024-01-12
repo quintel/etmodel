@@ -1,10 +1,6 @@
 ---
 - label: residences_before_1945
-<<<<<<< HEAD
   color: "#44AA99"
-=======
-  color: "#332288"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 10
   group: apartments_bar
   show_at_first: 
@@ -16,11 +12,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_apartments_before_1945_bar_residential_heating_demand
 - label: residences_1945_1964
-<<<<<<< HEAD
   color: "#648FFF"
-=======
-  color: "#44AA99"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 20
   group: apartments_bar
   show_at_first: 
@@ -32,11 +24,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_apartments_1945_1964_bar_residential_heating_demand
 - label: residences_1965_1984
-<<<<<<< HEAD
   color: "#785EF0"
-=======
-  color: "#DDCC77"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 30
   group: apartments_bar
   show_at_first: 
@@ -48,11 +36,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_apartments_1965_1984_bar_residential_heating_demand  
 - label: residences_1985_2004
-<<<<<<< HEAD
   color: "#DC267F"
-=======
-  color: "#AA4499"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 40
   group: apartments_bar
   show_at_first: 
@@ -64,11 +48,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_apartments_1985_2004_bar_residential_heating_demand
 - label: residences_2005_present
-<<<<<<< HEAD
   color: "#FE6100"
-=======
-  color: "#117733"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 50
   group: apartments_bar
   show_at_first: 
@@ -80,11 +60,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_apartments_2005_present_bar_residential_heating_demand  
 - label: residences_future
-<<<<<<< HEAD
   color: "#FFB000"
-=======
-  color: "#88CCEE"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 60
   group: apartments_bar
   show_at_first: 
@@ -97,11 +73,7 @@
   key: useful_demand_apartments_future_bar_residential_heating_demand    
 
 - label: residences_before_1945
-<<<<<<< HEAD
   color: "#44AA99"
-=======
-  color: "#332288"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 110
   group: detached_houses_bar
   show_at_first: 
@@ -113,11 +85,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_detached_houses_before_1945_bar_residential_heating_demand
 - label: residences_1945_1964
-<<<<<<< HEAD
   color: "#648FFF"
-=======
-  color: "#44AA99"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 120
   group: detached_houses_bar
   show_at_first: 
@@ -129,11 +97,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_detached_houses_1945_1964_bar_residential_heating_demand
 - label: residences_1965_1984
-<<<<<<< HEAD
   color: "#785EF0"
-=======
-  color: "#DDCC77"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 130
   group: detached_houses_bar
   show_at_first: 
@@ -145,11 +109,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_detached_houses_1965_1984_bar_residential_heating_demand  
 - label: residences_1985_2004
-<<<<<<< HEAD
   color: "#DC267F"
-=======
-  color: "#AA4499"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 140
   group: detached_houses_bar
   show_at_first: 
@@ -161,11 +121,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_detached_houses_1985_2004_bar_residential_heating_demand
 - label: residences_2005_present
-<<<<<<< HEAD
   color: "#FE6100"
-=======
-  color: "#117733"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 150
   group: detached_houses_bar
   show_at_first: 
@@ -177,11 +133,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_detached_houses_2005_present_bar_residential_heating_demand  
 - label: residences_future
-<<<<<<< HEAD
   color: "#FFB000"
-=======
-  color: "#88CCEE"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 160
   group: detached_houses_bar
   show_at_first: 
@@ -194,11 +146,7 @@
   key: useful_demand_detached_houses_future_bar_residential_heating_demand    
 
 - label: residences_before_1945
-<<<<<<< HEAD
   color: "#44AA99"
-=======
-  color: "#332288"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 210
   group: semi_detached_houses_bar
   show_at_first: 
@@ -206,19 +154,11 @@
   target_line_position: 
   gquery: useful_demand_semi_detached_houses_before_1945_bar
   is_1990: 
-<<<<<<< HEAD
   dependent_on: has_semi_detached_houses
   output_element_key: residential_heating_demand
   key: useful_demand_semi_detached_houses_before_1945_bar_residential_heating_demand
 - label: residences_1945_1964
   color: "#648FFF"
-=======
-  dependent_on: 
-  output_element_key: residential_heating_demand
-  key: useful_demand_semi_detached_houses_before_1945_bar_residential_heating_demand
-- label: residences_1945_1964
-  color: "#44AA99"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 220
   group: semi_detached_houses_bar
   show_at_first: 
@@ -226,19 +166,11 @@
   target_line_position: 
   gquery: useful_demand_semi_detached_houses_1945_1964_bar
   is_1990: 
-<<<<<<< HEAD
   dependent_on: has_semi_detached_houses
   output_element_key: residential_heating_demand
   key: useful_demand_semi_detached_houses_1945_1964_bar_residential_heating_demand
 - label: residences_1965_1984
   color: "#785EF0"
-=======
-  dependent_on: 
-  output_element_key: residential_heating_demand
-  key: useful_demand_semi_detached_houses_1945_1964_bar_residential_heating_demand
-- label: residences_1965_1984
-  color: "#DDCC77"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 230
   group: semi_detached_houses_bar
   show_at_first: 
@@ -246,19 +178,11 @@
   target_line_position: 
   gquery: useful_demand_semi_detached_houses_1965_1984_bar
   is_1990: 
-<<<<<<< HEAD
   dependent_on: has_semi_detached_houses
   output_element_key: residential_heating_demand
   key: useful_demand_semi_detached_houses_1965_1984_bar_residential_heating_demand  
 - label: residences_1985_2004
   color: "#DC267F"
-=======
-  dependent_on: 
-  output_element_key: residential_heating_demand
-  key: useful_demand_semi_detached_houses_1965_1984_bar_residential_heating_demand  
-- label: residences_1985_2004
-  color: "#AA4499"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 240
   group: semi_detached_houses_bar
   show_at_first: 
@@ -266,19 +190,11 @@
   target_line_position: 
   gquery: useful_demand_semi_detached_houses_1985_2004_bar
   is_1990: 
-<<<<<<< HEAD
   dependent_on: has_semi_detached_houses
   output_element_key: residential_heating_demand
   key: useful_demand_semi_detached_houses_1985_2004_bar_residential_heating_demand
 - label: residences_2005_present
   color: "#FE6100"
-=======
-  dependent_on: 
-  output_element_key: residential_heating_demand
-  key: useful_demand_semi_detached_houses_1985_2004_bar_residential_heating_demand
-- label: residences_2005_present
-  color: "#117733"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 250
   group: semi_detached_houses_bar
   show_at_first: 
@@ -286,19 +202,11 @@
   target_line_position: 
   gquery: useful_demand_semi_detached_houses_2005_present_bar
   is_1990: 
-<<<<<<< HEAD
   dependent_on: has_semi_detached_houses
   output_element_key: residential_heating_demand
   key: useful_demand_semi_detached_houses_2005_present_bar_residential_heating_demand  
 - label: residences_future
   color: "#FFB000"
-=======
-  dependent_on: 
-  output_element_key: residential_heating_demand
-  key: useful_demand_semi_detached_houses_2005_present_bar_residential_heating_demand  
-- label: residences_future
-  color: "#88CCEE"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 260
   group: semi_detached_houses_bar
   show_at_first: 
@@ -306,20 +214,12 @@
   target_line_position: 
   gquery: useful_demand_semi_detached_houses_future_bar
   is_1990: 
-<<<<<<< HEAD
   dependent_on: has_semi_detached_houses
-=======
-  dependent_on: 
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   output_element_key: residential_heating_demand
   key: useful_demand_semi_detached_houses_future_bar_residential_heating_demand    
 
 - label: residences_before_1945
-<<<<<<< HEAD
   color: "#44AA99"
-=======
-  color: "#332288"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 310
   group: terraced_houses_bar
   show_at_first: 
@@ -331,11 +231,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_terraced_houses_before_1945_bar_residential_heating_demand
 - label: residences_1945_1964
-<<<<<<< HEAD
   color: "#648FFF"
-=======
-  color: "#44AA99"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 320
   group: terraced_houses_bar
   show_at_first: 
@@ -347,11 +243,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_terraced_houses_1945_1964_bar_residential_heating_demand
 - label: residences_1965_1984
-<<<<<<< HEAD
   color: "#785EF0"
-=======
-  color: "#DDCC77"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 330
   group: terraced_houses_bar
   show_at_first: 
@@ -363,11 +255,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_terraced_houses_1965_1984_bar_residential_heating_demand  
 - label: residences_1985_2004
-<<<<<<< HEAD
   color: "#DC267F"
-=======
-  color: "#AA4499"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 340
   group: terraced_houses_bar
   show_at_first: 
@@ -379,11 +267,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_terraced_houses_1985_2004_bar_residential_heating_demand
 - label: residences_2005_present
-<<<<<<< HEAD
   color: "#FE6100"
-=======
-  color: "#117733"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 350
   group: terraced_houses_bar
   show_at_first: 
@@ -395,11 +279,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_terraced_houses_2005_present_bar_residential_heating_demand  
 - label: residences_future
-<<<<<<< HEAD
   color: "#FFB000"
-=======
-  color: "#88CCEE"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 360
   group: terraced_houses_bar
   show_at_first: 
@@ -412,11 +292,7 @@
   key: useful_demand_terraced_houses_future_bar_residential_heating_demand    
 
 - label: residences_before_1945
-<<<<<<< HEAD
   color: "#44AA99"
-=======
-  color: "#332288"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 410
   group: total_residences_bar
   show_at_first: 
@@ -428,11 +304,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_total_residences_before_1945_bar_residential_heating_demand
 - label: residences_1945_1964
-<<<<<<< HEAD
   color: "#648FFF"
-=======
-  color: "#44AA99"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 420
   group: total_residences_bar
   show_at_first: 
@@ -444,11 +316,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_total_residences_1945_1964_bar_residential_heating_demand
 - label: residences_1965_1984
-<<<<<<< HEAD
   color: "#785EF0"
-=======
-  color: "#DDCC77"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 430
   group: total_residences_bar
   show_at_first: 
@@ -460,11 +328,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_total_residences_1965_1984_bar_residential_heating_demand  
 - label: residences_1985_2004
-<<<<<<< HEAD
   color: "#DC267F"
-=======
-  color: "#AA4499"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 440
   group: total_residences_bar
   show_at_first: 
@@ -476,11 +340,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_total_residences_1985_2004_bar_residential_heating_demand
 - label: residences_2005_present
-<<<<<<< HEAD
   color: "#FE6100"
-=======
-  color: "#117733"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 450
   group: total_residences_bar
   show_at_first: 
@@ -492,11 +352,7 @@
   output_element_key: residential_heating_demand
   key: useful_demand_total_residences_2005_present_bar_residential_heating_demand  
 - label: residences_future
-<<<<<<< HEAD
   color: "#FFB000"
-=======
-  color: "#88CCEE"
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)
   order_by: 460
   group: total_residences_bar
   show_at_first: 
@@ -506,8 +362,4 @@
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_demand
-<<<<<<< HEAD
   key: useful_demand_total_residences_future_bar_residential_heating_demand    
-=======
-  key: useful_demand_total_residences_future_bar_residential_heating_demand    
->>>>>>> 6e8a5314a (Addition of Residential heating demand graph to ETmodel)

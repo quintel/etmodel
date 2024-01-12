@@ -1151,102 +1151,102 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: lng_bunkers_mekko_of_primary_demand
-- label: imported_hydrogen
+- label: imported_hydrogen_gas
   color: "#87CEEB"
   order_by: 13
   group: energy_industry
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: imported_hydrogen_industry_in_mekko_of_primary_demand
+  gquery: imported_hydrogen_gas_industry_in_mekko_of_primary_demand
   is_1990: false
   dependent_on: 
   output_element_key: mekko_of_primary_demand
-  key: imported_hydrogen_industry_mekko_of_primary_demand
-- label: imported_hydrogen
+  key: imported_hydrogen_gas_industry_mekko_of_primary_demand
+- label: imported_hydrogen_gas
   color: "#87CEEB"
   order_by: 13
   group: households
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: imported_hydrogen_households_in_mekko_of_primary_demand
+  gquery: imported_hydrogen_gas_households_in_mekko_of_primary_demand
   is_1990: false
   dependent_on: 
   output_element_key: mekko_of_primary_demand
-  key: imported_hydrogen_households_mekko_of_primary_demand
-- label: imported_hydrogen
+  key: imported_hydrogen_gas_households_mekko_of_primary_demand
+- label: imported_hydrogen_gas
   color: "#87CEEB"
   order_by: 13
   group: bunkers
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: imported_hydrogen_bunkers_in_mekko_of_primary_demand
+  gquery: imported_hydrogen_gas_bunkers_in_mekko_of_primary_demand
   is_1990: false
   dependent_on: 
   output_element_key: mekko_of_primary_demand
-  key: imported_hydrogen_bunkers_mekko_of_primary_demand
-- label: imported_hydrogen
+  key: imported_hydrogen_gas_bunkers_mekko_of_primary_demand
+- label: imported_hydrogen_gas
   color: "#87CEEB"
   order_by: 13
   group: agriculture
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: imported_hydrogen_agriculture_in_mekko_of_primary_demand
+  gquery: imported_hydrogen_gas_agriculture_in_mekko_of_primary_demand
   is_1990: false
   dependent_on: 
   output_element_key: mekko_of_primary_demand
-  key: imported_hydrogen_agriculture_mekko_of_primary_demand
-- label: imported_hydrogen
+  key: imported_hydrogen_gas_agriculture_mekko_of_primary_demand
+- label: imported_hydrogen_gas
   color: "#87CEEB"
   order_by: 13
   group: other
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: imported_hydrogen_other_in_mekko_of_primary_demand
+  gquery: imported_hydrogen_gas_other_in_mekko_of_primary_demand
   is_1990: false
   dependent_on: 
   output_element_key: mekko_of_primary_demand
-  key: imported_hydrogen_other_mekko_of_primary_demand
-- label: imported_hydrogen
+  key: imported_hydrogen_gas_other_mekko_of_primary_demand
+- label: imported_hydrogen_gas
   color: "#87CEEB"
   order_by: 13
   group: transport
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: imported_hydrogen_transport_in_mekko_of_primary_demand
+  gquery: imported_hydrogen_gas_transport_in_mekko_of_primary_demand
   is_1990: false
   dependent_on: 
   output_element_key: mekko_of_primary_demand
-  key: imported_hydrogen_transport_mekko_of_primary_demand
-- label: imported_hydrogen
+  key: imported_hydrogen_gas_transport_mekko_of_primary_demand
+- label: imported_hydrogen_gas
   color: "#87CEEB"
   order_by: 13
   group: buildings
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: imported_hydrogen_buildings_in_mekko_of_primary_demand
+  gquery: imported_hydrogen_gas_buildings_in_mekko_of_primary_demand
   is_1990: false
   dependent_on: 
   output_element_key: mekko_of_primary_demand
-  key: imported_hydrogen_buildings_mekko_of_primary_demand
-- label: imported_hydrogen
+  key: imported_hydrogen_gas_buildings_mekko_of_primary_demand
+- label: imported_hydrogen_gas
   color: "#87CEEB"
   order_by: 13
   group: export_and_curtailment
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: imported_hydrogen_export_and_curtailment_in_mekko_of_primary_demand
+  gquery: imported_hydrogen_gas_export_and_curtailment_in_mekko_of_primary_demand
   is_1990: false
   dependent_on: 
   output_element_key: mekko_of_primary_demand
-  key: imported_hydrogen_export_and_curtailment_mekko_of_primary_demand
+  key: imported_hydrogen_gas_export_and_curtailment_mekko_of_primary_demand
 - label: renewable_heat
   color: "#FFD900"
   order_by: 14
@@ -1535,3 +1535,99 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_ammonia_export_and_curtailment_mekko_of_primary_demand
+- label: imported_hydrogen_carriers
+  color: "#46788c"
+  order_by: 17
+  group: energy_industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_carriers_industry_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_carriers_industry_mekko_of_primary_demand
+- label: imported_hydrogen_carriers
+  color: "#46788c"
+  order_by: 17
+  group: households
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_carriers_households_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_carriers_households_mekko_of_primary_demand
+- label: imported_hydrogen_carriers
+  color: "#46788c"
+  order_by: 17
+  group: bunkers
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_carriers_bunkers_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_carriers_bunkers_mekko_of_primary_demand
+- label: imported_hydrogen_carriers
+  color: "#46788c"
+  order_by: 17
+  group: agriculture
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_carriers_agriculture_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_carriers_agriculture_mekko_of_primary_demand
+- label: imported_hydrogen_carriers
+  color: "#46788c"
+  order_by: 17
+  group: other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_carriers_other_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_carriers_other_mekko_of_primary_demand
+- label: imported_hydrogen_carriers
+  color: "#46788c"
+  order_by: 17
+  group: transport
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_carriers_transport_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_carriers_transport_mekko_of_primary_demand
+- label: imported_hydrogen_carriers
+  color: "#46788c"
+  order_by: 17
+  group: buildings
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_carriers_buildings_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_carriers_buildings_mekko_of_primary_demand
+- label: imported_hydrogen_carriers
+  color: "#46788c"
+  order_by: 17
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_hydrogen_carriers_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_hydrogen_carriers_export_and_curtailment_mekko_of_primary_demand  

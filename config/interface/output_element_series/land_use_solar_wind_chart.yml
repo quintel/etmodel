@@ -17,14 +17,14 @@
   key: wind_inland_large_land_use_solar_wind_chart
 - label: wind_inland_small
   color: "#2D2C8B"
-  order_by: 20
+  order_by: 15
   group: inland
   gquery: land_use_solar_wind_wind_inland_small_total_land_use
   output_element_key: land_use_solar_wind_chart
   key: wind_inland_small_land_use_solar_wind_chart
 - label: solar_pv_onshore
   color: "#592D8A"
-  order_by: 30
+  order_by: 16
   group: inland
   gquery: land_use_solar_wind_solar_pv_plants_onshore_total_land_use
   output_element_key: land_use_solar_wind_chart
@@ -32,30 +32,38 @@
 - label: solar_pv_buildings
   color: "#ffc04f"
   order_by: 20
-  group: rooftop_area
+  group: rooftop_area_buildings
   gquery: land_use_solar_wind_solar_pv_buildings_total_land_use
   output_element_key: land_use_solar_wind_chart
   key: solar_pv_buildings_land_use_solar_wind_chart
 - label: buildings_roof_surface_area_available
   color: "#fd8163"
   order_by: 25
-  group: rooftop_area
+  group: rooftop_area_buildings
   is_target_line: true
   gquery: land_use_solar_wind_buildings_roof_surface_area_available
   output_element_key: land_use_solar_wind_chart
   key: buildings_roof_surface_area_available_land_use_solar_wind_chart
+
 - label: solar_pv_households
   color: "#ffdb9c"
   order_by: 30
-  group: rooftop_area
+  group: rooftop_area_households
   gquery: land_use_solar_wind_solar_pv_households_total_land_use
   output_element_key: land_use_solar_wind_chart
   key: solar_pv_households_land_use_solar_wind_chart
-- label: total_roof_surface_area_available
+- label: solar_pvt_households
+  color: "#ffaa9c"
+  order_by: 31
+  group: rooftop_area_households
+  gquery: land_use_solar_wind_solar_pvt_households_total_land_use
+  output_element_key: land_use_solar_wind_chart
+  key: solar_pvt_households_land_use_solar_wind_chart
+- label: households_roof_surface_area_available
   color: "#ff0000"
   order_by: 35
-  group: rooftop_area
+  group: rooftop_area_households
   is_target_line: true
-  gquery: land_use_solar_wind_total_roof_surface_area_available
+  gquery: land_use_solar_wind_households_roof_surface_area_available
   output_element_key: land_use_solar_wind_chart
-  key: total_roof_surface_area_available_land_use_solar_wind_chart
+  key: households_roof_surface_area_available_land_use_solar_wind_chart

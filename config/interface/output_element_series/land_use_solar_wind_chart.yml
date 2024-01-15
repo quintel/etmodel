@@ -9,28 +9,29 @@
   dependent_on: has_coastline
 
 - label: wind_inland_large
-  color: "#68A6DB"
+  color: "#3c7da4"
   order_by: 10
   group: inland
   gquery: land_use_solar_wind_wind_inland_large_total_land_use
   output_element_key: land_use_solar_wind_chart
   key: wind_inland_large_land_use_solar_wind_chart
 - label: wind_inland_small
-  color: "#2D2C8B"
+  color: "#9EC4DA"
   order_by: 15
   group: inland
   gquery: land_use_solar_wind_wind_inland_small_total_land_use
   output_element_key: land_use_solar_wind_chart
   key: wind_inland_small_land_use_solar_wind_chart
 - label: solar_pv_onshore
-  color: "#592D8A"
+  color: "#F7D02F"
   order_by: 16
   group: inland
   gquery: land_use_solar_wind_solar_pv_plants_onshore_total_land_use
   output_element_key: land_use_solar_wind_chart
   key: solar_pv_plants_onshore_land_use_solar_wind_chart
+
 - label: solar_pv_buildings
-  color: "#ffc04f"
+  color: "#f5bd99"
   order_by: 20
   group: rooftop_area_buildings
   gquery: land_use_solar_wind_solar_pv_buildings_total_land_use
@@ -46,7 +47,7 @@
   key: buildings_roof_surface_area_available_land_use_solar_wind_chart
 
 - label: solar_pv_households
-  color: "#ffdb9c"
+  color: "#df6516"
   order_by: 30
   group: rooftop_area_households
   gquery: land_use_solar_wind_solar_pv_households_total_land_use
@@ -60,7 +61,7 @@
   output_element_key: land_use_solar_wind_chart
   key: solar_pvt_households_land_use_solar_wind_chart
 - label: households_roof_surface_area_available
-  color: "#ff0000"
+  color: "#ee5364"
   order_by: 35
   group: rooftop_area_households
   is_target_line: true

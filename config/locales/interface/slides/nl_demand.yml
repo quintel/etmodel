@@ -231,7 +231,17 @@ nl:
       title: Vermogens
       short_description: 
       description: |
-        In deze tab kan de warmte outputcapaciteit voor verschillende verwarmingstechnologieën gezet worden.
+        In de sectie voor <a href="/scenario/demand/households/space-heating-and-hot-water">
+        Ruimteverwarming & warm water</a> is de mix van verwarmingstechnologieën ingesteld.
+        De dimensionering van deze technologieën kan hier worden aangepast. </br></br>
+        Het kan voorkomen dat het standaard warmtevermogen van een technologie te laag is om
+        aan de vraag van de woning waarin deze is geïnstalleerd te voldoen. Een optie is dan 
+        om de warmtecapaciteit te veranderen en zo de technologie juist te dimensioneren.
+        Een andere optie is om te kiezen voor een andere technologie, wat kan door de
+        <a href="/scenario/demand/households_heating_order/merit-order">Inzetvolgorde</a> te
+        wijzigen. Zie de 
+        <a href="https://docs.energytransitionmodel.com/main/demand#households" target="_blank">documentatie</a>
+        voor meer informatie.
     demand_industry:
       title: Energievraag in de industrie
       short_description:

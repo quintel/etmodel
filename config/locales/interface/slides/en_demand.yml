@@ -222,7 +222,17 @@ en:
       title: Capacities
       short_description: 
       description: |
-        In this tab the heat output capacity for heating technologies for households can be set.   
+        In the <a href="/scenario/demand/households/space-heating-and-hot-water">
+        Space heating & hot water</a> section, the mix of heating technologies is set.
+        The dimensioning of these techologies can be adjusted here. </br></br>
+        It can occur that the default heat capacity of a technology is too low to meet the demand 
+        of the residence in which it is installed. One option is then to dimension the 
+        technology properly, by changing the heat capacity below. Another option is to 
+        install a different technology, which can be done by changing the
+        <a href="/scenario/demand/households_heating_order/merit-order">
+        Merit order</a>. See the 
+        <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentation</a>
+        for more information.
     demand_households_solar_panels:
       title: Solar panels
       short_description:

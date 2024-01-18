@@ -248,3 +248,17 @@
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
   key: ambient_hot_water_source_of_heat_used_in_households
+
+- label: deficit
+  color: "#ffbaba"
+  order_by: 200
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: deficit_used_for_heating_and_hot_water_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: deficit_heating_source_of_heat_used_in_households
+

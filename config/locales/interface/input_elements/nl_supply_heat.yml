@@ -964,7 +964,7 @@ nl:
       title: Midden temperatuur
       short_description:
       description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        biomassa WKK's voor hoge-temperatuur warmtenetten in te stellen. 
+        biomassa WKK's voor midden-temperatuur warmtenetten in te stellen. 
         \r\n<br/><br/>\r\n
         De hoeveelheid warmte die wordt geproduceerd door Biomassa WKK's wordt bepaald
         door het totaal geinstalleerd vermogen. 
@@ -979,11 +979,29 @@ nl:
         De hoeveelheid warmte die geproduceerd wordt door poederkolen WKK's met bijstook
         wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
         <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+    share_of_energy_chp_ultra_supercritical_ht_lignite:
+      title: Hoge temperatuur
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        grootschalige bruinkolen WKK's voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n 
+        De hoeveelheid warmte die geproduceerd wordt door grootschalige bruinkolen WKK's
+        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+    share_of_energy_chp_ultra_supercritical_mt_lignite:
+      title: Midden temperatuur
+      short_description:
+      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
+        grootschalige bruinkolen WKK's voor het hoge-temperatuur warmtenet in te stellen. 
+        \r\n<br/><br/>\r\n 
+        De hoeveelheid warmte die geproduceerd wordt door grootschalige bruinkolen WKK's
+        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
     share_of_energy_chp_ultra_supercritical_cofiring_mt_coal:
       title: Midden temperatuur
       short_description:
       description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        grootschalige poederkolen WKK's met bijstook voor het hoge-temperatuur warmtenet in te stellen. 
+        grootschalige poederkolen WKK's met bijstook voor het midden-temperatuur warmtenet in te stellen. 
         \r\n<br/><br/>\r\n 
         De hoeveelheid warmte die geproduceerd wordt door grootschalige poederkolen WKK's met bijstook
         wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
@@ -1019,7 +1037,7 @@ nl:
       title: Midden temperatuur
       short_description:
       description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        afval WKK's voor het hoge-temperatuur warmtenet in te stellen. 
+        afval WKK's voor het midden-temperatuur warmtenet in te stellen. 
         \r\n<br/><br/>\r\n
         De hoeveelheid warmte die geproduceerd wordt door afval WKK's
         wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
@@ -1040,7 +1058,7 @@ nl:
       short_description:
       description:
         Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        power-to-heat (P2H) boilers voor het hoge-temperatuur warmtenet in te stellen. 
+        power-to-heat (P2H) boilers voor het midden-temperatuur warmtenet in te stellen. 
         \r\n<br/><br/>\r\n
         De hoeveelheid warmte die geproduceerd wordt door power-to-heat boilers wordt bepaald door het geïnstalleerde vermogen
         en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 

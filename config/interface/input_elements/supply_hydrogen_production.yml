@@ -38,14 +38,14 @@
   step_value: 1.0
   unit: MW
   command_type: value
-  related_node: energy_hydrogen_ammonia_reformer
+  related_node: energy_hydrogen_liquid_hydrogen_regasifier
   position: 60
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_lohc_reformer
   step_value: 1.0
   unit: MW
   command_type: value
-  related_node: energy_hydrogen_ammonia_reformer
+  related_node: energy_hydrogen_lohc_reformer
   position: 70
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_biomass_gasification

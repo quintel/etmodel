@@ -674,30 +674,33 @@ en:
     volume_of_ht_imported_heat:
       title: Imported heat
       short_description:
-      description: "Use this slider to adjust the amount of heat (PJ) imported from outside 
-        the area in medium-temperature heat grids.
-        \r\n<br/><br/>\r\n 
-        To change the amount of emissions attributed to imported heat, 
-        go to Supply > District heating > 
-        <a href=\"/scenario/supply/biomass/potential-of-biomass\" >Emissions from heat import</a>."
+      description: |
+        Use this slider to adjust the amount of heat (PJ) imported from outside 
+        the area for high-temperature heat networks.
+        <br/><br/>
+        To change the amount of emissions attributed to imported heat, go to 
+        <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-heat">
+        CO<sub>2</sub> emissions of imported heat</a>.
     volume_of_lt_imported_heat:
       title: Imported heat
       short_description:
-      description: "Use this slider to adjust the amount of heat (PJ) imported from outside 
-        the area in medium-temperature heat grids.
-        \r\n<br/><br/>\r\n 
-        To change the amount of emissions attributed to imported heat, 
-        go to Supply > District heating > 
-        <a href=\"/scenario/supply/biomass/potential-of-biomass\" >Emissions from heat import</a>."
+      description: |
+        Use this slider to adjust the amount of heat (PJ) imported from outside 
+        the area for low-temperature heat networks.
+        <br/><br/>
+        To change the amount of emissions attributed to imported heat, go to 
+        <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-heat">
+        CO<sub>2</sub> emissions of imported heat</a>.
     volume_of_mt_imported_heat:
       title: Imported heat
       short_description:
-      description: "Use this slider to adjust the amount of heat (PJ) imported from outside 
-        the area in medium-temperature heat grids.
-        \r\n<br/><br/>\r\n 
-        To change the amount of emissions attributed to imported heat, 
-        go to Supply > District heating > 
-        <a href=\"/scenario/supply/biomass/potential-of-biomass\" >Emissions from heat import</a>."
+      description: |
+        Use this slider to adjust the amount of heat (PJ) imported from outside 
+        the area for medium-temperature heat networks.
+        <br/><br/>
+        To change the amount of emissions attributed to imported heat, go to 
+        <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-heat">
+        CO<sub>2</sub> emissions of imported heat</a>.
     volume_of_ht_residual_heat:
       title: Residual heat
       short description:

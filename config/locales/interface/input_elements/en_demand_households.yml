@@ -938,24 +938,45 @@ en:
     households_heater_district_heating_ht_steam_hot_water_share:
       title: HT district heating
       short_description:
-      description: District heating is heat supplied by a heat network. The heat can
-        be produced by local heat plants / large-scale burners or the heat can be
-        imported from outside your region. You can set the heat sources in the Supply section
-        under the header <a href="/scenario/supply/heat_ht">"HT heat networks"</a>.
+      description: |
+        This slider sets the percentage of household heat demand that is supplied by 
+        district heating operating at a high temperature (HT). </br></br>
+        District heating is heat supplied by a heat network. The heat can be produced 
+        locally from various sources or the heat can be imported from outside your region. 
+        Heat networks are designed to operate at a specific temperature, but different
+        networks can have different temperature levels. Go to the
+        <a href="/scenario/supply/heat_ht">HT district heating</a> section to determine 
+        how the heat is supplied. See our 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentation</a> for more information.
     households_heater_district_heating_mt_steam_hot_water_share:
       title: MT district heating
       short_description:
-      description: District heating is heat supplied by a heat network. The heat can
-        be produced by local heat plants / large-scale burners or the heat can be
-        imported from outside your region. You can set the heat sources in the Supply section
-        under the header <a href="/scenario/supply/heat_mt">"MT heat networks"</a>.
+      description: |
+        This slider sets the percentage of household heat demand that is supplied by 
+        district heating operating at a medium temperature (MT). </br></br>
+        District heating is heat supplied by a heat network. The heat can be produced 
+        locally from various sources or the heat can be imported from outside your region. 
+        Heat networks are designed to operate at a specific temperature, but different
+        networks can have different temperature levels. Go to the
+        <a href="/scenario/supply/heat_mt">MT district heating</a> section to determine 
+        how the heat is supplied. See our 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentation</a> for more information.
     households_heater_district_heating_lt_steam_hot_water_share:
       title: LT district heating
       short_description:
-      description: District heating is heat supplied by a heat network. The heat can
-        be produced by local heat plants / large-scale burners or the heat can be
-        imported from outside your region. You can set the heat sources in the Supply section
-        under the header <a href="/scenario/supply/heat_lt">"LT heat networks"</a>.
+      description: |
+        This slider sets the percentage of household heat demand that is supplied by 
+        district heating operating at a low temperature (LT). </br></br>
+        District heating is heat supplied by a heat network. The heat can be produced 
+        locally from various sources or the heat can be imported from outside your region. 
+        Heat networks are designed to operate at a specific temperature, but different
+        networks can have different temperature levels. Go to the
+        <a href="/scenario/supply/heat_lt">LT district heating</a> section to determine 
+        how the heat is supplied. See our 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentation</a> for more information.
     households_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (gas)
       short_description:

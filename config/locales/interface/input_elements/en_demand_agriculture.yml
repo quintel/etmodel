@@ -56,18 +56,30 @@ en:
       title: HT district heating
       short_description: ''
       description: |
-        This slider sets the share of useful heat demand from agriculture that is supplied 
-        by a HT heat network.
-        You can determine with which HT heat network sources you want to meet this demand in
-        the <a href="/scenario/supply/heat_ht">HT district heating</a> section.
+        This slider sets the percentage of agriculture heat demand that is supplied by 
+        district heating operating at a high temperature (HT). </br></br>
+        District heating is heat supplied by a heat network. The heat can be produced 
+        locally from various sources or the heat can be imported from outside your region. 
+        Heat networks are designed to operate at a specific temperature, but different
+        networks can have different temperature levels. Go to the
+        <a href="/scenario/supply/heat_ht">HT district heating</a> section to determine 
+        how the heat is supplied. See our 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentation</a> for more information.
     agriculture_final_demand_mt_central_steam_hot_water_share:
       title: MT district heating
       short_description: ''
       description: |
-        This slider sets the share of useful heat demand from agriculture that is supplied 
-        by a MT heat network.
-        You can determine with which MT heat network sources you want to meet this demand in
-        the <a href="/scenario/supply/heat_mt">MT district heating</a> section.
+        This slider sets the percentage of agriculture heat demand that is supplied by 
+        district heating operating at a medium temperature (M)T). </br></br>
+        District heating is heat supplied by a heat network. The heat can be produced 
+        locally from various sources or the heat can be imported from outside your region. 
+        Heat networks are designed to operate at a specific temperature, but different
+        networks can have different temperature levels. Go to the
+        <a href="/scenario/supply/heat_mt">MT district heating</a> section to determine 
+        how the heat is supplied. See our 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentation</a> for more information.
     agriculture_final_demand_local_steam_hot_water_share:
       title: Heat from local CHPs
       short_description:

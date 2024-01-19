@@ -167,24 +167,42 @@ nl:
     buildings_space_heater_district_heating_ht_steam_hot_water_share:
       title: HT-warmtenet
       short_description:
-      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
-        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
-        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
-        <a href="/scenario/supply/heat_ht">"HT-warmtenetten"</a>.
+      description: |
+        Dit schuifje bepaalt welk deel van de warmtevraag van gebouwen wordt geleverd 
+        door warmtenetten die opereren op een hoge temperatuur (HT). </br></br>
+        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
+        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke 
+        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
+        Ga naar de sectie <a href="/scenario/supply/heat_ht">HT-warmtenetten</a> om te bepalen 
+        hoe de warmte wordt geleverd. Zie onze 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentatie</a> voor meer informatie.
     buildings_space_heater_district_heating_mt_steam_hot_water_share:
       title: MT-warmtenet
       short_description:
-      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
-        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
-        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
-        <a href="/scenario/supply/heat_mt">"MT-warmtenetten"</a>.
+      description: |
+        Dit schuifje bepaalt welk deel van de warmtevraag van gebouwen wordt geleverd 
+        door warmtenetten die opereren op een midden temperatuur (MT). </br></br>
+        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
+        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke 
+        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
+        Ga naar de sectie <a href="/scenario/supply/heat_mt">MT-warmtenetten</a> om te bepalen 
+        hoe de warmte wordt geleverd. Zie onze 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentatie</a> voor meer informatie.
     buildings_space_heater_district_heating_lt_steam_hot_water_share:
       title: LT-warmtenet
       short_description:
-      description: Warmte uit een warmtenet kan geproduceerd worden door lokale warmtecentrales
-        / grootschalige warmteketels óf de warmte kan worden geïmporteerd van buiten
-        jouw gebied. Kies de warmtebronnen in het Aanbod-gedeelte onder het kopje
-        <a href="/scenario/supply/heat_lt">"LT-warmtenetten"</a>.
+      description: |
+        Dit schuifje bepaalt welk deel van de warmtevraag van gebouwen wordt geleverd 
+        door warmtenetten die opereren op een lage temperatuur (LT). </br></br>
+        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
+        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke 
+        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
+        Ga naar de sectie <a href="/scenario/supply/heat_lt">LT-warmtenetten</a> om te bepalen 
+        hoe de warmte wordt geleverd. Zie onze 
+        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        documentatie</a> voor meer informatie.
     buildings_space_heater_coal_share:
       title: Kolenketel
       short_description:

@@ -115,6 +115,42 @@
   gquery: co2_intensity_european_commission_threshold
   output_element_key: co2_intensity_of_hydrogen_production
   key: co2_intensity_of_hydrogen_production_ammonia_co2_intensity_of_hydrogen_production
+  
+
+- label: co2_emitted
+  color: "#49A5F8"
+  order_by: 170
+  group: lohc_reforming
+  is_target_line: false
+  gquery: co2_intensity_of_hydrogen_production_lohc_reformer
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_lohc_reformer_co2_intensity_of_hydrogen_production
+- label: co2_threshold
+  color: "#AB47BC"
+  order_by: 175
+  group: lohc_reforming
+  is_target_line: true
+  gquery: co2_intensity_european_commission_threshold
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_lohc_co2_intensity_of_hydrogen_production 
+  
+- label: co2_emitted
+  color: "#49A5F8"
+  order_by: 190
+  group: liguid_hydrogen_regasification
+  is_target_line: false
+  gquery: co2_intensity_of_hydrogen_production_liquid_hydrogen_regasifier
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_liquid_hydrogen_regasifier_co2_intensity_of_hydrogen_production
+- label: co2_threshold
+  color: "#AB47BC"
+  order_by: 195
+  group: liguid_hydrogen_regasification
+  is_target_line: true
+  gquery: co2_intensity_european_commission_threshold
+  output_element_key: co2_intensity_of_hydrogen_production
+  key: co2_intensity_of_hydrogen_production_liquid_hydrogen_co2_intensity_of_hydrogen_production   
+
 
 - label: co2_emitted
   color: "#49A5F8"

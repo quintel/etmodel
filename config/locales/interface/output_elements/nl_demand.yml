@@ -173,15 +173,15 @@ nl:
       title: Eindgebruik energie van internationaal transport per drager
       short_description:
       description: |
-        Deze grafiek toont welke brandstoffen gebruikt worden in <a href=/scenario/demand/transport_international_transport/international-transport> 
-        internationaal transport</a>. Internationaal transport bestaat uit 
+        Deze grafiek toont welke brandstoffen gebruikt worden in <a href=/scenario/demand/transport_international_transport/international-transport>
+        internationaal transport</a>. Internationaal transport bestaat uit
         <a href=/scenario/demand/transport_international_transport/international-aviation-technology> luchtvaart</a>
         en <a href=/scenario/demand/transport_international_transport/international-navigation-technology> scheepvaart</a>.
     co2_emission_international_transportation:
       title: CO<sub>2</sub>-uitstoot van internationaal transport
       short_description:
       description: |
-        Deze grafiek toont de CO<sub>2</sub>-emissies van <a href=/scenario/demand/transport_international_transport/international-transport> 
+        Deze grafiek toont de CO<sub>2</sub>-emissies van <a href=/scenario/demand/transport_international_transport/international-transport>
         internationaal transport</a>. Door de brandstoffen voor <a href=/scenario/supply/transport_fuels/international-aviation>
         internationale luchtvaart</a> en de technologieen voor <a href=/scenario/demand/transport_international_transport/international-navigation-technology>
         internationale scheepvaart</a> te veranderen, kan je de CO<sub>2</sub>-emissies beïnvloeden.
@@ -256,23 +256,13 @@ nl:
         energiebesparing.\r\n\r\n<br/><br/>\r\nKies '<u>Wijzig grafiek</u>' boven
         de grafiek om andere grafieken te tonen over energiegebruik.\r\n"
     use_of_final_demand_in_buildings:
-      title: Eindgebruik energie in gebouwen per applicatie
+      title: Eindgebruik energie in gebouwen per toepassing
       short_description:
       description: |
-        Deze grafiek toont hoe de finale vraag naar energie in gebouwen verandert 
+        Deze grafiek toont hoe de finale vraag naar energie in gebouwen verandert
         als gevolg van de keuzes en aannames die je in dit onderdeel maakt. <br/><br/>
         Kies <u>Wijzig grafiek</u> om andere grafieken te tonen
         over energiegebruik.
-    effect_of_insulation_in_buildings:
-      title: Warmtevraag met isolatie in gebouwen
-      short_description: Gebouwen
-      description: "Deze grafiek toont hoe de vraag naar warmte en elektriciteit in
-        gebouwen veranderen in de toekomst. Je ziet ook wat de warmte-besparingen
-        zijn als gevolg van betere isolatie. De vraag naar warmte en elektriciteit
-        zijn onder andere afhankelijk van de economische en bevolkingsgroei, maar
-        ook van efficiëntieverbeteringen en inzet van alternatieve technologieën.\r\n<br/><br/>\r\nKies
-        '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
-        energiegebruik."
     source_of_heat_in_buildings:
       title: Finaal energiegebruik voor verwarming in gebouwen
       short_description: Gebouwen
@@ -299,8 +289,8 @@ nl:
         aanpast klik dan op het tabje verwarming en daar op '<u>Wijzig grafiek</u>'
         boven de grafiek om deze grafiek te kunnen selecteren.\r\n"
     use_of_electricity_in_buildings:
-      title: Elektriciteitsvraag in gebouwen
-      short_description: Gebouwen
+      title: Eindgebruik energie van elektriciteit in gebouwen per toepassing
+      short_description:
       description: "Deze grafiek toont hoe de elektriciteitsvraag in gebouwen verandert
         als gevolg van de keuzes en aannames die je in dit onderdeel maakt. De vraag
         naar elektriciteit is afhankelijk van de efficiëntie van de apparaten.\r\n<br/><br/>\r\nKies
@@ -341,9 +331,9 @@ nl:
       short_description:
       description: |
         Deze grafiek laat zien hoe de warmtevraag in de landbouw verandert
-        in de toekomst, als gevolg van jouw keuze voor technologieën in de sectie 
+        in de toekomst, als gevolg van jouw keuze voor technologieën in de sectie
         <a href="/scenario/demand/agriculture/heat">Landbouw</a>. </br></br>
-        De technologieën die je kiest veranderen de warmtevraag zelf niet, maar wel 
+        De technologieën die je kiest veranderen de warmtevraag zelf niet, maar wel
         de energie-efficiëntie en hernieuwbaarheid van de warmteproductie.
     use_of_final_electricity_demand_in_households:
       title: Elektriciteitsgebruik van huishoudelijke apparaten
@@ -371,22 +361,6 @@ nl:
         nemen, moeten huizen bijvoorbeeld beter geïsoleerd worden.\r\n<br/><br/>\r\nKies
         '<u>Wijzig grafiek</u>' boven de grafiek om andere grafieken te tonen over
         energiegebruik.\r\n"
-    useful_demand_in_households:
-      title: Nuttig gebruik in huishoudens
-      short_description: ''
-      description: "Deze grafiek toont hoe de huishoudelijke vraag naar warmte en
-        elektriciteit veranderen in de toekomst. Deze zijn onder andere afhankelijk
-        van de economische en bevolkingsgroei, maar de elektriciteitsvraag ook van
-        efficiëntieverbeteringen en inzet van alternatieve technologieën.\r\n<br/><br/>\r\nDeze
-        grafiek toont \"nuttig gebruik\", dat betekent dat het de energie toont die
-        nuttig gebruikt wordt voor een bepaald doel. Dit verschilt van \"finaal gebruik\",
-        zoals in sommige andere grafieken in het model. Dit zijn namelijk de verschillende
-        soorten energie die gebruikt worden om tot het nuttige gebruik te komen, waarbij
-        ook een deel van de energie verloren gaat aan omzetting.\r\n<br/><br/>\r\nDaarom
-        wordt in deze grafiek de elektriciteitsvraag getoond exclusief elektriciteit
-        gebruikt voor warmte-opwek, deze zit namelijk al in de warmtevraag.\r\n<br/><br/>\r\nKies
-        '<u>Andere grafiek</u>' boven de grafiek om andere grafieken te tonen over
-        energiegebruik."
     effect_of_insulation_in_households:
       title: Warmtevraag met isolatie in huishoudens
       short_description: Huishoudelijke
@@ -427,11 +401,6 @@ nl:
         in de toekomst vooral gastoestellen blijven gebruiken, of gaan ze over naar
         andere manieren van koken zoals elektrisch of inductief? Het verandert allemaal
         de energievraag."
-    impact_of_climate_on_heat_and_cooling_demand_households_and_buildings:
-      title: Warmte en koude huishoudens, gebouwen en landbouw
-      short_description: Warmte- en koudevraag van huishoudens, gebouwen en landbouw
-      description: 'Deze grafiek laat zien hoe de vraag naar verwarming en koeling
-        van huishoudens, gebouwen en landbouw verandert in de toekomst.'
     population_residences_overview:
       title: Overzicht van populatie en huishoudens
       short_description: Deze tabel toont het aantal inwoners, het aantal huishoudens
@@ -442,11 +411,11 @@ nl:
       title: Warmtevraag en -productie in huishoudens
       short_description: ''
       description: ''
-    households_final_demand_per_application:
-      title: Eindgebruik energie in huishoudens per applicatie
+    use_of_final_demand_in_households:
+      title: Eindgebruik energie in huishoudens per toepassing
       short_description: Huishoudelijk, naar toepassing
       description: |
-        Deze grafiek toont hoe de finale vraag naar energie in huishoudens verandert 
+        Deze grafiek toont hoe de finale vraag naar energie in huishoudens verandert
         als gevolg van de keuzes en aannames die je in dit onderdeel maakt. <br/><br/>
         Kies <u>Wijzig grafiek</u> om andere grafieken te tonen
         over energiegebruik.
@@ -460,33 +429,55 @@ nl:
     agriculture_local_heat_mekko:
       title: Vraag en aanbod van warmte van lokale WKK's
       description: |
-        Deze grafiek toont lokale warmte-krachtkoppeling (WKK) die warmte levert aan de 
-        landbouw en de toont de finale vraag naar die warmte. Om het uurlijkse gedrag van 
-        vraag en aanbod te zien kun je naar de sectie 
-        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a> 
+        Deze grafiek toont lokale warmte-krachtkoppeling (WKK) die warmte levert aan de
+        landbouw en de toont de finale vraag naar die warmte. Om het uurlijkse gedrag van
+        vraag en aanbod te zien kun je naar de sectie
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a>
         gaan. </br></br>
-        De finale vraag naar warmte wordt bepaald door het schuifje "Warmte van lokale WKK's" in 
-        de <a href="/scenario/demand/agriculture/heat">Landbouw</a> sectie. Het aanbod van de 
-        WKK's kan worden <a href="/scenario/demand/agriculture/heat-from-local-chps">hier</a> 
-        worden ingesteld. Overtollige warmte wordt versplid en warmtetekorten worden geleverd door 
+        De finale vraag naar warmte wordt bepaald door het schuifje "Warmte van lokale WKK's" in
+        de <a href="/scenario/demand/agriculture/heat">Landbouw</a> sectie. Het aanbod van de
+        WKK's kan worden <a href="/scenario/demand/agriculture/heat-from-local-chps">hier</a>
+        worden ingesteld. Overtollige warmte wordt versplid en warmtetekorten worden geleverd door
         een back-up gasketel.
     agriculture_sankey:
       title: Lokale warmte- en elektriciteitsproductie in de landbouw
       description: |
-        Deze grafiek toont lokale warmte-krachtkoppeling (WKK) die warmte levert aan de 
+        Deze grafiek toont lokale warmte-krachtkoppeling (WKK) die warmte levert aan de
         landbouw. Ook toont het de lokale elektriciteitsproductie en
-        hoe dit zich verhoudt tot vraag / aanbod van het elektriciteitsnet. Om het uurlijkse gedrag van 
-        vraag en aanbod te zien kun je naar de sectie 
-        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a> 
+        hoe dit zich verhoudt tot vraag / aanbod van het elektriciteitsnet. Om het uurlijkse gedrag van
+        vraag en aanbod te zien kun je naar de sectie
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a>
         gaan. </br></br>
-        De finale vraag naar warmte wordt bepaald door het schuifje "Warmte van lokale WKK's" in 
-        de <a href="/scenario/demand/agriculture/heat">Landbouw</a> sectie. Het aanbod van de 
-        WKK's kan worden <a href="/scenario/demand/agriculture/heat-from-local-chps">hier</a> 
-        worden ingesteld. Overtollige warmte wordt versplid en warmtetekorten worden geleverd door 
+        De finale vraag naar warmte wordt bepaald door het schuifje "Warmte van lokale WKK's" in
+        de <a href="/scenario/demand/agriculture/heat">Landbouw</a> sectie. Het aanbod van de
+        WKK's kan worden <a href="/scenario/demand/agriculture/heat-from-local-chps">hier</a>
+        worden ingesteld. Overtollige warmte wordt versplid en warmtetekorten worden geleverd door
         een back-up gasketel.
     losses_heat_networks:
       title: Verliezen in warmtenetten per huishouden
       description:
         Deze tabel toont de warmteverliezen in warmtenetten per huishouden. De totale verliezen worden op basis van eindverbruik gealloceerd aan huishoudens.
-
+    future_energy_transit_flows:
+      title: Toekomstige energetische transitstromen
+      short_description: Toekomst
+      description: |
+        Deze grafiek toont de verschillende energetische transitstromen in de toekomst, uitgesplitst per drager.
+        Elk van de staafjes draagt bij aan het totaal, dat aangegeven wordt met het zwarte staafje rechts in de grafiek.
+    number_of_residences_overview:
+      title: Aantal woningen per woningtype en bouwjaarklasse
+      description:
+        Deze grafiek toont de woningen per woningtype en bouwjaarklasse.
+    residential_heating_demand:
+      title: Warmtevraag van woningen
+      description: |
+        Deze grafiek toont de warmtevraag per woningtype en bouwperiode.
+    buildings_heating_demand:
+      title: Warmtevraag gebouwen
+      description: |
+        Deze grafiek toont het nuttig gebruik van warmte per bouwperiode van de gebouwen.
+        \"Nuttig gebruik\" betekent dat het de energie toont die nuttig gebruikt wordt voor een bepaald
+        doel. Dit verschilt van \"finaal gebruik\", zoals in sommige andere grafieken
+        in het model. Dit zijn namelijk de verschillende soorten energie die gebruikt
+        worden om tot het nuttige gebruik te komen, waarbij ook een deel van de energie
+        verloren gaat aan omzetting.
 

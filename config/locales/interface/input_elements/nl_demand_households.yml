@@ -1,66 +1,380 @@
 ---
 nl:
   input_elements:
-    households_insulation_level_apartments:
-      title: Appartement
+    households_insulation_level_apartments_future:
+      title: Nieuwbouw
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor appartementen.
-        Hiermee bepaal je hoe goed appartementen gemiddeld geïsoleerd zijn (voor zowel oud- en nieuwbouw).
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
-    households_insulation_level_corner_houses:
-      title: Hoekhuis
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter voor appartemen die tussen
+        huidige jaar en het toekomstjaar in het scenario gebouwd zullen worden.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal apartementen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_2005_present:
+      title: 2005 - heden
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor hoekhuizen.
-        Hiermee bepaal je hoe goed hoekhuizen geïsoleerd zijn.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
-    households_insulation_level_detached_houses:
-      title: Vrijstaand huis
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd tussen 2005 en nu. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal apartementen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_1985_2004:
+      title: 1985 - 2004
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor vrijstaande huizen.
-        Hiermee bepaal je hoe goed vrijstaande huizen geïsoleerd zijn.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
-    households_insulation_level_semi_detached_houses:
-      title: Twee-onder-een-kapwoning
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd tussen 1985 en 2004. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal apartementen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_1965_1984:
+      title: 1965 - 1984
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor twee-onder-één-kap-woningen.
-        Hiermee bepaal je hoe goed twee-onder-één-kap-woningen geïsoleerd zijn.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
-    households_insulation_level_terraced_houses:
-      title: Rijtjeshuis
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd tussen 1965 en 1985. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal apartementen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_1945_1964:
+      title: 1945 - 1964
       short_description:
-      description: "Met deze slider kun je het percentage warmtereductie instellen voor rijtjeshuizen.
-        Hiermee bepaal je hoe goed rijtjeshuizen geïsoleerd zijn.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerde woning te vergelijken
-        met een zeer goed geïsoleerde woning. Dit resulteert in een potentiële reductie van 60% -70% (afhankelijk van het woningtype)
-        op de totale warmtevraag voor verwarming.
-        Het verhogen van het percentage warmtereductie door extra isolatie van huishoudens zorgt daarom voor
-        een directe verlaging van de warmtevraag van huishoudens.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd tussen 1945 en 1964. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal apartementen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd voor 1945. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal apartementen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter voor rijteshuizen die tussen
+        huidige jaar en het toekomstjaar in het scenario gebouwd zullen worden.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal rijtjeshuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor rijtjeshuizen gebouwd tussen 2005 en nu. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal rijtjeshuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd tussen 1985 en 2004. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal rijtjeshuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd tussen 1965 en 1984. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal rijtjeshuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd tussen 1945 en 1964. 
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal rijtjeshuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor appartementen gebouwd voor 1945.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal rijtjeshuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter voor hoekhuizen die tussen
+        huidige jaar en het toekomstjaar in het scenario gebouwd zullen worden.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal hoekhuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+    households_insulation_level_semi_detached_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor hoekhuizen gebouwd tussen 2005 en het heden.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal hoekhuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor hoekhuizen gebouwd tussen 1985 en 2004.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal hoekhuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor hoekhuizen gebouwd tussen 1965 en 1984.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal hoekhuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor hoekhuizen gebouwd tussen 1945 en 1964.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal hoekhuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor hoekhuizen gebouwd tussen voor 1945.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal hoekhuizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter voor vrijstaande huizen die tussen
+        huidige jaar en het toekomstjaar in het scenario gebouwd zullen worden.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal vrijstaande huizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor vrijstaande huizen gebouwd tussen voor 2005 en het heden.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal vrijstaande huizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor vrijstaande huizen gebouwd tussen 1985 en 2004.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal vrijstaande huizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor vrijstaande huizen gebouwd tussen voor 1965 en 1984.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal vrijstaande huizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+    households_insulation_level_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor vrijstaande huizen gebouwd tussen voor 1945 en 1964.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal vrijstaande huizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        Deze slider zet de gemiddelde warmtevraag per vierkante meter 
+        voor vrijstaande huizen gebouwd tussen voor 1945.
+        <br><br>de gemiddelde warmtevraag per vierkante meter is een maatstaf voor de isolatie
+        in woningen. Als de isolatie verbeterd wordt, verlaagd de gemiddelde warmtevraag per vierkante meter.
+        Dit resulteert in een vermindering van de vraag voor warmte en koeling.
+        <br><br>Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a> om het aantal vrijstaande huizen in deze
+        categorie te veranderen of ga naar <a href="/scenario/demand/households_heating_order">Inzetvolgorde warmte technologieën</a> om de koppeling tussen warmte technologieën en huistypes aan te passen.
+        <br><br>Bekijk de
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentatie</a> voor meer informatie of bekijk de 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> voor een beschrijving van de bronnen.
     households_useful_demand_for_cooling:
       title: Koudevraag
       short_description: ''
@@ -320,31 +634,102 @@ nl:
       description: "Hoe verwacht je dat de bevolking zich gaat ontwikkelen? Naast
         welvaartsgroei is dit een van de belangrijkste factoren die de energievraag
         beïnvloeden."
-    households_apartments_share:
-      title: Appartement
+    households_number_of_apartments_future:
+      title: Nieuwbouw
       short_description:
-      description: 'Hoeveel appartementen zullen er in de toekomst zijn? '
-    households_corner_houses_share:
-      title: Hoekhuis
+      description: "Deze slider zet het aantal apartementen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+    households_number_of_apartments_2005_present:
+      title: 2005 - heden
       short_description:
-      description: Hoeveel hoekhuizen zullen er zijn in de toekomst?
-    households_detached_houses_share:
-      title: Vrijstaand huis
+      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 2005 tot het heden."
+    households_number_of_apartments_1985_2004:
+      title: 1985 - 2004
       short_description:
-      description: Hoeveel vrijstaande huizen zullen er zijn in de toekomst?
-    households_semi_detached_houses_share:
-      title: Twee-onder-een-kapwoning
+      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1985 tot 2004."
+    households_number_of_apartments_1965_1984:
+      title: 1965 - 1984
       short_description:
-      description: Hoeveel twee-onder-één-kap-woningen zullen er zijn in de toekomst?
-    households_terraced_houses_share:
-      title: Rijtjeshuis
+      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1965 tot 1984."
+    households_number_of_apartments_1945_1964:
+      title: 1945 - 1964
       short_description:
-      description: Hoeveel rijtjeshuizen zullen er zijn in de toekomst?
-    households_number_of_residences:
-      title: Aantal huizen
+      description:  "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1945 tot 1964."
+    households_number_of_apartments_before_1945:
+      title: < 1945
       short_description:
-      description: 'Hoe verwacht je dat het aantal huizen zich gaat ontwikkelen in
-        de toekomst? '
+      description:  "Deze slider zet het aantal apartementen in de bouwjaarklasse van tot 1945."
+    households_number_of_terraced_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+    households_number_of_terraced_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 2005 tot het heden."
+    households_number_of_terraced_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1985 tot 2004."
+    households_number_of_terraced_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1965 tot 1984."
+    households_number_of_terraced_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1945 tot 1964."
+    households_number_of_terraced_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse tot 1945."
+    households_number_of_semi_detached_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: "Deze slider zet het aantal hoekhuizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+    households_number_of_semi_detached_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description:  "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 2005 tot het heden."
+    households_number_of_semi_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description:  "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1985 tot 2004."
+    households_number_of_semi_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1965 tot 1984."
+    households_number_of_semi_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1945 tot 1964."
+    households_number_of_semi_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse tot 1945."
+    households_number_of_detached_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+    households_number_of_detached_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 2005 tot het heden."
+    households_number_of_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1985 tot 2004"
+    households_number_of_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1965 tot 1984"
+    households_number_of_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1945 tot 1964"
+    households_number_of_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse tot 1945."
     households_lighting_efficient_fluorescent_electricity_share:
       title: Spaarlamp
       short_description: ''
@@ -376,7 +761,7 @@ nl:
         levensduren:\r\n<br/>• LED-lamp: ~50.000 uur\r\n<br/>• Spaarlamp: ~7.500 uur\r\n<br/>•
         Gloeilamp: ~1.000 uur"
     households_heater_electricity_share:
-      title: Elektrische boiler/bijstook
+      title: Elektrische boiler
       short_description: ''
       description: "Elektrische boilers zetten elektriciteit direct om in warmte.
         Op zich is dat een zeer efficiënt proces.\r\n<br/>\r\nToch denken veel mensen
@@ -435,7 +820,7 @@ nl:
         gebruikt elektriciteit, omdat de warmte uit de grond gehaald wordt. Een gaswarmtepomp
         wordt vaker toegepast als warmte uit de lucht wordt gehaald. <br/>"
     households_heater_heatpump_pvt_electricity_share:
-      title: Bodemwarmtepomp met PVT
+      title: PVT-warmtepomp
       short_description: ''
       description: |
         Een warmtepomp is een apparaat dat warmte verplaatst. De meest bekende
@@ -652,3 +1037,74 @@ nl:
         \r\n<br/><br/>\r\nUitsluitend de kosten door het verschil in energievraag
         worden meegenomen. De kosten van het kooktoestel zelf worden niet meegenomen
         in het Energietransitiemodel.\r\n \r\n"
+    demand_households_heating_producers_order:
+      title: Merit order 
+      short_description: ''
+      description: ''
+    households_heater_coal_heat_output_capacity:
+      title: Kolenketel
+      short_description: ''
+      description: ''     
+    households_heater_crude_oil_heat_output_capacity:
+      title: Olieketel
+      short_description: ''
+      description: ''   
+    households_heater_network_gas_heat_output_capacity:
+      title: Gasketel
+      short_description: ''
+      description: ''   
+    households_heater_combined_network_gas_heat_output_capacity:
+      title: HR combiketel (gas)
+      short_description: ''
+      description: ''   
+    households_heater_combined_hydrogen_heat_output_capacity:
+      title: HR combiketel (waterstof)
+      short_description: ''
+      description: ''   
+    households_heater_wood_pellets_heat_output_capacity:
+      title: Houtpelletkachel
+      short_description: ''
+      description: ''   
+    households_heater_electricity_heat_output_capacity:
+      title: Elektrische boiler/bijstook
+      short_description: ''
+      description: ''   
+    households_heater_heatpump_air_water_electricity_heat_output_capacity:
+      title: Luchtwarmtepomp
+      short_description: ''
+      description: ''   
+    households_heater_heatpump_ground_water_electricity_heat_output_capacity:
+      title: Bodemwarmtepomp
+      short_description: ''
+      description: ''   
+    households_heater_heatpump_surface_water_water_ts_electricity_heat_output_capacity:
+      title: Warmtepomp met aquathermie (TEO) en WKO
+      short_description: ''
+      description: ''   
+    households_heater_heatpump_pvt_electricity_heat_output_capacity:
+      title: Bodemwarmtepomp met PVT
+      short_description: ''
+      description: ''   
+    households_heater_district_heating_lt_steam_hot_water_heat_output_capacity:
+      title: LT-warmtenet
+      short_description: ''
+      description: '' 
+    households_heater_district_heating_mt_steam_hot_water_heat_output_capacity:
+      title: MT-warmtenet
+      short_description: ''
+      description: ''       
+    households_heater_district_heating_ht_steam_hot_water_heat_output_capacity:
+      title: HT-warmtenet
+      short_description: ''
+      description: ''         
+    households_heater_hybrid_heatpump_air_water_electricity_heat_output_capacity:
+      title: Hybride luchtwarmtepomp (gas)
+      short_description: ''
+      description: ''       
+    households_heater_hybrid_hydrogen_heatpump_air_water_electricity_heat_output_capacity:
+      title: Hybride luchtwarmtepomp (waterstof)
+      short_description: ''
+      description: ''       
+
+      
+

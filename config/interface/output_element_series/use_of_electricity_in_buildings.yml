@@ -1,19 +1,7 @@
 ---
-- label: lighting
-  color: "#FFD700"
-  order_by: 5
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
-  gquery: lighting_in_use_of_electricity_in_buildings
-  is_1990: 
-  dependent_on: 
-  output_element_key: use_of_electricity_in_buildings
-  key: lighting_use_of_electricity_in_buildings
 - label: appliances
-  color: "#4169E1"
-  order_by: 7
+  color: "#648FFF"
+  order_by: 100
   group: 
   show_at_first: 
   is_target_line: 
@@ -23,21 +11,9 @@
   dependent_on: 
   output_element_key: use_of_electricity_in_buildings
   key: appliances_use_of_electricity_in_buildings
-- label: heat
-  color: "#8B0000"
-  order_by: 5
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
-  gquery: heat_in_use_of_electricity_in_buildings
-  is_1990: 
-  dependent_on: 
-  output_element_key: use_of_electricity_in_buildings
-  key: heat_use_of_electricity_in_buildings
 - label: cooling
-  color: "#ADD8E6"
-  order_by: 1
+  color: "#785EF0"
+  order_by: 105
   group: 
   show_at_first: 
   is_target_line: 
@@ -47,3 +23,27 @@
   dependent_on: 
   output_element_key: use_of_electricity_in_buildings
   key: cooling_use_of_electricity_in_buildings
+- label: heat
+  color: "#FE6100"
+  order_by: 110
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: heat_in_use_of_electricity_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_electricity_in_buildings
+  key: heat_use_of_electricity_in_buildings
+- label: lighting
+  color: "#FFB000"
+  order_by: 115
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: lighting_in_use_of_electricity_in_buildings
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_electricity_in_buildings
+  key: lighting_use_of_electricity_in_buildings

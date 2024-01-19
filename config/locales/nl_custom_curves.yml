@@ -7,8 +7,8 @@ nl:
     full_load_hours: Vollasturen
     interconnector_intro_html: |
       Het ETM veronderstelt standaard dat de externe elektriciteitsprijs en de beschikbaarheid van
-      import en export, die je met de schuifjes hierboven kunt instellen, constant zijn gedurende het jaar. 
-      Je kunt van deze aanname afwijken door hieronder CSV-bestanden te importeren met een uurlijkse 
+      import en export, die je met de schuifjes hierboven kunt instellen, constant zijn gedurende het jaar.
+      Je kunt van deze aanname afwijken door hieronder CSV-bestanden te importeren met een uurlijkse
       veranderende prijs of beschikbaarheid. </br></br>
       Klik op de drop-down om te bepalen welke curve je wilt uploaden. Zie onze
       <a href=%{docs_path} target="_blank">documentatie</a> voor meer uitleg en voorbeelden van
@@ -124,14 +124,26 @@ nl:
       weather/wind_offshore_baseline: Wind op zee
       weather/wind_coastal_baseline: Wind aan de kust
       weather/wind_inland_baseline: Wind op land
+      weather/insulation_terraced_houses_high: Hedendaagse rijtjeshuizen (vanaf 2005) warmtevraag
+      weather/insulation_terraced_houses_medium:  Moderne rijtjeshuizen (1965-2004) warmtevraag
+      weather/insulation_terraced_houses_low: Oude rijtjeshuizen (tot 1964) warmtevraag
+      weather/insulation_apartments_high: Hedendaagse appartementen (vanaf 2005) warmtevraag
+      weather/insulation_apartments_medium: Moderne appartementen (1965-2004) warmtevraag
+      weather/insulation_apartments_low: Oude appartementen (tot 1964) warmtevraag
+      weather/insulation_semi_detached_houses_high: Hedendaagse twee-onder-een-kapwoningen (vanaf 2005) warmtevraag
+      weather/insulation_semi_detached_houses_medium: Moderne twee-onder-een-kapwoningen (1965-2004) warmtevraag
+      weather/insulation_semi_detached_houses_low: Oude twee-onder-een-kapwoningen (tot 1964) warmtevraag
+      weather/insulation_detached_houses_high: Hedendaagse vrijstaande huizen (vanaf 2005) warmtevraag
+      weather/insulation_detached_houses_medium: Moderne vrijstaande huizen (1965-2004) warmtevraag
+      weather/insulation_detached_houses_low: Oude vrijstaande huizen (tot 1964) warmtevraag
     types:
       availability:
         default: Standaard beschikbaarheid
         type: Beschikbaarheidsprofiel
         help: |
           Pas de beschikbaarheid per uur aan door voor elk uur een waarde tussen 0 en 1 op te geven.
-          Een waarde van 0 betekent dat geen vermogen beschikbaar is; een waarde van 0.5 betekent dat 
-          50% van het vermogen beschikbaar is; en 1 betekent dat al het vermogen beschikbaar is. Alle 
+          Een waarde van 0 betekent dat geen vermogen beschikbaar is; een waarde van 0.5 betekent dat
+          50% van het vermogen beschikbaar is; en 1 betekent dat al het vermogen beschikbaar is. Alle
           waardes tussen 0 en 1 zijn toegestaan.
       capacity_profile:
         default: Standaard profiel

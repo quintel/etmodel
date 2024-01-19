@@ -8,6 +8,38 @@ en:
         This concerns all buildings that fall into categories like offices, hospitals,
         swimming pools, restaurants, etc. Apart from increasing prosperity, this is
         one of the most important drivers for the energy demand growth.
+    buildings_number_of_buildings_future:
+      title: New buildings
+      short_description:
+      description: |
+        With this slider the amount of buildings that will be built in the future can be set.
+        This concerns all buildings that fall into categories like offices, hosptials,
+        swimming pools, restaurents, etc. Apart from increasing prosperity, this is
+        one of the most important drivers for the energy demand growth.
+        <br/><br/>The heat demand of these buildings can be set <a href="/scenario/demand/buildings/typical-heat-demand-per-building">here</a>.
+    buildings_number_of_buildings_present:
+      title: Existing buildings
+      short_description:
+      description: |
+        With this slider the amount of existing buildings can be set. 
+        This concerns all buildings that fall into categories like offices, hosptials,
+        swimming pools, restaurents, etc. Apart from increasing prosperity, this is
+        one of the most important drivers for the energy demand growth.
+        <br/><br/>The heat demand of these buildings can be set <a href="/scenario/demand/buildings/typical-heat-demand-per-building">here</a>.
+    buildings_insulation_level_buildings_future:
+      title: New buildings
+      short_description: ''
+      description: |
+        With this slider the heating demand for newly built buildings can be set. 
+        A lower heating demand represents a better insulation level.
+        <br/><br/>The amount of newly built buildings in the scenario can be set <a href="/scenario/demand/buildings/building-stock">here</a>
+    buildings_insulation_level_buildings_present:
+      title: Present buildings
+      short_description:
+      description: |
+        With this slider the heating demand for the present buildings can be set. 
+        A lower heating demand represents a better insulation level.
+        <br/><br/>The amount of present buildings in the scenario can be set <a href="/scenario/demand/buildings/building-stock">here</a>
     buildings_useful_demand_electricity:
       title: Electricity per building
       short_description: ''

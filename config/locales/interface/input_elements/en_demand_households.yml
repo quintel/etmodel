@@ -1,61 +1,415 @@
 ---
 en:
   input_elements:
-    households_insulation_level_apartments:
-      title: Apartment
+    households_insulation_level_apartments_future:
+      title: New residences
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for apartments.
-        As a result you determine the avarage amount of insulation in all apartments (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for apartments built between the present and the chosen scenario year.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> 
+        to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
         <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
-    households_insulation_level_corner_houses:
-      title: Corner house
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_apartments_2005_present:
+      title: 2005 - present
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for corner houses.
-        As a result you determine the avarage amount of insulation in all corner houses (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for apartments built between 2005 and the present.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
         <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
-    households_insulation_level_detached_houses:
-      title: Detached house
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_apartments_1985_2004:
+      title: 1985 - 2004
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for detached houses.
-        As a result you determine the avarage amount of insulation in all detached houses (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for apartments built between 1985 and 2004.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock\">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
         <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
-    households_insulation_level_semi_detached_houses:
-      title: Semi-detached house
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_apartments_1965_1984:
+      title: 1965 - 1984
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for semi-detached houses.
-        As a result you determine the avarage amount of insulation in all semi-detached houses (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for apartments built between 1965 and 1984.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
         <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
-    households_insulation_level_terraced_houses:
-      title: Terraced house
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_apartments_1945_1964:
+      title: 1945 - 1964
       short_description:
-      description: "With this slider you can set the percentage of heat demand reduction for terraced houses.
-        As a result you determine the avarage amount of insulation in all terraced houses (existing and new included).
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        home to a highly insulated home. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of households. \r\n<br><br>\r\nCheck out the
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for apartments built between 1945 and 1964.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
         <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_apartments_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for apartments built before 1945
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_terraced_houses_future:
+      title: New residences
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for terraced houses built between the present and the chosen scenario year.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_terraced_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for terraced houses built between 2005 and the present.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_terraced_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for terraced houses built between 1985 and 2004.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_terraced_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for terraced houses built between 1965 and 1984.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_terraced_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for terraced houses built between 1945 and 1964.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order>heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_terraced_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for terraced houses built before 1945.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">Population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_semi_detached_houses_future:
+      title: New residences
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for semi-detached houses built between the present and the chosen scenario year.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_semi_detached_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for semi-detached houses built between 2005 and the present.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_semi_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for semi-detached houses built between 1985 and 2004.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_semi_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description:  |
+       This slider adjusts the average heat demand per square meter 
+        for semi-detached houses built between 1965 and 1984.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_semi_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for semi-detached houses built between 1945 and 1964.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order>heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_semi_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for semi-detached houses built before 1945.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_detached_houses_future:
+      title: New residences
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for detached houses built between the present and the chosen scenario year.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href=\scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_detached_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for detached houses built between 2005 and the present.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for detached houses built between 1985 and 2004.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for detached houses built between 1965 and 1984.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order>heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for detached houses built between 1945 and 1964.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
+    households_insulation_level_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter 
+        for detached houses built before 1945.
+        <br><br>The average heat demand per square meter is a measure for the level of insulation
+        in households. If the insulation level is increased, the average heat demand per square meter decreases. 
+        This results in a total decrease of heating and cooling demand.
+        <br><br> Go to <a href="/scenario/demand/households/population-and-housing-stock">population and housing stock</a> to change the number of apartments in 
+        this category or go to the <a href="/scenario/demand/households_heating_order">heating technologies</a> to determine which type of heating technologies
+        are coupled with which types of dwellings. 
+        <br><br>Check out the
+        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
+        >documentation</a> for more information or check out the 
+        <a href=\"https://data.energytransitionmodel.com/\" target=\"_blank\"
+        >dataset</a> for a description of sources
     households_useful_demand_for_cooling:
       title: Cooling demand
       short_description: ''
@@ -329,10 +683,102 @@ en:
       title: Terraced house
       short_description:
       description: How many terraced houses will there be in the future?
-    households_number_of_residences:
-      title: Residences
+    households_number_of_apartments_future:
+      title: New residences
       short_description:
-      description: How do you expect the number of residences to develop over time?
+      description: "This slider sets the total number of new apartments that will be built from the present until the chosen future year in the scenario."
+    households_number_of_apartments_2005_present:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of apartments built between 2005 and the present."
+    households_number_of_apartments_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of apartments built between 1985 and 2004."
+    households_number_of_apartments_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of apartments built between 1965 and 1984."  
+    households_number_of_apartments_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of apartments built between 1945 and 1964."
+    households_number_of_apartments_before_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of apartments built before 1945."
+    households_number_of_terraced_houses_future:
+      title: New residences
+      short_description:
+      description: "This slider sets the total number of new terraced houses that will be built from the present until the chosen future year in the scenario."
+    households_number_of_terraced_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of terraced houses built between 2005 and the present."
+    households_number_of_terraced_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of terraced houses built between 1985 and 2004."
+    households_number_of_terraced_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of terraced houses built between 1965 and 1984."
+    households_number_of_terraced_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of terraced houses built between 1945 and 1964."
+    households_number_of_terraced_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of terraced houses built before 1945."
+    households_number_of_semi_detached_houses_future:
+      title: New residences
+      short_description:
+      description: "This slider sets the total number of new semi-detached houses that will be built from the present until the chosen future year in the scenario."
+    households_number_of_semi_detached_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built between 2005 and the present."
+    households_number_of_semi_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built between 1985 and 2004."
+    households_number_of_semi_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built between 1965 and 1984."
+    households_number_of_semi_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built between 1945 and 1964."
+    households_number_of_semi_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built before 1945."
+    households_number_of_detached_houses_future:
+      title: New residences
+      short_description:
+      description: "This slider sets the total number of new detached houses that will be built from the present until the chosen future year in the scenario."
+    households_number_of_detached_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of detached houses built between 2005 and the present."
+    households_number_of_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of detached houses built between 1984 and 2004."
+    households_number_of_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of detached houses built between 1965 and 1984."
+    households_number_of_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of detached houses built between 1945 and 1964"
+    households_number_of_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of detached houses built before 1945"
     households_lighting_efficient_fluorescent_electricity_share:
       title: Low-energy light bulb
       short_description: ''
@@ -422,7 +868,7 @@ en:
         heat from the ground. Gas-fired heat pumps are more often used to draw their
         heat from the air.\r\n<br/>"
     households_heater_heatpump_pvt_electricity_share:
-      title: Ground heat pump with PVT
+      title: PVT heat pump
       short_description: ''
       description: |
         A heat pump moves heat from one place to another. Heat pumps are
@@ -637,3 +1083,77 @@ en:
         electric alternatives since a lot of heat is lost to the environment. \r\n<br/><br/>\r\nOnly
         the costs due to the difference in energy demand are considered. The costs
         of the stove are not taken into account in the Energy Transition Model."
+    demand_households_heating_producers_order:
+      title: Merit order 
+      short_description: ''
+      description: ''    
+    demand_households_overview:
+      title: Household energy demand
+      short_description: ''
+      description: ''     
+    households_heater_coal_heat_output_capacity:
+      title: Coal heater
+      short_description: ''
+      description: ''     
+    households_heater_crude_oil_heat_output_capacity:
+      title: Oil heater
+      short_description: ''
+      description: ''   
+    households_heater_network_gas_heat_output_capacity:
+      title: Gas-fired heater
+      short_description: ''
+      description: ''   
+    households_heater_combined_network_gas_heat_output_capacity:
+      title: Condensing combi boiler (gas)
+      short_description: ''
+      description: ''   
+    households_heater_combined_hydrogen_heat_output_capacity:
+      title: Condensing combi boiler (hydrogen)
+      short_description: ''
+      description: ''   
+    households_heater_wood_pellets_heat_output_capacity:
+      title: Wood pellet boiler
+      short_description: ''
+      description: ''   
+    households_heater_electricity_heat_output_capacity:
+      title: Electric boiler
+      short_description: ''
+      description: ''   
+    households_heater_heatpump_air_water_electricity_heat_output_capacity:
+      title: Air heat pump
+      short_description: ''
+      description: ''   
+    households_heater_heatpump_ground_water_electricity_heat_output_capacity:
+      title: Ground heat pump
+      short_description: ''
+      description: ''   
+    households_heater_heatpump_surface_water_water_ts_electricity_heat_output_capacity:
+      title: Aquathermal heat pump with TS (surface water)
+      short_description: ''
+      description: ''   
+    households_heater_heatpump_pvt_electricity_heat_output_capacity:
+      title: Ground heat pump with PVT
+      short_description: ''
+      description: ''   
+    households_heater_district_heating_lt_steam_hot_water_heat_output_capacity:
+      title: LT district heating
+      short_description: ''
+      description: '' 
+    households_heater_district_heating_mt_steam_hot_water_heat_output_capacity:
+      title: MT district heating
+      short_description: ''
+      description: ''       
+    households_heater_district_heating_ht_steam_hot_water_heat_output_capacity:
+      title: HT district heating
+      short_description: ''
+      description: ''         
+    households_heater_hybrid_heatpump_air_water_electricity_heat_output_capacity:
+      title: Hybrid air heat pump (gas)
+      short_description: ''
+      description: ''       
+    households_heater_hybrid_hydrogen_heatpump_air_water_electricity_heat_output_capacity:
+      title: Hybrid air heat pump (hydrogen)
+      short_description: ''
+      description: ''       
+
+

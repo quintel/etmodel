@@ -1,203 +1,161 @@
 ---
-- label: biomass_products_heating
-  color: "#5D7929"
-  order_by: 6
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: biomass_products_used_for_heating_in_households
-  is_1990: false
-  dependent_on: 
-  output_element_key: source_of_heat_used_in_households
-  key: biomass_products_heating_source_of_heat_used_in_households
-- label: coal_and_derivatives_heating
-  color: "#333333"
-  order_by: 2
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: coal_and_derivatives_used_for_heating_in_households
-  is_1990: false
-  dependent_on: 
-  output_element_key: source_of_heat_used_in_households
-  key: coal_and_derivatives_heating_source_of_heat_used_in_households
-- label: electricity_heating
-  color: "#00008B"
-  order_by: 5
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: electricity_used_for_heating_in_households
-  is_1990: false
-  dependent_on: 
-  output_element_key: source_of_heat_used_in_households
-  key: electricity_heating_source_of_heat_used_in_households
 - label: heat_network_heating
   color: "#8B0000"
-  order_by: 1
-  group: ''
+  order_by: 100
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: heat_used_for_heating_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
   key: heat_network_heating_source_of_heat_used_in_households
-- label: natural_gas_and_derivatives_heating
-  color: "#A4B0BE"
-  order_by: 3
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: natural_gas_and_derivatives_used_for_heating_in_households
-  is_1990: false
-  dependent_on: 
-  output_element_key: source_of_heat_used_in_households
-  key: natural_gas_and_derivatives_heating_source_of_heat_used_in_households
-- label: oil_and_derivatives_heating
-  color: "#854321"
-  order_by: 4
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: oil_and_derivatives_used_for_heating_in_households
-  is_1990: false
-  dependent_on: 
-  output_element_key: source_of_heat_used_in_households
-  key: oil_and_derivatives_heating_source_of_heat_used_in_households
-- label: solar_thermal_heating
-  color: "#FFD700"
-  order_by: 7
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: solar_used_for_heating_in_households
-  is_1990: false
-  dependent_on: ''
-  output_element_key: source_of_heat_used_in_households
-  key: solar_thermal_heating_source_of_heat_used_in_households
-- label: ambient_heating
-  color: "#ADDE4C"
-  order_by: 8
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: ambient_used_for_heating_in_households
-  is_1990: false
-  dependent_on: 
-  output_element_key: source_of_heat_used_in_households
-  key: ambient_heating_source_of_heat_used_in_households
 - label: heat_network_hot_water
   color: "#bc1616"
-  order_by: 1
-  group: ''
+  order_by: 102
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: heat_used_for_hot_water_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
   key: heat_network_hot_water_source_of_heat_used_in_households
-- label: coal_and_derivatives_hot_water
-  color: "#696969"
-  order_by: 2
-  group: ''
+
+- label: coal_and_derivatives_heating
+  color: "#333333"
+  order_by: 110
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
+  gquery: coal_and_derivatives_used_for_heating_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: coal_and_derivatives_heating_source_of_heat_used_in_households
+- label: coal_and_derivatives_hot_water
+  color: "#696969"
+  order_by: 112
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
   gquery: coal_and_derivatives_used_for_hot_water_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
   key: coal_and_derivatives_hot_water_source_of_heat_used_in_households
-- label: natural_gas_and_derivatives_hot_water
-  color: "#DFE4EA"
-  order_by: 3
-  group: ''
+
+- label: oil_and_derivatives_heating
+  color: "#854321"
+  order_by: 120
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
-  gquery: natural_gas_and_derivatives_used_for_hot_water_in_households
+  target_line_position:
+  gquery: oil_and_derivatives_used_for_heating_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
-  key: natural_gas_and_derivatives_hot_water_source_of_heat_used_in_households
+  key: oil_and_derivatives_heating_source_of_heat_used_in_households
 - label: oil_and_derivatives_hot_water
   color: "#CD6133"
-  order_by: 4
-  group: ''
+  order_by: 122
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: oil_and_derivatives_used_for_hot_water_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
   key: oil_and_derivatives_hot_water_source_of_heat_used_in_households
-- label: electricity_hot_water
-  color: "#4169E1"
-  order_by: 5
-  group: ''
+
+- label: natural_gas_and_derivatives_heating
+  color: "#A4B0BE"
+  order_by: 130
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
-  gquery: electricity_used_for_hot_water_in_households
+  target_line_position:
+  gquery: network_gas_used_for_heating_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
-  key: electricity_hot_water_source_of_heat_used_in_households
-- label: biomass_products_hot_water
-  color: "#6AB04C"
-  order_by: 6
-  group: ''
+  key: natural_gas_and_derivatives_heating_source_of_heat_used_in_households
+- label: natural_gas_and_derivatives_hot_water
+  color: "#DFE4EA"
+  order_by: 132
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
+  gquery: network_gas_used_for_hot_water_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: natural_gas_and_derivatives_hot_water_source_of_heat_used_in_households
+
+- label: biomass_products_heating
+  color: "#5D7929"
+  order_by: 140
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: biomass_products_used_for_heating_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: biomass_products_heating_source_of_heat_used_in_households
+- label: biomass_products_hot_water
+  color: "#6AB04C"
+  order_by: 142
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
   gquery: biomass_products_used_for_hot_water_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
   key: biomass_products_hot_water_source_of_heat_used_in_households
-- label: solar_thermal_hot_water
-  color: "#F6E58D"
-  order_by: 7
-  group: ''
+
+- label: electricity_heating
+  color: "#00008B"
+  order_by: 150
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
-  gquery: solar_used_for_hot_water_in_households
+  target_line_position:
+  gquery: electricity_used_for_heating_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
-  key: solar_thermal_hot_water_source_of_heat_used_in_households
-- label: ambient_hot_water
-  color: "#daf7a0"
-  order_by: 8
-  group: ''
+  key: electricity_heating_source_of_heat_used_in_households
+- label: electricity_hot_water
+  color: "#4169E1"
+  order_by: 152
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
-  gquery: ambient_used_for_hot_water_in_households
+  target_line_position:
+  gquery: electricity_used_for_hot_water_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
-  key: ambient_hot_water_source_of_heat_used_in_households
+  key: electricity_hot_water_source_of_heat_used_in_households
+
 - label: hydrogen_heating
   color: "#87CEEB"
-  order_by: 10
-  group: ''
+  order_by: 160
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: hydrogen_used_for_heating_in_households
   is_1990: false
   dependent_on: 
@@ -205,13 +163,102 @@
   key: hydrogen_heating_source_of_heat_used_in_households
 - label: hydrogen_hot_water
   color: "#BFEFFF"
-  order_by: 10
-  group: ''
+  order_by: 162
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: hydrogen_used_for_hot_water_in_households
   is_1990: false
   dependent_on: 
   output_element_key: source_of_heat_used_in_households
   key: hydrogen_hot_water_source_of_heat_used_in_households
+
+- label: ammonia_heating
+  color: "#1ce6d6"
+  order_by: 170
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_used_for_heating_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: ammonia_heating_source_of_heat_used_in_households
+- label: ammonia_hot_water
+  color: "#80f2e9"
+  order_by: 174
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_used_for_hot_water_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: ammonia_hot_water_source_of_heat_used_in_households
+
+- label: solar_thermal_heating
+  color: "#FFD700"
+  order_by: 180
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: solar_used_for_heating_in_households
+  is_1990: false
+  dependent_on:
+  output_element_key: source_of_heat_used_in_households
+  key: solar_thermal_heating_source_of_heat_used_in_households
+- label: solar_thermal_hot_water
+  color: "#F6E58D"
+  order_by: 182
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: solar_used_for_hot_water_in_households
+  is_1990: false
+  dependent_on:
+  output_element_key: source_of_heat_used_in_households
+  key: solar_thermal_hot_water_source_of_heat_used_in_households
+
+- label: ambient_heating
+  color: "#ADDE4C"
+  order_by: 190
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ambient_used_for_heating_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: ambient_heating_source_of_heat_used_in_households
+- label: ambient_hot_water
+  color: "#daf7a0"
+  order_by: 192
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ambient_used_for_hot_water_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: ambient_hot_water_source_of_heat_used_in_households
+
+- label: deficit
+  color: "#ffbaba"
+  order_by: 200
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: deficit_used_for_heating_and_hot_water_in_households
+  is_1990: false
+  dependent_on: 
+  output_element_key: source_of_heat_used_in_households
+  key: deficit_heating_source_of_heat_used_in_households
+

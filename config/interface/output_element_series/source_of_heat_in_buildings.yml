@@ -1,43 +1,7 @@
 ---
-- label: biomass_products
-  color: "#5D7929"
-  order_by: 6
-  group:
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: biomass_products_used_for_heat_in_buildings
-  is_1990:
-  dependent_on:
-  output_element_key: source_of_heat_in_buildings
-  key: biomass_products_source_of_heat_in_buildings
-- label: coal_and_derivatives
-  color: "#333333"
-  order_by: 2
-  group:
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: coal_and_derivatives_used_for_heat_in_buildings
-  is_1990:
-  dependent_on:
-  output_element_key: source_of_heat_in_buildings
-  key: coal_and_derivatives_source_of_heat_in_buildings
-- label: electricity
-  color: "#4169E1"
-  order_by: 5
-  group:
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: electricity_used_for_heat_in_buildings
-  is_1990:
-  dependent_on:
-  output_element_key: source_of_heat_in_buildings
-  key: electricity_source_of_heat_in_buildings
 - label: heat
   color: "#8B0000"
-  order_by: 1
+  order_by: 100
   group:
   show_at_first:
   is_target_line:
@@ -47,21 +11,21 @@
   dependent_on:
   output_element_key: source_of_heat_in_buildings
   key: heat_source_of_heat_in_buildings
-- label: natural_gas_and_derivatives
-  color: "#CCCCCC"
-  order_by: 3
+- label: coal_and_derivatives
+  color: "#333333"
+  order_by: 110
   group:
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: natural_gas_and_derivatives_used_for_heat_in_buildings
+  gquery: coal_and_derivatives_used_for_heat_in_buildings
   is_1990:
   dependent_on:
   output_element_key: source_of_heat_in_buildings
-  key: natural_gas_and_derivatives_source_of_heat_in_buildings
+  key: coal_and_derivatives_source_of_heat_in_buildings
 - label: oil_and_derivatives
   color: "#854321"
-  order_by: 4
+  order_by: 120
   group:
   show_at_first:
   is_target_line:
@@ -71,9 +35,57 @@
   dependent_on:
   output_element_key: source_of_heat_in_buildings
   key: oil_and_derivatives_source_of_heat_in_buildings
+- label: natural_gas_and_derivatives
+  color: "#CCCCCC"
+  order_by: 130
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_used_for_heat_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_heat_in_buildings
+  key: natural_gas_and_derivatives_source_of_heat_in_buildings
+- label: biomass_products
+  color: "#5D7929"
+  order_by: 140
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_used_for_heat_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_heat_in_buildings
+  key: biomass_products_source_of_heat_in_buildings
+- label: electricity
+  color: "#4169E1"
+  order_by: 150
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_used_for_heat_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_heat_in_buildings
+  key: electricity_source_of_heat_in_buildings
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 160
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_used_for_heat_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_heat_in_buildings
+  key: hydrogen_source_of_heat_in_buildings
 - label: solar_thermal
   color: "#FFD700"
-  order_by: 7
+  order_by: 180
   group: ''
   show_at_first: false
   is_target_line: false
@@ -85,7 +97,7 @@
   key: solar_thermal_source_of_heat_in_buildings
 - label: ambient_heat
   color: "#ADDE4C"
-  order_by: 10
+  order_by: 190
   group:
   show_at_first:
   is_target_line:
@@ -95,27 +107,15 @@
   dependent_on:
   output_element_key: source_of_heat_in_buildings
   key: ambient_source_of_heat_in_buildings
-- label: geothermal
-  color: ''
-  order_by: 9
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: geothermal_used_for_heat_in_buildings
-  is_1990:
-  dependent_on: _always_hidden
-  output_element_key: source_of_heat_in_buildings
-  key: geothermal_source_of_heat_in_buildings
-- label: hydrogen
-  color: "#87CEEB"
-  order_by: 8
+- label: deficit
+  color: "#ffbaba"
+  order_by: 200
   group:
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: hydrogen_used_for_heat_in_buildings
+  gquery: deficit_used_for_heat_in_buildings
   is_1990:
   dependent_on:
   output_element_key: source_of_heat_in_buildings
-  key: hydrogen_source_of_heat_in_buildings
+  key: deficit_source_of_heat_in_buildings

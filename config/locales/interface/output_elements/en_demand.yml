@@ -164,7 +164,7 @@ en:
       title: Final energy demand for international transport per carrier
       short_description:
       description: |
-        This chart shows you the fuels used in <a href=/scenario/demand/transport_international_transport/international-transport> 
+        This chart shows you the fuels used in <a href=/scenario/demand/transport_international_transport/international-transport>
         international transport</a>. International transport consists of
         <a href=/scenario/demand/transport_international_transport/international-aviation-technology> aviation</a>
         and <a href=/scenario/demand/transport_international_transport/international-navigation-technology> navigation</a>.
@@ -172,7 +172,7 @@ en:
       title: CO<sub>2</sub> emissions of international transportation
       short_description:
       description: |
-        This chart shows the CO<sub>2</sub> emissions of <a href=/scenario/demand/transport_international_transport/international-transport> 
+        This chart shows the CO<sub>2</sub> emissions of <a href=/scenario/demand/transport_international_transport/international-transport>
         international transport</a>. By changing the fuels used for <a href=/scenario/supply/transport_fuels/international-aviation>
         international aviation</a> and the technologies used for <a href=/scenario/demand/transport_international_transport/international-navigation-technology>
         international navigation</a>, you can affect the CO<sub>2</sub> emissions.
@@ -254,16 +254,6 @@ en:
         as a result of the choices you make in this section. <br/><br/>
         You can click <u>Change chart</u> above the graph, to select different graphs
         about energy demand.
-    effect_of_insulation_in_buildings:
-      title: Heating demand with insulation in buildings
-      short_description: Buildings
-      description: "This graph shows how the final demand for heat and electricity
-        in buildings change in the future. It also shows reduction in heat demand
-        as a result of better insulation. Heat and electricity demand depend in part
-        on economic and population growth, but electricity demand also depends on
-        efficiency improvements or the use of alternative technologies.\r\n<br/><br/>\r\nYou
-        can click '<u>Change chart</u>' above the graph, to select different graphs
-        about energy demand."
     source_of_heat_in_buildings:
       title: Final energy demand for heating in buildings
       short_description: Building
@@ -290,8 +280,8 @@ en:
         and then click '<u>Change chart</u>' above the graph, to select this graph
         or another one about energy demand."
     use_of_electricity_in_buildings:
-      title: Electricity demand in buildings
-      short_description: Buildings
+      title: Final energy demand for electricity in buildings per application
+      short_description:
       description: "This graph shows how buildings demand for electricity will change
         as a result of the choices you make in this section. Electricity demand is
         dependent on the efficiency of appliances.\r\n<br/><br/>\r\nYou can click
@@ -333,10 +323,10 @@ en:
       title: Final energy demand for heating in agriculture
       short_description:
       description: |
-        This graph shows agricultural heat demand changes from now to the future, as a 
+        This graph shows agricultural heat demand changes from now to the future, as a
         result of technology choices in the <a href="/scenario/demand/agriculture/heat">
         Agriculture</a> section. <br/><br/>
-        Of course, what technologies are used does not change the useful demand for heat, 
+        Of course, what technologies are used does not change the useful demand for heat,
         but it can change the efficiency and renewability of heat production.
     use_of_final_electricity_demand_in_households:
       title: Electricity use of household appliances
@@ -364,20 +354,6 @@ en:
         In order to reduce heat demand, houses will need to be better insulated, for
         example.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above the graph,
         to select different graphs about energy demand."
-    useful_demand_in_households:
-      title: Useful demand in residences
-      short_description: ''
-      description: "This graph shows how household final demand for heat and electricity
-        change in the future. Heat and electricity demand depend in part on economic
-        or population growth, but electricity demand also depends on efficiency improvements
-        or the use of alternative technologies.\r\n<br/><br/>\r\nThis graph shows
-        \"useful demand\", which is the energy actually used for a given purpose.
-        This differs from \"final demand\" shown in some of the other graphs in the
-        model, which is the input from energy sources before it's converted to it's
-        useful purpose.\r\n<br/><br/>\r\nThat is why the electricity demand in this
-        graph does not include electricity used for heating, as it is already included
-        in the heating demand.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-        above the graph, to select different graphs about energy demand."
     effect_of_insulation_in_households:
       title: Residential heating demand with insulation
       short_description: Household
@@ -414,11 +390,6 @@ en:
         Will households keep using mostly gas, or will they switch to electric cooking
         or any of the other available technologies? It all changes the energy mix
         used for cooking."
-    impact_of_climate_on_heat_and_cooling_demand_households_and_buildings:
-      title: Heating and cooling households, buildings, agriculture
-      short_description: Heating and cooling demand of households, buildings and agriculture
-      description: "This graph shows how heating and cooling demand in households, buildings
-        and agriculture changes in the future.\r\n"
     population_residences_overview:
       title: Overview of population and residences
       short_description: This table displays the population, the number of residences
@@ -431,7 +402,7 @@ en:
       title: Heat demand and production in households
       short_description: ''
       description: ''
-    households_final_demand_per_application:
+    use_of_final_demand_in_households:
       title: Final energy demand in households per application
       short_description:
       description: |
@@ -449,42 +420,58 @@ en:
     agriculture_local_heat_mekko:
       title: Supply and demand of heat from local CHPs
       description: |
-        This chart shows local combined heat and power (CHP) that supply heat to the agriculture 
-        sector and shows the final demand for that heat. To see the hourly behaviour of this demand and 
-        supply, you can go to the 
-        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a> 
+        This chart shows local combined heat and power (CHP) that supply heat to the agriculture
+        sector and shows the final demand for that heat. To see the hourly behaviour of this demand and
+        supply, you can go to the
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a>
         section. </br></br>
         The final demand for heat is determined by the "Heat from local CHPs" slider in
-        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from 
-        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a> 
+        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from
+        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a>
         section. Excess heat is wasted and heat shortages are supplied by a backup burner.
     agriculture_sankey:
       title: Local heat and electricity production in agriculture
       description: |
-        This sankey chart shows local combined heat and power (CHP) that supply heat to the agriculture 
+        This sankey chart shows local combined heat and power (CHP) that supply heat to the agriculture
         sector. It also shows the electricity production by these
-        CHPs and how this relates to the demand / supply from the grid. To see the hourly behaviour of this demand and 
-        supply, you can go to the 
-        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a> 
+        CHPs and how this relates to the demand / supply from the grid. To see the hourly behaviour of this demand and
+        supply, you can go to the
+        <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data export</a>
         section. </br></br>
         The final demand for heat is determined by the "Heat from local CHPs" slider in
-        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from 
-        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a> 
+        the <a href="/scenario/demand/agriculture/heat">Agriculture</a> section. The supply from
+        CHPs can be set in <a href="/scenario/demand/agriculture/heat-from-local-chps">this</a>
         section. Excess heat is wasted and heat shortages are supplied by a backup burner.
     losses_heat_networks:
       title: Heat losses in heat network per household
-      description:
+      description: |
         This tabel shows the heat losses in heat networks per household. The total heat losses in the heat networks are allocated to households based on the share that households have in the total final demand of heat.
     future_energy_transit_flows:
       title: Future energy transit flows
       short_description: Future year
       description: |
         This chart shows a breakdown of the energy that transits the region
-        in the future by energy source. 
+        in the future by energy source.
         Each of the bars add up to the end result in the end year (the black bar to the far right of the chart)
     heat_aquathermal_demand:
       title: Heat demand for aquathermal sources
       description: |
-        This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water). 
-        The chart shows the distribution of heat demand between collective sources (heat networks) 
+        This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water).
+        The chart shows the distribution of heat demand between collective sources (heat networks)
         and individual sources and includes the potential for each aquathermal source for the region, whenever available.
+    number_of_residences_overview:
+      title: Number of residences per type and construction period
+      description: |
+        This chart shows the amount of residences divided per residence type and building period.
+    residential_heating_demand:
+      title: Residential heating demand
+      description: |
+        This bar chart shows the residential heating demand per residence type and building period.
+    buildings_heating_demand:
+      title: Buildings heating demand
+      description: |
+        This bar chart shows the useful heating demand for buildings per building period.
+        The \"useful demand\", which is the energy actually used for a given purpose.
+        This differs from \"final demand\" shown in some of the other graphs in the
+        model, which is the input from energy sources before it's converted to it's
+        useful purpose.

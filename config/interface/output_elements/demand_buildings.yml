@@ -19,20 +19,6 @@
   group: Demand
   sub_group: buildings
   show_point_label: false
-  growth_chart: true
-  key: effect_of_insulation_in_buildings
-  max_axis_value: 
-  min_axis_value: 
-  hidden: false
-  requires_merit_order: false
-  dependent_on: has_buildings
-  output_element_type_name: bezier
-- under_construction: false
-  unit: PJ
-  percentage: false
-  group: Demand
-  sub_group: buildings
-  show_point_label: false
   growth_chart: false
   key: source_of_heat_in_buildings
   max_axis_value: 
@@ -93,7 +79,21 @@
   key: buildings_heat_demand_and_production
   max_axis_value: 
   min_axis_value: 
-  hidden: false
+  hidden: true
   requires_merit_order: true
   dependent_on: ''
   output_element_type_name: heat_demand_and_production
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Demand
+  sub_group: buildings
+  show_point_label: false
+  growth_chart: false
+  key: buildings_heating_demand
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: vertical_stacked_bar    

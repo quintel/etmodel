@@ -23,8 +23,8 @@ describe SlidePresenter do
   let(:si1) { t1.sidebar_items.first }
   let(:si2) { t1.sidebar_items.second }
 
-  let(:sl1) { si1.slides.first }
-  let(:sl2) { si1.slides.second }
+  let(:sl1) { si1.slides.second }
+  let(:sl2) { si1.slides.third }
   let(:sl3) { si2.slides.first }
   let(:sl4) { t2.sidebar_items.first.slides.first }
 

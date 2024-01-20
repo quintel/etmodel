@@ -3,6 +3,7 @@
   %thead
     %tr
       %th
+      %th= t 'output_elements.tables.households_deficits.construction_period'
       %th
       %th= t 'output_elements.tables.households_deficits.apartments'
       %th= t 'output_elements.tables.households_deficits.detached_houses'
@@ -11,84 +12,96 @@
   %tbody
     %tr
       %th= t "output_elements.tables.households_deficits.absolute_deficits"
-      %th= t "output_elements.tables.households_deficits.before_1945"
+      %th= t "output_elements.tables.households_deficits.construction_period_before_1945"
+      %th= t "output_elements.tables.households_deficits.absolute_unit"
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_apartments_before_1945", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_detached_houses_before_1945", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_semi_detached_houses_before_1945", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_terraced_houses_before_1945", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.1945_1964"
+      %th= t "output_elements.tables.households_deficits.construction_period_1945_1964"
+      %th= t "output_elements.tables.households_deficits.absolute_unit"
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_apartments_1945_1964", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_detached_houses_1945_1964", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_semi_detached_houses_1945_1964", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_terraced_houses_1945_1964", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.1965_1984"
+      %th= t "output_elements.tables.households_deficits.construction_period_1965_1984"
+      %th= t "output_elements.tables.households_deficits.absolute_unit"
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_apartments_1965_1984", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_detached_houses_1965_1984", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_semi_detached_houses_1965_1984", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_terraced_houses_1965_1984", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.1985_2004"
+      %th= t "output_elements.tables.households_deficits.construction_period_1985_2004"
+      %th= t "output_elements.tables.households_deficits.absolute_unit"
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_apartments_1985_2004", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_detached_houses_1985_2004", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_semi_detached_houses_1985_2004", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_terraced_houses_1985_2004", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.2005_present"
+      %th= t "output_elements.tables.households_deficits.construction_period_2005_present"
+      %th= t "output_elements.tables.households_deficits.absolute_unit"
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_apartments_2005_present", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_detached_houses_2005_present", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_semi_detached_houses_2005_present", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_terraced_houses_2005_present", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.future"
+      %th= t "output_elements.tables.households_deficits.construction_period_future"
+      %th= t "output_elements.tables.households_deficits.absolute_unit"
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_apartments_future", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_detached_houses_future", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_semi_detached_houses_future", :graph => :future}}
       %td{:data => {:gquery => "absolute_deficit_useful_demand_for_space_heating_terraced_houses_future", :graph => :future}}
     %tr
       %th= t "output_elements.tables.households_deficits.relative_deficits"
-      %th= t "output_elements.tables.households_deficits.before_1945"
+      %th= t "output_elements.tables.households_deficits.construction_period_before_1945"
+      %th= t "output_elements.tables.households_deficits.relative_unit"
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_apartments_before_1945", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_detached_houses_before_1945", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_semi_detached_houses_before_1945", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_terraced_houses_before_1945", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.1945_1964"
+      %th= t "output_elements.tables.households_deficits.construction_period_1945_1964"
+      %th= t "output_elements.tables.households_deficits.relative_unit"
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_apartments_1945_1964", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_detached_houses_1945_1964", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_semi_detached_houses_1945_1964", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_terraced_houses_1945_1964", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.1965_1984"
+      %th= t "output_elements.tables.households_deficits.construction_period_1965_1984"
+      %th= t "output_elements.tables.households_deficits.relative_unit"
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_apartments_1965_1984", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_detached_houses_1965_1984", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_semi_detached_houses_1965_1984", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_terraced_houses_1965_1984", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.1985_2004"
+      %th= t "output_elements.tables.households_deficits.construction_period_1985_2004"
+      %th= t "output_elements.tables.households_deficits.relative_unit"
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_apartments_1985_2004", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_detached_houses_1985_2004", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_semi_detached_houses_1985_2004", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_terraced_houses_1985_2004", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.2005_present"
+      %th= t "output_elements.tables.households_deficits.construction_period_2005_present"
+      %th= t "output_elements.tables.households_deficits.relative_unit"
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_apartments_2005_present", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_detached_houses_2005_present", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_semi_detached_houses_2005_present", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_terraced_houses_2005_present", :graph => :future}}
     %tr
       %th
-      %th= t "output_elements.tables.households_deficits.future"
+      %th= t "output_elements.tables.households_deficits.construction_period_future"
+      %th= t "output_elements.tables.households_deficits.relative_unit"
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_apartments_future", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_detached_houses_future", :graph => :future}}
       %td{:data => {:gquery => "relative_deficit_useful_demand_for_space_heating_semi_detached_houses_future", :graph => :future}}

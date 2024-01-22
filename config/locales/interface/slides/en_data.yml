@@ -216,11 +216,11 @@ en:
       title: Land use of solar and wind energy
       short_description:
       description: |
-        Solar and wind technologies partially compete for space. The chart under this section shows 
+        Solar and wind technologies partially compete for space. The chart in this section shows 
         the total land use of all solar and wind technologies.
-        In particular, you can manually set the split between installed capacity of large-scale and small-scale inland wind turbines
+        In particular, it is possible to differentiate between large-scale and small-scale inland wind turbines
         using the sliders below.
-        Please note that this split is for visual purposes only and does not affect your scenario.
+        Please note that this split is for visual purposes only and does not affect the outcomes of this scenario.
 
         <br/><br/>
 
@@ -230,10 +230,11 @@ en:
         Land use of solar and wind (table)</a>
 
         <br/><br/>
-        <b> Note: </b> Solar PVT panels are included in the chart and table. The ETM considers PVT panels primarily as a heating technology in combination with a heat pump.
-        You can therefore adjust the share of a PVT heat pump system in the 
+        <b> Note: </b> Solar PVT panels and solar thermal panels are included in the chart and table. 
+        The ETM considers PVT panels (and solar thermal panels) primarily as a heating technology in combination with a heat pump.
+        To adjust the share of a PVT heat pump system for space heating and hot water or to adjust the number of solar thermal panels, go to the 
         <a href="/scenario/demand/households/demand/households/space-heating-and-hot-water">
-        Households space heating and hot water</a> section. The corresponding electricity output is then shown in the chart and table.
+        Households space heating and hot water</a> section. 
 
     flexibility_merit_order_merit_order_price:
       title: Hourly curves for electricity

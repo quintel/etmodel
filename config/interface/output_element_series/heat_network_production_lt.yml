@@ -1,7 +1,7 @@
 ---
 - label: heat_network_demand
   color: "#FF0000"
-  order_by: 1
+  order_by: 100
   group:
   show_at_first:
   is_target_line: true
@@ -11,21 +11,59 @@
   dependent_on:
   output_element_key: heat_network_production_lt
   key: heat_network_demand_heat_network_production_lt
-- label: energy_heat_backup_burner_network_gas_steam_hot_water_output_curve
-  color: "#CED6E0"
-  order_by: 100
-  group: ''
+
+- label: energy_heat_network_residual_heat_out
+  color: "#00008B"
+  order_by: 200
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: energy_heat_production_lt_residual_heat_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production_lt
+  key: energy_heat_network_residual_heat_out_heat_network_production_lt
+- label: energy_heat_import_steam_hot_water_steam_hot_water_output_curve
+  color: "#FF8C8C"
+  order_by: 205
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
-  gquery: energy_heat_backup_burner_network_gas_lt_steam_hot_water_output_curve
+  target_line_position:
+  gquery: energy_heat_import_steam_hot_water_lt_steam_hot_water_output_curve
   is_1990: false
   dependent_on:
   output_element_key: heat_network_production_lt
-  key: energy_heat_backup_burner_network_gas_lt_steam_hot_water_output_curve_heat_network_production
+  key: energy_heat_import_steam_hot_water_lt_steam_hot_water_output_curve_heat_network_production
+- label: energy_heat_well_shallow_geothermal_steam_hot_water_output_curve
+  color: "#FFC04F"
+  order_by: 210
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_well_shallow_geothermal_lt_steam_hot_water_output_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_network_production_lt
+  key: energy_heat_well_shallow_geothermal_lt_steam_hot_water_output_curve_heat_network_production
+- label: energy_heat_solar_thermal_steam_hot_water_output_curve
+  color: "#FFD700"
+  order_by: 215
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_solar_thermal_lt_steam_hot_water_output_curve
+  is_1990:
+  dependent_on:
+  output_element_key: heat_network_production_lt
+  key: energy_heat_solar_thermal_lt_steam_hot_water_output_curve_heat_network_production
+
 - label: energy_heat_burner_hydrogen_steam_hot_water_output_curve
   color: "#87CEEB"
-  order_by: 12
+  order_by: 400
   group:
   show_at_first:
   is_target_line: false
@@ -37,7 +75,7 @@
   key: energy_heat_burner_hydrogen_lt_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve
   color: "#ADD8E6"
-  order_by: 16
+  order_by: 405
   group:
   show_at_first:
   is_target_line: false
@@ -49,7 +87,7 @@
   key: energy_heat_heatpump_water_water_electricity_lt_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_heatpump_surface_water_water_ts_electricity_steam_hot_water_output_curve
   color: "#87e3eb"
-  order_by: 25
+  order_by: 410
   group:
   show_at_first:
   is_target_line: false
@@ -61,7 +99,7 @@
   key: energy_heat_heatpump_surface_water_water_ts_lt_electricity_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_heatpump_waste_water_water_ts_electricity_steam_hot_water_output_curve
   color: "#9deef5"
-  order_by: 26
+  order_by: 415
   group:
   show_at_first:
   is_target_line: false
@@ -73,7 +111,7 @@
   key: energy_heat_heatpump_waste_water_water_ts_lt_electricity_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_heatpump_drink_water_water_ts_electricity_steam_hot_water_output_curve
   color: "#c1f1f5"
-  order_by: 27
+  order_by: 420
   group:
   show_at_first:
   is_target_line: false
@@ -85,7 +123,7 @@
   key: energy_heat_heatpump_drink_water_water_ts_lt_electricity_steam_hot_water_output_curve_heat_network_production
 - label: energy_heat_boiler_electricity_steam_hot_water_output_curve
   color: "#b9effe"
-  order_by: 17
+  order_by: 425
   group:
   show_at_first:
   is_target_line: false
@@ -95,63 +133,28 @@
   dependent_on:
   output_element_key: heat_network_production_lt
   key: energy_heat_boiler_electricity_lt_steam_hot_water_output_curve_heat_network_production
-- label: energy_heat_import_steam_hot_water_steam_hot_water_output_curve
-  color: "#FF8C8C"
-  order_by: 2
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: energy_heat_import_steam_hot_water_lt_steam_hot_water_output_curve
-  is_1990: false
-  dependent_on:
-  output_element_key: heat_network_production_lt
-  key: energy_heat_import_steam_hot_water_lt_steam_hot_water_output_curve_heat_network_production
-- label: energy_heat_solar_thermal_steam_hot_water_output_curve
-  color: "#FFD700"
-  order_by: 18
-  group:
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: energy_heat_solar_thermal_lt_steam_hot_water_output_curve
-  is_1990:
-  dependent_on:
-  output_element_key: heat_network_production_lt
-  key: energy_heat_solar_thermal_lt_steam_hot_water_output_curve_heat_network_production
-- label: energy_heat_well_shallow_geothermal_steam_hot_water_output_curve
-  color: "#A4B0BE"
-  order_by: 24
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: energy_heat_well_shallow_geothermal_lt_steam_hot_water_output_curve
-  is_1990: false
-  dependent_on:
-  output_element_key: heat_network_production_lt
-  key: energy_heat_well_shallow_geothermal_lt_steam_hot_water_output_curve_heat_network_production
+
 - label: energy_heat_network_storage_out
   color: "#0984E3"
-  order_by: 20
+  order_by: 500
   group: ''
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: energy_heat_network_storage_lt_steam_hot_water_output_curve
   is_1990: false
   dependent_on:
   output_element_key: heat_network_production_lt
   key: energy_heat_network_storage_lt_steam_hot_water_out_heat_network_production
-- label: energy_heat_network_residual_heat_out
-  color: "#00008B"
-  order_by: 1
-  group:
-  show_at_first:
-  is_target_line:
+- label: energy_heat_backup_burner_network_gas_steam_hot_water_output_curve
+  color: "#CED6E0"
+  order_by: 505
+  group: ''
+  show_at_first: false
+  is_target_line: false
   target_line_position:
-  gquery: energy_heat_production_lt_residual_heat_steam_hot_water_output_curve
-  is_1990:
+  gquery: energy_heat_backup_burner_network_gas_lt_steam_hot_water_output_curve
+  is_1990: false
   dependent_on:
   output_element_key: heat_network_production_lt
-  key: energy_heat_network_residual_heat_out_heat_network_production_lt
+  key: energy_heat_backup_burner_network_gas_lt_steam_hot_water_output_curve_heat_network_production

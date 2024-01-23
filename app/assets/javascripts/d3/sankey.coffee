@@ -385,9 +385,9 @@ D3.sankey =
           {left: 'ht_network',                   right: 'industry',             gquery: 'ht_network_to_final_demand_industry_in_sankey_heat_networks',        color: '#785EF0'},
           {left: 'ht_network',                   right: 'other',                gquery: 'ht_network_to_final_demand_other_in_sankey_heat_networks',           color: '#785EF0'},
           {left: 'ht_network',                   right: 'transport',            gquery: 'ht_network_to_final_demand_transport_in_sankey_heat_networks',       color: '#785EF0'},
-          {left: 'ht_network',                   right: 'distribution_losses',  gquery: 'ht_network_to_distribution_losses_in_sankey_heat_networks',          color: '#785EF0'},
-          {left: 'ht_network',                   right: 'storage_losses',       gquery: 'ht_network_to_storage_losses_in_sankey_heat_networks',               color: '#785EF0'},
-          {left: 'ht_network',                   right: 'unused_heat',          gquery: 'ht_network_to_unused_heat_in_sankey_heat_networks',                  color: '#785EF0'},
+          {left: 'ht_network',                   right: 'distribution_losses',  gquery: 'ht_network_to_distribution_losses_in_sankey_heat_networks',          color: '#DCDCDC'},
+          {left: 'ht_network',                   right: 'storage_losses',       gquery: 'ht_network_to_storage_losses_in_sankey_heat_networks',               color: '#DCDCDC'},
+          {left: 'ht_network',                   right: 'unused_heat',          gquery: 'ht_network_to_unused_heat_in_sankey_heat_networks',                  color: '#c70000'},
 
           {left: 'mt_network',                   right: 'agriculture',          gquery: 'mt_network_to_final_demand_agriculture_in_sankey_heat_networks',     color: '#DC267F'},
           {left: 'mt_network',                   right: 'buildings',            gquery: 'mt_network_to_final_demand_buildings_in_sankey_heat_networks',       color: '#DC267F'},
@@ -397,9 +397,9 @@ D3.sankey =
           {left: 'mt_network',                   right: 'industry',             gquery: 'mt_network_to_final_demand_industry_in_sankey_heat_networks',        color: '#DC267F'},
           {left: 'mt_network',                   right: 'other',                gquery: 'mt_network_to_final_demand_other_in_sankey_heat_networks',           color: '#DC267F'},
           {left: 'mt_network',                   right: 'transport',            gquery: 'mt_network_to_final_demand_transport_in_sankey_heat_networks',       color: '#DC267F'},
-          {left: 'mt_network',                   right: 'distribution_losses',  gquery: 'mt_network_to_distribution_losses_in_sankey_heat_networks',          color: '#DC267F'},
-          {left: 'mt_network',                   right: 'storage_losses',       gquery: 'mt_network_to_storage_losses_in_sankey_heat_networks',               color: '#DC267F'},
-          {left: 'mt_network',                   right: 'unused_heat',          gquery: 'mt_network_to_unused_heat_in_sankey_heat_networks',                  color: '#DC267F'},
+          {left: 'mt_network',                   right: 'distribution_losses',  gquery: 'mt_network_to_distribution_losses_in_sankey_heat_networks',          color: '#DCDCDC'},
+          {left: 'mt_network',                   right: 'storage_losses',       gquery: 'mt_network_to_storage_losses_in_sankey_heat_networks',               color: '#DCDCDC'},
+          {left: 'mt_network',                   right: 'unused_heat',          gquery: 'mt_network_to_unused_heat_in_sankey_heat_networks',                  color: '#c70000'},
 
           {left: 'lt_network',                   right: 'agriculture',          gquery: 'lt_network_to_final_demand_agriculture_in_sankey_heat_networks',     color: '#FFB000'},
           {left: 'lt_network',                   right: 'buildings',            gquery: 'lt_network_to_final_demand_buildings_in_sankey_heat_networks',       color: '#FFB000'},
@@ -409,9 +409,9 @@ D3.sankey =
           {left: 'lt_network',                   right: 'industry',             gquery: 'lt_network_to_final_demand_industry_in_sankey_heat_networks',        color: '#FFB000'},
           {left: 'lt_network',                   right: 'other',                gquery: 'lt_network_to_final_demand_other_in_sankey_heat_networks',           color: '#FFB000'},
           {left: 'lt_network',                   right: 'transport',            gquery: 'lt_network_to_final_demand_transport_in_sankey_heat_networks',       color: '#FFB000'},
-          {left: 'lt_network',                   right: 'distribution_losses',  gquery: 'lt_network_to_distribution_losses_in_sankey_heat_networks',          color: '#FFB000'},
-          {left: 'lt_network',                   right: 'storage_losses',       gquery: 'lt_network_to_storage_losses_in_sankey_heat_networks',               color: '#FFB000'},
-          {left: 'lt_network',                   right: 'unused_heat',          gquery: 'lt_network_to_unused_heat_in_sankey_heat_networks',                  color: '#FFB000'}
+          {left: 'lt_network',                   right: 'distribution_losses',  gquery: 'lt_network_to_distribution_losses_in_sankey_heat_networks',          color: '#DCDCDC'},
+          {left: 'lt_network',                   right: 'storage_losses',       gquery: 'lt_network_to_storage_losses_in_sankey_heat_networks',               color: '#DCDCDC'},
+          {left: 'lt_network',                   right: 'unused_heat',          gquery: 'lt_network_to_unused_heat_in_sankey_heat_networks',                  color: '#c70000'}
         ]
     biomass_sankey:
       data:

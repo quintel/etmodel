@@ -520,7 +520,7 @@ nl:
         Met dit schuifje stel je de jaarlijke warmteproductie van ondiep-geothermische bronnen in en maak je deze zichtbaar in de
         aanbodkant van de grafiek rechts."
     capacity_of_energy_heat_well_shallow_lt_geothermal:
-      title: Ondiepe geothermie met warmtepomp
+      title: Geothermie (ondiep)
       short_description:
       description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) 
         van ondiepe geothermische warmteinstallaties met warmtepompen 
@@ -588,82 +588,6 @@ nl:
         op een realistisch getal gezet wordt als warmtenetten een rol spelen in jouw
         scenario. Voor moderne warmtenetten is 15% een veelgebruikte aanname, voor
         oudere/bestaande systemen ligt dit dichter bij 25-30%.
-    capacity_of_energy_heat_boiler_ht_electricity:
-      title: Elektrische boiler
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_boiler_lt_electricity:
-      title: Elektrische boiler
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_boiler_mt_electricity:
-      title: Elektrische boiler
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_ht_coal:
-      title: Kolenketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_ht_crude_oil:
-      title: Olieketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_ht_hydrogen:
-      title: Waterstofketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_ht_network_gas:
-      title: Gasketel (netwerk gas)
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_ht_waste_mix:
-      title: Afvalketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_ht_wood_pellets:
-      title: Biomassaketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_lt_hydrogen:
-      title: Waterstofketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_mt_coal:
-      title: Kolenketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_mt_crude_oil:
-      title: Olieketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_mt_hydrogen:
-      title: Waterstofketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_mt_network_gas:
-      title: Gasketel (netwerk gas)
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_mt_waste_mix:
-      title: Afvalketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_burner_mt_wood_pellets:
-      title: Biomassaketel
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_heatpump_water_water_ht_electricity:
-      title: Water warmtepomp
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_heatpump_water_water_lt_electricity:
-      title: Water warmtepomp
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_heatpump_water_water_mt_electricity:
-      title: Water warmtepomp
-      short_description:
-      description: "..."
     capacity_of_energy_heat_heatpump_surface_water_water_ts_lt_electricity:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description:
@@ -736,54 +660,6 @@ nl:
         Voor meer informatie over het totale gebruik van aquathermie, open <a href="#" 
         class="open_chart" data-chart-key="heat_aquathermal_demand" 
         data-chart-location="side"> deze grafiek</a>.
-    capacity_of_energy_heat_solar_lt_solar_thermal:
-      title: Zonthermie
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_solar_mt_solar_thermal:
-      title: Zonthermie
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_well_deep_mt_geothermal:
-      title: Geothermie (diep)
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_well_shallow_heatpump_mt_geothermal:
-      title: Geothermie + warmtepomp (ondiep)
-      short_description:
-      description: "..."
-    capacity_of_energy_heat_well_shallow_lt_geothermal:
-      title: Geothermie (diep)
-      short_description:
-      description: "..."
-    energy_heat_distribution_ht_loss_share:
-      title: Transport en distributieverliezen
-      short_description:
-      description: "..."
-    energy_heat_distribution_lt_loss_share:
-      title: Transport en distributieverliezen
-      short_description:
-      description: "..."
-    energy_heat_distribution_mt_loss_share:
-      title: Transport en distributieverliezen
-      short_description:
-      description: "..."
-    energy_heat_network_storage_ht_loss_share:
-      title: Jaarlijkse verliezen
-      short_description:
-      description: "..."
-    energy_heat_network_storage_ht_steam_hot_water_output_capacity_share:
-      title: Jaarlijkse verliezen
-      short_description:
-      description: "..."
-    energy_heat_network_storage_lt_loss_share:
-      title: Jaarlijkse verliezen
-      short_description:
-      description: "..."
-    energy_heat_network_storage_lt_steam_hot_water_output_capacity_share:
-      title: Output capcity (as % of average hourly load)
-      short_description:
-      description: "..."
     energy_heat_network_storage_mt_steam_hot_water_output_capacity_share:
       title: Warmtelevercapaciteit (als % van gemiddelde uurlast)
       short_description:

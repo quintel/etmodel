@@ -6,14 +6,14 @@
       <span class="bullet">&bull;</span>
       {% link_to_scenario %}
       <span class="bullet">&bull;</span>
-      by Quintel Intelligence<br />
+      door Quintel<br />
       <span class="region {{ settings.area_code }}">
         {{ settings.area_name }}
 
       </span>
       <span class="bullet">&bull;</span>
       {{ settings.start_year }}
-      to {{ settings.end_year }}
+      tot {{ settings.end_year }}
     </p>
   </div>
 </header>
@@ -117,12 +117,12 @@
         <h4 class="banner">Vraagontwikkeling</h4>
           <p>
           In het gemaakte scenario zijn de volgende aannames gemaakt over de ontwikkeling van de huizenvoorraad en de gevolgen van isoleren.
-            {% chart effect_of_insulation_in_households %}
+            {% chart residential_heating_demand %}
               Isolatie in woningen/huishoudens
               {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
             {% endchart %}
 
-            {% chart effect_of_insulation_in_buildings %}
+            {% chart buildings_heating_demand %}
               Isolatie in gebouwen
               {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
             {% endchart %}

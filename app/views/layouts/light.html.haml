@@ -1,0 +1,9 @@
+- content_for :head do
+  = render "layouts/etm/javascript_globals"
+
+- content_for :content do
+  = render "layouts/etm/sidebar" if @interface.try :current_sidebar_item
+  = yield
+
+= render template: 'layouts/application', locals: { body_id: 'light' }
+

@@ -23,9 +23,10 @@ input.button, button.button, input.btn, a.button, a.btn
     padding: 9px 11px 6px
 
 a.button, input.button, button.button, input.btn
-  border-radius: 3px
+  border-radius: 5px
   font-size: 14px
   line-height: 15px
+  padding: 7px 15px
 
   .fa
     font-size: 14px
@@ -93,27 +94,33 @@ a.button, input.button, button.button, input.btn
     border-color: #8ebeea
 
   &.primary
-    background: #458bd4
-    border: 1px solid #5788ba
-    border-bottom-color: #3f7ab7
-    box-shadow: 0 0 0 transparent
+    background: $landing-blue
     color: white
-    font-weight: 600
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+    font-weight: 500
+    padding: 7px 15px
 
     &[disabled]
-      background: #458bd4
+      background: $landing-blue
 
     &:hover
       background-color: darken(#458bd4, 8%)
 
     &:active
       background: darken(#458bd4, 8%)
-      border-color: #4c7ba8
-      box-shadow: 0 0 0 transparent
 
-    &:focus:focus-visible
-      box-shadow: 0 0 0 3px #cfe5f7
+  &.secondary
+    background: $landing-gold
+    color: white
+    font-weight: 600
+
+    &[disabled]
+      background: $landing-gold
+
+    &:hover
+      background-color: darken($landing-gold, 8%)
+
+    &:active
+      background: darken($landing-gold, 8%)
 
   // Combine with primary
   &.success

@@ -142,6 +142,8 @@ Rails.application.routes.draw do
   get '/local-global' => 'compare#index', as: :local_global
   get '/local-global/:ids' => 'compare#show', as: :local_global_scenarios
 
+  get '/light' => 'light#index', as: :light
+
   resources :multi_year_charts, except: %i[new show edit update] do
     member do
       put :discard

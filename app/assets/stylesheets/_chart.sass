@@ -44,7 +44,7 @@ $chart-header-icon-color: #333
           padding: 10px 8px 7px
 
         &:hover
-          background: #71a2cf
+          background: $landing-blue
           color: white
 
         &.show_related
@@ -208,7 +208,7 @@ table
   &.chart
     width: 100%
     border-spacing: 0
-    border-bottom: 1px solid #71a2cf
+    color: #444
     &.has-total
       border-bottom: none
     &.centered
@@ -219,11 +219,11 @@ table
       color: #999
     thead
       td
-        border-bottom: 1px solid #71a2cf
-        border-right: 1px solid #71a2cf
+        border-bottom: 1px solid $landing-blue
+        border-right: 1px solid $landing-blue
       th
-        background: #71a2cf
-        border: 1px solid #71a2cf
+        background: $landing-blue
+        border: 1px solid $landing-blue
         color: white
         font-weight: normal
         text-align: right
@@ -234,6 +234,12 @@ table
       & + thead.subhead
         td, th
           border-top-color: #9dbedc
+      tr:first-child
+        th:first-child
+          border-radius: 2px 0 0 0
+        th:last-child
+          border-radius: 0 2px 0 0
+
     tr
       &.even
         background-color: #eee
@@ -242,7 +248,7 @@ table
       padding: 5px
       line-height: 1.4
       &.bordered
-        border: 1px solid #e5e5e5
+        border: 1px solid #ddd
 
     td
       text-align: right
@@ -252,15 +258,12 @@ table
         color: #999
     tbody
       th, td
-        border-right: 1px solid #e5e5e5
-        border-top: 1px solid #e5e5e5
-        &:first-child
-          border-left: 1px solid #e5e5e5
+        border-top: 1px solid #ddd
       tr:first-child
         th, td
           border-top: none
     tfoot th, tfoot td
-      border-top: 1px solid #71a2cf
+      border-top: 1px solid #ddd
   &#power_plants
     th.unit
       font-weight: normal
@@ -272,30 +275,42 @@ table
         border-top: 1px solid #999
         border-bottom: 3px double #999
       td, th
-        border: 1px solid #e5e5e5
+        border: 1px solid #ddd
       td
         font-weight: bold
   &.autostripe
     tbody tr:nth-child(2n+1)
-      background-color: #f5f5f5
+      background-color: $soft-grey
   &.condensed
     td, th
       font-size: 10px
       padding: 0px
       line-height: 18px
+  &#chps
+    tfoot tr
+      th, td
+        background-color: $light-blue
   &.profitability
     border-bottom: none
     .technology
       white-space: nowrap
+      text-align: center
     .position
       text-align: center
     tr
       &.profitable
-        color: green
+        td:last-child
+          background-color: lighten($landing-green, 10%)
       &.conditionally_profitable
-        color: orange
+        td:last-child
+          background-color: lighten($landing-gold, 10%)
       &.unprofitable
-        color: red
+        td:last-child
+          background-color: #F58A60
+      td:last-child
+        border-top: 1px solid #fff
+      td:last-child, th:last-child
+        text-align: center
     th
       font-weight: normal
     tfoot

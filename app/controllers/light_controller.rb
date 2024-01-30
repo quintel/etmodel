@@ -1,11 +1,10 @@
 class LightController < ApplicationController
-  layout 'light'
+  layout 'static_page'
 
   def index
     respond_to do |format|
       format.html
     end
   end
-
 end
 

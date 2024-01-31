@@ -215,6 +215,9 @@ table
       thead, tbody
         td, th
           text-align: center
+        th.left
+          text-align: left
+          padding-left: 10px
     .novalue
       color: #999
     thead
@@ -257,6 +260,9 @@ table
       &.blank
         color: #999
     tbody
+      th
+        text-align: left
+        padding-left: 10px
       th, td
         border-top: 1px solid #ddd
       tr:first-child
@@ -294,7 +300,8 @@ table
     border-bottom: none
     .technology
       white-space: nowrap
-      text-align: center
+      text-align: left
+      padding-left: 10px
     .position
       text-align: center
     tr

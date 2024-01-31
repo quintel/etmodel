@@ -4,19 +4,18 @@
   sidebar_item_key: households
   output_element_key: use_of_final_demand_in_households
 - image: house.gif
-  general_sub_header: number
   key: demand_households_population
   position: 100
   sidebar_item_key: households
-  output_element_key: households_final_demand_per_application
+  output_element_key: number_of_residences_overview
 - image: house_insulation.gif
   key: demand_households_insulation
   position: 105
   sidebar_item_key: households
   output_element_key: residential_heating_demand
 - image: house_heating.gif
+  general_sub_header: of_houses
   key: demand_households_heating
-  group_sub_header: share
   position: 110
   sidebar_item_key: households
   alt_output_element_key: source_of_heat_used_in_households

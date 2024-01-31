@@ -30,7 +30,6 @@ module YModel
     def load_records!
       all = records.map { |record| new(record) }
       unless all.map(&:index) == all.map(&:index).uniq
-        puts all.map(&:index)
         raise YModel::DuplicateIndexError,
               "#{name}: Some records share the same index"
       end

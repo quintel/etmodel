@@ -289,31 +289,13 @@ en:
     buildings_space_heater_solar_thermal_share:
       title: Solar thermal collectors
       short_description: ''
-      description: "Solar water heaters (SWH) use solar thermal panels to produce
+      description: |
+        Solar water collectors create
         warm water using heat from the sun. This heat can be used to heat a building.
-        SWHs are installed on rooftops or in asphalt for parking lots, for example.
-        A SWH is often combined with a gas-fired central heating boiler that heats
+        Solar water collectors are installed on rooftops or in asphalt for parking lots, for example.
+        A solar water collector is often combined with a gas-fired central heating boiler that heats
         water further if necessary (especially in winter). It can also be combined
-        with a heat pump. \r\n<br/>"
-    # buildings_solar_pv_solar_radiation_market_penetration:
-    #   title: Solar panels
-    #   short_description: ''
-    #   description: "With this slider you set the percentage of the potential roof
-    #     area where you want to install solar panels. Do you want to know the installed
-    #     capacity? Then look in the 'Merit order table', which can be found in the
-    #     chart list (you can get here by clicking 'See more charts' at the top right).
-    #     \r\n<br/><br/>\r\n This technology is developing rapidly and solar panels
-    #     are becoming ever more efficient and cheaper. Solar panels produce electricity
-    #     on site, so transport of electricity is not always required. This avoids losses
-    #     on the grid and that saves energy. Feeding locally produced power back into
-    #     the local power grid requires a higher capacity or smarter local grid, to
-    #     prevent it from overloading. It may be desirable to curtail the power peaks
-    #     in order to decrease the load on the net, you can set this <a href=\"/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
-    #     \r\n<br/><br />\r\n
-    #     You can adjust the full load hours of solar
-    #     panels <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
-    #     The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
-    #     />"
+        with a heat pump. \r\n<br/
     buildings_useful_demand_for_appliances:
       title: Appliances efficiency
       short_description: ''

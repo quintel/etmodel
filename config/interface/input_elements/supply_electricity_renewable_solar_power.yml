@@ -1,27 +1,39 @@
 ---
+- key: capacity_of_households_solar_pv_solar_radiation
+  step_value: 1.0
+  unit: MW
+  related_node: households_solar_pv_solar_radiation
+  position: 1
+  slide_key: supply_electricity_renewable_solar_power
+- key: capacity_of_buildings_solar_pv_solar_radiation
+  step_value: 1.0
+  unit: MW
+  related_node: buildings_solar_pv_solar_radiation
+  position: 2
+  slide_key: supply_electricity_renewable_solar_power
 - key: capacity_of_energy_power_solar_pv_solar_radiation
   step_value: 1.0
   unit: MW
   related_node: energy_power_solar_pv_solar_radiation
-  position: 1
-  slide_key: supply_electricity_renewable_solar_power
-- key: capacity_of_energy_power_solar_csp_solar_radiation
-  step_value: 1.0
-  unit: MW
-  related_node: energy_power_solar_csp_solar_radiation
-  position: 4
-  dependent_on: has_solar_csp
+  position: 3
   slide_key: supply_electricity_renewable_solar_power
 - key: capacity_of_energy_battery_solar_pv_solar_radiation
   step_value: 1.0
   unit: MW
   related_node: energy_battery_solar_pv_solar_radiation
-  position: 3
+  position: 4
   slide_key: supply_electricity_renewable_solar_power
 - key: capacity_of_energy_power_solar_pv_offshore
   step_value: 1.0
   unit: MW
   related_node: energy_power_solar_pv_offshore
-  position: 2
+  position: 5
   dependent_on: has_offshore_solar
+  slide_key: supply_electricity_renewable_solar_power
+- key: capacity_of_energy_power_solar_csp_solar_radiation
+  step_value: 1.0
+  unit: MW
+  related_node: energy_power_solar_csp_solar_radiation
+  position: 6
+  dependent_on: has_solar_csp
   slide_key: supply_electricity_renewable_solar_power

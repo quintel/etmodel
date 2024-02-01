@@ -219,6 +219,28 @@ nl:
         >
           <span class="fa fa-newspaper-o"></span> Bekijk de sheet →
         </a>
+    data_visuals_land_use_solar_wind:
+      title: Ruimtegebruik van zon en wind
+      short_description:
+      description: |
+        Zon en wind technologieën concurreren gedeeltelijk met elkaar om beschikbare ruimte. 
+        De grafiek bij deze sectie toont het totale ruimtegebruik van alle zon en wind technologieën.
+        In het bijzonder is het mogelijk om via onderstaande sliders onderscheid te maken tussen grootschalige en kleinschalige wind op land.
+        Let op: deze onderverdeling is puur visueel en heeft geen verdere invloed op de uitkomsten in dit scenario.
+
+        <br/><br/>
+
+        De volledige specificaties van alle zon en wind technologieën, inclusief elektriciteitsproductie en aantallen, 
+        zijn te raadplegen in de tabel 
+        <a href="#" class="open_chart" data-chart-key="land_use_solar_wind" data-chart-location="side">
+        Ruimtegebruik van zon en wind (tabel)</a>
+
+        <br/><br/>
+        <b> Opmerking: </b> PVT-panelen voor huishoudens en zonthermische panelen zijn ook opgenomen in de figuur en tabel. 
+        Het ETM beschouwt PVT-panelen (en zonthermische panelen) hoofdzakelijk als een verwarmingstechnologie in combinatie met een warmtepomp.
+        Het aandeel van een PVT-warmtepomp in de ruimteverwarming en warm water alsmede de hoeveelheid zonthermische panelen is aan te passen in de 
+        <a href="/scenario/demand/households/demand/households/space-heating-and-hot-water">
+        desbetreffende sectie</a>.  
     flexibility_merit_order_merit_order_price:
       title: Uurlijkse profielen voor elektriciteit
       short_description:

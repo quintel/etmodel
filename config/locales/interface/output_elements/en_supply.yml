@@ -308,10 +308,24 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry/" target=\"_blank\">documentation</a>.
         <br></br>
         Note that although you can set the supply of residual heat manually above the potentials shown, 
-        in reality the heat needs to be provided by some industry or another.
     heat_aquathermal_demand:
       title: Demand and potential of aquathermal heat
       description: |
         This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water). 
         The chart shows the distribution of heat demand between collective sources (heat networks) 
-        and individual sources and includes the potential for each aquathermal source for the region, whenever available.
+    land_use_solar_wind:
+      title: Land use of solar and wind (table)
+      short_description:
+      description: |
+        This table shows the electricity production, technical parameters and land use of all solar and wind technologies.
+        Onshore inland wind production can be manually split into large-scale and small-scale turbines. 
+        You can set the share of each type of turbine in the 
+        <a href="scenario/data/data_visuals/data/data_visuals/land-use-of-solar-and-wind-energy-supply"> Land use of solar and wind </a> section.
+        Please note that the split between large-scale and small-scale wind turbines is for visual purposes only.
+    land_use_solar_wind_chart:
+      title: Land use of solar and wind (chart)
+      short_description:
+      description: |
+        This chart shows the land use of solar and wind technologies on land. The land use is split into
+        offshore, onshore inland and rooftop surface area. For rooftop technologies, the potential, i.e. the total available surface area
+        for the region, is indicated by a bar.

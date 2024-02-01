@@ -5,4 +5,27 @@ en:
       description: |
         Set the capacity per unit for onshore wind turbines that you would like to be
         used by the Energy Mix infographic. This slider has no effect on your
-        scenario.
+        scenario but is only reflected in the energy mix visual.
+    land_use_impact_visual_wind_inland_large_scale:
+      title: Large-scale inland wind
+      description: |
+        This slider sets the share of large-scale wind turbines in the total electricity production of wind inland.
+        <br/><br/>
+        Note that this slider has no effect on your scenario but is only reflected in the adjacent table and graph. 
+        <br/><br/>  
+        The output capacity and full load hours of a large-scale wind turbine are listed in 
+        <a href="#" class="open_chart" data-chart-key="land_use_solar_wind" data-chart-location="side">
+        this table</a>.
+        Change the total capacity of wind <a href=\"/scenario/supply/electricity_renewable/wind-turbines\">here</a>.
+    land_use_impact_visual_wind_inland_small_scale:
+      title: Small-scale inland wind
+      description: |
+        This slider influences the share of small-scale wind turbines (inland) in the total electricity production of wind inland.
+        <br/><br/>
+        Note that this slider has no effect on your scenario but is only reflected in the adjacent table and graph. 
+        <br/><br/>  
+        The output capacity and full load hours of a large-scale wind turbine are listed in 
+        <a href="#" class="open_chart" data-chart-key="land_use_solar_wind" data-chart-location="side">
+        this table</a>.
+        Change the total capacity of wind <a href=\"/scenario/supply/electricity_renewable/wind-turbines\">here</a>.
+        

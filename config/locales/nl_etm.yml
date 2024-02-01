@@ -243,8 +243,12 @@ nl:
     residual_heat: "waarde"
     willingness_to_pay: "prijs"
     price: "prijs"
-    efficiency_industry: "%/jaar"
+    efficiency_industry: "%"
+    efficiency_industry_total: "%"
     industry_heaters: "warmte-output"
+    space_heating_technologies: "% of gebouwen"
+    auxiliary_space_heating_technologies: "% van dak-potentieel"
+    auxiliary_water_heating_technologies: "% van dak-potentieel"
 
   #------------ Output Serie Labels ------------- #
   scenario:
@@ -492,7 +496,8 @@ nl:
     efficiency_energy_plants: "Efficiënties energiesector (LHV)"
     efficiency_industry_plants: "Efficiënties industriesector (LHV)"
     efficiency_agriculture_plants: "Efficiënties landbouwsector (LHV)"
-    efficiency_industry: "Efficiëntieverbetering"
+    efficiency_industry: "Efficiëntieverbetering (in totaal)"
+    efficiency_industry_total: "Efficiëntieverbetering (in totaal)"
     efficiency_households: "Huishoudens - efficiënties (LHV)"
     cop_households: "Huishoudens - COP"
     efficiency_buildings: "Gebouwen - efficiënties (LHV)"
@@ -534,6 +539,10 @@ nl:
     oil_products: "Olie en olieproducten"
     gas_products: "Netwerkgas en derivaten"
     hydrogen_carriers: "Waterstofdragers"
+    space_heating_technologies: "Ruimteverwarming"
+    space_and_water_heating_technologies: "Ruimteverwarming en warm water"
+    auxiliary_space_heating_technologies: "Ruimteverwarming"
+    auxiliary_water_heating_technologies: "Warm water"
 
   "or": "of"
   "go": "ga"

@@ -10,6 +10,19 @@
   position: 105
   slide_key: demand_industry_aggregated_other
 
+- key: industry_useful_demand_for_aggregated_other_electricity_efficiency
+  step_value: 1.0
+  unit: "%"
+  interface_group: efficiency_industry_total
+  position: 150
+  slide_key: demand_industry_aggregated_other
+- key: industry_useful_demand_for_aggregated_other_useable_heat_efficiency
+  step_value: 1.0
+  unit: "%"
+  interface_group: efficiency_industry_total
+  position: 155
+  slide_key: demand_industry_aggregated_other
+
 - key: industry_aggregated_other_industry_wood_pellets_share_energetic
   share_group: other_industry_energetic
   step_value: 0.1

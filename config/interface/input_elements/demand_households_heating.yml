@@ -56,6 +56,7 @@
   share_group: heating_households
   step_value: 0.1
   unit: "%"
+  interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_heatpump_surface_water_water_ts_electricity
   position: 8
   slide_key: demand_households_heating
@@ -129,7 +130,7 @@
 - key: households_water_heater_solar_thermal_share
   step_value: 0.1
   unit: "%"
-  interface_group: auxiliary_water_heating_technologies
+  interface_group: share_in_hot_water
   related_node: households_water_heater_solar_thermal
   position: 1
   slide_key: demand_households_heating

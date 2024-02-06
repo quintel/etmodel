@@ -1,8 +1,8 @@
 ---
 en:
   input_elements:
-    capacity_of_energy_hydrogen_steam_methane_reformer:
-      title: Steam methane reforming
+    capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable:
+      title: Steam methane reforming (dispatchable)
       short_description:
       description: | 
         Steam methane reforming is a very mature hydrogen production process.
@@ -21,8 +21,28 @@ en:
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the SMR plants without CCS, so when you have set 100% CCS,
         you will see no installed capacity here.
-    capacity_of_energy_hydrogen_autothermal_reformer:
-      title: Autothermal reforming
+    capacity_of_energy_hydrogen_steam_methane_reformer_must_run:
+      title: Steam methane reforming (must run)
+      short_description:
+      description: | 
+        Steam methane reforming is a very mature hydrogen production process.
+        It works like this: methane reacts in the presence of a catalyst with high
+        temperature steam and gives a mixture of hydrogen and other gases. The unwanted
+        gases (including CO<sub>2</sub>) are then separated through further reactions
+        and the resulting hydrogen is purified to meet industrial standards. \r\n<br/><br/>\r\nSteam
+        methane reforming is already widely employed, but mostly for industry use.
+        This plant's input is natural gas. Steam methane reforming
+        is often thought of an important transitional hydrogen production process:
+        far from the cleanest and greenest, but able to facilitate upcoming hydrogen
+        demand.
+        <br/><br/>
+        Add CCS to the SMR by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
+        <br/><br/>
+        For more technology specifications, checkout the technical and financial properties below.
+        Note: the parameters in the table belong to the SMR plants without CCS, so when you have set 100% CCS,
+        you will see no installed capacity here.    
+    capacity_of_energy_hydrogen_autothermal_reformer_dispatchable:
+      title: Autothermal reforming (dispatchable)
       short_description:
       description: |
         Adjust the total installed capacity of autothermal reformers (ATR) using this slider.
@@ -38,6 +58,23 @@ en:
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the ATR plants without CCS, so when you have set 100% CCS,
         you will see no installed capacity here.
+    capacity_of_energy_hydrogen_autothermal_reformer_must_run:
+      title: Autothermal reforming (must run)
+      short_description:
+      description: |
+        Adjust the total installed capacity of autothermal reformers (ATR) using this slider.
+        <br/><br/>
+        Autothermal reforming (ATR) is a production method for hydrogen. It is similar to steam 
+        methane reforming (SMR) but has a lower efficiency. The advantage of the ATR, however, 
+        is that is has a simpler production stream with a high concentration of carbon 
+        dioxide. This makes it easier to capture a higher percentage of carbon emissions during 
+        the conversion process. 
+        <br/><br/>
+        Add CCS to the ATR by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
+        <br/><br/>
+        For more technology specifications, checkout the technical and financial properties below.
+        Note: the parameters in the table belong to the ATR plants without CCS, so when you have set 100% CCS,
+        you will see no installed capacity here.    
     capacity_of_energy_hydrogen_biomass_gasification:
       title: Biomass gasification
       short_description:
@@ -88,8 +125,8 @@ en:
         only the specifications of the electrolyser, not the solar panels. The specifications
         of the solar panels can be found in the <a href=\"/scenario/supply/electricity_renewable/solar-power\">Renewable
         electricity section</a>.<br />"
-    capacity_of_energy_hydrogen_ammonia_reformer:
-      title: Ammonia reforming
+    capacity_of_energy_hydrogen_ammonia_reformer_dispatchable:
+      title: Ammonia reforming (dispatchable)
       short_description:
       description: |
         Reforming of ammonia (NH<sub>3</sub>) to produce hydrogen is a novel technology. The 
@@ -103,6 +140,21 @@ en:
         You can also view the demand and supply of ammonia in 
         <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
         data-chart-location="side"> this</a> chart.
+    capacity_of_energy_hydrogen_ammonia_reformer_must_run:
+      title: Ammonia reforming (must run)
+      short_description:
+      description: |
+        Reforming of ammonia (NH<sub>3</sub>) to produce hydrogen is a novel technology. The 
+        process of reforming itself is already very mature because of the steam methane 
+        refomer, which is currently widely used. Even so, technological development is required 
+        before reforming of ammonia becomes commercially viable. You can change the efficiency 
+        and the investment costs of the ammonia reformer in the 
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production"> costs & efficiencies</a> section. </br></br>
+        The ammonia used in the reformer is imported. You can determine the import capacity in 
+        the <a href=/scenario/supply/hydrogen/ammonia-production> slide below</a>.
+        You can also view the demand and supply of ammonia in 
+        <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
+        data-chart-location="side"> this</a> chart.    
     capacity_of_energy_hydrogen_liquid_hydrogen_regasifier:
       title: LH2 regasification
       short_description:

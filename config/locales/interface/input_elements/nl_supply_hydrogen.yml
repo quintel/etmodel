@@ -1,8 +1,8 @@
 ---
 nl:
   input_elements:
-    capacity_of_energy_hydrogen_steam_methane_reformer:
-      title: Steam reforming met aardgas
+    capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable:
+      title: Steam reforming met aardgas (regelbaar)
       short_description:
       description: | 
         Aardgas-reforming (of beter, methaan-reforming) is een ver ontwikkeld
@@ -21,8 +21,8 @@ nl:
         Klik op de technische en financiële parameters hieronder voor meer specificaties.
         Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
-    capacity_of_energy_hydrogen_autothermal_reformer:
-      title: Autothermal reforming met aardgas
+    capacity_of_energy_hydrogen_autothermal_reformer_must_run:
+      title: Autothermal reforming met aardgas (niet-regelbaar)
       short_description:
       description: |
         Pas met deze slider de totale capaciteit van autothermal reformers (ATR) aan.
@@ -37,6 +37,42 @@ nl:
         Klik op de technische en financiële parameters hieronder voor meer specificaties.
         Let op: de parameters in de tabel horen bij de ATR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
+    capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable:
+      title: Steam reforming met aardgas (regelbaar)
+      short_description:
+      description: | 
+        Aardgas-reforming (of beter, methaan-reforming) is een ver ontwikkeld
+        waterstofproductie proces. Het werkt als volgt: methaan reageert in de aanwezigheid
+        van een katalysator met stoom met een hoge temperatuur en geeft een mengsel
+        van waterstof en andere gassen. De ongewenste gassen (inclusief CO<sub>2</sub>)
+        worden dan afgescheiden door verdere reacties en het aldus verkregen waterstof
+        wordt gezuiverd opdat het voldoet aan de industriële standaard.\r\n<br/><br/>\r\nDeze
+        techniek wordt reeds uitgebreid toegepast, maar met name om waterstof te produceren
+        voor industrieel gebruik. Deze centrale gebruikt aardgas. Methaan-reforming wordt vaak gezien als een belangrijke
+        overgangsproductiemethode: lang niet de schoonste en de groenste, maar in
+        staat om de toenemende vraag naar waterstof te faciliteren.
+        <br/><br/>
+        Voeg CCS toe aan de SMR in de <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> sectie.
+        <br/><br/>
+        Klik op de technische en financiële parameters hieronder voor meer specificaties.
+        Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
+        zul je hier geen vermogen zien.
+    capacity_of_energy_hydrogen_autothermal_reformer_dispatchable:
+      title: Autothermal reforming met aardgas (niet-regelbaar)
+      short_description:
+      description: |
+        Pas met deze slider de totale capaciteit van autothermal reformers (ATR) aan.
+        <br/><br/>
+        Autothermal reforming (ATR) is een productie methode voor waterstof. Het is vergelijkbaar met 
+        steam methane reforming (SMR) maar heeft een lagere efficientie. Het voordeel van ATR is 
+        de eenvoudige manier van produceren met een hoge concentratie koolstof dioxide. 
+        Dit maakt het mogelijk om een hoog percentage koolstof af te vangen gedurende het conversie proces.
+        <br/><br/>
+        Voeg CCS toe aan de ATR in de <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> sectie.
+        <br/><br/>
+        Klik op de technische en financiële parameters hieronder voor meer specificaties.
+        Let op: de parameters in de tabel horen bij de ATR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
+        zul je hier geen vermogen zien.    
     capacity_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing CCS
       short_description:
@@ -88,8 +124,8 @@ nl:
         specificaties hieronder zijn alleen voor de elektrolyser, niet voor de zonneparken.
         De specificaties van de zonneparken kun je vinden in het tabblad <a href=\"/scenario/supply/electricity_renewable/solar-power\">Hernieuwbare
         elektriciteit</a>.<br />"
-    capacity_of_energy_hydrogen_ammonia_reformer:
-      title: Ammoniak reforming
+    capacity_of_energy_hydrogen_ammonia_reformer_dispatchable:
+      title: Ammoniak reforming (regelbaar)
       short_description:
       description: |
         Reforming van ammoniak (NH<sub>3</sub>) naar waterstof is een nieuwe technologie. Het reformen 
@@ -102,6 +138,20 @@ nl:
         Je kunt ook vraag en aanbod van ammoniak vergelijken in 
         <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
         data-chart-location="side"> deze</a> grafiek.
+    capacity_of_energy_hydrogen_ammonia_reformer_must_run:
+      title: Ammoniak reforming (niet-regelbaar)
+      short_description:
+      description: |
+        Reforming van ammoniak (NH<sub>3</sub>) naar waterstof is een nieuwe technologie. Het reformen 
+        zelf is een zeer volwassen proces, aangezien dit breed wordt toegepast in de Stoomreforming van 
+        aardgas. Desondanks is verdere technologische ontwikkeling nodig voordat reforming van ammoniak 
+        commercieel beschikbaar zal zijn. Je kunt de efficiëntie en de investeringskosten van de 
+        ammoniakreformer instellen in de <a href="/scenario/costs/costs_hydrogen/hydrogen-production"> Kosten & efficiënties</a> sectie. </br></br>
+        De ammoniak die in de reformer gebruikt wordt, wordt centraal geleverd. Je kunt de import instellen
+        instellen in <a href=/scenario/supply/hydrogen/ammonia-production> onderstaande slide</a>. 
+        Je kunt ook vraag en aanbod van ammoniak vergelijken in 
+        <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
+        data-chart-location="side"> deze</a> grafiek.    
     capacity_of_energy_hydrogen_liquid_hydrogen_regasifier:
       title: LH2 vergassing
       short_description:

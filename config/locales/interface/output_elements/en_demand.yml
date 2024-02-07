@@ -330,30 +330,33 @@ en:
         but it can change the efficiency and renewability of heat production.
     use_of_final_electricity_demand_in_households:
       title: Electricity use of household appliances
-      short_description: Households, by application
+      short_description:
       description: "This graph shows how household demand for electricity will change
         as a result of the choices you make in this section. Electricity demand is
         broken down into applications.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
         above the graph, to select different graphs about energy demand."
     source_of_electricity_in_households:
       title: Sources of electricity in households
-      short_description: ''
+      short_description:
       description: "This graph shows how the electricity that households use, is generated.
         Centrally produced electricity is lumped together here. You will get a chance
         to choose production methods under the 'Supply' section. \r\n<br/><br/>\r\nYou
         can click '<u>Change chart</u>' above the graph, to select different graphs
         about energy use."
     source_of_heat_used_in_households:
-      title: Final demand heating and hot water in residences
-      short_description: Household
-      description: "This graph shows how household heat demand changes from now to
+      title: Final energy demand for space heating and hot water in households per carrier
+      short_description:
+      description: |
+        This graph shows how household heat demand changes from now to
         the future, as a result of the choices in 'Demand'. The demand for heating
-        is divided into all the different technologies available for heating in households.\r\n<br/><br/>\r\nOf
-        course, what technologies are used, does not really change the actual demand
+        is divided into all the different technologies available for heating in households.
+        <br/><br/>
+        Of course, what technologies are used, does not really change the actual demand
         for heat, but it can change energy efficiency and sustainability of heat production.
         In order to reduce heat demand, houses will need to be better insulated, for
-        example.\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>' above the graph,
-        to select different graphs about energy demand."
+        example. <br/><br/>
+        You can click <u>Change chart</u> above the graph,
+        to select different graphs about energy demand.
     effect_of_insulation_in_households:
       title: Residential heating demand with insulation
       short_description: Household

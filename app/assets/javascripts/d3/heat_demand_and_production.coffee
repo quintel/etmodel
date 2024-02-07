@@ -38,7 +38,7 @@ D3.heat_demand_and_production =
           demand
 
       data.unshift({
-        color: '#FF8C8C',
+        color: '#ffbaba',
         label: I18n.t("output_element_series.labels.#{ @deficitKey }")
         key: @deficitKey,
         skip: false,
@@ -46,7 +46,7 @@ D3.heat_demand_and_production =
       })
 
       data.unshift({
-        color: '#A2D679',
+        color: '#FE6100',
         label: I18n.t("output_element_series.labels.#{ @surplusKey }")
         key: @surplusKey,
         skip: false,
@@ -73,8 +73,8 @@ D3.heat_demand_and_production =
       legendSeries = @series.filter (serie) ->
         _.find(serie.future_value(), (v) -> v > 0)
 
-      legendSeries.unshift(new FakeSerie(@deficitKey, '#FF8C8C'))
-      legendSeries.unshift(new FakeSerie(@surplusKey, '#A2D679'))
+      legendSeries.unshift(new FakeSerie(@deficitKey, '#ffbaba'))
+      legendSeries.unshift(new FakeSerie(@surplusKey, '#FE6100'))
 
       legendSeries
 

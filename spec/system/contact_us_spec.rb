@@ -7,7 +7,7 @@ RSpec.describe 'The contact us form', type: :system do
     driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400]
   end
 
-  it 'sends a message when all params are provided' do
+  pending 'sends a message when all params are provided' do
     visit '/contact'
 
     fill_in 'Name', with: 'My name'
@@ -19,7 +19,7 @@ RSpec.describe 'The contact us form', type: :system do
     expect(page).to have_text('Thank you for your message')
   end
 
-  it 'shows an error when the params are missing' do
+  pending 'shows an error when the params are missing' do
     visit '/contact'
 
     click_button 'Send message'

@@ -211,6 +211,8 @@ table
     color: #444
     &.has-total
       border-bottom: none
+      tfoot td
+        font-weight: 600
     &.centered
       thead, tbody
         td, th
@@ -260,9 +262,6 @@ table
       &.blank
         color: #999
     tbody
-      th
-        text-align: left
-        padding-left: 10px
       th, td
         border-top: 1px solid #ddd
       tr:first-child
@@ -270,6 +269,9 @@ table
           border-top: none
     tfoot th, tfoot td
       border-top: 1px solid #ddd
+    tbody th, tfoot th
+      text-align: left
+      padding-left: 10px
   &#power_plants
     th.unit
       font-weight: normal

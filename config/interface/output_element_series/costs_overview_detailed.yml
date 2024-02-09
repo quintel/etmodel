@@ -339,15 +339,29 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_infrastructure_network_gas_costs_overview_detailed
-- label: costs_co2
-  color: "#FCC43D"
+- label: costs_co2_ccus
+  unit: euro
+  color: "#fc653d"
   order_by: 600
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: costs_co2
-  is_1990: false
+  gquery: costs_co2_ccus
+  is_1990:
   dependent_on:
   output_element_key: costs_overview_detailed
-  key: costs_co2_costs_overview_detailed
+  key: costs_co2_ccus_costs_overview_detailed
+- label: costs_co2_emissions_costs
+  unit: euro
+  color: "#FCC43D"
+  order_by: 650
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_co2_energy_graph_co2_emissions_costs
+  is_1990:
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_co2_emissions_costs_costs_overview_detailed

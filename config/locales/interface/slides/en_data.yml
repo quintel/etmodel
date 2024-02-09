@@ -46,6 +46,18 @@ en:
       description: |
         Download detailed information on the costs (CAPEX, OPEX and totals) of different technologies
         and user groups.
+        <br /><br />
+        <b> Note </b>: There are two minor differences between the costs export and the costs charts:
+        <ol>
+          <li> The CO<sub>2</sub> emissions costs are <i>excluded</i> from the totals in the costs export.
+          As a result, the costs export totals are lower than the dashboard item by the CO<sub>2</sub> emissions costs.
+          However, the CO2 emissions costs are included as a separate column in the export.
+          <br /><br />
+          <li> The totals in the costs export are the sum of CCUS- and non-CCUS CAPEX and OPEX. 
+          However, the charts show all CCUS investment as a separate CCUS category.
+          Therefore, costs groups that include CCUS investment, e.g. energy production, show lower total costs in the charts
+          compared to the export. Conversely, the charts show higher total CCUS costs than the costs export by the same amount.
+        </ol>
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/costs_parameters.csv" target="_blank">

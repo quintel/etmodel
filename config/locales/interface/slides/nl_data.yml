@@ -45,6 +45,18 @@ nl:
       description: |
         Download gedetailleerde informatie over de kosten (CAPEX, OPEX en totaal) van verschillende
         gebruiksgroepen en technologieën.
+        <br /><br />
+        <b> Let op </b>: De kostenexport en de kostengrafieken verschillen op twee kleine punten:
+        <ol>
+          <li> De CO<sub>2</sub> emissiekosten zijn <i>niet</i> opgenomen in de totalen van de kostenexport
+          Als gevolg zijn de totalen van de kostenexport lager dan het dashboard item waarbij het verschil bestaat uit de CO<sub>2</sub> emissiekosten.
+          Deze emissiekosten zijn als aparte kolom achteraan de kostenexport opgenomen.
+          <br /><br />
+          <li> De totalen in de kostenexport zijn de optelsom van CCUS- and niet-CCUS CAPEX en OPEX. 
+          De grafieken scharen echter alle CCUS-investeringen onder de categorie CCUS.
+          Daarom tonen de grafieken voor alle kostengroepen met CCUS-investeringen, bijvoorbeeld productie van energie, lagere totale 
+          vergeleken met de export. Vice versa tonen de grafieken evenveel hogere CCUS-kosten dan in de export.
+        </ol>
         <ul class="data-download">
           <li>
             <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/costs_parameters.csv" target="_blank">

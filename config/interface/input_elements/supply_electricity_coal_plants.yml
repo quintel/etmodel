@@ -27,20 +27,20 @@
 - key: capacity_of_energy_chp_ultra_supercritical_lignite
   step_value: 1.0
   unit: MW
-  related_node: energy_chp_ultra_supercritical_lignite
+  related_node: energy_chp_ultra_supercritical_ht_lignite
   position: 9
   dependent_on: has_lignite
   slide_key: supply_electricity_coal_plants
 - key: capacity_of_energy_chp_ultra_supercritical_coal
   step_value: 1.0
   unit: MW
-  related_node: energy_chp_ultra_supercritical_coal
+  related_node: energy_chp_ultra_supercritical_ht_coal
   position: 10
   slide_key: supply_electricity_coal_plants
 - key: capacity_of_energy_chp_ultra_supercritical_cofiring_coal
   step_value: 1.0
   unit: MW
-  related_node: energy_chp_ultra_supercritical_cofiring_coal
+  related_node: energy_chp_ultra_supercritical_cofiring_ht_coal
   position: 11
   slide_key: supply_electricity_coal_plants
 - key: capacity_of_energy_power_ultra_supercritical_cofiring_coal

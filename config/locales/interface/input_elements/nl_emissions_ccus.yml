@@ -169,21 +169,20 @@ nl:
         Het opgestelde vermogen aan biomassavergassingsfabrieken is in te stellen op de
         <a href="/scenario/supply/hydrogen/hydrogen-production">waterstofpagina</a>.<br/>
     share_of_energy_hydrogen_steam_methane_reformer_ccs:
-      title: Steam reforming + CCS
-      description: |
-        Met deze schuif kun je instellen hoeveel procent van het opgestelde
+      title: Stoomreforming (niet-regelbaar) + CCS
+      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan stoomreformingsfabrieken voor de productie van waterstof
         is uitgerust met een CO<sub>2</sub>-afvanginstallatie. Het opgestelde vermogen aan
         stoomreformingsfabrieken is in te stellen op de
         <a href="/scenario/supply/hydrogen/hydrogen-production">waterstofpagina</a>.<br/><br/>
     share_of_energy_hydrogen_autothermal_reformer_ccs:
-      title: Autothermal reforming + CCS
-      description: |
-        Pas met deze slider het percentage van de autothermal reformers (ATR) capaciteit aan dat wordt
+      title: Autothermische reforming (niet-regelbaar) + CCS
+      description:
+        "Pas met deze slider het percentage van de niet-regelbare autothermische reformers (ATR) capaciteit aan dat wordt
         uitgerust met CO<sub>2</sub> afvanginstallatie.
         <br/><br/>
-        De totale capaciteit van autothermal reforming plants kan ingesteld worden in de 
-        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof productie</a> sectie.
+        De totale capaciteit van autothermische reforming centrales kan ingesteld worden in de 
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof productie</a> sectie."
     demand_of_molecules_direct_air_capture_co2:
       title: Direct air capture (DAC)
       description: |

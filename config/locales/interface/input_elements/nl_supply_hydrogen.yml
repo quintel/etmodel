@@ -2,16 +2,16 @@
 nl:
   input_elements:
     capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable:
-      title: Steam reforming met aardgas (regelbaar)
+      title:  Stoomreforming met aardgas (regelbaar)
       short_description:
       description: | 
-        Aardgas-reforming (of beter, methaan-reforming) is een ver ontwikkeld
+        Stoomreforming (of beter, methaan-reforming) is een ver ontwikkeld
         waterstofproductie proces. Het werkt als volgt: methaan reageert in de aanwezigheid
         van een katalysator met stoom met een hoge temperatuur en geeft een mengsel
         van waterstof en andere gassen. De ongewenste gassen (inclusief CO<sub>2</sub>)
         worden dan afgescheiden door verdere reacties en het aldus verkregen waterstof
         wordt gezuiverd opdat het voldoet aan de industriële standaard.\r\n<br/><br/>\r\nDeze
-        techniek wordt reeds uitgebreid toegepast, maar met name om waterstof te produceren
+        techniek wordt reeds uitgebreid  toegepast, maar met name om waterstof te produceren
         voor industrieel gebruik. Deze centrale gebruikt aardgas. Methaan-reforming wordt vaak gezien als een belangrijke
         overgangsproductiemethode: lang niet de schoonste en de groenste, maar in
         staat om de toenemende vraag naar waterstof te faciliteren.
@@ -22,12 +22,12 @@ nl:
         Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_autothermal_reformer_must_run:
-      title: Autothermal reforming met aardgas (niet-regelbaar)
+      title: Autohermische reforming met aardgas (niet-regelbaar)
       short_description:
       description: |
         Pas met deze slider de totale capaciteit van autothermal reformers (ATR) aan.
         <br/><br/>
-        Autothermal reforming (ATR) is een productie methode voor waterstof. Het is vergelijkbaar met 
+        Autothermische reforming (ATR) is een productie methode voor waterstof. Het is vergelijkbaar met 
         steam methane reforming (SMR) maar heeft een lagere efficientie. Het voordeel van ATR is 
         de eenvoudige manier van produceren met een hoge concentratie koolstof dioxide. 
         Dit maakt het mogelijk om een hoog percentage koolstof af te vangen gedurende het conversie proces.
@@ -38,10 +38,10 @@ nl:
         Let op: de parameters in de tabel horen bij de ATR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable:
-      title: Steam reforming met aardgas (regelbaar)
+      title: Stoomreforming met aardgas (regelbaar)
       short_description:
       description: | 
-        Aardgas-reforming (of beter, methaan-reforming) is een ver ontwikkeld
+        Stoomreforming (of beter, methaan-reforming) is een ver ontwikkeld
         waterstofproductie proces. Het werkt als volgt: methaan reageert in de aanwezigheid
         van een katalysator met stoom met een hoge temperatuur en geeft een mengsel
         van waterstof en andere gassen. De ongewenste gassen (inclusief CO<sub>2</sub>)
@@ -58,12 +58,12 @@ nl:
         Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_autothermal_reformer_dispatchable:
-      title: Autothermal reforming met aardgas (niet-regelbaar)
+      title: Autothermische reforming met aardgas (niet-regelbaar)
       short_description:
       description: |
-        Pas met deze slider de totale capaciteit van autothermal reformers (ATR) aan.
+        Pas met deze slider de totale capaciteit aan Autothermische reformers (ATR) aan.
         <br/><br/>
-        Autothermal reforming (ATR) is een productie methode voor waterstof. Het is vergelijkbaar met 
+        Autothermische reforming (ATR) is een productie methode voor waterstof. Het is vergelijkbaar met 
         steam methane reforming (SMR) maar heeft een lagere efficientie. Het voordeel van ATR is 
         de eenvoudige manier van produceren met een hoge concentratie koolstof dioxide. 
         Dit maakt het mogelijk om een hoog percentage koolstof af te vangen gedurende het conversie proces.
@@ -178,7 +178,7 @@ nl:
         waterstof zelf in te kunnen stellen in de <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">Emissies sectie</a>.
         Ook is het mogelijk om de kosten van geïmporteerde
         waterstof aan te passen bij <a href="/scenario/costs/costs_hydrogen/hydrogen-import">Kosten & efficiënties</a>.
-    energy_transport_hydrogen_compressed_trucks_share:
+    energy_distribution_hydrogen_compressed_trucks_share:
       title: H<sub>2</sub> onder druk in vrachtwagens
       short_description:
       description: Welk percentage van de centraal geproduceerde waterstof in je scenario

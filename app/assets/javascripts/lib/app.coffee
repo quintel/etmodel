@@ -89,6 +89,15 @@ class @AppView extends Backbone.View
         { capacity: true }
       ).render()
 
+    # Create hydrogen order.
+    if (hydrogen_order = wrapper.find('#supply-hydrogen-order')).length
+      new UserSortable(
+        hydrogen_order,
+        'hydrogen_order',
+        {},
+        { capacity: true }
+      ).render()
+
     if (curve_upload = wrapper.find('.single-curve-upload')).length
       curveCollectionDef = @customCurves()
       userScenariosArray = @userScenarios()

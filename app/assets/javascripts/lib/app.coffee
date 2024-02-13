@@ -90,10 +90,19 @@ class @AppView extends Backbone.View
       ).render()
 
     # Create hydrogen order.
-    if (hydrogen_order = wrapper.find('#supply-hydrogen-order')).length
+    if (hydrogen_supply_order = wrapper.find('#supply-hydrogen-order')).length
       new UserSortable(
-        hydrogen_order,
-        'hydrogen_order',
+        hydrogen_supply_order,
+        'hydrogen_supply_order',
+        {},
+        { capacity: true }
+      ).render()
+
+    # Create hydrogen order.
+    if (hydrogen_demand_order = wrapper.find('#demand-hydrogen-order')).length
+      new UserSortable(
+        hydrogen_demand_order,
+        'hydrogen_demand_order',
         {},
         { capacity: true }
       ).render()

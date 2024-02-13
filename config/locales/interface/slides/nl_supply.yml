@@ -554,6 +554,21 @@ nl:
         <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
         Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
         target =\"_blank\">documentatie</a> voor meer informatie.
+    supply_hydrogen_order:
+      title: Merit order van regelbare waterstofproductie.
+      short_description:
+      description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele waterstofproductie
+        (zoals geothermie, zonthermie en industriële restwarmte) en regelbare waterstofproductie.
+        De waterstofproductie van de eerste categorie productiemethodes is moeilijk regelbaar. Regelbare productiemethodes
+        daarentegen kunnen aan- en uitgeschakeld worden op momenten dat dat nodig
+        is. Het ETM kijkt voor elk uur per jaar hoeveel warmte er uit 'must-run' en
+        volatiele productiemethodes beschikbaar is. Als de vraag in een bepaald uur hoger is
+        dan deze productie, wordt er een regelbare bron ingeschakeld om te zorgen
+        dat er voldoende warmte is.\r\n<br /><br />\r\nHieronder is het mogelijk om
+        de inzetvolgorde van de regelbare waterstofproductie in te stellen: welke productiemethode
+        springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
+        kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare
+        productiemethodes."    
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:

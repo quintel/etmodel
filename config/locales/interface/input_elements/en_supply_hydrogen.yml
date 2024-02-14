@@ -215,14 +215,14 @@ en:
         >Costs & efficiencies</a> section. </br></br>
         If the baseload import is insufficient to cover demand, back-up import is used. 
         If it exceeds demand, the excess is exported.
-    capacity_of_energy_hydrogen_depleted_gas_field:
+    capacity_of_energy_hydrogen_storage_depleted_gas_field:
       title: Depleted gas field storage capacity
       short_description:
       description: |
         This slider sets the capacity of the amount of hydrogen that can be extracted from or instered to depleted gas fields.
         It's default setting is on 4000 MW, this means that per hour 4000 MWh can be extracted or insterted.
         The capacity has significant effects on how the storage will be used in your scenario.
-    capacity_of_energy_hydrogen_salt_cavern:
+    capacity_of_energy_hydrogen_storage_salt_cavern:
       title: Salt cavern storage capacity
       short_description:
       description: |
@@ -236,7 +236,7 @@ en:
         This slider sets the volume of the amount of hydrogen that can be stored in the depleted gas fields.
         It's default setting is on 8 TWh.
     volume_of_energy_hydrogen_storage_salt_cavern:
-      title: Depleted gas field storage volume
+      title: Salt cavern storage volume
       short_description:
       description: |
         This slider sets the volume of the amount of hydrogen that can be stored in the salt caverns.

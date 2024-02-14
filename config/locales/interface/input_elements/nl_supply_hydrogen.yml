@@ -212,3 +212,29 @@ nl:
         <a href=/scenario/costs/costs_hydrogen/ammonia-import>Kosten & efficiënties</a> sectie. </br></br>
         Als er onvoldoende basislast import is om aan de vraag te voldoen wordt back-up import ingezet om het 
         tekort te leveren. Als het aanbod groter is dan de vraag wordt het overschot geëxporteerd.
+    capacity_of_energy_hydrogen_depleted_gas_field:
+      title: Capaciteit opslag waterstof in lege gasvelden
+      short_description:
+      description: |
+        Deze slider bepaalt de hoeveelheid waterstof die geëxtraheerd en ingepompt kan worden in de gas velden.
+        Deze staat standaard op 4000 MW, dit betekent dat per uur maximaal 4000 MWh geëxtraheerd en ingepompt kan worden.
+        De capaciteit heeft aanzienlijke effecten op hoe de opslag zal worden gebruikt in uw scenario.
+    capacity_of_energy_hydrogen_salt_cavern:
+      title: Capaciteit opslag waterstof in zoutcavernes
+      short_description:
+      description: |
+        Deze slider bepaalt de hoeveelheid waterstof die geëxtraheerd en ingepompt kan worden in de zoutcavernes.
+        Deze staat standaard op 1000 MW, dit betekent dat per uur maximaal 1000 MWh geëxtraheerd en ingepompt kan worden.
+        De capaciteit heeft aanzienlijke effecten op hoe de opslag zal worden gebruikt in uw scenario.
+    volume_of_energy_hydrogen_storage_depleted_gas_field:
+      title: Volume opslag waterstof in lege gasvelden
+      description: |
+        "Deze schuif stelt het volume in van de hoeveelheid waterstof die kan worden opgeslagen in de lege gasvelden. 
+        De standaardinstelling is 8 TWh."
+    volume_of_energy_hydrogen_storage_salt_cavern:
+      title: Volume opslag waterstof in zoutcavernes
+      short_description:
+      description: |
+        "Deze schuif stelt het volume in van de hoeveelheid waterstof die kan worden opgeslagen in de zoutcavernes. 
+        De standaardinstelling is 0.25 TWh."
+  

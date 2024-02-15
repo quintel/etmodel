@@ -21,24 +21,8 @@ nl:
         Klik op de technische en financiële parameters hieronder voor meer specificaties.
         Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
-    capacity_of_energy_hydrogen_autothermal_reformer_must_run:
-      title: Autothermische reforming met aardgas (niet-regelbaar)
-      short_description:
-      description: |
-        Pas met deze slider de totale capaciteit van autothermal reformers (ATR) aan.
-        <br/><br/>
-        Autothermische reforming (ATR) is een productie methode voor waterstof. Het is vergelijkbaar met 
-        steam methane reforming (SMR) maar heeft een lagere efficientie. Het voordeel van ATR is 
-        de eenvoudige manier van produceren met een hoge concentratie koolstof dioxide. 
-        Dit maakt het mogelijk om een hoog percentage koolstof af te vangen gedurende het conversie proces.
-        <br/><br/>
-        Voeg CCS toe aan de ATR in de <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> sectie.
-        <br/><br/>
-        Klik op de technische en financiële parameters hieronder voor meer specificaties.
-        Let op: de parameters in de tabel horen bij de ATR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
-        zul je hier geen vermogen zien.
-    capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable:
-      title: Stoomreforming met aardgas (regelbaar)
+    capacity_of_energy_hydrogen_steam_methane_reformer_must_run:
+      title: Stoomreforming met aardgas (niet-regelbaar)
       short_description:
       description: | 
         Stoomreforming (of beter, methaan-reforming) is een ver ontwikkeld
@@ -57,8 +41,24 @@ nl:
         Klik op de technische en financiële parameters hieronder voor meer specificaties.
         Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
-    capacity_of_energy_hydrogen_autothermal_reformer_dispatchable:
+    capacity_of_energy_hydrogen_autothermal_reformer_must_run:
       title: Autothermische reforming met aardgas (niet-regelbaar)
+      short_description:
+      description: |
+        Pas met deze slider de totale capaciteit van autothermal reformers (ATR) aan.
+        <br/><br/>
+        Autothermische reforming (ATR) is een productie methode voor waterstof. Het is vergelijkbaar met 
+        steam methane reforming (SMR) maar heeft een lagere efficientie. Het voordeel van ATR is 
+        de eenvoudige manier van produceren met een hoge concentratie koolstof dioxide. 
+        Dit maakt het mogelijk om een hoog percentage koolstof af te vangen gedurende het conversie proces.
+        <br/><br/>
+        Voeg CCS toe aan de ATR in de <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> sectie.
+        <br/><br/>
+        Klik op de technische en financiële parameters hieronder voor meer specificaties.
+        Let op: de parameters in de tabel horen bij de ATR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
+        zul je hier geen vermogen zien.
+    capacity_of_energy_hydrogen_autothermal_reformer_dispatchable:
+      title: Autothermische reforming met aardgas (regelbaar)
       short_description:
       description: |
         Pas met deze slider de totale capaciteit aan Autothermische reformers (ATR) aan.

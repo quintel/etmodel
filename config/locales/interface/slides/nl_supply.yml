@@ -615,16 +615,18 @@ nl:
       short_description:
       description: "Hoe zal waterstof getransporteerd worden in de toekomst? Op dit
         moment lijken twee distributiemethodes het meest voor de hand te liggen: waterstof-onder-druk
-        via pijpleidingen en met vrachtwagens.\r\n<br/><br/>\r\nTransport via pijpleidingen
+        via pijpleidingen en met vrachtwagens.\r\n<br/><br/>\r\nHet ETM gaat ervan uit dat alle
+        geproduceerde waterstof via pijpleidingen wordt getransporteerd. Transport via pijpleidingen
         is relatief goedkoop, vooral als de distributie-afstanden langer zijn, het
         volume van waterstof in je scenario groot is en als de vraag naar waterstof
-        zich op een geconcentreerd gebied bevindt (bijvoorbeeld een industrieterrein).
-        Transport via vrachtwagens is meer flexibel. Het gebruik van vrachtwagens
-        ligt meer voor de hand voor distributie van kleinere hoeveelheden waterstof
+        zich op een geconcentreerd gebied bevindt (bijvoorbeeld een industrieterrein). Daarnaast is 
+        het mogelijk om aan te geven welk aandeel van getransporteerde waterstof via pijpleidingen 
+        vervolgens nog per vrachtwagens wordt getransporteerd. Transport via vrachtwagens is meer flexibel. 
+        Het gebruik van vrachtwagens ligt voor de hand voor distributie van kleinere hoeveelheden waterstof
         of als de afnemers over een groter gebied verspreid zijn. \r\n<br/><br/>\r\nHieronder
-        kun je aangeven hoeveel van het totale waterstofaanbod in je scenario via
-        pijpleidingen getransporteerd wordt en hoeveel via vrachtwagens. De kosten
-        van beide technologieën kunnen aangepast worden bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
+        kun je aangeven hoeveel van het totale waterstofaanbod na transport via pijpleidingen nog
+        per vrachtwagens wordt getransporteerd. De kosten van transport via pijpleidingen en vrachtwagens
+        kunnen aangepast worden bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
         >kosten</a>."
     supply_hydrogen_storage:
       title: Waterstofopslag

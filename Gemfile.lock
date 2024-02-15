@@ -322,7 +322,7 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.2)
+    mini_portile2 (2.8.5)
     mini_racer (0.6.2)
       libv8-node (~> 16.10.0.0)
     minitest (5.18.0)
@@ -343,16 +343,16 @@ GEM
     net-ssh (6.1.0)
     newrelic_rpm (8.5.0)
     nio4r (2.7.0)
-    nokogiri (1.14.3)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.16.2)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.14.3-aarch64-linux)
+    nokogiri (1.16.2-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.14.3-arm64-darwin)
+    nokogiri (1.16.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.3-x86_64-darwin)
+    nokogiri (1.16.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.14.3-x86_64-linux)
+    nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
@@ -406,7 +406,7 @@ GEM
     public_suffix (5.0.1)
     puma (5.6.8)
       nio4r (~> 2.0)
-    racc (1.6.2)
+    racc (1.7.3)
     rack (2.2.7)
     rack-oauth2 (1.21.3)
       activesupport
@@ -663,7 +663,7 @@ DEPENDENCIES
   mini_racer (>= 0.6)
   mysql2
   newrelic_rpm
-  nokogiri (~> 1.14)
+  nokogiri (~> 1.16)
   non-stupid-digest-assets
   oily_png
   premailer-rails

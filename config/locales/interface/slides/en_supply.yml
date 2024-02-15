@@ -563,13 +563,14 @@ en:
       short_description:
       description: "How will hydrogen be transported in the future? At the moment,
         two distribution methods seem to be the most viable: compressed hydrogen transport
-        via pipelines and via trucks.\r\n<br/><br/>\r\nTransport via pipelines can
-        be relatively cheap, especially if distribution distances are long, the volume
-        of the distributed hydrogen is large and demand for hydrogen is concentrated.
-        Trucks, on the other hand, are much more flexible than pipelines. They are
+        via pipelines and via trucks.\r\n<br/><br/>\r\nThe ETM assumes that all hydrogen supply
+        will be transported via pipelines. This option is relatively cheap, especially when distribution 
+        distances are long, the volume of the distributed hydrogen is large and demand for hydrogen is concentrated.
+        In addition, it is possible to set the share of hydrogen that will be transported by trucks after 
+        pipeline distribution. Trucks are much more flexible than pipelines. They are
         suitable for delivering smaller quantities of hydrogen and for delivery to
         remote areas.\r\n<br/><br/>\r\nBelow, you can choose the percentage of total
-        hydrogen supply in your scenario that is transported by pipelines and by trucks.
+        hydrogen supply in your scenario that is transported by trucks (after pipeline distribution).
         The costs of both technologies can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
         >costs section</a>."
     supply_hydrogen_storage:

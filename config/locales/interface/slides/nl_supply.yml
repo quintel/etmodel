@@ -567,8 +567,13 @@ nl:
         dat er voldoende warmte is.\r\n<br /><br />\r\nHieronder is het mogelijk om
         de inzetvolgorde van de regelbare waterstofproductie in te stellen: welke productiemethode
         springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
-        kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare
+        kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare 
         productiemethodes."    
+    demand_hydrogen_order:
+      title: Merit order van regelbare waterstofvraag
+      short_description:
+      description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele waterstofvraag
+        (zoals geothermie, zonthermie en industriële restwarmte) en regelbare waterstofvraag "   
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:

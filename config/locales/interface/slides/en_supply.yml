@@ -521,6 +521,11 @@ en:
         to change the (merit) order of dispatchable hydrogen sources: which hydrogen source
         is switched on first in case of a hydrogen deficit? The chart to the right shows
         the marginal costs of each dispatchable source."
+    demand_hydrogen_order:
+      title: Merit order of dispatchable hydrogen demand
+      short_description:
+      description: "The ETM makes a distinction between 'must-run' / volatile hydrogen
+        sources and dispatchable hydrogen demand."
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:

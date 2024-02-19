@@ -176,6 +176,15 @@ en:
         CO<sub>2</sub> capture. Costs are compared to current costs. Currently,
         this technology has only been applied experimentally at power plants. It is
         expected that costs will decrease in the future.\r\n<br/>"
+    costs_co2_removal:
+      title: CO<sub>2</sub> removal price
+      short_description: ''
+      description: "This slider sets the height of your assumed CO<sub>2</sub> removal price which is
+      defined as the price that is received for captured CO<sub>2</sub>. The ETM assumes that this price 
+      is a fraction of the CO<sub>2</sub> price (price for emitting CO<sub>2</sub>). The minimum value of 
+      the CO<sub>2</sub> removal price is equal to the CO<sub>2</sub> price (otherwise it would be cheaper to emit 
+      CO<sub>2</sub> instead of capturing CO<sub>2</sub>). The CO<sub>2</sub> removal price can be scaled as a 
+      fraction of the CO<sub>2</sub> price.\r\n<br/>"
     om_costs_co2_capture_industry:
       title: Operational & Maintenance
       short_description: ''

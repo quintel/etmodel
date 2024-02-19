@@ -143,11 +143,14 @@ module ScenarioHelper
   def previous_version_scenario_warning(scenario, current_release_date)
     return if scenario.updated_at >= current_release_date
 
-    t(
-      'scenario.warning.message',
-      last_updated: l(scenario.updated_at.to_date, format: :long),
-      release_date: l(current_release_date.to_date, format: :long)
-    )
+    <<~WARNING.chomp
+      #{t(
+        'scenario.warning.message',
+        last_updated: l(scenario.updated_at.to_date, format: :long),
+        release_date: l(current_release_date.to_date, format: :long)
+      )}
+      #{t('scenario.warning.explanation')}
+    WARNING
   end
 
   # Classes for the scenario row on the scenario listing.

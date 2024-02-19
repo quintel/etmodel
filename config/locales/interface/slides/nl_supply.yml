@@ -558,22 +558,22 @@ nl:
       title: Merit order van regelbare waterstofproductie
       short_description:
       description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele waterstofproductie
-        (zoals geothermie, zonthermie en industriële restwarmte) en regelbare waterstofproductie.
+        (zoals waterstofproductie door wind- en zonne-energie) en regelbare waterstofproductie.
         De waterstofproductie van de eerste categorie productiemethodes is moeilijk regelbaar. Regelbare productiemethodes
         daarentegen kunnen aan- en uitgeschakeld worden op momenten dat dat nodig
-        is. Het ETM kijkt voor elk uur per jaar hoeveel warmte er uit 'must-run' en
+        is. Het ETM kijkt voor elk uur per jaar hoeveel waterstof er uit 'must-run' en
         volatiele productiemethodes beschikbaar is. Als de vraag in een bepaald uur hoger is
         dan deze productie, wordt er een regelbare bron ingeschakeld om te zorgen
-        dat er voldoende warmte is.\r\n<br /><br />\r\nHieronder is het mogelijk om
+        dat er voldoende waterstof is.\r\n<br /><br />\r\nHieronder is het mogelijk om
         de inzetvolgorde van de regelbare waterstofproductie in te stellen: welke productiemethode
-        springt er als eerste aan als er een warmtetekort is? In de grafiek hiernaast
+        springt er als eerste aan als er een waterstoftekort is? In de grafiek hiernaast
         kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare 
         productiemethodes."    
     demand_hydrogen_order:
       title: Merit order van regelbare waterstofvraag
       short_description:
-      description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele waterstofvraag
-        (zoals geothermie, zonthermie en industriële restwarmte) en regelbare waterstofvraag "   
+      description: "Het ETM maakt een onderscheid tussen 'must-run' waterstofvraag
+         en regelbare waterstofvraag. " 
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:

@@ -59,18 +59,6 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: energy_hydrogen_electrolysis_wind_electricity_hydrogen_production
-- label: energy_hydrogen_flexibility_p2g_electricity
-  color: "#786FA6"
-  order_by: 11
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: energy_hydrogen_flexibility_p2g_electricity_hydrogen_output_curve
-  is_1990: false
-  dependent_on: 
-  output_element_key: hydrogen_production
-  key: energy_hydrogen_flexibility_p2g_electricity_hydrogen_production
 - label: energy_hydrogen_steam_methane_reformer_ccs
   color: "#DFE4EA"
   order_by: 6
@@ -119,18 +107,30 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: energy_hydrogen_autothermal_reformer_hydrogen_production
-- label: hydrogen_storage_output
+- label: hydrogen_storage_depleted_gas_field
   color: "#87CEEB"
   order_by: 11
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_storage_hydrogen_output_curve
+  gquery: energy_hydrogen_storage_depleted_gas_field_hydrogen_output_curve
   is_1990: false
   dependent_on: 
   output_element_key: hydrogen_production
-  key: hydrogen_storage_output_hydrogen_production
+  key: hydrogen_storage_depleted_gas_fiel_dhydrogen_production
+- label: hydrogen_storage_salt_cavern
+  color: "#5e9aa4"
+  order_by: 12
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_salt_cavern_hydrogen_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production
+  key: hydrogen_storage_salt_cavern_hydrogen_production
 - label: imported_hydrogen
   color: "#C6C2DA"
   order_by: 3

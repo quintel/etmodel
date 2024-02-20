@@ -242,69 +242,105 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_hydrogen_electrolysis_solar_electricity_for_mekko_supply_mekko_of_hydrogen_network  
-- label: energy_hydrogen_steam_methane_reformer_for_mekko
-  color: "#BEC3C8"
+- label: energy_hydrogen_steam_methane_reformer_must_run_for_mekko
+  color: "#8A8F94"
   order_by: 130
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_steam_methane_reformer_for_mekko
+  gquery: energy_hydrogen_steam_methane_reformer_must_run_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_hydrogen_steam_methane_reformer_for_mekko_supply_mekko_of_hydrogen_network
-- label: energy_hydrogen_steam_methane_reformer_ccs_for_mekko
+  key: energy_hydrogen_steam_methane_reformer_must_run_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko
   color: "#DFE4EA"
   order_by: 135
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_steam_methane_reformer_ccs_for_mekko
+  gquery: energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_hydrogen_steam_methane_reformer_ccs_for_mekko_supply_mekko_of_hydrogen_network
-- label: energy_hydrogen_autothermal_reformer_for_mekko
-  color: "#A59990"
+  key: energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko
+  color: "#BEC3C8"
   order_by: 140
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_autothermal_reformer_for_mekko
+  gquery: energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_hydrogen_autothermal_reformer_for_mekko_supply_mekko_of_hydrogen_network
-- label: energy_hydrogen_autothermal_reformer_ccs_for_mekko
-  color: "#D5C6BA"
+  key: energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_autothermal_reformer_must_run_for_mekko
+  color: "#82776F"
   order_by: 145
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_autothermal_reformer_ccs_for_mekko
+  gquery: energy_hydrogen_autothermal_reformer_must_run_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_hydrogen_autothermal_reformer_ccs_for_mekko_supply_mekko_of_hydrogen_network  
-- label: energy_hydrogen_ammonia_reformer_for_mekko
-  color: "#1ce6d6"
+  key: energy_hydrogen_autothermal_reformer_must_run_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko
+  color: "#D5C6BA"
   order_by: 150
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_ammonia_reformer_for_mekko
+  gquery: energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_hydrogen_ammonia_reformer_for_mekko_supply_mekko_of_hydrogen_network
+  key: energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_autothermal_reformer_dispatchable_for_mekko
+  color: "#A59990"
+  order_by: 155
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_autothermal_reformer_dispatchable_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_hydrogen_autothermal_reformer_dispatchable_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_ammonia_reformer_must_run_for_mekko
+  color: "#109C91"
+  order_by: 160
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_ammonia_reformer_must_run_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_hydrogen_ammonia_reformer_must_run_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_ammonia_reformer_dispatchable_for_mekko
+  color: "#1ce6d6"
+  order_by: 165
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_ammonia_reformer_dispatchable_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_hydrogen_ammonia_reformer_dispatchable_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_import_liquid_hydrogen_for_mekko
   color: "#524A79"
-  order_by: 155
+  order_by: 170
   group: supply
   show_at_first: false
   is_target_line: false
@@ -316,7 +352,7 @@
   key: energy_import_liquid_hydrogen_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_import_lohc_for_mekko
   color: "#CFCBDF"
-  order_by: 160
+  order_by: 175
   group: supply
   show_at_first: false
   is_target_line: false
@@ -328,7 +364,7 @@
   key: energy_import_lohc_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_import_hydrogen_for_mekko
   color: "#A7A1C5"
-  order_by: 165
+  order_by: 180
   group: supply
   show_at_first: false
   is_target_line: false

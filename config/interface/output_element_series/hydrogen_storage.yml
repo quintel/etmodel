@@ -1,13 +1,25 @@
 ---
-- label: hydrogen_storage
+- label: hydrogen_storage_depleted_gas_field
   color: "#87CEEB"
   order_by: 1
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_storage_storage_curve
+  gquery: energy_hydrogen_storage_depleted_gas_field_storage_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_storage_depleted_gas_field_storage
+  key: hydrogen_storage_hydrogen_storage
+- label: hydrogen_storage_salt_cavern
+  color: "#5e9aa4"
+  order_by: 1
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_salt_cavern_storage_curve
   is_1990: false
   dependent_on: 
   output_element_key: hydrogen_storage
-  key: hydrogen_storage_hydrogen_storage
+  key: hydrogen_storage_salt_cavern_hydrogen_storage  

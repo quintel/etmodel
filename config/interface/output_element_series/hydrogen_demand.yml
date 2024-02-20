@@ -23,18 +23,30 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: exported_hydrogen_hydrogen_demand
-- label: hydrogen_storage_input
+- label: hydrogen_storage_depleted_gas_field_input
   color: "#87CEEB"
   order_by: 12
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_storage_hydrogen_input_curve
+  gquery: energy_hydrogen_storage_depleted_gas_field_hydrogen_input_curve
   is_1990: false
   dependent_on:
   output_element_key: hydrogen_demand
-  key: hydrogen_storage_input_hydrogen_demand
+  key: hydrogen_storage_depleted_gas_field_input_hydrogen_demand
+- label: hydrogen_storage_salt_cavern_input
+  color: "#5e9aa4"
+  order_by: 13
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_salt_cavern_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: hydrogen_storage_salt_cavern_input_hydrogen_demand  
 - label: energy_power_turbine_hydrogen
   color: "#FF8C8C"
   order_by: 10

@@ -249,22 +249,78 @@
   gquery: hydrogen_imbalance_inflexible_shortage_peak
   output_element_key: installed_flexible_capacities
   key: shortage_peak_hydrogen_installed_flexible_capacities
-- label: hydrogen_storage
+# - label: hydrogen_storage
+#   color: "#11698e"
+#   order_by: 310
+#   group: hydrogen
+#   is_target_line: false
+#   gquery: hydrogen_demand_flexible_storage_capacity
+#   output_element_key: installed_flexible_capacities
+#   key: storage_input_hydrogen_installed_flexible_capacities
+# - label: hydrogen_storage
+#   color: "#11698e"
+#   order_by: 312
+#   group: hydrogen
+#   is_target_line: false
+#   gquery: hydrogen_production_flexible_storage_capacity
+#   output_element_key: installed_flexible_capacities
+#   key: storage_output_hydrogen_installed_flexible_capacities
+- label: hydrogen_storage_depleted_gas_field
   color: "#11698e"
   order_by: 310
   group: hydrogen
   is_target_line: false
   gquery: hydrogen_demand_flexible_storage_capacity
   output_element_key: installed_flexible_capacities
-  key: storage_input_hydrogen_installed_flexible_capacities
-- label: hydrogen_storage
+  key: storage_depleted_gas_field_input_hydrogen_installed_flexible_capacities
+- label: hydrogen_storage_salt_cavern
+  color: "#11698e"
+  order_by: 310
+  group: hydrogen
+  is_target_line: false
+  gquery: hydrogen_demand_flexible_storage_capacity
+  output_element_key: installed_flexible_capacities
+  key: storage_salt_cavern_input_hydrogen_installed_flexible_capacities
+- label: hydrogen_storage_depleted_gas_field
   color: "#11698e"
   order_by: 312
   group: hydrogen
   is_target_line: false
   gquery: hydrogen_production_flexible_storage_capacity
   output_element_key: installed_flexible_capacities
-  key: storage_output_hydrogen_installed_flexible_capacities
+  key: storage_depleted_gas_field_output_hydrogen_installed_flexible_capacities
+- label: hydrogen_storage_salt_cavern
+  color: "#11698e"
+  order_by: 312
+  group: hydrogen
+  is_target_line: false
+  gquery: hydrogen_production_flexible_storage_capacity
+  output_element_key: installed_flexible_capacities
+  key: storage_salt_cavern_output_hydrogen_installed_flexible_capacities
+- label: energy_hydrogen_steam_methane_reformer_dispatchable
+  color: "#11698e"
+  order_by: 312
+  group: hydrogen
+  is_target_line: false
+  gquery: hydrogen_production_flexible_steam_methane_reformer_capacity
+  output_element_key: installed_flexible_capacities
+  key: steam_methane_reformer_dispatchable_hydrogen_installed_flexible_capacities
+- label: energy_hydrogen_autothermal_reformer_dispatchable
+  color: "#11698e"
+  order_by: 312
+  group: hydrogen
+  is_target_line: false
+  gquery: hydrogen_production_flexible_autothermal_reformer_capacity
+  output_element_key: installed_flexible_capacities
+  key: autothermal_reformer_dispatchable_hydrogen_installed_flexible_capacities
+- label: energy_hydrogen_ammonia_reformer_dispatchable
+  color: "#11698e"
+  order_by: 312
+  group: hydrogen
+  is_target_line: false
+  gquery: hydrogen_production_flexible_ammonia_reformer_capacity
+  output_element_key: installed_flexible_capacities
+  key: ammonia_reformer_dispatchable_hydrogen_installed_flexible_capacities
 
 - label: residual_load_excess_peak
   color: "blue"

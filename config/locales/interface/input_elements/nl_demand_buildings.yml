@@ -30,16 +30,28 @@ nl:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Met deze slider wordt de warmtevraag van de toekomst gebouwde gebouwen ingesteld.
-        Een lagere warmtevraag representeert een beter isolatie niveau.
-        <br/><br/> Het aantal toekomstige gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
+        Met deze slider wordt de gemiddelde warmtevraag per vierkante meter voor nieuwe utiliteitsgebouwen ingesteld. 
+        Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor gebouwen. De indicator 
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte- 
+        en koudetechnologieën en PV-panelen. Hoe beter een gebouw geïsoleerd is, hoe lager de gemiddelde warmtevraag 
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze gebouwen.
+        <br><br>
+        Het aantal nieuwe gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
     buildings_insulation_level_buildings_present:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Met deze slider wordt de warmtevraag van de huidige gebouwen ingesteld.
-        Een lagere warmtevraag representeert een beter isolatie niveau.
-        <br/><br/> Het aantal huidige gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.     
+        Met deze slider wordt de gemiddelde warmtevraag per vierkante meter voor bestaande utiliteitsgebouwen ingesteld.
+        Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor gebouwen. De indicator 
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte- 
+        en koudetechnologieën en PV-panelen. Hoe beter een gebouw geïsoleerd is, hoe lager de gemiddelde warmtevraag 
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze gebouwen.
+        <br><br>
+        Het aantal bestaande gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
     buildings_useful_demand_electricity:
       title: Elektriciteit per gebouw
       short_description: ''

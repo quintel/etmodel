@@ -1,12 +1,12 @@
 <script type="text/template" id="merit-order-table-template">
-  <table class="chart profitability">
+  <table class="chart profitability autostripe">
     <thead>
       <tr>
         <th class="technology"><%= t("output_elements.tables.merit_order.technology") %></th>
         <th class="position"><%= t("output_elements.tables.merit_order.position") %></th>
         <th><%= t("output_elements.tables.merit_order.installed_capacity") %></th>
         <th><%= t("output_elements.tables.merit_order.availability") %></th>
-        <th><%= t("output_elements.tables.merit_order.flh_future") %></th>
+        <th class="position"><%= t("output_elements.tables.merit_order.flh_future") %></th>
         <th><%= t("output_elements.tables.merit_order.profits_per_mwh_electricity") %></th>
       </tr>
     </thead>
@@ -19,7 +19,7 @@
           <td class="position"><%%= serie.position || '-' %></td>
           <td><%%= Metric.autoscale_value(serie.capacity, 'MW') %></td>
           <td><%%= Metric.autoscale_value(serie.availability, '%')%></td>
-          <td><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
+          <td class="position"><%%= Metric.round_number(serie.full_load_hours, 0) %></td>
           <td><%%= Metric.autoscale_value(serie.profit_per_mwh_electricity, 'euro', 0) %></td>
         </tr>
       <%% }) %>
@@ -27,11 +27,11 @@
     <tfoot>
       <tr>
         <td colspan="6">
-          <span class="legend_block" style="background: green"></span>
+          <span class="legend_block" style="background: #78c374"></span>
           <span class="legend_label"><%= t 'output_elements.tables.merit_order.profitable' %></span>
-          <span class="legend_block" style="background: orange"></span>
+          <span class="legend_block" style="background: #e9c075"></span>
           <span class="legend_label"><%= t 'output_elements.tables.merit_order.conditionally_profitable' %></span>
-          <span class="legend_block" style="background: red"></span>
+          <span class="legend_block" style="background: #F58A60"></span>
           <span class="legend_label"><%= t 'output_elements.tables.merit_order.unprofitable' %></span>
         </td>
       </tr>

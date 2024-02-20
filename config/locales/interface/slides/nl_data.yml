@@ -121,10 +121,35 @@ nl:
       title: Uurlijkse profielen voor warmte in huishoudens
       short_description:
       description: |
-        Download informatie over de individuele warmtevraag en -productie van huishoudens (ruimteverwarming en warm water). Het bestand laat op uurbasis zien hoeveel warmte er gevraagd wordt, hoeveel warmte de geïnstalleerde technieken leveren en of er sprake is van warmtebuffering, uitstel van warmtelevering of tekorten. Dit kan het geval zijn als de gekozen verwarmingstechnieken onvoldoende capaciteit hebben om op bepaalde momenten aan de vraag te voldoen.
-
+        Download de warmtevraag en -productie per uur voor ruimteverwarming en warm water in 
+        huishoudens, en voor ruimteverwarming in gebouwen. Voor elke toepassing is de structuur als 
+        volgt: eerst worden de <i>gebruikers</i> getoond, vervolgens de <i>bronnen</i>. Zie de 
+        <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">
+        documentatie</a> voor meer informatie.
+        <ul>
+          <li>
+            Voor elke <i>gebruiker</i>, bijvoorbeeld de warmtevraag voor ruimteverwarming in 
+            appartementen gebouwd tussen 1945 en 1964, wordt de <b>vraag van</b> en 
+            <b>productie voor</b> die gebruiker getoond. Het verschil is een warmtetekort dat 
+            niet aan de gebruiker is geleverd.
+          </li>
+          <li>
+            Voor elke <i>bron</i>, bijvoorbeeld een luchtwarmtepomp, wordt de 
+            <b>vraag naar</b> en <b>productie door</b> die bron getoond. Het verschil is een 
+            warmtetekort dat niet door de bron is geleverd.
+          </li>
+        </ul>
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/household_heat.csv" target="_blank"> <span class="name">Warmteprofiel huishoudens <span class="filetype">400KB CSV</span></a></li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/household_heat.csv" target="_blank">
+              <span class="name">Warmteprofielen huishoudens</span>
+              <span class="filetype">10MB CSV</span>
+            </a>
+            <a href="/passthru/%{scenario_id}/curves/buildings_heat.csv" target="_blank">
+              <span class="name">Warmteprofielen gebouwen</span>
+              <span class="filetype">2.5MB CSV</span>
+            </a>
+          </li>
         </ul>
     data_export_production:
       title: Specificaties warmte- en elektriciteitsproductie

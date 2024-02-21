@@ -330,6 +330,29 @@ nl:
         de prijzen juist zijn, hangt af van de samenkomst van vraag en aanbod in de markt. 
         Hierover kun je meer lezen in de
         <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">
+    hourly_flexibility_hydrogen:
+      title: Flexibele waterstofvraag- en aanbod per uur 
+      short_description:
+      description: |
+        Deze grafiek toont het gedrag van flexibele waterstofvraag- en aanbodtechnologieën. In de 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentatie</a> is aangegeven welk typen technologieën als flexibel worden gedefinieerd. In 
+        deze grafiek wordt flexibel aanbod gestapeld op de positieve as weergegeven en flexibele vraag 
+        op de negatieve as. <br/><br/>
+        De grafiek laat ook de residual load curve zien, die het verschil toont tussen de inflexibele 
+        vraag en het inflexibele aanbod van waterstof. Zie de 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
+        Flexibiliteit</a> sectie voor meer informatie. Als de residual load curve positief is, 
+        betekent dat dat het inflexibele aanbod ontoereikend is om te voorzien in de inflexibele (of 
+        basislast) vraag. Als de residual load negatief is, is er een overschot aan inflexibel aanbod.
+        Flexibele vraag- en aanbodtechnologieën zijn nodig om deze tekorten en overschotten te 
+        balanceren. <br/><br/>
+        Daarnaast geldt dat er, bij de juiste prijzen, additionele waterstog geproduceerd kan 
+        worden door flexibele aanbodtechnologieën voor flexibele vraagtechnologieën. Dit is reden 
+        dat de gestapelde vlakken niet altijd netjes overeenkomen met de residual load curve. Of 
+        de prijzen juist zijn, hangt af van de samenkomst van vraag en aanbod in de markt. 
+        Hierover kun je meer lezen in de
+        <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">    
         documentatie</a>.
     sankey_electrical_interconnection:
       title: Vraag en aanbod van elektriciteit

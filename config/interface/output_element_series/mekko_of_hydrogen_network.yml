@@ -47,18 +47,42 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_power_plants_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: energy_export_hydrogen_for_mekko
+- label: energy_export_hydrogen_baseload_for_mekko
   color: "#485460"
   order_by: 25
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_export_hydrogen_for_mekko
+  gquery: energy_export_hydrogen_baseload_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_export_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+  key: energy_export_hydrogen_baseload_for_mekko_demand_mekko_of_hydrogen_network
+- label: energy_export_hydrogen_backup_for_mekko
+  color: "#5A6D80"
+  order_by: 26
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_export_hydrogen_backup_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_export_hydrogen_backup_for_mekko_demand_mekko_of_hydrogen_network
+- label: energy_hydrogen_storage_excess_for_mekko
+  color: "#748BA2"
+  order_by: 27
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_excess_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_hydrogen_storage_excess_for_mekko_demand_mekko_of_hydrogen_network
 - label: transport_losses
   color: "#FF0000"
   order_by: 30
@@ -167,8 +191,6 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_synthetic_products_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-
-
 
 - label: industry_residual_hydrogen_for_mekko
   color: "#006400"

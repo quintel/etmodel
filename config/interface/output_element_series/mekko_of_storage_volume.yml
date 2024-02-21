@@ -1,0 +1,185 @@
+---
+- label: households_flexibility_p2p_electricity_storage
+  color: "#5D7929"
+  order_by: 100
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_households_p2p_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: households_flexibility_p2p_electricity_storage_mekko_of_storage_volume
+- label: transport_car_flexibility_p2p_electricity_storage
+  color: "#5D7929"
+  order_by: 110
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_transport_car_p2p_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: transport_car_flexibility_p2p_electricity_storage_mekko_of_storage_volume
+- label: transport_bus_flexibility_p2p_electricity_storage
+  color: "#5D7929"
+  order_by: 120
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_transport_bus_p2p_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: transport_bus_flexibility_p2p_electricity_storage_mekko_of_storage_volume
+- label: transport_truck_flexibility_p2p_electricity_storage
+  color: "#5D7929"
+  order_by: 130
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_transport_truck_p2p_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: transport_truck_flexibility_p2p_electricity_storage_mekko_of_storage_volume
+- label: transport_van_flexibility_p2p_electricity_storage
+  color: "#5D7929"
+  order_by: 140
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_transport_van_p2p_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: transport_van_flexibility_p2p_electricity_storage_mekko_of_storage_volume
+- label: energy_flexibility_mv_batteries_electricity_storage
+  color: "#5D7929"
+  order_by: 150
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_mv_batteries_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: energy_flexibility_mv_batteries_electricity_storage_mekko_of_storage_volume
+- label: energy_flexibility_flow_batteries_electricity_storage
+  color: "#5D7929"
+  order_by: 160
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_flow_batteries_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: energy_flexibility_flow_batteries_electricity_storage_mekko_of_storage_volume
+- label: energy_flexibility_pumped_storage_electricity_storage
+  color: "#5D7929"
+  order_by: 170
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_pumped_storage_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: energy_flexibility_pumped_storage_electricity_storage_mekko_of_storage_volume
+- label: energy_flexibility_hv_opac_electricity_storage
+  color: "#5D7929"
+  order_by: 180
+  group: electricity
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_storage_volume_hv_opac_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: energy_flexibility_hv_opac_electricity_storage_mekko_of_storage_volume  
+
+- label: network_gas_storage
+  color: "#5D7929"
+  order_by: 200
+  group: gas
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_storage_volume_network_gas_storage_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: network_gas_storage_mekko_of_storage_volume
+
+# - label: salt_cavern
+#   color: "#5D7929"
+#   order_by: 300
+#   group: hydrogen
+#   show_at_first: false
+#   is_target_line: false
+#   target_line_position: ''
+#   gquery: 
+#   is_1990: 
+#   dependent_on: 
+#   output_element_key: mekko_of_storage_volume
+#   key: salt_cavern_mekko_of_primary_demand
+# - label: depleted_gas_field
+#   color: "#5D7929"
+#   order_by: 310
+#   group: hydrogen
+#   show_at_first: false
+#   is_target_line: false
+#   target_line_position: ''
+#   gquery: 
+#   is_1990: 
+#   dependent_on: 
+#   output_element_key: mekko_of_storage_volume
+#   key: depleted_gas_field_mekko_of_primary_demand
+
+- label: heat_network_storage_ht
+  color: "#5D7929"
+  order_by: 400
+  group: heat
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heat_storage_volume_ht_steam_hot_water_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: heat_network_storage_ht_mekko_of_storage_volume
+- label: heat_network_storage_mt
+  color: "#5D7929"
+  order_by: 410
+  group: heat
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heat_storage_volume_mt_steam_hot_water_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: heat_network_storage_mt_mekko_of_storage_volume
+- label: heat_network_storage_lt
+  color: "#5D7929"
+  order_by: 420
+  group: heat
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heat_storage_volume_lt_steam_hot_water_in_mekko_of_storage_volume
+  is_1990:
+  dependent_on: 
+  output_element_key: mekko_of_storage_volume
+  key: heat_network_storage_lt_mekko_of_storage_volume
+

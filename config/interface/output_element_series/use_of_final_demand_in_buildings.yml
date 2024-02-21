@@ -2,34 +2,34 @@
 - label: appliances
   color: "#648FFF"
   order_by: 100
-  group: ''
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: appliances_demand_in_use_of_final_demand_in_buildings
   is_1990: false
   dependent_on: 
   output_element_key: use_of_final_demand_in_buildings
   key: electrical_appliances_use_of_final_demand_in_buildings
-- label: cooling_demand
+- label: cooling
   color: "#785EF0"
   order_by: 105
-  group: ''
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: cooling_demand_in_use_of_final_demand_in_buildings
   is_1990: false
   dependent_on: 
   output_element_key: use_of_final_demand_in_buildings
   key: cooling_demand_use_of_final_demand_in_buildings
-- label: heat_demand_buildings
+- label: heat
   color: "#DC267F"
   order_by: 110
-  group: ''
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: heat_demand_buildings_in_use_of_final_demand_in_buildings
   is_1990: false
   dependent_on: 
@@ -38,10 +38,10 @@
 - label: lighting
   color: "#FFB000"
   order_by: 115
-  group: ''
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: lighting_demand_in_use_of_final_demand_in_buildings
   is_1990: false
   dependent_on: 

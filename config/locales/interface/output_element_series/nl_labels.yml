@@ -868,14 +868,42 @@ nl:
         energy_hydrogen_electrolysis_solar_electricity: "Zonnecentrale PV voor H2"
         energy_hydrogen_electrolysis_wind_electricity: "Windmolen op zee voor H2"
         energy_hydrogen_flexibility_p2g_electricity: "Power-to-gas"
+<<<<<<< Updated upstream
         energy_hydrogen_steam_methane_reformer_must_run: "Stoomreforming met aardgas (must-run)"
         energy_hydrogen_steam_methane_reformer_ccs_must_run: "Stoomreforming met aardgas + CCS (must_run)"
         energy_hydrogen_steam_methane_reformer_dispatchable: "Stoomreforming met aardgas (regelbaar)"
         energy_hydrogen_autothermal_reformer_must_run: "Autothermische reforming met aardgas (must-run)"
         energy_hydrogen_steam_methane_reformer_ccs_must_run: "Autothermische reforming met aardgas + CCS (must-run)"
         energy_hydrogen_autothermal_reformer_dispatchable: "Autothermische reforming met aardgas (regelbaar)"
+||||||| Stash base
+        energy_hydrogen_steam_methane_reformer_must_run: "Steam reforming met aardgas (must-run)"
+        energy_hydrogen_steam_methane_reformer_ccs_must_run: "Steam reforming met aardgas + CCS (must_run)"
+        energy_hydrogen_steam_methane_reformer_dispatchable: "Steam reforming met aardgas (regelbaar)"
+        energy_hydrogen_autothermal_reformer_must_run: "Autothermal reforming met aardgas (must-run)"
+        energy_hydrogen_steam_methane_reformer_ccs_must_run: "Autothermal reforming met aardgas + CCS (must-run)"
+        energy_hydrogen_autothermal_reformer_dispatchable: "Autothermal reforming met aardgas (regelbaar)"
+=======
+        energy_hydrogen_steam_methane_reformer_must_run: "Steam reforming met aardgas (must-run)"
+        energy_hydrogen_steam_methane_reformer_ccs_must_run: "Steam reforming met aardgas + CCS (must_run)"
+        energy_hydrogen_steam_methane_reformer_dispatchable: "Steam reforming met aardgas (regelbaar)"
+        energy_hydrogen_autothermal_reformer_must_run: "Autothermal reforming met aardgas (must-run)"
+        energy_hydrogen_autothermal_reformer_ccs_must_run: "Autothermal reforming met aardgas + CCS (must-run)"
+        energy_hydrogen_autothermal_reformer_dispatchable: "Autothermal reforming met aardgas (regelbaar)"
+>>>>>>> Stashed changes
         energy_hydrogen_ammonia_reformer_must_run: "Ammoniak reforming (must-run)"
+<<<<<<< Updated upstream
         energy_hydrogen_ammonia_reformer_dispatchable: "Ammoniak reforming (regelbaar)"
+||||||| Stash base
+        energy_hydrogen_ammonia_reformer_dispatchable: "Ammoniak reforming (dispatchable)"
+=======
+        energy_hydrogen_ammonia_reformer_dispatchable: "Ammoniak reforming (dispatchable)"
+        energy_hydrogen_storage_salt_cavern_output: "Zoutcaverne opslag output"
+        energy_hydrogen_storage_depleted_gas_field_output: "Gasveld opslag output"
+        energy_hydrogen_storage_salt_cavern_input: "Zoutcaverne opslag input"
+        energy_hydrogen_storage_depleted_gas_field_input: "Gasveld opslag input"
+        energy_export_hydrogen_backup : "Waterstof export (backup)"
+        energy_imported_hydrogen_backup: "Waterstof import (backup)"
+>>>>>>> Stashed changes
         hydrogen_demand: "Waterstofvraag"
         hydrogen_price: "Waterstofprijs"
         hydrogen_inflexible_demand: "Inflexibele vraag"

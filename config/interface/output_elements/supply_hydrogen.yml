@@ -43,7 +43,7 @@
   requires_merit_order: true
   dependent_on: 
   description: 
-  output_element_type_name: demand_curve
+  output_element_type_name: hourly_stacked_area
 - under_construction: false
   unit: MWh
   percentage: false
@@ -57,7 +57,7 @@
   hidden: false
   requires_merit_order: true
   dependent_on: ''
-  output_element_type_name: demand_curve
+  output_element_type_name: hourly_stacked_area
 - under_construction: false
   unit: Eur/Mwh
   percentage: false

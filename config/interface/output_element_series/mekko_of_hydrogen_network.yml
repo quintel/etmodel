@@ -1,7 +1,7 @@
 ---
 - label: agriculture_final_demand_hydrogen_for_mekko
   color: "#6AB04C"
-  order_by: 5
+  order_by: 100
   group: demand
   show_at_first: false
   is_target_line: false
@@ -13,7 +13,7 @@
   key: agriculture_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: industry_final_demand_hydrogen_for_mekko
   color: "#416B86"
-  order_by: 10
+  order_by: 110
   group: demand
   show_at_first: false
   is_target_line: false
@@ -25,7 +25,7 @@
   key: industry_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic_for_mekko
   color: "#74B9FF"
-  order_by: 15
+  order_by: 120
   group: demand
   show_at_first: false
   is_target_line: false
@@ -37,7 +37,7 @@
   key: industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_power_plants_hydrogen_for_mekko
   color: "#FF8C8C"
-  order_by: 20
+  order_by: 130
   group: demand
   show_at_first: false
   is_target_line: false
@@ -49,7 +49,7 @@
   key: energy_power_plants_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_export_hydrogen_baseload_for_mekko
   color: "#485460"
-  order_by: 25
+  order_by: 140
   group: demand
   show_at_first: false
   is_target_line: false
@@ -60,8 +60,8 @@
   output_element_key: mekko_of_hydrogen_network
   key: energy_export_hydrogen_baseload_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_export_hydrogen_backup_for_mekko
-  color: "#5A6D80"
-  order_by: 26
+  color: "#667D94"
+  order_by: 150
   group: demand
   show_at_first: false
   is_target_line: false
@@ -72,8 +72,8 @@
   output_element_key: mekko_of_hydrogen_network
   key: energy_export_hydrogen_backup_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_hydrogen_storage_excess_for_mekko
-  color: "#748BA2"
-  order_by: 27
+  color: "#98B2CC"
+  order_by: 160
   group: demand
   show_at_first: false
   is_target_line: false
@@ -85,7 +85,7 @@
   key: energy_hydrogen_storage_excess_for_mekko_demand_mekko_of_hydrogen_network
 - label: transport_losses
   color: "#FF0000"
-  order_by: 30
+  order_by: 170
   group: demand
   show_at_first: false
   is_target_line: false
@@ -97,7 +97,7 @@
   key: transport_losses_demand_mekko_of_hydrogen_network  
 - label: transport_final_demand_hydrogen_for_mekko
   color: "#0984E3"
-  order_by: 35
+  order_by: 180
   group: demand
   show_at_first: false
   is_target_line: false
@@ -109,7 +109,7 @@
   key: transport_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: bunkers_final_demand_hydrogen_for_mekko
   color: "#8B4513"
-  order_by: 40
+  order_by: 190
   group: demand
   show_at_first: false
   is_target_line: false
@@ -121,7 +121,7 @@
   key: bunkers_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: households_inidividual_heater_hydrogen_for_mekko
   color: "#E07033"
-  order_by: 45
+  order_by: 200
   group: demand
   show_at_first: false
   is_target_line: false
@@ -133,7 +133,7 @@
   key: households_inidividual_heater_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: buildings_inidividual_heater_hydrogen_for_mekko
   color: "#fabd16"
-  order_by: 50
+  order_by: 210
   group: demand
   show_at_first: false
   is_target_line: false
@@ -145,7 +145,7 @@
   key: buildings_inidividual_heater_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: industry_final_demand_for_chemical_other_hydrogen_non_energetic_for_mekko
   color: "#228B22"
-  order_by: 55
+  order_by: 220
   group: demand
   show_at_first: false
   is_target_line: false
@@ -157,7 +157,7 @@
   key: industry_final_demand_for_chemical_other_hydrogen_non_energetic_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_heat_from_hydrogen_for_mekko
   color: "#E69567"
-  order_by: 60
+  order_by: 230
   group: demand
   show_at_first:
   is_target_line: false
@@ -169,7 +169,7 @@
   key: energy_heat_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: industry_heat_from_hydrogen_for_mekko
   color: "#2e4c5e"
-  order_by: 65
+  order_by: 240
   group: demand
   show_at_first:
   is_target_line: false
@@ -181,7 +181,7 @@
   key: industry_heat_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_synthetic_products_from_hydrogen_for_mekko
   color: "#7bed9f"
-  order_by: 70
+  order_by: 250
   group: demand
   show_at_first:
   is_target_line: false
@@ -194,7 +194,7 @@
 
 - label: industry_residual_hydrogen_for_mekko
   color: "#006400"
-  order_by: 100
+  order_by: 300
   group: supply
   show_at_first:
   is_target_line: false
@@ -206,7 +206,7 @@
   key: industry_residual_hydrogen_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_flexibility_p2g_electricity_for_mekko
   color: "#786FA6"
-  order_by: 105
+  order_by: 310
   group: supply
   show_at_first: false
   is_target_line: false
@@ -218,7 +218,7 @@
   key: energy_hydrogen_flexibility_p2g_electricity_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_electrolysis_wind_electricity_for_mekko
   color: "#63A1C9"
-  order_by: 110
+  order_by: 320
   group: supply
   show_at_first: false
   is_target_line: false
@@ -230,7 +230,7 @@
   key: energy_hydrogen_electrolysis_wind_electricity_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_biomass_gasification_ccs_for_mekko
   color: "#5D7929"
-  order_by: 115
+  order_by: 330
   group: supply
   show_at_first: false
   is_target_line: false
@@ -242,7 +242,7 @@
   key: energy_hydrogen_biomass_gasification_ccs_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_biomass_gasification_for_mekko
   color: "#A2D679"
-  order_by: 120
+  order_by: 340
   group: supply
   show_at_first: false
   is_target_line: false
@@ -254,7 +254,7 @@
   key: energy_hydrogen_biomass_gasification_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_electrolysis_solar_electricity_for_mekko
   color: "#FDE97B"
-  order_by: 125
+  order_by: 350
   group: supply
   show_at_first: false
   is_target_line: false
@@ -266,7 +266,7 @@
   key: energy_hydrogen_electrolysis_solar_electricity_for_mekko_supply_mekko_of_hydrogen_network  
 - label: energy_hydrogen_steam_methane_reformer_must_run_for_mekko
   color: "#8A8F94"
-  order_by: 130
+  order_by: 360
   group: supply
   show_at_first: false
   is_target_line: false
@@ -278,7 +278,7 @@
   key: energy_hydrogen_steam_methane_reformer_must_run_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko
   color: "#DFE4EA"
-  order_by: 135
+  order_by: 370
   group: supply
   show_at_first: false
   is_target_line: false
@@ -290,7 +290,7 @@
   key: energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko
   color: "#BEC3C8"
-  order_by: 140
+  order_by: 380
   group: supply
   show_at_first: false
   is_target_line: false
@@ -302,7 +302,7 @@
   key: energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_autothermal_reformer_must_run_for_mekko
   color: "#82776F"
-  order_by: 145
+  order_by: 390
   group: supply
   show_at_first: false
   is_target_line: false
@@ -314,7 +314,7 @@
   key: energy_hydrogen_autothermal_reformer_must_run_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko
   color: "#D5C6BA"
-  order_by: 150
+  order_by: 400
   group: supply
   show_at_first: false
   is_target_line: false
@@ -326,7 +326,7 @@
   key: energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_autothermal_reformer_dispatchable_for_mekko
   color: "#A59990"
-  order_by: 155
+  order_by: 410
   group: supply
   show_at_first: false
   is_target_line: false
@@ -338,7 +338,7 @@
   key: energy_hydrogen_autothermal_reformer_dispatchable_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_ammonia_reformer_must_run_for_mekko
   color: "#109C91"
-  order_by: 160
+  order_by: 420
   group: supply
   show_at_first: false
   is_target_line: false
@@ -350,7 +350,7 @@
   key: energy_hydrogen_ammonia_reformer_must_run_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_ammonia_reformer_dispatchable_for_mekko
   color: "#1ce6d6"
-  order_by: 165
+  order_by: 430
   group: supply
   show_at_first: false
   is_target_line: false
@@ -362,7 +362,7 @@
   key: energy_hydrogen_ammonia_reformer_dispatchable_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_import_liquid_hydrogen_for_mekko
   color: "#524A79"
-  order_by: 170
+  order_by: 440
   group: supply
   show_at_first: false
   is_target_line: false
@@ -374,7 +374,7 @@
   key: energy_import_liquid_hydrogen_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_import_lohc_for_mekko
   color: "#CFCBDF"
-  order_by: 175
+  order_by: 450
   group: supply
   show_at_first: false
   is_target_line: false
@@ -386,7 +386,7 @@
   key: energy_import_lohc_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_import_hydrogen_for_mekko
   color: "#A7A1C5"
-  order_by: 180
+  order_by: 460
   group: supply
   show_at_first: false
   is_target_line: false

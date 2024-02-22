@@ -17,12 +17,18 @@ en:
         installed electrical capacity of biomass CHP plants that supply heat for district
         heating networks. For more information you can checkout the
         <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
-    capacity_of_energy_power_wood_pellets:
+    capacity_of_energy_power_wood_pellets_must_run:
       title: Biomass power plant
       short_description:
       description: |
         A biomass power plant produces electricity. Here you can set the
-        installed electrical capacity of biomass plants that supply electricity.
+        installed electrical capacity of must-run biomass power plants that supply electricity only.
+    capacity_of_energy_power_wood_pellets_dispatchable:
+      title: Biomass power plant
+      short_description:
+      description: |
+        A biomass power plant produces electricity. Here you can set the
+        installed electrical capacity of dispatchable biomass power plants that supply electricity only.
     capacity_of_energy_power_turbine_hydrogen:
       title: Hydrogen turbine
       short_description:

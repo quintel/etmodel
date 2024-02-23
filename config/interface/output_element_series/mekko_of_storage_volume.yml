@@ -1,6 +1,6 @@
 ---
 - label: households_flexibility_p2p_electricity_storage
-  color: "#5D7929"
+  color: "#DD33CC"
   order_by: 100
   group: electricity
   show_at_first: false
@@ -11,56 +11,20 @@
   dependent_on: 
   output_element_key: mekko_of_storage_volume
   key: households_flexibility_p2p_electricity_storage_mekko_of_storage_volume
-- label: transport_car_flexibility_p2p_electricity_storage
-  color: "#5D7929"
+- label: transport_ev_flexibility_p2p_electricity_storage
+  color: "#DB4270"
   order_by: 110
   group: electricity
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: electricity_storage_volume_transport_car_p2p_in_mekko_of_storage_volume
+  gquery: electricity_storage_volume_transport_ev_p2p_in_mekko_of_storage_volume
   is_1990:
   dependent_on: 
   output_element_key: mekko_of_storage_volume
-  key: transport_car_flexibility_p2p_electricity_storage_mekko_of_storage_volume
-- label: transport_bus_flexibility_p2p_electricity_storage
-  color: "#5D7929"
-  order_by: 120
-  group: electricity
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: electricity_storage_volume_transport_bus_p2p_in_mekko_of_storage_volume
-  is_1990:
-  dependent_on: 
-  output_element_key: mekko_of_storage_volume
-  key: transport_bus_flexibility_p2p_electricity_storage_mekko_of_storage_volume
-- label: transport_truck_flexibility_p2p_electricity_storage
-  color: "#5D7929"
-  order_by: 130
-  group: electricity
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: electricity_storage_volume_transport_truck_p2p_in_mekko_of_storage_volume
-  is_1990:
-  dependent_on: 
-  output_element_key: mekko_of_storage_volume
-  key: transport_truck_flexibility_p2p_electricity_storage_mekko_of_storage_volume
-- label: transport_van_flexibility_p2p_electricity_storage
-  color: "#5D7929"
-  order_by: 140
-  group: electricity
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: electricity_storage_volume_transport_van_p2p_in_mekko_of_storage_volume
-  is_1990:
-  dependent_on: 
-  output_element_key: mekko_of_storage_volume
-  key: transport_van_flexibility_p2p_electricity_storage_mekko_of_storage_volume
+  key: transport_ev_flexibility_p2p_electricity_storage_mekko_of_storage_volume
 - label: energy_flexibility_mv_batteries_electricity_storage
-  color: "#5D7929"
+  color: "#5a7bc4"
   order_by: 150
   group: electricity
   show_at_first: false
@@ -72,7 +36,7 @@
   output_element_key: mekko_of_storage_volume
   key: energy_flexibility_mv_batteries_electricity_storage_mekko_of_storage_volume
 - label: energy_flexibility_flow_batteries_electricity_storage
-  color: "#5D7929"
+  color: "#162442"
   order_by: 160
   group: electricity
   show_at_first: false
@@ -84,7 +48,7 @@
   output_element_key: mekko_of_storage_volume
   key: energy_flexibility_flow_batteries_electricity_storage_mekko_of_storage_volume
 - label: energy_flexibility_pumped_storage_electricity_storage
-  color: "#5D7929"
+  color: "#416B86"
   order_by: 170
   group: electricity
   show_at_first: false
@@ -96,7 +60,7 @@
   output_element_key: mekko_of_storage_volume
   key: energy_flexibility_pumped_storage_electricity_storage_mekko_of_storage_volume
 - label: energy_flexibility_hv_opac_electricity_storage
-  color: "#5D7929"
+  color: "#385ba6"
   order_by: 180
   group: electricity
   show_at_first: false
@@ -109,7 +73,7 @@
   key: energy_flexibility_hv_opac_electricity_storage_mekko_of_storage_volume  
 
 - label: network_gas_storage
-  color: "#5D7929"
+  color: "#b8b5ff"
   order_by: 200
   group: gas
   show_at_first: false
@@ -122,7 +86,7 @@
   key: network_gas_storage_mekko_of_storage_volume
 
 # - label: salt_cavern
-#   color: "#5D7929"
+#   color: "#87CEEB"
 #   order_by: 300
 #   group: hydrogen
 #   show_at_first: false
@@ -134,7 +98,7 @@
 #   output_element_key: mekko_of_storage_volume
 #   key: salt_cavern_mekko_of_primary_demand
 # - label: depleted_gas_field
-#   color: "#5D7929"
+#   color: "#394C19"
 #   order_by: 310
 #   group: hydrogen
 #   show_at_first: false
@@ -147,7 +111,7 @@
 #   key: depleted_gas_field_mekko_of_primary_demand
 
 - label: heat_network_storage_ht
-  color: "#5D7929"
+  color: "#3D237B"
   order_by: 400
   group: heat
   show_at_first: false
@@ -159,7 +123,7 @@
   output_element_key: mekko_of_storage_volume
   key: heat_network_storage_ht_mekko_of_storage_volume
 - label: heat_network_storage_mt
-  color: "#5D7929"
+  color: "#804AFF"
   order_by: 410
   group: heat
   show_at_first: false
@@ -171,7 +135,7 @@
   output_element_key: mekko_of_storage_volume
   key: heat_network_storage_mt_mekko_of_storage_volume
 - label: heat_network_storage_lt
-  color: "#5D7929"
+  color: "#C668FF"
   order_by: 420
   group: heat
   show_at_first: false

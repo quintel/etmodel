@@ -249,52 +249,36 @@
   gquery: hydrogen_imbalance_inflexible_shortage_peak
   output_element_key: installed_flexible_capacities
   key: shortage_peak_hydrogen_installed_flexible_capacities
-# - label: hydrogen_storage
-#   color: "#11698e"
-#   order_by: 310
-#   group: hydrogen
-#   is_target_line: false
-#   gquery: hydrogen_demand_flexible_storage_capacity
-#   output_element_key: installed_flexible_capacities
-#   key: storage_input_hydrogen_installed_flexible_capacities
-# - label: hydrogen_storage
-#   color: "#11698e"
-#   order_by: 312
-#   group: hydrogen
-#   is_target_line: false
-#   gquery: hydrogen_production_flexible_storage_capacity
-#   output_element_key: installed_flexible_capacities
-#   key: storage_output_hydrogen_installed_flexible_capacities
-- label: hydrogen_storage_depleted_gas_field
-  color: "#09425A"
+- label: depleted_gas_field
+  color: "#87CEEB"
   order_by: 320
   group: hydrogen
   is_target_line: false
-  gquery: hydrogen_demand_flexible_storage_capacity
+  gquery: hydrogen_demand_flexible_storage_depleted_gas_field_capacity
   output_element_key: installed_flexible_capacities
   key: storage_depleted_gas_field_input_hydrogen_installed_flexible_capacities
-- label: hydrogen_storage_salt_cavern
-  color: "#11698e"
+- label: salt_cavern
+  color: "#5e9aa4"
   order_by: 330
   group: hydrogen
   is_target_line: false
-  gquery: hydrogen_demand_flexible_storage_capacity
+  gquery: hydrogen_demand_flexible_storage_salt_cavern_capacity
   output_element_key: installed_flexible_capacities
   key: storage_salt_cavern_input_hydrogen_installed_flexible_capacities
-- label: hydrogen_storage_depleted_gas_field
-  color: "#11698e"
+- label: depleted_gas_field
+  color: "#87CEEB"
   order_by: 340
   group: hydrogen
   is_target_line: false
-  gquery: hydrogen_production_flexible_storage_capacity
+  gquery: hydrogen_production_flexible_storage_depleted_gas_field_capacity
   output_element_key: installed_flexible_capacities
   key: storage_depleted_gas_field_output_hydrogen_installed_flexible_capacities
-- label: hydrogen_storage_salt_cavern
-  color: "#11698e"
+- label: salt_cavern
+  color: "#5e9aa4"
   order_by: 350
   group: hydrogen
   is_target_line: false
-  gquery: hydrogen_production_flexible_storage_capacity
+  gquery: hydrogen_production_flexible_storage_salt_cavern_capacity
   output_element_key: installed_flexible_capacities
   key: storage_salt_cavern_output_hydrogen_installed_flexible_capacities
 - label: energy_hydrogen_steam_methane_reformer_dispatchable

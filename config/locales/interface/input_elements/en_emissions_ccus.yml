@@ -324,4 +324,10 @@ en:
     volume_of_molecules_import_co2_baseload:
       title: Import
       description: |
-        This slider sets the amount of baseload CO<sub>2</sub> that will be imported in the model.    
+        This slider sets the amount of baseload CO<sub>2</sub> that will be imported in the model.
+    flh_of_energy_power_wood_pellets_ccs_must_run:
+      title: Biomass power plant + CCS (must-run)
+      short_description:
+      description: |
+        By increasing the full load hours for the must-run biomass power plants with CCS, more
+        electricity will be produced with the same installed capacity. 

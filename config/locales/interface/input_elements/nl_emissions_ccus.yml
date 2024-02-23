@@ -307,14 +307,14 @@ nl:
         elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
         Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>    
     share_of_energy_power_wood_pellets_ccs_must_run:
-      title: Biomassa centrale + CCS (must-run)
+      title: Biomassacentrale + CCS (must-run)
       short_description:
       description: |
         Een biomassa centrale prduceert elektrciteit. Stel hier in hoeveel procent van het
         het elektrische vermogen aan must-run biomassa centrales is uitgerust met een
         CO<sub>2</sub>-afvanginstallatie.
     share_of_energy_power_wood_pellets_ccs_dispatchable:
-      title: Biomassa centrale + CCS (regelbaar)
+      title: Biomassacentrale + CCS (regelbaar)
       short_description:
       description: |
         Een biomassa centrale prduceert elektrciteit. Stel hier in hoeveel procent van het
@@ -324,3 +324,9 @@ nl:
       title: Import
       description: |
         Met deze schuif kan de import van CO<sub>2</sub> aangepast worden.     
+    flh_of_energy_power_wood_pellets_ccs_must_run:
+      title: Biomassacentrale + CCS (must-run)
+      short_description:
+      description: |
+        Door het aantal vollasturen te verhogen voor de must-run biomassacentrale met CCS, wordt
+        jaarlijks meer elektriciteit geproduceerd met hetzelfde opgesteld vermogen. 

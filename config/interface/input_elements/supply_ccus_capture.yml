@@ -131,7 +131,14 @@
   related_node: energy_chp_local_ht_wood_pellets_ccs
   interface_group: power_plants
   position: 145
-  slide_key: supply_ccus_capture  
+  slide_key: supply_ccus_capture
+
+- key: flh_of_energy_power_wood_pellets_ccs_must_run
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 170
+  slide_key: supply_ccus_capture
 
 - key: share_of_energy_hydrogen_steam_methane_reformer_ccs
   step_value: 1.0

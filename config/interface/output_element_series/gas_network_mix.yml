@@ -1,19 +1,7 @@
 ---
-- label: greengas
-  color: "#92B940"
-  order_by: 3
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: greengas_from_distribution_in_gas_network_mix
-  is_1990: 
-  dependent_on: 
-  output_element_key: gas_network_mix
-  key: greengas_gas_network_mix
 - label: natural_gas
   color: "#CCCCCC"
-  order_by: 1
+  order_by: 0
   group: ''
   show_at_first: false
   is_target_line: false
@@ -25,7 +13,7 @@
   key: natural_gas_gas_network_mix
 - label: regasified_lng
   color: "#696969"
-  order_by: 2
+  order_by: 5
   group: ''
   show_at_first: false
   is_target_line: false
@@ -35,3 +23,27 @@
   dependent_on: 
   output_element_key: gas_network_mix
   key: regasified_lng_gas_network_mix
+- label: propane
+  color: "#808080"
+  order_by: 10
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: propane_in_gas_network_mix
+  is_1990: 
+  dependent_on: 
+  output_element_key: gas_network_mix
+  key: propane_gas_network_mix
+- label: greengas
+  color: "#92B940"
+  order_by: 15
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: greengas_from_distribution_in_gas_network_mix
+  is_1990: 
+  dependent_on: 
+  output_element_key: gas_network_mix
+  key: greengas_gas_network_mix  

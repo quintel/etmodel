@@ -306,13 +306,20 @@ nl:
         Een WKK produceert zowel elektriciteit als warmte. Stel hier het
         elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
         Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>    
-    share_of_energy_power_wood_pellets_ccs:
-      title: Biomassa centrale + CCS 
+    share_of_energy_power_wood_pellets_ccs_must_run:
+      title: Biomassa centrale + CCS (must-run)
       short_description:
       description: |
-        Een biomassa centrale prduceert elektrciteit. Stel hier het elektrische 
-        vermogen aan biomassa centrales in dat elektriciteit levert aan het
-        hoogspanningsnet.        
+        Een biomassa centrale prduceert elektrciteit. Stel hier in hoeveel procent van het
+        het elektrische vermogen aan must-run biomassa centrales is uitgerust met een
+        CO<sub>2</sub>-afvanginstallatie.
+    share_of_energy_power_wood_pellets_ccs_dispatchable:
+      title: Biomassa centrale + CCS (regelbaar)
+      short_description:
+      description: |
+        Een biomassa centrale prduceert elektrciteit. Stel hier in hoeveel procent van het
+        het elektrische vermogen aan regelbare biomassa centrales is uitgerust met een
+        CO<sub>2</sub>-afvanginstallatie.
     volume_of_molecules_import_co2_baseload:
       title: Import
       description: |

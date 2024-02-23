@@ -15,12 +15,19 @@ nl:
         Een WKK produceert zowel elektriciteit als warmte. Stel hier het
         elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
         Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
-    capacity_of_energy_power_wood_pellets:
+    capacity_of_energy_power_wood_pellets_must_run:
       title: Biomassa centrale
       short_description:
       description: |
         Een biomassa centrale prduceert elektrciteit. Stel hier het elektrische 
-        vermogen aan biomassa centrales in dat elektriciteit levert aan het
+        vermogen aan must-run biomassa centrales in dat elektriciteit levert aan het
+        hoogspanningsnet.        
+    capacity_of_energy_power_wood_pellets_dispatchable:
+      title: Biomassa centrale
+      short_description:
+      description: |
+        Een biomassa centrale prduceert elektrciteit. Stel hier het elektrische 
+        vermogen aan regelbare biomassa centrales in dat elektriciteit levert aan het
         hoogspanningsnet.        
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
@@ -683,6 +690,4 @@ nl:
         De steel-to-chemicals route staat nog in de kinderschoenen. Daarom modelleert het ETM niet 
         expliciet de gevolgen hiervan voor het gebruik van andere (fossiele) grondstoffen in de 
         <a href="/scenario/demand/industry/chemicals">chemische industrie</a>.
-    merit_order_subtype_of_energy_power_wood_pellets:
-      title: ''
-      description: ' '         
+    

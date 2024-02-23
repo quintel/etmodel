@@ -2,7 +2,7 @@
 nl:
   input_elements:
     capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable:
-      title:  Stoomreforming met aardgas (regelbaar)
+      title:  Stoomreforming met aardgas
       short_description:
       description: | 
         Stoomreforming (of beter, methaan-reforming) is een ver ontwikkeld
@@ -22,7 +22,7 @@ nl:
         Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_steam_methane_reformer_must_run:
-      title: Stoomreforming met aardgas (niet-regelbaar)
+      title: Stoomreforming met aardgas
       short_description:
       description: | 
         Stoomreforming (of beter, methaan-reforming) is een ver ontwikkeld
@@ -42,7 +42,7 @@ nl:
         Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_autothermal_reformer_must_run:
-      title: Autothermische reforming met aardgas (niet-regelbaar)
+      title: Autothermische reforming met aardgas
       short_description:
       description: |
         Pas met deze slider de totale capaciteit van autothermal reformers (ATR) aan.
@@ -58,7 +58,7 @@ nl:
         Let op: de parameters in de tabel horen bij de ATR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_autothermal_reformer_dispatchable:
-      title: Autothermische reforming met aardgas (regelbaar)
+      title: Autothermische reforming met aardgas
       short_description:
       description: |
         Pas met deze slider de totale capaciteit aan Autothermische reformers (ATR) aan.
@@ -125,7 +125,7 @@ nl:
         De specificaties van de zonneparken kun je vinden in het tabblad <a href=\"/scenario/supply/electricity_renewable/solar-power\">Hernieuwbare
         elektriciteit</a>.<br />"
     capacity_of_energy_hydrogen_ammonia_reformer_dispatchable:
-      title: Ammoniak reforming (regelbaar)
+      title: Ammoniak reforming
       short_description:
       description: |
         Reforming van ammoniak (NH<sub>3</sub>) naar waterstof is een nieuwe technologie. Het reformen 
@@ -139,7 +139,7 @@ nl:
         <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
         data-chart-location="side"> deze</a> grafiek.
     capacity_of_energy_hydrogen_ammonia_reformer_must_run:
-      title: Ammoniak reforming (niet-regelbaar)
+      title: Ammoniak reforming
       short_description:
       description: |
         Reforming van ammoniak (NH<sub>3</sub>) naar waterstof is een nieuwe technologie. Het reformen 

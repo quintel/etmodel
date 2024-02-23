@@ -202,26 +202,36 @@ nl:
         Als er onvoldoende basislast import is om aan de vraag te voldoen wordt back-up import ingezet om het 
         tekort te leveren. Als het aanbod groter is dan de vraag wordt het overschot geëxporteerd.
     capacity_of_energy_hydrogen_storage_depleted_gas_field:
-      title: Capaciteit opslag waterstof in lege gasvelden
+      title: Relatieve opslagcapaciteit
       short_description:
       description: |
-        Deze slider bepaalt de hoeveelheid waterstof die geëxtraheerd en ingepompt kan worden in de gas velden.
-        Deze staat standaard op 4000 MW, dit betekent dat per uur maximaal 4000 MWh geëxtraheerd en ingepompt kan worden.
-        De capaciteit heeft aanzienlijke effecten op hoe de opslag zal worden gebruikt in uw scenario.
+        Met dit schuifje kun je de opslagcapaciteit van het gasveld relatief ten opzichte van het opslagvolume instellen.
+        Dit bepaalt hoeveel dagen het gasveld op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom de opslagvermogen, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd volume. </br></br>
+        Het totale opslagcapaciteit kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen. </br></br>
     capacity_of_energy_hydrogen_storage_salt_cavern:
-      title: Capaciteit opslag waterstof in zoutcavernes
+      title: Relatieve opslagcapaciteit 
       short_description:
       description: |
-        Deze slider bepaalt de hoeveelheid waterstof die geëxtraheerd en ingepompt kan worden in de zoutcavernes.
-        Deze staat standaard op 1000 MW, dit betekent dat per uur maximaal 1000 MWh geëxtraheerd en ingepompt kan worden.
-        De capaciteit heeft aanzienlijke effecten op hoe de opslag zal worden gebruikt in uw scenario.
+        Met dit schuifje kun je de opslagcapaciteit van de zoutcaverne relatief ten opzichte van het opslagvolume instellen.
+        Dit bepaalt hoeveel dagen de zoutcaverne op vol vermogen moet laden om van leeg naar volledig vol te gaan.
+        Effectief verandert dit schuifje daarom de opslagvermogen, gegeven een bepaalde hoeveelheid 
+        geïnstalleerd volume. </br></br>
+        Het totale opslagcapaciteit kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
+        vergelijken met andere opslagtechnologieën kun je ook
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        deze tabel</a> openen. </br></br>
     volume_of_energy_hydrogen_storage_depleted_gas_field:
-      title: Volume opslag waterstof in lege gasvelden
+      title: Volume opslag 
       description: |
         "Deze schuif stelt het volume in van de hoeveelheid waterstof die kan worden opgeslagen in de lege gasvelden. 
         De standaardinstelling is 8 TWh."
     volume_of_energy_hydrogen_storage_salt_cavern:
-      title: Volume opslag waterstof in zoutcavernes
+      title: Volume opslag  
       short_description:
       description: |
         "Deze schuif stelt het volume in van de hoeveelheid waterstof die kan worden opgeslagen in de zoutcavernes. 

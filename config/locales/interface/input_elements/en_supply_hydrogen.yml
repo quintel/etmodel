@@ -206,27 +206,37 @@ en:
         If the baseload import is insufficient to cover demand, back-up import is used. 
         If it exceeds demand, the excess is exported.
     capacity_of_energy_hydrogen_storage_depleted_gas_field:
-      title: Depleted gas field storage capacity
+      title: Relative storage capacity
       short_description:
       description: |
-        This slider sets the capacity of the amount of hydrogen that can be extracted from or instered to depleted gas fields.
-        It's default setting is on 4000 MW, this means that per hour 4000 MWh can be extracted or insterted.
-        The capacity has significant effects on how the storage will be used in your scenario.
+        With this slider, you can set the storage capacity relative to the storage volume of the depleted gas fields.
+        This determines how many days the gas field needs to charge at full capacity to go from being empty 
+        to fully stored. Effectively this slider therefore changes the total storage capacity, given a 
+        certain amount of storage volume. </br></br>
+        You can see the total resulting storage capacity in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>. </br></br>
     capacity_of_energy_hydrogen_storage_salt_cavern:
-      title: Salt cavern storage capacity
+      title: Relative storage capacity 
       short_description:
       description: |
-        This slider sets the capacity of the amount of hydrogen that can be extracted from or instered to salt caverns.
-        It's default setting is on 1000 MW, this means that per hour 1000 MWh can be extracted or insterted.
-        The capacity has significant effects on how the storage will be used in your scenario.
+        With this slider, you can set the storage volume relative to the storage volume of the salt caverns.
+        This determines how many days the salt caverns needs to charge at full capacity to go from being empty 
+        to fully stored. Effectively this slider therefore changes the total storage capacity, given a 
+        certain amount of storage volume. </br></br>
+        You can see the total resulting storage capacity in the 'Technical and financial 
+        properties' below. To quickly compare it with other storage technologies you can also open
+        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        this table</a>. </br></br>
     volume_of_energy_hydrogen_storage_depleted_gas_field:
-      title: Depleted gas field storage volume
+      title: Storage volume
       short_description:
       description: |
         This slider sets the volume of the amount of hydrogen that can be stored in the depleted gas fields.
         It's default setting is on 8 TWh.
     volume_of_energy_hydrogen_storage_salt_cavern:
-      title: Salt cavern storage volume
+      title: Storage volume
       short_description:
       description: |
         This slider sets the volume of the amount of hydrogen that can be stored in the salt caverns.

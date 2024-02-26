@@ -71,14 +71,14 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_export_hydrogen_backup_for_mekko_demand_mekko_of_hydrogen_network
-- label: energy_hydrogen_storage_excess_for_mekko
+- label: energy_hydrogen_storage_unused_for_mekko
   color: "#98B2CC"
   order_by: 160
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_storage_excess_for_mekko
+  gquery: energy_hydrogen_storage_unused_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network

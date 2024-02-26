@@ -9,12 +9,20 @@ en:
         installed electrical capacity of biogas CHP plants that supply heat for district
         heating networks. For more information you can checkout the
         <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
-    capacity_of_energy_chp_local_wood_pellets:
+    capacity_of_energy_chp_local_wood_pellets_must_run:
       title: Biomass CHP
       short_description:
       description: |
         A CHP produces both heat and electricity. Here you can set the
-        installed electrical capacity of biomass CHP plants that supply heat for district
+        installed electrical capacity of must-run biomass CHP plants that supply heat for district
+        heating networks. For more information you can checkout the
+        <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
+    capacity_of_energy_chp_local_wood_pellets_dispatchable:
+      title: Biomass CHP
+      short_description:
+      description: |
+        A CHP produces both heat and electricity. Here you can set the
+        installed electrical capacity of dispatchable biomass CHP plants that supply heat for district
         heating networks. For more information you can checkout the
         <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
     capacity_of_energy_power_wood_pellets_must_run:

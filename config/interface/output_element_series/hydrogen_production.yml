@@ -191,6 +191,30 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: energy_hydrogen_ammonia_reformer_must_run_hydrogen_production
+- label: energy_hydrogen_liquid_hydrogen_regasifier
+  color: "#524A79"
+  order_by: 90
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_liquid_hydrogen_regasifier_hydrogen_production
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production
+  key: energy_hydrogen_liquid_hydrogen_regasifier_hydrogen_production
+- label: energy_hydrogen_lohc_reformer
+  color: "#CFCBDF"
+  order_by: 95
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_lohc_reformer_hydrogen_production
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production
+  key: energy_hydrogen_lohc_reformer_hydrogen_production
 - label: imported_hydrogen
   color: "#C6C2DA"
   order_by: 100
@@ -201,5 +225,4 @@
   gquery: energy_imported_hydrogen_hydrogen_production
   is_1990: false
   dependent_on: 
-  output_element_key: hydrogen_production
-  key: energy_imported_hydrogen_hydrogen_production
+  output_element_key: hydrogen_production      

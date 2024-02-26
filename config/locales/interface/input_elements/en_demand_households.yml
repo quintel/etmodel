@@ -682,7 +682,7 @@ en:
       description: 'Solar water collectors create
         warm water using heat from the sun. This heat can be used for hot water. 
         Solar thermal collectors can be installed on rooftops or in asphalt for
-        parking lots, for example. A solar thermal collector is often combined with a gas-fored central
+        parking lots, for example. A solar thermal collector is often combined with a gas-fired central
         heating boiler that heats water further if necessary (especially in winter).
         It can also be combined with a heat pump.'
     households_number_of_inhabitants:
@@ -865,7 +865,7 @@ en:
     households_heater_combined_network_gas_share:
       title: Condensing combi boiler (gas)
       short_description: ''
-      description: "This is a condensing gas-fored heater.
+      description: "This is a condensing gas-fired heater.
         When you click on \"Technical and financial properties\", then you will see that the
         efficiency is above 100% for space heating. This is the case because all energy in
         the ETM is given in lower heating values (LHV) and this boiler also retrieves
@@ -887,13 +887,13 @@ en:
       short_description: ''
       description: "A heat pump moves heat from one place to another. Heat pumps are
         used in refrigerators, but buildings can use them for heating and cooling.
-        This saves energy compared to a gas-fored central heating boiler, for example.
+        This saves energy compared to a gas-fired central heating boiler, for example.
         For optimal application, it does often require installation of under-floor
         and wall heating instead of radiators. Currently, their use in newly constructed
         houses is becoming quite popular, since European legislation dictates that
         domestic energy consumption must decrease.\r\n<br/><br/>\r\nHeat pumps can
         run on gas or electricity. This is an electric heat pump, as it draws its
-        heat from the ground. Gas-fored heat pumps are more often used to draw their
+        heat from the ground. Gas-fired heat pumps are more often used to draw their
         heat from the air.\r\n<br/>"
     households_heater_heatpump_pvt_electricity_share:
       title: PVT heat pump
@@ -901,7 +901,7 @@ en:
       description: |
         A heat pump moves heat from one place to another. Heat pumps are
         used in refrigerators, but buildings can use them for heating and cooling.
-        This saves energy compared to a gas-fored central heating boiler, for example.
+        This saves energy compared to a gas-fired central heating boiler, for example.
         For optimal application, it does often require installation of under-floor
         and wall heating instead of radiators. <br/><br/>This electric
         heat pump is combined with photovoltaic solar thermal panels (PVT panels).
@@ -958,7 +958,7 @@ en:
         \r\n<br/><br/>The mix you fill in here is probably mostly determined by fuel
         prices and environmental legislation."
     households_heater_network_gas_share:
-      title: Gas-fored heater
+      title: Gas-fired heater
       short_description: ''
       description: These are the same heaters as the "Condensing combi boiler", except
         that they do not produce hot water, but only heat for a central heating systems.
@@ -1009,10 +1009,10 @@ en:
       title: Hybrid air heat pump (gas)
       short_description:
       description: "This heater is a combination of an electric heat pump that draws
-        its heat from the outside air and an efficient conventional gas-fored boiler.
+        its heat from the outside air and an efficient conventional gas-fired boiler.
         Essentially, the hybrid heat pump offers a way to strongly reduce natural
         gas demand for heating, while buying time for grid management companies to
-        reinforce grids. \r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe gas-fored
+        reinforce grids. \r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe gas-fired
         part takes over all of the heating of the building on cold winter days, when
         heat demand peaks. Because of this clever trick, the heat pump has less impact
         on the electricity grid than an all-electric heat pump does. Smart use of
@@ -1022,10 +1022,10 @@ en:
         too. For optimal results with <em>most</em> types of heat pump, installation
         of under-floor and wall heating instead of radiators is often required, as
         well as good levels of insulation. The <em>hybrid</em> heat pump is an exception,
-        because of its gas-fored heater as a fall-back option. Hybrid heat pumps can
-        intelligently use whichever part (heat pump or gas-fored heater) is the most
+        because of its gas-fired heater as a fall-back option. Hybrid heat pumps can
+        intelligently use whichever part (heat pump or gas-fired heater) is the most
         efficient or cost-effective given the weather conditions and insulation level.
-        Houses with limited insulation will rely on the gas-fored part more, better
+        Houses with limited insulation will rely on the gas-fired part more, better
         insulated ones will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP
         of the electric part of the hybrid heat pump depends on ambient temperature.
         When the COP drops below the threshold value the hybrid heat pump switches
@@ -1128,7 +1128,7 @@ en:
       short_description: ''
       description: ''   
     households_heater_network_gas_heat_output_capacity:
-      title: Gas-fored heater
+      title: Gas-fired heater
       short_description: ''
       description: ''   
     households_heater_combined_network_gas_heat_output_capacity:

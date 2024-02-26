@@ -155,18 +155,6 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: energy_hydrogen_storage_salt_cavern_hydrogen_production
-- label: imported_hydrogen
-  color: "#C6C2DA"
-  order_by: 70
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: energy_imported_hydrogen_hydrogen_production
-  is_1990: false
-  dependent_on: 
-  output_element_key: hydrogen_production
-  key: energy_imported_hydrogen_hydrogen_production
 - label: industry_residual_hydrogen
   color: "#006400"
   order_by: 75
@@ -203,3 +191,15 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: energy_hydrogen_ammonia_reformer_must_run_hydrogen_production
+- label: imported_hydrogen
+  color: "#C6C2DA"
+  order_by: 100
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_imported_hydrogen_hydrogen_production
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production
+  key: energy_imported_hydrogen_hydrogen_production

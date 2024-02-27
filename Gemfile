@@ -9,7 +9,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.0.8'
 gem 'activerecord-session_store'
 gem 'activeresource', '~> 6.0'
 

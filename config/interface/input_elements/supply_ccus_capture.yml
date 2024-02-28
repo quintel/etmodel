@@ -151,7 +151,19 @@
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
-  position: 170
+  position: 180
+  slide_key: supply_ccus_capture
+- key: flh_of_energy_chp_local_mt_wood_pellets_ccs_must_run
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 185
+  slide_key: supply_ccus_capture
+- key: flh_of_energy_chp_local_ht_wood_pellets_ccs_must_run
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 190
   slide_key: supply_ccus_capture
 
 - key: share_of_energy_hydrogen_steam_methane_reformer_ccs

@@ -800,7 +800,7 @@ en:
         The amount of heat that is produced by gas motor CHPs is determined by the 
         installed capacity. Checkout the amount of installed capacity 
         <a href=\"/scenario/supply/electricity/gas-plants\" >here</a>."
-    share_of_energy_chp_local_ht_wood_pellets:
+    share_of_energy_chp_local_ht_wood_pellets_must_run:
       title: High temperature
       short_description:
       description: "Use this slider to determine the percentage of heat 
@@ -809,7 +809,25 @@ en:
         The amount of heat that is produced by biomass CHPs is determined by the 
         installed capacity. Checkout the amount of installed capacity 
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
-    share_of_energy_chp_local_mt_wood_pellets:
+    share_of_energy_chp_local_mt_wood_pellets_must_run:
+      title: Medium temperature
+      short_description:
+      description: "Use this slider to determine the percentage of heat 
+        from biomass CHPs allocated to the medium temperature heat grid. 
+        \r\n<br/><br/>\r\n
+        The amount of heat that is produced by biomass CHPs is determined by the 
+        installed capacity. Checkout the amount of installed capacity 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
+    share_of_energy_chp_local_ht_wood_pellets_dispatchable:
+      title: High temperature
+      short_description:
+      description: "Use this slider to determine the percentage of heat 
+        from biomass CHPs allocated to the high temperature heat grid. 
+        \r\n<br/><br/>\r\n
+        The amount of heat that is produced by biomass CHPs is determined by the 
+        installed capacity. Checkout the amount of installed capacity 
+        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
+    share_of_energy_chp_local_mt_wood_pellets_dispatchable:
       title: Medium temperature
       short_description:
       description: "Use this slider to determine the percentage of heat 

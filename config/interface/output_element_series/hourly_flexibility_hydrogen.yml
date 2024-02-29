@@ -10,17 +10,16 @@
   output_element_key: hourly_flexibility_hydrogen
   key: hydrogen_imbalance_inflexible_curve_hourly_flexibility_hydrogen
 
-
-- label: energy_imported_hydrogen_backup
-  color: "#A7A1C5"
+- label: energy_hydrogen_storage_depleted_gas_field_output
+  color: "#87CEEB"
   order_by: 100
   group: flex
   is_target_line: false
   target_line_position:
-  gquery: energy_imported_hydrogen_backup_hourly_flexibility_hydrogen
+  gquery: energy_hydrogen_storage_depleted_gas_field_output_hourly_flexibility_hydrogen
   dependent_on:
   output_element_key: hourly_flexibility_hydrogen
-  key: energy_imported_hydrogen_backup_hourly_flexibility_hydrogen
+  key: energy_hydrogen_storage_depleted_gas_field_output_hourly_flexibility_hydrogen  
 - label: energy_hydrogen_storage_salt_cavern_output
   color: "#5e9aa4"
   order_by: 105
@@ -31,19 +30,9 @@
   dependent_on:
   output_element_key: hourly_flexibility_hydrogen
   key: energy_hydrogen_storage_salt_cavern_output_hourly_flexibility_hydrogen  
-- label: energy_hydrogen_storage_depleted_gas_field_output
-  color: "#87CEEB"
-  order_by: 110
-  group: flex
-  is_target_line: false
-  target_line_position:
-  gquery: energy_hydrogen_storage_depleted_gas_field_output_hourly_flexibility_hydrogen
-  dependent_on:
-  output_element_key: hourly_flexibility_hydrogen
-  key: energy_hydrogen_storage_depleted_gas_field_output_hourly_flexibility_hydrogen  
 - label: energy_hydrogen_ammonia_reformer_dispatchable
   color: "#1ce6d6"
-  order_by: 115
+  order_by: 110
   group: flex
   is_target_line: false
   target_line_position:
@@ -53,7 +42,7 @@
   key: energy_hydrogen_ammonia_reformer_dispatchable_hourly_flexibilty_hydrogen
 - label: energy_hydrogen_autothermal_reformer_dispatchable
   color: "#A59990"
-  order_by: 120
+  order_by: 115
   group: flex
   is_target_line: false
   target_line_position:
@@ -63,7 +52,7 @@
   key: energy_hydrogen_autothermal_reformer_dispatchable_hourly_flexibility_hydrogen
 - label: energy_hydrogen_steam_methane_reformer_dispatchable
   color: "#BEC3C8"
-  order_by: 125
+  order_by: 120
   group: flex
   is_target_line: false
   target_line_position:
@@ -71,6 +60,16 @@
   dependent_on:
   output_element_key: hourly_flexibility_hydrogen
   key: energy_hydrogen_steam_methane_reformer_dispatchable_hourly_flexibility_hydrogen
+- label: energy_imported_hydrogen_backup
+  color: "#A7A1C5"
+  order_by: 125
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: energy_imported_hydrogen_backup_hourly_flexibility_hydrogen
+  dependent_on:
+  output_element_key: hourly_flexibility_hydrogen
+  key: energy_imported_hydrogen_backup_hourly_flexibility_hydrogen
 
 
 - label: energy_hydrogen_storage_depleted_gas_field_input

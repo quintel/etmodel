@@ -635,8 +635,11 @@ nl:
     propane_gas_total_share:
       title: Propaan
       short_description: ''
-      description: "Dit schuifje stelt in welk percentage van alle gasgebruik propaan
-        is."
+      description: |
+        Dit schuifje stelt in welk percentage van alle gasgebruik propaan
+        is. Propaan kan worden bijgemengd in de gasmix om de energetische waarde van het netwerkgas te verhogen. 
+        Dit kan bijvoorbeeld relevant zijn om te compenseren voor een lagere energetische waarde van andere bijgemengde gassen,
+        zoals biogas.
     energy_treatment_natural_gas_share:
       title: Aardgas
       short_description:

@@ -56,8 +56,13 @@
   min_axis_value: 
   hidden: false
   requires_merit_order: true
-  dependent_on: ''
-  output_element_type_name: demand_curve
+  dependent_on:
+  output_element_type_name: solar_curtailment
+  config:
+    serie_selections:
+      - energy_hydrogen_storage
+      - depleted_gas_field
+      - salt_cavern
 - under_construction: false
   unit: Eur/Mwh
   percentage: false

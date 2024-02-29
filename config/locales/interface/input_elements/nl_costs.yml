@@ -192,9 +192,12 @@ nl:
       title: CO<sub>2</sub> afvangprijs
       short_description: ''
       description: "De CO<sub>2</sub> afvangprijs is de prijs die wordt ontvangen voor afgevangen
-        CO<sub>2</sub>. De schuif stelt de toename in van de te verwachten CO<sub>2</sub> afvangprijs.
-        De minimum waarde van de CO<sub>2</sub> afvangprijs is gelijk is aan de minimum waarde
-        van de CO<sub>2</sub> prijs (prijs voor het uitstoten van CO<sub>2</sub>)."
+        CO<sub>2</sub>. De schuif stelt de toekomstige CO<sub>2</sub> afvangprijs in. De startwaarde
+        is 0 €/ton CO<sub>2</sub>.  \r\n
+        <br/><br/>\r\n <strong>De waarde van de CO<sub>2</sub> afvangprijs wordt logischerwijs ingesteld op
+        ten minste de waarde van de CO<sub>2</sub> prijs</strong> (prijs voor het uitstoten van CO<sub>2</sub>).
+        Als de CO<sub>2</sub> afvangprijs namelijk lager is dan de CO<sub>2</sub> prijs, is het 
+        ongewenst goedkoper om CO<sub>2</sub> uit te stoten in plaats van af te vangen. \r\n"
     om_costs_co2_capture_industry:
       title: Onderhoudskosten
       short_description: ''

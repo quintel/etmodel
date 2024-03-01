@@ -183,13 +183,18 @@ en:
         Additionally, it is possible to set the costs of imported
         hydrogen in the <a href="/scenario/costs/costs_hydrogen/hydrogen-import">Costs & efficiencies</a> section.
     energy_hydrogen_distribution_compressed_trucks_share:
-      title: Compressed H<sub>2</sub> in trucks
+      title: Distribution by trucks after pipeline transport
       short_description:
-      description: What percentage of the total central hydrogen production in your
-        scenario is transported via trucks after distribution via pipelines? Truck transport is flexible and can be
+      description: |
+        What percentage of the total central hydrogen production in your
+        scenario is distributed via trucks after transportation via pipelines? Truck transport is flexible and can be
         scaled up or down relatively easily. As such, it is a suitable option when
         hydrogen demand is more dispersed and when volumes are lower. This may for
         example be the case for hydrogen delivery to refuelling stations.
+    energy_hydrogen_transport_pipelines_share:
+      title: Transport via pipelines     
+      description: What percentage of the total central hydrogen production in your
+        scenario is only transported via the pipeline network? 
     capacity_of_energy_imported_ammonia_baseload:
       title: Ammonia import
       short_description:

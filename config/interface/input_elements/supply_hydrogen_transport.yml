@@ -1,6 +1,15 @@
 ---
 - key: energy_hydrogen_distribution_compressed_trucks_share
+  share_group : hydrogen_transport
   step_value: 0.1
   unit: "%"
-  position: 1
+  position: 5
   slide_key: supply_hydrogen_transport
+  
+- key: energy_hydrogen_transport_pipelines_share
+  share_group : hydrogen_transport
+  step_value: 0.1
+  unit: "%"
+  position: 10
+  slide_key: supply_hydrogen_transport
+

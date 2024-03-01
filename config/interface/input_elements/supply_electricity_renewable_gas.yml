@@ -1,34 +1,38 @@
 ---
+- key: natural_gas_total_share
+  share_group: fuels_gas
+  step_value: 0.1
+  unit: "%"
+  interface_group: grid_composition
+  position: 100
+  slide_key: supply_electricity_renewable_gas
 - key: green_gas_total_share
   share_group: fuels_gas
   step_value: 0.1
   unit: "%"
   command_type: value
-  position: 2
-  slide_key: supply_electricity_renewable_gas
-- key: natural_gas_total_share
-  share_group: fuels_gas
-  step_value: 0.1
-  unit: "%"
-  position: 1
+  interface_group: grid_composition
+  position: 105
   slide_key: supply_electricity_renewable_gas
 - key: propane_gas_total_share
   share_group: fuels_gas
   step_value: 0.1
   unit: "%"
-  position: 1
+  interface_group: grid_composition
+  position: 110
   slide_key: supply_electricity_renewable_gas
+
 - key: energy_treatment_natural_gas_share
   share_group: grid_natural_gas_origin
   step_value: 0.1
   unit: "%"
   interface_group: grid_natural_gas
-  position: 3
+  position: 200
   slide_key: supply_electricity_renewable_gas
 - key: energy_regasification_lng_share
   share_group: grid_natural_gas_origin
   step_value: 0.1
   unit: "%"
   interface_group: grid_natural_gas
-  position: 4
+  position: 205
   slide_key: supply_electricity_renewable_gas

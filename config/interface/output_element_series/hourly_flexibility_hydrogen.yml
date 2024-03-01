@@ -5,7 +5,7 @@
   group: flex
   is_target_line: true
   target_line_position:
-  gquery: hydrogen_imbalance_inflexible_curve
+  gquery: energy_hydrogen_imbalance_curve_hourly_flexibilty_hydrogen
   dependent_on:
   output_element_key: hourly_flexibility_hydrogen
   key: hydrogen_imbalance_inflexible_curve_hourly_flexibility_hydrogen
@@ -102,3 +102,4 @@
   dependent_on:
   output_element_key: hourly_flexibility_hydrogen
   key: energy_export_hydrogen_backup_hourly_flexibility_hydrogen  
+  

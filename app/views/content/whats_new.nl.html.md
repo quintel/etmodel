@@ -1,6 +1,20 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
+# maart 2024
 
+### Kostenexportfunctionaliteit bijgewerkt en uitgebreid
+De kostenexportfunctionaliteit van het ETM heeft een grote update ondergaan! De download biedt nu veel gedetailleerdere informatie over de kosten van een scenario. Beginnend met de totale kosten, de totale CAPEX en de totale OPEX geeft het csv-bestand details over de componenten van CAPEX en OPEX en de parameters die ten grondslag liggen aan CAPEX-berekeningen, zoals de technische levensduur. De kostenexportfunctionaliteit weerspiegelt nu beter welke mogelijkheden het ETM biedt voor kostenberekening. 
+
+### Zon PV op dak voor huishoudens en gebouwen zijn verhuisd naar Aanbod
+De schuifjes voor zon PV op daken van huishoudens en gebouwen zijn aangepast: het opgestelde vermogen van deze technologieën kan nu direct ingesteld worden (in MW). De schuifjes zijn verplaatst naar de sectie **[Hernieuwbare elektriciteit](/scenario/supply/electricity_renewable/solar-power)**
+
+### Landgebruik van zonne- en windvisualisatie beschikbaar
+Het ETM bevat nu een grafiek waarin het landgebruik van zonnepanelen en windturbines op land wordt weergegeven. Als onderdeel van deze grafiek kan de gebruiker ook virtueel onderscheid maken tussen grootschalige en kleinschalige windturbines zonder het feitelijke scenario te beïnvloeden. De bijgevoegde tabel geeft meer gedetailleerde informatie over b.v. capaciteiten en elektriciteitsproductie van alle inbegrepen technologieën.
+
+-> <img src="/assets/pages/whats_new/land_use_of_solar_and_wind_nl.png" width="600" /> <-
+
+### Propaan toegevoegd als bestanddeel van netwerkgas
+Gebruikers van de ETM kunnen nu propaan toevoegen als drager in netwerkgas. Toevoeging van propaan kan nodig zijn om de energie-inhoud van netwerkgas te verhogen bij het bijmengen van andere gassen met een lagere calorische waarde, zoals biogas.
 
 # Januari 2024
 

@@ -1,5 +1,20 @@
 # What's new in the Energy Transition Model?
 ___
+# March 2024
+
+### Costs export functionality updated & expanded
+The costs export functionality of the ETM has undergone a major update! The download now provides much more detailed information on a scenario's costs. Starting with total costs, total CAPEX and total OPEX, the csv file provides further details on the constituents of CAPEX and OPEX and the parameters underlying CAPEX calculations, such as the technical lifetime. In all, the costs export functionality now more truthfully mirrors the ETM's costs calculating capabilities.
+
+### Solar PV households and buildings capacity sliders moved to Supply
+The sliders for solar PV capacities on rooftops of households and buildings now allow users to directly indicate installed capacities for these technologies (in MW). The sliders have been moved to the **[Renewable electricity](/scenario/supply/electricity_renewable/solar-power)** section.
+
+### Land use of solar and wind visualization available
+The ETM now contains a chart displaying the land use of solar panels and wind turbines on land. The chart also allows the user to virtually distinguish large scale and small scale wind turbines without affecting the actual scenario. The accompanying table provides more detailed information on e.g. capacities and electricity production of all included technologies.
+
+-> <img src="/assets/pages/whats_new/land_use_of_solar_and_wind_en.png" width="600" /> <-
+
+### Propane added as constituent of network gas
+Users of the ETM can now add propane as a constituent carrier in network gas. Addition of propane can be required to increase the energy content of network gas when mixing in other gases with a lower calorific value, such as biogas. 
 
 # January 2024
 

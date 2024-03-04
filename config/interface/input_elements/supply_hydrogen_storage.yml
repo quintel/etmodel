@@ -7,7 +7,7 @@
   slide_key: supply_hydrogen_storage
 - key: capacity_of_energy_hydrogen_storage_salt_cavern
   step_value: 0.1
-  unit: "Hours"
+  unit: "hours"
   interface_group: salt_caverns
   position: 10
   slide_key: supply_hydrogen_storage  
@@ -18,8 +18,8 @@
   position: 15
   slide_key: supply_hydrogen_storage
 - key: capacity_of_energy_hydrogen_storage_depleted_gas_field
-  step_value: 0.01
-  unit: "Hours"
+  step_value: 0.1
+  unit: "hours"
   interface_group: depleted_gas_fields
   position: 20
   slide_key: supply_hydrogen_storage

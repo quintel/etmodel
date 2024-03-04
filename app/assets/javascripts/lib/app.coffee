@@ -91,21 +91,23 @@ class @AppView extends Backbone.View
 
     # Create hydrogen order.
     if (hydrogen_supply_order = wrapper.find('#supply-hydrogen-order')).length
-      new UserSortable(
+      @hydrogen_supply_order = new UserSortable(
         hydrogen_supply_order,
         'hydrogen_supply_order',
         {},
         { capacity: true }
-      ).render()
+      )
+      @hydrogen_supply_order.render()
 
     # Create hydrogen order.
     if (hydrogen_demand_order = wrapper.find('#demand-hydrogen-order')).length
-      new UserSortable(
+      @hydrogen_demand_order = new UserSortable(
         hydrogen_demand_order,
         'hydrogen_demand_order',
         {},
         { capacity: true }
-      ).render()
+      )
+      @hydrogen_demand_order.render()
 
     if (curve_upload = wrapper.find('.single-curve-upload')).length
       curveCollectionDef = @customCurves()
@@ -285,6 +287,10 @@ class @AppView extends Backbone.View
     @call_api(input_params)
     if (@heat_order)
       @heat_order.render()
+    if (@hydrogen_demand_order)
+      @hydrogen_demand_order.render()
+    if (@hydrogen_supply_order)
+      @hydrogen_supply_order.render()
 
   showLoading: ->
     # D3 charts shouldn't be blocked, only jqPlot ones

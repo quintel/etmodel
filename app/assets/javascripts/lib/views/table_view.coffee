@@ -28,16 +28,20 @@ class @TableView
   # Creates an array where the first element is the sum of the present values,
   # and the second is the sum of the future values.
   totalsData: ->
-    _.reduce(@model.results(true), (memo, row) ->
-      memo[0] += row[0][1]
-      memo[1] += row[1][1]
-      memo
-    , [0.0, 0.0])
+    if @options.showTotal()
+      _.reduce(@model.results(true), (memo, row) ->
+        memo[0] += row[0][1]
+        memo[1] += row[1][1]
+        memo
+      , [0.0, 0.0])
+    else
+      []
 
   # Options which determine how to render each series in the table.
   renderingOptions: ->
     {
       labelFormatter: -> (serie) -> serie.get('label')
+      showTotal:      => true
       valueFormatter: => @chartView.main_formatter(maxFrom: 'maxValue', maxPrecision: 5)
       titleFormatter: => @chartView.main_formatter(maxFrom: 'maxValue', maxPrecision: 10)
       sorter:         -> _.identity
@@ -61,6 +65,7 @@ class @CategoryTableView extends TableView
       translatedGroup = I18n.t("output_element_series.groups.#{groupName}")
 
       "#{translatedGroup}: #{serie.get('label')}"
+    opts.showTotal = => @chartView.totals_for_table()
 
     opts
 

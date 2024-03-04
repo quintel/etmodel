@@ -123,6 +123,9 @@ D3.category_bar =
       else
         ['present', 'future']
 
+    totals_for_table: ->
+      @model.get('config') && @model.get('config').show_total_row
+
     draw: =>
       self = this
 

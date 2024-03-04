@@ -16,12 +16,14 @@
         </tr>
       <% }) %>
     </tbody>
-    <tfoot>
-      <tr>
-        <th><%= I18n.t("output_elements.common.total") %></th>
-        <td><%= formatValue(totals[0]) %></td>
-        <td><%= formatValue(totals[1]) %></td>
-      </tr>
-    </tfoot>
+    <% if (totals.length > 0) { %>
+      <tfoot>
+        <tr>
+          <th><%= I18n.t("output_elements.common.total") %></th>
+          <td><%= formatValue(totals[0]) %></td>
+          <td><%= formatValue(totals[1]) %></td>
+        </tr>
+      </tfoot>
+    <% } %>
   </table>
 </script>

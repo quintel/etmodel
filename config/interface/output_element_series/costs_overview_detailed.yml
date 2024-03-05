@@ -278,18 +278,30 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_storage_and_conversion_p2h_costs_overview_detailed
-- label: costs_storage_and_conversion_storage
+- label: costs_storage_and_conversion_heat_storage
   color: "#d9c9bb"
   order_by: 430
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: costs_storage_and_conversion_storage
+  gquery: costs_storage_and_conversion_heat_storage
   is_1990: false
   dependent_on:
   output_element_key: costs_overview_detailed
-  key: costs_storage_and_conversion_storage_costs_overview_detailed
+  key: costs_storage_and_conversion_heat_storage_costs_overview_detailed
+- label: costs_storage_and_conversion_hydrogen_storage
+  color: "#FFE7D1"
+  order_by: 430
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_storage_and_conversion_hydrogen_storage
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_storage_and_conversion_hydrogen_storage_costs_overview_detailed
 
 - label: costs_infrastructure_electricity
   color: "#702283"

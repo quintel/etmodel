@@ -25,6 +25,10 @@ $sidebar-active-bg: #eef5f9
     &.active:after
       transform: rotate(90deg)
       transform-origin: 3px 6px
+    &:last-of-type
+      border-top: 1px solid #ddd
+    &:nth-of-type(2)
+      border-top: 1px solid #ddd
   ul
     margin: 0 0 10px 0
     padding: 0
@@ -39,9 +43,9 @@ $sidebar-active-bg: #eef5f9
         color: black
         margin-right: -1px
         a
-          border-right: 4px solid $landing-blue
+          border-right: 4px solid $landing-gold
           color: black
-          width: 176px
+          width: 173px
           &:hover
             background: $sidebar-active-bg
             cursor: default

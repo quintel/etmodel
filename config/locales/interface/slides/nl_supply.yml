@@ -183,12 +183,14 @@ nl:
         Hier kun je het elektrisch vermogen voor biomassacentrales aangeven.
         De warmte die als bijproduct wordt geproduceerd wordt gebruikt in warmtenetten.
     supply_electricity_renewable_gas:
-      title: "(Groen) gas in gasnetwerk"
-      short_description: ''
-      description: 'Aardgas in het gasnetwerk kan worden bijgemengd met groen gas om
-        het gasverbruik te verduurzamen. Daarnaast kan vloeibaar aardgas (LNG), een
-        brandstof die enkel in de transport sector in vloeibare vorm gebruikt wordt,
-        ook weer omgezet worden naar gas en in het gasnetwerk ingevoerd worden. '
+      title: Gasmix in gasnetwerk
+      short_description:
+      description: |
+        De samenstelling van gas in het gasnetwerk kan per regio verschillen. Naast fossiel aardgas 
+        is het mogelijk om propaan of groen gas in te voeren in het netwerk. </br></br>
+        Daarnaast kan aardgas zowel in gasvormige als vloeibare vorm worden geleverd. In 
+        vloeibare vorm wordt het <i>Liquefied Natural Gas</i> (LNG) genoemd, wat eerst hervergast
+        moet worden voordat het in het gasnetwerk kan worden ingevoerd.
     supply_electricity_biomass_plants:
       title: Biomassacentrales
       short_description:

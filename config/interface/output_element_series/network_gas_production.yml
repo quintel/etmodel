@@ -95,6 +95,18 @@
   dependent_on: 
   output_element_key: network_gas_production
   key: natural_gas_import_network_gas_production
+- label: propane_import
+  color: "#808080"
+  order_by: 212
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: propane_network_gas_output_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: network_gas_production
+  key: propane_network_gas_production
 - label: natural_gas_residual_industry
   color: "#964B00"
   order_by: 215

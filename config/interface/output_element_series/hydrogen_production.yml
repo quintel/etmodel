@@ -73,17 +73,18 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: energy_hydrogen_ammonia_reformer_must_run_hydrogen_production
-- label: imported_hydrogen
+- label: energy_imported_hydrogen_baseload
   color: "#C6C2DA"
   order_by: 35
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_imported_hydrogen_hydrogen_production
+  gquery: energy_imported_hydrogen_baseload_hydrogen_production
   is_1990: false
   dependent_on: 
-  output_element_key: hydrogen_production     
+  output_element_key: hydrogen_production 
+  key: energy_imported_hydrogen_baseload_hydrogen_production   
 
   
 
@@ -175,7 +176,23 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: energy_hydrogen_electrolysis_wind_electricity_hydrogen_production
+- label: energy_hydrogen_flexibility_p2g_electricity
+  color: "#ded033"
+  order_by: 75
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_flexibility_p2g_electricity_hydrogen_production
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production
+  key: energy_hydrogen_flexibility_p2g_electricity_hydrogen_production
+
+
 #Flex
+
+
 
 - label: energy_hydrogen_steam_methane_reformer_dispatchable
   color: "#BEC3C8"
@@ -237,6 +254,18 @@
   dependent_on: 
   output_element_key: hydrogen_production
   key: energy_hydrogen_storage_salt_cavern_hydrogen_production
+- label: energy_imported_hydrogen_backup
+  color: "#b1b0b5"
+  order_by: 125
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_imported_hydrogen_backup_hydrogen_production
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production 
+  key: energy_imported_hydrogen_backup_hydrogen_production    
 
 
    

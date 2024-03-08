@@ -8,12 +8,12 @@ The building stock is now disaggregated at a higher level of detail. Households 
 
 Explore the new heat modelling in the **[Households](/scenario/demand/households/overview)** and **[Buildings](/scenario/demand/buildings/overview)** sections.
 
--> <img src="/assets/pages/whats_new/residential_heating_demand_en" width="600" /> <-
+-> <img src="/assets/pages/whats_new/residential_heating_demand_en.png" width="600" /> <-
 
 ### Costs export functionality updated & expanded
 The costs export functionality of the ETM has undergone a major update! The download now provides much more detailed information on a scenario's costs. Starting with total costs, total CAPEX and total OPEX, the csv file provides further details on the constituents of CAPEX and OPEX and the parameters underlying CAPEX calculations, such as the technical lifetime. In all, the costs export functionality now more truthfully mirrors the ETM's costs calculating capabilities; see the image below.
 
--> <img src="/assets/pages/whats_new/costs_specification_costs_functionality_en" width="600" /> <-
+-> <img src="/assets/pages/whats_new/costs_specification_costs_functionality_en.png" width="600" /> <-
 
 ### Solar PV households and buildings capacity sliders moved to Supply
 The sliders for solar PV capacities on rooftops of households and buildings now allow users to directly indicate installed capacities for these technologies (in MW). The sliders have been moved to the **[Renewable electricity](/scenario/supply/electricity_renewable/solar-power)** section.

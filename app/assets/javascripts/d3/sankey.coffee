@@ -11,7 +11,7 @@ D3.sankey =
           {id: 'biomass_products',             column: 0, label: 'biomass_products',                  color: '#2ca02c'},
           {id: 'coal_and_coal_products',       column: 0, label: 'coal_and_coal_products',            color: '#252525'},
           {id: 'ambient_heat',                 column: 0, label: 'ambient_heat',                      color: '#ADDE4C'},
-          {id: 'geothermal',                   column: 0, label: 'geothermal',                        color: '#787821'},
+          {id: 'geothermal',                   column: 0, label: 'geothermal',                        color: '#FF8400'},
           {id: 'imported_heat',                column: 0, label: 'imported_heat',                     color: '#cc0000'},
           {id: 'residual_heat',                column: 0, label: 'residual_heat',                     color: '#cc0000'},          
           {id: 'natural_gas',                  column: 0, label: 'natural_gas',                       color: '#7f7f7f'},
@@ -53,6 +53,7 @@ D3.sankey =
           {left: 'biomass_products',             right: 'electricity',               gquery: 'sankey_0_to_1_biomass_products_to_electricity',          color: '#2ca02c'},
           {left: 'coal_and_coal_products',       right: 'electricity',               gquery: 'sankey_0_to_1_coal_and_coal_products_to_electricity',    color: '#252525'},
           {left: 'natural_gas',                  right: 'electricity',               gquery: 'sankey_0_to_1_natural_gas_to_electricity',               color: '#7f7f7f'},
+          {left: 'geothermal',                   right: 'electricity',               gquery: 'sankey_0_to_1_geothermal_to_electricity',                color: '#FF8400'},
         
           {left: 'biomass_products',             right: 'heat',                      gquery: 'sankey_0_to_1_biomass_products_to_heat',                 color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'heat',                      gquery: 'sankey_0_to_1_natural_gas_to_heat',                      color: '#7f7f7f'},
@@ -62,6 +63,7 @@ D3.sankey =
           {left: 'ambient_heat',                 right: 'heat',                      gquery: 'sankey_0_to_1_ambient_heat_to_heat',                     color: '#ADDE4C'},
           {left: 'residual_heat',                right: 'heat',                      gquery: 'sankey_0_to_1_residual_heat_to_heat',                    color: '#cc0000'},
           {left: 'imported_heat',                right: 'heat',                      gquery: 'sankey_0_to_1_imported_heat_to_heat',                    color: '#cc0000'},
+          {left: 'geothermal',                   right: 'heat',                      gquery: 'sankey_0_to_1_geothermal_to_heat',                       color: '#FF8400'},
 
           {left: 'biomass_products',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_biomass_products_to_hydrogen',             color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'hydrogen',                  gquery: 'sankey_0_to_1_natural_gas_to_hydrogen',                  color: '#7f7f7f'},

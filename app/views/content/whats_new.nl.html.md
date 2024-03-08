@@ -8,12 +8,12 @@ De gebouwvoorraad wordt nu op een hoger detailniveau uitgesplitst. Woningen word
 
 Verken de nieuwe warmtemodellering in de **[Huishoudens](/scenario/demand/households/overview)** en **[Gebouwen](/scenario/demand/buildings/overview)** secties.
 
--> <img src="/assets/pages/whats_new/residential_heating_demand_nl" width="600" /> <-
+-> <img src="/assets/pages/whats_new/residential_heating_demand_nl.png" width="600" /> <-
 
 ### Kostenexportfunctionaliteit bijgewerkt en uitgebreid
 De kostenexportfunctionaliteit van het ETM heeft een grote update ondergaan! De download biedt nu veel gedetailleerdere informatie over de kosten van een scenario. Beginnend met de totale kosten, de totale CAPEX en de totale OPEX geeft het csv-bestand details over de componenten van CAPEX en OPEX en de parameters die ten grondslag liggen aan CAPEX-berekeningen, zoals de technische levensduur. De kostenexportfunctionaliteit weerspiegelt nu beter welke mogelijkheden het ETM biedt voor kostenberekening. 
 
--> <img src="/assets/pages/whats_new/costs_specification_costs_functionality_en" width="600" /> <-
+-> <img src="/assets/pages/whats_new/costs_specification_costs_functionality_en.png" width="600" /> <-
 
 ### Zon PV op dak voor huishoudens en gebouwen zijn verhuisd naar Aanbod
 De schuifjes voor zon PV op daken van huishoudens en gebouwen zijn aangepast: het opgestelde vermogen van deze technologieën kan nu direct ingesteld worden (in MW). De schuifjes zijn verplaatst naar de sectie **[Hernieuwbare elektriciteit](/scenario/supply/electricity_renewable/solar-power)**.

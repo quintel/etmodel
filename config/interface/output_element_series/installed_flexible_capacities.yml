@@ -297,14 +297,23 @@
   gquery: hydrogen_production_flexible_autothermal_reformer_capacity
   output_element_key: installed_flexible_capacities
   key: autothermal_reformer_dispatchable_hydrogen_installed_flexible_capacities
-- label: energy_hydrogen_ammonia_reformer_dispatchable
-  color: "#1ce6d6"
+- label: energy_imported_hydrogen_backup
+  color: "#A7A1C5"
   order_by: 380
   group: hydrogen
   is_target_line: false
-  gquery: hydrogen_production_flexible_ammonia_reformer_capacity
+  gquery: hydrogen_production_flexible_import_backup_capacity
   output_element_key: installed_flexible_capacities
-  key: ammonia_reformer_dispatchable_hydrogen_installed_flexible_capacities
+  key: imported_hydrogen_backup_hydrogen_installed_flexible_capacities
+- label: energy_export_hydrogen_backup
+  color: "#667D94"
+  order_by: 390
+  group: hydrogen
+  is_target_line: false
+  gquery: hydrogen_demand_flexible_export_backup_capacity
+  output_element_key: installed_flexible_capacities
+  key: exported_hydrogen_backup_hydrogen_installed_flexible_capacities
+
 
 - label: residual_load_excess_peak
   color: "blue"

@@ -30,6 +30,21 @@
   description: 
   output_element_type_name: hourly_stacked_area
 - under_construction: false
+  unit: €
+  percentage: false
+  group: Supply
+  sub_group: hydrogen
+  show_point_label: false
+  growth_chart: false
+  key: hydrogen_production_cost_curve
+  max_axis_value: 
+  min_axis_value: 
+  hidden: false
+  requires_merit_order: true
+  dependent_on: 
+  description: 
+  output_element_type_name: hourly_stacked_area  
+- under_construction: false
   unit: MW
   percentage: false
   group: Supply
@@ -62,7 +77,7 @@
     serie_selections:
       - energy_hydrogen_storage
       - depleted_gas_field
-      - salt_cavern
+      - salt_cavern      
 - under_construction: false
   unit: Eur/Mwh
   percentage: false

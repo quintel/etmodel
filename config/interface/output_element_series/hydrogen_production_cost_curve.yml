@@ -1,0 +1,260 @@
+---
+- label: hydrogen_production_cost_curve
+  color: "#CC0000"
+  order_by: 5
+  group: 
+  show_at_first: 
+  is_target_line: true
+  target_line_position: 
+  gquery: total_hydrogen_production_cost_curve
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: total_hydrogen_production_cost_curve
+
+# Must-run
+- label: energy_hydrogen_steam_methane_reformer_ccs_must_run
+  color: "#DFE4EA"
+  order_by: 10
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_steam_methane_reformer_ccs_must_run_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_steam_methane_reformer_ccs_must_run_hydrogen_production_cost_curve
+- label: energy_hydrogen_steam_methane_reformer_must_run
+  color: "#989ca0"
+  order_by: 15
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_steam_methane_reformer_must_run_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_steam_methane_reformer_must_run_hydrogen_production_cost_curve  
+- label: energy_hydrogen_autothermal_reformer_ccs_must_run
+  color: "#D5C6BA"
+  order_by: 20
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_autothermal_reformer_ccs_must_run_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_autothermal_reformer_ccs_must_run_hydrogen_production_cost_curve
+- label: energy_hydrogen_autothermal_reformer_must_run
+  color: "#A59990"
+  order_by: 25
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_autothermal_reformer_must_run_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_autothermal_reformer_must_run_hydrogen_production_cost_curve    
+- label: energy_hydrogen_ammonia_reformer_must_run
+  color: "#108a80"
+  order_by: 30
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_ammonia_reformer_must_run_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_ammonia_reformer_must_run_hydrogen_production_cost_curve
+- label: energy_imported_hydrogen_baseload
+  color: "#C6C2DA"
+  order_by: 35
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_imported_hydrogen_baseload_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_imported_hydrogen_baseload_hydrogen_production_cost_curve
+
+  
+
+- label: energy_hydrogen_liquid_hydrogen_regasifier
+  color: "#524A79"
+  order_by: 40
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_liquid_hydrogen_regasifier_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_liquid_hydrogen_regasifier_hydrogen_production_cost_curve
+- label: energy_hydrogen_lohc_reformer
+  color: "#CFCBDF"
+  order_by: 45
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_lohc_reformer_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_lohc_reformer_hydrogen_production_cost_curve
+
+
+
+
+
+- label: energy_hydrogen_biomass_gasification_ccs
+  color: "#A4B0BE"
+  order_by: 55
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_biomass_gasification_ccs_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_biomass_gasification_ccs_hydrogen_production_cost_curve
+- label: energy_hydrogen_biomass_gasification
+  color: "#A2D679"
+  order_by: 60
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_biomass_gasification_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_biomass_gasification_hydrogen_production_cost_curve
+- label: energy_hydrogen_electrolysis_solar_electricity
+  color: "#FDE97B"
+  order_by: 65
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_electrolysis_solar_electricity_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_electrolysis_solar_electricity_hydrogen_production_cost_curve
+- label: energy_hydrogen_electrolysis_wind_electricity
+  color: "#63A1C9"
+  order_by: 70
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_electrolysis_wind_electricity_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_electrolysis_wind_electricity_hydrogen_production_cost_curve
+- label: energy_hydrogen_flexibility_p2g_electricity
+  color: "#ded033"
+  order_by: 75
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_flexibility_p2g_electricity_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_flexibility_p2g_electricity_hydrogen_production_cost_curve
+
+
+#Flex
+
+
+
+- label: energy_hydrogen_steam_methane_reformer_dispatchable
+  color: "#BEC3C8"
+  order_by: 100
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_steam_methane_reformer_dispatchable_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_steam_methane_reformer_dispatchable_hydrogen_production_cost_curve
+- label: energy_hydrogen_ammonia_reformer_dispatchable
+  color: "#1ce6d6"
+  order_by: 105
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_ammonia_reformer_dispatchable_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_ammonia_reformer_dispatchable_hydrogen_production_cost_curve
+- label: energy_hydrogen_autothermal_reformer_dispatchable
+  color: "#847a73"
+  order_by: 110
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_autothermal_reformer_dispatchable_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_autothermal_reformer_dispatchable_hydrogen_production_cost_curve
+- label: hydrogen_storage_depleted_gas_field
+  color: "#87CEEB"
+  order_by: 115
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_depleted_gas_field_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_storage_depleted_gas_field_hydrogen_production_cost_curve
+- label: hydrogen_storage_salt_cavern
+  color: "#5e9aa4"
+  order_by: 120
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_salt_cavern_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_hydrogen_storage_salt_cavern_hydrogen_production_cost_curve
+- label: energy_imported_hydrogen_backup
+  color: "#b1b0b5"
+  order_by: 125
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_imported_hydrogen_backup_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: energy_imported_hydrogen_backup_hydrogen_production_cost_curve    
+
+
+   

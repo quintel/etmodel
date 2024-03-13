@@ -131,7 +131,7 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: energy_hydrogen_wind_turbine_offshore_hydrogen_cost_capacity
-- label: imported_hydrogen
+- label: energy_imported_hydrogen_baseload
   color: "#C6C2DA"
   order_by: 210
   group: ''
@@ -169,7 +169,7 @@
   key: energy_hydrogen_ammonia_reformer_must_run_hydrogen_cost_capacity
 - label: energy_hydrogen_ammonia_reformer_dispatchable
   color: "#1ce6d6"
-  order_by: 1240
+  order_by: 240
   group: 
   show_at_first: 
   is_target_line: 
@@ -179,4 +179,51 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: energy_hydrogen_ammonia_reformer_dispatchable_hydrogen_cost_capacity
-
+- label: hydrogen_storage_salt_cavern
+  color: "#5e9aa4"
+  order_by: 250
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_storage_salt_cavern_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_storage_salt_cavern_hydrogen_cost_capacity
+- label: hydrogen_storage_depleted_gas_field
+  color: "#87CEEB"
+  order_by: 260
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_storage_depleted_gas_field_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_storage_depleted_gas_field_hydrogen_cost_capacity
+- label: energy_hydrogen_lohc_reformer
+  color: "#CFCBDF"
+  order_by: 270
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_lohc_reformer_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_lohc_reformer_hydrogen_cost_capacity
+- label: energy_hydrogen_liquid_hydrogen_regasifier
+  color: "#524A79"
+  order_by: 280
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_liquid_hydrogen_regasifier_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_liquid_hydrogen_regasifier_hydrogen_cost_capacity

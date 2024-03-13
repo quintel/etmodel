@@ -233,7 +233,12 @@ en:
     hydrogen_cost_capacity:
       title: Production capacities and costs of hydrogen
       short_description:
-      description:
+      description: |
+        This graph depicts the installed capacity and production costs (in €/MWh) of hydrogen technologies in your scenario. 
+        The technologies are sorted by ascending production costs. The installed capacity of the technologies in this chart is defined 
+        as the hydrogen output capacity. Note that in this chart, technologies with installed capacity but without hydrogen production 
+        in the scenario are depicted to have production costs of 0 €/MWh. In reality, the production costs per MWh are infinite since 
+        there is no hydrogen production by this technology.
     hydrogen_production_cost_curve:
       title: Cost of hydrogen production per hour
       short_description:

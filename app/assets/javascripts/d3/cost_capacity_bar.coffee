@@ -174,5 +174,8 @@ D3.cost_capacity_bar =
           if d.type == 'must_run'
             html += '*<br/>* Must run plants do not participate in merit order'
 
+          if d.production == 0
+            html += '*<br/>* Assigned 0 costs because production is 0'
+
           html
         )

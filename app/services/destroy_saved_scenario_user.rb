@@ -17,9 +17,9 @@ class DestroySavedScenarioUser
   param :saved_scenario_user
 
   def call
+    return api_response if failure?
+
     if saved_scenario_user.destroy
-      # TODO: and undo the destroy on fail!
-      return api_response if failure?
       return historical_scenarios_result if historical_scenarios_result.failure?
 
       api_response
@@ -51,19 +51,17 @@ class DestroySavedScenarioUser
     api_response.failure?
   end
 
-  # Update historical scenarios. If one fails, return the result immeadiately.
+  # Update historical scenarios. If one fails, just continue.
   def api_response_historical_scenarios
     saved_scenario.scenario_id_history.each do |scenario_id|
-      result = DestroyAPIScenarioUser.call(
+      DestroyAPIScenarioUser.call(
         http_client, scenario_id, api_user_params
       )
-      return result if result.failure?
     end
 
     ServiceResult.success
   end
 
-  # TODO: create user from all the ones that succeeded before the fail! << Here
   def historical_scenarios_result
     @historical_scenarios_result = api_response_historical_scenarios
   end

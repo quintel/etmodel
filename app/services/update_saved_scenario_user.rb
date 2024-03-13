@@ -21,8 +21,8 @@ class UpdateSavedScenarioUser
   def call
     saved_scenario_user.role_id = role_id
 
-    return failure unless saved_scenario_user.save
     return api_response if failure?
+    return failure unless saved_scenario_user.save
     return historical_scenarios_result if historical_scenarios_result.failure?
 
     ServiceResult.success(saved_scenario_user)
@@ -37,7 +37,6 @@ class UpdateSavedScenarioUser
   def api_user_params
     @api_user_params ||= {
       user_id: saved_scenario_user.user_id,
-      user_email: saved_scenario_user.user_email,
       role: role_id
     }
   end
@@ -55,19 +54,17 @@ class UpdateSavedScenarioUser
     api_response.failure?
   end
 
-  # Update historical scenarios. If one fails, return the result immeadiately.
+  # Update historical scenarios. If one fails, just continue.
   def api_response_historical_scenarios
     saved_scenario.scenario_id_history.each do |scenario_id|
-      result = UpdateAPIScenarioUser.call(
+      UpdateAPIScenarioUser.call(
         http_client, scenario_id, api_user_params
       )
-      return result if result.failure?
     end
 
     ServiceResult.success
   end
 
-  # TODO: downgrade user from all the ones that succeeded before the fail! << Here
   def historical_scenarios_result
     @historical_scenarios_result = api_response_historical_scenarios
   end

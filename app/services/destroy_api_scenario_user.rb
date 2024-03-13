@@ -18,6 +18,8 @@ class DestroyAPIScenarioUser
     )
   rescue Faraday::ResourceNotFound
     ServiceResult.failure('Scenario not found')
+  rescue Faraday::UnprocessableEntityError => e
+    ServiceResult.single_failure_from_unprocessable_entity_on_multiple_objects(e)
   rescue Faraday::Error => e
     Sentry.capture_exception(e)
     ServiceResult.failure("Failed to destroy scenario user: #{e.message}")

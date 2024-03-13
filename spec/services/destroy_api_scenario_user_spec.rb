@@ -57,7 +57,7 @@ describe DestroyAPIScenarioUser, type: :service do
     end
 
     it 'returns the scenario error messages' do
-      expect(result.errors).to eq(['Failed to destroy scenario user: '])
+      expect(result.errors).to eq(['Id is invalid'])
     end
   end
 end

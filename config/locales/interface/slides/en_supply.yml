@@ -585,13 +585,16 @@ en:
       short_description:
       description: "The ETM calculates hydrogen demand and supply on an hourly-basis
         which makes it possible to identify moments of excess hydrogen production
-        and shortages. The ETM ensures that hydrogen supply matches demand for every
-        hour per year in your scenario. It does so by automatically storing excess
-        hydrogen production in a buffer, drawing from this buffer at demand peaks
-        and by importing/exporting any shortage/excess of hydrogen. \r\n<br><br />\r\nThe
-        storage volume that is needed for that is shown in the chart on the right.
-        The costs for storage can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
-        >costs section</a>."
+        and shortages. During times of excess hydrogen production, the hydrogen surplus 
+        can be stored in salt caverns or depleted gas fields. During times of hydrogen shortage, 
+        these storage technologies can supply stored hydrogen to meet hydrogen demand. 
+        \r\n<br><br />\r\nBelow, the storage volume and relative storage capacity of salt caverns 
+        and depleted gas fields can be set. The costs for storage can be adjusted in the 
+        <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\">costs section</a>.
+        \r\n<br><br />\r\nThe hydrogen network offers some flexibility in the form of linepack. The ETM does not take 
+        this into account. Linepack offers a limited volume to mitigate very short-term (hourly) fluctuations of 
+        hydrogen demand and supply. The actual volume depends on the extent to which the network is fully utilised. 
+        The volume is equivalent to roughly 1/3 salt cavern for 1.500 km of hydrogens transport pipelines."
     supply_ammonia_production:
       title: Ammonia production
       short_description:

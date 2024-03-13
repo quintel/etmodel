@@ -19,8 +19,8 @@ class CreateSavedScenarioUser
   param :settings, default: proc { {} }
 
   def call
-    return failure unless saved_scenario_user.valid?
     return api_response_invite if invite_failure?
+    return failure unless saved_scenario_user.valid?
     return historical_scenarios_result if historical_scenarios_result.failure?
 
     saved_scenario_user.save
@@ -33,11 +33,24 @@ class CreateSavedScenarioUser
   private
 
   def saved_scenario_user
-    @saved_scenario_user ||= SavedScenarioUser.new(settings.merge(saved_scenario: saved_scenario))
+    @saved_scenario_user ||= SavedScenarioUser.new(
+      succesful_user_params.merge(saved_scenario: saved_scenario)
+    )
   end
 
+  # This should never occur as the record is prevalidated by the engine
   def failure
     ServiceResult.failure(saved_scenario_user.errors.messages.keys)
+  end
+
+  def succesful_user_params
+    raw = api_response_invite.value.first
+
+    {
+      user_id: raw['user_id'] ? raw['user_id'].to_i : nil,
+      user_email: raw['user_email'],
+      role_id: raw['role_id'].to_i
+    }
   end
 
   def api_user_params
@@ -67,20 +80,17 @@ class CreateSavedScenarioUser
     api_response_invite.failure?
   end
 
-  # Update historical scenarios. If one fails, return the result immeadiately.
-  # TODO: remove user from all the ones that succeeded before the fail!
+  # Update historical scenarios. If one fails, just move on to the next
   def api_response_historical_scenarios
     saved_scenario.scenario_id_history.each do |scenario_id|
-      result = CreateAPIScenarioUser.call(
+      CreateAPIScenarioUser.call(
         http_client, scenario_id, api_user_params
       )
-      return result if result.failure?
     end
 
     ServiceResult.success
   end
 
-  # TODO: remove user from all the ones that succeeded before the fail! << Here
   def historical_scenarios_result
     @historical_scenarios_result = api_response_historical_scenarios
   end

@@ -13,6 +13,8 @@ class SavedScenarioUser < ApplicationRecord
   before_save :ensure_one_owner_left_before_save
   before_destroy :ensure_one_owner_left_before_destroy
 
+  private
+
   # Either user_id or user_email should be present, but not both
   def user_id_or_email
     return if user_id.blank? ^ user_email.blank?
@@ -28,30 +30,28 @@ class SavedScenarioUser < ApplicationRecord
     # Don't check new records and ignore if the role is set to owner.
     return if new_record? || role_id == User::ROLES.key(:scenario_owner)
 
-    # Collect roles for other users of this scenario
-    other_users = saved_scenario.saved_scenario_users.where.not(id: id)
-    other_role_ids = other_users.pluck(:role_id).compact.uniq
-
-    # Cancel this action when there are no other users or no other owners
-    if other_users.blank? || other_role_ids.none?(User::ROLES.key(:scenario_owner))
-      errors.add(:base, :ownership, message: 'Last owner cannot be changed')
-      throw(:abort)
-    end
+    ensure_last_owner
   end
 
   def ensure_one_owner_left_before_destroy
     # If the saved_scenario or user is getting destroyed, skip this validation
-    return true if destroyed_by_association
-    return true unless role_id == User::ROLES.key(:scenario_owner)
+    return if destroyed_by_association
+    return unless role_id == User::ROLES.key(:scenario_owner)
 
-    # Collect roles for other users of this scenario
-    other_users = saved_scenario.saved_scenario_users.where.not(id: id)
-    other_role_ids = other_users.pluck(:role_id).compact.uniq
+    ensure_last_owner
+  end
 
-    # Cancel this action when there are no other users or no other owners
-    if other_users.blank? || other_role_ids.none?(User::ROLES.key(:scenario_owner))
-      errors.add(:base, :ownership, message: 'Last owner cannot be deleted')
-      throw(:abort)
-    end
+  def last_owner?
+    saved_scenario
+      .saved_scenario_users.where.not(id: id)
+      .pluck(:role_id).compact.uniq
+      .none?(User::ROLES.key(:scenario_owner))
+  end
+
+  def ensure_last_owner
+    return unless last_owner?
+
+    errors.add(:base, :ownership, message: 'Last owner cannot be altered')
+    throw(:abort)
   end
 end

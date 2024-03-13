@@ -7,7 +7,7 @@ describe CreateSavedScenarioUser, type: :service do
   let(:user) { FactoryBot.create(:user) }
   let(:email) { 'hello@me.com' }
   let(:new_viewer_user_params) { { role_id: 1, user_email: email } }
-  let(:api_result) { ServiceResult.success }
+  let(:api_result) { ServiceResult.success([{ 'role_id' => 1, 'user_email' => email }]) }
   let(:result) { described_class.call(client, saved_scenario, user.name, new_viewer_user_params) }
   let!(:saved_scenario) do
     FactoryBot.create :saved_scenario,
@@ -47,6 +47,7 @@ describe CreateSavedScenarioUser, type: :service do
 
   context 'when the record was invalid' do
     let(:new_viewer_user_params) { { role_id: 1, user_email: 'ppp' } }
+    let(:api_result) { ServiceResult.failure(['Invalid email']) }
 
     it 'returns a ServiceResult' do
       expect(result).to be_a(ServiceResult)
@@ -57,7 +58,7 @@ describe CreateSavedScenarioUser, type: :service do
     end
 
     it 'returns the scenario error messages' do
-      expect(result.errors).to eq([:user_email])
+      expect(result.errors).to eq(['Invalid email'])
     end
   end
 
@@ -92,6 +93,29 @@ describe CreateSavedScenarioUser, type: :service do
 
     it 'returns the scenario error messages' do
       expect(result.errors).to eq(['Nope'])
+    end
+  end
+
+  context 'when the API response contains a found linked user' do
+    let(:existing_user) {create(:user)}
+    let(:api_result) { ServiceResult.success([{ 'role_id' => 1, 'user_id' => existing_user.id }]) }
+
+    it 'returns a ServiceResult' do
+      expect(result).to be_a(ServiceResult)
+    end
+
+    it 'is successful' do
+      expect(result).to be_successful
+    end
+
+    it 'changes the viewers on the SavedScenario' do
+      expect { result }.to change(
+        saved_scenario.saved_scenario_users, :count
+      ).from(1).to(2)
+    end
+
+    it 'sets the linked user on the SavedScenarioUser' do
+      expect(result.value.user_id).to eq(existing_user.id)
     end
   end
 end

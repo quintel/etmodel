@@ -5,7 +5,12 @@ describe SavedScenarioUsersController do
 
   before do
     # Disable relaying ScenarioUserUpdates to ETEngine
-    allow(CreateAPIScenarioUser).to receive(:call).and_return(ServiceResult.success)
+    allow(CreateAPIScenarioUser).to receive(:call).and_return(
+      ServiceResult.success([{
+        'user_email' => 'test@test.com',
+        'role_id' => User::ROLES.key(:scenario_owner)
+      }])
+    )
     allow(UpdateAPIScenarioUser).to receive(:call).and_return(ServiceResult.success)
     allow(DestroyAPIScenarioUser).to receive(:call).and_return(ServiceResult.success)
   end

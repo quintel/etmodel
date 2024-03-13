@@ -373,7 +373,7 @@
   output_element_key: mekko_of_hydrogen_network
   key: energy_import_liquid_hydrogen_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_import_lohc_for_mekko
-  color: "#CFCBDF"
+  color: "#8373D0"
   order_by: 450
   group: supply
   show_at_first: false
@@ -384,15 +384,27 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_import_lohc_for_mekko_supply_mekko_of_hydrogen_network
-- label: energy_import_hydrogen_for_mekko
-  color: "#A7A1C5"
+- label: energy_imported_hydrogen_baseload
+  color: "#C6C2DA"
   order_by: 460
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_import_hydrogen_for_mekko
+  gquery: energy_import_hydrogen_baseload_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_import_hydrogen_for_mekko_supply_mekko_of_hydrogen_network    
+  key: energy_import_hydrogen_baseload_for_mekko_supply_mekko_of_hydrogen_network    
+- label: energy_imported_hydrogen_backup
+  color: "#A7A1C5"
+  order_by: 470
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_import_hydrogen_backup_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_import_hydrogen_backup_for_mekko_supply_mekko_of_hydrogen_network    

@@ -238,8 +238,12 @@ nl:
     hydrogen_cost_capacity:
       title: Productiecapaciteiten en kosten van waterstof
       short_description:
-      description:
-
+      description: |
+        Deze grafiek geeft het geïnstalleerd vermogen en de productiekosten (in €/MWh) van waterstoftechnologieën in jouw scenario weer. 
+        De technologieën zijn gesorteerd op toenemende productiekosten. Het geïnstalleerd vermogen van een technologie is gedefinieerd 
+        als het waterstofproductievermogen (waterstof ouput vermogen). Let op dat in de grafiek technologieën met geïnstalleerd vermogen, 
+        maar zonder waterstofproductie (deze worden dus niet in werking gezet in het scenario) worden weergegeven met productiekosten van 
+        0 €/MWh. In werkelijkheid zijn de productiekosten per MWh oneindig doordat er geen waterstofproductie is door deze technologie. 
     mekko_of_kerosene_demand_supply:
       title: Vraag en aanbod van kerosine
       short_description: ''

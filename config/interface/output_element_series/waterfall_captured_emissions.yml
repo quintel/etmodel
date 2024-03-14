@@ -1,31 +1,19 @@
 ---
-- label: captured_bio_emissions
+- label: captured_emissions
   color: "#5D7929" 
   order_by: 5
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: captured_bio_emissions_waterfall_captured_emissions
+  gquery: captured_emissions_waterfall_captured_emissions
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_captured_emissions
-  key: captured_bio_emissions_waterfall_captured_emissions
-
-- label: captured_non_bio_emissions
-  color: "#333333" 
-  order_by: 10
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: captured_non_bio_emissions_waterfall_captured_emissions
-  is_1990: false
-  dependent_on: 
-  output_element_key: waterfall_captured_emissions
-  key: captured_non_bio_emissions_waterfall_captured_emissions  
+  key: captured_emissions_waterfall_captured_emissions
 
 - label: imported_emissions
   color: "#854321" 
-  order_by: 15
+  order_by: 10
   show_at_first: false
   is_target_line: false
   target_line_position: ''
@@ -34,6 +22,18 @@
   dependent_on: 
   output_element_key: waterfall_captured_emissions
   key: imported_emissions_waterfall_captured_emissions    
+
+- label: exported_emissions
+  color: "#854321" 
+  order_by: 15
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: exported_emissions_waterfall_captured_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_captured_emissions
+  key: exported_emissions_waterfall_captured_emissions
 
 - label: stored_emissions
   color: "#4169E1" 
@@ -47,33 +47,9 @@
   output_element_key: waterfall_captured_emissions
   key: stored_emissions_waterfall_captured_emissions 
 
-- label: exported_emissions
-  color: "#854321" 
-  order_by: 20
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: exported_emissions_waterfall_captured_emissions
-  is_1990: false
-  dependent_on: 
-  output_element_key: waterfall_captured_emissions
-  key: exported_emissions_waterfall_captured_emissions
-
-- label: utilised_emissions
-  color: "#8B0000" 
-  order_by: 25
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: methanol_utilised_emissions_waterfall_captured_emissions
-  is_1990: false
-  dependent_on: 
-  output_element_key: waterfall_captured_emissions
-  key: methanol_utilised_emissions_waterfall_captured_emissions  
-
 - label: delayed_indefinitely_emissions
   color: "#88CCEE" 
-  order_by: 30
+  order_by: 25
   show_at_first: false
   is_target_line: false
   target_line_position: ''
@@ -85,7 +61,7 @@
 
 - label: negative_captured_bio_emissions
   color: "#5D7929" 
-  order_by: 35
+  order_by: 30
   show_at_first: false
   is_target_line: false
   target_line_position: ''

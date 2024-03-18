@@ -9,7 +9,7 @@ en:
         It works like this: methane reacts in the presence of a catalyst with high
         temperature steam and gives a mixture of hydrogen and other gases. The unwanted
         gases (including CO<sub>2</sub>) are then separated through further reactions
-        and the resulting hydrogen is purified to meet industrial standards. \r\n<br/><br/>\r\nSteam
+        and the resulting hydrogen is purified to meet industrial standards. <br/><br/>Steam
         methane reforming is already widely employed, but mostly for industry use.
         This plant's input is natural gas. Steam methane reforming
         is often thought of an important transitional hydrogen production process:
@@ -29,7 +29,7 @@ en:
         It works like this: methane reacts in the presence of a catalyst with high
         temperature steam and gives a mixture of hydrogen and other gases. The unwanted
         gases (including CO<sub>2</sub>) are then separated through further reactions
-        and the resulting hydrogen is purified to meet industrial standards. \r\n<br/><br/>\r\nSteam
+        and the resulting hydrogen is purified to meet industrial standards. <br/><br/>Steam
         methane reforming is already widely employed, but mostly for industry use.
         This plant's input is natural gas. Steam methane reforming
         is often thought of an important transitional hydrogen production process:
@@ -215,7 +215,7 @@ en:
       short_description:
       description: |
         With this slider, you can set the storage capacity relative to the storage volume of the depleted gas fields.
-        This determines how many days the gas field needs to charge at full capacity to go from being empty 
+        This determines how many hours the gas field needs to charge at full capacity to go from being empty 
         to fully stored. Effectively this slider therefore changes the total storage capacity, given a 
         certain amount of storage volume. </br></br>
         You can see the total resulting storage capacity in the 'Technical and financial 
@@ -227,7 +227,7 @@ en:
       short_description:
       description: |
         With this slider, you can set the storage volume relative to the storage volume of the salt caverns.
-        This determines how many days the salt caverns needs to charge at full capacity to go from being empty 
+        This determines how many hours the salt caverns needs to charge at full capacity to go from being empty 
         to fully stored. Effectively this slider therefore changes the total storage capacity, given a 
         certain amount of storage volume. </br></br>
         You can see the total resulting storage capacity in the 'Technical and financial 
@@ -239,10 +239,14 @@ en:
       short_description:
       description: |
         This slider sets the volume of the amount of hydrogen that can be stored in the depleted gas fields.
-        It's default setting is on 8 TWh.
+        The typical volume of a depleted gas field is approximately 8 TWh. </br></br>
+        Additionally, it is possible to set the costs of hydrogen storage in depleted gas fields in the 
+        <a href=/scenario/costs/costs_hydrogen/hydrogen-storage >Costs & efficiencies</a> section. </br></br>
     volume_of_energy_hydrogen_storage_salt_cavern:
       title: Storage volume
       short_description:
       description: |
         This slider sets the volume of the amount of hydrogen that can be stored in the salt caverns.
-        It's default setting is on 0.25 TWh.
+        The typical volume of a salt cavern is approximately 0.25 TWh. </br></br>
+        Additionally, it is possible to set the costs of hydrogen storage in salt caverns in the 
+        <a href=/scenario/costs/costs_hydrogen/hydrogen-storage >Costs & efficiencies</a> section. </br></br>

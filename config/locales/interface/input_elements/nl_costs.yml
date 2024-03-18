@@ -542,18 +542,18 @@ nl:
       description: 'Deze schuif stelt de toe-of afname in die je verwacht voor
         de investeringskosten voor ''concentrated solar power'' (CSP). De kosten worden
         vergeleken met de kosten van vandaag de dag. '
-    costs_hydrogen_storage:
-      title: Waterstofopslagkosten
+    costs_hydrogen_storage_depleted_gas_field:
+      title: Kosten waterstofopslag leeg gasveld
       short_description:
-      description: "De startwaarde van deze schuif is gebaseerd op waterstofopslag
-        in zoutcavernes. Waterstofopslag in zoutcavernes is een goedkope manier of
-        grote hoeveelheden waterstof over lange periodes op te slaan. De total kosten
-        van waterstofopslag in zoutcavernes variëren tussen 2.5 en 3.4 euro/MWh, terwijl
-        de totale kosten van waterstofopslag in hogedruk-tanks bijvoorbeeld wel 4x
-        hoger liggen. <sup>1</sup> Echter, voor kleine opslagcapaciteiten is opslag
-        in zoutcavernes niet kostenefficiênt door de vaste bouwkosten.\r\n<br><br>\r\nSources:<br
-        />   \r\n1. Berenschot (2017). CO<sub>2</sub>-vrije waterstofproductie uit
-        gas"
+      description: "Deze schuif stelt de toekomstige kosten in van waterstofopslag
+        in lege gasvelden. De startwaarde van de schuif representeert de typische kosten
+        van waterstofopslag in lege gasvelden."
+    costs_hydrogen_storage_salt_cavern:
+      title: Kosten waterstofopslag zoutcaverne
+      short_description:
+      description: "Deze schuif stelt de toekomstige kosten in van waterstofopslag
+        in zoutcavernes. De startwaarde van de schuif representeert de typische kosten
+        van waterstofopslag in zoutcavernes."
     om_costs_solar_thermal:
       title: Onderhoudskosten zonthermie
       short_description:

@@ -515,18 +515,18 @@ en:
       short_description:
       description: This slider sets the height of the assumed costs for concentrated
         solar power (CSP). Costs are compared to current costs.
-    costs_hydrogen_storage:
-      title: Hydrogen storage costs
+    costs_hydrogen_storage_depleted_gas_field:
+      title: Storage costs depleted gas field
       short_description:
-      description: "The default setting of the slider is based hydrogen storage in
-        salt caverns. Hydrogen storage in salt caverns is a cheap way to store large
-        quantities of hydrogen over a long period of time. The total costs of hydrogen
-        storage in salt caverns ranges between 2.5 and 3.4 euro/MWh, while the total
-        costs of hydrogen storage in pressurized tanks for example are typically four
-        times higher.<sup>1</sup> However, for small energy-storage capacities storage
-        in salt caverns is not cost-efficient due to the fixed construction costs.
-        \r\n<br><br>\r\nSources:<br />   \r\n1. Berenschot (2017). CO<sub>2</sub>-free
-        hydrogen production from gas"
+      description: "This slider sets the future hydrogen storage costs of storage in depleted
+        gas fields. The start value of this slider is the typical storage costs in €/MWh for
+        depleted gas fields."
+    costs_hydrogen_storage_salt_cavern:
+      title: Storage costs salt cavern
+      short_description:
+      description: "This slider sets the future hydrogen storage costs of storage in salt caverns. 
+        The start value of this slider is the typical storage costs in €/MWh for
+        salt caverns."
     om_costs_solar_thermal:
       title: O&M costs solar thermal energy
       short_description:

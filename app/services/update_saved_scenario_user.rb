@@ -37,7 +37,7 @@ class UpdateSavedScenarioUser
   def api_user_params
     @api_user_params ||= {
       user_id: saved_scenario_user.user_id,
-      role: role_id
+      role: User::ROLES[role_id]
     }
   end
 

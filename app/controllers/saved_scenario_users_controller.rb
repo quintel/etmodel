@@ -49,7 +49,6 @@ class SavedScenarioUsersController < ApplicationController
         format.js { render 'user_table', layout: false }
       end
     else
-      # TODO: redo error handling --> check what ETEngine returns
       flash[:alert] =
         t("scenario.users.errors.#{result.errors.first}") ||
         "#{t('scenario.users.errors.create')} #{t('scenario.users.errors.general')}"
@@ -82,8 +81,8 @@ class SavedScenarioUsersController < ApplicationController
         format.js { render 'user_table', layout: false }
       end
     else
-      # TODO: fix error messaging coming from the engine
-      flash[:alert] = "#{t('scenario.users.errors.update')} #{t('scenario.users.errors.general')}"
+      flash[:alert] = t("scenario.users.errors.#{result.errors.first}") ||
+        "#{t('scenario.users.errors.update')} #{t('scenario.users.errors.general')}"
 
       respond_to do |format|
         format.js { render 'flash', layout: false }

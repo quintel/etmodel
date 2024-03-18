@@ -13,6 +13,13 @@ class SavedScenarioUser < ApplicationRecord
   before_save :ensure_one_owner_left_before_save
   before_destroy :ensure_one_owner_left_before_destroy
 
+  def as_json(*)
+    params = super
+
+    params[:role] = User::ROLES[role_id]
+    params.except(:role_id)
+  end
+
   private
 
   # Either user_id or user_email should be present, but not both

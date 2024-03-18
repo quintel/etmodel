@@ -1,6 +1,11 @@
 ---
-- key: costs_hydrogen_storage
+- key: costs_hydrogen_storage_salt_cavern
   step_value: 0.1
   unit: "€/MWh"
-  position: 1
+  position: 100
+  slide_key: costs_hydrogen_storage
+- key: costs_hydrogen_storage_depleted_gas_field
+  step_value: 0.1
+  unit: "€/MWh"
+  position: 110
   slide_key: costs_hydrogen_storage

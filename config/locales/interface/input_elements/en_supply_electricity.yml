@@ -29,14 +29,26 @@ en:
       title: Biomass power plant
       short_description:
       description: |
-        A biomass power plant produces electricity. Here you can set the
-        installed electrical capacity of must-run biomass power plants that supply electricity only.
+        A biomass power plant produces electricity from biomass feedstock. 
+        For a typical biomass power plant, a share of its installed capacity operates on a must-run basis, 
+        ensuring continuous electricity production regardless of demand fluctuations. The remaining capacity is 
+        dispatchable, meaning it operates flexibly to meet varying electricity demand. Therefore, logically 
+        there will be no installed dispatchable capacity if there is no installed must-run capacity for the
+        biomass power plant. <br/><br/>
+        Here you can set the installed electrical capacity of must-run biomass power plants that supply electricity 
+        only.
     capacity_of_energy_power_wood_pellets_dispatchable:
       title: Biomass power plant
       short_description:
       description: |
-        A biomass power plant produces electricity. Here you can set the
-        installed electrical capacity of dispatchable biomass power plants that supply electricity only.
+        A biomass power plant produces electricity from biomass feedstock. 
+        For a typical biomass power plant, a share of its installed capacity operates on a must-run basis, 
+        ensuring continuous electricity production regardless of demand fluctuations. The remaining capacity is 
+        dispatchable, meaning it operates flexibly to meet varying electricity demand. Therefore, logically 
+        there will be no installed dispatchable capacity if there is no installed must-run capacity for the
+        biomass power plant. <br/><br/>
+        Here you can set the installed electrical capacity of dispatchable biomass power plants that supply 
+        electricity only.
     capacity_of_energy_power_turbine_hydrogen:
       title: Hydrogen turbine
       short_description:

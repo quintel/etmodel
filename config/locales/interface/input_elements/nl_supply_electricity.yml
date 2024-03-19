@@ -26,16 +26,22 @@ nl:
       title: Biomassacentrale
       short_description:
       description: |
-        Een biomassacentrale prduceert elektrciteit. Stel hier het elektrische 
-        vermogen aan must-run biomassacentrales in dat elektriciteit levert aan het
-        hoogspanningsnet.        
+        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het 
+        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen. 
+        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag. 
+        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de 
+        biomassacentrale. <br/><br/>
+        Met deze schuif kan het geïnstalleerd vermogen van must-run biomassacentrales worden ingesteld die alleen elektriciteit leveren.
     capacity_of_energy_power_wood_pellets_dispatchable:
       title: Biomassacentrale
       short_description:
       description: |
-        Een biomassacentrale prduceert elektrciteit. Stel hier het elektrische 
-        vermogen aan regelbare biomassacentrales in dat elektriciteit levert aan het
-        hoogspanningsnet.        
+        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het 
+        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen. 
+        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag. 
+        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de 
+        biomassacentrale. <br/><br/>
+        Met deze schuif kan het geïnstalleerd vermogen van regelbaar biomassacentrales worden ingesteld die alleen elektriciteit leveren.    
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
       short_description:

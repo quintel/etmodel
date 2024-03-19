@@ -14,6 +14,24 @@ De derde is regelbare biomassacentrales. Aangezien de prijs voor BECC(U)S-instal
 
 Onderzoek het nu zelf!
 
+
+### Verbeteringen waterstof
+
+De waterstofsectie van het model is verbeterd!
+Met de laatste update zijn flexibele productiemogelijkheden voor waterstof toegevoegd.
+Stoommethaanreformers, ammoniareformers en autothermische reformers kunnen nu worden geïnstalleerd met een regelbare capaciteit naast de niet-regelbare capacitet.
+Naast deze flexibele producenten zijn de opties voor waterstofopslagmodellering verfijnd.
+Nu kunnen gebruikers zoutcavernes en lege gasvelden als opslagopties gebruiken in het model.
+Bovendien kunnen gebruikers zowel het volume als de capaciteit voor deze opslagopties instellen.
+Samen vormen de regelbare- en opslagproductiefaciliteiten de flexibele waterstofproductieroutes binnen de ETM.
+Welke productieroute eerst moet worden gebruikt, kan door de gebruiker worden geïnstalleerd via de nieuwe waterstofproductie merit order.
+
+-> <img src="/assets/pages/whats_new/hydrogen_production_order_nl.png" width="600" /> <-
+
+De flexibele vraagopties, die op dit moment de twee waterstofopslagopties zijn, kunnen worden geïnstalleerd via de nieuwe waterstofvraagmeritvolgorde.
+
+-> <img src="/assets/pages/whats_new/hydrogen_demnd_order_nl.png" width="600" /> <-
+
 # Maart 2024
 
 ### Warmtemodellering gebouwde omgeving is grondig herzien

@@ -189,7 +189,10 @@ en:
     mekko_of_hydrogen_network:
       title: Supply and demand of the central hydrogen network
       short_description: ''
-      description: ''
+      description: |
+        This chart shows the supply and demand categories of the central hydrogen network. The ETM always
+        balances supply and demand of hydrogen. This means that an excess of hydrogen supply is exported via the export back-up. 
+        Hydrogen is imported via the import back-up in case of a shortage of hydrogen.    
     hydrogen_production:
       title: Hydrogen production
       short_description:
@@ -201,7 +204,9 @@ en:
     hydrogen_storage:
       title: Hydrogen storage
       short_description: ''
-      description: ''
+      description: |
+        This chart shows the storage volumes of hydrogen stored in salt caverns and depleted gas fields throughout the year.
+        The storage volumes can be viewed on yearly basis, per month or per week.  
     co2_intensity_of_hydrogen_production:
       title: CO<sub>2</sub> intensity per hydrogen production type
       short_description:

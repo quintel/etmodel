@@ -190,7 +190,11 @@ nl:
     mekko_of_hydrogen_network:
       title: Vraag en aanbod van het centrale waterstofnet
       short_description: ''
-      description: ''
+      description: |
+        Deze grafiek weergeeft de verschillende categorieën van vraag en aanbod van het centrale 
+        waterstofnet. Het ETM balanceert vraag en aanbod van waterstof zodat deze altijd aan elkaar 
+        gelijk zijn gesteld. Dit betekent dat een overschot aan waterstof wordt geëxporteerd via de export 
+        back-up. Er wordt waterstof geïmporteerd via de import back-up in geval van een tekort aan waterstof. 
     hydrogen_production:
       title: Waterstofproductie
       short_description:
@@ -202,7 +206,9 @@ nl:
     hydrogen_storage:
       title: Waterstofopslag
       short_description: ''
-      description: ''
+      description: 
+        Deze grafiek toont de waterstofopslagvolumes van zoutcavernes en lege gasvelden gedurende het jaar. 
+        De opslagvolumes kunnen op jaarbasis, per maand of per week worden bekeken.
     hydrogen_production_cost_curve:
       title: Uurlijkse kosten waterstofproductie
       short_description:

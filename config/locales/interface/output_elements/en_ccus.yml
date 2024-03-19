@@ -4,7 +4,11 @@ en:
     mekko_of_co2_demand_supply:
       title: Demand and supply of captured CO<sub>2</sub> (CCUS)
       short_description: ''
-      description: 'This chart shows the amount of captured CO<sub>2</sub> (supply) and the demand for CO<sub>2</sub> from utilisation, storage and export'
+      description: 'This chart shows the amount of captured CO<sub>2</sub> (supply) and the demand for CO<sub>2</sub> from utilisation, storage and export. 
+        <br/><br/> <strong>Note</strong>: it is important to balance the supply and demand of CO<sub>2</sub> in your system. The ETM assumes 
+        that excess CO<sub>2</sub> is exported when supply of CO<sub>2</sub> is higher than demand. In reality, it is desirable to
+        avoid an excess supply of CO<sub>2</sub>. Therefore, you should improve the settings of supply and demand of CO<sub>2</sub> 
+        in your scenario to avoid export of excess CO<sub>2</sub>.'
     ccus_sankey:
       title: "Captured CO<sub>2</sub> flows"
       short_description: ''

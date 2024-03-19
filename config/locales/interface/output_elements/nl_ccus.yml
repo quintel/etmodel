@@ -4,7 +4,11 @@ nl:
     mekko_of_co2_demand_supply:
       title: Vraag en aanbod van afgevangen CO<sub>2</sub>
       short_description: ''
-      description: 'Deze grafiek laat de hoeveelheid afgevangen CO<sub>2</sub> zien (aanbod) en de vraag naar CO<sub>2</sub> (ondergrondse opslag, hergebruik, export)'
+      description: 'Deze grafiek laat de hoeveelheid afgevangen CO<sub>2</sub> zien (aanbod) en de vraag naar CO<sub>2</sub> (ondergrondse opslag, hergebruik, export).
+        <br/><br/><strong>Let op:</strong> het is belangrijk dat aanbod van en vraag naar CO<sub>2</sub> in evenwicht zijn in je scenario. Het ETM gaat 
+        ervan uit dat een overschot aan afgevangen CO<sub>2</sub> wordt geëxporteerd. In werkelijkheid is het onwenselijk om een overschot aan 
+        CO<sub>2</sub> te verkrijgen. Daarom moeten vraag en aanbod van CO<sub>2</sub> in je scenario dusdanig ingesteld zijn zodat een overschot (in
+        dit geval dus export) aan CO<sub>2</sub> wordt vermeden.'
     ccus_sankey:
       title: "Afgevangen CO<sub>2</sub>-stromen"
       short_description: ''

@@ -11,6 +11,24 @@ The third being dispatchable biomass plants. Since the price for BECC(U)S plants
 
 Investigate it yourself!
 
+
+### Hydrogen improvements
+
+The hydrogen section of the model has been improved! 
+Now, flexible production options have been added. 
+Steam methane reformers, ammonia reformers and autothermal reformers can now be installed with a dispatchable capacity next to the must-run hydrogen capacity of these hydrogen reformer techniques. 
+Next to these flexible producers, options for hydrogen storage modelling have been refined.
+Now, users can use salt caverns and depleted gas fields as storage options in the model.
+In addition, users can set both the volume and capacity for these storage options. 
+Together the dispatchable and storage production facilities make up for the flexible hydrogen production routes within the ETM. 
+Which production route should be used first, can be installed by the user via the new hydrogen production merit order.
+
+-> <img src="/assets/pages/whats_new/hydrogen_production_order_en.png" width="600" /> <-
+
+The flexible demand options, which are the two hydrogen storage options for now, can be installed via the new hydrogen demand merit order.
+
+-> <img src="/assets/pages/whats_new/hydrogen_demnd_order_en.png" width="600" /> <-
+
 # March 2024
 
 ### Heat modelling in the built environment has been thoroughly revised

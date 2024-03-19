@@ -35,43 +35,52 @@ nl:
       title: Netto effect van vraag & aanbod van CO<sub>2</sub> op emissies.
       short_description:
       description: |
-        Deze chart beschrijft hoe de CO<sub>2</sub> stromen de netto emissies beïnvloeden.
-        De chart beschrijft 6 categoriëen, deze zullen hieronder beschreven worden.
+        Deze chart beschrijft hoe de afgevangen CO<sub>2</sub> stromen de nettototale CO<sub>2</sub> emissies beïnvloeden.
+        De chart beschrijft 6 stromen:
         <br/><br/>
         1. Afgevangen 
-        <br/><br/>
-        Deze stroom bevat alle vastgelegde CO<sub>2</sub> in het systeem. De invloed ervan op het nettotaal is positief.
+        <br/>
+        Deze stroom bevat alle afgevangen CO<sub>2</sub> in het systeem, zowel biogeen als niet-biogeen. De invloed ervan op 
+        de nettotale CO<sub>2</sub> emissies is positief, aangezien wanneer de afgevangen CO<sub>2</sub> ongebruikt blijft, deze
+        weer uitgestoten kan worden en dus bijdragen aan de totale emissies.
         <br/><br/>
         2. Geïmporteerd
-        <br/><br/>
-        Deze stroom bevat de geëxporteerde CO<sub>2</sub> uit het systeem.
-        De invloed ervan op het netto totaal is negatief, omdat de CO<sub>2</sub> uit het systeem wordt verwijderd.
-        Zie de <a href="https://docs.energytransitionmodel.com/main/co2-main-principles/#modelling-principles\" target="_blank">documentatie</a> voor meer informatie.
+        <br/>
+        Deze stroom bevat de geïmporteerde CO<sub>2</sub> in het systeem. 
+        De invloed hiervan op de nettototale CO<sub>2</sub> emissies is positief, aangezien wanneer deze CO<sub>2</sub> ongebruikt blijft, 
+        deze weer uitgestoten kan worden en dus bijdragen aan de totale emissies.
+        Zie de <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target="_blank">documentatie</a> 
+        voor meer informatie over de aannames van geïmporteerde CO<sub>2</sub>.
         <br/><br/>
         3. Geëxporteerd
-        <br/><br/>
+        <br/>
         Deze stroom bevat de geëxporteerde CO<sub>2</sub> uit het systeem.
-        De invloed ervan op het netto totaal is negatief, omdat de CO<sub>2</sub> uit het systeem wordt verwijderd.
-        Zie de <a href="https://docs.energytransitionmodel.com/main/co2-main-principles/#modelling-principles\" target="_blank">documentatie</a> voor meer informatie.
+        De invloed ervan op de nettototale CO<sub>2</sub> emissies is negatief, omdat de CO<sub>2</sub> uit het systeem wordt verwijderd.
+        Zie de <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target="_blank">documentatie</a> voor meer 
+        informatie over de aannames van geëxporteerde CO<sub>2</sub>.
         <br/><br/>
         4. Opgeslagen
-        <br/><br/>
-        Deze stroom bevat alle opgeslagen CO<sub>2</sub> in het systeem.
-        Dit is een negatieve stroom, omdat de opgeslagen CO<sub>2</sub> uit het systeem wordt verwijderd.
+        <br/>
+        Deze stroom bevat alle CO<sub>2</sub> die permanent wordt opgeslagen in het systeem.
+        Deze stroom heeft een negatieve invloed, omdat door permanente opslag deze CO<sub>2</sub> niet meer kan
+        worden uitgestoten in het systeem.
         <br/><br/>
         5. Voor onbepaalde tijd uitgesteld
-        <br/><br/>
-        Deze stroom bevat alle gebruikte CO<sub>2</sub> in chemische processen die oneindig worden uitgesteld van uitstoot.
-        Aangezien deze voor onbepaalde tijd worden uitgesteld, heeft de stroom een negatief effect op het nettotaal.
+        <br/>
+        Deze stroom bevat alle gebruikte CO<sub>2</sub> die middels processen permanent wordt opgeslagen en daarmee
+        oneindig wordt uitgesteld van uitstoot. Aangezien deze voor onbepaalde tijd wordt uitgesteld, heeft de stroom 
+        een negatief effect op de nettotale CO<sub>2</sub> emissies.
         <br/><br/>
         6. Afgevangen biogeen aandeel
-        <br/><br/>
-        Deze stroom bevat de biogene CO<sub>2</sub>. Deze worden niet meegeteld bij het berekenen van het netto CO<sub>2</sub>.
-        Daarom worden deze afgetrokken van de vastgelegde CO<sub>2</sub>-stroom.
-        Zie de <a href="https://docs.energytransitionmodel.com/main/co2-main-principles/#modelling-principles\" target="_blank">documentatie</a> voor meer informatie.
+        <br/>
+        Deze stroom bevat het biogene aandeel van de afgevangen CO<sub>2</sub>. Biogene CO<sub>2</sub> wordt niet meegeteld 
+        bij het berekenen van de nettototale CO<sub>2</sub> emissies. Daarom wordt deze afgetrokken van de afgevangen CO<sub>2</sub>-stroom.
+        Zie de <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target="_blank">documentatie</a> voor meer 
+        informatie over negatieve emissies.
         <br/><br/>
         7. Total
-        <br/><br/>
-        Dit is het totale nettobedrag van CO<sub>2</sub>-vraag en -aanbod op het dashboarditem met betrekking tot emissies.
+        <br/>
+        Dit is het nettototale effect van positieve en negatieve CO<sub>2</sub> stromen op de dashboard-items
+        gerelateerd aan CO<sub>2</sub> emissies.
 
   

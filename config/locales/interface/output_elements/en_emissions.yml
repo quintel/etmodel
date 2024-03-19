@@ -36,48 +36,54 @@ en:
       title: Net effect of demand and supply of CO<sub>2</sub> on emissions
       short_description:
       description: |
-        This chart describes how the CO<sub>2</sub> streams effect the net emissions.
-        It contains 6 CO<sub>2</sub> categories, we will describe these here:
+        This chart describes how the captured CO<sub>2</sub> streams affect the net total CO<sub>2</sub> emissions.
+        The chart contains 6 streams:
         <br/><br/>
         1. Captured 
-        <br/><br/>
-        This stream contains all the captured CO<sub>2</sub> in the system.
-        It's influence on the net total is positive. 
+        <br/>
+        This stream contains all the captured CO<sub>2</sub> in the system, both non-biogenic as biogenic.
+        Its influence on the net total CO<sub>2</sub> emissions is positive since if unused, the CO<sub>2</sub> of this stream 
+        could be emitted and therefore adding to the net total CO<sub>2</sub> emissions. 
         <br/><br/>
         2. Imported
-        <br/><br/>
+        <br/>
         This stream contains the imported CO<sub>2</sub> to the system. 
-        It's influence on the net total is positive, since it adds to the captured CO<sub>2</sub> in the system.
-        See the  <a href=\"https://docs.energytransitionmodel.com/main/co2-main-principles/#modelling-principles\" target=\"_blank\">documentation</a>
-        for more information.
+        Its influence on the net total CO<sub>2</sub> emissions is positive since it adds to the captured CO<sub>2</sub> in the system.
+        If the CO<sub>2</sub> of this stream is unused, it could be emitted and therefore adding to the net total CO<sub>2</sub> emissions.
+        See the <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">documentation</a>        
+        for more information on imported CO<sub>2</sub>.
         <br/><br/>
         3. Exported
-        <br/><br/>
+        <br/>
         This stream contains the exported CO<sub>2</sub> from the system.
-        It's influence to the net total is negative, since the CO<sub>2</sub> is removed from the system.
-        See the <a href=\"https://docs.energytransitionmodel.com/main/co2-main-principles/#modelling-principles\" target=\"_blank\">documentation</a>
-        for more information.
+        Its influence on the net total is negative since the CO<sub>2</sub> is removed from the system.
+        See the <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">documentation</a>
+        for more information on exported CO<sub>2</sub>.
         <br/><br/>
         4. Stored
-        <br/><br/>
-        This stream contains all stored CO<sub>2</sub> in the system. 
-        This is a negative stream, since the stored CO<sub>2</sub> is removed from the system.
+        <br/>
+        This stream contains all permanently stored CO<sub>2</sub> in the system. 
+        This stream has a negative effect since the permanently stored CO<sub>2</sub> cannot be emitted 
+        in the system.
         <br/><br/>
         5. Indefinitely delayed
-        <br/><br/>
-        This stream contains all utilised CO<sub>2</sub> in chemical processes, which are indefinetily delayed from emission.
-        Since these are not indefinitely delayed, the stream has a negative effect on the net total.
+        <br/>
+        This stream contains all utilised CO<sub>2</sub> in processes in which the captured CO<sub>2</sub> is 
+        permanently sequesterd. Therefore, this stream is categorised as indefinetily delayed from emission and thus 
+        has a negative effect on the net total.
         <br/><br/>
         6. Captured biogenic share
-        <br/><br/>
-        This stream contains the biogenic CO<sub>2</sub>. These are not counted while calculating the net CO<sub>2</sub>.
-        These are therefore subtracted from the captured CO<sub>2</sub> stream.
-        See the <a href=\"https://docs.energytransitionmodel.com/main/co2-main-principles/#modelling-principles\" target=\"_blank\">documentation</a>
-        for more information.
+        <br/>
+        This stream contains the captured biogenic CO<sub>2</sub> (originating from CCS pants with biomass feedstock). 
+        These biogenic emissions are not counted when calculating the net CO<sub>2</sub> emissions and are therefore 
+        subtracted from the captured CO<sub>2</sub> stream.
+        See the <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
+        for more information on negative emissions.
         <br/><br/>
         7. Total
-        <br/><br/>
-        This is the total net effect of CO<sub>2</sub> demand and supply on the dashboard item concering emissions.
+        <br/>
+        This is the total net effect of positive and negative captured CO<sub>2</sub> streams on the dashboard items concering
+        CO<sub>2</sub> emissions.
 
 
 

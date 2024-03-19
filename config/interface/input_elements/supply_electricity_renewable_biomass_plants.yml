@@ -3,7 +3,7 @@
   step_value: 0.1
   unit: MW
   interface_group: must_run_chps
-  related_node: energy_chp_local_wood_pellets
+  related_node: energy_chp_local_ht_wood_pellets_must_run
   position: 100
   slide_key: supply_electricity_renewable_biomass_plants 
 - key: capacity_of_energy_power_wood_pellets_must_run
@@ -17,7 +17,7 @@
   step_value: 0.1
   unit: MW
   interface_group: must_run_chps
-  related_node: energy_chp_local_engine_biogas
+  related_node: energy_chp_local_engine_ht_biogas
   position: 120
   slide_key: supply_electricity_renewable_biomass_plants
 
@@ -25,7 +25,7 @@
   step_value: 0.1
   unit: MW
   interface_group: flexible_chps
-  related_node: energy_chp_local_wood_pellets
+  related_node: energy_chp_local_ht_wood_pellets_dispatchable
   position: 200
   slide_key: supply_electricity_renewable_biomass_plants
 - key: capacity_of_energy_power_wood_pellets_dispatchable

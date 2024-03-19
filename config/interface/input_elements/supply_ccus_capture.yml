@@ -121,28 +121,28 @@
 - key: share_of_energy_chp_local_mt_wood_pellets_ccs_must_run
   step_value: 1.0
   unit: "%"
-  related_node: energy_chp_local_mt_wood_pellets_ccs
+  related_node: energy_chp_local_mt_wood_pellets_ccs_must_run
   interface_group: power_plants
   position: 150
   slide_key: supply_ccus_capture
 - key: share_of_energy_chp_local_mt_wood_pellets_ccs_dispatchable
   step_value: 1.0
   unit: "%"
-  related_node: energy_chp_local_mt_wood_pellets_ccs
+  related_node: energy_chp_local_mt_wood_pellets_ccs_dispatchable
   interface_group: power_plants
   position: 155
   slide_key: supply_ccus_capture
 - key: share_of_energy_chp_local_ht_wood_pellets_ccs_must_run
   step_value: 1.0
   unit: "%"
-  related_node: energy_chp_local_ht_wood_pellets_ccs
+  related_node: energy_chp_local_ht_wood_pellets_ccs_must_run
   interface_group: power_plants
   position: 160
   slide_key: supply_ccus_capture
 - key: share_of_energy_chp_local_ht_wood_pellets_ccs_dispatchable
   step_value: 1.0
   unit: "%"
-  related_node: energy_chp_local_ht_wood_pellets_ccs
+  related_node: energy_chp_local_ht_wood_pellets_ccs_dispatchable
   interface_group: power_plants
   position: 165
   slide_key: supply_ccus_capture

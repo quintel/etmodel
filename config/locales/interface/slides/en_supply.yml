@@ -525,7 +525,10 @@ en:
       title: Merit order of dispatchable hydrogen demand
       short_description:
       description: "The ETM makes a distinction between 'must-run' hydrogen
-        demand and dispatchable hydrogen demand."
+        demand and dispatchable hydrogen demand. The hydrogen storage technologies are
+        categorised as dispatchable hydrogen demand since these can store hydrogen in case of excess hydrogen
+        supply. Below you can set the order in which the technologies are deployed in case of excess
+        hydrogen production."
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:

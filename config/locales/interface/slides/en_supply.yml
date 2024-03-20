@@ -554,8 +554,9 @@ en:
         from wind/solar farms dedicated to hydrogen production; steam methane reforming
         (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); ammonia reforming:
         gasification of biomass (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); import from abroad.
-        \r\n<br/><br/>\r\nA distinction can be made in installed capacity of must-run / volatile hydrogen production technologies and installed capacity of dispatchable 
-        hydrogen production technologies.
+        \r\n<br/><br/>\r\nA distinction is made in installed capacity of must-run / volatile production technologies and dispatchable production technologies.
+        In the <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order of dispatchable hydrogen production</a> 
+        section, the order in which dispatchable production technologies are deployed can be adjusted. 
         \r\n<br/><br/>\r\nIn addition, it is possible to convert electricity into
         hydrogen using 'power-to-gas' (see the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
         >power-to-gas slide</a>).
@@ -583,18 +584,21 @@ en:
     supply_hydrogen_storage:
       title: Hydrogen storage
       short_description:
-      description: "The ETM calculates hydrogen demand and supply on an hourly-basis
-        which makes it possible to identify moments of excess hydrogen production
-        and shortages. During times of excess hydrogen production, the hydrogen surplus 
-        can be stored in salt caverns or depleted gas fields. During times of hydrogen shortage, 
-        these storage technologies can supply stored hydrogen to meet hydrogen demand. 
-        \r\n<br><br />\r\nBelow, the storage volume and relative storage capacity of salt caverns 
-        and depleted gas fields can be set. The costs for storage can be adjusted in the 
-        <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\">costs section</a>.
-        \r\n<br><br />\r\nThe hydrogen network offers some flexibility in the form of linepack. The ETM does not take 
+      description: |
+        In this section, the hydrogen storage volume and relative storage capacity of salt caverns 
+        and depleted gas fields can be set. For more information on how the ETM calculates moments of hydrogen shortages
+        or excess production, see our <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
+        target=\"_blank\">documentation</a>. The costs for storage can be adjusted in the 
+        <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\">costs section</a>. In the 
+        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order of dispatchable hydrogen production</a> and
+        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand'>merit order of dispatchable hydrogen demand</a> 
+        sections, the order in which the storage technologies are deployed for supplying or storing hydrogen can be adjusted.
+        <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        This chart</a> shows the installed volume of hydrogen storage technologies in comparison to storage volumes for other energy carriers.
+        <br/><br/>The hydrogen network offers some flexibility in the form of linepack. The ETM does not take 
         this into account. Linepack offers a limited volume to mitigate very short-term (hourly) fluctuations of 
         hydrogen demand and supply. The actual volume depends on the extent to which the network is fully utilised. 
-        The volume is equivalent to roughly 1/3 salt cavern for 1.500 km of hydrogens transport pipelines."
+        The volume is equivalent to roughly 1/3 salt cavern for 1.500 km of hydrogens transport pipelines.
     supply_ammonia_production:
       title: Ammonia production
       short_description:

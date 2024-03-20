@@ -604,8 +604,10 @@ nl:
         reforming van ammoniak;
         vergassing van biomassa (met of zonder
         <a href='/scenario/emissions/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
-        import uit het buitenland. \r\n<br/><br/>\r\n Onderscheid kan worden gemaakt in 
-        geïnstalleerd vermogen van niet-regelbare / volatiele waterstofproductietechnologieën en regelbare waterstofproductietechnologieën. 
+        import uit het buitenland. \r\n<br/><br/>\r\n Onderscheid wordt gemaakt in in 
+        geïnstalleerd vermogen van niet-regelbare / volatiele productietechnologieën en regelbare productietechnologieën.
+        Onder <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order van regelbare waterstofproductie</a> 
+        kan de volgorde worden aangepast waarin de regelbare productietechnologieën worden ingezet.
         \r\n<br /><br />\r\nJe kunt er ook voor kiezen om elektriciteit om te zetten in waterstof
         (zie de sectie <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
         >power-to-gas</a>). Dit kan alleen als er in jouw scenario momenten in het
@@ -637,16 +639,22 @@ nl:
     supply_hydrogen_storage:
       title: Waterstofopslag
       short_description:
-      description: "Het ETM modelleert waterstofvraag en -aanbod op uurbasis. Op momenten van overproductie 
-        van waterstof kan het overschot worden opgeslagen in zoutcavernes of lege gasvelden. Op momenten van 
-        een tekort aan waterstof, kunnen deze opslagtechnologieën de opgeslagen waterstof leveren aan de waterstofvraag. 
-        \r\n<br><br/>\r\nHieronder kunnen het opslagvolume en de relatieve opslagcapaciteit worden ingesteld van zoutcavernes 
-        en lege gasvelden. De kosten voor waterstofopslag kunnen worden aangepast bij 
-        <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\">kosten</a>. 
-        \r\n<br><br/>\r\nHet waterstofnetwerk biedt enige flexibiliteit in de vorm van 'linepack'. Het ETM houdt hier geen rekening mee. 
+      description: |
+        In dit onderdeel kan het opslagvolume en de relatieve opslagcapaciteit worden ingesteld
+        voor zoutcavernes en lege gasvelden. Voor meer informaties over hoe het ETM momenten waterstofoverschotten
+        en -tekorten berekend, kan de <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
+        target=\"_blank\">documentatie</a> worden geraadpleegd. 
+        \r\n<br><br/>\r\nDe kosten voor waterstofopslag kunnen worden aangepast bij 
+        <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\">kosten</a>. Onder 
+        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order van regelbare waterstofproductie</a> en
+        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand'>merit order van regelbare waterstofvraag</a>
+        kan de volgorde waarin de opslagtechnologieën worden ingezet om waterstof te leveren of op te slaan worden aangepast. In      
+        <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        deze grafiek</a> kun je het opgestelde waterstofopslagvolume inzien in vergelijking tot de opslagvolumes voor andere energiedragers.
+        <br/><br/>Het waterstofnetwerk biedt enige flexibiliteit in de vorm van 'linepack'. Het ETM houdt hier geen rekening mee. 
         Linepack biedt een beperkt volume om zeer korte termijn (uurgebonden) schommelingen in de vraag naar en het aanbod van
         waterstof te compenseren. Het werkelijke volume van linepack hangt af van de mate waarin het waterstofnetwerk volledig wordt benut. 
-        Het volume van zo'n 1.500 km aan waterstoftransportleidingen komt overeen met ongeveer 1/3 van een zoutcaverne."
+        Het volume van zo'n 1.500 km aan waterstoftransportleidingen komt overeen met ongeveer 1/3 van een zoutcaverne.
     supply_ammonia_production:
       title: Ammoniakproductie
       short_description:

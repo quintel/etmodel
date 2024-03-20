@@ -176,11 +176,10 @@ en:
         In this section you can determine the behaviour of electricity storage technologies such as batteries. These technologies
         are considered flexible, because both their supply and demand can be increased, reduced or shifted in
         time if needed (see the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
-        Flexibility overview</a> for background information). </br></br>
-        The ETM models three types of storage behaviour. <br /><ol><li>By default, storage behaves like any other
-        flexible technology. Each storage technology has a <i>willingness to pay</i> that indicates the maximum electricity price for
-        which it is willing to charge electricity. If the electricity price in a given hour is lower than a 
-        technology's willingness to pay, the storage technology will charge. </br></br>
+        Flexibility overview</a> for background information). </br></br> The ETM models three types of storage behaviour. 
+        <br /><ol><li>By default, storage behaves like any other flexible technology. Each storage technology has a 
+        <i>willingness to pay</i> that indicates the maximum electricity price for which it is willing to charge electricity. 
+        If the electricity price in a given hour is lower than a technology's willingness to pay, the storage technology will charge. </br></br>
         Similarly, each technology also has a <i>willingness to accept</i>, which indicates the minimum 
         electricity price for which it is willing to discharge the stored electricity. This
         is similar to the concept of 'marginal costs' for flexible power plants.</li> </br>
@@ -200,7 +199,10 @@ en:
         determine their behaviour. Note that the specific behaviour of these
         technologies is more complicated than stated in this short description. Our 
         <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\"> documentation</a> 
-        contains more details.
+        contains more details.<br/><br/>
+        <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        This chart</a> shows the installed volume of electricity storage technologies in comparison to storage volumes for other 
+        energy carriers.
     flexibility_power_storage_households_flexibility_p2p_electricity:
       title: Batteries in households
       short_description:

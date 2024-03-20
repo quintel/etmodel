@@ -573,7 +573,10 @@ nl:
       title: Merit order van regelbare waterstofvraag
       short_description:
       description: "Het ETM maakt een onderscheid tussen 'must-run' waterstofvraag
-         en regelbare waterstofvraag. " 
+         en regelbare waterstofvraag. De waterstofopslagtechnologieën worden gecategoriseerd 
+         als dispatchable aangezien deze waterstof opslaan in geval van een overschot aan 
+         waterstof. Hieronder kan de volgorde worden ingesteld waarin de technologieën worden 
+         ingezet in geval van een overschot aan waterstof." 
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:

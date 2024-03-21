@@ -473,3 +473,31 @@ en:
         switches to hydrogen. The threshold value can be adjusted in the section 
         <a href=/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
         >Demand response - behavior of hybrid heat pumps</a>.
+    buildings_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
+      title: Hybrid air heat pump (crude oil)
+      short_description:
+      description: |
+        This heater is a combination of an electric heat pump that draws its heat 
+        from the outside air and an efficient conventional crude oil-fired boiler. <br/><br/>
+        This works as follows: <br/> 
+        The oil-fired part takes over all of the heating of the building on cold 
+        winter days, when heat demand peaks. Because of this clever trick, the heat 
+        pump has less impact on the electricity grid than an all-electric heat pump does. 
+        Smart use of hybrid crude oil heat pumps may therefore avoid the need to reinforce 
+        local power grids. <br/><br/>
+        Heat pumps move heat from one place to another. Refrigerators use heat pumps, 
+        for example, but buildings can use them for
+        heating and cooling too. For optimal results with <em>most</em> types of heat
+        pump, installation of under-floor and wall heating instead of radiators is
+        often required, as well as good levels of insulation. The <em>hybrid</em>
+        crude oil heat pump is an exception, because of its oil-fired heater as
+        a fall-back option. Hybrid crude oil heat pumps can intelligently use whichever
+        part (heat pump or oil-fired heater) is the most efficient or cost-effective
+        given the weather conditions and insulation level. Buildings with limited insulation
+        will rely on the oil-fired part more, better insulated ones will make
+        more use of the heat pump. <br/><br/>
+        The COP of the electric part of the hybrid oil heat pump depends on ambient 
+        temperature. When the COP drops below the threshold value the hybrid heat pump 
+        switches to oil. The threshold value can be adjusted in the section 
+        <a href=/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
+        >Demand response - behavior of hybrid heat pumps</a>.    

@@ -82,7 +82,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_heatpump_pvt_electricity
-  position: 11
+  position: 12
   slide_key: demand_households_heating
 - key: households_heater_wood_pellets_share
   share_group: heating_households
@@ -90,7 +90,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_wood_pellets
-  position: 12
+  position: 13
   slide_key: demand_households_heating
 - key: households_heater_electricity_share
   share_group: heating_households
@@ -98,7 +98,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_electricity
-  position: 13
+  position: 14
   slide_key: demand_households_heating
 - key: households_heater_network_gas_share
   share_group: heating_households
@@ -106,7 +106,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_network_gas
-  position: 14
+  position: 15
   slide_key: demand_households_heating
 - key: households_heater_crude_oil_share
   share_group: heating_households
@@ -114,7 +114,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_crude_oil
-  position: 15
+  position: 16
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_households_heating
 - key: households_heater_coal_share
@@ -123,9 +123,18 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_coal
-  position: 16
+  position: 17
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_households_heating
+- key: households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share
+  share_group: heating_households
+  step_value: 0.1
+  unit: "%"
+  interface_group: space_and_water_heating_technologies
+  related_node: households_space_heater_crude_oil_hydrogen_heatpump_air_water_electricity
+  position: 18
+  dependent_on: has_coal_oil_for_heating_built_environment
+  slide_key: demand_households_heating  
 
 - key: households_water_heater_solar_thermal_share
   step_value: 0.1

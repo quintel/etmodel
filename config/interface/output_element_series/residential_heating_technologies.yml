@@ -6,11 +6,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_coal
+  gquery: number_of_houses_before_1945_with_space_heater_coal
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_coal_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_coal_residential_heating_technologies
 - label: households_space_heater_crude_oil
   color: "#854321"
   order_by: 10
@@ -18,11 +18,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_crude_oil
+  gquery: number_of_houses_before_1945_with_space_heater_crude_oil
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_crude_oil_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_crude_oil_residential_heating_technologies
 - label: households_space_heater_network_gas
   color: "#DFE4EA"
   order_by: 15
@@ -30,11 +30,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_network_gas
+  gquery: number_of_houses_before_1945_with_space_heater_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_network_gas_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_network_gas
   color: "#A4B0BE"
   order_by: 20
@@ -42,11 +42,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_combined_network_gas
+  gquery: number_of_houses_before_1945_with_space_heater_combined_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_combined_network_gas_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_combined_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_hydrogen
   color: "#BFD6E2"
   order_by: 25
@@ -54,11 +54,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_combined_hydrogen
+  gquery: number_of_houses_before_1945_with_space_heater_combined_hydrogen
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_combined_hydrogen_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_combined_hydrogen_residential_heating_technologies
 - label: households_space_heater_wood_pellets
   color: "#6AB04C"
   order_by: 30
@@ -66,11 +66,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_wood_pellets
+  gquery: number_of_houses_before_1945_with_space_heater_wood_pellets
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_wood_pellets_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_wood_pellets_residential_heating_technologies
 - label: households_space_heater_electricity
   color: "#4169E1"
   order_by: 35
@@ -78,11 +78,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_electricity
+  gquery: number_of_houses_before_1945_with_space_heater_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_electricity_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_air_water_electricity
   color: "#9fd82f"
   order_by: 40
@@ -90,11 +90,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_heatpump_air_water_electricity
+  gquery: number_of_houses_before_1945_with_space_heater_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_ground_water_electricity
   color: "#dbf0af"
   order_by: 45
@@ -102,11 +102,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_heatpump_ground_water_electricity
+  gquery: number_of_houses_before_1945_with_space_heater_heatpump_ground_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_surface_water_water_ts_electricity
   color: "#bde46f"
   order_by: 50
@@ -114,11 +114,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_heatpump_surface_water_water_ts_electricity
+  gquery: number_of_houses_before_1945_with_space_heater_heatpump_surface_water_water_ts_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_pvt_electricity
   color: "#E1D595"
   order_by: 55
@@ -126,11 +126,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_heatpump_pvt_electricity
+  gquery: number_of_houses_before_1945_with_space_heater_heatpump_pvt_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
 - label: households_space_heater_district_heating_lt_steam_hot_water
   color: "#FFB000"
   order_by: 60
@@ -138,11 +138,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_district_heating_lt_steam_hot_water
+  gquery: number_of_houses_before_1945_with_space_heater_district_heating_lt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_mt_steam_hot_water
   color: "#DC267F"
   order_by: 65
@@ -150,11 +150,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_district_heating_mt_steam_hot_water
+  gquery: number_of_houses_before_1945_with_space_heater_district_heating_mt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_ht_steam_hot_water
   color: "#785EF0"
   order_by: 70
@@ -162,11 +162,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_district_heating_ht_steam_hot_water
+  gquery: number_of_houses_before_1945_with_space_heater_district_heating_ht_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_hybrid_heatpump_air_water_electricity
   color: "#b1ca97"
   order_by: 75
@@ -174,11 +174,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_hybrid_heatpump_air_water_electricity
+  gquery: number_of_houses_before_1945_with_space_heater_hybrid_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   color: "#abe3da"
   order_by: 80
@@ -186,11 +186,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_before_1945_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  gquery: number_of_houses_before_1945_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_before_1945_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -199,11 +199,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_coal
+  gquery: number_of_houses_1945_1964_with_space_heater_coal
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_coal_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_coal_residential_heating_technologies
 - label: households_space_heater_crude_oil
   color: "#854321"
   order_by: 110
@@ -211,11 +211,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_crude_oil
+  gquery: number_of_houses_1945_1964_with_space_heater_crude_oil
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_crude_oil_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_crude_oil_residential_heating_technologies
 - label: households_space_heater_network_gas
   color: "#DFE4EA"
   order_by: 115
@@ -223,11 +223,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_network_gas
+  gquery: number_of_houses_1945_1964_with_space_heater_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_network_gas_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_network_gas
   color: "#A4B0BE"
   order_by: 120
@@ -235,11 +235,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_combined_network_gas
+  gquery: number_of_houses_1945_1964_with_space_heater_combined_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_combined_network_gas_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_combined_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_hydrogen
   color: "#BFD6E2"
   order_by: 125
@@ -247,11 +247,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_combined_hydrogen
+  gquery: number_of_houses_1945_1964_with_space_heater_combined_hydrogen
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_combined_hydrogen_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_combined_hydrogen_residential_heating_technologies
 - label: households_space_heater_wood_pellets
   color: "#6AB04C"
   order_by: 130
@@ -259,11 +259,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_wood_pellets
+  gquery: number_of_houses_1945_1964_with_space_heater_wood_pellets
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_wood_pellets_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_wood_pellets_residential_heating_technologies
 - label: households_space_heater_electricity
   color: "#4169E1"
   order_by: 135
@@ -271,11 +271,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_electricity
+  gquery: number_of_houses_1945_1964_with_space_heater_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_electricity_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_air_water_electricity
   color: "#9fd82f"
   order_by: 140
@@ -283,11 +283,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_heatpump_air_water_electricity
+  gquery: number_of_houses_1945_1964_with_space_heater_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_ground_water_electricity
   color: "#dbf0af"
   order_by: 145
@@ -295,11 +295,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_heatpump_ground_water_electricity
+  gquery: number_of_houses_1945_1964_with_space_heater_heatpump_ground_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_surface_water_water_ts_electricity
   color: "#bde46f"
   order_by: 150
@@ -307,11 +307,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_heatpump_surface_water_water_ts_electricity
+  gquery: number_of_houses_1945_1964_with_space_heater_heatpump_surface_water_water_ts_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_pvt_electricity
   color: "#E1D595"
   order_by: 155
@@ -319,11 +319,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_heatpump_pvt_electricity
+  gquery: number_of_houses_1945_1964_with_space_heater_heatpump_pvt_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
 - label: households_space_heater_district_heating_lt_steam_hot_water
   color: "#FFB000"
   order_by: 160
@@ -331,11 +331,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_district_heating_lt_steam_hot_water
+  gquery: number_of_houses_1945_1964_with_space_heater_district_heating_lt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_mt_steam_hot_water
   color: "#DC267F"
   order_by: 165
@@ -343,11 +343,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_district_heating_mt_steam_hot_water
+  gquery: number_of_houses_1945_1964_with_space_heater_district_heating_mt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_ht_steam_hot_water
   color: "#785EF0"
   order_by: 170
@@ -355,11 +355,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_district_heating_ht_steam_hot_water
+  gquery: number_of_houses_1945_1964_with_space_heater_district_heating_ht_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_hybrid_heatpump_air_water_electricity
   color: "#b1ca97"
   order_by: 175
@@ -367,11 +367,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_hybrid_heatpump_air_water_electricity
+  gquery: number_of_houses_1945_1964_with_space_heater_hybrid_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   color: "#abe3da"
   order_by: 180
@@ -379,11 +379,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1945_1964_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  gquery: number_of_houses_1945_1964_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1945_1964_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -392,11 +392,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_coal
+  gquery: number_of_houses_1965_1984_with_space_heater_coal
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_coal_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_coal_residential_heating_technologies
 - label: households_space_heater_crude_oil
   color: "#854321"
   order_by: 210
@@ -404,11 +404,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_crude_oil
+  gquery: number_of_houses_1965_1984_with_space_heater_crude_oil
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_crude_oil_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_crude_oil_residential_heating_technologies
 - label: households_space_heater_network_gas
   color: "#DFE4EA"
   order_by: 215
@@ -416,11 +416,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_network_gas
+  gquery: number_of_houses_1965_1984_with_space_heater_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_network_gas_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_network_gas
   color: "#A4B0BE"
   order_by: 220
@@ -428,11 +428,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_combined_network_gas
+  gquery: number_of_houses_1965_1984_with_space_heater_combined_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_combined_network_gas_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_combined_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_hydrogen
   color: "#BFD6E2"
   order_by: 225
@@ -440,11 +440,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_combined_hydrogen
+  gquery: number_of_houses_1965_1984_with_space_heater_combined_hydrogen
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_combined_hydrogen_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_combined_hydrogen_residential_heating_technologies
 - label: households_space_heater_wood_pellets
   color: "#6AB04C"
   order_by: 230
@@ -452,11 +452,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_wood_pellets
+  gquery: number_of_houses_1965_1984_with_space_heater_wood_pellets
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_wood_pellets_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_wood_pellets_residential_heating_technologies
 - label: households_space_heater_electricity
   color: "#4169E1"
   order_by: 235
@@ -464,11 +464,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_electricity
+  gquery: number_of_houses_1965_1984_with_space_heater_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_electricity_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_air_water_electricity
   color: "#9fd82f"
   order_by: 240
@@ -476,11 +476,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_heatpump_air_water_electricity
+  gquery: number_of_houses_1965_1984_with_space_heater_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_ground_water_electricity
   color: "#dbf0af"
   order_by: 245
@@ -488,11 +488,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_heatpump_ground_water_electricity
+  gquery: number_of_houses_1965_1984_with_space_heater_heatpump_ground_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_surface_water_water_ts_electricity
   color: "#bde46f"
   order_by: 250
@@ -500,11 +500,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_heatpump_surface_water_water_ts_electricity
+  gquery: number_of_houses_1965_1984_with_space_heater_heatpump_surface_water_water_ts_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_pvt_electricity
   color: "#E1D595"
   order_by: 255
@@ -512,11 +512,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_heatpump_pvt_electricity
+  gquery: number_of_houses_1965_1984_with_space_heater_heatpump_pvt_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
 - label: households_space_heater_district_heating_lt_steam_hot_water
   color: "#FFB000"
   order_by: 260
@@ -524,11 +524,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_district_heating_lt_steam_hot_water
+  gquery: number_of_houses_1965_1984_with_space_heater_district_heating_lt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_mt_steam_hot_water
   color: "#DC267F"
   order_by: 265
@@ -536,11 +536,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_district_heating_mt_steam_hot_water
+  gquery: number_of_houses_1965_1984_with_space_heater_district_heating_mt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_ht_steam_hot_water
   color: "#785EF0"
   order_by: 270
@@ -548,11 +548,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_district_heating_ht_steam_hot_water
+  gquery: number_of_houses_1965_1984_with_space_heater_district_heating_ht_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_hybrid_heatpump_air_water_electricity
   color: "#b1ca97"
   order_by: 275
@@ -560,11 +560,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_hybrid_heatpump_air_water_electricity
+  gquery: number_of_houses_1965_1984_with_space_heater_hybrid_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   color: "#abe3da"
   order_by: 280
@@ -572,11 +572,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1965_1984_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  gquery: number_of_houses_1965_1984_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1965_1984_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -585,11 +585,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_coal
+  gquery: number_of_houses_1985_2004_with_space_heater_coal
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_coal_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_coal_residential_heating_technologies
 - label: households_space_heater_crude_oil
   color: "#854321"
   order_by: 310
@@ -597,11 +597,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_crude_oil
+  gquery: number_of_houses_1985_2004_with_space_heater_crude_oil
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_crude_oil_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_crude_oil_residential_heating_technologies
 - label: households_space_heater_network_gas
   color: "#DFE4EA"
   order_by: 315
@@ -609,11 +609,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_network_gas
+  gquery: number_of_houses_1985_2004_with_space_heater_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_network_gas_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_network_gas
   color: "#A4B0BE"
   order_by: 320
@@ -621,11 +621,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_combined_network_gas
+  gquery: number_of_houses_1985_2004_with_space_heater_combined_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_combined_network_gas_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_combined_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_hydrogen
   color: "#BFD6E2"
   order_by: 325
@@ -633,11 +633,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_combined_hydrogen
+  gquery: number_of_houses_1985_2004_with_space_heater_combined_hydrogen
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_combined_hydrogen_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_combined_hydrogen_residential_heating_technologies
 - label: households_space_heater_wood_pellets
   color: "#6AB04C"
   order_by: 330
@@ -645,11 +645,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_wood_pellets
+  gquery: number_of_houses_1985_2004_with_space_heater_wood_pellets
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_wood_pellets_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_wood_pellets_residential_heating_technologies
 - label: households_space_heater_electricity
   color: "#4169E1"
   order_by: 335
@@ -657,11 +657,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_electricity
+  gquery: number_of_houses_1985_2004_with_space_heater_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_electricity_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_air_water_electricity
   color: "#9fd82f"
   order_by: 340
@@ -669,11 +669,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_heatpump_air_water_electricity
+  gquery: number_of_houses_1985_2004_with_space_heater_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_ground_water_electricity
   color: "#dbf0af"
   order_by: 345
@@ -681,11 +681,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_heatpump_ground_water_electricity
+  gquery: number_of_houses_1985_2004_with_space_heater_heatpump_ground_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_surface_water_water_ts_electricity
   color: "#bde46f"
   order_by: 350
@@ -693,11 +693,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_heatpump_surface_water_water_ts_electricity
+  gquery: number_of_houses_1985_2004_with_space_heater_heatpump_surface_water_water_ts_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_pvt_electricity
   color: "#E1D595"
   order_by: 355
@@ -705,11 +705,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_heatpump_pvt_electricity
+  gquery: number_of_houses_1985_2004_with_space_heater_heatpump_pvt_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
 - label: households_space_heater_district_heating_lt_steam_hot_water
   color: "#FFB000"
   order_by: 360
@@ -717,11 +717,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_district_heating_lt_steam_hot_water
+  gquery: number_of_houses_1985_2004_with_space_heater_district_heating_lt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_mt_steam_hot_water
   color: "#DC267F"
   order_by: 365
@@ -729,11 +729,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_district_heating_mt_steam_hot_water
+  gquery: number_of_houses_1985_2004_with_space_heater_district_heating_mt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_ht_steam_hot_water
   color: "#785EF0"
   order_by: 370
@@ -741,11 +741,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_district_heating_ht_steam_hot_water
+  gquery: number_of_houses_1985_2004_with_space_heater_district_heating_ht_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_hybrid_heatpump_air_water_electricity
   color: "#b1ca97"
   order_by: 375
@@ -753,11 +753,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_hybrid_heatpump_air_water_electricity
+  gquery: number_of_houses_1985_2004_with_space_heater_hybrid_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   color: "#abe3da"
   order_by: 380
@@ -765,11 +765,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_1985_2004_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  gquery: number_of_houses_1985_2004_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_1985_2004_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -778,11 +778,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_coal
+  gquery: number_of_houses_2005_present_with_space_heater_coal
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_coal_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_coal_residential_heating_technologies
 - label: households_space_heater_crude_oil
   color: "#854321"
   order_by: 410
@@ -790,11 +790,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_crude_oil
+  gquery: number_of_houses_2005_present_with_space_heater_crude_oil
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_crude_oil_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_crude_oil_residential_heating_technologies
 - label: households_space_heater_network_gas
   color: "#DFE4EA"
   order_by: 415
@@ -802,11 +802,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_network_gas
+  gquery: number_of_houses_2005_present_with_space_heater_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_network_gas_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_network_gas
   color: "#A4B0BE"
   order_by: 420
@@ -814,11 +814,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_combined_network_gas
+  gquery: number_of_houses_2005_present_with_space_heater_combined_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_combined_network_gas_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_combined_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_hydrogen
   color: "#BFD6E2"
   order_by: 425
@@ -826,11 +826,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_combined_hydrogen
+  gquery: number_of_houses_2005_present_with_space_heater_combined_hydrogen
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_combined_hydrogen_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_combined_hydrogen_residential_heating_technologies
 - label: households_space_heater_wood_pellets
   color: "#6AB04C"
   order_by: 430
@@ -838,11 +838,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_wood_pellets
+  gquery: number_of_houses_2005_present_with_space_heater_wood_pellets
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_wood_pellets_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_wood_pellets_residential_heating_technologies
 - label: households_space_heater_electricity
   color: "#4169E1"
   order_by: 435
@@ -850,11 +850,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_electricity
+  gquery: number_of_houses_2005_present_with_space_heater_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_electricity_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_air_water_electricity
   color: "#9fd82f"
   order_by: 440
@@ -862,11 +862,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_heatpump_air_water_electricity
+  gquery: number_of_houses_2005_present_with_space_heater_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_ground_water_electricity
   color: "#dbf0af"
   order_by: 445
@@ -874,11 +874,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_heatpump_ground_water_electricity
+  gquery: number_of_houses_2005_present_with_space_heater_heatpump_ground_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_surface_water_water_ts_electricity
   color: "#bde46f"
   order_by: 450
@@ -886,11 +886,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_heatpump_surface_water_water_ts_electricity
+  gquery: number_of_houses_2005_present_with_space_heater_heatpump_surface_water_water_ts_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_pvt_electricity
   color: "#E1D595"
   order_by: 455
@@ -898,11 +898,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_heatpump_pvt_electricity
+  gquery: number_of_houses_2005_present_with_space_heater_heatpump_pvt_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
 - label: households_space_heater_district_heating_lt_steam_hot_water
   color: "#FFB000"
   order_by: 460
@@ -910,11 +910,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_district_heating_lt_steam_hot_water
+  gquery: number_of_houses_2005_present_with_space_heater_district_heating_lt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_mt_steam_hot_water
   color: "#DC267F"
   order_by: 465
@@ -922,11 +922,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_district_heating_mt_steam_hot_water
+  gquery: number_of_houses_2005_present_with_space_heater_district_heating_mt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_ht_steam_hot_water
   color: "#785EF0"
   order_by: 470
@@ -934,11 +934,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_district_heating_ht_steam_hot_water
+  gquery: number_of_houses_2005_present_with_space_heater_district_heating_ht_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_hybrid_heatpump_air_water_electricity
   color: "#b1ca97"
   order_by: 475
@@ -946,11 +946,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_hybrid_heatpump_air_water_electricity
+  gquery: number_of_houses_2005_present_with_space_heater_hybrid_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   color: "#abe3da"
   order_by: 480
@@ -958,11 +958,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_2005_present_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  gquery: number_of_houses_2005_present_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_2005_present_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -971,11 +971,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_coal
+  gquery: number_of_houses_future_with_space_heater_coal
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_coal_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_coal_residential_heating_technologies
 - label: households_space_heater_crude_oil
   color: "#854321"
   order_by: 510
@@ -983,11 +983,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_crude_oil
+  gquery: number_of_houses_future_with_space_heater_crude_oil
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_crude_oil_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_crude_oil_residential_heating_technologies
 - label: households_space_heater_network_gas
   color: "#DFE4EA"
   order_by: 515
@@ -995,11 +995,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_network_gas
+  gquery: number_of_houses_future_with_space_heater_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_network_gas_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_network_gas
   color: "#A4B0BE"
   order_by: 520
@@ -1007,11 +1007,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_combined_network_gas
+  gquery: number_of_houses_future_with_space_heater_combined_network_gas
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_combined_network_gas_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_combined_network_gas_residential_heating_technologies
 - label: households_space_heater_combined_hydrogen
   color: "#BFD6E2"
   order_by: 525
@@ -1019,11 +1019,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_combined_hydrogen
+  gquery: number_of_houses_future_with_space_heater_combined_hydrogen
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_combined_hydrogen_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_combined_hydrogen_residential_heating_technologies
 - label: households_space_heater_wood_pellets
   color: "#6AB04C"
   order_by: 530
@@ -1031,11 +1031,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_wood_pellets
+  gquery: number_of_houses_future_with_space_heater_wood_pellets
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_wood_pellets_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_wood_pellets_residential_heating_technologies
 - label: households_space_heater_electricity
   color: "#4169E1"
   order_by: 535
@@ -1043,11 +1043,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_electricity
+  gquery: number_of_houses_future_with_space_heater_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_electricity_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_air_water_electricity
   color: "#9fd82f"
   order_by: 540
@@ -1055,11 +1055,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_heatpump_air_water_electricity
+  gquery: number_of_houses_future_with_space_heater_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_ground_water_electricity
   color: "#dbf0af"
   order_by: 545
@@ -1067,11 +1067,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_heatpump_ground_water_electricity
+  gquery: number_of_houses_future_with_space_heater_heatpump_ground_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_heatpump_ground_water_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_surface_water_water_ts_electricity
   color: "#bde46f"
   order_by: 550
@@ -1079,11 +1079,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_heatpump_surface_water_water_ts_electricity
+  gquery: number_of_houses_future_with_space_heater_heatpump_surface_water_water_ts_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_heatpump_surface_water_water_ts_electricity_residential_heating_technologies
 - label: households_space_heater_heatpump_pvt_electricity
   color: "#E1D595"
   order_by: 555
@@ -1091,11 +1091,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_heatpump_pvt_electricity
+  gquery: number_of_houses_future_with_space_heater_heatpump_pvt_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_heatpump_pvt_electricity_residential_heating_technologies
 - label: households_space_heater_district_heating_lt_steam_hot_water
   color: "#FFB000"
   order_by: 560
@@ -1103,11 +1103,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_district_heating_lt_steam_hot_water
+  gquery: number_of_houses_future_with_space_heater_district_heating_lt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_district_heating_lt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_mt_steam_hot_water
   color: "#DC267F"
   order_by: 565
@@ -1115,11 +1115,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_district_heating_mt_steam_hot_water
+  gquery: number_of_houses_future_with_space_heater_district_heating_mt_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_district_heating_mt_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_district_heating_ht_steam_hot_water
   color: "#785EF0"
   order_by: 570
@@ -1127,11 +1127,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_district_heating_ht_steam_hot_water
+  gquery: number_of_houses_future_with_space_heater_district_heating_ht_steam_hot_water
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_district_heating_ht_steam_hot_water_residential_heating_technologies
 - label: households_space_heater_hybrid_heatpump_air_water_electricity
   color: "#b1ca97"
   order_by: 575
@@ -1139,11 +1139,11 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_hybrid_heatpump_air_water_electricity
+  gquery: number_of_houses_future_with_space_heater_hybrid_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_hybrid_heatpump_air_water_electricity_residential_heating_technologies
 - label: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   color: "#abe3da"
   order_by: 580
@@ -1151,8 +1151,8 @@
   show_at_first: 
   is_target_line: false
   target_line_position: 
-  gquery: households_future_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
+  gquery: number_of_houses_future_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
   is_1990: 
   dependent_on: 
   output_element_key: residential_heating_technologies
-  key: number_of_households_future_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies

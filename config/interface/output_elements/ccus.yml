@@ -69,3 +69,17 @@
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: vertical_stacked_bar
+- under_construction: false
+  unit: T
+  percentage: false
+  group: ccus
+  sub_group:
+  show_point_label: true
+  growth_chart: false
+  key: waterfall_captured_emissions
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: has_other_emissions_section
+  output_element_type_name: waterfall

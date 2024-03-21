@@ -122,6 +122,15 @@
   position: 15
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_buildings_heating
+- key: buildings_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_share
+  share_group: heating_buildings
+  step_value: 0.1
+  unit: "%"
+  interface_group: space_heating_technologies
+  related_node: buildings_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  position: 16
+  dependent_on: has_coal_oil_for_heating_built_environment
+  slide_key: demand_buildings_heating  
 
 - key: buildings_space_heater_solar_thermal_share
   step_value: 0.1

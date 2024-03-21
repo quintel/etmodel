@@ -1,14 +1,27 @@
 ---
-- key: supply_ccus_capture
-  position: 1
+- key: supply_ccus_capture_overview
+  position: 5
   sidebar_item_key: ccus
   output_element_key: mekko_of_co2_demand_supply
+- key: supply_ccus_capture_energy
+  position: 10
+  sidebar_item_key: ccus
+  output_element_key: ccus_sankey
+- key: supply_ccus_capture_industry
+  position: 15
+  sidebar_item_key: ccus
+  output_element_key: ccus_sankey
+- key: supply_ccus_capture_import
+  position: 20
+  sidebar_item_key: ccus
+  output_element_key: ccus_sankey  
 - key: supply_ccus_utilisation_storage
   general_sub_header: "per year"
-  position: 2
+  position: 25
   sidebar_item_key: ccus
   output_element_key: mekko_of_co2_demand_supply
 - key: supply_ccus_transport
-  position: 3
+  position: 30
   sidebar_item_key: ccus
   output_element_key: ccus_sankey
+  output_element_key: mekko_of_co2_demand_supply

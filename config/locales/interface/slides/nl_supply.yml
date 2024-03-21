@@ -67,15 +67,29 @@ nl:
       title: Internationale verzending
       short_description:
       description:
-    supply_ccus_capture:
-      title: Afvang en import van CO<sub>2</sub>
-      description: "Carbon Capture, Utilisation and Storage (CCUS) is een verzameling van technologieën
+    supply_ccus_capture_overview:
+      title: Capture and import of CO<sub>2</sub>
+      description: |
+        Carbon Capture, Utilisation and Storage (CCUS) is een verzameling van technologieën
         waarbij CO<sub>2</sub> uit bedrijfsprocessen wordt afgevangen en vervolgens wordt
         opgeslagen onder de grond of hergebruikt. In deze sectie kun je verkennen welke rol
         CCUS kan spelen in het toekomstige energiesysteem. CO<sub>2</sub> kan worden afgevangen bij
         productieprocessen in de industrie en energiesector óf kan direct uit de lucht gehaald worden
-        via Direct Air Capture. Hieronder
-        kun je per technologie aannames doen over de afvang van CO<sub>2</sub>. <br/><br/>
+        via Direct Air Capture. In deze sectie kan je het vraag en aanbod van CO<sub>2</sub> instellen voor je scenario.
+        Het is opgedeeld in de volgende secties:
+        <ul><li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        Afvang van CO<sub>2</sub> in de energie sector</a></li>
+        <li><a href="/scenario/emissions/ccus/captur-of-co2-in-industry-sector">
+        Afvang van CO<sub>2</sub> in de industrie sector</a></li>
+        <li><a href="/scenario/emissions/ccus/import-of-co2r">
+        Import van CO<sub>2</sub> </a></li>
+        <li><a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">
+        Gebruik & opslag van CO<sub>2</sub> </a></li>
+        <li><a href="/scenario/emissions/ccus/transport-of-co2">
+        Transport van CO<sub>2</sub> </a></li></ul></br>
+    supply_ccus_capture_energy:
+      title: Afvang van CO<sub>2</sub> in de energie sector
+      description: "Hieronder kun je per technologie aannames doen over de afvang van CO<sub>2</sub> in de energie sector. <br/><br/>
         De grafiek hiernaast laat zien hoeveel CO<sub>2</sub> er is afgevangen ('aanbod' van CO<sub>2</sub>) en wat er met
         deze CO<sub>2</sub> gebeurt (opslag, hergebruik). Als je meer CO<sub>2</sub>
         afvangt dan je opslaat of hergebruikt, laat de grafiek een 'overschot' aan CO<sub>2</sub> zien.
@@ -84,6 +98,32 @@ nl:
         in <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"energy_use_of_ccus\"\r\n>deze</a> grafiek.<br /><br/>
         Meer informatie over CCUS in het ETM lees je in de <a href=\"https://docs.energytransitionmodel.com/main/co2-ccus\"
         target=\"_blank\">documentatie</a>."
+    supply_ccus_capture_industry:
+      title: Afvang van CO<sub>2</sub> in de industrie sector
+      description: "Hieronder
+        kun je per technologie aannames doen over de afvang van CO<sub>2</sub> in de industrie sector. <br/><br/>
+        De grafiek hiernaast laat zien hoeveel CO<sub>2</sub> er is afgevangen ('aanbod' van CO<sub>2</sub>) en wat er met
+        deze CO<sub>2</sub> gebeurt (opslag, hergebruik). Als je meer CO<sub>2</sub>
+        afvangt dan je opslaat of hergebruikt, laat de grafiek een 'overschot' aan CO<sub>2</sub> zien.
+        Andersom laat de grafiek een 'tekort' zien als je minder afvangt.<br/><br/>
+        Meer informatie over het energiegebruik van CCUS in jouw scenario zie je
+        in <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"energy_use_of_ccus\"\r\n>deze</a> grafiek.<br /><br/>
+        Meer informatie over CCUS in het ETM lees je in de <a href=\"https://docs.energytransitionmodel.com/main/co2-ccus\"
+        target=\"_blank\">documentatie</a>."
+    supply_ccus_capture_import:
+      title: Import van CO<sub>2</sub>
+      description: "Hieronder kun je de CO<sub>2</sub> import in je scenario instellen. <br/><br/>
+        CO<sub>2</sub> kan geïmporteerd worden voor de productie van synthetische methanol & kerosine.
+        Hiernaast zou een land met een aanzienlijke CO<sub>2</sub>-opslag infrastructuur CO<sub>2</sub> importeren 
+        van andere landen om deze op te slaan tegen een vergoeding.
+        De grafiek hiernaast laat zien hoeveel CO<sub>2</sub> er is afgevangen ('aanbod' van CO<sub>2</sub>) en wat er met
+        deze CO<sub>2</sub> gebeurt (opslag, hergebruik). Als je meer CO<sub>2</sub>
+        afvangt dan je opslaat of hergebruikt, laat de grafiek een 'overschot' aan CO<sub>2</sub> zien.
+        Andersom laat de grafiek een 'tekort' zien als je minder afvangt.<br/><br/>
+        Meer informatie over het energiegebruik van CCUS in jouw scenario zie je
+        in <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"energy_use_of_ccus\"\r\n>deze</a> grafiek.<br /><br/>
+        Meer informatie over CCUS in het ETM lees je in de <a href=\"https://docs.energytransitionmodel.com/main/co2-ccus\"
+        target=\"_blank\">documentatie</a>."        
     supply_ccus_utilisation_storage:
       title: Gebruik en opslag van CO<sub>2</sub>
       description: "Afgevangen CO<sub>2</sub> kan worden opgeslagen onder de grond of kan worden hergebruikt

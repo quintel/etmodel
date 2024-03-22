@@ -132,6 +132,7 @@ en:
         Flexibility</a> section of the model. It is defined in the 
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentation</a> which types of electricity demand are considered flexible. This chart shows the hourly use of these technologies.
+
     solar_pv_curtailment:
       title: Curtailment of solar PV
       short_description:
@@ -351,6 +352,30 @@ en:
         on the clearing of the electricity market, which you can read more about in our
         <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">
         documentation</a>.
+    hourly_flexibility_hydrogen:
+      title: Flexible hydrogen supply and demand per hour
+      short_description: ''
+      description: |
+        This chart shows you the behaviour of flexible hydrogen supply and demand technologies. 
+        It is defined in the 
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
+        documentation</a> which types of technologies are considered flexible.
+        In this chart flexible hydrogen supply is stacked on the 
+        positive axis, while flexible hydrogen demand is stacked on the negative axis.
+        <br/><br/>
+        The chart also shows the residual load curve, which is the difference between the
+        inflexible hydrogen supply and demand. See our 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
+        Flexibility section</a> for more information. If the residual load curve is positive, 
+        the inflexible supply is insufficient to meet inflexible (or baseload) demand. If the 
+        residual load curve is negative, there is an excess of inflexible supply. Flexible 
+        demand and supply technologies are needed to balance these shortages and excesses. <br/><br/>
+        hydrogen, when the prices are right, flexible supply technologies can produce additional
+        electricity for flexible demand technologies, which is why the stacked areas in the chart 
+        do not always align with the residual load curve. Whether the prices are right depends 
+        on the clearing of the hydrogen market, which you can read more about in our
+        <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">
+        documentation</a>.    
     sankey_electrical_interconnection:
       title: Electricity supply and demand
       short_description: ''

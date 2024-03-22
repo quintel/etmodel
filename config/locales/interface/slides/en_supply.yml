@@ -472,6 +472,26 @@ en:
         <a href="/scenario/supply/heat/allocation-of-power-to-heat">power-to-heat</a>.
         See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
         target =\"_blank\">documentation</a> for more information.
+    supply_hydrogen_order:
+      title: Merit order of dispatchable hydrogen production
+      short_description:
+      description: "The ETM makes a distinction between 'must-run' / volatile hydrogen
+        sources and dispatchable hydrogen sources. In contrast to the first category, dispatchable hydrogen sources
+        can be turned on or off at will. The ETM calculates for every hour per year
+        how much hydrogen from must-run and volatile sources is available. If hydrogen demand
+        exceeds this supply in a given hour, dispatchable hydrogen sources will be switched
+        on to ensure that no deficit occurs.\r\n<br /><br />\r\nBelow it is possible
+        to change the (merit) order of dispatchable hydrogen sources: which hydrogen source
+        is switched on first in case of a hydrogen deficit? The chart to the right shows
+        the marginal costs of each dispatchable source."
+    demand_hydrogen_order:
+      title: Merit order of dispatchable hydrogen demand
+      short_description:
+      description: "The ETM makes a distinction between 'must-run' hydrogen
+        demand and dispatchable hydrogen demand. The hydrogen storage technologies are
+        categorised as dispatchable hydrogen demand since these can store hydrogen in case of excess hydrogen
+        supply. Below you can set the order in which the technologies are deployed in case of excess
+        hydrogen production."
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:
@@ -499,8 +519,11 @@ en:
         The ETM offers the following options: electrolysis of wind and solar power
         from wind/solar farms dedicated to hydrogen production; steam methane reforming
         (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); ammonia reforming:
-        gasification of biomass (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); import from abroad.\r\n<br
-        /><br />\r\nIn addition, it is possible to convert electricity into
+        gasification of biomass (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); import from abroad.
+        \r\n<br/><br/>\r\nA distinction is made in installed capacity of must-run / volatile production technologies and dispatchable production technologies.
+        In the <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order of dispatchable hydrogen production</a> 
+        section, the order in which dispatchable production technologies are deployed can be adjusted. 
+        \r\n<br/><br/>\r\nIn addition, it is possible to convert electricity into
         hydrogen using 'power-to-gas' (see the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
         >power-to-gas slide</a>).
         Hydrogen for the fertilizer industry can also be produced on-site since this industry already has large hydrogen
@@ -514,27 +537,34 @@ en:
       short_description:
       description: "How will hydrogen be transported in the future? At the moment,
         two distribution methods seem to be the most viable: compressed hydrogen transport
-        via pipelines and via trucks.\r\n<br/><br/>\r\nTransport via pipelines can
-        be relatively cheap, especially if distribution distances are long, the volume
-        of the distributed hydrogen is large and demand for hydrogen is concentrated.
-        Trucks, on the other hand, are much more flexible than pipelines. They are
+        via pipelines and via trucks.\r\n<br/><br/>\r\nThe ETM assumes that all hydrogen supply
+        will be transported via pipelines. This option is relatively cheap, especially when distribution 
+        distances are long, the volume of the distributed hydrogen is large and demand for hydrogen is concentrated.
+        In addition, it is possible to set the share of hydrogen that will be transported by trucks after 
+        pipeline distribution. Trucks are much more flexible than pipelines. They are
         suitable for delivering smaller quantities of hydrogen and for delivery to
         remote areas.\r\n<br/><br/>\r\nBelow, you can choose the percentage of total
-        hydrogen supply in your scenario that is transported by pipelines and by trucks.
-        The costs of both technologies can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
+        hydrogen supply in your scenario that is transported by trucks (after pipeline distribution).
+        The costs of transport via pipelines and trucks can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
         >costs section</a>."
     supply_hydrogen_storage:
       title: Hydrogen storage
       short_description:
-      description: "The ETM calculates hydrogen demand and supply on an hourly-basis
-        which makes it possible to identify moments of excess hydrogen production
-        and shortages. The ETM ensures that hydrogen supply matches demand for every
-        hour per year in your scenario. It does so by automatically storing excess
-        hydrogen production in a buffer, drawing from this buffer at demand peaks
-        and by importing/exporting any shortage/excess of hydrogen. \r\n<br><br />\r\nThe
-        storage volume that is needed for that is shown in the chart on the right.
-        The costs for storage can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
-        >costs section</a>."
+      description: |
+        In this section, the hydrogen storage volume and relative storage capacity of salt caverns 
+        and depleted gas fields can be set. For more information on how the ETM calculates moments of hydrogen shortages
+        or excess production, see our <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
+        target=\"_blank\">documentation</a>. The costs for storage can be adjusted in the 
+        <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\">costs section</a>. In the 
+        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order of dispatchable hydrogen production</a> and
+        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand'>merit order of dispatchable hydrogen demand</a> 
+        sections, the order in which the storage technologies are deployed for supplying or storing hydrogen can be adjusted.
+        <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        This chart</a> shows the installed volume of hydrogen storage technologies in comparison to storage volumes for other energy carriers.
+        <br/><br/>The hydrogen network offers some flexibility in the form of linepack. The ETM does not take 
+        this into account. Linepack offers a limited volume to mitigate very short-term (hourly) fluctuations of 
+        hydrogen demand and supply. The actual volume depends on the extent to which the network is fully utilised. 
+        The volume is equivalent to roughly 1/3 salt cavern for 1.500 km of hydrogens transport pipelines.
     supply_ammonia_production:
       title: Ammonia production
       short_description:

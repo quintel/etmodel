@@ -1,7 +1,21 @@
 ---
+- label: hydrogen_production_inflexible
+  color: "#CC0000"
+  order_by: 5
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: ''
+  gquery: hydrogen_inflexible_production_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: hydrogen_production_hydrogen_demand
+
+
 - label: agriculture_final_demand_hydrogen
   color: "#6AB04C"
-  order_by: 5
+  order_by: 10
   group: ''
   show_at_first: false
   is_target_line: false
@@ -11,33 +25,9 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: agriculture_final_demand_hydrogen_hydrogen_demand
-- label: exported_hydrogen
-  color: "#485460"
-  order_by: 2
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: energy_export_hydrogen_hydrogen_input_curve
-  is_1990: false
-  dependent_on:
-  output_element_key: hydrogen_demand
-  key: exported_hydrogen_hydrogen_demand
-- label: hydrogen_storage_input
-  color: "#87CEEB"
-  order_by: 12
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: energy_hydrogen_storage_hydrogen_input_curve
-  is_1990: false
-  dependent_on:
-  output_element_key: hydrogen_demand
-  key: hydrogen_storage_input_hydrogen_demand
 - label: energy_power_turbine_hydrogen
   color: "#FF8C8C"
-  order_by: 10
+  order_by: 15
   group: ''
   show_at_first: false
   is_target_line: false
@@ -49,7 +39,7 @@
   key: energy_power_turbine_hydrogen_hydrogen_demand
 - label: industry_final_demand_hydrogen
   color: "#416B86"
-  order_by: 3
+  order_by: 20
   group: ''
   show_at_first: false
   is_target_line: false
@@ -61,7 +51,7 @@
   key: industry_final_demand_hydrogen_hydrogen_demand
 - label: industry_heat_network_hydrogen
   color: "#2e4c5e"
-  order_by: 3
+  order_by: 25
   group: ''
   show_at_first: false
   is_target_line: false
@@ -73,7 +63,7 @@
   key: industry_heat_network_demand_hydrogen_demand
 - label: industry_final_demand_for_chemical_other_hydrogen_non_energetic
   color: "#228B22"
-  order_by: 4
+  order_by: 30
   group: ''
   show_at_first: false
   is_target_line: false
@@ -85,7 +75,7 @@
   key: industry_final_demand_for_chemical_other_hydrogen_non_energetic_hydrogen_demand
 - label: transport_final_demand_hydrogen
   color: "#0984E3"
-  order_by: 9
+  order_by: 35
   group: ''
   show_at_first: false
   is_target_line: false
@@ -97,7 +87,7 @@
   key: transport_final_demand_hydrogen_hydrogen_demand
 - label: bunkers_final_demand_hydrogen
   color: "#8B4513"
-  order_by: 10
+  order_by: 40
   group: ''
   show_at_first: false
   is_target_line: false
@@ -107,21 +97,10 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: bunkers_final_demand_hydrogen_hydrogen_demand
-- label: hydrogen_production
-  color: "#FF0000"
-  order_by: 1
-  group: ''
-  show_at_first: false
-  is_target_line: true
-  target_line_position: ''
-  gquery: hydrogen_production_curve
-  is_1990: false
-  dependent_on:
-  output_element_key: hydrogen_demand
-  key: hydrogen_production_hydrogen_demand
+
 - label: households_final_demand_hydrogen
   color: "#E07033"
-  order_by: 8
+  order_by: 45
   group: ''
   show_at_first: false
   is_target_line: false
@@ -133,7 +112,7 @@
   key: households_final_demand_hydrogen_hydrogen_demand
 - label: buildings_final_demand_hydrogen
   color: "#fabd16"
-  order_by: 8
+  order_by: 50
   group: ''
   show_at_first: false
   is_target_line: false
@@ -145,7 +124,7 @@
   key: buildings_final_demand_hydrogen_hydrogen_demand
 - label: energy_power_combined_cycle_hydrogen
   color: "#FF6B6B"
-  order_by: 11
+  order_by: 55
   group: ''
   show_at_first: false
   is_target_line: false
@@ -157,7 +136,7 @@
   key: energy_power_combined_cycle_hydrogen_hydrogen_demand
 - label: industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic
   color: "#74B9FF"
-  order_by: 4
+  order_by: 60
   group: ''
   show_at_first: false
   is_target_line: false
@@ -169,7 +148,7 @@
   key: industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic_hydrogen_demand
 - label: energy_heat_from_hydrogen
   color: "#F9CA24"
-  order_by: 6
+  order_by: 65
   group: ''
   show_at_first:
   is_target_line: false
@@ -181,7 +160,7 @@
   key: energy_heat_from_hydrogen_hydrogen_demand
 - label: energy_synthetic_products_from_hydrogen
   color: "#7bed9f"
-  order_by: 7
+  order_by: 70
   group: ''
   show_at_first:
   is_target_line: false
@@ -191,15 +170,68 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: energy_synthetic_products_from_hydrogen_hydrogen_demand
-- label: transport_losses
-  color: "#800080"
-  order_by: 20
-  group: 
-  show_at_first: 
+- label: exported_hydrogen_baseload
+  color: "#485f60"
+  order_by: 75
+  group: ''
+  show_at_first: false
   is_target_line: false
-  target_line_position: 
-  gquery: energy_transport_hydrogen_loss_input_curve
-  is_1990: 
-  dependent_on: 
+  target_line_position: ''
+  gquery: energy_export_hydrogen_baseload_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
   output_element_key: hydrogen_demand
-  key: transport_losses_hydrogen_demand
+  key: exported_hydrogen_baseload_hydrogen_demand
+# Flex  
+
+- label: exported_hydrogen_backup
+  color: "#6f7373"
+  order_by: 100
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_export_hydrogen_backup_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand  
+  key: exported_hydrogen_backup_hydrogen_demand
+- label: hydrogen_storage_depleted_gas_field_input
+  color: "#87CEEB"
+  order_by: 105
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_depleted_gas_field_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: hydrogen_storage_depleted_gas_field_input_hydrogen_demand
+- label: hydrogen_storage_salt_cavern_input
+  color: "#5e9aa4"
+  order_by: 110
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_storage_salt_cavern_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: hydrogen_storage_salt_cavern_input_hydrogen_demand  
+
+#Transport loss  
+- label: hydrogen_transport_losses
+  color: "#FF0000"
+  order_by: 115
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: hydrogen_transport_losses_hydrogen_demand
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: hydrogen_transport_losses_hydrogen_demand    
+

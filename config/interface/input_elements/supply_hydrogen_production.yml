@@ -4,6 +4,7 @@
   unit: MW
   command_type: value
   related_node: energy_hydrogen_electrolysis_wind_electricity
+  interface_group: hydrogen_must_run
   position: 10
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_solar_pv_solar_radiation
@@ -11,34 +12,63 @@
   unit: MW
   command_type: value
   related_node: energy_hydrogen_electrolysis_solar_electricity
+  interface_group: hydrogen_must_run
   position: 20
   slide_key: supply_hydrogen_production
-- key: capacity_of_energy_hydrogen_steam_methane_reformer
+- key: capacity_of_energy_hydrogen_steam_methane_reformer_must_run
   step_value: 1.0
   unit: MW
   command_type: value
-  related_node: energy_hydrogen_steam_methane_reformer
+  related_node: energy_hydrogen_steam_methane_reformer_must_run
+  interface_group: hydrogen_must_run
   position: 30
   slide_key: supply_hydrogen_production
-- key: capacity_of_energy_hydrogen_autothermal_reformer
+- key: capacity_of_energy_hydrogen_autothermal_reformer_must_run
   step_value: 1.0
   unit: MW
   command_type: value
-  related_node: energy_hydrogen_autothermal_reformer
+  related_node: energy_hydrogen_autothermal_reformer_must_run
+  interface_group: hydrogen_must_run
   position: 40
   slide_key: supply_hydrogen_production
-- key: capacity_of_energy_hydrogen_ammonia_reformer
+- key: capacity_of_energy_hydrogen_ammonia_reformer_must_run
   step_value: 1.0
   unit: MW
   command_type: value
-  related_node: energy_hydrogen_ammonia_reformer
+  related_node: energy_hydrogen_ammonia_reformer_must_run
+  interface_group: hydrogen_must_run
   position: 50
   slide_key: supply_hydrogen_production
+- key: capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable
+  step_value: 1.0
+  unit: MW
+  command_type: value
+  related_node: energy_hydrogen_steam_methane_reformer_dispatchable
+  interface_group: hydrogen_dispatchable
+  position: 35
+  slide_key: supply_hydrogen_production
+- key: capacity_of_energy_hydrogen_autothermal_reformer_dispatchable
+  step_value: 1.0
+  unit: MW
+  command_type: value
+  related_node: energy_hydrogen_autothermal_reformer_dispatchable
+  interface_group: hydrogen_dispatchable
+  position: 45
+  slide_key: supply_hydrogen_production
+- key: capacity_of_energy_hydrogen_ammonia_reformer_dispatchable
+  step_value: 1.0
+  unit: MW
+  command_type: value
+  related_node: energy_hydrogen_ammonia_reformer_dispatchable
+  interface_group: hydrogen_dispatchable
+  position: 55
+  slide_key: supply_hydrogen_production  
 - key: capacity_of_energy_hydrogen_liquid_hydrogen_regasifier
   step_value: 1.0
   unit: MW
   command_type: value
   related_node: energy_hydrogen_liquid_hydrogen_regasifier
+  interface_group: hydrogen_must_run
   position: 60
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_lohc_reformer
@@ -46,17 +76,20 @@
   unit: MW
   command_type: value
   related_node: energy_hydrogen_lohc_reformer
+  interface_group: hydrogen_must_run
   position: 70
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_biomass_gasification
   step_value: 1.0
   unit: MW
   related_node: energy_hydrogen_biomass_gasification
+  interface_group: hydrogen_must_run
   position: 20
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_imported_hydrogen_baseload
   step_value: 1.0
   unit: MW
   command_type: value
+  interface_group: hydrogen_must_run
   position: 80
   slide_key: supply_hydrogen_production

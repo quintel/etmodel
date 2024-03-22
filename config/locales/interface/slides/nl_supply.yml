@@ -390,7 +390,7 @@ nl:
     supply_heat_storage_ht:
       title: "(Seizoens)opslag van warmte"
       short_description:
-      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+      description: "Scenario's met veel 'must-run' en volatiele warmtebronnen zoals
         zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
         in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
         om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
@@ -415,7 +415,7 @@ nl:
     supply_heat_storage_mt:
       title: "(Seizoens)opslag van warmte"
       short_description:
-      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+      description: "Scenario's met veel 'must-run' en volatiele warmtebronnen zoals
         zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
         in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
         om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
@@ -440,7 +440,7 @@ nl:
     supply_heat_storage_lt:
       title: "(Seizoens)opslag van warmte"
       short_description:
-      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+      description: "Scenario's met veel 'must-run' en volatiele warmtebronnen zoals
         zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
         in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
         om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
@@ -514,6 +514,29 @@ nl:
         <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
         Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
         target =\"_blank\">documentatie</a> voor meer informatie.
+    supply_hydrogen_order:
+      title: Merit order van regelbare waterstofproductie
+      short_description:
+      description: "Het ETM maakt een onderscheid tussen 'must-run' / volatiele waterstofproductie
+        (zoals waterstofproductie door wind- en zonne-energie) en regelbare waterstofproductie.
+        De waterstofproductie van de eerste categorie productiemethodes is moeilijk regelbaar. Regelbare productiemethodes
+        daarentegen kunnen aan- en uitgeschakeld worden op momenten dat dat nodig
+        is. Het ETM kijkt voor elk uur per jaar hoeveel waterstof er uit 'must-run' en
+        volatiele productiemethodes beschikbaar is. Als de vraag in een bepaald uur hoger is
+        dan deze productie, wordt er een regelbare bron ingeschakeld om te zorgen
+        dat er voldoende waterstof is.\r\n<br /><br />\r\nHieronder is het mogelijk om
+        de inzetvolgorde van de regelbare waterstofproductie in te stellen: welke productiemethode
+        springt er als eerste aan als er een waterstoftekort is? In de grafiek hiernaast
+        kun je zien hoe hoog de marginale kosten zijn van de verschillende regelbare 
+        productiemethodes."    
+    demand_hydrogen_order:
+      title: Merit order van regelbare waterstofvraag
+      short_description:
+      description: "Het ETM maakt een onderscheid tussen 'must-run' waterstofvraag
+         en regelbare waterstofvraag. De waterstofopslagtechnologieën worden gecategoriseerd 
+         als dispatchable aangezien deze waterstof opslaan in geval van een overschot aan 
+         waterstof. Hieronder kan de volgorde worden ingesteld waarin de technologieën worden 
+         ingezet in geval van een overschot aan waterstof." 
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:
@@ -544,8 +567,11 @@ nl:
         reforming van ammoniak;
         vergassing van biomassa (met of zonder
         <a href='/scenario/emissions/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
-        import uit het buitenland.\r\n<br /><br />\r\nJe
-        kunt er ook voor kiezen om elektriciteit om te zetten in waterstof
+        import uit het buitenland. \r\n<br/><br/>\r\n Onderscheid wordt gemaakt in in 
+        geïnstalleerd vermogen van niet-regelbare / volatiele productietechnologieën en regelbare productietechnologieën.
+        Onder <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order van regelbare waterstofproductie</a> 
+        kan de volgorde worden aangepast waarin de regelbare productietechnologieën worden ingezet.
+        \r\n<br /><br />\r\nJe kunt er ook voor kiezen om elektriciteit om te zetten in waterstof
         (zie de sectie <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
         >power-to-gas</a>). Dit kan alleen als er in jouw scenario momenten in het
         jaar zijn waarop de elektriciteitsproductie hoger is dan de vraag. Daarnaast
@@ -560,28 +586,38 @@ nl:
       short_description:
       description: "Hoe zal waterstof getransporteerd worden in de toekomst? Op dit
         moment lijken twee distributiemethodes het meest voor de hand te liggen: waterstof-onder-druk
-        via pijpleidingen en met vrachtwagens.\r\n<br/><br/>\r\nTransport via pijpleidingen
+        via pijpleidingen en met vrachtwagens.\r\n<br/><br/>\r\nHet ETM gaat ervan uit dat alle
+        geproduceerde waterstof via pijpleidingen wordt getransporteerd. Transport via pijpleidingen
         is relatief goedkoop, vooral als de distributie-afstanden langer zijn, het
         volume van waterstof in je scenario groot is en als de vraag naar waterstof
-        zich op een geconcentreerd gebied bevindt (bijvoorbeeld een industrieterrein).
-        Transport via vrachtwagens is meer flexibel. Het gebruik van vrachtwagens
-        ligt meer voor de hand voor distributie van kleinere hoeveelheden waterstof
+        zich op een geconcentreerd gebied bevindt (bijvoorbeeld een industrieterrein). Daarnaast is 
+        het mogelijk om aan te geven welk aandeel van getransporteerde waterstof via pijpleidingen 
+        vervolgens nog per vrachtwagens wordt getransporteerd. Transport via vrachtwagens is meer flexibel. 
+        Het gebruik van vrachtwagens ligt voor de hand voor distributie van kleinere hoeveelheden waterstof
         of als de afnemers over een groter gebied verspreid zijn. \r\n<br/><br/>\r\nHieronder
-        kun je aangeven hoeveel van het totale waterstofaanbod in je scenario via
-        pijpleidingen getransporteerd wordt en hoeveel via vrachtwagens. De kosten
-        van beide technologieën kunnen aangepast worden bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
+        kun je aangeven hoeveel van het totale waterstofaanbod na transport via pijpleidingen nog
+        per vrachtwagens wordt getransporteerd. De kosten van transport via pijpleidingen en vrachtwagens
+        kunnen aangepast worden bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
         >kosten</a>."
     supply_hydrogen_storage:
       title: Waterstofopslag
       short_description:
-      description: "Het ETM modelleert waterstofvraag en -aanbod op uurbasis. Het
-        ETM zorgt ervoor dat waterstofvraag en -aanbod met elkaar in balans zijn voor
-        ieder uur per jaar in jouw scenario. Het ETM slaat productieoverschotten automatisch
-        op in een buffer, gebruikt waterstof uit deze buffer tijdens vraagpieken en
-        importeert/exporteert eventuele tekorten/overschotten. \r\n<br><br />\r\nHet
-        opslagvolume dat daarvoor nodig is, is te zien in de grafiek hiernaast. De
-        opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
-        >kosten</a>."
+      description: |
+        In dit onderdeel kan het opslagvolume en de relatieve opslagcapaciteit worden ingesteld
+        voor zoutcavernes en lege gasvelden. Voor meer informaties over hoe het ETM momenten waterstofoverschotten
+        en -tekorten berekend, kan de <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
+        target=\"_blank\">documentatie</a> worden geraadpleegd. 
+        \r\n<br><br/>\r\nDe kosten voor waterstofopslag kunnen worden aangepast bij 
+        <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\">kosten</a>. Onder 
+        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order van regelbare waterstofproductie</a> en
+        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand'>merit order van regelbare waterstofvraag</a>
+        kan de volgorde waarin de opslagtechnologieën worden ingezet om waterstof te leveren of op te slaan worden aangepast. In      
+        <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        deze grafiek</a> kun je het opgestelde waterstofopslagvolume inzien in vergelijking tot de opslagvolumes voor andere energiedragers.
+        <br/><br/>Het waterstofnetwerk biedt enige flexibiliteit in de vorm van 'linepack'. Het ETM houdt hier geen rekening mee. 
+        Linepack biedt een beperkt volume om zeer korte termijn (uurgebonden) schommelingen in de vraag naar en het aanbod van
+        waterstof te compenseren. Het werkelijke volume van linepack hangt af van de mate waarin het waterstofnetwerk volledig wordt benut. 
+        Het volume van zo'n 1.500 km aan waterstoftransportleidingen komt overeen met ongeveer 1/3 van een zoutcaverne.
     supply_ammonia_production:
       title: Ammoniakproductie
       short_description:

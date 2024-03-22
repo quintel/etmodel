@@ -47,9 +47,17 @@ en:
         electricity. How electricity, heat and fuels are generated determines the
         primary energy demand.<br/><br/>You can click <u>Change chart</u>
         above the graph, to select different graphs about energy demand.
+    mekko_of_storage_volume:
+      title: Installed storage volume per carrier
+      short_description:
+      description: |
+       The depicted graph shows the installed storage volume categorized by energy carrier and storage type.
+       It's important to note that the entirety of this installed storage volume may not be utilized in your specific scenario. 
+       For example, the volume allocated for hydrogen storage is set within the scenario. 
+       The heat volume follows is not set within the scenario but follows from the maximal needed heat capacity.
     source_of_electricity_production:
       title: Electricity production
-      short_description: ''
+      short_description:
       description: |
         This graph gives a breakdown of current and future electricity
         production into types of power plants. By default, the future electricity

@@ -177,16 +177,13 @@ en:
         this technology has only been applied experimentally at power plants. It is
         expected that costs will decrease in the future.\r\n<br/>"
     costs_captured_biogenic_co2:
-      title: CO<sub>2</sub> removal price
+      title: Captured biogenic CO<sub>2</sub> price
       short_description:
       description: |
-        The CO<sub>2</sub> removal price is defined as the price that is received for
-        captured CO<sub>2</sub>. This slider sets the future CO<sub>2</sub> removal price (in €/tonne).
-        The start value is set as 0 €/tonne. <br/><br/>
-        Logically, <strong>the value of the CO<sub>2</sub> removal price should at least be
-        set equal to the CO<sub>2</sub> price</strong> (price for emitting CO<sub>2</sub>). If the
-        CO<sub>2</sub> removal price is set lower than the CO<sub>2</sub> price, it would be
-        undesirably cheaper to emit rather than capture CO<sub>2</sub>.
+        This slider sets the price that is received for captured biogenic CO<sub>2</sub>. <br/><br/>
+        Logically, the captured biogenic CO<sub>2</sub> price should at least be equal to the
+        CO<sub>2</sub> price (price for emitting CO<sub>2</sub>). If it were lower, it would be
+        cheaper to emit rather than to capture CO<sub>2</sub>.
     om_costs_co2_capture_industry:
       title: Operational & Maintenance
       short_description: ''

@@ -44,26 +44,40 @@ nl:
       short_description:
       description: |
         Download gedetailleerde informatie over de kosten (CAPEX, OPEX en totaal) van verschillende
-        gebruiksgroepen en technologieën.
-        <br /><br />
-        <b> Let op </b>: De kostenexport en de kostengrafieken verschillen op twee kleine punten:
-        <ol>
-          <li> De CO<sub>2</sub> emissiekosten zijn <i>niet</i> opgenomen in de totalen van de kostenexport
-          Als gevolg zijn de totalen van de kostenexport lager dan het dashboard item waarbij het verschil bestaat uit de CO<sub>2</sub> emissiekosten.
-          Deze emissiekosten zijn als aparte kolom achteraan de kostenexport opgenomen.
-          <br /><br />
-          <li> De totalen in de kostenexport zijn de optelsom van CCUS- and niet-CCUS CAPEX en OPEX. 
-          De grafieken scharen echter alle CCUS-investeringen onder de categorie CCUS.
-          Daarom tonen de grafieken voor alle kostengroepen met CCUS-investeringen, bijvoorbeeld productie van energie, lagere totale 
-          vergeleken met de export. Vice versa tonen de grafieken evenveel hogere CCUS-kosten dan in de export.
-        </ol>
+        gebruiksgroepen en technologieën. Zie
+        <a href="https://docs.energytransitionmodel.com/main/cost-overview-per-sector/" target=\"_blank\">documentatie</a>
+        voor meer informatie.
         <ul class="data-download">
           <li>
-            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/costs_parameters.csv" target="_blank">
-              <span class="name">Eindspecificaties kosten</span> <span class="filetype">50KB CSV</span>
+            <a href="/passthru/%{scenario_id}/costs_parameters.csv" target="_blank">
+              <span class="name">Specificaties kosten</span> <span class="filetype">50KB CSV</span>
             </a>
           </li>
         </ul>
+        <b>Let op</b>: houd bij het vergelijken van de kosten data-export met de kostengrafieken
+        (<a href="#" class="open_chart" data-chart-key="costs_overview" data-chart-location="side">overzicht</a> or
+        <a href="#" class="open_chart" data-chart-key="costs_overview_detailed" data-chart-location="side">
+        gedetailleerd</a>) of met het kosten dashboard item rekening met de volgende punten. </br></br>
+        <ol>
+          <li>
+          De "CO<sub>2</sub>-emissiekosten" serie in de kostengrafieken is gelijk aan de som van de
+          kolom "CO2 emission costs (eur)" in de data-export.
+          </li>
+          <li>
+          De "Afgevangen biogene CO<sub>2</sub>-kosten" serie in de kostengrafiek is gelijk aan de
+          som van de kolom "Captured biogenic CO<sub>2</sub> costs (eur)" in de data-export.
+          </li>
+          <li>
+          De kolommen "Total costs (eur)", "CO2 emission costs (eur)" en "Captured biogenic CO2
+          costs (eur)" in de data-export tellen vervolgens op tot het kosten dashboard item en tot
+          het "Totaal" in de kostengrafieken.
+          </li>
+          <li>
+          Tenslotte geldt dat, in de kostengrafieken, de "CCUS-kosten" een apart serie hebben,
+          terwijl deze in de data-export onderdeel zijn van de kosten in de "Total costs (eur)"
+          kolom.
+          </li>
+        </ol>
     data_export_storage:
       title: Specificaties opslagtechnologieën
       short_description:

@@ -270,7 +270,7 @@ en:
         power plants in your scenario. This is influenced by electricity demand, other installed
         power generation technologies and commodity prices. <br/><br/>
         The total installed capacity can be set in the
-        <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.etm
+        <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.
         The share of HT and MT heat can then be set in the
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
     share_of_energy_chp_supercritical_ccs_mt_waste_mix:
@@ -297,32 +297,48 @@ en:
       description: |
         A CHP produces both heat and electricity. Here you can set the
         must-run installed electrical capacity of biomass CHP plants that supply heat for district
-        heating networks with CCS technology. For more information you can checkout the
-        <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
+        heating networks with CCS technology. 
+        The total installed capacity can be set in the
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
+        The share of HT and MT heat can then be set in the
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
+        The full-load hours of these plants can be set in the 
+        <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
     share_of_energy_chp_local_ht_wood_pellets_ccs_dispatchable:
       title: Biomass HT CHP + CCS (dispatchable)
       short_description:
       description: |
         A CHP produces both heat and electricity. Here you can set the dispatchable
         installed electrical capacity of biomass CHP plants that supply heat for district
-        heating networks with CCS technology. For more information you can checkout the
-        <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
+        heating networks with CCS technology. 
+        The total installed capacity can be set in the
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
+        The share of HT and MT heat can then be set in the
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
     share_of_energy_chp_local_mt_wood_pellets_ccs_must_run:
       title: Biomass MT CHP + CCS (must-run)
       short_description:
       description: |
         A CHP produces both heat and electricity. Here you can set the must-run
         installed electrical capacity of biomass CHP plants that supply heat for district
-        heating networks with CCS technology. For more information you can checkout the
-        <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
+        heating networks with CCS technology.
+        The total installed capacity can be set in the
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
+        The share of HT and MT heat can then be set in the
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
+        The full-load hours of these plants can be set in the 
+        <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
     share_of_energy_chp_local_mt_wood_pellets_ccs_dispatchable:
       title: Biomass MT CHP + CCS (dispatchable)
       short_description:
       description: |
         A CHP produces both heat and electricity. Here you can set the dispatchable
         installed electrical capacity of biomass CHP plants that supply heat for district
-        heating networks with CCS technology. For more information you can checkout the
-        <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>      
+        heating networks with CCS technology. 
+        The total installed capacity can be set in the
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
+        The share of HT and MT heat can then be set in the
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.      
     share_of_energy_power_wood_pellets_ccs_must_run:
       title: Biomass power plant + CCS (must-run)
       short_description:
@@ -330,6 +346,10 @@ en:
         A biomass power plant produces electricity. Here you can set the share of
         installed electrical capacity of must-run biomass power plants that will 
         equipped with a CO<sub>2</sub> capture technology.
+        The total installed capacity of these powerplants can be set in the
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
+        The full-load hours of these plants can be set in the 
+        <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
     share_of_energy_power_wood_pellets_ccs_dispatchable:
       title: Biomass power plant + CCS (dispatchable)
       short_description:
@@ -337,6 +357,8 @@ en:
         A biomass power plant produces electricity. Here you can set the share of
         installed electrical capacity of dispatchable biomass power plants that will 
         equipped with a CO<sub>2</sub> capture technology.
+        The total installed capacity of these powerplants can be set in the
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
     volume_of_molecules_import_co2_baseload:
       title: Import
       description: |

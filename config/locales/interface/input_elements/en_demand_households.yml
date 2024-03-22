@@ -854,9 +854,9 @@ en:
         you want to see what will happen to the grid you can set the electric boiler
         slider to the same percentage as electric heat pumps (ground). "
     households_heater_crude_oil_share:
-      title: Oil-fored heater
+      title: Oil-fired heater
       short_description: ''
-      description: This shows what part of heating is produced by oil-fored heaters.
+      description: This shows what part of heating is produced by oil-fired heaters.
         These are still quite common in many countries. Their advantage is that under
         normal circumstances fuel oil burns slowly and completely, producing no air
         pollutants other than CO<sub>2</sub>. A considerable disadvantage is the fact
@@ -875,7 +875,7 @@ en:
     households_heater_combined_hydrogen_share:
       title: Condensing combi boiler (hydrogen)
       short_description: ''
-      description: "This is a condensing hydrogen-fored heater.
+      description: "This is a condensing hydrogen-fired heater.
         When you click on \"Technical and financial properties\", then you will see that the
         efficiency is above 100% for space heating. This is the case because all energy in
         the ETM is given in lower heating values (LHV) and this boiler also retrieves heat
@@ -912,9 +912,9 @@ en:
         the use of roof area in <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households"
         data-chart-location="side"> this chart</a>.
     households_heater_wood_pellets_share:
-      title: Wood pellet boiler
+      title: Biomass boiler
       short_description: ''
-      description: "This is a wood pellet-fored boiler. These are quite efficient and
+      description: "This is a wood pellet-fired boiler. These are quite efficient and
         fully automated in that they draw their fuel from an attached silo. \r\n<br/><br/>\r\nIt
         is assumed the biomass used has been produced sustainably. Still, transporting
         biomass consumes fuel and the smaller the scale at which it is used, the less
@@ -952,7 +952,7 @@ en:
         Checkout <a href="/scenario/supply/heat/overview-district-heating" >district heating</a> to 
         add aquathermal heat as a heat source for LT or MT district heating. 
     households_heater_coal_share:
-      title: Coal-fored heater
+      title: Coal-fired heater
       short_description: ''
       description: "What percentage of heating demand in households is met by coal-foring?
         \r\n<br/><br/>The mix you fill in here is probably mostly determined by fuel
@@ -1035,8 +1035,8 @@ en:
       title: Hybrid air heat pump (hydrogen)
       short_description:
       description: "This heater is a combination of an electric heat pump that draws
-        its heat from the outside air and an efficient conventional hydrogen-fored
-        boiler.\r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe hydrogen-fored
+        its heat from the outside air and an efficient conventional hydrogen-fired
+        boiler.\r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe hydrogen-fired
         part takes over all of the heating of the building on cold winter days, when
         heat demand peaks. Because of this clever trick, the heat pump has less impact
         on the electricity grid than an all-electric heat pump does. Smart use of
@@ -1046,11 +1046,11 @@ en:
         heating and cooling too. For optimal results with <em>most</em> types of heat
         pump, installation of under-floor and wall heating instead of radiators is
         often required, as well as good levels of insulation. The <em>hybrid</em>
-        hydrogen heat pump is an exception, because of its hydrogen-fored heater as
+        hydrogen heat pump is an exception, because of its hydrogen-fired heater as
         a fall-back option. Hybrid hydrogen heat pumps can intelligently use whichever
-        part (heat pump or hydrogen-fored heater) is the most efficient or cost-effective
+        part (heat pump or hydrogen-fired heater) is the most efficient or cost-effective
         given the weather conditions and insulation level. Houses with limited insulation
-        will rely on the hydrogen-fored part more, better insulated ones will make
+        will rely on the hydrogen-fired part more, better insulated ones will make
         more use of the heat pump.\r\n<br/><br/>\r\nThe COP of the electric part of
         the hybrid hydrogen heat pump depends on ambient temperature. When the COP
         drops below the threshold value the hybrid heat pump switches to hydrogen.
@@ -1058,7 +1058,7 @@ en:
         >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     households_cooker_network_gas_share:
       title: Gas
-      short_description: ''
+      short_description:
       description: "Gas cooking is popular in countries where there is an abundance
         of natural gas and a gas distribution network. The efficiency of a gas stove
         is 40% and is lower than the electric alternatives since a lot of heat is

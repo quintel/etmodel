@@ -169,20 +169,22 @@ nl:
         <a href='/scenario/supply/hydrogen/hydrogen-production'>Waterstof productie</a> sectie."
     demand_of_molecules_direct_air_capture_co2:
       title: Direct air capture (DAC)
-      description: "Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er uit de lucht
+      description: |
+        Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er uit de lucht
         gehaald wordt via 'direct air capture'. Direct air capture is een technologie waarbij
         CO<sub>2</sub> met behulp van elektriciteit direct uit de buitenlucht gehaald wordt.
         Als hiervoor hernieuwbare stroom wordt gebruikt, neemt de CO<sub>2</sub>-concentratie
         in de atmosfeer af ('negatieve' emissies) als de afgevangen CO<sub>2</sub> wordt
         opgeslagen onder de grond. De CO<sub>2</sub> kan ook worden gebruikt voor de productie
         van CO<sub>2</sub>-neutrale brandstoffen. Meer hierover vind je
-        <a href='/scenario/supply/ccus/utilisation-and-storage-of-co2'>hier</a>.<br/><br/>
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Gebruik en opslag van CO<sub>2</sub></a>
+        sectie. </br></br>
         Direct Air Capture is een veelbelovende technologie om de CO<sub>2</sub>-concentratie
         in de lucht omlaag te brengen. Tegelijkertijd is het proces energie-intensief en
         (op dit moment) prijzig. Aangezien
         CO<sub>2</sub> over de hele wereld beschikbaar is, ligt het voor de hand om DAC
         met name toe te passen in gebieden waar de prijs van (hernieuwbare) stroom zo laag
-        mogelijk is.<br/>"
+        mogelijk is.
     demand_of_molecules_offshore_sequestration_co2:
       title: Opslag van CO<sub>2</sub> onder de zeebodem
       description: |
@@ -292,8 +294,89 @@ nl:
         prijsontwikkelingen.<br/><br/>
         Het totaal opgestelde vermogen is in te stellen in de sectie
         <a href='/scenario/supply/electricity_renewable/waste-power'>Afvalverbrandingcentrales</a>."
+    share_of_energy_chp_local_ht_wood_pellets_ccs_must_run:
+      title: Biomassa-WKK + CCS (HT) (must-run)
+      short_description:
+      description: |
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan must-run biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
+        De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
+        De vollasturen van deze centrales is in te stellen in de
+        <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
+    share_of_energy_chp_local_ht_wood_pellets_ccs_dispatchable:
+      title: Biomassa-WKK + CCS (HT) (regelbaar)
+      short_description:
+      description: |
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan regelbare biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
+        De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
+    share_of_energy_chp_local_mt_wood_pellets_ccs_must_run:
+      title: Biomassa-WKK + CCS (MT) (must-run)
+      short_description:
+      description: |
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan must-run biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
+        De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
+        De vollasturen van deze centrales is in te stellen in de
+        <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
+    share_of_energy_chp_local_mt_wood_pellets_ccs_dispatchable:
+      title: Biomassa-WKK + CCS (MT) (regelbaar)
+      short_description:
+      description: |
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan regelbare biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
+        De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.   
+    share_of_energy_power_wood_pellets_ccs_must_run:
+      title: Biomassacentrale + CCS (must-run)
+      short_description:
+      description: |
+        Een biomassacentrale prduceert elektrciteit. Stel hier in hoeveel procent van het
+        het elektrische vermogen aan must-run biomassacentrales is uitgerust met een
+        CO<sub>2</sub>-afvanginstallatie.
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
+        De vollasturen van deze centrales is in te stellen in de
+        <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
+    share_of_energy_power_wood_pellets_ccs_dispatchable:
+      title: Biomassacentrale + CCS (regelbaar)
+      short_description:
+      description: |
+        Een biomassacentrale prduceert elektrciteit. Stel hier in hoeveel procent van het
+        het elektrische vermogen aan regelbare biomassacentrales is uitgerust met een
+        CO<sub>2</sub>-afvanginstallatie.
+        Het totaal opgestelde vermogen is in te stellen in de sectie
+        <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
     volume_of_molecules_import_co2_baseload:
       title: Import
       description: |
-        Met deze schuif kan de import van CO<sub>2</sub> aangepast worden. 
- 
+        Met deze schuif kan de import van CO<sub>2</sub> aangepast worden.     
+    flh_of_energy_power_wood_pellets_ccs_must_run:
+      title: Biomassacentrale + CCS (must-run)
+      short_description:
+      description: |
+        Door het aantal vollasturen te verhogen voor de must-run biomassacentrale met CCS, wordt
+        jaarlijks meer elektriciteit geproduceerd met hetzelfde opgesteld vermogen. 
+    flh_of_energy_chp_local_mt_wood_pellets_ccs_must_run:
+      title: Biomassa-WKK MT + CCS (must-run)
+      short_description:
+      description: |
+        Door het aantal vollasturen te verhogen voor de must-run biomassacentrale medium teperatuur (MT) met CCS, wordt
+        jaarlijks meer elektriciteit en warmte geproduceerd met hetzelfde opgesteld vermogen. 
+    flh_of_energy_chp_local_ht_wood_pellets_ccs_must_run:
+      title: Biomassa-WKK HT + CCS (must-run)
+      short_description:
+      description: |
+        Door het aantal vollasturen te verhogen voor de must-run biomassacentrale hoge teperatuur (HT) met CCS, wordt
+        jaarlijks meer elektriciteit en warmte geproduceerd met hetzelfde opgesteld vermogen. 

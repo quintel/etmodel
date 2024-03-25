@@ -19,6 +19,7 @@ en:
         costs_carriers: "Energy carriers import/export"
         costs_infrastructure: "Infrastructure"
         costs_co2_ccus: "CCUS costs"
+        costs_captured_biogenic_emissions: "Captured biogenic CO<sub>2</sub> costs"
         costs_co2_emissions_costs: "CO<sub>2</sub> emissions costs"
         costs_building_and_installations_households: "Building and installations: Households"
         costs_building_and_installations_buildings: "Building and installations: Buildings"
@@ -92,7 +93,10 @@ en:
         energy_chp_combined_cycle_network_gas_steam_hot_water_output_curve: 'Gas CCGT CHP'
         energy_chp_local_engine_biogas_steam_hot_water_output_curve: 'Biogas CHP'
         energy_chp_local_engine_network_gas_steam_hot_water_output_curve: 'Gas engine CHP'
-        energy_chp_local_wood_pellets_steam_hot_water_output_curve: 'Biomass CHP'
+        energy_chp_local_wood_pellets_must_run_steam_hot_water_output_curve: 'Biomass CHP (must-run)'
+        energy_chp_local_wood_pellets_dispatchable_steam_hot_water_output_curve: 'Biomass CHP (dispatchable)'
+        energy_chp_local_wood_pellets_ccs_must_run_steam_hot_water_output_curve: 'Biomass CHP + CCS (must-run)'
+        energy_chp_local_wood_pellets_ccs_dispatchable_steam_hot_water_output_curve: 'Biomass CHP + CCS (dispatchable)'
         energy_chp_supercritical_waste_mix_steam_hot_water_output_curve: 'Waste CHP'
         energy_chp_supercritical_ccs_waste_mix_steam_hot_water_output_curve: 'Waste CHP + CCS'
         energy_chp_ultra_supercritical_lignite_steam_hot_water_output_curve: 'Lignite CHP'
@@ -128,6 +132,10 @@ en:
         industry_chp_wood_pellets: 'Industry biomass CHP'
         industry_chp_turbine_hydrogen: 'Industry hydrogen turbine CHP'
         energy_chp_local_wood_pellets: 'Biomass CHP'
+        energy_chp_local_wood_pellets_must_run: 'Biomass CHP (must-run)'
+        energy_chp_local_wood_pellets_dispatchable: 'Biomass CHP (dispatchable)'
+        energy_chp_local_wood_pellets_ccs_must_run: 'Biomass CHP + CCS (must-run)'
+        energy_chp_local_wood_pellets_ccs_dispatchable: 'Biomass CHP + CCS (dispatchable)'
         energy_chp_local_engine_network_gas: 'Gas motor CHP'
         energy_chp_local_engine_biogas: 'Biogas CHP'
         energy_chp_engine_biogas_in_heat_network_mekko: "Biogas CHP - large-scale"
@@ -249,6 +257,7 @@ en:
         biomass_final_demand: "Biomass (final demand)"
         biomass_energetic: "Biomass (energetic)"
         biomass_chp: "Biomass CHP"
+        biomass_chp_ccs: "Biomass CHP + CCS"
         biomass_gasification: "Biomass gasification"
         biomass_gasification_ccs: "Biomass gasification CCS"
         biomass_plants: "Biomass"
@@ -299,7 +308,16 @@ en:
         chp_s: "CHPs"
         cleaning: "Cleaning"
         clothes_dryer: "Dryer"
-        captured_co2_emission: "Captured CO<sub>2</sub> emissions"
+        captured_co2_emission: "Captured CO2 emissions"
+        captured_emissions : " Captured"
+        captured_bio_emissions : "Captured biogenic CO2 emissions"
+        captured_non_bio_emissions: "Captured non biogenic CO2 emissions"
+        imported_emissions: "Imported"
+        stored_emissions: "Stored"
+        exported_emissions: "Exported"
+        utilised_emissions: "Utilised CO2 emissions"
+        delayed_indefinitely_emissions: "Indefinitely delayed"
+        negative_captured_bio_emissions : "Captured biogenic share"
         co2_biomass_gas: "CO<sub>2</sub> emissions of gaseous biomass"
         co2_biomass_liquid: "CO<sub>2</sub> emissions of liquid biomass"
         co2_biomass_solid: "CO<sub>2</sub> emissions of solid biomass"
@@ -551,6 +569,10 @@ en:
         energy_power_wind_turbine_coastal: 'Wind turbines onshore coastal'
         energy_power_wind_turbine_inland: 'Wind turbines onshore inland'
         energy_power_wind_turbine_offshore: 'Wind turbines offshore'
+        energy_power_wood_pellets_must_run: 'Biomass power plant (must-run)'
+        energy_power_wood_pellets_dispatchable: 'Biomass power plant (dispatchable)'
+        energy_power_wood_pellets_ccs_must_run: 'Biomass power plant + CCS (must-run)'
+        energy_power_wood_pellets_ccs_dispatchable: 'Biomass power plant + CCS (dispatchable)'
         transport_final_demand_hydrogen_for_mekko: 'Fuel for national transport'
         energy_export_hydrogen_for_mekko: 'Export'
         energy_import_liquid_hydrogen_for_mekko: 'LH2 regasification'
@@ -1347,8 +1369,14 @@ en:
         wind_onshore_production: "Wind onshore production"
         wind_turbines: "Wind"
         wood_pellets: "Wood pellets"
-        wood_pellets_chp_ht: "Biomass CHP (HT)"
-        wood_pellets_chp_mt: "Biomass CHP (MT)"
+        wood_pellets_chp_ht_must_run: "Biomass CHP (HT) (must-run)"
+        wood_pellets_chp_ht_dispatchable: "Biomass CHP (HT) (dispatchable)"
+        wood_pellets_chp_mt_must_run: "Biomass CHP (MT) (must-run)"
+        wood_pellets_chp_mt_dispatchable: "Biomass CHP (MT) (dispatchable)"
+        wood_pellets_chp_ccs_ht_must_run: "Biomass CHP + CCS (HT) (must-run)"
+        wood_pellets_chp_ccs_ht_dispatchable: "Biomass CHP + CCS (HT) (dispatchable)"
+        wood_pellets_chp_ccs_mt_must_run: "Biomass CHP + CCS (MT) (must-run)"
+        wood_pellets_chp_ccs_mt_dispatchable: "Biomass CHP + CCS (MT) (dispatchable)"
         wood_pellets_to_power: "Wood pellets power plants"
         dry_biomass: "Dry biomass"
         wood: "Wood (final demand)"

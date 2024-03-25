@@ -20,6 +20,7 @@ nl:
         costs_infrastructure: "Infrastructuur E/G/W/H<sub>2</sub>"
         costs_co2_ccus: "CCUS-kosten"
         costs_co2_emissions_costs: "CO<sub>2</sub>-emissiekosten"
+        costs_captured_biogenic_emissions: "Afgevangen biogene CO<sub>2</sub>-kosten"
         costs_building_and_installations_households: "Gebouwen/Installaties: Huishoudens"
         costs_building_and_installations_buildings: "Gebouwen/Installaties: Gebouwen"
         costs_building_and_installations_agriculture: "Gebouwen/Installaties: Landbouw"
@@ -49,6 +50,13 @@ nl:
         costs_infrastructure_heat: "Infrastructuur E/G/W/H<sub>2</sub>: Warmtenet"
         costs_infrastructure_hydrogen: "Infrastructuur E/G/W/H<sub>2</sub>: Waterstofnetwerk"
         costs_infrastructure_network_gas: "Infrastructuur E/G/W/H<sub>2</sub>: Gasnetwerk"
+        captured_emissions : "Afgevangen"
+        captured_non_bio_emissions: "Afgevangen niet-biogene CO2 emissies"
+        imported_emissions: "Geïmporteerd"
+        stored_emissions: "Opgeslagen"
+        exported_emissions: "Geëxporteerd"
+        delayed_indefinitely_emissions: "Voor onbepaalde tijd uitgesteld"
+        negative_captured_bio_emissions : "Afgevangen biogene deel"
         co2_emitted: "CO<sub>2</sub> uitgestoten"
         co2_captured: "CO<sub>2</sub> afgevangen"
         co2_threshold: "Grenswaarde Europese Commissie"
@@ -92,7 +100,10 @@ nl:
         energy_chp_combined_cycle_network_gas_steam_hot_water_output_curve: 'Gas STEG WKK'
         energy_chp_local_engine_biogas_steam_hot_water_output_curve: 'Biogas-WKK'
         energy_chp_local_engine_network_gas_steam_hot_water_output_curve: 'Gasmotor-WKK '
-        energy_chp_local_wood_pellets_steam_hot_water_output_curve: 'Biomassa-WKK'
+        energy_chp_local_wood_pellets_must_run_steam_hot_water_output_curve: 'Biomassa-WKK (must-run)'
+        energy_chp_local_wood_pellets_dispatchable_steam_hot_water_output_curve: 'Biomassa-WKK (regelbaar)'
+        energy_chp_local_wood_pellets_ccs_must_run_steam_hot_water_output_curve: 'Biomassa-WKK + CCS (must-run)'
+        energy_chp_local_wood_pellets_ccs_dispatchable_steam_hot_water_output_curve: 'Biomassa-WKK + CCS (regelbaar)'
         energy_chp_supercritical_waste_mix_steam_hot_water_output_curve: 'Afval-WKK'
         energy_chp_supercritical_ccs_waste_mix_steam_hot_water_output_curve: 'Afval-WKK + CCS'
         energy_chp_ultra_supercritical_lignite_steam_hot_water_output_curve: 'Bruinkolen-WKK'
@@ -521,6 +532,10 @@ nl:
         energy_power_nuclear_small_modular_reactor_uranium_oxide: 'Kern kleine modulaire reactor'
         energy_power_solar_csp_solar_radiation: 'Geconcentreerde zonnestroom'
         energy_power_solar_pv: 'Zonnecentrales PV'
+        energy_power_wood_pellets_must_run: 'Biomassacentrale (must-run)'
+        energy_power_wood_pellets_dispatchable: 'Biomassacentrale (regelbaar)'
+        energy_power_wood_pellets_ccs_must_run: 'Biomassacentrale + CCS (must-run)'
+        energy_power_wood_pellets_ccs_dispatchable: 'Biomassacentrale + CCS (regelbaar)'
         energy_battery_solar_pv: "Zonnecentrales PV met batterij"
         energy_battery_wind_turbine_inland: 'Windmolens op land met batterij'
         energy_battery_wind_electricity: 'Windmolens op land met batterij'
@@ -918,6 +933,10 @@ nl:
         industry_chp_wood_pellets: 'Industriële biomassa-WKK'
         industry_chp_turbine_hydrogen: "Industriële waterstofturbine-WKK"
         energy_chp_local_wood_pellets: 'Biomassa-WKK'
+        energy_chp_local_wood_pellets_must_run: 'Biomassa-WKK (must-run)'
+        energy_chp_local_wood_pellets_dispatchable: 'Biomassa-WKK (regelbaar)'
+        energy_chp_local_wood_pellets_ccs_must_run: 'Biomassa-WKK + CCS (must-run)'
+        energy_chp_local_wood_pellets_ccs_dispatchable: 'Biomassa-WKK + CCS (regelbaar)'
         energy_chp_local_engine_network_gas: 'Gasmotor-WKK'
         energy_chp_local_engine_biogas: 'Biogas-WKK'
         industry_flexibility_p2h_electricity: "Omgezet naar warmte voor industrie"
@@ -1358,9 +1377,14 @@ nl:
         with_im_export_2010: "Met im- en export 2010"
         with_im_export_20xx: "Met im- en export 20xx"
         wood_pellets: "Houtpellets (bijstook)"
-        wood_pellets_chp_ht: "Biomassa-WKK (HT)"
-        wood_pellets_chp_mt: "Biomassa-WKK (MT)"
-        wood_pellets_to_power: "Houtpelletscentrales"
+        wood_pellets_chp_ht_must_run: "Biomassa-WKK (HT) (must-run)"
+        wood_pellets_chp_ht_dispatchable: "Biomassa-WKK (HT) (regelbaar)"
+        wood_pellets_chp_mt_must_run: "Biomassa-WKK (MT) (must-run)"
+        wood_pellets_chp_mt_dispatchable: "Biomassa-WKK (MT) (regelbaar)"
+        wood_pellets_chp_ccs_ht_must_run: "Biomassa-WKK + CCS (HT) (must-run)"
+        wood_pellets_chp_ccs_ht_dispatchable: "Biomassa-WKK + CCS (HT) (regelbaar)"
+        wood_pellets_chp_ccs_mt_must_run: "Biomassa-WKK + CCS (MT) (must-run)"
+        wood_pellets_chp_ccs_mt_dispatchable: "Biomassa-WKK + CCS (MT) (regelbaar)"
         dry_biomass: "Droge biomassa"
         wood: "Hout (eindgebruik)"
         agriculture_final_demand_hydrogen: "Warmte voor landbouw"

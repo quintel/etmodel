@@ -35,18 +35,102 @@
   dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: coal_powder_overview_costs_of_electricity_production
-- label: biomass_chp
+- label: energy_chp_local_wood_pellets_must_run
   color: "#5D7929"
   order_by: 1
   group: bio
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: biomass_chp
+  gquery: biomass_chp_must_run
   is_1990:
   dependent_on:
   output_element_key: overview_costs_of_electricity_production
-  key: biomass_chp_overview_costs_of_electricity_production
+  key: biomass_chp_must_run_overview_costs_of_electricity_production
+- label: energy_chp_local_wood_pellets_dispatchable
+  color: "#5D7929"
+  order_by: 1
+  group: bio
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_chp_dispatchable
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: biomass_chp_dispatchable_overview_costs_of_electricity_production
+- label: energy_chp_local_wood_pellets_ccs_must_run
+  color: "#5D7929"
+  order_by: 1
+  group: bio
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_chp_ccs_must_run
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: biomass_chp_ccs_must_run_overview_costs_of_electricity_production
+- label: energy_chp_local_wood_pellets_ccs_dispatchable
+  color: "#5D7929"
+  order_by: 1
+  group: bio
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_chp_ccs_dispatchable
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: biomass_chp_ccs_dispatchable_overview_costs_of_electricity_production
+- label: energy_power_wood_pellets_must_run
+  color: "#5D7929"
+  order_by: 1
+  group: bio
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_power_must_run
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: biomass_power_must_run_overview_costs_of_electricity_production
+- label: energy_power_wood_pellets_dispatchable
+  color: "#5D7929"
+  order_by: 1
+  group: bio
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_power_dispatchable
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: biomass_power_dispatchable_overview_costs_of_electricity_production
+- label: energy_power_wood_pellets_ccs_must_run
+  color: "#5D7929"
+  order_by: 1
+  group: bio
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_power_ccs_must_run
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: biomass_power_ccs_must_run_overview_costs_of_electricity_production
+- label: energy_power_wood_pellets_ccs_dispatchable
+  color: "#5D7929"
+  order_by: 1
+  group: bio
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_power_ccs_dispatchable
+  is_1990:
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: biomass_power_ccs_dispatchable_overview_costs_of_electricity_production
 - label: coal_ccs
   color: "#333333"
   order_by: 3

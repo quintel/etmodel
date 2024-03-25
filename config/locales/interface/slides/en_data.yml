@@ -44,27 +44,41 @@ en:
       title: Specifications annual costs
       short_description:
       description: |
-        Download detailed information on the costs (CAPEX, OPEX and totals) of different technologies
-        and user groups.
-        <br /><br />
-        <b> Note </b>: There are two minor differences between the costs export and the costs charts:
-        <ol>
-          <li> The CO<sub>2</sub> emissions costs are <i>excluded</i> from the totals in the costs export.
-          As a result, the costs export totals are lower than the dashboard item by the CO<sub>2</sub> emissions costs.
-          However, the CO2 emissions costs are included as a separate column in the export.
-          <br /><br />
-          <li> The totals in the costs export are the sum of CCUS- and non-CCUS CAPEX and OPEX. 
-          However, the charts show all CCUS investment as a separate CCUS category.
-          Therefore, costs groups that include CCUS investment, e.g. energy production, show lower total costs in the charts
-          compared to the export. Conversely, the charts show higher total CCUS costs than the costs export by the same amount.
-        </ol>
+        Download detailed information on the costs (CAPEX, OPEX and totals) of different
+        technologies and user groups. See the 
+        <a href="https://docs.energytransitionmodel.com/main/cost-overview-per-sector/" target=\"_blank\">documentation</a>
+        for more information.
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/costs_parameters.csv" target="_blank">
-              <span class="name">Specifications costs</span> <span class="filetype">23KB CSV</span>
+              <span class="name">Specifications costs</span> <span class="filetype">50KB CSV</span>
             </a>
           </li>
         </ul>
+        <b>Note</b>: the following distinctions should be considered when comparing the costs data
+        export with the cost charts
+        (<a href="#" class="open_chart" data-chart-key="costs_overview" data-chart-location="side">overview</a> or
+        <a href="#" class="open_chart" data-chart-key="costs_overview_detailed" data-chart-location="side">
+        detailed</a>) or costs dashboard item. </br></br>
+        <ol>
+          <li>
+          The "CO<sub>2</sub> emission costs" series in the cost charts is equal to the sum of the
+          column "CO2 emission costs (eur)" in the data export.
+          </li>
+          <li>
+          The "Captured biogenic CO<sub>2</sub> costs" series in the cost charts is equal to the sum
+          of the column "Captured biogenic CO2 costs (eur)" in the data export.
+          </li>
+          <li>
+          The columns "Total costs (eur)", "CO2 emission costs (eur)" and "Captured biogenic CO2
+          costs (eur)" in the data export then sum to the costs dashboard item and to the "Total"
+          in the cost charts.
+          </li>
+          <li>
+          Finally, in the cost charts, "CCUS costs" are allocated to a dedicated series, while
+          in the data export, they are part of the costs in the "Total costs (eur)" column.
+          </li>
+        </ol>
     data_export_storage:
       title: Specifications storage technologies
       short_description:

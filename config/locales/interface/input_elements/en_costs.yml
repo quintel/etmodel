@@ -176,6 +176,14 @@ en:
         CO<sub>2</sub> capture. Costs are compared to current costs. Currently,
         this technology has only been applied experimentally at power plants. It is
         expected that costs will decrease in the future.\r\n<br/>"
+    costs_captured_biogenic_co2:
+      title: Captured biogenic CO<sub>2</sub> price
+      short_description:
+      description: |
+        This slider sets the price that is received for captured biogenic CO<sub>2</sub>. <br/><br/>
+        Logically, the captured biogenic CO<sub>2</sub> price should at least be equal to the
+        CO<sub>2</sub> price (price for emitting CO<sub>2</sub>). If it were lower, it would be
+        cheaper to emit rather than to capture CO<sub>2</sub>.
     om_costs_co2_capture_industry:
       title: Operational & Maintenance
       short_description: ''

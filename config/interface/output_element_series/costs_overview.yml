@@ -90,3 +90,16 @@
   dependent_on:
   output_element_key: costs_overview
   key: costs_co2_emissions_costs_costs_overview
+- label: costs_captured_biogenic_emissions
+  unit: euro
+  color: "#fde7b1"
+  order_by: 100
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_co2_energy_graph_co2_captured_biogenic_costs
+  is_1990:
+  dependent_on:
+  output_element_key: costs_overview
+  key: costs_captured_biogenic_emissions_costs_overview    

@@ -41,19 +41,38 @@
   position: 215
   slide_key: specs_electricity_renewable_biomass_plants
 
+- key: flh_of_energy_power_wood_pellets_ccs_must_run
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 300
+  slide_key: specs_electricity_renewable_biomass_plants
+- key: flh_of_energy_chp_local_mt_wood_pellets_ccs_must_run
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 305
+  slide_key: specs_electricity_renewable_biomass_plants
+- key: flh_of_energy_chp_local_ht_wood_pellets_ccs_must_run
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 310
+  slide_key: specs_electricity_renewable_biomass_plants
+
 - key: efficiency_industry_chp_wood_pellets_electricity
   interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_wood_pellets
-  position: 300
+  position: 400
   slide_key: specs_electricity_renewable_biomass_plants
 - key: efficiency_industry_chp_wood_pellets_heat
   interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_wood_pellets
-  position: 305
+  position: 410
   slide_key: specs_electricity_renewable_biomass_plants
 
 - key: efficiency_agriculture_chp_wood_pellets_electricity
@@ -61,26 +80,26 @@
   step_value: 1.0
   unit: "%"
   related_node: agriculture_chp_wood_pellets
-  position: 400
+  position: 500
   slide_key: specs_electricity_renewable_biomass_plants
 - key: efficiency_agriculture_chp_wood_pellets_heat
   interface_group: efficiency_agriculture_plants
   step_value: 1.0
   unit: "%"
   related_node: agriculture_chp_wood_pellets
-  position: 405
+  position: 505
   slide_key: specs_electricity_renewable_biomass_plants
 - key: efficiency_agriculture_chp_engine_biogas_electricity
   interface_group: efficiency_agriculture_plants
   step_value: 1.0
   unit: "%"
   related_node: agriculture_chp_engine_biogas
-  position: 410
+  position: 510
   slide_key: specs_electricity_renewable_biomass_plants
 - key: efficiency_agriculture_chp_engine_biogas_heat
   interface_group: efficiency_agriculture_plants
   step_value: 1.0
   unit: "%"
   related_node: agriculture_chp_engine_biogas
-  position: 415
+  position: 515
   slide_key: specs_electricity_renewable_biomass_plants

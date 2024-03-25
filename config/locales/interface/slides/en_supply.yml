@@ -59,25 +59,61 @@ en:
       description: |
         Here you can indicate what share of coal input in cyclone furnaces is replaced
         by wood pellets.
-    supply_ccus_capture:
-      title:
-      description: ''
-    supply_ccus_capture:
-      title: Capture and import of CO<sub>2</sub>
-      description: "Carbon Capture, Utilisation and Storage (CCUS) is a group of technologies to capture
-        the CO<sub>2</sub> that is emitted in (e.g.) industrial processes and subsequently to store
+    supply_ccus_capture_overview:
+      title: Overview
+      description: |
+        Carbon Capture, Utilisation and Storage (CCUS) is a group of technologies to capture
+        the CO<sub>2</sub> that is emitted in e.g., industrial processes and subsequently to store
         or 'recycle' these emissions. In this section you can explore the role CCUS could play in the
-        future energy system. CO<sub>2</sub> emissions can be captured in industrial processes, the
-        energy sector or can be captured directly from the ambient air. Below, you can make assumptions
-        about the capture of CO<sub>2</sub> per technology. <br/><br/>
-        The chart to the right shows the amount of captured CO<sub>2</sub> ('supply of CO<sub>2</sub>')
-        in your scenario and what happens with this CO<sub>2</sub> (storage, utilisation). If more CO<sub>2</sub>
-        is captured than used, the chart shows a 'surplus' of CO<sub>2</sub>. Vice versa, the chart shows a
-        'deficit' if less is captured.<br/><br/>
-        More information about the energy use of CCUS in your scenario can be found in
-        <a href='#' class='open_chart' data-chart-key='energy_use_of_ccus'>this</a> chart.<br /><br/>
-        More information on CCUS in the ETM can be found in the <a href='https://docs.energytransitionmodel.com/main/co2-ccus'
-        target='_blank'>documentation</a>."
+        future energy system. See the
+        <a href='https://docs.energytransitionmodel.com/main/co2-ccus' target='_blank'>documentation</a>
+        for more information. <br/><br/>
+        In this section you can set the supply and demand of CO<sub>2</sub> for your scenario. 
+        It is divided over the following subsections:
+        <ul>
+        <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        Capture of CO<sub>2</sub> in energy sector</a></li>
+        <li><a href="/scenario/emissions/ccus/captur-of-co2-in-industry-sector">
+        Capture of CO<sub>2</sub> in industry sector</a></li>
+        <li><a href="/scenario/emissions/ccus/import-of-co2r">
+        Import of CO<sub>2</sub> </a></li>
+        <li><a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">
+        Utilisation and storage of CO<sub>2</sub> </a></li>
+        <li><a href="/scenario/emissions/ccus/transport-of-co2">
+        Transport of CO<sub>2</sub> </a></li>
+        </ul>
+    supply_ccus_capture_energy:
+      title: Capture of CO<sub>2</sub> in energy sector
+      description: |
+        Use the sliders below to make assumptions about the capture of CO<sub>2</sub> in the energy
+        sector. It can be captured directly from the ambient air, from power plants, or from
+        hydrogen plants. </br></br>
+        The energy use of CCUS can be seen in
+        <a href="#" class="open_chart" data-chart-key="energy_use_of_ccus" data-chart-location="side">
+        this</a> chart. The net effect of CO<sub>2</sub> demand and supply on the total emissions is
+        shown in
+        <a href="#" class="open_chart" data-chart-key="waterfall_captured_emissions" data-chart-location="side">
+        this</a> chart.
+    supply_ccus_capture_industry:
+      title: Capture of CO<sub>2</sub> in industry sector
+      description: |
+        Use the sliders below to make assumptions about the capture of CO<sub>2</sub> in the industry
+        sector. It can be captured in various sub sectors, either at combustion or from processes. </br></br>
+        The energy use of CCUS can be seen in
+        <a href="#" class="open_chart" data-chart-key="energy_use_of_ccus" data-chart-location="side">
+        this</a> chart. The net effect of CO<sub>2</sub> demand and supply on the total emissions is
+        shown in
+        <a href="#" class="open_chart" data-chart-key="waterfall_captured_emissions" data-chart-location="side">
+        this</a> chart.
+    supply_ccus_capture_import:
+      title: Import of CO<sub>2</sub>
+      description: |
+        Determine the baseload import of CO<sub>2</sub> with the slider below. CO<sub>2</sub> can be
+        imported for the production of synthetic kerosene or methanol. Additionally,
+        countries with a significant carbon storage infrastructure might offer to import
+        CO<sub>2</sub> from other countries and store it for a certain price. </br></br>
+        Export of CO<sub>2</sub> can be set in the
+        <a href="/scenario/demand/export_energy/export-volumes-per-carrier">Export</a> section.
     supply_ccus_utilisation_storage:
       title: Utilisation and storage of CO<sub>2</sub>
       description: "Captured CO<sub>2</sub> can be stored under the ground or re-used to produce fuels or (basic) chemicals.
@@ -177,7 +213,8 @@ en:
       short_description:
       description: How much electricity and heat will be produced using biomass?
         Here you can set the installed electrical capacity for biomass plants.
-        The heat that is produced during the process will be used as heat supply for district heating networks.
+        The heat that is produced during the process will be used as heat supply for district heating networks.<br/><br/>
+        The installed electrical capacity can be set for must-run and dispatchable biomass plants. 
     supply_electricity_renewable_geothermal:
       title: Geothermal
       short_description: ''

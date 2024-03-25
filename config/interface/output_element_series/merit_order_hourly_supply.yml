@@ -1,6 +1,6 @@
 ---
 - label: energy_chp_supercritical_waste_mix
-  color: "#F0904C"
+  color: "#006266"
   order_by: 5
   group: dispatchable
   show_at_first:
@@ -12,7 +12,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_chp_supercritical_waste_mix_must_run_merit_order_hourly_supply
 - label: energy_chp_supercritical_ccs_waste_mix
-  color: "#F0904C"
+  color: "#82002b"
   order_by: 5
   group: dispatchable
   show_at_first:
@@ -48,7 +48,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_power_supercritical_ccs_waste_mix_must_run_merit_order_hourly_supply
 - label: industry_chp_combined_cycle_gas_power_fuelmix
-  color: "#9B9303"
+  color: "#A4B0BE"
   order_by: 5
   group: dispatchable
   show_at_first:
@@ -60,7 +60,7 @@
   output_element_key: merit_order_hourly_supply
   key: industry_chp_combined_cycle_gas_power_fuelmix_must_run_merit_order_hourly_supply
 - label: industry_chp_engine_gas_power_fuelmix
-  color: "#FBE875"
+  color: "#CED6E0"
   order_by: 5
   group: must_run
   show_at_first:
@@ -72,7 +72,7 @@
   output_element_key: merit_order_hourly_supply
   key: industry_chp_engine_gas_power_fuelmix_must_run_merit_order_hourly_supply
 - label: industry_chp_turbine_gas_power_fuelmix
-  color: "#D7E91D"
+  color: "#CED6E0"
   order_by: 5
   group: must_run
   show_at_first:
@@ -84,7 +84,7 @@
   output_element_key: merit_order_hourly_supply
   key: industry_chp_turbine_gas_power_fuelmix_must_run_merit_order_hourly_supply
 - label: industry_chp_ultra_supercritical_coal
-  color: "#566D0B"
+  color: "#485460"
   order_by: 5
   group: must_run
   show_at_first:
@@ -96,7 +96,7 @@
   output_element_key: merit_order_hourly_supply
   key: industry_chp_ultra_supercritical_coal_must_run_merit_order_hourly_supply
 - label: buildings_solar_pv_solar_radiation
-  color: "#3D6B0D"
+  color: "#fed976"
   order_by: 5
   group: volatile
   show_at_first:
@@ -120,7 +120,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_power_geothermal_volatile_merit_order_hourly_supply
 - label: energy_power_hydro_river
-  color: "#08A549"
+  color: "#0066ff"
   order_by: 5
   group: volatile
   show_at_first:
@@ -132,7 +132,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_power_hydro_river_volatile_merit_order_hourly_supply
 - label: energy_power_solar_csp_solar_radiation
-  color: "#398E4A"
+  color: "#ced976"
   order_by: 5
   group: volatile
   show_at_first:
@@ -144,7 +144,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_power_solar_csp_solar_radiation_volatile_merit_order_hourly_supply
 - label: energy_power_solar_pv_solar_radiation
-  color: "#D0F2B4"
+  color: "#ded976"
   order_by: 5
   group: volatile
   show_at_first:
@@ -156,7 +156,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_power_solar_pv_solar_radiation_volatile_merit_order_hourly_supply
 - label: energy_power_solar_pv_offshore
-  color: "#e6d36c"
+  color: "#ffae00"
   order_by: 5
   group: volatile
   show_at_first:
@@ -180,7 +180,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_battery_solar_electricity_volatile_merit_order_hourly_supply
 - label: energy_power_wind_turbine_coastal
-  color: "#065530"
+  color: "#4292c6"
   order_by: 5
   group: volatile
   show_at_first:
@@ -192,7 +192,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_power_wind_turbine_coastal_volatile_merit_order_hourly_supply
 - label: energy_power_wind_turbine_inland
-  color: "#75EEA3"
+  color: "#9292c6"
   order_by: 5
   group: volatile
   show_at_first:
@@ -204,7 +204,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_power_wind_turbine_inland_volatile_merit_order_hourly_supply
 - label: energy_power_wind_turbine_offshore
-  color: "#2ACD99"
+  color: "#7292c6"
   order_by: 5
   group: volatile
   show_at_first:
@@ -228,7 +228,7 @@
   output_element_key: merit_order_hourly_supply
   key: energy_battery_wind_electricity_volatile_merit_order_hourly_supply
 - label: households_solar_pv_solar_radiation
-  color: "#C2FFD1"
+  color: "#eed976"
   order_by: 5
   group: volatile
   show_at_first:
@@ -695,18 +695,102 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_chp_local_engine_network_gas_merit_order_hourly_supply
-- label: energy_chp_local_wood_pellets
+- label: energy_chp_local_wood_pellets_must_run
   color: "#AA2D02"
   order_by: 5
   group: ''
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_local_wood_pellets
+  gquery: energy_chp_local_wood_pellets_must_run
   is_1990:
   dependent_on:
   output_element_key: merit_order_hourly_supply
-  key: energy_chp_local_wood_pellets_merit_order_hourly_supply
+  key: energy_chp_local_wood_pellets_must_run_merit_order_hourly_supply
+- label: energy_chp_local_wood_pellets_dispatchable
+  color: "#FF612A"
+  order_by: 5
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_local_wood_pellets_dispatchable
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_chp_local_wood_pellets_dispatchable_merit_order_hourly_supply
+- label: energy_chp_local_wood_pellets_ccs_must_run
+  color: "#6F1D01"
+  order_by: 5
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_local_wood_pellets_ccs_must_run
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_chp_local_wood_pellets_ccs_must_run_merit_order_hourly_supply
+- label: energy_chp_local_wood_pellets_ccs_dispatchable
+  color: "#A24A2C"
+  order_by: 5
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_local_wood_pellets_ccs_dispatchable
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_chp_local_wood_pellets_ccs_dispatchable_merit_order_hourly_supply
+- label: energy_power_wood_pellets_must_run
+  color: "#5D7929"
+  order_by: 5
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_wood_pellets_must_run
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_wood_pellets_must_run_merit_order_hourly_supply
+- label: energy_power_wood_pellets_dispatchable
+  color: "#7EA437"
+  order_by: 5
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_wood_pellets_dispatchable
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_wood_pellets_dispatchable_merit_order_hourly_supply
+- label: energy_power_wood_pellets_ccs_must_run
+  color: "#304011"
+  order_by: 5
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_wood_pellets_ccs_must_run
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_wood_pellets_ccs_must_run_merit_order_hourly_supply
+- label: energy_power_wood_pellets_ccs_dispatchable
+  color: "#8C947E"
+  order_by: 5
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_wood_pellets_ccs_dispatchable
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_wood_pellets_ccs_dispatchable_merit_order_hourly_supply
 - label: industry_chp_wood_pellets
   color: "#771108"
   order_by: 5

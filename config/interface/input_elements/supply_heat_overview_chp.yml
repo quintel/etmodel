@@ -76,18 +76,33 @@
   position: 260
   slide_key: supply_heat_overview_chp
 
-- key: share_of_energy_chp_local_ht_wood_pellets
-  share_group: chp_wood_pellets_heat
+- key: share_of_energy_chp_local_ht_wood_pellets_must_run
+  share_group: chp_wood_pellets_heat_must_run
   step_value: 1.0
   unit: "%"
-  interface_group: heat_allocation_wood_pellets_chp
+  interface_group: heat_allocation_wood_pellets_chp_must_run
   position: 300
   slide_key: supply_heat_overview_chp
-- key: share_of_energy_chp_local_mt_wood_pellets
-  share_group: chp_wood_pellets_heat
+- key: share_of_energy_chp_local_mt_wood_pellets_must_run
+  share_group: chp_wood_pellets_heat_must_run
   step_value: 1.0
   unit: "%"
-  interface_group: heat_allocation_wood_pellets_chp
+  interface_group: heat_allocation_wood_pellets_chp_must_run
+  position: 310
+  slide_key: supply_heat_overview_chp
+
+- key: share_of_energy_chp_local_ht_wood_pellets_dispatchable
+  share_group: chp_wood_pellets_heat_dispatchable
+  step_value: 1.0
+  unit: "%"
+  interface_group: heat_allocation_wood_pellets_chp_dispatchable
+  position: 300
+  slide_key: supply_heat_overview_chp
+- key: share_of_energy_chp_local_mt_wood_pellets_dispatchable
+  share_group: chp_wood_pellets_heat_dispatchable
+  step_value: 1.0
+  unit: "%"
+  interface_group: heat_allocation_wood_pellets_chp_dispatchable
   position: 310
   slide_key: supply_heat_overview_chp
 

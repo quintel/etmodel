@@ -9,14 +9,46 @@ en:
         installed electrical capacity of biogas CHP plants that supply heat for district
         heating networks. For more information you can checkout the
         <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
-    capacity_of_energy_chp_local_wood_pellets:
+    capacity_of_energy_chp_local_wood_pellets_must_run:
       title: Biomass CHP
       short_description:
       description: |
         A CHP produces both heat and electricity. Here you can set the
-        installed electrical capacity of biomass CHP plants that supply heat for district
+        installed electrical capacity of must-run biomass CHP plants that supply heat for district
         heating networks. For more information you can checkout the
         <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
+    capacity_of_energy_chp_local_wood_pellets_dispatchable:
+      title: Biomass CHP
+      short_description:
+      description: |
+        A CHP produces both heat and electricity. Here you can set the
+        installed electrical capacity of dispatchable biomass CHP plants that supply heat for district
+        heating networks. For more information you can checkout the
+        <a href="/scenario/supply/heat/heat-sources">District heating</a> section.</br>
+    capacity_of_energy_power_wood_pellets_must_run:
+      title: Biomass power plant
+      short_description:
+      description: |
+        A biomass power plant produces electricity from biomass feedstock. 
+        For a typical biomass power plant, a share of its installed capacity operates on a must-run basis, 
+        ensuring continuous electricity production regardless of demand fluctuations. The remaining capacity is 
+        dispatchable, meaning it operates flexibly to meet varying electricity demand. Therefore, logically 
+        there will be no installed dispatchable capacity if there is no installed must-run capacity for the
+        biomass power plant. <br/><br/>
+        Here you can set the installed electrical capacity of must-run biomass power plants that supply electricity 
+        only.
+    capacity_of_energy_power_wood_pellets_dispatchable:
+      title: Biomass power plant
+      short_description:
+      description: |
+        A biomass power plant produces electricity from biomass feedstock. 
+        For a typical biomass power plant, a share of its installed capacity operates on a must-run basis, 
+        ensuring continuous electricity production regardless of demand fluctuations. The remaining capacity is 
+        dispatchable, meaning it operates flexibly to meet varying electricity demand. Therefore, logically 
+        there will be no installed dispatchable capacity if there is no installed must-run capacity for the
+        biomass power plant. <br/><br/>
+        Here you can set the installed electrical capacity of dispatchable biomass power plants that supply 
+        electricity only.
     capacity_of_energy_power_turbine_hydrogen:
       title: Hydrogen turbine
       short_description:

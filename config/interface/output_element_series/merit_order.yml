@@ -803,30 +803,150 @@
   dependent_on:
   output_element_key: merit_order
   key: waste_chp_ccs_mt_merit_merit_order
-- label: wood_pellets_chp_ht
-  color: "#6AB04C"
+- label: wood_pellets_chp_ht_must_run
+  color: "#AA2D02"
   order_by: 1
   group: ''
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: wood_pellets_chp_ht_merit_order
+  gquery: wood_pellets_chp_ht_must_run_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: wood_pellets_chp_ht_merit_order
-- label: wood_pellets_chp_mt
-  color: "#6AB04C"
+  key: wood_pellets_chp_ht_must_run_merit_order
+- label: wood_pellets_chp_ht_dispatchable
+  color: "#FF612A"
   order_by: 1
   group: ''
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: wood_pellets_chp_mt_merit_order
+  gquery: wood_pellets_chp_ht_dispatchable_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: wood_pellets_chp_mt_merit_order
+  key: wood_pellets_chp_ht_dispatchable_merit_order
+- label: wood_pellets_chp_ccs_ht_must_run
+  color: "#6F1D01"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_chp_ccs_ht_must_run_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_chp_ccs_ht_must_run_merit_order
+- label: wood_pellets_chp_ccs_ht_dispatchable
+  color: "#A24A2C"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_chp_ccs_ht_dispatchable_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_chp_ccs_ht_dispatchable_merit_order
+- label: wood_pellets_chp_mt_must_run
+  color: "#C97908"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_chp_mt_must_run_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_chp_mt_must_run_merit_order
+- label: wood_pellets_chp_mt_dispatchable
+  color: "#EAB160"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_chp_mt_dispatchable_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_chp_mt_dispatchable_merit_order
+- label: wood_pellets_chp_ccs_mt_must_run
+  color: "#AB6503"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_chp_ccs_mt_must_run_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_chp_ccs_mt_must_run_merit_order
+- label: wood_pellets_chp_ccs_mt_dispatchable
+  color: "#FF9500"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_chp_ccs_mt_dispatchable_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_chp_ccs_mt_dispatchable_merit_order
+- label: energy_power_wood_pellets_must_run
+  color: "#5D7929"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_power_must_run_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_power_must_run_merit_order
+- label: energy_power_wood_pellets_dispatchable
+  color: "#7EA437"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_power_dispatchable_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_power_dispatchable_merit_order
+- label: energy_power_wood_pellets_ccs_must_run
+  color: "#304011"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_power_ccs_must_run_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_power_ccs_must_run_merit_order
+- label: energy_power_wood_pellets_ccs_dispatchable
+  color: "#8C947E"
+  order_by: 1
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: wood_pellets_power_ccs_dispatchable_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: wood_pellets_power_ccs_dispatchable_merit_order
 - label: gas_chp_engine_ht
   color: "#E84118"
   order_by: 1

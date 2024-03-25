@@ -303,16 +303,21 @@ en:
         is considered flexible because it can be increased, reduced or shifted in time if needed (see the
         <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Flexibility overview </a>
         for background information). </br></br>
-        Each flexible demand technology has a <i>willingness to pay</i> that indicates the maximum electricity
-        price for which it is willing to consume electricity. If the electricity price in a given hour is lower than a technology's willingness to pay, the technology will consume electricity
-        in that hour.
+        Each flexible demand technology has a <i>willingness to pay</i> that indicates the maximum 
+        electricity price for which it is willing to consume electricity. If the electricity price 
+        in a given hour is lower than a technology's willingness to pay, the technology will consume 
+        electricity in that hour.
         In the slides below you can set the willingness to pay and installed capacity for:
-        <ul><li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
         conversion to hydrogen</a></li>
         <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
         conversion to heat for district heating</a></li>
         <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
-        conversion to heat for industry</a></li></ul></br>
+        conversion to heat for industry</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-agriculture">
+        conversion to heat for agriculture</a></li>
+        </ul></br>
         Note that the specific behaviour of these technologies is more complicated than stated in this short
         description. Our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentation</a> contains a more detailed description.

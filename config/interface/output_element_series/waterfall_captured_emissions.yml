@@ -1,0 +1,78 @@
+---
+- label: captured_emissions
+  color: "#CCCCCC"
+  order_by: 5
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  group: future
+  gquery: captured_emissions_waterfall_captured_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_captured_emissions
+  key: captured_emissions_waterfall_captured_emissions
+
+- label: imported_emissions
+  color: "#854321"
+  order_by: 10
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  group: future
+  gquery: imported_emissions_waterfall_captured_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_captured_emissions
+  key: imported_emissions_waterfall_captured_emissions    
+
+- label: exported_emissions
+  color: "#854321"
+  order_by: 15
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  group: future
+  gquery: exported_emissions_waterfall_captured_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_captured_emissions
+  key: exported_emissions_waterfall_captured_emissions
+
+- label: stored_emissions
+  color: "#4169E1"
+  order_by: 20
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  group: future
+  gquery: stored_emissions_waterfall_captured_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_captured_emissions
+  key: stored_emissions_waterfall_captured_emissions 
+
+- label: delayed_indefinitely_emissions
+  color: "#88CCEE"
+  order_by: 25
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  group: future
+  gquery: delayed_indefinitely_emissions_waterfall_captured_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_captured_emissions
+  key: delayed_indefinitely_emissions_waterfall_captured_emissions   
+
+- label: negative_captured_bio_emissions
+  color: "#5D7929"
+  order_by: 30
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  group: future
+  gquery: negative_captured_bio_emissions_waterfall_captured_emissions
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_captured_emissions
+  key: negative_captured_bio_emissions_waterfall_captured_emissions  

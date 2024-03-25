@@ -8,13 +8,40 @@ nl:
         Een WKK produceert zowel elektriciteit als warmte. Stel hier het
         elektrische vermogen aan biogas-WKK's in dat warmte levert aan warmtenetten.
         Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
-    capacity_of_energy_chp_local_wood_pellets:
+    capacity_of_energy_chp_local_wood_pellets_must_run:
       title: Biomassa-WKK
       short_description:
       description: |
         Een WKK produceert zowel elektriciteit als warmte. Stel hier het
-        elektrische vermogen aan biomassa-WKK's in dat warmte levert aan warmtenetten.
+        elektrische vermogen aan must-run biomassa-WKK's in dat warmte levert aan warmtenetten.
         Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
+    capacity_of_energy_chp_local_wood_pellets_dispatchable:
+      title: Biomassa-WKK
+      short_description:
+      description: |
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan regelbare biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
+    capacity_of_energy_power_wood_pellets_must_run:
+      title: Biomassacentrale
+      short_description:
+      description: |
+        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het 
+        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen. 
+        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag. 
+        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de 
+        biomassacentrale. <br/><br/>
+        Met deze schuif kan het geïnstalleerd vermogen van must-run biomassacentrales worden ingesteld die alleen elektriciteit leveren.
+    capacity_of_energy_power_wood_pellets_dispatchable:
+      title: Biomassacentrale
+      short_description:
+      description: |
+        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het 
+        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen. 
+        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag. 
+        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de 
+        biomassacentrale. <br/><br/>
+        Met deze schuif kan het geïnstalleerd vermogen van regelbaar biomassacentrales worden ingesteld die alleen elektriciteit leveren.    
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
       short_description:
@@ -676,3 +703,4 @@ nl:
         De steel-to-chemicals route staat nog in de kinderschoenen. Daarom modelleert het ETM niet 
         expliciet de gevolgen hiervan voor het gebruik van andere (fossiele) grondstoffen in de 
         <a href="/scenario/demand/industry/chemicals">chemische industrie</a>.
+    

@@ -1,15 +1,20 @@
 # What's new in the Energy Transition Model?
+
 ___
+
 # April 2024
 
-### Addition of Bioenergy with Carbon Capture (Utilisiation) and Storage (BECC(U)S)
+### Addition of Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
 
-The ETM now incorporates the addition of Bioenergy with Carbon Capture and Storage (BECC(U)S) plants, introducing three new features.
-The first being CCS technology to biomass plants. Users can now set which part of the installed capacity of the biomass plants is installed with CCS technology.  Since emissions from biomass plants are not counted in the current ETM (see documentation) this can lead to negative emissions.
-The second being, a captured CO2 price. Now, CO2 that is captured can be sold to CO2 utilising sectors. This means that the negative emissions can lead to lesser marginal costs for the BECC(U)S plants. 
-The third being dispatchable biomass plants. Since the price for BECC(U)S plants can become lower through the negative emissions, dispatchable BECC(U)S plants might be an interesting flexible power option.
+The ETM now incorporates the addition of Bio-energy with Carbon Capture Utilisation and Storage (BECCUS) plants, introducing three new features.
 
-Investigate it yourself!
+The first being CCS technology for biomass power plants. Users can now set the share of installed capacity of the biomass power plants that will be equipped with CCS technology.  Since emissions from biomass plants are not counted in the total CO2 emissions (see documentation), capture in combination with permanent sequestration of biogenic CO2 can lead to negative emissions. In the newly added chart below the streams of captured CO2 can be observed. 
+
+The second new feature is that user can set a price for captured biogenic CO2. By means of this price, captured biogenic CO2 can be sold to CO2-utilising sectors. Selling captured biogenic CO2 for the set price can result in decreased marginal costs for BECCUS plants.
+
+The third new feature consists of a breakdown in must-run and dispatchable biomass power plants. Since the marginal costs for BECCUS plants can decrease as a result of selling captured biogenic CO2, dispatchable BECCUS plants might be an economically interesting flexible power technology.
+
+___
 
 # March 2024
 
@@ -36,6 +41,8 @@ The ETM now contains a chart displaying the land use of solar panels and wind tu
 
 ### Propane added as constituent of network gas
 Users of the ETM can now add propane as a constituent carrier in network gas. Addition of propane can be required to increase the energy content of network gas when mixing in other gases with a lower calorific value, such as biogas. 
+
+___
 
 # January 2024
 

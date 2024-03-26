@@ -1,18 +1,21 @@
 # Wat is er nieuw in het Energietransitiemodel?
+
 ___
 
 # April 2024
 
 
-### Toevoeging van Bioenergy with Carbon Capture (Utilisiation) and Storage (BECC(U)S)
+### Toevoeging van Bio-energie met Koolstofafvang Gebruik en Opslag (BECCUS)
 
-De ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECC(U)S) installaties, waarbij drie nieuwe functies worden geïntroduceerd.
-De eerste is CCS-technologie voor biomassacentrales. Gebruikers kunnen nu instellen welk deel van de geïnstalleerde capaciteit van de biomassacentrales is uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in het huidige ETM (zie documentatie), kan dit leiden tot negatieve emissies.
-De tweede is een afgevangen CO2-prijs. Nu kan CO2 die wordt afgevangen worden verkocht aan sectoren die CO2 gebruiken. Dit betekent dat de negatieve emissies kunnen leiden tot lagere marginale kosten voor de BECC(U)S-installaties.
-De derde is regelbare biomassacentrales. Aangezien de prijs voor BECC(U)S-installaties lager kan worden door de negatieve emissies, kunnen regelbare BECC(U)S-installaties een interessante flexibele energieoptie zijn.
+Het ETM heeft nu de toevoeging van Bio-energie met Koolstofafvang Gebruik en Opslag (<i>Bio-Energy with Carbon Capture Utilisation and Storage</i>, BECCUS), waarbij drie nieuwe functies worden geïntroduceerd.
 
+De eerste is functie is de toepassing van CCS-technologie voor biomassacentrales. Gebruikers kunnen nu het aandeel van het geïnstalleerd vermogen aan biomassacentrales instellen dat zal worden uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in de totale CO2-uitstoot (zie documentatie), kan het afvangen en permanent vastlegge van biogene CO2 leiden tot negatieve emissies. In de nieuwe grafiek hieronder kunnen de stromen van afgevangen CO2 worden ingezien.
 
-Onderzoek het nu zelf!
+De tweede functie stelt de gebruiker in staat een prijs te bepalen voor afgevangen biogene CO2. Door middel van deze prijs kan afgevangen biogene CO2 worden verkocht aan CO2-gebruikende sectoren. Het verkopen van afgevangen biogene CO2 voor deze prijs kan resulteren in lagere marginale kosten voor BECCUS installaties.
+
+De derde nieuwe functie bestaat uit een onderscheid tussen must-run en regelbare biomassacentrales. Aangezien de marginale kosten voor BECCUS-installaties kunnen afnemen als gevolg van de verkoop van afgevangen biogene CO2, kunnen regelbare BECCUS-installaties een economisch interessante, flexibele productietechnologie zijn.
+
+___
 
 # Maart 2024
 
@@ -40,13 +43,13 @@ Het ETM bevat nu een grafiek waarin het landgebruik van zonnepanelen en windturb
 ### Propaan toegevoegd als bestanddeel van netwerkgas
 Gebruikers van de ETM kunnen nu propaan toevoegen als drager in netwerkgas. Toevoeging van propaan kan nodig zijn om de energie-inhoud van netwerkgas te verhogen bij het bijmengen van andere gassen met een lagere calorische waarde, zoals biogas.
 
+___
+
 # Januari 2024
 
 ### Lokale prognose voor batterijen van huishoudens
 
 Gebruikers kunnen nu 2 types prognose voor huishoudelijke batterijen kiezen. De eerste is het bestaande systeem prognose algoritme, die voor alle elektrische opslag beschikbaar is. De tweede is het nieuwe lokale algoritme. In plaats van op alle elektriciteitsvraag - en aanbod focust het lokaal prognose algorithme alleen op de huishoud elektricitietsvraag - en aanbod. De algoritmes hebben een andere uitwerking op het elektriciteitsnetwerk. Probeer het zelf in de **[Flexibiliteit](/scenario/flexibility/flexibility_storage/batteries-in-households)** sectie.
-
-
 
 -> <img src="/assets/pages/whats_new/residential_forecasting_nl.png" width="600" /> <-
 
@@ -56,6 +59,7 @@ Het modelleren van load shifting voor de industriële sector is uitgebreid. Bij 
 
 -> <img src="/assets/pages/whats_new/input_capacity_dsr_nl.png" width="600" /> <-
 
+___
 
 # December 2023
 

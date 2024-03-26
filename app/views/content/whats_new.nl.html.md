@@ -9,7 +9,7 @@ ___
 
 Het ETM heeft nu de toevoeging van Bio-energie met Koolstofafvang Gebruik en Opslag (<i>Bio-Energy with Carbon Capture Utilisation and Storage</i>, BECCUS), waarbij drie nieuwe functies worden geïntroduceerd.
 
-De eerste is functie is de toepassing van CCS-technologie voor biomassacentrales. Gebruikers kunnen nu het aandeel van het geïnstalleerd vermogen aan biomassacentrales instellen dat zal worden uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in de totale CO2-uitstoot (zie documentatie), kan het afvangen en permanent vastlegge van biogene CO2 leiden tot negatieve emissies. In de nieuwe grafiek hieronder kunnen de stromen van afgevangen CO2 worden ingezien.
+De eerste is functie is de toepassing van CCS-technologie voor biomassacentrales. Gebruikers kunnen nu het aandeel van het geïnstalleerd vermogen aan biomassacentrales instellen dat zal worden uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in de totale CO2-uitstoot (zie documentatie), kan het afvangen en permanent vastleggen van biogene CO2 leiden tot negatieve emissies. In de nieuwe grafiek hieronder kunnen de stromen van afgevangen CO2 worden ingezien.
 
 De tweede functie stelt de gebruiker in staat een prijs te bepalen voor afgevangen biogene CO2. Door middel van deze prijs kan afgevangen biogene CO2 worden verkocht aan CO2-gebruikende sectoren. Het verkopen van afgevangen biogene CO2 voor deze prijs kan resulteren in lagere marginale kosten voor BECCUS installaties.
 

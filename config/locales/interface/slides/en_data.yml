@@ -326,6 +326,13 @@ en:
         <ul class="data-download merit-data-downloads">
           <li><a href="/passthru/%{scenario_id}/curves/residual_load.csv" target="_blank"> <span class="name">Residual load curves</span> <span class="filetype">1MB CSV</span></a></li>
         </ul>
+    data_export_hydrogen_integral_cost:
+      title: Hydrogen integral costs
+      short_description:
+      description: |
+        <ul class="data-download">
+          <li><a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank"> <span class="name">Hydrogen integral costs</span> <span class="filetype">1MB CSV</span></a></li>
+        </ul>    
     data_export_agriculture_heat:
       title: Hourly curves for agriculture heat from local CHPs
       short_description:

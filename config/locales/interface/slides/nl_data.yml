@@ -336,6 +336,13 @@ nl:
         <ul class="data-download merit-data-downloads">
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/residual_load.csv" target="_blank"> <span class="name">Residual load curves</span> <span class="filetype">1MB CSV</span></a></li>
         </ul>
+    data_export_hydrogen_integral_cost:
+      title: Waterstof integrale kosten
+      short_description:
+      description: |
+        <ul class="data-download">
+          <li><a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank"> <span class="name">Hydrogen integral cost</span> <span class="filetype">1MB CSV</span></a></li>
+        </ul>        
     data_export_agriculture_heat:
       title: Uurlijkse profielen voor warmte in landbouw
       short_description:

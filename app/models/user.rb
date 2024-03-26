@@ -28,9 +28,18 @@ class User < ApplicationRecord
   # Returns the user. Raises an error if the user could not be saved.
   def self.from_identity!(identity_user)
     where(id: identity_user.id).first_or_initialize.tap do |user|
+      is_new_user = !user.persisted?
       user.identity_user = identity_user
       user.name = identity_user.name
+
       user.save!
+
+      # For new users, couple existing SavedScenarioUsers
+      if is_new_user
+        SavedScenarioUser
+          .where(user_email: user.email, user_id: nil)
+          .update_all(user_id: user.id, user_email: nil)
+      end
     end
   end
 
@@ -46,16 +55,5 @@ class User < ApplicationRecord
 
   def self.from_session_user!(identity_user)
     find(identity_user.id).tap { |u| u.identity_user = identity_user }
-  end
-
-  # Check if the user has a 'pending' invitation for any scenario, meaning the user_email attribute is still set.
-  # If this is the case for the given user, link the current user to the SavedScenario directly.
-  def self.update_pending_scenario_invitations(user)
-    return if user&.id.blank? || user&.email.blank?
-
-    ssu = SavedScenarioUser.where(user_email: user.email)
-
-    ssu.where(user_id: nil).update_all(user_id: user.id)
-    ssu.update_all(user_email: nil)
   end
 end

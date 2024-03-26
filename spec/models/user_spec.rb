@@ -105,6 +105,17 @@ describe User do
       it "sets the user's name" do
         expect(described_class.from_identity!(identity_user).name).to eq('John Doe')
       end
+
+      context 'when a pending SavedScenarioUser exists' do
+        before do
+          ss = create(:saved_scenario)
+          create(:saved_scenario_user, saved_scenario: ss, user_email: identity_user.email, user_id: nil)
+        end
+
+        it 'couples the SavedScenario' do
+          expect(described_class.from_identity!(identity_user).saved_scenarios.count).to eq(1)
+        end
+      end
     end
 
     context 'when given an identity which is not valid' do

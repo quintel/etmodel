@@ -59,8 +59,6 @@ class SavedScenariosController < ApplicationController
   end
 
   def all
-    User.update_pending_scenario_invitations(current_user)
-
     @saved_scenarios = SavedScenario.all
       .includes(:featured_scenario, :users)
       .order('updated_at DESC')
@@ -73,8 +71,6 @@ class SavedScenariosController < ApplicationController
   end
 
   def show
-    @saved_scenario.check_pending_invitation_for(current_user)
-
     respond_to do |format|
       format.html { @saved_scenario.loadable? ? render : redirect_to(root_path) }
       format.csv { @saved_scenario.loadable? ? render : render_not_found }

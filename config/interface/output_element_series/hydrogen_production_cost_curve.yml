@@ -6,11 +6,11 @@
   show_at_first: 
   is_target_line: true
   target_line_position: 
-  gquery: total_hydrogen_production_cost_curve
+  gquery: total_hydrogen_production_cost_curve_per_mwh
   is_1990: 
   dependent_on: 
   output_element_key: hydrogen_production_cost_curve
-  key: total_hydrogen_production_cost_curve
+  key: total_hydrogen_production_cost_curve_per_mwh
 
 # Must-run
 - label: energy_hydrogen_steam_methane_reformer_ccs_must_run

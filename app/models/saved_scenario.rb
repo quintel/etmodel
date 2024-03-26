@@ -9,7 +9,6 @@
 #  description         :string
 #  area_code           :string           not null
 #  end_year            :integer          not null
-#  settings            :text
 #  created_at          :datetime
 #  updated_at          :datetime
 #
@@ -100,7 +99,7 @@ class SavedScenario < ApplicationRecord
     options ||= {}
 
     super(options.merge(
-      except: (options[:except] || []) + %i[settings user_id]
+      except: (options[:except] || [])
     ))
   end
 
@@ -217,21 +216,12 @@ class SavedScenario < ApplicationRecord
   # Convenience method to quickly set the owner for a scenario, e.g. when creating it as
   # Scenario.create(user: User). Only works to set the first user, returns false otherwise.
   def user=(user)
-    return false if user.blank? || saved_scenario_users.count > 0
+    return unless user.present? && saved_scenario_users.empty? && valid?
 
-    return false unless valid?
-
-    SavedScenarioUser.create(saved_scenario: self, user: user, role_id: User::ROLES.key(:scenario_owner))
-  end
-
-  # Check if the user has a 'pending' invitation, meaning the user_email attribute is still set.
-  # If this is the case for the given user, link the current user to this SavedScenario directly.
-  def check_pending_invitation_for(user)
-    return unless user.present?
-
-    ssu = saved_scenario_users.where(user_email: user.try(:email))
-
-    ssu.where(user_id: nil).update_all(user_id: user.id)
-    ssu.update_all(user_email: nil)
+    SavedScenarioUser.create(
+      saved_scenario: self,
+      user: user,
+      role_id: User::ROLES.key(:scenario_owner)
+    )
   end
 end

@@ -111,7 +111,6 @@ class SavedScenarioUsersController < ApplicationController
         format.js { render 'user_table', layout: false }
       end
     else
-      # TODO: redo error handling --> check what ETEngine returns
       flash[:alert] = "#{t('scenario.users.errors.destroy')} #{t('scenario.users.errors.general')}"
 
       respond_to do |format|
@@ -144,7 +143,6 @@ class SavedScenarioUsersController < ApplicationController
   def assign_saved_scenario_user
     @saved_scenario_user = @saved_scenario.saved_scenario_users.find(permitted_params[:id])
   rescue ActiveRecord::RecordNotFound
-    # TODO: add translation
     redirect_to saved_scenario_users_path, notice: 'Something went wrong'
   end
 

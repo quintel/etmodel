@@ -1,106 +1,114 @@
-%ul.details
+.row
+  %ul.details.stick-right
+    - if editable_saved_scenario?(scenario) && action_name == 'show'
+      - if scenario.private?
+        %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
+          .dropdown#scenario-privacy<>
+            %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+              = inline_svg_tag 'hero/20/lock.svg', class: 'lock-icon'
+              = t('scenario.privacy.private.title')
+              %span.fa.fa-caret-down
+            %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-privacy-button', style: 'margin-top: 3px' }
+              %li
+                .info
+                  = t('scenario.privacy.private.description')
+              %li.sep-above
+                = button_to publish_saved_scenario_path(@saved_scenario), method: :put, class: 'dropdown-item' do
+                  = inline_svg_tag 'hero/20/eye.svg'
+                  = t('scenario.privacy.private.invert')
+      - else
+        %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
+          .dropdown#scenario-privacy<>
+            %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+              = inline_svg_tag 'hero/20/eye.svg', style: 'margin-right: 0.125rem'
+              = t('scenario.privacy.public.title')
+              %span.fa.fa-caret-down
+            %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-privacy-button', style: 'margin-top: 3px' }
+              %li
+                .info
+                  = t('scenario.privacy.public.description')
+              %li.sep-above
+                = button_to unpublish_saved_scenario_path(@saved_scenario), method: :put, class: 'dropdown-item' do
+                  = inline_svg_tag 'hero/20/lock.svg', class: 'lock-icon'
+                  = t('scenario.privacy.public.invert')
+
+      :javascript
+        new DropdownView({ el: $('#scenario-privacy') }).render()
+
+      %li{ style: 'padding-right: 0' }
+        .dropdown#scenario-location<>
+          %button.scenario-actions#scenario-location-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+            = inline_svg_tag 'hero/20/cog.svg'
+            = t('settings')
+            %span.fa.fa-caret-down
+          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-location-button', style: 'margin-top: 3px' }
+            %li
+              = link_to energy_mix_scenario_path(@saved_scenario.scenario_id), class: 'dropdown-item' do
+                .fa.fa-map-signs
+                = t("scenario.load_energy_mix")
+            - if current_user&.admin? || @saved_scenario.collaborator?(current_user)
+              %li
+                = link_to edit_saved_scenario_path(@saved_scenario.id), remote: true, class: 'dropdown-item' do
+                  .fa.fa-pencil
+                  = t("scenario.edit_text")
+            - if current_user&.admin? || @saved_scenario.owner?(current_user)
+              %li
+                = link_to saved_scenario_users_path(@saved_scenario.id), class: 'dropdown-item' do
+                  .fa.fa-users
+                  = t("scenario.users.manage")
+            - if current_user&.admin?
+              %li
+                - if @saved_scenario.featured?
+                  = link_to saved_scenario_feature_path(@saved_scenario), class: 'dropdown-item' do
+                    .fa.fa-star
+                    = t('scenario.edit_featured_scenario')
+                - else
+                  = link_to saved_scenario_feature_path(@saved_scenario), class: 'dropdown-item' do
+                    .fa.fa-star
+                    = t('scenario.feature_scenario')
+            %li.sep-above.category
+              == #{t('move_to')}&hellip;
+            - if scenario.discarded?
+              %li
+                = link_to undiscard_saved_scenario_path(@saved_scenario, backto: 'scenario'), method: :put, class: 'dropdown-item' do
+                  %span.icon
+                    :plain
+                      <svg style="transform: rotate(90deg);" height="13" width="13" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                      </svg>
+                  = t('header.load_scenario')
+            - if scenario.kept?
+              %li
+                = link_to discard_saved_scenario_path(@saved_scenario, backto: 'scenario'), method: :put, class: 'dropdown-item' do
+                  %span.icon
+                    :plain
+                      <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                  = t('trash')
+
+        :javascript
+          new DropdownView({ el: $('#scenario-location') }).render()
+
+%h1= format_subscripts(scenario.localized_title(I18n.locale))
+
+%ul.details.last
   %li
-    = area_flag_icon(scenario.area_code)
+    -# = area_flag_icon(scenario.area_code)
     %strong
       = t "areas.#{scenario.area_code}"
       = scenario.end_year
-  %li.owners
-    = owner_names(@saved_scenario)
   %li
     = t('scenario.updated')
     = local_time(scenario.updated_at, :long)
 
-  - if editable_saved_scenario?(scenario) && action_name == 'show'
-    - if scenario.private?
-      %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
-        .dropdown#scenario-privacy<>
-          %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
-            = inline_svg_tag 'hero/20/lock.svg', class: 'lock-icon'
-            = t('scenario.privacy.private.title')
-            %span.fa.fa-caret-down
-          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-privacy-button', style: 'margin-top: 3px' }
-            %li
-              .info
-                = t('scenario.privacy.private.description')
-            %li.sep-above
-              = button_to publish_saved_scenario_path(@saved_scenario), method: :put, class: 'dropdown-item' do
-                = inline_svg_tag 'hero/20/eye.svg'
-                = t('scenario.privacy.private.invert')
-    - else
-      %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
-        .dropdown#scenario-privacy<>
-          %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
-            = inline_svg_tag 'hero/20/eye.svg', style: 'margin-right: 0.125rem'
-            = t('scenario.privacy.public.title')
-            %span.fa.fa-caret-down
-          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-privacy-button', style: 'margin-top: 3px' }
-            %li
-              .info
-                = t('scenario.privacy.public.description')
-            %li.sep-above
-              = button_to unpublish_saved_scenario_path(@saved_scenario), method: :put, class: 'dropdown-item' do
-                = inline_svg_tag 'hero/20/lock.svg', class: 'lock-icon'
-                = t('scenario.privacy.public.invert')
-
-    :javascript
-      new DropdownView({ el: $('#scenario-privacy') }).render()
-
-    %li{ style: 'padding-right: 0' }
-      .dropdown#scenario-location<>
-        %button.scenario-actions#scenario-location-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
-          = inline_svg_tag 'hero/20/cog.svg'
-          = t('settings')
-          %span.fa.fa-caret-down
-        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-location-button', style: 'margin-top: 3px' }
-          %li
-            = link_to energy_mix_scenario_path(@saved_scenario.scenario_id), class: 'dropdown-item' do
-              .fa.fa-map-signs
-              = t("scenario.load_energy_mix")
-          - if current_user&.admin? || @saved_scenario.collaborator?(current_user)
-            %li
-              = link_to edit_saved_scenario_path(@saved_scenario.id), remote: true, class: 'dropdown-item' do
-                .fa.fa-pencil
-                = t("scenario.edit_text")
-          - if current_user&.admin? || @saved_scenario.owner?(current_user)
-            %li
-              = link_to saved_scenario_users_path(@saved_scenario.id), class: 'dropdown-item' do
-                .fa.fa-users
-                = t("scenario.users.manage")
-          - if current_user&.admin?
-            %li
-              - if @saved_scenario.featured?
-                = link_to saved_scenario_feature_path(@saved_scenario), class: 'dropdown-item' do
-                  .fa.fa-star
-                  = t('scenario.edit_featured_scenario')
-              - else
-                = link_to saved_scenario_feature_path(@saved_scenario), class: 'dropdown-item' do
-                  .fa.fa-star
-                  = t('scenario.feature_scenario')
-          %li.sep-above.category
-            == #{t('move_to')}&hellip;
-          - if scenario.discarded?
-            %li
-              = link_to undiscard_saved_scenario_path(@saved_scenario, backto: 'scenario'), method: :put, class: 'dropdown-item' do
-                %span.icon
-                  :plain
-                    <svg style="transform: rotate(90deg);" height="13" width="13" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                    </svg>
-                = t('header.load_scenario')
-          - if scenario.kept?
-            %li
-              = link_to discard_saved_scenario_path(@saved_scenario, backto: 'scenario'), method: :put, class: 'dropdown-item' do
-                %span.icon
-                  :plain
-                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                = t('trash')
-
-      :javascript
-        new DropdownView({ el: $('#scenario-location') }).render()
+  %li.with-button
+    = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load no-margin-right"
 
 
-.bar
+-# %ul.details
+-#   -# TODO Rethink this: now you can't click on users, there is no profile, so does it make sense to show them?
+-#   %li.owners
+-#     Owned by
+-#     = owner_names(@saved_scenario)
 
-= link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load"

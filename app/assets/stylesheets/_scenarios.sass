@@ -122,8 +122,10 @@ table.default
 
     h1
       margin-bottom: 0.675rem
-      font-size: 1.5rem
+      font-size: 1.67rem
       color: #333
+      letter-spacing: 1px
+      margin-top: 0
       sub
         line-height: 0
 
@@ -139,7 +141,7 @@ table.default
         font-size: 6px
         color: $link-color
       &.scenario-users
-        margin-bottom: 1rem
+        margin-bottom: 1.44rem
 
     input, textarea
       box-sizing: border-box
@@ -190,6 +192,8 @@ table.default
       &.show-new-saved-scenario-user-form
         font-size: 0.875rem
         padding: 0.5rem 0.75rem
+      &.no-margin-right
+        margin-right: 0
 
   #edit_scenario .actions
     .cancel, input
@@ -450,14 +454,17 @@ table.default
         strong
           color: initial
           font-weight: 500
-          text-transform: uppercase
-          font-size: 0.75rem
+      &.last
+        margin-bottom: 2rem
       .area-flag
         vertical-align: middle
         margin-top: -4px
         margin-right: 0.25rem
-      .owners:after
-        content: ' • '
+      .with-button
+        margin-left: auto
+        margin-right: 0
+        padding-right: 0
+        margin-top: -1.5rem
 
       #scenario-location, #scenario-privacy
         button.scenario-actions

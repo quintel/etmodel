@@ -12,27 +12,12 @@
     = render partial: 'flash', format: :js
 
     .scenario
+      .back-to-scenario-view
+        %a.stick-right{ href: saved_scenario_path(@saved_scenario) }
+          ⟵
+          = t('scenario.back_to')
       %h1
         = @saved_scenario.title ? format_subscripts(@saved_scenario.title) : @saved_scenario.id
-
-      %ul.details
-        %li
-          = area_flag_icon(@saved_scenario.area_code)
-          %strong
-            = t("areas.#{@saved_scenario.area_code}")
-            = @saved_scenario.end_year
-        %li.owners
-          = owner_names(@saved_scenario)
-        %li
-          = t('scenario.updated')
-          = local_time(@saved_scenario.updated_at, :long)
-
-        %li.back-to-scenario-view
-          %a{ href: saved_scenario_path(@saved_scenario) }
-            ⟵
-            = t('scenario.back_to')
-
-      .bar
 
       %h3.access= t('scenario.users.manage')
 
@@ -42,8 +27,6 @@
     .actions.scenario-users
       .save.button.scenario-button.show-new-saved-scenario-user-form{ data: { form_url: new_saved_scenario_user_path } }
         = t('scenario.users.invite')
-
-    .bar
 
     .description.info
       .fa.fa-info.with-circle

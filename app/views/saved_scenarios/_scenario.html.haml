@@ -1,5 +1,3 @@
-%h1= format_subscripts(saved_scenario.localized_title(I18n.locale))
-
 = render partial: 'info', locals: { scenario: saved_scenario }
 
 - if saved_scenario.localized_description(I18n.locale).presence

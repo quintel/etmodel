@@ -9,11 +9,14 @@ ___
 
 Het ETM heeft nu de toevoeging van Bio-energie met Koolstofafvang Gebruik en Opslag (<i>Bio-Energy with Carbon Capture Utilisation and Storage</i>, BECCUS), waarbij drie nieuwe functies worden geïntroduceerd.
 
-De eerste is functie is de toepassing van CCS-technologie voor biomassacentrales. Gebruikers kunnen nu het aandeel van het geïnstalleerd vermogen aan biomassacentrales instellen dat zal worden uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in de totale CO2-uitstoot (zie documentatie), kan het afvangen en permanent vastleggen van biogene CO2 leiden tot negatieve emissies. In de nieuwe grafiek hieronder kunnen de stromen van afgevangen CO2 worden ingezien.
+De eerste functie is de toepassing van CCS-technologie voor biomassacentrales. Gebruikers kunnen nu het aandeel van het geïnstalleerd vermogen aan biomassacentrales instellen dat zal worden uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in de totale CO2-uitstoot (zie documentatie), kan het afvangen en permanent vastleggen van biogene CO2 leiden tot negatieve emissies. Deze functie kan verkend worden in de **[Emissies](/scenario/emissions/ccus/capture-and-import-of-co2)** sectie. In de nieuwe grafiek hieronder kunnen de stromen van afgevangen CO2 worden ingezien. 
 
-De tweede functie stelt de gebruiker in staat een prijs te bepalen voor afgevangen biogene CO2. Door middel van deze prijs kan afgevangen biogene CO2 worden verkocht aan CO2-gebruikende sectoren. Het verkopen van afgevangen biogene CO2 voor deze prijs kan resulteren in lagere marginale kosten voor BECCUS installaties.
+-> <img src="/assets/pages/whats_new/net_effect_emissions_nl.png" width="600" /> <-
 
-De derde nieuwe functie bestaat uit een onderscheid tussen must-run en regelbare biomassacentrales. Aangezien de marginale kosten voor BECCUS-installaties kunnen afnemen als gevolg van de verkoop van afgevangen biogene CO2, kunnen regelbare BECCUS-installaties een economisch interessante, flexibele productietechnologie zijn.
+De tweede functie stelt de gebruiker in staat een prijs te bepalen voor afgevangen biogene CO2. Door middel van deze prijs kan afgevangen biogene CO2 worden verkocht aan CO2-gebruikende sectoren. Het verkopen van afgevangen biogene CO2 voor deze prijs kan resulteren in lagere marginale kosten voor BECCUS installaties. Deze functie kan gevonden in de **[Kosten & efficiënties](/scenario/costs/co2/prices)** sectie.
+
+De derde nieuwe functie bestaat uit een onderscheid tussen must-run en regelbare biomassacentrales. Aangezien de marginale kosten voor BECCUS-installaties kunnen afnemen als gevolg van de verkoop van afgevangen biogene CO2, kunnen regelbare BECCUS-installaties een economisch interessante, flexibele productietechnologie zijn. De capaciteiten van deze centrales kan gezet worden in de 
+**[Biomassa centrales](scenario/supply/electricity_renewable/biomass-plants)** sectie.
 
 ___
 

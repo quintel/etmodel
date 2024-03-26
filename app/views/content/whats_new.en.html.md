@@ -8,11 +8,16 @@ ___
 
 The ETM now incorporates the addition of Bio-energy with Carbon Capture Utilisation and Storage (BECCUS) plants, introducing three new features.
 
-The first being CCS technology for biomass power plants. Users can now set the share of installed capacity of the biomass power plants that will be equipped with CCS technology.  Since emissions from biomass plants are not counted in the total CO2 emissions (see documentation), capture in combination with permanent sequestration of biogenic CO2 can lead to negative emissions. In the newly added chart below the streams of captured CO2 can be observed. 
+The first being CCS technology for biomass power plants. Users can now set the share of installed capacity of the biomass power plants that will be equipped with CCS technology. Since emissions from biomass plants are not counted in the total CO2 emissions (see documentation), capture in combination with permanent sequestration of biogenic CO2 can lead to negative emissions. This new feature can be explored in the **[Emissions](/scenario/emissions/ccus/capture-and-import-of-co2)** section. In the newly added chart below the streams of captured CO2 can be observed. 
 
-The second new feature is that user can set a price for captured biogenic CO2. By means of this price, captured biogenic CO2 can be sold to CO2-utilising sectors. Selling captured biogenic CO2 for the set price can result in decreased marginal costs for BECCUS plants.
+-> <img src="/assets/pages/whats_new/net_effect_emissions_en.png" width="600" /> <-
 
-The third new feature consists of a breakdown in must-run and dispatchable biomass power plants. Since the marginal costs for BECCUS plants can decrease as a result of selling captured biogenic CO2, dispatchable BECCUS plants might be an economically interesting flexible power technology.
+The second new feature is that user can set a price for captured biogenic CO2. By means of this price, captured biogenic CO2 can be sold to CO2-utilising sectors. Selling captured biogenic CO2 for the set price can result in decreased marginal costs for BECCUS plants. This feature can be found in the **[Costs & efficiencies](/scenario/costs/co2/prices)** section.
+
+The third new feature consists of a breakdown in must-run and dispatchable biomass power plants. Since the marginal costs for BECCUS plants can decrease as a result of selling captured biogenic CO2, dispatchable BECCUS plants might be an economically interesting flexible power technology. You can set the capacities for these plants in the
+**[Biomass plants](scenario/supply/electricity_renewable/biomass-plants)** section.
+
+
 
 ___
 

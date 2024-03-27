@@ -16,18 +16,25 @@ Investigate it yourself!
 
 The hydrogen section of the model has been improved! 
 Now, flexible production options have been added. 
-Steam methane reformers, ammonia reformers and autothermal reformers can now be installed with a dispatchable capacity next to the must-run hydrogen capacity of these hydrogen reformer techniques. 
-Next to these flexible producers, options for hydrogen storage modelling have been refined.
+Steam methane reformers, ammonia reformers and autothermal reformers can be installed with a dispatchable capacity in addition to the must-run variant of these hydrogen reformer techniques. 
+Explore these changes in the **[Hydrogen production](scenario/supply/hydrogen/hydrogen-production)** section.
+
+Next to these flexible producers, the modelling of hydrogen storage has been refined.
 Now, users can use salt caverns and depleted gas fields as storage options in the model.
 In addition, users can set both the volume and capacity for these storage options. 
+These features can be found in the **[Hydrogen storage](scenario/supply/hydrogen/hydrogen-production)** 
+section.
+
 Together the dispatchable and storage production facilities make up for the flexible hydrogen production routes within the ETM. 
-Which production route should be used first, can be installed by the user via the new hydrogen production merit order.
+Which production route should be used first, can be installed by the user via the new hydrogen production merit order. The merit order of production can be set in the **[Merit order of dispatchable hydrogen production](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** section.
+
 
 -> <img src="/assets/pages/whats_new/hydrogen_production_order_en.png" width="600" /> <-
 
 The flexible demand options, which are the two hydrogen storage options for now, can be installed via the new hydrogen demand merit order.
+The merit order of demand can be set in the **[Merit order of dispatchable hydrogen demand](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** section.
 
--> <img src="/assets/pages/whats_new/hydrogen_demnd_order_en.png" width="600" /> <-
+-> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="600" /> <-
 
 # March 2024
 

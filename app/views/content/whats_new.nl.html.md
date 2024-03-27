@@ -19,18 +19,25 @@ Onderzoek het nu zelf!
 
 De waterstofsectie van het model is verbeterd!
 Met de laatste update zijn flexibele productiemogelijkheden voor waterstof toegevoegd.
-Stoommethaanreformers, ammoniareformers en autothermische reformers kunnen nu worden geïnstalleerd met een regelbare capaciteit naast de niet-regelbare capacitet.
-Naast deze flexibele producenten zijn de opties voor waterstofopslagmodellering verfijnd.
-Nu kunnen gebruikers zoutcavernes en lege gasvelden als opslagopties gebruiken in het model.
-Bovendien kunnen gebruikers zowel het volume als de capaciteit voor deze opslagopties instellen.
+Stoommethaanreformers, ammoniareformers en autothermische reformers kunnen nu worden geïnstalleerd met een regelbare capaciteit bovenop de niet-regelbare capaciteit.
+Verken deze veranderingen in de **[Waterstofproductie](scenario/supply/hydrogen/hydrogen-production)** sectie.
+
+Naast deze flexibele productiemehtodes zijn de opties voor waterstofopslagmodellering verfijnd.
+Gebruikers kunnen nu zoutcavernes en lege gasvelden als opslagopties gebruiken in het model.
+Bij deze opslagopties kan zowel het volume als de capaciteit ingesteld worden.
+Dit kan gevonden worden in de **[Waterstofoplsag](scenario/supply/hydrogen/hydrogen-production)** 
+sectie.
+
 Samen vormen de regelbare- en opslagproductiefaciliteiten de flexibele waterstofproductieroutes binnen de ETM.
-Welke productieroute eerst moet worden gebruikt, kan door de gebruiker worden geïnstalleerd via de nieuwe waterstofproductie merit order.
+Welke productieroute eerst moet worden gebruikt, kan door de gebruiker worden ingesteld via de nieuwe waterstofproductie merit order. Deze merit order kan ingesteld worden in de **[Merit order van regelbare waterstofproductie](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** sectie.
 
 -> <img src="/assets/pages/whats_new/hydrogen_production_order_nl.png" width="600" /> <-
 
-De flexibele vraagopties, die op dit moment de twee waterstofopslagopties zijn, kunnen worden geïnstalleerd via de nieuwe waterstofvraagmeritvolgorde.
+De flexibele vraagopties, die op dit moment de twee waterstofopslagopties zijn, kunnen worden ingesteld via de nieuwe waterstofvraag merit order.
 
--> <img src="/assets/pages/whats_new/hydrogen_demnd_order_nl.png" width="600" /> <-
+Deze merit order kan ingesteld worden in de **[Merit order van regelbare watersofvraag](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** sectie.
+
+-> <img src="/assets/pages/whats_new/hydrogen_demand_order_nl.png" width="600" /> <-
 
 # Maart 2024
 

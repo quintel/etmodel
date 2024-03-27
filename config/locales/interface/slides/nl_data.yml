@@ -177,9 +177,12 @@ nl:
       title: Uurlijkse profielen voor waterstof
       short_description:
       description: |-
-        Het Energietransitiemodel rekent op uurbasis de vraag, productie en opslag van waterstof uit. Hieronder kun je deze gegevens downloaden als CSV-bestand, uitgesplitst naar technologie/sector.
-
-
+        Hier kunnen 2 exports over waterstof gedownload worden.
+        <br /><br />
+        De "Waterstofvraag, -productie en -opslag per uur" export bevat de uurlijkse vraag, productie en opslag van waterstof, uitgesplitst naar technologie/sector.
+        <br /><br />
+        De  "Integrale kosten waterstof" export bevat de integrale kosten van waterstofproductie, 
+        de productie van waterstof, de productiekosten per MWh voor elke productiemethode en de productiecurve van waterstof voor elke productiemethode op uurbasis.
         <ul class="data-download">
           <li>
             <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv" target="_blank">
@@ -188,6 +191,10 @@ nl:
             </a>
           </li>
         </ul>
+
+        <ul class="data-download">
+          <li><a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank"> <span class="name">Ingetrale kosten waterstof</span> <span class="filetype">2MB CSV</span></a></li>
+        </ul>        
     data_visuals_molecule_graph:
       title: CCUS-graaf
       short_description:
@@ -336,13 +343,6 @@ nl:
         <ul class="data-download merit-data-downloads">
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/residual_load.csv" target="_blank"> <span class="name">Residual load curves</span> <span class="filetype">1MB CSV</span></a></li>
         </ul>
-    data_export_hydrogen_integral_cost:
-      title: Waterstof integrale kosten
-      short_description:
-      description: |
-        <ul class="data-download">
-          <li><a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank"> <span class="name">Hydrogen integral cost</span> <span class="filetype">1MB CSV</span></a></li>
-        </ul>        
     data_export_agriculture_heat:
       title: Uurlijkse profielen voor warmte in landbouw
       short_description:

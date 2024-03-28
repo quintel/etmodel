@@ -262,8 +262,4 @@ class SavedScenariosController < ApplicationController
       Current.setting.active_scenario_title = saved_scenario.title
     end
   end
-
-  def update_scenario_users
-    @saved_scenario.update_users_with(current_user)
-  end
 end

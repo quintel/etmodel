@@ -94,7 +94,6 @@
 
 %ul.details.last
   %li
-    -# = area_flag_icon(scenario.area_code)
     %strong
       = t "areas.#{scenario.area_code}"
       = scenario.end_year
@@ -104,11 +103,3 @@
 
   %li.with-button
     = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load no-margin-right"
-
-
--# %ul.details
--#   -# TODO Rethink this: now you can't click on users, there is no profile, so does it make sense to show them?
--#   %li.owners
--#     Owned by
--#     = owner_names(@saved_scenario)
-

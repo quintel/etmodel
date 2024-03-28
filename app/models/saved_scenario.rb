@@ -163,7 +163,7 @@ class SavedScenario < ApplicationRecord
   end
 
   def as_json(options = {})
-    options[:except] ||= %i[discarded_at user_id]
+    options[:except] ||= %i[discarded_at]
 
     super(options).merge(
       'discarded' => discarded_at.present?,

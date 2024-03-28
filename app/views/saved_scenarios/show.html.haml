@@ -16,3 +16,5 @@
     #edit_scenario
     - unless @saved_scenario.featured?
       = render partial: 'scenarios/version_warning', locals: { scenario: @saved_scenario }
+
+    = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }

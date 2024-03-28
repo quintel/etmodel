@@ -22,7 +22,7 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       end
 
       it 'returns the saved scenarios' do
-        expect(JSON.parse(response.body)['data']).to eq([
+        expect(response.parsed_body['data']).to eq([
           user_ss1.as_json,
           user_ss2.as_json
         ])

@@ -36,9 +36,9 @@ class Ability
     return unless user
 
     can :create,  SavedScenario
-    can :read,    SavedScenario, user_id: user.id
-    can :update,  SavedScenario, user_id: user.id
-    can :destroy, SavedScenario, user_id: user.id
+    can :read,    SavedScenario, id: SavedScenario.viewable_by?(user).pluck(:id)
+    can :update,  SavedScenario, id: SavedScenario.collaborated_by?(user).pluck(:id)
+    can :destroy, SavedScenario, id: SavedScenario.owned_by?(user).pluck(:id)
 
     can :destroy, MultiYearChart, user_id: user.id
   end

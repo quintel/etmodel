@@ -8,9 +8,4 @@
   .scenario_wrapper#index
     = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_scenarios }
     = render partial: 'saved_scenarios/flash_notice'
-
-    -# = form_tag compare_scenarios_path, method: 'get' do
-    -#   = submit_tag t('scenario.compare'), class: 'button scenario-button compare'
-    -#   = submit_tag t('scenario.merge'), name: 'merge', class: 'button scenario-button compare'
-      -# = submit_tag t('scenario.local_vs_global'), name: 'combine', class: 'button scenario-button compare'
     = render 'scenarios_slice'

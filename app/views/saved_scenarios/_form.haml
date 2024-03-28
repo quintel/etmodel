@@ -10,8 +10,6 @@
   .title
     = f.text_field :title
 
-  = render partial: 'info', locals: { scenario: saved_scenario }
-
   .description
     = f.text_area :description, placeholder: t('scenario.add_description')
 

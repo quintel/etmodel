@@ -19,7 +19,7 @@ class SavedScenariosController < ApplicationController
 
   before_action :restrict_to_admin, only: :all
   before_action :assign_scenario, only: :load
-  helper_method :owned_saved_scenario?
+  helper_method :editable_saved_scenario?
 
   def index
     respond_to do |format|
@@ -45,7 +45,7 @@ class SavedScenariosController < ApplicationController
   def discarded
     @discarded_scenarios = Kaminari.paginate_array(
         (
-          current_user.saved_scenarios.discarded.includes(:featured_scenario, :user) +
+          current_user.saved_scenarios.discarded.includes(:featured_scenario, :users) +
           current_user.multi_year_charts.discarded.includes(:user)
         )
         .sort_by(&:updated_at)
@@ -60,7 +60,7 @@ class SavedScenariosController < ApplicationController
 
   def all
     @saved_scenarios = SavedScenario.all
-      .includes(:featured_scenario, :user)
+      .includes(:featured_scenario, :users)
       .order('updated_at DESC')
       .page(params[:page])
       .per(100)
@@ -137,7 +137,7 @@ class SavedScenariosController < ApplicationController
       Setting.load_from_scenario(
         @scenario,
         active_saved_scenario: {
-          id: owned_saved_scenario? ? @saved_scenario.id : nil,
+          id: editable_saved_scenario? ? @saved_scenario.id : nil,
           title: @saved_scenario.localized_title(I18n.locale)
         }
       )
@@ -231,23 +231,10 @@ class SavedScenariosController < ApplicationController
 
   private
 
-  def ensure_owner
-    return if owned_saved_scenario?
-
-    if request.format.json?
-      head(:not_found)
-    else
-      render_not_found('saved scenario')
-    end
-  end
-
-  def owned_saved_scenario?(saved_scenario = nil)
+  # This determines whether the SavedScenario is editable by the current_user
+  def editable_saved_scenario?(saved_scenario = nil)
     saved_scenario ||= @saved_scenario
-    saved_scenario.user_id == current_user&.id
-  end
-
-  def scenario_by_current_user?(scenario)
-    SavedScenario.where(user: current_user, scenario_id: scenario.id).exists?
+    saved_scenario.collaborator?(current_user) || saved_scenario.owner?(current_user)
   end
 
   def assign_saved_scenario

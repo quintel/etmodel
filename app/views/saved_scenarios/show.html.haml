@@ -6,7 +6,7 @@
 
 .background_wrapper#saved_scenario
   .scenario_wrapper#show_scenario
-    - if owned_saved_scenario?(@saved_scenario)
+    - if editable_saved_scenario?(@saved_scenario)
       = render partial: 'scenario_list_tabs', locals: { active_tab: @saved_scenario.discarded? ? :trash : :my_scenarios, show_save_current: false }
     = render partial: 'saved_scenarios/flash_notice'
 

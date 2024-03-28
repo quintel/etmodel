@@ -38,6 +38,13 @@ class ServiceResult
     failure(errors, value)
   end
 
+  def self.single_failure_from_unprocessable_entity_on_multiple_objects(exception, value = nil)
+    errors = exception.response[:body]['errors']
+    errors = errors.values.first if errors.is_a?(Hash)
+
+    failure(errors, value)
+  end
+
   def initialize(success, value: nil, errors: [])
     @success = success
     @value = value

@@ -28,7 +28,7 @@ class ScenariosController < ApplicationController
     @saved_scenarios = current_user
       .saved_scenarios
       .available
-      .includes(:featured_scenario, :user)
+      .includes(:featured_scenario, :users)
       .order('updated_at DESC')
       .page(params[:page])
       .per(50)

@@ -70,8 +70,11 @@ en:
     press_releases: "Press releases"
     privacy_statement: "Privacy statement"
     publications: "Publications"
-    reset_scenario: "Reset scenario"
-    reset_scenario_confirm: "Are you sure you wish to reset this scenario to the default settings? You will lose any changes you have made."
+    confirm: "Confirm"
+    reset_scenario: "Revert unsaved changes"
+    reset_scenario_confirm: |
+        Are you sure you wish to revert the scenario to the saved settings? You will lose any
+        unsaved changes.
     uncouple_scenario: "Uncouple scenario"
     save_scenario: "Save scenario"
     save_scenario_as: "Save scenario as"

@@ -178,6 +178,15 @@ class @AppView extends Backbone.View
     i.set({user_value: null}, {silent: true}) for i in @input_elements.models
     @setup_sliders()
 
+  after_save: (new_scenario_id) =>
+    @scenario.set(id: new_scenario_id)
+    globals.api_session_id = new_scenario_id
+    @api.scenario_id = new_scenario_id
+    @settings.save({
+      api_session_id: new_scenario_id,
+      preset_scenario_id: @settings.api_session_id
+      }, { silent: true } )
+
   # Used on the console for debugging
   scenario_url: =>
     "#{globals.api_url}/inspect/#{@api.scenario_id}"

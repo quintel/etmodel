@@ -127,9 +127,11 @@
       var button = this.el.querySelector('.save-scenario');
       button.disabled = true;
 
-      saveScenario(button.dataset.path, this.model.get('id')).always(function () {
+      saveScenario(button.dataset.path, this.model.get('id')).always(function (data) {
         button.querySelector('.label').classList.remove('show');
         button.querySelector('.saved').classList.add('show');
+
+        App.after_save(data['api_session_id'])
 
         window.setTimeout(function () {
           button.disabled = false;

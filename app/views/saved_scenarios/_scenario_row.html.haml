@@ -32,10 +32,6 @@
           %code= scenario_row.area_code
           (#{t('scenario.area_not_exists')})
           = scenario_row.end_year
-      - if !scenario_row.owner?(current_user) || !scenario_row.collaborator?(current_user)
-        %span.author
-          = t('scenario.by')
-          = scenario_row.users.pluck(:name).join(', ')
       %span.last-updated
         •
         = t('last_updated_ago', when: time_ago_in_words(scenario_row.updated_at))

@@ -28,7 +28,7 @@ class ScenariosController < ApplicationController
     @saved_scenarios = current_user
       .saved_scenarios
       .available
-      .includes(:featured_scenario, :user)
+      .includes(:featured_scenario, :users)
       .order('updated_at DESC')
       .page(params[:page])
       .per(50)
@@ -106,7 +106,10 @@ class ScenariosController < ApplicationController
     update = UpdateSavedScenario.call(engine_client, @saved_scenario, scenario_id)
 
     if update.successful?
-      render json: @saved_scenario
+      Current.setting.preset_scenario_id = scenario_id
+      Current.setting.api_session_id = update.value.id
+
+      render json: @saved_scenario.as_json.merge(api_session_id: update.value.id)
     else
       render json: { errors: update.errors }
     end

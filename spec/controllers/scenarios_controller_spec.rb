@@ -387,7 +387,7 @@ describe ScenariosController, vcr: true do
       let(:request) { put(:update, params: { id: user_scenario.id, scenario_id: 99 }) }
 
       before do
-        allow(UpdateSavedScenario).to receive(:call).and_return(ServiceResult.success('123'))
+        allow(UpdateSavedScenario).to receive(:call).and_return(ServiceResult.success(scenario_mock))
       end
 
       it 'changes the scenario_id of the saved scenario' do
@@ -397,7 +397,8 @@ describe ScenariosController, vcr: true do
 
       it 'returns the saved scenario JSON' do
         request
-        expect(JSON.parse(response.body)).to eq(JSON.parse(user_scenario.to_json))
+        expect(JSON.parse(response.body))
+          .to eq(JSON.parse(user_scenario.to_json).merge("api_session_id"=>"123"))
       end
     end
 

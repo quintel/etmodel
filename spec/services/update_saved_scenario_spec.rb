@@ -20,7 +20,10 @@ describe UpdateSavedScenario, type: :service do
     allow(saved_scenario).to receive(:scenario)
       .and_return(ete_scenario_mock)
     allow(client).to receive(:put).with(
-      '/api/v3/scenarios/11', scenario: { keep_compatible: true }
+      '/api/v3/scenarios/10', scenario: { keep_compatible: true }
+    )
+    allow(client).to receive(:put).with(
+      '/api/v3/scenarios/10', scenario: { set_preset_roles: true }
     )
   end
 
@@ -36,15 +39,17 @@ describe UpdateSavedScenario, type: :service do
     describe '#value' do
       subject { result.value }
 
-      it { is_expected.to be_a SavedScenario }
-      it { is_expected.to be_persisted }
+      it { is_expected.to be_a Engine::Scenario }
+      it 'is a new scenario' do
+        expect(subject.id).not_to eq(saved_scenario.scenario_id)
+      end
     end
 
     it 'changes the scenario_id on the SavedScenario' do
       expect { result }.to(
         change(saved_scenario, :scenario_id)
           .from(648_695)
-          .to(11)
+          .to(10)
       )
     end
 

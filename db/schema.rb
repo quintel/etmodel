@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_21_133548) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_26_135514) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -82,8 +82,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_133548) do
     t.datetime "updated_at", precision: nil
   end
 
+  create_table "saved_scenario_users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "saved_scenario_id", null: false
+    t.integer "role_id", null: false
+    t.integer "user_id"
+    t.string "user_email"
+    t.index ["saved_scenario_id", "user_email"], name: "saved_scenario_users_saved_scenario_id_user_email_idx", unique: true
+    t.index ["saved_scenario_id", "user_id", "role_id"], name: "saved_scenario_users_saved_scenario_id_user_id_role_id_idx"
+    t.index ["saved_scenario_id", "user_id"], name: "saved_scenario_users_saved_scenario_id_user_id_idx", unique: true
+    t.index ["user_email"], name: "saved_scenario_users_user_email_idx"
+  end
+
   create_table "saved_scenarios", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.integer "scenario_id", null: false
     t.string "scenario_id_history"
     t.string "title", null: false
@@ -91,13 +101,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_133548) do
     t.string "area_code", null: false
     t.integer "end_year", null: false
     t.boolean "private", default: false
-    t.text "settings"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.datetime "discarded_at"
     t.index ["discarded_at"], name: "index_saved_scenarios_on_discarded_at"
     t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
-    t.index ["user_id"], name: "index_saved_scenarios_on_user_id"
   end
 
   create_table "sessions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
@@ -172,6 +180,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_133548) do
   add_foreign_key "esdl_suite_ids", "users"
   add_foreign_key "featured_scenarios", "saved_scenarios"
   add_foreign_key "multi_year_charts", "users"
-  add_foreign_key "saved_scenarios", "users"
   add_foreign_key "surveys", "users"
 end

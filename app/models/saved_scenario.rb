@@ -3,14 +3,12 @@
 # Table name: saved_scenarios
 #
 #  id                  :integer          not null, primary key
-#  user_id             :integer          not null
 #  scenario_id         :integer          not null
 #  scenario_id_history :string
 #  title               :string           not null
 #  description         :string
 #  area_code           :string           not null
 #  end_year            :integer          not null
-#  settings            :text
 #  created_at          :datetime
 #  updated_at          :datetime
 #
@@ -24,10 +22,11 @@ class SavedScenario < ApplicationRecord
   # Discarded scenarios are deleted automatically after this period.
   AUTO_DELETES_AFTER = 60.days
 
-  belongs_to :user
+  has_many :saved_scenario_users, dependent: :destroy
+  has_many :users, through: :saved_scenario_users
+
   has_one :featured_scenario, dependent: :destroy
 
-  validates :user_id,     presence: true
   validates :scenario_id, presence: true
   validates :title,       presence: true
   validates :end_year,    presence: true
@@ -68,8 +67,31 @@ class SavedScenario < ApplicationRecord
       .destroy_all
   end
 
-  # Public: Cutomizes the attributes returned by `as_json` and `to_xml`. Omits the deprecated
-  # `settings` attribute, and `user_id`.
+  def self.owned_by?(user)
+    joins(:saved_scenario_users)
+      .where(
+        'saved_scenario_users.user_id': user.id,
+        'saved_scenario_users.role_id': User::ROLES.key(:scenario_owner)
+      )
+  end
+
+  def self.collaborated_by?(user)
+    joins(:saved_scenario_users)
+      .where(
+        'saved_scenario_users.user_id': user.id,
+        'saved_scenario_users.role_id': User::ROLES.key(:scenario_collaborator)..
+      )
+  end
+
+  def self.viewable_by?(user)
+    joins(:saved_scenario_users)
+      .where(
+        'saved_scenario_users.user_id': user.id,
+        'saved_scenario_users.role_id': User::ROLES.key(:scenario_viewer)..
+      )
+  end
+
+  # Public: Customizes the attributes returned by `as_json` and `to_xml`. Omits the deprecated `settings` attribute
   #
   # Returns a hash.
   def serializable_hash(options = {})
@@ -77,7 +99,7 @@ class SavedScenario < ApplicationRecord
     options ||= {}
 
     super(options.merge(
-      except: (options[:except] || []) + %i[settings user_id]
+      except: (options[:except] || [])
     ))
   end
 
@@ -145,7 +167,61 @@ class SavedScenario < ApplicationRecord
 
     super(options).merge(
       'discarded' => discarded_at.present?,
-      'owner' => user.as_json(only: %i[id name]),
+      'owners' => owners.map(&:user).map { |u| u.as_json(only: %i[id name]) }
+    )
+  end
+
+  # Returns a collection of SavedScenarioUsers
+  def owners
+    saved_scenario_users.where(role_id: User::ROLES.key(:scenario_owner))
+  end
+
+  # Returns a collection of SavedScenarioUsers
+  def collaborators
+    saved_scenario_users.where(role_id: User::ROLES.key(:scenario_collaborator))
+  end
+
+  # Returns a collection of SavedScenarioUsers
+  def viewers
+    saved_scenario_users.where(role_id: User::ROLES.key(:scenario_viewer))
+  end
+
+  def single_owner?
+    owners.count == 1
+  end
+
+  def owner?(user)
+    return false if user.blank?
+
+    ssu = saved_scenario_users.find_by(user_id: user.id)
+    ssu.present? && ssu.role_id == User::ROLES.key(:scenario_owner)
+  end
+
+  def collaborator?(user)
+    return false if user.blank?
+
+    ssu = saved_scenario_users.find_by(user_id: user.id)
+    ssu.present? && ssu.role_id >= User::ROLES.key(:scenario_collaborator)
+  end
+
+  def viewer?(user)
+    return false if user.blank?
+
+    return true if user.admin?
+
+    ssu = saved_scenario_users.find_by(user_id: user.id)
+    ssu.present? && ssu.role_id >= User::ROLES.key(:scenario_viewer)
+  end
+
+  # Convenience method to quickly set the owner for a scenario, e.g. when creating it as
+  # Scenario.create(user: User). Only works to set the first user, returns false otherwise.
+  def user=(user)
+    return unless user.present? && saved_scenario_users.empty? && valid?
+
+    SavedScenarioUser.create(
+      saved_scenario: self,
+      user: user,
+      role_id: User::ROLES.key(:scenario_owner)
     )
   end
 end

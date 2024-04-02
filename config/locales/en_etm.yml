@@ -264,6 +264,7 @@ en:
     updated: "Last updated"
     end_year: "End Year"
     go_back: "Or go back to"
+    back_to: "Back to scenario"
     link: "Save current scenario"
     by: "By"
     area_not_exists: 'Area does not exist'
@@ -311,17 +312,17 @@ en:
     regional: "Local"
     high_energy_productivity_growth: "High Energy Productivity Growth"
     national: "Netherlands"
-    northern_ireland: Northern Ireland
     regional: "Provinces and regions of the Netherlands"
     municipal: "Municipalities and neigbourhoods of the Netherlands"
+    northern_ireland: Northern Ireland
     cancel: 'Cancel'
     uncouple: 'Uncouple'
     uncouple_desc: |
       Are you sure you want to uncouple the scenario from external models?
-      All the values that are set by external models will be deleted from 
+      All the values that are set by external models will be deleted from
       the scenario and cannot be retrieved. </br></br>
-      Visit the 
-      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
+      Visit the
+      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\">
       documentation</a> for more information.
     add_description: 'Add a description of your scenario...'
     edit_text: 'Edit title and description'
@@ -331,6 +332,43 @@ en:
     feature_scenario: 'Feature this scenario'
     featured_scenario: 'Featured scenario'
     created_with: 'Scenario created with the Energy Transition Model'
+    users:
+      manage: 'Manage access'
+      manage_description:
+        Here you can manage who has access to your scenario and in which manner.
+        Click the 'Invite others' button to give someone access to your scenario,
+        or use the table above to manage users that are already coupled.<br /><br />
+        Please visit the
+        <a href="https://docs.energytransitionmodel.com/main/#12-saved-scenario-access-management-page" target=\"_blank\">
+        documentation</a> for more information and details on user access management, such as user roles.
+      invite: '+ Invite others'
+      send_invite: Send invite
+      name: 'Name'
+      role: 'Role'
+      you: 'you'
+      roles:
+        scenario_owner: 'Owner'
+        scenario_collaborator: 'Collaborator'
+        scenario_viewer: 'Viewer'
+        pending: 'Pending'
+      new:
+        title: 'Give someone access to your scenario'
+        description:
+          If no existing user can be found for the given email address we will send an email
+          inviting this person to create an account for the ETM.
+        email: 'Email address'
+      destroy:
+        title: 'Remove user from scenario'
+        description: You are about to remove the following user from this scenario. Are you sure?
+        button: 'Remove user'
+      errors:
+        create: Something went wrong while trying create the invite!
+        base: Please enter an email address.
+        user_email: The e-mail address you entered was invalid.
+        update: Something went wrong while trying to update this role!
+        destroy: Something went wrong while trying to remove the user from the scenario!
+        general: Please try again later. If you keep getting this error, please contact us.
+        duplicate: This person is already invited to join the scenario.
     group: 'Group'
     share:
       by: 'Share by'

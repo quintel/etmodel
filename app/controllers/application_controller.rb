@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-protected
+  protected
 
   def initialize_current
     Current.session = session

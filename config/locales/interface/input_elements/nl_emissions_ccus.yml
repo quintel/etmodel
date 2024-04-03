@@ -3,178 +3,195 @@ nl:
   input_elements:
     share_of_industry_steel_captured_co2:
       title: Staalindustrie
-      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+      description: |
+        Met deze schuif kun je aangeven hoeveel procent van de afvangbare
         CO<sub>2</sub>-emissies in de staalsector worden afgevangen in jouw scenario.
         Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de staalsector
         en de gebruikte productietechnologie in jouw scenario. Aannames hierover kun je
-        aanpassen op de <a href='/scenario/demand/industry/steel'>pagina voor de staalsector</a>.
+        aanpassen op de <a href="/scenario/demand/industry/steel">pagina voor de staalsector</a>.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
         het energiegebruik en de kosten.<br/><br/> In de link hieronder kun je de specificaties
-        bekijken van afvang bij hoogovens.<br/>"
+        bekijken van afvang bij hoogovens.<br/> 
     share_of_industry_chemicals_refineries_captured_co2:
       title: Raffinage-industrie
-      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+      description: |
+        Met deze schuif kun je aangeven hoeveel procent van de afvangbare
         CO<sub>2</sub>-emissies in de raffinage-industrie worden afgevangen in jouw scenario.
         Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de raffinage-industrie.
         Aannames hierover kun je aanpassen op de <a
-        href='/scenario/demand/industry/refineries'>pagina voor de raffinage-industrie</a>.
+        href="/scenario/demand/industry/refineries">pagina voor de raffinage-industrie</a>.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
-        het energiegebruik en de kosten.<br/><br/>"
+        het energiegebruik en de kosten.<br/><br/>
     share_of_industry_chemicals_fertilizers_captured_processes_co2:
       title: Kunstmestindustrie (procesemissies)
-      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+      description: |
+        Met deze schuif kun je aangeven hoeveel procent van de afvangbare
         procesemissies in de kunstmestsector worden afgevangen in jouw scenario.
         Het productieproces van kunstmest geeft een zuivere stroom van
         procesemissies, die relatief eenvoudig af te vangen zijn. De kosten en het energiegebruik
         van afvang zijn daarom laag, vergeleken met afvang van verbrandingsemissies.<br/><br/>
         Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de kunstmestsector
-        in jouw scenario en of er waterstof 'on-site' gemaakt wordt of wordt aangevoerd van
+        in jouw scenario en of er waterstof "on-site" gemaakt wordt of wordt aangevoerd van
         buitenaf. Aannames hierover kun je aanpassen op de
-        <a href='/scenario/demand/industry/fertilizers'>pagina voor de kunstmestsector</a>.
+        <a href="/scenario/demand/industry/fertilizers">pagina voor de kunstmestsector</a>.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
         het energiegebruik en de kosten.
         <br/><br/>
         Op sommige plekken wordt CO<sub>2</sub> uit procesemissies op dit moment al afgevangen.
         Deze CO<sub>2</sub> wordt bijvoorbeeld gebruikt voor de productie van ureum, of in de
-        voedingsmiddelenindustrie voor de productie van frisdrank en bier."
+        voedingsmiddelenindustrie voor de productie van frisdrank en bier.
     share_of_industry_chemicals_fertilizers_captured_combustion_co2:
       title: Kunstmestindustrie (verbrandingsemissies)
-      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+      description: |
+        Met deze schuif kun je aangeven hoeveel procent van de afvangbare
         verbrandingsemissies in de kunstmestsector worden afgevangen in jouw scenario.
         Het afvangen van verbrandingsemissies is relatief duur en energie-intensief,
         omdat de CO<sub>2</sub> die uit de schoorsteen komt vermengd is met andere gassen.
         <br/><br/>
         Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de kunstmestsector
         in jouw scenario en van de efficiëntie van de sector. Aannames hierover kun je aanpassen op de
-        <a href='/scenario/demand/industry/fertilizers'>pagina voor de kunstmestsector</a>.
+        <a href="/scenario/demand/industry/fertilizers">pagina voor de kunstmestsector</a>.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
-        het energiegebruik en de kosten.<br/>"
+        het energiegebruik en de kosten.<br/>
     share_of_industry_chemical_other_captured_co2:
       title: Chemische industrie
-      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+      description: |
+        Met deze schuif kun je aangeven hoeveel procent van de afvangbare
         CO<sub>2</sub>-emissies in de chemische industrie worden afgevangen in jouw
         scenario. Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van
         de chemische industrie in jouw scenario. Aannames hierover kun je aanpassen op
-        de <a href='/scenario/demand/industry/chemicals'>pagina voor de chemische industrie</a>.
+        de <a href="/scenario/demand/industry/chemicals">pagina voor de chemische industrie</a>.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
-        het energiegebruik en de kosten.<br/><br/>"
+        het energiegebruik en de kosten.<br/><br/>
     share_of_industry_other_paper_captured_co2:
       title: Papierindustrie
-      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+      description: |
+        Met deze schuif kun je aangeven hoeveel procent van de afvangbare
         verbrandingsemissies in de papiersector worden afgevangen in jouw scenario.
         Het afvangen van verbrandingsemissies is relatief duur en energie-intensief,
         omdat de CO<sub>2</sub> die uit de schoorsteen komt vermengd is met andere gassen.
         <br/><br/>
         Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de papiersector
         in jouw scenario en van de efficiëntie van de sector. Aannames hierover kun je aanpassen op de
-        <a href='/scenario/demand/industry/paper'>pagina voor de papiersector</a>.
+        <a href="/scenario/demand/industry/paper">pagina voor de papiersector</a>.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
-        het energiegebruik en de kosten.<br/>"
+        het energiegebruik en de kosten.<br/>
     share_of_industry_other_food_captured_co2:
       title: Voedselindustrie
-      description: "Met deze schuif kun je aangeven hoeveel procent van de afvangbare
+      description: |
+        Met deze schuif kun je aangeven hoeveel procent van de afvangbare
         verbrandingsemissies in de voedselsector worden afgevangen in jouw scenario.
         Het afvangen van verbrandingsemissies is relatief duur en energie-intensief,
         omdat de CO<sub>2</sub> die uit de schoorsteen komt vermengd is met andere gassen.
         <br/><br/>
         Hoeveel CO<sub>2</sub> afvangbaar is, hangt af van de grootte van de voedselsector
         in jouw scenario en van de efficiëntie van de sector. Aannames hierover kun je aanpassen op de
-        <a href='/scenario/demand/industry/food'>pagina voor de voedselsector</a>.
+        <a href="/scenario/demand/industry/food">pagina voor de voedselsector</a>.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
-        het energiegebruik en de kosten.<br/>"
+        het energiegebruik en de kosten.<br/>
     share_of_energy_power_ultra_supercritical_ccs_coal:
       title: Poederkolen + CCS
-      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+      description: |
+        Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan (poeder)kolencentrales is uitgerust met een
         CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
         Het opgestelde vermogen aan poederkolencentrales is in te stellen op de
-        <a href='/scenario/supply/electricity/coal-plants'>elektriciteitspagina</a>.<br/><br/>
-        Als er <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassa</a> wordt
+        <a href="/scenario/supply/electricity/coal-plants">elektriciteitspagina</a>.<br/><br/>
+        Als er <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">biomassa</a> wordt
         bijgestookt in deze centrales voor het produceren van elektriciteit, ontstaan er
-        (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
+        (boekhoudkundig) "biogene" of "negatieve" emissies in jouw scenario als deze CO<sub>2</sub>
         wordt afgevangen. Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions' target=\"_blank\">documentatie</a>
-        van het ETM.<br/>"
+        <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentatie</a>
+        van het ETM.<br/>
+        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_power_combined_cycle_ccs_coal:
       title: Kolenvergassing + CCS
-      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+      description: |
+        Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan kolen(vergassings)centrales is uitgerust met een
         CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
         Het opgestelde vermogen aan kolenvergassingscentrales is in te stellen op de
-        <a href='/scenario/supply/electricity/coal-plants'>elektriciteitspagina</a>.<br/><br/>
-        Als er <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassa</a> wordt
+        <a href="/scenario/supply/electricity/coal-plants">elektriciteitspagina</a>.<br/><br/>
+        Als er <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">biomassa</a> wordt
         bijgestookt in deze centrales voor het produceren van elektriciteit, ontstaan er
-        (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
+        (boekhoudkundig) "biogene" of "negatieve" emissies in jouw scenario als deze CO<sub>2</sub>
         wordt afgevangen. Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions' target=\"_blank\">documentatie</a>
-        van het ETM.<br/>"
+        <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentatie</a>
+        van het ETM.<br/>
+        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
       title: Bruinkolen + CCS
-      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+      description: |
+        Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan bruinkoolcentrales is uitgerust met een
         CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
         Het opgestelde vermogen aan bruinkoolcentrales is in te stellen op de
-        <a href='/scenario/supply/electricity/coal-plants'>elektriciteitspagina</a>.<br/>"
+        <a href="/scenario/supply/electricity/coal-plants">elektriciteitspagina</a>.<br/>
     share_of_energy_power_combined_cycle_ccs_network_gas:
       title: Gas STEG + CCS
-      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+      description: |
+        Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan STEG gascentrales is uitgerust met een
         CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
         van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
         Het opgestelde vermogen aan STEG gascentrales is in te stellen op de
-        <a href='/scenario/supply/electricity/gas-plants'>elektriciteitspagina</a>.<br/><br/>
-        Als er <a href='/scenario/supply/biomass/green-gas-in-gas-network'>groen gas</a> wordt
+        <a href="/scenario/supply/electricity/gas-plants">elektriciteitspagina</a>.<br/><br/>
+        Als er <a href="/scenario/supply/biomass/green-gas-in-gas-network">groen gas</a> wordt
         gebruikt in deze centrales voor het produceren van elektriciteit, ontstaan er
-        (boekhoudkundig) 'negatieve' emissies in jouw scenario als deze CO<sub>2</sub>
+        (boekhoudkundig) "biogene" of "negatieve" emissies in jouw scenario als deze CO<sub>2</sub>
         wordt afgevangen. Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions' target=\"_blank\">documentatie</a>
-        van het ETM.<br/>"
+        <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentatie</a>
+        van het ETM.<br/>
+        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing + CCS
-      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+      description: |
+       Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan biomassavergassingsfabrieken voor de productie van waterstof
         is uitgerust met een CO<sub>2</sub>-afvanginstallatie. Omdat emissies van biomassa
-        als 'kortcyclisch' worden gerekend, ontstaan er (boekhoudkundig) 'negatieve'
+        als "kortcyclisch" worden gerekend, ontstaan er (boekhoudkundig) "biogene" of "negatieve"
         emissies in jouw scenario als deze CO<sub>2</sub> wordt afgevangen.
         Meer hierover lees je in de
-        <a href='https://docs.energytransitionmodel.com/main/co2-negative-emissions' target=\"_blank\">documentatie</a>
-        van het ETM.<br/><br/>
+        <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentatie</a>
+        van het ETM.
+        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.<br/><br/>
         Het opgestelde vermogen aan biomassavergassingsfabrieken is in te stellen op de
-        <a href='/scenario/supply/hydrogen/hydrogen-production'>waterstofpagina</a>.<br/>"
+        <a href="/scenario/supply/hydrogen/hydrogen-production">waterstofpagina</a>.<br/>
     share_of_energy_hydrogen_steam_methane_reformer_ccs:
       title: Steam reforming + CCS
-      description: "Met deze schuif kun je instellen hoeveel procent van het opgestelde
+      description: |
+        Met deze schuif kun je instellen hoeveel procent van het opgestelde
         vermogen aan stoomreformingsfabrieken voor de productie van waterstof
         is uitgerust met een CO<sub>2</sub>-afvanginstallatie. Het opgestelde vermogen aan
         stoomreformingsfabrieken is in te stellen op de
-        <a href='/scenario/supply/hydrogen/hydrogen-production'>waterstofpagina</a>.<br/><br/>"
+        <a href="/scenario/supply/hydrogen/hydrogen-production">waterstofpagina</a>.<br/><br/>
     share_of_energy_hydrogen_autothermal_reformer_ccs:
       title: Autothermal reforming + CCS
-      description:
-        "Pas met deze slider het percentage van de autothermal reformers (ATR) capaciteit aan dat wordt
+      description: |
+        Pas met deze slider het percentage van de autothermal reformers (ATR) capaciteit aan dat wordt
         uitgerust met CO<sub>2</sub> afvanginstallatie.
         <br/><br/>
         De totale capaciteit van autothermal reforming plants kan ingesteld worden in de 
-        <a href='/scenario/supply/hydrogen/hydrogen-production'>Waterstof productie</a> sectie."
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof productie</a> sectie.
     demand_of_molecules_direct_air_capture_co2:
       title: Direct air capture (DAC)
       description: |
         Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er uit de lucht
-        gehaald wordt via 'direct air capture'. Direct air capture is een technologie waarbij
+        gehaald wordt via "direct air capture". Direct air capture is een technologie waarbij
         CO<sub>2</sub> met behulp van elektriciteit direct uit de buitenlucht gehaald wordt.
         Als hiervoor hernieuwbare stroom wordt gebruikt, neemt de CO<sub>2</sub>-concentratie
-        in de atmosfeer af ('negatieve' emissies) als de afgevangen CO<sub>2</sub> wordt
+        in de atmosfeer af ("negatieve" emissies) als de afgevangen CO<sub>2</sub> wordt
         opgeslagen onder de grond. De CO<sub>2</sub> kan ook worden gebruikt voor de productie
         van CO<sub>2</sub>-neutrale brandstoffen. Meer hierover vind je
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Gebruik en opslag van CO<sub>2</sub></a>
@@ -194,13 +211,14 @@ nl:
         het energiegebruik en de kosten.<br/><br/>
         De maximale waarde van deze schuif verschilt per regio in het ETM en is gebaseerd op
         publiek-toegankelijk onderzoek. Aangenomen is dat de maximale opslag per jaar 40 jaar
-        lang 'vol te houden' moet zijn. Let op: Voor sommige regio's was geen data beschikbaar over de potentie voor ondergrondse opslag.
+        lang "vol te houden" moet zijn. Let op: voor sommige regio's was geen data beschikbaar over de potentie voor ondergrondse opslag.
         Een overzicht van de gebruikte data staat op
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
         ETDataset</a>.
     output_of_energy_production_synthetic_kerosene:
       title: Synthetische kerosine
-      description: "Met deze schuif geef je aan hoeveel synthetische kerosine er wordt
+      description: |
+        Met deze schuif geef je aan hoeveel synthetische kerosine er wordt
         geproduceerd in jouw scenario. Synthetische kerosine wordt gemaakt uit
         CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
         elektriciteit wordt gebruikt, groene waterstof en groene CO<sub>2</sub>
@@ -213,14 +231,15 @@ nl:
         wordt kerosine uit het buitenland gehaald.
         <br/><br/>
         De energievraag van internationale luchtvaart wordt standaard niet meegenomen in het ETM.
-        Deze aanname kun je veranderen bij <a href='/scenario/demand/transport_international_transport/international-transport'>
+        Deze aanname kun je veranderen bij <a href="/scenario/demand/transport_international_transport/international-transport">
         Vraag → Transport → Internationaal transport</a>.
-        <br/><br/>Let op: Deze schuif vermindert niet automatisch de productie van fossiele kerosine door
+        <br/><br/>Let op: deze schuif vermindert niet automatisch de productie van fossiele kerosine door
         raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
-        kerosine, verklein dan de <a href='/scenario/demand/industry/refineries'>omvang van raffinaderijen</a>.<br/>"
+        kerosine, verklein dan de <a href="/scenario/demand/industry/refineries">omvang van raffinaderijen</a>.<br/>
     output_of_energy_production_synthetic_methanol:
       title: Synthetische methanol
-      description: "Methanol is een van de meest gebruikte grondstoffen in de chemische industrie,
+      description: |
+        Methanol is een van de meest gebruikte grondstoffen in de chemische industrie,
         bijvoorbeeld voor de productie van plastics en polyester. Daarnaast kan methanol ook
         als brandstof gebruikt worden. Op dit moment wordt methanol voornamelijk geproduceerd
         uit aardgas. Het is echter ook mogelijk om synthetische methanol te maken uit
@@ -231,22 +250,22 @@ nl:
         Met deze schuif geef je aan hoeveel synthetische methanol er wordt
         geproduceerd in jouw scenario. Deze schuif heeft geen invloed op de productie van
         methanol en andere producten in de conventionele chemiesector. Aannames hierover kun je
-        doen op de <a href='/scenario/demand/industry/chemicals'>chemiepagina</a>.<br/>"
+        doen op de <a href="/scenario/demand/industry/chemicals">chemiepagina</a>.<br/>
     demand_of_molecules_other_utilisation_co2:
       title: Overig gebruik
       description: |
         Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er wordt gebruikt voor
-        'overige' toepassingen. Hieronder vallen alle toepassingen die niet expliciet gemodelleerd zijn in
+        "overige" toepassingen. Hieronder vallen alle toepassingen die niet expliciet gemodelleerd zijn in
         het ETM. Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor bier of frisdrank, de productie van de 
         kunstmeststof ureum, of in de kassenteelt. In de toekomst zou afgevangen CO<sub>2</sub> ook gebruikt 
         kunnen worden om plastic te produceren. </br></br>
         Voor veel van de bovenstaande voorbeelden geldt dat de afgevangen CO<sub>2</sub> alleen tijdelijk 
         wordt opgeslagen: zodra het bier of de frisdrank wordt geconsumeerd komt de CO<sub>2</sub> weer vrij.
-        De emissies die hieruit voortkomen zijn daarom gedefinieerd als 'uitgestelde emissies'. Standaard 
+        De emissies die hieruit voortkomen zijn daarom gedefinieerd als "uitgestelde emissies". Standaard 
         wordt aangenomen dat alle uitgestelde emissies plaatsvinden in hetzelfde jaar als ze afgevangen zijn,
         waardoor ze meetellen aan de totale uitstoot van jouw scenario. </br></br>
         For sommige voorbeelden, zoals de productie van plastics, geldt echter dat de afgevangen CO<sub>2</sub>
-        voor zeer lange tijd wordt opgeslagen. Deze emissies zijn 'uitgesteld voor onbepaalde tijd' en zijn 
+        voor zeer lange tijd wordt opgeslagen. Deze emissies zijn "uitgesteld voor onbepaalde tijd" en zijn 
         tellen daarom niet mee aan de totale uitstoot. Je kunt bepalen welk aandeel voor onbepaalde tijd wordt 
         uitgesteld in de <a href="/scenario/emissions/other_emissions/delayed-emissions"> Broeikasgassensectie</a>.
     share_of_molecules_transport_pipelines_co2:
@@ -270,6 +289,11 @@ nl:
         <a href="/scenario/supply/electricity_renewable/waste-power">Afvalverbrandingcentrales</a>.
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
+        <br><br>
+        Let op: deze energiecentrale stoot (gedeeltelijk) biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_supercritical_ccs_mt_waste_mix:
       title: Afval WKK + CCS (MT)
       description: |
@@ -283,6 +307,11 @@ nl:
         <a href="/scenario/supply/electricity_renewable/waste-power">Afvalverbrandingcentrales</a>.
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
+        <br><br>
+        Let op: deze energiecentrale stoot (gedeeltelijk) biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_power_supercritical_ccs_waste_mix:
       title: Afvalverbranding + CCS
       description: |
@@ -293,7 +322,12 @@ nl:
         onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
         prijsontwikkelingen.<br/><br/>
         Het totaal opgestelde vermogen is in te stellen in de sectie
-        <a href='/scenario/supply/electricity_renewable/waste-power'>Afvalverbrandingcentrales</a>."
+        <a href="/scenario/supply/electricity_renewable/waste-power">Afvalverbrandingcentrales</a>."
+        <br><br>
+        Let op: deze energiecentrale stoot (gedeeltelijk) biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_local_ht_wood_pellets_ccs_must_run:
       title: Biomassa-WKK + CCS (HT) (must-run)
       short_description:
@@ -306,6 +340,11 @@ nl:
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
         De vollasturen van deze centrales is in te stellen in de
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
+        <br><br>
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_local_ht_wood_pellets_ccs_dispatchable:
       title: Biomassa-WKK + CCS (HT) (regelbaar)
       short_description:
@@ -316,6 +355,11 @@ nl:
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
+        <br><br>
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_local_mt_wood_pellets_ccs_must_run:
       title: Biomassa-WKK + CCS (MT) (must-run)
       short_description:
@@ -328,6 +372,11 @@ nl:
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
         De vollasturen van deze centrales is in te stellen in de
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
+        <br><br>
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_local_mt_wood_pellets_ccs_dispatchable:
       title: Biomassa-WKK + CCS (MT) (regelbaar)
       short_description:
@@ -338,6 +387,11 @@ nl:
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.   
+        <br><br>
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_power_wood_pellets_ccs_must_run:
       title: Biomassacentrale + CCS (must-run)
       short_description:
@@ -349,6 +403,11 @@ nl:
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
         De vollasturen van deze centrales is in te stellen in de
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
+        <br><br>
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_power_wood_pellets_ccs_dispatchable:
       title: Biomassacentrale + CCS (regelbaar)
       short_description:
@@ -358,6 +417,11 @@ nl:
         CO<sub>2</sub>-afvanginstallatie.
         Het totaal opgestelde vermogen is in te stellen in de sectie
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
+        <br><br>
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     volume_of_molecules_import_co2_baseload:
       title: Import
       description: |

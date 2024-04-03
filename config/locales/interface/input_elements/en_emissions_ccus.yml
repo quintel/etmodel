@@ -94,9 +94,11 @@ en:
         installed pulverised coal capacity can be set in
         <a href="/scenario/supply/electricity/coal-plants">the Supply → Electricity → Coal plants section</a>.
         <br/><br/>
-        If <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">bio coal</a> is
-        used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions. You
-        can find more information on this in the
+        If <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">biocoal</a> is
+        used, capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
+        <br/><br/> 
+        You can find more information on this in the
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
         of the ETM.
     share_of_energy_power_combined_cycle_ccs_coal:
@@ -109,9 +111,11 @@ en:
         coal capacity can be set in
         <a href="/scenario/supply/electricity/coal-plants">the Supply → Electricity → Coal plants section</a>.
         <br/><br/>
-        If <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">bio coal</a> is
-        used, capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions. You
-        can find more information on this in the
+        If <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">biocoal</a> is
+        used, capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
+        <br/><br/> 
+        Youcan find more information on this in the
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
         of the ETM.
     share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
@@ -135,8 +139,10 @@ en:
         <a href="/scenario/supply/electricity/gas-plants">the Supply → Electricity → Gas plants section</a>.
         <br/><br/>
         If <a href="/scenario/supply/biomass/green-gas-in-gas-network">green gas</a> is used,
-        capture of CO<sub>2</sub> emissions could lead to so-called 'negative' emissions. You can
-        find more information on this in the
+        capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions. 
+        You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
+        <br/><br/>
+        You can find more information on this in the
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
         of the ETM.
     share_of_energy_hydrogen_biomass_gasification_ccs:
@@ -144,10 +150,10 @@ en:
       description: |
         What share of installed biomass gasification capacity for hydrogen production will be
         equipped with a CO<sub>2</sub> capture unit? Because biomass emissions are considered to be
-        'short cycle' emissions, capturing these emissions could lead to so-called 'negative'
+        'short cycle' emissions, capturing these emissions could lead to so-called 'biogenic' or 'negative'
         emissions. You can find more information on this in the
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
-        of the ETM.
+        of the ETM. You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
         <br/><br/>
         The amount of installed biomass gasification plants can be set in
         <a href="/scenario/supply/hydrogen/hydrogen-production">the Supply → Hydrogen → Hydrogen
@@ -197,7 +203,7 @@ en:
         <br /><br />
         The maximum of this slider varies per region in the ETM and is based on public research.
         It is assumed that the maximum storage value per year can be sustained for a period of 40 years.
-        Please note: For some regions, no data could be found on storage potentials. An overview of the
+        Please note: for some regions, no data could be found on storage potentials. An overview of the
         research used can be found on
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
         ETDataset</a>.
@@ -219,7 +225,7 @@ en:
         in the <a href="/scenario/demand/transport_international_transport/international-transport">
         the Demand → Transport → International transport section</a>.
         <br/><br/>
-        Please note: This slider does not automatically reduce the production of fossil-based
+        Please note: this slider does not automatically reduce the production of fossil-based
         kerosene in the refineries sector. If you would like to replace fossil kerosene with
         synthetic kerosene in your scenario, you can reduce the market share of refineries in
         <a href="/scenario/demand/industry/refineries">the Demand → Industry → Refineries section</a>.
@@ -273,6 +279,11 @@ en:
         <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.
         The share of HT and MT heat can then be set in the
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
+        </br></br>
+        Please note: this power plant (partially) emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_chp_supercritical_ccs_mt_waste_mix:
       title: Waste CHP + CCS (MT)
       description: |
@@ -284,6 +295,11 @@ en:
         <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.
         The share of HT and MT heat can then be set in the
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
+        </br></br>
+        Please note: this power plant (partially) emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_power_supercritical_ccs_waste_mix:
       title: Waste incinerator + CCS
       description: |
@@ -291,6 +307,11 @@ en:
         unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
         power plants in your scenario. This is influenced by electricity demand, other installed power generation technologies and commodity prices.<br/><br/> The amount of installed waste incicerator capacity can be set in
         <a href="/scenario/supply/electricity_renewable/waste-power">Waste power</a> section.
+        </br></br>
+        Please note: this power plant (partially) emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_chp_local_ht_wood_pellets_ccs_must_run:
       title: Biomass CHP + CCS (HT) (must-run)
       short_description:
@@ -304,6 +325,11 @@ en:
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
         The full-load hours of these plants can be set in the 
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
+        </br></br>
+        Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_chp_local_ht_wood_pellets_ccs_dispatchable:
       title: Biomass CHP + CCS (HT) (dispatchable)
       short_description:
@@ -315,6 +341,11 @@ en:
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
         The share of HT and MT heat can then be set in the
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
+        </br></br>
+        Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_chp_local_mt_wood_pellets_ccs_must_run:
       title: Biomass CHP + CCS (MT) (must-run)
       short_description:
@@ -328,6 +359,11 @@ en:
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
         The full-load hours of these plants can be set in the 
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
+        </br></br>
+        Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_chp_local_mt_wood_pellets_ccs_dispatchable:
       title: Biomass CHP + CCS (MT) (dispatchable)
       short_description:
@@ -339,6 +375,11 @@ en:
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
         The share of HT and MT heat can then be set in the
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
+        </br></br>
+        Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_power_wood_pellets_ccs_must_run:
       title: Biomass power plant + CCS (must-run)
       short_description:
@@ -350,6 +391,11 @@ en:
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
         The full-load hours of these plants can be set in the 
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
+        </br></br>
+        Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_power_wood_pellets_ccs_dispatchable:
       title: Biomass power plant + CCS (dispatchable)
       short_description:
@@ -359,6 +405,11 @@ en:
         equipped with a CO<sub>2</sub> capture technology.
         The total installed capacity of these powerplants can be set in the
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
+        </br></br>
+        Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
+        CO<sub>2</sub> is captured, it can be sold on the biogenic CO<sub>2</sub> market.
+        You can set the price you receive for biogenic CO<sub>2</sub> in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     volume_of_molecules_import_co2_baseload:
       title: Import
       description: |

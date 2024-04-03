@@ -211,7 +211,7 @@ nl:
         het energiegebruik en de kosten.<br/><br/>
         De maximale waarde van deze schuif verschilt per regio in het ETM en is gebaseerd op
         publiek-toegankelijk onderzoek. Aangenomen is dat de maximale opslag per jaar 40 jaar
-        lang "vol te houden" moet zijn. Let op: Voor sommige regio's was geen data beschikbaar over de potentie voor ondergrondse opslag.
+        lang "vol te houden" moet zijn. Let op: voor sommige regio's was geen data beschikbaar over de potentie voor ondergrondse opslag.
         Een overzicht van de gebruikte data staat op
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
         ETDataset</a>.
@@ -233,7 +233,7 @@ nl:
         De energievraag van internationale luchtvaart wordt standaard niet meegenomen in het ETM.
         Deze aanname kun je veranderen bij <a href="/scenario/demand/transport_international_transport/international-transport">
         Vraag → Transport → Internationaal transport</a>.
-        <br/><br/>Let op: Deze schuif vermindert niet automatisch de productie van fossiele kerosine door
+        <br/><br/>Let op: deze schuif vermindert niet automatisch de productie van fossiele kerosine door
         raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
         kerosine, verklein dan de <a href="/scenario/demand/industry/refineries">omvang van raffinaderijen</a>.<br/>
     output_of_energy_production_synthetic_methanol:
@@ -290,10 +290,10 @@ nl:
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot voor een deel biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot (gedeeltelijk) biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_supercritical_ccs_mt_waste_mix:
       title: Afval WKK + CCS (MT)
       description: |
@@ -308,10 +308,10 @@ nl:
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot voor een deel biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot (gedeeltelijk) biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_power_supercritical_ccs_waste_mix:
       title: Afvalverbranding + CCS
       description: |
@@ -324,10 +324,10 @@ nl:
         Het totaal opgestelde vermogen is in te stellen in de sectie
         <a href="/scenario/supply/electricity_renewable/waste-power">Afvalverbrandingcentrales</a>."
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot voor een deel biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot (gedeeltelijk) biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_local_ht_wood_pellets_ccs_must_run:
       title: Biomassa-WKK + CCS (HT) (must-run)
       short_description:
@@ -341,10 +341,10 @@ nl:
         De vollasturen van deze centrales is in te stellen in de
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor  biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_local_ht_wood_pellets_ccs_dispatchable:
       title: Biomassa-WKK + CCS (HT) (regelbaar)
       short_description:
@@ -356,10 +356,10 @@ nl:
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor  biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_local_mt_wood_pellets_ccs_must_run:
       title: Biomassa-WKK + CCS (MT) (must-run)
       short_description:
@@ -373,10 +373,10 @@ nl:
         De vollasturen van deze centrales is in te stellen in de
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_chp_local_mt_wood_pellets_ccs_dispatchable:
       title: Biomassa-WKK + CCS (MT) (regelbaar)
       short_description:
@@ -388,10 +388,10 @@ nl:
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.   
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_power_wood_pellets_ccs_must_run:
       title: Biomassacentrale + CCS (must-run)
       short_description:
@@ -404,10 +404,10 @@ nl:
         De vollasturen van deze centrales is in te stellen in de
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Kosten & efficienties</a> sectie.
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     share_of_energy_power_wood_pellets_ccs_dispatchable:
       title: Biomassacentrale + CCS (regelbaar)
       short_description:
@@ -418,10 +418,10 @@ nl:
         Het totaal opgestelde vermogen is in te stellen in de sectie
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
         <br><br>
-        Let op:
-        <br><br>
-        Deze energiecentrale stoot biogeen CO<sub>2</sub> uit. Wanneer deze biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogeen CO<sub>2</sub>.
-        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
+        biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
+        CO<sub>2</sub>. De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
     volume_of_molecules_import_co2_baseload:
       title: Import
       description: |

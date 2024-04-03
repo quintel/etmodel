@@ -18,3 +18,5 @@
       = render partial: 'scenarios/version_warning', locals: { scenario: @saved_scenario }
 
     = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }
+
+    = render partial: 'version_history', locals: { saved_scenario: @saved_scenario }

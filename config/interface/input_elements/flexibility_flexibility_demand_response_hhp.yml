@@ -3,29 +3,30 @@
   step_value: 0.1
   unit: "#"
   interface_group: flexibility_cop
-  position: 1
+  position: 5
   slide_key: flexibility_flexibility_demand_response_hhp
 - key: flexibility_heat_pump_space_heating_cop_cutoff_crude_oil
   step_value: 0.1
   unit: "#"
   interface_group: flexibility_cop
-  position: 1
+  position: 10
   slide_key: flexibility_flexibility_demand_response_hhp
+  dependent_on: has_coal_oil_for_heating_built_environment
 - key: flexibility_heat_pump_water_heating_cop_cutoff
   step_value: 0.1
   unit: "#"
   interface_group: flexibility_cop
-  position: 2
+  position: 15
   slide_key: flexibility_flexibility_demand_response_hhp
 - key: households_flexibility_consumer_gas_price
   step_value: 0.1
   unit: ct/m3
   interface_group: consumer_price
-  position: 3
+  position: 20
   slide_key: flexibility_flexibility_demand_response_hhp
 - key: households_flexibility_consumer_electricity_price
   step_value: 0.1
   unit: ct/kWh
   interface_group: consumer_price
-  position: 4
+  position: 25
   slide_key: flexibility_flexibility_demand_response_hhp

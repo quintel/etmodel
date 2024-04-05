@@ -327,18 +327,18 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_infrastructure_hydrogen_carriers_costs_overview_detailed
-- label: costs_infrastructure_natural_gas
+- label: costs_infrastructure_gas
   color: "#9a64a8"
   order_by: 530
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: costs_infrastructure_natural_gas
+  gquery: costs_infrastructure_gas
   is_1990: false
   dependent_on:
   output_element_key: costs_overview_detailed
-  key: costs_infrastructure_natural_gas_costs_overview_detailed
+  key: costs_infrastructure_gas_costs_overview_detailed
 - label: costs_infrastructure_ammonia
   color: "#C586D6"
   order_by: 540

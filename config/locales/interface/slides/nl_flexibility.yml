@@ -108,37 +108,42 @@ nl:
     flexibility_flexibility_demand_response_hhp:
       title: Vraagsturing - gedrag van hybride warmtepompen
       short_description:
-      description: "De efficiëntie van (hybride) warmtepompen is afhankelijk van de
+      description: |
+        De efficiëntie van (hybride) warmtepompen is afhankelijk van de
         buitentemperatuur en wordt aangegeven met de 'coefficient of performance'
         (COP). De COP wordt lager als de buitentemperatuur afneemt. Hieronder kan
         je de zogenaamde 'omslag-COP' instellen: wanneer de COP van de warmtepomp
         onder de omslag-COP ligt dan schakelt de hybride warmtepomp van elektriciteit
-        naar gas. Je kan deze instellen op de financieel meest aantrekkelijke voor
+        naar een brandstof. Dit kan netwerkgas, waterstof of olie zijn.
+        Je kan deze instellen op de financieel meest aantrekkelijke voor
         de consument, maar kan ook een instelling kiezen die minder netwerkimpact
-        oplevert. \r\n</br></br>\r\n Bekijk de grafiek aan de rechterkant voor advies
-        bij het kiezen van de kostenoptimale omslag-COP instelling vanuit een consumentenperspectief.
-        Deze laat zien hoeveel het kost om een eenheid warmte te maken met de HWP
+        oplevert. </br></br>
+        Bekijk de grafiek aan de rechterkant voor advies
+        bij het kiezen van de kostenoptimale omslag-COP instelling vanuit een consumentenperspectief. 
+        Deze laat zien hoeveel het kost om een eenheid warmte te maken met de gasgestookte hybride warmtepomp
         voor ruimteverwarming. Voor gas zijn die kosten onafhankelijk van de COP (en
         dus de buitentemperatuur). Voor elektriciteit nemen de kosten af met toenemende
-        COP (en toenemende buitentemperatuur). Het kruispunt van de twee curves is
+        COP (en toenemende buitentemperatuur). Het snijpunt van de twee curves is
         de kosten-optimale COP-instelling voor de gegeven kostprijs van gas en elektriciteit.
         Deze kostprijs van gas en elektriciteit is hieronder in te stellen. De startwaarde
         van het omslag-COP schuifje staat gelijk aan de kostenoptimale omslag-COP
         bij de ingestelde kosten.
         </br></br>
+        Specifiek voor gasgestookte hybride warmtepompen bieden twee grafieken mogelijk relevante inzichten. 
         De grafiek
         <a
-          href=\"#\" class=\"open_chart\"
-          \ data-chart-key=\"household_space_heater_hhp_hourly_demand\"
-        >Vraagprofiel van hybride warmtepomp (gas) voor huishoudens</a>
+          href="#" class="open_chart" data-chart-key="household_space_heater_hhp_hourly_demand" data-chart-location="side">
+        Vraagprofiel van hybride warmtepomp (gas) voor huishoudens
+        </a>
         laat de gas- en elektriciteitsvraag per uur zien en is handig voor het
         bepalen van de impact van hybride warmtepompen op de infrastructuur.
         De tabel
         <a
-          href=\"#\" class=\"open_chart\"
-          \ data-chart-key=\"hybrid_heat_pump\"
-        >Elektriciteit en gas aandeel van hybride warmtepomp voor huishoudens</a>
-        laat de jaarlijkse verdeling van gas en elektriciteit zien."
+          href="#" class="open_chart"
+           data-chart-key="hybrid_heat_pump" data-chart-location="side">
+        Elektriciteit en gas aandeel van hybride warmtepomp voor huishoudens
+        </a>
+        laat de jaarlijkse verdeling van gas en elektriciteit zien.
     flexibility_flexibility_demand_response_load_shifting:
       title: Vraagsturing - vraagverschuiving in industrie
       short_description:

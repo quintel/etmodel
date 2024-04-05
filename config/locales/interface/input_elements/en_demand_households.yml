@@ -1057,16 +1057,20 @@ en:
         The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
         >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
-      title: Hybrid air heat pump (crude oil)
+      title: Hybrid air heat pump (oil)
       short_description:
-      description: "This heater is a combination of an electric heat pump that draws
+      description: |
+        This heater is a combination of an electric heat pump that draws
         its heat from the outside air and an efficient conventional oil-fired
-        boiler.\r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe oil-fired
-        part takes over all of the heating of the building on cold winter days, when
+        boiler.
+        <br/><br/>
+        This works as follows:
+        <br/>
+        The oil-fired part takes over all of the heating of the building on cold winter days, when
         heat demand peaks. Because of this clever trick, the heat pump has less impact
         on the electricity grid than an all-electric heat pump does. Smart use of
         hybrid oil heat pumps may therefore avoid the need to reinforce local
-        power grids. \r\n<br/><br/>\r\nHeat pumps move heat from one place to another.
+        power grids. <br/><br/>Heat pumps move heat from one place to another.
         Refrigerators use heat pumps, for example, but buildings can use them for
         heating and cooling too. For optimal results with <em>most</em> types of heat
         pump, installation of under-floor and wall heating instead of radiators is
@@ -1076,11 +1080,16 @@ en:
         part (heat pump or oil-fired heater) is the most efficient or cost-effective
         given the weather conditions and insulation level. Houses with limited insulation
         will rely on the oil-fired part more, better insulated ones will make
-        more use of the heat pump.\r\n<br/><br/>\r\nThe COP of the electric part of
+        more use of the heat pump.<br/><br/>The COP of the electric part of
         the hybrid oil heat pump depends on ambient temperature. When the COP
-        drops below the threshold value the hybrid heat pump switches to oil.
+        drops below the threshold value the hybrid heat pump switches to oil. 
+        <b>Note that by default, the oil-fired part
+        provides  most if not all of the required heat for space heating.</b> 
+        This is because the default threshold COP is set at a relatively high value of 3.7
+        based on the consumer prices for oil and electricity.
+        <br/><br/>
         The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
-        >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"    
+        >Demand response - behavior of hybrid heat pumps</a>.     
     households_cooker_network_gas_share:
       title: Gas
       short_description:

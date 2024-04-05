@@ -1290,15 +1290,21 @@ nl:
         Deze omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
         >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
-      title: Hybride luchtwarmtepomp (ruwe olie)
+      title: Hybride luchtwarmtepomp (olie)
       short_description:
-      description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
-        met een oliegestookte HR-ketel.\r\n<br/><br/>\r\nHet werkt zo:<br/>\r\nDe
-        olieketel verwarmt het huis op koude dagen, als de warmtevraag het hoogst
+      description: |
+        Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
+        met een oliegestookte HR-ketel.
+        <br/><br/>
+        Het werkt zo:
+        <br/>
+        De olieketel verwarmt het huis op koude dagen, als de warmtevraag het hoogst
         is. Deze slimme truc zorgt ervoor dat een hybride oliewarmtepomp het
         stroomnet minder belast dan een elektrische warmtepomp alleen. Door slim gebruik
         te maken van zulke hybride oliewarmtepompen kan de noodzaak om stroomnetten
-        te verzwaren vermeden worden. \r\n<br/><br/>\r\nWarmtepompen verplaatsen warmte
+        te verzwaren vermeden worden.
+        <br/><br/>
+        Warmtepompen verplaatsen warmte
         van de ene plek naar de andere. Koelkasten gebruiken bijvoorbeeld warmtepompen,
         maar huizen kunnen dat ook doen voor verwarming of koelen. Dit werkt eigenlijk
         alleen als gebouwen goed geïsoleerd zijn en als ze bijvoorbeeld vloer- en
@@ -1308,11 +1314,17 @@ nl:
         het meest efficiënt of kosteneffectief is om aan te zetten, afhankelijk van
         het weer en hoe goed een huis geïsoleerd is. Minder geïsoleerde huizen zullen
         de olieketel vaker nodig hebben, beter geïsoleerde huizen gebruiken vooral
-        de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische deel van de hybride
+        de warmtepomp.  <br/><br/>
+        De COP van het elektrische deel van de hybride
         oliewarmtepomp is afhankelijk van de buitentemperatuur. Als de COP onder
-        de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op gas.
+        de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op olie.
+        <b>Merk op dat in de standaardinstelling het oliedeel van de hybride warmtepomp
+        het overgrote deel of zelfs alle warmtevraag voor ruimteverwarming invult.</b> 
+        Dit komt doordat de de standaard drempelwaarde voor de COP ingesteld is op een relatief hoge waarde
+        van 3,7 gebaseerd op de consumentenprijzen voor olie en elektriciteit.
+        <br/><br/>
         Deze omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
-        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"    
+        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
     households_cooker_network_gas_share:
       title: Gas
       short_description: ''

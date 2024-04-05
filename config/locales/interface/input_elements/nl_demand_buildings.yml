@@ -464,7 +464,7 @@ nl:
         <a href=/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
         >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
     buildings_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
-      title: Hybride luchtwarmtepomp (ruwe olie)
+      title: Hybride luchtwarmtepomp (olie)
       short_description:
       description: |
         Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
@@ -487,6 +487,12 @@ nl:
         de warmtepomp. <br/><br/>
         De COP van het elektrische deel van de hybride oliewarmtepomp is afhankelijk van 
         de buitentemperatuur. Als de COP onder de drempelwaarde zakt schakelt de hybride 
-        warmtepomp volledig over op gas. Deze omslag-COP is in de sectie 
+        warmtepomp volledig over op olie. 
+        <b>Merk op dat in de standaardinstelling het oliedeel van de hybride warmtepomp
+        het overgrote deel of zelfs alle warmtevraag voor ruimteverwarming invult.</b> 
+        Dit komt doordat de de standaard drempelwaarde voor de COP ingesteld is op een relatief hoge waarde
+        van 3,7 gebaseerd op de consumentenprijzen voor olie en elektriciteit.
+        <br/><br/>
+        Deze omslag-COP is in de sectie 
         <a href=/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
         >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.    

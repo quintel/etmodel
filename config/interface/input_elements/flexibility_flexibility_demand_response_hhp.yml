@@ -1,5 +1,11 @@
 ---
-- key: flexibility_heat_pump_space_heating_cop_cutoff
+- key: flexibility_heat_pump_space_heating_cop_cutoff_gas
+  step_value: 0.1
+  unit: "#"
+  interface_group: flexibility_cop
+  position: 1
+  slide_key: flexibility_flexibility_demand_response_hhp
+- key: flexibility_heat_pump_space_heating_cop_cutoff_crude_oil
   step_value: 0.1
   unit: "#"
   interface_group: flexibility_cop

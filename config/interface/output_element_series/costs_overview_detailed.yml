@@ -339,6 +339,67 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_infrastructure_network_gas_costs_overview_detailed
+- label: costs_infrastructure_ammonia
+  color: "#C586D6"
+  order_by: 540
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_infrastructure_ammonia
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_infrastructure_ammonia_costs_overview_detailed
+- label: costs_infrastructure_diesel
+  color: "#EDA9FF"
+  order_by: 550
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_infrastructure_diesel
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_infrastructure_diesel_costs_overview_detailed
+- label: costs_infrastructure_liquid_hydrogen
+  color: "#C6ABCE"
+  order_by: 560
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_infrastructure_liquid_hydrogen
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_infrastructure_liquid_hydrogen_costs_overview_detailed
+- label: costs_infrastructure_lng
+  color: "#EAC8F5"
+  order_by: 570
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_infrastructure_lng
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_infrastructure_lng_costs_overview_detailed
+- label: costs_infrastructure_lohc
+  color: "#EED2F7"
+  order_by: 580
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_infrastructure_lohc
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_infrastructure_lohc_costs_overview_detailed
+
 - label: costs_co2_ccus
   unit: euro
   color: "#fc653d"

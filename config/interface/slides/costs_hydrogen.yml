@@ -1,21 +1,17 @@
 ---
 - key: costs_hydrogen_production
-  position: 1
-  sidebar_item_key: costs_hydrogen
-  output_element_key: hydrogen_cost_capacity
-- key: costs_hydrogen_import
-  position: 2
+  position: 10
   sidebar_item_key: costs_hydrogen
   output_element_key: hydrogen_cost_capacity
 - key: costs_hydrogen_storage
-  position: 3
+  position: 20
   sidebar_item_key: costs_hydrogen
   output_element_key: costs_overview_detailed
 - key: costs_hydrogen_transport
-  position: 4
+  position: 30
   sidebar_item_key: costs_hydrogen
   output_element_key: costs_overview_detailed
-- key: costs_ammonia_import
-  position: 100
+- key: costs_hydrogen_import
+  position: 40
   sidebar_item_key: costs_hydrogen
-  output_element_key: costs_overview_detailed
+  output_element_key: hydrogen_cost_capacity

@@ -315,30 +315,55 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_infrastructure_heat_costs_overview_detailed
-- label: costs_infrastructure_hydrogen
+- label: costs_infrastructure_hydrogen_carriers
   color: "#8c4e9b"
   order_by: 520
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: costs_infrastructure_hydrogen
+  gquery: costs_infrastructure_hydrogen_carriers
   is_1990: false
   dependent_on:
   output_element_key: costs_overview_detailed
-  key: costs_infrastructure_hydrogen_costs_overview_detailed
-- label: costs_infrastructure_network_gas
+  key: costs_infrastructure_hydrogen_carriers_costs_overview_detailed
+- label: costs_infrastructure_natural_gas
   color: "#9a64a8"
   order_by: 530
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: costs_infrastructure_network_gas
+  gquery: costs_infrastructure_natural_gas
   is_1990: false
   dependent_on:
   output_element_key: costs_overview_detailed
-  key: costs_infrastructure_network_gas_costs_overview_detailed
+  key: costs_infrastructure_natural_gas_costs_overview_detailed
+- label: costs_infrastructure_ammonia
+  color: "#C586D6"
+  order_by: 540
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_infrastructure_ammonia
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_infrastructure_ammonia_costs_overview_detailed
+- label: costs_infrastructure_oil_and_products
+  color: "#EDA9FF"
+  order_by: 550
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_infrastructure_oil_and_products
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_infrastructure_oil_and_products_costs_overview_detailed
+
 - label: costs_co2_ccus
   unit: euro
   color: "#fc653d"

@@ -1,0 +1,29 @@
+-# Space requirements transit flows table
+%table#space_requirements_transit_flows.chart.centered.autostripe
+  %thead
+    %tr
+      %th= t 'output_elements.tables.space_requirements_transit_flows.carrier'
+      %th= t 'output_elements.tables.space_requirements_transit_flows.imported_volume'
+      %th= t 'output_elements.tables.space_requirements_transit_flows.space_requirement'
+  %tbody
+    %tr
+      %th= t "output_elements.tables.space_requirements_transit_flows.lng"
+      %td{:data => {:gquery => "space_requirements_transit_flows_imported_volume_lng"}}
+      %td{:data => {:gquery => "space_requirements_transit_flows_space_requirement_lng", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.space_requirements_transit_flows.diesel"
+      %td{:data => {:gquery => "space_requirements_transit_flows_imported_volume_diesel"}}
+      %td{:data => {:gquery => "space_requirements_transit_flows_space_requirement_diesel", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.space_requirements_transit_flows.liquid_hydrogen"
+      %td{:data => {:gquery => "space_requirements_transit_flows_imported_volume_liquid_hydrogen"}}
+      %td{:data => {:gquery => "space_requirements_transit_flows_space_requirement_liquid_hydrogen", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.space_requirements_transit_flows.lohc"
+      %td{:data => {:gquery => "space_requirements_transit_flows_imported_volume_lohc"}}
+      %td{:data => {:gquery => "space_requirements_transit_flows_space_requirement_lohc", :graph => :future}}
+    %tr
+      %th= t "output_elements.tables.space_requirements_transit_flows.ammonia"
+      %td{:data => {:gquery => "space_requirements_transit_flows_imported_volume_ammonia"}}
+      %td{:data => {:gquery => "space_requirements_transit_flows_space_requirement_ammonia", :graph => :future}}
+      

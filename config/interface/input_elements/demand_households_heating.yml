@@ -5,7 +5,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_combined_network_gas
-  position: 1
+  position: 10
   slide_key: demand_households_heating
 - key: households_heater_combined_hydrogen_share
   share_group: heating_households
@@ -13,28 +13,28 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_combined_hydrogen
-  position: 2
+  position: 20
   slide_key: demand_households_heating
 - key: households_heater_district_heating_ht_steam_hot_water_share
   share_group: heating_households
   step_value: 0.1
   unit: "%"
   interface_group: space_and_water_heating_technologies
-  position: 3
+  position: 30
   slide_key: demand_households_heating
 - key: households_heater_district_heating_mt_steam_hot_water_share
   share_group: heating_households
   step_value: 0.1
   unit: "%"
   interface_group: space_and_water_heating_technologies
-  position: 4
+  position: 40
   slide_key: demand_households_heating
 - key: households_heater_district_heating_lt_steam_hot_water_share
   share_group: heating_households
   step_value: 0.1
   unit: "%"
   interface_group: space_and_water_heating_technologies
-  position: 5
+  position: 50
   slide_key: demand_households_heating
 - key: households_heater_heatpump_air_water_electricity_share
   share_group: heating_households
@@ -42,7 +42,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_heatpump_air_water_electricity
-  position: 6
+  position: 60
   slide_key: demand_households_heating
 - key: households_heater_heatpump_ground_water_electricity_share
   share_group: heating_households
@@ -50,7 +50,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_heatpump_ground_water_electricity
-  position: 7
+  position: 70
   slide_key: demand_households_heating
 - key: households_heater_heatpump_surface_water_water_ts_electricity_share
   share_group: heating_households
@@ -58,7 +58,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_heatpump_surface_water_water_ts_electricity
-  position: 8
+  position: 80
   slide_key: demand_households_heating
 - key: households_heater_hybrid_heatpump_air_water_electricity_share
   share_group: heating_households
@@ -66,7 +66,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_hybrid_heatpump_air_water_electricity
-  position: 9
+  position: 90
   slide_key: demand_households_heating
 - key: households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share
   share_group: heating_households
@@ -74,15 +74,24 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_hybrid_hydrogen_heatpump_air_water_electricity
-  position: 10
+  position: 100
   slide_key: demand_households_heating
+- key: households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share
+  share_group: heating_households
+  step_value: 0.1
+  unit: "%"
+  interface_group: space_and_water_heating_technologies
+  related_node: households_space_heater_crude_oil_hydrogen_heatpump_air_water_electricity
+  position: 105
+  dependent_on: has_coal_oil_for_heating_built_environment
+  slide_key: demand_households_heating  
 - key: households_heater_heatpump_pvt_electricity_share
   share_group: heating_households
   step_value: 0.1
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_heatpump_pvt_electricity
-  position: 12
+  position: 120
   slide_key: demand_households_heating
 - key: households_heater_wood_pellets_share
   share_group: heating_households
@@ -90,7 +99,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_wood_pellets
-  position: 13
+  position: 130
   slide_key: demand_households_heating
 - key: households_heater_electricity_share
   share_group: heating_households
@@ -98,7 +107,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_electricity
-  position: 14
+  position: 140
   slide_key: demand_households_heating
 - key: households_heater_network_gas_share
   share_group: heating_households
@@ -106,7 +115,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_network_gas
-  position: 15
+  position: 150
   slide_key: demand_households_heating
 - key: households_heater_crude_oil_share
   share_group: heating_households
@@ -114,7 +123,7 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_crude_oil
-  position: 16
+  position: 160
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_households_heating
 - key: households_heater_coal_share
@@ -123,18 +132,9 @@
   unit: "%"
   interface_group: space_and_water_heating_technologies
   related_node: households_space_heater_coal
-  position: 17
+  position: 170
   dependent_on: has_coal_oil_for_heating_built_environment
   slide_key: demand_households_heating
-- key: households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share
-  share_group: heating_households
-  step_value: 0.1
-  unit: "%"
-  interface_group: space_and_water_heating_technologies
-  related_node: households_space_heater_crude_oil_hydrogen_heatpump_air_water_electricity
-  position: 18
-  dependent_on: has_coal_oil_for_heating_built_environment
-  slide_key: demand_households_heating  
 
 - key: households_water_heater_solar_thermal_share
   step_value: 0.1

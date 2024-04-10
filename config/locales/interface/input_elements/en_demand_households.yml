@@ -1008,54 +1008,50 @@ en:
     households_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (gas)
       short_description:
-      description: "This heater is a combination of an electric heat pump that draws
+      description: |
+        This heater is a combination of an electric heat pump that draws
         its heat from the outside air and an efficient conventional gas-fired boiler.
-        Essentially, the hybrid heat pump offers a way to strongly reduce natural
-        gas demand for heating, while buying time for grid management companies to
-        reinforce grids. \r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe gas-fired
-        part takes over all of the heating of the building on cold winter days, when
-        heat demand peaks. Because of this clever trick, the heat pump has less impact
-        on the electricity grid than an all-electric heat pump does. Smart use of
-        hybrid heat pumps may therefore avoid the need to reinforce local power grids.
-        \r\n<br/><br/>\r\nHeat pumps move heat from one place to another. Refrigerators
-        use heat pumps, for example, but buildings can use them for heating and cooling
-        too. For optimal results with <em>most</em> types of heat pump, installation
-        of under-floor and wall heating instead of radiators is often required, as
-        well as good levels of insulation. The <em>hybrid</em> heat pump is an exception,
-        because of its gas-fired heater as a fall-back option. Hybrid heat pumps can
-        intelligently use whichever part (heat pump or gas-fired heater) is the most
-        efficient or cost-effective given the weather conditions and insulation level.
-        Houses with limited insulation will rely on the gas-fired part more, better
-        insulated ones will make more use of the heat pump.\r\n<br/><br/>\r\nThe COP
-        of the electric part of the hybrid heat pump depends on ambient temperature.
+        <br/><br/>
+        The COP of the electric part of the hybrid heat pump depends on ambient temperature.
         When the COP drops below the threshold value the hybrid heat pump switches
-        to gas. The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
-        >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
+        to gas. The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
+        >Demand response - behavior of hybrid heat pumps</a>.
+        <br/><br/>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (hydrogen)
       short_description:
-      description: "This heater is a combination of an electric heat pump that draws
+      description: |
+        This heater is a combination of an electric heat pump that draws
         its heat from the outside air and an efficient conventional hydrogen-fired
-        boiler.\r\n<br/><br/>\r\nThis works as follows:<br/>\r\nThe hydrogen-fired
-        part takes over all of the heating of the building on cold winter days, when
-        heat demand peaks. Because of this clever trick, the heat pump has less impact
-        on the electricity grid than an all-electric heat pump does. Smart use of
-        hybrid hydrogen heat pumps may therefore avoid the need to reinforce local
-        power grids. \r\n<br/><br/>\r\nHeat pumps move heat from one place to another.
-        Refrigerators use heat pumps, for example, but buildings can use them for
-        heating and cooling too. For optimal results with <em>most</em> types of heat
-        pump, installation of under-floor and wall heating instead of radiators is
-        often required, as well as good levels of insulation. The <em>hybrid</em>
-        hydrogen heat pump is an exception, because of its hydrogen-fired heater as
-        a fall-back option. Hybrid hydrogen heat pumps can intelligently use whichever
-        part (heat pump or hydrogen-fired heater) is the most efficient or cost-effective
-        given the weather conditions and insulation level. Houses with limited insulation
-        will rely on the hydrogen-fired part more, better insulated ones will make
-        more use of the heat pump.\r\n<br/><br/>\r\nThe COP of the electric part of
-        the hybrid hydrogen heat pump depends on ambient temperature. When the COP
+        boiler.
+        <br/><br/>
+        The COP of the electric part of the hybrid hydrogen heat pump depends on ambient temperature. When the COP
         drops below the threshold value the hybrid heat pump switches to hydrogen.
-        The threshold value can be adjusted in the section <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
-        >Demand response - behavior of hybrid heat pumps</a>. \r\n\r\n"
+        The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
+        >Demand response - behavior of hybrid heat pumps</a>.
+        <br/><br/>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
+    households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
+      title: Hybrid air heat pump (oil)
+      short_description:
+      description: |
+        This heater is a combination of an electric heat pump that draws
+        its heat from the outside air and an efficient conventional oil-fired
+        boiler.
+        <br/><br/>
+        The COP of the electric part of
+        the hybrid oil heat pump depends on ambient temperature. When the COP
+        drops below the threshold value the hybrid heat pump switches to oil. 
+        <b>Note that by default, the oil-fired part
+        provides  most if not all of the required heat for space heating.</b> 
+        This is because the default threshold COP is set at a relatively high value
+        based on the consumer prices for oil and electricity.
+        <br/><br/>
+        The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">
+        Demand response - behavior of hybrid heat pumps</a>.    
+        <br/><br/>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a> 
     households_cooker_network_gas_share:
       title: Gas
       short_description:
@@ -1183,5 +1179,9 @@ en:
       title: Hybrid air heat pump (hydrogen)
       short_description: ''
       description: ''       
+    households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
+      title: Hybrid air heat pump (crude oil)
+      short_description: ''
+      description: ''         
 
 

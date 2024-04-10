@@ -378,23 +378,34 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
-    flexibility_heat_pump_space_heating_cop_cutoff:
-      title: Space heating
+    flexibility_heat_pump_space_heating_cop_cutoff_gas:
+      title: Space heating (gas)
       short_description:
       description: "Here you indicate the threshold COP of hybrid heat pumps for space
-        heating. \r\n<p>\r\nThe default setting is that the electric part of the HHP
-        is used maximally for space heating. With the current gas and electricity
+        heating. This applies to both network gas-based and hydrogen-based hybrid heat pumps \r\n<p>\r\n
+        The default setting is that the electric part of the HHP
+        is used maximally for space heating. With the current network gas and electricity
         price financial optimization for the user is achieved with a threshold COP
-        of  2.6, this can be concluded from the chart on the right.\r\nFor more information
+        of 2.6, this can be concluded from the chart on the right.\r\nFor more information
         about (hybrid) heat pumps see our <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\" target=\"_blank\">documentation</a>."
+    flexibility_heat_pump_space_heating_cop_cutoff_crude_oil:
+      title: Space heating (oil)
+      short_description:
+      description: |
+        Here you indicate the threshold COP of hybrid oil heat pumps for space
+        heating. </br></br>
+        The default setting is that the electric part of the HHP
+        is used maximally for space heating. With the current oil and electricity
+        price financial optimization for the user is achieved with a threshold COP
+        of  3.7. </br></br>
+        For more information about (hybrid) heat pumps see our <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\" target=\"_blank\">documentation</a>.
     flexibility_heat_pump_water_heating_cop_cutoff:
       title: Hot water
       short_description:
       description: "Here you indicate the threshold COP of hybrid heat pumps for hot
-        water.\r\n<p>\r\nThe default setting is that the gas part of the HHP is used
-        for hot water.\r\n<p>\r\nWith the current gas and electricity price financial
-        optimization for the user is achieved with a threshold COP of  3.1.\r\nFor
-        calculations see <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\" target=\"_blank\">documentation</a>"
+        water.\r\n<p>\r\nThe default setting is that the fuel-fired part of the HHP (using network gas, hydrogen or oil) is used
+        for hot water. The threshold COP is therefore set at its maximum value of 6.0 so that the fuel-fired part is always enabled. \r\n<p>\r\n
+        For calculations on the threshold COP see <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\" target=\"_blank\">documentation</a>"
     households_flexibility_consumer_gas_price:
       title: Gas price
       short_description:

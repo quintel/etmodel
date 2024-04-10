@@ -1243,52 +1243,48 @@ nl:
     households_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (gas)
       short_description:
-      description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
-        met een gasgestookte HR-ketel. Een hybride warmtepomp maakt het mogelijk om
-        snel veel gas voor verwarming te besparen en geeft netbeheerders bovendien
-        meer tijd om stroomnetten te verzwaren.\r\n<br/><br/>\r\nHet werkt zo:<br/>\r\nDe
-        gasketel verwarmt het huis op koude dagen, als de warmtevraag het hoogst is.
-        Deze slimme truc zorgt ervoor dat een hybride warmtepomp het stroomnet minder
-        belast dan een elektrische warmtepomp alleen. Door slim gebruik te maken van
-        zulke hybride warmtepompen kan de noodzaak om stroomnetten te verzwaren vermeden
-        worden. \r\n<br/><br/>\r\nWarmtepompen verplaatsen warmte van de ene plek
-        naar de andere. Koelkasten gebruiken bijvoorbeeld warmtepompen, maar huizen
-        kunnen dat ook doen voor verwarming of koelen. Dit werkt eigenlijk alleen
-        als gebouwen goed geïsoleerd zijn en als ze vloer- en muurverwarming hebben
-        in plaats van radiatoren. Hybride warmtepompen zijn een uitzondering op deze
-        regel doordat de gasketel ingezet kan worden. Ze kunnen slim kiezen welk deel
-        (de warmtepomp of de gasketel) het meest efficiënt of kosteneffectief is om
-        aan te zetten, afhankelijk van het weer en hoe goed een huis geïsoleerd is.
-        Minder geïsoleerde huizen zullen de gasketel vaker nodig hebben, beter geïsoleerde
-        huizen gebruiken vooral de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische
+      description: |
+        Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
+        met een gasgestookte HR-ketel.
+        <br/><br/>
+        De COP van het elektrische
         deel van de hybride warmtepomp is afhankelijk van de buitentemperatuur. Als
         de COP onder de drempelwaarde zakt schakelt de hybride warmtepomp volledig
-        over op gas. De omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
-        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
+        over op gas. De omslag-COP is in de sectie <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
+        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
+        <br/><br/>
+        Meer informatie over hoe hybride warmtepompen werken is te vinden in de <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentatie</a>
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (waterstof)
       short_description:
-      description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
-        met een waterstofgestookte HR-ketel.\r\n<br/><br/>\r\nHet werkt zo:<br/>\r\nDe
-        waterstofketel verwarmt het huis op koude dagen, als de warmtevraag het hoogst
-        is. Deze slimme truc zorgt ervoor dat een hybride waterstofwarmtepomp het
-        stroomnet minder belast dan een elektrische warmtepomp alleen. Door slim gebruik
-        te maken van zulke hybride waterstofwarmtepompen kan de noodzaak om stroomnetten
-        te verzwaren vermeden worden. \r\n<br/><br/>\r\nWarmtepompen verplaatsen warmte
-        van de ene plek naar de andere. Koelkasten gebruiken bijvoorbeeld warmtepompen,
-        maar huizen kunnen dat ook doen voor verwarming of koelen. Dit werkt eigenlijk
-        alleen als gebouwen goed geïsoleerd zijn en als ze bijvoorbeeld vloer- en
-        muurverwarming hebben in plaats van radiatoren. Hybride waterstofwarmtepompen
-        zijn een uitzondering op deze regel doordat de waterstofketel ingezet kan
-        worden. Ze kunnen slim kiezen welk deel (de warmtepomp of de waterstofketel)
-        het meest efficiënt of kosteneffectief is om aan te zetten, afhankelijk van
-        het weer en hoe goed een huis geïsoleerd is. Minder geïsoleerde huizen zullen
-        de waterstofketel vaker nodig hebben, beter geïsoleerde huizen gebruiken vooral
-        de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische deel van de hybride
+      description: |
+        Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
+        met een waterstofgestookte HR-ketel.<br/><br/>
+        De COP van het elektrische deel van de hybride
         waterstofwarmtepomp is afhankelijk van de buitentemperatuur. Als de COP onder
         de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op gas.
-        Deze omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
-        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
+        Deze omslag-COP is in de sectie <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
+        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
+        <br/><br/>
+        Meer informatie over hoe hybride warmtepompen werken is te vinden in de <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentatie</a>
+    households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
+      title: Hybride luchtwarmtepomp (olie)
+      short_description:
+      description: |
+        Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
+        met een oliegestookte HR-ketel.
+        <br/><br/>
+        De COP van het elektrische deel van de hybride
+        oliewarmtepomp is afhankelijk van de buitentemperatuur. Als de COP onder
+        de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op olie.
+        <b>Merk op dat in de standaardinstelling het oliedeel van de hybride warmtepomp
+        het overgrote deel of zelfs alle warmtevraag voor ruimteverwarming invult.</b> 
+        Dit komt doordat de standaard drempelwaarde voor de COP ingesteld is op een relatief hoge waarde gebaseerd op de consumentenprijzen voor olie en elektriciteit.
+        <br/><br/>
+        Deze omslag-COP is in de sectie <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
+        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
+        <br/><br/>
+        Meer informatie over hoe hybride warmtepompen werken is te vinden in de <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentatie</a>
     households_cooker_network_gas_share:
       title: Gas
       short_description: ''
@@ -1410,6 +1406,10 @@ nl:
       description: ''       
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (waterstof)
+      short_description: ''
+      description: ''       
+    households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
+      title: Hybride luchtwarmtepomp (ruwe olie)
       short_description: ''
       description: ''       
 

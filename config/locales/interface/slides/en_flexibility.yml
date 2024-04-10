@@ -104,39 +104,21 @@ en:
       title: Demand response - behavior of hybrid heat pumps
       short_description:
       description: |
-        The efficiency of hybrid heat pumps (HHP) is dependent on the
-        ambient temperature and is depicted by the coefficient of performance (COP).
+        The efficiency of hybrid heat pumps (HHP) depends on the
+        ambient temperature and is represented by the coefficient of performance (COP).
         The COP becomes lower as the outside temperature decreases. Below you can
-        set the so-called 'threshold COP': if the COP of the heat pump is below this
-        threshold then the HHP switches from electricity to a 'backup fuel'. This can be network gas, hydrogen or oil. 
+        set the so-called 'threshold COP': if the COP of the heat pump falls below this
+        threshold then the HHP switches from electricity to a backup fuel. This can be network gas, hydrogen or oil. 
         You can choose a setting that is most financially attractive for the consumer, but you can
-        also choose a setting that produces less impact on the electricity network.
+        also choose a setting that produces less impact on the electricity network. 
+        See the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target=\"_blank\">documentation</a>
+        for more information on the threshold COP.
         </br></br>
-        To help you decide the cost-optimal threshold COP setting
-        from a consumer perspective, have a look at the chart on the right. It shows
-        how much it costs to make a unit of heat with the HHP for space heating for network gas. For
-        the gas part, these costs are independent of the COP (and therefore the outside
-        temperature). The costs for the electrical part are decreasing with increasing
-        COP (and increasing outside temperature). The intersection of the two curves
-        is the cost-optimal COP setting for the given cost price gas and electricity.
-        This cost price of gas and electricity can be adjusted below. The start value
-        of the treshold COP slider matches the calculated cost-optimal threshold COP
-        for space heating.
-        </br></br>
-        Specifically for network gas-fired hybrid heat pumps two charts may provide relevant insights. 
-        The chart
+        Specifically for gas HHPs the chart
         <a
         href="#" class="open_chart" data-chart-key="household_space_heater_hhp_hourly_demand" data-chart-location="side">
         Demand curve of hybrid heat pump (gas) in households
-        </a>
-        shows the hourly gas and electricity demand and is useful for determining
-        the impact of network gas-fired HHPs on infrastructure.
-        The table
-        <a
-          href="#" class="open_chart" data-chart-key="hybrid_heat_pump" data-chart-location="side">
-        Electricity and gas shares of hybrid heat pump in households
-        </a>
-        will show a breakdown of how hybrid heat pumps use energy in households."
+        </a> might help determine the impact of network gas-fired HHPs on infrastructure.
     flexibility_flexibility_demand_response_load_shifting:
       title: Demand response - load shifting in industry
       short_description:

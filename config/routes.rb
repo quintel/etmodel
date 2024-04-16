@@ -91,7 +91,7 @@ Rails.application.routes.draw do
     end
 
     get '/history' => 'saved_scenario_history#index'
-    put '/history' => 'saved_scenario_history#update'
+    put '/history/:scenario_id' => 'saved_scenario_history#update',  as: :update_saved_scenario_history
 
     get '/report/:report_name' => 'saved_scenario_reports#show'
   end

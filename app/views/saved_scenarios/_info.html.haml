@@ -1,3 +1,7 @@
+.back-to-scenario-view
+  %a.stick-right{ href: scenarios_path }
+    ⟵
+    = t('scenario.back_to_overview')
 %h1= format_subscripts(scenario.localized_title(I18n.locale))
 
 %ul.details.last
@@ -17,7 +21,7 @@
   %ul.details.stick-right
     - if editable_saved_scenario?(scenario) && action_name == 'show'
       - if scenario.private?
-        %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
+        %li{ style: 'margin-right: 1rem; padding-right: 0' }
           .dropdown#scenario-privacy<>
             %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
               = inline_svg_tag 'hero/20/lock.svg', class: 'lock-icon'
@@ -32,7 +36,7 @@
                   = inline_svg_tag 'hero/20/eye.svg'
                   = t('scenario.privacy.private.invert')
       - else
-        %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
+        %li{ style: 'margin-right: 1rem; padding-right: 0' }
           .dropdown#scenario-privacy<>
             %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
               = inline_svg_tag 'hero/20/eye.svg', style: 'margin-right: 0.125rem'
@@ -71,6 +75,10 @@
                 = link_to saved_scenario_users_path(@saved_scenario.id), class: 'dropdown-item' do
                   .fa.fa-users
                   = t("scenario.users.manage")
+            %li
+              = link_to saved_scenario_history_path(@saved_scenario), remote: true, class: 'dropdown-item' do
+                .fa.fa-history
+                Show history
             - if current_user&.admin?
               %li
                 - if @saved_scenario.featured?

@@ -1,27 +1,33 @@
 - @history.each do |version|
-  .row.box
-    %ul.details
-      %li.scenario-version.stick-right
-        .dropdown{ id: "scenario-version-#{version['scenario_id']}" }<>
-          %button.scenario-actions{ id: "scenario-version-button-#{version['scenario_id']}", aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
-            %span.fa.fa-ellipsis-h
-          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': "scenario-version-button-#{version['scenario_id']}", style: 'margin-top: 3px' }
-            - if @saved_scenario.collaborator?(current_user)
-              %li
-                = link_to edit_saved_scenario_path(version['scenario_id']), remote: true, class: 'dropdown-item' do
-                  .fa.fa-pencil
-                  = t("scenario.edit_text")
+  .row.box{ id: "scenario-version-#{version['scenario_id']}" }
+    - if !version['frozen'] && (@saved_scenario.collaborator?(current_user) || current_user&.admin?)
+      -# if frozen nog steeds rewuind for collab, en open for everyone
+      %ul.details
+        %li.scenario-version.stick-right
+          %ul
+            %li
+              -# top scenario cannot be opened or restored!
+              = link_to load_scenario_path(version['scenario_id']) do
+                .fa.fa-window-restore.tooltip{ title: t("scenario.open") }
+            %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_text") }
             - if current_user&.admin? || @saved_scenario.owner?(current_user)
-              %li
-                = link_to saved_scenario_users_path(version['scenario_id']), class: 'dropdown-item' do
-                  .fa.fa-arrow-left
-                  Restore this version
-
-        :javascript
-          new DropdownView({ el: $("#scenario-version-#{version['scenario_id']}") }).render()
+              %li.restore-version.fa.fa-backward.tooltip{ title: "Restore this version" }
     .main-info
+      .fa.fa-circle
       = t('last_updated_ago', when: time_ago_in_words(version['last_updated_at']))
       %span= version['user']
-    - if version['description']
+    - unless version['frozen']
       .description
         = version['description']
+      .description-field{style: 'display: none'}
+        %textarea
+          = version['description']
+        %button.submit-description Update
+        %button.cancel-description Cancel
+      :javascript
+        new ScenarioHistoryView({
+          el: $("#scenario-version-#{version['scenario_id']}"),
+          id: "#{version['scenario_id']}",
+          url: "#{saved_scenario_history_path(@saved_scenario)}"
+        }).render();
+

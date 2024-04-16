@@ -1,5 +1,3 @@
-.bar
-
 .sharing-links
   .copy-link
     %a
@@ -9,16 +7,3 @@
       .arrow
       .cross{ class: 'fa fa-times', title: 'Close' }
       .url= text_field_tag 'url', request.original_url
-
-  -# = link_to share_by_mail_link(scenario) do
-  -#   .icon{ class: 'fa fa-envelope-o' }
-  -#   Email
-  -# = link_to share_by_twitter_link, open_attributes do
-  -#   .icon{ class: 'fa fa-twitter' }
-  -#   Twitter
-  -# = link_to share_by_linkedin_link, open_attributes do
-  -#   .icon{ class: 'fa fa-linkedin' }
-  -#   LinkedIn
-  -# = link_to share_by_facebook_link, open_attributes do
-  -#   .icon{ class: 'fa fa-facebook-official' }
-  -#   Facebook

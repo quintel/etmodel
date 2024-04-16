@@ -8,7 +8,7 @@ class SavedScenarioHistoryController < ApplicationController
     authorize!(:read, @saved_scenario)
   end
 
-  before_action only: %i[update] do
+  before_action only: %i[update edit] do
     authorize!(:update, @saved_scenario)
   end
 
@@ -21,29 +21,47 @@ class SavedScenarioHistoryController < ApplicationController
 
       respond_to do |format|
         format.js
-        format.json { render @history }
+        format.json { render json: @history }
       end
     else
-      render version_tags_result.error
+      # TODO: respond_to -> pass error to js
+      # @error = ...
+      @history = {}
+      respond_to do |format|
+        format.json { render version_tags_result.errors }
+        format.js
+      end
     end
   end
 
   # PUT /saved_scenarios/:id/history/:scenario_id
   def update
-    # TODO: scenario-id is known -> make a service!
-  end
+    result = UpdateAPIScenarioVersionTag.call(
+      engine_client,
+      params[:scenario_id],
+      update_params[:description]
+    )
 
-  # GET /saved_scenarios/:id/history/:scenario_id/edit
-  def edit
-    # TODO: add route and js form
+    if result.successful?
+      respond_to do |format|
+        format.json { render json: result.value }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: result.errors }
+      end
+    end
   end
 
   private
 
+  def update_params
+    params.permit(:description)
+  end
+
   def assign_saved_scenario
     @saved_scenario = SavedScenario.find(params[:saved_scenario_id])
   rescue ActiveRecord::RecordNotFound
-    # TODO: json oly so render empty json? Or one that says: errors: not found??
     render_not_found
   end
 end

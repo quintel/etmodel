@@ -129,7 +129,6 @@ table.default
       font-size: 1.67rem
       color: #333
       letter-spacing: 1px
-      margin-top: 0
       sub
         line-height: 0
 
@@ -807,8 +806,23 @@ table.default
     border-radius: 10px
     width: 50%
     min-width: 400px
+    .scenario-version
+      li a
+        display: inline
+      .fa
+        color: #888
+      .fa:hover
+        cursor: pointer
+        color: $landing-blue
+
     .main-info
+      .fa
+        color: #fff
+        margin-right: 1rem
       span
         color: $landing-blue
     &:first-of-type
       background: $light-blue
+      .main-info
+        .fa
+          color: $landing-blue

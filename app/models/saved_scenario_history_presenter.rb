@@ -8,7 +8,6 @@ class SavedScenarioHistoryPresenter
   end
 
   def initialize(saved_scenario, history)
-    # TODO: keys should be ints not strings!
     @history = history
     @scenario_ids_ordered = saved_scenario.version_scenario_ids
   end
@@ -21,16 +20,15 @@ class SavedScenarioHistoryPresenter
 
   private
 
-   # TODO: remove the to_s on the id
   def present(scenario_id)
     version = @history[scenario_id.to_s]
 
-    version['user'] =
-      if version.key?('user_id')
-        User.find(version.delete('user_id').to_i).name
-      else
-        I18n.t('scenario.users.unknown')
-      end
+    if version.key?('user_id')
+      version['user'] = User.find(version.delete('user_id').to_i).name
+    else
+      version['frozen'] = true
+      version['user'] = I18n.t('scenario.users.unknown')
+    end
 
     version['scenario_id'] = scenario_id
 

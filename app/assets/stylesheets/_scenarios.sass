@@ -75,11 +75,15 @@ table.default
       margin-left: 0
 
   &#show_scenario, &#feature_scenario, &#index
-    width: $landing-width + 200px
+    width: $landing-width + 400px
     margin: 0 auto 3rem
-    background: white
-    border-radius: 6px
-    padding: 15px 40px
+    display: flex
+
+    .internal-box
+      width: 100%
+      background: white
+      border-radius: 6px
+      padding: 15px 40px
 
     .version-warning
       background: #f0f7ee image-url('icons/warning-information.svg') 1.5rem 1.25rem no-repeat
@@ -470,7 +474,7 @@ table.default
         padding-right: 0
         margin-top: -1.5rem
 
-      #scenario-location, #scenario-privacy
+      #scenario-location, #scenario-privacy, .scenario-version
         button.scenario-actions
           align-items: center
           background: none
@@ -661,8 +665,8 @@ table.default
   .big-tabs
     align-items: stretch
     display: flex
+    flex-direction: column
     font-weight: 500
-    margin: -15px -40px 20px
     background: $soft-grey
     .count
       align-items: center
@@ -684,14 +688,15 @@ table.default
     .tab
       align-items: center
       background: #fff
-      border-radius: 4px 4px 0 0
+      // border-radius: 4px 4px 0 0
       margin-right: 3px
       border-bottom: 3px solid $soft-grey
       color: darken(#79828d, 15%)
       display: flex
       font-size: 16px
       gap: 0.125rem
-      padding: 20px 35px
+      padding: 10px 15px
+      width: 200px
       &:first-child
         border-top-left-radius: 6px
       &:hover
@@ -702,10 +707,10 @@ table.default
       &.active
         background: white
         color: black
-        border-bottom: none
-        border-top: 3px solid $landing-gold
-        padding-top: 17px
-        padding-bottom: 23px
+        // border-bottom: none
+        border-right: 3px solid $landing-gold
+        // padding-top: 17px
+        // padding-bottom: 23px
         &:hover
           color: black
       &.myc
@@ -794,3 +799,16 @@ table.default
       &:active
         background: darken($landing-green, 1%)
 
+#saved-scenario-history
+  .box
+    background: $soft-grey
+    padding: 0.5rem 1rem
+    margin-top: 1rem
+    border-radius: 10px
+    width: 50%
+    min-width: 400px
+    .main-info
+      span
+        color: $landing-blue
+    &:first-of-type
+      background: $light-blue

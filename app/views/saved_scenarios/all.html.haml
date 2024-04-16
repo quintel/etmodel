@@ -3,11 +3,11 @@
 .background_wrapper#saved_scenario
   .scenario_wrapper#index
     = render partial: 'scenario_list_tabs', locals: { active_tab: :all_scenarios }
-
-    - if current_user.admin?
-      = render partial: 'scenario_row', collection: @saved_scenarios
-      = paginate @saved_scenarios
-    - else
-      .empty-state
-        %h4= t('scenario.cannot_load')
+    .internal-box
+      - if current_user.admin?
+        = render partial: 'scenario_row', collection: @saved_scenarios
+        = paginate @saved_scenarios
+      - else
+        .empty-state
+          %h4= t('scenario.cannot_load')
 

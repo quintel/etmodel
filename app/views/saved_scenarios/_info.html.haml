@@ -1,3 +1,18 @@
+%h1= format_subscripts(scenario.localized_title(I18n.locale))
+
+%ul.details.last
+  %li
+    %strong
+      = t "areas.#{scenario.area_code}"
+      = scenario.end_year
+  %li
+    = t('scenario.updated')
+    = local_time(scenario.updated_at, :long)
+
+  %li.with-button
+    = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load no-margin-right"
+
+
 .row
   %ul.details.stick-right
     - if editable_saved_scenario?(scenario) && action_name == 'show'
@@ -89,17 +104,3 @@
 
         :javascript
           new DropdownView({ el: $('#scenario-location') }).render()
-
-%h1= format_subscripts(scenario.localized_title(I18n.locale))
-
-%ul.details.last
-  %li
-    %strong
-      = t "areas.#{scenario.area_code}"
-      = scenario.end_year
-  %li
-    = t('scenario.updated')
-    = local_time(scenario.updated_at, :long)
-
-  %li.with-button
-    = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load no-margin-right"

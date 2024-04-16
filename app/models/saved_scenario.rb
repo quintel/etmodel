@@ -162,6 +162,11 @@ class SavedScenario < ApplicationRecord
     save
   end
 
+  # Returns an array containing the current and historical scenario ids
+  def version_scenario_ids
+    [scenario_id] + scenario_id_history.reverse
+  end
+
   def as_json(options = {})
     options[:except] ||= %i[discarded_at]
 

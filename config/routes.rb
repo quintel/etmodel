@@ -90,6 +90,9 @@ Rails.application.routes.draw do
       get :all
     end
 
+    get '/history' => 'saved_scenario_history#index'
+    put '/history' => 'saved_scenario_history#update'
+
     get '/report/:report_name' => 'saved_scenario_reports#show'
   end
 

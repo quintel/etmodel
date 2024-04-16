@@ -1,0 +1,27 @@
+- @history.each do |version|
+  .row.box
+    %ul.details
+      %li.scenario-version.stick-right
+        .dropdown{ id: "scenario-version-#{version['scenario_id']}" }<>
+          %button.scenario-actions{ id: "scenario-version-button-#{version['scenario_id']}", aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+            %span.fa.fa-ellipsis-h
+          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': "scenario-version-button-#{version['scenario_id']}", style: 'margin-top: 3px' }
+            - if @saved_scenario.collaborator?(current_user)
+              %li
+                = link_to edit_saved_scenario_path(version['scenario_id']), remote: true, class: 'dropdown-item' do
+                  .fa.fa-pencil
+                  = t("scenario.edit_text")
+            - if current_user&.admin? || @saved_scenario.owner?(current_user)
+              %li
+                = link_to saved_scenario_users_path(version['scenario_id']), class: 'dropdown-item' do
+                  .fa.fa-arrow-left
+                  Restore this version
+
+        :javascript
+          new DropdownView({ el: $("#scenario-version-#{version['scenario_id']}") }).render()
+    .main-info
+      = t('last_updated_ago', when: time_ago_in_words(version['last_updated_at']))
+      %span= version['user']
+    - if version['description']
+      .description
+        = version['description']

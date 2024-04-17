@@ -90,23 +90,24 @@ en:
     capacity_of_energy_hydrogen_wind_turbine_offshore:
       title: Offshore wind turbine for H<sub>2</sub>
       short_description:
-      description: "How many wind turbines will produce electricity that will directly
-        be converted into hydrogen with electrolysers?\r\n</br></br>\r\nThere are
-        a number of plans for building wind parks far out on sea. For these parks
+      description: |
+        How many wind turbines will produce electricity that will directly
+        be converted into hydrogen with electrolysers?</br></br>There are
+        ambitions for building wind farms far out on sea. For these farms
         it will probably be economically more viable to convert the electricity directly
         into hydrogen instead of transporting the electricity to land first. This
         has to do with the high electricity cabling costs relative to the low gas
-        piping costs. \r\n</br></br>\r\nThis slider sets the installed capacity of
+        piping costs. </br></br>This slider sets the installed capacity of
         offshore wind turbines dedicated to hydrogen production and a corresponding
         amount of electrolysis capacity to convert the produced electricity into hydrogen.
         The efficiency of electrolysers can
         be adjusted <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >here</a>.
         You can adjust the full load hours of wind turbines 
         <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>
-        <br /><br />\r\nNote: The technical and financial specifications below are
+        <br/><br/>Note: The technical and financial specifications below are
         only the specifications of the electrolyser, not the wind turbines. The specifications
         of the wind turbines can be found in the <a href=\"/scenario/supply/electricity_renewable/wind-turbines\">Renewable
-        electricity section</a>.<br />"
+        electricity section</a>.<br/>
     capacity_of_energy_hydrogen_solar_pv_solar_radiation:
       title: Solar PV plant for H<sub>2</sub>
       short_description:

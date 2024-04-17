@@ -533,14 +533,12 @@ en:
       title: Hydrogen demand
       short_description:
       description: |
-        There is a growing interest in using hydrogen as energy carrier,
-        for instance for heat production, electricity production, transport fuel or
-        as a feedstock for the chemical industry. The ETM allows you to explore a
-        future hydrogen economy by allowing you to use hydrogen for:
+        Hydrogen demand in the ETM can be set in the following sections:
         <ul>
         <li><a href=/scenario/supply/electricity_renewable/hydrogen-plants >electricity production</a></li>
         <li><a href=/scenario/supply/heat/heat-sources>district heating</a> for households, buildings and agriculture</li>
-        <li><a href=/scenario/demand/households/space-heating-and-hot-water>hybrid heat pumps in households</a></li>
+        <li>hybrid heat pumps in <a href=/scenario/demand/households/space-heating-and-hot-water>households</a>
+        and <a href=/scenario/demand/buildings/space-heating>buildings</a></li>
         <li>heat production in <a href=/scenario/demand/industry/refineries>industry</a> and <a href=/scenario/demand/agriculture/heat>agriculture</a></li>
         <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a> (as feedstock)</li>
         <li> national transport (<a href=/scenario/demand/transport_passenger_transport/car-technology>cars</a>,
@@ -549,41 +547,28 @@ en:
         and <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>inland ships</a>)</li>
         <li> international transport (<a href=/scenario/demand/transport_international_transport/international-navigation-technology>maritime ships</a>)</li>
         </ul>
+        </br>In the <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand>merit order of dispatchable hydrogen demand</a> 
+        section, the order in which dispatchable hydrogen demand technologies are deployed can be adjusted. 
     supply_hydrogen_production:
       title: Hydrogen production
       short_description:
-      description: "Below you can specify how hydrogen will be produced in the future.
-        The ETM offers the following options: electrolysis of wind and solar power
-        from wind/solar farms dedicated to hydrogen production; steam methane reforming
-        (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); ammonia reforming:
-        gasification of biomass (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); import from abroad.
-        \r\n<br/><br/>\r\nA distinction is made in installed capacity of must-run / volatile production technologies and dispatchable production technologies.
-        In the <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order of dispatchable hydrogen production</a> 
+      description: |
+        Below you can specify how hydrogen will be produced in the future. A distinction is made in must-run
+        and dispatchable production technologies. In the <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> 
+        section, you can set the capacity share of various hydrogen production technologies that will be equipped with CCS.
+        In the <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order of dispatchable hydrogen production</a> 
         section, the order in which dispatchable production technologies are deployed can be adjusted. 
-        \r\n<br/><br/>\r\nIn addition, it is possible to convert electricity into
-        hydrogen using 'power-to-gas' (see the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
-        >power-to-gas slide</a>).
-        Hydrogen for the fertilizer industry can also be produced on-site since this industry already has large hydrogen
-        production plants built (see the <a href=\"/scenario/demand/industry/fertilizers\"
-        >fertilizer industry slide</a>).\r\n<br><br />\r\nFor more information see
+        </br></br>For more information on how hydrogen supply and demand are modelled in the ETM, see
         our <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
         target=\"_blank\">documentation</a>.
-        \r\n<br><br />\r\nPlease note that when referring to hydrogen, unless stated otherwise, it is implied that gaseous hydrogen is meant."
     supply_hydrogen_transport:
       title: Hydrogen transport
       short_description:
-      description: "How will hydrogen be transported in the future? At the moment,
-        two distribution methods seem to be the most viable: compressed hydrogen transport
-        via pipelines and via trucks.\r\n<br/><br/>\r\nThe ETM assumes that all hydrogen supply
-        will be transported via pipelines. This option is relatively cheap, especially when distribution 
-        distances are long, the volume of the distributed hydrogen is large and demand for hydrogen is concentrated.
-        In addition, it is possible to set the share of hydrogen that will be transported by trucks after 
-        pipeline distribution. Trucks are much more flexible than pipelines. They are
-        suitable for delivering smaller quantities of hydrogen and for delivery to
-        remote areas.\r\n<br/><br/>\r\nBelow, you can choose the percentage of total
-        hydrogen supply in your scenario that is transported by trucks (after pipeline distribution).
-        The costs of transport via pipelines and trucks can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
-        >costs section</a>."
+      description: |
+        How will hydrogen be transported in the future? The ETM assumes that all hydrogen is transported through
+        pipelines. Below, it is possible to set the share that will be transported by trucks after
+        pipeline distribution. The costs of transport via pipelines and trucks can be adjusted in the 
+        <a href=/scenario/costs/costs_hydrogen/hydrogen-transport>costs section</a>.
     supply_hydrogen_storage:
       title: Hydrogen storage
       short_description:

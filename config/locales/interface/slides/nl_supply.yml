@@ -581,14 +581,12 @@ nl:
       title: Waterstofvraag
       short_description:
       description: |
-        Er is een groeiende interesse in het gebruik van waterstof als
-        energiedrager, bijvoorbeeld voor warmteproductie, elektriciteitsproductie,
-        transportbrandstof of als grondstof in de chemie. In het ETM kun je een toekomstige
-        waterstofeconomie verkennen door waterstof in te zetten voor:
+        Vraag naar waterstof in het ETM kan worden ingesteld in de volgende secties:
         <ul>
         <li><a href=/scenario/supply/electricity_renewable/hydrogen-plants >elektricititeitsproductie</a></li>
         <li><a href=/scenario/supply/heat/heat-sources>warmtenetten</a> voor huishoudens, gebouwen en landbouw</li>
-        <li><a href=/scenario/demand/households/space-heating-and-hot-water>hybride warmtepompen voor huishoudens</a></li>
+        <li>hybride warmtepompen voor <a href=/scenario/demand/households/space-heating-and-hot-water>huishoudens</a>
+        en <a href=/scenario/demand/buildings/space-heating>gebouwen</a></li>
         <li>warmteproductie in <a href=/scenario/demand/industry/refineries>industrie</a> en <a href=/scenario/demand/agriculture/heat>landbouw</a></li>
         <li><a href=/scenario/demand/industry/fertilizers>kunstmestproductie</a> (als grondstof)</li>
         <li>nationaal transport (<a href=/scenario/demand/transport_passenger_transport/car-technology>auto's</a>,
@@ -597,48 +595,28 @@ nl:
         en <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>binnenvaart</a>)</li>
         <li>internationaal transport (<a href=/scenario/demand/transport_international_transport/international-navigation-technology>scheepvaart</a>)</li>
         </ul>
+        </br>Onder <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand>merit order van regelbare waterstofvraag</a>
+        kan de volgorde worden aangepast waarin de regelbare waterstofvraagtechnologieën worden ingezet.
     supply_hydrogen_production:
       title: Waterstofproductie
       short_description:
-      description: "In dit gedeelte kun je selecteren hoe de waterstof geproduceerd
-        wordt in de toekomst. Het ETM biedt de volgende opties: elektrolyse van wind-
-        en zonnestroom van wind/zonneparken; stoomreforming van aardgas (met of zonder
-        <a href='/scenario/emissions/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
-        reforming van ammoniak;
-        vergassing van biomassa (met of zonder
-        <a href='/scenario/emissions/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
-        import uit het buitenland. \r\n<br/><br/>\r\n Onderscheid wordt gemaakt in in 
-        geïnstalleerd vermogen van niet-regelbare / volatiele productietechnologieën en regelbare productietechnologieën.
-        Onder <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order van regelbare waterstofproductie</a> 
+      description: |
+        In dit gedeelte kun je instellen hoe waterstof geproduceerd wordt in de toekomst. 
+        Er wordt onderscheid gemaakt tussen niet-regelbare/volatiele en regelbare productietechnologieën. 
+        In het <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a>-gedeelte
+        kan worden ingesteld welk percentage van bepaalde waterstofproductietechnologieën wordt uitegerust met CCS. 
+        Onder <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order van regelbare waterstofproductie</a>
         kan de volgorde worden aangepast waarin de regelbare productietechnologieën worden ingezet.
-        \r\n<br /><br />\r\nJe kunt er ook voor kiezen om elektriciteit om te zetten in waterstof
-        (zie de sectie <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
-        >power-to-gas</a>). Dit kan alleen als er in jouw scenario momenten in het
-        jaar zijn waarop de elektriciteitsproductie hoger is dan de vraag. Daarnaast
-        is het in de kunstmestindustrie mogelijk om lokaal waterstof te produceren.
-        Deze industrie beschikt op dit moment al over waterstoffabrieken (zie <a href=\"/scenario/demand/industry/fertilizers\"
-        >kunstmestindustrie</a>).\r\n<br> <br/>\r\nMeer informatie is te vinden in
-        de <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
-        target=\"_blank\">documentatie</a>.
-        \r\n<br><br />\r\nLet op dat bij verwijzing naar waterstof, tenzij anders vermeld, wordt bedoeld dat het om gasvormige waterstof gaat."
+        </br></br>Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentatie</a> 
+        voor meer informatie over hoe aanbod van en vraag naar waterstof worden gemodelleerd in het ETM.        
     supply_hydrogen_transport:
       title: Waterstoftransport
       short_description:
-      description: "Hoe zal waterstof getransporteerd worden in de toekomst? Op dit
-        moment lijken twee distributiemethodes het meest voor de hand te liggen: waterstof-onder-druk
-        via pijpleidingen en met vrachtwagens.\r\n<br/><br/>\r\nHet ETM gaat ervan uit dat alle
-        geproduceerde waterstof via pijpleidingen wordt getransporteerd. Transport via pijpleidingen
-        is relatief goedkoop, vooral als de distributie-afstanden langer zijn, het
-        volume van waterstof in je scenario groot is en als de vraag naar waterstof
-        zich op een geconcentreerd gebied bevindt (bijvoorbeeld een industrieterrein). Daarnaast is 
-        het mogelijk om aan te geven welk aandeel van getransporteerde waterstof via pijpleidingen 
-        vervolgens nog per vrachtwagens wordt getransporteerd. Transport via vrachtwagens is meer flexibel. 
-        Het gebruik van vrachtwagens ligt voor de hand voor distributie van kleinere hoeveelheden waterstof
-        of als de afnemers over een groter gebied verspreid zijn. \r\n<br/><br/>\r\nHieronder
-        kun je aangeven hoeveel van het totale waterstofaanbod na transport via pijpleidingen nog
-        per vrachtwagens wordt getransporteerd. De kosten van transport via pijpleidingen en vrachtwagens
-        kunnen aangepast worden bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
-        >kosten</a>."
+      description: |
+        Hoe wordt waterstof getransporteerd in de toekomst? Het ETM gaat ervan uit dat alle waterstof 
+        wordt getransporteerd via pijpleidingen. Hieronder is het mogelijk om het aandeel in te stellen dat 
+        per vrachtwagen wordt getransporteerd na transport via pijpleidingen. De kosten van transport via 
+        pijpleidingen en vrachtwagens kunnen aangepast worden bij <a href=/scenario/costs/costs_hydrogen/hydrogen-transport>kosten</a>.
     supply_hydrogen_storage:
       title: Waterstofopslag
       short_description:

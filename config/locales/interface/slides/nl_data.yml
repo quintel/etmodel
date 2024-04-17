@@ -176,11 +176,11 @@ nl:
     data_export_hydrogen:
       title: Uurlijkse profielen voor waterstof
       short_description:
-      description: |-
-        Hier kunnen 2 exports over waterstof gedownload worden.
-        <br /><br />
+      description: |
+        Hier kunnen twee exports over waterstof gedownload worden.
+        <br/><br/>
         De "Waterstofvraag, -productie en -opslag per uur" export bevat de uurlijkse vraag, productie en opslag van waterstof, uitgesplitst naar technologie/sector.
-        <br /><br />
+        <br/><br/>
         De  "Integrale kosten waterstof" export bevat de integrale kosten van waterstofproductie, 
         de productie van waterstof, de productiekosten per MWh voor elke productiemethode en de productiecurve van waterstof voor elke productiemethode op uurbasis.
         <ul class="data-download">
@@ -190,10 +190,12 @@ nl:
               <span class="filetype">750KB CSV</span>
             </a>
           </li>
-        </ul>
-
-        <ul class="data-download">
-          <li><a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank"> <span class="name">Ingetrale kosten waterstof</span> <span class="filetype">2MB CSV</span></a></li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank">
+              <span class="name">Ingetrale kosten waterstof</span>
+              <span class="filetype">2MB CSV</span>
+            </a>
+          </li>
         </ul>        
     data_visuals_molecule_graph:
       title: CCUS-graaf
@@ -208,7 +210,7 @@ nl:
     data_export_network_gas:
       title: Uurlijkse profielen voor gas
       short_description:
-      description: |-
+      description: |
         Het Energietransitiemodel rekent op uurbasis de vraag, productie en opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als CSV-bestand, uitgesplitst naar technologie/sector.
 
         <ul class="data-download">

@@ -105,14 +105,14 @@
   step_value: 1.0
   unit: "%"
   interface_group: hydrogen_plants
-  related_node: energy_hydrogen_steam_methane_reformer_ccs  
+  related_node: energy_hydrogen_steam_methane_reformer_ccs_must_run
   position: 400
   slide_key: supply_ccus_capture_energy
 - key: share_of_energy_hydrogen_autothermal_reformer_ccs
   step_value: 1.0
   unit: "%"
   interface_group: hydrogen_plants
-  related_node: energy_hydrogen_autothermal_reformer_ccs
+  related_node: energy_hydrogen_autothermal_reformer_ccs_must_run
   position: 405
   slide_key: supply_ccus_capture_energy
 - key: share_of_energy_hydrogen_biomass_gasification_ccs

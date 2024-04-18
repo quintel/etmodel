@@ -16,8 +16,6 @@ en:
         far from the cleanest and greenest, but able to facilitate upcoming hydrogen
         demand.
         <br/><br/>
-        Add CCS to the SMR by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
-        <br/><br/>
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the SMR plants without CCS, so when you have set 100% CCS,
         you will see no installed capacity here.
@@ -36,7 +34,8 @@ en:
         far from the cleanest and greenest, but able to facilitate upcoming hydrogen
         demand.
         <br/><br/>
-        Add CCS to the SMR by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
+        Add CCS to the must-run capacity of SMR by going to the 
+        <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> section.
         <br/><br/>
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the SMR plants without CCS, so when you have set 100% CCS,
@@ -53,8 +52,6 @@ en:
         dioxide. This makes it easier to capture a higher percentage of carbon emissions during 
         the conversion process. 
         <br/><br/>
-        Add CCS to the ATR by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
-        <br/><br/>
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the ATR plants without CCS, so when you have set 100% CCS,
         you will see no installed capacity here.
@@ -70,7 +67,8 @@ en:
         dioxide. This makes it easier to capture a higher percentage of carbon emissions during 
         the conversion process. 
         <br/><br/>
-        Add CCS to the ATR by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
+        Add CCS to the must-run capacity of ATR by going to the 
+        <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> section.
         <br/><br/>
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the ATR plants without CCS, so when you have set 100% CCS,
@@ -80,9 +78,8 @@ en:
       short_description:
       description: | 
         Biomass gasification is a mature technology in which biomass is
-        converted into hydrogen. 
-        <br/><br/>
-        Add CCS to the biomass gasification plant by going to the <a href="/scenario/emissions/ccus/capture-of-co2">Capture of CO2</a> section.
+        converted into hydrogen. For this technology, you can set the share that will be equipped
+        with CCS in the <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> section.
         <br/><br/>
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the plants without CCS, so when you have set 100% CCS,
@@ -192,16 +189,23 @@ en:
         scaled up or down relatively easily. As such, it is a suitable option when
         hydrogen demand is more dispersed and when volumes are lower. This may for
         example be the case for hydrogen delivery to refuelling stations.
+        </br></br>The costs of hydrogen transport via trucks can be adjusted in the 
+        <a href=/scenario/costs/costs_hydrogen/hydrogen-transport>costs section</a>.
     energy_hydrogen_transport_pipelines_share:
       title: Transport via pipelines only 
       description: What percentage of the total central hydrogen production in your
         scenario is only transported via the pipeline network? 
+        </br></br>The costs of hydrogen transport via pipelines can be adjusted in the 
+        <a href=/scenario/costs/costs_hydrogen/hydrogen-transport>costs section</a>.
     capacity_of_energy_imported_ammonia_baseload:
       title: Ammonia import
       short_description:
       description: |
         How much ammonia will be imported in the future? <br><br>
-        This slider sets the amount of ammonia that is imported from outside your area.
+        Ammonia as an energy carrier has advantageous transport and storage properties and can be produced
+        without generating carbon emissions. This makes it a potentially effective carrier to
+        facilitate global transport of large (renewable) energy volumes. </br></br>You can determine
+        how much ammonia you want to import in your scenario with this slider. 
         The ammonia can originate from different countries and can be produced with
         different types of hydrogen, both of which influence the associated CO<sub>2</sub> 
         emissions. Therefore, it is possible to adjust the CO<sub>2</sub> emissions of imported
@@ -234,20 +238,24 @@ en:
         You can see the total resulting storage capacity in the 'Technical and financial 
         properties' below. To quickly compare it with other storage technologies you can also open
         <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
-        this table</a>. </br></br>
+        this table</a>.
     volume_of_energy_hydrogen_storage_depleted_gas_field:
       title: Storage volume
       short_description:
       description: |
-        This slider sets the volume of the amount of hydrogen that can be stored in the depleted gas fields.
-        The typical volume of a depleted gas field is approximately 8 TWh. </br></br>
-        Additionally, it is possible to set the costs of hydrogen storage in depleted gas fields in the 
-        <a href=/scenario/costs/costs_hydrogen/hydrogen-storage >Costs & efficiencies</a> section. </br></br>
+        This slider sets the volume of the amount of hydrogen that can be stored in the depleted gas fields. 
+        The typical volume of a depleted gas field is approximately 8 TWh.
+        With <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        this chart</a> you can compare the installed volume of hydrogen storage technologies with storage volumes 
+        for other energy carriers. Additionally, it is possible to set the costs of hydrogen storage in the 
+        <a href=/scenario/costs/costs_hydrogen/hydrogen-storage >Costs & efficiencies</a> section.
     volume_of_energy_hydrogen_storage_salt_cavern:
       title: Storage volume
       short_description:
       description: |
         This slider sets the volume of the amount of hydrogen that can be stored in the salt caverns.
-        The typical volume of a salt cavern is approximately 0.25 TWh. </br></br>
-        Additionally, it is possible to set the costs of hydrogen storage in salt caverns in the 
-        <a href=/scenario/costs/costs_hydrogen/hydrogen-storage >Costs & efficiencies</a> section. </br></br>
+        The typical volume of a salt cavern is approximately 0.25 TWh.
+        With <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        this chart</a> you can compare the installed volume of hydrogen storage technologies with storage volumes 
+        for other energy carriers. Additionally, it is possible to set the costs of hydrogen storage in salt caverns in the 
+        <a href=/scenario/costs/costs_hydrogen/hydrogen-storage >Costs & efficiencies</a> section.

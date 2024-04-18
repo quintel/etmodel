@@ -512,23 +512,19 @@ en:
     supply_hydrogen_order:
       title: Merit order of dispatchable hydrogen production
       short_description:
-      description: "The ETM makes a distinction between 'must-run' / volatile hydrogen
-        sources and dispatchable hydrogen sources. In contrast to the first category, dispatchable hydrogen sources
-        can be turned on or off at will. The ETM calculates for every hour per year
-        how much hydrogen from must-run and volatile sources is available. If hydrogen demand
-        exceeds this supply in a given hour, dispatchable hydrogen sources will be switched
-        on to ensure that no deficit occurs.\r\n<br /><br />\r\nBelow it is possible
-        to change the (merit) order of dispatchable hydrogen sources: which hydrogen source
-        is switched on first in case of a hydrogen deficit? The chart to the right shows
-        the marginal costs of each dispatchable source."
+      description: |
+        Below it is possible to change the (merit) order of dispatchable hydrogen sources: which hydrogen source
+        is switched on first in case of hydrogen shortage caused by inflexible demand? See our 
+        <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentation</a>
+        for more information on the calculation principles of the merit order of dispatchable production. 
     demand_hydrogen_order:
       title: Merit order of dispatchable hydrogen demand
       short_description:
-      description: "The ETM makes a distinction between 'must-run' hydrogen
-        demand and dispatchable hydrogen demand. The hydrogen storage technologies are
-        categorised as dispatchable hydrogen demand since these can store hydrogen in case of excess hydrogen
-        supply. Below you can set the order in which the technologies are deployed in case of excess
-        hydrogen production."
+      description: |
+        Below it is possible to change the (merit) order of dispatchable hydrogen demand: which hydrogen demand
+        category is switched on first in case of hydrogen oversupply caused by inflexible production? See our 
+        <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentation</a>
+        for more information on the calculation principles of the merit order of dispatchable demand. 
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:
@@ -554,55 +550,38 @@ en:
       short_description:
       description: |
         Below you can specify how hydrogen will be produced in the future. A distinction is made in must-run
-        and dispatchable production technologies. In the <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> 
-        section, you can set the capacity share of various hydrogen production technologies that will be equipped with CCS.
-        In the <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order of dispatchable hydrogen production</a> 
+        and dispatchable production technologies. In the 
+        <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order of dispatchable hydrogen production</a> 
         section, the order in which dispatchable production technologies are deployed can be adjusted. 
         </br></br>For more information on how hydrogen supply and demand are modelled in the ETM, see
-        our <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
-        target=\"_blank\">documentation</a>.
+        our <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentation</a>.
     supply_hydrogen_transport:
       title: Hydrogen transport
       short_description:
       description: |
         How will hydrogen be transported in the future? The ETM assumes that all hydrogen is transported through
         pipelines. Below, it is possible to set the share that will be transported by trucks after
-        pipeline distribution. The costs of transport via pipelines and trucks can be adjusted in the 
-        <a href=/scenario/costs/costs_hydrogen/hydrogen-transport>costs section</a>.
+        pipeline distribution. 
     supply_hydrogen_storage:
       title: Hydrogen storage
       short_description:
       description: |
         In this section, the hydrogen storage volume and relative storage capacity of salt caverns 
-        and depleted gas fields can be set. For more information on how the ETM calculates moments of hydrogen shortages
-        or excess production, see our <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
-        target=\"_blank\">documentation</a>. The costs for storage can be adjusted in the 
-        <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\">costs section</a>. In the 
-        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production'>merit order of dispatchable hydrogen production</a> and
-        <a href='/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand'>merit order of dispatchable hydrogen demand</a> 
-        sections, the order in which the storage technologies are deployed for supplying or storing hydrogen can be adjusted.
-        <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
-        This chart</a> shows the installed volume of hydrogen storage technologies in comparison to storage volumes for other energy carriers.
-        <br/><br/>The hydrogen network offers some flexibility in the form of linepack. The ETM does not take 
-        this into account. Linepack offers a limited volume to mitigate very short-term (hourly) fluctuations of 
-        hydrogen demand and supply. The actual volume depends on the extent to which the network is fully utilised. 
-        The volume is equivalent to roughly 1/3 salt cavern for 1.500 km of hydrogens transport pipelines.
+        and depleted gas fields can be set. The ETM does not take into account flexibility in the form of linepack (see 
+        <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
+        target=\"_blank\">documentation</a>).
     supply_ammonia_production:
       title: Ammonia production
       short_description:
       description: |
-        Ammonia as an energy carrier has advantageous transport and storage properties and can be produced
-        without generating carbon emissions. This makes it a potentially effective carrier to
-        facilitate global transport of large (renewable) energy volumes. You can determine
-        how much ammonia you want to import in your scenario with the slider below. </br></br>
         Ammonia can then be converted into hydrogen through
         <a href="/scenario/supply/hydrogen/hydrogen-production"> ammonia reforming</a>.
         You can however also use ammonia directly as a transport fuel (for both
         <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology">domestic</a> and
         <a href="/scenario/demand/transport_international_transport/international-navigation-technology">international</a>
-        navigation). Currently virtually all ammonia is produced on-site
+        navigation). Currently, the ETM assumes all ammonia is produced on-site
         in the <a href="/scenario/demand/industry/fertilizers">fertilizer industry</a>. This local
-        production can also be replaced by centralized import. 
+        production can also be replaced by centralized import which can be set below. 
     supply_infrastructure_high_voltage_network:
       title: High voltage network
       short_description: ''

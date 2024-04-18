@@ -234,7 +234,10 @@ class SavedScenariosController < ApplicationController
   # This determines whether the SavedScenario is editable by the current_user
   def editable_saved_scenario?(saved_scenario = nil)
     saved_scenario ||= @saved_scenario
-    saved_scenario.collaborator?(current_user) || saved_scenario.owner?(current_user)
+
+    saved_scenario.collaborator?(current_user) ||
+      saved_scenario.owner?(current_user) ||
+      current_user&.admin?
   end
 
   def assign_saved_scenario

@@ -1,4 +1,5 @@
 # What's new in the Energy Transition Model?
+
 ___
 
 # May 2024
@@ -36,6 +37,7 @@ The flexible demand options, which are the two hydrogen storage options for now,
 The merit order of demand can be set in the **[Merit order of dispatchable hydrogen demand](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** section.
 
 -> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="600" /> <-
+
 ___
 
 # March 2024

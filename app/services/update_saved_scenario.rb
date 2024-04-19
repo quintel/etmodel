@@ -34,6 +34,8 @@ class UpdateSavedScenario
 
       set_roles
 
+      tag_new_version
+
       ss.save
       saved_scenario.scenario_id = scenario_id
     end
@@ -57,6 +59,10 @@ class UpdateSavedScenario
 
   def set_roles
     SetAPIScenarioRoles.to_preset(http_client, scenario_id)
+  end
+
+  def tag_new_version
+    CreateAPIScenarioVersionTag.call(http_client, scenario_id, 'another version')
   end
 
   def failure

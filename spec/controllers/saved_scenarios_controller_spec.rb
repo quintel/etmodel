@@ -125,6 +125,10 @@ describe SavedScenariosController, vcr: true do
           attributes_for(:engine_scenario, id: 999, area_code: 'nl', end_year: 2050)
         ))
       )
+
+      allow(CreateAPIScenarioVersionTag).to receive(:call).and_return(
+        ServiceResult.success
+      )
     end
 
     context 'with valid attributes' do

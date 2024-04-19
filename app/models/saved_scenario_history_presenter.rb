@@ -15,7 +15,7 @@ class SavedScenarioHistoryPresenter
   # Sorts the version tags in the history based on the ordering within the saved scenarios history
   # With the current scenario being the first, and the oldest scenario last
   def as_json(*)
-    @scenario_ids_ordered.map{ |id| present(id) }
+    @scenario_ids_ordered.map { |id| present(id) }
   end
 
   private

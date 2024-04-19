@@ -41,6 +41,7 @@ CreateSavedScenario = lambda do |http_client, scenario_id, user, settings = {}|
   end
 
   SetAPIScenarioCompatibility.keep_compatible(http_client, api_scenario.id)
+  CreateAPIScenarioVersionTag.call(http_client, api_scenario.id, 'initial version')
 
   saved_scenario.save
   saved_scenario.scenario = api_scenario

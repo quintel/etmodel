@@ -114,8 +114,22 @@ class SavedScenario < ApplicationRecord
   def add_id_to_history(scenario_id)
     return if !scenario_id || scenario_id_history.include?(scenario_id)
 
-    scenario_id_history.shift if scenario_id_history.count >= 20
+    scenario_id_history.shift if scenario_id_history.count >= 100
     scenario_id_history << scenario_id
+  end
+
+  # Restores the scenario id to the given version
+  # Returns the discarded scenarios from the history
+  def restore_version(scenario_id)
+    return unless scenario_id && scenario_id_history.include?(scenario_id)
+
+    discard_no = scenario_id_history.index(scenario_id)
+    discarded = scenario_id_history[discard_no + 1...]
+
+    self.scenario_id = scenario_id
+    self.scenario_id_history = scenario_id_history[...discard_no]
+
+    discarded
   end
 
   def scenario=(x)

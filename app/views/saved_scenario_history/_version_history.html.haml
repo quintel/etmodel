@@ -14,7 +14,7 @@
               %li.restore-version.fa.fa-backward.tooltip{ title: "Restore this version" }
     .main-info
       .fa.fa-circle
-      = t('last_updated_ago', when: time_ago_in_words(version['last_updated_at']))
+      = t('last_ago', when: time_ago_in_words(version['last_updated_at']))
       %span= version['user']
     - unless version['frozen']
       .description

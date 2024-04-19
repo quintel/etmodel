@@ -10,6 +10,13 @@ describe SavedScenarioHistoryController, vcr: true do
 
   before do
     allow(UpdateAPIScenarioVersionTag).to receive(:call).and_return(ServiceResult.success)
+    allow(FetchSavedScenarioVersionTags).to receive(:call).and_return(ServiceResult.success(
+      {
+        "123" => { 'user_id' => user.id, description: 'my last version' },
+        "122" => {},
+        "111" => {}
+      }
+    ))
   end
 
   context 'with a user that owns the scenario' do
@@ -18,20 +25,25 @@ describe SavedScenarioHistoryController, vcr: true do
       session[:setting] = Setting.new
     end
 
-    # TODO: finish the test!
-    # describe 'GET index' do
-    #   context 'as json' do
-    #     before do
-    #       get :index, format: :json, params: {
-    #         saved_scenario_id: saved_scenario.id
-    #       }
-    #     end
+    describe 'GET index' do
+      context 'as json' do
+        before do
+          get :index, format: :json, params: {
+            saved_scenario_id: saved_scenario.id
+          }
+        end
 
-    #     it 'contains the scenario versions of the full histoty' do
-    #       expect(JSON.parse(response)).to include 'hi'
-    #     end
-    #   end
-    # end
+        it 'is succesful' do
+          expect(response).to be_ok
+        end
+
+        it 'contains the scenario versions of the full histoty' do
+          expect(JSON.parse(response.body)).to include({
+            'description' => 'my last version', 'scenario_id' => 123, 'user' => user.name
+          })
+        end
+      end
+    end
 
     describe 'PUT update' do
       before do
@@ -47,6 +59,4 @@ describe SavedScenarioHistoryController, vcr: true do
       end
     end
   end
-
-  # TODO: tests for whn it fails
 end

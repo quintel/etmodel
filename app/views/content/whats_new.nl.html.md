@@ -1,8 +1,7 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
-# April 2024
-
+# Mei 2024
 
 ### Toevoeging van Bioenergy with Carbon Capture (Utilisiation) and Storage (BECC(U)S)
 
@@ -38,6 +37,7 @@ De flexibele vraagopties, die op dit moment de twee waterstofopslagopties zijn, 
 Deze merit order kan ingesteld worden in de **[Merit order van regelbare watersofvraag](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** sectie.
 
 -> <img src="/assets/pages/whats_new/hydrogen_demand_order_nl.png" width="600" /> <-
+___
 
 # Maart 2024
 
@@ -64,6 +64,7 @@ Het ETM bevat nu een grafiek waarin het landgebruik van zonnepanelen en windturb
 
 ### Propaan toegevoegd als bestanddeel van netwerkgas
 Gebruikers van de ETM kunnen nu propaan toevoegen als drager in netwerkgas. Toevoeging van propaan kan nodig zijn om de energie-inhoud van netwerkgas te verhogen bij het bijmengen van andere gassen met een lagere calorische waarde, zoals biogas.
+___
 
 # Januari 2024
 
@@ -80,7 +81,7 @@ Gebruikers kunnen nu 2 types prognose voor huishoudelijke batterijen kiezen. De 
 Het modelleren van load shifting voor de industriële sector is uitgebreid. Bij het toepassen van de vraagverschuiving in de industriële sector kunnen gebruikers nu de capaciteit voor het verminderen en verhogen van de belasting op het net afzonderlijk instellen. Deze uitbreiding stelt de gebruiker in staat om de impact van de verhoogde belasting op het net te verminderen. Dit is te vinden in de **[Flexibiliteit](/scenario/flexibility/flexibility_net_load/demand-response-load-shifting-in-industry)** sectie.
 
 -> <img src="/assets/pages/whats_new/input_capacity_dsr_nl.png" width="600" /> <-
-
+___
 
 # December 2023
 
@@ -105,10 +106,9 @@ Hiernaast zijn er 2 nieuwe waterstofdragers toegevoegd aan de ETM:
 * **Vloeibare waterstof (LH2)** — Bij extreem lage temperaturen gaat gasvormige waterstof over in vloeibare vorm. In vloeibare vorm is de energiedichtheid per volume-eenheid hoger, wat een voordeel oplevert bij het transport.
 
 Dit maakt het bijvoorbeeld ook mogelijk om vloeibare waterstof te importeren, om te zetten naar waterstofgas en in deze vorm te exporteren naar het achterland. Zie ook de nieuwe LH2 vergassing en LOHC reforming technologieën in **[Aanbod](/scenario/supply/hydrogen/hydrogen-production)**.
-
+___
 
 # November 2023
-
 
 ### Warmte
 
@@ -130,13 +130,12 @@ Aquathermische technologieën kunnen gebruikt worden voor individuele houshuiden
 
 -> <img src="/assets/pages/whats_new/aquathermal_heat_nl.png" width="600" /> <-
 
-
 ### Restwarmte
-
 
 Het is nu mogelijk om precies de hoeveelheid restwarmte te specificeren die u wilt gebruiken in uw scenario. U kunt vervolgens de vraag naar restwarmte vergelijken met een schatting van het potentieel in een nieuw diagram. De schatting van het potentieel hangt af van de respectieve omvang van de industriële sectoren.
 
 -> <img src="/assets/pages/whats_new/residual_heat_chart_nl.png" width="600" /> <-
+___
 
 # Juni 2023
 
@@ -149,7 +148,6 @@ Je kunt daarnaast het relatief opslagvolume van elke technologie aanpassen in *F
 In de tabel "Specificaties opslagtechnologieën elektriciteit" kun je de specificaties voor de verschillende technologieën eenvoudig vergelijken:
 
 -> <img src="/assets/pages/whats_new/relative_storage_volume_en.png" width="600" /> <-
-
 ___
 
 # Maart 2023

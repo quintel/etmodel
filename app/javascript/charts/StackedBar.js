@@ -40,7 +40,7 @@ class StackedBar extends D3Chart {
   }
 
   isEmpty() {
-    return d3.sum(this.prepareData(), (d) => d.y) <= 0;
+    return d3.sum(this.prepareData(), (d) => d.y) == 0;
   }
 
   draw() {

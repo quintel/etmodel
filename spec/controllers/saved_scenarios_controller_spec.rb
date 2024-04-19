@@ -429,6 +429,44 @@ describe SavedScenariosController, vcr: true do
     end
   end
 
+  describe 'PUT restore' do
+    before do
+      sign_in(user)
+      session[:setting] = Setting.new
+      allow(RestoreSavedScenario).to receive(:call)
+    end
+
+    context 'with an owned saved scenario' do
+      before do
+        user_scenario.update!(scenario_id_history: [8, 9, 10])
+        put(
+          :restore,
+          format: :js,
+          params: { id: user_scenario.id, saved_scenario: { scenario_id: 9 } }
+        )
+      end
+
+      it 'is succesfull' do
+        expect(response).to be_successful
+      end
+    end
+
+    context 'with an unowned saved scenario' do
+      before do
+        admin_scenario.update!(scenario_id_history: [8, 9, 10])
+        put(
+          :restore,
+          format: :js,
+          params: { id: admin_scenario.id, saved_scenario: { scenario_id: 9 } }
+        )
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
+      end
+    end
+  end
+
   describe 'DELETE destroy' do
     before do
       sign_in(user)

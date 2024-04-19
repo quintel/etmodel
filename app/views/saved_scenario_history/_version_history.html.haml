@@ -1,24 +1,29 @@
 - @history.each do |version|
   .row.box{ id: "scenario-version-#{version['scenario_id']}" }
-    - if !version['frozen'] && (@saved_scenario.collaborator?(current_user) || current_user&.admin?)
-      -# if frozen nog steeds rewuind for collab, en open for everyone
+    - if (@saved_scenario.collaborator?(current_user) || current_user&.admin?)
       %ul.details
         %li.scenario-version.stick-right
           %ul
-            %li
-              -# top scenario cannot be opened or restored!
-              = link_to load_scenario_path(version['scenario_id']) do
-                .fa.fa-window-restore.tooltip{ title: t("scenario.open") }
-            %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_text") }
-            - if current_user&.admin? || @saved_scenario.owner?(current_user)
-              %li.restore-version.fa.fa-backward.tooltip{ title: "Restore this version" }
+            - unless version['frozen']
+              %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_text") }
+            - unless version['scenario_id'].to_i == @saved_scenario.scenario_id
+              %li
+                = link_to load_scenario_path(version['scenario_id']) do
+                  .fa.fa-window-restore.tooltip{ title: t("scenario.open") }
+              - if current_user&.admin? || @saved_scenario.owner?(current_user)
+                %li
+                  = link_to restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: version['scenario_id']}), method: :put, remote: true do
+                    .restore-version.fa.fa-backward.tooltip{ title: "Restore this version" }
     .main-info
       .fa.fa-circle
       = t('last_ago', when: time_ago_in_words(version['last_updated_at']))
       %span= version['user']
     - unless version['frozen']
       .description
-        = version['description']
+        - if version['description']
+          = version['description']
+        - else
+          %span= t('scenario.no_description')
       .description-field{style: 'display: none'}
         %textarea
           = version['description']

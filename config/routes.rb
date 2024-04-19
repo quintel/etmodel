@@ -83,6 +83,7 @@ Rails.application.routes.draw do
       put :undiscard
       put :publish
       put :unpublish
+      put :restore
     end
 
     collection do

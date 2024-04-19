@@ -1,6 +1,7 @@
 # What's new in the Energy Transition Model?
 ___
-# April 2024
+
+# May 2024
 
 ### Addition of Bioenergy with Carbon Capture (Utilisiation) and Storage (BECC(U)S)
 
@@ -35,6 +36,7 @@ The flexible demand options, which are the two hydrogen storage options for now,
 The merit order of demand can be set in the **[Merit order of dispatchable hydrogen demand](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** section.
 
 -> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="600" /> <-
+___
 
 # March 2024
 
@@ -60,7 +62,8 @@ The ETM now contains a chart displaying the land use of solar panels and wind tu
 -> <img src="/assets/pages/whats_new/land_use_of_solar_and_wind_en.png" width="600" /> <-
 
 ### Propane added as constituent of network gas
-Users of the ETM can now add propane as a constituent carrier in network gas. Addition of propane can be required to increase the energy content of network gas when mixing in other gases with a lower calorific value, such as biogas. 
+Users of the ETM can now add propane as a constituent carrier in network gas. Addition of propane can be required to increase the energy content of network gas when mixing in other gases with a lower calorific value, such as biogas.
+___
 
 # January 2024
 

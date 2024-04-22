@@ -54,7 +54,7 @@
       :javascript
         new DropdownView({ el: $('#scenario-privacy') }).render()
 
-      %li{ style: 'padding-right: 0' }
+      %li{ style: 'margin-right: 1rem; padding-right: 0' }
         .dropdown#scenario-location<>
           %button.scenario-actions#scenario-location-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
             = inline_svg_tag 'hero/20/cog.svg'
@@ -112,3 +112,18 @@
 
         :javascript
           new DropdownView({ el: $('#scenario-location') }).render()
+        - unless scenario.private?
+          %li{ style: 'margin-right: 1rem; padding-right: 0' }
+            .dropdown#scenario-copy<>
+              %button.scenario-actions#scenario-copy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+                .icon{ class: 'fa fa-copy' }
+                = t('scenario.share.copy')
+                %span.fa.fa-caret-down
+              %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-copy-button', style: 'margin-top: 3px' }
+                %li
+                  .info
+                    = t('scenario.share.copy_description')
+                %li.sep-above
+                  .url= text_field_tag 'url', request.original_url
+          :javascript
+            new DropdownView({ el: $('#scenario-copy') }).render()

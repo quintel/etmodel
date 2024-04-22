@@ -14,7 +14,10 @@
     = local_time(scenario.updated_at, :long)
 
   %li.with-button
-    = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load no-margin-right"
+    - if active_saved_scenario_id == scenario.id
+      = link_to t("scenario.continue"), Current.setting.last_etm_page || play_path, class: "scenario-button button save no-margin-right"
+    - else
+      = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load no-margin-right"
 
 
 .row

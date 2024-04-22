@@ -805,7 +805,7 @@ table.default
 #saved-scenario-history
   .box
     background: $soft-grey
-    color: $landing-grey
+    color: #333
     padding: 0.5rem 1rem
     margin-top: 1rem
     border-radius: 10px
@@ -821,7 +821,6 @@ table.default
       .fa:hover
         cursor: pointer
         color: $landing-blue
-
     .main-info
       font-weight: bold
       .fa
@@ -831,12 +830,12 @@ table.default
         color: $landing-blue
         font-weight: normal
         margin-left: 0.5rem
-    &:first-of-type
-      background: $light-blue
-      color: black
-      .main-info
-        .fa
-          color: $landing-blue
+  .box:first-child
+    background: $light-blue
+    color: black
+    .main-info
+      .fa
+        color: $landing-blue
 
 @keyframes fadeInFromNone
   0%

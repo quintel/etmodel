@@ -2,41 +2,46 @@
   .empty-state
     %h4= t('scenario.history.empty')
 - else
-  - @history.each_with_index do |version, index|
-    .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/2.0}s"}
-      - if (@saved_scenario.collaborator?(current_user) || current_user&.admin?)
-        %ul.details
-          %li.scenario-version.stick-right
-            %ul
-              - unless version['frozen']
-                %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_text") }
-              - unless version['scenario_id'].to_i == @saved_scenario.scenario_id
-                %li
-                  = link_to load_scenario_path(version['scenario_id']) do
-                    .fa.fa-window-restore.tooltip{ title: t("scenario.open") }
-                - if current_user&.admin? || @saved_scenario.owner?(current_user)
+  .back-to-scenario-view
+    = link_to saved_scenario_path(@saved_scenario), remote: true, class: 'stick-right' do
+      .fa.fa-times
+  %h4= t('scenario.history.title')
+  .history
+    - @history.each_with_index do |version, index|
+      .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/2.0}s"}
+        - if (@saved_scenario.collaborator?(current_user) || current_user&.admin?)
+          %ul.details
+            %li.scenario-version.stick-right
+              %ul
+                - unless version['frozen']
+                  %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_text") }
+                - unless version['scenario_id'].to_i == @saved_scenario.scenario_id
                   %li
-                    = link_to restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: version['scenario_id']}), method: :put, remote: true do
-                      .restore-version.fa.fa-backward.tooltip{ title: t("scenario.restore") }
-      .main-info
-        .fa.fa-circle
-        = t('last_ago', when: time_ago_in_words(version['last_updated_at']))
-        %span= version['user']
-      - unless version['frozen']
-        .description
-          - if version['description']
-            = version['description']
-          - else
-            %span= t('scenario.no_description')
-        .description-field{style: 'display: none'}
-          %textarea
-            = version['description']
-          %button.submit-description Update
-          %button.cancel-description Cancel
-        :javascript
-          new ScenarioHistoryView({
-            el: $("#scenario-version-#{version['scenario_id']}"),
-            id: "#{version['scenario_id']}",
-            url: "#{saved_scenario_history_path(@saved_scenario)}"
-          }).render();
+                    = link_to load_scenario_path(version['scenario_id']) do
+                      .fa.fa-window-restore.tooltip{ title: t("scenario.open") }
+                  - if current_user&.admin? || @saved_scenario.owner?(current_user)
+                    %li
+                      = link_to restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: version['scenario_id']}), method: :put, remote: true do
+                        .restore-version.fa.fa-backward.tooltip{ title: t("scenario.restore") }
+        .main-info
+          .fa.fa-circle
+          = t('last_ago', when: time_ago_in_words(version['last_updated_at']))
+          %span= version['user']
+        - unless version['frozen']
+          .description
+            - if version['description']
+              = version['description']
+            - else
+              %span= t('scenario.no_description')
+          .description-field{style: 'display: none'}
+            %textarea
+              = version['description']
+            %button.submit-description Update
+            %button.cancel-description Cancel
+          :javascript
+            new ScenarioHistoryView({
+              el: $("#scenario-version-#{version['scenario_id']}"),
+              id: "#{version['scenario_id']}",
+              url: "#{saved_scenario_history_path(@saved_scenario)}"
+            }).render();
 

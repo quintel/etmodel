@@ -15,13 +15,15 @@ class SavedScenarioHistoryPresenter
   # Sorts the version tags in the history based on the ordering within the saved scenarios history
   # With the current scenario being the first, and the oldest scenario last
   def as_json(*)
-    @scenario_ids_ordered.map { |id| present(id) }
+    @scenario_ids_ordered.filter_map { |id| present(id) }
   end
 
   private
 
   def present(scenario_id)
     version = @history[scenario_id.to_s]
+
+    return unless version
 
     if version.key?('user_id')
       version['user'] = User.find(version.delete('user_id').to_i).name

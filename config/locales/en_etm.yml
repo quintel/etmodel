@@ -28,6 +28,7 @@ en:
   nevermind: "Never mind"
   cancel: "Cancel"
   last_updated_ago: "Last updated %{when} ago"
+  last_updated_date: "Last updated: %{when}"
   last_ago: "%{when} ago"
   delete: Delete
   delete_permanently: Delete Permanently
@@ -271,7 +272,7 @@ en:
     link: "Save current scenario"
     by: "By"
     area_not_exists: 'Area does not exist'
-    load: "Open this scenario"
+    load: "Open scenario"
     load_energy_mix: "Open energy mix infographic"
     no_title: "Scenario without title"
     overview: "overview"
@@ -331,6 +332,8 @@ en:
     no_description: 'No description'
     edit_text: 'Edit title and description'
     save_text: 'Save changes'
+    open: 'Open this scenario version'
+    restore: 'Restore this version'
     cancel_text: 'Discard changes'
     edit_featured_scenario: 'Edit featured scenario settings'
     feature_scenario: 'Feature this scenario'

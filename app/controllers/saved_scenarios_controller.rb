@@ -230,10 +230,13 @@ class SavedScenariosController < ApplicationController
       restore_params[:scenario_id].to_i
     )
 
-    # TODO: check success -> flash?
-    # if result.successful?
+    flash.notice =
+      if result.successful?
+        t('flash.scenario_restored')
+      else
+        t('flash.scenario_cannot_be_restored')
+      end
 
-    # Or do we refresh?
     respond_to do |format|
       format.js
     end

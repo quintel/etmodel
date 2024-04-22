@@ -9,8 +9,6 @@
     - if editable_saved_scenario?(@saved_scenario)
       = render partial: 'scenario_list_tabs', locals: { active_tab: @saved_scenario.discarded? ? :trash : :my_scenarios, show_save_current: false }
     .internal-box
-      = render partial: 'saved_scenarios/flash_notice'
-
       .scenario
         = render partial: 'scenario', locals: { saved_scenario: @saved_scenario }
 

@@ -19,7 +19,7 @@
 
 .row
   %ul.details.stick-right
-    - if editable_saved_scenario?(scenario) && action_name == 'show'
+    - if editable_saved_scenario?(scenario) && action_name != 'edit'
       - if scenario.private?
         %li{ style: 'margin-right: 1rem; padding-right: 0' }
           .dropdown#scenario-privacy<>

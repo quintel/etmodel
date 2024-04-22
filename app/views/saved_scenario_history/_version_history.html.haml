@@ -1,5 +1,5 @@
-- @history.each do |version|
-  .row.box{ id: "scenario-version-#{version['scenario_id']}" }
+- @history.each_with_index do |version, index|
+  .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/2.0}s"}
     - if (@saved_scenario.collaborator?(current_user) || current_user&.admin?)
       %ul.details
         %li.scenario-version.stick-right

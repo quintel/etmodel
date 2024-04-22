@@ -45,8 +45,7 @@
       $(this.iconsEl).show();
       $(this.descriptionEl).show();
       $(this.descriptionEditEl).hide();
-    }
-
+    },
   });
 
   window.ScenarioHistoryView = ScenarioHistoryView;

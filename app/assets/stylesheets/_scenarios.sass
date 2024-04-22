@@ -808,6 +808,8 @@ table.default
     padding: 0.5rem 1rem
     margin-top: 1rem
     border-radius: 10px
+    opacity: 0
+    animation: fadeInFromNone 0.5s ease-in forwards
     .details
       margin-bottom: 0
     .scenario-version
@@ -830,3 +832,16 @@ table.default
       .main-info
         .fa
           color: $landing-blue
+
+@keyframes fadeInFromNone
+  0%
+    display: none
+    opacity: 0
+
+  1%
+    display: block
+    opacity: 0
+
+  100%
+    display: block
+    opacity: 1

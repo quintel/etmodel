@@ -81,7 +81,7 @@
             %li
               = link_to saved_scenario_history_path(@saved_scenario), remote: true, class: 'dropdown-item' do
                 .fa.fa-history
-                Show history
+                = t("scenario.show_history")
             - if current_user&.admin?
               %li
                 - if @saved_scenario.featured?

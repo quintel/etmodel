@@ -4,17 +4,17 @@
 - else
   .back-to-scenario-view
     = link_to saved_scenario_path(@saved_scenario), remote: true, class: 'stick-right' do
-      .fa.fa-times
-  %h4= t('scenario.history.title')
+      .fa.fa-times.tooltip{ title: t("scenario.close_version_history") }
+  %h3= t('scenario.history.title')
   .history
     - @history.each_with_index do |version, index|
-      .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/2.0}s"}
+      .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/3.0}s"}
         - if (@saved_scenario.collaborator?(current_user) || current_user&.admin?)
           %ul.details
             %li.scenario-version.stick-right
               %ul
                 - unless version['frozen']
-                  %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_text") }
+                  %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_description") }
                 - unless version['scenario_id'].to_i == @saved_scenario.scenario_id
                   %li
                     = link_to load_scenario_path(version['scenario_id']) do
@@ -25,7 +25,7 @@
                         .restore-version.fa.fa-backward.tooltip{ title: t("scenario.restore") }
         .main-info
           .fa.fa-circle
-          = t('last_ago', when: time_ago_in_words(version['last_updated_at']))
+          = t('last_updated_ago', when: time_ago_in_words(version['last_updated_at']))
           %span= version['user']
         - unless version['frozen']
           .description

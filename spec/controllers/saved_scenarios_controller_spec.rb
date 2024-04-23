@@ -433,7 +433,7 @@ describe SavedScenariosController, vcr: true do
     before do
       sign_in(user)
       session[:setting] = Setting.new
-      allow(RestoreSavedScenario).to receive(:call)
+      allow(RestoreSavedScenario).to receive(:call).and_return(ServiceResult.success)
     end
 
     context 'with an owned saved scenario' do

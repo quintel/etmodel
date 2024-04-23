@@ -62,7 +62,7 @@ class UpdateSavedScenario
   end
 
   def tag_new_version
-    CreateAPIScenarioVersionTag.call(http_client, scenario_id, 'another version')
+    CreateAPIScenarioVersionTag.call(http_client, scenario_id, '')
   end
 
   def failure

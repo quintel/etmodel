@@ -319,7 +319,11 @@ en:
         Solar water collectors are installed on rooftops or in asphalt for parking lots, for example.
         A solar water collector is often combined with a gas-fired central heating boiler that heats
         water further if necessary (especially in winter). It can also be combined
-        with a heat pump. \r\n<br/
+        with a heat pump.
+        </br></br>
+        Note that solar thermal panels can only provide 13% of annual hot water demand.
+        Setting this slider to 100% therefore means that the remaining 87% of annual hot water demand is
+        provided by other technologies.
     buildings_useful_demand_for_appliances:
       title: Appliances efficiency
       short_description: ''

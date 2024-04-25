@@ -304,11 +304,16 @@ nl:
     buildings_space_heater_solar_thermal_share:
       title: Zonthermische collectoren
       short_description: ''
-      description: Een zonneboiler maakt warm water via zonthermische panelen op je
+      description: |
+        Een zonneboiler maakt warm water via zonthermische panelen op je
         dak. Deze warmte kan gebruikt worden om een gebouw te verwarmen. Zonneboilers
         worden vaak op daken of in het asfalt van parkeerterreinen geplaatst. Een
         zonneboiler wordt vaak met een gas CV-ketel gecombineerd om het water (in
         de winter) verder op te warmen. Ook met een warmtepomp gaat het goed samen.
+        </br></br>
+        Let op:  zonneboilers met zonthermische panelen kunnen slechts 13% van de jaarlijkse vraag aan warm tapwater invullen.
+        Het instellen van dit schuifje op 100% betekent dus dat de overgebleven 87% van de jaarlijkse vraag
+        door andere technologieën wordt ingevuld.
     buildings_useful_demand_for_appliances:
       title: Apparaten efficiëntie
       short_description: ''

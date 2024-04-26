@@ -509,85 +509,78 @@ en:
         <a href="/scenario/supply/heat/allocation-of-power-to-heat">power-to-heat</a>.
         See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
         target =\"_blank\">documentation</a> for more information.
+    supply_hydrogen_order:
+      title: Merit order of dispatchable hydrogen production
+      short_description:
+      description: |
+        Below it is possible to change the (merit) order of dispatchable hydrogen sources: which hydrogen source
+        is switched on first in case of hydrogen shortage caused by inflexible demand? See our 
+        <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentation</a>
+        for more information on the calculation principles of the merit order of dispatchable production. 
+    demand_hydrogen_order:
+      title: Merit order of dispatchable hydrogen demand
+      short_description:
+      description: |
+        Below it is possible to change the (merit) order of dispatchable hydrogen demand: which hydrogen demand
+        category is switched on first in case of hydrogen oversupply caused by inflexible production? See our 
+        <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentation</a>
+        for more information on the calculation principles of the merit order of dispatchable demand. 
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:
       description: |
-        There is a growing interest in using hydrogen as energy carrier,
-        for instance for heat production, electricity production, transport fuel or
-        as a feedstock for the chemical industry. The ETM allows you to explore a
-        future hydrogen economy by allowing you to use hydrogen for:
+        Hydrogen demand in the ETM can be set in the following sections:
         <ul>
         <li><a href=/scenario/supply/electricity_renewable/hydrogen-plants >electricity production</a></li>
         <li><a href=/scenario/supply/heat/heat-sources>district heating</a> for households, buildings and agriculture</li>
-        <li><a href=/scenario/demand/households/space-heating-and-hot-water>hybrid heat pumps in households</a></li>
+        <li>hybrid heat pumps in <a href=/scenario/demand/households/space-heating-and-hot-water>households</a>
+        and <a href=/scenario/demand/buildings/space-heating>buildings</a></li>
         <li>heat production in <a href=/scenario/demand/industry/refineries>industry</a> and <a href=/scenario/demand/agriculture/heat>agriculture</a></li>
         <li><a href=/scenario/demand/industry/fertilizers>fertilizer production</a> (as feedstock)</li>
         <li> national transport (<a href=/scenario/demand/transport_passenger_transport/car-technology>cars</a>,
-        <a href=/scenario/demand/transport_passenger_transport/bus-technology>busses</a>,
+        <a href=/scenario/demand/transport_passenger_transport/bus-technology>buses</a>,
         <a href=/scenario/demand/transport_freight_transport/truck-technology>trucks</a>
         and <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>inland ships</a>)</li>
         <li> international transport (<a href=/scenario/demand/transport_international_transport/international-navigation-technology>maritime ships</a>)</li>
         </ul>
+        </br>In the <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand>merit order of dispatchable hydrogen demand</a> 
+        section, the order in which dispatchable hydrogen demand technologies are deployed can be adjusted. 
     supply_hydrogen_production:
       title: Hydrogen production
       short_description:
-      description: "Below you can specify how hydrogen will be produced in the future.
-        The ETM offers the following options: electrolysis of wind and solar power
-        from wind/solar farms dedicated to hydrogen production; steam methane reforming
-        (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); ammonia reforming:
-        gasification of biomass (with and without <a href='/scenario/emissions/ccus/capture-of-co2'>carbon capture</a>); import from abroad.\r\n<br
-        /><br />\r\nIn addition, it is possible to convert electricity into
-        hydrogen using 'power-to-gas' (see the <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
-        >power-to-gas slide</a>).
-        Hydrogen for the fertilizer industry can also be produced on-site since this industry already has large hydrogen
-        production plants built (see the <a href=\"/scenario/demand/industry/fertilizers\"
-        >fertilizer industry slide</a>).\r\n<br><br />\r\nFor more information see
-        our <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
-        target=\"_blank\">documentation</a>.
-        \r\n<br><br />\r\nPlease note that when referring to hydrogen, unless stated otherwise, it is implied that gaseous hydrogen is meant."
+      description: |
+        Below you can specify how hydrogen will be produced in the future. A distinction is made in must-run
+        and dispatchable production technologies. In the 
+        <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order of dispatchable hydrogen production</a> 
+        section, the order in which dispatchable production technologies are deployed can be adjusted. 
+        </br></br>For more information on how hydrogen supply and demand are modelled in the ETM, see
+        our <a href="https://docs.energytransitionmodel.com/main/hydrogen#merit-orders" target=\"_blank\">documentation</a>.
     supply_hydrogen_transport:
       title: Hydrogen transport
       short_description:
-      description: "How will hydrogen be transported in the future? At the moment,
-        two distribution methods seem to be the most viable: compressed hydrogen transport
-        via pipelines and via trucks.\r\n<br/><br/>\r\nTransport via pipelines can
-        be relatively cheap, especially if distribution distances are long, the volume
-        of the distributed hydrogen is large and demand for hydrogen is concentrated.
-        Trucks, on the other hand, are much more flexible than pipelines. They are
-        suitable for delivering smaller quantities of hydrogen and for delivery to
-        remote areas.\r\n<br/><br/>\r\nBelow, you can choose the percentage of total
-        hydrogen supply in your scenario that is transported by pipelines and by trucks.
-        The costs of both technologies can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
-        >costs section</a>."
+      description: |
+        How will hydrogen be transported in the future? The ETM assumes that all hydrogen is transported through
+        pipelines. Below, it is possible to set the share that will be transported by trucks after
+        pipeline distribution. 
     supply_hydrogen_storage:
       title: Hydrogen storage
       short_description:
-      description: "The ETM calculates hydrogen demand and supply on an hourly-basis
-        which makes it possible to identify moments of excess hydrogen production
-        and shortages. The ETM ensures that hydrogen supply matches demand for every
-        hour per year in your scenario. It does so by automatically storing excess
-        hydrogen production in a buffer, drawing from this buffer at demand peaks
-        and by importing/exporting any shortage/excess of hydrogen. \r\n<br><br />\r\nThe
-        storage volume that is needed for that is shown in the chart on the right.
-        The costs for storage can be adjusted in the <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
-        >costs section</a>."
+      description: |
+        In this section, the hydrogen storage volume and relative storage capacity of salt caverns 
+        and depleted gas fields can be set. The ETM does not take into account flexibility in the form of linepack (see 
+        <a href="https://docs.energytransitionmodel.com/main/hydrogen#hydrogen-storage" target=\"_blank\">documentation</a>).
     supply_ammonia_production:
       title: Ammonia production
       short_description:
       description: |
-        Ammonia as an energy carrier has advantageous transport and storage properties and can be produced
-        without generating carbon emissions. This makes it a potentially effective carrier to
-        facilitate global transport of large (renewable) energy volumes. You can determine
-        how much ammonia you want to import in your scenario with the slider below. </br></br>
         Ammonia can then be converted into hydrogen through
         <a href="/scenario/supply/hydrogen/hydrogen-production"> ammonia reforming</a>.
         You can however also use ammonia directly as a transport fuel (for both
         <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology">domestic</a> and
         <a href="/scenario/demand/transport_international_transport/international-navigation-technology">international</a>
-        navigation). Currently virtually all ammonia is produced on-site
+        navigation). Currently, the ETM assumes all ammonia is produced on-site
         in the <a href="/scenario/demand/industry/fertilizers">fertilizer industry</a>. This local
-        production can also be replaced by centralized import. 
+        production can also be replaced by centralized import which can be set below. 
     supply_infrastructure_high_voltage_network:
       title: High voltage network
       short_description: ''

@@ -430,7 +430,7 @@ nl:
     supply_heat_storage_ht:
       title: "(Seizoens)opslag van warmte"
       short_description:
-      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+      description: "Scenario's met veel 'must-run' en volatiele warmtebronnen zoals
         zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
         in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
         om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
@@ -455,7 +455,7 @@ nl:
     supply_heat_storage_mt:
       title: "(Seizoens)opslag van warmte"
       short_description:
-      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+      description: "Scenario's met veel 'must-run' en volatiele warmtebronnen zoals
         zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
         in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
         om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
@@ -480,7 +480,7 @@ nl:
     supply_heat_storage_lt:
       title: "(Seizoens)opslag van warmte"
       short_description:
-      description: "Scenario's met veel 'must run' en volatiele warmtebronnen zoals
+      description: "Scenario's met veel 'must-run' en volatiele warmtebronnen zoals
         zonthermie, geothermie of restwarmte, hebben vaak een aanzienlijke warmteproductie
         in uren met geen of weinig warmtevraag. (Seizoens)opslag stelt je in staat
         om deze warmte op te slaan en op een later moment in te zetten. Hierdoor is
@@ -554,18 +554,32 @@ nl:
         <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
         Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
         target =\"_blank\">documentatie</a> voor meer informatie.
+    supply_hydrogen_order:
+      title: Merit order van regelbare waterstofproductie
+      short_description:
+      description: |
+        Hieronder kan de volgorde worden ingesteld waarin regelbare waterstofproductie 
+        wordt ingezet: welke productiemethode springt er als eerste aan als er een waterstoftekort is
+        als gevolg van inflexibele vraag? Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentatie</a> 
+        voor meer informatie over de rekenprincipes van de merit order van regelbare waterstofproductie. 
+    demand_hydrogen_order:
+      title: Merit order van regelbare waterstofvraag
+      short_description:
+      description: |
+        Hieronder kan de volgorde worden ingesteld waarin regelbare waterstofvraag 
+        wordt ingezet: welke regelbare vraag springt er als eerste aan als er een waterstofoverschot is
+        als gevolg van inflexibele productie? Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentatie</a> 
+        voor meer informatie over de rekenprincipes van de merit order van regelbare waterstofvraag. 
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:
       description: |
-        Er is een groeiende interesse in het gebruik van waterstof als
-        energiedrager, bijvoorbeeld voor warmteproductie, elektriciteitsproductie,
-        transportbrandstof of als grondstof in de chemie. In het ETM kun je een toekomstige
-        waterstofeconomie verkennen door waterstof in te zetten voor:
+        Vraag naar waterstof in het ETM kan worden ingesteld in de volgende secties:
         <ul>
         <li><a href=/scenario/supply/electricity_renewable/hydrogen-plants >elektricititeitsproductie</a></li>
         <li><a href=/scenario/supply/heat/heat-sources>warmtenetten</a> voor huishoudens, gebouwen en landbouw</li>
-        <li><a href=/scenario/demand/households/space-heating-and-hot-water>hybride warmtepompen voor huishoudens</a></li>
+        <li>hybride warmtepompen voor <a href=/scenario/demand/households/space-heating-and-hot-water>huishoudens</a>
+        en <a href=/scenario/demand/buildings/space-heating>gebouwen</a></li>
         <li>warmteproductie in <a href=/scenario/demand/industry/refineries>industrie</a> en <a href=/scenario/demand/agriculture/heat>landbouw</a></li>
         <li><a href=/scenario/demand/industry/fertilizers>kunstmestproductie</a> (als grondstof)</li>
         <li>nationaal transport (<a href=/scenario/demand/transport_passenger_transport/car-technology>auto's</a>,
@@ -574,70 +588,44 @@ nl:
         en <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>binnenvaart</a>)</li>
         <li>internationaal transport (<a href=/scenario/demand/transport_international_transport/international-navigation-technology>scheepvaart</a>)</li>
         </ul>
+        </br>Onder <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand>merit order van regelbare waterstofvraag</a>
+        kan de volgorde worden aangepast waarin de regelbare waterstofvraagtechnologieën worden ingezet.
     supply_hydrogen_production:
       title: Waterstofproductie
       short_description:
-      description: "In dit gedeelte kun je selecteren hoe de waterstof geproduceerd
-        wordt in de toekomst. Het ETM biedt de volgende opties: elektrolyse van wind-
-        en zonnestroom van wind/zonneparken; stoomreforming van aardgas (met of zonder
-        <a href='/scenario/emissions/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
-        reforming van ammoniak;
-        vergassing van biomassa (met of zonder
-        <a href='/scenario/emissions/ccus/capture-of-co2'>CO<sub>2</sub>-afvang</a>);
-        import uit het buitenland.\r\n<br /><br />\r\nJe
-        kunt er ook voor kiezen om elektriciteit om te zetten in waterstof
-        (zie de sectie <a href=\"/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen\"
-        >power-to-gas</a>). Dit kan alleen als er in jouw scenario momenten in het
-        jaar zijn waarop de elektriciteitsproductie hoger is dan de vraag. Daarnaast
-        is het in de kunstmestindustrie mogelijk om lokaal waterstof te produceren.
-        Deze industrie beschikt op dit moment al over waterstoffabrieken (zie <a href=\"/scenario/demand/industry/fertilizers\"
-        >kunstmestindustrie</a>).\r\n<br> <br/>\r\nMeer informatie is te vinden in
-        de <a href=\"https://docs.energytransitionmodel.com/main/hydrogen\"
-        target=\"_blank\">documentatie</a>.
-        \r\n<br><br />\r\nLet op dat bij verwijzing naar waterstof, tenzij anders vermeld, wordt bedoeld dat het om gasvormige waterstof gaat."
+      description: |
+        In dit gedeelte kun je instellen hoe waterstof geproduceerd wordt in de toekomst. 
+        Er wordt onderscheid gemaakt tussen niet-regelbare/volatiele en regelbare productietechnologieën. 
+        Onder <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order van regelbare waterstofproductie</a>
+        kan de volgorde worden aangepast waarin de regelbare productietechnologieën worden ingezet.
+        </br></br>Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen#merit-orders" target=\"_blank\">documentatie</a>
+        voor meer informatie over hoe aanbod van en vraag naar waterstof worden gemodelleerd in het ETM.        
     supply_hydrogen_transport:
       title: Waterstoftransport
       short_description:
-      description: "Hoe zal waterstof getransporteerd worden in de toekomst? Op dit
-        moment lijken twee distributiemethodes het meest voor de hand te liggen: waterstof-onder-druk
-        via pijpleidingen en met vrachtwagens.\r\n<br/><br/>\r\nTransport via pijpleidingen
-        is relatief goedkoop, vooral als de distributie-afstanden langer zijn, het
-        volume van waterstof in je scenario groot is en als de vraag naar waterstof
-        zich op een geconcentreerd gebied bevindt (bijvoorbeeld een industrieterrein).
-        Transport via vrachtwagens is meer flexibel. Het gebruik van vrachtwagens
-        ligt meer voor de hand voor distributie van kleinere hoeveelheden waterstof
-        of als de afnemers over een groter gebied verspreid zijn. \r\n<br/><br/>\r\nHieronder
-        kun je aangeven hoeveel van het totale waterstofaanbod in je scenario via
-        pijpleidingen getransporteerd wordt en hoeveel via vrachtwagens. De kosten
-        van beide technologieën kunnen aangepast worden bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-transport\"
-        >kosten</a>."
+      description: |
+        Hoe wordt waterstof getransporteerd in de toekomst? Het ETM gaat ervan uit dat alle waterstof 
+        wordt getransporteerd via pijpleidingen. Hieronder is het mogelijk om het aandeel in te stellen dat 
+        per vrachtwagen wordt getransporteerd na transport via pijpleidingen. 
     supply_hydrogen_storage:
       title: Waterstofopslag
       short_description:
-      description: "Het ETM modelleert waterstofvraag en -aanbod op uurbasis. Het
-        ETM zorgt ervoor dat waterstofvraag en -aanbod met elkaar in balans zijn voor
-        ieder uur per jaar in jouw scenario. Het ETM slaat productieoverschotten automatisch
-        op in een buffer, gebruikt waterstof uit deze buffer tijdens vraagpieken en
-        importeert/exporteert eventuele tekorten/overschotten. \r\n<br><br />\r\nHet
-        opslagvolume dat daarvoor nodig is, is te zien in de grafiek hiernaast. De
-        opslagkosten kunnen worden aangepast bij <a href=\"/scenario/costs/costs_hydrogen/hydrogen-storage\"
-        >kosten</a>."
+      description: |
+        Hier kan het opslagvolume en de relatieve opslagcapaciteit worden ingesteld
+        voor zoutcavernes en lege gasvelden. Het ETM houdt geen rekening met flexibiliteit in de vorm van linepack (zie 
+        <a href="https://docs.energytransitionmodel.com/main/hydrogen#hydrogen-storage" target=\"_blank\">documentatie</a>).
     supply_ammonia_production:
       title: Ammoniakproductie
       short_description:
       description: |
-        Ammoniak heeft als energiedrager gunstige eigenschappen voor transport en opslag en kan worden geproduceerd
-        zonder CO<sub>2</sub>-emissies te genereren. Dit maakt het een potentieel geschikte drager om
-        grootschalig globaal transport van (hernieuwbare) energievolumes te faciliteren. Met onderstaand schuifje
-        kun je bepalen hoeveel ammoniak je wilt importen importeren in jouw scenario. </br></br>
-        Ammoniak kan vervolgens worden omgezet in waterstof door
+        Ammoniak kan  worden omgezet in waterstof door
         <a href="/scenario/supply/hydrogen/hydrogen-production"> ammoniak reforming</a>. Het kan echter ook
         direct worden toegepast als transportbrandstof (in de
         <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology">binnenvaart</a>
         en de <a href="/scenario/demand/transport_international_transport/international-navigation-technology">
-        internationale scheepvaart</a>). Momenteel wordt vrijwel alle ammoniak on-site geproduceerd in de
+        internationale scheepvaart</a>). Momenteel gaat het ETM ervan uit dat vrijwel alle ammoniak on-site wordt geproduceerd in de
         <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a>. Deze lokale productie kan ook
-        worden vervangen door centrale import.
+        worden vervangen door centrale import, welke hieronder kan worden ingesteld.
     supply_infrastructure_high_voltage_network:
       title: Hoogspanningsnetwerk
       short_description: ''

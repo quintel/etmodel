@@ -62,8 +62,9 @@ industry_chemicals_fertilizers_captured_processes_co2: https://github.com/quinte
 industry_chemicals_fertilizers_captured_combustion_co2: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/molecules/industry/industry_chemicals_fertilizers_captured_combustion_co2.xlsx?raw=true
 industry_other_paper_captured_co2: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/molecules/industry/industry_other_paper_captured_co2.xlsx?raw=true
 industry_other_food_captured_co2: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/molecules/industry/industry_other_food_captured_co2.xlsx?raw=true
-energy_hydrogen_steam_methane_reformer_ccs: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_steam_methane_reformer_ccs.xlsx?raw=true
-energy_hydrogen_steam_methane_reformer: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_steam_methane_reformer.xlsx?raw=true
+energy_hydrogen_steam_methane_reformer_ccs_must_run: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_steam_methane_reformer_ccs_must_run.xlsx?raw=true
+energy_hydrogen_steam_methane_reformer_must_run: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_steam_methane_reformer_must_run.xlsx?raw=true
+energy_hydrogen_steam_methane_reformer_dispatchable: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_steam_methane_reformer_dispatchable.xlsx?raw=true
 energy_heat_heatpump_water_water_electricity: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_heat_heatpump_water_water_electricity.converter.xlsx?raw=true
 agriculture_heatpump_water_water_electricity: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/agriculture/agriculture_heatpump_water_water_electricity.xlsx?raw=true
 agriculture_heatpump_water_water_ts_electricity: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/agriculture/agriculture_heatpump_water_water_ts_electricity.converter.xlsx?raw=true
@@ -102,6 +103,8 @@ energy_hydrogen_biomass_gasification_ccs: https://github.com/quintel/etdataset-p
 energy_hydrogen_biomass_gasification: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_biomass_gasification.xlsx?raw=true
 energy_hydrogen_electrolysis_wind_electricity: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_electrolysis_wind_electricity.xlsx?raw=true
 energy_hydrogen_electrolysis_solar_electricity: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_electrolysis_solar_electricity.xlsx?raw=true
+energy_hydrogen_storage_depleted_gas_field: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_storage_depleted_gas_field.xlsx?raw=true
+energy_hydrogen_storage_salt_cavern: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_storage_salt_cavern.xlsx?raw=true
 buildings_cooling_heatpump_air_water_network_gas: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/buildings/buildings_cooling_heatpump_air_water_network_gas.converter.xlsx?raw=true
 buildings_cooling_collective_heatpump_water_water_ts_electricity: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/buildings/buildings_cooling_collective_heatpump_water_water_ts_electricity.converter.xlsx?raw=true
 industry_other_food_heater_electricity: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/industry/industry_other_food_heater_electricity.converter.xlsx?raw=true
@@ -168,8 +171,11 @@ buildings_space_heater_hybrid_hydrogen_heatpump_air_water_electricity: https://g
 transport_ship_using_hydrogen: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/transport/transport_ship_using_hydrogen.xlsx?raw=true
 transport_ship_using_electricity: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/transport/transport_ship_using_electricity.xlsx?raw=true
 transport_ship_using_ammonia: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/transport/transport_ship_using_ammonia.xlsx?raw=true
-energy_hydrogen_ammonia_reformer: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_ammonia_reformer.xlsx?raw=true
-energy_hydrogen_autothermal_reformer: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_autothermal_reformer.xlsx?raw=true
+energy_hydrogen_ammonia_reformer_must_run: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_ammonia_reformer_must_run.xlsx?raw=true
+energy_hydrogen_ammonia_reformer_dispatchable: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_ammonia_reformer_dispatchable.xlsx?raw=true
+energy_hydrogen_autothermal_reformer_must_run: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_autothermal_reformer_must_run.xlsx?raw=true
+energy_hydrogen_autothermal_reformer_dispatchable: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_autothermal_reformer_dispatchable.xlsx?raw=true
+energy_hydrogen_autothermal_reformer_ccs_must_run: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_hydrogen_autothermal_reformer_ccs_must_run.xlsx?raw=true
 energy_power_combined_cycle_coal_gas: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/energy/energy_power_combined_cycle_coal_gas.xlsx?raw=true
 agriculture_chp_engine_network_gas_must_run: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/agriculture/agriculture_chp_engine_network_gas.xlsx?raw=true
 agriculture_chp_engine_network_gas_dispatchable: https://github.com/quintel/etdataset-public/blob/master/nodes_source_analyses/energy/agriculture/agriculture_chp_engine_network_gas.xlsx?raw=true

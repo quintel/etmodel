@@ -1,7 +1,7 @@
 ---
 - label: energy_hydrogen_biomass_gasification_ccs
   color: "#A4B0BE"
-  order_by: 1
+  order_by: 100
   group: 
   show_at_first: 
   is_target_line: 
@@ -13,7 +13,7 @@
   key: energy_hydrogen_biomass_gasification_ccs_hydrogen_cost_capacity
 - label: energy_hydrogen_biomass_gasification
   color: "#CEDDC2"
-  order_by: 2
+  order_by: 110
   group: ''
   show_at_first: false
   is_target_line: false
@@ -25,7 +25,7 @@
   key: energy_hydrogen_biomass_gasification_hydrogen_cost_capacity
 - label: energy_hydrogen_flexibility_p2g_electricity
   color: "#786FA6"
-  order_by: 3
+  order_by: 120
   group: 
   show_at_first: 
   is_target_line: 
@@ -37,7 +37,7 @@
   key: energy_hydrogen_flexibility_p2g_electricity_hydrogen_cost_capacity
 - label: energy_hydrogen_solar_pv_solar_radiation
   color: "#FDE97B"
-  order_by: 4
+  order_by: 130
   group: ''
   show_at_first: false
   is_target_line: false
@@ -47,57 +47,81 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: energy_hydrogen_solar_pv_solar_radiation_hydrogen_cost_capacity
-- label: energy_hydrogen_steam_methane_reformer_ccs
+- label: energy_hydrogen_steam_methane_reformer_ccs_must_run
   color: "#DFE4EA"
-  order_by: 5
+  order_by: 140
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_steam_methane_reformer_ccs_h2_chart
+  gquery: energy_hydrogen_steam_methane_reformer_ccs_must_run_h2_chart
   is_1990: false
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
-  key: energy_hydrogen_steam_methane_reformer_ccs_hydrogen_cost_capacity
-- label: energy_hydrogen_steam_methane_reformer
+  key: energy_hydrogen_steam_methane_reformer_ccs_must_run_hydrogen_cost_capacity
+- label: energy_hydrogen_steam_methane_reformer_must_run
+  color: "#8A8F94"
+  order_by: 150
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_steam_methane_reformer_must_run_h2_chart
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_steam_methane_reformer_must_run_hydrogen_cost_capacity
+- label: energy_hydrogen_steam_methane_reformer_dispatchable
   color: "#BEC3C8"
-  order_by: 6
+  order_by: 160
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_steam_methane_reformer_h2_chart
+  gquery: energy_hydrogen_steam_methane_reformer_dispatchable_h2_chart
   is_1990: false
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
-  key: energy_hydrogen_steam_methane_reformer_hydrogen_cost_capacity
-- label: energy_hydrogen_autothermal_reformer_ccs
+  key: energy_hydrogen_steam_methane_reformer_dispatchable_hydrogen_cost_capacity
+- label: energy_hydrogen_autothermal_reformer_ccs_must_run
   color: "#D5C6BA"
-  order_by: 7
+  order_by: 170
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_autothermal_reformer_ccs_h2_chart
+  gquery: energy_hydrogen_autothermal_reformer_ccs_must_run_h2_chart
   is_1990: false
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
-  key: energy_hydrogen_autothermal_reformer_ccs_hydrogen_cost_capacity
-- label: energy_hydrogen_autothermal_reformer
+  key: energy_hydrogen_autothermal_reformer_ccs_must_run_hydrogen_cost_capacity
+- label: energy_hydrogen_autothermal_reformer_must_run
+  color: "#82776F"
+  order_by: 180
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_autothermal_reformer_must_run_h2_chart
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_autothermal_reformer_must_run_hydrogen_cost_capacity
+- label: energy_hydrogen_autothermal_reformer_dispatchable
   color: "#A59990"
-  order_by: 8
+  order_by: 190
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_autothermal_reformer_h2_chart
+  gquery: energy_hydrogen_autothermal_reformer_dispatchable_h2_chart
   is_1990: false
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
-  key: energy_hydrogen_autothermal_reformer_hydrogen_cost_capacity
+  key: energy_hydrogen_autothermal_reformer_dispatchable_hydrogen_cost_capacity
 - label: energy_hydrogen_wind_turbine_offshore
   color: "#63A1C9"
-  order_by: 9
+  order_by: 200
   group: 
   show_at_first: 
   is_target_line: 
@@ -107,21 +131,9 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: energy_hydrogen_wind_turbine_offshore_hydrogen_cost_capacity
-- label: energy_imported_hydrogen_backup
-  color: "#A7A1C5"
-  order_by: 10
-  group: 
-  show_at_first: 
-  is_target_line:
-  target_line_position: 
-  gquery: energy_imported_hydrogen_backup_h2_chart
-  is_1990: 
-  dependent_on:
-  output_element_key: hydrogen_cost_capacity
-  key: energy_imported_hydrogen_backup_hydrogen_cost_capacity
-- label: imported_hydrogen
+- label: energy_imported_hydrogen_baseload
   color: "#C6C2DA"
-  order_by: 11
+  order_by: 210
   group: ''
   show_at_first: false
   is_target_line: false
@@ -131,16 +143,87 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: imported_hydrogen_hydrogen_cost_capacity
-- label: energy_hydrogen_ammonia_reformer
-  color: "#1ce6d6"
-  order_by: 12
+- label: energy_imported_hydrogen_backup
+  color: "#A7A1C5"
+  order_by: 220
+  group: 
+  show_at_first: 
+  is_target_line:
+  target_line_position: 
+  gquery: energy_imported_hydrogen_backup_h2_chart
+  is_1990: 
+  dependent_on:
+  output_element_key: hydrogen_cost_capacity
+  key: energy_imported_hydrogen_backup_hydrogen_cost_capacity
+- label: energy_hydrogen_ammonia_reformer_must_run
+  color: "#109C91"
+  order_by: 230
   group: 
   show_at_first: 
   is_target_line: 
   target_line_position: 
-  gquery: energy_hydrogen_ammonia_reformer_h2_chart
+  gquery: energy_hydrogen_ammonia_reformer_must_run_h2_chart
   is_1990: 
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
-  key: energy_hydrogen_ammonia_reformer_hydrogen_cost_capacity
-
+  key: energy_hydrogen_ammonia_reformer_must_run_hydrogen_cost_capacity
+- label: energy_hydrogen_ammonia_reformer_dispatchable
+  color: "#1ce6d6"
+  order_by: 240
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_ammonia_reformer_dispatchable_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_ammonia_reformer_dispatchable_hydrogen_cost_capacity
+- label: hydrogen_storage_salt_cavern
+  color: "#5e9aa4"
+  order_by: 250
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_storage_salt_cavern_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_storage_salt_cavern_hydrogen_cost_capacity
+- label: hydrogen_storage_depleted_gas_field
+  color: "#87CEEB"
+  order_by: 260
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_storage_depleted_gas_field_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_storage_depleted_gas_field_hydrogen_cost_capacity
+- label: energy_hydrogen_lohc_reformer
+  color: "#8373D0"
+  order_by: 270
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_lohc_reformer_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_lohc_reformer_hydrogen_cost_capacity
+- label: energy_hydrogen_liquid_hydrogen_regasifier
+  color: "#524A79"
+  order_by: 280
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_liquid_hydrogen_regasifier_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_liquid_hydrogen_regasifier_hydrogen_cost_capacity

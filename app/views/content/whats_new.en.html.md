@@ -1,6 +1,8 @@
 # What's new in the Energy Transition Model?
+
 ___
-# April 2024
+
+# May 2024
 
 ### Addition of Bioenergy with Carbon Capture (Utilisiation) and Storage (BECC(U)S)
 
@@ -10,6 +12,33 @@ The second being, a captured CO2 price. Now, CO2 that is captured can be sold to
 The third being dispatchable biomass plants. Since the price for BECC(U)S plants can become lower through the negative emissions, dispatchable BECC(U)S plants might be an interesting flexible power option.
 
 Investigate it yourself!
+
+
+### Hydrogen improvements
+
+The hydrogen section of the model has been improved! 
+Now, flexible production options have been added. 
+Steam methane reformers, ammonia reformers and autothermal reformers can be installed with a dispatchable capacity in addition to the must-run variant of these hydrogen reformer techniques. 
+Explore these changes in the **[Hydrogen production](scenario/supply/hydrogen/hydrogen-production)** section.
+
+Next to these flexible producers, the modelling of hydrogen storage has been refined.
+Now, users can use salt caverns and depleted gas fields as storage options in the model.
+In addition, users can set both the volume and capacity for these storage options. 
+These features can be found in the **[Hydrogen storage](scenario/supply/hydrogen/hydrogen-production)** 
+section.
+
+Together the dispatchable and storage production facilities make up for the flexible hydrogen production routes within the ETM. 
+Which production route should be used first, can be installed by the user via the new hydrogen production merit order. The merit order of production can be set in the **[Merit order of dispatchable hydrogen production](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** section.
+
+
+-> <img src="/assets/pages/whats_new/hydrogen_production_order_en.png" width="600" /> <-
+
+The flexible demand options, which are the two hydrogen storage options for now, can be installed via the new hydrogen demand merit order.
+The merit order of demand can be set in the **[Merit order of dispatchable hydrogen demand](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** section.
+
+-> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="600" /> <-
+
+___
 
 # March 2024
 
@@ -35,7 +64,8 @@ The ETM now contains a chart displaying the land use of solar panels and wind tu
 -> <img src="/assets/pages/whats_new/land_use_of_solar_and_wind_en.png" width="600" /> <-
 
 ### Propane added as constituent of network gas
-Users of the ETM can now add propane as a constituent carrier in network gas. Addition of propane can be required to increase the energy content of network gas when mixing in other gases with a lower calorific value, such as biogas. 
+Users of the ETM can now add propane as a constituent carrier in network gas. Addition of propane can be required to increase the energy content of network gas when mixing in other gases with a lower calorific value, such as biogas.
+___
 
 # January 2024
 

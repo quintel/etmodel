@@ -169,9 +169,13 @@ en:
     data_export_hydrogen:
       title: Hourly curves for hydrogen
       short_description:
-      description: |-
-        Below you can download information about hydrogen demand, supply and storage per hour in your scenario.
-
+      description: |
+        Below you can download two exports concering hydrogen.
+        <br/><br/>
+        The "Hydrogen demand, production and storage per hour" export contains information about hydrogen demand, supply and storage per hour in your scenario.
+        <br/><br/>
+        The "Hydrogen integral costs" export contains the integral costs of hydrogen production, the production of hydrogen, 
+        the production cost per MWh for each generation method and the production curve of hydrogen for each generation method on an hourly basis.
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/curves/hydrogen.csv" target="_blank">
@@ -179,7 +183,13 @@ en:
               <span class="filetype">750KB CSV</span>
             </a>
           </li>
-        </ul>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank">
+              <span class="name">Hydrogen integral costs</span>
+              <span class="filetype">2MB CSV</span>
+            </a>
+          </li>
+        </ul>    
     data_export_molecule_flows:
       title: Yearly CCUS flows
       short_description:

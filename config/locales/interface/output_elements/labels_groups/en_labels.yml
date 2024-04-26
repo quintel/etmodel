@@ -19,7 +19,7 @@ en:
       hydrogen_cost_capacity: "There is no hydrogen demand and/or supply in your scenario"
       hydrogen_demand: "There is no hydrogen demand and/or supply in your scenario"
       hydrogen_production: "There is no hydrogen demand and/or supply in your scenario"
-      hydrogen_storage: "There is no hydrogen demand and/or supply in your scenario"
+      hydrogen_storage: "There is no hydrogen input or output in hydrogen storage technologies"
       network_gas_production_for_transport: "There is no demand for network gas for transport"
       network_gas_production_for_fertilizers: "There is no demand for network gas for the fertilizer industry"
       network_gas_cost_capacity: "There is no network gas demand and/or supply in your scenario"
@@ -134,6 +134,17 @@ en:
       households_space_heater_hybrid_crude_oil_heatpump_air_water_electricity: "Hybrid air heat pump (oil)"
       households_space_heater_network_gas: "Gas-fired heater"
       households_space_heater_wood_pellets: "Wood pellet boiler"
+    hydrogen_supply_order:
+      energy_hydrogen_storage_salt_cavern: "Salt cavern hydrogen storage"
+      energy_hydrogen_storage_depleted_gas_field: "Depleted gas field hydrogen storage"
+      energy_hydrogen_ammonia_reformer_dispatchable: "Ammonia reforming (dispatchable)"
+      energy_hydrogen_autothermal_reformer_dispatchable: "Autothermal reforming (dispatchable)"
+      energy_hydrogen_steam_methane_reformer_dispatchable: "Steam methane reforming (dispatchable)"
+      energy_imported_hydrogen_backup : "Hydrogen import (back-up)"
+    hydrogen_demand_order:  
+      energy_hydrogen_storage_salt_cavern: "Salt cavern hydrogen storage"
+      energy_hydrogen_storage_depleted_gas_field: "Depleted gas field hydrogen storage"
+      energy_export_hydrogen_backup: "Hydrogen export (back-up)"
     hhp_cop_cost:
       x_axis: COP
       y_axis: "€ct / MJ heat"
@@ -257,6 +268,7 @@ en:
       wind: "wind"
       wind_electricity : "wind electricity"
       hydrogen_production: "hydrogen"
+      hydrogen_production_inflexible: "must-run and volatile hydrogen production"
       import: "import"
       geo_ambient: "geothermal & ambient"
       water: "hydropower"
@@ -275,6 +287,7 @@ en:
       heat_demand: 'heat demand'
       residual_heat: "residual heat"
       hydrogen_demand: 'hydrogen demand'
+      hydrogen_demand_inflexible : 'Baseload hydrogen demand'
       hydrogen: "hydrogen"
       hydrogen_gas: "hydrogen (gaseous)"
       hydro_electricity: "hydro electricity"

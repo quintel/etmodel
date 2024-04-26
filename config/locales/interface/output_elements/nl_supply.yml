@@ -190,19 +190,29 @@ nl:
     mekko_of_hydrogen_network:
       title: Vraag en aanbod van het centrale waterstofnet
       short_description: ''
-      description: ''
+      description: |
+        Deze grafiek weergeeft de verschillende categorieën van vraag en aanbod van het centrale 
+        waterstofnet. Het ETM balanceert vraag en aanbod van waterstof zodat deze altijd aan elkaar 
+        gelijk zijn gesteld. Dit betekent dat een overschot aan waterstof wordt geëxporteerd via de export 
+        back-up. Er wordt waterstof geïmporteerd via de import back-up in geval van een tekort aan waterstof. 
     hydrogen_production:
-      title: Waterstofproductie
+      title: Waterstofproductie per uur
       short_description:
       description:
     hydrogen_demand:
-      title: Waterstofvraag
+      title: Waterstofvraag per uur
       short_description:
       description:
     hydrogen_storage:
-      title: Waterstofopslag
-      short_description: ''
-      description: ''
+      title: Opgeslagen waterstofvolume per uur
+      short_description:
+      description: 
+        Deze grafiek toont de waterstofopslagvolumes van zoutcavernes en lege gasvelden gedurende het jaar. 
+        De opslagvolumes kunnen op jaarbasis, per maand of per week worden bekeken.
+    hydrogen_production_cost_curve:
+      title: Waterstofproductiekosten per uur
+      short_description:
+      description:  
     co2_intensity_of_hydrogen_production:
       title: CO<sub>2</sub>-intensiteit per type waterstofproductie
       short_description:
@@ -234,8 +244,12 @@ nl:
     hydrogen_cost_capacity:
       title: Productiecapaciteiten en kosten van waterstof
       short_description:
-      description:
-
+      description: |
+        Deze grafiek geeft het geïnstalleerd vermogen en de productiekosten (in €/MWh) van waterstoftechnologieën in jouw scenario weer. 
+        De technologieën zijn gesorteerd op toenemende productiekosten. Het geïnstalleerd vermogen van een technologie is gedefinieerd 
+        als het waterstofproductievermogen (waterstof ouput vermogen). Let op dat in de grafiek technologieën met geïnstalleerd vermogen, 
+        maar zonder waterstofproductie (deze worden dus niet in werking gezet in het scenario) worden weergegeven met productiekosten van 
+        0 €/MWh. In werkelijkheid zijn de productiekosten per MWh oneindig doordat er geen waterstofproductie is door deze technologie. 
     mekko_of_kerosene_demand_supply:
       title: Vraag en aanbod van kerosine
       short_description: ''

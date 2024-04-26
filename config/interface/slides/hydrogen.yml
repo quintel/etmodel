@@ -1,5 +1,5 @@
 ---
-- general_sub_header: input_capacity
+- general_sub_header: hydrogen_output_capacity
   key: supply_hydrogen_production
   position: 100
   sidebar_item_key: hydrogen
@@ -18,8 +18,16 @@
   position: 130
   sidebar_item_key: hydrogen
   output_element_key: hydrogen_storage
+- key: supply_hydrogen_order
+  position: 140 
+  sidebar_item_key: hydrogen
+  output_element_key: hourly_flexibility_hydrogen
+- key: demand_hydrogen_order
+  position: 150 
+  sidebar_item_key: hydrogen
+  output_element_key: hourly_flexibility_hydrogen
 - general_sub_header: input_capacity
   key: supply_ammonia_production
-  position: 140
+  position: 160
   sidebar_item_key: hydrogen
   output_element_key: mekko_of_ammonia_demand_supply

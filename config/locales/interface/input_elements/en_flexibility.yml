@@ -1284,10 +1284,14 @@ en:
       title: Dispatchable synthetic kerosene for industry
       short_description:
       description: |
-        This slider sets the maximum price the dispatchable kerosene
-        href="/scenario/emissions/ccus/utilisation-and-storage-of-co2"> industry </a> 
-        are willing to pay for their electricity. Note that for this slider to have an effect,
-        capacity of this industry needs to be installed. </br></br>
+        Electricity, hydrogen and carbon dioxide can be used to produce synthetic kerosene. In the ETM, 
+        capacity of synthetic kerosene production can be set as a flexible demand technology, which means 
+        that kerosene is only produced when the willingness to pay for electricity for the production process 
+        exceeds the hourly electricity price. </br></br>
+        This slider sets the maximum price the dispatchable synthetic kerosene industry 
+        is willing to pay for electricity required in the production process. Note that for this slider to have an effect,
+        capacity of <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">dispatchable synthetic kerosene production</a> 
+        needs to be set. </br></br>
         A number of charts are available to help you determine the effect of the willingness to pay of kersosene: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>

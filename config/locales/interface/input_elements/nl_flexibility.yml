@@ -1337,11 +1337,17 @@ nl:
       title: Regelbare kerosine voor de industrie
       short_description:
       description: |
-        Deze schuif stelt de maximumprijs in die de inzetbare kerosine-industrie
-        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">bereid is te betalen voor hun elektriciteit</a>.
-        Let op, voor deze schuif om effect te hebben,
-        moet er capaciteit van deze industrie geïnstalleerd zijn.</br></br>
-        Er zijn verschillende grafieken beschikbaar om u te helpen bepalen wat het effect is van de bereidheid om te betalen van kerosine:
+        Elektriciteit, waterstof en koolstofdioxide kunnen worden gebruikt om synthetische kerosine te produceren. 
+        In het ETM kan capaciteit worden ingesteld voor synthetische kerosineproductie als een flexibele
+        vraagtechnologie, wat betekent dat kerosine alleen wordt geproduceerd wanneer de bereidheid om te betalen voor 
+        elektriciteit voor het productieproces hoger is dan de uurlijkse elektriciteitsprijs. 
+        </br></br>Deze schuif stelt de maximumprijs in die producenten van synthetische kerosine 
+        bereid zijn te betalen voor de benodigde elektriciteit in het productieproces. Let op, er moet voor deze schuif 
+        capaciteit geïnstalleerd zijn van de 
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">regelbare synthetische kerosineproductie</a> 
+        om effect te hebben.</br></br>
+        Er zijn verschillende grafieken beschikbaar die inzicht bieden in het effect van de betalingsbereidheid voor elektriciteit 
+        in kerosineproductie:
         </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         Het jaarlijkse gebruik van elektriciteit door flexibele vraagtechnologieën.</a></li>

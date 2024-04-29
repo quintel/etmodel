@@ -173,6 +173,16 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: hourly_flexiblity_electricity_p2p_curve_hourly_flexibility_electricity
+- label: power_to_synthetic_kerosene
+  color: "#74ffff"
+  order_by: 317
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_synthetic_kerosene_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_synthetic_kerosene_curve_hourly_flexibility_electricity
 - label: energy_export_electricity
   color: "#77dd99"
   order_by: 320

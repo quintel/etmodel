@@ -494,14 +494,15 @@ table.default
           margin-bottom: 1px
           marign-left: -2px
         .dropdown-menu, .dropdown-menu::before
-          background: #F6FFF1
-          color: #333
+          background: #333
+          color: #fff
         .dropdown-item
           font-size: inherit
-          color: #333
+          color: #fff
           margin: 0 0.41rem
           border-radius: 5px
           padding: 0.41rem
+          transition: background 0.2s
           svg
             opacity: 0.5
           .fa, span.icon
@@ -804,13 +805,32 @@ table.default
 
 #saved-scenario-history
   .box
-    background: $soft-grey
     color: #333
-    padding: 0.5rem 1rem
     margin-top: 1rem
-    border-radius: 10px
     opacity: 0
     animation: fadeInFromNone 0.5s ease-in forwards
+    display: flex
+    justify-content: space-between
+    .desc-box
+      background: $soft-grey
+      color: #333
+      padding: 0.5rem 1rem
+      border-radius: 4px
+      border-radius: 4px
+      flex-grow: 2
+      position: relative
+      margin-top: -0.625rem
+      &::before
+        background: $soft-grey
+        border-radius: 2px
+        content: ''
+        height: 0.625rem
+        position: absolute
+        transform: rotate(45deg)
+        width: 0.625rem
+        left: -0.25rem
+        top: 0.8rem
+
     .details
       margin-bottom: 0
     .scenario-version
@@ -823,19 +843,30 @@ table.default
         color: $landing-blue
     .main-info
       font-weight: bold
+      margin-right: 1.2rem
       .fa
         color: $landing-grey
         margin-right: 0.5rem
+        font-size: 0.8rem
+        padding-left: 3px
       span
-        color: $landing-blue
         font-weight: normal
         margin-left: 0.5rem
+    .description, .description-flied
+      margin: 0
   .box:first-child
-    background: $light-blue
-    color: black
+    .desc-box
+      background: $light-blue
+      color: #333
+      &::before
+        background: $light-blue
     .main-info
       .fa
         color: $landing-blue
+  textarea
+    resize: none
+    margin-top: 0.5rem
+    width: 80%
 
 @keyframes fadeInFromNone
   0%

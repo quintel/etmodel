@@ -206,11 +206,11 @@ en:
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
         ETDataset</a>.
     output_of_energy_production_synthetic_kerosene_must_run:
-      title: Synthetic kerosene (must-run)
+      title: Synthetic kerosene
       description: |
-        This slider set the amount of synthetic kerosene produced in your scenario. Synthetic
+        This slider sets the amount of synthetic kerosene produced in your scenario. Synthetic
         kerosene is made from captured CO<sub>2</sub>, hydrogen and electricity. If renewable
-        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) is used in
+        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) are used in
         this process, it is possible to produce carbon neutral fuels for (e.g.) aviation.
         <br/><br/>
         If you would like to know the total demand and supply of kerosene in your
@@ -228,11 +228,11 @@ en:
         synthetic kerosene in your scenario, you can reduce the market share of refineries in
         <a href="/scenario/demand/industry/refineries">the Demand → Industry → Refineries section</a>.
     capacity_of_energy_production_synthetic_kerosene_dispatchable:
-      title: Synthetic kerosene (dispatchable)
+      title: Synthetic kerosene
       description: |
-        This slider set the amount of synthetic kerosene produced in your scenario. Synthetic
-        kerosene is made from captured CO<sub>2</sub>, hydrogen and electricity. If renewable
-        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) is used in
+        This slider sets the amount of installed dispatchable capacity for synthetic kerosene production 
+        in your scenario. Synthetic kerosene is made from captured CO<sub>2</sub>, hydrogen and electricity. If renewable
+        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) are used in
         this process, it is possible to produce carbon neutral fuels for (e.g.) aviation.
         <br/><br/>
         If you would like to know the total demand and supply of kerosene in your
@@ -249,7 +249,6 @@ en:
         kerosene in the refineries sector. If you would like to replace fossil kerosene with
         synthetic kerosene in your scenario, you can reduce the market share of refineries in
         <a href="/scenario/demand/industry/refineries">the Demand → Industry → Refineries section</a>.
-
     output_of_energy_production_synthetic_methanol:
       title: Synthetic methanol
       description: |

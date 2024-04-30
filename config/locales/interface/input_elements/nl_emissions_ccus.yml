@@ -245,15 +245,20 @@ nl:
         elektriciteit, groene waterstof en groene CO<sub>2</sub>
         (bijvoorbeeld via Direct Air Capture) worden gebruikt, is het mogelijk om een CO<sub>2</sub>-neutrale
         brandstof te maken voor vliegtuigen.
+        <br/><br/> De betalingsbereidheid (willingness to pay) voor regelbare synthetische kerosineproductie 
+        kan worden ingesteld in de 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-industry">
+        flexibiliteitssectie</a>. 
         <br/><br/>Voor het instellen van deze schuif is het handig om te weten wat de totale
-        vraag en aanbod van kerosine in jouw scenario is. Bekijk hiervoor
-        <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"mekko_of_kerosene_demand_supply\"\r\n>deze</a> grafiek.
-        Een overschot aan kerosineproductie wordt door het ETM automatisch geëxporteerd. Bij een tekort
-        wordt kerosine uit het buitenland gehaald.
+        vraag en aanbod van kerosine in jouw scenario is. Bekijk hiervoor de grafiek
+        <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">
+        vraag en aanbod van kerosine</a>. Een overschot aan kerosineproductie wordt door het ETM 
+        automatisch geëxporteerd. Bij een tekort wordt kerosine uit het buitenland gehaald.
         <br/><br/>
         De energievraag van internationale luchtvaart wordt standaard niet meegenomen in het ETM.
-        Deze aanname kun je veranderen bij <a href="/scenario/demand/transport_international_transport/international-transport">
-        Vraag → Transport → Internationaal transport</a>.
+        Dit betekent dat er in eerste instantie geen vraag naar kerosine is voor de internationale luchtvaart.
+        Deze aanname kun je aanpassen in de sectie <a href="/scenario/demand/transport_international_transport/international-transport">
+        internationaal transport</a>.
         <br/><br/>Let op: deze schuif vermindert niet automatisch de productie van fossiele kerosine door
         raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
         kerosine, verklein dan de <a href="/scenario/demand/industry/refineries">omvang van raffinaderijen</a>.<br/>    

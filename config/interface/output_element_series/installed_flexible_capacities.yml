@@ -15,6 +15,7 @@
   gquery: electricity_imbalance_inflexible_shortage_peak
   output_element_key: installed_flexible_capacities
   key: shortage_peak_electricity_installed_flexible_capacities
+
 - label: electricity_interconnection_export
   color: "#77dd99"
   order_by: 120
@@ -135,14 +136,14 @@
   gquery: electricity_production_flexible_wood_pellets_to_power_capacity
   output_element_key: installed_flexible_capacities
   key: wood_pellets_to_power_electricity_installed_flexible_capacities
-- label: hydro_to_power
-  color: "#87CEEB"
-  order_by: 155
+- label: power_to_synthetic_kerosene
+  color: "#74ffff"
+  order_by: 160
   group: electricity
   is_target_line: false
-  gquery: electricity_production_flexible_hydro_to_power_capacity
+  gquery: electricity_demand_flexible_power_to_synthetic_kerosene_capacity
   output_element_key: installed_flexible_capacities
-  key: hydro_to_power_electricity_installed_flexible_capacities
+  key: power_to_synthetic_kerosene_electricity_installed_flexible_capacities
 
 - label: residual_load_excess_peak
   color: "blue"

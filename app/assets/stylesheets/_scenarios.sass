@@ -804,6 +804,11 @@ table.default
         background: darken($landing-green, 1%)
 
 #saved-scenario-history
+  color: #333
+  h3
+    margin-top: 0
+  p.history-description
+    margin-bottom: 2rem
   .box
     color: #333
     margin-top: 1rem
@@ -815,8 +820,7 @@ table.default
       background: $soft-grey
       color: #333
       padding: 0.5rem 1rem
-      border-radius: 4px
-      border-radius: 4px
+      border-radius: 3px
       flex-grow: 2
       position: relative
       margin-top: -0.625rem
@@ -833,11 +837,17 @@ table.default
 
     .details
       margin-bottom: 0
-    .scenario-version
+      .control
+        display: none
+    .scenario-version, .control
       li a, li
         display: inline-block
       .fa
         color: #888
+        &.green:hover
+          color: $landing-green
+        &.red:hover
+          color: $error-red
       .fa:hover
         cursor: pointer
         color: $landing-blue
@@ -865,8 +875,7 @@ table.default
         color: $landing-blue
   textarea
     resize: none
-    margin-top: 0.5rem
-    width: 80%
+    width: 100%
 
 @keyframes fadeInFromNone
   0%

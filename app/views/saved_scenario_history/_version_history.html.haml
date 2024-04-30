@@ -6,6 +6,7 @@
     = link_to saved_scenario_path(@saved_scenario), remote: true, class: 'stick-right' do
       .fa.fa-times.tooltip{ title: t("scenario.close_version_history") }
   %h3= t('scenario.history.title')
+  %p.history-description= t('scenario.history.description')
   .history
     - @history.each_with_index do |version, index|
       .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/3.0}s"}
@@ -21,11 +22,8 @@
               - else
                 %em= t('scenario.no_description')
             .description-field{style: 'display: none'}
-              %textarea
+              %textarea{placeholder: t('scenario.add_description')}
                 = version['description']
-              %button.submit-description Update
-              -# move cancel to the righthand options
-              %button.cancel-description Cancel
             :javascript
               new ScenarioHistoryView({
                 el: $("#scenario-version-#{version['scenario_id']}"),
@@ -46,4 +44,9 @@
                     %li
                       = link_to restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: version['scenario_id']}), method: :put, remote: true do
                         .restore-version.fa.fa-backward.tooltip{ title: t("scenario.restore") }
+            - unless version['frozen']
+              %li.control.stick-right
+                %ul
+                  %li.submit-description.green.fa.fa-check.tooltip{ title: t("save") }
+                  %li.cancel-description.red.fa.fa-times.tooltip{ title: t("scenario.cancel") }
 

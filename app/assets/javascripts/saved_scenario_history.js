@@ -14,15 +14,24 @@
       this.descriptionEl = this.el.querySelector('.description');
       this.descriptionEditEl = this.el.querySelector('.description-field');
       this.iconsEl = this.el.querySelector('.scenario-version');
+      this.formControl = this.el.querySelector('.control');
     },
     showTextArea: function (event) {
       $(this.iconsEl).hide();
       $(this.descriptionEl).hide();
+      $(this.formControl).show();
       $(this.descriptionEditEl).show();
+      this.descriptionEditEl.querySelector('textarea').focus();
     },
 
     updateDescription: function(event) {
       let newText = this.descriptionEditEl.querySelector('textarea').value;
+
+      if (newText == ''){
+        this.hideTextArea();
+        return;
+      }
+
       let self = this;
 
       $.ajax({
@@ -44,6 +53,7 @@
     hideTextArea: function (event) {
       $(this.iconsEl).show();
       $(this.descriptionEl).show();
+      $(this.formControl).hide();
       $(this.descriptionEditEl).hide();
     },
   });

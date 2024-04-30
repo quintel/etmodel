@@ -10,7 +10,7 @@
   .history
     - @history.each_with_index do |version, index|
       .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/3.0}s"}
-        .main-info
+        = link_to load_scenario_path(version['scenario_id']), class: 'main-info' do
           .fa.fa-circle
           %span= version['user']
           = t('last_ago', when: time_ago_in_words(version['last_updated_at']))
@@ -37,12 +37,11 @@
                 - unless version['frozen']
                   %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_description") }
                 - unless version['scenario_id'].to_i == @saved_scenario.scenario_id
-                  %li
-                    = link_to load_scenario_path(version['scenario_id']) do
-                      .fa.fa-window-restore.tooltip{ title: t("scenario.open") }
+                  -# %li
+                  -#   = link_to load_scenario_path(version['scenario_id']) do
+                  -#     .fa.fa-window-restore.tooltip{ title: t("scenario.open") }
                   - if current_user&.admin? || @saved_scenario.owner?(current_user)
-                    %li.restore-version.fa.fa-backward.tooltip{ title: t("scenario.restore"), data: {url: confirm_restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: version['scenario_id']})} }
-                    -# = link_to restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: version['scenario_id']}), method: :put, remote: true do
+                    %li.restore-version.fa.fa-history.tooltip{ title: t("scenario.restore"), data: {url: confirm_restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: version['scenario_id']})} }
 
             - unless version['frozen']
               %li.control.stick-right

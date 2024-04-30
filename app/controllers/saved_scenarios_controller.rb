@@ -2,7 +2,7 @@
 
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
-  load_resource only: %i[load discard undiscard publish unpublish restore]
+  load_resource only: %i[load discard undiscard publish unpublish restore confirm_restore]
   load_and_authorize_resource only: %i[show new create edit update destroy]
 
   before_action only: %i[load] do
@@ -221,6 +221,12 @@ class SavedScenariosController < ApplicationController
     )
 
     redirect_to saved_scenario_path(@saved_scenario)
+  end
+
+  def confirm_restore
+    @scenario_id = restore_params[:scenario_id].to_i
+
+    render 'confirm_restore', layout: false
   end
 
   # Restores a saved scenario to a previous version

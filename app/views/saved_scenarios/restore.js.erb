@@ -1,3 +1,4 @@
 $('.scenario').html("<%= escape_javascript(render partial: 'scenario', locals: { saved_scenario: @saved_scenario } ) %>");
 $('#saved-scenario-history').hide();
+$.fancybox.close();
 $(document).ready(restore);

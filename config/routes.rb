@@ -84,6 +84,7 @@ Rails.application.routes.draw do
       put :publish
       put :unpublish
       put :restore
+      get :confirm_restore
     end
 
     collection do

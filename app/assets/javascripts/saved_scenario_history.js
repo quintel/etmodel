@@ -5,7 +5,7 @@
       'click .edit-description': 'showTextArea',
       'click .submit-description': 'updateDescription',
       'click .cancel-description': 'hideTextArea',
-      // 'click .restore': 'restore', TODO: check if we need this
+      'click .restore-version': 'openDestroyModal',
     },
 
     constructor: function () {
@@ -55,6 +55,19 @@
       $(this.descriptionEl).show();
       $(this.formControl).hide();
       $(this.descriptionEditEl).hide();
+    },
+
+    openDestroyModal: function (event) {
+      let url = $(event.target).data("url");
+
+      $.fancybox.open({
+        href: url,
+        type: 'ajax',
+        autoSize: false,
+        height: 250,
+        width: 550,
+        padding: 0
+      });
     },
   });
 

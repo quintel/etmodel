@@ -4,35 +4,34 @@
   unit: "Mton"
   interface_group: sequestration
   related_node: molecules_offshore_sequestration_co2
-  position: 1
+  position: 100
   slide_key: supply_ccus_utilisation_storage
+
 - key: output_of_energy_production_synthetic_kerosene_must_run
   step_value: 0.1
   unit: "PJ"
   interface_group: utilisation
   related_node: energy_production_synthetic_kerosene_must_run
-  position: 2
+  position: 200
   slide_key: supply_ccus_utilisation_storage
 - key: output_of_energy_production_synthetic_methanol
   step_value: 0.1
   unit: "PJ"
   interface_group: utilisation
   related_node: energy_production_synthetic_methanol
-  position: 3
+  position: 205
   slide_key: supply_ccus_utilisation_storage
 - key: demand_of_molecules_other_utilisation_co2
   step_value: 0.1
   unit: "Mton"
   interface_group: utilisation
-  position: 4
+  position: 210
   slide_key: supply_ccus_utilisation_storage
+
 - key: capacity_of_energy_production_synthetic_kerosene_dispatchable
   step_value: 1.0
   unit: "MW"
   interface_group: utilisation_dispatchable
   related_node: energy_production_synthetic_kerosene_dispatchable
-  position: 5
+  position: 300
   slide_key: supply_ccus_utilisation_storage
-
-
-

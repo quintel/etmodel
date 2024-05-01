@@ -336,7 +336,7 @@ nl:
     no_description: 'Geen beschrijving'
     edit_text: 'Pas titel en beschrijving aan'
     edit_description: 'Pas beschrijving aan'
-    save_text: 'Sla veranderingen op'
+    save_text: 'Sla wijzigingen op'
     open: 'Open deze versie'
     restore: 'Herstel deze versie'
     cancel_text: 'Annuleren'
@@ -347,6 +347,15 @@ nl:
     history:
       empty: Er kon geen geschiedenis getoond worden
       title: Versiegeschiedenis
+      description:
+        Hieronder zie je de verschillende opgeslagen versies van het scenario. Aan elke versie kan een beschrijving 
+        worden toegevoegd. Wanneer je eigenaar bent van dit scenario, kan je het scenario terugzetten naar een 
+        oudere versie.
+      restore:
+        title: Herstel oudere versie
+        description: Je herstelt het scenario naar een oudere versie. Deze actie is onomkeerbaar. Weet je het zeker?
+        button: Herstel oudere versie
+        flash: Het scenario is succesvol hersteld naar een oudere versie!
     users:
       manage: 'Beheer toegang'
       manage_description:
@@ -440,6 +449,8 @@ nl:
     reset: "Scenario is ge-reset naar de standaardwaarden."
     scenario_load: "Scenario geladen"
     scenario_saved: "Scenario opgeslagen"
+    scenario_restored: "Scenario is hersteld naar oudere versie"
+    scenario_cannot_be_restored: "Scenario kan niet worden hersteld naar oudere versie"
     succesfully_saved: "Het scenario is succesvol opgeslagen."
     account_deleted: "Uw account is verwijderd"
     newsletter_subscribe: "Je hebt je ingeschreven voor onze nieuwsbrief. Kijk in je mailbox om je inschrijving te bevestigen."

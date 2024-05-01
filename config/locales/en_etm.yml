@@ -346,8 +346,8 @@ en:
       empty: There is no history to show
       title: Version history
       description:
-        Here you can see the different versions that have been saved, and you are able to add a
-        description to each version.
+        Here you can see the different scenario versions that have been saved. A description can be added to each version.
+        When you are owner of this scenario, you can reset the scenario to an older version. 
       restore:
         title: Restore an older version
         description: You are restoring the scenario to an older version. This action is irreverisble. Are you sure?
@@ -440,6 +440,8 @@ en:
     reset: "Scenario is reset to default values."
     scenario_load: "Loaded scenario"
     scenario_saved: "Saved scenario"
+    scenario_restored: "Scenario succesfully restored"
+    scenario_cannot_be_restored: "Scenario cannot be restored"
     succesfully_saved: "The scenario was succesfully saved."
     account_deleted: "Your account has been deleted"
     newsletter_subscribe: "You have subscribed to our newsletter. Please check your e-mail inbox to confirm."

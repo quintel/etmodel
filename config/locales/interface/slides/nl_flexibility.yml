@@ -386,7 +386,13 @@ nl:
       title: Conversie naar kerosine
       short_description:
       description: |
-        Hier kan de betalingsbereidheid (willingness to pay) worden ingesteld voor regelbare kerosineproductie voor de industrie.  
+        Elektriciteit kan worden gebruikt om synthetische kerosine te produceren door waterstof, elektriciteit en CO<sub>2</sub>. 
+        In het ETM is regelbare synthetische kerosine een flexibele vragtechnologie voor elektriciteit, wat betekent dat
+        de synthetische kerosine alleen geproduceerd wordt wanneer de willingness-to-pay van power-to-gas hoger 
+        is dan de uurlijkse elektriciteitsprijs. Zie de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
+        documentatie</a> voor meer informatie. </br></br>
+        In de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2"> Gebruik en opslag van CO<sub>2</sub> </a> sectie kan de 
+        regelbare capaciteti (in MWe-input) voor synthetische kerosine ingesteld worden. 
     flexibility_flexibility_power_to_methane:
       title: Conversie naar methaan voor gasnetwerk
       short_description:

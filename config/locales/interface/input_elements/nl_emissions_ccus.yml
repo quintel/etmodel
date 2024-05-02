@@ -237,14 +237,17 @@ nl:
         raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
         kerosine, verklein dan de omvang van <a href="/scenario/demand/industry/refineries">Raffinaderijen</a>.
     capacity_of_energy_production_synthetic_kerosene_dispatchable:    
-      title: Synthetische kerosine
+      title: Synthetische kerosine (MWe-input)
       description: |
-        Met deze schuif stel je het geïnstalleerd regelbaar vermogen in voor productie van synthetische kerosine 
+        Met deze schuif stel je het geïnstalleerd regelbaar vermogen in voor productie van synthetische kerosine (in elektrisch inputvermogen) in 
         in jouw scenario. Synthetische kerosine wordt gemaakt uit
         CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
         elektriciteit, groene waterstof en groene CO<sub>2</sub>
         (bijvoorbeeld via Direct Air Capture) worden gebruikt, is het mogelijk om een CO<sub>2</sub>-neutrale
         brandstof te maken voor vliegtuigen.
+        De regelbare kerosine producite is afhankelijk van de elektriciteitsprijs, hiermee is het flexibel aanbod voor de elektriciteitsmarkt.
+        Wanneer de elektriciteitsprijs lager is dan de betalingsbereidheid, zal de regelbare kerosine produceren.
+        Wanneer de elektricitetisprijs hoger is dan de betalingsbereidheid, zal de regelbare kerosine niet produceren.
         <br/><br/> De betalingsbereidheid (willingness to pay) voor regelbare synthetische kerosineproductie 
         kan worden ingesteld in de sectie
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-industry">

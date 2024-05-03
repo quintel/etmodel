@@ -1,11 +1,11 @@
 ---
 - label: ambient
   color: "#ADDE4C"
-  order_by: 10
-  group: ''
+  order_by: 100
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_ambient_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -13,11 +13,11 @@
   key: ambient_final_demand_per_carrier_non_energetic
 - label: ammonia
   color: "#E69567"
-  order_by: 20
-  group: ''
+  order_by: 105
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_ammonia_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -25,11 +25,11 @@
   key: ammonia_demand_per_carrier_non_energetic
 - label: biomass_products
   color: "#2ca02c"
-  order_by: 30
-  group: ''
+  order_by: 110
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_biomass_products_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -37,11 +37,11 @@
   key: biomass_products_final_demand_per_carrier_non_energetic
 - label: coal_and_derivatives
   color: "#252525"
-  order_by: 40
-  group: ''
+  order_by: 115
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_coal_and_derivatives_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -49,11 +49,11 @@
   key: coal_and_derivatives_final_demand_per_carrier_non_energetic
 - label: electricity
   color: "#1f77b4"
-  order_by: 50
-  group: ''
+  order_by: 120
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_electricity_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -61,11 +61,11 @@
   key: electricity_final_demand_per_carrier_non_energetic
 - label: geothermal
   color: "#787821"
-  order_by: 60
-  group: ''
+  order_by: 125
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_geothermal_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -73,11 +73,11 @@
   key: geothermal_final_demand_per_carrier_non_energetic
 - label: heat
   color: "#cc0000"
-  order_by: 70
-  group: ''
+  order_by: 130
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_heat_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -85,11 +85,11 @@
   key: heat_final_demand_per_carrier_non_energetic  
 - label: hydrogen
   color: "#87cfeb"
-  order_by: 80
-  group: ''
+  order_by: 135
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_hydrogen_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -97,11 +97,11 @@
   key: hydrogen_final_demand_per_carrier_non_energetic    
 - label: natural_gas_and_derivatives
   color: "#7f7f7f"
-  order_by: 90
-  group: ''
+  order_by: 140
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_natural_gas_and_derivatives_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -109,11 +109,11 @@
   key:   gas_and_derivatives_final_demand_per_carrier_non_energetic
 - label: oil_and_derivatives
   color: "#8c564b"
-  order_by: 100
-  group: ''
+  order_by: 145
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_natural_gas_and_derivatives_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
@@ -121,13 +121,13 @@
   key: oil_and_derivatives_final_demand_per_carrier_non_energetic 
 - label: solar
   color: "#ffcc00"
-  order_by: 110
-  group: ''
+  order_by: 150
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: final_demand_of_solar_non_energetic_in_bezier
   is_1990: false
   dependent_on: 
   output_element_key: final_demand_per_carrier_non_energetic
-  key: solar_final_demand_per_carrier_non_energetic    
+  key: solar_final_demand_per_carrier_non_energetic

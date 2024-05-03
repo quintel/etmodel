@@ -1,7 +1,7 @@
 ---
 - label: co2_demand_offshore_sequestration
   color: "#416B86"
-  order_by: 2
+  order_by: 5
   group: ''
   show_at_first: false
   is_target_line: false
@@ -11,21 +11,33 @@
   dependent_on:
   output_element_key: energy_use_of_ccus
   key: co2_demand_offshore_sequestration_energy_use_of_ccus
-- label: co2_demand_synthetic_kerosene_utilisation
+- label: co2_demand_synthetic_kerosene_must_run_utilisation
   color: "#74B9FF"
-  order_by: 3
+  order_by: 10
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_use_of_synthetic_kerosene_production
+  gquery: energy_use_of_synthetic_kerosene_production_must_run
   is_1990: false
   dependent_on:
   output_element_key: energy_use_of_ccus
-  key: co2_demand_synthetic_kerosene_energy_use_of_ccus
+  key: co2_demand_synthetic_kerosene_must_run_energy_use_of_ccus
+- label: co2_demand_synthetic_kerosene_dispatchable_utilisation
+  color: "#74ffff"
+  order_by: 15
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_use_of_synthetic_kerosene_production_dispatchable
+  is_1990: false
+  dependent_on:
+  output_element_key: energy_use_of_ccus
+  key: co2_demand_synthetic_kerosene_dispatchable_energy_use_of_ccus  
 - label: co2_demand_synthetic_methanol_utilisation
   color: "#FF8C8C"
-  order_by: 4
+  order_by: 20
   group: ''
   show_at_first: false
   is_target_line: false
@@ -37,7 +49,7 @@
   key: co2_demand_synthetic_methanol_energy_use_of_ccus
 - label: co2_supply_direct_air_capture
   color: "#b71540"
-  order_by: 10
+  order_by: 100
   group: ''
   show_at_first: false
   is_target_line: false
@@ -49,7 +61,7 @@
   key: co2_supply_direct_air_capture_energy_use_of_ccus
 - label: co2_supply_energy_hydrogen_capture
   color: "#A4B0BE"
-  order_by: 11
+  order_by: 105
   group: ''
   show_at_first: false
   is_target_line: false
@@ -61,7 +73,7 @@
   key: co2_supply_energy_hydrogen_energy_use_of_ccus
 - label: co2_supply_energy_power_capture
   color: "#786FA6"
-  order_by: 12
+  order_by: 110
   group: ''
   show_at_first: false
   is_target_line: false
@@ -73,7 +85,7 @@
   key: co2_supply_energy_power_energy_use_of_ccus
 - label: co2_supply_industry_fertilizers_capture
   color: "#63A1C9"
-  order_by: 14
+  order_by: 115
   group: ''
   show_at_first: false
   is_target_line: false
@@ -85,7 +97,7 @@
   key: co2_supply_industry_fertilizers_energy_use_of_ccus
 - label: co2_supply_industry_food_capture
   color: "#A2D679"
-  order_by: 15
+  order_by: 120
   group: ''
   show_at_first: false
   is_target_line: false
@@ -97,7 +109,7 @@
   key: co2_supply_industry_food_energy_use_of_ccus
 - label: co2_supply_industry_paper_capture
   color: "#394C19"
-  order_by: 16
+  order_by: 125
   group: ''
   show_at_first: false
   is_target_line: false
@@ -109,7 +121,7 @@
   key: co2_supply_industry_paper_energy_use_of_ccus
 - label: co2_supply_industry_steel_capture
   color: "#485460"
-  order_by: 17
+  order_by: 130
   group: ''
   show_at_first: false
   is_target_line: false
@@ -121,7 +133,7 @@
   key: co2_supply_industry_steel_energy_use_of_ccus
 - label: co2_supply_industry_refineries_capture
   color: "#854321"
-  order_by: 18
+  order_by: 135
   group: ''
   show_at_first: false
   is_target_line: false
@@ -133,7 +145,7 @@
   key: co2_supply_industry_refineries_energy_use_of_ccus
 - label: co2_supply_industry_chemical_other_capture
   color: "#416B86"
-  order_by: 19
+  order_by: 140
   group: ''
   show_at_first: false
   is_target_line: false

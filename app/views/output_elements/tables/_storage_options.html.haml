@@ -184,6 +184,14 @@
       %td{:data => {:decimals => 4, :gquery => "energy_hydrogen_flexibility_p2g_electricity_output", :graph => :future}}
       %td{:data => {:decimals => 1, :gquery => "energy_hydrogen_flexibility_p2g_electricity_flhs", :graph => :future}}
     %tr
+      %th.left= t "output_elements.tables.flexibility.electricity_converted_to_kerosene"
+      %td{:data => {:gquery => "energy_flexibility_synthetic_kerosene_electricity_capacity", :graph => :future}}
+      %td{:data => {:gquery => "energy_flexibility_synthetic_kerosene_electricity_peak_capacity", :graph => :future}}
+      %td
+      %td{:data => {:decimals => 4, :gquery => "energy_flexibility_synthetic_kerosene_electricity_input", :graph => :future}}
+      %td{:data => {:decimals => 4, :gquery => "energy_flexibility_synthetic_kerosene_electricity_output", :graph => :future}}
+      %td{:data => {:decimals => 1, :gquery => "energy_flexibility_synthetic_kerosene_electricity_flhs", :graph => :future}}
+    %tr
       %th.left= t "output_elements.tables.flexibility.losses_in_storage"
       %td
       %td

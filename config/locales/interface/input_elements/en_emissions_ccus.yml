@@ -205,12 +205,12 @@ en:
         research used can be found on
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
         ETDataset</a>.
-    output_of_energy_production_synthetic_kerosene:
+    output_of_energy_production_synthetic_kerosene_must_run:
       title: Synthetic kerosene
       description: |
-        This slider set the amount of synthetic kerosene produced in your scenario. Synthetic
+        This slider sets the amount of synthetic kerosene produced in your scenario. Synthetic
         kerosene is made from captured CO<sub>2</sub>, hydrogen and electricity. If renewable
-        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) is used in
+        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) are used in
         this process, it is possible to produce carbon neutral fuels for (e.g.) aviation.
         <br/><br/>
         If you would like to know the total demand and supply of kerosene in your
@@ -221,12 +221,39 @@ en:
         Energy demand of international aviation is not taken into account in the ETM by default.
         You can change this assumption
         in the <a href="/scenario/demand/transport_international_transport/international-transport">
-        the Demand → Transport → International transport section</a>.
+        International transport</a> section.
         <br/><br/>
         Please note: this slider does not automatically reduce the production of fossil-based
         kerosene in the refineries sector. If you would like to replace fossil kerosene with
-        synthetic kerosene in your scenario, you can reduce the market share of refineries in
-        <a href="/scenario/demand/industry/refineries">the Demand → Industry → Refineries section</a>.
+        synthetic kerosene in your scenario, you can reduce the market share of refineries in the
+        <a href="/scenario/demand/industry/refineries">Refineries</a> section.
+    capacity_of_energy_production_synthetic_kerosene_dispatchable:
+      title: Synthetic kerosene
+      description: |
+        This slider sets the amount of installed dispatchable capacity for synthetic kerosene production (in electric input capacity)
+        in your scenario. Synthetic kerosene is made from captured CO<sub>2</sub>, hydrogen and electricity. If renewable
+        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) are used in
+        this process, it is possible to produce carbon neutral fuels for (e.g.) aviation.
+        The dispatchable kerosene production is dependent on the electricity, it is therefore flexible demand for the electricity system.
+        When the electricity price is lower than the willingness to pay, the dispatchable kerosene will run.
+        When the electricity price is higher than the willingness to pay, it will not run.
+        <br/><br/> The willingness to pay for dispatchable synthetic kerosene production can be set in the
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-industry">
+        Flexibility</a> section.
+        <br/><br/>If you would like to know the total demand and supply of kerosene in your
+        scenario, have a look at the
+        <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">demand and supply of kerosene</a>
+        chart. Any excess production is automatically exported, any deficit is imported.
+        <br/><br/>
+        Energy demand of international aviation is not taken into account in the ETM by default.
+        This means that by default there is no kerosene demand for aviation. You can change this assumption
+        in the <a href="/scenario/demand/transport_international_transport/international-transport">
+        International transport</a> section.
+        <br/><br/>
+        Please note: this slider does not automatically reduce the production of fossil-based
+        kerosene in the refineries sector. If you would like to replace fossil kerosene with
+        synthetic kerosene in your scenario, you can reduce the market share of refineries in the
+        <a href="/scenario/demand/industry/refineries">Refineries</a> section.
     output_of_energy_production_synthetic_methanol:
       title: Synthetic methanol
       description: |

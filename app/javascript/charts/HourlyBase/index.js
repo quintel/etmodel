@@ -63,7 +63,7 @@ class HourlyBase extends D3Chart {
   margins = {
     top: 20,
     bottom: 20,
-    left: 65,
+    left: 85,
     right: 0,
     labelLeft: 30,
   };

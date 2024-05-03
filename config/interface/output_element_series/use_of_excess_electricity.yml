@@ -1,7 +1,7 @@
 ---
 - label: electricity_stored_in_household_batteries
   color: "#dd33cc"
-  order_by: 1
+  order_by: 100
   group: ''
   show_at_first: false
   is_target_line: false
@@ -13,7 +13,7 @@
   key: electricity_stored_in_household_batteries_use_of_excess_electricity
 - label: electricity_stored_in_electric_cars
   color: "#dd77bb"
-  order_by: 2
+  order_by: 110
   group: ''
   show_at_first: false
   is_target_line: false
@@ -25,7 +25,7 @@
   key: electricity_stored_in_electric_cars_use_of_excess_electricity
 - label: electricity_stored_in_electric_busses
   color: "#f78fb4"
-  order_by: 3
+  order_by: 120
   group: ''
   show_at_first: false
   is_target_line: false
@@ -37,7 +37,7 @@
   key: electricity_stored_in_electric_busses_use_of_excess_electricity
 - label: electricity_stored_in_electric_vans
   color: "#c91042"
-  order_by: 4
+  order_by: 130
   group: ''
   show_at_first: false
   is_target_line: false
@@ -49,7 +49,7 @@
   key: electricity_stored_in_electric_vans_use_of_excess_electricity
 - label: electricity_stored_in_electric_trucks
   color: "#db4270"
-  order_by: 5
+  order_by: 140
   group: ''
   show_at_first: false
   is_target_line: false
@@ -61,7 +61,7 @@
   key: electricity_stored_in_electric_trucks_use_of_excess_electricity
 - label: electricity_exported
   color: "#77dd99"
-  order_by: 20
+  order_by: 150
   group: ''
   show_at_first: false
   is_target_line: false
@@ -73,7 +73,7 @@
   key: electricity_exported_use_of_excess_electricity
 - label: electricity_curtailed
   color: "#77bbdd"
-  order_by: 21
+  order_by: 160
   group: ''
   show_at_first: false
   is_target_line: false
@@ -85,7 +85,7 @@
   key: electricity_curtailed_use_of_excess_electricity
 - label: losses_in_storage
   color: "#A9A9A9"
-  order_by: 19
+  order_by: 170
   group: ''
   show_at_first: false
   is_target_line: false
@@ -97,7 +97,7 @@
   key: losses_in_storage_use_of_excess_electricity
 - label: electricity_converted_to_hydrogen
   color: "#dd9977"
-  order_by: 6
+  order_by: 180
   group: ''
   show_at_first: false
   is_target_line: false
@@ -107,9 +107,21 @@
   dependent_on:
   output_element_key: use_of_excess_electricity
   key: electricity_converted_to_hydrogen_use_of_excess_electricity
+- label: electricity_converted_to_kerosene
+  color: "#74ffff"
+  order_by: 190
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: electricity_converted_to_synthetic_kerosene
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_excess_electricity
+  key: electricity_converted_to_synthetic_kerosene_use_of_excess_electricity
 - label: electricity_converted_to_heat_industry
   color: "#8B0000"
-  order_by: 5
+  order_by: 200
   group: ''
   show_at_first: false
   is_target_line: false
@@ -121,7 +133,7 @@
   key: electricity_converted_to_heat_industry_use_of_excess_electricity
 - label: electricity_converted_to_heat_electricity
   color: "#FFD700"
-  order_by: 5
+  order_by: 210
   group: ''
   show_at_first: false
   is_target_line: false
@@ -133,7 +145,7 @@
   key: electricity_converted_to_heat_electricity_use_of_excess_electricity
 - label: energy_flexibility_pumped_storage_electricity
   color: "#416B86"
-  order_by: 3
+  order_by: 220
   group: ''
   show_at_first: false
   is_target_line: false
@@ -145,7 +157,7 @@
   key: energy_flexibility_pumped_storage_electricity_use_of_excess_electricity
 - label: electricity_stored_in_mv_batteries
   color: "#5a7bc4"
-  order_by: 11
+  order_by: 230
   group: ''
   show_at_first: false
   is_target_line: false
@@ -157,7 +169,7 @@
   key: electricity_stored_in_mv_batteries_use_of_excess_electricity
 - label: electricity_stored_in_opac
   color: "#385ba6"
-  order_by: 12
+  order_by: 240
   group: ''
   show_at_first: false
   is_target_line: false
@@ -169,7 +181,7 @@
   key: electricity_stored_in_opac_use_of_excess_electricity
 - label: electricity_stored_in_flow_batteries
   color: "#162442"
-  order_by: 13
+  order_by: 250
   group: ''
   show_at_first: false
   is_target_line: false
@@ -181,7 +193,7 @@
   key: electricity_stored_in_flow_batteries_use_of_excess_electricity
 - label: electricity_converted_to_heat_district_heating_heatpump
   color: "#F6E58D"
-  order_by: 9
+  order_by: 260
   group: ''
   show_at_first: false
   is_target_line: false
@@ -193,7 +205,7 @@
   key: electricity_converted_to_heat_district_heating_heatpump_use_of_excess_electricity
 - label: electricity_converted_to_heat_district_heating_boiler
   color: "#FFA502"
-  order_by: 10
+  order_by: 270
   group: ''
   show_at_first: false
   is_target_line: false
@@ -205,7 +217,7 @@
   key: electricity_converted_to_heat_district_heating_boiler_use_of_excess_electricity
 - label: electricity_load_shifting_in_industry_use_of_excess_electricity
   color: "#EC7063"
-  order_by: 23
+  order_by: 280
   group: ''
   show_at_first: false
   is_target_line: false

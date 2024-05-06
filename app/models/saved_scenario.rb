@@ -161,9 +161,9 @@ class SavedScenario < ApplicationRecord
   # Updates a saved scenario with parameters from the API controller.
   def update_with_api_params(params)
     incoming_id = params[:scenario_id]
-    add_id_to_history(scenario_id) if incoming_id && scenario_id != incoming_id
+    update_scenario_id(incoming_id)
 
-    self.attributes = params.except(:discarded)
+    self.attributes = params.except(:discarded, :scenario_id)
 
     if params.key?(:discarded)
       if params[:discarded]
@@ -174,6 +174,20 @@ class SavedScenario < ApplicationRecord
     end
 
     save
+  end
+
+  # Safe updating of scenario_id for the API, checks if the id is new, or was
+  # already part of the history
+  def update_scenario_id(incoming_id)
+    return unless incoming_id
+    return if incoming_id == scenario_id
+
+    if scenario_id_history.include?(incoming_id)
+      restore_version(incoming_id)
+    else
+      add_id_to_history(scenario_id)
+      self.scenario_id = incoming_id
+    end
   end
 
   # Returns an array containing the current and historical scenario ids

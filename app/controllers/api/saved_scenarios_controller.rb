@@ -52,6 +52,11 @@ module API
       head :ok
     end
 
+    # NOPE --> check if old scenario id in update statement - then we restore!
+
+
+    # ADD extra API for changing description of version
+
     private
 
     def scenario_params

@@ -314,6 +314,28 @@ RSpec.describe 'API::SavedScenarios', type: :request, api: true do
       end
     end
 
+    context 'when updating with a historic scenario ID' do
+      before do
+        scenario.update(scenario_id_history: [999_999, 2, 111_111])
+        scenario.reload
+      end
+
+      it 'returns success' do
+        request
+        expect(response).to have_http_status(:success)
+      end
+
+      it 'changes the scenario ID history' do
+        expect { request }
+          .to change { scenario.reload.scenario_id_history }
+          .from([999_999, 2, 111_111]).to([999_999])
+      end
+
+      it 'changes the scenario ID' do
+        expect { request }.to change { scenario.reload.scenario_id }.from(1).to(2)
+      end
+    end
+
     context 'when given invalid data' do
       let(:scenario_attributes) do
         super().merge(title: '')

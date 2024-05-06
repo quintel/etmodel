@@ -1,6 +1,6 @@
-= render partial: 'flash_notice'
+= render partial: 'saved_scenarios/flash_notice'
 
-= render partial: 'info', locals: { scenario: saved_scenario }
+= render partial: 'saved_scenarios/info', locals: { scenario: saved_scenario }
 .bar
 - if saved_scenario.localized_description(I18n.locale).presence
   .description#main-scenario-description

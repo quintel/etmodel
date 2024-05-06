@@ -12,6 +12,8 @@ class SavedScenarioHistoryController < ApplicationController
     authorize!(:update, @saved_scenario)
   end
 
+  helper_method :editable_saved_scenario?
+
   # GET /saved_scenarios/:id/history
   def index
     version_tags_result = FetchSavedScenarioVersionTags.call(engine_client, @saved_scenario)
@@ -20,6 +22,7 @@ class SavedScenarioHistoryController < ApplicationController
       @history = SavedScenarioHistoryPresenter.present(@saved_scenario, version_tags_result.value)
 
       respond_to do |format|
+        format.html { render 'index', layout: 'saved_scenario' }
         format.js
         format.json { render json: @history }
       end
@@ -63,5 +66,14 @@ class SavedScenarioHistoryController < ApplicationController
     @saved_scenario = SavedScenario.find(params[:saved_scenario_id])
   rescue ActiveRecord::RecordNotFound
     render_not_found
+  end
+
+  # This determines whether the SavedScenario is editable by the current_user
+  def editable_saved_scenario?(saved_scenario = nil)
+    saved_scenario ||= @saved_scenario
+
+    saved_scenario.collaborator?(current_user) ||
+      saved_scenario.owner?(current_user) ||
+      current_user&.admin?
   end
 end

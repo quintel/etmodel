@@ -11,7 +11,10 @@
     - @history.each_with_index do |version, index|
       .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/3.0}s"}
         = link_to load_scenario_path(version['scenario_id']), class: 'main-info', title: t("scenario.open") do
-          .fa.fa-circle
+          - if index.zero?
+            .fa.fa-circle
+          - else
+            .fa.fa-circle-o
           %span= version['user']
           = t('last_ago', when: time_ago_in_words(version['last_updated_at']))
         - unless version['frozen']

@@ -692,9 +692,7 @@ table.default
     .tab
       align-items: center
       background: #fff
-      // border-radius: 4px 4px 0 0
-      margin-right: 3px
-      border-bottom: 3px solid $soft-grey
+      margin-bottom: 3px
       color: darken(#79828d, 15%)
       display: flex
       font-size: 16px
@@ -866,8 +864,8 @@ table.default
       &:hover
         color: $landing-blue
         text-decoration: none
-        span, em
-          text-decoration: underline
+        .fa
+          color: $landing-blue
       .fa
         color: $landing-grey
         margin-right: 0.5rem
@@ -885,8 +883,11 @@ table.default
       &::before
         background: $light-blue
     .main-info
+      &:hover
+        .fa
+          color: $landing-blue
       .fa
-        color: $landing-blue
+        color: #333
   textarea
     resize: none
     width: 100%

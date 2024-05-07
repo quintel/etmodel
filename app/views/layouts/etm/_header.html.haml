@@ -1,47 +1,49 @@
-%header#top.main-header
-  %div{ style: 'display: flex' }
-    %a.logo{ href: root_path }
-      %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
-    .app-nav
-      = render partial: 'layouts/etm/about_menu'
-      = render partial: 'layouts/etm/features_menu'
-      = render partial: 'layouts/etm/development_menu'
+%header#top
+  = render partial: 'layouts/etm/banner'
+  .main-header
+    %div{ style: 'display: flex' }
+      %a.logo{ href: root_path }
+        %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
+      .app-nav
+        = render partial: 'layouts/etm/about_menu'
+        = render partial: 'layouts/etm/features_menu'
+        = render partial: 'layouts/etm/development_menu'
 
-  %ul.user-settings
-    %li.locale.nav-item
-      .dropdown
-        %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
-          %span.fa.fa-globe
-          = t('header.current_language')
-          %span.fa.fa-caret-down
-        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'locale-button' }
-          %li
-            %a.dropdown-item{ href: url_for(locale: 'en') }
-              = image_tag 'flags-24/uk.png'
-              English
-          %li
-            %a.dropdown-item{ href: url_for(locale: 'nl') }
-              = image_tag 'flags-24/nl.png'
-              Nederlands
-
-    - if current_user
-      %li.my-scenarios.nav-item
-        %a.nav-link{ href: scenarios_path }
-          = t('header.load_scenario')
-      %li.my-account.nav-item
+    %ul.user-settings
+      %li.locale.nav-item
         .dropdown
-          %button#my-account-button.nav-link{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
-            %span= current_user.name.presence || t('header.my_profile')
+          %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
+            %span.fa.fa-globe
+            = t('header.current_language')
             %span.fa.fa-caret-down
-          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'my-account-button' }
-            %li= link_to t('header.my_profile'), user_profile_url, class: 'dropdown-item'
-            %li= link_to t('header.sign_out'), sign_out_path, class: 'dropdown-item', method: :post
-            - if current_user.admin?
-              %li.sep-above.admin
-                %a.dropdown-item{ href: '/admin' } Admin
-    - else
-      %li.sign-up.nav-item
-        %a.nav-link{ href: sign_up_url }
-          = t('header.sign_up')
-      %li.sign-in.nav-item
-        = button_to t('header.sign_in'), sign_in_path, class: 'nav-link', method: :post
+          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'locale-button' }
+            %li
+              %a.dropdown-item{ href: url_for(locale: 'en') }
+                = image_tag 'flags-24/uk.png'
+                English
+            %li
+              %a.dropdown-item{ href: url_for(locale: 'nl') }
+                = image_tag 'flags-24/nl.png'
+                Nederlands
+
+      - if current_user
+        %li.my-scenarios.nav-item
+          %a.nav-link{ href: scenarios_path }
+            = t('header.load_scenario')
+        %li.my-account.nav-item
+          .dropdown
+            %button#my-account-button.nav-link{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+              %span= current_user.name.presence || t('header.my_profile')
+              %span.fa.fa-caret-down
+            %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'my-account-button' }
+              %li= link_to t('header.my_profile'), user_profile_url, class: 'dropdown-item'
+              %li= link_to t('header.sign_out'), sign_out_path, class: 'dropdown-item', method: :post
+              - if current_user.admin?
+                %li.sep-above.admin
+                  %a.dropdown-item{ href: '/admin' } Admin
+      - else
+        %li.sign-up.nav-item
+          %a.nav-link{ href: sign_up_url }
+            = t('header.sign_up')
+        %li.sign-in.nav-item
+          = button_to t('header.sign_in'), sign_in_path, class: 'nav-link', method: :post

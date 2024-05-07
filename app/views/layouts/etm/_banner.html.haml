@@ -1,0 +1,24 @@
+.header-banner
+  From
+  %span
+    Wed 8 May 13:00 until Mon 13 May 13:00 CEST
+  the ETM will be under maintenance. Making changes during this period is
+  %span
+    discouraged.
+  %a.banner-info
+    Learn more...
+
+.header-banner.header-banner-info
+  .banner-info-box
+    .stick-right
+      %a.close
+        Close
+    It's all about hydrogen
+
+:javascript
+  $('.banner-info').on("click", function() {
+    $('.header-banner-info').show();
+  });
+  $('.close').on("click", function() {
+    $('.header-banner-info').hide();
+  });

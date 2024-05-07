@@ -12,8 +12,10 @@
   .banner-info-box
     .stick-right
       %a.close
-        Close
-    It's all about hydrogen
+        = t('header.banner.close')
+    %h3= t('header.banner.info.title')
+    = t('header.banner.info.text', dev_path: development_path, contact_path: contact_path).html_safe
+
 
 :javascript
   $('.banner-info').on("click", function() {

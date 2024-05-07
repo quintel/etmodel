@@ -89,6 +89,18 @@ en:
     current_language: "English"
     actions: "Actions"
     open_in_etengine: "Open in ETEngine"
+    banner:
+      close: Close
+      info:
+        title: What is the impact of model changes on my scenario?
+        text: |
+          The Energy Transition Model is continuously being developed, see the <a href=%{dev_path}>Development Process</a>
+          for more information. </br> </br> From Wednesday, May 8th until Monday, May 13th, all scenarios are
+          being prepared for the latest update of the model. This update includes a fundamental
+          improvement of the modelling of demand and supply of hydrogen. Therefore, during this
+          period, it is advised not to implement any changes that impact the demand and supply
+          of hydrogen in scenarios. There is a chance that these changes will not be properly
+          incorporated in the latest update. </br> </br> For questions, please  <a href=%{contact_path}>contact Quintel</a>.
   chart_presets:
     reset_to_default: Reset to default
     title: Chart sets
@@ -318,10 +330,10 @@ en:
     uncouple: 'Uncouple'
     uncouple_desc: |
       Are you sure you want to uncouple the scenario from external models?
-      All the values that are set by external models will be deleted from 
+      All the values that are set by external models will be deleted from
       the scenario and cannot be retrieved. </br></br>
-      Visit the 
-      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
+      Visit the
+      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\">
       documentation</a> for more information.
     add_description: 'Add a description of your scenario...'
     edit_text: 'Edit title and description'

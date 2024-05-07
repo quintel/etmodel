@@ -89,6 +89,19 @@ nl:
     current_language: "Nederlands"
     actions: "Acties"
     open_in_etengine: "Openen in ETEngine"
+    banner:
+      close: Sluiten
+      info:
+        title: Wat is de impact van modelveranderingen op mijn scenario?
+        text: |
+          Het Energietransitiemodel wordt continu ontwikkeld, zie het <a href=%{dev_path}>Ontwikkelingsproces</a>
+          voor meer informatie. </br> </br> Vanaf woensdag 8 mei tot maandag 13 mei worden alle
+          scenario's voorbereid op de nieuwste update van het model. Deze update bevat een
+          fundamentele verbetering van de modellering van vraag en aanbod van waterstof. In deze
+          periode wordt het daarom afgeraden om wijzigingen die impact hebben op vraag en aanbod
+          van waterstof door te voeren in scenario's. Het risico bestaat dat deze wijzigingen niet
+          goed worden meegenomen naar de nieuwste update. </br> </br> Voor vragen,
+          <a href=%{contact_path}>neem contact op met Quintel</a>.
   chart_presets:
     reset_to_default: Terugzetten naar standaard
     title: Grafiekensets
@@ -320,11 +333,11 @@ nl:
     cancel: 'Annuleer'
     uncouple: 'Ontkoppel'
     uncouple_desc: |
-      Weet je zeker dat je het scenario wilt ontkoppelen van externe modellen? 
-      Alle waardes die door externe modellen zijn ingesteld worden hiermee uit 
+      Weet je zeker dat je het scenario wilt ontkoppelen van externe modellen?
+      Alle waardes die door externe modellen zijn ingesteld worden hiermee uit
       het scenario verwijderd en kunnen niet meer worden hersteld. </br></br>
-      Zie voor meer informatie de 
-      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\"> 
+      Zie voor meer informatie de
+      <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\">
       documentatie</a>.
     edit_text: 'Pas titel en beschrijving aan'
     save_text: 'Sla veranderingen op'

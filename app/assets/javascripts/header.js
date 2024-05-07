@@ -103,7 +103,7 @@
   });
 
   $(function () {
-    new HeaderView({ el: document.querySelector('header.main-header') }).render();
+    new HeaderView({ el: document.querySelector('.main-header') }).render();
   });
 
   window.HeaderView = HeaderView;

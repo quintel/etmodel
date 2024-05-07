@@ -6,8 +6,9 @@
       %span.year
         = Current.setting.end_year
       - if Current.setting.active_scenario_title.present?
-        %span.name
-          = Current.setting.active_scenario_title
+        = link_to(saved_scenario_path(active_saved_scenario_id)) do
+          %span.name
+            = Current.setting.active_scenario_title
     - else
       %span.region.region-flag== #{t('scenario_nav.loading')}&hellip;
       %span.year

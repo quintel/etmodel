@@ -8,13 +8,14 @@
   .scenario_wrapper#show_scenario
     - if editable_saved_scenario?(@saved_scenario)
       = render partial: 'scenario_list_tabs', locals: { active_tab: @saved_scenario.discarded? ? :trash : :my_scenarios, show_save_current: false }
-    = render partial: 'saved_scenarios/flash_notice'
+    .internal-box
+      .scenario
+        = render partial: 'scenario', locals: { saved_scenario: @saved_scenario }
 
-    .scenario
-      = render partial: 'scenario', locals: { saved_scenario: @saved_scenario }
+      #edit_scenario
+      - unless @saved_scenario.featured?
+        = render partial: 'scenarios/version_warning', locals: { scenario: @saved_scenario }
 
-    #edit_scenario
-    - unless @saved_scenario.featured?
-      = render partial: 'scenarios/version_warning', locals: { scenario: @saved_scenario }
+      #saved-scenario-history
+        -# it this the best spot: or do we put it in the menu?
 
-    = render partial: 'scenarios/share_links', locals: { scenario: @saved_scenario }

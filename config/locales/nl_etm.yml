@@ -28,6 +28,7 @@ nl:
   nevermind: "Niet gebruiken"
   cancel: "Annuleren"
   last_updated_ago: "Laatst bijgewerkt %{when} geleden"
+  last_ago: "%{when} geleden"
   delete: Verwijderen
   delete_permanently: Permanent verwijderen
   restore: Herstellen
@@ -260,6 +261,7 @@ nl:
     author: "Auteur"
     compare: "Vergelijk"
     merge: "Samensmelten"
+    continue: 'Ga verder met scenario'
     local_vs_global: "Combineren en vergelijken"
     open_in_myc: Maak een nieuwe Transition Path Chart
     all: Alle Scenarios (admin)
@@ -268,10 +270,13 @@ nl:
     end_year: "Eindjaar"
     go_back: " of ga anders terug naar"
     back_to: "Terug naar scenario"
+    back_to_overview: "Terug naar mijn scenarios"
+    show_history: "Weergeef versiegeschiedenis"
+    close_version_history: "Sluit versiegeschiedenis"
     link: "Sla huidig scenario op"
     by: "Door"
     area_not_exists: 'Regio bestaat niet'
-    load: "Open dit scenario"
+    load: "Open scenario"
     load_energy_mix: "Open energie-mix infographic"
     no_title: "Scenario zonder titel"
     overview: "overzicht"
@@ -329,13 +334,29 @@ nl:
       <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\">
       documentatie</a>.
     add_description: 'Voeg een beschrijving van je scenario toe...'
+    no_description: 'Geen beschrijving'
     edit_text: 'Pas titel en beschrijving aan'
-    save_text: 'Sla veranderingen op'
+    edit_description: 'Pas beschrijving aan'
+    save_text: 'Sla wijzigingen op'
+    open: 'Open deze versie'
+    restore: 'Herstel deze versie'
     cancel_text: 'Annuleren'
     edit_featured_scenario: 'Instellingen voor uitgelicht scenario'
     feature_scenario: 'Maak dit een uitgelicht scenario'
     featured_scenario: 'Uitgelicht scenario'
     created_with: 'Scenario gemaakt met het Energietransitiemodel'
+    history:
+      empty: Er kon geen geschiedenis getoond worden
+      title: Versiegeschiedenis
+      description:
+        Hieronder zie je de verschillende opgeslagen versies van het scenario. Aan elke versie kan een beschrijving 
+        worden toegevoegd. Wanneer je eigenaar bent van dit scenario, kan je het scenario terugzetten naar een 
+        oudere versie.
+      restore:
+        title: Herstel oudere versie
+        description: Je herstelt het scenario naar een oudere versie. Deze actie is onomkeerbaar. Weet je het zeker?
+        button: Herstel oudere versie
+        flash: Het scenario is succesvol hersteld naar een oudere versie!
     users:
       manage: 'Beheer toegang'
       manage_description:
@@ -350,6 +371,7 @@ nl:
       name: 'Naam'
       role: 'Rol'
       you: 'jij'
+      unknown: 'Onbekende gebruiker'
       roles:
         scenario_owner: 'Eigenaar'
         scenario_collaborator: 'Bewerker'
@@ -382,6 +404,9 @@ nl:
     share:
       by: 'Delen via'
       copy: 'Kopieer link'
+      copy_description: |
+        Met deze link kunnen anderen het scenario bekijken. Om ze het recht te geven het scenario
+        te kunnen bewerken, ga naar Opties > Beheer toegang.
       email_subject: 'Energy Transition Model: Delen van scenario'
       message: "Hallo,%0D%0A
         %0D%0A
@@ -425,6 +450,8 @@ nl:
     reset: "Scenario is ge-reset naar de standaardwaarden."
     scenario_load: "Scenario geladen"
     scenario_saved: "Scenario opgeslagen"
+    scenario_restored: "Scenario is hersteld naar oudere versie"
+    scenario_cannot_be_restored: "Scenario kan niet worden hersteld naar oudere versie"
     succesfully_saved: "Het scenario is succesvol opgeslagen."
     account_deleted: "Uw account is verwijderd"
     newsletter_subscribe: "Je hebt je ingeschreven voor onze nieuwsbrief. Kijk in je mailbox om je inschrijving te bevestigen."

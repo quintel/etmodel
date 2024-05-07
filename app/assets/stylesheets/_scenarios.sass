@@ -75,11 +75,15 @@ table.default
       margin-left: 0
 
   &#show_scenario, &#feature_scenario, &#index
-    width: $landing-width + 200px
+    width: $landing-width + 400px
     margin: 0 auto 3rem
-    background: white
-    border-radius: 6px
-    padding: 15px 40px
+    display: flex
+
+    .internal-box
+      width: 100%
+      background: white
+      border-radius: 6px
+      padding: 15px 40px 40px
 
     .version-warning
       background: #f0f7ee image-url('icons/warning-information.svg') 1.5rem 1.25rem no-repeat
@@ -125,7 +129,6 @@ table.default
       font-size: 1.67rem
       color: #333
       letter-spacing: 1px
-      margin-top: 0
       sub
         line-height: 0
 
@@ -221,7 +224,7 @@ table.default
     .save-wrapper
       align-items: center
       display: flex
-      margin: 0 20px 0 auto
+      margin: 10px auto 0 auto
       .save
         margin: 0
         font-size: 14px
@@ -425,7 +428,7 @@ table.default
         margin: 5px 0 10px 0
 
     .description
-      margin-bottom: 10px
+      margin: 7px 0 10px 0
       line-height: 1.5em
       &.info
         background: $light-blue
@@ -470,7 +473,7 @@ table.default
         padding-right: 0
         margin-top: -1.5rem
 
-      #scenario-location, #scenario-privacy
+      #scenario-location, #scenario-privacy, .scenario-version, #scenario-copy
         button.scenario-actions
           align-items: center
           background: none
@@ -499,6 +502,7 @@ table.default
           margin: 0 0.41rem
           border-radius: 5px
           padding: 0.41rem
+          transition: background 0.2s
           svg
             opacity: 0.5
           .fa, span.icon
@@ -515,11 +519,15 @@ table.default
             opacity: 1
         .dropdown-item:hover
           color: #333 !important
-          background: #fff
+          background: $soft-grey
         .dropdown-menu .info
           line-height: 1.5
           margin: 0.5rem 1rem 1rem
           width: 300px
+        .url
+          padding: 10px
+          input
+            width: 100%
 
     .bar
       border-top: 1px solid #eee
@@ -661,8 +669,8 @@ table.default
   .big-tabs
     align-items: stretch
     display: flex
+    flex-direction: column
     font-weight: 500
-    margin: -15px -40px 20px
     background: $soft-grey
     .count
       align-items: center
@@ -684,14 +692,13 @@ table.default
     .tab
       align-items: center
       background: #fff
-      border-radius: 4px 4px 0 0
-      margin-right: 3px
-      border-bottom: 3px solid $soft-grey
+      margin-bottom: 3px
       color: darken(#79828d, 15%)
       display: flex
       font-size: 16px
       gap: 0.125rem
-      padding: 20px 35px
+      padding: 10px 15px
+      width: 200px
       &:first-child
         border-top-left-radius: 6px
       &:hover
@@ -702,10 +709,10 @@ table.default
       &.active
         background: white
         color: black
-        border-bottom: none
-        border-top: 3px solid $landing-gold
-        padding-top: 17px
-        padding-bottom: 23px
+        // border-bottom: none
+        border-right: 3px solid $landing-gold
+        // padding-top: 17px
+        // padding-bottom: 23px
         &:hover
           color: black
       &.myc
@@ -794,3 +801,106 @@ table.default
       &:active
         background: darken($landing-green, 1%)
 
+#saved-scenario-history
+  color: #333
+  h3
+    margin-top: 0
+  p.history-description
+    margin-bottom: 2rem
+  .back-to-scenario-view
+    .fa
+      color: #333
+      &:hover
+        color: $landing-gold
+  .box
+    color: #333
+    margin-top: 1rem
+    opacity: 0
+    animation: fadeInFromNone 0.5s ease-in forwards
+    display: flex !important
+    justify-content: space-between
+    .desc-box
+      background: $soft-grey
+      color: #333
+      padding: 0.5rem 1rem
+      border-radius: 3px
+      flex-grow: 2
+      position: relative
+      margin-top: -0.625rem
+      &::before
+        background: $soft-grey
+        border-radius: 2px
+        content: ''
+        height: 0.625rem
+        position: absolute
+        transform: rotate(45deg)
+        width: 0.625rem
+        left: -0.25rem
+        top: 0.8rem
+
+    .details
+      margin-bottom: 0
+      .control
+        display: none
+    .scenario-version, .control
+      ul
+        white-space: nowrap
+      li a, li
+        display: inline-block
+      .fa
+        color: #888
+        &.green:hover
+          color: $landing-green
+        &.red:hover
+          color: $error-red
+      .fa:hover
+        cursor: pointer
+        color: $landing-blue
+    .main-info
+      font-weight: bold
+      margin-right: 1.2rem
+      color: #333
+      white-space: nowrap
+      &:hover
+        color: $landing-blue
+        text-decoration: none
+        .fa
+          color: $landing-blue
+      .fa
+        color: $landing-grey
+        margin-right: 0.5rem
+        font-size: 0.8rem
+        padding-left: 3px
+      span
+        font-weight: normal
+        margin-left: 0.5rem
+    .description, .description-flied
+      margin: 0
+  .box:first-child
+    .desc-box
+      background: $light-blue
+      color: #333
+      &::before
+        background: $light-blue
+    .main-info
+      &:hover
+        .fa
+          color: $landing-blue
+      .fa
+        color: #333
+  textarea
+    resize: none
+    width: 100%
+
+@keyframes fadeInFromNone
+  0%
+    display: none
+    opacity: 0
+
+  1%
+    display: block
+    opacity: 0
+
+  100%
+    display: block
+    opacity: 1

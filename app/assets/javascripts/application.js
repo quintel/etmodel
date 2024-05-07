@@ -33,3 +33,4 @@
 //= require copy_link_box
 //= require header
 //= require featured_scenario
+//= require saved_scenario_history

@@ -1,0 +1,7 @@
+.scenario_wrapper
+  %h1= t('scenario.history.restore.title')
+  %p= t('scenario.history.restore.description')
+
+  .remove_saved_scenario_user_form
+    = link_to t('scenario.history.restore.button'), restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: @scenario_id}), method: :put, remote: true
+    = link_to t('cancel'), '#', class: 'cancel', onclick: "$.fancybox.close();"

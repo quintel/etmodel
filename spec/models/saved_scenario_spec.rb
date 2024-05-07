@@ -49,11 +49,40 @@ describe SavedScenario do
         .to change{subject.scenario_id_history.count}.by 1
     end
 
-    it "won't add more then 20 items" do
-      20.times{|n| subject.add_id_to_history(n)}
+    it "won't add more then 100 items" do
+      100.times { |n| subject.add_id_to_history(n) }
 
       expect{ subject.add_id_to_history("1234") }
         .not_to change{subject.scenario_id_history.count}
+    end
+  end
+
+  describe 'restore_version' do
+    before do
+      subject.scenario_id_history = [123, 1234, 12345]
+    end
+
+    it 'sets the version as the main scenario id' do
+      subject.restore_version(1234)
+      expect(subject.scenario_id).to eq(1234)
+    end
+
+    it 'removes old scenarios from history' do
+      expect { subject.restore_version(1234) }
+        .to change { subject.scenario_id_history.count }.by(-2)
+    end
+
+    it 'keeps correct ids in history' do
+      subject.restore_version(1234)
+      expect(subject.scenario_id_history).to eq([123])
+    end
+
+    it 'returns the discarded ids' do
+      expect(subject.restore_version(1234)).to eq([123_45])
+    end
+
+    it 'does nothing when the scenario was not in the history' do
+      expect(subject.restore_version(999_999)).to be_nil
     end
   end
 

@@ -1,8 +1,30 @@
+.back-to-scenario-view
+  %a.stick-right{ href: scenarios_path }
+    ⟵
+    = t('scenario.back_to_overview')
+%h1= format_subscripts(scenario.localized_title(I18n.locale))
+
+%ul.details.last
+  %li
+    %strong
+      = t "areas.#{scenario.area_code}"
+      = scenario.end_year
+  %li
+    = t('scenario.updated')
+    = local_time(scenario.updated_at, :long)
+
+  %li.with-button
+    - if active_saved_scenario_id == scenario.id
+      = link_to t("scenario.continue"), Current.setting.last_etm_page || play_path, class: "scenario-button button save no-margin-right"
+    - else
+      = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load no-margin-right"
+
+
 .row
   %ul.details.stick-right
-    - if editable_saved_scenario?(scenario) && action_name == 'show'
+    - if editable_saved_scenario?(scenario) && action_name != 'edit'
       - if scenario.private?
-        %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
+        %li{ style: 'margin-right: 1rem; padding-right: 0' }
           .dropdown#scenario-privacy<>
             %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
               = inline_svg_tag 'hero/20/lock.svg', class: 'lock-icon'
@@ -17,7 +39,7 @@
                   = inline_svg_tag 'hero/20/eye.svg'
                   = t('scenario.privacy.private.invert')
       - else
-        %li{ style: 'margin-left: auto; margin-right: 1rem; padding-right: 0' }
+        %li{ style: 'margin-right: 1rem; padding-right: 0' }
           .dropdown#scenario-privacy<>
             %button.scenario-actions#scenario-privacy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
               = inline_svg_tag 'hero/20/eye.svg', style: 'margin-right: 0.125rem'
@@ -35,7 +57,7 @@
       :javascript
         new DropdownView({ el: $('#scenario-privacy') }).render()
 
-      %li{ style: 'padding-right: 0' }
+      %li{ style: 'margin-right: 1rem; padding-right: 0' }
         .dropdown#scenario-location<>
           %button.scenario-actions#scenario-location-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
             = inline_svg_tag 'hero/20/cog.svg'
@@ -56,6 +78,10 @@
                 = link_to saved_scenario_users_path(@saved_scenario.id), class: 'dropdown-item' do
                   .fa.fa-users
                   = t("scenario.users.manage")
+            %li
+              = link_to saved_scenario_history_path(@saved_scenario), remote: true, class: 'dropdown-item' do
+                .fa.fa-history
+                = t("scenario.show_history")
             - if current_user&.admin?
               %li
                 - if @saved_scenario.featured?
@@ -89,17 +115,18 @@
 
         :javascript
           new DropdownView({ el: $('#scenario-location') }).render()
-
-%h1= format_subscripts(scenario.localized_title(I18n.locale))
-
-%ul.details.last
-  %li
-    %strong
-      = t "areas.#{scenario.area_code}"
-      = scenario.end_year
-  %li
-    = t('scenario.updated')
-    = local_time(scenario.updated_at, :long)
-
-  %li.with-button
-    = link_to t("scenario.load"), load_saved_scenario_path(scenario), class: "scenario-button button load no-margin-right"
+        - unless scenario.private?
+          %li{ style: 'margin-right: 1rem; padding-right: 0' }
+            .dropdown#scenario-copy<>
+              %button.scenario-actions#scenario-copy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+                .icon{ class: 'fa fa-copy' }
+                = t('scenario.share.copy')
+                %span.fa.fa-caret-down
+              %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-copy-button', style: 'margin-top: 3px' }
+                %li
+                  .info
+                    = t('scenario.share.copy_description')
+                %li.sep-above
+                  .url= text_field_tag 'url', request.original_url
+          :javascript
+            new DropdownView({ el: $('#scenario-copy') }).render()

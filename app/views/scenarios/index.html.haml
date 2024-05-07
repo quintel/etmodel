@@ -7,5 +7,6 @@
 .background_wrapper#saved_scenario
   .scenario_wrapper#index
     = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_scenarios }
-    = render partial: 'saved_scenarios/flash_notice'
-    = render 'scenarios_slice'
+    .internal-box
+      = render partial: 'saved_scenarios/flash_notice'
+      = render 'scenarios_slice'

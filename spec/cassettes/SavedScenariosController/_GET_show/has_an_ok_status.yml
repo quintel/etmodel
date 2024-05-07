@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/versions?scenarios%5B%5D=648695
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx/1.21.3
+      Date:
+      - Tue, 16 Apr 2024 08:19:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - bbfad101-f1db-4585-9927-3343306ab960
+      X-Runtime:
+      - '0.011815'
+    body:
+      encoding: UTF-8
+      string: '{"errors":["Scenario not found"]}'
+  recorded_at: Tue, 16 Apr 2024 08:19:29 GMT
+recorded_with: VCR 6.0.0

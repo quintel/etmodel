@@ -1,0 +1,22 @@
+- content_for(:page_title) { "#{@saved_scenario.title} - #{t('meta.name')}" }
+
+-# We'll render the flash in this view, so suppress doing so in the layout.
+- content_for(:flash) do
+  %span
+
+- content_for :content do
+  .background_wrapper#saved_scenario
+    .scenario_wrapper{ id: defined?(action_id) ? action_id : 'show_scenario'}
+      - if editable_saved_scenario?(@saved_scenario)
+        = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: @saved_scenario.discarded? ? :trash : :my_scenarios, show_save_current: false }
+      .internal-box
+        .scenario
+          = render partial: 'saved_scenarios/scenario', locals: { saved_scenario: @saved_scenario }
+
+        #edit_scenario
+        - unless @saved_scenario.featured?
+          = render partial: 'scenarios/version_warning', locals: { scenario: @saved_scenario }
+
+        = yield
+
+= render template: 'layouts/application'

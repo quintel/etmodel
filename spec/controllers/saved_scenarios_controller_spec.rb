@@ -125,6 +125,10 @@ describe SavedScenariosController, vcr: true do
           attributes_for(:engine_scenario, id: 999, area_code: 'nl', end_year: 2050)
         ))
       )
+
+      allow(CreateAPIScenarioVersionTag).to receive(:call).and_return(
+        ServiceResult.success
+      )
     end
 
     context 'with valid attributes' do
@@ -421,6 +425,44 @@ describe SavedScenariosController, vcr: true do
 
       it 'does not update the API scenarios' do
         expect(UpdateAPIScenarioPrivacy).not_to have_received(:call_with_ids)
+      end
+    end
+  end
+
+  describe 'PUT restore' do
+    before do
+      sign_in(user)
+      session[:setting] = Setting.new
+      allow(RestoreSavedScenario).to receive(:call).and_return(ServiceResult.success)
+    end
+
+    context 'with an owned saved scenario' do
+      before do
+        user_scenario.update!(scenario_id_history: [8, 9, 10])
+        put(
+          :restore,
+          format: :js,
+          params: { id: user_scenario.id, saved_scenario: { scenario_id: 9 } }
+        )
+      end
+
+      it 'is succesfull' do
+        expect(response).to be_successful
+      end
+    end
+
+    context 'with an unowned saved scenario' do
+      before do
+        admin_scenario.update!(scenario_id_history: [8, 9, 10])
+        put(
+          :restore,
+          format: :js,
+          params: { id: admin_scenario.id, saved_scenario: { scenario_id: 9 } }
+        )
+      end
+
+      it 'returns 404' do
+        expect(response).to be_not_found
       end
     end
   end

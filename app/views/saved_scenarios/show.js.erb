@@ -1,0 +1,4 @@
+$('.scenario').html("<%= escape_javascript(render partial: 'scenario', locals: { saved_scenario: @saved_scenario } ) %>");
+$('#saved-scenario-history').hide();
+history.pushState(null, null, "<%=escape_javascript(saved_scenario_path(@saved_scenario))%>");
+$(document).ready(restore);

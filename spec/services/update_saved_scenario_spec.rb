@@ -25,6 +25,9 @@ describe UpdateSavedScenario, type: :service do
     allow(client).to receive(:put).with(
       '/api/v3/scenarios/10', scenario: { set_preset_roles: true }
     )
+    allow(client).to receive(:post).with(
+      '/api/v3/scenarios/10/version', { :description => "" }
+    )
   end
 
   context 'when the API response is successful' do

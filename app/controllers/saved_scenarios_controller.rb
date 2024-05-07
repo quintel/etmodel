@@ -2,7 +2,7 @@
 
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
-  load_resource only: %i[load discard undiscard publish unpublish]
+  load_resource only: %i[load discard undiscard publish unpublish restore confirm_restore]
   load_and_authorize_resource only: %i[show new create edit update destroy]
 
   before_action only: %i[load] do
@@ -13,7 +13,7 @@ class SavedScenariosController < ApplicationController
     authorize!(:update, @saved_scenario)
   end
 
-  before_action only: %i[discard undiscard] do
+  before_action only: %i[discard undiscard restore] do
     authorize!(:destroy, @saved_scenario)
   end
 
@@ -73,6 +73,7 @@ class SavedScenariosController < ApplicationController
   def show
     respond_to do |format|
       format.html { @saved_scenario.loadable? ? render : redirect_to(root_path) }
+      format.js { @saved_scenario.loadable? ? render : redirect_to(root_path) }
       format.csv { @saved_scenario.loadable? ? render : render_not_found }
     end
   end
@@ -222,6 +223,32 @@ class SavedScenariosController < ApplicationController
     redirect_to saved_scenario_path(@saved_scenario)
   end
 
+  def confirm_restore
+    @scenario_id = restore_params[:scenario_id].to_i
+
+    render 'confirm_restore', layout: false
+  end
+
+  # Restores a saved scenario to a previous version
+  def restore
+    result = RestoreSavedScenario.call(
+      engine_client,
+      @saved_scenario,
+      restore_params[:scenario_id].to_i
+    )
+
+    flash.notice =
+      if result.successful?
+        t('flash.scenario_restored')
+      else
+        t('flash.scenario_cannot_be_restored')
+      end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # DELETE /saved_scenarios/:id
   def destroy
     @saved_scenario.destroy
@@ -258,6 +285,10 @@ class SavedScenariosController < ApplicationController
 
   def saved_scenario_params
     params.require(:saved_scenario).permit(:title, :description)
+  end
+
+  def restore_params
+    params.require(:saved_scenario).permit(:scenario_id)
   end
 
   def reload_current_title(saved_scenario)

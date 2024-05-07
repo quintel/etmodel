@@ -7,15 +7,16 @@
 .background_wrapper#saved_scenario
   .scenario_wrapper#index
     = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_myc }
-    = render partial: 'saved_scenarios/flash_notice'
+    .internal-box
+      = render partial: 'saved_scenarios/flash_notice'
 
-    - if @multi_year_charts.any?
-      = render partial: 'multi_year_chart_row', collection: @multi_year_charts
-      = paginate @multi_year_charts
-    - else
-      .empty-state
-        %h4= t('multi_year_charts.title')
-        %p= t('multi_year_charts.description')
-        %p{ style: "font-weight: 500" }
-          = link_to scenarios_path do
-            == ← #{t('multi_year_charts.back')}
+      - if @multi_year_charts.any?
+        = render partial: 'multi_year_chart_row', collection: @multi_year_charts
+        = paginate @multi_year_charts
+      - else
+        .empty-state
+          %h4= t('multi_year_charts.title')
+          %p= t('multi_year_charts.description')
+          %p{ style: "font-weight: 500" }
+            = link_to scenarios_path do
+              == ← #{t('multi_year_charts.back')}

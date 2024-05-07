@@ -28,11 +28,12 @@ en:
   nevermind: "Never mind"
   cancel: "Cancel"
   last_updated_ago: "Last updated %{when} ago"
+  last_ago: "%{when} ago"
   delete: Delete
   delete_permanently: Delete Permanently
   restore: Restore
   trash: Trash
-  settings: Settings
+  settings: Options
   move_to: Move to
   undo: Undo
   required: Required
@@ -258,6 +259,7 @@ en:
     area_code: "Country"
     author: "Author"
     compare: "Compare"
+    continue: 'Continue with this scenario'
     merge: "Merge"
     local_vs_global: "Combine and compare"
     open_in_myc: Create a new Transition Path Chart
@@ -267,10 +269,13 @@ en:
     end_year: "End Year"
     go_back: "Or go back to"
     back_to: "Back to scenario"
+    back_to_overview: "Back to my scenarios"
+    show_history: "Show version history"
+    close_version_history: "Close version history"
     link: "Save current scenario"
     by: "By"
     area_not_exists: 'Area does not exist'
-    load: "Open this scenario"
+    load: "Open scenario"
     load_energy_mix: "Open energy mix infographic"
     no_title: "Scenario without title"
     overview: "overview"
@@ -327,13 +332,28 @@ en:
       <a href="https://docs.energytransitionmodel.com/main/external-coupling#uncoupling-the-scenario" target=\"_blank\">
       documentation</a> for more information.
     add_description: 'Add a description of your scenario...'
+    no_description: 'No description'
     edit_text: 'Edit title and description'
+    edit_description: 'Edit description'
     save_text: 'Save changes'
+    open: 'Open this scenario version'
+    restore: 'Restore this version'
     cancel_text: 'Discard changes'
     edit_featured_scenario: 'Edit featured scenario settings'
     feature_scenario: 'Feature this scenario'
     featured_scenario: 'Featured scenario'
     created_with: 'Scenario created with the Energy Transition Model'
+    history:
+      empty: There is no history to show
+      title: Version history
+      description:
+        Here you can see the different scenario versions that have been saved. A description can be added to each version.
+        When you are owner of this scenario, you can reset the scenario to an older version. 
+      restore:
+        title: Restore an older version
+        description: You are restoring the scenario to an older version. This action is irreverisble. Are you sure?
+        button: Restore now
+      flash: The scenario was succesfully restored to an older version!
     users:
       manage: 'Manage access'
       manage_description:
@@ -348,6 +368,7 @@ en:
       name: 'Name'
       role: 'Role'
       you: 'you'
+      unknown: 'Unknown user'
       roles:
         scenario_owner: 'Owner'
         scenario_collaborator: 'Collaborator'
@@ -375,6 +396,9 @@ en:
     share:
       by: 'Share by'
       copy: 'Copy link'
+      copy_description:
+        This is a link you can share with other people to view your scenario. If you want to give
+        others access to make changes to your scenario, please go to Options > Manage access.
       email_subject: 'Energy Transition Model: Sharing scenario'
       message: "Hi!%0D%0A
         %0D%0A
@@ -417,6 +441,8 @@ en:
     reset: "Scenario is reset to default values."
     scenario_load: "Loaded scenario"
     scenario_saved: "Saved scenario"
+    scenario_restored: "Scenario succesfully restored"
+    scenario_cannot_be_restored: "Scenario cannot be restored"
     succesfully_saved: "The scenario was succesfully saved."
     account_deleted: "Your account has been deleted"
     newsletter_subscribe: "You have subscribed to our newsletter. Please check your e-mail inbox to confirm."

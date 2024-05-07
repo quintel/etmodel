@@ -83,12 +83,17 @@ Rails.application.routes.draw do
       put :undiscard
       put :publish
       put :unpublish
+      put :restore
+      get :confirm_restore
     end
 
     collection do
       get :discarded
       get :all
     end
+
+    get '/history' => 'saved_scenario_history#index'
+    put '/history/:scenario_id' => 'saved_scenario_history#update',  as: :update_saved_scenario_history
 
     get '/report/:report_name' => 'saved_scenario_reports#show'
   end

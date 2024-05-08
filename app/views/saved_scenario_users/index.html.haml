@@ -9,28 +9,29 @@
     - if @saved_scenario.owner?(current_user)
       = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: @saved_scenario.discarded? ? :trash : :my_scenarios, show_save_current: false }
 
-    = render partial: 'flash', format: :js
+    .internal-box
+      = render partial: 'flash', format: :js
 
-    .scenario
-      .back-to-scenario-view
-        %a.stick-right{ href: saved_scenario_path(@saved_scenario) }
-          ⟵
-          = t('scenario.back_to')
-      %h1
-        = @saved_scenario.title ? format_subscripts(@saved_scenario.title) : @saved_scenario.id
+      .scenario
+        .back-to-scenario-view
+          %a.stick-right{ href: saved_scenario_path(@saved_scenario) }
+            ⟵
+            = t('scenario.back_to')
+        %h1
+          = @saved_scenario.title ? format_subscripts(@saved_scenario.title) : @saved_scenario.id
 
-      %h3.access= t('scenario.users.manage')
+        %h3.access= t('scenario.users.manage')
 
-      #saved_scenario_users_table
-        = render partial: 'user_table', format: :js, locals: { saved_scenario: @saved_scenario }
+        #saved_scenario_users_table
+          = render partial: 'user_table', format: :js, locals: { saved_scenario: @saved_scenario }
 
-    .actions.scenario-users
-      .save.button.scenario-button.show-new-saved-scenario-user-form{ data: { form_url: new_saved_scenario_user_path } }
-        = t('scenario.users.invite')
+      .actions.scenario-users
+        .save.button.scenario-button.show-new-saved-scenario-user-form{ data: { form_url: new_saved_scenario_user_path } }
+          = t('scenario.users.invite')
 
-    .description.info
-      .fa.fa-info.with-circle
-      %div
-        = t('scenario.users.manage_description').html_safe
+      .description.info
+        .fa.fa-info.with-circle
+        %div
+          = t('scenario.users.manage_description').html_safe
 
 

@@ -3,12 +3,12 @@ ___
 
 # Mei 2024
 
-### Toevoeging van Bioenergy with Carbon Capture (Utilisation) and Storage (BECC(U)S)
+### Toevoeging van Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
 
-De ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECC(U)S) installaties, waarbij drie nieuwe functies worden geïntroduceerd.
+De ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECCUS installaties, waarbij drie nieuwe functies worden geïntroduceerd.
 De eerste is CCS-technologie voor biomassacentrales. Gebruikers kunnen nu instellen welk deel van de geïnstalleerde capaciteit van de biomassacentrales is uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in het huidige ETM (zie documentatie), kan dit leiden tot negatieve emissies.
-De tweede is een afgevangen CO2-prijs. Nu kan CO2 die wordt afgevangen worden verkocht aan sectoren die CO2 gebruiken. Dit betekent dat de negatieve emissies kunnen leiden tot lagere marginale kosten voor de BECC(U)S-installaties.
-De derde is regelbare biomassacentrales. Aangezien de prijs voor BECC(U)S-installaties lager kan worden door de negatieve emissies, kunnen regelbare BECC(U)S-installaties een interessante flexibele energieoptie zijn.
+De tweede is een afgevangen CO2-prijs. Nu kan CO2 die wordt afgevangen worden verkocht aan sectoren die CO2 gebruiken. Dit betekent dat de negatieve emissies kunnen leiden tot lagere marginale kosten voor de BECCUS-installaties.
+De derde is regelbare biomassacentrales. Aangezien de prijs voor BECCUS-installaties lager kan worden door de negatieve emissies, kunnen regelbare BECCUS-installaties een interessante flexibele energieoptie zijn.
 
 
 Onderzoek het nu zelf!

@@ -4,12 +4,12 @@ ___
 
 # May 2024
 
-### Addition of Bioenergy with Carbon Capture (Utilisation) and Storage (BECC(U)S)
+### Addition of Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
 
-The ETM now incorporates the addition of Bioenergy with Carbon Capture and Storage (BECC(U)S) plants, introducing three new features.
+The ETM now incorporates Bioenergy with Carbon Capture and Utilisation Storage (BECCUS) plants, introducing three new features.
 The first being CCS technology to biomass plants. Users can now set which part of the installed capacity of the biomass plants is installed with CCS technology.  Since emissions from biomass plants are not counted in the current ETM (see documentation) this can lead to negative emissions.
-The second being, a captured CO2 price. Now, CO2 that is captured can be sold to CO2 utilising sectors. This means that the negative emissions can lead to lesser marginal costs for the BECC(U)S plants. 
-The third being dispatchable biomass plants. Since the price for BECC(U)S plants can become lower through the negative emissions, dispatchable BECC(U)S plants might be an interesting flexible power option.
+The second being, a captured CO2 price. Now, CO2 that is captured can be sold to CO2 utilising sectors. This means that the negative emissions can lead to lower marginal costs for the BECCUS plants.
+The third being dispatchable biomass plants. Since the price for BECCUS plants can become lower through the negative emissions, dispatchable BECCUS plants might be an interesting flexible power option.
 
 Investigate it yourself!
 

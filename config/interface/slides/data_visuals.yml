@@ -10,6 +10,7 @@
 - key: data_visuals_energy_mix
   position: 20
   sidebar_item_key: data_visuals
+  dependent_on: has_offshore_solar    # only true for NL regions so energy mix only visible for NL regions
   output_element_key: final_demand_mekko_energetic_mece
 - key: data_visuals_co2_sheet
   position: 30

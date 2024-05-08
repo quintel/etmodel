@@ -16,6 +16,18 @@
       this.iconsEl = this.el.querySelector('.scenario-version');
       this.formControl = this.el.querySelector('.control');
     },
+
+    render: function() {
+      this.setupMaxLengthDescription(1000);
+    },
+
+    setupMaxLengthDescription: function (max) {
+      this.descriptionEditEl.querySelector('textarea').onkeypress = function () {
+        if (this.value.length >= max) return false;
+      };
+    },
+
+
     showTextArea: function (event) {
       $(this.iconsEl).hide();
       $(this.descriptionEl).hide();

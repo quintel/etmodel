@@ -5,10 +5,14 @@ ___
 
 ### Toevoeging van Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
 
-De ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECCUS installaties, waarbij drie nieuwe functies worden geïntroduceerd.
-De eerste is CCS-technologie voor biomassacentrales. Gebruikers kunnen nu instellen welk deel van de geïnstalleerde capaciteit van de biomassacentrales is uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in het huidige ETM (zie documentatie), kan dit leiden tot negatieve emissies.
-De tweede is een afgevangen CO2-prijs. Nu kan CO2 die wordt afgevangen worden verkocht aan sectoren die CO2 gebruiken. Dit betekent dat de negatieve emissies kunnen leiden tot lagere marginale kosten voor de BECCUS-installaties.
-De derde is regelbare biomassacentrales. Aangezien de prijs voor BECCUS-installaties lager kan worden door de negatieve emissies, kunnen regelbare BECCUS-installaties een interessante flexibele energieoptie zijn.
+De ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECCUS) installaties, waarbij drie nieuwe functies worden geïntroduceerd.
+
+De eerste is CCS-technologie voor biomassacentrales. Gebruikers kunnen nu instellen welk deel van de geïnstalleerde capaciteit van de biomassacentrales is uitgerust met CCS-technologie. Dit kan in de **[Afvang van CO2 in de energiesector](scenario/emissions/ccus/capture-of-co2-in-energy-sector)** sectie gezet worden.
+
+
+De tweede is een afgevangen biogene CO2-prijs. Gebruikers kunnen deze prijs in de **[CCUS](scenario/emissions/other_emissions/overview)** sectie instellen.
+
+De derde is regelbare biomassacentrales. Gebruikers kunnen de capaciteit van regelbare biomassacentrales in de **[Biomassacentrales](scenario/emissions/other_emissions/overview)** sectie instellen.
 
 
 Onderzoek het nu zelf!

@@ -13,7 +13,7 @@
 
 %p
   De berekeningen zijn gemaakt met behulp van het
-  = link_to('EnergieTransitieModel', root_url)
+  = link_to('Energietransitiemodel', root_url)
   van bureau Quintel. Door adviesbureau Over Morgen is in samenspraak met
   gemeenten en de provincie voor elke gemeente een scenario opgesteld. Alle
   uitgangspunten en instellingen van het scenario zijn terug te vinden en te
@@ -45,7 +45,7 @@
   omgeving, mobiliteit, industrie en landbouw. We noemen dit ook wel ‘de vraag
   aan de meter’. De energievraag van dit moment is gebaseerd op de laatste
   complete set gegevens uit de Klimaatmonitor van Rijkswaterstaat (peiljaar
-  2016). Energiegebruik van internationaal vracht- en vliegverkeer en
+  2019). Energiegebruik van internationaal vracht- en vliegverkeer en
   grootschalige opwekking van energie zit hier niet in. De energievraag bestaat
   uit:
 
@@ -64,7 +64,7 @@
   %li
     Collectief warmtegebruik voor verwarmen van de gebouwde omgeving;
   %li
-    Individuele zonthermie in de vorm van zonnecollectoren op daken;
+    Individuele zonthermie in de vorm van zonnecollectoren en PVT op daken;
   %li
     Alle elektriciteitsgebruik.
 
@@ -226,10 +226,18 @@
     bodem (500 m. diepte) en grote ondergrondse boilervaten.
 
 #disclaimer
-  Deze infographic is automatisch gegenereerd met het Energietransitiemodel op
-  basis van een scenario dat niet is gevalideerd door een expert. Quintel of
-  Over Morgen zijn dan ook niet verantwoordelijk of aansprakelijk voor de inhoud
-  of uitkomsten van deze infographic.
+  %p
+    Deze infographic is automatisch gegenereerd met het Energietransitiemodel op 
+    basis van een scenario dat niet is gevalideerd door een expert. Quintel is dan 
+    ook niet verantwoordelijk of aansprakelijk voor de inhoud of uitkomsten van 
+    deze infographic.
+    
+  %p
+    De Energiemix wordt in 2025 vervangen door een nieuwe feature en zal dan niet 
+    meer in deze vorm beschikbaar zijn. Het Energietransitiemodel is gratis in gebruik. 
+    Ontwikkelingen en onderhoud worden betaald door enthousiaste gebruikers en zijn 
+    daardoor beschikbaar voor iedereen. Mocht je willen bijdragen aan een update, 
+    laat het dan weten via info@quintel.com.
 
   - if can_dismiss_disclaimer?
-    %button Hide disclaimer
+    %button Verberg disclaimer

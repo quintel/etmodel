@@ -5,7 +5,7 @@ ___
 
 ### Toevoeging van Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
 
-De ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECCUS) installaties, waarbij drie nieuwe functies worden geïntroduceerd.
+Het ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECCUS) installaties, waarbij drie nieuwe functies worden geïntroduceerd.
 
 De eerste is CCS-technologie voor biomassacentrales. Gebruikers kunnen nu instellen welk deel van de geïnstalleerde capaciteit van de biomassacentrales is uitgerust met CCS-technologie. Dit kan in de **[Afvang van CO2 in de energiesector](scenario/emissions/ccus/capture-of-co2-in-energy-sector)** sectie gezet worden.
 

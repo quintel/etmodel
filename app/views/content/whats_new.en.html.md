@@ -8,16 +8,11 @@ ___
 
 The ETM now incorporates Bioenergy with Carbon Capture and Utilisation Storage (BECCUS) plants. There are three key updates to explore.
 
+First, biomass power plants have been added to the model. Users can now install capacity for either must-run or dispatchable biomass power plants and CHPs in the **[Biomass plants](scenario/supply/electricity_renewable/biomass-plants)** section.
 
-The first being CCS technology to biomass plants. Users can now set which part of the installed capacity of the biomass plants is installed with CCS technology in their scenario. This can be set in the **[Capture of CO2 in energy sector](scenario/emissions/ccus/capture-of-co2-in-energy-sector)** section.
+Second, it is possible to capture CO<sub>2</sub>-emissions from these power plants, by determining which part of the installed capacity is fitted with a CCS unit. This can be set in the **[Capture of CO2 in energy sector](scenario/emissions/ccus/capture-of-co2-in-energy-sector)** section.
 
-
-The second being a captured biogenic CO2 price. Users can set this price in the **[CCUS](scenario/emissions/other_emissions/overview)** section.
-
-
-The third being dispatchable biomass plants. Users can set the capacity of dispatchable biomass plants in the **[Biomass plants](scenario/emissions/other_emissions/overview)** section. 
-
-Investigate it now!
+Third, a price for captured biogenic CO<sub>2</sub> has been introduced in the model. This price can be set in the the **[CCUS](scenario/emissions/other_emissions/overview)** section. The revenue that can be obtained from captured biogenic CO<sub>2</sub> is taken into account when determining the marginal costs of power plants or CHPs that run on biogenc fuels and have a CCS unit. It allows these plants to run for lower marginal costs. The costs of all captured biogenic CO<sub>2</sub> is shown in the costs charts.
 
 
 ### Hydrogen improvements

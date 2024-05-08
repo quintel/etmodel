@@ -4,7 +4,7 @@ ___
 
 # May 2024
 
-### Addition of Bioenergy with Carbon Capture (Utilisiation) and Storage (BECC(U)S)
+### Addition of Bioenergy with Carbon Capture (Utilisation) and Storage (BECC(U)S)
 
 The ETM now incorporates the addition of Bioenergy with Carbon Capture and Storage (BECC(U)S) plants, introducing three new features.
 The first being CCS technology to biomass plants. Users can now set which part of the installed capacity of the biomass plants is installed with CCS technology.  Since emissions from biomass plants are not counted in the current ETM (see documentation) this can lead to negative emissions.

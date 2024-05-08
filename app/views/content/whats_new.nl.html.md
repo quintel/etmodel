@@ -3,7 +3,7 @@ ___
 
 # Mei 2024
 
-### Toevoeging van Bioenergy with Carbon Capture (Utilisiation) and Storage (BECC(U)S)
+### Toevoeging van Bioenergy with Carbon Capture (Utilisation) and Storage (BECC(U)S)
 
 De ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECC(U)S) installaties, waarbij drie nieuwe functies worden geïntroduceerd.
 De eerste is CCS-technologie voor biomassacentrales. Gebruikers kunnen nu instellen welk deel van de geïnstalleerde capaciteit van de biomassacentrales is uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in het huidige ETM (zie documentatie), kan dit leiden tot negatieve emissies.

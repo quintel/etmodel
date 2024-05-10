@@ -23,7 +23,7 @@ en:
         installed capacities of power plants and characteristics of the region such as the population size,
         number of houses, roof surface suitable for solar panels etc.
       country_description: |
-        When possible, we use open source energy balances from <a href="https://ec.europa.eu/eurostat/web/energy/data/energy-balances"target="_blank">Eurostat</a> as a
+        When possible, we use open source energy balances from <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_c/default/table?lang=en&category=nrg.nrg_quant.nrg_quanta.nrg_bal"target="_blank">Eurostat</a> as a
         basis for our country datasets. Additionally, analyses are performed
         to provide any additonal data that is required to create a complete dataset. These analyses can be found on
         <a href="https://github.com/quintel/etdataset-public/tree/master/source_analyses"target="_blank">this GitHub page</a>, in separate folders per country.
@@ -291,7 +291,7 @@ en:
         <b> Note: </b> Solar PVT panels and solar thermal panels are included in the chart and table. 
         The ETM considers PVT panels (and solar thermal panels) primarily as a heating technology in combination with a heat pump.
         To adjust the share of a PVT heat pump system for space heating and hot water or to adjust the number of solar thermal panels, go to the 
-        <a href="/scenario/demand/households/demand/households/space-heating-and-hot-water">
+        <a href="/scenario/demand/households/space-heating-and-hot-water">
         Households space heating and hot water</a> section. 
     flexibility_merit_order_merit_order_price:
       title: Hourly curves for electricity

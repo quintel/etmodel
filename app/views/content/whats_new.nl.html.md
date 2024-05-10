@@ -3,40 +3,32 @@ ___
 
 # Mei 2024
 
-### Toevoeging van Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
+### Toevoeging van BECCUS
 
-De ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECCUS installaties, waarbij drie nieuwe functies worden geïntroduceerd.
-De eerste is CCS-technologie voor biomassacentrales. Gebruikers kunnen nu instellen welk deel van de geïnstalleerde capaciteit van de biomassacentrales is uitgerust met CCS-technologie. Aangezien emissies van biomassacentrales niet worden meegerekend in het huidige ETM (zie documentatie), kan dit leiden tot negatieve emissies.
-De tweede is een afgevangen CO2-prijs. Nu kan CO2 die wordt afgevangen worden verkocht aan sectoren die CO2 gebruiken. Dit betekent dat de negatieve emissies kunnen leiden tot lagere marginale kosten voor de BECCUS-installaties.
-De derde is regelbare biomassacentrales. Aangezien de prijs voor BECCUS-installaties lager kan worden door de negatieve emissies, kunnen regelbare BECCUS-installaties een interessante flexibele energieoptie zijn.
+Het ETM bevat nu ook Bio-energie met Koolstofafvang, -gebruik en -opslag (<i>Bioenergy with Carbon Capture and Utilisation Storage</i>, BECCUS) centrales. Er zijn drie belangrijke updates om te bekijken.
+
+Ten eerste zijn biomassacentrales toegevoegd aan het model. Gebruikers kunnen nu vermogen installeren voor biomassacentrales en WKK's die ofwel must-run of regelbaar zijn in de **[Biomassacentrales](scenario/supply/electricity_renewable/biomass-plants)** sectie.
+
+Ten tweede is het mogelijk om CO<sub>2</sub>-emissies van deze elektriciteitscentrales af te vangen, door te bepalen welk deel van het geïnstalleerd vermogen is uitgerust met een CCS-eenheid (<i>Carbon Capture and Storage</i>). Dit kan ingesteld worden in de **[Afvang van CO2 in de energiesector](scenario/emissions/ccus/capture-of-co2-in-energy-sector)** sectie.
+
+-> <img src="/assets/pages/whats_new/net_effect_CO2_nl.png" width="600" /> <-
+
+Ten derde is er in het model een prijs geïntroduceerd voor afgevangen biogene CO<sub>2</sub>. Deze prijs kan worden ingesteld in de **[CCUS](scenario/emissions/other_emissions/overview)** sectie. De opbrengst die kan worden verkregen uit afgevangen biogene CO<sub>2</sub> wordt meegenomen bij het bepalen van de marginale kosten van elektriciteitscentrales of WKK's die draaien op biogene brandstoffen en een CCS-eenheid hebben. Het stelt deze installaties in staat om tegen lagere marginale kosten te draaien. De kosten van alle afgevangen biogene CO<sub>2</sub> worden weergegeven in de kostenoverzichten.
 
 
-Onderzoek het nu zelf!
+### Waterstofverbeteringen
 
+De waterstofsectie van het model is verbeterd! Met de laatste update zijn flexibele productiemogelijkheden voor waterstof toegevoegd. Stoommethaanreformers, ammoniareformers en autothermische reformers kunnen nu worden geïnstalleerd met regelbaar vermogen bovenop het niet-regelbaar vermogen. Verken deze veranderingen in de **[Waterstofproductie](scenario/supply/hydrogen/hydrogen-production)** sectie.
 
-### Verbeteringen waterstof
+Naast deze flexibele productiemethodes zijn de opties voor waterstofopslag verfijnd. Gebruikers kunnen nu zoutcavernes en lege gasvelden als opslagopties gebruiken in het model. Bij deze opslagopties kan zowel het volume als het vermogen ingesteld worden. Dit kan gevonden worden in de **[Waterstofoplsag](scenario/supply/hydrogen/hydrogen-production)** sectie.
 
-De waterstofsectie van het model is verbeterd!
-Met de laatste update zijn flexibele productiemogelijkheden voor waterstof toegevoegd.
-Stoommethaanreformers, ammoniareformers en autothermische reformers kunnen nu worden geïnstalleerd met een regelbare capaciteit bovenop de niet-regelbare capaciteit.
-Verken deze veranderingen in de **[Waterstofproductie](scenario/supply/hydrogen/hydrogen-production)** sectie.
+Samen vormen de regelbare- en opslagproductiefaciliteiten de flexibele waterstofproductieroutes binnen de ETM. Welke productieroute eerst moet worden gebruikt, kan door de gebruiker worden ingesteld via de nieuwe waterstofproductie merit order. Deze merit order kan ingesteld worden in de **[Merit order van regelbare waterstofproductie](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** sectie.
 
-Naast deze flexibele productiemehtodes zijn de opties voor waterstofopslagmodellering verfijnd.
-Gebruikers kunnen nu zoutcavernes en lege gasvelden als opslagopties gebruiken in het model.
-Bij deze opslagopties kan zowel het volume als de capaciteit ingesteld worden.
-Dit kan gevonden worden in de **[Waterstofoplsag](scenario/supply/hydrogen/hydrogen-production)** 
-sectie.
+-> <img src="/assets/pages/whats_new/hydrogen_production_order_nl.png" width="500" /> <-
 
-Samen vormen de regelbare- en opslagproductiefaciliteiten de flexibele waterstofproductieroutes binnen de ETM.
-Welke productieroute eerst moet worden gebruikt, kan door de gebruiker worden ingesteld via de nieuwe waterstofproductie merit order. Deze merit order kan ingesteld worden in de **[Merit order van regelbare waterstofproductie](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** sectie.
+De flexibele vraagopties, die op dit moment bestaan uit de twee waterstofopslagopties, kunnen worden ingesteld via de nieuwe waterstofvraag merit order. Deze merit order kan ingesteld worden in de **[Merit order van regelbare watersofvraag](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** sectie.
 
--> <img src="/assets/pages/whats_new/hydrogen_production_order_nl.png" width="600" /> <-
-
-De flexibele vraagopties, die op dit moment de twee waterstofopslagopties zijn, kunnen worden ingesteld via de nieuwe waterstofvraag merit order.
-
-Deze merit order kan ingesteld worden in de **[Merit order van regelbare watersofvraag](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** sectie.
-
--> <img src="/assets/pages/whats_new/hydrogen_demand_order_nl.png" width="600" /> <-
+-> <img src="/assets/pages/whats_new/hydrogen_demand_order_nl.png" width="500" /> <-
 ___
 
 # Maart 2024

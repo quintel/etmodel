@@ -1,42 +1,35 @@
 # What's new in the Energy Transition Model?
-
 ___
 
 # May 2024
 
-### Addition of Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
+### Addition of BECCUS
 
-The ETM now incorporates Bioenergy with Carbon Capture and Utilisation Storage (BECCUS) plants, introducing three new features.
-The first being CCS technology to biomass plants. Users can now set which part of the installed capacity of the biomass plants is installed with CCS technology.  Since emissions from biomass plants are not counted in the current ETM (see documentation) this can lead to negative emissions.
-The second being, a captured CO2 price. Now, CO2 that is captured can be sold to CO2 utilising sectors. This means that the negative emissions can lead to lower marginal costs for the BECCUS plants.
-The third being dispatchable biomass plants. Since the price for BECCUS plants can become lower through the negative emissions, dispatchable BECCUS plants might be an interesting flexible power option.
+The ETM now incorporates Bioenergy with Carbon Capture and Utilisation Storage (BECCUS) plants. There are three key updates to explore.
 
-Investigate it yourself!
+First, biomass power plants have been added to the model. Users can now install capacity for either must-run or dispatchable biomass power plants and CHPs in the **[Biomass plants](scenario/supply/electricity_renewable/biomass-plants)** section.
+
+Second, it is possible to capture CO<sub>2</sub>-emissions from these power plants, by determining which part of the installed capacity is fitted with a CCS unit. This can be set in the **[Capture of CO2 in energy sector](scenario/emissions/ccus/capture-of-co2-in-energy-sector)** section.
+
+-> <img src="/assets/pages/whats_new/net_effect_CO2_en.png" width="600" /> <-
+
+Third, a price for captured biogenic CO<sub>2</sub> has been introduced in the model. This price can be set in the the **[CCUS](scenario/emissions/other_emissions/overview)** section. The revenue that can be obtained from captured biogenic CO<sub>2</sub> is taken into account when determining the marginal costs of power plants or CHPs that run on biogenc fuels and have a CCS unit. It allows these plants to run for lower marginal costs. The costs of all captured biogenic CO<sub>2</sub> is shown in the costs charts.
 
 
 ### Hydrogen improvements
 
-The hydrogen section of the model has been improved! 
-Now, flexible production options have been added. 
-Steam methane reformers, ammonia reformers and autothermal reformers can be installed with a dispatchable capacity in addition to the must-run variant of these hydrogen reformer techniques. 
-Explore these changes in the **[Hydrogen production](scenario/supply/hydrogen/hydrogen-production)** section.
+The hydrogen section of the model has been improved!  Now, flexible production options have been added. 
+Steam methane reformers, ammonia reformers and autothermal reformers can be installed with dispatchable capacity in addition to the must-run variant of these hydrogen reformer techniques. Explore these changes in the **[Hydrogen production](scenario/supply/hydrogen/hydrogen-production)** section.
 
-Next to these flexible producers, the modelling of hydrogen storage has been refined.
-Now, users can use salt caverns and depleted gas fields as storage options in the model.
-In addition, users can set both the volume and capacity for these storage options. 
-These features can be found in the **[Hydrogen storage](scenario/supply/hydrogen/hydrogen-production)** 
-section.
+Next to these flexible producers, the modelling of hydrogen storage has been refined. Now, users can use salt caverns and depleted gas fields as storage options in the model. In addition, users can set both the volume and capacity for these storage options. These features can be found in the **[Hydrogen storage](scenario/supply/hydrogen/hydrogen-production)** section.
 
-Together the dispatchable and storage production facilities make up for the flexible hydrogen production routes within the ETM. 
-Which production route should be used first, can be installed by the user via the new hydrogen production merit order. The merit order of production can be set in the **[Merit order of dispatchable hydrogen production](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** section.
+Together the dispatchable and storage production facilities make up for the flexible hydrogen production routes within the ETM.  Which production route should be used first, can be installed by the user via the new hydrogen production merit order. The merit order of production can be set in the **[Merit order of dispatchable hydrogen production](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** section.
 
+-> <img src="/assets/pages/whats_new/hydrogen_production_order_en.png" width="500" /> <-
 
--> <img src="/assets/pages/whats_new/hydrogen_production_order_en.png" width="600" /> <-
+The flexible demand options, which are the two hydrogen storage options for now, can be installed via the new hydrogen demand merit order. The merit order of demand can be set in the **[Merit order of dispatchable hydrogen demand](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** section.
 
-The flexible demand options, which are the two hydrogen storage options for now, can be installed via the new hydrogen demand merit order.
-The merit order of demand can be set in the **[Merit order of dispatchable hydrogen demand](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** section.
-
--> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="600" /> <-
+-> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="500" /> <-
 
 ___
 

@@ -22,7 +22,7 @@ nl:
         geïnstalleerd vermogen van elektriciteitscentrales en karakteristieken van de regio zoals het aantal inwoners,
         het aantal huizen, het dakoppervlak dat geschikt is voor zonnepanelen etc.
       country_description: |
-        Wanneer mogelijk gebruiken we de open-source energiebalansen van <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_c/default/table?lang=en&category=nrg.nrg_quant.nrg_quanta.nrg_bal"target="_blank">Eurostat</a> als basis
+        Wanneer mogelijk gebruiken we de open-source energiebalansen van <a href="https://ec.europa.eu/eurostat/web/energy/data/energy-balances"target="_blank">Eurostat</a> als basis
         voor onze landelijke datasets. Daarnaast worden analyses gedaan om alle aanvullende data te leveren die nodig is om een complete dataset te
         maken. Deze analyses zijn te vinden op <a href="https://github.com/quintel/etdataset-public/tree/master/source_analyses"target="_blank">
         deze GitHub pagina</a>, in aparte mappen per land. In de toekomst willen we de transparantie naar onze gebruikers vergroten door landelijke
@@ -299,7 +299,7 @@ nl:
         <b> Opmerking: </b> PVT-panelen voor huishoudens en zonthermische panelen zijn ook opgenomen in de figuur en tabel. 
         Het ETM beschouwt PVT-panelen (en zonthermische panelen) hoofdzakelijk als een verwarmingstechnologie in combinatie met een warmtepomp.
         Het aandeel van een PVT-warmtepomp in de ruimteverwarming en warm water alsmede de hoeveelheid zonthermische panelen is aan te passen in de 
-        <a href="/scenario/demand/households/space-heating-and-hot-water">
+        <a href="/scenario/demand/households/demand/households/space-heating-and-hot-water">
         desbetreffende sectie</a>.  
     flexibility_merit_order_merit_order_price:
       title: Uurlijkse profielen voor elektriciteit

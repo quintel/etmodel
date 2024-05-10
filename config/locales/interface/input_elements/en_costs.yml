@@ -21,28 +21,28 @@ en:
     costs_hydrogen:
       title: Hydrogen
       short_description:
-      description: 
-        "This slider sets the future wholesale price of hydrogen (in €/MWh).
+      description: |
+        This slider sets the future wholesale price of hydrogen (in €/MWh).
         This slider affects the costs of imported hydrogen and influences the position
         of hydrogen fired gas turbines in the merit order of the electricity market.
         The costs of domestically produced hydrogen are determined by your choices
-        in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"\>'hydrogen
-        production'</a> section.<br /><br />\r\n\r\nBelow you can find reference values
+        in the <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen
+        production</a> section.<br/><br/>Below you can find reference values
         for the current costs of some common hydrogen production technologies (in
-        €/MWh hydrogen): <br /><br />\r\n<ul>\r\n<li>Steam Methane Reforming (SMR):
-        € 40.5 <sup>1</sup></li>\r\n<li>Steam Methane Reforming (SMR) + CCS: € 46.9
-        <sup>2</sup></li>\r\n<li>Autothermal Reforming (ATR): € 109.6 <sup>1</sup></li>\r\n<li>Coal
-        gasification: € 45.0 <sup>1</sup></li>\r\n<li>Electrolysis (wind): € 273.3
-        <sup>1</sup></li>\r\n<li>Electrolysis (solar): € 747.7 <sup>1</sup></li>\r\n<li>Combined
-        wind and sun (North sea): € 157.4 <sup>2</sup></li>\r\n<li>Combined wind and
-        sun (Morocco): € 124.0 <sup>2</sup></li>\r\n</ul> <br />\r\nNote that the
+        €/MWh hydrogen): <br/><br/><ul><li>Steam Methane Reforming (SMR):
+        € 40.5 <sup>1</sup></li><li>Steam Methane Reforming (SMR) + CCS: € 46.9
+        <sup>2</sup></li><li>Autothermal Reforming (ATR): € 109.6 <sup>1</sup></li><li>Coal
+        gasification: € 45.0 <sup>1</sup></li><li>Electrolysis (wind): € 273.3
+        <sup>1</sup></li><li>Electrolysis (solar): € 747.7 <sup>1</sup></li><li>Combined
+        wind and sun (North sea): € 157.4 <sup>2</sup></li><li>Combined wind and
+        sun (Morocco): € 124.0 <sup>2</sup></li></ul> <br />Note that the
         above numbers are production costs only. To determine the wholesale price
         additional costs have to be taken into account such as transporting hydrogen
         to your area. For tanker ship transport these costs are roughly € 21.0 per
-        MWh. <br /> <br />\r\nSources:<br />   \r\n1. Gnanapragasam, N.V. & Rosen
+        MWh. <br/><br/>Sources:<br/>  1. Gnanapragasam, N.V. & Rosen
         M.A. (2017). A review of hydrogen production using coal, biomass and other
-        solid fuels. In: Biofuels (8), pp.725-745 <br />\r\n2. CE Delft (2018). Waterstofroutes
-        Nederland\r\n"
+        solid fuels. In: Biofuels (8), pp.725-745. <br/> 2. CE Delft (2018). Waterstofroutes
+        Nederland.
     costs_imported_liquid_hydrogen:
       title: Liquid hydrogen
       short_description:

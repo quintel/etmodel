@@ -1,10 +1,9 @@
 # What's new in the Energy Transition Model?
-
 ___
 
 # May 2024
 
-### Addition of Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
+### Addition of BECCUS
 
 The ETM now incorporates Bioenergy with Carbon Capture and Utilisation Storage (BECCUS) plants. There are three key updates to explore.
 
@@ -17,30 +16,20 @@ Second, it is possible to capture CO<sub>2</sub>-emissions from these power plan
 Third, a price for captured biogenic CO<sub>2</sub> has been introduced in the model. This price can be set in the the **[CCUS](scenario/emissions/other_emissions/overview)** section. The revenue that can be obtained from captured biogenic CO<sub>2</sub> is taken into account when determining the marginal costs of power plants or CHPs that run on biogenc fuels and have a CCS unit. It allows these plants to run for lower marginal costs. The costs of all captured biogenic CO<sub>2</sub> is shown in the costs charts.
 
 
-
 ### Hydrogen improvements
 
-The hydrogen section of the model has been improved! 
-Now, flexible production options have been added. 
-Steam methane reformers, ammonia reformers and autothermal reformers can be installed with a dispatchable capacity in addition to the must-run variant of these hydrogen reformer techniques. 
-Explore these changes in the **[Hydrogen production](scenario/supply/hydrogen/hydrogen-production)** section.
+The hydrogen section of the model has been improved!  Now, flexible production options have been added. 
+Steam methane reformers, ammonia reformers and autothermal reformers can be installed with dispatchable capacity in addition to the must-run variant of these hydrogen reformer techniques. Explore these changes in the **[Hydrogen production](scenario/supply/hydrogen/hydrogen-production)** section.
 
-Next to these flexible producers, the modelling of hydrogen storage has been refined.
-Now, users can use salt caverns and depleted gas fields as storage options in the model.
-In addition, users can set both the volume and capacity for these storage options. 
-These features can be found in the **[Hydrogen storage](scenario/supply/hydrogen/hydrogen-production)** 
-section.
+Next to these flexible producers, the modelling of hydrogen storage has been refined. Now, users can use salt caverns and depleted gas fields as storage options in the model. In addition, users can set both the volume and capacity for these storage options. These features can be found in the **[Hydrogen storage](scenario/supply/hydrogen/hydrogen-production)** section.
 
-Together the dispatchable and storage production facilities make up for the flexible hydrogen production routes within the ETM. 
-Which production route should be used first, can be installed by the user via the new hydrogen production merit order. The merit order of production can be set in the **[Merit order of dispatchable hydrogen production](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** section.
+Together the dispatchable and storage production facilities make up for the flexible hydrogen production routes within the ETM.  Which production route should be used first, can be installed by the user via the new hydrogen production merit order. The merit order of production can be set in the **[Merit order of dispatchable hydrogen production](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production)** section.
 
+-> <img src="/assets/pages/whats_new/hydrogen_production_order_en.png" width="500" /> <-
 
--> <img src="/assets/pages/whats_new/hydrogen_production_order_en.png" width="600" /> <-
+The flexible demand options, which are the two hydrogen storage options for now, can be installed via the new hydrogen demand merit order. The merit order of demand can be set in the **[Merit order of dispatchable hydrogen demand](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** section.
 
-The flexible demand options, which are the two hydrogen storage options for now, can be installed via the new hydrogen demand merit order.
-The merit order of demand can be set in the **[Merit order of dispatchable hydrogen demand](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** section.
-
--> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="600" /> <-
+-> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="500" /> <-
 
 ___
 

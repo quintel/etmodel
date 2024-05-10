@@ -390,13 +390,14 @@ nl:
     flexibility_heat_pump_space_heating_cop_cutoff_gas:
       title: Ruimteverwarming (gas)
       short_description:
-      description: "Geef hier aan wat de omslag-COP van hybride warmtepompen op gas is
-        voor ruimteverwarming.\r\n<p>\r\nMet de standaardinstelling voor de omslag-COP
+      description: |
+        Geef hier aan wat de omslag-COP van hybride warmtepompen op gas is
+        voor ruimteverwarming. </br></br> Met de standaardinstelling voor de omslag-COP
         wordt het elektrische deel van de hybride warmtepomp maximaal gebruikt voor
         ruimteverwarming. Met de huidige gas- en elektriciteitsprijs wordt financiële
         optimalisatie voor de gebruiker bereikt met een omslag-COP van 2.6. Dit is
         te zien in de grafiek rechts. Voor meer informatie over (hybride)
-        warmtepompen zie onze <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\"target=\"_blank\">documentatie</a>."
+        warmtepompen zie onze <a href="https://docs.energytransitionmodel.com/main/heat-pumps\"target=\"_blank\">documentatie</a>.
     flexibility_heat_pump_space_heating_cop_cutoff_crude_oil:
       title: Ruimteverwarming (olie)
       short_description:
@@ -408,25 +409,26 @@ nl:
         optimalisatie voor de gebruiker bereikt met een omslag-COP van 3.7.
         </br></br>
         Voor meer informatie over (hybride)
-        warmtepompen zie onze <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\"target=\"_blank\">documentatie</a>."
+        warmtepompen zie onze <a href="https://docs.energytransitionmodel.com/main/heat-pumps\"target=\"_blank\">documentatie</a>.
     flexibility_heat_pump_water_heating_cop_cutoff:
       title: Warm water
       short_description:
-      description: "Geef hier aan wat de omslag-COP van het hybride warmtepompen is
-        voor warm water.\r\n<p>\r\nMet de standaardinstelling voor de omslag-COP wordt
+      description: |
+        Geef hier aan wat de omslag-COP van het hybride warmtepompen is
+        voor warm water. </br></br> Met de standaardinstelling voor de omslag-COP wordt
         het brandstofdeel van de hybride warmtepomp (op netwerkgas, waterstof of olie) maximaal gebruikt voor verwarmen van
-        tapwater. De omslag-COP staat daarom ingesteld op de maximale waarde van 6,0, zodat het brandstofdeel altijd ingeschakeld is voor tapwater.\r\n<p>\r\n
-        Voor meer informatie zie: <a href=\"https://docs.energytransitionmodel.com/main/heat-pumps\" target=\"_blank\">documentatie</a>"
+        tapwater. De omslag-COP staat daarom ingesteld op de maximale waarde van 6,0, zodat het brandstofdeel altijd ingeschakeld is voor tapwater.</br></br>
+        Voor meer informatie zie: <a href="https://docs.energytransitionmodel.com/main/heat-pumps\" target=\"_blank\">documentatie</a>.
     households_flexibility_consumer_gas_price:
       title: Gasprijs
       short_description:
-      description: |-
+      description: |
         Het tarief van een m3 gas is in 2020 gemiddeld 81,4 eurocent in Nederland. Daarvan is 32 cent voor het gas zelf (de marktprijs) en 50 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
         Deze slider heeft enkel invloed op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen.
     households_flexibility_consumer_electricity_price:
       title: Elektriciteitsprijs
       short_description:
-      description: |-
+      description: |
         Het tarief van een kWh stroom is in 2020 gemiddeld 22,5 cent in Nederland. Daarvan is 7,5 cent voor de elektriciteit zelf (de marktprijs) en 15 cent voor de energiebelasting en de opslag duurzame energie (ODE) (<a href="https://www.milieucentraal.nl/energie-besparen/snel-besparen/grip-op-je-energierekening/energierekening" target="_blank">Milieu Centraal</a>).</br></br>
         Deze slider heeft enkel invloed op de geadviseerde omslag COP in de grafiek rechts en dus niet op andere ETM-berekeningen
     electricity_interconnector_1_export_availability: &interconnector_export_availability

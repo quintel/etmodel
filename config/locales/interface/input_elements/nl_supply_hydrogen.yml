@@ -87,20 +87,23 @@ nl:
     capacity_of_energy_hydrogen_wind_turbine_offshore:
       title: Windmolen op zee voor H<sub>2</sub>
       short_description:
-      description: "Hoeveel windmolens zullen elektriciteit produceren dat direct
-        zal worden omgezet in waterstof met electrolysers?\r\n</br></br>\r\nEr zijn
-        grote ambities voor windparken ver op zee. Voor deze windparken zal
+      description: |
+        Hoeveel windmolens zullen elektriciteit produceren dat direct
+        zal worden omgezet in waterstof met electrolysers?</br></br>
+        Er zijn grote ambities voor windparken ver op zee. Voor deze windparken zal
         het waarschijnlijk economisch haalbaarder zijn om de elektriciteit ter plekke
         om te zetten in waterstof in plaats van de elektriciteit eerst naar land te
         transporteren. Dit heeft te maken met de relatief hoge kosten voor elektriciteitskabels
-        vergeleken met de gaspijpkosten. \r\n</br></br>\r\nDeze schuif zet het vermogen
+        vergeleken met de gaspijpkosten. </br></br> Deze schuif zet het vermogen
         van windmolens op zee dat ingezet wordt voor waterstofproductie en het benodigde
         vermogen van elektrolyse-installaties om de geproduceerde elektriciteit om
         te zetten in waterstof. De efficiëntie van elektrolysers
-        kan <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast. Je kunt het aantal vollasturen van windmolens <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >hier</a> aanpassen.<br /><br />\r\n\r\nOpmerking: De technische en financiële
+        kan <a href="/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast.
+        Je kunt het aantal vollasturen van windmolens <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >hier</a> aanpassen. 
+        <br /><br>
+        Opmerking: De technische en financiële
         specificaties hieronder zijn alleen voor de elektrolyser, niet voor de windmolens.
-        De specificaties van de windmolens kun je vinden in het tabblad <a href=\"/scenario/supply/electricity_renewable/wind-turbines\">Hernieuwbare
-        elektriciteit</a>.<br />"
+        De specificaties van de windmolens kun je vinden in het tabblad <a href="/scenario/supply/electricity_renewable/wind-turbines\">Hernieuwbare elektriciteit</a>.
     capacity_of_energy_hydrogen_solar_pv_solar_radiation:
       title: Zonnecentrale PV voor H<sub>2</sub>
       short_description:

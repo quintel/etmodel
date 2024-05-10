@@ -5,17 +5,19 @@ ___
 
 ### Toevoeging van Bioenergy with Carbon Capture Utilisation and Storage (BECCUS)
 
-Het ETM omvat nu de toevoeging van Bio-energie met Koolstofvangst en Opslag (BECCUS) installaties, waarbij drie nieuwe functies worden geïntroduceerd.
+### Toevoeging van Bio-energie met Koolstofafvang, -gebruik en -opslag (BECCUS)
 
-De eerste is CCS-technologie voor biomassacentrales. Gebruikers kunnen nu instellen welk deel van de geïnstalleerde capaciteit van de biomassacentrales is uitgerust met CCS-technologie. Dit kan in de **[Afvang van CO2 in de energiesector](scenario/emissions/ccus/capture-of-co2-in-energy-sector)** sectie gezet worden.
+Het ETM omvat nu ook  Bio-energie met Koolstofafvang, -gebruik en -opslag (BECCUS) centrales. Er zijn drie belangrijke updates om te bekijken.
+
+Ten eerste zijn biomassacentrales toegevoegd aan het model. Gebruikers kunnen nu capaciteit installeren voor biomassacentrales en WKK's (Warmte-Kracht-Koppeling) die ofwel must-run of regelbaar zijn in de **[Biomassacentrales](scenario/supply/electricity_renewable/biomass-plants)** sectie.
+
+Ten tweede is het mogelijk om CO<sub>2</sub>-emissies van deze energiecentrales af te vangen, door te bepalen welk deel van de geïnstalleerde capaciteit is uitgerust met een CCS-eenheid (Carbon Capture and Storage). Dit kan ingesteld worden in de **[Afvang van CO2 in de energiesector](scenario/emissions/ccus/capture-of-co2-in-energy-sector)** sectie.
+
+-> <img src="/assets/pages/whats_new/net_effect_CO2_nl.png" width="600" /> <-
+
+Ten derde is er in het model een prijs geïntroduceerd voor afgevangen biogene CO<sub>2</sub>. Deze prijs kan worden ingesteld in de **[CCUS](scenario/emissions/other_emissions/overview)** sectie. De opbrengst die kan worden verkregen uit afgevangen biogene CO<sub>2</sub> wordt meegenomen bij het bepalen van de marginale kosten van energiecentrales of WKK's die draaien op biogene brandstoffen en een CCS-eenheid hebben. Het stelt deze installaties in staat om tegen lagere marginale kosten te draaien. De kosten van alle afgevangen biogene CO<sub>2</sub> worden weergegeven in de kostenoverzichten.
 
 
-De tweede is een afgevangen biogene CO2-prijs. Gebruikers kunnen deze prijs in de **[CCUS](scenario/emissions/other_emissions/overview)** sectie instellen.
-
-De derde is regelbare biomassacentrales. Gebruikers kunnen de capaciteit van regelbare biomassacentrales in de **[Biomassacentrales](scenario/emissions/other_emissions/overview)** sectie instellen.
-
-
-Onderzoek het nu zelf!
 
 
 ### Verbeteringen waterstof

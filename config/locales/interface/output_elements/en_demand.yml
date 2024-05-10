@@ -244,8 +244,25 @@ en:
         pumps and electric transportation lead to lower total energy demand, but an
         increase in demand for electricity. How this electricity is generated (you
         will choose this later on in the model) determines the total primary amount
-        of energy saved. \r\n\r\n<br/><br/>\r\nYou can click '<u>Change chart</u>'
-        above the graph, to select different graphs about energy demand.\r\n"
+        of energy saved."
+    final_demand_per_carrier_energetic:
+      title: Final energy demand per carrier (energetic)
+      short_description:
+      description: |
+        This graph shows how the energetic final energy consumption of the country is 
+        divided over the energy carriers. An energy carrier is a usable form of energy, 
+        such as electricuty or gasoline. Final use means that we do not take into account any
+        losses in producing the energy carriers.
+    final_demand_per_carrier_non_energetic:    
+      title: Final energy demand per carrier (non-energetic)
+      short_description:
+      description: |
+        This graph shows how the energetic final energy consumption of the country is 
+        divided over the energy carriers. An energy carrier is a usable form of energy, 
+        such as electricuty or gasoline. Final use means that we do not take into account any
+        losses in producing the energy carriers. Non-energetic
+        use is the use of energy carriers (like oil) to make non-energy products such
+        as fertilizer, for example
     use_of_final_demand_in_buildings:
       title: Final energy demand in buildings per application
       short_description:

@@ -348,10 +348,12 @@ en:
       title: Version history
       description:
         Here you can see the different scenario versions that have been saved. A description can be added to each version.
-        When you are owner of this scenario, you can reset the scenario to an older version. 
+        When you are owner of this scenario, you can reset the scenario to an older version. See the
+        <a href="https://docs.energytransitionmodel.com/main/managing-scenarios/scenario-version-history" target=\"_blank\">
+        documentation</a> for more information.
       restore:
         title: Restore an older version
-        description: You are restoring the scenario to an older version. This action is irreverisble. Are you sure?
+        description: You are restoring the scenario to an older version. This action is irreversible. Are you sure?
         button: Restore now
       flash: The scenario was succesfully restored to an older version!
     users:
@@ -359,10 +361,10 @@ en:
       manage_description:
         Here you can manage who has access to your scenario and in which manner.
         Click the 'Invite others' button to give someone access to your scenario,
-        or use the table above to manage users that are already coupled.<br /><br />
-        Please visit the
+        or use the table above to manage users that are already coupled. <br/><br/>
+        See the
         <a href="https://docs.energytransitionmodel.com/main/managing-scenarios/scenario-access-management/" target=\"_blank\">
-        documentation</a> for more information and details on user access management, such as user roles.
+        documentation</a> for more information.
       invite: '+ Invite others'
       send_invite: Send invite
       name: 'Name'

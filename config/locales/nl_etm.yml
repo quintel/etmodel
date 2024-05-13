@@ -271,8 +271,8 @@ nl:
     go_back: " of ga anders terug naar"
     back_to: "Terug naar scenario"
     back_to_overview: "Terug naar mijn scenarios"
-    show_history: "Weergeef versiegeschiedenis"
-    close_version_history: "Sluit versiegeschiedenis"
+    show_history: "Versiegeschiedenis weergeven"
+    close_version_history: "Versiegeschiedenis sluiten"
     link: "Sla huidig scenario op"
     by: "Door"
     area_not_exists: 'Regio bestaat niet'
@@ -351,7 +351,9 @@ nl:
       description:
         Hieronder zie je de verschillende opgeslagen versies van het scenario. Aan elke versie kan een beschrijving 
         worden toegevoegd. Wanneer je eigenaar bent van dit scenario, kan je het scenario terugzetten naar een 
-        oudere versie.
+        oudere versie. Zie de
+        <a href="https://docs.energytransitionmodel.com/main/managing-scenarios/scenario-version-history" target=\"_blank\">
+        documentatie</a> voor meer informatie.
       restore:
         title: Herstel oudere versie
         description: Je herstelt het scenario naar een oudere versie. Deze actie is onomkeerbaar. Weet je het zeker?
@@ -362,10 +364,10 @@ nl:
       manage_description:
         Hier kun je beheren wie met welke rechten toegang heeft tot je scenario.
         Klik op de 'Personen uitnodigen' knop om iemand toegang te geven, of gebruik
-        de tabel hierboven om gekoppelde gebruikers te beheren.<br /><br />
-        Bekijk alsjeblieft de
+        de tabel hierboven om gekoppelde gebruikers te beheren. <br/><br/>
+        Zie de
         <a href="https://docs.energytransitionmodel.com/main/managing-scenarios/scenario-access-management/" target=\"_blank\">
-        documentatie</a> voor meer informatie en details over gebruikersbeheer, zoals gebruikersrollen.
+        documentatie</a> voor meer informatie.
       invite: '+ Personen uitnodigen'
       send_invite: Uitnodiging versturen
       name: 'Naam'

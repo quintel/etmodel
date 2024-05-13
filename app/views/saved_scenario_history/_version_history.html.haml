@@ -6,7 +6,7 @@
     = link_to saved_scenario_path(@saved_scenario), remote: true, class: 'stick-right' do
       .fa.fa-times.tooltip{ title: t("scenario.close_version_history") }
   %h3= t('scenario.history.title')
-  %p.history-description= t('scenario.history.description')
+  %p.history-description= t('scenario.history.description').html_safe
   .history
     - @history.each_with_index do |version, index|
       .row.box{ id: "scenario-version-#{version['scenario_id']}", style: "animation-delay: #{index/3.0}s"}

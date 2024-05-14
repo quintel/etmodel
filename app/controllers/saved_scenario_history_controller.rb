@@ -4,11 +4,7 @@
 class SavedScenarioHistoryController < ApplicationController
   before_action :assign_saved_scenario
 
-  before_action only: %i[index] do
-    authorize!(:read, @saved_scenario)
-  end
-
-  before_action only: %i[update edit] do
+  before_action only: %i[index update edit] do
     authorize!(:update, @saved_scenario)
   end
 

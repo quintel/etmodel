@@ -78,10 +78,11 @@
                 = link_to saved_scenario_users_path(@saved_scenario.id), class: 'dropdown-item' do
                   .fa.fa-users
                   = t("scenario.users.manage")
-            %li
-              = link_to saved_scenario_history_path(@saved_scenario), remote: true, class: 'dropdown-item' do
-                .fa.fa-history
-                = t("scenario.show_history")
+            - if current_user&.admin? || @saved_scenario.collaborator?(current_user)
+              %li
+                = link_to saved_scenario_history_path(@saved_scenario), remote: true, class: 'dropdown-item' do
+                  .fa.fa-history
+                  = t("scenario.show_history")
             - if current_user&.admin?
               %li
                 - if @saved_scenario.featured?
@@ -94,7 +95,7 @@
                     = t('scenario.feature_scenario')
             %li.sep-above.category
               == #{t('move_to')}&hellip;
-            - if scenario.discarded?
+            - if scenario.discarded? && @saved_scenario.owner?(current_user)
               %li
                 = link_to undiscard_saved_scenario_path(@saved_scenario, backto: 'scenario'), method: :put, class: 'dropdown-item' do
                   %span.icon
@@ -103,7 +104,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                       </svg>
                   = t('header.load_scenario')
-            - if scenario.kept?
+            - if scenario.kept? && @saved_scenario.owner?(current_user)
               %li
                 = link_to discard_saved_scenario_path(@saved_scenario, backto: 'scenario'), method: :put, class: 'dropdown-item' do
                   %span.icon

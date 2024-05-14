@@ -13,7 +13,7 @@ class SavedScenariosController < ApplicationController
     authorize!(:update, @saved_scenario)
   end
 
-  before_action only: %i[discard undiscard restore] do
+  before_action only: %i[discard undiscard restore confirm_restore] do
     authorize!(:destroy, @saved_scenario)
   end
 
@@ -138,7 +138,7 @@ class SavedScenariosController < ApplicationController
       Setting.load_from_scenario(
         @scenario,
         active_saved_scenario: {
-          id: editable_saved_scenario? ? @saved_scenario.id : nil,
+          id: editable_saved_scenario?(for_admin: false) ? @saved_scenario.id : nil,
           title: @saved_scenario.localized_title(I18n.locale)
         }
       )
@@ -259,12 +259,12 @@ class SavedScenariosController < ApplicationController
   private
 
   # This determines whether the SavedScenario is editable by the current_user
-  def editable_saved_scenario?(saved_scenario = nil)
+  def editable_saved_scenario?(saved_scenario = nil, for_admin: true)
     saved_scenario ||= @saved_scenario
 
     saved_scenario.collaborator?(current_user) ||
       saved_scenario.owner?(current_user) ||
-      current_user&.admin?
+      (current_user&.admin? && for_admin)
   end
 
   def assign_saved_scenario

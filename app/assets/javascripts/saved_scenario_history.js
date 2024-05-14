@@ -18,7 +18,9 @@
     },
 
     render: function() {
-      this.setupMaxLengthDescription(1000);
+      if (this.descriptionEditEl) {
+        this.setupMaxLengthDescription(1000);
+      }
     },
 
     setupMaxLengthDescription: function (max) {

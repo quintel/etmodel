@@ -27,12 +27,6 @@
             .description-field{style: 'display: none'}
               %textarea{placeholder: t('scenario.add_description')}
                 = version['description']
-            :javascript
-              new ScenarioHistoryView({
-                el: $("#scenario-version-#{version['scenario_id']}"),
-                id: "#{version['scenario_id']}",
-                url: "#{saved_scenario_history_path(@saved_scenario)}"
-              }).render();
         - if (@saved_scenario.collaborator?(current_user) || current_user&.admin?)
           %ul.details
             %li.scenario-version.stick-right
@@ -40,9 +34,6 @@
                 - unless version['frozen']
                   %li.edit-description.fa.fa-pencil.tooltip{ title: t("scenario.edit_description") }
                 - unless version['scenario_id'].to_i == @saved_scenario.scenario_id
-                  -# %li
-                  -#   = link_to load_scenario_path(version['scenario_id']) do
-                  -#     .fa.fa-window-restore.tooltip{ title: t("scenario.open") }
                   - if current_user&.admin? || @saved_scenario.owner?(current_user)
                     %li.restore-version.fa.fa-history.tooltip{ title: t("scenario.restore"), data: {url: confirm_restore_saved_scenario_path(@saved_scenario, saved_scenario: { scenario_id: version['scenario_id']})} }
 
@@ -52,3 +43,9 @@
                   %li.submit-description.green.fa.fa-check.tooltip{ title: t("scenario.save_text") }
                   %li.cancel-description.red.fa.fa-times.tooltip{ title: t("scenario.cancel") }
 
+          :javascript
+            new ScenarioHistoryView({
+              el: $("#scenario-version-#{version['scenario_id']}"),
+              id: "#{version['scenario_id']}",
+              url: "#{saved_scenario_history_path(@saved_scenario)}"
+            }).render();

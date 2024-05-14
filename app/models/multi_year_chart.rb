@@ -14,6 +14,9 @@ class MultiYearChart < ApplicationRecord
     class_name: 'MultiYearChartScenario',
     dependent: :delete_all
 
+  has_many :multi_year_chart_saved_scenarios
+  has_many :saved_scenarios, through: :multi_year_chart_saved_scenarios
+
   validates_presence_of :user_id
 
   # Public: Creates a new MultiYearChart, setting some attributes to match those of the saved
@@ -36,6 +39,12 @@ class MultiYearChart < ApplicationRecord
     discarded
       .where(discarded_at: ..MultiYearChart::AUTO_DELETES_AFTER.ago)
       .destroy_all
+  end
+
+  # Public: returns the direct scenario_id's and the active scenario_id's of any
+  # linked svaed scenarios
+  def latest_scenario_ids
+    scenarios.pluck(:scenario_id) + saved_scenarios.pluck(:scenario_id)
   end
 
   # Public: Returns an way for the MYC app to identify this instance, to use

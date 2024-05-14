@@ -25,6 +25,9 @@ class SavedScenario < ApplicationRecord
   has_many :saved_scenario_users, dependent: :destroy
   has_many :users, through: :saved_scenario_users
 
+  has_many :multi_year_chart_saved_scenarios
+  has_many :multi_year_charts, through: :multi_year_chart_saved_scenarios
+
   has_one :featured_scenario, dependent: :destroy
 
   validates :scenario_id, presence: true

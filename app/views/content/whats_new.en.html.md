@@ -31,6 +31,16 @@ The flexible demand options, which are the two hydrogen storage options for now,
 
 -> <img src="/assets/pages/whats_new/hydrogen_demand_order_en.png" width="500" /> <-
 
+### Multi-user support and scenario version history
+
+It is now possible to collaborate with multiple users on a scenario. Through the My Scenarios overview, you can invite other users of the ETM to one of your scenarios as a <i>Viewer</i>, <i>Collaborator</i>, or <i>Owner</i>. You can also invite persons who don't use the ETM as of yet. Depending on the rights granted, the invitee can view your scenario, make edits and even invite other users to your scenario.
+
+-> <img src="/assets/pages/whats_new/multi_user_en.png" width="700" /> <-
+
+Also, there is now an overview available of the version history of scenarios. This shows old versions of a scenario along with the user who last modified it. You can open the old scenario versions in the ETM, add a description to old versions and restore old scenario versions.
+
+-> <img src="/assets/pages/whats_new/version_history_en.png" width="700" /> <-
+
 ___
 
 # March 2024

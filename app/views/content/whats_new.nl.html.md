@@ -29,6 +29,17 @@ Samen vormen de regelbare- en opslagproductiefaciliteiten de flexibele waterstof
 De flexibele vraagopties, die op dit moment bestaan uit de twee waterstofopslagopties, kunnen worden ingesteld via de nieuwe waterstofvraag merit order. Deze merit order kan ingesteld worden in de **[Merit order van regelbare watersofvraag](scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand)** sectie.
 
 -> <img src="/assets/pages/whats_new/hydrogen_demand_order_nl.png" width="500" /> <-
+
+
+### Multi-user support en scenario versiegeschiedenis
+
+Het is nu mogelijk om met meerdere gebruikers samen te werken aan een scenario. Via het Mijn Scenario's overzicht kun je andere gebruikers van het ETM uitnodigen voor één van jouw scenario's als <i>Gast</i>, <i>Bewerker</i> of <i>Eigenaar</i>. Je kunt ook personen uitnodigen die het ETM nog niet gebruiken. Afhankelijk van de gegeven rechten kan de genodigde jouw scenario inzien, bewerkingen doen en zelfs andere gebruikers toevoegen aan jouw scenario. 
+
+-> <img src="/assets/pages/whats_new/multi_user_nl.png" width="700" /> <-
+
+Ook is er nu een overzicht beschikbaar van de versiegeschiedenis van scenario's. Hierin zijn oude versies van een scenario weergegeven met de gebruiker die deze het laatst heeft aangepast. Je kunt de oude scenarioversies openen in het ETM, een beschrijving aan oude versies toevoegen en oude versies terugzetten. 
+
+-> <img src="/assets/pages/whats_new/version_history_nl.png" width="700" /> <-
 ___
 
 # Maart 2024

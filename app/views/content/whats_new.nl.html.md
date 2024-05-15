@@ -33,7 +33,7 @@ De flexibele vraagopties, die op dit moment bestaan uit de twee waterstofopslago
 
 ### Multi-user support en scenario versiegeschiedenis
 
-Het is nu mogelijk om met meerdere gebruikers samen te werken aan een scenario. Via de het Mijn Scenario's overzicht kun je andere gebruikers van het ETM uitnodigen voor één van jouw scenario's als <i>Gast</i>, <i>Bewerker</i> of <i>Eigenaar</i>. Afhankelijk van de gegeven rechten kan de genodigde jouw scenario inzien, bewerkingen doen en zelfs andere gebruikers toevoegen aan jouw scenario. 
+Het is nu mogelijk om met meerdere gebruikers samen te werken aan een scenario. Via het Mijn Scenario's overzicht kun je andere gebruikers van het ETM uitnodigen voor één van jouw scenario's als <i>Gast</i>, <i>Bewerker</i> of <i>Eigenaar</i>. Je kunt ook personen uitnodigen die het ETM nog niet gebruiken. Afhankelijk van de gegeven rechten kan de genodigde jouw scenario inzien, bewerkingen doen en zelfs andere gebruikers toevoegen aan jouw scenario. 
 
 -> <img src="/assets/pages/whats_new/multi_user_nl.png" width="700" /> <-
 

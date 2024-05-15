@@ -33,7 +33,7 @@ The flexible demand options, which are the two hydrogen storage options for now,
 
 ### Multi-user support and scenario version history
 
-It is now possible to collaborate with multiple users on a scenario. Through the My Scenarios overview, you can invite other users of the ETM to one of your scenarios as a <i>Viewer</i>, <i>Collaborator</i>, or <i>Owner</i>. Depending on the rights granted, the invitee can view your scenario, make edits and even invite other users to your scenario.
+It is now possible to collaborate with multiple users on a scenario. Through the My Scenarios overview, you can invite other users of the ETM to one of your scenarios as a <i>Viewer</i>, <i>Collaborator</i>, or <i>Owner</i>. You can also invite persons who don't use the ETM as of yet. Depending on the rights granted, the invitee can view your scenario, make edits and even invite other users to your scenario.
 
 -> <img src="/assets/pages/whats_new/multi_user_en.png" width="700" /> <-
 

@@ -14,7 +14,7 @@ class MultiYearChart < ApplicationRecord
     class_name: 'MultiYearChartScenario',
     dependent: :delete_all
 
-  has_many :multi_year_chart_saved_scenarios
+  has_many :multi_year_chart_saved_scenarios, dependent: :destroy
   has_many :saved_scenarios, through: :multi_year_chart_saved_scenarios
 
   validates_presence_of :user_id
@@ -71,7 +71,7 @@ class MultiYearChart < ApplicationRecord
     super(options).merge(
       'discarded' => discarded_at.present?,
       'owner' => user.as_json(only: %i[id name]),
-      'scenario_ids' => scenarios.pluck(:scenario_id).sort
+      'scenario_ids' => latest_scenario_ids.sort
     )
   end
 end

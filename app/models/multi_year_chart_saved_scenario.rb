@@ -10,8 +10,8 @@ class MultiYearChartSavedScenario < ApplicationRecord
   private
 
   def shared_access
-    return unless saved_scenario.viewer?(multi_year_chart.user)
+    return if saved_scenario.viewer?(multi_year_chart.user)
 
-    errors.add(:base, :user, 'User must have access to both the MYC and the Saved Sceanrio')
+    errors.add(:base, :user, message: 'User must have access to both the MYC and the Saved Sceanrio')
   end
 end

@@ -2,7 +2,7 @@ class ScenariosController < ApplicationController
   include MainInterfaceController.new(:play, :play_multi_year_charts)
 
   before_action :find_scenario, only: %i[show load play_multi_year_charts resume uncouple]
-  before_action :require_user, only: %i[index new merge]
+  before_action :require_user, only: %i[index merge]
   before_action :redirect_compare, only: :compare
   before_action :setup_comparison, only: %i[compare weighted_merge]
   before_action :store_last_etm_page, :prevent_browser_cache, only: :play

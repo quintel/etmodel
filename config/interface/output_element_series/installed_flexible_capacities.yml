@@ -290,6 +290,14 @@
   gquery: hydrogen_production_flexible_steam_methane_reformer_capacity
   output_element_key: installed_flexible_capacities
   key: steam_methane_reformer_dispatchable_hydrogen_installed_flexible_capacities
+- label: energy_hydrogen_ammonia_reformer_dispatchable
+  color: "#1ce6d6"
+  order_by: 365
+  group: hydrogen
+  is_target_line: false
+  gquery: hydrogen_production_flexible_ammonia_reformer_capacity
+  output_element_key: installed_flexible_capacities
+  key: energy_hydrogen_ammonia_reformer_dispatchable_hydrogen_installed_flexible_capacities  
 - label: energy_hydrogen_autothermal_reformer_dispatchable
   color: "#A59990"
   order_by: 370

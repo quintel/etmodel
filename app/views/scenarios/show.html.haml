@@ -2,37 +2,64 @@
 
 .background_wrapper#saved_scenario
   .scenario_wrapper#show_scenario
+    .internal-box
+      %h1
+        = @scenario.title ? format_subscripts(@scenario.title) : @scenario.id
 
-    %h1
-      = @scenario.title ? format_subscripts(@scenario.title) : @scenario.id
-
-    %ul.details
-      %li
-        = area_flag(@scenario.area_code)
-        %strong
-          = t "areas.#{@scenario.area_code}"
-          = @scenario.end_year
-      - if @scenario.created_at
+      %ul.details.last
         %li
-          = t('scenario.created')
-          = I18n.localize(@scenario.created_at.to_date, :format => :long)
+          = area_flag(@scenario.area_code)
+          %strong
+            = t "areas.#{@scenario.area_code}"
+            = @scenario.end_year
+        - if @scenario.created_at
+          %li
+            = t('scenario.created')
+            = I18n.localize(@scenario.created_at.to_date, :format => :long)
+        %li.with-button
+          = link_to t("scenario.load"), load_scenario_path(@scenario), class: "scenario-button button load no-margin-right"
 
-    .bar
+      .row
+        %ul.details.stick-right
+          %li{ style: 'margin-right: 1rem; padding-right: 0' }
+            .dropdown#scenario-location<>
+              %button.scenario-actions#scenario-location-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+                = inline_svg_tag 'hero/20/cog.svg'
+                = t('settings')
+                %span.fa.fa-caret-down
+              %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-location-button', style: 'margin-top: 3px' }
+                %li
+                  = link_to load_scenario_path(@scenario), class: 'dropdown-item' do
+                    .fa.fa-folder-open
+                    = t("scenario.load")
+                %li
+                  = link_to energy_mix_scenario_path(@scenario.id), class: 'dropdown-item' do
+                    .fa.fa-map-signs
+                    = t("scenario.load_energy_mix")
 
-    = link_to t("scenario.load"),
-        load_scenario_path(@scenario),
-        class: "scenario-button button load"
+          :javascript
+            new DropdownView({ el: $('#scenario-location') }).render()
 
-    - if @scenario.description
-      = formatted_scenario_description(@scenario.description)
+          %li{ style: 'margin-right: 1rem; padding-right: 0' }
+            .dropdown#scenario-copy<>
+              %button.scenario-actions#scenario-copy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+                .icon{ class: 'fa fa-copy' }
+                = t('scenario.share.copy')
+                %span.fa.fa-caret-down
+              %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-copy-button', style: 'margin-top: 3px' }
+                %li
+                  .info
+                    = t('scenario.share.copy_description')
+                %li.sep-above
+                  .url= text_field_tag 'url', request.original_url
+          :javascript
+            new DropdownView({ el: $('#scenario-copy') }).render()
+      .bar
 
-    = render partial: 'scenarios/version_warning', locals: { scenario: @scenario }
+      - if @scenario.description
+        = formatted_scenario_description(@scenario.description)
 
-    .actions
-      = link_to t("scenario.load_energy_mix"),
-        energy_mix_scenario_path(@scenario.id)
+      = render partial: 'scenarios/version_warning', locals: { scenario: @scenario }
 
-    = render partial: 'share_links', locals: { scenario: @scenario }
-
-    %p.note
-      = t("scenario.overwritten")
+      %p.note
+        = t("scenario.overwritten")

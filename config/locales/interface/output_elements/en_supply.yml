@@ -245,18 +245,18 @@ en:
         in the scenario are depicted to have production costs of 0 €/MWh. In reality, the production costs per MWh are infinite since 
         there is no hydrogen production by this technology.
     hydrogen_production_cost_curve:
-      title: Costs of hydrogen production per hour
+      title: Levelised costs of hydrogen production per hour
       short_description:
       description: |
-        this graph shows the weighted average production costs in €/MWh for each hour of the year.
+        This graph shows the levelised costs of hydrogen production in €/MWh for each hour of the year.
         The larger the area of a certain production method, the more influence it has on the average production costs of that hour.
         </br></br>
-        Please note: These are not the market prices of the hydrogne market, since the ETM does not model the hydrogen market.
+        Please note: these are not the market prices of the hydrogen market since the ETM does not model hydrogen market prices.
         </br></br>
         It can be useful to compare this graph with the <a href="#" class="open_chart" data-chart-key="hydrogen_production" data-chart-location="side">
         Hydrogen production</a> graph to get a better understanding of the cost dynamic of the production method.
         </br></br>
-        Alternatively, you can download the Hydrogen integral costs export, which can be found <a href="/scenario/data/data_export/hourly-curves-for-hydrogen">here</a>, 
+        Alternatively, you can download the Levelised costs of hydrogen production export, which can be found <a href="/scenario/data/data_export/hourly-curves-for-hydrogen">here</a>, 
         for more information. 
     mekko_of_kerosene_demand_supply:
       title: Supply and demand of kerosene

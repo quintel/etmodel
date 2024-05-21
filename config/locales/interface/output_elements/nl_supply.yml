@@ -210,17 +210,17 @@ nl:
         Deze grafiek toont de waterstofopslagvolumes van zoutcavernes en lege gasvelden gedurende het jaar. 
         De opslagvolumes kunnen op jaarbasis, per maand of per week worden bekeken.
     hydrogen_production_cost_curve:
-      title: Waterstofproductiekosten per uur
+      title: Integrale waterstofproductiekosten per uur
       short_description:
       description: |
-        Deze grafiek toont de gewogen gemiddelde productiekosten in €/MWh voor elk uur van het jaar. 
+        Deze grafiek toont de integrale waterstofproductiekosten (<i>levelised costs of hydrogen production</i>) in €/MWh voor elk uur van het jaar. 
         Hoe groter het oppervlak van een bepaalde productiemethode, hoe meer invloed het heeft op de gemiddelde productiekosten van dat uur. 
         </br></br>
-        Let op: Dit zijn niet de marktprijzen van de waterstofmarkt, aangezien het ETM de waterstofmarkt niet modelleert.
+        Let op: dit zijn niet de marktprijzen van de waterstofmarkt, aangezien het ETM de prijzen op de waterstofmarkt niet modelleert.
         </br></br>
         Het kan nuttig zijn om deze grafiek te vergelijken met de <a href="#" class="open_chart" data-chart-key="hydrogen_production" data-chart-location="side">
         Waterstofproductie</a> grafiek om een beter begrip te krijgen van de kostendynamiek van de productiemethodes.</br></br>
-        Ook kan je de export van integrale kosten waterstof downloaden, die <a href="/scenario/data/data_export/hourly-curves-for-hydrogen">hier</a> te vinden is, voor meer informatie.
+        Ook kan je de export van de integrale kosten van waterstof downloaden, die <a href="/scenario/data/data_export/hourly-curves-for-hydrogen">hier</a> te vinden is, voor meer informatie.
     co2_intensity_of_hydrogen_production:
       title: CO<sub>2</sub>-intensiteit per type waterstofproductie
       short_description:

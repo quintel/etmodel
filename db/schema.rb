@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_26_135514) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_22_073141) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -58,6 +58,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_26_135514) do
     t.datetime "updated_at", precision: nil
   end
 
+  create_table "multi_year_chart_saved_scenarios", primary_key: ["multi_year_chart_id", "saved_scenario_id"], charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "multi_year_chart_id", null: false
+    t.bigint "saved_scenario_id", null: false
+    t.index ["multi_year_chart_id"], name: "index_multi_year_chart_saved_scenarios_on_multi_year_chart_id"
+    t.index ["saved_scenario_id"], name: "index_multi_year_chart_saved_scenarios_on_saved_scenario_id"
+  end
+
   create_table "multi_year_chart_scenarios", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "multi_year_chart_id", null: false
     t.integer "scenario_id", null: false
@@ -95,7 +102,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_26_135514) do
 
   create_table "saved_scenarios", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "scenario_id", null: false
-    t.string "scenario_id_history"
+    t.text "scenario_id_history"
     t.string "title", null: false
     t.text "description"
     t.string "area_code", null: false

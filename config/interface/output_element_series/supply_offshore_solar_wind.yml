@@ -19,6 +19,16 @@
   dependent_on:
   output_element_key: supply_offshore_solar_wind
   key: energy_power_wind_turbine_offshore_output_curve_supply_offshore_solar_wind
+- label: energy_power_hybrid_wind_turbine_offshore
+  color: "#7487FF"
+  order_by: 250
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_power_hybrid_wind_turbine_offshore_output_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: supply_offshore_solar_wind
+  key: energy_power_hybrid_wind_turbine_offshore_output_curve_supply_offshore_solar_wind
 - label: energy_power_solar_pv_offshore
   color: "#ffcc00"
   order_by: 300

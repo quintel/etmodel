@@ -228,6 +228,18 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_hydrogen_electrolysis_wind_electricity_for_mekko_supply_mekko_of_hydrogen_network
+- label: energy_hydrogen_electrolysis_hybrid_wind_electricity_for_mekko
+  color: "#7487FF"
+  order_by: 325
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_hydrogen_electrolysis_hybrid_wind_electricity_for_mekko
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_hydrogen_electrolysis_hybrid_wind_electricity_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_biomass_gasification_ccs_for_mekko
   color: "#5D7929"
   order_by: 330

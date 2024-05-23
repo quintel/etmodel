@@ -575,6 +575,7 @@ en:
         energy_power_wind_turbine_coastal: 'Wind turbines onshore coastal'
         energy_power_wind_turbine_inland: 'Wind turbines onshore inland'
         energy_power_wind_turbine_offshore: 'Wind turbines offshore'
+        energy_power_hybrid_wind_turbine_offshore: 'Hybrid wind turbines offshore'
         energy_power_wood_pellets_must_run: 'Biomass power plant (must-run)'
         energy_power_wood_pellets_dispatchable: 'Biomass power plant (dispatchable)'
         energy_power_wood_pellets_ccs_must_run: 'Biomass power plant + CCS (must-run)'
@@ -596,6 +597,7 @@ en:
         energy_hydrogen_biomass_gasification_for_mekko: 'Biomass gasification'
         energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomass gasification + CCS"
         energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Offshore wind"
+        energy_hydrogen_electrolysis_hybrid_wind_electricity_for_mekko: "Offshore hybrid wind"
         energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Solar PV"
         energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Power-to-gas"
         energy_hydrogen_solar_pv_solar_radiation: "Solar PV"
@@ -606,6 +608,7 @@ en:
         energy_hydrogen_autothermal_reformer_must_run_for_mekko: "ATR (must-run)"
         energy_hydrogen_autothermal_reformer_dispatchable_for_mekko: "ATR (dispatchable)"
         energy_hydrogen_wind_turbine_offshore: "Offshore wind"
+        energy_hydrogen_hybrid_wind_turbine_offshore: "Offshore hybrid wind"
         energy_hydrogen_ammonia_reformer_must_run_for_mekko: "Ammonia reformer (must-run)"
         energy_hydrogen_ammonia_reformer_dispatchable_for_mekko: "Ammonia reformer (dispatchable)"
         energy_imported_hydrogen: "Imported hydrogen"
@@ -862,6 +865,7 @@ en:
         energy_hydrogen_biomass_gasification_ccs: "Biomass gasification + CCS"
         energy_hydrogen_electrolysis_solar_electricity: "Solar PV plant for H2"
         energy_hydrogen_electrolysis_wind_electricity: "Offshore wind turbine for H2"
+        energy_hydrogen_electrolysis_hybrid_wind_electricity: "Hybrid offshore wind turbine for H2"
         energy_hydrogen_flexibility_p2g_electricity: "Power-to-gas"
         energy_hydrogen_steam_methane_reformer_must_run: "Steam methane reforming (must-run)"
         energy_hydrogen_steam_methane_reformer_ccs_must_run: "Steam methane reforming + CCS (must-run)"
@@ -1192,6 +1196,7 @@ en:
         offshore: "Offshore"
         offshore_net: "Offshore net"
         offshore_wind_turbines: "Offshore wind turbines"
+        offshore_hybrid_wind_turbines: "Offshore hybrid wind turbines"
         oil: "Oil"
         oil_energetic: "Oil (energetic)"
         oil_and_derivatives: "Oil and derivatives"

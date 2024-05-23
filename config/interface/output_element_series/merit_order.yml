@@ -467,6 +467,18 @@
   dependent_on:
   output_element_key: merit_order
   key: offshore_wind_turbines_merit_order
+- label: offshore_hybrid_wind_turbines
+  color: "#7487FF"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: offshore_hybrid_wind_turbines_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: offshore_hybrid_wind_turbines_merit_order
 - label: onshore_wind_turbines
   color: "#9292c6"
   order_by: 1

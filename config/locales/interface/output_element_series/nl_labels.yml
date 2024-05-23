@@ -568,6 +568,7 @@ nl:
         energy_power_wind_turbine_coastal: 'Windmolens aan kust'
         energy_power_wind_turbine_inland: 'Windmolens op land'
         energy_power_wind_turbine_offshore: 'Windmolens op zee'
+        energy_power_hybrid_wind_turbine_offshore: 'Hybride windmolens op zee'
         energy_export_hydrogen_baseload_for_mekko: 'Export (basislast)'
         energy_export_hydrogen_backup_for_mekko: 'Export (overschot)'
         energy_hydrogen_storage_unused_for_mekko: 'Ongebruikte waterstof vanuit opslag'
@@ -578,6 +579,7 @@ nl:
         energy_hydrogen_biomass_gasification_for_mekko: 'Biomassavergassing'
         energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomassavergassing + CCS"
         energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Offshore wind"
+        energy_hydrogen_electrolysis_hybrid_wind_electricity_for_mekko: "Offshore hybride wind"
         energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Zonnecentrales"
         energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Power-to-gas"
         energy_hydrogen_solar_pv_solar_radiation: "Zonnecentrales"
@@ -590,6 +592,7 @@ nl:
         energy_hydrogen_autothermal_reformer_must_run_for_mekko: "ATR (must-run)"
         energy_hydrogen_autothermal_reformer_dispatchable_for_mekko: "ATR (regelbaar)"
         energy_hydrogen_wind_turbine_offshore: "Offshore wind"
+        energy_hydrogen_hybrid_wind_turbine_offshore: "Offshore hybride wind"
         energy_hydrogen_ammonia_reformer_must_run_for_mekko: "Ammoniak reformer (must-run)"
         energy_hydrogen_ammonia_reformer_dispatchable_for_mekko: "Ammoniak reformer (regelbaar)"
         energy_greengas_production_costs: "Gemiddelde productiekosten groen gas"
@@ -873,6 +876,7 @@ nl:
         energy_hydrogen_biomass_gasification_ccs: "Biomassavergassing CCS"
         energy_hydrogen_electrolysis_solar_electricity: "Zonnecentrale PV voor H2"
         energy_hydrogen_electrolysis_wind_electricity: "Windmolen op zee voor H2"
+        energy_hydrogen_electrolysis_hybrid_wind_electricity: "Hybride windmolen op zee voor H2"
         energy_hydrogen_flexibility_p2g_electricity: "Power-to-gas"
         energy_hydrogen_steam_methane_reformer_must_run: "Stoomreforming met aardgas (must-run)"
         energy_hydrogen_steam_methane_reformer_ccs_must_run: "Stoomreforming met aardgas + CCS (must-run)"
@@ -1202,6 +1206,7 @@ nl:
         offshore: "Op zee"
         offshore_net: "Net op zee"
         offshore_wind_turbines: "Windmolens op zee"
+        offshore_hybrid_wind_turbines: "Hybride windmolens op zee"
         oil: "Olie"
         oil_and_derivatives: "Olie en olieproducten"
         oil_and_derivatives_hot_water: "Olie (voor warm water)"

@@ -131,6 +131,18 @@
   dependent_on: 
   output_element_key: hydrogen_cost_capacity
   key: energy_hydrogen_wind_turbine_offshore_hydrogen_cost_capacity
+- label: energy_hydrogen_hybrid_wind_turbine_offshore
+  color: "#7487FF"
+  order_by: 205
+  group: 
+  show_at_first: 
+  is_target_line: 
+  target_line_position: 
+  gquery: energy_hydrogen_hybrid_wind_turbine_offshore_h2_chart
+  is_1990: 
+  dependent_on: 
+  output_element_key: hydrogen_cost_capacity
+  key: energy_hydrogen_hybrid_wind_turbine_offshore_hydrogen_cost_capacity
 - label: energy_imported_hydrogen_baseload
   color: "#C6C2DA"
   order_by: 210

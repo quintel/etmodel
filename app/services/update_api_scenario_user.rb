@@ -18,6 +18,8 @@ class UpdateAPIScenarioUser
     )
   rescue Faraday::ResourceNotFound
     ServiceResult.failure('Scenario not found')
+  rescue Faraday::ForbiddenError
+    ServiceResult.failure('No access to this scenario')
   rescue Faraday::UnprocessableEntityError => e
     ServiceResult.single_failure_from_unprocessable_entity_on_multiple_objects(e)
   rescue Faraday::Error => e

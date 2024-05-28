@@ -364,3 +364,11 @@
   dependent_on: ''
   output_element_type_name: html_table
   related_output_element_key: flexibility_hourly_carriers_inflexible_imbalance
+- group: Flexibility
+  hidden: false
+  key: installed_hybrid_offshore_capacities
+  output_element_type_name: category_bar
+  requires_merit_order: true
+  unit: MW
+  config:
+    period: future

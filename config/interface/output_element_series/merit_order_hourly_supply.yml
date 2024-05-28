@@ -215,6 +215,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_wind_turbine_offshore_volatile_merit_order_hourly_supply
+- label: energy_power_hybrid_wind_turbine_offshore
+  color: "#7487FF"
+  order_by: 5
+  group: volatile
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_hybrid_wind_turbine_offshore
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_hybrid_wind_turbine_offshore_volatile_merit_order_hourly_supply
 - label: energy_battery_wind_electricity
   color: "#63A1C9"
   order_by: 5

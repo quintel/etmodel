@@ -615,6 +615,29 @@ D3.sankey =
           {left: 'captured_co2',                 right: 'export',                     gquery: 'captured_co2_export_total_in_ccus_sankey', color: '#1f77b4'}
 
        ]
+    sankey_hybrid_offshore:
+      data:
+        nodes: [
+          {id: 'hybrid_offshore_wind',        column: 0, label: 'hybrid_offshore_wind',     color: '#63A1C9'},
+          {id: 'to_offshore_network',         column: 0, label: 'to_offshore_network',      color: '#A9A9A9'},
+          {id: 'from_offshore_network',       column: 1, label: 'from_offshore_network',    color: '#A9A9A9'},
+          {id: 'offshore_electrolyser',       column: 1, label: 'offshore_electrolyser',    color: '#5e9aa4'},
+          {id: 'curtailment',                 column: 2, label: 'curtailment',              color: '#dd9977'},
+          {id: 'onshore_hv_network',          column: 2, label: 'onshore_hv_network',       color: '#006266'},
+          {id: 'onshore_hydrogen_network',    column: 2, label: 'onshore_hydrogen_network', color: '#87cfeb'},
+          {id: 'losses',                      column: 2, label: 'losses',                   color: '#cc0000'}
+        ]
+        links: [
+          {left: 'hybrid_offshore_wind',    right: 'curtailment',               gquery: 'hybrid_offshore_wind_to_curtailment_in_sankey',                color: '#1f77b4'},
+          {left: 'hybrid_offshore_wind',    right: 'from_offshore_network',     gquery: 'hybrid_offshore_wind_to_from_offshore_network_in_sankey',      color: '#1f77b4'},
+          {left: 'hybrid_offshore_wind',    right: 'offshore_electrolyser',     gquery: 'hybrid_offshore_wind_to_offshore_electrolyser_in_sankey',      color: '#1f77b4'},
+          {left: 'to_offshore_network',     right: 'offshore_electrolyser',     gquery: 'to_offshore_network_to_offshore_electrolyser_in_sankey',       color: '#1f77b4'}, 
+          {left: 'to_offshore_network',     right: 'losses',                    gquery: 'to_offshore_network_to_losses_in_sankey',                      color: '#cc0000'},
+          {left: 'from_offshore_network',   right: 'onshore_hv_network',        gquery: 'from_offshore_network_to_onshore_hv_network_in_sankey',        color: '#1f77b4'},
+          {left: 'from_offshore_network',   right: 'losses',                    gquery: 'from_offshore_network_to_losses_in_sankey',                    color: '#cc0000'},
+          {left: 'offshore_electrolyser',   right: 'onshore_hydrogen_network',  gquery: 'offshore_electrolyser_to_onshore_hydrogen_network_in_sankey',  color: '#87cfeb'},
+          {left: 'offshore_electrolyser',   right: 'losses',                    gquery: 'offshore_electrolyser_to_losses_in_sankey',                    color: '#cc0000'},
+        ]
     sankey:
       data:
         nodes: [

@@ -4,10 +4,18 @@
   unit: "%"
   interface_group: relative_capacity
   position: 1
+  related_node: energy_hydrogen_electrolysis_hybrid_wind_electricity
   slide_key: flexibility_flexibility_hybrid_offshore_wind
 - key: relative_capacity_of_offshore_cable
   step_value: 0.1
   unit: "%"
   interface_group: relative_capacity
   position: 2
+  slide_key: flexibility_flexibility_hybrid_offshore_wind
+- key: wtp_of_energy_hydrogen_electrolysis_hybrid_wind_electricity
+  step_value: 0.1
+  unit: "€/MWh"
+  interface_group: willingness_to_pay
+  related_node: energy_hydrogen_electrolysis_hybrid_wind_electricity
+  position: 3
   slide_key: flexibility_flexibility_hybrid_offshore_wind

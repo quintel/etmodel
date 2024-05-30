@@ -165,18 +165,18 @@
   dependent_on: 
   output_element_key: hydrogen_production_cost_curve
   key: energy_hydrogen_electrolysis_wind_electricity_hydrogen_production_cost_curve
-- label: energy_hydrogen_electrolysis_hybrid_wind_electricity
+- label: energy_hydrogen_hybrid_electrolysis_wind_electricity
   color: "#7487FF"
   order_by: 73
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_electrolysis_hybrid_wind_electricity_hydrogen_production_cost_curve
+  gquery: energy_hydrogen_hybrid_electrolysis_wind_electricity_hydrogen_production_cost_curve
   is_1990: false
   dependent_on: 
   output_element_key: hydrogen_production_cost_curve
-  key: energy_hydrogen_electrolysis_hybrid_wind_electricity_hydrogen_production_cost_curve
+  key: energy_hydrogen_hybrid_electrolysis_wind_electricity_hydrogen_production_cost_curve
 - label: energy_hydrogen_flexibility_p2g_electricity
   color: "#ded033"
   order_by: 75

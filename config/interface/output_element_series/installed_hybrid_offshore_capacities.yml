@@ -1,27 +1,27 @@
 ---
 
-- label: offshore_hybrid_wind_output_capacity
+- label: hybrid_offshore_wind_output_capacity
   color: "#7487FF"
   order_by: 100
   group: wind_output_capacity
   is_target_line: false
-  gquery: installed_capacity_offshore_hybrid_wind_turbine
+  gquery: installed_capacity_hybrid_offshore_wind_turbine
   output_element_key: installed_hybrid_offshore_capacities
-  key: offshore_hybrid_wind_turbine_installed_hybrid_offshore_capacities
+  key: hybrid_offshore_wind_turbine_installed_hybrid_offshore_capacities
 
-- label: offshore_electrolyser_input_capacity
+- label: hybrid_offshore_electrolyser_input_capacity
   color: "#87CEEB"
   order_by: 200
   group: installed_input_capacity
   is_target_line: false
-  gquery: installed_capacity_offshore_electrolyser_hybrid_wind
+  gquery: installed_capacity_hybrid_offshore_electrolyser_wind
   output_element_key: installed_hybrid_offshore_capacities
-  key: offshore_electrolyser_hybrid_wind_installed_hybrid_offshore_capacities
-- label: offshore_cable_input_capacity
+  key: hybrid_offshore_electrolyser_wind_installed_hybrid_offshore_capacities
+- label: hybrid_offshore_cable_input_capacity
   color: "#A9A9A9"
   order_by: 210
   group: installed_input_capacity
   is_target_line: false
-  gquery: installed_capacity_offshore_electricity_cable
+  gquery: installed_capacity_hybrid_offshore_electricity_cable
   output_element_key: installed_hybrid_offshore_capacities
-  key: offshore_electricity_cable_installed_hybrid_offshore_capacities
+  key: hybrid_offshore_electricity_cable_installed_hybrid_offshore_capacities

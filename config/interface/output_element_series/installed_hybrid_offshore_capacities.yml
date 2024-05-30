@@ -1,10 +1,9 @@
 ---
-# Add H2 pipeline?
 
 - label: offshore_hybrid_wind_output_capacity
   color: "#7487FF"
   order_by: 100
-  group: offshore_hybrid_wind_turbine
+  group: wind_output_capacity
   is_target_line: false
   gquery: installed_capacity_offshore_hybrid_wind_turbine
   output_element_key: installed_hybrid_offshore_capacities
@@ -12,17 +11,16 @@
 
 - label: offshore_electrolyser_input_capacity
   color: "#87CEEB"
-  order_by: 110
-  group: offshore_electrolyser_hybrid_wind
+  order_by: 200
+  group: installed_input_capacity
   is_target_line: false
   gquery: installed_capacity_offshore_electrolyser_hybrid_wind
   output_element_key: installed_hybrid_offshore_capacities
   key: offshore_electrolyser_hybrid_wind_installed_hybrid_offshore_capacities
-
 - label: offshore_cable_input_capacity
   color: "#A9A9A9"
-  order_by: 120
-  group: offshore_electricity_cable
+  order_by: 210
+  group: installed_input_capacity
   is_target_line: false
   gquery: installed_capacity_offshore_electricity_cable
   output_element_key: installed_hybrid_offshore_capacities

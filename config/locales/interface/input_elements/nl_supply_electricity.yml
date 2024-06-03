@@ -527,7 +527,18 @@ nl:
       title: Op zee met hybride aansluiting
       short_description:
       description:
-        To be written.
+        In tegenstelling tot reguliere offshore windturbines kunnen hybride offshore windturbines 
+        geproduceerde elektriciteit direct aan een offshore elektrolyser leveren voor waterstofproductie 
+        of geproduceerde elektriciteit leveren aan het hoogspanningsnetwerk via een offshore elektriciteitskabel. 
+        De (relatieve) geïnstalleerde vermogens van de offshore elektrolyser en elektriciteitskabel kunnen 
+        worden ingesteld in de <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-relative-capacities">
+        flexibiliteitssectie</a>.<br/><br/>
+        Voor meer informatie over de componenten van hybride offshore wind en het onderlinge gedrag van de componenten, 
+        zie de <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>.
+        <br/><br/>Deze <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">
+        grafiek</a> geeft de jaarlijkse energiestromen weer tussen de componenten van hybride offshore wind. 
+        Daarnaast toont deze tabel [TABELLINK TOEVOEGEN] ook de geïnstalleerde vermogens en piekbelastingen van de 
+        verschillende componenten.
     capacity_of_energy_battery_wind_turbine_inland:
       title: Op land met batterijsysteem
       short_description: ''

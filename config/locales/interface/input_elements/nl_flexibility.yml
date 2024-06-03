@@ -541,7 +541,22 @@ nl:
       title: Elektrolyser op zee
       short_description:
       description: |
-        To be written
+        Deze schuif stelt de relatieve capaciteit van de offshore elektrolyser in ten opzichte van het geïnstalleerd 
+        vermogen van de hybride offshore windturbines. De offshore elektrolyser kan zowel elektriciteit van de hybride 
+        offshore windturbines als van het HV netwerk (via de offshore elektriciteitskabel) ontvangen. 
+        Logischerwijs tellen het geïnstalleerd vermogen van de electrolyser en elektriciteitskabel op tot het 
+        geïnstalleerd vermogen van de hybride offshore windturbines (de relatieve vermogens tellen op tot 100%).<br/><br/>
+        Met de onderstaande schuif kan de betalingsbereidheid (<i>willingness-to-pay</i>) van de offshore elektrolyser 
+        worden ingesteld.<br/><br/> 
+        Voor meer informatie over de componenten en het gedrag van hybride offshore wind, zie onze 
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>.
+        <br/><br/>Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van 
+        de hybride offshore-windcomponenten:
+        <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de hybride offshore windcomponenten</li> 
+        <li>Deze tabel [VOEG TABEL LINK IN] toont de geïnstalleerde vermogens en jaarlijkse energiestromen van de 
+        verschillende componenten</li>
+        <li>Dit <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">Sankey-diagram</a> 
+        toont de jaarlijkse energiestromen tussen de hybride offshore windcomponenten</li></ul>
     relative_capacity_of_offshore_cable:
       title: Elektriciteitskabel op zee
       short_description:

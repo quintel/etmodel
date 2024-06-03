@@ -497,7 +497,19 @@ en:
       title: Offshore with hybrid connection
       short_description:
       description:
-        To be written.
+        Different from regular offshore wind turbines, hybrid offshore windturbines can either
+        generate electricity that is directly supplied to an offshore electrolyser for hydrogen
+        production or supplied to the HV network through an offshore electricity cable. 
+        The (relative) installed capacity of the offshore electrolyser and electricity cable can be set in the 
+        <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-relative-capacities">
+        flexibility</a> section. <br/><br/>
+        For more information on the components and behaviour of the hybrid offshore wind components, 
+        see the <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" 
+        target=\"_blank\">documentation</a>.<br/><br/>
+        This <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" 
+        data-chart-location="side">chart</a> shows the annual energy flows between the hybrid 
+        offshore wind components. In addition, this table [ADD TABLE LINK] also shows the installed 
+        capacities and peak loads of the different components.
     capacity_of_energy_battery_wind_turbine_inland:
       title: Onshore inland with battery system
       short_description: ''

@@ -526,7 +526,23 @@ en:
       title: Offshore electrolyser
       short_description:
       description: |
-        To be written
+        This slider sets the relative capacity of the offshore electrolyser compared to the installed capacity
+        of the hybrid offshore wind turbines. The offshore electrolyser can either receive electricity generated
+        by the hybrid offshore wind turbine or can receive electricty from the high voltage network through
+        the offshore electricity cable. Logically, the installed capacity of the offshore electrolyser and 
+        offshore cable should add up to the installed capacity of the hybrid offshore wind turbines (meaning that 
+        the relative capacities should add up to 100%).<br/><br/>
+        With the slider below the willingness-to-pay of the offshore electrolyser can be set. <br/><br/>
+        For more information on the components and behaviour of hybrid offshore wind, see our 
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentation</a>.
+        <br/><br/>Several charts provide more information on the installed capacities and energy flows of 
+        the hybrid offshore wind components:
+        <ul><li>The chart on the right depicts the absolute installed capacity of the hybrid offshore wind 
+        components </li> 
+        <li>This table [ADD TABLE LINK] depicst the installed capacities and annual energy flows of the different 
+        components </li>
+        <li>This <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">
+        Sankey diagram</a> shows the annual energy flows between the hybrid offshore wind components </li></ul>
     relative_capacity_of_offshore_cable:
       title: Offshore electricity cable
       short_description:

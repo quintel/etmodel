@@ -541,17 +541,18 @@ nl:
       title: Elektrolyser op zee
       short_description:
       description: |
-        Deze schuif stelt de relatieve capaciteit van de offshore elektrolyser in ten opzichte van het geïnstalleerd 
-        vermogen van de hybride offshore windturbines. De offshore elektrolyser kan zowel elektriciteit van de hybride 
+        Deze schuif stelt het relatieve vermogen van de offshore elektrolyser in ten opzichte van het geïnstalleerd 
+        vermogen van de hybride offshore windturbines.  <br/><br/>
+        De offshore elektrolyser kan zowel elektriciteit van de hybride 
         offshore windturbines als van het HV netwerk (via de offshore elektriciteitskabel) ontvangen. 
-        Logischerwijs tellen het geïnstalleerd vermogen van de electrolyser en elektriciteitskabel op tot het 
+        Logischerwijs tellen het geïnstalleerd vermogen van de elektrolyser en elektriciteitskabel op tot het 
         geïnstalleerd vermogen van de hybride offshore windturbines (de relatieve vermogens tellen op tot 100%).<br/><br/>
         Met de onderstaande schuif kan de betalingsbereidheid (<i>willingness-to-pay</i>) van de offshore elektrolyser 
         worden ingesteld.<br/><br/> 
         Voor meer informatie over de componenten en het gedrag van hybride offshore wind, zie onze 
         <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>.
         <br/><br/>Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van 
-        de hybride offshore-windcomponenten:
+        de hybride offshore windcomponenten:
         <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de hybride offshore windcomponenten</li> 
         <li>Deze tabel [VOEG TABEL LINK IN] toont de geïnstalleerde vermogens en jaarlijkse energiestromen van de 
         verschillende componenten</li>
@@ -561,7 +562,22 @@ nl:
       title: Elektriciteitskabel op zee
       short_description:
       description: |
-        To be written
+        Deze schuif stelt het relatieve vermogen van de offshore elektriciteitskabel in ten opzichte van het geïnstalleerd 
+        vermogen van de hybride offshore windturbines. <br/><br/>
+        De offshore elektriciteitskabel kan zowel geproduceerde elektriciteit
+        door de hybride offshore windturbines transporteren naar het HV netwerk op land of elektriciteit transporteren van 
+        het HV netwerk naar de offshore elektrolyser. Logischerwijs tellen het geïnstalleerd vermogen van de elektrolyser en 
+        elektriciteitskabel op tot het geïnstalleerd vermogen van de hybride offshore windturbines (de relatieve vermogens 
+        tellen op tot 100%).<br/><br/>
+        Voor meer informatie over de componenten en het gedrag van hybride offshore wind, zie de 
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>.
+        <br/><br/>Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van 
+        de hybride offshore windcomponenten:
+        <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de hybride offshore windcomponenten</li> 
+        <li>Deze tabel [VOEG TABEL LINK IN] toont de geïnstalleerde vermogens en jaarlijkse energiestromen van de 
+        verschillende componenten</li>
+        <li>Dit <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">Sankey-diagram</a> 
+        toont de jaarlijkse energiestromen tussen de hybride offshore windcomponenten</li></ul>
     households_flexibility_p2p_electricity_market_penetration:
       title: Marktaandeel
       short_description:
@@ -1258,19 +1274,14 @@ nl:
       title: Willingness-to-pay
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-gas installaties willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook power-to-gas vermogen
-        geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-gas is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>    
+        Deze schuif stelt de maximumprijs in die de hybride offshore elektrolyser bereid is te betalen voor zijn elektriciteit. 
+        Deze schuif is slechts van kracht wanneer er opgesteld vermogen is van hybride offshore windturbines (zie 
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">hernieuwbare elektriciteitssectie</a>) en wanneer 
+        relatief vermogen voor de offshore elektrolyser is ingesteld met de schuif hierboven.<br/><br/>
+        Wanneer de nationale elektriciteitsprijs lager is dan de betalingsbereidheid (<i>willingness-to-pay</i>) van de offshore 
+        elektrolyser, zal de elektrolyser elektriciteit consumeren voor waterstofproductie. Zie de  
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>
+        voor meer informatie over het gedrag van de componenten van hybride offshore wind.
     wtp_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:

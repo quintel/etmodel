@@ -1,0 +1,16 @@
+- if current_user
+  .back-to-scenario-view
+    %a.stick-right{ href: list_multi_year_charts_path }
+      ⟵
+      = t('scenario.back_to_overview')
+%h1= format_subscripts(collection.title)
+
+%ul.details.last
+  %li
+    = t('scenario.updated')
+    = local_time(collection.updated_at, :long)
+
+  %li.with-button
+    = link_to t("scenario.load"), myc_url(collection), class: "scenario-button button load no-margin-right"
+
+-# TODO: shareable links

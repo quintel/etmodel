@@ -1,9 +1,8 @@
 .scenario-row{ class: multi_year_chart_row.discarded? ? 'discarded' : 'loadable' }
   .scenario-info
     .sub-row
-      %a.title{ href: myc_url(multi_year_chart_row), target:'_blank' }
+      %a.title{ href: show_multi_year_chart_path(multi_year_chart_row) }
         = multi_year_chart_row.title
-        %span.fa.fa-external-link
       - if multi_year_chart_row.discarded?
         .type-tag
           %span.type.icon

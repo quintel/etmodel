@@ -3,11 +3,11 @@
 class MultiYearChartsController < ApplicationController
   layout 'multi_year_charts'
 
-  load_resource only: %i[discard undiscard]
+  load_resource only: %i[show discard undiscard]
 
   before_action :ensure_valid_config
 
-  before_action except: %i[discard undiscard] do
+  before_action except: %i[show discard undiscard] do
     authenticate_user!(show_as: :sign_in)
   end
 
@@ -40,6 +40,12 @@ class MultiYearChartsController < ApplicationController
 
     respond_to do |format|
       format.html {render :layout => 'application'}
+    end
+  end
+
+  def show
+    respond_to do |format|
+      format.html { render layout: 'application' }
     end
   end
 

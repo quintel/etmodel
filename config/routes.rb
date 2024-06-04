@@ -100,6 +100,9 @@ Rails.application.routes.draw do
 
   get '/scenarios/:scenario_id/save', to: 'saved_scenarios#new', as: :new_saved_scenario
 
+  get '/scenario_collection/:id', to: 'multi_year_charts#show', as: :show_multi_year_chart
+  get '/scenario_collections', to: 'multi_year_charts#list', as: :list_multi_year_charts
+
   get '/scenario/new' => 'scenarios#new'
   get '/scenario/reset' => 'scenarios#reset'
   get '/scenario/confirm_reset' => 'scenarios#confirm_reset'
@@ -163,7 +166,6 @@ Rails.application.routes.draw do
 
     collection do
       get :discarded
-      get :list
     end
   end
 

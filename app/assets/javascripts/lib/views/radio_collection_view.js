@@ -136,6 +136,7 @@
     'flh_of_energy_power_wind_turbine_coastal',
     'flh_of_energy_power_wind_turbine_inland',
     'flh_of_energy_power_wind_turbine_offshore',
+    'flh_of_energy_power_hybrid_wind_turbine_offshore',
     'flh_of_solar_pv_solar_radiation'
   ];
 

@@ -32,15 +32,21 @@
   interface_group: full_load_hours
   position: 4
   slide_key: flexibility_weather_conditions_and_flh
-- key: flh_of_energy_hydrogen_wind_turbine_offshore
+- key: flh_of_energy_power_hybrid_wind_turbine_offshore
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
   position: 5
   slide_key: flexibility_weather_conditions_and_flh
-- key: flh_of_solar_pv_solar_radiation
+- key: flh_of_energy_hydrogen_wind_turbine_offshore
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
   position: 6
+  slide_key: flexibility_weather_conditions_and_flh
+- key: flh_of_solar_pv_solar_radiation
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 7
   slide_key: flexibility_weather_conditions_and_flh

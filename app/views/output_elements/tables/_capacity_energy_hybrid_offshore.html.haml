@@ -1,0 +1,40 @@
+-# Hybrid offshore capacity and energy flows table
+%table.chart.centered.autostripe
+  %thead
+    %tr
+      %th
+      %th= t 'output_elements.tables.capacity_energy_hybrid_offshore.input_capacity'
+      %th= t 'output_elements.tables.capacity_energy_hybrid_offshore.output_capacity'
+      %th= t 'output_elements.tables.capacity_energy_hybrid_offshore.peak_input'
+      %th= t 'output_elements.tables.capacity_energy_hybrid_offshore.peak_output'
+      %th= t 'output_elements.tables.capacity_energy_hybrid_offshore.energy_input'
+      %th= t 'output_elements.tables.capacity_energy_hybrid_offshore.energy_output'
+    %tr
+      %th
+      %th MW
+      %th MW
+      %th MW
+      %th MW
+      %th PJ
+      %th PJ
+  %tbody
+    :ruby
+      items = [
+        'hybrid_offshore_wind_turbine',
+        'hybrid_offshore_electrolyser',
+        'hybrid_cable_from_offshore_network',
+        'hybrid_cable_to_offshore_network',
+        'curtailed_electricity',
+        'conversion_loss',
+        'transport_loss'
+      ]
+    - items.each do |key|
+      %tr
+        %th{style: "text-align: left;"}= raw t "output_elements.tables.capacity_energy_hybrid_offshore.#{key}"
+        %td{:data => {:decimals => 0, :gquery => "input_capacity_#{key}", :on_zero => '-'}}
+        %td{:data => {:decimals => 0, :gquery => "output_capacity_#{key}", :on_zero => '-'}}
+        %td{:data => {:decimals => 1, :gquery => "peak_input_#{key}", :on_zero => '-', :graph => :future}}
+        %td{:data => {:decimals => 1, :gquery => "peak_output_#{key}", :on_zero => '-', :graph => :future}}
+        %td{:data => {:decimals => 2, :gquery => "energy_input_#{key}", :on_zero => '-'}}
+        %td{:data => {:decimals => 2, :gquery => "energy_output_#{key}", :on_zero => '-'}}
+      

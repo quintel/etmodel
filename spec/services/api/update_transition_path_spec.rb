@@ -129,9 +129,9 @@ RSpec.describe API::UpdateTransitionPath do
     end
   end
 
-  context 'when given more than 10 scenario IDs' do
+  context 'when given more than 100 scenario IDs' do
     let(:params) do
-      super().merge(scenario_ids: (1..11).to_a)
+      super().merge(scenario_ids: (1..101).to_a)
     end
 
     it 'returns a failure' do
@@ -140,7 +140,7 @@ RSpec.describe API::UpdateTransitionPath do
 
     it 'returns the errors' do
       expect(result.failure).to eq({
-        scenario_ids: ['size cannot be greater than 10']
+        scenario_ids: ['size cannot be greater than 100']
       })
     end
   end

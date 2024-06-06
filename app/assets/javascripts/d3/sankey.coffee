@@ -618,25 +618,28 @@ D3.sankey =
     sankey_hybrid_offshore:
       data:
         nodes: [
+          {id: 'onshore_hv_network_left',     column: 0, label: 'onshore_hv_network',       color: '#004D40'},
           {id: 'hybrid_offshore_wind',        column: 0, label: 'hybrid_offshore_wind',     color: '#63A1C9'},
-          {id: 'to_offshore_network',         column: 0, label: 'to_offshore_network',      color: '#A9A9A9'},
-          {id: 'from_offshore_network',       column: 1, label: 'from_offshore_network',    color: '#A9A9A9'},
-          {id: 'offshore_electrolyser',       column: 1, label: 'offshore_electrolyser',    color: '#5e9aa4'},
-          {id: 'curtailment',                 column: 2, label: 'curtailment',              color: '#dd9977'},
-          {id: 'onshore_hv_network',          column: 2, label: 'onshore_hv_network',       color: '#006266'},
-          {id: 'onshore_hydrogen_network',    column: 2, label: 'onshore_hydrogen_network', color: '#87cfeb'},
-          {id: 'losses',                      column: 2, label: 'losses',                   color: '#cc0000'}
+          {id: 'to_offshore_network',         column: 1, label: 'offshore_cable',           color: '#A9A9A9'},
+          {id: 'offshore_electrolyser',       column: 2, label: 'offshore_electrolyser',    color: '#5e9aa4'},
+          {id: 'from_offshore_network',       column: 2, label: 'offshore_cable',           color: '#A9A9A9'},       
+          {id: 'onshore_hydrogen_network',    column: 3, label: 'onshore_hydrogen_network', color: '#87cfeb'},
+          {id: 'conversion_losses',           column: 3, label: 'conversion_losses',        color: '#cc0000'},
+          {id: 'onshore_hv_network',          column: 3, label: 'onshore_hv_network',       color: '#004D40'},
+          {id: 'curtailment',                 column: 3, label: 'curtailment',              color: '#dd9977'},
+          {id: 'transport_losses',            column: 3, label: 'transport_losses',         color: '#cc0000'}
         ]
         links: [
-          {left: 'hybrid_offshore_wind',    right: 'curtailment',               gquery: 'hybrid_offshore_wind_to_curtailment_in_sankey',                color: '#1f77b4'},
-          {left: 'hybrid_offshore_wind',    right: 'from_offshore_network',     gquery: 'hybrid_offshore_wind_to_from_offshore_network_in_sankey',      color: '#1f77b4'},
+          {left: 'onshore_hv_network_left', right: 'to_offshore_network',       gquery: 'onshore_hv_network_to_to_offshore_network_in_sankey',          color: '#A9A9A9'},
+          {left: 'to_offshore_network',     right: 'offshore_electrolyser',     gquery: 'to_offshore_network_to_offshore_electrolyser_in_sankey',       color: '#A9A9A9'},           
           {left: 'hybrid_offshore_wind',    right: 'offshore_electrolyser',     gquery: 'hybrid_offshore_wind_to_offshore_electrolyser_in_sankey',      color: '#1f77b4'},
-          {left: 'to_offshore_network',     right: 'offshore_electrolyser',     gquery: 'to_offshore_network_to_offshore_electrolyser_in_sankey',       color: '#1f77b4'}, 
-          {left: 'to_offshore_network',     right: 'losses',                    gquery: 'to_offshore_network_to_losses_in_sankey',                      color: '#cc0000'},
+          {left: 'hybrid_offshore_wind',    right: 'from_offshore_network',     gquery: 'hybrid_offshore_wind_to_from_offshore_network_in_sankey',      color: '#1f77b4'},
+          {left: 'hybrid_offshore_wind',    right: 'curtailment',               gquery: 'hybrid_offshore_wind_to_curtailment_in_sankey',                color: '#1f77b4'},
+          {left: 'to_offshore_network',     right: 'transport_losses',          gquery: 'to_offshore_network_to_transport_losses_in_sankey',            color: '#cc0000'},
+          {left: 'offshore_electrolyser',   right: 'onshore_hydrogen_network',  gquery: 'offshore_electrolyser_to_hydrogen_network_in_sankey',          color: '#87cfeb'}, 
+          {left: 'offshore_electrolyser',   right: 'conversion_losses',         gquery: 'offshore_electrolyser_to_conversion_losses_in_sankey',         color: '#cc0000'},
           {left: 'from_offshore_network',   right: 'onshore_hv_network',        gquery: 'from_offshore_network_to_onshore_hv_network_in_sankey',        color: '#1f77b4'},
-          {left: 'from_offshore_network',   right: 'losses',                    gquery: 'from_offshore_network_to_losses_in_sankey',                    color: '#cc0000'},
-          {left: 'offshore_electrolyser',   right: 'onshore_hydrogen_network',  gquery: 'offshore_electrolyser_to_onshore_hydrogen_network_in_sankey',  color: '#87cfeb'},
-          {left: 'offshore_electrolyser',   right: 'losses',                    gquery: 'offshore_electrolyser_to_losses_in_sankey',                    color: '#cc0000'},
+          {left: 'from_offshore_network',   right: 'transport_losses',          gquery: 'from_offshore_network_to_transport_losses_in_sankey',          color: '#cc0000'}
         ]
     sankey:
       data:
@@ -1108,7 +1111,14 @@ D3.sankey =
           @gquery.present_value()
         else
           @gquery.future_value()
-      if _.isNumber(x) then x else 0.0
+      if (_.isNumber(x))
+        # Assume 0 for very small values below 10e-12 
+        if (Math.abs(x) < 1e-12)
+          return 0.0
+        else
+          return x
+      else
+        return 0.0
 
     should_show: =>
       !!@value()

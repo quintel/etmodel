@@ -7,14 +7,18 @@
 
 %ul.details.last
   %li
+    %strong
+      - if collection.area_code
+        = t("areas.#{collection.area_code}")
+      - elsif collection.saved_scenarios
+        - collection.saved_scenarios.map(&:area_code).uniq.each do |code|
+          %span.sep-before= t("areas.#{code}")
+  %li
     = t('scenario.created')
     = local_time(collection.created_at, :long)
 
   %li.with-button
     = link_to t("multi_year_charts.load"), myc_url(collection), class: "scenario-button button load no-margin-right"
-
--# TODO: shareable links
--# TODO: trash can
 
 .row
   %ul.details.stick-right

@@ -10,6 +10,13 @@
     .internal-box
       = render partial: 'saved_scenarios/flash_notice'
 
+      .buttons-create
+        = link_to multi_year_charts_path, class: 'save button scenario-button' do
+          + Create a new interpolation
+
+        = link_to new_multi_year_chart_path, class: 'save button scenario-button' do
+          + Create a new collection
+
       - if @multi_year_charts.any?
         = render partial: 'multi_year_chart_row', collection: @multi_year_charts
         = paginate @multi_year_charts

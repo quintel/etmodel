@@ -18,6 +18,7 @@ class MultiYearChart < ApplicationRecord
   has_many :saved_scenarios, through: :multi_year_chart_saved_scenarios
 
   validates_presence_of :user_id
+  validates :title, presence: true
 
   # Public: Creates a new MultiYearChart, setting some attributes to match those of the saved
   # scenario.
@@ -42,7 +43,7 @@ class MultiYearChart < ApplicationRecord
   end
 
   # Public: returns the direct scenario_id's and the active scenario_id's of any
-  # linked svaed scenarios
+  # linked saved scenarios
   def latest_scenario_ids
     scenarios.pluck(:scenario_id) + saved_scenarios.pluck(:scenario_id)
   end
@@ -56,7 +57,7 @@ class MultiYearChart < ApplicationRecord
   #
   # Returns an array.
   def redirect_slug
-    scenarios.pluck(:scenario_id).join(',')
+    latest_scenario_ids.join(',')
   end
 
   # Public: MYC doesn't have an update at, but we need it for sorting the items

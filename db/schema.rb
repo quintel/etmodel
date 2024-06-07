@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_22_073141) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_07_083041) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -75,10 +75,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_22_073141) do
   create_table "multi_year_charts", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title", null: false
-    t.string "area_code", null: false
-    t.integer "end_year", null: false
+    t.string "area_code"
+    t.integer "end_year"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "discarded_at"
+    t.boolean "interpolation", default: true
     t.index ["discarded_at"], name: "index_multi_year_charts_on_discarded_at"
     t.index ["user_id"], name: "index_multi_year_charts_on_user_id"
   end

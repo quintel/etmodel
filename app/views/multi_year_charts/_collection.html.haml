@@ -3,4 +3,23 @@
 = render partial: 'collection_info', locals: { collection: collection }
 .bar
   .description#main-scenario-description
-    A view of the coupled saved scenarios or interpolated scenario
+    - if collection.interpolation
+      = t "multi_year_charts.interpolation_description"
+    - if collection.saved_scenarios.present?
+      %h3 Includes the following saved scenarios
+      .scenario-cards
+        - collection.saved_scenarios.each do |scenario|
+          - if (current_user && scenario.viewer?(current_user)) || !scenario.private?
+            = link_to saved_scenario_path(scenario.id), class: 'scenario-box' do
+              .info-title
+                = scenario.title
+              .info
+                = scenario.end_year
+                = t "areas.#{scenario.area_code}"
+          - else
+            .scenario-box.private
+              .info-title
+                = scenario.title
+              .info
+                = scenario.end_year
+                = t "areas.#{scenario.area_code}"

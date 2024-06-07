@@ -34,7 +34,7 @@ module API
       end
 
       saved_scenario_ids&.uniq&.each do |saved_scenario_id|
-        transition_path.saved_scenarios.build(saved_scenario_id:)
+        transition_path.multi_year_chart_saved_scenarios.build(saved_scenario_id:)
       end
 
       if transition_path.save

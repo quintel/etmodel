@@ -149,6 +149,12 @@ table.default
     input, textarea
       box-sizing: border-box
 
+    .buttons-create
+      display: flex
+      margin-bottom: 2rem
+      .button:first-child
+        margin-left: auto
+
     .scenario-button
       background: #eee
       border: none
@@ -317,14 +323,13 @@ table.default
         span
           margin-right: 0.25rem
       .type-tag
-        color: $landing-gold
+        color: $landing-blue
         font-weight: normal
-        border: 1px solid $landing-gold
+        border: 1px solid $landing-blue
         border-radius: 24px
-        padding: 1px 10px 0 8px
+        padding: 0 10px 0 8px
         display: flex
         margin-left: 10px
-        margin-top: -2px
         font-size: 0.75rem
         line-height: 1.2rem
         span.icon
@@ -472,6 +477,9 @@ table.default
         margin-right: 0
         padding-right: 0
         margin-top: -1.5rem
+      span.sep-before:not(:first-child):before
+        content: '|'
+        margin-right: 5px
 
       #scenario-location, #scenario-privacy, .scenario-version, #scenario-copy
         button.scenario-actions
@@ -842,6 +850,7 @@ table.default
       margin-bottom: 0
       .control
         display: none
+
     .scenario-version, .control
       ul
         white-space: nowrap
@@ -904,3 +913,51 @@ table.default
   100%
     display: block
     opacity: 1
+
+.multi_year_chart_saved_scenarios
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 38px !important
+  label
+    margin: 6px 4px 6px auto
+    width: auto
+    span
+      background: $landing-blue
+      color: #fff
+      border-radius: 14px
+      white-space: nowrap
+      padding: 5px 20px
+    &:hover
+      cursor: pointer
+      span
+        background: darken($landing-blue, 14%)
+  input
+    display: none
+  input:checked+span
+    background: $landing-green
+
+.scenario-cards
+  display: flex
+  flex-wrap: wrap
+  margin-top: 30px
+  .scenario-box
+    border: 1px solid $landing-green
+    border-radius: 6px
+    border-top: 3px solid $landing-green
+    padding: 10px
+    margin: 0 10px 10px 0
+    color: #333
+    &:hover
+      text-decoration: none
+      background-color: lighten($landing-green, 14%)
+      color: #fff
+    .info-title
+      margin-bottom: 10px
+      font-weight: 600
+    &.private
+      border-color: #666
+      background-color: $soft-grey
+      &:hover
+        cursor: default
+        background-color: $soft-grey
+        color: #333

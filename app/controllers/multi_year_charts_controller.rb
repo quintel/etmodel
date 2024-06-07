@@ -27,11 +27,17 @@ class MultiYearChartsController < ApplicationController
     end
   end
 
+  def new
+    respond_to do |format|
+      format.html { render layout: 'application' }
+    end
+  end
+
   # Part of the My Scenarios view, lists all MYC that are not discarded
   #
   # GET multi_year_charts/list
   def list
-    @multi_year_charts = user_multi_year_charts
+    @multi_year_charts = user_collections
       .kept
       .includes(:user)
       .order('created_at DESC')
@@ -39,7 +45,7 @@ class MultiYearChartsController < ApplicationController
       .per(50)
 
     respond_to do |format|
-      format.html {render :layout => 'application'}
+      format.html { render layout: 'application' }
     end
   end
 
@@ -50,7 +56,7 @@ class MultiYearChartsController < ApplicationController
   end
 
   # Creates a new MultiYearChart record based on the scenario specified in the
-  # params.
+  # params. This is the interpolation route
   #
   # Redirects to the external MYC app when successful.
   #
@@ -71,6 +77,27 @@ class MultiYearChartsController < ApplicationController
       @multi_year_charts = user_multi_year_charts
 
       render :index, status: :unprocessable_entity
+    end
+  end
+
+  def create_collection
+    saved_scenario_ids = create_collection_params.delete(:saved_scenarios)
+    collection = current_user.multi_year_charts.build(
+      title: create_collection_params[:title],
+      interpolation: false
+    )
+
+    saved_scenario_ids.uniq.reject { |s| s.empty? }.each do |saved_scenario_id|
+      collection.multi_year_chart_saved_scenarios.build(saved_scenario_id:)
+    end
+
+    if collection.valid?
+      collection.save
+      redirect_to show_multi_year_chart_path(collection)
+    else
+      # TODO: add flash notice translation!
+      flash.notice = t('scenario.wrong')
+      redirect_to list_multi_year_charts_path
     end
   end
 
@@ -143,10 +170,24 @@ class MultiYearChartsController < ApplicationController
       .per(50)
   end
 
+  def user_collections
+    return [] unless current_user
+
+    current_user
+      .multi_year_charts
+      .order(created_at: :desc)
+      .page(params[:page])
+      .per(50)
+  end
+
   def ensure_valid_config
     return if Settings.multi_year_charts_url
 
     redirect_to root_path,
       notice: 'Missing multi_year_charts_url setting in config.yml'
+  end
+
+  def create_collection_params
+    params.require(:multi_year_chart).permit(:title, saved_scenarios: [])
   end
 end

@@ -55,8 +55,8 @@ module API
       new_ids      = saved_scenario_ids - existing_ids
       delete_ids   = existing_ids - saved_scenario_ids
 
-      transition_path.saved_scenarios.delete_by(saved_scenario_id: delete_ids)
-      new_ids.each { |id| transition_path.saved_scenarios.create!({ saved_scenario_id: id }) }
+      transition_path.multi_year_chart_saved_scenarios.delete_by(saved_scenario_id: delete_ids)
+      new_ids.each { |id| transition_path.multi_year_chart_saved_scenarios.create!({ saved_scenario_id: id }) }
     end
   end
 end

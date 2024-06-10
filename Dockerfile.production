@@ -29,6 +29,8 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
  # Throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
+RUN gem update --system
+
 COPY Gemfile* package.json yarn.lock /app/
 WORKDIR /app
 

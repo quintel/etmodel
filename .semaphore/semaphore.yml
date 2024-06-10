@@ -24,6 +24,7 @@ blocks:
             - sem-version node 16
             - cache restore
             - bundle config set --local deployment 'true'
+            - gem update --system
             - bundle install || (rm -rf vendor/bundle && cache clear && bundle install)
             - yarn install
             - cache store

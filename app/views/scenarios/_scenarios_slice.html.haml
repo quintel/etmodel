@@ -1,4 +1,2 @@
 = render partial: 'saved_scenarios/scenario_row', collection: @saved_scenarios
-
-#scenario_paginator
-  = link_to_next_page @saved_scenarios, 'More...', remote: true
+= paginate @saved_scenarios

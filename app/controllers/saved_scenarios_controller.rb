@@ -51,7 +51,7 @@ class SavedScenariosController < ApplicationController
         .sort_by(&:updated_at)
       )
       .page(params[:page])
-      .per(100)
+      .per(10)
 
     respond_to do |format|
       format.html
@@ -63,7 +63,7 @@ class SavedScenariosController < ApplicationController
       .includes(:featured_scenario, :users)
       .order('updated_at DESC')
       .page(params[:page])
-      .per(100)
+      .per(10)
 
     respond_to do |format|
       format.html

@@ -6,7 +6,7 @@
     - if collection.interpolation
       = t "multi_year_charts.interpolation_description"
     - if collection.saved_scenarios.present?
-      %h3 Includes the following saved scenarios
+      %h3= t('multi_year_charts.includes')
       .scenario-cards
         - collection.saved_scenarios.each do |scenario|
           - if (current_user && scenario.viewer?(current_user)) || !scenario.private?
@@ -23,3 +23,5 @@
               .info
                 = scenario.end_year
                 = t "areas.#{scenario.area_code}"
+    - elsif !collection.interpolation
+      %h3= t('multi_year_charts.no_scenarios')

@@ -78,12 +78,17 @@ table.default
     width: $landing-width + 400px
     margin: 0 auto 3rem
     display: flex
+    min-height: 655px
 
     .internal-box
       width: 100%
       background: white
-      border-radius: 6px
+      border-radius: 0 10px 10px 0
       padding: 15px 40px 40px
+      display: flex
+      flex-direction: column
+    nav.pagination
+      margin: auto 0 0.5rem 0
 
     .version-warning
       background: #f0f7ee image-url('icons/warning-information.svg') 1.5rem 1.25rem no-repeat
@@ -204,13 +209,13 @@ table.default
       &.no-margin-right
         margin-right: 0
       &.simple-action
-        background: #d0d0d0
-        color: #333
+        background: $landing-background-color
+        color: $landing-grey
         font-size: 0.875rem
         padding: 0.5rem 0.75rem
         &:hover
-          background: darken(#d0d0d0, 14%)
-          color: #000
+          background: $landing-green //darken($landing-background-color, 14%)
+          color: #fff
 
   #edit_scenario .actions
     .cancel, input
@@ -225,8 +230,6 @@ table.default
       margin-left: 0.5rem
 
   &#index
-    min-height: 60vh
-
     .vertical-bar
       width: 0
       height: 26px
@@ -238,7 +241,7 @@ table.default
     .save-wrapper
       align-items: center
       display: flex
-      margin: 10px auto 0 auto
+      margin: auto auto 40px auto
       .save
         margin: 0
         font-size: 14px
@@ -276,6 +279,7 @@ table.default
       a
         border-radius: 4px
         padding: 0.375rem 0.5rem
+        color: #333
         &:hover
           background: lighten($landing-grey, 42%)
           text-decoration: none
@@ -331,9 +335,9 @@ table.default
         span
           margin-right: 0.25rem
       .type-tag
-        color: $landing-blue
+        color: #333
         font-weight: normal
-        border: 1px solid $landing-blue
+        border: 1px solid #333
         border-radius: 24px
         padding: 0 10px 0 8px
         display: flex
@@ -396,6 +400,9 @@ table.default
       .title
         font-weight: 600
         font-size: 1rem
+        color: #333
+        &:hover
+          color: $landing-grey
       .info, .author, .last-updated
         font-size: 0.8125rem
       .info
@@ -687,7 +694,9 @@ table.default
     display: flex
     flex-direction: column
     font-weight: 500
-    background: $soft-grey
+    background: #fff
+    border-radius: 10px 0 0 10px
+    padding: 10px
     .count
       align-items: center
       background: #ccd3db

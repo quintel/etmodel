@@ -31,7 +31,7 @@ class ScenariosController < ApplicationController
       .includes(:featured_scenario, :users)
       .order('updated_at DESC')
       .page(params[:page])
-      .per(50)
+      .per(10)
 
     respond_to do |format|
       format.html

@@ -7,7 +7,7 @@
 .background_wrapper#saved_scenario
   .scenario_wrapper#show_scenario
     - if current_user
-      = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_myc }
+      = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_myc, show_save_current: false }
     .internal-box
       .scenario
         = render partial: 'collection', locals: { collection: @multi_year_chart }

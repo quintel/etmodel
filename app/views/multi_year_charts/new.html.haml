@@ -6,7 +6,7 @@
 
 .background_wrapper#saved_scenario
   .scenario_wrapper#index
-    = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_myc }
+    = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_myc, show_save_current: false }
     .internal-box#new-collection
       = render partial: 'saved_scenarios/flash_notice'
 

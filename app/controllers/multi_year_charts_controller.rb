@@ -42,9 +42,6 @@ class MultiYearChartsController < ApplicationController
     @multi_year_charts = user_collections
       .kept
       .includes(:user)
-      .order('created_at DESC')
-      .page(params[:page])
-      .per(50)
 
     respond_to do |format|
       format.html { render layout: 'application' }
@@ -98,7 +95,6 @@ class MultiYearChartsController < ApplicationController
       collection.save
       redirect_to show_multi_year_chart_path(collection)
     else
-      puts collection.errors.messages
       flash[:error] = t('multi_year_charts.failure')
       redirect_to list_multi_year_charts_path
     end
@@ -180,7 +176,7 @@ class MultiYearChartsController < ApplicationController
       .multi_year_charts
       .order(created_at: :desc)
       .page(params[:page])
-      .per(50)
+      .per(8)
   end
 
   def ensure_valid_config

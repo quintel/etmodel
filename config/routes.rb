@@ -100,6 +100,11 @@ Rails.application.routes.draw do
 
   get '/scenarios/:scenario_id/save', to: 'saved_scenarios#new', as: :new_saved_scenario
 
+  get '/scenario_collection/:id', to: 'multi_year_charts#show', constraints: { id: /[0-9]+/ }, as: :show_multi_year_chart
+  get '/scenario_collections', to: 'multi_year_charts#list', as: :list_multi_year_charts
+  get '/scenario_collection/new', to: 'multi_year_charts#new', as: :new_multi_year_chart
+  post '/scenario_collection/create', to: 'multi_year_charts#create_collection', as: :create_collection
+
   get '/scenario/new' => 'scenarios#new'
   get '/scenario/reset' => 'scenarios#reset'
   get '/scenario/confirm_reset' => 'scenarios#confirm_reset'
@@ -163,7 +168,6 @@ Rails.application.routes.draw do
 
     collection do
       get :discarded
-      get :list
     end
   end
 

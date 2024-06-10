@@ -1,9 +1,11 @@
 .scenario-row{ class: multi_year_chart_row.discarded? ? 'discarded' : 'loadable' }
   .scenario-info
     .sub-row
-      %a.title{ href: myc_url(multi_year_chart_row), target:'_blank' }
+      %a.title{ href: show_multi_year_chart_path(multi_year_chart_row) }
         = multi_year_chart_row.title
-        %span.fa.fa-external-link
+      - if multi_year_chart_row.interpolation
+        .type-tag
+          = t('multi_year_charts.interpolated')
       - if multi_year_chart_row.discarded?
         .type-tag
           %span.type.icon
@@ -12,10 +14,14 @@
                 <polyline points="232 56 136 152 96 112 24 184" stroke-linecap="round" stroke-linejoin="round"></polyline>
                 <polyline points="232 120 232 56 168 56" stroke-linecap="round" stroke-linejoin="round"></polyline>
               </svg>
-          = t('multi_year_charts.transition_path')
+          = t('multi_year_charts.collection')
     .sub-row
       %span.info
-        = t("areas.#{multi_year_chart_row.area_code}")
+        - if multi_year_chart_row.area_code
+          = t("areas.#{multi_year_chart_row.area_code}")
+        - elsif multi_year_chart_row.saved_scenarios
+          - multi_year_chart_row.saved_scenarios.map(&:area_code).uniq.each do |code|
+            = t("areas.#{code}")
         = multi_year_chart_row.end_year
         - if current_user.id != multi_year_chart_row.user_id
           %span.author

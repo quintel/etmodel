@@ -14,7 +14,11 @@ class MultiYearChart < ApplicationRecord
     class_name: 'MultiYearChartScenario',
     dependent: :delete_all
 
+  has_many :multi_year_chart_saved_scenarios, dependent: :destroy
+  has_many :saved_scenarios, through: :multi_year_chart_saved_scenarios
+
   validates_presence_of :user_id
+  validates :title, presence: true
 
   # Public: Creates a new MultiYearChart, setting some attributes to match those of the saved
   # scenario.
@@ -38,6 +42,12 @@ class MultiYearChart < ApplicationRecord
       .destroy_all
   end
 
+  # Public: returns the direct scenario_id's and the active scenario_id's of any
+  # linked saved scenarios
+  def latest_scenario_ids
+    scenarios.pluck(:scenario_id) + saved_scenarios.pluck(:scenario_id)
+  end
+
   # Public: Returns an way for the MYC app to identify this instance, to use
   # used when directing to the application.
   #
@@ -47,7 +57,7 @@ class MultiYearChart < ApplicationRecord
   #
   # Returns an array.
   def redirect_slug
-    scenarios.pluck(:scenario_id).join(',')
+    latest_scenario_ids.join(',')
   end
 
   # Public: MYC doesn't have an update at, but we need it for sorting the items
@@ -62,7 +72,7 @@ class MultiYearChart < ApplicationRecord
     super(options).merge(
       'discarded' => discarded_at.present?,
       'owner' => user.as_json(only: %i[id name]),
-      'scenario_ids' => scenarios.pluck(:scenario_id).sort
+      'scenario_ids' => latest_scenario_ids.sort
     )
   end
 end

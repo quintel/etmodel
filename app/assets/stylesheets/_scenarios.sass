@@ -78,12 +78,17 @@ table.default
     width: $landing-width + 400px
     margin: 0 auto 3rem
     display: flex
+    min-height: 655px
 
     .internal-box
       width: 100%
       background: white
-      border-radius: 6px
+      border-radius: 0 10px 10px 0
       padding: 15px 40px 40px
+      display: flex
+      flex-direction: column
+    nav.pagination
+      margin: auto 0 0.5rem 0
 
     .version-warning
       background: #f0f7ee image-url('icons/warning-information.svg') 1.5rem 1.25rem no-repeat
@@ -149,6 +154,12 @@ table.default
     input, textarea
       box-sizing: border-box
 
+    .buttons-create
+      display: flex
+      margin-bottom: 2rem
+      .button:first-child
+        margin-left: auto
+
     .scenario-button
       background: #eee
       border: none
@@ -197,6 +208,14 @@ table.default
         padding: 0.5rem 0.75rem
       &.no-margin-right
         margin-right: 0
+      &.simple-action
+        background: $landing-background-color
+        color: $landing-grey
+        font-size: 0.875rem
+        padding: 0.5rem 0.75rem
+        &:hover
+          background: $landing-green //darken($landing-background-color, 14%)
+          color: #fff
 
   #edit_scenario .actions
     .cancel, input
@@ -211,8 +230,6 @@ table.default
       margin-left: 0.5rem
 
   &#index
-    min-height: 60vh
-
     .vertical-bar
       width: 0
       height: 26px
@@ -224,7 +241,7 @@ table.default
     .save-wrapper
       align-items: center
       display: flex
-      margin: 10px auto 0 auto
+      margin: auto auto 40px auto
       .save
         margin: 0
         font-size: 14px
@@ -262,6 +279,7 @@ table.default
       a
         border-radius: 4px
         padding: 0.375rem 0.5rem
+        color: #333
         &:hover
           background: lighten($landing-grey, 42%)
           text-decoration: none
@@ -317,14 +335,13 @@ table.default
         span
           margin-right: 0.25rem
       .type-tag
-        color: $landing-gold
+        color: #333
         font-weight: normal
-        border: 1px solid $landing-gold
+        border: 1px solid #333
         border-radius: 24px
-        padding: 1px 10px 0 8px
+        padding: 0 10px 0 8px
         display: flex
         margin-left: 10px
-        margin-top: -2px
         font-size: 0.75rem
         line-height: 1.2rem
         span.icon
@@ -383,6 +400,9 @@ table.default
       .title
         font-weight: 600
         font-size: 1rem
+        color: #333
+        &:hover
+          color: $landing-grey
       .info, .author, .last-updated
         font-size: 0.8125rem
       .info
@@ -472,6 +492,9 @@ table.default
         margin-right: 0
         padding-right: 0
         margin-top: -1.5rem
+      span.sep-before:not(:first-child):before
+        content: '|'
+        margin-right: 5px
 
       #scenario-location, #scenario-privacy, .scenario-version, #scenario-copy
         button.scenario-actions
@@ -671,7 +694,9 @@ table.default
     display: flex
     flex-direction: column
     font-weight: 500
-    background: $soft-grey
+    background: #fff
+    border-radius: 10px 0 0 10px
+    padding: 10px
     .count
       align-items: center
       background: #ccd3db
@@ -842,6 +867,7 @@ table.default
       margin-bottom: 0
       .control
         display: none
+
     .scenario-version, .control
       ul
         white-space: nowrap
@@ -904,3 +930,61 @@ table.default
   100%
     display: block
     opacity: 1
+#main-scenario-description, #new-collection
+  h3
+    margin-top: 50px
+    font-weight: 500
+
+#new-collection
+  h2
+    margin-bottom: 50px
+
+  .multi_year_chart_saved_scenarios
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 50px !important
+    label
+      margin: 10px 10px 6px auto
+      width: auto
+      span
+        background: #d0d0d0
+        color: #000
+        border-radius: 14px
+        white-space: nowrap
+        padding: 5px 20px
+        font-size: 0.74rem
+      &:hover
+        cursor: pointer
+        span
+          background: darken(#d0d0d0, 14%)
+    input
+      display: none
+    input:checked+span
+      background: $landing-green
+      color: #fff
+
+.scenario-cards
+  display: flex
+  flex-wrap: wrap
+  margin-top: 30px
+  .scenario-box
+    border: 1px solid $landing-green
+    border-radius: 6px
+    border-top: 3px solid $landing-green
+    padding: 10px
+    margin: 0 10px 10px 0
+    color: #333
+    &:hover
+      text-decoration: none
+      background-color: lighten($landing-green, 14%)
+      color: #fff
+    .info-title
+      margin-bottom: 10px
+      font-weight: 600
+    &.private
+      border-color: #666
+      background-color: $soft-grey
+      &:hover
+        cursor: default
+        background-color: $soft-grey
+        color: #333

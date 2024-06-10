@@ -42,4 +42,26 @@ RSpec.describe MultiYearChart, type: :model do
         .from(true).to(false)
     end
   end
+
+  describe '#latest_scenario_ids' do
+    let(:user) { create(:user) }
+    let(:myc) { create(:multi_year_chart, user: user) }
+
+    context 'with only myc_scenarios' do
+      it 'returns the scenario ids' do
+        expect(myc.latest_scenario_ids).to include(myc.scenarios.first.scenario_id)
+      end
+    end
+
+    context 'with myc_scenarios and saved scenarios' do
+      before do
+        saved_scenario = create(:saved_scenario, scenario_id: 111, user: user)
+        create(:multi_year_chart_saved_scenario, multi_year_chart: myc, saved_scenario: saved_scenario)
+      end
+
+      it 'returns the scenairo ids' do
+        expect(myc.latest_scenario_ids).to include(111)
+      end
+    end
+  end
 end

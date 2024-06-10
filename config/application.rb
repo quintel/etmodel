@@ -19,8 +19,7 @@ module Etm
     config.time_zone = 'Etc/UTC'
     config.encoding = 'utf-8'
 
-    config.autoload_paths << Rails.root.join('lib')
-    config.eager_load_paths << Rails.root.join('lib')
+    config.autoload_lib(ignore: %w(tasks templates))
 
     config.i18n.available_locales = %i[en nl]
     config.i18n.load_path += Dir[Rails.root.join('config','locales','**/*.yml')]

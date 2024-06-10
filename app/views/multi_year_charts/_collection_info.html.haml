@@ -1,0 +1,70 @@
+- if current_user
+  .back-to-scenario-view
+    %a.stick-right{ href: list_multi_year_charts_path }
+      ⟵
+      = t('multi_year_charts.back_to_overview')
+%h1= format_subscripts(collection.title)
+
+%ul.details.last
+  %li
+    %strong
+      - if collection.area_code
+        = t("areas.#{collection.area_code}")
+      - elsif collection.saved_scenarios
+        - collection.saved_scenarios.map(&:area_code).uniq.each do |code|
+          %span.sep-before= t("areas.#{code}")
+  %li
+    = t('scenario.created')
+    = local_time(collection.created_at, :long)
+
+  %li.with-button
+    = link_to t("multi_year_charts.load"), myc_url(collection), class: "scenario-button button load no-margin-right"
+
+.row
+  %ul.details.stick-right
+    %li{ style: 'margin-right: 1rem; padding-right: 0' }
+      .dropdown#scenario-copy<>
+        %button.scenario-actions#scenario-copy-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+          .icon{ class: 'fa fa-copy' }
+          = t('scenario.share.copy')
+          %span.fa.fa-caret-down
+        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-copy-button', style: 'margin-top: 3px' }
+          %li
+            .info
+              = t('scenario.share.copy_description')
+          %li.sep-above
+            .url= text_field_tag 'url', request.original_url
+    :javascript
+      new DropdownView({ el: $('#scenario-copy') }).render()
+
+    - if current_user == collection.user
+      %li{ style: 'margin-right: 1rem; padding-right: 0' }
+        .dropdown#scenario-location<>
+          %button.scenario-actions#scenario-location-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+            = inline_svg_tag 'hero/20/cog.svg'
+            = t('settings')
+            %span.fa.fa-caret-down
+          %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-location-button', style: 'margin-top: 3px' }
+            %li.sep-above.category
+              == #{t('move_to')}&hellip;
+            - if collection.discarded?
+              %li
+                = link_to undiscard_multi_year_chart_path(collection), method: :put, class: 'dropdown-item' do
+                  %span.icon
+                    :plain
+                      <svg style="transform: rotate(90deg);" height="13" width="13" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                      </svg>
+                  = t('header.load_scenario')
+            - if collection.kept?
+              %li
+                = link_to discard_multi_year_chart_path(collection), method: :put, class: 'dropdown-item' do
+                  %span.icon
+                    :plain
+                      <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                  = t('trash')
+
+          :javascript
+            new DropdownView({ el: $('#scenario-location') }).render()

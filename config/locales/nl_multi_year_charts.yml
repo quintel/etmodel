@@ -1,4 +1,3 @@
----
 nl:
   multi_year_charts:
     created_at: "%{date} geleden aangemaakt"
@@ -6,27 +5,42 @@ nl:
       Selecteer rechts een scenario om je eerste meerjarengrafiek te maken.
     how:
       step1_html: |
-        Maak eerst een nieuw scenario op
+        Begin met het maken van een nieuw scenario vanaf
         <a href="%{root_path}">de startpagina</a>.
       step2: |
-        Gebruik de schuifjes om een toekomstscenario te maken en sla het
-        vervolgens op via het "Opties" menu.
+        Breng de gewenste wijzigingen aan en sla het scenario op via het
+        "instellingen" menu.
       step3: |
         Keer terug naar deze pagina om een meerjarengrafiek te maken.
-      prompt: Selecteer hieronder twee of meer scenario's om deze te vergelijken.
+      prompt: Selecteer hieronder twee of meer scenario's om te zien hoe ze vergelijken.
     introduction: |
-      Verken de mogelijke transitiepaden naar een 2050 toekomstbeeld en ontdek
-      wat dit zou kunnen betekenen voor de tussentijdse doelstellingen voor de
-      belangrijkste zichtjaren (2030 en 2040). Begin door een van je
-      opgeslagen toekomstscenario's voor 2050 te selecteren.
-    resume: Ga door met een bestaande sessie
+      Verken de mogelijke transitiepaden naar een scenario voor 2050 en ontdek
+      de acties en gevolgen voor de gewenste doelen in 2030 en 2040.
+      Begin door een van je opgeslagen 2050-scenario's hieronder te selecteren.
+    resume: Hervat een bestaande sessie
     start: Start een nieuwe sessie
+    load: Bekijk collectie
+    new_transition_path: Maak een nieuw transitiepad
     title: Transitiepaden
     transition_path: Transitiepad
-    my_myc: Mijn Transitiepaden
+    my_myc: Mijn collecties
+    create: Maak collectie
+    create_collection: Maak een nieuwe collectie
+    pick_scenarios: Kies scenario's om aan je collectie toe te voegen
+    add_title: Geef je collectie een naam..
+    interpolated: transitiepad
+    collection: collectie
+    failure: Je collectie kon niet worden aangemaakt
+    no_title: Collectie zonder titel
+    no_scenarios: Deze collectie is leeg
+    includes: Bevat de volgende scenarios
+    interpolation_description: |
+      Deze collectie bestaat uit een geïnterpoleerd 2050-scenario. Verken de mogelijke transitiepaden
+      naar een scenario voor 2050 en ontdek de acties en gevolgen voor de gewenste
+      doelen in 2030 en 2040.
     description: |
-      Verken de mogelijke transitiepaden naar een 2050 toekomstbeeld en ontdek
-      wat dit zou kunnen betekenen voor de tussentijdse doelstellingen voor de
-      belangrijkste zichtjaren (2030 en 2040). Begin vanuit één van je
-      opgeslagen toekomstscenario's voor 2050.
-    back: Ga naar mijn scenario's
+      Verken de mogelijke transitiepaden naar een scenario voor 2050 en ontdek
+      de acties en gevolgen voor de gewenste doelen in 2030 en 2040.
+      Begin door een van je opgeslagen 2050-scenario's uit je scenario's te selecteren.
+    back: Ga naar mijn opgeslagen scenario's
+    back_to_overview: Terug naar mijn collecties

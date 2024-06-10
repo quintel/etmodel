@@ -95,8 +95,7 @@ class MultiYearChartsController < ApplicationController
       collection.save
       redirect_to show_multi_year_chart_path(collection)
     else
-      # TODO: add flash notice translation!
-      flash.notice = t('scenario.wrong')
+      flash.error = t('multi_year_charts.failure')
       redirect_to list_multi_year_charts_path
     end
   end

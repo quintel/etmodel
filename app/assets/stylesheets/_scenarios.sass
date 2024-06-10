@@ -203,6 +203,14 @@ table.default
         padding: 0.5rem 0.75rem
       &.no-margin-right
         margin-right: 0
+      &.simple-action
+        background: #d0d0d0
+        color: #333
+        font-size: 0.875rem
+        padding: 0.5rem 0.75rem
+        &:hover
+          background: darken(#d0d0d0, 14%)
+          color: #000
 
   #edit_scenario .actions
     .cancel, input
@@ -913,28 +921,38 @@ table.default
   100%
     display: block
     opacity: 1
+#main-scenario-description, #new-collection
+  h3
+    margin-top: 50px
+    font-weight: 500
 
-.multi_year_chart_saved_scenarios
-  display: flex
-  flex-wrap: wrap
-  margin-bottom: 38px !important
-  label
-    margin: 6px 4px 6px auto
-    width: auto
-    span
-      background: $landing-blue
-      color: #fff
-      border-radius: 14px
-      white-space: nowrap
-      padding: 5px 20px
-    &:hover
-      cursor: pointer
+#new-collection
+  h2
+    margin-bottom: 50px
+
+  .multi_year_chart_saved_scenarios
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 50px !important
+    label
+      margin: 10px 10px 6px auto
+      width: auto
       span
-        background: darken($landing-blue, 14%)
-  input
-    display: none
-  input:checked+span
-    background: $landing-green
+        background: #d0d0d0
+        color: #000
+        border-radius: 14px
+        white-space: nowrap
+        padding: 5px 20px
+        font-size: 0.74rem
+      &:hover
+        cursor: pointer
+        span
+          background: darken(#d0d0d0, 14%)
+    input
+      display: none
+    input:checked+span
+      background: $landing-green
+      color: #fff
 
 .scenario-cards
   display: flex

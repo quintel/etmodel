@@ -11,9 +11,9 @@
       = render partial: 'saved_scenarios/flash_notice'
 
       .buttons-create
-        = link_to multi_year_charts_path, class: 'save button scenario-button' do
+        = link_to multi_year_charts_path, class: 'simple-action button scenario-button' do
           = "+ #{t('multi_year_charts.new_transition_path')}"
-        = link_to new_multi_year_chart_path, class: 'save button scenario-button' do
+        = link_to new_multi_year_chart_path, class: 'simple-action button scenario-button' do
           = "+ #{t('multi_year_charts.create_collection')}"
 
       - if @multi_year_charts.any?

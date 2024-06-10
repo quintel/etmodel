@@ -7,13 +7,14 @@
 .background_wrapper#saved_scenario
   .scenario_wrapper#index
     = render partial: 'saved_scenarios/scenario_list_tabs', locals: { active_tab: :my_myc }
-    .internal-box
+    .internal-box#new-collection
       = render partial: 'saved_scenarios/flash_notice'
 
       %h2= t('multi_year_charts.create_collection')
 
-      = simple_form_for :multi_year_chart, url: create_collection_path do |f|
+      = simple_form_for @multi_year_chart, url: create_collection_path do |f|
         = f.input :title, label: false, required: true, placeholder: t('multi_year_charts.add_title')
+
         %h3= t('multi_year_charts.pick_scenarios')
         = f.input :saved_scenarios, label: false, input_html: { multiple: true },
           as: :check_boxes,

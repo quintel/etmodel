@@ -28,6 +28,8 @@ class MultiYearChartsController < ApplicationController
   end
 
   def new
+    @multi_year_chart = current_user.multi_year_charts.build(interpolation: false)
+
     respond_to do |format|
       format.html { render layout: 'application' }
     end
@@ -82,12 +84,13 @@ class MultiYearChartsController < ApplicationController
 
   def create_collection
     saved_scenario_ids = create_collection_params.delete(:saved_scenarios)
+
     collection = current_user.multi_year_charts.build(
-      title: create_collection_params[:title],
+      title: collection_title,
       interpolation: false
     )
 
-    saved_scenario_ids.uniq.reject { |s| s.empty? }.each do |saved_scenario_id|
+    saved_scenario_ids.uniq.reject(&:empty?).each do |saved_scenario_id|
       collection.multi_year_chart_saved_scenarios.build(saved_scenario_id:)
     end
 
@@ -95,7 +98,8 @@ class MultiYearChartsController < ApplicationController
       collection.save
       redirect_to show_multi_year_chart_path(collection)
     else
-      flash.error = t('multi_year_charts.failure')
+      puts collection.errors.messages
+      flash[:error] = t('multi_year_charts.failure')
       redirect_to list_multi_year_charts_path
     end
   end
@@ -188,5 +192,10 @@ class MultiYearChartsController < ApplicationController
 
   def create_collection_params
     params.require(:multi_year_chart).permit(:title, saved_scenarios: [])
+  end
+
+  def collection_title
+    title = create_collection_params[:title]
+    title.empty? ? t('multi_year_charts.no_title') : title
   end
 end

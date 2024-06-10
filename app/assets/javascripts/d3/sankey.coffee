@@ -6,14 +6,14 @@ D3.sankey =
           {id: 'imported_electricity',         column: 0, label: 'imported_electricity',              color: '#1f77b4'},
           {id: 'solar_electricity',            column: 0, label: 'solar_electricity',                 color: '#ffcc00'},
           {id: 'wind_electricity',             column: 0, label: 'wind_electricity',                  color: '#63A1C9'},
-          {id: 'hydro_electricity',            column: 0, label: 'hydro_electricity',                 color: '#4465c6'}, 
-          {id: 'uranium',                      column: 0, label: 'uranium',                           color: '#ff7f0e'},                 
+          {id: 'hydro_electricity',            column: 0, label: 'hydro_electricity',                 color: '#4465c6'},
+          {id: 'uranium',                      column: 0, label: 'uranium',                           color: '#ff7f0e'},
           {id: 'biomass_products',             column: 0, label: 'biomass_products',                  color: '#2ca02c'},
           {id: 'coal_and_coal_products',       column: 0, label: 'coal_and_coal_products',            color: '#252525'},
           {id: 'ambient_heat',                 column: 0, label: 'ambient_heat',                      color: '#ADDE4C'},
           {id: 'geothermal',                   column: 0, label: 'geothermal',                        color: '#FF8400'},
           {id: 'imported_heat',                column: 0, label: 'imported_heat',                     color: '#cc0000'},
-          {id: 'residual_heat',                column: 0, label: 'residual_heat',                     color: '#cc0000'},          
+          {id: 'residual_heat',                column: 0, label: 'residual_heat',                     color: '#cc0000'},
           {id: 'natural_gas',                  column: 0, label: 'natural_gas',                       color: '#7f7f7f'},
           {id: 'non_biogenic_waste',           column: 0, label: 'non_biogenic_waste',                color: '#BA7D40'},
           {id: 'solar_thermal',                column: 0, label: 'solar_thermal',                     color: '#ffcc00'},
@@ -28,7 +28,7 @@ D3.sankey =
 
           {id: 'electricity',                  column: 1, label: 'electricity',                       color: '#1f77b4'},
           {id: 'heat',                         column: 1, label: 'heat',                              color: '#cc0000'},
-          {id: 'hydrogen',                     column: 1, label: 'hydrogen',                          color: '#87cfeb'},                    
+          {id: 'hydrogen',                     column: 1, label: 'hydrogen',                          color: '#87cfeb'},
           {id: 'oil_and_oil_products',         column: 1, label: 'oil_and_oil_products',              color: '#8c564b'},
 
           {id: 'agriculture',                  column: 2, label: 'agriculture',                       color: '#332288'},
@@ -54,12 +54,12 @@ D3.sankey =
           {left: 'coal_and_coal_products',       right: 'electricity',               gquery: 'sankey_0_to_1_coal_and_coal_products_to_electricity',    color: '#252525'},
           {left: 'natural_gas',                  right: 'electricity',               gquery: 'sankey_0_to_1_natural_gas_to_electricity',               color: '#7f7f7f'},
           {left: 'geothermal',                   right: 'electricity',               gquery: 'sankey_0_to_1_geothermal_to_electricity',                color: '#FF8400'},
-        
+
           {left: 'biomass_products',             right: 'heat',                      gquery: 'sankey_0_to_1_biomass_products_to_heat',                 color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'heat',                      gquery: 'sankey_0_to_1_natural_gas_to_heat',                      color: '#7f7f7f'},
           {left: 'coal_and_coal_products',       right: 'heat',                      gquery: 'sankey_0_to_1_coal_and_coal_products_to_heat',           color: '#252525'},
-          {left: 'solar_thermal',                right: 'heat',                      gquery: 'sankey_0_to_1_solar_thermal_to_heat',                    color: '#4465c6'},   
-          {left: 'uranium',                      right: 'heat',                      gquery: 'sankey_0_to_1_uranium_to_heat',                          color: '#ff7f0e'},  
+          {left: 'solar_thermal',                right: 'heat',                      gquery: 'sankey_0_to_1_solar_thermal_to_heat',                    color: '#4465c6'},
+          {left: 'uranium',                      right: 'heat',                      gquery: 'sankey_0_to_1_uranium_to_heat',                          color: '#ff7f0e'},
           {left: 'ambient_heat',                 right: 'heat',                      gquery: 'sankey_0_to_1_ambient_heat_to_heat',                     color: '#ADDE4C'},
           {left: 'residual_heat',                right: 'heat',                      gquery: 'sankey_0_to_1_residual_heat_to_heat',                    color: '#cc0000'},
           {left: 'imported_heat',                right: 'heat',                      gquery: 'sankey_0_to_1_imported_heat_to_heat',                    color: '#cc0000'},
@@ -73,13 +73,13 @@ D3.sankey =
           {left: 'imported_ammonia',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_ammonia_to_hydrogen',                      color: '#1ce6d6'},
           {left: 'residual_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_residual_hydrogen_to_hydrogen',            color: '#87cfeb'},
 
-          {left: 'extracted_oil',                right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',        color: '#8c564b'}, 
+          {left: 'extracted_oil',                right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',        color: '#8c564b'},
           {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_and_oil_products_to_oil_and_oil_products',     color: '#8c564b'},
 
 
           {left: 'hydrogen',                     right: 'electricity',               gquery: 'sankey_1_to_1_hydrogen_to_electricity',                  color: '#87cfeb'},
           {left: 'oil_and_oil_products',         right: 'electricity',               gquery: 'sankey_1_to_1_oil_and_oil_products_to_electricity',      color: '#8c564b'},
-          
+
           {left: 'electricity',                  right: 'heat',                      gquery: 'sankey_1_to_1_electricity_to_heat',                      color: '#1f77b4'},
           {left: 'hydrogen',                     right: 'heat',                      gquery: 'sankey_1_to_1_hydrogen_to_heat',                         color: '#87cfeb'},
 
@@ -134,7 +134,7 @@ D3.sankey =
           {left: 'geothermal',                   right: 'other',                     gquery: 'sankey_0_to_2_geothermal_to_other',                      color: '#787821'},
           {left: 'geothermal',                   right: 'bunkers',                   gquery: 'sankey_0_to_2_geothermal_to_bunkers',                    color: '#787821'},
           {left: 'geothermal',                   right: 'feedstock',                 gquery: 'sankey_0_to_2_geothermal_to_feedstock',                  color: '#787821'},
-          #{left: 'geothermal',                  right: 'export',                    gquery: 'sankey_0_to_2_geothermal_to_export',                     color: '#787821'},   
+          #{left: 'geothermal',                  right: 'export',                    gquery: 'sankey_0_to_2_geothermal_to_export',                     color: '#787821'},
 
           {left: 'natural_gas',                  right: 'agriculture',               gquery: 'sankey_0_to_2_natural_gas_to_agriculture',               color: '#7f7f7f'},
           {left: 'natural_gas',                  right: 'households',                gquery: 'sankey_0_to_2_natural_gas_to_households',                color: '#7f7f7f'},
@@ -146,7 +146,7 @@ D3.sankey =
           {left: 'natural_gas',                  right: 'bunkers',                   gquery: 'sankey_0_to_2_natural_gas_to_bunkers',                    color: '#7f7f7f'},
           {left: 'natural_gas',                  right: 'feedstock',                 gquery: 'sankey_0_to_2_natural_gas_to_feedstock',                  color: '#7f7f7f'},
           {left: 'natural_gas',                  right: 'export',                    gquery: 'sankey_0_to_2_natural_gas_to_export',                     color: '#7f7f7f'},
-          #{left: 'natural_gas',                 right: 'losses',                    gquery: 'sankey_0_to_2_natural_gas_to_loss',                     color: '#DCDCDC'},            
+          #{left: 'natural_gas',                 right: 'losses',                    gquery: 'sankey_0_to_2_natural_gas_to_loss',                     color: '#DCDCDC'},
 
           {left: 'solar_thermal',                right: 'agriculture',               gquery: 'sankey_0_to_2_solar_thermal_to_agriculture',             color: '#ffcc00'},
           {left: 'solar_thermal',                right: 'households',                gquery: 'sankey_0_to_2_solar_thermal_to_households',              color: '#ffcc00'},
@@ -187,7 +187,7 @@ D3.sankey =
           {left: 'heat',                         right: 'bunkers',                   gquery: 'sankey_1_to_2_heat_to_bunkers',                          color: '#cc0000'},
           {left: 'heat',                         right: 'feedstock',                 gquery: 'sankey_1_to_2_heat_to_feedstock',                        color: '#cc0000'},
           {left: 'heat',                         right: 'losses',                    gquery: 'sankey_1_to_2_heat_to_loss',                             color: '#DCDCDC'},
-      
+
           {left: 'hydrogen',                     right: 'agriculture',               gquery: 'sankey_1_to_2_hydrogen_to_agriculture',                  color: '#87cfeb'},
           {left: 'hydrogen',                     right: 'households',                gquery: 'sankey_1_to_2_hydrogen_to_households',                   color: '#87cfeb'},
           {left: 'hydrogen',                     right: 'buildings',                 gquery: 'sankey_1_to_2_hydrogen_to_buildings',                    color: '#87cfeb'},
@@ -613,7 +613,7 @@ D3.sankey =
           {left: 'captured_co2',                 right: 'synthetic_methanol',         gquery: 'captured_co2_synthetic_methanol_total_in_ccus_sankey', color: '#1f77b4'},
           {left: 'captured_co2',                 right: 'synthetic_kerosene',         gquery: 'captured_co2_synthetic_kerosene_total_in_ccus_sankey', color: '#1f77b4'},
           {left: 'captured_co2',                 right: 'export',                     gquery: 'captured_co2_export_total_in_ccus_sankey', color: '#1f77b4'}
-      
+
        ]
     sankey:
       data:
@@ -1212,6 +1212,9 @@ D3.sankey =
       @setup_tooltips()
       nodes
 
+    is_empty: =>
+      _.all(@node_list, (n) -> !n.should_show())
+
     setup_tooltips: ->
         $("#{@container_selector()} g.node rect").qtip
           content:
@@ -1321,20 +1324,30 @@ D3.sankey =
       data = []
 
       for node in @node_list
-        continue unless node.should_show()
+        if node.should_show()
+          column = node.get('column')
 
-        column = node.get('column')
+          if !data[column]
+            data[column] = { sum: 0.0, nodes: 0, nodeCompensation: 0 }
 
-        data[column] ||= { sum: 0.0, nodes: 0, nodeCompensation: 0 }
+          colData = data[column]
 
-        colData = data[column]
-        colData.sum += node.value()
-        colData.nodes += 1
+          if colData?
+            nodeValue = node.value() || 0
+            colData.sum += nodeValue
+            colData.nodes += 1
 
-        if colData.nodes > 1
-          colData.nodeCompensation += D3.sankey.Node.prototype.vertical_margin
+            if colData.nodes > 1
+              colData.nodeCompensation += D3.sankey.Node.prototype.vertical_margin
+          else
+            console.error("Undefined colData for column: ", column)
 
-      _.max(data, (col) -> axis(col.sum) + col.nodeCompensation)
+      validData = _.filter(data, (colData) -> colData?)
+
+      if validData.length == 0
+        return { sum: 0, nodeCompensation: 0}
+
+      _.max(validData, (col) -> axis(col.sum) + col.nodeCompensation)
 
     number_of_columns: =>
       @__column_number ?= d3.max(@nodes_excluding_loss, (n) -> n.get 'column') + 1

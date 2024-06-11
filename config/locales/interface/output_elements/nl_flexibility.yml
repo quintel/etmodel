@@ -409,11 +409,55 @@ nl:
         <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" 
         data-chart-location="side"> hier</a> te klikken.
     installed_hybrid_offshore_capacities:
-      title: Geïnstalleerd vermogen hybride wind op zee
+      title: Hybride wind op zee geïnstalleerde vermogens
       short_description:
       description: |
         Deze grafiek toont de absolute geïnstalleerde vermogens van de componenten van hybride wind op zee. 
         Dit is het resultaat van het geïnstalleerd vermogen van hybride windturbines op zee, samen met de 
         relatieve vermogens van de elektrolyser en de elektriciteitskabel op zee.<br/><br/>
         Wanneer je de tabelversie opent, worden de geïnstalleerde vermogens weergegeven, samen met de 
-        piekbelasting en jaarlijkse energiestromen tussen de componenten van hybride wind op zee.
+        piekbelasting en jaarlijkse energiestromen tussen de componenten van hybride wind op zee. <br/><br/>
+        Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" 
+        data-chart-location="side">deze tabel</a> voor data over geïnstalleerde vermogens, piekbelasting 
+        en jaarlijkse energiestromen van de componentent van hybride wind op zee. 
+    sankey_hybrid_offshore:
+      title: Hybride wind op zee energiestromen
+      short_description:
+      description: |
+        Deze grafiek toont de jaarlijkse energiestromen van de componenten van hybride wind op zee.
+        De volgende componenten zijn zichtbaar in de grafiek wanneer hier energie in- of output is: 
+        <ul>
+        <li> Windelektriciteit </li>
+        <li> Elektrolyser </li>
+        <li> Waterstofnet </li>
+        <li> Kabel op zee: zowel van windelektriciteit naar het HV-net als van het HV-net
+        naar de elektrolyser op zee, deze duiden op dezelfde elektriciteitskabel op zee </li>
+        <li> HV-net: zowel aan de linker- als rechterkant van de grafiek, ze duiden op hetzelfde
+        HV-net op het land </li>
+        <li> Productiebeperking </li>
+        <li> Verliezen (conversie en transport) </li>
+        </ul>
+        Windelektriciteit wordt ofwel getransporteerd naar het HV-net via de elektriciteitskabel op zee
+        of omgezet naar waterstof via de elektrolyser op zee. Daarnaast kan extra elektriciteit
+        worden getransporteerd naar de elektrolyser op zee vanaf het onshore HV-net voor waterstofproductie. <br/><br/>
+        Zie onze <a href=\"https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
+        target =\"_blank\">documentatie</a> voor meer informatie over het gedrag van de componenten van 
+        hybride wind op zee. <br/><br/>
+        Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" 
+        data-chart-location="side">deze tabel</a> voor data over geïnstalleerde vermogens, piekbelasting 
+        en jaarlijkse energiestromen van de componentent van hybride wind op zee.
+    capacity_energy_hybrid_offshore:
+      title: Hybride wind op zee vermogens en energiestromen
+      short_description:
+      description: |
+        Deze tabel toont het in- en outputvermogen, de piekbelasting in- en output en de jaarlijkse energie-input
+        en output van de componenten van hybride wind op zee in het toekomstjaar. <br/><br/>
+        Het in- en outputvermogen weergeven de geïnstalleerde vermogens van de componenten. De piekbelasting in- en output
+        zijn het maximale vermogen dat in een bepaald uur in en uit de component stroomt. De jaarlijkse energie in- en output 
+        geven de totale jaarlijkse energie die in en uit de component stroomt. Voor de jaarlijkse energieoutput is dit de 
+        nuttige output (dus exclusief verliezen).<br/><br/>
+        De hybride windturbine op zee is gegeven met alleen outputstromen (elektriciteit). De elektrolyser heeft een input van 
+        elektriciteit en output van waterstof. De elektriciteitskabels op zee hebben zowel input als output van elektriciteit. 
+        Productiebeperking (curtailment) heeft alleen input van elektriciteit. Tot slot hebben de categorieën conversieverlies 
+        en transportverlies alleen input van elektriciteit; voor deze categorieën wordt alleen de jaarlijkse input van 
+        elektriciteit weergegeven.

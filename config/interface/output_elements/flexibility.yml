@@ -365,6 +365,7 @@
   output_element_type_name: html_table
   related_output_element_key: flexibility_hourly_carriers_inflexible_imbalance
 - group: Flexibility
+  sub_group: hybrid_offshore_wind
   hidden: false
   key: installed_hybrid_offshore_capacities
   output_element_type_name: category_bar
@@ -372,3 +373,32 @@
   unit: MW
   config:
     period: future
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Flexibility
+  sub_group: hybrid_offshore_wind
+  show_point_label: false
+  growth_chart: false
+  key: sankey_hybrid_offshore
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on:
+  description:
+  output_element_type_name: sankey
+- under_construction: false
+  unit: ''
+  percentage: false
+  group: Flexibility
+  sub_group: hybrid_offshore_wind
+  show_point_label: false
+  growth_chart: false
+  key: capacity_energy_hybrid_offshore
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: html_table

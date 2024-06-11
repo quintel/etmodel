@@ -433,11 +433,56 @@ en:
         <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" 
         data-chart-location="side"> here</a>.
     installed_hybrid_offshore_capacities:
-      title: Installed capacity of hybrid offshore wind
+      title: Hybrid offshore wind installed capacities
       short_description:
       description: |
         This chart shows the absolute installed capacity of the components of hybrid offshore wind. This 
         is the result of the (absolute) installed capacity of hybrid offshore wind turbines, together with 
         the relative capacities of the offshore electrolyser and offshore electricity cable. 
-        <br/><br/>When opening the table version, the installed capacities are provided together with 
-        peak capacities and annual energy flows between the components of hybrid offshore wind. 
+        <br/><br/>
+        Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" 
+        data-chart-location="side">this table</a> to get values of installed capacities, peak powers and 
+        annual energy flows of the hybrid offshore components. 
+    sankey_hybrid_offshore:
+      title: Hybrid offshore wind energy flows
+      short_description:
+      description: |
+        This chart shows the annual energy flows of the components of hybrid offshore wind. 
+        The following components are visible in the chart (when there is energy in- or output through
+        these components):
+        <ul>
+        <li> Wind electricity </li>
+        <li> Electrolyser </li>
+        <li> Hydrogen network </li>
+        <li> Offshore cable: both from wind electricity to the HV network as from the HV network
+        to the offshore electrolyser, these indicate the same offshore electricity cable </li>
+        <li> HV network: both on the left and right sides of the chart, they indicate the same
+        HV network on land </li>
+        <li> Curtailment </li>
+        <li> Losses (conversion and transport) </li>
+        </ul>
+        Wind electricity is either transported to the HV network via the offshore electricity cable,
+        or is converted to hydrogen via the offshore electrolyser. Furthermore, additional electricity 
+        can be transported to the offshore electrolyser from the onshore HV network for hydrogen 
+        production. <br/><br/>     
+        See our <a href=\"https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
+        target =\"_blank\">documentation</a> for more information on the behaviour of the hybrid 
+        offshore wind components. <br/><br/>
+        Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" 
+        data-chart-location="side">this table</a> to get values of installed capacities, peak powers and 
+        annual energy flows of the hybrid offshore components. 
+    capacity_energy_hybrid_offshore:
+      title: Hybrid offshore wind capacities and energy flows
+      short_description:
+      description: |
+        This table shows the input and output capacity, peak input and output and annual energy 
+        input and output of the hybrid offshore wind components in the future. <br/><br/>
+        The in- and output capacity depict the installed capacity of the components. The peak in- and 
+        output show the maximum power in a certain hour flowing in and out of the component. The annual 
+        energy in- and output show the total yearly energy that flows in and out of the component. For the 
+        annual energy output, this is the useful output (so excluding losses).<br/><br/>
+        The hybrid offshore wind turbine is shown with only outputs of energy (electricity). The
+        electrolyser has an input of electricity and output of hydrogen. The offshore electricity
+        cables both have input and output of electricity. The curtailed electricity component only has input flows
+        of electricity. Finally, conversion loss and transport only have input of electricity, only the annual
+        input of electricity is shown for these categories. 

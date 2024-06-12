@@ -9,6 +9,7 @@
   dependent_on:
   output_element_key: supply_offshore_solar_wind
   key: energy_power_offshore_combined_output_curve_supply_offshore_solar_wind
+
 - label: energy_power_wind_turbine_offshore
   color: "#63A1C9"
   order_by: 200
@@ -39,6 +40,7 @@
   dependent_on:
   output_element_key: supply_offshore_solar_wind
   key: energy_power_solar_pv_offshore_output_curve_supply_offshore_solar_wind
+
 - label: energy_power_solar_pv_offshore_curtailed_electricity_output_curve
   color: "#AA14F0"
   order_by: 400
@@ -51,4 +53,14 @@
   dependent_on: 
   output_element_key: supply_offshore_solar_wind
   key: energy_power_solar_pv_offshore_curtailed_electricity_output_curve_supply_offshore_solar_wind
+- label: energy_power_hybrid_wind_turbine_offshore_curtailed_electricity
+  color: "#B4BBEA"
+  order_by: 410
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_power_hybrid_wind_turbine_offshore_curtailed_electricity_output_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: supply_offshore_solar_wind
+  key: energy_power_hybrid_wind_turbine_offshore_curtailed_electricity_output_curve_supply_offshore_solar_wind
   

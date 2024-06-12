@@ -244,7 +244,7 @@ D3.sankey =
           {id: 'industry',                     column: 2, label: 'industry',               color: '#A9A9A9'},
           {id: 'agriculture',                  column: 2, label: 'agriculture',            color: '#FFD700'},
           {id: 'power-to-gas',                 column: 2, label: 'power-to-gas',           color: '#77bbdd'},
-          {id: 'power-to-gas-offshore',                 column: 2, label: 'power-to-gas-offshore',           color: '#5e9aa4'},
+          {id: 'power-to-gas-offshore',        column: 2, label: 'power-to-gas-offshore',  color: '#5e9aa4'},
           {id: 'curtailment',                  column: 2, label: 'curtailment',            color: '#dd9977'},
           {id: 'other',                        column: 2, label: 'other',                  color: '#E07033'},
           {id: 'export1',                      column: 2, label: 'export1',                color: '#43464B'},
@@ -284,28 +284,28 @@ D3.sankey =
           {left: 'import12',                   right: 'network',          gquery: 'import12_to_network_in_sankey', color: '#ff7f0e'},
           {left: 'shortage',                   right: 'network',          gquery: 'shortage_to_network_in_sankey', color: '#DCDCDC'},
 
-          {left: 'network',                    right: 'households',       gquery: 'network_to_households_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'buildings',        gquery: 'network_to_buildings_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'transport',        gquery: 'network_to_transport_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'industry',         gquery: 'network_to_industry_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'agriculture',      gquery: 'network_to_agriculture_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'power-to-gas',     gquery: 'network_to_p2g_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'power-to-gas-offshore',     gquery: 'network_to_p2g_offshore_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'curtailment',      gquery: 'network_to_curtailment_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'other',            gquery: 'network_to_other_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export1',          gquery: 'network_to_export1_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export2',          gquery: 'network_to_export2_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export3',          gquery: 'network_to_export3_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export4',          gquery: 'network_to_export4_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export5',          gquery: 'network_to_export5_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export6',          gquery: 'network_to_export6_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export7',          gquery: 'network_to_export7_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export8',          gquery: 'network_to_export8_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export9',          gquery: 'network_to_export9_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export10',         gquery: 'network_to_export10_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export11',         gquery: 'network_to_export11_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'export12',         gquery: 'network_to_export12_in_sankey', color: '#1f77b4'},
-          {left: 'network',                    right: 'loss',             gquery: 'network_to_loss_in_sankey', color: '#DCDCDC'}
+          {left: 'network',                    right: 'households',             gquery: 'network_to_households_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'buildings',              gquery: 'network_to_buildings_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'transport',              gquery: 'network_to_transport_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'industry',               gquery: 'network_to_industry_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'agriculture',            gquery: 'network_to_agriculture_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'power-to-gas',           gquery: 'network_to_p2g_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'power-to-gas-offshore',  gquery: 'network_to_p2g_offshore_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'curtailment',            gquery: 'network_to_curtailment_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'other',                  gquery: 'network_to_other_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export1',                gquery: 'network_to_export1_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export2',                gquery: 'network_to_export2_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export3',                gquery: 'network_to_export3_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export4',                gquery: 'network_to_export4_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export5',                gquery: 'network_to_export5_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export6',                gquery: 'network_to_export6_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export7',                gquery: 'network_to_export7_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export8',                gquery: 'network_to_export8_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export9',                gquery: 'network_to_export9_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export10',               gquery: 'network_to_export10_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export11',               gquery: 'network_to_export11_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'export12',               gquery: 'network_to_export12_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'loss',                   gquery: 'network_to_loss_in_sankey', color: '#DCDCDC'}
         ]
     sankey_heat_networks:
       data:
@@ -628,8 +628,7 @@ D3.sankey =
           {id: 'onshore_hydrogen_network',    column: 3, label: 'onshore_hydrogen_network', color: '#87cfeb'},
           {id: 'conversion_losses',           column: 3, label: 'conversion_losses',        color: '#cc0000'},
           {id: 'onshore_hv_network',          column: 3, label: 'onshore_hv_network',       color: '#004D40'},
-          {id: 'curtailment',                 column: 3, label: 'curtailment',              color: '#dd9977'},
-          {id: 'transport_losses',            column: 3, label: 'transport_losses',         color: '#cc0000'}
+          {id: 'curtailment',                 column: 3, label: 'curtailment',              color: '#dd9977'}
         ]
         links: [
           {left: 'onshore_hv_network_left', right: 'to_offshore_network',       gquery: 'onshore_hv_network_to_to_offshore_network_in_sankey',          color: '#A9A9A9'},
@@ -637,11 +636,9 @@ D3.sankey =
           {left: 'hybrid_offshore_wind',    right: 'offshore_electrolyser',     gquery: 'hybrid_offshore_wind_to_offshore_electrolyser_in_sankey',      color: '#1f77b4'},
           {left: 'hybrid_offshore_wind',    right: 'from_offshore_network',     gquery: 'hybrid_offshore_wind_to_from_offshore_network_in_sankey',      color: '#1f77b4'},
           {left: 'hybrid_offshore_wind',    right: 'curtailment',               gquery: 'hybrid_offshore_wind_to_curtailment_in_sankey',                color: '#1f77b4'},
-          {left: 'to_offshore_network',     right: 'transport_losses',          gquery: 'to_offshore_network_to_transport_losses_in_sankey',            color: '#cc0000'},
           {left: 'offshore_electrolyser',   right: 'onshore_hydrogen_network',  gquery: 'offshore_electrolyser_to_hydrogen_network_in_sankey',          color: '#87cfeb'}, 
           {left: 'offshore_electrolyser',   right: 'conversion_losses',         gquery: 'offshore_electrolyser_to_conversion_losses_in_sankey',         color: '#cc0000'},
-          {left: 'from_offshore_network',   right: 'onshore_hv_network',        gquery: 'from_offshore_network_to_onshore_hv_network_in_sankey',        color: '#1f77b4'},
-          {left: 'from_offshore_network',   right: 'transport_losses',          gquery: 'from_offshore_network_to_transport_losses_in_sankey',          color: '#cc0000'}
+          {left: 'from_offshore_network',   right: 'onshore_hv_network',        gquery: 'from_offshore_network_to_onshore_hv_network_in_sankey',        color: '#1f77b4'}
         ]
     sankey:
       data:

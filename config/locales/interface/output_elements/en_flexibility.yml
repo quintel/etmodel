@@ -459,7 +459,7 @@ en:
         <li> HV network: both on the left and right sides of the chart, they indicate the same
         HV network on land </li>
         <li> Curtailment </li>
-        <li> Losses (conversion and transport) </li>
+        <li> Conversion loss </li>
         </ul>
         Wind electricity is either transported to the HV network via the offshore electricity cable,
         or is converted to hydrogen via the offshore electrolyser. Furthermore, additional electricity 
@@ -484,5 +484,8 @@ en:
         The hybrid offshore wind turbine is shown with only outputs of energy (electricity). The
         electrolyser has an input of electricity and output of hydrogen. The offshore electricity
         cables both have input and output of electricity. The curtailed electricity component only has input flows
-        of electricity. Finally, conversion loss and transport only have input of electricity, only the annual
-        input of electricity is shown for these categories. 
+        of electricity. Finally, conversion loss only has annual input flows (of electricity). <br/><br/>
+        Note that since the ETM takes an annual availability of the hybrid offshore wind turbine and electrolyser
+        into account, the hourly calculations are also corrected with this availability. Specifically, 
+        this means that the depicted peak load is always lower than the installed capacity of the wind turbine 
+        and electrolyser.

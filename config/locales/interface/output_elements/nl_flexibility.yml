@@ -415,8 +415,6 @@ nl:
         Deze grafiek toont de absolute geïnstalleerde vermogens van de componenten van hybride wind op zee. 
         Dit is het resultaat van het geïnstalleerd vermogen van hybride windturbines op zee, samen met de 
         relatieve vermogens van de elektrolyser en de elektriciteitskabel op zee.<br/><br/>
-        Wanneer je de tabelversie opent, worden de geïnstalleerde vermogens weergegeven, samen met de 
-        piekbelasting en jaarlijkse energiestromen tussen de componenten van hybride wind op zee. <br/><br/>
         Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" 
         data-chart-location="side">deze tabel</a> voor data over geïnstalleerde vermogens, piekbelasting 
         en jaarlijkse energiestromen van de componentent van hybride wind op zee. 
@@ -435,7 +433,7 @@ nl:
         <li> HV-net: zowel aan de linker- als rechterkant van de grafiek, ze duiden op hetzelfde
         HV-net op het land </li>
         <li> Productiebeperking </li>
-        <li> Verliezen (conversie en transport) </li>
+        <li> Conversieverlies </li>
         </ul>
         Windelektriciteit wordt ofwel getransporteerd naar het HV-net via de elektriciteitskabel op zee
         of omgezet naar waterstof via de elektrolyser op zee. Daarnaast kan extra elektriciteit
@@ -458,6 +456,8 @@ nl:
         nuttige output (dus exclusief verliezen).<br/><br/>
         De hybride windturbine op zee is gegeven met alleen outputstromen (elektriciteit). De elektrolyser heeft een input van 
         elektriciteit en output van waterstof. De elektriciteitskabels op zee hebben zowel input als output van elektriciteit. 
-        Productiebeperking (curtailment) heeft alleen input van elektriciteit. Tot slot hebben de categorieën conversieverlies 
-        en transportverlies alleen input van elektriciteit; voor deze categorieën wordt alleen de jaarlijkse input van 
-        elektriciteit weergegeven.
+        Productiebeperking (curtailment) heeft alleen input van elektriciteit. Tot slot wordt voor de categorie conversieverlies 
+        alleen de jaarlijkse input (van elektriciteit) weergegeven. <br/><br/>
+        Doordat het ETM rekent met een jaarlijkse beschikbaarheid (<i>availability</i>) van de hybride windturbine en elektrolyser 
+        op zee, wordt er ook in de uurlijkse berekeningen gecorrigeerd voor de availability. Concreet betekent dit dat de 
+        weergegeven piekbelasting altijd lager is dan de geïnstalleerde vermogens bij de windturbine en elektrolyser. 

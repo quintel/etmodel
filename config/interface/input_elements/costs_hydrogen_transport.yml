@@ -1,10 +1,18 @@
 ---
 - key: costs_hydrogen_transport_compressed_trucks
+  interface_group: onshore
   step_value: 0.1
   unit: "€/MWh"
   position: 2
   slide_key: costs_hydrogen_transport
 - key: costs_hydrogen_transport_pipelines
+  interface_group: onshore
+  step_value: 0.1
+  unit: "€/MWh"
+  position: 1
+  slide_key: costs_hydrogen_transport
+- key: costs_hydrogen_transport_pipelines_offshore
+  interface_group: offshore
   step_value: 0.1
   unit: "€/MWh"
   position: 1

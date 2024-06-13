@@ -595,6 +595,18 @@ nl:
         dat het materiaal wordt hergebruikt in plaats van vernietigd.\r\n<br><br>\r\nVoor
         de kostenberekening is een gemiddelde transport afstand van 100 km aangenomen.
         De beginwaarde van deze schuif is gebaseerd op het plaatsing van nieuwe waterstofleidingen."
+    costs_hydrogen_transport_pipelines_offshore:
+      title: Totale kosten H<sub>2</sub> leidingen op zee
+      short_description:
+      description: |
+        Deze schuif stelt de kosten van offshore waterstofleidingen in. De standaardwaarde betreft 
+        nadrukkelijk de kosten van nieuwe leidingen (dus niet de kosten van hergebruik 
+        van bestaande leidingen). <br/><br/>De kosten voor waterstoftransport door leidingen 
+        zijn sterk afhankelijk van of bestaande gasleidingen worden hergebruikt of dat er 
+        nieuwe leidingen worden aangelegd. Bestaande leidingen kunnen op twee manieren worden hergebrukt;
+        de waterstof kan direct worden getransporteerd door de leiding (mits deze
+        leiding extra wordt afgedicht) of een nieuwe leiding kan worden geschoven
+        in de bestaande leiding, zogenaamde pipe-in-pipe. 
     investment_costs_electric_heat_pumps:
       title: Elektrische warmtepompen
       short_description:

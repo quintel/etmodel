@@ -567,6 +567,17 @@ en:
         costs calculation an average transport distance of 100 km is assumed. The default
         setting of the slider is based on the construction of new dedicated hydrogen
         pipelines."
+    costs_hydrogen_transport_pipelines_offshore:
+      title: Total costs offshore H<sub>2</sub> pipelines
+      short_description:
+      description: |
+        This slider sets the costs of offshore hydrogen pipelines. The default costs consider 
+        the construction of new pipelines rather than reusing existing pipelines. 
+        <br/><br/>The costs for hydrogen transport through pipelines highly depend on whether 
+        already existing gas pipelines will be reused or whether new pipelines will be 
+        constructed. Existing pipelines could be reused in two ways; the hydrogen could 
+        flow directly through the pipeline with extra sealings or a new pipeline is pushed 
+        into the existing gas pipeline, so-called pipe in pipe.
     investment_costs_electric_heat_pumps:
       title: Electric heat pumps
       short_description:

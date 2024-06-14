@@ -7,7 +7,7 @@
     - @saved_scenario.saved_scenario_users.order(:id).each do |saved_scenario_user|
       %tr.user{class: current_scenario_user?(saved_scenario_user) ? 'owner' : ''}
         %td
-          = saved_scenario_user.user_email.present? ? saved_scenario_user.user_email : saved_scenario_user.user.name
+          = display_user_name_for(saved_scenario_user)
           - if current_scenario_user?(saved_scenario_user)
             %span.you= "(#{t('scenario.users.you')})"
         - if saved_scenario_user.user_email.present?

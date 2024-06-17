@@ -34,6 +34,39 @@
 
 - label: capex
   color: "#ffb300"
+  order_by: 150
+  group: power_to_gas_offshore
+  is_target_line: false
+  gquery: integral_fixed_cost_power_to_gas
+  output_element_key: flexibility_integral_costs
+  key: integral_fixed_cost_power_to_gas_offshore_flexibility_integral_costs
+- label: opex
+  color: "#e07033"
+  order_by: 160
+  group: power_to_gas_offshore
+  is_target_line: false
+  gquery: integral_variable_cost_power_to_gas_offshore
+  output_element_key: flexibility_integral_costs
+  key: integral_variable_cost_power_to_gas_offshore_flexibility_integral_costs
+- label: electricity_cost
+  color: "#4169e1"
+  order_by: 170
+  group: power_to_gas_offshore
+  is_target_line: false
+  gquery: integral_electricity_cost_power_to_gas_offshore
+  output_element_key: flexibility_integral_costs
+  key: integral_electricity_cost_power_to_gas_offshore_flexibility_integral_costs
+- label: hydrogen_price
+  color: "red"
+  order_by: 180
+  group: power_to_gas_offshore
+  is_target_line: true
+  gquery: integral_reference_price_power_to_gas
+  output_element_key: flexibility_integral_costs
+  key: integral_reference_price_power_to_gas_offshore_flexibility_integral_costs
+
+- label: capex
+  color: "#ffb300"
   order_by: 200
   group: power_to_heat_network
   is_target_line: false

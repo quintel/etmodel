@@ -56,6 +56,14 @@
   gquery: electricity_demand_flexible_power_to_hydrogen_capacity
   output_element_key: installed_flexible_capacities
   key: power_to_hydrogen_electricity_installed_flexible_capacities
+- label: power_to_hydrogen_offshore
+  color: "#7487FF"
+  order_by: 129
+  group: electricity
+  is_target_line: false
+  gquery: electricity_demand_flexible_power_to_hydrogen_offshore_capacity
+  output_element_key: installed_flexible_capacities
+  key: power_to_hydrogen_offshore_electricity_installed_flexible_capacities
 - label: electricity_storage
   color: "#dd77bb"
   order_by: 110

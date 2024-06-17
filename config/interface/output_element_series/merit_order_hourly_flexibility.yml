@@ -71,6 +71,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_flexibility
   key: energy_hydrogen_flexibility_p2g_electricity_flex_merit_order_hourly_flexibility
+- label: energy_hydrogen_hybrid_electrolysis_wind_electricity
+  color: "#7487FF"
+  order_by: 205
+  group: flex
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_hydrogen_hybrid_electrolysis_electricity_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_flexibility
+  key: energy_hydrogen_hybrid_electrolysis_wind_electricity_flex_merit_order_hourly_flexibility
 - label: electricity_converted_to_kerosene
   color: "#74ffff"
   order_by: 210

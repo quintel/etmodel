@@ -133,6 +133,16 @@
   dependent_on:
   output_element_key: hourly_flexibility_electricity
   key: hourly_flexibility_electricity_p2g_curve_hourly_flexibility_electricity
+- label: energy_hydrogen_hybrid_electrolysis_wind_electricity
+  color: "#7487FF"
+  order_by: 303
+  group: flex
+  is_target_line: false
+  target_line_position:
+  gquery: hourly_flexibility_electricity_p2g_offshore_curve
+  dependent_on:
+  output_element_key: hourly_flexibility_electricity
+  key: hourly_flexibility_electricity_p2g_offshore_curve_hourly_flexibility_electricity
 - label: power_to_heat_for_industry
   color: "#8B0000"
   order_by: 305

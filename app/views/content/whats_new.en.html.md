@@ -1,6 +1,20 @@
 # What's new in the Energy Transition Model?
 ___
 
+# July 2024
+
+### Hybrid offshore wind
+
+It is now possible to explore the role of hybrid offshore wind in future energy systems. The hybrid offshore wind turbines can deliver generated power to the onshore HV network or to an offshore electrolyser. The offshore electrolyser can also receive power from the HV network for hydrogen production. The produced hydrogen is transported via pipelines to the onshore hydrogen network.
+
+The electrolyser that is part of the hybrid offshore wind system is price-regulated. This means it only produces hydrogen when the national electricity price is lower than its willingness-to-pay. An exception to this rule applies when there is overproduction by the hybrid offshore wind turbines; the wind turbines will then supply power to the electrolyser to prevent curtailment.
+
+Explore the new possibilities by setting the installed capacity of the hybrid offshore wind turbines in the **[Renewable electricity](scenario/supply/electricity_renewable/wind-turbines)** section. Additionally, the relative capacities of the electrolyser and offshore cabling can be set in the **[Flexibility](scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components)** section.
+
+New charts and a table have also been added to provide insights into the installed capacities, peak load, and annual energy flows of the hybrid offshore wind components. The Sankey diagram below, for example, shows how much energy flows between the components on an annual basis. Explore the new user output yourself in the ETM's list of charts.
+
+-> <img src="/assets/pages/whats_new/hybrid_offshore_wind_energy_flows.png" width="600" /> <-
+
 # May 2024
 
 ### Addition of BECCUS
@@ -474,7 +488,7 @@ In the ETM we have added a button directing you to the selected region in the ET
 
 ## New chart showing the provision of flexibility
 
-We have added a new chart showing the installed capacity of flexible supply and demand technologies; for example power-to-gas electrolyzers or gas power plants. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
+We have added a new chart showing the installed capacity of flexible supply and demand technologies; for example power-to-gas electrolysers or gas power plants. Comparing those capacities to the maximum shortage and excess peak can help you determine whether you have installed enough flexible capacity to balance your energy system.
 
 -> ![](/assets/pages/whats_new/installed_flexible_capacities_en.png) <-
 

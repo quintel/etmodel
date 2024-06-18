@@ -1,6 +1,20 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# Juli 2024
+
+### Hybride wind op zee
+
+Het is nu mogelijk de rol van hybride wind op zee in het toekomstige energiesysteem te verkennen. De hybride windturbines op zee kunnen opgewekte stroom aan het HV-netwerk op land of aan een elektrolyser op zee leveren. De elektrolyser op zee kan daarnaast ook stroom van het HV-netwerk ontvangen voor waterstofproductie. De geproduceerde waterstof wordt via pijpleidingen getransporteerd naar het waterstofnetwerk op land. 
+
+De elektrolyser die onderdeel is van hybride wind op zee is prijsgestuurd. Dit betekent dat deze alleen waterstof produceert wanneer de nationale elektriciteitsprijs lager is dan zijn betalingsbereidheid (<i>willingness-to-pay</i>). Een uitzondering op deze regel geldt wanneer er overproductie is door de hybride windturbines op zee; de windturbines leveren dan toch stroom aan de elektrolyser om productiebeperking (<i>curtailment</i>) te voorkomen. 
+
+Verken de nieuwe mogelijkheden door geïnstalleerd vermogen van de hybride windturbines op zee in te stellen in de **[Hernieuwbare elektriciteit](scenario/supply/electricity_renewable/wind-turbines)** sectie. Daarnaast kunnen relatieve vermogens van de elektrolyser en bekabeling op zee worden ingesteld in de **[Flexibiliteit](scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components)** sectie. 
+
+Ook zijn er nieuwe grafieken en een tabel toegevoegd die inzicht bieden in de opgestelde vermogens, piekbelasting en jaarlijkse energiestromen van de hybride wind op zee componenten. Onderstaand Sankey-diagram laat bijvoorbeeld zien hoeveel energie jaarlijks tussen de componenten stroomt. Verken de nieuwe gebruikersoutput zelf in het ETM in de lijst met grafieken.  
+
+-> <img src="/assets/pages/whats_new/hybrid_offshore_wind_energy_flows.png" width="600" /> <-
+
 # Mei 2024
 
 ### Toevoeging van BECCUS

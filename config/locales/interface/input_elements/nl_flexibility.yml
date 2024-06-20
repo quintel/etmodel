@@ -542,45 +542,43 @@ nl:
       title: Elektrolyser op zee
       short_description:
       description: |
-        Deze schuif stelt het relatieve vermogen van de elektrolyser op zee in ten opzichte van het geïnstalleerd 
-        vermogen van de hybride windturbines op zee.  <br/><br/>
-        De elektrolyser op zee kan zowel elektriciteit van de hybride windturbines op zee als van het HV netwerk 
-        (via de elektriciteitskabel op zee) ontvangen. Logischerwijs tellen het geïnstalleerd vermogen van de 
-        elektrolyser en elektriciteitskabel op tot het geïnstalleerd vermogen van de hybride windturbines op zee 
-        (de relatieve vermogens tellen op tot 100%).<br/><br/>
-        Met de onderstaande schuif kan de betalingsbereidheid (<i>willingness-to-pay</i>) van de elektrolyser op zee 
-        worden ingesteld. De kosten voor transport van waterstof naar het waterstofnetwerk op land kunnen worden ingesteld in de 
-        <a href="/scenario/costs/costs_hydrogen/hydrogen-transport">kostensectie</a>.<br/><br/> 
-        Voor meer informatie over de componenten en het gedrag van hybride wind op zee, zie onze 
-        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>.
-        <br/><br/>Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van 
+        Dit schuifje stelt het relatieve inputvermogen van de elektrolyser op zee in ten opzichte van
+        het geïnstalleerd vermogen van de hybride windturbines op zee. <br/><br/>
+        De elektrolyser op zee kan zowel elektriciteit van de hybride windturbines op zee als van
+        het HV-netwerk (via de elektriciteitskabel op zee) ontvangen. De elektrolyser produceert
+        als de elektriciteitsprijs lager is dan de betalingsbereidheid (<i>willingness-to-pay</i>).
+        Zelfs als de prijs hoger is, wordt er echter waterstof geproduceerd, als daarmee
+        productiebeperking (<i>curtailment</i>) wordt voorkomen. Zie de
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">
+        documentatie</a> voor meer details. </br></br>
+        De kosten voor transport van waterstofpijpleidingen op zee kunnen worden ingesteld in de sectie
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-transport">Kosten & efficiënties</a>. <br/><br/>
+        Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van
         de hybride wind op zee componenten:
-        <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de componenten</li> 
-        <li>Deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">tabel</a> 
+        <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de componenten</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">tabel</a>
         toont de geïnstalleerde vermogens, piekbelasting en jaarlijkse energiestromen van de verschillende componenten</li>
-        <li>Dit <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">Sankey-diagram</a> 
+        <li>Deze <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">grafiek</a>
         toont de jaarlijkse energiestromen tussen de componenten</li></ul>
     relative_capacity_of_offshore_cable:
       title: Elektriciteitskabel op zee
       short_description:
       description: |
-        Deze schuif stelt het relatieve vermogen van de elektriciteitskabel op zee in ten opzichte van het geïnstalleerd 
-        vermogen van de hybride windturbines op zee. <br/><br/>
-        De elektriciteitskabel op zee kan zowel geproduceerde elektriciteit
-        door de hybride windturbines op zee transporteren naar het HV netwerk op land of elektriciteit transporteren van 
-        het HV netwerk naar de elektrolyser op zee. Logischerwijs tellen het geïnstalleerd vermogen van de elektrolyser en 
-        elektriciteitskabel op tot het geïnstalleerd vermogen van de hybride windturbines op zee (de relatieve vermogens 
-        tellen op tot 100%).<br/><br/>
-        Voor meer informatie over de componenten en het gedrag van hybride wind op zee, zie de 
-        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>.
-        <br/><br/>De benodigde investeringskosten voor de infrastructuur van het net op zee zijn gegeven en kunnen worden 
-        aangepast in de <a href="/scenario/costs/infrastructure/electricity-infrastructure-costs">kostensectie</a>.
-        <br/><br/>Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van 
+        Dit schuifje stelt het relatieve vermogen van de elektriciteitskabel op zee in ten opzichte
+        van het geïnstalleerd vermogen van de hybride windturbines op zee. <br/><br/>
+        De elektriciteitskabel op zee kan zowel geproduceerde elektriciteit door de hybride
+        windturbines op zee transporteren naar het HV netwerk op land of elektriciteit transporteren
+        van het HV netwerk naar de elektrolyser op zee. Voor meer informatie over de componenten en
+        het gedrag van hybride wind op zee, zie de
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>. <br/><br/>
+        De benodigde investeringskosten voor de infrastructuur van het net op zee kunnen worden
+        aangepast in de sectie <a href="/scenario/costs/infrastructure/electricity-infrastructure-costs">Kosten & efficiënties</a>. <br/><br/>
+        Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van
         de hybride wind op zee componenten:
-        <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de componenten</li> 
-        <li>Deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">tabel</a> 
+        <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de componenten</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">tabel</a>
         toont de geïnstalleerde vermogens, piekbelasting en jaarlijkse energiestromen van de verschillende componenten</li>
-        <li>Dit <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">Sankey-diagram</a> 
+        <li>Deze <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">grafiek</a>
         toont de jaarlijkse energiestromen tussen de componenten</li></ul>
     households_flexibility_p2p_electricity_market_penetration:
       title: Marktaandeel
@@ -1275,15 +1273,15 @@ nl:
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
     wtp_of_energy_hydrogen_hybrid_electrolysis_wind_electricity:
-      title: Willingness-to-pay
+      title: Elektrolyser op zee
       short_description:
       description: |
-        Deze schuif stelt de maximumprijs in die de hybride elektrolyser op zee bereid is te betalen voor zijn elektriciteit. 
-        Deze schuif is slechts van kracht wanneer er opgesteld vermogen is van hybride windturbines op zee (zie 
-        <a href="/scenario/supply/electricity_renewable/wind-turbines">hernieuwbare elektriciteitssectie</a>) en wanneer 
-        relatief vermogen voor de elektrolyser op zee is ingesteld met de schuif hierboven.<br/><br/>
-        Wanneer de nationale elektriciteitsprijs lager is dan de betalingsbereidheid (<i>willingness-to-pay</i>) van de 
-        elektrolyser, zal de elektrolyser elektriciteit consumeren voor waterstofproductie. Zie de  
+        Dit schuifje stelt de maximumprijs in die de hybride elektrolyser op zee bereid is te betalen voor elektriciteit.
+        Deze schuif is slechts van kracht wanneer er opgesteld vermogen is van hybride windturbines op zee (zie de sectie
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">Hernieuwbare elektriciteit</a>) en wanneer
+        er relatief vermogen voor de elektrolyser op zee is ingesteld met de schuif hierboven. <br/><br/>
+        Wanneer de elektriciteitsprijs lager is dan de betalingsbereidheid (<i>willingness-to-pay</i>) van de
+        elektrolyser, zal de elektrolyser elektriciteit consumeren voor waterstofproductie. Zie de
         <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>
         voor meer informatie over het gedrag van de componenten van hybride wind op zee.
     wtp_of_energy_heat_flexibility_p2h_boiler_electricity:

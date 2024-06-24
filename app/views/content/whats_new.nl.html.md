@@ -5,9 +5,7 @@ ___
 
 ### Hybride wind op zee
 
-Het is nu mogelijk de rol van hybride wind op zee in het toekomstige energiesysteem te verkennen. De hybride windturbines op zee kunnen opgewekte stroom aan het HV-netwerk op land of aan een elektrolyser op zee leveren. De elektrolyser op zee kan daarnaast ook stroom van het HV-netwerk ontvangen voor waterstofproductie. De geproduceerde waterstof wordt via pijpleidingen getransporteerd naar het waterstofnetwerk op land. 
-
-De elektrolyser die onderdeel is van hybride wind op zee is prijsgestuurd. Dit betekent dat deze alleen waterstof produceert wanneer de nationale elektriciteitsprijs lager is dan zijn betalingsbereidheid (<i>willingness-to-pay</i>). Een uitzondering op deze regel geldt wanneer er overproductie is door de hybride windturbines op zee; de windturbines leveren dan toch stroom aan de elektrolyser om productiebeperking (<i>curtailment</i>) te voorkomen. 
+Het is nu mogelijk de rol van hybride wind op zee in het toekomstige energiesysteem te verkennen. De hybride windturbines op zee kunnen opgewekte stroom aan het HV-netwerk op land of aan een elektrolyser op zee leveren. De elektrolyser op zee kan daarnaast ook stroom van het HV-netwerk ontvangen voor waterstofproductie. 
 
 Verken de nieuwe mogelijkheden door geïnstalleerd vermogen van de hybride windturbines op zee in te stellen in de **[Hernieuwbare elektriciteit](scenario/supply/electricity_renewable/wind-turbines)** sectie. Daarnaast kunnen relatieve vermogens van de elektrolyser en bekabeling op zee worden ingesteld in de **[Flexibiliteit](scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components)** sectie. 
 

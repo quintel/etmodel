@@ -5,9 +5,7 @@ ___
 
 ### Hybrid offshore wind
 
-It is now possible to explore the role of hybrid offshore wind in future energy systems. The hybrid offshore wind turbines can deliver generated power to the onshore HV network or to an offshore electrolyser. The offshore electrolyser can also receive power from the HV network for hydrogen production. The produced hydrogen is transported via pipelines to the onshore hydrogen network.
-
-The electrolyser that is part of the hybrid offshore wind system is price-regulated. This means it only produces hydrogen when the national electricity price is lower than its willingness-to-pay. An exception to this rule applies when there is overproduction by the hybrid offshore wind turbines; the wind turbines will then supply power to the electrolyser to prevent curtailment.
+It is now possible to explore the role of hybrid offshore wind in future energy systems. The hybrid offshore wind turbines can deliver generated power to the onshore HV network or to an offshore electrolyser. The offshore electrolyser can also receive power from the HV network for hydrogen production.
 
 Explore the new possibilities by setting the installed capacity of the hybrid offshore wind turbines in the **[Renewable electricity](scenario/supply/electricity_renewable/wind-turbines)** section. Additionally, the relative capacities of the electrolyser and offshore cabling can be set in the **[Flexibility](scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components)** section.
 

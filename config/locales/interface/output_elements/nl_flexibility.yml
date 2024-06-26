@@ -426,7 +426,7 @@ nl:
         De volgende componenten zijn zichtbaar in de grafiek wanneer hier energie in- of output is: 
         <ul>
         <li> Windelektriciteit </li>
-        <li> Elektrolyser </li>
+        <li> Elektrolyser op zee </li>
         <li> Waterstofnet </li>
         <li> Kabel op zee: zowel van windelektriciteit naar het HV-net als van het HV-net
         naar de elektrolyser op zee, deze duiden op dezelfde elektriciteitskabel op zee </li>
@@ -459,5 +459,6 @@ nl:
         Productiebeperking (curtailment) heeft alleen input van elektriciteit. Tot slot wordt voor de categorie conversieverlies 
         alleen de jaarlijkse input (van elektriciteit) weergegeven. <br/><br/>
         Doordat het ETM rekent met een jaarlijkse beschikbaarheid (<i>availability</i>) van de hybride windturbine en elektrolyser 
-        op zee, wordt er ook in de uurlijkse berekeningen gecorrigeerd voor de availability. Concreet betekent dit dat de 
-        weergegeven piekbelasting altijd lager is dan de geïnstalleerde vermogens bij de windturbine en elektrolyser. 
+        op zee, wordt er ook in de uurlijkse berekeningen gecorrigeerd voor beschikbaarheid. Deze beschikbaarheid is altijd lager dan 100%. 
+        Concreet betekent dit dat de weergegeven piekbelasting altijd lager is dan de geïnstalleerde vermogens van de windturbine 
+        en elektrolyser, en daarmee ook van de elektriciteitskabel die elektriciteit levert aan de elektrolyser op zee. 

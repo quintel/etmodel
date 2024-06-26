@@ -452,7 +452,7 @@ en:
         these components):
         <ul>
         <li> Wind electricity </li>
-        <li> Electrolyser </li>
+        <li> Offshore electrolyser </li>
         <li> Hydrogen network </li>
         <li> Offshore cable: both from wind electricity to the HV network as from the HV network
         to the offshore electrolyser, these indicate the same offshore electricity cable </li>
@@ -485,7 +485,9 @@ en:
         electrolyser has an input of electricity and output of hydrogen. The offshore electricity
         cables both have input and output of electricity. The curtailed electricity component only has input flows
         of electricity. Finally, conversion loss only has annual input flows (of electricity). <br/><br/>
-        Note that since the ETM takes an annual availability of the hybrid offshore wind turbine and electrolyser
-        into account, the hourly calculations are also corrected with this availability. Specifically, 
-        this means that the depicted peak load is always lower than the installed capacity of the wind turbine 
-        and electrolyser.
+        Note that the ETM takes an annual availability of the hybrid offshore wind turbine and 
+        electrolyser into account. This is less than 100%. The hourly calculations are also corrected with this 
+        availability. Specifically, this means that the depicted peak load is always lower than the installed 
+        capacity of the wind turbine and electrolyser, and subsequently of the offshore cable supplying 
+        electricity to the offshore electrolyser. 
+        

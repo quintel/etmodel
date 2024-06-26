@@ -1236,7 +1236,10 @@ en:
         Generally, when the electricity price is lower than the willingness to pay of the
         offshore electrolyser, the electrolyser will consume electricity for hydrogen production. See our
         <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentation</a>
-        for more information on the behaviour of the components of hybrid offshore wind.
+        for more information on the behaviour of the components of hybrid offshore wind. <br/><br/>
+        The installed capacity and WTP of price-regulated onshore electrolysis can be set in the 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen</a> 
+        section. 
     wtp_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:

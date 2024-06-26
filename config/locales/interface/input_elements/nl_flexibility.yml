@@ -1283,7 +1283,10 @@ nl:
         Wanneer de elektriciteitsprijs lager is dan de betalingsbereidheid (<i>willingness-to-pay</i>) van de
         elektrolyser, zal de elektrolyser elektriciteit consumeren voor waterstofproductie. Zie de
         <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>
-        voor meer informatie over het gedrag van de componenten van hybride wind op zee.
+        voor meer informatie over het gedrag van de componenten van hybride wind op zee.<br/><br/>
+        Geïnstalleerd vermogen en de betalingsbereidheid van prijsgestuurde elektrolysers op land kunnen worden
+        ingesteld in de sectie 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof</a>. 
     wtp_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:

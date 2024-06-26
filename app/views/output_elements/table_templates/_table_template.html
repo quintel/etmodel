@@ -5,23 +5,34 @@
         <td></td>
         <th><%= startYear %></th>
         <th><%= endYear %></th>
+        <th> Unit </th>
       </tr>
     </thead>
     <tbody>
-      <% _.each(data, function(row) { %>
+      <% _.each(data, function(row) {
+          var presentValue = formatValue(row.present).split(' ')[0];
+          var futureValue = formatValue(row.future).split(' ')[0];
+          var unit = formatValue(row.present).split(' ')[1];
+      %>
         <tr>
           <th><%= formatLabel(row.serie) %></th>
-          <td title="<%= formatTitle(row.present) %>"><%= formatValue(row.present) %></td>
-          <td title="<%= formatTitle(row.future) %>"><%= formatValue(row.future) %></td>
+          <td title="<%= formatTitle(row.present) %>"><%= presentValue %></td>
+          <td title="<%= formatTitle(row.future) %>"><%= futureValue %></td>
+          <td><%= unit %></td>
         </tr>
       <% }) %>
     </tbody>
-    <% if (totals.length > 0) { %>
+    <% if (totals.length > 0) {
+        var totalPresentValue = formatValue(totals[0]).split(' ')[0];
+        var totalFutureValue = formatValue(totals[1]).split(' ')[0];
+        var totalUnit = formatValue(totals[0]).split(' ')[1];
+    %>
       <tfoot>
         <tr>
           <th><%= I18n.t("output_elements.common.total") %></th>
-          <td><%= formatValue(totals[0]) %></td>
-          <td><%= formatValue(totals[1]) %></td>
+          <td><%= totalPresentValue %></td>
+          <td><%= totalFutureValue %></td>
+          <td><%= totalUnit %></td>
         </tr>
       </tfoot>
     <% } %>

@@ -19,6 +19,7 @@
 #
 
 # Entity used for filling charts
+require 'csv'
 class OutputElement < YModel::Base
   MENU_ORDER = %w[Overview import_export Flexibility Supply Demand Cost Network ccus emissions].freeze
 
@@ -124,6 +125,16 @@ class OutputElement < YModel::Base
 
       [group, elements]
     end]
+  end
+
+  def to_csv
+    attributes = OutputElementPresenter::ATTRIBUTES.keys
+    series_data = allowed_output_element_series.map(&:json_attributes)
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes + ['series']
+      csv << attributes.map { |attr| send(attr) } + [series_data.to_json]
+    end
   end
 
   def self.whitelisted

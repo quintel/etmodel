@@ -37,6 +37,14 @@ class OutputElementsController < ApplicationController
     end
   end
 
+  def data_csv
+    Rails.logger.info "Received request for CSV download for OutputElement ID: #{@chart.id}"
+    csv_data = @chart.to_csv
+    respond_to do |format|
+      format.csv { send_data csv_data, filename: "#{@chart.name}.csv" }
+    end
+  end
+
   def zoom
   end
 

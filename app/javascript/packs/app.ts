@@ -39,6 +39,37 @@ import StackedBar from '../charts/StackedBar';
 
 import backwardsCompat from '../charts/utils/backwardsCompat';
 
+declare global {
+  interface Window {
+    D3: {
+      bezier: { View: any };
+      electricity_network_load: { View: any };
+      hourly_stacked_area: { View: any };
+      hourly_summarized: { View: any };
+      line: { View: any };
+      stacked_bar: { View: any };
+      electricity_hv_network_load: any;
+      electricity_lv_network_load: any;
+      electricity_mv_network_load: any;
+      hourly_balance: any;
+      merit_order_hourly_flexibility: any;
+      network_load: any;
+    };
+    MeritTransformator: {
+      sliceValues: any;
+      transform: any;
+    };
+    D3ChartDateSelect: any;
+    ChartListView: any;
+    CustomCurveChooserView: any;
+    MultiCurveChooserView: any;
+    BaseChartView: {
+      saveAsPNG: any;
+      saveAsCSV: any;
+    };
+  }
+}
+
 window.D3 ||= {};
 
 window.D3.bezier = { View: backwardsCompat(Bezier) };
@@ -86,3 +117,7 @@ window.MultiCurveChooserView = MultiCurveChooserView;
 import { onClick as saveAsPNGClick } from '../charts/utils/saveAsPNG';
 
 window.BaseChartView.saveAsPNG = saveAsPNGClick;
+
+import { saveAsCSV } from '../charts/utils/saveAsCSV';
+
+window.BaseChartView.saveAsCSV = saveAsCSV;

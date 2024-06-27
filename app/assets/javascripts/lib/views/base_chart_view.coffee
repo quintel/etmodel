@@ -57,6 +57,38 @@ class @BaseChartView extends Backbone.View
     else
       @render()
 
+    # Add the saveAsCSV method
+  saveAsCSV: (event, scenarioID) =>
+    event.preventDefault()
+    console.log 'CSV download button clicked'
+    chartHolder = @$el.closest('.chart_holder')
+    chartId = chartHolder.data('holder_id')
+    console.log "Chart ID: #{chartId}"
+    fetch "/output_elements/#{chartId}/data_csv",
+      headers:
+        'Accept': 'text/csv'
+    .then (response) =>
+      if not response.ok
+        throw new Error 'Network response was not ok'
+      response.blob()
+    .then (blob) =>
+      link = document.createElement('a')
+      link.href = URL.createObjectURL(blob)
+      link.download = "#{chartId}.csv"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      console.log 'CSV download initiated successfully'
+    .catch (error) =>
+      console.error 'There was a problem with the fetch operation:', error
+
+  # Bind CSV download button event after chart is rendered
+  bind_csv_download_event: =>
+    console.log 'Binding CSV download event'
+    @$el.find(".actions a.chart_to_csv")
+      .off 'click'
+      .on 'click', (event) => @saveAsCSV(event, App.scenario.get('id'))
+
   check_merit_enabled: =>
     unless App.settings.merit_order_enabled()
       @container_node().html(

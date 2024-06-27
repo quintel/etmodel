@@ -1,5 +1,6 @@
 # Given an OutputElement, converts it to a JSON representation which may be
 # consumed by the front-end.
+require 'csv'
 class OutputElementPresenter
   # A list of attributes to be included with the JSON. Values may be true, in
   # which case the appropriate method is called on the element, or a block which
@@ -54,6 +55,24 @@ class OutputElementPresenter
       html: template,
       series: @element.allowed_output_element_series.map(&:json_attributes)
     }
+  end
+
+  def to_csv
+    attributes = %w[key output_element_type_name group unit max_axis_value min_axis_value percentage]
+
+    series_data = @element.series.map do |series|
+      {
+        'label' => series.label,
+        'values' => series.values # Ensure values are fetched correctly
+      }
+    end
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes + ['series', 'data_points']
+      @element.series.each do |series|
+        csv << attributes.map { |attr| @element.send(attr) } + [series.label, series.values.join(';')]
+      end
+    end
   end
 
   private

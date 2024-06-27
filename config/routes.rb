@@ -127,10 +127,11 @@ Rails.application.routes.draw do
   resources :output_elements, param: :key, only: %i[index show] do
     member do
       get :zoom
+      get :data_csv
     end
 
     collection do
-      get 'batch/:keys',    action: :batch
+      get 'batch/:keys', action: :batch
     end
   end
 

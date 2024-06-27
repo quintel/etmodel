@@ -86,3 +86,5 @@ window.MultiCurveChooserView = MultiCurveChooserView;
 import { onClick as saveAsPNGClick } from '../charts/utils/saveAsPNG';
 
 window.BaseChartView.saveAsPNG = saveAsPNGClick;
+
+import '../charts/utils/saveAsCSV';

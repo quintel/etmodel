@@ -1,5 +1,5 @@
 <script type="text/template" id="chart-holder-template">
-  <div class="chart_holder" data-holder_id="<%%= holder_id %>">
+  <div class="chart_holder" data-holder_id="<%%= holder_id %>" data-chart_id="<%%= chart_id %>">
     <%% if (header !== false) { %>
       <header>
         <h3><%%= title %></h3>
@@ -22,6 +22,10 @@
           <a class="chart_to_image tooltip fa fa-download"
              href="#"
              title="<%= t 'output_elements.tooltips.save_as_image' %>"></a>
+
+          <a class="chart_to_csv tooltip fa fa-file-csv"
+             href="#"
+             title="<%= t 'output_elements.tooltips.save_as_csv' %>"></a>
 
           <a class="chart_format tooltip fa fa-bar-chart-o"
              href="#"

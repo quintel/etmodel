@@ -105,7 +105,7 @@ class @ChartList extends Backbone.Collection
     @load(chart_id, holder_id, options)
 
   render_output_element: (chart_id, holder_id, options, data) =>
-    holder_id = @add_container_if_needed(holder_id, options)
+    holder_id = @add_container_if_needed(holder_id, _.extend({}, options, { chart_id: chart_id }))
 
     # Create the new Chart. The id attribute is concatenated to the
     # holder_id because backbone collections make items unique by id. We
@@ -260,7 +260,7 @@ class @ChartList extends Backbone.Collection
     if $container.find("##{holder_id}").length == 0
       new_chart = @template(
         title: 'Loading'
-        chart_id: 0
+        chart_id: options.chart_id || 0
         holder_id: holder_id
         header: options.header,
         popup: options.popup)

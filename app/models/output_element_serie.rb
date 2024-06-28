@@ -65,6 +65,52 @@ class OutputElementSerie < YModel::Base
     )
   end
 
+  # def values(scenario_id = nil)
+  #   scenario_id ||= current_scenario_id
+  #   api_url = Settings.api_url
+  #   http_client = Faraday.new(url: api_url)
+
+  #   result = FetchAPIScenarioQueries.call(http_client, scenario_id, [gquery])
+
+  #   if result.successful?
+  #     result.value[gquery].present
+  #   else
+  #     raise "Error fetching data: #{result.errors.join(', ')}"
+  #   end
+  # end
+
+  def values(scenario_id = nil)
+    scenario_id ||= current_scenario_id
+    api_url = Settings.api_url
+    http_client = Faraday.new(url: api_url)
+
+    result = FetchAPIScenarioQueries.call(http_client, scenario_id, [gquery])
+
+    if result.successful?
+      body = result.value
+
+      # Debugging: output the type and content of body
+      puts "Body type: #{body.class}"
+      puts "Body content: #{body.inspect}"
+
+      begin
+        # Ensure body is a hash and parse if necessary
+        parsed_body = body.is_a?(String) ? JSON.parse(body) : body
+        gqueries = parsed_body['gqueries']
+
+        if gqueries
+          return gqueries[gquery]['present'] # Assuming 'present' is the correct key to access the data
+        else
+          raise "Gqueries key not found in response"
+        end
+      rescue JSON::ParserError => e
+        raise "Failed to parse response JSON: #{e.message}"
+      end
+    else
+      raise "Error fetching data: #{result.errors.join(', ')}"
+    end
+  end
+
   #  Descriptions are optional for output element series
   def description
     I18n.t("output_element_series.#{key}.description", default: '')
@@ -89,5 +135,20 @@ class OutputElementSerie < YModel::Base
 
   def url_in_etengine
     "#{Settings.gquery_detail_url}#{gquery}"
+  end
+
+  private
+
+  def current_scenario_id
+    if defined?(Rails) && Rails.respond_to?(:session)
+      globals.api_session_id
+    else
+      default_scenario_id
+    end
+  end
+
+  def default_scenario_id
+    # Provide a default scenario ID if none is found
+    '2574184' # TODO change this to something more generic
   end
 end

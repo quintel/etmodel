@@ -60,17 +60,17 @@ class OutputElementPresenter
   def to_csv
     attributes = %w[key output_element_type_name group unit max_axis_value min_axis_value percentage]
 
-    series_data = @element.series.map do |series|
+    series_data = @element.allowed_output_element_series.map do |series|
       {
         'label' => series.label,
-        'values' => series.values # Ensure values are fetched correctly
+        'values' => fetch_series_values(series) # Ensure values are fetched correctly
       }
     end
 
     CSV.generate(headers: true) do |csv|
       csv << attributes + ['series', 'data_points']
-      @element.series.each do |series|
-        csv << attributes.map { |attr| @element.send(attr) } + [series.label, series.values.join(';')]
+      series_data.each do |series|
+        csv << attributes.map { |attr| @element.send(attr) } + [series['label'], series['values'].join(';')]
       end
     end
   end
@@ -84,6 +84,15 @@ class OutputElementPresenter
   def json_attributes
     ATTRIBUTES.each_with_object({}) do |(key, getter), data|
       data[key] = attribute(key, getter)
+    end
+  end
+
+  # Internal: Fetches the values for a series.
+  #
+  # Returns an array.
+  def fetch_series_values(series)
+    series.values.map do |value|
+      value.is_a?(Array) ? value.join(';') : value
     end
   end
 

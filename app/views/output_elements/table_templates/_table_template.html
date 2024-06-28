@@ -3,36 +3,36 @@
     <thead>
       <tr>
         <td></td>
+        <th><%= I18n.t("output_elements.common.unit") %></th>
         <th><%= startYear %></th>
         <th><%= endYear %></th>
-        <th><%= I18n.t("output_elements.common.unit") %></th>
       </tr>
     </thead>
     <tbody>
       <% _.each(data, function(row) {
+          var unit = formatValue(row.present).split(' ')[1];
           var presentValue = formatValue(row.present).split(' ')[0];
           var futureValue = formatValue(row.future).split(' ')[0];
-          var unit = formatValue(row.present).split(' ')[1];
       %>
         <tr>
           <th><%= formatLabel(row.serie) %></th>
+          <td><%= unit %></td>
           <td title="<%= formatTitle(row.present) %>"><%= presentValue %></td>
           <td title="<%= formatTitle(row.future) %>"><%= futureValue %></td>
-          <td><%= unit %></td>
         </tr>
       <% }) %>
     </tbody>
     <% if (totals.length > 0) {
+        var totalUnit = formatValue(totals[0]).split(' ')[1];
         var totalPresentValue = formatValue(totals[0]).split(' ')[0];
         var totalFutureValue = formatValue(totals[1]).split(' ')[0];
-        var totalUnit = formatValue(totals[0]).split(' ')[1];
     %>
       <tfoot>
         <tr>
           <th><%= I18n.t("output_elements.common.total") %></th>
+          <td><%= totalUnit %></td>
           <td><%= totalPresentValue %></td>
           <td><%= totalFutureValue %></td>
-          <td><%= totalUnit %></td>
         </tr>
       </tfoot>
     <% } %>

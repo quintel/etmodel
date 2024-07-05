@@ -3,7 +3,7 @@
     <thead>
       <tr>
         <td></td>
-        <th><%= I18n.t("output_elements.common.unit") %></th>
+        <th class="left"><%= I18n.t("output_elements.common.unit") %></th>
         <th><%= startYear %></th>
         <th><%= endYear %></th>
       </tr>
@@ -16,7 +16,7 @@
       %>
         <tr>
           <th><%= formatLabel(row.serie) %></th>
-          <td><%= unit %></td>
+          <td class="left"><%= unit %></td>
           <td title="<%= formatTitle(row.present) %>"><%= presentValue %></td>
           <td title="<%= formatTitle(row.future) %>"><%= futureValue %></td>
         </tr>
@@ -30,7 +30,7 @@
       <tfoot>
         <tr>
           <th><%= I18n.t("output_elements.common.total") %></th>
-          <td><%= totalUnit %></td>
+          <td class="left"><%= totalUnit %></td>
           <td><%= totalPresentValue %></td>
           <td><%= totalFutureValue %></td>
         </tr>

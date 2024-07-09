@@ -19,6 +19,7 @@ class MultiYearChart < ApplicationRecord
 
   validates_presence_of :user_id
   validates :title, presence: true
+  validate :validate_scenarios
 
   # Public: Creates a new MultiYearChart, setting some attributes to match those of the saved
   # scenario.
@@ -74,5 +75,11 @@ class MultiYearChart < ApplicationRecord
       'owner' => user.as_json(only: %i[id name]),
       'scenario_ids' => latest_scenario_ids.sort
     )
+  end
+
+  def validate_scenarios
+    if scenarios.size + saved_scenarios.size > 6
+      errors.add(:scenarios, 'exceeds maximum of 6 scenarios')
+    end
   end
 end

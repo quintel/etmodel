@@ -64,4 +64,22 @@ RSpec.describe MultiYearChart, type: :model do
       end
     end
   end
+
+  describe 'number of scenarios' do
+    let(:user) { create(:user) }
+    let(:myc) { create(:multi_year_chart, user: user, scenarios_count: 3) }
+
+    context 'with more than 6 combined scenarios' do
+      before do
+        4.times do
+          saved_scenario = create(:saved_scenario, scenario_id: 111, user: user)
+          create(:multi_year_chart_saved_scenario, multi_year_chart: myc, saved_scenario: saved_scenario)
+        end
+      end
+
+      it 'is not valid' do
+        expect(myc).not_to be_valid
+      end
+    end
+  end
 end

@@ -939,6 +939,15 @@ table.default
   h2
     margin-bottom: 50px
 
+  form.no-click .multi_year_chart_saved_scenarios
+    label:not(:has(input:checked))
+      opacity: 0.5
+      pointer-events: none;
+      &:hover
+        cursor: default
+        span
+          background: #d0d0d0
+
   .multi_year_chart_saved_scenarios
     display: flex
     flex-wrap: wrap
@@ -953,6 +962,7 @@ table.default
         white-space: nowrap
         padding: 5px 20px
         font-size: 0.74rem
+        border: 1px solid #d0d0d0
       &:hover
         cursor: pointer
         span
@@ -960,8 +970,10 @@ table.default
     input
       display: none
     input:checked+span
-      background: $landing-green
-      color: #fff
+      border: 1px solid $landing-green
+      background: #fff
+      &:hover
+        background: lighten($landing-green, 14%)
 
 .scenario-cards
   display: flex

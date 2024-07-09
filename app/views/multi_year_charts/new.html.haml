@@ -21,3 +21,5 @@
           collection: current_user.saved_scenarios.order(updated_at: :desc).map {|ss| ["<span>#{ss.title}</span>".html_safe, ss.id]}
         = f.submit t('multi_year_charts.create'), class: 'save button scenario-button'
 
+      :javascript
+        new  MultiYearChartNewView({ el: $('#new-collection') }).render()

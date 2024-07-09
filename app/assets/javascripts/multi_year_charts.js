@@ -25,9 +25,5 @@
     }
   });
 
-  $(function () {
-    new MultiYearChartNewView({ el: document.querySelector('#new-collection') }).render();
-  });
-
   window.MultiYearChartNewView = MultiYearChartNewView;
 })(window);

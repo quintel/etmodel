@@ -13,6 +13,26 @@ New charts and a table have also been added to provide insights into the install
 
 -> <img src="/assets/pages/whats_new/hybrid_offshore_wind_energy_flows.png" width="600" /> <-
 
+### Scenario collections
+
+Create collections of saved scenarios and compare their outcomes. The new tab in My Scenarios contains
+both your collections, and your transition paths.
+
+Use the new button in the collections tab in My Scenarios to start creating a new collection. Up to
+six scenarios you have rights to can be added to your collection.
+
+-> <img src="/assets/pages/whats_new/collections-button.png" width="600" /> <-
+
+You can share the link to your collection with anyone, but only people that you have given access
+to the scenarios will be able to see them in the viewer.
+
+-> <img src="/assets/pages/whats_new/collections-show.png" width="600" /> <-
+
+Opening the collection will open a new viewer, where you can compare your scenarios using the same charts as known from the existing transition paths feature.
+
+---
+
+
 # May 2024
 
 ### Addition of BECCUS
@@ -30,7 +50,7 @@ Third, a price for captured biogenic CO<sub>2</sub> has been introduced in the m
 
 ### Hydrogen improvements
 
-The hydrogen section of the model has been improved!  Now, flexible production options have been added. 
+The hydrogen section of the model has been improved!  Now, flexible production options have been added.
 Steam methane reformers, ammonia reformers and autothermal reformers can be installed with dispatchable capacity in addition to the must-run variant of these hydrogen reformer techniques. Explore these changes in the **[Hydrogen production](scenario/supply/hydrogen/hydrogen-production)** section.
 
 Next to these flexible producers, the modelling of hydrogen storage has been refined. Now, users can use salt caverns and depleted gas fields as storage options in the model. In addition, users can set both the volume and capacity for these storage options. These features can be found in the **[Hydrogen storage](scenario/supply/hydrogen/hydrogen-production)** section.
@@ -104,7 +124,7 @@ ___
 
 Many regions deal with energy flows that merely pass through the region and are not consumed or produced by parts of the local energy system. Users can now gain more insight in these transit flows of energy carriers within their system. In order to model transit flows in your scenario, you can set the inflexible export volumes of several energy carriers. Setting an export flow also enforces an import flow for the system to be balanced.
 
-New charts have been added which give an overview of the transit flows in the energy system. The new features can be found in the **[Demand](/scenario/demand/export_energy/transit-flows)** section. 
+New charts have been added which give an overview of the transit flows in the energy system. The new features can be found in the **[Demand](/scenario/demand/export_energy/transit-flows)** section.
 
 -> <img src="/assets/pages/whats_new/transit_flows_en.png" width="600" /> <-
 
@@ -121,7 +141,7 @@ This form provides a higher energy density compared to gaseous hydrogen.
 
 * **Liquid hydrogen (LH2)** — At extremely low temperatures, hydrogen transitions from gaseous into liquid form. In liquid form it has a much higher volumetric energy density, leading to an advantage in transporting the hydrogen.
 
-This allows for instance to import liquid hydrogen, reform it to produce gaseous hydrogen and export the latter. See the new hydrogen production technologies in the **[Supply](/scenario/supply/hydrogen/hydrogen-production)** section. 
+This allows for instance to import liquid hydrogen, reform it to produce gaseous hydrogen and export the latter. See the new hydrogen production technologies in the **[Supply](/scenario/supply/hydrogen/hydrogen-production)** section.
 
 ___
 
@@ -137,7 +157,7 @@ District heating networks on different temperature levels can be specified: high
 
 -> <img src="/assets/pages/whats_new/district_heating_sankey_en.png" width="600" /> <-
 
-### Aquathermal 
+### Aquathermal
 
 Now, extra aquathermal technologies have been added to the ETM. Aquathermal refers to using water for heating and cooling. Three types of water reservoirs are taken into account: drink water, surface water and waste water.
 

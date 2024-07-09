@@ -5,13 +5,31 @@ ___
 
 ### Hybride wind op zee
 
-Het is nu mogelijk de rol van hybride wind op zee in het toekomstige energiesysteem te verkennen. De hybride windturbines op zee kunnen opgewekte stroom aan het HV-netwerk op land of aan een elektrolyser op zee leveren. De elektrolyser op zee kan daarnaast ook stroom van het HV-netwerk ontvangen voor waterstofproductie. 
+Het is nu mogelijk de rol van hybride wind op zee in het toekomstige energiesysteem te verkennen. De hybride windturbines op zee kunnen opgewekte stroom aan het HV-netwerk op land of aan een elektrolyser op zee leveren. De elektrolyser op zee kan daarnaast ook stroom van het HV-netwerk ontvangen voor waterstofproductie.
 
-Verken de nieuwe mogelijkheden door geïnstalleerd vermogen van de hybride windturbines op zee in te stellen in de **[Hernieuwbare elektriciteit](scenario/supply/electricity_renewable/wind-turbines)** sectie. Daarnaast kunnen relatieve vermogens van de elektrolyser en bekabeling op zee worden ingesteld in de **[Flexibiliteit](scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components)** sectie. 
+Verken de nieuwe mogelijkheden door geïnstalleerd vermogen van de hybride windturbines op zee in te stellen in de **[Hernieuwbare elektriciteit](scenario/supply/electricity_renewable/wind-turbines)** sectie. Daarnaast kunnen relatieve vermogens van de elektrolyser en bekabeling op zee worden ingesteld in de **[Flexibiliteit](scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components)** sectie.
 
-Ook zijn er nieuwe grafieken en een tabel toegevoegd die inzicht bieden in de opgestelde vermogens, piekbelasting en jaarlijkse energiestromen van de hybride wind op zee componenten. Onderstaand Sankey-diagram laat bijvoorbeeld zien hoeveel energie jaarlijks tussen de componenten stroomt. Verken de nieuwe gebruikersoutput zelf in het ETM in de lijst met grafieken.  
+Ook zijn er nieuwe grafieken en een tabel toegevoegd die inzicht bieden in de opgestelde vermogens, piekbelasting en jaarlijkse energiestromen van de hybride wind op zee componenten. Onderstaand Sankey-diagram laat bijvoorbeeld zien hoeveel energie jaarlijks tussen de componenten stroomt. Verken de nieuwe gebruikersoutput zelf in het ETM in de lijst met grafieken.
 
 -> <img src="/assets/pages/whats_new/hybrid_offshore_wind_energy_flows.png" width="600" /> <-
+
+### Scenario collecties
+
+Maak een collectie van opgeslagen scenarios en vergelijk de resultaten met elkaar. De nieuwe collecties tab in mijn scenarios bevat zowel collecties als bestaande transitiepaden.
+
+Gebruik de nieuwe knop bovenin de collecties tab om een eerste collectie aan te maken. Een collectie bestaat uit maximaal 6 scenarios de je bezit, of waar iemand je toegang voor heeft gegeven.
+
+-> <img src="/assets/pages/whats_new/collections-button.png" width="600" /> <-
+
+De link naar de collectie kan met iedereen worden gedeeld, maar eenmaal geopend in de viewer, kunnen alleen gebruikers met toegangsrecht de scenario uitkomsten zien.
+
+-> <img src="/assets/pages/whats_new/collections-show.png" width="600" /> <-
+
+Het openen van een collectie opent een nieuwe viewer, waar de uitkomsten met dezelfde grafieken en tabellen kunnen worden vergeleken als men gewend is van de bestaande transitiepaden.
+
+---
+
+
 
 # Mei 2024
 
@@ -45,11 +63,11 @@ De flexibele vraagopties, die op dit moment bestaan uit de twee waterstofopslago
 
 ### Multi-user support en scenario versiegeschiedenis
 
-Het is nu mogelijk om met meerdere gebruikers samen te werken aan een scenario. Via het Mijn Scenario's overzicht kun je andere gebruikers van het ETM uitnodigen voor één van jouw scenario's als <i>Gast</i>, <i>Bewerker</i> of <i>Eigenaar</i>. Je kunt ook personen uitnodigen die het ETM nog niet gebruiken. Afhankelijk van de gegeven rechten kan de genodigde jouw scenario inzien, bewerkingen doen en zelfs andere gebruikers toevoegen aan jouw scenario. 
+Het is nu mogelijk om met meerdere gebruikers samen te werken aan een scenario. Via het Mijn Scenario's overzicht kun je andere gebruikers van het ETM uitnodigen voor één van jouw scenario's als <i>Gast</i>, <i>Bewerker</i> of <i>Eigenaar</i>. Je kunt ook personen uitnodigen die het ETM nog niet gebruiken. Afhankelijk van de gegeven rechten kan de genodigde jouw scenario inzien, bewerkingen doen en zelfs andere gebruikers toevoegen aan jouw scenario.
 
 -> <img src="/assets/pages/whats_new/multi_user_nl.png" width="700" /> <-
 
-Ook is er nu een overzicht beschikbaar van de versiegeschiedenis van scenario's. Hierin zijn oude versies van een scenario weergegeven met de gebruiker die deze het laatst heeft aangepast. Je kunt de oude scenarioversies openen in het ETM, een beschrijving aan oude versies toevoegen en oude versies terugzetten. 
+Ook is er nu een overzicht beschikbaar van de versiegeschiedenis van scenario's. Hierin zijn oude versies van een scenario weergegeven met de gebruiker die deze het laatst heeft aangepast. Je kunt de oude scenarioversies openen in het ETM, een beschrijving aan oude versies toevoegen en oude versies terugzetten.
 
 -> <img src="/assets/pages/whats_new/version_history_nl.png" width="700" /> <-
 ___
@@ -65,7 +83,7 @@ Verken de nieuwe warmtemodellering in de **[Huishoudens](/scenario/demand/househ
 -> <img src="/assets/pages/whats_new/residential_heating_demand_nl.png" width="600" /> <-
 
 ### Kostenexportfunctionaliteit bijgewerkt en uitgebreid
-De kostenexportfunctionaliteit van het ETM heeft een grote update ondergaan! De download biedt nu veel gedetailleerdere informatie over de kosten van een scenario. Beginnend met de totale kosten, de totale CAPEX en de totale OPEX geeft het csv-bestand details over de componenten van CAPEX en OPEX en de parameters die ten grondslag liggen aan CAPEX-berekeningen, zoals de technische levensduur. De kostenexportfunctionaliteit weerspiegelt nu beter welke mogelijkheden het ETM biedt voor kostenberekening. 
+De kostenexportfunctionaliteit van het ETM heeft een grote update ondergaan! De download biedt nu veel gedetailleerdere informatie over de kosten van een scenario. Beginnend met de totale kosten, de totale CAPEX en de totale OPEX geeft het csv-bestand details over de componenten van CAPEX en OPEX en de parameters die ten grondslag liggen aan CAPEX-berekeningen, zoals de technische levensduur. De kostenexportfunctionaliteit weerspiegelt nu beter welke mogelijkheden het ETM biedt voor kostenberekening.
 
 -> <img src="/assets/pages/whats_new/costs_specification_costs_functionality_en.png" width="600" /> <-
 
@@ -137,7 +155,7 @@ Er worden drie onderscheidingen gemaakt in temperatuurniveaus van warmtenetten i
 
 ### Aquathermie
 
-Extra Aquathermische technologieën voor warmtemodellering zijn toegevoegd aan het ETM. 
+Extra Aquathermische technologieën voor warmtemodellering zijn toegevoegd aan het ETM.
 Aquathermal verwijst naar het gebruik van water voor verwarming en koeling. Er worden drie soorten waterreservoirs in overweging genomen: drinkwater, oppervlaktewater en afvalwater.
 
 Aquathermische technologieën kunnen gebruikt worden voor individuele houshuidens, zowel voor **[Ruimteverwarming & warm water](/scenario/demand/households/space-heating-and-hot-water)** als **[Koeling](/scenario/demand/households/cooling)**. Dit geldt ook voor **[Ruimteverwarming](/scenario/demand/buildings/space-heating)** en **[Koeling](/scenario/demand/buildings/cooling)** in gebouwen. Hiernaast kan aquathermie gebruikt worden in MT & LT warmtenetten. Een grafiek is toegevoegd aan het model zodat de gebruiker de vraag voor aquathermische warmte kan inzien en deze kan vergelijken met het potentieel.

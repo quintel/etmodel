@@ -463,6 +463,7 @@ D3.sankey =
           {left: 'biogenic_waste',                  right: 'electricity_prod',            gquery: 'biogenic_waste_to_electricity_prod_in_biomass_sankey', color: '#006266'},
           {left: 'biogenic_waste',                  right: 'central_heat_prod',           gquery: 'biogenic_waste_to_central_heat_prod_in_biomass_sankey', color: '#006266'},
           {left: 'biogenic_waste',                  right: 'export',                      gquery: 'biogenic_waste_to_export_in_biomass_sankey', color: '#006266'},
+          {left: 'biogenic_waste',                  right: 'industry',                    gquery: 'biogenic_waste_to_industry_in_biomass_sankey', color: '#006266'},
           {left: 'electricity_prod',                right: 'electricity_dem',             gquery: 'electricity_prod_to_electricity_dem_in_biomass_sankey', color: '#1f77b4'},
           {left: 'electricity_prod',                right: 'heat_dem',                    gquery: 'electricity_prod_to_heat_dem_in_biomass_sankey', color: '#d62728'},
           {left: 'electricity_prod',                right: 'losses',                      gquery: 'electricity_prod_to_losses_in_biomass_sankey', color: '#DCDCDC'},

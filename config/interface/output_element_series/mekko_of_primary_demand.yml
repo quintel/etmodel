@@ -1535,3 +1535,27 @@
   dependent_on: 
   output_element_key: mekko_of_primary_demand
   key: imported_ammonia_export_and_curtailment_mekko_of_primary_demand
+- label: imported_methanol
+  color: "#FF8C8C"
+  order_by: 16
+  group: energy_industry
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_methanol_industry_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_methanol_industry_mekko_of_primary_demand
+- label: imported_methanol
+  color: "#FF8C8C"
+  order_by: 16
+  group: export_and_curtailment
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: imported_methanol_export_and_curtailment_in_mekko_of_primary_demand
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_primary_demand
+  key: imported_methanol_export_and_curtailment_mekko_of_primary_demand

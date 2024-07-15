@@ -168,6 +168,18 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_carriers_ammonia_costs_overview_detailed
+- label: costs_carriers_methanol
+  color: "#FF8C8C"
+  order_by: 295
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_carriers_methanol
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_carriers_methanol_costs_overview_detailed
 
 - label: costs_production_biomass
   color: "#C5D75F"

@@ -179,4 +179,17 @@
   is_1990: false
   dependent_on: 
   output_element_key: waterfall_future_energy_transit_flows
-  key: uranium_oxide_future_energy_transit_flows    
+  key: uranium_oxide_future_energy_transit_flows
+
+- label: methanol
+  color: "#FF8C8C" 
+  order_by: 150
+  group: future
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: methanol_in_future_energy_transit
+  is_1990: false
+  dependent_on: 
+  output_element_key: waterfall_future_energy_transit_flows
+  key: methanol_future_energy_transit_flows

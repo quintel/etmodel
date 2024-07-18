@@ -13,6 +13,7 @@ jobs:
     - uses: actions/stale@v3
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        days-before-close: 14
         stale-issue-message: >
           This issue has had no activity for 60 days and will be closed in 7 days. Removing the
           "Stale" label or posting a comment will prevent it from being closed automatically. You

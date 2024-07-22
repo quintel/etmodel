@@ -76,7 +76,7 @@ D3.mekko =
 
     margins:
       top: 10
-      bottom: 10
+      bottom: 26
       left: 35
       right: 10
 

@@ -10,6 +10,9 @@
         %a.table_format.tooltip.button{ href: "#", title: t('output_elements.tooltips.table') }
           %span.fa.fa-table
           Table View
+        %a.download_csv.tooltip.button{ href: "#", title: t('output_elements.tooltips.download_csv') }
+          %span.fa.fa-download
+          Download CSV
 
   - if @dashboard_item.description
     .description= raw @dashboard_item.description

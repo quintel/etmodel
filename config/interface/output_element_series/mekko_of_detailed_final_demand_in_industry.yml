@@ -971,3 +971,39 @@
   dependent_on: 
   output_element_key: mekko_of_detailed_final_demand_in_industry
   key: heat_unused_heat_mekko_of_detailed_final_demand_in_industry
+- label: methanol
+  color: "#FF8C8C"
+  order_by: 7
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_methanol_in_other_non_specified_industry
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_detailed_final_demand_in_industry
+  key: methanol_aggregated_other_mekko_of_detailed_final_demand_in_industry
+- label: ammonia
+  color: "#1ce6d6"
+  order_by: 7
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_ammonia_in_other_non_specified_industry
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_detailed_final_demand_in_industry
+  key: ammonia_aggregated_other_mekko_of_detailed_final_demand_in_industry
+- label: waste_mix
+  color: "#CE7013"
+  order_by: 7
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_waste_mix_in_other_non_specified_industry
+  is_1990: false
+  dependent_on: 
+  output_element_key: mekko_of_detailed_final_demand_in_industry
+  key: waste_mix_aggregated_other_mekko_of_detailed_final_demand_in_industry

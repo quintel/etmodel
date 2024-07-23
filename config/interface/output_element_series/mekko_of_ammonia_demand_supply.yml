@@ -35,6 +35,18 @@
   dependent_on:
   output_element_key: mekko_of_ammonia_demand_supply
   key: ammonia_demand_fertilizer_industry_mekko_of_ammonia_demand_supply
+- label: ammonia_demand_other_industry
+  color: "#0d370d"
+  order_by: 120
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_other_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_other_industry_mekko_of_ammonia_demand_supply  
 - label: ammonia_demand_hydrogen_ammonia_reformer_must_run
   color: "#569CB9"
   order_by: 130
@@ -71,6 +83,7 @@
   dependent_on:
   output_element_key: mekko_of_ammonia_demand_supply
   key: ammonia_demand_export_mekko_of_ammonia_demand_supply
+
 
 - label: ammonia_supply_import_baseload
   color: "#bdfff6"

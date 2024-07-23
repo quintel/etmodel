@@ -5,6 +5,8 @@ class SavedScenariosController < ApplicationController
   load_resource only: %i[load discard undiscard publish unpublish restore confirm_restore]
   load_and_authorize_resource only: %i[show new create edit update destroy]
 
+  before_action :require_user, only: :discarded
+
   before_action only: %i[load] do
     authorize!(:read, @saved_scenario)
   end

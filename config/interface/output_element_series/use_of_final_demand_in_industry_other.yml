@@ -203,3 +203,39 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_other
   key: solar_aggregated_other_use_of_final_demand_in_industry_other
+- label: methanol_non_energetic
+  color: "#FF8C8C"
+  order_by: 7
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_methanol_in_other_non_specified_industry_non_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other
+  key: methanol_aggregated_other_use_of_final_demand_in_industry_other
+- label: ammonia_non_energetic
+  color: "#1ce6d6"
+  order_by: 7
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_ammonia_in_other_non_specified_industry_non_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other
+  key: ammonia_aggregated_other_use_of_final_demand_in_industry_other
+- label: waste_mix_non_energetic
+  color: "#CE7013"
+  order_by: 7
+  group: aggregated_other
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_waste_mix_in_other_non_specified_industry_non_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_other
+  key: waste_mix_aggregated_other_use_of_final_demand_in_industry_other

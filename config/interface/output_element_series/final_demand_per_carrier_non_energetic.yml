@@ -131,3 +131,27 @@
   dependent_on: 
   output_element_key: final_demand_per_carrier_non_energetic
   key: solar_final_demand_per_carrier_non_energetic
+- label: methanol
+  color: "#FF8C8C"
+  order_by: 160
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_methanol_non_energetic_in_bezier
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_non_energetic
+  key: methanol_demand_per_carrier_non_energetic
+- label: waste_mix
+  color: "#CE7013"
+  order_by: 170
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_waste_mix_non_energetic_in_bezier
+  is_1990: false
+  dependent_on: 
+  output_element_key: final_demand_per_carrier_non_energetic
+  key: waste_mix_demand_per_carrier_non_energetic

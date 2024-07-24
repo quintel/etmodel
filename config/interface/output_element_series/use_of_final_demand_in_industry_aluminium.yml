@@ -1,11 +1,11 @@
 ---
 - label: network_gas
   color: "#CCCCCC"
-  order_by: 1
+  order_by: 10
   group: ''
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: network_gas_in_use_of_final_demand_in_industry_aluminium
   is_1990: 
   dependent_on: 
@@ -13,13 +13,25 @@
   key: network_gas_use_of_final_demand_in_industry_aluminium
 - label: electricity
   color: "#4169E1"
-  order_by: 2
+  order_by: 20
   group: ''
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: electricity_in_use_of_final_demand_in_industry_aluminium
   is_1990: 
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_aluminium
   key: electricity_use_of_final_demand_in_industry_aluminium
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 30
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_in_use_of_final_demand_in_industry_aluminium
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_aluminium
+  key: hydrogen_use_of_final_demand_in_industry_aluminium

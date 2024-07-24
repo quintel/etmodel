@@ -6,9 +6,9 @@ D3.merit_order_price_curve =
     margins:
       top: 20
       bottom: 20
-      left: 50
+      left: 70
       right: 20
-      label_left: 20
+      label_left: 25
 
     visibleData: =>
       @rawChartData
@@ -68,7 +68,7 @@ D3.merit_order_price_curve =
         .interpolate('step-after')
 
     main_formatter: () ->
-      (value) -> "€ #{Math.round(value)}"
+      (value) -> "€/MWh #{Math.round(value)}"
 
     refresh: ->
       super

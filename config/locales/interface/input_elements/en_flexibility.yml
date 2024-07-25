@@ -4,44 +4,39 @@ en:
     settings_enable_merit_order:
       title: ''
       description: ''
-    transport_car_using_electricity_fast_charging_share:
-      title: Fast charging
+    transport_car_using_electricity_public_charging_share:
+      title: Public charging
       short_description:
       description: "Which fraction of electricity used by electric vehicles is supplied
-        by so-called 'fast charging'? This type of charging typically happens at charging
-        capacities between 11 to 22 kW.\r\n<br>\r\n<br>\r\nThe profile used to describe
-        this type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
-        target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
-    transport_car_using_electricity_hybrid_charging_share:
-      title: Charging everywhere
-      short_description:
-      description: "Which fraction of electricity used by electric vehicles is supplied
-        by a charging profile which describes people charging at the office as well
-        as at home?\r\n<br>\r\n<br>\r\nThe profile used to describe this type of charging
-        behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
-        target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+        by a charging profile which describes people charging at public charging facilities?\r\n<br>\r\n<br>\r\nThe profile used to describe this type of charging
+        behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
+        target=\"_blank\"> Elaad study \"Regulier en netbewust laden (2023)\"</a>."
     transport_car_using_electricity_home_charging_share:
       title: Charging at home
       short_description:
       description: "Which fraction of electricity used by electric vehicles is supplied
-        by people charging exclusively at home? Charging at home typically happens
-        at a capacity of 3.7 kW.\r\n<br>\r\n<br>\r\nThe profile used to describe this
-        type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
-        target=\"_blank\">Movares study \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
-    transport_car_using_electricity_regular_charging_share:
-      title: Charging regular (Elaad)
+        by a charging profile which describes charging exclusively at home? \r\n<br>\r\n<br>\r\nThe profile used to describe this
+        type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
+        target=\"_blank\"> Elaad study \"Regulier en netbewust laden (2023)\"</a>."
+    transport_car_using_electricity_fast_charging_share:
+      title: Fast charging
       short_description:
-      description: This curve is the regular charging curve from the study <a href="https://refman.energytransitionmodel.com/publications/2099"
-        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
-        from Real Charging Events</a> by ELaad and Jedlix. This study analyses data
-        from 10,000 charging sessions of 140 cars.
-    transport_car_using_electricity_smart_charging_share:
-      title: Charging smart (Elaad)
+      description: "Which fraction of electricity used by electric vehicles is supplied
+        by so-called 'fast charging'? \r\n<br>\r\n<br>\r\nThe profile used to describe
+        this type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
+        target=\"_blank\"> Elaad study \"Regulier en netbewust laden (2023)\"</a>."    
+    transport_car_using_electricity_work_charging_share:
+      title: Charging at work
       short_description:
-      description: This curve is the smart charging curve from the study <a href="https://refman.energytransitionmodel.com/publications/2099"
-        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
-        from Real Charging Events</a> by ELaad and Jedlix. This study analyses data
-        from 10,000 charging sessions of 140 cars.
+      description: "Which fraction of electricity used by electric vehicles is supplied
+        by people charging exclusively at work? \r\n<br>\r\n<br>\r\nThe profile used to describe
+        this type of charging behaviour has been taken from the <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
+        target=\"_blank\"> Elaad study \"Regulier en netbewust laden (2023)\"</a>."    
+    transport_car_using_electricity_custom_profile_charging_share:
+      title: Custom profile
+      short_description:
+      description: |
+        This profile contains a generic profile. You can overwrite this profile with your own data.
     capacity_of_industry_metal_flexibility_load_shifting_electricity:
       title: Load reduction capacity
       short_description:

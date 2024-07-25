@@ -1,36 +1,36 @@
 ---
-- key: transport_car_using_electricity_fast_charging_share
-  share_group: flexibility_demand_response_electric_vehicle_profiles
-  step_value: 0.1
-  unit: "%"
-  interface_group: electric_vehicles_charging_strategy
-  position: 3
-  slide_key: flexibility_flexibility_demand_response_ev
-- key: transport_car_using_electricity_hybrid_charging_share
-  share_group: flexibility_demand_response_electric_vehicle_profiles
-  step_value: 0.1
-  unit: "%"
-  interface_group: electric_vehicles_charging_strategy
-  position: 1
-  slide_key: flexibility_flexibility_demand_response_ev
-- key: transport_car_using_electricity_home_charging_share
-  share_group: flexibility_demand_response_electric_vehicle_profiles
-  step_value: 0.1
-  unit: "%"
-  interface_group: electric_vehicles_charging_strategy
-  position: 2
-  slide_key: flexibility_flexibility_demand_response_ev
-- key: transport_car_using_electricity_regular_charging_share
+- key: transport_car_using_electricity_public_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
   step_value: 0.1
   unit: "%"
   interface_group: electric_vehicles_charging_strategy
   position: 5
   slide_key: flexibility_flexibility_demand_response_ev
-- key: transport_car_using_electricity_smart_charging_share
+- key: transport_car_using_electricity_home_charging_share
   share_group: flexibility_demand_response_electric_vehicle_profiles
   step_value: 0.1
   unit: "%"
   interface_group: electric_vehicles_charging_strategy
-  position: 4
+  position: 10
+  slide_key: flexibility_flexibility_demand_response_ev
+- key: transport_car_using_electricity_fast_charging_share
+  share_group: flexibility_demand_response_electric_vehicle_profiles
+  step_value: 0.1
+  unit: "%"
+  interface_group: electric_vehicles_charging_strategy
+  position: 15
+  slide_key: flexibility_flexibility_demand_response_ev  
+- key: transport_car_using_electricity_work_charging_share
+  share_group: flexibility_demand_response_electric_vehicle_profiles
+  step_value: 0.1
+  unit: "%"
+  interface_group: electric_vehicles_charging_strategy
+  position: 20
+  slide_key: flexibility_flexibility_demand_response_ev
+- key: transport_car_using_electricity_custom_profile_charging_share
+  share_group: flexibility_demand_response_electric_vehicle_profiles
+  step_value: 0.1
+  unit: "%"
+  interface_group: electric_vehicles_charging_strategy
+  position: 25
   slide_key: flexibility_flexibility_demand_response_ev

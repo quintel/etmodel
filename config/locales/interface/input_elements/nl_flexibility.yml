@@ -4,45 +4,39 @@ nl:
     settings_enable_merit_order:
       title: ''
       description: ''
-    transport_car_using_electricity_fast_charging_share:
-      title: Snelladen
+    transport_car_using_electricity_public_charging_share:
+      title: Publiek opladen
       short_description:
-      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
-        wordt door 'snelladen' voldaan? Snelladen gebeurt typisch met laadcapaciteiten
-        tussen de 11 en 22 kW.\r\n<br>\r\n<br>\r\nHet profiel dat dit type laadgedrag
-        beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
-        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
-    transport_car_using_electricity_hybrid_charging_share:
-      title: Overal laden
-      short_description:
-      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
-        wordt voldaan door zowel op het werk als thuis te laden?\r\n<br>\r\n<br>\r\nHet
-        profiel dat dit type laadgedrag beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
-        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+      description: "Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
+        door een laadprofiel dat mensen beschrijft die opladen bij openbare laadfaciliteiten?\r\n<br>\r\n<br>\r\nHet profiel dat wordt gebruikt om dit type laadgedrag te beschrijven
+        is afkomstig uit de <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
+        target=\"_blank\"> Elaad-studie \"Regulier en netbewust laden (2023)\"</a>."
     transport_car_using_electricity_home_charging_share:
-      title: Thuisladen
+      title: Thuis opladen
       short_description:
-      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
-        wordt voldaan door uitsluitend thuis te laden? Thuisladen gebeurt veelal met
-        een laadcapaciteit van 3.7 kW.\r\n<br>\r\n<br>\r\nHet profiel dat dit type
-        laadgedrag beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
-        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
-    transport_car_using_electricity_regular_charging_share:
-      title: Regulier laden (Elaad)
+      description: "Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
+        door mensen die uitsluitend thuis opladen? \r\n<br>\r\n<br>\r\nHet profiel dat wordt gebruikt om dit
+        type laadgedrag te beschrijven is afkomstig uit de <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
+        target=\"_blank\"> Elaad-studie \"Regulier en netbewust laden (2023)\"</a>."
+    transport_car_using_electricity_fast_charging_share:
+      title: Snel opladen
       short_description:
-      description: Dit profiel is het profiel dat bij type laadsessie Regulier van
-        de studie <a href="https://refman.energytransitionmodel.com/publications/2099"
-        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
-        from Real Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert
-        10.000 laadsessies van 140 automobilisten.
-    transport_car_using_electricity_smart_charging_share:
-      title: Slim laden (Elaad)
+      description: "Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
+        door zogenaamd 'snel laden'? \r\n<br>\r\n<br>\r\nHet profiel dat wordt gebruikt om
+        dit type laadgedrag te beschrijven is afkomstig uit de <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
+        target=\"_blank\"> Elaad-studie \"Regulier en netbewust laden (2023)\"</a>."
+    transport_car_using_electricity_work_charging_share:
+      title: Opladen op het werk
       short_description:
-      description: Dit profiel is het profiel dat bij type laadsessie Slim van de
-        studie <a href="https://refman.energytransitionmodel.com/publications/2099"
-        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
-        from Real Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert
-        10.000 laadsessies van 140 automobilisten.
+      description: "Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
+        door mensen die uitsluitend op het werk opladen? \r\n<br>\r\n<br>\r\nHet profiel dat wordt gebruikt om
+        dit type laadgedrag te beschrijven is afkomstig uit de <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
+        target=\"_blank\"> Elaad-studie \"Regulier en netbewust laden (2023)\"</a>."
+    transport_car_using_electricity_custom_profile_charging_share:
+      title: Aangepast profiel
+      short_description:
+      description: |
+        Dit profiel bevat een generiek profiel. U kunt dit profiel overschrijven met uw eigen laad gegevens.
     capacity_of_industry_metal_flexibility_load_shifting_electricity:
       title: Vraagverlaging vermogen
       short_description:

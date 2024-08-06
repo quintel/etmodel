@@ -23,6 +23,42 @@
   dependent_on: 
   output_element_key: industrial_heat_mekko
   key: industry_unused_local_production_steam_hot_water_in_industrial_heat_network_mekko_demand_industrial_heat_mekko
+- label: industry_demand_chemical_fertilizers_transformation_heat_network_mekko
+  color: "#ddd3d3"
+  order_by: 115
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_demand_chemical_fertilizers_transformation_heat_network_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: industrial_heat_mekko
+  key: industry_demand_chemical_fertilizers_transformation_heat_network_mekko_demand_industrial_heat_mekko  
+- label: industry_demand_chemical_other_transformation_heat_network_mekko
+  color: "#f8f1f1"
+  order_by: 120
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_demand_chemical_other_transformation_heat_network_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: industrial_heat_mekko
+  key: industry_demand_chemical_other_transformation_heat_network_mekko_demand_industrial_heat_mekko    
+- label: industry_demand_chemical_refineries_transformation_heat_network_mekko
+  color: "#747373"
+  order_by: 125
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: industry_demand_chemical_refineries_transformation_heat_network_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: industrial_heat_mekko
+  key: industry_demand_chemical_refineries_transformation_heat_network_mekko_demand_industrial_heat_mekko        
 
 - label: energy_chp_coal_gas_in_industrial_heat_network_mekko
   color: "#6AB04C"

@@ -83,6 +83,44 @@
   dependent_on:
   output_element_key: mekko_of_ammonia_demand_supply
   key: ammonia_demand_export_mekko_of_ammonia_demand_supply
+- label: ammonia_demand_transformation_chemical_fertilizers_industry
+  color: "#ddd3d3"
+  group: demand
+  order_by: 160
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_transformation_chemical_fertilizers_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_transformation_chemical_fertilizers_industry_mekko_of_ammonia_demand_supply
+- label: ammonia_demand_transformation_chemical_other_industry
+  color: "#f8f1f1"
+  order_by: 170
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_transformation_chemical_other_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_transformation_chemical_other_industry_mekko_of_ammonia_demand_supply
+- label: ammonia_demand_transformation_chemical_refineries_industry
+  color: "#747373"
+  order_by: 180
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_demand_transformation_chemical_refineries_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_demand_transformation_chemical_refineries_industry_mekko_of_ammonia_demand_supply
+
+
 
 
 - label: ammonia_supply_import_baseload
@@ -109,3 +147,40 @@
   dependent_on:
   output_element_key: mekko_of_ammonia_demand_supply
   key: ammonia_supply_import_backup_mekko_of_ammonia_demand_supply
+- label: ammonia_supply_transformation_chemical_fertilizers_industry
+  color: "#d8eded"
+  order_by: 220
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_supply_transformation_chemical_fertilizers_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_supply_transformation_chemical_fertilizers_industry_mekko_of_ammonia_demand_supply
+- label: ammonia_supply_transformation_chemical_other_industry
+  color: "#e6fffe"
+  order_by: 230
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_supply_transformation_chemical_other_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_supply_transformation_chemical_other_industry_mekko_of_ammonia_demand_supply
+- label: ammonia_supply_transformation_chemical_refineries_industry
+  color: "#697a7a"
+  order_by: 240
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: ammonia_supply_transformation_chemical_refineries_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_ammonia_demand_supply
+  key: ammonia_supply_transformation_chemical_refineries_industry_mekko_of_ammonia_demand_supply
+

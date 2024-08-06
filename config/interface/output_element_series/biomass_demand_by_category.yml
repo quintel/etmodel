@@ -56,6 +56,14 @@
   gquery: max_demand_wet_biomass
   output_element_key: biomass_demand_by_category
   key: biomass_potential_wet_biomass_demand_by_category_1
+- label: industry_transformation
+  color: "#b6b8b6"
+  order_by: 40
+  group: wet
+  gquery: industry_transformation_from_wet_biomass
+  output_element_key: biomass_demand_by_category
+  key: industry_transformation_from_wet_biomass_biomass_demand_by_category
+
 - label: chp_heat_and_electricity
   color: "#FFB300"
   order_by: 101
@@ -113,6 +121,13 @@
   gquery: max_demand_dry_biomass
   output_element_key: biomass_demand_by_category
   key: biomass_potential_dry_biomass_demand_by_category_1
+- label: industry_transformation
+  color: "#b6b8b6"
+  order_by: 140
+  group: dry
+  gquery: industry_transformation_from_dry_biomass
+  output_element_key: biomass_demand_by_category
+  key: industry_transformation_from_dry_biomass_biomass_demand_by_category
 - label: bio_fuels
   color: "#2296F3"
   order_by: 201
@@ -135,6 +150,13 @@
   gquery: max_demand_oily_biomass
   output_element_key: biomass_demand_by_category
   key: biomass_potential_oily_biomass_demand_by_category_1
+- label: industry_transformation
+  color: "#b6b8b6"
+  order_by: 215
+  group: oily
+  gquery: industry_transformation_from_oily_biomass
+  output_element_key: biomass_demand_by_category
+  key: industry_transformation_from_oily_biomass_biomass_demand_by_category  
 - label: chp_heat_and_electricity
   color: "#FFB300"
   order_by: 301
@@ -171,3 +193,10 @@
   gquery: max_demand_biogenic_waste
   output_element_key: biomass_demand_by_category
   key: biomass_potential_biogenic_waste_biomass_demand_by_category_1
+- label: industry_transformation
+  color: "#b6b8b6"
+  order_by: 325
+  group: biogenic_waste
+  gquery: industry_transformation_from_biogenic_waste
+  output_element_key: biomass_demand_by_category
+  key: industry_transformation_from_biogenic_waste_biomass_demand_by_category

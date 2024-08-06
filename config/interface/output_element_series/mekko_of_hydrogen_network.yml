@@ -191,6 +191,44 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_synthetic_products_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: hydrogen_demand_transformation_chemical_fertilizers_industry
+  color: "#ddd3d3"
+  group: demand
+  order_by: 260
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_demand_transformation_chemical_fertilizers_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: hydrogen_demand_transformation_chemical_fertilizers_industry_mekko_of_hydrogen_network
+- label: hydrogen_demand_transformation_chemical_other_industry
+  color: "#f8f1f1"
+  order_by: 270
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_demand_transformation_chemical_other_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: hydrogen_demand_transformation_chemical_other_industry_mekko_of_hydrogen_network
+- label: hydrogen_demand_transformation_chemical_refineries_industry
+  color: "#747373"
+  order_by: 280
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_demand_transformation_chemical_refineries_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: hydrogen_demand_transformation_chemical_refineries_industry_mekko_of_hydrogen_network
+
+
 
 - label: industry_residual_hydrogen_for_mekko
   color: "#006400"
@@ -420,3 +458,40 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_import_hydrogen_backup_for_mekko_supply_mekko_of_hydrogen_network    
+- label: hydrogen_supply_transformation_chemical_fertilizers_industry
+  color: "#d8eded"
+  order_by: 480
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_supply_transformation_chemical_fertilizers_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: hydrogen_supply_transformation_chemical_fertilizers_industry_mekko_of_hydrogen_network
+- label: hydrogen_supply_transformation_chemical_other_industry
+  color: "#e6fffe"
+  order_by: 490
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_supply_transformation_chemical_other_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: hydrogen_supply_transformation_chemical_other_industry_mekko_of_hydrogen_network
+- label: hydrogen_supply_transformation_chemical_refineries_industry
+  color: "#697a7a"
+  order_by: 500
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_supply_transformation_chemical_refineries_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: hydrogen_supply_transformation_chemical_refineries_industry_mekko_of_hydrogen_network
+

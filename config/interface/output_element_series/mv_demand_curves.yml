@@ -2,13 +2,13 @@
 - label: network_mv_demand_curve
   color: red
   order_by: 1
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: true
-  target_line_position: 
+  target_line_position:
   gquery: network_mv_demand_curve
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: mv_demand_curves
   key: network_mv_demand_curve_mv_demand_curves
 - label: network_lv
@@ -59,6 +59,18 @@
   dependent_on:
   output_element_key: mv_demand_curves
   key: mv_industry_metals_load_shifting_output_curve_mv_demand_curves
+- label: mv_industry_transformation
+  color: "#9A9C9C"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: mv_industry_transformation_load_curve
+  is_1990:
+  dependent_on:
+  output_element_key: mv_demand_curves
+  key: mv_industry_transformation_mv_demand_curves
 - label: mv_other
   color: "#187498"
   order_by: 1

@@ -179,6 +179,18 @@
   dependent_on:
   output_element_key: dynamic_demand_curve
   key: merit_industry_other_dynamic_demand_curve
+- label: merit_industry_transformation
+  color: "#9A9C9C"
+  order_by: 18
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: merit_industry_transformation_demand
+  is_1990:
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_industry_transformation_dynamic_demand_curve
 - label: flexibility_conversion_and_storage
   color: "#0AA1DD"
   order_by: 20

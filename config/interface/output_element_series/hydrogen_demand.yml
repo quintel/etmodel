@@ -60,18 +60,42 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: industry_heat_network_demand_hydrogen_demand
-- label: industry_transformation_hydrogen
-  color: "#9A9C9C"
+- label: industry_transformation_chemical_fertilizers
+  color: "#ddd3d3"
+  order_by: 26
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_transformation_chemical_fertilizers_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: industry_transformation_chemical_fertilizers_hydrogen_demand
+- label: industry_transformation_chemical_other
+  color: "#f8f1f1"
+  order_by: 27
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_transformation_chemical_other_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: industry_transformation_chemical_other_hydrogen_demand
+- label: industry_transformation_chemical_refineries
+  color: "#747373"
   order_by: 28
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: industry_transformation_hydrogen_input_curve
+  gquery: industry_transformation_chemical_refineries_hydrogen_input_curve
   is_1990: false
   dependent_on:
   output_element_key: hydrogen_demand
-  key: industry_transformation_demand_hydrogen_demand
+  key: industry_transformation_chemical_refineries_hydrogen_demand
 - label: industry_final_demand_for_chemical_other_hydrogen_non_energetic
   color: "#228B22"
   order_by: 30

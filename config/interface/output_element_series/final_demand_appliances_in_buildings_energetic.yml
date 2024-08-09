@@ -1,28 +1,28 @@
 ---
-- label: coal
-  color: "#333333"
+- label: coal_and_derivatives
+  color: "#2b2727"
   order_by: 5
   group: 
   show_at_first: 
   is_target_line: true
   target_line_position: 
-  gquery: coal_in_use_of_final_demand_of_appliances_in_buildings
+  gquery: coal_and_derivatives_in_use_of_final_demand_of_appliances_in_buildings
   is_1990: 
   dependent_on: 
   output_element_key: final_demand_appliances_in_buildings_energetic
-  key: coal_final_demand_appliances_in_buildings_energetic
-- label: crude_oil
+  key: coal_and_derivatives_final_demand_appliances_in_buildings_energetic
+- label: oil_and_derivatives
   color: "#854321"
   order_by: 10
   group: 
   show_at_first: 
   is_target_line: 
   target_line_position: 
-  gquery: crude_oil_in_use_of_final_demand_of_appliances_in_buildings
+  gquery: oil_and_derivatives_in_use_of_final_demand_of_appliances_in_buildings
   is_1990: 
   dependent_on: 
   output_element_key: final_demand_appliances_in_buildings_energetic
-  key: crude_oil_final_demand_appliances_in_buildings_energetic
+  key: oil_and_derivatives_final_demand_appliances_in_buildings_energetic
 - label: electricity
   color: "#4169E1"
   order_by: 15
@@ -47,15 +47,15 @@
   dependent_on: 
   output_element_key: final_demand_appliances_in_buildings_energetic
   key: network_gas_final_demand_appliances_in_buildings_energetic
-- label: wood_pellets
+- label: biomass_products
   color: "#5D7929"
   order_by: 25
   group: 
   show_at_first: 
   is_target_line: 
   target_line_position: 
-  gquery: wood_pellets_in_use_of_final_demand_of_appliances_in_buildings
+  gquery: biomass_products_in_use_of_final_demand_of_appliances_in_buildings
   is_1990: 
   dependent_on: 
   output_element_key: final_demand_appliances_in_buildings_energetic
-  key: wood_pelletsfinal_demand_appliances_in_buildings_energetic      
+  key: biomass_products_final_demand_appliances_in_buildings_energetic      

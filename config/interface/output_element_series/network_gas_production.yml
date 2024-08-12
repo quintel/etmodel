@@ -107,27 +107,3 @@
   dependent_on: 
   output_element_key: network_gas_production
   key: propane_network_gas_production
-- label: natural_gas_residual_industry
-  color: "#964B00"
-  order_by: 215
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: industry_residual_natural_gas_network_gas_output_curve
-  is_1990: false
-  dependent_on: 
-  output_element_key: network_gas_production
-  key: industry_residual_natural_gas_network_gas_production
-- label: greengas_residual_industry
-  color: "#006400"
-  order_by: 320
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: industry_residual_greengas_network_gas_output_curve
-  is_1990: false
-  dependent_on: 
-  output_element_key: network_gas_production
-  key: industry_residual_greengas_network_gas_production

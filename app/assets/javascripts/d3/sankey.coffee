@@ -21,7 +21,6 @@ D3.sankey =
           {id: 'imported_liquid_hydrogen',     column: 0, label: 'imported_liquid_hydrogen',          color: '#87cfeb'},
           {id: 'imported_lohc',                column: 0, label: 'imported_lohc',                     color: '#87cfeb'},
           {id: 'imported_ammonia',             column: 0, label: 'imported_ammonia',                  color: '#1ce6d6'},
-          {id: 'residual_hydrogen',            column: 0, label: 'residual_hydrogen',                 color: '#87cfeb'},
           {id: 'extracted_oil',                column: 0, label: 'extracted_oil',                     color: '#8c564b'},
           {id: 'imported_oil',                 column: 0, label: 'imported_oil',                      color: '#8c564b'},
           {id: 'oil_products',                 column: 0, label: 'oil_products',                      color: '#8c564b'},
@@ -74,7 +73,6 @@ D3.sankey =
           {left: 'imported_liquid_hydrogen',     right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_liquid_hydrogen_to_hydrogen',     color: '#87cfeb'},
           {left: 'imported_lohc',                right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_lohc_to_hydrogen',                color: '#87cfeb'},
           {left: 'imported_ammonia',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_ammonia_to_hydrogen',                      color: '#1ce6d6'},
-          {left: 'residual_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_residual_hydrogen_to_hydrogen',            color: '#87cfeb'},
 
           {left: 'extracted_oil',                right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',                       color: '#8c564b'},
           {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_and_oil_products_to_oil_and_oil_products',   color: '#8c564b'},
@@ -524,8 +522,7 @@ D3.sankey =
           {left: 'dry',                             right: 'bunkers',                     gquery: 'dry_biomass_to_bunkers_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'export',                      gquery: 'dry_biomass_to_export_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'losses',                      gquery: 'dry_biomass_to_losses_in_biomass_sankey', color: '#DCDCDC'},
-          {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'},
-          {left: 'industry',                        right: 'greengas',                    gquery: 'industry_to_greengas_in_biomass_sankey', color: '#A3CB38'}
+          {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'}
         ]
     co2_sankey:
       data:

@@ -109,18 +109,6 @@
   dependent_on:
   output_element_key: hydrogen_production
   key: energy_hydrogen_lohc_reformer_hydrogen_production
-- label: industry_residual_hydrogen
-  color: "#006400"
-  order_by: 50
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: industry_residual_hydrogen_hydrogen_production
-  is_1990: false
-  dependent_on:
-  output_element_key: hydrogen_production
-  key: industry_residual_hydrogen_hydrogen_production
 - label: industry_transformation_chemical_fertilizers
   color: "#ddd3d3"
   order_by: 51

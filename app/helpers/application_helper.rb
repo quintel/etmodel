@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def has_active_scenario?
     Current.setting.active_scenario? || @active_scenario
   end
@@ -182,5 +184,61 @@ module ApplicationHelper
         json.api_session_id nil
       end
     end.html_safe
+  end
+
+  def custom_pagy_nav(pagy)
+    html = +%(<ul class="pagination">)
+
+    # First page link or number
+    if pagy.page > 3
+      html << %(<li><a href="#{pagy_url_for(1, pagy)}"> << First</a></li>)
+    elsif pagy.page > 1
+      html << %(<li><a href="#{pagy_url_for(1, pagy)}">1</a></li>)
+    end
+
+    # Previous button
+    if pagy.prev
+      html << %(<li><a href="#{pagy_url_for(pagy.prev, pagy)}">< Prev</a></li>)
+    else
+      html << %(<li class="disabled">1</li>)
+    end
+
+    # Pages around the current page
+    surrounding_pages = [(pagy.page - 4), (pagy.page - 3), (pagy.page - 2), (pagy.page - 1), pagy.page, (pagy.page + 1), (pagy.page + 2), (pagy.page + 3), (pagy.page + 4)]
+    .select do |p|
+      p > 1 && p < pagy.pages
+    end
+
+    surrounding_pages.uniq.each do |page|
+      if page == pagy.page
+        html << %(<li class="current">#{page}</li>)
+      else
+        html << %(<li><a href="#{pagy_url_for(page, pagy)}">#{page}</a></li>)
+      end
+    end
+
+    # Next button
+    if pagy.next
+      html << %(<li><a href="#{pagy_url_for(pagy.next, pagy)}">Next > </a></li>)
+    else
+      html << %(<li class="disabled">Next</li>)
+    end
+
+    # Last page link or number
+    if pagy.page < pagy.pages - 2
+      html << %(<li><a href="#{pagy_url_for(pagy.pages, pagy)}">Last >></a></li>)
+    elsif pagy.page < pagy.pages
+      html << %(<li><a href="#{pagy_url_for(pagy.pages, pagy)}">#{pagy.pages}</a></li>)
+    end
+
+    html << %(</ul>)
+    html.html_safe
+  end
+
+  private
+
+  def pagy_url_for(page, pagy)
+    pagy_url = pagy.vars[:url]
+    "#{pagy_url}?page=#{page}"
   end
 end

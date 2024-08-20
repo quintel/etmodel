@@ -20,10 +20,12 @@
           %ul.myc-list
             = render partial: 'multi_year_chart', collection: @multi_year_charts
         #myc-session-paginator
-          = link_to_next_page @multi_year_charts, 'More...', remote: true
+          != pagy_nav_custom(@pagy)
 
       #available-scenarios
         %h2== #{t('multi_year_charts.start')}&hellip;
         = form_tag multi_year_charts_path, method: 'post', class: 'select-scenarios' do
           %ul.myc-list
-            = render partial: 'scenarios_slice', locals: { scenarios: @scenarios }
+            - @scenarios.each do |scenario|
+              - if can_use_as_myc_scenario?(scenario)
+                = render partial: 'scenarios_slice', locals: { scenarios: [scenario] }

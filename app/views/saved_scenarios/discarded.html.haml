@@ -18,7 +18,8 @@
             </svg>
           = t('scenario.trash.notice', deleted_after: SavedScenario::AUTO_DELETES_AFTER.in_days.to_i)
         = render partial: 'discarded_row', collection: @discarded_scenarios
-        = paginate @discarded_scenarios
+        - if @pagy.pages > 1
+          != pagy_nav_custom(@pagy)
       - else
         .empty-state
           %h4= t('scenario.trash.empty.title')

@@ -6,8 +6,7 @@
     .internal-box
       - if current_user.admin?
         = render partial: 'scenario_row', collection: @saved_scenarios
-        = paginate @saved_scenarios
+        != custom_pagy_nav(@pagy)
       - else
         .empty-state
           %h4= t('scenario.cannot_load')
-

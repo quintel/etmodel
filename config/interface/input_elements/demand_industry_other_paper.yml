@@ -20,7 +20,7 @@
   share_group: other_paper_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat production
+  interface_group: heat_production
   related_node: industry_other_paper_burner_network_gas
   position: 3
   slide_key: demand_industry_other_paper
@@ -28,7 +28,7 @@
   share_group: other_paper_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat production
+  interface_group: heat_production
   related_node: industry_other_paper_burner_crude_oil
   position: 4
   slide_key: demand_industry_other_paper
@@ -36,7 +36,7 @@
   share_group: other_paper_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat production
+  interface_group: heat_production
   related_node: industry_other_paper_burner_wood_pellets
   position: 6
   slide_key: demand_industry_other_paper
@@ -44,7 +44,7 @@
   share_group: other_paper_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat production
+  interface_group: heat_production
   related_node: industry_other_paper_burner_coal
   position: 5
   slide_key: demand_industry_other_paper
@@ -52,14 +52,14 @@
   share_group: other_paper_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat production
+  interface_group: heat_production
   position: 9
   slide_key: demand_industry_other_paper
 - key: industry_other_paper_heater_electricity_share
   share_group: other_paper_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat production
+  interface_group: heat_production
   related_node: industry_other_paper_heater_electricity
   position: 8
   slide_key: demand_industry_other_paper
@@ -74,7 +74,7 @@
   share_group: other_paper_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat production
+  interface_group: heat_production
   related_node: industry_other_paper_burner_hydrogen
   position: 7
   slide_key: demand_industry_other_paper

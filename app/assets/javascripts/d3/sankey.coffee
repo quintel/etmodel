@@ -25,6 +25,7 @@ D3.sankey =
           {id: 'imported_oil',                 column: 0, label: 'imported_oil',                      color: '#8c564b'},
           {id: 'oil_products',                 column: 0, label: 'oil_products',                      color: '#8c564b'},
           {id: 'imported_methanol',            column: 0, label: 'imported_methanol',                 color: '#FF8C8C'},
+          {id: 'not_defined',                  column: 0, label: 'not_defined',                       color: '#DCDCDC'},
 
           {id: 'electricity',                  column: 1, label: 'electricity',                       color: '#1f77b4'},
           {id: 'heat',                         column: 1, label: 'heat',                              color: '#cc0000'},
@@ -66,25 +67,28 @@ D3.sankey =
           {left: 'residual_heat',                right: 'heat',                      gquery: 'sankey_0_to_1_residual_heat_to_heat',                    color: '#cc0000'},
           {left: 'imported_heat',                right: 'heat',                      gquery: 'sankey_0_to_1_imported_heat_to_heat',                    color: '#cc0000'},
           {left: 'geothermal',                   right: 'heat',                      gquery: 'sankey_0_to_1_geothermal_to_heat',                       color: '#FF8400'},
-
+4
           {left: 'biomass_products',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_biomass_products_to_hydrogen',             color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'hydrogen',                  gquery: 'sankey_0_to_1_natural_gas_to_hydrogen',                  color: '#7f7f7f'},
           {left: 'imported_hydrogen',            right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_hydrogen_to_hydrogen',            color: '#87cfeb'},
           {left: 'imported_liquid_hydrogen',     right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_liquid_hydrogen_to_hydrogen',     color: '#87cfeb'},
           {left: 'imported_lohc',                right: 'hydrogen',                  gquery: 'sankey_0_to_1_imported_lohc_to_hydrogen',                color: '#87cfeb'},
           {left: 'imported_ammonia',             right: 'hydrogen',                  gquery: 'sankey_0_to_1_ammonia_to_hydrogen',                      color: '#1ce6d6'},
+          {left: 'not_defined',                  right: 'hydrogen',                  gquery: 'sankey_0_to_1_not_defined_to_hydrogen',                  color: '#DCDCDC'},
 
           {left: 'extracted_oil',                right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',                       color: '#8c564b'},
           {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_and_oil_products_to_oil_and_oil_products',   color: '#8c564b'},
           {left: 'biomass_products',             right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_biomass_products_to_oil_and_oil_products',                color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_natural_gas_to_oil_and_oil_products',                     color: '#7f7f7f'},
+          {left: 'not_defined',                  right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_not_defined_to_oil_and_oil_products',                      color: '#DCDCDC'},
 
           {left: 'biomass_products',             right: 'waste_mix',                 gquery: 'sankey_0_to_1_biomass_products_to_waste_mix',            color: '#2ca02c'},
           {left: 'non_biogenic_waste',           right: 'waste_mix',                 gquery: 'sankey_0_to_1_non_biogenic_waste_to_waste_mix',          color: '#BA7D40'},
 
           {left: 'imported_methanol',            right: 'methanol',                  gquery: 'sankey_0_to_1_imported_methanol_to_methanol',            color: '#FF8C8C'},
           {left: 'biomass_products',             right: 'methanol',                  gquery: 'sankey_0_to_1_biomass_products_to_methanol',             color: '#2ca02c'}
-          {left: 'natural_gas',                  right: 'methanol',                  gquery: 'sankey_0_to_1_natural_gas_to_methanol',                 color: '#7f7f7f'},
+          {left: 'natural_gas',                  right: 'methanol',                  gquery: 'sankey_0_to_1_natural_gas_to_methanol',                  color: '#7f7f7f'},
+          {left: 'not_defined',                  right: 'methanol',                  gquery: 'sankey_0_to_1_not_defined_to_methanol',                  color: '#DCDCDC'},
 
           {left: 'biomass_products',             right: 'network_gas',               gquery: 'sankey_0_to_1_biomass_products_to_network_gas',          color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'network_gas',               gquery: 'sankey_0_to_1_natural_gas_to_network_gas',               color: '#7f7f7f'},
@@ -92,6 +96,7 @@ D3.sankey =
           {left: 'imported_ammonia',             right: 'ammonia',                   gquery: 'sankey_0_to_1_imported_ammonia_to_ammonia',              color: '#FF8C8C'},
           {left: 'biomass_products',             right: 'ammonia',                   gquery: 'sankey_0_to_1_biomass_products_to_ammonia',              color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'ammonia',                   gquery: 'sankey_0_to_1_natural_gas_to_ammonia',                   color: '#7f7f7f'},
+          {left: 'not_defined',                  right: 'ammonia',                   gquery: 'sankey_0_to_1_not_defined_to_ammonia',                  color: '#DCDCDC'},
 
           {left: 'hydrogen',                     right: 'electricity',               gquery: 'sankey_1_to_1_hydrogen_to_electricity',                  color: '#87cfeb'},
           {left: 'oil_and_oil_products',         right: 'electricity',               gquery: 'sankey_1_to_1_oil_and_oil_products_to_electricity',      color: '#8c564b'},

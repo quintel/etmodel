@@ -63,6 +63,17 @@ $slider-box-height: 22px
     margin-left: 4px
     width: 20px
 
+  .show-info.coupling-icon
+    background: asset-url("icons/link.svg") right no-repeat
+    color: #8f8f8f
+    width: 20px
+    display: inline-block
+    height: 20px
+    margin-bottom: -3px
+    &:hover
+      background: asset-url("icons/link.svg") right no-repeat
+      filter: brightness(0.5)
+
   .reset
     @include input-slider-button(0px)
     margin-left: 0
@@ -149,6 +160,9 @@ $slider-box-height: 22px
       -webkit-user-select: none
       -moz-user-select: none
       user-select: none
+      &.coupling-icon
+        background: asset-url("icons/link.svg") right no-repeat
+        filter: brightness(0.5)
 
   // Adjustment to vertical alignment of label and value text.
   label, .output
@@ -401,14 +415,6 @@ html.no-opacity .quinn.disabled
   .slider:has(.hidden)
     display: none
 
-  .interface_group
-    span.coupled
-      background: asset-url("icons/link.svg") right no-repeat
-      color: #aaa
-      width: 15px
-      display: inline-block
-      height: 15px
-      margin-bottom: -3px
 
 // Inputs where values are rendered as a radio button list.
 

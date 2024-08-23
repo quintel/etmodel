@@ -439,6 +439,7 @@
           input_element_key: this.model.get('key'),
           end_year: App.settings.get('end_year'),
           info_link: I18n.t('input_elements.common.info_link'),
+          coupling_icon: this.model.get('coupling_icon'),
           info_coupling: I18n.t('input_elements.common.info_coupling'),
         })
       );

@@ -22,13 +22,17 @@
 
             <div class="increase"></div>
             <div class="output"></div>
-            <div class="show-info"></div>
+            <% if (coupling_icon) { %>
+                <div class="show-info coupling-icon"></div>
+            <% } else { %>
+                <div class="show-info"></div>
+            <% } %>
         </div>
     </div>
 
     <div class="info-wrap">
         <div class="info">
-            <% if (coupling) { %>
+            <% if (coupling_icon) { %>
                 <div class="node-detail-wrapper coupling-info">
                   <a href="https://docs.energytransitionmodel.com/main/external-coupling#coupling-external-inputs" target=\"_blank\">
                     <span>

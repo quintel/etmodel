@@ -29,8 +29,6 @@
           .interface_group
             %hr
             %span.label
-              - if sliders.any? { |slider| slider.coupled_interface_group }
-                %span.coupled
               = t("accordion.#{to_yml_syntax(group)}").html_safe
             - unless slide.group_sub_header.blank?
               %span.sub_header_arrow

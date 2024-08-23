@@ -162,11 +162,8 @@ $slider-box-height: 22px
     .output
       background: none
       cursor: default
-
-  .output.coupled
-    background: asset-url("icons/link.svg") right no-repeat
-    color: #aaa
-
+  &.hidden
+    display: none
 
   // Buttons are only visible on hovering the slider div.
   .reset, .decrease, .increase
@@ -397,6 +394,21 @@ html.no-opacity .quinn.disabled
   .interface_group + .slider p.toggle-title
     border-top: none
     padding-top: 0
+
+  // Hide coupled sliders
+  .with-group:has(.hidden)
+    display: none
+  .slider:has(.hidden)
+    display: none
+
+  .interface_group
+    span.coupled
+      background: asset-url("icons/link.svg") right no-repeat
+      color: #aaa
+      width: 15px
+      display: inline-block
+      height: 15px
+      margin-bottom: -3px
 
 // Inputs where values are rendered as a radio button list.
 

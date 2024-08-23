@@ -596,6 +596,7 @@
         }
 
         if (this.model.get('coupled')) {
+          this.$el.addClass('hidden');
           this.valueElement.addClass('coupled');
           this.valueElement.html('');
         }
@@ -603,6 +604,7 @@
         this.quinn.disable();
       } else {
         this.$el.removeClass('disabled');
+        this.$el.removeClass('hidden');
         this.valueElement.removeClass('coupled');
         this.setTransientValue(this.quinn.model.value);
         this.quinn.enable();

@@ -10,7 +10,7 @@ class UncoupleAPIScenario
   end
 
   def call
-    @http_client.put("/api/v3/scenarios/#{@id}", coupling: false)
+    @http_client.post("/api/v3/scenarios/#{@id}/uncouple", force: true)
     ServiceResult.success
   rescue Faraday::ResourceNotFound
     ServiceResult.failure('Scenario not found')

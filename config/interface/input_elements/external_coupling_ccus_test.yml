@@ -4,7 +4,6 @@
   unit: Mton
   position: 100
   slide_key: supply_ccus_utilisation_storage
-  dependent_on: ccus
   share_group: ''
   interface_group: external_coupling_ccus_utilisation
 - key: external_coupling_energy_production_synthetic_kerosene_demand
@@ -12,7 +11,6 @@
   unit: PJ
   position: 102
   slide_key: supply_ccus_utilisation_storage
-  dependent_on: ccus
   share_group: ''
   interface_group: external_coupling_ccus_utilisation
 - key: external_coupling_energy_production_synthetic_methanol_demand
@@ -20,6 +18,5 @@
   unit: PJ
   position: 104
   slide_key: supply_ccus_utilisation_storage
-  dependent_on: ccus
   share_group: ''
   interface_group: external_coupling_ccus_utilisation

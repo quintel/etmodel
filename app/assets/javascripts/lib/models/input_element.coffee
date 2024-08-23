@@ -25,7 +25,7 @@ class @InputElement extends Backbone.Model
     @get('disabled') || App.scenario.isReadOnly()
 
   isCoupled: ->
-    this.isDisabled() && @get('coupling_groups')
+    this.isDisabled() && @get('coupling_disabled')
 
   conversions: ->
     conversions = @get('conversions') or []
@@ -191,8 +191,7 @@ class @InputElementList extends Backbone.Collection
       i.set({
         user_value: def
         disabled: dis
-        # Was it disabled by a coupling?
-        coupled: values.coupling_groups && dis
+        coupled: dis && values.coupling_disabled
       }, { silent: true })
 
       i.trigger('initial-set:user_value')

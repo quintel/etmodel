@@ -6,7 +6,8 @@ FactoryBot.define do
     balanced_values { {} }
     end_year { 2050 }
     esdl_exportable { false }
-    coupling { false }
+    active_couplings { [] }
+    inactive_couplings { [] }
     keep_compatible { false }
     metadata { {} }
     users { [{ id: 1, name: 'John Doe' }] }

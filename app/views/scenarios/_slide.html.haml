@@ -25,7 +25,7 @@
         = render :partial => 'input_elements/slider', :object => input_element
 
       - slide.grouped_input_elements.each do |group, sliders|
-        .with-group
+        .with-group{ class: mixed_coupled?(sliders) ? 'mixed' : 'unmixed' }
           .interface_group
             %hr
             %span.label

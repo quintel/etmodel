@@ -116,6 +116,12 @@ module ApplicationHelper
     end
   end
 
+  # Public: returns true if the sliders are a mix of coupling and
+  # ordinary sliders
+  def mixed_coupled?(sliders)
+    sliders.any?(&:coupling_icon) && !sliders.all?(&:coupling_icon)
+  end
+
   # Public: Receives a settings object and converts it to a hash suitable for
   # serialization as JSON.
   def settings_as_json(setting)

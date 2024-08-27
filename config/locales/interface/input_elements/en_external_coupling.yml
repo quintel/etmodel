@@ -1,0 +1,1143 @@
+---
+en:
+  input_elements:
+    external_coupling_molecules_other_utilisation_demand:
+      title: Other utilisation
+      description: |
+        CO2 demand for other utilisation
+    external_coupling_energy_production_synthetic_kerosene_demand:
+      title: Synthetic kerosene production
+      description: |
+        Energetic production of kerosene from captured CO2
+    external_coupling_energy_production_synthetic_methanol_demand:
+      title: Synthetic methanol production
+      description: |
+        Energetic production of methanol from captured CO2
+    external_coupling_industry_chemical_fertilizers_combustion_ccus_capture_potential:
+      title: Potential CO2 capture from emissions
+      description: |
+        Share of CO2 from combustion that could potentially be captured by CCS
+    external_coupling_industry_chemical_fertilizers_combustion_ccus_electricity_use:
+      title: Electricity use of CO2 capture
+      description: |
+        Electricity demand per captured CO2 from combustion
+    external_coupling_industry_chemical_fertilizers_combustion_ccus_captured_co2:
+      title: Captured CO2 from potential
+      description: |
+        Share of CO2 capture potential from combustion that is actually captured by CCS
+    external_coupling_industry_chemical_fertilizers_steam_hot_water_share:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in energetic heat demand
+    external_coupling_industry_chemical_fertilizers_burner_wood_pellets_share:
+      title: Biomass-fired heater
+      description: |
+        Share of wood pellets burner in energetic heat demand
+    external_coupling_industry_chemical_fertilizers_burner_hydrogen_share:
+      title: Hydrogen-fired heater
+      description: |
+        Share of hybrid hydrogen heater in energetic heat demand
+    external_coupling_industry_chemical_fertilizers_burner_coal_share:
+      title: Coal-fired heater
+      description: |
+        Share of coal burner in energetic heat demand
+    external_coupling_industry_chemical_fertilizers_burner_crude_oil_share:
+      title: Oil-fired heater
+      description: |
+        Share of crude oil burner in energetic heat demand
+    external_coupling_industry_chemical_fertilizers_burner_network_gas_share:
+      title: Gas-fired heater
+      description: |
+        Share of hybrid network gas heater in energetic heat demand
+    external_coupling_industry_chemical_fertilizers_total_useable_heat_share:
+      title: Energetic heat demand for production
+      description: |
+        Share of energetic heat demand in useful energetic and non-energetic demand
+    external_coupling_industry_chemical_fertilizers_residual_heat_share:
+      title: Residual heat output
+      description: |
+        Share of residual heat potential in useful energetic and non-energetic demand (excl. electricity demand)
+    external_coupling_industry_chemical_fertilizers_total_excluding_electricity:
+      title: Energetic demand (excl. electricity)
+      description: |
+        Useful energetic and non-energetic demand (excl. electricity demand) (scaling factor)
+    external_coupling_industry_chemical_fertilizers_electricity:
+      title: Energetic demand for electricity
+      description: |
+        Useful energetic demand for electricity (excl. demand for CCUS and heat) (scaling factor)
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_total_demand:
+      title: Size
+      description: |
+        Useful energetic demand of industrial transformation
+    external_coupling_industry_chemical_fertilizers_p2h_capacity:
+      title: Power-to-heat boiler for gas and H2 heaters
+      description: |
+        Total capacity of hybrid hydrogen and network gas heaters
+    external_coupling_industry_chemical_fertilizers_non_energetic_wood_pellets_share:
+      title: Biomass
+      description: |
+        Share of wood pellets in non-energetic demand
+    external_coupling_industry_chemical_fertilizers_non_energetic_coal_share:
+      title: Coal
+      description: |
+        Share of coal in non-energetic demand
+    external_coupling_industry_chemical_fertilizers_non_energetic_crude_oil_share:
+      title: Oil
+      description: |
+        Share of crude oil in non-energetic demand
+    external_coupling_industry_chemical_fertilizers_non_energetic_network_gas_share:
+      title: Network gas
+      description: |
+        Share of network gas in non-energetic demand
+    external_coupling_industry_chemical_fertilizers_non_energetic_hydrogen_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in non-energetic demand
+    external_coupling_industry_chemical_fertilizers_processes_ccus_capture_potential:
+      title: Potential CO2 capture from emissions
+      description: |
+        Share of CO2 from production processes that could potentially be captured by CCS
+    external_coupling_industry_chemical_fertilizers_processes_ccus_electricity_use:
+      title: Electricity use of CO2 capture
+      description: |
+        Electricity demand per captured CO2 from processes
+    external_coupling_industry_chemical_fertilizers_processes_ccus_captured_co2:
+      title: Captured CO2 from potential
+      description: |
+        Share of CO2 capture potential from production processes that is actually captured by CCS
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_natural_gas_input_share:
+      title: Natural gas
+      description: |
+        Share of natural gas in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_ammonia_input_share:
+      title: Ammonia
+      description: |
+        Share of ammonia in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_greengas_input_share:
+      title: Green gas
+      description: |
+        Share of green gas in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_wood_pellets_input_share:
+      title: Biomass
+      description: |
+        Share of wood pellets in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_not_defined_input_share:
+      title: Not defined
+      description: |
+        Share of not defind carrier in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_methanol_input_share:
+      title: Methanol
+      description: |
+        Share of methanol in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_crude_oil_input_share:
+      title: Oil
+      description: |
+        Share of crude oil in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_steam_hot_water_input_share:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in input of industral transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_waste_mix_input_share:
+      title: Waste
+      description: |
+        Share of waste mix in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_electricity_input_share:
+      title: Electricity
+      description: |
+        Share of electricity in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_hydrogen_input_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in input of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_natural_gas_output_share:
+      title: Natural gas
+      description: |
+        Share of natural gas in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_ammonia_output_share:
+      title: Ammonia
+      description: |
+        Share of ammonia in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_greengas_output_share:
+      title: Green gas
+      description: |
+        Share of green gas in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_kerosene_output_share:
+      title: Kerosene
+      description: |
+        Share of kerosene in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_methanol_output_share:
+      title: Methanol
+      description: |
+        Share of methanol in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_crude_oil_output_share:
+      title: Oil
+      description: |
+        Share of crude oil in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_gasoline_output_share:
+      title: Gasoline
+      description: |
+        Share of gasoline in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_diesel_output_share:
+      title: Diesel
+      description: |
+        Share of diesel in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_lpg_output_share:
+      title: LPG
+      description: |
+        Share of LPG in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_not_defined_output_share:
+      title: Not defined
+      description: |
+        Share of not defined carrier in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_loss_output_share:
+      title: Loss
+      description: |
+        Share of loss in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_hydrogen_output_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in output of industrial transformation
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_heavy_fuel_oil_output_share:
+      title: Heavy fuel oil
+      description: |
+        Share of heavy fuel oil in output of industrial transformation
+    external_coupling_industry_chemical_fertilizers_p2h_wtp:
+      title: Power-to-heat boiler for fertilizers
+      description: |
+        Willingness to pay (WTP) of hybrid hydrogen and network gas heaters
+    external_coupling_industry_chemical_other_ccus_capture_potential:
+      title: CO2 capture potential
+      description: |
+        Share of CO2 from combustion that could potentially be captured by CCS
+    external_coupling_industry_chemical_other_ccus_electricity_use:
+      title: Potential CO2 capture from emissions
+      description: |
+        Electricity demand per captured CO2 from combustion
+    external_coupling_industry_chemical_other_ccus_captured_co2:
+      title: Electricity use of CO2 capture
+      description: |
+        Share of CO2 capture potential from combustion that is actually captured by CCS
+    external_coupling_industry_chemical_other_steam_hot_water_share:
+      title: Captured CO2 from potential
+      description: |
+        Share of steam hot water from the steam network in energetic heat demand
+    external_coupling_industry_chemical_other_burner_wood_pellets_share:
+      title: Biomass-fired heater
+      description: |
+        Share of wood pellets burner in energetic heat demand
+    external_coupling_industry_chemical_other_heater_electricity_share:
+      title: Electric boiler
+      description: |
+        Share of electrici boiler in energetic heat demand
+    external_coupling_industry_chemical_other_burner_network_gas_share:
+      title: Gas-fired heater
+      description: |
+        Share of network gas burner in energetic heat demand
+    external_coupling_industry_chemical_other_burner_coal_share:
+      title: Coal-fired heater
+      description: |
+        Share of coal burner in energetic heat demand
+    external_coupling_industry_chemical_other_steam_recompression_electricity_share:
+      title: Mechanical vapour recompression
+      description: |
+        Share of mechanical vapour recompression in energetic heat demand
+    external_coupling_industry_chemical_other_burner_crude_oil_share:
+      title: Oil-fired heater
+      description: |
+        Share of crude oil burner in energetic heat demand
+    external_coupling_industry_chemical_other_heatpump_water_water_electricity_share:
+      title: Heat pump
+      description: |
+        Share of heat pump in energetic heat demand
+    external_coupling_industry_chemical_other_burner_hydrogen_share:
+      title: Hydrogen-fired heater
+      description: |
+        Share of hydrogen burner in energetic heat demand
+    external_coupling_industry_chemical_other_residual_heat_share:
+      title: Residual heat output
+      description: |
+        Share of residual heat potential in useful energetic demand (excl. electricity demand)
+    external_coupling_industry_chemical_other_useable_heat:
+      title: Energetic demand (excl. electricity)
+      description: |
+        Useful energetic demand (excl. electricity demand) (scaling factor)
+    external_coupling_industry_chemical_other_electricity:
+      title: Energetic demand for electricity
+      description: |
+        Useful energetic demand for electricity (excl. demand for CCUS and heat) (scaling factor)
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_total_demand:
+      title: Size
+      description: |
+        Useful energetic demand of industrial transformation
+    external_coupling_industry_chemical_other_total_non_energetic:
+      title: Size (non-energetic)
+      description: |
+        Useful non-energetic demand (scaling factor)
+    external_coupling_industry_chemical_other_p2h_capacity:
+      title: Power-to-heat boiler for gas and H2 heaters
+      description: |
+        Total capacity of hybrid hydrogen and network gas heaters
+    external_coupling_industry_chemical_other_non_energetic_wood_pellets_share:
+      title: Biomass
+      description: |
+        Share of wood pellets in non-energetic demand
+    external_coupling_industry_chemical_other_non_energetic_coal_share:
+      title: Coal
+      description: |
+        Share of coal in non-energetic demand
+    external_coupling_industry_chemical_other_non_energetic_crude_oil_share:
+      title: Crude oil
+      description: |
+        Share of crude oil in non-energetic demand
+    external_coupling_industry_chemical_other_non_energetic_network_gas_share:
+      title: Network gas
+      description: |
+        Share of network gas in non-energetic demand
+    external_coupling_industry_chemical_other_non_energetic_hydrogen_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in non-energetic demand
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_natural_gas_input_share:
+      title: Natural gas
+      description: |
+        Share of natural gas in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_ammonia_input_share:
+      title: Ammonia
+      description: |
+        Share of ammonia in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_greengas_input_share:
+      title: Green gas
+      description: |
+        Share of green gas in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_wood_pellets_input_share:
+      title: Biomass
+      description: |
+        Share of wood pellets in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_not_defined_input_share:
+      title: Not defined
+      description: |
+        Share of not defind carrier in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_methanol_input_share:
+      title: Methanol
+      description: |
+        Share of methanol in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_crude_oil_input_share:
+      title: Oil
+      description: |
+        Share of crude oil in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_steam_hot_water_input_share:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in input of industral transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_waste_mix_input_share:
+      title: Waste
+      description: |
+        Share of waste mix in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_electricity_input_share:
+      title: Electricity
+      description: |
+        Share of electricity in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_hydrogen_input_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in input of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_natural_gas_output_share:
+      title: Natural gas
+      description: |
+        Share of natural gas in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_ammonia_output_share:
+      title: Ammonia
+      description: |
+        Share of ammonia in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_greengas_output_share:
+      title: Green gas
+      description: |
+        Share of green gas in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_kerosene_output_share:
+      title: Kerosene
+      description: |
+        Share of kerosene in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_methanol_output_share:
+      title: Methanol
+      description: |
+        Share of methanol in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_crude_oil_output_share:
+      title: Oil
+      description: |
+        Share of crude oil in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_gasoline_output_share:
+      title: Gasoline
+      description: |
+        Share of gasoline in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_diesel_output_share:
+      title: Diesel
+      description: |
+        Share of diesel in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_lpg_output_share:
+      title: LPG
+      description: |
+        Share of LPG in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_not_defined_output_share:
+      title: Not defined
+      description: |
+        Share of not defined carrier in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_loss_output_share:
+      title: Loss
+      description: |
+        Share of loss in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_hydrogen_output_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_heavy_fuel_oil_output_share:
+      title: Heavy fuel oil
+      description: |
+        Share of heavy fuel oil in output of industrial transformation
+    external_coupling_industry_chemical_other_p2h_wtp:
+      title: Power-to-heat boiler for chemical industry
+      description: |
+        Willingness to pay (WTP) of hybrid hydrogen and network gas heaters
+    external_coupling_industry_chemical_refineries_ccus_capture_potential:
+      title: Potential CO2 capture from emissions
+      description: |
+        Share of CO2 from combustion that could potentially be captured by CCS
+    external_coupling_industry_chemical_refineries_ccus_electricity_use:
+      title: Electricity use of CO2 capture
+      description: |
+        Electricity demand per captured CO2 from combustion
+    external_coupling_industry_chemical_refineries_ccus_captured_co2:
+      title: Captured CO2 from potential
+      description: |
+        Share of CO2 capture potential from combustion that is actually captured by CCS
+    external_coupling_industry_chemical_refineries_steam_hot_water_share:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in energetic heat demand
+    external_coupling_industry_chemical_refineries_burner_wood_pellets_share:
+      title: Biomass-fired heater
+      description: |
+        Share of wood pellets burner in energetic heat demand
+    external_coupling_industry_chemical_refineries_burner_network_gas_share:
+      title: Gas-fired heater
+      description: |
+        Share of network gas burner in energetic heat demand
+    external_coupling_industry_chemical_refineries_burner_coal_share:
+      title: Coal-fired heater
+      description: |
+        Share of coal burner in energetic heat demand
+    external_coupling_industry_chemical_refineries_burner_crude_oil_share:
+      title: Oil-fired heater
+      description: |
+        Share of crude oil burner in energetic heat demand
+    external_coupling_industry_chemical_refineries_burner_hydrogen_share:
+      title: Hydrogen-fired heater
+      description: |
+        Share of hydrogen burner in energetic heat demand
+    external_coupling_industry_chemical_refineries_residual_heat_share:
+      title: Residual heat output
+      description: |
+        Share of residual heat potential in useful energetic demand (excl. electricity demand)
+    external_coupling_industry_chemical_refineries_useable_heat:
+      title: Energetic demand (excl. electricity)
+      description: |
+        Useful energetic demand (excl. electricity demand) (scaling factor)
+    external_coupling_industry_chemical_refineries_electricity:
+      title: Energetic demand for electricity
+      description: |
+        Useful energetic demand for electricity (excl. demand for CCUS and heat) (scaling factor)
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_total_demand:
+      title: Size
+      description: |
+        Useful energetic demand of industrial transformation
+    external_coupling_industry_chemical_refineries_p2h_capacity:
+      title: Power-to-heat boiler for gas and H2 heaters
+      description: |
+        Total capacity of hybrid hydrogen and network gas heaters
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_natural_gas_input_share:
+      title: Natural gas
+      description: |
+        Share of natural gas in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_ammonia_input_share:
+      title: Ammonia
+      description: |
+        Share of ammonia in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_greengas_input_share:
+      title: Green gas
+      description: |
+        Share of green gas in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_wood_pellets_input_share:
+      title: Biomass
+      description: |
+        Share of wood pellets in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_not_defined_input_share:
+      title: Not defined
+      description: |
+        Share of not defined carrier in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_methanol_input_share:
+      title: Methanol
+      description: |
+        Share of methanol in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_crude_oil_input_share:
+      title: Oil
+      description: |
+        Share of crude oil in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_steam_hot_water_input_share:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in input of industral transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_waste_mix_input_share:
+      title: Waste
+      description: |
+        Share of waste mix in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_electricity_input_share:
+      title: Electricity
+      description: |
+        Share of electricity in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_hydrogen_input_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in input of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_natural_gas_output_share:
+      title: Natural gas
+      description: |
+        Share of natural gas in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_ammonia_output_share:
+      title: Ammonia
+      description: |
+        Share of ammonia in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_greengas_output_share:
+      title: Green gas
+      description: |
+        Share of green gas in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_kerosene_output_share:
+      title: Kerosene
+      description: |
+        Share of kerosene in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_methanol_output_share:
+      title: Methanol
+      description: |
+        Share of methanol in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_crude_oil_output_share:
+      title: Oil
+      description: |
+        Share of crude oil in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_gasoline_output_share:
+      title: Gasoline
+      description: |
+        Share of gasoline in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_diesel_output_share:
+      title: Diesel
+      description: |
+        Share of diesel in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_lpg_output_share:
+      title: LPG
+      description: |
+        Share of LPG in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_not_defined_output_share:
+      title: Not defined
+      description: |
+        Share of not defind carrier in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_loss_output_share:
+      title: Loss
+      description: |
+        Share of loss in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_hydrogen_output_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_heavy_fuel_oil_output_share:
+      title: Heavy fuel oil
+      description: |
+        Share of heavy fuel oil in output of industrial transformation
+    external_coupling_industry_chemical_refineries_p2h_wtp:
+      title: Power-to-heat boiler for refineries
+      description: |
+        Willingness to pay (WTP) of hybrid hydrogen and network gas heaters
+    external_coupling_efficiency_industry_chp_turbine_hydrogen_electricity:
+      title: Hydrogen turbine CHP - electricity
+      description: |
+        Electricity output efficiency of CHP
+    external_coupling_efficiency_industry_chp_ultra_supercritical_coal_electricity:
+      title: Pulverized coal CHP - electricity
+      description: |
+        Electricity output efficiency of CHP
+    external_coupling_efficiency_industry_chp_turbine_hydrogen_heat:
+      title: Hydrogen turbine CHP - heat
+      description: |
+        Heat output efficiency of CHP
+    external_coupling_efficiency_industry_chp_ultra_supercritical_coal_heat:
+      title: Pulverized coal CHP - heat
+      description: |
+        Heat output efficiency of CHP
+    external_coupling_efficiency_industry_chp_combined_cycle_gas_power_fuelmix_electricity:
+      title: Gas CCGT CHP - electricity
+      description: |
+        Electricity output efficiency of CHP
+    external_coupling_efficiency_industry_chp_engine_gas_power_fuelmix_electricity:
+      title: Gas motor CHP - electricity
+      description: |
+        Electricity output efficiency of CHP
+    external_coupling_efficiency_industry_chp_turbine_gas_power_fuelmix_electricity:
+      title: Gas turbine CHP - electricity
+      description: |
+        Electricity output efficiency of CHP
+    external_coupling_efficiency_industry_chp_wood_pellets_electricity:
+      title: Biomass CHP - electricity
+      description: |
+        Electricity output efficiency of CHP
+    external_coupling_efficiency_industry_chp_combined_cycle_gas_power_fuelmix_heat:
+      title: Gas CCGT CHP - heat
+      description: |
+        Heat output efficiency of CHP
+    external_coupling_efficiency_industry_chp_engine_gas_power_fuelmix_heat:
+      title: Gas motor CHP - heat
+      description: |
+        Heat output efficiency of CHP
+    external_coupling_efficiency_industry_chp_turbine_gas_power_fuelmix_heat:
+      title: Gas turbine CHP - heat
+      description: |
+        Heat output efficiency of CHP
+    external_coupling_efficiency_industry_chp_wood_pellets_heat:
+      title: Biomass CHP - heat
+      description: |
+        Heat output efficiency of CHP
+    external_coupling_capacity_of_industry_chp_combined_cycle_gas_power_fuelmix:
+      title: Gas CCGT CHP
+      description: |
+        Installed electricity output capacity of CHP
+    external_coupling_capacity_of_industry_chp_engine_gas_power_fuelmix:
+      title: Gas motor CHP
+      description: |
+        Installed electricity output capacity of CHP
+    external_coupling_capacity_of_industry_chp_turbine_gas_power_fuelmix:
+      title: Gas turbine CHP
+      description: |
+        Installed electricity output capacity of CHP
+    external_coupling_capacity_of_industry_chp_turbine_hydrogen:
+      title: Hydrogen turbine CHP
+      description: |
+        Installed electricity output capacity of CHP
+    external_coupling_capacity_of_industry_chp_ultra_supercritical_coal:
+      title: Pulverized coal CHP
+      description: |
+        Installed electricity output capacity of CHP
+    external_coupling_capacity_of_industry_chp_wood_pellets:
+      title: Biomass CHP
+      description: |
+        Installed electricity output capacity of CHP
+    external_coupling_industry_metal_aluminium_investment_costs:
+      title: Investment costs
+      description: |
+        Initial investment costs of aluminium production
+    external_coupling_industry_metal_aluminium_technical_lifetime:
+      title: Technical lifetime
+      description: |
+        Technical lifetime of aluminium production plants
+    external_coupling_industry_metal_aluminium_fixed_om_costs:
+      title: Fixed operation and maintenance costs
+      description: |
+        Fixed operation and maintenance costs of aluminium production
+    external_coupling_industry_metal_aluminium_energetic_electricity_share:
+      title: Electricity
+      description: |
+        Share of electricity in useful energetic demand
+    external_coupling_industry_metal_aluminium_energetic_network_gas_share:
+      title: Network gas
+      description: |
+        Share of network gas in useful energetic demand
+    external_coupling_industry_metal_aluminium_energetic_hydrogen_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in useful energetic demand
+    external_coupling_industry_metal_aluminium_production:
+      title: Production
+      description: |
+        Useful aluminium production (scaling factor)
+    external_coupling_industry_metal_aluminium_efficiency:
+      title: Conversion energetic demand to production
+      description: |
+        Useful energetic demand conversion to aluminium production
+    external_coupling_industry_aluminium_electrolysis_bat_electricity_share:
+      title: Electrolysis BAT
+      description: |
+        Share of BAT electrolysis in aluminium production
+    external_coupling_industry_metal_aluminium_external_coupling_share:
+      title: External coupling
+      description: |
+        Share of production route via external coupling in aluminium production
+    external_coupling_industry_aluminium_smeltoven_electricity_share:
+      title: Smelt oven (recycling)
+      description: |
+        Share of smelt oven in aluminium production
+    external_coupling_industry_aluminium_electrolysis_current_electricity_share:
+      title: Electrolysis
+      description: |
+        Share of current electrolysis in aluminium production
+    external_coupling_industry_aluminium_carbothermalreduction_electricity_share:
+      title: Carbothermal reduction
+      description: |
+        Share of carbothermal reduction in aluminium production
+    external_coupling_industry_metal_other_metals_investment_costs:
+      title: Investment costs
+      description: |
+        Initial investment costs of other metals production
+    external_coupling_industry_metal_other_metals_technical_lifetime:
+      title: Technical lifetime
+      description: |
+        Technical lifetime of other metals production plants
+    external_coupling_industry_metal_other_metals_fixed_om_costs:
+      title: Fixed operation and maintenance costs
+      description: |
+        Fixed operation and maintenance costs of other metals production
+    external_coupling_industry_other_metals_crude_oil_share:
+      title: Oil
+      description: |
+        Share of crude oil  in useful energetic demand
+    external_coupling_industry_other_metals_heat_useable_heat_share:
+      title: Steam
+      description: |
+        Share of steam hot water from the steam network in useful energetic demand
+    external_coupling_industry_other_metals_electricity_share:
+      title: Electricity
+      description: |
+        Share of electricity in useful energetic demand
+    external_coupling_industry_other_metals_coal_share:
+      title: Coal
+      description: |
+        Share of coal in useful energetic demand
+    external_coupling_industry_other_metals_network_gas_share:
+      title: Network gas
+      description: |
+        Share of network gas in useful energetic demand
+    external_coupling_industry_other_metals_hydrogen_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in useful energetic demand
+    external_coupling_industry_metal_other_metals_hydrogen_efficiency:
+      title: Conversion energetic demand to production
+      description: |
+        Useful energetic demand conversion to other metals production
+    external_coupling_industry_metal_other_metals_total_demand:
+      title: Production
+      description: |
+        Useful demand production other metals (scaling factor)
+    external_coupling_industry_other_metals_external_coupling_share:
+      title: External coupling
+      description: |
+        Share of production route via external coupling in other metals production
+    external_coupling_industry_other_metals_process_electricity_share:
+      title: Electricity use in process
+      description: |
+        Share of electricity use in production processes of other metals
+    external_coupling_industry_other_metals_process_heat_useable_heat_share:
+      title: Useable heat use in process
+      description: |
+        Share of useable heat use in production processes of other metals
+    external_coupling_industry_metal_steel_ccus_capture_potential:
+      title: Potential CO2 capture from emissions
+      description: |
+        Share of CO2 from combustion that could potentially be captured by CCS
+    external_coupling_industry_metal_steel_ccus_electricity_use:
+      title: Electricity use of CO2 capture
+      description: |
+        Electricity demand per captured CO2 from combustion
+    external_coupling_industry_metal_steel_ccus_captured_co2:
+      title: Captured CO2 from potential
+      description: |
+        Share of CO2 capture potential from combustion that is actually captured by CCS
+    external_coupling_energy_distribution_coal_gas_final_demand_share:
+      title: Final demand
+      description: |
+        Share of coal gas to final demand from central coal gas distribution
+    external_coupling_energy_distribution_coal_gas_energy_production_share:
+      title: Energy production
+      description: |
+        Share of coal gas to energy production from central coal gas distribution
+    external_coupling_energy_distribution_coal_gas_chemical_feedstock_share:
+      title: Chemical feedstock
+      description: |
+        Share of coal gas to chemical feedstock production from central coal gas distribution
+    external_coupling_industry_metal_steel_investment_costs:
+      title: Investment costs
+      description: |
+        Initial investment costs of steel production
+    external_coupling_industry_metal_steel_wacc:
+      title: WACC
+      description: |
+        Weighted average cost of capital (WACC) of steel production
+    external_coupling_industry_metal_steel_technical_lifetime:
+      title: Technical lifetime
+      description: |
+        Technical lifetime of steel production plants
+    external_coupling_industry_metal_steel_fixed_om_costs:
+      title: Fixed operation and maintenance costs
+      description: |
+        Fixed operation and maintenance costs of steel production
+    external_coupling_industry_metal_steel_energetic_wood_pellets_share:
+      title: Biomass
+      description: |
+        Share of wood pellets in useful energetic demand
+    external_coupling_industry_metal_steel_energetic_coal_gas_share:
+      title: Coal gas
+      description: |
+        Share of coal gas in useful energetic demand
+    external_coupling_industry_metal_steel_energetic_crude_oil_share:
+      title: Oil
+      description: |
+        Share of crude oil in useful energetic demand
+    external_coupling_industry_metal_steel_energetic_steam_hot_water_share:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in useful energetic demand
+    external_coupling_industry_metal_steel_energetic_electricity_share:
+      title: Electricity
+      description: |
+        Share of electricity in useful energetic demand
+    external_coupling_industry_metal_steel_energetic_coal_share:
+      title: Coal
+      description: |
+        Share of coal in useful energetic demand
+    external_coupling_industry_metal_steel_energetic_kooks_share:
+      title: Cokes
+      description: |
+        Share of kooks in useful energetic demand
+    external_coupling_industry_metal_steel_energetic_network_gas_share:
+      title: Network gas
+      description: |
+        Share of network gas in useful energetic demand
+    external_coupling_industry_metal_steel_energetic_hydrogen_share:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in useful energetic demand
+    external_coupling_industry_metal_steel_efficiency:
+      title: Production efficiency
+      description: |
+        Useful energetic conversion efficiency to steel production
+    external_coupling_industry_metal_steel_total_demand:
+      title: Production
+      description: |
+        Useful steel production (scaling factor)
+    external_coupling_industry_metal_steel_cyclonefurnace_bof_share:
+      title: Cyclone furnace
+      description: |
+        Share of cyrclone furnace BOF in aluminium production
+    external_coupling_industry_metal_steel_external_coupling_share:
+      title: External coupling
+      description: |
+        Share of production route via external coupling in steel production
+    external_coupling_industry_metal_steel_blastfurnace_bof_share:
+      title: Blast furnace
+      description: |
+        Share of blast furnace BOF in aluminium production
+    external_coupling_industry_metal_steel_scrap_hbi_eaf_share:
+      title: Recycling / HBI
+      description: |
+        Share of scrap HBI EAF in aluminium production
+    external_coupling_industry_metal_steel_dri_network_gas_share:
+      title: DRI (network gas)
+      description: |
+        Share of network gas DRI EAF in aluminium production
+    external_coupling_industry_metal_steel_dri_hydrogen_share:
+      title: DRI (hydrogen)
+      description: |
+        Share of hydrogen DRI EAF in aluminium production
+    external_coupling_industry_bio_kerosene_in_crude_oil_share:
+      title: Bio kerosene
+      description: |
+        Share of bio kerosene in industry final energetic oil demand
+    external_coupling_industry_other_bio_oil_in_crude_oil_share:
+      title: Other bio oil
+      description: |
+        Share of other bio-oil in industry final energetic oil demand
+    external_coupling_industry_other_oil_in_crude_oil_share:
+      title: Other oil
+      description: |
+        Share of other oil in industry final energetic oil demand
+    external_coupling_industry_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      description: |
+        Share of biodiesel in industry final energetic oil demand
+    external_coupling_industry_diesel_in_crude_oil_share:
+      title: Diesel
+      description: |
+        Share of diesel in industry final energetic oil demand
+    external_coupling_industry_kerosene_in_crude_oil_share:
+      title: Kerosene
+      description: |
+        Share of kerosene in industry final energetic oil demand
+    external_coupling_industry_lpg_in_crude_oil_share:
+      title: LPG
+      description: |
+        Share of LPG in industry final energetic oil demand
+    external_coupling_industry_bio_kerosene_in_crude_oil_non_energetic_share:
+      title: Bio kerosene
+      description: |
+        Share of bio kerosene in industry final non-energetic oil demand
+    external_coupling_industry_other_oil_in_crude_oil_non_energetic_share:
+      title: Other oil
+      description: |
+        Share of other oil in industry final non-energetic oil demand
+    external_coupling_industry_lpg_in_crude_oil_non_energetic_share:
+      title: LPG
+      description: |
+        Share of LPG in industry final non-energetic oil demand
+    external_coupling_industry_biodiesel_in_crude_oil_non_energetic_share:
+      title: Biodiesel
+      description: |
+        Share of biodiesel in industry final non-energetic oil demand
+    external_coupling_industry_diesel_in_crude_oil_non_energetic_share:
+      title: Diesel
+      description: |
+        Share of diesel in industry final non-energetic oil demand
+    external_coupling_industry_kerosene_in_crude_oil_non_energetic_share:
+      title: Kerosene
+      description: |
+        Share of kerosene in industry final non-energetic oil demand
+    external_coupling_industry_other_bio_oil_in_crude_oil_non_energetic_share:
+      title: Other bio oil
+      description: |
+        Share of other bio-oil in industry final non-energetic oil demand
+    external_coupling_industry_other_food_ccus_capture_potential:
+      title: Potential CO2 capture from emissions
+      description: |
+        Share of CO2 from combustion that could potentially be captured by CCS
+    external_coupling_industry_other_food_ccus_electricity_use:
+      title: Electricity use of CO2 capture
+      description: |
+        Electricity demand per captured CO2 from combustion
+    external_coupling_industry_other_food_ccus_captured_co2:
+      title: Captured CO2 from potential
+      description: |
+        Share of CO2 capture potential from combustion that is actually captured by CCS
+    external_coupling_industry_other_food_steam_hot_water_share:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in energetic heat demand
+    external_coupling_industry_other_food_burner_wood_pellets_share:
+      title: Biomass-fired heater
+      description: |
+        Share of wood pellets burner in energetic heat demand
+    external_coupling_industry_other_food_heater_electricity_share:
+      title: Electric boiler
+      description: |
+        Share of electrici boiler in energetic heat demand
+    external_coupling_industry_other_food_burner_hydrogen_share:
+      title: Hydrogen-fired heater
+      description: |
+        Share of hybrid hydrogen heater in energetic heat demand
+    external_coupling_industry_other_food_burner_coal_share:
+      title: Coal-fired heater
+      description: |
+        Share of coal burner in energetic heat demand
+    external_coupling_industry_other_food_burner_crude_oil_share:
+      title: Oil-fired heater
+      description: |
+        Share of crude oil burner in energetic heat demand
+    external_coupling_industry_other_food_burner_network_gas_share:
+      title: Gas-fired heater
+      description: |
+        Share of hybrid network gas heater in energetic heat demand
+    external_coupling_industry_other_food_useable_heat:
+      title: Energetic demand (excl. electricity)
+      description: |
+        Useful energetic demand (excl. electricity demand) (scaling factor)
+    external_coupling_industry_other_food_electricity:
+      title: Energetic demand for electricity
+      description: |
+        Useful energetic demand for electricity (excl. demand for CCUS and heat) (scaling factor)
+    external_coupling_industry_other_food_p2h_capacity:
+      title: Power-to-heat boiler for gas and H2 heaters
+      description: |
+        Total capacity of hybrid hydrogen and network gas heaters
+    external_coupling_industry_other_food_p2h_wtp:
+      title: Power-to-heat boiler for food industy
+      description: |
+        Willingness to pay (WTP) of hybrid hydrogen and network gas heaters
+    external_coupling_industry_other_non_specified_industry_wood_pellets_share_energetic:
+      title: Biomass
+      description: |
+        Share of wood pellets in useful energetic demand
+    external_coupling_industry_other_non_specified_industry_crude_oil_share_energetic:
+      title: Oil
+      description: |
+        Share of crude oil in useful energetic demand
+    external_coupling_industry_other_non_specified_industry_useable_heat_share_energetic:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in useful energetic demand
+    external_coupling_industry_other_non_specified_industry_electricity_share_energetic:
+      title: Electricity
+      description: |
+        Share of electricity in useful energetic demand
+    external_coupling_industry_other_non_specified_industry_coal_share_energetic:
+      title: Coal
+      description: |
+        Share of coal in useful energetic demand
+    external_coupling_industry_other_non_specified_industry_kooks_share_energetic:
+      title: Cokes
+      description: |
+        Share of kooks in useful energetic demand
+    external_coupling_industry_other_non_specified_industry_network_gas_share_energetic:
+      title: Network gas
+      description: |
+        Share of network gas in useful energetic demand
+    external_coupling_industry_other_non_specified_industry_hydrogen_share_energetic:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in useful energetic demand
+    external_coupling_industry_useful_demand_for_other_non_specified_energetic:
+      title: Size (energetic)
+      description: |
+        Useful energetic demand (scaling factor)
+    external_coupling_industry_useful_demand_for_other_non_specified_non_energetic:
+      title: Size (non-energetic)
+      description: |
+        Useful non-energetic demand (scaling factor)
+    external_coupling_industry_other_non_specified_industry_ammonia_share_non_energetic:
+      title: Ammonia
+      description: |
+        Share of ammonia in useful non-energetic demand
+    external_coupling_industry_other_non_specified_industry_wood_pellets_share_non_energetic:
+      title: Biomass
+      description: |
+        Share of wood pellets in useful non-energetic demand
+    external_coupling_industry_other_non_specified_industry_coal_share_non_energetic:
+      title: Coal
+      description: |
+        Share of coal in useful non-energetic demand
+    external_coupling_industry_other_non_specified_industry_methanol_share_non_energetic:
+      title: Methanol
+      description: |
+        Share of methanol in useful non-energetic demand
+    external_coupling_industry_other_non_specified_industry_crude_oil_share_non_energetic:
+      title: Oil
+      description: |
+        Share of crude oil in useful non-energetic demand
+    external_coupling_industry_other_non_specified_industry_waste_mix_share_non_energetic:
+      title: Waste
+      description: |
+        Share of waste mix in useful non-energetic demand
+    external_coupling_industry_other_non_specified_industry_kooks_share_non_energetic:
+      title: Cokes
+      description: |
+        Share of kooks in useful non-energetic demand
+    external_coupling_industry_other_non_specified_industry_network_gas_share_non_energetic:
+      title: Network gas
+      description: |
+        Share of network gas in useful non-energetic demand
+    external_coupling_industry_other_non_specified_industry_hydrogen_share_non_energetic:
+      title: Hydrogen
+      description: |
+        Share of hydrogen in useful non-energetic demand
+    external_coupling_industry_other_paper_ccus_capture_potential:
+      title: Potential CO2 capture from emissions
+      description: |
+        Share of CO2 from combustion that could potentially be captured by CCS
+    external_coupling_industry_other_paper_ccus_electricity_use:
+      title: Electricity use of CO2 capture
+      description: |
+        Electricity demand per captured CO2 from combustion
+    external_coupling_industry_other_paper_ccus_captured_co2:
+      title: Captured CO2 from potential
+      description: |
+        Share of CO2 capture potential from combustion that is actually captured by CCS
+    external_coupling_industry_other_paper_steam_hot_water_share:
+      title: Steam network
+      description: |
+        Share of steam hot water from the steam network in energetic heat demand
+    external_coupling_industry_other_paper_burner_wood_pellets_share:
+      title: Biomass-fired heater
+      description: |
+        Share of wood pellets burner in energetic heat demand
+    external_coupling_industry_other_paper_heater_electricity_share:
+      title: Electric boiler
+      description: |
+        Share of electrici boiler in energetic heat demand
+    external_coupling_industry_other_paper_burner_hydrogen_share:
+      title: Hydrogen-fired heater
+      description: |
+        Share of hybrid hydrogen heater in energetic heat demand
+    external_coupling_industry_other_paper_burner_coal_share:
+      title: Coal-fired heater
+      description: |
+        Share of coal burner in energetic heat demand
+    external_coupling_industry_other_paper_burner_crude_oil_share:
+      title: Oil-fired heater
+      description: |
+        Share of crude oil burner in energetic heat demand
+    external_coupling_industry_other_paper_burner_network_gas_share:
+      title: Gas-fired heater
+      description: |
+        Share of hybrid network gas heater in energetic heat demand
+    external_coupling_industry_other_paper_useable_heat:
+      title: Energetic demand (excl. electricity)
+      description: |
+        Useful energetic demand (excl. electricity demand) (scaling factor)
+    external_coupling_industry_other_paper_electricity:
+      title: Energetic demand for electricity
+      description: |
+        Useful energetic demand for electricity (excl. demand for CCUS and heat) (scaling factor)
+    external_coupling_industry_other_paper_p2h_capacity:
+      title: Power-to-heat boiler for gas and H2 heaters
+      description: |
+        Total capacity of hybrid hydrogen and network gas heaters
+    external_coupling_industry_other_paper_p2h_wtp:
+      title: Power-to-heat boiler for paper industry
+      description: |
+        Willingness to pay (WTP) of hybrid hydrogen and network gas heaters
+    external_coupling_energy_heat_production_ht_residual_heat_investment_costs:
+      title: Investment costs
+      description: |
+        Initial investment costs of HT residual heat
+    external_coupling_energy_heat_production_ht_residual_heat_wacc:
+      title: WACC
+      description: |
+        Weighted average cost of capital (WACC) of HT residual heat
+    external_coupling_energy_heat_production_ht_residual_heat_technical_lifetime:
+      title: Technical lifetime
+      description: |
+        Technical lifetime of HT residual heat plants
+    external_coupling_energy_heat_production_ht_residual_heat_fixed_om_costs:
+      title: Fixed operation and maintenance costs
+      description: |
+        Fixed operation and maintenance costs of HT residual heat
+    external_coupling_energy_chp_supercritical_ccs_waste_mix_electrical_efficiency:
+      title: Waste CHP with CCS - electricity
+      description: |
+        Electricity output efficiency of CHP
+    external_coupling_energy_chp_supercritical_waste_mix_electrical_efficiency:
+      title: Waste CHP - electricity
+      description: |
+        Electricity output efficiency of CHP
+    external_coupling_energy_chp_supercritical_ccs_waste_mix_heat_efficiency:
+      title: Waste CHP with CCS - heat
+      description: |
+        Heat output efficiency of CHP
+    external_coupling_energy_chp_supercritical_waste_mix_heat_efficiency:
+      title: Waste CHP - heat
+      description: |
+        Heat output efficiency of CHP
+    external_coupling_waste_mix_biogenic_waste_share:
+      title: Biogenic
+      description: |
+        Share of biogenic waste in waste mix
+    external_coupling_waste_mix_non_biogenic_waste_share:
+      title: Non-biogenic
+      description: |
+        Share of non-biogenic waste in waste mix
+    external_coupling_energy_chp_supercritical_waste_mix_capacity:
+      title: Waste CHP
+      description: |
+        Installed electricity output capacity of CHP
+    external_coupling_biogenic_waste_max_demand:
+      title: Biogenic waste
+      description: |
+        Maximum domestic supply of biogenic waste
+    external_coupling_non_biogenic_waste_max_demand:
+      title: Non-biogenic waste
+      description: |
+        Maximum domestic supply of non-biogenic waste
+    external_coupling_energy_chp_supercritical_ccs_waste_mix_captured_co2:
+      title: Waste CHP + CCS
+      description: |
+        Share of installed CHP electricity output capacity equipped with CCS

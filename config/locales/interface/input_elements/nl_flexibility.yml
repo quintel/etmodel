@@ -7,31 +7,47 @@ nl:
     transport_car_using_electricity_public_charging_share:
       title: Publiek opladen
       short_description:
-      description: "Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
-        door een laadprofiel dat mensen beschrijft die opladen bij openbare laadfaciliteiten?\r\n<br>\r\n<br>\r\nHet profiel dat wordt gebruikt om dit type laadgedrag te beschrijven
-        is afkomstig uit de <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
-        target=\"_blank\"> Elaad-studie \"Regulier en netbewust laden (2023)\"</a>."
+      description: |
+        Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
+        door een laadprofiel dat mensen beschrijft die opladen bij openbare laadfaciliteiten?
+
+        Het profiel dat wordt gebruikt om dit type laadgedrag te beschrijven is gegenereerd dmv de
+        <a href="https://platform.elaad.io/analyse/low-voltage-charging-profiles/" target="_blank">
+        Elaad profielen generator</a>. De verdeling van de profielen is afkomstig van de 
+        <a href="https://refman.energytransitionmodel.com/publications/2200" target="_blank">
+        Elaad-studie "Regulier en netbewust laden (2023)"</a>.
     transport_car_using_electricity_home_charging_share:
       title: Thuis opladen
       short_description:
-      description: "Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
-        door mensen die uitsluitend thuis opladen? \r\n<br>\r\n<br>\r\nHet profiel dat wordt gebruikt om dit
-        type laadgedrag te beschrijven is afkomstig uit de <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
-        target=\"_blank\"> Elaad-studie \"Regulier en netbewust laden (2023)\"</a>."
+      description: |
+        Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
+        door een laadprofiel dat mensen beschrijft die thuis opladen?
+
+        Het profiel dat wordt gebruikt om dit type laadgedrag te beschrijven is gegenereerd dmv de
+        <a href="https://platform.elaad.io/analyse/low-voltage-charging-profiles/" target="_blank">
+        Elaad profielen generator</a>. De verdeling van de profielen is afkomstig van de 
+        <a href="https://refman.energytransitionmodel.com/publications/2200" target="_blank">
+        Elaad-studie "Regulier en netbewust laden (2023)"</a>.
     transport_car_using_electricity_fast_charging_share:
       title: Snel opladen
       short_description:
-      description: "Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
-        door zogenaamd 'snel laden'? \r\n<br>\r\n<br>\r\nHet profiel dat wordt gebruikt om
-        dit type laadgedrag te beschrijven is afkomstig uit de <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
-        target=\"_blank\"> Elaad-studie \"Regulier en netbewust laden (2023)\"</a>."
+      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
+        wordt door 'snelladen' voldaan? Snelladen gebeurt typisch met laadcapaciteiten
+        tussen de 11 en 22 kW.\r\n<br>\r\n<br>\r\nHet profiel dat dit type laadgedrag
+        beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
     transport_car_using_electricity_work_charging_share:
       title: Opladen op het werk
       short_description:
-      description: "Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
-        door mensen die uitsluitend op het werk opladen? \r\n<br>\r\n<br>\r\nHet profiel dat wordt gebruikt om
-        dit type laadgedrag te beschrijven is afkomstig uit de <a href=\"https://refman.energytransitionmodel.com/publications/2200\"
-        target=\"_blank\"> Elaad-studie \"Regulier en netbewust laden (2023)\"</a>."
+      description: |
+        Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
+        door een laadprofiel dat mensen beschrijft die op werk opladen?
+
+        Het profiel dat wordt gebruikt om dit type laadgedrag te beschrijven is gegenereerd dmv de
+        <a href="https://platform.elaad.io/analyse/low-voltage-charging-profiles/" target="_blank">
+        Elaad profielen generator</a>. De verdeling van de profielen is afkomstig van de 
+        <a href="https://refman.energytransitionmodel.com/publications/2200" target="_blank">
+        Elaad-studie "Regulier en netbewust laden (2023)"</a>.
     transport_car_using_electricity_custom_profile_charging_share:
       title: Aangepast profiel
       short_description:

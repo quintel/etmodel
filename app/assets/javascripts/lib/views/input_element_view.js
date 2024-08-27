@@ -439,7 +439,10 @@
           input_element_key: this.model.get('key'),
           end_year: App.settings.get('end_year'),
           info_link: I18n.t('input_elements.common.info_link'),
+          coupling_icon: this.model.get('coupling_icon'),
+          coupling_groups: this.model.get('coupling_groups'),
           info_coupling: I18n.t('input_elements.common.info_coupling'),
+          label_groups: I18n.t('input_elements.common.coupling_groups_label'),
         })
       );
 
@@ -596,6 +599,7 @@
         }
 
         if (this.model.get('coupled')) {
+          this.$el.addClass('hidden');
           this.valueElement.addClass('coupled');
           this.valueElement.html('');
         }
@@ -603,6 +607,7 @@
         this.quinn.disable();
       } else {
         this.$el.removeClass('disabled');
+        this.$el.removeClass('hidden');
         this.valueElement.removeClass('coupled');
         this.setTransientValue(this.quinn.model.value);
         this.quinn.enable();

@@ -25,16 +25,17 @@
         = render :partial => 'input_elements/slider', :object => input_element
 
       - slide.grouped_input_elements.each do |group, sliders|
-        .interface_group
-          %hr
-          %span.label
-            = t("accordion.#{to_yml_syntax(group)}").html_safe
-          - unless slide.group_sub_header.blank?
-            %span.sub_header_arrow
-              .arrow-down
-              = t("subheaders.#{to_yml_syntax(group)}", default: t("subheaders.#{to_yml_syntax(slide.group_sub_header)}"))
-        - sliders.each do |input_element|
-          = render :partial => 'input_elements/slider', :object => input_element
+        .with-group{ class: mixed_coupled?(sliders) ? 'mixed' : 'unmixed' }
+          .interface_group
+            %hr
+            %span.label
+              = t("accordion.#{to_yml_syntax(group)}").html_safe
+            - unless slide.group_sub_header.blank?
+              %span.sub_header_arrow
+                .arrow-down
+                = t("subheaders.#{to_yml_syntax(group)}", default: t("subheaders.#{to_yml_syntax(slide.group_sub_header)}"))
+          - sliders.each do |input_element|
+            = render :partial => 'input_elements/slider', :object => input_element
 
     -if lookup_context.exists?(slide.key.to_s, ['scenarios/slides'], true)
       = render partial: "scenarios/slides/#{slide.key}"

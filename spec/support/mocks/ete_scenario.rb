@@ -13,7 +13,8 @@ def ete_scenario_mock
   allow(mock).to receive(:updated_at) { Time.now.utc }
   allow(mock).to receive(:loadable?).and_return(true)
   allow(mock).to receive(:coupled?).and_return(false)
-  allow(mock).to receive(:coupling).and_return(false)
+  allow(mock).to receive(:active_couplings).and_return([])
+  allow(mock).to receive(:inactive_couplings).and_return([])
   allow(mock).to receive(:created_at) { Time.now.utc }
   allow(mock).to receive(:all_inputs).and_return({})
   allow(mock).to receive(:days_old).and_return(1)

@@ -63,6 +63,17 @@ $slider-box-height: 22px
     margin-left: 4px
     width: 20px
 
+  .show-info.coupling-icon
+    background: asset-url("icons/link.svg") right no-repeat
+    color: #8f8f8f
+    width: 20px
+    display: inline-block
+    height: 20px
+    margin-bottom: -3px
+    &:hover
+      background: asset-url("icons/link.svg") right no-repeat
+      filter: brightness(0.5)
+
   .reset
     @include input-slider-button(0px)
     margin-left: 0
@@ -142,6 +153,14 @@ $slider-box-height: 22px
           margin: -0.75rem 0 0
         svg
           margin-bottom: -0.2rem
+        .coupling-groups
+          margin-bottom: 0.75rem
+        .group
+          background: #fff
+          padding: 0.2rem 0.5rem
+          border-radius: 2px
+          color: $landing-grey
+          margin-left: 0.25rem
 
   &.info-box-visible
     .show-info
@@ -149,6 +168,9 @@ $slider-box-height: 22px
       -webkit-user-select: none
       -moz-user-select: none
       user-select: none
+      &.coupling-icon
+        background: asset-url("icons/link.svg") right no-repeat
+        filter: brightness(0.5)
 
   // Adjustment to vertical alignment of label and value text.
   label, .output
@@ -162,11 +184,8 @@ $slider-box-height: 22px
     .output
       background: none
       cursor: default
-
-  .output.coupled
-    background: asset-url("icons/link.svg") right no-repeat
-    color: #aaa
-
+  &.hidden
+    display: none
 
   // Buttons are only visible on hovering the slider div.
   .reset, .decrease, .increase
@@ -397,6 +416,13 @@ html.no-opacity .quinn.disabled
   .interface_group + .slider p.toggle-title
     border-top: none
     padding-top: 0
+
+  // Hide coupled sliders
+  .with-group.unmixed:has(.hidden)
+    display: none
+  .slider:has(.hidden)
+    display: none
+
 
 // Inputs where values are rendered as a radio button list.
 

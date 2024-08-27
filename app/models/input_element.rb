@@ -79,7 +79,7 @@ class InputElement < YModel::Base
         self, :unit, :share_group, :key, :related_node,
         :node_source_url, :step_value, :draw_to_min, :draw_to_max,
         :disabled, :translated_name, :sanitized_description, :fixed,
-        :has_flash_movie, :additional_specs, :config
+        :has_flash_movie, :additional_specs, :config, :coupling_icon
       )
     end
   end

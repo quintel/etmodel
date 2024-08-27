@@ -192,6 +192,7 @@ class @InputElementList extends Backbone.Collection
         user_value: def
         disabled: dis
         coupled: dis && values.coupling_disabled
+        coupling_groups: values.coupling_groups
       }, { silent: true })
 
       i.trigger('initial-set:user_value')

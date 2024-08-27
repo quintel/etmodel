@@ -85,10 +85,6 @@ class Slide < YModel::Base
     interface_groups
   end
 
-  def mixed_coupled?
-
-  end
-
   def short_name_for_admin
     "#{sidebar_item.try :key} : #{key}"
   end

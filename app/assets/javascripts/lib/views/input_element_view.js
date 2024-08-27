@@ -440,7 +440,9 @@
           end_year: App.settings.get('end_year'),
           info_link: I18n.t('input_elements.common.info_link'),
           coupling_icon: this.model.get('coupling_icon'),
+          coupling_groups: this.model.get('coupling_groups'),
           info_coupling: I18n.t('input_elements.common.info_coupling'),
+          label_groups: I18n.t('input_elements.common.coupling_groups_label'),
         })
       );
 

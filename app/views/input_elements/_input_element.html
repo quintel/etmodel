@@ -42,6 +42,12 @@
                     </span>
                     <span class="text"><%= info_coupling %></span>
                   </a>
+                  <div class="coupling-groups">
+                    <span><%= label_groups %></span>
+                    <% _.each(coupling_groups, function (coupling_group) { %>
+                        <span class="group"><%= coupling_group %></span>
+                    <% }); %>
+                  </div>
                 </div>
               <% } %>
             <%= info %>

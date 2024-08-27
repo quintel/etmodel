@@ -12,7 +12,6 @@
   output_element_key: hydrogen_demand
   key: hydrogen_production_hydrogen_demand
 
-
 - label: agriculture_final_demand_hydrogen
   color: "#6AB04C"
   order_by: 10
@@ -61,6 +60,42 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: industry_heat_network_demand_hydrogen_demand
+- label: industry_transformation_chemical_fertilizers
+  color: "#ddd3d3"
+  order_by: 26
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_transformation_chemical_fertilizers_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: industry_transformation_chemical_fertilizers_hydrogen_demand
+- label: industry_transformation_chemical_other
+  color: "#f8f1f1"
+  order_by: 27
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_transformation_chemical_other_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: industry_transformation_chemical_other_hydrogen_demand
+- label: industry_transformation_chemical_refineries
+  color: "#747373"
+  order_by: 28
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_transformation_chemical_refineries_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: industry_transformation_chemical_refineries_hydrogen_demand
 - label: industry_final_demand_for_chemical_other_hydrogen_non_energetic
   color: "#228B22"
   order_by: 30
@@ -182,8 +217,8 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: exported_hydrogen_baseload_hydrogen_demand
-# Flex  
 
+# Flex
 - label: exported_hydrogen_backup
   color: "#6f7373"
   order_by: 100
@@ -194,7 +229,7 @@
   gquery: energy_export_hydrogen_backup_hydrogen_input_curve
   is_1990: false
   dependent_on:
-  output_element_key: hydrogen_demand  
+  output_element_key: hydrogen_demand
   key: exported_hydrogen_backup_hydrogen_demand
 - label: hydrogen_storage_depleted_gas_field_input
   color: "#87CEEB"
@@ -219,9 +254,9 @@
   is_1990: false
   dependent_on:
   output_element_key: hydrogen_demand
-  key: hydrogen_storage_salt_cavern_input_hydrogen_demand  
+  key: hydrogen_storage_salt_cavern_input_hydrogen_demand
 
-#Transport loss  
+#Transport loss
 - label: hydrogen_transport_losses
   color: "#FF0000"
   order_by: 115
@@ -233,5 +268,4 @@
   is_1990: false
   dependent_on:
   output_element_key: hydrogen_demand
-  key: hydrogen_transport_losses_hydrogen_demand    
-
+  key: hydrogen_transport_losses_hydrogen_demand

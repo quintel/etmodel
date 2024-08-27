@@ -131,7 +131,7 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: kerosene_demand_bio_households_mekko_of_kerosene_demand_supply
-  
+
 - label: kerosene_supply_synthetic_kerosene_must_run
   color: "#74B9FF"
   order_by: 100
@@ -180,9 +180,21 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: kerosene_supply_refineries_mekko_of_kerosene_demand_supply
+- label: kerosene_supply_transformation
+  color: "#9A9C9C"
+  order_by: 120
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_supply_transformation
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: kerosene_supply_transformation_mekko_of_kerosene_demand_supply
 - label: kerosene_supply_import
   color: "#FDE97B"
-  order_by: 120
+  order_by: 130
   group: supply
   show_at_first: false
   is_target_line: false

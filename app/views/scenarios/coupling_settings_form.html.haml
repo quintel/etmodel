@@ -1,0 +1,32 @@
+- content_for(:page_title) { "#{t('header.uncouple_scenario')} - #{t('meta.name')}" }
+
+.scenario_wrapper#coupling-settings
+  = form_tag update_couplings_scenario_path(@scenario), method: :post do
+    %h1= t('user_settings.coupling.header')
+    %p.description
+      =t('user_settings.coupling.description')
+      %a{ href: "https://docs.energytransitionmodel.com/main/external-coupling/", title: "More info about coupling settings" } Learn more
+
+    %h3= t('user_settings.coupling.manage_couplings')
+    .couplings
+      - COUPLING_GROUP_LABELS.each do |coupling, model_name|
+        - next unless @scenario.active_couplings.include?(coupling) || @scenario.inactive_couplings.include?(coupling)
+        .toggle-container
+          %label.toggle-switch
+            = hidden_field_tag "couplings[#{coupling}]", "0"
+            = check_box_tag "couplings[#{coupling}]", "1", checked: @scenario.active_couplings.include?(coupling), class: "toggle-input"
+            %span.toggle-slider
+          %span.toggle-label= model_name
+
+    %h3.red= t('user_settings.coupling.remove_couplings')
+
+    %p.remove-couplings-description= t(:'user_settings.coupling.remove_couplings_description')
+    .warning-checkbox
+      = check_box_tag :remove_all_couplings, "1", false, id: "permanent-uncouple"
+      %label.remove-coupling-label{ for: "permanent_uncouple" }= t(:'user_settings.coupling.permanent_uncouple')
+
+    .form-actions
+      = submit_tag t(:'dashboard.changer.save'), class: "btn cancel", id: "save_button"
+      %a.btn.cancel#cancel-box
+        = t("scenario.cancel")
+

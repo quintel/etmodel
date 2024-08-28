@@ -44,9 +44,11 @@
                   </a>
                   <div class="coupling-groups">
                     <span><%= label_groups %></span>
-                    <% _.each(coupling_groups, function (coupling_group) { %>
-                        <span class="group"><%= coupling_group %></span>
-                    <% }); %>
+                    <div class="all-groups">
+                        <% _.each(coupling_groups, function (coupling_group) { %>
+                            <span class="group"><%= coupling_group %></span>
+                        <% }); %>
+                    </div>
                   </div>
                 </div>
               <% } %>

@@ -72,12 +72,45 @@
     });
   }
 
+  function settingsForm(event) {
+    var url = event.target.href;
+    var paramSep = url.includes('?') ? '&' : '?';
+
+    $.fancybox.open({
+      autoSize: false,
+      href: url + paramSep + 'inline=true',
+      type: 'ajax',
+      height: 800,
+      width: 900,
+      padding: 0,
+      afterShow: function () {
+        var closeBtn = document.querySelector('#cancel-box');
+        closeBtn.addEventListener('click', $.fancybox.close);
+
+        var saveBtn = $('#save_button');
+
+        var permBtn = document.querySelector('#permanent-uncouple');
+        permBtn.addEventListener('change', function () {
+          if ($(this).is(':checked')){
+            saveBtn.addClass('danger');
+          } else {
+            saveBtn.removeClass('danger');
+          }
+        });
+
+        $('.toggle-input').on('change', function() {
+          saveBtn.addClass('confirm');
+        })
+      },
+    });
+  }
+
   var ScenarioNavView = Backbone.View.extend({
     events: {
       'click .save-scenario': 'saveScenario',
       'click .save-scenario-as': 'showSaveAsModal',
       'click .save-scenario-as-inline': 'showSaveAsModal',
-      'click .uncouple-scenario': 'showConfirmModal',
+      'click .coupling-settings': 'showSettingsModal',
       'click .reset-scenario': 'showConfirmModal',
     },
 
@@ -150,6 +183,11 @@
       event && event.preventDefault();
       confirmForm(event);
     },
+
+    showSettingsModal: function (event) {
+      event && event.preventDefault();
+      settingsForm(event)
+    }
   });
 
   window.ScenarioNavView = ScenarioNavView;

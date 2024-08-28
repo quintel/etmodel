@@ -59,6 +59,8 @@ en:
     current_scenario: "Current scenario"
     coupled: Coupled
     coupled_docs: What does this mean?
+    coupled_groups: "Active couplings"
+    coupling_settings: "Coupling settings"
     disclaimer: "Disclaimer"
     education: "Education"
     feedback: "Feedback"
@@ -77,6 +79,8 @@ en:
         Are you sure you wish to revert the scenario to the saved settings? You will lose any
         unsaved changes.
     uncouple_scenario: "Uncouple scenario"
+    uncoupled: "Uncoupled"
+    uncoupled_groups: "Inactive couplings"
     save_scenario: "Save scenario"
     save_scenario_as: "Save scenario as"
     saved: "Saved"
@@ -739,3 +743,15 @@ en:
       Microsoft replaced Internet Explorer with Edge in 2015, and since then it has received only
       minor maintenance updates. Internet Explorer lacks support for many modern web standards, and
       limits the Energy Transition Model's ability to deliver innovative new features.
+
+  user_settings:
+    coupling:
+      header: Coupling Settings
+      manage_couplings: Manage couplings
+      description: |
+        Here you can manage the coupling settings for your scenario.
+        Toggle the switches to soft activate or deactivate a coupling.
+        You can also remove couplings permanently if needed.
+      remove_couplings: Remove couplings
+      remove_couplings_description: Check the box below to permanently uncouple all couplings from this scenario. This is irreversible.
+      permanent_uncouple: Uncouple permanently.

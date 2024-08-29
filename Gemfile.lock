@@ -482,7 +482,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdiscount (2.2.0.2)
+    rdiscount (2.2.7.3)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)
@@ -708,7 +708,7 @@ DEPENDENCIES
   rails-controller-testing
   rails-html-sanitizer (~> 1.6)
   rails-i18n
-  rdiscount
+  rdiscount (= 2.2.7.3)
   rspec-rails (~> 6.1.2)
   rspec_junit_formatter
   rubocop (~> 1.0)

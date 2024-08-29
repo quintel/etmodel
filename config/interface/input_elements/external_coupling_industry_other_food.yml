@@ -55,17 +55,17 @@
   share_group: external_coupling_other_food_heat
   interface_group: external_coupling_industry_other_food_energetic
   coupling_icon: true
-- key: external_coupling_industry_other_food_useable_heat
-  step_value: 0.001
-  unit: '%'
+- key: external_coupling_industry_other_food_useful_energetic_demand_excluding_electricity
+  step_value: 0.1
+  unit: PJ
   position: 200
   slide_key: demand_industry_other_food
   share_group: ''
   interface_group: external_coupling_industry_other_food_general
   coupling_icon: true
-- key: external_coupling_industry_other_food_electricity
-  step_value: 0.001
-  unit: '%'
+- key: external_coupling_industry_other_food_useful_energetic_demand_for_electricity
+  step_value: 0.1
+  unit: PJ
   position: 205
   slide_key: demand_industry_other_food
   share_group: ''

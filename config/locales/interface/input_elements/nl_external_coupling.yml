@@ -176,27 +176,27 @@ nl:
     external_coupling_industry_metal_aluminium_production:
       title: Productiegrootte
       description: |
-        Schalingsgrootte van nuttige aluminiumproductie
+        Grootte van nuttige aluminiumproductie
     external_coupling_industry_chemical_fertilizers_total_excluding_electricity:
       title: Vraag energetisch (excl. elektriciteit)
       description: |
         Schalingsgrootte van nuttige energetische en niet-energetische vraag (excl. elektriciteitsvraag)
-    external_coupling_industry_useful_demand_for_other_non_specified_energetic:
+    external_coupling_industry_other_non_specified_useful_energetic_demand:
       title: Grootte (energetisch)
       description: |
-        Schalingsgrootte van nuttige energetische vraag
+        Grootte van nuttige energetische vraag
     external_coupling_industry_chemical_refineries_useable_heat:
       title: Vraag energetisch (excl. elektriciteit)
       description: |
         Schalingsgrootte van nuttige energetische vraag (excl. elektriciteitsvraag)
-    external_coupling_industry_other_food_useable_heat:
+    external_coupling_industry_other_food_useful_energetic_demand_excluding_electricity:
       title: Vraag energetisch (excl. elektriciteit)
       description: |
-        Schalingsgrootte van nuttige energetische vraag (excl. elektriciteitsvraag)
-    external_coupling_industry_other_paper_useable_heat:
+        Grootte van nuttige energetische vraag (excl. elektriciteitsvraag)
+    external_coupling_industry_other_paper_useful_energetic_demand_excluding_electricity:
       title: Vraag energetisch (excl. elektriciteit)
       description: |
-        Schalingsgrootte van nuttige energetische vraag (excl. elektriciteitsvraag)
+        Grootte van nuttige energetische vraag (excl. elektriciteitsvraag)
     external_coupling_industry_chemical_other_useable_heat:
       title: Vraag energetisch (excl. elektriciteit)
       description: |
@@ -209,14 +209,14 @@ nl:
       title: Vraag energetisch naar elektriciteit
       description: |
         Schalingsgrootte van nuttige energetische vraag naar elektriciteit (excl. vraag naar CCUS en warmte)
-    external_coupling_industry_other_food_electricity:
+    external_coupling_industry_other_food_useful_energetic_demand_for_electricity:
       title: Vraag energetisch naar elektriciteit
       description: |
-        Schalingsgrootte van nuttige energetische vraag naar elektriciteit (excl. vraag naar CCUS en warmte)
-    external_coupling_industry_other_paper_electricity:
+        Grootte van nuttige energetische vraag naar elektriciteit (excl. vraag naar CCUS en warmte)
+    external_coupling_industry_other_paper_useful_energetic_demand_for_electricity:
       title: Vraag energetisch naar elektriciteit
       description: |
-        Schalingsgrootte van nuttige energetische vraag naar elektriciteit (excl. vraag naar CCUS en warmte)
+        Grootte van nuttige energetische vraag naar elektriciteit (excl. vraag naar CCUS en warmte)
     external_coupling_industry_chemical_other_electricity:
       title: Vraag energetisch naar elektriciteit
       description: |
@@ -225,14 +225,14 @@ nl:
       title: Groote (niet-energetisch)
       description: |
         Schalingsgrootte van niet-energetische vraag
-    external_coupling_industry_useful_demand_for_other_non_specified_non_energetic:
+    external_coupling_industry_other_non_specified_useful_non_energetic_demand:
       title: Grootte (niet-energetisch)
       description: |
-        Schalingsgrootte van niet-energetische vraag
-    external_coupling_industry_metal_other_metals_total_demand:
+        Grootte van niet-energetische vraag
+    external_coupling_industry_metal_other_metals_useful_energetic_demand:
       title: Productiegrootte
       description: |
-        Schalingsgrootte van nuttige productie van andere metalen
+        Grootte van nuttige productie van andere metalen
     external_coupling_industry_metal_steel_total_demand:
       title: Productiegrootte
       description: |
@@ -265,10 +265,6 @@ nl:
       title: Ammoniak
       description: |
         Aandeel ammoniak in nuttige niet-energetische vraag
-    external_coupling_industry_aluminium_electrolysis_bat_electricity_share:
-      title: Elektrolyse BAT
-      description: |
-        Aandeel van BAT elektrolyse in aluminiumproductie
     external_coupling_industry_biodiesel_in_crude_oil_share:
       title: Biodiesel
       description: |
@@ -293,10 +289,6 @@ nl:
       title: Hoogoven
       description: |
         Aandeel van hoogovens in aluminiumproductie
-    external_coupling_industry_aluminium_carbothermalreduction_electricity_share:
-      title: Carbothermische reductie
-      description: |
-        Het deel van de carbothermische reductie in de aluminiumproductie
     external_coupling_industry_chemical_fertilizers_combustion_ccus_captured_co2:
       title: Afgevangen CO2 van potentieel
       description: |
@@ -380,11 +372,11 @@ nl:
     external_coupling_energy_distribution_coal_gas_chemical_feedstock_share:
       title: Grondstof voor chemiesector
       description: |
-        Aandeel van kolengas in centrale kolengasdistributie dat wordt gealloceerd naar chemische grondstofproductie 
+        Aandeel van kolengas in centrale kolengasdistributie dat wordt gealloceerd naar chemische grondstofproductie
     external_coupling_energy_distribution_coal_gas_energy_production_share:
       title: Energieproductie
       description: |
-        Aandeel van kolengas in centrale kolengasdistributie dat wordt gealloceerd naar energieproductie 
+        Aandeel van kolengas in centrale kolengasdistributie dat wordt gealloceerd naar energieproductie
     external_coupling_energy_distribution_coal_gas_final_demand_share:
       title: Finale vraag
       description: |
@@ -401,7 +393,7 @@ nl:
       title: Kolen
       description: |
         Aandeel van kolen in nuttige energetische vraag
-    external_coupling_industry_other_metals_coal_share:
+    external_coupling_industry_metal_other_metals_coal_share:
       title: Kolen
       description: |
         Aandeel van kolen in nuttige energetische vraag
@@ -413,7 +405,7 @@ nl:
       title: Kolen
       description: |
         Aandeel van kolen in nuttige niet-energetische vraag
-    external_coupling_industry_other_metals_crude_oil_share:
+    external_coupling_industry_metal_other_metals_crude_oil_share:
       title: Olie
       description: |
         Aandeel van ruwe olie in nuttige energetische vraag
@@ -481,10 +473,6 @@ nl:
       title: Oie
       description: |
         Aandeel ruwe olie in nuttige niet-energetische vraag
-    external_coupling_industry_aluminium_electrolysis_current_electricity_share:
-      title: Elektrolyse
-      description: |
-        Het aandeel van elektrolyse bij aluminiumproductie
     external_coupling_industry_metal_steel_cyclonefurnace_bof_share:
       title: Cycloonoven
       description: |
@@ -541,7 +529,7 @@ nl:
       title: Elektriciteit
       description: |
         Aandeel van elektriciteit in nuttige energetische vraag
-    external_coupling_industry_other_metals_electricity_share:
+    external_coupling_industry_metal_other_metals_electricity_share:
       title: Elektriciteit
       description: |
         Aandeel van elektriciteit in nuttige energetische vraag
@@ -549,10 +537,6 @@ nl:
       title: Elektriciteit
       description: |
         Aandeel van elektriciteit in nuttige energetische vraag
-    external_coupling_industry_other_metals_process_electricity_share:
-      title: Elektriciteitsverbruik in proces
-      description: |
-        Aandeel van elektriciteitsgebruik in productieprocessen van andere metalen
     external_coupling_industry_chemical_fertilizers_total_useable_heat_share:
       title: Vraag energetisch naar warmte in productie
       description: |
@@ -685,7 +669,7 @@ nl:
       title: Waterstof
       description: |
         Aandeel waterstof in een nuttige energetische vraag
-    external_coupling_industry_other_metals_hydrogen_share:
+    external_coupling_industry_metal_other_metals_hydrogen_share:
       title: Waterstof
       description: |
         Aandeel waterstof in een nuttige energetische vraag
@@ -849,7 +833,7 @@ nl:
       title: Netwerkgas
       description: |
         Aandeel van netwerkgas in nuttige energetische vraag
-    external_coupling_industry_other_metals_network_gas_share:
+    external_coupling_industry_metal_other_metals_network_gas_share:
       title: Netwerkgas
       description: |
         Aandeel van netwerkgas in nuttige energetische vraag
@@ -905,14 +889,6 @@ nl:
       title: Andere olie
       description: |
         Aandeel overige olie in finale niet-energetische olievraag in de industrie
-    external_coupling_industry_metal_aluminium_external_coupling_share:
-      title: Externe koppelingsroute
-      description: |
-        Aandeel van de productieroute via een extern gekoppeld model in aluminiumproductie
-    external_coupling_industry_other_metals_external_coupling_share:
-      title: Externe koppelingsroute
-      description: |
-        Aandeel van de productieroute via een extern gekoppeld model in de productie van andere metalen
     external_coupling_industry_metal_steel_external_coupling_share:
       title: Externe koppelingsroute
       description: |
@@ -933,10 +909,6 @@ nl:
       title: Recycling / HBI
       description: |
         Aandeel van schroot HBI EAF in aluminiumproductie
-    external_coupling_industry_aluminium_smeltoven_electricity_share:
-      title: Smeltoven (recycling)
-      description: |
-        Aandeel van de smeltoven in aluminiumproductie
     external_coupling_industry_chemical_other_steam_hot_water_share:
       title: Afgevangen CO2 van potentieel
       description: |
@@ -969,7 +941,7 @@ nl:
       title: Stoomnet
       description: |
         Aandeel stoom uit het stoomnetwerk in de input van industriële transformatie
-    external_coupling_industry_other_metals_heat_useable_heat_share:
+    external_coupling_industry_metal_other_metals_steam_hot_water_share:
       title: Stoom
       description: |
         Aandeel stoom uit het stoomnetwerk in een nuttige energetische vraag
@@ -981,10 +953,6 @@ nl:
       title: Stoomnet
       description: |
         Aandeel stoom uit het stoomnetwerk in een nuttige energetische vraag
-    external_coupling_industry_other_metals_process_heat_useable_heat_share:
-      title: Nuttige warmteverbruik in proces
-      description: |
-        Aandeel van nuttige warmte in productieprocessen van overige metalen
     external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_waste_mix_input_share:
       title: Afval
       description: |
@@ -1093,14 +1061,10 @@ nl:
       title: Energetische conversie-efficiëntie
       description: |
         Nuttige energetische conversie-efficiëntie naar staalproductie
-    external_coupling_industry_metal_aluminium_efficiency:
+    external_coupling_industry_metal_aluminium_production_efficiency:
       title: Conversie energetische vraag
       description: |
         Nuttige energetische conversie-efficiëntie naar aluminiumproductie
-    external_coupling_industry_metal_other_metals_hydrogen_efficiency:
-      title: Conversie energetische vraag
-      description: |
-        Nuttige energetische conversie-efficiëntie naar de productie van andere metalen
     external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_total_demand:
       title: Vraag voor transformatie
       description: |

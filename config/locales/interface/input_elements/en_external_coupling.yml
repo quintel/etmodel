@@ -176,27 +176,27 @@ en:
     external_coupling_industry_metal_aluminium_production:
       title: Production size
       description: |
-        Scaling size of useful aluminium production
+        Size of useful aluminium production
     external_coupling_industry_chemical_fertilizers_total_excluding_electricity:
       title: Demand useful energetic (excl. electricity)
       description: |
         Scaling size of useful energetic and non-energetic demand (excl. electricity demand)
-    external_coupling_industry_useful_demand_for_other_non_specified_energetic:
+    external_coupling_industry_other_non_specified_useful_energetic_demand:
       title: Size (energetic)
       description: |
-        Scaling size of useful energetic demand
+        Size of useful energetic demand
     external_coupling_industry_chemical_refineries_useable_heat:
       title: Demand useful energetic (excl. electricity)
       description: |
         Scaling size of useful energetic demand (excl. electricity demand)
-    external_coupling_industry_other_food_useable_heat:
+    external_coupling_industry_other_food_useful_energetic_demand_excluding_electricity:
       title: Demand useful energetic (excl. electricity)
       description: |
-        Scaling size of useful energetic demand (excl. electricity demand)
-    external_coupling_industry_other_paper_useable_heat:
+        Size of useful energetic demand (excl. electricity demand)
+    external_coupling_industry_other_paper_useful_energetic_demand_excluding_electricity:
       title: Demand useful energetic (excl. electricity)
       description: |
-        Scaling size of useful energetic demand (excl. electricity demand)
+        Size of useful energetic demand (excl. electricity demand)
     external_coupling_industry_chemical_other_useable_heat:
       title: Demand useful energetic (excl. electricity)
       description: |
@@ -209,14 +209,14 @@ en:
       title: Demand useful energetic for electricity
       description: |
         Scaling size of useful energetic demand for electricity (excl. demand for CCUS and heat)
-    external_coupling_industry_other_food_electricity:
+    external_coupling_industry_other_food_useful_energetic_demand_for_electricity:
       title: Demand useful energetic for electricity
       description: |
-        Scaling size of useful energetic demand for electricity (excl. demand for CCUS and heat)
-    external_coupling_industry_other_paper_electricity:
+        Size of useful energetic demand for electricity (excl. demand for CCUS and heat)
+    external_coupling_industry_other_paper_useful_energetic_demand_for_electricity:
       title: Demand useful energetic for electricity
       description: |
-        Scaling size of useful energetic demand for electricity (excl. demand for CCUS and heat)
+        Size of useful energetic demand for electricity (excl. demand for CCUS and heat)
     external_coupling_industry_chemical_other_electricity:
       title: Demand useful energetic for electricity
       description: |
@@ -225,14 +225,14 @@ en:
       title: Size (non-energetic)
       description: |
         Scaling size of useful non-energetic demand
-    external_coupling_industry_useful_demand_for_other_non_specified_non_energetic:
+    external_coupling_industry_other_non_specified_useful_non_energetic_demand:
       title: Size (non-energetic)
       description: |
-        Scaling size of useful non-energetic demand
-    external_coupling_industry_metal_other_metals_total_demand:
+        Size of useful non-energetic demand
+    external_coupling_industry_metal_other_metals_useful_energetic_demand:
       title: Production size
       description: |
-        Scaling size of useful other metals production
+        Size of useful other metals production
     external_coupling_industry_metal_steel_total_demand:
       title: Production size
       description: |
@@ -265,10 +265,6 @@ en:
       title: Ammonia
       description: |
         Share of ammonia in useful non-energetic demand
-    external_coupling_industry_aluminium_electrolysis_bat_electricity_share:
-      title: Electrolysis BAT
-      description: |
-        Share of BAT electrolysis in aluminium production
     external_coupling_industry_biodiesel_in_crude_oil_share:
       title: Biodiesel
       description: |
@@ -293,10 +289,6 @@ en:
       title: Blast furnace
       description: |
         Share of blast furnace BOF in aluminium production
-    external_coupling_industry_aluminium_carbothermalreduction_electricity_share:
-      title: Carbothermal reduction
-      description: |
-        Share of carbothermal reduction in aluminium production
     external_coupling_industry_chemical_fertilizers_combustion_ccus_captured_co2:
       title: Captured CO2 from potential
       description: |
@@ -401,7 +393,7 @@ en:
       title: Coal
       description: |
         Share of coal in useful energetic demand
-    external_coupling_industry_other_metals_coal_share:
+    external_coupling_industry_metal_other_metals_coal_share:
       title: Coal
       description: |
         Share of coal in useful energetic demand
@@ -413,7 +405,7 @@ en:
       title: Coal
       description: |
         Share of coal in useful non-energetic demand
-    external_coupling_industry_other_metals_crude_oil_share:
+    external_coupling_industry_metal_other_metals_crude_oil_share:
       title: Oil
       description: |
         Share of crude oil in useful energetic demand
@@ -481,10 +473,6 @@ en:
       title: Oil
       description: |
         Share of crude oil in useful non-energetic demand
-    external_coupling_industry_aluminium_electrolysis_current_electricity_share:
-      title: Electrolysis
-      description: |
-        Share of current electrolysis in aluminium production
     external_coupling_industry_metal_steel_cyclonefurnace_bof_share:
       title: Cyclone furnace
       description: |
@@ -541,7 +529,7 @@ en:
       title: Electricity
       description: |
         Share of electricity in useful energetic demand
-    external_coupling_industry_other_metals_electricity_share:
+    external_coupling_industry_metal_other_metals_electricity_share:
       title: Electricity
       description: |
         Share of electricity in useful energetic demand
@@ -549,10 +537,6 @@ en:
       title: Electricity
       description: |
         Share of electricity in useful energetic demand
-    external_coupling_industry_other_metals_process_electricity_share:
-      title: Electricity consumption in process
-      description: |
-        Share of electricity use in production processes of other metals
     external_coupling_industry_chemical_fertilizers_total_useable_heat_share:
       title: Demand useful energetic for heat in production
       description: |
@@ -685,7 +669,7 @@ en:
       title: Hydrogen
       description: |
         Share of hydrogen in useful energetic demand
-    external_coupling_industry_other_metals_hydrogen_share:
+    external_coupling_industry_metal_other_metals_hydrogen_share:
       title: Hydrogen
       description: |
         Share of hydrogen in useful energetic demand
@@ -849,7 +833,7 @@ en:
       title: Network gas
       description: |
         Share of network gas in useful energetic demand
-    external_coupling_industry_other_metals_network_gas_share:
+    external_coupling_industry_metal_other_metals_network_gas_share:
       title: Network gas
       description: |
         Share of network gas in useful energetic demand
@@ -905,14 +889,6 @@ en:
       title: Other oil
       description: |
         Share of other oil in industry final non-energetic oil demand
-    external_coupling_industry_metal_aluminium_external_coupling_share:
-      title: External coupling route
-      description: |
-        Share of production route via external coupling model in aluminium production
-    external_coupling_industry_other_metals_external_coupling_share:
-      title: External coupling route
-      description: |
-        Share of production route via external coupling model in other metals production
     external_coupling_industry_metal_steel_external_coupling_share:
       title: External coupling route
       description: |
@@ -933,10 +909,6 @@ en:
       title: Recycling / HBI
       description: |
         Share of scrap HBI EAF in aluminium production
-    external_coupling_industry_aluminium_smeltoven_electricity_share:
-      title: Smelt oven (recycling)
-      description: |
-        Share of smelt oven in aluminium production
     external_coupling_industry_chemical_other_steam_hot_water_share:
       title: Captured CO2 from potential
       description: |
@@ -969,7 +941,7 @@ en:
       title: Steam network
       description: |
         Share of steam hot water from the steam network in input of industral transformation
-    external_coupling_industry_other_metals_heat_useable_heat_share:
+    external_coupling_industry_metal_other_metals_steam_hot_water_share:
       title: Steam
       description: |
         Share of steam hot water from the steam network in useful energetic demand
@@ -981,10 +953,6 @@ en:
       title: Steam network
       description: |
         Share of steam hot water from the steam network in useful energetic demand
-    external_coupling_industry_other_metals_process_heat_useable_heat_share:
-      title: Heat consumption in process
-      description: |
-        Share of useable heat use in production processes of other metals
     external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_waste_mix_input_share:
       title: Waste
       description: |
@@ -1093,14 +1061,10 @@ en:
       title: Energetic conversion efficiency
       description: |
         Useful energetic conversion efficiency to steel production
-    external_coupling_industry_metal_aluminium_efficiency:
+    external_coupling_industry_metal_aluminium_production_efficiency:
       title: Conversion energetic demand
       description: |
         Useful energetic demand conversion to aluminium production
-    external_coupling_industry_metal_other_metals_hydrogen_efficiency:
-      title: Conversion energetic demand
-      description: |
-        Useful energetic demand conversion to other metals production
     external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_total_demand:
       title: Demand for transformation
       description: |

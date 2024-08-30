@@ -49,57 +49,17 @@
   coupling_icon: true
 - key: external_coupling_industry_metal_aluminium_production
   step_value: 0.1
-  unit: '%'
+  unit: Mton
   position: 300
   slide_key: demand_industry_aluminium
   share_group: ''
   interface_group: external_coupling_industry_metal_aluminium_general
   coupling_icon: true
-- key: external_coupling_industry_metal_aluminium_efficiency
-  step_value: 0.1
-  unit: '%'
+- key: external_coupling_industry_metal_aluminium_production_efficiency
+  step_value: 0.001
+  unit: Mton/PJ
   position: 305
   slide_key: demand_industry_aluminium
   share_group: ''
   interface_group: external_coupling_industry_metal_aluminium_general
-  coupling_icon: true
-- key: external_coupling_industry_aluminium_electrolysis_bat_electricity_share
-  step_value: 0.1
-  unit: '%'
-  position: 400
-  slide_key: demand_industry_aluminium
-  share_group: external_coupling_industry_aluminium_production_route
-  interface_group: external_coupling_industry_metal_aluminium_production_route
-  coupling_icon: true
-- key: external_coupling_industry_metal_aluminium_external_coupling_share
-  step_value: 0.1
-  unit: '%'
-  position: 405
-  slide_key: demand_industry_aluminium
-  share_group: external_coupling_industry_aluminium_production_route
-  interface_group: external_coupling_industry_metal_aluminium_production_route
-  coupling_icon: true
-- key: external_coupling_industry_aluminium_smeltoven_electricity_share
-  step_value: 0.1
-  unit: '%'
-  position: 410
-  slide_key: demand_industry_aluminium
-  share_group: external_coupling_industry_aluminium_production_route
-  interface_group: external_coupling_industry_metal_aluminium_production_route
-  coupling_icon: true
-- key: external_coupling_industry_aluminium_electrolysis_current_electricity_share
-  step_value: 0.1
-  unit: '%'
-  position: 415
-  slide_key: demand_industry_aluminium
-  share_group: external_coupling_industry_aluminium_production_route
-  interface_group: external_coupling_industry_metal_aluminium_production_route
-  coupling_icon: true
-- key: external_coupling_industry_aluminium_carbothermalreduction_electricity_share
-  step_value: 0.1
-  unit: '%'
-  position: 420
-  slide_key: demand_industry_aluminium
-  share_group: external_coupling_industry_aluminium_production_route
-  interface_group: external_coupling_industry_metal_aluminium_production_route
   coupling_icon: true

@@ -53,7 +53,7 @@ class @AppView extends Backbone.View
     @input_elements.on "change", @handleInputElementsUpdate
     @loadCustomCurveStates()
 
-    deferred = @user_values()
+    deferred = @user_values(true)
       .done (args...) =>
         @input_elements.initialize_user_values(args...)
         @setup_checkboxes()
@@ -152,13 +152,14 @@ class @AppView extends Backbone.View
 
   # Returns a deferred object on which the .done() method can be called
   #
-  user_values: =>
-    return @_user_values_dfd if @_user_values_dfd
+  user_values: (refresh) =>
+    return @_user_values_dfd if @_user_values_dfd && not refresh
     @_user_values_dfd = $.Deferred (dfd) =>
       @api.user_values
         extras: !! App.settings.get('scaling')
         success: dfd.resolve
         error: dfd.reject
+        cache: not refresh
     @_user_values_dfd
 
   # At this point we have all the settings initialized.

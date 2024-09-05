@@ -1,18 +1,6 @@
 # What's new in the Energy Transition Model?
 ___
 
-# September 2024
-
-### Update profiles electric vehicles
-
-The electric vehicle load profile section has been updated!
-
-We have updated both the standard settings for the profiles, and updated them with new profiles.
-
-Explore this new update in the **[Demand response - electric vehicles](scenario/flexibility/flexibility_net_load/demand-response-electric-vehicles)** section.
-
--> <img src="/assets/pages/whats_new/en_whats_new_electric_vehicle_profiles.png" width="600" /> <-
-
 # July 2024
 
 ### Hybrid offshore wind

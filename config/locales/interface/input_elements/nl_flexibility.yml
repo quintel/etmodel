@@ -4,85 +4,74 @@ nl:
     settings_enable_merit_order:
       title: ''
       description: ''
-    transport_car_using_electricity_public_charging_share:
-      title: Publiek opladen
-      short_description:
-      description: |
-        Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
-        door een laadprofiel dat mensen beschrijft die opladen bij openbare laadfaciliteiten?
-
-        Het profiel dat wordt gebruikt om dit type laadgedrag te beschrijven is gegenereerd door middel
-        van de <a href="https://platform.elaad.io/analyse/low-voltage-charging-profiles/" target="_blank">
-        Elaad profielen generator</a>. De verdeling van de profielen is afkomstig van de
-        <a href="https://refman.energytransitionmodel.com/publications/2200" target="_blank">
-        Elaad-studie "Regulier en netbewust laden (2023)"</a>.
-    transport_car_using_electricity_home_charging_share:
-      title: Thuis opladen
-      short_description:
-      description: |
-        Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
-        door een laadprofiel dat mensen beschrijft die thuis opladen?
-
-        Het profiel dat wordt gebruikt om dit type laadgedrag te beschrijven is gegenereerd door middel
-        van de <a href="https://platform.elaad.io/analyse/low-voltage-charging-profiles/" target="_blank">
-        Elaad profielen generator</a>. De verdeling van de profielen is afkomstig van de
-        <a href="https://refman.energytransitionmodel.com/publications/2200" target="_blank">
-        Elaad-studie "Regulier en netbewust laden (2023)"</a>.
     transport_car_using_electricity_fast_charging_share:
-      title: Snel opladen
+      title: Snelladen
       short_description:
       description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
         wordt door 'snelladen' voldaan? Snelladen gebeurt typisch met laadcapaciteiten
         tussen de 11 en 22 kW.\r\n<br>\r\n<br>\r\nHet profiel dat dit type laadgedrag
         beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
         target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
-    transport_car_using_electricity_work_charging_share:
-      title: Opladen op het werk
+    transport_car_using_electricity_hybrid_charging_share:
+      title: Overal laden
       short_description:
-      description: |
-        Welk deel van de elektriciteit die wordt gebruikt door elektrische voertuigen wordt geleverd
-        door een laadprofiel dat mensen beschrijft die op werk opladen?
-
-        Het profiel dat wordt gebruikt om dit type laadgedrag te beschrijven is gegenereerd door middel
-        van de <a href="https://platform.elaad.io/analyse/low-voltage-charging-profiles/" target="_blank">
-        Elaad profielen generator</a>. De verdeling van de profielen is afkomstig van de
-        <a href="https://refman.energytransitionmodel.com/publications/2200" target="_blank">
-        Elaad-studie "Regulier en netbewust laden (2023)"</a>.
-    transport_car_using_electricity_custom_profile_charging_share:
-      title: Aangepast profiel
+      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
+        wordt voldaan door zowel op het werk als thuis te laden?\r\n<br>\r\n<br>\r\nHet
+        profiel dat dit type laadgedrag beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+    transport_car_using_electricity_home_charging_share:
+      title: Thuisladen
       short_description:
-      description: |
-        Dit profiel bevat een generiek profiel. Dit profiel kan worden overschreven met eigen laadgegevens
-        via <a href="/scenario/flexibility/curve_upload/upload-curves">Profielen aanpassen</a>.
+      description: "Welke fractie van het elektriciteitsgebruik van elektrische auto's
+        wordt voldaan door uitsluitend thuis te laden? Thuisladen gebeurt veelal met
+        een laadcapaciteit van 3.7 kW.\r\n<br>\r\n<br>\r\nHet profiel dat dit type
+        laadgedrag beschrijft is beschreven in de <a href=\"https://refman.energytransitionmodel.com/publications/2055\"
+        target=\"_blank\">Movares studie \"Laadstrategie elektrisch wegvervoer (2013)\"</a>."
+    transport_car_using_electricity_regular_charging_share:
+      title: Regulier laden (Elaad)
+      short_description:
+      description: Dit profiel is het profiel dat bij type laadsessie Regulier van
+        de studie <a href="https://refman.energytransitionmodel.com/publications/2099"
+        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
+        from Real Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert
+        10.000 laadsessies van 140 automobilisten.
+    transport_car_using_electricity_smart_charging_share:
+      title: Slim laden (Elaad)
+      short_description:
+      description: Dit profiel is het profiel dat bij type laadsessie Slim van de
+        studie <a href="https://refman.energytransitionmodel.com/publications/2099"
+        target="_blank">Impact of Smart Charging on EVs Charging Behaviour Assessed
+        from Real Charging Events</a> van ELaad and Jedlix hoort. Deze studie analyseert
+        10.000 laadsessies van 140 automobilisten.
     capacity_of_industry_metal_flexibility_load_shifting_electricity:
       title: Vraagverlaging vermogen
       short_description:
       description: |
-        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
         factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
         en productieprocessen.
         <a href="https://refman.energytransitionmodel.com/publications/2197" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de
-        metaalindustrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel
+        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de 
+        metaalindustrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
         zijn van de metaalindustrie:
-        <a href="/scenario/demand/industry/steel">staal</a>,
+        <a href="/scenario/demand/industry/steel">staal</a>, 
         <a href="/scenario/demand/industry/aluminium">aluminium</a> en
         <a href="/scenario/demand/industry/other-metals">overige metalen</a>.
     input_capacity_of_industry_metal_flexibility_load_shifting_electricity:
       title: Vraagverhoging vermogen
       short_description:
       description: |
-        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
         factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
         en productieprocessen.
         <a href="https://refman.energytransitionmodel.com/publications/2197" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Vraagverlaging in de metaalindustrie moet op een later moment ingehaald worden door de vraag te
+        Vraagverlaging in de metaalindustrie moet op een later moment ingehaald worden door de vraag te 
         verhogen. Dit schuifje bepaalt de beschikbare capaciteit voor vraagverhoging als percentage
-        van de piek elektriciteitsvraag van de metaalindustrie.
+        van de piek elektriciteitsvraag van de metaalindustrie.     
     wta_of_industry_metal_flexibility_load_shifting_electricity:
       title: Willingness-to-accept
       short_description:
@@ -95,8 +84,8 @@ nl:
         <a href="https://refman.energytransitionmodel.com/publications/2198" target="_blank">Deze studie</a>
         van DNV laat zien dat deze willingness-to-accept prijs
         vaak boven 100 €/MWh ligt. </br></br>
-        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de
-        metaalindustrie. Je kunt de uurlijkse elektriciteitsprijs in
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        metaalindustrie. Je kunt de uurlijkse elektriciteitsprijs in 
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a> gebruiken om dit schuifje in te stellen.
     deficit_limit_of_industry_metal_flexibility_load_shifting_electricity:
@@ -104,8 +93,8 @@ nl:
       short_description:
       description: |
         Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
-        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale
-        elektriciteitsconsumptie van de metaalindustrie hervat. De vraag mag pas weer verlaagd
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de metaalindustrie hervat. De vraag mag pas weer verlaagd 
         worden als een deel van het tekort ingehaald is. </br></br>
         Het maximale tekort voor vraagverschuiving
         hangt af van het productieproces en het type installaties. Sommige installaties
@@ -113,35 +102,35 @@ nl:
         Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
         vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
         wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
-        Dit schuifje bepaalt het aantal uren dat de vraag van de metaalindustrie met volle
+        Dit schuifje bepaalt het aantal uren dat de vraag van de metaalindustrie met volle 
         vraagverschuivingscapaciteit verlaagd mag worden.
     capacity_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Vraagverlaging vermogen
       short_description:
       description: |
-        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
         factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
         en productieprocessen.
         <a href="https://refman.energytransitionmodel.com/publications/2197" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de
-        chemische industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel
+        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de 
+        chemische industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
         zijn van de chemische industrie:
-        <a href="/scenario/demand/industry/refineries">raffinaderijen</a>,
+        <a href="/scenario/demand/industry/refineries">raffinaderijen</a>, 
         <a href="/scenario/demand/industry/fertilizers">kunstmest</a> en
         <a href="/scenario/demand/industry/chemicals">overige chemie</a>.
     input_capacity_of_industry_chemical_flexibility_load_shifting_electricity:
       title: Vraagverhoging vermogen
       short_description:
       description: |
-        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
         factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
         en productieprocessen.
         <a href="https://refman.energytransitionmodel.com/publications/2197" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Vraagverlaging in de chemische industrie moet op een later moment ingehaald worden door de vraag te
+        Vraagverlaging in de chemische industrie moet op een later moment ingehaald worden door de vraag te 
         verhogen. Dit schuifje bepaalt de beschikbare capaciteit voor vraagverhoging als percentage
         van de piek elektriciteitsvraag van de chemische industrie.
     wta_of_industry_chemical_flexibility_load_shifting_electricity:
@@ -156,8 +145,8 @@ nl:
         <a href="https://refman.energytransitionmodel.com/publications/2198" target="_blank">Deze studie</a>
         van DNV laat zien dat deze willingness-to-accept prijs
         vaak boven 100 €/MWh ligt. </br></br>
-        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de
-        chemische industrie. Je kunt de uurlijkse elektriciteitsprijs in
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        chemische industrie. Je kunt de uurlijkse elektriciteitsprijs in 
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a> gebruiken om dit schuifje in te stellen.
     deficit_limit_of_industry_chemical_flexibility_load_shifting_electricity:
@@ -165,8 +154,8 @@ nl:
       short_description:
       description: |
         Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
-        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale
-        elektriciteitsconsumptie van de chemische industrie hervat. De vraag mag pas weer verlaagd
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de chemische industrie hervat. De vraag mag pas weer verlaagd 
         worden als een deel van het tekort ingehaald is. </br></br>
         Het maximale tekort voor vraagverschuiving
         hangt af van het productieproces en het type installaties. Sommige installaties
@@ -174,37 +163,37 @@ nl:
         Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
         vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
         wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
-        Dit schuifje bepaalt het aantal uren dat de vraag van de chemische industrie met volle
+        Dit schuifje bepaalt het aantal uren dat de vraag van de chemische industrie met volle 
         vraagverschuivingscapaciteit verlaagd mag worden.
     capacity_of_industry_other_flexibility_load_shifting_electricity:
       title: Vraagverlaging vermogen
       short_description:
       description: |
-        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
         factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
         en productieprocessen.
         <a href="https://refman.energytransitionmodel.com/publications/2197" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de
-        overige industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel
+        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de 
+        overige industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de sectoren die onderdeel 
         zijn van de overige industrie:
-        <a href="/scenario/demand/industry/food">voedsel</a>,
+        <a href="/scenario/demand/industry/food">voedsel</a>, 
         <a href="/scenario/demand/industry/paper">papier</a>, en
         <a href="/scenario/demand/industry/other">overige industrie</a>.
     input_capacity_of_industry_other_flexibility_load_shifting_electricity:
       title: Vraagverhoging vermogen
       short_description:
       description: |
-        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
         factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
         en productieprocessen.
         <a href="https://refman.energytransitionmodel.com/publications/2197" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Vraagverlaging in de overige industrie moet op een later moment ingehaald worden door de vraag te
+        Vraagverlaging in de overige industrie moet op een later moment ingehaald worden door de vraag te 
         verhogen. Dit schuifje bepaalt de beschikbare capaciteit voor vraagverhoging als percentage
-        van de piek elektriciteitsvraag van de overige industrie.
+        van de piek elektriciteitsvraag van de overige industrie.      
     wta_of_industry_other_flexibility_load_shifting_electricity:
       title: Willingness-to-accept
       short_description:
@@ -217,8 +206,8 @@ nl:
         <a href="https://refman.energytransitionmodel.com/publications/2198" target="_blank">Deze studie</a>
         van DNV laat zien dat deze willingness-to-accept prijs
         vaak boven 100 €/MWh ligt. </br></br>
-        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de
-        overige industrie. Je kunt de uurlijkse elektriciteitsprijs in
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        overige industrie. Je kunt de uurlijkse elektriciteitsprijs in 
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a> gebruiken om dit schuifje in te stellen.
     deficit_limit_of_industry_other_flexibility_load_shifting_electricity:
@@ -226,8 +215,8 @@ nl:
       short_description:
       description: |
         Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
-        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale
-        elektriciteitsconsumptie van de overige industrie hervat. De vraag mag pas weer verlaagd
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de overige industrie hervat. De vraag mag pas weer verlaagd 
         worden als een deel van het tekort ingehaald is. </br></br>
         Het maximale tekort voor vraagverschuiving
         hangt af van het productieproces en het type installaties. Sommige installaties
@@ -235,34 +224,34 @@ nl:
         Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
         vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
         wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
-        Dit schuifje bepaalt het aantal uren dat de vraag van de overige industrie met volle
+        Dit schuifje bepaalt het aantal uren dat de vraag van de overige industrie met volle 
         vraagverschuivingscapaciteit verlaagd mag worden.
     capacity_of_industry_other_ict_flexibility_load_shifting_electricity:
       title: Vraagverlaging vermogen
       short_description:
       description: |
-        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
         factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
         en productieprocessen.
         <a href="https://refman.energytransitionmodel.com/publications/2197" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de
-        centrale ICT industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de
+        Dit schuifje bepaalt de beschikbare capaciteit voor vraagverlaging als percentage van de piek elektriciteitsvraag van de 
+        centrale ICT industrie. De piekvraag is afhankelijk van de instelling van de schuifjes in de 
         <a href="/scenario/demand/industry/central-ict">centrale ICT industrie</a>.
     input_capacity_of_industry_other_ict_flexibility_load_shifting_electricity:
       title: Vraagverhoging vermogen
       short_description:
       description: |
-        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende
+        De totale potentie voor vraagverschuiving in een scenario is afhankelijk van verschillende 
         factoren, zoals de grootte van de industrie, de mate van elektrificatie en de typen installaties
         en productieprocessen.
         <a href="https://refman.energytransitionmodel.com/publications/2197" target="_blank">Deze studie</a>
         van TenneT laat zien dat de beschikbare capaciteit voor vraagsturing
         in de industrie tussen 10-17% van de piek elektriciteitsvraag is. </br></br>
-        Vraagverlaging in de centrale ICT industrie moet op een later moment ingehaald worden door de vraag te
+        Vraagverlaging in de centrale ICT industrie moet op een later moment ingehaald worden door de vraag te 
         verhogen. Dit schuifje bepaalt de beschikbare capaciteit voor vraagverhoging als percentage
-        van de piek elektriciteitsvraag van de centrale ICT industrie.
+        van de piek elektriciteitsvraag van de centrale ICT industrie.   
     wta_of_industry_other_ict_flexibility_load_shifting_electricity:
       title: Willingness-to-accept
       short_description:
@@ -275,8 +264,8 @@ nl:
         <a href="https://refman.energytransitionmodel.com/publications/2198" target="_blank">Deze studie</a>
         van DNV laat zien dat deze willingness-to-accept prijs
         vaak boven 100 €/MWh ligt. </br></br>
-        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de
-        centrale ICT industrie. Je kunt de uurlijkse elektriciteitsprijs in
+        Dit schuifje bepaalt de willingness-to-accept voor vraagverschuiving voor de 
+        centrale ICT industrie. Je kunt de uurlijkse elektriciteitsprijs in 
         <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
         deze grafiek</a> gebruiken om dit schuifje in te stellen.
     deficit_limit_of_industry_other_ict_flexibility_load_shifting_electricity:
@@ -284,8 +273,8 @@ nl:
       short_description:
       description: |
         Vraagverschuiving kan maar voor een bepaalde tijdsperiode worden
-        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale
-        elektriciteitsconsumptie van de centrale ICT industrie hervat. De vraag mag pas weer verlaagd
+        uitgevoerd. Daarna mag het ontstane tekort niet verder oplopen en wordt de normale 
+        elektriciteitsconsumptie van de centrale ICT industrie hervat. De vraag mag pas weer verlaagd 
         worden als een deel van het tekort ingehaald is. </br></br>
         Het maximale tekort voor vraagverschuiving
         hangt af van het productieproces en het type installaties. Sommige installaties
@@ -293,7 +282,7 @@ nl:
         Deze studie van DNV geeft een schatting van de beschikbare tijdsduur voor
         vraagverschuiving voor verschillende subsectoren. De maximale tijdsduur
         wordt ingeschat tussen 1 uur tot 3 weken. </br></br>
-        Dit schuifje bepaalt het aantal uren dat de vraag van de centrale ICT industrie met volle
+        Dit schuifje bepaalt het aantal uren dat de vraag van de centrale ICT industrie met volle 
         vraagverschuivingscapaciteit verlaagd mag worden.
     flexibility_outdoor_temperature:
       title: Buitentemperatuur
@@ -334,9 +323,9 @@ nl:
       short_description:
       description: Door de vollasturen te
         verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
-        met hetzelfde aantal windmolens. De vollasturen van zowel de 'normale' windmolens
-        op zee als de hybride windmolens op zee worden hiermee aangepast.
-        Wanneer het aantal vollasturen wordt verhoogd met deze schuif,
+        met hetzelfde aantal windmolens. De vollasturen van zowel de 'normale' windmolens 
+        op zee als de hybride windmolens op zee worden hiermee aangepast. 
+        Wanneer het aantal vollasturen wordt verhoogd met deze schuif, 
         verandert tegelijkertijd ook het productieprofiel per uur
         voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
         breder worden doordat de windmolen vaker draait op hogere capaciteit.
@@ -370,7 +359,7 @@ nl:
       short_description:
       description: |
         Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat boilers die met
-        elektriciteit warmte maken voor
+        elektriciteit warmte maken voor 
         <a href="/scenario/supply/heat/allocation-of-power-to-heat">warmtenetten</a>. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van power-to-heat vermogen is: </br></br>
@@ -620,7 +609,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -677,11 +666,11 @@ nl:
       short_description:
       description: |
         Niet al het opslagvolume van elektrische auto's kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
-        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen
+        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
         welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. </br></br>
-        De totale beschikbare
-        capaciteit van batterijen in auto's hangt af van het aandeel elektrische auto's in de
-        <a href="/scenario/demand/transport_passenger_transport/car-technology">autotechnologie</a> sectie.
+        De totale beschikbare 
+        capaciteit van batterijen in auto's hangt af van het aandeel elektrische auto's in de 
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">autotechnologie</a> sectie. 
         De efficiëntie van batterijen in elektrische voertuigen kan
         <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
@@ -705,7 +694,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -716,10 +705,10 @@ nl:
       short_description:
       description: |
         Niet al het opslagvolume van elektrische bussen kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
-        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen
+        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
         welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. </br></br>
-        De totale beschikbare
-        capaciteit van batterijen in bussen hangt af van het aandeel elektrische bussen in de
+        De totale beschikbare 
+        capaciteit van batterijen in bussen hangt af van het aandeel elektrische bussen in de 
         <a href="/scenario/demand/transport_passenger_transport/bus-technology">bustechnologie</a> sectie.
         De efficiëntie van batterijen in elektrische voertuigen kan
         <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
@@ -744,7 +733,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -755,10 +744,10 @@ nl:
       short_description:
       description: |
         Niet al het opslagvolume van elektrische vrachtwagens kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
-        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen
+        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
         welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. </br></br>
-        De totale beschikbare
-        capaciteit van batterijen in vrachtwagens hangt af van het aandeel elektrische vrachtwagens in de
+        De totale beschikbare 
+        capaciteit van batterijen in vrachtwagens hangt af van het aandeel elektrische vrachtwagens in de 
         <a href="/scenario/demand/transport_freight_transport/truck-technology">vrachtwagentechnologie</a> sectie.
         De efficiëntie van batterijen in elektrische voertuigen kan
         <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
@@ -783,7 +772,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -794,10 +783,10 @@ nl:
       short_description:
       description: |
         Niet al het opslagvolume van elektrische bestelbussen kan worden gebruikt om opslagdiensten te verlenen aan het elektriciteitsnet,
-        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen
+        omdat een deel van de opgeslagen elektriciteit nog nodig is om mee te kunnen rijden. Met dit schuifje kun je daarom bepalen 
         welk percentage van de totale beschikbare batterijcapaciteit kan worden ingezet voor opslagdiensten. </br></br>
-        De totale beschikbare
-        capaciteit van batterijen in bestelbussen hangt af van het aandeel elektrische bestelbussen in de
+        De totale beschikbare 
+        capaciteit van batterijen in bestelbussen hangt af van het aandeel elektrische bestelbussen in de 
         <a href="/scenario/demand/transport_freight_transport/truck-technology">bestelbussentechnologie</a> sectie.
         De efficiëntie van batterijen in elektrische voertuigen kan
         <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
@@ -822,7 +811,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -878,7 +867,7 @@ nl:
       title: Geïnstalleerd vermogen
       short_description:
       description: |
-        Met dit schuifje kun je het geïnstalleerd inputvermogen van stuwmeren bepalen.
+        Met dit schuifje kun je het geïnstalleerd inputvermogen van stuwmeren bepalen. 
         De efficiëntie van stuwmeren kan
         <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
@@ -902,7 +891,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de stuwmeren relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de stuwmeren op vol vermogen elektriciteit moeten consumeren om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         opgesteld vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -982,7 +971,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de Ondergrondse Pomp Accumulatie Centrales (OPAC) relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de OPAC op vol vermogen elektriciteit moeten consumeren om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         opgesteld vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -1062,7 +1051,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -1143,7 +1132,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -1296,8 +1285,8 @@ nl:
         <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>
         voor meer informatie over het gedrag van de componenten van hybride wind op zee.<br/><br/>
         Geïnstalleerd vermogen en de betalingsbereidheid van prijsgestuurde elektrolysers op land kunnen worden
-        ingesteld in de sectie
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof</a>.
+        ingesteld in de sectie 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof</a>. 
     wtp_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:
@@ -1336,7 +1325,7 @@ nl:
       title: Power-to-heat boiler voor raffinaderijen
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in
+        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in 
         <a href="/scenario/demand/industry/refineries">raffinaderijen</a> willen betalen
         voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
         gas- of waterstofketels in raffinaderijen geïnstalleerd is. </br></br>
@@ -1356,9 +1345,9 @@ nl:
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
         <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en 
         gas- of waterstofketels in de kunstmestindustrie geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
+        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
         van de willingness-to-pay van power-to-heat is: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
@@ -1406,16 +1395,16 @@ nl:
       title: Regelbare kerosine voor de industrie
       short_description:
       description: |
-        Elektriciteit, waterstof en koolstofdioxide kunnen worden gebruikt om synthetische kerosine te produceren.
+        Elektriciteit, waterstof en koolstofdioxide kunnen worden gebruikt om synthetische kerosine te produceren. 
         In het ETM kan capaciteit worden ingesteld voor synthetische kerosineproductie als een flexibele
-        vraagtechnologie, wat betekent dat kerosine alleen wordt geproduceerd wanneer de bereidheid om te betalen voor
-        elektriciteit voor het productieproces hoger is dan de uurlijkse elektriciteitsprijs.
-        </br></br>Deze schuif stelt de maximumprijs in die producenten van synthetische kerosine
-        bereid zijn te betalen voor de benodigde elektriciteit in het productieproces. Let op, er moet voor deze schuif
-        capaciteit geïnstalleerd zijn van de
-        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">regelbare synthetische kerosineproductie</a>
+        vraagtechnologie, wat betekent dat kerosine alleen wordt geproduceerd wanneer de bereidheid om te betalen voor 
+        elektriciteit voor het productieproces hoger is dan de uurlijkse elektriciteitsprijs. 
+        </br></br>Deze schuif stelt de maximumprijs in die producenten van synthetische kerosine 
+        bereid zijn te betalen voor de benodigde elektriciteit in het productieproces. Let op, er moet voor deze schuif 
+        capaciteit geïnstalleerd zijn van de 
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">regelbare synthetische kerosineproductie</a> 
         om effect te hebben.</br></br>
-        Er zijn verschillende grafieken beschikbaar die inzicht bieden in het effect van de betalingsbereidheid voor elektriciteit
+        Er zijn verschillende grafieken beschikbaar die inzicht bieden in het effect van de betalingsbereidheid voor elektriciteit 
         in kerosineproductie:
         </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
@@ -1425,7 +1414,7 @@ nl:
         <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
         De integrale kosten van flexibele vraagtechnologieën.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzichtstabel van het gebruik van flexibele vraagtechnologieën.</a></li></ul>
+        Een overzichtstabel van het gebruik van flexibele vraagtechnologieën.</a></li></ul>  
     wtp_of_industry_other_paper_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor papierindustrie
       short_description:
@@ -1564,7 +1553,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -1576,7 +1565,7 @@ nl:
       description: |
         Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
         Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
+        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid 
         geïnstalleerd vermogen. </br></br>
         Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
         vergelijken met andere opslagtechnologieën kun je ook
@@ -1586,9 +1575,9 @@ nl:
       title: Voortschrijdend gemiddelde tijdsperiode
       short_description:
       description: |
-        Met dit schuifje kun je de tijdsperiode instellen van het voortschrijdend gemiddelde dat wordt
-        toegepast op de residual load curve van netwerkgas en waterstof in
+        Met dit schuifje kun je de tijdsperiode instellen van het voortschrijdend gemiddelde dat wordt 
+        toegepast op de residual load curve van netwerkgas en waterstof in 
         <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
         deze grafiek</a>. </br></br>
-        Het voortschrijdend gemiddelde wordt toegepast om onderscheid te maken tussen een korte en lange
+        Het voortschrijdend gemiddelde wordt toegepast om onderscheid te maken tussen een korte en lange 
         termijn flexibiliteitsbehoefte. Met dit schuifje kun je dat onderscheid aanpassen.

@@ -3,6 +3,16 @@ ___
 
 # Juli 2024
 
+### Update Profielen elektrische voertuigen
+
+De laadprofielensectie van elektrische voertuigen is bijgewerkt!
+
+We hebben zowel de standaardinstellingen voor de profielen als de profielen zelf bijgewerkt met nieuwe gegevens.
+
+Ontdek deze nieuwe update in de sectie **[Vraagsturing - laadgedrag elektrische auto's](scenario/flexibility/flexibility_net_load/demand-response-electric-vehicles)** section.
+
+-> <img src="/assets/pages/whats_new/nl_whats_new_electric_vehicle_profiles.png" width="600" /> <-
+
 ### Hybride wind op zee
 
 Het is nu mogelijk de rol van hybride wind op zee in het toekomstige energiesysteem te verkennen. De hybride windturbines op zee kunnen opgewekte stroom aan het HV-netwerk op land of aan een elektrolyser op zee leveren. De elektrolyser op zee kan daarnaast ook stroom van het HV-netwerk ontvangen voor waterstofproductie.

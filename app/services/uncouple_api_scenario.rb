@@ -1,40 +1,26 @@
 # frozen_string_literal: true
 
+# Uncouple either groups, or with force
 class UncoupleAPIScenario
+  extend Dry::Initializer
   include Service
 
-  def initialize(http_client, id, groups = nil)
-    @http_client = http_client
-    @id = id
-    @groups = groups
-  end
+  param :http_client
+  param :scenario_id
+  param :groups, default: proc { [] }
+  param :soft, default: proc { true }
 
-  def call(soft: false)
-    Rails.logger.debug "Uncoupling scenario #{@id} with groups: #{@groups.inspect} and soft: #{soft}"
+  def call
+    payload = soft ? { groups: groups } : { force: true }
 
-    payload = if soft
-                { groups: @groups }
-              else
-                { force: true }
-              end
-
-    response = @http_client.post("/api/v3/scenarios/#{@id}/uncouple", payload)
-
-    if response.success?
-      Rails.logger.debug "Uncoupling successful for scenario #{@id}"
-      ServiceResult.success
-    else
-      Rails.logger.error "Uncoupling failed for scenario #{@id} with response: #{response.body}"
-      ServiceResult.failure("Uncoupling failed: #{response.body}")
-    end
+    ServiceResult.success(
+      http_client.post("/api/v3/scenarios/#{scenario_id}/uncouple", payload).body
+    )
   rescue Faraday::ResourceNotFound
-    Rails.logger.error "Scenario not found: #{@id}"
     ServiceResult.failure('Scenario not found')
   rescue Faraday::UnprocessableEntityError
-    Rails.logger.warn "Scenario #{@id} cannot be uncoupled, possibly unowned or already uncoupled"
-    ServiceResult.success
+    ServiceResult.failure_from_unprocessable_entity(e)
   rescue Faraday::Error => e
-    Rails.logger.error "Failed to uncouple scenario #{@id} with error: #{e.message}"
     Sentry.capture_exception(e)
     ServiceResult.failure('Failed to uncouple scenario')
   end

@@ -56,25 +56,6 @@ class ScenariosController < ApplicationController
     redirect_to_back
   end
 
-  def confirm_uncouple
-    if params[:inline]
-      render 'uncouple', layout: false
-    else
-      render 'uncouple'
-    end
-  end
-
-  def uncouple
-    UncoupleAPIScenario.call(engine_client, @scenario.id).or do
-      flash[:error] = t('scenario.cannot_load')
-      redirect_to(root_path)
-      return
-    end
-
-    Current.setting.uncouple_scenario
-    redirect_to_back
-  end
-
   def coupling_settings
     if params[:inline]
       render 'coupling_settings_form', layout: false
@@ -97,15 +78,23 @@ class ScenariosController < ApplicationController
 
     if permitted_params[:remove_all_couplings].present?
       Current.setting.uncouple_scenario
-      UncoupleAPIScenario.call(engine_client, @scenario.id)
+      UncoupleAPIScenario.call(engine_client, @scenario.id, soft: false)
     else
-      couplings = params[:couplings] || {}
+      couplings = permitted_params[:couplings] || {}
       active_couplings = couplings.select { |_, v| v == '1' }.keys
       inactive_couplings = couplings.select { |_, v| v == '0' }.keys
 
-      RecoupleAPIScenario.new(engine_client, @scenario.id, active_couplings).call() unless active_couplings.empty?
-      UncoupleAPIScenario.new(engine_client, @scenario.id, inactive_couplings).call(soft: true) unless inactive_couplings.empty?
+      if active_couplings.present?
+        RecoupleAPIScenario.call(engine_client, @scenario.id, active_couplings)
+        active_couplings.each { |group| Current.setting.activate_coupling(group) }
+      end
+
+      if inactive_couplings.present?
+        UncoupleAPIScenario.call(engine_client, @scenario.id, inactive_couplings, soft: true)
+        inactive_couplings.each { |group| Current.setting.deactivate_coupling(group) }
+      end
     end
+
     redirect_back(fallback_location: root_path)
   end
 

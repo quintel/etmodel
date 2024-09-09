@@ -108,6 +108,16 @@ class Setting
     self.coupling = false
   end
 
+  def deactivate_coupling(group)
+    active_couplings.delete(group)
+    inactive_couplings << group
+  end
+
+  def activate_coupling(group)
+    inactive_couplings.delete(group)
+    active_couplings << group
+  end
+
   def start_year
     area.analysis_year || self.class.default_attributes[:start_year]
   end

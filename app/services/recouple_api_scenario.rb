@@ -1,31 +1,23 @@
 # frozen_string_literal: true
 
+# Recouples the groups to the scenario
 class RecoupleAPIScenario
+  extend Dry::Initializer
   include Service
 
-  def initialize(http_client, id, groups = nil)
-    @http_client = http_client
-    @id = id
-    @groups = groups
-  end
+  param :http_client
+  param :scenario_id
+  param :groups
 
   def call
-    payload = { groups: @groups }
-    response = @http_client.post("/api/v3/scenarios/#{@id}/couple", payload)
-
-    if response.success?
-      ServiceResult.success
-    else
-      ServiceResult.failure("Recoupling failed: #{response.body}")
-    end
+    ServiceResult.success(
+      http_client.post("/api/v3/scenarios/#{scenario_id}/couple", { groups: groups })
+    )
   rescue Faraday::ResourceNotFound
-    Rails.logger.error "Scenario not found: #{@id}"
     ServiceResult.failure('Scenario not found')
   rescue Faraday::UnprocessableEntityError
-    Rails.logger.error "Recoupling not possible for scenario #{@id}, possibly due to hard uncoupling"
     ServiceResult.failure('Scenario cannot be recoupled, possibly due to hard uncoupling')
   rescue Faraday::Error => e
-    Rails.logger.error "Failed to recouple scenario #{@id} with error: #{e.message}"
     Sentry.capture_exception(e)
     ServiceResult.failure('Failed to recouple scenario')
   end

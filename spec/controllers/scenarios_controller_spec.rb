@@ -260,11 +260,7 @@ describe ScenariosController, vcr: true do
       end
 
       describe 'POST #update_couplings' do
-        let(:engine_client) { double('EngineClient') }
-
         before do
-          allow(controller).to receive(:engine_client).and_return(engine_client)
-          allow(Current.setting).to receive(:uncouple_scenario)
           allow(UncoupleAPIScenario).to receive(:call).and_return(ServiceResult.success)
           session[:setting] = Setting.new(coupling: true)
         end
@@ -277,7 +273,7 @@ describe ScenariosController, vcr: true do
 
           it 'calls the UncoupleAPIScenario service' do
             subject
-            expect(UncoupleAPIScenario).to have_received(:call).with(engine_client, '123')
+            expect(UncoupleAPIScenario).to have_received(:call).with(anything, '123', soft: false)
           end
 
           it 'updates the session settings to uncoupled' do
@@ -356,38 +352,47 @@ describe ScenariosController, vcr: true do
       end
 
       describe '#update_couplings' do
-        let(:engine_client) { double('EngineClient') }
-
         before do
-          allow(controller).to receive(:engine_client).and_return(engine_client)
-          allow(Current.setting).to receive(:uncouple_scenario)
-          allow(UncoupleAPIScenario).to receive(:call).and_return(ServiceResult.success)
-          allow(RecoupleAPIScenario).to receive(:new).and_return(double(call: true))
-          allow(engine_client).to receive(:post).with('/api/v3/scenarios/123/uncouple', { groups: ['group2'] })
+          allow(UncoupleAPIScenario).to receive(:call).and_return(ServiceResult.success(scenario_mock))
+          allow(RecoupleAPIScenario).to receive(:call).and_return(ServiceResult.success(scenario_mock))
+          session[:setting].active_couplings = ['group2']
+          session[:setting].inactive_couplings = ['group1']
         end
 
         context 'when remove_all_couplings is present' do
           it 'removes all couplings' do
             post :update_couplings, params: { id: 123, remove_all_couplings: '1' }
 
-            expect(Current.setting.coupling).to be_falsey
-            expect(UncoupleAPIScenario).to have_received(:call).with(engine_client, '123')
+            expect(session[:setting].coupling).to be_falsey
+            expect(UncoupleAPIScenario).to have_received(:call).with(anything, '123', {soft: false})
           end
         end
 
         context 'when couplings are provided' do
-          it 'activates and deactivates the correct couplings' do
+          let(:request) do
             post :update_couplings, params: {
-              engine: engine_client,
               id: user_scenario.id,
               couplings: {
                 'group1' => '1',
                 'group2' => '0'
               }
             }
+          end
 
-            expect(RecoupleAPIScenario).to have_received(:call).with(engine_client, api_session_id, ['group1'])
-            expect(UncoupleAPIScenario).to have_received(:call).with(engine_client, api_session_id, ['group2'])
+          it 'activates and deactivates the correct couplings' do
+            request
+            expect(RecoupleAPIScenario).to have_received(:call).with(anything, '123', ['group1'])
+            expect(UncoupleAPIScenario).to have_received(:call).with(anything, '123', ['group2'], {soft: true})
+          end
+
+          it 'activates the coupling in the settings' do
+            request
+            expect(session[:setting].active_couplings).to include('group1')
+          end
+
+          it 'deactivates the coupling in the settings' do
+            request
+            expect(session[:setting].inactive_couplings).to include('group2')
           end
         end
       end

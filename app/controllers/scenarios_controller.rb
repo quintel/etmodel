@@ -1,7 +1,7 @@
 class ScenariosController < ApplicationController
   include MainInterfaceController.new(:play, :play_multi_year_charts)
 
-  before_action :find_scenario, only: %i[show load play_multi_year_charts resume uncouple]
+  before_action :find_scenario, only: %i[show load play_multi_year_charts resume update_couplings coupling_settings]
   before_action :require_user, only: %i[index merge]
   before_action :redirect_compare, only: :compare
   before_action :setup_comparison, only: %i[compare weighted_merge]
@@ -56,23 +56,46 @@ class ScenariosController < ApplicationController
     redirect_to_back
   end
 
-  def confirm_uncouple
+  def coupling_settings
     if params[:inline]
-      render 'uncouple', layout: false
+      render 'coupling_settings_form', layout: false
     else
-      render 'uncouple'
+      render 'coupling_settings_form'
     end
   end
 
-  def uncouple
-    UncoupleAPIScenario.call(engine_client, @scenario.id).or do
-      flash[:error] = t('scenario.cannot_load')
-      redirect_to(root_path)
-      return
+  # POST /scenarios/:id/update_couplings
+  #
+  # Updates the couplings of the scenario based on the form data.
+  # The form data is a hash with the keys being the coupling group names and the
+  # values being '1' or '0' for active or inactive.
+  #
+  # If the `remove_all_couplings` parameter is present, all couplings will be
+  # removed.
+  #
+  def update_couplings
+    permitted_params = params.permit(:remove_all_couplings, couplings: {})
+
+    if permitted_params[:remove_all_couplings].present?
+      Current.setting.uncouple_scenario
+      UncoupleAPIScenario.call(engine_client, @scenario.id, soft: false)
+    else
+      couplings = permitted_params[:couplings] || {}
+      active_couplings = couplings.select { |_, v| v == '1' }.keys
+      inactive_couplings = couplings.select { |_, v| v == '0' }.keys
+
+      if active_couplings.present?
+        RecoupleAPIScenario.call(engine_client, @scenario.id, active_couplings)
+        active_couplings.each { |group| Current.setting.activate_coupling(group) }
+      end
+
+      if inactive_couplings.present?
+        UncoupleAPIScenario.call(engine_client, @scenario.id, inactive_couplings, soft: true)
+        inactive_couplings.each { |group| Current.setting.deactivate_coupling(group) }
+      end
     end
 
-    Current.setting.uncouple_scenario
-    redirect_to_back
+    redirect_back(fallback_location: root_path)
   end
 
   # Loads a scenario from a id.

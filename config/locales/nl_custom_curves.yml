@@ -13,7 +13,15 @@ nl:
       Klik op de drop-down om te bepalen welke curve je wilt uploaden. Zie onze
       <a href=%{docs_path} target="_blank">documentatie</a> voor meer uitleg en voorbeelden van
       geschikte CSV-bestanden.
+    coupled_interconnector_intro_html: |
+      Als je de import- en exportcurves instelt op 'must run via coupling', zullen de capaciteitprofielen die aan de ETM worden verstrekt,
+      worden behandeld als andere 'must-run'-technologieën. Dit betekent dat het capaciteitprofiel zal worden gebruikt om te bepalen hoeveel
+      elektriciteit er elk uur moet worden geïmporteerd of geëxporteerd, en de prijscurve zal worden gebruikt om de prijs van deze elektriciteit
+      te bepalen. </br></br>
+      Klik op het drop-down pictogram om te wijzigen welke curve je wilt uploaden. Voor meer informatie over hoe dit werkt, en voorbeelden van
+      compatibele CSV-bestanden, <a href=%{docs_path} target="_blank">raadpleeg onze documentatie</a>.
     interface_group_title: Aanpasbare profielen
+    coupled_interface_group_title: Gekoppelde profielen
     loading: Laden...
     max: Maximum
     mean: Gemiddelde

@@ -12,13 +12,13 @@ describe ScenariosController, vcr: true do
   let(:second_sidebar_item) { second_tab.sidebar_items.second }
   # Scenarios
   let(:scenario_mock) { ete_scenario_mock }
-  let(:user) { FactoryBot.create :user }
-  let(:admin) { FactoryBot.create :admin }
+  let(:user) { FactoryBot.create(:user) }
+  let(:admin) { FactoryBot.create(:admin) }
   let!(:user_scenario) do
-    FactoryBot.create :saved_scenario, user: user, id: 648_695
+    FactoryBot.create(:saved_scenario, user:, id: 648_695)
   end
   let!(:admin_scenario) do
-    FactoryBot.create :saved_scenario, user: admin, id: 648_696
+    FactoryBot.create(:saved_scenario, user: admin, id: 648_696)
   end
 
   before do
@@ -76,6 +76,7 @@ describe ScenariosController, vcr: true do
       end
 
       it { expect(response).to be_successful }
+
       it 'gets the users saved scenario' do
         expect(assigns(:saved_scenarios)).to eq([user_scenario])
       end
@@ -97,6 +98,7 @@ describe ScenariosController, vcr: true do
 
           it { is_expected.to be_successful }
           it { is_expected.to render_template(:show) }
+
           it 'calls loadable?' do
             subject
             expect(user_scenario.scenario(Identity.http_client)).to have_received(:loadable?)
@@ -250,34 +252,43 @@ describe ScenariosController, vcr: true do
         end
 
         it { is_expected.to be_redirect }
+
         it 'resets the session settings' do
           subject
           expect(session[:setting].api_session_id).to be_nil
         end
       end
 
-      describe '#uncouple' do
-        subject do
-          get :uncouple, params: { id: 123 }
-          response
-        end
-
+      describe 'POST #update_couplings' do
         before do
           allow(UncoupleAPIScenario).to receive(:call).and_return(ServiceResult.success)
+          session[:setting] = Setting.new(coupling: true)
         end
 
-        it { is_expected.to be_redirect }
+        context 'when remove_all_couplings is present' do
+          subject do
+            post :update_couplings, params: { id: 123, remove_all_couplings: '1' }
+            response
+          end
 
-        it 'updates the session settings' do
-          subject
-          expect(session[:setting].coupling).to be_falsey
+          it 'calls the UncoupleAPIScenario service' do
+            subject
+            expect(UncoupleAPIScenario).to have_received(:call).with(anything, '123', soft: false)
+          end
+
+          it 'updates the session settings to uncoupled' do
+            subject
+            expect(session[:setting].coupling).to be_falsey
+          end
+
+          it { is_expected.to be_redirect }
         end
       end
 
       xdescribe '#compare' do
         subject do
-          s1 = FactoryBot.create :saved_scenario
-          s2 = FactoryBot.create :saved_scenario
+          s1 = FactoryBot.create(:saved_scenario)
+          s2 = FactoryBot.create(:saved_scenario)
           get :compare, params: {
             scenario_ids: [s1.scenario_id, s2.scenario_id]
           }
@@ -339,6 +350,52 @@ describe ScenariosController, vcr: true do
           expect(response).to be_successful
         end
       end
+
+      describe '#update_couplings' do
+        before do
+          allow(UncoupleAPIScenario).to receive(:call).and_return(ServiceResult.success(scenario_mock))
+          allow(RecoupleAPIScenario).to receive(:call).and_return(ServiceResult.success(scenario_mock))
+          session[:setting].active_couplings = ['group2']
+          session[:setting].inactive_couplings = ['group1']
+        end
+
+        context 'when remove_all_couplings is present' do
+          it 'removes all couplings' do
+            post :update_couplings, params: { id: 123, remove_all_couplings: '1' }
+
+            expect(session[:setting].coupling).to be_falsey
+            expect(UncoupleAPIScenario).to have_received(:call).with(anything, '123', {soft: false})
+          end
+        end
+
+        context 'when couplings are provided' do
+          let(:request) do
+            post :update_couplings, params: {
+              id: user_scenario.id,
+              couplings: {
+                'group1' => '1',
+                'group2' => '0'
+              }
+            }
+          end
+
+          it 'activates and deactivates the correct couplings' do
+            request
+            expect(RecoupleAPIScenario).to have_received(:call).with(anything, '123', ['group1'])
+            expect(UncoupleAPIScenario).to have_received(:call).with(anything, '123', ['group2'], {soft: true})
+          end
+
+          it 'activates the coupling in the settings' do
+            request
+            expect(session[:setting].active_couplings).to include('group1')
+          end
+
+          it 'deactivates the coupling in the settings' do
+            request
+            expect(session[:setting].inactive_couplings).to include('group2')
+          end
+        end
+      end
     end
 
     context 'when loading the resume play endpoint' do
@@ -398,7 +455,7 @@ describe ScenariosController, vcr: true do
       it 'returns the saved scenario JSON' do
         request
         expect(JSON.parse(response.body))
-          .to eq(JSON.parse(user_scenario.to_json).merge("api_session_id"=>"123"))
+          .to eq(JSON.parse(user_scenario.to_json).merge('api_session_id' => '123'))
       end
     end
 

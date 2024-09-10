@@ -58,6 +58,8 @@ nl:
     current_scenario: "Huidig scenario"
     coupled: Gekoppeld
     coupled_docs: Wat betekent dit?
+    coupled_groups: "Actieve koppelingen"
+    coupling_settings: "Koppelingen beheren"
     disclaimer: "Disclaimer"
     documentation: "Documentatie"
     education: "Onderwijs"
@@ -77,6 +79,8 @@ nl:
       Weet je zeker dat je het scenario wilt terugzetten naar de opgeslagen instellingen? Alle
       niet-opgeslagen wijzigingen zullen hiermee verloren gaan.
     uncouple_scenario: "Scenario ontkoppelen"
+    uncoupled: "Ontkoppeld"
+    uncoupled_groups: "Inactieve koppelingen"
     save_scenario: "Scenario opslaan"
     save_scenario_as: "Scenario opslaan als"
     saved: "Opgeslagen"
@@ -753,3 +757,16 @@ nl:
       onderhoud gepleegd aan Internet Explorer; veel moderne webstandaarden en technieken worden
       niet ondersteund. Door deze beperkingen kunnen er minder nieuwe innovatieve elementen aan het
       Energietransitiemodel worden toegevoegd.
+
+  user_settings:
+    coupling:
+      header: Koppelingen beheren
+      manage_couplings: Koppelingen aan en uit zetten
+      description: |
+        Zet koppelingen aan of uit voor dit scenario. De instellingen van de
+        koppeling blijven bewaard als deze wordt gedeactiveerd, een koppeling
+        kan weer geactiveerd worden vanuit dit menu. Je kan
+        ook permanent alle koppelingen verwijderen.
+      remove_couplings: Koppelingen verwijderen
+      remove_couplings_description: Vink deze optie aan om alle koppelingen permanent te verwijderen. Dit is onomkeerbaar.
+      permanent_uncouple: Permanent ontkoppelen.

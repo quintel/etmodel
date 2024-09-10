@@ -29,6 +29,8 @@ class Setting
       use_merit_order:          true,
       esdl_exportable:          false,
       coupling:                 false,
+      active_couplings:         [],
+      inactive_couplings:         [],
       locked_charts:            [],
       last_etm_page:            nil,
       preset_scenario_id:       nil,
@@ -56,6 +58,8 @@ class Setting
       preset_scenario_id: scenario.id,
       esdl_exportable: scenario.esdl_exportable,
       coupling: scenario.coupled?,
+      active_couplings: scenario.active_couplings,
+      inactive_couplings: scenario.inactive_couplings,
       end_year: scenario.end_year,
       area_code: scenario.area_code,
       active_saved_scenario_id: active_saved_scenario[:id],
@@ -102,6 +106,16 @@ class Setting
 
   def uncouple_scenario
     self.coupling = false
+  end
+
+  def deactivate_coupling(group)
+    active_couplings.delete(group)
+    inactive_couplings << group
+  end
+
+  def activate_coupling(group)
+    inactive_couplings.delete(group)
+    active_couplings << group
   end
 
   def start_year

@@ -58,13 +58,13 @@ nl:
     current_scenario: "Huidig scenario"
     coupled: Gekoppeld
     coupled_docs: Wat betekent dit?
-    coupled_groups: "Actieve koppelingen"
-    coupling_settings: "Koppelingen beheren"
+    coupled_groups: "Actieve gekoppelde modellen"
+    coupling_settings: "Instellingen"
     disclaimer: "Disclaimer"
     documentation: "Documentatie"
     education: "Onderwijs"
     feedback: "Feedback"
-    has_been_coupled: Dit scenario is gekoppeld aan een extern model
+    has_been_coupled: Dit scenario is gekoppeld aan een extern model.
     information: "Informatie"
     load_scenario: "Mijn Scenario's"
     merit_order_check: "Gebruik uurlijkse berekeningen"
@@ -80,7 +80,7 @@ nl:
       niet-opgeslagen wijzigingen zullen hiermee verloren gaan.
     uncouple_scenario: "Scenario ontkoppelen"
     uncoupled: "Ontkoppeld"
-    uncoupled_groups: "Inactieve koppelingen"
+    uncoupled_groups: "Inactieve gekoppelde modellen"
     save_scenario: "Scenario opslaan"
     save_scenario_as: "Scenario opslaan als"
     saved: "Opgeslagen"
@@ -760,13 +760,12 @@ nl:
 
   user_settings:
     coupling:
-      header: Koppelingen beheren
-      manage_couplings: Koppelingen aan en uit zetten
+      header: Instellingen Gekoppelde Modellen
+      manage_couplings: Beheer gekoppelde externe modellen
       description: |
-        Zet koppelingen aan of uit voor dit scenario. De instellingen van de
-        koppeling blijven bewaard als deze wordt gedeactiveerd, een koppeling
-        kan weer geactiveerd worden vanuit dit menu. Je kan
-        ook permanent alle koppelingen verwijderen.
-      remove_couplings: Koppelingen verwijderen
-      remove_couplings_description: Vink deze optie aan om alle koppelingen permanent te verwijderen. Dit is onomkeerbaar.
+        Beheer de instelling voor gekoppelde externe modellen.
+        Gebruik de toggle om een gekoppeld model te activeren of te deactiveren.
+        Externe modellen kunnen ook permanent ontkoppeld worden.
+      remove_couplings: Externe modellen ontkoppelen
+      remove_couplings_description: Vink deze optie aan om alle externe modellen te ontkoppelen. Dit is onomkeerbaar.
       permanent_uncouple: Permanent ontkoppelen.

@@ -59,12 +59,12 @@ en:
     current_scenario: "Current scenario"
     coupled: Coupled
     coupled_docs: What does this mean?
-    coupled_groups: "Active couplings"
-    coupling_settings: "Coupling settings"
+    coupled_groups: "Active coupled models"
+    coupling_settings: "Settings"
     disclaimer: "Disclaimer"
     education: "Education"
     feedback: "Feedback"
-    has_been_coupled: This scenario has been coupled with an external model
+    has_been_coupled: This scenario is coupled to an external model.
     information: "Information"
     load_scenario: "My Scenarios"
     merit_order_check: "Enable hourly calculations"
@@ -80,7 +80,7 @@ en:
         unsaved changes.
     uncouple_scenario: "Uncouple scenario"
     uncoupled: "Uncoupled"
-    uncoupled_groups: "Inactive couplings"
+    uncoupled_groups: "Inactive coupled models"
     save_scenario: "Save scenario"
     save_scenario_as: "Save scenario as"
     saved: "Saved"
@@ -746,12 +746,12 @@ en:
 
   user_settings:
     coupling:
-      header: Coupling Settings
-      manage_couplings: Manage couplings
+      header: Coupled Model Settings
+      manage_couplings: Manage coupled external models
       description: |
-        Here you can manage the coupling settings for your scenario.
-        Toggle the switches to soft activate or deactivate a coupling.
-        You can also remove couplings permanently if needed.
-      remove_couplings: Remove couplings
-      remove_couplings_description: Check the box below to permanently uncouple all couplings from this scenario. This is irreversible.
+        Manage the settings for coupled external models.
+        Toggle the switches to activate or deactivate the coupled external model.
+        External models can also be permanently uncoupled.
+      remove_couplings: Uncouple external models
+      remove_couplings_description: Check the box below to permanently uncouple external models. This is irreversible.
       permanent_uncouple: Uncouple permanently.

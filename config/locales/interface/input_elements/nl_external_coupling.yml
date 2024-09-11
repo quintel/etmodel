@@ -1,6 +1,13 @@
 ---
 nl:
   input_elements:
+    external_coupling_industry_external_coupling_node_captured_co2_supply:
+      title: Generieke industrie
+      description: |
+        Aanbod van CO2 afvangen in de industrie die niet is gealloceerd aan een specifieke industriesector. </br></br>
+        Let op: de afvangen stroom komt van emissies die niet in scope van het ETM zijn, maar die zijn
+        ingesteld door een extern model. Afvang van deze emissies leidt daarom niet tot een verlaging
+        van de CO2-emissies in het ETM.
     external_coupling_molecules_other_utilisation_demand:
       title: Overig gebruik
       description: |

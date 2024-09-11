@@ -204,3 +204,15 @@
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
   key: co2_supply_industry_chemical_other_mekko_of_co2_demand_supply
+- label: co2_supply_industry_external_coupling
+  color: "#3d1d59"
+  order_by: 210
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: co2_supply_industry_external_coupling
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_co2_demand_supply
+  key: co2_supply_industry_external_coupling_mekko_of_co2_demand_supply

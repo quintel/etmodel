@@ -76,21 +76,21 @@
           - if Current.setting.active_couplings.present?
             %li.sep-above.category
               = t('header.coupled_groups')
-          - Current.setting.active_couplings.each do |coupling|
-            - if COUPLING_GROUP_LABELS.key?(coupling)
-              %li
-                .dropdown-item.text
-                  = inline_svg_tag 'icons/link-solid.svg'
-                  = COUPLING_GROUP_LABELS[coupling]
+            - Current.setting.active_couplings.each do |coupling|
+              - if COUPLING_GROUP_LABELS.key?(coupling)
+                %li
+                  .dropdown-item.text
+                    = inline_svg_tag 'icons/link-solid.svg'
+                    = COUPLING_GROUP_LABELS[coupling]
           - if Current.setting.inactive_couplings.present?
             %li.sep-above.category
               = t('header.uncoupled_groups')
-          - Current.setting.inactive_couplings.each do |coupling|
-            - if COUPLING_GROUP_LABELS.key?(coupling)
-              %li
-                .dropdown-item.text
-                  = inline_svg_tag 'icons/link-slash-solid.svg'
-                  = COUPLING_GROUP_LABELS[coupling]
+            - Current.setting.inactive_couplings.each do |coupling|
+              - if COUPLING_GROUP_LABELS.key?(coupling)
+                %li
+                  .dropdown-item.text
+                    = inline_svg_tag 'icons/link-slash-solid.svg'
+                    = COUPLING_GROUP_LABELS[coupling]
           %li.sep-above
             %a.dropdown-item.coupling-settings{ href: "#", data: { dylink: coupling_settings_scenario_path(Current.setting.api_session_id) } }
               = inline_svg_tag 'hero/20/cog.svg'

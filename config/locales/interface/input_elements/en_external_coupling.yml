@@ -1,6 +1,13 @@
 ---
 en:
   input_elements:
+    external_coupling_industry_external_coupling_node_captured_co2_supply:
+      title: Generic industry
+      description: |
+        Supply of CO2 captured in industry that is not allocated to a specific industry sector. </br></br>
+        Note: this captured flow comes from emissions that are not in scope of the ETM, but are set
+        by an external model. Capture of these emissions therefore does not lead to a reduction of
+        CO2 emissions in the ETM.
     external_coupling_molecules_other_utilisation_demand:
       title: Other utilisation
       description: |

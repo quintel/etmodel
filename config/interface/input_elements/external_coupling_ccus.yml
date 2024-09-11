@@ -1,25 +1,34 @@
 ---
-- key: external_coupling_molecules_other_utilisation_demand
+- key: external_coupling_industry_external_coupling_node_captured_co2_supply
   step_value: 0.1
   unit: Mton
   position: 100
+  slide_key: supply_ccus_capture_industry
+  share_group:
+  interface_group: industry
+  coupling_icon: true
+
+- key: external_coupling_molecules_other_utilisation_demand
+  step_value: 0.1
+  unit: Mton
+  position: 200
   slide_key: supply_ccus_utilisation_storage
-  share_group: ''
+  share_group:
   interface_group: external_coupling_ccus_utilisation
   coupling_icon: true
 - key: external_coupling_energy_production_synthetic_kerosene_demand
   step_value: 0.1
   unit: PJ
-  position: 105
+  position: 205
   slide_key: supply_ccus_utilisation_storage
-  share_group: ''
+  share_group:
   interface_group: external_coupling_ccus_utilisation
   coupling_icon: true
 - key: external_coupling_energy_production_synthetic_methanol_demand
   step_value: 0.1
   unit: PJ
-  position: 110
+  position: 210
   slide_key: supply_ccus_utilisation_storage
-  share_group: ''
+  share_group:
   interface_group: external_coupling_ccus_utilisation
   coupling_icon: true

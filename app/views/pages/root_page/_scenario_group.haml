@@ -12,9 +12,9 @@
 
         %span.who= format_subscripts(main_title)
         %span.org= org.html_safe
-        %span.author= scenario.author
+        %span.featured_owner= scenario.featured_owner
   - else
     %li
       = link_to saved_scenario_path(scenario.saved_scenario) do
         = format_subscripts(title)
-        %span.author= scenario.author
+        %span.featured_owner= scenario.featured_owner

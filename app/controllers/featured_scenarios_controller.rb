@@ -38,7 +38,7 @@ class FeaturedScenariosController < ApplicationController
 
   def featured_scenario_params
     params.require(:featured_scenario)
-      .permit(:description_en, :description_nl, :group, :title_en, :title_nl)
+      .permit(:description_en, :description_nl, :group, :title_en, :title_nl, :featured_owner)
   end
 
   def saved_scenario

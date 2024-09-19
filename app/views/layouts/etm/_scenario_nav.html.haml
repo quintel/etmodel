@@ -73,7 +73,7 @@
           %li
             %a.dropdown-item.external{ href: "https://docs.energytransitionmodel.com/main/external-coupling", target: "_blank"}
               = t('header.coupled_docs')
-          - if Current.setting.active_couplings.any? { |coupling| COUPLING_GROUP_LABELS.key?(coupling) }
+          - if Current.setting.active_couplings&.any? { |coupling| COUPLING_GROUP_LABELS.key?(coupling) }
             %li.sep-above.category
               = t('header.coupled_groups')
             - Current.setting.active_couplings.each do |coupling|

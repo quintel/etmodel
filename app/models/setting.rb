@@ -110,12 +110,16 @@ class Setting
 
   def deactivate_coupling(group)
     active_couplings.delete(group)
-    inactive_couplings << group
+    unless inactive_couplings.include?(group)
+      inactive_couplings << group
+    end
   end
 
   def activate_coupling(group)
     inactive_couplings.delete(group)
-    active_couplings << group
+    unless active_couplings.include?(group)
+      active_couplings << group
+    end
   end
 
   def start_year

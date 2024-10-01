@@ -22,6 +22,7 @@ module API
       )
 
       render json: PaginationSerializer.new(
+        pagy: @pagy,
         collection: paths,
         serializer: ->(item) { item },
         url_for: ->(page, limit) { api_transition_paths_url(page: page, limit: limit) }

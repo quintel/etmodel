@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_16_133558) do
     t.string "title_nl", null: false
     t.text "description_en"
     t.text "description_nl"
-    t.string "featured_owner"
+    t.string "author"
     t.index ["saved_scenario_id"], name: "index_featured_scenarios_on_saved_scenario_id", unique: true
   end
 
@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_16_133558) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "multi_year_chart_saved_scenarios", primary_key: ["multi_year_chart_id", "saved_scenario_id"], charset: "utf8mb3", force: :cascade do |t|
+  create_table "multi_year_chart_saved_scenarios", primary_key: ["multi_year_chart_id", "saved_scenario_id"], charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "multi_year_chart_id", null: false
     t.bigint "saved_scenario_id", null: false
     t.index ["multi_year_chart_id"], name: "index_multi_year_chart_saved_scenarios_on_multi_year_chart_id"
@@ -91,7 +91,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_16_133558) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "saved_scenario_users", charset: "utf8mb3", force: :cascade do |t|
+  create_table "saved_scenario_users", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "saved_scenario_id", null: false
     t.integer "role_id", null: false
     t.integer "user_id"

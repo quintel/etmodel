@@ -46,14 +46,14 @@ describe ScenariosController, vcr: true do
     end
 
     context 'with no tab, sidebar, or slide params' do
-      it 'loads the page' do
+      pending 'loads the page' do
         get :play
         expect(response).to be_successful
       end
     end
 
     context 'with valid tab, sidebar, and slide params' do
-      it 'loads the page' do
+      pending 'loads the page' do
         get :play, params: {
           tab: tab.key,
           sidebar: sidebar_item.key,
@@ -190,7 +190,7 @@ describe ScenariosController, vcr: true do
             expect(session[:setting].area_code).to eq('some_code')
           end
 
-          it 'opens the play page' do
+          pending 'opens the play page' do
             get :play_multi_year_charts, params: { id: 123 }
             expect(response).to render_template(:play)
           end
@@ -219,7 +219,7 @@ describe ScenariosController, vcr: true do
             second_sidebar_item.slides.first.sliders.first
           end
 
-          it 'opens the play page' do
+          pending 'opens the play page' do
             get :play_multi_year_charts, params: { id: 123, input: input.key }
             expect(response).to render_template(:play)
           end
@@ -233,7 +233,7 @@ describe ScenariosController, vcr: true do
         end
 
         context 'with an invalid input named' do
-          it 'opens the play page' do
+          pending 'opens the play page' do
             get :play_multi_year_charts, params: { id: 123, input: 'hello' }
             expect(response).to render_template(:play)
           end

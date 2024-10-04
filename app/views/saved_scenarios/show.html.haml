@@ -4,6 +4,8 @@
 - content_for(:flash) do
   %span
 
+= render "layouts/banner"
+
 .background_wrapper#saved_scenario
   .scenario_wrapper#show_scenario
     - if editable_saved_scenario?(@saved_scenario)
@@ -19,3 +21,5 @@
       #saved-scenario-history
         -# it this the best spot: or do we put it in the menu?
 
+#legal
+  = render partial: 'layouts/etm/footer'

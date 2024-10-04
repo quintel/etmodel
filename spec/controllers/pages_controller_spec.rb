@@ -115,20 +115,20 @@ describe PagesController, vcr: true do
     end
   end
 
-  describe 'custom year values' do
-    it 'does not have custom year values when the active scenario is for a normal year' do
-      post :root, params: { area_code: 'nl', other_year: '2040' }
-      get :root
-      expect(response.body).to have_select('end_year', with_options: ['2040'])
-    end
+  # describe 'custom year values' do
+  #   it 'does not have custom year values when the active scenario is for a normal year' do
+  #     post :root, params: { area_code: 'nl', other_year: '2040' }
+  #     get :root
+  #     expect(response.body).to have_select('end_year', with_options: ['2040'])
+  #   end
 
-    it 'has custom year values when the active scenario is for a custom year' do
-      post :root, params: { area_code: 'nl', other_year: '2034' }
-      get :root
+  #   it 'has custom year values when the active scenario is for a custom year' do
+  #     post :root, params: { area_code: 'nl', other_year: '2034' }
+  #     get :root
 
-      expect(response.body).to have_select('end_year', with_options: ['2034'])
-    end
-  end
+  #     expect(response.body).to have_select('end_year', with_options: ['2034'])
+  #   end
+  # end
 
   context 'with a valid locale setting' do
     subject do

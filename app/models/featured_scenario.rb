@@ -11,7 +11,7 @@ class FeaturedScenario < ApplicationRecord
 
   belongs_to :saved_scenario
   validates :saved_scenario_id, presence: true, uniqueness: true
-  validates :description_en, :description_nl, :title_en, :title_nl, :featured_owner, presence: true
+  validates :description_en, :description_nl, :title_en, :title_nl, :author, presence: true
   validates :group, inclusion: GROUPS
 
   delegate :area_code, :end_year, :scenario_id, :updated_at, to: :saved_scenario

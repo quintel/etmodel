@@ -8,5 +8,6 @@ FactoryBot.define do
     title_nl { 'Dutch title' }
     description_en { 'English description' }
     description_nl { 'Dutch description' }
+    author { 'Author' }
   end
 end

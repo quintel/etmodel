@@ -2,10 +2,7 @@
   %a.stick-right{ href: scenarios_path }
     ⟵
     = t('scenario.back_to_overview')
-%h1
-  = format_subscripts(scenario.localized_title(I18n.locale))
-  - if scenario.featured?
-    %span.featured.tooltip{ title: t('scenario.featured_scenario')} &#9733;
+%h1= format_subscripts(scenario.localized_title(I18n.locale))
 
 %ul.details.last
   %li
@@ -14,7 +11,7 @@
       = scenario.end_year
   %li
     = t('scenario.updated')
-    = local_time(scenario.updated_at, :long)
+    = scenario.updated_at.strftime('%Y')
 
   %li.with-button
     - if active_saved_scenario_id == scenario.id

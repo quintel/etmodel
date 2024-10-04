@@ -4,6 +4,8 @@
 - content_for(:flash) do
   %span
 
+= render "layouts/banner"
+
 .background_wrapper#saved_scenario
   .scenario_wrapper#index
     = render partial: 'scenario_list_tabs', locals: { active_tab: :trash }
@@ -26,3 +28,6 @@
           %p{ style: "font-weight: 500" }
             = link_to scenarios_path do
               == ← #{t('scenario.trash.empty.back')}
+
+#legal
+  = render partial: 'layouts/etm/footer'

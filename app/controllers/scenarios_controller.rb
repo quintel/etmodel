@@ -141,6 +141,9 @@ class ScenariosController < ApplicationController
   # This is the main scenario action
   #
   def play
+    # TYNDP: disallow loading scenarios
+    redirect_to root_path and return
+
     @selected_slide_key = @interface.current_slide.short_name
     respond_to do |format|
       format.html { render :play, layout: 'etm' }

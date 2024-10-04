@@ -34,7 +34,7 @@ body#root
 
   #resume-scenario, #new-scenario, #preset-scenario, #recently-updated, .other-features li
     background: white
-    border-top: 3px solid $landing-border-color
+    border-top: 3px solid $light-blue
     border-radius: 6px
     margin: 0 0 40px
     padding: 15px 20px
@@ -67,7 +67,7 @@ body#root
         background-image: asset-url("pages/home/rubik.png")
       &.quintel
         background-image: asset-url("pages/home/quintel.svg")
-        width: 562px
+        width: 900px
       &.whats-new
         width: 562px
     h4
@@ -86,8 +86,8 @@ body#root
         margin-left: 5px
 
   #resume-scenario
-    background: #F6FFF1
-    border-top-color: $landing-green
+    background: $landing-gold
+    border-top-color: $landing-gold
     a
       border-top-left-radius: 3px
       border-top-right-radius: 3px
@@ -99,16 +99,16 @@ body#root
       &:hover
         text-decoration: none
       &:hover span.root-button
-        background: lighten($landing-green, 14%)
+        background: lighten($landing-blue, 14%)
       &:active span.root-button
-        background:darken($landing-green, 1%)
+        background:darken($landing-blue, 1%)
     .title, .details
       display: block
     .title
-      color: $landing-grey
+      color: white
       margin-bottom: 5px
     .details
-      color: black
+      color: white
       font-size: 16px
     .country
       background-position: 0 1px
@@ -182,7 +182,7 @@ body#root
 
       // &.UKNI01_northern_ireland
     span.root-button
-      background: $landing-green
+      background: $landing-blue
       margin-top: 9px
       padding-top: 7px
       padding-bottom: 7px
@@ -447,21 +447,22 @@ body#root
     padding: 20px 0
     text-align: center
 
-    ul
-      list-style: none
-      margin: 0
-      padding: 0
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
 
-      li
-        display: inline
-        margin: 0 10px
-      a
-        color: $landing-grey
+    li
+      display: inline
+      margin: 0 10px
+    a
+      color: $landing-grey
 
 #whats-new
-  background: #fffced
+  background: $soft-accent
   line-height: 1.5
   padding: 20px 0
+  color: white
 
   .content
     margin: 0 auto
@@ -470,7 +471,7 @@ body#root
   p
     margin-top: 0
     &:last-child
-      color: $landing-grey
+      color: white
       margin-bottom: 0
 
 .select2-dropdown

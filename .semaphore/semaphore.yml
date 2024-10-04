@@ -37,11 +37,8 @@ blocks:
           commands:
             - test-results publish junit.xml
 promotions:
-  - name: Deploy to staging
-    pipeline_file: deploy_staging.yml
+  - name: Deploy to TYNDP
+    pipeline_file: deploy_tyndp.yml
     auto_promote:
-      when: "result = 'passed' and branch = 'master'"
-  - name: Deploy to production
-    pipeline_file: deploy_production.yml
-    auto_promote:
-      when: "result = 'passed' and branch = 'production'"
+      when: "result = 'passed' and branch = 'tyndp2026'"
+

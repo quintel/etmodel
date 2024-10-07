@@ -16,6 +16,7 @@
 
     = simple_form_for @featured_scenario, url: saved_scenario_feature_path(@featured_scenario.saved_scenario) do |f|
       = f.input :group, collection: featured_scenario_groups_collection, include_blank: false
+      = f.input :author
       = f.input :title_en
       = f.input :description_en
       = f.input :title_nl

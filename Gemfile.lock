@@ -304,18 +304,6 @@ GEM
       bindata
       faraday (~> 2.0)
       faraday-follow_redirects
-    kaminari (1.2.2)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.2)
-      kaminari-activerecord (= 1.2.2)
-      kaminari-core (= 1.2.2)
-    kaminari-actionview (1.2.2)
-      actionview
-      kaminari-core (= 1.2.2)
-    kaminari-activerecord (1.2.2)
-      activerecord
-      kaminari-core (= 1.2.2)
-    kaminari-core (1.2.2)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.7.0)
@@ -396,6 +384,7 @@ GEM
       validate_email
       validate_url
       webfinger (~> 1.2)
+    pagy (9.0.5)
     parallel (1.21.0)
     parser (3.1.1.0)
       ast (~> 2.4.1)
@@ -687,7 +676,6 @@ DEPENDENCIES
   jbuilder
   jquery-etmodel-rails!
   jquery-rails (~> 4.4.0)
-  kaminari (~> 1.2.1)
   launchy
   letter_opener
   local_time
@@ -698,6 +686,7 @@ DEPENDENCIES
   nokogiri (~> 1.16)
   non-stupid-digest-assets
   oily_png
+  pagy
   premailer-rails
   pry-byebug
   pry-rails

@@ -3,6 +3,7 @@
 module API
   # Base class for all API controllers.
   class APIController < ActionController::API
+    include Pagy::Backend
     abstract!
 
     rescue_from ETModel::EngineToken::DecodeError do |e|

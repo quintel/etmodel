@@ -698,7 +698,7 @@ D3.sankey =
           {id: 'hybrid_offshore_wind',        column: 0, label: 'hybrid_offshore_wind',     color: '#63A1C9'},
           {id: 'to_offshore_network',         column: 1, label: 'offshore_cable',           color: '#A9A9A9'},
           {id: 'offshore_electrolyser',       column: 2, label: 'offshore_electrolyser',    color: '#5e9aa4'},
-          {id: 'from_offshore_network',       column: 2, label: 'offshore_cable',           color: '#A9A9A9'},       
+          {id: 'from_offshore_network',       column: 2, label: 'offshore_cable',           color: '#A9A9A9'},
           {id: 'onshore_hydrogen_network',    column: 3, label: 'onshore_hydrogen_network', color: '#87cfeb'},
           {id: 'conversion_losses',           column: 3, label: 'conversion_losses',        color: '#cc0000'},
           {id: 'onshore_hv_network',          column: 3, label: 'onshore_hv_network',       color: '#004D40'},
@@ -706,11 +706,11 @@ D3.sankey =
         ]
         links: [
           {left: 'onshore_hv_network_left', right: 'to_offshore_network',       gquery: 'onshore_hv_network_to_to_offshore_network_in_sankey',          color: '#A9A9A9'},
-          {left: 'to_offshore_network',     right: 'offshore_electrolyser',     gquery: 'to_offshore_network_to_offshore_electrolyser_in_sankey',       color: '#A9A9A9'},           
+          {left: 'to_offshore_network',     right: 'offshore_electrolyser',     gquery: 'to_offshore_network_to_offshore_electrolyser_in_sankey',       color: '#A9A9A9'},
           {left: 'hybrid_offshore_wind',    right: 'offshore_electrolyser',     gquery: 'hybrid_offshore_wind_to_offshore_electrolyser_in_sankey',      color: '#1f77b4'},
           {left: 'hybrid_offshore_wind',    right: 'from_offshore_network',     gquery: 'hybrid_offshore_wind_to_from_offshore_network_in_sankey',      color: '#1f77b4'},
           {left: 'hybrid_offshore_wind',    right: 'curtailment',               gquery: 'hybrid_offshore_wind_to_curtailment_in_sankey',                color: '#1f77b4'},
-          {left: 'offshore_electrolyser',   right: 'onshore_hydrogen_network',  gquery: 'offshore_electrolyser_to_hydrogen_network_in_sankey',          color: '#87cfeb'}, 
+          {left: 'offshore_electrolyser',   right: 'onshore_hydrogen_network',  gquery: 'offshore_electrolyser_to_hydrogen_network_in_sankey',          color: '#87cfeb'},
           {left: 'offshore_electrolyser',   right: 'conversion_losses',         gquery: 'offshore_electrolyser_to_conversion_losses_in_sankey',         color: '#cc0000'},
           {left: 'from_offshore_network',   right: 'onshore_hv_network',        gquery: 'from_offshore_network_to_onshore_hv_network_in_sankey',        color: '#1f77b4'}
         ]
@@ -1200,7 +1200,7 @@ D3.sankey =
         else
           @gquery.future_value()
       if (_.isNumber(x))
-        # Assume 0 for very small values below 10e-12 
+        # Assume 0 for very small values below 10e-12
         if (Math.abs(x) < 1e-12)
           return 0.0
         else
@@ -1256,7 +1256,7 @@ D3.sankey =
     draw: =>
       [@width, @height] = @available_size()
 
-      # scaling method taht will be changed dynamically
+      # scaling method that will be changed dynamically
       @y = d3.scale.linear().domain([0, 5000]).range([0, @height])
 
       # This is the function that will take care of drawing the links once we've
@@ -1266,7 +1266,7 @@ D3.sankey =
         .x((d) -> d.x)
         .y((d) -> @y(d.y))
 
-      @svg = @create_svg_container @width, @height, @margins
+      @svg = @create_svg_container @width, @height * 1.09, @margins
 
       @links = @draw_links()
       @nodes = @draw_nodes()

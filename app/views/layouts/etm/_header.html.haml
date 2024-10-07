@@ -41,9 +41,9 @@
             - if current_user.admin?
               %li.sep-above.admin
                 %a.dropdown-item{ href: '/admin' } Admin
-    - else
-      %li.sign-up.nav-item
-        %a.nav-link{ href: sign_up_url }
-          = t('header.sign_up')
-      %li.sign-in.nav-item
-        = button_to t('header.sign_in'), sign_in_path, class: 'nav-link', method: :post
+    -# - else
+    -#   %li.sign-up.nav-item
+    -#     %a.nav-link{ href: sign_up_url }
+    -#       = t('header.sign_up')
+    -#   %li.sign-in.nav-item
+    -#     = button_to t('header.sign_in'), sign_in_path, class: 'nav-link', method: :post

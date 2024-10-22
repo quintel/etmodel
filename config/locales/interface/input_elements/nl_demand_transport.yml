@@ -132,14 +132,19 @@ nl:
       description: "Welk percentage van alle auto's zal op diesel blijven rijden in
         de toekomst? \r\n<br/><br/>\r\nHet is mogelijk dat de efficiëntie van deze
         auto's sneller zal verbeteren als de concurrentie van elektrische auto's sterker
-        wordt."
+        wordt.
+        \r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van diesel voor wergverkeer vaststellen.</br></br>"
     transport_car_using_gasoline_mix_share:
       title: Benzine
       short_description: ''
       description: "Welk percentage van alle auto's zal op benzine blijven rijden
         in de toekomst? <br/><br/> \r\nHet is mogelijk dat de efficiëntie van deze
         auto's sneller zal verbeteren als de concurrentie van elektrische auto's sterker
-        wordt."
+        wordt.\r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
     transport_car_using_lpg_share:
       title: LPG
       short_description: ''
@@ -196,7 +201,10 @@ nl:
         op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen.
         Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder 
         vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio."
+        >Brondata</a> om te zien of dit het geval is voor jouw regio.
+        \r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
     transport_truck_using_diesel_mix_share:
       title: Diesel
       short_description: ''
@@ -206,7 +214,10 @@ nl:
         met een goed bereik moeilijker te realiseren zijn dan elektrische auto's.
         Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder 
         vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio."
+        >Brondata</a> om te zien of dit het geval is voor jouw regio.
+        \r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van diesel voor wergverkeer vaststellen.</br></br>"
     transport_truck_using_electricity_share:
       title: Elektrisch
       short_description: ''
@@ -238,7 +249,10 @@ nl:
         tanks nodig.
         Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder 
         vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio."
+        >Brondata</a> om te zien of dit het geval is voor jouw regio.
+        \r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van LNG voor wergverkeer vaststellen.</br></br>"
     transport_truck_using_hydrogen_share:
       title: Waterstof
       short_description:
@@ -294,14 +308,20 @@ nl:
       description: "Welk percentage van alle bussen zal op diesel blijven rijden in
         de toekomst? \r\n<br/><br/>\r\nOp dit moment rijden bijna alle bussen op diesel,
         maar wellicht heeft de concurrentie van alternatieve aandrijvingstechnologiën
-        invloed op het aantal dieselbussen."
+        invloed op het aantal dieselbussen.
+        \r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van diesel voor wergverkeer vaststellen.</br></br>"
     transport_bus_using_gasoline_mix_share:
       title: Benzine
       short_description:
       description: "Welk percentage van alle bussen zal op benzine blijven rijden
         in de toekomst? <br/><br/> \r\nHet is mogelijk dat de efficiëntie van deze
         bussen sneller zal verbeteren als de concurrentie van elektrische bussen sterker
-        wordt."
+        wordt.
+        \r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
     transport_bus_using_lng_share:
       title: Vloeibaar aardgas (LNG)
       short_description:
@@ -310,7 +330,10 @@ nl:
         steeds zwaarder zullen wegen in de transportsector, kan het zo zijn dat LNG
         meer gebruikt gaat worden omdat het een hogere energiedichtheid heeft vergeleken
         met diesel. Daarbij is het zo dat LNG een relatief stabielere prijscurve heeft
-        dan andere (fossiele) brandstoffen."
+        dan andere (fossiele) brandstoffen.
+        \r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van LNG voor wergverkeer vaststellen.</br></br>"
     transport_bus_using_compressed_natural_gas_share:
       title: Gas onder druk (CNG)
       short_description:
@@ -374,7 +397,9 @@ nl:
       title: Kerosine mix
       short_description: 
       description: |    
-        Kerosine is de meest gebruikte brandstof vorm voor vliegtuigen op het moment. 
+        Kerosine mix is de meest gebruikte brandstof vorm voor vliegtuigen op het moment.
+        Je kunt de samenstelling van de kersoine mix in de  <a href="/scenario/supply/transport_fuels/international-aviation" >Brandstoffen
+        </a>sectie instellen.
     bunkers_aviation_using_hydrogen_share:
       title: Waterstof
       short_description:
@@ -419,7 +444,9 @@ nl:
         zijn van een dure elektrische infrastructuur. Ze zijn zeer geschikt voor afgelegen
         en dunbevolkte gebieden. Omdat Europa nog een lappendeken van standaarden
         is voor elektrische bovenleidingen, kunnen elektrische treinen vaak niet probleemloos
-        nationale grenzen passeren.
+        nationale grenzen passeren
+        In de <a href=/scenario/supply/transport_fuels/rail-transport>Treinverkeer</a>-sectie
+        kun je de samenstelling van diesel vaststellen.</br></br>
     transport_passenger_train_using_electricity_share:
       title: Elektrisch
       short_description: ''
@@ -502,7 +529,10 @@ nl:
         ruimte in nemen. Maar tegelijkertijd komt er ook steeds strengere wetgeving
         voor benzinemotorfietsen in steden, omdat ze een bijdragen aan luchtvervuiling.
         Er wordt bijvoorbeeld per 2018 in Amsterdam een milieuzone voor brom- en snorfietsen
-        uit 2010 en ouder ingevoerd."
+        uit 2010 en ouder ingevoerd.
+        \r\n<br/><br/>\r\n
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+        kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
     transport_motorcycle_using_electricity_share:
       title: Elektrisch
       short_description:
@@ -551,6 +581,9 @@ nl:
         wel voor meer flexibiliteit, omdat schepen dan minder afhankelijk zijn van
         de beschikbaarheid van brandstoffen.</br></br>
         Bekijk de technische parameters en kosten hieronder voor meer informatie.
+        <br/><br/>
+        In de <a href=/scenario/supply/transport_fuels/domestic-navigation>Binnenlandse scheepvaart</a>-sectie
+        kun je de samenstelling van benzine voor scheepvaart vaststellen.</br></br>
     transport_ship_using_hydrogen_share:
       title: Waterstof
       short_description:
@@ -660,7 +693,9 @@ nl:
         zijn van een dure elektrische infrastructuur. Ze zijn zeer geschikt voor afgelegen
         en dunbevolkte gebieden, of voor internationaal goederentransport. Omdat Europa
         nog een lappendeken van standaarden is voor elektrische bovenleidingen, kunnen
-        elektrische treinen vaak niet probleemloos nationale grenzen passeren."
+        elektrische treinen vaak niet probleemloos nationale grenzen passeren.
+        In de <a href=/scenario/supply/transport_fuels/road-transport>Treinverkeer</a>-sectie
+        kun je de samenstelling van diesel voor treinen vaststellen.</br></br>"
     transport_vehicle_using_electricity_efficiency:
       title: Elektrische voertuigen
       short_description: ''
@@ -717,11 +752,16 @@ nl:
     transport_van_using_diesel_mix_share:
       title: Diesel
       short_description:
-      description: "Welk percentage van alle bestelbussen zal op diesel rijden in de toekomst?"
+      description: "Welk percentage van alle bestelbussen zal op diesel rijden in de toekomst?
+      In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+       kun je de samenstelling van diesel voor wegverkeer vaststellen.</br></br>"
     transport_van_using_gasoline_mix_share:
       title: Benzine
       short_description:
-      description: "Welk percentage van alle bestelbussen zal benzine gebruiken in de toekomst?"
+      description: "Welk percentage van alle bestelbussen zal benzine gebruiken in de toekomst?
+      \r\n<br/><br/>\r\n
+      In de <a href=/scenario/supply/transport_fuels/road-transport>Wegverkeer</a>-sectie
+      kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
     transport_van_using_lpg_share:
       title: LPG
       short_description:

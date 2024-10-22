@@ -431,14 +431,14 @@
   dependent_on:
   output_element_key: user_profiles
   key: households_appliances_user_profiles
-- label: bunkers_electric_navigation
+- label: bunkers_ships_electricity
   color: lightgreen
   order_by: 800
   group: bunkers_curves
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: bunkers_electric_navigation_curve
+  gquery: bunkers_ships_electricity_curve
   is_1990:
   dependent_on:
   output_element_key: user_profiles

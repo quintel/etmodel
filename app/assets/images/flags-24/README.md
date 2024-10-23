@@ -1,0 +1,1 @@
+Most recent flags (NO,RS,CH) obtained from https://flagdownload.com/

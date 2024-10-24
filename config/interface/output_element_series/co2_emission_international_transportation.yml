@@ -1,19 +1,19 @@
 ---
-- label: bio_kerosene
-  color: "#5D7929"
-  order_by: 2
-  group: 
-  show_at_first: 
+- label: international_transportation_1990
+  color: "#333333"
+  order_by: 5
+  group: ''
+  show_at_first: false
   is_target_line: false
-  target_line_position: 
-  gquery: bio_kerosene_co2_emission_international_transport
-  is_1990: false
+  target_line_position: ''
+  gquery: 1990_in_co2_emissions_bunkers
+  is_1990: true
   dependent_on: 
   output_element_key: co2_emission_international_transportation
-  key: bio_kerosene_co2_emission_international_transportation
+  key: international_transportation_1990_co2_emission_international_transportation
 - label: kerosene
   color: "#BFEFFF"
-  order_by: 1
+  order_by: 10
   group: 
   show_at_first: 
   is_target_line: false
@@ -23,9 +23,21 @@
   dependent_on: 
   output_element_key: co2_emission_international_transportation
   key: kerosene_co2_emission_international_transportation
+- label: bio_kerosene
+  color: "#5D7929"
+  order_by: 15
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: bio_kerosene_co2_emission_international_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: bio_kerosene_co2_emission_international_transportation
 - label: heavy_fuel_oil
   color: "#BA7D40"
-  order_by: 3
+  order_by: 20
   group: 
   show_at_first: 
   is_target_line: false
@@ -37,7 +49,7 @@
   key: heavy_fuel_oil_co2_emission_international_transportation
 - label: lng
   color: "#696969"
-  order_by: 4
+  order_by: 25
   group: 
   show_at_first: 
   is_target_line: false
@@ -49,7 +61,7 @@
   key: lng_co2_emission_international_transportation
 - label: hydrogen
   color: "#87CEEB"
-  order_by: 5
+  order_by: 30
   group: 
   show_at_first: 
   is_target_line: false
@@ -61,7 +73,7 @@
   key: hydrogen_co2_emission_international_transportation
 - label: ammonia
   color: "#1ce6d6"
-  order_by: 6
+  order_by: 35
   group: 
   show_at_first: 
   is_target_line: false
@@ -71,15 +83,15 @@
   dependent_on: 
   output_element_key: co2_emission_international_transportation
   key: ammonia_co2_emission_international_transportation
-- label: international_transportation_1990
-  color: "#333333"
-  order_by: 1
-  group: ''
-  show_at_first: false
+- label: electricity
+  color: "#4169E1"
+  order_by: 40
+  group: 
+  show_at_first: 
   is_target_line: false
-  target_line_position: ''
-  gquery: 1990_in_co2_emissions_bunkers
-  is_1990: true
+  target_line_position: 
+  gquery: electricity_co2_emission_international_transport
+  is_1990: false
   dependent_on: 
   output_element_key: co2_emission_international_transportation
-  key: international_transportation_1990_co2_emission_international_transportation
+  key: electricity_co2_emission_international_transportation

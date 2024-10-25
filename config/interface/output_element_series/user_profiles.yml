@@ -1,7 +1,7 @@
 ---
 - label: buildings_heating
   color: lightgreen
-  order_by: 1
+  order_by: 5
   group: buildings_curves
   show_at_first:
   is_target_line:
@@ -13,7 +13,7 @@
   key: buildings_heating_user_profiles
 - label: buildings_cooling
   color: lightgreen
-  order_by: 2
+  order_by: 10
   group: buildings_curves
   show_at_first:
   is_target_line:
@@ -25,7 +25,7 @@
   key: buildings_cooling_user_profiles
 - label: buildings_appliances
   color: lightgreen
-  order_by: 3
+  order_by: 15
   group: buildings_curves
   show_at_first:
   is_target_line:
@@ -37,7 +37,7 @@
   key: buildings_appliances_user_profiles
 - label: transport_e_cars
   color: lightgreen
-  order_by: 5
+  order_by: 100
   group: transport_curves
   show_at_first:
   is_target_line:
@@ -49,7 +49,7 @@
   key: transport_e_cars_user_profiles
 - label: transport_e_buses
   color: lightgreen
-  order_by: 6
+  order_by: 105
   group: transport_curves
   show_at_first:
   is_target_line:
@@ -61,7 +61,7 @@
   key: transport_e_buses_user_profiles
 - label: transport_e_trucks
   color: lightgreen
-  order_by: 7
+  order_by: 110
   group: transport_curves
   show_at_first:
   is_target_line:
@@ -73,7 +73,7 @@
   key: transport_e_trucks_user_profiles
 - label: transport_e_vans
   color: lightgreen
-  order_by: 8
+  order_by: 115
   group: transport_curves
   show_at_first:
   is_target_line:
@@ -85,7 +85,7 @@
   key: transport_e_vans_user_profiles
 - label: transport_e_ships
   color: lightgreen
-  order_by: 8
+  order_by: 120
   group: transport_curves
   show_at_first:
   is_target_line:
@@ -97,7 +97,7 @@
   key: transport_e_ships_user_profiles
 - label: transport_e_planes
   color: lightgreen
-  order_by: 8
+  order_by: 125
   group: transport_curves
   show_at_first:
   is_target_line:
@@ -109,7 +109,7 @@
   key: transport_e_planes_user_profiles
 - label: industry_ict_electricity
   color: lightgreen
-  order_by: 17
+  order_by: 200
   group: industry_electricity_curves
   show_at_first:
   is_target_line:
@@ -121,7 +121,7 @@
   key: industry_ict_user_profiles
 - label: industry_metals_electricity
   color: lightgreen
-  order_by: 18
+  order_by: 205
   group: industry_electricity_curves
   show_at_first:
   is_target_line:
@@ -133,7 +133,7 @@
   key: industry_metals_electricity_user_profiles
 - label: industry_metals_heat
   color: lightgreen
-  order_by: 19
+  order_by: 210
   group: industry_heat_curves
   show_at_first:
   is_target_line:
@@ -145,7 +145,7 @@
   key: industry_metals_heat_user_profiles
 - label: industry_chemicals_electricity
   color: lightgreen
-  order_by: 20
+  order_by: 220
   group: industry_electricity_curves
   show_at_first:
   is_target_line:
@@ -157,7 +157,7 @@
   key: industry_chemicals_electricity_user_profiles
 - label: industry_chemicals_heat
   color: lightgreen
-  order_by: 21
+  order_by: 225
   group: industry_heat_curves
   show_at_first:
   is_target_line:
@@ -169,7 +169,7 @@
   key: industry_chemicals_heat_user_profiles
 - label: industry_fertilizers_electricity
   color: lightgreen
-  order_by: 22
+  order_by: 230
   group: industry_electricity_curves
   show_at_first:
   is_target_line:
@@ -181,7 +181,7 @@
   key: industry_fertilizers_electricity_user_profiles
 - label: industry_fertilizers_heat
   color: lightgreen
-  order_by: 23
+  order_by: 235
   group: industry_heat_curves
   show_at_first:
   is_target_line:
@@ -193,7 +193,7 @@
   key: industry_fertilizers_heat_user_profiles
 - label: industry_refineries_electricity
   color: lightgreen
-  order_by: 24
+  order_by: 240
   group: industry_electricity_curves
   show_at_first:
   is_target_line:
@@ -205,7 +205,7 @@
   key: industry_refineries_electricity_user_profiles
 - label: industry_refineries_heat
   color: lightgreen
-  order_by: 25
+  order_by: 245
   group: industry_heat_curves
   show_at_first:
   is_target_line:
@@ -229,7 +229,7 @@
   key: industry_other_electricity_user_profiles
 - label: industry_other_heat
   color: lightgreen
-  order_by: 27
+  order_by: 250
   group: industry_heat_curves
   show_at_first:
   is_target_line:
@@ -241,7 +241,7 @@
   key: industry_other_heat_user_profiles
 - label: hydro_power_river
   color: lightgreen
-  order_by: 35
+  order_by: 300
   group: electricity_production_curves
   show_at_first:
   is_target_line:
@@ -251,93 +251,9 @@
   dependent_on:
   output_element_key: user_profiles
   key: hydro_power_river_user_profiles
-- label: geothermal_heat_production
-  color: lightgreen
-  order_by: 40
-  group: heat_production_curves
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: geothermal_heat_production_curve
-  is_1990:
-  dependent_on:
-  output_element_key: user_profiles
-  key: geothermal_heat_production_user_profiles
-- label: solar_thermal_heat_production
-  color: lightgreen
-  order_by: 41
-  group: heat_production_curves
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: solar_thermal_heat_production_curve
-  is_1990:
-  dependent_on:
-  output_element_key: user_profiles
-  key: solar_thermal_heat_production_user_profiles
-- label: hydrogen_import
-  color: lightgreen
-  order_by: 51
-  group: gas_import_export_curves
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: hydrogen_import_curve
-  is_1990:
-  dependent_on:
-  output_element_key: user_profiles
-  key: hydrogen_import_user_profiles
-- label: hydrogen_export
-  color: lightgreen
-  order_by: 52
-  group: gas_import_export_curves
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: hydrogen_export_curve
-  is_1990:
-  dependent_on:
-  output_element_key: user_profiles
-  key: hydrogen_export_user_profiles
-- label: methane_import
-  color: lightgreen
-  order_by: 53
-  group: gas_import_export_curves
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: methane_import_curve
-  is_1990:
-  dependent_on:
-  output_element_key: user_profiles
-  key: methane_import_user_profiles
-- label: methane_export
-  color: lightgreen
-  order_by: 54
-  group: gas_import_export_curves
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: methane_export_curve
-  is_1990:
-  dependent_on:
-  output_element_key: user_profiles
-  key: methane_export_user_profiles
-- label: solar_pv_production
-  color: lightgreen
-  order_by: 64
-  group: electricity_production_curves
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: solar_pv_curve
-  is_1990:
-  dependent_on:
-  output_element_key: user_profiles
-  key: solar_pv_production_user_profiles
 - label: wind_offshore_production
   color: lightgreen
-  order_by: 65
+  order_by: 305
   group: electricity_production_curves
   show_at_first:
   is_target_line:
@@ -349,7 +265,7 @@
   key: wind_offshore_production_user_profiles
 - label: wind_onshore_production
   color: lightgreen
-  order_by: 66
+  order_by: 310
   group: electricity_production_curves
   show_at_first:
   is_target_line:
@@ -361,7 +277,7 @@
   key: wind_onshore_production_user_profiles
 - label: wind_coastal_production
   color: lightgreen
-  order_by: 66
+  order_by: 315
   group: electricity_production_curves
   show_at_first:
   is_target_line:
@@ -370,10 +286,94 @@
   is_1990:
   dependent_on:
   output_element_key: user_profiles
-  key: wind_coastal_production_user_profiles
+  key: wind_coastal_production_user_profiles  
+- label: solar_pv_production
+  color: lightgreen
+  order_by: 320
+  group: electricity_production_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_pv_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: solar_pv_production_user_profiles  
+- label: geothermal_heat_production
+  color: lightgreen
+  order_by: 400
+  group: heat_production_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_heat_production_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: geothermal_heat_production_user_profiles
+- label: solar_thermal_heat_production
+  color: lightgreen
+  order_by: 405
+  group: heat_production_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_thermal_heat_production_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: solar_thermal_heat_production_user_profiles
+- label: hydrogen_import
+  color: lightgreen
+  order_by: 500
+  group: gas_import_export_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_import_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: hydrogen_import_user_profiles
+- label: hydrogen_export
+  color: lightgreen
+  order_by: 505
+  group: gas_import_export_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_export_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: hydrogen_export_user_profiles
+- label: methane_import
+  color: lightgreen
+  order_by: 510
+  group: gas_import_export_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: methane_import_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: methane_import_user_profiles
+- label: methane_export
+  color: lightgreen
+  order_by: 515
+  group: gas_import_export_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: methane_export_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: methane_export_user_profiles
 - label: agriculture_electricity
   color: lightgreen
-  order_by: 71
+  order_by: 600
   group: agriculture_curves
   show_at_first:
   is_target_line:
@@ -385,7 +385,7 @@
   key: agriculture_electricity_user_profiles
 - label: agriculture_heat
   color: lightgreen
-  order_by: 72
+  order_by: 605
   group: agriculture_curves
   show_at_first:
   is_target_line:
@@ -397,7 +397,7 @@
   key: agriculture_heat_user_profiles
 - label: households_cooling
   color: lightgreen
-  order_by: 73
+  order_by: 700
   group: households_curves
   show_at_first:
   is_target_line:
@@ -409,7 +409,7 @@
   key: households_cooling_user_profiles
 - label: households_hot_water
   color: lightgreen
-  order_by: 74
+  order_by: 705
   group: households_curves
   show_at_first:
   is_target_line:
@@ -421,7 +421,7 @@
   key: households_hot_water_user_profiles
 - label: households_appliances
   color: lightgreen
-  order_by: 75
+  order_by: 710
   group: households_curves
   show_at_first:
   is_target_line:
@@ -431,4 +431,15 @@
   dependent_on:
   output_element_key: user_profiles
   key: households_appliances_user_profiles
-
+- label: bunkers_ships_electricity
+  color: lightgreen
+  order_by: 800
+  group: bunkers_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: bunkers_ships_electricity_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: electric_bunkers_navigation_user_profiles

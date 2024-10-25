@@ -1,0 +1,19 @@
+---
+- key: bunkers_aviation_using_kerosene_mix_share
+  share_group: demand_bunkers_aviation
+  step_value: 0.1
+  unit: "%"
+  position: 1
+  slide_key: demand_transport_international_aviation_technology
+- key: bunkers_aviation_using_hydrogen_share
+  share_group: demand_bunkers_aviation
+  step_value: 0.1
+  unit: "%"
+  position: 2
+  slide_key: demand_transport_international_aviation_technology
+- key: bunkers_aviation_using_electricity_share
+  share_group: demand_bunkers_aviation
+  step_value: 0.1
+  unit: "%"
+  position: 3
+  slide_key: demand_transport_international_aviation_technology

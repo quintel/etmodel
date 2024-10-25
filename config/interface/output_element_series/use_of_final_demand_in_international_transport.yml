@@ -1,4 +1,7 @@
+# For the file structure, we have chosen for a split in fossil and non-fossil carriers, instead of a split between planes and ships.
+# This is to show the carrier transition in the sector through this graph.
 ---
+# Fossil carriers
 - label: kerosene_planes
   color: "#A9A9A9"
   order_by: 100
@@ -13,7 +16,7 @@
   key: kerosene_planes_use_of_final_demand_in_international_transport
 - label: synthetic_kerosene_planes
   color: "#74B9FF"
-  order_by: 110
+  order_by: 105
   group: ''
   show_at_first: false
   is_target_line: false
@@ -23,9 +26,23 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
   key: synthetic_kerosene_planes_use_of_final_demand_in_international_transport
+- label: heavy_fuel_oil_for_ships
+  color: "#8B4513"
+  order_by: 110
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: heavy_fuel_oil_demand_international_shipping
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_international_transport
+  key: heavy_fuel_oil_for_ships_use_of_final_demand_in_international_transport
+
+# Non-fossil carriers
 - label: bio_kerosene_planes
   color: "#5D7929"
-  order_by: 120
+  order_by: 200
   group: ''
   show_at_first: false
   is_target_line: false
@@ -37,7 +54,7 @@
   key: bio_kerosene_planes_use_of_final_demand_in_international_transport
 - label: hydrogen_planes
   color: "#c9e9f6"
-  order_by: 130
+  order_by: 205
   group: ''
   show_at_first: false
   is_target_line: false
@@ -46,10 +63,10 @@
   is_1990: false
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
-  key: hydrogen_planes_use_of_final_demand_in_international_transport
+  key: hydrogen_planes_use_of_final_demand_in_international_transport       
 - label: electricity_planes
   color: "#41b9e1"
-  order_by: 140
+  order_by: 210
   group: ''
   show_at_first: false
   is_target_line: false
@@ -58,23 +75,13 @@
   is_1990: false
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
-  key: electricity_planes_use_of_final_demand_in_international_transport
+  key: electricity_planes_use_of_final_demand_in_international_transport 
 
-- label: heavy_fuel_oil_for_ships
-  color: "#8B4513"
-  order_by: 200
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: heavy_fuel_oil_demand_international_shipping
-  is_1990: false
-  dependent_on:
-  output_element_key: use_of_final_demand_in_international_transport
-  key: heavy_fuel_oil_for_ships_use_of_final_demand_in_international_transport
+
+
 - label: lng_ships
   color: "#696969"
-  order_by: 210
+  order_by: 300
   group: ''
   show_at_first: false
   is_target_line: false
@@ -86,7 +93,7 @@
   key: lng_ships_use_of_final_demand_in_international_transport
 - label: hydrogen_ships
   color: "#87CEEB"
-  order_by: 220
+  order_by: 305
   group: ''
   show_at_first: false
   is_target_line: false
@@ -98,7 +105,7 @@
   key: hydrogen_ships_use_of_final_demand_in_international_transport
 - label: ammonia_ships
   color: "#1ce6d6"
-  order_by: 230
+  order_by: 310
   group: ''
   show_at_first: false
   is_target_line: false
@@ -110,7 +117,7 @@
   key: ammonia_ships_use_of_final_demand_in_international_transport
 - label: electricity_ships
   color: "#4169E1"
-  order_by: 240
+  order_by: 315
   group: ''
   show_at_first: false
   is_target_line: false
@@ -119,4 +126,4 @@
   is_1990: false
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
-  key: electricity_ships_use_of_final_demand_in_international_transport
+  key: electricity_ships_use_of_final_demand_in_international_transport  

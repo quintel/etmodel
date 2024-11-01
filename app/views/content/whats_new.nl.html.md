@@ -1,6 +1,18 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# November
+
+### Toevoeging van waterstof en elektriciteit voor internationaal transport
+
+Waterstof en elektriciteit kunnen nu beide worden gebruikt om de vraag naar internationaal transport te modelleren.
+In de **[Internationaal transport](scenario/demand/transport_international_transport/international-transport)** sectie kan je de vraag naar internationaal transport in uw scenario modelleren.
+De transportmodi waaruit je kan kiezen zijn navigatie (per vliegtuig) en luchtvaart (per schip).
+Nu kan je waterstof en elektriciteit gebruiken om de vraag voor beide transportmodi in te vullen.
+
+-> <img src="/assets/pages/whats_new/nl_whats_new_hy_elec_international.png" width="600" /> <-
+
+
 # Juli 2024
 
 ### Update Profielen elektrische voertuigen

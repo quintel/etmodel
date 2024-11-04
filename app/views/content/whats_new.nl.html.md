@@ -3,6 +3,15 @@ ___
 
 # November
 
+### Toevoegingen en verbeteringen voor Europese landen
+
+De niet-EU-landen Noorwegen, de Republiek Servië en Zwitserland, evenals Groot-Brittannië, zijn nu beschikbaar in het ETM. Je kunt deze landen bekijken door er een van te selecteren in de regio-dropdown bij het starten van een nieuw scenario.
+
+Voor een volledig overzicht van alle gebruikte data, bekijk de **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. De finale energievraag voor deze EU-landen is zoveel mogelijk afgestemd op de Eurostat (of IEA) Energiebalansen. Zoals altijd is er ruimte voor verbeteringen, met name op het gebied van warmte- en elektriciteitsproductie, toch zijn we erg enthousiast over deze eerste stap. Voel je vrij om ons suggesties te sturen via het **[Contactformulier](https://energytransitionmodel.com/contact)**.
+
+Daarnaast zijn er verbeteringen doorgevoerd in de gegevens over ruimteverwarming voor alle Europese landen, gebaseerd op de **[Eurostat eindenergieverbruik in huishoudens database](https://doi.org/10.2908/NRG_D_HHQ)**. Dit is ook te vinden in de **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**.
+Later in november komen we met een update van de woon- en niet-woongebouwenvoorraad, gebaseerd op cijfers van de **[EU Building Stock Observatory](https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings/eu-building-stock-observatory_en)**.
+
 ### Toevoeging van waterstof en elektriciteit voor internationaal transport
 
 Waterstof en elektriciteit kunnen nu beide worden gebruikt om de vraag naar internationaal transport te modelleren.

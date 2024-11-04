@@ -3,6 +3,17 @@ ___
 
 # November 2024
 
+### Additions and improvements for European countries
+
+The non-EU countries Norway, Republic of Serbia and Switzerland, as well as Great Britain are now available in the ETM.
+You can check out these countries by selecting one of them in the region dropdown when starting a new scenario.
+
+For a complete overview of all data that have been used, have a look at the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. The final energy demand for these EU countries was matched as much as possible to the Eurostat (or IEA) Energy Balances. As always, there is some room for improvements, particularly for heat and electricity production, but we are very excited about this first step. Feel free to contact us with suggestions using the **[Contact form](https://energytransitionmodel.com/contact)**.
+
+In addition, improvements for the space heating data for all European countries have been made, based on the **[Eurostat final energy consumption in households database](https://doi.org/10.2908/NRG_D_HHQ)**. This can be found in the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**  as well. 
+Later in November, this will soon be followed by an update of the residential and non-residential building stock based on numbers from the **[EU Building Stock Observatory](https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings/eu-building-stock-observatory_en)**.
+
+
 ### Addition of hydrogen and electricity for international transport
 
 Hydrogen and electricity can now both be used to model the demand of international transport.

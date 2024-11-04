@@ -16,8 +16,8 @@ Later in november komen we met een update van de woon- en niet-woongebouwenvoorr
 
 Waterstof en elektriciteit kunnen nu beide worden gebruikt om de vraag naar internationaal transport te modelleren.
 In de **[Internationaal transport](scenario/demand/transport_international_transport/international-transport)** sectie kan je de vraag naar internationaal transport in uw scenario modelleren.
-De transportmodi waaruit je kan kiezen zijn navigatie (per vliegtuig) en luchtvaart (per schip).
-Nu kan je waterstof en elektriciteit gebruiken om de vraag voor beide transportmodi in te vullen.
+De transportsoorten waaruit je kan kiezen zijn navigatie (per schip) en luchtvaart (per vliegtuig).
+
 
 -> <img src="/assets/pages/whats_new/nl_whats_new_hy_elec_international.png" width="600" /> <-
 

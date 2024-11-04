@@ -18,7 +18,7 @@ Later in November, this will soon be followed by an update of the residential an
 
 Hydrogen and electricity can now both be used to model the demand of international transport.
 In the **[International transport](scenario/demand/transport_international_transport/international-transport)** section you can model the demand for international transport in your scenario.
-The modes of transport you can choose from are navigation (by plane) & aviation (by ship).
+The modes of transport you can choose from are navigation (by ship) & aviation (by plane).
 Now you can use hydrogen and electricity as a way to serve the demand for both these modes of transport.
 
 -> <img src="/assets/pages/whats_new/en_whats_new_hy_elec_international.png" width="600" /> <-

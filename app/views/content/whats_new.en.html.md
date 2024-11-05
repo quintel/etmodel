@@ -5,13 +5,12 @@ ___
 
 ### Additions and improvements for European countries
 
-The non-EU countries Norway, Republic of Serbia and Switzerland, as well as Great Britain are now available in the ETM.
-You can check these countries out by selecting one of them in the region dropdown when starting a new scenario.
+The countries Norway, Serbia and Switzerland, as well as Great Britain are now available in the ETM. Check out the new countries by selecting them in the region dropdown when starting a new scenario.
 
-For a complete overview of all data that has been used, have a look at the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. The final energy demand for these EU countries was matched as much as possible to the Eurostat (or IEA) Energy Balances. As always, there is some room for improvement, particularly for heat and electricity production, but we are very excited about this first step. Feel free to contact us with suggestions using the **[Contact form](https://energytransitionmodel.com/contact)**.
+For a complete overview of all data that has been used to create the country datasets, have a look at the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. The final energy demand of the countries is matched as much as possible to the country energy balances. As always, there is some room for future improvements, particularly regarding heat and electricity production data. However, we are very excited about this first step of making the new datasets available. Feel free to contact us with suggestions using the **[contact form](https://energytransitionmodel.com/contact)**.
 
-In addition, improvements for the space heating data for all European countries have been made, based on the **[Eurostat final energy consumption in households database](https://doi.org/10.2908/NRG_D_HHQ)**. This can be found in the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)** as well. 
-Later in November, this update will be followed by an update of the residential and non-residential building stock based on numbers from the **[EU Building Stock Observatory](https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings/eu-building-stock-observatory_en)**.
+In addition, improvements have been made of carrier application splits in households for all European country datasets in the ETM, based on the **[Eurostat final energy consumption in households database](https://doi.org/10.2908/NRG_D_HHQ)**. The assumed values in application splits can be found in the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)** as well.
+Later in November, this update will be followed by an update of the residential and non-residential building stock, based on numbers from the **[EU Building Stock Observatory](https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings/eu-building-stock-observatory_en)**.
 
 
 ### Addition of hydrogen and electricity for international transport

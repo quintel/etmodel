@@ -11,7 +11,7 @@
       = scenario.end_year
   %li
     = t('scenario.updated')
-    = local_time(scenario.updated_at, :long)
+    = scenario.updated_at.strftime('%Y')
 
   %li.with-button
     - if active_saved_scenario_id == scenario.id

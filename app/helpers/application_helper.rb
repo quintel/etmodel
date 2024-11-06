@@ -100,7 +100,7 @@ module ApplicationHelper
   # Returns a hash of values which may be interpolated into description texts.
   def formatted_description_values
     @description_values ||= {
-      etengine_url: Settings.api_url.to_s.chomp('/'),
+      etengine_url: Settings.ete_url.to_s.chomp('/'),
       scenario_id:  Current.setting.api_session_id,
       area_code:    Current.setting.area_code,
       end_year:     Current.setting.end_year
@@ -158,7 +158,7 @@ module ApplicationHelper
 
   def js_globals
     Jbuilder.encode do |json|
-      json.api_url          Settings.api_url
+      json.api_url          Settings.ete_url
       json.api_proxy_url    Settings.api_proxy_url
       json.disable_cors     Settings.disable_cors
       json.standalone       Settings.standalone

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module ETModel
-  # Decodes and verifies a JWT sent by ETEngine.
-  module EngineToken
+  # Decodes and verifies a JWT.
+  module TokenDecoder
     module_function
 
     DecodeError = Class.new(StandardError)

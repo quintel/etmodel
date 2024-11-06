@@ -5,8 +5,7 @@ class APIPassthruController < ApplicationController
   # with their access token in the query string.
   def passthru
     response.set_header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
-
-    url = URI.parse(Settings.api_url)
+    url = URI.parse(Settings.ete_url)
     url.path = "/api/v3/scenarios/#{params[:id]}/#{params[:rest]}"
     url.query = { access_token: identity_access_token.token }.to_query if signed_in?
 

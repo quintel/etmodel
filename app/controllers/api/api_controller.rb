@@ -5,7 +5,7 @@ module API
   class APIController < ActionController::API
     abstract!
 
-    rescue_from ETModel::EngineToken::DecodeError do |e|
+    rescue_from ETModel::TokenDecoder::DecodeError do |e|
       render json: { errors: [e.message] }, status: :forbidden
     end
 
@@ -49,7 +49,7 @@ module API
       return nil if request.authorization.blank?
 
       request.authorization.to_s.match(/\ABearer (.+)\z/) do |match|
-        return @token = ETModel::EngineToken.decode(match[1])
+        return @token = ETModel::TokenDecoder.decode(match[1])
       end
     end
 

@@ -12,7 +12,7 @@ class Engine::Area < ActiveResource::Base
     neighbourhood_be
   )
 
-  self.site = "#{Settings.api_url}/api/v3"
+  self.site = "#{Settings.ete_url}/api/v3"
 
   # This list of attributes is used in the forms where you can set the
   # area dependencies for an object, such as the input_elements

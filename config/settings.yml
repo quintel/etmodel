@@ -77,12 +77,12 @@ incoming_webhook_keys:
 
 # Authentication
 # --------------
-
 identity:
   client_id: <%= ENV['IDENTITY_CLIENT_ID'] %>
   client_secret: <%= ENV['IDENTITY_CLIENT_SECRET'] %>
   client_uri: http://localhost:3001
 
+ete_url: http://localhost:3000
 # ESDL
 # ----
 

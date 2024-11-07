@@ -554,7 +554,7 @@ D3.sankey =
           {left: 'dry',                             right: 'agriculture',                 gquery: 'dry_biomass_to_agriculture_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'other',                       gquery: 'dry_biomass_to_other_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'bunkers',                     gquery: 'dry_biomass_to_bunkers_in_biomass_sankey', color: '#009432'},
-          {left: 'dry',                             right: 'export',                      gquery: 'dry_biomass_to_export_i3n_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'export',                      gquery: 'dry_biomass_to_export_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'losses',                      gquery: 'dry_biomass_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'non_biogenic_carriers_demand',gquery: 'dry_biomass_to_non_biogenic_carriers_in_biomass_sankey', color: '#009432'},

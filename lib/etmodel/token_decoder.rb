@@ -10,7 +10,7 @@ module ETModel
     def decode(token)
       decoded = JSON::JWT.decode(token, jwk_set)
 
-      unless decoded[:iss] == Settings.api_url &&
+      unless decoded[:iss] == Settings.idp_url &&
              decoded[:aud] == Settings.identity.client_uri &&
              decoded[:sub].present? &&
              decoded[:exp] > Time.now.to_i

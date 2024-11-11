@@ -218,7 +218,7 @@ class ScenariosController < ApplicationController
       { scenario_id: id, weight: weight }
     end
 
-    result = HTTParty.post("#{Settings.api_url}/api/v3/scenarios/merge", {
+    result = HTTParty.post("#{Settings.ete_url}/api/v3/scenarios/merge", {
       body: { scenarios: req_body }.to_json,
       headers: {
         'Accept'       => 'application/json',

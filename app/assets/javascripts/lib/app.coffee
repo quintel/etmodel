@@ -23,7 +23,7 @@ class @AppView extends Backbone.View
       @accessToken = new GuestToken()
 
     @api = new ApiGateway
-      api_path:           globals.api_url
+      api_path:           globals.ete_url
       api_proxy_path:     globals.api_proxy_url
       scenario_id:        globals.api_session_id
       beforeLoading:      @showLoading
@@ -210,7 +210,7 @@ class @AppView extends Backbone.View
 
   # Used on the console for debugging
   scenario_url: =>
-    "#{globals.api_url}/inspect/#{@api.scenario_id}"
+    "#{globals.ete_url}/inspect/#{@api.scenario_id}"
 
   # Prepares the Merit Order checkboxes
   setup_checkboxes: =>

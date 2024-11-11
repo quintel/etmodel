@@ -7,7 +7,7 @@ RSpec.describe 'APIPassthru', type: :request do
     context 'when as a guest' do
       it 'redirects to the Engine /api/v3/scenarios/123/abc endpoint' do
         expect(get('/passthru/123/abc')).to redirect_to(
-          "#{Settings.api_url}/api/v3/scenarios/123/abc"
+          "#{Settings.ete_url}/api/v3/scenarios/123/abc"
         )
       end
 
@@ -29,7 +29,7 @@ RSpec.describe 'APIPassthru', type: :request do
         token = sign_in(user)
 
         expect(get('/passthru/123/abc')).to redirect_to(
-          "#{Settings.api_url}/api/v3/scenarios/123/abc?access_token=#{token.token}"
+          "#{Settings.ete_url}/api/v3/scenarios/123/abc?access_token=#{token.token}"
         )
       end
     end

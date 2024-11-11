@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# TODO update notes / explanation here to match new setup
 # Creates a new API scenario based on the given existing API `scenario_id`, and
 # then creates a new SavedScenario. The new API scenario will be marked as
 # protected.
@@ -13,38 +14,36 @@
 #
 # Returns a ServiceResult with the resulting SavedScenario.
 CreateSavedScenario = lambda do |http_client, scenario_id, user, settings = {}|
-  api_res = CreateAPIScenario.call(
-    http_client, settings.except(:description, :title).merge(scenario_id:)
-  )
+  debugger
+  response = http_client.post('/saved_scenarios'), { scenario_id: scenario_id }.merge(settings.except(:description, :title))
 
-  return api_res if api_res.failure?
+  return response if response.failure?
 
-  api_scenario = api_res.value
+  idp_scenario = idp_res.value
 
   saved_scenario = SavedScenario.new(
     title: settings[:title],
     description: settings[:description],
-    area_code: api_scenario.area_code,
-    end_year: api_scenario.end_year,
-    scenario_id: api_scenario.id,
-    private: api_scenario.private?,
-    user:
+    area_code: idp_scenario.area_code,
+    end_year: idp_scenario.end_year,
+    scenario_id: idp_scenario.id,
+    private: idp_scenario.private?,
+    user: current_user
   )
 
   unless saved_scenario.valid?
-    SetAPIScenarioCompatibility.dont_keep_compatible(http_client, api_scenario.id)
+    http_client.set_idp_scenario_compatibility(idp_scenario.id, keep: false)
 
-    # Set the scenario ID back to the original, rather than the cloned scenario created by
-    # CreateAPIScenario.
+    # Reset id to original
     saved_scenario.scenario_id = scenario_id
     return ServiceResult.failure(saved_scenario.errors.map(&:full_message), saved_scenario)
   end
 
-  SetAPIScenarioCompatibility.keep_compatible(http_client, api_scenario.id)
-  CreateAPIScenarioVersionTag.call(http_client, api_scenario.id, '')
+  http_client.set_idp_scenario_compatibility(idp_scenario.id, keep: true)
+  http_client.create_idp_scenario_version_tag(idp_scenario.id, '')
 
   saved_scenario.save
-  saved_scenario.scenario = api_scenario
+  saved_scenario.scenario = idp_scenario
 
   ServiceResult.success(saved_scenario)
 end

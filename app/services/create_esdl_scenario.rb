@@ -22,7 +22,7 @@ class CreateEsdlScenario
   def send_request
     HTTParty.public_send(
       :post,
-      api_url,
+      ete_url,
       { body: {
         energy_system: @esdl_file,
         energy_system_title: @filename,
@@ -49,7 +49,7 @@ class CreateEsdlScenario
     Rails.env.production? ? 'pro' : 'beta'
   end
 
-  def api_url
-    Settings.esdl_api_url + 'create_scenario/'
+  def ete_url
+    Settings.esdl_ete_url + 'create_scenario/'
   end
 end

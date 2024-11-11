@@ -671,7 +671,7 @@
       requests.push(
         $.ajax({
           type: 'PUT',
-          url: globals.api_url + '/api/v3/scenarios/' + id,
+          url: globals.ete_url + '/api/v3/scenarios/' + id,
           headers: App.accessToken.headers(),
           data: { gqueries: gqueries },
           dataType: 'json'

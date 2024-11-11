@@ -107,7 +107,7 @@ class SavedScenariosController < ApplicationController
 
     # Re-find the user, due to AssociationMismatch errors in development.
     result = CreateSavedScenario.call(
-      engine_client,
+      idp_client,
       ss_params[:scenario_id],
       current_user,
       ss_params

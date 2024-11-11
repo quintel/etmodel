@@ -7,7 +7,7 @@
 # +------------------------------------------------------------------------+
 
 # URL for ETEngine.
-api_url: https://beta-engine.energytransitionmodel.com
+ete_url: https://beta-engine.energytransitionmodel.com
 
 # URL for the Multi-Year Charts application.
 multi_year_charts_url: http://localhost:3005
@@ -88,7 +88,7 @@ ete_url: http://localhost:3000
 
 # This is the url for the esdl-conversion api. Used for converting
 # EnergySystem files (.esdl) into etm scenarios
-esdl_api_url: https://beta-esdl.energytransitionmodel.com/api/v1/EnergySystem/
+esdl_ete_url: https://beta-esdl.energytransitionmodel.com/api/v1/EnergySystem/
 
 # When starting communication with the ESDL Suite (to connect to the Mondaine Drive), the client
 # data and following url's should be configured The redirect_url should be set to

@@ -96,9 +96,9 @@ class ApplicationController < ActionController::Base
     redirect_back(fallback_location: default_url)
   end
 
-  # Returns the Faraday client which should be used to communicate with ETEngine. This contains the
+  # Returns the Faraday client which should be used to communicate with MyETM. This contains the
   # user authentication token if the user is logged in.
-  def engine_client
+  def idp_client
     if current_user
       identity_session.access_token.http_client
     else

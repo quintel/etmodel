@@ -56,7 +56,7 @@ module API
     # Returns the Faraday client which should be used to communicate with ETEngine.
     # This reuses the authentication token from the current request.
     def engine_client
-      Faraday.new(url: Settings.api_url) do |conn|
+      Faraday.new(url: Settings.ete_url) do |conn|
         unless request.authorization.blank?
           request.authorization.to_s.match(/\ABearer (.+)\z/) do |match|
             conn.request(:authorization, match[1])

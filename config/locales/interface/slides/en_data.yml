@@ -45,7 +45,7 @@ en:
       short_description:
       description: |
         Download detailed information on the costs (CAPEX, OPEX and totals) of different
-        technologies and user groups. See the 
+        technologies and user groups. See the
         <a href="https://docs.energytransitionmodel.com/main/cost-overview-per-sector/" target=\"_blank\">documentation</a>
         for more information.
         <ul class="data-download">
@@ -83,7 +83,7 @@ en:
       title: Specifications storage technologies
       short_description:
       description: |
-        Download detailed information about the parameters of 
+        Download detailed information about the parameters of
         <a href="#" class="open_chart" data-chart-key="flexibility_hourly_p2p_storage" data-chart-location="side">
         Electricity storage</a> technologies,
         <a href="#" class="open_chart" data-chart-key="heat_network_storage" data-chart-location="side">
@@ -129,20 +129,20 @@ en:
       title: Hourly curves for heat in the built environment
       short_description:
       description: |
-        Download the heat demand and production per hour for space heating and hot water in 
-        households, and for space heating in buildings. For each application, the structure is as 
-        follows: first the <i>consumers</i> are listed, then the <i>producers</i>. See the 
+        Download the heat demand and production per hour for space heating and hot water in
+        households, and for space heating in buildings. For each application, the structure is as
+        follows: first the <i>consumers</i> are listed, then the <i>producers</i>. See the
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">
         documentation</a> for more information.
         <ul>
           <li>
             For each <i>consumer</i>, for example space heating demand in apartments constructed
-            between 1945 and 1964, the <b>demand of</b> and <b>production for</b> that consumer is 
+            between 1945 and 1964, the <b>demand of</b> and <b>production for</b> that consumer is
             shown. The difference is a heat deficit that was not supplied to the consumer.
           </li>
           <li>
-            For each <i>producer</i>, for example an air heat pump, the <b>demand for</b> and 
-            <b>production by</b> that producer is shown. The difference is a heat deficit that was 
+            For each <i>producer</i>, for example an air heat pump, the <b>demand for</b> and
+            <b>production by</b> that producer is shown. The difference is a heat deficit that was
             not supplied by the producer.
           </li>
         </ul>
@@ -174,7 +174,7 @@ en:
         <br/><br/>
         The "Hydrogen demand, production and storage per hour" export contains information about hydrogen demand, supply and storage per hour in your scenario.
         <br/><br/>
-        The "Levelised costs of hydrogen" export contains the levelised costs of hydrogen production, the production of hydrogen, 
+        The "Levelised costs of hydrogen" export contains the levelised costs of hydrogen production, the production of hydrogen,
         the production cost per MWh for each generation method and the production curve of hydrogen for each generation method on an hourly basis.
         <ul class="data-download">
           <li>
@@ -189,7 +189,7 @@ en:
               <span class="filetype">2MB CSV</span>
             </a>
           </li>
-        </ul>    
+        </ul>
     data_export_molecule_flows:
       title: Yearly CCUS flows
       short_description:
@@ -267,7 +267,7 @@ en:
         this sheet can be found in the <a href="https://docs.energytransitionmodel.com/main/emissions-footprint" target="_blank">ETM documentation</a>.
         <br /><br />
         <a
-          href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+          href="%{ete_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
           target="_blank"
           class="simple-button"
         >
@@ -277,22 +277,22 @@ en:
       title: Land use of solar and wind energy
       short_description:
       description: |
-        Solar and wind technologies partially compete for space. The chart in this section shows 
+        Solar and wind technologies partially compete for space. The chart in this section shows
         the total land use of all solar and wind technologies.
         In particular, it is possible to differentiate between large-scale and small-scale inland wind turbines
         using the sliders below.
         Please note that this split is for visual purposes only and does not affect the outcomes of this scenario.
         <br/><br/>
         The full specifications of each technology, including electricity production and number of units,
-        are available in the table 
+        are available in the table
         <a href="#" class="open_chart" data-chart-key="land_use_solar_wind" data-chart-location="side">
         Land use of solar and wind (table)</a>
         <br/><br/>
-        <b> Note: </b> Solar PVT panels and solar thermal panels are included in the chart and table. 
+        <b> Note: </b> Solar PVT panels and solar thermal panels are included in the chart and table.
         The ETM considers PVT panels (and solar thermal panels) primarily as a heating technology in combination with a heat pump.
-        To adjust the share of a PVT heat pump system for space heating and hot water or to adjust the number of solar thermal panels, go to the 
+        To adjust the share of a PVT heat pump system for space heating and hot water or to adjust the number of solar thermal panels, go to the
         <a href="/scenario/demand/households/space-heating-and-hot-water">
-        Households space heating and hot water</a> section. 
+        Households space heating and hot water</a> section.
     flexibility_merit_order_merit_order_price:
       title: Hourly curves for electricity
       short_description:

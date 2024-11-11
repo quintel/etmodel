@@ -11,5 +11,5 @@ require 'httparty'
 #
 class NastyProxy
   include HTTParty
-  base_uri Settings.api_url
+  base_uri Settings.ete_url
 end

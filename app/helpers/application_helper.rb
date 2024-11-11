@@ -158,7 +158,7 @@ module ApplicationHelper
 
   def js_globals
     Jbuilder.encode do |json|
-      json.api_url          Settings.ete_url
+      json.ete_url          Settings.ete_url
       json.api_proxy_url    Settings.api_proxy_url
       json.disable_cors     Settings.disable_cors
       json.standalone       Settings.standalone

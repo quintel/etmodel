@@ -95,7 +95,7 @@ class CreateMultiYearChart
     end
   end
 
-  def api_url(*suffix)
-    "#{Settings.api_url}/api/v3/scenarios/#{suffix.join('/')}"
+  def ete_url(*suffix)
+    "#{Settings.ete_url}/api/v3/scenarios/#{suffix.join('/')}"
   end
 end

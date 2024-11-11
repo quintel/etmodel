@@ -12,7 +12,7 @@ describe ExportEsdlScenario, type: :service do
     allow(HTTParty)
       .to receive(:post)
       .with(
-        Settings.esdl_api_url + 'export_esdl/',
+        Settings.esdl_ete_url + 'export_esdl/',
         { body: { session_id: ete_scenario, environment: 'beta' } }
       ).and_return(ServicesHelper::StubResponse.new(code, response_body))
   end

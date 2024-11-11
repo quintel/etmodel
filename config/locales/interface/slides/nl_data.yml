@@ -82,7 +82,7 @@ nl:
       title: Specificaties opslagtechnologieën
       short_description:
       description: |
-        Download gedetailleerde informatie over de parameters van 
+        Download gedetailleerde informatie over de parameters van
         <a href="#" class="open_chart" data-chart-key="flexibility_hourly_p2p_storage" data-chart-location="side">
         Elektriciteitsopslagtechnologieën</a>,
         <a href="#" class="open_chart" data-chart-key="heat_network_storage" data-chart-location="side">
@@ -135,21 +135,21 @@ nl:
       title: Uurlijkse profielen voor warmte in huishoudens
       short_description:
       description: |
-        Download de warmtevraag en -productie per uur voor ruimteverwarming en warm water in 
-        huishoudens, en voor ruimteverwarming in gebouwen. Voor elke toepassing is de structuur als 
-        volgt: eerst worden de <i>gebruikers</i> getoond, vervolgens de <i>bronnen</i>. Zie de 
+        Download de warmtevraag en -productie per uur voor ruimteverwarming en warm water in
+        huishoudens, en voor ruimteverwarming in gebouwen. Voor elke toepassing is de structuur als
+        volgt: eerst worden de <i>gebruikers</i> getoond, vervolgens de <i>bronnen</i>. Zie de
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">
         documentatie</a> voor meer informatie.
         <ul>
           <li>
-            Voor elke <i>gebruiker</i>, bijvoorbeeld de warmtevraag voor ruimteverwarming in 
-            appartementen gebouwd tussen 1945 en 1964, wordt de <b>vraag van</b> en 
-            <b>productie voor</b> die gebruiker getoond. Het verschil is een warmtetekort dat 
+            Voor elke <i>gebruiker</i>, bijvoorbeeld de warmtevraag voor ruimteverwarming in
+            appartementen gebouwd tussen 1945 en 1964, wordt de <b>vraag van</b> en
+            <b>productie voor</b> die gebruiker getoond. Het verschil is een warmtetekort dat
             niet aan de gebruiker is geleverd.
           </li>
           <li>
-            Voor elke <i>bron</i>, bijvoorbeeld een luchtwarmtepomp, wordt de 
-            <b>vraag naar</b> en <b>productie door</b> die bron getoond. Het verschil is een 
+            Voor elke <i>bron</i>, bijvoorbeeld een luchtwarmtepomp, wordt de
+            <b>vraag naar</b> en <b>productie door</b> die bron getoond. Het verschil is een
             warmtetekort dat niet door de bron is geleverd.
           </li>
         </ul>
@@ -181,7 +181,7 @@ nl:
         <br/><br/>
         De "Waterstofvraag, -productie en -opslag per uur" export bevat de uurlijkse vraag, productie en opslag van waterstof, uitgesplitst naar technologie/sector.
         <br/><br/>
-        De  "Integrale kosten waterstof" export bevat de integrale kosten van waterstofproductie, 
+        De  "Integrale kosten waterstof" export bevat de integrale kosten van waterstofproductie,
         de productie van waterstof, de productiekosten per MWh voor elke productiemethode en de productiecurve van waterstof voor elke productiemethode op uurbasis.
         <ul class="data-download">
           <li>
@@ -196,7 +196,7 @@ nl:
               <span class="filetype">2MB CSV</span>
             </a>
           </li>
-        </ul>        
+        </ul>
     data_visuals_molecule_graph:
       title: CCUS-graaf
       short_description:
@@ -273,7 +273,7 @@ nl:
         Kijk voor meer informatie over deze voetafdruk in de <a href="https://docs.energytransitionmodel.com/main/emissions-footprint" target="_blank">ETM-documentatie</a>.
         <br /><br />
         <a
-          href="%{api_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
+          href="%{ete_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
           target="_blank"
           class="simple-button"
         >
@@ -283,24 +283,24 @@ nl:
       title: Ruimtegebruik van zon en wind
       short_description:
       description: |
-        Zon en wind technologieën concurreren gedeeltelijk met elkaar om beschikbare ruimte. 
+        Zon en wind technologieën concurreren gedeeltelijk met elkaar om beschikbare ruimte.
         De grafiek bij deze sectie toont het totale ruimtegebruik van alle zon en wind technologieën.
         In het bijzonder is het mogelijk om via onderstaande sliders onderscheid te maken tussen grootschalige en kleinschalige wind op land.
         Let op: deze onderverdeling is puur visueel en heeft geen verdere invloed op de uitkomsten in dit scenario.
 
         <br/><br/>
 
-        De volledige specificaties van alle zon en wind technologieën, inclusief elektriciteitsproductie en aantallen, 
-        zijn te raadplegen in de tabel 
+        De volledige specificaties van alle zon en wind technologieën, inclusief elektriciteitsproductie en aantallen,
+        zijn te raadplegen in de tabel
         <a href="#" class="open_chart" data-chart-key="land_use_solar_wind" data-chart-location="side">
         Ruimtegebruik van zon en wind (tabel)</a>
 
         <br/><br/>
-        <b> Opmerking: </b> PVT-panelen voor huishoudens en zonthermische panelen zijn ook opgenomen in de figuur en tabel. 
+        <b> Opmerking: </b> PVT-panelen voor huishoudens en zonthermische panelen zijn ook opgenomen in de figuur en tabel.
         Het ETM beschouwt PVT-panelen (en zonthermische panelen) hoofdzakelijk als een verwarmingstechnologie in combinatie met een warmtepomp.
-        Het aandeel van een PVT-warmtepomp in de ruimteverwarming en warm water alsmede de hoeveelheid zonthermische panelen is aan te passen in de 
+        Het aandeel van een PVT-warmtepomp in de ruimteverwarming en warm water alsmede de hoeveelheid zonthermische panelen is aan te passen in de
         <a href="/scenario/demand/households/space-heating-and-hot-water">
-        desbetreffende sectie</a>.  
+        desbetreffende sectie</a>.
     flexibility_merit_order_merit_order_price:
       title: Uurlijkse profielen voor elektriciteit
       short_description:
@@ -349,7 +349,7 @@ nl:
       title: Uurlijkse profielen voor warmte in landbouw
       short_description:
       description: |
-        Download informatie over de uurlijkse vraag en aanbod van warmte van lokale warmte-krachtkoppeling 
+        Download informatie over de uurlijkse vraag en aanbod van warmte van lokale warmte-krachtkoppeling
         (WKK) in de landbouw.
 
         <ul class="data-download">

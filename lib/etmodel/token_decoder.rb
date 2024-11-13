@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 module ETModel
-  # Decodes and verifies a JWT.
+  # Handles JWT decoding, verification, and fetching.
   module TokenDecoder
     module_function
 
     DecodeError = Class.new(StandardError)
+    FetchTokenError = Class.new(StandardError)
 
+    # Decodes and verifies a JWT.
     def decode(token)
       decoded = JSON::JWT.decode(token, jwk_set)
 
@@ -17,10 +19,10 @@ module ETModel
         raise DecodeError, 'JWT verification failed'
       end
 
-      # The JWT gem returns an array of the decoded token and the header.
       decoded
     end
 
+    # Fetches and caches the JWK set from the IdP.
     def jwk_set
       jwk_cache.fetch('jwk_hash') do
         client = Faraday.new(Identity.discovery_config.jwks_uri) do |conn|
@@ -33,6 +35,7 @@ module ETModel
       end
     end
 
+    # Handles caching of JWKs.
     def jwk_cache
       @jwk_cache ||=
         if Rails.env.development?
@@ -41,5 +44,27 @@ module ETModel
           Rails.cache
         end
     end
+
+    # Fetches an access token from the IdP.
+    def fetch_token(user)
+      response = Faraday.post("#{Settings.idp_url}/identity/token") do |req|
+        req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+        req.body = {
+          grant_type: 'client_credentials',
+          client_id: Settings.identity.client_id,
+          client_secret: Settings.identity.client_secret,
+          user_id: user.id # Pass the user ID to the IdP
+        }
+      end
+
+      parsed_response = JSON.parse(response.body)
+
+      unless response.success? && parsed_response['access_token'].present?
+        raise "Failed to fetch token: #{parsed_response['error_description'] || 'Unknown error'}"
+      end
+
+      parsed_response['access_token']
+    end
+
   end
 end

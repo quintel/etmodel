@@ -52,8 +52,7 @@ module ETModel
         req.body = {
           grant_type: 'client_credentials',
           client_id: Settings.identity.client_id,
-          client_secret: Settings.identity.client_secret,
-          user_id: user.id # Pass the user ID to the IdP
+          user_id: user.id # Pass the user to the IdP
         }
       end
 

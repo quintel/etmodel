@@ -13,7 +13,7 @@ module ETModel
       decoded = JSON::JWT.decode(token, jwk_set)
 
       unless decoded[:iss] == Settings.idp_url &&
-             decoded[:aud] == Settings.identity.client_uri &&
+             decoded[:aud] == Settings.identity.client_id &&
              decoded[:sub].present? &&
              decoded[:exp] > Time.now.to_i
         raise DecodeError, 'JWT verification failed'
@@ -52,7 +52,7 @@ module ETModel
         req.body = {
           grant_type: 'client_credentials',
           client_id: Settings.identity.client_id,
-          user_id: user.id # Pass the user to the IdP
+          user_id: user.id
         }
       end
 

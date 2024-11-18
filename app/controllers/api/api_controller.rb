@@ -53,6 +53,7 @@ module API
       end
     end
 
+    # TODO: Check forwarding on authentication tokens.
     # Returns the Faraday client which should be used to communicate with ETEngine.
     # This reuses the authentication token from the current request.
     def engine_client

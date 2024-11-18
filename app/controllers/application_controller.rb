@@ -111,6 +111,19 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def engine_client
+    @engine_client ||= begin
+      access_token = ETModel::TokenDecoder.fetch_token(current_user, eng = true)
+
+      Faraday.new(Settings.ete_url) do |conn|
+        conn.request :authorization, 'Bearer', access_token
+        conn.request :json
+        conn.response :json
+        conn.response :raise_error
+      end
+    end
+  end
+
   private
 
   def current_user

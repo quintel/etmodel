@@ -26,7 +26,7 @@
 
     - if current_user
       %li.my-scenarios.nav-item
-        %a.nav-link{ href: scenarios_path }
+        %a.nav-link{ href: "#{Settings.idp_url}/saved_scenarios" }
           = t('header.load_scenario')
       %li.my-account.nav-item
         .dropdown

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper :all
   helper_method :engine_client, :current_user, :admin?
 
+  before_action :current_user
   before_action :initialize_current
   before_action :assign_locale
   before_action :ensure_modern_browser
@@ -113,7 +114,8 @@ class ApplicationController < ActionController::Base
 
   def engine_client
     @engine_client ||= begin
-      access_token = ETModel::TokenDecoder.fetch_token(current_user, eng = true)
+    # debugger
+      access_token = ETModel::TokenDecoder.fetch_token(current_user, engine = true)
 
       Faraday.new(Settings.ete_url) do |conn|
         conn.request :authorization, 'Bearer', access_token
@@ -124,8 +126,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
-
   def current_user
     @current_user ||= User.from_session_user!(identity_user) if signed_in?
   rescue ActiveRecord::RecordNotFound
@@ -133,6 +133,8 @@ class ApplicationController < ActionController::Base
     reset_session
     redirect_to root_path
   end
+
+  private
 
   # Internal: Renders a 404 page.
   #

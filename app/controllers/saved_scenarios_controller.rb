@@ -122,7 +122,7 @@ class SavedScenariosController < ApplicationController
   end
 
   def load
-    scenario_attrs = { scenario_id: @saved_scenario.scenario_id }
+    scenario_attrs = { scenario_id: params[:engine_id] }
 
     # Setting an active_saved_scenario enables saving a scenario. We only
     # do this for the owner of a scenario.
@@ -130,8 +130,8 @@ class SavedScenariosController < ApplicationController
       Setting.load_from_scenario(
         @scenario,
         active_saved_scenario: {
-          id: editable_saved_scenario?(for_admin: false) ? @saved_scenario.id : nil,
-          title: @saved_scenario.localized_title(I18n.locale)
+          id: editable_saved_scenario?(for_admin: false) ? params[:id] : nil,
+          title: params[:name]
         }
       )
 
@@ -266,7 +266,7 @@ class SavedScenariosController < ApplicationController
   end
 
   def assign_scenario
-    @scenario = @saved_scenario.scenario(engine_client)
+    @scenario ||= FetchAPIScenario.call(engine_client, params[:engine_id]).or(nil)
 
     unless @scenario&.loadable?
       redirect_to @saved_scenario, notice: 'Sorry, this scenario cannot be loaded'

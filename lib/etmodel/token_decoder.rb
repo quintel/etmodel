@@ -46,10 +46,10 @@ module ETModel
     end
 
     # Fetches an access token from the IdP.
-    def fetch_token(user, eng = false)
-      client_id = eng ? Settings.identity.ete_id : Settings.identity.client_id
+    def fetch_token(user, engine = false)
+      client_id = engine ? Settings.ete_id : Settings.identity.client_id
 
-      response = Faraday.post("#{Settings.idp_url}/identity/token") do |req|
+      response = Faraday.post("#{Settings.idp_url}/identity/access_tokens") do |req|
         req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
         req.body = {
           grant_type: 'client_credentials',

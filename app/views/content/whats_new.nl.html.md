@@ -1,6 +1,27 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
 
+# November
+
+### Toevoegingen en verbeteringen voor Europese landen
+
+De landen Noorwegen, Servië en Zwitserland, evenals Groot-Brittannië, zijn nu beschikbaar in het ETM. Je kunt deze landen bekijken door deze te selecteren in de regio-dropdown bij het starten van een nieuw scenario.
+
+Voor een volledig overzicht van alle gebruikte data, bekijk de **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. De finale energievraag voor de nieuwe landendatasets is zoveel mogelijk afgestemd op landelijke energiebalansen. Zoals altijd is er ruimte voor toekomstige verbeteringen, met name op het gebied van warmte- en elektriciteitsproductie. Desondanks zijn we erg enthousiast over deze eerste stap in het beschikbaar maken van de nieuwe datsets. Voel je vrij om ons suggesties te sturen via het **[contactformulier](https://energytransitionmodel.com/contact)**.
+
+Daarnaast zijn er verbeteringen doorgevoerd in de verdeling van dragers in finaal energieverbruik van huishoudens voor alle Europese landen die beschikbaar zijn in het ETM, gebaseerd op de **[Eurostat finaal energieverbruik in huishoudens database](https://doi.org/10.2908/NRG_D_HHQ)**. De gehanteerde waarden zijn ook te vinden in de **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**.
+Later in november komen we met een update van de woningaantallen en niet-residentiële gebouwaantallen, gebaseerd op cijfers van de **[EU Building Stock Observatory](https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings/eu-building-stock-observatory_en)**.
+
+### Toevoeging van waterstof en elektriciteit voor internationaal transport
+
+Waterstof en elektriciteit kunnen nu beide worden gebruikt om de vraag naar internationaal transport te modelleren.
+In de **[Internationaal transport](scenario/demand/transport_international_transport/international-transport)** sectie kan je de vraag naar internationaal transport in uw scenario modelleren.
+De transportsoorten waaruit je kan kiezen zijn navigatie (per schip) en luchtvaart (per vliegtuig).
+
+
+-> <img src="/assets/pages/whats_new/nl_whats_new_hy_elec_international.png" width="600" /> <-
+
+
 # Juli 2024
 
 ### Update Profielen elektrische voertuigen

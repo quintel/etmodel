@@ -1,6 +1,27 @@
 # What's new in the Energy Transition Model?
 ___
 
+# November 2024
+
+### Additions and improvements for European countries
+
+The countries Norway, Serbia and Switzerland, as well as Great Britain are now available in the ETM. Check out the new countries by selecting them in the region dropdown when starting a new scenario.
+
+For a complete overview of all data that has been used to create the country datasets, have a look at the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)**. The final energy demand of the countries is matched as much as possible to the country energy balances. As always, there is some room for future improvements, particularly regarding heat and electricity production data. However, we are very excited about this first step of making the new datasets available. Feel free to contact us with suggestions using the **[contact form](https://energytransitionmodel.com/contact)**.
+
+In addition, improvements have been made of carrier application splits in households for all European country datasets in the ETM, based on the **[Eurostat final energy consumption in households database](https://doi.org/10.2908/NRG_D_HHQ)**. The assumed values in application splits can be found in the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)** as well.
+Later in November, this update will be followed by an update of the residential and non-residential building stock, based on numbers from the **[EU Building Stock Observatory](https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings/eu-building-stock-observatory_en)**.
+
+
+### Addition of hydrogen and electricity for international transport
+
+Hydrogen and electricity can now both be used to model the demand of international transport.
+In the **[International transport](scenario/demand/transport_international_transport/international-transport)** section you can model the demand for international transport in your scenario.
+The modes of transport you can choose from are navigation (by ship) & aviation (by plane).
+Now you can use hydrogen and electricity as a way to serve the demand for both these modes of transport.
+
+-> <img src="/assets/pages/whats_new/en_whats_new_hy_elec_international.png" width="600" /> <-
+
 # September 2024
 
 ### Update profiles electric vehicles

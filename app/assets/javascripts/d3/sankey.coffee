@@ -336,6 +336,7 @@ D3.sankey =
           {id: 'power-to-gas-offshore',        column: 2, label: 'power-to-gas-offshore',  color: '#5e9aa4'},
           {id: 'curtailment',                  column: 2, label: 'curtailment',            color: '#dd9977'},
           {id: 'other',                        column: 2, label: 'other',                  color: '#E07033'},
+          {id: 'bunkers',                      column: 2, label: 'bunkers',                color: '#8B4513'},          
           {id: 'export1',                      column: 2, label: 'export1',                color: '#43464B'},
           {id: 'export2',                      column: 2, label: 'export2',                color: '#43464B'},
           {id: 'export3',                      column: 2, label: 'export3',                color: '#43464B'},
@@ -382,6 +383,7 @@ D3.sankey =
           {left: 'network',                    right: 'power-to-gas-offshore',  gquery: 'network_to_p2g_offshore_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'curtailment',            gquery: 'network_to_curtailment_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'other',                  gquery: 'network_to_other_in_sankey', color: '#1f77b4'},
+          {left: 'network',                    right: 'bunkers',                gquery: 'network_to_bunkers_in_sankey', color: '#8B4513'},
           {left: 'network',                    right: 'export1',                gquery: 'network_to_export1_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'export2',                gquery: 'network_to_export2_in_sankey', color: '#1f77b4'},
           {left: 'network',                    right: 'export3',                gquery: 'network_to_export3_in_sankey', color: '#1f77b4'},
@@ -544,7 +546,6 @@ D3.sankey =
           {left: 'wet',                             right: 'biofuels',                    gquery: 'wet_biomass_to_biofuels_in_biomass_sankey', color: '#38ada9'},
           {left: 'wet',                             right: 'export',                      gquery: 'wet_biomass_to_export_in_biomass_sankey', color: '#38ada9'},
           {left: 'oily',                            right: 'biofuels',                    gquery: 'oily_biomass_to_biofuels_in_biomass_sankey', color: '#f9ca24'},
-          {left: 'oily',                            right: 'export',                      gquery: 'oily_biomass_to_export_in_biomass_sankey', color: '#f9ca24'},
           {left: 'dry',                             right: 'greengas',                    gquery: 'dry_biomass_to_greengas_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'households',                  gquery: 'dry_biomass_to_households_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'buildings',                   gquery: 'dry_biomass_to_buildings_in_biomass_sankey', color: '#009432'},
@@ -558,6 +559,7 @@ D3.sankey =
           {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'non_biogenic_carriers_demand',gquery: 'dry_biomass_to_non_biogenic_carriers_in_biomass_sankey', color: '#009432'},
           {left: 'non_biogenic_carriers_supply',    right: 'greengas',                    gquery: 'non_biogenic_carriers_to_greengas_in_biomass_sankey', color: '#8c564b'},
+          {left: 'non_biogenic_carriers_supply',    right: 'biofuels',                    gquery: 'non_biogenic_carriers_to_biofuels_in_biomass_sankey', color: '#8c564b'},
           {left: 'biogas',                          right: 'losses',                      gquery: 'biogas_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'biogas',                          right: 'non_biogenic_carriers_demand',gquery: 'biogas_to_non_biogenic_carriers_in_biomass_sankey', color: '#ffff99'},
           {left: 'greengas',                        right: 'households',                  gquery: 'greengas_to_households_in_biomass_sankey', color: '#A3CB38'},
@@ -570,12 +572,15 @@ D3.sankey =
           {left: 'greengas',                        right: 'export',                      gquery: 'greengas_to_export_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas',                        right: 'losses',                      gquery: 'greengas_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'greengas',                        right: 'non_biogenic_carriers_demand',gquery: 'greengas_to_non_biogenic_carriers_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'greengas',                        right: 'biofuels',                    gquery: 'greengas_to_biofuels_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'biofuels',                        right: 'greengas',                    gquery: 'biofuels_to_greengas_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'households',                  gquery: 'biofuels_to_households_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'buildings',                   gquery: 'biofuels_to_buildings_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'transport',                   gquery: 'biofuels_to_transport_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'industry',                    gquery: 'biofuels_to_industry_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'agriculture',                 gquery: 'biofuels_to_agriculture_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'bunkers',                     gquery: 'biofuels_to_bunkers_in_biomass_sankey', color: '#00b894'},
+          {left: 'biofuels',                        right: 'export',                      gquery: 'biofuels_to_export_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'losses',                      gquery: 'biofuels_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'biofuels',                        right: 'non_biogenic_carriers_demand',gquery: 'biofuels_to_non_biogenic_carriers_in_biomass_sankey', color: '#00b894'},
           {left: 'biogenic_waste',                  right: 'non_biogenic_carriers_demand',gquery: 'biogenic_waste_to_non_biogenic_carriers_in_biomass_sankey', color: '#006266'},
@@ -698,7 +703,7 @@ D3.sankey =
           {id: 'hybrid_offshore_wind',        column: 0, label: 'hybrid_offshore_wind',     color: '#63A1C9'},
           {id: 'to_offshore_network',         column: 1, label: 'offshore_cable',           color: '#A9A9A9'},
           {id: 'offshore_electrolyser',       column: 2, label: 'offshore_electrolyser',    color: '#5e9aa4'},
-          {id: 'from_offshore_network',       column: 2, label: 'offshore_cable',           color: '#A9A9A9'},       
+          {id: 'from_offshore_network',       column: 2, label: 'offshore_cable',           color: '#A9A9A9'},
           {id: 'onshore_hydrogen_network',    column: 3, label: 'onshore_hydrogen_network', color: '#87cfeb'},
           {id: 'conversion_losses',           column: 3, label: 'conversion_losses',        color: '#cc0000'},
           {id: 'onshore_hv_network',          column: 3, label: 'onshore_hv_network',       color: '#004D40'},
@@ -706,11 +711,11 @@ D3.sankey =
         ]
         links: [
           {left: 'onshore_hv_network_left', right: 'to_offshore_network',       gquery: 'onshore_hv_network_to_to_offshore_network_in_sankey',          color: '#A9A9A9'},
-          {left: 'to_offshore_network',     right: 'offshore_electrolyser',     gquery: 'to_offshore_network_to_offshore_electrolyser_in_sankey',       color: '#A9A9A9'},           
+          {left: 'to_offshore_network',     right: 'offshore_electrolyser',     gquery: 'to_offshore_network_to_offshore_electrolyser_in_sankey',       color: '#A9A9A9'},
           {left: 'hybrid_offshore_wind',    right: 'offshore_electrolyser',     gquery: 'hybrid_offshore_wind_to_offshore_electrolyser_in_sankey',      color: '#1f77b4'},
           {left: 'hybrid_offshore_wind',    right: 'from_offshore_network',     gquery: 'hybrid_offshore_wind_to_from_offshore_network_in_sankey',      color: '#1f77b4'},
           {left: 'hybrid_offshore_wind',    right: 'curtailment',               gquery: 'hybrid_offshore_wind_to_curtailment_in_sankey',                color: '#1f77b4'},
-          {left: 'offshore_electrolyser',   right: 'onshore_hydrogen_network',  gquery: 'offshore_electrolyser_to_hydrogen_network_in_sankey',          color: '#87cfeb'}, 
+          {left: 'offshore_electrolyser',   right: 'onshore_hydrogen_network',  gquery: 'offshore_electrolyser_to_hydrogen_network_in_sankey',          color: '#87cfeb'},
           {left: 'offshore_electrolyser',   right: 'conversion_losses',         gquery: 'offshore_electrolyser_to_conversion_losses_in_sankey',         color: '#cc0000'},
           {left: 'from_offshore_network',   right: 'onshore_hv_network',        gquery: 'from_offshore_network_to_onshore_hv_network_in_sankey',        color: '#1f77b4'}
         ]
@@ -1200,7 +1205,7 @@ D3.sankey =
         else
           @gquery.future_value()
       if (_.isNumber(x))
-        # Assume 0 for very small values below 10e-12 
+        # Assume 0 for very small values below 10e-12
         if (Math.abs(x) < 1e-12)
           return 0.0
         else
@@ -1256,7 +1261,7 @@ D3.sankey =
     draw: =>
       [@width, @height] = @available_size()
 
-      # scaling method taht will be changed dynamically
+      # scaling method that will be changed dynamically
       @y = d3.scale.linear().domain([0, 5000]).range([0, @height])
 
       # This is the function that will take care of drawing the links once we've
@@ -1266,7 +1271,7 @@ D3.sankey =
         .x((d) -> d.x)
         .y((d) -> @y(d.y))
 
-      @svg = @create_svg_container @width, @height, @margins
+      @svg = @create_svg_container @width, @height * 1.09, @margins
 
       @links = @draw_links()
       @nodes = @draw_nodes()

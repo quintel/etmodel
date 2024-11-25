@@ -35,7 +35,7 @@ D3.sankey =
           {id: 'methanol',                     column: 1, label: 'methanol',                          color: '#FF8C8C'},
           {id: 'network_gas',                  column: 1, label: 'network_gas',                       color: '#7f7f7f'},
           {id: 'ammonia',                      column: 1, label: 'ammonia',                           color: '#1ce6d6'},
-          
+
           {id: 'agriculture',                  column: 2, label: 'agriculture',                       color: '#332288'},
           {id: 'households',                   column: 2, label: 'households',                        color: '#117733'},
           {id: 'buildings',                    column: 2, label: 'buildings',                         color: '#44AA99'},
@@ -54,7 +54,7 @@ D3.sankey =
           {left: 'not_defined',                  right: 'biomass_products',          gquery: 'sankey_0_to_0_not_defined_to_biomass_products',          color: '#DCDCDC'},
 
           {left: 'biomass_products',             right: 'natural_gas',               gquery: 'sankey_0_to_0_biomass_products_to_natural_gas',          color: '#2ca02c'},
-          {left: 'not_defined',                  right: 'natural_gas',               gquery: 'sankey_0_to_0_not_defined_to_natural_gas',               color: '#DCDCDC'},          
+          {left: 'not_defined',                  right: 'natural_gas',               gquery: 'sankey_0_to_0_not_defined_to_natural_gas',               color: '#DCDCDC'},
 
           {left: 'hydro_electricity',            right: 'electricity',               gquery: 'sankey_0_to_1_hydro_electricity_to_electricity',         color: '#4465c6'},
           {left: 'imported_electricity',         right: 'electricity',               gquery: 'sankey_0_to_1_imported_electricity_to_electricity',      color: '#1f77b4'},
@@ -97,7 +97,7 @@ D3.sankey =
 
           {left: 'biomass_products',             right: 'network_gas',               gquery: 'sankey_0_to_1_biomass_products_to_network_gas',          color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'network_gas',               gquery: 'sankey_0_to_1_natural_gas_to_network_gas',               color: '#7f7f7f'},
-          
+
           {left: 'imported_ammonia',             right: 'ammonia',                   gquery: 'sankey_0_to_1_imported_ammonia_to_ammonia',              color: '#1ce6d6'},
           {left: 'biomass_products',             right: 'ammonia',                   gquery: 'sankey_0_to_1_biomass_products_to_ammonia',              color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'ammonia',                   gquery: 'sankey_0_to_1_natural_gas_to_ammonia',                   color: '#7f7f7f'},
@@ -336,7 +336,7 @@ D3.sankey =
           {id: 'power-to-gas-offshore',        column: 2, label: 'power-to-gas-offshore',  color: '#5e9aa4'},
           {id: 'curtailment',                  column: 2, label: 'curtailment',            color: '#dd9977'},
           {id: 'other',                        column: 2, label: 'other',                  color: '#E07033'},
-          {id: 'bunkers',                      column: 2, label: 'bunkers',                color: '#8B4513'},          
+          {id: 'bunkers',                      column: 2, label: 'bunkers',                color: '#8B4513'},
           {id: 'export1',                      column: 2, label: 'export1',                color: '#43464B'},
           {id: 'export2',                      column: 2, label: 'export2',                color: '#43464B'},
           {id: 'export3',                      column: 2, label: 'export3',                color: '#43464B'},
@@ -513,7 +513,7 @@ D3.sankey =
         nodes: [
           {id: 'local',                           column: 0, label: 'local',                     color: '#416B86'},
           {id: 'import',                          column: 0, label: 'import',                    color: '#b71540'},
-          {id: 'non_biogenic_carriers_supply',    column: 0, label: 'non_biogenic_carriers',     color: '#8c564b'},           
+          {id: 'non_biogenic_carriers_supply',    column: 0, label: 'non_biogenic_carriers',     color: '#8c564b'},
           {id: 'wet',                             column: 1, label: 'wet',                       color: '#38ada9'},
           {id: 'oily',                            column: 1, label: 'oily',                      color: '#f9ca24'},
           {id: 'dry',                             column: 1, label: 'dry',                       color: '#009432'},
@@ -530,7 +530,7 @@ D3.sankey =
           {id: 'other',                           column: 3, label: 'other',                     color: '#E07033'},
           {id: 'export',                          column: 3, label: 'export',                    color: '#43464B'},
           {id: 'losses',                          column: 3, label: 'losses',                    color: '#DCDCDC'},
-          {id: 'non_biogenic_carriers_demand',    column: 3, label: 'non_biogenic_carriers',     color: '#8c564b'},   
+          {id: 'non_biogenic_carriers_demand',    column: 3, label: 'non_biogenic_carriers',     color: '#8c564b'},
         ]
         links: [
           {left: 'local',                           right: 'wet',                         gquery: 'local_wet_biomass_in_biomass_sankey', color: '#416B86'},
@@ -946,7 +946,7 @@ D3.sankey =
           {id: 'synthetic_production',            column: 0, label: 'synthetic_production',   color: '#BFEFFF'},
           {id: 'non_refinery_products_input',     column: 0, label: 'non_refinery_products',  color: '#ff7f0e'}
           {id: 'refinery',                        column: 1, label: 'refinery',               color: '#854321'},
-          {id: 'refinery_industry_transformation',column: 1, label: 'refinery_industry_transformation', color: '#43464B'}, 
+          {id: 'refinery_industry_transformation',column: 1, label: 'refinery_industry_transformation', color: '#43464B'},
           {id: 'other_fertilizers_transformation',column: 1, label: 'other_fertilizers_transformation',   color: '#000000'},
           {id: 'distribution_diesel',             column: 2, label: 'distribution_diesel',    color: '#854321'},
           {id: 'distribution_gasoline',           column: 2, label: 'distribution_gasoline',  color: '#8B0000'},
@@ -956,7 +956,6 @@ D3.sankey =
           {id: 'distribution_oil_products',       column: 2, label: 'distribution_oil_products', color: '#854321'},
           {id: 'distribution_refinery_gas',       column: 2, label: 'distribution_refinery_gas', color: '#7f7f7f'},
           {id: 'loss',                            column: 2},
-
           {id: 'non_refinery_products_output',    column: 2, label: 'non_refinery_products',   color: '#ff7f0e'},
           {id: 'households',                      column: 3, label: 'households'},
           {id: 'buildings',                       column: 3, label: 'buildings'},

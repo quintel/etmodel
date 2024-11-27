@@ -17,12 +17,7 @@ module API
     end
 
     def destroy
-      # Remove the SavedScenarios associated with this user where its the only user left
-      current_user.saved_scenarios.each { |ss| ss.destroy if ss.users.count == 1 }
-
-      # Then destroy the user itself
       current_user.destroy
-
       head :ok
     end
   end

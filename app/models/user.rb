@@ -46,9 +46,8 @@ class User < ApplicationRecord
   # Finds or creates a user from a JWT token.
   def self.from_jwt!(token)
     id = token['sub']
-    admin = token.dig('user', 'admin')
 
-    raise 'Token does not contain user information' unless id.present? && admin.present?
+    raise 'Token does not contain user information' unless id.present?
 
     User.find_or_create_by!(id: token['sub']) { |u| u.name = name }
   end

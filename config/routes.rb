@@ -184,7 +184,7 @@ Rails.application.routes.draw do
   # Incoming webhooks
   get '/incoming_webhooks/verify' => 'incoming_webhooks#verify'
 
-  # Routes for the API. Typically used by ETEngine.
+  # Routes for the API.
   namespace :api, path: '/api/v1' do
     put '/user'    => 'user#update'
     delete '/user' => 'user#destroy'

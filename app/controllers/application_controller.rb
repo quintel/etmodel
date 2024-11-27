@@ -114,7 +114,6 @@ class ApplicationController < ActionController::Base
 
   def engine_client
     @engine_client ||= begin
-    # debugger
       access_token = ETModel::TokenDecoder.fetch_token(current_user, engine = true)
 
       Faraday.new(Settings.ete_url) do |conn|

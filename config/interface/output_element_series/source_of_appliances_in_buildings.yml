@@ -1,0 +1,61 @@
+---
+- label: coal_and_derivatives
+  color: "#2b2727"
+  order_by: 100
+  group:
+  show_at_first:
+  is_target_line: true
+  target_line_position: 
+  gquery: coal_and_derivatives_used_for_appliances_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_appliances_in_buildings
+  key: coal_and_derivatives_source_of_appliances_in_buildings
+- label: oil_and_derivatives
+  color: "#854321"
+  order_by: 105
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_used_for_appliances_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_appliances_in_buildings
+  key: oil_and_derivatives_source_of_appliances_in_buildings
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 110
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: network_gas_used_for_appliances_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_appliances_in_buildings
+  key: network_gas_source_of_appliances_in_buildings
+- label: biomass_products
+  color: "#5D7929"
+  order_by: 115
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_used_for_appliances_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_appliances_in_buildings
+  key: biomass_products_source_of_appliances_in_buildings   
+- label: electricity
+  color: "#4169E1"
+  order_by: 120
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_used_for_appliances_in_buildings
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_appliances_in_buildings
+  key: electricity_source_of_appliances_in_buildings   

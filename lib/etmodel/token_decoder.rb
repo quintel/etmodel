@@ -13,7 +13,7 @@ module ETModel
       decoded = JSON::JWT.decode(token, jwk_set)
 
       unless decoded[:iss] == Settings.idp_url &&
-             decoded[:aud] == Settings.identity.client_id &&
+             decoded[:aud] == Settings.identity.client_id || Settings.ete_id &&
              decoded[:sub].present? &&
              decoded[:exp] > Time.now.to_i
         raise DecodeError, 'JWT verification failed'

@@ -174,7 +174,7 @@ module ApplicationHelper
         end
 
         # Fetch the access token for the current user
-        access_token = ETModel::TokenDecoder.fetch_token(current_user)
+        access_token = ETModel::TokenDecoder.fetch_token(current_user, engine = true)
 
         json.access_token do
           json.token        access_token

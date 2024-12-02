@@ -5,19 +5,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_1_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_1_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_1_co2_emissions_present
   step_value: 1.0
@@ -45,19 +45,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_2
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_2_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_2
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_2_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_2
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_2_co2_emissions_present
   step_value: 1.0
@@ -85,19 +85,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_3
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_3_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_3
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_3_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_3
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_3_co2_emissions_present
   step_value: 1.0
@@ -125,19 +125,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_4
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_4_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_4
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_4_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_4
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_4_co2_emissions_present
   step_value: 1.0
@@ -165,19 +165,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_5
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_5_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_5
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_5_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_5
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_5_co2_emissions_present
   step_value: 1.0
@@ -205,19 +205,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_6
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_6_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_6
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_6_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_6
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_6_co2_emissions_present
   step_value: 1.0
@@ -245,19 +245,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_7
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_7_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_7
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_7_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_7
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_7_co2_emissions_present
   step_value: 1.0
@@ -285,19 +285,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_8
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_8_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_8
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_8_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_8
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_8_co2_emissions_present
   step_value: 1.0
@@ -325,19 +325,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_9
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_9_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_9
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_9_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_9
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_9_co2_emissions_present
   step_value: 1.0
@@ -365,19 +365,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_10
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_10_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_10
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_10_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_10
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_10_co2_emissions_present
   step_value: 1.0
@@ -405,19 +405,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_11
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_11_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_11
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_11_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_11
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_11_co2_emissions_present
   step_value: 1.0
@@ -445,19 +445,19 @@
   unit: MW
   position: 1
   slide_key: flexibility_electricity_import_export_interconnectivity_12
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_12_import_availability
   step_value: 0.1
   unit: "%"
   position: 2
   slide_key: flexibility_electricity_import_export_interconnectivity_12
-  interface_group: capacity
+  interface_group:
 - key: electricity_interconnector_12_export_availability
   step_value: 0.1
   unit: "%"
   position: 3
   slide_key: flexibility_electricity_import_export_interconnectivity_12
-  interface_group: capacity
+  interface_group:
 
 - key: electricity_interconnector_12_co2_emissions_present
   step_value: 1.0

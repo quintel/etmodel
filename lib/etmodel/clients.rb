@@ -25,8 +25,6 @@ module ETModel
       end
     end
 
-    private
-
     def client(url, token)
       Faraday.new(url) do |conn|
         conn.request :authorization, 'Bearer', token

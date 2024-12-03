@@ -1,14 +1,27 @@
 # frozen_string_literal: true
 
-CreateSavedScenario = lambda do |http_client, scenario_id, user, settings = {}|
-  request_body = { scenario_id: scenario_id }.merge(settings.slice(:title, :description, :area_code, :end_year)).to_json
+class CreateSavedScenario
+  extend Dry::Initializer
+  include Service
 
-  response = http_client.post('api/v1/saved_scenarios') do |req|
-    req.headers['Content-Type'] = 'application/json'
-    req.body = request_body
+  param :http_client
+  param :scenario_id
+  param :settings, default: proc { {} }
+
+  def call
+    response = http_client.post('api/v1/saved_scenarios') do |req|
+      req.headers['Content-Type'] = 'application/json'
+      req.body = request_body
+    end
+
+    ServiceResult.success(response.body)
+  rescue Faraday::UnprocessableEntityError => e
+    ServiceResult.failure_from_unprocessable_entity(e)
   end
 
-  return ServiceResult.failure(['Failed to save scenario'], nil) unless response.success?
+  private
 
-  ServiceResult.success(response.body)
+  def request_body
+    { scenario_id: scenario_id }.merge(settings.slice(:title, :area_code, :end_year)).to_json
+  end
 end

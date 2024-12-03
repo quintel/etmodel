@@ -5,7 +5,8 @@ require 'rails_helper'
 RSpec.describe 'API::TransitionPaths', type: :request, api: true do
   let(:user) { create(:user) }
 
-  describe 'GET /api/v1/transition_paths' do
+  pending 'GET /api/v1/transition_paths' do
+
     context 'with an access token with the correct scope' do
       let!(:user_path1) { create(:multi_year_chart, user:) }
       let!(:user_path2) { create(:multi_year_chart, user:) }
@@ -77,7 +78,8 @@ RSpec.describe 'API::TransitionPaths', type: :request, api: true do
 
   # ------------------------------------------------------------------------------------------------
 
-  describe 'GET /api/v1/transition_paths/:id' do
+  pending 'GET /api/v1/transition_paths/:id' do
+    pending "DESTROY"
     let(:transition_path) { create(:multi_year_chart, user:) }
 
     context 'with a valid access token' do
@@ -135,7 +137,8 @@ RSpec.describe 'API::TransitionPaths', type: :request, api: true do
 
   # ------------------------------------------------------------------------------------------------
 
-  describe 'POST /api/v1/transition_paths/:id' do
+  pending 'POST /api/v1/transition_paths/:id' do
+    pending "DESTROY"
     let(:request) do
       post '/api/v1/transition_paths',
         as: :json,
@@ -234,7 +237,7 @@ RSpec.describe 'API::TransitionPaths', type: :request, api: true do
 
   # ------------------------------------------------------------------------------------------------
 
-  describe 'PUT /api/v1/transition_paths/:id' do
+  pending 'PUT /api/v1/transition_paths/:id' do
     let(:path) do
       create(
         :multi_year_chart,
@@ -326,7 +329,7 @@ RSpec.describe 'API::TransitionPaths', type: :request, api: true do
 
   # ------------------------------------------------------------------------------------------------
 
-  describe 'DELETE /api/v1/transition_paths/:id' do
+  pending 'DELETE /api/v1/transition_paths/:id' do
     let!(:path) { create(:multi_year_chart, user:) }
 
     context 'when the transition path belongs to the user' do

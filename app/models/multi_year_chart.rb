@@ -14,9 +14,6 @@ class MultiYearChart < ApplicationRecord
     class_name: 'MultiYearChartScenario',
     dependent: :delete_all
 
-  has_many :multi_year_chart_saved_scenarios, dependent: :destroy
-  has_many :saved_scenarios, through: :multi_year_chart_saved_scenarios
-
   validates_presence_of :user_id
   validates :title, presence: true
   validate :validate_scenarios

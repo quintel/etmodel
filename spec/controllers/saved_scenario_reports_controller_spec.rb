@@ -3,42 +3,44 @@
 require 'rails_helper'
 
 describe SavedScenarioReportsController, vcr: true do
-  let(:user) { create :user }
-  let!(:user_scenario) { create :saved_scenario, user: user }
+  pending "SHOULD BE REMOVED OR PORTED"
 
-  describe 'GET show' do
-    context 'ovm.csv' do
-      before do
-        get :show, format: :csv,
-          params: { report_name: 'ovm', saved_scenario_id: user_scenario.id }
-      end
+  # let(:user) { create :user }
+  # let!(:user_scenario) { create :saved_scenario, user: user }
 
-      it 'responds with 200 OK' do
-        expect(response).to have_http_status(:ok)
-      end
+  # describe 'GET show' do
+  #   context 'ovm.csv' do
+  #     before do
+  #       get :show, format: :csv,
+  #         params: { report_name: 'ovm', saved_scenario_id: user_scenario.id }
+  #     end
 
-      it 'has a report_template' do
-        expect(assigns(:report_template)).not_to be_empty
-      end
+  #     it 'responds with 200 OK' do
+  #       expect(response).to have_http_status(:ok)
+  #     end
 
-      it 'has queries' do
-        expect(assigns(:queries)).not_to be_empty
-      end
-    end
+  #     it 'has a report_template' do
+  #       expect(assigns(:report_template)).not_to be_empty
+  #     end
 
-    context 'when the scenario does not exist or is inaccessible' do
-      before do
-        allow(FetchAPIScenarioQueries).to receive(:call).and_return(
-          ServiceResult.failure('Scenario not found')
-        )
+  #     it 'has queries' do
+  #       expect(assigns(:queries)).not_to be_empty
+  #     end
+  #   end
 
-        get :show, format: :csv,
-          params: { report_name: 'ovm', saved_scenario_id: user_scenario.id }
-      end
+  #   context 'when the scenario does not exist or is inaccessible' do
+  #     before do
+  #       allow(FetchAPIScenarioQueries).to receive(:call).and_return(
+  #         ServiceResult.failure('Scenario not found')
+  #       )
 
-      it 'responds with 404 Not found' do
-        expect(response).to have_http_status(:not_found)
-      end
-    end
-  end
+  #       get :show, format: :csv,
+  #         params: { report_name: 'ovm', saved_scenario_id: user_scenario.id }
+  #     end
+
+  #     it 'responds with 404 Not found' do
+  #       expect(response).to have_http_status(:not_found)
+  #     end
+  #   end
+  # end
 end

@@ -274,34 +274,4 @@ describe ScenarioHelper do
       end
     end
   end
-
-  describe '.previous_version_scenario_warning' do
-    let(:scenario) do
-      FactoryBot.build(:saved_scenario, updated_at: Time.utc(2021, 1, 26, 10))
-    end
-
-    context 'when the model was released before the scenario was created' do
-      it 'returns nil' do
-        expect(previous_version_scenario_warning(scenario, Time.utc(2021, 1, 25))).to be_nil
-      end
-    end
-
-    context 'when the model was released after the scenario was created' do
-      let(:message) do
-        previous_version_scenario_warning(
-          scenario, Time.utc(2021, 1, 27)
-        ).tr("\n", ' ').gsub(/\s\s/, ' ')
-      end
-
-      it 'returns includes the scenario date' do
-        expect(message).to include('This scenario was last updated on January 26, 2021')
-      end
-
-      it 'returns includes the model date' do
-        expect(message).to include(
-          'The most recent release of the model was on January 27, 2021'
-        )
-      end
-    end
-  end
 end

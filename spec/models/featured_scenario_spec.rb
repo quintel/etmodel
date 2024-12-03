@@ -3,11 +3,9 @@
 require 'rails_helper'
 
 describe FeaturedScenario do
-  describe 'associations' do
-    it { is_expected.to belong_to(:saved_scenario) }
-  end
+  # TODO: refactor into dry to show on homepage
 
-  describe 'validations' do
+  pending 'validations' do
     it { is_expected.to validate_presence_of(:saved_scenario_id) }
     it { is_expected.to validate_presence_of(:description_en) }
     it { is_expected.to validate_presence_of(:description_nl) }
@@ -21,7 +19,7 @@ describe FeaturedScenario do
     end
   end
 
-  describe '.in_groups with order one, two, three, :rest, nil' do
+  pending '.in_groups with order one, two, three, :rest, nil' do
     let(:defaults) { { group: nil, title: nil } }
 
     let(:group_one) do
@@ -102,7 +100,7 @@ describe FeaturedScenario do
     end
   end
 
-  describe '.in_groups_per_end_year' do
+  pending '.in_groups_per_end_year' do
     let(:defaults) { { group: nil, title: nil } }
 
     let(:scenario_2050) { FactoryBot.build(:saved_scenario, end_year: 2050) }

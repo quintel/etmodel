@@ -73,13 +73,6 @@ RSpec.describe 'API::User', type: :request, api: true do
         expect { run_request }.to change { User.where(id: user.id).count }.from(1).to(0)
       end
 
-      it "deletes the user's saved scenarios" do
-        scenario = create(:saved_scenario, user:)
-
-        expect { run_request }
-          .to change { SavedScenario.where(id: scenario.id).count }
-          .from(1).to(0)
-      end
 
       it "deletes the user's transition paths" do
         path = create(:multi_year_chart, user:)

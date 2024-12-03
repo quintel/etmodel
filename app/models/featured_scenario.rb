@@ -9,7 +9,7 @@ class FeaturedScenario < ApplicationRecord
   # are sorted in `:rest`, while those with no group come last.
   SORTABLE_GROUPS = [*GROUPS, :rest, nil].freeze
 
-  belongs_to :saved_scenario
+  # belongs_to :saved_scenario
   validates :saved_scenario_id, presence: true, uniqueness: true
   validates :description_en, :description_nl, :title_en, :title_nl, :featured_owner, presence: true
   validates :group, inclusion: GROUPS

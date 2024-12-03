@@ -100,29 +100,11 @@ class ApplicationController < ActionController::Base
   # Returns the Faraday client which should be used to communicate with MyETM. This contains the
   # user authentication token if the user is logged in.
   def idp_client
-    @idp_client ||= begin
-      access_token = ETModel::TokenDecoder.fetch_token(current_user)
-
-      Faraday.new(Settings.idp_url) do |conn|
-        conn.request :authorization, 'Bearer', access_token
-        conn.request :json
-        conn.response :json
-        conn.response :raise_error
-      end
-    end
+    @idp_client ||= ETModel::Clients.idp_client(current_user)
   end
 
   def engine_client
-    @engine_client ||= begin
-      access_token = ETModel::TokenDecoder.fetch_token(current_user, engine = true)
-
-      Faraday.new(Settings.ete_url) do |conn|
-        conn.request :authorization, 'Bearer', access_token
-        conn.request :json
-        conn.response :json
-        conn.response :raise_error
-      end
-    end
+    @engine_client ||= ETModel::Clients.engine_client(current_user)
   end
 
   def current_user

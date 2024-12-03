@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3002/identity/access_tokens
+    body:
+      encoding: UTF-8
+      string: client_id&grant_type=client_credentials&user_id=117
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 244d25ec-3f28-4e9a-883a-dc2fcb9665d4
+      X-Runtime:
+      - '0.017017'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.54, instantiation.active_record;dur=0.01,
+        process_action.action_controller;dur=3.91
+      Content-Length:
+      - '26'
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_client"}'
+  recorded_at: Tue, 03 Dec 2024 15:07:35 GMT
+recorded_with: VCR 6.0.0

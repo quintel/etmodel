@@ -37,7 +37,7 @@ nl:
       description: |
         Download informatie over de primaire en finale vraag – en de primaire CO<sub>2</sub>-uitstoot – van toepassingen van energie (zoals koken, apparaten, ruimterverwarming en transport).
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/application_demands.csv" target="_blank"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/application_demands.csv" target="_blank"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
         </ul>
     data_export_costs:
       title: Specificaties jaarlijkse kosten
@@ -82,7 +82,7 @@ nl:
       title: Specificaties opslagtechnologieën
       short_description:
       description: |
-        Download gedetailleerde informatie over de parameters van 
+        Download gedetailleerde informatie over de parameters van
         <a href="#" class="open_chart" data-chart-key="flexibility_hourly_p2p_storage" data-chart-location="side">
         Elektriciteitsopslagtechnologieën</a>,
         <a href="#" class="open_chart" data-chart-key="heat_network_storage" data-chart-location="side">
@@ -108,9 +108,9 @@ nl:
         De tweede CSV geeft een complete lijst van alle energiestromen in het model.
 
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/sankey.csv" target="_blank"> <span class="name">Energiestromen (overzicht)</span> <span class="filetype">10KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/sankey.csv" target="_blank"> <span class="name">Energiestromen (overzicht)</span> <span class="filetype">10KB CSV</span></a></li>
           <li>
-            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/energy_flow.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/energy_flow.csv" target="_blank">
               <span class="name">Energiestromen (compleet)</span>
               <span class="filetype">500KB CSV</span>
             </a>
@@ -125,7 +125,7 @@ nl:
 
         <ul class="data-download">
           <li>
-            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/heat_network.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/heat_network.csv" target="_blank">
               <span class="name">Warmtenetvraag, -productie en -opslag per uur</span>
               <span class="filetype">1.5MB CSV</span>
             </a>
@@ -135,21 +135,21 @@ nl:
       title: Uurlijkse profielen voor warmte in huishoudens
       short_description:
       description: |
-        Download de warmtevraag en -productie per uur voor ruimteverwarming en warm water in 
-        huishoudens, en voor ruimteverwarming in gebouwen. Voor elke toepassing is de structuur als 
-        volgt: eerst worden de <i>gebruikers</i> getoond, vervolgens de <i>bronnen</i>. Zie de 
+        Download de warmtevraag en -productie per uur voor ruimteverwarming en warm water in
+        huishoudens, en voor ruimteverwarming in gebouwen. Voor elke toepassing is de structuur als
+        volgt: eerst worden de <i>gebruikers</i> getoond, vervolgens de <i>bronnen</i>. Zie de
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">
         documentatie</a> voor meer informatie.
         <ul>
           <li>
-            Voor elke <i>gebruiker</i>, bijvoorbeeld de warmtevraag voor ruimteverwarming in 
-            appartementen gebouwd tussen 1945 en 1964, wordt de <b>vraag van</b> en 
-            <b>productie voor</b> die gebruiker getoond. Het verschil is een warmtetekort dat 
+            Voor elke <i>gebruiker</i>, bijvoorbeeld de warmtevraag voor ruimteverwarming in
+            appartementen gebouwd tussen 1945 en 1964, wordt de <b>vraag van</b> en
+            <b>productie voor</b> die gebruiker getoond. Het verschil is een warmtetekort dat
             niet aan de gebruiker is geleverd.
           </li>
           <li>
-            Voor elke <i>bron</i>, bijvoorbeeld een luchtwarmtepomp, wordt de 
-            <b>vraag naar</b> en <b>productie door</b> die bron getoond. Het verschil is een 
+            Voor elke <i>bron</i>, bijvoorbeeld een luchtwarmtepomp, wordt de
+            <b>vraag naar</b> en <b>productie door</b> die bron getoond. Het verschil is een
             warmtetekort dat niet door de bron is geleverd.
           </li>
         </ul>
@@ -171,7 +171,7 @@ nl:
       description: |
         Download details over de technologieën die elektriciteit en warmte produceren. Bevat informatie over de elektrische en warmtecapaciteit, het aantal opgestelde eenheden en de kosten.
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/production_parameters.csv" target="_blank"><span class="name">Capaciteiten en kosten</span> <span class="filetype">15KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/production_parameters.csv" target="_blank"><span class="name">Capaciteiten en kosten</span> <span class="filetype">15KB CSV</span></a></li>
         </ul>
     data_export_hydrogen:
       title: Uurlijkse profielen voor waterstof
@@ -181,11 +181,11 @@ nl:
         <br/><br/>
         De "Waterstofvraag, -productie en -opslag per uur" export bevat de uurlijkse vraag, productie en opslag van waterstof, uitgesplitst naar technologie/sector.
         <br/><br/>
-        De  "Integrale kosten waterstof" export bevat de integrale kosten van waterstofproductie, 
+        De  "Integrale kosten waterstof" export bevat de integrale kosten van waterstofproductie,
         de productie van waterstof, de productiekosten per MWh voor elke productiemethode en de productiecurve van waterstof voor elke productiemethode op uurbasis.
         <ul class="data-download">
           <li>
-            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/hydrogen.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/hydrogen.csv" target="_blank">
               <span class="name">Waterstofvraag, -productie en -opslag per uur</span>
               <span class="filetype">750KB CSV</span>
             </a>
@@ -196,7 +196,7 @@ nl:
               <span class="filetype">2MB CSV</span>
             </a>
           </li>
-        </ul>        
+        </ul>
     data_visuals_molecule_graph:
       title: CCUS-graaf
       short_description:
@@ -215,7 +215,7 @@ nl:
 
         <ul class="data-download">
           <li>
-            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/network_gas.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/network_gas.csv" target="_blank">
               <span class="name">Netwerkgasvraag, -productie en -opslag per uur</span>
               <span class="filetype">3MB CSV</span>
             </a>
@@ -249,7 +249,7 @@ nl:
         Het ETM modelleert de afvang, het hergebruik en de opslag van CO<sub>2</sub> (CCUS) in detail.
         Deze CSV geeft een overzicht van de CO<sub>2</sub>-stromen gerelateerd aan CCUS (inputs en outputs).
         <ul class="data-download">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
         </ul>
     data_visuals_scenario_report:
       title: Scenarioverslag
@@ -283,24 +283,24 @@ nl:
       title: Ruimtegebruik van zon en wind
       short_description:
       description: |
-        Zon en wind technologieën concurreren gedeeltelijk met elkaar om beschikbare ruimte. 
+        Zon en wind technologieën concurreren gedeeltelijk met elkaar om beschikbare ruimte.
         De grafiek bij deze sectie toont het totale ruimtegebruik van alle zon en wind technologieën.
         In het bijzonder is het mogelijk om via onderstaande sliders onderscheid te maken tussen grootschalige en kleinschalige wind op land.
         Let op: deze onderverdeling is puur visueel en heeft geen verdere invloed op de uitkomsten in dit scenario.
 
         <br/><br/>
 
-        De volledige specificaties van alle zon en wind technologieën, inclusief elektriciteitsproductie en aantallen, 
-        zijn te raadplegen in de tabel 
+        De volledige specificaties van alle zon en wind technologieën, inclusief elektriciteitsproductie en aantallen,
+        zijn te raadplegen in de tabel
         <a href="#" class="open_chart" data-chart-key="land_use_solar_wind" data-chart-location="side">
         Ruimtegebruik van zon en wind (tabel)</a>
 
         <br/><br/>
-        <b> Opmerking: </b> PVT-panelen voor huishoudens en zonthermische panelen zijn ook opgenomen in de figuur en tabel. 
+        <b> Opmerking: </b> PVT-panelen voor huishoudens en zonthermische panelen zijn ook opgenomen in de figuur en tabel.
         Het ETM beschouwt PVT-panelen (en zonthermische panelen) hoofdzakelijk als een verwarmingstechnologie in combinatie met een warmtepomp.
-        Het aandeel van een PVT-warmtepomp in de ruimteverwarming en warm water alsmede de hoeveelheid zonthermische panelen is aan te passen in de 
+        Het aandeel van een PVT-warmtepomp in de ruimteverwarming en warm water alsmede de hoeveelheid zonthermische panelen is aan te passen in de
         <a href="/scenario/demand/households/space-heating-and-hot-water">
-        desbetreffende sectie</a>.  
+        desbetreffende sectie</a>.
     flexibility_merit_order_merit_order_price:
       title: Uurlijkse profielen voor elektriciteit
       short_description:
@@ -325,8 +325,8 @@ nl:
         hieronder.
 
         <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv" target="_blank"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/merit_order.csv" target="_blank"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
     data_export_residual_load_curves:
       title: Uurlijkse residual load curves
@@ -343,18 +343,18 @@ nl:
         Flexibiliteitsbehoefte: tijdschalen</a> sectie voor meer informatie.
 
         <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/residual_load.csv" target="_blank"> <span class="name">Residual load curves</span> <span class="filetype">1MB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/residual_load.csv" target="_blank"> <span class="name">Residual load curves</span> <span class="filetype">1MB CSV</span></a></li>
         </ul>
     data_export_agriculture_heat:
       title: Uurlijkse profielen voor warmte in landbouw
       short_description:
       description: |
-        Download informatie over de uurlijkse vraag en aanbod van warmte van lokale warmte-krachtkoppeling 
+        Download informatie over de uurlijkse vraag en aanbod van warmte van lokale warmte-krachtkoppeling
         (WKK) in de landbouw.
 
         <ul class="data-download">
           <li>
-            <a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/agriculture_heat.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/agriculture_heat.csv" target="_blank">
               <span class="name">Lokale WKK warmtevraag en -productie per uur</span>
               <span class="filetype">500KB CSV</span>
             </a>

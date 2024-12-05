@@ -25,13 +25,13 @@ class ScenariosController < ApplicationController
   end
 
   def index
-    @saved_scenarios = current_user
-      .saved_scenarios
-      .available
-      .includes(:featured_scenario, :users)
-      .order('updated_at DESC')
-      .page(params[:page])
-      .per(10)
+    @pagy, @saved_scenarios = pagy(
+      current_user.saved_scenarios
+        .available
+        .includes(:featured_scenario, :users)
+        .order('updated_at DESC'),
+      limit: 10
+    )
 
     respond_to do |format|
       format.html

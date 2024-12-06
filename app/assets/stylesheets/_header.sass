@@ -24,6 +24,53 @@ header.main-header
     display: block
     padding-top: 0
     padding-bottom: 0
+    .flex-col
+      color: white
+      display: flex
+      flex-direction: column
+      padding-left: 0.875rem
+      a
+        color: white
+        &:hover
+          text-decoration: none
+      .subtitle
+        display: flex
+      .label
+        font-weight: 500
+      .nav-link
+        background: none
+        border: none
+        cursor: pointer
+        padding: 0
+        display: flex
+        font-weight: 400
+        color: #b4bcff
+      .dropdown-menu
+        top: 48px
+        left: 0
+        background: $landing-blue
+        width: 258px
+        position: fixed
+        ul
+          list-style: none
+          padding: 1rem
+          margin: 0
+          .exp
+            padding-bottom: 1rem
+            margin-bottom: 1rem
+            border-bottom: 0.5px solid #b4bcff
+          li
+            padding: 0.5rem 0
+          a
+            .light
+              color: #b4bcff
+          a:hover
+            text-decoration: underline
+            color: #fff
+            .light
+                color: #fff !important
+        &::before
+          height: 0
 
   .user-settings, .app-nav
     display: flex

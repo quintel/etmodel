@@ -1,7 +1,28 @@
 %header#top.main-header
   %div{ style: 'display: flex' }
-    %a.logo{ href: root_path }
-      %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
+    .logo
+      %a{ href: root_path, style: 'display: flex' }
+        %img{ src: "/assets/header/logo-round.svg", width: 37, height: 37, alt: "", style: 'margin: auto 0' }
+      .flex-col
+        %a{ href: root_path } Energy Transition Model
+        .subtitle
+          %span.label Classic
+          .dropdown
+            %button#version-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'hover' }, type: 'button' }
+              %span= "##{t('meta.version')}"
+            .dropdown-menu.version-dropdown.development{ 'aria-labelledby': 'version-button' }
+              %ul
+                .exp= t('versions.switch', version: t('meta.version'))
+                %li
+                  = link_to development_path(anchor: 'open-source') do
+                    %span.light⟶ Switch to
+                    = "#2025.01"
+                %li
+                  = link_to development_path(anchor: 'open-source') do
+                    %span.light⟶ Switch to
+                    = "#2024.02"
+
+
     .app-nav
       = render partial: 'layouts/etm/about_menu'
       = render partial: 'layouts/etm/features_menu'

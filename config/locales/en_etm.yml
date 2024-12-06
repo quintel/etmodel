@@ -3,7 +3,7 @@ en:
     name: "Energy Transition Model"
     title: "Energy Transition Model - Your free, independent, comprehensive, fact-based scenario builder."
     description: "Create your own independent, comprehensive, fact-based energy scenario for 2020 - 2050. Online and for free!"
-
+    version: latest
   # ----------- Tabs ----------- #
   tabs:
     home: "Home"
@@ -14,6 +14,9 @@ en:
     flexibility: "Flexibility"
     data: "Results & data"
     overview: "Overview"
+
+  versions:
+    switch: You are curently working in the %{version} verion of the ETM. Switch to another version?
 
   # ----------- Header ----------- #
   reset: "Reset all the sliders to the default values of this scenario."

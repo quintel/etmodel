@@ -37,40 +37,35 @@ header.main-header
         display: flex
       .label
         font-weight: 500
-      .nav-link
-        background: none
-        border: none
-        cursor: pointer
-        padding: 0
-        display: flex
-        font-weight: 400
+    .nav-link
+      background: none
+      border: none
+      cursor: pointer
+      padding: 0
+      margin-left: 1rem
+      display: flex
+      font-weight: 400
+      color: #fff
+      border: 1px solid #b4bcff
+      padding: 0.35rem 0.9rem
+      border-radius: 50rem
+      span.fa
+        margin-top: 2px
+        margin-left: 4px
         color: #b4bcff
-      .dropdown-menu
-        top: 48px
-        left: 0
-        background: $landing-blue
-        width: 258px
-        position: fixed
-        ul
-          list-style: none
-          padding: 1rem
-          margin: 0
-          .exp
-            padding-bottom: 1rem
-            margin-bottom: 1rem
-            border-bottom: 0.5px solid #b4bcff
-          li
-            padding: 0.5rem 0
-          a
-            .light
-              color: #b4bcff
-          a:hover
-            text-decoration: underline
-            color: #fff
-            .light
-                color: #fff !important
-        &::before
-          height: 0
+    .dropdown-menu
+      ul
+        list-style: none
+        padding: 0.5rem 1rem
+        margin: 0
+        color: #333
+        width: 150px
+        li
+          padding: 0.5rem 0
+      &::before
+        left: 2rem
+
+
 
   .user-settings, .app-nav
     display: flex

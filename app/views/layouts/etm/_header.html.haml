@@ -1,12 +1,12 @@
 %header#top.main-header
   %div{ style: 'display: flex' }
     .logo
-      %a{ href: root_path, style: 'display: flex' }
+      %a.logo-inner{ href: root_path, style: 'display: flex' }
         %img{ src: "/assets/header/logo-round.svg", width: 37, height: 37, alt: "", style: 'margin: auto 0' }
-      .flex-col
-        %a{ href: root_path } Energy Transition Model
-        .subtitle
-          %span.label Classic
+        .flex-col
+          .span Energy Transition Model
+          .subtitle
+            %span.label Classic
       .dropdown
         %button#version-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'click' }, type: 'button' }
           %span= "##{t('meta.version')}"

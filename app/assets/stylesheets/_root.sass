@@ -12,6 +12,7 @@ body#root
   margin: 0 auto
   padding: 50px 0 20px
   width: $landing-width
+  color: #462c34
 
   a
     color: darken($landing-blue, 4%)
@@ -23,6 +24,7 @@ body#root
 
   #blurb
     margin: 0 0.5rem 40px
+    width: 800px
     h1
       font-size: 26px
       font-weight: normal
@@ -32,44 +34,35 @@ body#root
       font-size: 14px
       line-height: 1.7
 
-  #resume-scenario, #new-scenario, #preset-scenario, #recently-updated, .other-features li
-    background: white
-    border-top: 3px solid $landing-border-color
+  #resume-scenario, #new-scenario, #preset-scenario, #recently-updated, #other-features .feature
+    background: $landing-background-color
+    border: 1px solid #e5e7eb
     border-radius: 6px
     margin: 0 0 40px
     padding: 15px 20px
 
-  .other-features
+  #other-features
     display: flex
     flex-wrap: wrap
-    list-style: none
-    margin: -5px -45px -5px -5px
     overflow: hidden
     padding: 5px
-    li
-      background: white asset-url("pages/home/local_global.svg") 20px 20px no-repeat
+    justify-content: space-between
+    .feature
+      background: $soft-grey asset-url("pages/home/local_global.svg") 20px 20px no-repeat
       background-size: 32px
       display: block
-      float: left
-      margin-right: 40px
-      width: 274px
-
       padding-left: 68px
-      width: 216px
+      &.whats-new, &.multi-year-charts
+        width: 430px
       &.whats-new
         background-image: asset-url("pages/home/whats-new.svg")
       &.multi-year-charts
         background-image: asset-url("pages/home/multi_year_charts.svg")
-        width: 562px
-      &.esdl
-        background-image: asset-url("pages/home/esdl.png")
       &.game
         background-image: asset-url("pages/home/rubik.png")
       &.quintel
         background-image: asset-url("pages/home/quintel.svg")
-        width: 562px
-      &.whats-new
-        width: 562px
+        width: 100%
     h4
       font-size: 14px
       margin: 2px 0 0 0
@@ -86,8 +79,8 @@ body#root
         margin-left: 5px
 
   #resume-scenario
-    background: #F6FFF1
-    border-top-color: $landing-green
+    background: $dark-cream
+    border: none
     a
       border-top-left-radius: 3px
       border-top-right-radius: 3px
@@ -214,6 +207,7 @@ body#root
           font-size: 14px
 
   #new-scenario, #preset-scenario
+    border: none
     .header-container
       display: flex
       margin: -15px -20px 0px

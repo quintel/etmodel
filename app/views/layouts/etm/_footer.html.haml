@@ -1,5 +1,4 @@
 %ul
-  %li= link_to(t('footer.terms'), terms_of_service_url)
-  %li= link_to(t('footer.privacy'), privacy_statement_url)
-  - if Settings.feedback_email
-    %li= link_to(t('footer.contact_us'), contact_url)
+  %li= link_to(t('footer.terms'), "#{Settings.idp_url}/terms")
+  %li= link_to(t('footer.privacy'), "#{Settings.idp_url}/privacy")
+  %li= link_to(t('footer.contact_us'), "#{Settings.idp_url}/contact")

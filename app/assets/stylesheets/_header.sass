@@ -102,6 +102,8 @@ header.main-header
       text-decoration: none
     &:focus:not(:focus-visible)
       outline: 0
+  .dropdown-menu
+    background: $landing-background-color
 
   .survey-item button
     align-items: center
@@ -233,7 +235,7 @@ header.main-header
       font-size: 0.8125rem
       font-weight: 500
       margin-top: 1rem
-      padding-left: 2.25rem
+      padding-left: 0.25rem
       text-transform: uppercase
       svg
         height: 1.25rem
@@ -246,7 +248,6 @@ header.main-header
       display: inline-flex
       align-items: center
       padding: 0.125rem 0.25rem
-      margin-left: 2rem
       svg.dash
         width: 1.25rem
         height: 1.25rem
@@ -260,7 +261,6 @@ header.main-header
         margin-left: 0.25rem
 
   &.about, &.features, &.development
-    background: #F6FFF1
     li.learn-section, svg.external
       color: $landing-grey
     strong, a svg
@@ -296,7 +296,7 @@ header.main-header
 // for saving the scenario.
 
 #scenario-nav
-  background: $soft-grey
+  background: $landing-background-color
   display: flex
   font-size: $header-font-size
   justify-content: space-between

@@ -1,0 +1,32 @@
+version: v1.0
+name: Deploy to staging
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Docker
+    task:
+      prologue:
+        commands:
+          - chmod 0600 ~/.ssh/id_deploy
+          - ssh-add ~/.ssh/id_deploy
+      env_vars:
+        - name: BUNDLE_JOBS
+          value: '4'
+      jobs:
+        - name: Build, publish, deploy
+          commands:
+            - checkout
+            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+            - 'docker build -f Dockerfile.production -t quintel/etmodel:stable .'
+            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:stable --build-arg "SOURCE_IMAGE=quintel/etmodel:stable" .'
+            - 'docker push quintel/etmodel:stable'
+            - 'docker push quintel/etmodel-nginx:stable'
+            # - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
+            # - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"
+      secrets:
+        - name: Docker Hub credentials
+        # - name: Stable SSH settings
+    run:
+      when: branch = 'auth-again'

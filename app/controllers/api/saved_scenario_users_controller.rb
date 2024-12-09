@@ -129,5 +129,5 @@ module API
   #   def add_error(user_label, message)
   #     errors[user_label] = message
   #   end
-  # end
+  end
 end

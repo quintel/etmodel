@@ -45,3 +45,7 @@ promotions:
     pipeline_file: deploy_production.yml
     auto_promote:
       when: "result = 'passed' and branch = 'production'"
+  - name: Deploy to stable
+    pipeline_file: deploy_stable.yml
+    auto_promote:
+      when: "result = 'passed' and branch = 'auth-again'"

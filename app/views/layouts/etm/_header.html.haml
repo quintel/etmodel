@@ -19,8 +19,8 @@
 
     .app-nav
       = render partial: 'layouts/etm/about_menu'
-      = render partial: 'layouts/etm/features_menu'
-      = render partial: 'layouts/etm/development_menu'
+      = link_to t('app_nav.updates'), whats_new_path, class: 'nav-link'
+      = link_to t('app_nav.development'), "#{Settings.idp_url}/collaborate", class: 'nav-link'
 
   %ul.user-settings
     %li.locale.nav-item

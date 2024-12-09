@@ -18,55 +18,32 @@
   = render partial: 'pages/root_page/new_scenario'
   = render partial: 'pages/root_page/preset_scenario'
 
-  #other_features
-    %ul.other-features
-      %li.whats-new
-        %h4= t('intro.whats_new.title')
-        %p= t('intro.whats_new.description')
+  #other-features
+    .feature.whats-new
+      %h4= t('intro.whats_new.title')
+      %p= t('intro.whats_new.description')
+      %p
+        = link_to(whats_new_path) do
+          = t('intro.whats_new.link')
+          →
+    - if Settings.multi_year_charts_url
+      .feature.multi-year-charts
+        %h4= t('intro.multi_year_charts.title')
+        %p= t('intro.multi_year_charts.description')
         %p
-          = link_to(whats_new_path) do
-            = t('intro.whats_new.link')
+          = link_to(multi_year_charts_path) do
+            = t('intro.multi_year_charts.try_it')
             →
-      - if Settings.multi_year_charts_url
-        %li.multi-year-charts
-          %h4= t('intro.multi_year_charts.title')
-          %p= t('intro.multi_year_charts.description')
-          %p
-            = link_to(multi_year_charts_path) do
-              = t('intro.multi_year_charts.try_it')
-              →
-      %li.game
-        %h4= t('intro.game.title')
-        %p= t('intro.game.description')
-        %p
-          = link_to('https://energytransitionmodel.com/light') do
-            = t('intro.game.try_it')
-            →
-      -# %li.local-global
-      -#   %h4= t('intro.local_vs_global.title')
-      -#   %p= t('intro.local_vs_global.description')
-      -#   %p
-      -#     = link_to(local_global_path) do
-      -#       = t('intro.local_vs_global.try_it')
-      -#       →
-      - if Settings.esdl_ete_url
-        %li.esdl
-          %h4= t('intro.esdl.title')
-          %p= t('intro.esdl.description')
-          %p
-            = link_to(import_esdl_path) do
-              = t('intro.esdl.try_it')
-              →
-      %li.quintel
-        %h4= t('intro.about_us.title')
-        %p= t('intro.about_us.description')
-        %p
-          = link_to('https://quintel.com') do
-            = t('intro.about_us.learn_more')
-            →
-          = link_to('https://docs.energytransitionmodel.com') do
-            = t('intro.about_us.documentation')
-            →
+    .feature.quintel
+      %h4= t('intro.about_us.title')
+      %p= t('intro.about_us.description')
+      %p
+        = link_to('https://quintel.com') do
+          = t('intro.about_us.learn_more')
+          →
+        = link_to('https://docs.energytransitionmodel.com') do
+          = t('intro.about_us.documentation')
+          →
 
   #area-select-options
   .flags{ style: 'display: none'}

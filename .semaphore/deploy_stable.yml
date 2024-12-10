@@ -1,5 +1,5 @@
 version: v1.0
-name: Deploy to staging
+name: Deploy to stable
 agent:
   machine:
     type: e1-standard-2
@@ -27,6 +27,6 @@ blocks:
             # - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"
       secrets:
         - name: Docker Hub credentials
-        # - name: Stable SSH settings
+        - name: Stable SSH settings
     run:
       when: branch = 'auth-again'

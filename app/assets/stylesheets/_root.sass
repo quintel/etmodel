@@ -42,27 +42,44 @@ body#root
     padding: 15px 20px
 
   #other-features
-    display: flex
-    flex-wrap: wrap
-    overflow: hidden
-    padding: 5px
-    justify-content: space-between
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: repeat(3, min-content)
+    gap: 20px
     .feature
       background: $soft-grey asset-url("pages/home/local_global.svg") 20px 20px no-repeat
       background-size: 32px
       display: block
       padding-left: 68px
-      &.whats-new, &.multi-year-charts
-        width: 430px
       &.whats-new
         background-image: asset-url("pages/home/whats-new.svg")
+        grid-column-start: 1
+        grid-column-end: span 2
+        grid-row-start: 1
       &.multi-year-charts
         background-image: asset-url("pages/home/multi_year_charts.svg")
-      &.game
+        grid-column-start: 3
+        grid-column-end: span 2
+        grid-row-start: 1
+      &.dataset
+        grid-row-start: 1
+        grid-column-start: 5
+        grid-column-end: span 2
+      &.docs
+        background-image: asset-url("pages/home/game.png")
+        grid-row-start: 2
+        grid-column-start: 1
+        grid-column-end: span 3
+      &.api
         background-image: asset-url("pages/home/rubik.png")
+        grid-row-start: 2
+        grid-column-start: 4
+        grid-column-end: span 3
       &.quintel
         background-image: asset-url("pages/home/quintel.svg")
-        width: 100%
+        grid-row-start: 3
+        grid-column-start: 1
+        grid-column-end: span 6
     h4
       font-size: 14px
       margin: 2px 0 0 0
@@ -175,12 +192,14 @@ body#root
 
       // &.UKNI01_northern_ireland
     span.root-button
-      background: $landing-green
+      background: #8bd186
       margin-top: 9px
       padding-top: 7px
       padding-bottom: 7px
+      color: white
       span.fa
         margin-top: 0
+        color: white
 
     ul.dashboard
       background: linear-gradient(white 10%, $landing-border-color, white 90%)
@@ -228,11 +247,14 @@ body#root
   #new-scenario
     border-top-color: $landing-blue
     form
-      overflow: hidden
       margin: 0 -10px
-      .country, .year, .submit
-        float: left
-        padding: 20px 10px
+      display: flex
+      padding: 20px 0
+      .submit
+        margin-right: 0
+        margin-left: auto
+      .country, .year, .submit, #scenario-info
+        padding: 0 10px
       .country
         width: 348px
         a
@@ -244,6 +266,21 @@ body#root
       .submit
         border-right: none
         width: 72px
+      #scenario-info-button
+        background: none
+        border: none
+        height: 100%
+        font-size: 1.5rem
+      .scenario-info-dropdown
+        left: 3rem
+        top: 0
+        width: 450px
+        padding: 1rem
+        line-height: 1.8
+        &::before
+          left: -0.25rem
+          top: 0.625rem
+          background: white
       label
         color: $landing-grey
         display: block

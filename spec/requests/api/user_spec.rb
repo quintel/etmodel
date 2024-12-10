@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'API::User', type: :request, api: true do
+  before { Settings.ete_id = 'http://localhost:3000' }
+
   describe 'PUT /api/v1/user' do
     let(:user) { create(:user) }
 

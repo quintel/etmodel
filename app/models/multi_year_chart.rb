@@ -43,7 +43,7 @@ class MultiYearChart < ApplicationRecord
   # Public: returns the direct scenario_id's and the active scenario_id's of any
   # linked saved scenarios
   def latest_scenario_ids
-    scenarios.pluck(:scenario_id) + saved_scenarios.pluck(:scenario_id)
+    scenarios.pluck(:scenario_id)
   end
 
   # Public: Returns an way for the MYC app to identify this instance, to use
@@ -75,7 +75,7 @@ class MultiYearChart < ApplicationRecord
   end
 
   def validate_scenarios
-    if scenarios.size + saved_scenarios.size > 6
+    if scenarios.size > 6
       errors.add(:scenarios, 'exceeds maximum of 6 scenarios')
     end
   end

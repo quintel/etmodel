@@ -7,6 +7,13 @@
     .year
       %label= t("choose_year")
       = select_tag :end_year, options_for_select(other_year_selected? ? custom_years : preset_years, Current.setting.end_year || Setting::DEFAULT_YEAR)
+    .dropdown#scenario-info
+      %button#scenario-info-button{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'hover' }, type: 'button' }
+        %span.fa.fa-question-circle
+      .dropdown-menu.scenario-info-dropdown{ 'aria-labelledby': 'scenario-info-button' }
+        = t('intro.help_html')
+    :javascript
+      new DropdownView({ el: $('#scenario-info') }).render()
     .submit
       %button.root-button(type="submit")
         = t('start').titleize
@@ -15,5 +22,3 @@
 
         = hidden_field_tag :reset, '1'
 
-  %p.hint
-    = t('intro.help_html')

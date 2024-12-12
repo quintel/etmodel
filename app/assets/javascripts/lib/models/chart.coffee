@@ -168,6 +168,18 @@ class @Chart extends Backbone.Model
     _.indexOf(['d3', 'import_export_cwe', 'import_export_capacity', 'import_export_flows', 'import_export_renewables', 'sankey', 'storage', 'target_bar'], @get 'type') == -1
 
   # -- series and values -----------------------------------------------------
+  get_table_data: =>
+    headers = ['Label', 'Unit', 'Present', 'Future']
+    unit = @get('unit') || ''
+    rows = @series.map (s) ->
+      [
+        s.get('label'),
+        unit,
+        s.safe_present_value?() || '',
+        s.safe_future_value?() || ''
+      ]
+    [headers].concat(rows)
+
 
   # raw array of the associated gqueries. Delegates to the collection object
   #

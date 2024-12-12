@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'pagy/extras/array'
 
 RSpec.describe PaginationSerializer do
-  context 'with a collection of 2 items' do
+  context 'with a collection of 3 items' do
     let(:collection) do
       [
         { id: 1, name: 'Foo' },
@@ -14,6 +15,7 @@ RSpec.describe PaginationSerializer do
 
     let(:json) do
       described_class.new(
+        pagy: pagy,
         collection: paginated,
         serializer: ->(item) { item },
         url_for: ->(page, limit) { "/objects?page=#{page}&limit=#{limit}" }
@@ -21,8 +23,12 @@ RSpec.describe PaginationSerializer do
     end
 
     context 'with page=1 and limit=2' do
+      let(:pagy) do
+        Pagy.new(count: collection.size, page: 1, limit: 2)
+      end
+
       let(:paginated) do
-        Kaminari.paginate_array(collection).page(1).per(2)
+        collection.slice(pagy.offset, pagy.vars[:limit])
       end
 
       it 'includes the serialized records' do
@@ -32,7 +38,7 @@ RSpec.describe PaginationSerializer do
         ])
       end
 
-      it 'does includes a link to the first page' do
+      it 'includes a link to the first page' do
         expect(json[:links][:first]).to eq('/objects?page=1&limit=2')
       end
 
@@ -70,8 +76,12 @@ RSpec.describe PaginationSerializer do
     end
 
     context 'with page=2 and limit=2' do
+      let(:pagy) do
+        Pagy.new(count: collection.size, page: 2, limit: 2)
+      end
+
       let(:paginated) do
-        Kaminari.paginate_array(collection).page(2).per(2)
+        collection.slice(pagy.offset, pagy.vars[:limit])
       end
 
       it 'includes the serialized records' do
@@ -80,11 +90,11 @@ RSpec.describe PaginationSerializer do
         ])
       end
 
-      it 'does includes a link to the first page' do
+      it 'includes a link to the first page' do
         expect(json[:links][:first]).to eq('/objects?page=1&limit=2')
       end
 
-      it 'does not include a link to the previous page' do
+      it 'includes a link to the previous page' do
         expect(json[:links][:prev]).to eq('/objects?page=1&limit=2')
       end
 

@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-# Serializes a list of results which have been paginated by Kaminari.
+# Serializes a list of results which have been paginated by Pagy.
 class PaginationSerializer
   extend Dry::Initializer
 
+  option :pagy
   option :collection
   option :serializer
   option :url_for
@@ -11,17 +12,17 @@ class PaginationSerializer
   def as_json(*)
     {
       links: {
-        first: @url_for.call(1, @collection.limit_value),
+        first: @url_for.call(1, @pagy.vars[:limit]),
         prev: prev_link,
         next: next_link,
-        last: @url_for.call(@collection.total_pages, @collection.limit_value)
+        last: @url_for.call(@pagy.last, @pagy.vars[:limit])
       },
       meta: {
-        limit: @collection.limit_value,
-        count: @collection.count,
-        total: @collection.total_count,
-        current_page: @collection.current_page,
-        total_pages: @collection.total_pages
+        limit: @pagy.vars[:limit],
+        count: @collection.size,
+        total: @pagy.count,
+        current_page: @pagy.page,
+        total_pages: @pagy.pages
       },
       data: @collection.map { |item| @serializer.call(item).as_json }
     }
@@ -30,10 +31,10 @@ class PaginationSerializer
   private
 
   def prev_link
-    @url_for.call(@collection.prev_page, @collection.limit_value) if @collection.prev_page
+    @url_for.call(@pagy.prev, @pagy.vars[:limit]) if @pagy.prev
   end
 
   def next_link
-    @url_for.call(@collection.next_page, @collection.limit_value) if @collection.next_page
+    @url_for.call(@pagy.next, @pagy.vars[:limit]) if @pagy.next
   end
 end

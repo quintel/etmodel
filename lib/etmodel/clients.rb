@@ -7,21 +7,17 @@ module ETModel
 
     # Returns the Faraday client which should be used to communicate with MyETM. This contains the
     # user authentication token if the user is logged in.
-    def idp_client(user)
+    def idp_client(user = nil)
       @idp_client ||= begin
-        client(
-          Settings.idp_url,
-          ETModel::TokenDecoder.fetch_token(user)
-        )
+        token = user ? ETModel::TokenDecoder.fetch_token(user) : nil
+        client(Settings.idp_url, token)
       end
     end
 
-    def engine_client(user)
+    def engine_client(user = nil)
       @engine_client ||= begin
-        client(
-          Settings.ete_url,
-          ETModel::TokenDecoder.fetch_token(user, engine = true)
-        )
+        token = user ? ETModel::TokenDecoder.fetch_token(user, true) : nil
+        client(Settings.ete_url, token)
       end
     end
 

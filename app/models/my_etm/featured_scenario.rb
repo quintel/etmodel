@@ -12,6 +12,7 @@ module MyEtm
     attribute :title_nl,          Dry::Types['strict.string']
     attribute :version,           Dry::Types['strict.string']
     attribute :end_year,          Dry::Types['strict.integer']
+    attribute :author,             Dry::Types['strict.string']
 
     def self.in_groups_per_end_year(scenarios)
       grouped_by_year = scenarios.group_by(&:end_year)

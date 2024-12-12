@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/featured_scenarios
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Authorization:
+      - Bearer
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept, Origin
+      Etag:
+      - W/"a82136dd4c623b00e23760279828053c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3ebdce39-4c38-4a35-b5a1-45cfbaf992ea
+      X-Runtime:
+      - '0.011828'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=1.75, instantiation.active_record;dur=0.21,
+        process_action.action_controller;dur=5.73
+      Content-Length:
+      - '735'
+    body:
+      encoding: UTF-8
+      string: '{"featured_scenarios":[{"id":1,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Soon
+        to be featured","title_nl":"Niet lang nu","version":"latest","end_year":2050,"author":"Louis
+        Parkes-Talbot"},{"id":2,"saved_scenario_id":4,"owner_id":1,"group":"national","title_en":"2040","title_nl":"2040","version":"latest","end_year":2040,"author":"Louis
+        Parkes-Talbot"},{"id":3,"saved_scenario_id":3,"owner_id":1,"group":"national","title_en":"2030
+        init","title_nl":"2030 init","version":"latest","end_year":2030,"author":"Louis
+        Parkes-Talbot"},{"id":4,"saved_scenario_id":2,"owner_id":1,"group":"national","title_en":"featured
+        also","title_nl":"featured also","version":"latest","end_year":2050,"author":"Louis
+        Parkes-Talbot"}]}'
+  recorded_at: Fri, 13 Dec 2024 08:37:07 GMT
+recorded_with: VCR 6.0.0

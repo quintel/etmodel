@@ -2,155 +2,82 @@
 
 require 'rails_helper'
 
-describe FeaturedScenario do
-  # TODO: refactor into dry to show on homepage
+describe MyEtm::FeaturedScenario do
+  describe 'attributes' do
+    let(:valid_attributes) do
+      {
+        id: 1,
+        saved_scenario_id: 42,
+        owner_id: nil,
+        group: nil,
+        title_en: 'English Title',
+        title_nl: 'Dutch Title',
+        version: '1.0',
+        end_year: 2050,
+        author: 'Author'
+      }
+    end
 
-  pending 'validations' do
-    it { is_expected.to validate_presence_of(:saved_scenario_id) }
-    it { is_expected.to validate_presence_of(:description_en) }
-    it { is_expected.to validate_presence_of(:description_nl) }
-    it { is_expected.to validate_presence_of(:title_en) }
-    it { is_expected.to validate_presence_of(:title_nl) }
-    it { is_expected.to validate_inclusion_of(:group).in_array(FeaturedScenario::GROUPS) }
+    it 'can be instantiated with valid attributes' do
+      scenario = described_class.new(valid_attributes)
+      expect(scenario.id).to eq(1)
+      expect(scenario.saved_scenario_id).to eq(42)
+      expect(scenario.owner_id).to be_nil
+      expect(scenario.group).to be_nil
+      expect(scenario.title_en).to eq('English Title')
+      expect(scenario.title_nl).to eq('Dutch Title')
+      expect(scenario.version).to eq('1.0')
+      expect(scenario.end_year).to eq(2050)
+      expect(scenario.author).to eq('Author')
+    end
 
-    it 'validates that the saved_scenario_id is unique' do
-      fs = FactoryBot.create(:featured_scenario)
-      expect(fs).to validate_uniqueness_of(:saved_scenario_id)
+    it 'raises an error when required attributes are missing or invalid' do
+      expect {
+        described_class.new(valid_attributes.except(:id))
+      }.to raise_error(Dry::Struct::Error)
+
+      expect {
+        described_class.new(valid_attributes.merge(id: 'invalid'))
+      }.to raise_error(Dry::Struct::Error)
     end
   end
 
-  pending '.in_groups with order one, two, three, :rest, nil' do
-    let(:defaults) { { group: nil, title: nil } }
-
-    let(:group_one) do
+  describe '.in_groups_per_end_year' do
+    let(:scenarios) do
       [
-        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'A'),
-        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'B'),
-        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'C')
+        described_class.new(id: 1, saved_scenario_id: 10, owner_id: nil, group: 'group1', title_en: 'Scenario 1 EN', title_nl: 'Scenario 1 NL', version: '1.0', end_year: 2050, author: 'Author 1'),
+        described_class.new(id: 2, saved_scenario_id: 20, owner_id: 1, group: 'group1', title_en: 'Scenario 2 EN', title_nl: 'Scenario 2 NL', version: '1.0', end_year: 2050, author: 'Author 2'),
+        described_class.new(id: 3, saved_scenario_id: 30, owner_id: nil, group: 'group2', title_en: 'Scenario 3 EN', title_nl: 'Scenario 3 NL', version: '2.0', end_year: 2040, author: 'Author 3')
       ]
     end
 
-    let(:group_two) do
-      [
-        FactoryBot.build(:featured_scenario, group: 'two'),
-        FactoryBot.build(:featured_scenario, group: 'two')
-      ]
-    end
+    it 'groups scenarios by end year and then by group' do
+      result = described_class.in_groups_per_end_year(scenarios)
 
-    let(:group_three) { [FactoryBot.build(:featured_scenario, group: 'three')] }
-    let(:group_four) { [FactoryBot.build(:featured_scenario, group: 'four')] }
-    let(:group_five) { [FactoryBot.build(:featured_scenario, group: 'five')] }
-    let(:group_nil) { [FactoryBot.build(:featured_scenario, group: nil)] }
+      expect(result.keys).to match_array([2050, 2040])
 
-    let(:unsorted) do
-      [
-        group_one[2],
-        group_three[0],
-        group_five[0],
-        group_two[0],
-        group_nil[0],
-        group_two[1],
-        group_one[0],
-        group_four[0],
-        group_one[1]
-      ]
-    end
+      expect(result[2050]).to match_array([
+        { name: 'group1', scenarios: [scenarios[0], scenarios[1]] }
+      ])
 
-    let(:order) { ['one', 'two', 'three', :rest, nil] }
-
-    let(:ordered) { described_class.in_groups(unsorted, order) }
-
-    it 'creates an entry per group, ordered as in the parameters' do
-      expect(ordered.map { |group| group[:name] })
-        .to eq(['one', 'two', 'three', 'five', 'four', nil])
-    end
-
-    describe 'the "one" group' do
-      it 'has scenarios which belong to the "one" group' do
-        expect(ordered[0][:scenarios]).to eq(group_one)
-      end
-    end
-
-    describe 'the "two" group' do
-      it 'has scenarios which belong to the "two" group' do
-        expect(ordered[1][:scenarios]).to eq(group_two)
-      end
-    end
-
-    describe 'the "three" group' do
-      it 'has scenarios which belong to the "three" group' do
-        expect(ordered[2][:scenarios]).to eq(group_three)
-      end
-    end
-
-    describe 'the "five" group' do
-      it 'has scenarios which belong to the "five" group' do
-        expect(ordered[3][:scenarios]).to eq(group_five)
-      end
-    end
-
-    describe 'the "four" group' do
-      it 'has scenarios which belong to the "four" group' do
-        expect(ordered[4][:scenarios]).to eq(group_four)
-      end
-    end
-
-    it 'places ungrouped scenarios last' do
-      expect(ordered[5][:scenarios]).to eq(group_nil)
+      expect(result[2040]).to match_array([
+        { name: 'group2', scenarios: [scenarios[2]] }
+      ])
     end
   end
 
-  pending '.in_groups_per_end_year' do
-    let(:defaults) { { group: nil, title: nil } }
-
-    let(:scenario_2050) { FactoryBot.build(:saved_scenario, end_year: 2050) }
-    let(:scenario_2030) { FactoryBot.build(:saved_scenario, end_year: 2030) }
-
-    let(:group_one) do
-      [
-        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'A', saved_scenario: scenario_2030),
-        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'B', saved_scenario: scenario_2030),
-        FactoryBot.build(:featured_scenario, group: 'one', title_en: 'C', saved_scenario: scenario_2050)
-      ]
+  describe '#localized_title' do
+    let(:scenario) do
+      described_class.new(id: 1, saved_scenario_id: 10, owner_id: nil, group: nil, title_en: 'English Title', title_nl: 'Dutch Title', version: '1.0', end_year: 2050, author: 'Author')
     end
 
-    let(:group_two) do
-      [
-        FactoryBot.build(:featured_scenario, group: 'two', saved_scenario: scenario_2030),
-        FactoryBot.build(:featured_scenario, group: 'two', saved_scenario: scenario_2050)
-      ]
+    it 'returns the Dutch title when locale is :nl' do
+      expect(scenario.localized_title(:nl)).to eq('Dutch Title')
     end
 
-    let(:unsorted) do
-      [
-        group_one[2],
-        group_two[1],
-        group_one[0],
-        group_two[0],
-        group_one[1]
-      ]
-    end
-
-    let(:order) { ['one', 'two', :rest, nil] }
-
-    let(:ordered) { described_class.in_groups_per_end_year(unsorted, order) }
-
-    describe 'the 2030 group' do
-      it 'has scenarios which belong to the "one" group' do
-        expect(ordered[2030][0][:scenarios][0]).to be(group_one[0])
-      end
-      it 'has scenarios which belong to the "two" group' do
-        expect(ordered[2030][1][:scenarios][0]).to be(group_two[0])
-      end
-    end
-
-    describe 'the 2050 group' do
-      it 'has scenarios which belong to the "one" group' do
-        expect(ordered[2050][0][:scenarios][0]).to be(group_one[2])
-      end
-      it 'has scenarios which belong to the "two" group' do
-        expect(ordered[2050][1][:scenarios][0]).to be(group_two[1])
-      end
+    it 'returns the English title when locale is not :nl' do
+      expect(scenario.localized_title(:en)).to eq('English Title')
+      expect(scenario.localized_title(:fr)).to eq('English Title')
     end
   end
 end

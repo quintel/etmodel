@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   include ApplicationHelper
-  include FeaturedScenariosHelper
 
   skip_before_action :ensure_modern_browser, only: [:unsupported_browser]
 
@@ -14,7 +13,7 @@ class PagesController < ApplicationController
       setup_countries_and_regions
       result = FetchFeaturedScenarios.call(idp_client)
       @featured_scenarios = result.successful? ? result.value.map { |data| MyEtm::FeaturedScenario.new(data) } : []
-      @year_grouped_scenarios = in_groups_per_end_year(@featured_scenarios)
+      @year_grouped_scenarios = MyEtm::FeaturedScenario.in_groups_per_end_year(@featured_scenarios)
     end
   end
 

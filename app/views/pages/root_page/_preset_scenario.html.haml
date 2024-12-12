@@ -1,21 +1,21 @@
 #preset-scenario
   .header-container
     %h4== #{t('intro.load_a_scenario')}
-    = link_to "#{t('header.load_scenario')} →", saved_scenarios_path
+    = link_to "#{t('header.load_scenario')} →", "#{Settings.idp_url}/saved_scenarios"
 
-    - if @featured_scenarios.present?
-      - year_grouped = MyEtm::FeaturedScenario.in_groups_per_end_year(@featured_scenarios)
+  - if @featured_scenarios.present?
+    - year_grouped = MyEtm::FeaturedScenario.in_groups_per_end_year(@featured_scenarios)
 
-      %p.hint
-        = t('intro.about_featured_scenarios')
+    %p.hint
+      = t('intro.about_featured_scenarios')
 
-      .year-tabs
-        - year_grouped.keys.sort.each do |year|
-          .end-year-tab{year: year}
-            %a= year
-      - year_grouped.each do |year, grouped|
-        %ul.scenario-list{year: year}
-          - grouped.each do |data|
-            = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }
-    - else
-      %p= t('no_featured_scenarios')
+    .year-tabs
+      - year_grouped.keys.sort.each do |year|
+        .end-year-tab{year: year}
+          %a= year
+    - year_grouped.each do |year, grouped|
+      %ul.scenario-list{year: year}
+        - grouped.each do |data|
+          = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }
+  - else
+    %p= t('no_featured_scenarios')

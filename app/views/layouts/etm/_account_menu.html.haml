@@ -1,6 +1,6 @@
 .header_menu.profile
   .menu_arrow
   %ul
-    %li= link_to t("header.my_profile"), edit_user_path
-    %li= link_to t("header.load_scenario"),scenarios_path
-    %li= link_to t("header.sign_out"), logout_path
+    %li= link_to t("header.my_profile"), redirect_to_external_path(destination: edit_user_path, return_to: request.url)
+    %li= link_to t("header.load_scenario"), redirect_to_external_path(destination: scenarios_path, return_to: request.url)
+    %li= link_to t("header.sign_out"),  redirect_to_external_path(destination: logout_path, return_to: request.url)

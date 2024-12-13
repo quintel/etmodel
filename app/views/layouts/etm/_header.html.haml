@@ -18,7 +18,7 @@
     .app-nav
       = render partial: 'layouts/etm/about_menu'
       = link_to t('app_nav.updates'), whats_new_path, class: 'nav-link'
-      = link_to t('app_nav.development'), "#{Settings.idp_url}/collaborate", class: 'nav-link'
+      = link_to t('app_nav.development'), redirect_to_external_path(destination: "#{Settings.idp_url}/collaborate", return_to: request.url), class: 'nav-link'
 
   %ul.user-settings
     %li.locale.nav-item
@@ -39,7 +39,7 @@
 
     - if current_user
       %li.my-scenarios.nav-item
-        %a.nav-link{ href: "#{Settings.idp_url}/saved_scenarios" }
+        %a.nav-link{ href: redirect_to_external_path(destination: "#{Settings.idp_url}/saved_scenarios", return_to: request.url)}
           = t('header.load_scenario')
       %li.my-account.nav-item
         .dropdown
@@ -47,11 +47,11 @@
             %span= current_user.name.presence || t('header.my_profile')
             %span.fa.fa-caret-down
           %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'my-account-button' }
-            %li= link_to t('header.my_profile'), user_profile_url, class: 'dropdown-item'
-            %li= link_to t('header.sign_out'), sign_out_path, class: 'dropdown-item', method: :post
+            %li= link_to t('header.my_profile'), redirect_to_external_path(destination: user_profile_url, return_to: request.url), class: 'dropdown-item'
+            %li= link_to t('header.sign_out'),  redirect_to_external_path(destination: sign_out_path, return_to: request.url), class: 'dropdown-item', method: :post
             - if current_user.admin?
               %li.sep-above.admin
-                %a.dropdown-item{ href: '/admin' } Admin
+                %a.dropdown-item{ href: redirect_to_external_path(destination: "#{Settings.idp_url}/admin", return_to: request.url) } Admin
     - else
       %li.sign-up.nav-item
         %a.nav-link{ href: sign_up_url }

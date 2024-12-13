@@ -71,7 +71,7 @@
             .dropdown-item.text
               = t('header.has_been_coupled')
           %li
-            %a.dropdown-item.external{ href: "https://docs.energytransitionmodel.com/main/external-coupling", target: "_blank"}
+            %a.dropdown-item.external{ href: redirect_to_external_path(destination: "https://docs.energytransitionmodel.com/main/external-coupling", return_to: request.url), target: "_blank"}
               = t('header.coupled_docs')
           - if Current.setting.active_couplings&.any? { |coupling| COUPLING_GROUP_LABELS.key?(coupling) }
             %li.sep-above.category

@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   get '/survey', to: 'survey#show'
   put '/survey/:question', to: 'survey#answer_question'
+  get '/redirect_to_external', to: 'redirect#set_cookie_and_redirect', as: :redirect_to_external
 
   namespace :admin do
     root to: 'pages#index'

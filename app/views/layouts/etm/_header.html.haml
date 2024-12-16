@@ -10,10 +10,8 @@
           %span= "##{t('meta.version')}"
           %span.fa.fa-caret-down
         .dropdown-menu.version-dropdown.development{ 'aria-labelledby': 'version-button' }
-          %ul
+          %ul#version-links
             %li{style: 'margin-bottom:1rem'}= t('versions.switch')
-            %li= link_to "#2025.01", development_path(anchor: 'open-source')
-            %li= link_to "#2024.02", development_path(anchor: 'open-source')
 
     .app-nav
       = render partial: 'layouts/etm/about_menu'

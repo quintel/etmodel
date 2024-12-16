@@ -57,4 +57,4 @@
         %a.nav-link{ href: sign_up_url }
           = t('header.sign_up')
       %li.sign-in.nav-item
-        = button_to t('header.sign_in'), sign_in_path(redirect_url: request.original_url, client_id: Settings.identity.client_id), class: 'nav-link', method: :post
+        = button_to t('header.sign_in'), sign_in_path, class: 'nav-link', method: :post

@@ -375,6 +375,7 @@ body#root
 
   #preset-scenario
     border-top-color: $landing-gold
+    padding-bottom: 2rem
     .header-container a
       color: $landing-grey
       text-decoration: underline
@@ -387,28 +388,31 @@ body#root
 
     .year-tabs
       display: flex
-      margin-bottom: 5px
+      margin-bottom: 2rem
       .end-year-tab
-        margin-left: 3px
+        margin-left: 1rem
         margin-bottom: 3px
         border-radius: 6px
         font-size: .875rem
         padding: 5px 13px
+        // border: 1px solid #d0d5d8
         background: $soft-grey
         transition: background 0.15s ease-in
         a
-          color: $landing-grey
+          color: #462c34
           transition: color 0.15s ease-in
           &:hover
             text-decoration: none
             cursor: pointer
-            color: white
+            color: #462c34
         &:hover
-          background: $landing-gold
+          background: $dark-cream
+          border-color: $dark-cream
           a
-            color: white
+            color: #462c34
         &.active
-          background: $landing-green
+          background: #86c983
+          border-color: #86c983
           a
             color: white
           &:hover

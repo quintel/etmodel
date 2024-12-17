@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Deleting a user', type: :system do
+# A spec which tests what happens when a user is delete mid-session.
+RSpec.describe 'Deleting a user', type: :system, vcr: true do
   before do
     driven_by :rack_test
   end

@@ -99,18 +99,18 @@
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_backup_burner_mt_network_gas_mekko_of_collective_heat_mt
-- label: residual_heat_in_mekko_of_collective_heat
+- label: residual_heat_in_heat_network_in_mekko_of_collective_heat
   color: "#00008B"
   order_by: 5
   group: supply
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: residual_heat_in_heat_network_mt_for_heat_network_mt_mekko
+  gquery: residual_heat_in_mt_heat_network_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
-  key: residual_heat_in_heat_network_mt_mekko_of_collective_heat_mt
+  key: residual_heat_in_mt_heat_network_mekko_of_collective_heat_mt
 - label: energy_chp_combined_cycle_network_gas_in_mekko_of_collective_heat
   color: "#A4B0BE"
   order_by: 22
@@ -351,6 +351,42 @@
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_flexibility_p2h_heatpump_mt_electricity_mekko_of_collective_heat_mt
+- label: energy_heat_heatpump_drink_water_water_ts_electricity_in_mekko_of_collective_heat
+  color: "black"
+  order_by: 
+  group: supply
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: energy_heat_heatpump_drink_water_water_ts_mt_electricity_for_heat_network_mt_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_heatpump_drink_water_water_ts_mt_electricity_mekko_of_collective_heat_mt
+- label: energy_heat_heatpump_surface_water_water_ts_electricity_in_mekko_of_collective_heat
+  color: "black"
+  order_by: 
+  group: supply
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: energy_heat_heatpump_surface_water_water_ts_mt_electricity_for_heat_network_mt_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_heatpump_surface_water_water_ts_mt_electricity_mekko_of_collective_heat_mt
+- label: energy_heat_heatpump_waste_water_water_ts_electricity_in_mekko_of_collective_heat
+  color: "black"
+  order_by: 
+  group: supply
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: energy_heat_heatpump_waste_water_water_ts_mt_electricity_for_heat_network_mt_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_heatpump_waste_water_water_ts_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_solar_solar_thermal_in_mekko_of_collective_heat
   color: "#FFD700"
   order_by: 11
@@ -375,6 +411,18 @@
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_well_deep_mt_geothermal_mekko_of_collective_heat_mt
+- label: energy_heat_well_shallow_heatpump_geothermal_in_mekko_of_collective_heat
+  color: "#000000"
+  order_by: 
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_heat_well_shallow_heatpump_mt_geothermal_for_heat_network_mt_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_well_shallow_heatpump_mt_geothermal_mekko_of_collective_heat_mt
 - label: energy_chp_local_engine_biogas_in_mekko_of_collective_heat
   color: "#CE8814"
   order_by: 23

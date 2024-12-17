@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/versions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3827ac2c7c96d926b106dcb1102a6dca"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 751e2128-3af8-42d9-a065-7003d1b17b1c
+      X-Runtime:
+      - '0.016512'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.03, process_action.action_controller;dur=0.33
+      Vary:
+      - Origin
+      Content-Length:
+      - '212'
+    body:
+      encoding: UTF-8
+      string: '{"versions":[{"tag":"latest","url":"https://energytransitionmodel.com"},{"tag":"stable.01","url":"https://stable.energytransitionmodel.com"},{"tag":"stable.02","url":"https://stable2.energytransitionmodel.com"}]}'
+  recorded_at: Tue, 17 Dec 2024 11:04:05 GMT
+recorded_with: VCR 6.0.0

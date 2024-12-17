@@ -121,8 +121,11 @@ en:
         energy_heat_burner_waste_mix_steam_hot_water_output_curve: 'Waste heater'
         energy_heat_burner_wood_pellets_steam_hot_water_output_curve: 'Biomass heater'
         energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Collective water heat pump'
+        energy_heat_heatpump_surface_water_water_ts_electricity_in_mekko_of_collective_heat: 'Aquathermal heat pump (surface water)'
         energy_heat_heatpump_surface_water_water_ts_electricity_steam_hot_water_output_curve: 'Aquathermal heat pump (surface water)'
+        energy_heat_heatpump_waste_water_water_ts_electricity_in_mekko_of_collective_heat: 'Aquathermal heat pump (waste water)'
         energy_heat_heatpump_waste_water_water_ts_electricity_steam_hot_water_output_curve: 'Aquathermal heat pump (waste water)'
+        energy_heat_heatpump_drink_water_water_ts_electricity_in_mekko_of_collective_heat: 'Aquathermal heat pump (drink water)'
         energy_heat_heatpump_drink_water_water_ts_electricity_steam_hot_water_output_curve: 'Aquathermal heat pump (drink water)'
         energy_heat_boiler_electricity_steam_hot_water_output_curve: 'Electric boiler'
         energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Imported heat'
@@ -1489,7 +1492,8 @@ en:
         energy_heat_flexibility_p2h_heatpump_electricity_in_mekko_of_collective_heat: "Power-to-heat heat pump"
         unused_heat_in_heat_network_in_mekko_of_collective_heat: "Heat surplus (wasted)"
         losses_in_heat_network_storage_in_mekko_of_collective_heat: "Storage losses (incl. surplus)"
-        energy_heat_well_deep_geothermal_in_mekko_of_collective_heat: "Geothermal heat"
+        energy_heat_well_deep_geothermal_in_mekko_of_collective_heat: "Geothermal heat (deep)"
+        energy_heat_well_shallow_heatpump_geothermal_in_mekko_of_collective_heat: "Geothermal heat (shallow)"
         households_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Households"
         energy_heat_burner_wood_pellets_in_mekko_of_collective_heat: "Biomass heater"
         losses_in_heat_network_distribution_in_mekko_of_collective_heat: "Distribution losses"

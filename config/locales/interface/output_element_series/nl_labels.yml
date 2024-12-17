@@ -111,7 +111,7 @@ nl:
         energy_chp_local_wood_pellets_dispatchable_in_mekko_of_collective_heat: 'Biomassa-WKK (regelbaar)'
         energy_chp_local_wood_pellets_dispatchable_steam_hot_water_output_curve: 'Biomassa-WKK (regelbaar)'
         energy_chp_local_wood_pellets_ccs_must_run_steam_hot_water_output_curve: 'Biomassa-WKK + CCS (must-run)'
-        energy_chp_local_wood_pellets_ccs_must_run_in_mekko_of_collective_heat: 'Biomassa-WKK + CCS (must-run)'
+        energy_chp_local_wood_pellets_ccs_must_run_in_mekko_of_collective_heat: 'Biomassa-WKK + CCS (niet-regelbaar)'
         energy_chp_local_wood_pellets_ccs_dispatchable_in_mekko_of_collective_heat: 'Biomassa-WKK + CCS (regelbaar)'
         energy_chp_local_wood_pellets_ccs_dispatchable_steam_hot_water_output_curve: 'Biomassa-WKK + CCS (regelbaar)'
         energy_chp_supercritical_waste_mix_steam_hot_water_output_curve: 'Afval-WKK'
@@ -128,8 +128,11 @@ nl:
         energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve: "Power-to-heat warmtepomp"
         energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve: "Power-to-heat boiler"
         energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Collective bodemwarmtepomp'
+        energy_heat_heatpump_surface_water_water_ts_electricity_in_mekko_of_collective_heat: 'Warmtepomp met aquathermie (TEO)'
         energy_heat_heatpump_surface_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TEO)'
+        energy_heat_heatpump_waste_water_water_ts_electricity_in_mekko_of_collective_heat: 'Warmtepomp met aquathermie (TEA)'
         energy_heat_heatpump_waste_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TEA)'
+        energy_heat_heatpump_drink_water_water_ts_electricity_in_mekko_of_collective_heat: 'Warmtepomp met aquathermie (TED)'
         energy_heat_heatpump_drink_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TED)'
         energy_heat_boiler_electricity_steam_hot_water_output_curve: 'Elektrische boiler'
         energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Geïmporteerde warmte'
@@ -1493,7 +1496,8 @@ nl:
         energy_heat_flexibility_p2h_heatpump_electricity_in_mekko_of_collective_heat: "Power-to-heat warmtepomp"
         unused_heat_in_heat_network_in_mekko_of_collective_heat: "Warmte-overschot (verspild)"
         losses_in_heat_network_storage_in_mekko_of_collective_heat: "Opslagverliezen (incl. overschot)"
-        energy_heat_well_deep_geothermal_in_mekko_of_collective_heat: "Geothermie"
+        energy_heat_well_deep_geothermal_in_mekko_of_collective_heat: "Geothermie (diep)"
+        energy_heat_well_shallow_heatpump_geothermal_in_mekko_of_collective_heat: "Geothermie (ondiep)"
         households_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Huishoudens"
         energy_heat_burner_wood_pellets_in_mekko_of_collective_heat: "Biomassaketel"
         losses_in_heat_network_distribution_in_mekko_of_collective_heat: "Transportverliezen"

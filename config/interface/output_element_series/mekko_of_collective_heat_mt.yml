@@ -99,7 +99,7 @@
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_backup_burner_mt_network_gas_mekko_of_collective_heat_mt
-- label: residual_heat_in_heat_network_in_mekko_of_collective_heat
+- label: residual_heat_in_mekko_of_collective_heat
   color: "#00008B"
   order_by: 5
   group: supply
@@ -231,7 +231,7 @@
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
   key: energy_chp_ultra_supercritical_mt_coal_mekko_of_collective_heat_mt
-- label: energy_chp_ultra_supercritical_lignite_for_heat_network_mt_mekko_in_mekko_of_collective_heat
+- label: energy_chp_ultra_supercritical_lignite_in_mekko_of_collective_heat
   color: "#222F3E"
   order_by: 19
   group: supply
@@ -242,7 +242,7 @@
   is_1990:
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
-  key: energy_chp_ultra_supercritical_mt_lignite_for_heat_network_mt_mekko_mekko_of_collective_heat_mt
+  key: energy_chp_ultra_supercritical_mt_lignite_mekko_of_collective_heat_mt
 - label: energy_heat_boiler_electricity_in_mekko_of_collective_heat
   color: "#b9effe"
   order_by: 13

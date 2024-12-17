@@ -22,6 +22,9 @@ class CreateSavedScenario
   private
 
   def request_body
-    { scenario_id: scenario_id }.merge(settings.slice(:title, :area_code, :end_year)).to_json
+    {
+      scenario_id: scenario_id,
+      version: ETModel::Version.TAG
+    }.merge(settings.slice(:title, :area_code, :end_year)).to_json
   end
 end

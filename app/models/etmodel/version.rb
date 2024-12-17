@@ -19,5 +19,8 @@ module ETModel
     def self.prerelease?
       DATE > Time.now.utc
     end
+
+    TAG = "stable_1"
+
   end
 end

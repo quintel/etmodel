@@ -7,11 +7,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: final_demand_of_ht_heat_in_households_for_heat_network_ht_mekko
+  gquery: final_demand_of_mt_heat_in_households_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: households_final_demand_steam_hot_water_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: households_final_demand_steam_hot_water_mekko_of_collective_heat_mt
 - label: buildings_final_demand_steam_hot_water_in_mekko_of_collective_heat
   color: "#F9CA24"
   order_by: 3
@@ -19,11 +19,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: final_demand_of_ht_heat_in_buildings_for_heat_network_ht_mekko
+  gquery: final_demand_of_mt_heat_in_buildings_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: buildings_final_demand_steam_hot_water_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: buildings_final_demand_steam_hot_water_mekko_of_collective_heat_mt
 - label: agriculture_final_demand_steam_hot_water_in_mekko_of_collective_heat
   color: "#6AB04C"
   order_by: 4
@@ -31,35 +31,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: final_demand_of_ht_heat_in_agriculture_for_heat_network_ht_mekko
+  gquery: final_demand_of_mt_heat_in_agriculture_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: agriculture_final_demand_steam_hot_water_mekko_of_collective_heat_ht
-- label: energy_final_demand_steam_hot_water_in_mekko_of_collective_heat
-  color: "#6AB04C"
-  order_by: 4
-  group: demand
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: final_demand_of_ht_heat_in_energy_for_heat_network_ht_mekko
-  is_1990:
-  dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_final_demand_steam_hot_water_mekko_of_collective_heat_ht
-- label: other_final_demand_steam_hot_water_in_mekko_of_collective_heat
-  color: "#786FA6"
-  order_by: 5
-  group: demand
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: final_demand_of_ht_heat_in_other_for_heat_network_ht_mekko
-  is_1990:
-  dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: other_final_demand_steam_hot_water_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: agriculture_final_demand_steam_hot_water_mekko_of_collective_heat_mt
 - label: losses_in_heat_network_distribution_in_mekko_of_collective_heat
   color: "#800080"
   order_by: 6
@@ -67,11 +43,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: losses_in_heat_network_ht_distribution_for_heat_network_ht_mekko
+  gquery: losses_in_heat_network_mt_distribution_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: losses_in_heat_network_ht_distribution_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: losses_in_heat_network_mt_distribution_mekko_of_collective_heat_mt
 - label: losses_in_heat_network_storage_in_mekko_of_collective_heat
   color: "#FBCCD1"
   order_by: 1
@@ -79,11 +55,11 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: losses_in_heat_network_ht_storage_for_heat_network_ht_mekko
+  gquery: losses_in_heat_network_mt_storage_for_heat_network_mt_mekko
   is_1990: false
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: losses_in_heat_network_ht_storage_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: losses_in_heat_network_mt_storage_mekko_of_collective_heat_mt
 - label: unused_heat_in_heat_network_in_mekko_of_collective_heat
   color: "#FF8C8C"
   order_by: 1
@@ -91,11 +67,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: unused_heat_in_heat_network_ht_for_heat_network_ht_mekko
+  gquery: unused_heat_in_heat_network_mt_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: unused_heat_in_heat_network_ht_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: unused_heat_in_heat_network_mt_mekko_of_collective_heat_mt
 
 
 # supply
@@ -106,11 +82,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_import_ht_steam_hot_water_for_heat_network_ht_mekko
+  gquery: energy_heat_import_mt_steam_hot_water_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_import_ht_steam_hot_water_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_import_mt_steam_hot_water_mekko_of_collective_heat_mt
 - label: energy_heat_backup_burner_network_gas_in_mekko_of_collective_heat
   color: "#CED6E0"
   order_by: 12
@@ -118,11 +94,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_backup_burner_ht_network_gas_for_heat_network_ht_mekko
+  gquery: energy_heat_backup_burner_mt_network_gas_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_backup_burner_ht_network_gas_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_backup_burner_mt_network_gas_mekko_of_collective_heat_mt
 - label: residual_heat_in_mekko_of_collective_heat
   color: "#00008B"
   order_by: 5
@@ -130,11 +106,11 @@
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: residual_heat_in_heat_network_ht_for_heat_network_ht_mekko
+  gquery: residual_heat_in_heat_network_mt_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: residual_heat_in_heat_network_ht_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: residual_heat_in_heat_network_mt_mekko_of_collective_heat_mt
 - label: energy_chp_combined_cycle_network_gas_in_mekko_of_collective_heat
   color: "#A4B0BE"
   order_by: 22
@@ -142,11 +118,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_combined_cycle_ht_network_gas_for_heat_network_ht_mekko
+  gquery: energy_chp_combined_cycle_mt_network_gas_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_combined_cycle_ht_network_gas_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_combined_cycle_mt_network_gas_mekko_of_collective_heat_mt
 - label: energy_chp_local_engine_network_gas_in_mekko_of_collective_heat
   color: "#DFE4EA"
   order_by: 21
@@ -154,11 +130,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_local_engine_ht_network_gas_for_heat_network_ht_mekko
+  gquery: energy_chp_local_engine_mt_network_gas_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_local_engine_ht_network_gas_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_local_engine_mt_network_gas_mekko_of_collective_heat_mt
 - label: energy_chp_local_wood_pellets_ccs_must_run_in_mekko_of_collective_heat
   color: "#3D6B0D"
   order_by: 22
@@ -166,11 +142,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_local_ht_wood_pellets_ccs_must_run_for_heat_network_ht_mekko
+  gquery: energy_chp_local_mt_wood_pellets_ccs_must_run_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_local_ht_wood_pellets_ccs_must_run_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_local_mt_wood_pellets_ccs_must_run_mekko_of_collective_heat_mt
 - label: energy_chp_local_wood_pellets_ccs_dispatchable_in_mekko_of_collective_heat
   color: "#3D6B0D"
   order_by: 22
@@ -178,11 +154,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_local_ht_wood_pellets_ccs_dispatchable_for_heat_network_ht_mekko
+  gquery: energy_chp_local_mt_wood_pellets_ccs_dispatchable_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_local_ht_wood_pellets_ccs_dispatchable_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_local_mt_wood_pellets_ccs_dispatchable_mekko_of_collective_heat_mt
 - label: energy_chp_local_wood_pellets_must_run_in_mekko_of_collective_heat
   color: "#000000"
   order_by: 22
@@ -190,11 +166,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_local_ht_wood_pellets_must_run_for_heat_network_ht_mekko
+  gquery: energy_chp_local_mt_wood_pellets_must_run_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_local_ht_wood_pellets_must_run_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_local_mt_wood_pellets_must_run_mekko_of_collective_heat_mt
 - label: energy_chp_local_wood_pellets_dispatchable_in_mekko_of_collective_heat
   color: "#000000"
   order_by: 22
@@ -202,11 +178,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_local_ht_wood_pellets_dispatchable_for_heat_network_ht_mekko
+  gquery: energy_chp_local_mt_wood_pellets_dispatchable_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_local_ht_wood_pellets_dispatchable_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_local_mt_wood_pellets_dispatchable_mekko_of_collective_heat_mt
 - label: energy_chp_supercritical_ccs_waste_mix_in_mekko_of_collective_heat
   color: "#16a085"
   order_by: 27
@@ -214,11 +190,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_supercritical_ccs_ht_waste_mix_for_heat_network_ht_mekko
+  gquery: energy_chp_supercritical_ccs_mt_waste_mix_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_supercritical_ccs_ht_waste_mix_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_supercritical_ccs_mt_waste_mix_mekko_of_collective_heat_mt
 - label: energy_chp_supercritical_waste_mix_in_mekko_of_collective_heat
   color: "#218C74"
   order_by: 18
@@ -226,11 +202,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_supercritical_ht_waste_mix_for_heat_network_ht_mekko
+  gquery: energy_chp_supercritical_mt_waste_mix_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_supercritical_ht_waste_mix_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_supercritical_mt_waste_mix_mekko_of_collective_heat_mt
 - label: energy_chp_ultra_supercritical_cofiring_coal_in_mekko_of_collective_heat
   color: "#000000"
   order_by: 18
@@ -238,11 +214,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_ultra_supercritical_cofiring_ht_coal_for_heat_network_ht_mekko
+  gquery: energy_chp_ultra_supercritical_cofiring_mt_coal_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_ultra_supercritical_cofiring_ht_coal_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_ultra_supercritical_cofiring_mt_coal_mekko_of_collective_heat_mt
 - label: energy_chp_ultra_supercritical_coal_in_mekko_of_collective_heat
   color: "#485460"
   order_by: 20
@@ -250,23 +226,23 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_ultra_supercritical_ht_coal_for_heat_network_ht_mekko
+  gquery: energy_chp_ultra_supercritical_mt_coal_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_ultra_supercritical_ht_coal_mekko_of_collective_heat_ht
-- label: energy_chp_ultra_supercritical_lignite_for_heat_network_ht_mekko_in_mekko_of_collective_heat
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_ultra_supercritical_mt_coal_mekko_of_collective_heat_mt
+- label: energy_chp_ultra_supercritical_lignite_for_heat_network_mt_mekko_in_mekko_of_collective_heat
   color: "#222F3E"
   order_by: 19
   group: supply
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_ultra_supercritical_ht_lignite_for_heat_network_ht_mekko
+  gquery: energy_chp_ultra_supercritical_mt_lignite_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_ultra_supercritical_ht_lignite_for_heat_network_ht_mekko_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_ultra_supercritical_mt_lignite_for_heat_network_mt_mekko_mekko_of_collective_heat_mt
 - label: energy_heat_boiler_electricity_in_mekko_of_collective_heat
   color: "#b9effe"
   order_by: 13
@@ -274,11 +250,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_boiler_ht_electricity_for_heat_network_ht_mekko
+  gquery: energy_heat_boiler_mt_electricity_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_boiler_ht_electricity_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_boiler_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_burner_coal_in_mekko_of_collective_heat
   color: "#333333"
   order_by: 24
@@ -286,11 +262,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_burner_ht_coal_for_heat_network_ht_mekko
+  gquery: energy_heat_burner_mt_coal_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_burner_ht_coal_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_burner_mt_coal_mekko_of_collective_heat_mt
 - label: energy_heat_burner_crude_oil_in_mekko_of_collective_heat
   color: "#CD6133"
   order_by: 14
@@ -298,11 +274,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_burner_ht_crude_oil_for_heat_network_ht_mekko
+  gquery: energy_heat_burner_mt_crude_oil_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_burner_ht_crude_oil_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_burner_mt_crude_oil_mekko_of_collective_heat_mt
 - label: energy_heat_burner_hydrogen_in_mekko_of_collective_heat
   color: "#87CEEB"
   order_by: 15
@@ -310,11 +286,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_burner_ht_hydrogen_for_heat_network_ht_mekko
+  gquery: energy_heat_burner_mt_hydrogen_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_burner_ht_hydrogen_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_burner_mt_hydrogen_mekko_of_collective_heat_mt
 - label: energy_heat_burner_network_gas_in_mekko_of_collective_heat
   color: "#A4B0BE"
   order_by: 16
@@ -322,11 +298,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_burner_ht_network_gas_for_heat_network_ht_mekko
+  gquery: energy_heat_burner_mt_network_gas_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_burner_ht_network_gas_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_burner_mt_network_gas_mekko_of_collective_heat_mt
 - label: energy_heat_burner_waste_mix_in_mekko_of_collective_heat
   color: "#006266"
   order_by: 17
@@ -334,11 +310,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_burner_ht_waste_mix_for_heat_network_ht_mekko
+  gquery: energy_heat_burner_mt_waste_mix_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_burner_ht_waste_mix_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_burner_mt_waste_mix_mekko_of_collective_heat_mt
 - label: energy_heat_burner_wood_pellets_in_mekko_of_collective_heat
   color: "#009432"
   order_by: 8
@@ -346,11 +322,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_burner_ht_wood_pellets_for_heat_network_ht_mekko
+  gquery: energy_heat_burner_mt_wood_pellets_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_burner_ht_wood_pellets_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_burner_mt_wood_pellets_mekko_of_collective_heat_mt
 - label: energy_heat_flexibility_p2h_boiler_electricity_in_mekko_of_collective_heat
   color: "#46c1e3"
   order_by: 25
@@ -358,11 +334,11 @@
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: energy_heat_flexibility_p2h_boiler_ht_electricity_for_heat_network_ht_mekko
+  gquery: energy_heat_flexibility_p2h_boiler_mt_electricity_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_flexibility_p2h_boiler_ht_electricity_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_flexibility_p2h_boiler_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_flexibility_p2h_heatpump_electricity_in_mekko_of_collective_heat
   color: "blue"
   order_by: 26
@@ -370,11 +346,11 @@
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: energy_heat_flexibility_p2h_heatpump_ht_electricity_for_heat_network_ht_mekko
+  gquery: energy_heat_flexibility_p2h_heatpump_mt_electricity_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_flexibility_p2h_heatpump_ht_electricity_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_flexibility_p2h_heatpump_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_solar_solar_thermal_in_mekko_of_collective_heat
   color: "#FFD700"
   order_by: 11
@@ -382,11 +358,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_solar_ht_solar_thermal_for_heat_network_ht_mekko
+  gquery: energy_heat_solar_mt_solar_thermal_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_solar_ht_solar_thermal_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_solar_mt_solar_thermal_mekko_of_collective_heat_mt
 - label: energy_heat_well_deep_geothermal_in_mekko_of_collective_heat
   color: "#FFA502"
   order_by: 7
@@ -394,11 +370,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_well_deep_ht_geothermal_for_heat_network_ht_mekko
+  gquery: energy_heat_well_deep_mt_geothermal_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_well_deep_ht_geothermal_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_well_deep_mt_geothermal_mekko_of_collective_heat_mt
 - label: energy_chp_local_engine_biogas_in_mekko_of_collective_heat
   color: "#CE8814"
   order_by: 23
@@ -406,11 +382,11 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_chp_local_engine_ht_biogas_for_heat_network_ht_mekko
+  gquery: energy_chp_local_engine_mt_biogas_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_chp_local_engine_ht_biogas_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_local_engine_mt_biogas_mekko_of_collective_heat_mt
 - label: energy_heat_heatpump_water_water_electricity_in_mekko_of_collective_heat
   color: "#ADD8E6"
   order_by: 9
@@ -418,8 +394,8 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_heat_heatpump_water_water_ht_electricity_for_heat_network_ht_mekko
+  gquery: energy_heat_heatpump_water_water_mt_electricity_for_heat_network_mt_mekko
   is_1990:
   dependent_on:
-  output_element_key: mekko_of_collective_heat_ht
-  key: energy_heat_heatpump_water_water_ht_electricity_mekko_of_collective_heat_ht
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_heat_heatpump_water_water_mt_electricity_mekko_of_collective_heat_mt

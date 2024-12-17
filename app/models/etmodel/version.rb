@@ -2,6 +2,9 @@
 
 module ETModel
   module Version
+    # Release tag
+    TAG = 'stable.01'
+
     # Year of release.
     MAJOR = 2025
 
@@ -19,8 +22,5 @@ module ETModel
     def self.prerelease?
       DATE > Time.now.utc
     end
-
-    TAG = "stable_1"
-
   end
 end

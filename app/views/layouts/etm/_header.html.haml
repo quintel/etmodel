@@ -7,12 +7,13 @@
           .span Energy Transition Model
       .dropdown
         %button#version-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'click' }, type: 'button' }
-          %span= "##{t('meta.version')}"
+          %span= "##{ETModel::Version::TAG}"
           %span.fa.fa-caret-down
         .dropdown-menu.version-dropdown.development{ 'aria-labelledby': 'version-button' }
           %ul#version-links
             %li{style: 'margin-bottom:1rem'}= t('versions.switch')
-
+            - MyEtm::Version.all_other_versions.each do |version|
+              %li= link_to "##{version.tag}", version.url
     .app-nav
       = render partial: 'layouts/etm/about_menu'
       = link_to t('app_nav.updates'), whats_new_path, class: 'nav-link'

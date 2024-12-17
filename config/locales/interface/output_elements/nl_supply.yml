@@ -127,6 +127,18 @@ nl:
         je toekomstscenario. De kolommen bevatten (van links naar rechts) de naam,
         het aantal, de productie van elektriciteit, de productie van warmte en het
         geïnstalleerde (elektrische) vermogen van WKK.\r\n"
+    mekko_of_collective_heat_ht:
+      title: Warmtenetten HT vraag en aanbod
+      short_description:
+      description:
+    mekko_of_collective_heat_mt:
+      title: Warmtenetten MT vraag en aanbod
+      short_description:
+      description:
+    mekko_of_collective_heat_lt:
+      title: Warmtenetten LT vraag en aanbod
+      short_description:
+      description:
     collective_heat_mekko:
       title: Warmtenetten vraag en aanbod
       short_description:
@@ -191,10 +203,10 @@ nl:
       title: Vraag en aanbod van het centrale waterstofnet
       short_description: ''
       description: |
-        Deze grafiek weergeeft de verschillende categorieën van vraag en aanbod van het centrale 
-        waterstofnet. Het ETM balanceert vraag en aanbod van waterstof zodat deze altijd aan elkaar 
-        gelijk zijn gesteld. Dit betekent dat een overschot aan waterstof wordt geëxporteerd via de export 
-        back-up. Er wordt waterstof geïmporteerd via de import back-up in geval van een tekort aan waterstof. 
+        Deze grafiek weergeeft de verschillende categorieën van vraag en aanbod van het centrale
+        waterstofnet. Het ETM balanceert vraag en aanbod van waterstof zodat deze altijd aan elkaar
+        gelijk zijn gesteld. Dit betekent dat een overschot aan waterstof wordt geëxporteerd via de export
+        back-up. Er wordt waterstof geïmporteerd via de import back-up in geval van een tekort aan waterstof.
     hydrogen_production:
       title: Waterstofproductie per uur
       short_description:
@@ -206,15 +218,15 @@ nl:
     hydrogen_storage:
       title: Opgeslagen waterstofvolume per uur
       short_description:
-      description: 
-        Deze grafiek toont de waterstofopslagvolumes van zoutcavernes en lege gasvelden gedurende het jaar. 
+      description:
+        Deze grafiek toont de waterstofopslagvolumes van zoutcavernes en lege gasvelden gedurende het jaar.
         De opslagvolumes kunnen op jaarbasis, per maand of per week worden bekeken.
     hydrogen_production_cost_curve:
       title: Integrale waterstofproductiekosten per uur
       short_description:
       description: |
-        Deze grafiek toont de gemiddelde integrale waterstofproductiekosten (<i>levelised costs of hydrogen production</i>) in €/MWh voor elk uur van het jaar. 
-        Hoe groter het oppervlak van een bepaalde productiemethode, hoe meer invloed het heeft op de gemiddelde productiekosten van dat uur. 
+        Deze grafiek toont de gemiddelde integrale waterstofproductiekosten (<i>levelised costs of hydrogen production</i>) in €/MWh voor elk uur van het jaar.
+        Hoe groter het oppervlak van een bepaalde productiemethode, hoe meer invloed het heeft op de gemiddelde productiekosten van dat uur.
         </br></br>
         Let op: dit zijn niet de marktprijzen van de waterstofmarkt, aangezien het ETM de prijzen op de waterstofmarkt niet modelleert.
         </br></br>
@@ -227,38 +239,38 @@ nl:
       description: |
         Deze grafiek laat de CO<sub>2</sub>-intensiteit van verschillende waterstofproductietechnologieën
         zien in kg CO<sub>2</sub> per geproduceerde MWh waterstof. Je kunt power-to-gas (P2G, op land en op zee zijn in deze
-        grafiek onder één label toegevoegd) vinden in de 
+        grafiek onder één label toegevoegd) vinden in de
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof</a>
-        sectie. Alle andere technologieën zijn in de 
+        sectie. Alle andere technologieën zijn in de
         <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie te vinden. </br></br>
-        De uitgestoten CO<sub>2</sub>-intensiteit wordt berekend door de primaire emissies van elke technologie 
-        te delen door de bijbehorende waterstofproductie. Voor de afgevangen CO<sub>2</sub>-intensiteit zijn 
-        de afgevangen emissies gebruikt. Ga naar onze 
+        De uitgestoten CO<sub>2</sub>-intensiteit wordt berekend door de primaire emissies van elke technologie
+        te delen door de bijbehorende waterstofproductie. Voor de afgevangen CO<sub>2</sub>-intensiteit zijn
+        de afgevangen emissies gebruikt. Ga naar onze
         <a href="https://https://docs.energytransitionmodel.com/main/co2-main-principles#modelling-principles" target="_blank">documentatie</a>
         voor meer informatie over de berekening van primaire emissies. </br></br>
         Primaire emissies worden in het ETM op jaarbasis berekend. In de meeste gevallen is dit toereikend, omdat
         de <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors" target="_blank">emissiefactor</a>
-        constant is gedurende het jaar, zoals bij stoomreforming van aardgas. Bij power-to-gas kan de 
+        constant is gedurende het jaar, zoals bij stoomreforming van aardgas. Bij power-to-gas kan de
         CO<sub>2</sub>-intensiteit van de elektriciteitsinput per uur veranderen. Daarom is voor power-to-gas
         eerst de CO<sub>2</sub>-intensiteit van elektriciteitsproductie berekend. Dit wordt vervolgens gecombineerd
         met de uurlijkse elektriciteitsinput van power-to-gas om de gemiddelde uurlijkse CO<sub>2</sub>-intensiteit
         te bepalen. </br></br>
         Tenslotte is er een grenswaarde voor de CO<sub>2</sub>-intensiteit toegevoegd die aangeeft of, volgens de
         <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/PDF/?uri=CELEX:32021R2139&from=EN" target="_blank">
-        Europese Commissie</a>, de productie van waterstof kan worden aangemerkt als "substantieel bijdragend aan de 
+        Europese Commissie</a>, de productie van waterstof kan worden aangemerkt als "substantieel bijdragend aan de
         mitigatie van klimaatverandering". Deze grenswaarde staat op 3 kg CO<sub>2</sub> per kg H<sub>2</sub> en is
         omgerekend naar kg per MWh.</br></br>
-        De labels die in deze grafiek gebruikt worden staan voor het proces waarin deze energiedrager gebruikt wordt. 
-        Zo staat bijvoorbeeld "Ammoniak" voor Ammoniak reforming & "LOHC" voor LOHC reforming. 
+        De labels die in deze grafiek gebruikt worden staan voor het proces waarin deze energiedrager gebruikt wordt.
+        Zo staat bijvoorbeeld "Ammoniak" voor Ammoniak reforming & "LOHC" voor LOHC reforming.
     hydrogen_cost_capacity:
       title: Productiecapaciteiten en kosten van waterstof
       short_description:
       description: |
-        Deze grafiek geeft het geïnstalleerd vermogen en de productiekosten (in €/MWh) van waterstoftechnologieën in jouw scenario weer. 
-        De technologieën zijn gesorteerd op toenemende productiekosten. Het geïnstalleerd vermogen van een technologie is gedefinieerd 
-        als het waterstofproductievermogen (waterstof ouput vermogen). Let op dat in de grafiek technologieën met geïnstalleerd vermogen, 
-        maar zonder waterstofproductie (deze worden dus niet in werking gezet in het scenario) worden weergegeven met productiekosten van 
-        0 €/MWh. In werkelijkheid zijn de productiekosten per MWh oneindig doordat er geen waterstofproductie is door deze technologie. 
+        Deze grafiek geeft het geïnstalleerd vermogen en de productiekosten (in €/MWh) van waterstoftechnologieën in jouw scenario weer.
+        De technologieën zijn gesorteerd op toenemende productiekosten. Het geïnstalleerd vermogen van een technologie is gedefinieerd
+        als het waterstofproductievermogen (waterstof ouput vermogen). Let op dat in de grafiek technologieën met geïnstalleerd vermogen,
+        maar zonder waterstofproductie (deze worden dus niet in werking gezet in het scenario) worden weergegeven met productiekosten van
+        0 €/MWh. In werkelijkheid zijn de productiekosten per MWh oneindig doordat er geen waterstofproductie is door deze technologie.
     mekko_of_kerosene_demand_supply:
       title: Vraag en aanbod van kerosine
       short_description: ''
@@ -278,7 +290,7 @@ nl:
       title: Vraag en aanbod van ammoniak
       short_description:
       description: |
-        Deze grafiek vergelijkt de vraag naar ammoniak (NH<sub>3</sub>) met het aanbod. Je kunt het aanbod 
+        Deze grafiek vergelijkt de vraag naar ammoniak (NH<sub>3</sub>) met het aanbod. Je kunt het aanbod
         instellen in de <a href="/scenario/supply/hydrogen/ammonia-production"> Ammoniakproductie</a>
         sectie. Je kunt het vervolgens gebruiken voor:
         <ul>
@@ -287,19 +299,19 @@ nl:
         <li><a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>binnenlandse scheepvaart</a></li>
         <li><a href=/scenario/demand/transport_international_transport/international-navigation-technology>internationale scheepvaart</a></li>
         </ul>
-        Als er onvoldoende aanbod is om aan de vraag te voldoen wordt back-up import ingezet om het 
+        Als er onvoldoende aanbod is om aan de vraag te voldoen wordt back-up import ingezet om het
         tekort te leveren. Als het aanbod groter is dan de vraag wordt het overschot geëxporteerd.
     supply_offshore_solar_wind:
       title: Productie van zon en wind op zee per uur
       short_description:
       description: |
-        Deze grafiek toont de uurlijke productie van elektriciteit door 
+        Deze grafiek toont de uurlijke productie van elektriciteit door
         <a href="/scenario/supply/electricity_renewable/wind-turbines">
         windmolens op zee</a> en
         <a href="/scenario/supply/electricity_renewable/solar-power">
-        zonneparken PV op zee</a>, alsmede hun gezamenlijke output. Daaarnaast laat het 
-        ook zien welk deel van de zonneparken PV is afgeschakeld als de netwerkcapaciteit 
-        lager is dan het piekvermogen. Je kunt deze capaciteit 
+        zonneparken PV op zee</a>, alsmede hun gezamenlijke output. Daaarnaast laat het
+        ook zien welk deel van de zonneparken PV is afgeschakeld als de netwerkcapaciteit
+        lager is dan het piekvermogen. Je kunt deze capaciteit
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">hier</a>
         aanpassen.
     source_of_electricity_in_p2g:
@@ -307,21 +319,21 @@ nl:
       short_description:
       description: |
         Deze grafiek toont de elektriciteitsmix die de power-to-gas elektrolyser gebruikt.
-        Deze mix is bepaald door te kijken naar de uurlijkse elektriciteitmix en het uurlijkse verbruik door elektrolysers, je ziet 
+        Deze mix is bepaald door te kijken naar de uurlijkse elektriciteitmix en het uurlijkse verbruik door elektrolysers, je ziet
         dus de daadwerkelijke herkomst van de elektriciteit. </br></br>
         Deze grafiek laat alleen de elektriciteitsmix van de flexibele elektrolyzer zien. Deze vind je in de
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Flexibiliteit</a> 
-        sectie. Directe elektrolyse van wind- en zonnestroom uit de 
-        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie is niet 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Flexibiliteit</a>
+        sectie. Directe elektrolyse van wind- en zonnestroom uit de
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie is niet
         meegenomen.
     residual_heat_supply_potential:
       title: Vraag en potentieel van restwarmte
       short_description:
       description: |
         Deze grafiek vergelijkt de vraag met het potentieel aan beschikbare restwarmte.
-        De restwarmtevraag per temperatuurniveau kun je instellen op de pagina van 
+        De restwarmtevraag per temperatuurniveau kun je instellen op de pagina van
         <a href="scenario/supply/heat/overview-district-heating"> Warmtenetten</a>.
-        Het restwarmtepotentieel wordt berekend op basis van de volgende sectoren: 
+        Het restwarmtepotentieel wordt berekend op basis van de volgende sectoren:
         <ul>
         <li><a href="scenario/demand/industry/refineries">Raffinaderijen</a> </li>
         <li><a href="/scenario/demand/industry/fertilizers">Kunstmest</a> </li>
@@ -329,7 +341,7 @@ nl:
         <li><a href="/scenario/demand/industry/central-ict">Centrale ICT</a> </li>
         <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof via power-to-gas</a></li>
         </ul>
-        De wijze waarop de restwarmtepotentiëlen berekend worden staat beschreven in 
+        De wijze waarop de restwarmtepotentiëlen berekend worden staat beschreven in
         de <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry/" target=\"_blank\">documentatie</a>.
         <br></br>
         Let op: hoewel je de restwarmteproductie kunt instellen op een waarde hoger dan het restwarmtepotentieel,
@@ -338,7 +350,7 @@ nl:
       title: Vraag en potentieel van aquathermie
       description: |
         Dze grafiek laat de vraag naar warmte van aquathermie zien (oppervlaktewater, afvalwater, drinkwater).
-        De grafiek toont de verdeling van warmte tussen collectieve bronnen (warmtenetten) en individuele bronnen 
+        De grafiek toont de verdeling van warmte tussen collectieve bronnen (warmtenetten) en individuele bronnen
         en bevat een indicatie van beschikbare technische thermische potentie (indien beschikbaar).
     land_use_solar_wind:
       title: Ruimtegebruik van zon en wind (tabel)
@@ -346,9 +358,9 @@ nl:
       description: |
         Deze tabel toont de elektriciteitsproductie, technische parameters en landgebruik van alle opwek uit zon en wind.
         De opwek van wind op land kan handmatig onderverdeeld worden in grootschalige en kleinschalige turbines.
-        Het aandeel van deze typen turbines kun je instellen in de 
+        Het aandeel van deze typen turbines kun je instellen in de
         <a href="scenario/data/data_visuals/land-use-of-solar-and-wind-energy-supply"> Ruimtegebruik van zon en wind </a> sectie.
-        Let op: de onderverdeling tussen grootschalig en kleinschalige wind op land heeft alleen een visuele functie. 
+        Let op: de onderverdeling tussen grootschalig en kleinschalige wind op land heeft alleen een visuele functie.
         Deze onderverdeling heeft geen verdere invloed op jouw scenario.
     land_use_solar_wind_chart:
       title: Ruimtegebruik van zon en wind (grafiek)

@@ -126,6 +126,18 @@ en:
       description: "This table shows an overview of all CHP plants installed in your
         scenario. The columns contain (from left to right) name, number of units,
         electricity production, heat production and installed capacity of CHP plants.\r\n"
+    mekko_of_collective_heat_ht:
+      title: District heating HT supply and demand
+      short_description:
+      description:
+    mekko_of_collective_heat_mt:
+      title: District heating MT supply and demand
+      short_description:
+      description:
+    mekko_of_collective_heat_lt:
+      title: District heating LT supply and demand
+      short_description:
+      description:
     collective_heat_mekko:
       title: District heating supply and demand
       short_description: ''
@@ -191,8 +203,8 @@ en:
       short_description: ''
       description: |
         This chart shows the supply and demand categories of the central hydrogen network. The ETM always
-        balances supply and demand of hydrogen. This means that an excess of hydrogen supply is exported via the export back-up. 
-        Hydrogen is imported via the import back-up in case of a shortage of hydrogen.    
+        balances supply and demand of hydrogen. This means that an excess of hydrogen supply is exported via the export back-up.
+        Hydrogen is imported via the import back-up in case of a shortage of hydrogen.
     hydrogen_production:
       title: Hydrogen production per hour
       short_description:
@@ -206,13 +218,13 @@ en:
       short_description:
       description: |
         This chart shows the storage volumes of hydrogen stored in salt caverns and depleted gas fields throughout the year.
-        The storage volumes can be viewed on yearly basis, per month or per week.  
+        The storage volumes can be viewed on yearly basis, per month or per week.
     co2_intensity_of_hydrogen_production:
       title: CO<sub>2</sub> intensity per hydrogen production type
       short_description:
       description: |
         This chart shows the CO<sub>2</sub> intensity of different hydrogen production technologies
-        in kg CO<sub>2</sub> per MWh hydrogen produced. You can find power-to-gas (P2G, both onshore and offshore P2G or shown 
+        in kg CO<sub>2</sub> per MWh hydrogen produced. You can find power-to-gas (P2G, both onshore and offshore P2G or shown
         under the same label in this chart) in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen</a>
         section. All other technologies can be found in the
@@ -229,10 +241,10 @@ en:
         electricity input can change every hour. Therefore, for power-to-gas first the CO<sub>2</sub>
         intensity of electricity production is calculated. This is then combined with the hourly
         electricity input of power-to-gas to determine the average hourly CO<sub>2</sub> intensity. </br></br>
-        Finally, a CO<sub>2</sub> intensity threshold value that determines whether, according to the 
+        Finally, a CO<sub>2</sub> intensity threshold value that determines whether, according to the
         <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021R2139&from=EN" target="_blank">
-        European Commission</a>, the manufacturing of hydrogen qualifies as "contributing substantially to climate 
-        change mitigation" has been added to the chart. This threshold is set at 3 kg CO<sub>2</sub> per kg of 
+        European Commission</a>, the manufacturing of hydrogen qualifies as "contributing substantially to climate
+        change mitigation" has been added to the chart. This threshold is set at 3 kg CO<sub>2</sub> per kg of
         H<sub>2</sub> produced and has been converted to kg per MWh. </br></br>
         The labels used in this graph represent the process in which this energy carrier is used.
         For example, "Ammonia" stands for Ammonia reforming, and "LOHC" stands for Liquid Organic Hydrogen Carrier (LOHC) reforming.
@@ -240,10 +252,10 @@ en:
       title: Production capacities and costs of hydrogen
       short_description:
       description: |
-        This graph depicts the installed capacity and production costs (in €/MWh) of hydrogen technologies in your scenario. 
-        The technologies are sorted by ascending production costs. The installed capacity of the technologies in this chart is defined 
-        as the hydrogen output capacity. Note that in this chart, technologies with installed capacity but without hydrogen production 
-        in the scenario are depicted to have production costs of 0 €/MWh. In reality, the production costs per MWh are infinite since 
+        This graph depicts the installed capacity and production costs (in €/MWh) of hydrogen technologies in your scenario.
+        The technologies are sorted by ascending production costs. The installed capacity of the technologies in this chart is defined
+        as the hydrogen output capacity. Note that in this chart, technologies with installed capacity but without hydrogen production
+        in the scenario are depicted to have production costs of 0 €/MWh. In reality, the production costs per MWh are infinite since
         there is no hydrogen production by this technology.
     hydrogen_production_cost_curve:
       title: Levelised costs of hydrogen production per hour
@@ -257,8 +269,8 @@ en:
         It can be useful to compare this graph with the <a href="#" class="open_chart" data-chart-key="hydrogen_production" data-chart-location="side">
         Hydrogen production</a> graph to get a better understanding of the cost dynamic of the production method.
         </br></br>
-        Alternatively, you can download the Levelised costs of hydrogen production export, which can be found <a href="/scenario/data/data_export/hourly-curves-for-hydrogen">here</a>, 
-        for more information. 
+        Alternatively, you can download the Levelised costs of hydrogen production export, which can be found <a href="/scenario/data/data_export/hourly-curves-for-hydrogen">here</a>,
+        for more information.
     mekko_of_kerosene_demand_supply:
       title: Supply and demand of kerosene
       short_description: ''
@@ -306,13 +318,13 @@ en:
       short_description:
       description: |
         This graph shows the electricity mix that the power-to-gas electrolyser uses.
-        This mix is determined by looking at the hourly electricity mix and the hourly consumption by electrolysers, 
+        This mix is determined by looking at the hourly electricity mix and the hourly consumption by electrolysers,
         in this way you see the actual source of the electricity. </br></br>
-        Note that this chart only shows the electricity mix for the flexible electrolyser, 
-        which you can find in the 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Flexibility</a> 
-        section. Direct electrolysis of wind and solar electricity from the 
-        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section 
+        Note that this chart only shows the electricity mix for the flexible electrolyser,
+        which you can find in the
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Flexibility</a>
+        section. Direct electrolysis of wind and solar electricity from the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section
         is not included in this chart.
     residual_heat_supply_potential:
       title: Demand and potential of residual heat
@@ -321,7 +333,7 @@ en:
         This chart compares the demand and potential of residual heat.
         You can set the demand for residual heat for each temperature level
         in the <a href="scenario/supply/heat/overview-district-heating"> District heating</a> section.
-        The residual heat potential is calculated based on the size of the following sectors: 
+        The residual heat potential is calculated based on the size of the following sectors:
         <ul>
         <li><a href="scenario/demand/industry/refineries">Refineries</a> </li>
         <li><a href="/scenario/demand/industry/fertilizers">Fertilizer production</a> </li>
@@ -329,22 +341,22 @@ en:
         <li><a href="/scenario/demand/industry/central-ict">Central ICT</a> </li>
         <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen via power-to-gas</a></li>
         </ul>
-        The method for calculating the residual heat potentials is described in the 
+        The method for calculating the residual heat potentials is described in the
         <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry/" target=\"_blank\">documentation</a>.
         <br></br>
-        Note that although you can set the supply of residual heat manually above the potentials shown, 
+        Note that although you can set the supply of residual heat manually above the potentials shown,
     heat_aquathermal_demand:
       title: Demand and potential of aquathermal heat
       description: |
-        This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water). 
-        The chart shows the distribution of heat demand between collective sources (heat networks) 
+        This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water).
+        The chart shows the distribution of heat demand between collective sources (heat networks)
     land_use_solar_wind:
       title: Land use of solar and wind (table)
       short_description:
       description: |
         This table shows the electricity production, technical parameters and land use of all solar and wind technologies.
-        Onshore inland wind production can be manually split into large-scale and small-scale turbines. 
-        You can set the share of each type of turbine in the 
+        Onshore inland wind production can be manually split into large-scale and small-scale turbines.
+        You can set the share of each type of turbine in the
         <a href="scenario/data/data_visuals/data/land-use-of-solar-and-wind-energy-supply"> Land use of solar and wind </a> section.
         Please note that the split between large-scale and small-scale wind turbines is for visual purposes only.
     land_use_solar_wind_chart:

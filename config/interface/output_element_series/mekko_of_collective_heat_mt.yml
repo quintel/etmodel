@@ -100,7 +100,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_backup_burner_mt_network_gas_mekko_of_collective_heat_mt
 - label: residual_heat_in_mekko_of_collective_heat
-  color: "#00008B"
+  color: "#cc0000"
   order_by: 5
   group: supply
   show_at_first:
@@ -136,7 +136,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_chp_local_engine_mt_network_gas_mekko_of_collective_heat_mt
 - label: energy_chp_local_wood_pellets_ccs_must_run_in_mekko_of_collective_heat
-  color: "#3D6B0D"
+  color: "#2B9865"
   order_by: 22
   group: supply
   show_at_first:
@@ -148,7 +148,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_chp_local_mt_wood_pellets_ccs_must_run_mekko_of_collective_heat_mt
 - label: energy_chp_local_wood_pellets_ccs_dispatchable_in_mekko_of_collective_heat
-  color: "#3D6B0D"
+  color: "#2ca02c"
   order_by: 22
   group: supply
   show_at_first:
@@ -160,7 +160,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_chp_local_mt_wood_pellets_ccs_dispatchable_mekko_of_collective_heat_mt
 - label: energy_chp_local_wood_pellets_must_run_in_mekko_of_collective_heat
-  color: "#000000"
+  color: "#268826"
   order_by: 22
   group: supply
   show_at_first:
@@ -172,7 +172,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_chp_local_mt_wood_pellets_must_run_mekko_of_collective_heat_mt
 - label: energy_chp_local_wood_pellets_dispatchable_in_mekko_of_collective_heat
-  color: "#000000"
+  color: "#34B334"
   order_by: 22
   group: supply
   show_at_first:
@@ -208,7 +208,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_chp_supercritical_mt_waste_mix_mekko_of_collective_heat_mt
 - label: energy_chp_ultra_supercritical_cofiring_coal_in_mekko_of_collective_heat
-  color: "#000000"
+  color: "#6C7C8C"
   order_by: 18
   group: supply
   show_at_first:
@@ -352,7 +352,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_flexibility_p2h_heatpump_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_heatpump_drink_water_water_ts_electricity_in_mekko_of_collective_heat
-  color: "black"
+  color: "#95CEE0"
   order_by:
   group: supply
   show_at_first:
@@ -364,7 +364,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_heatpump_drink_water_water_ts_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_heatpump_surface_water_water_ts_electricity_in_mekko_of_collective_heat
-  color: "black"
+  color: "#69A4B7"
   order_by:
   group: supply
   show_at_first:
@@ -376,7 +376,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_heatpump_surface_water_water_ts_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_heatpump_waste_water_water_ts_electricity_in_mekko_of_collective_heat
-  color: "black"
+  color: "#407486"
   order_by:
   group: supply
   show_at_first:
@@ -400,7 +400,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_solar_mt_solar_thermal_mekko_of_collective_heat_mt
 - label: energy_heat_well_deep_geothermal_in_mekko_of_collective_heat
-  color: "#FFA502"
+  color: "#FF8400"
   order_by: 7
   group: supply
   show_at_first:
@@ -412,7 +412,7 @@
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_well_deep_mt_geothermal_mekko_of_collective_heat_mt
 - label: energy_heat_well_shallow_heatpump_geothermal_in_mekko_of_collective_heat
-  color: "#000000"
+  color: "#F1A452"
   order_by:
   group: supply
   show_at_first:

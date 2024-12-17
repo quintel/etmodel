@@ -353,7 +353,7 @@
   key: energy_heat_flexibility_p2h_heatpump_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_heatpump_drink_water_water_ts_electricity_in_mekko_of_collective_heat
   color: "black"
-  order_by: 
+  order_by:
   group: supply
   show_at_first:
   is_target_line:
@@ -365,7 +365,7 @@
   key: energy_heat_heatpump_drink_water_water_ts_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_heatpump_surface_water_water_ts_electricity_in_mekko_of_collective_heat
   color: "black"
-  order_by: 
+  order_by:
   group: supply
   show_at_first:
   is_target_line:
@@ -377,7 +377,7 @@
   key: energy_heat_heatpump_surface_water_water_ts_mt_electricity_mekko_of_collective_heat_mt
 - label: energy_heat_heatpump_waste_water_water_ts_electricity_in_mekko_of_collective_heat
   color: "black"
-  order_by: 
+  order_by:
   group: supply
   show_at_first:
   is_target_line:
@@ -387,7 +387,7 @@
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
   key: energy_heat_heatpump_waste_water_water_ts_mt_electricity_mekko_of_collective_heat_mt
-- label: energy_heat_solar_solar_thermal_in_mekko_of_collective_heat
+- label: energy_heat_solar_thermal_in_mekko_of_collective_heat
   color: "#FFD700"
   order_by: 11
   group: supply
@@ -413,7 +413,7 @@
   key: energy_heat_well_deep_mt_geothermal_mekko_of_collective_heat_mt
 - label: energy_heat_well_shallow_heatpump_geothermal_in_mekko_of_collective_heat
   color: "#000000"
-  order_by: 
+  order_by:
   group: supply
   show_at_first:
   is_target_line: false

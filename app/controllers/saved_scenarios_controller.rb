@@ -45,15 +45,12 @@ class SavedScenariosController < ApplicationController
   end
 
   def discarded
-    @discarded_scenarios = Kaminari.paginate_array(
-        (
-          current_user.saved_scenarios.discarded.includes(:featured_scenario, :users) +
-          current_user.multi_year_charts.discarded.includes(:user)
-        )
-        .sort_by(&:updated_at)
-      )
-      .page(params[:page])
-      .per(10)
+    discarded_scenarios = (
+      current_user.saved_scenarios.discarded.includes(:featured_scenario, :users) +
+      current_user.multi_year_charts.discarded.includes(:user)
+    ).sort_by(&:updated_at)
+
+    @pagy, @discarded_scenarios = pagy_array(discarded_scenarios, limit: 10, page: params[:page])
 
     respond_to do |format|
       format.html
@@ -61,11 +58,12 @@ class SavedScenariosController < ApplicationController
   end
 
   def all
-    @saved_scenarios = SavedScenario.all
-      .includes(:featured_scenario, :users)
-      .order('updated_at DESC')
-      .page(params[:page])
-      .per(10)
+    @pagy, @saved_scenarios = pagy(
+      SavedScenario.includes(:featured_scenario, :users)
+        .order('updated_at DESC'),
+      limit: 10,
+      page: params[:page]
+    )
 
     respond_to do |format|
       format.html

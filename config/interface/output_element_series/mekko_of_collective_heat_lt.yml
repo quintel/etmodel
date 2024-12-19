@@ -37,7 +37,7 @@
   output_element_key: mekko_of_collective_heat_lt
   key: losses_in_heat_network_lt_distribution_mekko_of_collective_heat_lt
 - label: losses_in_heat_network_storage_in_mekko_of_collective_heat
-  color: "#FBCCD1"
+  color: "#98B2CC"
   order_by: 130
   group: demand
   show_at_first: false
@@ -49,7 +49,7 @@
   output_element_key: mekko_of_collective_heat_lt
   key: losses_in_heat_network_lt_storage_mekko_of_collective_heat_lt
 - label: unused_heat_in_heat_network_in_mekko_of_collective_heat
-  color: "#FF8C8C"
+  color: "#BFEFFF"
   order_by: 140
   group: demand
   show_at_first:
@@ -64,7 +64,7 @@
 
 # supply
 - label: energy_heat_import_steam_hot_water_in_mekko_of_collective_heat
-  color: "#e61919"
+  color: "#FF8C8C"
   order_by: 200
   group: supply
   show_at_first:
@@ -88,7 +88,7 @@
   output_element_key: mekko_of_collective_heat_lt
   key: energy_heat_backup_burner_lt_network_gas_mekko_of_collective_heat_lt
 - label: residual_heat_in_mekko_of_collective_heat
-  color: "#cc0000"
+  color: "#00008B"
   order_by: 220
   group: supply
   show_at_first:
@@ -124,7 +124,7 @@
   output_element_key: mekko_of_collective_heat_lt
   key: energy_heat_burner_lt_hydrogen_mekko_of_collective_heat_lt
 - label: energy_heat_heatpump_drink_water_water_ts_electricity_in_mekko_of_collective_heat
-  color: "#95CEE0"
+  color: "#c1f1f5"
   order_by: 250
   group: supply
   show_at_first:
@@ -136,7 +136,7 @@
   output_element_key: mekko_of_collective_heat_lt
   key: energy_heat_heatpump_drink_water_water_ts_lt_electricity_mekko_of_collective_heat_lt
 - label: energy_heat_heatpump_surface_water_water_ts_electricity_in_mekko_of_collective_heat
-  color: "#69A4B7"
+  color: "#87e3eb"
   order_by: 260
   group: supply
   show_at_first:
@@ -148,7 +148,7 @@
   output_element_key: mekko_of_collective_heat_lt
   key: energy_heat_heatpump_surface_water_water_ts_lt_electricity_mekko_of_collective_heat_lt
 - label: energy_heat_heatpump_waste_water_water_ts_electricity_in_mekko_of_collective_heat
-  color: "#407486"
+  color: "#9deef5"
   order_by: 270
   group: supply
   show_at_first:
@@ -184,7 +184,7 @@
   output_element_key: mekko_of_collective_heat_lt
   key: energy_heat_solar_lt_solar_thermal_mekko_of_collective_heat_lt
 - label: energy_heat_well_shallow_heatpump_geothermal_in_mekko_of_collective_heat
-  color: "#F1A452"
+  color: "#FFC04F"
   order_by: 300
   group: supply
   show_at_first:

@@ -1,6 +1,214 @@
+---
+# demand
+- label: demand_for_energy_heat_heatpump_waste_water_water_ts_mt_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#9deef5'
+  order_by: 100
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_heat_heatpump_waste_water_water_ts_mt_electricity_for_electricity_network_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_heat_heatpump_waste_water_water_ts_mt_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_heat_heatpump_water_water_ht_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#ADD8E6'
+  order_by: 110
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_heat_heatpump_water_water_ht_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_heat_heatpump_water_water_ht_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_heat_heatpump_water_water_lt_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#ADD8E6'
+  order_by: 120
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_heat_heatpump_water_water_lt_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_heat_heatpump_water_water_lt_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_heat_heatpump_water_water_mt_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#ADD8E6'
+  order_by: 130
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_heat_heatpump_water_water_mt_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_heat_heatpump_water_water_mt_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_heat_well_deep_ht_geothermal_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#FFA502'
+  order_by: 140
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_heat_well_deep_ht_geothermal_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_heat_well_deep_ht_geothermal_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_heat_well_deep_mt_geothermal_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#FFA502'
+  order_by: 150
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_heat_well_deep_mt_geothermal_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_heat_well_deep_mt_geothermal_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_heat_well_shallow_heatpump_mt_geothermal_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#FFC04F'
+  order_by: 160
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_heat_well_shallow_heatpump_mt_geothermal_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_heat_well_shallow_heatpump_mt_geothermal_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_heat_well_shallow_lt_geothermal_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#FFC04F'
+  order_by: 170
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_heat_well_shallow_lt_geothermal_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_heat_well_shallow_lt_geothermal_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_10_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#4D4D4D'
+  order_by: 180
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_10_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_10_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_11_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#4D4D4D'
+  order_by: 190
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_11_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_11_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_12_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#4D4D4D'
+  order_by: 200
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_12_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_12_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_1_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#800080'
+  order_by: 210
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_1_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_1_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_2_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#0984e3'
+  order_by: 220
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_2_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_2_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_3_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#f9ca24'
+  order_by: 230
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_3_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_3_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_4_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#b71540'
+  order_by: 240
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_4_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_4_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_5_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#00b894'
+  order_by: 250
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_5_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_5_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_6_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#4D4D4D'
+  order_by: 260
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_6_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_6_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_7_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#4D4D4D'
+  order_by: 270
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_7_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_7_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_8_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#4D4D4D'
+  order_by: 280
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_8_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_8_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_energy_interconnector_9_exported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#4D4D4D'
+  order_by: 290
+  group: demand
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: demand_for_energy_interconnector_9_exported_electricity_for_electricity_network_mekko
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_energy_interconnector_9_exported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
+
+
+
+# supply
 - label: supply_of_energy_power_supercritical_waste_mix_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#006266'
-  order_by: 100
+  order_by: 500
   group: supply 
   show_at_first:
   is_target_line: false
@@ -12,7 +220,7 @@
   key: supply_of_energy_power_supercritical_waste_mix_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_nuclear_small_modular_reactor_uranium_oxide_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#ca5ce0'
-  order_by: 110
+  order_by: 510
   group: supply 
   show_at_first:
   is_target_line: false
@@ -24,7 +232,7 @@
   key: supply_of_energy_power_nuclear_small_modular_reactor_uranium_oxide_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_hydro_river_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#0066ff'
-  order_by: 120
+  order_by: 520
   group: supply 
   show_at_first:
   is_target_line: false
@@ -36,7 +244,7 @@
   key: supply_of_energy_power_hydro_river_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_wood_pellets_must_run_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#5D7929'
-  order_by: 130
+  order_by: 530
   group: supply 
   show_at_first:
   is_target_line: false
@@ -48,7 +256,7 @@
   key: supply_of_energy_power_wood_pellets_must_run_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_combined_cycle_ccs_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#3D6B0D'
-  order_by: 140
+  order_by: 540
   group: supply 
   show_at_first:
   is_target_line: false
@@ -60,7 +268,7 @@
   key: supply_of_energy_power_combined_cycle_ccs_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_hydro_mountain_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#629DF9'
-  order_by: 150
+  order_by: 550
   group: supply 
   show_at_first:
   is_target_line: false
@@ -72,7 +280,7 @@
   key: supply_of_energy_power_hydro_mountain_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_hybrid_from_offshore_network_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#000000'
-  order_by: 160
+  order_by: 560
   group: supply 
   show_at_first:
   is_target_line: false
@@ -84,7 +292,7 @@
   key: supply_of_energy_power_hybrid_from_offshore_network_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_10_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4D4D4D'
-  order_by: 170
+  order_by: 570
   group: supply 
   show_at_first:
   is_target_line: false
@@ -96,7 +304,7 @@
   key: supply_of_energy_interconnector_10_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_ultra_supercritical_cofiring_ht_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#DFFBE5'
-  order_by: 180
+  order_by: 580
   group: supply 
   show_at_first:
   is_target_line: false
@@ -108,7 +316,7 @@
   key: supply_of_energy_chp_ultra_supercritical_cofiring_ht_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_ultra_supercritical_lignite_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#222F3E'
-  order_by: 190
+  order_by: 590
   group: supply 
   show_at_first:
   is_target_line: false
@@ -120,7 +328,7 @@
   key: supply_of_energy_power_ultra_supercritical_lignite_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_supercritical_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#2F2661'
-  order_by: 200
+  order_by: 600
   group: supply 
   show_at_first:
   is_target_line: false
@@ -132,7 +340,7 @@
   key: supply_of_energy_power_supercritical_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_turbine_hydrogen_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#09cff7'
-  order_by: 210
+  order_by: 610
   group: supply 
   show_at_first:
   is_target_line: false
@@ -144,7 +352,7 @@
   key: supply_of_energy_power_turbine_hydrogen_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_6_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4D4D4D'
-  order_by: 220
+  order_by: 620
   group: supply 
   show_at_first:
   is_target_line: false
@@ -156,7 +364,7 @@
   key: supply_of_energy_interconnector_6_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_solar_pv_offshore_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#ffae00'
-  order_by: 230
+  order_by: 630
   group: supply 
   show_at_first:
   is_target_line: false
@@ -168,7 +376,7 @@
   key: supply_of_energy_power_solar_pv_offshore_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_combined_cycle_hydrogen_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#00b2db'
-  order_by: 240
+  order_by: 640
   group: supply 
   show_at_first:
   is_target_line: false
@@ -180,7 +388,7 @@
   key: supply_of_energy_power_combined_cycle_hydrogen_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_supercritical_ccs_waste_mix_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#16a085'
-  order_by: 250
+  order_by: 650
   group: supply 
   show_at_first:
   is_target_line: false
@@ -192,7 +400,7 @@
   key: supply_of_energy_power_supercritical_ccs_waste_mix_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_ultra_supercritical_crude_oil_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#CD6133'
-  order_by: 260
+  order_by: 660
   group: supply 
   show_at_first:
   is_target_line: false
@@ -204,7 +412,7 @@
   key: supply_of_energy_power_ultra_supercritical_crude_oil_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_battery_solar_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#FFF47D'
-  order_by: 270
+  order_by: 670
   group: supply 
   show_at_first:
   is_target_line: false
@@ -216,7 +424,7 @@
   key: supply_of_energy_battery_solar_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_ultra_supercritical_ht_lignite_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#222F3E'
-  order_by: 280
+  order_by: 680
   group: supply 
   show_at_first:
   is_target_line: false
@@ -228,7 +436,7 @@
   key: supply_of_energy_chp_ultra_supercritical_ht_lignite_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_solar_pv_solar_radiation_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#ded976'
-  order_by: 290
+  order_by: 690
   group: supply 
   show_at_first:
   is_target_line: false
@@ -240,7 +448,7 @@
   key: supply_of_energy_power_solar_pv_solar_radiation_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_1_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#800080'
-  order_by: 300
+  order_by: 700
   group: supply 
   show_at_first:
   is_target_line: false
@@ -252,7 +460,7 @@
   key: supply_of_energy_interconnector_1_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_wind_turbine_coastal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4292c6'
-  order_by: 310
+  order_by: 710
   group: supply 
   show_at_first:
   is_target_line: false
@@ -264,7 +472,7 @@
   key: supply_of_energy_power_wind_turbine_coastal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_ultra_supercritical_cofiring_mt_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#DFFBE5'
-  order_by: 320
+  order_by: 720
   group: supply 
   show_at_first:
   is_target_line: false
@@ -276,7 +484,7 @@
   key: supply_of_energy_chp_ultra_supercritical_cofiring_mt_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_solar_csp_solar_radiation_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#ced976'
-  order_by: 330
+  order_by: 730
   group: supply 
   show_at_first:
   is_target_line: false
@@ -288,7 +496,7 @@
   key: supply_of_energy_power_solar_csp_solar_radiation_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_engine_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#DFE4EA'
-  order_by: 340
+  order_by: 740
   group: supply 
   show_at_first:
   is_target_line: false
@@ -300,7 +508,7 @@
   key: supply_of_energy_power_engine_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_combined_cycle_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#9DD5FA'
-  order_by: 350
+  order_by: 750
   group: supply 
   show_at_first:
   is_target_line: false
@@ -312,7 +520,7 @@
   key: supply_of_energy_power_combined_cycle_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_ultra_supercritical_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#D54CF7'
-  order_by: 360
+  order_by: 760
   group: supply 
   show_at_first:
   is_target_line: false
@@ -324,7 +532,7 @@
   key: supply_of_energy_power_ultra_supercritical_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_11_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4D4D4D'
-  order_by: 370
+  order_by: 770
   group: supply 
   show_at_first:
   is_target_line: false
@@ -336,7 +544,7 @@
   key: supply_of_energy_interconnector_11_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_combined_cycle_ccs_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#00A7B4'
-  order_by: 380
+  order_by: 780
   group: supply 
   show_at_first:
   is_target_line: false
@@ -348,7 +556,7 @@
   key: supply_of_energy_power_combined_cycle_ccs_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_turbine_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#B895F6'
-  order_by: 390
+  order_by: 790
   group: supply 
   show_at_first:
   is_target_line: false
@@ -360,7 +568,7 @@
   key: supply_of_energy_power_turbine_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_geothermal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#94F95C'
-  order_by: 400
+  order_by: 800
   group: supply 
   show_at_first:
   is_target_line: false
@@ -372,7 +580,7 @@
   key: supply_of_energy_power_geothermal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_ultra_supercritical_ccs_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#9977EE'
-  order_by: 410
+  order_by: 810
   group: supply 
   show_at_first:
   is_target_line: false
@@ -384,7 +592,7 @@
   key: supply_of_energy_power_ultra_supercritical_ccs_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_7_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4D4D4D'
-  order_by: 420
+  order_by: 820
   group: supply 
   show_at_first:
   is_target_line: false
@@ -396,7 +604,7 @@
   key: supply_of_energy_interconnector_7_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_combined_cycle_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#C6E0E9'
-  order_by: 430
+  order_by: 830
   group: supply 
   show_at_first:
   is_target_line: false
@@ -408,7 +616,7 @@
   key: supply_of_energy_power_combined_cycle_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_wind_turbine_inland_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#9292c6'
-  order_by: 440
+  order_by: 840
   group: supply 
   show_at_first:
   is_target_line: false
@@ -420,7 +628,7 @@
   key: supply_of_energy_power_wind_turbine_inland_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_nuclear_gen2_uranium_oxide_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4E60D1'
-  order_by: 450
+  order_by: 850
   group: supply 
   show_at_first:
   is_target_line: false
@@ -432,7 +640,7 @@
   key: supply_of_energy_power_nuclear_gen2_uranium_oxide_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_wood_pellets_dispatchable_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#7EA437'
-  order_by: 460
+  order_by: 860
   group: supply 
   show_at_first:
   is_target_line: false
@@ -444,7 +652,7 @@
   key: supply_of_energy_power_wood_pellets_dispatchable_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_supercritical_mt_waste_mix_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#218C74'
-  order_by: 470
+  order_by: 870
   group: supply 
   show_at_first:
   is_target_line: false
@@ -456,7 +664,7 @@
   key: supply_of_energy_chp_supercritical_mt_waste_mix_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_supercritical_ccs_mt_waste_mix_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#218C74'
-  order_by: 480
+  order_by: 880
   group: supply 
   show_at_first:
   is_target_line: false
@@ -468,7 +676,7 @@
   key: supply_of_energy_chp_supercritical_ccs_mt_waste_mix_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_2_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#0984e3'
-  order_by: 490
+  order_by: 890
   group: supply 
   show_at_first:
   is_target_line: false
@@ -480,7 +688,7 @@
   key: supply_of_energy_interconnector_2_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_9_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4D4D4D'
-  order_by: 500
+  order_by: 900
   group: supply 
   show_at_first:
   is_target_line: false
@@ -492,7 +700,7 @@
   key: supply_of_energy_interconnector_9_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_nuclear_gen3_uranium_oxide_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#201A39'
-  order_by: 510
+  order_by: 910
   group: supply 
   show_at_first:
   is_target_line: false
@@ -504,7 +712,7 @@
   key: supply_of_energy_power_nuclear_gen3_uranium_oxide_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_12_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4D4D4D'
-  order_by: 520
+  order_by: 920
   group: supply 
   show_at_first:
   is_target_line: false
@@ -516,7 +724,7 @@
   key: supply_of_energy_interconnector_12_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_ultra_supercritical_ht_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#485460'
-  order_by: 530
+  order_by: 930
   group: supply 
   show_at_first:
   is_target_line: false
@@ -528,7 +736,7 @@
   key: supply_of_energy_chp_ultra_supercritical_ht_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_supercritical_ht_waste_mix_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#218C74'
-  order_by: 540
+  order_by: 940
   group: supply 
   show_at_first:
   is_target_line: false
@@ -540,7 +748,7 @@
   key: supply_of_energy_chp_supercritical_ht_waste_mix_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_battery_wind_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#63A1C9'
-  order_by: 550
+  order_by: 950
   group: supply 
   show_at_first:
   is_target_line: false
@@ -552,7 +760,7 @@
   key: supply_of_energy_battery_wind_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_supercritical_ccs_ht_waste_mix_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#218C74'
-  order_by: 560
+  order_by: 960
   group: supply 
   show_at_first:
   is_target_line: false
@@ -564,7 +772,7 @@
   key: supply_of_energy_chp_supercritical_ccs_ht_waste_mix_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_4_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#b71540'
-  order_by: 570
+  order_by: 970
   group: supply 
   show_at_first:
   is_target_line: false
@@ -576,7 +784,7 @@
   key: supply_of_energy_interconnector_4_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_ultra_supercritical_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#AF63F1'
-  order_by: 580
+  order_by: 980
   group: supply 
   show_at_first:
   is_target_line: false
@@ -588,7 +796,7 @@
   key: supply_of_energy_power_ultra_supercritical_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_ultra_supercritical_mt_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#485460'
-  order_by: 590
+  order_by: 990
   group: supply 
   show_at_first:
   is_target_line: false
@@ -600,7 +808,7 @@
   key: supply_of_energy_chp_ultra_supercritical_mt_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_ultra_supercritical_mt_lignite_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#222F3E'
-  order_by: 600
+  order_by: 1000
   group: supply 
   show_at_first:
   is_target_line: false
@@ -612,7 +820,7 @@
   key: supply_of_energy_chp_ultra_supercritical_mt_lignite_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_ultra_supercritical_cofiring_coal_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#8643A9'
-  order_by: 610
+  order_by: 1010
   group: supply 
   show_at_first:
   is_target_line: false
@@ -624,7 +832,7 @@
   key: supply_of_energy_power_ultra_supercritical_cofiring_coal_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_combined_cycle_mt_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#A4B0BE'
-  order_by: 620
+  order_by: 1020
   group: supply 
   show_at_first:
   is_target_line: false
@@ -636,7 +844,7 @@
   key: supply_of_energy_chp_combined_cycle_mt_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_3_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#f9ca24'
-  order_by: 630
+  order_by: 1030
   group: supply 
   show_at_first:
   is_target_line: false
@@ -648,7 +856,7 @@
   key: supply_of_energy_interconnector_3_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_8_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4D4D4D'
-  order_by: 640
+  order_by: 1040
   group: supply 
   show_at_first:
   is_target_line: false
@@ -660,7 +868,7 @@
   key: supply_of_energy_interconnector_8_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_wind_turbine_offshore_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#7292c6'
-  order_by: 650
+  order_by: 1050
   group: supply 
   show_at_first:
   is_target_line: false
@@ -672,7 +880,7 @@
   key: supply_of_energy_power_wind_turbine_offshore_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_engine_diesel_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#295888'
-  order_by: 660
+  order_by: 1060
   group: supply 
   show_at_first:
   is_target_line: false
@@ -684,7 +892,7 @@
   key: supply_of_energy_power_engine_diesel_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_interconnector_5_imported_electricity_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#00b894'
-  order_by: 670
+  order_by: 1070
   group: supply 
   show_at_first:
   is_target_line: false
@@ -696,7 +904,7 @@
   key: supply_of_energy_interconnector_5_imported_electricity_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_wood_pellets_ccs_dispatchable_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#8C947E'
-  order_by: 680
+  order_by: 1080
   group: supply 
   show_at_first:
   is_target_line: false
@@ -708,7 +916,7 @@
   key: supply_of_energy_power_wood_pellets_ccs_dispatchable_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_combined_cycle_ht_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#A4B0BE'
-  order_by: 690
+  order_by: 1090
   group: supply 
   show_at_first:
   is_target_line: false
@@ -720,7 +928,7 @@
   key: supply_of_energy_chp_combined_cycle_ht_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#222F3E'
-  order_by: 700
+  order_by: 1100
   group: supply 
   show_at_first:
   is_target_line: false
@@ -732,7 +940,7 @@
   key: supply_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_power_wood_pellets_ccs_must_run_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#3D6B0D'
-  order_by: 710
+  order_by: 1110
   group: supply 
   show_at_first:
   is_target_line: false
@@ -744,7 +952,7 @@
   key: supply_of_energy_power_wood_pellets_ccs_must_run_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_engine_mt_biogas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#CE8814'
-  order_by: 720
+  order_by: 1120
   group: supply
   show_at_first:
   is_target_line: false
@@ -756,7 +964,7 @@
   key: supply_of_energy_chp_local_engine_mt_biogas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_engine_ht_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#CE8814'
-  order_by: 730
+  order_by: 1130
   group: supply
   show_at_first:
   is_target_line: false
@@ -768,7 +976,7 @@
   key: supply_of_energy_chp_local_engine_ht_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_ht_wood_pellets_dispatchable_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#60A915'
-  order_by: 740
+  order_by: 1140
   group: supply
   show_at_first:
   is_target_line: false
@@ -780,7 +988,7 @@
   key: supply_of_energy_chp_local_ht_wood_pellets_dispatchable_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_engine_mt_network_gas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#DFE4EA'
-  order_by: 750
+  order_by: 1150
   group: supply
   show_at_first:
   is_target_line: false
@@ -792,7 +1000,7 @@
   key: supply_of_energy_chp_local_engine_mt_network_gas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_ht_wood_pellets_must_run_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#3D6B0D'
-  order_by: 760
+  order_by: 1160
   group: supply
   show_at_first:
   is_target_line: false
@@ -804,7 +1012,7 @@
   key: supply_of_energy_chp_local_ht_wood_pellets_must_run_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_ht_wood_pellets_ccs_dispatchable_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#A24A2C'
-  order_by: 770
+  order_by: 1170
   group: supply
   show_at_first:
   is_target_line: false
@@ -816,7 +1024,7 @@
   key: supply_of_energy_chp_local_ht_wood_pellets_ccs_dispatchable_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_ht_wood_pellets_ccs_must_run_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#6F1D01'
-  order_by: 780
+  order_by: 1180
   group: supply
   show_at_first:
   is_target_line: false
@@ -828,7 +1036,7 @@
   key: supply_of_energy_chp_local_ht_wood_pellets_ccs_must_run_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_engine_ht_biogas_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#000000'
-  order_by: 790
+  order_by: 1190
   group: supply
   show_at_first:
   is_target_line: false
@@ -840,7 +1048,7 @@
   key: supply_of_energy_chp_local_engine_ht_biogas_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_mt_wood_pellets_ccs_must_run_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#99B779'
-  order_by: 800
+  order_by: 1200
   group: supply
   show_at_first:
   is_target_line: false
@@ -852,7 +1060,7 @@
   key: supply_of_energy_chp_local_mt_wood_pellets_ccs_must_run_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_mt_wood_pellets_ccs_dispatchable_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#8AE032'
-  order_by: 810
+  order_by: 1210
   group: supply
   show_at_first:
   is_target_line: false
@@ -864,7 +1072,7 @@
   key: supply_of_energy_chp_local_mt_wood_pellets_ccs_dispatchable_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_mt_wood_pellets_dispatchable_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#60A915'
-  order_by: 820
+  order_by: 1220
   group: supply
   show_at_first:
   is_target_line: false
@@ -876,7 +1084,7 @@
   key: supply_of_energy_chp_local_mt_wood_pellets_dispatchable_for_electricity_network_mekko_mekko_of_electricity_network
 - label: supply_of_energy_chp_local_mt_wood_pellets_must_run_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#3D6B0D'
-  order_by: 830
+  order_by: 1230
   group: supply
   show_at_first:
   is_target_line: false
@@ -886,3 +1094,15 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: supply_of_energy_chp_local_mt_wood_pellets_must_run_for_electricity_network_mekko_mekko_of_electricity_network
+- label: supply_of_energy_power_hv_network_shortage_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: '#000000'
+  order_by: 1240
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_energy_power_hv_network_shortage_for_electricity_network_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_electricity_network
+  key: supply_of_energy_power_hv_network_shortage_for_electricity_network_mekko_mekko_of_electricity_network

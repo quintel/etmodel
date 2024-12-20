@@ -22,8 +22,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -36,8 +36,8 @@
   show_point_label: false
   growth_chart: false
   key: chp_properties
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -50,9 +50,54 @@
   show_point_label: false
   growth_chart: false
   key: collective_heat_mekko
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: true
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko
+  related_output_element_key: heat_network_demand
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_collective_heat_ht
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko
+  related_output_element_key: heat_network_demand
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_collective_heat_mt
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko
+  related_output_element_key: heat_network_demand
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: collective_heat
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_collective_heat_lt
+  max_axis_value:
+  min_axis_value:
+  hidden: false
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: mekko
@@ -65,8 +110,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_demand_ht
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -79,8 +124,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_demand_mt
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -93,8 +138,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_demand_lt
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -107,8 +152,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_production_ht
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -121,8 +166,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_production_mt
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -135,8 +180,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_production_lt
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -149,12 +194,12 @@
   show_point_label: false
   growth_chart: false
   key: industrial_heat_mekko
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  dependent_on: 
-  description: 
+  dependent_on:
+  description:
   output_element_type_name: mekko
 - under_construction: false
   unit: MWh
@@ -164,8 +209,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_storage_lt
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -178,8 +223,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_storage_mt
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -192,8 +237,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_network_storage_ht
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -206,8 +251,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_cost_capacity_ht
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -220,8 +265,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_cost_capacity_mt
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -234,8 +279,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_cost_capacity_lt
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -282,8 +327,8 @@
   show_point_label: false
   growth_chart: false
   key: heat_aquathermal_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''

@@ -276,14 +276,14 @@
         chart below shows the yearly balance of heat produced and consumed.
       </p>
 
-      {% chart collective_heat_mekko %}
+      {% chart sankey_heat_networks %}
         Demand and supply of district heating
       {% endchart %}
 
-      {% if future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko > 0.0 %}
+      {% if future.unused_heat_in_heat_network > 0.0 %}
         <p>
           There is
-          {{ future.energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko | autoscale: 'MJ'}}
+          {{ future.unused_heat_in_heat_network | autoscale: 'PJ'}}
           excess heat produced in agriculture or industry which flows back into the central heat
           network but is not used by other sectors.
         </p>
@@ -298,7 +298,7 @@
       {% else %}
         <p>
           There is
-          {{ future.energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko | autoscale: 'MJ'}}
+          {{ future.heat_production_from_backup_burner_network_gas | autoscale: 'MJ'}}
           insufficient heat produced to satisfy the demand of the central heat network. A backup
           gas heater is deployed to satisfy the deficit.
         </p>

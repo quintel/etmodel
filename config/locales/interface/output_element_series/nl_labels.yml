@@ -106,9 +106,13 @@ nl:
         energy_chp_combined_cycle_network_gas_steam_hot_water_output_curve: 'Gas STEG WKK'
         energy_chp_local_engine_biogas_steam_hot_water_output_curve: 'Biogas-WKK'
         energy_chp_local_engine_network_gas_steam_hot_water_output_curve: 'Gasmotor-WKK '
+        energy_chp_local_wood_pellets_must_run_in_mekko_of_collective_heat: 'Biomassa-WKK (niet-regelbaar)'
         energy_chp_local_wood_pellets_must_run_steam_hot_water_output_curve: 'Biomassa-WKK (must-run)'
+        energy_chp_local_wood_pellets_dispatchable_in_mekko_of_collective_heat: 'Biomassa-WKK (regelbaar)'
         energy_chp_local_wood_pellets_dispatchable_steam_hot_water_output_curve: 'Biomassa-WKK (regelbaar)'
         energy_chp_local_wood_pellets_ccs_must_run_steam_hot_water_output_curve: 'Biomassa-WKK + CCS (must-run)'
+        energy_chp_local_wood_pellets_ccs_must_run_in_mekko_of_collective_heat: 'Biomassa-WKK + CCS (niet-regelbaar)'
+        energy_chp_local_wood_pellets_ccs_dispatchable_in_mekko_of_collective_heat: 'Biomassa-WKK + CCS (regelbaar)'
         energy_chp_local_wood_pellets_ccs_dispatchable_steam_hot_water_output_curve: 'Biomassa-WKK + CCS (regelbaar)'
         energy_chp_supercritical_waste_mix_steam_hot_water_output_curve: 'Afval-WKK'
         energy_chp_supercritical_ccs_waste_mix_steam_hot_water_output_curve: 'Afval-WKK + CCS'
@@ -124,8 +128,11 @@ nl:
         energy_heat_flexibility_p2h_heatpump_electricity_steam_hot_water_output_curve: "Power-to-heat warmtepomp"
         energy_heat_flexibility_p2h_boiler_electricity_steam_hot_water_output_curve: "Power-to-heat boiler"
         energy_heat_heatpump_water_water_electricity_steam_hot_water_output_curve: 'Collective bodemwarmtepomp'
+        energy_heat_heatpump_surface_water_water_ts_electricity_in_mekko_of_collective_heat: 'Warmtepomp met aquathermie (TEO)'
         energy_heat_heatpump_surface_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TEO)'
+        energy_heat_heatpump_waste_water_water_ts_electricity_in_mekko_of_collective_heat: 'Warmtepomp met aquathermie (TEA)'
         energy_heat_heatpump_waste_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TEA)'
+        energy_heat_heatpump_drink_water_water_ts_electricity_in_mekko_of_collective_heat: 'Warmtepomp met aquathermie (TED)'
         energy_heat_heatpump_drink_water_water_ts_electricity_steam_hot_water_output_curve: 'Warmtepomp met aquathermie (TED)'
         energy_heat_boiler_electricity_steam_hot_water_output_curve: 'Elektrische boiler'
         energy_heat_import_steam_hot_water_steam_hot_water_output_curve: 'Geïmporteerde warmte'
@@ -141,15 +148,10 @@ nl:
         buildings_final_demand_steam_hot_water_input_curve: 'Gebouwen'
         households_final_demand_steam_hot_water_input_curve: 'Huishoudens'
         other_final_demand_steam_hot_water_input_curve: 'Overig'
-        energy_direct_air_capture_in_collective_heat_network_mekko: "Direct Air Capture (CCUS)"
-        energy_chp_combined_cycle_network_gas_in_heat_network_mekko: "Gas WKK - grootschalig"
-        energy_chp_supercritical_waste_mix_in_heat_network_mekko: "Afval WKK - grootschalig"
-        energy_chp_ultra_supercritical_coal_in_heat_network_mekko: "Kolen WKK - grootschalig"
-        energy_chp_ultra_supercritical_cofiring_coal_in_heat_network_mekko: "Bijstook kolen WKK - grootschalig"
-        energy_chp_ultra_supercritical_lignite_in_heat_network_mekko: "Bruinkool WKK - grootschalig"
-        energy_heat_network_backup_heater_network_gas_in_heat_network_mekko: "Warmtetekort (gas back-up)"
-        energy_heat_network_loss_in_heat_network_mekko: "Verliezen warmtenet"
-        energy_heat_network_unused_steam_hot_water_in_heat_network_mekko: "Warmte-overschot (verspild)"
+        energy_chp_supercritical_waste_mix_in_mekko_of_collective_heat: "Afval-WKK"
+        energy_chp_ultra_supercritical_coal_in_mekko_of_collective_heat: "Poederkolen-WKK"
+        energy_chp_ultra_supercritical_cofiring_coal_in_mekko_of_collective_heat: "Poederkolen-WKK met bijstook"
+        energy_chp_ultra_supercritical_lignite_in_mekko_of_collective_heat: "Bruinkolen-WKK"
         energy_heat_network_storage_in: "Warmte naar (seizoens)opslag"
         energy_heat_network_storage_out: "Warmte uit (seizoens)opslag"
         energy_heat_network_storage: "(Seizoens)opslag"
@@ -174,10 +176,6 @@ nl:
         heat_network_demand_buildings: "Gebouwen"
         heat_network_demand_agriculture: "Landbouw"
         heat_network_demand_other: "Overig"
-        households_heat_network_connection_steam_hot_water_in_heat_network_mekko: "Huishoudens"
-        industry_locally_available_steam_hot_water_in_heat_network_mekko: "Industrie"
-        industry_unused_local_production_steam_hot_water_in_heat_network_mekko: "Warmte-aanbod industrie"
-        other_final_demand_steam_hot_water_in_heat_network_mekko: "Overig"
         total_heat_network_demand_agriculture: "Warmtenetvraag van landbouw"
         total_heat_network_demand_industry: "Warmtenetvraag van industrie"
         baseload_demand: "Basislast elektriciteitsvraag"
@@ -1003,7 +1001,7 @@ nl:
         energy_chp_local_wood_pellets: 'Biomassa-WKK'
         energy_chp_local_wood_pellets_must_run: 'Biomassa-WKK (must-run)'
         energy_chp_local_wood_pellets_dispatchable: 'Biomassa-WKK (regelbaar)'
-        energy_chp_local_wood_pellets_ccs_must_run: 'Biomassa-WKK + CCS (must-run)'
+        energy_chp_local_wood_pellets_ccs_must_run: 'Biomassa-WKK + CCS (niet-regelbaar)'
         energy_chp_local_wood_pellets_ccs_dispatchable: 'Biomassa-WKK + CCS (regelbaar)'
         energy_chp_local_engine_network_gas: 'Gasmotor-WKK'
         energy_chp_local_engine_biogas: 'Biogas-WKK'
@@ -1483,36 +1481,34 @@ nl:
         bunkers_final_demand_hydrogen: "Brandstof voor internationaal transport"
         energy_heat_from_hydrogen: "Warmte voor warmtenetten"
         energy_synthetic_products_from_hydrogen: "Grondstof voor synthetische producten"
-        other_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Overig"
-        energy_heat_flexibility_p2h_boiler_electricity_in_collective_heat_network_mekko: "Power-to-heat boiler"
-        energy_heat_flexibility_p2h_heatpump_electricity_in_collective_heat_network_mekko: "Power-to-heat warmtepomp"
-        energy_heat_unused_steam_hot_water_in_collective_heat_network_mekko: "Warmte-overschot (verspild)"
-        energy_heat_network_storage_loss_in_collective_heat_network_mekko: "Opslagverliezen (incl. overschot)"
-        energy_heat_well_geothermal_in_collective_heat_network_mekko: "Geothermie"
-        households_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Huishoudens"
-        energy_heat_burner_wood_pellets_in_collective_heat_network_mekko: "Biomassaketel"
-        energy_heat_distribution_loss_in_collective_heat_network_mekko: "Transportverliezen"
-        energy_heat_heatpump_water_water_electricity_in_collective_heat_network_mekko: "Collectieve water warmtepomp"
-        energy_heat_boiler_electricity_in_collective_heat_network_mekko: "Elektrische boiler"
-        energy_heat_import_steam_hot_water_in_collective_heat_network_mekko: "Geïmporteerde restwarmte"
-        energy_heat_solar_thermal_in_collective_heat_network_mekko: "Zonthermie"
-        energy_heat_backup_burner_network_gas_in_collective_heat_network_mekko: "Warmtetekort (gas back-up) "
-        energy_heat_burner_crude_oil_in_collective_heat_network_mekko: "Olieketel"
-        energy_heat_burner_hydrogen_in_collective_heat_network_mekko: "Waterstofketel"
-        energy_heat_burner_network_gas_in_collective_heat_network_mekko: "Gasketel (netwerk gas)"
-        energy_heat_burner_waste_mix_in_collective_heat_network_mekko: "Afvalverbranding"
-        energy_heat_industry_residual_heat_in_collective_heat_network_mekko: "Restwarmte uit de industrie"
-        energy_chp_supercritical_waste_mix_in_collective_heat_network_mekko: "Afval WKK"
-        energy_chp_supercritical_ccs_waste_mix_in_collective_heat_network_mekko: "Afval WKK CCS"
-        energy_chp_ultra_supercritical_lignite_in_collective_heat_network_mekko: "Bruinkool WKK"
-        energy_chps_coal_in_collective_heat_network_mekko: "Kolen WKK"
-        energy_chp_local_engine_network_gas_in_collective_heat_network_mekko: "Gasmotor WKK "
-        energy_chp_local_wood_pellets_in_collective_heat_network_mekko: "Biomassa WKK"
-        buildings_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Gebouwen"
-        energy_chp_combined_cycle_network_gas_in_collective_heat_network_mekko: "Gas STEG WKK"
-        energy_chp_local_engine_biogas_in_collective_heat_network_mekko: "Biogas WKK"
-        agriculture_final_demand_steam_hot_water_in_collective_heat_network_mekko: "Landbouw"
-        energy_heat_burner_coal_in_collective_heat_network_mekko: "Kolenketel"
+        other_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Overig eindgebruik"
+        energy_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Energie eindgebruik"
+        energy_heat_flexibility_p2h_boiler_electricity_in_mekko_of_collective_heat: "Power-to-heat boiler"
+        energy_heat_flexibility_p2h_heatpump_electricity_in_mekko_of_collective_heat: "Power-to-heat warmtepomp"
+        unused_heat_in_heat_network_in_mekko_of_collective_heat: "Onbenutte warmte"
+        losses_in_heat_network_storage_in_mekko_of_collective_heat: "Opslagverliezen"
+        energy_heat_well_deep_geothermal_in_mekko_of_collective_heat: "Diepe geothermie"
+        energy_heat_well_shallow_heatpump_geothermal_in_mekko_of_collective_heat: "Ondiepe geothermie met warmtepomp"
+        households_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Huishoudens eindgebruik"
+        energy_heat_burner_wood_pellets_in_mekko_of_collective_heat: "Biomassaketel"
+        losses_in_heat_network_distribution_in_mekko_of_collective_heat: "Transportverliezen"
+        energy_heat_heatpump_water_water_electricity_in_mekko_of_collective_heat: "Collectieve water warmtepomp"
+        energy_heat_boiler_electricity_in_mekko_of_collective_heat: "Elektrische boiler"
+        energy_heat_import_steam_hot_water_in_mekko_of_collective_heat: "Warmte-import"
+        energy_heat_solar_thermal_in_mekko_of_collective_heat: "Zonthermie"
+        energy_heat_backup_burner_network_gas_in_mekko_of_collective_heat: "Warmtetekort (gas back-up) "
+        energy_heat_burner_crude_oil_in_mekko_of_collective_heat: "Olieketel"
+        energy_heat_burner_hydrogen_in_mekko_of_collective_heat: "Waterstofketel"
+        energy_heat_burner_network_gas_in_mekko_of_collective_heat: "Gasketel (netwerkgas)"
+        energy_heat_burner_waste_mix_in_mekko_of_collective_heat: "Afvalketel"
+        residual_heat_in_mekko_of_collective_heat: "Restwarmte"
+        energy_chp_supercritical_ccs_waste_mix_in_mekko_of_collective_heat: "Afval-WKK + CCS"
+        energy_chp_local_engine_network_gas_in_mekko_of_collective_heat: "Gasmotor-WKK"
+        buildings_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Gebouwen eindgebruik"
+        energy_chp_combined_cycle_network_gas_in_mekko_of_collective_heat: "Gas STEG WKK"
+        energy_chp_local_engine_biogas_in_mekko_of_collective_heat: "Biogas-WKK"
+        agriculture_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Landbouw eindgebruik"
+        energy_heat_burner_coal_in_mekko_of_collective_heat: "Kolenketel"
         industry_final_demand_steam_hot_water_in_industrial_heat_network_mekko: "Warmtenetvraag Industrie"
         industry_unused_local_production_steam_hot_water_in_industrial_heat_network_mekko: "Warmte-overschot (verspild)"
         industry_demand_chemical_fertilizers_transformation_heat_network_mekko: "Transformatie (kunstmestsector)"

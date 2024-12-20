@@ -13,7 +13,7 @@
           %ul#version-links
             %li{style: 'margin-bottom:1rem'}= t('versions.switch')
             - MyEtm::Version.all_other_versions.each do |version|
-              %li= link_to "##{version.tag}", version.url
+              %li= link_to "##{version.tag}" # , version.url
     .app-nav
       = render partial: 'layouts/etm/about_menu'
       = link_to t('app_nav.updates'), whats_new_path, class: 'nav-link'

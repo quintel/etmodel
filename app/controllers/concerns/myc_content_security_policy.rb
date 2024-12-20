@@ -5,7 +5,7 @@ module MycContentSecurityPolicy
   # Internal: For requests originating in the "multi-year charts" application, we must loading the
   # input elements from the same domain as the application.
   def myc_content_security_policy
-    url = Settings.multi_year_charts_url
+    url = Settings.collections_url
 
     return unless url
 

@@ -297,6 +297,12 @@ class @ChartList extends Backbone.Collection
   setup_callbacks: ->
     load_chart = @load
 
+    # Event binding for downloading CSV
+    $(document).on 'touchend click', 'a.download_csv', (e) =>
+      e.preventDefault()
+      holder_id = $(e.target).closest('.chart_holder').data('holder_id')
+      @download_csv(holder_id)
+
     # Launch the chart picker popup
     #
     $(document).on "touchend click", "a.select_chart, a.add_chart", (e) =>
@@ -430,3 +436,36 @@ class @ChartList extends Backbone.Collection
         ]
 
         zoomChart(url.join('/'), target.data('chartFormat'))
+
+  download_csv: (holder_id) ->
+    chart = @chart_in_holder(holder_id)
+    unless chart
+      console.error('No chart found for holder_id:', holder_id)
+      return
+    table_data = chart.get_table_data()
+    csv_content = @convert_to_csv(table_data)
+
+    # Fetch the title from the DOM
+    title = $("[data-holder_id='#{holder_id}'] h3").text()
+    if !title
+      title = 'Chart'
+    safe_title = title.replace(/[<>:"/\\|?*]+/g, '') # Remove invalid filename characters
+    filename = "#{safe_title}.csv"
+    @trigger_csv_download(csv_content, filename)
+
+  convert_to_csv: (data) ->
+    csv = ''
+    for row in data
+      csv += row.join(',') + '\n'
+    csv
+
+  trigger_csv_download: (csv_content, filename) ->
+    blob = new Blob([csv_content], { type: 'text/csv;charset=utf-8;' })
+    link = document.createElement("a")
+    url = URL.createObjectURL(blob)
+    link.setAttribute("href", url)
+    link.setAttribute("download", filename)
+    link.style.visibility = 'hidden'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)

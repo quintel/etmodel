@@ -10,16 +10,19 @@ module API
     before_action(only: %i[destroy])       { verify_scopes!(%w[scenarios:read scenarios:delete]) }
 
     def index
-      scenarios = current_user
-        .saved_scenarios
-        .order(created_at: :desc)
-        .page((params[:page].presence || 1).to_i)
-        .per((params[:limit].presence || 25).to_i.clamp(1, 100))
+      @pagy, scenarios = pagy(
+        current_user
+          .saved_scenarios
+          .order(created_at: :desc),
+        page: (params[:page].presence || 1).to_i,
+        items: (params[:limit].presence || 25).to_i.clamp(1, 100)
+      )
 
       render json: PaginationSerializer.new(
+        pagy: @pagy,
         collection: scenarios,
         serializer: ->(item) { item },
-        url_for: ->(page, limit) { api_saved_scenarios_url(page:, limit:) }
+        url_for: ->(page, limit) { api_saved_scenarios_url(page: page, limit: limit) }
       )
     end
 

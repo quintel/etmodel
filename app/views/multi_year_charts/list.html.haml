@@ -18,7 +18,7 @@
 
       - if @multi_year_charts.any?
         = render partial: 'multi_year_chart_row', collection: @multi_year_charts
-        = paginate @multi_year_charts
+        != pagy_nav_custom(@pagy)
       - else
         .empty-state
           %h4= t('multi_year_charts.title')

@@ -24,8 +24,9 @@ en:
         in the current and future scenarios.
     use_of_transport_fuels:
       title: Transport fuel mix
-      short_description: ''
-      description: This chart shows the road transport fuel mix in the present and
+      short_description:
+      description: |
+        This chart shows the road transport fuel mix in the present and
         future. The latter is the result of your settings in sections 'Demand' and
         'Supply'.
     refinery:
@@ -103,17 +104,17 @@ en:
         in sections 'Demand' (size of the fertilizers industry) and 'Flexibility'
         (conversion to gas).
     network_gas_demand:
-      title: Network gas demand
-      short_description: ''
-      description: ''
+      title: Network gas demand per hour
+      short_description:
+      description:
     network_gas_production:
-      title: Network gas production
-      short_description: ''
-      description: ''
+      title: Network gas production per hour
+      short_description:
+      description:
     network_gas_storage:
-      title: Network gas storage
-      short_description: ''
-      description: ''
+      title: Network gas storage per hour
+      short_description:
+      description:
     source_of_heat_production:
       title: Heat and cold production
       short_description: ''
@@ -160,39 +161,39 @@ en:
         See the <a href="https://docs.energytransitionmodel.com/main/heat-networks/" target =\"_blank\">documentation</a>
         on district heating for more information on how heat networks are modelled in the ETM.
     heat_network_demand_ht:
-      title: HT district heating demand per hour
-      short_description: ''
-      description: ''
+      title: District heating (HT) demand per hour
+      short_description:
+      description:
     heat_network_demand_mt:
-      title: MT district heating demand per hour
-      short_description: ''
-      description: ''
+      title: District heating (MT) demand per hour
+      short_description:
+      description:
     heat_network_demand_lt:
-      title: LT district heating demand per hour
-      short_description: ''
-      description: ''
+      title: District heating (LT) demand per hour
+      short_description:
+      description:
     heat_network_production_ht:
-      title: HT district heating production per hour
-      short_description: ''
-      description: ''
+      title: District heating (HT) production per hour
+      short_description:
+      description:
     heat_network_production_mt:
-      title: MT district heating production per hour
-      short_description: ''
-      description: ''
+      title: District heating (MT) production per hour
+      short_description:
+      description:
     heat_network_production_lt:
-      title: LT district heating production per hour
+      title: District heating (LT) production per hour
       short_description:
       description:
     heat_network_storage_ht:
-      title: HT district heating (seasonal) storage per hour
+      title: District heating (HT) storage per hour
       short_description:
       description:
     heat_network_storage_mt:
-      title: MT district heating (seasonal) storage per hour
+      title: District heating (MT) storage per hour
       short_description:
       description:
     heat_network_storage_lt:
-      title: LT district heating (seasonal) storage per hour
+      title: District heating (LT) storage per hour
       short_description:
       description:
     sankey_heat_networks:
@@ -204,20 +205,20 @@ en:
       short_description:
       description:
     heat_cost_capacity_ht:
-      title: 'HT district heating sources: capacities and marginal costs'
-      short_description: ''
-      description: ''
+      title: 'District heating (HT) sources: capacities and marginal costs'
+      short_description:
+      description:
     heat_cost_capacity_mt:
-      title: 'MT district heating sources: capacities and marginal costs'
-      short_description: ''
-      description: ''
+      title: 'District heating (MT) sources: capacities and marginal costs'
+      short_description:
+      description:
     heat_cost_capacity_lt:
-      title: 'LT district heating sources: capacities and marginal costs'
-      short_description: ''
-      description: ''
+      title: 'District heating (LT) sources: capacities and marginal costs'
+      short_description:
+      description:
     mekko_of_hydrogen_network:
-      title: Supply and demand of the central hydrogen network
-      short_description: ''
+      title: Hydrogen supply and demand
+      short_description:
       description: |
         This chart shows the supply and demand categories of the central hydrogen network. The ETM always
         balances supply and demand of hydrogen. This means that an excess of hydrogen supply is exported via the export back-up.
@@ -231,7 +232,7 @@ en:
       short_description:
       description:
     hydrogen_storage:
-      title: Hourly stored volume of hydrogen
+      title: Hydrogen storage per hour
       short_description:
       description: |
         This chart shows the storage volumes of hydrogen stored in salt caverns and depleted gas fields throughout the year.
@@ -289,9 +290,9 @@ en:
         Alternatively, you can download the Levelised costs of hydrogen production export, which can be found <a href="/scenario/data/data_export/hourly-curves-for-hydrogen">here</a>,
         for more information.
     mekko_of_kerosene_demand_supply:
-      title: Supply and demand of kerosene
-      short_description: ''
-      description: ''
+      title: Kerosene supply and demand
+      short_description:
+      description:
     mekko_of_oil_mix:
       title: Final demand of oil per sector and per product
       short_description:
@@ -304,7 +305,7 @@ en:
         <li><b>other oil</b> (a.o. crude oil, gasoline, fuel oil, naphtha, petcokes and refinery gas)</li>
         <li><b>other bio-oil</b> (biogasoline, other biofuels)</li>
     mekko_of_ammonia_demand_supply:
-      title: Supply and demand of ammonia
+      title: Ammonia supply and demand
       short_description:
       description: |
         This charts compares the supply and demand of ammonia (NH<sub>3</sub>). You can set the supply

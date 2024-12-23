@@ -103,17 +103,17 @@ nl:
         als gevolg van jouw instellingen in de onderdelen 'Vraag' (omvang van de kunstmestindustrie)
         en 'Flexibiliteit' (conversie naar gas).
     network_gas_demand:
-      title: Gasvraag
-      short_description: ''
-      description: ''
+      title: Netwerkgasvraag per uur
+      short_description:
+      description:
     network_gas_production:
-      title: Gasproductie
-      short_description: ''
-      description: ''
+      title: Netwerkgasproductie per uur
+      short_description:
+      description:
     network_gas_storage:
-      title: Gasberging
-      short_description: ''
-      description: ''
+      title: Netwerkgasopslag per uur
+      short_description:
+      description:
     source_of_heat_production:
       title: Warmte en koude productie
       short_description: ''
@@ -161,39 +161,39 @@ nl:
         Zie de <a href="https://docs.energytransitionmodel.com/main/heat-networks/" target =\"_blank\">documentatie</a>
         over warmtenetten voor meer informatie over hoe warmtenetten worden gemodelleerd in het ETM.
     heat_network_demand_ht:
-      title: HT-warmtenetten vraag per uur
+      title: Warmtenetten (HT) vraag per uur
       short_description:
       description:
     heat_network_demand_mt:
-      title: MT-warmtenetten vraag per uur
+      title: Warmtenetten (MT) vraag per uur
       short_description:
       description:
     heat_network_demand_lt:
-      title: LT-warmtenetten vraag per uur
+      title: Warmtenetten (LT) vraag per uur
       short_description:
       description:
     heat_network_production_ht:
-      title: HT-warmtenetten productie per uur
+      title: Warmtenetten (HT) productie per uur
       short_description:
       description:
     heat_network_production_mt:
-      title: MT-warmtenetten productie per uur
+      title: Warmtenetten (MT) productie per uur
       short_description:
       description:
     heat_network_production_lt:
-      title: LT-warmtenetten productie per uur
+      title: Warmtenetten (LT) productie per uur
       short_description:
       description:
     heat_network_storage_ht:
-      title: HT-warmtenetten (seizoens)opslag per uur
+      title: Warmtenetten (HT) opslag per uur
       short_description:
       description:
     heat_network_storage_mt:
-      title: MT-warmtenetten (seizoens)opslag per uur
+      title: Warmtenetten (MT) opslag per uur
       short_description:
       description:
     heat_network_storage_lt:
-      title: LT-warmtenetten (seizoens)opslag per uur
+      title: Warmtenetten (LT) opslag per uur
       short_description:
       description:
     sankey_heat_networks:
@@ -205,20 +205,20 @@ nl:
       short_description:
       description:
     heat_cost_capacity_ht:
-      title: 'HT-warmtenetbronnen: vermogens en marginale kosten'
-      short_description: ''
-      description: ''
+      title: 'Warmtenetten (HT) bronnen: vermogens en marginale kosten'
+      short_description:
+      description:
     heat_cost_capacity_mt:
-      title: 'MT-warmtenetbronnen: vermogens en marginale kosten'
-      short_description: ''
-      description: ''
+      title: 'Warmtenetten (MT) bronnen: vermogens en marginale kosten'
+      short_description:
+      description:
     heat_cost_capacity_lt:
-      title: 'LT-warmtenetbronnen: vermogens en marginale kosten'
-      short_description: ''
-      description: ''
+      title: 'Warmtenetten (LT) bronnen: vermogens en marginale kosten'
+      short_description:
+      description:
     mekko_of_hydrogen_network:
-      title: Vraag en aanbod van het centrale waterstofnet
-      short_description: ''
+      title: Waterstofvraag en aanbod
+      short_description:
       description: |
         Deze grafiek weergeeft de verschillende categorieën van vraag en aanbod van het centrale
         waterstofnet. Het ETM balanceert vraag en aanbod van waterstof zodat deze altijd aan elkaar
@@ -233,7 +233,7 @@ nl:
       short_description:
       description:
     hydrogen_storage:
-      title: Opgeslagen waterstofvolume per uur
+      title: Waterstofopslag per uur
       short_description:
       description:
         Deze grafiek toont de waterstofopslagvolumes van zoutcavernes en lege gasvelden gedurende het jaar.
@@ -289,9 +289,9 @@ nl:
         maar zonder waterstofproductie (deze worden dus niet in werking gezet in het scenario) worden weergegeven met productiekosten van
         0 €/MWh. In werkelijkheid zijn de productiekosten per MWh oneindig doordat er geen waterstofproductie is door deze technologie.
     mekko_of_kerosene_demand_supply:
-      title: Vraag en aanbod van kerosine
-      short_description: ''
-      description: ''
+      title: Kerosinevraag en aanbod
+      short_description:
+      description:
     mekko_of_oil_mix:
       title: Eindgebruik van olie per sector en per product
       short_description:
@@ -304,7 +304,7 @@ nl:
         <li><b>andere olie</b> (o.a. aardolie, benzine, stookolie, naphtha, petcokes en raffinagegas)</li>
         <li><b>andere bio-olie</b> (biobenzine, andere biobrandstoffen)</li>
     mekko_of_ammonia_demand_supply:
-      title: Vraag en aanbod van ammoniak
+      title: Ammoniakvraag en aanbod
       short_description:
       description: |
         Deze grafiek vergelijkt de vraag naar ammoniak (NH<sub>3</sub>) met het aanbod. Je kunt het aanbod

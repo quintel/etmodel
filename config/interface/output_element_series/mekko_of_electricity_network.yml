@@ -1,3 +1,5 @@
+---
+# demand
 - label: demand_for_agriculture_final_demand_for_space_heating_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#332288'
   order_by: 100
@@ -250,6 +252,20 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: demand_for_synthetic_fuel_production_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_feedstock_final_demand_for_electricity_network_mekko_in_mekko_of_electricity_network
+  color: 'black'
+  order_by: 310
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_feedstock_final_demand_for_electricity_network_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_electricity_network
+  key: demand_for_feedstock_final_demand_for_electricity_network_mekko_mekko_of_electricity_network
+
+# Supply
 - label: supply_of_biomass_chp_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#2ca02c'
   order_by: 1000

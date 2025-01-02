@@ -10,30 +10,30 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: demand_for_agriculture_final_demand_for_space_heating_for_electricity_network_mekko_mekko_of_electricity_network
-- label: demand_for_agriculture_final_demand_excluding_space_heating_for_electricity_network_mekko_in_mekko_of_electricity_network
+- label: demand_for_agriculture_final_demand_excl_space_heating_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#4a31c5'
   order_by: 110
   group: demand
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: demand_for_agriculture_final_demand_excluding_space_heating_for_electricity_network_mekko
+  gquery: demand_for_agriculture_final_demand_excl_space_heating_for_electricity_network_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_electricity_network
-  key: demand_for_agriculture_final_demand_excluding_space_heating_for_electricity_network_mekko_mekko_of_electricity_network
-- label: demand_for_buildings_final_demand_excluding_space_heating_for_electricity_network_mekko_in_mekko_of_electricity_network
+  key: demand_for_agriculture_final_demand_excl_space_heating_for_electricity_network_mekko_mekko_of_electricity_network
+- label: demand_for_buildings_final_demand_excl_space_heating_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#44AA99'
   order_by: 120
   group: demand
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: demand_for_buildings_final_demand_excluding_space_heating_for_electricity_network_mekko
+  gquery: demand_for_buildings_final_demand_excl_space_heating_for_electricity_network_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_electricity_network
-  key: demand_for_buildings_final_demand_excluding_space_heating_for_electricity_network_mekko_mekko_of_electricity_network
+  key: demand_for_buildings_final_demand_excl_space_heating_for_electricity_network_mekko_mekko_of_electricity_network
 - label: demand_for_buildings_final_demand_for_space_heating_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#73c7b9'
   order_by: 130
@@ -118,18 +118,18 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: demand_for_export_for_electricity_network_mekko_mekko_of_electricity_network
-- label: demand_for_households_final_demand_excluding_space_heating_and_hot_water_for_electricity_network_mekko_in_mekko_of_electricity_network
+- label: demand_for_households_final_demand_excl_space_heating_and_hot_water_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#117733'
   order_by: 200
   group: demand
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: demand_for_households_final_demand_excluding_space_heating_and_hot_water_for_electricity_network_mekko
+  gquery: demand_for_households_final_demand_excl_space_heating_and_hot_water_for_electricity_network_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_electricity_network
-  key: demand_for_households_final_demand_excluding_space_heating_and_hot_water_for_electricity_network_mekko_mekko_of_electricity_network
+  key: demand_for_households_final_demand_excl_space_heating_and_hot_water_for_electricity_network_mekko_mekko_of_electricity_network
 - label: demand_for_households_final_demand_for_space_heating_and_hot_water_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#1bba50'
   order_by: 210
@@ -142,18 +142,18 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: demand_for_households_final_demand_for_space_heating_and_hot_water_electricity_network_mekko_mekko_of_electricity_network
-- label: demand_for_industry_final_demand_exc_ict_for_electricity_network_mekko_in_mekko_of_electricity_network
+- label: demand_for_industry_final_demand_excl_ict_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#DDCC77'
   order_by: 220
   group: demand
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: demand_for_industry_final_demand_exc_ict_for_electricity_network_mekko
+  gquery: demand_for_industry_final_demand_excl_ict_for_electricity_network_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_electricity_network
-  key: demand_for_industry_final_demand_exc_ict_for_electricity_network_mekko_mekko_of_electricity_network
+  key: demand_for_industry_final_demand_excl_ict_for_electricity_network_mekko_mekko_of_electricity_network
 - label: demand_for_industry_final_demand_ict_for_electricity_network_mekko_in_mekko_of_electricity_network
   color: '#ece3b4'
   order_by: 230

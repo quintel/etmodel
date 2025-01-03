@@ -191,6 +191,18 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_before_1945_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+- label: households_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  color: "#5c2e17"
+  order_by: 85
+  group: residences_before_1945
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_before_1945_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -384,6 +396,18 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_1945_1964_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+- label: households_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  color: "#5c2e17"
+  order_by: 185
+  group: residences_1945_1964
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1945_1964_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -577,6 +601,18 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_1965_1984_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+- label: households_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  color: "#5c2e17"
+  order_by: 285
+  group: residences_1965_1984
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1965_1984_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -770,6 +806,18 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_1985_2004_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+- label: households_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  color: "#5c2e17"
+  order_by: 385
+  group: residences_1985_2004
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1985_2004_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -963,6 +1011,18 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_2005_present_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+- label: households_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  color: "#5c2e17"
+  order_by: 485
+  group: residences_2005_present
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_2005_present_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -1156,3 +1216,15 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_future_with_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_residential_heating_technologies
+- label: households_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  color: "#5c2e17"
+  order_by: 585
+  group: residences_future
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_future_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  

@@ -7,8 +7,8 @@
   show_point_label: false
   growth_chart: false
   key: network_gas_demand
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -21,8 +21,8 @@
   show_point_label: false
   growth_chart: false
   key: network_gas_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
@@ -35,9 +35,23 @@
   show_point_label: false
   growth_chart: false
   key: network_gas_storage
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   dependent_on: ''
   output_element_type_name: demand_curve
+- under_construction: false
+  unit: PJ
+  percentage: false
+  group: Supply
+  sub_group: network_gas
+  show_point_label: false
+  growth_chart: false
+  key: mekko_of_network_gas_network
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: mekko

@@ -12,18 +12,6 @@
   dependent_on: 
   output_element_key: mekko_of_network_gas_network
   key: biomass_torrefaction_for_network_gas_mekko
-- label: buildings_final_demand_excl_space_heating_for_network_gas_mekko
-  color: '#4169E1'
-  order_by: 120
-  group: demand
-  show_at_first: 
-  is_target_line: false
-  target_line_position: 
-  gquery: demand_for_buildings_final_demand_excl_space_heating_for_network_gas_mekko
-  is_1990:
-  dependent_on: 
-  output_element_key: mekko_of_network_gas_network
-  key: buildings_final_demand_excl_space_heating_for_network_gas_mekko
 - label: greengas_export_network_gas_mekko
   color: '#228B22'
   order_by: 130

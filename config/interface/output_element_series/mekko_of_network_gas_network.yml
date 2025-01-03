@@ -1,7 +1,7 @@
 ---
 # demand
 - label: biomass_torrefaction_for_network_gas_mekko
-  color: '#000000'
+  color: '#4BAF50'
   order_by: 110
   group: demand
   show_at_first: 
@@ -13,7 +13,7 @@
   output_element_key: mekko_of_network_gas_network
   key: biomass_torrefaction_for_network_gas_mekko
 - label: buildings_final_demand_excl_space_heating_for_network_gas_mekko
-  color: '#000000'
+  color: '#4169E1'
   order_by: 120
   group: demand
   show_at_first: 
@@ -25,7 +25,7 @@
   output_element_key: mekko_of_network_gas_network
   key: buildings_final_demand_excl_space_heating_for_network_gas_mekko
 - label: greengas_export_network_gas_mekko
-  color: '#000000'
+  color: '#228B22'
   order_by: 130
   group: demand
   show_at_first: 
@@ -37,7 +37,7 @@
   output_element_key: mekko_of_network_gas_network
   key: greengas_export_network_gas_mekko
 - label: natural_gas_export_for_network_gas_mekko
-  color: '#000000'
+  color: '#999999'
   order_by: 140
   group: demand
   show_at_first: 
@@ -87,7 +87,7 @@
   output_element_key: mekko_of_network_gas_network
   key: greengas_upgrade_biogas_for_network_gas_mekko
 - label: lng_regasification_for_network_gas_mekko
-  color: '#000000'
+  color: '#696969'
   order_by: 640
   group: supply
   show_at_first: 
@@ -99,7 +99,7 @@
   output_element_key: mekko_of_network_gas_network
   key: lng_regasification_for_network_gas_mekko
 - label: natural_gas_extraction_for_network_gas_mekko
-  color: '#000000'
+  color: '#CCCCCC'
   order_by: 650
   group: supply
   show_at_first: 
@@ -123,7 +123,7 @@
   output_element_key: mekko_of_network_gas_network
   key: natural_gas_import_for_network_gas_mekko
 - label: propane_import_for_network_gas_mekko
-  color: '#000000'
+  color: '#808080'
   order_by: 670
   group: supply
   show_at_first: 

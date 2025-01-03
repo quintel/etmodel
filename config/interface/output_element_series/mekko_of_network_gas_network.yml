@@ -1,0 +1,28 @@
+---
+# demand
+- label: agriculture_final_demand_for_space_heating_for_network_gas_mekko
+  color: '#332288'
+  order_by: 100
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_agriculture_final_demand_for_space_heating_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: agriculture_final_demand_for_space_heating_for_network_gas_mekko
+
+# supply
+- label: hydrogen_chp_for_network_gas_mekko
+  color: '#b3e0f2'
+  order_by: 1250
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_hydrogen_chp_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: hydrogen_chp_for_network_gas_mekko

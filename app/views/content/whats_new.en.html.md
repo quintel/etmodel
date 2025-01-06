@@ -1,5 +1,9 @@
 # What's new in the Energy Transition Model?
 ___
+# January 2025
+New charts added for supply and demand in district heating per temperature level (HT, MT, LT). Check out these new 'Mekko' supply and demand charts in the chart overview in the ETM. Furthermore, miscellaneous bug fixes and improvements are done this month.
+
+-> <img src="/assets/pages/whats_new/mekko_district_heating_en.png" width="600" /> <-
 
 # November 2024
 

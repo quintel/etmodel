@@ -1,5 +1,9 @@
 # Wat is er nieuw in het Energietransitiemodel?
 ___
+# January 2025
+Nieuwe grafieken zijn toegevoegd voor vraag en aanbod in warmtenetten per temperatuurniveau (HT, MT, LT). Bekijk deze nieuwe 'Mekko' grafieken in het grafiekenoverzicht in het ETM. Daarnaast zijn er deze maand diverse bug fixes en verbeteringen gedaan.
+
+-> <img src="/assets/pages/whats_new/mekko_district_heating_nl.png" width="600" /> <-
 
 # November
 

@@ -46,7 +46,13 @@ nl:
     mekko_of_electricity_network:
       title: Elektriciteit vraag en aanbod
       short_description: ''
-      description: ''
+      description: |
+        Deze grafiek toont de categorieën van vraag en aanbod van het elektriciteitsnet. De vraagcategorieën zijn
+        aan de linkerkant weergegeven, waarbij curtailment, transportverliezen en opslagverliezen zijn meegenomen voor
+        balancering met de aanbodkant. Op gelijke wijze zijn de aanbodcategorieën aan de rechterkant weergegeven,
+        waarin stroomuitval is meegenomen voor balancering met de vraagkant. <br/><br/>
+        Zie de <a href="https://docs.energytransitionmodel.com/main/balancing-demand#electricity/" target =\"_blank\">documentatie</a>
+        voor meer informatie over hoet het ETM vraag en aanbod in het elektriciteitsnet balanceert.
     co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot biomassa
       short_description: CO2 biomassa

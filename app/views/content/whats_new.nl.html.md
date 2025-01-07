@@ -1,11 +1,16 @@
 # Wat is er nieuw in het Energietransitiemodel?
+
 ___
+
 # January 2025
-Nieuwe grafieken zijn toegevoegd voor vraag en aanbod in warmtenetten per temperatuurniveau (HT, MT, LT). Bekijk deze nieuwe 'Mekko' grafieken in het grafiekenoverzicht in het ETM. Daarnaast zijn er deze maand diverse bug fixes en verbeteringen gedaan.
+
+Nieuwe grafieken zijn toegevoegd voor vraag en aanbod in warmtenetten per temperatuurniveau (HT, MT, LT). Bekijk deze nieuwe grafieken in het grafiekenoverzicht in het ETM. Daarnaast zijn er deze maand diverse bug fixes en verbeteringen gedaan.
 
 -> <img src="/assets/pages/whats_new/mekko_district_heating_nl.png" width="600" /> <-
 
-# November
+---
+
+# November 2024
 
 ### Toevoegingen en verbeteringen voor Europese landen
 
@@ -22,9 +27,9 @@ Waterstof en elektriciteit kunnen nu beide worden gebruikt om de vraag naar inte
 In de **[Internationaal transport](scenario/demand/transport_international_transport/international-transport)** sectie kan je de vraag naar internationaal transport in uw scenario modelleren.
 De transportsoorten waaruit je kan kiezen zijn navigatie (per schip) en luchtvaart (per vliegtuig).
 
-
 -> <img src="/assets/pages/whats_new/nl_whats_new_hy_elec_international.png" width="600" /> <-
 
+---
 
 # Juli 2024
 
@@ -63,8 +68,6 @@ De link naar de collectie kan met iedereen worden gedeeld, maar eenmaal geopend 
 Het openen van een collectie opent een nieuwe viewer, waar de uitkomsten met dezelfde grafieken en tabellen kunnen worden vergeleken als men gewend is van de bestaande transitiepaden.
 
 ---
-
-
 
 # Mei 2024
 

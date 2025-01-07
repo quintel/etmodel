@@ -64,50 +64,50 @@ nl:
       title: Gebruik van flexibele elektriciteitsvraag
       short_description: ''
       description: |
-        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die 
+        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die
         te vinden zijn in de <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
-        Flexibiliteit</a> sectie van het model. In de 
+        Flexibiliteit</a> sectie van het model. In de
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentatie</a> is aangegeven welk typen elektriciteitsvraag als flexibel worden gedefinieerd. </br></br>
-        Deze grafiek laat zien hoe de elektriciteit wordt ingezet die consumeerd is door flexibele 
-        vraagtechnologieën. Daarnaast worden ook de verliezen getoond die optreden bij de opslag 
+        Deze grafiek laat zien hoe de elektriciteit wordt ingezet die consumeerd is door flexibele
+        vraagtechnologieën. Daarnaast worden ook de verliezen getoond die optreden bij de opslag
         en conversie door deze technologieën.
     storage_options:
       title: Technologieën met flexibele elektriciteitsvraag
       short_description: ''
       description: |
-        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die 
+        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die
         te vinden zijn in de <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
-        Flexibiliteit</a> sectie van het model. In de 
+        Flexibiliteit</a> sectie van het model. In de
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentatie</a> is aangegeven welk typen elektriciteitsvraag als flexibel worden gedefinieerd. </br></br>
         Deze tabel toont het totale geïnstalleerde inputvermogen van elk van deze technologieën:
-        dit bepaalt hoeveel elektriciteit je op enig moment kunt opslaan of omzetten. Het piekvermogen 
-        geeft aan wat het maximaal benutte inputvermogen in het jaar is. Verder toont de tabel het 
-        totale volume dat beschikbaar is voor opslag. Tenslotte toont de tabel de inzet van de 
-        flexibele technologieën in jouw scenario, aan de hand van de input van elektriciteit, de output 
+        dit bepaalt hoeveel elektriciteit je op enig moment kunt opslaan of omzetten. Het piekvermogen
+        geeft aan wat het maximaal benutte inputvermogen in het jaar is. Verder toont de tabel het
+        totale volume dat beschikbaar is voor opslag. Tenslotte toont de tabel de inzet van de
+        flexibele technologieën in jouw scenario, aan de hand van de input van elektriciteit, de output
         van energie en de vollasturen.
     storage_specifications:
       title: Specificaties opslagtechnologieën elektriciteit
       short_description:
       description: |
-        Deze tabel laat specificaties van technologieën voor elektriciteitsopslag zien. Deze technologieën zijn 
+        Deze tabel laat specificaties van technologieën voor elektriciteitsopslag zien. Deze technologieën zijn
         te vinden in de sectie <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
         Flexibiliteit</a> van het model. Informatie over het gedrag van deze technologieën kun je vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
-        documentatie</a>. De laadcycli zijn berekend door de jaarlijkse elektriciteitsinput te delen door het 
+        documentatie</a>. De laadcycli zijn berekend door de jaarlijkse elektriciteitsinput te delen door het
         opslagvolume.
         </br></br>
-        Door op de toggle te klikken kun je het uurlijkse gedrag van individuele opslagtechnologieën zien. In 
+        Door op de toggle te klikken kun je het uurlijkse gedrag van individuele opslagtechnologieën zien. In
         <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         deze</a> grafiek kun je het gecombineerde laad- en ontlaadgedrag van deze technologieën per uur zien.
     merit_order_hourly_flexibility:
       title: Flexibele elektriciteitsvraag per uur
       short_description: ''
       description: |
-        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die 
+        Het ETM bevat verschillende technologieën met flexibele elektriciteitsvraag, die
         te vinden zijn in de <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
-        Flexibiliteit</a> sectie van het model. In de 
+        Flexibiliteit</a> sectie van het model. In de
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentatie</a> is aangegeven welk typen elektriciteitsvraag als flexibel worden gedefinieerd.
         De grafiek laat de uurlijkse inzet van deze technologieën zien.
@@ -133,93 +133,93 @@ nl:
         draaikosten. Ook zie je het beschikbare vermogen en het aantal vollast draaiuren."
     flexibility_workflow:
       title: Workflow
-      description: 
+      description:
     flexibility_monthly_carriers_inflexible_supply_demand_sum:
       title: Maandelijkse volumes van vraag en aanbod
       description: |
-        Deze grafiek laat het totale volume van basislastvraag en het totale volume van inflexibel aanbod 
-        zien voor elektriciteit, gas, waterstof en warmte per maand. Het volume wordt berekend door de 
+        Deze grafiek laat het totale volume van basislastvraag en het totale volume van inflexibel aanbod
+        zien voor elektriciteit, gas, waterstof en warmte per maand. Het volume wordt berekend door de
         waardes voor elk uur in de maand voor elke drager op te tellen. <br/><br/>
-        Meer informatie over flexibiliteit is te vinden in onze 
+        Meer informatie over flexibiliteit is te vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
     flexibility_monthly_carriers_inflexible_supply_demand_max:
       title: "Flexibiliteitsbehoefte: capaciteit"
       description: |
-        Deze grafiek laat de maximale capaciteit voor basislastvraag en de maximale capaciteit voor inflexibel 
-        aanbod voor elektriciteit, gas, waterstof en warmte zien in elke maand. De capaciteit wordt berekend door 
+        Deze grafiek laat de maximale capaciteit voor basislastvraag en de maximale capaciteit voor inflexibel
+        aanbod voor elektriciteit, gas, waterstof en warmte zien in elke maand. De capaciteit wordt berekend door
         in elke maand voor elke drager de maximale waarde te nemen die voorkomt. <br/><br/>
         Meer informatie over flexibiliteit is te vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
     installed_flexible_capacities:
       title: "Geïnstalleerd vermogen aan flexibele technologieën"
       description: |
-        Deze grafiek laat het geïnstalleerde vermogen van flexibele vraag- en aanbodtechnologieën zien voor 
-        elektriciteit, netwerkgas, waterstof en warmte voor warmtenetten. Positief vermogen staat voor technologieën 
-        die energie kunnen produceren en negatief vermogen voor technologieën die energie kunnen consumeren voor een 
+        Deze grafiek laat het geïnstalleerde vermogen van flexibele vraag- en aanbodtechnologieën zien voor
+        elektriciteit, netwerkgas, waterstof en warmte voor warmtenetten. Positief vermogen staat voor technologieën
+        die energie kunnen produceren en negatief vermogen voor technologieën die energie kunnen consumeren voor een
         bepaalde drager. </br></br>
-        Daarnaast laat deze grafiek voor elke drager de maximum overschotpiek van de residuele vraagcurve zien als 
+        Daarnaast laat deze grafiek voor elke drager de maximum overschotpiek van de residuele vraagcurve zien als
         een negatieve waarde en de maximale tekortpiek als een positieve waarde. </br></br>
-        Meer informatie over de residuele vraagcurve en definities van flexibele technologieën is te vinden in onze 
+        Meer informatie over de residuele vraagcurve en definities van flexibele technologieën is te vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
     flexibility_integral_costs:
       title: "Integrale kosten van flexibele elektriciteitsvraag"
       description: |
-        Deze grafiek laat de integrale kosten zien van technologieën met flexibele elektriciteitsvraag. In de 
+        Deze grafiek laat de integrale kosten zien van technologieën met flexibele elektriciteitsvraag. In de
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentatie</a> is aangegeven welk typen elektriciteitsvraag als flexibel worden gedefinieerd. </br></br>
-        Elke staaf laat zien wat de kosten zijn per geproduceerde eenheid output van een bepaalde technologie 
-        met flexibele elektriciteitsvraag. Het type energie-output kan verschillen per technologie. Er wordt 
-        onderscheid gemaakt tussen drie kostencategorieën: CAPEX, OPEX en elektriciteitskosten. De 
+        Elke staaf laat zien wat de kosten zijn per geproduceerde eenheid output van een bepaalde technologie
+        met flexibele elektriciteitsvraag. Het type energie-output kan verschillen per technologie. Er wordt
+        onderscheid gemaakt tussen drie kostencategorieën: CAPEX, OPEX en elektriciteitskosten. De
         elektriciteitskosten worden berekend aan de hand van de uurlijkse elektriciteitsprijs en de uurlijkse
-        elektriciteitsconsumptie per technologie. Voor power-to-gas wordt daarnaast de prijs van waterstof 
+        elektriciteitsconsumptie per technologie. Voor power-to-gas wordt daarnaast de prijs van waterstof
         gegeven als een referentieprijs. Voor elektriciteitsopslag is de integrale opbrengst de referentieprijs,
         waarmee de gemiddelde opbrengst per geproduceerde eenheid elektriciteit bedoeld wordt. </br></br>
-        De integrale kosten hangen daarom af van gemaakte assumpties over de kosten en efficiënties van de 
-        technologieën. Deze kunnen worden aangepast in de 
-        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity"> 
-        Kosten & efficiënties</a> sectie. Daarnaast hangt het af van het geïnstalleerde vermogen en de 
+        De integrale kosten hangen daarom af van gemaakte assumpties over de kosten en efficiënties van de
+        technologieën. Deze kunnen worden aangepast in de
+        <a href="/scenario/costs/costs_flexibility/investment-costs-storage-electricity">
+        Kosten & efficiënties</a> sectie. Daarnaast hangt het af van het geïnstalleerde vermogen en de
         betalingsbereidheid van elke technologie, wat aangepast kan worden in de
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-by-flexible-demand-technologies"> 
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-by-flexible-demand-technologies">
         Flexibiliteit</a> sectie.
     flexibility_monthly_carriers_inflexible_imbalance:
       title: Onbalans in maandelijkse volumes van vraag en aanbod
       description: |
         Deze grafiek laat de onbalans in het totale volume van basislastvraag en het totale volume van inflexibel
-        aanbod zien voor elektriciteit, gas, waterstof en warmte per maand. De onbalans is berekend door het 
-        inflexibele aanbod af te trekken van de basislastvraag, dit heet de "residual load". Negatieve waarden 
+        aanbod zien voor elektriciteit, gas, waterstof en warmte per maand. De onbalans is berekend door het
+        inflexibele aanbod af te trekken van de basislastvraag, dit heet de "residual load". Negatieve waarden
         betekenen "overschotten" aan energie en positieve waarden "tekorten". </br></br>
         Meer informatie over flexibiliteit is te vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
     flexibility_hourly_carriers_inflexible_imbalance:
       title: Onbalans (<i>residual load</i>) per uur
       description: |
-        Deze grafiek laat de onbalans in basislastvraag en inflexibel aanbod zien voor elektriciteit, gas, waterstof 
-        en warmte per uur. De onbalans is berekend door het inflexibele aanbod af te trekken van de basislastvraag, 
-        dit heet de <i>residual load</i>. Negatieve waarden betekenen "overschotten" aan energie en positieve waarden 
+        Deze grafiek laat de onbalans in basislastvraag en inflexibel aanbod zien voor elektriciteit, gas, waterstof
+        en warmte per uur. De onbalans is berekend door het inflexibele aanbod af te trekken van de basislastvraag,
+        dit heet de <i>residual load</i>. Negatieve waarden betekenen "overschotten" aan energie en positieve waarden
         "tekorten". </br></br>
-        Voor netwerkgas en waterstof is een extra lijn toegevoegd, waarmee het voortschrijdend gemiddelde 
-        wordt getoond. Dit wordt gebruikt om de originele residual load curve op te splitsen in twee tijdschalen 
-        en daarmee de flexibiliteitsbehoefte te analyseren. Je kunt de periode van het voortschrijdend gemiddelde 
+        Voor netwerkgas en waterstof is een extra lijn toegevoegd, waarmee het voortschrijdend gemiddelde
+        wordt getoond. Dit wordt gebruikt om de originele residual load curve op te splitsen in twee tijdschalen
+        en daarmee de flexibiliteitsbehoefte te analyseren. Je kunt de periode van het voortschrijdend gemiddelde
         <a href="/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales">hier</a> veranderen. </br></br>
-        Voor elektriciteit is ook een additionele lijn toegevoegd. Deze lijn toont de lokale <i>residual load</i> van 
-        huishoudens, die door batterijen in huishoudens gebruikt kan worden om een prognose-algoritme voor in te zetten 
-        (zie de sectie <a href="/scenario/flexibility/flexibility_storage/batteries-in-households"> 
+        Voor elektriciteit is ook een additionele lijn toegevoegd. Deze lijn toont de lokale <i>residual load</i> van
+        huishoudens, die door batterijen in huishoudens gebruikt kan worden om een prognose-algoritme voor in te zetten
+        (zie de sectie <a href="/scenario/flexibility/flexibility_storage/batteries-in-households">
         Flexibiliteit</a>). </br></br>
         Voor een analyse van de <i>residual load</i> van netwerkgas en waterstof kun je
         <a href="#" class="open_chart" data-chart-key="need_for_flexibility" data-chart-location="side">
-        deze tabel</a> openen. Je kunt ook de curves downloaden in de 
+        deze tabel</a> openen. Je kunt ook de curves downloaden in de
         <a href="/scenario/data/data_export/hourly-curves-for-residual-load">Data-export</a> sectie.
     flexibility_hourly_all_carriers_cumulative_imbalance:
       title: "Flexibiliteitsbehoefte: volume"
       description: |
-        Deze grafiek geeft een ruwe inschatting van de behoefte aan lange termijn flexibiliteit 
-        (opslagvolume) in jouw scenario. De blauwe lijn (exclusief “correctie”) wordt gemaakt door 
+        Deze grafiek geeft een ruwe inschatting van de behoefte aan lange termijn flexibiliteit
+        (opslagvolume) in jouw scenario. De blauwe lijn (exclusief “correctie”) wordt gemaakt door
         voor elk uur de onbalans in basislastvraag en inflexibel aanbod per uur voor elektriciteit,
         gas, waterstof en warmte tot dan toe op te tellen. <br/><br/>
-        De rode lijn (inclusief “correctie”) laat de fluctuaties in vereist opslagvolume zien als vraag 
-        en aanbod in balans zouden zijn over het jaar. Deze lijn wordt gemaakt door het jaarlijkse 
-        overschot/tekort van de blauw lijn af te trekken. Omdat de lijn cumulatief is, telt de correctie 
-        van het eerste uur op bij de correctie van het twee uur etc. totdat het laatste uur zo is 
+        De rode lijn (inclusief “correctie”) laat de fluctuaties in vereist opslagvolume zien als vraag
+        en aanbod in balans zouden zijn over het jaar. Deze lijn wordt gemaakt door het jaarlijkse
+        overschot/tekort van de blauw lijn af te trekken. Omdat de lijn cumulatief is, telt de correctie
+        van het eerste uur op bij de correctie van het twee uur etc. totdat het laatste uur zo is
         gecorrigeerd dat het overeenkomt met de waarde van het eerste uur. <br/><br/>
         Meer informatie over flexibiliteit is te vinden in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility/" target=\"_blank\">documentatie</a>.
@@ -228,30 +228,30 @@ nl:
       description: |
         Deze grafiek laat de basislastvraag en het inflexibele aanbod van elektriciteit zien per uur. <br/><br/>
         In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentatie</a>
-        hebben we gedefinieerd welke types elektriciteitsvraag worden gezien als flexibel/basislast en 
+        hebben we gedefinieerd welke types elektriciteitsvraag worden gezien als flexibel/basislast en
         welke types elektriciteitsaanbod worden gezien als flexibel/inflexibel.
     flexibility_hourly_heat_network_supply_demand:
       title: Vraag en aanbod van warmte voor warmtenetten per uur
       description: |
-        Deze grafiek laat de basislastvraag en het inflexibele aanbod van warmtenetten voor de gebouwde omgeving 
+        Deze grafiek laat de basislastvraag en het inflexibele aanbod van warmtenetten voor de gebouwde omgeving
         en landbouw zien per uur. <br/><br/>
         In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentatie</a>
-        hebben we gedefinieerd welke types warmtevraag worden gezien als flexibel/basislast en 
+        hebben we gedefinieerd welke types warmtevraag worden gezien als flexibel/basislast en
         welke types warmteaanbod worden gezien als flexibel/inflexibel.
     flexibility_hourly_network_gas_supply_demand:
       title: Vraag en aanbod van gas per uur
       description: |
-        Deze grafiek laat de basislastvraag en het inflexibele aanbod van netwerkgas zien per uur. Netwerkgas 
+        Deze grafiek laat de basislastvraag en het inflexibele aanbod van netwerkgas zien per uur. Netwerkgas
         is de mix van aardgas en groen gas in de gasnetwerken. <br/><br/>
         In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentatie</a>
-        hebben we gedefinieerd welke types gasvraag worden gezien als flexibel/basislast en 
+        hebben we gedefinieerd welke types gasvraag worden gezien als flexibel/basislast en
         welke types gasaanbod worden gezien als flexibel/inflexibel.
     flexibility_hourly_hydrogen_supply_demand:
       title: Vraag en aanbod van waterstof per uur
       description: |
         Deze grafiek laat de basislastvraag en het inflexibele aanbod van waterstof zien per uur. <br/><br/>
         In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentatie</a>
-        hebben we gedefinieerd welke types waterstofvraag worden gezien als flexibel/basislast en 
+        hebben we gedefinieerd welke types waterstofvraag worden gezien als flexibel/basislast en
         welke types waterstofaanbod worden gezien als flexibel/inflexibel.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulatieve onbalans per maand
@@ -311,51 +311,51 @@ nl:
       title: Flexibele elektriciteitsvraag- en aanbod per uur
       short_description:
       description: |
-        Deze grafiek toont het gedrag van flexibele elektriciteitsvraag- en aanbodtechnologieën. In de 
+        Deze grafiek toont het gedrag van flexibele elektriciteitsvraag- en aanbodtechnologieën. In de
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
-        documentatie</a> is aangegeven welk typen technologieën als flexibel worden gedefinieerd. In 
-        deze grafiek wordt flexibel aanbod gestapeld op de positieve as weergegeven en flexibele vraag 
+        documentatie</a> is aangegeven welk typen technologieën als flexibel worden gedefinieerd. In
+        deze grafiek wordt flexibel aanbod gestapeld op de positieve as weergegeven en flexibele vraag
         op de negatieve as. <br/><br/>
-        De grafiek laat ook de residual load curve zien, die het verschil toont tussen de inflexibele 
-        vraag en het inflexibele aanbod van elektriciteit. Zie de 
+        De grafiek laat ook de residual load curve zien, die het verschil toont tussen de inflexibele
+        vraag en het inflexibele aanbod van elektriciteit. Zie de
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
-        Flexibiliteit</a> sectie voor meer informatie. Als de residual load curve positief is, 
-        betekent dat dat het inflexibele aanbod ontoereikend is om te voorzien in de inflexibele (of 
+        Flexibiliteit</a> sectie voor meer informatie. Als de residual load curve positief is,
+        betekent dat dat het inflexibele aanbod ontoereikend is om te voorzien in de inflexibele (of
         basislast) vraag. Als de residual load negatief is, is er een overschot aan inflexibel aanbod.
-        Flexibele vraag- en aanbodtechnologieën zijn nodig om deze tekorten en overschotten te 
+        Flexibele vraag- en aanbodtechnologieën zijn nodig om deze tekorten en overschotten te
         balanceren. <br/><br/>
-        Daarnaast geldt dat er, bij de juiste prijzen, additionele elektriciteit geproduceerd kan 
-        worden door flexibele aanbodtechnologieën voor flexibele vraagtechnologieën. Dit is reden 
-        dat de gestapelde vlakken niet altijd netjes overeenkomen met de residual load curve. Of 
-        de prijzen juist zijn, hangt af van de samenkomst van vraag en aanbod in de markt. 
+        Daarnaast geldt dat er, bij de juiste prijzen, additionele elektriciteit geproduceerd kan
+        worden door flexibele aanbodtechnologieën voor flexibele vraagtechnologieën. Dit is reden
+        dat de gestapelde vlakken niet altijd netjes overeenkomen met de residual load curve. Of
+        de prijzen juist zijn, hangt af van de samenkomst van vraag en aanbod in de markt.
         Hierover kun je meer lezen in de
         <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">
     hourly_flexibility_hydrogen:
-      title: Flexibele waterstofvraag- en aanbod per uur 
+      title: Flexibele waterstofvraag- en aanbod per uur
       short_description:
       description: |
-        Deze grafiek toont het gedrag van flexibele waterstofvraag- en aanbodtechnologieën. In de 
+        Deze grafiek toont het gedrag van flexibele waterstofvraag- en aanbodtechnologieën. In de
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
-        documentatie</a> is aangegeven welk typen technologieën als flexibel worden gedefinieerd. In 
-        deze grafiek wordt flexibel aanbod gestapeld op de positieve as weergegeven en flexibele vraag 
+        documentatie</a> is aangegeven welk typen technologieën als flexibel worden gedefinieerd. In
+        deze grafiek wordt flexibel aanbod gestapeld op de positieve as weergegeven en flexibele vraag
         op de negatieve as. <br/><br/>
-        De grafiek laat ook de residual load curve zien, die het verschil toont tussen de inflexibele 
-        vraag en het inflexibele aanbod van waterstof. Zie de 
+        De grafiek laat ook de residual load curve zien, die het verschil toont tussen de inflexibele
+        vraag en het inflexibele aanbod van waterstof. Zie de
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">
-        Flexibiliteit</a> sectie voor meer informatie. Als de residual load curve positief is, 
-        betekent dat dat het inflexibele aanbod ontoereikend is om te voorzien in de inflexibele (of 
+        Flexibiliteit</a> sectie voor meer informatie. Als de residual load curve positief is,
+        betekent dat dat het inflexibele aanbod ontoereikend is om te voorzien in de inflexibele (of
         basislast) vraag. Als de residual load negatief is, is er een overschot aan inflexibel aanbod.
-        Flexibele vraag- en aanbodtechnologieën zijn nodig om deze tekorten en overschotten te 
+        Flexibele vraag- en aanbodtechnologieën zijn nodig om deze tekorten en overschotten te
         balanceren. <br/><br/>
-        Daarnaast geldt dat er, bij de juiste prijzen, additionele waterstog geproduceerd kan 
-        worden door flexibele aanbodtechnologieën voor flexibele vraagtechnologieën. Dit is reden 
-        dat de gestapelde vlakken niet altijd netjes overeenkomen met de residual load curve. Of 
-        de prijzen juist zijn, hangt af van de samenkomst van vraag en aanbod in de markt. 
+        Daarnaast geldt dat er, bij de juiste prijzen, additionele waterstog geproduceerd kan
+        worden door flexibele aanbodtechnologieën voor flexibele vraagtechnologieën. Dit is reden
+        dat de gestapelde vlakken niet altijd netjes overeenkomen met de residual load curve. Of
+        de prijzen juist zijn, hangt af van de samenkomst van vraag en aanbod in de markt.
         Hierover kun je meer lezen in de
-        <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">    
+        <a href="https://docs.energytransitionmodel.com/main/merit-order/" target=\"_blank\">
         documentatie</a>.
     sankey_electrical_interconnection:
-      title: Vraag en aanbod van elektriciteit
+      title: Elektriciteitsstromen
       short_description: ''
       description: ''
     user_profiles:
@@ -374,24 +374,24 @@ nl:
       title: Uurlijkse productie door wind op land met batterij
       short_description:
       description: |
-        Deze grafiek toont de uurlijkse productie van windmolens op land met een geïntegreerd 
+        Deze grafiek toont de uurlijkse productie van windmolens op land met een geïntegreerd
         batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit. </br></br>
-        Je kunt meer leren over dit type windmolens en ze inzetten in jouw scenario in de 
+        Je kunt meer leren over dit type windmolens en ze inzetten in jouw scenario in de
         Aanbod sectie, onder <a href="/scenario/supply/electricity_renewable/wind-turbines">
-        Hernieuwbare elektriciteit</a>. Vervolgens kan je de aangesloten netwerkcapaciteit en 
-        het inputvermogen van de batterij aanpassen in de Flexibiliteit sectie, onder 
+        Hernieuwbare elektriciteit</a>. Vervolgens kan je de aangesloten netwerkcapaciteit en
+        het inputvermogen van de batterij aanpassen in de Flexibiliteit sectie, onder
         a href="/scenario/flexibility/flexibility_storage/wind-parks-with-storage-systems">
         Opslag elektriciteit</a>.
     flexibility_hourly_battery_solar:
       title: Uurlijkse productie door zon PV met batterij
       short_description:
       description: |
-        Deze grafiek toont de uurlijkse productie van zonnecentrales PV met een geïntegreerd 
+        Deze grafiek toont de uurlijkse productie van zonnecentrales PV met een geïntegreerd
         batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit. </br></br>
-        Je kunt meer leren over dit type zonnecentrales en ze inzetten in jouw scenario in de 
+        Je kunt meer leren over dit type zonnecentrales en ze inzetten in jouw scenario in de
         Aanbod sectie, onder <a href="/scenario/supply/electricity_renewable/solar-power">
-        Hernieuwbare elektriciteit</a>. Vervolgens kan je de aangesloten netwerkcapaciteit en 
-        het inputvermogen van de batterij aanpassen in de Flexibiliteit sectie, onder 
+        Hernieuwbare elektriciteit</a>. Vervolgens kan je de aangesloten netwerkcapaciteit en
+        het inputvermogen van de batterij aanpassen in de Flexibiliteit sectie, onder
         a href="/scenario/flexibility/flexibility_storage/solar-parks-with-storage-systems">
         Opslag elektriciteit</a>.
     need_for_flexibility:
@@ -399,31 +399,31 @@ nl:
       short_description:
       description: |
         Deze tabel analyseert de onbalans in inflexibele vraag en aanbod (de '<i>residual load curve</i>')
-        voor netwerkgas en waterstof, om te bepalen wat de flexibiliteitsbehoefte op verschillende 
+        voor netwerkgas en waterstof, om te bepalen wat de flexibiliteitsbehoefte op verschillende
         tijdschalen is. Hoe je deze tabel moet interpreteren wordt uitgelegd in de
         <a href="/scenario/flexibility/flexibility_overview/the-need-for-flexibility-timescales">
         Overzicht van flexibiliteit</a> sectie. </br></br>
-        Door op de toggle te klikken kun je de residual load curves zien, samen met het voortschrijdend 
-        gemiddelde dat wordt toegepast om de curves in verschillende tijdschalen op te splitsen. Je kunt 
+        Door op de toggle te klikken kun je de residual load curves zien, samen met het voortschrijdend
+        gemiddelde dat wordt toegepast om de curves in verschillende tijdschalen op te splitsen. Je kunt
         de grafiek met residual load curves ook zien door
-        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" 
+        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance"
         data-chart-location="side"> hier</a> te klikken.
     installed_hybrid_offshore_capacities:
       title: Hybride wind op zee geïnstalleerde vermogens
       short_description:
       description: |
-        Deze grafiek toont de absolute geïnstalleerde vermogens van de componenten van hybride wind op zee. 
-        Dit is het resultaat van het geïnstalleerd vermogen van hybride windturbines op zee, samen met de 
+        Deze grafiek toont de absolute geïnstalleerde vermogens van de componenten van hybride wind op zee.
+        Dit is het resultaat van het geïnstalleerd vermogen van hybride windturbines op zee, samen met de
         relatieve vermogens van de elektrolyser en de elektriciteitskabel op zee.<br/><br/>
-        Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" 
-        data-chart-location="side">deze tabel</a> voor data over geïnstalleerde vermogens, piekbelasting 
-        en jaarlijkse energiestromen van de componentent van hybride wind op zee. 
+        Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
+        data-chart-location="side">deze tabel</a> voor data over geïnstalleerde vermogens, piekbelasting
+        en jaarlijkse energiestromen van de componentent van hybride wind op zee.
     sankey_hybrid_offshore:
       title: Hybride wind op zee energiestromen
       short_description:
       description: |
         Deze grafiek toont de jaarlijkse energiestromen van de componenten van hybride wind op zee.
-        De volgende componenten zijn zichtbaar in de grafiek wanneer hier energie in- of output is: 
+        De volgende componenten zijn zichtbaar in de grafiek wanneer hier energie in- of output is:
         <ul>
         <li> Windelektriciteit </li>
         <li> Elektrolyser op zee </li>
@@ -439,10 +439,10 @@ nl:
         of omgezet naar waterstof via de elektrolyser op zee. Daarnaast kan extra elektriciteit
         worden getransporteerd naar de elektrolyser op zee vanaf het onshore HV-net voor waterstofproductie. <br/><br/>
         Zie onze <a href=\"https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
-        target =\"_blank\">documentatie</a> voor meer informatie over het gedrag van de componenten van 
+        target =\"_blank\">documentatie</a> voor meer informatie over het gedrag van de componenten van
         hybride wind op zee. <br/><br/>
-        Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" 
-        data-chart-location="side">deze tabel</a> voor data over geïnstalleerde vermogens, piekbelasting 
+        Open <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
+        data-chart-location="side">deze tabel</a> voor data over geïnstalleerde vermogens, piekbelasting
         en jaarlijkse energiestromen van de componentent van hybride wind op zee.
     capacity_energy_hybrid_offshore:
       title: Hybride wind op zee vermogens en energiestromen
@@ -451,14 +451,14 @@ nl:
         Deze tabel toont het in- en outputvermogen, de piekbelasting in- en output en de jaarlijkse energie-input
         en output van de componenten van hybride wind op zee in het toekomstjaar. <br/><br/>
         Het in- en outputvermogen weergeven de geïnstalleerde vermogens van de componenten. De piekbelasting in- en output
-        zijn het maximale vermogen dat in een bepaald uur in en uit de component stroomt. De jaarlijkse energie in- en output 
-        geven de totale jaarlijkse energie die in en uit de component stroomt. Voor de jaarlijkse energieoutput is dit de 
+        zijn het maximale vermogen dat in een bepaald uur in en uit de component stroomt. De jaarlijkse energie in- en output
+        geven de totale jaarlijkse energie die in en uit de component stroomt. Voor de jaarlijkse energieoutput is dit de
         nuttige output (dus exclusief verliezen).<br/><br/>
-        De hybride windturbine op zee is gegeven met alleen outputstromen (elektriciteit). De elektrolyser heeft een input van 
-        elektriciteit en output van waterstof. De elektriciteitskabels op zee hebben zowel input als output van elektriciteit. 
-        Productiebeperking (curtailment) heeft alleen input van elektriciteit. Tot slot wordt voor de categorie conversieverlies 
+        De hybride windturbine op zee is gegeven met alleen outputstromen (elektriciteit). De elektrolyser heeft een input van
+        elektriciteit en output van waterstof. De elektriciteitskabels op zee hebben zowel input als output van elektriciteit.
+        Productiebeperking (curtailment) heeft alleen input van elektriciteit. Tot slot wordt voor de categorie conversieverlies
         alleen de jaarlijkse input (van elektriciteit) weergegeven. <br/><br/>
-        Doordat het ETM rekent met een jaarlijkse beschikbaarheid (<i>availability</i>) van de hybride windturbine en elektrolyser 
-        op zee, wordt er ook in de uurlijkse berekeningen gecorrigeerd voor beschikbaarheid. Deze beschikbaarheid is altijd lager dan 100%. 
-        Concreet betekent dit dat de weergegeven piekbelasting altijd lager is dan de geïnstalleerde vermogens van de windturbine 
-        en elektrolyser, en daarmee ook van de elektriciteitskabel die elektriciteit levert aan de elektrolyser op zee. 
+        Doordat het ETM rekent met een jaarlijkse beschikbaarheid (<i>availability</i>) van de hybride windturbine en elektrolyser
+        op zee, wordt er ook in de uurlijkse berekeningen gecorrigeerd voor beschikbaarheid. Deze beschikbaarheid is altijd lager dan 100%.
+        Concreet betekent dit dat de weergegeven piekbelasting altijd lager is dan de geïnstalleerde vermogens van de windturbine
+        en elektrolyser, en daarmee ook van de elektriciteitskabel die elektriciteit levert aan de elektrolyser op zee.

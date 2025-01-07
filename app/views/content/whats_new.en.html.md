@@ -1,5 +1,13 @@
 # What's new in the Energy Transition Model?
+
 ___
+
+# January 2025
+New charts added for supply and demand in district heating per temperature level (HT, MT, LT). Check out these supply and demand charts in the chart overview in the ETM. Furthermore, miscellaneous bug fixes and improvements are done this month.
+
+-> <img src="/assets/pages/whats_new/mekko_district_heating_en.png" width="600" /> <-
+
+---
 
 # November 2024
 
@@ -12,7 +20,6 @@ For a complete overview of all data that has been used to create the country dat
 In addition, improvements have been made of carrier application splits in households for all European country datasets in the ETM, based on the **[Eurostat final energy consumption in households database](https://doi.org/10.2908/NRG_D_HHQ)**. The assumed values in application splits can be found in the **[ETM Dataset Manager](https://data.energytransitionmodel.com/)** as well.
 Later in November, this update will be followed by an update of the residential and non-residential building stock, based on numbers from the **[EU Building Stock Observatory](https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficient-buildings/eu-building-stock-observatory_en)**.
 
-
 ### Addition of hydrogen and electricity for international transport
 
 Hydrogen and electricity can now both be used to model the demand of international transport.
@@ -21,6 +28,8 @@ The modes of transport you can choose from are navigation (by ship) & aviation (
 Now you can use hydrogen and electricity as a way to serve the demand for both these modes of transport.
 
 -> <img src="/assets/pages/whats_new/en_whats_new_hy_elec_international.png" width="600" /> <-
+
+---
 
 # September 2024
 
@@ -33,6 +42,8 @@ We have updated both the standard settings for the profiles, and updated them wi
 Explore this new update in the **[Demand response - electric vehicles](scenario/flexibility/flexibility_net_load/demand-response-electric-vehicles)** section.
 
 -> <img src="/assets/pages/whats_new/en_whats_new_electric_vehicle_profiles.png" width="600" /> <-
+
+---
 
 # July 2024
 

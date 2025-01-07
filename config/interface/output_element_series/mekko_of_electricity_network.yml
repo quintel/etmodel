@@ -1,7 +1,7 @@
 ---
 # demand
 - label: agriculture_final_demand_for_space_heating_for_electricity_network_mekko
-  color: '#332288'
+  color: '#47A020'
   order_by: 100
   group: demand
   show_at_first:
@@ -13,7 +13,7 @@
   output_element_key: mekko_of_electricity_network
   key: agriculture_final_demand_for_space_heating_for_electricity_network_mekko
 - label: agriculture_final_demand_excl_space_heating_for_electricity_network_mekko
-  color: '#4a31c5'
+  color: '#6AB04C'
   order_by: 110
   group: demand
   show_at_first:
@@ -24,21 +24,9 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: agriculture_final_demand_excl_space_heating_for_electricity_network_mekko
-- label: buildings_final_demand_excl_space_heating_for_electricity_network_mekko
-  color: '#44AA99'
-  order_by: 120
-  group: demand
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: demand_for_buildings_final_demand_excl_space_heating_for_electricity_network_mekko
-  is_1990:
-  dependent_on:
-  output_element_key: mekko_of_electricity_network
-  key: buildings_final_demand_excl_space_heating_for_electricity_network_mekko
 - label: buildings_final_demand_for_space_heating_for_electricity_network_mekko
-  color: '#73c7b9'
-  order_by: 130
+  color: '#D6A600'
+  order_by: 120
   group: demand
   show_at_first:
   is_target_line: false
@@ -48,20 +36,32 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: buildings_final_demand_for_space_heating_for_electricity_network_mekko
-- label: energy_final_demand_for_electricity_network_mekko
-  color: '#416B86'
+- label: buildings_final_demand_excl_space_heating_for_electricity_network_mekko
+  color: '#F9CA24'
+  order_by: 130
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_buildings_final_demand_excl_space_heating_for_electricity_network_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_electricity_network
+  key: buildings_final_demand_excl_space_heating_for_electricity_network_mekko
+- label: households_final_demand_for_space_heating_and_hot_water_electricity_network_mekko
+  color: '#E68148'
   order_by: 140
   group: demand
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: demand_for_energy_final_demand_for_electricity_network_mekko
+  gquery: demand_for_households_final_demand_for_space_heating_and_hot_water_electricity_network_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_electricity_network
-  key: energy_final_demand_for_electricity_network_mekko
+  key: households_final_demand_for_space_heating_and_hot_water_electricity_network_mekko
 - label: households_final_demand_excl_space_heating_and_hot_water_for_electricity_network_mekko
-  color: '#117733'
+  color: '#E69567'
   order_by: 150
   group: demand
   show_at_first:
@@ -72,20 +72,20 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: households_final_demand_excl_space_heating_and_hot_water_for_electricity_network_mekko
-- label: households_final_demand_for_space_heating_and_hot_water_electricity_network_mekko
-  color: '#1bba50'
+- label: energy_final_demand_for_electricity_network_mekko
+  color: '#416B86'
   order_by: 160
   group: demand
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: demand_for_households_final_demand_for_space_heating_and_hot_water_electricity_network_mekko
+  gquery: demand_for_energy_final_demand_for_electricity_network_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_electricity_network
-  key: households_final_demand_for_space_heating_and_hot_water_electricity_network_mekko
+  key: energy_final_demand_for_electricity_network_mekko
 - label: industry_final_demand_excl_ict_for_electricity_network_mekko
-  color: '#DDCC77'
+  color: '#A9A9A9'
   order_by: 170
   group: demand
   show_at_first:
@@ -97,7 +97,7 @@
   output_element_key: mekko_of_electricity_network
   key: industry_final_demand_excl_ict_for_electricity_network_mekko
 - label: industry_final_demand_ict_for_electricity_network_mekko
-  color: '#ece3b4'
+  color: '#6D716B'
   order_by: 180
   group: demand
   show_at_first:
@@ -109,7 +109,7 @@
   output_element_key: mekko_of_electricity_network
   key: industry_final_demand_ict_for_electricity_network_mekko
 - label: international_transport_final_demand_for_electricity_network_mekko
-  color: '#882255'
+  color: '#3FA2D4'
   order_by: 190
   group: demand
   show_at_first:
@@ -121,7 +121,7 @@
   output_element_key: mekko_of_electricity_network
   key: international_transport_final_demand_for_electricity_network_mekko
 - label: national_transport_final_demand_for_electricity_network_mekko
-  color: '#88CCEE'
+  color: '#74B9FF'
   order_by: 200
   group: demand
   show_at_first:
@@ -133,7 +133,7 @@
   output_element_key: mekko_of_electricity_network
   key: national_transport_final_demand_for_electricity_network_mekko
 - label: other_final_demand_for_electricity_network_mekko
-  color: '#AA4499'
+  color: '#786FA6'
   order_by: 210
   group: demand
   show_at_first:
@@ -169,7 +169,7 @@
   output_element_key: mekko_of_electricity_network
   key: central_heating_for_electricity_network_mekko
 - label: curtailment_for_electricity_network_mekko
-  color: '#dd9977'
+  color: '#E8F9FD'
   order_by: 240
   group: demand
   show_at_first:
@@ -267,7 +267,7 @@
 
 # Supply
 - label: biomass_chp_for_electricity_network_mekko
-  color: '#2ca02c'
+  color: '#7EA437'
   order_by: 1000
   group: supply
   show_at_first:
@@ -279,7 +279,7 @@
   output_element_key: mekko_of_electricity_network
   key: biomass_chp_for_electricity_network_mekko
 - label: biomass_power_for_electricity_network_mekko
-  color: '#4bce4b'
+  color: '#5D7929'
   order_by: 1010
   group: supply
   show_at_first:
@@ -302,9 +302,21 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: blackouts_for_electricity_network_mekko
-- label: coal_chp_for_electricity_network_mekko
-  color: '#252525'
+- label: coal_power_for_electricity_network_mekko
+  color: '#00A7B4'
   order_by: 1030
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_coal_power_for_electricity_network_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_electricity_network
+  key: coal_power_for_electricity_network_mekko
+- label: coal_chp_for_electricity_network_mekko
+  color: '#3BFAEB'
+  order_by: 1040
   group: supply
   show_at_first:
   is_target_line: false
@@ -315,8 +327,8 @@
   output_element_key: mekko_of_electricity_network
   key: coal_chp_for_electricity_network_mekko
 - label: coal_gas_chp_for_electricity_network_mekko
-  color: '#3f3f3f'
-  order_by: 1040
+  color: '#7040c2'
+  order_by: 1050
   group: supply
   show_at_first:
   is_target_line: false
@@ -327,8 +339,8 @@
   output_element_key: mekko_of_electricity_network
   key: coal_gas_chp_for_electricity_network_mekko
 - label: coal_gas_power_for_electricity_network_mekko
-  color: '#656565'
-  order_by: 1050
+  color: '#521b82'
+  order_by: 1060
   group: supply
   show_at_first:
   is_target_line: false
@@ -338,20 +350,8 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: coal_gas_power_for_electricity_network_mekko
-- label: coal_power_for_electricity_network_mekko
-  color: '#4b4b4b'
-  order_by: 1060
-  group: supply
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: supply_of_coal_power_for_electricity_network_mekko
-  is_1990:
-  dependent_on:
-  output_element_key: mekko_of_electricity_network
-  key: coal_power_for_electricity_network_mekko
 - label: gas_chp_for_electricity_network_mekko
-  color: '#a5a5a5'
+  color: '#F0904C'
   order_by: 1070
   group: supply
   show_at_first:
@@ -363,7 +363,7 @@
   output_element_key: mekko_of_electricity_network
   key: gas_chp_for_electricity_network_mekko
 - label: gas_power_for_electricity_network_mekko
-  color: '#7f7f7f'
+  color: '#407A8E'
   order_by: 1080
   group: supply
   show_at_first:
@@ -375,7 +375,7 @@
   output_element_key: mekko_of_electricity_network
   key: gas_power_for_electricity_network_mekko
 - label: geothermal_power_for_electricity_network_mekko
-  color: '#FF8400'
+  color: '#94F95C'
   order_by: 1090
   group: supply
   show_at_first:
@@ -387,7 +387,7 @@
   output_element_key: mekko_of_electricity_network
   key: geothermal_power_for_electricity_network_mekko
 - label: hydro_for_electricity_network_mekko
-  color: '#4465c6'
+  color: '#0066ff'
   order_by: 1100
   group: supply
   show_at_first:
@@ -399,7 +399,7 @@
   output_element_key: mekko_of_electricity_network
   key: hydro_for_electricity_network_mekko
 - label: hydrogen_power_for_electricity_network_mekko
-  color: '#87cfeb'
+  color: '#09cff7'
   order_by: 1110
   group: supply
   show_at_first:
@@ -423,7 +423,7 @@
   output_element_key: mekko_of_electricity_network
   key: import_for_electricity_network_mekko
 - label: lignite_chp_for_electricity_network_mekko
-  color: '#323232'
+  color: '#131D1C'
   order_by: 1130
   group: supply
   show_at_first:
@@ -435,7 +435,7 @@
   output_element_key: mekko_of_electricity_network
   key: lignite_chp_for_electricity_network_mekko
 - label: lignite_power_for_electricity_network_mekko
-  color: '#181818'
+  color: '#431B51'
   order_by: 1140
   group: supply
   show_at_first:
@@ -447,7 +447,7 @@
   output_element_key: mekko_of_electricity_network
   key: lignite_power_for_electricity_network_mekko
 - label: nuclear_power_for_electricity_network_mekko
-  color: '#ff7f0e'
+  color: '#4E60D1'
   order_by: 1150
   group: supply
   show_at_first:
@@ -459,7 +459,7 @@
   output_element_key: mekko_of_electricity_network
   key: nuclear_power_for_electricity_network_mekko
 - label: oil_power_for_electricity_network_mekko
-  color: '#8c564b'
+  color: '#953ABC'
   order_by: 1160
   group: supply
   show_at_first:
@@ -471,7 +471,7 @@
   output_element_key: mekko_of_electricity_network
   key: oil_power_for_electricity_network_mekko
 - label: solar_csp_for_electricity_network_mekko
-  color: '#b38f00'
+  color: '#ced976'
   order_by: 1170
   group: supply
   show_at_first:
@@ -519,7 +519,7 @@
   output_element_key: mekko_of_electricity_network
   key: solar_pv_roof_for_electricity_network_mekko
 - label: waste_chp_for_electricity_network_mekko
-  color: '#ce8f13'
+  color: '#006266'
   order_by: 1210
   group: supply
   show_at_first:
@@ -543,7 +543,7 @@
   output_element_key: mekko_of_electricity_network
   key: waste_power_for_electricity_network_mekko
 - label: wind_offshore_for_electricity_network_mekko
-  color: '#6388c9'
+  color: '#7292c6'
   order_by: 1230
   group: supply
   show_at_first:
@@ -555,7 +555,7 @@
   output_element_key: mekko_of_electricity_network
   key: wind_offshore_for_electricity_network_mekko
 - label: wind_onshore_for_electricity_network_mekko
-  color: '#63A1C9'
+  color: '#9292c6'
   order_by: 1240
   group: supply
   show_at_first:
@@ -567,7 +567,7 @@
   output_element_key: mekko_of_electricity_network
   key: wind_onshore_for_electricity_network_mekko
 - label: hydrogen_chp_for_electricity_network_mekko
-  color: '#b3e0f2'
+  color: '#31a2c4'
   order_by: 1250
   group: supply
   show_at_first:
@@ -578,4 +578,3 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: hydrogen_chp_for_electricity_networnetwork
-

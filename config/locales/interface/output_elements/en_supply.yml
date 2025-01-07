@@ -49,9 +49,11 @@ en:
       title: Electricity supply and demand
       short_description: ''
       description: |
-        This chart shows the supply and demand categories of the electricity network. Demand categories for electricity are
-        depicted on the left side, where curtailment, distribution losses and storage losses
-        are included to balance supply. Similarly, electricity supply categories are depicted on the right side, including blackouts
+        This chart shows the supply and demand categories of the electricity network.<br/><br/>
+        Demand categories for electricity are depicted on the left side, where curtailment,
+        distribution losses and storage losses (composed of storage decay,
+        round trip efficiency (RTE) losses and unused electricity from storage) are included to balance supply.
+        Similarly, electricity supply categories are depicted on the right side, including blackouts (shortages)
         to balance demand. <br/><br/>
         See our <a href="https://docs.energytransitionmodel.com/main/balancing-demand#electricity" target =\"_blank\">documentation</a>
         for more information on how the ETM balances supply and demand in the electricity network.

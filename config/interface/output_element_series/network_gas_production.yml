@@ -2,13 +2,13 @@
 - label: network_gas_demand
   color: "#FF0000"
   order_by: 100
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: true
-  target_line_position: 
-  gquery: network_gas_demand_curve
-  is_1990: 
-  dependent_on: 
+  target_line_position:
+  gquery: network_gas_demand_input_curve
+  is_1990:
+  dependent_on:
   output_element_key: network_gas_production
   key: network_gas_demand_network_gas_production
 - label: natural_gas_production
@@ -20,7 +20,7 @@
   target_line_position: ''
   gquery: natural_gas_extraction_network_gas_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
   key: natural_gas_production_network_gas_production
 - label: natural_gas_import
@@ -32,7 +32,7 @@
   target_line_position: ''
   gquery: natural_gas_import_network_gas_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
   key: natural_gas_import_network_gas_production
 - label: natural_gas_production_industry_transformation
@@ -44,9 +44,9 @@
   target_line_position: ''
   gquery: natural_gas_network_gas_industry_transformation_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
-  key: natural_gas_production_industry_transformation_network_gas_production  
+  key: natural_gas_production_industry_transformation_network_gas_production
 - label: propane_import
   color: "#808080"
   order_by: 250
@@ -56,9 +56,9 @@
   target_line_position: ''
   gquery: propane_network_gas_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
-  key: propane_network_gas_production   
+  key: propane_network_gas_production
 - label: greengas_dry_biomass
   color: "#4CACBC"
   order_by: 300
@@ -68,7 +68,7 @@
   target_line_position: ''
   gquery: greengas_gasification_dry_biomass_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
   key: greengas_dry_biomass_network_gas_production
 - label: greengas_wet_biomass
@@ -80,7 +80,7 @@
   target_line_position: ''
   gquery: greengas_gasification_wet_biomass_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
   key: greengas_wet_biomass_network_gas_production
 - label: greengas_upgrade_biogas
@@ -92,7 +92,7 @@
   target_line_position: ''
   gquery: greengas_upgrade_biogas_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
   key: greengas_upgrade_biogas_network_gas_production
 - label: greengas_production_industry_transformation
@@ -104,9 +104,9 @@
   target_line_position: ''
   gquery: greengas_network_gas_industry_transformation_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
-  key: greengas_network_gas_industry_transformation_output_curve_network_gas_production    
+  key: greengas_network_gas_industry_transformation_output_curve_network_gas_production
 - label: lng_production
   color: "#F6E58D"
   order_by: 220
@@ -116,7 +116,7 @@
   target_line_position: ''
   gquery: lng_network_gas_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
   key: lng_production_network_gas_production
 - label: network_gas_storage_output
@@ -128,7 +128,7 @@
   target_line_position: ''
   gquery: storage_network_gas_output_curve
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: network_gas_production
   key: network_gas_storage_output_network_gas_production
 

@@ -43,6 +43,18 @@ nl:
       title: Biovoetafdruk van primair gebruik
       short_description: ''
       description: ''
+    mekko_of_electricity_network:
+      title: Elektriciteit vraag en aanbod
+      short_description: ''
+      description: |
+        Deze grafiek toont de categorieën van vraag en aanbod van het elektriciteitsnetwerk. <br/><br/>
+        De vraagcategorieën zijn aan de linkerkant weergegeven, waarbij curtailment, transportverliezen
+        en opslagverliezen (bestaande uit verval uit opslag (decay), verliezen van round trip efficiency
+        (RTE) en onbenutte opgeslagen elektriciteit) zijn meegenomen voor balancering met de aanbodkant.
+        De aanbodcategorieën zijn aan de rechterkant weergegeven,
+        waarin stroomuitval (tekorten) is meegenomen voor balancering met de vraagkant. <br/><br/>
+        Zie de <a href="https://docs.energytransitionmodel.com/main/balancing-demand#electricity/" target =\"_blank\">documentatie</a>
+        voor meer informatie over hoet het ETM vraag en aanbod in het elektriciteitsnetwerk balanceert.
     co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot biomassa
       short_description: CO2 biomassa

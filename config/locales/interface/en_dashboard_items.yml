@@ -38,10 +38,11 @@ en:
     co2_reduction:
       label: CO<sub>2</sub> relative to 1990
       title: CO<sub>2</sub> emissions relative to 1990
-      description: "The year 1990 is used as reference year for the change in CO<sub>2</sub>
+      description: |
+        The year 1990 is used as reference year for the change in CO<sub>2</sub>
         emissions shown in the dashboard. The chart below shows the CO<sub>2</sub>
         emissions that result from the inland final consumption of energy.
-        You can find more information about this graph in the <a href=\"https://docs.energytransitionmodel.com/main/co2-overview-per-sector\" target=\"_blank\">documentation</a>."
+        You can find more information about this graph in the <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector" target="_blank">documentation</a>.
     local_co2_reduction:
       label: Domestic CO<sub>2</sub> emissions
       title: Domestic CO<sub>2</sub> emissions
@@ -124,7 +125,7 @@ en:
       label: Excess electricity
       title: Number of hours with excess electricity
       description: As a result of large numbers of wind turbines and solar panels
-        installed, the volatile and must-run supply of electricity can be larger than the baseload 
+        installed, the volatile and must-run supply of electricity can be larger than the baseload
         demand. The ETM keeps track of the number of consecutive hours in which this is the case for
         you scenario.
     total_curtailment:
@@ -134,18 +135,18 @@ en:
         This gives the total curtailment volume of must-run and volatile producers, also known as 'inflexible' producers (see our
         <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
         documentation</a> for more information). Curtailment is applied as a last resort when inflexible production exceeds total demand.
-        Curtailing a lot of inflexible production can be a waste of electricity, but it can also be costly to install flexible capacity to use this 
+        Curtailing a lot of inflexible production can be a waste of electricity, but it can also be costly to install flexible capacity to use this
         curtailment instead. This dashboard item can help you achieve the desired level of curtailment. </br></br>
         In the chart below you can see the curtailed volume, compared to other uses of flexible electricity demand.
     share_of_curtailment:
       label: Relative curtailment
       title: Relative share of curtailment
       description: |
-        This gives the total curtailment volume of must-run and volatile producers, relative to their total electricity production. 
+        This gives the total curtailment volume of must-run and volatile producers, relative to their total electricity production.
         These producers are also known as 'inflexible' producers (see our
         <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
         documentation</a> for more information). Curtailment is applied as a last resort when inflexible production exceeds total demand.
-        Curtailing a lot of inflexible production can be a waste of electricity, but it can also be costly to install flexible capacity to use this 
+        Curtailing a lot of inflexible production can be a waste of electricity, but it can also be costly to install flexible capacity to use this
         curtailment instead. This dashboard item can help you achieve the desired level of curtailment. </br></br>
         In the chart below you can see the curtailed volume, compared to other uses of flexible electricity demand.
     all_ghg_reduction_relative_to_start_year:

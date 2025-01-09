@@ -12,16 +12,17 @@ en:
       title: CO<sub>2</sub> emissions
       short_description: ''
       description: |
-        This chart compares CO<sub>2</sub> emissions in 1990, the present, and the future. 
+        This chart compares CO<sub>2</sub> emissions in 1990, the present, and the future.
         The year 1990 is often used as a reference year in CO<sub>2</sub> targets.
-        <br/><br/> 
-        For the emissions of 1990, the ETM considers only domestic, energy-related CO<sub>2</sub> 
-        emissions and the non-energy-related emissions from the use of natural gas in the fertilizer sector.
-        Non-energy-related emissions in other sectors and other greenhouse gases (such as methane) are not included. 
-        For the emissions of the current and model year, For the emissions of the current year and the model year,
-        the emissions resulting from the production of hydrogen and ammonia, which are used in non-energetic applications, are included next to the previous mentioned emissions.
+        <br/><br/>
+        For the CO<sub>2</sub> emissions of 1990, the ETM considers only domestic, energy-related CO<sub>2</sub>
+        emissions and the non-energetic CO<sub>2</sub> emissions from the fertilizer sector.
+        Non-energetic emissions in other sectors and other greenhouse gases (such as methane) are not included.<br/><br/>
+        The start and future year take the same CO<sub>2</sub> emission categories as the 1990 emissions into account. Besides non-energetic
+        CO<sub>2</sub> emissions in the fertilizer sector, the non-energetic CO<sub>2</sub> emissions of final demand of hydrogen and ammonia
+        in the other industry sector are now accounted for (which are assumed to be zero in the 1990 CO<sub>2</sub> emissions).<br/><br/>
         In the <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector" target="_blank">documentation</a>,
-        you can find more information.
+        you can find more information on the categorisation of CO<sub>2</sub> emissions in the ETM.
     renewability:
       title: Renewability of final demand
       short_description: ''
@@ -53,8 +54,8 @@ en:
       short_description:
       description: |
        The depicted graph shows the installed storage volume categorized by energy carrier and storage type.
-       It's important to note that the entirety of this installed storage volume may not be utilized in your specific scenario. 
-       For example, the volume allocated for hydrogen storage is set within the scenario. 
+       It's important to note that the entirety of this installed storage volume may not be utilized in your specific scenario.
+       For example, the volume allocated for hydrogen storage is set within the scenario.
        The heat volume follows is not set within the scenario but follows from the maximal needed heat capacity.
     source_of_electricity_production:
       title: Electricity production

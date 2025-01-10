@@ -39,12 +39,12 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bd57b2e1-2b31-4955-a110-133bdbba7e4f
+      - eccecfe5-ea0d-47be-a450-7e9b07cc85f2
       X-Runtime:
-      - '0.019639'
+      - '0.125100'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.98, instantiation.active_record;dur=0.19,
-        process_action.action_controller;dur=5.42
+      - sql.active_record;dur=13.41, start_processing.action_controller;dur=0.01,
+        instantiation.active_record;dur=15.36, process_action.action_controller;dur=68.77
       Content-Length:
       - '409'
     body:
@@ -54,7 +54,7 @@ http_interactions:
         author"},{"id":4,"saved_scenario_id":29,"owner_id":1,"group":"national","title_en":"Super
         scenario for 2030","title_nl":"Super scenario for 2030","version":"latest","end_year":2030,"author":"No
         author"}]}'
-  recorded_at: Fri, 10 Jan 2025 10:44:54 GMT
+  recorded_at: Fri, 10 Jan 2025 14:53:28 GMT
 - request:
     method: get
     uri: http://localhost:3002/api/v1/versions.json
@@ -90,11 +90,11 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 36fa8bce-b171-401c-be24-6657cc99ba32
+      - eb5e5aa9-fe6b-453f-9f0b-38354fe7da36
       X-Runtime:
-      - '0.013402'
+      - '0.013108'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.23
+      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.21
       Vary:
       - Origin
       Content-Length:
@@ -102,5 +102,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
-  recorded_at: Fri, 10 Jan 2025 10:44:54 GMT
+  recorded_at: Fri, 10 Jan 2025 14:53:28 GMT
 recorded_with: VCR 6.0.0

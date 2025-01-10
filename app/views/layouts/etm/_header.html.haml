@@ -13,11 +13,11 @@
           %ul#version-links
             %li{style: 'margin-bottom:1rem'}= t('versions.switch')
             - MyEtm::Version.all_other_versions.each do |version|
-              %li= link_to "##{version.tag}", version.url
+              %li= link_to "##{version.tag}", version.model_url
     .app-nav
       = render partial: 'layouts/etm/about_menu'
       = link_to t('app_nav.updates'), whats_new_path, class: 'nav-link'
-      = link_to t('app_nav.development'), redirect_to_external_path(destination: "#{Settings.idp_url}/collaborate", return_to: request.url), class: 'nav-link'
+      = link_to t('app_nav.development'), my_etm_path("collaborate"), class: 'nav-link'
 
   %ul.user-settings
     %li.locale.nav-item
@@ -38,7 +38,7 @@
 
     - if current_user
       %li.my-scenarios.nav-item
-        %a.nav-link{ href: redirect_to_external_path(destination: "#{Settings.idp_url}/saved_scenarios", return_to: request.url)}
+        %a.nav-link{ href: my_etm_path("saved_scenarios")}
           = t('header.load_scenario')
       %li.my-account.nav-item
         .dropdown
@@ -46,11 +46,11 @@
             %span= current_user.name.presence || t('header.my_profile')
             %span.fa.fa-caret-down
           %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'my-account-button' }
-            %li= link_to t('header.my_profile'), redirect_to_external_path(destination: user_profile_url, return_to: request.url), class: 'dropdown-item'
-            %li= link_to t('header.sign_out'),  redirect_to_external_path(destination: sign_out_path, return_to: request.url), class: 'dropdown-item', method: :post
+            %li= link_to t('header.my_profile'), my_etm_path('identity'), class: 'dropdown-item'
+            %li= link_to t('header.sign_out'), sign_out_path, class: 'dropdown-item', method: :post
             - if current_user.admin?
               %li.sep-above.admin
-                %a.dropdown-item{ href: redirect_to_external_path(destination: "#{Settings.idp_url}/admin", return_to: request.url) } Admin
+                %a.dropdown-item{ href: my_etm_path("admin") } Admin
     - else
       %li.sign-up.nav-item
         %a.nav-link{ href: sign_up_url }

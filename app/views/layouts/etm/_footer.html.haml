@@ -1,4 +1,4 @@
 %ul
-  %li= link_to(t('footer.terms'), redirect_to_external_path(destination: "#{Settings.idp_url}/terms", return_to: request.url))
-  %li= link_to(t('footer.privacy'), redirect_to_external_path(destination: "#{Settings.idp_url}/privacy", return_to: request.url))
-  %li= link_to(t('footer.contact_us'), redirect_to_external_path(destination: "#{Settings.idp_url}/contact", return_to: request.url))
+  %li= link_to(t('footer.terms'), my_etm_path("terms"))
+  %li= link_to(t('footer.privacy'), my_etm_path("privacy"))
+  %li= link_to(t('footer.contact_us'), my_etm_path("contact"))

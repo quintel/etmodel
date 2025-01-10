@@ -39,12 +39,12 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 379388f6-9847-4706-9aed-aaa3400e6800
+      - ad838098-d7a4-4747-8578-8c3fb7a8150b
       X-Runtime:
-      - '0.022601'
+      - '0.019562'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1.10, instantiation.active_record;dur=0.80,
-        process_action.action_controller;dur=6.66
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1.05, instantiation.active_record;dur=0.19,
+        process_action.action_controller;dur=6.34
       Content-Length:
       - '409'
     body:
@@ -54,7 +54,7 @@ http_interactions:
         author"},{"id":4,"saved_scenario_id":29,"owner_id":1,"group":"national","title_en":"Super
         scenario for 2030","title_nl":"Super scenario for 2030","version":"latest","end_year":2030,"author":"No
         author"}]}'
-  recorded_at: Tue, 17 Dec 2024 11:43:42 GMT
+  recorded_at: Fri, 10 Jan 2025 10:44:54 GMT
 - request:
     method: get
     uri: http://localhost:3002/api/v1/versions.json
@@ -86,21 +86,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3827ac2c7c96d926b106dcb1102a6dca"
+      - W/"b333f2b38e283af4a4b94a9463c73f73"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b98412aa-f8fe-4683-9e04-0f878c8390c9
+      - 805e24e1-3975-462a-afd9-9240ca857315
       X-Runtime:
-      - '0.025283'
+      - '0.013293'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.19
+      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.21
       Vary:
       - Origin
       Content-Length:
-      - '212'
+      - '416'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","url":"https://energytransitionmodel.com"},{"tag":"stable.01","url":"https://stable.energytransitionmodel.com"},{"tag":"stable.02","url":"https://stable2.energytransitionmodel.com"}]}'
-  recorded_at: Tue, 17 Dec 2024 11:43:43 GMT
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 10 Jan 2025 10:44:54 GMT
 recorded_with: VCR 6.0.0

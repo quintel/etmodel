@@ -46,7 +46,7 @@ http_interactions:
       - '212'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","url":"https://energytransitionmodel.com"},{"tag":"stable.01","url":"https://stable.energytransitionmodel.com"},{"tag":"stable.02","url":"https://stable2.energytransitionmodel.com"}]}'
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
   recorded_at: Tue, 17 Dec 2024 11:21:17 GMT
 - request:
     method: get
@@ -94,7 +94,7 @@ http_interactions:
       - '212'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","url":"https://energytransitionmodel.com"},{"tag":"stable.01","url":"https://stable.energytransitionmodel.com"},{"tag":"stable.02","url":"https://stable2.energytransitionmodel.com"}]}'
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
   recorded_at: Tue, 17 Dec 2024 11:21:18 GMT
 - request:
     method: get
@@ -142,6 +142,6 @@ http_interactions:
       - '212'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","url":"https://energytransitionmodel.com"},{"tag":"stable.01","url":"https://stable.energytransitionmodel.com"},{"tag":"stable.02","url":"https://stable2.energytransitionmodel.com"}]}'
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
   recorded_at: Tue, 17 Dec 2024 11:21:18 GMT
 recorded_with: VCR 6.0.0

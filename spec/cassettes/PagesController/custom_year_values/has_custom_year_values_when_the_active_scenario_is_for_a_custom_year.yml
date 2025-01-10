@@ -86,21 +86,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3827ac2c7c96d926b106dcb1102a6dca"
+      - W/"b333f2b38e283af4a4b94a9463c73f73"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 975fa9b3-483e-4c75-b9c6-b9916f3b9b71
+      - 36fa8bce-b171-401c-be24-6657cc99ba32
       X-Runtime:
-      - '0.012901'
+      - '0.013402'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.17
+      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.23
       Vary:
       - Origin
       Content-Length:
-      - '212'
+      - '416'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","url":"https://energytransitionmodel.com"},{"tag":"stable.01","url":"https://stable.energytransitionmodel.com"},{"tag":"stable.02","url":"https://stable2.energytransitionmodel.com"}]}'
-  recorded_at: Tue, 17 Dec 2024 11:43:44 GMT
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 10 Jan 2025 10:44:54 GMT
 recorded_with: VCR 6.0.0

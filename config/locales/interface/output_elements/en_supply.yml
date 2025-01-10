@@ -57,6 +57,17 @@ en:
         to balance demand. <br/><br/>
         See our <a href="https://docs.energytransitionmodel.com/main/balancing-demand#electricity" target =\"_blank\">documentation</a>
         for more information on how the ETM balances supply and demand in the electricity network.
+    mekko_of_network_gas_network:
+      title: Network gas supply and demand
+      short_description: ''
+      description: |
+        This chart shows the supply and demand categories of central network gas network.<br/><br/>
+        The supply side consists of the relevant supply categories of all carriers that max exist in the network gas mix, which are
+        natural gas, green gas, propane and LNG. The demand side consists of final demand and conversion categories.
+        Distribution losses are also included here. <br/><br/>
+        The ETM always balances supply and demand of network gas through additional import or export in case of a shortage or surplus respectively.
+        Read more about how the ETM balances supply and demand of network gas in our
+        <a href="https://docs.energytransitionmodel.com/main/flexibility#gas" target =\"_blank\">documentation</a>.
     co2_emissions_biomass:
       title: CO<sub>2</sub> emissions biomass
       short_description: CO2 biomass

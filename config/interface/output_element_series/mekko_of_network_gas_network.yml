@@ -1,0 +1,328 @@
+---
+# demand
+- label: agriculture_final_demand_for_network_gas_mekko
+  color: '#FFD700'
+  order_by: 100
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_agriculture_final_demand_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: agriculture_final_demand_for_network_gas_mekko
+- label: buildings_final_demand_for_space_heating_for_network_gas_mekko
+  color: '#47B7DC'
+  order_by: 110
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_buildings_final_demand_for_space_heating_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: buildings_final_demand_for_space_heating_for_network_gas_mekko
+- label: buildings_final_demand_excl_space_heating_for_network_gas_mekko
+  color: '#ADD8E6'
+  order_by: 120
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_buildings_final_demand_excl_space_heating_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: buildings_final_demand_excl_space_heating_for_network_gas_mekko
+- label: households_final_demand_for_space_heating_and_hot_water_network_gas_mekko
+  color: '#79BCF7'
+  order_by: 130
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_households_final_demand_for_space_heating_and_hot_water_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: households_final_demand_for_space_heating_and_hot_water_network_gas_mekko
+- label: households_final_demand_excl_space_heating_and_hot_water_for_network_gas_mekko
+  color: '#4169E1'
+  order_by: 140
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_households_final_demand_excl_space_heating_and_hot_water_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: households_final_demand_excl_space_heating_and_hot_water_for_network_gas_mekko
+- label: industry_final_demand_for_network_gas_mekko
+  color: '#A9A9A9'
+  order_by: 150
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_industry_final_demand_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: industry_final_demand_for_network_gas_mekko
+- label: international_transport_final_demand_for_network_gas_mekko
+  color: '#8B4513'
+  order_by: 160
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_international_transport_final_demand_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: international_transport_final_demand_for_network_gas_mekko
+- label: national_transport_final_demand_for_network_gas_mekko
+  color: '#8B0000'
+  order_by: 170
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_national_transport_final_demand_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: national_transport_final_demand_for_network_gas_mekko
+- label: energy_final_demand_for_network_gas_mekko
+  color: '#416B86'
+  order_by: 180
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_energy_final_demand_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: energy_final_demand_for_network_gas_mekko
+- label: other_final_demand_for_network_gas_mekko
+  color: '#E07033'
+  order_by: 190
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_other_final_demand_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: other_final_demand_for_network_gas_mekko
+- label: feedstock_final_demand_for_network_gas_mekko
+  color: '#2ecc71'
+  order_by: 200
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_feedstock_final_demand_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: feedstock_final_demand_for_network_gas_mekko
+- label: power_plants_for_network_gas_mekko
+  color: '#A076CA'
+  order_by: 210
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_power_plants_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: power_plants_for_network_gas_mekko
+- label: central_heating_for_network_gas_mekko
+  color: '#cc0000'
+  order_by: 220
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_central_heating_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: central_heating_for_network_gas_mekko
+- label: hydrogen_production_for_network_gas_mekko
+  color: '#87cfeb'
+  order_by: 230
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_hydrogen_production_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: hydrogen_production_for_network_gas_mekko
+- label: industry_transformation_demand_for_network_gas_mekko
+  color: '#464444'
+  order_by: 240
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_industry_transformation_demand_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: industry_transformation_demand_for_network_gas_mekko
+- label: biomass_torrefaction_for_network_gas_mekko
+  color: '#d87093'
+  order_by: 250
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_biomass_torrefaction_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: biomass_torrefaction_for_network_gas_mekko
+- label: greengas_export_network_gas_mekko
+  color: '#68862B'
+  order_by: 260
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_greengas_export_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: greengas_export_network_gas_mekko
+- label: natural_gas_export_for_network_gas_mekko
+  color: '#949294'
+  order_by: 270
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_natural_gas_export_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: natural_gas_export_for_network_gas_mekko
+- label: distribution_losses_for_network_gas_mekko
+  color: '#DCDCDC'
+  order_by: 280
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_distribution_losses_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: distribution_losses_for_network_gas_mekko
+
+# supply
+- label: greengas_gasification_dry_biomass_for_network_gas_mekko
+  color: '#BFEA62'
+  order_by: 610
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_greengas_gasification_dry_biomass_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: greengas_gasification_dry_biomass_for_network_gas_mekko
+- label: greengas_gasification_wet_biomass_for_network_gas_mekko
+  color: '#92B940'
+  order_by: 620
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_greengas_gasification_wet_biomass_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: greengas_gasification_wet_biomass_for_network_gas_mekko
+- label: greengas_upgrade_biogas_for_network_gas_mekko
+  color: '#DBFF8D'
+  order_by: 630
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_greengas_upgrade_biogas_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: greengas_upgrade_biogas_for_network_gas_mekko
+- label: lng_regasification_for_network_gas_mekko
+  color: '#696969'
+  order_by: 640
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_lng_regasification_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: lng_regasification_for_network_gas_mekko
+- label: natural_gas_extraction_for_network_gas_mekko
+  color: '#F3F3F3'
+  order_by: 650
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_natural_gas_extraction_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: natural_gas_extraction_for_network_gas_mekko
+- label: natural_gas_import_for_network_gas_mekko
+  color: '#CCCCCC'
+  order_by: 660
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_natural_gas_import_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: natural_gas_import_for_network_gas_mekko
+- label: propane_import_for_network_gas_mekko
+  color: '#808080'
+  order_by: 670
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_propane_import_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: propane_import_for_network_gas_mekko
+- label: industry_transformation_supply_for_network_gas_mekko
+  color: '#464444'
+  order_by: 680
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: supply_of_industry_transformation_supply_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: industry_transformation_supply_for_network_gas_mekko

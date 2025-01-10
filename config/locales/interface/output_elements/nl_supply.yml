@@ -55,6 +55,17 @@ nl:
         waarin stroomuitval (tekorten) is meegenomen voor balancering met de vraagkant. <br/><br/>
         Zie de <a href="https://docs.energytransitionmodel.com/main/balancing-demand#electricity/" target =\"_blank\">documentatie</a>
         voor meer informatie over hoet het ETM vraag en aanbod in het elektriciteitsnetwerk balanceert.
+    mekko_of_network_gas_network:
+      title: Netwerkgas vraag en aanbod
+      short_description: ''
+      description: |
+        Deze grafiek toont vraag en aanbod van netwerkgas in het centrale netwerk. <br/><br/>
+        De aanbodkant bestaat uit de relevante aanbodcategorieën van alle dragers waar netwerkgas uit kan bestaan,
+        namelijk aardgas, groen gas, propaan en LNG. De vraagkant bestaat uit categorieën voor eindgebruik en conversie.
+        Transportverliezen zijn hierin ook meegenomen. <br/><br/>
+        Het ETM balanceert vraag en aanbod van netwerk gas middels additionele import of export bij respectievelijk een
+        tekort of overschot. Lees meer over hoe het ETM vraag en aanbod van netwerkgas balanceert in onze
+        <a href="https://docs.energytransitionmodel.com/main/flexibility#gas" target =\"_blank\">documentatie</a>.
     co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot biomassa
       short_description: CO2 biomassa
@@ -229,7 +240,7 @@ nl:
       short_description:
       description:
     mekko_of_hydrogen_network:
-      title: Waterstofvraag en aanbod
+      title: Waterstof vraag en aanbod
       short_description:
       description: |
         Deze grafiek weergeeft de verschillende categorieën van vraag en aanbod van het centrale

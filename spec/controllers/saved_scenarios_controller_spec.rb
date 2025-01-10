@@ -22,23 +22,42 @@ describe SavedScenariosController, vcr: true do
       session[:setting] = Setting.new
     end
 
-    pending 'GET load' do
-      pending 'RECHECK'
+    describe 'GET load' do
       context 'with an owned saved_scenario' do
         subject { response }
 
-        before { get(:load, params: { id: 12 }) }
+        before { get(:load, params: { id: 12, scenario_id: 10 }) }
 
         it { is_expected.to redirect_to play_path }
 
         it do
-          expect(assigns(:saved_scenario)).to eq(user_scenario)
+          expect(session[:setting].active_saved_scenario_id).to eq(12)
+        end
+
+        it do
+          expect(session[:setting].api_session_id).to eq(ete_scenario_mock.id)
+        end
+      end
+
+      context 'when the saved scenario was already active' do
+        subject { response }
+
+        before do
+          session[:setting].active_saved_scenario_id = 12
+          session[:setting].api_session_id = 100_000
+          get(:load, params: { id: 12, scenario_id: 10 })
+        end
+
+        it { is_expected.to redirect_to play_path }
+
+        it 'does not update the scenario (session) id' do
+          expect(session[:setting].api_session_id).to eq(100_000)
         end
       end
 
       it 'changes the session active_saved_scenario_id in settings' do
         expect do
-          get :load, params: { id: 12 }
+          get :load, params: { id: 12, scenario_id: 10 }
         end.to change{ session[:setting].active_saved_scenario_id }
                 .from(nil)
                 .to 12
@@ -49,7 +68,7 @@ describe SavedScenariosController, vcr: true do
           .to receive(:call)
           .and_return(ServiceResult.failure('Scenario not found'))
 
-        get :load, params: { id: 1 }
+        get :load, params: { id: 1, scenario_id: 11 }
         expect(response).to be_redirect
       end
     end

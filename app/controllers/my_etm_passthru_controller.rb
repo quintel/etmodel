@@ -8,7 +8,7 @@ class MyEtmPassthruController < ApplicationController
   # Always redirects to my ETM
   def set_cookie_and_redirect
     cookies[:etm_last_visited_page] = {
-      value: request.referer || root_path,
+      value: Current.setting.last_etm_page.presence || root_path,
       domain: :all,
       secure: Rails.env.production?,
       expires: 1.day.from_now

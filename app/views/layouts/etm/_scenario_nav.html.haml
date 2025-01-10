@@ -7,7 +7,7 @@
         = Current.setting.end_year
       - if Current.setting.active_scenario_title.present?
         - if active_saved_scenario_id.present?
-          = link_to(saved_scenario_path(active_saved_scenario_id)) do
+          = link_to(my_etm_path("saved_scenarios/#{active_saved_scenario_id}")) do
             %span.name
               = Current.setting.active_scenario_title
         - else

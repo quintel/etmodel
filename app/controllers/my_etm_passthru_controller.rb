@@ -14,6 +14,6 @@ class MyEtmPassthruController < ApplicationController
       expires: 1.day.from_now
     }
 
-    redirect_to "#{Settings.idp_url}/#{params[:page]}"
+    redirect_to "#{Settings.idp_url}/#{params[:page]}", allow_other_host: true
   end
 end

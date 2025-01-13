@@ -12,6 +12,9 @@ ete_url: https://beta-engine.energytransitionmodel.com
 # URL for the Multi-Year Charts application.
 multi_year_charts_url: http://localhost:3005
 
+# The (stable) version's name
+version: <%= ENV.fetch('VERSION_TAG', 'latest') %>
+
 # This sets the url we use as API proxy. The proxying is handled by nginx or a local rack-based
 # proxy. This is a legacy feature used by ETPlugin and will not be supported long-term.
 api_proxy_url: /ete_proxy

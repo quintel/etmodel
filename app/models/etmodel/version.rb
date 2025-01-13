@@ -3,7 +3,7 @@
 module ETModel
   module Version
     # Release tag
-    TAG = 'stable.01'
+    TAG = Settings.version
 
     # Year of release.
     MAJOR = 2024

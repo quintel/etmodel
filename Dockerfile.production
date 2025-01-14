@@ -11,6 +11,7 @@ RUN apt-get update -yqq && \
     default-libmysqlclient-dev \
     git \
     gnupg \
+    libyaml-dev \
     nodejs \
     && apt-get clean \
     && rm -rf /var/cache/apt/archives/* \

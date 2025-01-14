@@ -36,7 +36,8 @@ COPY Gemfile* package.json yarn.lock /app/
 WORKDIR /app
 
 RUN bundle config set deployment 'true'
-RUN bundle install --jobs=4 --retry=3 --without="development test"
+RUN bundle config set --local without 'development test'
+RUN bundle install --jobs=4 --retry=3
 RUN yarn install
 
 COPY . /app/

@@ -9,5 +9,5 @@ partners_url: https://beta.energytransitionmodel.com
 identity:
   client_uri: <%= ENV.fetch('IDENTITY_CLIENT_URI', 'https://beta.energytransitionmodel.com') %>
 
-idp_url: <%= ENV.fetch('IDP_URL', 'https://beta.energytransitionmodel.com') %>
+idp_url: <%= ENV.fetch('IDP_URL', 'https://beta.my.energytransitionmodel.com') %>
 ete_id: <%= ENV.fetch('ETE_ID', '') %>

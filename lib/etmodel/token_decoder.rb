@@ -10,7 +10,12 @@ module ETModel
 
     # Decodes and verifies a JWT.
     def decode(token)
-      decoded = JSON::JWT.decode(token, jwk_set)
+      begin
+        decoded = JSON::JWT.decode(token, jwk_set)
+      rescue JSON::JWK::Set::KidNotFound
+        jwk_cache.delete('jwk_hash') # Clear cache and retry
+        decoded = JSON::JWT.decode(token, jwk_set)
+      end
 
       unless decoded[:iss] == Settings.idp_url &&
              (

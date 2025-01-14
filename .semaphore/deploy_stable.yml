@@ -24,7 +24,8 @@ blocks:
             - 'docker push quintel/etmodel:stable'
             - 'docker push quintel/etmodel-nginx:stable'
             - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
-            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"
+            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_stable && ./deploy.sh"
+            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_stable_2 && ./deploy.sh"
       secrets:
         - name: Docker Hub credentials
         - name: Stable SSH settings

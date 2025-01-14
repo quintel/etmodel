@@ -39,11 +39,10 @@ nl:
     co2_reduction:
       label: CO<sub>2</sub> t.o.v. 1990
       title: CO<sub>2</sub>-uitstoot t.o.v. 1990
-      description: "Het jaar 1990 wordt als referentiejaar gebruikt voor de verandering
-        in CO<sub>2</sub> uitstoot getoond in het dashboard. Hoe verandert de CO<sub>2</sub>-uitstoot,
-        als resultaat van je aannames? De getoonde waarden zijn voor het binnenlands
-        finaal energetisch gebruik. Zie ook de <a\r\n  href=\"#\" class=\"open_chart\"\r\n
-        \ data-chart-key=\"co2_sankey\"\r\n>sankey grafiek van CO<sub>2</sub> emissies</a>."
+      description: |
+        Het jaar 1990 wordt als referentiejaar gebruikt voor de verandering
+        in CO<sub>2</sub> uitstoot getoond in het dashboard.
+        Je kunt meer informatie vinden over deze grafiek in de <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector" target="_blank">documentatie</a>.
     local_co2_reduction:
       label: Binnenlandse CO<sub>2</sub>-uitstoot
       title: Binnenlandse CO<sub>2</sub>-uitstoot
@@ -124,16 +123,16 @@ nl:
       label: Elektriciteitsoverschotten
       title: Aantal uren met elektriciteitsoverschotten
       description: Als gevolg van de grote inzet van volatiele vormen van elektriciteitsproductie
-        kan het aanbod van volatiele en must-run elektriciteit de basislastvraag overstijgen. 
+        kan het aanbod van volatiele en must-run elektriciteit de basislastvraag overstijgen.
         Het ETM houdt het aantal opeenvolgende uren bij waarop dit het geval is in jouw scenario.
     total_curtailment:
       label: Productiebeperking
       title: Totale productiebeperking
       description: |
-        Dit toont het totale productiebeperkingsvolume van must-run en volatiele producenten, ook wel 'inflexibele' producenten genoemd (zie onze 
+        Dit toont het totale productiebeperkingsvolume van must-run en volatiele producenten, ook wel 'inflexibele' producenten genoemd (zie onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
         documentatie</a> voor meer informatie). Productiebeperking wordt toegepast als de inflexibele productie groter is dan de totale vraag.
-        Een hoge mate van productiebeperking kan zonde zijn van de elektriciteit, maar het kan ook duur zijn om flexibel vermogen te 
+        Een hoge mate van productiebeperking kan zonde zijn van de elektriciteit, maar het kan ook duur zijn om flexibel vermogen te
         installeren om die elektriciteit te gebruiken. Dit dashboard item kan je helpen een gewenst niveau van productiebeperking te bereiken. </br></br>
         In de grafiek hieronder kun je de productiebeperking zien, vergeleken met andere inzet van flexibele elektriciteitsvraag.
     share_of_curtailment:
@@ -141,10 +140,10 @@ nl:
       title: Relatief aandeel van productiebeperking
       description: |
         Dit toont het totale productiebeperkingsvolume van must-run en volatiele producenten, ten opzichte van hun totale elektriciteitsproductie.
-        Deze producenten worden ook wel 'inflexibele' producenten genoemd (zie onze 
+        Deze producenten worden ook wel 'inflexibele' producenten genoemd (zie onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility#categorization-of-flexible-and-inflexible-technologies" target=\"_blank\">
         documentatie</a> voor meer informatie). Productiebeperking wordt toegepast als de inflexibele productie groter is dan de totale vraag.
-        Een hoge mate van productiebeperking kan zonde zijn van de elektriciteit, maar het kan ook duur zijn om flexibel vermogen te 
+        Een hoge mate van productiebeperking kan zonde zijn van de elektriciteit, maar het kan ook duur zijn om flexibel vermogen te
         installeren om die elektriciteit te gebruiken. Dit dashboard item kan je helpen een gewenst niveau van productiebeperking te bereiken. </br></br>
         In de grafiek hieronder kun je de productiebeperking zien, vergeleken met andere inzet van flexibele elektriciteitsvraag.
     all_ghg_reduction_relative_to_start_year:

@@ -77,6 +77,11 @@ VCR.configure do |c|
       request.proceed
     end
   end
+
+  c.ignore_request do |request|
+    ## Ignore requests made for accesstokens
+    URI(request.uri).path == '/identity/access_tokens'
+  end
 end
 
 Shoulda::Matchers.configure do |config|

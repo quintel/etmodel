@@ -1,2 +1,3 @@
 = render partial: 'saved_scenarios/scenario_row', collection: @saved_scenarios
-= paginate @saved_scenarios
+- if @pagy.pages > 1
+          != pagy_nav_custom(@pagy)

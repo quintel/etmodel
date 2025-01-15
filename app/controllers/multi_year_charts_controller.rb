@@ -17,7 +17,7 @@ class MultiYearChartsController < ApplicationController
 
   def index
     @scenarios = user_scenarios
-    @multi_year_charts = user_multi_year_charts
+    @pagy, @multi_year_charts = user_multi_year_charts
 
     respond_to do |format|
       format.html
@@ -39,9 +39,7 @@ class MultiYearChartsController < ApplicationController
   #
   # GET multi_year_charts/list
   def list
-    @multi_year_charts = user_collections
-      .kept
-      .includes(:user)
+    @pagy, @multi_year_charts = user_collections
 
     respond_to do |format|
       format.html { render layout: 'application' }
@@ -73,7 +71,7 @@ class MultiYearChartsController < ApplicationController
       flash.now[:error] = result.errors.join(', ')
 
       @scenarios = user_scenarios
-      @multi_year_charts = user_multi_year_charts
+      @pagy, @multi_year_charts = user_multi_year_charts
 
       render :index, status: :unprocessable_entity
     end
@@ -145,45 +143,51 @@ class MultiYearChartsController < ApplicationController
   private
 
   def user_scenarios
-    return [] unless current_user
+    return [nil, []] unless current_user
 
-    scenarios = current_user
-      .saved_scenarios
-      .order('created_at DESC')
-      .page(params[:page])
-      .per(50)
+    pagy, scenarios = pagy(
+      current_user.saved_scenarios.order('created_at DESC'),
+      items: 50,
+      page: params[:page]
+    )
 
     SavedScenario.batch_load(scenarios)
 
-    scenarios
+    [pagy, scenarios]
   end
 
   def user_multi_year_charts
-    return [] unless current_user
+    return [nil, []] unless current_user
 
-    current_user
-      .multi_year_charts
-      .where(area_code: Engine::Area.keys)
-      .order(created_at: :desc)
-      .page(params[:page])
-      .per(50)
+    pagy, multi_year_charts = pagy(
+      current_user.multi_year_charts
+                    .where(area_code: Engine::Area.keys)
+                    .order(created_at: :desc),
+      items: 50,
+      page: params[:page]
+    )
+
+    [pagy, multi_year_charts]
   end
 
   def user_collections
-    return [] unless current_user
+    return [nil, []] unless current_user
 
-    current_user
-      .multi_year_charts
-      .order(created_at: :desc)
-      .page(params[:page])
-      .per(8)
+    pagy, collections = pagy(
+      current_user.multi_year_charts
+                    .kept
+                    .order(created_at: :desc),
+      items: 8,
+      page: params[:page]
+    )
+
+    [pagy, collections]
   end
 
   def ensure_valid_config
     return if Settings.multi_year_charts_url
 
-    redirect_to root_path,
-      notice: 'Missing multi_year_charts_url setting in config.yml'
+    redirect_to root_path, notice: 'Missing multi_year_charts_url setting in config.yml'
   end
 
   def create_collection_params

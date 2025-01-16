@@ -17,6 +17,8 @@ class CreateSavedScenario
     ServiceResult.success(response.body)
   rescue Faraday::UnprocessableEntityError => e
     ServiceResult.failure_from_unprocessable_entity(e)
+  rescue Faraday::UnauthorizedError => e
+    ServiceResult.failure_from_unprocessable_entity(e)
   end
 
   private

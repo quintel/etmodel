@@ -1,4 +1,4 @@
-namespace :memcached do 
+namespace :memcached do
   desc 'Start memcached'
   task :start do
     on(roles(:app)) { sudo '/etc/init.d/memcached start' }

@@ -10,7 +10,7 @@ RSpec.describe 'API::User', type: :request, api: true do
       before do
         put '/api/v1/user',
           as: :json,
-          params: { id: user.id, name: 'John' },
+          params: { user: { id: user.id, name: 'John' } },
           headers: authorization_header(user)
       end
 
@@ -27,11 +27,11 @@ RSpec.describe 'API::User', type: :request, api: true do
       before do
         put '/api/v1/user',
           as: :json,
-          params: { id: user.id, name: ' ' },
+          params: { user: { id: user.id, name: ' ' } },
           headers: authorization_header(user)
       end
 
-      it 'returns 400 Bad Request' do
+      it 'returns 422 Unprocessable Entity' do
         expect(response).to have_http_status(:bad_request)
       end
 

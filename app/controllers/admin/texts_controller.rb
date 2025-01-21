@@ -13,7 +13,7 @@ module Admin
         flash[:notice] = "Successfully updated text."
         redirect_to admin_texts_path
       else
-        render action: 'edit'
+        render :edit
       end
     end
 

@@ -2,6 +2,36 @@
 
 ___
 
+## 2025.02
+
+### 4 februari 2025
+
+**Nieuwe functies**
+
+* Nieuwe grafieken zijn toegevoegd aan het grafiekenoverzicht:
+  * ‘Elektriciteit vraag en aanbod’
+  * ‘Netwerkgas vraag en aanbod’
+* Verbeteringen in niet-energetische CO<sub>2</sub>-emissies ter verbetering van een vergelijking tussen 1990, het start- en toekomstjaar:
+  * Opsplitsing van niet-energetische en uitgestelde emissies naar afzonderlijke categorieën in de grafiek ‘CO<sub>2</sub>-emissies’
+  * Update van de grafiekbeschrijving van grafiek ‘CO<sub>2</sub>-emissies’ met betrekking tot niet-energetische emissies
+  * Update van documentatie over niet-energetische emissies in <a href="https://docs.energytransitionmodel.com/main/co2-1990-emissions" target="_blank">1990</a> en deze <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector#emissions-per-sector" target="_blank">gemodelleerd in het ETM</a>
+* Verbeteringen in startjaardata voor de gemeente Emmen, met betrekking tot de chemiesector en overige industrie
+* Verdere verbeteringen aan onze automatische testomgeving die de modelberekeningen controleert
+
+**Bug fixes**
+
+* Kleine discrepantie verholpen tussen de berekende uurlijkse en jaarlijkse elektriciteitsstromen voor load shifting in de ICT-sector
+* Ontbrekende technologie hybride luchtwarmtepomp (oliegestookt) toegevoegd aan de grafiek ‘Aantal woningen per ruimteverwarmingstechnologie’
+* Ontbrekend uurlijkse profiel van export van aardgas toegevoegd aan de data-export 'Netwerkgasvraag, -productie en -opslag per uur'
+* Correctie in de stroom van biomassa naar warmte in de grafiek ‘Overzicht energiestromen’ (Sankey) om dubbeltelling van groen gas te voorkomen
+* Herontwerp van de grafiek ‘Netto stroom van raffinageproducten’ om de transformatie van niet-olie energiedragers te visualiseren wanneer er is gekoppeld aan een extern industriemodel
+
+**Technische changelog**
+
+* <a href="/assets/pages/whats_new/changelog/202502_changelog_ETM.csv" download>202502_changelog.csv</a>
+
+---
+
 # January 2025
 
 Nieuwe grafieken zijn toegevoegd voor vraag en aanbod in warmtenetten per temperatuurniveau (HT, MT, LT). Bekijk deze nieuwe grafieken in het grafiekenoverzicht in het ETM. Daarnaast zijn er deze maand diverse bug fixes en verbeteringen gedaan.

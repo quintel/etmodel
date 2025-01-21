@@ -2,6 +2,36 @@
 
 ___
 
+## 2025.02
+
+### 4 February 2025
+
+**New features**
+
+* New charts added to the chart selection:
+  * ‘Electricity supply and demand’
+  * ‘Network gas supply and demand’
+* Improvements for non-energetic CO<sub>2</sub> emissions to better facilitate the comparison between 1990, the start, and future year:
+  * Split of non-energetic and delayed emissions in the ‘CO<sub>2</sub> emissions’ chart to separate categories
+  * Update in ‘CO<sub>2</sub> emissions’ chart description regarding non-energetic emissions
+  * Update of documentation regarding non-energetic emissions in <a href="https://docs.energytransitionmodel.com/main/co2-1990-emissions" target="_blank">1990</a> and those <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector#emissions-per-sector" target="_blank">modelled in the ETM</a>
+* Start year data improvements for the municipality of Emmen, regarding the chemical and other industry sectors
+* Further improvements to our automatic testing suite that checks the model’s calculations
+
+**Bug fix**
+
+* Fixed a minor discrepancy between the calculated hourly and annual electricity flows for load shifting in the ICT sector
+* Added missing technology hybrid air heat pump (oil-fired) to chart ‘Number of residences per space heating technology’
+* Added missing natural gas export hourly demand profile to the data-export 'Network gas demand, production and storage per hour'
+* Correction in biomass to heat flow in ‘Energy flow overview’ (Sankey) chart to avoid double counting of green gas flows
+* Redesign of chart ‘Net flow of refinery products’ to visualize transformation of non-oil energy carriers when coupled to an external industry model
+
+**Technical changelog**
+
+* <a href="/assets/pages/whats_new/changelog/202502_changelog_ETM.csv" download>202502_changelog.csv</a>
+
+---
+
 # January 2025
 New charts added for supply and demand in district heating per temperature level (HT, MT, LT). Check out these supply and demand charts in the chart overview in the ETM. Furthermore, miscellaneous bug fixes and improvements are done this month.
 

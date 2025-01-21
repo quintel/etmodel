@@ -1,0 +1,14 @@
+﻿Deploy,Subject,Status,Previous inputs,New inputs,Previous unit,New unit,Explanation
+January,WTP,Changed,wtp_of_industry_chemicals_fertilizers_flexibility_p2h_electricity,,euro,euro,migrated functionality of external coupling inputs to regular inputs for WTP
+January,WTP,Changed,wtp_of_industry_chemicals_other_flexibility_p2h_electricity,,euro,euro,migrated functionality of external coupling inputs to regular inputs for WTP
+January,WTP,Changed,wtp_of_industry_chemicals_refineries_flexibility_p2h_electricity,,euro,euro,migrated functionality of external coupling inputs to regular inputs for WTP
+January,WTP,Changed,wtp_of_industry_other_food_flexibility_p2h_electricity,,euro,euro,migrated functionality of external coupling inputs to regular inputs for WTP
+January,WTP,Changed,wtp_of_industry_other_paper_flexibility_p2h_electricity,,euro,euro,migrated functionality of external coupling inputs to regular inputs for WTP
+January,External coupling,Removed,external_coupling_industry_chemical_fertilizers_p2h_wtp,,euro,,migrated functionality of external coupling inputs to regular inputs for WTP
+January,External coupling,Removed,external_coupling_industry_chemical_other_p2h_wtp,,euro,,migrated functionality of external coupling inputs to regular inputs for WTP
+January,External coupling,Removed,external_coupling_industry_chemical_refineries_p2h_wtp,,euro,,migrated functionality of external coupling inputs to regular inputs for WTP
+January,External coupling,Removed,external_coupling_industry_other_food_p2h_wtp,,euro,,migrated functionality of external coupling inputs to regular inputs for WTP
+January,External coupling,Removed,external_coupling_industry_other_paper_p2h_wtp,,euro,,migrated functionality of external coupling inputs to regular inputs for WTP
+January,External coupling,Changed,external_coupling_industry_metal_aluminium_technical_lifetime,,year,year,Change minimum value from 0 to 1
+January,External coupling,Changed,external_coupling_industry_metal_other_metals_technical_lifetime,,year,year,Change minimum value from 0 to 1
+January,External coupling,Changed,external_coupling_industry_metal_steel_technical_lifetime,,year,year,Change minimum value from 0 to 1

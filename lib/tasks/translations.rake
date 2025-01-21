@@ -9,7 +9,7 @@ namespace :translations do
 
     puts "Keys in NL, but not in EN:"
     puts  display_keys(nl_keys - en_keys)
-  end  
+  end
 end
 
 
@@ -19,8 +19,8 @@ end
 
 # Lists all keys in the hash
 # For example:
-#  
-# a = {'level1' => {'item1' => 'value', 'item2' => 'value', 'item3' => {'some' => 'asdasd'}}} 
+#
+# a = {'level1' => {'item1' => 'value', 'item2' => 'value', 'item3' => {'some' => 'asdasd'}}}
 # => ['level1.item1', 'level1.item2', 'level1.item3.some']
 #
 def list_all_keys(key, arr)

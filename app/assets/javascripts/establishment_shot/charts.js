@@ -51,8 +51,7 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_buildings_households_space_heating_cooling_co2_emissions' },
                 { key: 'co2_sheet_buildings_households_hot_water_co2_emissions' },
                 { key: 'co2_sheet_buildings_households_cooking_co2_emissions' },
-                { key: 'co2_sheet_buildings_households_appliances_light_co2_emissions' },
-                { key: 'co2_sheet_buildings_households_other_emissions' }
+                { key: 'co2_sheet_buildings_households_appliances_light_co2_emissions' }
             ],
             [
                 { key: 'co2_sheet_industry_chemical_all_emissions' },
@@ -77,6 +76,9 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_transport_total_public_transport_co2_emissions' },
                 { key: 'co2_sheet_transport_total_international_transport_co2_emission' },
                 { key: 'co2_sheet_transport_other_ghg_emissions' }
+            ],
+            [
+                {key: 'co2_sheet_other_sector_co2_emissions'}
             ]
         ],
         total_chart_attributes = {
@@ -95,7 +97,11 @@ EstablishmentShot.Charts = (function () {
                   fa_icon: '\uf015' },
                 { key: 'co2_sheet_indirect_delayed_emissions',
                   title: 'co2_sheet_indirect_delayed_emissions',
-                  fa_icon: '\uf016' }
+                  fa_icon: '\uf016' },
+                { key: 'co2_sheet_other_sector_total_emissions',
+                  title: 'co2_sheet_other_sector_total_emissions',
+                  fa_icon: '\uf114'}  
+
             ],
             title: "bar_chart"
         },
@@ -181,7 +187,12 @@ EstablishmentShot.Charts = (function () {
                     left: true,
                     top: true,
                     fa_icon: 'f1b9'
-                }, addQueries(), smallChartDefaults())
+                }, addQueries(), smallChartDefaults()),
+                co2_sheet_other_sector_total_emissions: $.extend({
+                    left: true,
+                    top: true,
+                    fa_icon: 'f114'
+                }, addQueries(), smallChartDefaults()),
             };
         },
         getQueries: function () {

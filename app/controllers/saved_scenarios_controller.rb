@@ -42,10 +42,11 @@ class SavedScenariosController < ApplicationController
 
     new_scenario = CreateAPIScenario.call(engine_client, { scenario_id: saved_scenario_params[:scenario_id] })
 
-    # TODO: refactor as method on current setting
-    Current.setting.api_session_id = new_scenario.value.id
-    Current.setting.active_scenario_title = saved_scenario_params[:title]
-    Current.setting.active_saved_scenario_id = create_saved_scenario.value['id']
+    Current.setting.update_scenario_session(
+      new_scenario.value,
+      saved_scenario_id: create_saved_scenario.value['id'],
+      title: saved_scenario_params[:title]
+    )
 
     redirect_to(Current.setting.last_etm_page.presence || play_path)
   end

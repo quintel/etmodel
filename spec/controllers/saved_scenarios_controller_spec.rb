@@ -74,31 +74,6 @@ describe SavedScenariosController, vcr: true do
     end
   end
 
-  pending ' GET show' do
-    pending "RECHECK"
-
-    it 'has an ok status' do
-      get :show, params: { id: 1 }
-      expect(response).to be_successful
-    end
-
-    it 'responds to the .csv format' do
-      get :show, params: { id: 1 }, format: :csv
-      expect(response.media_type).to eq('text/csv')
-    end
-
-    context 'when the scenario cannot be loaded' do
-      before do
-        allow(Engine::Area).to receive(:code_exists?).and_return(false)
-      end
-
-      it 'redirects to the root page' do
-        get :show, params: { id: 1 }
-        expect(response).to be_redirect
-      end
-    end
-  end
-
   describe 'GET new' do
     it 'renders the new saved scenario form' do
       sign_in(user)

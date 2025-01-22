@@ -4,13 +4,6 @@
 class SavedScenariosController < ApplicationController
   before_action :require_user, only: %i[create new]
 
-  def show
-    respond_to do |format|
-      format.csv { @saved_scenario.loadable? ? render : render_not_found }
-      format.html { redirect_to "#{Settings.idp_url}/saved_scenarios/#{params[:id]}"}
-    end
-  end
-
   # Shows a form for creating a new saved scenario.
   #
   # GET /scenarios/:scenario_id/save

@@ -176,4 +176,11 @@ class Setting
     hash[:api_session_id] = nil unless active_scenario?
     hash
   end
+
+  # Updates scenario-related attributes in the Setting
+  def update_scenario_session(new_scenario, saved_scenario_id:, title:)
+    self.api_session_id = new_scenario.id
+    self.active_saved_scenario_id = saved_scenario_id
+    self.active_scenario_title = title
+  end
 end

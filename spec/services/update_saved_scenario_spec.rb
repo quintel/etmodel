@@ -2,84 +2,70 @@
 
 require 'rails_helper'
 
-describe UpdateSavedScenario, type: :service do
-  pending "TODO: rewrite!!!"
-
+RSpec.describe UpdateSavedScenario do
   let(:client) { instance_double(Faraday::Connection) }
-  let(:user) { FactoryBot.create(:user) }
-  let(:result_scenario) { FactoryBot.build(:engine_scenario, id: 11) }
-  let(:api_result) { ServiceResult.success(result_scenario) }
-  let(:result) { described_class.call(client, saved_scenario, 10) }
-  # let!(:saved_scenario) do
-  #   FactoryBot.create :saved_scenario,
-  #                     user: user,
-  #                     id: 648_695
-  # end
+  let(:service) { described_class.new(client, saved_scenario_id, scenario_id) }
+  let(:saved_scenario_id) { 123 }
+  let(:scenario_id) { 456 }
 
-  before do
-    allow(CreateAPIScenario).to receive(:call)
-      .and_return(api_result)
-    # allow(saved_scenario).to receive(:scenario)
-    #   .and_return(ete_scenario_mock)
-    allow(client).to receive(:put).with(
-      '/api/v3/scenarios/10', scenario: { keep_compatible: true }
-    )
-    allow(client).to receive(:put).with(
-      '/api/v3/scenarios/10', scenario: { set_preset_roles: true }
-    )
-    allow(client).to receive(:post).with(
-      '/api/v3/scenarios/10/version', { :description => "" }
-    )
-  end
+  describe '#call' do
+    subject(:call_service) { service.call }
 
-  pending 'when the API response is successful' do
-    it 'returns a ServiceResult' do
-      expect(result).to be_a(ServiceResult)
-    end
+    let(:response) { instance_double('Faraday::Response', body: { 'data' => 'response_data' }.to_json) }
 
-    it 'is successful' do
-      expect(result).to be_successful
-    end
+    context 'when the API call is successful' do
+      let(:request_double) { instance_double('Faraday::Request') }
 
-    describe '#value' do
-      subject { result.value }
+      before do
+        allow(client).to receive(:put).with("api/v1/saved_scenarios/#{saved_scenario_id}")
+          .and_yield(request_double)
+          .and_return(response)
 
-      it { is_expected.to be_a Engine::Scenario }
-      it 'is a new scenario' do
-        expect(subject.id).not_to eq(saved_scenario.scenario_id)
+        allow(request_double).to receive(:headers).and_return({})
+        allow(request_double).to receive(:body=)
+      end
+
+      it 'makes a PUT request to update the saved scenario' do
+        call_service
+        expect(client).to have_received(:put).with("api/v1/saved_scenarios/#{saved_scenario_id}")
+        expect(request_double).to have_received(:body=).with({ scenario_id: scenario_id }.to_json)
+      end
+
+      it 'returns a successful ServiceResult' do
+        result = call_service
+        expect(result).to be_successful
+        expect(result.value).to eq(response.body)
       end
     end
 
-    it 'changes the scenario_id on the SavedScenario' do
-      expect { result }.to(
-        change(saved_scenario, :scenario_id)
-          .from(648_695)
-          .to(10)
-      )
+    context 'when the API call returns an unprocessable entity error' do
+      let(:error) do
+        Faraday::UnprocessableEntityError.new('Unprocessable Entity').tap do |e|
+          allow(e).to receive(:response).and_return({ body: { 'errors' => ['Some error'] } })
+        end
+      end
+
+      before do
+        allow(client).to receive(:put).and_raise(error)
+      end
+
+      it 'rescues the error and returns a failure ServiceResult' do
+        result = call_service
+        expect(result).to be_failure
+        expect(result.errors).to include('Some error')
+      end
     end
 
-    it 'changes the scenario_id_history on the SavedScenario' do
-      expect { result }.to(
-        change(saved_scenario, :scenario_id_history)
-          .from([])
-          .to([648_695])
-      )
-    end
-  end
+    context 'when another error occurs during the API call' do
+      let(:error) { StandardError.new('Some other error') }
 
-  pending 'when the API response is unsuccessful' do
-    let(:api_result) { ServiceResult.failure(['Nope']) }
+      before do
+        allow(client).to receive(:put).and_raise(error)
+      end
 
-    it 'returns a ServiceResult' do
-      expect(result).to be_a(ServiceResult)
-    end
-
-    it 'is not successful' do
-      expect(result).not_to be_successful
-    end
-
-    it 'returns the scenario error messages' do
-      expect(result.errors).to eq(['Nope'])
+      it 'raises the error' do
+        expect { call_service }.to raise_error(StandardError, 'Some other error')
+      end
     end
   end
 end

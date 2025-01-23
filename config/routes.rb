@@ -184,7 +184,7 @@ Rails.application.routes.draw do
     # Restrict to known actions
     resources :saved_scenarios, only: %i[index show create update destroy]
 
-    resources :transition_paths, only: %i[index show create update destroy]
+    resources :transition_paths, only: %i[index show create update destroy] # TODO: Re-route to a helpful error page
   end
 
   %w[404 422 500].each do |code|

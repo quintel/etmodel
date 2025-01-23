@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/versions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"fb068e5526562002c2721a3980150de4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 57abe1df-ab54-4ec6-b1af-fad96424503d
+      X-Runtime:
+      - '0.059102'
+      Server-Timing:
+      - sql.active_record;dur=9.44, start_processing.action_controller;dur=0.00, instantiation.active_record;dur=4.66,
+        process_action.action_controller;dur=10.90
+      Vary:
+      - Origin
+      Content-Length:
+      - '146'
+    body:
+      encoding: UTF-8
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Thu, 23 Jan 2025 11:10:13 GMT
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/versions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"fb068e5526562002c2721a3980150de4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7dd4ba38-15ce-4000-81ea-dd34691cacb5
+      X-Runtime:
+      - '0.006702'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.40, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=0.99
+      Vary:
+      - Origin
+      Content-Length:
+      - '146'
+    body:
+      encoding: UTF-8
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Thu, 23 Jan 2025 11:10:13 GMT
+recorded_with: VCR 6.0.0

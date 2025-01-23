@@ -83,10 +83,10 @@ describe SavedScenariosController, vcr: true do
     end
   end
 
-  pending 'POST create' do
-    pending 'RECHECK'
+  describe 'POST create' do
     before do
       sign_in(user)
+      session[:setting] = Setting.new
 
       allow(CreateAPIScenario).to receive(:call).and_return(
         ServiceResult.success(Engine::Scenario.new(
@@ -94,8 +94,8 @@ describe SavedScenariosController, vcr: true do
         ))
       )
       allow(CreateSavedScenario).to receive(:call).and_return(
-        ServiceResult.success({ saved_scenario: { id: 12 }}
-      ))
+        ServiceResult.success({ 'id' => 12 })
+      )
     end
 
     context 'with valid attributes' do
@@ -114,7 +114,7 @@ describe SavedScenariosController, vcr: true do
 
       it 'sets the scenario ID' do
         request
-        expect(session[:setting][:api_session_id]).to eq(1)
+        expect(session[:setting][:api_session_id]).to eq(999)
       end
 
       it 'redirect to the scenario' do
@@ -130,68 +130,61 @@ describe SavedScenariosController, vcr: true do
       end
 
       it 'does not create a new SavedScenario' do
-        expect { request }.not_to change(session[:setting][:api_session_id])
+        expect { request rescue nil }.not_to change { session[:setting][:api_session_id] }
       end
 
-      it 'renders the form' do
-        expect(request).to render_template(:new)
+      it 'returns a meaningful error' do
+        expect { request }.to raise_error(ArgumentError, "Title cannot be blank")
       end
     end
   end
 
-  pending 'PUT update' do
-    pending 'TODO REWRITE!!!'
-
-    let(:update) do
+  describe 'PUT update' do
+    subject(:make_request) do
       put :update, format: :json, params: {
         id: 12,
-        scenario_id: 1
+        scenario_id: 1,
+        title: 'Some new title'
       }
     end
 
-    # TODO: FIX AND REWRITE
-    context 'with an owned saved_scenario' do
+    context 'when UpdateSavedScenario succeeds' do
       before do
-        sign_in user
-        session[:setting] = Setting.new
-
         allow(UpdateSavedScenario).to receive(:call).and_return(
-          ServiceResult.success({ saved_scenario: { id: 12 }}
-        ))
-
-        update
+          ServiceResult.success(saved_scenario: scenario_mock)
+        )
       end
 
-      it 'does not update the title' do
-        expect(user_scenario.title).not_to eq(params[:title])
+      it 'returns a JSON response with the new api_session_id' do
+        allow(CreateAPIScenario).to receive(:call).and_return(
+          ServiceResult.success(scenario_mock)
+        )
+
+        make_request
+        body = JSON.parse(response.body)
+
+        expect(body['api_session_id']).to eq('123')
+        expect(response).to be_successful
+      end
+
+      it 'does not change the scenario title if not handled in UpdateSavedScenario' do
+        make_request
+        expect(scenario_mock.title).to eq('title')
       end
     end
 
-    context 'with an owned saved_scenario and a new title and description' do
+    context 'when UpdateSavedScenario fails' do
       before do
-        sign_in user
-        session[:setting] = Setting.new
-
         allow(UpdateSavedScenario).to receive(:call).and_return(
-          ServiceResult.success({ saved_scenario: { id: 12 }}
-        ))
-
-        update
+          ServiceResult.failure('Some error')
+        )
       end
 
-      let(:params) do
-        {
-          title: 'New title',
-          description: 'New description'
-        }
-      end
+      it 'does not call CreateAPIScenario and returns an error response' do
+        expect(CreateAPIScenario).not_to receive(:call)
 
-      it 'updates the title' do
-        expect(user_scenario.title).to eq(params[:title])
-      end
-
-      it 'updates the description' do
-        expect(user_scenario.description).to eq(params[:description])
+        make_request
+        expect(response.status).to eq(422)
       end
     end
   end

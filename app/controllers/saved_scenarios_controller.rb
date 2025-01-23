@@ -29,15 +29,24 @@ class SavedScenariosController < ApplicationController
   #
   # POST /saved_scenarios
   def create
-    if create_saved_scenario.failure?
-      render :new, status: :unprocessable_entity and return
-    end
+    validate_saved_scenario_params!(saved_scenario_params)
 
     new_scenario = CreateAPIScenario.call(engine_client, { scenario_id: saved_scenario_params[:scenario_id] })
 
+    if new_scenario.failure?
+      @saved_scenario = SavedScenario.new(saved_scenario_params)
+      render :new, status: :unprocessable_entity and return
+    end
+
+    saved_scenario = create_saved_scenario
+    if saved_scenario.failure?
+      @saved_scenario = SavedScenario.new(saved_scenario_params)
+      render :new, status: :unprocessable_entity and return
+    end
+
     Current.setting.update_scenario_session(
       new_scenario.value,
-      saved_scenario_id: create_saved_scenario.value['id'],
+      saved_scenario_id: saved_scenario.value['id'],
       title: saved_scenario_params[:title]
     )
 
@@ -87,7 +96,9 @@ class SavedScenariosController < ApplicationController
     )
 
     if result.failure?
-      # fails and returns
+      return respond_to do |format|
+        format.json { render json: { error: 'Failed to update' }, status: :unprocessable_entity }
+      end
     end
 
     new_scenario = CreateAPIScenario.call(
@@ -105,6 +116,13 @@ class SavedScenariosController < ApplicationController
   end
 
   private
+
+  def validate_saved_scenario_params!(params)
+    errors = []
+    errors << "Title cannot be blank" if params[:title].blank?
+    errors << "Scenario ID must be a valid integer" unless params[:scenario_id].to_i.to_s == params[:scenario_id].to_s
+    raise ArgumentError, errors.join(", ") if errors.any?
+  end
 
   # Finds the scenario from id
   def find_scenario

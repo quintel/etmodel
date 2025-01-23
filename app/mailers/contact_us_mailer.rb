@@ -45,7 +45,7 @@ class ContactUsMailer < ActionMailer::Base
         Feedback received:
         Name: #{@message.name}
         Email: #{@message.email}
-        Message: #{@message.body}
+        Message: #{@message.message}
 
         User Agent: #{@user_agent || 'Unknown'}
         Locale: #{@locale || 'Unknown'}
@@ -56,7 +56,7 @@ class ContactUsMailer < ActionMailer::Base
         <p><strong>Name:</strong> #{@message.name}</p>
         <p><strong>Email:</strong> #{@message.email}</p>
         <p><strong>Message:</strong></p>
-        <pre>#{@message.body}</pre>
+        <pre>#{@message.message}</pre>
         <hr>
         <p><strong>User Agent:</strong> #{@user_agent || 'Unknown'}</p>
         <p><strong>Locale:</strong> #{@locale || 'Unknown'}</p>

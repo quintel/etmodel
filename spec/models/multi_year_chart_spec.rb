@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe MultiYearChart, type: :model do
-  pending '.destroy_old_discarded!' do
+  describe '.destroy_old_discarded!' do
     it 'does not destroy a myc which is not discarded' do
       myc = FactoryBot.create(:multi_year_chart)
 
@@ -43,7 +43,7 @@ RSpec.describe MultiYearChart, type: :model do
     end
   end
 
-  pending '#latest_scenario_ids' do
+  describe '#latest_scenario_ids' do
     let(:user) { create(:user) }
     let(:myc) { create(:multi_year_chart, user: user) }
 
@@ -54,7 +54,7 @@ RSpec.describe MultiYearChart, type: :model do
     end
   end
 
-  pending 'number of scenarios' do
+  describe 'number of scenarios' do
     let(:user) { create(:user) }
     let(:myc) { create(:multi_year_chart, user: user, scenarios_count: 3) }
 

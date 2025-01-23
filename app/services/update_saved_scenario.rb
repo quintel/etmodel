@@ -21,25 +21,13 @@ class UpdateSavedScenario
 
   def call
     response = http_client.put("api/v1/saved_scenarios/#{saved_scenario_id}") do |req|
+      req.headers ||= {}
       req.headers['Content-Type'] = 'application/json'
-      req.body = { scenario_id: scenario_id }
+      req.body = { scenario_id: scenario_id }.to_json
     end
 
     ServiceResult.success(response.body)
   rescue Faraday::UnprocessableEntityError => e
     ServiceResult.failure_from_unprocessable_entity(e)
-  end
-
-  private
-
-
-
-
-  def api_response
-    @api_response ||= CreateAPIScenario.call(http_client, settings.merge(scenario_id:))
-  end
-
-  def failure?
-    api_response.failure?
   end
 end

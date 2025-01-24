@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3002/oauth/discovery/keys
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"433bb9a0fe0c4dd048c999ef7a15f057"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 26c404e8-dfcd-41d2-9b4e-6bd12ed5bb58
+      X-Runtime:
+      - '0.006448'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=0.84
+      Content-Length:
+      - '462'
+    body:
+      encoding: UTF-8
+      string: '{"keys":[{"kty":"RSA","n":"thoBXEejnan3-4gANj2Cawo9LTreOIzHCRFxL-aDanycG5SNJ8KoaoVUzOl3ACi9qcNoI5ZywMieMTLIetG5v_hQrfs0O_h5Q5EPgYPL_T4hsDC4ZlKp2iJP6ZM5maYPvmvz3vuNYSWhA8AVypjFa_2xN0Rgg2QLZyHqKh_Hh6Y9r6IkVkZCBdnRiHHH_dX62bq2PNewXgxIrfRpbqkni_TDKeME0xpwoo-FmIrt8bUgq1oA47kXFfC_KEKJA63YwLA-LnYKqm4HyMNBd9PEThHHljJqpfD4OAKJ0mw1VkoLqNYckWfYW0o8zYRy5yOFFwdczvZmTj-_aLrqkVIXsw","e":"AQAB","kid":"lMlUymnD839HPm8CEEcUctWDi1y8wKlSIljOeD4GEQI","use":"sig","alg":"RS256"}]}'
+  recorded_at: Fri, 24 Jan 2025 13:04:13 GMT
+recorded_with: VCR 6.0.0

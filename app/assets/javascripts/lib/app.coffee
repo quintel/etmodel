@@ -343,6 +343,7 @@ class @AppView extends Backbone.View
 
     return @customCurvesDeferred.promise()
 
+  # TODO
   userScenarios: =>
     if @userScenariosDeferred
       return @userScenariosDeferred.promise()

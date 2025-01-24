@@ -68,7 +68,7 @@ Rails.application.routes.draw do
   end
 
   # Saved Scenarios
-  resources :saved_scenarios, except: [] do
+  resources :saved_scenarios, except: %i[index] do
     resource :feature, only: %i[show create update destroy], controller: 'featured_scenarios'
     member do
       get  :load

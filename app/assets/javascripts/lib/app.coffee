@@ -3,6 +3,8 @@
 # the function so that the event can be unbound once the ID is available.
 disabledSetting = (event) -> false
 
+idp_url = globals.idp_url
+
 class @AppView extends Backbone.View
   initialize: ->
     @settings    = new Setting({api_session_id: globals.api_session_id})
@@ -343,7 +345,6 @@ class @AppView extends Backbone.View
 
     return @customCurvesDeferred.promise()
 
-  # TODO
   userScenarios: =>
     if @userScenariosDeferred
       return @userScenariosDeferred.promise()
@@ -351,7 +352,7 @@ class @AppView extends Backbone.View
       @userScenariosDeferred = $.Deferred()
 
       req = $.ajax({
-        url: '/saved_scenarios',
+        url: "#{idp_url}/api/v1/saved_scenarios"
         method: 'GET'
         headers: @accessToken.headers()
         dataType: 'json'

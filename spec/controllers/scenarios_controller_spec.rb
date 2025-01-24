@@ -398,7 +398,7 @@ describe ScenariosController, vcr: true do
       end
     end
 
-    pending 'when loading the resume play endpoint' do
+    pending 'when loading the resume play endpoint' do # TODO
       pending "FIX MOCKING the user tokens"
 
       # Rendering the view triggers requests to ETEngine.

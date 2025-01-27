@@ -9,7 +9,7 @@ RSpec.describe UpdateSavedScenario do
   let(:scenario_id) { 456 }
 
   describe '#call' do
-    subject(:call_service) { service.call }
+    subject { service.call }
 
     let(:response) { instance_double('Faraday::Response', body: { 'data' => 'response_data' }.to_json) }
 
@@ -26,15 +26,21 @@ RSpec.describe UpdateSavedScenario do
       end
 
       it 'makes a PUT request to update the saved scenario' do
-        call_service
+        subject
+
         expect(client).to have_received(:put).with("api/v1/saved_scenarios/#{saved_scenario_id}")
+      end
+
+      it 'parses the scenario id' do
+        subject
+
         expect(request_double).to have_received(:body=).with({ scenario_id: scenario_id }.to_json)
       end
 
+      it { is_expected.to be_successful }
+
       it 'returns a successful ServiceResult' do
-        result = call_service
-        expect(result).to be_successful
-        expect(result.value).to eq(response.body)
+        expect(subject.value).to eq(response.body)
       end
     end
 
@@ -49,10 +55,10 @@ RSpec.describe UpdateSavedScenario do
         allow(client).to receive(:put).and_raise(error)
       end
 
+      it { is_expected.to be_failure }
+
       it 'rescues the error and returns a failure ServiceResult' do
-        result = call_service
-        expect(result).to be_failure
-        expect(result.errors).to include('Some error')
+        expect(subject.errors).to include('Some error')
       end
     end
 
@@ -64,7 +70,7 @@ RSpec.describe UpdateSavedScenario do
       end
 
       it 'raises the error' do
-        expect { call_service }.to raise_error(StandardError, 'Some other error')
+        expect { subject }.to raise_error(StandardError, 'Some other error')
       end
     end
   end

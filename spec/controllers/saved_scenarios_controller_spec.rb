@@ -125,16 +125,27 @@ describe SavedScenariosController, vcr: true do
     context 'with invalid attributes' do
       let(:request) do
         post :create, params: {
-          saved_scenario: { scenario_id: 1 }
+          saved_scenario: { scenario_id: 1, title: "" }
         }
       end
 
-      it 'does not create a new SavedScenario' do
-        expect { request rescue nil }.not_to change { session[:setting][:api_session_id] }
+      before do
+        allow(CreateSavedScenario).to receive(:call).and_return(
+          ServiceResult.failure('Title cannot be blank')
+        )
+      end
+
+      it 'does not redirect' do
+        expect(request).not_to redirect_to(play_path)
+      end
+
+      it 'does not create a new ApiScenario' do
+        expect { request }.not_to(change { session[:setting][:api_session_id] })
       end
 
       it 'returns a meaningful error' do
-        expect { request }.to raise_error(ArgumentError, "Title cannot be blank")
+        request
+        expect(flash[:alert]).not_to be_nil
       end
     end
   end

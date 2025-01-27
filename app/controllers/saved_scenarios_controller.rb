@@ -29,24 +29,23 @@ class SavedScenariosController < ApplicationController
   #
   # POST /saved_scenarios
   def create
-    validate_saved_scenario_params!(saved_scenario_params)
+    if create_saved_scenario.failure? || new_api_scenario.failure?
+      @saved_scenario = SavedScenario.new(
+        scenario_id: saved_scenario_params[:scenario_id].to_i,
+        title: saved_scenario_params[:title].presence || '',
+        area_code: Current.setting.area_code,
+        end_year: Current.setting.end_year
+      )
 
-    new_scenario = CreateAPIScenario.call(engine_client, { scenario_id: saved_scenario_params[:scenario_id] })
+      # Add error from failure
+      flash[:alert] = t('scenario.cannot_save')
 
-    if new_scenario.failure?
-      @saved_scenario = SavedScenario.new(saved_scenario_params)
-      render :new, status: :unprocessable_entity and return
-    end
-
-    saved_scenario = create_saved_scenario
-    if saved_scenario.failure?
-      @saved_scenario = SavedScenario.new(saved_scenario_params)
-      render :new, status: :unprocessable_entity and return
+      render :new and return
     end
 
     Current.setting.update_scenario_session(
-      new_scenario.value,
-      saved_scenario_id: saved_scenario.value['id'],
+      new_api_scenario.value,
+      saved_scenario_id: create_saved_scenario.value['id'],
       title: saved_scenario_params[:title]
     )
 
@@ -117,13 +116,6 @@ class SavedScenariosController < ApplicationController
 
   private
 
-  def validate_saved_scenario_params!(params)
-    errors = []
-    errors << "Title cannot be blank" if params[:title].blank?
-    errors << "Scenario ID must be a valid integer" unless params[:scenario_id].to_i.to_s == params[:scenario_id].to_s
-    raise ArgumentError, errors.join(", ") if errors.any?
-  end
-
   # Finds the scenario from id
   def find_scenario
     scenario = FetchAPIScenario.call(engine_client, params.require(:scenario_id).to_i).or do
@@ -165,6 +157,13 @@ class SavedScenariosController < ApplicationController
       idp_client,
       saved_scenario_params[:scenario_id],
       saved_scenario_params
+    )
+  end
+
+  def new_api_scenario
+    @new_api_scenario ||= CreateAPIScenario.call(
+      engine_client,
+      { scenario_id: saved_scenario_params[:scenario_id] }
     )
   end
 end

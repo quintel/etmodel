@@ -45,7 +45,7 @@ class SavedScenariosController < ApplicationController
 
     Current.setting.update_scenario_session(
       new_api_scenario.value,
-      saved_scenario_id: create_saved_scenario.value['id'],
+      saved_scenario_id: create_saved_scenario.value['id'].to_i,
       title: saved_scenario_params[:title]
     )
 

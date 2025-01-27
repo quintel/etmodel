@@ -9,6 +9,8 @@ class CreateSavedScenario
   param :settings, default: proc { {} }
 
   def call
+    return ServiceResult.failure(@errors.join(', ')) if invalid_params.any?
+
     response = http_client.post('api/v1/saved_scenarios') do |req|
       req.headers['Content-Type'] = 'application/json'
       req.body = request_body
@@ -30,5 +32,17 @@ class CreateSavedScenario
         version: ETModel::Version::TAG
       }.merge(settings.slice(:title, :area_code, :end_year))
     }.to_json
+  end
+
+  # NOTE: should be done with a Dry::Contract
+  def invalid_params
+    @errors = []
+    @errors << 'Title cannot be blank' if settings[:title].blank?
+
+    unless scenario_id.to_i.to_s == scenario_id.to_s
+      @errors << 'Scenario ID must be a valid integer'
+    end
+
+    @errors
   end
 end

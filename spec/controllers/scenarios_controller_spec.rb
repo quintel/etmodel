@@ -15,19 +15,12 @@ describe ScenariosController, vcr: true do
   let(:user) { FactoryBot.create(:user) }
   let(:admin) { FactoryBot.create(:admin) }
   let(:mock_token) { 'mocked-token' }
-  let(:user_scenario) do
-    double('SavedScenario',
-           id: 648_695,
-           user: user,
-           scenario: double('Scenario', loadable?: true))
+  let(:engine_scenario) do
+    Engine::Scenario.new(
+      attributes_for(:engine_scenario, id: 123, area_code: 'nl', end_year: 2050)
+    )
   end
 
-  let(:admin_scenario) do
-    double('SavedScenario',
-           id: 648_696,
-           user: admin,
-           scenario: double('Scenario', loadable?: true))
-  end
 
   before do
     allow(FetchAPIScenario).to receive(:call).and_return(ServiceResult.success(scenario_mock))
@@ -87,6 +80,33 @@ describe ScenariosController, vcr: true do
       end
 
       describe '#show' do
+        before do
+          allow(FetchAPIScenario)
+            .to receive(:call)
+            .and_return(ServiceResult.success(engine_scenario))
+        end
+
+        context 'with a loadable scenario' do
+          subject do
+            get :show, params: { id: engine_scenario.id }
+            response
+          end
+
+          it { is_expected.to be_successful }
+          it { is_expected.to render_template(:show) }
+        end
+
+        context 'with a not-loadable scenario' do
+          subject do
+            allow(engine_scenario)
+              .to receive(:loadable?)
+              .and_return(false)
+            get :show, params: { id: engine_scenario.id }
+            response
+          end
+
+          it { is_expected.to be_redirect }
+        end
 
         context 'with a non-existent scenario' do
           before do
@@ -96,7 +116,7 @@ describe ScenariosController, vcr: true do
           end
 
           it 'shows information about the scenario' do
-            get :show, params: { id: user_scenario.id }
+            get :show, params: { id: engine_scenario.id }
             expect(response).to be_redirect
           end
         end
@@ -148,8 +168,6 @@ describe ScenariosController, vcr: true do
           end
 
           it 'sets the area code' do
-            scenario_mock = ete_scenario_mock
-
             allow(scenario_mock).to receive(:id).and_return('456')
             allow(scenario_mock).to receive(:area_code).and_return('some_code')
 
@@ -298,7 +316,7 @@ describe ScenariosController, vcr: true do
         context 'when couplings are provided' do
           let(:request) do
             post :update_couplings, params: {
-              id: user_scenario.id,
+              id: engine_scenario.id,
               couplings: {
                 'group1' => '1',
                 'group2' => '0'

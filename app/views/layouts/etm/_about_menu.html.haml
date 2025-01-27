@@ -1,15 +1,13 @@
 .dropdown
   %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'click' }, type: 'button' }
     = t('app_nav.about_the_etm')
-  .dropdown-menu.learn-dropdown.about{ 'aria-labelledby': 'locale-button' }
-    %ul
-      %li= learn_link t('app_nav.etm_what'), about_path
-      %li= learn_link t('app_nav.etm_why'), about_path(anchor: 'why-use')
-      %li= learn_link t('app_nav.etm_use_cases'), about_path(anchor: 'what-to-do')
-      %li= learn_link t('app_nav.getting_started'), about_path(anchor: 'getting-started')
-    .extras
-      %ul
-        %li.learn-section= t('app_nav.learn')
-        %li= learn_link t('app_nav.documentation'), 'https://docs.energytransitionmodel.com'
-        %li= learn_link t('app_nav.dataset_manager'), 'https://data.energytransitionmodel.com/'
-        %li= learn_link t('app_nav.api'), 'https://docs.energytransitionmodel.com/api/intro'
+  %ul.dropdown-menu{ 'aria-labelledby': 'locale-button' }
+    %li= link_to t('app_nav.etm_what'), about_path, class: 'dropdown-item'
+    %li= link_to t('app_nav.etm_why'), about_path(anchor: 'why-use'), class: 'dropdown-item'
+    %li= link_to t('app_nav.etm_use_cases'), about_path(anchor: 'what-to-do'), class: 'dropdown-item'
+    %li= link_to t('app_nav.getting_started'), about_path(anchor: 'getting-started'), class: 'dropdown-item'
+
+    %li.learn-section.sep-above= t('app_nav.learn')
+    %li= link_to t('app_nav.documentation'), 'https://docs.energytransitionmodel.com', class: 'dropdown-item'
+    %li= link_to t('app_nav.dataset_manager'), 'https://data.energytransitionmodel.com/', class: 'dropdown-item'
+    %li= link_to t('app_nav.api'), 'https://docs.energytransitionmodel.com/api/intro', class: 'dropdown-item'

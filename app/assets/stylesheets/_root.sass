@@ -8,11 +8,15 @@ body#root
   footer
     display: none
 
+.with-bg
+  background: asset-url("pages/root/background.svg") no-repeat
+
 #landing
   margin: 0 auto
   padding: 50px 0 20px
   width: $landing-width
-  color: #462c34
+  display: flex
+  flex-direction: column
 
   a
     color: darken($landing-blue, 4%)
@@ -23,14 +27,15 @@ body#root
       text-decoration: underline
 
   #blurb
-    margin: 0 0.5rem 40px
-    width: 800px
+    margin: 0 0.5rem 150px
+    width: 760px
     h1
-      font-size: 26px
+      font-size: 47px
       font-weight: normal
       margin-top: 0 0 1rem
+      color: $nice-brown
     p
-      color: darken($landing-grey, 8%)
+      color: $landing-grey
       font-size: 14px
       line-height: 1.7
 
@@ -98,6 +103,8 @@ body#root
   #resume-scenario
     background: $dark-cream
     border: none
+    width: 200px
+    margin-top: 20px
     a
       border-top-left-radius: 3px
       border-top-right-radius: 3px
@@ -245,16 +252,28 @@ body#root
       padding: 0
 
   #new-scenario
-    border-top-color: $landing-blue
+    background: none
+    margin-left: auto
+    margin-right: auto
+    max-width: 780px
+    display: flex
+    flex-direction: column
+    margin-bottom: 200px
+
+    .header-container
+      color: $landing-grey
+      font-weight: 400 !important
+      margin-left: 2rem
+      margin-bottom: 0.5rem
+
     form
-      margin: 0 -10px
+      background: $soft-grey
+      border-radius: 200px
+      padding: 1rem 2rem
+
       display: flex
-      padding: 20px 0
-      .submit
-        margin-right: 0
-        margin-left: auto
-      .country, .year, .submit, #scenario-info
-        padding: 0 10px
+      gap: 2rem
+      color: $nice-brown
       .country
         width: 348px
         a
@@ -263,14 +282,12 @@ body#root
           margin-top: 5px
       .year
         width: 150px
-      .submit
-        border-right: none
-        width: 72px
       #scenario-info-button
         background: none
         border: none
         height: 100%
         font-size: 1.5rem
+        color: $nice-brown
       .scenario-info-dropdown
         left: 3rem
         top: 0
@@ -287,8 +304,9 @@ body#root
         font-size: 12px
         display: none // !!
       .select2-selection
-        border: 1px solid $landing-border-color
+        border: none
         border-radius: 3px
+        background: $soft-grey
         cursor: pointer
         font-size: 16px
         height: 32px
@@ -332,16 +350,21 @@ body#root
         background-position: 7px 6px
         padding: 5px 5px 5px 35px
       button.root-button
-        background-color: $landing-blue
+        background: #56b351
+        color: $soft-grey
         cursor: pointer
         outline: none
         padding-bottom: 7px
         padding-top: 7px
         transition: all 0.1s ease-out
+        span
+          color: $soft-grey
         &:hover
-          background: lighten($landing-blue, 13%)
+          background: #a5e0a1
+          color: $nice-brown
         &:active
-          background: darken($landing-blue, 1%)
+          background: #a5e0a1
+          color: $nice-brown
     .hint
       border-top: 1px solid $landing-border-color
       color: $landing-grey

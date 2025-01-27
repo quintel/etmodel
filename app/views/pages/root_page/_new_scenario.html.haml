@@ -1,6 +1,6 @@
 #new-scenario
-  .header-container
-    %h4== #{t('intro.start_a_new_scenario')}&hellip;
+  -# .header-container
+  -#   = t('intro.start_a_new_scenario')
   = form_tag root_path do
     .country
       = render "pages/root_page/country_select"
@@ -17,8 +17,10 @@
     .submit
       %button.root-button(type="submit")
         = t('start').titleize
-        %span.fa.fa-chevron-right
-        %span.fa.fa-chevron-right
+        %span.fa.fa-arrow-right
 
         = hidden_field_tag :reset, '1'
+
+  - if has_active_scenario?
+    = render partial: 'pages/root_page/resume_scenario'
 

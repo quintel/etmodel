@@ -7,70 +7,69 @@
       %p
         %strong= link_to "#{t('more_information')} →", whats_new_path
 
-#landing
-  #blurb
-    %h1= t('intro.introduction')
-    %p= t('intro.root_text')
+.with-bg
+  #landing
+    #blurb
+      %h1= t('intro.introduction')
+      %p= t('intro.root_text')
 
-  - if has_active_scenario?
-    = render partial: 'pages/root_page/resume_scenario'
+    = render partial: 'pages/root_page/new_scenario'
 
-  = render partial: 'pages/root_page/new_scenario'
-  = render partial: 'pages/root_page/preset_scenario'
+    = render partial: 'pages/root_page/preset_scenario'
 
-  #other-features
-    .feature.whats-new
-      %h4= t('intro.whats_new.title')
-      %p= t('intro.whats_new.description')
-      %p
-        = link_to(whats_new_path) do
-          = t('intro.whats_new.link')
-          →
-    .feature.dataset
-      %h4= t('intro.dataset.title')
-      %p= t('intro.dataset.description')
-      %p
-        = link_to("https://data.energytransitionmodel.com") do
-          = t('intro.dataset.link')
-          →
-    - if Settings.multi_year_charts_url
-      .feature.multi-year-charts
-        %h4= t('intro.multi_year_charts.title')
-        %p= t('intro.multi_year_charts.description')
+    #other-features
+      .feature.whats-new
+        %h4= t('intro.whats_new.title')
+        %p= t('intro.whats_new.description')
         %p
-          = link_to(multi_year_charts_path) do
-            = t('intro.multi_year_charts.try_it')
+          = link_to(whats_new_path) do
+            = t('intro.whats_new.link')
             →
-    .feature.docs
-      %h4= t('intro.docs.title')
-      %p= t('intro.docs.description')
-      %p
-        = link_to("https://docs.energytransitionmodel.com") do
-          = t('intro.docs.link')
-          →
-    .feature.api
-      %h4= t('intro.api.title')
-      %p= t('intro.api.description')
-      %p
-        = link_to("https://docs.energytransitionmodel.com/api/intro") do
-          = t('intro.api.link')
-          →
-    .feature.quintel
-      %h4= t('intro.about_us.title')
-      %p= t('intro.about_us.description')
-      %p
-        = link_to('https://quintel.com') do
-          = t('intro.about_us.learn_more')
-          →
-        = link_to('https://docs.energytransitionmodel.com') do
-          = t('intro.about_us.documentation')
-          →
+      .feature.dataset
+        %h4= t('intro.dataset.title')
+        %p= t('intro.dataset.description')
+        %p
+          = link_to("https://data.energytransitionmodel.com") do
+            = t('intro.dataset.link')
+            →
+      - if Settings.multi_year_charts_url
+        .feature.multi-year-charts
+          %h4= t('intro.multi_year_charts.title')
+          %p= t('intro.multi_year_charts.description')
+          %p
+            = link_to(multi_year_charts_path) do
+              = t('intro.multi_year_charts.try_it')
+              →
+      .feature.docs
+        %h4= t('intro.docs.title')
+        %p= t('intro.docs.description')
+        %p
+          = link_to("https://docs.energytransitionmodel.com") do
+            = t('intro.docs.link')
+            →
+      .feature.api
+        %h4= t('intro.api.title')
+        %p= t('intro.api.description')
+        %p
+          = link_to("https://docs.energytransitionmodel.com/api/intro") do
+            = t('intro.api.link')
+            →
+      .feature.quintel
+        %h4= t('intro.about_us.title')
+        %p= t('intro.about_us.description')
+        %p
+          = link_to('https://quintel.com') do
+            = t('intro.about_us.learn_more')
+            →
+          = link_to('https://docs.energytransitionmodel.com') do
+            = t('intro.about_us.documentation')
+            →
 
-  #area-select-options
-  .flags{ style: 'display: none'}
-    - flags.each do |flag|
-      = image_tag flag, class: File.basename(flag, '.png')
-    .ukni01_northern_ireland.blank-flag
+    #area-select-options
+    .flags{ style: 'display: none'}
+      - flags.each do |flag|
+        = image_tag flag, class: File.basename(flag, '.png')
+      .ukni01_northern_ireland.blank-flag
 
-  #legal
-    = render partial: 'layouts/etm/footer'
+    #legal
+      = render partial: 'layouts/etm/footer'

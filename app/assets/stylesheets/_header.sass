@@ -107,8 +107,16 @@ header.main-header
       text-decoration: none
     &:focus:not(:focus-visible)
       outline: 0
+    &.active
+      text-decoration: underline
   .dropdown-menu
-    background: $landing-background-color
+    background: #d0e0f7
+    margin-top: 4px
+    border-top-right-radius: 0
+    border-top-left-radius: 0
+    &:before
+      border-radius: 0
+      width: 0
 
   .survey-item button
     align-items: center
@@ -196,23 +204,15 @@ header.main-header
   &[aria-expanded="true"]
     color: white
 
-.dropdown-menu.learn-dropdown
-  margin: -0.5rem 0
-  padding: 1.5rem 4rem 1.5rem 2rem
-  min-width: 160px
-  top: 45px
-  white-space: nowrap
+.dropdown-menu
 
-  .extras
-    margin-top: 1rem
-    padding-top: 0
-    .section
-      padding-top: 0
-    li.learn-section
-      margin-top: 0
-    a
-      color: #374151
-      font-weight: normal
+  li.learn-section
+    padding: 0.25rem 1rem
+    color: $landing-grey
+
+  a
+    color: #374151
+    font-weight: normal
 
   strong
     align-items: center
@@ -406,7 +406,7 @@ header.main-header
   position: relative
 
 .dropdown-menu
-  background: white
+  background: #d0e0f7
   border-radius: 6px
   display: block
   font-size: 0.875rem

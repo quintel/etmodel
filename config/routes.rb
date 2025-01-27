@@ -69,32 +69,12 @@ Rails.application.routes.draw do
 
   # Saved Scenarios
   resources :saved_scenarios, except: %i[index] do
-    resource :feature, only: %i[show create update destroy], controller: 'featured_scenarios'
     member do
       get  :load
-      put  :discard
-      put  :undiscard
-      put  :publish
-      put  :unpublish
-      put  :restore
-      get  :confirm_restore
     end
 
-    collection do
-      get :discarded
-      get :all
-    end
-
-    get '/history'                 => 'saved_scenario_history#index'
-    put '/history/:scenario_id'    => 'saved_scenario_history#update', as: :update_saved_scenario_history
     get '/report/:report_name'     => 'saved_scenario_reports#show'
   end
-
-  # Multi-year charts
-  get '/scenario_collection/:id', to: 'multi_year_charts#show', constraints: { id: /[0-9]+/ }, as: :show_multi_year_chart
-  get '/scenario_collections',    to: 'multi_year_charts#list', as: :list_multi_year_charts
-  get '/scenario_collection/new', to: 'multi_year_charts#new',  as: :new_multi_year_chart
-  post '/scenario_collection/create', to: 'multi_year_charts#create_collection', as: :create_collection
 
   # Misc scenario routes
   get '/scenario/new'               => 'scenarios#new'

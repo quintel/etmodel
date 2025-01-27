@@ -1,6 +1,6 @@
 class FeaturedScenarioCreators < ActiveRecord::Migration[7.1]
   def up
-    add_column :featured_scenarios, :featured_owner, :string
+    # add_column :featured_scenarios, :featured_owner, :string
     # FeaturedScenario.reset_column_information
     # FeaturedScenario.all.each do |fs|
     #   ss = fs.saved_scenario

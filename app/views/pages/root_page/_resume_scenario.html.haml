@@ -1,12 +1,10 @@
 #resume-scenario
   %a{ href: Current.setting.last_etm_page || play_path }
-    %span.root-button
-      = t('continue').titleize
-      %span.fa.fa-chevron-right
-      %span.fa.fa-chevron-right
-    %span.title
-      == #{t('intro.your_current_scenario')}&hellip;
+    = t('continue').titleize
     %span.details
       %span.country{ class: area_css_class(Current.setting.area) }
         = current_area_name
       %span.period= Current.setting.end_year
+      - if Current.setting.active_scenario_title.present?
+        %span.country{ class: area_css_class(Current.setting.area) }
+          = Current.setting.active_scenario_title

@@ -25,7 +25,7 @@
             %span.fa.fa-check
             = t('header.saved')
       - else
-        %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id', title: Current.setting.active_scenario_title) } }
+        %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: Current.setting.api_session_id, title: Current.setting.active_scenario_title) } }
           = t('header.save_scenario_as').titleize
     - else
       %a.sign-in-to-save.disabled{ href: sign_in_path }
@@ -37,7 +37,7 @@
       %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
         - if current_user
           %li
-            %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id', title: Current.setting.active_scenario_title) } }
+            %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: Current.setting.api_session_id, title: Current.setting.active_scenario_title) } }
               = succeed '&hellip;'.html_safe do
                 = t("header.save_scenario_as")
         - else
@@ -71,7 +71,7 @@
             .dropdown-item.text
               = t('header.has_been_coupled')
           %li
-            %a.dropdown-item.external{ href: redirect_to_external_path(destination: "https://docs.energytransitionmodel.com/main/external-coupling", return_to: request.url), target: "_blank"}
+            %a.dropdown-item.external{ href: "https://docs.energytransitionmodel.com/main/external-coupling", target: "_blank"}
               = t('header.coupled_docs')
           - if Current.setting.active_couplings&.any? { |coupling| COUPLING_GROUP_LABELS.key?(coupling) }
             %li.sep-above.category

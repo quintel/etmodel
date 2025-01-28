@@ -366,52 +366,44 @@ nl:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''
       description: |
-        Deze slider beïnvloed het percentage van de koudevraag voor huishoudens dat
-        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater en uitgerust zijn
-        met warmte-koude opslage (WKO). <br/><br/>
-        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur
-        door de combinatie met WKO.
+        Deze slider bepaalt welk percentage van de koelvraag van huishoudens wordt geleverd door
+        warmtepompen die koelte halen uit oppervlaktewater (Thermische Energie uit Oppervlaktewater,
+        TEO) en gebruikmaken van Warmte-Koude Opslag (WKO).
+        </br></br>
+        De efficiëntie van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur, omdat de
+        WKO gebruikmaakt van de constante temperaturen uit de ondergrond.
     households_cooling_heatpump_ground_water_electricity_share:
       title: Bodemwarmtepomp
       short_description: ''
-      description: "Een warmtepomp is een apparaat dat warmte verplaatst. De meest
-        bekende toepassing is een koelkast, maar in een gebouw kan een warmtepomp
-        ook zorgen voor verwarming en koeling. Het werkt vaak alleen als vloer- en
-        muurverwarming worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen
-        daarom vooral nog ingezet bij nieuwbouw van huizen. Europese wetgeving schrijft
-        namelijk voor dat het energiegebruik van huizen per 2020 tot nul moet zijn
-        toegebracht (gemeten over een heel jaar). \r\n<br/><br/>\r\nDeze warmtepomp
-        gebruikt een grondbron aan de ene kant en muur- of vloer- verwarming/koeling
-        aan de andere. Omdat dit niet in alle huizen te realiseren is tegen acceptabele
-        investeringskosten, is een realistische schatting van het aantal huizen waarin
-        een warmtepomp kan worden geïnstalleerd 20%. In de overige 80% wegen de kosten
-        waarschijnlijk niet op tegen de baten.\r\n<br><br/>\r\nLet er op dat het ETM
-        de investeringskosten significant onderschat voor een aandeel van warmtepompen
-        van boven de 20%. Dit komt omdat de extra investeringskosten voor huizen die
-        eigenlijk niet geschikt zijn voor installatie van een warmtepomp, niet bekend
-        zijn."
+      description: |
+        Deze slider bepaalt welk percentage van de koelvraag van huishoudens wordt
+        geleverd door elektrische bodemwarmtepompen.
+        </br></br>
+        <ul>
+        <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+        </ul>
     households_cooling_airconditioning_electricity_share:
       title: Airconditioning
       short_description: ''
-      description: "Hier staat aangegeven hoeveel van de koeling van huizen en appartementen
-        met airconditioners gebeurd. In de meeste landen gebeurt de meeste koeling
-        op dit moment gebeurt nog met airconditioners.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van de koelvraag van huishoudens wordt geleverd
+        door airconditioners.
+        </br></br>
+        Airconditioners zijn vergelijkbaar met luchtwarmtepompen, aangezien beide omgevingswarmte
+        en elektriciteit gebruiken om een gebouw te koelen. Luchtwarmtepompen zijn echter veelzijdiger,
+        omdat ze niet alleen kunnen koelen, maar ook verwarmen.
     households_cooling_heatpump_air_water_electricity_share:
       title: Luchtwarmtepomp
       short_description: ''
       description: |
-        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
-        in huishoudens voor koeling veranderen.<br/><br/>
-        Een luchtwarmtepomp gebruikt elektriciteit en omgevingskoude om koude te genereren.
-        Deze koude kan worden gedistribueerd via water (met vloerverwarmingssystemen)
-        of via de lucht (met airconditioners) om een woning te koelen.<br/><br/>
-        De efficiëntie (COP) van de luchtwarmtepomp voor koeling (in tegenstelling
-        tot verwarming) is vastgesteld. Deze kun je vinden in de technische parameters en kosten. <br/><br/>
-        Ga voor meer informatie naar de
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>.
-        Om de efficientie (COP) te beïnvloeden kun je naar de
-        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
-        of het <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weerjaar</a> aanpassen.
+        Deze slider bepaalt welk percentage van de koelvraag van huishoudens wordt geleverd
+        door elektrische luchtwarmtepompen.
+        </br></br>
+        <ul>
+        <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_appliances_fridge_freezer_electricity_efficiency:
       title: Koelkast / Vriezer
       short_description: ''

@@ -1016,58 +1016,69 @@ nl:
     households_cooker_network_gas_share:
       title: Gas
       short_description: ''
-      description: "Koken op gas is populair in landen waar er een overvloed van aardgas
-        is en een gasdistributienet aanwezig is. De efficiëntie van een gasfornuis
-        is 40%. Omdat veel warmte naar de omgeving verloren gaat, zijn gasfornuizen
-        minder efficiënt dan elektrische uitvoeringen. Hoewel elektrisch koken dus
-        efficiënter lijkt, is dit niet altijd het geval omdat de hele keten meegenomen
-        moet worden.  Door verliezen in elektriciteitsproductie en -transport kan
-        het zijn dat gaskoken uiteindelijk voordeliger is.\r\n<br/><br/>\r\nUitsluitend
-        de kosten door het verschil in energievraag worden meegenomen. De kosten van
-        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens 
+        wordt geleverd door gas.
+        </br></br>
+        De efficiëntie van een gasfornuis bedraagt 40%, omdat een groot deel van de warmte 
+        verloren gaat naar de omgeving. Hierdoor zijn gasfornuizen minder efficiënt dan 
+        elektrische kooktoestellen. Toch is elektrisch koken niet altijd gunstiger, omdat 
+        ook de hele energieketen moet worden meegenomen. Verliezen tijdens 
+        elektriciteitsproductie en -transport kunnen ervoor zorgen dat koken op gas 
+        uiteindelijk voordeliger is.
+        </br></br>
+        <em>Let op</em>: de kosten van een gasfornuis zelf worden niet meegenomen in het model. 
     households_cooker_resistive_electricity_share:
       title: Elektrisch
       short_description: ''
-      description: "Elektrische fornuizen zijn populair in dichtbevolkte regio's en
-        waar er geen toegang is tot een aardgasnetwerk. Een elektrisch fornuis zet
-        elektriciteit om in warmte. En elektrisch fornuis is ongeveer 55% efficiënt
-        (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/>\r\nHet
-        nadeel van een elektrisch fornuis is dat het tijd nodig heeft om op te warmen
-        en het is onmogelijk om snel de temperatuur te veranderen.\r\n<br/><br/>\r\nUitsluitend
-        de kosten door het verschil in energievraag worden meegenomen. De kosten van
-        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel."
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt 
+        geleverd door elektrisch koken.
+        </br></br>
+        Elektrische fornuizen zetten elektriciteit om in warmte en hebben een efficiëntie van 
+        ongeveer 55%, exclusief verliezen bij de productie en het transport van elektriciteit. 
+        Hoewel ze efficiënter zijn dan gasfornuizen, hebben elektrische fornuizen het nadeel 
+        dat ze tijd nodig hebben om op te warmen en de temperatuur moeilijk snel kunnen aanpassen.
+        </br></br>
+        <em>Let op</em>: de kosten van een elektrisch fornuis zelf worden niet meegenomen in het model.
     households_cooker_halogen_electricity_share:
       title: Halogeen
       short_description: ''
-      description: "Halogeen fornuizen produceren infraroodstraling en rood licht
-        om eten te verwarmen. Halogeen fornuizen zijn herkendbaar aan de speciale
-        keramische glasplaat. Deze fornuizen kunnen sneller opwarmen en afkoelen dan
-        elektrische fornuizen. De efficiëntie van een halogeen fornuis is ongeveer
-        60% (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/><br/>\r\nUitsluitend
-        de kosten door het verschil in energievraag worden meegenomen. De kosten van
-        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt 
+        geleverd door halogeen koken.
+        </br></br>
+        Halogeen fornuizen gebruiken infraroodstraling en rood licht om voedsel te verwarmen en 
+        zijn herkenbaar aan de speciale keramische glasplaat. Ze verwarmen en koelen sneller dan 
+        elektrische fornuizen. De efficiëntie van een halogeen fornuis bedraagt ongeveer 60%, 
+        exclusief verliezen bij de productie en het transport van elektriciteit.
+        </br></br>
+        <em>Let op</em>: de kosten van een halogeen fornuis zelf worden niet meegenomen in het model.
     households_cooker_induction_electricity_share:
       title: Inductie
       short_description: ''
-      description: "Een inductiekookplaat is een type kookplaat dat gebruikmaakt van
-        het principe van inductieverhitting. In tegenstelling tot andere kookplaten,
-        wordt warmte gecreëerd in de pan zelf en wordt het niet overgebracht van het
-        fornuis via een kookplaat of brandend gas. Voor inductiekoken zijn wel speciale
-        inductiepannen nodig. De efficiëntie van een inductiekookplaat is hoog, ongeveer
-        83-90% (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/><br/>\r\nUitsluitend
-        de kosten door het verschil in energievraag worden meegenomen. De kosten van
-        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt 
+        geleverd door inductie koken.
+        </br></br>
+        Inductiekookplaten maken gebruik van inductieverhitting, waarbij de pan zelf wordt verwarmd 
+        in plaats van de kookplaat of gasbranders. De efficiëntie van een inductiekookplaat is hoog, 
+        ongeveer 83-90%, exclusief verliezen bij de productie en het transport van elektriciteit.
+        </br></br>
+        <em>Let op</em>: de kosten van een inductiekookplaat zelf worden niet meegenomen in het model.
     households_cooker_wood_pellets_share:
       title: Biomassa
       short_description: ''
-      description: "Onder koken op biomassa vallen verschillende brandstoffen en technologiën
-        zoals hout, hout pallets, bio-gas en bio-olie. Ouderwetse hout fornuizen hebben
-        een lage efficiëntie voor koken. De efficiëntie van het biomassa fornuis in
-        het Energietransitiemodel is 30%. Dat is lager dan de efficiëntie van aardgas
-        en elektrische alternatieven omdat veel warmte verloren gaat naar de omgeving.
-        \r\n<br/><br/>\r\nUitsluitend de kosten door het verschil in energievraag
-        worden meegenomen. De kosten van het kooktoestel zelf worden niet meegenomen
-        in het Energietransitiemodel.\r\n \r\n"
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt geleverd 
+        door koken op biomassa.
+        </br></br>
+        Koken op biomassa omvat verschillende brandstoffen en technologieën, zoals hout, houtpellets, 
+        biogas en bio-olie. Ouderwetse houtfornuizen hebben een lage efficiëntie, en de efficiëntie van 
+        het biomassafornuis in het model is 30%. Dit is lager dan die van aardgas en elektrische alternatieven, 
+        omdat veel warmte verloren gaat naar de omgeving.
+        </br></br>
+        <em>Let op</em>: de kosten van het kooktoestel zelf worden niet meegenomen in het model.
     demand_households_heating_producers_order:
       title: Merit order
       short_description: ''

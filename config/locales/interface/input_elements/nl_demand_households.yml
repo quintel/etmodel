@@ -316,12 +316,10 @@ nl:
     households_useful_demand_for_cooling:
       title: Koudevraag
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Koeling). \r\n<br/><br/>\r\nHoe
-        denk jij dat de koudevraag per huishouden zich gaat ontwikkelen? Dit hangt
-        vooral af van de welvaartsgroei. Als mensen rijker worden, gaat hun energiegebruik
-        onvermijdelijk omhoog, doordat ze in steeds grotere huizen wonen, airconditioning
-        aanschaffen, etc."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de koudevraag per persoon.
+        </br></br>
+        Let op deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_useful_demand_heat_per_person:
       title: Warmtevraag
       short_description: ''
@@ -333,35 +331,31 @@ nl:
     households_useful_demand_hot_water_share:
       title: Warmwatervraag
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Warmwaterslide).\r\n<br/>\r\n<br/>\r\nHier
-        kun je aangeven hoe jij denkt dat de warmwatervraag per persoon zich gaat
-        ontwikkelen."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de warmwatervraag per persoon.
+        </br></br>
+        <em>Let op</em>: deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_useful_demand_cooking_per_person:
       title: Koken
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Koken slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor koken per persoon zich
-        gaat ontwikkelen. Als mensen rijker worden gaan ze vaker uit eten of eten
-        afhalen. Dit heeft tot gevolg dat de energievraag voor koken lager wordt."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de energievraag door koken per persoon.
+        </br></br>
+        Let op deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_useful_demand_electric_appliances:
       title: Apparaten
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Apparaten slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor apparaten per persoon
-        zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Hoe rijker
-        mensen zijn, des te meer apparaten ze bezitten."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de energievraag door apparaten per persoon.
+        </br></br>
+        <em>Let op</em>: deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_useful_demand_lighting:
       title: Verlichting
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Verlichting slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor verlichting per persoon
-        zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Als mensen
-        rijker worden, gaan ze in grotere huizen wonen waarvoor meer verlichting nodig
-        is."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de energievraag door verlichting per persoon.
+        </br></br>
+        <em>Let op</em>: deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_cooling_heatpump_surface_water_water_ts_electricity_share:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''
@@ -407,116 +401,108 @@ nl:
     households_appliances_fridge_freezer_electricity_efficiency:
       title: Koelkast / Vriezer
       short_description: ''
-      description: "Hoeveel efficiënter zullen koelkasten en vriezers in de toekomst
-        zijn? \r\n<br/><br/>\r\nNationale en Europese wetgeving dwingt producenten
-        om huishoudelijke apparaten ieder jaar zuiniger te maken. De energielabels
-        die tegenwoordig in alle Europese landen verplicht zijn geven een goede indicatie
-        van de efficiëntie van huishoudelijke apparaten.\r\n<br/><br/>\r\nDe startwaarde
-        van dit schuifje is het gemiddelde label van koel-en-vrieskasten die nu geïnstalleerd
-        zijn. Zet het schuifje op het label dat jij denkt dat de gemiddelde koel-en-vrieskasten
-        hebben in de toekomst. Het A+++ label komt overeen met een besparing van 66%
-        ten opzichte van vandaag."
+      description: |
+        Deze slider bepaalt hoeveel efficiënter koelkasten en vriezers in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds 
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn, geven 
+        inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat het gemiddelde 
+        energielabel zien van de momenteel geïnstalleerde koelkasten en vriezers. Moderne koelkasten en 
+        vriezers met een A-label kunnen tot 66% zuiniger zijn dan de gemiddelde koelkasten en vriezers 
+        in het startscenario.
     households_appliances_dishwasher_electricity_efficiency:
       title: Vaatwasser
       short_description: ''
-      description: "Hoeveel efficiënter zullen afwasmachines in de toekomst zijn?
-        \r\n<br/><br/>\r\nNationale en Europese wetgeving dwingt producenten om huishoudelijke
-        apparaten ieder jaar zuiniger te maken. De energielabels die tegenwoordig
-        in alle Europese landen verplicht zijn geven een goede indicatie van de efficiëntie
-        van huishoudelijke apparaten.\r\n<br/><br/>\r\nDe startwaarde van dit schuifje
-        is het gemiddelde label van afwasmachines die nu geïnstalleerd zijn. Zet het
-        schuifje op het label dat jij denkt dat de gemiddelde afwasmachine heeft in
-        de toekomst. Het A+++ label komt overeen met een besparing van 35% ten opzichte
-        van vandaag."
+      description: |
+        Deze slider bepaalt hoeveel efficiënter vaatwassers in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds 
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn, 
+        geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat 
+        het gemiddelde energielabel zien van de momenteel geïnstalleerde vaatwassers. Moderne 
+        vaatwassers met een A-label kunnen tot 35% zuiniger zijn dan de gemiddelde vaatwasser 
+        in het startscenario.
     households_appliances_vacuum_cleaner_electricity_efficiency:
       title: Stofzuiger
       short_description: ''
-      description: "Hoeveel efficiënter zullen stofzuigers in de toekomst zijn? \r\n<br/><br/>\r\nNationale
-        en Europese wetgeving dwingt producenten om huishoudelijke apparaten ieder
-        jaar zuiniger te maken. De energielabels die tegenwoordig in alle Europese
-        landen verplicht zijn geven een goede indicatie van de efficiëntie van huishoudelijke
-        apparaten.\r\n<br/><br/>\r\nDe startwaarde van dit schuifje is het gemiddelde
-        label van stofzuigers die nu geïnstalleerd zijn. Zet het schuifje op het label
-        dat jij denkt dat de gemiddelde stofzuigers hebben in de toekomst. Het A+++
-        label komt overeen met een besparing van 75% ten opzichte van vandaag.\r\n"
+      description: |
+        Deze slider bepaalt hoeveel efficiënter stofzuigers in huishoudens kunnen worden. 
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten 
+        steeds energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht 
+        zijn, geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider 
+        laat het gemiddelde energielabel zien van de momenteel geïnstalleerde stofzuigers. Moderne 
+        stofzuigers met een A-label kunnen tot 75% zuiniger zijn dan de gemiddelde stofzuigers 
+        in het startscenario.
     households_appliances_washing_machine_electricity_efficiency:
       title: Wasmachine
       short_description: ''
-      description: "Hoeveel efficiënter zullen wasmachines in de toekomst zijn? \r\n<br/><br/>\r\nNationale
-        en Europese wetgeving dwingt producenten om wasmachines ieder jaar zuiniger
-        te maken. De energielabels die tegenwoordig in alle Europese landen verplicht
-        zijn geven een goede indicatie van de efficiëntie van huishoudelijke apparaten.\r\n<br/><br/>\r\nDe
-        startwaarde van dit schuifje is het gemiddelde label van wasmachines die nu
-        geïnstalleerd zijn. Zet het schuifje op het label dat jij denkt dat de gemiddelde
-        wasmachine heeft in de toekomst. Het A+++ label komt overeen met een besparing
-        van 28% ten opzichte van vandaag.\r\n"
+      description: |
+        Deze slider bepaalt hoeveel efficiënter wasmachines in huishoudens kunnen worden. 
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds 
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn, 
+        geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat 
+        het gemiddelde energielabel zien van de momenteel geïnstalleerde wasmachines. Moderne 
+        wasmachines met een A-label kunnen tot 28% zuiniger zijn dan de gemiddelde wasmachines 
+        in het startscenario.
     households_appliances_clothes_dryer_electricity_efficiency:
       title: Droger
       short_description: ''
-      description: "Hoeveel efficiënter zullen wasdrogers in de toekomst zijn? \r\n<br/><br/>\r\nNationale
-        en Europese wetgeving dwingt producenten om huishoudelijke apparaten ieder
-        jaar zuiniger te maken. De energielabels die tegenwoordig in alle Europese
-        landen verplicht zijn geven een goede indicatie van de efficiëntie van huishoudelijke
-        apparaten.\r\n<br/><br/>\r\nDe startwaarde van dit schuifje is het gemiddelde
-        label van wasdrogers die nu geïnstalleerd zijn. Zet het schuifje op het label
-        dat jij denkt dat de gemiddelde wasdroger heeft in de toekomst. Het A+++ label
-        komt overeen met een besparing van 69% ten opzichte van vandaag.\r\n"
+      description: |
+        Deze slider bepaalt hoeveel efficiënter drogers in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds 
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn, 
+        geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat 
+        het gemiddelde energielabel zien van de momenteel geïnstalleerde drogers. Moderne drogers 
+        met een A-label kunnen tot 69% zuiniger zijn dan de gemiddelde drogers in het startscenario.
     households_appliances_television_electricity_efficiency:
       title: Televisie
       short_description: ''
-      description: "Hoeveel efficiënter zullen televisies in de toekomst zijn? \r\n<br/><br/>\r\nNieuwe
-        technologieën zoals LED televisies reduceren de energie consumptie. Maar vergeet
-        niet dat grotere televisies natuurlijk meer energie verbruiken dan kleinere
-        met dezelfde technologie. Daardoor gebruikt één televisie nu meer energie
-        dan enkele jaren geleden.\r\n<br/><br/>\r\nDe startwaarde van dit schuifje
-        is het gemiddelde label van televisies die nu geïnstalleerd zijn. Zet het
-        schuifje op het label dat jij denkt dat de gemiddelde televisies hebben in
-        de toekomst. Het A+++ label komt overeen met een besparing van 92% ten opzichte
-        van vandaag."
+      description: |
+        Deze slider bepaalt hoeveel efficiënter televisies in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds 
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn, 
+        geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat 
+        het gemiddelde energielabel zien van de momenteel gebruikte televisies. Moderne televisies 
+        met een A-label kunnen tot 92% zuiniger zijn dan de gemiddelde televisie in het startscenario.
     households_appliances_computer_media_electricity_efficiency:
       title: Computer / Media
       short_description: ''
-      description: 'Hoeveel efficiënter zullen computers en andere audio/video apparatuur
-        (exclusief televisies) in de toekomst zijn? '
+      description: |
+        Deze slider bepaalt hoeveel efficiënter computers en andere audio/video apparatuur 
+        (exclusief televisies) kunnen worden.
     households_appliances_other_electricity_efficiency:
       title: Overig
       short_description: ''
-      description: "Hoeveel efficiënter zullen andere huishoudelijke apparaten in
-        de toekomst zijn? \r\n<br/><br/>\r\nDeze categorie omvat:<br/>\r\n- Persoonlijke
-        verzorging <br/>\r\n- Vrije tijd (klus gereedschap, naaimachine, elektrisch
-        speelgoed, etc.) <br/>\r\n- Keukenapparatuur (exclusief koken) <br/>\r\n- Ventilatie"
+      description: |
+        Deze slider bepaalt hoeveel efficiënter andere huishoudelijke apparaten kunnen worden. 
+        </br></br>
+        Denk hierbij aan: </br>
+        <ul>
+          <li>Persoonlijke verzorging, </li>
+          <li>Vrije tijd (handgereedschap, naaimachines, elektrisch speelgoed, etc.), </li>
+          <li>Keukenapparatuur (exclusief koken), </li>
+          <li>Ventilatie. </li>
+        </ul>
     households_behavior_standby_killer_turn_off_appliances:
       title: Apparaten uitzetten
       short_description: ''
-      description: "Hoeveel mensen zullen hun gedrag veranderen om energie te besparen?\r\n<br/><br/>\r\nVeel
-        elektrische apparaten gebruiken nog steeds elektriciteit als ze uitstaan.
-        In \"standby\" modus gebruiken apparaten gemiddeld nog 10 tot 15 W aan elektriciteit.
-        Een computer kan zelfs tot 60 W gebruiken terwijl hij \"uit\" staat. De stekker
-        uit het stopcontact trekken en een standby killer of aan/uit-schakelaar op
-        het stopcontact installeren kunnen ervoor zorgen dat deze stroom niet meer
-        verloren gaat.\r\n<br/><br/>\r\nEr zijn verschillende schattingen over de
-        totale impact van deze \"standby stroom\", maar het kan tot 20% zijn van het
-        totale stroomgebruik van dit soort apparaten. Het is daarbij wel belangrijk
-        om te bedenken dat het elektriciteitsgebruik van deze apparaten erg klein
-        is vergeleken met de totale vraag naar elektriciteit en warmte in huishoudens.
-        Daarom toont dit schuifje bij het aanpassen ook geen groot verschil, zelfs
-        als 100% van de bevolking een standby killer installeert. Aan de andere kant,
-        kan een gedragsverandering hier ook leiden tot veranderd gedrag op andere
-        punten waar het wel uitmaakt. Als mensen bijvoorbeeld in plaats van de auto,
-        de trein of de fiets naar het werk nemen zet dit wel zoden aan de dijk."
+      description: |
+        Deze slider bepaalt de mate van gedragsverandering met betrekking tot het uitzetten 
+        van apparaten, wat resulteert in een stijging of daling van de huishoudelijke energievraag.
+        </br></br>
+        Denk hierbij aan handelingen zoals stekkers uit het stopcontact trekken, het gebruik van 
+        een standby-killer, of het installeren van een aan/uit-schakelaar op stopcontacten. Grofweg 
+        kan een apparaat tot 20% van zijn energieverbruik aan standby-stroom vragen.
     households_behavior_turn_off_the_light:
       title: Lichten uitzetten
       short_description: ''
-      description: "Hoeveel mensen zullen hun gedrag veranderen om energie te sparen?\r\n<br/><br/>\r\nVeel
-        mensen hebben thuis lampen aan staan die niet gebruikt worden. Deze lichten
-        uitzetten kan wat elektriciteit besparen. Denk je dat meer of minder mensen
-        zich bewust zullen zijn van de lichten die nog aan staan in hun huis?\r\n<br/><br/>\r\nHet
-        totale gebruik van elektriciteit voor verlichting is huishoudens is niet zo
-        groot vergeleken met de totale vraag naar elektriciteit en warmte in huishoudens.
-        Daarom laat deze verandering in gedrag niet zo'n heel groot verschil zijn.
-        In gebouwen is het bijvoorbeeld wel heel nuttig om minder verlichting te gebruiken,
-        omdat daar de vraag naar verlichting een groot deel van de totale vraag naar
-        energie is."
+      description: |
+        Deze slider bepaalt de mate van gedragsverandering met betrekking tot het uitzetten van 
+        lichten, wat resulteert in een stijging of daling van de huishoudelijke energievraag.
     households_behavior_close_windows_turn_off_heating:
       title: Verwarming uitzetten
       short_description: ''
@@ -528,10 +514,12 @@ nl:
     households_behavior_low_temperature_washing:
       title: Wassen op lage temperatuur
       short_description: ''
-      description: "Hoeveel mensen zullen hun gedrag veranderen om energie te besparen?\r\n<br/><br/>\r\nKleding
-        wassen op 40 graden Celcius kan 50% elektriciteit besparen ten opzichte van
-        wassen op 60 graden.\r\n<br/><br/>\r\nWelk percentage van de bevolking gaat
-        wassen met lagere temperaturen?"
+      description: |
+        Deze slider bepaalt de mate van gedragsverandering met betrekking tot wassen op lage 
+        temperatuur, wat resulteert in een stijging of daling van de huishoudelijke energievraag.
+        </br></br>
+        Kleding wassen op 40 <sup>o</sup>C bijvoorbeeld kan tot 50% elektriciteit besparen in 
+        vergelijking met wassen op 60 <sup>o</sup>C.
     households_solar_pv_solar_radiation_market_penetration:
       title: PV zonnepanelen
       short_description: ''
@@ -757,38 +745,25 @@ nl:
         Het aantal behouden vrijstaande woningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
         <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze vrijstaande woningen aan te passen.</li></ul>
 
-
-
     households_lighting_efficient_fluorescent_electricity_share:
       title: Spaarlamp
       short_description: ''
-      description: "Welk deel van de verlichting komt van spaarlampen?\r\n<br/><br/>\r\nVeel
-        EU landen gaan de gloeilamp verbieden in de toekomst. Spaarlampen gebruiken
-        ~75% minder energie dan gloeilampen, maar nog twee keer zoveel als LED lampen.
-        Je kunt een spaarlamp niet altijd weggooien zonder het milieu te vervuilen,
-        omdat er vaak kwik in zit. Gloeilampen en LED lampen niet. Spaarlampen kunnen
-        er niet goed tegen als ze vaak aan en uitgezet worden.\r\n<br/><br/>\r\nVergelijking
-        levensduren:\r\n<br/>• LED-lamp:      ~50.000 uur\r\n<br/>• Spaarlamp:             ~7.500
-        uur\r\n<br/>• Gloeilamp:  ~1.000 uur"
+      description: |
+        Deze slider bepaalt welk percentage van de lampen in huishoudens bestaat uit spaarlampen.
     households_lighting_led_electricity_share:
       title: LED-lamp
       short_description: ''
-      description: "Welk deel van de verlichting komt van LED lampen?\r\n<br/><br/>\r\nVeel
-        EU landen gaan de gloeilamp verbieden in de toekomst. LED-lampen gebruiken
-        ~10% van de energie van een gloeilamp, en de helft van een spaarlamp. LED-lampen
-        kunnen er goed tegen als ze vaak aan en uitgezet worden. Hun kleuren worden
-        nog als kil ervaren en ze zijn niet zeer geschikt om de hele kamer te verlichten.\r\n<br/><br/>\r\nVergelijking
-        levensduren:\r\n<br/>• LED-lamp: ~50.000 uur\r\n<br/>• Spaarlamp: ~7.500 uur\r\n<br/>•
-        Gloeilamp: ~1.000 uur"
+      description: |
+        Deze slider bepaalt welk percentage van de lampen in huishoudens bestaat uit LED-lampen.
     households_lighting_incandescent_electricity_share:
       title: Gloeilamp
       short_description: ''
-      description: "Veel EU landen gaan de gloeilamp verbieden in de toekomst. Ze
-        zetten maar 2-3% van de energie die ze gebruiken om in licht. De rest wordt
-        als warmte afgegeven. Hoewel ze mooi warm licht geven leven ze minder lang
-        dan hun concurrenten de LED en spaarlampen.\r\n<br/><br/>\r\nVergelijking
-        levensduren:\r\n<br/>• LED-lamp: ~50.000 uur\r\n<br/>• Spaarlamp: ~7.500 uur\r\n<br/>•
-        Gloeilamp: ~1.000 uur"
+      description: |
+        Deze slider bepaalt welk percentage van de lampen in huishoudens bestaat uit gloeilampen. 
+        </br></br>
+        De Europese Unie heeft de productie van nieuwe gloeilampen verboden als onderdeel van 
+        wetgeving voor energie-efficiëntie. Het gebruik en de aanschaf van gloeilampen blijven 
+        echter toegestaan.
     households_heater_electricity_share:
       title: Elektrische boiler
       short_description: ''

@@ -7,7 +7,7 @@
         = Current.setting.end_year
       - if Current.setting.active_scenario_title.present?
         - if active_saved_scenario_id.present?
-          = link_to(saved_scenario_path(active_saved_scenario_id)) do
+          = link_to(my_etm_path("saved_scenarios/#{active_saved_scenario_id}")) do
             %span.name
               = Current.setting.active_scenario_title
         - else
@@ -19,13 +19,13 @@
   %div
     - if current_user
       - if save_scenario_enabled?
-        %button.save-scenario{ data: { path: scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
+        %button.save-scenario{ data: { path: saved_scenario_path(active_saved_scenario_id) }, disabled: true, type: 'button' }
           %span.main.label.show= t('header.save_scenario').titleize
           %span.saved.label.abs-label
             %span.fa.fa-check
             = t('header.saved')
       - else
-        %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id', title: Current.setting.active_scenario_title) } }
+        %a.save-scenario-as.disabled{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: Current.setting.api_session_id, title: Current.setting.active_scenario_title) } }
           = t('header.save_scenario_as').titleize
     - else
       %a.sign-in-to-save.disabled{ href: sign_in_path }
@@ -37,7 +37,7 @@
       %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
         - if current_user
           %li
-            %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: ':scenario_id', title: Current.setting.active_scenario_title) } }
+            %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: Current.setting.api_session_id, title: Current.setting.active_scenario_title) } }
               = succeed '&hellip;'.html_safe do
                 = t("header.save_scenario_as")
         - else

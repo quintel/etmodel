@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/featured_scenarios
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.3
+      Authorization:
+      - Bearer
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept, Origin
+      Etag:
+      - W/"991a616a98cf2ed031cf7db5d2331566"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8b100db5-d1aa-48a0-9bb6-d6707a975824
+      X-Runtime:
+      - '0.019916'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1.20, instantiation.active_record;dur=0.19,
+        process_action.action_controller;dur=5.70
+      Content-Length:
+      - '409'
+    body:
+      encoding: UTF-8
+      string: '{"featured_scenarios":[{"id":3,"saved_scenario_id":28,"owner_id":1,"group":"national","title_en":"Amazing
+        featured scenario","title_nl":"Geweldig scenario!","version":"latest","end_year":2050,"author":"No
+        author"},{"id":4,"saved_scenario_id":29,"owner_id":1,"group":"national","title_en":"Super
+        scenario for 2030","title_nl":"Super scenario for 2030","version":"latest","end_year":2030,"author":"No
+        author"}]}'
+  recorded_at: Tue, 17 Dec 2024 11:43:44 GMT
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/versions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b333f2b38e283af4a4b94a9463c73f73"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 36fa8bce-b171-401c-be24-6657cc99ba32
+      X-Runtime:
+      - '0.013402'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.23
+      Vary:
+      - Origin
+      Content-Length:
+      - '416'
+    body:
+      encoding: UTF-8
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 10 Jan 2025 10:44:54 GMT
+recorded_with: VCR 6.0.0

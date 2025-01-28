@@ -6,24 +6,38 @@ module API
     before_action :verify_token!
 
     def update
-      # Verify that the user being updated matches the user authorized by the token.
-      return head(:forbidden) if current_user.id != params.require(:id).to_i
-
-      if current_user.update(name: params.require(:name))
-        render json: current_user
+    # Verify that the user being updated matches the user authorized by the token.
+      if authorized_to_update_user?(user_params[:id])
+        if current_user.update(user_params.except(:id))
+          render json: current_user
+        else
+          render json: { errors: current_user.errors.full_messages }, status: :unprocessable_entity
+        end
       else
-        render json: current_user.errors, status: :unprocessable_entity
+        head :forbidden
       end
     end
 
     def destroy
-      # Remove the SavedScenarios associated with this user where its the only user left
-      current_user.saved_scenarios.each { |ss| ss.destroy if ss.users.count == 1 }
-
-      # Then destroy the user itself
       current_user.destroy
-
       head :ok
+    end
+
+    private
+
+    def user_params
+      user_params = params.require(:user).permit(:id, :name)
+
+      # Explicitly check for blank values
+      if user_params[:name].blank?
+        raise ActionController::ParameterMissing, 'name'
+      end
+
+      user_params
+    end
+
+    def authorized_to_update_user?(user_id)
+      current_user.id == user_id.to_i
     end
   end
 end

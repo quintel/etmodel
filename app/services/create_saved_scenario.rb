@@ -1,50 +1,48 @@
 # frozen_string_literal: true
 
-# Creates a new API scenario based on the given existing API `scenario_id`, and
-# then creates a new SavedScenario. The new API scenario will be marked as
-# protected.
-#
-# http_client - The client used to communiate with ETEngine.
-# scenario_id - The ID of the scenario to be saved.
-# user        - User to which the saved scenario will belong.
-# settings    - Optional extra scenario data to be sent to ETEngine when
-#               creating the new API scenario. Also contains details for the
-#               creation of the saved scenario, like the title and description
-#
-# Returns a ServiceResult with the resulting SavedScenario.
-CreateSavedScenario = lambda do |http_client, scenario_id, user, settings = {}|
-  api_res = CreateAPIScenario.call(
-    http_client, settings.except(:description, :title).merge(scenario_id:)
-  )
+class CreateSavedScenario
+  extend Dry::Initializer
+  include Service
 
-  return api_res if api_res.failure?
+  param :http_client
+  param :scenario_id
+  param :settings, default: proc { {} }
 
-  api_scenario = api_res.value
+  def call
+    return ServiceResult.failure(@errors.join(', ')) if invalid_params.any?
 
-  saved_scenario = SavedScenario.new(
-    title: settings[:title],
-    description: settings[:description],
-    area_code: api_scenario.area_code,
-    end_year: api_scenario.end_year,
-    scenario_id: api_scenario.id,
-    private: api_scenario.private?,
-    user:
-  )
+    response = http_client.post('api/v1/saved_scenarios') do |req|
+      req.headers['Content-Type'] = 'application/json'
+      req.body = request_body
+    end
 
-  unless saved_scenario.valid?
-    SetAPIScenarioCompatibility.dont_keep_compatible(http_client, api_scenario.id)
-
-    # Set the scenario ID back to the original, rather than the cloned scenario created by
-    # CreateAPIScenario.
-    saved_scenario.scenario_id = scenario_id
-    return ServiceResult.failure(saved_scenario.errors.map(&:full_message), saved_scenario)
+    ServiceResult.success(response.body)
+  rescue Faraday::UnprocessableEntityError => e
+    ServiceResult.failure_from_unprocessable_entity(e)
+  rescue Faraday::UnauthorizedError => e
+    ServiceResult.failure_from_unprocessable_entity(e)
   end
 
-  SetAPIScenarioCompatibility.keep_compatible(http_client, api_scenario.id)
-  CreateAPIScenarioVersionTag.call(http_client, api_scenario.id, '')
+  private
 
-  saved_scenario.save
-  saved_scenario.scenario = api_scenario
+  def request_body
+    {
+      saved_scenario: {
+        scenario_id: scenario_id,
+        version: ETModel::Version::TAG
+      }.merge(settings.slice(:title, :area_code, :end_year))
+    }.to_json
+  end
 
-  ServiceResult.success(saved_scenario)
+  # NOTE: should be done with a Dry::Contract
+  def invalid_params
+    @errors = []
+    @errors << 'Title cannot be blank' if settings[:title].blank?
+
+    unless scenario_id.to_i.to_s == scenario_id.to_s
+      @errors << 'Scenario ID must be a valid integer'
+    end
+
+    @errors
+  end
 end

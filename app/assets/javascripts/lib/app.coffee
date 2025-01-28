@@ -3,6 +3,8 @@
 # the function so that the event can be unbound once the ID is available.
 disabledSetting = (event) -> false
 
+idp_url = globals.idp_url
+
 class @AppView extends Backbone.View
   initialize: ->
     @settings    = new Setting({api_session_id: globals.api_session_id})
@@ -23,7 +25,7 @@ class @AppView extends Backbone.View
       @accessToken = new GuestToken()
 
     @api = new ApiGateway
-      api_path:           globals.api_url
+      api_path:           globals.ete_url
       api_proxy_path:     globals.api_proxy_url
       scenario_id:        globals.api_session_id
       beforeLoading:      @showLoading
@@ -210,7 +212,7 @@ class @AppView extends Backbone.View
 
   # Used on the console for debugging
   scenario_url: =>
-    "#{globals.api_url}/inspect/#{@api.scenario_id}"
+    "#{globals.ete_url}/inspect/#{@api.scenario_id}"
 
   # Prepares the Merit Order checkboxes
   setup_checkboxes: =>
@@ -350,7 +352,7 @@ class @AppView extends Backbone.View
       @userScenariosDeferred = $.Deferred()
 
       req = $.ajax({
-        url: '/saved_scenarios',
+        url: "#{idp_url}/api/v1/saved_scenarios"
         method: 'GET'
         headers: @accessToken.headers()
         dataType: 'json'

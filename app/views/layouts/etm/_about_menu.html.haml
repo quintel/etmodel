@@ -1,13 +1,7 @@
 .dropdown
-  %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'hover' }, type: 'button' }
+  %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'click' }, type: 'button' }
     = t('app_nav.about_the_etm')
   .dropdown-menu.learn-dropdown.about{ 'aria-labelledby': 'locale-button' }
-    %strong
-      :plain
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd" />
-        </svg>
-      = t('app_nav.about_the_etm')
     %ul
       %li= learn_link t('app_nav.etm_what'), about_path
       %li= learn_link t('app_nav.etm_why'), about_path(anchor: 'why-use')
@@ -15,12 +9,7 @@
       %li= learn_link t('app_nav.getting_started'), about_path(anchor: 'getting-started')
     .extras
       %ul
-        %li.learn-section
-          :plain
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-            </svg>
-          = t('app_nav.learn')
+        %li.learn-section= t('app_nav.learn')
         %li= learn_link t('app_nav.documentation'), 'https://docs.energytransitionmodel.com'
         %li= learn_link t('app_nav.dataset_manager'), 'https://data.energytransitionmodel.com/'
         %li= learn_link t('app_nav.api'), 'https://docs.energytransitionmodel.com/api/intro'

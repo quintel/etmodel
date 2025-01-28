@@ -64,7 +64,7 @@ New users are recommended to use Docker to run ETEngine. Doing so will avoid the
     Create a file called `config/settings.local.yml` containing:
 
     ```yaml
-    api_url: http://YOUR_IP_ADDRESS:3000
+    ete_url: http://YOUR_IP_ADDRESS:3000
     ```
 
     #### Branches
@@ -99,7 +99,7 @@ Mac users should be able to install the following prerequisites with [Homebrew](
 ### Installing
 
 * Pull this repository with `git clone git@github.com:quintel/etmodel.git`
-  * **Local Engine** You can communicate with either a local version of ETEngine, or one of our servers by specifying the `api_url` in `config.yml`. To use a local version, change the standard beta server url to `http://localhost:<PORT>` based on which port you are running the Engine on.
+  * **Local Engine** You can communicate with either a local version of ETEngine, or one of our servers by specifying the `ete_url` in `config.yml`. To use a local version, change the standard beta server url to `http://localhost:<PORT>` based on which port you are running the Engine on.
   * **Database password** If you added a username and password to your mysql service, please replace the standard login info in `database.yml` with your own credentials.
 
 * Run `bundle install` and `yarn install` to install all the dependencies

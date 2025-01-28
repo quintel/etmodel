@@ -22,7 +22,7 @@ class ExportEsdlScenario
   def send_request
     HTTParty.public_send(
       :post,
-      api_url,
+      ete_url,
       { body: { session_id: @ete_scenario, environment: environment } }
     )
   end
@@ -45,7 +45,7 @@ class ExportEsdlScenario
     Rails.env.production? ? 'pro' : 'beta'
   end
 
-  def api_url
-    Settings.esdl_api_url + 'export_esdl/'
+  def ete_url
+    Settings.esdl_ete_url + 'export_esdl/'
   end
 end

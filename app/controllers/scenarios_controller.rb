@@ -119,25 +119,6 @@ class ScenariosController < ApplicationController
     redirect_to play_path
   end
 
-  # Public: Updates a saved scenario by assigning the `scenario_id` param. JSON only.
-  #
-  # PUT /scenarios/:id
-  def update
-    scenario_id = params.require(:scenario_id).to_i
-
-    @saved_scenario = SavedScenario.find(params[:id])
-    update = UpdateSavedScenario.call(engine_client, @saved_scenario, scenario_id)
-
-    if update.successful?
-      Current.setting.preset_scenario_id = scenario_id
-      Current.setting.api_session_id = update.value.id
-
-      render json: @saved_scenario.as_json.merge(api_session_id: update.value.id)
-    else
-      render json: { errors: update.errors }
-    end
-  end
-
   # This is the main scenario action
   #
   def play
@@ -218,7 +199,7 @@ class ScenariosController < ApplicationController
       { scenario_id: id, weight: weight }
     end
 
-    result = HTTParty.post("#{Settings.api_url}/api/v3/scenarios/merge", {
+    result = HTTParty.post("#{Settings.ete_url}/api/v3/scenarios/merge", {
       body: { scenarios: req_body }.to_json,
       headers: {
         'Accept'       => 'application/json',

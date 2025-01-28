@@ -1,11 +1,23 @@
 %header#top.main-header
   %div{ style: 'display: flex' }
-    %a.logo{ href: root_path }
-      %img{ src: "/assets/header/logo300@2x.png", width: 300, height: 37, alt: "" }
+    .logo
+      %a.logo-inner{ href: root_path, style: 'display: flex' }
+        %img{ src: "/assets/header/logo-round.svg", width: 37, height: 37, alt: "", style: 'margin: auto 0' }
+        .flex-col
+          .span Energy Transition Model
+      .dropdown
+        %button#version-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'click' }, type: 'button' }
+          %span= "##{ETModel::Version::TAG}"
+          %span.fa.fa-caret-down
+        .dropdown-menu.version-dropdown.development{ 'aria-labelledby': 'version-button' }
+          %ul#version-links
+            %li{style: 'margin-bottom:1rem'}= t('versions.switch')
+            - MyEtm::Version.all_other_versions.each do |version|
+              %li= link_to "##{version.tag}", version.model_url
     .app-nav
       = render partial: 'layouts/etm/about_menu'
-      = render partial: 'layouts/etm/features_menu'
-      = render partial: 'layouts/etm/development_menu'
+      = link_to t('app_nav.updates'), whats_new_path, class: 'nav-link'
+      = link_to t('app_nav.development'), my_etm_path("collaborate"), class: 'nav-link'
 
   %ul.user-settings
     %li.locale.nav-item
@@ -26,7 +38,7 @@
 
     - if current_user
       %li.my-scenarios.nav-item
-        %a.nav-link{ href: scenarios_path }
+        %a.nav-link{ href: my_etm_path("saved_scenarios")}
           = t('header.load_scenario')
       %li.my-account.nav-item
         .dropdown
@@ -34,11 +46,11 @@
             %span= current_user.name.presence || t('header.my_profile')
             %span.fa.fa-caret-down
           %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'my-account-button' }
-            %li= link_to t('header.my_profile'), user_profile_url, class: 'dropdown-item'
+            %li= link_to t('header.my_profile'), my_etm_path('identity'), class: 'dropdown-item'
             %li= link_to t('header.sign_out'), sign_out_path, class: 'dropdown-item', method: :post
             - if current_user.admin?
               %li.sep-above.admin
-                %a.dropdown-item{ href: '/admin' } Admin
+                %a.dropdown-item{ href: my_etm_path("admin") } Admin
     - else
       %li.sign-up.nav-item
         %a.nav-link{ href: sign_up_url }

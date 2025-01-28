@@ -25,7 +25,7 @@ if !ENV['DOCKER_BUILD'] && (
 end
 
 Identity.configure do |config|
-  config.issuer = Settings.api_url
+  config.issuer = Settings.idp_url
   config.client_uri = Settings.identity.client_uri
   config.client_id = Settings.identity.client_id
   config.client_secret = Settings.identity.client_secret
@@ -78,11 +78,11 @@ end
 if Rails.env.development?
   # In development, ETEngine often runs as only a single process. Pre-fetch the JWKS keys from the
   # engine so that the first request to the API does not deadlock.
-  require_relative '../../lib/etmodel/engine_token'
+  require_relative '../../lib/etmodel/token_decoder'
 
   begin
-    ETModel::EngineToken.jwk_set
+    ETModel::TokenDecoder.jwk_set
   rescue StandardError => e
-    warn("Couldn't pre-fetch ETEngine public key: #{e.message}")
+    warn("Couldn't pre-fetch MyETM public key: #{e.message}")
   end
 end

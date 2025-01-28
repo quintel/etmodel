@@ -16,68 +16,18 @@ class UpdateSavedScenario
   include Service
 
   param :http_client
-  param :saved_scenario
+  param :saved_scenario_id
   param :scenario_id
-  param :settings, default: proc { {} }
 
   def call
-    saved_scenario.tap do |ss|
-      ss.add_id_to_history(ss.scenario_id)
-      ss.scenario_id = scenario_id
-
-      unless ss.valid?
-        unprotect
-        return failure
-      end
-
-      protect
-
-      set_roles
-
-      tag_new_version
-
-      ss.save
-      saved_scenario.scenario_id = scenario_id
+    response = http_client.put("api/v1/saved_scenarios/#{saved_scenario_id}") do |req|
+      req.headers ||= {}
+      req.headers['Content-Type'] = 'application/json'
+      req.body = { scenario_id: scenario_id }.to_json
     end
 
-    # TODO: this should be doen in the controller, not here
-    return api_response if failure?
-
-    # TODO: this should contain a SavedScenario, not an engine scenario
-    ServiceResult.success(api_scenario)
-  end
-
-  private
-
-  def protect
-    SetAPIScenarioCompatibility.keep_compatible(http_client, scenario_id)
-  end
-
-  def unprotect
-    SetAPIScenarioCompatibility.dont_keep_compatible(http_client, scenario_id)
-  end
-
-  def set_roles
-    SetAPIScenarioRoles.to_preset(http_client, scenario_id)
-  end
-
-  def tag_new_version
-    CreateAPIScenarioVersionTag.call(http_client, scenario_id, '')
-  end
-
-  def failure
-    ServiceResult.failure(saved_scenario.errors.map(&:full_message))
-  end
-
-  def api_scenario
-    api_response.value
-  end
-
-  def api_response
-    @api_response ||= CreateAPIScenario.call(http_client, settings.merge(scenario_id:))
-  end
-
-  def failure?
-    api_response.failure?
+    ServiceResult.success(response.body)
+  rescue Faraday::UnprocessableEntityError => e
+    ServiceResult.failure_from_unprocessable_entity(e)
   end
 end

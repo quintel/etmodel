@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'API::User', type: :request, api: true do
+  before { Settings.ete_id = 'http://localhost:3000' }
+
   describe 'PUT /api/v1/user' do
     let(:user) { create(:user) }
 
@@ -8,7 +10,7 @@ RSpec.describe 'API::User', type: :request, api: true do
       before do
         put '/api/v1/user',
           as: :json,
-          params: { id: user.id, name: 'John' },
+          params: { user: { id: user.id, name: 'John' } },
           headers: authorization_header(user)
       end
 
@@ -25,11 +27,11 @@ RSpec.describe 'API::User', type: :request, api: true do
       before do
         put '/api/v1/user',
           as: :json,
-          params: { id: user.id, name: ' ' },
+          params: { user: { id: user.id, name: ' ' } },
           headers: authorization_header(user)
       end
 
-      it 'returns 400 Bad Request' do
+      it 'returns 422 Unprocessable Entity' do
         expect(response).to have_http_status(:bad_request)
       end
 
@@ -73,13 +75,6 @@ RSpec.describe 'API::User', type: :request, api: true do
         expect { run_request }.to change { User.where(id: user.id).count }.from(1).to(0)
       end
 
-      it "deletes the user's saved scenarios" do
-        scenario = create(:saved_scenario, user:)
-
-        expect { run_request }
-          .to change { SavedScenario.where(id: scenario.id).count }
-          .from(1).to(0)
-      end
 
       it "deletes the user's transition paths" do
         path = create(:multi_year_chart, user:)

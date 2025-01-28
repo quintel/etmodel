@@ -12,6 +12,7 @@ body#root
   margin: 0 auto
   padding: 50px 0 20px
   width: $landing-width
+  color: #462c34
 
   a
     color: darken($landing-blue, 4%)
@@ -23,6 +24,7 @@ body#root
 
   #blurb
     margin: 0 0.5rem 40px
+    width: 800px
     h1
       font-size: 26px
       font-weight: normal
@@ -32,44 +34,52 @@ body#root
       font-size: 14px
       line-height: 1.7
 
-  #resume-scenario, #new-scenario, #preset-scenario, #recently-updated, .other-features li
-    background: white
-    border-top: 3px solid $landing-border-color
+  #resume-scenario, #new-scenario, #preset-scenario, #recently-updated, #other-features .feature
+    background: $landing-background-color
+    border: 1px solid #e5e7eb
     border-radius: 6px
     margin: 0 0 40px
     padding: 15px 20px
 
-  .other-features
-    display: flex
-    flex-wrap: wrap
-    list-style: none
-    margin: -5px -45px -5px -5px
-    overflow: hidden
-    padding: 5px
-    li
-      background: white asset-url("pages/home/local_global.svg") 20px 20px no-repeat
+  #other-features
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: repeat(3, min-content)
+    gap: 20px
+    .feature
+      background: $soft-grey asset-url("pages/home/local_global.svg") 20px 20px no-repeat
       background-size: 32px
       display: block
-      float: left
-      margin-right: 40px
-      width: 274px
-
       padding-left: 68px
-      width: 216px
       &.whats-new
         background-image: asset-url("pages/home/whats-new.svg")
+        grid-column-start: 1
+        grid-column-end: span 2
+        grid-row-start: 1
       &.multi-year-charts
         background-image: asset-url("pages/home/multi_year_charts.svg")
-        width: 562px
-      &.esdl
-        background-image: asset-url("pages/home/esdl.png")
-      &.game
+        grid-column-start: 3
+        grid-column-end: span 2
+        grid-row-start: 1
+      &.dataset
+        grid-row-start: 1
+        grid-column-start: 5
+        grid-column-end: span 2
+      &.docs
+        background-image: asset-url("pages/home/game.png")
+        grid-row-start: 2
+        grid-column-start: 1
+        grid-column-end: span 3
+      &.api
         background-image: asset-url("pages/home/rubik.png")
+        grid-row-start: 2
+        grid-column-start: 4
+        grid-column-end: span 3
       &.quintel
         background-image: asset-url("pages/home/quintel.svg")
-        width: 562px
-      &.whats-new
-        width: 562px
+        grid-row-start: 3
+        grid-column-start: 1
+        grid-column-end: span 6
     h4
       font-size: 14px
       margin: 2px 0 0 0
@@ -86,8 +96,8 @@ body#root
         margin-left: 5px
 
   #resume-scenario
-    background: #F6FFF1
-    border-top-color: $landing-green
+    background: $dark-cream
+    border: none
     a
       border-top-left-radius: 3px
       border-top-right-radius: 3px
@@ -182,12 +192,14 @@ body#root
 
       // &.UKNI01_northern_ireland
     span.root-button
-      background: $landing-green
+      background: #8bd186
       margin-top: 9px
       padding-top: 7px
       padding-bottom: 7px
+      color: white
       span.fa
         margin-top: 0
+        color: white
 
     ul.dashboard
       background: linear-gradient(white 10%, $landing-border-color, white 90%)
@@ -214,6 +226,7 @@ body#root
           font-size: 14px
 
   #new-scenario, #preset-scenario
+    border: none
     .header-container
       display: flex
       margin: -15px -20px 0px
@@ -234,11 +247,14 @@ body#root
   #new-scenario
     border-top-color: $landing-blue
     form
-      overflow: hidden
       margin: 0 -10px
-      .country, .year, .submit
-        float: left
-        padding: 20px 10px
+      display: flex
+      padding: 20px 0
+      .submit
+        margin-right: 0
+        margin-left: auto
+      .country, .year, .submit, #scenario-info
+        padding: 0 10px
       .country
         width: 348px
         a
@@ -250,6 +266,21 @@ body#root
       .submit
         border-right: none
         width: 72px
+      #scenario-info-button
+        background: none
+        border: none
+        height: 100%
+        font-size: 1.5rem
+      .scenario-info-dropdown
+        left: 3rem
+        top: 0
+        width: 450px
+        padding: 1rem
+        line-height: 1.8
+        &::before
+          left: -0.25rem
+          top: 0.625rem
+          background: white
       label
         color: $landing-grey
         display: block
@@ -344,6 +375,7 @@ body#root
 
   #preset-scenario
     border-top-color: $landing-gold
+    padding-bottom: 2rem
     .header-container a
       color: $landing-grey
       text-decoration: underline
@@ -356,28 +388,31 @@ body#root
 
     .year-tabs
       display: flex
-      margin-bottom: 5px
+      margin-bottom: 2rem
       .end-year-tab
-        margin-left: 3px
+        margin-left: 1rem
         margin-bottom: 3px
         border-radius: 6px
         font-size: .875rem
         padding: 5px 13px
+        // border: 1px solid #d0d5d8
         background: $soft-grey
         transition: background 0.15s ease-in
         a
-          color: $landing-grey
+          color: #462c34
           transition: color 0.15s ease-in
           &:hover
             text-decoration: none
             cursor: pointer
-            color: white
+            color: #462c34
         &:hover
-          background: $landing-gold
+          background: $dark-cream
+          border-color: $dark-cream
           a
-            color: white
+            color: #462c34
         &.active
-          background: $landing-green
+          background: #86c983
+          border-color: #86c983
           a
             color: white
           &:hover
@@ -435,7 +470,7 @@ body#root
         font-size: 0.75rem
 
       span.author
-        color: darken($landing-background-color, 18%)
+        color: darken($landing-background-color, 100%)
         font-size: 0.75rem
         margin-left: auto
 

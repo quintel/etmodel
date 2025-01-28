@@ -100,7 +100,7 @@ module ApplicationHelper
   # Returns a hash of values which may be interpolated into description texts.
   def formatted_description_values
     @description_values ||= {
-      etengine_url: Settings.api_url.to_s.chomp('/'),
+      etengine_url: Settings.ete_url.to_s.chomp('/'),
       scenario_id:  Current.setting.api_session_id,
       area_code:    Current.setting.area_code,
       end_year:     Current.setting.end_year
@@ -158,7 +158,8 @@ module ApplicationHelper
 
   def js_globals
     Jbuilder.encode do |json|
-      json.api_url          Settings.api_url
+      json.ete_url          Settings.ete_url
+      json.idp_url          Settings.idp_url
       json.api_proxy_url    Settings.api_proxy_url
       json.disable_cors     Settings.disable_cors
       json.standalone       Settings.standalone
@@ -169,16 +170,19 @@ module ApplicationHelper
 
       if current_user
         json.user do
-          json.id current_user.id
+          json.id   current_user.id
           json.name current_user.name
         end
 
+        # Fetch the access token for the current user
+        access_token = ETModel::TokenDecoder.fetch_token(current_user, engine = true)
+
         json.access_token do
-          json.token identity_access_token.token
-          json.expires_at identity_access_token.expires_at
+          json.token        access_token
+          json.expires_at   ETModel::TokenDecoder.decode(access_token)['exp']
         end
       else
-        json.user nil
+        json.current_user nil
         json.access_token nil
       end
 

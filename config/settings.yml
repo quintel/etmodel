@@ -7,10 +7,13 @@
 # +------------------------------------------------------------------------+
 
 # URL for ETEngine.
-api_url: https://beta-engine.energytransitionmodel.com
+ete_url: https://beta-engine.energytransitionmodel.com
 
 # URL for the Multi-Year Charts application.
 multi_year_charts_url: http://localhost:3005
+
+# The (stable) version's name
+version: <%= ENV.fetch('VERSION_TAG', 'latest') %>
 
 # This sets the url we use as API proxy. The proxying is handled by nginx or a local rack-based
 # proxy. This is a legacy feature used by ETPlugin and will not be supported long-term.
@@ -77,18 +80,20 @@ incoming_webhook_keys:
 
 # Authentication
 # --------------
-
 identity:
   client_id: <%= ENV['IDENTITY_CLIENT_ID'] %>
   client_secret: <%= ENV['IDENTITY_CLIENT_SECRET'] %>
   client_uri: http://localhost:3001
+
+ete_url: http://localhost:3000
+idp_url: http://localhost:3002
 
 # ESDL
 # ----
 
 # This is the url for the esdl-conversion api. Used for converting
 # EnergySystem files (.esdl) into etm scenarios
-esdl_api_url: https://beta-esdl.energytransitionmodel.com/api/v1/EnergySystem/
+esdl_ete_url: https://beta-esdl.energytransitionmodel.com/api/v1/EnergySystem/
 
 # When starting communication with the ESDL Suite (to connect to the Mondaine Drive), the client
 # data and following url's should be configured The redirect_url should be set to

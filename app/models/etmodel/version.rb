@@ -2,6 +2,9 @@
 
 module ETModel
   module Version
+    # Release tag
+    TAG = Settings.version
+
     # Year of release.
     MAJOR = 2025
 

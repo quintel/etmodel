@@ -1,16 +1,17 @@
-$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+$body-font-family: "Montserrat", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 $link-color: #4e7be4
 
-$landing-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
-$landing-width: 652px
+$landing-font-family: "Montserrat", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+$landing-width: 1080px
 $landing-green: #56b351
 $landing-grey: #78818c
 $landing-blue: #4e7be4
 $light-blue: #DBEDFE
 $landing-gold: #f27316
-$landing-background-color: #eef2f7
+$landing-background-color: #fbf7f6
 $landing-border-color: #d0d5d8
-$soft-grey: #f0f5ff
+$soft-grey: #fdfdfd
+$dark-cream: #fdece0
 
 @mixin etm-link
   color: $link-color
@@ -22,6 +23,11 @@ $soft-grey: #f0f5ff
 @mixin flag($region)
   padding-left: 28px
   background-image: asset-url("flags-24/" + $region + ".png")
+
+@font-face
+  font-family: 'Montserrat'
+  font-style: normal
+  src: url('Montserrat-VariableFont_wght.ttf') format('truetype')
 
 body
   font-family: $body-font-family

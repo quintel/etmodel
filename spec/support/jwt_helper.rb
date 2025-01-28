@@ -12,7 +12,7 @@ module JWTHelper
   end
 
   def generate_jwt(user, **kwargs)
-    allow(ETModel::EngineToken)
+    allow(ETModel::TokenDecoder)
       .to receive(:jwk_set).and_return(
         JSON::JWK::Set.new([JSON::JWK.new(JWTHelper.key.public_key, kid: 'test_key')])
       )
@@ -31,7 +31,7 @@ module JWTHelper
     scopes: []
   )
     {
-      'iss' => Settings.api_url,
+      'iss' => Settings.idp_url,
       'aud' => aud,
       'iat' => iat,
       'exp' => exp,

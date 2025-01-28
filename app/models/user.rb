@@ -10,8 +10,6 @@ class User < ApplicationRecord
 
   delegate :email, :roles, :admin?, to: :identity_user, allow_nil: true
 
-  has_many :saved_scenario_users, dependent: :destroy
-  has_many :saved_scenarios, through: :saved_scenario_users
   has_many :multi_year_charts, dependent: :destroy
   has_one  :esdl_suite_id, dependent: :destroy
   has_one  :survey, dependent: :destroy
@@ -33,13 +31,6 @@ class User < ApplicationRecord
       user.name = identity_user.name
 
       user.save!
-
-      # For new users, couple existing SavedScenarioUsers
-      if is_new_user
-        SavedScenarioUser
-          .where(user_email: user.email, user_id: nil)
-          .update_all(user_id: user.id, user_email: nil)
-      end
     end
   end
 

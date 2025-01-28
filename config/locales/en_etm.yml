@@ -3,7 +3,7 @@ en:
     name: "Energy Transition Model"
     title: "Energy Transition Model - Your free, independent, comprehensive, fact-based scenario builder."
     description: "Create your own independent, comprehensive, fact-based energy scenario for 2020 - 2050. Online and for free!"
-
+    version: latest
   # ----------- Tabs ----------- #
   tabs:
     home: "Home"
@@ -14,6 +14,9 @@ en:
     flexibility: "Flexibility"
     data: "Results & data"
     overview: "Overview"
+
+  versions:
+    switch: Switch to..
 
   # ----------- Header ----------- #
   reset: "Reset all the sliders to the default values of this scenario."
@@ -190,6 +193,7 @@ en:
     quintel: About Quintel
     title: Information
     transition_paths: Transition Paths
+    updates: Updates
     whats_new: What's New?
 
   # Pages ------------------------------------------------------------------------------------------
@@ -312,6 +316,7 @@ en:
     scenario: Scenario
     title: "Title"
     cannot_load: Sorry, your scenario could not be loaded.
+    cannot_save: Sorry, your scenario could not be saved.
     privacy:
       public:
         title: Public

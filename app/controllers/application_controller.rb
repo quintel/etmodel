@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper :all
   helper_method :engine_client, :current_user, :admin?
 
+  before_action :current_user
   before_action :initialize_current
   before_action :assign_locale
   before_action :ensure_modern_browser
@@ -96,17 +97,15 @@ class ApplicationController < ActionController::Base
     redirect_back(fallback_location: default_url)
   end
 
-  # Returns the Faraday client which should be used to communicate with ETEngine. This contains the
+  # Returns the Faraday client which should be used to communicate with MyETM. This contains the
   # user authentication token if the user is logged in.
-  def engine_client
-    if current_user
-      identity_session.access_token.http_client
-    else
-      Identity.http_client
-    end
+  def idp_client
+    @idp_client ||= ETModel::Clients.idp_client(current_user)
   end
 
-  private
+  def engine_client
+    @engine_client ||= ETModel::Clients.engine_client(current_user)
+  end
 
   def current_user
     @current_user ||= User.from_session_user!(identity_user) if signed_in?
@@ -115,6 +114,8 @@ class ApplicationController < ActionController::Base
     reset_session
     redirect_to root_path
   end
+
+  private
 
   # Internal: Renders a 404 page.
   #

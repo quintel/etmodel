@@ -1,6 +1,6 @@
 .header_menu.profile
   .menu_arrow
   %ul
-    %li= link_to t("header.my_profile"), edit_user_path
-    %li= link_to t("header.load_scenario"),scenarios_path
+    %li= link_to t("header.my_profile"), my_etm_path('identity')
+    %li= link_to t("header.load_scenario"), my_etm_path('scenarios')
     %li= link_to t("header.sign_out"), logout_path

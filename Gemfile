@@ -58,9 +58,6 @@ gem 'dynamic_form'
 
 gem 'jquery-etmodel-rails', ref: '4f87ea2', github: 'quintel/etplugin'
 
-gem 'inky-rb', require: 'inky'
-gem 'premailer-rails'
-
 # Engine
 gem 'dry-initializer'
 gem 'dry-struct'

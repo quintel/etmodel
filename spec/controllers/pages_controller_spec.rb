@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 describe PagesController, vcr: true do
+  before do
+    allow_any_instance_of(ETModel::TokenDecoder).to receive(:fetch_token).and_return('mocked_token')
+  end
+
   render_views
 
   context 'with an IE11 user agent' do
@@ -84,7 +88,10 @@ describe PagesController, vcr: true do
   context 'when visiting as a signed-in user' do
     before do
       sign_in FactoryBot.create(:user)
-      get :root
+
+      VCR.use_cassette('pages_controller/signed_in_user') do
+        get :root
+      end
     end
 
     it 'does not have a link to the admin section' do
@@ -92,7 +99,7 @@ describe PagesController, vcr: true do
     end
   end
 
-  context 'when visiting as an admin' do
+  context 'when visiting as an admin' do # TODO: FIXME, test fails on occasion when it requests the token from MyETM
     before do
       sign_in FactoryBot.create(:admin)
       get :root

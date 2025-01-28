@@ -3,7 +3,7 @@ nl:
     name: "Energietransitiemodel"
     title: "Energietransitiemodel - Je eigen onafhankelijke, volledige en op feiten gebaseerde energiescenario."
     description: "Maak je eigen, onafhankelijke energiescenario voor 2020 tot 2050. Direct online en zonder kosten."
-
+    version: latest
   # ----------- Tabs ----------- #
   tabs:
     home: "Home"
@@ -14,6 +14,9 @@ nl:
     flexibility: "Flexibiliteit"
     data: "Resultaten & data"
     overview: "Overzicht"
+
+  versions:
+    switch: Verander versie..
 
   # ----------- Header ----------- #
   reset: "Reset alle schuifjes naar de beginwaarden van dit scenario."
@@ -190,6 +193,7 @@ nl:
     quintel: Over Quintel
     title: Information
     transition_paths: Transitiepaden
+    updates: Updates
     whats_new: Laatste updates
 
   # Pages ------------------------------------------------------------------------------------------
@@ -312,6 +316,7 @@ nl:
     scenario: Scenario
     title: "Titel"
     cannot_load: Sorry, jouw scenario kan niet worden geladen.
+    cannot_save: Sorry, jouw scenario kan niet worden opgeslagen.
     privacy:
       public:
         title: Publiek

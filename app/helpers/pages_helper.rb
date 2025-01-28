@@ -49,7 +49,7 @@ module PagesHelper
   def co2_factsheet_options
     {
       area: @area.area,
-      host: Settings.api_url,
+      host: Settings.ete_url,
       max_year: Setting::MAX_YEAR,
       min_year: Setting::MIN_YEAR,
       default_year: Setting::DEFAULT_YEAR,

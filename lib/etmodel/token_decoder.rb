@@ -6,7 +6,6 @@ module ETModel
     module_function
 
     DecodeError = Class.new(StandardError)
-    FetchTokenError = Class.new(StandardError)
 
     # Decodes and verifies a JWT.
     def decode(token)

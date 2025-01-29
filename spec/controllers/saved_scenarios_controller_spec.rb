@@ -75,9 +75,14 @@ describe SavedScenariosController, vcr: true do
   end
 
   describe 'GET new' do
+    before do
+      session[:setting] = Setting.new
+      session[:setting].api_session_id = 100_000
+    end
+
     it 'renders the new saved scenario form' do
       sign_in(user)
-      get :new, params: { scenario_id: 1 }
+      get :new
 
       expect(response).to be_ok
     end

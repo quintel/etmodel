@@ -65,7 +65,7 @@ class SavedScenariosController < ApplicationController
     # Make sure that if the requested saved scenario was already active
     # we do not create a new scenario. Only check if the title has been updated.
     if Current.setting.active_saved_scenario_id == params[:id].to_i
-      Current.setting.active_scenario_title = load_params[:name]
+      Current.setting.active_scenario_title = load_params[:title]
     else
       # Setting an active_saved_scenario enables saving a scenario. We only
       # do this for the owner of a scenario.
@@ -74,7 +74,7 @@ class SavedScenariosController < ApplicationController
           find_scenario,
           active_saved_scenario: {
             id: params[:id].to_i,
-            title: load_params[:name]
+            title: load_params[:title]
           }
         )
 
@@ -147,7 +147,7 @@ class SavedScenariosController < ApplicationController
   end
 
   def load_params
-    params.permit(:id, :scenario_id, :name)
+    params.permit(:id, :scenario_id, :title)
   end
 
   def saved_scenario_params

@@ -37,8 +37,12 @@
       %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
         - if current_user
           %li
-            %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: Current.setting.api_session_id, title: Current.setting.active_scenario_title) } }
-              = succeed '&hellip;'.html_safe do
+            - if Current.setting.api_session_id.present?
+              %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: Current.setting.api_session_id, title: Current.setting.active_scenario_title) } }
+                = succeed '&hellip;'.html_safe do
+                  = t("header.save_scenario_as")
+            - else
+              %a.dropdown-item.disabled{ href: '#', disabled: true }
                 = t("header.save_scenario_as")
         - else
           %a.dropdown-item.disabled{ href: sign_in_path }

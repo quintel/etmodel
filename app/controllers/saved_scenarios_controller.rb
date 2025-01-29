@@ -9,7 +9,7 @@ class SavedScenariosController < ApplicationController
   # GET /scenarios/:scenario_id/save
   def new
     @saved_scenario = SavedScenario.new(
-      scenario_id: params.require(:scenario_id).to_i,
+      scenario_id: Current.setting.api_session_id,
       title: params[:title].presence || "",
       area_code: Current.setting.area_code,
       end_year: Current.setting.end_year

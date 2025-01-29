@@ -30,7 +30,7 @@ class Setting
       esdl_exportable:          false,
       coupling:                 false,
       active_couplings:         [],
-      inactive_couplings:         [],
+    inactive_couplings:         [],
       locked_charts:            [],
       last_etm_page:            nil,
       preset_scenario_id:       nil,

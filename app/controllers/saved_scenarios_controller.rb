@@ -69,9 +69,10 @@ class SavedScenariosController < ApplicationController
     else
       # Setting an active_saved_scenario enables saving a scenario. We only
       # do this for the owner of a scenario.
+      scenario = find_scenario
       Current.setting =
         Setting.load_from_scenario(
-          find_scenario,
+          scenario,
           active_saved_scenario: {
             id: params[:id].to_i,
             title: load_params[:title]

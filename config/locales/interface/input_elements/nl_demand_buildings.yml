@@ -12,46 +12,38 @@ nl:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Met deze slider wordt het aantal in de toekomst gebouwde gebouwen ingesteld.
-        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
-        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
-        van de belangrijkste factoren die de energievraag beïnvloeden. '
-        <br/><br/>De warmtevraag van deze gebouwen kan hier <a href="/scenario/demand/buildings/typical-heat-demand-per-building">hier</a> aangepast worden.
+        Deze slider bepaalt het aantal nieuwe (utiliteits)gebouwen dat tussen het startjaar en het toekomstjaar in het scenario gebouwd zullen zijn. Denk hierbij aan gebouwen zoals kantoren, ziekenhuizen, zwembaden en restaurants.
+        </br></br>
+        Elk gebouw heeft een gemiddelde oppervlakte van 294 m<sup>2</sup>, en de warmtevraag hangt af van de isolatiegraad.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/demand/buildings/typical-heat-demand-per-building">warmtevraag & isolatie</a> om de warmtevraag van deze gebouwen aan te passen</li>
+        </ul>
     buildings_number_of_buildings_present:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Met deze slider wordt het aantal huidige gebouwen ingesteld.
-        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
-        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
-        van de belangrijkste factoren die de energievraag beïnvloeden. '
-        <br/><br/>De warmtevraag van deze gebouwen kan hier <a href="/scenario/demand/buildings/typical-heat-demand-per-building">hier</a> aangepast worden.
+        Deze slider bepaalt het aantal bestaande (utiliteits)gebouwen dat tussen het startjaar en het toekomstjaar in het scenario behouden blijft. Denk hierbij aan gebouwen zoals kantoren, ziekenhuizen, zwembaden en restaurants.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/demand/buildings/typical-heat-demand-per-building">warmtevraag & isolatie</a> om de warmtevraag van deze gebouwen aan te passen</li>
+        </ul>
     buildings_insulation_level_buildings_future:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Met deze slider wordt de gemiddelde warmtevraag per vierkante meter voor nieuwe utiliteitsgebouwen ingesteld.
-        Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor gebouwen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een gebouw geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze gebouwen.
-        <br><br>
-        Het aantal nieuwe gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor nieuwe gebouwen die tussen het startjaar en het toekomstjaar in het scenario zijn gebouwd.
+        </br></br>
+        De oppervlakte per gebouw bedraagt 294 m<sup>2</sup>. De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt. Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen. Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
     buildings_insulation_level_buildings_present:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Met deze slider wordt de gemiddelde warmtevraag per vierkante meter voor bestaande utiliteitsgebouwen ingesteld.
-        Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor gebouwen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een gebouw geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze gebouwen.
-        <br><br>
-        Het aantal bestaande gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor bestaande gebouwen.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt. Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen. Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: Deze slider richt zich specifiek op de warmtevraag voor ruimteverwarming. De energiebehoefte-indicator (EP1) van de NTA 8800 omvat echter zowel verwarming als koeling.
     buildings_useful_demand_electricity:
       title: Elektriciteit per gebouw
       short_description: ''
@@ -86,22 +78,21 @@ nl:
     buildings_space_heater_network_gas_share:
       title: HR combiketel (gas)
       short_description: ''
-      description: Deze ketels zijn gasgestookte HR-ketels. Als je klikt op
-        "Technische parameters en kosten", zul je zien dat de efficiëntie hoger dan
-        100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
-        onderwaardes / lower heating values (LHV) en deze ketels ontrekken ook energie
-        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV,
-        alleen in bovenwaarde / higher heating values (HHV).
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door gasgestookte hoogrendementsketels (HR-ketels).
+        </br></br>
+        De HR combiketel produceert zowel warmte als warm water en maakt gebruik van condensatiewarmte, waardoor de efficiëntie hoger kan zijn dan 100% (zie "Technische parameters en kosten").
+        </br></br>
+        <em>Let op</em>: deze slider gaat alleen over de warmtevraag. Als er aan de aanbodzijde geen specifieke warmtebronnen zijn geselecteerd, wordt automatisch de gasketel gebruikt om de warmtevraag van het warmtenet te dekken. Controleer daarom de aanbodzijde om te zorgen dat de gewenste technologie wordt ingezet.
     buildings_space_heater_combined_hydrogen_share:
       title: HR combiketel (waterstof)
       short_description: ''
       description: |
-        Dit zijn waterstofgestookte HR-ketels. Als je klikt op
-        "Technische parameters en kosten", zul je zien dat de efficiëntie hoger dan
-        100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
-        onderwaardes / lower heating values (LHV) en deze ketels ontrekken ook energie
-        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV,
-        alleen in bovenwaarde / higher heating values (HHV).
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door waterstofgestookte hoogrendementsketels (HR-ketels).
+        </br></br>
+        De HR combiketel produceert zowel warmte als warm water en maakt gebruik van condensatiewarmte, waardoor de efficiëntie hoger kan zijn dan 100% (zie "Technische parameters en kosten").
+        </br></br>
+        <em>Let op</em>: deze slider gaat alleen over de warmtevraag. Als er aan de aanbodzijde geen specifieke warmtebronnen zijn geselecteerd, wordt automatisch de gasketel gebruikt om de warmtevraag van het warmtenet te dekken. Controleer daarom de aanbodzijde om te zorgen dat de gewenste technologie wordt ingezet.
     buildings_space_heater_electricity_share:
       title: Elektrische boiler
       short_description: ''
@@ -180,41 +171,44 @@ nl:
       title: HT-warmtenet
       short_description:
       description: |
-        Dit schuifje bepaalt welk deel van de warmtevraag van gebouwen wordt geleverd
-        door warmtenetten die opereren op een hoge temperatuur (HT). </br></br>
-        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
-        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke
-        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
-        Ga naar de sectie <a href="/scenario/supply/heat_ht">HT-warmtenetten</a> om te bepalen
-        hoe de warmte wordt geleverd. Zie onze
-        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
-        documentatie</a> voor meer informatie.
+        Deze slider bepaalt welk percentage van de warmtevraag van gebouwen wordt geleverd door warmtenetten die opereren op een hoge temperatuur (HT) van 70<sup>o</sup>C of hoger.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen kunnen er tekorten ontstaan.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/heat_ht">HT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        Documentatie</a> voor meer informatie.
     buildings_space_heater_district_heating_mt_steam_hot_water_share:
       title: MT-warmtenet
       short_description:
       description: |
-        Dit schuifje bepaalt welk deel van de warmtevraag van gebouwen wordt geleverd
-        door warmtenetten die opereren op een midden temperatuur (MT). </br></br>
-        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
-        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke
-        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
-        Ga naar de sectie <a href="/scenario/supply/heat_mt">MT-warmtenetten</a> om te bepalen
-        hoe de warmte wordt geleverd. Zie onze
-        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
-        documentatie</a> voor meer informatie.
+        Deze slider bepaalt welk percentage van de warmtevraag van gebouwen wordt geleverd door warmtenetten die opereren op een midden temperatuur (MT) van 55 tot 70<sup>o</sup>C.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen kunnen er tekorten ontstaan.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/heat_mt">MT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        Documentatie</a> voor meer informatie.
     buildings_space_heater_district_heating_lt_steam_hot_water_share:
       title: LT-warmtenet
       short_description:
       description: |
-        Dit schuifje bepaalt welk deel van de warmtevraag van gebouwen wordt geleverd
-        door warmtenetten die opereren op een lage temperatuur (LT). </br></br>
-        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
-        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke
-        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
-        Ga naar de sectie <a href="/scenario/supply/heat_lt">LT-warmtenetten</a> om te bepalen
-        hoe de warmte wordt geleverd. Zie onze
-        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
-        documentatie</a> voor meer informatie.
+        Deze slider bepaalt welk percentage van de warmtevraag van gebouwen wordt geleverd door warmtenetten die opereren op een lage temperatuur (LT) van 30 tot 55<sup>o</sup>C.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen kunnen er tekorten ontstaan.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/heat_lt">LT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        Documentatie</a> voor meer informatie.
     buildings_space_heater_coal_share:
       title: Kolenketel
       short_description:
@@ -305,15 +299,11 @@ nl:
       title: Zonthermische collectoren
       short_description: ''
       description: |
-        Een zonneboiler maakt warm water via zonthermische panelen op je
-        dak. Deze warmte kan gebruikt worden om een gebouw te verwarmen. Zonneboilers
-        worden vaak op daken of in het asfalt van parkeerterreinen geplaatst. Een
-        zonneboiler wordt vaak met een gas CV-ketel gecombineerd om het water (in
-        de winter) verder op te warmen. Ook met een warmtepomp gaat het goed samen.
+        Deze slider bepaalt welk percentage van de warmwatervraag van gebouwen wordt geleverd door zonthermische collectoren.
         </br></br>
-        Let op:  zonneboilers met zonthermische panelen kunnen slechts 13% van de jaarlijkse vraag aan warm tapwater invullen.
-        Het instellen van dit schuifje op 100% betekent dus dat de overgebleven 87% van de jaarlijkse vraag
-        door andere technologieën wordt ingevuld.
+        Zonthermische collectoren zetten zonnewarmte om in warm water via een zonneboiler.
+        </br></br>
+        <em>Let op</em>: zonneboilers met zonthermische panelen kunnen slechts 13% van de jaarlijkse warmwatervraag dekken. Wanneer deze slider op 100% wordt ingesteld, betekent dit dat de resterend 87% van de vraag moet worden ingevuld door andere technologieën.
     buildings_useful_demand_for_appliances:
       title: Apparaten efficiëntie
       short_description: ''

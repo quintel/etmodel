@@ -970,7 +970,7 @@ nl:
         <ul>
           <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
           <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
-          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen.</li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
         </ul>
         </br></br>
         Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
@@ -991,7 +991,7 @@ nl:
         <ul>
           <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
           <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
-          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen.</li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
         </ul>
         </br></br>
         Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
@@ -1094,31 +1094,114 @@ nl:
     households_heater_network_gas_heat_output_capacity:
       title: Gasketel
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de gasketel dat gebruikt wordt voor de
+        warmtebehoefte van één huishouden.
+        </br></br>
+        Een gasketel levert uitsluitend warmte voor centrale verwarming en geen warm water.
+        In vergelijking met een HR-ketel is de gasketel minder efficiënt, omdat hij geen
+        gebruik maakt van condensatietechnologie om energie te besparen. Het berekenen van
+        het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals
+        in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_combined_network_gas_heat_output_capacity:
       title: HR combiketel (gas)
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de gasgestookte hoogrendementsketel (HR-ketel)
+        die gebruikt wordt voor de warmtebehoefte van één huishouden.
+        </br></br>
+        De HR combiketel produceert zowel warmte als warm water en maakt gebruik van
+        condensatiewarmte, waardoor de efficiëntie hoger kan zijn dan 100% (zie
+        "Technische parameters en kosten"). Het berekenen van het vermogen per huishouden
+        kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_combined_hydrogen_heat_output_capacity:
       title: HR combiketel (waterstof)
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de waterstofgestookte hoogrendementsketel (HR-ketel)
+        die gebruikt wordt voor de warmtebehoefte van één huishouden.
+        </br></br>
+        De HR combiketel produceert zowel warmte als warm water en maakt gebruik van
+        condensatiewarmte, waardoor de efficiëntie hoger kan zijn dan 100% (zie
+        "Technische parameters en kosten"). Het berekenen van het vermogen per huishouden
+        kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_wood_pellets_heat_output_capacity:
       title: Houtpelletkachel
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de houtpelletkachel die gebruikt wordt voor de
+        warmtebehoefte van één huishouden.
+        </br></br>
+        Het is aangenomen dat de houtpellets hernieuwbaar zijn geproduceerd. Houd er echter
+        rekening mee dat het transport van houtpellets brandstof vereist. Ouderwetse houtkachels
+        en open haarden zijn niet als aparte opties in het ETM opgenomen. Het berekenen van het
+        vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_electricity_heat_output_capacity:
       title: Elektrische boiler/bijstook
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de elektrische boiler die gebruikt wordt voor de
+        warmtebehoefte van één huishouden.
+        </br></br>
+        Elektrische boilers verwarmen water uitsluitend met elektriciteit, zonder gebruik te
+        maken van omgevingswarmte, zoals bijvoorbeeld bij warmtepompen het geval is. Het berekenen
+        van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_heatpump_air_water_electricity_heat_output_capacity:
       title: Luchtwarmtepomp
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de elektrische luchtwarmtepomp die gebruikt wordt voor de
+        warmtebehoefte van één huishouden.
+        </br></br>
+        De efficiëntie van de luchtwarmtepomp wordt beïnvloed door de omgevingstemperatuur en is daardoor
+        afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt
+        van Prestatie (COP). De COP wordt elk uur berekend op basis van de temperatuur in dat uur, zoals
+        vast gesteld in het weerjaar. Het berekenen van het vermogen per huishouden kan leiden tot tekorten
+        tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_heatpump_ground_water_electricity_heat_output_capacity:
       title: Bodemwarmtepomp
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de elektrische bodemwarmtepomp die gebruikt wordt voor de warmtebehoefte van één huishouden.
+        De efficiëntie van de bodemwarmtepomp wordt aangegeven met de Coëfficiënt van Prestatie (COP). De COP wordt doorgaans per uur
+        berekend op basis van de temperatuur in dat uur, zoals vastgelegd in het weerjaar. Aangezien de bodemtemperatuur constant blijft,
+        blijft de COP gedurende het jaar onveranderd. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude
+        periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_heatpump_surface_water_water_ts_electricity_heat_output_capacity:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''
@@ -1126,27 +1209,107 @@ nl:
     households_heater_heatpump_pvt_electricity_heat_output_capacity:
       title: Bodemwarmtepomp met PVT
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de warmtepomp die is gecombineerd met zonnepanelen en zonthermische collectoren (PVT),
+        voor de warmtebehoefte van één huishouden. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens
+        koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+          <li>Bekijk <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households" data-chart-location="side">deze grafiek</a> om inzicht te krijgen in het gebruik van het beschikbare dakoppervlak</ul>
+        </ul>
     households_heater_district_heating_lt_steam_hot_water_heat_output_capacity:
       title: LT-warmtenet
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van het warmtenet dat opereert op een lage temperatuur (LT) van 30 tot 55<sup>o</sup>C, specifiek
+        voor de warmtebehoefte van één huishouden.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen
+        kunnen er tekorten ontstaan. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_lt">LT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd
+          <li>Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">merit order</a> om te bepalen welke woningen met welk type techniek worden verwarmd
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_district_heating_mt_steam_hot_water_heat_output_capacity:
       title: MT-warmtenet
       short_description: ''
-      description: ''
+      description: |
+        Deze  Deze slider bepaalt het vermogen van het warmtenet dat opereert op een midden temperatuur (MT) van 55 tot 70 <sup>o</sup>C, specifiek
+        voor de warmtebehoefte van één huishouden.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen
+        kunnen er tekorten ontstaan. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_mt">MT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd
+          <li>Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">merit order</a> om te bepalen welke woningen met welk type techniek worden verwarmd
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_district_heating_ht_steam_hot_water_heat_output_capacity:
       title: HT-warmtenet
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van het warmtenet dat opereert op een hoge temperatuur (HT) van 70 <sup>o</sup>C of hoger, specifiek
+        voor de warmtebehoefte van één huishouden.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen
+        kunnen er tekorten ontstaan. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_ht">HT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd
+          <li>Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">merit order</a> om te bepalen welke woningen met welk type techniek worden verwarmd
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (gas)
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van een hybride warmtepomp, die bestaat uit een elektrische luchtwarmtepomp met gasgestookte
+        hoogrendementsketel (HR-ketel), specifiek voor de warmtebehoefte van één huishouden.
+        <br></br>
+        De efficiëntie van het luchtwarmtepomp-deel wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer.
+        Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis
+        van de temperatuur in dat uur, zoals vast gesteld in het weerjaar. Wanneer de COP onder een bepaalde drempelwaarde zakt, schakelt
+        hij volledig over op gas. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (waterstof)
       short_description: ''
-      description: ''
+      description: |
+          Deze slider bepaalt het vermogen van een hybride warmtepomp, die bestaat uit een elektrische luchtwarmtepomp met waterstofgestookte
+          hoogrendementsketel (HR-ketel), specifiek voor de warmtebehoefte van één huishouden.
+          <br></br>
+          De efficiëntie van het luchtwarmtepomp-deel wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer.
+          Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis
+          van de temperatuur in dat uur, zoals vast gesteld in het weerjaar. Wanneer de COP onder een bepaalde drempelwaarde zakt, schakelt
+          hij volledig over op waterstof. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+          </br></br>
+          <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
+          </ul>
+           </br></br>
+          Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (ruwe olie)
       short_description: ''

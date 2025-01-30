@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/648695
+    uri: https://beta.engine.energytransitionmodel.com/api/v3/scenarios/648695
     body:
       encoding: US-ASCII
       string: ''
@@ -55,6 +55,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":648695,"created_at":"2017-03-13T19:22:35.000Z","updated_at":"2019-12-05T09:14:10.000Z","user_values":{},"end_year":2050,"keep_compatible":true,"private":false,"area_code":"nl","source":"ETM","balanced_values":{},"metadata":{"title":"ETM
-        Test Scenario"},"start_year":2015,"active_couplings":[],"inactive_couplings":[],"owner":null,"scaling":null,"template":null,"url":"https://beta-engine.energytransitionmodel.com/api/v3/scenarios/648695"}'
+        Test Scenario"},"start_year":2015,"active_couplings":[],"inactive_couplings":[],"owner":null,"scaling":null,"template":null,"url":"https://beta.engine.energytransitionmodel.com/api/v3/scenarios/648695"}'
   recorded_at: Tue, 23 May 2023 11:10:35 GMT
 recorded_with: VCR 6.0.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/999
+    uri: https://beta.engine.energytransitionmodel.com/api/v3/scenarios/999
     body:
       encoding: UTF-8
       string: '{"scenario":{"keep_compatible":true}}'

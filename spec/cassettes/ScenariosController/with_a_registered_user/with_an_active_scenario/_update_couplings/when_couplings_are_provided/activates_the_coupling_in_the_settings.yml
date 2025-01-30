@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/123/couple
+    uri: https://beta.engine.energytransitionmodel.com/api/v3/scenarios/123/couple
     body:
       encoding: UTF-8
       string: '{"groups":["group1"]}'
@@ -58,7 +58,7 @@ http_interactions:
   recorded_at: Mon, 09 Sep 2024 12:52:45 GMT
 - request:
     method: post
-    uri: https://beta-engine.energytransitionmodel.com/api/v3/scenarios/123/uncouple
+    uri: https://beta.engine.energytransitionmodel.com/api/v3/scenarios/123/uncouple
     body:
       encoding: UTF-8
       string: '{"groups":["group2"]}'

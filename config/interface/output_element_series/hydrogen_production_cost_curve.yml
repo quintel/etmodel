@@ -86,7 +86,6 @@
   output_element_key: hydrogen_production_cost_curve
   key: energy_imported_hydrogen_baseload_hydrogen_production_cost_curve
 
-  
 
 - label: energy_hydrogen_liquid_hydrogen_regasifier
   color: "#524A79"
@@ -113,13 +112,49 @@
   output_element_key: hydrogen_production_cost_curve
   key: energy_hydrogen_lohc_reformer_hydrogen_production_cost_curve
 
+- label: industry_transformation_chemical_fertilizers
+  color: "#ddd3d3"
+  order_by: 50
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_chemical_fertilizers_transformation_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: industry_chemical_fertilizers_transformation_hydrogen_production_cost_curve
+- label: industry_transformation_chemical_other
+  color: "#f8f1f1"
+  order_by: 55
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_chemical_other_transformation_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: industry_chemical_other_transformation_hydrogen_production_cost_curve
+- label: industry_transformation_chemical_refineries
+  color: "#747373"
+  order_by: 60
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: industry_chemical_refineries_transformation_hydrogen_production_cost_curve
+  is_1990: false
+  dependent_on: 
+  output_element_key: hydrogen_production_cost_curve
+  key: industry_chemical_refineries_transformation_hydrogen_production_cost_curve    
 
-
+  
 
 
 - label: energy_hydrogen_biomass_gasification_ccs
   color: "#A4B0BE"
-  order_by: 55
+  order_by: 65
   group: ''
   show_at_first: false
   is_target_line: false
@@ -131,7 +166,7 @@
   key: energy_hydrogen_biomass_gasification_ccs_hydrogen_production_cost_curve
 - label: energy_hydrogen_biomass_gasification
   color: "#A2D679"
-  order_by: 60
+  order_by: 70
   group: ''
   show_at_first: false
   is_target_line: false
@@ -143,7 +178,7 @@
   key: energy_hydrogen_biomass_gasification_hydrogen_production_cost_curve
 - label: energy_hydrogen_electrolysis_solar_electricity
   color: "#FDE97B"
-  order_by: 65
+  order_by: 75
   group: ''
   show_at_first: false
   is_target_line: false
@@ -155,7 +190,7 @@
   key: energy_hydrogen_electrolysis_solar_electricity_hydrogen_production_cost_curve
 - label: energy_hydrogen_electrolysis_wind_electricity
   color: "#63A1C9"
-  order_by: 70
+  order_by: 80
   group: ''
   show_at_first: false
   is_target_line: false
@@ -167,7 +202,7 @@
   key: energy_hydrogen_electrolysis_wind_electricity_hydrogen_production_cost_curve
 - label: energy_hydrogen_hybrid_electrolysis_wind_electricity
   color: "#7487FF"
-  order_by: 73
+  order_by: 85
   group: ''
   show_at_first: false
   is_target_line: false
@@ -179,7 +214,7 @@
   key: energy_hydrogen_hybrid_electrolysis_wind_electricity_hydrogen_production_cost_curve
 - label: energy_hydrogen_flexibility_p2g_electricity
   color: "#ded033"
-  order_by: 75
+  order_by: 90
   group: ''
   show_at_first: false
   is_target_line: false

@@ -1,0 +1,20 @@
+.dropdown
+  %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'hover' }, type: 'button' }
+    = t('app_nav.development')
+  .dropdown-menu.learn-dropdown.development{ 'aria-labelledby': 'locale-button' }
+    %ul
+      %li= learn_link t('app_nav.quintel'), development_path
+      %li= learn_link t('app_nav.open_source'), development_path(anchor: 'open-source')
+      %li= learn_link t('app_nav.process'), development_path(anchor: 'development-process')
+      %li= learn_link t('app_nav.partners'), development_path(anchor: 'partners')
+    .extras
+      %ul
+        %li.learn-section
+          :plain
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
+              <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+            </svg>
+          = t('app_nav.collaborate')
+        - if Settings.feedback_email
+          %li= learn_link t('app_nav.contact_us'), contact_path
+        %li= learn_link t('app_nav.github'), 'https://github.com/quintel'

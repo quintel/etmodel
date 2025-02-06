@@ -29,11 +29,9 @@
         %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'locale-button' }
           %li
             %a.dropdown-item{ href: url_for(locale: 'en') }
-              = image_tag 'flags-24/uk.png'
               English
           %li
             %a.dropdown-item{ href: url_for(locale: 'nl') }
-              = image_tag 'flags-24/nl.png'
               Nederlands
 
     - if current_user

@@ -16,11 +16,8 @@ module ETModel
         decoded = JSON::JWT.decode(token, jwk_set)
       end
 
-      unless decoded[:iss] == Settings.idp_url &&
-             (
-              decoded[:aud] == Settings.identity.client_id ||
-              decoded[:aud] == Settings.ete_id
-             ) &&
+      unless decoded[:iss] == Settings.identity.issuer &&
+             decoded[:aud] == Settings.identity.client_id &&
              decoded[:sub].present? &&
              decoded[:exp] > Time.now.to_i
         raise DecodeError, 'JWT verification failed'
@@ -50,30 +47,6 @@ module ETModel
         else
           Rails.cache
         end
-    end
-
-    # Fetches an access token from the IdP.
-    def fetch_token(user, engine = false)
-      client_id = engine ? Settings.ete_id : Settings.identity.client_id
-
-      response = Faraday.post("#{Settings.idp_url}/identity/access_tokens") do |req|
-        req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-        req.body = {
-          grant_type: 'client_credentials',
-          client_id: client_id,
-          user_id: user.id
-        }
-      end
-
-      parsed_response = JSON.parse(response.body)
-
-      unless response.success? && parsed_response['access_token'].present?
-        raise "Failed to fetch token: #{
-          parsed_response['error_description'] || parsed_response['error'] || 'Unknown error'
-        }"
-      end
-
-      parsed_response['access_token']
     end
   end
 end

@@ -5,7 +5,7 @@
   %p{ style: 'margin-top: 0' }
     = t("custom_curves.coupled_interconnector_intro_html", docs_path: 'https://docs.energytransitionmodel.com/main/costs-imported-electricity#uploaded-price-curves')
 
-  .curve-upload.multi-curve-upload.custom-curve{ data: { curve_name_match: "(?:^|_)interconnector_#{num}(?=_.*must_run)(?:$|_)" } }
+  .curve-upload.multi-curve-upload.custom-curve{ data: { curve_name_match: "(?:^|_)interconnector_#{num}(?!_.*(?:import_availability|export_availability))(?:$|_)" } }
     .loading
 
 - else

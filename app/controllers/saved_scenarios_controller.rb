@@ -95,7 +95,7 @@ class SavedScenariosController < ApplicationController
     session_id = Current.setting.api_session_id
 
     result = UpdateSavedScenario.call(
-      idp_client,
+      my_etm_client,
       update_params[:id],
       update_params[:scenario_id]
     )
@@ -160,7 +160,7 @@ class SavedScenariosController < ApplicationController
 
   def create_saved_scenario
     @create_saved_scenario ||= CreateSavedScenario.call(
-      idp_client,
+      my_etm_client,
       saved_scenario_params[:scenario_id],
       saved_scenario_params
     )

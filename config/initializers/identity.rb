@@ -25,12 +25,14 @@ if !ENV['DOCKER_BUILD'] && (
 end
 
 Identity.configure do |config|
-  config.issuer = Settings.idp_url
+  config.issuer = Settings.identity.issuer
   config.client_uri = Settings.identity.client_uri
   config.client_id = Settings.identity.client_id
+  config.client_id = Settings.identity.client_name
   config.client_secret = Settings.identity.client_secret
   config.scope = 'openid profile email roles scenarios:read scenarios:write scenarios:delete'
   config.validate_config = ENV['DOCKER_BUILD'] != 'true'
+  config.sisters = [Settings.identity.etengine]
 
   # Create or update the local user when signing in.
   config.on_sign_in = lambda do |session|

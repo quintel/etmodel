@@ -99,12 +99,20 @@ class ApplicationController < ActionController::Base
 
   # Returns the Faraday client which should be used to communicate with MyETM. This contains the
   # user authentication token if the user is logged in.
-  def idp_client
-    @idp_client ||= ETModel::Clients.idp_client(current_user)
+  def my_etm_client
+    if current_user
+      identity_session.access_token.http_client
+    else
+      Identity.http_client
+    end
   end
 
   def engine_client
-    @engine_client ||= ETModel::Clients.engine_client(current_user)
+    if current_user && (token = identity_session.sister_token_for(Settings.identity.etengine.name))
+      token.http_client
+    else
+      Identity.http_client(uri: Settings.identity.etengine.uri)
+    end
   end
 
   def current_user

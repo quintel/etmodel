@@ -97,7 +97,6 @@ class Setting
   #
   def reset_scenario
     self.api_session_id = nil
-    self.preset_scenario_id = nil # to go back to a blank slate scenario
 
     %i[network_parts_affected locked_charts].each do |key|
       reset_attribute(key)

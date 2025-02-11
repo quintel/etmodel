@@ -47,13 +47,10 @@ nl:
     buildings_useful_demand_electricity:
       title: Elektriciteit per gebouw
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>exclusief</strong>
-        de efficiëntere technologieën die je in dit gedeelte kunt kiezen (Apparaten,
-        Verlichting, Verwarming & Koeling).\r\n<br/><br/>\r\nHier kun je aangeven
-        hoe jij denkt dat de elektriciteitsvraag per gebouw zich gaat ontwikkelen.
-        Dit hangt vooral af van de welvaartsgroei. Als mensen rijker worden, raken
-        ze gewend aan steeds meer gemak van ICT apparatuur en overige apparaten op
-        hun werk of opleiding.\r\n"
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de elektriciteitsvraag.
+        </br></br>
+        <em>Let op</em>: deze verandering staat los van andere vraagontwikkelingen.
     buildings_useful_demand_for_space_heating:
       title: Warmte per gebouw
       short_description: ''
@@ -67,14 +64,10 @@ nl:
     buildings_useful_demand_cooling:
       title: Koeling per gebouw
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>exclusief</strong>
-        de efficiëntere technologieën die je in dit gedeelte kunt kiezen (Verwarming
-        & Koeling).\r\n<br/>\r\n<br/>\r\nHier kun je aangeven hoe jij denkt dat de
-        vraag naar koeling per gebouw zich gaat ontwikkelen. Dit verandert onder meer
-        doordat gebouwen steeds voller komen te staan met elektrische apparaten die
-        warmte produceren. Het is zelfs zo dat gebouwen steeds meer uren per jaar
-        gekoeld moeten worden dan voordat iedereen ging werken met computers, faxen,
-        kopieerapparaten en printers."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de koeltevraag.
+        </br></br>
+        <em>Let op</em: deze verandering staat los van andere vraagontwikkelingen.
     buildings_space_heater_network_gas_share:
       title: HR combiketel (gas)
       short_description: ''
@@ -96,68 +89,55 @@ nl:
     buildings_space_heater_electricity_share:
       title: Elektrische boiler
       short_description: ''
-      description: "Elektrische boilers zetten elektriciteit direct om in warmte.
-        Op zich is dat een zeer efficiënt proces.\r\n<br/>\r\nToch denken veel mensen
-        dat dit energieverspilling is. Elektriciteit kun je op veel verschillende
-        manieren nuttig inzetten en laagwaardige warmte kun je alleen gebruiken om
-        warm water te maken, of huizen te verwarmen. Uiteraard is de verspilling nog
-        groter als je de  stroom opwekt door kostbare fossiele brandstoffen te verbranden.\r\n<br/><br/>\r\nElektrische
-        kachels of bijstook moeten snel veel warmte kunnen leveren en hebben daarom
-        een groot vermogen. Dit betekent dat ze het elektriciteitsnet sterk belasten.
-        \ Als je wilt zien wat de impact van elektrische bijstook bij warmtepompen
-        is, kun je deze schuif op hetzelfde percentage zetten als de elektrische warmtepomp
-        (bodem) schuif."
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door elektrische boilers.
+        </br></br>
+        Elektrische boilers verwarmen water uitsluitend met elektriciteit, zonder gebruik te maken van omgevingswarmte, zoals bijvoorbeeld bij warmtepompen het geval is.
     buildings_space_heater_heatpump_air_water_network_gas_share:
       title: Luchtwarmtepomp (gas)
       short_description: ''
-      description: "Een gaswarmtepomp lijkt op een elektrische warmtepomp, behalve
-        dat de energie voor het proces komt van gas en niet van elektriciteit. Deze
-        warmtepomp gebruikt als bron warmte uit de buitenlucht en niet uit de bodem
-        of het grondwater. Uiteindelijk is deze gaswarmtepomp ongeveer even efficiënt
-        als een warmtepomp op (centraal opgewekte) electriciteit.\r\n<br/><br/>\r\nOp
-        koude winterdagen, als er weinig omgevingswarmte uit de lucht te halen is,
-        kunnen gaswarmtepompen alleen met gas het gebouw verwarmen. Dat is een groot
-        voordeel ten opzichte van elektrische warmtepompen die hun warmte uit de lucht
-        halen (zitten niet in dit model). De laatste hebben extra elektrische bijstook
-        nodig om voldoende warmte te maken en dat zou sterke verzwaring van het elektriciteitsnet
-        nodig maken."
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door gasgestookte luchtwarmtepompen.
+        </br></br>
+        De efficiëntie van deze luchtwarmtepomp wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar.
+        </br></br>
+        Tijdens koude winterperiodes is minder omgevingswarmte beschikbaar. In dat geval kan de warmtepomp volledig op gas overschakelen.
+        </br></br>
+        <ul>
+          <li> Ga naar <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen</li>
+          <li> Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        Documentatie</a> voor meer informatie.
     buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
       title: Bodemwarmtepomp met WKO
       short_description: ''
-      description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
-        opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
-        bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
-        het huis mee te verwarmen. Als alternatief kan ook de natuurlijke warmte of
-        koude van oppervlaktewater of wegen gebruikt worden.\r\n<br/><br/>\r\nWarmtepompen
-        zijn zeer efficiënt als ze met WKO gecombineerd worden, omdat minder energie
-        hoeft te worden toegevoegd om een gebouw te koelen of te verwarmen. Het is
-        helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
-        (bijvoorbeeld in stedelijk gebied). Daarom is WKO alleen lucratief op grote
-        schaal, zoals voor grote kantoorpanden bijvoorbeeld."
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door bodemwarmtepompen in combinatie met Warmte-Koude Opslag (WKO).
+        </br></br>
+        De efficiëntie van het bodemwarmtepomp met WKO, uitgedrukt in de Coëfficiënt van Prestatie (COP), wordt niet beïnvloed door de buitentemperatuur. De warmtepomp haalt warmte uit de relatief constante temperaturen van de ondergrond. Dankzij WKO kan warmte in de zomer worden opgeslagen voor gebruik in de winter.
     buildings_space_heater_heatpump_surface_water_water_ts_electricity_share:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''
       description: |
-        Deze slider beïnvloed het percentage van de warmtevraag voor gebouwen dat
-        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater. <br/><br/>
-        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur
-        door de combinatie met WKO. <br/><br/>
-        Voor meer informatie over het totale gebruik van aquathermie, open <a href="#"
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door warmtepompen die warmte halen uit oppervlaktewater (Thermische Energie uit Oppervlaktewater, TEO) in combinatie met Warmte-Koude Opslag (WKO).
+        </br></br>
+        De efficiëntie van de TEO-warmtepomp met WKO, uitgedrukt in de Coëfficiënt van Prestatie (COP), wordt niet beïnvloed door de buitentemperatuur. Dit komt doordat de warmtepomp warmte haalt uit de relatief stabiele temperaturen van oppervlaktewater. Dankzij WKO kan warmte in de zomer worden opgeslagen voor gebruik in de winter, en omgekeerd.
+        </br></br>
+        <ul>
+          <li>Bekijk <a href="#"
         class="open_chart" data-chart-key="heat_aquathermal_demand"
-        data-chart-location="side"> deze grafiek</a>.
-        Het is ook mogelijk om aquathermie in te zetten in een (collectief) warmtenet.
-        Ga naar <a href="/scenario/supply/heat/overview-district-heating" >warmtenetten</a>
-        om aquathermie toe te voegen als warmtebron voor het MT of LT warmtenet.
+        data-chart-location="side">deze grafiek</a> voor meer informatie over het totale gebruik van aquathermie</li>
+          <li>Ga naar <a href="/scenario/supply/heat/overview-district-heating">Warmtenetten</a> om aquathermie in te zetten in een (collectief) warmtenet die opereert op middentemperatuur (MT) of lage temperatuur (LT)</li>
+        </ul>
     buildings_space_heater_wood_pellets_share:
       title: Biomassaketel
       short_description: ''
-      description: "Welk percentage van de warmtevraag in kantoren en andere gebouwen
-        wordt ingevuld door biomassa? Biomassaketels zijn goed geschikt voor relatief
-        grotere bedrijfscomplexen met grote warmtevraag, omdat op die manier het transport
-        geconcentreerd kan worden en dat spaart weer transportbrandstoffen. <br/><br/>\r\nDe
-        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
-        je verwachtingen voor brandstofprijzen. Zie ook het onder deel 'Kosten'. Andere
-        relevante invloeden zijn milieuwetten. "
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en watervraag van gebouwen wordt geleverd door biomassaketels.
+        </br></br>
+        Biomassaketels zijn bijzonder geschikt voor grotere bedrijfscomplexen met een aanzienlijke warmtevraag, omdat het geconcentreerde transport naar dergelijke locaties efficiënter is en bijdraagt aan een lager verbruik van transportbrandstoffen.
     buildings_space_heater_crude_oil_share:
       title: Olieketel
       short_description: ''
@@ -227,74 +207,28 @@ nl:
     buildings_lighting_standard_fluorescent_electricity_share:
       title: Conventionele TL-buis
       short_description: ''
-      description: "Welk deel van verlichting in gebouwen komt van TL-buizen? Het
-        gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren, ziekenhuizen,
-        zwembaden, restaurants, etc. \r\n<br/><br/>\r\nTL-buizen produceren licht
-        doordat een elektrische lading door een gas wordt gestuurd dat in de buis
-        zit. Het gas gaat hierdoor licht geven. Een gemiddelde TL-buis zet elektriciteit
-        10 keer zo efficiënt om in zichtbaar licht dan de traditionele gloeilamp die
-        nog veel in woonhuizen wordt gebruikt. TL-buizen zijn vaak ook duurder dan
-        gloeilampen, maar de aanschafkosten kunnen snel terugverdiend worden door
-        de veel langere levensduur en het verminderde elektriciteitsgebruik.\r\n<br/><br/>\r\nJe
-        kunt een TL-buis niet altijd weggooien zonder het milieu te vervuilen, omdat
-        er vaak kwik en andere schadelijke stoffen zoals kwik in zitten. LED-buizen
-        hebben dit probleem niet. Verder kunnen TL-buizen er niet goed tegen als ze
-        heel vaak aan en uitgezet worden."
+      description: |
+        Deze slider bepaalt welk percentage van de verlichting in gebouwen bestaat uit conventionele TL-buizen.
     buildings_lighting_efficient_fluorescent_electricity_share:
       title: Hoge opbrengst TL-buis
       short_description: ''
-      description: "Welk deel van verlichting in gebouwen komt van hoge opbrengst
-        TL-buizen?\r\n<br/><br/>\r\nEr zijn veel verschillende soorten hoge opbrengst
-        TL-buizen op de markt. Sommigen hiervan zijn kleiner en dunner dan een conventionele
-        TL-buis. Belangrijker is dat ze tot de helft minder elektriciteit gebruiken
-        dan traditionele TL-buizen. De TL-buizen gaan ook veel langer mee en het licht
-        is beter, waardoor het prettiger is om eronder te werken.\r\n<br/><br/>\r\nTL-buizen
-        produceren licht doordat een elektrische lading door een gas wordt gestuurd
-        dat in de buis zit. Het gas gaat hierdoor licht geven. Een gemiddelde TL-buis
-        zet elektriciteit 10 keer zo efficiënt om in zichtbaar licht dan de traditionele
-        gloeilamp die nog veel in woonhuizen wordt gebruikt. TL-buizen zijn vaak ook
-        duurder dan gloeilampen, maar de aanschafkosten kunnen snel terugverdiend
-        worden door de veel langere levensduur en het verminderde elektriciteitsgebruik.\r\n<br/><br/>\r\nJe
-        kunt een TL-buis niet altijd weggooien zonder het milieu te vervuilen, omdat
-        er vaak kwik en andere schadelijke stoffen in zitten. LED-buizen hebben dit
-        probleem niet. Verder kunnen TL-buizen er niet goed tegen als ze heel vaak
-        aan en uitgezet worden."
+      description: |
+        Deze slider bepaalt welk percentage van de verlichting in gebouwen bestaat uit hoge opbrengst TL-buizen.
     buildings_lighting_led_electricity_share:
       title: LED-buis
       short_description: ''
-      description: "Welk deel van de verlichting in gebouwen komt van LED buizen?\r\n<br/><br/>\r\nLED
-        buizen bestaan uit een aantal licht-emitterende diodes (LEDs, Engels: Light
-        Emitting Diode) die zo gemaakt zijn dat ze gebruikt kunnen worden in standaardarmaturen
-        voor TL-buizen.\r\n<br/><br/>\r\nLED buizen besparen circa 50% elektriciteit
-        ten opzichte van de traditionele TL-buizen. Anders dan bij TL-buizen kunnen
-        LED buizen zonder problemen aan en uitgezet zonder levensduurverlies. Investeringskosten
-        voor LED verlichting is 5 tot 50 keer hoger dan voor TL-buizen. Aan de andere
-        kant maakt hun langere levensduur en lagere elektriciteitsgebruik de LED buis
-        uiteindelijke goedkoper. Hun grootste nadeel op dit moment is dat ze (nog)
-        niet geschikt zijn om een ruimte egaal te verlichten of om genoeg licht te
-        produceren voor een kantooromgeving."
+      description: |
+        Deze slider bepaalt welk percentage van de verlichting in gebouwen bestaat uit LED-buizen.
     buildings_lighting_savings_from_motion_detection_light:
       title: Bewegingsdetectie
       short_description: ''
-      description: "Hoe veel gebouwen gebruiken bewegingsdetectie?\r\n<br/><br/>\r\nBewegingsdetectie
-        is een technologie dit 'ziet' of er iemand in een ruimte is. Zodra iemand
-        de ruimte binnenkomt gaat het licht aan en zodra iedereen weer weg is gaat
-        het licht automatisch weer uit.\r\n<br/><br/>\r\nOp deze manier wordt dus
-        de tijd dat een licht aanstaat verminderd tot het minimum. Het zorgt er bijvoorbeeld
-        voor dat lichten niet 's nachts of tijdens de lunch voor niets aan staan."
+      description: |
+        Deze slider bepaalt welk percentage van de verlichting in gebouwen, waar mogelijk, wordt geregeld met bewegingsdetectie.
     buildings_lighting_savings_from_daylight_control_light:
       title: Daglicht afhankelijke regeling
       short_description: ''
-      description: "In hoeveel gebouwen wordt daglicht afhankelijke regeling toegepast?\r\n<br/><br/>\r\nDaglicht
-        afhankelijke regeling is een technologie die aan de hand van de hoeveelheid
-        (dag)licht in een ruimte de lichtsterkte van de verlichting aanpast. Als de
-        zon schijnt en het is licht genoeg in een ruimte staat het licht niet aan,
-        of gedimd. Maar als het donker is of bewolkt past het systeem de verlichting
-        zo aan dat er toch genoeg licht is om te werken.\r\n<br/><br/>\r\nDeze technologie
-        zorgt er dus voor dat lichten niet nutteloos aanstaan omdat er al genoeg licht
-        van buiten komt. In combinatie met bewegingsdetectie kan er voor gezorgd worden
-        dat de lichten alleen aan staan als er mensen binnen in de ruimte zijn en
-        er niet al genoeg licht van buiten is."
+      description: |
+        Deze slider bepaalt welk percentage van de verlichting in gebouwen wordt aangestuurd door daglicht afhankelijke regelaars.
     buildings_space_heater_solar_thermal_share:
       title: Zonthermische collectoren
       short_description: ''
@@ -307,57 +241,42 @@ nl:
     buildings_useful_demand_for_appliances:
       title: Apparaten efficiëntie
       short_description: ''
-      description: "Hoeveel efficiënter zullen apparaten in de utiliteitsbouw in de
-        toekomst zijn? Geef met de schuif een inschatting van de jaarlijkse toename
-        van de energie-efficiëntie. \r\n<br/><br/>\r\nApparaten in kantoren, hotels,
-        restaurants, ziekenhuizen en zwembaden zorgen voor een flink deel van het
-        energiegebruik. Typische apparaten voor kantoren zijn natuurlijk computers
-        en schermen, printers, faxen, kopieermachines, etc. In hotels, restaurants,
-        zwembaden en met name ziekenhuizen staat meer gespecialiseerde apparatuur,
-        waarvan de betrouwbaarheid mogelijk belangrijker is dan het energiegebruik.
-        \r\n<br/><br/>\r\nNieuwe technologieën reduceren vaak de energieconsumptie.
-        Als apparaten steeds groter worden helpt dat niet altijd. Computerschermen
-        zijn een stuk efficiënter geworden, maar ook een stuk groter en daardoor gebruiken
-        ze niet altijd minder energie dan de kleinere schermen van vroeger."
+      description: |
+        Deze slider bepaalt hoeveel efficiënter apparaten in gebouwen kunnen worden.
+        </br></br>
+        Denk hierbij aan apparaten zoals computers, printers en kopieerapparaten in kantoren. Apparaten in bijvoorbeeld hotels, restaurants of ziekenhuizen zijn vaak meer gespecialiseerd, waarbij betrouwbaarheid soms belangrijker is dan energieverbruik.
     buildings_cooling_heatpump_air_water_network_gas_share:
       title: Luchtwarmtepomp (gas)
       short_description: ''
-      description: Een gaswarmtepomp lijkt op een elektrische warmtepomp, behalve
-        dat de energie voor het proces komt van gas en niet van elektriciteit. Deze
-        warmtepomp gebruikt als bron warmte uit de buitenlucht en niet uit de bodem
-        of het grondwater. Uiteindelijk is hij voor verwarmen ongeveer even efficiënt
-        als je de stroom opwekt met het centrale park van vandaag de dag. Voor koelen
-        is hij minder efficiënt.
+      description: |
+        Deze slider bepaalt welk percentage van de koelvraag van gebouwen wordt geleverd door gasgestookte luchtwarmtepompen.
+        </br></br>
+        De efficiëntie van deze luchtwarmtepomp wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar.
+        </br></br>
+        <ul>
+          <li> Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+        </ul>
     buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
       title: Bodemwarmtepomp met WKO
       short_description: ''
-      description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
-        opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
-        bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
-        het huis mee te verwarmen. Als alternatief kan ook de natuurlijke warmte of
-        koude van oppervlaktewater of wegen gebruikt worden.\r\n<br/><br/>\r\nWarmtepompen
-        zijn zeer efficiënt als ze met WKO gecombineerd worden, omdat minder energie
-        hoeft te worden toegevoegd om een gebouw te koelen of te verwarmen. Het is
-        helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
-        (bijvoorbeeld in stedelijk gebied). Daarom is WKO alleen lucratief op grote
-        schaal, zoals voor grote kantoorpanden bijvoorbeeld."
+      description: |
+        Deze slider bepaalt welk percentage van de koelvraag van gebouwen wordt geleverd door bodemwarmtepompen in combinatie met Warmte-Koude Opslag (WKO).
+        </br></br>
+        De efficiëntie van het bodemwarmtepomp met WKO, uitgedrukt in de Coëfficiënt van Prestatie (COP), wordt niet beïnvloed door de buitentemperatuur. De warmtepomp haalt koelte uit de relatief constante temperaturen van de ondergrond. Dankzij WKO kan koelte in de winter worden opgeslagen voor gebruik in de zomer.
     buildings_cooling_heatpump_surface_water_water_ts_electricity_share:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''
       description: |
-        Deze slider beïnvloed het percentage van de koudevraag voor gebouwen dat
-        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater. <br/><br/>
-        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur
-        door de combinatie met WKO.
+        Deze slider bepaalt welk percentage van de koeltevraag van gebouwen wordt geleverd door warmtepompen die warmte halen uit oppervlaktewater (Thermische Energie uit Oppervlaktewater, TEO) in combinatie met Warmte-Koude Opslag (WKO).
+        </br></br>
+        De efficiëntie van de TEO-warmtepomp met WKO, uitgedrukt in de Coëfficiënt van Prestatie (COP), wordt niet beïnvloed door de buitentemperatuur. Dit komt doordat de warmtepomp koelte haalt uit de relatief stabiele temperaturen van oppervlaktewater. Dankzij WKO kan koelte in de winter worden opgeslagen voor gebruik in de zomer.
     buildings_cooling_airconditioning_share:
       title: Airconditioning
       short_description: ''
-      description: Hier staat aangegeven hoeveel van de koeling van kantoren, ziekenhuizen,
-        hotels, restaurants, enz. door airconditioners gebeurt. Op dit moment gebeurt
-        de meeste koeling in de meeste landen nog met airconditioners.
-        Airconditioners zijn vergelijkbaar met luchtwarmtepompen aangezien ze beide omgevingswarmte en
-        elektriciteit gebruiken om een gebouw te koelen. Oudere airconditioners kunnen alleen vaak niet ook
-        verwarmen en zijn vaak minder efficiënt dan nieuwere luchtwarmtepompen.
+      description: |
+        Deze slider bepaalt welk percentage van de koeltevraag van gebouwen wordt geleverd door airconditioners.
+        </br></br>
+        Airconditioners zijn vergelijkbaar met luchtwarmtepompen, aangezien beide omgevingswarmte en elektriciteit gebruiken om een gebouw te koelen. Luchtwarmtepompen zijn echter veelzijdiger, omdat ze niet alleen kunnen koelen, maar ook verwarmen.
     buildings_cooling_collective_cooling_network_electricity_share:
       title: Koudenetwerk
       short_description: ''
@@ -373,91 +292,60 @@ nl:
       title: Luchtwarmtepomp
       short_description: ''
       description: |
-        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
-        in gebouwen voor ruimteverwarming veranderen. <br/><br/>
-        Een luchtwarmtepomp gebruikt elektriciteit en omgevingswarmte om warmte te genereren.
-        Deze warmte kan worden gedistribueerd via water (met vloerverwarmingssystemen)
-        of via de lucht (met airconditioners) om een gebouw te verwarmen.
-        Luchtwarmtepompen zijn vergelijkbaar met airconditioners aangezien ze beide omgevingswarmte en
-        elektriciteit gebruiken om een gebouw te koelen. Oudere airconditioners kunnen alleen vaak niet ook
-        verwarmen en zijn vaak minder efficiënt dan nieuwere luchtwarmtepompen. <br/><br/>
-        De efficiëntie (COP) van de luchtwarmtepomp wordt
-        beïnvloed door de buitentemperatuur en is daardoor afhankelijk van het weer. Voor elk
-        uur wordt de efficiëntie (COP) berekend gebaseerd op het weerjaar. Het gemiddelde van deze
-        uurlijkse berekeningen (de seizoensafhankelijke COP: 'SCOP') kan worden gevonden in de
-        technische parameters en kosten. <br/><br/>
-        Ga voor meer informatie naar de
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>.
-        Om de efficientie (COP) te beïnvloeden kun je naar de
-        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
-        of het <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weerjaar</a> aanpassen.
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door elektrische luchtwarmtepompen.
+        </br></br>
+        De efficiëntie van deze luchtwarmtepomp wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar.
+        </br></br>
+        <ul>
+          <li> Ga naar <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen</li>
+          <li> Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        Documentatie</a> voor meer informatie.
     buildings_cooling_heatpump_air_water_electricity_share:
       title: Luchtwarmtepomp
       short_description: ''
-      description: Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
-        in gebouwen voor koeling veranderen.<br/><br/>
-        Een luchtwarmtepomp gebruikt elektriciteit en omgevingskoude om warmte of koude te genereren.
-        Deze koude kan worden gedistribueerd via water (met vloerverwarmingssystemen)
-        of via de lucht (met airconditioners) om een gebouw te koelen.<br/><br/>
-        De efficiëntie (COP) van de luchtwarmtepomp voor koeling (in tegenstelling
-        tot verwarming) is vastgesteld. Deze kun je vinden in de technische parameters en kosten. <br/><br/>
-        Ga voor meer informatie naar de
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>.
-        Om de efficientie (COP) te beïnvloeden kun je naar de
-        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
-        of het <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weerjaar</a> aanpassen.
+      description: |
+        Deze slider bepaalt welk percentage van de koelvraag van gebouwen wordt geleverd door elektrische luchtwarmtepompen.
+        </br></br>
+        De efficiëntie van deze luchtwarmtepomp wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar.
+        </br></br>
+        <ul>
+          <li> Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+        </ul>
     buildings_space_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (gas)
       short_description: ''
-      description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
-        met een gasgestookte HR-ketel. Een hybride warmtepomp maakt het mogelijk om
-        snel veel gas voor verwarming te besparen en geeft netbeheerders bovendien
-        meer tijd om stroomnetten te verzwaren.\r\n<br/><br/>\r\nHet werkt zo:<br/>\r\nDe
-        gasketel verwarmt het gebouw op koude dagen, als de warmtevraag het hoogst is.
-        Deze slimme truc zorgt ervoor dat een hybride warmtepomp het stroomnet minder
-        belast dan een elektrische warmtepomp alleen. Door slim gebruik te maken van
-        zulke hybride warmtepompen kan de noodzaak om stroomnetten te verzwaren vermeden
-        worden. \r\n<br/><br/>\r\nWarmtepompen verplaatsen warmte van de ene plek
-        naar de andere. Koelkasten gebruiken bijvoorbeeld warmtepompen, maar gebouwen
-        kunnen kunnen ze ook gebruiken voor verwarming of koelen. Dit werkt het beste
-        als gebouwen goed geïsoleerd zijn en als ze vloer- en muurverwarming hebben
-        in plaats van radiatoren. Hybride warmtepompen zijn een uitzondering op deze
-        regel doordat de gasketel ingezet kan worden. Ze kunnen slim kiezen welk deel
-        (de warmtepomp of de gasketel) het meest efficiënt of kosteneffectief is om
-        aan te zetten, afhankelijk van het weer en hoe goed een huis geïsoleerd is.
-        Minder geïsoleerde gebouwen zullen de gasketel vaker nodig hebben, beter geïsoleerde
-        gebouwen gebruiken vooral de warmtepomp.  \r\n<br/><br/>\r\nDe COP van het elektrische
-        deel van de hybride warmtepomp is afhankelijk van de buitentemperatuur. Als
-        de COP onder de drempelwaarde zakt schakelt de hybride warmtepomp volledig
-        over op gas. De omslag-COP is in de sectie <a href=\"/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps\"
-        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen. \r\n"
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door hybride warmtepompen, bestaande uit elektrische luchtwarmtepompen met gasgestookte hoogrendementsketels (HR-ketels).
+        </br></br>
+        De efficiëntie van het luchtwarmtepomp-deel wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar. Als de COP onder een bepaalde drempelwaarde zakt, schakelt de warmtepomp volledig over op gas.
+        </br></br>
+        <ul>
+          <li> Ga naar <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen</li>
+          <li> Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+          <li> Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        Documentatie</a> voor meer informatie.
     buildings_space_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (waterstof)
       short_description:
       description: |
-        Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
-        met een waterstofgestookte HR-ketel. <br/><br/>
-        Het werkt zo:<br/>
-        De waterstofketel verwarmt het gebouw op koude dagen, als de warmtevraag het hoogst
-        is. Deze slimme truc zorgt ervoor dat een hybride waterstofwarmtepomp het
-        stroomnet minder belast dan een elektrische warmtepomp alleen. Door slim gebruik
-        te maken van zulke hybride waterstofwarmtepompen kan de noodzaak om stroomnetten
-        te verzwaren vermeden worden. <br/><br/>
-        Warmtepompen verplaatsen warmte van de ene plek naar de andere. Koelkasten gebruiken
-        bijvoorbeeld warmtepompen, maar gebouwen kunnen ze ook gebruiken voor verwarming of
-        koelen. Dit werkt het beste als gebouwen goed geïsoleerd zijn en als ze bijvoorbeeld
-        vloer- en muurverwarming hebben in plaats van radiatoren. Hybride waterstofwarmtepompen
-        zijn een uitzondering op deze regel doordat de waterstofketel ingezet kan
-        worden. Ze kunnen slim kiezen welk deel (de warmtepomp of de waterstofketel)
-        het meest efficiënt of kosteneffectief is om aan te zetten, afhankelijk van
-        het weer en hoe goed een huis geïsoleerd is. Minder geïsoleerde gebouwen zullen
-        de waterstofketel vaker nodig hebben, beter geïsoleerde gebouwen gebruiken vooral
-        de warmtepomp. <br/><br/>
-        De COP van het elektrische deel van de hybride waterstofwarmtepomp is afhankelijk van
-        de buitentemperatuur. Als de COP onder de drempelwaarde zakt schakelt de hybride
-        warmtepomp volledig over op gas. Deze omslag-COP is in de sectie
-        <a href=/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
-        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van gebouwen wordt geleverd door hybride warmtepompen, bestaande uit elektrische luchtwarmtepompen met waterstofgestookte hoogrendementsketels (HR-ketels).
+        </br></br>
+        De efficiëntie van het luchtwarmtepomp-deel wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar. Als de COP onder een bepaalde drempelwaarde zakt, schakelt de warmtepomp volledig over op waterstof.
+        </br></br>
+        <ul>
+          <li> Ga naar <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen</li>
+          <li> Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+          <li> Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
+        </ul>
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
+        Documentatie</a> voor meer informatie.
     buildings_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (olie)
       short_description:

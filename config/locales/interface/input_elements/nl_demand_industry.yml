@@ -144,76 +144,58 @@ nl:
       title: Staal
       short_description:
       description: |
-        Geef hier aan hoeveel de productie van ruwstaal de komende jaren
-        gaat groeien of afnemen.</br></br>
-        Wereldwijd is de productie van ruwstaal van 2010 tot 2019 met 32.2% toegenomen, volgens de  
-        <a href="https://refman.energytransitionmodel.com/publications/2151" target=\"_blank\"> World Steel Association</a>.
-        In Europe is het in dezelfde periode echter afgenomen met 8.8%, volgens 
-        <a href="https://refman.energytransitionmodel.com/publications/2150" target=\"_blank\"> Eurofer</a>.
+        Deze slider bepaalt de verandering in de ruwstaalproductie ten opzichte van het startjaar van het scenario.
+        </br></br>
+        <em>Let op</em>: Het energieverbruik van de staalproductie is afhankelijk van de gekozen productieroutes. Als de staalproductie bijvoorbeeld op 110% wordt gezet, zal het energieverbruik met 10% stijgen, mits de productieroute niet wordt veranderd.
+        </br></br>
+        <em>Let op</em>: het ETM beschouwt alleen de staalproductie, niet het gebruik.
     industry_steel_blastfurnace_bof_share:
       title: Hoogoven
       short_description:
       description: |
-        IJzer- en staalproductie met een hoogoven en oxystaaloven is de conventionele
-        wijze van produceren. In een hoogoven kan tot ongeveer 20% gebruikt staal worden
-        gerecycled (80% moet nieuw ijzer zijn). Hoogovens en oxystaalovens produceren gassen
-        met een hoog koolstofgehalte. Deze gassen mogen niet uitgestoten worden. Op dit
-        moment worden de gassen gebruikt in specifieke WKK's en elektriciteitscentrales
-        voor de productie van warmte en elektriciteit, wat je kunt zien in <a href="#"
-        class="open_chart" data-chart-key="use_of_coal_gases" data-chart-location="side">
-        deze grafiek</a>. </br></br> Geef hier aan welk aandeel de hoogoven heeft bij
-        de toekomstige productie van ijzer en staal.
+        Deze slider bepaalt welk percentage van de staalproductie gebruikmaakt van hoogovens en oxystaalovens.
+        </br></br>
+        Hoogovens en oxystaalovens vormen samen de standaardproductieroute voor het produceren van ijzer en staal. In hoogovens worden steenkool en ijzererts verhit, waarbij kolengassen zoals koolstofmonoxide vrijkomen. Deze gassen worden ingezet in warmtekrachtkoppelingen (WKK's) en elektriciteitscentrales voor warmte en elektriciteit.
+        </br></br>
+        <em>Let op</em>: deze productieroute is zeer CO<sub>2</sub>-intensief.
+        </br></br>
+        <ul>
+          <li>Bekijk <a href="#"
+        class="open_chart" data-chart-key="use_of_coal_gases" data-chart-location="side">deze grafiek</a> om het gebruik van kolengassen te zien</li>
+        </ul>
     industry_steel_cyclonefurnace_bof_share:
       title: Cycloonoven
       short_description:
-      description: "Wereldwijd wordt er gezocht naar nieuwe technieken om de productie
-        van ijzer en staal efficiënter te maken en minder CO<sub>2</sub> uit te stoten.
-        De cycloonoven is één van die technieken. De cycloonoven is een combinatie
-        van technieken die de productie van ruwijzer voor staal in minder stappen
-        doet dan een hoogoven en iets minder energiegebruik en CO<sub>2</sub>-uitstoot heeft.
-        In 2011 is in Nederland de eerste testfabriek hiervoor geplaatst. Naar verwachting
-        duurt het nog enkele jaren voordat de techniek helemaal is uitgewerkt. \r\n<br><br>\r\n
-        Voor de cycloonoven is het mogelijk om het gebruik van kolen tot 40% door
-        <a href=/scenario/supply/biomass/wood-pellets-in-steel-production>biomassa </a>
-        te vervangen. \r\n<br><br>\r\n Geef hier aan welk aandeel de cycloonoven heeft
-        bij de toekomstige productie van ijzer en staal."
+      description: |
+        Deze slider bepaalt welk percentage van de staalproductie gebruikmaakt van cycloonovens.
+        </br></br>
+        In een cycloonoven wordt een reducerend gas met hoge snelheid in een spiraalvormige beweging gebracht, waardoor het gas en het ijzererts effectief mengen voor de reductie. Dankzij de hoge snelheid en de relatief lage temperatuur is de cycloonoven energie-efficiënter en produceert hij minder CO<sub>2</sub>-emissies dan een hoogoven. Het reducerende gas kan uit kolen komen, maar kan ook voor een aanzienlijk deel (tot 40%) uit biomassa bestaan. Deze technologie is relatief nieuw en wordt wereldwijd nog niet op grote schaal toegepast.
+        <ul>
+          <li>Ga naar <a href=/scenario/supply/biomass/wood-pellets-in-steel-production>Houtpellets in staalproductie</a> om kolen te vervangen met biomassa</li>
+        </ul>
     industry_steel_scrap_hbi_eaf_share:
       title: Recycling / HBI
       short_description:
-      description: "Staal kan eindeloos gerecycled worden. De elektrische oven wordt
-        ingezet om gebruikt staal te recyclen. In een elektrische oven kan 100% gebruikt
-        staal worden verwerkt. Gerecycled staal is in het algemeen van lagere kwaliteit
-        en kan niet toegepast worden voor hoogwaardige toepassing, zoals in de auto-industrie,
-        in vliegtuigen of in windmolens. \r\n<p>\r\nNaast gebruikt staal kan er ook
-        heet gebriketteerd ijzer (HBI) in de elektrische ovens worden gebruikt. Hierdoor
-        kan de ijzer- en staalproductie gemakkelijk van elkaar gescheiden worden. HBI
-        wordt geproduceerd in een ander land. Het energieverbruik en de emissies van
-        de ijzerproductie zijn daarom niet in dit proces meegenomen. Deze moeten dan ook
-        meegeteld worden in het land waar HBI geproduceerd wordt. De kwaliteit van HBI
-        kan verschillen. Het is mogelijk om HBI van hoge kwaliteit in te kopen en daar
-        hoogwaardig staal van te maken. \n<p>\r\nGeef hier aan welk aandeel de elektrische
-        oven heeft bij de toekomstige productie van ijzer en staal."
+      description: |
+        Deze slider bepaalt welk percentage van de staalproductie gebruikmaakt van gerecycled staal of Heet Gebriketteerd IJzer (HBI).
+        </br></br>
+        Elektrische ovens kunnen volledig met gerecycled staal werken, hoewel dit doorgaans leidt tot staal van lagere kwaliteit. Als alternatief kan HBI worden gebruikt, dat vaak in het buitenland wordt geproduceerd en varieert van kwaliteit. Hoogwaardige HBI kan worden ingezet voor de productie van kwalitatief hoogwaardig staal.
+        </br></br>
+        <em>Let op</em>: energiegebruik en emissies van HBI-productie in het buitenland zijn niet in het ETM opgenomen.
     industry_steel_dri_network_gas_share:
       title: DRI (netwerkgas)
       short_description:
-      description: "Direct reduceren van ijzer (DRI) is een van de alternatieven voor
-      hoogovens. IJzer wordt geproduceerd in de DRI reactor, waarin ijzererst wordt
-      gereduceerd door netwerkgas. Dit proces heeft minder CO<sub>2</sub> emissies
-      dan een hoogoven of cycloonoven. Er is ook geen productie van kolengas, zoals
-      in hoogovens. DRI is een nieuwe technologie die nog iet commercieel gebruikt
-      wordt. \r\n<p>\r\nGeef hier aan welk aandeel het DRI proces met netwerkgas als
-      reducerend gas heeft bij de toekomstige productie van ijzer en staal."
+      description: |
+        Deze slider bepaalt welk percentage van de staalproductie gebruikmaakt van Direct Reduceren van IJzer (DRI) met netwerkgas.
+        </br></br>
+        In het DRI-proces wordt ijzer geproduceerd door ijzererts te reduceren met netwerkgas. Bij dit proces komen geen kolengassen vrij, en de koolstofemissies zijn aanzienlijk lager dan bij de traditionele hoogovenproductie. In een oxystaaloven wordt het koolstofgehalte verder verlaagd door zuurstof in te blazen, waardoor de koolstof wordt omgezet in CO<sub>2</sub>, en het gewenste staal ontstaat. Deze technologie is relatief nieuw en wordt wereldwijd nog niet op grote schaal toegepast.
     industry_steel_dri_hydrogen_share:
       title: DRI (waterstof)
       short_description:
-      description: "Direct reduceren van ijzer (DRI) is een van de alternatieven voor
-      hoogovens. IJzer wordt geproduceerd in de DRI reactor, waarin ijzererst wordt
-      gereduceerd door een reducerend gas. Wanneer hiervoor waterstof wordt gebruikt,
-      kan 80% van het netwerkgas vervangen worden door waterstof. Een DRI met waterstof
-      als reducerend gas produceert bijna geen CO<sub>2</sub> emissies. Er is ook geen
-      productie van kolengas. DRI is een nieuwe technologie die nog niet commercieel
-      gebruikt wordt. \r\n<p>\r\nGeef hier aan welk aandeel het DRI proces met waterstof
-      als reducerend gas heeft bij de toekomstige productie van ijzer en staal."
+      description: |
+        Deze slider bepaalt welk percentage van de staalproductie gebruikmaakt van Direct Reduceren van IJzer (DRI), waarbij ijzererts grotendeels met waterstof wordt gereduceerd. Tot 80% van het netwerkgas kan worden vervangen door waterstof.
+        </br></br>
+        In het DRI-proces wordt ijzer geproduceerd door ijzererts grotendeels te reduceren met waterstof. Bij dit proces komen geen kolengassen vrij, en de koolstofemissies zijn aanzienlijk lager dan bij de traditionele hoogovenproductie of DRI met volledig netwerkgas. Praktisch gezien is er nauwelijks CO<sub>2</sub>-uitstoot, vooral wanneer groene waterstof wordt gebruikt. Deze technologie is relatief nieuw en bevindt zich nog in de ontwikkelingsfase.
     industry_other_metals_process_electricity_efficiency:
       title: Elektriciteit
       short_description:

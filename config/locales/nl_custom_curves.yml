@@ -14,12 +14,14 @@ nl:
       <a href=%{docs_path} target="_blank">documentatie</a> voor meer uitleg en voorbeelden van
       geschikte CSV-bestanden.
     coupled_interconnector_intro_html: |
-      Als je de import- en exportcurves instelt op 'must run via coupling', zullen de capaciteitprofielen die aan de ETM worden verstrekt,
-      worden behandeld als andere 'must-run'-technologieën. Dit betekent dat het capaciteitprofiel zal worden gebruikt om te bepalen hoeveel
-      elektriciteit er elk uur moet worden geïmporteerd of geëxporteerd, en de prijscurve zal worden gebruikt om de prijs van deze elektriciteit
-      te bepalen. </br></br>
-      Klik op het drop-down pictogram om te wijzigen welke curve je wilt uploaden. Voor meer informatie over hoe dit werkt, en voorbeelden van
-      compatibele CSV-bestanden, <a href=%{docs_path} target="_blank">raadpleeg onze documentatie</a>.
+      Wanneer het gedrag van een interconnector is ingesteld door meen extern model, reageert deze
+      niet meer op vraag en aanbod van elektriciteit op basis van de elektriciteitsprijs in de
+      externe markt. In plaats daarvan worden import en export must-run, waarbij het gedrag wordt
+      bepaald door de geüploade must-run profielen, die de vollasturen bepalen, en door het vermogen
+      van de intreconnector. </br></br>
+      Klik op het drop-down icoon om te wijzigen welke curve geüploaded wordt. Voor meer informatie
+      over hoe dit werkt, en voorbeelden van compatibele CSV-bestanden, zie de
+      <a href="https://docs.energytransitionmodel.com/main/curves#uploading-a-custom-profile" target="_blank">documentatie</a>.
     interface_group_title: Aanpasbare profielen
     coupled_interface_group_title: Gekoppelde profielen
     loading: Laden...

@@ -5,141 +5,150 @@ nl:
       title: Aluminium
       short_description:
       description: |
-        Geef hier aan hoeveel de productie van aluminium de komende jaren
-        gaat groeien of afnemen. </br></br>
-        Wereldwijd is de productie van aluminium van 2010 tot 2019 met 52.7% toegenomen,
-        terwijl in Europa de productie in dezelfde periode is gedaald met 5.3% volgens de 
-        <a href="https://refman.energytransitionmodel.com/publications/2152" target=\"_blank\"> US Geological Survey</a>.
+        Deze slider bepaalt de verandering in de aluminiumproductie ten opzichte van het startjaar van het scenario.
+        </br></br>
+        <em>Let op</em>: Let op: Het energieverbruik van de aluminiumproductie is afhankelijk van de gekozen productieroutes. Als de aluminiumproductie bijvoorbeeld op 110% wordt gezet, zal het energieverbruik met 10% stijgen, mits de productieroutes niet worden veranderd.
     industry_aluminium_electrolysis_bat_electricity_share:
       title: Elektrolyse BAT
       short_description:
-      description: "De productie van primair aluminium door middel van elektrolyse
-        is erg energie-intensief, maar er zijn nog wel verbeterstappen te maken. Aluminiumproductie
-        volgens de best available technology is ongeveer 10% efficiënter dan nu gemiddeld
-        gebeurt.\r\n</br></br>\r\nGeef hier aan welk aandeel de elektrolyse BAT heeft
-        bij de productie van aluminium.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van de aluminiumproductie gebruikmaakt van elektrolyse met de Best Available Technology (BAT).
+        </br></br>
+        De productie van aluminium via elektrolyse vraagt veel elektriciteit. Door de inzet van BAT kan de energie-efficiëntie van het elektrolyseproces met 10% worden verbeterd.
     industry_aluminium_smeltoven_electricity_share:
       title: Smeltoven (recycling)
       short_description:
-      description: "Aluminium kan eindeloos gerecycled worden. Voor het recyclen hoeft
-        het slechts omgesmolten te worden in een oven. Het recyclen gebruikt 95% minder
-        energie dan de productie van primair aluminium.\r\n</br></br>\r\nGeef hier
-        aan welk aandeel van de aluminiumproductie uit gerecycled aluminium komt.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van de aluminiumproductie uit gerecycled aluminium komt.
+        </br></br>
+        Aluminium kan eindeloos worden gerecycled zonder kwaliteitsverlies. Het proces vereist alleen het omsmelten van aluminium in een oven, wat 95% minder energie verbruikt dan de productie van 'nieuw' aluminium.
     industry_aluminium_carbothermalreduction_electricity_share:
       title: Carbothermische reductie
       short_description:
-      description: "Het scheiden van aluminium en zuurstof door koolstofthermische
-        reductie is een fundamenteel andere methode dan via elektrolyse. Het gaat
-        hierbij om een chemische reactie (onder hoge temperatuur) en niet om een elektrochemische
-        reactie zoals bij elektrolyse. De productie van primair aluminium via koolstofthermische
-        reductie is ongeveer 20% energie-efficiënter dan via elektrolyse.\r\nDe techniek
-        is op dit moment nog in ontwikkeling voor grootschalige industriële toepassing.\r\n</br></br>\r\nGeef
-        hier aan welk aandeel de koolstofthermische reductie heeft bij de productie
-        van aluminium.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van de aluminiumproductie gebruikmaakt van carbothermische reductie.
+        </br></br>
+        Bij carbothermische reductie wordt aluminium van zuurstof gescheiden via een chemische reactie, terwijl elektrolyse dit doet met een elektrochemisch proces dat veel elektriciteit verbruikt. Carbothermische reductie kan de energie-efficiëntie van de aluminiumproductie met ongeveer 20% verbeteren. Deze technologie is relatief nieuw en wordt wereldwijd nog niet op grote schaal toegepast.
     industry_aluminium_electrolysis_current_electricity_share:
       title: Elektrolyse
       short_description:
-      description: "Het standaardproces voor de productie van primair aluminium (uit
-        aluinaarde) is productie door middel van elektrolyse (het Hall-Héroult-proces).
-        Bij de elektrolyse worden het aluminium en de zuurstof in de aluinaarde van
-        elkaar gescheiden. Hier is veel elektriciteit voor nodig. Op dit moment wordt
-        alle primaire aluminium in de wereld geproduceerd door elektrolyse.\r\n</br></br>\r\nGeef
-        hier aan welk aandeel de elektrolyse heeft bij de productie van aluminium.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van de aluminiumproductie gebruikmaakt van elektrolyse.
+        </br></br>
+        Aluminium geproduceerd via elektrolyse is wereldwijd de standaardproductieroute, maar vereist echter een hoog elektriciteitsverbruik.
     industry_useful_demand_for_other_paper:
       title: Grootte
       short_description:
-      description: Geef hier aan hoe de papierindustrie in de toekomst zal groeien
-        of krimpen.
+      description: |
+        Deze slider bepaalt de verandering in de papierproductie ten opzichte van het startjaar van het scenario.
     industry_useful_demand_for_other_paper_electricity_efficiency:
       title: Elektriciteit
-      description: Hoe zal de efficiëntie van de papier- en kartonindustrie verbeterd zijn
-        wat de elektriciteitsvraag betreft? Deze verbeteringen zijn het resultaat van technologische
-        vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het elektriciteitsverbruik bij de papierproductie.
+        </br></br>
+        Voor de productie van papier is elektriciteit nodig. Er zijn verschillende efficiëntiemaatregelen die toegepast kunnen worden om het elektriciteitsverbruik te optimaliseren. Deze maatregelen zorgen gezamenlijk voor een geleidelijke verbetering in de energie-efficiëntie van het productieproces.
     industry_useful_demand_for_other_paper_useable_heat_efficiency:
       title: Warmte
-      description: Hoe zal de efficiëntie van de papier- en kartonindustrie verbeterd zijn
-        wat de warmtevraag betreft? Deze verbeteringen zijn het resultaat van technologische
-        vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het warmteverbruik bij de papierproductie.
+        </br></br>
+        Voor de productie van papier is warmte nodig. Maatregelen zoals betere isolatie, hergebruik van restwarmte en efficiëntere warmtewisselaars, of het inzetten van nieuwe technologieën, kunnen het warmteverbruik optimaliseren en de energie-efficiëntie verbeteren.
     industry_other_paper_burner_network_gas_share:
       title: Gasketel
       short_description:
-      description: "Alle warmte die niet wordt opgewekt met de methodes hieronder,
-        wordt door het model automatisch ingevuld met een gasketel. Dit zijn behoorlijk
-        efficiënte systemen, maar ze stoten wel CO<sub>2</sub> uit. Dat kan een probleem
-        zijn als je hele grote reducties van broeikasgasemissies wilt halen.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de papierindustrie wordt geleverd door gasketels.
+        </br></br>
+        De papierindustrie heeft veel warmte nodig voor processen zoals het koken van pulp en het drogen van papier. Aardgas is vaak beschikbaar tegen een relatief lage prijs en heeft een lagere CO<sub>2</sub>-uitstoot in vergelijking met olie- en kolenketels. Warmte die niet wordt opgewekt via de hieronder genoemde methoden, wordt in het ETM automatisch toegewezen aan gasketels.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_other_paper_burner_crude_oil_share:
       title: Olieketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door oliegestookte ketels? \r\n</br></br>\r\nIn de industrie is vooral hoge
-        temperatuur nodig. Die kan nu het best gemaakt worden door brandstoffen te
-        verstoken. \r\nDe brandstofmix die je hier invult zal waarschijnlijk het meest
-        afhangen van je verwachtingen voor brandstofprijzen. Zie ook het onderdeel
-        <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de papierindustrie wordt geleverd door oliegestookte ketels.
+        </br></br>
+        De papierindustrie verbruikt veel warmte voor processen zoals het koken van pulp en het drogen van papier. Hoewel olie meestal duurder is dan gas en een hogere CO<sub>2</sub>-uitstoot heeft, kan het in sommige gevallen als alternatieve brandstof worden ingezet wanneer gas niet beschikbaar is.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_other_paper_burner_wood_pellets_share:
       title: Biomassaketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door biomassa? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur
-        nodig. Die kan nu het best gemaakt worden door brandstoffen te verstoken.\r\nDe
-        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
-        je verwachtingen voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de papierindustrie wordt geleverd door biomassaketels.
+        </br></br>
+        De papierindustrie heeft veel warmte nodig voor processen zoals het koken van pulp en het drogen van papier. Hoewel de CO<sub>2</sub>-uitstoot van biomassaketels lager is dan die van fossiele brandstoffen, kan het gebruik van biomassa nog steeds milieu-impact hebben, afhankelijk van de herkomst en het type brandstof.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_other_paper_burner_coal_share:
       title: Kolenketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door kolen? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur nodig.
-        Die kan nu het best gemaakt worden door brandstoffen te verstoken. Kolen (of
-        cokes) worden vooral in de staalindustrie ingezet. \r\nDe brandstofmix die
-        je hier invult zal waarschijnlijk het meest afhangen van je verwachtingen
-        voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.
-        \r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de papierindustrie wordt geleverd door kolenketels.
+        </br></br>
+        De papierindustrie heeft veel warmte nodig voor processen zoals het koken van pulp en het drogen van papier. Kolenketels hebben een hoge CO<sub>2</sub>-uitstoot en worden daarom steeds minder aantrekkelijk. Kolen worden tegenwoordig voornamelijk ingezet in de staalindustrie, waar ze nog vaak een belangrijke rol spelen.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_final_demand_for_other_paper_steam_hot_water_share:
       title: Stoomnet
       short_description:
       description: |
-        Warmte wordt geleverd door een collectief net als stoom. De warmte kan worden geproduceerd 
-        door warmtekrachtkoppeling (WKK) of door grootschalige ketels. Je kunt de warmtebronnen instellen in 
-        de sectie <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de papierindustrie wordt geleverd via een stoomnet.
+        </br></br>
+        De papierindustrie heeft veel warmte nodig voor processen zoals het koken van pulp en het drogen van papier. Stoomnetten hergebruiken vaak restwarmte van andere processen, zoals warmtekrachtkoppelingen (WKK’s), en kunnen de CO<sub>2</sub>-uitstoot verlagen, afhankelijk van de warmtebron. Ze zijn efficiënt voor het distribueren van warmte naar meerdere afnemers binnen een industriële omgeving.
+        </br></br>
+        <em>Let op</em>: niet alle warmtevraag van de papierindustrie bestaat uit stoomvraag.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a> om een warmtebron in te stellen</li>
+        </ul>
     industry_other_paper_heater_electricity_share:
       title: Elektrische boiler
       short_description:
-      description: "Industriële elektrische boilers zijn geavanceerde en enorm vergrote
-        versies van de alledaagse elektrische boiler die in huishoudens te vinden
-        is. Deze boilers kunnen warmte leveren tot een temperatuur van 300 <sup>o</sup>C.
-        Aangezien de temperatuur van de warmtevraag tussen diverse industrieën sterk
-        kan verschillen, kunnen zij enkel ingezet worden in industrieën waarbij alle
-        warmtevraag van een relatief lage temperatuur is.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de papierindustrie wordt geleverd door elektrische boilers.
+        </br></br>
+        De papierindustrie heeft veel warmte nodig voor processen zoals het koken van pulp en het drogen van papier. Industriële elektrische boilers kunnen warmte leveren tot een temperatuur van 300<sup>o</sup>C. Ze zijn vooral interessant wanneer elektriciteit goedkoop en duurzaam beschikbaar is.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen</li>
+        </ul>
     capacity_of_industry_other_paper_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor H<sub>2</sub> en gasketels
       short_description:
       description: |
-        Deze power-to-heat (P2H) boilers worden geïnstalleerd als een add-on bij 
-        bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van 
-        deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om 
-        warmte te produceren en reduceren de gas- en waterstofketels hun productie. Je 
-        kunt de betalingsbereidheid van deze boilers instellen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
-        Flexibiliteit</a> sectie. </br></br>
-        Let op dat deze slider alleen effect heeft als er ook vermogen van gas- of waterstofketels 
-        geïnstalleerd is. Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
-        van power-to-heat boilers is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraag.technnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt de warmteproductie van power-to-heat (P2H) boilers in combinatie met waterstof- en gasketels voor de papierindustrie.
+        </br></br>
+        P2H-boilers worden toegevoegd aan bestaande gas- en waterstofketels. Wanneer de betalingsbereidheid voor deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om warmte te produceren, waardoor de gas- en waterstofketels hun productie kunnen verminderen.
+        </br></br>
+        <em>Let op</em>: deze slider heeft alleen effect als er vermogen van gas- of waterstofketels is geïnstalleerd.
+        </br></br>
+        <ul>
+         <li>Bekijk grafieken om het effect van P2H-boilers te analyseren, zoals de <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        jaarlijkse elektriciteitsinzet</a>, de <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        uurlijkse elektriciteitsvraag en -aanbod</a>, de <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        integrale kosten</a>, en <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        een overzicht van de inzet in tabelvorm</a>.</li>
+        </ul>
     industry_other_paper_burner_hydrogen_share:
       title: Waterstofketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door waterstofketels? <br /> <br />\r\n\r\nDeze ketel is in staat om hogetemperatuurwarmte
-        te maken, waar in de industrie veel behoefte aan is. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Aanbodsectie</a> kun je specificeren hoe de gebruikte waterstof wordt geproduceerd.
-        <br />"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de papierindustrie wordt geleverd door waterstofketels.
+        </br></br>
+        De papierindustrie heeft veel warmte nodig voor processen zoals het koken van pulp en het drogen van papier. Waterstofketels stoten geen CO<sub>2</sub> uit wanneer groene of blauwe waterstof wordt gebruikt, waardoor ze een schoon alternatief vormen voor fossiele brandstoffen.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> om de productieroute van waterstof in te stellen</li>
+        </ul>
     industry_steel_production:
       title: Staal
       short_description:
@@ -199,26 +208,25 @@ nl:
     industry_other_metals_process_electricity_efficiency:
       title: Elektriciteit
       short_description:
-      description: "Bij de productie en bewerking van overige metalen is elektriciteit
-        nodig voor bijvoorbeeld verspanen, omvormen, snijden of pompen. Er zijn veel
-        efficiëntiemaatregelen die hierop van toepassing zijn. Gezamenlijk zorgen
-        zij voor een incrementele efficiëntieverbetering op elektriciteit.\r\n</br></br>\r\nGeef
-        hier aan wat de jaarlijkse efficiëntieverbetering op elektriciteit is.\r\n"
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het elektriciteitsverbruik bij de productie van overige metalen.
+        </br></br>
+        Voor de productie en bewerking van overige metalen is elektriciteit nodig voor processen zoals verspanen, omvormen, snijden en pompen. Er zijn verschillende efficiëntiemaatregelen die toegepast kunnen worden om het elektriciteitsverbruik te optimaliseren. Deze maatregelen zorgen gezamenlijk voor een geleidelijke verbetering in de energie-efficiëntie van het productieproces.
+      #Efficientie verbetering (in totaal) is uitgedrukt in %, moet dit niet %/jaar zijn?
     industry_other_metals_process_heat_useable_heat_efficiency:
       title: Warmte
       short_description:
-      description: "Voor het smelten en bewerken van overige metalen is warmte nodig.
-        Er zijn vele maatregelen die hierbij een besparing kunnen leveren, zoals isolatie
-        van ruimten, leidingen of ovens, efficiëntere branders. Al deze maatregelen
-        leveren een incrementele efficiëntieverbetering op warmte.\r\n</br></br>\r\nGeef
-        hier aan wat de jaarlijkse efficiëntieverbetering op warmte is.\r\n"
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het warmteverbruik bij de productie van overige metalen.
+        </br></br>
+        Voor het smelten en bewerken van metalen is warmte nodig. Er zijn verschillende maatregelen, zoals isolatie van ovens, leidingen en ruimten, of het gebruik van efficiëntere branders, die het warmteverbruik kunnen optimaliseren. Deze maatregelen zorgen voor een geleidelijke verbetering in de energie-efficiëntie van het proces.
     industry_other_metals_production:
       title: Overige metalen
       short_description:
-      description: "Overig metaal bestaat onder andere uit de productie van lood,
-        koper, zink en edelmetalen als goud en zilver.\r\n</br></br>\r\nGeef hier
-        aan hoeveel de productie van deze metalen de komende jaren gaat groeien of
-        afnemen."
+      description: |
+        Deze slider bepaalt de verandering in de productie van overige metalen ten opzichte van het startjaar van het scenario.
+        </br></br>
+        Overige metalen omvatten onder andere lood, koper, zink en edelmetalen als goud en zilver.
     industry_ccs_in_industry:
       title: "% van directe emissies afgevangen en opgeslagen"
       short_description:
@@ -229,73 +237,88 @@ nl:
       title: Grootte
       short_description:
       description: |
-        Geef hier aan hoe de ICT-industrie in de toekomst zal groeien of krimpen.
-        Voor het startjaar van je scenario is de vraag gelijk aan de vraag in de
-        economische sector "Informatie en communicatie" (SBI J).
+        Deze slider bepaalt de verandering in de energiebehoefte van de ICT-industrie ten opzichte van het startjaar van het scenario.
     industry_useful_demand_for_other_ict_efficiency:
       title: Efficiëntieverbetering
       short_description:
-      description: Hoe zal de efficiëntie van de ICT-industrie verbeteren in de toekomst?
-        Deze verbeteringen zijn het resultaat van technologische
-        vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse verandering van de energie-efficiëntie in de ICT-industrie.
+        </br></br>
+        De ICT-industrie verbruikt steeds meer energie door de groeiende vraag naar digitale diensten en data-opslag. Efficiëntiemaatregelen, zoals optimalisatie van datacenters en het gebruik van energiezuinige hardware, dragen bij aan een geleidelijke verbetering van de energie-efficiëntie in de sector.
     industry_useful_demand_for_chemical_fertilizers:
       title: Grootte
       short_description:
-      description: Geef hier aan hoe de kunstmestsector in de toekomst zal groeien
-        of krimpen.
+      description: |
+        Deze slider bepaalt de verandering in de productie van kunstmest ten opzichte van het startjaar van het scenario.
     industry_useful_demand_for_chemical_fertilizers_electricity_efficiency:
       title: Elektriciteit
       short_description:
-      description: "Hoe zal de efficiëntie van de kunstmestindustrie ieder jaar verbeteren,
-        wat de elektriciteitsvraag betreft? \r\n</br></br>\r\nDeze verbeteringen zijn
-        het resultaat van technologische vernieuwing of efficiëntere processen."
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het elektriciteitsverbruik bij de kunstmestproductie.
+        </br></br>
+        Voor de productie van kunstmest is elektriciteit nodig. Er zijn verschillende efficiëntiemaatregelen die toegepast kunnen worden om het elektriciteitsverbruik te optimaliseren. Deze maatregelen zorgen gezamenlijk voor een geleidelijke verbetering in de energie-efficiëntie van het productieproces.
     industry_useful_demand_for_chemical_fertilizers_useable_heat_efficiency:
       title: Warmte
       short_description:
-      description: "Hoe zal de efficiëntie van de kunstmestindustrie ieder jaar verbeteren,
-        wat de warmtevraag betreft? \r\n</br></br>\r\nDeze verbeteringen zijn het
-        resultaat van technologische vernieuwing of efficiëntere processen."
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het warmteverbruik bij de kunstmestproductie.
+        </br></br>
+        Voor de productie van kunstmest is warmte nodig. Maatregelen zoals betere isolatie, hergebruik van restwarmte en efficiëntere warmtewisselaars, of het inzetten van nieuwe technologieën, kunnen het warmteverbruik optimaliseren en de energie-efficiëntie verbeteren.
     industry_chemicals_fertilizers_burner_network_gas_share:
       title: Gasketel
       short_description:
-      description: Alle warmte die niet wordt opgewekt met de methodes hieronder,
-        wordt door het model automatisch ingevuld met een gasketel. Dit zijn behoorlijk
-        efficiënte systemen, maar ze stoten wel CO<sub>2</sub> uit. Dat kan een probleem
-        zijn als je hele grote reducties van broeikasgasemissies wilt halen.<br>
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de kunstmest-sector wordt geleverd door gasketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Aardgas is vaak beschikbaar tegen een relatief lage prijs en heeft een lagere CO<sub>2</sub>-uitstoot in vergelijking met olie- en kolenketels. Warmte die niet wordt opgewekt via de hieronder genoemde methoden, wordt in het ETM automatisch toegewezen aan gasketels.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_fertilizers_burner_crude_oil_share:
       title: Olieketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door oliegestookte ketels? \r\n</br></br>\r\nIn de industrie is vooral hoge
-        temperatuurswarmte nodig. Die kan nu het best gemaakt worden door brandstoffen
-        te verstoken. \r\nDe brandstofmix die je hier invult zal waarschijnlijk het
-        meest afhangen van je verwachtingen voor brandstofprijzen. Zie ook het onderdeel
-        <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de kunstmest-sector wordt geleverd door oliegestookte ketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Olieketels hebben een hogere CO<sub>2</sub>-uitstoot dan gasketels, maar kunnen een geschikte oplossing zijn wanneer olie beschikbaar is als bijproduct van het raffinageproces.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_fertilizers_burner_coal_share:
       title: Kolenketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door kolen? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur nodig.
-        Die kan nu het best gemaakt worden door brandstoffen te verstoken. Kolen (of
-        cokes) worden vooral in de staalindustrie ingezet. \r\nDe brandstofmix die
-        je hier invult zal waarschijnlijk het meest afhangen van je verwachtingen
-        voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.
-        \r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de kunstmest-sector wordt geleverd door kolenketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Kolenketels hebben een hoge CO<sub>2</sub>-uitstoot en worden daarom steeds minder aantrekkelijk. Kolen worden voornamelijk ingezet in de staalindustrie, waar ze nog vaak een belangrijke rol spelen.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_fertilizers_burner_wood_pellets_share:
       title: Biomassaketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door biomassa? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuurswarmte
-        nodig. Die kan nu het best gemaakt worden door brandstoffen te verstoken.\r\nDe
-        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
-        je verwachtingen voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de kunstmest-sector wordt geleverd door biomassaketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Hoewel de CO₂-uitstoot van biomassaketels lager is dan die van fossiele brandstoffen, kan het gebruik van biomassa nog steeds milieu-impact hebben, afhankelijk van de herkomst en het type brandstof.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_final_demand_for_chemical_fertilizers_steam_hot_water_share:
       title: Stoomnet
       short_description:
       description: |
-        Warmte wordt geleverd door een collectief net als stoom. De warmte kan worden geproduceerd 
-        door warmtekrachtkoppeling (WKK) of door grootschalige ketels. Je kunt de warmtebronnen instellen in 
-        de sectie <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de kunstmest-sector wordt geleverd via een stoomnet.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Een stoomnet biedt een efficiënte manier om warmte te leveren, vaak door het hergebruik van restwarmte uit andere industriële processen, zoals warmtekrachtkoppelingen (WKK's). Het gebruik van een stoomnet kan de CO<sub>2</sub>-uitstoot verlagen, afhankelijk van de bron van de warmte.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a> om een warmtebron in te stellen</li>
+        </ul>
     industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share:
       title: Lokale stoomreforming met aardgas
       short_description:
@@ -323,507 +346,562 @@ nl:
     industry_chemicals_fertilizers_burner_hydrogen_share:
       title: Waterstofketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door waterstofketels? <br /> <br />\r\n\r\nDeze ketel is in staat om hogetemperatuurwarmte
-        te maken, waar in de industrie veel behoefte aan is. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Aanbodsectie</a> kun je specificeren hoe de gebruikte waterstof wordt geproduceerd.
-        <br />"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de kunstmest-sector wordt geleverd door waterstofketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Waterstofketels stoten geen CO<sub>2</sub> uit bij gebruik van groene of blauwe waterstof.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> om de productieroute van waterstof in te stellen</li>
+        </ul>
     capacity_of_industry_chemicals_fertilizers_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor H<sub>2</sub> en gasketels
       short_description:
       description: |
-        Deze power-to-heat (P2H) boilers worden geïnstalleerd als een add-on bij 
-        bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van 
-        deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om 
-        warmte te produceren en reduceren de gas- en waterstofketels hun productie. Je 
-        kunt de betalingsbereidheid van deze boilers instellen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
-        Flexibiliteit</a> sectie. </br></br>
-        Let op dat deze slider alleen effect heeft als er ook vermogen van gas- of waterstofketels 
-        geïnstalleerd is. Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
-        van power-to-heat boilers is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraag.technnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt de warmteproductie van power-to-heat (P2H) boilers in combinatie met gas- en waterstofketels in de kunstmestsector.
+        </br></br> 
+        P2H-boilers worden geïnstalleerd als een add-on bij bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om warmte te produceren en reduceren de gas- en waterstofketels hun productie.
+        </br></br> 
+        <em>Let op</em>: Deze slider heeft alleen effect als er een vermogen van gas- of waterstofketels is geïnstalleerd.
+        </br></br> 
+        <ul>
+         <li>Bekijk grafieken om het effect van P2H-boilers te analyseren, zoals de <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        jaarlijkse elektriciteitsinzet</a>, de <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        uurlijkse elektriciteitsvraag en -aanbod</a>, de <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        integrale kosten</a>, en <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        een overzicht van de inzet in tabelvorm</a>.</li>
+        </ul>
     industry_useful_demand_for_chemical_other:
       title: Grootte
       short_description:
-      description: "In geval van niet-energetisch gebruik worden olieproducten gebruikt
-        om chemische producten te maken die niet als brandstof dienen. Onder andere
-        verscheidene plastics, farmaceutica en smeermiddelen worden uit olie gemaakt.\r\n</br></br>\r\nGeef
-        hier aan hoe de raffinagesector in de toekomst zal groeien of krimpen."
+      description: |
+        Deze slider bepaalt de verandering in de productie van chemicaliën ten opzichte van het startjaar van het scenario.
     industry_useful_demand_for_chemical_other_electricity_efficiency:
       title: Elektriciteit
       short_description:
-      description: "Hoe zal de efficiëntie van de chemische industrie ieder jaar verbeteren,
-        wat de elektriciteitsvraag betreft? \r\n</br></br>\r\nDeze verbeteringen zijn
-        het resultaat van technologische vernieuwing of efficiëntere processen."
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het elektriciteitsverbruik bij de productie van chemicaliën.
+        </br></br>
+        Voor de productie van chemicaliën is elektriciteit nodig. Er zijn verschillende efficiëntiemaatregelen die toegepast kunnen worden om het elektriciteitsverbruik te optimaliseren. Deze maatregelen zorgen gezamenlijk voor een geleidelijke verbetering in de energie-efficiëntie van het productieproces.
     industry_useful_demand_for_chemical_other_useable_heat_efficiency:
       title: Warmte
       short_description:
-      description: "Hoe zal de efficiëntie van de chemische industrie ieder jaar verbeteren,
-        wat de warmtevraag betreft? \r\n</br></br>\r\nDeze verbeteringen zijn het
-        resultaat van technologische vernieuwing of efficiëntere processen."
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het warmteverbruik bij de productie van chemicaliën.
+        </br></br>
+        Voor de productie van chemicaliën is warmte nodig. Maatregelen zoals betere isolatie, hergebruik van restwarmte en efficiëntere warmtewisselaars, of het inzetten van nieuwe technologieën, kunnen het warmteverbruik optimaliseren en de energie-efficiëntie verbeteren.
     industry_chemicals_other_burner_network_gas_share:
       title: Gasketel
       short_description:
-      description: Alle warmte die niet wordt opgewekt met de methodes hieronder,
-        wordt door het model automatisch ingevuld met een gasketel. Dit zijn behoorlijk
-        efficiënte systemen, maar ze stoten wel CO<sub>2</sub> uit. Dat kan een probleem
-        zijn als je hele grote reducties van broeikasgasemissies wilt halen.
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd door gasketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Aardgas is vaak beschikbaar tegen een relatief lage prijs en heeft een lagere CO<sub>2</sub>-uitstoot in vergelijking met olie- en kolenketels. Warmte die niet wordt opgewekt via de hieronder genoemde methoden, wordt in het ETM automatisch toegewezen aan gasketels.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_other_burner_crude_oil_share:
       title: Olieketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door oliegestookte ketels? \r\n</br></br>\r\nIn de industrie is vooral hoge
-        temperatuur nodig. Die kan nu het best gemaakt worden door brandstoffen te
-        verstoken. \r\nDe brandstofmix die je hier invult zal waarschijnlijk het meest
-        afhangen van je verwachtingen voor brandstofprijzen. Zie ook het onderdeel
-        <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd door oliegestookte ketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Olieketels hebben een hogere CO<sub>2</sub>-uitstoot dan gasketels, maar kunnen een geschikte oplossing zijn wanneer olie beschikbaar is als bijproduct van het raffinageproces.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_other_burner_wood_pellets_share:
       title: Biomassaketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door biomassa? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur
-        nodig. Die kan nu het best gemaakt worden door brandstoffen te verstoken.\r\nDe
-        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
-        je verwachtingen voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd door biomassaketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Hoewel de CO<sub>2</sub>-uitstoot van biomassaketels lager is dan die van fossiele brandstoffen, kan het gebruik van biomassa nog steeds milieu-impact hebben, afhankelijk van de herkomst en het type brandstof.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_other_burner_coal_share:
       title: Kolenketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door kolen? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur nodig.
-        Die kan nu het best gemaakt worden door brandstoffen te verstoken. Kolen (of
-        cokes) worden vooral in de staalindustrie ingezet. \r\nDe brandstofmix die
-        je hier invult zal waarschijnlijk het meest afhangen van je verwachtingen
-        voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.
-        \r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd door kolenketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Kolenketels hebben een hoge CO<sub>2</sub>-uitstoot en worden daarom steeds minder aantrekkelijk. Kolen worden voornamelijk ingezet in de staalindustrie, waar ze nog vaak een belangrijke rol spelen.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_final_demand_for_chemical_other_steam_hot_water_share:
       title: Stoomnet
       short_description:
       description: |
-        Warmte wordt geleverd door een collectief net als stoom. De warmte kan worden geproduceerd 
-        door warmtekrachtkoppeling (WKK) of door grootschalige ketels. Je kunt de warmtebronnen instellen in 
-        de sectie <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd via een stoomnet.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Stoomnetten hergebruiken vaak restwarmte van andere processen, zoals warmtekrachtkoppelingen (WKK’s), en kunnen de CO<sub>2</sub>-uitstoot verlagen, afhankelijk van de warmtebron. Ze zijn efficiënt voor het distribueren van warmte naar meerdere afnemers binnen een industriële omgeving.
+        <em>Let op</em>: niet alle warmtevraag van de chemische sector bestaat uit stoomvraag
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a> om een warmtebron in te stellen</li>
+        </ul>
     industry_chemicals_other_steam_recompression_electricity_share:
       title: Stoomrecompressie
       short_description:
-      description: "Welk percentage van de warmtevraag van de chemische industrie
-        wordt ingevuld door stoomrecompressie? \r\n<br></br>\r\nDeze technologie gebruikt
-        \"afvalstoom\" van lage temperatuur en druk. Door compressie worden zowel
-        de druk als de temperatuur verhoogd. De energie die nodig is voor compressie
-        is klein in vergelijking met de restwarmte die in de \"afvalstoom\" nog aanwezig
-        is. Het totale proces heeft een COP van 9.8.\r\n<br></br>\r\nLet op, niet
-        alle warmtevraag van de chemische sector bestaat uit stoomvraag. Meer informatie
-        over de verdeling van de warmtevraag is te vinden in de CE Delft studie <a
-        href=\"https://refman.energytransitionmodel.com/publications/2052\" target=\"_blank\">Denktank
-        Energiemarkt Industriële warmtemarkt\"</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd door stoomrecompressie.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Stoomrecompressie hergebruikt "afvalstoom" van lage temperatuur en druk door deze te comprimeren naar een hogere druk en temperatuur. De benodigde energie voor compressie is relatief klein in vergelijking met de restwarmte die al aanwezig is in de stoom, waardoor dit een efficiënte en duurzame oplossing is.
+        </br></br>
+        <em>Let op</em>: niet alle warmtevraag van de chemische sector bestaat uit stoomvraag
     industry_chemicals_other_heatpump_water_water_electricity_share:
       title: Warmtepomp
       short_description:
-      description: "Welk percentage van de warmtevraag van de chemische industrie
-        wordt ingevuld door industriële warmtepompen? \r\n<br></br>\r\nHet eindproduct
-        van dit proces is stoom. De stoomgeneratie bestaat uit twee stappen. In de
-        eerste stap wordt water verwarmd door een warmtepomp. Dit water wordt vervolgens
-        bij lage druk verdampt. De stoom die hierbij ontstaat wordt door een compressor
-        op de gewenste druk gebracht. De COP van het totale proces is 2.8.\r\n<br></br>\r\nLet
-        op, niet alle warmtevraag van de chemische sector bestaat uit stoomvraag.
-        Meer informatie over de verdeling van de warmtevraag is te vinden in de CE
-        Delft studie <a href=\"https://refman.energytransitionmodel.com/publications/2052\"
-        target=\"_blank\">Denktank Energiemarkt Industriële warmtemarkt\"</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd door warmtepompen.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Industriële warmtepompen onttrekken warmte aan laagwaardige bronnen, zoals afvalwarmte of de omgeving, en verhogen de temperatuur met behulp van elektriciteit. Vervolgens wordt de druk verlaagd om stoom te genereren. Dit maakt warmtepompen zeer energie-efficiënt, vooral wanneer duurzame elektriciteit beschikbaar is.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen</li>
+        </ul>
     capacity_of_industry_chemicals_other_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor H<sub>2</sub> en gasketels
       short_description:
       description: |
-        Deze power-to-heat (P2H) boilers worden geïnstalleerd als een add-on bij 
-        bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van 
-        deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om 
-        warmte te produceren en reduceren de gas- en waterstofketels hun productie. Je 
-        kunt de betalingsbereidheid van deze boilers instellen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
-        Flexibiliteit</a> sectie. </br></br>
-        Let op dat deze slider alleen effect heeft als er ook vermogen van gas- of waterstofketels 
-        geïnstalleerd is. Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
-        van power-to-heat boilers is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraag.technnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt de warmteproductie van power-to-heat (P2H) boilers in combinatie met waterstof- en gasketels voor de chemische industrie.
+        </br></br>
+        P2H-boilers worden geïnstalleerd als een add-on bij bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om warmte te produceren en reduceren de gas- en waterstofketels hun productie.
+        </br></br>
+        <em>Let op</em>: deze slider heeft alleen effect als er vermogen van gas- of waterstofketels is geïnstalleerd.
+        </br></br>
+        <ul>
+         <li>Bekijk grafieken om het effect van P2H-boilers te analyseren, zoals de <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        jaarlijkse elektriciteitsinzet</a>, de <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        uurlijkse elektriciteitsvraag en -aanbod</a>, de <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        integrale kosten</a>, en <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        een overzicht van de inzet in tabelvorm</a>.</li>
+        </ul>
     industry_chemicals_other_heater_electricity_share:
       title: Elektrische boiler
       short_description:
-      description: "Industriële elektrische boilers zijn geavanceerde en enorm vergrote
-        versies van de alledaagse elektrische boiler die in huishoudens te vinden
-        is. Deze boilers kunnen warmte leveren tot een temperatuur van 300 <sup>o</sup>C.
-        Aangezien de temperatuur van de warmtevraag tussen diverse industrieën en
-        binnen een industrie sterk kan verschillen, kunnen zij enkel ingezet worden
-        voor dat gedeelte van de vraag waar relatief lage temperatuur nodig is.\r\n<br></br>\r\nMeer
-        informatie over de verdeling van de warmtevraag is te vinden in de CE Delft
-        studie <a href=\"https://refman.energytransitionmodel.com/publications/2052\"
-        target=\"_blank\">Denktank Energiemarkt Industriële warmtemarkt\"</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd door elektrische boilers.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Industriële elektrische boilers kunnen warmte leveren tot een temperatuur van 300<sup>o</sup>C. Elektrische boilers zijn interessant wanneer elektriciteit goedkoop en duurzaam beschikbaar is.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen</li>
+        </ul>
     industry_chemicals_other_burner_hydrogen_share:
       title: Waterstofketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door waterstofketels? <br /> <br />\r\n\r\nDeze ketel is in staat om hogetemperatuurwarmte
-        te maken, waar in de industrie veel behoefte aan is. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Aanbodsectie</a> kun je specificeren hoe de gebruikte waterstof wordt geproduceerd.
-        <br />"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de chemische industrie wordt geleverd door waterstofketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Waterstofketels stoten geen CO<sub>2</sub> uit bij gebruik van groene of blauwe waterstof.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> om de productieroute van waterstof in te stellen</li>
+        </ul>
     industry_chemicals_other_wood_pellets_non_energetic_share:
       title: Biomassa
       short_description:
-      description: De chemische industrie gebruikt traditioneel veel ruwe olie als
-        grondstofbron van koolwaterstoffen. Hiermee worden chemische basisproducten
-        gemaakt zoals methanol en ethyleen. In de toekomst zou deze ruwe olie vervangen
-        kunnen worden door andere bronnen, zoals biomassa of waterstof. Met deze schuifjes
-        kun je de grondstofmix voor de chemische industrie aanpassen. Hoe groot is
-        het aandeel van biomassa in de chemische industrie van de toekomst?
+      description: |
+        Deze slider bepaalt welk aandeel van de grondstoffen in de chemische industrie wordt geleverd door biomassa.
+        </br></br>
+        De chemische industrie maakt traditioneel veel gebruik van ruwe olie als grondstof voor koolwaterstoffen, waarmee producten zoals methanol en ethyleen worden geproduceerd. In de toekomst zou ruwe olie vervangen kunnen worden door alternatieve bronnen zoals biomassa of waterstof.
     industry_chemicals_other_hydrogen_non_energetic_share:
       title: Waterstof
       short_description:
-      description: De chemische industrie gebruikt traditioneel veel ruwe olie als
-        grondstofbron van koolwaterstoffen. Hiermee worden chemische basisproducten
-        gemaakt zoals methanol en ethyleen. In de toekomst zou deze ruwe olie vervangen
-        kunnen worden door andere bronnen, zoals biomassa of waterstof. Met deze schuifjes
-        kun je de grondstofmix voor de chemische industrie aanpassen. Hoe groot is
-        het aandeel van waterstof in de chemische industrie van de toekomst?
+      description: |
+        Deze slider bepaalt welk aandeel van de grondstoffen in de chemische industrie wordt geleverd door waterstof.
+        </br></br>
+        De chemische industrie maakt traditioneel veel gebruik van ruwe olie als grondstof voor koolwaterstoffen, waarmee producten zoals methanol en ethyleen worden geproduceerd. In de toekomst zou ruwe olie vervangen kunnen worden door alternatieve bronnen zoals biomassa of waterstof.
     industry_chemicals_other_network_gas_non_energetic_share:
       title: Netwerkgas
       short_description:
-      description: De chemische industrie gebruikt traditioneel veel ruwe olie als
-        grondstofbron van koolwaterstoffen. Hiermee worden chemische basisproducten
-        gemaakt zoals methanol en ethyleen. In de toekomst zou deze ruwe olie vervangen
-        kunnen worden door andere bronnen, zoals biomassa of waterstof. Met deze schuifjes
-        kun je de grondstofmix voor de chemische industrie aanpassen. Hoe groot is
-        het aandeel van aardgas in de chemische industrie van de toekomst?
+      description: |
+        Deze slider bepaalt welk aandeel van de grondstoffen in de chemische industrie wordt geleverd door netwerkgas.
+        </br></br>
+        De chemische industrie maakt traditioneel veel gebruik van ruwe olie als grondstof voor koolwaterstoffen, waarmee producten zoals methanol en ethyleen worden geproduceerd. In de toekomst zou ruwe olie vervangen kunnen worden door alternatieve bronnen zoals biomassa of waterstof.
     industry_chemicals_other_crude_oil_non_energetic_share:
       title: Olie
       short_description:
-      description: De chemische industrie gebruikt traditioneel veel ruwe olie als
-        grondstofbron van koolwaterstoffen. Hiermee worden chemische basisproducten
-        gemaakt zoals methanol en ethyleen. In de toekomst zou deze ruwe olie vervangen
-        kunnen worden door andere bronnen, zoals biomassa of waterstof. Met deze schuifjes
-        kun je de grondstofmix voor de chemische industrie aanpassen. Hoe groot is
-        het aandeel van ruwe olie in de chemische industrie van de toekomst?
+      description: |
+        Deze slider bepaalt welk aandeel van de grondstoffen in de chemische industrie wordt geleverd door olie.
+        </br></br>
+        De chemische industrie maakt traditioneel veel gebruik van ruwe olie als grondstof voor koolwaterstoffen, waarmee producten zoals methanol en ethyleen worden geproduceerd. In de toekomst zou ruwe olie vervangen kunnen worden door alternatieve bronnen zoals biomassa of waterstof.
     industry_chemicals_other_coal_non_energetic_share:
       title: Kolen
       short_description:
-      description: De chemische industrie gebruikt traditioneel veel ruwe olie als
-        grondstofbron van koolwaterstoffen. Hiermee worden chemische basisproducten
-        gemaakt zoals methanol en ethyleen. In de toekomst zou deze ruwe olie vervangen
-        kunnen worden door andere bronnen, zoals biomassa of waterstof. Met deze schuifjes
-        kun je de grondstofmix voor de chemische industrie aanpassen. Hoe groot is
-        het aandeel van steenkool in de chemische industrie van de toekomst?
+      description: |
+        Deze slider bepaalt welk aandeel van de grondstoffen in de chemische industrie wordt geleverd door kolen.
+        </br></br>
+        De chemische industrie maakt traditioneel veel gebruik van ruwe olie als grondstof voor koolwaterstoffen, waarmee producten zoals methanol en ethyleen worden geproduceerd. In de toekomst zou ruwe olie vervangen kunnen worden door alternatieve bronnen zoals biomassa of waterstof.
     industry_useful_demand_for_aggregated_other_electricity_efficiency:
       title: Elektriciteit
-      description: Hoe zal de efficiëntie van overige industriesector verbeterd zijn
-        wat de elektriciteitsvraag betreft? Deze verbeteringen zijn het resultaat van technologische
-        vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het elektriciteitsverbruik in de overige industriesectoren.
+        </br></br>
+        Voor verschillende industriële processen is elektriciteit nodig. Er kunnen diverse efficiëntiemaatregelen worden toegepast om het elektriciteitsverbruik te optimaliseren, wat leidt tot een geleidelijke verbetering van de energie-efficiëntie in deze sectoren.
     industry_useful_demand_for_aggregated_other_useable_heat_efficiency:
       title: Warmte
-      description: Hoe zal de efficiëntie van overige industriesector verbeterd zijn
-        wat de warmtevraag betreft? Deze verbeteringen zijn het resultaat van technologische
-        vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het warmteverbruik in de overige industriesectoren.
+        </br></br>
+        Voor verschillende industriële processen is warmte nodig. Maatregelen zoals betere isolatie, hergebruik van restwarmte, efficiëntere warmtewisselaars of het toepassen van nieuwe technologieën kunnen het warmteverbruik optimaliseren en de energie-efficiëntie verbeteren in deze sectoren.
     industry_aggregated_other_industry_wood_pellets_share_energetic:
       title: Biomassa
       short_description:
-      description: Welk aandeel zal biomassa hebben in de totale energievraag van de
-        overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het energetisch gebruik in de overige industrieën dat wordt geleverd door biomassa.
+        </br></br>
+        Het gebruik van biomassa kan de CO<sub>2</sub>-uitstoot verlagen, afhankelijk van het type en de herkomst van de biomassa, maar de milieu-impact kan variëren, afhankelijk van de productiemethoden en het landgebruik.
     industry_aggregated_other_industry_electricity_share:
       title: Elektriciteit
       short_description:
-      description: Welk aandeel zal elektriciteit hebben in de totale energievraag van
-        de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het energetisch gebruik in de overige industrieën dat wordt geleverd door elektriciteit.
+        </br></br>
+        De mate waarin elektriciteit wordt ingezet, hangt sterk af van de beschikbaarheid van duurzame en goedkope energiebronnen, en de mogelijkheden om deze efficiënt in te zetten voor industriële processen. Het gebruik van elektriciteit heeft een lage CO<sub>2</sub>-uitstoot wanneer het wordt opgewekt uit hernieuwbare bronnen.
     industry_aggregated_other_industry_crude_oil_share_energetic:
       title: Olie
       short_description:
-      description: Welk aandeel zal olie hebben in de totale energievraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het energetisch gebruik in de overige industrieën dat wordt geleverd door olie.
+        </br></br>
+        Olie wordt in de industrie vaak ingezet voor processen die hoge temperaturen vereisen, zoals verwarmen, stoken of als brandstof voor machines. Hoewel olie doorgaans duurder is dan andere energiebronnen, kan het in sommige gevallen een praktische keuze zijn wanneer andere opties niet beschikbaar of niet kosteneffectief zijn. Het gebruik van olie heeft een hogere CO<sub>2</sub>-uitstoot dan bijvoorbeeld elektriciteit of gas.
     industry_aggregated_other_industry_network_gas_share_energetic:
       title: Gas
       short_description:
-      description: Welk aandeel zal netwerkgas hebben in de totale energievraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het energetisch gebruik in de overige industrieën dat wordt geleverd door gas.
+        </br></br>
+        Gas wordt veel gebruikt in de industrie voor processen die hoge temperaturen vereisen, zoals verwarmen en stoken. Het heeft een lagere CO<sub></sub>-uitstoot dan olie en kolen, waardoor het in sommige gevallen een milieuvriendelijkere keuze is. Gas is vaak beschikbaar tegen een relatief lage prijs, wat het een aantrekkelijke optie maakt voor industriële toepassingen.
     industry_aggregated_other_industry_coal_share_energetic:
       title: Kolen
       short_description:
-      description: Welk aandeel zullen kolen en kolengas hebben in de totale energievraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het energetisch gebruik in de overige industrieën dat wordt geleverd door kolen.
+        </br></br>
+        Kolen worden nog steeds gebruikt in bepaalde industrieën voor processen die hoge temperaturen vereisen. Kolen hebben echter een hoge CO<sub>2</sub>-uitstoot, waardoor het gebruik ervan steeds minder aantrekkelijk wordt in het kader van verduurzaming. In veel gevallen wordt de inzet van kolen vervangen door schonere alternatieven, zoals gas of hernieuwbare energiebronnen.
     industry_aggregated_other_industry_cokes_share_energetic:
       title: Kooks
       short_description:
-      description: Welk aandeel zullen kooks hebben in de totale energievraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het energetisch gebruik in de overige industrieën dat wordt geleverd door kooks.
+        </br></br>
+        Kooks, dat voornamelijk in de staalindustrie wordt gebruikt, speelt een rol in processen die hoge temperaturen vereisen. Kooks heeft een hoge CO<sub>2</sub>-uitstoot en wordt steeds minder populair door de verschuiving naar schonere alternatieven, zoals waterstof of elektriciteit, voor industriële toepassingen.
     industry_aggregated_other_industry_useable_heat_share:
       title: Warmte
       short_description:
-      description: Welk aandeel zal centrale warmte hebben in de totale energievraag van
-        de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het energetisch gebruik in de overige industrieën dat wordt geleverd via centrale warmte.
+        </br></br>
+        Centrale warmte wordt vaak geleverd via netwerken die restwarmte van andere processen of warmtekrachtkoppelingen (WKK’s) hergebruiken. Het gebruik van centrale warmte kan de CO<sub>2</sub>-uitstoot verlagen, afhankelijk van de warmtebron, en is efficiënt voor het distribueren van warmte naar meerdere afnemers binnen een industriële omgeving.
     industry_useful_demand_for_aggregated_other_energetic:
       title: Grootte (energetisch)
       short_description:
-      description: Hier kun je de toekomstige, totale energievraag van de overige industriesector instellen.
+      description: |
+        Deze slider bepaalt de verandering in de energetische productie van de overige industriesectoren ten opzichte van het startjaar van het scenario.
     industry_useful_demand_for_aggregated_other_non_energetic:
       title: Grootte (niet-energetisch)
       short_description:
-      description: Hier kun je de totale, niet-energetische vraag van de overige industriesector instellen.
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische productie van de overige industriesectoren ten opzichte van het startjaar van het scenario.
     industry_aggregated_other_industry_hydrogen_share_energetic:
       title: Waterstof
       short_description:
-      description: Welk aandeel zal waterstof hebben in de totale energievraag van de
-        overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het energetisch gebruik in de overige industrieën dat wordt geleverd door waterstof.
+        </br></br>
+        Waterstof kan als schone energiedrager worden ingezet, vooral wanneer groene of blauwe waterstof wordt gebruikt. Het heeft geen CO<sub>2</sub>-uitstoot bij verbranding, waardoor het een aantrekkelijk alternatief is voor fossiele brandstoffen, afhankelijk van de beschikbaarheid en de kosten van waterstofproductie.
     industry_aggregated_other_industry_coal_share_non_energetic:
       title: Kolen
-      description: Welk aandeel zullen kolen en kolengas hebben in de totale niet-energetische vraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het niet-energetisch gebruik in de overige industrieën dat wordt geleverd door kolen.
+        </br></br>
+        Kolen en kolengassen worden in de industrie soms gebruikt als grondstof voor de productie van chemicaliën, kunststoffen en staal. Het gebruik ervan voor niet-energetische doeleinden is minder gebruikelijk, maar kan in sommige sectoren nog steeds een rol spelen.
     industry_aggregated_other_industry_cokes_share_non_energetic:
       title: Kooks
-      description: Welk aandeel zullen kooks hebben in de totale niet-energetische vraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het niet-energetisch gebruik in de overige industrieën dat wordt geleverd door kooks.
+        <br></br>
+        Hoewel kooks voornamelijk in de staalindustrie wordt gebruikt, kan het in andere industrieën ook als grondstof of voor bepaalde chemische processen worden ingezet, zoals in de productie van synthetische materialen of bepaalde chemische producten.
     industry_aggregated_other_industry_crude_oil_share_non_energetic:
       title: Olie
-      description: Welk aandeel zal olie hebben in de totale niet-energetische vraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het niet-energetisch gebruik in de overige industrieën dat wordt geleverd door olie.
+        </br></br>
+        Olie wordt vaak gebruikt als grondstof voor de productie van chemicaliën, kunststoffen en andere materialen, naast de energieproductie.
     industry_aggregated_other_industry_network_gas_share_non_energetic:
       title: Gas
-      description: Welk aandeel zal netwerkgas hebben in de totale niet-energetische vraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het niet-energetisch gebruik in de overige industrieën dat wordt geleverd door gas.
+        </br></br>
+        Gas wordt in de industrie vaak ingezet als grondstof voor de productie van chemicaliën, kunststoffen en meststoffen, naast het gebruik voor energieopwekking.
     industry_aggregated_other_industry_wood_pellets_share_non_energetic:
       title: Biomassa
-      description: Welk aandeel zal biomassa hebben in de totale niet-energetische vraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het niet-energetisch gebruik in de overige industrieën dat wordt geleverd door biomassa.
+        </br></br>
+        Biomassa kan worden ingezet als grondstof voor de productie van chemicaliën, biobrandstoffen en materialen, waardoor de afhankelijkheid van fossiele brandstoffen wordt verminderd.
     industry_aggregated_other_industry_hydrogen_share_non_energetic:
       title: Waterstof
-      description: Welk aandeel zal waterstof hebben in de totale niet-energetische vraag van de overige industriesector?
+      description: |
+        Deze slider bepaalt het percentage van het niet-energetisch gebruik in de overige industrieën dat wordt geleverd door waterstof.
+        </br></br>
+        Waterstof kan in de industrie dienen als grondstof voor de productie van chemicaliën, kunststoffen of andere industriële processen. Het gebruik van waterstof als grondstof heeft voordelen vanwege de lage CO<sub>2</sub>-uitstoot wanneer groene of blauwe waterstof wordt ingezet.
     industry_useful_demand_for_other_food:
       title: Grootte
       short_description:
-      description: Geef hier aan hoe de voedingsmiddelenindustrie in de toekomst zal
-        groeien of krimpen.
+      description: |
+        Deze slider bepaalt de verandering in de productie van voedsel, dranken en tabaksproducten ten opzichte van het startjaar van het scenario.
     industry_useful_demand_for_other_food_electricity_efficiency:
       title: Elektriciteit
-      description: Hoe zal de efficiëntie van voedingsmiddelenindustrie verbeterd zijn
-        wat de elektriciteitsvraag betreft? Deze verbeteringen zijn het resultaat van technologische
-        vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het elektriciteitsverbruik bij de productie van voedingsmiddelen.
+        </br></br>
+        Voor de productie van voedingsmiddelen is elektriciteit nodig. Er zijn verschillende efficiëntiemaatregelen die toegepast kunnen worden om het elektriciteitsverbruik te optimaliseren. Deze maatregelen zorgen gezamenlijk voor een geleidelijke verbetering in de energie-efficiëntie van het productieproces.
     industry_useful_demand_for_other_food_useable_heat_efficiency:
       title: Warmte
-      description: Hoe zal de efficiëntie van voedingsmiddelenindustrie verbeterd zijn
-        wat de warmtevraag betreft? Deze verbeteringen zijn het resultaat van technologische
-        vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het warmteverbruik bij de productie van voedingsmiddelen.
+        </br></br>
+        Voor de productie van voedingsmiddelen is warmte nodig. Maatregelen zoals betere isolatie, hergebruik van restwarmte en efficiëntere warmtewisselaars, of het inzetten van nieuwe technologieën, kunnen het warmteverbruik optimaliseren en de energie-efficiëntie verbeteren.
     industry_other_food_burner_coal_share:
       title: Kolenketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door kolen? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur nodig.
-        Die kan nu het best gemaakt worden door brandstoffen te verstoken. Kolen (of
-        cokes) worden vooral in de staalindustrie ingezet. \r\nDe brandstofmix die
-        je hier invult zal waarschijnlijk het meest afhangen van je verwachtingen
-        voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.
-        \r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de voedingsindustrie wordt geleverd door kolenketels.
+        </br></br>
+        De voedingsindustrie heeft veel warmte nodig voor processen zoals koken en pasteuriseren. Kolenketels hebben een hoge CO<sub>2</sub>-uitstoot en worden daarom steeds minder aantrekkelijk. Kolen worden voornamelijk ingezet in de staalindustrie, waar ze nog vaak een belangrijke rol spelen.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_other_food_burner_crude_oil_share:
       title: Olieketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door oliegestookte ketels? \r\n</br></br>\r\nIn de industrie is vooral hoge
-        temperatuur nodig. Die kan nu het best gemaakt worden door brandstoffen te
-        verstoken. \r\nDe brandstofmix die je hier invult zal waarschijnlijk het meest
-        afhangen van je verwachtingen voor brandstofprijzen. Zie ook het onderdeel
-        <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de voedingsindustrie wordt geleverd door oliegestookte ketels.
+        </br></br>
+        De voedingsindustrie verbruikt veel warmte voor processen zoals koken en pasteuriseren. Hoewel olie doorgaans duurder is dan gas en een hogere CO<sub>2</sub>-uitstoot heeft, kan het in sommige gevallen als alternatieve brandstof worden ingezet wanneer gas niet beschikbaar is.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_other_food_burner_network_gas_share:
       title: Gasketel
       short_description:
-      description: "Alle warmte die niet wordt opgewekt met de methodes hieronder,
-        wordt door het model automatisch ingevuld met een gasketel. Dit zijn behoorlijk
-        efficiënte systemen, maar ze stoten wel CO<sub>2</sub> uit. Dat kan een probleem
-        zijn als je hele grote reducties van broeikasgasemissies wilt halen.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de voedingsindustrie wordt geleverd door gasketels.
+        </br></br>
+        De voedingsindustrie heeft veel warmte nodig voor processen zoals koken en pasteuriseren. Aardgas is vaak beschikbaar tegen een relatief lage prijs en heeft een lagere CO<sub>2</sub>-uitstoot in vergelijking met olie- en kolenketels. Warmte die niet wordt opgewekt via de hieronder genoemde methoden, wordt in het ETM automatisch toegewezen aan gasketels.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_other_food_burner_wood_pellets_share:
       title: Biomassaketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door biomassa? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur
-        nodig. Die kan nu het best gemaakt worden door brandstoffen te verstoken.\r\nDe
-        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
-        je verwachtingen voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de voedingsindustrie wordt geleverd door biomassaketels.
+        </br></br>
+        De voedingsindustrie heeft veel warmte nodig voor processen zoals koken en pasteuriseren. Hoewel de CO<sub>2</sub>-uitstoot van biomassaketels lager is dan die van fossiele brandstoffen, kan het gebruik van biomassa nog steeds milieu-impact hebben, afhankelijk van de herkomst en het type brandstof.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_final_demand_for_other_food_steam_hot_water_share:
       title: Stoomnet
       short_description:
       description: |
-        Warmte wordt geleverd door een collectief net als stoom. De warmte kan worden geproduceerd 
-        door warmtekrachtkoppeling (WKK) of door grootschalige ketels. Je kunt de warmtebronnen instellen in 
-        de sectie <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de voedingsindustrie wordt geleverd via een stoomnet.
+        </br></br>
+        De voedingsindustrie heeft veel warmte nodig voor processen zoals koken en pasteuriseren. Stoomnetten hergebruiken vaak restwarmte van andere processen, zoals warmtekrachtkoppelingen (WKK’s), en kunnen de CO<sub>2</sub>-uitstoot verlagen, afhankelijk van de warmtebron. Ze zijn efficiënt voor het distribueren van warmte naar meerdere afnemers binnen een industriële omgeving.
+        </br></br>
+        <em>Let op</em>: niet alle warmtevraag van de voedingsindustrie bestaat uit stoomvraag.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a> om een warmtebron in te stellen</li>
+        </ul>
     industry_other_food_heater_electricity_share:
       title: Elektrische boiler
       short_description:
-      description: "Industriële elektrische boilers zijn geavanceerde en enorm vergrote
-        versies van de alledaagse elektrische boiler die in huishoudens te vinden
-        is. Deze boilers kunnen warmte leveren tot een temperatuur van 300 <sup>o</sup>C.
-        Aangezien de temperatuur van de warmtevraag tussen diverse industrieën sterk
-        kan verschillen, kunnen zij enkel ingezet worden in industrieën waarbij alle
-        warmtevraag van een relatief lage temperatuur is.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de voedingsindustrie wordt geleverd door elektrische boilers.
+        </br></br>
+        De voedingsindustrie heeft veel warmte nodig voor processen zoals koken en pasteuriseren. Industriële elektrische boilers kunnen warmte leveren tot een temperatuur van 300<sup>o</sup>C. Elektrische boilers zijn interessant wanneer elektriciteit goedkoop en duurzaam beschikbaar is.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen</li>
+        </ul>
     capacity_of_industry_other_food_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor H<sub>2</sub> en gasketels
       short_description:
       description: |
-        Deze power-to-heat (P2H) boilers worden geïnstalleerd als een add-on bij 
-        bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van 
-        deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om 
-        warmte te produceren en reduceren de gas- en waterstofketels hun productie. Je 
-        kunt de betalingsbereidheid van deze boilers instellen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
-        Flexibiliteit</a> sectie. </br></br>
-        Let op dat deze slider alleen effect heeft als er ook vermogen van gas- of waterstofketels 
-        geïnstalleerd is. Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
-        van power-to-heat boilers is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraag.technnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt de warmteproductie van power-to-heat (P2H) boilers in combinatie met waterstof- en gasketels voor de voedingsindustrie.
+        </br></br>
+        P2H-boilers worden geïnstalleerd als een add-on bij bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om warmte te produceren en reduceren de gas- en waterstofketels hun productie.
+        </br></br>
+        <em>Let op</em>: deze slider heeft alleen effect als er vermogen van gas- of waterstofketels is geïnstalleerd.
+        </br></br>
+        <ul>
+         <li>Bekijk grafieken om het effect van P2H-boilers te analyseren, zoals de <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        jaarlijkse elektriciteitsinzet</a>, de <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        uurlijkse elektriciteitsvraag en -aanbod</a>, de <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        integrale kosten</a>, en <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        een overzicht van de inzet in tabelvorm</a>.</li>
+        </ul>
     industry_other_food_burner_hydrogen_share:
       title: Waterstofketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door waterstofketels? <br /> <br />\r\n\r\nDeze ketel is in staat om hogetemperatuurwarmte
-        te maken, waar in de industrie veel behoefte aan is. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Aanbodsectie</a> kun je specificeren hoe de gebruikte waterstof wordt geproduceerd.
-        <br />"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie binnen de voedingsindustrie wordt geleverd door waterstofketels.
+        </br></br>
+        De voedingsindustrie heeft veel warmte nodig voor processen zoals koken en pasteuriseren. Waterstofketels stoten geen CO<sub>2</sub> uit wanneer groene of blauwe waterstof wordt gebruikt, wat ze een schoon alternatief maakt voor fossiele brandstoffen.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> om de productieroute van waterstof in te stellen</li>
+        </ul>
     industry_useful_demand_for_chemical_refineries:
       title: Grootte
       short_description:
-      description: Geef hier aan hoe de raffinagesector in de toekomst zal groeien
-        of krimpen.
+      description: |
+        Deze slider bepaalt de verandering in de energie-vraag van raffinaderijen ten opzicht van het startjaar van het scenario.
     industry_useful_demand_for_chemical_refineries_electricity_efficiency:
       title: Elektriciteit
       short_description:
-      description: Hoe zal de efficiëntie van de raffinaderijen ieder jaar verbeteren,
-        wat de elektriciteitsvraag betreft? Deze verbeteringen zijn het resultaat
-        van technologische vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het elektriciteitsverbruik bij de productie van raffinaderijen.
+        </br></br>
+        Voor de productie van ruwe olieproducten is elektriciteit nodig. Er zijn verschillende efficiëntiemaatregelen die toegepast kunnen worden om het elektriciteitsverbruik te optimaliseren. Deze maatregelen zorgen gezamenlijk voor een geleidelijke verbetering in de energie-efficiëntie van het productieproces.
     industry_useful_demand_for_chemical_refineries_useable_heat_efficiency:
       title: Warmte
       short_description:
-      description: Hoe zal de efficiëntie van de raffinaderijen ieder jaar verbeteren,
-        wat de warmtevraag betreft? Deze verbeteringen zijn het resultaat van technologische
-        vernieuwing of efficiëntere processen.
+      description: |
+        Deze slider bepaalt de jaarlijkse efficiëntieverbetering van het warmteverbruik bij de productie van raffinaderijen.
+        </br></br>
+        Voor de productie van ruwe olieproducten is warmte nodig. Maatregelen zoals betere isolatie, hergebruik van restwarmte en efficiëntere warmtewisselaars, of het inzetten van nieuwe technologieën, kunnen het warmteverbruik optimaliseren en de energie-efficiëntie verbeteren.
     industry_chemicals_refineries_burner_network_gas_share:
       title: Gasketel
       short_description:
-      description: "Alle warmte die niet wordt opgewekt met de methodes hieronder,
-        wordt door het model automatisch ingevuld met een gasketel. Dit zijn behoorlijk
-        efficiënte systemen, maar ze stoten wel CO<sub>2</sub> uit. Dat kan een probleem
-        zijn als je hele grote reducties van broeikasgasemissies wilt halen.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in raffinaderijen wordt geleverd door gasketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Aardgas is vaak beschikbaar tegen een relatief lage prijs en heeft een lagere CO₂-uitstoot in vergelijking met olie- en kolenketels. Warmte die niet wordt opgewekt via de hieronder genoemde methoden, wordt in het ETM automatisch toegewezen aan gasketels.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_refineries_burner_crude_oil_share:
       title: Olieketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door oliegestookte ketels? \r\n</br></br>\r\nIn de industrie is vooral hoge
-        temperatuur nodig. Die kan nu het best gemaakt worden door brandstoffen te
-        verstoken. \r\nDe brandstofmix die je hier invult zal waarschijnlijk het meest
-        afhangen van je verwachtingen voor brandstofprijzen. Zie ook het onderdeel
-        <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in raffinaderijen wordt geleverd door oliegestookte ketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Olieketels hebben een hogere CO<sub>2</sub>-uitstoot dan gasketels, maar kunnen een geschikte oplossing zijn wanneer olie beschikbaar is als bijproduct van het raffinageproces.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_refineries_burner_wood_pellets_share:
       title: Biomassaketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door biomassa? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur
-        nodig. Die kan nu het best gemaakt worden door brandstoffen te verstoken.\r\nDe
-        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
-        je verwachtingen voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in raffinaderijen wordt geleverd door biomassaketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Hoewel de CO<sub>2</sub>-uitstoot van biomassaketels lager is dan die van fossiele brandstoffen, kan het gebruik van biomassa nog steeds milieu-impact hebben, afhankelijk van de herkomst en het type brandstof.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_chemicals_refineries_burner_coal_share:
       title: Kolenketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door kolen? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur nodig.
-        Die kan nu het best gemaakt worden door brandstoffen te verstoken. Kolen (of
-        cokes) worden vooral in de staalindustrie ingezet. \r\n</br></br>\r\nDe brandstofmix
-        die je hier invult zal waarschijnlijk het meest afhangen van je verwachtingen
-        voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.
-        \r\n<br>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in raffinaderijen wordt geleverd door kolenketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Kolenketels hebben een hoge CO<sub>2</sub>-uitstoot en worden daarom steeds minder aantrekkelijk. Kolen worden voornamelijk ingezet in de staalindustrie, waar ze nog vaak een belangrijke rol spelen.
+        </br></br>
+        <ul>
+          <li>Stel de prijs in via <a href="/scenario/costs/fuel_costs/fossil-fuels">Brandstofprijzen</a></li>
+        </ul>
     industry_final_demand_for_chemical_refineries_steam_hot_water_share:
       title: Stoomnet
       short_description:
       description: |
-        Warmte wordt geleverd door een collectief net als stoom. De warmte kan worden geproduceerd 
-        door warmtekrachtkoppeling (WKK) of door grootschalige ketels. Je kunt de warmtebronnen instellen in 
-        de sectie <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
+        Deze slider bepaalt welk percentage van de warmteproductie in raffinaderijen wordt geleverd via een stoomnet.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Een stoomnet biedt een efficiënte manier om warmte te leveren, vaak door het hergebruik van restwarmte uit andere industriële processen, zoals warmtekrachtkoppelingen (WKK's). Het gebruik van een stoomnet kan de CO<sub>2</sub>-uitstoot verlagen, afhankelijk van de bron van de warmte.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a> om een warmtebron in te stellen</li>
+        </ul>
     capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor H<sub>2</sub> en gasketels
       short_description:
       description: |
-        Deze power-to-heat (P2H) boilers worden geïnstalleerd als een add-on bij 
-        bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van 
-        deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om 
-        warmte te produceren en reduceren de gas- en waterstofketels hun productie. Je 
-        kunt de betalingsbereidheid van deze boilers instellen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
-        Flexibiliteit</a> sectie. </br></br>
-        Let op dat deze slider alleen effect heeft als er ook vermogen van gas- of waterstofketels 
-        geïnstalleerd is. Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
-        van power-to-heat boilers is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraag.technnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt de warmteproductie van power-to-heat (P2H) boilers in combinatie met waterstof- en gasketels voor raffinaderijen.
+        </br></br>
+        P2H-boilers worden geïnstalleerd als een add-on bij bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om warmte te produceren en reduceren de gas- en waterstofketels hun productie.
+        </br></br>
+        <em>Let op</em>: deze slider heeft alleen effect als er een vermogen van gas- of waterstofketels is geïnstalleerd.
+        </br></br>
+        <ul>
+         <li>Bekijk grafieken om het effect van P2H-boilers te analyseren, zoals de <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
+        jaarlijkse elektriciteitsinzet</a>, de <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+        uurlijkse elektriciteitsvraag en -aanbod</a>, de <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        integrale kosten</a>, en <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        een overzicht van de inzet in tabelvorm</a>.</li>
+        </ul>
     industry_chemicals_refineries_burner_hydrogen_share:
       title: Waterstofketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door waterstofketels? <br /> <br />\r\n\r\nDeze ketel is in staat om hogetemperatuurwarmte
-        te maken, waar in de industrie veel behoefte aan is. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Aanbodsectie</a> kun je specificeren hoe de gebruikte waterstof wordt geproduceerd.
-        <br />"
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in raffinaderijen wordt geleverd door waterstofketels.
+        </br></br>
+        De industrie heeft een grote vraag naar hoge temperatuur warmte. Waterstofketels stoten geen CO<sub>2</sub> uit bij gebruik van groene of blauwe waterstof.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> om de productieroute van waterstof in te stellen</li>
+        </ul>
     industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share:
       title: Lokale NH<sub>3</sub> (stoomreforming van aardgas)
       short_description:
       description: |
-        In deze productieroute wordt er eerst waterstof geproduceerd door stoomreforming van aardgas 
-        (SMR). Dit leidt tot een non-energetische vraag naar netwerkgas. De vrijgekomen waterstof reageert
-        vervolgens in het zogeheten Haber-Boschproces met stikstof tot ammoniak. De ammoniak wordt 
-        gebruikt om kunstmest te produceren, met name ureum en salpeterzuur. Voor verschillende 
-        stappen in het proces is warmte nodig, wat een energetische vraag veroorzaakt. </br></br>
-        Er ontstaat CO<sub>2</sub> in de SMR, wat als non-energetische emissies meetelt in jouw scenario 
-        (zie <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">
-        deze</a> grafiek). Deze procesemissies kunnen worden afgevangen in de 
-        <a href="/scenario/emissions/ccus/capture-of-co2"> CCUS</a>-sectie. Het (gedeeltelijk) afvangen 
-        van deze emissies is gebruikelijk in de kunstmestindustrie, aangezien een CO<sub>2</sub>-stroom
-        nodig is om ureum te maken van ammoniak. Je kunt deze stroom modelleren als 'Overig gebruik' in de 
-        <a href="/scenario/emissions/ccus/capture-of-co2"> CCUS</a>-sectie.
+        Deze slider bepaalt welk percentage van de ammoniakproductie lokaal wordt geproduceerd via stoomreforming van aardgas (SMR).
+        </br></br>
+        De industrie heeft een grote vraag naar ammoniak, een essentiële grondstof voor kunstmest. Bij deze route wordt eerst waterstof geproduceerd via SMR, wat leidt tot een non-energetische vraag naar aardgas. Vervolgens reageert de waterstof met stikstof om ammoniak te produceren. Dit proces gaat gepaard met een aanzienlijke CO<sub>2</sub>-uitstoot, maar wordt nog veel toegepast vanwege de hoge efficiëntie en de brede beschikbaarheid van aardgas.
+        </br></br>
+        <ul> 
+          <li>Ga naar <a href="/scenario/emissions/ccus/capture-of-co2">CCUS</a> om de non-energetische emissies (CO<sub>2</sub>) af te vangen</li> 
+          <li>Bekijk de <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">CO<sub>2</sub>-emissies</a> grafiek voor inzicht in de non-energetische emissies</li> 
+        </ul>
     industry_chemicals_fertilizers_local_ammonia_central_hydrogen_share:
       title: Lokale NH<sub>3</sub> (centraal waterstofnetwerk)
       short_description:
       description: |
-        In deze productieroute wordt waterstof geleverd door het centrale waterstofnetwerk, in plaats van 
-        door de stoomreforming van aardgas. Hoe deze waterstof wordt geproduceerd kun je bepalen in de 
-        <a href="/scenario/supply/hydrogen/hydrogen-production"> Waterstofproductie</a>-sectie. De 
-        non-energetische vraag naar netwerkgas wordt in deze route vervangen door non-energetische waterstofvraag.
-        Het daaropvolgende Haber-Boschproces om ammoniak te produceren en de verdere verwerking tot 
-        kunstmest blijft hetzelfde. </br></br>
-        Geassocieerde CO<sub>2</sub>-emissies van non-energetische waterstofvraag in het Haber-Boschproces 
-        tellen mee als non-energetische emissies in jouw scenario (zie 
-        <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">deze</a>
-        grafiek). Door te veranderen hoe waterstof geproduceerd wordt kun je de geassocieerde CO<sub>2</sub>-
-        intensiteit veranderen. Je kunt zien wat de CO<sub>2</sub>-intensiteit van verschillende 
-        waterstofproductieroutes is in 
-        <a href="#" class="open_chart" data-chart-key="co2_intensity_of_hydrogen_production" 
-        data-chart-location="side"> deze</a> grafiek.
+        Deze slider bepaalt welk percentage van de ammoniakproductie lokaal wordt geproduceerd via waterstof uit het centrale waterstofnetwerk.
+        </br></br>
+        De industrie heeft een grote vraag naar ammoniak, een essentiële grondstof voor kunstmest. In deze route wordt (non-energetische) waterstof geleverd via een centraal netwerk, waarbij de bijbehorende CO<sub>2</sub>-emissies als non-energetische emissies worden meegerekend. Door de waterstofproductie aan te passen, kun je de CO<sub>2</sub>-intensiteit beïnvloeden.
+        </br></br>
+        <ul> 
+          <li>Stel in de <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie-sectie</a> in hoe deze waterstof wordt geproduceerd</li> 
+          <li>Bekijk de <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">CO<sub>2</sub>-emissies</a> grafiek voor inzicht in de non-energetische emissies</li> 
+        </ul>
     industry_chemicals_fertilizers_central_ammonia_share:
       title: Centrale NH<sub>3</sub> import
       short_description:
       description: |
-        In deze productieroute wordt zowel de stoomreformer als het Haber-Boschproces overgeslagen.
-        In plaats daarvan wordt ammoniak uit centrale import direct gebruikt voor verdere verwerking 
-        tot kunstmest. Dit leidt tot een non-energetische ammoniakvraag. Je kunt in deze vraag 
-        voorzien door ammoniak te importeren in de
-        <a href="/scenario/supply/hydrogen/ammonia-production"> Ammoniakproductie</a>-sectie. </br></br>
-        Geassocieerde CO<sub>2</sub>-emissies van non-energetische ammoniakvraag worden meegeteld 
-        als non-energetische emissies in jouw scenario (zie 
-        <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">deze</a>
-        grafiek). Je kunt de geassocieerde CO<sub>2</sub>-intensiteit van geïmporteerde ammoniak veranderen 
-        in de <a href="/scenario/supply/hydrogen/hydrogen-production"> 
-        CO<sub>2</sub>-emissies van geïmporteerde ammoniak</a> sectie.
+        Deze slider bepaalt welk percentage van de ammoniakproductie wordt geïmporteerd uit een centraal netwerk.
+        </br></br>
+        De industrie heeft een grote vraag naar ammoniak, een essentiële grondstof voor kunstmest, waarna het verder wordt omgezet in kunstmest. Bij deze omzetting komen non-energetische CO<sub>2</sub>-emissies vrij, waarvan de intensiteit afhankelijk is van de hoeveelheid geïmporteerde ammoniak.
+        </br></br>
+        <ul> 
+          <li>Ga naar <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a> om ammoniak te importeren</li> 
+          <li>Bekijk de <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">CO<sub>2</sub>-emissies</a> grafiek voor inzicht in de non-energetische emissies</li> 
+        </ul>

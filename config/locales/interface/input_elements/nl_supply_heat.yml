@@ -114,81 +114,86 @@ nl:
       title: Gas STEG WKK
       short_description: ''
       description: |
-        Warmtekrachtkoppelingen (WKK’s) maken warmte en elektriciteit.
-        Deze combinatie maakt WKK's vrij energie-efficiënt. Lokaal produceren en gebruiken
-        van warmte en elektriciteit vermijdt transportverliezen en dat bespaart weer
-        energie. WKK's worden vooral gebouwd op locaties met een voorspelbare warmtevraag,
-        zoals bijvoorbeeld chemische fabrieken. <br/><br/>
-        Deze installatie is een combinatie van een gasturbine met afgasketel en stoomturbine. Op de
-        grotere industriële parken wordt centraal elektriciteit en stoom opgewekt
-        en geleverd aan de bedrijven op het park. Deze installatie draait 8000 uur
-        per jaar, waarvan 6000 vollasturen warmte (stoomlevering). <br/><br/>
-        De industriële gas WKK's draaien op een brandstofmix van gas, olie en bio-olie.
-        Klik <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>hier</a> 
-        om de brandstofmix voor jouw scenario te zien en te veranderen.
+        Deze slider bepaalt het vermogen van gasgestookte TEG (stoom- en gasturbine) warmtekrachtkoppelingen (WKK's).
+        </br></br>
+        WKK’s produceren gelijktijdig warmte en elektriciteit, wat efficiënter is dan afzonderlijke opwekking. Een gasgestookte STEG WKK bestaat uit een gasturbine, een afgasketel en een stoomturbine. De restwarmte van de gasturbine wordt gebruikt om stoom op te wekken, die warmte levert of een extra turbine aandrijft voor elektriciteit.
+        </br></br>
+        Op grote industriële locaties wordt stoom en elektriciteit centraal opgewekt en gedistribueerd naar omliggende bedrijven. Deze installaties draaien gemiddeld 8000 uur per jaar, waarvan 6000 uren op vollast voor stoomproductie.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">Gas WKK's in de industrie</a> om de brandstofmix in te stellen</li>
+        </ul>
     capacity_of_industry_chp_turbine_gas_power_fuelmix:
       title: Gasturbine-WKK
       short_description:
       description: |
-        Deze gasturbine WKK staat typisch op een middelgroot industrieel
-        bedrijf en produceert elektriciteit en stoom. Soms staan er verschillende
-        units naast elkaar en wordt er ook stoom geleverd aan naburige bedrijven. <br/><br/>
-        In de chemische industrie wordt veelal gewerkt in vijfploegendienst en het aantal
-        draaiuren van de WKK is dan ook 8000 uur per jaar. De stoomlevering over het
-        jaar kan fluctueren, bijvoorbeeld als gevolg van seizoensinvloeden, en daarom
-        zijn er 6000 vollasturen warmte (stoomlevering). <br/><br/>
-        De industriële gas WKK's draaien op een brandstofmix van gas, olie en bio-olie.
-        Klik <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>hier</a> 
-        om de brandstofmix voor jouw scenario te zien en te veranderen.
+        Deze slider bepaalt het vermogen van gasturbine warmtekrachtkoppelingen (WKK's).
+        </br></br>
+        Gasturbine WKK’s wekken zowel warmte als elektriciteit op, wat efficiënter is dan afzonderlijke productie. De gasturbine drijft een generator aan om elektriciteit te produceren, terwijl de hete uitlaatgassen worden benut in een afgasketel om stoom of warmte op te wekken.
+        </br></br>
+        Deze installaties draaien circa 8000 uur per jaar, waarvan 6000 vollasturen voor stoomproductie. Ze staan vaak bij middelgrote industriële bedrijven en kunnen stoom leveren aan naburige bedrijven.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">Gas WKK's in de industrie</a> om de brandstofmix in te stellen</li>
+        </ul>
     capacity_of_industry_chp_engine_gas_power_fuelmix:
       title: Gasmotor-WKK
       short_description:
       description: |
-        Deze gasmotor WKK staat bijvoorbeeld in de voedingsindustrie en
-        maakt stroom en warmte voor lokaal gebruik. Stel er wordt gedraaid in
-        een drieploegendienst. Het aantal draaiuren komt uit op 6000 per jaar. <br/><br/>
-        Het lokaal produceren van eigen warmte en stroom kan een stuk efficiënter zijn
-        dan de stroom van het net te kopen en warmte met een ketel te maken. <br/><br/>
-        De industriële gas WKK's draaien op een brandstofmix van gas, olie en bio-olie.
-        Klik <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>hier</a> 
-        om de brandstofmix voor jouw scenario te zien en te veranderen.
+        Deze slider bepaalt het vermogen van gasmotor warmtekrachtkoppelingen (WKK's).
+        </br></br>
+        Een gasmotor-WKK genereert zowel elektriciteit als warmte. De motor drijft een generator aan en benut de restwarmte voor stoom of verwarming, wat het lokale energieverbruik efficiënter maakt.
+        </br></br>
+        Deze installaties zijn vooral geschikt voor kleinere industriële toepassingen, zoals de voedingsindustrie, en draaien doorgaans 6000 uur per jaar. Lokaal opwekken van elektriciteit en warmte is energiezuiniger dan het kopen van elektriciteit van het net en het gebruik van ketels voor warmte.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">Gas WKK's in de industrie</a> om de brandstofmix in te stellen</li>
+        </ul>
     capacity_of_industry_chp_turbine_hydrogen:
       title: Waterstofturbine-WKK
       short_description:
       description: |
-        Een WKK produceert zowel warmte als elektriciteit. In de industrie
-        is wordt deze warmte typisch in de vorm van stoom geleverd. Kies hier 
-        het vermogen aan waterstofturbine-WKKs dat levert aan het industriële stoomnetwerk.<br/><br/>
-        Klik <a href=/scenario/costs/specs_renewable_electricity/hydrogen-plants>hier</a> 
-        om de efficiënties van deze WKK aan te passen.
+        Deze slider bepaalt het vermogen van waterstofturbine warmtekrachtkoppelingen (WKK's).
+        </br></br>
+        Waterstofturbine-WKK's genereren zowel warmte als elektriciteit door waterstof te verbranden in een turbine. De resulterende warmte wordt benut voor stoomproductie, wat zorgt voor efficiënt lokaal energieverbruik. 
+        </br></br>
+        Hoewel waterstofturbine-WKK's nog niet op grote schaal worden toegepast, biedt waterstof veel potentieel als schone energiebron voor de toekomst.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/costs/specs_renewable_electricity/hydrogen-plants">Waterstofcentrales</a> om de conversie efficiënties in te stellen</li>
+        </ul>
     capacity_of_industry_chp_ultra_supercritical_coal:
       title: Poederkolen-WKK
       short_description:
-      description: "Warmtekrachtkoppelingen (WKK’s) produceren warmte en elektriciteit.
-        Deze combinatie maakt WKK's vrij energie-efficiënt. Lokaal produceren en gebruiken
-        van warmte en elektriciteit vermijdt transportverliezen en dat bespaart weer
-        energie. WKK's worden vooral gebouwd op locaties met een voorspelbare warmtevraag,
-        zoals bijvoorbeeld chemische fabrieken.\r\n<br/><br/>\r\nDe meeste WKK's draaien
-        op gas, maar afhankelijk van de beschikbaarheid van brandstoffen kunnen ook
-        kolen WKK's worden gebouwd."
+      description: |
+        Deze slider bepaalt het vermogen van poederkolen warmtekrachtkoppelingen (WKK's).
+        </br></br>
+        Poederkolen-WKK's produceren zowel warmte als elektriciteit. De warmte die vrijkomt bij de verbranding van poederkolen wordt gebruikt voor stoomproductie, wat het lokale energieverbruik efficiënter maakt.
+        </br></br>
+        Poederkolen-WKK's worden vaak ingezet op locaties met een voorspelbare warmtevraag, zoals bijvoorbeeld in de chemische industrie. Hoewel de meeste WKK's op gas draaien, kunnen ook kolen-WKK's worden gebouwd, afhankelijk van de beschikbaarheid van brandstoffen. Deze installaties draaien meestal 8000 uur per jaar, met ongeveer 6000 vollasturen voor stoomproductie.
     capacity_of_industry_chp_wood_pellets:
       title: Biomassa-WKK
       short_description:
-      description: Een WKK produceert zowel warmte als elektriciteit. In de industrie
-        is deze warmte vaak in de vorm van stoom. Kies hier het vermogen aan biomassa-WKKs
-        dat levert aan het industriële stoomnetwerk.
+      description: |
+        Deze slider bepaalt het vermogen van biomassa warmtekrachtkoppelingen (WKK's).
+        </br></br>
+        Biomassa-WKK's produceren zowel warmte als elektriciteit door biomassa te verbranden. De warmte die hierbij vrijkomt wordt gebruikt voor stoomproductie, wat het lokale energieverbruik efficiënter maakt.
+        </br></br>
+        Biomassa-WKK's worden vaak ingezet op locaties met een voorspelbare warmtevraag, zoals in de chemische, papier- of voedingsindustrie, waar de vraag naar warmte constant is.
     capacity_of_industry_heat_burner_coal:
       title: Kolenketel
       short_description:
-      description: Een ketel produceert warmte. In de industrie is deze warmte vaak
-        in de vorm van stoom. Kies hier het vermogen aan kolenketels dat levert aan
-        het industriële stoomnetwerk.
+      description: |
+        Deze slider bepaalt het vermogen van kolenketels.
+        </br></br>
+        Een kolenketel produceert warmte, meestal in de vorm van stoom, door de verbranding van kolen. De opgewekte stoom wordt gebruikt voor industriële processen of verwarming, afhankelijk van de warmtevraag.
     capacity_of_industry_heat_burner_crude_oil:
       title: Olieketel
       short_description:
-      description: Een ketel produceert warmte. In de industrie is deze warmte vaak
-        in de vorm van stoom. Kies hier het vermogen aan olieketels dat levert aan
-        het industriële stoomnetwerk.
+      description: |
+        Deze slider bepaalt het vermogen van olieketels.
+        </br></br>
+        Een olieketel produceert warmte door de verbranding van olie. De opgewekte warmte wordt vaak in de vorm van stoom gebruikt voor industriële processen, zoals verwarming of proceswarmte in bijvoorbeeld de chemische industrie.
     capacity_of_industry_heat_burner_lignite:
       title: Bruinkoolketel
       short_description:
@@ -198,17 +203,17 @@ nl:
     capacity_of_industry_heat_well_geothermal:
       title: Geothermie
       short_description:
-      description: Geothermie maakt gebruik van warmte uit de bodem. Voor de industrie
-        is deze warmte vaak een té lage temperatuur. Toch is het in sommige sectoren
-        inzetbaar, zoals de papier- en voedselindustrie. Kies hier het vermogen aan
-        geothermieputten dat warmte levert aan de industrie.
+      description: |
+        Deze slider bepaalt het vermogen van geothermie-installaties.
+        </br></br>
+        Geothermie benut warmte uit de bodem. Hoewel de temperatuur vaak te laag is voor veel industriële processen, kan het in sectoren zoals de papier- en voedingsindustrie wel worden toegepast.
     capacity_of_industry_heat_burner_hydrogen:
       title: Waterstofketel
       short_description:
       description: |
-        Een ketel produceert warmte. In de industrie is deze warmte vaak
-        in de vorm van stoom. Kies hier het vermogen aan waterstofketels dat levert
-        aan het industriële stoomnetwerk.
+        Deze slider bepaalt het vermogen van waterstofketels.
+        </br></br>
+        Waterstofketels produceren warmte zonder CO<sub>2</sub>-uitstoot wanneer groene of blauwe waterstof wordt gebruikt. Hoewel ze nog beperkt worden toegepast, kunnen ze in de toekomst een duurzaam alternatief vormen voor fossiele ketels.
     capacity_of_energy_heat_burner_coal:
       title: Kolenketel
       short_description:

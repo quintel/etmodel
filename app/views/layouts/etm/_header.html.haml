@@ -11,9 +11,12 @@
           %span.fa.fa-caret-down
         .dropdown-menu.version-dropdown.development{ 'aria-labelledby': 'version-button' }
           %ul#version-links
-            %li{style: 'margin-bottom:1rem'}= t('versions.switch')
+            %li{style: 'margin-bottom:0.3rem'}= t('versions.switch')
             - MyEtm::Version.all_other_versions.each do |version|
               %li= link_to "##{version.tag}", version.model_url
+          %hr
+          %div{style: 'padding: 0.2rem; text-align: left; margin-left:0.5rem'}
+            = link_to t('versions.explained'), "https://docs.energytransitionmodel.com/api/model-versions", target: "_blank", rel: "noopener"
     .app-nav
       = render partial: 'layouts/etm/about_menu'
       = render partial: 'layouts/etm/features_menu'

@@ -3,6 +3,8 @@ module MyEtm
     self.site = "#{Settings.idp_url}/api/v1"
 
     def self.all_other_versions
+      return [] if Settings.version == "beta" # Don't show versions in beta
+
       Rails.cache.fetch(:api_versions) do
         find(:all).reject { |v| v.tag == ETModel::Version::TAG }
       end

@@ -10,8 +10,6 @@ describe SavedScenariosController, vcr: true do
   let(:admin) { FactoryBot.create :admin }
 
   before do
-    # allow(ETModel::Clients).to receive(:my_etm_client).and_return(client)
-    # allow(ETModel::Clients).to receive(:engine_client).and_return(client)
     allow(FetchAPIScenario).to receive(:call).and_return(ServiceResult.success(ete_scenario_mock))
     allow(CreateAPIScenario).to receive(:call).and_return(ServiceResult.success(ete_scenario_mock))
   end

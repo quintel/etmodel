@@ -3,10 +3,6 @@
 require 'rails_helper'
 
 describe PagesController, vcr: true do
-  before do
-    allow_any_instance_of(ETModel::TokenDecoder).to receive(:fetch_token).and_return('mocked_token')
-  end
-
   render_views
 
   context 'with an IE11 user agent' do

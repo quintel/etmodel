@@ -21,10 +21,8 @@ describe ScenariosController, vcr: true do
     )
   end
 
-
   before do
     allow(FetchAPIScenario).to receive(:call).and_return(ServiceResult.success(scenario_mock))
-    allow(ETModel::TokenDecoder).to receive(:fetch_token).and_return(mock_token)
     allow(Identity).to receive(:http_client).and_return(double('HTTPClient'))
   end
 

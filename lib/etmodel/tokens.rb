@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module ETModel
-  # Handles JWT decoding, verification, and fetching.
-  module TokenDecoder
+  # Handles JWT decoding, verification.
+  module Tokens
     module_function
 
     DecodeError = Class.new(StandardError)
@@ -35,7 +35,7 @@ module ETModel
           conn.response(:raise_error)
         end
 
-        JSON::JWK::Set.new(client.get.body)
+        JSON::JWK::Set.new(*client.get.body['keys'])
       end
     end
 

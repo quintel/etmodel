@@ -28,11 +28,10 @@ Identity.configure do |config|
   config.issuer = Settings.identity.issuer
   config.client_uri = Settings.identity.client_uri
   config.client_id = Settings.identity.client_id
-  config.client_id = Settings.identity.client_name
   config.client_secret = Settings.identity.client_secret
   config.scope = 'openid profile email roles scenarios:read scenarios:write scenarios:delete'
   config.validate_config = ENV['DOCKER_BUILD'] != 'true'
-  config.sisters = [Settings.identity.etengine]
+  config.resource_uri = Settings.identity.resource_uri
 
   # Create or update the local user when signing in.
   config.on_sign_in = lambda do |session|
@@ -80,10 +79,10 @@ end
 if Rails.env.development?
   # In development, ETEngine often runs as only a single process. Pre-fetch the JWKS keys from the
   # engine so that the first request to the API does not deadlock.
-  require_relative '../../lib/etmodel/token_decoder'
+  require_relative '../../lib/etmodel/tokens'
 
   begin
-    ETModel::TokenDecoder.jwk_set
+    ETModel::Tokens.jwk_set
   rescue StandardError => e
     warn("Couldn't pre-fetch MyETM public key: #{e.message}")
   end

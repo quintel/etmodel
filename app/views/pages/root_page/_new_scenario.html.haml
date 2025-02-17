@@ -1,6 +1,4 @@
 #new-scenario
-  -# .header-container
-  -#   = t('intro.start_a_new_scenario')
   = form_tag root_path do
     .country
       = render "pages/root_page/country_select"
@@ -23,4 +21,3 @@
 
   - if has_active_scenario?
     = render partial: 'pages/root_page/resume_scenario'
-

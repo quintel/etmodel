@@ -111,9 +111,7 @@ class ApplicationController < ActionController::Base
   # This contains the user authentication token if the user is logged in.
   def engine_client
     if current_user
-      identity_session.access_token.http_resource_client do |token|
-        token
-      end
+      identity_session.access_token.http_resource_client
     else
       Identity.http_client(resource: true)
     end

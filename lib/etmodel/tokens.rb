@@ -17,7 +17,7 @@ module ETModel
       end
 
       unless decoded[:iss] == Settings.identity.issuer &&
-             decoded[:aud] == Settings.identity.client_id &&
+             decoded[:aud] == Settings.identity.client_uri &&
              decoded[:sub].present? &&
              decoded[:exp] > Time.now.to_i
         raise DecodeError, 'JWT verification failed'

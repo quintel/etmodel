@@ -282,7 +282,8 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe '#merge' do
+      pending '#merge' do
+        pending 'discontinued feature'
         it 'creates a remote scenario with the average values' do
           post :merge, params: {
             inputs: 'average',

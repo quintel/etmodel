@@ -12,7 +12,7 @@ module JWTHelper
   end
 
   def generate_jwt(user, **kwargs)
-    allow(ETModel::TokenDecoder)
+    allow(ETModel::Tokens)
       .to receive(:jwk_set).and_return(
         JSON::JWK::Set.new([JSON::JWK.new(JWTHelper.key.public_key, kid: 'test_key')])
       )

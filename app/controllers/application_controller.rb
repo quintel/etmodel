@@ -107,11 +107,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Returns the Faraday client which should be used to communicate with ETEngine (resource server).
+  # This contains the user authentication token if the user is logged in.
   def engine_client
-    if current_user && (token = identity_session.sister_token_for(Settings.identity.etengine.name))
-      token.http_client
+    if current_user
+      identity_session.access_token.http_resource_client do |token|
+        token
+      end
     else
-      Identity.http_client(uri: Settings.identity.etengine.uri)
+      Identity.http_client(resource: true)
     end
   end
 

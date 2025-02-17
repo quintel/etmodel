@@ -174,12 +174,9 @@ module ApplicationHelper
           json.name current_user.name
         end
 
-        # Fetch the access token for the current user
-        access_token = ETModel::TokenDecoder.fetch_token(current_user, engine = true)
-
         json.access_token do
-          json.token        access_token
-          json.expires_at   ETModel::TokenDecoder.decode(access_token)['exp']
+          json.token identity_access_token.token
+          json.expires_at identity_access_token.expires_at
         end
       else
         json.current_user nil

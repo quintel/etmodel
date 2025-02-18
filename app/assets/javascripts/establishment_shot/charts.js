@@ -96,7 +96,6 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_indirect_delayed_emissions',
                   title: 'co2_sheet_indirect_delayed_emissions',
                   fa_icon: '\uf016' }
-
             ],
             title: "bar_chart"
         },

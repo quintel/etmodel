@@ -1,7 +1,7 @@
 #preset-scenario
   .header-container
     %h4== #{t('intro.load_a_scenario')}
-    = link_to "#{t('header.load_scenario')} →", "#{Settings.idp_url}/saved_scenarios"
+    = link_to "#{t('header.load_scenario')} →", "#{Settings.identity.issuer}/saved_scenarios"
 
   - if @featured_scenarios.present?
     - year_grouped = MyEtm::FeaturedScenario.in_groups_per_end_year(@featured_scenarios)

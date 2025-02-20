@@ -31,7 +31,7 @@ module JWTHelper
     scopes: []
   )
     {
-      'iss' => Settings.idp_url,
+      'iss' => Settings.identity.issuer,
       'aud' => aud,
       'iat' => iat,
       'exp' => exp,

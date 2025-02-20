@@ -24,7 +24,7 @@ class SavedScenariosController < ApplicationController
 
   # Redirect to MyETM
   def show
-    redirect_to "#{Settings.idp_url}/saved_scenarios/#{params[:id]}", allow_other_host: true
+    redirect_to "#{Settings.identity.issuer}/saved_scenarios/#{params[:id]}", allow_other_host: true
   end
 
   # Saves a scenario by creating a SavedScenario.

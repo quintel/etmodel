@@ -11,7 +11,7 @@ RSpec.describe MyEtmPassthruController, type: :controller do
         get :set_cookie_and_redirect, params: { page: valid_path }
 
         expect(cookies[:etm_last_visited_page]).to eq(root_path)
-        expect(response).to redirect_to("#{Settings.idp_url}/#{valid_path}")
+        expect(response).to redirect_to("#{Settings.identity.issuer}/#{valid_path}")
       end
     end
 
@@ -20,7 +20,7 @@ RSpec.describe MyEtmPassthruController, type: :controller do
         get :set_cookie_and_redirect, params: { page: '' }
 
         expect(cookies[:etm_last_visited_page]).to eq(root_path)
-        expect(response).to redirect_to("#{Settings.idp_url}/")
+        expect(response).to redirect_to("#{Settings.identity.issuer}/")
       end
     end
   end

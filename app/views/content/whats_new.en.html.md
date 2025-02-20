@@ -8,6 +8,7 @@ ___
 
 **New features**
 
+* New module “MyETM” is available which merges “My Scenarios” and “My account”
 * New charts added to the chart selection:
   * ‘Electricity supply and demand’
   * ‘Network gas supply and demand’
@@ -16,6 +17,7 @@ ___
   * Update in ‘CO<sub>2</sub> emissions’ chart description regarding non-energetic emissions
   * Update of documentation regarding non-energetic emissions in <a href="https://docs.energytransitionmodel.com/main/co2-1990-emissions" target="_blank">1990</a> and those <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector#emissions-per-sector" target="_blank">modelled in the ETM</a>
 * Start year data improvements for the municipality of Emmen, regarding the chemical and other industry sectors
+* Update of the dataset of Antwerp from to start year 2022
 * Further improvements to our automatic testing suite that checks the model’s calculations
 
 **Bug fix**
@@ -25,6 +27,8 @@ ___
 * Added missing natural gas export hourly demand profile to the data-export 'Network gas demand, production and storage per hour'
 * Correction in biomass to heat flow in ‘Energy flow overview’ (Sankey) chart to avoid double counting of green gas flows
 * Redesign of chart ‘Net flow of refinery products’ to visualize transformation of non-oil energy carriers when coupled to an external industry model
+* Fixed several issues with must-run interconnectors which should now function as expected
+* Minor correction in aviation emissions in municipal datasets
 
 **Technical changelog**
 

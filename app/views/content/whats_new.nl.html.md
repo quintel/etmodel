@@ -8,6 +8,7 @@ ___
 
 **Nieuwe functies**
 
+* Nieuwe module “MyETM” is beschikbaar, die “Mijn Scenario's” en “Mijn profiel samenvoegt
 * Nieuwe grafieken zijn toegevoegd aan het grafiekenoverzicht:
   * ‘Elektriciteit vraag en aanbod’
   * ‘Netwerkgas vraag en aanbod’
@@ -16,6 +17,7 @@ ___
   * Update van de grafiekbeschrijving van grafiek ‘CO<sub>2</sub>-emissies’ met betrekking tot niet-energetische emissies
   * Update van documentatie over niet-energetische emissies in <a href="https://docs.energytransitionmodel.com/main/co2-1990-emissions" target="_blank">1990</a> en deze <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector#emissions-per-sector" target="_blank">gemodelleerd in het ETM</a>
 * Verbeteringen in startjaardata voor de gemeente Emmen, met betrekking tot de chemiesector en overige industrie
+* Update van dataset Antwerpen naar startjaar 2022
 * Verdere verbeteringen aan onze automatische testomgeving die de modelberekeningen controleert
 
 **Bug fixes**
@@ -25,6 +27,8 @@ ___
 * Ontbrekend uurlijkse profiel van export van aardgas toegevoegd aan de data-export 'Netwerkgasvraag, -productie en -opslag per uur'
 * Correctie in de stroom van biomassa naar warmte in de grafiek ‘Overzicht energiestromen’ (Sankey) om dubbeltelling van groen gas te voorkomen
 * Herontwerp van de grafiek ‘Netto stroom van raffinageproducten’ om de transformatie van niet-olie energiedragers te visualiseren wanneer er is gekoppeld aan een extern industriemodel
+* Enkele issues omtrent must-run interconnectoren zijn verholpen waardoor deze nu correct functioneren
+* Kleine correctie in luchtvaartemissies van gemeentelijke datasets
 
 **Technische changelog**
 

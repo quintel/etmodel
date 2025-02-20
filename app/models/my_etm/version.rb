@@ -1,6 +1,6 @@
 module MyEtm
   class Version < ActiveResource::Base
-    self.site = "#{Settings.idp_url}/api/v1"
+    self.site = "#{Settings.identity.issuer}/api/v1"
 
     def self.all_other_versions
       return [] if Settings.version == "beta" # Don't show versions in beta

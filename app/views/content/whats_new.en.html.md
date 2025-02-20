@@ -6,7 +6,12 @@ ___
 
 **New features**
 
-* New module “MyETM” is available which merges “My Scenarios” and “My account”
+* New module “MyETM” is available which merges “My Scenarios”, "My collections" and “My account”
+  * MyETM is your User Hub: a central place to manage Saved Scenarios, Collections, and account settings
+  * Use MyETM to:
+    * Generate Personal Access Tokens
+    * Subscribe to the newsletter
+    * Update personal infomation
 * New charts added to the chart selection:
   * ‘Electricity supply and demand’
   * ‘Network gas supply and demand’

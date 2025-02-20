@@ -6,7 +6,12 @@ ___
 
 **Nieuwe functies**
 
-* Nieuwe module “MyETM” is beschikbaar, die “Mijn Scenario's” en “Mijn profiel samenvoegt
+* Nieuwe module “MyETM” is beschikbaar, die “Mijn Scenario's”, "Mijn collecties" en “Mijn profiel samenvoegt
+  * MyETM is je gebruikershub: een centrale plek voor het beheer van opgeslagen scenario's, Collecties en accountinstellingen
+  * Gebruik MyETM om:
+    * Persoonlijke ***Access Tokens*** te genereren
+    * Aan te melden voor de nieuwsbrief
+    * Persoonlijke gegevens bij te werken
 * Nieuwe grafieken zijn toegevoegd aan het grafiekenoverzicht:
   * ‘Elektriciteit vraag en aanbod’
   * ‘Netwerkgas vraag en aanbod’

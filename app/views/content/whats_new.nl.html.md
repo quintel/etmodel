@@ -4,8 +4,6 @@ ___
 
 ## 2025.02
 
-### 4 februari 2025
-
 **Nieuwe functies**
 
 * Nieuwe module “MyETM” is beschikbaar, die “Mijn Scenario's” en “Mijn profiel samenvoegt

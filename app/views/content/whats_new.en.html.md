@@ -4,8 +4,6 @@ ___
 
 ## 2025.02
 
-### 4 February 2025
-
 **New features**
 
 * New module “MyETM” is available which merges “My Scenarios” and “My account”

@@ -62,6 +62,12 @@ class SavedScenariosController < ApplicationController
     # instead of just taking it from the params. It's also more
     # secure (FetchSavedScenario)
 
+    # Try to sign in user when they should be
+    # TODO: this is horrible. Please find a better solution!
+    if !signed_in? && params[:current_user] == 'true'
+      return authenticate_user!
+    end
+
     # Make sure that if the requested saved scenario was already active
     # we do not create a new scenario. Only check if the title has been updated.
     if Current.setting.active_saved_scenario_id == params[:id].to_i

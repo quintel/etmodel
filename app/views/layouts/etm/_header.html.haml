@@ -27,16 +27,13 @@
       .dropdown
         %button#locale-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown' }, type: 'button' }
           %span.fa.fa-globe
-          = t('header.current_language')
           %span.fa.fa-caret-down
         %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'locale-button' }
           %li
             %a.dropdown-item{ href: url_for(locale: 'en') }
-              = image_tag 'flags-24/uk.png'
               English
           %li
             %a.dropdown-item{ href: url_for(locale: 'nl') }
-              = image_tag 'flags-24/nl.png'
               Nederlands
 
     - if current_user

@@ -6,9 +6,9 @@ ___
 
 **Nieuwe functies**
 
-* Nieuwe opzet van de "Mijn scenario's" en "Mijn profiel" pagina's
-  * We introduceren een centrale hub voor het beheer van opgeslagen scenario's, Collecties en accountinstellingen
-  * Gebruik deze hub om
+* Nieuwe opzet van de "Mijn Scenario's" en "Mijn Profiel" pagina's
+  * Er is een centrale omgeving voor het beheer van opgeslagen scenario's, Collecties en accountinstellingen
+  * Gebruik deze omgeving om:
     * Opgeslagen scenario's te beheren en delen
     * Persoonlijke *Access Tokens* te genereren
     * Aan te melden voor de nieuwsbrief

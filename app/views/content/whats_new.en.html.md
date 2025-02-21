@@ -6,9 +6,9 @@ ___
 
 **New features**
 
-* New setup of the "My scenarios" and "My account" pages
-  * We introduce a central hub to manage saved scenarios, Collections, and account settings
-  * Use this hub to
+* New setup of the "My Scenarios" and "My Account" pages
+  * A central environment is introduced to manage saved scenarios, Collections, and account settings
+  * Use this to:
     * Manage and share saved scenarios
     * Generate Personal Access Tokens
     * Subscribe to the newsletter

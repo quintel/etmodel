@@ -33,6 +33,8 @@ ___
 * Herontwerp van de grafiek ‘Netto stroom van raffinageproducten’ om de transformatie van niet-olie energiedragers te visualiseren wanneer er is gekoppeld aan een extern industriemodel
 * Gedrag van externe koppeling voor must-run interconnectoren gecorrigeerd
 * Kleine correctie in luchtvaartemissies van gemeentelijke datasets
+* Fix in Collecties waarmee wordt gecorrigeerd voor een dubbeltelling van groengas in eindgebruik
+* Correctie in grafiek 'Totale broeikasgasemissies (CO2-eq)' waardoor de weergegeven CO2 emissies nu overeenkomen met grafiek 'CO2-emissies'
 
 **Technische changelog**
 

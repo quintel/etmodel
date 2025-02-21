@@ -33,6 +33,8 @@ ___
 * Redesign of chart ‘Net flow of refinery products’ to visualize transformation of non-oil energy carriers when coupled to an external industry model
 * Fixed behaviour of external coupling for must-run interconnectors
 * Minor correction in aviation emissions in municipal datasets
+* Fix in Collections to correct for double-counting of green gas in final demand series
+* Correction in chart 'Total greenhouse gas emissions (CO2 eq)' to ensure that depicted CO2 emissions are aligned with 'CO2 emissions' chart
 
 **Technical changelog**
 

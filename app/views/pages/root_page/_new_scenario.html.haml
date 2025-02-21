@@ -11,7 +11,7 @@
       %button#scenario-info-button{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'hover' }, type: 'button' }
         %span.fa.fa-question-circle
       .dropdown-menu.scenario-info-dropdown{ 'aria-labelledby': 'scenario-info-button' }
-        = t('intro.help_html')
+        = t('intro.help_html', contact_url: "#{Settings.identity.issuer}/contact")
     :javascript
       new DropdownView({ el: $('#scenario-info') }).render()
     .submit
@@ -21,4 +21,3 @@
         %span.fa.fa-chevron-right
 
         = hidden_field_tag :reset, '1'
-

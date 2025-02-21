@@ -16,4 +16,4 @@ Use the ETM to get a comprehensive overview of the energy system of your area or
 
 Choose the area that you are interested in, pick a future year and simply start exploring! The ETM simulates the energy system of your area for the present and your future year. Use the sliders to adjust the future energy system. The interactive charts, tables, and KPIs will visualize the impact of your choices on the future. By creating a free account, you can save and share your work.
 
-[Check out the documentation](https://docs.energytransitionmodel.com/main/starting-or-exploring) for a complete guide on how to use the ETM.
+[Check out the documentation](https://docs.energytransitionmodel.com/main/user_manual/starting-scenario) for a complete guide on how to use the ETM.

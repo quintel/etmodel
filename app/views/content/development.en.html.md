@@ -37,7 +37,7 @@ by our users, who can propose changes on any part of the model due to its open-s
 Additionally, these needs come from our extensive network of partners, who we collaborate with in
 development projects. Do you have any suggestions for model improvements?
 
-[Let us know →](/contact)
+[Let us know →](<%= Settings.identity.issuer %>/contact)
 
 <h2 id="partners">Partners</h2>
 
@@ -46,4 +46,4 @@ Over the years many grid operators, government parties, consultancies, universit
 institutes have actively contributed knowledge and resources making sure the ETM remains a leading
 open-source tool. Are you interested in collaborating to expand or improve the ETM?
 
-[Contact us →](https://quintel.com/contact)
+[Contact us →](<%= Settings.identity.issuer %>/contact)

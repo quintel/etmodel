@@ -30,4 +30,4 @@ blocks:
         - name: Docker Hub credentials
         - name: Stable SSH settings
     run:
-      when: branch = 'auth-again'
+      when: branch = 'master'

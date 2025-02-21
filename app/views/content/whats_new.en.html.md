@@ -35,7 +35,7 @@ ___
 
 **Technical changelog**
 
-* <a href="/assets/pages/whats_new/changelog/202502_changelog_ETM.csv" download>202502_changelog.csv</a>
+* <a href="/assets/pages/whats_new/changelog/202502_changelog_inputs.csv" download>202502_changelog_inputs.csv</a>
 
 ---
 

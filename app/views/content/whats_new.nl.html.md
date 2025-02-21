@@ -30,7 +30,7 @@ ___
 * Ontbrekend uurlijkse profiel van export van aardgas toegevoegd aan de data-export 'Netwerkgasvraag, -productie en -opslag per uur'
 * Correctie in de stroom van biomassa naar warmte in de grafiek ‘Overzicht energiestromen’ (Sankey) om dubbeltelling van groen gas te voorkomen
 * Herontwerp van de grafiek ‘Netto stroom van raffinageproducten’ om de transformatie van niet-olie energiedragers te visualiseren wanneer er is gekoppeld aan een extern industriemodel
-* Enkele issues omtrent must-run interconnectoren zijn verholpen waardoor deze nu correct functioneren
+* Gedrag van externe koppeling voor must-run interconnectoren gecorrigeerd
 * Kleine correctie in luchtvaartemissies van gemeentelijke datasets
 
 **Technische changelog**

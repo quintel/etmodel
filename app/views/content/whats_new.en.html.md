@@ -30,7 +30,7 @@ ___
 * Added missing natural gas export hourly demand profile to the data-export 'Network gas demand, production and storage per hour'
 * Correction in biomass to heat flow in ‘Energy flow overview’ (Sankey) chart to avoid double counting of green gas flows
 * Redesign of chart ‘Net flow of refinery products’ to visualize transformation of non-oil energy carriers when coupled to an external industry model
-* Fixed several issues with must-run interconnectors which should now function as expected
+* Fixed behaviour of external coupling for must-run interconnectors
 * Minor correction in aviation emissions in municipal datasets
 
 **Technical changelog**

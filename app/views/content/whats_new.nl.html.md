@@ -2,7 +2,7 @@
 
 ___
 
-## 2025.02
+# Februari 2025
 
 **Nieuwe functies**
 
@@ -39,7 +39,7 @@ ___
 
 ---
 
-# January 2025
+# Januari 2025
 
 Nieuwe grafieken zijn toegevoegd voor vraag en aanbod in warmtenetten per temperatuurniveau (HT, MT, LT). Bekijk deze nieuwe grafieken in het grafiekenoverzicht in het ETM. Daarnaast zijn er deze maand diverse bug fixes en verbeteringen gedaan.
 

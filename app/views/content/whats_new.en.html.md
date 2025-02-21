@@ -2,7 +2,7 @@
 
 ___
 
-## 2025.02
+# February 2025
 
 **New features**
 
@@ -23,7 +23,7 @@ ___
 * Update of the dataset of Antwerp from to start year 2022
 * Further improvements to our automatic testing suite that checks the model’s calculations
 
-**Bug fix**
+**Bug fixes**
 
 * Fixed a minor discrepancy between the calculated hourly and annual electricity flows for load shifting in the ICT sector
 * Added missing technology hybrid air heat pump (oil-fired) to chart ‘Number of residences per space heating technology’

@@ -8,7 +8,7 @@
 
 
 # URL for the Multi-Year Charts application.
-multi_year_charts_url: http://localhost:3005
+collections_url: http://localhost:3005
 
 # The (stable) version's name
 version: <%= ENV.fetch('VERSION_TAG', 'latest') %>

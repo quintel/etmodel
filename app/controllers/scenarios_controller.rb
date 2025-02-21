@@ -290,7 +290,7 @@ class ScenariosController < ApplicationController
   # Internal: For requests originating in the "multi-year charts" application,
   # we must permit pages to be loaded in an iframe.
   def myc_content_security_policy
-    url = Settings.multi_year_charts_url
+    url = Settings.collections_url
 
     return unless url
 

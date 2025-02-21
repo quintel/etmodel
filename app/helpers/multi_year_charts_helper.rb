@@ -5,7 +5,7 @@ module MultiYearChartsHelper
   #
   # Returns a string.
   def myc_url(multi_year_chart)
-    "#{Settings.multi_year_charts_url}/#{multi_year_chart.redirect_slug}?" \
+    "#{Settings.collections_url}/#{multi_year_chart.redirect_slug}?" \
       "locale=#{I18n.locale}&" \
       "title=#{ERB::Util.url_encode(multi_year_chart.title)}"
   end

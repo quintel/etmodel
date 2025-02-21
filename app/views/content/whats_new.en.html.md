@@ -6,9 +6,10 @@ ___
 
 **New features**
 
-* New module “MyETM” is available which merges “My Scenarios”, "My collections" and “My account”
-  * MyETM is your User Hub: a central place to manage Saved Scenarios, Collections, and account settings
-  * Use MyETM to:
+* New setup of the "My scenarios" and "My account" pages
+  * We introduce a central hub to manage saved scenarios, Collections, and account settings
+  * Use this hub to
+    * Manage and share saved scenarios
     * Generate Personal Access Tokens
     * Subscribe to the newsletter
     * Update personal infomation

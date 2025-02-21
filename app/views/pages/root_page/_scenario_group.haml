@@ -3,7 +3,7 @@
   - title = scenario.localized_title(I18n.locale)
   - if title.to_s.include?(' - ')
     %li.with_org
-      = link_to(play_path) do
+      = link_to("#{Settings.identity.issuer}/saved_scenarios/#{scenario.saved_scenario_id}") do
         - main_title, org = title.split(' - ', 2)
 
         %span.who= format_subscripts(main_title)
@@ -11,6 +11,6 @@
         %span.author= scenario.author
   - else
     %li
-      = link_to(play_path) do
+      = link_to("#{Settings.identity.issuer}/saved_scenarios/#{scenario.saved_scenario_id}") do
         = format_subscripts(title)
         %span.author= scenario.author

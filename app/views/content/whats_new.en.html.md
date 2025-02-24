@@ -20,6 +20,7 @@ ___
   * Split of non-energetic and delayed emissions in the ‘CO<sub>2</sub> emissions’ chart to separate categories
   * Update in ‘CO<sub>2</sub> emissions’ chart description regarding non-energetic emissions
   * Update of documentation regarding non-energetic emissions in <a href="https://docs.energytransitionmodel.com/main/co2-1990-emissions" target="_blank">1990</a> and those <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector#emissions-per-sector" target="_blank">modelled in the ETM</a>
+* Climate and Energy Outlook (*Klimaat- en Energieverkenning, KEV*) 2024 added as featured scenario for future year <a href="https://energytransitionmodel.com/saved_scenarios/18836" target="_blank">2030</a> en <a href="https://energytransitionmodel.com/saved_scenarios/19310" target="_blank">2035</a>
 * Start year data improvements for the municipality of Emmen, regarding the chemical and other industry sectors
 * Update of the dataset of Antwerp from to start year 2022
 * Further improvements to our automatic testing suite that checks the model’s calculations

@@ -20,6 +20,7 @@ ___
   * Opsplitsing van niet-energetische en uitgestelde emissies naar afzonderlijke categorieën in de grafiek ‘CO<sub>2</sub>-emissies’
   * Update van de grafiekbeschrijving van grafiek ‘CO<sub>2</sub>-emissies’ met betrekking tot niet-energetische emissies
   * Update van documentatie over niet-energetische emissies in <a href="https://docs.energytransitionmodel.com/main/co2-1990-emissions" target="_blank">1990</a> en deze <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector#emissions-per-sector" target="_blank">gemodelleerd in het ETM</a>
+* Klimaat- en Energieverkenning (KEV) 2024 als uitegelicht scenario toegevoegd voor eindjaar <a href="https://energytransitionmodel.com/saved_scenarios/18836" target="_blank">2030</a> en <a href="https://energytransitionmodel.com/saved_scenarios/19310" target="_blank">2035</a>
 * Verbeteringen in startjaardata voor de gemeente Emmen, met betrekking tot de chemiesector en overige industrie
 * Update van dataset Antwerpen naar startjaar 2022
 * Verdere verbeteringen aan onze automatische testomgeving die de modelberekeningen controleert

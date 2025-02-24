@@ -7,4 +7,4 @@ multi_year_charts_url: https://myc.energytransitionmodel.com
 partners_url: https://energytransitionmodel.com
 
 identity:
-  client_uri: <%= ENV.fetch('IDENTITY_CLIENT_URI', https://energytransitionmodel.com) %>
+  client_uri: <%= ENV.fetch('IDENTITY_CLIENT_URI', 'https://energytransitionmodel.com') %>

@@ -2,6 +2,47 @@
 
 ___
 
+# February 2025
+
+**New features**
+
+* New setup of the "My Scenarios" and "My Account" pages
+  * A central environment is introduced to manage saved scenarios, Collections, and account settings
+  * Use this to:
+    * Manage and share saved scenarios
+    * Generate Personal Access Tokens
+    * Subscribe to the newsletter
+    * Update personal infomation
+* New charts added to the chart selection:
+  * ‘Electricity supply and demand’
+  * ‘Network gas supply and demand’
+* Improvements for non-energetic CO<sub>2</sub> emissions to better facilitate the comparison between 1990, the start, and future year:
+  * Split of non-energetic and delayed emissions in the ‘CO<sub>2</sub> emissions’ chart to separate categories
+  * Update in ‘CO<sub>2</sub> emissions’ chart description regarding non-energetic emissions
+  * Update of documentation regarding non-energetic emissions in <a href="https://docs.energytransitionmodel.com/main/co2-1990-emissions" target="_blank">1990</a> and those <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector#emissions-per-sector" target="_blank">modelled in the ETM</a>
+* Climate and Energy Outlook (*Klimaat- en Energieverkenning, KEV*) 2024 added as featured scenario for future year <a href="https://energytransitionmodel.com/saved_scenarios/18836" target="_blank">2030</a> en <a href="https://energytransitionmodel.com/saved_scenarios/19310" target="_blank">2035</a>
+* Start year data improvements for the municipality of Emmen, regarding the chemical and other industry sectors
+* Update of the dataset of Antwerp from to start year 2022
+* Further improvements to our automatic testing suite that checks the model’s calculations
+
+**Bug fixes**
+
+* Fixed a minor discrepancy between the calculated hourly and annual electricity flows for load shifting in the ICT sector
+* Added missing technology hybrid air heat pump (oil-fired) to chart ‘Number of residences per space heating technology’
+* Added missing natural gas export hourly demand profile to the data-export 'Network gas demand, production and storage per hour'
+* Correction in biomass to heat flow in ‘Energy flow overview’ (Sankey) chart to avoid double counting of green gas flows
+* Redesign of chart ‘Net flow of refinery products’ to visualize transformation of non-oil energy carriers when coupled to an external industry model
+* Fixed behaviour of external coupling for must-run interconnectors
+* Minor correction in aviation emissions in municipal datasets
+* Fix in Collections to correct for double-counting of green gas in final demand series
+* Correction in chart 'Total greenhouse gas emissions (CO2 eq)' to ensure that depicted CO2 emissions are aligned with 'CO2 emissions' chart
+
+**Technical changelog**
+
+* <a href="/assets/pages/whats_new/changelog/202502_changelog_inputs.csv" download>202502_changelog_inputs.csv</a>
+
+---
+
 # January 2025
 New charts added for supply and demand in district heating per temperature level (HT, MT, LT). Check out these supply and demand charts in the chart overview in the ETM. Furthermore, miscellaneous bug fixes and improvements are done this month.
 

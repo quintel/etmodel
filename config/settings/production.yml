@@ -1,5 +1,4 @@
-ete_url: https://engine.energytransitionmodel.com
-idp_url: <%= ENV.fetch('IDP_URL', 'https://my.energytransitionmodel.com') %>
+ete_url: <%= ENV.fetch('ETE_URL', 'https://engine.energytransitionmodel.com) %>
 converter_detail_url: https://engine.energytransitionmodel.com/converters
 esdl_ete_url: https://esdl.energytransitionmodel.com/api/v1/
 gquery_detail_url: https://engine.energytransitionmodel.com/data/latest/gqueries/
@@ -8,4 +7,4 @@ multi_year_charts_url: https://myc.energytransitionmodel.com
 partners_url: https://energytransitionmodel.com
 
 identity:
-  client_uri: https://energytransitionmodel.com
+  client_uri: <%= ENV.fetch('IDENTITY_CLIENT_URI', https://energytransitionmodel.com) %>

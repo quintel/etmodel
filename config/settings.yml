@@ -83,11 +83,9 @@ identity:
   client_id: <%= ENV['IDENTITY_CLIENT_ID'] %>
   client_secret: <%= ENV['IDENTITY_CLIENT_SECRET'] %>
   client_uri: <%= ENV.fetch('IDENTITY_CLIENT_URI', 'http://localhost:3001') %>
-
   resource_uri: <%= ENV.fetch('ETE_URL', 'http://localhost:3000') %>
 
 ete_url: <%= ENV.fetch('ETE_URL', 'http://localhost:3000') %>
-idp_url: <%= ENV.fetch('IDP_URL', 'http://localhost:3002') %>
 
 # ESDL
 # ----

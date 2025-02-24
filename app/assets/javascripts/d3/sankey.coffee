@@ -399,7 +399,7 @@ D3.sankey =
           {left: 'network',       right: 'loss',                   gquery: 'network_to_loss_in_sankey',          color: '#DCDCDC'}
         ]
     sankey_heat_networks:
-   data:
+      data:
         nodes: [
           {id: 'coal_and_derivatives',         column: 0, label: 'coal_and_derivatives',              color: '#252525'},
           {id: 'natural_gas_and_derivatives',  column: 0, label: 'natural_gas',                       color: '#7f7f7f'},

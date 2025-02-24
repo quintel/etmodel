@@ -1,4 +1,5 @@
 ete_url: https://engine.energytransitionmodel.com
+idp_url: <%= ENV.fetch('IDP_URL', 'https://my.energytransitionmodel.com') %>
 converter_detail_url: https://engine.energytransitionmodel.com/converters
 esdl_ete_url: https://esdl.energytransitionmodel.com/api/v1/
 gquery_detail_url: https://engine.energytransitionmodel.com/data/latest/gqueries/

@@ -1,15 +1,16 @@
 #resume-scenario
-  .country
-    %span.country{ class: area_css_class(Current.setting.area) }
-      = current_area_name
-  .year
-    %span.period= Current.setting.end_year
-  - if Current.setting.active_scenario_title.present?
-    .scenario-title
+  .resume-container
+    .country
       %span.country{ class: area_css_class(Current.setting.area) }
-        = Current.setting.active_scenario_title
+        = current_area_name
+    .year
+      %span.period= Current.setting.end_year
+    - if Current.setting.active_scenario_title.present?
+      .scenario-title
+        %span.country{ class: area_css_class(Current.setting.area) }
+          = Current.setting.active_scenario_title
 
-  .submit
-    %a.root-button{ href: Current.setting.last_etm_page || play_path }
-      = t('continue').titleize
-      %span.fa.fa-arrow-right
+    .submit
+      %a.root-button{ href: Current.setting.last_etm_page || play_path }
+        = t('continue').titleize
+        %span.fa.fa-arrow-right

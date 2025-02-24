@@ -104,58 +104,38 @@ body#root
     margin-left: auto
     margin-right: auto
     max-width: 780px
-    width: 80%
     display: flex
     flex-direction: column
-    margin-bottom: 200px // adjust this
-    border-radius: 200px
-    display: flex
-    gap: 2rem
 
-    .header-container
+    .resume-container
       display: flex
-      margin: -15px -20px 0px
-      padding: 21px 20px 0
-      color: $soft-grey
-      font-weight: 400 !important
-      margin-left: 2rem
-      margin-bottom: 0.5rem
-      a
-        font-size: 0.875rem
-        font-weight: 500
-        line-height: 1
-        padding: 0.5rem
-        margin: -0.5rem
-        color: $landing-grey
-    h4
-      font-size: 16px
-      line-height: 1
-      margin: 0 auto 0 0
-      padding: 0
+      gap: 1rem
+      align-items: center // Aligns text vertically
+      justify-content: space-between
+      border: 1px white solid
+      border-radius: 50px
+      padding: 12px
 
-      .country
-        width: 348px
-        a
-          display: inline-block
-          font-size: 11px
-          margin-top: 5px
-      .year
-        width: 150px
-
-    .scenario-title
-      font-size: 14px
+    .country
+      font-size: 16px // Match font-size with new-scenario
+      font-weight: 400
       color: $landing-grey
-      font-weight: bold
+      width: 350px // Ensures consistency
+    .year
+      font-size: 16px // Match font-size with new-scenario
+      font-weight: 400
+      color: $landing-grey
+      width: 350px // Ensures consistency
+      margin-left: 250px
 
     .submit
-      text-align: right
-      margin-top: 10px
+      text-align: right // Aligns continue button similarly to start button
+      vertical-align: center
+
     .root-button
       background: #56b351
       color: $soft-grey
-      cursor: pointer
-      outline: none
-      padding: 7px 7px
+      padding: 7px 14px
       border-radius: 4px
       display: inline-flex
       align-items: center
@@ -173,75 +153,13 @@ body#root
       .fa-arrow-right
         margin-left: 5px
 
-    .country
-      background-position: 0 1px
-      background-repeat: no-repeat
-      display: inline-block // Fixes blurred background image in Chrome.
-      font-weight: bold
-      &.AT_austria
-        @include flag($region: "at_austria")
-      &.BE_belgium
-        @include flag($region: "be_belgium")
-      &.BG_bulgaria
-        @include flag($region: "bg_bulgaria")
-      &.CY_cyprus
-        @include flag($region: "cy_cyprus")
-      &.CZ_czechia
-        @include flag($region: "cz_czechia")
-      &.DE_germany
-        @include flag($region: "de_germany")
-      &.DK_denmark
-        @include flag($region: "dk_denmark")
-      &.EE_estonia
-        @include flag($region: "ee_estonia")
-      &.EL_greece
-        @include flag($region: "el_greece")
-      &.ES_spain
-        @include flag($region: "es_spain")
-      &.eu, &.EU27_european_union_27_countries
-        @include flag($region: "eu27_european_union_27_countries")
-      &.fi_finland
-        @include flag($region: "fi_finland")
-      &.FR_france
-        @include flag($region: "fr_france")
-      &.HR_croatia
-        @include flag($region: "hr_croatia")
-      &.HU_hungary
-        @include flag($region: "hu_hungary")
-      &.IE_ireland
-        @include flag($region: "ie_ireland")
-      &.IT_italy
-        @include flag($region: "it_italy")
-      &.LT_lithuania
-        @include flag($region: "lt_lithuania")
-      &.LU_luxembourg
-        @include flag($region: "lu_luxembourg")
-      &.LV_latvia
-        @include flag($region: "lv_latvia")
-      &.MT_malta
-        @include flag($region: "mt_malta")
-      &.nl
-        @include flag($region: "nl")
-      &.nl2019
-        @include flag($region: "nl")
-      &.PL_poland
-        @include flag($region: "pl_poland")
-      &.PT_portugal
-        @include flag($region: "pt_portugal")
-      &.RO_romania
-        @include flag($region: "ro_romania")
-      &.SE_sweden
-        @include flag($region: "se_sweden")
-      &.SI_slovenia
-        @include flag($region: "si_slovenia")
-      &.SK_slovakia
-        @include flag($region: "sk_slovakia")
-      &.UK_united_kingdom
-        @include flag($region: "uk_united_kingdom")
-      &.UK_united_kingdom
-        @include flag($region: "sg_singapore")
-      &.VUNH5_efate
-        @include flag($region: "vunh5_efate")
+  #resume-scenario .country,
+  #resume-scenario .year,
+  #new-scenario .country,
+  #new-scenario .year
+    font-size: 16px
+    font-weight: 400
+    color: black
 
       // &.UKNI01_northern_ireland
     span.root-button
@@ -304,7 +222,7 @@ body#root
     max-width: 780px
     display: flex
     flex-direction: column
-    margin-bottom: 200px
+    margin-bottom: 50px
 
     .header-container
       color: $landing-grey

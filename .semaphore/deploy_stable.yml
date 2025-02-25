@@ -19,15 +19,14 @@ blocks:
           commands:
             - checkout
             - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-            - 'docker build --progress plain -f Dockerfile.production -t quintel/etmodel:stable .'
-            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:stable --build-arg "SOURCE_IMAGE=quintel/etmodel:stable" .'
-            - 'docker push quintel/etmodel:stable'
-            - 'docker push quintel/etmodel-nginx:stable'
+            - 'docker build --progress plain -f Dockerfile.production -t quintel/etmodel:2025_01 .'
+            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:2025_01 --build-arg "SOURCE_IMAGE=quintel/etmodel:2025_01" .'
+            - 'docker push quintel/etmodel:2025_01'
+            - 'docker push quintel/etmodel-nginx:2025_01'
             - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
-            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_stable && ./deploy.sh"
-            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_stable_2 && ./deploy.sh"
+            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_2025_1 && ./deploy.sh"
       secrets:
         - name: Docker Hub credentials
         - name: Stable SSH settings
     run:
-      when: branch = 'master'
+      when: branch = '2025-01'

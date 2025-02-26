@@ -6,7 +6,12 @@
 # See https://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#key-generator-digest-class-changing-to-use-sha256
 Rails.application.config.action_dispatch.cookies_rotations.tap do |cookies|
   salt = Rails.application.config.action_dispatch.authenticated_encrypted_cookie_salt
-  secret_key_base = Rails.application.credentials.secret_key_base || ENV["SECRET_KEY_BASE"]
+  secret_key_base =
+  if Rails.env.test?
+    "test_secret_key_base"
+  else
+    Rails.application.credentials.secret_key_base || ENV["SECRET_KEY_BASE"]
+  end
 
   key_generator = ActiveSupport::KeyGenerator.new(
     secret_key_base, iterations: 1000, hash_digest_class: OpenSSL::Digest::SHA1

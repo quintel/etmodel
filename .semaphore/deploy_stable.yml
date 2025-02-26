@@ -24,7 +24,7 @@ blocks:
             - 'docker push quintel/etmodel:2025_01'
             - 'docker push quintel/etmodel-nginx:2025_01'
             - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
-            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_2025_1 && ./deploy.sh"
+            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_2025_01 && ./deploy.sh"
       secrets:
         - name: Docker Hub credentials
         - name: Stable SSH settings

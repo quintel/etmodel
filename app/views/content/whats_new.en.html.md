@@ -25,30 +25,35 @@ ___
 * Update of the dataset of Antwerp from to start year 2022
 * Further improvements to our automatic testing suite that checks the model’s calculations
 
-**Bug fixes**
+<details>
+  <summary>**Bug fixes**</summary>
 
-* Fixed a minor discrepancy between the calculated hourly and annual electricity flows for load shifting in the ICT sector
-* Added missing technology hybrid air heat pump (oil-fired) to chart ‘Number of residences per space heating technology’
-* Added missing natural gas export hourly demand profile to the data-export 'Network gas demand, production and storage per hour'
-* Correction in biomass to heat flow in ‘Energy flow overview’ (Sankey) chart to avoid double counting of green gas flows
-* Redesign of chart ‘Net flow of refinery products’ to visualize transformation of non-oil energy carriers when coupled to an external industry model
-* Fixed behaviour of external coupling for must-run interconnectors
-* Minor correction in aviation emissions in municipal datasets
-* Fix in Collections to correct for double-counting of green gas in final demand series
-* Correction in chart 'Total greenhouse gas emissions (CO2 eq)' to ensure that depicted CO2 emissions are aligned with 'CO2 emissions' chart
+  * Fixed a minor discrepancy between the calculated hourly and annual electricity flows for load shifting in the ICT sector
+  * Added missing technology hybrid air heat pump (oil-fired) to chart ‘Number of residences per space heating technology’
+  * Added missing natural gas export hourly demand profile to the data-export 'Network gas demand, production and storage per hour'
+  * Correction in biomass to heat flow in ‘Energy flow overview’ (Sankey) chart to avoid double counting of green gas flows
+  * Redesign of chart ‘Net flow of refinery products’ to visualize transformation of non-oil energy carriers when coupled to an external industry model
+  * Fixed behaviour of external coupling for must-run interconnectors
+  * Minor correction in aviation emissions in municipal datasets
+  * Fix in Collections to correct for double-counting of green gas in final demand series
+  * Correction in chart 'Total greenhouse gas emissions (CO2 eq)' to ensure that depicted CO2 emissions are aligned with 'CO2 emissions' chart
+</details>
 
-**Technical changelog**
+<details>
+  <summary>**Technical changelog**</summary>
 
-* <a href="/assets/pages/whats_new/changelog/202502_changelog_inputs.csv" download>202502_changelog_inputs.csv</a>
+  * <a href="/assets/pages/whats_new/changelog/202502_changelog_inputs.csv" download>202502_changelog_inputs.csv</a>
+</details>
+</br>
 
----
+___
 
 # January 2025
 New charts added for supply and demand in district heating per temperature level (HT, MT, LT). Check out these supply and demand charts in the chart overview in the ETM. Furthermore, miscellaneous bug fixes and improvements are done this month.
 
 -> <img src="/assets/pages/whats_new/mekko_district_heating_en.png" width="600" /> <-
 
----
+___
 
 # November 2024
 
@@ -116,7 +121,6 @@ to the scenarios will be able to see them in the viewer.
 Opening the collection will open a new viewer, where you can compare your scenarios using the same charts as known from the existing transition paths feature.
 
 ---
-
 
 # May 2024
 

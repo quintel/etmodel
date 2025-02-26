@@ -25,23 +25,28 @@ ___
 * Update van dataset Antwerpen naar startjaar 2022
 * Verdere verbeteringen aan onze automatische testomgeving die de modelberekeningen controleert
 
-**Bug fixes**
+<details>
+  <summary>**Bug fixes**</summary>
 
-* Kleine discrepantie verholpen tussen de berekende uurlijkse en jaarlijkse elektriciteitsstromen voor load shifting in de ICT-sector
-* Ontbrekende technologie hybride luchtwarmtepomp (oliegestookt) toegevoegd aan de grafiek ‘Aantal woningen per ruimteverwarmingstechnologie’
-* Ontbrekend uurlijkse profiel van export van aardgas toegevoegd aan de data-export 'Netwerkgasvraag, -productie en -opslag per uur'
-* Correctie in de stroom van biomassa naar warmte in de grafiek ‘Overzicht energiestromen’ (Sankey) om dubbeltelling van groen gas te voorkomen
-* Herontwerp van de grafiek ‘Netto stroom van raffinageproducten’ om de transformatie van niet-olie energiedragers te visualiseren wanneer er is gekoppeld aan een extern industriemodel
-* Gedrag van externe koppeling voor must-run interconnectoren gecorrigeerd
-* Kleine correctie in luchtvaartemissies van gemeentelijke datasets
-* Fix in Collecties waarmee wordt gecorrigeerd voor een dubbeltelling van groengas in eindgebruik
-* Correctie in grafiek 'Totale broeikasgasemissies (CO2-eq)' waardoor de weergegeven CO2 emissies nu overeenkomen met grafiek 'CO2-emissies'
+  * Kleine discrepantie verholpen tussen de berekende uurlijkse en jaarlijkse elektriciteitsstromen voor load shifting in de ICT-sector
+  * Ontbrekende technologie hybride luchtwarmtepomp (oliegestookt) toegevoegd aan de grafiek ‘Aantal woningen per ruimteverwarmingstechnologie’
+  * Ontbrekend uurlijkse profiel van export van aardgas toegevoegd aan de data-export 'Netwerkgasvraag, -productie en -opslag per uur'
+  * Correctie in de stroom van biomassa naar warmte in de grafiek ‘Overzicht energiestromen’ (Sankey) om dubbeltelling van groen gas te voorkomen
+  * Herontwerp van de grafiek ‘Netto stroom van raffinageproducten’ om de transformatie van niet-olie energiedragers te visualiseren wanneer er is gekoppeld aan een extern industriemodel
+  * Gedrag van externe koppeling voor must-run interconnectoren gecorrigeerd
+  * Kleine correctie in luchtvaartemissies van gemeentelijke datasets
+  * Fix in Collecties waarmee wordt gecorrigeerd voor een dubbeltelling van groengas in eindgebruik
+  * Correctie in grafiek 'Totale broeikasgasemissies (CO2-eq)' waardoor de weergegeven CO2 emissies nu overeenkomen met grafiek 'CO2-emissies'
+</details>
 
-**Technische changelog**
+<details>
+  <summary>**Technical changelog**</summary>
 
-* <a href="/assets/pages/whats_new/changelog/202502_changelog_inputs.csv" download>202502_changelog_inputs.csv</a>
+  * <a href="/assets/pages/whats_new/changelog/202502_changelog_inputs.csv" download>202502_changelog_inputs.csv</a>
+</details>
+</br>
 
----
+___
 
 # Januari 2025
 
@@ -49,7 +54,7 @@ Nieuwe grafieken zijn toegevoegd voor vraag en aanbod in warmtenetten per temper
 
 -> <img src="/assets/pages/whats_new/mekko_district_heating_nl.png" width="600" /> <-
 
----
+___
 
 # November 2024
 

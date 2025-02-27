@@ -13,7 +13,10 @@ ___
     * Persoonlijke *Access Tokens* te genereren
     * Aan te melden voor de nieuwsbrief
     * Persoonlijke gegevens bij te werken
-* Nieuw begrip ***Collecties*** wordt nu gebruikt voor de interface dat voorheen *Multi-year-charts* of *Transitiepaden* werd genoemd. Een *Collectie* is een verzameling scenario's en een *Transitiepad* is een type *Collectie*: een individueel scenario dat is geïnterpoleerd naar tussentijdse jaren. Als onderdeel van deze update is de prefix in de link naar de *Collecties* interface aangepast van 'myc.' naar 'collections.'. Ontdek *Collecties* nu zelf: <a href="https://collections.energytransitionmodel.com" target="_blank">https://collections.energytransitionmodel.com</a>
+* De *Transitiepaden* of *Multi Year Charts* tool is hernoemd naar ***Collecties***
+  * De prefix in de URL is veranderd van `myc` naar `collections`
+  * Een *Collectie* is een set van opgeslagen scenario's die samengesteld kan worden in "Mijn Scenario's"
+  * Een *Transitiepad* is een type *Collectie*, waarin een specifiek opgeslagen scenario geïnterpoleerd is naar tussengelegen jaren
 * Nieuwe grafieken zijn toegevoegd aan het grafiekenoverzicht:
   * ‘Elektriciteit vraag en aanbod’
   * ‘Netwerkgas vraag en aanbod’

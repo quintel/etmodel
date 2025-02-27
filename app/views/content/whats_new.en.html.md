@@ -13,7 +13,10 @@ ___
     * Generate Personal Access Tokens
     * Subscribe to the newsletter
     * Update personal infomation
-* New term ***Collections*** is now used for the interface formerly referred to as *Multi-year-charts* or *Transition paths*. A *Collection* is a group of scenarios and a *Transition path* is a type of *Collection*: a single scenario that is interpolated to intermediate years. As part of this update, the prefix in the link to the *Collections* interface is changed from 'myc.' to 'collections.'. Explore *Collections* yourself: <a href="https://collections.energytransitionmodel.com" target="_blank">https://collections.energytransitionmodel.com</a>
+* The *Transition Path Charts* or *Multi Year Charts* tool is renamed to ***Collections***
+  * The prefix in the URL has been changed from `myc` to `collections`
+  * A *Collection* is a set of saved scenarios that can be created in "My Scenarios"
+  * A *Transition Path* is a type of *Collection*, where a single saved scenario is interpolated to intermediate years
 * New charts added to the chart selection:
   * ‘Electricity supply and demand’
   * ‘Network gas supply and demand’

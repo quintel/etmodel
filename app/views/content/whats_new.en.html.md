@@ -13,6 +13,10 @@ ___
     * Generate Personal Access Tokens
     * Subscribe to the newsletter
     * Update personal infomation
+* The "Transition Path Charts" or "Multi Year Charts" tool is renamed to "Collections"
+  * The prefix in the URL has been changed from `myc` to `collections`
+  * A "Collection" is a set of saved scenarios that can be created in "My Scenarios"
+  * A "Transition Path" is a type of "Collection", where a single saved scenario is interpolated to intermediate years
 * New charts added to the chart selection:
   * ‘Electricity supply and demand’
   * ‘Network gas supply and demand’

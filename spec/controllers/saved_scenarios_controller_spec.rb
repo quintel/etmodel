@@ -20,21 +20,26 @@ describe SavedScenariosController, vcr: true do
     end
 
     describe 'GET load' do
-      let(:saved_scenario) { double('SavedScenario', title: 'Test', scenario_id: 10) }
-      let(:scenario_users) { [{ 'user_id' => user.id, 'role_id' => 2 }] }
-
-      before do
-        allow(FetchSavedScenario).to receive(:call).and_return(
-          ServiceResult.success(
-            saved_scenario: saved_scenario,
-            saved_scenario_users: scenario_users,
-            private_flag: false
-          )
+      let(:saved_scenario) do
+        instance_double('SavedScenario',
+          title: 'Test',
+          scenario_id: 10,
+          collaborator?: false,
+          viewer?: false
         )
       end
 
-      context 'with edit permissions' do
-        before { get(:load, params: { id: 12, scenario_id: 10 }) }
+      before do
+        allow(FetchSavedScenario).to receive(:call).and_return(
+          ServiceResult.success(saved_scenario)
+        )
+      end
+
+      context 'when user is a collaborator' do
+        before do
+          allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
+          get(:load, params: { id: 12, scenario_id: 10 })
+        end
 
         it { expect(response).to redirect_to play_path }
 
@@ -47,10 +52,11 @@ describe SavedScenariosController, vcr: true do
         end
       end
 
-      context 'with view-only permissions' do
-        let(:scenario_users) { [{ 'user_id' => user.id, 'role_id' => 1 }] }
-
-        before { get(:load, params: { id: 12, scenario_id: 10 }) }
+      context 'when user is a viewer' do
+        before do
+          allow(saved_scenario).to receive(:viewer?).with(user).and_return(true)
+          get(:load, params: { id: 12, scenario_id: 10 })
+        end
 
         it { expect(response).to redirect_to play_path }
 
@@ -59,17 +65,8 @@ describe SavedScenariosController, vcr: true do
         end
       end
 
-      context 'with no permissions on a private scenario' do
-        let(:scenario_users) { [] }
-
+      context 'when user has no permissions' do
         before do
-          allow(FetchSavedScenario).to receive(:call).and_return(
-            ServiceResult.success(
-              saved_scenario: saved_scenario,
-              saved_scenario_users: scenario_users,
-              private_flag: true
-            )
-          )
           get(:load, params: { id: 12, scenario_id: 10 })
         end
 
@@ -107,6 +104,7 @@ describe SavedScenariosController, vcr: true do
 
       context 'when the scenario is already active' do
         before do
+          allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
           session[:setting].active_saved_scenario_id = 12
           session[:setting].api_session_id = 100_000
           get(:load, params: { id: 12, scenario_id: 10 })

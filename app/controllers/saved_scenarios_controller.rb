@@ -140,7 +140,7 @@ class SavedScenariosController < ApplicationController
   end
 
   def active_scenario?(saved_scenario)
-    Current.setting.active_saved_scenario_id == params[:id].to_i
+    Current.setting.active_saved_scenario_id == params[:id].to_i && Current.setting.api_session_id == saved_scenario.scenario_id
   end
 
   def update_active_scenario_title(saved_scenario)

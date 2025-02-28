@@ -48,4 +48,53 @@ http_interactions:
       encoding: UTF-8
       string: '{"keys":[{"kty":"RSA","n":"0IeLccBQ4ySppdH7Z1kM1zgoymyfiTvwTOxs6WlukQRLKwyZs4JbGws8gJ-Ho--_Y3xY9jVEnfglRjYxORNUVUxo-iWJg_5dYknjzEmuj54_uMzl6eq4LpN8XDlyT6Zopz-2TDw8L_kqmxsoS_GZj5O9N2tks6qgNSNwyYVpbTdUwQrsWDk_i1dh3DskIkoN6G_DpNAbogF8uFdA_pD_9yi13xwoHhD7vBoiZcUOb6OeIuJuZN4a8HGjBVQ8PhYZXEpCekI1u6bU8CpbgV_nwliKC3kZFdSMi2ynIq9eyWSmjdPxWcRtLtWJIqus6tP9F9o2h3f8wyqvwjnlSOtypQ","e":"AQAB","kid":"NH-dXWv6MjbhmIvWNLE6MvcBLEvWWaEWkeAT0o9nMi0","use":"sig","alg":"RS256"}]}'
   recorded_at: Tue, 11 Feb 2025 13:19:47 GMT
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/saved_scenarios/12
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.2
+      Authorization:
+      - Bearer access_phRReND6rRqDQn7o
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - c646e15d-9c32-4b10-ad4b-d999c738f1fc
+      X-Runtime:
+      - '0.006549'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.35, instantiation.active_record;dur=0.00,
+        process_action.action_controller;dur=0.95
+      Content-Length:
+      - '39'
+    body:
+      encoding: UTF-8
+      string: '{"errors":["Saved scenario not found"]}'
+  recorded_at: Fri, 28 Feb 2025 08:34:15 GMT
 recorded_with: VCR 6.0.0

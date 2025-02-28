@@ -57,23 +57,24 @@ class SavedScenariosController < ApplicationController
     redirect_to(Current.setting.last_etm_page.presence || play_path)
   end
 
+  # Loads a saved scenario and sets the scenario.
+  #
+  # GET /saved_scenarios/:id
   def load
     return authenticate_if_needed! if authentication_required?
 
-    result = fetch_saved_scenario
-    return unless result
+    saved_scenario = fetch_saved_scenario
+    return unless saved_scenario
 
-    saved_scenario   = result[:saved_scenario]
-    scenario_users   = result[:saved_scenario_users]
-    private_flag     = result[:private_flag]
-
-    unless authorized_for_scenario?(scenario_users, private_flag)
+    if saved_scenario.collaborator?(current_user)
+      set_scenario(saved_scenario)
+      redirect_to play_path
+    elsif saved_scenario.viewer?(current_user)
+      redirect_to play_path
+    else
       flash[:alert] = t('scenario.unauthorized')
-      return redirect_to(play_path)
+      redirect_to play_path
     end
-
-    set_scenario(saved_scenario) if can_edit_scenario?(scenario_users)
-    redirect_to play_path
   end
 
   def update
@@ -107,11 +108,12 @@ class SavedScenariosController < ApplicationController
 
   private
 
-  # TODO: Surely there is a better way to do this
+  # TODO: Surely there is a better way to do this and the authenticate_if_needed! method
   def authentication_required?
     !signed_in? && params[:current_user] == 'true'
   end
 
+  # TODO: Surely there is a better way to do this
   def authenticate_if_needed!
     authenticate_user!(show_as: :sign_in)
   end
@@ -121,25 +123,6 @@ class SavedScenariosController < ApplicationController
       flash[:alert] = t('scenario.cannot_load')
       redirect_to(root_path) and return
     end
-  end
-
-  def authorized_for_scenario?(scenario_users, private_flag)
-    return false unless current_user
-    can_edit_scenario?(scenario_users) || can_view_scenario?(private_flag, scenario_users)
-  end
-
-  def role(saved_scenario_users)
-    return false unless current_user
-    user = saved_scenario_users.find { |u| current_user.id == u['user_id'] }
-    user ? user['role_id'] : false
-  end
-
-  def can_edit_scenario?(saved_scenario_users)
-    [2, 3].include?(role(saved_scenario_users))
-  end
-
-  def can_view_scenario?(private_flag, saved_scenario_users)
-    !private_flag || role(saved_scenario_users) == 1
   end
 
   def set_scenario(saved_scenario)

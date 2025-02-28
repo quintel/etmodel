@@ -3,6 +3,7 @@
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
   before_action :require_user, only: %i[create new]
+  before_action :check_authentication, only: %i[load]
 
   # Shows a form for creating a new saved scenario.
   #
@@ -61,21 +62,19 @@ class SavedScenariosController < ApplicationController
   #
   # GET /saved_scenarios/:id
   def load
-    return authenticate_if_needed! if authentication_required?
+    return redirect_to(root_path) unless saved_scenario
 
-    saved_scenario = fetch_saved_scenario
-    return unless saved_scenario
+    # If a user was already working in the scenario, a new engine scenario
+    # should not be made in order for them to continue to work
+    if active_scenario?
+      update_active_scenario_title
+      return redirect_to play_path
+    end
 
-    if !current_user.nil?
-      if saved_scenario.collaborator?(current_user)
-        set_scenario(saved_scenario)
-        return redirect_to play_path
-      elsif saved_scenario.viewer?(current_user)
-        update_active_scenario_title(saved_scenario)
-        return redirect_to play_path
-      end
-    elsif !saved_scenario.private?
-      update_active_scenario_title(saved_scenario)
+    if current_user || !saved_scenario.private
+      create_scenario_and_load_setting(
+        saveable: current_user && saved_scenario.collaborator?(current_user)
+      )
       return redirect_to play_path
     end
 
@@ -114,70 +113,45 @@ class SavedScenariosController < ApplicationController
 
   private
 
-  # TODO: Surely there is a better way to do this and the authenticate_if_needed! method
-  def authentication_required?
-    !signed_in? && params[:current_user] == 'true'
+  # If a param is passed from myETM that the user was logged in in there,
+  # check if etmodel has a session set up yet and prompt the user otherwise
+  def check_authentication
+    authenticate_user!(show_as: :sign_in) if !signed_in? && params[:current_user] == 'true'
   end
 
-  # TODO: Surely there is a better way to do this
-  def authenticate_if_needed!
-    authenticate_user!(show_as: :sign_in)
-  end
-
-  def fetch_saved_scenario
-    FetchSavedScenario.call(my_etm_client, params[:id]).or do |_error|
+  def saved_scenario
+    @saved_scenario ||= FetchSavedScenario.call(my_etm_client, params[:id]).or do |_error|
       flash[:alert] = t('scenario.cannot_load')
-      redirect_to(root_path) and return
-    end
-  end
-
-  def set_scenario(saved_scenario)
-    if active_scenario?(saved_scenario)
-      update_active_scenario_title(saved_scenario)
-    else
-      load_new_scenario(saved_scenario)
-    end
-  end
-
-  def active_scenario?(saved_scenario)
-    Current.setting.active_saved_scenario_id == params[:id].to_i && Current.setting.api_session_id == saved_scenario.scenario_id
-  end
-
-  def update_active_scenario_title(saved_scenario)
-    Current.setting.active_scenario_title = saved_scenario.title
-  end
-
-  def load_new_scenario(saved_scenario)
-    scenario = find_scenario
-    Current.setting = Setting.load_from_scenario(
-      scenario,
-      active_saved_scenario: { id: params[:id].to_i, title: saved_scenario.title }
-    )
-
-    if (new_scenario = create_api_scenario(saved_scenario))
-      Current.setting.api_session_id = new_scenario.id
-    end
-  end
-
-  def create_api_scenario(saved_scenario)
-    scenario_attrs = { scenario_id: saved_scenario.scenario_id }
-    CreateAPIScenario.call(engine_client, scenario_attrs).or do
-      flash[:alert] = t('scenario.cannot_load')
-      redirect_to(saved_scenario_path(params[:id]))
       nil
     end
   end
 
-  # Finds the scenario from id
-  def find_scenario
-    scenario = FetchAPIScenario.call(engine_client, params.require(:scenario_id).to_i).or do
-      redirect_to root_path, notice: 'Scenario not found'
-      return
+  def active_scenario?
+    Current.setting.active_saved_scenario_id == params[:id].to_i
+  end
+
+  def update_active_scenario_title
+    Current.setting.active_scenario_title = saved_scenario.title
+  end
+
+  # Creates a copy of the underlying scenario id and
+  def create_scenario_and_load_setting(saveable: false)
+    Current.setting = Setting.load_with_preset(
+      create_api_scenario,
+      saved_scenario.scenario_id,
+      active_saved_scenario: {
+        id: saveable ? params[:id].to_i : nil,
+        title: saved_scenario.title
+      }
+    )
+  end
+
+  def create_api_scenario
+    CreateAPIScenario.call(engine_client, { scenario_id: @saved_scenario.scenario_id }).or do
+      flash[:alert] = t('scenario.cannot_load')
+      redirect_to(root_path) and return
+      nil
     end
-
-    redirect_to root_path, notice: 'Sorry, this scenario cannot be loaded' unless scenario.loadable?
-
-    scenario
   end
 
   def update_params
@@ -191,10 +165,6 @@ class SavedScenariosController < ApplicationController
       :area_code,
       :end_year
     )
-  end
-
-  def load_params
-    params.permit(:id, :scenario_id, :title)
   end
 
   def saved_scenario_params

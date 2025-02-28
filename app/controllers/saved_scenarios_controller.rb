@@ -66,15 +66,21 @@ class SavedScenariosController < ApplicationController
     saved_scenario = fetch_saved_scenario
     return unless saved_scenario
 
-    if saved_scenario.collaborator?(current_user)
-      set_scenario(saved_scenario)
-      redirect_to play_path
-    elsif saved_scenario.viewer?(current_user)
-      redirect_to play_path
-    else
-      flash[:alert] = t('scenario.unauthorized')
-      redirect_to play_path
+    if !current_user.nil?
+      if saved_scenario.collaborator?(current_user)
+        set_scenario(saved_scenario)
+        return redirect_to play_path
+      elsif saved_scenario.viewer?(current_user)
+        update_active_scenario_title(saved_scenario)
+        return redirect_to play_path
+      end
+    elsif !saved_scenario.private?
+      update_active_scenario_title(saved_scenario)
+      return redirect_to play_path
     end
+
+    flash[:alert] = t('scenario.unauthorized')
+    redirect_to root_path
   end
 
   def update

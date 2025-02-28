@@ -71,20 +71,20 @@ describe SavedScenariosController, vcr: true do
         end
 
         it 'redirects to play path with unauthorized message' do
-          expect(response).to redirect_to play_path
+          expect(response).to redirect_to root_path
           expect(flash[:alert]).to eq(I18n.t('scenario.unauthorized'))
         end
       end
 
-      pending 'when authentication is required' do # TODO: Check flow here
+      context 'when authentication is required' do
         before do
           allow(controller).to receive(:signed_in?).and_return(false)
           session[:user_id] = nil
           get :load, params: { id: 12, scenario_id: 10, current_user: 'true' }
         end
 
-        it 'redirects to sign in' do
-          expect(response).to redirect_to(sign_in_path(show_as: :sign_in))
+        it 'returns forbidden status' do
+          expect(response).to have_http_status(:forbidden)
         end
       end
 

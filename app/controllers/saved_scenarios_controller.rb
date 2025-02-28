@@ -58,40 +58,28 @@ class SavedScenariosController < ApplicationController
   end
 
   def load
-    # NOTE: it is more neat if this action asks myetm for the info
-    # instead of just taking it from the params. It's also more
-    # secure (FetchSavedScenario)
-
-    # Try to sign in user when they should be
     # TODO: this is horrible. Please find a better solution!
     if !signed_in? && params[:current_user] == 'true'
       return authenticate_user!(show_as: :sign_in)
     end
 
-    # Make sure that if the requested saved scenario was already active
-    # we do not create a new scenario. Only check if the title has been updated.
-    if Current.setting.active_saved_scenario_id == params[:id].to_i
-      Current.setting.active_scenario_title = load_params[:title]
+    result = FetchSavedScenario.call(my_etm_client, params[:id]).or do |error|
+      flash[:alert] = t('scenario.cannot_load')
+      return redirect_to(root_path)
+    end
+
+    saved_scenario = result[:saved_scenario]
+    saved_scenario_users = result[:saved_scenario_users]
+    private_flag = result[:private_flag]
+
+    # Verify user's access to the scenario
+    if can_edit_scenario?(saved_scenario_users)
+      set_scenario(saved_scenario)
     else
-      # Setting an active_saved_scenario enables saving a scenario. We only
-      # do this for the owner of a scenario.
-      scenario = find_scenario
-      Current.setting =
-        Setting.load_from_scenario(
-          scenario,
-          active_saved_scenario: {
-            id: params[:id].to_i,
-            title: load_params[:title]
-          }
-        )
-
-      scenario_attrs = { scenario_id: load_params[:scenario_id] }
-      new_scenario = CreateAPIScenario.call(engine_client, scenario_attrs).or do
-        flash[:alert] = t('scenario.cannot_load')
-        return redirect_to(saved_scenario_path(params[:id]))
+      unless can_view_scenario?(private_flag, saved_scenario_users)
+        flash[:alert] = t('scenario.unauthorized')
+        return redirect_to(play_path)
       end
-
-      Current.setting.api_session_id = new_scenario.id
     end
 
     redirect_to play_path
@@ -127,6 +115,78 @@ class SavedScenariosController < ApplicationController
   end
 
   private
+
+  def role(saved_scenario_users)
+    for user in saved_scenario_users
+      if current_user.id == user['user_id']
+        return user['role_id']
+      end
+    end
+
+    return false
+  end
+
+  def can_edit_scenario?(saved_scenario_users)
+    role = role(saved_scenario_users)
+    if role == 3 || role == 2
+      return true
+    end
+
+    return false
+  end
+
+  def can_view_scenario?(private_flag, saved_scenario_users)
+    unless private_flag
+      return true
+    end
+    if role(saved_scenario_users) == 1
+      return true
+    end
+
+    return false
+  end
+
+  def set_scenario(saved_scenario) # TODO: Check and refactor
+    if active_scenario?(saved_scenario)
+      update_active_scenario_title(saved_scenario)
+    else
+      load_new_scenario(saved_scenario)
+    end
+  end
+
+  def active_scenario?(saved_scenario)
+    Current.setting.active_saved_scenario_id == params[:id].to_i
+  end
+
+  def update_active_scenario_title(saved_scenario)
+    Current.setting.active_scenario_title = saved_scenario.title
+  end
+
+  def load_new_scenario(saved_scenario)
+    scenario = find_scenario
+
+    Current.setting = Setting.load_from_scenario(
+      scenario,
+      active_saved_scenario: {
+        id: params[:id].to_i,
+        title: saved_scenario.title
+      }
+    )
+
+    new_scenario = create_api_scenario(saved_scenario)
+
+    Current.setting.api_session_id = new_scenario.id if new_scenario
+  end
+
+  def create_api_scenario(saved_scenario)
+    scenario_attrs = { scenario_id: saved_scenario.scenario_id }
+
+    CreateAPIScenario.call(engine_client, scenario_attrs).or do
+      flash[:alert] = t('scenario.cannot_load')
+      redirect_to(saved_scenario_path(params[:id]))
+      return nil
+    end
+  end
 
   # Finds the scenario from id
   def find_scenario

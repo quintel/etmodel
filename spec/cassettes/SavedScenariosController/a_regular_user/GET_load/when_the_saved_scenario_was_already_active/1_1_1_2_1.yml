@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/saved_scenarios/12
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.2
+      Authorization:
+      - Bearer access_93dNpLTBYgmXSwiw
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 20422459-f22a-48c9-af57-f0eeceef5689
+      X-Runtime:
+      - '0.010513'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.44, instantiation.active_record;dur=0.00,
+        process_action.action_controller;dur=1.07
+      Content-Length:
+      - '39'
+    body:
+      encoding: UTF-8
+      string: '{"errors":["Saved scenario not found"]}'
+  recorded_at: Fri, 28 Feb 2025 08:25:04 GMT
+recorded_with: VCR 6.0.0

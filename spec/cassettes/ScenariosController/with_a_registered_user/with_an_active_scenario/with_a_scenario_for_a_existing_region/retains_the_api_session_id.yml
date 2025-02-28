@@ -2,66 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3002/.well-known/openid-configuration
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      User-Agent:
-      - SWD (1.3.0) (2.8.3, ruby 3.1.1 (2022-02-18))
-      Accept:
-      - "*/*"
-      Date:
-      - Fri, 24 Jan 2025 13:04:13 GMT
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - '0'
-      X-Content-Type-Options:
-      - nosniff
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
-      Vary:
-      - Accept
-      Etag:
-      - W/"9bbe52b96da8b735af4430f9ab233f09"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a8dea247-7acd-4647-bc70-1e3cbac1dbbc
-      X-Runtime:
-      - '0.006076'
-      Server-Timing:
-      - start_processing.action_controller;dur=0.00, process_action.action_controller;dur=0.28
-      Content-Length:
-      - '1089'
-    body:
-      encoding: UTF-8
-      string: '{"issuer":"http://localhost:3002","authorization_endpoint":"http://localhost:3002/oauth/authorize","token_endpoint":"http://localhost:3002/oauth/token","revocation_endpoint":"http://localhost:3002/oauth/revoke","introspection_endpoint":"http://localhost:3002/oauth/introspect","userinfo_endpoint":"http://localhost:3002/oauth/userinfo","jwks_uri":"http://localhost:3002/oauth/discovery/keys","end_session_endpoint":"http://localhost:3002/identity/sign_out","scopes_supported":["public","email","openid","profile","roles","scenarios:read","scenarios:write","scenarios:delete"],"response_types_supported":["code","token","id_token","id_token
-        token"],"response_modes_supported":["query","fragment","form_post"],"grant_types_supported":["authorization_code","client_credentials","implicit_oidc","refresh_token"],"token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post"],"subject_types_supported":["public"],"id_token_signing_alg_values_supported":["RS256"],"claim_types_supported":["normal"],"claims_supported":["iss","sub","aud","exp","iat","email","roles","name"]}'
-  recorded_at: Fri, 24 Jan 2025 13:04:13 GMT
-- request:
-    method: get
-    uri: http://localhost:3002/oauth/discovery/keys
+    uri: http://localhost:3002/api/v1/versions.json
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Faraday v2.7.3
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
@@ -79,22 +30,23 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
-      Vary:
-      - Accept
       Etag:
-      - W/"433bb9a0fe0c4dd048c999ef7a15f057"
+      - W/"a66f55fc1a423ee46cd83ec8a150be4e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 42199042-0f05-4e25-829b-f4ab2a9b05c6
+      - c6f6aa12-73cd-4414-8de4-199340a8455a
       X-Runtime:
-      - '0.026535'
+      - '0.007577'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=2.20
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.34, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=0.84
+      Vary:
+      - Origin
       Content-Length:
-      - '462'
+      - '277'
     body:
       encoding: UTF-8
-      string: '{"keys":[{"kty":"RSA","n":"thoBXEejnan3-4gANj2Cawo9LTreOIzHCRFxL-aDanycG5SNJ8KoaoVUzOl3ACi9qcNoI5ZywMieMTLIetG5v_hQrfs0O_h5Q5EPgYPL_T4hsDC4ZlKp2iJP6ZM5maYPvmvz3vuNYSWhA8AVypjFa_2xN0Rgg2QLZyHqKh_Hh6Y9r6IkVkZCBdnRiHHH_dX62bq2PNewXgxIrfRpbqkni_TDKeME0xpwoo-FmIrt8bUgq1oA47kXFfC_KEKJA63YwLA-LnYKqm4HyMNBd9PEThHHljJqpfD4OAKJ0mw1VkoLqNYckWfYW0o8zYRy5yOFFwdczvZmTj-_aLrqkVIXsw","e":"AQAB","kid":"lMlUymnD839HPm8CEEcUctWDi1y8wKlSIljOeD4GEQI","use":"sig","alg":"RS256"}]}'
-  recorded_at: Fri, 24 Jan 2025 13:04:13 GMT
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:35:58 GMT
 recorded_with: VCR 6.0.0

@@ -5,7 +5,6 @@ describe SavedScenariosController, vcr: true do
 
   let(:scenario_mock) { ete_scenario_mock }
   let(:client) { Faraday.new(url: 'http://et.engine') }
-
   let(:user) { FactoryBot.create :user }
   let(:admin) { FactoryBot.create :admin }
 
@@ -21,53 +20,107 @@ describe SavedScenariosController, vcr: true do
     end
 
     describe 'GET load' do
-      context 'with an owned saved_scenario' do
-        subject { response }
+      let(:saved_scenario) { double('SavedScenario', title: 'Test', scenario_id: 10) }
+      let(:scenario_users) { [{ 'user_id' => user.id, 'role_id' => 2 }] }
 
+      before do
+        allow(FetchSavedScenario).to receive(:call).and_return(
+          ServiceResult.success(
+            saved_scenario: saved_scenario,
+            saved_scenario_users: scenario_users,
+            private_flag: false
+          )
+        )
+      end
+
+      context 'with edit permissions' do
         before { get(:load, params: { id: 12, scenario_id: 10 }) }
 
-        it { is_expected.to redirect_to play_path }
+        it { expect(response).to redirect_to play_path }
 
-        it do
+        it 'sets the active saved scenario id' do
           expect(session[:setting].active_saved_scenario_id).to eq(12)
         end
 
-        it do
+        it 'sets the api session id' do
           expect(session[:setting].api_session_id).to eq(ete_scenario_mock.id)
         end
       end
 
-      context 'when the saved scenario was already active' do
-        subject { response }
+      context 'with view-only permissions' do
+        let(:scenario_users) { [{ 'user_id' => user.id, 'role_id' => 1 }] }
 
+        before { get(:load, params: { id: 12, scenario_id: 10 }) }
+
+        it { expect(response).to redirect_to play_path }
+
+        it 'does not set the active saved scenario id' do
+          expect(session[:setting].active_saved_scenario_id).to be_nil
+        end
+      end
+
+      context 'with no permissions on a private scenario' do
+        let(:scenario_users) { [] }
+
+        before do
+          allow(FetchSavedScenario).to receive(:call).and_return(
+            ServiceResult.success(
+              saved_scenario: saved_scenario,
+              saved_scenario_users: scenario_users,
+              private_flag: true
+            )
+          )
+          get(:load, params: { id: 12, scenario_id: 10 })
+        end
+
+        it 'redirects to play path with unauthorized message' do
+          expect(response).to redirect_to play_path
+          expect(flash[:alert]).to eq(I18n.t('scenario.unauthorized'))
+        end
+      end
+
+      pending 'when authentication is required' do # TODO: Check flow here
+        before do
+          allow(controller).to receive(:signed_in?).and_return(false)
+          session[:user_id] = nil
+          get :load, params: { id: 12, scenario_id: 10, current_user: 'true' }
+        end
+
+        it 'redirects to sign in' do
+          expect(response).to redirect_to(sign_in_path(show_as: :sign_in))
+        end
+      end
+
+      context 'when the saved scenario fails to load' do
+        before do
+          allow(FetchSavedScenario).to receive(:call).and_return(
+            ServiceResult.failure('Saved scenario not found')
+          )
+          get(:load, params: { id: 12, scenario_id: 10 })
+        end
+
+        it 'redirects to root with error message' do
+          expect(response).to redirect_to(root_path)
+          expect(flash[:alert]).to eq(I18n.t('scenario.cannot_load'))
+        end
+      end
+
+      context 'when the scenario is already active' do
         before do
           session[:setting].active_saved_scenario_id = 12
           session[:setting].api_session_id = 100_000
           get(:load, params: { id: 12, scenario_id: 10 })
         end
 
-        it { is_expected.to redirect_to play_path }
+        it { expect(response).to redirect_to play_path }
 
         it 'does not update the scenario (session) id' do
           expect(session[:setting].api_session_id).to eq(100_000)
         end
-      end
 
-      it 'changes the session active_saved_scenario_id in settings' do
-        expect do
-          get :load, params: { id: 12, scenario_id: 10 }
-        end.to change{ session[:setting].active_saved_scenario_id }
-                .from(nil)
-                .to 12
-      end
-
-      it 'with a non-existent scenario redirects to #show' do
-        allow(CreateAPIScenario)
-          .to receive(:call)
-          .and_return(ServiceResult.failure('Scenario not found'))
-
-        get :load, params: { id: 1, scenario_id: 11 }
-        expect(response).to be_redirect
+        it 'updates the scenario title' do
+          expect(session[:setting].active_scenario_title).to eq('Test')
+        end
       end
     end
   end

@@ -15,7 +15,6 @@ describe SavedScenariosController, vcr: true do
 
   context 'a regular user' do
     before do
-      sign_in user
       session[:setting] = Setting.new
     end
 
@@ -25,7 +24,8 @@ describe SavedScenariosController, vcr: true do
           title: 'Test',
           scenario_id: 10,
           collaborator?: false,
-          viewer?: false
+          viewer?: false,
+          private: false
         )
       end
 
@@ -37,6 +37,7 @@ describe SavedScenariosController, vcr: true do
 
       context 'when user is a collaborator' do
         before do
+          sign_in user
           allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
           get(:load, params: { id: 12, scenario_id: 10 })
         end
@@ -54,8 +55,9 @@ describe SavedScenariosController, vcr: true do
 
       context 'when user is a viewer' do
         before do
+          sign_in user
           allow(saved_scenario).to receive(:viewer?).with(user).and_return(true)
-          get(:load, params: { id: 12, scenario_id: 10 })
+          get(:load, params: { id: 12 })
         end
 
         it { expect(response).to redirect_to play_path }
@@ -67,7 +69,20 @@ describe SavedScenariosController, vcr: true do
 
       context 'when user has no permissions' do
         before do
-          get(:load, params: { id: 12, scenario_id: 10 })
+          get(:load, params: { id: 12})
+        end
+
+        it { expect(response).to redirect_to play_path }
+
+        it 'sets the title' do
+          expect(session[:setting].active_scenario_title).to eq('Test')
+        end
+      end
+
+      context 'when user has no permissions and scenario is private' do
+        before do
+          allow(saved_scenario).to receive(:private).and_return(true)
+          get(:load, params: { id: 12})
         end
 
         it 'redirects to play path with unauthorized message' do
@@ -78,8 +93,6 @@ describe SavedScenariosController, vcr: true do
 
       context 'when authentication is required' do
         before do
-          allow(controller).to receive(:signed_in?).and_return(false)
-          session[:user_id] = nil
           get :load, params: { id: 12, scenario_id: 10, current_user: 'true' }
         end
 
@@ -90,6 +103,7 @@ describe SavedScenariosController, vcr: true do
 
       context 'when the saved scenario fails to load' do
         before do
+          sign_in user
           allow(FetchSavedScenario).to receive(:call).and_return(
             ServiceResult.failure('Saved scenario not found')
           )
@@ -104,6 +118,7 @@ describe SavedScenariosController, vcr: true do
 
       context 'when the scenario is already active' do
         before do
+          sign_in user
           allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
           session[:setting].active_saved_scenario_id = 12
           session[:setting].api_session_id = 100_000

@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/featured_scenarios
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept, Origin
+      Etag:
+      - W/"7ebefe1f9ad2b0825a5d897b9aa06600"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6eb80d21-aa96-44e2-b151-1ddf838a141c
+      X-Runtime:
+      - '0.009748'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1.32, instantiation.active_record;dur=0.09,
+        process_action.action_controller;dur=3.32
+      Content-Length:
+      - '207'
+    body:
+      encoding: UTF-8
+      string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Scenario
+        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"author":"LOUIS"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:00 GMT
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/versions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a66f55fc1a423ee46cd83ec8a150be4e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 62022d2e-94cc-42bf-b536-77fcfed6ba78
+      X-Runtime:
+      - '0.006435'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.27, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=0.77
+      Vary:
+      - Origin
+      Content-Length:
+      - '277'
+    body:
+      encoding: UTF-8
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:00 GMT
+recorded_with: VCR 6.0.0

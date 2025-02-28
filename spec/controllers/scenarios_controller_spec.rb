@@ -129,7 +129,7 @@ describe ScenariosController, vcr: true do
             .with('nope').and_return(false)
         end
 
-        pending 'resets to the default setting' do
+        it 'resets to the default setting' do
           get :play
           expect(session[:setting].area_code).to eq(Setting.default_attributes[:area_code])
         end
@@ -146,11 +146,11 @@ describe ScenariosController, vcr: true do
           session[:setting]
         end
 
-        pending 'retains the area code' do
+        it 'retains the area code' do
           expect(subject.area_code).to eq('de')
         end
 
-        pending 'retains the api session id' do
+        it 'retains the api session id' do
           expect(subject.api_session_id).to eq(123)
         end
       end

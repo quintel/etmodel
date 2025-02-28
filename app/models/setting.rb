@@ -71,6 +71,14 @@ class Setting
     new(default_attributes)
   end
 
+  def self.load_with_preset(scenario, preset_id, active_saved_scenario: {})
+    setting = load_from_scenario(scenario, active_saved_scenario:)
+    setting.preset_scenario_id = preset_id
+    setting.api_session_id = scenario.id
+
+    setting
+  end
+
   def initialize(attributes = {})
     self.class.default_attributes.merge(attributes).each do |name, value|
       send("#{name}=", value)

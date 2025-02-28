@@ -31,22 +31,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b333f2b38e283af4a4b94a9463c73f73"
+      - W/"a66f55fc1a423ee46cd83ec8a150be4e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3cff1f68-091a-433e-9f45-1e19cae53d4a
+      - 8b788c6f-3f88-4547-ad87-d8c01cc30a8d
       X-Runtime:
-      - '0.051650'
+      - '0.006308'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=0.46, instantiation.active_record;dur=0.04,
-        process_action.action_controller;dur=1.85
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.27, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=0.75
       Vary:
       - Origin
       Content-Length:
-      - '416'
+      - '277'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
-  recorded_at: Mon, 27 Jan 2025 11:19:40 GMT
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:03 GMT
 recorded_with: VCR 6.0.0

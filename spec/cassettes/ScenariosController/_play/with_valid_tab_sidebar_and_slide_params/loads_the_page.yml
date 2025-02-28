@@ -31,21 +31,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b333f2b38e283af4a4b94a9463c73f73"
+      - W/"a66f55fc1a423ee46cd83ec8a150be4e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b5f03662-33dd-4d12-bb70-2d829b26745c
+      - 7f2ced50-3b84-4b52-a14b-9c0a03fd0cf6
       X-Runtime:
-      - '0.012668'
+      - '0.008975'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.18
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.46, instantiation.active_record;dur=0.04,
+        process_action.action_controller;dur=1.14
       Vary:
       - Origin
       Content-Length:
-      - '416'
+      - '277'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
-  recorded_at: Fri, 10 Jan 2025 10:44:52 GMT
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:35:56 GMT
 recorded_with: VCR 6.0.0

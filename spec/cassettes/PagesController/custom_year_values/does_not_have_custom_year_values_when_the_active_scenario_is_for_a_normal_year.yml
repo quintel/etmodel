@@ -8,9 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.3
-      Authorization:
-      - Bearer
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -35,26 +33,23 @@ http_interactions:
       Vary:
       - Accept, Origin
       Etag:
-      - W/"991a616a98cf2ed031cf7db5d2331566"
+      - W/"7ebefe1f9ad2b0825a5d897b9aa06600"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - be488b4d-2954-47cd-b554-d528b4771465
+      - 37a0e694-14ce-4346-a9ad-af1c0e775d78
       X-Runtime:
-      - '0.029866'
+      - '0.009101'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, sql.active_record;dur=1.12, instantiation.active_record;dur=0.22,
-        process_action.action_controller;dur=16.72
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=1.14, instantiation.active_record;dur=0.08,
+        process_action.action_controller;dur=2.69
       Content-Length:
-      - '409'
+      - '207'
     body:
       encoding: UTF-8
-      string: '{"featured_scenarios":[{"id":3,"saved_scenario_id":28,"owner_id":1,"group":"national","title_en":"Amazing
-        featured scenario","title_nl":"Geweldig scenario!","version":"latest","end_year":2050,"author":"No
-        author"},{"id":4,"saved_scenario_id":29,"owner_id":1,"group":"national","title_en":"Super
-        scenario for 2030","title_nl":"Super scenario for 2030","version":"latest","end_year":2030,"author":"No
-        author"}]}'
-  recorded_at: Tue, 17 Dec 2024 11:43:44 GMT
+      string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Scenario
+        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"author":"LOUIS"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:35:59 GMT
 - request:
     method: get
     uri: http://localhost:3002/api/v1/versions.json
@@ -86,21 +81,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b333f2b38e283af4a4b94a9463c73f73"
+      - W/"a66f55fc1a423ee46cd83ec8a150be4e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 36fa8bce-b171-401c-be24-6657cc99ba32
+      - 12825577-16fb-4abd-9e27-b80adddddb7a
       X-Runtime:
-      - '0.013402'
+      - '0.006776'
       Server-Timing:
-      - start_processing.action_controller;dur=0.01, process_action.action_controller;dur=0.23
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.37, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=0.94
       Vary:
       - Origin
       Content-Length:
-      - '416'
+      - '277'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.01","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"stable.02","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
-  recorded_at: Fri, 10 Jan 2025 10:44:54 GMT
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:00 GMT
 recorded_with: VCR 6.0.0

@@ -8,9 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.3
-      Authorization:
-      - Bearer
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -35,29 +33,72 @@ http_interactions:
       Vary:
       - Accept, Origin
       Etag:
-      - W/"a82136dd4c623b00e23760279828053c"
+      - W/"7ebefe1f9ad2b0825a5d897b9aa06600"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a456dd0c-3442-449a-9b6e-917bed08a39b
+      - 1ef14e1a-eaaa-4f41-91e2-ffcac53e78d5
       X-Runtime:
-      - '0.017382'
+      - '0.008794'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=2.64, instantiation.active_record;dur=0.25,
-        process_action.action_controller;dur=11.85
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=1.38, instantiation.active_record;dur=0.11,
+        process_action.action_controller;dur=3.19
       Content-Length:
-      - '735'
+      - '207'
     body:
       encoding: UTF-8
-      string: '{"featured_scenarios":[{"id":1,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Soon
-        to be featured","title_nl":"Niet lang nu","version":"latest","end_year":2050,"author":"Louis
-        Parkes-Talbot"},{"id":2,"saved_scenario_id":4,"owner_id":1,"group":"national","title_en":"2040","title_nl":"2040","version":"latest","end_year":2040,"author":"Louis
-        Parkes-Talbot"},{"id":3,"saved_scenario_id":3,"owner_id":1,"group":"national","title_en":"2030
-        init","title_nl":"2030 init","version":"latest","end_year":2030,"author":"Louis
-        Parkes-Talbot"},{"id":4,"saved_scenario_id":2,"owner_id":1,"group":"national","title_en":"featured
-        also","title_nl":"featured also","version":"latest","end_year":2050,"author":"Louis
-        Parkes-Talbot"}]}'
-  recorded_at: Fri, 13 Dec 2024 08:56:08 GMT
+      string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Scenario
+        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"author":"LOUIS"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/versions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a66f55fc1a423ee46cd83ec8a150be4e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 22cd6d21-31e4-4765-8514-7c06fc3ada5d
+      X-Runtime:
+      - '0.007286'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.27, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=0.78
+      Vary:
+      - Origin
+      Content-Length:
+      - '277'
+    body:
+      encoding: UTF-8
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
 - request:
     method: get
     uri: http://localhost:3002/api/v1/featured_scenarios
@@ -66,9 +107,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.3
-      Authorization:
-      - Bearer
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -93,29 +132,72 @@ http_interactions:
       Vary:
       - Accept, Origin
       Etag:
-      - W/"a82136dd4c623b00e23760279828053c"
+      - W/"7ebefe1f9ad2b0825a5d897b9aa06600"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c484e7fa-6333-4cb2-be01-a3409ab826e1
+      - ee57c102-1f38-4f0e-b440-111729de6e24
       X-Runtime:
-      - '0.012435'
+      - '0.009188'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=2.56, instantiation.active_record;dur=0.22,
-        process_action.action_controller;dur=6.67
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=1.29, instantiation.active_record;dur=0.11,
+        process_action.action_controller;dur=3.73
       Content-Length:
-      - '735'
+      - '207'
     body:
       encoding: UTF-8
-      string: '{"featured_scenarios":[{"id":1,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Soon
-        to be featured","title_nl":"Niet lang nu","version":"latest","end_year":2050,"author":"Louis
-        Parkes-Talbot"},{"id":2,"saved_scenario_id":4,"owner_id":1,"group":"national","title_en":"2040","title_nl":"2040","version":"latest","end_year":2040,"author":"Louis
-        Parkes-Talbot"},{"id":3,"saved_scenario_id":3,"owner_id":1,"group":"national","title_en":"2030
-        init","title_nl":"2030 init","version":"latest","end_year":2030,"author":"Louis
-        Parkes-Talbot"},{"id":4,"saved_scenario_id":2,"owner_id":1,"group":"national","title_en":"featured
-        also","title_nl":"featured also","version":"latest","end_year":2050,"author":"Louis
-        Parkes-Talbot"}]}'
-  recorded_at: Fri, 13 Dec 2024 08:56:09 GMT
+      string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Scenario
+        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"author":"LOUIS"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/versions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a66f55fc1a423ee46cd83ec8a150be4e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b37649fd-b6a7-4d77-a842-e4d98bffc898
+      X-Runtime:
+      - '0.006365'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.50, instantiation.active_record;dur=0.03,
+        process_action.action_controller;dur=1.07
+      Vary:
+      - Origin
+      Content-Length:
+      - '277'
+    body:
+      encoding: UTF-8
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
 - request:
     method: get
     uri: http://localhost:3002/api/v1/featured_scenarios
@@ -124,9 +206,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.3
-      Authorization:
-      - Bearer
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -151,27 +231,70 @@ http_interactions:
       Vary:
       - Accept, Origin
       Etag:
-      - W/"a82136dd4c623b00e23760279828053c"
+      - W/"7ebefe1f9ad2b0825a5d897b9aa06600"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7f42a2ba-4b94-47ad-ac47-7c6bec871f7b
+      - 4d63f292-57c1-4a36-9aba-5469ab8099b5
       X-Runtime:
-      - '0.012268'
+      - '0.008276'
       Server-Timing:
-      - start_processing.action_controller;dur=0.00, sql.active_record;dur=2.66, instantiation.active_record;dur=0.22,
-        process_action.action_controller;dur=6.98
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.83, instantiation.active_record;dur=0.08,
+        process_action.action_controller;dur=2.38
       Content-Length:
-      - '735'
+      - '207'
     body:
       encoding: UTF-8
-      string: '{"featured_scenarios":[{"id":1,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Soon
-        to be featured","title_nl":"Niet lang nu","version":"latest","end_year":2050,"author":"Louis
-        Parkes-Talbot"},{"id":2,"saved_scenario_id":4,"owner_id":1,"group":"national","title_en":"2040","title_nl":"2040","version":"latest","end_year":2040,"author":"Louis
-        Parkes-Talbot"},{"id":3,"saved_scenario_id":3,"owner_id":1,"group":"national","title_en":"2030
-        init","title_nl":"2030 init","version":"latest","end_year":2030,"author":"Louis
-        Parkes-Talbot"},{"id":4,"saved_scenario_id":2,"owner_id":1,"group":"national","title_en":"featured
-        also","title_nl":"featured also","version":"latest","end_year":2050,"author":"Louis
-        Parkes-Talbot"}]}'
-  recorded_at: Fri, 13 Dec 2024 08:56:09 GMT
+      string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Scenario
+        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"author":"LOUIS"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
+- request:
+    method: get
+    uri: http://localhost:3002/api/v1/versions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a66f55fc1a423ee46cd83ec8a150be4e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d19ba413-80cc-4e4d-adac-987061fa261c
+      X-Runtime:
+      - '0.006401'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.00, sql.active_record;dur=0.26, instantiation.active_record;dur=0.02,
+        process_action.action_controller;dur=0.85
+      Vary:
+      - Origin
+      Content-Length:
+      - '277'
+    body:
+      encoding: UTF-8
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+  recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
 recorded_with: VCR 6.0.0

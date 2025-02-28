@@ -1,5 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
+ENV['MY_API_TOKEN'] = 'dummy_token'
 require File.expand_path('../../config/environment', __FILE__)
 
 # Prevent database truncation if the environment is production
@@ -41,9 +42,14 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 Capybara.javascript_driver = :webkit
 
 VCR.configure do |c|
+  c.filter_sensitive_data('<MY_API_TOKEN>') { ENV['MY_API_TOKEN'] }
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
   c.configure_rspec_metadata!
+
+  c.before_record do |interaction|
+    interaction.request.headers.delete('Authorization')
+  end
 
   # If running specs against local etengine server, it would otherwise not
   # be noticed that cassettes might be missing (and that the server is local)
@@ -77,6 +83,7 @@ VCR.configure do |c|
       request.proceed
     end
   end
+
 
   c.ignore_request do |request|
     ## Ignore requests made for accesstokens

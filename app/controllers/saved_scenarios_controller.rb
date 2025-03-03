@@ -102,6 +102,7 @@ class SavedScenariosController < ApplicationController
     )
 
     if new_scenario.successful?
+      Current.setting.preset_scenario_id = session_id
       Current.setting.api_session_id = new_scenario.value.id
       session_id = new_scenario.value.id
     end

@@ -121,6 +121,7 @@ describe SavedScenariosController, vcr: true do
           sign_in user
           allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
           session[:setting].active_saved_scenario_id = 12
+          session[:setting].preset_scenario_id = 10
           session[:setting].api_session_id = 100_000
           get(:load, params: { id: 12, scenario_id: 10 })
         end

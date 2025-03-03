@@ -126,8 +126,11 @@ class SavedScenariosController < ApplicationController
     end
   end
 
+  # Check if the scenario id also matches the preset. That way we are sure
+  # the historical versions match up.
   def active_scenario?
-    Current.setting.active_saved_scenario_id == params[:id].to_i
+    Current.setting.active_saved_scenario_id == params[:id].to_i &&
+      Current.setting.preset_scenario_id == saved_scenario.scenario_id
   end
 
   def update_active_scenario_title

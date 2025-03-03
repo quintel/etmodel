@@ -72,6 +72,11 @@ class SavedScenariosController < ApplicationController
     end
 
     if current_user || !saved_scenario.private
+      if api_scenario_for_load.failure?
+        flash[:alert] = t('scenario.cannot_load')
+        return redirect_to(root_path)
+      end
+
       create_scenario_and_load_setting(
         saveable: current_user && saved_scenario.collaborator?(current_user)
       )
@@ -141,7 +146,7 @@ class SavedScenariosController < ApplicationController
   # Creates a copy of the underlying scenario id and
   def create_scenario_and_load_setting(saveable: false)
     Current.setting = Setting.load_with_preset(
-      create_api_scenario,
+      api_scenario_for_load.value,
       saved_scenario.scenario_id,
       active_saved_scenario: {
         id: saveable ? params[:id].to_i : nil,
@@ -150,12 +155,12 @@ class SavedScenariosController < ApplicationController
     )
   end
 
-  def create_api_scenario
-    CreateAPIScenario.call(engine_client, { scenario_id: @saved_scenario.scenario_id }).or do
-      flash[:alert] = t('scenario.cannot_load')
-      redirect_to(root_path) and return
-      nil
-    end
+  def api_scenario_for_load
+    @api_scenario_for_load ||=
+      CreateAPIScenario.call(
+        engine_client,
+        { scenario_id: saved_scenario.scenario_id }
+      )
   end
 
   def update_params

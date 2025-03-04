@@ -12,7 +12,7 @@ nl:
         productie van elektriciteit. Het omgekeerde geldt voor export: als er in een
         externe markt een hogere prijs wordt geboden dan de binnenlandse (productie)prijs
         wordt er stroom geëxporteerd. </br></br>
-        In de onderstaande tabs kun je voor de interconnectoren in jouw scenario de 
+        In de onderstaande tabs kun je voor de interconnectoren in jouw scenario de
         capaciteit en andere attributen instellen.
     flexibility_electricity_import_export_interconnectivity:
       title: "Interconnector 1"
@@ -117,7 +117,7 @@ nl:
         naar een brandstof. Dit kan netwerkgas, waterstof of olie zijn.
         Je kan deze instellen op de financieel meest aantrekkelijke voor
         de consument, maar kan ook een instelling kiezen die minder netwerkimpact
-        oplevert. 
+        oplevert.
         </br></br>
         Specifiek voor gasgestookte hybride warmtepompen helpt de grafiek
         <a href="#" class="open_chart" data-chart-key="household_space_heater_hhp_hourly_demand" data-chart-location="side">
@@ -130,13 +130,13 @@ nl:
         Vraagsturing is een vorm van flexibiliteit waarbij de energievraag
         wordt aangepast of verschoven in de tijd. Een vorm van vraagsturing is vraagverschuiving.
         Met de schuifjes in deze sectie kun je vraagverschuiving instellen voor de elektriciteitsvraag
-        van de metaal-, chemische, centrale ICT en overige industrie. </br></br> 
-        Als je capaciteit voor vraagverschuiving instelt voor een sector, zal het die capaciteit 
+        van de metaal-, chemische, centrale ICT en overige industrie. </br></br>
+        Als je capaciteit voor vraagverschuiving instelt voor een sector, zal het die capaciteit
         gebruiken om een deel van de elektriciteitsconsumptie te verlagen als de elektriciteitsprijs te
-        hoog is. De verminderde consumptie wordt ingehaald als de prijs daalt. Dit betekent dat de 
+        hoog is. De verminderde consumptie wordt ingehaald als de prijs daalt. Dit betekent dat de
         totale elektriciteitsvraag over het jaar gelijk blijft. </br></br>
-        Het doel is om hoge elektriciteitskosten voor de industrie te vermijden en tegelijkertijd 
-        vraagpieken op het elektriciteitsnetwerk te verkleinen. Dit kan de behoefte aan piekcentrales 
+        Het doel is om hoge elektriciteitskosten voor de industrie te vermijden en tegelijkertijd
+        vraagpieken op het elektriciteitsnetwerk te verkleinen. Dit kan de behoefte aan piekcentrales
         in je scenario verminderen.
     flexibility_electricity_storage_overview:
       title: Gedrag van opslagtechnologieën
@@ -156,8 +156,8 @@ nl:
         Elke technologie heeft ook <i>willingness-to-accept</i>, die aangeeft wat de minimale prijs
         is waarvoor het bereid is de opgeslagen elektriciteit te ontladen. Dit is vergelijkbaar
         met het begrip 'marginale kosten' bij regelbare centrales.</li> </br>
-        <li>Daarnaast biedt het ETM een optie om een 
-        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
+        <li>Daarnaast biedt het ETM een optie om een
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\">
         prognose-algoritme</a> te gebruiken om het gedrag van opslagtechnologieën te verbeteren.
         In plaats van alleen te kijken naar de elektriciteitsprijs in één uur, kijkt het algoritme
         vooruit in de tijd en probeert het interessante momenten om te laden en ontladen te identificeren.
@@ -170,23 +170,23 @@ nl:
         capaciteit zakt. Het opslagsysteem zelf heeft verder geen interactie met de rest van het elektriciteitssysteem. </li></ol><br/>
         In de onderstaande slides kun je het geïnstalleerde vermogen voor verschillende opslagtechnologieën instellen
         en het gedrag bepalen. Let op dat het
-        daadwerkelijke gedrag van deze technologieën gecompliceerder is dan toegelicht in deze korte 
+        daadwerkelijke gedrag van deze technologieën gecompliceerder is dan toegelicht in deze korte
         beschrijving. De <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\">
         documentatie</a> bevat een meer gedetailleerde beschrijving.<br/><br/>
         In <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
-        deze grafiek</a> kun je het opgestelde opslagvolume voor elektriciteit inzien in vergelijking tot de opslagvolumes 
+        deze grafiek</a> kun je het opgestelde opslagvolume voor elektriciteit inzien in vergelijking tot de opslagvolumes
         voor andere energiedragers.
     flexibility_power_storage_households_flexibility_p2p_electricity:
       title: Batterijen in huishoudens
       short_description:
       description: |
-        Batterijen kunnen in huishoudens geïnstalleerd worden. Als de elektriciteitsprijs in een bepaald uur 
-        lager is dan de <i>willingness-to-pay</i>, gaat de batterij in dat uur opladen. Wanneer de elektriciteitsprijs 
+        Batterijen kunnen in huishoudens geïnstalleerd worden. Als de elektriciteitsprijs in een bepaald uur
+        lager is dan de <i>willingness-to-pay</i>, gaat de batterij in dat uur opladen. Wanneer de elektriciteitsprijs
         groter is dan de <i>willingness-to-accept</i>, zal de opslagen elektriciteit worden ontladen. <br/><br/>
         Optioneel kun je ervoor kiezen dit gedrag te overschrijven door een
         <a href="https://docs.energytransitionmodel.com/main/battery-forecasting" target=\"_blank\">
         prognose-algoritme</a> in te zetten. Er zijn twee typen prognoses beschikbaar voor batterijen in huishoudens.
-        Het eerste type gebruikt ze om het elektriciteitssysteem als geheel te balanceren, terwijl het tweede type 
+        Het eerste type gebruikt ze om het elektriciteitssysteem als geheel te balanceren, terwijl het tweede type
         probeert lokale vraag te balanceren met lokaal aanbod van zon-PV. In
         <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
         deze grafiek</a> kun je de curves vergelijken waarvoor beide typen prognoses worden ingezet.
@@ -214,8 +214,8 @@ nl:
       title: Batterijen in elektrische voertuigen
       short_description:
       description: |
-        Elektrische voertuigen zijn vaak langer op het netwerk aangesloten dan nodig is om hun batterijen 
-        volledig op te laden. Tijdens die inactieve uren kan het kosteneffectief zijn om de batterijen in te 
+        Elektrische voertuigen zijn vaak langer op het netwerk aangesloten dan nodig is om hun batterijen
+        volledig op te laden. Tijdens die inactieve uren kan het kosteneffectief zijn om de batterijen in te
         zetten om opslagdiensten te leveren aan het elektriciteitsnet. </br></br>
         Batterijen zijn flexibele technologieën in het ETM, wat betekent dat het regelbaar is wanneer ze laden en ontladen. Als de elektriciteitsprijs
         in een bepaald uur lager is dan de willingness-to-pay, gaat de batterij in dat uur opladen. Wanneer
@@ -280,16 +280,16 @@ nl:
       short_description:
       description: |
         In de sectie <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
-        Opslag elektriciteit</a> kun je ervoor kiezen een 
-        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
-        prognose-algoritme</a> in te zetten om het gedrag van opslagtechnologieën te bepalen. Hieronder kun je 
+        Opslag elektriciteit</a> kun je ervoor kiezen een
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\">
+        prognose-algoritme</a> in te zetten om het gedrag van opslagtechnologieën te bepalen. Hieronder kun je
         de inzetvolgorde bepalen voor technologieën waarvoor het systeemprognose-algoritme is ingeschakeld. </br></br>
-        De eerste technologie zal proberen de 
-        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a> af te 
-        vlakken. Elke daaropvolgende technologie gebruikt vervolgens de resulterende curve van de voorgaande 
+        De eerste technologie zal proberen de
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a> af te
+        vlakken. Elke daaropvolgende technologie gebruikt vervolgens de resulterende curve van de voorgaande
         technologie om deze nog verder af te vlakken. </br></br>
-        Hoe eerder een technologie aan de beurt is, hoe variabeler de curve waarop het prognose-algoritme wordt 
-        toegepast typisch is. De specificaties van de technologie bepalen in welke mate deze geschikt is om met 
+        Hoe eerder een technologie aan de beurt is, hoe variabeler de curve waarop het prognose-algoritme wordt
+        toegepast typisch is. De specificaties van de technologie bepalen in welke mate deze geschikt is om met
         hoge variabiliteit om te gaan. De tabel rechts geeft je een overzicht van deze specificaties.
     flexibility_electricity_conversion_overview:
       title: Gedrag van conversietechnologieën
@@ -317,7 +317,7 @@ nl:
         <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-agriculture">
         conversie naar warmte voor landbouw</a></li>
         </ul></br>
-        Let op dat het daadwerkelijke gedrag van deze technologieën gecompliceerder is dan 
+        Let op dat het daadwerkelijke gedrag van deze technologieën gecompliceerder is dan
         toegelicht in deze korte beschrijving. De <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> bevat een meer gedetailleerde beschrijving.
     flexibility_flexibility_power_to_heat_for_district_heating:
@@ -339,11 +339,11 @@ nl:
       title: Conversie naar warmte voor industrie
       short_description:
       description: |
-        Gas- en waterstofketels in de industrie kunnen worden omgebouwd naar hybride ketels door 
-        ze uit te rusten met elektrische boilers. In het ETM is power-to-heat een flexibele 
-        vraagtechnologie, wat betekent dat, als de willingness-to-pay van power-to-heat hoger is 
-        dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte produceren 
-        in plaats van de gas- of waterstofketels. Zie de 
+        Gas- en waterstofketels in de industrie kunnen worden omgebouwd naar hybride ketels door
+        ze uit te rusten met elektrische boilers. In het ETM is power-to-heat een flexibele
+        vraagtechnologie, wat betekent dat, als de willingness-to-pay van power-to-heat hoger is
+        dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte produceren
+        in plaats van de gas- of waterstofketels. Zie de
         <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
         Omdat het een hybride technologie is, hebben deze schuifjes alleen effect als er zowel
@@ -358,11 +358,11 @@ nl:
       title: Conversie naar warmte voor landbouw
       short_description:
       description: |
-        Gas- en waterstofketels in de landbouw kunnen worden omgebouwd naar hybride ketels door 
-        ze uit te rusten met elektrische boilers. In het ETM is power-to-heat een flexibele 
-        vraagtechnologie, wat betekent dat, als de willingness-to-pay van power-to-heat hoger is 
-        dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte produceren 
-        in plaats van de gas- of waterstofketels. Zie de 
+        Gas- en waterstofketels in de landbouw kunnen worden omgebouwd naar hybride ketels door
+        ze uit te rusten met elektrische boilers. In het ETM is power-to-heat een flexibele
+        vraagtechnologie, wat betekent dat, als de willingness-to-pay van power-to-heat hoger is
+        dan de uurlijkse elektriciteitsprijs, de power-to-heat boilers de benodigde warmte produceren
+        in plaats van de gas- of waterstofketels. Zie de
         <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
         Omdat het een hybride technologie is, hebben deze schuifjes alleen effect als er zowel
@@ -379,19 +379,19 @@ nl:
         Zie de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
         De geproduceerde waterstof wordt ingevoed in het centrale waterstofnetwerk. In de
-        <a href="/scenario/supply/hydrogen/hydrogen-production"> waterstofproductie</a> sectie kan je 
-        waterstof ook door middel van andere pocessen produceren. Eventuele overschotten aan 
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> waterstofproductie</a> sectie kan je
+        waterstof ook door middel van andere pocessen produceren. Eventuele overschotten aan
         waterstof worden geëxporteerd.
     flexibility_flexibility_energy_production_synthetic_kerosene:
       title: Conversie naar kerosine
       short_description:
       description: |
-        Elektriciteit kan worden gebruikt om synthetische kerosine te produceren door waterstof, elektriciteit en CO<sub>2</sub>. 
+        Elektriciteit kan worden gebruikt om synthetische kerosine te produceren door waterstof, elektriciteit en CO<sub>2</sub>.
         In het ETM is regelbare synthetische kerosine een flexibele vragtechnologie voor elektriciteit, wat betekent dat
         de synthetische kerosine alleen geproduceerd wordt wanneer de willingness-to-pay hoger
         is dan de uurlijkse elektriciteitsprijs. Zie de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
-        In de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2"> Gebruik en opslag van CO<sub>2</sub> </a> sectie kan de 
+        In de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2"> Gebruik en opslag van CO<sub>2</sub> </a> sectie kan de
         regelbare capaciteit (in MWe-input) voor synthetische kerosine ingesteld worden.
     flexibility_flexibility_power_to_methane:
       title: Conversie naar methaan voor gasnetwerk
@@ -642,24 +642,24 @@ nl:
       title: "Flexibiliteitsbehoefte: tijdschalen"
       short_description:
       description: |
-        Deze tabel brengt de concepten van de vorige secties een stap verder door de flexibiliteitsbehoefte 
-        te analyseren op verschillende tijdschalen voor netwerkgas en waterstof. Het laat de behoefte aan 
+        Deze tabel brengt de concepten van de vorige secties een stap verder door de flexibiliteitsbehoefte
+        te analyseren op verschillende tijdschalen voor netwerkgas en waterstof. Het laat de behoefte aan
         flexibel vermogen en aan flexibel volume zien voor zowel vraag als aanbod. </br></br>
         De basis van de analyse is de <i>oorspronkelijke onbalans</i> (de
-        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>), 
-        die als eerst wordt getoond. De curve wordt vervolgens in twee tijdschalen opgesplitst door een 
-        voortschrijdend gemiddelde toe te passen. Je kunt de periode van het voortschrijdend gemiddelde 
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>),
+        die als eerst wordt getoond. De curve wordt vervolgens in twee tijdschalen opgesplitst door een
+        voortschrijdend gemiddelde toe te passen. Je kunt de periode van het voortschrijdend gemiddelde
         aanpassen met onderstaande schuifje.
         <ul>
-        <li> De <i>korte tijdschaal</i> wordt gegeven door het verschil tussen de oorspronkelijke residual load curve 
+        <li> De <i>korte tijdschaal</i> wordt gegeven door het verschil tussen de oorspronkelijke residual load curve
         en het voortschrijdend gemiddelde en is typisch zeer variabel. </li>
         <li> De <i>lange tijdschaal</i> wordt gegeven door het voortschrijdend gemiddelde en is typisch veel vlakker. </li>
         </ul> </br>
-        Voor netwerkgas en waterstof wordt flexibiliteit in het ETM geleverd door opslag. Grootschalige opslagvolumes 
-        worden voor deze dragers typisch ondergronds gerealiseerd. Twee geschikte types ondergrondse opslag zijn 
-        zoutcavernes en lege gasvelden. Zoutcavernes kunnen goed korte termijn flexibiliteit leveren, terwijl lege 
-        gasvelden beter met lange termijn flexibiliteit om kunnen gaan. Er zullen geografische beperkingen zijn aan 
-        het potentieel van beide types opslag in jouw regio. De tabel helpt je te bepalen of jouw scenario binnen 
+        Voor netwerkgas en waterstof wordt flexibiliteit in het ETM geleverd door opslag. Grootschalige opslagvolumes
+        worden voor deze dragers typisch ondergronds gerealiseerd. Twee geschikte types ondergrondse opslag zijn
+        zoutcavernes en lege gasvelden. Zoutcavernes kunnen goed korte termijn flexibiliteit leveren, terwijl lege
+        gasvelden beter met lange termijn flexibiliteit om kunnen gaan. Er zullen geografische beperkingen zijn aan
+        het potentieel van beide types opslag in jouw regio. De tabel helpt je te bepalen of jouw scenario binnen
         deze beperkingen valt.
     flexibility_overview_flexible_capacities:
       title: "Flexibiliteitsvoorziening: capaciteit"
@@ -679,10 +679,10 @@ nl:
         maximale overschot en tekort zien. Dit geeft aan of je voldoende flexibele technieken hebt geïnstalleerd
         om de overschotten volledig te benutten en het tekort te voorzien. <br/><br/>
         Merk op dat voor elektriciteit flexibele aanbodtechnologieën kunnen leveren aan flexibele vraagtechnologieën.
-        Je kunt bijvoorbeeld elektriciteit uit batterijen gebruiken om waterstof te produceren door middel van 
-        power-to-gas. Dit betekent het niet inefficiënt hoeft te zijn als je meer geïnstalleerd vermogen hebt 
-        opgesteld dan het maximale overschot of tekort. Let ook op dat voor de gasvormige dragers het systeem 
-        automatisch gebalanceerd wordt door opslag. Dit betekent dat de opslagcapaciteit altijd overeen zal komen 
+        Je kunt bijvoorbeeld elektriciteit uit batterijen gebruiken om waterstof te produceren door middel van
+        power-to-gas. Dit betekent het niet inefficiënt hoeft te zijn als je meer geïnstalleerd vermogen hebt
+        opgesteld dan het maximale overschot of tekort. Let ook op dat voor de gasvormige dragers het systeem
+        automatisch gebalanceerd wordt door opslag. Dit betekent dat de opslagcapaciteit altijd overeen zal komen
         met het maximale overschot en tekort.
     flexibility_security_of_supply_electricity:
       title: Elektriciteit
@@ -729,14 +729,17 @@ nl:
         Op de pagina\r\n<a href=\"/scenario/flexibility/flexibility_weather/weather-conditions\">Weersomstandigheden</a>
         kun je verschillende weerjaren inladen, om te zien hoe de warmtevraagpieken
         in je scenario afhangen van het weer.\r\n"
-    flexibility_weather_conditions_and_flh:
-      title: Weersomstandigheden
+    flexibility_temperature_and_flh:
+      title: Temperatuur en vollasturen
       short_description:
-      description: "<b>Temperatuur en vollasturen</b>\r\n<br/>\r\n
+      description: |
         Buitentemperatuur en technische ontwikkelingen van zon- en windtechnologie hebben
-        effect op (jaarlijkse en uurlijkse) vraag en aanbod. Stel hier gemiddelde
+        effect op (jaarlijkse en uurlijkse) vraag en aanbod. Stel hier de gemiddelde
         temperatuur en vollasturen van windturbines en zonnepanelen in.
-        \r\n<p>\r\n<b>Weerjaren (alleen beschikbaar voor Nederlandse regio's)</b>\r\n<br/>\r\n
+    flexibility_weather_years:
+      title: Weerjaren (alleen voor Nederlandse regio's)
+      short_description:
+      description: |
         Standaard worden weersomstandigheden gebruikt die passen bij het startjaar.
         Echter, weersomstandigheden kunnen flink variëren. Om de impact van weersomstandigheden
         te verkennen is het mogelijk om een ander weerjaar te selecteren. Het selecteren van een ander
@@ -746,15 +749,15 @@ nl:
         <li>windturbines - effect op: productieprofiel en vollasturen,</li>
         <li>gemiddelde temperatuur - effect op: jaarlijkse warmtevraag,</li>
         <li>temperatuurprofiel - effect op: uurlijkse vraag naar warmte in huishoudens, gebouwen en landbouw.</li>
-        </ul>\r\n</p>\r\n
+        </ul><br/>
         Let op: met het selecteren van een ander weerjaar dan Default worden eerdere aannames
         over verandering van vollasturen en temperatuur overschreven.
         In de omschrijving van het weerjaar staan de bijpassende vollasturen en temperatuur.
-        \r\n</p>\r\nKijk voor meer informatie over weeromstandigheden
-        in onze <a href=\"https://docs.energytransitionmodel.com/main/weather-conditions\"
-        target =\"_blank\">documentatie</a>.\r\n</p>\r\nProductiecurves kunnen worden
-        gedownload in de <a href=\"/scenario/data/data_export/merit-order-prices\">resultaten
-        sectie</a>.\r\n\r\n\r\n"
+        <br/><br/>Kijk voor meer informatie over weeromstandigheden
+        in onze <a href="https://docs.energytransitionmodel.com/main/weather-conditions"
+        target =\"_blank\">documentatie</a>.<br/><br/>Productiecurves kunnen worden
+        gedownload in de <a href="/scenario/data/data_export/overview">resultaten
+        sectie</a>.
     multi_curve_upload:
       title: Curve upload
       description: |

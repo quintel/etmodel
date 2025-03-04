@@ -5,42 +5,35 @@
   interface_group: temperature
   command_type: value
   position: 1
-  slide_key: flexibility_weather_conditions_and_flh
-- key: settings_weather_curve_set
-  step_value: 1.0
-  unit: weather-curves
-  interface_group: weather_years
-  position: 7
-  dependent_on: has_weather_curves
-  slide_key: flexibility_weather_conditions_and_flh
+  slide_key: flexibility_temperature_and_flh
 - key: flh_of_energy_power_wind_turbine_coastal
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
   position: 3
   dependent_on: has_coastline
-  slide_key: flexibility_weather_conditions_and_flh
+  slide_key: flexibility_temperature_and_flh
 - key: flh_of_energy_power_wind_turbine_inland
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
   position: 2
-  slide_key: flexibility_weather_conditions_and_flh
+  slide_key: flexibility_temperature_and_flh
 - key: flh_of_energy_power_wind_turbine_offshore
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
   position: 4
-  slide_key: flexibility_weather_conditions_and_flh
+  slide_key: flexibility_temperature_and_flh
 - key: flh_of_energy_hydrogen_wind_turbine_offshore
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
   position: 6
-  slide_key: flexibility_weather_conditions_and_flh
+  slide_key: flexibility_temperature_and_flh
 - key: flh_of_solar_pv_solar_radiation
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
   position: 7
-  slide_key: flexibility_weather_conditions_and_flh
+  slide_key: flexibility_temperature_and_flh

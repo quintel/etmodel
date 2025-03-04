@@ -623,7 +623,7 @@ en:
         engines using green gas or hydrogen are promising technologies to provide
         back-up capacity for a future energy system relying on wind and solar power.
         This is due to their fast ramping speeds and relatively low investment costs.\r\n<br
-        /><br />\r\n<strong>Tip:</strong> Take a look at the <a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weather
+        /><br />\r\n<strong>Tip:</strong> Take a look at the <a href=\"/scenario/flexibility/flexibility_weather/weather-conditions\">Weather
         conditions</a> section to explore how variations in outdoor temperature, wind
         speeds and solar radiation impact your scenario. Is your scenario able to
         cope with extreme weather conditions? Will people be left in the dark during
@@ -649,7 +649,7 @@ en:
         to be filled first. A geothermal heat well is expensive and is therefore best
         used to produce heat non-stop. Burners using (green) gas or hydrogen can supply
         heat at any moment and are therefore a logical choice for meeting demand peaks.\r\n<br
-        /><br />\r\n<strong>Tip:</strong> Take a look at the\r\n<a href=\"/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weather
+        /><br />\r\n<strong>Tip:</strong> Take a look at the\r\n<a href=\"/scenario/flexibility/flexibility_weather/weather-conditions\">Weather
         conditions</a> slide to explore how variations in outdoor temperature affect
         heat demand peaks in your scenario.\r\n"
     flexibility_merit_order_merit_order:
@@ -705,7 +705,7 @@ en:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul
     flexibility_weather_conditions_and_flh:
-      title: Extreme weather conditions
+      title: weather conditions
       short_description:
       description: "<b>Temperature and full load hours</b>\r\n<br/>\r\n
         Outdoor temperature and technical developments of wind and solar

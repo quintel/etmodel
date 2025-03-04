@@ -748,7 +748,7 @@ Ontdek deze nieuwe functionaliteit bij **[Flexibiliteit → Import/Export](/scen
 
 De uurlijkse vraagcurves in de gebouwensector en landbouw zijn temperatuursafhankelijk gemaakt. Hierdoor veranderen de curves mee als de gebruiker een ander weerjaar selecteert. Voorheen gebruikte het ETM een statisch grootverbruikersprofiel voor de gebouwensector en een vlak profiel voor de landbouw. Nu gebruiken beide sectoren hetzelfde grootverbruikersprofiel, dat dynamisch is gegenereerd aan de hand van weerdata. Dit profiel is hierdoor ook beschikbaar voor de historische weerjaren 1987, 1997 en 2004, waardoor de warmtevraag in gebouwen en landbouw, net als bij huishoudens, meebeweegt met de buitentemperatuur.
 
-Bekijk de impact van het weerjaar op de vraagprofielen bij **[Flexibiliteit → Weersomstandigheden](/scenario/flexibility/flexibility_weather/extreme-weather-conditions)**!
+Bekijk de impact van het weerjaar op de vraagprofielen bij **[Flexibiliteit → Weersomstandigheden](/scenario/flexibility/flexibility_weather/weather-conditions)**!
 
 ![](/assets/pages/whats_new/weather_years_buildings_heating_nl.png)
 
@@ -756,7 +756,7 @@ Bekijk de impact van het weerjaar op de vraagprofielen bij **[Flexibiliteit → 
 
 De impact van een hogere of lagere gemiddelde buitentemperatuur is tegen het licht gehouden. Het veranderen van de buitentemperatuur heeft nu, naast huishoudens en gebouwen, ook invloed op de warmtevraag van landbouw. Daarnaast is de impact op de warmtevraag in deze drie sectoren een stuk groter dan voorheen. De impact van temperatuur op warmtevraag is afgeleid uit de 'graaddagenformule' die gehanteerd wordt door GTS. Bekijk onze [documentatiepagina](https://docs.energytransitionmodel.com/main/outdoor-temperature) voor meer informatie. Deze verbetering is relevant voor zowel de temperatuurschuif in de weerjarensectie van het ETM als het selecteren van een specifiek weerjaar.
 
-Ga naar **[Flexibiliteit → Weersomstandigheden](/scenario/flexibility/flexibility_weather/extreme-weather-conditions)** om de verbetering te bekijken!
+Ga naar **[Flexibiliteit → Weersomstandigheden](/scenario/flexibility/flexibility_weather/weather-conditions)** om de verbetering te bekijken!
 
 ![](/assets/pages/whats_new/outdoor_temperature_nl.png)
 
@@ -834,7 +834,7 @@ Alle WKKs (m.u.v. biogas-WKK) draaien nu mee als dispatchable in de elektricitei
 
 ## Windprofielen verbeterd
 
-De windprofielen voor de default dataset van Nederland zijn nu gegenereerd volgens dezelfde methode (gebaseerd op KNMI data) als gebruikt voor de [extreme weerjaren (1987, 1997, 2004)](/scenario/flexibility/flexibility_weather/extreme-weather-conditions). Dit waarborgt de consistentie tussen de verschillende datasets voor Nederland. Check onze [Github documentatie](https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind) voor een uitgebreidere toelichting op deze methode.
+De windprofielen voor de default dataset van Nederland zijn nu gegenereerd volgens dezelfde methode (gebaseerd op KNMI data) als gebruikt voor de [extreme weerjaren (1987, 1997, 2004)](/scenario/flexibility/flexibility_weather/weather-conditions). Dit waarborgt de consistentie tussen de verschillende datasets voor Nederland. Check onze [Github documentatie](https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind) voor een uitgebreidere toelichting op deze methode.
 
 -> ![](/assets/pages/whats_new/wind_curves_nl.png) <-
 

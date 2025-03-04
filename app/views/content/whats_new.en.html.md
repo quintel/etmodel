@@ -754,7 +754,7 @@ Discover this new functionality in the **[Flexibility → Import/Export](/scenar
 
 The hourly heat demand curves in the buildings and agriculture sector are now temperature dependent. This means that the shape of the demand curves will change depending on the selected weather year. Previously, the ETM used static demand profiles for the buildings sector and a flat profile for agriculture. Both sectors now use the same profile, based on data from large gas consumers, which is generated dynamically using weather data. As a result, this profile is now also available for the weather years 1987, 1997, and 2004. Heat demand in buildings and agriculture responds to outdoor temperature fluctuations, just like households heating demand.
 
-Get insight in the impact of the weather year selection on demand curves in the **[Flexibility → Weather conditions](/scenario/flexibility/flexibility_weather/extreme-weather-conditions)** section!
+Get insight in the impact of the weather year selection on demand curves in the **[Flexibility → Weather conditions](/scenario/flexibility/flexibility_weather/weather-conditions)** section!
 
 ![](/assets/pages/whats_new/weather_years_buildings_heating_en.png)
 
@@ -762,7 +762,7 @@ Get insight in the impact of the weather year selection on demand curves in the 
 
 The impact of a higher or lower average outdoor temperature has been revised. In addition to heating and cooling demand in households and buildings, changing outdoor temperature now also affects heating demand in the agriculture sector. Heating demand in all three sectors now is more sensitive to temperature changes; the impact of temperature on heat demand is based on research by the Dutch gas TSO. See our [documentation page](https://docs.energytransitionmodel.com/main/outdoor-temperature) for more info. This improvement is relevant for both the temperature slider and the weather year selection.
 
-Check out this improvement in the **[Flexibility → Weather conditions](/scenario/flexibility/flexibility_weather/extreme-weather-conditions)** section!
+Check out this improvement in the **[Flexibility → Weather conditions](/scenario/flexibility/flexibility_weather/weather-conditions)** section!
 
 ![](/assets/pages/whats_new/outdoor_temperature_en.png)
 
@@ -840,7 +840,7 @@ All CHPs (with the exception of biogas-CHP) now also work as dispatchable in the
 
 ## Wind load curves improved
 
-The wind load curves for the default dataset of the Netherlands are now created using the same (KNMI-based) method as used for the [extreme weather years (1987, 1997, 2004)](/scenario/flexibility/flexibility_weather/extreme-weather-conditions). This ensures more consistency between the different datasets for the Netherlands. Check out our [Github documentation](https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind) for a more detailed explanation of this method.
+The wind load curves for the default dataset of the Netherlands are now created using the same (KNMI-based) method as used for the [extreme weather years (1987, 1997, 2004)](/scenario/flexibility/flexibility_weather/weather-conditions). This ensures more consistency between the different datasets for the Netherlands. Check out our [Github documentation](https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind) for a more detailed explanation of this method.
 
 -> ![](/assets/pages/whats_new/wind_curves_en.png) <-
 

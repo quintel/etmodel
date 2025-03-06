@@ -6,7 +6,7 @@ ___
 
 **New features**
 
-* Version tags are now used for "Saved scenarios" and "Collections" in API responses, in preparation of releasing a stable version of the ETM. Read more about changes to the API in the <a href="https://docs.energytransitionmodel.com/api/changelog" target="_blank">API changelog</a>.
+* Version tags are now used for "Saved scenarios" and "Collections" in API responses (in preparation of releasing a stable version of the ETM). Read more about changes to the API in the <a href="https://docs.energytransitionmodel.com/api/changelog" target="_blank">API changelog</a>.
 
 <details>
   <summary>**Bug fixes**</summary>

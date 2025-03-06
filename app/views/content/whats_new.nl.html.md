@@ -6,7 +6,7 @@ ___
 
 **Nieuwe functies**
 
-* Er worden nu versie-tags gebruikt voor "Opgeslagen scenario's" en "Collecties" in API-responses, in voorbereiding op de release van een stabiele versie van het ETM. Lees meer over de wijzigingen in de API in de <a href="https://docs.energytransitionmodel.com/api/changelog" target="_blank">API changelog</a>.
+* Er worden nu versie-tags gebruikt voor "Opgeslagen scenario's" en "Collecties" in API-responses (in voorbereiding op de release van een stabiele versie van het ETM). Lees meer over de wijzigingen in de API in de <a href="https://docs.energytransitionmodel.com/api/changelog" target="_blank">API changelog</a>.
 
 <details>
   <summary>**Bug fixes**</summary>

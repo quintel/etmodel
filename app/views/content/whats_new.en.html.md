@@ -2,6 +2,31 @@
 
 ___
 
+# March 2025
+
+**New features**
+
+* Version tags are now used for "Saved scenarios" and "Collections" in API responses (in preparation of releasing a stable version of the ETM). Read more about changes to the API in the <a href="https://docs.energytransitionmodel.com/api/changelog" target="_blank">API changelog</a>.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * The <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">full load hours</a> slider for solar PV did not alway correctly adjust the full load hours and production of all solar PV technologies. This is now fixed so that solar PV production matches the full load hour settings.
+  * Changes in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">full load hours</a> led to inconsistent energy flows in solar PV plants for H2 and offshore wind turbines for H2 between the electricity and hydrogen production component. This is solved to ensure that flows between these components are consistent.
+  * An issue in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_net_load/curtailment-solar-pv" target="_blank">curtailment settings</a> for solar PV led to the wrong calculation of the peak production before curtailment. This issue is fixed, the correct peak production before curtailment is given. The production after curtailment remains unaffected.
+  * Due to a bug in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">weather year set</a> (only for Dutch regions), the weather year settings did not change the annual heat demand of households. This bug is fixed.
+  * The slider for turning off appliances in the <a href="https://energytransitionmodel.com/scenario/demand/households/behaviour" target="_blank">Behaviour</a> section of Households also affected the energy demand in the Buildings sector. This is rectified, the slider now only affects energy demand for appliances in the Households sector.
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * No relevant changes to inputs have been made
+</details>
+</br>
+
+___
+
 # February 2025
 
 **New features**

@@ -2,6 +2,36 @@
 
 ___
 
+# Maart 2025
+
+**Nieuwe functies**
+
+* We introduceren stabiele versies van het ETM voor gebruikers van de API
+  * Het ETM is voortdurend in ontwikkeling en verbetering, wat soms kan leiden tot kleine veranderingen in de uitkomsten van bestaande scenario's. Het gebruik van een stabiele versie van het ETM zorgt ervoor dat scenario-uitkomsten stabiel blijven.
+  * De introductie van stabiele versies betekent ook dat "Opgeslagen scenario's" en "Collecties" nu versie-tags bevatten in de API-responses.
+  * Lees alles over het gebruik van de stabiele omgeving en andere wijzigingen in de API in de <a href="https://docs.energytransitionmodel.com/api/changelog" target="_blank">API changelog</a>
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * Er zijn meerdere issues verholpen gerelateerd aan diverse zon-PV technologieën en aan de windturbine op zee voor H2
+    * De <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">vollasturenschuifjes</a> voor zon-PV en windturbine op zee voor H2 werkten niet naar behoren in scenario's waar in het startjaar al opgesteld vermogen was van de gerelateerde technologieën. Als in deze situaties alleen de vollasturen werden aangepast van zon-PV (dus expliciet niet het opgesteld vermogen van zon-PV technologieën), had dit onterecht geen invloed op de elektriciteitsproductie van zon op dak bij huishoudens en gebouwen, zon op land met batterijsysteem, zonnecentrales PV op zee en zonnecentrales PV voor H2 (voor de laatstgenoemde bleef ook de waterstofproductie onverranderd). Gelijkerwijs had het vollasturenschuifje van de windturbine op zee voor H2 geen invloed op de elektriciteits- en waterstofproductie van deze technologie. Deze issues in de vollasturenschuifjes zijn nu verholpen.
+    * Het wijzigen van de <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">vollasturen</a> van de windturbine op zee voor H2 en de zonnecentrale PV voor H2 had alleen invloed op de vollasturen van respectievelijk de windturbine op zee en de zonnecentrale PV, maar niet op de aangesloten elektrolyser. Dit is nu verholpen zodat nu ook de vollasturen van de elektrolyser worden bijgewerkt.
+    * Kleine bug fix in de berekening van de jaarlijkse productiebeperking (*curtailment*) voor de zonnecentrale PV voor H2 en de windturbine op zee voor H2
+    * We hebben een issue verholpen in de instellingen voor <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_net_load/curtailment-solar-pv" target="_blank">productiebeperking</a> voor zon-PV, die niet naar behoren functioneerde voor zon op dak bij huishoudens en gebouwen en voor  zonnecentrales PV op zee. Het gevolg van dit issue was dat in een scenario deze zon-PV technologieën een hoger piekvermogen konden hebben dan volgens de instellingen voor de productiebeperking was toegestaan.
+  * Het schuifje voor het uizetten van apparaten in de <a href="https://energytransitionmodel.com/scenario/demand/households/behaviour" target="_blank">Gedrag</a>-sectie van Huishoudens had onterecht ook invloed op de energievraag in de sector Gebouwen. Dit is verholpen zodat het schuifje nu alleen de energievraag voor apparaten in Huishoudens beïnvloedt.
+  * TODO huishoudelijke warmtevraag verandert via weerinstellingen bugfix
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * Er zijn geen relevante wijzigingen in inputs
+</details>
+</br>
+
+___
+
 # Februari 2025
 
 **Nieuwe functies**

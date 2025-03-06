@@ -19,8 +19,8 @@ ___
     * When changing the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">full load hours</a> of the offshore wind turbine for H2 and the solar PV plant for H2, only the full load hours of respectively the offshore wind turbines and solar PV plant were updated, but not those of the connected electrolyser. This is fixed by now also updating the full load hours of the electrolyser.
     * Minor bug fix in how the annual curtailment is calculated for the solar PV plant for H2 and offshore wind turbine for H2
     * We fixed an issue in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_net_load/curtailment-solar-pv" target="_blank">curtailment settings</a> for solar PV, which did not work properly for solar PV in households and buildings and for offshore solar PV plants. This issue may have resulted in a higher peak power for these solar PV categories than was allowed according to the curtailment settings in a scenario.
+  * Due to a bug in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">weather year set</a> (only for Dutch regions), the weather year settings did not change the hourly heat demand of households. This issue is solved.
   * The slider for turning off appliances in the <a href="https://energytransitionmodel.com/scenario/demand/households/behaviour" target="_blank">Behaviour</a> section of Households incorrectly also affected the energy demand in the Buildings sector. This issue is solved: the slider now only affects energy demand for appliances in the Households sector.
-  * TODO household heat demand changes through weather set bug fix
 </details>
 
 <details>

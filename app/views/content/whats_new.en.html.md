@@ -6,21 +6,16 @@ ___
 
 **New features**
 
-* We're introducting stable versions of the ETM for users that work with the API
-  * The ETM is under continuous development and improvement, which can sometimes result in minor changes in the outcomes of existing scenarios. Using a stable version of the ETM ensures that scenario outcomes remain stable.
-  * The introduction of stable versions also means that "Saved scenarios" and "Collections" now have version tags included in the API responses
-  * Read all about accessing the stable environments and other changes to the API in the <a href="https://docs.energytransitionmodel.com/api/changelog" target="_blank">API changelog</a>
+* Version tags are now used for "Saved scenarios" and "Collections" in API responses, in preparation of releasing a stable version of the ETM. Read more about changes to the API in the <a href="https://docs.energytransitionmodel.com/api/changelog" target="_blank">API changelog</a>.
 
 <details>
   <summary>**Bug fixes**</summary>
 
-  * We solved several issues related to various solar PV technologies and the offshore wind turbine for H2 production
-    * The <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">full load hour sliders</a> for solar PV and the offshore windturbine for H2 were malfunctioning in scenarios where there was already installed capacity of the related technologies in the start year. In these situations, only changing the full load hours of solar PV (and not the installed capacity of solar PV technologies) incorrectly did not change the electricity production of solar PV in households and buildings, offshore solar PV plants, solar PV plants with a battery system and the solar PV plant for H2 (for the latter, the hydrogen production also did not change). Similarly, changing the full load hours of the offshore wind turbine for H2 did not affect the technology's electricity and hydrogen production. These issues in the full load hours inputs are now solved.
-    * When changing the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">full load hours</a> of the offshore wind turbine for H2 and the solar PV plant for H2, only the full load hours of respectively the offshore wind turbines and solar PV plant were updated, but not those of the connected electrolyser. This is fixed by now also updating the full load hours of the electrolyser.
-    * Minor bug fix in how the annual curtailment is calculated for the solar PV plant for H2 and offshore wind turbine for H2
-    * We fixed an issue in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_net_load/curtailment-solar-pv" target="_blank">curtailment settings</a> for solar PV, which did not work properly for solar PV in households and buildings and for offshore solar PV plants. This issue may have resulted in a higher peak power for these solar PV categories than was allowed according to the curtailment settings in a scenario.
-  * Due to a bug in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">weather year set</a> (only for Dutch regions), the weather year settings did not change the hourly heat demand of households. This issue is solved.
-  * The slider for turning off appliances in the <a href="https://energytransitionmodel.com/scenario/demand/households/behaviour" target="_blank">Behaviour</a> section of Households incorrectly also affected the energy demand in the Buildings sector. This issue is solved: the slider now only affects energy demand for appliances in the Households sector.
+  * The <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">full load hours</a> slider for solar PV did not alway correctly adjust the full load hours and production of all solar PV technologies. This is now fixed so that solar PV production matches the full load hour settings.
+  * Changes in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">full load hours</a> led to inconsistent energy flows in solar PV plants for H2 and offshore wind turbines for H2 between the electricity production component and hydrogen production component. This is solved to ensure that flows between these components are consistent.
+  * An issue in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_net_load/curtailment-solar-pv" target="_blank">curtailment settings</a> for solar PV resulted in a higher peak power for solar PV technologies than was allowed according to the curtailment settings. This issue is fixed.
+  * Due to a bug in the <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">weather year set</a> (only for Dutch regions), the weather year settings did not change the hourly heat demand of households. This bug is fixed.
+  * The slider for turning off appliances in the <a href="https://energytransitionmodel.com/scenario/demand/households/behaviour" target="_blank">Behaviour</a> section of Households also affected the energy demand in the Buildings sector. This is rectified, the slider now only affects energy demand for appliances in the Households sector.
 </details>
 
 <details>

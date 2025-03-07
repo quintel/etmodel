@@ -12,22 +12,22 @@ en:
         electricity generation options. Similarly, electricity is exported whenever the
         neighbouring countries are willing to pay more than the domestic
         (production) price. </br></br>
-        In the tabs below you can determine the capacity of interconnectors in 
+        In the tabs below you can determine the capacity of interconnectors in
         your scenario, as well as a number of other attributes.
     flexibility_electricity_import_export_interconnectivity:
       title: Interconnector 1
       short_description:
       description:
-        Many countries import and export electricity with their neighboring countries through different 
+        Many countries import and export electricity with their neighboring countries through different
         interconnectors. In the ETM it is possible to model up to twelve different electrical interconnectors
-        between countries. You add an interconnector by setting interconnection capacity for that 
-        interconnector. If you prefer to model all interconnectors together, you only set interconnector 
+        between countries. You add an interconnector by setting interconnection capacity for that
+        interconnector. If you prefer to model all interconnectors together, you only set interconnector
         capacity for interconnector 1. <br/><br/>
-        You can set the capacity per interconnector. However, not all of this capacity may be available for 
-        export, for example because the neighboring country suffers from electricity surpluses at the same 
-        time. It is therefore possible to limit the percentage of interconnection capacity available for 
-        export. In addition to capacity, it is also possible to set the corresponding CO<sub>2</sub> 
-        emissions and price. The price determines the deployment order of interconnectors for import and 
+        You can set the capacity per interconnector. However, not all of this capacity may be available for
+        export, for example because the neighboring country suffers from electricity surpluses at the same
+        time. It is therefore possible to limit the percentage of interconnection capacity available for
+        export. In addition to capacity, it is also possible to set the corresponding CO<sub>2</sub>
+        emissions and price. The price determines the deployment order of interconnectors for import and
         export.
     flexibility_electricity_import_export_interconnectivity_2:
       title: "Interconnector 2"
@@ -108,9 +108,9 @@ en:
         ambient temperature and is represented by the coefficient of performance (COP).
         The COP becomes lower as the outside temperature decreases. Below you can
         set the so-called 'threshold COP': if the COP of the heat pump falls below this
-        threshold then the HHP switches from electricity to a backup fuel. This can be network gas, hydrogen or oil. 
+        threshold then the HHP switches from electricity to a backup fuel. This can be network gas, hydrogen or oil.
         You can choose a setting that is most financially attractive for the consumer, but you can
-        also choose a setting that produces less impact on the electricity network. 
+        also choose a setting that produces less impact on the electricity network.
         See the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target=\"_blank\">documentation</a>
         for more information on the threshold COP.
         </br></br>
@@ -123,14 +123,14 @@ en:
       title: Demand response - load shifting in industry
       short_description:
       description: |
-        Demand response is a form of flexibility where energy demand is adjusted or shifted in time. 
+        Demand response is a form of flexibility where energy demand is adjusted or shifted in time.
         One type of demand response is load shifting. With the sliders in this section you can implement
-        load shifting for the electricity demand of the industrial sectors 
+        load shifting for the electricity demand of the industrial sectors
         metal, chemical, central ICT and other industry. </br></br>
-        If you install load shifting capacity for sector, it will use that capacity to decrease part of its electricity 
-        consumption when the electricity price is too high. The reduced consumption is caught up when the price 
+        If you install load shifting capacity for sector, it will use that capacity to decrease part of its electricity
+        consumption when the electricity price is too high. The reduced consumption is caught up when the price
         drops. This means that the total electricity consumption over the year stays the same. </br></br>
-        The aim is to avoid high electricity costs for industry, while at the same time decreasing demand 
+        The aim is to avoid high electricity costs for industry, while at the same time decreasing demand
         peaks on the electricity network. This could decrease the need for peak power plants in your scenario.
     flexibility_power_storage_wind_turbine_inland:
       title: Wind turbines with storage systems
@@ -155,17 +155,17 @@ en:
       short_description:
       description: |
         In the <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
-        Electricity storage</a> section, you can choose to use a 
-        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
-        forecasting algorithm</a> to determine the behaviour of electricity storage technologies. 
-        Below you can change the merit order of storage technologies 
+        Electricity storage</a> section, you can choose to use a
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\">
+        forecasting algorithm</a> to determine the behaviour of electricity storage technologies.
+        Below you can change the merit order of storage technologies
         for which the system forecasting algorithm is enabled. </br></br>
-        The first technology in this merit order will try to flatten the 
+        The first technology in this merit order will try to flatten the
         <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>.
-        Each following technology will then use the resulting curve of the previous technology to try and 
+        Each following technology will then use the resulting curve of the previous technology to try and
         flatten it even further. </br></br>
-        Technologies higher in the merit order will typically apply their forecasting algorithm 
-        to more variable curves. Whether a technology is suitable to deal with high variability depends on 
+        Technologies higher in the merit order will typically apply their forecasting algorithm
+        to more variable curves. Whether a technology is suitable to deal with high variability depends on
         its specifications. The table on the right gives an overview of these specifications.
     flexibility_flexibility_power_to_heat:
       title: Conversion to heat for households
@@ -176,15 +176,15 @@ en:
         In this section you can determine the behaviour of electricity storage technologies such as batteries. These technologies
         are considered flexible, because both their supply and demand can be increased, reduced or shifted in
         time if needed (see the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">
-        Flexibility overview</a> for background information). </br></br> The ETM models three types of storage behaviour. 
-        <br /><ol><li>By default, storage behaves like any other flexible technology. Each storage technology has a 
-        <i>willingness to pay</i> that indicates the maximum electricity price for which it is willing to charge electricity. 
+        Flexibility overview</a> for background information). </br></br> The ETM models three types of storage behaviour.
+        <br /><ol><li>By default, storage behaves like any other flexible technology. Each storage technology has a
+        <i>willingness to pay</i> that indicates the maximum electricity price for which it is willing to charge electricity.
         If the electricity price in a given hour is lower than a technology's willingness to pay, the storage technology will charge. </br></br>
-        Similarly, each technology also has a <i>willingness to accept</i>, which indicates the minimum 
+        Similarly, each technology also has a <i>willingness to accept</i>, which indicates the minimum
         electricity price for which it is willing to discharge the stored electricity. This
         is similar to the concept of 'marginal costs' for flexible power plants.</li> </br>
-        <li>Optionally you can choose to activate a 
-        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\"> 
+        <li>Optionally you can choose to activate a
+        <a href="https://docs.energytransitionmodel.com/main/battery-forecasting/" target=\"_blank\">
         forecasting algorithm</a> that tries to improve the
         charging and discharging behaviour of storage. Rather than looking at the electricity
         price in the current hour only, the battery will look ahead in time to identify interesting moments
@@ -197,23 +197,23 @@ en:
         no further interaction with the rest of the electricity system.</li></ol><br/>
         In the slides below you can set the the installed capacity for various electricity storage technologies and
         determine their behaviour. Note that the specific behaviour of these
-        technologies is more complicated than stated in this short description. Our 
-        <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\"> documentation</a> 
+        technologies is more complicated than stated in this short description. Our
+        <a href="https://docs.energytransitionmodel.com/main/electricity-storage" target=\"_blank\"> documentation</a>
         contains more details.<br/><br/>
         <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
-        This chart</a> shows the installed volume of electricity storage technologies in comparison to storage volumes for other 
+        This chart</a> shows the installed volume of electricity storage technologies in comparison to storage volumes for other
         energy carriers.
     flexibility_power_storage_households_flexibility_p2p_electricity:
       title: Batteries in households
       short_description:
       description: |
-        It is possible to install batteries in households. By default, if the electricity price is lower than the willingness 
-        to pay of the battery in a given hour, it will charge electricity in that hour. If the electricity price exceeds the 
+        It is possible to install batteries in households. By default, if the electricity price is lower than the willingness
+        to pay of the battery in a given hour, it will charge electricity in that hour. If the electricity price exceeds the
         willingness to accept, it will discharge the stored electricity. <br/><br/>
-        Optionally, you can override this behaviour by switching to a 
+        Optionally, you can override this behaviour by switching to a
         <a href="https://docs.energytransitionmodel.com/main/battery-forecasting" target=\"_blank\">
         forecasting algorithm</a>. Two types of forecasting are available for household batteries. The first type uses
-        them to balance the electricity system as a whole, while the second type aims to balance local household demand with 
+        them to balance the electricity system as a whole, while the second type aims to balance local household demand with
         local production from solar PV. In
         <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
         this chart</a> you can compare the curves to which both types of forecasting are applied.
@@ -221,10 +221,10 @@ en:
       title: Batteries in electric vehicles
       short_description:
       description: |
-        Electric vehicles are often plugged into the grid for more hours than it takes to fully recharge 
-        their batteries. During those idle hours, it can be cost-effective to utilize the batteries to provide 
+        Electric vehicles are often plugged into the grid for more hours than it takes to fully recharge
+        their batteries. During those idle hours, it can be cost-effective to utilize the batteries to provide
         storage services for the electricity grid. </br></br>
-        Batteries in the ETM are flexible technologies, which 
+        Batteries in the ETM are flexible technologies, which
         means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
         will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
@@ -236,7 +236,7 @@ en:
       description: |
         This large-scale battery is typically connected to the medium voltage network. Although in the battery does
         not react to congestion events, its behavior can help prevent capacity issues in the electricity network. </br></br>
-        Batteries in the ETM are flexible technologies, which 
+        Batteries in the ETM are flexible technologies, which
         means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
         will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
@@ -274,7 +274,7 @@ en:
       description: |
         Flow batteries allow for large-scale storage of electricity. This is because installing storage volume is relatively
         cheap and it can easily be scaled independent from the installed capacity. </br></br>
-        Batteries in the ETM are flexible technologies, which 
+        Batteries in the ETM are flexible technologies, which
         means that they can choose at which moments to charge or discharge. By default, if the electricity price is lower than the willingness to pay of the battery in a given hour, it
         will charge electricity in that hour. If the electricity price exceeds the willingness to accept, it will
         discharge the stored electricity. <br/><br/>Optionally, you can override this behaviour by switching the toggle below and use a forecasting algorithm to determine battery behaviour. In both cases the ETM respects the storage volume limits of the battery.
@@ -289,9 +289,9 @@ en:
         is considered flexible because it can be increased, reduced or shifted in time if needed (see the
         <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"> Flexibility overview </a>
         for background information). </br></br>
-        Each flexible demand technology has a <i>willingness to pay</i> that indicates the maximum 
-        electricity price for which it is willing to consume electricity. If the electricity price 
-        in a given hour is lower than a technology's willingness to pay, the technology will consume 
+        Each flexible demand technology has a <i>willingness to pay</i> that indicates the maximum
+        electricity price for which it is willing to consume electricity. If the electricity price
+        in a given hour is lower than a technology's willingness to pay, the technology will consume
         electricity in that hour.
         In the slides below you can set the willingness to pay and installed capacity for:
         <ul>
@@ -318,7 +318,7 @@ en:
         documentation</a> for more information. </br></br>
         Note that a 1 MWth power-to-heat boiler uses more electricity than a 1 MWth power-to-heat heat
         pump, even though they produce the same amount of heat per hour. The produced heat is delivered
-        to the district heating network. You can then determine whether it supplies medium or high temperature 
+        to the district heating network. You can then determine whether it supplies medium or high temperature
         heat in the <a href="/scenario/supply/heat/allocation-of-power-to-heat">District heating</a> section.
     flexibility_flexibility_power_to_heat_for_industry:
       title: Conversion to heat for industry
@@ -367,10 +367,10 @@ en:
       title: Conversion to kerosene
       short_description:
       description: |
-        Electricity can be used to produce synthetic kerosene through transforming hydrogen, electricity and CO<sub>2</sub>. 
-        In the ETM, this can be used as a flexible demand technology, which means that kerosene is only produced when the 
+        Electricity can be used to produce synthetic kerosene through transforming hydrogen, electricity and CO<sub>2</sub>.
+        In the ETM, this can be used as a flexible demand technology, which means that kerosene is only produced when the
         willingness to pay exceeds the hourly electricity price. See our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
-        documentation</a> for more information. </br></br> 
+        documentation</a> for more information. </br></br>
         In the <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Utilisation and storage of CO<sub>2</sub> </a> section you can
         set the dispatchable capacity (in MWe-input) for synthetic kerosene production.
     flexibility_flexibility_power_to_methane:
@@ -396,7 +396,7 @@ en:
       title: Hybrid offshore wind - components
       short_description:
       description: |
-        In this section, the capacity relative to the installed capacity of hybrid offshore wind 
+        In this section, the capacity relative to the installed capacity of hybrid offshore wind
         turbines (see the <a href="/scenario/supply/electricity_renewable/wind-turbines">Renewable electricity</a>
         section) can be set for the offshore electrolyser and electricity cable.
         Furthermore, the willingness to pay of the offshore electrolyser can be adjusted.
@@ -506,23 +506,23 @@ en:
       title: "The need for flexibility: timescales"
       short_description:
       description: |
-        This table takes the concepts learned in the previous sections a step further by analyzing 
-        the need for flexibility on different timescales for network gas and hydrogen. It shows the 
+        This table takes the concepts learned in the previous sections a step further by analyzing
+        the need for flexibility on different timescales for network gas and hydrogen. It shows the
         need for flexible capacity and flexible volume for both supply and demand. </br></br>
-        The basis of the analysis is the <i>original imbalance</i> (the 
-        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>), 
-        which is shown first. The curve is then split into two timescales by applying a moving average. You 
+        The basis of the analysis is the <i>original imbalance</i> (the
+        <a href="/scenario/flexibility/flexibility_overview/residual-load-curves">residual load curve</a>),
+        which is shown first. The curve is then split into two timescales by applying a moving average. You
         can set the period of the moving average with the slider below.
         <ul>
-        <li> The <i>short timescale</i> is given by the difference between the original residual 
+        <li> The <i>short timescale</i> is given by the difference between the original residual
         load curve and the moving average, and is typically very variable. </li>
-        <li>The <i>long timescale</i> is given by the moving average, and is typically much more 
+        <li>The <i>long timescale</i> is given by the moving average, and is typically much more
         smooth. </li>
         </ul> </br>
-        For network gas and hydrogen, flexibility is provided by storage in the ETM. Large-scale storage 
-        volumes for these carriers are typically realized underground. Two viable types of underground 
-        storage are salt caverns and empty gas fields. Salt caverns are better suited to deliver short-term 
-        flexibility, while empty gas fields can handle long-term flexibility better. There will be 
+        For network gas and hydrogen, flexibility is provided by storage in the ETM. Large-scale storage
+        volumes for these carriers are typically realized underground. Two viable types of underground
+        storage are salt caverns and empty gas fields. Salt caverns are better suited to deliver short-term
+        flexibility, while empty gas fields can handle long-term flexibility better. There will be
         geographical limitations to the potential of both types of storage in your area.
         The table can help you assess whether your scenario falls within these limitations.
     flexibility_overview_flexible_capacities:
@@ -540,11 +540,11 @@ en:
         for electricity, network gas, hydrogen and heat for district heating are shown. Additionally, it shows the
         maximum excess and shortage for each energy carrier. This indicates whether you have installed enough flexible
         technologies to fully utilize the excesses and to fully meet the shortage. </br></br>
-        Note that, for electricity, flexible supply technologies may also produce for flexible demand 
+        Note that, for electricity, flexible supply technologies may also produce for flexible demand
         technologies. You can for example use electricity from batteries to produce hydrogen through power-to-gas.
-        This means that it is not necessarily inefficient to have more capacity installed than the maximum excess or 
-        shortage. Also note that for the gaseous carriers the system is automatically balanced by storage. This means 
-        that the storage capacity will align with the maximum excess and shortage by default. 
+        This means that it is not necessarily inefficient to have more capacity installed than the maximum excess or
+        shortage. Also note that for the gaseous carriers the system is automatically balanced by storage. This means
+        that the storage capacity will align with the maximum excess and shortage by default.
     flexibility_overview_hourly_carriers_inflexible_imbalance:
       title: Residual load curves
       short_description:
@@ -705,7 +705,7 @@ en:
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul
     flexibility_weather_conditions_and_flh:
-      title: weather conditions
+      title: Weather conditions
       short_description:
       description: "<b>Temperature and full load hours</b>\r\n<br/>\r\n
         Outdoor temperature and technical developments of wind and solar

@@ -40,6 +40,14 @@ en:
         <ul class="data-download">
           <li><a href="/passthru/%{scenario_id}/application_demands.csv" target="_blank"><span class="name">Application primary and final demands</span> <span class="filetype">40KB CSV</span></a></li>
         </ul>
+    data_export_inputs:
+      title: Overview of inputs
+      short_description:
+      description: |
+        Download an overview of the inputs used in your scenario. This includes the slider keys, minimum and maximum values, default and user values, units, and share groups where applicable.
+        <ul class="data-download">
+          <li><a href="/passthru/%{scenario_id}/inputs.csv"><span class="name">Overview of inputs</span> <span class="filetype">200KB CSV</span></a></li>
+        </ul>
     data_export_costs:
       title: Specifications annual costs
       short_description:

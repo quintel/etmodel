@@ -226,9 +226,9 @@ nl:
       title: Gasmix in gasnetwerk
       short_description:
       description: |
-        De samenstelling van gas in het gasnetwerk kan per regio verschillen. Naast fossiel aardgas 
+        De samenstelling van gas in het gasnetwerk kan per regio verschillen. Naast fossiel aardgas
         is het mogelijk om propaan of groen gas in te voeren in het netwerk. </br></br>
-        Daarnaast kan aardgas zowel in gasvormige als vloeibare vorm worden geleverd. In 
+        Daarnaast kan aardgas zowel in gasvormige als vloeibare vorm worden geleverd. In
         vloeibare vorm wordt het <i>Liquefied Natural Gas</i> (LNG) genoemd, wat eerst hervergast
         moet worden voordat het in het gasnetwerk kan worden ingevoerd.
     supply_electricity_biomass_plants:
@@ -261,7 +261,7 @@ nl:
       description: |
         Hoeveel windenergie zal er geproduceerd worden?
         De vollasturen voor wind en zon kunnen worden ingesteld in bij
-        <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">
+        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\">
         'Weersomstandigheden'</a>.
     supply_electricity_renewable_hydrogen_plants:
       title: Waterstofcentrales
@@ -294,13 +294,13 @@ nl:
       title: Overzicht warmtenetten
       short_description:
       description: |
-        Warmtenetten kunnen worden ingezet om warmte te leveren aan 
+        Warmtenetten kunnen worden ingezet om warmte te leveren aan
         <a href="/scenario/demand/households/space-heating-hot-water">huishoudens</a>,
         <a href="/scenario/demand/buildings/space-heating">gebouwen</a> en
         <a href="/scenario/demand/agriculture/heat">landbouw</a>. </br></br>
-        Een warmtenet opereert meestal op een specifiek temperatuurniveau, maar verschillende 
-        netten kunnen verschillende temperaturen hebben. Het ETM biedt drie temperatuurniveaus 
-        aan. Bepaalde karakteristieken verschillen per temperatuurniveau, zoals de beschikbare 
+        Een warmtenet opereert meestal op een specifiek temperatuurniveau, maar verschillende
+        netten kunnen verschillende temperaturen hebben. Het ETM biedt drie temperatuurniveaus
+        aan. Bepaalde karakteristieken verschillen per temperatuurniveau, zoals de beschikbare
         warmtebronnen, de verliezen en de kosten. Je kunt dit aanpassen in de bijbehorende secties: </br>
         <ul>
         <li><a href="/scenario/supply/heat_ht/sources">Hoge temperatuur (HT)</a></li>
@@ -308,8 +308,8 @@ nl:
         <li><a href="/scenario/supply/heat_lt/sources">Lage temperatuur (LT)</a></li>
         </ul></br>
         Voor bepaalde bronnen wordt het aanbod van warmte bepaald door andere factoren in het model.
-        Voor deze bronnen kun je de verdeling van warmte over de verschillende temperatuurniveaus 
-        instellen in onderstaande slides. Dit geldt voor 
+        Voor deze bronnen kun je de verdeling van warmte over de verschillende temperatuurniveaus
+        instellen in onderstaande slides. Dit geldt voor
         warmte van <a href="/scenario/supply/heat/allocation-of-heat-from-chps">WKK's</a> and
         warmte van <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
         Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
@@ -507,16 +507,16 @@ nl:
       short_description:
       description: |
         Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
-        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan- 
-        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment. 
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan-
+        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment.
         Welke regelbare warmtebron eerst gaat, kun bepalen door de
         <a href="/scenario/supply/heat_ht/merit-order-of-dispatchable-heat-sources">inzetvolgorde</a>
         te veranderen. Niet-regelbare warmtebronnen produceren ongeacht de warmtevraag.
-        Voor dit laatste type bronnen kan 
+        Voor dit laatste type bronnen kan
         <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">(seizoens)opslag</a> interessant zijn. </br></br>
         Hieronder kun je voor beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
         De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Naast deze bronnen kan warmte worden
-        geleverd door <a href="/scenario/supply/heat/allocation-of-heat-from-chps">WKK's</a> of door 
+        geleverd door <a href="/scenario/supply/heat/allocation-of-heat-from-chps">WKK's</a> of door
         <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
         Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
         target =\"_blank\">documentatie</a> voor meer informatie.
@@ -525,12 +525,12 @@ nl:
       short_description:
       description: |
         Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
-        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan- 
-        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment. 
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan-
+        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment.
         Welke regelbare warmtebron eerst gaat, kun bepalen door de
         <a href="/scenario/supply/heat_lt/merit-order-of-dispatchable-heat-sources">inzetvolgorde</a>
         te veranderen. Niet-regelbare warmtebronnen produceren ongeacht de warmtevraag.
-        Voor dit laatste type bronnen kan 
+        Voor dit laatste type bronnen kan
         <a href="/scenario/supply/heat_lt/seasonal-storage-of-heat">(seizoens)opslag</a> interessant zijn. </br></br>
         Hieronder kun je voor beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
         De grafiek hiernaast laat zien of vraag en aanbod in balans zijn.
@@ -541,16 +541,16 @@ nl:
       short_description:
       description: |
         Er bestaan grofweg twee soorten warmtebronnen voor warmtenetten:
-        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan- 
-        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment. 
+        regelbare en niet-regelbare warmtebronnen. Regelbare warmtebronnen kunnen aan-
+        en uitgezet worden op afhankelijk van de warmtevraag op een bepaald moment.
         Welke regelbare warmtebron eerst gaat, kun bepalen door de
         <a href="/scenario/supply/heat_mt/merit-order-of-dispatchable-heat-sources">inzetvolgorde</a>
         te veranderen. Niet-regelbare warmtebronnen produceren ongeacht de warmtevraag.
-        Voor dit laatste type bronnen kan 
+        Voor dit laatste type bronnen kan
         <a href="/scenario/supply/heat_mt/seasonal-storage-of-heat">(seizoens)opslag</a> interessant zijn. </br></br>
         Hieronder kun je voor beide typen bronnen instellen hoeveel warmtecapaciteit er beschikbaar is.
         De grafiek hiernaast laat zien of vraag en aanbod in balans zijn. Naast deze bronnen kan warmte worden
-        geleverd door <a href="/scenario/supply/heat/allocation-of-heat-from-chps">WKK's</a> of door 
+        geleverd door <a href="/scenario/supply/heat/allocation-of-heat-from-chps">WKK's</a> of door
         <a href="/scenario/supply/heat/allocation-of-power-to-heat"><i>power-to-heat</i></a>.
         Zie onze <a href="https://docs.energytransitionmodel.com/main/heat-networks"
         target =\"_blank\">documentatie</a> voor meer informatie.
@@ -558,18 +558,18 @@ nl:
       title: Merit order van regelbare waterstofproductie
       short_description:
       description: |
-        Hieronder kan de volgorde worden ingesteld waarin regelbare waterstofproductie 
+        Hieronder kan de volgorde worden ingesteld waarin regelbare waterstofproductie
         wordt ingezet: welke productiemethode springt er als eerste aan als er een waterstoftekort is
-        als gevolg van inflexibele vraag? Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentatie</a> 
-        voor meer informatie over de rekenprincipes van de merit order van regelbare waterstofproductie. 
+        als gevolg van inflexibele vraag? Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentatie</a>
+        voor meer informatie over de rekenprincipes van de merit order van regelbare waterstofproductie.
     demand_hydrogen_order:
       title: Merit order van regelbare waterstofvraag
       short_description:
       description: |
-        Hieronder kan de volgorde worden ingesteld waarin regelbare waterstofvraag 
+        Hieronder kan de volgorde worden ingesteld waarin regelbare waterstofvraag
         wordt ingezet: welke regelbare vraag springt er als eerste aan als er een waterstofoverschot is
-        als gevolg van inflexibele productie? Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentatie</a> 
-        voor meer informatie over de rekenprincipes van de merit order van regelbare waterstofvraag. 
+        als gevolg van inflexibele productie? Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentatie</a>
+        voor meer informatie over de rekenprincipes van de merit order van regelbare waterstofvraag.
     supply_hydrogen_demand:
       title: Waterstofvraag
       short_description:
@@ -594,25 +594,25 @@ nl:
       title: Waterstofproductie
       short_description:
       description: |
-        In dit gedeelte kun je instellen hoe waterstof geproduceerd wordt in de toekomst. 
-        Er wordt onderscheid gemaakt tussen niet-regelbare/volatiele en regelbare productietechnologieën. 
+        In dit gedeelte kun je instellen hoe waterstof geproduceerd wordt in de toekomst.
+        Er wordt onderscheid gemaakt tussen niet-regelbare/volatiele en regelbare productietechnologieën.
         Onder <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order van regelbare waterstofproductie</a>
         kan de volgorde worden aangepast waarin de regelbare productietechnologieën worden ingezet.
         </br></br>Zie de <a href="https://docs.energytransitionmodel.com/main/hydrogen#merit-orders" target=\"_blank\">documentatie</a>
-        voor meer informatie over hoe aanbod van en vraag naar waterstof worden gemodelleerd in het ETM.        
+        voor meer informatie over hoe aanbod van en vraag naar waterstof worden gemodelleerd in het ETM.
     supply_hydrogen_transport:
       title: Waterstoftransport
       short_description:
       description: |
-        Hoe wordt waterstof getransporteerd in de toekomst? Het ETM gaat ervan uit dat alle waterstof 
-        wordt getransporteerd via pijpleidingen. Hieronder is het mogelijk om het aandeel in te stellen dat 
-        per vrachtwagen wordt getransporteerd na transport via pijpleidingen. 
+        Hoe wordt waterstof getransporteerd in de toekomst? Het ETM gaat ervan uit dat alle waterstof
+        wordt getransporteerd via pijpleidingen. Hieronder is het mogelijk om het aandeel in te stellen dat
+        per vrachtwagen wordt getransporteerd na transport via pijpleidingen.
     supply_hydrogen_storage:
       title: Waterstofopslag
       short_description:
       description: |
         Hier kan het opslagvolume en de relatieve opslagcapaciteit worden ingesteld
-        voor zoutcavernes en lege gasvelden. Het ETM houdt geen rekening met flexibiliteit in de vorm van linepack (zie 
+        voor zoutcavernes en lege gasvelden. Het ETM houdt geen rekening met flexibiliteit in de vorm van linepack (zie
         <a href="https://docs.energytransitionmodel.com/main/hydrogen#hydrogen-storage" target=\"_blank\">documentatie</a>).
     supply_ammonia_production:
       title: Ammoniakproductie

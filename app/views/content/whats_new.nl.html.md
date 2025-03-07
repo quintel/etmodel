@@ -11,10 +11,10 @@ ___
 <details>
   <summary>**Bug fixes**</summary>
 
-  * De <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">vollasturenschuifjes</a> voor zon-PV werkten niet altijd correct de vollasturen en productie van zon-PV technologieën bij. Dit is nu verholpen zodat de productie van zon-PV technologieën nu overeenkomt met de ingestelde vollasturen.
-  * Het aanpassen van de <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">vollasturen</a> resulteerde in inconsistente energiestromen bij de zonnecentrale PV voor H2 en de windturbine op zee voor H2, tussen de componenten voor elektriciteitsproductie en waterstofproductie. Dit is verholpen zodat de stromen tussen deze componenten consistent zijn.
+  * De <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" target="_blank">vollasturenschuifjes</a> voor zon-PV werkten niet altijd correct de vollasturen en productie van zon-PV technologieën bij. Dit is nu verholpen zodat de productie van zon-PV technologieën nu overeenkomt met de ingestelde vollasturen.
+  * Het aanpassen van de <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" target="_blank">vollasturen</a> resulteerde in inconsistente energiestromen bij de zonnecentrale PV voor H2 en de windturbine op zee voor H2, tussen de componenten voor elektriciteitsproductie en waterstofproductie. Dit is verholpen zodat de stromen tussen deze componenten consistent zijn.
   * Door een bug in de instellingen voor <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_net_load/curtailment-solar-pv" target="_blank">productiebeperking</a> van zon-PV leidde tot een verkeerde berekening van de piek voor productiebeperking. Deze bug is verholpen, zodat de juiste piek voor productiebeperking wordt getoond. De productie na beperking is onveranderd.
-  * Door een bug in de <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions" target="_blank">weerjarenset</a> (alleen voor Nederlandse regio's) werd de jaarlijkse warmtevraag in huishoudens niet aangepast wanneer een ander weerjaar werd gekozen. Dit is verholpen.
+  * Door een bug in de <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" target="_blank">weerjarenset</a> (alleen voor Nederlandse regio's) werd de jaarlijkse warmtevraag in huishoudens niet aangepast wanneer een ander weerjaar werd gekozen. Dit is verholpen.
   * Het schuifje voor het uizetten van apparaten in de <a href="https://energytransitionmodel.com/scenario/demand/households/behaviour" target="_blank">Gedrag</a>-sectie van Huishoudens had ook invloed op de energievraag in de sector Gebouwen. Dit is gecorrigeerd zodat het schuifje nu alleen de energievraag voor apparaten in Huishoudens beïnvloedt.
 </details>
 
@@ -748,7 +748,7 @@ Ontdek deze nieuwe functionaliteit bij **[Flexibiliteit → Import/Export](/scen
 
 De uurlijkse vraagcurves in de gebouwensector en landbouw zijn temperatuursafhankelijk gemaakt. Hierdoor veranderen de curves mee als de gebruiker een ander weerjaar selecteert. Voorheen gebruikte het ETM een statisch grootverbruikersprofiel voor de gebouwensector en een vlak profiel voor de landbouw. Nu gebruiken beide sectoren hetzelfde grootverbruikersprofiel, dat dynamisch is gegenereerd aan de hand van weerdata. Dit profiel is hierdoor ook beschikbaar voor de historische weerjaren 1987, 1997 en 2004, waardoor de warmtevraag in gebouwen en landbouw, net als bij huishoudens, meebeweegt met de buitentemperatuur.
 
-Bekijk de impact van het weerjaar op de vraagprofielen bij **[Flexibiliteit → Weersomstandigheden](/scenario/flexibility/flexibility_weather/extreme-weather-conditions)**!
+Bekijk de impact van het weerjaar op de vraagprofielen bij **[Flexibiliteit → Weersomstandigheden](/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours)**!
 
 ![](/assets/pages/whats_new/weather_years_buildings_heating_nl.png)
 
@@ -756,7 +756,7 @@ Bekijk de impact van het weerjaar op de vraagprofielen bij **[Flexibiliteit → 
 
 De impact van een hogere of lagere gemiddelde buitentemperatuur is tegen het licht gehouden. Het veranderen van de buitentemperatuur heeft nu, naast huishoudens en gebouwen, ook invloed op de warmtevraag van landbouw. Daarnaast is de impact op de warmtevraag in deze drie sectoren een stuk groter dan voorheen. De impact van temperatuur op warmtevraag is afgeleid uit de 'graaddagenformule' die gehanteerd wordt door GTS. Bekijk onze [documentatiepagina](https://docs.energytransitionmodel.com/main/outdoor-temperature) voor meer informatie. Deze verbetering is relevant voor zowel de temperatuurschuif in de weerjarensectie van het ETM als het selecteren van een specifiek weerjaar.
 
-Ga naar **[Flexibiliteit → Weersomstandigheden](/scenario/flexibility/flexibility_weather/extreme-weather-conditions)** om de verbetering te bekijken!
+Ga naar **[Flexibiliteit → Weersomstandigheden](/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours)** om de verbetering te bekijken!
 
 ![](/assets/pages/whats_new/outdoor_temperature_nl.png)
 
@@ -834,7 +834,7 @@ Alle WKKs (m.u.v. biogas-WKK) draaien nu mee als dispatchable in de elektricitei
 
 ## Windprofielen verbeterd
 
-De windprofielen voor de default dataset van Nederland zijn nu gegenereerd volgens dezelfde methode (gebaseerd op KNMI data) als gebruikt voor de [extreme weerjaren (1987, 1997, 2004)](/scenario/flexibility/flexibility_weather/extreme-weather-conditions). Dit waarborgt de consistentie tussen de verschillende datasets voor Nederland. Check onze [Github documentatie](https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind) voor een uitgebreidere toelichting op deze methode.
+De windprofielen voor de default dataset van Nederland zijn nu gegenereerd volgens dezelfde methode (gebaseerd op KNMI data) als gebruikt voor de [extreme weerjaren (1987, 1997, 2004)](/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours). Dit waarborgt de consistentie tussen de verschillende datasets voor Nederland. Check onze [Github documentatie](https://github.com/quintel/etdataset-public/tree/master/curves/supply/wind) voor een uitgebreidere toelichting op deze methode.
 
 -> ![](/assets/pages/whats_new/wind_curves_nl.png) <-
 

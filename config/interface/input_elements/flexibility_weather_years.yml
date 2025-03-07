@@ -1,0 +1,8 @@
+---
+- key: settings_weather_curve_set
+  step_value: 1.0
+  unit: weather-curves
+  interface_group: weather_years
+  position: 1
+  dependent_on: has_weather_curves
+  slide_key: flexibility_weather_years

@@ -4,7 +4,7 @@ en:
     capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable:
       title: Steam methane reforming
       short_description:
-      description: | 
+      description: |
         Steam methane reforming is a very mature hydrogen production process.
         It works like this: methane reacts in the presence of a catalyst with high
         temperature steam and gives a mixture of hydrogen and other gases. The unwanted
@@ -22,7 +22,7 @@ en:
     capacity_of_energy_hydrogen_steam_methane_reformer_must_run:
       title: Steam methane reforming
       short_description:
-      description: | 
+      description: |
         Steam methane reforming is a very mature hydrogen production process.
         It works like this: methane reacts in the presence of a catalyst with high
         temperature steam and gives a mixture of hydrogen and other gases. The unwanted
@@ -34,23 +34,23 @@ en:
         far from the cleanest and greenest, but able to facilitate upcoming hydrogen
         demand.
         <br/><br/>
-        Add CCS to the must-run capacity of SMR by going to the 
+        Add CCS to the must-run capacity of SMR by going to the
         <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> section.
         <br/><br/>
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the SMR plants without CCS, so when you have set 100% CCS,
-        you will see no installed capacity here.    
+        you will see no installed capacity here.
     capacity_of_energy_hydrogen_autothermal_reformer_dispatchable:
       title: Autothermal reforming
       short_description:
       description: |
         Adjust the total installed capacity of autothermal reformers (ATR) using this slider.
         <br/><br/>
-        Autothermal reforming (ATR) is a production method for hydrogen. It is similar to steam 
-        methane reforming (SMR) but has a lower efficiency. The advantage of the ATR, however, 
-        is that is has a simpler production stream with a high concentration of carbon 
-        dioxide. This makes it easier to capture a higher percentage of carbon emissions during 
-        the conversion process. 
+        Autothermal reforming (ATR) is a production method for hydrogen. It is similar to steam
+        methane reforming (SMR) but has a lower efficiency. The advantage of the ATR, however,
+        is that is has a simpler production stream with a high concentration of carbon
+        dioxide. This makes it easier to capture a higher percentage of carbon emissions during
+        the conversion process.
         <br/><br/>
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the ATR plants without CCS, so when you have set 100% CCS,
@@ -61,22 +61,22 @@ en:
       description: |
         Adjust the total installed capacity of autothermal reformers (ATR) using this slider.
         <br/><br/>
-        Autothermal reforming (ATR) is a production method for hydrogen. It is similar to steam 
-        methane reforming (SMR) but has a lower efficiency. The advantage of the ATR, however, 
-        is that is has a simpler production stream with a high concentration of carbon 
-        dioxide. This makes it easier to capture a higher percentage of carbon emissions during 
-        the conversion process. 
+        Autothermal reforming (ATR) is a production method for hydrogen. It is similar to steam
+        methane reforming (SMR) but has a lower efficiency. The advantage of the ATR, however,
+        is that is has a simpler production stream with a high concentration of carbon
+        dioxide. This makes it easier to capture a higher percentage of carbon emissions during
+        the conversion process.
         <br/><br/>
-        Add CCS to the must-run capacity of ATR by going to the 
+        Add CCS to the must-run capacity of ATR by going to the
         <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> section.
         <br/><br/>
         For more technology specifications, checkout the technical and financial properties below.
         Note: the parameters in the table belong to the ATR plants without CCS, so when you have set 100% CCS,
-        you will see no installed capacity here.    
+        you will see no installed capacity here.
     capacity_of_energy_hydrogen_biomass_gasification:
       title: Biomass gasification
       short_description:
-      description: | 
+      description: |
         Biomass gasification is a mature technology in which biomass is
         converted into hydrogen. For this technology, you can set the share that will be equipped
         with CCS in the <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> section.
@@ -99,8 +99,8 @@ en:
         amount of electrolysis capacity to convert the produced electricity into hydrogen.
         The efficiency of electrolysers can
         be adjusted <a href="/scenario/costs/costs_hydrogen/hydrogen-production\" >here</a>.
-        You can adjust the full load hours of wind turbines 
-        <a href="/scenario/flexibility/flexibility_weather/weather-conditions\" >here</a>
+        You can adjust the full load hours of wind turbines
+        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>
         <br/><br/>Note: The technical and financial specifications below are
         only the specifications of the electrolyser, not the wind turbines. The specifications
         of the wind turbines can be found in the <a href="/scenario/supply/electricity_renewable/wind-turbines\">Renewable
@@ -117,7 +117,7 @@ en:
         >documentation on Github</a>.\r\n</br></br>\r\nThe efficiency of elektrolysers can
         be adjusted <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >here</a>.
         You can adjust the full load hours of solar
-        panels <a href=\"/scenario/flexibility/flexibility_weather/weather-conditions\" >here</a>.
+        panels <a href=\"/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>.
         The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/solar/solar-pv-technology\" >here</a>.<br
         /><br/><br />\r\nNote: The technical and financial specifications below are
         only the specifications of the electrolyser, not the solar panels. The specifications
@@ -127,37 +127,37 @@ en:
       title: Ammonia reforming
       short_description:
       description: |
-        Reforming of ammonia (NH<sub>3</sub>) to produce hydrogen is a novel technology. The 
-        process of reforming itself is already very mature because of the steam methane 
-        refomer, which is currently widely used. Even so, technological development is required 
-        before reforming of ammonia becomes commercially viable. You can change the efficiency 
-        and the investment costs of the ammonia reformer in the 
+        Reforming of ammonia (NH<sub>3</sub>) to produce hydrogen is a novel technology. The
+        process of reforming itself is already very mature because of the steam methane
+        refomer, which is currently widely used. Even so, technological development is required
+        before reforming of ammonia becomes commercially viable. You can change the efficiency
+        and the investment costs of the ammonia reformer in the
         <a href="/scenario/costs/costs_hydrogen/hydrogen-production"> costs & efficiencies</a> section. </br></br>
-        The ammonia used in the reformer is imported. You can determine the import capacity in 
+        The ammonia used in the reformer is imported. You can determine the import capacity in
         the <a href=/scenario/supply/hydrogen/ammonia-production> slide below</a>.
-        You can also view the demand and supply of ammonia in 
+        You can also view the demand and supply of ammonia in
         <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
         data-chart-location="side"> this</a> chart.
     capacity_of_energy_hydrogen_ammonia_reformer_must_run:
       title: Ammonia reforming
       short_description:
       description: |
-        Reforming of ammonia (NH<sub>3</sub>) to produce hydrogen is a novel technology. The 
-        process of reforming itself is already very mature because of the steam methane 
-        refomer, which is currently widely used. Even so, technological development is required 
-        before reforming of ammonia becomes commercially viable. You can change the efficiency 
-        and the investment costs of the ammonia reformer in the 
+        Reforming of ammonia (NH<sub>3</sub>) to produce hydrogen is a novel technology. The
+        process of reforming itself is already very mature because of the steam methane
+        refomer, which is currently widely used. Even so, technological development is required
+        before reforming of ammonia becomes commercially viable. You can change the efficiency
+        and the investment costs of the ammonia reformer in the
         <a href="/scenario/costs/costs_hydrogen/hydrogen-production"> costs & efficiencies</a> section. </br></br>
-        The ammonia used in the reformer is imported. You can determine the import capacity in 
+        The ammonia used in the reformer is imported. You can determine the import capacity in
         the <a href=/scenario/supply/hydrogen/ammonia-production> slide below</a>.
-        You can also view the demand and supply of ammonia in 
+        You can also view the demand and supply of ammonia in
         <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
-        data-chart-location="side"> this</a> chart.    
+        data-chart-location="side"> this</a> chart.
     capacity_of_energy_hydrogen_liquid_hydrogen_regasifier:
       title: LH2 regasification
       short_description:
       description: |
-        Hydrogen regasification is the process of converting liquid hydrogen (LH2) back into its 
+        Hydrogen regasification is the process of converting liquid hydrogen (LH2) back into its
         gaseous state. Here you can determine the capacity of the regasifier.
     capacity_of_energy_hydrogen_lohc_reformer:
       title: LOHC reforming
@@ -177,7 +177,7 @@ en:
         The hydrogen can originate from different countries and can be produced with
         different technologies, both of which influence the accompanied CO<sub>2</sub> emissions.
         Therefore, it is possible to adjust the CO<sub>2</sub> emissions of imported
-        hydrogen in the <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">Emissions section</a>. 
+        hydrogen in the <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">Emissions section</a>.
         Additionally, it is possible to set the costs of imported
         hydrogen in the <a href="/scenario/costs/costs_hydrogen/hydrogen-import">Costs & efficiencies</a> section.
     energy_hydrogen_distribution_compressed_trucks_share:
@@ -189,13 +189,13 @@ en:
         scaled up or down relatively easily. As such, it is a suitable option when
         hydrogen demand is more dispersed and when volumes are lower. This may for
         example be the case for hydrogen delivery to refuelling stations.
-        </br></br>The costs of hydrogen transport via trucks can be adjusted in the 
+        </br></br>The costs of hydrogen transport via trucks can be adjusted in the
         <a href=/scenario/costs/costs_hydrogen/hydrogen-transport>costs section</a>.
     energy_hydrogen_transport_pipelines_share:
-      title: Transport via pipelines only 
+      title: Transport via pipelines only
       description: What percentage of the total central hydrogen production in your
-        scenario is only transported via the pipeline network? 
-        </br></br>The costs of hydrogen transport via pipelines can be adjusted in the 
+        scenario is only transported via the pipeline network?
+        </br></br>The costs of hydrogen transport via pipelines can be adjusted in the
         <a href=/scenario/costs/costs_hydrogen/hydrogen-transport>costs section</a>.
     capacity_of_energy_imported_ammonia_baseload:
       title: Ammonia import
@@ -205,37 +205,37 @@ en:
         Ammonia as an energy carrier has advantageous transport and storage properties and can be produced
         without generating carbon emissions. This makes it a potentially effective carrier to
         facilitate global transport of large (renewable) energy volumes. </br></br>You can determine
-        how much ammonia you want to import in your scenario with this slider. 
+        how much ammonia you want to import in your scenario with this slider.
         The ammonia can originate from different countries and can be produced with
-        different types of hydrogen, both of which influence the associated CO<sub>2</sub> 
+        different types of hydrogen, both of which influence the associated CO<sub>2</sub>
         emissions. Therefore, it is possible to adjust the CO<sub>2</sub> emissions of imported
         ammonia in the <a href=/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">Emissions section</a>.
         Additionally, it is possible to set the costs of imported
         ammonia in the <a href=/scenario/costs/costs_hydrogen/ammonia-import
         >Costs & efficiencies</a> section. </br></br>
-        If the baseload import is insufficient to cover demand, back-up import is used. 
+        If the baseload import is insufficient to cover demand, back-up import is used.
         If it exceeds demand, the excess is exported.
     capacity_of_energy_hydrogen_storage_depleted_gas_field:
       title: Relative storage capacity
       short_description:
       description: |
         With this slider, you can set the storage capacity relative to the storage volume of the depleted gas fields.
-        This determines how many hours the gas field needs to charge at full capacity to go from being empty 
-        to fully stored. Effectively this slider therefore changes the total storage capacity, given a 
+        This determines how many hours the gas field needs to charge at full capacity to go from being empty
+        to fully stored. Effectively this slider therefore changes the total storage capacity, given a
         certain amount of storage volume. </br></br>
-        You can see the total resulting storage capacity in the 'Technical and financial 
+        You can see the total resulting storage capacity in the 'Technical and financial
         properties' below. To quickly compare it with other storage technologies you can also open
         <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
         this table</a>. </br></br>
     capacity_of_energy_hydrogen_storage_salt_cavern:
-      title: Relative storage capacity 
+      title: Relative storage capacity
       short_description:
       description: |
         With this slider, you can set the storage volume relative to the storage volume of the salt caverns.
-        This determines how many hours the salt caverns needs to charge at full capacity to go from being empty 
-        to fully stored. Effectively this slider therefore changes the total storage capacity, given a 
+        This determines how many hours the salt caverns needs to charge at full capacity to go from being empty
+        to fully stored. Effectively this slider therefore changes the total storage capacity, given a
         certain amount of storage volume. </br></br>
-        You can see the total resulting storage capacity in the 'Technical and financial 
+        You can see the total resulting storage capacity in the 'Technical and financial
         properties' below. To quickly compare it with other storage technologies you can also open
         <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
         this table</a>.
@@ -243,11 +243,11 @@ en:
       title: Storage volume
       short_description:
       description: |
-        This slider sets the volume of the amount of hydrogen that can be stored in the depleted gas fields. 
+        This slider sets the volume of the amount of hydrogen that can be stored in the depleted gas fields.
         The typical volume of a depleted gas field is approximately 8 TWh.
         With <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
-        this chart</a> you can compare the installed volume of hydrogen storage technologies with storage volumes 
-        for other energy carriers. Additionally, it is possible to set the costs of hydrogen storage in the 
+        this chart</a> you can compare the installed volume of hydrogen storage technologies with storage volumes
+        for other energy carriers. Additionally, it is possible to set the costs of hydrogen storage in the
         <a href=/scenario/costs/costs_hydrogen/hydrogen-storage >Costs & efficiencies</a> section.
     volume_of_energy_hydrogen_storage_salt_cavern:
       title: Storage volume
@@ -256,6 +256,6 @@ en:
         This slider sets the volume of the amount of hydrogen that can be stored in the salt caverns.
         The typical volume of a salt cavern is approximately 0.25 TWh.
         With <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
-        this chart</a> you can compare the installed volume of hydrogen storage technologies with storage volumes 
-        for other energy carriers. Additionally, it is possible to set the costs of hydrogen storage in salt caverns in the 
+        this chart</a> you can compare the installed volume of hydrogen storage technologies with storage volumes
+        for other energy carriers. Additionally, it is possible to set the costs of hydrogen storage in salt caverns in the
         <a href=/scenario/costs/costs_hydrogen/hydrogen-storage >Costs & efficiencies</a> section.

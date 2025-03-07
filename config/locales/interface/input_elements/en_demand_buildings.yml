@@ -21,7 +21,7 @@ en:
       title: Existing buildings
       short_description:
       description: |
-        With this slider the amount of existing buildings can be set. 
+        With this slider the amount of existing buildings can be set.
         This concerns all buildings that fall into categories like offices, hosptials,
         swimming pools, restaurents, etc. Apart from increasing prosperity, this is
         one of the most important drivers for the energy demand growth.
@@ -30,39 +30,39 @@ en:
       title: New buildings
       short_description: ''
       description: |
-        This slider adjusts the average heat demand per square meter for new buildings. 
+        This slider adjusts the average heat demand per square meter for new buildings.
         Note that the slider value only affects the energy demand of space heating.
         <br><br>
-        The average heat demand per square meter is an energy prestation indicator for buildings. 
-        The indicator concerns the heat demand of the building itself and is therefore not dependent 
-        on the ventilation system, heating and cooling technologies or PV panels. The better a building 
-        is insulated, the lower the average heat demand per square meter. This results in a total 
+        The average heat demand per square meter is an energy prestation indicator for buildings.
+        The indicator concerns the heat demand of the building itself and is therefore not dependent
+        on the ventilation system, heating and cooling technologies or PV panels. The better a building
+        is insulated, the lower the average heat demand per square meter. This results in a total
         decrease of space heating demand in these buildings.
         <br><br>
-        The number of new buildings in the scenario can be set 
+        The number of new buildings in the scenario can be set
         <a href="/scenario/demand/buildings/building-stock">here</a>.
         <br><br>
         Check out the <a href="https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>
-        for more information or check out the <a href="https://data.energytransitionmodel.com\" target=\"_blank\">dataset</a> 
+        for more information or check out the <a href="https://data.energytransitionmodel.com\" target=\"_blank\">dataset</a>
         for a description of the data sources.
     buildings_insulation_level_buildings_present:
       title: Present buildings
       short_description:
       description: |
-        This slider adjusts the average heat demand per square meter for present buildings. 
+        This slider adjusts the average heat demand per square meter for present buildings.
         Note that the slider value only affects the energy demand of space heating.
         <br><br>
-        The average heat demand per square meter is an energy prestation indicator for buildings. 
-        The indicator concerns the heat demand of the building itself and is therefore not dependent 
-        on the ventilation system, heating and cooling technologies or PV panels. The better a building 
-        is insulated, the lower the average heat demand per square meter. This results in a total 
+        The average heat demand per square meter is an energy prestation indicator for buildings.
+        The indicator concerns the heat demand of the building itself and is therefore not dependent
+        on the ventilation system, heating and cooling technologies or PV panels. The better a building
+        is insulated, the lower the average heat demand per square meter. This results in a total
         decrease of space heating demand in these buildings.
         <br><br>
-        The number of present buildings in the scenario can be set 
+        The number of present buildings in the scenario can be set
         <a href="/scenario/demand/buildings/building-stock">here</a>.
         <br><br>
         Check out the <a href="https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>
-        for more information or check out the <a href="https://data.energytransitionmodel.com\" target=\"_blank\">dataset</a> 
+        for more information or check out the <a href="https://data.energytransitionmodel.com\" target=\"_blank\">dataset</a>
         for a description of the data sources.
     buildings_useful_demand_electricity:
       title: Electricity per building
@@ -157,14 +157,14 @@ en:
       description: |
         This slider influences the percentage of heat demand from buildings that is filled in with heat-pumps
         abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
-        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature
         due to the addition of thermal storage. <br/><br/>
-        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        For more information on the total use of aqauthermal sources, checkout <a href="#"
         class="open_chart" data-chart-key="heat_aquathermal_demand"
         data-chart-location="side"> this chart</a>.
-        It is also possible to use aquathermal energy for district heating. 
-        Checkout <a href="/scenario/supply/heat/overview-district-heating" >district heating</a> to 
-        add aquathermal heat as a heat source for LT or MT district heating. 
+        It is also possible to use aquathermal energy for district heating.
+        Checkout <a href="/scenario/supply/heat/overview-district-heating" >district heating</a> to
+        add aquathermal heat as a heat source for LT or MT district heating.
     buildings_space_heater_wood_pellets_share:
       title: Biomass-fired heater
       short_description: ''
@@ -187,42 +187,42 @@ en:
       title: HT district heating
       short_description:
       description: |
-        This slider sets the percentage of buildings heat demand that is supplied by 
+        This slider sets the percentage of buildings heat demand that is supplied by
         district heating operating at a high temperature (HT). </br></br>
-        District heating is heat supplied by a heat network. The heat can be produced 
-        locally from various sources or the heat can be imported from outside your region. 
+        District heating is heat supplied by a heat network. The heat can be produced
+        locally from various sources or the heat can be imported from outside your region.
         Heat networks are designed to operate at a specific temperature, but different
         networks can have different temperature levels. Go to the
-        <a href="/scenario/supply/heat_ht">HT district heating</a> section to determine 
-        how the heat is supplied. See our 
+        <a href="/scenario/supply/heat_ht">HT district heating</a> section to determine
+        how the heat is supplied. See our
         <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
         documentation</a> for more information.
     buildings_space_heater_district_heating_mt_steam_hot_water_share:
       title: MT district heating
       short_description:
       description: |
-        This slider sets the percentage of buildings heat demand that is supplied by 
+        This slider sets the percentage of buildings heat demand that is supplied by
         district heating operating at a medium temperature (MT). </br></br>
-        District heating is heat supplied by a heat network. The heat can be produced 
-        locally from various sources or the heat can be imported from outside your region. 
+        District heating is heat supplied by a heat network. The heat can be produced
+        locally from various sources or the heat can be imported from outside your region.
         Heat networks are designed to operate at a specific temperature, but different
         networks can have different temperature levels. Go to the
-        <a href="/scenario/supply/heat_mt">MT district heating</a> section to determine 
-        how the heat is supplied. See our 
+        <a href="/scenario/supply/heat_mt">MT district heating</a> section to determine
+        how the heat is supplied. See our
         <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
         documentation</a> for more information.
     buildings_space_heater_district_heating_lt_steam_hot_water_share:
       title: LT district heating
       short_description:
       description: |
-        This slider sets the percentage of buildings heat demand that is supplied by 
+        This slider sets the percentage of buildings heat demand that is supplied by
         district heating operating at a low temperature (LT). </br></br>
-        District heating is heat supplied by a heat network. The heat can be produced 
-        locally from various sources or the heat can be imported from outside your region. 
+        District heating is heat supplied by a heat network. The heat can be produced
+        locally from various sources or the heat can be imported from outside your region.
         Heat networks are designed to operate at a specific temperature, but different
         networks can have different temperature levels. Go to the
-        <a href="/scenario/supply/heat_lt">LT district heating</a> section to determine 
-        how the heat is supplied. See our 
+        <a href="/scenario/supply/heat_lt">LT district heating</a> section to determine
+        how the heat is supplied. See our
         <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
         documentation</a> for more information.
     buildings_space_heater_coal_share:
@@ -367,7 +367,7 @@ en:
       description: |
         This slider influences the percentage of cooling demand from buildings that is filled in with heat-pumps
         abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
-        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature
         due to the addition of thermal storage.
     buildings_cooling_airconditioning_share:
       title: Airconditioning
@@ -408,7 +408,7 @@ en:
         For more information you can view the
         <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
-        or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/weather-conditions" >weather curve</a>.
+        or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     buildings_cooling_heatpump_air_water_electricity_share:
       title: Air heat pump
       short_description: ''
@@ -422,7 +422,7 @@ en:
         For more information you can view the
         <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
-        or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/weather-conditions" >weather curve</a>.
+        or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     buildings_space_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (gas)
       short_description: ''
@@ -453,15 +453,15 @@ en:
       title: Hybrid air heat pump (hydrogen)
       short_description:
       description: |
-        This heater is a combination of an electric heat pump that draws its heat 
+        This heater is a combination of an electric heat pump that draws its heat
         from the outside air and an efficient conventional hydrogen-fired boiler. <br/><br/>
-        This works as follows: <br/> 
-        The hydrogen-fired part takes over all of the heating of the building on cold 
-        winter days, when heat demand peaks. Because of this clever trick, the heat 
-        pump has less impact on the electricity grid than an all-electric heat pump does. 
-        Smart use of hybrid hydrogen heat pumps may therefore avoid the need to reinforce 
+        This works as follows: <br/>
+        The hydrogen-fired part takes over all of the heating of the building on cold
+        winter days, when heat demand peaks. Because of this clever trick, the heat
+        pump has less impact on the electricity grid than an all-electric heat pump does.
+        Smart use of hybrid hydrogen heat pumps may therefore avoid the need to reinforce
         local power grids. <br/><br/>
-        Heat pumps move heat from one place to another. Refrigerators use heat pumps, 
+        Heat pumps move heat from one place to another. Refrigerators use heat pumps,
         for example, but buildings can use them for
         heating and cooling too. For optimal results with <em>most</em> types of heat
         pump, installation of under-floor and wall heating instead of radiators is
@@ -472,25 +472,25 @@ en:
         given the weather conditions and insulation level. Buildings with limited insulation
         will rely on the hydrogen-fired part more, better insulated ones will make
         more use of the heat pump. <br/><br/>
-        The COP of the electric part of the hybrid hydrogen heat pump depends on ambient 
-        temperature. When the COP drops below the threshold value the hybrid heat pump 
-        switches to hydrogen. The threshold value can be adjusted in the section 
+        The COP of the electric part of the hybrid hydrogen heat pump depends on ambient
+        temperature. When the COP drops below the threshold value the hybrid heat pump
+        switches to hydrogen. The threshold value can be adjusted in the section
         <a href=/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
         >Demand response - behavior of hybrid heat pumps</a>.
     buildings_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (oil)
       short_description:
       description: |
-        This heater is a combination of an electric heat pump that draws its heat 
+        This heater is a combination of an electric heat pump that draws its heat
         from the outside air and an efficient conventional oil-fired boiler. <br/><br/>
-        The COP of the electric part of the hybrid oil heat pump depends on ambient 
-        temperature. When the COP drops below the threshold value the hybrid heat pump 
-        switches to oil. 
+        The COP of the electric part of the hybrid oil heat pump depends on ambient
+        temperature. When the COP drops below the threshold value the hybrid heat pump
+        switches to oil.
         <b>Note that by default, the oil-fired part
-        provides  most if not all of the required heat for space heating.</b> 
+        provides  most if not all of the required heat for space heating.</b>
         This is because the default threshold COP is set at a relatively high value of 3.7
         based on the consumer prices for oil and electricity.
         <br/><br/>
-        The threshold value can be adjusted in the section 
+        The threshold value can be adjusted in the section
         <a href=/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps
-        >Demand response - behavior of hybrid heat pumps</a>.    
+        >Demand response - behavior of hybrid heat pumps</a>.

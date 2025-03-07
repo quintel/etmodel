@@ -68,7 +68,7 @@ en:
         future energy system. See the
         <a href='https://docs.energytransitionmodel.com/main/co2-ccus' target='_blank'>documentation</a>
         for more information. <br/><br/>
-        In this section you can set the supply and demand of CO<sub>2</sub> for your scenario. 
+        In this section you can set the supply and demand of CO<sub>2</sub> for your scenario.
         It is divided over the following subsections:
         <ul>
         <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
@@ -214,7 +214,7 @@ en:
       description: How much electricity and heat will be produced using biomass?
         Here you can set the installed electrical capacity for biomass plants.
         The heat that is produced during the process will be used as heat supply for district heating networks.<br/><br/>
-        The installed electrical capacity can be set for must-run and dispatchable biomass plants. 
+        The installed electrical capacity can be set for must-run and dispatchable biomass plants.
     supply_electricity_renewable_geothermal:
       title: Geothermal
       short_description: ''
@@ -235,7 +235,7 @@ en:
       title: Wind turbines
       short_description: ''
       description: "How much wind power to you want to install? Full load hours for
-        wind and sun can be adjusted in the <a href=\"/scenario/flexibility/flexibility_weather/weather-conditions\">weather
+        wind and sun can be adjusted in the <a href=\"/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\">weather
         section</a>.\r\n"
     supply_electricity_renewable_waste_power:
       title: Waste power
@@ -255,10 +255,10 @@ en:
       title: Gas mix in gas network
       short_description:
       description: |
-        The mix of gas in the gas network can differ per region. Besides fossil natural 
+        The mix of gas in the gas network can differ per region. Besides fossil natural
         gas, it is possible to feed propane or green gas into the network. </br></br>
         In addition, natural gas can be supplied in its gaseous, or in its liquid form.
-        In its liquid form it is called Liquefied Natural Gas (LNG), which needs to be 
+        In its liquid form it is called Liquefied Natural Gas (LNG), which needs to be
         regasified before it can be fed into the gas network.
     supply_fossil_heat_combined_heat_power:
       title: Combined heat & power
@@ -296,17 +296,17 @@ en:
         <a href="/scenario/demand/buildings/space-heating">buildings</a> and
         <a href="/scenario/demand/agriculture/heat">agriculture</a>. </br></br>
         A heat network used for district heating typically operates at a specific temperature
-        level, but different heat networks can operate at different temperatures. The ETM allows 
-        you to model three temperature levels. Characteristics such as the available heat sources, 
-        the costs and the losses can differ per temperature level. You can specify these in their 
+        level, but different heat networks can operate at different temperatures. The ETM allows
+        you to model three temperature levels. Characteristics such as the available heat sources,
+        the costs and the losses can differ per temperature level. You can specify these in their
         respective sections: </br>
         <ul>
         <li><a href="/scenario/supply/heat_ht/sources">High temperature (HT)</a></li>
         <li><a href="/scenario/supply/heat_mt/sources">Medium temperature (MT)</a></li>
         <li><a href="/scenario/supply/heat_lt/sources">Low temperature (LT)</a></li>
         </ul></br>
-        For some sources the heat supply is determined by other factors in the model. For these sources 
-        you can determine the distribution per temperature level in the slides below. This applies to 
+        For some sources the heat supply is determined by other factors in the model. For these sources
+        you can determine the distribution per temperature level in the slides below. This applies to
         heat from <a href="/scenario/supply/heat/allocation-of-heat-from-chps">CHPs</a> and
         heat from <a href="/scenario/supply/heat/allocation-of-power-to-heat">power-to-heat</a>.
         See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
@@ -464,14 +464,14 @@ en:
       description: |
         There are roughly two types of heat sources: dispatchable and must-run heat sources.
         Dispatchable heat sources can be switched on/ off depending on the heat demand
-        at a given time. You can determine which dispatchable heat source supplies first 
+        at a given time. You can determine which dispatchable heat source supplies first
         by changing the <a href="/scenario/supply/heat_ht/merit-order-of-dispatchable-heat-sources">merit order</a>.
-        Must-run heat sources supply heat regardless of the heat demand. For this last type 
+        Must-run heat sources supply heat regardless of the heat demand. For this last type
         <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">(seasonal) storage of heat</a>
         can be an interesting option. </br></br>
         Below you can find several technologies for both types of heat sources. The chart
-        on the right shows whether demand and supply add up. In addition to these source, 
-        heat can be supplied by 
+        on the right shows whether demand and supply add up. In addition to these source,
+        heat can be supplied by
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">CHPs</a> or by
         <a href="/scenario/supply/heat/allocation-of-power-to-heat">power-to-heat</a>.
         See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
@@ -482,9 +482,9 @@ en:
       description: |
         There are roughly two types of heat sources: dispatchable and must-run heat sources.
         Dispatchable heat sources can be switched on/ off depending on the heat demand
-        at a given time. You can determine which dispatchable heat source supplies first 
+        at a given time. You can determine which dispatchable heat source supplies first
         by changing the <a href="/scenario/supply/heat_lt/merit-order-of-dispatchable-heat-sources">merit order</a>.
-        Must-run heat sources supply heat regardless of the heat demand. For this last type 
+        Must-run heat sources supply heat regardless of the heat demand. For this last type
         <a href="/scenario/supply/heat_lt/seasonal-storage-of-heat">(seasonal) storage of heat</a>
         can be an interesting option. </br></br>
         Below you can find several technologies for both types of heat sources. The chart
@@ -497,14 +497,14 @@ en:
       description: |
         There are roughly two types of heat sources: dispatchable and must-run heat sources.
         Dispatchable heat sources can be switched on/ off depending on the heat demand
-        at a given time. You can determine which dispatchable heat source supplies first 
+        at a given time. You can determine which dispatchable heat source supplies first
         by changing the <a href="/scenario/supply/heat_mt/merit-order-of-dispatchable-heat-sources">merit order</a>.
-        Must-run heat sources supply heat regardless of the heat demand. For this last type 
+        Must-run heat sources supply heat regardless of the heat demand. For this last type
         <a href="/scenario/supply/heat_mt/seasonal-storage-of-heat">(seasonal) storage of heat</a>
         can be an interesting option. </br></br>
         Below you can find several technologies for both types of heat sources. The chart
-        on the right shows whether demand and supply add up. In addition to these source, 
-        heat can be supplied by 
+        on the right shows whether demand and supply add up. In addition to these source,
+        heat can be supplied by
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">CHPs</a> or by
         <a href="/scenario/supply/heat/allocation-of-power-to-heat">power-to-heat</a>.
         See our <a href="https://docs.energytransitionmodel.com/main/heat-networks"
@@ -514,17 +514,17 @@ en:
       short_description:
       description: |
         Below it is possible to change the (merit) order of dispatchable hydrogen sources: which hydrogen source
-        is switched on first in case of hydrogen shortage caused by inflexible demand? See our 
+        is switched on first in case of hydrogen shortage caused by inflexible demand? See our
         <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentation</a>
-        for more information on the calculation principles of the merit order of dispatchable production. 
+        for more information on the calculation principles of the merit order of dispatchable production.
     demand_hydrogen_order:
       title: Merit order of dispatchable hydrogen demand
       short_description:
       description: |
         Below it is possible to change the (merit) order of dispatchable hydrogen demand: which hydrogen demand
-        category is switched on first in case of hydrogen oversupply caused by inflexible production? See our 
+        category is switched on first in case of hydrogen oversupply caused by inflexible production? See our
         <a href="https://docs.energytransitionmodel.com/main/hydrogen\" target="_blank">documentation</a>
-        for more information on the calculation principles of the merit order of dispatchable demand. 
+        for more information on the calculation principles of the merit order of dispatchable demand.
     supply_hydrogen_demand:
       title: Hydrogen demand
       short_description:
@@ -543,16 +543,16 @@ en:
         and <a href=/scenario/demand/transport_freight_transport/domestic-navigation-technology>inland ships</a>)</li>
         <li> international transport (<a href=/scenario/demand/transport_international_transport/international-navigation-technology>maritime ships</a>)</li>
         </ul>
-        </br>In the <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand>merit order of dispatchable hydrogen demand</a> 
-        section, the order in which dispatchable hydrogen demand technologies are deployed can be adjusted. 
+        </br>In the <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-demand>merit order of dispatchable hydrogen demand</a>
+        section, the order in which dispatchable hydrogen demand technologies are deployed can be adjusted.
     supply_hydrogen_production:
       title: Hydrogen production
       short_description:
       description: |
         Below you can specify how hydrogen will be produced in the future. A distinction is made in must-run
-        and dispatchable production technologies. In the 
-        <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order of dispatchable hydrogen production</a> 
-        section, the order in which dispatchable production technologies are deployed can be adjusted. 
+        and dispatchable production technologies. In the
+        <a href=/scenario/supply/hydrogen/merit-order-of-dispatchable-hydrogen-production>merit order of dispatchable hydrogen production</a>
+        section, the order in which dispatchable production technologies are deployed can be adjusted.
         </br></br>For more information on how hydrogen supply and demand are modelled in the ETM, see
         our <a href="https://docs.energytransitionmodel.com/main/hydrogen#merit-orders" target=\"_blank\">documentation</a>.
     supply_hydrogen_transport:
@@ -561,13 +561,13 @@ en:
       description: |
         How will hydrogen be transported in the future? The ETM assumes that all hydrogen is transported through
         pipelines. Below, it is possible to set the share that will be transported by trucks after
-        pipeline distribution. 
+        pipeline distribution.
     supply_hydrogen_storage:
       title: Hydrogen storage
       short_description:
       description: |
-        In this section, the hydrogen storage volume and relative storage capacity of salt caverns 
-        and depleted gas fields can be set. The ETM does not take into account flexibility in the form of linepack (see 
+        In this section, the hydrogen storage volume and relative storage capacity of salt caverns
+        and depleted gas fields can be set. The ETM does not take into account flexibility in the form of linepack (see
         <a href="https://docs.energytransitionmodel.com/main/hydrogen#hydrogen-storage" target=\"_blank\">documentation</a>).
     supply_ammonia_production:
       title: Ammonia production
@@ -580,7 +580,7 @@ en:
         <a href="/scenario/demand/transport_international_transport/international-navigation-technology">international</a>
         navigation). Currently, the ETM assumes all ammonia is produced on-site
         in the <a href="/scenario/demand/industry/fertilizers">fertilizer industry</a>. This local
-        production can also be replaced by centralized import which can be set below. 
+        production can also be replaced by centralized import which can be set below.
     supply_infrastructure_high_voltage_network:
       title: High voltage network
       short_description: ''

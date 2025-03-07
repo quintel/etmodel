@@ -26,22 +26,22 @@ nl:
       title: Biomassacentrale
       short_description:
       description: |
-        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het 
-        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen. 
-        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag. 
-        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de 
+        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het
+        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen.
+        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag.
+        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de
         biomassacentrale. <br/><br/>
         Met deze schuif kan het geïnstalleerd vermogen van must-run biomassacentrales worden ingesteld die alleen elektriciteit leveren.
     capacity_of_energy_power_wood_pellets_dispatchable:
       title: Biomassacentrale
       short_description:
       description: |
-        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het 
-        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen. 
-        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag. 
-        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de 
+        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het
+        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen.
+        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag.
+        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de
         biomassacentrale. <br/><br/>
-        Met deze schuif kan het geïnstalleerd vermogen van regelbaar biomassacentrales worden ingesteld die alleen elektriciteit leveren.    
+        Met deze schuif kan het geïnstalleerd vermogen van regelbaar biomassacentrales worden ingesteld die alleen elektriciteit leveren.
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
       short_description:
@@ -76,8 +76,8 @@ nl:
       title: Zon op dak gebouwen
       short_description: ''
       description: |
-        Met dit schuifje stel je het totale geïnstalleerde vermogen aan 
-        zonnestroominstallaties op de daken van gebouwen in. <br/><br/> 
+        Met dit schuifje stel je het totale geïnstalleerde vermogen aan
+        zonnestroominstallaties op de daken van gebouwen in. <br/><br/>
         Zonnepanelen zijn nog volop in ontwikkeling en ze worden
         steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
         gebruikt wordt (in gebouwen) en dus is het niet altijd nodig om de elektriciteit
@@ -86,14 +86,14 @@ nl:
         worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
         zo het net te ontlasten, dit kan je <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
         instellen.<br/><br/>
-        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/weather-conditions\" >hier</a> aanpassen.
+        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
         De efficiëntie van zonnepanelen kan <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >hier</a> aangepast worden.<br
         />
     capacity_of_households_solar_pv_solar_radiation:
       title: Zon op dak huishoudens
       short_description: ''
       description: |
-        Met dit schuifje stel je het totale geïnstalleerde vermogen aan 
+        Met dit schuifje stel je het totale geïnstalleerde vermogen aan
         zonnestroominstallaties op de daken van huishoudens in. <br/><br/>
         Zonnepanelen zijn nog volop in ontwikkeling en ze worden
         steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
@@ -103,7 +103,7 @@ nl:
         worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
         zo het net te ontlasten, dit kan je <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
         instellen. <br/><br/>
-        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/weather-conditions\" >hier</a> aanpassen.
+        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
         De efficiëntie van zonnepanelen kan <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >hier</a> aangepast worden.<br
         />
     capacity_of_energy_power_solar_pv_solar_radiation:
@@ -117,7 +117,7 @@ nl:
         In sommige gevallen is het slim om zonneparken aan te sluiten op slechts een
         bepaald percentage van het piekvermogen, dit kan je <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
         instellen.\r\n<br/><br/>
-        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/weather-conditions\" >hier</a> aanpassen.
+        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
         De efficiëntie van zonnepanelen kan <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >hier </a> aangepast worden.<br
         />
     capacity_of_energy_battery_solar_pv_solar_radiation:
@@ -127,25 +127,25 @@ nl:
         Anders dan gewone installaties voor zon op land zijn deze centrales standaard uitgerust met een
         batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
         systeem. <br/><br/>
-        Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie 
-        van veel zonnecentrales een grote impact hebben op het elektriciteitsnet. Om grote 
-        vermogenspieken op het net voorkomen, wordt niet het volledige geïnstalleerde vermogen 
-        aangesloten op net, maar een gereduceerd deel. Als de productie groter is dan de 
-        aangesloten netwerkcapaciteit begint de batterij elektriciteit te consumeren. Als de 
-        productie weer onder de netwerkcapaciteit zakt, begint de batterij deze elektriciteit 
-        te ontladen. Let op dat er door efficiëntieverliezen en opslagverliezen elektriciteit 
+        Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie
+        van veel zonnecentrales een grote impact hebben op het elektriciteitsnet. Om grote
+        vermogenspieken op het net voorkomen, wordt niet het volledige geïnstalleerde vermogen
+        aangesloten op net, maar een gereduceerd deel. Als de productie groter is dan de
+        aangesloten netwerkcapaciteit begint de batterij elektriciteit te consumeren. Als de
+        productie weer onder de netwerkcapaciteit zakt, begint de batterij deze elektriciteit
+        te ontladen. Let op dat er door efficiëntieverliezen en opslagverliezen elektriciteit
         verloren gaat in dit proces. <br/><br/>
-        In het geval dat de batterij 
-        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        In het geval dat de batterij
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de
         batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/><br/>
         Zowel de aangesloten netwerkcapaciteit als het inputvermogen van de batterij wordt
-        relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide 
-        meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in 
-        de Flexibiliteit sectie, onder 
+        relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide
+        meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in
+        de Flexibiliteit sectie, onder
          <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
         Opslag elektriciteit</a>. <br/><br/>
-        Klik op de 'Technische parameters en kosten' om de specificaties van de zonnecentrale 
-        PV zonder het batterijsysteem te zien. In 
+        Klik op de 'Technische parameters en kosten' om de specificaties van de zonnecentrale
+        PV zonder het batterijsysteem te zien. In
         <a
           href="#"
           class="open_chart"
@@ -159,20 +159,20 @@ nl:
       short_description:
       description: |
         Met dit schuifje bouw je een grootschalig zonnepark. Dit type zonnepark drijft op zee. </br></br>
-        Deze technologie wordt ontwikkeld om het potentiële installatieoppervlak voor zonneparken 
+        Deze technologie wordt ontwikkeld om het potentiële installatieoppervlak voor zonneparken
         in landen te vergroten. Daarnaast kunnen deze parken waarschijnlijk geïnstalleerd worden tussen de windmolens
-        op zee, hierdoor wordt er geen extra ruimte gebruikt. Het achterliggende idee is dat de uurlijkse productieprofielen van zon en wind 
+        op zee, hierdoor wordt er geen extra ruimte gebruikt. Het achterliggende idee is dat de uurlijkse productieprofielen van zon en wind
         elkaar kunnen aanvullen, waardoor de elektriciteitskabel naar het land beter wordt benut.
-        Je kunt de gecombineerde output van zonneparken en windparken op zee zien in 
+        Je kunt de gecombineerde output van zonneparken en windparken op zee zien in
         <a
           href="#"
           class="open_chart"
           data-chart-key="supply_offshore_solar_wind"
           data-chart-location="side">
           deze grafiek</a>. </br></br>
-        Productie door zon kan volatieler zijn dan wind. Om zon en wind op zee beter op elkaar aan 
-        te laten sluiten wordt daarom de netwerkcapaciteit van de zonneparken op zee gereduceerd 
-        met 33% van het piekvermogen. Je kan deze waarde 
+        Productie door zon kan volatieler zijn dan wind. Om zon en wind op zee beter op elkaar aan
+        te laten sluiten wordt daarom de netwerkcapaciteit van de zonneparken op zee gereduceerd
+        met 33% van het piekvermogen. Je kan deze waarde
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">hier</a> veranderen.
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Geconcentreerde zonnestroom
@@ -303,16 +303,16 @@ nl:
       title: Kern kleine modulaire reactor
       short_description:
       description: |
-        Met dit schuifje kun je een nieuw type kerncentrale bouwen. Zoals de naam al 
-        doet vermoeden is deze centrale kleiner dan traditionele kerncentrales en kan 
+        Met dit schuifje kun je een nieuw type kerncentrale bouwen. Zoals de naam al
+        doet vermoeden is deze centrale kleiner dan traditionele kerncentrales en kan
         deze vooraf worden gefabriceerd en vervolgens op locatie worden geassembleerd. </br></br>
-        Potentiële voordelen die hieruit voortkomen zijn onder meer dat de bouwtijd en 
-        bijbehorende kosten lager liggen door het modulaire ontwerp, en dat het 
+        Potentiële voordelen die hieruit voortkomen zijn onder meer dat de bouwtijd en
+        bijbehorende kosten lager liggen door het modulaire ontwerp, en dat het
         ruimtegebruik lager ligt door het kleinere formaat. </br></br>
-        Omdat de technologie nog in ontwikkeling is, is het onzeker of deze of andere 
-        voordelen in de praktijk gerealiseerd zullen worden. Een voorbeeld hiervan is 
-        dat op basis van huidige specificaties de kleine modulaire reactor per MW nog 
-        duurder is dan de traditionele reactoren. Je kunt deze kosten aanpassen onder 
+        Omdat de technologie nog in ontwikkeling is, is het onzeker of deze of andere
+        voordelen in de praktijk gerealiseerd zullen worden. Een voorbeeld hiervan is
+        dat op basis van huidige specificaties de kleine modulaire reactor per MW nog
+        duurder is dan de traditionele reactoren. Je kunt deze kosten aanpassen onder
         <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a>.
     merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
       title: ''
@@ -530,10 +530,10 @@ nl:
         In tegenstelling tot reguliere windturbines op zee kan de elektriciteit geproduceerd door
         hybride windturbines op zee ofwel geleverd worden aan een elektrolyser op zee voor
         waterstofproductie ofwel aan het hoogspanningsnetwerk via een elektriciteitskabel op zee.
-        De (relatieve) geïnstalleerde vermogens van de elektrolyser en elektriciteitskabel op zee kunnen 
+        De (relatieve) geïnstalleerde vermogens van de elektrolyser en elektriciteitskabel op zee kunnen
         worden ingesteld in de <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
         Flexibiliteitssectie</a>.<br/><br/>
-        Voor meer informatie over de componenten van hybride wind op zee en het onderlinge gedrag van de componenten, 
+        Voor meer informatie over de componenten van hybride wind op zee en het onderlinge gedrag van de componenten,
         zie de <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>.<br/><br/>
         Deze
         <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">grafiek</a>
@@ -549,25 +549,25 @@ nl:
         Anders dan gewone windmolens op land, zijn deze windmolens standaard uitgerust met een
         batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
         systeem. <br/><br/>
-        Doordat de elektriciteitsproductie door windmolens volatiel is, kan de installatie 
-        van veel windmolens een grote impact hebben op het elektriciteitsnet. Om grote 
-        vermogenspieken op het net voorkomen, wordt niet het volledige geïnstalleerde vermogen 
-        aangesloten op net, maar een gereduceerd deel. Als de productie groter is dan de 
-        aangesloten netwerkcapaciteit begint de batterij elektriciteit te consumeren. Als de 
-        productie weer onder de netwerkcapaciteit zakt, begint de batterij deze elektriciteit 
-        te ontladen. Let op dat er door efficiëntieverliezen en opslagverliezen elektriciteit 
+        Doordat de elektriciteitsproductie door windmolens volatiel is, kan de installatie
+        van veel windmolens een grote impact hebben op het elektriciteitsnet. Om grote
+        vermogenspieken op het net voorkomen, wordt niet het volledige geïnstalleerde vermogen
+        aangesloten op net, maar een gereduceerd deel. Als de productie groter is dan de
+        aangesloten netwerkcapaciteit begint de batterij elektriciteit te consumeren. Als de
+        productie weer onder de netwerkcapaciteit zakt, begint de batterij deze elektriciteit
+        te ontladen. Let op dat er door efficiëntieverliezen en opslagverliezen elektriciteit
         verloren gaat in dit proces. <br/><br/>
-        In het geval dat de batterij 
-        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de 
+        In het geval dat de batterij
+        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de
         batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/><br/>
         Zowel de aangesloten netwerkcapaciteit als het inputvermogen van de batterij wordt
-        relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide 
-        meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in 
-        de Flexibiliteit sectie, onder 
+        relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide
+        meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in
+        de Flexibiliteit sectie, onder
          <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
         Opslag elektriciteit</a>. <br/><br/>
-        Klik op de 'Technische parameters en kosten' om de specificaties van de windmolens 
-        zonder het batterijsysteem te zien. In 
+        Klik op de 'Technische parameters en kosten' om de specificaties van de windmolens
+        zonder het batterijsysteem te zien. In
         <a
           href="#"
           class="open_chart"
@@ -683,7 +683,7 @@ nl:
       short_description: ''
       description: |
         Dit schuifje stelt in welk percentage van alle gasgebruik propaan
-        is. Propaan kan worden bijgemengd in de gasmix om de energetische waarde van het netwerkgas te verhogen. 
+        is. Propaan kan worden bijgemengd in de gasmix om de energetische waarde van het netwerkgas te verhogen.
         Dit kan bijvoorbeeld relevant zijn om te compenseren voor een lagere energetische waarde van andere bijgemengde gassen,
         zoals biogas.
     energy_treatment_natural_gas_share:
@@ -703,12 +703,12 @@ nl:
       title: Energieproductie
       description: |
         Kolengas wordt verbrand in specifieke WKK's en elektriciteitscentrales
-        waardoor warmte en elektriciteit wordt opgewekt. Hier kun je bepalen welk deel van 
-        de kolengassen dat niet voor het staalproductieproces zelf gebruikt wordt, wordt 
+        waardoor warmte en elektriciteit wordt opgewekt. Hier kun je bepalen welk deel van
+        de kolengassen dat niet voor het staalproductieproces zelf gebruikt wordt, wordt
         ingezet om elektriciteit en warmte te produceren. </br></br>
-        Let op dat de kolengas WKK's en elektriciteitscentrales must-run zijn. Dit betekent 
-        dat ze produceren wanneer kolengas beschikbaar is, onafhankelijk van de elektriciteit- 
-        en warmtevraag. Je kunt het geïnstalleerd vermogen van deze centrales zien in de 
+        Let op dat de kolengas WKK's en elektriciteitscentrales must-run zijn. Dit betekent
+        dat ze produceren wanneer kolengas beschikbaar is, onafhankelijk van de elektriciteit-
+        en warmtevraag. Je kunt het geïnstalleerd vermogen van deze centrales zien in de
         <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">
         merit order tabel</a>. </br></br>
         Klik op de "technische parameters en kosten" om de specificaties van de kolengascentrale te zien.
@@ -717,8 +717,8 @@ nl:
       description: |
         Een alternatief voor de energieproductie met hoge CO<sub>2</sub>-emissies
         is het afvangen van het kolengas. Het afgevangen gas kan dan omgezet worden in grondstoffen
-        voor de chemische industrie. Hier kun je bepalen welk deel van de kolengassen dat niet voor 
+        voor de chemische industrie. Hier kun je bepalen welk deel van de kolengassen dat niet voor
         het staalproductieproces zelf gebruikt wordt, wordt omgezet naar grondstoffen. </br></br>
-        De steel-to-chemicals route staat nog in de kinderschoenen. Daarom modelleert het ETM niet 
-        expliciet de gevolgen hiervan voor het gebruik van andere (fossiele) grondstoffen in de 
+        De steel-to-chemicals route staat nog in de kinderschoenen. Daarom modelleert het ETM niet
+        expliciet de gevolgen hiervan voor het gebruik van andere (fossiele) grondstoffen in de
         <a href="/scenario/demand/industry/chemicals">chemische industrie</a>.

@@ -39,6 +39,14 @@ nl:
         <ul class="data-download">
           <li><a href="/passthru/%{scenario_id}/application_demands.csv" target="_blank"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
         </ul>
+    data_export_inputs:
+      title: Overzicht van invoerwaarden
+      short_description:
+      description: |
+        Download een overzicht van de invoerwaarden die in je scenario worden gebruikt. Dit omvat de schuifregelaar-sleutels, minimale en maximale waarden, standaard- en gebruikerswaarden, eenheden en indien van toepassing, de share-groepen.
+        <ul class="data-download">
+          <li><a href="/passthru/%{scenario_id}/inputs.csv"><span class="name">Overzicht van invoerwaarden</span> <span class="filetype">200KB CSV</span></a></li>
+        </ul>
     data_export_costs:
       title: Specificaties jaarlijkse kosten
       short_description:

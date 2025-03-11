@@ -29,25 +29,25 @@ en:
       title: Biomass power plant
       short_description:
       description: |
-        A biomass power plant produces electricity from biomass feedstock. 
-        For a typical biomass power plant, a share of its installed capacity operates on a must-run basis, 
-        ensuring continuous electricity production regardless of demand fluctuations. The remaining capacity is 
-        dispatchable, meaning it operates flexibly to meet varying electricity demand. Therefore, logically 
+        A biomass power plant produces electricity from biomass feedstock.
+        For a typical biomass power plant, a share of its installed capacity operates on a must-run basis,
+        ensuring continuous electricity production regardless of demand fluctuations. The remaining capacity is
+        dispatchable, meaning it operates flexibly to meet varying electricity demand. Therefore, logically
         there will be no installed dispatchable capacity if there is no installed must-run capacity for the
         biomass power plant. <br/><br/>
-        Here you can set the installed electrical capacity of must-run biomass power plants that supply electricity 
+        Here you can set the installed electrical capacity of must-run biomass power plants that supply electricity
         only.
     capacity_of_energy_power_wood_pellets_dispatchable:
       title: Biomass power plant
       short_description:
       description: |
-        A biomass power plant produces electricity from biomass feedstock. 
-        For a typical biomass power plant, a share of its installed capacity operates on a must-run basis, 
-        ensuring continuous electricity production regardless of demand fluctuations. The remaining capacity is 
-        dispatchable, meaning it operates flexibly to meet varying electricity demand. Therefore, logically 
+        A biomass power plant produces electricity from biomass feedstock.
+        For a typical biomass power plant, a share of its installed capacity operates on a must-run basis,
+        ensuring continuous electricity production regardless of demand fluctuations. The remaining capacity is
+        dispatchable, meaning it operates flexibly to meet varying electricity demand. Therefore, logically
         there will be no installed dispatchable capacity if there is no installed must-run capacity for the
         biomass power plant. <br/><br/>
-        Here you can set the installed electrical capacity of dispatchable biomass power plants that supply 
+        Here you can set the installed electrical capacity of dispatchable biomass power plants that supply
         electricity only.
     capacity_of_energy_power_turbine_hydrogen:
       title: Hydrogen turbine
@@ -89,10 +89,10 @@ en:
         on the grid and that saves energy. Feeding locally produced power back into
         the local power grid requires a higher capacity or smarter local grid, to
         prevent it from overloading. It may be desirable to curtail the power peaks
-        in order to decrease the load on the net, you can set this you can set this 
+        in order to decrease the load on the net, you can set this you can set this
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>. <br/><br/>
         You can adjust the full load hours of solar
-        panels <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
+        panels <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>.
         The efficiency of solar panels can be adjusted <a href"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
         />
     capacity_of_buildings_solar_pv_solar_radiation:
@@ -100,15 +100,15 @@ en:
       short_description: ''
       description: |
         With this slider you set the capacity of rooftop solar PV installations on
-        rooftop areas of buildings. 
-        
+        rooftop areas of buildings.
+
         This technology is developing rapidly and solar panels
         are becoming ever more efficient and cheaper. Solar panels produce electricity
         on site, so transport of electricity is not always required. This avoids losses
         on the grid and that saves energy. Feeding locally produced power back into
         the local power grid requires a higher capacity or smarter local grid, to
         prevent it from overloading. It may be desirable to curtail the power peaks
-        in order to decrease the load on the net, you can set this <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>. 
+        in order to decrease the load on the net, you can set this <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
         <br/><br/>
         You can adjust the full load hours of solar
         panels <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
@@ -128,7 +128,7 @@ en:
         it is smart to connect solar parks to only a certain percentage of the peak
         power, you can set this <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.<br/><br/>
         You can adjust the full load hours of solar
-        panels <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions\" >here</a>.
+        panels <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>.
         The efficiency of solar panels can be adjusted <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Concentrated solar power
@@ -147,27 +147,27 @@ en:
       title: Solar PV plants onshore with battery system
       short_description: ''
       description: |
-        Different from regular solar PV plants, these plants are fitted with a battery and 
+        Different from regular solar PV plants, these plants are fitted with a battery and
         a reduced grid connection capacity by default, as an integrated system. These plants are typically
         large-scale, defined as having an output capacity of > 15 kWp within the Netherlands and
         > 20 kWp for all other European countries. <br/><br/>
-        Due to the volatile nature of solar power output, installing large numbers of solar 
-        panels can have a major impact on the electricity grid. To prevent large capacity 
+        Due to the volatile nature of solar power output, installing large numbers of solar
+        panels can have a major impact on the electricity grid. To prevent large capacity
         peaks on the grid, these plants are not connected to the grid for the entire installed
-        capacity, but by a reduced amount. When production exceeds the grid connection capacity 
-        the battery consumes electricity. When the production drops below the threshold, the 
-        battery starts to release the electricity again. Note that due to efficiency losses and 
+        capacity, but by a reduced amount. When production exceeds the grid connection capacity
+        the battery consumes electricity. When the production drops below the threshold, the
+        battery starts to release the electricity again. Note that due to efficiency losses and
         storage decay, some electricity is lost in the process. <br/><br/>
-        If the battery cannot consume any more electricity due to charging 
+        If the battery cannot consume any more electricity due to charging
         capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
-        Both the grid connection capacity and the input capacity of the battery are defined 
-        relative to the installed capacity. They will therefore both change accordingly if 
-        you adjust this slider. You can also change the relative ratios in the Flexibility 
-        section, under 
+        Both the grid connection capacity and the input capacity of the battery are defined
+        relative to the installed capacity. They will therefore both change accordingly if
+        you adjust this slider. You can also change the relative ratios in the Flexibility
+        section, under
         <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
         Electricity storage</a>. <br/><br/>
-        You can click on the 'Technical and financial properties' to see the specifications of 
-        the solar PV plants without the batteries. See 
+        You can click on the 'Technical and financial properties' to see the specifications of
+        the solar PV plants without the batteries. See
         <a
           href="#"
           class="open_chart"
@@ -184,19 +184,19 @@ en:
         This type osf of solar PV plants is built to float in the sea. These plants are typically
         large-scale, defined as having an output capacity of > 15 kWp within the Netherlands and
         > 20 kWp for all other European countries. </br></br>
-        This technology is developed to increase the potential installation area for solar 
-        PV plants in a country. Additionally, these plants might be placed between offshore wind turbines, 
-        taking up no extra offshore surface. The idea is that the hourly production profiles of solar and wind can 
+        This technology is developed to increase the potential installation area for solar
+        PV plants in a country. Additionally, these plants might be placed between offshore wind turbines,
+        taking up no extra offshore surface. The idea is that the hourly production profiles of solar and wind can
         complement each other, meaning that the power cable to land will be better utilized.
-        You can see the combined output of offshore solar PV plants and wind parks in 
+        You can see the combined output of offshore solar PV plants and wind parks in
         <a
           href="#"
           class="open_chart"
           data-chart-key="supply_offshore_solar_wind"
           data-chart-location="side">
           this chart</a>. </br></br>
-        Production by solar can be more volatile than wind. To further enhance the compatibility 
-        of offshore solar and wind, the grid connection of these solar PV plants is 
+        Production by solar can be more volatile than wind. To further enhance the compatibility
+        of offshore solar and wind, the grid connection of these solar PV plants is
         therefore reduced by default with 33% of the peak capacity. You can change this value
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">here</a>.
     capacity_of_energy_power_ultra_supercritical_crude_oil:
@@ -318,15 +318,15 @@ en:
       title: Nuclear small modular reactor
       short_description:
       description: |
-        With this slider you can build a novel type of nuclear power plant. As its name 
-        indicates, the key characteristic of this type of plant is that it is smaller 
+        With this slider you can build a novel type of nuclear power plant. As its name
+        indicates, the key characteristic of this type of plant is that it is smaller
         than traditional nuclear power plants and that it can be prefabricated and easily
         assembled on-site. </br></br>
         Potential benefits than can arise from these characteritstics are, among others,
-        a decreased construction time and associated costs due to their modular nature, 
+        a decreased construction time and associated costs due to their modular nature,
         and reduced land-use due to their small nature. </br></br>
-        Because the technology still has to become commercially viable it is as yet unclear 
-        whether these or other benefits will be realized in practice. For example, based on current 
+        Because the technology still has to become commercially viable it is as yet unclear
+        whether these or other benefits will be realized in practice. For example, based on current
         specifications, small modular reactors are still more expensive per MW than their traditional
         counterparts. You can change these costs in the <a href="/scenario/costs/specs_electricity/nuclear-plants">
         Cost & efficiencies</a> section.
@@ -503,39 +503,39 @@ en:
         offshore electrolyser and electricity cable can be set in the
         <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
         Flexibility</a> section. <br/><br/>
-        For more information on the components and behaviour of the hybrid offshore wind components, 
-        see the <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" 
+        For more information on the components and behaviour of the hybrid offshore wind components,
+        see the <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
         target=\"_blank\">documentation</a>.<br/><br/>
         The installed capacities of compoments can be found in this
         <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">chart</a>,
         the annual energy flows in this
         <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">chart</a>.
         In addition, this <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
-        data-chart-location="side">table</a> also shows the installed capacities and peak loads of 
+        data-chart-location="side">table</a> also shows the installed capacities and peak loads of
         the different components.
     capacity_of_energy_battery_wind_turbine_inland:
       title: Onshore inland with battery system
       short_description: ''
       description: |
-        Different from regular wind turbines on land, these turbines are fitted with a battery and 
+        Different from regular wind turbines on land, these turbines are fitted with a battery and
         a reduced grid connection capacity by default, as an integrated system. <br/><br/>
-        Due to the volatile nature of wind power output, installing large numbers of wind 
-        turbines can have a major impact on the electricity grid. To prevent large capacity 
+        Due to the volatile nature of wind power output, installing large numbers of wind
+        turbines can have a major impact on the electricity grid. To prevent large capacity
         peaks on the grid, these turbines are not connected to the grid for the entire installed
-        capacity, but by a reduced amount. When production exceeds the grid connection capacity 
-        the battery consumes electricity. When the production drops below the threshold, the 
-        battery starts to release the electricity again. Note that due to efficiency losses and 
+        capacity, but by a reduced amount. When production exceeds the grid connection capacity
+        the battery consumes electricity. When the production drops below the threshold, the
+        battery starts to release the electricity again. Note that due to efficiency losses and
         storage decay, some electricity is lost in the process. <br/><br/>
-        If the battery cannot consume any more electricity due to charging 
+        If the battery cannot consume any more electricity due to charging
         capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
-        Both the grid connection capacity and the input capacity of the battery are defined 
-        relative to the installed capacity. They will therefore both change accordingly if 
-        you adjust this slider. You can also change the relative ratios in the Flexibility 
-        section, under 
+        Both the grid connection capacity and the input capacity of the battery are defined
+        relative to the installed capacity. They will therefore both change accordingly if
+        you adjust this slider. You can also change the relative ratios in the Flexibility
+        section, under
         <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
         Electricity storage</a>. <br/><br/>
-        You can click on the 'Technical and financial properties' to see the specifications of the 
-        wind turbines without the batteries. See 
+        You can click on the 'Technical and financial properties' to see the specifications of the
+        wind turbines without the batteries. See
         <a
           href="#"
           class="open_chart"
@@ -635,7 +635,7 @@ en:
       title: Propane
       short_description: ''
       description: |
-        This slider determines which percentage of all gas used is propane. 
+        This slider determines which percentage of all gas used is propane.
         Propane can be added to the gas mixture to increase the heating value of network gas.
         For example, this can be relevant when there is a need to compensate for the lower heating value of other
         network gas components, such as biogas.
@@ -655,11 +655,11 @@ en:
     share_of_energy_steel_energy_production_coal_gas:
       title: Energy production
       description: |
-        Coal gas is currently used for electricity and heat production in specific CHPs and power 
+        Coal gas is currently used for electricity and heat production in specific CHPs and power
         plants. Here you can indicate what share of coal gas that is not used for the steel-making
         process itself, is used for electricity and heat generation. </br></br>
-        Note that the coal gas CHPs and power plants are considered must-run. They therefore produce 
-        when coal gas is available, irrespective of electricity and heat demand. You can view the 
+        Note that the coal gas CHPs and power plants are considered must-run. They therefore produce
+        when coal gas is available, irrespective of electricity and heat demand. You can view the
         installed capacities of these plants in the
         <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">
         merit order table</a>. </br></br>
@@ -669,8 +669,8 @@ en:
       description: |
         An alternative for energy production with high CO<sub>2</sub> emissions
         is the capture of coal gas. The captured gas can then be transformed into feedstock for
-        the chemical industry. Here you can indicate what share of coal gas that is not used for 
+        the chemical industry. Here you can indicate what share of coal gas that is not used for
         the steel-making process itself, is used for feedstock production. </br></br>
-        Since a lot is still unknown about the steel-to-chemicals route the ETM does not explicitly 
-        model the impact of this on other (fossil) feedstock use in the 
+        Since a lot is still unknown about the steel-to-chemicals route the ETM does not explicitly
+        model the impact of this on other (fossil) feedstock use in the
         <a href="/scenario/demand/industry/chemicals">chemical industry</a>.

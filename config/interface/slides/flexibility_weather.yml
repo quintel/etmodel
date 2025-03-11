@@ -1,7 +1,12 @@
 ---
-- general_sub_header: temperature
-  key: flexibility_weather_conditions_and_flh
+- key: flexibility_temperature_and_flh
   position: 1
   sidebar_item_key: flexibility_weather
-  alt_output_element_key: 
+  alt_output_element_key:
   output_element_key: final_energy_demand_per_sector_joule
+- key: flexibility_weather_years
+  position: 2
+  sidebar_item_key: flexibility_weather
+  alt_output_element_key:
+  output_element_key: final_energy_demand_per_sector_joule
+  dependent_on: has_weather_curves

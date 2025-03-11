@@ -778,7 +778,7 @@ en:
         set the average temperature and full load hours of wind turbines and solar
         PV.
     flexibility_weather_years:
-      title: Weather years (only for Dutch regions)
+      title: Weather years
       short_description:
       description: |
         By default, weather conditions are used that correspond to the start year.
@@ -792,8 +792,8 @@ en:
         <li>temperature curve, affects: hourly heat demand of households, buildings and agriculture.</li>
         </ul> <br/>
         Note: Selecting a weather year other than Default will overwrite previous assumptions
-        about changes in full load hours and temperature. The description of the weather year
-        contains the corresponding full load hours and temperature.<br/><br/>
+        about changes in full load hours and temperature. The description of the weather years
+        below contains the corresponding full load hours and temperature.<br/><br/>
         For more information about weather conditions consult our
         <a href="https://docs.energytransitionmodel.com/main/temperature-and-full-load-hours\"
         target =\"_blank\">documentation</a>.<br/><br/>

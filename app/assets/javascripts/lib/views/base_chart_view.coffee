@@ -119,8 +119,10 @@ class @BaseChartView extends Backbone.View
       @$el
 
     @format_wrapper.find("a.chart_format, a.table_format").hide()
+    @format_wrapper.find('a.download_csv').hide()
     if @model.can_be_shown_as_table()
-      if @model.get 'as_table'
+      @format_wrapper.find("a.download_csv").show()
+      if @model.get('as_table')
         @format_wrapper.find("a.chart_format").show()
       else
         @format_wrapper.find("a.table_format").show()

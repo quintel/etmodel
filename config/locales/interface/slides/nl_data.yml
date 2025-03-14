@@ -39,6 +39,28 @@ nl:
         <ul class="data-download">
           <li><a href="/passthru/%{scenario_id}/application_demands.csv" target="_blank"><span class="name">Primaire en finale vraag per toepassing</span> <span class="filetype">40KB CSV</span></a></li>
         </ul>
+    data_export_inputs:
+      title: Overzicht van schuifjesinstellingen
+      short_description:
+      description: |
+        Download een overzicht van de schuifjesinstellingen van dit scenario. Dit bevat de keys, de
+        minimum- en maximumwaardes, de standaard- (startjaar) en gebruikerswaardes
+        (toekomstjaar) en (indien van toepassing) de <i>share group</i>. Zie de
+        <a href="https://docs.energytransitionmodel.com/contrib/inputs/" target="_blank">doumentatie</a>.
+        voor meer informatie.
+        <ul class="data-download">
+          <li>
+            <a href="/passthru/%{scenario_id}/inputs.csv"><span class="name">Schuifjesinstellingen</span>
+            <span class="filetype">100KB CSV</span></a>
+          </li>
+        </ul>
+      headers:
+        sidebar_item: "Zijbalkitem"
+        item_key: "Item sleutel"
+        name: "Naam"
+        raw_key: "Ruwe sleutel"
+        user_value: "Gebruikerswaarde"
+        unit: "Eenheid"
     data_export_costs:
       title: Specificaties jaarlijkse kosten
       short_description:

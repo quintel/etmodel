@@ -55,6 +55,7 @@ Rails.application.routes.draw do
 
     member do
       get  :load
+      get  :inputs, defaults: { format: :csv }
       get  :coupling_settings
       post :update_couplings
       get  'energy_mix' => 'energy_mix#show'

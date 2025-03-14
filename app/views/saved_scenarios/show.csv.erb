@@ -1,4 +1,0 @@
-<%-api_scenario = @saved_scenario.scenario(engine_client) %>
-<%-InputElement.all.reject(&:area_dependent).sort_by(&:key).each do |ie| %>
-<%=raw t("tabs.#{ie.slide.sidebar_item.tab_key}")%>;<%=raw t("sidebar_items.#{ie.slide.sidebar_item_key}.title")%>;<%=raw t(ie.slide.title_for_description)%>;<%=ie.key%>;<%=api_scenario.user_values[ie.key]%>;<%=ie.unit%>
-<%-end%>

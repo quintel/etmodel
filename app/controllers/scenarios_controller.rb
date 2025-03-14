@@ -1,7 +1,7 @@
 class ScenariosController < ApplicationController
   include MainInterfaceController.new(:play, :play_multi_year_charts)
 
-  before_action :find_scenario, only: %i[show load play_multi_year_charts resume update_couplings coupling_settings]
+  before_action :find_scenario, only: %i[show load play_multi_year_charts resume update_couplings coupling_settings inputs]
   before_action :require_user, only: %i[index merge]
   before_action :redirect_compare, only: :compare
   before_action :setup_comparison, only: %i[compare weighted_merge]
@@ -216,6 +216,12 @@ class ScenariosController < ApplicationController
       render :weighted_merge
     else
       redirect_to(scenario_url(body['id']))
+    end
+  end
+
+  def inputs
+    respond_to do |format|
+      format.csv  # Rails will render views/scenarios/inputs.csv.erb
     end
   end
 

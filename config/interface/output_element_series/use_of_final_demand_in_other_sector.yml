@@ -58,9 +58,9 @@
   is_1990: 
   dependent_on: 
   output_element_key: use_of_final_demand_in_other_sector
-  key: natural_gas_and_derivatives_use_of_final_demand_in_other_sector
+  key: natural_gas_and_derivatives_energetic_use_of_final_demand_in_other_sector
 - label: oil_and_derivatives_energetic
-  color: "#854321"
+  color: "#BA7D40"
   order_by: 30
   group: 
   show_at_first: 
@@ -70,7 +70,7 @@
   is_1990: 
   dependent_on: 
   output_element_key: use_of_final_demand_in_other_sector
-  key: oil_and_derivatives_use_of_final_demand_in_other_sector
+  key: oil_and_derivatives_energetic_use_of_final_demand_in_other_sector
 - label: oil_and_derivatives_non_energetic
   color: "#854321"
   order_by: 35
@@ -78,7 +78,7 @@
   show_at_first: 
   is_target_line: 
   target_line_position: 
-  gquery: final_demand_of_oil_and_derivatives_in_other
+  gquery: oil_and_derivatives_non_energetic_use_of_final_demand_in_other_sector
   is_1990: 
   dependent_on: 
   output_element_key: use_of_final_demand_in_other_sector

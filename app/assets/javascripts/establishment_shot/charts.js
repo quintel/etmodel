@@ -54,7 +54,7 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_buildings_households_appliances_light_co2_emissions' },
                 { key: 'co2_sheet_buildings_households_other_emissions' }
             ],
-            [
+            [   { key: 'co2_sheet_other_sector_co2_emissions' },
                 { key: 'co2_sheet_industry_chemical_all_emissions' },
                 { key: 'co2_sheet_industry_waste_management_all_emissions' },
                 { key: 'co2_sheet_industry_energy_sector_all_emissions' },
@@ -62,6 +62,7 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_industry_food_co2_emissions' },
                 { key: 'co2_sheet_industry_paper_co2_emissions' },
                 { key: 'co2_sheet_industry_other_all_emissions' }
+                
             ],
             [
                 { key: 'co2_sheet_agriculture_energy_all_emissions' },
@@ -84,8 +85,8 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_agriculture_total_emissions',
                   title: 'co2_sheet_agriculture_total_emissions',
                   fa_icon: '\uf06c' },
-                { key: 'co2_sheet_industry_energy_total_emissions',
-                  title: 'co2_sheet_industry_energy_total_emissions',
+                { key: 'co2_sheet_industry_energy_other_total_emissions',
+                  title: 'co2_sheet_industry_energy_other_total_emissions',
                   fa_icon: '\uf275' },
                 { key: 'co2_sheet_transport_total_emissions',
                   title: 'co2_sheet_transport_total_emissions',
@@ -167,7 +168,7 @@ EstablishmentShot.Charts = (function () {
                     top: false,
                     fa_icon: 'f015',
                 }, addQueries(), smallChartDefaults()),
-                co2_sheet_industry_energy_total_emissions: $.extend({
+                co2_sheet_industry_energy_other_total_emissions: $.extend({
                     left: false,
                     top: false,
                     fa_icon: 'f275'

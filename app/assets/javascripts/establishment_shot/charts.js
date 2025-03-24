@@ -22,6 +22,7 @@ EstablishmentShot.Charts = (function () {
                 '#aaa69d'
             ],
             [
+                '#b9b9b9',
                 '#60a3bc',
                 '#f6b93b',
                 '#e55039',
@@ -62,7 +63,7 @@ EstablishmentShot.Charts = (function () {
                 { key: 'co2_sheet_industry_food_co2_emissions' },
                 { key: 'co2_sheet_industry_paper_co2_emissions' },
                 { key: 'co2_sheet_industry_other_all_emissions' }
-                
+
             ],
             [
                 { key: 'co2_sheet_agriculture_energy_all_emissions' },

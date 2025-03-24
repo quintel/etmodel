@@ -425,7 +425,8 @@ nl:
     flexibility_merit_order_merit_order:
       title: Merit order
       short_description:
-      description: "Over het algemeen volgt de elektriciteitsproductie de vraag naar
+      description: 
+        Over het algemeen volgt de elektriciteitsproductie de vraag naar
         elektriciteit. De volgorde waarin elektriciteitscentrales worden ingeschakeld
         wordt bepaald door de 'merit order'. De merit order rangschikt de elektriciteitscentrales
         naar draaikosten (ook wel 'marginale kosten'). De centrales met de laagste
@@ -433,17 +434,11 @@ nl:
         hogere kosten pas als de vraag hoog genoeg is. Centrales met relatief lage
         draaikosten maken dan ook veel draaiuren, terwijl duurdere centrales misschien
         maar een paar honderd uur aan staan. Dit kan veel verschil maken voor de CO<sub>2</sub>
-        uitstoot in jouw scenario. \r\n<br/><br/>\r\nStandaard rekent het ETM op uurbasis
-        uit welke elektriciteitscentrales moeten worden ingeschakeld. De berekening
-        wordt elke keer dat je je scenario aanpast opnieuw uitgevoerd. Je kunt er
-        voor kiezen om de merit order berekening uit te zetten. Als je de berekening
-        hebt uitgezet, zullen alle elektriciteitscentrales dezelfde draaiuren hebben
-        als in het startjaar van je scenario en niet reageren op jouw aannames over
-        brandstof- of andere kosten.\r\n<br/><br/>\r\nHet ETM voert een versimpelde
-        merit order berekening uit, aangezien deze geen individuele centrales onderscheidt,
-        maar alleen <strong>soorten</strong> centrales.\r\n<br/><br/>\r\nBekijk voor
-        meer informatie <a href=\"https://docs.energytransitionmodel.com/main/merit-order\"
-        target =\"_blank\">onze documentatie</a>."
+        uitstoot in jouw scenario. </br></br>
+        Het ETM voert een versimpelde merit order berekening uit, aangezien deze geen individuele
+        centrales onderscheidt, maar alleen <strong>soorten</strong> centrales. Zie voor meer
+        informatie de <a href="https://docs.energytransitionmodel.com/main/merit-order"
+        target =\"_blank\">documentatie</a>.
     flexibility_merit_order_merit_order_positions:
       title: Merit order - posities
       short_description:
@@ -454,17 +449,11 @@ nl:
         en krijgt voorrang op het net, dus als je hier meer van bouwt, zakt het
         aantal draaiuren van fossiele centrales. Aangezien alleen op draaikosten
         gerangschikt wordt, kan dit betekenen dat efficiënte maar dure fossiele
-        centrales uit de mix worden geduwd.
-
-        <br/><br/>
-
+        centrales uit de mix worden geduwd. <br/><br/>
         Ook 'must-run' technologieën doen niet mee in de merit order. Dit zijn
         bijvoorbeeld WKK's die warmte leveren en niet primair draaien vanwege de
         stroom die ze maken. Toch hebben ze invloed op de draaiuren van andere
-        centrales.
-
-        <br/><br/>
-
+        centrales. <br/><br/>
         Het ETM berekent op uurbasis welke centrales zijn ingeschakeld. De
         berekening wordt elke keer dat je je scenario aanpast opnieuw uitgevoerd
         en de resultaten worden weergegeven in diverse grafieken. Je kunt ook de

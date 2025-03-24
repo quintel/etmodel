@@ -1,6 +1,7 @@
 ---
 - key: settings_enable_merit_order
   step_value: 1.0
+  dependent_on: _always_hidden
   unit: boolean
   position: 999
   slide_key: flexibility_merit_order_merit_order

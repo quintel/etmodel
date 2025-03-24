@@ -720,24 +720,20 @@ en:
     flexibility_merit_order_merit_order:
       title: Merit order
       short_description:
-      description: "Generally speaking, electricity generation follows electricity
+      description: |
+        Generally speaking, electricity generation follows electricity
         demand. The order in which power plants are dispatched is determined by the
         merit order. The merit order ranks power plants according to their marginal
         costs. Those with the lowest marginal costs are dispatched first to meet demand;
         those with higher costs only when demand is high enough. Power plants with
         low operating costs therefore have a high number of operating hours while
         expensive ones may operate as little as a few hundred hours per year. This
-        can play a large role in the total CO<sub>2</sub> emissions of your scenario.\r\n<br/><br/>\r\nBy
-        default the ETM calculates which power plants have to be dispatched for each
-        hour in the year. This calculation is performed every time you make changes
-        to your scenario. You can choose to switch the merit order calculation off;
-        when switched off, all power plants will have the same full load hours in
-        the future as in the present year of your scenario and these will not respond
-        to your assumptions on fuel or other costs. \r\n<br/><br/>\r\nThe merit order
-        calculation in the ETM is simplified as it does not distinguish or rank individual
-        plants, but only <strong>types</strong> of plants. For more information about
-        the merit order calculation <a href=\"https://docs.energytransitionmodel.com/main/merit-order\"
-        target =\"_blank\">consult our documentation</a>."
+        can play a large role in the total CO<sub>2</sub> emissions of your scenario.
+        </br></br>
+        The merit order calculation in the ETM is simplified as it does not distinguish or rank
+        individual plants, but only <strong>types</strong> of plants. For more information, see the
+        <a href="https://docs.energytransitionmodel.com/main/merit-order"
+        target =\"_blank\">documentation</a>.
     flexibility_merit_order_merit_order_positions:
       title: Merit order positions
       short_description:
@@ -748,17 +744,11 @@ en:
         increasing the share of such technologies in your scenario will decrease
         the operating hours of the remaining plants. Since the merit order is
         determined solely by marginal costs, it is possible that more efficient
-        technologies are 'pushed' out of the electricity generation mix this way
-
-        <br/><br/>
-
+        technologies are 'pushed' out of the electricity generation mix this way. <br/><br/>
         Furthermore, certain technologies are considered 'must-run'. These are
         mainly CHPs that satisfy a certain heat demand and do not primarily run to
         sell power. These must-runplants are therefore not included in the merit
-        order. They do influence the operating hours of other plants of course.
-
-        <br/><br/>
-
+        order. They do influence the operating hours of other plants of course. <br/><br/>
         The ETM calculates which power plants are dispatched at each hour in the
         year. The results are updated every time you make changes to your scenario
         and communicated through various charts. You can download the resulting

@@ -1,85 +1,85 @@
 ---
 - label: biomass_products_energetic
   color: "#5D7929"
-  order_by: 5
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  order_by: 35
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: biomass_products_energetic_use_of_final_demand_in_other_sector
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_final_demand_in_other_sector
   key: biomass_products_use_of_final_demand_in_other_sector
 - label: coal_and_derivatives_energetic
   color: "#333333"
   order_by: 10
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: coal_and_derivatives_energetic_use_of_final_demand_in_other_sector
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_final_demand_in_other_sector
   key: coal_and_derivatives_use_of_final_demand_in_other_sector
 - label: electricity
   color: "#4169E1"
-  order_by: 15
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  order_by: 30
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: electricity_use_of_final_demand_in_other_sector
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_final_demand_in_other_sector
   key: electricity_use_of_final_demand_in_other_sector
 - label: heat
   color: "#8B0000"
-  order_by: 20
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  order_by: 5
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: heat_use_of_final_demand_in_other_sector
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_final_demand_in_other_sector
   key: heat_use_of_final_demand_in_other_sector
 - label: network_gas_energetic
   color: "#CCCCCC"
-  order_by: 25
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  order_by: 15
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: natural_gas_and_derivatives_energetic_use_of_final_demand_in_other_sector
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_final_demand_in_other_sector
   key: natural_gas_and_derivatives_energetic_use_of_final_demand_in_other_sector
 - label: oil_and_derivatives_energetic
   color: "#BA7D40"
-  order_by: 30
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  order_by: 20
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: oil_and_derivatives_energetic_use_of_final_demand_in_other_sector
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_final_demand_in_other_sector
   key: oil_and_derivatives_energetic_use_of_final_demand_in_other_sector
 - label: oil_and_derivatives_non_energetic
   color: "#854321"
-  order_by: 35
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  order_by: 25
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: oil_and_derivatives_non_energetic_use_of_final_demand_in_other_sector
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_final_demand_in_other_sector
   key: oil_and_derivatives_non_energetic_use_of_final_demand_in_other_sector

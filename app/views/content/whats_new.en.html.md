@@ -2,6 +2,29 @@
 
 ___
 
+# April 2025
+
+**New features**
+
+* Start year data improvements related to final demand in agriculture for the municipality Noordoostpolder. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to view this dataset.
+* Update of the chart "Final energy demand in other sector" in which the depicted carriers are now subdivided into energetic and feedstock.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * The charts that show the final demand ‘by carrier’ and ‘by sector by carrier’ in  <a href="https://collections.energytransitionmodel.com/" target="_blank">Collections</a> were not aligned. This caused a discrepancy between these charts in the total final demand of Liquid biofuels and Oil and oil products. These charts are now aligned again to solve this discrepancy.
+
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * No relevant changes to inputs have been made
+</details>
+</br>
+
+___
+
 # March 2025
 
 **New features**

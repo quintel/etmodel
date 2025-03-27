@@ -2,6 +2,29 @@
 
 ___
 
+# April 2025
+
+**Nieuwe functies**
+
+* Verbeteringen in de startjaardata gerelateerd aan het eindverbruik in de landbouw voor de gemeente Noordoostpolder. Ga naar de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de dataset te bekijken.
+* Update van de grafiek "Eindgebruik energie in de Overig sector" waarin de dragers nu zijn uitgesplitst naar energetisch en grondstof.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * De grafieken die het eindgebruik van energie "per energiedrager" en "per sector per energiedrager" laten zien in <a href="https://collections.energytransitionmodel.com/" target="_blank">Collecties</a>, waren niet gestroomlijnd met elkaar. Dit resulteerde in een verschil tussen deze grafieken in het totale eindgebruik van Vloeibare biobrandstoffen en van Olie en olieproducten. De grafieken zijn nu gestroomlijnd waardoor deze discrepantie is verholpen.
+
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * Er zijn geen relevante wijzigingen in inputs
+</details>
+</br>
+
+___
+
 # Maart 2025
 
 **Nieuwe functies**

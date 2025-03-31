@@ -1,7 +1,6 @@
 #preset-scenario
   .header-container
-    %h4== #{t('intro.load_a_scenario')}
-    = link_to "#{t('header.load_scenario')} →", "#{Settings.identity.issuer}/saved_scenarios"
+    %h4.title== #{t('intro.load_a_scenario')}
 
   - if @featured_scenarios.present?
     - year_grouped = MyEtm::FeaturedScenario.in_groups_per_end_year(@featured_scenarios)
@@ -15,10 +14,8 @@
           %a= year
 
     - year_grouped.each do |year, grouped|
-      %ul.scenario-list{year: year}
+      .scenario-list{year: year}
         - grouped.each do |data|
-          .scenario-group
-            %h5= data[:name]
-            = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }
+          = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }
   - else
     %p= t('no_featured_scenarios')

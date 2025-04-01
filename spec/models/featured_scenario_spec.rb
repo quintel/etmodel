@@ -3,6 +3,20 @@
 require 'rails_helper'
 
 describe MyEtm::FeaturedScenario do
+  def featured_scenario(group='group1', year=2050)
+    described_class.new(
+      id: 1,
+      saved_scenario_id: 42,
+      owner_id: nil,
+      group: group,
+      title_en: 'English Title',
+      title_nl: 'Dutch Title',
+      version: '1.0',
+      end_year: year,
+      area_code: 'nl2019',
+      author: 'Author'
+    )
+  end
   describe 'attributes' do
     let(:valid_attributes) do
       {
@@ -14,6 +28,7 @@ describe MyEtm::FeaturedScenario do
         title_nl: 'Dutch Title',
         version: '1.0',
         end_year: 2050,
+        area_code: 'nl2019',
         author: 'Author'
       }
     end
@@ -45,9 +60,9 @@ describe MyEtm::FeaturedScenario do
   describe '.in_groups_per_end_year' do
     let(:scenarios) do
       [
-        described_class.new(id: 1, saved_scenario_id: 10, owner_id: nil, group: 'group1', title_en: 'Scenario 1 EN', title_nl: 'Scenario 1 NL', version: '1.0', end_year: 2050, author: 'Author 1'),
-        described_class.new(id: 2, saved_scenario_id: 20, owner_id: 1, group: 'group1', title_en: 'Scenario 2 EN', title_nl: 'Scenario 2 NL', version: '1.0', end_year: 2050, author: 'Author 2'),
-        described_class.new(id: 3, saved_scenario_id: 30, owner_id: nil, group: 'group2', title_en: 'Scenario 3 EN', title_nl: 'Scenario 3 NL', version: '2.0', end_year: 2040, author: 'Author 3')
+        featured_scenario('group1'),
+        featured_scenario('group1'),
+        featured_scenario('group2', 2040)
       ]
     end
 
@@ -68,7 +83,7 @@ describe MyEtm::FeaturedScenario do
 
   describe '#localized_title' do
     let(:scenario) do
-      described_class.new(id: 1, saved_scenario_id: 10, owner_id: nil, group: nil, title_en: 'English Title', title_nl: 'Dutch Title', version: '1.0', end_year: 2050, author: 'Author')
+      featured_scenario
     end
 
     it 'returns the Dutch title when locale is :nl' do

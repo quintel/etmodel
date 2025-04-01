@@ -6,13 +6,17 @@ ___
 
 **Nieuwe functies**
 
+* Het is nu mogelijk een overzicht van alle schuifjesinstellingen van een scenario te downloaden in de sectie
+<a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data-export</a>. De download bestaat uit een CSV-bestand met de keys, de minimum- en maximumwaardes, de standaardwaardes en de waardes die zijn ingesteld door de gebruiker.
 * Verbeteringen in de startjaardata gerelateerd aan het eindverbruik in de landbouw voor de gemeente Noordoostpolder. Ga naar de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de dataset te bekijken.
 * Update van de grafiek "Eindgebruik energie in de Overig sector" waarin de dragers nu zijn uitgesplitst naar energetisch en grondstof.
 
 <details>
   <summary>**Bug fixes**</summary>
 
-  * De grafieken die het eindgebruik van energie "per energiedrager" en "per sector per energiedrager" laten zien in <a href="https://collections.energytransitionmodel.com/" target="_blank">Collecties</a>, waren niet gestroomlijnd met elkaar. Dit resulteerde in een verschil tussen deze grafieken in het totale eindgebruik van Vloeibare biobrandstoffen en van Olie en olieproducten. De grafieken zijn nu gestroomlijnd waardoor deze discrepantie is verholpen.
+  * Er was een bug in de modellering van verliezen bij de behandeling van lokale aardgaswinning. Hierdoor kan in bepaalde scenario's een overschatting zijn gedaan van deze verliezen. Deze bug is nu verholpen.
+  * De grafieken <a href="https://collections.energytransitionmodel.com/" target="_blank">Collecties</a> die het eindgebruik van energie "per energiedrager" en "per sector per energiedrager" laten zien, waren niet consistent met elkaar. Dit resulteerde in een verschil tussen deze grafieken in het totale eindgebruik van Vloeibare biobrandstoffen en van Olie en olieproducten. De grafieken zijn nu gestroomlijnd waardoor deze discrepantie is verholpen.
+  * De broeikasgasemissies van de Overige sector waren niet opgenomen in de visual <a href="https://energytransitionmodel.com/scenario/data/data_visuals/greenhouse-gas-footprint" target="_blank">Broeikasgas-voetafdruk</a>. Deze zijn hier nu wel in opgenomen onder Industrie, Energie & Overig.
 
 </details>
 

@@ -227,7 +227,6 @@ body#root
 
   #new-scenario, #preset-scenario
     border: none
-    margin-bottom: 80px
     .header-container
       display: flex
       margin: -15px -20px 0px
@@ -243,12 +242,6 @@ body#root
       font-size: 16px
       line-height: 1
       margin: 0 auto 0 0
-      padding: 0
-  .header-container.loose
-    h4
-      font-size: 16px
-      line-height: 1
-      margin: 0 0 20px 20px
       padding: 0
 
   #new-scenario
@@ -381,23 +374,28 @@ body#root
         margin-left: -6px
 
   #preset-scenario
-    background: $soft-grey
-    .header-container .title
-      color: #462c34
+    border-top-color: $landing-gold
+    padding-bottom: 2rem
+    .header-container a
+      color: $landing-grey
+      text-decoration: underline
+      &:hover
+        color: $landing-blue
 
     .hint
-      margin-bottom: 1.5rem
+      color: $landing-grey
+      margin: 1.5rem 0
 
     .year-tabs
       display: flex
-      margin-bottom: 1.5rem
+      margin-bottom: 2rem
       .end-year-tab
         margin-left: 1rem
         margin-bottom: 3px
         border-radius: 6px
         font-size: .875rem
         padding: 5px 13px
-        border: 1px solid #d0d5d8
+        // border: 1px solid #d0d5d8
         background: $soft-grey
         transition: background 0.15s ease-in
         a
@@ -422,62 +420,53 @@ body#root
         &:first-child
           margin-left: 0
 
-    .scenario-list
-      margin: 0
+    ul.scenario-list
+      list-style: none
+      margin: 0 -20px 0
       padding: 0
+      // display: none
       transition: opacity 1s ease-out
       opacity: 0
       height: 0
       overflow: hidden
-      display: grid
-      gap: 1.5rem
-      grid-template-columns: 1fr 1fr 1fr
       &.show
+        // display: block
         opacity: 1
         height: auto
 
-      a.scenario
-        padding: 1.5rem
-        border-radius: 5px
-        background: $landing-background-color
-        border: 1px solid $landing-background-color
-        display: flex
-        flex-direction: column
+      li.title
+        font-weight: 500
+        margin-top: 15px
+        margin-bottom: 2px
+        padding: 0 20px
+        font-size: 14px
+
+      a
         align-items: baseline
-        margin: 0
-        position: relative
         color: black
-        transition: background 0.15s ease-in, border 0.15s ease-in
+        display: flex
+        padding: 3px 7px
+        margin: 0 13px
+        border-radius: 5px
+        position: relative
+        transition: background 0.15s ease-in
+
         &:hover
-          border-color: #e5e7eb
-          cursor: pointer
           background: $soft-grey
           text-decoration: none
 
-        .title
-          color: #462c34
-          font-size: 14px
-          line-height: 1.7
-          margin-bottom: 2px
-        .fa
-          margin-right: 5px
-        .labels
-          font-size: 0.75rem
-          margin-bottom: 1rem
-          display: flex
-          width: 100%
-          .group
-            border: 1px solid #e5e7eb
-            border-radius: 5px
-            padding: 5px 10px
-            background: $soft-grey
+        &:active
+          background: darken($landing-background-color, 3%)
 
-          .org
-            margin-left: auto
-            text-decoration: underline
-            border-radius: 5px
-            padding: 5px 10px
-
+      .version
+        color: $landing-grey
+        margin-left: 5px
+      .org
+        // color: $landing-grey
+        text-decoration: underline
+        font-size: 13px
+        line-height: 1
+        margin-left: 6px
 
       span.last_updated
         margin-left: auto
@@ -487,14 +476,7 @@ body#root
       span.author
         color: darken($landing-background-color, 100%)
         font-size: 0.75rem
-        margin-bottom: 0.75rem
-
-      span.version
-        font-size: 0.75rem
-        color: $landing-grey
-        white-space: nowrap
-        margin-bottom: 0
-        margin-top: 1rem
+        margin-left: auto
 
   #legal
     border-top: 1px solid $landing-border-color

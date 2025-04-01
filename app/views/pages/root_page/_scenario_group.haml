@@ -1,29 +1,46 @@
+-# - scenarios.each do |scenario|
+-#   - title = scenario.localized_title(I18n.locale)
+
+-#   - if title.to_s.include?(' - ')
+-#     = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}"), class: 'scenario') do
+-#       - main_title, org = title.split(' - ', 2)
+-#       .labels
+-#         .group= group.capitalize
+-#         .org
+-#           .fa.fa-folder
+-#           = org.html_safe
+
+
+-#       %h4.title= format_subscripts(main_title)
+-#       %span.author= t('intro.featured_by', author: scenario.author)
+-#       .area
+-#         .fa.fa-map-marker
+-#         = t("areas.#{scenario.area_code}")
+-#       %span.version= "##{scenario.version}"
+-#   - else
+-#     = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}"), class: 'scenario') do
+-#       .labels
+-#         .group= group.capitalize
+-#       %h4.title= format_subscripts(title)
+-#       %span.author= t('intro.featured_by', author: scenario.author)
+-#       .area
+-#         .fa.fa-map-marker
+-#         = t("areas.#{scenario.area_code}")
+-#       %span.version= "##{scenario.version}"
 - scenarios.each do |scenario|
   - title = scenario.localized_title(I18n.locale)
-
   - if title.to_s.include?(' - ')
-    = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}"), class: 'scenario') do
-      - main_title, org = title.split(' - ', 2)
-      .labels
-        .group= group.capitalize
-        .org
-          .fa.fa-folder
-          = org.html_safe
+    %li.with_org
+      = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}")) do
+        - main_title, org = title.split(' - ', 2)
 
-
-      %h4.title= format_subscripts(main_title)
-      %span.author= t('intro.featured_by', author: scenario.author)
-      .area
-        .fa.fa-map-marker
-        = t("areas.#{scenario.area_code}")
-      %span.version= "##{scenario.version}"
+        %span.who= format_subscripts(main_title)
+        %span.org= org.html_safe
+        %span.version= "##{scenario.version}"
+        %span.author= scenario.author
   - else
-    = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}"), class: 'scenario') do
-      .labels
-        .group= group.capitalize
-      %h4.title= format_subscripts(title)
-      %span.author= t('intro.featured_by', author: scenario.author)
-      .area
-        .fa.fa-map-marker
-        = t("areas.#{scenario.area_code}")
-      %span.version= "##{scenario.version}"
+    %li
+      = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}")) do
+        = format_subscripts(title)
+        %span.version= "##{scenario.version}"
+        %span.author= scenario.author

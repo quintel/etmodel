@@ -11,6 +11,7 @@ module MyEtm
     attribute :title_en,          Dry::Types['strict.string']
     attribute :title_nl,          Dry::Types['strict.string']
     attribute :version,           Dry::Types['strict.string']
+    attribute :area_code,           Dry::Types['strict.string']
     attribute :end_year,          Dry::Types['strict.integer']
     attribute :author,             Dry::Types['strict.string']
 

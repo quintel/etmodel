@@ -4,7 +4,17 @@ ___
 
 # April 2025
 
-**Nieuwe functies**
+## Nieuwe functies
+
+### Lancering stabiele versie #2025-01
+
+De eerste stabiele versie van het ETM is gelanceerd, een belangrijke mijlpaal voor het model. Van oudsher wordt het ETM voortdurend ontwikkeld om de nieuwste functies voor energiesysteemmodellering, bug fixes en updates van datasets beschikbaar te maken. Het nadeel hiervan is dat scenario-instellingen, resultaten en datasetwaardes in de loop van de tijd kunnen veranderen. Met de introductie van de stabiele versie hebben gebruikers nu de keuze om te werken met de traditionele standaardversie, `#latest`, of met de nieuwe stabiele versie, `#2025-01`. Het overzicht hieronder toont de verschillen tussen `#latest` en `#2025-01`, en laat zien hoe je van omgeving kunt wisselen in het model.
+
+-> <img src="/assets/pages/whats_new/stable-version-release.png" width="800" /> <-
+
+De standaardversie en de stabiele versie van het model zijn momenteel precies hetzelfde, maar aangezien `#latest` in ontwikkeling blijft, zal deze na verloop van tijd gaan divergeren van `#2025-01`. De lancering van de stabiele versie heeft geen invloed op scenario's die voor deze lancering zijn gemaakt. Voor meer informatie over stabiele versies en hoe scenario's naar de stabiele versie verplaatst kunnen worden, zie de <a href="https://docs.energytransitionmodel.com/api/intro#environments" target="_blank">API documentatie</a>.
+
+### Overige nieuwe functies
 
 * Het is nu mogelijk een overzicht van alle schuifjesinstellingen van een scenario te downloaden in de sectie
 <a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data-export</a>. De download bestaat uit een CSV-bestand met de keys, de minimum- en maximumwaardes, de standaardwaardes en de waardes die zijn ingesteld door de gebruiker.
@@ -14,9 +24,10 @@ ___
 <details>
   <summary>**Bug fixes**</summary>
 
-  * Er was een bug in de modellering van verliezen bij de behandeling van lokale aardgaswinning. Hierdoor kan in bepaalde scenario's een overschatting zijn gedaan van deze verliezen. Deze bug is nu verholpen.
+  * Er was een bug in de modellering van verliezen bij de behandeling van gewonnen aardgas. Dit resulteerde in een mismatch tussen de modellering van jaarlijkse en uurlijkse aardgasbalancering en in een overschatting van aardgasimport in bepaalde scenario's. Deze bug is nu verholpen.
   * De grafieken <a href="https://collections.energytransitionmodel.com/" target="_blank">Collecties</a> die het eindgebruik van energie "per energiedrager" en "per sector per energiedrager" laten zien, waren niet consistent met elkaar. Dit resulteerde in een verschil tussen deze grafieken in het totale eindgebruik van Vloeibare biobrandstoffen en van Olie en olieproducten. De grafieken zijn nu gestroomlijnd waardoor deze discrepantie is verholpen.
   * De broeikasgasemissies van de Overige sector waren niet opgenomen in de visual <a href="https://energytransitionmodel.com/scenario/data/data_visuals/greenhouse-gas-footprint" target="_blank">Broeikasgas-voetafdruk</a>. Deze zijn hier nu wel in opgenomen onder Industrie, Energie & Overig.
+  * In bepaalde omstandigheden veroorzaakte het <a href="https://docs.energytransitionmodel.com/main/battery-forecasting" target="_blank">forecasting-algoritme</a> voor elektriciteitsopslag een incorrecte uurlijkse elektriciteitsprijs wanneer er productiebeperking (curtailment) was. Dit probleem is nu verholpen, de elektriciteitsprijs wordt nu 0 €/MWh in uren dat er productiebeperking optreedt.
 
 </details>
 

@@ -8,9 +8,9 @@ ___
 
 ### Stable version release #2025-01
 
-The first stable version of the ETM is released, marking a major milestone for the model. Traditionally, the ETM has been under continuous development to capture the latest energy system modelling features, bug fixes and updates to datasets. The downside of this was that scenario settings, outcomes and dataset values could change over time. With the the stable version release, users now have the choice to work on the traditional and default version, `#latest` or on the new and stable version, `#2025-01`. The overview below shows the differences between  `#latest` and `#2025-01` and shows how to switch environments in the model.
+The first stable version of the ETM is released, marking a major milestone for the model. Traditionally, the ETM has been under continuous development to capture the latest energy system modelling features, bug fixes and updates to datasets. The downside of this was that scenario settings, outcomes and dataset values could change over time. With the the stable version release, users now have the choice to work on the traditional and default version, `#latest`, or on the new and stable version, `#2025-01`. The overview below shows the differences between `#latest` and `#2025-01` and shows how to switch environments in the model.
 
-[insert infographic]
+-> <img src="/assets/pages/whats_new/stable-version-release.png" width="800" /> <-
 
 The default and stable version of the model are at this moment exactly the same, but as `#latest` will continue to be under development, it will over time diverge from `#2025-01`. The release of the stable version does not affect any of the scenarios created before the release. For more information about stable versions and how to move scenarios to the stable version, see the <a href="https://docs.energytransitionmodel.com/api/intro#environments" target="_blank">API documentation</a>.
 
@@ -21,17 +21,17 @@ The default and stable version of the model are at this moment exactly the same,
 * Update of the chart "Final energy demand in other sector" where the depicted carriers are now subdivided into energetic and feedstock.
 
 <details>
-  <summary>## Bug fixes</summary>
+  <summary>**Bug fixes**</summary>
 
   * There was an issue in modelling losses related to the treatment of natural gas extraction. This led to a mismatch between calculations for the annual and hourly natural gas balance and to an overestimation of natural gas imports in certain scenarios. This issue is now fixed.
   * The charts in <a href="https://collections.energytransitionmodel.com/" target="_blank">Collections</a> that show the final demand ‘by carrier’ and ‘by sector by carrier’ were not aligned. This caused a discrepancy between these charts in the total final demand of Liquid biofuels and Oil and oil products. These charts have now been aligned to resolve this discrepancy.
   * Greenhouse gas emissions from the Other sector were missing from the <a href="https://energytransitionmodel.com/scenario/data/data_visuals/greenhouse-gas-footprint" target="_blank">Greenhouse gas footprint</a> visual. These are now included in the visual under Industry, Energy & Other.
-  * Under certain conditions, the forecasting algorithm for electricity storage caused invalid hourly electricity prices to emerge during curtailment. This issue is now fixed and the electricity price become 0 €/MWh in hours with curtailment.
+  * Under certain conditions, the forecasting algorithm for electricity storage caused invalid hourly electricity prices to emerge during curtailment. This issue is now fixed and the electricity price becomes 0 €/MWh in hours with curtailment.
 
 </details>
 
 <details>
-  <summary>## Technical changelog</summary>
+  <summary>**Technical changelog**</summary>
 
   * No relevant changes to inputs have been made.
 

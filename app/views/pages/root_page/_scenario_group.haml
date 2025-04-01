@@ -2,19 +2,17 @@
   - title = scenario.localized_title(I18n.locale)
 
   - if title.to_s.include?(' - ')
-    .with_org.scenario
-      = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}")) do
-        - main_title, org = title.split(' - ', 2)
-        %span.group= group.capitalize
+    = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}"), class: 'scenario') do
+      - main_title, org = title.split(' - ', 2)
+      %span.group= group.capitalize
 
-        %span.version= "##{scenario.version}"
-        %h4.title= format_subscripts(main_title)
-        %span.org= org.html_safe
-        %span.author= t('intro.featured_by', author: scenario.author, area: t("areas.#{scenario.area_code}"))
+      %span.version= "##{scenario.version}"
+      %h4.title= format_subscripts(main_title)
+      %span.org= org.html_safe
+      %span.author= t('intro.featured_by', author: scenario.author, area: t("areas.#{scenario.area_code}"))
   - else
-    .scenario
-      = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}")) do
-        %span.group= group.capitalize
-        %span.version= "##{scenario.version}"
-        %h4.title= format_subscripts(title)
-        %span.author= t('intro.featured_by', author: scenario.author, area: t("areas.#{scenario.area_code}"))
+    = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}"), class: 'scenario') do
+      %span.group= group.capitalize
+      %span.version= "##{scenario.version}"
+      %h4.title= format_subscripts(title)
+      %span.author= t('intro.featured_by', author: scenario.author, area: t("areas.#{scenario.area_code}"))

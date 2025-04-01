@@ -220,8 +220,11 @@ class ScenariosController < ApplicationController
   end
 
   def inputs
+    filename = "inputs.#{@scenario.id}"
     respond_to do |format|
-      format.csv  # Rails will render views/scenarios/inputs.csv.erb
+      format.csv do
+        response.headers['Content-Disposition'] = "attachment; filename=\"#{filename}.csv\""
+      end
     end
   end
 

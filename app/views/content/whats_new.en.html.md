@@ -19,7 +19,7 @@ The default and stable version of the model are at this moment exactly the same,
 ### Other new features
 
 * It is now possible to download an overview of all slider settings of a scenario in the <a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data export</a> section.
-* Improvements of the start year data related to final demand in agriculture for the municipality of Noordoostpolder. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to view this dataset.
+* Improvements of the start year data related to final demand in agriculture for the municipality of Noordoostpolder. Consult the <a href="https://data.energytransitionmodel.com/datasets/GM0171" target="_blank">Dataset Manager</a> to view this dataset.
 * Update of the chart "Final energy demand in other sector" where the carriers are now split into energetic and non-energetic (feedstock) demand.
 
 <details>

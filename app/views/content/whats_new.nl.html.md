@@ -19,15 +19,9 @@ De standaardversie en de stabiele versie van het model zijn momenteel precies he
 ### Overige nieuwe functies
 
 * Het is nu mogelijk een overzicht van alle schuifjesinstellingen van een scenario te downloaden in de sectie
-<<<<<<< Updated upstream
 <a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data-export</a>.
-* Verbeteringen in de startjaardata gerelateerd aan het eindverbruik in de landbouw voor de gemeente Noordoostpolder. Ga naar de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de dataset te bekijken.
-* Update van de grafiek "Eindgebruik energie in de Overige sector" waarin de dragers nu zijn uitgesplitst naar energetische en niet-energetische (grondstoffen) vraag.
-=======
-<a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data-export</a>. De download bestaat uit een CSV-bestand met de keys, de minimum- en maximumwaardes, de standaardwaardes en de waardes die zijn ingesteld door de gebruiker.
 * Verbeteringen in de startjaardata gerelateerd aan het eindverbruik in de landbouw voor de gemeente Noordoostpolder. Ga naar de <a href="https://data.energytransitionmodel.com/datasets/GM0171" target="_blank">Dataset Manager</a> om de dataset te bekijken.
-* Update van de grafiek "Eindgebruik energie in de Overig sector" waarin de dragers nu zijn uitgesplitst naar energetisch en grondstof.
->>>>>>> Stashed changes
+* Update van de grafiek "Eindgebruik energie in de Overige sector" waarin de dragers nu zijn uitgesplitst naar energetische en niet-energetische (grondstoffen) vraag.
 
 <details>
   <summary>**Bug fixes**</summary>
@@ -42,7 +36,7 @@ De standaardversie en de stabiele versie van het model zijn momenteel precies he
 <details>
   <summary>**Technical changelog**</summary>
 
-  * Er zijn geen relevante wijzigingen in inputs
+  * Er zijn geen relevante wijzigingen in inputs.
 </details>
 </br>
 

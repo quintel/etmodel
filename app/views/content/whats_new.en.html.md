@@ -12,13 +12,21 @@ The first stable version of the ETM is released, marking a major milestone for t
 
 -> <img src="/assets/pages/whats_new/stable-version-release.png" width="800" /> <-
 
+Note that the release of the stable version does not affect any of the scenarios created before the release.
+
 The default and stable version of the model are at this moment exactly the same, but as `#latest` will continue to be under development, it will over time diverge from `#2025-01`. The release of the stable version does not affect any of the scenarios created before the release. For more information about stable versions and how to move scenarios to the stable version, see the <a href="https://docs.energytransitionmodel.com/api/intro#environments" target="_blank">API documentation</a>.
 
 ### Other new features
 
+<<<<<<< Updated upstream
 * It is now possible to download an overview of all slider settings of a scenario in the <a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data export</a> section.
 * Improvements of the start year data related to final demand in agriculture for the municipality of Noordoostpolder. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to view this dataset.
 * Update of the chart "Final energy demand in other sector" where the carriers are now split into energetic and non-energetic (feedstock) demand.
+=======
+* It is now possible to download an overview of all slider settings of a scenario in the <a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data export</a> section. The download consists of a CSV file containing slider keys, minimum and maximum values, the default values and the values set by the user.
+* Improvements of the start year data related to final demand in agriculture for the municipality of Noordoostpolder. Consult the <a href="https://data.energytransitionmodel.com/datasets/GM0171" target="_blank">Dataset Manager</a> to view this dataset.
+* Update of the chart "Final energy demand in other sector" where the depicted carriers are now subdivided into energetic and feedstock.
+>>>>>>> Stashed changes
 
 <details>
   <summary>**Bug fixes**</summary>

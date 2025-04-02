@@ -12,14 +12,22 @@ De eerste stabiele versie van het ETM is gelanceerd, een belangrijke mijlpaal vo
 
 -> <img src="/assets/pages/whats_new/stable-version-release.png" width="800" /> <-
 
-De standaardversie en de stabiele versie van het model zijn momenteel precies hetzelfde, maar aangezien `#latest` in ontwikkeling blijft, zal deze na verloop van tijd gaan divergeren van `#2025-01`. De lancering van de stabiele versie heeft geen invloed op scenario's die voor deze lancering zijn gemaakt. Voor meer informatie over stabiele versies en hoe scenario's naar de stabiele versie verplaatst kunnen worden, zie de <a href="https://docs.energytransitionmodel.com/api/intro#environments" target="_blank">API documentatie</a>.
+De lancering van de stabiele versie heeft geen invloed op scenario's die voor deze lancering zijn aangemaakt.
+
+De standaardversie en de stabiele versie van het model zijn momenteel precies hetzelfde, maar aangezien `#latest` in ontwikkeling blijft, zal deze na verloop van tijd gaan divergeren van `#2025-01`. Voor meer informatie over stabiele versies en hoe scenario's naar de stabiele versie verplaatst kunnen worden, zie de <a href="https://docs.energytransitionmodel.com/api/intro#environments" target="_blank">API documentatie</a>.
 
 ### Overige nieuwe functies
 
 * Het is nu mogelijk een overzicht van alle schuifjesinstellingen van een scenario te downloaden in de sectie
+<<<<<<< Updated upstream
 <a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data-export</a>.
 * Verbeteringen in de startjaardata gerelateerd aan het eindverbruik in de landbouw voor de gemeente Noordoostpolder. Ga naar de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de dataset te bekijken.
 * Update van de grafiek "Eindgebruik energie in de Overige sector" waarin de dragers nu zijn uitgesplitst naar energetische en niet-energetische (grondstoffen) vraag.
+=======
+<a href="https://energytransitionmodel.com/scenario/data/data_export/overview-of-slider-settings" target="_blank">Data-export</a>. De download bestaat uit een CSV-bestand met de keys, de minimum- en maximumwaardes, de standaardwaardes en de waardes die zijn ingesteld door de gebruiker.
+* Verbeteringen in de startjaardata gerelateerd aan het eindverbruik in de landbouw voor de gemeente Noordoostpolder. Ga naar de <a href="https://data.energytransitionmodel.com/datasets/GM0171" target="_blank">Dataset Manager</a> om de dataset te bekijken.
+* Update van de grafiek "Eindgebruik energie in de Overig sector" waarin de dragers nu zijn uitgesplitst naar energetisch en grondstof.
+>>>>>>> Stashed changes
 
 <details>
   <summary>**Bug fixes**</summary>

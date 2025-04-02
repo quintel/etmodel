@@ -8,11 +8,13 @@ ___
 
 ### Lancering stabiele versie #2025-01
 
-De eerste stabiele versie van het ETM is gelanceerd, een belangrijke mijlpaal voor het model. Van oudsher wordt het ETM voortdurend ontwikkeld om de nieuwste functies voor energiesysteemmodellering, bug fixes en updates van datasets beschikbaar te maken. Het nadeel hiervan is dat scenario-instellingen, resultaten en datasetwaardes in de loop van de tijd kunnen veranderen. Met de introductie van de stabiele versie hebben gebruikers nu de keuze om te werken met de traditionele standaardversie, `#latest`, of met de nieuwe stabiele versie, `#2025-01`. Het overzicht hieronder toont de verschillen tussen `#latest` en `#2025-01`, en laat zien hoe je van omgeving kunt wisselen in het model.
-
--> <img src="/assets/pages/whats_new/stable-version-release.png" width="800" /> <-
+De eerste stabiele versie van het ETM is gelanceerd, een belangrijke mijlpaal voor het model. Van oudsher wordt het ETM voortdurend ontwikkeld om de nieuwste functies voor energiesysteemmodellering, bug fixes en updates van datasets beschikbaar te maken. Het nadeel hiervan is dat scenario-instellingen, resultaten en datasetwaardes in de loop van de tijd kunnen veranderen. Met de introductie van de stabiele versie hebben gebruikers nu de keuze om te werken met de traditionele standaardversie, `#latest`, of met de nieuwe stabiele versie, `#2025-01`.
 
 De lancering van de stabiele versie heeft geen invloed op scenario's die voor deze lancering zijn aangemaakt.
+
+Het overzicht hieronder toont de verschillen tussen `#latest` en `#2025-01`, en laat zien hoe je van omgeving kunt wisselen in het model.
+
+-> <img src="/assets/pages/whats_new/stable-version-release.png" width="800" /> <-
 
 De standaardversie en de stabiele versie van het model zijn momenteel precies hetzelfde, maar aangezien `#latest` in ontwikkeling blijft, zal deze na verloop van tijd gaan divergeren van `#2025-01`. Voor meer informatie over stabiele versies en hoe scenario's naar de stabiele versie verplaatst kunnen worden, zie de <a href="https://docs.energytransitionmodel.com/api/intro#environments" target="_blank">API documentatie</a>.
 

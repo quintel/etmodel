@@ -34,6 +34,7 @@ De standaardversie en de stabiele versie van het model zijn momenteel precies he
   * De grafieken <a href="https://collections.energytransitionmodel.com/" target="_blank">Collecties</a> die het eindgebruik van energie "per energiedrager" en "per sector per energiedrager" laten zien, waren niet consistent met elkaar. Dit resulteerde in een verschil tussen deze grafieken in het totale eindgebruik van Vloeibare biobrandstoffen en van Olie en olieproducten. De grafieken zijn nu gestroomlijnd waardoor deze discrepantie is verholpen.
   * De broeikasgasemissies van de Overige sector waren niet opgenomen in de visual <a href="https://energytransitionmodel.com/scenario/data/data_visuals/greenhouse-gas-footprint" target="_blank">Broeikasgas-voetafdruk</a>. Deze zijn hier nu wel in opgenomen onder Industrie, Energie & Overig.
   * In bepaalde omstandigheden veroorzaakte het <a href="https://docs.energytransitionmodel.com/main/battery-forecasting" target="_blank">forecasting-algoritme</a> voor elektriciteitsopslag een incorrecte uurlijkse elektriciteitsprijs wanneer er productiebeperking (curtailment) was. Dit probleem is nu verholpen, de elektriciteitsprijs wordt nu 0 €/MWh in uren dat er productiebeperking optreedt.
+  * Het elektriciteitsgebruik door vraagsturing (DSR) in de centrale ICT-sector werd niet meegenomen in alle berekeningen voor finale vraag. Dit probleem is nu opgelost.
 
 </details>
 

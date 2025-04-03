@@ -5,10 +5,10 @@ nl:
       title: Biogas-WKK
       short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van must-run biogascentrales met warmte-krachtkoppelingen (WKK's).
-        </br></br>
+        Deze slider bepaalt het elektrisch vermogen van must-run biogascentrales met warmtekrachtkoppelingen (WKK's).
+        <br/><br/>
         Biogas-WKK's produceren zowel elektriciteit als warmte door biogas te verbranden. De opgewekte warmte kan worden geleverd aan warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt. Deze technologie wordt vaak toegepast op locaties met toegang tot biogas, zoals afvalverwerkingsinstallaties en waterzuiveringsinstallaties.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.</li>
         </ul>
@@ -17,9 +17,9 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van must-run biomassacentrales met warmtekrachtkoppelingen (WKK's).
-        </br></br>
+        <br/><br/>
         Biomassa-WKK's genereren zowel elektriciteit als warmte door biomassa te verbranden. De opgewekte warmte kan worden geleverd aan warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt. Biomassa-WKK's worden vaak ingezet op locaties met toegang tot organisch materiaal, zoals afvalverwerkingsinstallaties of de agrarische sector.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.</li>
         </ul>
@@ -28,9 +28,9 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van regelbare biomassacentrales met warmtekrachtkoppelingen (WKK's).
-        </br></br>
+        <br/><br/>
         Biomassa-WKK's genereren zowel elektriciteit als warmte door biomassa te verbranden. De opgewekte warmte kan worden geleverd aan warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt. Biomassa-WKK's worden vaak ingezet op locaties met toegang tot organisch materiaal, zoals afvalverwerkingsinstallaties of de agrarische sector.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.</li>
         </ul>
@@ -39,44 +39,44 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van must-run biomassacentrales.
-        </br></br>
+        <br/><br/>
         Een biomassacentrale genereert elektriciteit door biomassa te verbranden, welke wordt geleverd aan het elektriciteitsnet. Een deel van het vermogen werkt op een must-run basis voor continue productie, terwijl de rest flexibel is en kan inspelen op de vraag. Zonder must-run vermogen is er ook geen regelbaar vermogen.
     capacity_of_energy_power_wood_pellets_dispatchable:
       title: Biomassacentrale
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van regelbare biomassacentrales.
-        </br></br>
+        <br/><br/>
         Een biomassacentrale genereert elektriciteit door biomassa te verbranden, welke wordt geleverd aan het elektriciteitsnet. Een deel van het vermogen werkt op een must-run basis voor continue productie, terwijl de rest flexibel is en kan inspelen op de vraag. Zonder must-run vermogen is er ook geen regelbaar vermogen.
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van waterstofturbines.
-        </br></br>
+        <br/><br/>
         Waterstofturbines genereren elektriciteit door waterstof te verbranden en zijn nog niet op grote schaal toegepast. De technologie lijkt veel op gasturbines, dus de specificaties worden gelijk verondersteld. Hoewel ze minder efficiënt zijn dan een twee-staps Stoom- en Gascentrale (STEG), kunnen waterstofturbines snel schakelen en zijn daardoor geschikt voor piekvraag. Ze spelen een belangrijke rol in het balanceren van het elektriciteitsnet, ondanks beperkte draaiuren en jaarproductie.
     capacity_of_energy_power_combined_cycle_hydrogen:
       title: Waterstof STEG
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van Stoom- en Gascentrale (STEG) -waterstofcentrales.
-        </br></br>
+        <br/><br/>
         In een STEG-waterstofcentrale wekt de gasturbine elektriciteit op door waterstof te verbranden, terwijl de restwarmte wordt gebruikt om stoom te genereren voor een stoomturbine. Dit verhoogt de efficiëntie van de centrale, omdat het een tweefasenproces is: eerst de gasturbine, dan de stoomturbine. Hoewel deze centrales nog niet op grote schaal worden gebruikt, worden de specificaties verondersteld gelijk te zijn aan die van STEG-gascentrales.
     capacity_of_energy_power_geothermal:
       title: Geothermisch elektrisch
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van geothermische centrales.
-        </br></br>
+        <br/><br/>
         Met warmte uit diepere aardlagen (meer dan 3 km) wordt elektriciteit opgewekt. De haalbaarheid hangt af van de diepte en temperatuur van het ondergrondse water.
     capacity_of_buildings_solar_pv_solar_radiation:
       title: Zon op dak gebouwen
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van zonnepanelen op daken van gebouwen.
-        </br></br>
+        <br/><br/>
         Zonnepanelen op daken wekken elektriciteit op voor eigen gebruik, met overtollige elektriciteit die vaak teruggeleverd kan worden aan het elektriciteitsnet. De productie is afhankelijk van factoren zoals locatie, seizoen en oriëntatie van de panelen.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">Netbelasting</a> om de productie te beperken en het net te ontlasten.</li>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weersomstandigheden</a> om het aantal vollasturen van zonnepanelen aan te passen.</li>
@@ -87,9 +87,9 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van zonnepanelen op daken van huishoudens.
-        </br></br>
+        <br/><br/>
         Zonnepanelen op daken wekken elektriciteit op voor eigen gebruik, met overtollige elektriciteit die vaak teruggeleverd kan worden aan het elektriciteitsnet. De productie is afhankelijk van factoren zoals locatie, seizoen en oriëntatie van de panelen.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">Netbelasting</a> om de productie te beperken en het net te ontlasten.</li>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weersomstandigheden</a> om het aantal vollasturen van zonnepanelen aan te passen.</li>
@@ -100,9 +100,9 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van zonneparken op land.
-        </br></br>
+        <br/><br/>
         Zonneparken op land wekken elektriciteit op voor het net, waarbij de productie afhankelijk is van factoren zoals locatie, seizoen en weersomstandigheden. Net als bij windenergie kunnen er fluctuaties in de zonnestroom optreden, maar deze zijn doorgaans beter voorspelbaar. In sommige gevallen kunnen echter nog steeds oplossingen nodig zijn om netinstabiliteit te voorkomen.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">Netbelasting</a> om de productie te beperken en het net te ontlasten.</li>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions\">Weersomstandigheden</a> om het aantal vollasturen van zonnepanelen aan te passen.</li>
@@ -113,11 +113,11 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van zonneparken op land met een geïntegreerd batterijsysteem en een beperkte netwerkcapaciteit.
-        </br></br>
+        <br/><br/>
         In plaats van het volledige vermogen direct aan te sluiten op het netwerk, wordt overtollige elektriciteit opgeslagen in een batterij wanneer de productie groter is dan de netwerkcapaciteit. Bij lagere productie wordt de opgeslagen elektriciteit weer afgegeven aan het netwerk.
-        </br></br>
+        <br/><br/>
         <em>Let op</em>: De aangesloten netwerkcapaciteit en het batterijvermogen zijn relatief ten opzichte van het geïnstalleerde vermogen en zullen met deze slider meeveranderen.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
         Flexibiliteit</a> om de verhouding tussen netwerkcapaciteit en batterijvermogen in te stellen.</li>
@@ -129,9 +129,9 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van zonneparken op zee.
-        </br></br>
+        <br/><br/>
         Drijvende zonneparken kunnen mogelijk tussen offshore windturbines worden geplaatst, waardoor ruimte efficiënter wordt benut. Zon- en windenergie zullen elkaar dan aanvullen, wat kan bijdragen aan een betere benutting van de elektriciteitskabel naar land. Om de fluctuatie van zonneproductie te beheersen, is de netwerkcapaciteit standaard beperkt tot 33% van het piekvermogen.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">Netbelasting</a> om de productiebeperking aan te passen.</li>
           <li>Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind" data-chart-location="side">Productie van zon en wind op zee per uur</a>.</li>
@@ -156,21 +156,21 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van oliegestookte centrales, waarbij één centrale een vermogen van 800 MW heeft.
-        </br></br>
+        <br/><br/>
         Oliecentrales verbranden stookolie om elektriciteit op te wekken. Door hoge kosten en lage efficiëntie worden ze zelden ingezet, behalve als back-up bij stroomtekorten of in gebieden zonder stabiele gasvoorziening.
     capacity_of_energy_power_engine_diesel:
       title: Dieselgenerator
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van dieselgeneratoren, waarbij één generator een vermogen van 2 MW heeft.
-        </br></br>
+        <br/><br/>
         Dieselgeneratoren worden voornamelijk gebruikt als noodaggregaten vanwege hun snelle opstarttijd en flexibiliteit. Ze hebben relatief hoge brandstofkosten en lage efficiëntie, waardoor ze meestal alleen ingezet worden voor noodstroomvoorzieningen of tijdelijke pieken in de vraag.
     capacity_of_energy_power_hydro_river:
       title: Rivier
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van waterkrachtcentrales in een grote rivieren.
-        </br></br>
+        <br/><br/>
         Waterkrachtcentrales in rivieren zetten de stroming van water om in elektriciteit en leveren een stabiele, maar beperkte productie. Het vermogen per installatie ligt doorgaans tussen enkele en tientallen megawatt.
     capacity_of_energy_power_hydro_mountain:
       title: Bergen
@@ -188,9 +188,9 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van hoogrendement afvalverbrandingscentrales.
-        </br></br>
+        <br/><br/>
         Afvalverbrandingscentrales zetten brandbaar afval om in elektriciteit. Door afval gecontroleerd te verbranden, worden methaanemissies voorkomen en kan het relatief op een schone manier verwerkt worden. De opgewekte elektriciteit wordt aan het elektriciteitsnet geleverd.
-        </br></br>
+        <br/><br/>
         Het model importeert geen afval, waardoor de beschikbare hoeveelheid afval het potentieel voor deze technologie bepaalt.
       # Bij uitspraken over het model was afgesproken een 'Let op:' te zetten, maar ik denk niet dat het hier hoeft?
     capacity_of_energy_power_supercritical_ccs_waste_mix:
@@ -209,11 +209,11 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van afvalverbrandingscentrales met warmtekrachtkoppelingen (WKK's).
-        </br></br>
+        <br/><br/>
         Deze centrales zetten brandbaar afval om in zowel elektriciteit als warmte. De elektriciteit wordt aan het net geleverd, terwijl de warmte vaak naar warmtenetten gaat. Door het verbranden van afval worden methaanemissies voorkomen, wat een relatief schone verwerkingsmethode biedt.
-        </br></br>
+        <br/><br/>
         Het model importeert geen afval, waardoor de beschikbare hoeveelheid afval het potentieel voor deze technologie bepaalt.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.</li>
         </ul>
@@ -235,9 +235,9 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van derde-generatie kerncentrales.
-        </br></br>
+        <br/><br/>
         Derde-generatie kerncentrales, zoals de EPR, bieden geavanceerde veiligheid, efficiëntie en betrouwbaarheid. De bouw ervan duurt gemiddeld 11-12 jaar en is kostbaar, maar eenmaal operationeel draaien ze doorgaans meer dan 80% van de tijd op vol vermogen vanwege lage operationele kosten. De bouw van kerncentrales veroorzaakt CO₂-uitstoot, maar geen fossiele brandstoffen worden verbruikt tijdens de werking.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de kosten en efficiënties voor deze kerncentrales in te stellen.</li>
         </ul>
@@ -246,9 +246,9 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van tweede-generatie kerncentrales.
-        </br></br>
+        <br/><br/>
         Tweede-generatie kerncentrales maken gebruik van verouderde technologie en worden niet meer gebouwd.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de kosten en efficiënties voor deze kerncentrales in te stellen.</li>
         </ul>
@@ -257,9 +257,9 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van kleine modulaire kernreactoren.
-        </br></br>
+        <br/><br/>
         Kleine modulaire reactoren zijn kleiner dan traditionele kerncentrales en kunnen in de fabriek worden geproduceerd en vervolgens op locatie in elkaar worden gezet. Dit modulaire ontwerp zorgt voor kortere bouwtijden, lagere kosten en efficiënter ruimtegebruik. Omdat de technologie nog in ontwikkeling is, blijft het onzeker of de verwachte voordelen, zoals lagere kosten per MW, daadwerkelijk gerealiseerd zullen worden.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de kosten en efficiënties voor deze kerncentrales in te stellen.</li>
         </ul>
@@ -268,11 +268,18 @@ nl:
       description: ''
     capacity_of_energy_power_ultra_supercritical_coal:
       title: Poederkolen
-      short_description: ''
+      short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van ultra-superkritische poederkolencentrales, waarbij één centrale een vermogen van 800 MW heeft.
-        </br></br>
-        Een kolencentrale is een basislastcentrale en draait daarom meer dan 75% van de tijd op vol vermogen. Dit type centrale komt veel voor in landen met strenge milieunormen. Kolencentrales behoren tot de meest vervuilende energiebronnen, met een CO<sub>2</sub>-uitstoot per opgewekte MWh die circa twee keer zo hoog is als die van een gascentrale.
+        Deze slider bepaalt het totale elektrische vermogen van ultra-superkritische
+        poederkolencentrales.<br/><br/>Een poederkolencentrale is een basislastcentrale en
+        draait daarom meer dan 75% van de tijd op vol vermogen. Dit type centrale komt
+        veel voor in landen met strenge milieunormen. Kolencentrales behoren tot de meest
+        vervuilende energiebronnen, met een CO<sub>2</sub>-uitstoot per opgewekte MWh die
+        circa twee keer zo hoog is als die van een gascentrale.<br/><br/>
+        Ga naar de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCS</a>
+        om CO<sub>2</sub>-afvang in te stellen of ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties aan te passen voor deze centrales.
     capacity_of_energy_power_ultra_supercritical_ccs_coal:
       title: Poederkolen + CCS
       short_description: ''
@@ -288,13 +295,18 @@ nl:
         omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n\r\n"
     capacity_of_energy_power_combined_cycle_coal:
       title: Kolenvergassing
-      short_description: ''
+      short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van kolenvergassingcentrales, waarbij één centrale een vermogen van 800 MW heeft.
-        </br></br>
-        In een kolenvergassingcentrale worden kolen omgezet in syngas, dat vervolgens wordt verbrand. Deze technologie is efficiënter en schoner dan traditionele poederverbranding, maar bevindt zich nog in een vroeg commercieel stadium.
-        </br></br>
-        Hoewel kolencentrales doorgaans meer dan 75% van de tijd op vol vermogen draaien, biedt kolenvergassing meer flexibiliteit dan de conventionele centrales.
+        Deze slider bepaalt het totale elektrische vermogen van kolenvergassingcentrales.<br/><br/>
+        In een kolenvergassingcentrale worden kolen omgezet in syngas, dat vervolgens wordt verbrand.
+        Deze technologie is efficiënter en schoner dan poederkolencentrales, maar bevindt
+        zich nog in een vroeg commercieel stadium. Hoewel kolencentrales doorgaans meer dan 75% van
+        de tijd op vol vermogen draaien, biedt kolenvergassing meer flexibiliteit dan de conventionele
+        kolencentrales.<br/><br/>
+        Ga naar de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCS</a>
+        om CO<sub>2</sub>-afvang in te stellen of ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a> om de
+        kosten en efficiënties aan te passen voor deze centrales.
     capacity_of_energy_power_combined_cycle_ccs_coal:
       title: Kolenvergassing + CCS
       short_description: ''
@@ -326,11 +338,14 @@ nl:
         href=\"/units\">Meer informatie over eenheden...</a>\r\n\r\n"
     capacity_of_energy_power_supercritical_coal:
       title: Kolen conventioneel
-      short_description: ''
+      short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van conventionele kolencentrales, waarbij één centrale een vermogen van 800 MW heeft.
-        </br></br>
-        Een kolencentrale is een basislastcentrale die meer dan 75% van de tijd op vol vermogen draait. Dit type centrale komt in rijke landen vrijwel niet meer voor, vanwege strenge milieuwetgeving.
+        Deze slider bepaalt het totale elektrische vermogen van conventionele kolencentrales.
+        <br/><br/>Een kolencentrale is een basislastcentrale en draait daarom meer dan 75%
+        van de tijd op vol vermogen. Dit type centrale komt vanwege strenge milieuwetgeving
+        steeds minder voor.<br/><br/>Ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_ultra_supercritical_lignite:
       title: Bruinkolen
       short_description: ''
@@ -343,76 +358,97 @@ nl:
         omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
     capacity_of_energy_chp_ultra_supercritical_lignite:
       title: Bruinkolen-WKK
-      short_description: ''
+      short_description:
       description: 'Hier stel je in je hoeveel grote bruinkoolcentrales warmte leveren
         aan stadsverwarming en andere ''laagwaardige warmte'' netwerken. De stroom
         die wordt opgewekt zie je op de grafiek terug als kolenstroom. '
     capacity_of_energy_chp_ultra_supercritical_coal:
       title: Poederkolen-WKK
-      short_description: ''
+      short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van ultra-superkritische poederkolencentrales met warmtekrachtkoppeling (WKK).
-        </br></br>
-        De WKK levert warmte aan het centrale warmtenet, wat een beperkte invloed heeft op de elektriciteitsproductie. In verhouding tot de totale kosten van de kolencentrale zijn de extra investeringen voor warmteafname relatief gering.
+        Deze slider bepaalt het totale elektrische vermogen van ultra-superkritische
+        poederkolencentrales met warmtekrachtkoppeling (WKK).<br/><br/>
+        De WKK levert naast elektriciteit ook warmte aan het centrale warmtenet.
+        Door de warmteproductie neemt de elektriciteitsefficiëntie iets af.
+        Afgezet tegen de totale kosten van een kolencentrale zijn de extra
+        investeringen voor warmteproductie beperkt.<br/><br/> Ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
       title: Poederkolen-WKK met bijstook
       short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van ultra-superkritische poederkolencentrales met warmtekrachtkoppeling (WKK) en 50% biomassa-bijstook.
-        </br></br>
-        De WKK levert warmte aan het centrale warmtenet, wat een beperkte invloed heeft op de elektriciteitsproductie. In verhouding tot de totale kosten van de kolencentrale zijn de extra investeringen voor warmteafname relatief gering. Door de hoeveelheid poederkolen met en zonder bijstook te combineren, kan het bijstookpercentage naar wens worden aangepast.
+        Deze slider bepaalt het totale elektrische vermogen van ultra-superkritische
+        poederkolencentrales met warmtekrachtkoppeling (WKK) en bijstook van biomassa van 50%.
+        <br/><br/>De WKK levert naast elektriciteit ook warmte aan het centrale warmtenet.
+        Door de warmteproductie neemt de elektriciteitsefficiëntie iets af.
+        Afgezet tegen de totale kosten van een kolencentrale zijn de extra
+        investeringen voor warmteproductie beperkt.<br/><br/> Door het opgesteld vermogen
+        van poederkolen-WKK's met en zonder bijstook te combineren, kan het totale
+        bijstookpercentage van biomassa bij deze centales worden aangepast.<br/><br/>
+        Ga naar de sectie <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_ultra_supercritical_cofiring_coal:
       title: Poederkolen met bijstook
       short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van ultra-superkritische poederkolencentrales met bijstook van biomassa van 50%. Hierbij heeft één centrale een vermogen van 730 MW.
-        </br></br>
-        Een kolencentrale is een basislastcentrale en draait daarom meer dan 75% van de tijd op vol vermogen. Dit type centrale komt veel voor in landen met strenge milieunormen. Kolencentrales behoren tot de meest vervuilende energiebronnen, met een CO<sub>2</sub>-uitstoot per opgewekte MWh die circa twee keer zo hoog is als die van een gascentrale. Door de hoeveelheid poederkolen met en zonder bijstook te combineren, kan het bijstookpercentage naar wens worden aangepast.
+        Deze slider bepaalt het totale elektrische vermogen van ultra-superkritische
+        poederkolencentrales met een bijstook van biomassa van 50%.<br/><br/>
+        Een poederkolencentrale is een basislastcentrale en
+        draait daarom meer dan 75% van de tijd op vol vermogen. Dit type centrale komt
+        veel voor in landen met strenge milieunormen. Kolencentrales behoren tot de meest
+        vervuilende energiebronnen, met een CO<sub>2</sub>-uitstoot per opgewekte MWh die
+        circa twee keer zo hoog is als die van een gascentrale. <br/><br/>
+        Door het opgesteld vermogen van poederkolencentrales met en zonder bijstook te
+        combineren, kan het totale bijstookpercentage van biomassa bij deze centales
+        worden aangepast.<br/><br/> Ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_wind_turbine_inland: # Overal staat 'windmolen' maar dat moet 'windturbine' zijn denk ik (- ook deze titel)
       title: Op land
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van windturbines op land.
-        </br></br>
+        <br/><br/>
         Door wisselende windcondities draaien deze windturbines ongeveer 25% van de tijd op maximaal vermogen. Deze fluctuaties kunnen leiden tot een instabiel elektriciteitsnet. Om deze fluctuaties op te vangen, is back-up capaciteit nodig, zoals gascentrales. Daarnaast kunnen accu's de overtollige elektriciteit opslaan wanneer er te veel wordt geproduceerd. Een andere oplossing is flexibele vraag, waarbij gebruikers hun elektriciteitsverbruik aanpassen aan de beschikbaarheid van windenergie.
     capacity_of_energy_power_wind_turbine_coastal:
       title: Aan kust
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van windturbines langs de kust, zoals op dijken of in kustwateren.
-        </br></br>
+        <br/><br/>
         Door wisselende windcondities draaien deze windturbines ongeveer 27% van de tijd op maximaal vermogen. Deze fluctuaties kunnen leiden tot een instabiel elektriciteitsnet. Om deze fluctuaties op te vangen, is back-up capaciteit nodig, zoals gascentrales. Daarnaast kunnen accu's de overtollige elektriciteit opslaan wanneer er te veel wordt geproduceerd. Een andere oplossing is flexibele vraag, waarbij gebruikers hun elektriciteitsverbruik aanpassen aan de beschikbaarheid van windenergie.
     capacity_of_energy_power_wind_turbine_offshore:
       title: Op zee
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van windturbines op zee.
-        </br></br>
+        <br/><br/>
         Door wisselende windcondities draaien deze windturbines ongeveer 40% van de tijd op maximaal vermogen. Deze fluctuaties kunnen leiden tot een instabiel elektriciteitsnet. Om deze fluctuaties op te vangen, is back-up capaciteit nodig, zoals gascentrales. Daarnaast kunnen accu's de overtollige elektriciteit opslaan wanneer er te veel wordt geproduceerd. Een andere oplossing is flexibele vraag, waarbij gebruikers hun elektriciteitsverbruik aanpassen aan de beschikbaarheid van windenergie.
     capacity_of_energy_power_hybrid_wind_turbine_offshore:
       title: Op zee met hybride aansluiting
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van windturbines op zee met een hybride aansluiting. Hierbij kan de opgewekte elektriciteit direct worden geleverd aan een elektrolyser voor waterstofproductie of via een elektriciteitskabel op zee aan het hoogspanningsnet.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
         Flexibiliteit</a> om de geïnstalleerde vermogens van de elektrolyser en elektriciteitskabel op zee in te stellen.</li>
           <li>Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">Geïnstalleerde vermogens</a> en <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">Energiestromen</a>.</li>
           <li>Bekijk de tabel <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">Vermogens en energiestromen</a>.</li>
         </ul>
-        </br></br>
+        <br/><br/>
         Bekijk de <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind">Documentatie</a> voor meer informatie.
     capacity_of_energy_battery_wind_turbine_inland:
       title: Op land met batterijsysteem
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van windturbines op land met een geïntegreerd batterijsysteem en een beperkte netwerkcapaciteit.
-        </br></br>
+        <br/><br/>
         In plaats van het volledige vermogen direct aan te sluiten op het netwerk, wordt overtollige elektriciteit opgeslagen in een batterij wanneer de productie groter is dan de netwerkcapaciteit. Bij lagere productie wordt de opgeslagen elektriciteit weer afgegeven aan het netwerk.
-        </br></br>
+        <br/><br/>
         <em>Let op</em>: De aangesloten netwerkcapaciteit en het batterijvermogen zijn relatief ten opzichte van het geïnstalleerde vermogen en zullen met deze slider meeveranderen.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
         Flexibiliteit</a> om de verhouding tussen netwerkcapaciteit en batterijvermogen in te stellen.</li>
@@ -424,21 +460,21 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van conventionele stoomturbine gascentrales, waarbij één centrale een vermogen van 800 MW heeft.
-        </br></br>
+        <br/><br/>
         Deze centrales verbranden aardgas om stoom te genereren, die vervolgens een stoomturbine aandrijft. Ze zijn minder efficiënt dan STEG-centrales en minder flexibel dan gasturbines, maar kunnen langdurig stabiel draaien. Hierdoor worden ze vooral ingezet voor basislast of middellange periodes van verhoogde elektriciteitsvraag.
     capacity_of_energy_power_combined_cycle_network_gas:
       title: Gas STEG
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van Stoom- en Gasturbine (STEG) gascentrales, waarbij één centrale een vermogen van 800 MW heeft.
-        </br></br>
+        <br/><br/>
         De gasturbine produceert elektriciteit, terwijl de restwarmte wordt benut voor een extra stoomturbine, dat deze centrales efficiënter maakt dan andere gascentrales. Hoewel ze flexibel inzetbaar zijn, reageren ze minder snel dan gasturbines en worden daarom voornamelijk ingezet voor regelvermogen en niet puur voor piekvraag.  Hierdoor produceren ze op jaarbasis minder stroom dan kolencentrales met vergelijkbaar vermogen.
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas STEG WKK
       short_description: ''
       description: |
         Deze slider bepaalt het elektrisch vermogen van Stoom- en Gasturbine (STEG) gascentrales met warmtekrachtkoppeling (WKK), waarbij één centrale een vermogen van 120 MW elektrisch en 120 MW thermisch heeft.
-        </br></br>
+        <br/><br/>
         STEG-centrales combineren een gasturbine en een stoomturbine om elektriciteit te genereren. De gasturbine produceert stroom, terwijl de restwarmte wordt gebruikt om stoom te maken voor de stoomturbine, wat de efficiëntie verhoogt. In een STEG WKK-installatie wordt de restwarmte ook benut voor stadsverwarming of industriële toepassingen. Deze combinatie maakt de centrale geschikt voor langdurige inzet, met een hoog rendement voor zowel elektriciteit als warmte.
     capacity_of_energy_power_combined_cycle_ccs_network_gas:
       title: Gas STEG + CCS
@@ -458,21 +494,21 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van gasturbinecentrales, waarbij één centrale een vermogen van xxx heeft.
-        </br></br>
+        <br/><br/>
         Gasturbines zijn eenvoudigere en minder efficiënte gascentrales dan STEG-centrales, maar kunnen snel op- en afschakelen. Dit maakt ze ideaal voor het opvangen van piekvraag en het balanceren van het elektriciteitsnet. Door hun korte draaitijden produceren ze op jaarbasis minder stroom dan STEG- of kolencentrales met een vergelijkbaar vermogen.
     capacity_of_energy_power_engine_network_gas:
       title: Gasmotor
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van gasmotor gascentrales.
-        </br></br>
+        <br/><br/>
         Gasmotoren zijn grote verbrandingsmotoren die direct een generator aandrijven. Ze bestaan uit meerdere eenheden die snel hun vermogen kunnen aanpassen, waardoor ze ideaal zijn voor het balanceren van fluctuaties in wind- en zonenergie. Ze kunnen binnen 30 seconden opstarten en variëren van 1% tot 100% vermogen zonder efficiëntieverlies. Ondanks hogere draaikosten zijn de totaalkosten lager dan bij andere gascentrales, waardoor ze aantrekkelijk zijn als back-up voor hernieuwbare energie.
     capacity_of_energy_chp_local_engine_network_gas:
       title: Gasmotor-WKK
       short_description:
       description: |
         Deze slider bepaalt het elektrisch vermogen van gasmotor gascentrales met warmtekrachtkoppeling (WKK).
-        </br></br>
+        <br/><br/>
         Gasmotoren met WKK produceren zowel elektriciteit als warmte, die wordt gebruikt voor stadsverwarming of industriële toepassingen. Ze zijn zeer flexibel en kunnen snel op- en afschakelen, waardoor ze geschikt zijn voor decentrale opwekking en het balanceren van het net. Dankzij de hoge efficiëntie van de gecombineerde opwekking bieden deze centrales een lage CO₂-uitstoot per geproduceerde MWh.
     green_gas_total_share:
       title: Groen gas
@@ -515,9 +551,9 @@ nl:
       title: Energieproductie
       description: |
         Deze slider bepaalt welk deel van het kolengas, dat niet voor staalproductie wordt gebruikt, wordt ingezet om elektriciteit en warmte te produceren.
-        </br></br>
+        <br/><br/>
         Kolengas wordt verbrand in specifieke warmtekrachtkoppelingen (WKK's) en elektriciteitscentrales waardoor warmte en elektriciteit kan worden opgewekt. Deze centrales zijn _must-run_ en produceren zolang er kolengas beschikbaar is, ongeacht de vraag.
-        </br></br>
+        <br/><br/>
         <ul>
           <li>Bekijk de <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">Merit order tabel</a> om het geïnstalleerde vermogen van deze centrales te zien.</li>
         </ul>
@@ -525,5 +561,5 @@ nl:
       title: Grondstof voor chemiesector
       description: |
         Deze slider bepaalt welk aandeel van kolengassen, dat niet voor staalproductie wordt gebruikt, wordt ingezet als grondstof voor de chemiesector.
-        </br></br>
+        <br/><br/>
         In plaats van verbranding kan kolengas worden afgevangen en omgezet in chemische grondstoffen, bijvoorbeeld voor kunstmestproductie. Deze *steel-to-chemicals* route is nog in ontwikkeling, waardoor het ETM de impact op andere grondstoffen niet expliciet modelleert.

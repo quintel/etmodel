@@ -33,7 +33,7 @@ The default and stable version of the model are at this moment exactly the same,
   * The charts in <a href="https://collections.energytransitionmodel.com/" target="_blank">Collections</a> that show the final demand ‘by carrier’ and ‘by sector by carrier’ were not aligned. This caused a discrepancy between these charts in the total final demand of Liquid biofuels and Oil and oil products. These charts have now been aligned to resolve this discrepancy.
   * Greenhouse gas emissions from the Other sector were missing from the <a href="https://energytransitionmodel.com/scenario/data/data_visuals/greenhouse-gas-footprint" target="_blank">Greenhouse gas footprint</a> visual. These are now included in the visual under Industry, Energy & Other.
   * Under certain conditions, the forecasting algorithm for electricity storage caused invalid hourly electricity prices to emerge during curtailment. This issue is now fixed and the electricity price becomes 0 €/MWh in hours with curtailment.
-  * The demand for Demand-side Response (DSR) in the ICT-sector were not taken into account while  calculating the final demand in this subsector. This issue is now fixed.
+  * The electricity used in demand side response (DSR) in the central ICT sector was not taken into account in all calculations for final demand. This issue is now fixed.
 
 </details>
 

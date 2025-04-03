@@ -65,10 +65,10 @@ function renderSelectScenario(t, userScenarios) {
   userScenarios.forEach(function (scenario) {
     $('<option/>', {
       value: scenario.scenario_id,
-      text: scenario.title + ', ' + t('areas.' + scenario.dataset) + ' ' + scenario.end_year,
+      text: scenario.title + ', ' + t('areas.' + scenario.area_code) + ' ' + scenario.end_year,
       data: {
         source_saved_scenario_id: scenario.saved_scenario_id,
-        source_dataset_key: scenario.dataset,
+        source_dataset_key: scenario.area_code,
         source_scenario_title: scenario.title,
         source_end_year: scenario.end_year,
       },

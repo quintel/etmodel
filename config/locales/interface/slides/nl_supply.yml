@@ -176,16 +176,12 @@ nl:
         kan het aandeel van steenkool en biokolen als brandstof voor kolencentrales worden aangepast.
     supply_electricity_gas_plants:
       title: Gascentrales
-      short_description: ''
-      description: Gascentrales produceren grofweg de helft van de CO<sub>2</sub>
-        van een kolencentrale. Ze zijn erg flexibel qua productie en worden daarom
-        vaak gebruikt om de pieken in de vraag op te vangen.<br/><br/>
-        Hieronder kun je aangeven hoeveel vermogen er geïnstalleerd is van verschillende
-        typen gascentrales. In de <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a>
-        sectie kun je aangeven of deze centrales zijn uitgerust met een CO<sub>2</sub>-afvanginstallatie
-        om de emissies omlaag te brengen. Op de
-        <a href='/scenario/supply/biomass/green-gas-in-gas-network'>groen gas</a>pagina
-        kun je aannames doen over de hoeveelheid groen gas in het gasnet.
+      short_description:
+      description: |
+        Hieronder kan het totale elektrische vermogen van verschillende
+        typen gascentrales worden ingesteld.<br/><br/>In de sectie
+        <a href='/scenario/supply/biomass/gas-mix-in-gas-network'>Biomassa</a> kan
+        de samenstelling van gas als brandstof voor de gascentrales worden ingesteld.
     supply_electricity_nuclear_plant:
       title: Kerncentrales
       short_description: ''

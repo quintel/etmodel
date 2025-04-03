@@ -276,7 +276,7 @@ nl:
         veel voor in landen met strenge milieunormen. Kolencentrales behoren tot de meest
         vervuilende energiebronnen, met een CO<sub>2</sub>-uitstoot per opgewekte MWh die
         circa twee keer zo hoog is als die van een gascentrale.<br/><br/>
-        Ga naar de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCS</a>
+        Ga naar de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a>
         om CO<sub>2</sub>-afvang in te stellen of ga naar de sectie
         <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties aan te passen voor deze centrales.
@@ -303,7 +303,7 @@ nl:
         zich nog in een vroeg commercieel stadium. Hoewel kolencentrales doorgaans meer dan 75% van
         de tijd op vol vermogen draaien, biedt kolenvergassing meer flexibiliteit dan de conventionele
         kolencentrales.<br/><br/>
-        Ga naar de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCS</a>
+        Ga naar de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a>
         om CO<sub>2</sub>-afvang in te stellen of ga naar de sectie
         <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a> om de
         kosten en efficiënties aan te passen voor deze centrales.
@@ -457,25 +457,40 @@ nl:
         </ul>
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventioneel
-      short_description: ''
+      short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van conventionele stoomturbine gascentrales, waarbij één centrale een vermogen van 800 MW heeft.
-        <br/><br/>
-        Deze centrales verbranden aardgas om stoom te genereren, die vervolgens een stoomturbine aandrijft. Ze zijn minder efficiënt dan STEG-centrales en minder flexibel dan gasturbines, maar kunnen langdurig stabiel draaien. Hierdoor worden ze vooral ingezet voor basislast of middellange periodes van verhoogde elektriciteitsvraag.
+        Deze slider bepaalt het totale elektrische vermogen van conventionele gascentrales.
+        <br/><br/>Deze conventionele centrales verbranden aardgas om stoom te genereren, die vervolgens een
+        stoomturbine aandrijft. Ze zijn minder efficiënt dan STEG-centrales en minder flexibel dan gasturbines,
+        maar kunnen langdurig, stabiel draaien. Hierdoor worden ze vooral ingezet voor basislast of middellange
+        periodes van verhoogde elektriciteitsvraag.<br/><br/>Ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_combined_cycle_network_gas:
       title: Gas STEG
-      short_description: ''
+      short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van Stoom- en Gasturbine (STEG) gascentrales, waarbij één centrale een vermogen van 800 MW heeft.
-        <br/><br/>
-        De gasturbine produceert elektriciteit, terwijl de restwarmte wordt benut voor een extra stoomturbine, dat deze centrales efficiënter maakt dan andere gascentrales. Hoewel ze flexibel inzetbaar zijn, reageren ze minder snel dan gasturbines en worden daarom voornamelijk ingezet voor regelvermogen en niet puur voor piekvraag.  Hierdoor produceren ze op jaarbasis minder stroom dan kolencentrales met vergelijkbaar vermogen.
+        Deze slider bepaalt het totale elektrisch vermogen van stoom- en gasturbinecentrales (STEG).
+        <br/><br/>De gasturbine produceert elektriciteit waarbij restwarmte wordt benut voor het
+        aandrijven van een stoomturbine. Dit maakt deze centrales efficiënter dan andere gascentrales.
+        Hoewel ze flexibel inzetbaar zijn, reageren ze minder snel dan gasturbines en worden deze daarom
+        voornamelijk ingezet voor regelbaar vermogen en niet voor het opvangen van de piekvraag.<br/><br/>
+        Ga naar de sectie <a href="/scenario/ccus/ccus/capture-of-co2-in-energy-sector">CCUS</a>
+        om CO<sub>2</sub>-afvang in te stellen of ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties aan te passen voor deze centrales.
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas STEG WKK
-      short_description: ''
+      short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van Stoom- en Gasturbine (STEG) gascentrales met warmtekrachtkoppeling (WKK), waarbij één centrale een vermogen van 120 MW elektrisch en 120 MW thermisch heeft.
-        <br/><br/>
-        STEG-centrales combineren een gasturbine en een stoomturbine om elektriciteit te genereren. De gasturbine produceert stroom, terwijl de restwarmte wordt gebruikt om stoom te maken voor de stoomturbine, wat de efficiëntie verhoogt. In een STEG WKK-installatie wordt de restwarmte ook benut voor stadsverwarming of industriële toepassingen. Deze combinatie maakt de centrale geschikt voor langdurige inzet, met een hoog rendement voor zowel elektriciteit als warmte.
+        Deze slider bepaalt het totale elektrische vermogen van stoom- en gasturbinecentrales (STEG)
+        met warmtekrachtkoppeling (WKK).<br/><br/>De gasturbine produceert elektriciteit waarbij
+        restwarmte wordt benut voor het aandrijven van een stoomturbine. Dit maakt deze centrales
+        efficiënter dan andere gascentrales. Daarnaast wordt de restwarmte benut voor een
+        centraal warmtenet of voor industriële toepassingen. Deze combinatie maakt de centrale geschikt
+        voor langdurige inzet, met een hoog rendement voor zowel elektriciteits- als warmteproductie.
+        <br/><br/>Ga naar de <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_combined_cycle_ccs_network_gas:
       title: Gas STEG + CCS
       short_description: ''
@@ -489,27 +504,43 @@ nl:
         gasturbines) en daarom produceren ze minder stroom per jaar dan kolencentrales
         met een vergelijkbaar vermogen. CCS centrales zijn minder flexibel dan hun
         niet-CCS 'soortgenoten'."
-    capacity_of_energy_power_turbine_network_gas: #Overal staat het elektrisch vermogen aangegeven behalve bij deze slider, weet iemand dit? Of kan het eigenlijk overal wel weg worden gelaten? (Het is imo niet noodzakelijk om te noemen, maar wel prettig om te weten)
+    capacity_of_energy_power_turbine_network_gas:
       title: Gasturbine
       short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van gasturbinecentrales, waarbij één centrale een vermogen van xxx heeft.
-        <br/><br/>
-        Gasturbines zijn eenvoudigere en minder efficiënte gascentrales dan STEG-centrales, maar kunnen snel op- en afschakelen. Dit maakt ze ideaal voor het opvangen van piekvraag en het balanceren van het elektriciteitsnet. Door hun korte draaitijden produceren ze op jaarbasis minder stroom dan STEG- of kolencentrales met een vergelijkbaar vermogen.
+        Deze slider bepaalt het totale elektrische vermogen van gasturbines.
+        <br/><br/>Gasturbines zijn eenvoudigere centrales dan STEG-centrales, maar zijn zijn
+        minder efficiënt. Het voordele van gascentrales is dat deze snel kunnen op- en afschakelen.
+        Dit maakt ze geschikt voor het opvangen van de piekvraag en balancering van het elektriciteitsnet.
+        Door de inzet van deze centrales bij piekvraag zijn het totaal aantal draaiuren en
+        de jaarlijkse productie van deze centrales beperkt.<br/><br/> Ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_engine_network_gas:
       title: Gasmotor
       short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van gasmotor gascentrales.
-        <br/><br/>
-        Gasmotoren zijn grote verbrandingsmotoren die direct een generator aandrijven. Ze bestaan uit meerdere eenheden die snel hun vermogen kunnen aanpassen, waardoor ze ideaal zijn voor het balanceren van fluctuaties in wind- en zonenergie. Ze kunnen binnen 30 seconden opstarten en variëren van 1% tot 100% vermogen zonder efficiëntieverlies. Ondanks hogere draaikosten zijn de totaalkosten lager dan bij andere gascentrales, waardoor ze aantrekkelijk zijn als back-up voor hernieuwbare energie.
+        Deze slider bepaalt het totale elektrische vermogen van gasmotorcentrales.
+        <br/><br/>Gasmotoren zijn grote verbrandingsmotoren die direct een generator
+        aandrijven. Ze bestaan uit meerdere eenheden die snel kunnen op- en afschakelen,
+        zonder efficiëntieverlies. Ondanks hogere operationele kosten zijn de totale kosten
+        van gasmotoren relatief laag in vergelijking met andere gascentrales. Dit maakt gasmotoren
+        geschikt als back-up naast volatiele elektriciteitsproductie (bijvoorbeeld uit
+        wind- en zonne-energie).<br/><br/> Ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_chp_local_engine_network_gas:
       title: Gasmotor-WKK
       short_description:
       description: |
-        Deze slider bepaalt het elektrisch vermogen van gasmotor gascentrales met warmtekrachtkoppeling (WKK).
-        <br/><br/>
-        Gasmotoren met WKK produceren zowel elektriciteit als warmte, die wordt gebruikt voor stadsverwarming of industriële toepassingen. Ze zijn zeer flexibel en kunnen snel op- en afschakelen, waardoor ze geschikt zijn voor decentrale opwekking en het balanceren van het net. Dankzij de hoge efficiëntie van de gecombineerde opwekking bieden deze centrales een lage CO₂-uitstoot per geproduceerde MWh.
+        Deze slider bepaalt het totale elektrische vermogen van gasmotorcentrales met warmtekrachtkoppeling
+        (WKK).<br/><br/>Gasmotoren zijn grote verbrandingsmotoren die direct een generator
+        aandrijven. Gasmotoren met WKK produceren zowel elektriciteit als warmte, die wordt gebruikt voor
+        een centraal warmtenet of voor industriële toepassingen. Gasmotoren bestaan uit meerdere eenheden
+        die snel kunnen op- en afschakelen, zonder efficiëntieverlies. Daarmee zijn ze geschikt zijn voor
+        balancering van het elektriciteitsnet.<br/><br/> Ga naar de sectie
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     green_gas_total_share:
       title: Groen gas
       short_description: ''

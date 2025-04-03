@@ -5,68 +5,49 @@ nl:
       title:  Stoomreforming met aardgas
       short_description:
       description: |
-        Stoomreforming (methaan-reforming of 'steam methane reforming' (SMR)) is een ver ontwikkeld
-        waterstofproductie proces. Het werkt als volgt: methaan reageert in de aanwezigheid
-        van een katalysator met stoom met een hoge temperatuur en geeft een mengsel
-        van waterstof en andere gassen. De ongewenste gassen (inclusief CO<sub>2</sub>)
-        worden dan afgescheiden door verdere reacties en het aldus verkregen waterstof
-        wordt gezuiverd opdat het voldoet aan de industriële standaard.</br></br>Deze
-        techniek wordt reeds uitgebreid  toegepast, maar met name om waterstof te produceren
-        voor industrieel gebruik. Deze centrale gebruikt aardgas. Methaan-reforming wordt vaak gezien als een belangrijke
-        overgangsproductiemethode: lang niet de schoonste en de groenste, maar in
-        staat om de toenemende vraag naar waterstof te faciliteren.
-        <br/><br/>
-        Klik op de technische en financiële parameters hieronder voor meer specificaties.
+        Deze slider bepaalt het elektrisch vermogen van stoomreforminginstallaties (SMR) voor waterstofproductie.
+        </br></br>
+        Bij stoomreforming wordt aardgas met stoom omgezet in waterstof en CO<sub>2</sub>. Dit is momenteel de meest 
+        gebruikte methode voor waterstofproductie, maar het heeft een hoge CO<sub>2</sub>-uitstoot. Bij regelbare 
+        installaties is CO<sub>2</sub>-afvang niet mogelijk, omdat de variërende productie de werking van de afvanginstallatie 
+        belemmert.
     capacity_of_energy_hydrogen_steam_methane_reformer_must_run:
       title: Stoomreforming met aardgas
       short_description:
       description: |
-        Stoomreforming (methaan-reforming of 'steam methane reforming' (SMR)) is een ver ontwikkeld
-        waterstofproductie proces. Het werkt als volgt: methaan reageert in de aanwezigheid
-        van een katalysator met stoom met een hoge temperatuur en geeft een mengsel
-        van waterstof en andere gassen. De ongewenste gassen (inclusief CO<sub>2</sub>)
-        worden dan afgescheiden door verdere reacties en het aldus verkregen waterstof
-        wordt gezuiverd opdat het voldoet aan de industriële standaard.</br></br>Deze
-        techniek wordt reeds uitgebreid toegepast, maar met name om waterstof te produceren
-        voor industrieel gebruik. Deze centrale gebruikt aardgas. Methaan-reforming wordt vaak gezien als een belangrijke
-        overgangsproductiemethode: lang niet de schoonste en de groenste, maar in
-        staat om de toenemende vraag naar waterstof te faciliteren.
-        <br/><br/>
-        Voeg CCS toe aan de niet-regelbare capaciteit van stoomreforming in de
-        <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCS</a> sectie.
-        <br/><br/>
-        Klik op de technische en financiële parameters hieronder voor meer specificaties.
-        Let op: de parameters in de tabel horen bij de SMR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
-        zul je hier geen vermogen zien.
+        Deze slider bepaalt het elektrisch vermogen van stoomreforminginstallaties (SMR) voor waterstofproductie.
+        </br></br>
+        Bij stoomreforming wordt aardgas met stoom omgezet in waterstof en CO<sub>2</sub>. Dit is momenteel de 
+        meest gebruikte methode voor waterstofproductie, maar het heeft een hoge CO<sub>2</sub>-uitstoot. 
+        De emissies kunnen worden verminderd door CO<sub>2</sub>-afvang toe te passen.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>Koolstofafvang, -gebruik en -opslag</a> om CO<sub>2</sub>-afvang in te stellen.</li>
+          <li>Zie 'Technische parameters en kosten' voor specificaties van stoomreforming zonder CO<sub>2</sub>-afvang.</li>
+        </ul>
     capacity_of_energy_hydrogen_autothermal_reformer_must_run:
       title: Autothermische reforming met aardgas
       short_description:
       description: |
-        Pas met deze slider de totale capaciteit van autothermische reformers (ATR) aan.
-        <br/><br/>
-        Autothermische reforming is een productie methode voor waterstof. Het is vergelijkbaar met
-        steam methane reforming (SMR) maar heeft een lagere efficientie. Het voordeel van ATR is
-        de eenvoudige manier van produceren met een hoge concentratie koolstof dioxide.
-        Dit maakt het mogelijk om een hoog percentage koolstof af te vangen gedurende het conversie proces.
-        <br/><br/>
-        Voeg CCS toe aan de niet-regelbare capaciteit van ATR in de
-        <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCS</a> sectie.
-        <br/><br/>
-        Klik op de technische en financiële parameters hieronder voor meer specificaties.
-        Let op: de parameters in de tabel horen bij de ATR centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
-        zul je hier geen vermogen zien.
+        Deze slider bepaalt het geïnstalleerd vermogen van autothermische reforminginstallaties (ATR) voor waterstofproductie.
+        </br></br>
+        Autothermische reforming (ATR) combineert stoomreforming met een deel van de zuurstof om waterstof te produceren uit aardgas. 
+        Deze techniek heeft een hogere energie-efficiëntie dan stoomreforming alleen en is beter geschikt voor CO<sub>2</sub>-afvang, 
+        waardoor het aantrekkelijker is voor lage-emissie waterstofproductie.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>Koolstofafvang, -gebruik en -opslag</a> om CO<sub>2</sub>-afvang in te stellen.</li>
+          <li>Zie 'Technische parameters en kosten' voor specificaties van ATR zonder CO<sub>2</sub>-afvang.</li>
+        </ul>
     capacity_of_energy_hydrogen_autothermal_reformer_dispatchable:
       title: Autothermische reforming met aardgas
       short_description:
       description: |
-        Pas met deze slider de totale capaciteit aan autothermische reformers (ATR) aan.
-        <br/><br/>
-        Autothermische reforming (ATR) is een productie methode voor waterstof. Het is vergelijkbaar met
-        steam methane reforming (SMR) maar heeft een lagere efficientie. Het voordeel van ATR is
-        de eenvoudige manier van produceren met een hoge concentratie koolstof dioxide.
-        Dit maakt het mogelijk om een hoog percentage koolstof af te vangen gedurende het conversie proces.
-        <br/><br/>
-        Klik op de technische en financiële parameters hieronder voor meer specificaties.
+        Deze slider bepaalt het geïnstalleerd vermogen van autothermische reforminginstallaties (ATR) voor waterstofproductie.
+        </br></br>
+        Autothermische reforming (ATR) combineert stoomreforming met een deel van de zuurstof om waterstof te produceren uit aardgas. 
+        Dit proces is efficiënter dan standaard stoomreforming. Bij regelbare installaties is CO<sub>2</sub>-afvang niet mogelijk, 
+        omdat de variërende productie de werking van de afvanginstallatie belemmert. 
     capacity_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing CCS
       short_description:
@@ -77,180 +58,202 @@ nl:
       title: Biomassavergassing
       short_description:
       description: |
-        Biomassavergassing is een volwassen technologie voor de productie
-        van waterstof uit biomassa. Voor deze technologie kan CCS worden ingesteld in
-        de <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>CCS</a> sectie.
-        <br/><br/>
-        Klik op de technische en financiële parameters hieronder voor meer specificaties.
-        Let op: de parameters in de tabel horen bij de centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
-        zul je hier geen vermogen zien.
+        Deze slider bepaalt het elektrisch vermogen van biomassavergassingsinstallaties voor 
+        waterstofproductie en het benodigde elektrolysevermogen.
+        </br></br>
+        Biomassavergassing zet biomassa om in syngas, waaruit waterstof wordt gewonnen. 
+        Deze technologie is volwassen en breed toepasbaar.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href=/scenario/emissions/ccus/capture-of-co2-in-energy-sector>Koolstofafvang, -gebruik en -opslag</a> om CO<sub>2</sub>-afvang in te stellen.</li>
+          <li>Zie 'Technische parameters en kosten' voor specificaties van biomassavergassing zonder CO<sub>2</sub>-afvang.</li>
+        </ul>
     capacity_of_energy_hydrogen_wind_turbine_offshore:
-      title: Windmolen op zee voor H<sub>2</sub>
+      title: Windturbine op zee voor H<sub>2</sub>
       short_description:
       description: |
-        Hoeveel windmolens zullen elektriciteit produceren dat direct
-        zal worden omgezet in waterstof met electrolysers?</br></br>
-        Er zijn grote ambities voor windparken ver op zee. Voor deze windparken zal
-        het waarschijnlijk economisch haalbaarder zijn om de elektriciteit ter plekke
-        om te zetten in waterstof in plaats van de elektriciteit eerst naar land te
-        transporteren. Dit heeft te maken met de relatief hoge kosten voor elektriciteitskabels
-        vergeleken met de gaspijpkosten. </br></br> Deze schuif zet het vermogen
-        van windmolens op zee dat ingezet wordt voor waterstofproductie en het benodigde
-        vermogen van elektrolyse-installaties om de geproduceerde elektriciteit om
-        te zetten in waterstof. De efficiëntie van elektrolysers
-        kan <a href="/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast.
-        Je kunt het aantal vollasturen van windmolens <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
-        <br /><br>
-        Opmerking: De technische en financiële
-        specificaties hieronder zijn alleen voor de elektrolyser, niet voor de windmolens.
-        De specificaties van de windmolens kun je vinden in het tabblad <a href="/scenario/supply/electricity_renewable/wind-turbines\">Hernieuwbare elektriciteit</a>.
+        Deze slider bepaalt het elektrisch vermogen van offshore windturbines voor waterstofproductie 
+        en het benodigde elektrolysevermogen om de opgewekte elektriciteit direct om te zetten in waterstof.
+        </br></br>
+        Deze turbines zetten de elektriciteit direct op zee om in waterstof, zonder deze eerst naar land te 
+        transporteren.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/costs/costs_hydrogen/hydrogen-production\">Kosten & efficiënties</a> 
+          om de efficiëntie van elektrolysers aan te passen.</li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\">
+          Weersomstandigheden</a> om het aantal vollasturen van windturbines in te stellen.</li>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/wind-turbines\">Hernieuwbare elektriciteit</a> 
+          om technische parameters en kosten van windturbines te bekijken.</li>
+          <li>Zie 'Technische parameters en kosten' voor de specificaties van elektrolysers.</li>
+        </ul>
     capacity_of_energy_hydrogen_solar_pv_solar_radiation:
       title: Zonnecentrale PV voor H<sub>2</sub>
       short_description:
-      description: "Hoeveel zonneparken zullen er in de toekomst gebouwd worden voor de
-        productie van waterstof met behulp van electrolysers?\r\n<br/><br/>\r\nDeze
-        schuif zet het vermogen van zonneparken dat ingezet wordt voor waterstofproductie
-        en het benodigde vermogen van elektrolyse-installaties om de geproduceerde
-        elektriciteit om te zetten in waterstof. Het vermogen van de elektrolyse-installaties
-        ten opzichte van het vermogen van de zonneparken is afhankelijk van het aantal
-        zonuren en het zonprofiel van een land. Meer informatie hierover staat in
-        de <a href=\"https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx\"
-        >documentatie op Github</a>.\r\n</br></br>\r\nDe efficiëntie van elektrolysers
-        kan <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast. Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
-        De efficiëntie van zonnepanelen kan <a href=\"/scenario/costs/solar/solar-pv-technology\" >hier </a> aangepast worden.<br/>
-        \r\n<br />\r\n\r\nOpmerking: De technische en financiële
-        specificaties hieronder zijn alleen voor de elektrolyser, niet voor de zonneparken.
-        De specificaties van de zonneparken kun je vinden in het tabblad <a href=\"/scenario/supply/electricity_renewable/solar-power\">Hernieuwbare
-        elektriciteit</a>.<br />"
+      description: |
+        Deze slider bepaalt het elektrisch vermogen van zonneparken voor waterstofproductie en 
+        het benodigde elektrolysevermogen om de opgewekte elektriciteit direct om te zetten in waterstof.
+        </br></br>
+        Het benodigde vermogen van de elektrolyse-installaties hangt af van het aantal zonuren en het 
+        zonprofiel van een land. Meer informatie hierover is te vinden in de <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx"
+        >documentatie op Github</a>.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/costs/costs_hydrogen/hydrogen-production\">Kosten & efficiënties</a> 
+          om de efficiëntie van elektrolysers aan te passen.</li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Weersomstandigheden</a> 
+          om het aantal vollasturen van zonnepanelen in te stellen.</li>
+          <li>Ga naar <a href=\"/scenario/supply/electricity_renewable/solar-power\">Hernieuwbare elektriciteit</a> 
+          om technische parameters en kosten van zonnepanelen te bekijken.</li>
+          <li>Zie 'Technische parameters en kosten' voor de specificaties van elektrolysers.</li>
+        </ul>
     capacity_of_energy_hydrogen_ammonia_reformer_dispatchable:
       title: Ammoniak reforming
       short_description:
       description: |
-        Reforming van ammoniak (NH<sub>3</sub>) naar waterstof is een nieuwe technologie. Het reformen
-        zelf is een zeer volwassen proces, aangezien dit breed wordt toegepast in de Stoomreforming van
-        aardgas. Desondanks is verdere technologische ontwikkeling nodig voordat reforming van ammoniak
-        commercieel beschikbaar zal zijn. Je kunt de efficiëntie en de investeringskosten van de
-        ammoniakreformer instellen in de <a href="/scenario/costs/costs_hydrogen/hydrogen-production"> Kosten & efficiënties</a> sectie. </br></br>
-        De ammoniak die in de reformer gebruikt wordt, wordt centraal geleverd. Je kunt de import instellen
-        instellen in <a href=/scenario/supply/hydrogen/ammonia-production> onderstaande slide</a>.
-        Je kunt ook vraag en aanbod van ammoniak vergelijken in
-        <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
-        data-chart-location="side"> deze</a> grafiek.
+        Deze slider bepaalt het geïnstalleerd vermogen van ammoniakreforminginstallaties voor waterstofproductie.
+        </br></br>
+        Ammoniakreforming zet ammoniak (NH<sub>3</sub>) om in waterstof en stikstof. Dit proces kan een alternatieve 
+        route zijn voor waterstofproductie, vooral wanneer er lokaal ammoniak beschikbaar is. Ammoniak biedt voordelen 
+        voor opslag en transport, maar de technologie vereist nog verdere ontwikkeling voor commerciële beschikbaarheid.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Kosten & efficiënties</a> om de efficiëntie en investeringskosten van de ammoniakreformer in te stellen. </li>
+          <li>Ga naar <a href="/scenario/supply/hydrogen/ammonia-production">Importinstellingen</a> om de levering van centraal aangevoerde ammoniak in te stellen.</li>
+          <li>Bekijk <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply" data-chart-location="side">Ammoniakvraag en -aanbod</a>.</li>
+        </ul>
     capacity_of_energy_hydrogen_ammonia_reformer_must_run:
       title: Ammoniak reforming
       short_description:
       description: |
-        Reforming van ammoniak (NH<sub>3</sub>) naar waterstof is een nieuwe technologie. Het reformen
-        zelf is een zeer volwassen proces, aangezien dit breed wordt toegepast in de Stoomreforming van
-        aardgas. Desondanks is verdere technologische ontwikkeling nodig voordat reforming van ammoniak
-        commercieel beschikbaar zal zijn. Je kunt de efficiëntie en de investeringskosten van de
-        ammoniakreformer instellen in de <a href="/scenario/costs/costs_hydrogen/hydrogen-production"> Kosten & efficiënties</a> sectie. </br></br>
-        De ammoniak die in de reformer gebruikt wordt, wordt centraal geleverd. Je kunt de import instellen
-        instellen in <a href=/scenario/supply/hydrogen/ammonia-production> onderstaande slide</a>.
-        Je kunt ook vraag en aanbod van ammoniak vergelijken in
-        <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply"
-        data-chart-location="side"> deze</a> grafiek.
+        Deze slider bepaalt het geïnstalleerd vermogen van ammoniakreforminginstallaties voor waterstofproductie.
+        </br></br>
+        Ammoniakreforming zet ammoniak (NH<sub>3</sub>) om in waterstof en stikstof. Dit proces kan een alternatieve 
+        route zijn voor waterstofproductie, vooral wanneer er lokaal ammoniak beschikbaar is. Ammoniak biedt voordelen 
+        voor opslag en transport, maar de technologie vereist nog verdere ontwikkeling voor commerciële beschikbaarheid.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Kosten & efficiënties</a> om de 
+          efficiëntie en investeringskosten van de ammoniakreformer in te stellen.</li>
+          <li>Ga naar <a href=/scenario/supply/hydrogen/ammonia-production>Importinstellingen</a> om de levering van 
+          centraal aangevoerde ammoniak in te stellen.</li>
+          <li>Bekijk <a href="#" class="open_chart" data-chart-key="mekko_of_ammonia_demand_supply" data-chart-location="side">
+          Ammoniakvraag en -aanbod</a>.</li>
+        </ul>
     capacity_of_energy_hydrogen_liquid_hydrogen_regasifier:
       title: LH2 vergassing
       short_description:
       description: |
-        Hervergassing van waterstof is het proces waarbij vloeibare waterstof (LH2) weer wordt omgezet
-        naar gasvormige waterstof. Je kunt hier de capaciteit van de hervergasser instellen.
+        Deze slider bepaalt het geïnstalleerd vermogen van vloeibare waterstof (LH<sub>2</sub>) vergassingsinstallaties.
+        </br></br>
+        LH<sub>2</sub>-vergassing zet vloeibare waterstof om in gasvormig waterstof. Deze technologie vereist nog verdere 
+        ontwikkeling voor commerciële beschikbaarheid.
     capacity_of_energy_hydrogen_lohc_reformer:
       title: LOHC reforming
       short_description:
       description: |
-        LOHC (Liquid Organic Hydrogen Carrier) is een organische verbinding waarmee waterstof verpakt,
-        getransporteerd, opgeslagen en weer uitgepakt kan worden. Dat brengt minder uitdagingen met zich
-        mee dan bij gasvormige waterstof. LOHC reforming is het proces waarbij waterstof wordt uitgepakt.
-        Je kunt hier de capaciteit van de hervergasser instellen.
+        Deze slider bepaalt het geïnstalleerd vermogen van reforminginstallaties voor vloeibare organische 
+        waterstofdragers (LOHC) voor waterstofproductie.
+        </br></br>
+        LOHC slaat waterstof op in een veilige, vloeibare drager. Bij reforming wordt de waterstof weer vrijgemaakt, 
+        wat extra energie kost, maar opslag en transport vergemakkelijkt.
     capacity_of_energy_imported_hydrogen_baseload:
       title: H<sub>2</sub> import
       short_description:
       description: |
-        Hoeveel waterstof zal er in de toekomst worden geïmporteerd?
-        De schuif bepaalt de hoeveelheid geïmporteerde waterstof van buiten jouw gebied.
-        Deze waterstof kan uit verschillende landen komen en met verschillende technologieën
-        geproduceerd zijn; deze factoren hebben beide invloed op de bijbehorende CO<sub>2</sub>-uitstoot.
-        Daarom is er voor gekozen om de CO<sub>2</sub>-emissies van geïmporteerde
-        waterstof zelf in te kunnen stellen in de <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">Emissies sectie</a>.
-        Ook is het mogelijk om de kosten van geïmporteerde
-        waterstof aan te passen bij <a href="/scenario/costs/costs_hydrogen/hydrogen-import">Kosten & efficiënties</a>.
+        Deze slider bepaalt het geïmporteerde vermogen aan waterstof.
+        </br></br>
+        De herkomst en productiemethode beïnvloeden de CO<sub>2</sub>-uitstoot en kosten, die afzonderlijk instelbaar zijn.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">
+          Emissies</a> om de CO<sub>2</sub>-uitstoot van geïmporteerde waterstof in te stellen.</li>
+          <li>Ga naar <a href="/scenario/costs/costs_hydrogen/imported-hydrogen-carriers-and-ammonia">Kosten & efficiënties</a> 
+          om de kosten van geïmporteerde waterstof aan te passen.</li>
+        </ul>
     energy_hydrogen_distribution_compressed_trucks_share:
       title: Transport via pijpleidingen en vrachtwagens
       short_description:
       description: |
-        Welk percentage van de centraal geproduceerde waterstof in je scenario
-        wordt na transport via pijpleidingen nog per vrachtwagens getransporteerd?
-        Vragenwachtentransport is flexibel en kan
-        gemakkelijk af- en opgeschaald worden. Het is daarmee een geschikte optie
-        als de vraag naar waterstof in je scenario klein is of als de vraag verspreid
-        is over een groter gebied. Het is bijvoorbeeld een goede optie voor de bevoorrading
-        van tankstations.
+        Deze slider bepaalt welk aandeel waterstof via pijpleidingen en wachtwagens wordt getransporteerd.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/costs/costs_hydrogen/hydrogen-transport">Kosten & efficiënties</a> 
+          om de transportkosten aan te passen.</li>
+        </ul>
     energy_hydrogen_transport_pipelines_share:
       title: Transport uitsluitend via pijpleidingen
       description: |
-        Welk percentage van de totale centrale waterstofproductie in je scenario wordt
-        uitsluitend via het pijpleidingnetwerk getransporteerd?
-        </br></br>De kosten van transport via pijpleidingen kunnen aangepast worden bij
-        <a href=/scenario/costs/costs_hydrogen/hydrogen-transport>kosten</a>.
+        Deze slider bepaalt welk aandeel waterstof via pijpleidingen wordt getransporteerd.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/costs/costs_hydrogen/hydrogen-transport">Kosten & efficiënties</a> 
+          om de transportkosten aan te passen.</li>
+        </ul>
     capacity_of_energy_imported_ammonia_baseload:
       title: Ammoniak import
       short_description:
       description: |
-        Hoeveel ammoniak zal er in de toekomst worden geïmporteerd? </br></br>
-        Ammoniak heeft als energiedrager gunstige eigenschappen voor transport en opslag en kan worden geproduceerd
-        zonder CO<sub>2</sub>-emissies te genereren. Dit maakt het een potentieel geschikte drager om
-        grootschalig globaal transport van (hernieuwbare) energievolumes te faciliteren. </br></br>Met deze schuif
-        kun je bepalen hoeveel ammoniak je wilt importen importeren in jouw scenario.
-        Deze ammoniak kan uit verschillende landen komen en met verschillende typen waterstof
-        geproduceerd zijn: beide factoren hebben invloed op de geassocieerde CO<sub>2</sub>-uitstoot.
-        Het is daarom mogelijk om de CO<sub>2</sub>-emissies van geïmporteerde ammoniak in te stellen
-        in de <a href=/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">Emissies sectie</a>.
-        Ook is het mogelijk om de kosten van geïmporteerde ammoniak aan te passen in de
-        <a href=/scenario/costs/costs_hydrogen/ammonia-import>Kosten & efficiënties</a> sectie. </br></br>
-        Als er onvoldoende basislast import is om aan de vraag te voldoen wordt back-up import ingezet om het
-        tekort te leveren. Als het aanbod groter is dan de vraag wordt het overschot geëxporteerd.
+        Deze slider bepaalt hoeveel vermogen aan ammoniak wordt geïmporteerd.
+        </br></br>
+        Ammoniak heeft als energiedrager gunstige eigenschappen voor transport en opslag en kan worden 
+        geproduceerd zonder CO<sub>2</sub>-emissies te genereren.
+        </br></br>
+        <em>Let op</em>: Bij een tekort wordt back-up import ingezet, en bij een overschot wordt ammoniak geëxporteerd.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href=/scenario/emissions/emission_factors/co2-emissions-of-imported-hydrogen-carriers-and-ammmonia">Emissiefactoren</a> om de uitstoot in te stellen.</li>
+          <li>Ga naar <a href="/scenario/costs/costs_hydrogen/ammonia-import">Kosten & efficiënties</a> om de importkosten aan te passen.</li>
+        </ul>
     capacity_of_energy_hydrogen_storage_depleted_gas_field:
       title: Relatieve opslagcapaciteit
       short_description:
       description: |
-        Met dit schuifje kun je de opslagcapaciteit van het gasveld relatief ten opzichte van het opslagvolume instellen.
-        Dit bepaalt hoeveel dagen het gasveld op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom de opslagvermogen, gegeven een bepaalde hoeveelheid
-        geïnstalleerd volume. </br></br>
-        De totale opslagcapaciteit kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
-        vergelijken met andere opslagtechnologieën kun je ook
-        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
-        deze tabel</a> openen.
+        Deze slider bepaalt hoeveel tijd een gasveld nodig heeft om van leeg naar vol te gaan bij continu laden op maximaal vermogen.
+        </br></br>
+        Samen met het opslagvolume bepaalt deze slider het opslagvermogen van het gasveld.
+        </br></br>
+        <ul>
+          <li>Bekijk de tabel <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        Specificaties opslagtechnologieën elektriciteit</a>.</li>
+          <li>Zie 'Technische parameters en kosten' voor de totale opslagcapaciteit.</li>
+        </ul>
     capacity_of_energy_hydrogen_storage_salt_cavern:
       title: Relatieve opslagcapaciteit
       short_description:
       description: |
-        Met dit schuifje kun je de opslagcapaciteit van de zoutcaverne relatief ten opzichte van het opslagvolume instellen.
-        Dit bepaalt hoeveel dagen de zoutcaverne op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom de opslagvermogen, gegeven een bepaalde hoeveelheid
-        geïnstalleerd volume. </br></br>
-        De totale opslagcapaciteit kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
-        vergelijken met andere opslagtechnologieën kun je ook
-        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
-        deze tabel</a> openen.
+        Deze slider bepaalt hoeveel tijd een zoutcaverne nodig heeft om van leeg naar vol te gaan bij continu laden op maximaal vermogen.
+        </br></br>
+        Samen met het opslagvolume bepaalt deze slider het opslagvermogen van de zoutcaverne.
+        </br></br>
+        <ul>
+          <li>Bekijk de tabel <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
+        Specificaties opslagtechnologieën elektriciteit</a>.</li>
+          <li>Zie 'Technische parameters en kosten' voor de totale opslagcapaciteit.</li>
+        </ul>
     volume_of_energy_hydrogen_storage_depleted_gas_field:
       title: Volume opslag
       description: |
-        Deze schuif stelt het volume in van de hoeveelheid waterstof die kan worden opgeslagen in de lege gasvelden. Het
-        typische opslagvolume van een leeg gasveld is zo'n 8 TWh. In
-        <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
-        deze grafiek</a> kun je het opgestelde waterstofopslagvolume vergelijken met de opslagvolumes
-        voor andere energiedragers. Ook is het mogelijk om de kosten van waterstofopslag in lege gasvelden aan te passen in de
-        <a href=/scenario/costs/costs_hydrogen/hydrogen-storage>Kosten & efficiënties</a> sectie.
+        Deze slider bepaalt de totale opslagcapaciteit van waterstof in gasvelden.
+        </br></br>
+        Lege gasvelden bieden een grootschalige opslagoplossing voor waterstof. Het typische opslagvolume 
+        van een leeg gasveld is ongeveer 8 TWh.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href=/scenario/costs/costs_hydrogen/hydrogen-storage>Kosten & efficiënties</a> om de opslagkosten aan te passen.</li>
+          <li>Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        Geïnstalleerd opslagvolume per drager</a>.</li>
+        </ul>
     volume_of_energy_hydrogen_storage_salt_cavern:
       title: Volume opslag
       short_description:
       description: |
-        Deze schuif stelt het volume in van de hoeveelheid waterstof die kan worden opgeslagen in de zoutcavernes. Het
-        typische opslagvolume van een zoutcaverne is zo'n 0,25 TWh. In
-        <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
-        deze grafiek</a> kun je het opgestelde waterstofopslagvolume vergelijken met de opslagvolumes
-        voor andere energiedragers. Ook is het mogelijk om de kosten van waterstofopslag in zoutcavernes aan te passen in de
-        <a href=/scenario/costs/costs_hydrogen/hydrogen-storage>Kosten & efficiënties</a> sectie.
+        Deze slider bepaalt de totale opslagcapaciteit van waterstof in zoutcavernes.
+        </br></br>
+        Zoutcavernes bieden flexibele en snelle opslag voor waterstof. Een typische caverne heeft een opslagvolume van ongeveer 0,25 TWh.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href=/scenario/costs/costs_hydrogen/hydrogen-storage>Kosten & efficiënties</a> om de opslagkosten aan te passen.</li>
+          <li>Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="mekko_of_storage_volume" data-chart-location="side">
+        Geïnstalleerd opslagvolume per drager</a>.</li>
+        </ul>

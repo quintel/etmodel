@@ -276,10 +276,12 @@ nl:
         veel voor in landen met strenge milieunormen. Kolencentrales behoren tot de meest
         vervuilende energiebronnen, met een CO<sub>2</sub>-uitstoot per opgewekte MWh die
         circa twee keer zo hoog is als die van een gascentrale.<br/><br/>
-        Ga naar de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a>
-        om CO<sub>2</sub>-afvang in te stellen of ga naar de sectie
-        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
-        om de kosten en efficiënties aan te passen voor deze centrales.
+        <ul>
+        <li>Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a> 
+        om de kosten en efficiënties voor deze centrales in te stellen.</li>
+        <li>Ga naar <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">Koolstofafvang, 
+        -gebruik en -opslag</a> om CO<sub>2</sub>-afvang in te stellen.
+        </ul>
     capacity_of_energy_power_ultra_supercritical_ccs_coal:
       title: Poederkolen + CCS
       short_description: ''
@@ -303,10 +305,12 @@ nl:
         zich nog in een vroeg commercieel stadium. Hoewel kolencentrales doorgaans meer dan 75% van
         de tijd op vol vermogen draaien, biedt kolenvergassing meer flexibiliteit dan de conventionele
         kolencentrales.<br/><br/>
-        Ga naar de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a>
-        om CO<sub>2</sub>-afvang in te stellen of ga naar de sectie
-        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a> om de
-        kosten en efficiënties aan te passen voor deze centrales.
+        <ul>
+        <li>Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a> 
+        om de kosten en efficiënties voor deze centrales in te stellen.</li>
+        <li>Ga naar <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">Koolstofafvang, 
+        -gebruik en -opslag</a> om CO<sub>2</sub>-afvang in te stellen.
+        </ul>
     capacity_of_energy_power_combined_cycle_ccs_coal:
       title: Kolenvergassing + CCS
       short_description: ''
@@ -343,9 +347,8 @@ nl:
         Deze slider bepaalt het totale elektrische vermogen van conventionele kolencentrales.
         <br/><br/>Een kolencentrale is een basislastcentrale en draait daarom meer dan 75%
         van de tijd op vol vermogen. Dit type centrale komt vanwege strenge milieuwetgeving
-        steeds minder voor.<br/><br/>Ga naar de sectie
-        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
-        om de kosten en efficiënties van deze centrales aan te passen.
+        steeds minder voor.<br/><br/>Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">
+        Kosten & efficiënties</a> om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_ultra_supercritical_lignite:
       title: Bruinkolen
       short_description: ''
@@ -371,7 +374,7 @@ nl:
         De WKK levert naast elektriciteit ook warmte aan het centrale warmtenet.
         Door de warmteproductie neemt de elektriciteitsefficiëntie iets af.
         Afgezet tegen de totale kosten van een kolencentrale zijn de extra
-        investeringen voor warmteproductie beperkt.<br/><br/> Ga naar de sectie
+        investeringen voor warmteproductie beperkt.<br/><br/> Ga naar 
         <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
@@ -386,7 +389,7 @@ nl:
         investeringen voor warmteproductie beperkt.<br/><br/> Door het opgesteld vermogen
         van poederkolen-WKK's met en zonder bijstook te combineren, kan het totale
         bijstookpercentage van biomassa bij deze centales worden aangepast.<br/><br/>
-        Ga naar de sectie <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_ultra_supercritical_cofiring_coal:
       title: Poederkolen met bijstook
@@ -401,7 +404,7 @@ nl:
         circa twee keer zo hoog is als die van een gascentrale. <br/><br/>
         Door het opgesteld vermogen van poederkolencentrales met en zonder bijstook te
         combineren, kan het totale bijstookpercentage van biomassa bij deze centales
-        worden aangepast.<br/><br/> Ga naar de sectie
+        worden aangepast.<br/><br/> Ga naar 
         <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_wind_turbine_inland: # Overal staat 'windmolen' maar dat moet 'windturbine' zijn denk ik (- ook deze titel)
@@ -463,7 +466,7 @@ nl:
         <br/><br/>Deze conventionele centrales verbranden aardgas om stoom te genereren, die vervolgens een
         stoomturbine aandrijft. Ze zijn minder efficiënt dan STEG-centrales en minder flexibel dan gasturbines,
         maar kunnen langdurig, stabiel draaien. Hierdoor worden ze vooral ingezet voor basislast of middellange
-        periodes van verhoogde elektriciteitsvraag.<br/><br/>Ga naar de sectie
+        periodes van verhoogde elektriciteitsvraag.<br/><br/>Ga naar 
         <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_combined_cycle_network_gas:
@@ -475,10 +478,12 @@ nl:
         aandrijven van een stoomturbine. Dit maakt deze centrales efficiënter dan andere gascentrales.
         Hoewel ze flexibel inzetbaar zijn, reageren ze minder snel dan gasturbines en worden deze daarom
         voornamelijk ingezet voor regelbaar vermogen en niet voor het opvangen van de piekvraag.<br/><br/>
-        Ga naar de sectie <a href="/scenario/ccus/ccus/capture-of-co2-in-energy-sector">CCUS</a>
-        om CO<sub>2</sub>-afvang in te stellen of ga naar de sectie
-        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
-        om de kosten en efficiënties aan te passen voor deze centrales.
+        <ul>
+        <li>Ga naar <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a> 
+        om de kosten en efficiënties voor deze centrales in te stellen.</li>
+        <li>Ga naar <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">Koolstofafvang, 
+        -gebruik en -opslag</a> om CO<sub>2</sub>-afvang in te stellen.
+        </ul>
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas STEG WKK
       short_description:
@@ -513,7 +518,7 @@ nl:
         minder efficiënt. Het voordele van gascentrales is dat deze snel kunnen op- en afschakelen.
         Dit maakt ze geschikt voor het opvangen van de piekvraag en balancering van het elektriciteitsnet.
         Door de inzet van deze centrales bij piekvraag zijn het totaal aantal draaiuren en
-        de jaarlijkse productie van deze centrales beperkt.<br/><br/> Ga naar de sectie
+        de jaarlijkse productie van deze centrales beperkt.<br/><br/> Ga naar 
         <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_engine_network_gas:
@@ -526,7 +531,7 @@ nl:
         zonder efficiëntieverlies. Ondanks hogere operationele kosten zijn de totale kosten
         van gasmotoren relatief laag in vergelijking met andere gascentrales. Dit maakt gasmotoren
         geschikt als back-up naast volatiele elektriciteitsproductie (bijvoorbeeld uit
-        wind- en zonne-energie).<br/><br/> Ga naar de sectie
+        wind- en zonne-energie).<br/><br/> Ga naar 
         <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_chp_local_engine_network_gas:

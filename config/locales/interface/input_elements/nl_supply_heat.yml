@@ -478,10 +478,13 @@ nl:
       title: Zonthermie
       short_description:
       description: |
-        Bij zonthermie wordt de warmte van de zon omgezet in warm water.
-        Deze warmteproductie is vooral groot in de zomer, terwijl de vraag naar warmte
-        hoog is in de winter. Maak gebruik van seizoensopslag voor een effectieve
-        inzet.
+        Deze slider bepaalt het geïnstalleerd vermogen van zonthermie voor hoge-temperatuur (HT) warmtenetten.
+        </br></br>
+        Zonthermie zet zonlicht om in warmte, meestal voor warm water. De productie is het hoogst in de zomer, terwijl de warmtevraag in de winter piekt. Seizoensopslag kan helpen om deze warmte efficiënter te benutten.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/heat_ht/seasonal-storage-of-heat">Seizoensopslag</a>.</li>
+        </ul>
     capacity_of_energy_heat_well_deep_ht_geothermal:
       title: Diepe geothermie
       short_description:
@@ -777,112 +780,102 @@ nl:
     share_of_energy_chp_combined_cycle_ht_network_gas:
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        gas STEG WKK's voor hoge-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door Gas STEG WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Gascentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van Stoom en Gas (STEG) gascentrales met warmtekrachtkoppeling (WKK) voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity/gas-plants">Gascentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_combined_cycle_mt_network_gas:
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        gas STEG WKK's voor midden-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door gas STEG WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Gascentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van Stoom en Gas (STEG) gascentrales met warmtekrachtkoppeling (WKK) voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity/gas-plants">Gascentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_local_engine_ht_biogas:
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        biogas WKK's voor hoge-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door biogas WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van must-run biogascentrales met warmtekrachtkoppeling (WKK) voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_local_engine_mt_biogas:
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        biogas WKK's voor midden-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door biogas WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van must-run biogascentrales met warmtekrachtkoppeling (WKK) voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_local_engine_mt_network_gas:
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        gasmotor WKK's voor midden-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door gasmotor WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Gascentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van gasmotor gascentrales met warmtekrachtkoppeling (WKK) voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity/gas-plants">Gascentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_local_engine_ht_network_gas:
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        gasmotor WKK's voor hoge-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door gasmotor WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Gascentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van gasmotor gascentrales met warmtekrachtkoppeling (WKK) voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity/gas-plants">Gascentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_local_ht_wood_pellets_must_run:
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        biomassa WKK's voor hoge-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door biomassa WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van must-run biomassacentrales met warmtekrachtkoppeling (WKK) voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_local_mt_wood_pellets_must_run:
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        biomassa WKK's voor midden-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door Biomassa WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van must-run biomassacentrales met warmtekrachtkoppeling (WKK) voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_local_ht_wood_pellets_dispatchable:
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        biomassa WKK's voor hoge-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door biomassa WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van regelbare biomassacentrales met warmtekrachtkoppeling (WKK) voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_local_mt_wood_pellets_dispatchable:
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van 
-        biomassa WKK's voor midden-temperatuur warmtenetten in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die wordt geproduceerd door Biomassa WKK's wordt bepaald
-        door het totaal geinstalleerd vermogen. 
-        Ga naar <a href=\"/scenario/supply/electricity/gas-plants\" >Biomassacentrales</a>
-        om dit aan te passen."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van regelbare biomassacentrales met warmtekrachtkoppeling (WKK) voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_ultra_supercritical_cofiring_ht_coal:
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        grootschalige poederkolen WKK's met bijstook voor het hoge-temperatuur warmtenet in te stellen. 
-        \r\n<br/><br/>\r\n 
-        De hoeveelheid warmte die geproduceerd wordt door poederkolen WKK's met bijstook
-        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van poederkolencentrales met warmtekrachtkoppeling (WKK) en bijstook voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity/coal-plants">Kolencentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_ultra_supercritical_ht_lignite:
       title: Hoge temperatuur
       short_description:
@@ -904,89 +897,81 @@ nl:
     share_of_energy_chp_ultra_supercritical_cofiring_mt_coal:
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        grootschalige poederkolen WKK's met bijstook voor het midden-temperatuur warmtenet in te stellen. 
-        \r\n<br/><br/>\r\n 
-        De hoeveelheid warmte die geproduceerd wordt door grootschalige poederkolen WKK's met bijstook
-        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van poederkolencentrales met warmtekrachtkoppeling (WKK) en bijstook voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity/coal-plants">Kolencentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_ultra_supercritical_ht_coal:
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        grootschalige poederkolen WKK's voor het hoge-temperatuur warmtenet in te stellen. 
-        \r\n<br/><br/>\r\n 
-        De hoeveelheid warmte die geproduceerd wordt door poederkolen WKK's met bijstook
-        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van poederkolencentrales met warmtekrachtkoppeling (WKK) voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity/coal-plants">Kolencentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_ultra_supercritical_mt_coal:
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        grootschalige poederkolen WKK's voor het midden-temperatuur warmtenet in te stellen. 
-        \r\n<br/><br/>\r\n 
-        De hoeveelheid warmte die geproduceerd wordt door poederkolen WKK's met bijstook
-        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van poederkolencentrales met warmtekrachtkoppeling (WKK) voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity/coal-plants">Kolencentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_supercritical_ht_waste_mix:
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        afval WKK's voor het hoge-temperatuur warmtenet in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die geproduceerd wordt door afval WKK's
-        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
-        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >hier</a>."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van afvalverbrandingscentrales met warmtekrachtkoppeling (WKK) voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/waste-power">Afvalverbrandingscentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_chp_supercritical_mt_waste_mix:
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        afval WKK's voor het midden-temperatuur warmtenet in te stellen. 
-        \r\n<br/><br/>\r\n
-        De hoeveelheid warmte die geproduceerd wordt door afval WKK's
-        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
-        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >hier</a>."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van afvalverbrandingscentrales met warmtekrachtkoppeling (WKK) voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/electricity_renewable/waste-power">Afvalverbrandingscentrales</a> om het geïnstalleerde vermogen aan te passen.</li>
+        </ul>
     share_of_energy_heat_flexibility_p2h_boiler_ht_electricity:
       title: Hoge temperatuur
       short_description:
-      description:
-        Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        power-to-heat (P2H) boilers voor het hoge-temperatuur warmtenet in te stellen. 
-        <br/><br/>
-        De hoeveelheid warmte die geproduceerd wordt door power-to-heat boilers wordt bepaald door het geïnstalleerde vermogen
-        en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
-        Conversie naar warmte voor warmtenetten</a> sectie.
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van power-to-heat (P2H) boilers voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">Conversie van warmte voor warmtenetten</a> om het geïnstalleerde vermogen en de betalingsbereidheid aan te passen.</li>
+        </ul>
     share_of_energy_heat_flexibility_p2h_boiler_mt_electricity:
       title: Midden temperatuur
       short_description:
-      description:
-        Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        power-to-heat (P2H) boilers voor het midden-temperatuur warmtenet in te stellen. 
-        <br/><br/>
-        De hoeveelheid warmte die geproduceerd wordt door power-to-heat boilers wordt bepaald door het geïnstalleerde vermogen
-        en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
-        Conversie naar warmte voor warmtenetten</a> sectie.
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van power-to-heat (P2H) boilers voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">Conversie van warmte voor warmtenetten</a> om het geïnstalleerde vermogen en de betalingsbereidheid aan te passen.</li>
+        </ul>
     share_of_energy_heat_flexibility_p2h_heatpump_ht_electricity:
       title: Hoge temperatuur
       short_description:
-      description:
-        Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        power-to-heat (P2H) warmtepompen voor het hoge-temperatuur warmtenet in te stellen. 
-        <br/><br/>
-        De hoeveelheid warmte die geproduceerd wordt door power-to-heat warmtepompen wordt bepaald door het geïnstalleerde vermogen
-        en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
-        Conversie naar warmte voor warmtenetten</a> sectie.
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van power-to-heat (P2H) warmtepompen voor het hoge-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">Conversie van warmte voor warmtenetten</a> om het geïnstalleerde vermogen en de betalingsbereidheid aan te passen.</li>
+        </ul>
     share_of_energy_heat_flexibility_p2h_heatpump_mt_electricity:
       title: Midden temperatuur
       short_description:
-      description:
-        Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        power-to-heat (P2H) warmtepompen voor het midden-temperatuur warmtenet in te stellen. 
-        <br/><br/>
-        De hoeveelheid warmte die geproduceerd wordt door power-to-heat warmtepompen wordt bepaald door het geïnstalleerde vermogen
-        en de betalingsbereidheid. Je kunt deze kenmerken wijzigen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
-        Conversie naar warmte voor warmtenetten</a> sectie.
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van power-to-heat (P2H) warmtepompen voor het midden-temperatuur warmtenet.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">Conversie van warmte voor warmtenetten</a> om het geïnstalleerde vermogen en de betalingsbereidheid aan te passen.</li>
+        </ul>

@@ -10,13 +10,15 @@ ___
 
 The first stable version of the ETM is released, marking a major milestone for the model. Traditionally, the ETM has been under continuous development to capture the latest energy system modelling features, bug fixes and updates to datasets. The downside of this was that scenario settings, outcomes and dataset values could change over time. With the the stable version release, users now have the choice to work on the traditional and default version, `#latest`, or on the new and stable version, `#2025-01`.
 
-Note that the release of the stable version does not affect any of the scenarios created before the release.
-
 The overview below shows the differences between `#latest` and `#2025-01` and shows how to switch environments in the model.
 
 -> <img src="/assets/pages/whats_new/stable-version-release.png" width="800" /> <-
 
-The default and stable version of the model are at this moment exactly the same, but as `#latest` will continue to be under development, it will over time diverge from `#2025-01`. The release of the stable version does not affect any of the scenarios created before the release. For more information about stable versions and how to move scenarios to the stable version, see the <a href="https://docs.energytransitionmodel.com/api/intro#environments" target="_blank">API documentation</a>.
+The default and stable version of the model are at this moment exactly the same, but as `#latest` will continue to be under development, it will over time diverge from `#2025-01`. The release of the stable version does not affect any of the scenarios created before the release. For more information about stable versions and how to move scenarios to the stable version, see the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions/#move-scenarios-between-versions" target="_blank">documentation</a>.
+
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  <b>Note</b>: the release of the stable version does not affect any of the scenarios created before the release.
+</div>
 
 ### Other new features
 

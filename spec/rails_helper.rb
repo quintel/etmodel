@@ -137,6 +137,7 @@ RSpec.configure do |config|
 
   config.before(:each, type: :controller) do
     allow(Engine::Area).to receive(:code_exists?).and_return(true)
+    allow(MyEtm::FeaturedScenario).to receive(:in_groups_per_end_year).and_return([])
   end
 
   config.before(:each, :api) do

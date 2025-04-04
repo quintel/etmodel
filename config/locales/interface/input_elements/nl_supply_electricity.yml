@@ -11,10 +11,8 @@ nl:
         worden geleverd aan warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt. 
         Deze technologie wordt vaak toegepast op locaties met toegang tot biogas, zoals 
         afvalverwerkingsinstallaties en waterzuiveringsinstallaties.<br/><br/>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om 
-          in te stellen hoe de warmte wordt ingezet.</li>
-        </ul>
+        Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om 
+          in te stellen hoe de warmte wordt ingezet.
     capacity_of_energy_chp_local_wood_pellets_must_run:
       title: Biomassa-WKK
       short_description:
@@ -25,9 +23,7 @@ nl:
         warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt. Biomassa-WKK's worden 
         vaak ingezet op locaties met toegang tot organisch materiaal, zoals 
         afvalverwerkingsinstallaties of de agrarische sector.<br/><br/>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.</li>
-        </ul>
+        Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.
     capacity_of_energy_chp_local_wood_pellets_dispatchable:
       title: Biomassa-WKK
       short_description:
@@ -37,11 +33,9 @@ nl:
         elektriciteit als warmte door biomassa te verbranden. De opgewekte warmte kan 
         worden geleverd aan warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt. 
         Biomassa-WKK's worden vaak ingezet op locaties met toegang tot organisch materiaal, 
-        zoals afvalverwerkingsinstallaties of de agrarische sector.<br/><br/>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te 
-          stellen hoe de warmte wordt ingezet.</li>
-        </ul>
+        zoals afvalverwerkingsinstallaties of de agrarische sector.<br/><br/>Ga naar 
+        <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de 
+        warmte wordt ingezet.
     capacity_of_energy_power_wood_pellets_must_run:
       title: Biomassacentrale
       short_description:
@@ -183,7 +177,7 @@ nl:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van geconcentreerde zonne-
         energiecentrales (CSP). <br/><br/> CSP-centrales gebruiken spiegels om zonlicht
-        te concentreren en warmte om te zetten in elektriciteit. <br/><br/> Dankzij thermische 
+        te concentreren en warmte om te zetten in elektriciteit. Dankzij thermische 
         opslag kunnen ze ook na zonsondergang stroom leveren. Ze zijn het meest efficiënt in 
         zonnige, droge regio's.</br></br> Ga naar <a href="/scenario/costs/specs_renewable_electricity/solar-power\">
         Kosten & efficiënties</a> om de investeringskosten van deze centrales in te stellen.</li>
@@ -255,11 +249,8 @@ nl:
         terwijl de warmte vaak naar warmtenetten gaat. Door het verbranden van afval worden 
         methaanemissies voorkomen, wat een relatief schone verwerkingsmethode biedt.<br/><br/>
         Het model importeert geen afval, waardoor de beschikbare hoeveelheid afval het potentieel 
-        voor deze technologie bepaalt.<br/><br/>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te 
-          stellen hoe de warmte wordt ingezet.</li>
-        </ul>
+        voor deze technologie bepaalt.<br/><br/> Ga naar <a href="/scenario/supply/heat/heat-sources">
+        Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.
       # Bij uitspraken over het model was afgesproken een 'Let op:' te zetten, maar ik denk niet dat het hier hoeft?
     capacity_of_energy_chp_supercritical_ccs_waste_mix:
       title: Afval-WKK + CCS
@@ -282,21 +273,17 @@ nl:
         en betrouwbaarheid. De bouw ervan duurt gemiddeld 11-12 jaar en is kostbaar, maar eenmaal 
         operationeel draaien ze doorgaans meer dan 80% van de tijd op vol vermogen vanwege lage 
         operationele kosten. De bouw van kerncentrales veroorzaakt CO<sub>2</sub>-uitstoot, maar 
-        geen fossiele brandstoffen worden verbruikt tijdens de werking. <br/><br/>
-        <ul>
-          <li>Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & 
-          efficiënties</a> om de kosten en efficiënties voor deze kerncentrales in te stellen.</li>
-        </ul>
+        geen fossiele brandstoffen worden verbruikt tijdens de werking. <br/><br/> Ga naar 
+        <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om 
+        de kosten en efficiënties voor deze kerncentrales in te stellen.
     capacity_of_energy_power_nuclear_gen2_uranium_oxide:
       title: Kern 2e Gen
       short_description: ''
       description: |
         Deze slider bepaalt het totale elektrische vermogen van tweede-generatie kerncentrales.
         <br/><br/>Tweede-generatie kerncentrales maken gebruik van verouderde technologie 
-        en worden niet meer gebouwd.<br/><br/>
-        <ul>
-          <li>Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de kosten en efficiënties voor deze kerncentrales in te stellen.</li>
-        </ul>
+        en worden niet meer gebouwd.<br/><br/> Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de kosten en efficiënties voor deze kerncentrales 
+        in te stellen.
     capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide:
       title: Kern kleine modulaire reactor
       short_description:
@@ -307,10 +294,8 @@ nl:
         gezet. Dit modulaire ontwerp zorgt voor kortere bouwtijden, lagere kosten en efficiënter 
         ruimtegebruik. Omdat de technologie nog in ontwikkeling is, blijft het onzeker of de 
         verwachte voordelen, zoals lagere kosten per MW, daadwerkelijk gerealiseerd zullen worden.
-        <br/><br/>
-        <ul>
-          <li>Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de kosten en efficiënties voor deze kerncentrales in te stellen.</li>
-        </ul>
+        <br/><br/> Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & 
+        efficiënties</a> om de kosten en efficiënties voor deze kerncentrales in te stellen.
     merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
       title: ''
       description: ''
@@ -510,8 +495,7 @@ nl:
           data-chart-key="sankey_hybrid_offshore" data-chart-location="side">Energiestromen</a>.</li>
           <li>Bekijk de tabel <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" 
           data-chart-location="side">Vermogens en energiestromen</a>.</li>
-        </ul>
-        <br/><br/>
+        </ul><br/>
         Bekijk de <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind">Documentatie</a> 
         voor meer informatie.
     capacity_of_energy_battery_wind_turbine_inland:
@@ -664,13 +648,8 @@ nl:
         wordt ingezet om elektriciteit en warmte te produceren.<br/><br/>Kolengas wordt verbrand in 
         specifieke warmtekrachtkoppelingen (WKK's) en elektriciteitscentrales waardoor warmte en 
         elektriciteit kan worden opgewekt. Deze centrales zijn _must-run_ en produceren zolang er 
-        kolengas beschikbaar is, ongeacht de vraag.
-        <br/><br/>
-        <ul>
-          <li>Bekijk de <a href="#" class="open_chart" data-chart-key="merit_order_table" 
-          data-chart-location="side">Merit order tabel</a> om het geïnstalleerde vermogen van deze 
-          centrales te zien.</li>
-        </ul>
+        kolengas beschikbaar is, ongeacht de vraag.<br/><br/> Bekijk de <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">Merit order tabel</a> om het 
+        geïnstalleerde vermogen van deze centrales te zien.
     share_of_energy_steel_chemical_feedstock_coal_gas:
       title: Grondstof voor chemiesector
       description: |

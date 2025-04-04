@@ -11,15 +11,8 @@ class PagesController < ApplicationController
       assign_settings_and_redirect
     else
       setup_countries_and_regions
-      result = FetchFeaturedScenarios.call(my_etm_client)
 
-      @featured_scenarios = if result.successful?
-        MyEtm::FeaturedScenario.in_groups_per_end_year(
-          result.value.map { |data| MyEtm::FeaturedScenario.new(data) }
-        )
-      else
-        []
-      end
+      @featured_scenarios = MyEtm::FeaturedScenario.in_groups_per_end_year
     end
   end
 

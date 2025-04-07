@@ -13,23 +13,27 @@
   sidebar_item_key: flexibility_storage
   alt_output_element_key: energy_storage
   output_element_key: flexibility_hourly_p2p_storage
-- key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
+- general_sub_header: electricity_input
+  key: flexibility_power_storage_energy_flexibility_mv_batteries_electricity
   position: 300
   sidebar_item_key: flexibility_storage
   alt_output_element_key: energy_storage
   output_element_key: flexibility_hourly_p2p_storage
-- key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
+- general_sub_header: electricity_input
+  key: flexibility_power_storage_energy_flexibility_pumped_storage_electricity
   dependent_on: has_mountains
   position: 400
   sidebar_item_key: flexibility_storage
   alt_output_element_key: energy_storage
   output_element_key: flexibility_hourly_p2p_storage
-- key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
+- general_sub_header: electricity_input
+  key: flexibility_power_storage_energy_flexibility_hv_opac_electricity
   position: 500
   sidebar_item_key: flexibility_storage
   alt_output_element_key: energy_storage
   output_element_key: flexibility_hourly_p2p_storage
-- key: flexibility_power_storage_energy_flexibility_flow_batteries_electricity
+- general_sub_header: electricity_input
+  key: flexibility_power_storage_energy_flexibility_flow_batteries_electricity
   position: 550
   sidebar_item_key: flexibility_storage
   alt_output_element_key: energy_storage

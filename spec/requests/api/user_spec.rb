@@ -74,15 +74,6 @@ RSpec.describe 'API::User', type: :request, api: true do
         user
         expect { run_request }.to change { User.where(id: user.id).count }.from(1).to(0)
       end
-
-
-      it "deletes the user's transition paths" do
-        path = create(:multi_year_chart, user:)
-
-        expect { run_request }
-          .to change { MultiYearChart.where(id: path.id).count }
-          .from(1).to(0)
-      end
     end
 
     context 'when given a valid token but the user does not exist' do

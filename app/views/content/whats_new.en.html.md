@@ -9,7 +9,6 @@ ___
 <details>
   <summary>**Bug fixes**</summary>
 
-  * Consistency was missing in how input and output capacity of storage technologies were defined. Specifically for <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_storage/large-scale-batteries" target="_blank">large-scale batteries</a> and <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_storage/flow-batteries" target="_blank">flow batteries</a>, the output capacity did not equal the input capacity, which sometimes made it difficult to model the intended battery behaviour. This issue is now fixed by aligning the input and output capacity of these technologies, which is also te case for other storage technologies. As a result, the installed output capacity of these technologies might have slightly changed in existing scenarios.
   * There was a significant discrepancy between the hourly and annual network gas calculations when a scenario was <a href="https://docs.energytransitionmodel.com/main/external-coupling/" target="_blank">coupled</a> with the Carbon Transition Model. This problem arised in industrial transformation. This issue is now solved.
 
 </details>

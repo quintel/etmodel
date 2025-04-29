@@ -49,10 +49,18 @@ nl:
     max_demand_of_wet_biomass:
       title: Natte biomassa
       short_description:
-      description: 'Natte biomassa is biomassa met een vochtpercentage van minimaal
+      description: |
+        Deze slider bepaalt hoeveel energie er per jaar uit natte biomassa gehaald zou
+        kunnen worden. <br/><br/>
+        
+        
+        
+        'Natte biomassa is biomassa met een vochtpercentage van minimaal
         40-50%. Hieronder valt: resten van de voedings- en genootmiddelindustrie (VGI),
         agrarische reststrommen, rioolsib, aquatische biomassa, geteelde graanproducten
         etc.'
+
+      # Ik heb het nu verwoord als 'energie per jaar' maar dit zou ook 'energetische potentie' kunnen zijn, of gewoon 'potentie'. Ik vind zelf 'potentie' niet duidelijk genoeg...
     max_demand_of_dry_biomass:
       title: Droge biomassa
       short_description:

@@ -6,18 +6,20 @@ ___
 
 **Nieuwe functies**
 
+* Meerdere verbeteringen zijn gedaan om de rekensnelheid van het model te verhogen, wat bijdraagt aan een betere gebruikerservaring.
+* Update van de startjaardata van de Antwerpen dataset, gerelateerd aan xxx. Ga naar de <a href="https://data.energytransitionmodel.com/datasets/BEGM11002" target="_blank">Dataset Manager</a> om de dataset te bekijken.
+
 <details>
   <summary>**Bug fixes**</summary>
 
-  * In tegenstelling tot andere opslagtechnologieën was het typische outputvermogen van <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_storage/large-scale-batteries" target="_blank">grootschalige batterijen</a> en <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_storage/flow-batteries" target="_blank">flowbatterijen</a> niet gelijk aan het inputvermogen, wat het soms bemoeilijkte om het gewenste gedrag van deze batterijen te modelleren. Het outputvermogen van deze batterijen is nu gelijkgestelt aan het inputvermogen. Als gevolg hiervan kan het opgestelde outputvermogen van dit type batterijen enigszins veranderd zijn in bestaande scenario's.
-  * Er was een significante discrepantie tussen de uurlijkse en jaarlijkse berekeningen van netwerkgas wanneer een scenario waws <a href="https://docs.energytransitionmodel.com/main/external-coupling/" target="_blank">gekoppeld</a> met het Carbon Transition Model. Dit probleem deed zich voor in industriële transformatie. Dit issue is nu verholpen.
+  * Hoewel er continu wordt gewerkt aan het verhelpen van issues, zijn er deze maand geen issues verholpen die noemenswaardig zijn.
 
 </details>
 
 <details>
   <summary>**Technical changelog**</summary>
 
-  * No relevant changes to inputs have been made.
+  * Er zijn geen relevante wijzigingen in inputs.
 
 </details>
 </br>

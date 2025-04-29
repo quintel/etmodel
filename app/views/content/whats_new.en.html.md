@@ -6,10 +6,13 @@ ___
 
 **New features**
 
+* Several improvements have been made to increase the speed of model calculations, contributing to a better user experience.
+* Update of the start year data of the Antwerp dataset, related to xxx . Consult the <a href="https://data.energytransitionmodel.com/datasets/BEGM11002" target="_blank">Dataset Manager</a> to view this dataset.
+
 <details>
   <summary>**Bug fixes**</summary>
 
-  * There was a significant discrepancy between the hourly and annual network gas calculations when a scenario was <a href="https://docs.energytransitionmodel.com/main/external-coupling/" target="_blank">coupled</a> with the Carbon Transition Model. This problem arised in industrial transformation. This issue is now solved.
+  * Although issues are continuously being solved, this month does not have solved issues relevant to mention here.
 
 </details>
 

@@ -7,7 +7,7 @@ ___
 **New features**
 
 * Several improvements have been made to increase the speed of model calculations, contributing to a better user experience.
-* Update of the start year data of the Antwerp dataset, related to xxx . Consult the <a href="https://data.energytransitionmodel.com/datasets/BEGM11002" target="_blank">Dataset Manager</a> to view this dataset.
+* Improvements in start year data of the Antwerp dataset, related to transport and heating in the built environment. Consult the <a href="https://data.energytransitionmodel.com/datasets/BEGM11002" target="_blank">Dataset Manager</a> to view this dataset.
 
 <details>
   <summary>**Bug fixes**</summary>

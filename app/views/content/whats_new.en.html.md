@@ -12,7 +12,7 @@ ___
 <details>
   <summary>**Bug fixes**</summary>
 
-  * Although issues are continuously being solved, this month does not have solved issues relevant to mention here.
+  * Although issues are continuously being solved, this month does not have any solved issues relevant to mention here.
 
 </details>
 

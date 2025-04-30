@@ -7,7 +7,7 @@ ___
 **Nieuwe functies**
 
 * Meerdere verbeteringen zijn gedaan om de rekensnelheid van het model te verhogen, wat bijdraagt aan een betere gebruikerservaring.
-* Update van de startjaardata van de Antwerpen dataset, gerelateerd aan transport en ruimteverwarming in de gebouwde omgeving. Ga naar de <a href="https://data.energytransitionmodel.com/datasets/BEGM11002" target="_blank">Dataset Manager</a> om de dataset te bekijken.
+* Verbetering van startjaardata van de Antwerpen dataset, gerelateerd aan transport en ruimteverwarming in de gebouwde omgeving. Ga naar de <a href="https://data.energytransitionmodel.com/datasets/BEGM11002" target="_blank">Dataset Manager</a> om de dataset te bekijken.
 
 <details>
   <summary>**Bug fixes**</summary>

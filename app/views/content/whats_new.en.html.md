@@ -2,6 +2,30 @@
 
 ___
 
+# May 2025
+
+**New features**
+
+* Several improvements have been made to increase the speed of model calculations, contributing to a better overall user experience.
+* Improvements in start year data of the Antwerp dataset have been made, related to transport and heating in the built environment. Consult the <a href="https://data.energytransitionmodel.com/datasets/BEGM11002" target="_blank">Dataset Manager</a> to view this dataset.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * Although issues are continuously being solved, this month does not have any bug fixes relevant to mention here.
+
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * No relevant changes to inputs have been made.
+
+</details>
+</br>
+
+___
+
 # April 2025
 
 ## New features

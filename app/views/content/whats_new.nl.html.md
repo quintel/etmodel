@@ -2,6 +2,30 @@
 
 ___
 
+# Mei 2025
+
+**Nieuwe functies**
+
+* Meerdere verbeteringen zijn gedaan om de rekensnelheid van het model te verhogen, wat bijdraagt aan een betere gebruikerservaring.
+* Verbeteringen aan startjaardata van de dataset van Antwerpen zijn geïmplementeerd, gerelateerd aan transport en ruimteverwarming in de gebouwde omgeving. Ga naar de <a href="https://data.energytransitionmodel.com/datasets/BEGM11002" target="_blank">Dataset Manager</a> om de dataset te bekijken.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * Hoewel er continu wordt gewerkt aan het verhelpen van issues, zijn er deze maand geen noemenswaardige bug fixes.
+
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * Er zijn geen relevante wijzigingen in inputs.
+
+</details>
+</br>
+
+___
+
 # April 2025
 
 ## Nieuwe functies

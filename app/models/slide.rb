@@ -118,6 +118,7 @@ class Slide < YModel::Base
   end
 
   def subheader_image_available?
+    return false unless respond_to?(:subheader_image)
     return false if subheader_image.blank?
     return true if subheader_image_dependent_on_country.blank?
 

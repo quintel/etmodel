@@ -25,7 +25,6 @@ describe Slide do
     it { is_expected.to respond_to(:image) }
     it { is_expected.to respond_to(:general_sub_header) }
     it { is_expected.to respond_to(:group_sub_header) }
-    it { is_expected.to respond_to(:subheader_image) }
     it { is_expected.to respond_to(:key) }
     it { is_expected.to respond_to(:position) }
     it { is_expected.to respond_to(:sidebar_item_key) }

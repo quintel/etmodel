@@ -665,40 +665,40 @@ nl:
     green_gas_total_share:
       title: Groen gas
       short_description: ''
-      description: Dit schuifje stelt in hoeveel van het totale gasgebruik groen is.
-        Groen gas wordt gewoonlijk gemaakt door bacterieën die biologisch materiaal
-        verteren met daarna een opwerkingsstap tot aardgaskwaliteit. In de toekomst
-        wordt groen gas mogelijk ook gemaakt door biomassa te vergassen, deze technologie
-        is in te stellen bij <a href="/scenario/supply/biomass/green-gas-production">groengasproductie</a>.
+      description: |
+        Deze slider bepaalt het aandeel groen gas in de gasmix.<br/><br/> Groen gas 
+        onstaat meestal door vergisting van biogeen afval, waarna het wordt opgewerkt 
+        tot aardgaskwaliteit.<br/><br/> Ga naar <a href="/scenario/supply/biomass/green-
+        gas-production">Groengasproductie</a> om in te stellen hoe groen gas wordt 
+        geproduceerd.
     natural_gas_total_share:
       title: Aardgas
       short_description: ''
-      description: "Dit schuifje stelt in welk percentage van alle gasgebruik aardgas
-        is. Aardgas is een relatief schone fossiele brandstof die vooral wordt gebruikt
-        om warmte en elektriciteit te maken. Het wordt nog maar weinig voor transport
-        ingezet.\r\n<br/>Naast CO<sub>2</sub> leidt de verbranding van gas ook vaak
-        tot uitstoot van NO<sub>x</sub>."
+      description: |
+        Deze slider bepaalt het aandeel aardgas in de gasmix. <br/><br/> Aardgas is een 
+        relatief schone fossiele brandstof die vooral wordt gebruikt voor verwarming en 
+        het opwekken van elektriciteit. Bij verbranding ontstaan echter ook koolstofdioxide 
+        en stikstofoxiden.
     propane_gas_total_share:
       title: Propaan
       short_description: ''
       description: |
-        Dit schuifje stelt in welk percentage van alle gasgebruik propaan
-        is. Propaan kan worden bijgemengd in de gasmix om de energetische waarde van het netwerkgas te verhogen.
-        Dit kan bijvoorbeeld relevant zijn om te compenseren voor een lagere energetische waarde van andere bijgemengde gassen,
-        zoals biogas.
+        Deze slider bepaalt het aandeel propaan in de gasmix. <br/><br/> Propaan kan worden 
+        bijgemengd om de energetische waarde van het gas te verhogen, bijvoorbeeld ter 
+        compensatie van lagere waarden in biogas.
     energy_treatment_natural_gas_share:
       title: Aardgas
       short_description:
-      description: Welk percentage van het aardgas in het nationale gas netwerk is
-        aardgas?
+      description: |
+        Deze slider bepaalt het aandeel aardgas in de aardgasmix.
     energy_regasification_lng_share:
       title: Hervergast LNG
       short_description:
-      description: Welk percentage van het gas in het nationale gasnetwerk is hervergast  LNG?
-        Vloeibaar aardgas wordt geïmporteerd vanuit met name Noorwegen en het Midden-Oosten,
-        dan hervergast tot aardgas bij import terminals en tot slot het gas netwerk
-        ingevoerd.  In vloeibare vorm (dus als LNG) wordt het enkel in de transport
-        sector gebruikt.
+      description: |
+        Deze slider bepaalt het aandeel hervergast vloeibaar aardgas (LNG) in de aardgasmix.
+        <br/><br/> Hervergast LNG is vloeibaar aardgas dat wordt geïmporteerd en bij aankomst 
+        omgezet naar gasvorm. Het wordt toegevoegd om de vraag aan te vullen of tekorten op 
+        te vangen.
     share_of_energy_steel_energy_production_coal_gas:
       title: Energieproductie
       description: |

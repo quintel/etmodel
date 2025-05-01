@@ -1,0 +1,48 @@
+-# flexible demand economic performance table
+%table.chart.autostripe
+  %thead
+    %tr
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.technology'
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.position'
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.output_capacity'
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.flh_future'
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.capex'
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.opex'
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.revenue'
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.profit'
+    %tr
+      %th
+      %th
+      %th MW
+      %th= t 'output_elements.tables.flexible_demand_economic_performance.hour'
+      %th EUR/MWh
+      %th EUR/MWh
+      %th EUR/MWh
+      %th EUR/MWh
+  %tbody
+    :ruby
+      items = [
+        'p2h_boiler_mt',
+        'p2h_boiler_ht',
+        'p2h_heatpump_mt',
+        'p2h_heatpump_ht',
+        'p2h_boiler_refineries',
+        'p2h_boiler_fertilizers',
+        'p2h_boiler_chemicals',
+        'p2h_boiler_food',
+        'p2h_boiler_paper',
+        'p2h_boiler_agriculture',
+        'synthetic_kerosene',
+        'electrolyser_onshore',
+        'electrolyser_offshore'
+      ]
+    - items.each do |key|
+      %tr
+        %th= raw t "output_elements.tables.flexible_demand_economic_performance.#{key}"
+        %td.position{:data => {:decimals => 0, :gquery => "flexible_demand_economic_performance_#{key}_position_in_flexible_demand_economic_performance_table", :on_zero => '-'}}
+        %td.capacity{:data => {:decimals => 0, :gquery => "flexible_demand_economic_performance_#{key}_capacity_in_flexible_demand_economic_performance_table"}}
+        %td{:data => {:decimals => 0, :gquery => "flexible_demand_economic_performance_#{key}_full_load_hours_in_flexible_demand_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "flexible_demand_economic_performance_#{key}_capex_in_flexible_demand_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "flexible_demand_economic_performance_#{key}_opex_in_flexible_demand_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "flexible_demand_economic_performance_#{key}_revenue_in_flexible_demand_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "flexible_demand_economic_performance_#{key}_profit_in_flexible_demand_economic_performance_table"}}

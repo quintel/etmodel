@@ -595,83 +595,75 @@ nl:
       title: Marktaandeel
       short_description:
       description: |
-        Met dit schuifje kan je bepalen welk percentage van de huishoudens wordt uitgerust met een batterij.
-        Bij de 'Technische parameters en kosten' kun je vervolgens zien wat het totaal geïnstalleerde vermogen
-        en opslagvolume is. De investeringskosten en efficiëntie van batterijen in huishoudens kunnen
-        <a href="/scenario/costs/costs_flexibility/electricity-storage">hier</a> worden aangepast. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
-        van de installatie van batterijen in huishoudens: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt. Deze parameters kun
-        je met de onderstaande schuifjes veranderen. De uurlijkse elektriciteitsprijs is te zien in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        deze grafiek</a>.
+        Deze slider bepaalt welk percentage van de huishoudens wordt voorzien van een batterij.
+        <br/><br/> Wanneer er geen effect wordt waargenomen bij het aanpassen van deze slider, 
+        kan dit betekenen dat de uurlijke elektriciteitsprijs buiten de <em>willingness-to-pay</em> 
+        of <em>willingness-to-accept</em> valt. Deze parameters kunnen worden aangepast via de 
+        onderstaande sliders.<br/><br/><ul><li>Open de grafiek <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">Elektricietitsprijs 
+        op uurbasis</a>.</li><li>Open de grafiek <a href="#" class="open_chart" data-chart-key=
+        "use_of_excess_electricity" data-chart-location="side">Gebruik van flexibele 
+        elektriciteitsvraag</a>.</li><li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side"> Flexibele 
+        elektriciteitsvraag- en aanbod per uur</a>.</li><li>Open de grafiek <a href="#" class=
+        "open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        Integrale kosten van flexibele elektriciteitsvraag</a>.</li><li>Open de tabel <a href=
+        "#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Technologieën met flexibele elektriciteitsvraag</a>.</li><li>Ga naar <a href=
+        "/scenario/costs/costs_flexibility/electricity-storage">Kosten & efficiënties</a> om 
+        de investeringskosten en efficiëntie van de batterijen aan te passen.</li><li>Zie 
+        'Technische parameters en kosten' voor informatie over het geïnstalleerde vermogen en 
+        opslagvolume.</li></ul>
     volume_of_households_flexibility_p2p_electricity:
       title: Relatief opslagvolume
       short_description:
       description: |
-        Met dit schuifje kun je het opslagvolume van de batterij relatief ten opzichte van het inputvermogen instellen.
-        Dit bepaalt hoeveel uur de batterij op vol vermogen moet laden om van leeg naar volledig vol te gaan.
-        Effectief verandert dit schuifje daarom het totale opslagvolume, gegeven een bepaalde hoeveelheid
-        geïnstalleerd vermogen. </br></br>
-        Het totale opslagvolume kun je zien in de 'Technische parameters en kosten' hieronder. Als het snel wilt
-        vergelijken met andere opslagtechnologieën kun je ook
-        <a href="#" class="open_chart" data-chart-key="storage_specifications" data-chart-location="side">
-        deze tabel</a> openen.
+        Deze slider bepaalt hoeveel uur een batterij moet laden op vol vermogen om volledig 
+        te worden opgeladen.<br/><br/> De ingestelde waarde geeft aan hoeveel uur de batterij 
+        moet laden bij het gegeven inputvermogen om het totale opslagvolume te bereiken. 
+        Een hogere waarde betekent een grotere opslagcapaciteit bij hetzelfde vermogen.<br/>
+        <br/><ul><li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_specifications" 
+        data-chart-location="side">Specificaties opslagtechnologieën elektriciteit</a> om te 
+        vergelijken met andere technologieën.</li><li>Zie 'Technische parameters en kosten' 
+        voor het totale opslagvolume.</li></ul>
     wtp_of_households_flexibility_p2p_electricity:
       title: Willingness-to-pay
       short_description:
       description: |
-        Met dit schuifje kan je bepalen wat de maximale prijs is die batterijen in huishoudens bereid zijn te
-        betalen om elektriciteit op te slaan. Let op dat dit schuifje pas effect heeft als er ook vermogen is
-        geïnstalleerd voor deze batterijen. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
-        van de willingness-to-pay van batterijen in huishoudens: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        deze grafiek</a>.
+        Deze slider bepaalt de maximale prijs die huishoudens bereid zijn te betalen voor het 
+        opslaan van elektriciteit in batterijen. <br/><br/> Wanneer er geen effect wordt waargenomen 
+        bij het aanpassen van deze slider, kan het zijn dat de uurlijkse elektriciteitsprijs 
+        buiten de <em>willingness-to-pay</em> of <em>willingness-to-accept</em> valt.<br/><br/>
+        <em>Let op:</em> Deze slider heeft alleen effect als er vermogen is geïnstalleerd voor 
+        de batterijen.<br/><br/><ul><li>Open de grafiek <a href="#" class="open_chart" 
+        data-chart-key="merit_order_price_curve" data-chart-location="side">Elektricietitsprijs 
+        op uurbasis</a>.</li><li>Open de grafiek <a href="#" class="open_chart" data-chart-key=
+        "use_of_excess_electricity" data-chart-location="side">Gebruik van flexibele 
+        elektriciteitsvraag</a>.</li><li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side"> Flexibele 
+        elektriciteitsvraag- en aanbod per uur</a>.</li><li>Open de grafiek <a href="#" class=
+        "open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        Integrale kosten van flexibele elektriciteitsvraag</a>.</li><li>Open de tabel <a href=
+        "#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wta_of_households_flexibility_p2p_electricity:
       title: Willingness-to-accept
       short_description:
       description: |
-        Met dit schuifje kan je bepalen wat de minimale prijs is die batterijen in huishoudens willen ontvangen
-        om elektriciteit te ontladen. Als je wilt dat deze batterij winstgevend is, is het aan te raden de
-        willingness-to-accept met een marge hoger te zetten dan de willingness-to-pay om zo eventuele
-        opslagverliezen te compenseren. Let op dat dit schuifje pas effect heeft als er ook vermogen is
-        geïnstalleerd voor deze batterijen. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect is
-        van de willingness-to-accept van batterijen in huishoudens: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul> </br>
-        Als je geen effect ziet van veranderingen in dit schuifje, dan kan het zijn dat de uurlijkse elektriciteitsprijs
-        nooit onder de willingness-to-pay zakt, of nooit boven de willingness-to-accept uitkomt.
-        De uurlijkse elektriciteitsprijs is te zien in
-        <a href="#" class="open_chart" data-chart-key="merit_order_price_curve" data-chart-location="side">
-        deze grafiek</a>.
+        Deze slider bepaalt de minimale prijs die huishoudens bereid zijn te accepteren voor het 
+        leveren van elektriciteit vanuit batterijen.<br/><br/> Wanneer er geen effect wordt 
+        waargenomen bij het aanpassen van deze slider, kan het zijn dat de uurlijke 
+        elektriciteitsprijs boven de <em>willingness-to-accept</em> of onder de 
+        <em>willingness-to-pay</em> ligt. Om de batterij winstgevend te maken, is het aan te 
+        raden de minimale prijs met een marge boven de <em>willingness-to-pay</em> in te stellen, 
+        zodat eventuele opslagverliezen gecompenseerd worden.<br/><br/><em>Let op</em>: Deze 
+        slider heeft alleen effect als er vermogen is geïnstalleerd voor de batterijen. <br/><br/>
+        <ul><li>Open de grafiek <a href="#" class="open_chart"data-chart-key="merit_order_price_curve" data-chart-location="side">Elektricietitsprijs op uurbasis</a>.</li><li>Open de grafiek 
+        <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location=
+        "side">Gebruik van flexibele elektriciteitsvraag</a>.</li><li>Open de grafiek <a href="#" 
+        class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side"> 
+        Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li><li>Open de grafiek <a href="#" 
+        class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
+        Integrale kosten van flexibele elektriciteitsvraag</a>.</li><li>Open de tabel <a href=
+        "#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
+        Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     transport_car_using_electricity_availability:
       title: Inzetbaar vermogen
       short_description:
@@ -1586,9 +1578,5 @@ nl:
       title: Voortschrijdend gemiddelde tijdsperiode
       short_description:
       description: |
-        Met dit schuifje kun je de tijdsperiode instellen van het voortschrijdend gemiddelde dat wordt
-        toegepast op de residual load curve van netwerkgas en waterstof in
-        <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
-        deze grafiek</a>. </br></br>
-        Het voortschrijdend gemiddelde wordt toegepast om onderscheid te maken tussen een korte en lange
-        termijn flexibiliteitsbehoefte. Met dit schuifje kun je dat onderscheid aanpassen.
+        Deze slider bepaalt over hoeveel uur het voortschrijdend gemiddelde wordt berekend voor de residual load curve van netwerkgas en waterstof. <br/><br/> Een korte periode legt de nadruk op snelle, dagelijkse fluctuaties (kortetermijnflexibiliteit), terwijl een lange periode juist trage, structurele schommelingen zichtbaar maakt (langetermijnflexibiliteit). De gekozen waarde beïnvloedt dus welk type flexibiliteitsbehoefte wordt getoond. <br/><br> Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
+        Onbalans (residual load) per uur</a>.

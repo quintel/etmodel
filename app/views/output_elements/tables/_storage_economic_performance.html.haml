@@ -3,7 +3,7 @@
   %thead
     %tr
       %th= t 'output_elements.tables.economic_performance.technology'
-      %th= t 'output_elements.tables.economic_performance.position'
+      %th= t 'output_elements.tables.economic_performance.wtp'
       %th= t 'output_elements.tables.economic_performance.output_capacity'
       %th= t 'output_elements.tables.economic_performance.flh_future'
       %th= t 'output_elements.tables.economic_performance.capex'
@@ -25,17 +25,17 @@
         'batteries_households',
         'batteries_electric_cars',
         'batteries_electric_buses',
-        'batteries_electric_vans',
         'batteries_electric_trucks',
-        'batteries_pumped_storage',
-        'batteries_opac',
+        'batteries_electric_vans',
         'batteries_mv',
+        'pumped_storage',
+        'batteries_opac',
         'batteries_flow'
       ]
     - items.each do |key|
       %tr
         %th= raw t "output_elements.tables.economic_performance.#{key}"
-        %td.position{:data => {:decimals => 0, :gquery => "#{key}_position_in_storage_economic_performance_table", :on_zero => '-'}}
+        %td.position{:data => {:decimals => 0, :gquery => "#{key}_wtp_in_storage_economic_performance_table", :on_zero => '-'}}
         %td.capacity{:data => {:decimals => 0, :gquery => "#{key}_capacity_in_storage_economic_performance_table"}}
         %td{:data => {:decimals => 0, :gquery => "#{key}_full_load_hours_in_storage_economic_performance_table"}}
         %td.cost{:data => {:decimals => 1, :gquery => "#{key}_capex_in_storage_economic_performance_table"}}

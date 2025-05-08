@@ -1,8 +1,8 @@
 -# power plant economic performance table
-%table.chart.autostripe
+%table.chart.centered.autostripe
   %thead
     %tr
-      %th= t 'output_elements.tables.economic_performance.technology'
+      %th
       %th= t 'output_elements.tables.economic_performance.position'
       %th= t 'output_elements.tables.economic_performance.output_capacity'
       %th= t 'output_elements.tables.economic_performance.flh_future'
@@ -101,11 +101,11 @@
       ]
     - items.each do |key|
       %tr
-        %th= raw t "output_elements.tables.economic_performance.#{key}"
+        %th.left= raw t "output_elements.tables.economic_performance.#{key}"
         %td.position{:data => {:decimals => 0, :gquery => "#{key}_position_in_power_plant_economic_performance_table", :on_zero => '-'}}
         %td.capacity{:data => {:decimals => 0, :gquery => "#{key}_capacity_in_power_plant_economic_performance_table"}}
         %td{:data => {:decimals => 0, :gquery => "#{key}_full_load_hours_in_power_plant_economic_performance_table"}}
-        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_capex_in_power_plant_economic_performance_table"}}
-        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_opex_in_power_plant_economic_performance_table"}}
-        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_revenue_in_power_plant_economic_performance_table"}}
-        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_profit_in_power_plant_economic_performance_table"}}
+        -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_capex_in_power_plant_economic_performance_table"}}
+        -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_opex_in_power_plant_economic_performance_table"}}
+        -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_revenue_in_power_plant_economic_performance_table"}}
+        -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_profit_in_power_plant_economic_performance_table"}}

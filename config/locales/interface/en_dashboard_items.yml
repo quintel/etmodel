@@ -28,13 +28,16 @@ en:
         be locally produced. The potential of biomass in your region could be adjusted
         with <a href="/scenario/supply/biomass/potential-of-biomass" >these sliders</a>.
     blackout_hours:
-      label: Blackouts
-      title: Number of blackout hours
-      description: Blackouts occur when the electricity supply cannot meet the demand
-        and it is not possible to fill this gap by importing electricity, because
-        of limited interconnector capacity, or by using electricity that is stored
-        in batteries. The ETM calculates the hourly electricity supply and determines
-        the number of blackout hours from this.
+      label: Power shortage
+      title: Power shortage
+      description:
+        Shortages occur when electricity supply is insufficient to meet electricity
+        demand and when it is not possible to fill this gap with electricity import
+        or flexible technologies such as electricity storage. The ETM calculates
+        power shortages on hourly basis.<br/><br/>
+        The table below shows information about the volume, peak capacity and duration of power
+        shortages. The volume and peak capacity of the total electricity demand is
+        provided to give an indication of the magnitude of power shortages in a scenario.
     co2_reduction:
       label: CO<sub>2</sub> relative to 1990
       title: CO<sub>2</sub> emissions relative to 1990

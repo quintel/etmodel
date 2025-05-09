@@ -369,36 +369,33 @@ nl:
       title: Power-to-heat boiler
       short_description:
       description: |
-        Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat boilers die met
-        elektriciteit warmte maken voor
-        <a href="/scenario/supply/heat/allocation-of-power-to-heat">warmtenetten</a>. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van power-to-heat vermogen is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraag.technnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt het geïnstalleerde vermogen van power-to-heat boilers die 
+        elektriciteit omzetten in warmte voor warmtenetten. <br/><br/>
+        <ul><li>Ga naar <a href="/scenario/supply/heat/allocation-of-power-to-heat"> 
+        Warmtenetten</a>om in te stellen naar welk warmtenet de warmte wordt toegewezen.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" 
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" 
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" 
+        data-chart-location="side">Integrale kosten van flexible elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location=
+        "side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     capacity_of_energy_heat_flexibility_p2h_heatpump_electricity:
       title: Power-to-heat warmtepomp
       short_description:
       description: |
-        Dit schuifje bepaalt het geïnstalleerde vermogen van power-to-heat warmtepompen die met
-        omgevingswarmte en elektriciteit warmte maken voor
-        <a href="/scenario/supply/heat/allocation-of-power-to-heat">warmtenetten</a>. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van power-to-heat vermogen is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraag.technnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt het geïnstalleerde vermogen van power-to-heat warmtepompen die elektriciteit omzetten in warmte voor warmtenetten.<br/><br/>
+        <ul><li>Ga naar <a href="/scenario/supply/heat/allocation-of-power-to-heat"> 
+        Warmtenetten</a>om in te stellen naar welk warmtenet de warmte wordt toegewezen.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" 
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" 
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" 
+        data-chart-location="side">Integrale kosten van flexible elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location=
+        "side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     flexibility_heat_pump_space_heating_cop_cutoff_gas:
       title: Ruimteverwarming (gas)
       short_description:
@@ -1190,37 +1187,33 @@ nl:
       title: Power-to-gas
       short_description:
       description: |
-        Dit schuifje bepaalt het geïnstalleerde vermogen aan power-to-gas installaties.
-        De investeringskosten en efficiëntie van elektrolysers kunnen
-        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hier</a> worden
-        aangepast. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van power-to-gas vermogen is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt het geïnstalleerd vermogen van power-to-gas installaties.<br/><br/>
+        <ul><li>Ga naar  <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Waterstofproductie</a> 
+        om de investeringskosten en efficiëntie van elektrolysers aan te passen.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" 
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" 
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" 
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location=
+        "side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_energy_hydrogen_flexibility_p2g_electricity:
       title: Power-to-gas
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die offshore hybride installaties willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze installaties
-        geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen offshore hybride installaties elektriciteit afnemen.
+        <br/><br>
+        <em>Let op:</em> Deze slider heeft alleen effect als er vermogen is geïnstalleerd.
+        <br/><br/>
+        <ul><li>Open de grafiek <a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" 
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" 
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" 
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location=
+        "side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_energy_hydrogen_hybrid_electrolysis_wind_electricity:
       title: Elektrolyser op zee
       short_description:
@@ -1240,166 +1233,146 @@ nl:
       title: Power-to-heat boiler
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor power-to-heat
-        boilers geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-heat is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen power-to-heat boilers 
+        elektriciteit afnemen. <br/><br/><em>Let op:</em> Deze slider heeft alleen effect als 
+        er vermogen is geïnstalleerd.<br/><br/>
+        <ul><li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_energy_heat_flexibility_p2h_heatpump_electricity:
       title: Power-to-heat warmtepomp
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat warmtepompen willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor power-to-heat
-        warmtepompen geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-heat is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen power-to-heat warmtepompen 
+        elektriciteit afnemen. <br/><br/><em>Let op:</em> Deze slider heeft alleen effect als 
+        er vermogen is geïnstalleerd.<br/><br/>
+        <ul><li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor raffinaderijen
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in
-        <a href="/scenario/demand/industry/refineries">raffinaderijen</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
-        gas- of waterstofketels in raffinaderijen geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-heat is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen power-to-heat boilers in 
+        raffinaderijen elektriciteit afnemen. <br/><br/>
+        <ul><li>Ga naar <a href="/scenario/demand/industry/refineries">Raffinaderijen</a> 
+        om power-to-heat boilers te installeren.</li>
+        <li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_industry_chemicals_fertilizers_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor kunstmestindustrie
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
-        <a href="/scenario/demand/industry/fertilizers">kunstmestindustrie</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
-        gas- of waterstofketels in de kunstmestindustrie geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-heat is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen power-to-heat boilers in 
+        de kunstmestindustrie elektriciteit afnemen. <br/><br/>
+        <ul><li>Ga naar <a href="/scenario/demand/industry/fertilizers">Kunstmestindustrie</a> 
+        om power-to-heat boilers te installeren.</li>
+        <li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_industry_chemicals_other_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor chemische industrie
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
-        <a href="/scenario/demand/industry/chemicals">chemische industrie</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
-        gas- of waterstofketels in de chemische industrie geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-heat is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen power-to-heat boilers 
+        in de chemische industrie elektriciteit afnemen. <br/><br/>
+        <ul><li>Ga naar <a href="/scenario/demand/industry/chemicals">Chemische industrie</a> 
+        om power-to-heat boilers te installeren.</li>
+        <li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_industry_other_food_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor voedingsmiddelenindustrie
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
-        <a href="/scenario/demand/industry/food">voedingsmiddelenindustrie</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
-        gas- of waterstofketels in de voedingsmiddelenindustrie geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-heat is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen power-to-heat boilers 
+        in de voedingsmiddelenindustrie elektriciteit afnemen. <br/><br/>
+        <ul><li>Ga naar <a href="/scenario/demand/industry/food">Voedingsmiddelenindustrie</a> 
+        om power-to-heat boilers te installeren.</li>
+        <li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_energy_production_synthetic_kerosene_dispatchable:
       title: Regelbare kerosine voor de industrie
       short_description:
       description: |
-        Elektriciteit, waterstof en koolstofdioxide kunnen worden gebruikt om synthetische kerosine te produceren.
-        In het ETM kan capaciteit worden ingesteld voor synthetische kerosineproductie als een flexibele
-        vraagtechnologie, wat betekent dat kerosine alleen wordt geproduceerd wanneer de bereidheid om te betalen voor
-        elektriciteit voor het productieproces hoger is dan de uurlijkse elektriciteitsprijs.
-        </br></br>Deze schuif stelt de maximumprijs in die producenten van synthetische kerosine
-        bereid zijn te betalen voor de benodigde elektriciteit in het productieproces. Let op, er moet voor deze schuif
-        capaciteit geïnstalleerd zijn van de
-        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">regelbare synthetische kerosineproductie</a>
-        om effect te hebben.</br></br>
-        Er zijn verschillende grafieken beschikbaar die inzicht bieden in het effect van de betalingsbereidheid voor elektriciteit
-        in kerosineproductie:
-        </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        Het jaarlijkse gebruik van elektriciteit door flexibele vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        Het uurlijkse elektriciteitsaanbod en -vraag door flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexibele vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzichtstabel van het gebruik van flexibele vraagtechnologieën.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen regelbare synthetische kerosine 
+        in de industrie wordt geproduceerd.<br/><br/> Elektriciteit, waterstof en koolstofdioxide kunnen 
+        worden gebruikt om synthetische kerosine te produceren. Productie vindt alleen plaats wanneer 
+        de betalingsbereidheid voor elektriciteit hoger is dan de uurlijkse elektriciteitsprijs.<br/><br/>
+        <ul><li>Ga naar <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Regelbare 
+        synthetische kerosineproductie</a> om productiecapaciteit te installeren.</li>
+        <li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_industry_other_paper_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor papierindustrie
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
-        <a href="/scenario/demand/industry/paper">papierindustrie</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
-        gas- of waterstofketels in de papierindustrie geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-heat is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen power-to-heat boilers 
+        in de papierindustrie elektriciteit afnemen. <br/><br/>
+        <ul><li>Ga naar <a href="/scenario/demand/industry/paper">Papiermiddelenindustrie</a> 
+        om power-to-heat boilers te installeren.</li>
+        <li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     wtp_of_agriculture_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor landbouw
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in de
-        <a href="/scenario/demand/agriculture/heat">landbouw</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
-        gas- of waterstofketels in de landbouwsector geïnstalleerd is. </br></br>
-        Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van de willingness-to-pay van power-to-heat is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraagtechnnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider stelt de maximale elektriciteitsprijs in waartegen power-to-heat boilers 
+        in de landbouw elektriciteit afnemen. <br/><br/>
+        <ul><li>Ga naar <a href="/scenario/demand/agriculture/heat">Landbouw</a> 
+        om power-to-heat boilers te installeren.</li>
+        <li>Open de grafiek <a href="#" class="open_chart"data-chart-key="use_of_excess_electricity"
+        data-chart-location="side">Flexibele elektriciteitsvraag- en aanbod per uur</a>.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity"
+        data-chart-location="side">De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_integral_costs"
+        data-chart-location="side">Integrale kosten van flexibele elektriciteitsvraag</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="storage_options" 
+        data-chart-location="side">Technologieën met flexibele elektriciteitsvraag</a>.</li></ul>
     settings_enable_storage_optimisation_transport_car_flexibility_p2p_electricity:
       title: 'Verbeter inzet batterijen met prognose van residual load'
       description: ''
@@ -1450,26 +1423,38 @@ nl:
       title: Relatief batterijvermogen
       short_description:
       description: |
-        Deze slider bepaalt het laadvermogen van de batterij, relatief ten opzichte van het geïnstalleerde vermogen van windturbines met opslag.<br/><br/>
-        Bij wijziging van het geïnstalleerde vermogen past het laadvermogen zich automatisch aan, volgens de ingestelde verhouding. De batterij slaat elektriciteit op wanneer de productie de netwerkcapaciteit overschrijdt en ontlaadt zodra de productie onder de grens zakt. Als het laadvermogen is bereikt of de batterij vol is, wordt overtollige productie afgeschakeld. Het opslagvolume is gekoppeld aan het laadvermogen en schaalt mee.<br/><br/>
-        <ul>
-        <li>Ga naar <a href="/scenario/supply/electricity_renewable/wind-turbines">Hernieuwbare 
+        Deze slider bepaalt het laadvermogen van de batterij, relatief ten opzichte van het 
+        geïnstalleerde vermogen van windturbines met opslag.<br/><br/> Bij wijziging van het 
+        geïnstalleerde vermogen past het laadvermogen zich automatisch aan, volgens de ingestelde 
+        verhouding. De batterij slaat elektriciteit op wanneer de productie de netwerkcapaciteit 
+        overschrijdt en ontlaadt zodra de productie onder de grens zakt. Als het laadvermogen is 
+        bereikt of de batterij vol is, wordt overtollige productie afgeschakeld. Het opslagvolume 
+        is gekoppeld aan het laadvermogen en schaalt mee.<br/><br/>
+        <ul><li>Ga naar <a href="/scenario/supply/electricity_renewable/wind-turbines">Hernieuwbare 
         elektriciteit</a> om het geïnstalleerde vermogen aan te passen.</li>
-        <li>Ga naar <a href="/scenario/costs/costs_flexibility/electricity-storage">Kosten & efficiëntie</a> om de investeringskosten en efficiëntie van de grootschalige batterijen aan te passen.</li>
-        <li>Zie 'Technische parameters en kosten' om het effect op het totale vermogen en opslagvolume te zien.</li>
-        </ul>
+        <li>Ga naar <a href="/scenario/costs/costs_flexibility/electricity-storage">Kosten & 
+        efficiëntie</a> om de investeringskosten en efficiëntie van de grootschalige batterijen aan 
+        te passen.</li>
+        <li>Zie 'Technische parameters en kosten' om het effect op het totale vermogen en opslagvolume 
+        te zien.</li></ul>
     battery_capacity_always_on_solar_pv_solar_radiation:
       title: Relatief batterijvermogen
       short_description:
       description: |
-        Deze slider bepaalt het laadvermogen van de batterij, relatief ten opzichte van het geïnstalleerde vermogen van zonnecentrales met opslag.<br/><br/>
-        Bij wijziging van het geïnstalleerde vermogen past het laadvermogen zich automatisch aan, volgens de ingestelde verhouding. De batterij slaat elektriciteit op wanneer de productie de netwerkcapaciteit overschrijdt en ontlaadt zodra de productie onder de grens zakt. Als het laadvermogen is bereikt of de batterij vol is, wordt overtollige productie afgeschakeld. Het opslagvolume is gekoppeld aan het laadvermogen en schaalt mee.<br/><br/>
-        <ul>
-        <li>Ga naar <a href="/scenario/supply/electricity_renewable/solar-power">Hernieuwbare 
+        Deze slider bepaalt het laadvermogen van de batterij, relatief ten opzichte van het 
+        geïnstalleerde vermogen van zonnecentrales met opslag.<br/><br/> Bij wijziging van het 
+        geïnstalleerde vermogen past het laadvermogen zich automatisch aan, volgens de ingestelde 
+        verhouding. De batterij slaat elektriciteit op wanneer de productie de netwerkcapaciteit 
+        overschrijdt en ontlaadt zodra de productie onder de grens zakt. Als het laadvermogen is 
+        bereikt of de batterij vol is, wordt overtollige productie afgeschakeld. Het opslagvolume 
+        is gekoppeld aan het laadvermogen en schaalt mee.<br/><br/>
+        <ul><li>Ga naar <a href="/scenario/supply/electricity_renewable/solar-power">Hernieuwbare 
         elektriciteit</a> om het geïnstalleerde vermogen aan te passen.</li>
-        <li>Ga naar <a href="/scenario/costs/costs_flexibility/electricity-storage">Kosten & efficiëntie</a> om de investeringskosten en efficiëntie van de grootschalige batterijen aan te passen.</li>
-        <li>Zie 'Technische parameters en kosten' om het effect op het totale vermogen en opslagvolume te zien.</li>
-        </ul>
+        <li>Ga naar <a href="/scenario/costs/costs_flexibility/electricity-storage">Kosten & 
+        efficiëntie</a> om de investeringskosten en efficiëntie van de grootschalige batterijen 
+        aan te passen.</li>
+        <li>Zie 'Technische parameters en kosten' om het effect op het totale vermogen en opslagvolume 
+        te zien.</li></ul>
     volume_of_energy_flexibility_wind_batteries_electricity:
       title: Relatief opslagvolume
       short_description:
@@ -1498,5 +1483,11 @@ nl:
       title: Voortschrijdend gemiddelde tijdsperiode
       short_description:
       description: |
-        Deze slider bepaalt over hoeveel uur het voortschrijdend gemiddelde wordt berekend voor de residual load curve van netwerkgas en waterstof. <br/><br/> Een korte periode legt de nadruk op snelle, dagelijkse fluctuaties (kortetermijnflexibiliteit), terwijl een lange periode juist trage, structurele schommelingen zichtbaar maakt (langetermijnflexibiliteit). De gekozen waarde beïnvloedt dus welk type flexibiliteitsbehoefte wordt getoond. <br/><br> Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
+        Deze slider bepaalt over hoeveel uur het voortschrijdend gemiddelde wordt berekend voor 
+        de residual load curve van netwerkgas en waterstof. <br/><br/> Een korte periode legt 
+        de nadruk op snelle, dagelijkse fluctuaties (kortetermijnflexibiliteit), terwijl een 
+        lange periode juist trage, structurele schommelingen zichtbaar maakt (langetermijnflexibiliteit). 
+        De gekozen waarde beïnvloedt dus welk type flexibiliteitsbehoefte wordt getoond. <br/><br> 
+        Bekijk de grafiek <a href="#" class="open_chart" data-chart-key=
+        "flexibility_hourly_carriers_inflexible_imbalance" data-chart-location="side">
         Onbalans (residual load) per uur</a>.

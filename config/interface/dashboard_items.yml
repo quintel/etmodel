@@ -67,7 +67,7 @@
   group: summary
   position: 7
   disabled: false
-  output_element_key: merit_order_hourly_supply
+  output_element_key: power_shortage
   dependent_on: has_merit_order
 - key: total_number_of_excess_events
   gquery_key: dashboard_total_number_of_excess_events
@@ -128,7 +128,7 @@
 - key: all_ghg_reduction_relative_to_start_year
   gquery_key: dashboard_emissions
   group: co2
-  position: 
+  position:
   disabled: false
   output_element_key: emissions_overview
   dependent_on: has_other_emissions_section

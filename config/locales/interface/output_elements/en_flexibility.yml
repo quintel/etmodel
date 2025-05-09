@@ -490,4 +490,38 @@ en:
         availability. Specifically, this means that the depicted peak load is always lower than the installed
         capacity of the wind turbine and electrolyser, and subsequently of the offshore cable supplying
         electricity to the offshore electrolyser.
-
+    power_plant_economic_performance:
+      title: Economic performance of electricity production technologies
+      short_description:
+      description: |
+        This table depicts the economic performance of all must-run, volatile and dispatchable electricity production
+        technologies in the scenario. In addition to the merit order position, output capacity and full load hours,
+        the following economic parameters are depicted: CAPEX, OPEX, revenue and profit. The must-run and volatile
+        production technologies are depicted at the top, followed by the dispatchable technologies sorted by position
+        in the merit order.<br/><br/>
+        This table is complementary to the <a href="#" class="open_chart" data-chart-key="merit_order_table"
+        data-chart-location="side">merit order table</a>.
+    storage_economic_performance:
+      title: Economic performance of electricity storage technologies
+      short_description:
+      description: |
+        This table depicts the economic performance of electricity storage technologies in the scenario.
+        In addition to the willingness-to-pay (WTP), output capacity and full load hours, the following economic
+        parameters are depicted: CAPEX, OPEX, revenue and profit. <br/><br/>
+        This table is complementary to the <a href="#" class="open_chart" data-chart-key="storage_specifications"
+        data-chart-location="side">table</a> that contains detailed specifications of storage technologies.
+        More information about electricity storage in the ETM
+        can be found in the <a href="https://docs.energytransitionmodel.com/main/electricity-storage/"
+        target=\"_blank\">documentation</a>.
+    flexible_demand_economic_performance:
+      title: Economic performance of flexible electricity demand technologies
+      short_description:
+      description: |
+        This table depicts the economic performance of flexible electricity demand technologies in the scenario.
+        In addition to the willingness-to-pay (WTP), output capacity and full load hours, the following economic
+        parameters are depicted: CAPEX, OPEX, revenue and profit. <br/><br/>
+        This table is complementary to the <a href="#" class="open_chart" data-chart-key="storage_options"
+        data-chart-location="side">table</a> that contains details about the production of flexible
+        electricity demand technologies. More information about flexible electricity demand technologies in the ETM
+        can be found in the <a href="https://docs.energytransitionmodel.com/main/flexibility/"
+        target=\"_blank\">documentation</a>.

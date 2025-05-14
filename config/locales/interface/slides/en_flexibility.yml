@@ -729,33 +729,14 @@ en:
       title: Upload curves
       short_description:
       description: |
-        The ETM calculates the hourly production and demand of gas, electricity, heat and hydrogen.
-        On this page you can upload your own hourly profiles to overwrite the default profiles used
-        in the ETM. You can upload three types of profiles:
-
-        <br /><br />
-
-        1. <b>Demand</b> profiles (e.g. electric buses, industry heating)
-
-        <br />
-
-        2. <b>Production</b> profiles (e.g. solar PV, wind offshore)
-        <br />
-
-        3. <b>Price</b> curves (e.g. for power interconnectors)
-
-        <br /><br />
-        In the form below, you can select a category and upload a CSV file with your own profile.
-        More information about the file requirements for each type of profile can be found on the
-        <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles">documentation page</a>
-        and by clicking on the question mark ('?') in the form below.
-
-        <br /><br />
-        The chart on the right shows the profiles of all categories that can be modified. If you upload a custom profile,
-        this is reflected in the chart. Note that if a technology is not present in your scenario, the chart series will be empty.
-        By default, the chart shows the <i>daily</i> peak capacity of the profile for the whole year. Select a month or week in
-        the dropdown menu to see the <i>hourly</i> values.
-        <br /><br />
-        You can download the hourly demand and supply curves in your scenario in the
-        <a href="/scenario/data/data_export/energy-flows">Results → Data export</a> section.
-        <br /><br />
+        In this section, custom hourly profiles can be uploaded in CSV format to overwrite the default profiles used
+        in the ETM. Note that the uploaded custom profiles are scenario inputs; based on these profiles,
+        the model calculates the resulting (hourly) flows.<br/><br/>
+        Different types of profiles are distinguished. By selecting a category below, details of the relevant profile type
+        and file requirements are provided. More information can be found in the
+        <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles"
+        target =\"_blank\">documentation</a>.<br/><br/>
+        The result of the uploaded custom profile is reflected in the chart on the right.
+        Hourly supply and demand profiles containing the hourly energy flows (as a result of scenario
+        calculations) can be downloaded in the <a href="/scenario/data/data_export/overview">Data export</a>
+        section.

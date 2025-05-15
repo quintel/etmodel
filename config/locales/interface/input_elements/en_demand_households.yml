@@ -553,85 +553,15 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
-    households_appliances_fridge_freezer_electricity_efficiency:
-      title: Fridge / Freezer
-      short_description: ''
-      description: "How much more efficient do you think fridges and freezers will
-        be in the future?\r\n<br/><br/>\r\nNational and European legislation is forcing
-        household appliances to use ever less energy. The energy labels that are mandatory
-        nowadays in all European countries give a good indication of the energy efficiency
-        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
-        is the current average label of fridges and freezers. Use the slider to give
-        an estimation of the average label of fridges and freezers in the future.
-        The A+++ label corresponds to an energy reduction of 66% compared to today.
-        \r\n\r\n"
-    households_appliances_dishwasher_electricity_efficiency:
-      title: Dish washer
-      short_description: ''
-      description: "How much more efficient do you think dish washers will be in the
-        future?\r\n<br/><br/>\r\nNational and European legislation is forcing household
-        appliances to use ever less energy. The energy labels that are mandatory nowadays
-        in all European countries give a good indication of the energy efficiency
-        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
-        is the current average label of dish washers. Use the slider to give an estimation
-        of the average label of dish washers in the future. The A+++ label corresponds
-        to an energy reduction of 35% compared to today. "
-    households_appliances_vacuum_cleaner_electricity_efficiency:
-      title: Vacuum cleaner
-      short_description: ''
-      description: "How much more efficient do you think vacuum cleaners will be in
-        the future?\r\n<br/><br/>\r\nNational and European legislation is forcing
-        household appliances to use ever less energy. The energy labels that are mandatory
-        nowadays in all European countries give a good indication of the energy efficiency
-        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
-        is the current average label of vacuum cleaners. Use the slider to give an
-        estimation of the average label of vacuum cleaners in the future. The A+++
-        label corresponds to an energy reduction of 75% compared to today. "
-    households_appliances_washing_machine_electricity_efficiency:
-      title: Washing machine
-      short_description: ''
-      description: "How much more efficient do you think washing machines will be
-        in the future?\r\n<br/><br/>\r\nNational and European legislation is forcing
-        household appliances to use ever less energy. The energy labels that are mandatory
-        nowadays in all European countries give a good indication of the energy efficiency
-        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
-        is the current average label of washing machines. Use the slider to give an
-        estimation of the average label of washing machines in the future. The A+++
-        label corresponds to an energy reduction of 28% compared to today. \r\n"
-    households_appliances_clothes_dryer_electricity_efficiency:
-      title: Dryer
-      short_description: ''
-      description: "How much more efficient do you think wash dryers will be in the
-        future?\r\n<br/><br/>\r\nNational and European legislation is forcing household
-        appliances to use ever less energy. The energy labels that are mandatory nowadays
-        in all European countries give a good indication of the energy efficiency
-        of household appliances. \r\n<br/><br/>\r\nThe starting value of this slider
-        is the current average label of dryers. Use the slider to give an estimation
-        of the average label of dryers in the future. The A+++ label corresponds to
-        an energy reduction of 69% compared to today."
-    households_appliances_television_electricity_efficiency:
-      title: Television
-      short_description: ''
-      description: "How much more efficient do you think televisions will be in the
-        future?\r\n<br/><br/>\r\nNew technologies such as LED displays reduce energy
-        consumption. But keep in mind that large televisions of course consume more
-        energy than small ones using the same technology. As a result, each television
-        uses more energy today than it did several years ago.\r\n<br/><br/>\r\nThe
-        starting value of this slider is the current average label of televisions.
-        Use the slider to give an estimation of the average label of televisions in
-        the future. The A+++ label corresponds to an energy reduction of 92% compared
-        to today. "
-    households_appliances_computer_media_electricity_efficiency:
-      title: Computer / Media
-      short_description: ''
-      description: How much more efficient do you think computers and other audio/video
-        appliances (excluding television) will be in the future?
-    households_appliances_other_electricity_efficiency:
-      title: Other
-      short_description: ''
-      description: "How much more efficient do you think other appliances will be
-        in the future?\r\n<br/><br/>\r\nThis category includes: <br/>\r\n- Personal
-        care <br/>\r\n- Leisure <br/>\r\n- Kitchenware (exclusive of cooking) <br/>\r\n- Ventilation"
+    households_appliances_electricity_efficiency:
+      title: Efficiency
+      short_description:
+      description: |
+        By increasing the slider, the efficency of household appliances is increased. This means the
+        demand for electricity from appliances decreases. Conversely, decreasing the efficiency will
+        increase the demand for electricity. </br></br>
+        This sliders sets the efficiency of computers, dish washers, dryers, fridges, televisions,
+        vacuum cleaners, washing machines and other appliances.
     households_water_heater_solar_thermal_share:
       title: Solar thermal collectors
       short_description: ''

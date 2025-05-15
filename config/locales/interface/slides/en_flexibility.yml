@@ -737,7 +737,8 @@ en:
         same format as uploaded. More information can be found in the
         <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles"
         target =\"_blank\">documentation</a>.<br/><br/>
-        The result of the uploaded custom profile is reflected in the chart on the right.
-        Hourly supply and demand profiles containing the hourly energy flows (as a result of scenario
-        calculations) can be downloaded in the <a href="/scenario/data/data_export/overview">Data export</a>
+        Based on annual flows and the uploaded hourly supply or demand profiles, the model calculates the resulting
+        hourly flows as scenario output. The resulting profiles that represent the hourly energy flows are
+        depicted in the chart on the right per supply and demand category. The output profiles can also
+        be downloaded in the <a href="/scenario/data/data_export/overview">Data export</a>
         section.

@@ -113,7 +113,7 @@ class @AppView extends Backbone.View
 
     if (curve_upload = wrapper.find('.single-curve-upload')).length
       curveCollectionDef = @customCurves()
-      userScenariosArray = @userScenarios()
+      userScenariosArray = @userScenarios(true)
 
       curve_upload.each (_index, element) ->
         CustomCurveChooserView.setupWithWrapper(
@@ -345,7 +345,7 @@ class @AppView extends Backbone.View
 
     return @customCurvesDeferred.promise()
 
-  userScenarios: =>
+  userScenarios: (all = false) =>
     if @userScenariosDeferred
       return @userScenariosDeferred.promise()
     else
@@ -356,6 +356,7 @@ class @AppView extends Backbone.View
         method: 'GET'
         headers: @accessToken.headers()
         dataType: 'json'
+        data: all && { scope: 'all' }
       })
 
       req.done((data) =>

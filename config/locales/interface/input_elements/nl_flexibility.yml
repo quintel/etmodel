@@ -521,73 +521,73 @@ nl:
     curtailment_of_households_solar_pv_solar_radiation:
       title: Zon op dak huishoudens
       short_description:
-      description: Met dit schuifje stel je de productiebeperking in als percentage
-        van het piekvermogen. Zonnepanelen op huizen zijn verbonden aan het laagspanningsnet
-        in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/demand/households/solar-panels">hier</a>
-        aan te passen.
+      description: |
+        Deze slider bepaalt de productiebeperking van zonnepanelen op woningen als percentage van 
+        het piekvermogen.<br/><br/> Zonnepanelen op woningen zijn aangesloten op het laagspanningsnet 
+        binnen het ETM.<br/><br/>Ga naar <a href="/scenario/supply/electricity_renewable/solar-power">
+        Hernieuwbare elektriciteit</a> om het geïnstalleerde vermogen aan te passen.
     curtailment_of_buildings_solar_pv_solar_radiation:
       title: Zon op dak gebouwen
       short_description:
-      description: Met dit schuifje stel je de productiebeperking in als percentage
-        van het piekvermogen. Zonnepanelen op gebouwen zijn verbonden aan het laagspanningsnet
-        in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/demand/buildings/solar-panels">hier</a>
-        aan te passen.
+      description: |
+        Deze slider bepaalt de productiebeperking van zonnepanelen op gebouwen als percentage van 
+        het piekvermogen.<br/><br/> Zonnepanelen op gebouwen zijn aangesloten op het laagspanningsnet 
+        binnen het ETM.<br/><br/>Ga naar <a href="/scenario/supply/electricity_renewable/solar-power">
+        Hernieuwbare elektriciteit</a> om het geïnstalleerde vermogen aan te passen.
     curtailment_of_energy_power_solar_pv_solar_radiation:
       title: Zonneparken
       short_description:
-      description: Met dit schuifje stel je de productiebeperking in als percentage
-        van het piekvermogen. Zonneparken zijn verbonden aan het hoogspanningsnet
-        in het ETM. Het geïnstalleerd vermogen is <a href="/scenario/supply/electricity_renewable/solar-power">hier</a>
-        aan te passen.
+      description: |
+        Deze slider bepaalt de productiebeperking van zonneparken op land als percentage van het piekvermogen.
+        <br/><br/> De zonneparken zijn aangesloten op het hoogspanningsnet binnen het ETM.<br/><br/>Ga naar 
+        <a href="/scenario/supply/electricity_renewable/solar-power">Hernieuwbare elektriciteit</a> 
+        om het geïnstalleerde vermogen aan te passen.
     curtailment_of_energy_power_solar_pv_offshore:
       title: Zonneparken op zee
       short_description:
-      description: Met dit schuifje stel je de productiebeperking in als percentage
-        van het piekvermogen. Zonneparken op zee zijn in het ETM aan hetzelfde net verbonden als wind op zee.
-        Het geïnstalleerd vermogen is <a href="/scenario/supply/electricity_renewable/solar-power">hier</a>
-        aan te passen.
+      description: |
+        Deze slider bepaalt de productiebeperking van zonneparken op zee als percentage van het piekvermogen.
+        <br/><br/> De zonneparken zijn, net als windturbines op zee, aangesloten op het hoogspanningsnet 
+        binnen het ETM.<br/><br/>Ga naar <a href="/scenario/supply/electricity_renewable/solar-power">
+        Hernieuwbare elektriciteit</a> om het geïnstalleerde vermogen aan te passen.
     relative_capacity_of_electrolyser:
       title: Elektrolyser op zee
       short_description:
       description: |
-        Dit schuifje stelt het relatieve inputvermogen van de elektrolyser op zee in ten opzichte van
-        het geïnstalleerd vermogen van de hybride windturbines op zee. <br/><br/>
-        De elektrolyser op zee kan zowel elektriciteit van de hybride windturbines op zee als van
-        het HV-netwerk (via de elektriciteitskabel op zee) ontvangen. De elektrolyser produceert
-        als de elektriciteitsprijs lager is dan de betalingsbereidheid (<i>willingness-to-pay</i>).
-        Zelfs als de prijs hoger is, wordt er echter waterstof geproduceerd, als daarmee
-        productiebeperking (<i>curtailment</i>) wordt voorkomen. Zie de
-        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">
-        documentatie</a> voor meer details. </br></br>
-        De kosten voor transport van waterstofpijpleidingen op zee kunnen worden ingesteld in de sectie
-        <a href="/scenario/costs/costs_hydrogen/hydrogen-transport">Kosten & efficiënties</a>. <br/><br/>
-        Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van
-        de hybride wind op zee componenten:
-        <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de componenten</li>
-        <li>Deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">tabel</a>
-        toont de geïnstalleerde vermogens, piekbelasting en jaarlijkse energiestromen van de verschillende componenten</li>
-        <li>Deze <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">grafiek</a>
-        toont de jaarlijkse energiestromen tussen de componenten</li></ul>
+        Deze slider bepaalt het vermogen van elektrolysers op zee, relatief ten opzichte van het 
+        geïnstalleerde vermogen van hybride windturbines op zee.<br/><br/>De elektrolyser kan 
+        elektriciteit ontvangen van zowel de hybride windturbines als van het hoogspanningsnet via 
+        de elektriciteitskabel op zee. Waterstofproductie vindt plaats wanneer de elektriciteitsprijs 
+        lager is dan de betalingsbereidheid (<em>willingness-to-pay</em>), of - bij hogere prijzen - 
+        om productiebeperkingen (<em>curtailment</em>) te voorkomen.<br/><br/><em>Let op:</em> De 
+        grafiek hiernaast toont de absolute geïnstalleerde vermogens van de componenten.<br/><br/>
+        <ul><li>Ga naar <a href="/scenario/costs/infrastructure/electricity-infrastructure-costs">
+        Kosten & efficiënties</a> om de investeringskosten voor transport van waterstofpijpleidingen 
+        op zee aan te passen.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" 
+        data-chart-location="side">Hybride wind op zee</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">Hybride wind op zee vermogens en energiestromen</a>.</li></ul><br/>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=
+        \"_blank\">Documentatie</a> voor meer informatie over de componenten en het gedrag van hybride 
+        wind op zee.
     relative_capacity_of_offshore_cable:
       title: Elektriciteitskabel op zee
       short_description:
       description: |
-        Dit schuifje stelt het relatieve vermogen van de elektriciteitskabel op zee in ten opzichte
-        van het geïnstalleerd vermogen van de hybride windturbines op zee. <br/><br/>
-        De elektriciteitskabel op zee kan zowel geproduceerde elektriciteit door de hybride
-        windturbines op zee transporteren naar het HV netwerk op land of elektriciteit transporteren
-        van het HV netwerk naar de elektrolyser op zee. Voor meer informatie over de componenten en
-        het gedrag van hybride wind op zee, zie de
-        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>. <br/><br/>
-        De benodigde investeringskosten voor de infrastructuur van het net op zee kunnen worden
-        aangepast in de sectie <a href="/scenario/costs/infrastructure/electricity-infrastructure-costs">Kosten & efficiënties</a>. <br/><br/>
-        Er zijn diverse grafieken die meer informatie geven over de geïnstalleerde vermogens en energiestromen van
-        de hybride wind op zee componenten:
-        <ul><li>De grafiek hiernaast toont de absolute geïnstalleerde vermogens van de componenten</li>
-        <li>Deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">tabel</a>
-        toont de geïnstalleerde vermogens, piekbelasting en jaarlijkse energiestromen van de verschillende componenten</li>
-        <li>Deze <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">grafiek</a>
-        toont de jaarlijkse energiestromen tussen de componenten</li></ul>
+        Deze slider bepaalt het vermogen van elektriciteitskabels op zee, relatief ten opzichte van 
+        het geïnstalleerde vermogen van hybride windturbines op zee.<br/><br/> De kabel transporteert 
+        elektriciteit van de hybride windturbines naar het hoogspanningsnet op land. Daarnaast kan 
+        ook elektriciteit vanaf het hoogspanningsnet naar de elektrolyser op zee worden geleverd via 
+        dezelfde kabel. <br/><br/> <em>Let op:</em> De grafiek hiernaast toont de absolute geïnstalleerde 
+        vermogens van de componenten.<br/><br/>
+        <ul><li>Ga naar <a href="/scenario/costs/infrastructure/electricity-infrastructure-costs">
+        Kosten & efficiënties</a> om de investeringskosten van de netaansluiting aan te passen.</li>
+        <li>Open de grafiek <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" 
+        data-chart-location="side">Hybride wind op zee</a>.</li>
+        <li>Open de tabel <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">Hybride wind op zee vermogens en energiestromen</a>.</li></ul><br/>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=
+        \"_blank\">Documentatie</a> voor meer informatie over de componenten en het gedrag van hybride 
+        wind op zee.
     households_flexibility_p2p_electricity_market_penetration:
       title: Marktaandeel
       short_description:

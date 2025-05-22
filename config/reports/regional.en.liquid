@@ -142,9 +142,9 @@
       </li>
     {% endif %}
 
-    {% if future.dashboard_blackout_hours > 0 %}
+    {% if future.dashboard_power_shortage_hours > 0 %}
       <li class="target-missed">
-        Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
+        Your scenario has {{ future.dashboard_power_shortage_hours | without_unit }}
         blackout hours. Build more electricity backup capacity or reduce demand.
         <a href="#reliability" class="learn-more">Learn more &raquo;</a>
       </li>
@@ -532,9 +532,9 @@
       prevent a shortage of power.
     </p>
 
-    {% if future.dashboard_blackout_hours > 1 %}
+    {% if future.dashboard_power_shortage_hours > 1 %}
       <p>
-        Your scenario has {{ future.dashboard_blackout_hours | without_unit }} blackout hours.
+        Your scenario has {{ future.dashboard_power_shortage_hours | without_unit }} blackout hours.
         Try building more reliable back-up capacity in the electricity production section.
         Note that solar and wind power are intermittent and cannot add reliable electricity at all
         times.

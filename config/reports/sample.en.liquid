@@ -141,9 +141,9 @@
       </p>
     </li>
 
-    {% if future.dashboard_blackout_hours > 0 %}
+    {% if future.dashboard_power_shortage_hours > 0 %}
       <li class="target-missed">
-        Your scenario has {{ future.dashboard_blackout_hours | without_unit }}
+        Your scenario has {{ future.dashboard_power_shortage_hours | without_unit }}
         blackout hours. Build more electricity backup capacity or reduce demand.
         <a href="#reliability" class="learn-more">Learn more &raquo;</a>
       </li>

@@ -65,7 +65,7 @@
 
     <li>
       <strong>Betrouwbaarheid</strong><br />
-      Het scenario heeft <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> uren met stroomuitval. Daarnaast komt <strong>{{future.dashboard_energy_import_netto | times: 100 | round: 0 }}%</strong> van de energie van buiten het eigen gebied.
+      Het scenario heeft <strong>{{ future.dashboard_power_shortage_hours | without_unit }}</strong> uren met stroomuitval. Daarnaast komt <strong>{{future.dashboard_energy_import_netto | times: 100 | round: 0 }}%</strong> van de energie van buiten het eigen gebied.
     </li>
 
       <li>
@@ -225,7 +225,7 @@
     <h2 class="banner">A. Elektriciteit</h2>
       <h3> A1. Vraag en aanbod (jaarlijks)</h3>
       <p>
-      Ook de elektriciteit moet natuurlijk ergens vandaan komen. De meeste elektriciteit in jouw scenario wordt geproduceerd met {{ future.biggest_electricity_producer_name | i18n: 'output_element_series.labels' }} ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}). Het rode lijntje is het jaarlijkse volume aan elektriciteit dat er in het scenario nodig is. Het kan voorkomen dat er toch veel import (donkerblauw) nodig is terwijl er jaarlijks (meer dan) genoeg elektriciteit wordt opgewekt. Het ETM berekent vraag en aanbod van elektriciteit op uurbasis. Dit scenario heeft qua volume <strong>{{future.imported_electricity_percentage| times: 100 | round: 1 }}%</strong> import van elektriciteit. Daarnaast valt de stroom in dit scenario <strong>{{ future.dashboard_blackout_hours | without_unit }}</strong> uren uit en is {{ settings.area_name }} voor <strong>{{future.dashboard_security_of_supply }}</strong> uren afhankelijk van import. Flexibiliteitsopties zoals opslag in batterijen, waterstof of slim omgaan met de vraag kunnen helpen om de overschotten en de import omlaag te brengen.
+      Ook de elektriciteit moet natuurlijk ergens vandaan komen. De meeste elektriciteit in jouw scenario wordt geproduceerd met {{ future.biggest_electricity_producer_name | i18n: 'output_element_series.labels' }} ({{ future.biggest_electricity_producer_value | autoscale: 'MJ'}}). Het rode lijntje is het jaarlijkse volume aan elektriciteit dat er in het scenario nodig is. Het kan voorkomen dat er toch veel import (donkerblauw) nodig is terwijl er jaarlijks (meer dan) genoeg elektriciteit wordt opgewekt. Het ETM berekent vraag en aanbod van elektriciteit op uurbasis. Dit scenario heeft qua volume <strong>{{future.imported_electricity_percentage| times: 100 | round: 1 }}%</strong> import van elektriciteit. Daarnaast valt de stroom in dit scenario <strong>{{ future.dashboard_power_shortage_hours | without_unit }}</strong> uren uit en is {{ settings.area_name }} voor <strong>{{future.dashboard_security_of_supply }}</strong> uren afhankelijk van import. Flexibiliteitsopties zoals opslag in batterijen, waterstof of slim omgaan met de vraag kunnen helpen om de overschotten en de import omlaag te brengen.
       </p>
       {% chart source_of_electricity_production %}
           Elektriciteitsvraag- en aanbod voor {{ settings.start_year }} (links) en {{ settings.end_year }} (rechts).
@@ -341,9 +341,9 @@
           	tekorten op te vangen.
         	</p>
 
-        		{% if future.dashboard_blackout_hours > 1 %}
+        		{% if future.dashboard_power_shortage_hours > 1 %}
           	<p>
-            Je scenario heeft {{ future.dashboard_blackout_hours | without_unit }} blackout-uren.
+            Je scenario heeft {{ future.dashboard_power_shortage_hours | without_unit }} blackout-uren.
             Installeer meer back-up capaciteit in de aanbod-sectie van het ETM of verlaag de vraag naar elektriciteit.
             Stroom uit zon en wind hebben beperkte betrouwbaarheid omdat het niet altijd waait en de zon niet continu
             schijnt.
@@ -683,9 +683,9 @@
       </li>
     {% endif %}
 
-    {% if future.dashboard_blackout_hours > 0 %}
+    {% if future.dashboard_power_shortage_hours > 0 %}
       <li class="target-missed">
-        Je scenario heeft {{ future.dashboard_blackout_hours | without_unit }}
+        Je scenario heeft {{ future.dashboard_power_shortage_hours | without_unit }}
         blackout uren. Reduceer de vraag naar elektriciteit of instaleer meer
         backup-vermogen.
       </li>
@@ -815,9 +815,9 @@
 
     <ul class="summary-extras">
 
-      {% if future.dashboard_blackout_hours > 0 %}
+      {% if future.dashboard_power_shortage_hours > 0 %}
         <li class="target-missed">
-          Je scenario heeft {{ future.dashboard_blackout_hours | without_unit }}
+          Je scenario heeft {{ future.dashboard_power_shortage_hours | without_unit }}
           blackout uren. Reduceer de vraag naar elektriciteit of installeer meer
           backup-vermogen.
           <a href="#a2-elektriciteitsmarkt-en-flexibiliteit-uurbasis" class="learn-more">Lees verder &raquo;</a>

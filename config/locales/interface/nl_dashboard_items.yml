@@ -27,15 +27,17 @@ nl:
         kan je zien hoeveel biomassa van buiten jouw regio komt en hoeveel potentieel
         binnen jouw regio geproduceerd kan worden. De potentie van biomassa in jouw
         regio kan je aanpassen met <a href="/scenario/supply/biomass/potential-of-biomass">deze schuifjes</a>.
-    blackout_hours:
-      label: Stroomuitval
-      title: Aantal uren met stroomuitval
-      description: Stroomuitval ontstaat wanneer de productiecapaciteit voor elektriciteit
-        niet voldoende is om aan de vraag te voldoen en het niet mogelijk is om het
-        tekort op te vangen met import, bijvoorbeeld omdat de interconnectorcapaciteit
-        beperkt is, of met elektriciteit die is opgeslagen in batterijen. Het ETM
-        rekent de elektriciteitsproductie op uurbasis uit en bepaalt het aantal uren
-        per jaar dat er stroomuitval optreedt.
+    power_shortage_hours:
+      label: Stroomtekort
+      title: Stroomtekort
+      description:
+        Stroomtekort ontstaat wanneer er onvoldoende productiecapaciteit voor elektriciteit
+        is om aan de elektriciteitsvraag te voldoen en het niet mogelijk is om het tekort
+        op te vangen met import of flexbile technologieën zoals elektriciteitsopslag. Het ETM
+        berekent op uurbasis of er stroomtekort optreedt.<br/><br/>
+        Onderstaande tabel geeft het volume, het piekvermogen en de duur van stroomtekorten weer.
+        Het volume en piekvermogen van de totale elektriciteitsvraag zijn weergegeven ter
+        indicatie van de omvang van stroomtekorten in een scenario.
     co2_reduction:
       label: CO<sub>2</sub> t.o.v. 1990
       title: CO<sub>2</sub>-uitstoot t.o.v. 1990

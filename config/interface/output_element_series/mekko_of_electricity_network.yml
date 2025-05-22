@@ -290,18 +290,18 @@
   dependent_on:
   output_element_key: mekko_of_electricity_network
   key: biomass_power_for_electricity_network_mekko
-- label: blackouts_for_electricity_network_mekko
+- label: power_shortage_for_electricity_network_mekko
   color: '#000000'
   order_by: 204
   group: supply
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: supply_of_blackouts_for_electricity_network_mekko
+  gquery: supply_of_power_shortage_for_electricity_network_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_electricity_network
-  key: blackouts_for_electricity_network_mekko
+  key: power_shortage_for_electricity_network_mekko
 - label: coal_power_for_electricity_network_mekko
   color: '#333333'
   order_by: 206

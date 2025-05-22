@@ -1,0 +1,24 @@
+-# Power shortage table
+%table#power_shortage.chart.centered.autostripe
+  %thead
+    %tr
+      %th
+      %th= t 'output_elements.tables.power_shortage.volume'
+      %th= t 'output_elements.tables.power_shortage.peak_capacity'
+      %th= t 'output_elements.tables.power_shortage.duration'
+    %tr
+      %th
+      %th PJ
+      %th MW
+      %th= t 'output_elements.tables.power_shortage.hours'
+  %tbody
+    %tr
+      %th.left= t "output_elements.tables.power_shortage.shortage"
+      %td{:data => {:gquery => "dashboard_power_shortage_volume"}}
+      %td{:data => {:gquery => "dashboard_power_shortage_peak"}}
+      %td{:data => {:gquery => "dashboard_power_shortage_amount_of_hours"}}
+    %tr
+      %th.left= t "output_elements.tables.power_shortage.demand"
+      %td{:data => {:gquery => "dashboard_total_electricity_demand_volume"}}
+      %td{:data => {:gquery => "dashboard_total_electricity_demand_peak"}}
+      %td= number_with_delimiter(8760, delimiter: ",")

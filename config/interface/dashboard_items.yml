@@ -62,8 +62,8 @@
   disabled: false
   output_element_key: co2_emissions
   dependent_on: ''
-- key: blackout_hours
-  gquery_key: dashboard_blackout_hours
+- key: power_shortage_hours
+  gquery_key: dashboard_power_shortage_hours
   group: summary
   position: 7
   disabled: false

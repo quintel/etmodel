@@ -3,57 +3,41 @@
   position: 0
   sidebar_item_key: households
   output_element_key: use_of_final_demand_in_households
-- image: house.gif
-  key: demand_households_population
+- key: demand_households_population
   position: 100
   sidebar_item_key: households
   output_element_key: number_of_residences_overview
-- image: house_insulation.gif
-  key: demand_households_insulation
+- key: demand_households_insulation
   position: 105
   sidebar_item_key: households
   output_element_key: residential_heating_demand
-- image: house_heating.gif
-  group_sub_header: share_in_residences
+- group_sub_header: share_in_residences
   key: demand_households_heating
   position: 110
   sidebar_item_key: households
-  alt_output_element_key: source_of_heat_used_in_households
   output_element_key: source_of_heat_used_in_households
-- image: house_heating.gif
-  general_sub_header: share
+- general_sub_header: share
   key: demand_households_cooling
   position: 120
   sidebar_item_key: households
-  alt_output_element_key: source_of_cooling_in_households
   output_element_key: source_of_cooling_in_households
-- image: house_heating.gif
-  general_sub_header: share
+- general_sub_header: share
   key: demand_households_cooking
   position: 125
   sidebar_item_key: households
-  alt_output_element_key: source_of_cooking_in_households
   output_element_key: source_of_cooking_in_households
-- image: house_appliances.gif
-  general_sub_header: change
-  group_sub_header: change
-  subheader_image: energy_label.png
+- general_sub_header: change
   key: demand_households_appliances
   position: 130
   sidebar_item_key: households
-  alt_output_element_key: use_of_final_electricity_demand_in_households
   output_element_key: use_of_final_electricity_demand_in_households
-- image: house_lighting.gif
-  general_sub_header: share
+- general_sub_header: share
   key: demand_households_lighting
   position: 135
   sidebar_item_key: households
-  alt_output_element_key: use_of_final_electricity_demand_in_households
   output_element_key: use_of_final_electricity_demand_in_households
-- image: house.gif
-  group_sub_header: "%/year"
+- group_sub_header: "%/year"
   key: demand_households_demand_growth
   position: 140
   sidebar_item_key: households
-  alt_output_element_key: use_of_final_demand_in_households
   output_element_key: use_of_final_demand_in_households

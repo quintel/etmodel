@@ -7,9 +7,9 @@ ___
 **New features**
 
 * The new table *Power shortage* is now available, which provides detailed insights into the volume, peak capacity and duration of power shortages in a scenario. Find this table via the charts and tables overview or via the *Power shortage* dashboard item (read more about dashboard items <a href="https://docs.energytransitionmodel.com/main/dashboard" target="_blank">here</a>).
-* Improvements have been made in the Households sector by removing arbitraty sliders or replacing these with more effective ones. This includes:
-  * The <a href="https://energytransitionmodel.com/scenario/demand/households/appliances" target="_blank">efficiency improvement of appliances</a> can now be set using a single functional slider, instead of separate sliders per appliance. For existing scenarios where the separate sliders were set, the resulting net efficiency improvement is maintained.
-  * The excessive sliders that set behaviour changes are removed from the model.
+* Improvements have been made in the Households sector concerning the available sliders. This includes:
+  * The <a href="https://energytransitionmodel.com/scenario/demand/households/appliances" target="_blank">efficiency improvement of appliances</a> can now be set using a single functional slider, instead of separate sliders per appliance. For existing scenarios where the old sliders were set, the average efficiency improvement is transferred to the new slider.
+  * The sliders that set behaviour changes were outdated and are removed from the model.
   * Consult the technical changelog below for more details on changes in sliders (inputs).
 * It is now possible to upload different <a href="https://energytransitionmodel.com/scenario/flexibility/curve_upload/upload-curves" target="_blank">custom profiles</a> for deep and shallow geothermal technologies. Before, it was only possible to upload one custom profile that was applied to both deep and shallow geothermal technologies.
 

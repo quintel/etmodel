@@ -7,10 +7,10 @@ ___
 **Nieuwe functies**
 
 * De nieuwe tabel *Stroomtekort* is nu beschikbaar die gedetailleerde informatie bevat over het volume, het piekvermogen en de duur van stroomtekorten in een scenario. Vind deze tabel via het overzicht van grafieken en tabellen of via het *Stroomtekort* dashboarditem (lees <a href="https://docs.energytransitionmodel.com/main/dashboard" target="_blank">hier</a> meer over dashboarditems).
-* In de sector Huishoudens zijn verbeteringen gedaan door arbitraire sliders te verwijderen of te vervangen door een effectiever alternatief, waaronder:
-	*	De <a href="https://energytransitionmodel.com/scenario/demand/households/appliances" target="_blank">efficiëntieverbetering van apparaten</a> kan nu worden ingesteld met één functionele slider, in plaats van aparte sliders per apparaat. Bij bestaande scenario’s waarin de aparte sliders zijn ingesteld, blijft de resulterende netto-efficiëntieverbetering behouden.
-	*	De overbodige sliders die gedragsveranderingen instellen, zijn uit het model verwijderd.
-	*	Raadpleeg de technical changelog hieronder voor meer details over wijzigingen in sliders (inputs).
+* In de sector Huishoudens zijn verbeteringen geïmplementeerd voor de beschikbare schuifjes. Dit gaat om:
+	*	De <a href="https://energytransitionmodel.com/scenario/demand/households/appliances" target="_blank">efficiëntieverbetering van apparaten</a> kan nu worden ingesteld met één functionele slider, in plaats van aparte schuifjes per apparaat. Bij bestaande scenario’s waar de oude schuifjes waren ingesteld, is de gemiddelde efficiëntieverbetering overgezet naar het nieuwe schuifje.
+	*	De schuifjes die gedragsveranderingen instelden waren verouderd en zijn uit het model verwijderd.
+	*	Raadpleeg de technical changelog hieronder voor meer details over wijzigingen in schuifjes (inputs).
 * Het is nu mogelijk om verschillende <a href="https://energytransitionmodel.com/scenario/flexibility/curve_upload/upload-curves" target="_blank">uurprofielen te uploaden</a> voor diepe en ondiepe geothermie. Hiervoor was het slechts mogelijk één profiel te uploaden die werd toegepast op zowel diepe als ondiepe geothermietechnologieën.
 
 <details>

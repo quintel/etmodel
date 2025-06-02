@@ -15,10 +15,10 @@ RSpec.describe 'APIPassthru', type: :request do
         get('/passthru/123/abc')
 
         expect(response.headers.to_h).to include(
-          'Access-Control-Allow-Origin' => 'http://www.example.com',
-          'Access-Control-Allow-Methods' => 'GET',
-          'Access-Control-Allow-Headers' => 'Accept, Content-Type',
-          'Vary' => 'Origin'
+          'access-control-allow-origin'  => 'http://www.example.com',
+          'access-control-allow-methods' => 'GET',
+          'access-control-allow-headers' => 'Accept, Content-Type',
+          'vary'                         => 'Origin'
         )
       end
     end

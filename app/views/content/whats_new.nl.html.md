@@ -8,15 +8,15 @@ ___
 
 * De nieuwe tabel *Stroomtekort* is nu beschikbaar die gedetailleerde informatie bevat over het volume, het piekvermogen en de duur van stroomtekorten in een scenario. Vind deze tabel via het overzicht van grafieken en tabellen of via het *Stroomtekort* dashboarditem (lees <a href="https://docs.energytransitionmodel.com/main/dashboard" target="_blank">hier</a> meer over dashboarditems).
 * In de sector Huishoudens zijn verbeteringen geïmplementeerd voor de beschikbare schuifjes. Dit gaat om:
-	*	De <a href="https://energytransitionmodel.com/scenario/demand/households/appliances" target="_blank">efficiëntieverbetering van apparaten</a> kan nu worden ingesteld met één functionele slider, in plaats van aparte schuifjes per apparaat. Bij bestaande scenario’s waar de oude schuifjes waren ingesteld, is de gemiddelde efficiëntieverbetering overgezet naar het nieuwe schuifje.
+	*	De <a href="/scenario/demand/households/appliances" target="_blank">efficiëntieverbetering van apparaten</a> kan nu worden ingesteld met één functionele slider, in plaats van aparte schuifjes per apparaat. Bij bestaande scenario’s waar de oude schuifjes waren ingesteld, is de gemiddelde efficiëntieverbetering overgezet naar het nieuwe schuifje.
 	*	De schuifjes die gedragsveranderingen instelden waren verouderd en zijn uit het model verwijderd.
 	*	Raadpleeg de technical changelog hieronder voor meer details over wijzigingen in schuifjes (inputs).
-* Het is nu mogelijk om verschillende <a href="https://energytransitionmodel.com/scenario/flexibility/curve_upload/upload-curves" target="_blank">uurprofielen te uploaden</a> voor diepe en ondiepe geothermie. Hiervoor was het slechts mogelijk één profiel te uploaden die werd toegepast op zowel diepe als ondiepe geothermietechnologieën.
+* Het is nu mogelijk om verschillende <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">uurprofielen te uploaden</a> voor diepe en ondiepe geothermie. Hiervoor was het slechts mogelijk één profiel te uploaden die werd toegepast op zowel diepe als ondiepe geothermietechnologieën.
 
 <details>
   <summary>**Bug fixes**</summary>
 
-  * Door een bug in het <a href="https://energytransitionmodel.com/scenario/flexibility/curve_upload/upload-curves" target="_blank">uploaden van uurprofielen</a> voor waterkracht, geothermie en zonthermie, werden geüploade profielen voor deze technologieën incorrect verwerkt en de bijbehorende vollasturen niet gezet in scenario's. Deze bug is nu verholpen, waardoor de geüploade profielen en de bijbehorende vollasturen nu wel correct worden verwerkt en gezet in scenario's.
+  * Door een bug in het <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">uploaden van uurprofielen</a> voor waterkracht, geothermie en zonthermie, werden geüploade profielen voor deze technologieën incorrect verwerkt en de bijbehorende vollasturen niet gezet in scenario's. Deze bug is nu verholpen, waardoor de geüploade profielen en de bijbehorende vollasturen nu wel correct worden verwerkt en gezet in scenario's.
 
 </details>
 

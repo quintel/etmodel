@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ruby '~> 3.1.1'
+ruby '~> 3.3.5'
 
 source 'http://rubygems.org'
 
@@ -10,21 +10,22 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 7.1.3'
-gem 'activerecord-session_store'
-gem 'activeresource', '~> 6.0'
+gem 'activerecord-session_store', '~> 2.0'
+gem 'activeresource', '~> 6.1'
+gem 'puma', '>= 6.0'
 
-gem 'jquery-rails', '~> 4.4.0'
-gem 'local_time'
-gem 'haml', '~> 5.0'
+gem 'jquery-rails', '~> 4.6'
+gem 'local_time', '~> 3.0'
+gem 'haml', '~> 5.2'
 gem 'config'
 gem 'httparty'
 gem 'tabs_on_rails', '~> 3.0'
 gem 'kaminari', '~> 1.2.1'
 gem 'simple_form'
-gem 'nokogiri', '~> 1.18'
-gem 'rdiscount', '~> 2.2.7.3'
+gem 'nokogiri', '>= 1.18'
+gem 'rdiscount', '~> 2.2.7.3' # TODO: Check usage and assess
 gem 'loofah'
-gem 'rails-html-sanitizer', '~> 1.6'
+gem 'rails-html-sanitizer', '>= 1.6'
 gem 'font-awesome-rails'
 gem 'non-stupid-digest-assets'
 gem 'http_accept_language'
@@ -79,7 +80,6 @@ group :development do
   gem 'capistrano-rails',       '~> 1.1',   require: false
   gem 'capistrano-bundler',     '~> 1.1',   require: false
   gem 'capistrano-maintenance', '~> 1.0',   require: false
-  gem 'capistrano3-puma',       '~> 5.0.4', require: false
 
   gem 'ed25519',                            require: false
   gem 'bcrypt_pbkdf',                       require: false
@@ -107,7 +107,6 @@ group :test do
   gem 'launchy'
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
-  gem 'selenium-webdriver', '~> 4.10'
   gem 'shoulda-matchers', require: false
   gem 'simplecov'
   gem 'vcr', '~> 6.0'
@@ -116,10 +115,6 @@ group :test do
 end
 
 group :production, :staging do
-  # Puma 5 doesn't support daemon mode (used by capistrano3-puma). We need to investigate if this
-  # is an issue. Using Puma 5 with capistrano3-puma's Systemd mode would be a better solution, but
-  # this may require privileges unavailable to the SSH user.
-  gem 'puma'
   gem 'newrelic_rpm'
 end
 

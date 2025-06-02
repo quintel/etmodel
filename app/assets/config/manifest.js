@@ -1,7 +1,8 @@
 //= link_tree ../images
 //= link_directory ../javascripts .js
+//= link_directory ../stylesheets .css
 //= link admin.css
-//= link application.css
+//= link application.css.sass
 //= link establishment_shot_print.css
 //= link form_only.css
 //= link multi_year_charts.css

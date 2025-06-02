@@ -274,40 +274,6 @@
 	        {% endchart %}
 
 
-        	<h4> Winstgevendheid </h4>
-
-            <p>
-            Betrouwbaarheid van (elektriciteits)aanbod en de winstgevendheid van elektriciteitscentrales zijn direct met elkaar gelinkt.
-            Dispatchable centrales maken winst als ze veel draaiuren hebben, liefst op momenten dat de elektriciteitsprijs
-			hoog is.
-            Een betrouwbaar elektriciteitssysteem heeft echter back-up centrales nodig om extreme pieken op te vangen die
-			maar een paar keer per jaar optreden. Die centrales hebben dus typisch weinig draaiuren.
-            </p>
-
-	        <!-- Unprofitable plants -->
-	        	{% if future.profitability_percentage < 100 %}
-
-	            <p>
-	            In dit scenario is <strong> {{ 100 | minus: future.profitability_percentage | round: 1 }}% </strong> van de dispatchable centrales verliesgevend.
-	            Dit betekent dat ze hun investeringen (CAPEX) niet terugverdienen (oranje in onderstaande tabel)
-	            of zelfs hundraaikosten (OPEX) niet dekken (rood).
-	            	{% chart plant_profitability %}
-	              	Winstgevendheid van dispatchable elektriciteitscentrales in {{ settings.end_year }}.
-	            	{% endchart %}
-
-	            Het is niet te verwachten dat verliesgevende centrales lang open zullen blijven, tenzij de elektriciteitsmarkt
-				hervormd wordt met een capaciteitsvergoeding bijvoorbeeld. Om winstgevendheid te verbeteren kan men:
-	              <ul>
-	                <li><strong>De elektriciteitsvraag laten toenemen</strong>: door centrales meer draaiuren te geven kun je hun winstgevendheid
-	                  verbeteren.</li>
-	                <li><strong>Concurrerende productie verlagen</strong>: elektriciteit uit wind en zon-PV heeft geen marginale kosten,
-	                  daardoor worden conventionele (dispatchable) centrales uit de markt 'gedrukt'.</li>
-	                <li><strong>Centrales sluiten</strong>: dit vergroot het realisme van het scenario en kan de kosten voor het systeem
-	                  verlagen.</li>
-	              </ul>
-	            </p>
-	        	{% endif %}
-
 
         	<h4> Leveringszekerheid </h4>
 
@@ -859,16 +825,6 @@
         </li>
       {% endif %}
 
-      {% if future.profitability_percentage.value < 100 %}
-        <li>
-          {{ 100 | minus: future.profitability_percentage | round: 1 }}% van de
-          elektriciteitscentrales in je scenario zijn niet winstgevend. Denk
-          je dat ze er nog zullen zijn in {{ settings.end_year }}?
-          <a href="#a2-elektriciteitsmarkt-en-flexibiliteit-uurbasis" class="learn-more">
-            Lees verder &raquo;
-          </a>
-        </li>
-      {% endif %}
 
     </ul>
 

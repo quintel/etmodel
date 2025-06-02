@@ -178,16 +178,6 @@
       </li>
     {% endif %}
 
-    {% if future.profitability_percentage.value < 100 %}
-      <li>
-        {{ 100 | minus: future.profitability_percentage | round: 1 }}% of
-        power-plants are not profitable in your scenario. Do you think they will
-        still be around in {{ settings.end_year }}?
-        <a href="#profitability-of-power-plants" class="learn-more">
-          Learn more &raquo;
-        </a>
-      </li>
-    {% endif %}
 
   </ul>
   <!-- end: summary extras -->

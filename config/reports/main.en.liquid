@@ -185,16 +185,6 @@
       </li>
     {% endif %}
 
-    {% if future.profitability_percentage.value < 100 %}
-      <li>
-        {{ 100 | minus: future.profitability_percentage | round: 1 }}% of
-        power-plants are not profitable in your scenario. Do you think they will
-        still be around in {{ settings.end_year }}?
-        <a href="#profitability-of-power-plants" class="learn-more">
-          Learn more &raquo;
-        </a>
-      </li>
-    {% endif %}
 
   </ul>
   <!-- end: summary extras -->
@@ -576,7 +566,7 @@
 
     {% endif %}
 
-  <h1 class="banner">Security of supply and profitability of dispatchable power plants</h1>
+  <h1 class="banner">Security of supply</h1>
 
     <h2>Reliability</h2>
 
@@ -617,34 +607,6 @@
       </p>
     {% endif %}
 
-    {% if settings.merit_order_enabled %}
-      <h2>Profitability of dispatchable power plants</h2>
-
-        <p>
-          Security of (electricity) supply and the profitability of dispatchable power plants are intimately linked.
-          For dispatchable power plants to make money, they need to run sufficiently often, ideally when
-          electricity prices are high.
-          A reliable electricity system traditionally requires, however,
-          that there are power plants available which are only needed for a couple of extreme demand peaks
-          every year.
-        </p>
-
-        <p>
-          In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of dispatchable power plants is not
-          profitable. This means that they are not earning back their investment costs
-          (orange in table below) or are not even earning their OPEX (operational expenditure) back (red).
-        </p>
-
-        {% chart plant_profitability %}
-          Profitability of dispatchable power plants.
-        {% endchart %}
-
-        <p>
-          Unprofitable plants will likely be taken out of commission after a while. You can improve their profitability
-          by increasing electricity demand (making them run more hours). Also reducing electricity generation with zero
-          marginal costs can make power plants profitable again.
-        </p>
-    {% endif %}
 
   <h1 class="banner">Renewability</h1>
 
@@ -785,26 +747,6 @@
       network.
     </p>
 
-  {% endif %}
-
-  <!-- Unprofitable plants -->
-  {% if settings.merit_order_enabled %}
-    {% if future.profitability_percentage < 100 %}
-      <p>
-        In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of power plants is not
-        profitable. This means that they are not earning back their investment costs and sometimes not even their running costs.
-        Such plants will not stay open very long. Having them around in your future year might not be realistic.
-        You can either
-        <ul>
-          <li><strong>Increase electricity demand</strong>: making the unprofitable plants run more hours could improve their
-            situation.</li>
-          <li><strong>Reduce competing production</strong>: typically, wind and solar electricity generation has marginal costs
-            close to zero, 'pushing' conventional plants out of the merit order.</li>
-          <li><strong>Close the plants</strong>: closing unprofitable plants might increase the realism of your scenario as such
-            plants are not expected to exist very long.</li>
-        </ul>
-      </p>
-    {% endif %}
   {% endif %}
 
 

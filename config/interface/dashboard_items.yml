@@ -48,13 +48,6 @@
   disabled: false
   output_element_key: renewable_electricity
   dependent_on: ''
-- key: profitability
-  gquery_key: dashboard_profitability
-  group: costs
-  position:
-  disabled: false
-  output_element_key: plant_profitability
-  dependent_on: has_merit_order
 - key: local_co2_reduction
   gquery_key: dashboard_reduction_of_local_co2_emissions_versus_1990
   group: co2

@@ -83,7 +83,7 @@ class @DashboardItemView extends Backbone.View
       when 'total_primary_energy', 'employment', 'co2_reduction', 'local_co2_reduction', 'co2_reduction_relative_to_start_year', 'all_ghg_reduction_relative_to_start_year'
         # show + prefix if needed
         Metric.ratio_as_percentage(result, true)
-      when 'net_energy_import', 'profitability'
+      when 'net_energy_import'
         # 1 point precision
         Metric.ratio_as_percentage(result, false, 1)
       when 'biomass_primary_demand','biomass_final_demand'

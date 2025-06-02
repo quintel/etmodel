@@ -22,8 +22,6 @@ class DashboardItem extends Backbone.Model
     switch @get('key')
       when 'total_primary_energy', 'employment'
         return Metric.calculate_performance(now, fut)
-      when 'profitability'
-        MeritOrder.dashboardValue(fut)
       else
         return fut
 
@@ -40,9 +38,7 @@ class DashboardItem extends Backbone.Model
   # All dashboard items show the value of the gquery they've been assigned.
   # But there's two exceptions...
   result: ->
-    if @get('key') == 'profitability'
-      MeritOrder.dashboardValue(@gquery.get('future'))
-    else if @get('dependent_on') == 'has_merit_order' && not App.settings.merit_order_enabled()
+    if @get('dependent_on') == 'has_merit_order' && not App.settings.merit_order_enabled()
       'unavailable'
     else
       @get('result')

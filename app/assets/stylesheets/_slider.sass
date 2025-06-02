@@ -1,3 +1,5 @@
+@import general_styles
+
 @mixin input-slider-button($position)
   background-position: -$position 2px
 
@@ -317,10 +319,6 @@ $slider-box-height: 22px
         background: darken($landing-blue, 5%)
         outline: none
 
-  @include hidpi
-    .reset, .decrease, .increase, .show-info
-      background-image: url(/assets/slider/buttons-hidpi.png)
-      background-size: 139px 108px
 
 // Disabled slider image for IE.
 
@@ -400,11 +398,6 @@ html.no-opacity .quinn.disabled
     .bar, .delta-bar, .handle
       .left, .main, .right
         background: none
-
-    @include hidpi
-      .bar, .delta-bar, .handle
-        background-image: url(/assets/slider/toggle-hidpi.png)
-        background-size: 144px 114px
 
 
 .accordion

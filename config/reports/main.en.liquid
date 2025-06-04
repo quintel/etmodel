@@ -618,10 +618,10 @@
     {% endif %}
 
     {% if settings.merit_order_enabled %}
-      <h2>Profitability of dispatchable power plants</h2>
+      <h2>Economic viability of electricity production technologies</h2>
 
         <p>
-          Security of (electricity) supply and the profitability of dispatchable power plants are intimately linked.
+          Security of (electricity) supply and the economic viability of electricity production technologies are intimately linked.
           For dispatchable power plants to make money, they need to run sufficiently often, ideally when
           electricity prices are high.
           A reliable electricity system traditionally requires, however,
@@ -629,20 +629,14 @@
           every year.
         </p>
 
-        <p>
-          In your scenario, {{ 100 | minus: future.profitability_percentage | round: 1 }}% of dispatchable power plants is not
-          profitable. This means that they are not earning back their investment costs
-          (orange in table below) or are not even earning their OPEX (operational expenditure) back (red).
-        </p>
-
-        {% chart plant_profitability %}
-          Profitability of dispatchable power plants.
+        {% chart power_plant_economic_performance %}
+          Economic viability of electricity production technologies.
         {% endchart %}
 
         <p>
-          Unprofitable plants will likely be taken out of commission after a while. You can improve their profitability
+          Unviable plants will likely be taken out of commission after a while. You can improve their economic viability
           by increasing electricity demand (making them run more hours). Also reducing electricity generation with zero
-          marginal costs can make power plants profitable again.
+          marginal costs can make power plants more economically viable.
         </p>
     {% endif %}
 

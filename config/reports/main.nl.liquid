@@ -274,10 +274,10 @@
 	        {% endchart %}
 
 
-        	<h4> Winstgevendheid </h4>
+        	<h4> Economische levensvatbaarheid </h4>
 
             <p>
-            Betrouwbaarheid van (elektriciteits)aanbod en de winstgevendheid van elektriciteitscentrales zijn direct met elkaar gelinkt.
+            Betrouwbaarheid van (elektriciteits)aanbod en de Economische levensvatbaarheid  van elektriciteitscentrales zijn direct met elkaar gelinkt.
             Dispatchable centrales maken winst als ze veel draaiuren hebben, liefst op momenten dat de elektriciteitsprijs
 			hoog is.
             Een betrouwbaar elektriciteitssysteem heeft echter back-up centrales nodig om extreme pieken op te vangen die
@@ -287,12 +287,8 @@
 	        <!-- Unprofitable plants -->
 	        	{% if future.profitability_percentage < 100 %}
 
-	            <p>
-	            In dit scenario is <strong> {{ 100 | minus: future.profitability_percentage | round: 1 }}% </strong> van de dispatchable centrales verliesgevend.
-	            Dit betekent dat ze hun investeringen (CAPEX) niet terugverdienen (oranje in onderstaande tabel)
-	            of zelfs hundraaikosten (OPEX) niet dekken (rood).
-	            	{% chart plant_profitability %}
-	              	Winstgevendheid van dispatchable elektriciteitscentrales in {{ settings.end_year }}.
+	            	{% chart power_plant_economic_performance %}
+	              	Economische levensvatbaarheid van elektriciteitscentrales in {{ settings.end_year }}.
 	            	{% endchart %}
 
 	            Het is niet te verwachten dat verliesgevende centrales lang open zullen blijven, tenzij de elektriciteitsmarkt

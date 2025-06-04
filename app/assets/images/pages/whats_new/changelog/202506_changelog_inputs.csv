@@ -1,0 +1,45 @@
+﻿Deploy,Subject,Status,Previous inputs,New inputs,Previous unit,New unit,Explanation
+June,Households appliances efficiency,New,-,households_appliances_electricity_efficiency,-,%,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_clothes_dryer_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_computer_media_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_dishwasher_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_fridge_freezer_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_other_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_television_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_vacuum_cleaner_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_washing_machine_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households behaviour,Removed,households_behavior_low_temperature_washing,-,%,-,Redundant behaviour sliders are removed
+June,Households behaviour,Removed,households_behavior_standby_killer_turn_off_appliances,-,%,-,Redundant behaviour sliders are removed
+June,Households behaviour,Removed,households_behavior_turn_off_the_light,-,%,-,Redundant behaviour sliders are removed
+June,Custom profiles,Changed,flh_of_hydro_river,flh_of_hydro_river_user_curve,hours,hours,"Changed input is introduced with a bug fix in custom profile upload. This input is automatically set when a custom profile is uploaded, and should thus not be set manually."
+June,Custom profiles,Changed,flh_of_solar_thermal,flh_of_solar_thermal_user_curve,hours,hours,"Changed input is introduced with a bug fix in custom profile upload. This input is automatically set when a custom profile is uploaded, and should thus not be set manually."
+June,Custom profiles,Removed,flh_of_geothermal_heat,-,hours,-,Input is replaced with separate inputs that are set when a custom profile for deep or shallow geothermal is uploaded.
+June,Custom profiles,New,-,flh_of_geothermal_heat_deep_user_curve,-,hours,"New input that is automatically set when a custom profile for deep geothermal is uploaded, and should thus not be set manually"
+June,Custom profiles,New,-,flh_of_geothermal_heat_shallow_user_curve,-,hours,"New input that is automatically set when a custom profile for shallow geothermal is uploaded, and should thus not be set manually"
+February,Insulation,Changed,buildings_insulation_level_buildings_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,buildings_insulation_level_buildings_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_1945_1964,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_1965_1984,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_1985_2004,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_2005_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_before_1945,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_1945_1964,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_1965_1984,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_1985_2004,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_2005_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_before_1945,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_1945_1964,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_1965_1984,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_1985_2004,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_2005_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_before_1945,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_1945_1964,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_1965_1984,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_1985_2004,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_2005_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_before_1945,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Appliances,Changed,households_behavior_standby_killer_turn_off_appliances,-,%,%,"Removing buildings appliances from input, it should only set households behaviour"

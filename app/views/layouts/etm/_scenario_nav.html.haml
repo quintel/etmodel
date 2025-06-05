@@ -30,24 +30,39 @@
     - else
       %a.sign-in-to-save.disabled{ href: sign_in_path }
         = t('header.save_scenario').titleize
+
+    -# Render the dropdown for actions
     .dropdown<>
-      %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, disabled: true, type: 'button' }
-        = t('header.actions')
-        %span.fa.fa-caret-down
-      %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
-        - if current_user
-          %li
-            - if Current.setting.api_session_id.present?
+      - if current_user
+        %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, type: 'button' }
+          = t('header.actions')
+          %span.fa.fa-caret-down
+        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
+          - if Current.setting.api_session_id.present?
+            %li
               %a.dropdown-item.save-scenario-as-inline{ href: '#', data: { dylink: new_saved_scenario_path(scenario_id: Current.setting.api_session_id, title: Current.setting.active_scenario_title) } }
                 = succeed '&hellip;'.html_safe do
                   = t("header.save_scenario_as")
-            - else
+          - else
+            %li
               %a.dropdown-item.disabled{ href: '#', disabled: true }
                 = t("header.save_scenario_as")
-        - else
-          %a.dropdown-item.disabled{ href: sign_in_path }
-            = succeed '&hellip;'.html_safe do
-              = t("header.save_scenario_as")
+          %li
+            %a.dropdown-item.reset-scenario{ href: scenario_confirm_reset_path }
+              = t("header.reset_scenario")
+          - if export_scenario_enabled?
+            %li
+              %a.dropdown-item{ href: export_scenario_path(Current.setting.api_session_id) }
+                = t('header.export_scenario')
+      - else
+        %button.scenario-actions#scenario-actions-button{ aria: { expanded: 'false' }, data: { toggle: 'dropdown' }, disabled: true, type: 'button' }
+          = t('header.actions')
+          %span.fa.fa-caret-down
+        %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': 'scenario-actions-button' }
+          %li
+            %a.dropdown-item.disabled{ href: sign_in_path }
+              = succeed '&hellip;'.html_safe do
+                = t("header.save_scenario_as")
         %li
           %a.dropdown-item.reset-scenario{ href: scenario_confirm_reset_path}
             = t("header.reset_scenario")

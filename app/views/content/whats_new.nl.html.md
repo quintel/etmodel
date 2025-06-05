@@ -17,6 +17,7 @@ ___
   <summary>**Bug fixes**</summary>
 
   * Door een bug in het <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">uploaden van uurprofielen</a> voor waterkracht, geothermie en zonthermie, werden geüploade profielen voor deze technologieën incorrect verwerkt en de bijbehorende vollasturen niet gezet in scenario's. Deze bug is nu verholpen, waardoor de geüploade profielen en de bijbehorende vollasturen nu wel correct worden verwerkt en gezet in scenario's.
+  * Voor bepaalde Nederlandse gemeentelijke datasets was de finale vraag naar warmte bij Huishoudens in het startjaar incorrect. Dit is nu gecorrigeerd.
 
 </details>
 

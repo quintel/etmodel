@@ -17,6 +17,7 @@ ___
   <summary>**Bug fixes**</summary>
 
   * There was a bug in the <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">custom profiles</a> for hydro power, solar thermal and geothermal heat, which caused uploaded profiles for these technologies to not be processed correctly and prevented the related full load hours from being set. This issue has now been resolved, wich means that the custom profiles and related full load hours are now processed and set correctly.
+  * For various Dutch municipal datasets, the final demand of heat in Households in the start year was incorrect. This has been corrected.
 
 </details>
 

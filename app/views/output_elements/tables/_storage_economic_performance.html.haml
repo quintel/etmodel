@@ -23,10 +23,10 @@
     :ruby
       items = [
         'batteries_households',
-        'batteries_electric_cars',
-        'batteries_electric_buses',
-        'batteries_electric_trucks',
-        'batteries_electric_vans',
+        -# 'batteries_electric_cars',
+        -# 'batteries_electric_buses',
+        -# 'batteries_electric_trucks',
+        -# 'batteries_electric_vans',
         'batteries_mv',
         'pumped_storage',
         'batteries_opac',
@@ -38,7 +38,7 @@
         %td.position{:data => {:decimals => 1, :gquery => "#{key}_wtp_in_storage_economic_performance_table", :on_zero => '-'}}
         %td.capacity{:data => {:decimals => 0, :gquery => "#{key}_capacity_in_storage_economic_performance_table"}}
         %td{:data => {:decimals => 0, :gquery => "#{key}_full_load_hours_in_storage_economic_performance_table"}}
-        # %td.cost{:data => {:decimals => 1, :gquery => "#{key}_capex_in_storage_economic_performance_table"}}
-        # %td.cost{:data => {:decimals => 1, :gquery => "#{key}_opex_in_storage_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_capex_in_storage_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_opex_in_storage_economic_performance_table"}}
         -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_revenue_in_storage_economic_performance_table"}}
         -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_profit_in_storage_economic_performance_table"}}

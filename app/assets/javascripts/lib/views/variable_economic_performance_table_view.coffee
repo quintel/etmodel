@@ -13,13 +13,15 @@ class @VariableEconomicPerformanceTableView extends HtmlTableChartView
     # Sort by WTP (aka .position). zeros/NaN → -Infinity so they float to the top
     rows = _.sortBy rows, (row) ->
       val = parseFloat($(row).find('td.position').text())
-      if isNaN(val) || val == 0 then -Infinity else -val
+      if isNaN(val) or val == 0 then -Infinity else -val
 
     # Blank out any remaining '0' in the five columns
     ['position','capex','opex','revenue','profit'].forEach (cls) ->
       rows.forEach (row) ->
         el = $(row).find("td.#{cls}")
-        if el.text().trim() is '0'
+        raw = el.text().trim()
+        num = parseFloat(raw)
+        if !isNaN(num) and num is 0
           el.text('-').addClass('blank')
 
-    @container_node().find("tbody").html(rows)
+    @container_node().find("tbody").empty().append(rows)

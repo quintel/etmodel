@@ -9,10 +9,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rack', '2.2.13'
+gem 'puma'
 gem 'rails', '~> 7.1.3'
 gem 'activerecord-session_store', '~> 2.0'
 gem 'activeresource', '~> 6.1'
-gem 'puma', '>= 6.0'
 
 gem 'jquery-rails', '~> 4.6'
 gem 'local_time', '~> 3.0'
@@ -96,10 +97,11 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40.0'
+  gem 'selenium-webdriver','4.10'
+  gem 'rails-controller-testing'
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.8'
   gem 'launchy'
-  gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers', require: false
   gem 'simplecov'

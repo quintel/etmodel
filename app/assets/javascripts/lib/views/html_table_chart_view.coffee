@@ -56,7 +56,11 @@ class @HtmlTableChartView extends BaseChartView
         return
 
       raw_value = if graph == 'future' then serie.future_value() else serie.present_value()
-      raw_value = 0 unless _.isNumber(raw_value)
+      if raw_value is '-'
+        value = '-'
+        $(cell).html(value)
+        continue
+      raw_value = parseFloat(raw_value) || 0
       value     = @main_formatter(maxFrom: 5, precision: decimals, maxPrecision: 5, scaledown: false, unit: unit)(raw_value)
 
       # some gqueries need a special treatment if they're 0
@@ -73,4 +77,3 @@ class @HtmlTableChartView extends BaseChartView
 
   # Derived classes can override this
   after_render: => true
-

@@ -15,11 +15,4 @@ class @VariableEconomicPerformanceTableView extends HtmlTableChartView
       val = parseFloat($(row).find('td.position').text())
       if isNaN(val) || val == 0 then -Infinity else -val
 
-    # Blank out any remaining '0' in the five columns
-    ['position','capex','opex','revenue','profit'].forEach (cls) ->
-      rows.forEach (row) ->
-        el = $(row).find("td.#{cls}")
-        if el.text().trim() is '0'
-          el.text('-').addClass('blank')
-
     @container_node().find("tbody").html(rows)

@@ -1,3 +1,5 @@
+@import general_styles
+
 #accordion_wrapper
   color: #333
 
@@ -137,9 +139,8 @@
             margin-bottom: 5px
             width: 128px
             padding-bottom: 7px
-            @include hidpi
-              background-image: url(/assets/slides/grey_triangle_down-hidpi.png)
-              background-size: 49px 6px
+            background-image: url(/assets/slides/grey_triangle_down-hidpi.png)
+            background-size: 49px 6px
           .sub_header + .interface_group
             margin-top: 0
 
@@ -164,12 +165,3 @@
             padding-left: 10px
             padding-right: 10px
             width: auto
-
-      // @include hidpi
-      //   a.slide_header
-      //     background-image: image-url('slides/triangle-hidpi.png')
-      //     background-size: 23px 30px
-
-      //   a.slide_header:hover, .selected a, .ui-state-active a
-      //     background-image: image-url('slides/triangle-hover-hidpi.png')
-      //     background-size: 23px 30px

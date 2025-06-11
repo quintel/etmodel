@@ -23,7 +23,7 @@ gem 'tabs_on_rails', '~> 3.0'
 gem 'kaminari', '~> 1.2.1'
 gem 'simple_form'
 gem 'nokogiri', '>= 1.18'
-gem 'rdiscount', '~> 2.2.7.3' # TODO: Check usage and assess
+gem 'rdiscount', '~> 2.2.7.3'
 gem 'loofah'
 gem 'rails-html-sanitizer', '>= 1.6'
 gem 'font-awesome-rails'
@@ -58,6 +58,7 @@ gem 'dalli'
 gem 'dynamic_form'
 
 gem 'jquery-etmodel-rails', ref: '4f87ea2', github: 'quintel/etplugin'
+gem 'observer'
 
 # Engine
 gem 'dry-initializer'
@@ -73,13 +74,6 @@ group :development do
 
   gem 'better_errors'
   gem 'seed_dump'
-
-  # Deploy with Capistrano.
-  gem 'capistrano',             '~> 3.9',   require: false
-  gem 'capistrano-rbenv',       '~> 2.0',   require: false
-  gem 'capistrano-rails',       '~> 1.1',   require: false
-  gem 'capistrano-bundler',     '~> 1.1',   require: false
-  gem 'capistrano-maintenance', '~> 1.0',   require: false
 
   gem 'ed25519',                            require: false
   gem 'bcrypt_pbkdf',                       require: false

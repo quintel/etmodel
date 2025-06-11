@@ -9,7 +9,7 @@
       %th= t 'output_elements.tables.economic_performance.capex'
       %th= t 'output_elements.tables.economic_performance.opex'
       %th= t 'output_elements.tables.economic_performance.revenue'
-      %th= t 'output_elements.tables.economic_performance.profit'
+      %th= t 'output_elements.tables.economic_performance.economic_viability'
     %tr
       %th
       %th EUR/MWh
@@ -34,7 +34,6 @@
         'p2h_boiler_agriculture',
         'synthetic_kerosene',
         'electrolyser_onshore',
-        'electrolyser_offshore'
       ]
     - items.each do |key|
       %tr
@@ -42,7 +41,7 @@
         %td.position{:data => {:decimals => 1, :gquery => "#{key}_wtp_in_flexible_demand_economic_performance_table", :on_zero => '-'}}
         %td.capacity{:data => {:decimals => 0, :gquery => "#{key}_capacity_in_flexible_demand_economic_performance_table"}}
         %td{:data => {:decimals => 0, :gquery => "#{key}_full_load_hours_in_flexible_demand_economic_performance_table"}}
-        -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_capex_in_flexible_demand_economic_performance_table"}}
-        -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_opex_in_flexible_demand_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_capex_in_flexible_demand_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_opex_in_flexible_demand_economic_performance_table"}}
         -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_revenue_in_flexible_demand_economic_performance_table"}}
         -# %td.cost{:data => {:decimals => 1, :gquery => "#{key}_profit_in_flexible_demand_economic_performance_table"}}

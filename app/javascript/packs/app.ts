@@ -86,3 +86,6 @@ window.MultiCurveChooserView = MultiCurveChooserView;
 import { onClick as saveAsPNGClick } from '../charts/utils/saveAsPNG';
 
 window.BaseChartView.saveAsPNG = saveAsPNGClick;
+
+import LocalTime from "local-time"
+LocalTime.start()

@@ -58,7 +58,6 @@ gem 'dalli'
 gem 'dynamic_form'
 
 gem 'jquery-etmodel-rails', ref: '4f87ea2', github: 'quintel/etplugin'
-gem 'observer'
 
 # Engine
 gem 'dry-initializer'

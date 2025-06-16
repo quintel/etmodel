@@ -25,18 +25,7 @@ class ScenariosController < ApplicationController
   end
 
   def index
-    @saved_scenarios = current_user
-      .saved_scenarios
-      .available
-      .includes(:featured_scenario, :users)
-      .order('updated_at DESC')
-      .page(params[:page])
-      .per(10)
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    redirect_to "#{Settings.identity.issuer}/saved_scenarios", allow_other_host: true
   end
 
   def show

@@ -111,7 +111,7 @@ group :production, :staging do
   gem 'newrelic_rpm'
 end
 
-gem 'mini_racer', '>= 0.12'
+gem 'mini_racer', '~> 0.12'
 gem 'sassc-rails'
 gem 'coffee-rails'
 gem 'terser'

@@ -31,7 +31,7 @@ class PagesController < ApplicationController
   end
 
   def update_footer
-    render partial: "layouts/etm/footer"
+    render partial: 'layouts/etm/footer'
   end
 
   def set_locale
@@ -51,7 +51,7 @@ class PagesController < ApplicationController
 
   def setup_countries_and_regions
     @show_all = session[:show_municipalities] || session[:show_all_countries]
-    @show_german_provinces = (current_user.try(:email) == "brandenburg@et-model.com" || session[:show_all_countries])
+    @show_german_provinces = (current_user.try(:email) == 'brandenburg@et-model.com' || session[:show_all_countries])
   end
 
   def assign_settings_and_redirect

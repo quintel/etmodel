@@ -1,9 +1,0 @@
-.sharing-links
-  .copy-link
-    %a
-      .icon{ class: 'fa fa-copy' }
-      = t('scenario.share.copy')
-    .copy-box
-      .arrow
-      .cross{ class: 'fa fa-times', title: 'Close' }
-      .url= text_field_tag 'url', request.original_url

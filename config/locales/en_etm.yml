@@ -307,7 +307,11 @@ en:
     load_energy_mix: "Open energy mix infographic"
     no_title: "Scenario without title"
     overview: "overview"
-    overwritten: "Please note: Save your current scenario before opening another, or your changes might get lost."
+    overwritten: |
+      Save your current scenario before opening another, or your changes might get lost. </br>
+      Opening this scenario will open a copy of the originial. Changes to the copy will not
+      be directly reflected in the original scenario. You can later save the copy as a new version
+      using 'Save as..'.
     provide_title: "Please provide a title for the scenario."
     reset_to_preset_confirmation: "Are you sure you want to reset this scenario to its preset"
     save: "Save your scenario"

@@ -75,14 +75,14 @@ table.default
       margin-left: 0
 
   &#show_scenario, &#feature_scenario, &#index
-    width: $landing-width + 400px
+    width: $landing-width
     margin: 0 auto 3rem
     display: flex
     min-height: 655px
 
     .internal-box
       width: 100%
-      background: white
+      background: $landing-background-color
       border-radius: 0 10px 10px 0
       padding: 15px 40px 40px
       display: flex
@@ -93,11 +93,12 @@ table.default
     .version-warning
       background: #f0f7ee image-url('icons/warning-information.svg') 1.5rem 1.25rem no-repeat
       background-size: 2rem
-      border-left: 3px solid #79a765
       color: #455f39
       font-size: 14px
       margin-bottom: 1rem
+      margin-top: auto
       padding: 1rem 1.5rem 1rem 4.5rem
+      border-radius: 8px
 
       dt
         font-weight: 600
@@ -603,7 +604,9 @@ table.default
         color: #333
 
     .note
-      font-size: 10px
+      font-size: 14px
+      line-height: 1.5
+      color: $text-light-grey
 
   &#feature_scenario
     .field_with_errors

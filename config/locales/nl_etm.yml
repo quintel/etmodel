@@ -307,7 +307,12 @@ nl:
     load_energy_mix: "Open energie-mix infographic"
     no_title: "Scenario zonder titel"
     overview: "overzicht"
-    overwritten: "Let op: Sla je huidige scenario eerst op voor je een nieuwe opent. Je wijzigingen kunnen verloren gaan."
+    overwritten: |
+      Sla je huidige scenario eerst op voor je een nieuwe opent.
+      Je wijzigingen kunnen verloren gaan.</br>
+      Het openen van dit scenario opent een kopie van het origineel.
+      Aanpassingen die aan deze kopie worden gedaan, worden niet direct gereflecteerd in
+      het origineel. De kopie kan als nieuwe versie worden opgeslagen via 'Opslaan als...'.
     provide_title: "Geef het scenario een titel."
     reset_to_preset_confirmation: "Weet u zeker dat u dit scenario wilt resetten naar de preset?"
     save: "Sla uw scenario op"

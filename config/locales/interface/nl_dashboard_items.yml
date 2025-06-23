@@ -115,12 +115,12 @@ nl:
     profitability:
       label: Rendabele centrales
       title: Economische levensvatbaarheid van dispatchable elektriciteitscentrales
-      description: Het dashboard toont welk percentage van het beschikbare 'dispatchable'
-        stroomvermogen economisch levensvatbaar is. Deze tabel toont (van alle centrales, niet alleen de 'dispatchable' centrales) welke centrales winst- of
-        verliesmakend zijn en welke wel hun operationele kosten (OPEX) terugverdienen,
-        maar niet de nodige investeringen (CAPEX). Verliesgevende centrales worden
-        in de praktijk verwijderd. Je kunt dit zelf doen bij het onderdeel 'Aanbod>>
-        Elektriciteit'.
+      description: |
+        Het dashboard toont welk percentage van het beschikbare 'dispatchable'
+        geïnstalleerde outputvermogen voor elektriciteit economisch levensvatbaar is. Deze tabel toont (van alle centrales, niet alleen de 'dispatchable' centrales) welke centrales winst- of
+        verliesmakend zijn en welke centrale de meeste winst maakt. Voor meer informatie over deze tabel, zie onze
+        <a href="https://docs.energytransitionmodel.com/main/cost-main-principles"
+        target="_blank">documentatie</a>.<br/><br/>
     total_number_of_excess_events:
       label: Elektriciteitsoverschotten
       title: Aantal uren met elektriciteitsoverschotten

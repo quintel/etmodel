@@ -118,12 +118,11 @@ en:
     profitability:
       label: Profitable plants
       title: Economic viability of dispatchable power plants
-      description: 'The number on the dashboard shows which part of the available
+      description: |
+        The percentage on the dashboard shows which percentage of the installed 
         dispatchable power production capacity is economically viable. This table shows (of all plants, not only the dispatchable plants) what
-        plants are profitable or unprofitable and what plants earn back their operating
-        costs (OPEX), but not the required investments (CAPEX). In reality, unprofitable
-        plants will be shut down. You can do so too in section ''Supply >> Electricity'',
-        but may lose too much reliable capacity. '
+        plants are profitable or unprofitable in your scenario. For more information about the table please visite 
+        the <a href="https://docs.energytransitionmodel.com/main/cost-main-principles" target="_blank">documentation</a>.
     total_number_of_excess_events:
       label: Excess electricity
       title: Number of hours with excess electricity

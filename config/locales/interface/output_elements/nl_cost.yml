@@ -72,30 +72,33 @@ nl:
       description: |
         Deze tabel toont de economische levensvatbaarheid van alle must-run, volatiele en regelbare elektriciteitsproductietechnologieën
         in het scenario. Naast de merit order positie, het outputvermogen en het aantal vollasturen zijn de volgende economische
-        parameters opgenomen: CAPEX, OPEX, omzet en winst. De must-run en volatiele technologieën staan bovenaan, gevolgd door
+        parameters opgenomen: CAPEX, OPEX, omzet en winst. Deze parameters zijn alle 4 gedeeld door het aantal MWh output.
+        De must-run en volatiele technologieën staan bovenaan, gevolgd door
         de regelbare technologieën die zijn gesorteerd op positie in de merit order.<br/><br/>
         Deze tabel is complementair aan de <a href="#" class="open_chart" data-chart-key="merit_order_table"
-        data-chart-location="side">merit order tabel</a>.
+        data-chart-location="side">merit order tabel</a>.<br/><br/>
+        Meer informatie over deze tabel is te vinden in de
+        <a href="https://docs.energytransitionmodel.com/main/cost-main-principles/" target=\"_blank\">documentatie</a>.
     storage_economic_performance:
       title: Economische levensvatbaarheid van elektriciteitsopslagtechnologieën
       short_description:
       description: |
         Deze tabel toont de economische levensvatbaarheid van opslagtechnologieën voor elektriciteit in het scenario.
         Naast de willingness-to-pay (WTP), het outputvermogen en het aantal vollasturen zijn de volgende economische
-        parameters opgenomen: CAPEX, OPEX, omzet en winst.<br/><br/>
+        parameters opgenomen: CAPEX, OPEX, omzet en winst. Deze parameters zijn alle 4 gedeeld door het aantal MWh output. <br/><br/>
         Deze tabel is complementair aan de <a href="#" class="open_chart" data-chart-key="storage_specifications"
         data-chart-location="side">tabel</a> die meer specificaties bevat over de elektriciteitsopslagtechnologieën.
-        Meer informatie over elektriciteitsopslag in het ETM is te vinden in de
-        <a href="https://docs.energytransitionmodel.com/main/electricity-storage/" target=\"_blank\">documentatie</a>.
+        Meer informatie over deze tabel is te vinden in de
+        <a href="https://docs.energytransitionmodel.com/main/cost-main-principles/" target=\"_blank\">documentatie</a>.
     flexible_demand_economic_performance:
       title: Economische levensvatbaarheid van flexibele elektriciteitsvraagtechnologieën
       short_description:
       description: |
         Deze tabel toont de economische levensvatbaarheid van flexibele elektriciteitsvraagtechnologieën in het scenario.
         Naast de willingness-to-pay (WTP), het outputvermogen en het aantal vollasturen zijn de volgende economische
-        parameters opgenomen: CAPEX, OPEX, omzet en winst.<br/><br/>
+        parameters opgenomen: CAPEX, OPEX, omzet en winst. Deze parameters zijn alle 4 gedeeld door het aantal MWh output.<br/><br/>
+        Voor de P2H technologieën wordt geen opbrengstenberekening gedaan, omdat er in het ETM geen marktprijs voor warmte wordt berekend.
         Deze tabel is complementair aan de <a href="#" class="open_chart" data-chart-key="storage_options"
         data-chart-location="side">tabel</a> die meer gegevens over productie van flexibele
-        elektriciteitsvraagtechnologieën bevat. Meer informatie over technologieën met flexibele
-        elektriciteitsvraag in het ETM is te vinden in de <a href="https://docs.energytransitionmodel.com/main/flexibility/"
-        target=\"_blank\">documentatie</a>.
+        elektriciteitsvraagtechnologieën bevat.  Meer informatie over deze tabel is te vinden in de
+        <a href="https://docs.energytransitionmodel.com/main/cost-main-principles/" target=\"_blank\">documentatie</a>.

@@ -108,6 +108,9 @@ en:
         Finally, the last columns show the annual usage of the flexibility
         technologies in your scenario, in terms of electricity input, energy output and
         full load hours.
+        <br/><br/>
+        This table is complementary to the <a href="#" class="open_chart" data-chart-key="flexible_demand_economic_performance"
+        data-chart-location="side">table</a> that shows the economic viability of flexible demand technologies.
     storage_specifications:
       title: Electricity storage technologies specifications
       short_description:
@@ -123,6 +126,9 @@ en:
         technologies. In <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
         this</a> chart you can view the combined charging and discharging behaviour of these technologies
         per hour.
+        <br/><br/>
+        This table is complementary to the <a href="#" class="open_chart" data-chart-key="storage_economic_performance"
+        data-chart-location="side">table</a> that shows the economic viability of electricity storage technologies.
     merit_order_hourly_flexibility:
       title: Flexible electricity demand per hour
       short_description: ''
@@ -132,7 +138,6 @@ en:
         Flexibility</a> section of the model. It is defined in the
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentation</a> which types of electricity demand are considered flexible. This chart shows the hourly use of these technologies.
-
     solar_pv_curtailment:
       title: Curtailment of solar PV
       short_description:
@@ -148,13 +153,17 @@ en:
     merit_order_table:
       title: Merit order table
       short_description: ''
-      description: "This table shows the merit order of your scenario. Based on your
+      description: |
+        This table shows the merit order of your scenario. Based on your
         assumptions concerning available electricity production technologies, fuel
         prices, CO<sub>2</sub> emissions costs, and operating and maintenance costs
         the model calculates the order in which power plants are used to meet the
-        demand.\r\n<br/><br/>\r\nThe table shows what place in the merit order each
+        demand.<br/><br/>
+        The table shows what place in the merit order each
         technology has, which is based on the operating costs. Also the table shows
-        the available capacity of each technology as well as the full load hours."
+        the available capacity of each technology as well as the full load hours.
+        This table is complementary to the <a href="#" class="open_chart" data-chart-key="power_plant_economic_performance"
+        data-chart-location="side"> Economic viability of electricity production technologies table</a>.
     flexibility_workflow:
       title: Workflow
       description:
@@ -490,38 +499,3 @@ en:
         availability. Specifically, this means that the depicted peak load is always lower than the installed
         capacity of the wind turbine and electrolyser, and subsequently of the offshore cable supplying
         electricity to the offshore electrolyser.
-    power_plant_economic_performance:
-      title: Economic viability of electricity production technologies
-      short_description:
-      description: |
-        This table depicts the economic viability of all must-run, volatile and dispatchable electricity production
-        technologies in the scenario. In addition to the merit order position, output capacity and full load hours,
-        the following economic parameters are depicted: CAPEX, OPEX, revenue and profit. The must-run and volatile
-        production technologies are depicted at the top, followed by the dispatchable technologies sorted by position
-        in the merit order.<br/><br/>
-        This table is complementary to the <a href="#" class="open_chart" data-chart-key="merit_order_table"
-        data-chart-location="side">merit order table</a>.
-    storage_economic_performance:
-      title: Economic viability of electricity storage technologies
-      short_description:
-      description: |
-        This table depicts the economic performance of electricity storage technologies in the scenario.
-        In addition to the willingness-to-pay (WTP), output capacity and full load hours, the following economic
-        parameters are depicted: CAPEX, OPEX, revenue and profit. <br/><br/>
-        This table is complementary to the <a href="#" class="open_chart" data-chart-key="storage_specifications"
-        data-chart-location="side">table</a> that contains detailed specifications of storage technologies.
-        More information about electricity storage in the ETM
-        can be found in the <a href="https://docs.energytransitionmodel.com/main/electricity-storage/"
-        target=\"_blank\">documentation</a>.
-    flexible_demand_economic_performance:
-      title: Economic viability of flexible electricity demand technologies
-      short_description:
-      description: |
-        This table depicts the economic viability of flexible electricity demand technologies in the scenario.
-        In addition to the willingness-to-pay (WTP), output capacity and full load hours, the following economic
-        parameters are depicted: CAPEX, OPEX, revenue and profit. <br/><br/>
-        This table is complementary to the <a href="#" class="open_chart" data-chart-key="storage_options"
-        data-chart-location="side">table</a> that contains details about the production of flexible
-        electricity demand technologies. More information about flexible electricity demand technologies in the ETM
-        can be found in the <a href="https://docs.energytransitionmodel.com/main/flexibility/"
-        target=\"_blank\">documentation</a>.

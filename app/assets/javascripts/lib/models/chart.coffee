@@ -151,7 +151,9 @@ class @Chart extends Backbone.Model
   table_view_factory: =>
     switch @get('key')
       when 'merit_order_table' then MeritOrderTableView
-      when 'plant_profitability' then PlantProfitabilityTableView
+      when 'power_plant_economic_performance' then MeritOrderTableView
+      when 'storage_economic_performance' then VariableEconomicPerformanceTableView
+      when 'flexible_demand_economic_performance' then VariableEconomicPerformanceTableView
       when 'carbon_balance' then CarbonBalanceTableView
       else HtmlTableChartView
 

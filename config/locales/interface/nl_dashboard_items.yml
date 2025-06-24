@@ -114,13 +114,14 @@ nl:
       description:
     profitability:
       label: Rendabele centrales
-      title: Winstgevendheid van distpachable elektriciteitscentrales
-      description: Het dashboard toont welk percentage van het beschikbare 'dispatchable'
-        stroomvermogen winstgevend is. Deze tabel toont welke centrales winst- of
-        verliesmakend zijn en welke wel hun operationele kosten (OPEX) terugverdienen,
-        maar niet de nodige investeringen (CAPEX). Verliesgevende centrales worden
-        in de praktijk verwijderd. Je kunt dit zelf doen bij het onderdeel 'Aanbod>>
-        Elektriciteit'.
+      title: Winstgevendheid van regelbare elektriciteitscentrales
+      description: |
+        Het dashboard toont welk percentage van het beschikbare regelbare geïnstalleerde outputvermogen
+        voor elektriciteit economisch levensvatbaar is. Deze tabel toont (van alle centrales, niet
+        alleen de regelbare centrales) welke centrales winstgevend of verlieslatend zijn. Voor meer
+        informatie over deze tabel, zie de
+        <a href="https://docs.energytransitionmodel.com/main/cost-main-principles"
+        target="_blank">documentatie</a>.<br/><br/>
     total_number_of_excess_events:
       label: Elektriciteitsoverschotten
       title: Aantal uren met elektriciteitsoverschotten

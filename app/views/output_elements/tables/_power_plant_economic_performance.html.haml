@@ -1,22 +1,24 @@
--# merit order table
-%table.chart.autostripe
+-# power plant economic performance table
+%table.chart.centered.autostripe
   %thead
     %tr
-      %th= t 'output_elements.tables.merit_order.technology'
-      %th= t 'output_elements.tables.merit_order.position'
-      %th= t 'output_elements.tables.merit_order.operating_costs'
-      %th= t 'output_elements.tables.merit_order.installed_capacity'
-      %th= t 'output_elements.tables.merit_order.availability'
-      %th= t 'output_elements.tables.merit_order.flh_future'
-      %th= t 'output_elements.tables.merit_order.flh_present'
+      %th
+      %th= t 'output_elements.tables.economic_performance.position'
+      %th= t 'output_elements.tables.economic_performance.output_capacity'
+      %th= t 'output_elements.tables.economic_performance.flh_future'
+      %th= t 'output_elements.tables.economic_performance.capex'
+      %th= t 'output_elements.tables.economic_performance.opex'
+      %th= t 'output_elements.tables.economic_performance.revenue'
+      %th= t 'output_elements.tables.economic_performance.economic_viability'
     %tr
       %th
       %th
-      %th €/MWh
       %th MW
-      %th %
-      %th Hr
-      %th Hr
+      %th= t 'output_elements.tables.economic_performance.hour'
+      %th €/MWh
+      %th €/MWh
+      %th €/MWh
+      %th €/MWh
   %tbody
     :ruby
       items = [
@@ -26,6 +28,8 @@
         'agriculture_chp_wood_pellets',
         'biogas_chp_ht',
         'biogas_chp_mt',
+        'battery_solar_pv',
+        'battery_wind_inland',
         'coal_chp_pwd_ht',
         'coal_chp_pwd_mt',
         'coal_chp_pwd_cofiring_ht',
@@ -66,20 +70,7 @@
         'households_solar_pv_solar_radiation',
         'energy_power_solar_pv_solar_radiation',
         'energy_power_solar_pv_offshore',
-        'battery_solar_pv',
         'energy_power_solar_csp_solar_radiation',
-        'energy_interconnector_1_imported_electricity',
-        'energy_interconnector_2_imported_electricity',
-        'energy_interconnector_3_imported_electricity',
-        'energy_interconnector_4_imported_electricity',
-        'energy_interconnector_5_imported_electricity',
-        'energy_interconnector_6_imported_electricity',
-        'energy_interconnector_7_imported_electricity',
-        'energy_interconnector_8_imported_electricity',
-        'energy_interconnector_9_imported_electricity',
-        'energy_interconnector_10_imported_electricity',
-        'energy_interconnector_11_imported_electricity',
-        'energy_interconnector_12_imported_electricity',
         'geothermal',
         'coastal_wind_turbines',
         'hydrogen_ccgt',
@@ -87,7 +78,6 @@
         'offshore_wind_turbines',
         'offshore_hybrid_wind_turbines',
         'onshore_wind_turbines',
-        'battery_wind_inland',
         'hydro_mountain',
         'hydro_river',
         'wood_pellets_chp_ht_must_run',
@@ -111,10 +101,11 @@
       ]
     - items.each do |key|
       %tr
-        %th= raw t "output_elements.tables.merit_order.#{key}"
-        %td.position{:data => {:decimals => 0, :gquery => "merit_order_#{key}_position_in_merit_order_table", :on_zero => '-'}}
-        %td.cost{:data => {:decimals => 2, :gquery => "merit_order_#{key}_operating_costs_in_merit_order_table"}}
-        %td.capacity{:data => {:decimals => 0, :gquery => "merit_order_#{key}_capacity_in_merit_order_table"}}
-        %td.availability{:data => {:decimals => 0, :gquery => "merit_order_#{key}_availability_in_merit_order_table"}}
-        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_full_load_hours_in_merit_order_table"}}
-        %td{:data => {:decimals => 0, :gquery => "merit_order_#{key}_full_load_hours_in_merit_order_table", :graph => :present}}
+        %th.left= raw t "output_elements.tables.economic_performance.#{key}"
+        %td.position{:data => {:decimals => 0, :gquery => "#{key}_position_in_power_plant_economic_performance_table", :on_zero => '-'}}
+        %td.capacity{:data => {:decimals => 0, :gquery => "#{key}_capacity_in_power_plant_economic_performance_table"}}
+        %td{:data => {:decimals => 0, :gquery => "#{key}_full_load_hours_in_power_plant_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_capex_in_power_plant_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_opex_in_power_plant_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_revenue_in_power_plant_economic_performance_table"}}
+        %td.cost{:data => {:decimals => 1, :gquery => "#{key}_profit_in_power_plant_economic_performance_table"}}

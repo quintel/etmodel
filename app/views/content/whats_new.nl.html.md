@@ -2,6 +2,31 @@
 
 ___
 
+# July 2025
+
+**Nieuwe functie**
+
+### Nieuwe economische levensvatbaarheidstabllen in het ETM
+
+Het ETM bevat nu drie nieuwe economische levensvatbaarheidstabllen die uitgebreide kosten-batenanalyses bieden voor elektriciteitsproductie-, opslag- en flexibele vraagtechnologieën. Deze tabellen gebruiken een andere kostenmethodologie dan de rest van het model door brandstof- en emissiekosten direct in de OPEX-berekeningen op te nemen. Elke tabel toont vier kerngegevens (CAPEX, OPEX, Opbrengsten en Economische Haalbaarheid) uitgedrukt in euro's per MWh van de outputdrager. De tabellen dekken een breed scala aan technologieën van regelbare en vluchtige energiecentrales tot huishoudelijke batterijen, elektrische voertuigen en power-to-X technologieën, waardoor gebruikers de economische prestaties van verschillende energie-assets binnen hun scenario's kunnen vergelijken.
+
+-> <img src="/assets/pages/whats_new/economic_viability_nl.png" width="800" /> <-
+
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+* Het stroomtekort dashboarditem toonde een onjuist getal voor scenario's met huishoudelijke batterijen. Dit probleem is nu opgelost.
+* Gebruikers die niet zijn ingelogd kunnen nu de profielen downloaden die zijn geüpload in elk publiek scenario.
+* Er zijn verschillende verbeteringen doorgevoerd aan het wachtwoord reset proces en gebruikersmails, dit maakt het proces om gebruikerswachtwoorden te resetten gebruiksvriendelijker.
+
+</details>
+
+</br>
+
+
+___
+
 # Juni 2025
 
 **Nieuwe functies**

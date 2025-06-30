@@ -2,6 +2,31 @@
 
 ___
 
+# July 2025
+
+**New feature**
+
+### New Economic Viability Tables Added to ETM
+
+The ETM now includes three new economic viability tables that provide comprehensive cost-benefit analysis for electricity production, storage, and flexible demand technologies. These tables use a different cost methodology than the rest of the model by incorporating fuel and emission costs directly into the OPEX calculations, providing a more accurate plant-level economic assessment. Each table displays four key metrics (CAPEX, OPEX, Revenue, and Economic Viability) expressed in euros per MWh of output carrier, with revenue calculations based on hourly electricity market prices where applicable. The tables cover a wide range of technologies from dispatchable and volatile power plants to household batteries, electric vehicles, and power-to-X technologies, enabling users to compare the economic performance of different energy assets within their scenarios.
+
+-> <img src="/assets/pages/whats_new/economic_viability_en.png" width="800" /> <-
+
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+* The power shortage dashboard item showed an incorrect number for scenarios with household batteries. This issue is now fixed.
+* Users who are not logged in can now download the profiles uploaded in any public scenario.
+* A number of fixes to the password reset process and user emails have been made, this makes the process to reset the user passwords more user-friendly
+
+</details>
+
+</br>
+
+___
+
+
 # June 2025
 
 **New features**

@@ -6,7 +6,7 @@ ___
 
 **Nieuwe functie**
 
-### Nieuwe economische levensvatbaarheidstabllen in het ETM
+### Nieuwe tabellen beschikbaar om economische levensvatbaarheid mee te verkennen
 
 Het ETM bevat nu drie nieuwe economische levensvatbaarheidstabllen die uitgebreide kosten-batenanalyses bieden voor elektriciteitsproductie-, opslag- en flexibele vraagtechnologieën. Deze tabellen gebruiken een andere kostenmethodologie dan de rest van het model door brandstof- en emissiekosten direct in de OPEX-berekeningen op te nemen. Elke tabel toont vier kerngegevens (CAPEX, OPEX, Opbrengsten en Economische Haalbaarheid) uitgedrukt in euro's per MWh van de outputdrager. De tabellen dekken een breed scala aan technologieën van regelbare en vluchtige energiecentrales tot huishoudelijke batterijen, elektrische voertuigen en power-to-X technologieën, waardoor gebruikers de economische prestaties van verschillende energie-assets binnen hun scenario's kunnen vergelijken.
 

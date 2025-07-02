@@ -2,9 +2,9 @@
 
 ___
 
-# July 2025
+# Juli 2025
 
-**Nieuwe functie**
+**Nieuwe functies**
 
 ### Nieuwe tabellen beschikbaar om economische levensvatbaarheid mee te verkennen
 
@@ -17,7 +17,7 @@ Het ETM bevat nu drie nieuwe economische levensvatbaarheidstabllen die uitgebrei
   <summary>**Bug fixes**</summary>
 
 * Het stroomtekort dashboarditem toonde een onjuist getal voor scenario's met huishoudelijke batterijen. Dit probleem is nu opgelost.
-* Gebruikers die niet zijn ingelogd kunnen nu de profielen downloaden die zijn geüpload in elk publiek scenario.
+* Gebruikers die niet zijn ingelogd kunnen nu de profielen downloaden die zijn geüpload in publieke scenario's.
 * Er zijn verschillende verbeteringen doorgevoerd aan het wachtwoord reset proces en gebruikersmails, dit maakt het proces om gebruikerswachtwoorden te resetten gebruiksvriendelijker.
 
 </details>

@@ -4,7 +4,7 @@ ___
 
 # July 2025
 
-**New feature**
+**New features**
 
 ### New tables available to explore economic viability
 
@@ -17,7 +17,7 @@ The ETM now includes three new economic viability tables that provide comprehens
   <summary>**Bug fixes**</summary>
 
 * The power shortage dashboard item showed an incorrect number for scenarios with household batteries. This issue is now fixed.
-* Users who are not logged in can now download the profiles uploaded in any public scenario.
+* Users who are not logged in can now download the profiles uploaded in public scenarios.
 * A number of fixes to the password reset process and user emails have been made, this makes the process to reset the user passwords more user-friendly
 
 </details>

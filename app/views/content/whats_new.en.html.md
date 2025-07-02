@@ -4,19 +4,27 @@ ___
 
 # July 2025
 
-**New features**
+**New features** 
 
 ### New tables available to explore economic viability
 
-The ETM now includes three new economic viability tables that provide comprehensive cost-benefit analysis for electricity production, storage, and flexible demand technologies. These tables use a different cost methodology than the rest of the model by incorporating fuel and emission costs directly into the OPEX calculations, providing a more accurate plant-level economic assessment. Each table displays four key metrics (CAPEX, OPEX, Revenue, and Economic Viability) expressed in euros per MWh of output carrier, with revenue calculations based on hourly electricity market prices where applicable. The tables cover a wide range of technologies from dispatchable and volatile power plants to household batteries, electric vehicles, and power-to-X technologies, enabling users to compare the economic performance of different energy assets within their scenarios.
+* The ETM now includes three new economic viability tables that provide comprehensive cost-benefit analysis for electricity production, storage, and flexible demand technologies. These tables use a different cost methodology than the rest of the model, providing a more accurate plant-level economic assessment. This enables users to gain a first insight in the cost effectiveness of these assets. You can find these tables under the "Cost" section within the charts. For more information conerning these charts pleae view the <a href="https://docs.energytransitionmodel.com/main/economic-viability" target="_blank"> documentation here</a>.
 
 -> <img src="/assets/pages/whats_new/economic_viability_en.png" width="800" /> <-
 
+### Other new features
+
+* The scenarios for Germany and Denmark with the dataset start year 2015 will be updated to the dataset start year of 2019 with the next deploy in August 2025.
+
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  <b>Note</b>: This update will bring significant changes to scenarios based on these datasets. 
+  If you would like to keep these scenarios as they are, you can <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blan"k> migrate them to the stable version</a> yourself.
+</div>
 
 <details>
   <summary>**Bug fixes**</summary>
 
-* The power shortage dashboard item showed an incorrect number for scenarios with household batteries. This issue is now fixed.
+* The power shortage dashboard item showed an incorrect number for scenarios with household batteries, this also caused minor errors in the electricity price calculations. This issue is now fixed.
 * Users who are not logged in can now download the profiles uploaded in public scenarios.
 * A number of fixes to the password reset process and user emails have been made, this makes the process to reset the user passwords more user-friendly
 

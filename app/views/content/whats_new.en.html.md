@@ -8,17 +8,16 @@ ___
 
 ### New tables available to explore economic viability
 
-* The ETM now includes three new economic viability tables that provide comprehensive cost-benefit analysis for electricity production, storage, and flexible demand technologies. These tables use a different cost methodology than the rest of the model, providing a more accurate plant-level economic assessment. This enables users to gain a first insight in the cost effectiveness of these assets. You can find these tables under the "Cost" section within the charts. For more information conerning these charts pleae view the <a href="https://docs.energytransitionmodel.com/main/economic-viability" target="_blank"> documentation here</a>.
+The ETM now includes three new economic viability tables that provide comprehensive cost-benefit analyses for electricity production, storage, and flexible demand technologies. The tables enable users to gain a first insight in the cost effectiveness of these assets. The tables can be found in the "Cost" section of the charts selection. See the <a href="https://docs.energytransitionmodel.com/main/economic-viability" target="_blank">documentation</a> for more information.
 
 -> <img src="/assets/pages/whats_new/economic_viability_en.png" width="800" /> <-
 
 ### Other new features
 
-* The scenarios for Germany and Denmark with the dataset start year 2015 will be updated to the dataset start year of 2019 with the next deploy in August 2025.
+* With the next Deploy in August, all existing scenarios for Germany and Denmark with start year 2015 will automatically be updated to start year 2019.
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
-  <b>Note</b>: This update will bring significant changes to scenarios based on these datasets. 
-  If you would like to keep these scenarios as they are, you can <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blan"k> migrate them to the stable version</a> yourself.
+  <b>Note</b>: the outcomes for these scenarios are expected to change as a result of the start year update. To ensure scenarios remain unchanged, transfer them to the stable version #2025-01 before August. See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information.
 </div>
 
 <details>

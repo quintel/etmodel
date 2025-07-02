@@ -8,19 +8,16 @@ ___
 
 ### Nieuwe tabellen beschikbaar om economische levensvatbaarheid mee te verkennen
 
-Het ETM bevat nu drie nieuwe economische levensvatbaarheidstabellen die uitgebreide kosten-batenanalyses bieden voor elektriciteitsproductie-, opslag- en flexibele vraagtechnologieën. Deze tabellen gebruiken een andere kostenmethodologie dan de rest van het model, dit stelt gebruikers in staat om een eerste inzicht te krijgen in de kosteneffectiviteit van deze assets. U kunt deze tabellen vinden onder de sectie "Kosten" binnen de grafieken.
-Voor meer informatie over deze tabellen bekijk de <a href="https://docs.energytransitionmodel.com/main/economic-viability" target="_blank"> documentatie hier</a>.
-
+Het ETM bevat nu drie nieuwe economische levensvatbaarheidstabellen die uitgebreide kosten-batenanalyses bieden voor elektriciteitsproductie-, opslag- en flexibele vraagtechnologieën. De tabellen stellen gebruikers in staat om een eerste inzicht te krijgen in de kosteneffectiviteit van deze assets. De tabellen zijn te vinden in de sectie "Kosten" van de grafiekenselectie. Zie de <a href="https://docs.energytransitionmodel.com/main/economic-viability" target="_blank">documentatie</a> voor meer informatie.
 
 -> <img src="/assets/pages/whats_new/economic_viability_nl.png" width="800" /> <-
 
 ### Overige nieuwe functies
 
-* De scenario's voor Duitsland en Denemarken met dataset startjaar 2015 zullen worden bijgewerkt naar het dataset startjaar 2019 met de eerstvolgende deploy in augustus 2025.
+* Alle bestaande scenario's voor Duitsland en Denemarken met startjaar 2015 automatisch worden geüpdatet naar startjaar 2019 met de eerstvolgende Deploy in augustus.
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
-  <b>Let op</b>: Deze update brengt significante veranderingen met zich mee voor scenario's gebaseerd op deze datasets. 
-  Als je deze scenario's graag wilt behouden zoals ze zijn, kun je <a href="https://docs.energytransitionmodel.com/main/user-manual/model-versions#move-scenarios-between-versions" target="_blank">ze zelf migreren naar de stabiele versie</a>.
+  <b>Let op</b>: naar verwachting zullen de uitkomsten voor deze scenario's veranderen door de update van het startjaar. Zet scenario's voor augustus naar de stabiele versie #2025-01 om dit te voorkomen. Zie de <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentatie</a> voor meer informatie.
 </div>
 
 <details>

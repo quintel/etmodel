@@ -2,6 +2,38 @@
 
 ___
 
+# July 2025
+
+**New features** 
+
+### New tables available to explore economic viability
+
+The ETM now includes three new economic viability tables that provide comprehensive cost-benefit analyses for electricity production, storage, and flexible demand technologies. The tables enable users to gain a first insight in the cost effectiveness of these assets. The tables can be found in the "Cost" section of the charts selection. See the <a href="https://docs.energytransitionmodel.com/main/economic-viability" target="_blank">documentation</a> for more information.
+
+-> <img src="/assets/pages/whats_new/economic_viability_en.png" width="800" /> <-
+
+### Other new features
+
+* With the next Deploy in August, all existing scenarios for Germany and Denmark with start year 2015 will automatically be updated to start year 2019.
+
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  <b>Note</b>: the outcomes for these scenarios are expected to change as a result of the start year update. To ensure scenarios remain unchanged, transfer them to the stable version #2025-01 before August. See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information.
+</div>
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+* The power shortage dashboard item showed an incorrect number for scenarios with household batteries, this also caused minor errors in the electricity price calculations. This issue is now fixed.
+* Users who are not logged in can now download the profiles uploaded in public scenarios.
+* A number of fixes to the password reset process and user emails have been made, this makes the process to reset the user passwords more user-friendly
+
+</details>
+
+</br>
+
+___
+
+
 # June 2025
 
 **New features**

@@ -21,7 +21,7 @@ blocks:
           commands:
             - checkout
             - sem-service start mysql 8
-            - sem-version node 16
+            - sem-version node 18
             - cache restore
             - bundle config set --local deployment 'true'
             - gem update --system

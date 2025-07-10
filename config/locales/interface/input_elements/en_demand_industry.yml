@@ -6,7 +6,7 @@ en:
       short_description:
       description: |
         Here you can indicate how the production of aluminium will change in the future. </br></br>
-        Globally, aluminium production has increased by 52.7% from 2010 to 2020, while 
+        Globally, aluminium production has increased by 52.7% from 2010 to 2020, while
         in Europe it has fallen by 5.3% in the same period according to the
         <a href="https://refman.energytransitionmodel.com/publications/2152" target=\"_blank\"> US Geological Survey</a>.
     industry_aluminium_electrolysis_bat_electricity_share:
@@ -96,8 +96,8 @@ en:
       title: Steam network
       short_description:
       description: |
-        Heat is supplied from a collective network as steam. The heat can be produced by 
-        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        Heat is supplied from a collective network as steam. The heat can be produced by
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the
         <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
         section.
     industry_other_paper_heater_electricity_share:
@@ -114,14 +114,14 @@ en:
       short_description:
       description: |
         These power-to-heat (P2H) boilers can be installed as an add-on for
-        gas and hydrogen heaters. In hours when the willingness to pay of these boilers 
+        gas and hydrogen heaters. In hours when the willingness to pay of these boilers
         exceeds the electricity price, they will use electricity to produce heat and the
-        gas and hydrogen heaters will lower their production. You can set the 
-        willingness to pay of these boilers in the 
+        gas and hydrogen heaters will lower their production. You can set the
+        willingness to pay of these boilers in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
         Flexibility</a> section. </br></br>
-        Note that for this slider to have an effect, capacity of either gas or hydrogen 
-        heaters needs to be installed as well. A number of charts are available to help you 
+        Note that for this slider to have an effect, capacity of either gas or hydrogen
+        heaters needs to be installed as well. A number of charts are available to help you
         determine the effect of installing power-to-heat capacity: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -144,9 +144,9 @@ en:
       short_description:
       description: |
         Here you can indicate how the production of crude steel will change in the future. </br></br>
-        Globally, crude steel production has increased by 32.2% from 2010 to 2019 according to the 
+        Globally, crude steel production has increased by 32.2% from 2010 to 2019 according to the
         <a href="https://refman.energytransitionmodel.com/publications/2151" target=\"_blank\"> World Steel Association</a>.
-        In Europe however, it has decreased by 8.8% in the same period, according to 
+        In Europe however, it has decreased by 8.8% in the same period, according to
         <a href="https://refman.energytransitionmodel.com/publications/2150" target=\"_blank\"> Eurofer</a>.
     industry_steel_blastfurnace_bof_share:
       title: Blast furnace
@@ -298,8 +298,8 @@ en:
       title: Steam network
       short_description:
       description: |
-        Heat is supplied from a collective network as steam. The heat can be produced by 
-        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        Heat is supplied from a collective network as steam. The heat can be produced by
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the
         <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
         section.
     industry_chemicals_fertilizers_steam_methane_reformer_hydrogen_share:
@@ -328,35 +328,35 @@ en:
       title: Local NH<sub>3</sub> (steam methane reforming)
       short_description:
       description: |
-        In this production route, steam methane reforming (SMR) is first used to produce hydrogen. This causes 
-        a non-energetic demand for network gas. The hydrogen then reacts with nitrogen to form ammonia 
-        in what is called the Haber-Bosch process. The ammonia is subsequently used to produce fertilizers, 
-        most notably urea and nitric-acid. Heat is required at various steps in the process, causing an 
+        In this production route, steam methane reforming (SMR) is first used to produce hydrogen. This causes
+        a non-energetic demand for network gas. The hydrogen then reacts with nitrogen to form ammonia
+        in what is called the Haber-Bosch process. The ammonia is subsequently used to produce fertilizers,
+        most notably urea and nitric-acid. Heat is required at various steps in the process, causing an
         energetic demand. </br></br>
-        CO<sub>2</sub> is produced in the SMR, which counts as non-energetic emissions in your 
+        CO<sub>2</sub> is produced in the SMR, which counts as non-energetic emissions in your
         scenario (see <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">
         this</a> chart). These process emissions can be captured in the
-        <a href="/scenario/emissions/ccus/capture-of-co2"> CCUS</a> section. Capturing (part of) 
-        these emissions is standard practice in the fertilizer industry, since a CO<sub>2</sub> 
-        stream is required to produce urea from ammonia. You can model this stream in the 
+        <a href="/scenario/emissions/ccus/capture-of-co2"> CCUS</a> section. Capturing (part of)
+        these emissions is standard practice in the fertilizer industry, since a CO<sub>2</sub>
+        stream is required to produce urea from ammonia. You can model this stream in the
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2"> CCUS</a> section
         as 'Other utilisation'.
     industry_chemicals_fertilizers_local_ammonia_central_hydrogen_share:
       title: Local NH<sub>3</sub> (central hydrogen network)
       short_description:
       description: |
-        Instead of using steam methane reforming, this production route sources its hydrogen from the 
-        central hydrogen network. How this hydrogen is produced can be determined in the 
+        Instead of using steam methane reforming, this production route sources its hydrogen from the
+        central hydrogen network. How this hydrogen is produced can be determined in the
         <a href="/scenario/supply/hydrogen/hydrogen-production"> Hydrogen production</a> section.
-        The non-energetic demand for network gas is in this route replaced by a non-energetic demand for 
-        hydrogen. The subsequent Haber-Bosch process to form ammonia and further processing to 
+        The non-energetic demand for network gas is in this route replaced by a non-energetic demand for
+        hydrogen. The subsequent Haber-Bosch process to form ammonia and further processing to
         fertilizers remain the same. </br></br>
-        Associated CO<sub>2</sub> emissions of non-energetic hydrogen demand in the Haber-Bosch process 
-        are counted as non-energetic emissions in your scenario (see 
+        Associated CO<sub>2</sub> emissions of non-energetic hydrogen demand in the Haber-Bosch process
+        are counted as non-energetic emissions in your scenario (see
         <a href="#" class="open_chart" data-chart-key="co2_emissions" data-chart-location="side">
-        this</a> chart). By changing how hydrogen is produced you can affect the associated carbon 
-        intensity. You can view the carbon intensity of different hydrogen production routes in 
-        <a href="#" class="open_chart" data-chart-key="co2_intensity_of_hydrogen_production" 
+        this</a> chart). By changing how hydrogen is produced you can affect the associated carbon
+        intensity. You can view the carbon intensity of different hydrogen production routes in
+        <a href="#" class="open_chart" data-chart-key="co2_intensity_of_hydrogen_production"
         data-chart-location="side"> this</a> chart.
     industry_chemicals_fertilizers_central_ammonia_share:
       title: Central NH<sub>3</sub> import
@@ -364,13 +364,13 @@ en:
       description: |
         This production route skips both the steam methane reformer and the Haber-Bosch process.
         Instead, ammonia is sourced centrally and used directly for further processing to fertilizers.
-        This creates a non-energetic demand for ammonia. You can match this demand with import of ammonia 
+        This creates a non-energetic demand for ammonia. You can match this demand with import of ammonia
         in the <a href="/scenario/supply/hydrogen/ammonia-production"> Ammonia production</a> section. </br></br>
-        Associated CO<sub>2</sub> emissions of non-energetic ammonia demand are counted as non-energetic 
-        emissions in your scenario (see <a href="#" class="open_chart" data-chart-key="co2_emissions" 
-        data-chart-location="side"> this</a> chart). You can affect the associated carbon intensity for 
-        imported ammonia in the <a href="/scenario/supply/hydrogen/hydrogen-production"> 
-        CO<sub>2</sub> emissions of imported ammonia</a> section. 
+        Associated CO<sub>2</sub> emissions of non-energetic ammonia demand are counted as non-energetic
+        emissions in your scenario (see <a href="#" class="open_chart" data-chart-key="co2_emissions"
+        data-chart-location="side"> this</a> chart). You can affect the associated carbon intensity for
+        imported ammonia in the <a href="/scenario/supply/hydrogen/hydrogen-production">
+        CO<sub>2</sub> emissions of imported ammonia</a> section.
     industry_chemicals_fertilizers_burner_hydrogen_share:
       title: H<sub>2</sub>-fired heater
       short_description:
@@ -384,14 +384,14 @@ en:
       short_description:
       description: |
         These power-to-heat (P2H) boilers can be installed as an add-on for
-        gas and hydrogen heaters. In hours when the willingness to pay of these boilers 
+        gas and hydrogen heaters. In hours when the willingness to pay of these boilers
         exceeds the electricity price, they will use electricity to produce heat and the
-        gas and hydrogen heaters will lower their production. You can set the 
-        willingness to pay of these boilers in the 
+        gas and hydrogen heaters will lower their production. You can set the
+        willingness to pay of these boilers in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
         Flexibility</a> section. </br></br>
-        Note that for this slider to have an effect, capacity of either gas or hydrogen 
-        heaters needs to be installed as well. A number of charts are available to help you 
+        Note that for this slider to have an effect, capacity of either gas or hydrogen
+        heaters needs to be installed as well. A number of charts are available to help you
         determine the effect of installing power-to-heat capacity: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -437,6 +437,16 @@ en:
         is probably mostly determined by fuel prices and environmental legislation.
         See also the <a href=/scenario/costs/fuel_costs/combustion-fuel>‘Costs’</a>
         part. \r\n<br>"
+    industry_chemicals_other_burner_naphtha_share:
+      title: Naphtha-fired heater
+      short_description:
+      description: |
+        Share of heat demand met by naphtha-fired heaters. <br/><br/>Industrial heat demand
+        tends to be for high-grade heat, which is best generated by burning fuel. The
+        provided mix for heat generation is probably mostly determined by fuel prices
+        and environmental legislation. Go to the
+        <a href=/scenario/costs/fuel_costs/combustion-fuel>Costs</a> section to change
+        assumptions in primary fuel costs.
     industry_chemicals_other_burner_wood_pellets_share:
       title: Biomass-fired heater
       short_description:
@@ -458,8 +468,8 @@ en:
       title: Steam network
       short_description:
       description: |
-        Heat is supplied from a collective network as steam. The heat can be produced by 
-        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        Heat is supplied from a collective network as steam. The heat can be produced by
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the
         <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
         section.
     industry_chemicals_other_steam_recompression_electricity_share:
@@ -492,14 +502,14 @@ en:
       short_description:
       description: |
         These power-to-heat (P2H) boilers can be installed as an add-on for
-        gas and hydrogen heaters. In hours when the willingness to pay of these boilers 
+        gas and hydrogen heaters. In hours when the willingness to pay of these boilers
         exceeds the electricity price, they will use electricity to produce heat and the
-        gas and hydrogen heaters will lower their production. You can set the 
-        willingness to pay of these boilers in the 
+        gas and hydrogen heaters will lower their production. You can set the
+        willingness to pay of these boilers in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
         Flexibility</a> section. </br></br>
-        Note that for this slider to have an effect, capacity of either gas or hydrogen 
-        heaters needs to be installed as well. A number of charts are available to help you 
+        Note that for this slider to have an effect, capacity of either gas or hydrogen
+        heaters needs to be installed as well. A number of charts are available to help you
         determine the effect of installing power-to-heat capacity: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -529,47 +539,57 @@ en:
     industry_chemicals_other_wood_pellets_non_energetic_share:
       title: Biomass
       short_description:
-      description: The chemical industry traditionally uses crude oil as the main
+      description: The chemical industry traditionally uses fossil oil as the main
         carbon feedstock for the production of basic chemicals (such as methanol and
-        ethylene). In the future this oil may be replaced with other sources, like
-        biomass or hydrogen. These sliders allow you to change the future feedstock
-        mix. What will be the share of biomass feedstock in the chemical industry
+        ethylene). In the future, this oil may be replaced with other sources, like
+        biomass or hydrogen. Assumptions in the future composition of chemical feedstock
+        can be made here. What will be the share of biomass feedstock in the chemical industry
         of the future?
     industry_chemicals_other_hydrogen_non_energetic_share:
       title: Hydrogen
       short_description:
-      description: The chemical industry traditionally uses crude oil as the main
+      description: The chemical industry traditionally uses fossil oil as the main
         carbon feedstock for the production of basic chemicals (such as methanol and
-        ethylene). In the future this oil may be replaced with other sources, like
-        biomass or hydrogen. These sliders allow you to change the future feedstock
-        mix. What will be the share of hydrogen feedstock in the chemical industry
+        ethylene). In the future, this oil may be replaced with other sources, like
+        biomass or hydrogen. Assumptions in the future composition of chemical feedstock
+        can be made here. What will be the share of hydrogen feedstock in the chemical industry
         of the future?
     industry_chemicals_other_network_gas_non_energetic_share:
       title: Network gas
       short_description:
-      description: The chemical industry traditionally uses crude oil as the main
+      description: The chemical industry traditionally uses fossil oil as the main
         carbon feedstock for the production of basic chemicals (such as methanol and
-        ethylene). In the future this oil may be replaced with other sources, like
-        biomass or hydrogen. These sliders allow you to change the future feedstock
-        mix. What will be the share of natural gas feedstock in the chemical industry
+        ethylene). In the future, this oil may be replaced with other sources, like
+        biomass or hydrogen. Assumptions in the future composition of chemical feedstock
+        can be made here. What will be the share of natural gas feedstock in the chemical industry
         of the future?
     industry_chemicals_other_crude_oil_non_energetic_share:
       title: Oil
       short_description:
-      description: The chemical industry traditionally uses crude oil as the main
+      description: The chemical industry traditionally uses fossil oil as the main
         carbon feedstock for the production of basic chemicals (such as methanol and
-        ethylene). In the future this oil may be replaced with other sources, like
-        biomass or hydrogen. These sliders allow you to change the future feedstock
-        mix. What will be the share of crude oil feedstock in the chemical industry
+        ethylene). In the future, this oil may be replaced with other sources, like
+        biomass or hydrogen. Assumptions in the future composition of chemical feedstock
+        can be made here. What will be the share of crude oil feedstock in the chemical industry
         of the future?
+    industry_chemicals_other_naphtha_non_energetic_share:
+      title: Naphtha
+      short_description:
+      description: |
+        Share of naphtha in the non-energetic demand of the chemical industry.<br/><br/>
+        The chemical industry traditionally uses fossil oil as the main
+        carbon feedstock for the production of basic chemicals (such as methanol and
+        ethylene). In the future, this oil may be replaced with other sources, like
+        biomass or hydrogen. Assumptions in the future composition of chemical feedstock
+        can be made here.
     industry_chemicals_other_coal_non_energetic_share:
       title: Coal
       short_description:
-      description: The chemical industry traditionally uses crude oil as the main
+      description: The chemical industry traditionally uses fossil oil as the main
         carbon feedstock for the production of basic chemicals (such as methanol and
-        ethylene). In the future this oil may be replaced with other sources, like
-        biomass or hydrogen. These sliders allow you to change the future feedstock
-        mix. What will be the share of coal feedstock in the chemical industry of
+        ethylene). In the future, this oil may be replaced with other sources, like
+        biomass or hydrogen. Assumptions in the future composition of chemical feedstock
+        can be made here. What will be the share of coal feedstock in the chemical industry of
         the future?
     industry_useful_demand_for_aggregated_other_electricity_efficiency:
       title: Electricity
@@ -709,8 +729,8 @@ en:
       title: Steam network
       short_description:
       description: |
-        Heat is supplied from a collective network as steam. The heat can be produced by 
-        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        Heat is supplied from a collective network as steam. The heat can be produced by
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the
         <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
         section.
     industry_other_food_heater_electricity_share:
@@ -727,14 +747,14 @@ en:
       short_description:
       description: |
         These power-to-heat (P2H) boilers can be installed as an add-on for
-        gas and hydrogen heaters. In hours when the willingness to pay of these boilers 
+        gas and hydrogen heaters. In hours when the willingness to pay of these boilers
         exceeds the electricity price, they will use electricity to produce heat and the
-        gas and hydrogen heaters will lower their production. You can set the 
-        willingness to pay of these boilers in the 
+        gas and hydrogen heaters will lower their production. You can set the
+        willingness to pay of these boilers in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
         Flexibility</a> section. </br></br>
-        Note that for this slider to have an effect, capacity of either gas or hydrogen 
-        heaters needs to be installed as well. A number of charts are available to help you 
+        Note that for this slider to have an effect, capacity of either gas or hydrogen
+        heaters needs to be installed as well. A number of charts are available to help you
         determine the effect of installing power-to-heat capacity: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>
@@ -805,8 +825,8 @@ en:
       title: Steam network
       short_description:
       description: |
-        Heat is supplied from a collective network as steam. The heat can be produced by 
-        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the 
+        Heat is supplied from a collective network as steam. The heat can be produced by
+        combined heat and power (CHP) plants or by large-scale burners. You can set the heat sources in the
         <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a>
         section.
     capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity:
@@ -814,14 +834,14 @@ en:
       short_description:
       description: |
         These power-to-heat (P2H) boilers can be installed as an add-on for
-        gas and hydrogen heaters. In hours when the willingness to pay of these boilers 
+        gas and hydrogen heaters. In hours when the willingness to pay of these boilers
         exceeds the electricity price, they will use electricity to produce heat and the
-        gas and hydrogen heaters will lower their production. You can set the 
-        willingness to pay of these boilers in the 
+        gas and hydrogen heaters will lower their production. You can set the
+        willingness to pay of these boilers in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-industry">
         Flexibility</a> section. </br></br>
-        Note that for this slider to have an effect, capacity of either gas or hydrogen 
-        heaters needs to be installed as well. A number of charts are available to help you 
+        Note that for this slider to have an effect, capacity of either gas or hydrogen
+        heaters needs to be installed as well. A number of charts are available to help you
         determine the effect of installing power-to-heat capacity: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies.</a></li>

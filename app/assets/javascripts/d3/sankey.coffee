@@ -988,6 +988,7 @@ D3.sankey =
           {left: 'refinery',                               right: 'distribution_hfo',                  gquery: 'hfo_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#BA7D40'},
           {left: 'refinery',                               right: 'distribution_kerosene',             gquery: 'kerosene_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#BFEFFF'},
           {left: 'refinery',                               right: 'distribution_naphtha',              gquery: 'naphtha_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#F3CA4E'},
+          {left: 'refinery',                               right: 'distribution_refinery_gas',         gquery: 'refinery_gas_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#7f7f7f'},
           {left: 'refinery',                               right: 'distribution_oil_products',         gquery: 'oil_products_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#854321'},
           {left: 'refinery',                               right: 'non_oil_output',                    gquery: 'industry_transformation_chemical_refineries_to_non_oil_output_in_sankey', color: '#ff7f0e'},
           {left: 'refinery',                               right: 'loss',                              gquery: 'refinery_loss_in_sankey', color: '#416B86'},

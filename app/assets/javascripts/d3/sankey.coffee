@@ -998,6 +998,7 @@ D3.sankey =
           {left: 'chemical_fertilizer',                    right: 'distribution_hfo',                  gquery: 'hfo_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#BA7D40'},
           {left: 'chemical_fertilizer',                    right: 'distribution_kerosene',             gquery: 'kerosene_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#BFEFFF'},
           {left: 'chemical_fertilizer',                    right: 'distribution_naphtha',              gquery: 'naphtha_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#F3CA4E'},
+          {left: 'chemical_fertilizer',                    right: 'distribution_refinery_gas',         gquery: 'refinery_gas_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#7f7f7f'},
           {left: 'chemical_fertilizer',                    right: 'distribution_oil_products',         gquery: 'oil_products_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#854321'},
           {left: 'fuel_import',                            right: 'distribution_diesel',               gquery: 'diesel_import_to_distribution_in_sankey', color: '#854321'},
           {left: 'fuel_import',                            right: 'distribution_gasoline',             gquery: 'gasoline_import_to_distribution_in_sankey', color: '#8B0000'},
@@ -1035,8 +1036,7 @@ D3.sankey =
           {left: 'distribution_naphtha',                   right: 'industry',                          gquery: 'naphtha_distribution_to_industry_in_sankey', color: '#F3CA4E'},
           {left: 'distribution_naphtha',                   right: 'export',                            gquery: 'naphtha_distribution_to_export_in_sankey', color: '#F3CA4E'},
           {left: 'distribution_oil_products',              right: 'industry',                          gquery: 'oil_products_distribution_to_industry_in_sankey', color: '#854321'},
-          {left: 'distribution_oil_products',              right: 'export',                            gquery: 'oil_products_distribution_to_export_in_sankey', color: '#854321'},
-          {left: 'distribution_refinery_gas',              right: 'industry',                          gquery: 'refinery_gas_distribution_to_industry_in_sankey', color: '#7f7f7f'}
+          {left: 'distribution_oil_products',              right: 'export',                            gquery: 'oil_products_distribution_to_export_in_sankey', color: '#854321'}
         ]
     agriculture_sankey:
       data:

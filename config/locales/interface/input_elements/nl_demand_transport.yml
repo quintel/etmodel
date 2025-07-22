@@ -15,40 +15,44 @@ nl:
       title: Internationale scheepvaart
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het energiegebruik van internationale scheepvaart wordt meegenomen in dit scenario, dit is inclusief alle getankte brandstoffen voor internationale scheepvaart.
-        </br></br>
-        Internationaal vervoer wordt standaard niet meegenomen in het ETM. Indien gewenst, kan de waarde handmatig worden aangepast van 0 naar het gewenste percentage om dit wel op te nemen.
-        </br></br>
-        <em>Let op</em>: er wordt in het ETM gekeken naar nationale vertrek- en aankomsthavens en niet naar de nationaliteit van de scheepvaartmaatschappijen.
+        Deze slider bepaalt welk percentage van het energiegebruik van internationale scheepvaart wordt meegenomen 
+        in dit scenario, dit is inclusief alle getankte brandstoffen voor internationale scheepvaart.</br></br>
+        Internationaal vervoer wordt standaard niet meegenomen in het ETM. Indien gewenst, kan de waarde handmatig 
+        worden aangepast van 0 naar het gewenste percentage om dit wel op te nemen.</br></br><em>Let op</em>: er 
+        wordt in het ETM gekeken naar nationale vertrek- en aankomsthavens en niet naar de nationaliteit van de 
+        scheepvaartmaatschappijen.
     transport_plane_using_kerosene_share:
       title: Kerosine
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met kerosinevliegtuigen.
+        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met 
+        kerosinevliegtuigen.
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met bio-ethanol vliegtuigen.
+        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met 
+        bio-ethanol vliegtuigen.
     transport_plane_using_gasoline_share:
       title: Benzine
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met benzinevliegtuigen.
+        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met 
+        benzinevliegtuigen.
     transport_plane_using_electricity_share:
       title: Elektrisch
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met elektrische vliegtuigen.
+        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met 
+        elektrische vliegtuigen.
     transport_plane_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met waterstofvliegtuigen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import..</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de binnenlandse luchtvaart-reizigerskilometers wordt afgelegd met 
+        waterstofvliegtuigen.</br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> 
+        om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, 
+        wordt het tekort aangevuld door import.
     transport_bicycle_using_human_power_share:
       title: Fiets
       short_description:
@@ -63,79 +67,67 @@ nl:
       title: Elektrisch
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met elektrische auto's.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met elektrische auto's.</br></br>
+        Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">
+        Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.
     transport_car_using_diesel_mix_share:
       title: Diesel
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met dieselauto's.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met dieselauto's.</br></br>
+        Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel 
+        in te stellen.
     transport_car_using_gasoline_mix_share:
       title: Benzine
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met benzineauto's.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met benzineauto's.</br></br>
+        Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel 
+        in te stellen.
     transport_car_using_lpg_share:
       title: LPG
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met auto's die rijden op Liquefied Petroleum Gas (LPG).
-        </br></br>
-        LPG is een voordeligere en milieuvriendelijkere brandstof dan benzine, met een lagere CO<sub>2</sub>-uitstoot. Als LPG niet beschikbaar is, schakelen deze voertuigen automatisch over op benzine als back-upbrandstof.
+        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met auto's die rijden op 
+        Liquefied Petroleum Gas (LPG).</br></br>LPG is een voordeligere en milieuvriendelijkere brandstof dan benzine, 
+        met een lagere CO<sub>2</sub>-uitstoot. Als LPG niet beschikbaar is, schakelen deze voertuigen automatisch over 
+        op benzine als back-upbrandstof.
     transport_car_using_compressed_natural_gas_share:
       title: Gas onder druk (CNG)
       short_description: ''
       description: |
         Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met aardgasauto's (CNG).
-        </br></br>
-        Aardgasauto's stoten minder CO<sub>2</sub> uit dan zowel benzine- als LPG-auto's. Bovendien is het mogelijk om biogas bij te mengen, wat de milieu-impact verder vermindert en de duurzaamheid van de voertuigen verhoogt.
+        </br></br>Aardgasauto's stoten minder CO<sub>2</sub> uit dan zowel benzine- als LPG-auto's. Bovendien is het 
+        mogelijk om biogas bij te mengen, wat de milieu-impact verder vermindert en de duurzaamheid van de voertuigen 
+        verhoogt.
     transport_car_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met waterstofauto's.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import..</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met waterstofauto's.</br></br>
+        Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie 
+        te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import.
     transport_truck_using_gasoline_mix_share:
       title: Benzine
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met benzinevrachtwagens.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van benzine in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met benzinevrachtwagens.</br></br>
+        Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van benzine 
+        in te stellen.
     transport_truck_using_diesel_mix_share:
       title: Diesel
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met dieselvrachtwagens.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met dieselvrachtwagens.</br></br>
+        Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel 
+        in te stellen.
     transport_truck_using_electricity_share:
       title: Elektrisch
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met elektrische vrachtwagens.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met elektrische vrachtwagens.</br></br>
+        Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">
+        Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.
     transport_truck_using_compressed_natural_gas_share:
       title: Gas onder druk (CNG)
       short_description: ''
@@ -145,132 +137,113 @@ nl:
       title: Vloeibaar aardgas (LNG)
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met vrachtwagens die rijden op vloeibaar aardgas (LNG).
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van LNG in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met vrachtwagens die rijden op 
+        vloeibaar aardgas (LNG).</br></br>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer
+        </a> om de samenstelling van LNG in te stellen.
     transport_truck_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met waterstofvrachtwagens.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de vrachtwagenkilometers wordt afgelegd met waterstofvrachtwagens.</br></br>
+        Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te 
+        kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import.
     transport_bus_using_electricity_share:
       title: Elektrisch
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met elektrische bussen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met elektrische bussen.</br></br>
+        Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">
+        Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.
     transport_bus_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met waterstofbussen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met waterstofbussen.</br></br>
+        Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie 
+        te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import.
     transport_bus_using_diesel_mix_share:
       title: Diesel
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met dieselbussen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met dieselbussen.</br></br>
+        Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel 
+        in te stellen.
     transport_bus_using_gasoline_mix_share:
       title: Benzine
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met benzinebussen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van benzine in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met benzinebussen.</br></br>
+        Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van benzine 
+        in te stellen.
     transport_bus_using_lng_share:
       title: Vloeibaar aardgas (LNG)
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met bussen die rijden op vloeibaar aardgas (LNG).
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van LNG in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met bussen die rijden op 
+        vloeibaar aardgas (LNG).</br></br>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer
+        </a> om de samenstelling van LNG in te stellen.
     transport_bus_using_compressed_natural_gas_share:
       title: Gas onder druk (CNG)
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met bussen die rijden op gas onder druk (CNG).
+        Deze slider bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met bussen die rijden op gas 
+        onder druk (CNG).
     bunkers_ship_using_heavy_fuel_oil_share:
       title: HFO
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met zware stookolie (HFO).
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld 
+        met zware stookolie (HFO).
     bunkers_ship_using_lng_share:
       title: LNG
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met vloeibaar aardgas (LNG).
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met 
+        vloeibaar aardgas (LNG).</br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> 
+        om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het 
+        tekort aangevuld door import.
     bunkers_ship_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met waterstof.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import..</li>
-        </ul>
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met 
+        waterstof.</br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode 
+        voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort 
+        aangevuld door import.
     bunkers_ship_using_electricity_share:
       title: Elektriciteit
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met elektriciteit.
-        </br></br>
-        Het is mogelijk om deze slider te gebruiken om walstromen te modelleren.
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met 
+        elektriciteit.</br></br>Het is mogelijk om deze slider te gebruiken om walstromen te modelleren.
     bunkers_aviation_using_electricity_share:
       title: Elektriciteit
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld met elektriciteit. 
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld 
+        met elektriciteit.</br></br>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href=
+        "/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit 
+        in te stellen.
     bunkers_aviation_using_kerosene_mix_share:
       title: Kerosine (mix)
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld met kerosine.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/international-aviation">Brandstoffen</a> om de samenstelling van kerosine in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld 
+        met kerosine.</br></br>Ga naar <a href="/scenario/supply/transport_fuels/international-aviation">Brandstoffen
+        </a> om de samenstelling van kerosine in te stellen.
     bunkers_aviation_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld met waterstof.
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld 
+        met waterstof.
     bunkers_ship_using_ammonia_share:
       title: Ammoniak
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld met ammoniak.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a> om de productie van ammoniak in stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld 
+        met ammoniak.</br></br>Ga naar <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a> 
+        om de productie van ammoniak in stellen.
     transport_passenger_train_using_coal_share:
       title: Kolen
       short_description: ''
@@ -280,29 +253,24 @@ nl:
       title: Diesel
       short_description: ''
       description: |
-        Deze slider bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met dieseltreinen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href=/scenario/supply/transport_fuels/rail-transport>Treinverkeer</a> omde samenstelling van diesel in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met dieseltreinen.</br></br>
+        Ga naar <a href=/scenario/supply/transport_fuels/rail-transport>Treinverkeer</a> omde samenstelling van diesel 
+        in te stellen.
     transport_passenger_train_using_electricity_share:
       title: Elektrisch
       short_description: ''
       description: |
         Deze slider bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met elektrische treinen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/
+        electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.
     transport_passenger_train_using_hydrogen_share:
       title: Waterstof
       short_description: ''
       description: |
         Deze slider bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met waterstoftreinen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import..</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor 
+        waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort 
+        aangevuld door import.
     transport_cars_share:
       title: Auto's
       short_description: ''
@@ -322,9 +290,9 @@ nl:
       title: Passagiersvervoer
       short_description:
       description: |
-        Deze slider bepaalt de jaarlijkse stijging of daling van de reizigerskilometers.
-        </br></br>
-        Het aantal reizigerskilometers heeft direct invloed op de energievraag: een afname in reizigerskilometers leidt tot een lagere energievraag, terwijl een toename juist resulteert in een hogere energievraag.
+        Deze slider bepaalt de jaarlijkse stijging of daling van de reizigerskilometers.</br></br>Het aantal 
+        reizigerskilometers heeft direct invloed op de energievraag: een afname in reizigerskilometers leidt 
+        tot een lagere energievraag, terwijl een toename juist resulteert in een hogere energievraag.
     transport_busses_share:
       title: Bussen
       short_description:
@@ -350,19 +318,15 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de motorfiets-reizigerskilometers wordt afgelegd met benzinemotorfietsen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van benzine in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van 
+        benzine in te stellen.
     transport_motorcycle_using_electricity_share:
       title: Elektrisch
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de motorfiets-reizigerskilometers wordt afgelegd met elektrische motorfietsen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">
+        Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.
     bunkers_useful_demand_planes:
       title: Internationale luchtvaart
       short_description:
@@ -380,46 +344,37 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met dieselbinnenvaartschepen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/domestic-navigation">Binnenlandse scheepvaart</a> om de samenstelling van diesel in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/transport_fuels/domestic-navigation">Binnenlandse scheepvaart</a> 
+        om de samenstelling van diesel in te stellen.
     transport_ship_using_lng_mix_share:
       title: Vloeibaar aardgas (LNG)
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met binnenvaartschepen die op vloeibaar aardgas (LNG) varen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/domestic-navigation">Binnenlandse scheepvaart</a> om de samenstelling van LNG in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met binnenvaartschepen die op 
+        vloeibaar aardgas (LNG) varen.</br></br>Ga naar <a href="/scenario/supply/transport_fuels/domestic-navigation">
+        Binnenlandse scheepvaart</a> om de samenstelling van LNG in te stellen.
     transport_ship_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met waterstofbinnenvaartschepen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import..</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor 
+        waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld 
+        door import.
     transport_ship_using_electricity_share:
       title: Elektrisch
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met elektrische binnenvaartschepen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/
+        electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.
     transport_ship_using_ammonia_share:
       title: Ammoniak
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met binnenvaartschepen die op ammoniak varen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a> om de productie van ammoniak in stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met binnenvaartschepen die op 
+        ammoniak varen.</br></br>Ga naar <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a> 
+        om de productie van ammoniak in stellen.
     transport_trucks_share:
       title: Vrachtwagens
       short_description: ''
@@ -434,9 +389,9 @@ nl:
       title: Vrachtvervoer
       short_description:
       description: |
-        Deze slider bepaalt de jaarlijkse stijging of daling van de vrachtkilometers.
-        </br></br>
-        Het aantal vrachtkilometers heeft direct invloed op de energievraag: een afname in vrachtkilometers leidt tot een lagere energievraag, terwijl een toename juist resulteert in een hogere energievraag.
+        Deze slider bepaalt de jaarlijkse stijging of daling van de vrachtkilometers.</br></br>Het aantal vrachtkilometers 
+        heeft direct invloed op de energievraag: een afname in vrachtkilometers leidt tot een lagere energievraag, 
+        terwijl een toename juist resulteert in een hogere energievraag.
     transport_freight_trains_share:
       title: Treinen
       short_description:
@@ -447,28 +402,23 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de goederentreinkilometers wordt afgelegd met elektrische goederentreinen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">
+        Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.
     transport_freight_train_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de goederentreinkilometers wordt afgelegd met waterstofgoederentreinen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import..</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor 
+        waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld 
+        door import.
     transport_freight_train_using_diesel_mix_share:
       title: Diesel
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de goederentreinkilometers wordt afgelegd met dieselgoederentreinen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/rail-transport">Wegverkeer</a> om de samenstelling van diesel in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/transport_fuels/rail-transport">Wegverkeer</a> om de samenstelling 
+        van diesel in te stellen.
     transport_vehicle_using_electricity_efficiency:
       title: Elektrische voertuigen
       short_description: ''
@@ -517,43 +467,38 @@ nl:
       title: Elektrisch
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de bestelbuskilometers wordt afgelegd met elektrische bestelbussen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de opwekking van elektriciteit in te stellen.</li>
-        </ul>
+        Deze slider bepaalt welk percentage van de bestelbuskilometers wordt afgelegd met elektrische 
+        bestelbussen.</br></br>Ga naar <a href="/scenario/supply/electricity">Elektriciteit</a> of 
+        <a href="/scenario/supply/electricity_renewable">Hernieuwbare elektriciteit</a> om de 
+        opwekking van elektriciteit in te stellen.
     transport_van_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de bestelbuskilometers wordt afgelegd met waterstofbestelbussen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort aangevuld door import..</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode 
+        voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het 
+        tekort aangevuld door import.
     transport_van_using_diesel_mix_share:
       title: Diesel
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de bestelbuskilometers wordt afgelegd met dieselbestelbussen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de 
+        samenstelling van diesel in te stellen.
     transport_van_using_gasoline_mix_share:
       title: Benzine
       short_description:
       description: |
         Deze slider bepaalt welk percentage van de bestelbuskilometers wordt afgelegd met benzinebestelbussen.
-        </br></br>
-        <ul>
-          <li>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van benzine in te stellen.</li>
-        </ul>
+        </br></br>Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de 
+        samenstelling van benzine in te stellen.
     transport_van_using_lpg_share:
       title: LPG
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de bestelbuskilometers wordt afgelegd met bestelbussen die rijden op Liquefied Petroleum Gas (LPG).
+        Deze slider bepaalt welk percentage van de bestelbuskilometers wordt afgelegd met bestelbussen die 
+        rijden op Liquefied Petroleum Gas (LPG).
     transport_van_using_compressed_natural_gas_share:
       title: Gas onder druk (CNG)
       short_description:

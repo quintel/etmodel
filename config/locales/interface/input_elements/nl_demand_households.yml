@@ -5,692 +5,321 @@ nl:
       title: Nieuwbouw
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen die tussen het startjaar en
-        het toekomstjaar in het scenario gebouwd zullen worden.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kunnen de BENG-eisen (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/beng/indicatoren" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor appartementen die tussen het startjaar en het toekomstjaar in het scenario worden gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_apartments_2005_present:
       title: 2005 - heden
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd tussen 2005 en
-        het startjaar.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor appartementen die tussen 2005 en het startjaar van het scenario zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_apartments_1985_2004:
       title: 1985 - 2004
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd tussen 1985 en 2004.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor appartementen die tussen 1985 en 2004 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_apartments_1965_1984:
       title: 1965 - 1984
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd tussen 1965 en 1984.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor appartementen die tussen 1965 en 1984 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_apartments_1945_1964:
       title: 1945 - 1964
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd tussen 1945 en 1964.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor appartementen die tussen 1945 en 1964 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_apartments_before_1945:
       title: < 1945
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd voor 1945.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor appartementen die voor 1945 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_terraced_houses_future:
       title: Nieuwbouw
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen die tussen het startjaar en
-        het toekomstjaar in het scenario gebouwd zullen worden.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kunnen de BENG-eisen (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/beng/indicatoren" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor rijtjeswoningen die tussen het startjaar en het toekomstjaar in het scenario worden gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_terraced_houses_2005_present:
       title: 2005 - heden
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd tussen 2005 en
-        het startjaar.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor rijtjeswoningen die tussen 2005 en het startjaar van het scenario zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_terraced_houses_1985_2004:
       title: 1985 - 2004
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd tussen 1985 en 2004.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor rijtjeswoningen die tussen 1985 en 2004 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_terraced_houses_1965_1984:
       title: 1965 - 1984
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd tussen 1965 en 1984.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor rijtjeswoningen die tussen 1965 en 1984 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_terraced_houses_1945_1964:
       title: 1945 - 1964
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd tussen 1945 en 1964.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
-        >dataset</a> voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor rijtjeswoningen die tussen 1945 en 1964 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_terraced_houses_before_1945:
       title: < 1945
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd voor 1945.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor rijtjeswoningen die voor 1945 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_semi_detached_houses_future:
       title: Nieuwbouw
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen die tussen het startjaar en
-        het toekomstjaar in het scenario gebouwd zullen worden.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kunnen de BENG-eisen (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/beng/indicatoren" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor hoekwoningen die tussen het startjaar en het toekomstjaar in het scenario worden gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_semi_detached_houses_2005_present:
       title: 2005 - heden
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd tussen 2005 en
-        het startjaar.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor hoekwoningen die tussen 2005 en het startjaar van het scenario zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_semi_detached_houses_1985_2004:
       title: 1985 - 2004
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd tussen 1985 en 2004.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor hoekwoningen die tussen 1985 en 2004 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_semi_detached_houses_1965_1984:
       title: 1965 - 1984
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd tussen 1965 en 1984.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor hoekwoningen die tussen 1965 en 1984 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_semi_detached_houses_1945_1964:
       title: 1945 - 1964
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd tussen 1945 en 1964.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor hoekwoningen die tussen 1945 en 1964 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_semi_detached_houses_before_1945:
       title: < 1945
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd voor 1945.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor hoekwoningen die voor 1945 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_detached_houses_future:
       title: Nieuwbouw
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen die tussen het startjaar en
-        het toekomstjaar in het scenario gebouwd zullen worden.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kunnen de BENG-eisen (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/beng/indicatoren" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor vrijstaande woningen die tussen het startjaar en het toekomstjaar in het scenario worden gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_detached_houses_2005_present:
       title: 2005 - heden
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd tussen 2005 en
-        het startjaar.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor vrijstaande woningen die tussen 2005 en het startjaar van het scenario zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_detached_houses_1985_2004:
       title: 1985 - 2004
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd tussen 1985 en 2004.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor vrijstaande woningen die tussen 1985 en 2004 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_detached_houses_1965_1984:
       title: 1965 - 1984
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd tussen 1965 en 1984.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor vrijstaande woningen die tussen 1965 en 1984 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_detached_houses_1945_1964:
       title: 1945 - 1964
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd tussen 1945 en 1964.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor vrijstaande woningen die tussen 1945 en 1964 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_insulation_level_detached_houses_before_1945:
       title: < 1945
       short_description:
       description: |
-        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd voor 1945.
-        <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
-        <br><br>
-        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
-        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
-        geraadpleegd worden.
-        <br><br>
-        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
-        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
-        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
-        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
-        betrekking heeft op de energiebehoefte voor ruimteverwarming.
-        <br><br>
-        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
-        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
-        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
-        <br><br>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
-        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
-        voor een beschrijving van de bronnen.
+        Deze slider bepaalt de gemiddelde warmtevraag per m<sup>2</sup> voor vrijstaande woningen die voor 1945 zijn gebouwd.
+        </br></br>
+        De gemiddelde warmtevraag per m<sup>2</sup> is een indicator voor de energie-efficiëntie van het gebouw en geeft aan hoe goed het warmte vasthoudt.
+        Deze waarde betreft uitsluitend de warmtevraag van het gebouw zelf en is onafhankelijk van aanvullende systemen zoals ventilatie, verwarmings- en koelingstechnologieën of zonnepanelen.
+        Een betere isolatie resulteert in een lagere warmtevraag en een lager energieverbruik voor verwarming.
+        </br></br>
+        <em>Let op</em>: deze slider beïnvloedt niet de warmtevraag voor ruimteverwarming.
+        </br></br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_useful_demand_for_cooling:
       title: Koudevraag
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Koeling). \r\n<br/><br/>\r\nHoe
-        denk jij dat de koudevraag per huishouden zich gaat ontwikkelen? Dit hangt
-        vooral af van de welvaartsgroei. Als mensen rijker worden, gaat hun energiegebruik
-        onvermijdelijk omhoog, doordat ze in steeds grotere huizen wonen, airconditioning
-        aanschaffen, etc."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de koudevraag per persoon.
+        </br></br>
+        <em>Let op</em>: deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_useful_demand_heat_per_person:
       title: Warmtevraag
       short_description: ''
@@ -702,94 +331,195 @@ nl:
     households_useful_demand_hot_water_share:
       title: Warmwatervraag
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Warmwaterslide).\r\n<br/>\r\n<br/>\r\nHier
-        kun je aangeven hoe jij denkt dat de warmwatervraag per persoon zich gaat
-        ontwikkelen."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de warmwatervraag per persoon.
+        </br></br>
+        <em>Let op</em>: deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_useful_demand_cooking_per_person:
       title: Koken
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Koken slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor koken per persoon zich
-        gaat ontwikkelen. Als mensen rijker worden gaan ze vaker uit eten of eten
-        afhalen. Dit heeft tot gevolg dat de energievraag voor koken lager wordt."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de energievraag door koken per persoon.
+        </br></br>
+        <em>Let op</em>: deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_useful_demand_electric_appliances:
       title: Apparaten
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Apparaten slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor apparaten per persoon
-        zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Hoe rijker
-        mensen zijn, des te meer apparaten ze bezitten."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de energievraag door apparaten per persoon.
+        </br></br>
+        <em>Let op</em>: deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_useful_demand_lighting:
       title: Verlichting
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Verlichting slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor verlichting per persoon
-        zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Als mensen
-        rijker worden, gaan ze in grotere huizen wonen waarvoor meer verlichting nodig
-        is."
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de energievraag door verlichting per persoon.
+        </br></br>
+        <em>Let op</em>: deze verandering in energiegebruik staat los van andere vraagontwikkelingen.
     households_cooling_heatpump_surface_water_water_ts_electricity_share:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''
       description: |
-        Deze slider beïnvloed het percentage van de koudevraag voor huishoudens dat
-        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater en uitgerust zijn
-        met warmte-koude opslage (WKO). <br/><br/>
-        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur
-        door de combinatie met WKO.
+        Deze slider bepaalt welk percentage van de koelvraag van huishoudens wordt geleverd door
+        warmtepompen die koelte halen uit oppervlaktewater (Thermische Energie uit Oppervlaktewater,
+        TEO) en gebruikmaken van Warmte-Koude Opslag (WKO).
+        </br></br>
+        De efficiëntie van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur, omdat de
+        WKO gebruikmaakt van de constante temperaturen uit de ondergrond.
     households_cooling_heatpump_ground_water_electricity_share:
       title: Bodemwarmtepomp
       short_description: ''
-      description: "Een warmtepomp is een apparaat dat warmte verplaatst. De meest
-        bekende toepassing is een koelkast, maar in een gebouw kan een warmtepomp
-        ook zorgen voor verwarming en koeling. Het werkt vaak alleen als vloer- en
-        muurverwarming worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen
-        daarom vooral nog ingezet bij nieuwbouw van huizen. Europese wetgeving schrijft
-        namelijk voor dat het energiegebruik van huizen per 2020 tot nul moet zijn
-        toegebracht (gemeten over een heel jaar). \r\n<br/><br/>\r\nDeze warmtepomp
-        gebruikt een grondbron aan de ene kant en muur- of vloer- verwarming/koeling
-        aan de andere. Omdat dit niet in alle huizen te realiseren is tegen acceptabele
-        investeringskosten, is een realistische schatting van het aantal huizen waarin
-        een warmtepomp kan worden geïnstalleerd 20%. In de overige 80% wegen de kosten
-        waarschijnlijk niet op tegen de baten.\r\n<br><br/>\r\nLet er op dat het ETM
-        de investeringskosten significant onderschat voor een aandeel van warmtepompen
-        van boven de 20%. Dit komt omdat de extra investeringskosten voor huizen die
-        eigenlijk niet geschikt zijn voor installatie van een warmtepomp, niet bekend
-        zijn."
+      description: |
+        Deze slider bepaalt welk percentage van de koelvraag van huishoudens wordt
+        geleverd door elektrische bodemwarmtepompen.
+        </br></br>
+        <ul>
+        <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen.</li>
+        </ul>
     households_cooling_airconditioning_electricity_share:
       title: Airconditioning
       short_description: ''
-      description: "Hier staat aangegeven hoeveel van de koeling van huizen en appartementen
-        met airconditioners gebeurd. In de meeste landen gebeurt de meeste koeling
-        op dit moment gebeurt nog met airconditioners.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van de koelvraag van huishoudens wordt geleverd
+        door airconditioners.
+        </br></br>
+        Airconditioners zijn vergelijkbaar met luchtwarmtepompen, aangezien beide omgevingswarmte
+        en elektriciteit gebruiken om een gebouw te koelen. Luchtwarmtepompen zijn echter veelzijdiger,
+        omdat ze niet alleen kunnen koelen, maar ook verwarmen.
     households_cooling_heatpump_air_water_electricity_share:
       title: Luchtwarmtepomp
       short_description: ''
       description: |
-        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
-        in huishoudens voor koeling veranderen.<br/><br/>
-        Een luchtwarmtepomp gebruikt elektriciteit en omgevingskoude om koude te genereren.
-        Deze koude kan worden gedistribueerd via water (met vloerverwarmingssystemen)
-        of via de lucht (met airconditioners) om een woning te koelen.<br/><br/>
-        De efficiëntie (COP) van de luchtwarmtepomp voor koeling (in tegenstelling
-        tot verwarming) is vastgesteld. Deze kun je vinden in de technische parameters en kosten. <br/><br/>
-        Ga voor meer informatie naar de
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>.
-        Om de efficientie (COP) te beïnvloeden kun je naar de
-        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
-        of het <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weerjaar</a> aanpassen.
-    households_appliances_electricity_efficiency:
-      title: Efficiëntie
-      short_description:
+        Deze slider bepaalt welk percentage van de koelvraag van huishoudens wordt geleverd
+        door elektrische luchtwarmtepompen.
+        </br></br>
+        <ul>
+        <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen.</li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
+    households_appliances_fridge_freezer_electricity_efficiency:
+      title: Koelkast / Vriezer
+      short_description: ''
       description: |
-        Door dit schuifje te verhogen, worden huishoudelijke apparaten efficiënter. Dit betekent dat
-        het elektriciteitsverbruik van deze apparaten lager wordt. Door de efficiëntie te verlagen
-        wordt het elektriciteitsverbruik juist hoger. </br></br>
-        Dit schuifje beïnvloedt de efficiëntie van computers, drogers, koelkasten, stofzuigers,
-        televisies, vaatwassers, wasmachines en overige apparaten.
+        Deze slider bepaalt hoeveel efficiënter koelkasten en vriezers in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn, geven
+        inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat het gemiddelde
+        energielabel zien van de momenteel geïnstalleerde koelkasten en vriezers. Moderne koelkasten en
+        vriezers met een A-label kunnen tot 66% zuiniger zijn dan de gemiddelde koelkasten en vriezers
+        in het startscenario.
+    households_appliances_dishwasher_electricity_efficiency:
+      title: Vaatwasser
+      short_description: ''
+      description: |
+        Deze slider bepaalt hoeveel efficiënter vaatwassers in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn,
+        geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat
+        het gemiddelde energielabel zien van de momenteel geïnstalleerde vaatwassers. Moderne
+        vaatwassers met een A-label kunnen tot 35% zuiniger zijn dan de gemiddelde vaatwasser
+        in het startscenario.
+    households_appliances_vacuum_cleaner_electricity_efficiency:
+      title: Stofzuiger
+      short_description: ''
+      description: |
+        Deze slider bepaalt hoeveel efficiënter stofzuigers in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten
+        steeds energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht
+        zijn, geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider
+        laat het gemiddelde energielabel zien van de momenteel geïnstalleerde stofzuigers. Moderne
+        stofzuigers met een A-label kunnen tot 75% zuiniger zijn dan de gemiddelde stofzuigers
+        in het startscenario.
+    households_appliances_washing_machine_electricity_efficiency:
+      title: Wasmachine
+      short_description: ''
+      description: |
+        Deze slider bepaalt hoeveel efficiënter wasmachines in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn,
+        geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat
+        het gemiddelde energielabel zien van de momenteel geïnstalleerde wasmachines. Moderne
+        wasmachines met een A-label kunnen tot 28% zuiniger zijn dan de gemiddelde wasmachines
+        in het startscenario.
+    households_appliances_clothes_dryer_electricity_efficiency:
+      title: Droger
+      short_description: ''
+      description: |
+        Deze slider bepaalt hoeveel efficiënter drogers in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn,
+        geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat
+        het gemiddelde energielabel zien van de momenteel geïnstalleerde drogers. Moderne drogers
+        met een A-label kunnen tot 69% zuiniger zijn dan de gemiddelde drogers in het startscenario.
+    households_appliances_television_electricity_efficiency:
+      title: Televisie
+      short_description: ''
+      description: |
+        Deze slider bepaalt hoeveel efficiënter televisies in huishoudens kunnen worden.
+        </br></br>
+        Nationale en Europese wetgeving verplicht fabrikanten om huishoudelijke apparaten steeds
+        energiezuiniger te maken. De energielabels, die in alle Europese landen verplicht zijn,
+        geven inzicht in de efficiëntie van deze apparaten. De beginwaarde van deze slider laat
+        het gemiddelde energielabel zien van de momenteel gebruikte televisies. Moderne televisies
+        met een A-label kunnen tot 92% zuiniger zijn dan de gemiddelde televisie in het startscenario.
+    households_appliances_computer_media_electricity_efficiency:
+      title: Computer / Media
+      short_description: ''
+      description: |
+        Deze slider bepaalt hoeveel efficiënter computers en andere audio/video apparatuur
+        (exclusief televisies) kunnen worden.
+    households_appliances_other_electricity_efficiency:
+      title: Overig
+      short_description: ''
+      description: |
+        Deze slider bepaalt hoeveel efficiënter andere huishoudelijke apparaten kunnen worden.
+        </br></br>
+        Denk hierbij aan: </br>
+        <ul>
+          <li>Persoonlijke verzorging, </li>
+          <li>Vrije tijd (handgereedschap, naaimachines, elektrisch speelgoed, etc.), </li>
+          <li>Keukenapparatuur (exclusief koken), </li>
+          <li>Ventilatie. </li>
+        </ul>
+    households_behavior_standby_killer_turn_off_appliances:
+      title: Apparaten uitzetten
+      short_description: ''
+      description: |
+        Deze slider bepaalt de mate van gedragsverandering met betrekking tot het uitzetten
+        van apparaten, wat resulteert in een stijging of daling van de huishoudelijke energievraag.
+        </br></br>
+        Denk hierbij aan handelingen zoals stekkers uit het stopcontact trekken, het gebruik van
+        een standby-killer, of het installeren van een aan/uit-schakelaar op stopcontacten. Grofweg
+        kan een apparaat tot 20% van zijn energieverbruik aan standby-stroom vragen.
+    households_behavior_turn_off_the_light:
+      title: Lichten uitzetten
+      short_description: ''
+      description: |
+        Deze slider bepaalt de mate van gedragsverandering met betrekking tot het uitzetten van
+        lichten, wat resulteert in een stijging of daling van de huishoudelijke energievraag.
+    households_behavior_close_windows_turn_off_heating:
+      title: Verwarming uitzetten
+      short_description: ''
+      description: "Hoeveel mensen zullen hun gedrag veranderen om energie te besparen?\r\n<br/><br/>\r\nDe
+        verwarming van je huis een graadje lager zetten (en een trui aantrekken) of
+        de verwarming uitzetten in kamers die niet gebruikt worden kan een hoop energie
+        besparen.\r\n<br/><br/>\r\nWelk percentage van de bevolking gaat zijn huis
+        minder warm stoken?"
+    households_behavior_low_temperature_washing:
+      title: Wassen op lage temperatuur
+      short_description: ''
+      description: |
+        Deze slider bepaalt de mate van gedragsverandering met betrekking tot wassen op lage
+        temperatuur, wat resulteert in een stijging of daling van de huishoudelijke energievraag.
+        </br></br>
+        Kleding wassen op 40 <sup>o</sup>C bijvoorbeeld kan tot 50% elektriciteit besparen in
+        vergelijking met wassen op 60 <sup>o</sup>C.
     households_solar_pv_solar_radiation_market_penetration:
       title: PV zonnepanelen
       short_description: ''
@@ -811,157 +541,237 @@ nl:
     households_water_heater_solar_thermal_share:
       title: Zonthermische collectoren
       short_description: ''
-      description: "Een zonneboiler maakt warm water via zonthermische panelen. Deze
-        warmte kan gebruikt worden om te douchen, af te wassen enz. Zonneboilers worden
-        vaak op daken of in het asfalt van parkeerterreinen geplaatst. Een zonneboiler
-        wordt vaak met een gas CV-ketel gecombineerd om het water (in de winter) verder
-        op te warmen. Ook met een warmtepomp gaat het goed samen.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van de warmwatervraag van huishoudens wordt geleverd door zonthermische collectoren.
+        </br></br>
+        Met een zonneboiler wordt de warmte van zonthermische collectoren omgezet in warm water.
     households_number_of_inhabitants:
       title: Aantal inwoners
       short_description: ''
-      description: "Hoe verwacht je dat de bevolking zich gaat ontwikkelen? Naast
-        welvaartsgroei is dit een van de belangrijkste factoren die de energievraag
-        beïnvloeden."
+      description: |
+        Deze slider bepaalt het aantal inwoners in het gekozen scenario. </br></br>
+        Het aantal inwoners heeft een directe invloed op diverse aspecten van het scenario, zoals het totale energiegebruik, de benodigde infrastructuur, en de druk op het milieu.
+
     households_number_of_apartments_future:
       title: Nieuwbouw
       short_description:
-      description: "Deze slider zet het aantal apartementen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+      description: |
+        Deze slider bepaalt het aantal appartementen dat tussen het startjaar en het toekomstjaar in het scenario wordt bijgebouwd. </br></br>
+        Het aantal nieuwbouwappartementen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze appartementen aan te passen.</li></ul>
+
     households_number_of_apartments_2005_present:
       title: 2005 - heden
       short_description:
-      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 2005 tot het heden."
+      description: |
+        Deze slider bepaalt het aantal appartementen dat tussen 2005 en het heden in het scenario behouden blijven. </br></br>
+        Het aantal behouden appartementen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze appartementen aan te passen.</li></ul>
+
     households_number_of_apartments_1985_2004:
       title: 1985 - 2004
       short_description:
-      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1985 tot 2004."
+      description: |
+        Deze slider bepaalt het aantal appartementen dat tussen 1985 en 2004 in het scenario behouden blijven. </br></br>
+        Het aantal behouden appartementen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze appartementen aan te passen.</li></ul>
+
     households_number_of_apartments_1965_1984:
       title: 1965 - 1984
       short_description:
-      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1965 tot 1984."
+      description: |
+        Deze slider bepaalt het aantal appartementen dat tussen 1965 en 1984 in het scenario behouden blijven. </br></br>
+        Het aantal behouden appartementen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze appartementen aan te passen.</li></ul>
+
     households_number_of_apartments_1945_1964:
       title: 1945 - 1964
       short_description:
-      description:  "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1945 tot 1964."
+      description: |
+        Deze slider bepaalt het aantal appartementen dat tussen 1945 en 1964 in het scenario behouden blijven. </br></br>
+        Het aantal behouden appartementen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze appartementen aan te passen.</li></ul>
+
     households_number_of_apartments_before_1945:
       title: < 1945
       short_description:
-      description:  "Deze slider zet het aantal apartementen in de bouwjaarklasse van tot 1945."
+      description: |
+        Deze slider bepaalt het aantal appartementen van voor 1945 in het scenario behouden blijven. </br></br>
+        Het aantal behouden appartementen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze appartementen aan te passen.</li></ul>
+
     households_number_of_terraced_houses_future:
       title: Nieuwbouw
       short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+      description: |
+        Deze slider bepaalt het aantal rijtjeswoningen dat tussen het startjaar en het toekomstjaar in het scenario wordt bijgebouwd. </br></br>
+        Het aantal rijtjeswoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="/scenario/demand/building/heat_demand_and_isolation">Warmtevraag & isolatie</a> om de warmtevraag van deze rijtjeswoningen aan te passen.</li></ul>
+
     households_number_of_terraced_houses_2005_present:
       title: 2005 - heden
       short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 2005 tot het heden."
+      description: |
+        Deze slider bepaalt het aantal rijtjeswoningen dat tussen 2005 en het heden in het scenario behouden blijven. </br></br>
+        Het aantal behouden rijtjeswoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze rijtjeswoningen aan te passen.</li></ul>
+
     households_number_of_terraced_houses_1985_2004:
       title: 1985 - 2004
       short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1985 tot 2004."
+      description: |
+        Deze slider bepaalt het aantal rijtjeswoningen dat tussen 1985 en 2004 in het scenario behouden blijven. </br></br>
+        Het aantal behouden rijtjeswoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze rijtjeswoningen aan te passen.</li></ul>
+
     households_number_of_terraced_houses_1965_1984:
       title: 1965 - 1984
       short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1965 tot 1984."
+      description: |
+        Deze slider bepaalt het aantal rijtjeswoningen dat tussen 1965 en 1984 in het scenario behouden blijven. </br></br>
+        Het aantal behouden rijtjeswoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze rijtjeswoningen aan te passen.</li></ul>
+
     households_number_of_terraced_houses_1945_1964:
       title: 1945 - 1964
       short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1945 tot 1964."
+      description: |
+        Deze slider bepaalt het aantal rijtjeswoningen dat tussen 1945 en 1964 in het scenario behouden blijven. </br></br>
+        Het aantal behouden rijtjeswoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze rijtjeswoningen aan te passen.</li></ul>
+
     households_number_of_terraced_houses_before_1945:
       title: < 1945
       short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse tot 1945."
+      description: |
+        Deze slider bepaalt het aantal rijtjeswoningen van voor 1945 in het scenario behouden blijven. </br></br>
+        Het aantal behouden rijtjeswoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze rijtjeswoningen aan te passen.</li></ul>
+
     households_number_of_semi_detached_houses_future:
       title: Nieuwbouw
       short_description:
-      description: "Deze slider zet het aantal hoekhuizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+      description: |
+        Deze slider bepaalt het aantal hoekwoningen dat tussen het startjaar en het toekomstjaar in het scenario wordt bijgebouwd. </br></br>
+        Het aantal hoekwoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="/scenario/demand/building/heat_demand_and_isolation">Warmtevraag & isolatie</a> om de warmtevraag van deze hoekwoningen aan te passen.</li></ul>
+
     households_number_of_semi_detached_houses_2005_present:
       title: 2005 - heden
       short_description:
-      description:  "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 2005 tot het heden."
+      description: |
+        Deze slider bepaalt het aantal hoekwoningen dat tussen 2005 en het heden in het scenario behouden blijven. </br></br>
+        Het aantal behouden hoekwoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze hoekwoningen aan te passen.</li></ul>
+
     households_number_of_semi_detached_houses_1985_2004:
       title: 1985 - 2004
       short_description:
-      description:  "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1985 tot 2004."
+      description: |
+        Deze slider bepaalt het aantal hoekwoningen dat tussen 1985 en 2004 in het scenario behouden blijven. </br></br>
+        Het aantal behouden hoekwoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze hoekwoningen aan te passen.</li></ul>
+
     households_number_of_semi_detached_houses_1965_1984:
       title: 1965 - 1984
       short_description:
-      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1965 tot 1984."
+      description: |
+        Deze slider bepaalt het aantal hoekwoningen dat tussen 1965 en 1984 in het scenario behouden blijven. </br></br>
+        Het aantal behouden hoekwoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze hoekwoningen aan te passen.</li></ul>
+
     households_number_of_semi_detached_houses_1945_1964:
       title: 1945 - 1964
       short_description:
-      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1945 tot 1964."
+      description: |
+        Deze slider bepaalt het aantal hoekwoningen dat tussen 1945 en 1964 in het scenario behouden blijven. </br></br>
+        Het aantal behouden hoekwoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze hoekwoningen aan te passen.</li></ul>
+
     households_number_of_semi_detached_houses_before_1945:
       title: < 1945
       short_description:
-      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse tot 1945."
+      description: |
+        Deze slider bepaalt het aantal hoekwoningen van voor 1945 in het scenario behouden blijven. </br></br>
+        Het aantal behouden hoekwoningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze hoekwoningen aan te passen.</li></ul>
+
     households_number_of_detached_houses_future:
       title: Nieuwbouw
       short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+      description: |
+        Deze slider bepaalt het aantal vrijstaande woningen dat tussen het startjaar en het toekomstjaar in het scenario wordt bijgebouwd. </br></br>
+        Het aantal vrijstaande woningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="/scenario/demand/building/heat_demand_and_isolation">Warmtevraag & isolatie</a> om de warmtevraag van deze vrijstaande woningen aan te passen.</li></ul>
+
     households_number_of_detached_houses_2005_present:
       title: 2005 - heden
       short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 2005 tot het heden."
+      description: |
+        Deze slider bepaalt het aantal vrijstaande woningen dat tussen 2005 en het heden in het scenario behouden blijven. </br></br>
+        Het aantal behouden vrijstaande woningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze vrijstaande woningen aan te passen.</li></ul>
+
     households_number_of_detached_houses_1985_2004:
       title: 1985 - 2004
       short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1985 tot 2004"
+      description: |
+        Deze slider bepaalt het aantal vrijstaande woningen dat tussen 1985 en 2004 in het scenario behouden blijven. </br></br>
+        Het aantal behouden vrijstaande woningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze vrijstaande woningen aan te passen.</li></ul>
+
     households_number_of_detached_houses_1965_1984:
       title: 1965 - 1984
       short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1965 tot 1984"
+      description: |
+        Deze slider bepaalt het aantal vrijstaande woningen dat tussen 1965 en 1984 in het scenario behouden blijven. </br></br>
+        Het aantal behouden vrijstaande woningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze vrijstaande woningen aan te passen.</li></ul>
+
     households_number_of_detached_houses_1945_1964:
       title: 1945 - 1964
       short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1945 tot 1964"
+      description: |
+        Deze slider bepaalt het aantal vrijstaande woningen dat tussen 1945 en 1964 in het scenario behouden blijven. </br></br>
+        Het aantal behouden vrijstaande woningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze vrijstaande woningen aan te passen.</li></ul>
+
     households_number_of_detached_houses_before_1945:
       title: < 1945
       short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse tot 1945."
+      description: |
+        Deze slider bepaalt het aantal vrijstaande woningen van voor 1945 in het scenario behouden blijven. </br></br>
+        Het aantal behouden vrijstaande woningen heeft invloed op de totale warmtevraag in het scenario. </br></br>
+        <ul><li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de warmtevraag van deze vrijstaande woningen aan te passen.</li></ul>
+
     households_lighting_efficient_fluorescent_electricity_share:
       title: Spaarlamp
       short_description: ''
-      description: "Welk deel van de verlichting komt van spaarlampen?\r\n<br/><br/>\r\nVeel
-        EU landen gaan de gloeilamp verbieden in de toekomst. Spaarlampen gebruiken
-        ~75% minder energie dan gloeilampen, maar nog twee keer zoveel als LED lampen.
-        Je kunt een spaarlamp niet altijd weggooien zonder het milieu te vervuilen,
-        omdat er vaak kwik in zit. Gloeilampen en LED lampen niet. Spaarlampen kunnen
-        er niet goed tegen als ze vaak aan en uitgezet worden.\r\n<br/><br/>\r\nVergelijking
-        levensduren:\r\n<br/>• LED-lamp:      ~50.000 uur\r\n<br/>• Spaarlamp:             ~7.500
-        uur\r\n<br/>• Gloeilamp:  ~1.000 uur"
+      description: |
+        Deze slider bepaalt welk percentage van de lampen in huishoudens bestaat uit spaarlampen.
     households_lighting_led_electricity_share:
       title: LED-lamp
       short_description: ''
-      description: "Welk deel van de verlichting komt van LED lampen?\r\n<br/><br/>\r\nVeel
-        EU landen gaan de gloeilamp verbieden in de toekomst. LED-lampen gebruiken
-        ~10% van de energie van een gloeilamp, en de helft van een spaarlamp. LED-lampen
-        kunnen er goed tegen als ze vaak aan en uitgezet worden. Hun kleuren worden
-        nog als kil ervaren en ze zijn niet zeer geschikt om de hele kamer te verlichten.\r\n<br/><br/>\r\nVergelijking
-        levensduren:\r\n<br/>• LED-lamp: ~50.000 uur\r\n<br/>• Spaarlamp: ~7.500 uur\r\n<br/>•
-        Gloeilamp: ~1.000 uur"
+      description: |
+        Deze slider bepaalt welk percentage van de lampen in huishoudens bestaat uit LED-lampen.
     households_lighting_incandescent_electricity_share:
       title: Gloeilamp
       short_description: ''
-      description: "Veel EU landen gaan de gloeilamp verbieden in de toekomst. Ze
-        zetten maar 2-3% van de energie die ze gebruiken om in licht. De rest wordt
-        als warmte afgegeven. Hoewel ze mooi warm licht geven leven ze minder lang
-        dan hun concurrenten de LED en spaarlampen.\r\n<br/><br/>\r\nVergelijking
-        levensduren:\r\n<br/>• LED-lamp: ~50.000 uur\r\n<br/>• Spaarlamp: ~7.500 uur\r\n<br/>•
-        Gloeilamp: ~1.000 uur"
+      description: |
+        Deze slider bepaalt welk percentage van de lampen in huishoudens bestaat uit gloeilampen.
+        </br></br>
+        De Europese Unie heeft de productie van nieuwe gloeilampen verboden als onderdeel van
+        wetgeving voor energie-efficiëntie. Het gebruik en de aanschaf van gloeilampen blijven
+        echter toegestaan.
     households_heater_electricity_share:
       title: Elektrische boiler
       short_description: ''
-      description: "Elektrische boilers zetten elektriciteit direct om in warmte.
-        Op zich is dat een zeer efficiënt proces.\r\n<br/>\r\nToch denken veel mensen
-        dat dit energieverspilling is. Elektriciteit kun je op veel verschillende
-        manieren nuttig inzetten en laagwaardige warmte kun je alleen gebruiken om
-        warm water te maken, of huizen te verwarmen. Uiteraard is de verspilling nog
-        groter als je de stroom opwekt door kostbare fossiele brandstoffen te verbranden.\r\n<br/><br/>\r\nElektrische
-        kachels of bijstook moeten snel veel warmte kunnen leveren en hebben daarom
-        een groot vermogen. Dit betekent dat ze het elektriciteitsnet sterk belasten.
-        \ Als je wilt zien wat de impact van elektrische bijstook bij warmtepompen
-        is, kun je deze schuif op hetzelfde percentage zetten als de elektrische warmtepomp
-        (bodem) schuif."
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van huishoudens
+        wordt geleverd door elektrische boilers.
+        </br></br>
+        Elektrische boilers verwarmen water uitsluitend met elektriciteit, zonder gebruik
+        te maken van omgevingswarmte, zoals bijvoorbeeld bij warmtepompen het geval is.
     households_heater_crude_oil_share:
       title: Olieketel
       short_description: ''
@@ -974,108 +784,121 @@ nl:
     households_heater_combined_network_gas_share:
       title: HR combiketel (gas)
       short_description: ''
-      description: "Dit zijn gasgestookte HR-ketels. Als je klikt op
-        \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan
-        100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
-        onderwaardes / lower heating values (LHV) en deze HR-ketels ontrekken ook energie
-        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV,
-        alleen in bovenwaarde / higher heating values (HHV).
-        Combiketels maken ook warm water om bijvoorbeeld mee te douchen. Warmwaterproductie is
-        iets minder efficiënt dan de productie van warmte voor het CV-systeem."
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van huishoudens
+        wordt geleverd door gasgestookte hoogrendementsketels (HR-ketels).
+        </br></br>
+        De HR combiketel produceert zowel warmte als warm water en maakt gebruik van condensatiewarmte,
+        waardoor de efficiëntie hoger kan zijn dan 100% (zie "Technische parameters en kosten").
+        </br></br>
+        <em>Let op</em>: deze slider gaat alleen over de warmtevraag. Als er aan de aanbodzijde
+        geen specifieke warmtebronnen zijn geselecteerd, wordt automatisch de gasketel gebruikt
+        om de warmtevraag van het warmtenet te dekken. Controleer daarom ook de instellingen aan
+        de aanbodzijde om te zorgen dat de gewenste technologie wordt ingezet.
+
     households_heater_combined_hydrogen_share:
       title: HR combiketel (waterstof)
       short_description: ''
-      description: "Dit zijn waterstofgestookte HR-ketels. Als je klikt op
-        \"Technische parameters en kosten\", zul je zien dat de efficiëntie hoger dan
-        100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
-        onderwaardes / lower heating values (LHV) en deze HR-ketels ontrekken ook energie
-        uit de condensatiewarmte. Condensatiewarmte wordt niet meegenomen in LHV,
-        alleen in bovenwaarde / higher heating values (HHV).
-        Combiketels maken ook warm water om bijvoorbeeld mee te douchen. Warmwaterproductie is
-        iets minder efficiënt dan de productie van warmte voor het CV-systeem."
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van huishoudens
+        wordt geleverd door waterstofgestookte hoogrendementsketels (HR-ketels).
+        </br></br>
+        De HR combiketel produceert zowel warmte als warm water en maakt gebruik van condensatiewarmte,
+        waardoor de efficiëntie hoger kan zijn dan 100% (zie "Technische parameters en kosten").
+        </br></br>
+        <em>Let op</em>: deze slider gaat alleen over de warmtevraag. Als er aan de aanbodzijde
+        geen specifieke warmtebronnen zijn geselecteerd, wordt automatisch de gasketel gebruikt
+        om de warmtevraag van het warmtenet te dekken. Controleer daarom ook de instellingen aan
+        de aanbodzijde om te zorgen dat de gewenste technologie wordt ingezet.
     households_heater_heatpump_ground_water_electricity_share:
       title: Bodemwarmtepomp
       short_description: ''
-      description: "Een warmtepomp is een apparaat dat warmte verplaatst. De meest
-        bekende toepassing is een koelkast, maar in een gebouw kan een warmtepomp
-        ook zorgen voor verwarming en koeling. Dat kost minder energie dan gasverwarming
-        met een HR CV-ketel, maar het werkt vaak alleen als vloer- en muurverwarming
-        worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen daarom
-        vooral nog ingezet bij nieuwbouw van huizen. Europese wetgeving schrijft namelijk
-        voor dat het energiegebruik van huizen per 2020 tot nul moet zijn toegebracht
-        (gemeten over een heel jaar). \r\n<br/><br/>\r\nJe spaart energie, maar er
-        is wel extra elektriciteit of gas nodig voor de warmtepomp. Deze warmtepomp
-        gebruikt elektriciteit, omdat de warmte uit de grond gehaald wordt. Een gaswarmtepomp
-        wordt vaker toegepast als warmte uit de lucht wordt gehaald. <br/>"
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van huishoudens
+        wordt geleverd door elektrische bodemwarmtepompen.
+        </br></br>
+        De efficiëntie van de bodemwarmtepomp wordt aangegeven met de Coëfficiënt van Prestatie
+        (COP). De COP wordt doorgaans per uur berekend op basis van de temperatuur in dat uur,
+        zoals vastgelegd in het weerjaar. Aangezien de bodemtemperatuur constant blijft, blijft
+        de COP gedurende het jaar onveranderd.
+        </br></br>
+         <ul>
+        <li> Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_ht">HT-warmtenetten</a>
+        om in te stellen hoe de warmte wordt geleverd. </li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_heatpump_pvt_electricity_share:
       title: PVT-warmtepomp
       short_description: ''
       description: |
-        Een warmtepomp is een apparaat dat warmte verplaatst. De meest bekende
-        toepassing is een koelkast, maar in een gebouw kan een warmtepomp ook zorgen
-        voor verwarming en koeling. Dat kost minder energie dan gasverwarming met
-        een HR CV-ketel, maar het werkt vaak alleen als vloer- en muurverwarming
-        worden geïnstalleerd, in plaats van radiatoren. Nu worden warmtepompen daarom
-        vooral nog ingezet bij nieuwbouw van huizen. <br/><br/>nDeze warmtepomp
-        wordt gecombineerd met PVT-panelen, deze panelen zijn een combinatie van
-        zonnepanelen en zonneboilers. De warmtepomp haalt warmte uit het warme water
-        van de PVT-panelen waardoor de warmtepomp efficienter is dan warmtepompen die
-        de buitenlucht of grondwater gebruiken.<br/><br/> De PVT-panelen concurreren deels om
-        dakoppervlak met andere zonnepanelen. Je kunt het gebruik van dakoppervlak bekijken
-        in <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households"
-        data-chart-location="side"> deze grafiek</a>.
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van
+        huishoudens wordt geleverd door zonnepanelen en zonthermische collectoren
+        (PVT) gecombineerd met een warmtepomp.
+        </br></br>
+        <ul>
+          <li>Bekijk <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households" data-chart-location="side">deze grafiek</a> om inzicht te krijgen in het gebruik van het beschikbare dakoppervlak</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen</li>
+        </ul>
     households_heater_wood_pellets_share:
       title: Houtpelletkachel
       short_description: ''
-      description: "Dit is een kachel die kleine houtpellets verbrandt. Deze ketels
-        zijn vrij efficiënt en geheel geautomatiseerd. De pellets worden automatisch
-        uit een silo gehaald. \r\n<br/><br/>\r\nHier is aangenomen dat de pellets
-        hernieuwbaar zijn geproduceerd. Het transport van biomassa kost brandstof
-        en hoe kleiner de schaal waarop het wordt toegepast, hoe minder 'groen' het
-        wordt.\r\n<br/><br/>\r\nOuderwetse houtkachels en open haarden zijn niet als
-        aparte opties in het model opgenomen."
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van
+        huishoudens wordt geleverd door houtpelletkachels.
+        </br></br>
+        Het is aangenomen dat de houtpellets hernieuwbaar zijn geproduceerd. Houd er
+        echter rekening mee dat het transport van houtpellets brandstof vereist.
+        Ouderwetse houtkachels en open haarden zijn niet als aparte opties in het
+        ETM opgenomen.
     households_heater_heatpump_air_water_electricity_share:
       title: Luchtwarmtepomp
       short_description: ''
       description: |
-        Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
-        in huishoudens voor verwarming en warm tapwater veranderen. <br/><br/>
-        Een luchtwarmtepomp gebruikt elektriciteit en omgevingswarmte om warmte te genereren.
-        Deze warmte kan worden gedistribueerd via water (met vloerverwarmingssystemen)
-        of via de lucht (met airconditioners) om een woning te verwarmen ofwel om warm tapwater
-        te genereren. <br/><br/>
-        De efficiëntie (COP) van de luchtwarmtepomp wordt
-        beïnvloed door de buitentemperatuur en is daardoor afhankelijk van het weer. Voor elk
-        uur wordt de efficiëntie (COP) berekend gebaseerd op het weerjaar. Het gemiddelde van deze
-        uurlijkse berekeningen (de seizoensafhankelijke COP: 'SCOP') kan worden gevonden in de
-        technische parameters en kosten. <br/><br/>
-        Ga voor meer informatie naar de
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentatie</a>.
-        Om de efficientie (COP) te beïnvloeden kun je naar de
-        <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings" >Kosten & efficiënties</a> gaan
-        of het <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weerjaar</a> aanpassen.
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van huishoudens
+        wordt geleverd door elektrische luchtwarmtepompen.
+        </br></br>
+        De efficiëntie van de luchtwarmtepomp wordt beïnvloed door de omgevingstemperatuur en
+        is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de
+        (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op
+        basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar.
+        </br></br>
+        <ul>
+        <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+        <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_heatpump_surface_water_water_ts_electricity_share:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''
       description: |
-        Dit schuifje beïnvloed het percentage van de warmtevraag voor huishoudens dat
-        wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewateren en uitgerust zijn
-        met warmte-koude opslag (WKO). <br/><br/>
-        De efficiëntie (COP) van deze warmtepomp wordt niet beïnvloed door de buitentemperatuur
-        door de combinatie met WKO. <br/><br/>
-        Voor meer informatie over het totale gebruik van aquathermie, open <a href="#"
-        class="open_chart" data-chart-key="heat_aquathermal_demand"
-        data-chart-location="side"> deze grafiek</a>.
-        Het is ook mogelijk om aquathermie in te zetten in een (collectief) warmtenet.
-        Ga naar <a href="/scenario/supply/heat/overview-district-heating" >warmtenetten</a>
-        om aquathermie toe te voegen als warmtebron voor het MT of LT warmtenet.
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van huishoudens
+        wordt geleverd door warmtepompen die warmte halen uit oppervlaktewater (Thermische
+        Energie uit Oppervlaktewater, TEO) en gebruikmaken van Warmte-Koude Opslag (WKO).
+        </br></br>
+        De efficiëntie van de TEO-warmtepomp in combinatie met WKO, uitgedrukt in de Coëfficiënt
+        van Prestatie (COP), wordt niet beïnvloed door de buitentemperatuur. Dit komt doordat de
+        WKO gebruikmaakt van constante temperaturen uit de ondergrond.
+        </br></br>
+        <ul>
+        <li>Bekijk <a href="#" class="open_chart" data-chart-key="heat_aquathermal_demand"
+        data-chart-location="side"> deze grafiek</a> voor meer informatie over het totale gebruik
+        van aquathermie </li>
+        <li>Ga naar <a href="/scenario/supply/heat/overview-district-heating" >Warmtenetten</a>
+        om aquathermie in te zetten in een (collectief) warmtenet die opereert op middentemperatuur
+        (MT) of lage temperatuur (LT).</li>
+        </ul>
     households_heater_coal_share:
       title: Kolenketel
       short_description: ''
-      description: "Welk percentage van de huishoudelijke warmtevraag wordt ingevuld
-        door kolen? \r\n<br/><br/>\r\nDe brandstofmix die je hier invult zal waarschijnlijk
-        het meest afhangen van je verwachtingen voor brandstofprijzen. Zie ook het
-        onder deel 'Kosten'. Andere relevante invloeden zijn milieuwetten."
+      description: |
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van huishoudens
+        wordt geleverd door gasketels.
+        </br></br>
+        Een gasketel levert uitsluitend warmte voor centrale verwarming en geen warm water.
+        In vergelijking met een HR-ketel is de gasketel minder efficiënt, omdat hij geen gebruik
+        maakt van condensatie om energie te besparen.
     households_heater_network_gas_share:
       title: Gasketel
       short_description: ''
@@ -1086,68 +909,92 @@ nl:
       title: HT-warmtenet
       short_description:
       description: |
-        Dit schuifje bepaalt welk deel van de warmtevraag van huishoudens wordt geleverd
-        door warmtenetten die opereren op een hoge temperatuur (HT). </br></br>
-        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
-        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke
-        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
-        Ga naar de sectie <a href="/scenario/supply/heat_ht">HT-warmtenetten</a> om te bepalen
-        hoe de warmte wordt geleverd. Zie onze
-        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
-        documentatie</a> voor meer informatie.
+        Deze slider bepaalt welk percentage van de warmtevraag van huishoudens wordt
+        geleverd door warmtenetten die opereren op een hoge temperatuur (HT) van
+        70 <sup>o</sup>C of hoger.
+        </br></br>
+        <ul>
+        <li> Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_ht">HT-warmtenetten</a>
+        om in te stellen hoe de warmte wordt geleverd. </li>
+        <li> Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">Merit order</a>
+        om te bepalen welke woningen met welke type techniek worden verwarmd. </li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_district_heating_mt_steam_hot_water_share:
       title: MT-warmtenet
       short_description:
       description: |
-        Dit schuifje bepaalt welk deel van de warmtevraag van huishoudens wordt geleverd
-        door warmtenetten die opereren op een midden temperatuur (MT). </br></br>
-        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
-        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke
-        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
-        Ga naar de sectie <a href="/scenario/supply/heat_mt">MT-warmtenetten</a> om te bepalen
-        hoe de warmte wordt geleverd. Zie onze
-        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
-        documentatie</a> voor meer informatie.
+        Deze slider bepaalt welk percentage van de warmtevraag van huishoudens wordt
+        geleverd door warmtenetten die opereren op een midden temperatuur (MT) van
+        55 tot 70 <sup>o</sup>C.
+        </br></br>
+        <ul>
+        <li> Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_mt">MT-warmtenetten</a>
+        om in te stellen hoe de warmte wordt geleverd. </li>
+        <li> Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">Merit order</a>
+        om te bepalen welke woningen met welke type techniek worden verwarmd. </li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_district_heating_lt_steam_hot_water_share:
       title: LT-warmtenet
       short_description:
       description: |
-        Dit schuifje bepaalt welk deel van de warmtevraag van huishoudens wordt geleverd
-        door warmtenetten die opereren op een lage temperatuur (LT). </br></br>
-        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
-        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke
-        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
-        Ga naar de sectie <a href="/scenario/supply/heat_lt">LT-warmtenetten</a> om te bepalen
-        hoe de warmte wordt geleverd. Zie onze
-        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
-        documentatie</a> voor meer informatie.
+        Deze slider bepaalt welk percentage van de warmtevraag van huishoudens wordt
+        geleverd door warmtenetten die opereren op een lage temperatuur (LT) van
+        30 tot 55 <sup>o</sup>C.
+        </br></br>
+        <ul>
+        <li> Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_lt">LT-warmtenetten</a>
+        om in te stellen hoe de warmte wordt geleverd. </li>
+        <li> Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">Merit order</a>
+        om te bepalen welke woningen met welke type techniek worden verwarmd. </li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (gas)
       short_description:
       description: |
-        Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
-        met een gasgestookte HR-ketel.
-        <br/><br/>
-        De COP van het elektrische
-        deel van de hybride warmtepomp is afhankelijk van de buitentemperatuur. Als
-        de COP onder de drempelwaarde zakt schakelt de hybride warmtepomp volledig
-        over op gas. De omslag-COP is in de sectie <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
-        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
-        <br/><br/>
-        Meer informatie over hoe hybride warmtepompen werken is te vinden in de <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentatie</a>
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van
+        huishoudens wordt geleverd door hybride warmtepompen, bestaande uit elektrische
+        luchtwarmtepompen met gasgestookte hoogrendementsketels (HR-ketels).
+        </br></br>
+        De efficiëntie van het luchtwarmtepomp-deel wordt beïnvloed door de omgevingstemperatuur
+        en is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de
+        (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op
+        basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar. Wanneer de COP
+        onder een bepaalde drempelwaarde zakt, schakelt hij volledig over op gas.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (waterstof)
       short_description:
       description: |
-        Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
-        met een waterstofgestookte HR-ketel.<br/><br/>
-        De COP van het elektrische deel van de hybride
-        waterstofwarmtepomp is afhankelijk van de buitentemperatuur. Als de COP onder
-        de drempelwaarde zakt schakelt de hybride warmtepomp volledig over op gas.
-        Deze omslag-COP is in de sectie <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
-        >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
-        <br/><br/>
-        Meer informatie over hoe hybride warmtepompen werken is te vinden in de <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentatie</a>
+        Deze slider bepaalt welk percentage van de warmwater- en warmtevraag van
+        huishoudens wordt geleverd door hybride warmtepompen, bestaande uit elektrische
+        luchtwarmtepompen met waterstofgestookte hoogrendementsketels (HR-ketels).
+        </br></br>
+        De efficiëntie van het luchtwarmtepomp-deel wordt beïnvloed door de omgevingstemperatuur
+        en is daardoor afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de
+        (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op
+        basis van de temperatuur in dat uur, zoals vastgesteld in het weerjaar. Wanneer de COP
+        onder een bepaalde drempelwaarde zakt, schakelt hij volledig over op gas.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (olie)
       short_description:
@@ -1169,58 +1016,48 @@ nl:
     households_cooker_network_gas_share:
       title: Gas
       short_description: ''
-      description: "Koken op gas is populair in landen waar er een overvloed van aardgas
-        is en een gasdistributienet aanwezig is. De efficiëntie van een gasfornuis
-        is 40%. Omdat veel warmte naar de omgeving verloren gaat, zijn gasfornuizen
-        minder efficiënt dan elektrische uitvoeringen. Hoewel elektrisch koken dus
-        efficiënter lijkt, is dit niet altijd het geval omdat de hele keten meegenomen
-        moet worden.  Door verliezen in elektriciteitsproductie en -transport kan
-        het zijn dat gaskoken uiteindelijk voordeliger is.\r\n<br/><br/>\r\nUitsluitend
-        de kosten door het verschil in energievraag worden meegenomen. De kosten van
-        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt geleverd door gas.
+        </br></br>
+        De efficiëntie van een gasfornuis bedraagt 40%, omdat een groot deel van de warmte verloren gaat naar de omgeving. Hierdoor zijn gasfornuizen minder efficiënt dan elektrische kooktoestellen. Toch is elektrisch koken niet altijd gunstiger, omdat ook de hele energieketen moet worden meegenomen. Verliezen tijdens elektriciteitsproductie en -transport kunnen ervoor zorgen dat koken op gas uiteindelijk voordeliger is.
+        </br></br>
+        <em>Let op</em>: de kosten van een gasfornuis zelf worden niet meegenomen in het model.
     households_cooker_resistive_electricity_share:
       title: Elektrisch
       short_description: ''
-      description: "Elektrische fornuizen zijn populair in dichtbevolkte regio's en
-        waar er geen toegang is tot een aardgasnetwerk. Een elektrisch fornuis zet
-        elektriciteit om in warmte. En elektrisch fornuis is ongeveer 55% efficiënt
-        (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/>\r\nHet
-        nadeel van een elektrisch fornuis is dat het tijd nodig heeft om op te warmen
-        en het is onmogelijk om snel de temperatuur te veranderen.\r\n<br/><br/>\r\nUitsluitend
-        de kosten door het verschil in energievraag worden meegenomen. De kosten van
-        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel."
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt geleverd door elektrisch koken.
+        </br></br>
+        Elektrische fornuizen zetten elektriciteit om in warmte en hebben een efficiëntie van ongeveer 55%, exclusief verliezen bij de productie en het transport van elektriciteit. Hoewel ze efficiënter zijn dan gasfornuizen, hebben elektrische fornuizen het nadeel dat ze tijd nodig hebben om op te warmen en de temperatuur moeilijk snel kunnen aanpassen.
+        </br></br>
+        <em>Let op</em>: de kosten van een elektrisch fornuis zelf worden niet meegenomen in het model.
     households_cooker_halogen_electricity_share:
       title: Halogeen
       short_description: ''
-      description: "Halogeen fornuizen produceren infraroodstraling en rood licht
-        om eten te verwarmen. Halogeen fornuizen zijn herkendbaar aan de speciale
-        keramische glasplaat. Deze fornuizen kunnen sneller opwarmen en afkoelen dan
-        elektrische fornuizen. De efficiëntie van een halogeen fornuis is ongeveer
-        60% (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/><br/>\r\nUitsluitend
-        de kosten door het verschil in energievraag worden meegenomen. De kosten van
-        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt geleverd door halogeen koken.
+        </br></br>
+        Halogeen fornuizen gebruiken infraroodstraling en rood licht om voedsel te verwarmen en zijn herkenbaar aan de speciale keramische glasplaat. Ze verwarmen en koelen sneller dan elektrische fornuizen. De efficiëntie van een halogeen fornuis bedraagt ongeveer 60%, exclusief verliezen bij de productie en het transport van elektriciteit.
+        </br></br>
+        <em>Let op</em>: de kosten van een halogeen fornuis zelf worden niet meegenomen in het model.
     households_cooker_induction_electricity_share:
       title: Inductie
       short_description: ''
-      description: "Een inductiekookplaat is een type kookplaat dat gebruikmaakt van
-        het principe van inductieverhitting. In tegenstelling tot andere kookplaten,
-        wordt warmte gecreëerd in de pan zelf en wordt het niet overgebracht van het
-        fornuis via een kookplaat of brandend gas. Voor inductiekoken zijn wel speciale
-        inductiepannen nodig. De efficiëntie van een inductiekookplaat is hoog, ongeveer
-        83-90% (exclusief elektriciteitsproductie en transportverliezen).\r\n<br/><br/>\r\nUitsluitend
-        de kosten door het verschil in energievraag worden meegenomen. De kosten van
-        het kooktoestel zelf worden niet meegenomen in het Energietransitiemodel.\r\n"
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt geleverd door inductie koken.
+        </br></br>
+        Inductiekookplaten maken gebruik van inductieverhitting, waarbij de pan zelf wordt verwarmd in plaats van de kookplaat of gasbranders. De efficiëntie van een inductiekookplaat is hoog, ongeveer 83-90%, exclusief verliezen bij de productie en het transport van elektriciteit.
+        </br></br>
+        <em>Let op</em>: de kosten van een inductiekookplaat zelf worden niet meegenomen in het model.
     households_cooker_wood_pellets_share:
       title: Biomassa
       short_description: ''
-      description: "Onder koken op biomassa vallen verschillende brandstoffen en technologiën
-        zoals hout, hout pallets, bio-gas en bio-olie. Ouderwetse hout fornuizen hebben
-        een lage efficiëntie voor koken. De efficiëntie van het biomassa fornuis in
-        het Energietransitiemodel is 30%. Dat is lager dan de efficiëntie van aardgas
-        en elektrische alternatieven omdat veel warmte verloren gaat naar de omgeving.
-        \r\n<br/><br/>\r\nUitsluitend de kosten door het verschil in energievraag
-        worden meegenomen. De kosten van het kooktoestel zelf worden niet meegenomen
-        in het Energietransitiemodel.\r\n \r\n"
+      description: |
+        Deze slider bepaalt welk percentage van energiebehoefte voor koken in huishoudens wordt geleverd door koken op biomassa.
+        </br></br>
+        Koken op biomassa omvat verschillende brandstoffen en technologieën, zoals hout, houtpellets, biogas en bio-olie. Ouderwetse houtfornuizen hebben een lage efficiëntie, en de efficiëntie van het biomassafornuis in het model is 30%. Dit is lager dan die van aardgas en elektrische alternatieven, omdat veel warmte verloren gaat naar de omgeving.
+        </br></br>
+        <em>Let op</em>: de kosten van het kooktoestel zelf worden niet meegenomen in het model.
     demand_households_heating_producers_order:
       title: Merit order
       short_description: ''
@@ -1236,31 +1073,114 @@ nl:
     households_heater_network_gas_heat_output_capacity:
       title: Gasketel
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de gasketel dat gebruikt wordt voor de
+        warmtebehoefte van één huishouden.
+        </br></br>
+        Een gasketel levert uitsluitend warmte voor centrale verwarming en geen warm water.
+        In vergelijking met een HR-ketel is de gasketel minder efficiënt, omdat hij geen
+        gebruik maakt van condensatietechnologie om energie te besparen. Het berekenen van
+        het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals
+        in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_combined_network_gas_heat_output_capacity:
       title: HR combiketel (gas)
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de gasgestookte hoogrendementsketel (HR-ketel)
+        die gebruikt wordt voor de warmtebehoefte van één huishouden.
+        </br></br>
+        De HR combiketel produceert zowel warmte als warm water en maakt gebruik van
+        condensatiewarmte, waardoor de efficiëntie hoger kan zijn dan 100% (zie
+        "Technische parameters en kosten"). Het berekenen van het vermogen per huishouden
+        kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_combined_hydrogen_heat_output_capacity:
       title: HR combiketel (waterstof)
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de waterstofgestookte hoogrendementsketel (HR-ketel)
+        die gebruikt wordt voor de warmtebehoefte van één huishouden.
+        </br></br>
+        De HR combiketel produceert zowel warmte als warm water en maakt gebruik van
+        condensatiewarmte, waardoor de efficiëntie hoger kan zijn dan 100% (zie
+        "Technische parameters en kosten"). Het berekenen van het vermogen per huishouden
+        kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_wood_pellets_heat_output_capacity:
       title: Houtpelletkachel
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de houtpelletkachel die gebruikt wordt voor de
+        warmtebehoefte van één huishouden.
+        </br></br>
+        Het is aangenomen dat de houtpellets hernieuwbaar zijn geproduceerd. Houd er echter
+        rekening mee dat het transport van houtpellets brandstof vereist. Ouderwetse houtkachels
+        en open haarden zijn niet als aparte opties in het ETM opgenomen. Het berekenen van het
+        vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_electricity_heat_output_capacity:
       title: Elektrische boiler/bijstook
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de elektrische boiler die gebruikt wordt voor de
+        warmtebehoefte van één huishouden.
+        </br></br>
+        Elektrische boilers verwarmen water uitsluitend met elektriciteit, zonder gebruik te
+        maken van omgevingswarmte, zoals bijvoorbeeld bij warmtepompen het geval is. Het berekenen
+        van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+        </ul>
     households_heater_heatpump_air_water_electricity_heat_output_capacity:
       title: Luchtwarmtepomp
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de elektrische luchtwarmtepomp die gebruikt wordt voor de
+        warmtebehoefte van één huishouden.
+        </br></br>
+        De efficiëntie van de luchtwarmtepomp wordt beïnvloed door de omgevingstemperatuur en is daardoor
+        afhankelijk van het weer. Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt
+        van Prestatie (COP). De COP wordt elk uur berekend op basis van de temperatuur in dat uur, zoals
+        vast gesteld in het weerjaar. Het berekenen van het vermogen per huishouden kan leiden tot tekorten
+        tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_heatpump_ground_water_electricity_heat_output_capacity:
       title: Bodemwarmtepomp
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de elektrische bodemwarmtepomp die gebruikt wordt voor de warmtebehoefte van één huishouden.
+        De efficiëntie van de bodemwarmtepomp wordt aangegeven met de Coëfficiënt van Prestatie (COP). De COP wordt doorgaans per uur
+        berekend op basis van de temperatuur in dat uur, zoals vastgelegd in het weerjaar. Aangezien de bodemtemperatuur constant blijft,
+        blijft de COP gedurende het jaar onveranderd. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude
+        periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_heatpump_surface_water_water_ts_electricity_heat_output_capacity:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''
@@ -1268,31 +1188,108 @@ nl:
     households_heater_heatpump_pvt_electricity_heat_output_capacity:
       title: Bodemwarmtepomp met PVT
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van de warmtepomp die is gecombineerd met zonnepanelen en zonthermische collectoren (PVT),
+        voor de warmtebehoefte van één huishouden. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens
+        koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+          <li>Bekijk <a href="#" class="open_chart" data-chart-key="roof_area_for_pv_in_households" data-chart-location="side">deze grafiek</a> om inzicht te krijgen in het gebruik van het beschikbare dakoppervlak</ul>
+        </ul>
     households_heater_district_heating_lt_steam_hot_water_heat_output_capacity:
       title: LT-warmtenet
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van het warmtenet dat opereert op een lage temperatuur (LT) van 30 tot 55<sup>o</sup>C, specifiek
+        voor de warmtebehoefte van één huishouden.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen
+        kunnen er tekorten ontstaan. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_lt">LT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd
+          <li>Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">merit order</a> om te bepalen welke woningen met welk type techniek worden verwarmd
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_district_heating_mt_steam_hot_water_heat_output_capacity:
       title: MT-warmtenet
       short_description: ''
-      description: ''
+      description: |
+        Deze  Deze slider bepaalt het vermogen van het warmtenet dat opereert op een midden temperatuur (MT) van 55 tot 70 <sup>o</sup>C, specifiek
+        voor de warmtebehoefte van één huishouden.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen
+        kunnen er tekorten ontstaan. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_mt">MT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd
+          <li>Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">merit order</a> om te bepalen welke woningen met welk type techniek worden verwarmd
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_district_heating_ht_steam_hot_water_heat_output_capacity:
       title: HT-warmtenet
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van het warmtenet dat opereert op een hoge temperatuur (HT) van 70 <sup>o</sup>C of hoger, specifiek
+        voor de warmtebehoefte van één huishouden.
+        </br></br>
+        Warmte voor een warmtenet kan lokaal worden opgewekt of geïmporteerd. Afhankelijk van de warmtevraag en de isolatiegraad van woningen
+        kunnen er tekorten ontstaan. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/supply/heat_ht">HT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd
+          <li>Ga naar de <a href="https://energytransitionmodel.com/scenario/demand/households_heating_order/merit-order">merit order</a> om te bepalen welke woningen met welk type techniek worden verwarmd
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (gas)
       short_description: ''
-      description: ''
+      description: |
+        Deze slider bepaalt het vermogen van een hybride warmtepomp, die bestaat uit een elektrische luchtwarmtepomp met gasgestookte
+        hoogrendementsketel (HR-ketel), specifiek voor de warmtebehoefte van één huishouden.
+        <br></br>
+        De efficiëntie van het luchtwarmtepomp-deel wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer.
+        Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis
+        van de temperatuur in dat uur, zoals vast gesteld in het weerjaar. Wanneer de COP onder een bepaalde drempelwaarde zakt, schakelt
+        hij volledig over op gas. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+        </br></br>
+        <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
+        </ul>
+        </br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (waterstof)
       short_description: ''
-      description: ''
+      description: |
+          Deze slider bepaalt het vermogen van een hybride warmtepomp, die bestaat uit een elektrische luchtwarmtepomp met waterstofgestookte
+          hoogrendementsketel (HR-ketel), specifiek voor de warmtebehoefte van één huishouden.
+          <br></br>
+          De efficiëntie van het luchtwarmtepomp-deel wordt beïnvloed door de omgevingstemperatuur en is daardoor afhankelijk van het weer.
+          Deze efficiëntie wordt aangegeven met de (seizoensgebonden) Coëfficiënt van Prestatie (COP). De COP wordt elk uur berekend op basis
+          van de temperatuur in dat uur, zoals vast gesteld in het weerjaar. Wanneer de COP onder een bepaalde drempelwaarde zakt, schakelt
+          hij volledig over op waterstof. Het berekenen van het vermogen per huishouden kan leiden tot tekorten tijdens koude periodes, zoals in de winter.
+          </br></br>
+          <ul>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/demand/households/heat-demand-and-insulation">Warmtevraag & isolatie</a> om de mogelijke tekorten te voorkomen</li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/flexibility/flexibility_weather/extreme-weather-conditions">Weersomstandigheden</a> om het weerjaar aan te passen </li>
+          <li>Ga naar <a href="https://energytransitionmodel.com/scenario/costs/costs_heat/heating-in-houses-and-buildings">Kosten & efficiënties</a> om de COP te veranderen </li>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">Vraagsturing - gedrag van hybride warmtepompen</a> om het omslagpunt van de COP aan te passen</li>
+          </ul>
+           </br>
+          Bekijk de <a href="https://docs.energytransitionmodel.com/main/heat-built-environment">Documentatie</a> voor meer informatie.
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (ruwe olie)
       short_description: ''
       description: ''
-
-
-

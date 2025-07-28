@@ -4,207 +4,204 @@ nl:
     agriculture_burner_crude_oil_share:
       title: Olieketel
       short_description: ''
-      description: "Welk percentage van de warmtevraag in de landbouw
-        wordt ingevuld door oliegestookte ketels?\r\n<br/><br/>\r\n Olieketels worden gebruikt
-        om kassen te verwarmen. Het is één van de minst duurzame manieren van kasverwarming in vergelijking
-        met gasketels of, veel beter nog, geothermische systemen."
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door 
+        olieketels.</br></br>Olieketels worden voornamelijk gebruikt voor de verwarming van kassen. Ze hebben een 
+        hogere CO<sub>2</sub>-uitstoot dan gasketels en duurzame alternatieven zoals geothermie en restwarmte.
     agriculture_burner_wood_pellets_share:
       title: Biomassaketel
       short_description: ''
-      description: 'Welk percentage van de warmte die nodig is in de land- en tuinbouw
-        komt van het verbranden van biomassa? Het verbranden van lokaal beschikbare
-        biomassa is energetisch vrij efficiënt. '
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door 
+        biomassaketels.</br></br>Biomassaketels stoten minder CO<sub>2</sub> uit dan olie- en gasketels, maar de 
+        uitstoot is afhankelijk van de herkomst van de biomassa. Het verbranden van lokaal beschikbare biomassa is 
+        energetisch efficiënt en kan bijdragen aan een duurzamere warmteproductie.
     agriculture_heatpump_water_water_ts_electricity_share:
       title: Water warmtepomp met WKO
       short_description: ''
       description: |
-        Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
-        opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
-        bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
-        het huis mee te verwarmen. Als alternatief kan ook de natuurlijke warmte of
-        koude van oppervlaktewater of wegen gebruikt worden. <br/><br/>
-        Warmtepompen zijn zeer efficiënt als ze met WKO gecombineerd worden, omdat minder energie
-        hoeft te worden toegevoegd om een gebouw te koelen of te verwarmen. Het is
-        helaas praktisch niet altijd mogelijk om de ondergrondse opslag te realiseren
-        (bijvoorbeeld in stedelijk gebied). </br></br>
-        Je kunt de <a href="/scenario/costs/costs_heat/costs-heating">kosten</a>
-        van elektrische warmtepompen in het algemeen veranderen, of de 
-        <a href="/scenario/costs/costs_heat/efficiencies-heating-built-environment">COP</a>
-        van deze specifieke warmtepomp.
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door water 
+        warmtepompen met Warmte Koude Opslag (WKO).</br></br>De efficiëntie van de water warmtepomp met WKO, 
+        uitgedrukt in de Coëfficiënt van Prestatie (COP), wordt niet beïnvloed door de buitentemperatuur. De 
+        warmtepomp haalt energie uit de relatief constante temperaturen van de ondergrond. Dankzij WKO kan warmte in 
+        de zomer worden opgeslagen voor gebruik in de winter, en omgekeerd.</br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/costs/costs_heat/costs-heating">Kosten verwarming</a> om de kosten van 
+          elektrische warmtepompen te veranderen.</li>
+          <li>Ga naar <a href="/scenario/costs/costs_heat/efficiencies-heating-built-environment">Efficiënties</a> om 
+          de COP te veranderen.</li>
+        </ul>
     agriculture_heatpump_water_water_electricity_share:
       title: Water warmtepomp
       short_description:
       description: |
-        Met dit schuifje kun je een water-water warmtepomp installeren. Dit type warmtepomp 
-        gebruikt een put als warmtebron. Er is dan nog maar een beperkte hoeveelheid elektriciteit 
-        nodig om het geleverde water op de gewenste temperatuur te krijgen. Dit maakt een water-water 
-        warmtepomp veel efficiënter dan een elektrische boiler. </br></br>
-        Je kunt de <a href="/scenario/costs/costs_heat/costs-heating">kosten</a>
-        van elektrische warmtepompen in het algemeen veranderen, of de 
-        <a href="/scenario/costs/costs_heat/efficiencies-heating-built-environment">COP</a>
-        van deze specifieke warmtepomp.
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door 
+        water-water warmtepompen.</br></br>Een water-water warmtepomp gebruikt een put of andere waterbron als 
+        warmtebron. Hierdoor is er slechts een beperkte hoeveelheid elektriciteit nodig om het water op de gewenste 
+        temperatuur te brengen, wat de water-water warmtepomp veel efficiënter maakt dan een elektrische boiler.
+        </br></br><ul>
+          <li>Ga naar <a href="/scenario/costs/costs_heat/costs-heating">Kosten verwarming</a> om de kosten van 
+          elektrische warmtepompen te veranderen.</li>
+          <li>Ga naar <a href="/scenario/costs/costs_heat/efficiencies-heating-built-environment">Efficiënties</a> om 
+          de Coëfficiënt van Prestatie (COP) te veranderen.</li>
+        </ul>
     agriculture_geothermal_share:
       title: Geothermisch
       short_description: ''
-      description: Het warmtepotentieel  van aardwarmte is in theorie gigantisch.
-        Deze schuif geeft aan hoeveel lage temperatuurswarmte (< 100 &#176;C) van
-        enkele kilometers diepte je wilt inzetten.
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door 
+        geothermie-installaties.</br></br>Geothermische systemen halen warmte uit de ondergrond op enkele kilometers 
+        diepte. Het warmtepotentieel van aardwarmte is groot, vooral bij lage temperatuurswarmte (< 100<sup>o</sup>C). 
+        Dit maakt geothermie een efficiënte energiebron voor zowel verwarming in de winter als koeling in de zomer.
     agriculture_burner_network_gas_share:
       title: Gasketel
       short_description: ''
-      description: Dit zijn gasgestookte ketels. Dit zijn behoorlijk efficiënte systemen,
-        maar ze stoten wel CO<sub>2</sub> uit.
+      description: |
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door 
+        gasketels.</br></br>Aardgas is een veelgebruikte energiebron vanwege de lage prijs en betrouwbaarheid. Het 
+        stoot minder CO<sub>2</sub> uit dan olie- en kolenketels, maar meer dan duurzame alternatieven. Warmte die 
+        niet via de onderstaande methoden wordt opgewekt, wordt in het ETM automatisch toegewezen aan gasketels.
     agriculture_final_demand_ht_central_steam_hot_water_share:
       title: HT-warmtenet
       short_description:
       description: |
-        Dit schuifje bepaalt welk deel van de warmtevraag van landbouw wordt geleverd 
-        door warmtenetten die opereren op een hoge temperatuur (HT). </br></br>
-        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
-        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke 
-        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
-        Ga naar de sectie <a href="/scenario/supply/heat_ht">HT-warmtenetten</a> om te bepalen 
-        hoe de warmte wordt geleverd. Zie onze 
-        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
-        documentatie</a> voor meer informatie.
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door 
+        warmtenetten die opereren op een hoge temperatuur (HT) van 70<sup>o</sup>C of hoger.</br></br>Warmte voor een 
+        warmtenet kan lokaal worden opgewekt of geïmporteerd.</br></br>Ga naar <a href="/scenario/supply/heat_ht">HT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd.</br></br>Bekijk de <a 
+        href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">Documentatie</a> voor meer 
+        informatie.
     agriculture_final_demand_mt_central_steam_hot_water_share:
       title: MT-warmtenet
       short_description:
       description: |
-        Dit schuifje bepaalt welk deel van de warmtevraag van landbouw wordt geleverd 
-        door warmtenetten die opereren op een midden temperatuur (MT). </br></br>
-        Warmte van een warmtenet kan lokaal worden geproduceerd of de warmte kan worden
-        geïmporteerd van buiten jouw gebied. Een warmtenet werkt typisch op een specifieke 
-        temperatuur, maar verschillende warmtenetten kunnen verschillende temperaturen hebben.
-        Ga naar de sectie <a href="/scenario/supply/heat_mt">MT-warmtenetten</a> om te bepalen 
-        hoe de warmte wordt geleverd. Zie onze 
-        <a href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">
-        documentatie</a> voor meer informatie.
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door 
+        warmtenetten die opereren op een midden temperatuur (MT) van 55 tot 70<sup>o</sup>C.</br></br>Warmte voor een 
+        warmtenet kan lokaal worden opgewekt of geïmporteerd.</br></br>Ga naar <a href="/scenario/supply/
+        heat_mt">MT-warmtenetten</a> om in te stellen hoe de warmte wordt geleverd.</br></br>Bekijk de <a 
+        href="https://docs.energytransitionmodel.com/main/heat-networks" target=\"_blank\">Documentatie</a> voor meer 
+        informatie.
     agriculture_final_demand_local_steam_hot_water_share:
       title: Warmte van lokale WKK's
       short_description:
       description: |
-        Dit schuifje stelt het percentage nuttige warmtevraag van de landbouw in dat geleverd wordt 
-        door lokale warmte-krachtkoppeling (WKK). Je kunt bepalen welke WKK's je
-        wilt inzetten om in deze vraag te voorzien in de sectie 
-        <a href="/scenario/supply/heat/heat-sources">Warmte van lokale WKK's</a>
-        hieronder. </br></br>
-        Je kunt de uurlijkse vraag en aanbod van warmte van lokale WKK's exporteren 
-        in de <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">
-        Data-export</a> sectie. Je kunt ook een ander profiel uploaden voor de 
-        warmtevraag van de landbouw in de sectie 
-        <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibiliteit</a>.
+        Deze slider bepaalt welk percentage van de warmteproductie in de land-en tuinbouw wordt geleverd door lokale 
+        warmte-krachtkoppelingen (WKK's).</br></br>WKK-installaties wekken tegelijkertijd warmte en elektriciteit op, 
+        wat ze efficiënt maakt voor energie-intensieve toepassingen.</br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/supply/heat/heat-sources">Warmte uit WKK's</a> om te bepalen welke typen 
+          WKK's worden ingezet.</li>
+          <li>Ga naar <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibiliteit</a> om het 
+          warmtevraagprofiel van de land- en tuinbouw aan te passen.</li>
+          <li>Ga naar <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a> om de 
+          uurlijkse vraag en aanbod van warmte van lokale WKK's te exporteren.</li>
+        </ul>
     capacity_of_agriculture_chp_engine_biogas:
       title: Biogas-WKK
       short_description:
       description: |
-        Hiermee stel je het opgesteld elektrisch vermogen van biogas-WKK's in die warmte leveren 
-        aan de landbouw. </br></br>
-        Deze WKK is <i>must-run</i>, wat betekent dat er zowel elektriciteit als warmte 
-        geproduceerd wordt wanneer er een warmtevraag is vanuit de landbouw. De productie wordt 
-        daarom bepaald door het opgesteld vermogen en het aantal vollasturen en volgt het warmtevraagprofiel 
-        van de landbouw. </br></br>
-        De vollasturen kun je zien in de technische parameters en kosten hieronder. Je kunt er ook 
-        voor kiezen een ander warmtevraagprofiel voor de landbouw te uploaden in de sectie
-        <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibiliteit</a>. Ga naar de 
-        sectie <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a>
-        om de uurlijkse productie van deze WKK te exporteren. Klik 
-        <a href=/scenario/costs/specs_renewable_electricity/biomass-plants>hier</a> om de kosten 
-        en efficiënties van deze WKK aan te passen.
+        Deze slider bepaalt het vermogen van must-run biogas warmtekrachtkoppelingen (WKK's) in de land- en tuinbouw.
+        </br></br>Een <em>must-run</em> biogas-WKK produceert altijd zowel elektriciteit als warmte wanneer er 
+        warmtevraag is vanuit de landbouw. De productie is afhankelijk van het opgesteld vermogen, het aantal 
+        vollasturen (zie 'Technische parameters en kosten') en het warmtevraagprofiel van de landbouw.</br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a> om de 
+          uurlijkse vraag en aanbod van warmte van lokale WKK's te exporteren.</li>
+          <li>Ga naar <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibiliteit</a> om het 
+          warmtevraagprofiel van de land- en tuinbouw aan te passen.</li>
+          <li>Ga naar <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Biomassacentrales</a> om de 
+          kosten en efficiënties van de biogas-WKK's aan te passen.</li>
+        </ul>
     capacity_of_agriculture_chp_engine_network_gas_dispatchable:
       title: Gasmotor-WKK
       short_description:
       description:  |
-        Hiermee stel je het opgesteld elektrisch vermogen van gasmotor-WKK's in die warmte leveren 
-        aan de landbouw. </br></br>
-        Deze WKK is regelbaar, wat betekent dat er zowel elektriciteit als warmte geproduceerd wordt 
-        op basis van de behoeftes van de elektriciteitsmarkt en de plek van deze WKK in de <i>merit 
-        order</i>. Ga naar onze <a href="https://docs.energytransitionmodel.com/main/merit-order" target=\"_blank\"> 
-        documentatie</a> voor meer informatie. </br></br>
-        Het kan voorkomen dat deze WKK warmte produceert op momenten dat er weinig vraag naar is 
-        vanuit de landbouw. Als de totale lokale warmteproductie voor de landbouw groter is dan de 
-        vraag, wordt de overtollige warmte verspild. In kassen kan dit gemakkelijk door ramen te 
-        openen en de overtollige warmte te laten ontsnappen. </br></br>
-        Ga naar de sectie <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">
-        Data-export</a> om de uurlijkse productie van deze WKK te exporteren. Klik 
-        <a href=/scenario/costs/specs_renewable_electricity/biomass-plants>hier</a> om de kosten 
-        en efficiënties van deze WKK aan te passen.
+        Deze slider bepaalt het vermogen van regelbare gasmotor warmtekrachtkoppelingen (WKK's) in de land- en 
+        tuinbouw.</br></br>Gasmotor-WKK's wekken zowel warmte als elektriciteit op en passen de productie flexibel aan 
+        op de elektriciteitsmarkt. Bij een warmteoverschot wordt de overtollige warmte vaak verspild, bijvoorbeeld 
+        door ramen te openen in kassen.</br></br>
+        <ul>
+          <li>Bekijk <a href="#" class="open_chart" data-chart-key="merit_order" data-chart-location="side">deze 
+          grafiek</a> voor de positie van de gasmotor-WKK in de <em>merit order</em>.</li>
+          <li>Ga naar <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a> om de 
+          uurlijkse productie van de biomassa-WKK's te exporteren.</li>
+          <li>Ga naar <a href="/scenario/costs/specs_electricity/gas-plants">Gascentrales</a> om de kosten en 
+          efficiënties van de gasmotor-WKK's aan te passen.</li>
+        </ul></br>Bekijk de <a href="https://docs.energytransitionmodel.com/main/merit-order" 
+        target=\"_blank\">Documentatie</a> voor meer informatie over de <em>merit order</em>.
     capacity_of_agriculture_chp_engine_network_gas_must_run:
       title: Gasmotor-WKK
       short_description:
       description: |
-        Hiermee stel je het opgesteld elektrisch vermogen van gasmotor-WKK's in die warmte leveren 
-        aan de landbouw. </br></br>
-        Deze WKK is <i>must-run</i>, wat betekent dat er zowel elektriciteit als warmte 
-        geproduceerd wordt wanneer er een warmtevraag is vanuit de landbouw. De productie wordt 
-        daarom bepaald door het opgesteld vermogen en het aantal vollasturen en volgt het warmtevraagprofiel 
-        van de landbouw. </br></br>
-        De vollasturen kun je zien in de technische parameters en kosten hieronder. Je kunt er ook 
-        voor kiezen een ander warmtevraagprofiel voor de landbouw te uploaden in de sectie
-        <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibiliteit</a>. Ga naar de 
-        sectie <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a>
-        om de uurlijkse productie van deze WKK te exporteren. Klik 
-        <a href=/scenario/costs/specs_renewable_electricity/biomass-plants>hier</a> om de kosten 
-        en efficiënties van deze WKK aan te passen.
+        Deze slider bepaalt het vermogen van must-run gasmotor warmtekrachtkoppelingen (WKK's) in de land- en tuinbouw.
+        </br></br>Een <em>must-run</em> gasmotor-WKK produceert altijd zowel elektriciteit als warmte wanneer er 
+        warmtevraag is vanuit de landbouw. De productie is afhankelijk van het opgesteld vermogen, het aantal 
+        vollasturen (zie 'Technische parameters en kosten') en het warmtevraagprofiel van de landbouw.</br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a> om de 
+          uurlijkse vraag en aanbod van warmte van lokale WKK's te exporteren.</li>
+          <li>Ga naar <a href="/scenario/flexibility/curve_upload/upload-curves">Flexibiliteit</a> om het 
+          warmtevraagprofiel van de land- en tuinbouw aan te passen.</li>
+          <li>Ga naar <a href="/scenario/costs/specs_electricity/gas-plants">Gascentrales</a> om de kosten en 
+          efficiënties van de gasmotor-WKK's aan te passen.</li>
+        </ul>
     capacity_of_agriculture_chp_wood_pellets:
       title: Biomassa-WKK
       short_description:
       description: |
-        Hiermee stel je het opgesteld elektrisch vermogen van biomassa-WKK's in die warmte leveren 
-        aan de landbouw. </br></br>
-        Deze WKK is regelbaar, wat betekent dat er zowel elektriciteit als warmte geproduceerd wordt 
-        op basis van de behoeftes van de elektriciteitsmarkt en de plek van deze WKK in de <i>merit 
-        order</i>. Ga naar onze <a href="https://docs.energytransitionmodel.com/main/merit-order" target=\"_blank\"> 
-        documentatie</a> voor meer informatie. </br></br>
-        Het kan voorkomen dat deze WKK warmte produceert op momenten dat er weinig vraag naar is 
-        vanuit de landbouw. Als de totale lokale warmteproductie voor de landbouw groter is dan de 
-        vraag, wordt de overtollige warmte verspild. In kassen kan dit gemakkelijk door ramen te 
-        openen en de overtollige warmte te laten ontsnappen. </br></br>
-        Ga naar de sectie <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">
-        Data-export</a> om de uurlijkse productie van deze WKK te exporteren. Klik 
-        <a href=/scenario/costs/specs_renewable_electricity/biomass-plants>hier</a> om de kosten 
-        en efficiënties van deze WKK aan te passen.
+        Deze slider bepaalt het vermogen van regelbare biomassa warmtekrachtkoppelingen (WKK's) in de land- en 
+        tuinbouw.</br></br>Biomassa-WKK’s wekken zowel warmte als elektriciteit op en passen de productie flexibel aan 
+        op de elektriciteitsmarkt. Bij een warmteoverschot wordt de overtollige warmte vaak verspild, bijvoorbeeld 
+        door ramen te openen in kassen.</br></br>
+        <ul>
+          <li>Bekijk <a href="#" class="open_chart" data-chart-key="merit_order" data-chart-location="side">deze 
+          grafiek</a> voor de positie van de biomassa-WKK in de <em>merit order</em>.</li>
+          <li>Ga naar <a href="/scenario/data/data_export/hourly-curves-for-agriculture-heat">Data-export</a> om de 
+          uurlijkse productie van de biomassa-WKK's te exporteren.</li>
+          <li>Ga naar <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Biomassacentrales</a> om de 
+          kosten en efficiënties van de biomassa-WKK's aan te passen.</li>
+        </ul></br>Bekijk de <a href="https://docs.energytransitionmodel.com/main/merit-order" 
+        target=\"_blank\">Documentatie</a> voor meer informatie over de <em>merit order</em>.
     agriculture_burner_hydrogen_share:
       title: Waterstofketel
       short_description: 
       description: |
-        Welk percentage van de warmte die nodig is in de land- en tuinbouw
-        komt van het verbranden van waterstof?
+        Deze slider bepaalt welk percentage van de warmteproductie in de land- en tuinbouw wordt geleverd door 
+        waterstofketels.</br></br>Waterstofketels stoten vrijwel geen CO<sub>2</sub> uit bij het verbranden van 
+        waterstof. De beschikbaarheid en kosten van waterstof zijn echter momenteel beperkter, waardoor de inzet ervan 
+        vaak afhankelijk is van de prijs en beschikbaarheid van groene of blauwe waterstof.
     agriculture_useful_demand_electricity:
       title: Elektriciteit
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen.\r\n<br/><br/>\r\nHoe denk
-        jij dat de elektriciteitsvraag in de land- en tuinbouw zich gaat ontwikkelen?
-        Dat hangt vooral af van de groei van het aantal broeikassen, dus zijn economische
-        groeiverwachtingen en investeringscondities van belang. "
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de elektriciteitsvraag in de land- en tuinbouw.
+        </br></br><em>Let op:</em> Deze verandering is onafhankelijk van de warmtevraagontwikkeling en de hieronder te 
+        kiezen technologieën.
     agriculture_useful_demand_useable_heat:
       title: Warmte
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is onafhankelijk van
-        de technologieën die je hieronder kunt kiezen.\r\n<br/><br/>\r\nHoe denk jij
-        dat de warmtevraag in de land- en tuinbouw zich gaat ontwikkelen? Dat hangt
-        vooral af van de groei van het aantal broeikassen en dus van economische groei
-        en inversteringscondities. "
+      description: |
+        Deze slider bepaalt de jaarlijkse stijging of daling van de warmtevraag in de land- en tuinbouw.</br>
+        </br><em>Let op:</em> Deze verandering is onafhankelijk van de elektriciteitsvraagontwikkeling en de hieronder 
+        te kiezen technologieën.
     capacity_of_agriculture_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor H<sub>2</sub> en gasketels
       short_description:
       description: |
-        Deze power-to-heat (P2H) boilers worden geïnstalleerd als een add-on bij 
-        bestaande gas- en waterstofketels. In uren wanneer de betalingsbereidheid van 
-        deze boilers hoger is dan de elektriciteitsprijs, gebruiken ze elektriciteit om 
-        warmte te produceren en reduceren de gas- en waterstofketels hun productie. Je 
-        kunt de betalingsbereidheid van deze boilers instellen in de 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-agriculture">
-        Flexibiliteit</a> sectie. </br></br>
-        Let op dat deze slider alleen effect heeft als er ook vermogen van gas- of waterstofketels 
-        geïnstalleerd is. Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect 
-        van power-to-heat boilers is: </br></br>
-        <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
-        De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
-        De uurlijkse elektriciteitsvraag en -aanbod van flexibele technologieën.</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="flexibility_integral_costs" data-chart-location="side">
-        De integrale kosten van flexible vraag.technnologieën</a></li>
-        <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
-        Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+        Deze slider bepaalt de warmteproductie van power-to-heat (P2H) boilers in combinatie met waterstof- en 
+        gasketels voor de land- en tuinbouw.</br></br>P2H-boilers worden geïnstalleerd als een add-on bij bestaande 
+        gas- en waterstofketels. In uren wanneer de betalingsbereidheid van deze boilers hoger is dan de 
+        elektriciteitsprijs, gebruiken ze elektriciteit om warmte te produceren en reduceren de gas- en 
+        waterstofketels hun productie.</br></br><em>Let op:</em> Deze slider heeft alleen effect als er een vermogen 
+        van gas- of waterstofketels is geïnstalleerd.</br></br>
+        <ul>
+          <li>Ga naar <a href="/scenario/flexibility/flexibility_conversion/
+          conversion-to-heat-for-agriculture">Flexibiliteit</a> om de betalingsbereidheid van deze boilers in te 
+          stellen.</li>
+          <li>Bekijk grafieken om het effect van P2H-boilers te analyseren, zoals de <a href="#" class="open_chart" 
+          data-chart-key="use_of_excess_electricity" data-chart-location="side">Jaarlijkse elektriciteitsinzet</a>, de 
+          <a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
+          Uurlijkse elektriciteitsvraag en -aanbod</a>, de <a href="#" class="open_chart" 
+          data-chart-key="flexibility_integral_costs" data-chart-location="side">Integrale kosten</a>, en <a href="#" 
+          class="open_chart" data-chart-key="storage_options" data-chart-location="side">Een overzicht van de inzet in 
+          tabelvorm</a>.</li>
+        </ul>

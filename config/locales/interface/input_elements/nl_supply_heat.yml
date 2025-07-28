@@ -187,12 +187,13 @@ nl:
         Deze slider bepaalt het vermogen van olieketels.</br></br>Een olieketel produceert warmte door de verbranding 
         van olie. De opgewekte warmte wordt vaak in de vorm van stoom gebruikt voor industriële processen, zoals 
         verwarming of proceswarmte in bijvoorbeeld de chemische industrie.
-    capacity_of_industry_heat_burner_lignite:
+    capacity_of_industry_heat_burner_lignite: 
       title: Bruinkoolketel
       short_description:
-      description: Een ketel produceert warmte. In de industrie is deze warmte vaak
-        in de vorm van stoom. Kies hier het vermogen aan bruinkoolketels dat levert
-        aan het industriële stoomnetwerk.
+      description: |
+        Deze slider bepaalt het vermogen van bruinkoolketels.</br></br>Een bruinkoolketel produceert warmte, meestal 
+        in de vorm van stoom, door de verbranding van bruinkolen. De opgewekte stoom wordt gebruikt voor industriële 
+        processen of verwarming, afhankelijk van de warmtevraag.
     capacity_of_industry_heat_well_geothermal:
       title: Geothermie
       short_description:
@@ -207,7 +208,7 @@ nl:
         Deze slider bepaalt het vermogen van waterstofketels.</br></br>Waterstofketels produceren warmte zonder 
         CO<sub>2</sub>-uitstoot wanneer groene of blauwe waterstof wordt gebruikt. Hoewel ze nog beperkt worden 
         toegepast, kunnen ze in de toekomst een duurzaam alternatief vormen voor fossiele ketels.
-    capacity_of_energy_heat_burner_coal:
+    capacity_of_energy_heat_burner_coal: # Wordt volgens mij niet meer gebruikt
       title: Kolenketel
       short_description:
       description: Een ketel produceert warmte. Stel hier het vermogen aan kolenketels
@@ -296,21 +297,18 @@ nl:
     capacity_of_energy_heat_burner_ht_coal:
       title: Kolenketel
       short_description:
-      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van kolenketels 
-        in het hoge-temperatuur warmtenet in te stellen.
-        \r\n<br/><br/>\r\n 
-        Kolenketels verstoken kolen om warmte te genereren. Met dit schuifje
-        stel je de jaarlijke warmteproductie van kolenketels in en maak je deze zichtbaar in de
-        aanbodkant van de grafiek rechts."
+      description: |
+        Deze slider bepaalt het geïnstalleerd vermogen van kolenketels voor hoge-temperatuur (HT) warmtenetten.
+        </br></br>Een kolenketel produceert warmte, meestal in de vorm van stoom, door de verbranding van kolen.
+        Kolenketels zijn minder gebruikelijk in warmtenetten, maar kunnen nuttig zijn in gebieden met beperkte
+        alternatieve brandstoffen.
     capacity_of_energy_heat_burner_ht_crude_oil:
       title: Olieketel
       short_description:
-      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van olieketels 
-        in het hoge-temperatuur warmtenet in te stellen.
-        \r\n<br/><br/>\r\n 
-        Olieketels verstoken olie om warmte te genereren. Met dit schuifje
-        stel je de jaarlijke warmteproductie van olieketels in en maak je deze zichtbaar in de
-        aanbodkant van de grafiek rechts."
+      description: |
+        Deze slider bepaalt het geïnstalleerd vermogen van olieketels voor hoge-temperatuur (HT) warmtenetten.
+        </br></br>Een olieketel produceert warmte, meestal in de vorm van stoom, door de verbranding van olie. Ze zijn minder gebruikelijk in warmtenetten, maar kunnen nuttig zijn in gebieden met beperkte alternatieve 
+        brandstoffen.
     capacity_of_energy_heat_burner_ht_hydrogen:
       title: Waterstofketel
       short_description:
@@ -357,21 +355,16 @@ nl:
     capacity_of_energy_heat_burner_mt_coal:
       title: Kolenketel
       short_description:
-      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van kolenketels 
-        in het midden-temperatuur warmtenet in te stellen.
-        \r\n<br/><br/>\r\n 
-        Kolenketels verstoken kolen om warmte te genereren. Met dit schuifje
-        stel je de jaarlijke warmteproductie van kolenketels in en maak je deze zichtbaar in de
-        aanbodkant van de grafiek rechts."
+      description: |
+        Deze slider bepaalt het geïnstalleerd vermogen van kolenketels voor midden-temperatuur (MT) warmtenetten.
+        </br></br>Een kolenketel produceert warmte, meestal in de vorm van stoom, door de verbranding van kolen.
     capacity_of_energy_heat_burner_mt_crude_oil:
       title: Olieketel
       short_description:
-      description: "Gebruik dit schuifje om het totale, geïnstalleerde vermogen (MW) van olieketels 
-        in het midden-temperatuur warmtenet in te stellen.
-        \r\n<br/><br/>\r\n 
-        Olieketels verstoken olie om warmte te genereren. Met dit schuifje
-        stel je de jaarlijke warmteproductie van olieketels in en maak je deze zichtbaar in de
-        aanbodkant van de grafiek rechts."
+      description: |
+        Deze slider bepaalt het geïnstalleerd vermogen van olieketels voor midden-temperatuur (MT) warmtenetten.
+        </br></br>Een olieketel produceert warmte, meestal in de vorm van stoom, door de verbranding van olie. Ze zijn minder gebruikelijk in warmtenetten, maar kunnen nuttig zijn in gebieden met beperkte alternatieve 
+        brandstoffen.
     capacity_of_energy_heat_burner_mt_hydrogen:
       title: Waterstofketel
       short_description:
@@ -525,7 +518,7 @@ nl:
         dat de warmtecapaciteit maximaal twee keer de gemiddelde uurlijke warmtevraag is.</br></br>Bekijk de grafiek 
         <a href="#" class="open_chart" data-chart-key="heat_cost_capacity_lt" data-chart-location="side">
         Warmtenetbronnen: vermogens en marginale kosten</a> voor het resulterende vermogen.
-    energy_heat_distribution_loss_share:
+    energy_heat_distribution_loss_share: #wordt volgens mij niet meer gebruikt
       title: Transport- en distributieverliezen
       short_description:
       description: De standaardwaarde van de verliesschuif is erg laag of zelfs nul
@@ -777,24 +770,20 @@ nl:
         Deze slider bepaalt het aandeel warmte afkomstig van poederkolencentrales met warmtekrachtkoppeling (WKK) en 
         bijstook voor het hoge-temperatuur warmtenet.</br></br>Ga naar <a href="/scenario/supply/electricity/
         coal-plants">Kolencentrales</a> om het geïnstalleerde vermogen aan te passen.
-    share_of_energy_chp_ultra_supercritical_ht_lignite:
+    share_of_energy_chp_ultra_supercritical_ht_lignite: 
       title: Hoge temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        grootschalige bruinkolen WKK's voor het hoge-temperatuur warmtenet in te stellen. 
-        \r\n<br/><br/>\r\n 
-        De hoeveelheid warmte die geproduceerd wordt door grootschalige bruinkolen WKK's
-        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
-    share_of_energy_chp_ultra_supercritical_mt_lignite:
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van bruinkolencentrales met warmtekrachtkoppeling (WKK) voor 
+        het hoge-temperatuur warmtenet.</br></br>Ga naar <a href="/scenario/supply/electricity/
+        coal-plants">Kolencentrales</a> om het geïnstalleerde vermogen aan te passen.
+    share_of_energy_chp_ultra_supercritical_mt_lignite: 
       title: Midden temperatuur
       short_description:
-      description: "Gebruik dit schuifje om het percentage aan warmte afkomstig van
-        grootschalige bruinkolen WKK's voor het hoge-temperatuur warmtenet in te stellen. 
-        \r\n<br/><br/>\r\n 
-        De hoeveelheid warmte die geproduceerd wordt door grootschalige bruinkolen WKK's
-        wordt bepaald door het geïnstalleerde vermogen. Bekijk het geïnstalleerde vermogen 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >hier</a>."
+      description: |
+        Deze slider bepaalt het aandeel warmte afkomstig van bruinkolencentrales met warmtekrachtkoppeling (WKK) voor 
+        het midden-temperatuur warmtenet.</br></br>Ga naar <a href="/scenario/supply/electricity/
+        coal-plants">Kolencentrales</a> om het geïnstalleerde vermogen aan te passen.
     share_of_energy_chp_ultra_supercritical_cofiring_mt_coal:
       title: Midden temperatuur
       short_description:

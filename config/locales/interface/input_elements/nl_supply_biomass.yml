@@ -4,298 +4,263 @@ nl:
     energy_mixer_for_gas_power_fuel_bio_oil_share:
       title: Bio-olie
       short_description: ''
-      description: "Met dit schuifje geef je aan hoeveel procent van de brandstof
-        in industriële WKK's bestaat uit bijgemengde bio-olie. De olie wordt verneveld
-        en ingespoten met het gas. In theorie kan zo 100% van het gas vervangen worden
-        door olie, zonder dat daarbij de efficiëntie van verbranding achteruit gaat.
-        In de praktijk zal het veel minder zijn. <br/>\r\nDe hernieuwbaarheid van
-        veel soorten bio-olie is omstreden en daarom is de populariteit sterk gedaald.
-        Wellicht dat wereldwijde regulering van bio-olieproductie daar verandering
-        in zal brengen. \r\n<br/><br/>\r\nOnderaan de pagina kun je zien wat de bio-voetafdruk
-        is van je scenario, oftewel hoeveel landbouwareaal je wereldwijd nodig hebt
-        om alle biomassa te telen."
+      description: 
+        Deze slider bepaalt het aandeel bio-olie in gasgestookte warmtekrachtkoppelingen (WKK's) 
+        in de industrie.</br></br> Bio-olie is een vloeibare biobrandstof uit organisch 
+        restmateriaal, die samen met gas kan worden verneveld en verbrand in WKK’s. In theorie is 
+        volledige vervanging van gas mogelijk, maar in de praktijk is het aandeel vaak beperkt. De 
+        inzet van bio-olie is afgenomen vanwege zorgen over hernieuwbaarheid.
     co_firing_biocoal_share:
       title: Biokolen
       short_description: ''
-      description: 'Biokolen is een brandstof die zoveel op kolen lijkt dat het kolen
-        kan vervangen. Het wordt gemaakt door torrefactie van houtachtige biomassa.
-        Bij torrefactie wordt biomassa verhit tot honderden &#8451; zonder zuurstof. '
+      description: 
+        Deze slider bepaalt het aandeel biokolen in kolencentrales.</br></br> Biokool, 
+        geproduceerd door torrefactie van houtachtige biomassa, lijkt sterk op steenkool en kan 
+        het in kolencentrales vervangen. Dit proces, waarbij biomassa zonder zuurstof wordt verhit 
+        tot hoge temperaturen, resulteert in een brandstof die minder CO<sub>2</sub>-uitstoot dan 
+        steenkool.
     co_firing_coal_share:
       title: Steenkool
       short_description: ''
-      description: Kolenverbranding stoot van alle fossiele brandstoffen het meeste
-        CO<sub>2</sub> uit. Daarom subsidiëren veel regeringen het vervangen van kolen
-        in elektriciteitscentrales door biomassa.
+      description: 
+        Deze slider bepaalt het aandeel steenkool in kolencentrales.
     energy_mixer_for_gas_power_fuel_natural_gas_share:
       title: Netwerkgas
       short_description: ''
-      description: "Gascentrales halen hun gas natuurlijk uit het gasnet. Een deel
-        hiervan is mogelijk groen gas als je dat hierboven hebt ingesteld.\r\n<br/>\r\nAls
-        alternatief kunnen deze centrales ook olie en bio-olie bijstoken."
+      description: 
+        Deze slider bepaalt het aandeel netwerkgas in gasgestookte warmtekrachtkoppelingen (WKK's) 
+        in de industrie.</br></br> Netwerkgas kan worden gebruikt als brandstof in WKK's voor de 
+        gelijktijdige opwekking van warmte en elektriciteit. Het bestaat uit aardgas of groen gas.
+        </br></br> Ga naar <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Gasmix in 
+        gasnetwerk</a> om het aandeel groen gas in te stellen.
     energy_mixer_for_gas_power_fuel_crude_oil_share:
       title: Olie
       short_description: ''
-      description: Met dit schuifje geef je aan hoeveel procent van de brandstof in
-        industriële WKK's bestaat uit bijgemengde olie-derivaten. De olie wordt verneveld
-        en ingespoten met het gas. In theorie kan zo 100% van het gas vervangen worden
-        door olie, zonder dat daarbij de efficiëntie van verbranding achteruit gaat.
-        In de praktijk wordt nooit zoveel olie bijgemengd.
+      description: 
+        Deze slider bepaalt het aandeel olie in gasgestookte warmtekrachtkoppelingen (WKK's) in de 
+        industrie. </br></br> De olie wordt verneveld en samen met gas geïnjecteerd. In theorie 
+        kan gas volledig worden vervangen zonder verlies aan efficiëntie, maar in de praktijk 
+        blijft de bijmenging beperkt.
     max_demand_of_biogenic_waste:
       title: Biogeen afval
       short_description:
-      description: Met deze slider zet je de potentie biogeen afval wat beschikbaar
-        is om te worden verbrand afvalverbrandingsinstallaties (AVIs) en/of afval
-        WKKs.
+      description: 
+        Deze slider bepaalt de jaarlijkse energetische potentie van biogeen afval. </br></br> 
+        Biogeen afval, zoals voedselresten, tuinafval en dierlijke mest, kan worden omgezet in 
+        energie via verbranding in afvalverbrandingsinstallaties of afvalwarmtekrachtkoppelingen 
+        (WKK’s).</br></br> Bekijk de grafiek <a href="#" class="open_chart" 
+        data-chart-key="biomass_sankey" data-chart-location="side">Toekomstige biomassa stromen
+        </a> om in te zien hoe de biomassa wordt ingezet.
     max_demand_of_wet_biomass:
       title: Natte biomassa
       short_description:
-      description: 'Natte biomassa is biomassa met een vochtpercentage van minimaal
-        40-50%. Hieronder valt: resten van de voedings- en genootmiddelindustrie (VGI),
-        agrarische reststrommen, rioolsib, aquatische biomassa, geteelde graanproducten
-        etc.'
+      description: 
+        Deze slider bepaalt de jaarlijkse energetische potentie van natte biomassa. </br></br> 
+        Natte biomassa bevat minimaal 40–50% vocht en omvat onder andere reststromen uit de 
+        voedings- en genotmiddelenindustrie (VGI), agrarische bijproducten, rioolslib, aquatische 
+        biomassa en geteelde granen.</br></br> Bekijk de grafiek <a href="#" class="open_chart" 
+        data-chart-key="biomass_sankey" data-chart-location="side">Toekomstige biomassa stromen
+        </a> om in te zien hoe de biomassa wordt ingezet.
     max_demand_of_dry_biomass:
       title: Droge biomassa
       short_description:
-      description: 'Droge biomassa bestaat uit relatief droge organische stoffen,
-        zoals hout. Droge biomassa is ‘eenvoudige biomassa’: het heeft geen bewerking
-        nodig en levert een hoog rendement op. Er is dan ook veel vraag naar schone,
-        houtige biomassa. Voorbeelden van houtige biomassa zijn reststromen uit de
-        bosbouw (boomtoppen, stompen, schors, takken), gerecycled afvalhout, reststromen
-        uit de landbouw (stro), en snelgroeiende bio-energiegewassen (olifantsgras,
-        wilg, populier). '
+      description: 
+        Deze slider bepaalt de jaarlijkse energetische potentie van droge biomassa. </br></br> 
+        Droge biomassa heeft een laag vochtgehalte, vereist geen bewerking en levert een hoog 
+        rendement op. Voorbeelden zijn hout, gerecycled afvalhout, agrarische reststromen (stro) 
+        en snelgroeiende gewassen.</br></br> Bekijk de grafiek <a href="#" class="open_chart" 
+        data-chart-key="biomass_sankey" data-chart-location="side">Toekomstige biomassa stromen
+        </a> om in te zien hoe de biomassa wordt ingezet.
     max_demand_of_oily_biomass:
       title: Oliehoudende biomassa
       short_description:
-      description: 'Oliehoudende biomassa is biomassa met zaden waarin olie zit. Door
-        het uitpersen van oliehoudende zaden ontstaat ruwe biodiesel. Deze olie kan
-        in een veresteringsproces met toevoeging van methanol worden omgezet in biodiesel.
-        Voorbeelden van oliehoudende biomassa zijn: koolzaad, zonnebloempitten, oliepalm.
-        Ook gebruikte frituurvetten vallen binnen deze categorie. Van alle biodiesel
-        in Nederland is rond 70 procent gemaakt uit gebruikt frituurvet. Onlangs kwam
-        aan het licht dat er met eenderde van alle biodiesel in Nederland gefraudeerd
-        is (voor meer informatie lees <a href="https://www.volkskrant.nl/nieuws-achtergrond/fraude-met-eenderde-van-alle-biodiesel-kampens-bedrijf-zou-miljoenen-hebben-verdiend~b01c604b/?referer=https%3A%2F%2Fwww.google.com%2F"
-        target="_blank">dit Volkskrant-artikel</a>)'
+      description: 
+        Deze slider bepaalt de jaarlijkse energetische potentie van oliehoudende biomassa.
+        </br><br>  Oliehoudende biomassa bestaat uit zaden rijk aan olie. Na het uitpersenontstaat 
+        ruwe biodiesel, die door verestering met methanol wordt omgezet in biodiesel. Voorbeelden 
+        zijn koolzaad, zonnebloempitten, palmolie en gebruikte frituurvetten.</br></br> Bekijk de 
+        grafiek <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Toekomstige biomassa stromen</a> om in te zien hoe de biomassa 
+        wordt ingezet.
     energy_biogas_fermentation_share:
       title: Vergisting
       short_description:
-      description: "Biomassavergisting heeft biogas als product, dat direct kan worden
-        gebruikt voor warmte en/of elektriciteit maar ook kan worden opgewerkt tot
-        groen gas alvorens het gasnetwerk in te worden geleid. Er zijn twee methoden
-        voor biomassavergisting: monovergisting (een enkele reststroom) en co-vergisting
-        (meerdere stromen door elkaar, waarvan minimaal 50% mest). De meest toegepaste
-        vormen in Nederland zijn co-vergisting van mest met restproducten en monovergisting
-        van slib bij rioolwaterzuiveringsinstallaties met elk zo rond de 100 installaties.
-        Het aantal industriële en GFT-vergisters ligt rond de 10. Sinds 2017 wordt
-        monovergisting van mest extra gestimuleerd in Nederland middels de SDE+ subsidie,
-        hiervoor zijn verschillnde argumenten. Allereerst lopen de kosten voor co-vergistingsmateriaal
-        op. Ook zorgt de aanvoer van co-vergistingsmateriaal voor een groter mestoverschot.
-        Bovendien blijkt regelmatig dat er afvalmateriaal vergist wordt, dat eigenlijk
-        gekweekt is en wellicht als veevoer had kunnen dienen.\r\n</br></br>\r\nHet
-        ETM modelleert één algemene vergister die natte biomassastromen vergist. De
-        specificaties ervan zijn hieronder te lezen."
+      description: 
+        Deze slider bepaalt het aandeel groen gas uit vergisting in de groengasproductie.
+        </br><br>Vergisting is een biologisch proces waarbij micro-organismen organisch materiaal 
+        afbreken in een zuurstofarme omgeving, waardoor biogas ontstaat. Dit biogas wordt 
+        opgewerkt tot groen gas en kan worden gebruikt in het gasnetwerk. 
     energy_greengas_gasification_dry_biomass_share:
       title: Droge vergassing
       short_description:
-      description: Bij droge vergassing wordt droge biomassa vergast bij hoge temperaturen
-        (800 tot 1000 °C), een soort verbranding met een ondermaat zuurstof. Bij vergassing
-        staat de vorming van een synthesegas centraal. Dit synthesegas is een brandbaar
-        mengsel van methaan, waterstof, CO<sub>2</sub> en CO. De vergassingsroute
-        biedt veel flexibiliteit als het gaat om de mogelijke vervolgroutes en te
-        fabriceren eindproducten (groen gas, waterstof, transportbiobrandstoffen en
-        meer). In het geval van groen gas productie wordt vergassing gevolgd door methaansynthese,
-        en opwerking tot groen gas van aardgaskwaliteit.
+      description: 
+        Deze slider bepaalt het aandeel groen gas uit droge vergassing in de groengasproductie.
+        </br></br>Bij droge vergassing wordt droge biomassa vergast met een beperkte hoeveelheid 
+        zuurstof, wat resulteert in de vorming van syngas. Dit gas bestaat uit methaan, waterstof, 
+        kooldioxide en koolmonoxide, en kan verder worden omgezet in groen gas voor het gasnetwerk.
     energy_greengas_gasification_wet_biomass_share:
       title: Natte vergassing (SCW)
       short_description:
-      description: "Een andere naam voor natte vergassing is superkritische watervergassing
-        (Super Critical Water gasification, SCW). Bij SCW wordt natte biomassa onder
-        hoger druk en temperatuur (minimaal 375 °C en 221 bar) omgezet in groen gas.
-        Het gaat op een thermo-chemische omzetting die juist gebruik maakt van de
-        watercomponent in de natte afvalstromen. Door het water, met daarin de biomassa,
-        onder hoge druk en temperatuur te brengen, ontstaat de zogenaamde superkritische
-        fase. Alle organische moleculen in de biomassa vallen dan uiteen en bereiken
-        een nieuw evenwicht in de vorm van synthese gas (methaan, waterstof, CO<sub>2</sub>
-        en CO) (Gasunie, 2019). Gelijktijdig kristalliseren anorganische stoffen uit,
-        zodat ze kunnen worden teruggewonnen.\r\n</br></br>\r\nIn Alkmaar is reeds
-        een SCW installatie gebouwd en verwacht wordt dat in 2019 het eerste groene
-        gas aan het netwerk kan worden geleverd (NRC, 2019). Naast de installatie
-        in Alkmaar, zijn er ook plannen voor twee grote installaties in Rotterdam
-        en Groningen (van 150-200 MW)."
+      description: 
+        Deze slider bepaalt het aandeel groen gas uit natte vergassing (SCW) in de 
+        groengasproductie.</br></br> Natte vergassing (Subkritische Watervergassing, SCW) zet 
+        natte biomassa om in groen gas door deze onder hoge druk  en temperatuur te vergassen. Dit 
+        proces maakt gebruik van de watercomponent in de biomassa en produceert syngas, bestaande 
+        uit methaan, waterstof, kooldioxide en koolmonoxide. Het gas kan verder worden opgewerkt 
+        tot groen gas voor het gasnetwerk.
     industry_steel_cyclonefurnace_bof_wood_pellets_share:
       title: Houtpellets in cycloonoven
       short_description:
-      description: |
-        Bij de productie van ruwijzer voor staal wordt in een hoogoven
-        veel steenkool gebruikt als reductiemiddel om het ijzer zuiver te krijgen.
-        Een deel van de steenkool wordt ingezet als cokes en een deel als injectiekolen.
-        Deze injectiekolen kunnen (in principe) ook vervangen worden door biomassa.
-        Bij de cycloonoven kunnen de kolen tot 40% vervangen worden door biomassa in de
-        vorm van houtpellets.
+      description: 
+        Deze slider bepaalt het aandeel houtpellets in de cycloonoven voor staalproductie. </br>
+        </br> In de staalproductie kunnen tot 40% van de injectiekolen in de cycloonoven worden 
+        vervangen door houtpellets. Dit helpt de CO<sub>2</sub>-uitstoot te verlagen door biomassa 
+        te gebruiken in plaats van fossiele brandstoffen.
     households_diesel_in_crude_oil_share:
       title: Diesel
       short_description:
-      description: |
-        Percentage diesel in het gebruik van olieproducten door huishoudens. Deze diesel wordt
-        onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+      description: 
+        Deze slider bepaalt het aandeel diesel in de oliemix in huishoudens.
     households_biodiesel_in_crude_oil_share:
       title: Biodiesel
       short_description:
-      description: |
-        Percentage biodiesel in het gebruik van olieproducten door huishoudens. Deze biodiesel wordt
-        onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+      description: 
+        Deze slider bepaalt het aandeel biodiesel in de oliemix in huishoudens.
     households_kerosene_in_crude_oil_share:
       title: Kerosine
       short_description:
-      description: |
-        Percentage kerosine in het gebruik van olieproducten door huishoudens. Deze kerosine wordt
-        onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+      description: 
+        Deze slider bepaalt het aandeel kerosine in de oliemix in huishoudens.
     households_bio_kerosene_in_crude_oil_share:
       title: Bio-kerosine
       short_description:
-      description: |
-        Percentage bio-kerosine in het gebruik van olieproducten door huishoudens. Deze bio-kerosine
-        wordt onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+      description: 
+        Deze slider bepaalt het aandeel bio-kerosine in de oliemix in huishoudens.
     households_lpg_in_crude_oil_share:
       title: LPG
       short_description:
-      description: |
-        Percentage LPG in het gebruik van olieproducten door huishoudens. Deze LPG wordt
-        onder andere gebruikt voor het verwarmen van huizen en voor warm water.
+      description: 
+        Deze slider bepaalt het aandeel liquid petroleum gas (LPG) in de oliemix in huishoudens.
     households_other_oil_in_crude_oil_share:
       title: Andere olie
       short_description:
-      description: |
-        Percentage van andere niet-bio olie en olieproducten in het oliegebruik van huishoudens. Hieronder
-        vallen onder andere benzine, aardgascondensaat, ruwe olie en smeerolie.
+      description: 
+        Deze slider bepaalt het aandeel andere niet-bio olie en olieproducten in de oliemix in 
+        huishoudens.</br></br> Voorbeelden zijn benzine, aardgascondensaat, ruwe olie en smeerolie.
     households_other_bio_oil_in_crude_oil_share:
       title: Andere bio-olie
       short_description:
-      description: |
-        Percentage van andere bio-olieproducten in het oliegebruik van huishoudens. Hieronder
-        vallen bio-benzine en verdere bio-brandstoffen.
+      description: 
+        Deze slider bepaalt het aandeel andere bio-olieproducten in de oliemix in huishoudens.
+        </br></br>Voorbeelden zijn bio-benzine en verdere bio-brandstoffen.
     buildings_diesel_in_crude_oil_share:
       title: Diesel
       short_description:
-      description: |
-        Percentage diesel in het gebruik van olieproducten door gebouwen. Deze diesel wordt
-        onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+      description: 
+        Deze slider bepaalt het aandeel diesel in de oliemix in gebouwen.
     buildings_biodiesel_in_crude_oil_share:
       title: Biodiesel
       short_description:
-      description: |
-        Percentage biodiesel in het gebruik van olieproducten door gebouwen. Deze biodiesel wordt
-        onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+      description: 
+        Deze slider bepaalt het aandeel biodiesel in de oliemix in gebouwen.
     buildings_kerosene_in_crude_oil_share:
       title: Kerosine
       short_description:
-      description: |
-        Percentage kerosine in het gebruik van olieproducten door gebouwen. Deze kerosine wordt
-        onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+      description: 
+        Deze slider bepaalt het aandeel kerosine in de oliemix in gebouwen.
     buildings_bio_kerosene_in_crude_oil_share:
       title: Bio-kerosine
       short_description:
-      description: |
-        Percentage bio-kerosine in het gebruik van olieproducten door gebouwen. Deze bio-kerosine
-        wordt onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+      description: 
+        Deze slider bepaalt het aandeel bio-kerosine in de oliemix in gebouwen.
     buildings_lpg_in_crude_oil_share:
       title: LPG
       short_description:
-      description: |
-        Percentage LPG in het gebruik van olieproducten door gebouwen. Deze LPG wordt
-        onder andere gebruikt voor het verwarmen van gebouwen en voor apparaten.
+      description: 
+        Deze slider bepaalt het aandeel liquid petroleum gas (LPG) in de oliemix in gebouwen.
     buildings_other_oil_in_crude_oil_share:
       title: Andere olie
       short_description:
-      description: |
-        Percentage van andere niet-bio olie en olieproducten in het oliegebruik van gebouwen. Hieronder
-        vallen onder andere benzine, aardgascondensaat, ruwe olie en smeerolie.
+      description: 
+        Deze slider bepaalt het aandeel andere niet-bio olie en olieproducten in de oliemix in 
+        gebouwen.</br></br> Voorbeelden zijn benzine, aardgascondensaat, ruwe olie en smeerolie.
     buildings_other_bio_oil_in_crude_oil_share:
       title: Andere bio-olie
       short_description:
-      description: |
-        Percentage van andere bio-olieproducten in het oliegebruik van gebouwen. Hieronder
-        vallen bio-benzine en verdere bio-brandstoffen.
+      description: 
+        Deze slider bepaalt het aandeel andere bio-olieproducten in de oliemix in gebouwen.</br>
+        </br>Voorbeelden zijn bio-benzine en verdere bio-brandstoffen.
     agriculture_diesel_in_crude_oil_share:
       title: Diesel
       short_description:
-      description: |
-        Percentage diesel in het gebruik van olieproducten in de landbouw. Deze diesel wordt
-        gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel diesel in de oliemix in landbouw.
     agriculture_biodiesel_in_crude_oil_share:
       title: Biodiesel
       short_description:
-      description: |
-        Percentage biodiesel in het gebruik van olieproducten in de landbouw. Deze biodiesel wordt
-        gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel bio-diesel in de oliemix in landbouw.
     agriculture_kerosene_in_crude_oil_share:
       title: Kerosine
       short_description:
-      description: |
-        Percentage kerosine in het gebruik van olieproducten in de landbouw. Deze kerosine wordt
-        gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel kerosine in de oliemix in landbouw.
     agriculture_bio_kerosene_in_crude_oil_share:
       title: Bio-kerosine
       short_description:
-      description: |
-        Percentage bio-kerosine in het gebruik van olieproducten in de landbouw. Deze bio-kerosine
-        wordt gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel bio-kerosine in de oliemix in landbouw.
     agriculture_lpg_in_crude_oil_share:
       title: LPG
       short_description:
-      description: |
-        Percentage LPG in het gebruik van olieproducten in de landbouw. Deze LPG
-        wordt gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel liquid petroleum gas (LPG) in de oliemix in landbouw.
     agriculture_other_oil_in_crude_oil_share:
       title: Andere olie
       short_description:
-      description: |
-        Percentage van andere niet-bio olie en olieproducten in het oliegebruik van de landbouw. Hieronder
-        vallen onder andere benzine, aardgascondensaat, ruwe olie en smeerolie.
+      description: 
+        Deze slider bepaalt het aandeel andere niet-bio olie en olieproducten in de oliemix in 
+        landbouw.</br></br> Voorbeelden zijn benzine, aardgascondensaat, ruwe olie en smeerolie.
     agriculture_other_bio_oil_in_crude_oil_share:
       title: Andere bio-olie
       short_description:
-      description: |
-        Percentage van andere bio-olieproducten in het oliegebruik van de landbouw. Hieronder
-        vallen bio-benzine en verdere bio-brandstoffen.
+      description: 
+        Deze slider bepaalt het aandeel andere bio-olieproducten in de oliemix in landbouw.</br>
+        </br>Voorbeelden zijn bio-benzine en verdere bio-brandstoffen.
     industry_diesel_in_crude_oil_share:
       title: Diesel
       short_description:
-      description: |
-        Percentage diesel in het gebruik van olieproducten in de industrie. Deze diesel wordt
-        onder andere gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel diesel in de oliemix in industrie.
     industry_biodiesel_in_crude_oil_share:
       title: Biodiesel
       short_description:
-      description: |
-        Percentage biodiesel in het gebruik van olieproducten in de industrie. Deze biodiesel wordt
-        onder andere gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel bio-diesel in de oliemix in landbouw.
     industry_kerosene_in_crude_oil_share:
       title: Kerosine
       short_description:
-      description: |
-        Percentage kerosine in het gebruik van olieproducten in de industrie. Deze kerosine wordt
-        onder andere gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel kerosine in de oliemix in landbouw.
     industry_bio_kerosene_in_crude_oil_share:
       title: Bio-kerosine
       short_description:
-      description: |
-        Percentage bio-kerosine in het gebruik van olieproducten in de industrie. Deze bio-kerosine
-        wordt onder andere gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel bio-kerosine in de oliemix in landbouw.
     industry_lpg_in_crude_oil_share:
       title: LPG
       short_description:
-      description: |
-        Percentage LPG in het gebruik van olieproducten in de industrie. Deze LPG
-        wordt onder andere gebruikt voor warmte.
+      description: 
+        Deze slider bepaalt het aandeel liquid petroleum gas (LPG) in de oliemix in landbouw.
     industry_other_oil_in_crude_oil_share:
       title: Andere olie
       short_description:
-      description: |
-        Percentage van andere niet-bio olie en olieproducten in het oliegebruik van de industrie. Hieronder
-        vallen onder andere benzine, aardgascondensaat, ruwe olie en smeerolie.
+      description: 
+        Deze slider bepaalt het aandeel andere niet-bio olie en olieproducten in de oliemix in 
+        industrie.</br></br> Voorbeelden zijn benzine, aardgascondensaat, ruwe olie en smeerolie.
     industry_other_bio_oil_in_crude_oil_share:
       title: Andere bio-olie
       short_description:
-      description: |
-        Percentage van andere bio-olieproducten in het oliegebruik van de industrie. Hieronder
-        vallen bio-benzine en verdere bio-brandstoffen.
+      description: 
+        Deze slider bepaalt het aandeel andere bio-olieproducten in de oliemix in industrie.</br>
+        </br>Voorbeelden zijn bio-benzine en verdere bio-brandstoffen.
